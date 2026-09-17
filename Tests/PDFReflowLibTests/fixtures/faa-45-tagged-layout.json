@@ -1,0 +1,3505 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        36,
+        33.709700000000005,
+        14.450000000000003,
+        12.310000000000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "2-6"
+        }
+      ],
+      "text" : "2-6"
+    },
+    {
+      "rect" : [
+        284.36959999999999,
+        585.59680000000003,
+        236.00250000000005,
+        10.812000000000012
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 8,
+          "text" : "Figure 2-5."
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : " "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "text" : "This risk matrix can be used for almost any operation"
+        }
+      ],
+      "text" : "Figure 2-5. This risk matrix can be used for almost any operation"
+    },
+    {
+      "rect" : [
+        284.36510000000004,
+        573.70180000000005,
+        235.99979999999999,
+        10.206000000000017
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "text" : "by assigning likelihood and consequence. In the case presented,"
+        }
+      ],
+      "text" : "by assigning likelihood and consequence. In the case presented,"
+    },
+    {
+      "rect" : [
+        284.36510000000004,
+        561.20080000000007,
+        236.0096999999999,
+        10.206000000000017
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "text" : "the pilot assigned a likelihood of occasional and the severity as"
+        }
+      ],
+      "text" : "the pilot assigned a likelihood of occasional and the severity as"
+    },
+    {
+      "rect" : [
+        284.36510000000004,
+        548.6998000000001,
+        215.49599999999992,
+        10.206000000000017
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "text" : "catastrophic. As one can see, this falls in the high risk area."
+        }
+      ],
+      "text" : "catastrophic. As one can see, this falls in the high risk area."
+    },
+    {
+      "rect" : [
+        285.1825,
+        605.90620000000001,
+        236.49160000000006,
+        123.57399999999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    },
+    {
+      "rect" : [
+        36,
+        718.14969999999994,
+        21.120000000000005,
+        13.190000000000055
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 10,
+          "text" : "Risk"
+        }
+      ],
+      "text" : "Risk"
+    },
+    {
+      "rect" : [
+        36,
+        705.71969999999999,
+        237.00700000000006,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "During each flight, the single pilot makes many decisions"
+        }
+      ],
+      "text" : "During each flight, the single pilot makes many decisions"
+    },
+    {
+      "rect" : [
+        36,
+        693.21969999999999,
+        237.00999999999988,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "under hazardous conditions. To fly safely, the pilot needs"
+        }
+      ],
+      "text" : "under hazardous conditions. To fly safely, the pilot needs"
+    },
+    {
+      "rect" : [
+        36,
+        680.71969999999999,
+        237.01099999999997,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "to assess the degree of risk and determine the best course of"
+        }
+      ],
+      "text" : "to assess the degree of risk and determine the best course of"
+    },
+    {
+      "rect" : [
+        36,
+        668.21969999999999,
+        104.72000000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "action to mitigate the risk."
+        }
+      ],
+      "text" : "action to mitigate the risk."
+    },
+    {
+      "rect" : [
+        36,
+        641.99670000000003,
+        66.935000000000002,
+        13.309999999999945
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-BoldItalic",
+          "fontSize" : 11,
+          "text" : "Assessing Risk"
+        }
+      ],
+      "text" : "Assessing Risk"
+    },
+    {
+      "rect" : [
+        36,
+        628.21969999999999,
+        236.98000000000013,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "For the single pilot, assessing risk is not as simple as it sounds."
+        }
+      ],
+      "text" : "For the single pilot, assessing risk is not as simple as it sounds."
+    },
+    {
+      "rect" : [
+        36,
+        615.71969999999999,
+        236.9899999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "For example, the pilot acts as his or her own quality control"
+        }
+      ],
+      "text" : "For example, the pilot acts as his or her own quality control"
+    },
+    {
+      "rect" : [
+        36,
+        603.21969999999999,
+        236.99000000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "in making decisions. If a fatigued pilot who has flown 16"
+        }
+      ],
+      "text" : "in making decisions. If a fatigued pilot who has flown 16"
+    },
+    {
+      "rect" : [
+        36,
+        590.71969999999999,
+        236.99000000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "hours is asked if he or she is too tired to continue flying, the"
+        }
+      ],
+      "text" : "hours is asked if he or she is too tired to continue flying, the"
+    },
+    {
+      "rect" : [
+        36,
+        578.21969999999999,
+        237.01099999999997,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "answer may be “no.” Most pilots are goal oriented and when"
+        }
+      ],
+      "text" : "answer may be “no.” Most pilots are goal oriented and when"
+    },
+    {
+      "rect" : [
+        36,
+        565.71969999999999,
+        237.00900000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "asked to accept a flight, there is a tendency to deny personal"
+        }
+      ],
+      "text" : "asked to accept a flight, there is a tendency to deny personal"
+    },
+    {
+      "rect" : [
+        36,
+        553.21969999999999,
+        237.01399999999984,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "limitations while adding weight to issues not germane to the"
+        }
+      ],
+      "text" : "limitations while adding weight to issues not germane to the"
+    },
+    {
+      "rect" : [
+        36,
+        540.71969999999999,
+        237.0440000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "mission. For example, pilots of helicopter emergency services"
+        }
+      ],
+      "text" : "mission. For example, pilots of helicopter emergency services"
+    },
+    {
+      "rect" : [
+        36,
+        528.21969999999999,
+        237.0139999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "(EMS) have been known (more than other groups) to make"
+        }
+      ],
+      "text" : "(EMS) have been known (more than other groups) to make"
+    },
+    {
+      "rect" : [
+        36,
+        515.71969999999999,
+        237.00499999999988,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "flight decisions that add significant weight to the patient’s"
+        }
+      ],
+      "text" : "flight decisions that add significant weight to the patient’s"
+    },
+    {
+      "rect" : [
+        36,
+        503.21969999999999,
+        237.02099999999984,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "welfare. These pilots add weight to intangible factors (the"
+        }
+      ],
+      "text" : "welfare. These pilots add weight to intangible factors (the"
+    },
+    {
+      "rect" : [
+        36,
+        490.71969999999999,
+        237.01799999999992,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "patient in this case) and fail to appropriately quantify actual"
+        }
+      ],
+      "text" : "patient in this case) and fail to appropriately quantify actual"
+    },
+    {
+      "rect" : [
+        36,
+        478.21969999999999,
+        237.06000000000012,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "hazards, such as fatigue or weather, when making flight"
+        }
+      ],
+      "text" : "hazards, such as fatigue or weather, when making flight"
+    },
+    {
+      "rect" : [
+        36,
+        465.71969999999999,
+        236.99599999999992,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "decisions. The single pilot who has no other crew member"
+        }
+      ],
+      "text" : "decisions. The single pilot who has no other crew member"
+    },
+    {
+      "rect" : [
+        36,
+        453.21969999999999,
+        236.99799999999993,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "for consultation must wrestle with the intangible factors that"
+        }
+      ],
+      "text" : "for consultation must wrestle with the intangible factors that"
+    },
+    {
+      "rect" : [
+        36,
+        440.71969999999999,
+        237.01199999999994,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "draw one into a hazardous position. Therefore, he or she has"
+        }
+      ],
+      "text" : "draw one into a hazardous position. Therefore, he or she has"
+    },
+    {
+      "rect" : [
+        36,
+        428.21969999999999,
+        155.79000000000008,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "a greater vulnerability than a full crew."
+        }
+      ],
+      "text" : "a greater vulnerability than a full crew."
+    },
+    {
+      "rect" : [
+        36,
+        403.21969999999999,
+        237.00100000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Examining National Transportation Safety Board (NTSB)"
+        }
+      ],
+      "text" : "Examining National Transportation Safety Board (NTSB)"
+    },
+    {
+      "rect" : [
+        36,
+        390.71969999999999,
+        237.01999999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "reports and other accident research can help a pilot learn to"
+        }
+      ],
+      "text" : "reports and other accident research can help a pilot learn to"
+    },
+    {
+      "rect" : [
+        36,
+        378.21969999999999,
+        237.00199999999995,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "assess risk more effectively. For example, the accident rate"
+        }
+      ],
+      "text" : "assess risk more effectively. For example, the accident rate"
+    },
+    {
+      "rect" : [
+        36,
+        365.71969999999999,
+        237.00599999999997,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "during night visual flight rules (VFR) decreases by nearly"
+        }
+      ],
+      "text" : "during night visual flight rules (VFR) decreases by nearly"
+    },
+    {
+      "rect" : [
+        36,
+        353.21969999999999,
+        237.01499999999987,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "50 percent once a pilot obtains 100 hours and continues to"
+        }
+      ],
+      "text" : "50 percent once a pilot obtains 100 hours and continues to"
+    },
+    {
+      "rect" : [
+        36,
+        340.71969999999999,
+        237.01499999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "decrease until the 1,000 hour level. The data suggest that for"
+        }
+      ],
+      "text" : "decrease until the 1,000 hour level. The data suggest that for"
+    },
+    {
+      "rect" : [
+        36,
+        328.21969999999999,
+        237.00799999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the first 500 hours, pilots flying VFR at night might want to"
+        }
+      ],
+      "text" : "the first 500 hours, pilots flying VFR at night might want to"
+    },
+    {
+      "rect" : [
+        36,
+        315.71969999999999,
+        237.13499999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "establish higher personal limitations than are required by the"
+        }
+      ],
+      "text" : "establish higher personal limitations than are required by the"
+    },
+    {
+      "rect" : [
+        36,
+        303.21969999999999,
+        237.00299999999993,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "regulations and, if applicable, apply instrument flying skills"
+        }
+      ],
+      "text" : "regulations and, if applicable, apply instrument flying skills"
+    },
+    {
+      "rect" : [
+        36,
+        290.71969999999999,
+        80.280000000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "in this environment."
+        }
+      ],
+      "text" : "in this environment."
+    },
+    {
+      "rect" : [
+        36,
+        265.71969999999999,
+        237.02499999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Several risk assessment models are available to assist in the"
+        }
+      ],
+      "text" : "Several risk assessment models are available to assist in the"
+    },
+    {
+      "rect" : [
+        36,
+        253.21969999999999,
+        237.08100000000024,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "process of assessing risk. The models, all taking slightly"
+        }
+      ],
+      "text" : "process of assessing risk. The models, all taking slightly"
+    },
+    {
+      "rect" : [
+        36,
+        240.71969999999999,
+        237.00599999999991,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "different approaches, seek a common goal of assessing risk"
+        }
+      ],
+      "text" : "different approaches, seek a common goal of assessing risk"
+    },
+    {
+      "rect" : [
+        36,
+        228.21969999999999,
+        236.93999999999994,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "in an objective manner. The most basic tool is the risk matrix."
+        }
+      ],
+      "text" : "in an objective manner. The most basic tool is the risk matrix."
+    },
+    {
+      "rect" : [
+        36,
+        215.71969999999999,
+        236.99000000000001,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 10,
+          "text" : "[Figure 2-5]"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : " It assesses two items: the likelihood of an event"
+        }
+      ],
+      "text" : "[Figure 2-5] It assesses two items: the likelihood of an event"
+    },
+    {
+      "rect" : [
+        36,
+        203.21969999999999,
+        178.56000000000006,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "occurring and the consequence of that event."
+        }
+      ],
+      "text" : "occurring and the consequence of that event."
+    },
+    {
+      "rect" : [
+        36,
+        178.21969999999999,
+        90.830000000000013,
+        11.340000000000003
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 10,
+          "text" : "Likelihood of an Event"
+        }
+      ],
+      "text" : "Likelihood of an Event"
+    },
+    {
+      "rect" : [
+        36,
+        163.71969999999999,
+        237.03600000000006,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Likelihood is nothing more than taking a situation and"
+        }
+      ],
+      "text" : "Likelihood is nothing more than taking a situation and"
+    },
+    {
+      "rect" : [
+        36,
+        151.21969999999999,
+        237.0089999999999,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "determining the probability of its occurrence. It is rated as"
+        }
+      ],
+      "text" : "determining the probability of its occurrence. It is rated as"
+    },
+    {
+      "rect" : [
+        36,
+        138.71969999999999,
+        237.00899999999996,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "probable, occasional, remote, or improbable. For example, a"
+        }
+      ],
+      "text" : "probable, occasional, remote, or improbable. For example, a"
+    },
+    {
+      "rect" : [
+        36,
+        126.21969999999999,
+        237.01999999999992,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "pilot is flying from point A to point B (50 miles) in marginal"
+        }
+      ],
+      "text" : "pilot is flying from point A to point B (50 miles) in marginal"
+    },
+    {
+      "rect" : [
+        36,
+        113.71969999999999,
+        237.06000000000017,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "visual flight rules (MVFR) conditions. The likelihood of"
+        }
+      ],
+      "text" : "visual flight rules (MVFR) conditions. The likelihood of"
+    },
+    {
+      "rect" : [
+        36,
+        101.21969999999999,
+        236.85000000000002,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "encountering potential instrument meteorological conditions"
+        }
+      ],
+      "text" : "encountering potential instrument meteorological conditions"
+    },
+    {
+      "rect" : [
+        36,
+        88.719699999999989,
+        237.01499999999999,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "(IMC) is the first question the pilot needs to answer. The"
+        }
+      ],
+      "text" : "(IMC) is the first question the pilot needs to answer. The"
+    },
+    {
+      "rect" : [
+        36,
+        76.219699999999989,
+        236.99999999999989,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "experiences of other pilots, coupled with the forecast, might"
+        }
+      ],
+      "text" : "experiences of other pilots, coupled with the forecast, might"
+    },
+    {
+      "rect" : [
+        285,
+        520.64969999999994,
+        236.88999999999987,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "cause the pilot to assign “occasional” to determine the"
+        }
+      ],
+      "text" : "cause the pilot to assign “occasional” to determine the"
+    },
+    {
+      "rect" : [
+        285,
+        508.14969999999994,
+        133.31999999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "probability of encountering IMC."
+        }
+      ],
+      "text" : "probability of encountering IMC."
+    },
+    {
+      "rect" : [
+        285,
+        483.14969999999994,
+        215.81,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "The following are guidelines for making assignments."
+        }
+      ],
+      "text" : "The following are guidelines for making assignments."
+    },
+    {
+      "rect" : [
+        294,
+        466.14640000000003,
+        3.5,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "•"
+        }
+      ],
+      "text" : "•"
+    },
+    {
+      "rect" : [
+        312,
+        466.14640000000003,
+        176.91000000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Probable—an event will occur several times"
+        }
+      ],
+      "text" : "Probable—an event will occur several times"
+    },
+    {
+      "rect" : [
+        294,
+        449.14640000000003,
+        3.5,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "•"
+        }
+      ],
+      "text" : "•"
+    },
+    {
+      "rect" : [
+        312,
+        449.14640000000003,
+        210.00799999999992,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Occasional—an event will probably occur sometime"
+        }
+      ],
+      "text" : "Occasional—an event will probably occur sometime"
+    },
+    {
+      "rect" : [
+        294,
+        432.14640000000003,
+        227.87799999999993,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "• Remote—an event is unlikely to occur, but is possible"
+        }
+      ],
+      "text" : "• Remote—an event is unlikely to occur, but is possible"
+    },
+    {
+      "rect" : [
+        294,
+        415.14640000000003,
+        3.5,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "•"
+        }
+      ],
+      "text" : "•"
+    },
+    {
+      "rect" : [
+        312,
+        415.14640000000003,
+        197.19999999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Improbable—an event is highly unlikely to occur"
+        }
+      ],
+      "text" : "Improbable—an event is highly unlikely to occur"
+    },
+    {
+      "rect" : [
+        285,
+        390.14640000000003,
+        80.259999999999991,
+        11.339999999999975
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 10,
+          "text" : "Severity of an Event"
+        }
+      ],
+      "text" : "Severity of an Event"
+    },
+    {
+      "rect" : [
+        285,
+        375.64640000000003,
+        237.04999999999995,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "The next element is the severity or consequence of a pilot’s"
+        }
+      ],
+      "text" : "The next element is the severity or consequence of a pilot’s"
+    },
+    {
+      "rect" : [
+        285,
+        363.14640000000003,
+        236.88999999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "action(s). It can relate to injury and/or damage. If the"
+        }
+      ],
+      "text" : "action(s). It can relate to injury and/or damage. If the"
+    },
+    {
+      "rect" : [
+        285,
+        350.64640000000003,
+        237.00999999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "individual in the example above is not an instrument rated"
+        }
+      ],
+      "text" : "individual in the example above is not an instrument rated"
+    },
+    {
+      "rect" : [
+        285,
+        338.14640000000003,
+        237.06000000000006,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "pilot, what are the consequences of him or her encountering"
+        }
+      ],
+      "text" : "pilot, what are the consequences of him or her encountering"
+    },
+    {
+      "rect" : [
+        285,
+        325.64640000000003,
+        237.05000000000007,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "inadvertent IMC conditions? In this case, because the pilot"
+        }
+      ],
+      "text" : "inadvertent IMC conditions? In this case, because the pilot"
+    },
+    {
+      "rect" : [
+        285,
+        313.14640000000003,
+        237.13000000000011,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "is not IFR rated, the consequences are catastrophic. The"
+        }
+      ],
+      "text" : "is not IFR rated, the consequences are catastrophic. The"
+    },
+    {
+      "rect" : [
+        285,
+        300.64640000000003,
+        177.44,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "following are guidelines for this assignment."
+        }
+      ],
+      "text" : "following are guidelines for this assignment."
+    },
+    {
+      "rect" : [
+        294,
+        283.64640000000003,
+        192.72000000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "• Catastrophic—results in fatalities, total loss"
+        }
+      ],
+      "text" : "• Catastrophic—results in fatalities, total loss"
+    },
+    {
+      "rect" : [
+        294,
+        266.64640000000003,
+        171.86000000000007,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "• Critical—severe injury, major damage"
+        }
+      ],
+      "text" : "• Critical—severe injury, major damage"
+    },
+    {
+      "rect" : [
+        294,
+        249.6464,
+        177.43000000000006,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "• Marginal—minor injury, minor damage"
+        }
+      ],
+      "text" : "• Marginal—minor injury, minor damage"
+    },
+    {
+      "rect" : [
+        294,
+        232.6464,
+        228.02099999999996,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "• Negligible—less than minor injury, less than minor"
+        }
+      ],
+      "text" : "• Negligible—less than minor injury, less than minor"
+    },
+    {
+      "rect" : [
+        312,
+        220.1464,
+        61.379999999999995,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "system damage"
+        }
+      ],
+      "text" : "system damage"
+    },
+    {
+      "rect" : [
+        285,
+        195.1464,
+        237,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Simply connecting the two factors as shown in "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 10,
+          "text" : "Figure 2-5"
+        }
+      ],
+      "text" : "Simply connecting the two factors as shown in Figure 2-5"
+    },
+    {
+      "rect" : [
+        285,
+        182.6464,
+        237.00799999999992,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "indicates the risk is high and the pilot must either not fly or"
+        }
+      ],
+      "text" : "indicates the risk is high and the pilot must either not fly or"
+    },
+    {
+      "rect" : [
+        285,
+        170.1464,
+        237.01899999999989,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "fly only after finding ways to mitigate, eliminate, or control"
+        }
+      ],
+      "text" : "fly only after finding ways to mitigate, eliminate, or control"
+    },
+    {
+      "rect" : [
+        285,
+        157.6464,
+        32.220000000000027,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the risk."
+        }
+      ],
+      "text" : "the risk."
+    },
+    {
+      "rect" : [
+        285,
+        132.6464,
+        237.03499999999985,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Although the matrix in "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 10,
+          "text" : "Figure 2-5"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : " provides a general viewpoint"
+        }
+      ],
+      "text" : "Although the matrix in Figure 2-5 provides a general viewpoint"
+    },
+    {
+      "rect" : [
+        284.99999999999994,
+        120.1464,
+        237.065,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "of a generic situation, a more comprehensive program can be"
+        }
+      ],
+      "text" : "of a generic situation, a more comprehensive program can be"
+    },
+    {
+      "rect" : [
+        284.99999999999994,
+        107.6464,
+        237.00000000000006,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "made that is tailored to a pilot’s flying. "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 10,
+          "text" : "[Figure 2-6]"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : " This"
+        }
+      ],
+      "text" : "made that is tailored to a pilot’s flying. [Figure 2-6] This"
+    },
+    {
+      "rect" : [
+        285,
+        95.1464,
+        237.01999999999998,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "program includes a wide array of aviation-related activities"
+        }
+      ],
+      "text" : "program includes a wide array of aviation-related activities"
+    },
+    {
+      "rect" : [
+        285,
+        82.6464,
+        236.83000000000004,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "specific to the pilot and assesses health, fatigue, weather,"
+        }
+      ],
+      "text" : "specific to the pilot and assesses health, fatigue, weather,"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    594,
+    774
+  ],
+  "caseID" : "faa-phak-8083-25c",
+  "graphics" : [
+    [
+      283.6825,
+      604.40620000000001,
+      239.49160000000006,
+      126.57399999999996
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        33.709700000000005,
+        14.450000000000003,
+        12.310000000000002
+      ],
+      "text" : "2-6"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        284.36959999999999,
+        585.59680000000003,
+        236.00250000000005,
+        10.812000000000012
+      ],
+      "structure" : {
+        "group" : 1704,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 6466
+      },
+      "text" : "Figure 2-5. This risk matrix can be used for almost any operation"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        284.36510000000004,
+        573.70180000000005,
+        235.99979999999999,
+        10.206000000000017
+      ],
+      "structure" : {
+        "group" : 1704,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 6469
+      },
+      "text" : "by assigning likelihood and consequence. In the case presented,"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        284.36510000000004,
+        561.20080000000007,
+        236.0096999999999,
+        10.206000000000017
+      ],
+      "structure" : {
+        "group" : 1704,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 6470
+      },
+      "text" : "the pilot assigned a likelihood of occasional and the severity as"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        284.36510000000004,
+        548.6998000000001,
+        215.49599999999992,
+        10.206000000000017
+      ],
+      "structure" : {
+        "group" : 1704,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 6471
+      },
+      "text" : "catastrophic. As one can see, this falls in the high risk area."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        718.14969999999994,
+        21.120000000000005,
+        13.190000000000055
+      ],
+      "structure" : {
+        "group" : 1362,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 4680
+      },
+      "text" : "Risk"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        705.71969999999999,
+        237.00700000000006,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1363,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 4681
+      },
+      "text" : "During each flight, the single pilot makes many decisions"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        693.21969999999999,
+        237.00999999999988,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1363,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 4682
+      },
+      "text" : "under hazardous conditions. To fly safely, the pilot needs"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        680.71969999999999,
+        237.01099999999997,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1363,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 4683
+      },
+      "text" : "to assess the degree of risk and determine the best course of"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        668.21969999999999,
+        104.72000000000003,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1363,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 4684
+      },
+      "text" : "action to mitigate the risk."
+    },
+    {
+      "fontSize" : 11,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        641.99670000000003,
+        66.935000000000002,
+        13.309999999999945
+      ],
+      "structure" : {
+        "group" : 1364,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 4685
+      },
+      "text" : "Assessing Risk"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        628.21969999999999,
+        236.98000000000013,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1365,
+        "headingLevel" : 0,
+        "lineCount" : 17,
+        "opensWithSplitMarker" : false,
+        "order" : 4686
+      },
+      "text" : "For the single pilot, assessing risk is not as simple as it sounds."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        615.71969999999999,
+        236.9899999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1365,
+        "headingLevel" : 0,
+        "lineCount" : 17,
+        "opensWithSplitMarker" : false,
+        "order" : 4687
+      },
+      "text" : "For example, the pilot acts as his or her own quality control"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        603.21969999999999,
+        236.99000000000001,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1365,
+        "headingLevel" : 0,
+        "lineCount" : 17,
+        "opensWithSplitMarker" : false,
+        "order" : 4688
+      },
+      "text" : "in making decisions. If a fatigued pilot who has flown 16"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        590.71969999999999,
+        236.99000000000001,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1365,
+        "headingLevel" : 0,
+        "lineCount" : 17,
+        "opensWithSplitMarker" : false,
+        "order" : 4689
+      },
+      "text" : "hours is asked if he or she is too tired to continue flying, the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        578.21969999999999,
+        237.01099999999997,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1365,
+        "headingLevel" : 0,
+        "lineCount" : 17,
+        "opensWithSplitMarker" : false,
+        "order" : 4690
+      },
+      "text" : "answer may be “no.” Most pilots are goal oriented and when"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        565.71969999999999,
+        237.00900000000001,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1365,
+        "headingLevel" : 0,
+        "lineCount" : 17,
+        "opensWithSplitMarker" : false,
+        "order" : 4691
+      },
+      "text" : "asked to accept a flight, there is a tendency to deny personal"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        553.21969999999999,
+        237.01399999999984,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1365,
+        "headingLevel" : 0,
+        "lineCount" : 17,
+        "opensWithSplitMarker" : false,
+        "order" : 4692
+      },
+      "text" : "limitations while adding weight to issues not germane to the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        540.71969999999999,
+        237.0440000000001,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1365,
+        "headingLevel" : 0,
+        "lineCount" : 17,
+        "opensWithSplitMarker" : false,
+        "order" : 4693
+      },
+      "text" : "mission. For example, pilots of helicopter emergency services"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        528.21969999999999,
+        237.0139999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1365,
+        "headingLevel" : 0,
+        "lineCount" : 17,
+        "opensWithSplitMarker" : false,
+        "order" : 4694
+      },
+      "text" : "(EMS) have been known (more than other groups) to make"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        515.71969999999999,
+        237.00499999999988,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1365,
+        "headingLevel" : 0,
+        "lineCount" : 17,
+        "opensWithSplitMarker" : false,
+        "order" : 4695
+      },
+      "text" : "flight decisions that add significant weight to the patient’s"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        503.21969999999999,
+        237.02099999999984,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1365,
+        "headingLevel" : 0,
+        "lineCount" : 17,
+        "opensWithSplitMarker" : false,
+        "order" : 4696
+      },
+      "text" : "welfare. These pilots add weight to intangible factors (the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        490.71969999999999,
+        237.01799999999992,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1365,
+        "headingLevel" : 0,
+        "lineCount" : 17,
+        "opensWithSplitMarker" : false,
+        "order" : 4697
+      },
+      "text" : "patient in this case) and fail to appropriately quantify actual"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        478.21969999999999,
+        237.06000000000012,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1365,
+        "headingLevel" : 0,
+        "lineCount" : 17,
+        "opensWithSplitMarker" : false,
+        "order" : 4698
+      },
+      "text" : "hazards, such as fatigue or weather, when making flight"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        465.71969999999999,
+        236.99599999999992,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1365,
+        "headingLevel" : 0,
+        "lineCount" : 17,
+        "opensWithSplitMarker" : false,
+        "order" : 4699
+      },
+      "text" : "decisions. The single pilot who has no other crew member"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        453.21969999999999,
+        236.99799999999993,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1365,
+        "headingLevel" : 0,
+        "lineCount" : 17,
+        "opensWithSplitMarker" : false,
+        "order" : 4700
+      },
+      "text" : "for consultation must wrestle with the intangible factors that"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        440.71969999999999,
+        237.01199999999994,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1365,
+        "headingLevel" : 0,
+        "lineCount" : 17,
+        "opensWithSplitMarker" : false,
+        "order" : 4701
+      },
+      "text" : "draw one into a hazardous position. Therefore, he or she has"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        428.21969999999999,
+        155.79000000000008,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1365,
+        "headingLevel" : 0,
+        "lineCount" : 17,
+        "opensWithSplitMarker" : false,
+        "order" : 4702
+      },
+      "text" : "a greater vulnerability than a full crew."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        403.21969999999999,
+        237.00100000000003,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1366,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 4703
+      },
+      "text" : "Examining National Transportation Safety Board (NTSB)"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        390.71969999999999,
+        237.01999999999998,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1366,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 4704
+      },
+      "text" : "reports and other accident research can help a pilot learn to"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        378.21969999999999,
+        237.00199999999995,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1366,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 4705
+      },
+      "text" : "assess risk more effectively. For example, the accident rate"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        365.71969999999999,
+        237.00599999999997,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1366,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 4706
+      },
+      "text" : "during night visual flight rules (VFR) decreases by nearly"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        353.21969999999999,
+        237.01499999999987,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1366,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 4707
+      },
+      "text" : "50 percent once a pilot obtains 100 hours and continues to"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        340.71969999999999,
+        237.01499999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1366,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 4708
+      },
+      "text" : "decrease until the 1,000 hour level. The data suggest that for"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        328.21969999999999,
+        237.00799999999998,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1366,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 4709
+      },
+      "text" : "the first 500 hours, pilots flying VFR at night might want to"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        315.71969999999999,
+        237.13499999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1366,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 4710
+      },
+      "text" : "establish higher personal limitations than are required by the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        303.21969999999999,
+        237.00299999999993,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1366,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 4711
+      },
+      "text" : "regulations and, if applicable, apply instrument flying skills"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        290.71969999999999,
+        80.280000000000001,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1366,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 4712
+      },
+      "text" : "in this environment."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        265.71969999999999,
+        237.02499999999998,
+        11.470000000000027
+      ],
+      "text" : "Several risk assessment models are available to assist in the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        253.21969999999999,
+        237.08100000000024,
+        11.470000000000027
+      ],
+      "text" : "process of assessing risk. The models, all taking slightly"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        240.71969999999999,
+        237.00599999999991,
+        11.469999999999999
+      ],
+      "text" : "different approaches, seek a common goal of assessing risk"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        228.21969999999999,
+        236.93999999999994,
+        11.469999999999999
+      ],
+      "text" : "in an objective manner. The most basic tool is the risk matrix."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        215.71969999999999,
+        236.99000000000001,
+        11.469999999999999
+      ],
+      "text" : "[Figure 2-5] It assesses two items: the likelihood of an event"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        203.21969999999999,
+        178.56000000000006,
+        11.469999999999999
+      ],
+      "text" : "occurring and the consequence of that event."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        178.21969999999999,
+        90.830000000000013,
+        11.340000000000003
+      ],
+      "structure" : {
+        "group" : 1368,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 4720
+      },
+      "text" : "Likelihood of an Event"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        163.71969999999999,
+        237.03600000000006,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 1369,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 4721
+      },
+      "text" : "Likelihood is nothing more than taking a situation and"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        151.21969999999999,
+        237.0089999999999,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 1369,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 4722
+      },
+      "text" : "determining the probability of its occurrence. It is rated as"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        138.71969999999999,
+        237.00899999999996,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 1369,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 4723
+      },
+      "text" : "probable, occasional, remote, or improbable. For example, a"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        126.21969999999999,
+        237.01999999999992,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 1369,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 4724
+      },
+      "text" : "pilot is flying from point A to point B (50 miles) in marginal"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        113.71969999999999,
+        237.06000000000017,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 1369,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 4725
+      },
+      "text" : "visual flight rules (MVFR) conditions. The likelihood of"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        101.21969999999999,
+        236.85000000000002,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 1369,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 4726
+      },
+      "text" : "encountering potential instrument meteorological conditions"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        88.719699999999989,
+        237.01499999999999,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 1369,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 4727
+      },
+      "text" : "(IMC) is the first question the pilot needs to answer. The"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        76.219699999999989,
+        236.99999999999989,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 1369,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 4728
+      },
+      "text" : "experiences of other pilots, coupled with the forecast, might"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        520.64969999999994,
+        236.88999999999987,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1369,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 4729
+      },
+      "text" : "cause the pilot to assign “occasional” to determine the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        508.14969999999994,
+        133.31999999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1369,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 4730
+      },
+      "text" : "probability of encountering IMC."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        483.14969999999994,
+        215.81,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1370,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 4731
+      },
+      "text" : "The following are guidelines for making assignments."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        294,
+        466.14640000000003,
+        3.5,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1371,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 4732
+      },
+      "text" : "•"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312,
+        466.14640000000003,
+        176.91000000000003,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1371,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 4733
+      },
+      "text" : "Probable—an event will occur several times"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        294,
+        449.14640000000003,
+        3.5,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1372,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 4734
+      },
+      "text" : "•"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312,
+        449.14640000000003,
+        210.00799999999992,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1372,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 4735
+      },
+      "text" : "Occasional—an event will probably occur sometime"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        294,
+        432.14640000000003,
+        227.87799999999993,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1373,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 4736
+      },
+      "text" : "• Remote—an event is unlikely to occur, but is possible"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        294,
+        415.14640000000003,
+        3.5,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1374,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 4738
+      },
+      "text" : "•"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312,
+        415.14640000000003,
+        197.19999999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1374,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 4739
+      },
+      "text" : "Improbable—an event is highly unlikely to occur"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        390.14640000000003,
+        80.259999999999991,
+        11.339999999999975
+      ],
+      "structure" : {
+        "group" : 1375,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 4740
+      },
+      "text" : "Severity of an Event"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        375.64640000000003,
+        237.04999999999995,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1376,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 4741
+      },
+      "text" : "The next element is the severity or consequence of a pilot’s"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        363.14640000000003,
+        236.88999999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1376,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 4742
+      },
+      "text" : "action(s). It can relate to injury and/or damage. If the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        350.64640000000003,
+        237.00999999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1376,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 4743
+      },
+      "text" : "individual in the example above is not an instrument rated"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        338.14640000000003,
+        237.06000000000006,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1376,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 4744
+      },
+      "text" : "pilot, what are the consequences of him or her encountering"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        325.64640000000003,
+        237.05000000000007,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1376,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 4745
+      },
+      "text" : "inadvertent IMC conditions? In this case, because the pilot"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        313.14640000000003,
+        237.13000000000011,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1376,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 4746
+      },
+      "text" : "is not IFR rated, the consequences are catastrophic. The"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        300.64640000000003,
+        177.44,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1376,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 4747
+      },
+      "text" : "following are guidelines for this assignment."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        294,
+        283.64640000000003,
+        192.72000000000003,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1377,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 4748
+      },
+      "text" : "• Catastrophic—results in fatalities, total loss"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        294,
+        266.64640000000003,
+        171.86000000000007,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1378,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 4750
+      },
+      "text" : "• Critical—severe injury, major damage"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        294,
+        249.6464,
+        177.43000000000006,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 1379,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 4752
+      },
+      "text" : "• Marginal—minor injury, minor damage"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        294,
+        232.6464,
+        228.02099999999996,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 1380,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 4754
+      },
+      "text" : "• Negligible—less than minor injury, less than minor"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312,
+        220.1464,
+        61.379999999999995,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 1380,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 4756
+      },
+      "text" : "system damage"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        195.1464,
+        237,
+        11.469999999999999
+      ],
+      "text" : "Simply connecting the two factors as shown in Figure 2-5"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        182.6464,
+        237.00799999999992,
+        11.469999999999999
+      ],
+      "text" : "indicates the risk is high and the pilot must either not fly or"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        170.1464,
+        237.01899999999989,
+        11.469999999999999
+      ],
+      "text" : "fly only after finding ways to mitigate, eliminate, or control"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        157.6464,
+        32.220000000000027,
+        11.469999999999999
+      ],
+      "text" : "the risk."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        132.6464,
+        237.03499999999985,
+        11.469999999999999
+      ],
+      "text" : "Although the matrix in Figure 2-5 provides a general viewpoint"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        284.99999999999994,
+        120.1464,
+        237.065,
+        11.469999999999999
+      ],
+      "text" : "of a generic situation, a more comprehensive program can be"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        284.99999999999994,
+        107.6464,
+        237.00000000000006,
+        11.469999999999999
+      ],
+      "text" : "made that is tailored to a pilot’s flying. [Figure 2-6] This"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        95.1464,
+        237.01999999999998,
+        11.469999999999999
+      ],
+      "text" : "program includes a wide array of aviation-related activities"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        82.6464,
+        236.83000000000004,
+        11.469999999999999
+      ],
+      "text" : "specific to the pilot and assesses health, fatigue, weather,"
+    }
+  ],
+  "page" : 45,
+  "paints" : [
+    {
+      "frame" : false,
+      "rect" : [
+        283.6825,
+        604.40620000000001,
+        239.49099999999999,
+        126.57399999999996
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        285.68299999999999,
+        606.40599999999995,
+        235.49000000000001,
+        122.57300000000009
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        283.6825,
+        604.40620000000001,
+        239.49099999999999,
+        126.57399999999996
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        288.84800000000001,
+        608.98699999999997,
+        64.600999999999999,
+        104.61500000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        349.53199999999998,
+        687.55899999999997,
+        167.74600000000004,
+        26.04200000000003
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        351.53100000000001,
+        689.55999999999995,
+        163.74700000000001,
+        22.041000000000054
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        350.79400000000004,
+        688.947,
+        43.389999999999986,
+        12.811000000000035
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        391.214,
+        688.947,
+        43.389999999999986,
+        12.811000000000035
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        431.84700000000004,
+        688.947,
+        43.389999999999986,
+        12.811000000000035
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        472.803,
+        688.947,
+        43.389999999999986,
+        12.811000000000035
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        293.53100000000001,
+        614.36000000000001,
+        57.194000000000017,
+        15.200000000000045
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        293.53030000000001,
+        614.36080000000004,
+        57.194000000000017,
+        15.199000000000069
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        293.53100000000001,
+        633.80200000000002,
+        57.194000000000017,
+        15.201000000000022
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        293.53030000000001,
+        633.80330000000004,
+        57.194000000000017,
+        15.199000000000069
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        293.53100000000001,
+        653.245,
+        57.194000000000017,
+        15.197999999999979
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        293.53030000000001,
+        653.24580000000003,
+        57.194000000000017,
+        15.197000000000003
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        293.53100000000001,
+        672.69000000000005,
+        57.194000000000017,
+        15.195999999999913
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        293.53030000000001,
+        672.68940000000009,
+        57.194000000000017,
+        15.197000000000003
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        283.68310000000008,
+        711.74660000000006,
+        239.49099999999999,
+        19.149000000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        283.68310000000008,
+        711.74660000000006,
+        239.49099999999999,
+        19.149000000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        350.34399999999999,
+        686.053,
+        43.749000000000024,
+        6.0639999999999645
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        350.34399999999999,
+        669.26300000000003,
+        43.749000000000024,
+        6.0639999999999645
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        350.34399999999999,
+        669.26300000000003,
+        6.1890000000000214,
+        22.852999999999952
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        387.95499999999998,
+        669.21100000000001,
+        6.188000000000045,
+        22.854000000000042
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        352.52100000000002,
+        671.26099999999997,
+        39.480000000000018,
+        18.785000000000082
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        350.34399999999999,
+        666.30799999999999,
+        43.749000000000024,
+        6.0629999999999882
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        350.34399999999999,
+        649.51700000000005,
+        43.749000000000024,
+        6.0639999999999645
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        350.34399999999999,
+        649.51700000000005,
+        6.1890000000000214,
+        22.852999999999952
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        387.95499999999998,
+        649.46600000000001,
+        6.188000000000045,
+        22.851999999999975
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        352.52100000000002,
+        651.51599999999996,
+        39.480000000000018,
+        18.785000000000082
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        390.96300000000002,
+        686.053,
+        43.75,
+        6.0639999999999645
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        390.96300000000002,
+        669.26300000000003,
+        43.75,
+        6.0639999999999645
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        390.964,
+        669.26300000000003,
+        6.1879999999999882,
+        22.852999999999952
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        428.57499999999999,
+        669.21100000000001,
+        6.1890000000000214,
+        22.854000000000042
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        393.14100000000002,
+        671.26099999999997,
+        39.480999999999995,
+        18.785000000000082
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        431.553,
+        686.053,
+        43.750999999999976,
+        6.0639999999999645
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        431.553,
+        669.26300000000003,
+        43.750999999999976,
+        6.0639999999999645
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        431.553,
+        669.26300000000003,
+        6.1890000000000214,
+        22.852999999999952
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        469.16500000000002,
+        669.21000000000004,
+        6.1889999999999645,
+        22.855000000000018
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        432.37,
+        670.05399999999997,
+        42.283000000000015,
+        21.331999999999994
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        390.96300000000002,
+        666.30799999999999,
+        43.75,
+        6.0629999999999882
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        390.96300000000002,
+        649.51700000000005,
+        43.75,
+        6.0639999999999645
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        390.964,
+        649.51700000000005,
+        6.1879999999999882,
+        22.852999999999952
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        428.57499999999999,
+        649.46299999999997,
+        6.1890000000000214,
+        22.855000000000018
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        391.78000000000003,
+        650.30799999999999,
+        42.282999999999959,
+        21.331999999999994
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        350.34399999999999,
+        646.75900000000001,
+        43.749000000000024,
+        6.0639999999999645
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        350.34399999999999,
+        629.96799999999996,
+        43.749000000000024,
+        6.0639999999999645
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        350.34399999999999,
+        629.96799999999996,
+        6.1890000000000214,
+        22.854000000000042
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        387.95499999999998,
+        629.91499999999996,
+        6.188000000000045,
+        22.854000000000042
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        351.15899999999999,
+        630.75900000000001,
+        42.281999999999982,
+        21.331000000000017
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        472.22399999999999,
+        668.89700000000005,
+        44.281999999999982,
+        23.414999999999964
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        431.55000000000001,
+        609.95400000000006,
+        44.281999999999982,
+        62.451999999999998
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        349.88479999999998,
+        609.66450000000009,
+        84.983000000000004,
+        43.111999999999966
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        471.83600000000001,
+        609.44900000000007,
+        44.966999999999985,
+        63.099000000000046
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        349.91870000000006,
+        609.44860000000006,
+        166.88499999999999,
+        83.009999999999991
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        390.49560000000002,
+        609.39480000000003,
+        4,
+        83.178999999999974
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        431.22550000000001,
+        609.39480000000003,
+        4,
+        83.178999999999974
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        471.89280000000002,
+        609.39480000000003,
+        4,
+        83.178999999999974
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        349.70060000000001,
+        629.60720000000003,
+        167.37,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        349.70060000000001,
+        649.19560000000001,
+        167.37,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        349.70060000000001,
+        668.8492,
+        167.19799999999998,
+        4
+      ]
+    }
+  ],
+  "rightsBasis" : "U.S. Government publication, retained as an external development corpus source. The PDF is not bundled or relicensed under the library license.",
+  "sourceSHA256" : "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
+  "sourceTitle" : "Pilot's Handbook of Aeronautical Knowledge, FAA-H-8083-25C",
+  "sourceURL" : "https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/faa-h-8083-25c.pdf"
+}

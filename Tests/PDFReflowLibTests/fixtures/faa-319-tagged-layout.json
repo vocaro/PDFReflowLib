@@ -1,0 +1,3657 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        537.98540000000003,
+        33.709700000000005,
+        20.009999999999991,
+        12.310000000000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "13-9"
+        }
+      ],
+      "text" : "13-9"
+    },
+    {
+      "rect" : [
+        330,
+        719.56640000000004,
+        227.90000000000009,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "7. Forecast significant weather—weather phenomena"
+        }
+      ],
+      "text" : "7. Forecast significant weather—weather phenomena"
+    },
+    {
+      "rect" : [
+        348,
+        707.06640000000004,
+        209.99000000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "are coded in the TAF reports in the same format as"
+        }
+      ],
+      "text" : "are coded in the TAF reports in the same format as"
+    },
+    {
+      "rect" : [
+        348,
+        694.56640000000004,
+        52.220000000000027,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the METAR."
+        }
+      ],
+      "text" : "the METAR."
+    },
+    {
+      "rect" : [
+        330,
+        677.56640000000004,
+        7.5,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "8. "
+        }
+      ],
+      "text" : "8. "
+    },
+    {
+      "rect" : [
+        348,
+        677.56640000000004,
+        210.005,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Forecast sky condition—given in the same format as"
+        }
+      ],
+      "text" : "Forecast sky condition—given in the same format as"
+    },
+    {
+      "rect" : [
+        348,
+        665.06640000000004,
+        209.99000000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the METAR. Only cumulonimbus (CB) clouds are"
+        }
+      ],
+      "text" : "the METAR. Only cumulonimbus (CB) clouds are"
+    },
+    {
+      "rect" : [
+        348,
+        652.56640000000004,
+        209.98000000000002,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "forecast in this portion of the TAF report as opposed"
+        }
+      ],
+      "text" : "forecast in this portion of the TAF report as opposed"
+    },
+    {
+      "rect" : [
+        348,
+        640.06640000000004,
+        183.8900000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "to CBs and towering cumulus in the METAR."
+        }
+      ],
+      "text" : "to CBs and towering cumulus in the METAR."
+    },
+    {
+      "rect" : [
+        330,
+        623.06640000000004,
+        7.5,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "9. "
+        }
+      ],
+      "text" : "9. "
+    },
+    {
+      "rect" : [
+        348,
+        623.06640000000004,
+        210.03999999999996,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Forecast change group—for any significant weather"
+        }
+      ],
+      "text" : "Forecast change group—for any significant weather"
+    },
+    {
+      "rect" : [
+        348,
+        610.56640000000004,
+        210.02800000000002,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "change forecast to occur during the TAF time period,"
+        }
+      ],
+      "text" : "change forecast to occur during the TAF time period,"
+    },
+    {
+      "rect" : [
+        348,
+        598.06640000000004,
+        210.04999999999995,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the expected conditions and time period are included"
+        }
+      ],
+      "text" : "the expected conditions and time period are included"
+    },
+    {
+      "rect" : [
+        348,
+        585.56640000000004,
+        210.03999999999996,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "in this group. This information may be shown as from"
+        }
+      ],
+      "text" : "in this group. This information may be shown as from"
+    },
+    {
+      "rect" : [
+        348,
+        573.06640000000004,
+        210.06700000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "(FM), and temporary (TEMPO). “FM” is used when a"
+        }
+      ],
+      "text" : "(FM), and temporary (TEMPO). “FM” is used when a"
+    },
+    {
+      "rect" : [
+        348,
+        560.56640000000004,
+        210.01999999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "rapid and significant change, usually within an hour, is"
+        }
+      ],
+      "text" : "rapid and significant change, usually within an hour, is"
+    },
+    {
+      "rect" : [
+        348,
+        548.06640000000004,
+        209.93000000000006,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "expected. “TEMPO” is used for temporary fluctuations"
+        }
+      ],
+      "text" : "expected. “TEMPO” is used for temporary fluctuations"
+    },
+    {
+      "rect" : [
+        348,
+        535.56640000000004,
+        176.83999999999992,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "of weather, expected to last less than 1 hour."
+        }
+      ],
+      "text" : "of weather, expected to last less than 1 hour."
+    },
+    {
+      "rect" : [
+        330,
+        518.56640000000004,
+        228.02000000000021,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "10. PROB30—a given percentage that describes the"
+        }
+      ],
+      "text" : "10. PROB30—a given percentage that describes the"
+    },
+    {
+      "rect" : [
+        348,
+        506.06640000000004,
+        210.125,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "probability of thunderstorms and precipitation"
+        }
+      ],
+      "text" : "probability of thunderstorms and precipitation"
+    },
+    {
+      "rect" : [
+        348,
+        493.56640000000004,
+        209.99999999999989,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "occurring in the coming hours. This forecast is not"
+        }
+      ],
+      "text" : "occurring in the coming hours. This forecast is not"
+    },
+    {
+      "rect" : [
+        348,
+        481.06640000000004,
+        194.39999999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "used for the first 6 hours of the 24-hour forecast."
+        }
+      ],
+      "text" : "used for the first 6 hours of the 24-hour forecast."
+    },
+    {
+      "rect" : [
+        321,
+        456.06640000000004,
+        38.329999999999984,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Example:"
+        }
+      ],
+      "text" : "Example:"
+    },
+    {
+      "rect" : [
+        321,
+        443.56640000000004,
+        18.889999999999986,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "TAF"
+        }
+      ],
+      "text" : "TAF"
+    },
+    {
+      "rect" : [
+        321,
+        431.06640000000004,
+        106.67000000000002,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "KPIR 111130Z 1112/1212"
+        }
+      ],
+      "text" : "KPIR 111130Z 1112/1212"
+    },
+    {
+      "rect" : [
+        321,
+        418.56640000000004,
+        116.95999999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "TEMPO 1112/1114 5SM BR"
+        }
+      ],
+      "text" : "TEMPO 1112/1114 5SM BR"
+    },
+    {
+      "rect" : [
+        321,
+        406.06640000000004,
+        194.46000000000004,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "FM1500 16015G25KT P6SM SCT040 BKN250"
+        }
+      ],
+      "text" : "FM1500 16015G25KT P6SM SCT040 BKN250"
+    },
+    {
+      "rect" : [
+        321,
+        393.56640000000004,
+        236.93000000000006,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "FM120000 14012KT P6SM BKN080 OVC150 PROB30"
+        }
+      ],
+      "text" : "FM120000 14012KT P6SM BKN080 OVC150 PROB30"
+    },
+    {
+      "rect" : [
+        321,
+        381.06640000000004,
+        147.24000000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "1200/1204 3SM TSRA BKN030CB"
+        }
+      ],
+      "text" : "1200/1204 3SM TSRA BKN030CB"
+    },
+    {
+      "rect" : [
+        321,
+        368.56640000000004,
+        182.24000000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "FM120400 1408KT P6SM SCT040 OVC080"
+        }
+      ],
+      "text" : "FM120400 1408KT P6SM SCT040 OVC080"
+    },
+    {
+      "rect" : [
+        321,
+        356.06640000000004,
+        181.13,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "TEMPO 1204/1208 3SM TSRA OVC030CB"
+        }
+      ],
+      "text" : "TEMPO 1204/1208 3SM TSRA OVC030CB"
+    },
+    {
+      "rect" : [
+        321,
+        331.06640000000004,
+        51.110000000000014,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Explanation:"
+        }
+      ],
+      "text" : "Explanation:"
+    },
+    {
+      "rect" : [
+        321,
+        318.56640000000004,
+        236.99000000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Routine TAF for Pierre, South Dakota…on the 11th day of"
+        }
+      ],
+      "text" : "Routine TAF for Pierre, South Dakota…on the 11th day of"
+    },
+    {
+      "rect" : [
+        321,
+        306.06640000000004,
+        237.01900000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the month, at 1130Z…valid for 24 hours from 1200Z on the"
+        }
+      ],
+      "text" : "the month, at 1130Z…valid for 24 hours from 1200Z on the"
+    },
+    {
+      "rect" : [
+        321,
+        293.56640000000004,
+        237,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "11th to 1200Z on the 12th…wind from 150° at 12 knots…"
+        }
+      ],
+      "text" : "11th to 1200Z on the 12th…wind from 150° at 12 knots…"
+    },
+    {
+      "rect" : [
+        321,
+        281.06640000000004,
+        236.99599999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "visibility greater than 6 SM…broken clouds at 9,000 feet…"
+        }
+      ],
+      "text" : "visibility greater than 6 SM…broken clouds at 9,000 feet…"
+    },
+    {
+      "rect" : [
+        321,
+        268.56640000000004,
+        236.99499999999989,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "temporarily, between 1200Z and 1400Z, visibility 5 SM in"
+        }
+      ],
+      "text" : "temporarily, between 1200Z and 1400Z, visibility 5 SM in"
+    },
+    {
+      "rect" : [
+        321,
+        256.06640000000004,
+        236.9699999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "mist…from 1500Z winds from 160° at 15 knots, gusting"
+        }
+      ],
+      "text" : "mist…from 1500Z winds from 160° at 15 knots, gusting"
+    },
+    {
+      "rect" : [
+        321,
+        243.56640000000004,
+        237.00699999999995,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "to 25 knots visibility greater than 6 SM…clouds scattered"
+        }
+      ],
+      "text" : "to 25 knots visibility greater than 6 SM…clouds scattered"
+    },
+    {
+      "rect" : [
+        321,
+        231.06640000000004,
+        237.01400000000001,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "at 4,000 feet and broken at 25,000 feet…from 0000Z wind"
+        }
+      ],
+      "text" : "at 4,000 feet and broken at 25,000 feet…from 0000Z wind"
+    },
+    {
+      "rect" : [
+        321,
+        218.56640000000004,
+        237.01700000000017,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "from 140° at 12 knots…visibility greater than 6 SM…clouds"
+        }
+      ],
+      "text" : "from 140° at 12 knots…visibility greater than 6 SM…clouds"
+    },
+    {
+      "rect" : [
+        321,
+        206.06640000000004,
+        237.08999999999992,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "broken at 8,000 feet, overcast at 15,000 feet…between 0000Z"
+        }
+      ],
+      "text" : "broken at 8,000 feet, overcast at 15,000 feet…between 0000Z"
+    },
+    {
+      "rect" : [
+        321,
+        193.56640000000004,
+        236.82600000000002,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "and 0400Z, there is 30 percent probability of visibility 3"
+        }
+      ],
+      "text" : "and 0400Z, there is 30 percent probability of visibility 3"
+    },
+    {
+      "rect" : [
+        321,
+        181.06640000000004,
+        237.00000000000011,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "SM…thunderstorm with moderate rain showers…clouds"
+        }
+      ],
+      "text" : "SM…thunderstorm with moderate rain showers…clouds"
+    },
+    {
+      "rect" : [
+        321,
+        168.56640000000004,
+        237.06999999999994,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "broken at 3,000 feet with cumulonimbus clouds…from"
+        }
+      ],
+      "text" : "broken at 3,000 feet with cumulonimbus clouds…from"
+    },
+    {
+      "rect" : [
+        321,
+        156.06640000000004,
+        237.00599999999986,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "0400Z…winds from 140° at 8 knots…visibility greater than"
+        }
+      ],
+      "text" : "0400Z…winds from 140° at 8 knots…visibility greater than"
+    },
+    {
+      "rect" : [
+        321,
+        143.56640000000004,
+        237.00599999999997,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "6 miles…clouds at 4,000 scattered and overcast at 8,000…"
+        }
+      ],
+      "text" : "6 miles…clouds at 4,000 scattered and overcast at 8,000…"
+    },
+    {
+      "rect" : [
+        321,
+        131.06640000000004,
+        236.91999999999985,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "temporarily between 0400Z and 0800Z…visibility 3 miles…"
+        }
+      ],
+      "text" : "temporarily between 0400Z and 0800Z…visibility 3 miles…"
+    },
+    {
+      "rect" : [
+        321,
+        118.56640000000004,
+        237.11000000000001,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "thunderstorms with moderate rain showers…clouds overcast"
+        }
+      ],
+      "text" : "thunderstorms with moderate rain showers…clouds overcast"
+    },
+    {
+      "rect" : [
+        321,
+        106.06640000000004,
+        237.00900000000001,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "at 3,000 feet with cumulonimbus clouds…end of report (=)."
+        }
+      ],
+      "text" : "at 3,000 feet with cumulonimbus clouds…end of report (=)."
+    },
+    {
+      "rect" : [
+        72,
+        715.97970000000009,
+        107.36399999999998,
+        15.827999999999975
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 12,
+          "text" : "Aviation Forecasts"
+        }
+      ],
+      "text" : "Aviation Forecasts"
+    },
+    {
+      "rect" : [
+        72,
+        704.26370000000009,
+        237.14000000000004,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Observed weather condition reports are often used in the"
+        }
+      ],
+      "text" : "Observed weather condition reports are often used in the"
+    },
+    {
+      "rect" : [
+        72,
+        691.76370000000009,
+        237.00399999999996,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "creation of forecasts for the same area. A variety of different"
+        }
+      ],
+      "text" : "creation of forecasts for the same area. A variety of different"
+    },
+    {
+      "rect" : [
+        72,
+        679.26370000000009,
+        236.86799999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "forecast products are produced and designed to be used in the"
+        }
+      ],
+      "text" : "forecast products are produced and designed to be used in the"
+    },
+    {
+      "rect" : [
+        72,
+        666.76370000000009,
+        237.01999999999987,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "preflight planning stage. The printed forecasts that pilots need"
+        }
+      ],
+      "text" : "preflight planning stage. The printed forecasts that pilots need"
+    },
+    {
+      "rect" : [
+        72,
+        654.26370000000009,
+        237.04300000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "to be familiar with are the terminal aerodrome forecast (TAF),"
+        }
+      ],
+      "text" : "to be familiar with are the terminal aerodrome forecast (TAF),"
+    },
+    {
+      "rect" : [
+        72,
+        641.76370000000009,
+        237.06000000000006,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "aviation area forecast (FA), inflight weather advisories"
+        }
+      ],
+      "text" : "aviation area forecast (FA), inflight weather advisories"
+    },
+    {
+      "rect" : [
+        72,
+        629.26370000000009,
+        237.00999999999982,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "(SIGMET, AIRMET), and the winds and temperatures aloft"
+        }
+      ],
+      "text" : "(SIGMET, AIRMET), and the winds and temperatures aloft"
+    },
+    {
+      "rect" : [
+        72,
+        616.76370000000009,
+        55.540000000000006,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "forecast (FB)."
+        }
+      ],
+      "text" : "forecast (FB)."
+    },
+    {
+      "rect" : [
+        72,
+        591.19370000000004,
+        176.70000000000005,
+        13.190000000000055
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 10,
+          "text" : "Terminal Aerodrome Forecasts (TAF)"
+        }
+      ],
+      "text" : "Terminal Aerodrome Forecasts (TAF)"
+    },
+    {
+      "rect" : [
+        72,
+        578.76370000000009,
+        237.13999999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "A TAF is a report established for the five statute mile"
+        }
+      ],
+      "text" : "A TAF is a report established for the five statute mile"
+    },
+    {
+      "rect" : [
+        72,
+        566.26370000000009,
+        237.01499999999987,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "radius around an airport. TAF reports are usually given for"
+        }
+      ],
+      "text" : "radius around an airport. TAF reports are usually given for"
+    },
+    {
+      "rect" : [
+        72,
+        553.76370000000009,
+        237.02499999999986,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "larger airports. Each TAF is valid for a 24 or 30-hour time"
+        }
+      ],
+      "text" : "larger airports. Each TAF is valid for a 24 or 30-hour time"
+    },
+    {
+      "rect" : [
+        72,
+        541.26370000000009,
+        237.00100000000009,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "period and is updated four times a day at 0000Z, 0600Z,"
+        }
+      ],
+      "text" : "period and is updated four times a day at 0000Z, 0600Z,"
+    },
+    {
+      "rect" : [
+        72,
+        528.76370000000009,
+        236.99499999999995,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "1200Z, and 1800Z. The TAF utilizes the same descriptors"
+        }
+      ],
+      "text" : "1200Z, and 1800Z. The TAF utilizes the same descriptors"
+    },
+    {
+      "rect" : [
+        72,
+        516.26370000000009,
+        236.99000000000007,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "and abbreviations as used in the METAR report. The TAF"
+        }
+      ],
+      "text" : "and abbreviations as used in the METAR report. The TAF"
+    },
+    {
+      "rect" : [
+        72,
+        503.76370000000009,
+        218.86999999999995,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "includes the following information in sequential order:"
+        }
+      ],
+      "text" : "includes the following information in sequential order:"
+    },
+    {
+      "rect" : [
+        81,
+        486.76370000000003,
+        7.5,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "1. "
+        }
+      ],
+      "text" : "1. "
+    },
+    {
+      "rect" : [
+        99,
+        486.76370000000003,
+        209.88600000000008,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Type of report—a TAF can be either a routine forecast"
+        }
+      ],
+      "text" : "Type of report—a TAF can be either a routine forecast"
+    },
+    {
+      "rect" : [
+        99,
+        474.26370000000003,
+        177.45000000000005,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "(TAF) or an amended forecast (TAF AMD)."
+        }
+      ],
+      "text" : "(TAF) or an amended forecast (TAF AMD)."
+    },
+    {
+      "rect" : [
+        81,
+        457.26370000000003,
+        7.5,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "2. "
+        }
+      ],
+      "text" : "2. "
+    },
+    {
+      "rect" : [
+        99,
+        457.26370000000003,
+        209.99999999999994,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "ICAO station identifier—the station identifier is the"
+        }
+      ],
+      "text" : "ICAO station identifier—the station identifier is the"
+    },
+    {
+      "rect" : [
+        99,
+        444.76370000000003,
+        126.93000000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "same as that used in a METAR."
+        }
+      ],
+      "text" : "same as that used in a METAR."
+    },
+    {
+      "rect" : [
+        81,
+        427.76370000000003,
+        228.00500000000005,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "3. Date and time of origin—time and date (081125Z)"
+        }
+      ],
+      "text" : "3. Date and time of origin—time and date (081125Z)"
+    },
+    {
+      "rect" : [
+        99,
+        415.26370000000003,
+        210.01100000000002,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "of TAF origination is given in the six-number code"
+        }
+      ],
+      "text" : "of TAF origination is given in the six-number code"
+    },
+    {
+      "rect" : [
+        99,
+        402.76370000000003,
+        210,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "with the first two being the date, the last four being"
+        }
+      ],
+      "text" : "with the first two being the date, the last four being"
+    },
+    {
+      "rect" : [
+        99,
+        390.26370000000003,
+        210.01300000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the time. Time is always given in UTC as denoted by"
+        }
+      ],
+      "text" : "the time. Time is always given in UTC as denoted by"
+    },
+    {
+      "rect" : [
+        99,
+        377.76370000000003,
+        124.44000000000005,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the Z following the time block."
+        }
+      ],
+      "text" : "the Z following the time block."
+    },
+    {
+      "rect" : [
+        81,
+        360.76370000000003,
+        228.02499999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "4. Valid period dates and times—The TAF valid period"
+        }
+      ],
+      "text" : "4. Valid period dates and times—The TAF valid period"
+    },
+    {
+      "rect" : [
+        99,
+        348.26370000000003,
+        210.01100000000002,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "(0812/0912) follows the date/time of forecast origin"
+        }
+      ],
+      "text" : "(0812/0912) follows the date/time of forecast origin"
+    },
+    {
+      "rect" : [
+        99,
+        335.76370000000003,
+        210.00399999999991,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "group. Scheduled 24 and 30 hour TAFs are issued"
+        }
+      ],
+      "text" : "group. Scheduled 24 and 30 hour TAFs are issued"
+    },
+    {
+      "rect" : [
+        99,
+        323.26370000000003,
+        210.01999999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "four times per day, at 0000, 0600, 1200, and 1800Z."
+        }
+      ],
+      "text" : "four times per day, at 0000, 0600, 1200, and 1800Z."
+    },
+    {
+      "rect" : [
+        99,
+        310.76370000000003,
+        210.01999999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "The first two digits (08) are the day of the month for"
+        }
+      ],
+      "text" : "The first two digits (08) are the day of the month for"
+    },
+    {
+      "rect" : [
+        99,
+        298.26370000000003,
+        210.00599999999997,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the start of the TAF. The next two digits (12) are the"
+        }
+      ],
+      "text" : "the start of the TAF. The next two digits (12) are the"
+    },
+    {
+      "rect" : [
+        99,
+        285.76370000000003,
+        209.98999999999995,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "starting hour (UTC). 09 is the day of the month for"
+        }
+      ],
+      "text" : "starting hour (UTC). 09 is the day of the month for"
+    },
+    {
+      "rect" : [
+        99,
+        273.26370000000003,
+        210.00999999999993,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the end of the TAF, and the last two digits (12) are"
+        }
+      ],
+      "text" : "the end of the TAF, and the last two digits (12) are"
+    },
+    {
+      "rect" : [
+        99,
+        260.76370000000003,
+        209.99000000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the ending hour (UTC) of the valid period. A forecast"
+        }
+      ],
+      "text" : "the ending hour (UTC) of the valid period. A forecast"
+    },
+    {
+      "rect" : [
+        99,
+        248.26370000000003,
+        210.02999999999986,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "period that begins at midnight UTC is annotated as 00."
+        }
+      ],
+      "text" : "period that begins at midnight UTC is annotated as 00."
+    },
+    {
+      "rect" : [
+        99,
+        235.76370000000003,
+        210.0030000000001,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "If the end time of a valid period is at midnight UTC,"
+        }
+      ],
+      "text" : "If the end time of a valid period is at midnight UTC,"
+    },
+    {
+      "rect" : [
+        99,
+        223.26370000000003,
+        210.01800000000009,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "it is annotated as 24. For example, a 00Z TAF issued"
+        }
+      ],
+      "text" : "it is annotated as 24. For example, a 00Z TAF issued"
+    },
+    {
+      "rect" : [
+        99,
+        210.76370000000003,
+        210.02200000000005,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "on the 9th of the month and valid for 24 hours would"
+        }
+      ],
+      "text" : "on the 9th of the month and valid for 24 hours would"
+    },
+    {
+      "rect" : [
+        99,
+        198.26370000000003,
+        134.98000000000002,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "have a valid period of 0900/0924."
+        }
+      ],
+      "text" : "have a valid period of 0900/0924."
+    },
+    {
+      "rect" : [
+        81,
+        181.2637,
+        7.5,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "5. "
+        }
+      ],
+      "text" : "5. "
+    },
+    {
+      "rect" : [
+        99,
+        181.2637,
+        210.03499999999997,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Forecast wind—the wind direction and speed forecast"
+        }
+      ],
+      "text" : "Forecast wind—the wind direction and speed forecast"
+    },
+    {
+      "rect" : [
+        99,
+        168.7637,
+        210.00400000000002,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "are coded in a five-digit number group. An example"
+        }
+      ],
+      "text" : "are coded in a five-digit number group. An example"
+    },
+    {
+      "rect" : [
+        99,
+        156.2637,
+        210.00299999999993,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "would be 15011KT. The first three digits indicate the"
+        }
+      ],
+      "text" : "would be 15011KT. The first three digits indicate the"
+    },
+    {
+      "rect" : [
+        99,
+        143.7637,
+        210.00700000000006,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "direction of the wind in reference to true north. The"
+        }
+      ],
+      "text" : "direction of the wind in reference to true north. The"
+    },
+    {
+      "rect" : [
+        99,
+        131.2637,
+        210.01099999999997,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "last two digits state the windspeed in knots appended"
+        }
+      ],
+      "text" : "last two digits state the windspeed in knots appended"
+    },
+    {
+      "rect" : [
+        99,
+        118.7637,
+        210.00599999999986,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "with “KT.” Like the METAR, winds greater than 99"
+        }
+      ],
+      "text" : "with “KT.” Like the METAR, winds greater than 99"
+    },
+    {
+      "rect" : [
+        99,
+        106.2637,
+        121.10000000000002,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "knots are given in three digits."
+        }
+      ],
+      "text" : "knots are given in three digits."
+    },
+    {
+      "rect" : [
+        81,
+        89.2637,
+        7.5,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "6. "
+        }
+      ],
+      "text" : "6. "
+    },
+    {
+      "rect" : [
+        99,
+        89.2637,
+        210.00200000000007,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Forecast visibility—given in statute miles and may"
+        }
+      ],
+      "text" : "Forecast visibility—given in statute miles and may"
+    },
+    {
+      "rect" : [
+        99,
+        76.7637,
+        209.9899999999999,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "be in whole numbers or fractions. If the forecast is"
+        }
+      ],
+      "text" : "be in whole numbers or fractions. If the forecast is"
+    },
+    {
+      "rect" : [
+        99,
+        64.2637,
+        181.65000000000009,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "greater than six miles, it is coded as “P6SM.”"
+        }
+      ],
+      "text" : "greater than six miles, it is coded as “P6SM.”"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    594,
+    774
+  ],
+  "caseID" : "faa-phak-8083-25c",
+  "graphics" : [
+
+  ],
+  "lines" : [
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        537.98540000000003,
+        33.709700000000005,
+        20.009999999999991,
+        12.310000000000002
+      ],
+      "text" : "13-9"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        330,
+        719.56640000000004,
+        227.90000000000009,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4647,
+        "headingLevel" : 0,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 22831
+      },
+      "text" : "7. Forecast significant weather—weather phenomena"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        348,
+        707.06640000000004,
+        209.99000000000001,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4647,
+        "headingLevel" : 0,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 22833
+      },
+      "text" : "are coded in the TAF reports in the same format as"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        348,
+        694.56640000000004,
+        52.220000000000027,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4647,
+        "headingLevel" : 0,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 22834
+      },
+      "text" : "the METAR."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        330,
+        677.56640000000004,
+        7.5,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4648,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 22835
+      },
+      "text" : "8."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        348,
+        677.56640000000004,
+        210.005,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4648,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 22836
+      },
+      "text" : "Forecast sky condition—given in the same format as"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        348,
+        665.06640000000004,
+        209.99000000000001,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4648,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 22837
+      },
+      "text" : "the METAR. Only cumulonimbus (CB) clouds are"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        348,
+        652.56640000000004,
+        209.98000000000002,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4648,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 22838
+      },
+      "text" : "forecast in this portion of the TAF report as opposed"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        348,
+        640.06640000000004,
+        183.8900000000001,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4648,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 22839
+      },
+      "text" : "to CBs and towering cumulus in the METAR."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        330,
+        623.06640000000004,
+        7.5,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4649,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 22840
+      },
+      "text" : "9."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        348,
+        623.06640000000004,
+        210.03999999999996,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4649,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 22841
+      },
+      "text" : "Forecast change group—for any significant weather"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        348,
+        610.56640000000004,
+        210.02800000000002,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4649,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 22842
+      },
+      "text" : "change forecast to occur during the TAF time period,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        348,
+        598.06640000000004,
+        210.04999999999995,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4649,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 22843
+      },
+      "text" : "the expected conditions and time period are included"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        348,
+        585.56640000000004,
+        210.03999999999996,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4649,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 22844
+      },
+      "text" : "in this group. This information may be shown as from"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        348,
+        573.06640000000004,
+        210.06700000000001,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4649,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 22845
+      },
+      "text" : "(FM), and temporary (TEMPO). “FM” is used when a"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        348,
+        560.56640000000004,
+        210.01999999999998,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4649,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 22846
+      },
+      "text" : "rapid and significant change, usually within an hour, is"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        348,
+        548.06640000000004,
+        209.93000000000006,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4649,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 22847
+      },
+      "text" : "expected. “TEMPO” is used for temporary fluctuations"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        348,
+        535.56640000000004,
+        176.83999999999992,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4649,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 22848
+      },
+      "text" : "of weather, expected to last less than 1 hour."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        330,
+        518.56640000000004,
+        228.02000000000021,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4650,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 22849
+      },
+      "text" : "10. PROB30—a given percentage that describes the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        348,
+        506.06640000000004,
+        210.125,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4650,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 22851
+      },
+      "text" : "probability of thunderstorms and precipitation"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        348,
+        493.56640000000004,
+        209.99999999999989,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4650,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 22852
+      },
+      "text" : "occurring in the coming hours. This forecast is not"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        348,
+        481.06640000000004,
+        194.39999999999998,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4650,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 22853
+      },
+      "text" : "used for the first 6 hours of the 24-hour forecast."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        456.06640000000004,
+        38.329999999999984,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4651,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 22854
+      },
+      "text" : "Example:"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        443.56640000000004,
+        18.889999999999986,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4652,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 22855
+      },
+      "text" : "TAF"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        431.06640000000004,
+        106.67000000000002,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4653,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 22856
+      },
+      "text" : "KPIR 111130Z 1112/1212"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        418.56640000000004,
+        116.95999999999998,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4654,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 22857
+      },
+      "text" : "TEMPO 1112/1114 5SM BR"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        406.06640000000004,
+        194.46000000000004,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4655,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 22858
+      },
+      "text" : "FM1500 16015G25KT P6SM SCT040 BKN250"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        393.56640000000004,
+        236.93000000000006,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4656,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 22859
+      },
+      "text" : "FM120000 14012KT P6SM BKN080 OVC150 PROB30"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        381.06640000000004,
+        147.24000000000001,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4656,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 22860
+      },
+      "text" : "1200/1204 3SM TSRA BKN030CB"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        368.56640000000004,
+        182.24000000000001,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4657,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 22861
+      },
+      "text" : "FM120400 1408KT P6SM SCT040 OVC080"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        356.06640000000004,
+        181.13,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4658,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 22862
+      },
+      "text" : "TEMPO 1204/1208 3SM TSRA OVC030CB"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        331.06640000000004,
+        51.110000000000014,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4659,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 22863
+      },
+      "text" : "Explanation:"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        318.56640000000004,
+        236.99000000000001,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4660,
+        "headingLevel" : 0,
+        "lineCount" : 18,
+        "opensWithSplitMarker" : false,
+        "order" : 22864
+      },
+      "text" : "Routine TAF for Pierre, South Dakota…on the 11th day of"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        306.06640000000004,
+        237.01900000000001,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4660,
+        "headingLevel" : 0,
+        "lineCount" : 18,
+        "opensWithSplitMarker" : false,
+        "order" : 22865
+      },
+      "text" : "the month, at 1130Z…valid for 24 hours from 1200Z on the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        293.56640000000004,
+        237,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4660,
+        "headingLevel" : 0,
+        "lineCount" : 18,
+        "opensWithSplitMarker" : false,
+        "order" : 22866
+      },
+      "text" : "11th to 1200Z on the 12th…wind from 150° at 12 knots…"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        281.06640000000004,
+        236.99599999999998,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4660,
+        "headingLevel" : 0,
+        "lineCount" : 18,
+        "opensWithSplitMarker" : false,
+        "order" : 22867
+      },
+      "text" : "visibility greater than 6 SM…broken clouds at 9,000 feet…"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        268.56640000000004,
+        236.99499999999989,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4660,
+        "headingLevel" : 0,
+        "lineCount" : 18,
+        "opensWithSplitMarker" : false,
+        "order" : 22868
+      },
+      "text" : "temporarily, between 1200Z and 1400Z, visibility 5 SM in"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        256.06640000000004,
+        236.9699999999998,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4660,
+        "headingLevel" : 0,
+        "lineCount" : 18,
+        "opensWithSplitMarker" : false,
+        "order" : 22869
+      },
+      "text" : "mist…from 1500Z winds from 160° at 15 knots, gusting"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        243.56640000000004,
+        237.00699999999995,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 4660,
+        "headingLevel" : 0,
+        "lineCount" : 18,
+        "opensWithSplitMarker" : false,
+        "order" : 22870
+      },
+      "text" : "to 25 knots visibility greater than 6 SM…clouds scattered"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        231.06640000000004,
+        237.01400000000001,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 4660,
+        "headingLevel" : 0,
+        "lineCount" : 18,
+        "opensWithSplitMarker" : false,
+        "order" : 22871
+      },
+      "text" : "at 4,000 feet and broken at 25,000 feet…from 0000Z wind"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        218.56640000000004,
+        237.01700000000017,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 4660,
+        "headingLevel" : 0,
+        "lineCount" : 18,
+        "opensWithSplitMarker" : false,
+        "order" : 22872
+      },
+      "text" : "from 140° at 12 knots…visibility greater than 6 SM…clouds"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        206.06640000000004,
+        237.08999999999992,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 4660,
+        "headingLevel" : 0,
+        "lineCount" : 18,
+        "opensWithSplitMarker" : false,
+        "order" : 22873
+      },
+      "text" : "broken at 8,000 feet, overcast at 15,000 feet…between 0000Z"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        193.56640000000004,
+        236.82600000000002,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 4660,
+        "headingLevel" : 0,
+        "lineCount" : 18,
+        "opensWithSplitMarker" : false,
+        "order" : 22874
+      },
+      "text" : "and 0400Z, there is 30 percent probability of visibility 3"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        181.06640000000004,
+        237.00000000000011,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 4660,
+        "headingLevel" : 0,
+        "lineCount" : 18,
+        "opensWithSplitMarker" : false,
+        "order" : 22875
+      },
+      "text" : "SM…thunderstorm with moderate rain showers…clouds"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        168.56640000000004,
+        237.06999999999994,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 4660,
+        "headingLevel" : 0,
+        "lineCount" : 18,
+        "opensWithSplitMarker" : false,
+        "order" : 22876
+      },
+      "text" : "broken at 3,000 feet with cumulonimbus clouds…from"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        156.06640000000004,
+        237.00599999999986,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 4660,
+        "headingLevel" : 0,
+        "lineCount" : 18,
+        "opensWithSplitMarker" : false,
+        "order" : 22877
+      },
+      "text" : "0400Z…winds from 140° at 8 knots…visibility greater than"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        143.56640000000004,
+        237.00599999999997,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 4660,
+        "headingLevel" : 0,
+        "lineCount" : 18,
+        "opensWithSplitMarker" : false,
+        "order" : 22878
+      },
+      "text" : "6 miles…clouds at 4,000 scattered and overcast at 8,000…"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        131.06640000000004,
+        236.91999999999985,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 4660,
+        "headingLevel" : 0,
+        "lineCount" : 18,
+        "opensWithSplitMarker" : false,
+        "order" : 22879
+      },
+      "text" : "temporarily between 0400Z and 0800Z…visibility 3 miles…"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        118.56640000000004,
+        237.11000000000001,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 4660,
+        "headingLevel" : 0,
+        "lineCount" : 18,
+        "opensWithSplitMarker" : false,
+        "order" : 22880
+      },
+      "text" : "thunderstorms with moderate rain showers…clouds overcast"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        106.06640000000004,
+        237.00900000000001,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 4660,
+        "headingLevel" : 0,
+        "lineCount" : 18,
+        "opensWithSplitMarker" : false,
+        "order" : 22881
+      },
+      "text" : "at 3,000 feet with cumulonimbus clouds…end of report (=)."
+    },
+    {
+      "fontSize" : 12,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        715.97970000000009,
+        107.36399999999998,
+        15.827999999999975
+      ],
+      "structure" : {
+        "group" : 4637,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 22777
+      },
+      "text" : "Aviation Forecasts"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        704.26370000000009,
+        237.14000000000004,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4638,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 22778
+      },
+      "text" : "Observed weather condition reports are often used in the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        691.76370000000009,
+        237.00399999999996,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4638,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 22779
+      },
+      "text" : "creation of forecasts for the same area. A variety of different"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        679.26370000000009,
+        236.86799999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4638,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 22780
+      },
+      "text" : "forecast products are produced and designed to be used in the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        666.76370000000009,
+        237.01999999999987,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4638,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 22781
+      },
+      "text" : "preflight planning stage. The printed forecasts that pilots need"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        654.26370000000009,
+        237.04300000000001,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4638,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 22782
+      },
+      "text" : "to be familiar with are the terminal aerodrome forecast (TAF),"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        641.76370000000009,
+        237.06000000000006,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4638,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 22783
+      },
+      "text" : "aviation area forecast (FA), inflight weather advisories"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        629.26370000000009,
+        237.00999999999982,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4638,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 22784
+      },
+      "text" : "(SIGMET, AIRMET), and the winds and temperatures aloft"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        616.76370000000009,
+        55.540000000000006,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4638,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 22785
+      },
+      "text" : "forecast (FB)."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        591.19370000000004,
+        176.70000000000005,
+        13.190000000000055
+      ],
+      "structure" : {
+        "group" : 4639,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 22786
+      },
+      "text" : "Terminal Aerodrome Forecasts (TAF)"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        578.76370000000009,
+        237.13999999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4640,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 22787
+      },
+      "text" : "A TAF is a report established for the five statute mile"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        566.26370000000009,
+        237.01499999999987,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4640,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 22788
+      },
+      "text" : "radius around an airport. TAF reports are usually given for"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        553.76370000000009,
+        237.02499999999986,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4640,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 22789
+      },
+      "text" : "larger airports. Each TAF is valid for a 24 or 30-hour time"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        541.26370000000009,
+        237.00100000000009,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4640,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 22790
+      },
+      "text" : "period and is updated four times a day at 0000Z, 0600Z,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        528.76370000000009,
+        236.99499999999995,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4640,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 22791
+      },
+      "text" : "1200Z, and 1800Z. The TAF utilizes the same descriptors"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        516.26370000000009,
+        236.99000000000007,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4640,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 22792
+      },
+      "text" : "and abbreviations as used in the METAR report. The TAF"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        503.76370000000009,
+        218.86999999999995,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4640,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 22793
+      },
+      "text" : "includes the following information in sequential order:"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        81,
+        486.76370000000003,
+        7.5,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4641,
+        "headingLevel" : 0,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 22794
+      },
+      "text" : "1."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        486.76370000000003,
+        209.88600000000008,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4641,
+        "headingLevel" : 0,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 22795
+      },
+      "text" : "Type of report—a TAF can be either a routine forecast"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        474.26370000000003,
+        177.45000000000005,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4641,
+        "headingLevel" : 0,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 22796
+      },
+      "text" : "(TAF) or an amended forecast (TAF AMD)."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        81,
+        457.26370000000003,
+        7.5,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4642,
+        "headingLevel" : 0,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 22797
+      },
+      "text" : "2."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        457.26370000000003,
+        209.99999999999994,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4642,
+        "headingLevel" : 0,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 22798
+      },
+      "text" : "ICAO station identifier—the station identifier is the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        444.76370000000003,
+        126.93000000000001,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4642,
+        "headingLevel" : 0,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 22799
+      },
+      "text" : "same as that used in a METAR."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        81,
+        427.76370000000003,
+        228.00500000000005,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4643,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 22800
+      },
+      "text" : "3. Date and time of origin—time and date (081125Z)"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        415.26370000000003,
+        210.01100000000002,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4643,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 22801
+      },
+      "text" : "of TAF origination is given in the six-number code"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        402.76370000000003,
+        210,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4643,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 22802
+      },
+      "text" : "with the first two being the date, the last four being"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        390.26370000000003,
+        210.01300000000003,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4643,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 22803
+      },
+      "text" : "the time. Time is always given in UTC as denoted by"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        377.76370000000003,
+        124.44000000000005,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4643,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 22804
+      },
+      "text" : "the Z following the time block."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        81,
+        360.76370000000003,
+        228.02499999999998,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4644,
+        "headingLevel" : 0,
+        "lineCount" : 14,
+        "opensWithSplitMarker" : false,
+        "order" : 22805
+      },
+      "text" : "4. Valid period dates and times—The TAF valid period"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        348.26370000000003,
+        210.01100000000002,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4644,
+        "headingLevel" : 0,
+        "lineCount" : 14,
+        "opensWithSplitMarker" : false,
+        "order" : 22806
+      },
+      "text" : "(0812/0912) follows the date/time of forecast origin"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        335.76370000000003,
+        210.00399999999991,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4644,
+        "headingLevel" : 0,
+        "lineCount" : 14,
+        "opensWithSplitMarker" : false,
+        "order" : 22807
+      },
+      "text" : "group. Scheduled 24 and 30 hour TAFs are issued"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        323.26370000000003,
+        210.01999999999998,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4644,
+        "headingLevel" : 0,
+        "lineCount" : 14,
+        "opensWithSplitMarker" : false,
+        "order" : 22808
+      },
+      "text" : "four times per day, at 0000, 0600, 1200, and 1800Z."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        310.76370000000003,
+        210.01999999999998,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4644,
+        "headingLevel" : 0,
+        "lineCount" : 14,
+        "opensWithSplitMarker" : false,
+        "order" : 22809
+      },
+      "text" : "The first two digits (08) are the day of the month for"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        298.26370000000003,
+        210.00599999999997,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4644,
+        "headingLevel" : 0,
+        "lineCount" : 14,
+        "opensWithSplitMarker" : false,
+        "order" : 22810
+      },
+      "text" : "the start of the TAF. The next two digits (12) are the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        285.76370000000003,
+        209.98999999999995,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4644,
+        "headingLevel" : 0,
+        "lineCount" : 14,
+        "opensWithSplitMarker" : false,
+        "order" : 22811
+      },
+      "text" : "starting hour (UTC). 09 is the day of the month for"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        273.26370000000003,
+        210.00999999999993,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4644,
+        "headingLevel" : 0,
+        "lineCount" : 14,
+        "opensWithSplitMarker" : false,
+        "order" : 22812
+      },
+      "text" : "the end of the TAF, and the last two digits (12) are"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        260.76370000000003,
+        209.99000000000001,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4644,
+        "headingLevel" : 0,
+        "lineCount" : 14,
+        "opensWithSplitMarker" : false,
+        "order" : 22813
+      },
+      "text" : "the ending hour (UTC) of the valid period. A forecast"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        248.26370000000003,
+        210.02999999999986,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4644,
+        "headingLevel" : 0,
+        "lineCount" : 14,
+        "opensWithSplitMarker" : false,
+        "order" : 22814
+      },
+      "text" : "period that begins at midnight UTC is annotated as 00."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        235.76370000000003,
+        210.0030000000001,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 4644,
+        "headingLevel" : 0,
+        "lineCount" : 14,
+        "opensWithSplitMarker" : false,
+        "order" : 22815
+      },
+      "text" : "If the end time of a valid period is at midnight UTC,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        223.26370000000003,
+        210.01800000000009,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 4644,
+        "headingLevel" : 0,
+        "lineCount" : 14,
+        "opensWithSplitMarker" : false,
+        "order" : 22816
+      },
+      "text" : "it is annotated as 24. For example, a 00Z TAF issued"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        210.76370000000003,
+        210.02200000000005,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 4644,
+        "headingLevel" : 0,
+        "lineCount" : 14,
+        "opensWithSplitMarker" : false,
+        "order" : 22817
+      },
+      "text" : "on the 9th of the month and valid for 24 hours would"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        198.26370000000003,
+        134.98000000000002,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 4644,
+        "headingLevel" : 0,
+        "lineCount" : 14,
+        "opensWithSplitMarker" : false,
+        "order" : 22818
+      },
+      "text" : "have a valid period of 0900/0924."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        81,
+        181.2637,
+        7.5,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 4645,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 22819
+      },
+      "text" : "5."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        181.2637,
+        210.03499999999997,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 4645,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 22820
+      },
+      "text" : "Forecast wind—the wind direction and speed forecast"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        168.7637,
+        210.00400000000002,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 4645,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 22821
+      },
+      "text" : "are coded in a five-digit number group. An example"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        156.2637,
+        210.00299999999993,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 4645,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 22822
+      },
+      "text" : "would be 15011KT. The first three digits indicate the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        143.7637,
+        210.00700000000006,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 4645,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 22823
+      },
+      "text" : "direction of the wind in reference to true north. The"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        131.2637,
+        210.01099999999997,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 4645,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 22824
+      },
+      "text" : "last two digits state the windspeed in knots appended"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        118.7637,
+        210.00599999999986,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 4645,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 22825
+      },
+      "text" : "with “KT.” Like the METAR, winds greater than 99"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        106.2637,
+        121.10000000000002,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 4645,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 22826
+      },
+      "text" : "knots are given in three digits."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        81,
+        89.2637,
+        7.5,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 4646,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 22827
+      },
+      "text" : "6."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        89.2637,
+        210.00200000000007,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 4646,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 22828
+      },
+      "text" : "Forecast visibility—given in statute miles and may"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        76.7637,
+        209.9899999999999,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 4646,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 22829
+      },
+      "text" : "be in whole numbers or fractions. If the forecast is"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        64.2637,
+        181.65000000000009,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 4646,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 22830
+      },
+      "text" : "greater than six miles, it is coded as “P6SM.”"
+    }
+  ],
+  "page" : 319,
+  "paints" : [
+
+  ],
+  "rightsBasis" : "U.S. Government publication, retained as an external development corpus source. The PDF is not bundled or relicensed under the library license.",
+  "sourceSHA256" : "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
+  "sourceTitle" : "Pilot's Handbook of Aeronautical Knowledge, FAA-H-8083-25C",
+  "sourceURL" : "https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/faa-h-8083-25c.pdf"
+}

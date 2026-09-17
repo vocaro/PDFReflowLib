@@ -156,9 +156,15 @@ heading-type line above body text falls back too (FAA page 203 tags `Introductio
 and the next section as one `P`, #84). A source can also tag one paragraph in pieces: where a
 paragraph group's first line continues the previous group's last line (same edge and type, ordinary
 leading, the upper line filling the page's justified measure, and either a lowercase start, a
-hyphen or slash break, or a column that marks its paragraphs with space), the two read as one
-paragraph, and a group continuing a caption or list group that falls back falls back with it
-(#75). Removed furniture or
+hyphen or slash break, or a column that marks its paragraphs with space or is justified and sets
+space somewhere on its edge), the two read as one paragraph, and a group continuing a caption or
+list group that falls back falls back with it (#75). The same evidence joins a paragraph group to
+the untagged paragraph above it, and an untagged line to the group above it, where the other piece's
+group fell back beside a figure (#89); a table row, which spreads few characters over the measure,
+never joins. A paragraph group that reads as a title (a capital first, no closing punctuation, no
+leader on it or on the entry beneath, not centred over the column's text) is emitted as a heading
+ranked by size when every line is bold in a recurring label or heading style, or when it is one
+body-size line wholly in italic and title case over a wider body line on its own edge (#90). Removed furniture or
 image-contained lines invalidate incomplete groups.
 Validated paragraph identities prevent heuristic cross-page joins into different paragraphs.
 Heading levels belong to the neutral model and serialize as h1–h6; navigation remains flat.
@@ -298,7 +304,7 @@ content. Beneath an outermost row made only of candidates, the next row inward (
 its line heights, at least half a line height clear of the body) is a second header row that is
 removed only together with every line of the row above it, so a two-row head (title row with
 folio, opinion row) goes as a unit and a repeated line beneath unrepeated titles stays.
-Boundary page numbers use a consistent physical-page offset; numeric chapter-page folios retain their chapter prefix and use glyph height
+Boundary page numbers use a consistent physical-page offset; chapter-page folios, numbered (`5-17`) or lettered for an appendix (`C-2`, #90), retain their prefix and use glyph height
 so fallback font estimates do not break matching. Internal digits remain meaningful. Matching
 body titles, nearby captions and a page's only text are retained. Each affected page reports
 `furnitureRemoved`; clients can disable removal with `removeRepeatedHeadersAndFooters`.

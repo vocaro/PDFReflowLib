@@ -5,7 +5,7 @@
     {
       "id": "faa-phak-8083-25c",
       "sourceSHA256": "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
-      "basis": "Source pages 16 and 121 visually reviewed. Protects the introductory prose and figure preservation; does not approve page-121 column order. Pages 91/511 are source-reviewed narrow-gutter column-order regressions; the complete left column precedes the right. Reviewed chapter-page folios on pages 16/91 must remain absent from prose. Pages 211/212 visually reviewed: V-speed designators retain their source subscripts in bulleted definitions; source ASI figures remain preserved. Source pages 50/325 visually reviewed for tag-restored left-column-before-right-column order; page 81 caption remains beside the preceding image, before body prose. Page 191 reviewed: four separate left-column items precede the ammeter paragraph; the remaining page is still preserved as an image. Pages 35-36 and 116-117 visually reviewed: each two-column paragraph continues from the bottom of one page onto the next and must remain one paragraph across the source-page marker (#27). Figure 5-36 on page 121 reviewed in color (blue sky, yellow labels, aircraft): the preserved crop must keep its scale, ink contrast and hues (#27). Pages 22-25 and 52-53 visually reviewed (#45): the paragraph between page 22's figures, page 24's right column continued below the figure that opens page 25, and the tagged page 52 continued on the untagged page 53 must each remain one paragraph across the source-page marker. Pages 27, 191 and 365 source rasters reviewed (#69, #70): a bullet PDFKit splits from its text opens that item, not the tail of the block above, and a line broken after a slash inside a compound (`runway/` + `taxiway`, `alternator/` + `generator`) joins without a space. Pages 33, 43, 49, 201 and 370 source rasters reviewed (#63, #73): a section title that opens a paragraph continued on the next page follows the figure caption that closes its page and directly precedes that paragraph (pages 33, 49, 201); a two-line title set nearly the column's width is one heading (pages 43, 370). Pages 136, 159 and 340 source rasters reviewed, with pages 91, 156, 165, 199 and 262 checked against extracted geometry (#76, #82): a 10-point bold or 11-point bold-italic sub-heading on its own line is a heading followed by its paragraph, not the paragraph's opening words; page 159's `Figure 6-20.` caption ends at its own last line and the unpainted `Figure 5-16.` caption left outside the artwork's clip is not emitted (#85); page 340's two column titles on one row are two headings. Pages 25, 92 and 372 source rasters reviewed (#79): addresses broken after a dot or underscore rejoin without a space, including `(NACO)—www.faa.` + `gov/…` and the AIM bullet whose marker line ends inside its address; page 92’s `?n=wxcalc_densityaltitude` address no longer seeds a formula crop that split its paragraph. Pages 88, 98, 203, 231 and 335 (#84): chapter openers tagged P remain headings once their text-free Form XObjects no longer discard the page tags; page 203 source-reviewed, its tagged group spanning Introduction and the next section falls back. Page 89 (#75) source-reviewed: the applied tags read the viscosity and friction columns in order. Pages 105, 211 and 227 source-reviewed: paragraphs and a caption the source tags in pieces read as one element. Page 227 source raster reviewed (#77): the compass-rose figure's group box overhangs its rounded frame into the left column, but only its clipped part is figure ink, so the sentence ending `true course desired.` reflows whole; the word equations under `Step 1:`, `Step 2:` and `course is known:` are body text in the column's measure and reflow in order.",
+      "basis": "Source pages 16 and 121 visually reviewed. Protects the introductory prose and figure preservation; does not approve page-121 column order. Pages 91/511 are source-reviewed narrow-gutter column-order regressions; the complete left column precedes the right. Reviewed chapter-page folios on pages 16/91 must remain absent from prose. Pages 211/212 visually reviewed: V-speed designators retain their source subscripts in bulleted definitions; source ASI figures remain preserved. Source pages 50/325 visually reviewed for tag-restored left-column-before-right-column order; page 81 caption remains beside the preceding image, before body prose. Page 191 reviewed: four separate left-column items precede the ammeter paragraph; the remaining page is still preserved as an image. Pages 35-36 and 116-117 visually reviewed: each two-column paragraph continues from the bottom of one page onto the next and must remain one paragraph across the source-page marker (#27). Figure 5-36 on page 121 reviewed in color (blue sky, yellow labels, aircraft): the preserved crop must keep its scale, ink contrast and hues (#27). Pages 22-25 and 52-53 visually reviewed (#45): the paragraph between page 22's figures, page 24's right column continued below the figure that opens page 25, and the tagged page 52 continued on the untagged page 53 must each remain one paragraph across the source-page marker. Pages 27, 191 and 365 source rasters reviewed (#69, #70): a bullet PDFKit splits from its text opens that item, not the tail of the block above, and a line broken after a slash inside a compound (`runway/` + `taxiway`, `alternator/` + `generator`) joins without a space. Pages 33, 43, 49, 201 and 370 source rasters reviewed (#63, #73): a section title that opens a paragraph continued on the next page follows the figure caption that closes its page and directly precedes that paragraph (pages 33, 49, 201); a two-line title set nearly the column's width is one heading (pages 43, 370). Pages 136, 159 and 340 source rasters reviewed, with pages 91, 156, 165, 199 and 262 checked against extracted geometry (#76, #82): a 10-point bold or 11-point bold-italic sub-heading on its own line is a heading followed by its paragraph, not the paragraph's opening words; page 159's `Figure 6-20.` caption ends at its own last line and the unpainted `Figure 5-16.` caption left outside the artwork's clip is not emitted (#85); page 340's two column titles on one row are two headings. Pages 25, 92 and 372 source rasters reviewed (#79): addresses broken after a dot or underscore rejoin without a space, including `(NACO)—www.faa.` + `gov/…` and the AIM bullet whose marker line ends inside its address; page 92’s `?n=wxcalc_densityaltitude` address no longer seeds a formula crop that split its paragraph. Pages 88, 98, 203, 231 and 335 (#84): chapter openers tagged P remain headings once their text-free Form XObjects no longer discard the page tags; page 203 source-reviewed, its tagged group spanning Introduction and the next section falls back. Page 89 (#75) source-reviewed: the applied tags read the viscosity and friction columns in order. Pages 105, 211 and 227 source-reviewed: paragraphs and a caption the source tags in pieces read as one element. Page 227 source raster reviewed (#77): the compass-rose figure's group box overhangs its rounded frame into the left column, but only its clipped part is figure ink, so the sentence ending `true course desired.` reflows whole; the word equations under `Step 1:`, `Step 2:` and `course is known:` are body text in the column's measure and reflow in order. Pages 96, 114, 127, 128, 179, 235, 263, 360, 366 and 412 (#89) source-reviewed: a paragraph the source tags in two pieces, one of them falling back beside a figure or in a justified column spaced only around a heading, reads as one paragraph; page 319's TAF change groups and page 416's NDB table rows stay separate. Pages 27, 45, 49, 54, 72, 152, 285, 311, 383, 409 and 429 (#90) source-reviewed: tagged titles in the book's bold, bold-italic and italic title styles are headings, stacked titles stay two headings, and titles on pages 54 and 152 follow their figure directly above the paragraph they open; contents labels (pages 6, 15) and a centred table title (416) are not headings. Lettered appendix folios A-5 to A-7 and C-2 to C-4 are furniture, not headings.",
       "pages": [
         {
           "page": 16,
@@ -304,6 +304,14 @@
           ],
           "paragraphs": [
             "There are many different reasons that NOTAMs are issued. Following are some of those reasons:"
+          ],
+          "headings": [
+            "Pilot and Aeronautical Information",
+            "Notices to Airmen (NOTAMs)",
+            "NOTAM (D) Information"
+          ],
+          "absentHeadings": [
+            "Pilot and Aeronautical Information Notices to Airmen (NOTAMs)"
           ]
         },
         {
@@ -342,7 +350,8 @@
         {
           "page": 49,
           "headings": [
-            "Human Factors"
+            "Human Factors",
+            "Managing External Pressures"
           ],
           "orderedText": [
             "The PAVE checklist",
@@ -560,6 +569,252 @@
             "Compass Course ± Deviation = Magnetic Course ± Variation= True Course"
           ],
           "minimumImages": 1
+        },
+        {
+          "page": 96,
+          "paragraphs": [
+            "affected portion of the airfoil. Manufacturers have developed different methods"
+          ],
+          "distinctParagraphs": [
+            {
+              "first": "resulting in a measurable velocity force and direction.",
+              "second": "Manufacturers have developed different methods"
+            }
+          ]
+        },
+        {
+          "page": 114,
+          "paragraphs": [
+            "the horizontal tail surface. Conclusion: with CG forward of the CL"
+          ],
+          "distinctParagraphs": [
+            {
+              "first": "return to a safe flying attitude.",
+              "second": "The following is a simple demonstration of longitudinal stability."
+            }
+          ]
+        },
+        {
+          "page": 127,
+          "paragraphs": [
+            "there is maximum thrust. After liftoff, as the speed of the aircraft increases"
+          ],
+          "distinctParagraphs": [
+            {
+              "first": "keeps thrust at a maximum.",
+              "second": "After the takeoff climb is established"
+            }
+          ]
+        },
+        {
+          "page": 128,
+          "paragraphs": [
+            "in the direction of rotation. The rotating propeller of an airplane makes a very good"
+          ]
+        },
+        {
+          "page": 179,
+          "paragraphs": [
+            "[Figure 7-21] Detonation is an uncontrolled, explosive ignition"
+          ]
+        },
+        {
+          "page": 235,
+          "paragraphs": [
+            "propeller, or components. This section also describes preventive maintenance that"
+          ],
+          "distinctParagraphs": [
+            {
+              "first": "The Supplements section contains information",
+              "second": "This section also describes preventive maintenance that"
+            }
+          ]
+        },
+        {
+          "page": 263,
+          "paragraphs": [
+            "the steeper it can climb. Maximum AOC occurs at the airspeed"
+          ]
+        },
+        {
+          "page": 360,
+          "paragraphs": [
+            "[Figure 14-44] In addition to basic radar service, terminal radar service"
+          ],
+          "distinctParagraphs": [
+            {
+              "first": "if known, are given.",
+              "second": "An example would be:"
+            }
+          ]
+        },
+        {
+          "page": 366,
+          "paragraphs": [
+            "heading are aligned. Under certain circumstances, it may be necessary"
+          ]
+        },
+        {
+          "page": 412,
+          "paragraphs": [
+            "older types of heading indicators. The remote compass transmitter is a separate unit"
+          ]
+        },
+        {
+          "page": 416,
+          "distinctParagraphs": [
+            {
+              "first": "Compass Locator Under 25 15",
+              "second": "MH Under 50"
+            }
+          ],
+          "absentHeadings": [
+            "NONDIRECTIONAL RADIO BEACON (NDB)"
+          ]
+        },
+        {
+          "page": 319,
+          "distinctParagraphs": [
+            {
+              "first": "FM1500 16015G25KT P6SM SCT040 BKN250",
+              "second": "FM120000 14012KT P6SM BKN080 OVC150"
+            }
+          ]
+        },
+        {
+          "page": 45,
+          "headings": [
+            "Likelihood of an Event",
+            "Severity of an Event"
+          ]
+        },
+        {
+          "page": 54,
+          "headings": [
+            "PAVE Checklist: Identify Hazards and Personal Minimums"
+          ],
+          "orderedText": [
+            "Risk management processing can take place in any of three timeframes.",
+            "PAVE Checklist: Identify Hazards and Personal Minimums",
+            "In the first step, the goal is to develop situational awareness"
+          ]
+        },
+        {
+          "page": 72,
+          "headings": [
+            "Introduction"
+          ],
+          "orderedText": [
+            "Aircraft Construction",
+            "Introduction",
+            "An aircraft is a device that is used"
+          ]
+        },
+        {
+          "page": 152,
+          "headings": [
+            "Differential Ailerons",
+            "Frise-Type Ailerons",
+            "Coupled Ailerons and Rudder"
+          ],
+          "orderedText": [
+            "Frise-type ailerons.",
+            "Coupled Ailerons and Rudder",
+            "Coupled ailerons and rudder are linked controls."
+          ]
+        },
+        {
+          "page": 285,
+          "headings": [
+            "Introduction"
+          ],
+          "orderedText": [
+            "Weather Theory",
+            "Introduction",
+            "Weather is an important factor that influences"
+          ]
+        },
+        {
+          "page": 311,
+          "headings": [
+            "Introduction"
+          ],
+          "orderedText": [
+            "Aviation Weather Services",
+            "Introduction",
+            "In aviation, weather service is a combined effort"
+          ]
+        },
+        {
+          "page": 383,
+          "headings": [
+            "Operating Rules and Pilot/Equipment Requirements"
+          ]
+        },
+        {
+          "page": 409,
+          "headings": [
+            "Very High Frequency (VHF) Omnidirectional Range (VOR)"
+          ]
+        },
+        {
+          "page": 429,
+          "headings": [
+            "Vestibular Illusions",
+            "The Leans",
+            "Coriolis Illusion",
+            "Graveyard Spiral"
+          ]
+        },
+        {
+          "page": 6,
+          "absentHeadings": [
+            "Chapter 1",
+            "Chapter 2"
+          ]
+        },
+        {
+          "page": 15,
+          "absentHeadings": [
+            "Appendix A",
+            "Appendix B"
+          ]
+        },
+        {
+          "page": 457,
+          "absentHeadings": [
+            "A-5"
+          ]
+        },
+        {
+          "page": 458,
+          "absentHeadings": [
+            "A-6"
+          ]
+        },
+        {
+          "page": 459,
+          "absentHeadings": [
+            "A-7"
+          ]
+        },
+        {
+          "page": 474,
+          "absentHeadings": [
+            "C-2"
+          ]
+        },
+        {
+          "page": 475,
+          "absentHeadings": [
+            "C-3"
+          ]
+        },
+        {
+          "page": 476,
+          "absentHeadings": [
+            "C-4"
+          ]
         }
       ]
     },
@@ -2164,7 +2419,7 @@
     {
       "id": "gpo-our-flag-2003",
       "sourceSHA256": "a47a3153b649022a52b53e7b0c40b55bfea24e7980bbe32fe6fee0cf1936bbd8",
-      "basis": "Page 27 source raster reviewed; page-33 four-flag target retained from existing review. Does not accept the broken drop-cap, table, or state-description order. Page 27 includes a third region for its table, alongside the two source heading rules. Whole-table containment and ten row associations have source-derived Swift regressions. Source pages 34/42/43 visually reviewed: four illustrated entries follow alphabetical row order, with all four images retained. Protects ordering from changes to margin removal; not general tag/figure ownership qualification. Page 31 visually reviewed: preserve the heading boundary between Flag and for, plus the source photograph. Drop-cap ordering remains unqualified. Physical pages 7/31 visually reviewed: a decorative drop cap must not promote the opening body line to a heading or put its continuation first. Paragraph checks use intact source phrases and do not accept the separate initial-word spacing defect. Page 9 source review confirms the line-ending some-/times join after corrected order; page 30 retains genuine fraction superscripts beside its drop cap. Page 29 source title and logical tree (H3 /K 0) reviewed: both printed lines form one heading, with the Capitol image retained. Page 30 source flag-/pole line break is a joined word. Page 33 source raster reviewed in color: the Colorado flag (blue and white stripes, red C, gold disc) must keep its scale, ink contrast and hues (#27). Pages 33, 34, 42 and 43 reviewed (#62): the printed page number in the margin is retained text and is not a heading.",
+      "basis": "Page 27 source raster reviewed; page-33 four-flag target retained from existing review. Does not accept the broken drop-cap, table, or state-description order. Page 27 includes a third region for its table, alongside the two source heading rules. Whole-table containment and ten row associations have source-derived Swift regressions. Source pages 34/42/43 visually reviewed: four illustrated entries follow alphabetical row order, with all four images retained. Protects ordering from changes to margin removal; not general tag/figure ownership qualification. Page 31 visually reviewed: preserve the heading boundary between Flag and for, plus the source photograph. Drop-cap ordering remains unqualified. Physical pages 7/31 visually reviewed: a decorative drop cap must not promote the opening body line to a heading or put its continuation first. Paragraph checks use intact source phrases and do not accept the separate initial-word spacing defect. Page 9 source review confirms the line-ending some-/times join after corrected order; page 30 retains genuine fraction superscripts beside its drop cap. Page 29 source title and logical tree (H3 /K 0) reviewed: both printed lines form one heading, with the Capitol image retained. Page 30 source flag-/pole line break is a joined word. Page 33 source raster reviewed in color: the Colorado flag (blue and white stripes, red C, gold disc) must keep its scale, ink contrast and hues (#27). Pages 33, 34, 42 and 43 reviewed (#62): the printed page number in the margin is retained text and is not a heading. Page 12 (#89) source-reviewed: the Beecher and Wilson quotations, tagged one line per group, join where each line wraps onto the next.",
       "pages": [
         {
           "page": 27,
@@ -2340,6 +2595,14 @@
             "How to Obtain a Flag Flown Over the Capitol"
           ],
           "minimumImages": 1
+        },
+        {
+          "page": 12,
+          "paragraphs": [
+            "a symbol of Liberty and men rejoiced in it.",
+            "As at early dawn the stars shine forth",
+            "whether in peace or in war. And yet, though silent, it speaks to us—speaks to us of the past"
+          ]
         }
       ]
     },

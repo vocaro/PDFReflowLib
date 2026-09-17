@@ -15,6 +15,9 @@ struct SourceLayoutFixture: Decodable {
         var rect: [Double]
         var fontSize: Double
         var monospaced: Bool
+        /// The tag the pipeline applied to the line, where the page's structure validated
+        /// (captured since #89/#90; absent in older fixtures and on untagged lines).
+        var structure: TextStructure?
     }
     struct AttributedLine: Decodable {
         struct Run: Decodable {
@@ -64,8 +67,11 @@ struct SourceLayoutFixture: Decodable {
             precondition(values.count == 4)
             return CGRect(x: values[0], y: values[1], width: values[2], height: values[3])
         }
-        let textLines = lines.map {
-            TextLine(text: $0.text, rect: rect($0.rect), fontSize: $0.fontSize, monospaced: $0.monospaced)
+        let textLines = lines.map { source -> TextLine in
+            var line = TextLine(text: source.text, rect: rect(source.rect), fontSize: source.fontSize,
+                                monospaced: source.monospaced)
+            line.structure = source.structure
+            return line
         }
         var page = PageContent(number: page, bounds: rect(bounds), lines: textLines, graphics: graphics.map(rect))
         if tinted, let paints {
@@ -89,7 +95,9 @@ struct SourceLayoutFixture: Decodable {
             guard let match = attributed[line.text] else { return line }
             let styled = NativeTextReader.inlineText(from: match.attributedString())
             guard styled.text == line.text else { return line }
-            return TextLine(content: styled, rect: line.rect, fontSize: line.fontSize, monospaced: line.monospaced)
+            var copy = TextLine(content: styled, rect: line.rect, fontSize: line.fontSize, monospaced: line.monospaced)
+            copy.structure = line.structure
+            return copy
         }
         return result
     }

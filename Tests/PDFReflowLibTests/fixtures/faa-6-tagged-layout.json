@@ -1,0 +1,2775 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        548.5566,
+        33.709700000000005,
+        9.4400000000000546,
+        12.310000000000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "vii"
+        }
+      ],
+      "text" : "vii"
+    },
+    {
+      "rect" : [
+        71.996600000000001,
+        583.14969999999994,
+        234.00999999999999,
+        13.190000000000055
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 10,
+          "text" : "Preface....................................................................iii"
+        }
+      ],
+      "text" : "Preface....................................................................iii"
+    },
+    {
+      "rect" : [
+        71.996600000000001,
+        557.14969999999994,
+        234.00190000000003,
+        13.190000000000055
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 10,
+          "text" : "Acknowledgments...................................................v"
+        }
+      ],
+      "text" : "Acknowledgments...................................................v"
+    },
+    {
+      "rect" : [
+        71.998500000000035,
+        531.14969999999994,
+        234.00329999999997,
+        13.190000000000055
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 10,
+          "text" : "Table of Contents..................................................vii"
+        }
+      ],
+      "text" : "Table of Contents..................................................vii"
+    },
+    {
+      "rect" : [
+        72.001800000000003,
+        506.1497,
+        46.120000000000005,
+        13.189999999999998
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 10,
+          "text" : "Chapter 1"
+        }
+      ],
+      "text" : "Chapter 1"
+    },
+    {
+      "rect" : [
+        72.001800000000003,
+        493.1497,
+        233.99509999999998,
+        13.190000000000055
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 10,
+          "text" : "Introduction To Flying..........................................1-1"
+        }
+      ],
+      "text" : "Introduction To Flying..........................................1-1"
+    },
+    {
+      "rect" : [
+        71.996899999999982,
+        481.21970000000005,
+        234.00300000000004,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Introduction.....................................................................1-1"
+        }
+      ],
+      "text" : "Introduction.....................................................................1-1"
+    },
+    {
+      "rect" : [
+        71.999900000000025,
+        468.21970000000005,
+        234,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "History of Flight..............................................................1-2"
+        }
+      ],
+      "text" : "History of Flight..............................................................1-2"
+    },
+    {
+      "rect" : [
+        71.999900000000025,
+        455.21970000000005,
+        234,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "History of the Federal Aviation Administration (FAA) .1-3"
+        }
+      ],
+      "text" : "History of the Federal Aviation Administration (FAA) .1-3"
+    },
+    {
+      "rect" : [
+        80.999900000000025,
+        442.21970000000005,
+        225,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Transcontinental Air Mail Route.................................1-4"
+        }
+      ],
+      "text" : "Transcontinental Air Mail Route.................................1-4"
+    },
+    {
+      "rect" : [
+        80.999900000000025,
+        429.21970000000005,
+        225,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Federal Certification of Pilots and Mechanics............1-4"
+        }
+      ],
+      "text" : "Federal Certification of Pilots and Mechanics............1-4"
+    },
+    {
+      "rect" : [
+        80.999900000000025,
+        416.21970000000005,
+        225,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "The Federal Aviation Act of 1958...............................1-6"
+        }
+      ],
+      "text" : "The Federal Aviation Act of 1958...............................1-6"
+    },
+    {
+      "rect" : [
+        80.999900000000025,
+        403.21970000000005,
+        225,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Department of Transportation (DOT).........................1-6"
+        }
+      ],
+      "text" : "Department of Transportation (DOT).........................1-6"
+    },
+    {
+      "rect" : [
+        80.999900000000025,
+        390.21970000000005,
+        225,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "ATC Automation.........................................................1-6"
+        }
+      ],
+      "text" : "ATC Automation.........................................................1-6"
+    },
+    {
+      "rect" : [
+        80.999900000000025,
+        377.21970000000005,
+        161.08000000000007,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "The Professional Air Traffic Controllers"
+        }
+      ],
+      "text" : "The Professional Air Traffic Controllers"
+    },
+    {
+      "rect" : [
+        80.999900000000025,
+        365.21970000000005,
+        225,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Organization (PATCO) Strike.....................................1-6"
+        }
+      ],
+      "text" : "Organization (PATCO) Strike.....................................1-6"
+    },
+    {
+      "rect" : [
+        80.999900000000025,
+        352.21969999999999,
+        225,
+        11.470000000000084
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "The Airline Deregulation Act of 1978........................1-7"
+        }
+      ],
+      "text" : "The Airline Deregulation Act of 1978........................1-7"
+    },
+    {
+      "rect" : [
+        71.999900000000025,
+        339.21969999999999,
+        234,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "The Role of the FAA.......................................................1-7"
+        }
+      ],
+      "text" : "The Role of the FAA.......................................................1-7"
+    },
+    {
+      "rect" : [
+        80.999900000000025,
+        326.21969999999999,
+        225,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "The Code of Federal Regulations (CFR).....................1-7"
+        }
+      ],
+      "text" : "The Code of Federal Regulations (CFR).....................1-7"
+    },
+    {
+      "rect" : [
+        80.999900000000025,
+        313.21969999999999,
+        225,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Primary Locations of the FAA....................................1-8"
+        }
+      ],
+      "text" : "Primary Locations of the FAA....................................1-8"
+    },
+    {
+      "rect" : [
+        89.999900000000054,
+        300.21969999999999,
+        215.99999999999997,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Field Offices............................................................1-8"
+        }
+      ],
+      "text" : "Field Offices............................................................1-8"
+    },
+    {
+      "rect" : [
+        80.999900000000025,
+        286.21969999999999,
+        225,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Aviation Safety Inspector (ASI) .................................1-9"
+        }
+      ],
+      "text" : "Aviation Safety Inspector (ASI) .................................1-9"
+    },
+    {
+      "rect" : [
+        80.999900000000025,
+        273.21969999999999,
+        225,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "FAA Safety Team (FAASTeam).................................1-9"
+        }
+      ],
+      "text" : "FAA Safety Team (FAASTeam).................................1-9"
+    },
+    {
+      "rect" : [
+        80.999900000000025,
+        260.21969999999999,
+        225,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Obtaining Assistance from the FAA...........................1-9"
+        }
+      ],
+      "text" : "Obtaining Assistance from the FAA...........................1-9"
+    },
+    {
+      "rect" : [
+        89.999900000000054,
+        247.21969999999999,
+        215.99999999999997,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Aeronautical Information Manual (AIM)................1-9"
+        }
+      ],
+      "text" : "Aeronautical Information Manual (AIM)................1-9"
+    },
+    {
+      "rect" : [
+        89.999900000000054,
+        233.21970000000002,
+        215.99999999999997,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Handbooks.............................................................1-10"
+        }
+      ],
+      "text" : "Handbooks.............................................................1-10"
+    },
+    {
+      "rect" : [
+        89.999900000000054,
+        219.21970000000002,
+        215.99999999999997,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Advisory Circulars (ACs)......................................1-10"
+        }
+      ],
+      "text" : "Advisory Circulars (ACs)......................................1-10"
+    },
+    {
+      "rect" : [
+        89.999900000000054,
+        205.21970000000002,
+        215.99999999999997,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Flight Publications.................................................1-11"
+        }
+      ],
+      "text" : "Flight Publications.................................................1-11"
+    },
+    {
+      "rect" : [
+        80.999900000000025,
+        191.21970000000002,
+        225,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Pilot and Aeronautical Information ..........................1-12"
+        }
+      ],
+      "text" : "Pilot and Aeronautical Information ..........................1-12"
+    },
+    {
+      "rect" : [
+        89.999900000000054,
+        178.21970000000002,
+        215.99999999999997,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Notices to Airmen (NOTAMs) .............................1-12"
+        }
+      ],
+      "text" : "Notices to Airmen (NOTAMs) .............................1-12"
+    },
+    {
+      "rect" : [
+        89.999900000000054,
+        164.21970000000002,
+        178.32000000000002,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Safety Program Airmen Notification System"
+        }
+      ],
+      "text" : "Safety Program Airmen Notification System"
+    },
+    {
+      "rect" : [
+        89.999900000000082,
+        152.21970000000002,
+        215.99999999999994,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "(SPANS)................................................................1-14"
+        }
+      ],
+      "text" : "(SPANS)................................................................1-14"
+    },
+    {
+      "rect" : [
+        71.999900000000025,
+        138.21970000000002,
+        234,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Aircraft Classifications and Ultralight Vehicles...........1-14"
+        }
+      ],
+      "text" : "Aircraft Classifications and Ultralight Vehicles...........1-14"
+    },
+    {
+      "rect" : [
+        71.999900000000025,
+        125.2197,
+        234,
+        11.470000000000013
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Pilot Certifications........................................................1-16"
+        }
+      ],
+      "text" : "Pilot Certifications........................................................1-16"
+    },
+    {
+      "rect" : [
+        89.999900000000054,
+        112.2197,
+        215.99999999999997,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Privileges:..............................................................1-16"
+        }
+      ],
+      "text" : "Privileges:..............................................................1-16"
+    },
+    {
+      "rect" : [
+        89.999900000000054,
+        98.219700000000003,
+        215.99999999999997,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Limitations:............................................................1-17"
+        }
+      ],
+      "text" : "Limitations:............................................................1-17"
+    },
+    {
+      "rect" : [
+        80.999900000000025,
+        84.219700000000003,
+        225,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Recreational Pilot......................................................1-17"
+        }
+      ],
+      "text" : "Recreational Pilot......................................................1-17"
+    },
+    {
+      "rect" : [
+        89.999900000000054,
+        71.219700000000003,
+        215.99999999999997,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Privileges:..............................................................1-17"
+        }
+      ],
+      "text" : "Privileges:..............................................................1-17"
+    },
+    {
+      "rect" : [
+        338.99990000000003,
+        584.56640000000004,
+        216,
+        11.473299999999995
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0.0032999999999674401,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Limitations:"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "............................................................1-17"
+        }
+      ],
+      "text" : "Limitations:............................................................1-17"
+    },
+    {
+      "rect" : [
+        329.99989999999997,
+        570.56640000000004,
+        225.00000000000006,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Private Pilot...............................................................1-17"
+        }
+      ],
+      "text" : "Private Pilot...............................................................1-17"
+    },
+    {
+      "rect" : [
+        329.99989999999997,
+        557.56640000000004,
+        225.00000000000006,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Commercial Pilot.......................................................1-18"
+        }
+      ],
+      "text" : "Commercial Pilot.......................................................1-18"
+    },
+    {
+      "rect" : [
+        329.99989999999997,
+        544.56640000000004,
+        225.00000000000006,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Airline Transport Pilot..............................................1-18"
+        }
+      ],
+      "text" : "Airline Transport Pilot..............................................1-18"
+    },
+    {
+      "rect" : [
+        320.99989999999997,
+        531.56640000000004,
+        234.00000000000006,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Selecting a Flight School .............................................1-18"
+        }
+      ],
+      "text" : "Selecting a Flight School .............................................1-18"
+    },
+    {
+      "rect" : [
+        329.99989999999997,
+        518.56640000000004,
+        225.00000000000006,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "How To Find a Reputable Flight Program................1-19"
+        }
+      ],
+      "text" : "How To Find a Reputable Flight Program................1-19"
+    },
+    {
+      "rect" : [
+        329.99989999999997,
+        505.56640000000004,
+        148.60000000000008,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "How To Choose a Certificated Flight"
+        }
+      ],
+      "text" : "How To Choose a Certificated Flight"
+    },
+    {
+      "rect" : [
+        329.99989999999991,
+        493.56640000000004,
+        225,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Instructor (CFI).........................................................1-19"
+        }
+      ],
+      "text" : "Instructor (CFI).........................................................1-19"
+    },
+    {
+      "rect" : [
+        320.99989999999985,
+        480.56640000000004,
+        234.00000000000006,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "The Student Pilot .........................................................1-20"
+        }
+      ],
+      "text" : "The Student Pilot .........................................................1-20"
+    },
+    {
+      "rect" : [
+        329.99989999999985,
+        467.56640000000004,
+        225.00000000000017,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Basic Requirements...................................................1-20"
+        }
+      ],
+      "text" : "Basic Requirements...................................................1-20"
+    },
+    {
+      "rect" : [
+        338.99990000000003,
+        454.56640000000004,
+        216,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Medical Certification Requirements......................1-20"
+        }
+      ],
+      "text" : "Medical Certification Requirements......................1-20"
+    },
+    {
+      "rect" : [
+        320.99989999999997,
+        440.56640000000004,
+        234.00000000000006,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Becoming a Pilot...........................................................1-21"
+        }
+      ],
+      "text" : "Becoming a Pilot...........................................................1-21"
+    },
+    {
+      "rect" : [
+        320.99989999999997,
+        427.56640000000004,
+        234.00000000000006,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Knowledge and Skill Tests...........................................1-21"
+        }
+      ],
+      "text" : "Knowledge and Skill Tests...........................................1-21"
+    },
+    {
+      "rect" : [
+        329.99989999999997,
+        414.56640000000004,
+        225.00000000000006,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Knowledge Tests.......................................................1-21"
+        }
+      ],
+      "text" : "Knowledge Tests.......................................................1-21"
+    },
+    {
+      "rect" : [
+        338.99990000000003,
+        401.56640000000004,
+        216,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "When To Take the Knowledge Test......................1-22"
+        }
+      ],
+      "text" : "When To Take the Knowledge Test......................1-22"
+    },
+    {
+      "rect" : [
+        329.99989999999997,
+        387.56640000000004,
+        225.00000000000006,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Practical Test.............................................................1-22"
+        }
+      ],
+      "text" : "Practical Test.............................................................1-22"
+    },
+    {
+      "rect" : [
+        338.99990000000003,
+        374.56640000000004,
+        216,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "When To Take the Practical Test...........................1-23"
+        }
+      ],
+      "text" : "When To Take the Practical Test...........................1-23"
+    },
+    {
+      "rect" : [
+        338.99990000000003,
+        360.56640000000004,
+        216,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Who Administers the FAA Practical Tests?..........1-23"
+        }
+      ],
+      "text" : "Who Administers the FAA Practical Tests?..........1-23"
+    },
+    {
+      "rect" : [
+        329.99989999999997,
+        346.56640000000004,
+        225.00000000000006,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Role of the Certificated Flight Instructor..................1-23"
+        }
+      ],
+      "text" : "Role of the Certificated Flight Instructor..................1-23"
+    },
+    {
+      "rect" : [
+        329.99989999999997,
+        333.56640000000004,
+        225.00000000000006,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Role of the Designated Pilot Examiner ....................1-24"
+        }
+      ],
+      "text" : "Role of the Designated Pilot Examiner ....................1-24"
+    },
+    {
+      "rect" : [
+        320.99989999999997,
+        320.56639999999999,
+        234.00000000000006,
+        11.470000000000084
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Chapter Summary ........................................................1-24"
+        }
+      ],
+      "text" : "Chapter Summary ........................................................1-24"
+    },
+    {
+      "rect" : [
+        320.99989999999997,
+        294.49639999999999,
+        46.120000000000005,
+        13.189999999999998
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 10,
+          "text" : "Chapter 2"
+        }
+      ],
+      "text" : "Chapter 2"
+    },
+    {
+      "rect" : [
+        320.99989999999997,
+        281.49639999999999,
+        233.99700000000013,
+        13.189999999999998
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 10,
+          "text" : "Aeronautical Decision-Making............................2-1"
+        }
+      ],
+      "text" : "Aeronautical Decision-Making............................2-1"
+    },
+    {
+      "rect" : [
+        320.99690000000004,
+        269.56639999999999,
+        234.00299999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Introduction.....................................................................2-1"
+        }
+      ],
+      "text" : "Introduction.....................................................................2-1"
+    },
+    {
+      "rect" : [
+        320.99989999999997,
+        256.56639999999999,
+        234.00000000000006,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "History of ADM..............................................................2-2"
+        }
+      ],
+      "text" : "History of ADM..............................................................2-2"
+    },
+    {
+      "rect" : [
+        320.99989999999997,
+        243.56639999999999,
+        234.00000000000006,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Risk Management...........................................................2-3"
+        }
+      ],
+      "text" : "Risk Management...........................................................2-3"
+    },
+    {
+      "rect" : [
+        320.99989999999997,
+        230.56640000000002,
+        195.80000000000001,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Crew Resource Management (CRM) and Single-"
+        }
+      ],
+      "text" : "Crew Resource Management (CRM) and Single-"
+    },
+    {
+      "rect" : [
+        320.99989999999997,
+        218.56640000000002,
+        234.00000000000006,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Pilot Resource Management...........................................2-4"
+        }
+      ],
+      "text" : "Pilot Resource Management...........................................2-4"
+    },
+    {
+      "rect" : [
+        320.99989999999997,
+        205.56640000000002,
+        234.00000000000006,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Hazard and Risk..............................................................2-4"
+        }
+      ],
+      "text" : "Hazard and Risk..............................................................2-4"
+    },
+    {
+      "rect" : [
+        329.99989999999997,
+        192.56640000000002,
+        225.00000000000006,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Hazardous Attitudes and Antidotes.............................2-5"
+        }
+      ],
+      "text" : "Hazardous Attitudes and Antidotes.............................2-5"
+    },
+    {
+      "rect" : [
+        329.99989999999997,
+        179.56640000000002,
+        225.00000000000006,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Risk..............................................................................2-6"
+        }
+      ],
+      "text" : "Risk..............................................................................2-6"
+    },
+    {
+      "rect" : [
+        338.99990000000003,
+        166.56640000000002,
+        216,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Assessing Risk.........................................................2-6"
+        }
+      ],
+      "text" : "Assessing Risk.........................................................2-6"
+    },
+    {
+      "rect" : [
+        338.99990000000003,
+        152.56640000000002,
+        216,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Mitigating Risk........................................................2-8"
+        }
+      ],
+      "text" : "Mitigating Risk........................................................2-8"
+    },
+    {
+      "rect" : [
+        329.99989999999997,
+        138.56640000000002,
+        225.00000000000006,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "The PAVE Checklist ..................................................2-8"
+        }
+      ],
+      "text" : "The PAVE Checklist ..................................................2-8"
+    },
+    {
+      "rect" : [
+        338.99990000000003,
+        125.56640000000002,
+        216,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "P = Pilot in Command (PIC) ...................................2-8"
+        }
+      ],
+      "text" : "P = Pilot in Command (PIC) ...................................2-8"
+    },
+    {
+      "rect" : [
+        338.99990000000003,
+        111.56640000000002,
+        216.00000000000011,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "A = Aircraft ............................................................2-8"
+        }
+      ],
+      "text" : "A = Aircraft ............................................................2-8"
+    },
+    {
+      "rect" : [
+        338.99990000000014,
+        97.566400000000002,
+        215.99999999999989,
+        11.470000000000013
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "V = EnVironment....................................................2-9"
+        }
+      ],
+      "text" : "V = EnVironment....................................................2-9"
+    },
+    {
+      "rect" : [
+        338.99990000000003,
+        83.566400000000002,
+        216,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "E = External Pressures.............................................2-9"
+        }
+      ],
+      "text" : "E = External Pressures.............................................2-9"
+    },
+    {
+      "rect" : [
+        320.99989999999997,
+        69.566400000000002,
+        234.00000000000006,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Human Factors..............................................................2-10"
+        }
+      ],
+      "text" : "Human Factors..............................................................2-10"
+    },
+    {
+      "rect" : [
+        72,
+        682.72030000000007,
+        257.32800000000003,
+        56.831999999999994
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 48,
+          "text" : "Table of Contents"
+        }
+      ],
+      "text" : "Table of Contents"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    594,
+    774
+  ],
+  "caseID" : "faa-phak-8083-25c",
+  "graphics" : [
+    [
+      72.5,
+      678.08699999999999,
+      268.95999999999998,
+      51.519999999999982
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        548.5566,
+        33.709700000000005,
+        9.4400000000000546,
+        12.310000000000002
+      ],
+      "structure" : {
+        "group" : 46,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 63
+      },
+      "text" : "vii"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.996600000000001,
+        583.14969999999994,
+        234.00999999999999,
+        13.190000000000055
+      ],
+      "structure" : {
+        "group" : 49,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 66
+      },
+      "text" : "Preface....................................................................iii"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.996600000000001,
+        557.14969999999994,
+        234.00190000000003,
+        13.190000000000055
+      ],
+      "structure" : {
+        "group" : 50,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 69
+      },
+      "text" : "Acknowledgments...................................................v"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.998500000000035,
+        531.14969999999994,
+        234.00329999999997,
+        13.190000000000055
+      ],
+      "text" : "Table of Contents..................................................vii"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72.001800000000003,
+        506.1497,
+        46.120000000000005,
+        13.189999999999998
+      ],
+      "structure" : {
+        "group" : 52,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 75
+      },
+      "text" : "Chapter 1"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72.001800000000003,
+        493.1497,
+        233.99509999999998,
+        13.190000000000055
+      ],
+      "structure" : {
+        "group" : 53,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 76
+      },
+      "text" : "Introduction To Flying..........................................1-1"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.996899999999982,
+        481.21970000000005,
+        234.00300000000004,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 54,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 79
+      },
+      "text" : "Introduction.....................................................................1-1"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.999900000000025,
+        468.21970000000005,
+        234,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 55,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 82
+      },
+      "text" : "History of Flight..............................................................1-2"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.999900000000025,
+        455.21970000000005,
+        234,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 56,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 85
+      },
+      "text" : "History of the Federal Aviation Administration (FAA) .1-3"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        80.999900000000025,
+        442.21970000000005,
+        225,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 57,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 88
+      },
+      "text" : "Transcontinental Air Mail Route.................................1-4"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        80.999900000000025,
+        429.21970000000005,
+        225,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 58,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 91
+      },
+      "text" : "Federal Certification of Pilots and Mechanics............1-4"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        80.999900000000025,
+        416.21970000000005,
+        225,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 59,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 94
+      },
+      "text" : "The Federal Aviation Act of 1958...............................1-6"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        80.999900000000025,
+        403.21970000000005,
+        225,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 60,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 97
+      },
+      "text" : "Department of Transportation (DOT).........................1-6"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        80.999900000000025,
+        390.21970000000005,
+        225,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 61,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 100
+      },
+      "text" : "ATC Automation.........................................................1-6"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        80.999900000000025,
+        377.21970000000005,
+        161.08000000000007,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 62,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 103
+      },
+      "text" : "The Professional Air Traffic Controllers"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        80.999900000000025,
+        365.21970000000005,
+        225,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 62,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 105
+      },
+      "text" : "Organization (PATCO) Strike.....................................1-6"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        80.999900000000025,
+        352.21969999999999,
+        225,
+        11.470000000000084
+      ],
+      "structure" : {
+        "group" : 63,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 108
+      },
+      "text" : "The Airline Deregulation Act of 1978........................1-7"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.999900000000025,
+        339.21969999999999,
+        234,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 64,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 111
+      },
+      "text" : "The Role of the FAA.......................................................1-7"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        80.999900000000025,
+        326.21969999999999,
+        225,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 65,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 114
+      },
+      "text" : "The Code of Federal Regulations (CFR).....................1-7"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        80.999900000000025,
+        313.21969999999999,
+        225,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 66,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 117
+      },
+      "text" : "Primary Locations of the FAA....................................1-8"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        89.999900000000054,
+        300.21969999999999,
+        215.99999999999997,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 67,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 120
+      },
+      "text" : "Field Offices............................................................1-8"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        80.999900000000025,
+        286.21969999999999,
+        225,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 68,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 123
+      },
+      "text" : "Aviation Safety Inspector (ASI) .................................1-9"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        80.999900000000025,
+        273.21969999999999,
+        225,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 69,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 126
+      },
+      "text" : "FAA Safety Team (FAASTeam).................................1-9"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        80.999900000000025,
+        260.21969999999999,
+        225,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 70,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 129
+      },
+      "text" : "Obtaining Assistance from the FAA...........................1-9"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        89.999900000000054,
+        247.21969999999999,
+        215.99999999999997,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 71,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 132
+      },
+      "text" : "Aeronautical Information Manual (AIM)................1-9"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        89.999900000000054,
+        233.21970000000002,
+        215.99999999999997,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 72,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 135
+      },
+      "text" : "Handbooks.............................................................1-10"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        89.999900000000054,
+        219.21970000000002,
+        215.99999999999997,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 73,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 138
+      },
+      "text" : "Advisory Circulars (ACs)......................................1-10"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        89.999900000000054,
+        205.21970000000002,
+        215.99999999999997,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 74,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 141
+      },
+      "text" : "Flight Publications.................................................1-11"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        80.999900000000025,
+        191.21970000000002,
+        225,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 75,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 144
+      },
+      "text" : "Pilot and Aeronautical Information ..........................1-12"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        89.999900000000054,
+        178.21970000000002,
+        215.99999999999997,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 76,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 147
+      },
+      "text" : "Notices to Airmen (NOTAMs) .............................1-12"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        89.999900000000054,
+        164.21970000000002,
+        178.32000000000002,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 77,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 150
+      },
+      "text" : "Safety Program Airmen Notification System"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        89.999900000000082,
+        152.21970000000002,
+        215.99999999999994,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 77,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 152
+      },
+      "text" : "(SPANS)................................................................1-14"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.999900000000025,
+        138.21970000000002,
+        234,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 78,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 155
+      },
+      "text" : "Aircraft Classifications and Ultralight Vehicles...........1-14"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.999900000000025,
+        125.2197,
+        234,
+        11.470000000000013
+      ],
+      "structure" : {
+        "group" : 79,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 158
+      },
+      "text" : "Pilot Certifications........................................................1-16"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        89.999900000000054,
+        112.2197,
+        215.99999999999997,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 80,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 161
+      },
+      "text" : "Privileges:..............................................................1-16"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        89.999900000000054,
+        98.219700000000003,
+        215.99999999999997,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 81,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 164
+      },
+      "text" : "Limitations:............................................................1-17"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        80.999900000000025,
+        84.219700000000003,
+        225,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 82,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 167
+      },
+      "text" : "Recreational Pilot......................................................1-17"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        89.999900000000054,
+        71.219700000000003,
+        215.99999999999997,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 83,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 170
+      },
+      "text" : "Privileges:..............................................................1-17"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        338.99990000000003,
+        584.56640000000004,
+        216,
+        11.473299999999995
+      ],
+      "structure" : {
+        "group" : 84,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 173
+      },
+      "text" : "Limitations:............................................................1-17"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        329.99989999999997,
+        570.56640000000004,
+        225.00000000000006,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 85,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 176
+      },
+      "text" : "Private Pilot...............................................................1-17"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        329.99989999999997,
+        557.56640000000004,
+        225.00000000000006,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 86,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 179
+      },
+      "text" : "Commercial Pilot.......................................................1-18"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        329.99989999999997,
+        544.56640000000004,
+        225.00000000000006,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 87,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 182
+      },
+      "text" : "Airline Transport Pilot..............................................1-18"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        320.99989999999997,
+        531.56640000000004,
+        234.00000000000006,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 88,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 185
+      },
+      "text" : "Selecting a Flight School .............................................1-18"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        329.99989999999997,
+        518.56640000000004,
+        225.00000000000006,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 89,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 188
+      },
+      "text" : "How To Find a Reputable Flight Program................1-19"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        329.99989999999997,
+        505.56640000000004,
+        148.60000000000008,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 90,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 191
+      },
+      "text" : "How To Choose a Certificated Flight"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        329.99989999999991,
+        493.56640000000004,
+        225,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 90,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 193
+      },
+      "text" : "Instructor (CFI).........................................................1-19"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        320.99989999999985,
+        480.56640000000004,
+        234.00000000000006,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 91,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 196
+      },
+      "text" : "The Student Pilot .........................................................1-20"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        329.99989999999985,
+        467.56640000000004,
+        225.00000000000017,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 92,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 199
+      },
+      "text" : "Basic Requirements...................................................1-20"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        338.99990000000003,
+        454.56640000000004,
+        216,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 93,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 202
+      },
+      "text" : "Medical Certification Requirements......................1-20"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        320.99989999999997,
+        440.56640000000004,
+        234.00000000000006,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 94,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 205
+      },
+      "text" : "Becoming a Pilot...........................................................1-21"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        320.99989999999997,
+        427.56640000000004,
+        234.00000000000006,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 95,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 208
+      },
+      "text" : "Knowledge and Skill Tests...........................................1-21"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        329.99989999999997,
+        414.56640000000004,
+        225.00000000000006,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 96,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 211
+      },
+      "text" : "Knowledge Tests.......................................................1-21"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        338.99990000000003,
+        401.56640000000004,
+        216,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 97,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 214
+      },
+      "text" : "When To Take the Knowledge Test......................1-22"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        329.99989999999997,
+        387.56640000000004,
+        225.00000000000006,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 98,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 217
+      },
+      "text" : "Practical Test.............................................................1-22"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        338.99990000000003,
+        374.56640000000004,
+        216,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 99,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 220
+      },
+      "text" : "When To Take the Practical Test...........................1-23"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        338.99990000000003,
+        360.56640000000004,
+        216,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 100,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 223
+      },
+      "text" : "Who Administers the FAA Practical Tests?..........1-23"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        329.99989999999997,
+        346.56640000000004,
+        225.00000000000006,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 101,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 226
+      },
+      "text" : "Role of the Certificated Flight Instructor..................1-23"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        329.99989999999997,
+        333.56640000000004,
+        225.00000000000006,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 102,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 229
+      },
+      "text" : "Role of the Designated Pilot Examiner ....................1-24"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        320.99989999999997,
+        320.56639999999999,
+        234.00000000000006,
+        11.470000000000084
+      ],
+      "structure" : {
+        "group" : 103,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 232
+      },
+      "text" : "Chapter Summary ........................................................1-24"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        320.99989999999997,
+        294.49639999999999,
+        46.120000000000005,
+        13.189999999999998
+      ],
+      "structure" : {
+        "group" : 104,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 235
+      },
+      "text" : "Chapter 2"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        320.99989999999997,
+        281.49639999999999,
+        233.99700000000013,
+        13.189999999999998
+      ],
+      "structure" : {
+        "group" : 105,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 236
+      },
+      "text" : "Aeronautical Decision-Making............................2-1"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        320.99690000000004,
+        269.56639999999999,
+        234.00299999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 106,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 239
+      },
+      "text" : "Introduction.....................................................................2-1"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        320.99989999999997,
+        256.56639999999999,
+        234.00000000000006,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 107,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 242
+      },
+      "text" : "History of ADM..............................................................2-2"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        320.99989999999997,
+        243.56639999999999,
+        234.00000000000006,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 108,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 245
+      },
+      "text" : "Risk Management...........................................................2-3"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        320.99989999999997,
+        230.56640000000002,
+        195.80000000000001,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 109,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 248
+      },
+      "text" : "Crew Resource Management (CRM) and Single-"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        320.99989999999997,
+        218.56640000000002,
+        234.00000000000006,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 109,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 250
+      },
+      "text" : "Pilot Resource Management...........................................2-4"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        320.99989999999997,
+        205.56640000000002,
+        234.00000000000006,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 110,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 253
+      },
+      "text" : "Hazard and Risk..............................................................2-4"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        329.99989999999997,
+        192.56640000000002,
+        225.00000000000006,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 111,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 256
+      },
+      "text" : "Hazardous Attitudes and Antidotes.............................2-5"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        329.99989999999997,
+        179.56640000000002,
+        225.00000000000006,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 112,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 259
+      },
+      "text" : "Risk..............................................................................2-6"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        338.99990000000003,
+        166.56640000000002,
+        216,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 113,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 262
+      },
+      "text" : "Assessing Risk.........................................................2-6"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        338.99990000000003,
+        152.56640000000002,
+        216,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 114,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 265
+      },
+      "text" : "Mitigating Risk........................................................2-8"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        329.99989999999997,
+        138.56640000000002,
+        225.00000000000006,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 115,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 268
+      },
+      "text" : "The PAVE Checklist ..................................................2-8"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        338.99990000000003,
+        125.56640000000002,
+        216,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 116,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 271
+      },
+      "text" : "P = Pilot in Command (PIC) ...................................2-8"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        338.99990000000003,
+        111.56640000000002,
+        216.00000000000011,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 117,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 274
+      },
+      "text" : "A = Aircraft ............................................................2-8"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        338.99990000000014,
+        97.566400000000002,
+        215.99999999999989,
+        11.470000000000013
+      ],
+      "structure" : {
+        "group" : 118,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 277
+      },
+      "text" : "V = EnVironment....................................................2-9"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        338.99990000000003,
+        83.566400000000002,
+        216,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 119,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 280
+      },
+      "text" : "E = External Pressures.............................................2-9"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        320.99989999999997,
+        69.566400000000002,
+        234.00000000000006,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 120,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 283
+      },
+      "text" : "Human Factors..............................................................2-10"
+    },
+    {
+      "fontSize" : 48,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        682.72030000000007,
+        257.32800000000003,
+        56.831999999999994
+      ],
+      "structure" : {
+        "group" : 48,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 65
+      },
+      "text" : "Table of Contents"
+    }
+  ],
+  "page" : 6,
+  "paints" : [
+    {
+      "frame" : true,
+      "rect" : [
+        72.5,
+        678.08699999999999,
+        268.95999999999998,
+        51.519999999999982
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        74.5,
+        680.08699999999999,
+        264.95999999999998,
+        47.519999999999982
+      ]
+    }
+  ],
+  "rightsBasis" : "U.S. Government publication, retained as an external development corpus source. The PDF is not bundled or relicensed under the library license.",
+  "sourceSHA256" : "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
+  "sourceTitle" : "Pilot's Handbook of Aeronautical Knowledge, FAA-H-8083-25C",
+  "sourceURL" : "https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/faa-h-8083-25c.pdf"
+}

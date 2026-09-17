@@ -1,0 +1,2454 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        36,
+        33.709700000000005,
+        20.010000000000005,
+        12.310000000000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "2-16"
+        }
+      ],
+      "text" : "2-16"
+    },
+    {
+      "rect" : [
+        36.422599999999989,
+        82.088400000000007,
+        483.99900000000002,
+        177.34900000000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    },
+    {
+      "rect" : [
+        36,
+        61.798700000000004,
+        443.87029999999987,
+        10.812000000000005
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 8,
+          "text" : "Figure 2-11."
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : " "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "text" : "A real-world example of how the 3P model guides decisions on a cross-country trip using the PAVE checklist."
+        }
+      ],
+      "text" : "Figure 2-11. A real-world example of how the 3P model guides decisions on a cross-country trip using the PAVE checklist."
+    },
+    {
+      "rect" : [
+        36.25,
+        719.27630000000011,
+        237.00999999999999,
+        12.019999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "list hazards associated with all aspects of the flight: "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "P"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "ilot,"
+        }
+      ],
+      "text" : "list hazards associated with all aspects of the flight: Pilot,"
+    },
+    {
+      "rect" : [
+        36.259999999999962,
+        706.77630000000011,
+        236.98500000000004,
+        12.019999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "A"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "ircraft, en"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "V"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "ironment, and "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "E"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "xternal pressures, which makes"
+        }
+      ],
+      "text" : "Aircraft, enVironment, and External pressures, which makes"
+    },
+    {
+      "rect" : [
+        36.249999999999943,
+        694.56630000000007,
+        236.9919999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "up the PAVE checklist. "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 10,
+          "text" : "[Figure 2-11] "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "For each element,"
+        }
+      ],
+      "text" : "up the PAVE checklist. [Figure 2-11] For each element,"
+    },
+    {
+      "rect" : [
+        36.249999999999943,
+        682.06630000000007,
+        237.05000000000013,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "ask “what could hurt me, my passengers, or my aircraft?”"
+        }
+      ],
+      "text" : "ask “what could hurt me, my passengers, or my aircraft?”"
+    },
+    {
+      "rect" : [
+        36.249999999999943,
+        669.56630000000007,
+        237.03000000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "All four elements combine and interact to create a unique"
+        }
+      ],
+      "text" : "All four elements combine and interact to create a unique"
+    },
+    {
+      "rect" : [
+        36.249999999999943,
+        657.06630000000007,
+        237.03999999999991,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "situation for any flight. Pay special attention to the pilot-"
+        }
+      ],
+      "text" : "situation for any flight. Pay special attention to the pilot-"
+    },
+    {
+      "rect" : [
+        36.249999999999943,
+        644.56630000000007,
+        237.14000000000004,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "aircraft combination, and consider whether the combined"
+        }
+      ],
+      "text" : "aircraft combination, and consider whether the combined"
+    },
+    {
+      "rect" : [
+        36.249999999999943,
+        632.06630000000007,
+        237.07200000000006,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "“pilot-aircraft team” is capable of the mission you want to fly."
+        }
+      ],
+      "text" : "“pilot-aircraft team” is capable of the mission you want to fly."
+    },
+    {
+      "rect" : [
+        36.249999999999943,
+        619.56630000000007,
+        237.03500000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "For example, you may be a very experienced and proficient"
+        }
+      ],
+      "text" : "For example, you may be a very experienced and proficient"
+    },
+    {
+      "rect" : [
+        36.249999999999943,
+        607.06630000000007,
+        237.07000000000011,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "pilot, but your weather flying ability is still limited if you"
+        }
+      ],
+      "text" : "pilot, but your weather flying ability is still limited if you"
+    },
+    {
+      "rect" : [
+        36.249999999999943,
+        594.56630000000007,
+        237.01999999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "are flying a 1970s-model aircraft with no weather avoidance"
+        }
+      ],
+      "text" : "are flying a 1970s-model aircraft with no weather avoidance"
+    },
+    {
+      "rect" : [
+        36.249999999999943,
+        582.06630000000007,
+        237.03500000000014,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "gear. On the other hand, you may have a new technically"
+        }
+      ],
+      "text" : "gear. On the other hand, you may have a new technically"
+    },
+    {
+      "rect" : [
+        36.249999999999943,
+        569.56630000000007,
+        237.05000000000013,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "advanced aircraft with moving map GPS, weather datalink,"
+        }
+      ],
+      "text" : "advanced aircraft with moving map GPS, weather datalink,"
+    },
+    {
+      "rect" : [
+        36.249999999999943,
+        557.06630000000007,
+        237.06,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "and autopilot—but if you do not have much weather flying"
+        }
+      ],
+      "text" : "and autopilot—but if you do not have much weather flying"
+    },
+    {
+      "rect" : [
+        36.249999999999943,
+        544.56630000000007,
+        237.00999999999993,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "experience or practice in using this kind of equipment, you"
+        }
+      ],
+      "text" : "experience or practice in using this kind of equipment, you"
+    },
+    {
+      "rect" : [
+        36.249999999999943,
+        532.06630000000007,
+        237.05999999999995,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "cannot rely on the airplane’s capability to compensate for"
+        }
+      ],
+      "text" : "cannot rely on the airplane’s capability to compensate for"
+    },
+    {
+      "rect" : [
+        36.249999999999943,
+        519.56630000000007,
+        116.07999999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "your own lack of experience."
+        }
+      ],
+      "text" : "your own lack of experience."
+    },
+    {
+      "rect" : [
+        36.25,
+        493.3433,
+        237.07199999999989,
+        13.310000000000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-BoldItalic",
+          "fontSize" : 11,
+          "text" : "CARE Checklist: Review Hazards and Evaluate Risks"
+        }
+      ],
+      "text" : "CARE Checklist: Review Hazards and Evaluate Risks"
+    },
+    {
+      "rect" : [
+        36.25,
+        479.56630000000001,
+        237.01999999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "In the second step, the goal is to process this information to"
+        }
+      ],
+      "text" : "In the second step, the goal is to process this information to"
+    },
+    {
+      "rect" : [
+        36.25,
+        467.06630000000001,
+        237.05500000000029,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "determine whether the identified hazards constitute risk, which"
+        }
+      ],
+      "text" : "determine whether the identified hazards constitute risk, which"
+    },
+    {
+      "rect" : [
+        36.25,
+        454.56630000000001,
+        236.85199999999986,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "is defined as the future impact of a hazard that is not controlled"
+        }
+      ],
+      "text" : "is defined as the future impact of a hazard that is not controlled"
+    },
+    {
+      "rect" : [
+        36.25,
+        442.06630000000001,
+        237.01999999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "or eliminated. The degree of risk posed by a given hazard"
+        }
+      ],
+      "text" : "or eliminated. The degree of risk posed by a given hazard"
+    },
+    {
+      "rect" : [
+        36.25,
+        429.56630000000001,
+        237.02999999999997,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "can be measured in terms of exposure (number of people or"
+        }
+      ],
+      "text" : "can be measured in terms of exposure (number of people or"
+    },
+    {
+      "rect" : [
+        36.25,
+        417.06630000000001,
+        237.1280000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "resources affected), severity (extent of possible loss), and"
+        }
+      ],
+      "text" : "resources affected), severity (extent of possible loss), and"
+    },
+    {
+      "rect" : [
+        36.25,
+        404.56630000000001,
+        237.00000000000006,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "probability (the likelihood that a hazard will cause a loss). The"
+        }
+      ],
+      "text" : "probability (the likelihood that a hazard will cause a loss). The"
+    },
+    {
+      "rect" : [
+        36.25,
+        392.06630000000001,
+        237.06000000000006,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "goal is to evaluate their impact on the safety of your flight,"
+        }
+      ],
+      "text" : "goal is to evaluate their impact on the safety of your flight,"
+    },
+    {
+      "rect" : [
+        36.25,
+        379.56630000000001,
+        237.09000000000009,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "and consider “why must I CARE about these circumstances?”"
+        }
+      ],
+      "text" : "and consider “why must I CARE about these circumstances?”"
+    },
+    {
+      "rect" : [
+        36.25,
+        354.56630000000001,
+        237.017,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "For each hazard that you perceived in step one, process by"
+        }
+      ],
+      "text" : "For each hazard that you perceived in step one, process by"
+    },
+    {
+      "rect" : [
+        36.25,
+        341.77629999999999,
+        237.00999999999999,
+        12.019999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "using the CARE checklist of: "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "C"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "onsequences, "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "A"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "lternatives,"
+        }
+      ],
+      "text" : "using the CARE checklist of: Consequences, Alternatives,"
+    },
+    {
+      "rect" : [
+        36.25,
+        329.27629999999999,
+        236.99900000000002,
+        12.019999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "R"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "eality, "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "E"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "xternal factors. "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 10,
+          "text" : "[Figure 2-12] "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "For example, let's"
+        }
+      ],
+      "text" : "Reality, External factors. [Figure 2-12] For example, let's"
+    },
+    {
+      "rect" : [
+        36.25,
+        317.06630000000001,
+        205.53999999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "evaluate a night flight to attend a business meeting:"
+        }
+      ],
+      "text" : "evaluate a night flight to attend a business meeting:"
+    },
+    {
+      "rect" : [
+        63.25,
+        299.77629999999999,
+        209.85399999999993,
+        12.019999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "C"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "onsequences—departing after a full workday creates"
+        }
+      ],
+      "text" : "Consequences—departing after a full workday creates"
+    },
+    {
+      "rect" : [
+        63.245999999999995,
+        287.56630000000001,
+        80.530000000000015,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "fatigue and pressure"
+        }
+      ],
+      "text" : "fatigue and pressure"
+    },
+    {
+      "rect" : [
+        312.25,
+        719.27640000000008,
+        210.08470000000011,
+        12.019999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "A"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "lternatives—delay until morning; reschedule"
+        }
+      ],
+      "text" : "Alternatives—delay until morning; reschedule"
+    },
+    {
+      "rect" : [
+        312.24770000000001,
+        707.06640000000004,
+        58.050000000000011,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "meeting; drive"
+        }
+      ],
+      "text" : "meeting; drive"
+    },
+    {
+      "rect" : [
+        312.25,
+        689.77640000000008,
+        210.0077,
+        12.019999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "R"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "eality —dangers and distractions of fatigue could"
+        }
+      ],
+      "text" : "Reality —dangers and distractions of fatigue could"
+    },
+    {
+      "rect" : [
+        312.25169999999997,
+        677.56640000000004,
+        74.699999999999989,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "lead to an accident"
+        }
+      ],
+      "text" : "lead to an accident"
+    },
+    {
+      "rect" : [
+        312.25,
+        660.27640000000008,
+        210.00689999999997,
+        12.019999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "E"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "xternal pressures—business meeting at destination"
+        }
+      ],
+      "text" : "External pressures—business meeting at destination"
+    },
+    {
+      "rect" : [
+        312.24990000000003,
+        648.06640000000004,
+        77.769999999999982,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "might influence me"
+        }
+      ],
+      "text" : "might influence me"
+    },
+    {
+      "rect" : [
+        285.24990000000003,
+        623.06640000000004,
+        236.9899999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "A good rule of thumb for the processing phase: if you find"
+        }
+      ],
+      "text" : "A good rule of thumb for the processing phase: if you find"
+    },
+    {
+      "rect" : [
+        285.24990000000003,
+        610.56640000000004,
+        236.97000000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "yourself saying that it will “probably” be okay, it is definitely"
+        }
+      ],
+      "text" : "yourself saying that it will “probably” be okay, it is definitely"
+    },
+    {
+      "rect" : [
+        285.24990000000003,
+        598.06640000000004,
+        237.00999999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "time for a solid reality check. If you are worried about missing"
+        }
+      ],
+      "text" : "time for a solid reality check. If you are worried about missing"
+    },
+    {
+      "rect" : [
+        285.24990000000003,
+        585.56640000000004,
+        237.02299999999991,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "a meeting, be realistic about how that pressure will affect"
+        }
+      ],
+      "text" : "a meeting, be realistic about how that pressure will affect"
+    },
+    {
+      "rect" : [
+        285.24990000000003,
+        573.06640000000004,
+        237.02899999999988,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "not just your initial go/no-go decision, but also your inflight"
+        }
+      ],
+      "text" : "not just your initial go/no-go decision, but also your inflight"
+    },
+    {
+      "rect" : [
+        285.24990000000003,
+        560.56640000000004,
+        162.49000000000007,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "decisions to continue the flight or divert."
+        }
+      ],
+      "text" : "decisions to continue the flight or divert."
+    },
+    {
+      "rect" : [
+        285.25,
+        534.34340000000009,
+        210.56200000000001,
+        13.309999999999945
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-BoldItalic",
+          "fontSize" : 11,
+          "text" : "TEAM Checklist: Choose and Implement Risk"
+        }
+      ],
+      "text" : "TEAM Checklist: Choose and Implement Risk"
+    },
+    {
+      "rect" : [
+        285.25,
+        521.34140000000014,
+        39.12700000000001,
+        13.309999999999945
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-BoldItalic",
+          "fontSize" : 11,
+          "text" : "Controls"
+        }
+      ],
+      "text" : "Controls"
+    },
+    {
+      "rect" : [
+        285.25,
+        507.56640000000004,
+        236.99000000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Once you have perceived a hazard (step one) and processed"
+        }
+      ],
+      "text" : "Once you have perceived a hazard (step one) and processed"
+    },
+    {
+      "rect" : [
+        285.25,
+        495.06640000000004,
+        237.04499999999996,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "its impact on flight safety (step two), it is time to move to the"
+        }
+      ],
+      "text" : "its impact on flight safety (step two), it is time to move to the"
+    },
+    {
+      "rect" : [
+        285.25,
+        482.56640000000004,
+        237.01799999999992,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "third step, perform. Perform risk management by using the"
+        }
+      ],
+      "text" : "third step, perform. Perform risk management by using the"
+    },
+    {
+      "rect" : [
+        285.25,
+        469.77640000000002,
+        237,
+        12.019999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "TEAM checklist of: "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "T"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "ransfer, "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "E"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "liminate, "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "A"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "ccept, "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "M"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "itigate"
+        }
+      ],
+      "text" : "TEAM checklist of: Transfer, Eliminate, Accept, Mitigate"
+    },
+    {
+      "rect" : [
+        285.24000000000001,
+        457.56640000000004,
+        154.67000000000002,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "to deal with each factor. "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 10,
+          "text" : "[Figure 2-13]"
+        }
+      ],
+      "text" : "to deal with each factor. [Figure 2-13]"
+    },
+    {
+      "rect" : [
+        312.25,
+        440.27640000000002,
+        210,
+        12.019999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "T"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "ransfer—Should this risk decision be transferred to"
+        }
+      ],
+      "text" : "Transfer—Should this risk decision be transferred to"
+    },
+    {
+      "rect" : [
+        312.25,
+        428.06640000000004,
+        210.02099999999996,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "someone else (e.g., do you need to consult the chief"
+        }
+      ],
+      "text" : "someone else (e.g., do you need to consult the chief"
+    },
+    {
+      "rect" : [
+        312.25,
+        415.56640000000004,
+        70.269999999999982,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "flight instructor?)"
+        }
+      ],
+      "text" : "flight instructor?)"
+    },
+    {
+      "rect" : [
+        312.25,
+        398.27640000000002,
+        203.57000000000005,
+        12.019999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "E"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "liminate—Is there a way to eliminate the hazard?"
+        }
+      ],
+      "text" : "Eliminate—Is there a way to eliminate the hazard?"
+    },
+    {
+      "rect" : [
+        312.25,
+        381.27640000000002,
+        210.00700000000006,
+        12.019999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "A"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "ccept—Do the benefits of accepting risk outweigh"
+        }
+      ],
+      "text" : "Accept—Do the benefits of accepting risk outweigh"
+    },
+    {
+      "rect" : [
+        312.25,
+        369.06640000000004,
+        39.159999999999968,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the costs?"
+        }
+      ],
+      "text" : "the costs?"
+    },
+    {
+      "rect" : [
+        312.25,
+        351.77640000000002,
+        194.69999999999999,
+        12.019999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "M"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "itigate—What can you do to mitigate the risk?"
+        }
+      ],
+      "text" : "Mitigate—What can you do to mitigate the risk?"
+    },
+    {
+      "rect" : [
+        285.25,
+        322.56640000000004,
+        236.99999999999989,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "The goal is to perform by taking action to eliminate hazards"
+        }
+      ],
+      "text" : "The goal is to perform by taking action to eliminate hazards"
+    },
+    {
+      "rect" : [
+        285.25,
+        310.06640000000004,
+        237.01499999999987,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "or mitigate risk, and then continuously evaluate the outcome"
+        }
+      ],
+      "text" : "or mitigate risk, and then continuously evaluate the outcome"
+    },
+    {
+      "rect" : [
+        285.25,
+        297.56640000000004,
+        236.99999999999977,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "of this action. With the example of low ceilings at destination,"
+        }
+      ],
+      "text" : "of this action. With the example of low ceilings at destination,"
+    },
+    {
+      "rect" : [
+        285.25,
+        285.06640000000004,
+        237.01599999999996,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "for instance, the pilot can perform good ADM by selecting"
+        }
+      ],
+      "text" : "for instance, the pilot can perform good ADM by selecting"
+    },
+    {
+      "rect" : [
+        285.25,
+        272.56640000000004,
+        237.00400000000002,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "a suitable alternate, knowing where to find good weather,"
+        }
+      ],
+      "text" : "a suitable alternate, knowing where to find good weather,"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    594,
+    774
+  ],
+  "caseID" : "faa-phak-8083-25c",
+  "graphics" : [
+    [
+      34.922599999999989,
+      80.588400000000007,
+      486.99900000000002,
+      180.34900000000002
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        33.709700000000005,
+        20.010000000000005,
+        12.310000000000002
+      ],
+      "text" : "2-16"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        61.798700000000004,
+        443.87029999999987,
+        10.812000000000005
+      ],
+      "structure" : {
+        "group" : 1710,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 6491
+      },
+      "text" : "Figure 2-11. A real-world example of how the 3P model guides decisions on a cross-country trip using the PAVE checklist."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36.25,
+        719.27630000000011,
+        237.00999999999999,
+        12.019999999999982
+      ],
+      "text" : "list hazards associated with all aspects of the flight: Pilot,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36.259999999999962,
+        706.77630000000011,
+        236.98500000000004,
+        12.019999999999982
+      ],
+      "text" : "Aircraft, enVironment, and External pressures, which makes"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36.249999999999943,
+        694.56630000000007,
+        236.9919999999999,
+        11.470000000000027
+      ],
+      "text" : "up the PAVE checklist. [Figure 2-11] For each element,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36.249999999999943,
+        682.06630000000007,
+        237.05000000000013,
+        11.470000000000027
+      ],
+      "text" : "ask “what could hurt me, my passengers, or my aircraft?”"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36.249999999999943,
+        669.56630000000007,
+        237.03000000000003,
+        11.470000000000027
+      ],
+      "text" : "All four elements combine and interact to create a unique"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36.249999999999943,
+        657.06630000000007,
+        237.03999999999991,
+        11.470000000000027
+      ],
+      "text" : "situation for any flight. Pay special attention to the pilot-"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36.249999999999943,
+        644.56630000000007,
+        237.14000000000004,
+        11.470000000000027
+      ],
+      "text" : "aircraft combination, and consider whether the combined"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36.249999999999943,
+        632.06630000000007,
+        237.07200000000006,
+        11.470000000000027
+      ],
+      "text" : "“pilot-aircraft team” is capable of the mission you want to fly."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36.249999999999943,
+        619.56630000000007,
+        237.03500000000003,
+        11.470000000000027
+      ],
+      "text" : "For example, you may be a very experienced and proficient"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36.249999999999943,
+        607.06630000000007,
+        237.07000000000011,
+        11.470000000000027
+      ],
+      "text" : "pilot, but your weather flying ability is still limited if you"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36.249999999999943,
+        594.56630000000007,
+        237.01999999999998,
+        11.470000000000027
+      ],
+      "text" : "are flying a 1970s-model aircraft with no weather avoidance"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36.249999999999943,
+        582.06630000000007,
+        237.03500000000014,
+        11.470000000000027
+      ],
+      "text" : "gear. On the other hand, you may have a new technically"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36.249999999999943,
+        569.56630000000007,
+        237.05000000000013,
+        11.470000000000027
+      ],
+      "text" : "advanced aircraft with moving map GPS, weather datalink,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36.249999999999943,
+        557.06630000000007,
+        237.06,
+        11.470000000000027
+      ],
+      "text" : "and autopilot—but if you do not have much weather flying"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36.249999999999943,
+        544.56630000000007,
+        237.00999999999993,
+        11.470000000000027
+      ],
+      "text" : "experience or practice in using this kind of equipment, you"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36.249999999999943,
+        532.06630000000007,
+        237.05999999999995,
+        11.470000000000027
+      ],
+      "text" : "cannot rely on the airplane’s capability to compensate for"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36.249999999999943,
+        519.56630000000007,
+        116.07999999999998,
+        11.470000000000027
+      ],
+      "text" : "your own lack of experience."
+    },
+    {
+      "fontSize" : 11,
+      "monospaced" : false,
+      "rect" : [
+        36.25,
+        493.3433,
+        237.07199999999989,
+        13.310000000000002
+      ],
+      "structure" : {
+        "group" : 1522,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 5441
+      },
+      "text" : "CARE Checklist: Review Hazards and Evaluate Risks"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36.25,
+        479.56630000000001,
+        237.01999999999998,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1523,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 5442
+      },
+      "text" : "In the second step, the goal is to process this information to"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36.25,
+        467.06630000000001,
+        237.05500000000029,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1523,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 5443
+      },
+      "text" : "determine whether the identified hazards constitute risk, which"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36.25,
+        454.56630000000001,
+        236.85199999999986,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1523,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 5444
+      },
+      "text" : "is defined as the future impact of a hazard that is not controlled"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36.25,
+        442.06630000000001,
+        237.01999999999998,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1523,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 5445
+      },
+      "text" : "or eliminated. The degree of risk posed by a given hazard"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36.25,
+        429.56630000000001,
+        237.02999999999997,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1523,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 5446
+      },
+      "text" : "can be measured in terms of exposure (number of people or"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36.25,
+        417.06630000000001,
+        237.1280000000001,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1523,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 5447
+      },
+      "text" : "resources affected), severity (extent of possible loss), and"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36.25,
+        404.56630000000001,
+        237.00000000000006,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1523,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 5448
+      },
+      "text" : "probability (the likelihood that a hazard will cause a loss). The"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36.25,
+        392.06630000000001,
+        237.06000000000006,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1523,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 5449
+      },
+      "text" : "goal is to evaluate their impact on the safety of your flight,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36.25,
+        379.56630000000001,
+        237.09000000000009,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1523,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 5450
+      },
+      "text" : "and consider “why must I CARE about these circumstances?”"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36.25,
+        354.56630000000001,
+        237.017,
+        11.470000000000027
+      ],
+      "text" : "For each hazard that you perceived in step one, process by"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36.25,
+        341.77629999999999,
+        237.00999999999999,
+        12.019999999999982
+      ],
+      "text" : "using the CARE checklist of: Consequences, Alternatives,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36.25,
+        329.27629999999999,
+        236.99900000000002,
+        12.019999999999982
+      ],
+      "text" : "Reality, External factors. [Figure 2-12] For example, let's"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36.25,
+        317.06630000000001,
+        205.53999999999999,
+        11.470000000000027
+      ],
+      "text" : "evaluate a night flight to attend a business meeting:"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        63.25,
+        299.77629999999999,
+        209.85399999999993,
+        12.019999999999982
+      ],
+      "text" : "Consequences—departing after a full workday creates"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        63.245999999999995,
+        287.56630000000001,
+        80.530000000000015,
+        11.470000000000027
+      ],
+      "text" : "fatigue and pressure"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312.25,
+        719.27640000000008,
+        210.08470000000011,
+        12.019999999999982
+      ],
+      "text" : "Alternatives—delay until morning; reschedule"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312.24770000000001,
+        707.06640000000004,
+        58.050000000000011,
+        11.470000000000027
+      ],
+      "text" : "meeting; drive"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312.25,
+        689.77640000000008,
+        210.0077,
+        12.019999999999982
+      ],
+      "text" : "Reality —dangers and distractions of fatigue could"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312.25169999999997,
+        677.56640000000004,
+        74.699999999999989,
+        11.470000000000027
+      ],
+      "text" : "lead to an accident"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312.25,
+        660.27640000000008,
+        210.00689999999997,
+        12.019999999999982
+      ],
+      "text" : "External pressures—business meeting at destination"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312.24990000000003,
+        648.06640000000004,
+        77.769999999999982,
+        11.470000000000027
+      ],
+      "text" : "might influence me"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285.24990000000003,
+        623.06640000000004,
+        236.9899999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1529,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 5476
+      },
+      "text" : "A good rule of thumb for the processing phase: if you find"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285.24990000000003,
+        610.56640000000004,
+        236.97000000000003,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1529,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 5477
+      },
+      "text" : "yourself saying that it will “probably” be okay, it is definitely"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285.24990000000003,
+        598.06640000000004,
+        237.00999999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1529,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 5478
+      },
+      "text" : "time for a solid reality check. If you are worried about missing"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285.24990000000003,
+        585.56640000000004,
+        237.02299999999991,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1529,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 5479
+      },
+      "text" : "a meeting, be realistic about how that pressure will affect"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285.24990000000003,
+        573.06640000000004,
+        237.02899999999988,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1529,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 5480
+      },
+      "text" : "not just your initial go/no-go decision, but also your inflight"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285.24990000000003,
+        560.56640000000004,
+        162.49000000000007,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1529,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 5481
+      },
+      "text" : "decisions to continue the flight or divert."
+    },
+    {
+      "fontSize" : 11,
+      "monospaced" : false,
+      "rect" : [
+        285.25,
+        534.34340000000009,
+        210.56200000000001,
+        13.309999999999945
+      ],
+      "structure" : {
+        "group" : 1530,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 5482
+      },
+      "text" : "TEAM Checklist: Choose and Implement Risk"
+    },
+    {
+      "fontSize" : 11,
+      "monospaced" : false,
+      "rect" : [
+        285.25,
+        521.34140000000014,
+        39.12700000000001,
+        13.309999999999945
+      ],
+      "structure" : {
+        "group" : 1530,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 5483
+      },
+      "text" : "Controls"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285.25,
+        507.56640000000004,
+        236.99000000000001,
+        11.470000000000027
+      ],
+      "text" : "Once you have perceived a hazard (step one) and processed"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285.25,
+        495.06640000000004,
+        237.04499999999996,
+        11.470000000000027
+      ],
+      "text" : "its impact on flight safety (step two), it is time to move to the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285.25,
+        482.56640000000004,
+        237.01799999999992,
+        11.470000000000027
+      ],
+      "text" : "third step, perform. Perform risk management by using the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285.25,
+        469.77640000000002,
+        237,
+        12.019999999999982
+      ],
+      "text" : "TEAM checklist of: Transfer, Eliminate, Accept, Mitigate"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285.24000000000001,
+        457.56640000000004,
+        154.67000000000002,
+        11.470000000000027
+      ],
+      "text" : "to deal with each factor. [Figure 2-13]"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312.25,
+        440.27640000000002,
+        210,
+        12.019999999999982
+      ],
+      "text" : "Transfer—Should this risk decision be transferred to"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312.25,
+        428.06640000000004,
+        210.02099999999996,
+        11.470000000000027
+      ],
+      "text" : "someone else (e.g., do you need to consult the chief"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312.25,
+        415.56640000000004,
+        70.269999999999982,
+        11.470000000000027
+      ],
+      "text" : "flight instructor?)"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312.25,
+        398.27640000000002,
+        203.57000000000005,
+        12.019999999999982
+      ],
+      "text" : "Eliminate—Is there a way to eliminate the hazard?"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312.25,
+        381.27640000000002,
+        210.00700000000006,
+        12.019999999999982
+      ],
+      "text" : "Accept—Do the benefits of accepting risk outweigh"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312.25,
+        369.06640000000004,
+        39.159999999999968,
+        11.470000000000027
+      ],
+      "text" : "the costs?"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312.25,
+        351.77640000000002,
+        194.69999999999999,
+        12.019999999999982
+      ],
+      "text" : "Mitigate—What can you do to mitigate the risk?"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285.25,
+        322.56640000000004,
+        236.99999999999989,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1536,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 5514
+      },
+      "text" : "The goal is to perform by taking action to eliminate hazards"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285.25,
+        310.06640000000004,
+        237.01499999999987,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1536,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 5515
+      },
+      "text" : "or mitigate risk, and then continuously evaluate the outcome"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285.25,
+        297.56640000000004,
+        236.99999999999977,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1536,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 5516
+      },
+      "text" : "of this action. With the example of low ceilings at destination,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285.25,
+        285.06640000000004,
+        237.01599999999996,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1536,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 5517
+      },
+      "text" : "for instance, the pilot can perform good ADM by selecting"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285.25,
+        272.56640000000004,
+        237.00400000000002,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1536,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 5518
+      },
+      "text" : "a suitable alternate, knowing where to find good weather,"
+    }
+  ],
+  "page" : 55,
+  "paints" : [
+    {
+      "frame" : false,
+      "rect" : [
+        34.922599999999989,
+        80.588400000000007,
+        486.99900000000002,
+        180.34900000000002
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        36.922600000000003,
+        82.588700000000017,
+        482.99940000000004,
+        176.34929999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        34.922599999999989,
+        80.588400000000007,
+        486.99900000000002,
+        180.34900000000002
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        40.724300000000028,
+        151.54310000000001,
+        236.84199999999998,
+        52.236999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        131.697,
+        200.977,
+        5.8990000000000009,
+        14.675000000000011
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        37.668199999999999,
+        153.273,
+        238.0138,
+        64.474000000000018
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        39.668199999999999,
+        155.273,
+        234.0138,
+        60.474000000000018
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        282.03000000000003,
+        142.73919999999998,
+        236.84200000000004,
+        99.164000000000016
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        375.197,
+        239.886,
+        5.8990000000000009,
+        14.675000000000011
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        279.16800000000001,
+        144.524,
+        238.01400000000001,
+        112.22300000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        281.16800000000001,
+        146.524,
+        234.01400000000001,
+        108.22300000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        40.805399999999992,
+        84.943700000000007,
+        236.84099999999998,
+        51.77000000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        136.77799999999999,
+        134.31200000000001,
+        5.8990000000000009,
+        14.675999999999988
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        38.168199999999999,
+        86.585999999999999,
+        238.01479999999998,
+        64.661000000000016
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        40.168199999999999,
+        88.585800000000006,
+        234.01479999999998,
+        60.661200000000008
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        282.55050000000006,
+        84.867200000000011,
+        236.84100000000001,
+        42.494
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        378.279,
+        125.497,
+        5.8980000000000246,
+        14.676000000000002
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        279.66800000000001,
+        86.587000000000003,
+        238.01499999999999,
+        55.660000000000011
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        281.66800000000001,
+        88.586699999999993,
+        234.01499999999999,
+        51.660300000000021
+      ]
+    }
+  ],
+  "rightsBasis" : "U.S. Government publication, retained as an external development corpus source. The PDF is not bundled or relicensed under the library license.",
+  "sourceSHA256" : "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
+  "sourceTitle" : "Pilot's Handbook of Aeronautical Knowledge, FAA-H-8083-25C",
+  "sourceURL" : "https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/faa-h-8083-25c.pdf"
+}

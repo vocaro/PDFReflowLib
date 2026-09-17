@@ -108,7 +108,10 @@ enum FurnitureDetector {
                 index != lineIndex && (top ? other.rect.midY < line.rect.midY : other.rect.midY > line.rect.midY)
             }.map { top ? line.rect.minY - $0.element.rect.maxY : $0.element.rect.minY - line.rect.maxY }
             let folioParts = words.count == 1 ? words[0].split(separator: "-", omittingEmptySubsequences: false) : []
-            let isFolio = (1...2).contains(folioParts.count) && folioParts.allSatisfy { Int($0) != nil }
+            // A bare page number, chapter-prefixed (`5-17`) or lettered for an appendix, glossary or
+            // index (`c-2`, #90): the prefix names the part and the last number counts its pages.
+            let isFolio = (1...2).contains(folioParts.count) && folioParts.last.map({ Int($0) != nil }) == true
+                && (folioParts.count == 1 || Int(folioParts[0]) != nil || isPartLetter(folioParts[0]))
             // A bare folio has its own numeric/position evidence. Nearby figure labels
             // must not stop a chapter-page number from being recognized.
             guard let gap = inward.min(), isFolio || gap >= separation else { return }
@@ -319,8 +322,17 @@ enum FurnitureDetector {
            chapter >= 0, value >= 0, value <= 100_000 {
             return ("chapter-\(chapter)", value)
         }
+        // A lettered part's page (`c-2`, FAA appendix C), numbered like a chapter's (#90).
+        if parts.count == 2, isPartLetter(parts[0]), let value = Int(parts[1]), value >= 0, value <= 100_000 {
+            return ("part-\(parts[0])", value)
+        }
         guard word.count >= 2, let value = romanValue(word) else { return nil }
         return ("roman", value)
+    }
+
+    /// One letter naming an appendix, glossary or index in a lettered page number (`c` in `c-2`).
+    private static func isPartLetter(_ prefix: Substring) -> Bool {
+        prefix.count == 1 && prefix.first!.isLetter && prefix.first!.isASCII
     }
 
     /// A Roman numeral in its one canonical spelling, bounded by the range front matter uses.

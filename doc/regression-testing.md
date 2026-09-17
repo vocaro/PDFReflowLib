@@ -106,13 +106,13 @@ are, in the page markup). Evidence and negative controls on real output are in
 
 ## Current content coverage
 
-[corpus/regressions.json](../corpus/regressions.json) has 1041 targeted checks on 218 reviewed pages
+[corpus/regressions.json](../corpus/regressions.json) has 1107 targeted checks on 248 reviewed pages
 across 15 documents: FAA, algebra, 9/11, The Fed Explained, Dietary Guidelines, Our Flag, the CDC
 comic, Blue Book, and the seven #30 cases (USGS copper tables, Loper Bright footnotes, the Census
 unmapped-encoding report, the USCIS Arabic guide, IRS Publication 596 in Simplified Chinese, and
-the NBS and Replay Clocks academic papers). They comprise 325 ordered-text, 92 text, 133 paragraph,
-94 absent-text, 89 heading, 12 absent-heading, 30 list-item, 17 script, 11 footnote, 27 note-link,
-28 paragraph-continuation, 1 list-item-continuation, 5 paragraph-separation, 16 distinct-paragraph,
+the NBS and Replay Clocks academic papers). They comprise 340 ordered-text, 92 text, 146 paragraph,
+94 absent-text, 108 heading, 24 absent-heading, 30 list-item, 17 script, 11 footnote, 27 note-link,
+28 paragraph-continuation, 1 list-item-continuation, 5 paragraph-separation, 23 distinct-paragraph,
 84 image-presence, 56 warning, 1 absent-warning, 12 source-region, 3 glyph-structure,
 3 image-appearance and 2 table-cell checks, counted as `tools/check_corpus_content.py` counts them. All source-page
 anchors must also remain complete and ordered, and semantic text must contain no image attachment placeholders.
@@ -388,15 +388,18 @@ They run offline on macOS and iOS. Capture another page with full Xcode selected
 swiftc Sources/PDFReflowLib/NativeTextReader.swift Sources/PDFReflowLib/ConversionTypes.swift \
   Sources/PDFReflowLib/DocumentModel.swift Sources/PDFReflowLib/ReflowDocument.swift \
   Sources/PDFReflowLib/GraphicsReader.swift Sources/PDFReflowLib/NativeSpacingReader.swift \
+  Sources/PDFReflowLib/StructureTreeReader.swift Sources/PDFReflowLib/MarkedTextReader.swift \
   tools/capture-layout-fixture.swift \
   -o /tmp/capture-layout-fixture
 /tmp/capture-layout-fixture faa-phak-8083-25c 91 /tmp/faa-91-layout.json
 ```
 
-Run from the repository root. The tool verifies the cached PDF against the manifest SHA-256.
+Run from the repository root. The tool verifies the cached PDF against the manifest SHA-256. Where
+the page's structure validates, each line also records the tag the pipeline applies (`structure`,
+since #89/#90); older fixtures and untagged lines have none, and `SourceLayoutFixture` restores it.
 Source review, baseline failures, cross-document safeguards and full-run evidence are retained
 in [the three-fix measurement](../measurements/three-fidelity-fixes/record.md). The suite contains
-410 Swift tests with no known-issue wrappers, and 196 Python tests.
+421 Swift tests with no known-issue wrappers, and 196 Python tests.
 The comparison tests include a real-Poppler image URL check through the safe HTTP handler
 (simple and positioned modes, paths with spaces); absent Poppler is an explicit skip.
 
@@ -641,6 +644,28 @@ Disabling each rule in turn fails the test that covers it. The FAA contract chec
 openers, page 89's column order and the joined paragraphs on pages 105, 211 and 227; the Dietary
 Guidelines contract checks the bullets on pages 3–5. See the
 [form and chapter-title evidence](../measurements/form-tags-and-chapter-titles/record.md).
+
+## Paragraphs tagged in pieces beside figures, tagged titles and lettered folios
+
+`TaggedSplitsAndTitlesTests.swift` covers [#89](https://github.com/vocaro/PDFReflowLib/issues/89) and
+[#90](https://github.com/vocaro/PDFReflowLib/issues/90) with `faa-N-tagged` fixtures, which carry the
+tags the pipeline applies. FAA pages 114 and 127 join a paragraph group onto the untagged paragraph
+whose group fell back around a figure, and page 360 an untagged line onto the group above it, while
+paragraphs the same pages set apart with space stay apart; page 96 joins in a justified column whose
+only space sets off a heading. Controls: the ragged acronym list (page 462), a TAF's change groups
+(319) and right-aligned NDB table rows (416) stay separate, and #75's even-leading control still
+holds. Tagged titles in the book's bold, bold-italic and 12-point styles are headings (page 27's two
+stacked titles stay two, page 72's `Introduction` follows its chapter title, page 429's titles), and
+so are one-line italic titles over their paragraphs (pages 45 and 27); pages 54–55 and 152–153 keep
+the title directly above its paragraph past the figure (#63). Contents labels over leader entries
+(pages 6 and 15), a centred table title and a table header row (416) are not titles, and synthetic
+controls refuse an italic line that is not title case, ends a sentence, or heads a list line or an
+indented line. Appendix folios `C-1`…`C-4` share one offset and go as furniture, and a lettered folio
+in the foot band is never a heading; a broken offset and a two-letter prefix are no run. Disabling
+each of 18 parts fails a test that covers it. The FAA contract checks the joined paragraphs and
+their distinct neighbours on ten pages, the titles and their order on eleven, the absent contents,
+table-title and folio headings; the Our Flag contract checks page 12's joined quotations. See the
+[tagged splits and titles evidence](../measurements/tagged-splits-and-titles/record.md).
 
 ## Text the rendering never shows
 

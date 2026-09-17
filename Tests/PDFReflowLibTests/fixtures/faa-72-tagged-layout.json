@@ -1,0 +1,927 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        543.54690000000005,
+        33.709700000000005,
+        14.450000000000045,
+        12.310000000000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "3-1"
+        }
+      ],
+      "text" : "3-1"
+    },
+    {
+      "rect" : [
+        -1.0800002,
+        -1.0799824999999998,
+        596.15998669999999,
+        776.1599827
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    },
+    {
+      "rect" : [
+        321,
+        561.56760000000008,
+        69.600000000000023,
+        15.827999999999975
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 12,
+          "text" : "Introduction"
+        }
+      ],
+      "text" : "Introduction"
+    },
+    {
+      "rect" : [
+        321,
+        546.80160000000001,
+        236.96799999999996,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "An aircraft is a device that is used, or intended to be used, for"
+        }
+      ],
+      "text" : "An aircraft is a device that is used, or intended to be used, for"
+    },
+    {
+      "rect" : [
+        321,
+        534.30160000000001,
+        237.05099999999993,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "flight according to the current Title 14 of the Code of Federal"
+        }
+      ],
+      "text" : "flight according to the current Title 14 of the Code of Federal"
+    },
+    {
+      "rect" : [
+        321,
+        521.80160000000001,
+        236.99000000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Regulations (14 CFR) part 1, Definitions and Abbreviations."
+        }
+      ],
+      "text" : "Regulations (14 CFR) part 1, Definitions and Abbreviations."
+    },
+    {
+      "rect" : [
+        321,
+        509.30160000000001,
+        236.87,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Categories of aircraft for certification of airmen include"
+        }
+      ],
+      "text" : "Categories of aircraft for certification of airmen include"
+    },
+    {
+      "rect" : [
+        321,
+        496.80160000000001,
+        237.00300000000016,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "airplane, rotorcraft, glider, lighter-than-air, powered-lift,"
+        }
+      ],
+      "text" : "airplane, rotorcraft, glider, lighter-than-air, powered-lift,"
+    },
+    {
+      "rect" : [
+        321,
+        484.30160000000001,
+        237.01499999999987,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "powered parachute, and weight-shift control aircraft. Title"
+        }
+      ],
+      "text" : "powered parachute, and weight-shift control aircraft. Title"
+    },
+    {
+      "rect" : [
+        321,
+        471.80160000000001,
+        236.96900000000005,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "14 CFR part 1 also defines airplane as an engine-driven,"
+        }
+      ],
+      "text" : "14 CFR part 1 also defines airplane as an engine-driven,"
+    },
+    {
+      "rect" : [
+        321,
+        459.30160000000001,
+        237.00999999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "fixed-wing aircraft that is supported in flight by the dynamic"
+        }
+      ],
+      "text" : "fixed-wing aircraft that is supported in flight by the dynamic"
+    },
+    {
+      "rect" : [
+        321,
+        446.80160000000001,
+        236.96000000000004,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "reaction of air against its wings. Another term, not yet"
+        }
+      ],
+      "text" : "reaction of air against its wings. Another term, not yet"
+    },
+    {
+      "rect" : [
+        321,
+        434.30160000000001,
+        237.05999999999972,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "codified in 14 CFR part 1, is advanced avionics aircraft,"
+        }
+      ],
+      "text" : "codified in 14 CFR part 1, is advanced avionics aircraft,"
+    },
+    {
+      "rect" : [
+        321,
+        421.80160000000001,
+        237.01499999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "which refers to an aircraft that contains a global positioning"
+        }
+      ],
+      "text" : "which refers to an aircraft that contains a global positioning"
+    },
+    {
+      "rect" : [
+        321,
+        409.30160000000001,
+        236.97000000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "system (GPS) navigation system with a moving map display,"
+        }
+      ],
+      "text" : "system (GPS) navigation system with a moving map display,"
+    },
+    {
+      "rect" : [
+        321,
+        396.80160000000001,
+        237.01799999999992,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "in conjunction with another system, such as an autopilot."
+        }
+      ],
+      "text" : "in conjunction with another system, such as an autopilot."
+    },
+    {
+      "rect" : [
+        321,
+        384.30160000000001,
+        237.00499999999988,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "This chapter provides a brief introduction to the structure"
+        }
+      ],
+      "text" : "This chapter provides a brief introduction to the structure"
+    },
+    {
+      "rect" : [
+        321,
+        371.80160000000001,
+        237.01999999999987,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "of aircraft and uses an airplane for most illustrations. Light"
+        }
+      ],
+      "text" : "of aircraft and uses an airplane for most illustrations. Light"
+    },
+    {
+      "rect" : [
+        321,
+        359.30160000000001,
+        236.99699999999984,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Sport Aircraft (LSA), such as weight-shift control aircraft,"
+        }
+      ],
+      "text" : "Sport Aircraft (LSA), such as weight-shift control aircraft,"
+    },
+    {
+      "rect" : [
+        321,
+        346.80160000000001,
+        237.13499999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "balloon, glider, powered parachute, and gyroplane, have their"
+        }
+      ],
+      "text" : "balloon, glider, powered parachute, and gyroplane, have their"
+    },
+    {
+      "rect" : [
+        321,
+        334.30160000000001,
+        237.00999999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "own handbooks to include detailed information regarding"
+        }
+      ],
+      "text" : "own handbooks to include detailed information regarding"
+    },
+    {
+      "rect" : [
+        321,
+        321.80160000000001,
+        105.81,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "aerodynamics and control."
+        }
+      ],
+      "text" : "aerodynamics and control."
+    },
+    {
+      "rect" : [
+        321,
+        623.4511,
+        116.83199999999999,
+        56.831999999999994
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 48,
+          "text" : "Aircraft"
+        }
+      ],
+      "text" : "Aircraft"
+    },
+    {
+      "rect" : [
+        321,
+        581.4511,
+        191.80799999999999,
+        56.831999999999994
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 48,
+          "text" : "Construction"
+        }
+      ],
+      "text" : "Construction"
+    },
+    {
+      "rect" : [
+        321,
+        671.80420000000004,
+        51.120000000000005,
+        18.94399999999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 16,
+          "text" : "Chapter 3"
+        }
+      ],
+      "text" : "Chapter 3"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    594,
+    774
+  ],
+  "caseID" : "faa-phak-8083-25c",
+  "graphics" : [
+    [
+      0,
+      0,
+      594,
+      774
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        543.54690000000005,
+        33.709700000000005,
+        14.450000000000045,
+        12.310000000000002
+      ],
+      "structure" : {
+        "group" : 1725,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 6551
+      },
+      "text" : "3-1"
+    },
+    {
+      "fontSize" : 12,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        561.56760000000008,
+        69.600000000000023,
+        15.827999999999975
+      ],
+      "structure" : {
+        "group" : 1729,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 6557
+      },
+      "text" : "Introduction"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        546.80160000000001,
+        236.96799999999996,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1730,
+        "headingLevel" : 0,
+        "lineCount" : 19,
+        "opensWithSplitMarker" : false,
+        "order" : 6558
+      },
+      "text" : "An aircraft is a device that is used, or intended to be used, for"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        534.30160000000001,
+        237.05099999999993,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1730,
+        "headingLevel" : 0,
+        "lineCount" : 19,
+        "opensWithSplitMarker" : false,
+        "order" : 6559
+      },
+      "text" : "flight according to the current Title 14 of the Code of Federal"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        521.80160000000001,
+        236.99000000000001,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1730,
+        "headingLevel" : 0,
+        "lineCount" : 19,
+        "opensWithSplitMarker" : false,
+        "order" : 6560
+      },
+      "text" : "Regulations (14 CFR) part 1, Definitions and Abbreviations."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        509.30160000000001,
+        236.87,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1730,
+        "headingLevel" : 0,
+        "lineCount" : 19,
+        "opensWithSplitMarker" : false,
+        "order" : 6561
+      },
+      "text" : "Categories of aircraft for certification of airmen include"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        496.80160000000001,
+        237.00300000000016,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1730,
+        "headingLevel" : 0,
+        "lineCount" : 19,
+        "opensWithSplitMarker" : false,
+        "order" : 6562
+      },
+      "text" : "airplane, rotorcraft, glider, lighter-than-air, powered-lift,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        484.30160000000001,
+        237.01499999999987,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1730,
+        "headingLevel" : 0,
+        "lineCount" : 19,
+        "opensWithSplitMarker" : false,
+        "order" : 6563
+      },
+      "text" : "powered parachute, and weight-shift control aircraft. Title"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        471.80160000000001,
+        236.96900000000005,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1730,
+        "headingLevel" : 0,
+        "lineCount" : 19,
+        "opensWithSplitMarker" : false,
+        "order" : 6564
+      },
+      "text" : "14 CFR part 1 also defines airplane as an engine-driven,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        459.30160000000001,
+        237.00999999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1730,
+        "headingLevel" : 0,
+        "lineCount" : 19,
+        "opensWithSplitMarker" : false,
+        "order" : 6565
+      },
+      "text" : "fixed-wing aircraft that is supported in flight by the dynamic"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        446.80160000000001,
+        236.96000000000004,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1730,
+        "headingLevel" : 0,
+        "lineCount" : 19,
+        "opensWithSplitMarker" : false,
+        "order" : 6566
+      },
+      "text" : "reaction of air against its wings. Another term, not yet"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        434.30160000000001,
+        237.05999999999972,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1730,
+        "headingLevel" : 0,
+        "lineCount" : 19,
+        "opensWithSplitMarker" : false,
+        "order" : 6567
+      },
+      "text" : "codified in 14 CFR part 1, is advanced avionics aircraft,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        421.80160000000001,
+        237.01499999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1730,
+        "headingLevel" : 0,
+        "lineCount" : 19,
+        "opensWithSplitMarker" : false,
+        "order" : 6568
+      },
+      "text" : "which refers to an aircraft that contains a global positioning"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        409.30160000000001,
+        236.97000000000003,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1730,
+        "headingLevel" : 0,
+        "lineCount" : 19,
+        "opensWithSplitMarker" : false,
+        "order" : 6569
+      },
+      "text" : "system (GPS) navigation system with a moving map display,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        396.80160000000001,
+        237.01799999999992,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1730,
+        "headingLevel" : 0,
+        "lineCount" : 19,
+        "opensWithSplitMarker" : false,
+        "order" : 6570
+      },
+      "text" : "in conjunction with another system, such as an autopilot."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        384.30160000000001,
+        237.00499999999988,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1730,
+        "headingLevel" : 0,
+        "lineCount" : 19,
+        "opensWithSplitMarker" : false,
+        "order" : 6571
+      },
+      "text" : "This chapter provides a brief introduction to the structure"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        371.80160000000001,
+        237.01999999999987,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1730,
+        "headingLevel" : 0,
+        "lineCount" : 19,
+        "opensWithSplitMarker" : false,
+        "order" : 6572
+      },
+      "text" : "of aircraft and uses an airplane for most illustrations. Light"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        359.30160000000001,
+        236.99699999999984,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1730,
+        "headingLevel" : 0,
+        "lineCount" : 19,
+        "opensWithSplitMarker" : false,
+        "order" : 6573
+      },
+      "text" : "Sport Aircraft (LSA), such as weight-shift control aircraft,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        346.80160000000001,
+        237.13499999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1730,
+        "headingLevel" : 0,
+        "lineCount" : 19,
+        "opensWithSplitMarker" : false,
+        "order" : 6574
+      },
+      "text" : "balloon, glider, powered parachute, and gyroplane, have their"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        334.30160000000001,
+        237.00999999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1730,
+        "headingLevel" : 0,
+        "lineCount" : 19,
+        "opensWithSplitMarker" : false,
+        "order" : 6575
+      },
+      "text" : "own handbooks to include detailed information regarding"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        321.80160000000001,
+        105.81,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1730,
+        "headingLevel" : 0,
+        "lineCount" : 19,
+        "opensWithSplitMarker" : false,
+        "order" : 6576
+      },
+      "text" : "aerodynamics and control."
+    },
+    {
+      "fontSize" : 48,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        623.4511,
+        116.83199999999999,
+        56.831999999999994
+      ],
+      "text" : "Aircraft"
+    },
+    {
+      "fontSize" : 48,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        581.4511,
+        191.80799999999999,
+        56.831999999999994
+      ],
+      "text" : "Construction"
+    },
+    {
+      "fontSize" : 16,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        671.80420000000004,
+        51.120000000000005,
+        18.94399999999996
+      ],
+      "text" : "Chapter 3"
+    }
+  ],
+  "page" : 72,
+  "paints" : [
+    {
+      "frame" : false,
+      "rect" : [
+        0,
+        0,
+        594,
+        774
+      ]
+    },
+    {
+      "frame" : true,
+      "rect" : [
+        312.75299999999999,
+        313.22000000000003,
+        253.29300000000006,
+        268.91100000000006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        305.25299999999999,
+        314.03100000000001,
+        269.28000000000003,
+        273.59999999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        305.25299999999999,
+        313.72000000000003,
+        268.29199999999997,
+        273.91099999999994
+      ]
+    },
+    {
+      "frame" : true,
+      "rect" : [
+        322.22000000000003,
+        576.69799999999998,
+        202.72000000000003,
+        93.639999999999986
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        324.22000000000003,
+        578.69799999999998,
+        198.72000000000003,
+        89.639999999999986
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        319,
+        670.97300000000007,
+        55.115000000000009,
+        4
+      ]
+    }
+  ],
+  "rightsBasis" : "U.S. Government publication, retained as an external development corpus source. The PDF is not bundled or relicensed under the library license.",
+  "sourceSHA256" : "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
+  "sourceTitle" : "Pilot's Handbook of Aeronautical Knowledge, FAA-H-8083-25C",
+  "sourceURL" : "https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/faa-h-8083-25c.pdf"
+}

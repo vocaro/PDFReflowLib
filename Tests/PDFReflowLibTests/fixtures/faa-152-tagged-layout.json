@@ -1,0 +1,3467 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        36,
+        33.709700000000005,
+        14.450000000000003,
+        12.310000000000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "6-4"
+        }
+      ],
+      "text" : "6-4"
+    },
+    {
+      "rect" : [
+        285.30280000000005,
+        590.65009999999995,
+        235.23699999999997,
+        137.85000000000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    },
+    {
+      "rect" : [
+        284.75,
+        570.36040000000003,
+        119.2355,
+        11.826000000000022
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 8,
+          "text" : "Figure 6-6"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : ". "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "text" : "Differential ailerons."
+        }
+      ],
+      "text" : "Figure 6-6. Differential ailerons."
+    },
+    {
+      "rect" : [
+        284.50400000000002,
+        85.625999999999991,
+        237.00319999999999,
+        266.29400000000004
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    },
+    {
+      "rect" : [
+        285.85790000000003,
+        66.921900000000008,
+        113.94509999999997,
+        10.811999999999998
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 8,
+          "text" : "Figure 6-7."
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : " "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "text" : "Frise-type ailerons."
+        }
+      ],
+      "text" : "Figure 6-7. Frise-type ailerons."
+    },
+    {
+      "rect" : [
+        36,
+        719.56640000000004,
+        237.00799999999981,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "effectively maneuver the aircraft. As a result, the increase"
+        }
+      ],
+      "text" : "effectively maneuver the aircraft. As a result, the increase"
+    },
+    {
+      "rect" : [
+        36,
+        707.06640000000004,
+        237.00900000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "in aileron deflection causes an increase in adverse yaw. The"
+        }
+      ],
+      "text" : "in aileron deflection causes an increase in adverse yaw. The"
+    },
+    {
+      "rect" : [
+        36,
+        694.56640000000004,
+        232.19000000000005,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "yaw is especially evident in aircraft with long wing spans."
+        }
+      ],
+      "text" : "yaw is especially evident in aircraft with long wing spans."
+    },
+    {
+      "rect" : [
+        36,
+        669.56640000000004,
+        236.94000000000005,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Application of the rudder is used to counteract adverse"
+        }
+      ],
+      "text" : "Application of the rudder is used to counteract adverse"
+    },
+    {
+      "rect" : [
+        36,
+        657.06640000000004,
+        237.00499999999988,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "yaw. The amount of rudder control required is greatest at"
+        }
+      ],
+      "text" : "yaw. The amount of rudder control required is greatest at"
+    },
+    {
+      "rect" : [
+        36,
+        644.56640000000004,
+        237.01699999999994,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "low airspeeds, high angles of attack, and with large aileron"
+        }
+      ],
+      "text" : "low airspeeds, high angles of attack, and with large aileron"
+    },
+    {
+      "rect" : [
+        36,
+        632.06640000000004,
+        236.88,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "deflections. Like all control surfaces at lower airspeeds,"
+        }
+      ],
+      "text" : "deflections. Like all control surfaces at lower airspeeds,"
+    },
+    {
+      "rect" : [
+        36,
+        619.56640000000004,
+        236.94000000000017,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the vertical stabilizer/rudder becomes less effective and"
+        }
+      ],
+      "text" : "the vertical stabilizer/rudder becomes less effective and"
+    },
+    {
+      "rect" : [
+        36,
+        607.06640000000004,
+        237.125,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "magnifies the control problems associated with adverse yaw."
+        }
+      ],
+      "text" : "magnifies the control problems associated with adverse yaw."
+    },
+    {
+      "rect" : [
+        36,
+        582.06640000000004,
+        237.05000000000007,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "All turns are coordinated by use of ailerons, rudder, and"
+        }
+      ],
+      "text" : "All turns are coordinated by use of ailerons, rudder, and"
+    },
+    {
+      "rect" : [
+        36,
+        569.56640000000004,
+        237.05000000000007,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "elevator. Applying aileron pressure is necessary to place"
+        }
+      ],
+      "text" : "elevator. Applying aileron pressure is necessary to place"
+    },
+    {
+      "rect" : [
+        36,
+        557.06640000000004,
+        237.02399999999994,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the aircraft in the desired angle of bank, while simultaneous"
+        }
+      ],
+      "text" : "the aircraft in the desired angle of bank, while simultaneous"
+    },
+    {
+      "rect" : [
+        36,
+        544.56640000000004,
+        237.01499999999993,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "application of rudder pressure is necessary to counteract the"
+        }
+      ],
+      "text" : "application of rudder pressure is necessary to counteract the"
+    },
+    {
+      "rect" : [
+        36,
+        532.06640000000004,
+        236.82000000000016,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "resultant adverse yaw. Additionally, because more lift is"
+        }
+      ],
+      "text" : "resultant adverse yaw. Additionally, because more lift is"
+    },
+    {
+      "rect" : [
+        36,
+        519.56640000000004,
+        237.00999999999988,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "required during a turn than during straight-and-level flight,"
+        }
+      ],
+      "text" : "required during a turn than during straight-and-level flight,"
+    },
+    {
+      "rect" : [
+        36,
+        507.06640000000004,
+        237.01300000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the angle of attack (AOA) must be increased by applying"
+        }
+      ],
+      "text" : "the angle of attack (AOA) must be increased by applying"
+    },
+    {
+      "rect" : [
+        36,
+        494.56640000000004,
+        237.07299999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "elevator back pressure. The steeper the turn, the more elevator"
+        }
+      ],
+      "text" : "elevator back pressure. The steeper the turn, the more elevator"
+    },
+    {
+      "rect" : [
+        36,
+        482.06640000000004,
+        114.69000000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "back pressure that is needed."
+        }
+      ],
+      "text" : "back pressure that is needed."
+    },
+    {
+      "rect" : [
+        36,
+        457.06640000000004,
+        237.09999999999991,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "As the desired angle of bank is established, aileron and"
+        }
+      ],
+      "text" : "As the desired angle of bank is established, aileron and"
+    },
+    {
+      "rect" : [
+        36,
+        444.56640000000004,
+        237.00400000000002,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "rudder pressures should be relaxed. This stops the angle of"
+        }
+      ],
+      "text" : "rudder pressures should be relaxed. This stops the angle of"
+    },
+    {
+      "rect" : [
+        36,
+        432.06640000000004,
+        236.85000000000002,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "bank from increasing, because the aileron and rudder control"
+        }
+      ],
+      "text" : "bank from increasing, because the aileron and rudder control"
+    },
+    {
+      "rect" : [
+        36,
+        419.56640000000004,
+        237.00799999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "surfaces are in a neutral and streamlined position. Elevator"
+        }
+      ],
+      "text" : "surfaces are in a neutral and streamlined position. Elevator"
+    },
+    {
+      "rect" : [
+        36,
+        407.06640000000004,
+        237.01199999999989,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "back pressure should be held constant to maintain altitude."
+        }
+      ],
+      "text" : "back pressure should be held constant to maintain altitude."
+    },
+    {
+      "rect" : [
+        36,
+        394.56640000000004,
+        237.02999999999992,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "The roll-out from a turn is similar to the roll-in, except the"
+        }
+      ],
+      "text" : "The roll-out from a turn is similar to the roll-in, except the"
+    },
+    {
+      "rect" : [
+        36,
+        382.06640000000004,
+        237.0200000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "flight controls are applied in the opposite direction. The"
+        }
+      ],
+      "text" : "flight controls are applied in the opposite direction. The"
+    },
+    {
+      "rect" : [
+        36,
+        369.56640000000004,
+        237.01699999999994,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "aileron and rudder are applied in the direction of the roll-out"
+        }
+      ],
+      "text" : "aileron and rudder are applied in the direction of the roll-out"
+    },
+    {
+      "rect" : [
+        36,
+        357.06640000000004,
+        237.00799999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "or toward the high wing. As the angle of bank decreases,"
+        }
+      ],
+      "text" : "or toward the high wing. As the angle of bank decreases,"
+    },
+    {
+      "rect" : [
+        36,
+        344.56640000000004,
+        237.01599999999985,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the elevator back pressure should be relaxed as necessary"
+        }
+      ],
+      "text" : "the elevator back pressure should be relaxed as necessary"
+    },
+    {
+      "rect" : [
+        36,
+        332.06640000000004,
+        80.28000000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "to maintain altitude."
+        }
+      ],
+      "text" : "to maintain altitude."
+    },
+    {
+      "rect" : [
+        36,
+        307.06640000000004,
+        236.85000000000014,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "In an attempt to reduce the effects of adverse yaw,"
+        }
+      ],
+      "text" : "In an attempt to reduce the effects of adverse yaw,"
+    },
+    {
+      "rect" : [
+        36,
+        294.56640000000004,
+        236.99000000000012,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "manufacturers have engineered four systems: differential"
+        }
+      ],
+      "text" : "manufacturers have engineered four systems: differential"
+    },
+    {
+      "rect" : [
+        36,
+        282.06640000000004,
+        237.13199999999995,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "ailerons, frise-type ailerons, coupled ailerons and rudder,"
+        }
+      ],
+      "text" : "ailerons, frise-type ailerons, coupled ailerons and rudder,"
+    },
+    {
+      "rect" : [
+        36,
+        269.56640000000004,
+        56.650000000000006,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "and flaperons."
+        }
+      ],
+      "text" : "and flaperons."
+    },
+    {
+      "rect" : [
+        36,
+        244.56640000000004,
+        83.059999999999988,
+        11.340000000000003
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 10,
+          "text" : "Differential Ailerons"
+        }
+      ],
+      "text" : "Differential Ailerons"
+    },
+    {
+      "rect" : [
+        36,
+        230.06640000000004,
+        237.02999999999997,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "With differential ailerons, one aileron is raised a greater"
+        }
+      ],
+      "text" : "With differential ailerons, one aileron is raised a greater"
+    },
+    {
+      "rect" : [
+        36,
+        217.56640000000004,
+        237.00999999999999,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "distance than the other aileron and is lowered for a given"
+        }
+      ],
+      "text" : "distance than the other aileron and is lowered for a given"
+    },
+    {
+      "rect" : [
+        36,
+        205.06640000000004,
+        237.12500000000011,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "movement of the control wheel or control stick. This produces"
+        }
+      ],
+      "text" : "movement of the control wheel or control stick. This produces"
+    },
+    {
+      "rect" : [
+        36,
+        192.56640000000004,
+        237.05800000000005,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "an increase in drag on the descending wing. The greater drag"
+        }
+      ],
+      "text" : "an increase in drag on the descending wing. The greater drag"
+    },
+    {
+      "rect" : [
+        36,
+        180.06640000000004,
+        237.08500000000015,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "results from deflecting the up aileron on the descending wing"
+        }
+      ],
+      "text" : "results from deflecting the up aileron on the descending wing"
+    },
+    {
+      "rect" : [
+        36,
+        167.56640000000004,
+        237.01900000000001,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "to a greater angle than the down aileron on the rising wing."
+        }
+      ],
+      "text" : "to a greater angle than the down aileron on the rising wing."
+    },
+    {
+      "rect" : [
+        36,
+        155.06640000000004,
+        236.85800000000006,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "While adverse yaw is reduced, it is not eliminated completely."
+        }
+      ],
+      "text" : "While adverse yaw is reduced, it is not eliminated completely."
+    },
+    {
+      "rect" : [
+        36,
+        142.56640000000004,
+        50.829999999999998,
+        11.340000000000003
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 10,
+          "text" : "[Figure 6-6]"
+        }
+      ],
+      "text" : "[Figure 6-6]"
+    },
+    {
+      "rect" : [
+        36,
+        117.56640000000004,
+        80.27000000000001,
+        11.340000000000003
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 10,
+          "text" : "Frise-Type Ailerons"
+        }
+      ],
+      "text" : "Frise-Type Ailerons"
+    },
+    {
+      "rect" : [
+        36,
+        103.06640000000004,
+        237.01299999999992,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "With a frise-type aileron, when pressure is applied to the"
+        }
+      ],
+      "text" : "With a frise-type aileron, when pressure is applied to the"
+    },
+    {
+      "rect" : [
+        36,
+        90.566400000000044,
+        237.03499999999997,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "control wheel, or control stick, the aileron that is being raised"
+        }
+      ],
+      "text" : "control wheel, or control stick, the aileron that is being raised"
+    },
+    {
+      "rect" : [
+        36,
+        78.066400000000044,
+        236.98999999999995,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "pivots on an offset hinge. This projects the leading edge of"
+        }
+      ],
+      "text" : "pivots on an offset hinge. This projects the leading edge of"
+    },
+    {
+      "rect" : [
+        36,
+        65.566400000000044,
+        237.10000000000008,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the aileron into the airflow and creates drag. It helps equalize"
+        }
+      ],
+      "text" : "the aileron into the airflow and creates drag. It helps equalize"
+    },
+    {
+      "rect" : [
+        285,
+        552.38640000000009,
+        237.00700000000006,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the drag created by the lowered aileron on the opposite wing"
+        }
+      ],
+      "text" : "the drag created by the lowered aileron on the opposite wing"
+    },
+    {
+      "rect" : [
+        285,
+        539.88640000000009,
+        155.5,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "and reduces adverse yaw. "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 10,
+          "text" : "[Figure 6-7]"
+        }
+      ],
+      "text" : "and reduces adverse yaw. [Figure 6-7]"
+    },
+    {
+      "rect" : [
+        285,
+        514.88640000000009,
+        236.98599999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "The frise-type aileron also forms a slot so air flows smoothly"
+        }
+      ],
+      "text" : "The frise-type aileron also forms a slot so air flows smoothly"
+    },
+    {
+      "rect" : [
+        285,
+        502.38640000000009,
+        236.9899999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "over the lowered aileron, making it more effective at high"
+        }
+      ],
+      "text" : "over the lowered aileron, making it more effective at high"
+    },
+    {
+      "rect" : [
+        285,
+        489.88640000000009,
+        237.01699999999994,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "angles of attack. Frise-type ailerons may also be designed"
+        }
+      ],
+      "text" : "angles of attack. Frise-type ailerons may also be designed"
+    },
+    {
+      "rect" : [
+        285,
+        477.38640000000009,
+        237.00299999999993,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "to function differentially. Like the differential aileron, the"
+        }
+      ],
+      "text" : "to function differentially. Like the differential aileron, the"
+    },
+    {
+      "rect" : [
+        285,
+        464.88640000000009,
+        237.01599999999996,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "frise-type aileron does not eliminate adverse yaw entirely."
+        }
+      ],
+      "text" : "frise-type aileron does not eliminate adverse yaw entirely."
+    },
+    {
+      "rect" : [
+        285,
+        452.38640000000009,
+        237.01099999999997,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Coordinated rudder application is still needed when ailerons"
+        }
+      ],
+      "text" : "Coordinated rudder application is still needed when ailerons"
+    },
+    {
+      "rect" : [
+        285,
+        439.88640000000009,
+        46.649999999999977,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "are applied."
+        }
+      ],
+      "text" : "are applied."
+    },
+    {
+      "rect" : [
+        285,
+        414.88640000000009,
+        119.70999999999998,
+        11.339999999999975
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 10,
+          "text" : "Coupled Ailerons and Rudder"
+        }
+      ],
+      "text" : "Coupled Ailerons and Rudder"
+    },
+    {
+      "rect" : [
+        285,
+        402.38640000000009,
+        236.86999999999989,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Coupled ailerons and rudder are linked controls. This is"
+        }
+      ],
+      "text" : "Coupled ailerons and rudder are linked controls. This is"
+    },
+    {
+      "rect" : [
+        285,
+        389.88640000000009,
+        236.90499999999997,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "accomplished with rudder-aileron interconnect springs, which"
+        }
+      ],
+      "text" : "accomplished with rudder-aileron interconnect springs, which"
+    },
+    {
+      "rect" : [
+        285,
+        377.38640000000009,
+        237.00200000000041,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "help correct for aileron drag by automatically deflecting"
+        }
+      ],
+      "text" : "help correct for aileron drag by automatically deflecting"
+    },
+    {
+      "rect" : [
+        285,
+        364.88640000000009,
+        237.00800000000004,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the rudder at the same time the ailerons are deflected. For"
+        }
+      ],
+      "text" : "the rudder at the same time the ailerons are deflected. For"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    594,
+    774
+  ],
+  "caseID" : "faa-phak-8083-25c",
+  "graphics" : [
+    [
+      283.80280000000005,
+      589.15009999999995,
+      238.23699999999997,
+      140.85000000000002
+    ],
+    [
+      283.00400000000002,
+      84.125999999999991,
+      240.00319999999999,
+      269.29400000000004
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        33.709700000000005,
+        14.450000000000003,
+        12.310000000000002
+      ],
+      "text" : "6-4"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        284.75,
+        570.36040000000003,
+        119.2355,
+        11.826000000000022
+      ],
+      "structure" : {
+        "group" : 2665,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 12439
+      },
+      "text" : "Figure 6-6. Differential ailerons."
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        285.85790000000003,
+        66.921900000000008,
+        113.94509999999997,
+        10.811999999999998
+      ],
+      "text" : "Figure 6-7. Frise-type ailerons."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        719.56640000000004,
+        237.00799999999981,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2578,
+        "headingLevel" : 0,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 11875
+      },
+      "text" : "effectively maneuver the aircraft. As a result, the increase"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        707.06640000000004,
+        237.00900000000001,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2578,
+        "headingLevel" : 0,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 11876
+      },
+      "text" : "in aileron deflection causes an increase in adverse yaw. The"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        694.56640000000004,
+        232.19000000000005,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2578,
+        "headingLevel" : 0,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 11877
+      },
+      "text" : "yaw is especially evident in aircraft with long wing spans."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        669.56640000000004,
+        236.94000000000005,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2579,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 11878
+      },
+      "text" : "Application of the rudder is used to counteract adverse"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        657.06640000000004,
+        237.00499999999988,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2579,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 11879
+      },
+      "text" : "yaw. The amount of rudder control required is greatest at"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        644.56640000000004,
+        237.01699999999994,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2579,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 11880
+      },
+      "text" : "low airspeeds, high angles of attack, and with large aileron"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        632.06640000000004,
+        236.88,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2579,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 11881
+      },
+      "text" : "deflections. Like all control surfaces at lower airspeeds,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        619.56640000000004,
+        236.94000000000017,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2579,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 11882
+      },
+      "text" : "the vertical stabilizer/rudder becomes less effective and"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        607.06640000000004,
+        237.125,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2579,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 11883
+      },
+      "text" : "magnifies the control problems associated with adverse yaw."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        582.06640000000004,
+        237.05000000000007,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2580,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 11884
+      },
+      "text" : "All turns are coordinated by use of ailerons, rudder, and"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        569.56640000000004,
+        237.05000000000007,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2580,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 11885
+      },
+      "text" : "elevator. Applying aileron pressure is necessary to place"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        557.06640000000004,
+        237.02399999999994,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2580,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 11886
+      },
+      "text" : "the aircraft in the desired angle of bank, while simultaneous"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        544.56640000000004,
+        237.01499999999993,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2580,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 11887
+      },
+      "text" : "application of rudder pressure is necessary to counteract the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        532.06640000000004,
+        236.82000000000016,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2580,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 11888
+      },
+      "text" : "resultant adverse yaw. Additionally, because more lift is"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        519.56640000000004,
+        237.00999999999988,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2580,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 11889
+      },
+      "text" : "required during a turn than during straight-and-level flight,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        507.06640000000004,
+        237.01300000000003,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2580,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 11890
+      },
+      "text" : "the angle of attack (AOA) must be increased by applying"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        494.56640000000004,
+        237.07299999999998,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2580,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 11892
+      },
+      "text" : "elevator back pressure. The steeper the turn, the more elevator"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        482.06640000000004,
+        114.69000000000003,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2580,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 11893
+      },
+      "text" : "back pressure that is needed."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        457.06640000000004,
+        237.09999999999991,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2581,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 11894
+      },
+      "text" : "As the desired angle of bank is established, aileron and"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        444.56640000000004,
+        237.00400000000002,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2581,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 11895
+      },
+      "text" : "rudder pressures should be relaxed. This stops the angle of"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        432.06640000000004,
+        236.85000000000002,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2581,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 11896
+      },
+      "text" : "bank from increasing, because the aileron and rudder control"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        419.56640000000004,
+        237.00799999999998,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2581,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 11897
+      },
+      "text" : "surfaces are in a neutral and streamlined position. Elevator"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        407.06640000000004,
+        237.01199999999989,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2581,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 11898
+      },
+      "text" : "back pressure should be held constant to maintain altitude."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        394.56640000000004,
+        237.02999999999992,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2581,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 11899
+      },
+      "text" : "The roll-out from a turn is similar to the roll-in, except the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        382.06640000000004,
+        237.0200000000001,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2581,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 11900
+      },
+      "text" : "flight controls are applied in the opposite direction. The"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        369.56640000000004,
+        237.01699999999994,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2581,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 11901
+      },
+      "text" : "aileron and rudder are applied in the direction of the roll-out"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        357.06640000000004,
+        237.00799999999998,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2581,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 11902
+      },
+      "text" : "or toward the high wing. As the angle of bank decreases,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        344.56640000000004,
+        237.01599999999985,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2581,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 11903
+      },
+      "text" : "the elevator back pressure should be relaxed as necessary"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        332.06640000000004,
+        80.28000000000003,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2581,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 11904
+      },
+      "text" : "to maintain altitude."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        307.06640000000004,
+        236.85000000000014,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2582,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 11905
+      },
+      "text" : "In an attempt to reduce the effects of adverse yaw,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        294.56640000000004,
+        236.99000000000012,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2582,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 11906
+      },
+      "text" : "manufacturers have engineered four systems: differential"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        282.06640000000004,
+        237.13199999999995,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2582,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 11907
+      },
+      "text" : "ailerons, frise-type ailerons, coupled ailerons and rudder,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        269.56640000000004,
+        56.650000000000006,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2582,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 11908
+      },
+      "text" : "and flaperons."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        244.56640000000004,
+        83.059999999999988,
+        11.340000000000003
+      ],
+      "structure" : {
+        "group" : 2583,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 11909
+      },
+      "text" : "Differential Ailerons"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        230.06640000000004,
+        237.02999999999997,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 2584,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 11910
+      },
+      "text" : "With differential ailerons, one aileron is raised a greater"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        217.56640000000004,
+        237.00999999999999,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 2584,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 11911
+      },
+      "text" : "distance than the other aileron and is lowered for a given"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        205.06640000000004,
+        237.12500000000011,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 2584,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 11912
+      },
+      "text" : "movement of the control wheel or control stick. This produces"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        192.56640000000004,
+        237.05800000000005,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 2584,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 11913
+      },
+      "text" : "an increase in drag on the descending wing. The greater drag"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        180.06640000000004,
+        237.08500000000015,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 2584,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 11914
+      },
+      "text" : "results from deflecting the up aileron on the descending wing"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        167.56640000000004,
+        237.01900000000001,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 2584,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 11915
+      },
+      "text" : "to a greater angle than the down aileron on the rising wing."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        155.06640000000004,
+        236.85800000000006,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 2584,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 11916
+      },
+      "text" : "While adverse yaw is reduced, it is not eliminated completely."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        142.56640000000004,
+        50.829999999999998,
+        11.340000000000003
+      ],
+      "structure" : {
+        "group" : 2584,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 11917
+      },
+      "text" : "[Figure 6-6]"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        117.56640000000004,
+        80.27000000000001,
+        11.340000000000003
+      ],
+      "structure" : {
+        "group" : 2585,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 11918
+      },
+      "text" : "Frise-Type Ailerons"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        103.06640000000004,
+        237.01299999999992,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 2586,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 11919
+      },
+      "text" : "With a frise-type aileron, when pressure is applied to the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        90.566400000000044,
+        237.03499999999997,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 2586,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 11920
+      },
+      "text" : "control wheel, or control stick, the aileron that is being raised"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        78.066400000000044,
+        236.98999999999995,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 2586,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 11921
+      },
+      "text" : "pivots on an offset hinge. This projects the leading edge of"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        65.566400000000044,
+        237.10000000000008,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 2586,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 11922
+      },
+      "text" : "the aileron into the airflow and creates drag. It helps equalize"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        552.38640000000009,
+        237.00700000000006,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2586,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 11923
+      },
+      "text" : "the drag created by the lowered aileron on the opposite wing"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        539.88640000000009,
+        155.5,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2586,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 11924
+      },
+      "text" : "and reduces adverse yaw. [Figure 6-7]"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        514.88640000000009,
+        236.98599999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2587,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 11926
+      },
+      "text" : "The frise-type aileron also forms a slot so air flows smoothly"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        502.38640000000009,
+        236.9899999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2587,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 11927
+      },
+      "text" : "over the lowered aileron, making it more effective at high"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        489.88640000000009,
+        237.01699999999994,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2587,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 11928
+      },
+      "text" : "angles of attack. Frise-type ailerons may also be designed"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        477.38640000000009,
+        237.00299999999993,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2587,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 11929
+      },
+      "text" : "to function differentially. Like the differential aileron, the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        464.88640000000009,
+        237.01599999999996,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2587,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 11930
+      },
+      "text" : "frise-type aileron does not eliminate adverse yaw entirely."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        452.38640000000009,
+        237.01099999999997,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2587,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 11931
+      },
+      "text" : "Coordinated rudder application is still needed when ailerons"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        439.88640000000009,
+        46.649999999999977,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2587,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 11932
+      },
+      "text" : "are applied."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        414.88640000000009,
+        119.70999999999998,
+        11.339999999999975
+      ],
+      "structure" : {
+        "group" : 2588,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 11933
+      },
+      "text" : "Coupled Ailerons and Rudder"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        402.38640000000009,
+        236.86999999999989,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2589,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 11935
+      },
+      "text" : "Coupled ailerons and rudder are linked controls. This is"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        389.88640000000009,
+        236.90499999999997,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2589,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 11936
+      },
+      "text" : "accomplished with rudder-aileron interconnect springs, which"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        377.38640000000009,
+        237.00200000000041,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2589,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 11937
+      },
+      "text" : "help correct for aileron drag by automatically deflecting"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        364.88640000000009,
+        237.00800000000004,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2589,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 11938
+      },
+      "text" : "the rudder at the same time the ailerons are deflected. For"
+    }
+  ],
+  "page" : 152,
+  "paints" : [
+    {
+      "frame" : false,
+      "rect" : [
+        283.80280000000005,
+        589.15009999999995,
+        238.23699999999997,
+        140.85000000000002
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        285.803,
+        591.14999999999998,
+        234.23699999999997,
+        136.85000000000002
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        283.80280000000005,
+        589.15009999999995,
+        238.23699999999997,
+        140.85000000000002
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        425.49799999999999,
+        681.35500000000002,
+        64.586000000000013,
+        17.687000000000012
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        423.63560000000001,
+        681.01130000000001,
+        66.448000000000036,
+        18.36200000000008
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        427.49799999999999,
+        683.35500000000002,
+        61.086000000000013,
+        14.187000000000012
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        319.01800000000003,
+        675.64200000000005,
+        131.87199999999996,
+        31.344999999999914
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        319.01800000000003,
+        675.64200000000005,
+        131.87199999999996,
+        31.344999999999914
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        318.79349999999999,
+        671.26750000000004,
+        132.09700000000004,
+        45.312999999999988
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        340.03000000000003,
+        692.6486000000001,
+        7.9069999999999823,
+        7.9069999999999254
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        340.78640000000001,
+        681.67430000000002,
+        7.9060000000000059,
+        7.9069999999999254
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        366.89770000000004,
+        695.50200000000007,
+        7.9060000000000059,
+        7.9069999999999254
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        367.92850000000004,
+        680.53770000000009,
+        7.9069999999999823,
+        7.9059999999999491
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        397.03300000000002,
+        694.57090000000005,
+        7.9060000000000059,
+        7.9069999999999254
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        397.92650000000003,
+        681.60160000000008,
+        7.9060000000000059,
+        7.9069999999999254
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        426.3073,
+        691.57620000000009,
+        7.9070000000000391,
+        7.9069999999999254
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        420.9402,
+        682.18510000000003,
+        7.9070000000000391,
+        7.9069999999999254
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        426.51400000000001,
+        675.71299999999997,
+        62.887,
+        30.162000000000035
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        426.51409999999998,
+        675.71299999999997,
+        62.887000000000057,
+        31.340000000000032
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        425.49799999999999,
+        620.48199999999997,
+        64.586000000000013,
+        17.686000000000035
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        423.63460000000003,
+        620.13739999999996,
+        66.449000000000012,
+        18.36200000000008
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        427.49799999999999,
+        622.48199999999997,
+        61.086000000000013,
+        14.186000000000035
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        319.01800000000003,
+        614.76700000000005,
+        131.87199999999996,
+        31.344999999999914
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        319.01800000000003,
+        614.76700000000005,
+        131.87199999999996,
+        31.344999999999914
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        318.79349999999999,
+        610.39400000000001,
+        132.09700000000004,
+        45.312000000000012
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        340.03000000000003,
+        631.77440000000001,
+        7.9060000000000059,
+        7.9059999999999491
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        340.78590000000003,
+        620.79990000000009,
+        7.9069999999999823,
+        7.9069999999999254
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        366.89720000000005,
+        634.62810000000002,
+        7.9069999999999823,
+        7.9059999999999491
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        367.92850000000004,
+        619.66320000000007,
+        7.9060000000000059,
+        7.9059999999999491
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        397.03200000000004,
+        633.69630000000006,
+        7.9069999999999823,
+        7.9069999999999254
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        397.92650000000003,
+        620.72770000000003,
+        7.9060000000000059,
+        7.9059999999999491
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        426.30840000000001,
+        630.70220000000006,
+        7.9060000000000059,
+        7.9059999999999491
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        420.94120000000004,
+        621.3116,
+        7.9060000000000059,
+        7.9059999999999491
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        424.66700000000003,
+        614.38800000000003,
+        64.895999999999958,
+        23.811000000000035
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        424.66740000000004,
+        614.38729999999998,
+        64.895999999999958,
+        24.504000000000019
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        416.11110000000002,
+        634.6318,
+        21.666999999999973,
+        27.66700000000003
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        430.29340000000002,
+        627.55369999999994,
+        12.812999999999988,
+        14.425000000000068
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        401.63460000000003,
+        658.50099999999998,
+        35.142999999999972,
+        28.130999999999972
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        429.23270000000002,
+        679.35630000000003,
+        12.639999999999986,
+        14.524000000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        316.976,
+        651.30100000000004,
+        94.273000000000025,
+        18.399999999999977
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        316.97680000000003,
+        651.30079999999998,
+        94.271999999999991,
+        18.399999999999977
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        283.00400000000002,
+        84.125999999999991,
+        240.00300000000004,
+        89.513999999999996
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        285.00400000000002,
+        86.126300000000001,
+        236.00300000000004,
+        85.513700000000014
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        283.00400000000002,
+        263.90600000000001,
+        240.00300000000004,
+        89.51400000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        285.00400000000002,
+        265.90600000000001,
+        236.00300000000004,
+        85.51400000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        283.00400000000002,
+        174.01600000000002,
+        240.00300000000004,
+        89.51400000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        285.00400000000002,
+        176.01599999999999,
+        236.00300000000004,
+        85.514000000000038
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        291.03399999999999,
+        275.20699999999999,
+        222.66500000000008,
+        23.578000000000031
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        290.60310000000004,
+        275.20670000000001,
+        223.096,
+        24.055000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        291.03399999999999,
+        277.21100000000001,
+        222.66500000000008,
+        25.663999999999987
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        290.49730000000005,
+        277.21100000000001,
+        223.20199999999994,
+        25.796999999999969
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        291.03399999999999,
+        279.40699999999998,
+        223.80700000000002,
+        42.923000000000002
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        290.40520000000004,
+        279.40699999999998,
+        224.43600000000004,
+        44.199999999999989
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        291.03399999999999,
+        278.38200000000001,
+        225.91399999999999,
+        49.399000000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        289.49789999999996,
+        278.38319999999999,
+        227.45000000000005,
+        50.757999999999981
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        414.30400000000003,
+        184.53800000000001,
+        80.507999999999981,
+        23.442000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        414.30430000000001,
+        184.53800000000001,
+        80.507999999999981,
+        23.442000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        291.03399999999999,
+        180.75,
+        210.34300000000002,
+        39.603000000000009
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        289.99930000000001,
+        180.74960000000002,
+        211.37799999999999,
+        39.60299999999998
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        395.11400000000003,
+        187.29500000000002,
+        106.26299999999998,
+        33.057999999999993
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        395.11469999999997,
+        187.29519999999999,
+        106.26200000000006,
+        33.057000000000016
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        291.03399999999999,
+        193.96899999999999,
+        193.42500000000001,
+        28.75200000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        290.39930000000004,
+        193.96899999999999,
+        194.06,
+        29.880000000000024
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        291.03399999999999,
+        208.10599999999999,
+        206.28300000000002,
+        25.743000000000023
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        290.40010000000007,
+        207.94240000000002,
+        206.91699999999997,
+        25.906000000000006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        291.03399999999999,
+        212.149,
+        218.928,
+        25.444000000000017
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        289.82180000000005,
+        211.98250000000002,
+        220.13999999999999,
+        26.159999999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        291.03399999999999,
+        109.376,
+        209.08100000000002,
+        37.13300000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        289.48230000000001,
+        109.3763,
+        210.63300000000004,
+        37.132999999999996
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        291.03399999999999,
+        105.672,
+        226.202,
+        45.614000000000004
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        289.48289999999997,
+        105.67270000000001,
+        227.75300000000004,
+        45.935000000000016
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        291.03399999999999,
+        105.47500000000001,
+        188.60000000000002,
+        32.478999999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        290.05910000000006,
+        105.4761,
+        189.57599999999996,
+        38.586999999999989
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        291.03399999999999,
+        86.146000000000001,
+        216.15100000000001,
+        32.498999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        289.51730000000003,
+        86.146300000000011,
+        217.66800000000001,
+        32.552000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        413.10300000000001,
+        105.083,
+        66.115000000000009,
+        21.609000000000009
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        413.10380000000004,
+        105.08279999999999,
+        66.114999999999952,
+        22.277000000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        296.84500000000003,
+        110.867,
+        131.72999999999996,
+        29.280999999999992
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        296.84500000000003,
+        110.867,
+        131.72999999999996,
+        29.280999999999992
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        296.69569999999999,
+        110.86710000000001,
+        131.87900000000002,
+        35.38000000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        315.86660000000001,
+        125.4357,
+        8.0299999999999727,
+        8.0320000000000107
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        317.16850000000005,
+        114.4027,
+        8.0299999999999727,
+        8.0310000000000059
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        345.17410000000001,
+        129.8169,
+        7.8899999999999864,
+        7.8930000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        345.77780000000001,
+        114.67790000000001,
+        7.8919999999999959,
+        7.8939999999999912
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        376.65190000000001,
+        128.3177,
+        7.8790000000000191,
+        7.8799999999999955
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        376.21300000000002,
+        115.1956,
+        7.8790000000000191,
+        7.8790000000000049
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        408.00640000000004,
+        124.5549,
+        8.0299999999999727,
+        8.0310000000000059
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        399.01310000000001,
+        114.8169,
+        8.0310000000000059,
+        8.0320000000000107
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        407.32600000000002,
+        192.44800000000001,
+        65.961999999999989,
+        24.042000000000002
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        407.3261,
+        192.4477,
+        65.961000000000013,
+        24.792000000000002
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        296.29700000000003,
+        199.10000000000002,
+        131.66300000000001,
+        29.420999999999992
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        296.29700000000003,
+        199.10000000000002,
+        131.66300000000001,
+        29.420999999999992
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        296.29630000000003,
+        199.10020000000003,
+        131.66399999999999,
+        35.189999999999998
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        314.7208,
+        214.61590000000001,
+        7.9660000000000082,
+        7.9669999999999845
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        315.60950000000003,
+        203.54150000000001,
+        7.9660000000000082,
+        7.9669999999999845
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        343.1567,
+        217.90450000000001,
+        7.8100000000000023,
+        7.8120000000000118
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        343.1567,
+        202.75450000000001,
+        7.8100000000000023,
+        7.8120000000000118
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        373.98420000000004,
+        216.77549999999999,
+        7.9919999999999618,
+        7.9919999999999902
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        372.74640000000005,
+        202.69370000000001,
+        7.992999999999995,
+        7.992999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        403.75670000000002,
+        212.8545,
+        7.8100000000000023,
+        7.8120000000000118
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        396.68670000000003,
+        201.74450000000002,
+        7.8100000000000023,
+        7.8120000000000118
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        412.649,
+        283.00799999999998,
+        66.793999999999983,
+        18.16500000000002
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        412.64890000000003,
+        282.31840000000005,
+        66.793000000000006,
+        19.387
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        297.81400000000002,
+        284.46199999999999,
+        133.74199999999996,
+        32.973000000000013
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        297.81400000000002,
+        284.46199999999999,
+        133.74199999999996,
+        32.973000000000013
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        297.8143,
+        284.46170000000001,
+        133.74199999999996,
+        43.088000000000022
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        319.92670000000004,
+        304.94020000000006,
+        7.8100000000000023,
+        7.8099999999999454
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        319.92670000000004,
+        293.83020000000005,
+        7.8100000000000023,
+        7.8099999999999454
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        347.19670000000002,
+        305.95020000000005,
+        7.8100000000000023,
+        7.8099999999999454
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        347.19670000000002,
+        290.80010000000004,
+        7.8100000000000023,
+        7.8099999999999454
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        377.49670000000003,
+        302.92010000000005,
+        7.8100000000000023,
+        7.8099999999999454
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        377.49670000000003,
+        289.79020000000003,
+        7.8100000000000023,
+        7.8099999999999454
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        406.7867,
+        297.87010000000004,
+        7.8100000000000023,
+        7.8099999999999454
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        400.72669999999999,
+        288.78020000000004,
+        7.8100000000000023,
+        7.8099999999999454
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        283.00419999999997,
+        154.49000000000001,
+        240.00300000000004,
+        19.150000000000006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        283.00419999999997,
+        154.49000000000001,
+        240.00300000000004,
+        19.150000000000006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        283.00419999999997,
+        334.27000000000004,
+        240.00300000000004,
+        19.149999999999977
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        283.00419999999997,
+        334.27000000000004,
+        240.00300000000004,
+        19.149999999999977
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        283.00419999999997,
+        244.38000000000002,
+        240.00300000000004,
+        19.150000000000006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        283.00419999999997,
+        244.38000000000002,
+        240.00300000000004,
+        19.150000000000006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        383.18610000000001,
+        180.95410000000001,
+        27.314000000000021,
+        11.561000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        403.56319999999999,
+        185.45920000000001,
+        12.213999999999999,
+        11.414999999999992
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        283.00400000000002,
+        263.90600000000001,
+        240.00300000000004,
+        89.51400000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        283.00400000000002,
+        174.01600000000002,
+        240.00300000000004,
+        89.51400000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        283.00400000000002,
+        84.125999999999991,
+        240.00300000000004,
+        89.513999999999996
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        351.00700000000001,
+        173.68200000000002,
+        38.326000000000022,
+        18.544999999999987
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        351.00690000000003,
+        173.68200000000002,
+        38.326999999999998,
+        18.544000000000011
+      ]
+    }
+  ],
+  "rightsBasis" : "U.S. Government publication, retained as an external development corpus source. The PDF is not bundled or relicensed under the library license.",
+  "sourceSHA256" : "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
+  "sourceTitle" : "Pilot's Handbook of Aeronautical Knowledge, FAA-H-8083-25C",
+  "sourceURL" : "https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/faa-h-8083-25c.pdf"
+}

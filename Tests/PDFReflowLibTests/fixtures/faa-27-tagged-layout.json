@@ -1,0 +1,3686 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        36,
+        33.709700000000005,
+        20.010000000000005,
+        12.310000000000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "1-12"
+        }
+      ],
+      "text" : "1-12"
+    },
+    {
+      "rect" : [
+        35.519800000000032,
+        457.38340000000005,
+        487.601,
+        272.09699999999998
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    },
+    {
+      "rect" : [
+        36,
+        438.08360000000005,
+        485.99800000000005,
+        10.812000000000012
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 8,
+          "text" : "Figure 1-18."
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : " "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "text" : "From left to right, a sectional VFR chart, IFR chart, and chart supplement U.S. (formerly Airport/Facility Directory) with"
+        }
+      ],
+      "text" : "Figure 1-18. From left to right, a sectional VFR chart, IFR chart, and chart supplement U.S. (formerly Airport/Facility Directory) with"
+    },
+    {
+      "rect" : [
+        35.996200000000002,
+        426.18860000000006,
+        145.98900000000003,
+        10.206000000000017
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "text" : "a sample of a page from the supplement."
+        }
+      ],
+      "text" : "a sample of a page from the supplement."
+    },
+    {
+      "rect" : [
+        36,
+        398.46970000000005,
+        163.36000000000007,
+        13.189999999999998
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 10,
+          "text" : "Pilot and Aeronautical Information"
+        }
+      ],
+      "text" : "Pilot and Aeronautical Information"
+    },
+    {
+      "rect" : [
+        36,
+        384.81670000000003,
+        135.97099999999998,
+        13.310000000000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-BoldItalic",
+          "fontSize" : 11,
+          "text" : "Notices to Airmen (NOTAMs)"
+        }
+      ],
+      "text" : "Notices to Airmen (NOTAMs)"
+    },
+    {
+      "rect" : [
+        36,
+        371.03970000000004,
+        237.05999999999995,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Notices to Airmen, or NOTAMs, are time-critical aeronautical"
+        }
+      ],
+      "text" : "Notices to Airmen, or NOTAMs, are time-critical aeronautical"
+    },
+    {
+      "rect" : [
+        36,
+        358.53970000000004,
+        236.96800000000007,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "information either temporary in nature or not sufficiently"
+        }
+      ],
+      "text" : "information either temporary in nature or not sufficiently"
+    },
+    {
+      "rect" : [
+        36,
+        346.03970000000004,
+        237.07000000000016,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "known in advance to permit publication on aeronautical"
+        }
+      ],
+      "text" : "known in advance to permit publication on aeronautical"
+    },
+    {
+      "rect" : [
+        36,
+        333.53970000000004,
+        237.01799999999997,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "charts or in other operational publications. The information"
+        }
+      ],
+      "text" : "charts or in other operational publications. The information"
+    },
+    {
+      "rect" : [
+        36,
+        321.03970000000004,
+        237.00999999999988,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "receives immediate dissemination via the National Notice to"
+        }
+      ],
+      "text" : "receives immediate dissemination via the National Notice to"
+    },
+    {
+      "rect" : [
+        36,
+        308.53970000000004,
+        236.89999999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Airmen (NOTAM) System. NOTAMs contain current notices"
+        }
+      ],
+      "text" : "Airmen (NOTAM) System. NOTAMs contain current notices"
+    },
+    {
+      "rect" : [
+        36,
+        296.03970000000004,
+        236.99999999999994,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "to airmen that are considered essential to the safety of flight,"
+        }
+      ],
+      "text" : "to airmen that are considered essential to the safety of flight,"
+    },
+    {
+      "rect" : [
+        36,
+        283.53970000000004,
+        237.10399999999993,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "as well as supplemental data affecting other operational"
+        }
+      ],
+      "text" : "as well as supplemental data affecting other operational"
+    },
+    {
+      "rect" : [
+        36,
+        271.03970000000004,
+        237.06999999999994,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "publications. There are many different reasons that NOTAMs"
+        }
+      ],
+      "text" : "publications. There are many different reasons that NOTAMs"
+    },
+    {
+      "rect" : [
+        36,
+        258.53970000000004,
+        193.85999999999996,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "are issued. Following are some of those reasons:"
+        }
+      ],
+      "text" : "are issued. Following are some of those reasons:"
+    },
+    {
+      "rect" : [
+        45,
+        241.53970000000001,
+        3.5,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "•"
+        }
+      ],
+      "text" : "•"
+    },
+    {
+      "rect" : [
+        63,
+        241.53970000000001,
+        209.91999999999996,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Hazards, such as air shows, parachute jumps, kite"
+        }
+      ],
+      "text" : "Hazards, such as air shows, parachute jumps, kite"
+    },
+    {
+      "rect" : [
+        63,
+        229.03970000000001,
+        108.31000000000003,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "flying, and rocket launches"
+        }
+      ],
+      "text" : "flying, and rocket launches"
+    },
+    {
+      "rect" : [
+        45,
+        212.03970000000001,
+        3.5,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "•"
+        }
+      ],
+      "text" : "•"
+    },
+    {
+      "rect" : [
+        63,
+        212.03970000000001,
+        199.42999999999995,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Flights by important people such as heads of state"
+        }
+      ],
+      "text" : "Flights by important people such as heads of state"
+    },
+    {
+      "rect" : [
+        45,
+        195.03970000000001,
+        3.5,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "•"
+        }
+      ],
+      "text" : "•"
+    },
+    {
+      "rect" : [
+        63,
+        195.03970000000001,
+        64.159999999999997,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Closed runways"
+        }
+      ],
+      "text" : "Closed runways"
+    },
+    {
+      "rect" : [
+        45,
+        178.03970000000001,
+        3.5,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "•"
+        }
+      ],
+      "text" : "•"
+    },
+    {
+      "rect" : [
+        63,
+        178.03970000000001,
+        136.36000000000007,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Inoperable radio navigational aids"
+        }
+      ],
+      "text" : "Inoperable radio navigational aids"
+    },
+    {
+      "rect" : [
+        45,
+        161.03970000000001,
+        3.5,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "•"
+        }
+      ],
+      "text" : "•"
+    },
+    {
+      "rect" : [
+        63,
+        161.03970000000001,
+        210.00999999999993,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Military exercises with resulting airspace restrictions"
+        }
+      ],
+      "text" : "Military exercises with resulting airspace restrictions"
+    },
+    {
+      "rect" : [
+        45,
+        144.03970000000001,
+        3.5,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "•"
+        }
+      ],
+      "text" : "•"
+    },
+    {
+      "rect" : [
+        63,
+        144.03970000000001,
+        146.66000000000005,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Inoperable lights on tall obstructions"
+        }
+      ],
+      "text" : "Inoperable lights on tall obstructions"
+    },
+    {
+      "rect" : [
+        45,
+        127.03970000000001,
+        3.5,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "•"
+        }
+      ],
+      "text" : "•"
+    },
+    {
+      "rect" : [
+        63,
+        127.03970000000001,
+        184.11000000000001,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Temporary erection of obstacles near airfields"
+        }
+      ],
+      "text" : "Temporary erection of obstacles near airfields"
+    },
+    {
+      "rect" : [
+        45,
+        110.03970000000001,
+        3.5,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "•"
+        }
+      ],
+      "text" : "•"
+    },
+    {
+      "rect" : [
+        63,
+        110.03970000000001,
+        209.97999999999996,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Passage of flocks of birds through airspace (a NOTAM"
+        }
+      ],
+      "text" : "Passage of flocks of birds through airspace (a NOTAM"
+    },
+    {
+      "rect" : [
+        63,
+        97.539700000000011,
+        170.25999999999999,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "in this category is known as a BIRDTAM)"
+        }
+      ],
+      "text" : "in this category is known as a BIRDTAM)"
+    },
+    {
+      "rect" : [
+        45,
+        80.539700000000011,
+        3.5,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "•"
+        }
+      ],
+      "text" : "•"
+    },
+    {
+      "rect" : [
+        63,
+        80.539700000000011,
+        209.92999999999995,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Notifications of runway/taxiway/apron status with"
+        }
+      ],
+      "text" : "Notifications of runway/taxiway/apron status with"
+    },
+    {
+      "rect" : [
+        63,
+        68.039699999999996,
+        210.09799999999996,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "respect to snow, ice, and standing water (a SNOWTAM)"
+        }
+      ],
+      "text" : "respect to snow, ice, and standing water (a SNOWTAM)"
+    },
+    {
+      "rect" : [
+        294,
+        399.88640000000004,
+        3.5,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "•"
+        }
+      ],
+      "text" : "•"
+    },
+    {
+      "rect" : [
+        312,
+        399.88640000000004,
+        210.00999999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Notification of an operationally significant change in"
+        }
+      ],
+      "text" : "Notification of an operationally significant change in"
+    },
+    {
+      "rect" : [
+        312,
+        387.38640000000004,
+        210.07199999999989,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "volcanic ash or other dust contamination (an ASHTAM)"
+        }
+      ],
+      "text" : "volcanic ash or other dust contamination (an ASHTAM)"
+    },
+    {
+      "rect" : [
+        294,
+        370.38640000000004,
+        3.5,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "•"
+        }
+      ],
+      "text" : "•"
+    },
+    {
+      "rect" : [
+        312,
+        370.38640000000004,
+        209.85599999999988,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Software code risk announcements with associated"
+        }
+      ],
+      "text" : "Software code risk announcements with associated"
+    },
+    {
+      "rect" : [
+        312,
+        357.88640000000004,
+        162.74000000000007,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "patches to reduce specific vulnerabilities"
+        }
+      ],
+      "text" : "patches to reduce specific vulnerabilities"
+    },
+    {
+      "rect" : [
+        285,
+        330.98640000000006,
+        237.07100000000014,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "NOTAM information is generally classified into four"
+        }
+      ],
+      "text" : "NOTAM information is generally classified into four"
+    },
+    {
+      "rect" : [
+        285,
+        318.48640000000006,
+        236.9939999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "categories: NOTAM (D) or NOTAMs that receive distant"
+        }
+      ],
+      "text" : "categories: NOTAM (D) or NOTAMs that receive distant"
+    },
+    {
+      "rect" : [
+        285,
+        305.98640000000006,
+        237.10300000000007,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "dissemination, distant and Flight Data Center (FDC)"
+        }
+      ],
+      "text" : "dissemination, distant and Flight Data Center (FDC)"
+    },
+    {
+      "rect" : [
+        285,
+        293.48640000000006,
+        237.05000000000018,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "NOTAMs, Pointer NOTAMs, and Military NOTAMs"
+        }
+      ],
+      "text" : "NOTAMs, Pointer NOTAMs, and Military NOTAMs"
+    },
+    {
+      "rect" : [
+        285,
+        280.98640000000006,
+        236.87599999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "pertaining to military airports or NAVAIDs that are part of the"
+        }
+      ],
+      "text" : "pertaining to military airports or NAVAIDs that are part of the"
+    },
+    {
+      "rect" : [
+        285,
+        268.48640000000006,
+        237.06100000000015,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "NAS. NOTAMs are available through Flight Service Station"
+        }
+      ],
+      "text" : "NAS. NOTAMs are available through Flight Service Station"
+    },
+    {
+      "rect" : [
+        285,
+        255.98640000000006,
+        237.09500000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "(FSS), Direct User Access Terminal Service (DUATS),"
+        }
+      ],
+      "text" : "(FSS), Direct User Access Terminal Service (DUATS),"
+    },
+    {
+      "rect" : [
+        285,
+        243.48640000000006,
+        173.02999999999997,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "private vendors, and many online websites."
+        }
+      ],
+      "text" : "private vendors, and many online websites."
+    },
+    {
+      "rect" : [
+        285,
+        218.48640000000006,
+        100.55000000000007,
+        11.340000000000003
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 10,
+          "text" : "NOTAM (D) Information"
+        }
+      ],
+      "text" : "NOTAM (D) Information"
+    },
+    {
+      "rect" : [
+        285,
+        203.98640000000006,
+        236.91999999999996,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "NOTAM (D) information is disseminated for all navigational"
+        }
+      ],
+      "text" : "NOTAM (D) information is disseminated for all navigational"
+    },
+    {
+      "rect" : [
+        285,
+        191.48640000000006,
+        237.00999999999988,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "facilities that are part of the NAS, and all public use airports,"
+        }
+      ],
+      "text" : "facilities that are part of the NAS, and all public use airports,"
+    },
+    {
+      "rect" : [
+        285,
+        178.98640000000006,
+        237.00999999999999,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "seaplane bases, and heliports listed in the Chart Supplement"
+        }
+      ],
+      "text" : "seaplane bases, and heliports listed in the Chart Supplement"
+    },
+    {
+      "rect" : [
+        285,
+        166.48640000000006,
+        237.00000000000011,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "U.S. (formerly Airport/Facility Directory). NOTAM (D)"
+        }
+      ],
+      "text" : "U.S. (formerly Airport/Facility Directory). NOTAM (D)"
+    },
+    {
+      "rect" : [
+        285,
+        153.98640000000006,
+        236.97000000000003,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "information now includes such data as taxiway closures,"
+        }
+      ],
+      "text" : "information now includes such data as taxiway closures,"
+    },
+    {
+      "rect" : [
+        285,
+        141.48640000000006,
+        237.1239999999998,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "personnel and equipment near or crossing runways, and"
+        }
+      ],
+      "text" : "personnel and equipment near or crossing runways, and"
+    },
+    {
+      "rect" : [
+        285,
+        128.98640000000006,
+        237.00799999999981,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "airport lighting aids that do not affect instrument approach"
+        }
+      ],
+      "text" : "airport lighting aids that do not affect instrument approach"
+    },
+    {
+      "rect" : [
+        285,
+        116.48640000000006,
+        236.82199999999989,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "criteria, such as visual approach slope indicator (VASI)."
+        }
+      ],
+      "text" : "criteria, such as visual approach slope indicator (VASI)."
+    },
+    {
+      "rect" : [
+        285,
+        103.98640000000006,
+        237.01499999999987,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "All D NOTAMs are required to have one of the following"
+        }
+      ],
+      "text" : "All D NOTAMs are required to have one of the following"
+    },
+    {
+      "rect" : [
+        285,
+        91.48640000000006,
+        236.99800000000016,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "keywords as the first part of the text: RWY, TWY, RAMP,"
+        }
+      ],
+      "text" : "keywords as the first part of the text: RWY, TWY, RAMP,"
+    },
+    {
+      "rect" : [
+        285,
+        78.98640000000006,
+        236.99200000000008,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "APRON, AD, OBST, NAV, COM, SVC, AIRSPACE, (U),"
+        }
+      ],
+      "text" : "APRON, AD, OBST, NAV, COM, SVC, AIRSPACE, (U),"
+    },
+    {
+      "rect" : [
+        285,
+        66.48640000000006,
+        85.539999999999964,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "or (O)."
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 10,
+          "text" : " [Figure 1-19]"
+        }
+      ],
+      "text" : "or (O). [Figure 1-19]"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    594,
+    774
+  ],
+  "caseID" : "faa-phak-8083-25c",
+  "graphics" : [
+    [
+      34.019800000000032,
+      450.35455510000003,
+      496.88521189999994,
+      280.6258449
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        33.709700000000005,
+        20.010000000000005,
+        12.310000000000002
+      ],
+      "text" : "1-12"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        438.08360000000005,
+        485.99800000000005,
+        10.812000000000012
+      ],
+      "structure" : {
+        "group" : 1311,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 4420
+      },
+      "text" : "Figure 1-18. From left to right, a sectional VFR chart, IFR chart, and chart supplement U.S. (formerly Airport/Facility Directory) with"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        35.996200000000002,
+        426.18860000000006,
+        145.98900000000003,
+        10.206000000000017
+      ],
+      "structure" : {
+        "group" : 1311,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 4423
+      },
+      "text" : "a sample of a page from the supplement."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        398.46970000000005,
+        163.36000000000007,
+        13.189999999999998
+      ],
+      "structure" : {
+        "group" : 1031,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 3354
+      },
+      "text" : "Pilot and Aeronautical Information"
+    },
+    {
+      "fontSize" : 11,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        384.81670000000003,
+        135.97099999999998,
+        13.310000000000002
+      ],
+      "structure" : {
+        "group" : 1032,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 3355
+      },
+      "text" : "Notices to Airmen (NOTAMs)"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        371.03970000000004,
+        237.05999999999995,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1033,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 3356
+      },
+      "text" : "Notices to Airmen, or NOTAMs, are time-critical aeronautical"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        358.53970000000004,
+        236.96800000000007,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1033,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 3357
+      },
+      "text" : "information either temporary in nature or not sufficiently"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        346.03970000000004,
+        237.07000000000016,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1033,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 3358
+      },
+      "text" : "known in advance to permit publication on aeronautical"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        333.53970000000004,
+        237.01799999999997,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1033,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 3359
+      },
+      "text" : "charts or in other operational publications. The information"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        321.03970000000004,
+        237.00999999999988,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1033,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 3360
+      },
+      "text" : "receives immediate dissemination via the National Notice to"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        308.53970000000004,
+        236.89999999999998,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1033,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 3361
+      },
+      "text" : "Airmen (NOTAM) System. NOTAMs contain current notices"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        296.03970000000004,
+        236.99999999999994,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1033,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 3362
+      },
+      "text" : "to airmen that are considered essential to the safety of flight,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        283.53970000000004,
+        237.10399999999993,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1033,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 3363
+      },
+      "text" : "as well as supplemental data affecting other operational"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        271.03970000000004,
+        237.06999999999994,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1033,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 3364
+      },
+      "text" : "publications. There are many different reasons that NOTAMs"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        258.53970000000004,
+        193.85999999999996,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1033,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 3365
+      },
+      "text" : "are issued. Following are some of those reasons:"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        45,
+        241.53970000000001,
+        3.5,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 1034,
+        "headingLevel" : 0,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 3366
+      },
+      "text" : "•"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        63,
+        241.53970000000001,
+        209.91999999999996,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 1034,
+        "headingLevel" : 0,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 3366
+      },
+      "text" : "Hazards, such as air shows, parachute jumps, kite"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        63,
+        229.03970000000001,
+        108.31000000000003,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 1034,
+        "headingLevel" : 0,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 3367
+      },
+      "text" : "flying, and rocket launches"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        45,
+        212.03970000000001,
+        3.5,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 1035,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 3368
+      },
+      "text" : "•"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        63,
+        212.03970000000001,
+        199.42999999999995,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 1035,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 3368
+      },
+      "text" : "Flights by important people such as heads of state"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        45,
+        195.03970000000001,
+        3.5,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 1036,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 3369
+      },
+      "text" : "•"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        63,
+        195.03970000000001,
+        64.159999999999997,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 1036,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 3369
+      },
+      "text" : "Closed runways"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        45,
+        178.03970000000001,
+        3.5,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 1037,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 3370
+      },
+      "text" : "•"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        63,
+        178.03970000000001,
+        136.36000000000007,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 1037,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 3370
+      },
+      "text" : "Inoperable radio navigational aids"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        45,
+        161.03970000000001,
+        3.5,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 1038,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 3371
+      },
+      "text" : "•"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        63,
+        161.03970000000001,
+        210.00999999999993,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 1038,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 3371
+      },
+      "text" : "Military exercises with resulting airspace restrictions"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        45,
+        144.03970000000001,
+        3.5,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 1039,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 3372
+      },
+      "text" : "•"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        63,
+        144.03970000000001,
+        146.66000000000005,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 1039,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 3372
+      },
+      "text" : "Inoperable lights on tall obstructions"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        45,
+        127.03970000000001,
+        3.5,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 1040,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 3373
+      },
+      "text" : "•"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        63,
+        127.03970000000001,
+        184.11000000000001,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 1040,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 3373
+      },
+      "text" : "Temporary erection of obstacles near airfields"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        45,
+        110.03970000000001,
+        3.5,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 1041,
+        "headingLevel" : 0,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 3374
+      },
+      "text" : "•"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        63,
+        110.03970000000001,
+        209.97999999999996,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 1041,
+        "headingLevel" : 0,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 3374
+      },
+      "text" : "Passage of flocks of birds through airspace (a NOTAM"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        63,
+        97.539700000000011,
+        170.25999999999999,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 1041,
+        "headingLevel" : 0,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 3375
+      },
+      "text" : "in this category is known as a BIRDTAM)"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        45,
+        80.539700000000011,
+        3.5,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 1042,
+        "headingLevel" : 0,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 3376
+      },
+      "text" : "•"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        63,
+        80.539700000000011,
+        209.92999999999995,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 1042,
+        "headingLevel" : 0,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 3376
+      },
+      "text" : "Notifications of runway/taxiway/apron status with"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        63,
+        68.039699999999996,
+        210.09799999999996,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 1042,
+        "headingLevel" : 0,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 3377
+      },
+      "text" : "respect to snow, ice, and standing water (a SNOWTAM)"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        294,
+        399.88640000000004,
+        3.5,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1043,
+        "headingLevel" : 0,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 3378
+      },
+      "text" : "•"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312,
+        399.88640000000004,
+        210.00999999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1043,
+        "headingLevel" : 0,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 3378
+      },
+      "text" : "Notification of an operationally significant change in"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312,
+        387.38640000000004,
+        210.07199999999989,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1043,
+        "headingLevel" : 0,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 3379
+      },
+      "text" : "volcanic ash or other dust contamination (an ASHTAM)"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        294,
+        370.38640000000004,
+        3.5,
+        11.470000000000027
+      ],
+      "text" : "•"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312,
+        370.38640000000004,
+        209.85599999999988,
+        11.470000000000027
+      ],
+      "text" : "Software code risk announcements with associated"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312,
+        357.88640000000004,
+        162.74000000000007,
+        11.470000000000027
+      ],
+      "text" : "patches to reduce specific vulnerabilities"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        330.98640000000006,
+        237.07100000000014,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1045,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 3382
+      },
+      "text" : "NOTAM information is generally classified into four"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        318.48640000000006,
+        236.9939999999998,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1045,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 3383
+      },
+      "text" : "categories: NOTAM (D) or NOTAMs that receive distant"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        305.98640000000006,
+        237.10300000000007,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1045,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 3384
+      },
+      "text" : "dissemination, distant and Flight Data Center (FDC)"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        293.48640000000006,
+        237.05000000000018,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1045,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 3385
+      },
+      "text" : "NOTAMs, Pointer NOTAMs, and Military NOTAMs"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        280.98640000000006,
+        236.87599999999998,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1045,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 3386
+      },
+      "text" : "pertaining to military airports or NAVAIDs that are part of the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        268.48640000000006,
+        237.06100000000015,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1045,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 3387
+      },
+      "text" : "NAS. NOTAMs are available through Flight Service Station"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        255.98640000000006,
+        237.09500000000003,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1045,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 3388
+      },
+      "text" : "(FSS), Direct User Access Terminal Service (DUATS),"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        243.48640000000006,
+        173.02999999999997,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 1045,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 3389
+      },
+      "text" : "private vendors, and many online websites."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        218.48640000000006,
+        100.55000000000007,
+        11.340000000000003
+      ],
+      "structure" : {
+        "group" : 1046,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 3390
+      },
+      "text" : "NOTAM (D) Information"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        203.98640000000006,
+        236.91999999999996,
+        11.469999999999999
+      ],
+      "text" : "NOTAM (D) information is disseminated for all navigational"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        191.48640000000006,
+        237.00999999999988,
+        11.469999999999999
+      ],
+      "text" : "facilities that are part of the NAS, and all public use airports,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        178.98640000000006,
+        237.00999999999999,
+        11.469999999999999
+      ],
+      "text" : "seaplane bases, and heliports listed in the Chart Supplement"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        166.48640000000006,
+        237.00000000000011,
+        11.469999999999999
+      ],
+      "text" : "U.S. (formerly Airport/Facility Directory). NOTAM (D)"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        153.98640000000006,
+        236.97000000000003,
+        11.469999999999999
+      ],
+      "text" : "information now includes such data as taxiway closures,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        141.48640000000006,
+        237.1239999999998,
+        11.469999999999999
+      ],
+      "text" : "personnel and equipment near or crossing runways, and"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        128.98640000000006,
+        237.00799999999981,
+        11.469999999999999
+      ],
+      "text" : "airport lighting aids that do not affect instrument approach"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        116.48640000000006,
+        236.82199999999989,
+        11.469999999999999
+      ],
+      "text" : "criteria, such as visual approach slope indicator (VASI)."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        103.98640000000006,
+        237.01499999999987,
+        11.469999999999999
+      ],
+      "text" : "All D NOTAMs are required to have one of the following"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        91.48640000000006,
+        236.99800000000016,
+        11.469999999999999
+      ],
+      "text" : "keywords as the first part of the text: RWY, TWY, RAMP,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        78.98640000000006,
+        236.99200000000008,
+        11.469999999999999
+      ],
+      "text" : "APRON, AD, OBST, NAV, COM, SVC, AIRSPACE, (U),"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        66.48640000000006,
+        85.539999999999964,
+        11.469999999999999
+      ],
+      "text" : "or (O). [Figure 1-19]"
+    }
+  ],
+  "page" : 27,
+  "paints" : [
+    {
+      "frame" : false,
+      "rect" : [
+        34.019800000000032,
+        455.88340000000005,
+        490.601,
+        275.09699999999998
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        36.019800000000004,
+        457.88299999999998,
+        486.60119999999995,
+        271.09700000000004
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        34.019800000000032,
+        455.88340000000005,
+        490.601,
+        275.09699999999998
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        361.22501030000001,
+        454.39455989999999,
+        169.68000159999997,
+        271.68999450000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        361.22500000000002,
+        454.39499999999998,
+        169.67999999999995,
+        271.69000000000005
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        366.76700000000005,
+        467.55799999999999,
+        150.375,
+        252.24599999999998
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        366.76670000000001,
+        467.55780000000004,
+        150.375,
+        252.24599999999998
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        370.0095,
+        704.37670000000003,
+        141.86099999999999,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        426.33300000000003,
+        701.173,
+        5.4259999999999877,
+        4.1119999999999663
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        430.65699999999998,
+        701.173,
+        5.4270000000000209,
+        4.1119999999999663
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        453.99930000000001,
+        701.47300000000007,
+        4.3260000000000218,
+        4.69500000000005
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        470.02120000000002,
+        701.47300000000007,
+        4.3260000000000218,
+        4.69500000000005
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        370.0095,
+        671.92759999999998,
+        141.86099999999999,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        412.33300000000003,
+        668.72199999999998,
+        5.4259999999999877,
+        4.11099999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        416.65699999999998,
+        668.72199999999998,
+        5.4259999999999877,
+        4.11099999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        439.94810000000001,
+        669.02330000000006,
+        4.3260000000000218,
+        4.6960000000000264
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        455.9187,
+        669.02330000000006,
+        4.3249999999999886,
+        4.6960000000000264
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        427.85270000000003,
+        659.1472,
+        4.3260000000000218,
+        4.6960000000000264
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        484.0804,
+        659.1472,
+        4.3260000000000218,
+        4.6960000000000264
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        442.20090000000005,
+        639.79790000000003,
+        4.3249999999999886,
+        4.6970000000000027
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        458.16560000000004,
+        639.79790000000003,
+        4.3269999999999982,
+        4.6970000000000027
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        370.0095,
+        633.02870000000007,
+        141.86099999999999,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        425.28000000000003,
+        629.82299999999998,
+        5.4270000000000209,
+        4.1130000000000564
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        429.60500000000002,
+        629.82299999999998,
+        5.4250000000000114,
+        4.1130000000000564
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        452.92520000000002,
+        630.12350000000004,
+        4.3260000000000218,
+        4.69500000000005
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        468.92540000000002,
+        630.12350000000004,
+        4.3260000000000218,
+        4.69500000000005
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        421.78590000000003,
+        617.0231,
+        4.3260000000000218,
+        4.6960000000000264
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        421.35090000000002,
+        613.79830000000004,
+        4.3260000000000218,
+        4.6960000000000264
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        438.6866,
+        584.77560000000005,
+        4.3260000000000218,
+        4.6960000000000264
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        399.19299999999998,
+        581.55029999999999,
+        4.3269999999999982,
+        4.6960000000000264
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        424.73390000000001,
+        575.30290000000002,
+        4.3260000000000218,
+        4.6960000000000264
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        424.73390000000001,
+        572.07749999999999,
+        4.3260000000000218,
+        4.6970000000000027
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        424.73390000000001,
+        568.85329999999999,
+        4.3260000000000218,
+        4.6970000000000027
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        439.13339999999999,
+        565.83120000000008,
+        4.3269999999999982,
+        4.69500000000005
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        370.0095,
+        546.15980000000002,
+        141.86099999999999,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        489.02700000000004,
+        605.18470000000002,
+        5.8550000000000182,
+        5.7609999999999673
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        466.08960000000002,
+        577.27850000000001,
+        6.8149999999999977,
+        5.7619999999999436
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        498.66550000000001,
+        605.82540000000006,
+        4.6859999999999786,
+        4.3880000000000337
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        500.56450000000001,
+        570.20500000000004,
+        5.4889999999999759,
+        4.9840000000000373
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        499.71730000000008,
+        569.0607,
+        5.0299999999999727,
+        5.4189999999999827
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        472.06470000000002,
+        592.52530000000002,
+        32.180000000000007,
+        20.389999999999986
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        458.58160000000004,
+        562.58159999999998,
+        53.422999999999945,
+        62.145999999999958
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        471.19490000000002,
+        569.47270000000003,
+        34.353999999999985,
+        37.444999999999936
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        466.95960000000002,
+        576.47799999999995,
+        37.925999999999988,
+        34.44500000000005
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        463.45820000000003,
+        577.96590000000003,
+        5.9449999999999932,
+        4.8020000000000209
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        463.22020000000003,
+        577.96660000000008,
+        4.2590000000000146,
+        4.8229999999999791
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        497.47460000000001,
+        601.38450000000012,
+        5.9449999999999932,
+        4.8239999999999554
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        497.26940000000002,
+        601.38450000000012,
+        4.25,
+        4.8239999999999554
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        495.50600000000003,
+        570.32050000000004,
+        5.9449999999999932,
+        4.8229999999999791
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        495.26800000000003,
+        570.32050000000004,
+        4.2599999999999909,
+        4.8229999999999791
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        477.30630000000002,
+        618.96370000000002,
+        34.699000000000012,
+        5.7630000000000337
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        484.01430000000005,
+        608.91520000000003,
+        5.6030000000000086,
+        15.491999999999962
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        500.83199999999999,
+        606.08899999999994,
+        6.2280000000000086,
+        6.0240000000000009
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        500.49600000000004,
+        607.38040000000001,
+        5.4199999999999591,
+        5.3980000000000246
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        470.18810000000002,
+        603.53470000000004,
+        5.464999999999975,
+        5.3729999999999336
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        468.95249999999999,
+        602.45880000000011,
+        5.7839999999999918,
+        5.8549999999999045
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        465.0711,
+        574.6065000000001,
+        6.3010000000000446,
+        6.1539999999999964
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        500.95270000000005,
+        567.45990000000006,
+        5.5579999999999927,
+        5.7160000000000082
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        501.87170000000003,
+        568.44240000000002,
+        5.6639999999999873,
+        5.6190000000000282
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        484.99780000000004,
+        595.43200000000002,
+        5.2819999999999823,
+        6.0380000000000109
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        485.90250000000003,
+        596.23320000000012,
+        6.0489999999999782,
+        6.2539999999999054
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        487.17330000000004,
+        597.35520000000008,
+        5.23599999999999,
+        5.7519999999999527
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        487.96870000000001,
+        598.22410000000002,
+        5.4259999999999877,
+        5.7619999999999436
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        489.39460000000003,
+        599.25490000000002,
+        6.0600000000000023,
+        6.1290000000000191
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        491.11110000000002,
+        600.94900000000007,
+        5.4189999999999827,
+        5.3969999999999345
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        492.18640000000005,
+        601.63610000000006,
+        5.4420000000000073,
+        5.8769999999999527
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        492.63750000000005,
+        602.62019999999995,
+        6.1639999999999873,
+        5.5800000000000409
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        486.69230000000005,
+        587.71850000000006,
+        6.0380000000000109,
+        5.30499999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        487.43369999999999,
+        585.89300000000003,
+        6.30600000000004,
+        6.17999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        488.61560000000003,
+        585.31290000000013,
+        5.6030000000000086,
+        5.6329999999999245
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        489.27820000000003,
+        584.12299999999993,
+        6.2759999999999536,
+        6.0740000000000691
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        490.53890000000001,
+        582.56740000000002,
+        6.1279999999999859,
+        6.0819999999999936
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        492.23250000000002,
+        581.51390000000004,
+        5.4189999999999827,
+        5.4189999999999827
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        492.89570000000003,
+        580.00160000000005,
+        5.9000000000000341,
+        5.8790000000000191
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        493.84530000000001,
+        579.45220000000006,
+        5.6599999999999682,
+        5.9519999999999982
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        487.58570000000003,
+        601.24600000000009,
+        5.9680000000000177,
+        4.8479999999999563
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        487.35670000000005,
+        601.26900000000001,
+        4.2509999999999764,
+        4.8250000000000455
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        486.69280000000003,
+        601.6585,
+        4.5260000000000105,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        486.89890000000003,
+        601.91010000000006,
+        4.38900000000001,
+        4.1839999999999691
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        487.28780000000006,
+        602.11630000000002,
+        4.228999999999985,
+        4.2740000000000009
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        486.92100000000005,
+        601.24590000000012,
+        4.4359999999999786,
+        4.1369999999999436
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        487.21940000000001,
+        600.94760000000008,
+        4.25,
+        4.2759999999999536
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        486.21190000000001,
+        610.1961,
+        6.1059999999999945,
+        5.9930000000000518
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        486.89850000000001,
+        610.61180000000002,
+        4.77800000000002,
+        4.8659999999999854
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        486.07470000000001,
+        612.60090000000002,
+        5.9680000000000177,
+        4.8239999999999554
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        485.83670000000001,
+        612.60090000000002,
+        4.2599999999999909,
+        4.8239999999999554
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        475.88850000000002,
+        588.19749999999999,
+        8.0059999999999718,
+        7.4790000000000418
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        478.91000000000003,
+        591.03740000000005,
+        4.0219999999999914,
+        4.63900000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        478.17720000000003,
+        590.99120000000005,
+        4.5260000000000105,
+        4.4109999999999445
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        477.71860000000004,
+        590.37120000000004,
+        4.4820000000000277,
+        4.4130000000000109
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        477.1918,
+        589.68380000000002,
+        4.4119999999999777,
+        4.4819999999999709
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        476.57440000000003,
+        589.1816,
+        4.4119999999999777,
+        4.5030000000000427
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        476.02600000000001,
+        588.95240000000013,
+        4.6630000000000109,
+        4.1609999999999445
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        476.0487,
+        588.40430000000003,
+        4.6399999999999864,
+        4.3429999999999609
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        476.75780000000003,
+        588.24450000000002,
+        4.1610000000000014,
+        4.6159999999999854
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        477.14640000000003,
+        588.42600000000004,
+        4.3670000000000186,
+        4.5480000000000018
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        477.83420000000001,
+        588.86090000000002,
+        4.3430000000000177,
+        4.5270000000000437
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        478.31619999999998,
+        589.36500000000001,
+        4.4340000000000259,
+        4.45799999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        478.81760000000003,
+        589.93709999999999,
+        4.4809999999999945,
+        4.4120000000000346
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        479.18420000000003,
+        590.55550000000005,
+        4.5729999999999791,
+        4.2749999999999773
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        479.18470000000002,
+        591.08249999999998,
+        4.6170000000000186,
+        4.2290000000000418
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        471.40270000000004,
+        584.6268,
+        6.8140000000000214,
+        6.2889999999999873
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        473.43890000000005,
+        586.27519999999993,
+        4.1139999999999759,
+        4.6180000000000518
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        472.7296,
+        585.93129999999996,
+        4.2049999999999841,
+        4.5950000000000273
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        472.08860000000004,
+        585.54230000000007,
+        4.3659999999999854,
+        4.5499999999999545
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        471.51550000000003,
+        585.42770000000007,
+        4.4350000000000023,
+        4.1369999999999436
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        471.60720000000003,
+        584.87819999999999,
+        4.4820000000000277,
+        4.4109999999999445
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        472.24900000000002,
+        584.74199999999996,
+        4.0219999999999914,
+        4.5470000000000255
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        472.15700000000004,
+        585.38120000000004,
+        4.5489999999999782,
+        4.0460000000000491
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        473.16309999999999,
+        585.65740000000005,
+        4.1840000000000259,
+        4.5950000000000273
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        473.78230000000002,
+        586.04590000000007,
+        4.2749999999999773,
+        4.5259999999999536
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        483.64830000000001,
+        607.0385,
+        4.6400000000000432,
+        5.625
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        484.74710000000005,
+        607.08299999999997,
+        4.617999999999995,
+        4.4819999999999709
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        488.43200000000002,
+        607.9991,
+        4.7330000000000041,
+        4.7789999999999964
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        490.81299999999999,
+        608.20480000000009,
+        5.0299999999999727,
+        4.9169999999999163
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        465.99900000000002,
+        619.88020000000006,
+        5.0059999999999718,
+        4.0919999999999845
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        471.767,
+        619.39840000000004,
+        5.0299999999999727,
+        4.0929999999999609
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        466.3639,
+        618.89710000000002,
+        4.0930000000000177,
+        5.0289999999999964
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        467.16490000000005,
+        619.0793000000001,
+        8.0989999999999895,
+        4.3429999999999609
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        472.22460000000001,
+        618.41570000000002,
+        4.0679999999999836,
+        5.0069999999999482
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        474.81190000000004,
+        613.63160000000005,
+        5.007000000000005,
+        4.0430000000000064
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        480.32840000000004,
+        613.67550000000006,
+        5.0059999999999718,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        475.2921,
+        612.60030000000006,
+        4,
+        5.0069999999999482
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        475.8879,
+        613.19569999999999,
+        8.4399999999999977,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        480.83140000000003,
+        612.62300000000005,
+        4,
+        5.0069999999999482
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        483.16700000000003,
+        618.00250000000005,
+        4.160000000000025,
+        5.0069999999999482
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        483.96790000000004,
+        612.52980000000002,
+        4.1360000000000241,
+        5.0090000000000146
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        482.2063,
+        618.36850000000004,
+        5.0299999999999727,
+        4.1609999999999445
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        482.89280000000002,
+        613.49210000000005,
+        4.5939999999999941,
+        8.3949999999999818
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        483.00620000000004,
+        612.89780000000007,
+        4.9850000000000136,
+        4.1609999999999445
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        483.64730000000003,
+        608.98340000000007,
+        4.4820000000000277,
+        7.4329999999999927
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        488.24990000000003,
+        616.35570000000007,
+        4.8210000000000264,
+        5.2820000000000391
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        489.11840000000001,
+        616.33180000000004,
+        4.8009999999999877,
+        4.8700000000000045
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        490.0575,
+        616.30079999999998,
+        4.6410000000000196,
+        4.9279999999999973
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        490.72059999999999,
+        616.18130000000008,
+        4.8480000000000132,
+        5.1279999999999291
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        492.0949,
+        616.35500000000002,
+        4.7770000000000437,
+        5.2820000000000391
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        492.98700000000002,
+        616.35479999999995,
+        4.5039999999999623,
+        4.8470000000000937
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        493.53720000000004,
+        616.33180000000004,
+        4.8009999999999877,
+        4.8700000000000045
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        494.4984,
+        616.30079999999998,
+        4.617999999999995,
+        4.9279999999999973
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        495.32260000000002,
+        616.35550000000012,
+        4.6630000000000109,
+        5.4629999999999654
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        499.4119,
+        602.13190000000009,
+        7.6450000000000387,
+        7.09699999999998
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        500.36200000000002,
+        603.12390000000005,
+        5.4619999999999891,
+        5.0299999999999727
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        469.29970000000003,
+        575.62990000000002,
+        7.6440000000000055,
+        7.0990000000000464
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        470.59980000000007,
+        576.56790000000001,
+        5.6259999999999764,
+        5.5579999999999927
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        489.73790000000002,
+        609.16750000000002,
+        4.5720000000000027,
+        4.1140000000000327
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        489.73790000000002,
+        608.52490000000012,
+        4.5720000000000027,
+        4.6649999999999636
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        490.31,
+        607.45090000000005,
+        4.25,
+        5.1430000000000291
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        489.50790000000001,
+        607.45090000000005,
+        4.2300000000000182,
+        5.1430000000000291
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        490.03580000000005,
+        607.40440000000001,
+        4,
+        5.1209999999999809
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        489.64520000000005,
+        607.95320000000004,
+        4.7330000000000041,
+        4.1829999999999927
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        485.33640000000003,
+        603.47410000000002,
+        6.7069999999999936,
+        7.2789999999999964
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        486.34890000000007,
+        604.63430000000005,
+        4.8249999999999886,
+        5.1440000000000055
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        485.57070000000004,
+        617.81850000000009,
+        6.0600000000000023,
+        5.0769999999999982
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        485.59430000000003,
+        615.18740000000003,
+        4.3419999999999845,
+        6.6090000000000373
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        487.63170000000002,
+        615.44010000000003,
+        4.25,
+        6.4940000000000282
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        485.91570000000002,
+        614.54610000000002,
+        5.9660000000000082,
+        4.8940000000000055
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        488.45130000000006,
+        603.79669999999999,
+        6.7049999999999841,
+        7.2770000000000437
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        489.46290000000005,
+        604.93150000000003,
+        4.8240000000000123,
+        5.1459999999999582
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        229.9250116,
+        454.39455989999999,
+        145.43999969999999,
+        271.68999450000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        229.92500000000001,
+        454.39499999999998,
+        145.44,
+        271.69000000000005
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        237.80182790000001,
+        470.51614239999998,
+        121.9271947,
+        247.49038469999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        235.40090000000001,
+        468.37890000000004,
+        126.011,
+        251.42399999999998
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        76.507097999999999,
+        451.36455580000001,
+        168.67000469999999,
+        275.72999850000002
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        76.507000000000005,
+        451.36500000000001,
+        168.66999999999999,
+        275.73000000000002
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        84.661564299999995,
+        467.1810337,
+        145.1643186,
+        252.26254260000002
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        82.660799999999995,
+        465.18040000000002,
+        149.16499999999999,
+        256.26400000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        36.005013400000003,
+        450.35455510000003,
+        170.69000059999999,
+        277.74999930000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        36.005000000000003,
+        450.35500000000002,
+        170.69,
+        277.75
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        44.741907800000007,
+        467.0270673,
+        145.4171011,
+        252.86985010000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        42.488900000000001,
+        464.31940000000003,
+        150.16300000000001,
+        257.88099999999991
+      ]
+    }
+  ],
+  "rightsBasis" : "U.S. Government publication, retained as an external development corpus source. The PDF is not bundled or relicensed under the library license.",
+  "sourceSHA256" : "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
+  "sourceTitle" : "Pilot's Handbook of Aeronautical Knowledge, FAA-H-8083-25C",
+  "sourceURL" : "https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/faa-h-8083-25c.pdf"
+}

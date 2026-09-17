@@ -29,7 +29,16 @@ private typealias CaptureFont = UIFont
         guard let document = PDFDocument(url: source), let page = document.page(at: pageNumber - 1),
               let reference = page.pageRef else { throw CocoaError(.fileReadCorruptFile) }
         func rect(_ r: CGRect) -> [Double] { [r.minX, r.minY, r.width, r.height] }
-        let lines = try NativeTextReader.lines(on: page, limit: 100_000)
+        var lines = try NativeTextReader.lines(on: page, limit: 100_000)
+        // The tags the pipeline applies where the page's structure validates: every group that
+        // matches its lines, even when another does not (`structure` per line; absent in fixtures
+        // captured before #89/#90).
+        var tagged = false
+        if let index = try? StructureTreeReader.read(source), let tags = index.pages[pageNumber], !tags.isEmpty,
+           StructureTreeReader.validates(tags, owners: index.owners[pageNumber] ?? [:], page: reference) {
+            _ = MarkedTextReader.apply(tags, page: reference, lines: &lines)
+            tagged = true
+        }
         var attributedLines: [[String: Any]] = []
         for selection in page.selection(for: page.bounds(for: .cropBox))?.selectionsByLine() ?? [] {
             guard let attributed = selection.attributedString else { continue }
@@ -42,7 +51,11 @@ private typealias CaptureFont = UIFont
                     "fontName": font?.fontName ?? "", "fontSize": font?.pointSize ?? 0,
                     "baselineOffset": baseline?.doubleValue ?? 0])
             }
-            attributedLines.append(["text": attributed.string, "rect": rect(selection.bounds(for: page)), "runs": runs])
+            // A selection over figure text can report infinite bounds (FAA page 474), which JSON cannot hold.
+            var entry: [String: Any] = ["text": attributed.string, "runs": runs]
+            let bounds = selection.bounds(for: page)
+            if bounds.isFinite { entry["rect"] = rect(bounds) }
+            attributedLines.append(entry)
         }
         // `graphics` are the clustered regions every fixture carries; `paints` are the
         // unclustered footprints with their frame flag, from which tests compose graphics.
@@ -53,8 +66,15 @@ private typealias CaptureFont = UIFont
             "rightsBasis": item["rightsBasis"] ?? "See corpus manifest and third-party notices.",
             "bounds": rect(page.bounds(for: .cropBox)), "graphics": graphics.regions.map(rect),
             "paints": graphics.paints.map { ["rect": rect($0.rect), "frame": $0.frame] as [String: Any] },
-            "lines": lines.map { ["text": $0.text, "rect": rect($0.rect), "fontSize": $0.fontSize,
-                "monospaced": $0.monospaced] as [String: Any] }, "attributedLines": attributedLines,
+            "lines": lines.map { line -> [String: Any] in
+                var entry: [String: Any] = ["text": line.text, "rect": rect(line.rect), "fontSize": line.fontSize,
+                                            "monospaced": line.monospaced]
+                if tagged, let tag = line.structure {
+                    entry["structure"] = ["group": tag.group, "order": tag.order, "headingLevel": tag.headingLevel,
+                                          "lineCount": tag.lineCount, "opensWithSplitMarker": tag.opensWithSplitMarker]
+                }
+                return entry
+            }, "attributedLines": attributedLines,
         ]
         try JSONSerialization.data(withJSONObject: payload, options: [.prettyPrinted, .sortedKeys, .withoutEscapingSlashes])
             .write(to: URL(fileURLWithPath: CommandLine.arguments[3]))

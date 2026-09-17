@@ -1,0 +1,2094 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        36,
+        33.709700000000005,
+        12.219999999999999,
+        12.310000000000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "xvi"
+        }
+      ],
+      "text" : "xvi"
+    },
+    {
+      "rect" : [
+        54,
+        719.56640000000004,
+        215.99990000000003,
+        11.473299999999881
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Runway and Terrain Slopes Illusion"
+        },
+        {
+          "baselineOffset" : -0.0032999999998537533,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "....................17-10"
+        }
+      ],
+      "text" : "Runway and Terrain Slopes Illusion....................17-10"
+    },
+    {
+      "rect" : [
+        53.999900000000025,
+        705.56640000000004,
+        216,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Featureless Terrain Illusion.................................17-10"
+        }
+      ],
+      "text" : "Featureless Terrain Illusion.................................17-10"
+    },
+    {
+      "rect" : [
+        53.999900000000025,
+        691.56640000000004,
+        216,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Water Refraction..................................................17-10"
+        }
+      ],
+      "text" : "Water Refraction..................................................17-10"
+    },
+    {
+      "rect" : [
+        53.999900000000025,
+        677.56640000000004,
+        216,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Haze.....................................................................17-10"
+        }
+      ],
+      "text" : "Haze.....................................................................17-10"
+    },
+    {
+      "rect" : [
+        53.999900000000025,
+        663.56640000000004,
+        216,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Fog.......................................................................17-10"
+        }
+      ],
+      "text" : "Fog.......................................................................17-10"
+    },
+    {
+      "rect" : [
+        53.999900000000025,
+        649.56640000000004,
+        216,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Ground Lighting Illusions....................................17-10"
+        }
+      ],
+      "text" : "Ground Lighting Illusions....................................17-10"
+    },
+    {
+      "rect" : [
+        44.999899999999997,
+        635.56640000000004,
+        158.86000000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "How To Prevent Landing Errors Due to"
+        }
+      ],
+      "text" : "How To Prevent Landing Errors Due to"
+    },
+    {
+      "rect" : [
+        44.999899999999997,
+        623.56640000000004,
+        225.00000000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Optical Illusions......................................................17-10"
+        }
+      ],
+      "text" : "Optical Illusions......................................................17-10"
+    },
+    {
+      "rect" : [
+        44.999899999999997,
+        610.56640000000004,
+        225.00000000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Motion Sickness......................................................17-12"
+        }
+      ],
+      "text" : "Motion Sickness......................................................17-12"
+    },
+    {
+      "rect" : [
+        44.999899999999997,
+        597.56640000000004,
+        225.00000000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Carbon Monoxide (CO) Poisoning.........................17-12"
+        }
+      ],
+      "text" : "Carbon Monoxide (CO) Poisoning.........................17-12"
+    },
+    {
+      "rect" : [
+        44.999899999999997,
+        584.56640000000004,
+        225.00000000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Stress.......................................................................17-12"
+        }
+      ],
+      "text" : "Stress.......................................................................17-12"
+    },
+    {
+      "rect" : [
+        44.999899999999997,
+        571.56640000000004,
+        225.00000000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Fatigue.....................................................................17-13"
+        }
+      ],
+      "text" : "Fatigue.....................................................................17-13"
+    },
+    {
+      "rect" : [
+        44.999899999999997,
+        558.56640000000004,
+        225.00000000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Exposure to Chemicals............................................17-13"
+        }
+      ],
+      "text" : "Exposure to Chemicals............................................17-13"
+    },
+    {
+      "rect" : [
+        53.999900000000025,
+        545.56640000000004,
+        216,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Hydraulic Fluid....................................................17-13"
+        }
+      ],
+      "text" : "Hydraulic Fluid....................................................17-13"
+    },
+    {
+      "rect" : [
+        53.999900000000025,
+        531.56640000000004,
+        216,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Engine Oil............................................................17-14"
+        }
+      ],
+      "text" : "Engine Oil............................................................17-14"
+    },
+    {
+      "rect" : [
+        53.999900000000025,
+        517.56640000000004,
+        216,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Fuel......................................................................17-14"
+        }
+      ],
+      "text" : "Fuel......................................................................17-14"
+    },
+    {
+      "rect" : [
+        44.999899999999997,
+        503.56640000000004,
+        225.00000000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Dehydration and Heatstroke....................................17-14"
+        }
+      ],
+      "text" : "Dehydration and Heatstroke....................................17-14"
+    },
+    {
+      "rect" : [
+        44.999899999999997,
+        490.56640000000004,
+        225.00000000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Alcohol....................................................................17-15"
+        }
+      ],
+      "text" : "Alcohol....................................................................17-15"
+    },
+    {
+      "rect" : [
+        44.999899999999997,
+        477.56640000000004,
+        225.00000000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Drugs.......................................................................17-16"
+        }
+      ],
+      "text" : "Drugs.......................................................................17-16"
+    },
+    {
+      "rect" : [
+        44.999899999999997,
+        464.56640000000004,
+        225.00000000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Altitude-Induced Decompression Sickness (DCS)... 17-18"
+        }
+      ],
+      "text" : "Altitude-Induced Decompression Sickness (DCS)... 17-18"
+    },
+    {
+      "rect" : [
+        53.999899999999997,
+        451.56640000000004,
+        216.00000000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "DCS After Scuba Diving.....................................17-18"
+        }
+      ],
+      "text" : "DCS After Scuba Diving.....................................17-18"
+    },
+    {
+      "rect" : [
+        35.999899999999997,
+        437.56640000000004,
+        234.00000000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Vision in Flight...........................................................17-19"
+        }
+      ],
+      "text" : "Vision in Flight...........................................................17-19"
+    },
+    {
+      "rect" : [
+        44.999899999999997,
+        424.56640000000004,
+        225.00000000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Vision Types...........................................................17-20"
+        }
+      ],
+      "text" : "Vision Types...........................................................17-20"
+    },
+    {
+      "rect" : [
+        53.999900000000025,
+        411.56640000000004,
+        216,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Photopic Vision...................................................17-20"
+        }
+      ],
+      "text" : "Photopic Vision...................................................17-20"
+    },
+    {
+      "rect" : [
+        53.999900000000025,
+        397.56640000000004,
+        216,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Mesopic Vision....................................................17-21"
+        }
+      ],
+      "text" : "Mesopic Vision....................................................17-21"
+    },
+    {
+      "rect" : [
+        53.999900000000025,
+        383.56640000000004,
+        216,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Scotopic Vision....................................................17-21"
+        }
+      ],
+      "text" : "Scotopic Vision....................................................17-21"
+    },
+    {
+      "rect" : [
+        44.999899999999997,
+        369.56640000000004,
+        225.00000000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Central Blind Spot...................................................17-21"
+        }
+      ],
+      "text" : "Central Blind Spot...................................................17-21"
+    },
+    {
+      "rect" : [
+        44.999899999999997,
+        356.56640000000004,
+        225.00000000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Empty-Field Myopia...............................................17-22"
+        }
+      ],
+      "text" : "Empty-Field Myopia...............................................17-22"
+    },
+    {
+      "rect" : [
+        44.999899999999997,
+        343.56640000000004,
+        225.00000000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Night Vision............................................................17-22"
+        }
+      ],
+      "text" : "Night Vision............................................................17-22"
+    },
+    {
+      "rect" : [
+        53.999900000000025,
+        330.56640000000004,
+        216,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Night Blind Spot..................................................17-22"
+        }
+      ],
+      "text" : "Night Blind Spot..................................................17-22"
+    },
+    {
+      "rect" : [
+        53.999900000000025,
+        316.56639999999999,
+        216,
+        11.470000000000084
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Dark Adaptation...................................................17-23"
+        }
+      ],
+      "text" : "Dark Adaptation...................................................17-23"
+    },
+    {
+      "rect" : [
+        53.999900000000025,
+        302.56639999999999,
+        216,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Scanning Techniques ..........................................17-23"
+        }
+      ],
+      "text" : "Scanning Techniques ..........................................17-23"
+    },
+    {
+      "rect" : [
+        53.999900000000025,
+        288.56639999999999,
+        216,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Night Vision Protection.......................................17-23"
+        }
+      ],
+      "text" : "Night Vision Protection.......................................17-23"
+    },
+    {
+      "rect" : [
+        53.999900000000025,
+        274.56639999999999,
+        216,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Self-Imposed Stress ............................................17-25"
+        }
+      ],
+      "text" : "Self-Imposed Stress ............................................17-25"
+    },
+    {
+      "rect" : [
+        53.999900000000025,
+        260.56639999999999,
+        216,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Distance Estimation and Depth Perception ........17-25"
+        }
+      ],
+      "text" : "Distance Estimation and Depth Perception ........17-25"
+    },
+    {
+      "rect" : [
+        53.999900000000025,
+        246.56639999999999,
+        216,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Binocular Cues.....................................................17-26"
+        }
+      ],
+      "text" : "Binocular Cues.....................................................17-26"
+    },
+    {
+      "rect" : [
+        44.999899999999997,
+        232.56640000000002,
+        225.00000000000003,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Night Vision Illusions.............................................17-26"
+        }
+      ],
+      "text" : "Night Vision Illusions.............................................17-26"
+    },
+    {
+      "rect" : [
+        53.999900000000025,
+        219.56640000000002,
+        216,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Autokinesis..........................................................17-26"
+        }
+      ],
+      "text" : "Autokinesis..........................................................17-26"
+    },
+    {
+      "rect" : [
+        53.999900000000025,
+        205.56640000000002,
+        216,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "False Horizon.......................................................17-26"
+        }
+      ],
+      "text" : "False Horizon.......................................................17-26"
+    },
+    {
+      "rect" : [
+        53.999900000000025,
+        191.56640000000002,
+        216,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Reversible Perspective Illusion............................17-26"
+        }
+      ],
+      "text" : "Reversible Perspective Illusion............................17-26"
+    },
+    {
+      "rect" : [
+        53.999900000000025,
+        177.56640000000002,
+        216,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Size-Distance Illusion..........................................17-27"
+        }
+      ],
+      "text" : "Size-Distance Illusion..........................................17-27"
+    },
+    {
+      "rect" : [
+        53.999900000000025,
+        163.56640000000002,
+        216,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Fascination (Fixation)..........................................17-27"
+        }
+      ],
+      "text" : "Fascination (Fixation)..........................................17-27"
+    },
+    {
+      "rect" : [
+        53.999900000000025,
+        149.56640000000002,
+        216,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Flicker Vertigo.....................................................17-27"
+        }
+      ],
+      "text" : "Flicker Vertigo.....................................................17-27"
+    },
+    {
+      "rect" : [
+        44.999899999999997,
+        135.56640000000002,
+        225.00000000000003,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Night Landing Illusions...........................................17-27"
+        }
+      ],
+      "text" : "Night Landing Illusions...........................................17-27"
+    },
+    {
+      "rect" : [
+        44.999899999999997,
+        122.5664,
+        225.00000000000003,
+        11.470000000000013
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Enhanced Night Vision Systems.............................17-27"
+        }
+      ],
+      "text" : "Enhanced Night Vision Systems.............................17-27"
+    },
+    {
+      "rect" : [
+        53.999900000000025,
+        109.5664,
+        216,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Synthetic Vision System......................................17-28"
+        }
+      ],
+      "text" : "Synthetic Vision System......................................17-28"
+    },
+    {
+      "rect" : [
+        53.999900000000025,
+        95.566400000000002,
+        216,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Enhanced Flight Vision System...........................17-28"
+        }
+      ],
+      "text" : "Enhanced Flight Vision System...........................17-28"
+    },
+    {
+      "rect" : [
+        35.999899999999997,
+        81.566400000000002,
+        234.00000000000003,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Chapter Summary.......................................................17-29"
+        }
+      ],
+      "text" : "Chapter Summary.......................................................17-29"
+    },
+    {
+      "rect" : [
+        284.99990000000003,
+        718.14639999999997,
+        55.560000000000002,
+        13.190000000000055
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 10,
+          "text" : "Appendix A"
+        }
+      ],
+      "text" : "Appendix A"
+    },
+    {
+      "rect" : [
+        284.99990000000003,
+        705.14639999999997,
+        198.3900000000001,
+        13.190000000000055
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 10,
+          "text" : "Performance Data for Cessna Model 172R"
+        }
+      ],
+      "text" : "Performance Data for Cessna Model 172R"
+    },
+    {
+      "rect" : [
+        284.99990000000003,
+        693.14639999999997,
+        233.99000000000001,
+        13.190000000000055
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 10,
+          "text" : "and Challenger 605.............................................A-1"
+        }
+      ],
+      "text" : "and Challenger 605.............................................A-1"
+    },
+    {
+      "rect" : [
+        284.98990000000003,
+        668.14639999999997,
+        55.560000000000002,
+        13.190000000000055
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 10,
+          "text" : "Appendix B"
+        }
+      ],
+      "text" : "Appendix B"
+    },
+    {
+      "rect" : [
+        284.98990000000003,
+        655.14639999999997,
+        183.92000000000007,
+        13.190000000000055
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 10,
+          "text" : "Acronyms, Abbreviations, and NOTAM"
+        }
+      ],
+      "text" : "Acronyms, Abbreviations, and NOTAM"
+    },
+    {
+      "rect" : [
+        284.98990000000003,
+        643.14639999999997,
+        234.0068,
+        13.193300000000022
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -0.0032999999999674401,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 10,
+          "text" : "Contractions"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 10,
+          "text" : "........................................................B-1"
+        }
+      ],
+      "text" : "Contractions........................................................B-1"
+    },
+    {
+      "rect" : [
+        284.99670000000003,
+        618.14969999999994,
+        55.560000000000002,
+        13.190000000000055
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 10,
+          "text" : "Appendix C"
+        }
+      ],
+      "text" : "Appendix C"
+    },
+    {
+      "rect" : [
+        284.99670000000003,
+        605.14969999999994,
+        234,
+        13.190000000000055
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 10,
+          "text" : "Airport Signs and Markings................................C-1"
+        }
+      ],
+      "text" : "Airport Signs and Markings................................C-1"
+    },
+    {
+      "rect" : [
+        284.99670000000003,
+        579.14969999999994,
+        234.00339999999994,
+        13.190000000000055
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 10,
+          "text" : "Glossary...............................................................G-1"
+        }
+      ],
+      "text" : "Glossary...............................................................G-1"
+    },
+    {
+      "rect" : [
+        285.00009999999997,
+        553.14969999999994,
+        234,
+        13.190000000000055
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 10,
+          "text" : "Index.......................................................................I-1"
+        }
+      ],
+      "text" : "Index.......................................................................I-1"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    594,
+    774
+  ],
+  "caseID" : "faa-phak-8083-25c",
+  "graphics" : [
+
+  ],
+  "lines" : [
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        33.709700000000005,
+        12.219999999999999,
+        12.310000000000002
+      ],
+      "text" : "xvi"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        719.56640000000004,
+        215.99990000000003,
+        11.473299999999881
+      ],
+      "structure" : {
+        "group" : 873,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 2573
+      },
+      "text" : "Runway and Terrain Slopes Illusion....................17-10"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        53.999900000000025,
+        705.56640000000004,
+        216,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 874,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 2576
+      },
+      "text" : "Featureless Terrain Illusion.................................17-10"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        53.999900000000025,
+        691.56640000000004,
+        216,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 875,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 2579
+      },
+      "text" : "Water Refraction..................................................17-10"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        53.999900000000025,
+        677.56640000000004,
+        216,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 876,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 2582
+      },
+      "text" : "Haze.....................................................................17-10"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        53.999900000000025,
+        663.56640000000004,
+        216,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 877,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 2585
+      },
+      "text" : "Fog.......................................................................17-10"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        53.999900000000025,
+        649.56640000000004,
+        216,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 878,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 2588
+      },
+      "text" : "Ground Lighting Illusions....................................17-10"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        44.999899999999997,
+        635.56640000000004,
+        158.86000000000001,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 879,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 2591
+      },
+      "text" : "How To Prevent Landing Errors Due to"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        44.999899999999997,
+        623.56640000000004,
+        225.00000000000003,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 879,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 2593
+      },
+      "text" : "Optical Illusions......................................................17-10"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        44.999899999999997,
+        610.56640000000004,
+        225.00000000000003,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 880,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 2596
+      },
+      "text" : "Motion Sickness......................................................17-12"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        44.999899999999997,
+        597.56640000000004,
+        225.00000000000003,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 881,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 2599
+      },
+      "text" : "Carbon Monoxide (CO) Poisoning.........................17-12"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        44.999899999999997,
+        584.56640000000004,
+        225.00000000000003,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 882,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 2602
+      },
+      "text" : "Stress.......................................................................17-12"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        44.999899999999997,
+        571.56640000000004,
+        225.00000000000003,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 883,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 2605
+      },
+      "text" : "Fatigue.....................................................................17-13"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        44.999899999999997,
+        558.56640000000004,
+        225.00000000000003,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 884,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 2608
+      },
+      "text" : "Exposure to Chemicals............................................17-13"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        53.999900000000025,
+        545.56640000000004,
+        216,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 885,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 2611
+      },
+      "text" : "Hydraulic Fluid....................................................17-13"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        53.999900000000025,
+        531.56640000000004,
+        216,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 886,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 2614
+      },
+      "text" : "Engine Oil............................................................17-14"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        53.999900000000025,
+        517.56640000000004,
+        216,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 887,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 2617
+      },
+      "text" : "Fuel......................................................................17-14"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        44.999899999999997,
+        503.56640000000004,
+        225.00000000000003,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 888,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 2620
+      },
+      "text" : "Dehydration and Heatstroke....................................17-14"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        44.999899999999997,
+        490.56640000000004,
+        225.00000000000003,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 889,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 2623
+      },
+      "text" : "Alcohol....................................................................17-15"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        44.999899999999997,
+        477.56640000000004,
+        225.00000000000003,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 890,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 2626
+      },
+      "text" : "Drugs.......................................................................17-16"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        44.999899999999997,
+        464.56640000000004,
+        225.00000000000003,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 891,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 2629
+      },
+      "text" : "Altitude-Induced Decompression Sickness (DCS)... 17-18"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        53.999899999999997,
+        451.56640000000004,
+        216.00000000000003,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 892,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 2632
+      },
+      "text" : "DCS After Scuba Diving.....................................17-18"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        35.999899999999997,
+        437.56640000000004,
+        234.00000000000003,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 893,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 2635
+      },
+      "text" : "Vision in Flight...........................................................17-19"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        44.999899999999997,
+        424.56640000000004,
+        225.00000000000003,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 894,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 2638
+      },
+      "text" : "Vision Types...........................................................17-20"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        53.999900000000025,
+        411.56640000000004,
+        216,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 895,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 2641
+      },
+      "text" : "Photopic Vision...................................................17-20"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        53.999900000000025,
+        397.56640000000004,
+        216,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 896,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 2644
+      },
+      "text" : "Mesopic Vision....................................................17-21"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        53.999900000000025,
+        383.56640000000004,
+        216,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 897,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 2647
+      },
+      "text" : "Scotopic Vision....................................................17-21"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        44.999899999999997,
+        369.56640000000004,
+        225.00000000000003,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 898,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 2650
+      },
+      "text" : "Central Blind Spot...................................................17-21"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        44.999899999999997,
+        356.56640000000004,
+        225.00000000000003,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 899,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 2653
+      },
+      "text" : "Empty-Field Myopia...............................................17-22"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        44.999899999999997,
+        343.56640000000004,
+        225.00000000000003,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 900,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 2656
+      },
+      "text" : "Night Vision............................................................17-22"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        53.999900000000025,
+        330.56640000000004,
+        216,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 901,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 2659
+      },
+      "text" : "Night Blind Spot..................................................17-22"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        53.999900000000025,
+        316.56639999999999,
+        216,
+        11.470000000000084
+      ],
+      "structure" : {
+        "group" : 902,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 2662
+      },
+      "text" : "Dark Adaptation...................................................17-23"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        53.999900000000025,
+        302.56639999999999,
+        216,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 903,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 2665
+      },
+      "text" : "Scanning Techniques ..........................................17-23"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        53.999900000000025,
+        288.56639999999999,
+        216,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 904,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 2668
+      },
+      "text" : "Night Vision Protection.......................................17-23"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        53.999900000000025,
+        274.56639999999999,
+        216,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 905,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 2671
+      },
+      "text" : "Self-Imposed Stress ............................................17-25"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        53.999900000000025,
+        260.56639999999999,
+        216,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 906,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 2674
+      },
+      "text" : "Distance Estimation and Depth Perception ........17-25"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        53.999900000000025,
+        246.56639999999999,
+        216,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 907,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 2677
+      },
+      "text" : "Binocular Cues.....................................................17-26"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        44.999899999999997,
+        232.56640000000002,
+        225.00000000000003,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 908,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 2680
+      },
+      "text" : "Night Vision Illusions.............................................17-26"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        53.999900000000025,
+        219.56640000000002,
+        216,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 909,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 2683
+      },
+      "text" : "Autokinesis..........................................................17-26"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        53.999900000000025,
+        205.56640000000002,
+        216,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 910,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 2686
+      },
+      "text" : "False Horizon.......................................................17-26"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        53.999900000000025,
+        191.56640000000002,
+        216,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 911,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 2689
+      },
+      "text" : "Reversible Perspective Illusion............................17-26"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        53.999900000000025,
+        177.56640000000002,
+        216,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 912,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 2692
+      },
+      "text" : "Size-Distance Illusion..........................................17-27"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        53.999900000000025,
+        163.56640000000002,
+        216,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 913,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 2695
+      },
+      "text" : "Fascination (Fixation)..........................................17-27"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        53.999900000000025,
+        149.56640000000002,
+        216,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 914,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 2698
+      },
+      "text" : "Flicker Vertigo.....................................................17-27"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        44.999899999999997,
+        135.56640000000002,
+        225.00000000000003,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 915,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 2701
+      },
+      "text" : "Night Landing Illusions...........................................17-27"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        44.999899999999997,
+        122.5664,
+        225.00000000000003,
+        11.470000000000013
+      ],
+      "structure" : {
+        "group" : 916,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 2704
+      },
+      "text" : "Enhanced Night Vision Systems.............................17-27"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        53.999900000000025,
+        109.5664,
+        216,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 917,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 2707
+      },
+      "text" : "Synthetic Vision System......................................17-28"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        53.999900000000025,
+        95.566400000000002,
+        216,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 918,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 2710
+      },
+      "text" : "Enhanced Flight Vision System...........................17-28"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        35.999899999999997,
+        81.566400000000002,
+        234.00000000000003,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 919,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 2713
+      },
+      "text" : "Chapter Summary.......................................................17-29"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        284.99990000000003,
+        718.14639999999997,
+        55.560000000000002,
+        13.190000000000055
+      ],
+      "structure" : {
+        "group" : 920,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 2716
+      },
+      "text" : "Appendix A"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        284.99990000000003,
+        705.14639999999997,
+        198.3900000000001,
+        13.190000000000055
+      ],
+      "structure" : {
+        "group" : 921,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 2717
+      },
+      "text" : "Performance Data for Cessna Model 172R"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        284.99990000000003,
+        693.14639999999997,
+        233.99000000000001,
+        13.190000000000055
+      ],
+      "structure" : {
+        "group" : 921,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 2719
+      },
+      "text" : "and Challenger 605.............................................A-1"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        284.98990000000003,
+        668.14639999999997,
+        55.560000000000002,
+        13.190000000000055
+      ],
+      "structure" : {
+        "group" : 922,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 2722
+      },
+      "text" : "Appendix B"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        284.98990000000003,
+        655.14639999999997,
+        183.92000000000007,
+        13.190000000000055
+      ],
+      "structure" : {
+        "group" : 923,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 2723
+      },
+      "text" : "Acronyms, Abbreviations, and NOTAM"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        284.98990000000003,
+        643.14639999999997,
+        234.0068,
+        13.193300000000022
+      ],
+      "structure" : {
+        "group" : 923,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 2724
+      },
+      "text" : "Contractions........................................................B-1"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        284.99670000000003,
+        618.14969999999994,
+        55.560000000000002,
+        13.190000000000055
+      ],
+      "structure" : {
+        "group" : 924,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 2727
+      },
+      "text" : "Appendix C"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        284.99670000000003,
+        605.14969999999994,
+        234,
+        13.190000000000055
+      ],
+      "structure" : {
+        "group" : 925,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 2728
+      },
+      "text" : "Airport Signs and Markings................................C-1"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        284.99670000000003,
+        579.14969999999994,
+        234.00339999999994,
+        13.190000000000055
+      ],
+      "structure" : {
+        "group" : 926,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 2731
+      },
+      "text" : "Glossary...............................................................G-1"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285.00009999999997,
+        553.14969999999994,
+        234,
+        13.190000000000055
+      ],
+      "structure" : {
+        "group" : 927,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 2734
+      },
+      "text" : "Index.......................................................................I-1"
+    }
+  ],
+  "page" : 15,
+  "paints" : [
+
+  ],
+  "rightsBasis" : "U.S. Government publication, retained as an external development corpus source. The PDF is not bundled or relicensed under the library license.",
+  "sourceSHA256" : "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
+  "sourceTitle" : "Pilot's Handbook of Aeronautical Knowledge, FAA-H-8083-25C",
+  "sourceURL" : "https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/faa-h-8083-25c.pdf"
+}

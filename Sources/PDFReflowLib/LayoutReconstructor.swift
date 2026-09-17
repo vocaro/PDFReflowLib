@@ -1077,7 +1077,12 @@ enum LayoutReconstructor {
                   !isList(lower.text),
                   !upper.text.contains("..."), !lower.text.contains("..."),
                   LabelStyle(upper, body: body).bold == LabelStyle(lower, body: body).bold,
-                  !headingTypography(upper), !headingTypography(lower), upper.rect.width >= body * 12 else { return false }
+                  !headingTypography(upper), !headingTypography(lower), upper.rect.width >= body * 12,
+                  // Both lines are set as prose: a table row spreads a few characters over the
+                  // measure (FAA page 416's `Compass Locator  Under 25  15`, 0.9 em a character,
+                  // where a loosely justified line of text sets about half that).
+                  [upper, lower].allSatisfy({ $0.rect.width <= CGFloat($0.text.count) * size * 0.7 })
+            else { return false }
             // The upper line reaches its column's right edge, and that measure is the page's
             // justified measure (three other lines set to it): a title, a ragged list entry or a
             // short report line does not run on.
@@ -1099,7 +1104,21 @@ enum LayoutReconstructor {
                 let gap = above.rect.minY - below.rect.maxY
                 return gap >= upper.fontSize * 0.6 && gap <= upper.fontSize * 2.5
             }
-            return spaced.count >= 2
+            if spaced.count >= 2 { return true }
+            // Or the column is justified and sets space somewhere on its edge: most of its lines end
+            // at its right edge, so a line that fills the measure and a line on the same edge at
+            // ordinary leading read as one block of text, whatever sentence opens the lower line,
+            // in a column that shows its breaks with space (FAA page 96's `…affected portion of the
+            // airfoil.` / `Manufacturers have developed…`, whose only space sets off `A Third
+            // Dimension`; #89). A ragged list (the acronyms) reaches that edge only with its longest
+            // entries, and a column with no space at all leaves the tags as the only evidence.
+            let justified = edge.filter { $0.rect.maxX >= column - body * 0.75 }
+            let sameEdge = free.filter { abs($0.rect.minX - upper.rect.minX) <= body * 0.5 }.sorted { $0.rect.minY > $1.rect.minY }
+            let spacedAtAll = zip(sameEdge, sameEdge.dropFirst()).contains { above, below in
+                let gap = above.rect.minY - below.rect.maxY
+                return gap >= upper.fontSize * 0.6 && gap <= upper.fontSize * 2.5
+            }
+            return edge.count >= 6 && justified.count * 2 > edge.count && spacedAtAll
         }
         var elements = structuredOrder(spatial, page: page.number, warnings: &warnings,
                                        headingTypography: headingTypography, wraps: { wraps($0, onto: $1) })
@@ -1142,6 +1161,81 @@ enum LayoutReconstructor {
                   !headingTypography(next), left <= next.rect.minX + body else { return nil }
             return group
         })
+        // A paragraph group can also be a title that the page's own label test cannot see, because
+        // that test asks for body text directly beneath a body-size label: FAA page 27 stacks
+        // `Pilot and Aeronautical Information` over `Notices to Airmen (NOTAMs)`, page 54 sets
+        // `PAVE Checklist: Identify Hazards and Personal` / `Minimums` over two lines, and the
+        // chapter openers set `Introduction` right under the chapter title. The tag already makes the
+        // line its own element, so the evidence left to find is that the element is a title (#90):
+        // - every line is set in bold in a heading or label style the book repeats, and the group
+        //   reads as a title (a capital first, no closing punctuation, no list marker or leader); or
+        // - it is one line in the body's size set wholly in italic, in title case, over a wider
+        //   body-text line on its own left edge, with space or another title above it: the FAA's
+        //   lowest title level (`Likelihood of an Event`, `Coupled Ailerons and Rudder`). An italic
+        //   sentence, quotation or caption fragment ends in punctuation or is not in title case.
+        // Such a group is emitted as a heading in tag order, ranked by its size (see `flushTagged`).
+        func readsAsTitle(_ lines: [TextLine]) -> Bool {
+            let text = lines.map(\.text).joined(separator: " ").trimmingCharacters(in: .whitespaces)
+            guard (1...3).contains(lines.count), text.count < 150, text.filter(\.isLetter).count >= 2,
+                  let first = text.first(where: { !"([\u{201C}\"'".contains($0) }), first.isUppercase || first.isNumber,
+                  let last = text.last, !".,;:!?".contains(last) else { return false }
+            // A contents page's chapter label heads leader entries (`Introduction To Flying.....1-1`,
+            // whose chapter-prefixed folio `isContentsEntry` does not read), and a table's header
+            // row spreads a few words over its width (`Class  (Watts)  (Miles)`).
+            guard !lines.contains(where: { $0.text.contains("....") || $0.rect.width > CGFloat($0.text.count) * $0.fontSize * 0.7 }),
+                  let lowest = lines.min(by: { $0.rect.minY < $1.rect.minY }) else { return false }
+            let beneath = free.filter { $0.rect.maxY <= lowest.rect.minY + body * 0.4 && $0.rect.minX < lowest.rect.maxX
+                && $0.rect.maxX > lowest.rect.minX }.max { $0.rect.maxY < $1.rect.maxY }
+            // The entry beneath can wrap before its leader (`Performance Data for Cessna Model 172R` /
+            // `and Challenger 605.....A-1`): its whole group counts.
+            if let beneath, free.contains(where: { other in
+                (other == beneath || other.structure != nil && other.structure?.group == beneath.structure?.group)
+                    && other.text.contains("....")
+            }) { return false }
+            return !lines.contains { isList($0.text) || isContentsEntry($0.text) || isHeaderLike($0, in: page, bothBands: true) }
+        }
+        func wholly(_ line: TextLine, _ trait: TextStyle) -> Bool {
+            line.content.elements.allSatisfy { element in
+                guard case let .text(value, style) = element else { return true }
+                return style.contains(trait) || value.allSatisfy(\.isWhitespace)
+            }
+        }
+        func titleCase(_ text: String) -> Bool {
+            let words = text.split(whereSeparator: \.isWhitespace)
+            return words.count <= 10 && words.allSatisfy { word in
+                let letters = word.drop { !$0.isLetter }
+                return letters.filter(\.isLetter).count < 4 || letters.first?.isUppercase == true
+            }
+        }
+        func setsItalicTitle(_ line: TextLine) -> Bool {
+            guard wholly(line, .italic), abs(line.fontSize - reflowBody) <= reflowBody * 0.1, titleCase(line.text) else { return false }
+            let column = free.filter { $0.rect.minX < line.rect.maxX && $0.rect.maxX > line.rect.minX && !sameRow($0.rect, line.rect) }
+            guard let below = column.filter({ $0.rect.maxY <= line.rect.minY + body * 0.4 }).max(by: { $0.rect.maxY < $1.rect.maxY }),
+                  line.rect.minY - below.rect.maxY < body * 0.8, abs(below.rect.minX - line.rect.minX) <= body * 0.5,
+                  below.rect.width > line.rect.width, abs(below.fontSize - reflowBody) <= reflowBody * 0.1, !isList(below.text),
+                  !wholly(below, .italic), !wholly(below, .bold) else { return false }
+            guard let above = column.filter({ $0.rect.minY >= line.rect.maxY - body * 0.25 }).min(by: { $0.rect.minY < $1.rect.minY })
+            else { return true }
+            return above.rect.minY - line.rect.maxY >= body * 0.5 || wholly(above, .bold) || headingTypography(above)
+        }
+        let taggedTitles = Set(Dictionary(grouping: elements.indices.filter {
+            elements[$0].line?.structure?.headingLevel == 0
+        }, by: { elements[$0].line!.structure!.group }).compactMap { group, indices -> Int? in
+            guard !introduces.contains(group) else { return nil }
+            let lines = indices.sorted().map { elements[$0].line! }
+            // A section title is set flush left. A title centred over the body text of its column is a
+            // table's or display's title (`NONDIRECTIONAL RADIO BEACON (NDB)` on FAA page 416, 16 points
+            // in from the column edge and centred on the prose line above it).
+            guard readsAsTitle(lines), !free.contains(where: { other in
+                !sameRow(other.rect, lines[0].rect) && abs(other.fontSize - reflowBody) <= reflowBody * 0.1
+                    && !wholly(other, .bold) && lines[0].rect.minX - other.rect.minX > body
+                    && abs(lines[0].rect.midX - other.rect.midX) <= body
+            }) else { return nil }
+            if lines.allSatisfy({ inBookHeadingStyle($0) && wholly($0, .bold) && $0.fontSize >= reflowBody * 0.95 }) {
+                return group
+            }
+            return lines.count == 1 && setsItalicTitle(untagged(lines[0])) ? group : nil
+        })
         if !introduces.isEmpty {
             for index in elements.indices {
                 if let group = elements[index].line?.structure?.group, introduces.contains(group) {
@@ -1183,14 +1277,19 @@ enum LayoutReconstructor {
             guard let (tag, text, size) = tagged else { return }
             // A paragraph group that is one rejoined list item (#81) keeps the representation
             // the same item has untagged: a preserved list line, its marker intact.
-            let content: ReflowBlock.Content = tag.headingLevel == 0
+            // A paragraph group that reads as a title (`taggedTitles`) is a heading with no validated
+            // level: `rankHeadingLevels` ranks it by size, as it ranks untagged headings.
+            let title = tag.headingLevel == 0 && taggedTitles.contains(tag.group)
+            let content: ReflowBlock.Content = title
+                ? .heading(id: "heading-\(page.number)-\(result.count)", text: text, level: 2)
+                : tag.headingLevel == 0
                 ? (tag.opensWithSplitMarker && isList(text.text) ? .preformatted(text) : .paragraph(text))
                 : .heading(id: "heading-\(page.number)-\(result.count)", text: text, level: tag.headingLevel)
             var block = ReflowBlock(content: content, structureGroup: tag.group, page: page.number)
-            block.taggedLevel = tag.headingLevel
+            block.taggedLevel = title ? nil : tag.headingLevel
             // A tagged heading keeps its validated level, but its typography still belongs in the
             // document-wide scale: see `rankHeadingLevels`.
-            if tag.headingLevel > 0 { block.headingSize = size }
+            if tag.headingLevel > 0 || title { block.headingSize = size }
             result.append(block)
             tagged = nil
         }
@@ -1389,12 +1488,30 @@ enum LayoutReconstructor {
             }
             guard let line = element.line else { continue }
             if let tag = line.structure {
+                // A paragraph group can open on the line an untagged paragraph wraps onto: FAA page
+                // 127 tags `…there is maximum thrust.` with text across a figure, so its group falls
+                // back, and `After liftoff, …` opens the next group at ordinary leading. The wrap
+                // evidence that joins two tagged groups joins these too (#89); the group's text
+                // then continues the open paragraph.
+                if tag.headingLevel == 0, !tag.opensWithSplitMarker, !taggedTitles.contains(tag.group), tagged == nil, !line.monospaced,
+                   let prev = previous, prev.wraps != false, !paragraph.elements.isEmpty, wraps(prev, onto: line) {
+                    tagged = (tag, join(paragraph, line.content, vocabulary: vocabulary, page: page.number,
+                        warnings: &warnings), max(prev.fontSize, line.fontSize))
+                    taggedGroups = [tag.group]
+                    taggedLast = line
+                    paragraph = InlineText()
+                    previous = nil
+                    previousGap = nil
+                    codeOrigin = nil
+                    continue
+                }
                 flush()
                 codeOrigin = nil
                 if let current = tagged, !taggedGroups.contains(tag.group) {
                     // Two paragraph groups split at a wrapped line read as one paragraph.
                     if current.0.headingLevel == 0, !current.0.opensWithSplitMarker, tag.headingLevel == 0,
-                       !tag.opensWithSplitMarker, let last = taggedLast, wraps(last, onto: line) {
+                       !tag.opensWithSplitMarker, !taggedTitles.contains(current.0.group), !taggedTitles.contains(tag.group),
+                       let last = taggedLast, wraps(last, onto: line) {
                         taggedGroups.insert(tag.group)
                     } else { flushTagged() }
                 }
@@ -1405,6 +1522,18 @@ enum LayoutReconstructor {
                         page: page.number, warnings: &warnings), max(current.2, line.fontSize))
                 } else { tagged = (tag, line.content, line.fontSize) }
                 continue
+            }
+            // The converse: an untagged line a paragraph group's last line wraps onto continues that
+            // paragraph (FAA page 360's `…[Figure 14-44]` / `In addition to basic radar service, …`,
+            // whose group crosses the figure beside it and falls back). The open group's text becomes
+            // the spatial paragraph, and the ordinary rules below attach the line to it.
+            if let current = tagged, current.0.headingLevel == 0, !current.0.opensWithSplitMarker,
+               !taggedTitles.contains(current.0.group),
+               let last = taggedLast, !line.monospaced, wraps(last, onto: line) {
+                tagged = nil
+                paragraph = current.1
+                previous = last
+                previousGap = nil
             }
             flushTagged()
             if !line.monospaced { codeOrigin = nil }
@@ -1789,9 +1918,10 @@ enum LayoutReconstructor {
         text.range(of: "^(?:Figure|Table)\\s+[0-9]", options: .regularExpression) != nil
     }
 
-    /// An Arabic page number (optionally chapter-prefixed) or a Roman numeral.
+    /// An Arabic page number (optionally prefixed by its chapter's number or its part's letter,
+    /// `5-17` or `C-2`) or a Roman numeral.
     private static func isFolio(_ text: String) -> Bool {
-        !text.isEmpty && text.range(of: "^(?:[0-9]+(?:-[0-9]+)?|m{0,3}(?:cm|cd|d?c{0,3})(?:xc|xl|l?x{0,3})(?:ix|iv|v?i{0,3}))$",
+        !text.isEmpty && text.range(of: "^(?:(?:[0-9]+-|[A-Za-z]-)?[0-9]+|m{0,3}(?:cm|cd|d?c{0,3})(?:xc|xl|l?x{0,3})(?:ix|iv|v?i{0,3}))$",
             options: [.regularExpression, .caseInsensitive]) != nil
     }
 

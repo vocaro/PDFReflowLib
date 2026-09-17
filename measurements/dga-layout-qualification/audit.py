@@ -46,7 +46,7 @@ def main():
     args = parser.parse_args()
     args.output.mkdir(parents=True, exist_ok=True)
     expectations = json.loads(Path(__file__).with_name('expectations.json').read_text())
-    comparison = compare(args.baseline, args.evaluation)
+    comparison = compare(args.baseline, args.evaluation, allow_different_converters=True)
     assert comparison['passed'], comparison
     result = json.loads((args.evaluation / 'result.json').read_text())
     assert result['case']['sha256'] == expectations['sourceSHA256']

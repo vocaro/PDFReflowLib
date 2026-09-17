@@ -86,7 +86,18 @@ print(json.dumps({{"pageCount": 1, "reflowedPageCount": 1, "recognizedPageCount"
         self.assertTrue(result['systemBuild'])
         self.assertTrue(result["memoryGate"]["passed"])
         self.assertTrue(result["runPassed"])
+        self.assertEqual(result["converterSHA256AfterConversion"], result["converterSHA256"])
         self.assertEqual(code, 0)
+
+    def test_converter_rebuilt_during_conversion_fails_the_evaluation(self):
+        self.converter.write_text(self.converter.read_text().replace(
+            "time.sleep(0.2)", "time.sleep(0.2)\nopen(sys.argv[0], 'a').write('# rebuilt\\n')"))
+        code, result = self.invoke(512)
+        self.assertEqual(result["conversionExitCode"], 0)
+        self.assertNotEqual(result["converterSHA256AfterConversion"], result["converterSHA256"])
+        self.assertEqual(result["converterIdentityError"], "converter binary changed during conversion")
+        self.assertFalse(result["runPassed"])
+        self.assertEqual(code, 1)
 
     def test_converter_options_are_forwarded_after_the_paths_and_recorded(self):
         recorded = self.root / "argv.json"

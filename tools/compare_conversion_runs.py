@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
 """Strict capability-compatible comparison of two complete corpus evaluations.
 
-Refuse missing/mismatched provenance. Report parsed page, OCR/report and encoded image
-differences; an unchanged EPUB ZIP hash is not required (identifiers/timestamps vary).
+Refuse missing/mismatched provenance, including two different converter binaries unless
+--allow-different-converters states that a before/after build comparison is intended (a
+shared build path rebuilt between runs is the likely origin of #68's report). Report parsed
+page, OCR/report and encoded image differences; an unchanged EPUB ZIP hash is not required
+(identifiers/timestamps vary). For repeat runs of one binary see check_reproducibility.py.
 This detects drift, not correctness. Existing content/EPUB/resource gates still apply.
 """
 import argparse
@@ -15,7 +18,7 @@ from check_corpus_content import read_pages
 from conversion_provenance import digest, is_digest, probe_errors
 
 
-def compatible_receipts(left, right):
+def compatible_receipts(left, right, allow_different_converters=False):
     errors = []
     if not isinstance(left, dict) or not isinstance(right, dict):
         return ['evaluation receipt must be an object']
@@ -42,6 +45,11 @@ def compatible_receipts(left, right):
         if not isinstance(receipt.get('conversionReport'), dict):
             errors.append(f'{label} conversion report missing')
         errors.extend(f'{label} {error}' for error in probe_errors(receipt))
+    if (not allow_different_converters and is_digest(left.get('converterSHA256'))
+            and is_digest(right.get('converterSHA256')) and left['converterSHA256'] != right['converterSHA256']):
+        errors.append(f'converterSHA256 differs (baseline {left["converterSHA256"][:12]}..., candidate '
+                      f'{right["converterSHA256"][:12]}...): these runs used two different binaries; '
+                      'pass --allow-different-converters to compare two builds deliberately')
     for name in ('probeSHA256', 'packedPixelSHA256', 'metalDevice', 'colorSpaceName',
                  'colorSpaceICC_SHA256', 'width', 'height', 'bitsPerPixel', 'rasterDPI', 'system', 'ocr'):
         lp, rp = left.get('environmentProbe'), right.get('environmentProbe')
@@ -81,10 +89,10 @@ def image_hashes(epub):
                 for name in archive.namelist() if name.startswith('EPUB/images/') and not name.endswith('/')}
 
 
-def compare(baseline, candidate):
+def compare(baseline, candidate, allow_different_converters=False):
     left = json.loads((baseline / 'result.json').read_text())
     right = json.loads((candidate / 'result.json').read_text())
-    errors = compatible_receipts(left, right)
+    errors = compatible_receipts(left, right, allow_different_converters)
     result = {'passed': False, 'provenanceErrors': errors}
     if errors:
         return result
@@ -111,6 +119,7 @@ def compare(baseline, candidate):
         'executionContexts': {'baseline': left.get('executionContext'), 'candidate': right.get('executionContext')},
         'baselineConverterSHA256': left['converterSHA256'],
         'candidateConverterSHA256': right['converterSHA256'],
+        'sameConverter': left['converterSHA256'] == right['converterSHA256'],
         'changedPages': changed_pages, 'changedImages': changed_images,
         'pageMarkersEqual': lm == rm, 'changedReportFields': report_fields,
         'scope': 'Exact normalized page records, page markers, encoded image bytes and conversion report; not all EPUB semantics or a fidelity qualification.',
@@ -124,9 +133,11 @@ def main():
     parser.add_argument('--baseline', required=True, type=Path)
     parser.add_argument('--candidate', required=True, type=Path)
     parser.add_argument('--output', required=True, type=Path)
+    parser.add_argument('--allow-different-converters', action='store_true',
+                        help='compare evaluations made by two different converter binaries (before/after a change)')
     args = parser.parse_args()
     try:
-        result = compare(args.baseline, args.candidate)
+        result = compare(args.baseline, args.candidate, args.allow_different_converters)
     except Exception as error:
         result = {'passed': False, 'inspectionError': str(error)}
     args.output.write_text(json.dumps(result, indent=2) + '\n')

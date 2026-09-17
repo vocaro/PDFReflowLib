@@ -48,7 +48,7 @@ def main():
     for contract in contracts:
         name = contract['id']
         before, after = [args.run / phase / name for phase in ('baseline', 'candidate')]
-        result = compare(before, after)
+        result = compare(before, after, allow_different_converters=True)
         assert not result.get('provenanceErrors') and not result.get('inspectionError'), result
         left, lm = read_pages(before / (name + '.epub'))
         right, rm = read_pages(after / (name + '.epub'))

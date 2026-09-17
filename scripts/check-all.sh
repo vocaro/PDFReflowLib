@@ -27,10 +27,16 @@ EPUBCHECK=()
 if command -v epubcheck >/dev/null; then EPUBCHECK=(--epubcheck "$(command -v epubcheck)"); fi
 python3 tools/check-epubs.py --converter "$BINARY_DIR/pdf-reflow" --output "$WORK/epubs" "${EPUBCHECK[@]}"
 python3 tools/check-conversion-policies.py --converter "$BINARY_DIR/pdf-reflow" --output "$WORK/policies" "${EPUBCHECK[@]}"
+# Two pinned conversions of each fixture by one binary must be byte-identical (#68; ~2 s).
+python3 tools/check_reproducibility.py --converter "$BINARY_DIR/pdf-reflow" --output "$WORK/repeat-fixtures" --fixtures
 if [[ $CORPUS == 1 ]]; then
     python3 tools/check_structure_memory.py
     python3 tools/run_corpus_regressions.py --converter "$BINARY_DIR/pdf-reflow" \
         --epubcheck "$(command -v epubcheck)" --output "$WORK/corpus"
+    # Repeat-run identity on tagged, OCR and untagged books (#68; ~20 s, EPUBs kept only on failure).
+    python3 tools/check_reproducibility.py --converter "$BINARY_DIR/pdf-reflow" --output "$WORK/repeat-corpus" \
+        --case fed-explained-2021 --case gpo-our-flag-2003 --case cdc-zombie-pandemic-2011 \
+        --case arxiv-replay-clocks-2023
 elif [[ $FAST == 0 && -f "${PDFREFLOW_REAL_PDF:-corpus/cache/faa-h-8083-25c.pdf}" ]]; then
     scripts/check-pdf-reflow-memory.sh "${EPUBCHECK[@]}"
 else

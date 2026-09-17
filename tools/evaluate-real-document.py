@@ -155,10 +155,15 @@ def main():
         if samples:
             receipt["sampledPeakPhysicalFootprintBytes"] = max(s["physicalFootprintBytes"] for s in samples)
     receipt["conversionSeconds"] = time.monotonic() - start
+    # A shared build path rebuilt mid-run would attribute this output to the wrong binary (#68).
+    receipt["converterSHA256AfterConversion"] = digest(converter)
     receipt["converterPeakRSSBytes"] = usage.ru_maxrss * (1 if sys.platform == "darwin" else 1024)
     receipt["converterCPUSeconds"] = usage.ru_utime + usage.ru_stime
     receipt["measurementScope"] = "One process run; RSS excludes separate Apple services. Timing excludes validation. Not a latency distribution or physical mobile-device measurement."
     success = receipt["conversionExitCode"] == 0
+    if receipt["converterSHA256AfterConversion"] != receipt["converterSHA256"]:
+        receipt["converterIdentityError"] = "converter binary changed during conversion"
+        success = False
     if probe:
         success = success and receipt['environmentProbeCheck']['passed']
     events = re.findall(r"^(\d+)% (\w+)(?: page (\d+)/(\d+))?$",

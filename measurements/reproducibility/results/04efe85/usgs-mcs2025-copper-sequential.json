@@ -1,0 +1,50 @@
+{
+  "label": "usgs-mcs2025-copper",
+  "source": "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a9f0a7d8b706cb82e/corpus/cache/mcs2025-copper.pdf",
+  "mode": "sequential",
+  "pinnedOptions": [
+    "--package-identifier",
+    "urn:uuid:00000000-0000-4000-8000-000000000001",
+    "--modification-date",
+    "2026-01-01T00:00:00Z"
+  ],
+  "sourceSHA256": "348b1e224d830a51e6d35cf81343eead26a0cb2a4e74c474d699b7faed1b10e6",
+  "converterSHA256": "af5c17019a1e59c165ba14deaa421f6ddaa669066c7e2e663ca5040f7a8fb7bb",
+  "wallSeconds": 0.45,
+  "runs": [
+    {
+      "exitCode": 0,
+      "seconds": 0.24
+    },
+    {
+      "exitCode": 0,
+      "seconds": 0.21
+    }
+  ],
+  "ocrPages": [],
+  "epubSHA256": [
+    "b424021020445017d88dba49e5a83a2e06f1e13e8868bb57a8a1c90d0583f463",
+    "b424021020445017d88dba49e5a83a2e06f1e13e8868bb57a8a1c90d0583f463"
+  ],
+  "byteIdentical": true,
+  "allowedDifferences": [],
+  "passed": true,
+  "errors": [],
+  "warningTallies": [
+    {
+      "warnings": 2,
+      "byCode": {
+        "imageRegion": 2
+      },
+      "structureFallbackPages": 0
+    },
+    {
+      "warnings": 2,
+      "byCode": {
+        "imageRegion": 2
+      },
+      "structureFallbackPages": 0
+    }
+  ],
+  "freeBytesBefore": 18281422848
+}

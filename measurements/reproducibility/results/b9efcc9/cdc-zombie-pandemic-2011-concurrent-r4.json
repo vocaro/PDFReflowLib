@@ -1,0 +1,68 @@
+{
+  "label": "cdc-zombie-pandemic-2011",
+  "source": "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a9f0a7d8b706cb82e/corpus/cache/cdc_6023_DS1.pdf",
+  "mode": "concurrent",
+  "pinnedOptions": [
+    "--package-identifier",
+    "urn:uuid:00000000-0000-4000-8000-000000000001",
+    "--modification-date",
+    "2026-01-01T00:00:00Z"
+  ],
+  "sourceSHA256": "d95e9ec2d8cf52cb8c218a6195e132ec140725018358fd2122928bab8a13efc3",
+  "converterSHA256": "5affa14bcbc1280b6e04531abcbe31ea902036a69e9fffc667725204af1b83f9",
+  "wallSeconds": 7.72,
+  "runs": [
+    {
+      "exitCode": 0,
+      "seconds": 7.67
+    },
+    {
+      "exitCode": 0,
+      "seconds": 7.67
+    }
+  ],
+  "ocrPages": [
+    2,
+    13,
+    15,
+    16,
+    17,
+    36,
+    38,
+    40,
+    41
+  ],
+  "epubSHA256": [
+    "7279afa97b0c0186bf77cd5251c09340689d0d6b93a3286eeb449bb4aa4cc6dc",
+    "7279afa97b0c0186bf77cd5251c09340689d0d6b93a3286eeb449bb4aa4cc6dc"
+  ],
+  "byteIdentical": true,
+  "allowedDifferences": [],
+  "passed": true,
+  "errors": [],
+  "warningTallies": [
+    {
+      "warnings": 85,
+      "byCode": {
+        "annotationsNotConverted": 1,
+        "imageRegion": 38,
+        "ocrUsed": 9,
+        "pageImageFallback": 4,
+        "unverifiedTextLayer": 33
+      },
+      "structureFallbackPages": 0
+    },
+    {
+      "warnings": 85,
+      "byCode": {
+        "annotationsNotConverted": 1,
+        "imageRegion": 38,
+        "ocrUsed": 9,
+        "pageImageFallback": 4,
+        "unverifiedTextLayer": 33
+      },
+      "structureFallbackPages": 0
+    }
+  ],
+  "freeBytesBefore": 49600073728
+}

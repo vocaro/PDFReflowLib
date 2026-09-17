@@ -66,3 +66,23 @@ class CorpusRunnerTests(unittest.TestCase):
         self.assertEqual(visited, ['first', 'second'])
         self.assertFalse(summary['passed'])
         self.assertEqual([r['passed'] for r in summary['results']], [False, True])
+
+    def test_converter_rebuilt_during_the_lane_stops_and_fails(self):
+        for case in self.cases:
+            (self.root / 'corpus/cache' / case['filename']).touch()
+        visited = []
+
+        def launch(command, **kwargs):
+            visited.append(command[command.index('--case') + 1])
+            Path(command[command.index('--output') + 1]).mkdir()
+            self.executable.write_bytes(b'rebuilt')  # a shared build path replaced mid-lane
+            return SimpleNamespace(returncode=0)
+
+        with patch.object(runner.subprocess, 'run', side_effect=launch), \
+                patch.object(runner, 'check_evaluation', return_value={'case': 'first', 'passed': True}):
+            self.assertEqual(self.run_main(), 1)
+        summary = json.loads((self.root / 'output/summary.json').read_text())
+        self.assertEqual(visited, ['first'])
+        self.assertFalse(summary['passed'])
+        self.assertIn('Converter binary changed', summary['results'][-1]['errors'][0])
+        self.assertEqual(summary['notRun'], ['second'])

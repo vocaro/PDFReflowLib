@@ -1,0 +1,74 @@
+{
+  "case": "fed-explained-2021",
+  "ocrPage": 7,
+  "plainPage": 32,
+  "image": "images/image-8.png",
+  "baseSHA256": "feb80a171101ab5d9c6c50752ec6aa01b1d21b0cbc47bc198b1d0ebd4f4b262d",
+  "ocrPages": [
+    2,
+    7,
+    23,
+    49,
+    65,
+    87,
+    134
+  ],
+  "controls": {
+    "ocr-text": {
+      "passed": true,
+      "byteIdentical": false,
+      "differingEntries": [
+        "EPUB/chapter-1.xhtml"
+      ],
+      "nonOCRChangedPages": [],
+      "ocrChangedPages": [
+        7
+      ],
+      "failures": [],
+      "allowedDifferences": [
+        "page markup differs on OCR pages [7]"
+      ]
+    },
+    "plain-text": {
+      "passed": false,
+      "byteIdentical": false,
+      "differingEntries": [
+        "EPUB/chapter-2.xhtml"
+      ],
+      "nonOCRChangedPages": [
+        32
+      ],
+      "ocrChangedPages": [],
+      "failures": [
+        "page markup differs on non-OCR pages [32]"
+      ],
+      "allowedDifferences": []
+    },
+    "ocr-image": {
+      "passed": false,
+      "byteIdentical": false,
+      "differingEntries": [
+        "EPUB/images/image-8.png"
+      ],
+      "nonOCRChangedPages": [],
+      "ocrChangedPages": [],
+      "failures": [
+        "entry EPUB/images/image-8.png differs (referenced on pages [7])"
+      ],
+      "allowedDifferences": []
+    },
+    "nav-heading": {
+      "passed": false,
+      "byteIdentical": false,
+      "differingEntries": [
+        "EPUB/nav.xhtml"
+      ],
+      "nonOCRChangedPages": [],
+      "ocrChangedPages": [],
+      "failures": [
+        "navigation entries differ outside OCR pages (pages [1])"
+      ],
+      "allowedDifferences": []
+    }
+  }
+}

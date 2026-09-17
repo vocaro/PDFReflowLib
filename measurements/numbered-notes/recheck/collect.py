@@ -39,7 +39,7 @@ comparisons, assessments, ownership = [], [], []
 for contract in contracts:
     case = contract["id"]
     baseline, candidate = [WORK / mode / case for mode in ("baseline", "candidate")]
-    result = compare(baseline, candidate)
+    result = compare(baseline, candidate, allow_different_converters=True)
     assert not result.get("provenanceErrors"), result
     assert not result.get("inspectionError"), result
     assessment = check_evaluation(manifest[case], contract, candidate)

@@ -7,14 +7,17 @@ A valid EPUB can still contain incorrect text, wrong reading order or unreadable
 ## Gates
 
 - `scripts/check-all.sh --fast`: Swift extraction/model/raster/EPUB tests, Python tool tests,
-  and six small fixture conversions. No external PDFs are required. The raster tests inspect
+  six small fixture conversions, and a [repeat-run identity](#repeat-run-identity) check that
+  converts each fixture twice. No external PDFs are required. The raster tests inspect
   pixels, including crop origins, rotations, annotations and resource ceilings. Preserved-region
   tests also inspect fraction bars, raised exponents and all six cells of a ruled table in actual
   EPUB images at 72/144 DPI, with surrounding-prose and code controls.
 - `scripts/check-all.sh --corpus`: the same checks plus 15 complete PDF conversions,
   sequentially, with EPUBCheck, monotonic progress, pinned source identities, memory budgets
   and reviewed page-specific content contracts. All selected cached sources and EPUBCheck
-  are required; missing data fails explicitly. The evaluator does not download anything.
+  are required; missing data fails explicitly. The evaluator does not download anything. The lane
+  then runs the [repeat-run identity](#repeat-run-identity) check on Fed Explained, Our Flag,
+  the CDC comic and Replay Clocks.
 - `tools/check_corpus_content.py --case <id> --evaluation <directory>`: run the content contract
   against an existing complete evaluation without reconverting. This is an additional content
   check, not a replacement for the evaluator's EPUB/resource checks.
@@ -47,6 +50,53 @@ The [large-inspection evidence](../measurements/large-epub-inspection/record.md)
 NOAA-scale synthetic data and both retained full NOAA EPUBs with explicit limits. NOAA still
 has no passing default-budget content contract: larger inspection ceilings do not change
 conversion policies, routine corpus exclusions, or fidelity qualification.
+
+## Repeat-run identity
+
+Conversion must be a function of the source, the options and the converter binary.
+`tools/check_reproducibility.py` converts each selected source twice with one binary, pinning
+`--package-identifier` and `--modification-date`, and fails on any difference that Vision
+cannot explain:
+
+```sh
+python3 tools/check_reproducibility.py --converter .build/release/pdf-reflow \
+  --output /tmp/repeat --case fed-explained-2021 --case gpo-our-flag-2003
+python3 tools/check_reproducibility.py --converter .build/release/pdf-reflow \
+  --output /tmp/repeat-fixtures --fixtures [--mode sequential] [--keep-epubs always]
+```
+
+`--case` verifies the cached PDF against the manifest; `--pdf` accepts any file. The converter
+and source are hashed before the first launch and after the last exit; a change refuses the case
+("converter binary changed during the check") rather than comparing two builds, the likely
+origin of the unreproduced #68 report. Rules, in order:
+
+1. Both conversions must exit 0. Their reports must be equal except `outputURL`, and warnings
+   on pages other than `ocrUsed` pages must match exactly, in order. The set of `ocrUsed` pages
+   must be the same in both runs.
+2. Byte-identical EPUBs pass (every result so far). Otherwise the check compares the packages:
+   every non-content ZIP entry (images, CSS, container, mimetype) byte for byte, ZIP entry dates,
+   compression, attributes, order and archive comment; `package.opf` with spine-document items
+   removed; spine document heads; and the spine body markup, concatenated and split at page
+   markers with same-book file names stripped from links, page by page. Navigation entries are
+   compared by target and text.
+3. Markup and navigation differences on pages that are `ocrUsed` in both runs, their warnings,
+   and a spine packing change that accompanies them are allowed and listed in
+   `allowedDifferences`. Everything else fails, naming the page or entry (for an image, the pages
+   that reference it). An image on an OCR page is not exempt.
+
+Both conversions launch together by default (`--mode concurrent`): this halves wall time and
+also exposes any dependence on concurrent processes (shared staging, services under load), which
+is itself a defect. `--mode sequential` is available; on `b9efcc9` both modes gave identical
+bytes on every book tried. Passing cases keep reports, logs and `result.json` but delete their
+EPUBs (`--keep-epubs failed` is the default). Cost: about 2 s for the six fixtures in every lane
+and about 22 s for the four corpus books in `--corpus`.
+
+What this does not prove: determinism across machines, OS or Vision versions, other options,
+or other books; that OCR text is stable (OCR pages are exempt by design, so the exemption can
+hide a non-Vision defect confined to those pages); or that two runs under different scheduling
+than tested agree. Nesting of navigation lists is not compared when bytes differ (heading levels
+are, in the page markup). Evidence and negative controls on real output are in
+[the reproducibility record](../measurements/reproducibility/record.md).
 
 ## Current content coverage
 
@@ -316,7 +366,7 @@ swiftc Sources/PDFReflowLib/NativeTextReader.swift Sources/PDFReflowLib/Conversi
 Run from the repository root. The tool verifies the cached PDF against the manifest SHA-256.
 Source review, baseline failures, cross-document safeguards and full-run evidence are retained
 in [the three-fix measurement](../measurements/three-fidelity-fixes/record.md). The suite contains
-349 Swift tests with no known-issue wrappers, and 166 Python tests.
+349 Swift tests with no known-issue wrappers, and 186 Python tests.
 The comparison tests include a real-Poppler image URL check through the safe HTTP handler
 (simple and positioned modes, paths with spaces); absent Poppler is an explicit skip.
 

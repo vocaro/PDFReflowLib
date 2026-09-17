@@ -1,0 +1,56 @@
+{
+  "label": "arxiv-replay-clocks-2023",
+  "source": "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a9f0a7d8b706cb82e/corpus/cache/2311.07842v1.pdf",
+  "mode": "concurrent",
+  "pinnedOptions": [
+    "--package-identifier",
+    "urn:uuid:00000000-0000-4000-8000-000000000001",
+    "--modification-date",
+    "2026-01-01T00:00:00Z"
+  ],
+  "sourceSHA256": "1e8172e4a347bdf6722dacc38755f6fb3299866336b8153f51b2c13f3ac6109a",
+  "converterSHA256": "5affa14bcbc1280b6e04531abcbe31ea902036a69e9fffc667725204af1b83f9",
+  "wallSeconds": 1.43,
+  "runs": [
+    {
+      "exitCode": 0,
+      "seconds": 1.38
+    },
+    {
+      "exitCode": 0,
+      "seconds": 1.38
+    }
+  ],
+  "ocrPages": [],
+  "epubSHA256": [
+    "65fcd6acbddd8cee4b2c7482a1363cb6328f63109b4113af3f6fb260e0980add",
+    "65fcd6acbddd8cee4b2c7482a1363cb6328f63109b4113af3f6fb260e0980add"
+  ],
+  "byteIdentical": true,
+  "allowedDifferences": [],
+  "passed": true,
+  "errors": [],
+  "warningTallies": [
+    {
+      "warnings": 48,
+      "byCode": {
+        "annotationsNotConverted": 11,
+        "furnitureRemoved": 12,
+        "imageRegion": 21,
+        "uncertainHyphen": 4
+      },
+      "structureFallbackPages": 0
+    },
+    {
+      "warnings": 48,
+      "byCode": {
+        "annotationsNotConverted": 11,
+        "furnitureRemoved": 12,
+        "imageRegion": 21,
+        "uncertainHyphen": 4
+      },
+      "structureFallbackPages": 0
+    }
+  ],
+  "freeBytesBefore": 49813135360
+}

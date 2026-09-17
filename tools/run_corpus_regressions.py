@@ -10,6 +10,7 @@ import subprocess
 import sys
 
 from check_corpus_content import ROOT, check_evaluation
+from conversion_provenance import digest
 
 
 def main():
@@ -36,6 +37,7 @@ def main():
     epubcheck = args.epubcheck.resolve(strict=True)
     probe = args.environment_probe.resolve(strict=True) if args.environment_probe else None
     args.output.mkdir(parents=True, exist_ok=False)
+    converter_sha256 = digest(converter)
     results = []
     for name in selected:
         print('CHECK ' + name, flush=True)
@@ -58,9 +60,18 @@ def main():
         if directory.exists():
             (directory / 'content-assessment.json').write_text(json.dumps(assessment, indent=2) + '\n')
         print(('PASS ' if assessment['passed'] else 'FAIL ') + name, flush=True)
+        if digest(converter) != converter_sha256:
+            # Later cases would silently measure another build (#68); stop instead.
+            results.append({'case': 'converter identity', 'passed': False,
+                            'errors': ['Converter binary changed during the lane (after ' + name + '); '
+                                       'do not rebuild the lane binary while it runs']})
+            print('FAIL converter binary changed after ' + name, flush=True)
+            break
     excluded = definitions['excludedFullConversions']
-    summary = {'passed': all(r['passed'] for r in results), 'results': results,
-               'notRun': [name for name in contracts if name not in selected],
+    ran = [r['case'] for r in results]
+    summary = {'passed': all(r['passed'] for r in results), 'converterSHA256': converter_sha256,
+               'results': results,
+               'notRun': [name for name in contracts if name not in ran],
                'knownUnsupportedFullConversions': excluded}
     (args.output / 'summary.json').write_text(json.dumps(summary, indent=2) + '\n')
     for item in excluded:

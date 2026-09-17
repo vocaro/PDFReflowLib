@@ -50,12 +50,25 @@ class ConversionComparisonTests(unittest.TestCase):
         (path / 'result.json').write_text(json.dumps(receipt))
         return path
 
-    def test_same_context_different_binaries_and_zip_metadata_pass(self):
+    def test_same_context_different_binaries_and_zip_metadata_pass_when_explicitly_allowed(self):
         candidate = copy.deepcopy(self.receipt)
         candidate['converterSHA256'] = '1' * 64
         candidate['conversionReport']['outputURL'] = 'different path'
-        result = compare(self.evaluation('left'), self.evaluation('right', receipt=candidate))
+        result = compare(self.evaluation('left'), self.evaluation('right', receipt=candidate),
+                         allow_different_converters=True)
         self.assertTrue(result['passed'])
+        self.assertFalse(result['sameConverter'])
+
+    def test_different_converter_binaries_are_refused_by_default(self):
+        candidate = copy.deepcopy(self.receipt)
+        candidate['converterSHA256'] = '1' * 64
+        result = compare(self.evaluation('left'), self.evaluation('right', receipt=candidate))
+        self.assertFalse(result['passed'])
+        self.assertNotIn('changedPages', result)
+        [error] = result['provenanceErrors']
+        self.assertIn('converterSHA256 differs', error)
+        self.assertIn('--allow-different-converters', error)
+        self.assertTrue(compare(self.evaluation('same-left'), self.evaluation('same-right'))['sameConverter'])
 
     def test_missing_or_incompatible_environment_provenance_refuses_comparison(self):
         for field in ['system', 'systemBuild', 'machine', 'options']:

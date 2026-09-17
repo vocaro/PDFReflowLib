@@ -71,7 +71,7 @@ python3 tools/evaluate-real-document.py --case dga-2025-2030 \
   --output /tmp/dga-candidate --epubcheck /opt/homebrew/bin/epubcheck \
   --environment-probe .build/raster-environment/probe --execution-context host-terminal
 python3 tools/compare_conversion_runs.py --baseline /tmp/dga-baseline \
-  --candidate /tmp/dga-candidate --output /tmp/dga-drift.json
+  --candidate /tmp/dga-candidate --output /tmp/dga-drift.json --allow-different-converters
 ```
 
 Capture `/tmp/dga-baseline` with the baseline converter and the same probe before comparing.
@@ -89,8 +89,16 @@ The declared `--execution-context` is supplemental and may be absent or differ b
 otherwise compatible captures.
 
 The comparator refuses missing, failed, stale, or incompatible capability receipts before
-reporting output drift. It verifies the retained EPUB, probe JSON, and conversion report against
-their evaluation receipt. Under compatible measured conditions it compares normalized page
+reporting output drift. It also refuses two evaluations whose `converterSHA256` differs unless
+`--allow-different-converters` is passed: a before/after comparison of two builds must say so,
+so a shared `.build/release/pdf-reflow` rebuilt between runs cannot pass as run-to-run drift
+(the likely cause of #68's unreproduced report). The evaluator hashes the converter again after
+conversion and fails the run if it changed; the corpus runner stops if the binary changes
+between cases. To test whether one binary repeats itself, use
+[repeat-run identity](regression-testing.md#repeat-run-identity), not this comparator.
+
+The comparator verifies the retained EPUB, probe JSON, and conversion report against their
+evaluation receipt. Under compatible measured conditions it compares normalized page
 records, source-page markers, encoded image assets, and conversion report fields; generated
 output paths and ZIP timestamps/identifiers are not drift; clients needing identical bytes can
 pin both ([reproducible packages](conversion-options.md#reproducible-packages)). A changed EPUB

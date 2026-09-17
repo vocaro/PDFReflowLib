@@ -1,0 +1,76 @@
+{
+  "case": "cdc-zombie-pandemic-2011",
+  "ocrPage": 17,
+  "plainPage": 5,
+  "image": "images/image-17.png",
+  "baseSHA256": "7279afa97b0c0186bf77cd5251c09340689d0d6b93a3286eeb449bb4aa4cc6dc",
+  "ocrPages": [
+    2,
+    13,
+    15,
+    16,
+    17,
+    36,
+    38,
+    40,
+    41
+  ],
+  "controls": {
+    "ocr-text": {
+      "passed": true,
+      "byteIdentical": false,
+      "differingEntries": [
+        "EPUB/chapter-1.xhtml"
+      ],
+      "nonOCRChangedPages": [],
+      "ocrChangedPages": [
+        17
+      ],
+      "failures": [],
+      "allowedDifferences": [
+        "page markup differs on OCR pages [17]"
+      ]
+    },
+    "plain-text": {
+      "passed": false,
+      "byteIdentical": false,
+      "differingEntries": [
+        "EPUB/chapter-1.xhtml"
+      ],
+      "nonOCRChangedPages": [
+        5
+      ],
+      "ocrChangedPages": [],
+      "failures": [
+        "page markup differs on non-OCR pages [5]"
+      ],
+      "allowedDifferences": []
+    },
+    "ocr-image": {
+      "passed": false,
+      "byteIdentical": false,
+      "differingEntries": [
+        "EPUB/images/image-17.png"
+      ],
+      "nonOCRChangedPages": [],
+      "ocrChangedPages": [],
+      "failures": [
+        "entry EPUB/images/image-17.png differs (referenced on pages [17])"
+      ],
+      "allowedDifferences": []
+    },
+    "nav-heading": {
+      "passed": false,
+      "byteIdentical": false,
+      "differingEntries": [
+        "EPUB/nav.xhtml"
+      ],
+      "nonOCRChangedPages": [],
+      "ocrChangedPages": [],
+      "failures": [
+        "navigation entries differ outside OCR pages (pages [6])"
+      ],
+      "allowedDifferences": []
+    }
+  }
+}

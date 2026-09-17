@@ -1,0 +1,72 @@
+{
+  "label": "fed-explained-2021",
+  "source": "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a9f0a7d8b706cb82e/corpus/cache/the-fed-explained.pdf",
+  "mode": "concurrent",
+  "pinnedOptions": [
+    "--package-identifier",
+    "urn:uuid:00000000-0000-4000-8000-000000000001",
+    "--modification-date",
+    "2026-01-01T00:00:00Z"
+  ],
+  "sourceSHA256": "8db8fd9e1de63ac25a6f9585d78ded12f45ab56f0c14c52c199b36b368f84d60",
+  "converterSHA256": "5affa14bcbc1280b6e04531abcbe31ea902036a69e9fffc667725204af1b83f9",
+  "wallSeconds": 7.28,
+  "runs": [
+    {
+      "exitCode": 0,
+      "seconds": 7.22
+    },
+    {
+      "exitCode": 0,
+      "seconds": 7.22
+    }
+  ],
+  "ocrPages": [
+    2,
+    7,
+    23,
+    49,
+    65,
+    87,
+    134
+  ],
+  "epubSHA256": [
+    "3390f7a859fa3e8b973d905d39ff19fb95fb69d464329f154eed5bd6274ac67a",
+    "3390f7a859fa3e8b973d905d39ff19fb95fb69d464329f154eed5bd6274ac67a"
+  ],
+  "byteIdentical": true,
+  "allowedDifferences": [],
+  "passed": true,
+  "errors": [],
+  "warningTallies": [
+    {
+      "warnings": 528,
+      "byCode": {
+        "annotationsNotConverted": 92,
+        "furnitureRemoved": 121,
+        "imageRegion": 210,
+        "ocrUsed": 7,
+        "pageImageFallback": 6,
+        "structureFallback": 60,
+        "uncertainHyphen": 23,
+        "unverifiedTextLayer": 9
+      },
+      "structureFallbackPages": 57
+    },
+    {
+      "warnings": 528,
+      "byCode": {
+        "annotationsNotConverted": 92,
+        "furnitureRemoved": 121,
+        "imageRegion": 210,
+        "ocrUsed": 7,
+        "pageImageFallback": 6,
+        "structureFallback": 60,
+        "uncertainHyphen": 23,
+        "unverifiedTextLayer": 9
+      },
+      "structureFallbackPages": 57
+    }
+  ],
+  "freeBytesBefore": 39784996864
+}

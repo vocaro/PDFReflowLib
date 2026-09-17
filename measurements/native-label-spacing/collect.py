@@ -39,7 +39,7 @@ def main():
     for result in summary['results']:
         case = result['case']
         before, after = args.before / case, args.after / case
-        comparison = compare(before, after)
+        comparison = compare(before, after, allow_different_converters=True)
         assert comparison['provenanceErrors'] == [], comparison
         assert comparison.get('pageMarkersEqual') is True, comparison
         assert comparison.get('changedImages') == [], comparison

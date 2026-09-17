@@ -1,0 +1,65 @@
+{
+  "label": "gpo-our-flag-2003",
+  "source": "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a9f0a7d8b706cb82e/corpus/cache/CDOC-108hdoc97.pdf",
+  "mode": "concurrent",
+  "pinnedOptions": [
+    "--package-identifier",
+    "urn:uuid:00000000-0000-4000-8000-000000000001",
+    "--modification-date",
+    "2026-01-01T00:00:00Z"
+  ],
+  "sourceSHA256": "a47a3153b649022a52b53e7b0c40b55bfea24e7980bbe32fe6fee0cf1936bbd8",
+  "converterSHA256": "5affa14bcbc1280b6e04531abcbe31ea902036a69e9fffc667725204af1b83f9",
+  "wallSeconds": 1.58,
+  "runs": [
+    {
+      "exitCode": 0,
+      "seconds": 1.52
+    },
+    {
+      "exitCode": 0,
+      "seconds": 1.52
+    }
+  ],
+  "ocrPages": [
+    1,
+    55
+  ],
+  "epubSHA256": [
+    "4f8bb64bbefe59fa80c8a47db6226b45e903d17cfff7939212e4d9f7c225e0ab",
+    "4f8bb64bbefe59fa80c8a47db6226b45e903d17cfff7939212e4d9f7c225e0ab"
+  ],
+  "byteIdentical": true,
+  "allowedDifferences": [],
+  "passed": true,
+  "errors": [],
+  "warningTallies": [
+    {
+      "warnings": 103,
+      "byCode": {
+        "annotationsNotConverted": 1,
+        "imageRegion": 54,
+        "ocrUsed": 2,
+        "pageImageFallback": 1,
+        "structureFallback": 37,
+        "uncertainHyphen": 6,
+        "unverifiedTextLayer": 2
+      },
+      "structureFallbackPages": 33
+    },
+    {
+      "warnings": 103,
+      "byCode": {
+        "annotationsNotConverted": 1,
+        "imageRegion": 54,
+        "ocrUsed": 2,
+        "pageImageFallback": 1,
+        "structureFallback": 37,
+        "uncertainHyphen": 6,
+        "unverifiedTextLayer": 2
+      },
+      "structureFallbackPages": 33
+    }
+  ],
+  "freeBytesBefore": 49459617792
+}

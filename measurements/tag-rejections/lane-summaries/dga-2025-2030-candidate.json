@@ -1,0 +1,39 @@
+{
+ "case": "dga-2025-2030",
+ "label": "candidate",
+ "passed": true,
+ "contentChecks": 14,
+ "errors": [],
+ "converterSHA256": "31bae01e2086df7a8a87215a886404efefca52eb8f32f29c0fa4356ebc8a7d42",
+ "outputSHA256": "9d0e500451be18daba622bf44c92da18bc1938478244c65d1b37dd4a2318c36a",
+ "epubcheckExitCode": 0,
+ "structuralCheck": "passed",
+ "converterPeakRSSBytes": 106037248,
+ "conversionSeconds": 0.8,
+ "outputTextCharacters": 16475,
+ "runPassed": true,
+ "memoryGate": {
+  "limitBytes": 201326592,
+  "passed": true,
+  "metric": "converter process peak RSS from wait/rusage"
+ },
+ "warningCount": 33,
+ "warningCodes": {
+  "structureFallback": 10,
+  "unverifiedTextLayer": 4,
+  "furnitureRemoved": 9,
+  "imageRegion": 10
+ },
+ "structureFallbackPages": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10
+ ]
+}

@@ -1,0 +1,28 @@
+{
+ "case": "arxiv-replay-clocks-2023",
+ "label": "candidate",
+ "passed": true,
+ "contentChecks": 55,
+ "errors": [],
+ "converterSHA256": "31bae01e2086df7a8a87215a886404efefca52eb8f32f29c0fa4356ebc8a7d42",
+ "outputSHA256": "aad7a337a91bd313d7138a672adb14bf161e753190ace098938c0a4de386f825",
+ "epubcheckExitCode": 0,
+ "structuralCheck": "passed",
+ "converterPeakRSSBytes": 174587904,
+ "conversionSeconds": 1.4,
+ "outputTextCharacters": 47978,
+ "runPassed": true,
+ "memoryGate": {
+  "limitBytes": 268435456,
+  "passed": true,
+  "metric": "converter process peak RSS from wait/rusage"
+ },
+ "warningCount": 48,
+ "warningCodes": {
+  "annotationsNotConverted": 11,
+  "furnitureRemoved": 12,
+  "uncertainHyphen": 4,
+  "imageRegion": 21
+ },
+ "structureFallbackPages": []
+}

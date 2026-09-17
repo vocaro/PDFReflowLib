@@ -7,6 +7,9 @@ struct TextStructure: Equatable, Codable {
     /// Zero denotes a paragraph; 1...6 denote the corresponding heading level.
     var headingLevel: Int
     var lineCount: Int = 0
+    /// Set by `LayoutReconstructor.joiningMarkerPieces` when a list marker PDFKit split from its
+    /// text is rejoined inside this group: the group's validated content opens with that item.
+    var opensWithSplitMarker = false
 }
 
 // All geometry is in unrotated PDF page space (bottom-left origin). OCR is mapped back here.

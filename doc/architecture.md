@@ -139,7 +139,11 @@ font decoding or proof of the author's semantic correctness.
 Supported roles are P and H1–H6 through grouping containers and transparent inline spans.
 Complete groups can reorder only within uninterrupted tagged-text runs; unmatched lines and
 preserved images are barriers. Captions, list-like text and headings of 200 or more characters
-fall back as well. Removed furniture or image-contained lines invalidate incomplete groups.
+fall back as well, with one exception: a paragraph group whose only list line opens it and was
+rejoined from a marker piece PDFKit split off (the FAA handbook tags each bullet item as one `P`)
+is exactly one item. It keeps its tag order, loses the absorbed piece from its line count, and is
+emitted as the list item the same text is when untagged (#81). Removed furniture or
+image-contained lines invalidate incomplete groups.
 Validated paragraph identities prevent heuristic cross-page joins into different paragraphs.
 Heading levels belong to the neutral model and serialize as h1–h6; navigation remains flat.
 `structureFallback` warns about partial/unsupported mapping. A document-wide tree warning is

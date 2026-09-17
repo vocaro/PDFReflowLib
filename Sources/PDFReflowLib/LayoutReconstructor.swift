@@ -88,10 +88,18 @@ enum LayoutReconstructor {
     /// font sizes to its left) joins the nearest piece that starts to its right within two font
     /// sizes, at the same size and in the same structure group, which is not itself a marker
     /// piece. Every other line passes through unchanged (#69).
+    ///
+    /// Both pieces of a tagged join belong to one validated group (the FAA handbook tags each
+    /// bullet item, marker and text, as one `P`). The joined line keeps that group, sorts at the
+    /// earlier of the two pieces' orders, and every line of the group counts one line fewer, so the
+    /// group stays complete. Its lines record that the group opens with a rejoined marker, which
+    /// is what lets `structuredOrder` accept a group holding exactly that one list item (#81).
     static func joiningMarkerPieces(_ lines: [TextLine]) -> [TextLine] {
         var result = lines
         // Pieces already joined, and the marker pieces absorbed into the piece beside them.
         var claimed = Set<Int>(), absorbed = Set<Int>()
+        // Tagged groups that absorbed a marker piece, with the number of pieces each absorbed.
+        var joinedGroups: [Int: Int] = [:]
         for (index, marker) in lines.enumerated() where !claimed.contains(index) && !marker.monospaced
             && isMarkerPiece(marker.text) {
             let size = marker.fontSize
@@ -114,12 +122,24 @@ enum LayoutReconstructor {
             var joined = TextLine(content: content, rect: marker.rect.union(text.rect), fontSize: text.fontSize,
                                   wraps: text.wraps)
             joined.readingRect = text.readingRect.map { $0.union(marker.rect) }
-            joined.structure = marker.structure ?? text.structure
+            // The join requires one group on both sides, so both tags are nil or both are set.
+            if var tag = text.structure, let markerTag = marker.structure {
+                tag.order = min(tag.order, markerTag.order)
+                joined.structure = tag
+                joinedGroups[tag.group, default: 0] += 1
+            }
             result[target] = joined
             claimed.formUnion([index, target])
             absorbed.insert(index)
         }
-        return result.indices.filter { !absorbed.contains($0) }.map { result[$0] }
+        var kept = result.indices.filter { !absorbed.contains($0) }.map { result[$0] }
+        guard !joinedGroups.isEmpty else { return kept }
+        for index in kept.indices {
+            guard let group = kept[index].structure?.group, let pieces = joinedGroups[group] else { continue }
+            kept[index].structure?.lineCount -= pieces
+            kept[index].structure?.opensWithSplitMarker = true
+        }
+        return kept
     }
 
     private struct Region {
@@ -859,7 +879,10 @@ enum LayoutReconstructor {
         var tagged: (TextStructure, InlineText, CGFloat)?
         func flushTagged() {
             guard let (tag, text, size) = tagged else { return }
-            let content: ReflowBlock.Content = tag.headingLevel == 0 ? .paragraph(text)
+            // A paragraph group that is one rejoined list item (#81) keeps the representation
+            // the same item has untagged: a preserved list line, its marker intact.
+            let content: ReflowBlock.Content = tag.headingLevel == 0
+                ? (tag.opensWithSplitMarker && isList(text.text) ? .preformatted(text) : .paragraph(text))
                 : .heading(id: "heading-\(page.number)-\(result.count)", text: text, level: tag.headingLevel)
             var block = ReflowBlock(content: content, structureGroup: tag.group, page: page.number)
             block.taggedLevel = tag.headingLevel
@@ -1199,8 +1222,17 @@ enum LayoutReconstructor {
                 by: { $0.structure!.group })
             let unsafe = Set(groups.compactMap { group, lines -> Int? in
                 // Caption ownership and lists are outside this phase. A paragraph tag alone
-                // must not detach a figure label or collapse significant item breaks.
-                let captionOrList = lines.contains { isList($0.text) || $0.text.range(
+                // must not detach a figure label or collapse significant item breaks. One
+                // exception: a paragraph group that opens with a marker PDFKit split from its
+                // text, and holds no other list line, is exactly that one item, so it has no
+                // item break to collapse (#81). An unsplit bullet inside a group still falls back.
+                let listLines = lines.filter { isList($0.text) }
+                // The item opens the group: first by tag order, and first in spatial order among
+                // lines sharing that order (one marked section can hold several lines).
+                let opening = lines.min { $0.structure!.order < $1.structure!.order }
+                let singleSplitItem = listLines.count == 1 && lines.first!.structure!.headingLevel == 0
+                    && listLines[0].structure!.opensWithSplitMarker && opening == listLines[0]
+                let captionOrList = (!listLines.isEmpty && !singleSplitItem) || lines.contains { $0.text.range(
                     of: "^(?:Figure|Table)\\s+[0-9]", options: .regularExpression) != nil }
                 let oversizedHeading = lines.first!.structure!.headingLevel > 0
                     && lines.reduce(0, { $0 + $1.text.count + 1 }) >= 200

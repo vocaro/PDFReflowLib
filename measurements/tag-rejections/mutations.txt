@@ -1,0 +1,5 @@
+no-lineCount-decrement: failed ['aTaggedItemWithASplitMarkerKeepsItsGroupAsOneListItem', 'run with 6 tests in 0 suites failed after 0.006 seconds with 6 issues.', 'tagOrderStillOrdersRejoinedItems', 'theRejoinedLineSortsAtTheEarlierPieceOrder'] passed 3
+no-preformatted-emission: failed ['aTaggedItemWithASplitMarkerKeepsItsGroupAsOneListItem', 'run with 6 tests in 0 suites failed after 0.006 seconds with 2 issues.', 'theRejoinedLineSortsAtTheEarlierPieceOrder'] passed 4
+no-min-order: failed ['run with 6 tests in 0 suites failed after 0.006 seconds with 1 issue.', 'theRejoinedLineSortsAtTheEarlierPieceOrder'] passed 5
+no-opening-check: failed ['aRejoinedItemThatDoesNotOpenItsGroupStillFallsBack', 'run with 6 tests in 0 suites failed after 0.005 seconds with 1 issue.'] passed 5
+restored True

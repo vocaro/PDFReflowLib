@@ -1,0 +1,20 @@
+===== page 30
+  para -center of gravity with respect to the wing. Flight control of the aircraft depends on the wing's ability to flexibly deform rather than the use of control surfaces.
+  list -• Weight-shift-control—a powered aircraft with a framed pivoting wing and a fuselage controllable only in pitch and roll by the pilot's ability to change the aircraft’s
+  list +• Weight-shift-control—a powered aircraft with a framed pivoting wing and a fuselage controllable only in pitch and roll by the pilot's ability to change the aircraft’s center of gravity with respect to the wing. Flight control of the aircraft depends on the wing's ability to flexibly deform rather than the use of control surfaces.
+===== page 48
+  para -guidance? Is the terminal airport equipped with them? Are they working? Will the pilot need to use the radio to activate the airport lights?
+  list -• What lights are available at the destination and alternate airports? VASI/PAPI or ILS glideslope
+  list +• What lights are available at the destination and alternate airports? VASI/PAPI or ILS glideslope guidance? Is the terminal airport equipped with them? Are they working? Will the pilot need to use the radio to activate the airport lights?
+===== page 315
+  para -Fronts and major weather systems that affect the general area are provided.
+  list -3. Synopsis—an overview of the larger weather picture.
+  list +3. Synopsis—an overview of the larger weather picture. Fronts and major weather systems that affect the general area are provided.
+===== page 316
+  para +When the modifier “COR” is used, it identifies a corrected report sent out to replace an earlier report that contained an error (for example: METAR KGGG 161753Z COR).
+  list -4. Modifier—denotes that the METAR/SPECI came from an automated source or that the report was corrected. If the notation “AUTO” is listed in the METAR/SPECI, the report came from an automated source. It also lists “AO1” (for no precipitation discriminator) or “AO2” (with precipitation discriminator) in the “Remarks” section to indicate the type of precipitation sensors employed at the automated station. When the modifier “COR” is used, it identifies a corrected report sent out to replace an earlier report that contained an error (for example: METAR KGGG 161753Z COR).
+  list +4. Modifier—denotes that the METAR/SPECI came from an automated source or that the report was corrected. If the notation “AUTO” is listed in the METAR/SPECI, the report came from an automated source. It also lists “AO1” (for no precipitation discriminator) or “AO2” (with precipitation discriminator) in the “Remarks” section to indicate the type of precipitation sensors employed at the automated station.
+===== page 372
+  para -gov/air_traffic/publications/atpubs/aim/
+  list -• Aeronautical Information Manual (AIM)—www.faa.
+  list +• Aeronautical Information Manual (AIM)—www.faa. gov/air_traffic/publications/atpubs/aim/

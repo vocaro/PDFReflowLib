@@ -1,0 +1,11 @@
+===== page 109 =====
+--- baseline
++++ candidate
+@@ -29,4 +29,4 @@
+ PARA | of Year, Thirty One to Sixty Seconds
+-PARA | Table Al06.
+-PARA | Evaluation of All Sightings for All Years by Duration of Sighting for Months of Year, Sixty One Seconds to Five Minutes .
++PARA | Table Al06. Evaluation of All Sightings for All Years by Duration of Sighting for Months
++PARA | of Year, Sixty One Seconds to Five Minutes .
+ PARA | Table Al07. Evaluation of All Sightings for All Years by Duration of Sighting for Months
+

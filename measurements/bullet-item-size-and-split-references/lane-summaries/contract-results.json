@@ -1,0 +1,253 @@
+[
+ {
+  "case": "ntrs-20190030725-dasc-2019",
+  "base": {
+   "checks": null,
+   "errors": [
+    "Page 5: missing list item '• Controllability: By leaving node k at time Tk, flight f cannot reach node k+ 1 at any available time.'",
+    "Page 5: missing list item '• Reachability: There is no time instant Tk−1 available to flight f at k−1 from which the flight can reach node k at an available time instant at k.'",
+    "Page 5: missing list item '• the totality of the intervals (7), (8), (9) as the unavailable time windows (shown red in Ref. [4, Fig. 2]),'",
+    "Page 5: missing list item '• the travel time bounds specified in (5.a) as the travel times (e.g., Ref. [4, Equations (5), (6), (7)]).'",
+    "Page 10: missing paragraph '[1] M. S. Andersen, J. Dahl, and L. Vandenberghe. CVXOPT: A python package for convex optimization, version 1.1.5.'",
+    "Page 10: missing paragraph '[7] J. L. Rios, I. S. Smith, P. Venkatesan, D. R. Smith, V. Baskaran, S. M. Jurcak, S. K. Iyer, and P. Verma. UTM UAS service supplier development: Sprint 2 toward technical capability level 4. NASA Technical Memorandum, 2018.'"
+   ]
+  },
+  "cand": {
+   "checks": null,
+   "errors": []
+  }
+ },
+ {
+  "case": "scotus-loper-bright-2024",
+  "base": {
+   "checks": null,
+   "errors": [
+    "Page 86: missing list item '• Under the Public Health Service Act, the Food and Drug Administration (FDA) regulates “biological product[s],” including “protein[s].” 42 U. S. C. §262(i)(1).'",
+    "Page 87: missing list item '• Congress directed the Department of the Interior and the Federal Aviation Administration to reduce noise from aircraft flying over Grand Canyon National Park'",
+    "Page 87: missing list item '• Or take Chevron itself. In amendments to the Clean Air Act, Congress told States to require permits for modifying or constructing “stationary sources” of air pollution.'"
+   ]
+  },
+  "cand": {
+   "checks": null,
+   "errors": []
+  }
+ },
+ {
+  "case": "arxiv-replay-clocks-2023",
+  "base": {
+   "checks": null,
+   "errors": [
+    "Page 4: missing paragraph 'Receive event. Next, we describe how RepCl is updated when'",
+    "Page 6: missing paragraph 'Observation 1: Shift and MergeSameEpoch can be implemented using 𝑂(𝑥) time where 𝑥 is the number of bits set to 1 in the bitmap.'"
+   ]
+  },
+  "cand": {
+   "checks": null,
+   "errors": []
+  }
+ },
+ {
+  "case": "cia-blue-book-14-1955",
+  "base": {
+   "checks": null,
+   "errors": [
+    "Page 109: missing paragraph 'Table Al06. Evaluation of All Sightings for All Years by Duration of Sighting for Months'"
+   ]
+  },
+  "cand": {
+   "checks": null,
+   "errors": []
+  }
+ },
+ {
+  "case": "wallace-algebra-2010",
+  "base": {
+   "checks": null,
+   "errors": [
+    "Page 38: missing paragraph 'It doesn’t matter which term gets moved, 4x or 2x, however, it would be the author’s suggestion to move the smaller term (to avoid negative coeﬃcients).'"
+   ]
+  },
+  "cand": {
+   "checks": null,
+   "errors": []
+  }
+ },
+ {
+  "case": "faa-phak-8083-25c",
+  "base": {
+   "checks": null,
+   "errors": [
+    "Page 510: missing paragraph 'VYSE. Best rate-of-climb speed with one engine inoperative. This airspeed provides the most altitude gain in a given period of time'"
+   ]
+  },
+  "cand": {
+   "checks": null,
+   "errors": []
+  }
+ },
+ {
+  "case": "gpo-911-2004",
+  "base": {
+   "checks": null,
+   "errors": []
+  },
+  "cand": {
+   "checks": null,
+   "errors": []
+  }
+ },
+ {
+  "case": "fed-explained-2021",
+  "base": {
+   "checks": null,
+   "errors": []
+  },
+  "cand": {
+   "checks": null,
+   "errors": []
+  }
+ },
+ {
+  "case": "dga-2025-2030",
+  "base": {
+   "checks": null,
+   "errors": []
+  },
+  "cand": {
+   "checks": null,
+   "errors": []
+  }
+ },
+ {
+  "case": "usda-ars-agresearch-2012-11",
+  "base": {
+   "checks": null,
+   "errors": []
+  },
+  "cand": {
+   "checks": null,
+   "errors": []
+  }
+ },
+ {
+  "case": "ntrs-20180003024-earthdata-slides-2018",
+  "base": {
+   "checks": null,
+   "errors": []
+  },
+  "cand": {
+   "checks": null,
+   "errors": []
+  }
+ },
+ {
+  "case": "gpo-our-flag-2003",
+  "base": {
+   "checks": null,
+   "errors": []
+  },
+  "cand": {
+   "checks": null,
+   "errors": []
+  }
+ },
+ {
+  "case": "census-rrs2002-01",
+  "base": {
+   "checks": null,
+   "errors": []
+  },
+  "cand": {
+   "checks": null,
+   "errors": []
+  }
+ },
+ {
+  "case": "nbs-jres-geltman-1977",
+  "base": {
+   "checks": null,
+   "errors": []
+  },
+  "cand": {
+   "checks": null,
+   "errors": []
+  }
+ },
+ {
+  "case": "cdc-zombie-pandemic-2011",
+  "base": {
+   "checks": null,
+   "errors": []
+  },
+  "cand": {
+   "checks": null,
+   "errors": []
+  }
+ },
+ {
+  "case": "usgs-mcs2025-copper",
+  "base": {
+   "checks": null,
+   "errors": []
+  },
+  "cand": {
+   "checks": null,
+   "errors": []
+  }
+ },
+ {
+  "case": "uscourts-pro-se-1-2016",
+  "base": {
+   "checks": null,
+   "errors": []
+  },
+  "cand": {
+   "checks": null,
+   "errors": []
+  }
+ },
+ {
+  "case": "ntrs-20200002975-gwl-2020",
+  "base": {
+   "checks": null,
+   "errors": []
+  },
+  "cand": {
+   "checks": null,
+   "errors": []
+  }
+ },
+ {
+  "case": "ntrs-20210020887-techport-thm-2021",
+  "base": {
+   "checks": null,
+   "errors": []
+  },
+  "cand": {
+   "checks": null,
+   "errors": []
+  }
+ },
+ {
+  "case": "uscis-m618-arabic-2015",
+  "base": {
+   "checks": null,
+   "errors": []
+  },
+  "cand": {
+   "checks": null,
+   "errors": []
+  }
+ },
+ {
+  "case": "irs-p596-zhs-2025",
+  "base": {
+   "checks": null,
+   "errors": []
+  },
+  "cand": {
+   "checks": null,
+   "errors": []
+  }
+ }
+]

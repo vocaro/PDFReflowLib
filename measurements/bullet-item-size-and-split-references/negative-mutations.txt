@@ -1,0 +1,10 @@
+| no bullet-item size at all | `bulletItemSizeNeedsAMarkerBeforeSubstantialText`, `sourceItemizeBulletsKeepTheirWrappedLines` |
+| a bullet of any size restates its line | `bulletItemSizeNeedsAMarkerBeforeSubstantialText` |
+| a marker before any text at all is an item | `bulletItemSizeNeedsAMarkerBeforeSubstantialText` |
+| no stretched word space | `sourceHangingEntriesKeepTheirWrappedLines`, `sourceSplitReferenceRowsRejoinAtTheirWordSpace`, `stretchedWordSpaceRowsNeedTheSpaceTheMeasureAndAnOrdinaryLine` |
+| the word space PDFKit kept is not required | `splitProseRowsJoinOnlyWhereTheirTextRunsOn`, `stretchedWordSpaceRowsNeedTheSpaceTheMeasureAndAnOrdinaryLine`, `syntheticSplitRadicalRowJoinsOnlyAsProse` |
+| a junction of any width is a word space | `stretchedWordSpaceRowsNeedTheSpaceTheMeasureAndAnOrdinaryLine` |
+| a split row need not stand in an ordinary line | `sourceAlgebraRowsJoinOnlyWithinTheirRow` |
+| a split row need not reach its measure | `stretchedWordSpaceRowsNeedTheSpaceTheMeasureAndAnOrdinaryLine` |
+| the left piece may end on an edge the page shares | `stretchedWordSpaceRowsNeedTheSpaceTheMeasureAndAnOrdinaryLine` |
+| a nested dash item wraps into its bullet | `sourceNestedDashItemsStayApartFromTheirBullet` |

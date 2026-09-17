@@ -584,6 +584,42 @@ enum LayoutReconstructor {
         guard sized.count >= 2 else { return (lines, []) }
         func signed(_ text: Substring) -> Bool { text.rangeOfCharacter(from: rowMathSymbols) != nil }
         func word(_ token: Substring) -> Bool { token.filter(\.isLetter).count >= 2 }
+        // An edge the page's own text shares: a column's measure, a table's column, a hanging
+        // indent. A line PDFKit broke inside its measure ends on no such edge.
+        func sharedEdge(_ value: CGFloat, _ edge: KeyPath<CGRect, CGFloat>,
+                        besides: [TextLine], atLeast: Int = 2) -> Bool {
+            var found = 0
+            for other in lines where !besides.contains(other) && abs(other.rect[keyPath: edge] - value) <= 2 {
+                found += 1
+                if found >= atLeast { return true }
+            }
+            return false
+        }
+        // A justified line PDFKit split at its own stretched word space (#180). The IEEEtran
+        // bibliography's references [1] and [7] break 1.6 and 1.3 ems wide — wider than any
+        // junction the word-space reading admits — and a reference's fields all end in a period,
+        // so neither the junction's width nor an open sentence can read them.
+        //
+        // What reads them is the space itself: PDFKit kept it at the end of the left piece
+        // (`[1] M. S. Andersen, J. Dahl, and L. Vandenberghe. ` before `CVXOPT: A`), which a
+        // piece it ended at a line break never carries. The geometry says the break stands inside
+        // the measure: the left piece ends nowhere the page's own text ends and the right piece
+        // begins nowhere it begins, while the row still reaches the right edge that every full
+        // line of the paragraph reaches. A column's line ends on its column's measure and a cell
+        // on its table's, so neither is one of these. Both pieces must also stand in the page's
+        // ordinary line of their type, since a split line is one line of the paragraph: Wallace
+        // page 189 sets `Positiveexponentmeansstandardnotation` beside `Convert 3.21 × 105 to
+        // standard notation ` in a worked example's 21.8-point rows over an 11.98-point page, and
+        // its right edge happens to fall on the body's measure.
+        func stretchedWordSpace(_ left: TextLine, _ right: TextLine, size: CGFloat) -> Bool {
+            let gap = right.rect.minX - left.rect.maxX
+            guard left.trailingSpace, gap > 0, gap <= size * 2,
+                  let ordinary = ordinaryLineHeight(size, in: lines),
+                  [left, right].allSatisfy({ abs($0.rect.height - ordinary) <= ordinary * 0.15 }) else { return false }
+            return !sharedEdge(left.rect.maxX, \.maxX, besides: [left, right])
+                && !sharedEdge(right.rect.minX, \.minX, besides: [left, right])
+                && sharedEdge(right.rect.maxX, \.maxX, besides: [left, right], atLeast: 3)
+        }
         func candidate(_ a: TextLine, _ b: TextLine) -> Bool {
             guard sameRow(a.rect, b.rect),
                   abs(typeSize(a) - typeSize(b)) <= max(typeSize(a), typeSize(b)) * 0.1 else { return false }
@@ -591,7 +627,8 @@ enum LayoutReconstructor {
             let size = max(typeSize(a), typeSize(b))
             let gap = right.rect.minX - left.rect.maxX
             if gap >= 0 {
-                guard gap <= size * 1.5 else { return false }
+                let stretched = stretchedWordSpace(left, right, size: size)
+                guard gap <= size * 1.5 || stretched else { return false }
                 // A column or table cell starts on an edge other lines share; a split row's piece
                 // starts wherever its radical falls.
                 let aligned = lines.filter { other in
@@ -599,7 +636,7 @@ enum LayoutReconstructor {
                         && abs(other.rect.minX - right.rect.minX) <= 2
                 }
                 guard aligned.count < 2 else { return false }
-                if gap > size {
+                if gap > size, !stretched {
                     let leftTokens = left.text.split(whereSeparator: \.isWhitespace)
                     let rightTokens = right.text.split(whereSeparator: \.isWhitespace)
                     let formulaOnly = [leftTokens, rightTokens].contains { !$0.contains(where: word) && $0.contains(where: signed) }
@@ -681,8 +718,12 @@ enum LayoutReconstructor {
             // The row's text runs on across each junction: no junction is wider than the word
             // space a justified line's piece ends with, and the left piece leaves its sentence
             // open or the right piece opens with a raised note marker.
+            // A junction PDFKit made inside a justified line's own measure runs on whatever the
+            // line's punctuation reads like, since the break is the line's word space (#180).
             let runsOn = zip(pieces, pieces.dropFirst()).allSatisfy { left, right in
-                lines[right].rect.minX - lines[left].rect.maxX <= typeSize(lines[right]) * 0.5
+                let size = typeSize(lines[right])
+                if stretchedWordSpace(lines[left], lines[right], size: size) { return true }
+                return lines[right].rect.minX - lines[left].rect.maxX <= size * 0.5
                     && (!endsSentence(lines[left].content) || closesWithMarker(right))
             }
             // Outside mathematics the row must also be a full line of its justified paragraph,
@@ -3539,10 +3580,30 @@ enum LayoutReconstructor {
             listGaps[key] = gap
             return gap
         }
+        // An item nested under another, marked by a dash the page repeats on its own edge. The
+        // IEEEtran paper sets `– Only four types of aircraft…` under `• Parameters affecting air
+        // traffic:` at 1.76 bodies, inside the width a marker occupies, while that bullet's own
+        // wrapped lines stand at 2.86 (#180). `isList` reads a minus and a hyphen as markers but
+        // not a dash, and the paper's dash items are paragraphs, so the evidence is the page
+        // itself: another line on this edge, in this type, opening with the same dash and a space.
+        func opensRepeatedDashItem(_ line: TextLine) -> Bool {
+            func opensWithDash(_ text: String) -> Character? {
+                guard let dash = text.first, "\u{2013}\u{2014}\u{2012}\u{2015}".contains(dash),
+                      text.dropFirst().first?.isWhitespace == true else { return nil }
+                return dash
+            }
+            guard let dash = opensWithDash(line.text) else { return false }
+            return free.contains { other in
+                other != line && opensWithDash(other.text) == dash
+                    && abs(other.rect.minX - line.rect.minX) <= 2
+                    && abs(other.fontSize - line.fontSize) <= line.fontSize * 0.1
+            }
+        }
         func continuesListItem(_ line: TextLine, item: (marker: TextLine, last: TextLine, indent: CGFloat?, index: Int)) -> Bool {
             // A lonely marker line that reads as prose is item text too: NOAA's reference 177 wraps
             // `S. Martinuzzi, A.D. Syphard, …` at its hanging indent (#146).
-            guard !listLine(line) || isLonely(line), line.fontSize <= item.marker.fontSize + 0.5 else { return false }
+            guard !listLine(line) || isLonely(line), !opensRepeatedDashItem(line),
+                  line.fontSize <= item.marker.fontSize + 0.5 else { return false }
             let verticalGap = item.last.rect.minY - line.rect.maxY
             // A tall marker line (Wallace page 2's license bullets, whose rectangles stand 17 points
             // against the page's 9.9) overlaps its wrapped line as a tall prose line does (#109, #115).

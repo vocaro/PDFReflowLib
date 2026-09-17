@@ -111,10 +111,20 @@ struct SourceLayoutFixture: Decodable {
         }, uniquingKeysWith: { first, _ in first })
         result.lines = result.lines.map { line in
             guard let match = attributed[line.text] else { return line }
-            let styled = NativeTextReader.inlineText(from: match.attributedString(fontWeights: fontWeights))
+            let attributedLine = match.attributedString(fontWeights: fontWeights)
+            let styled = NativeTextReader.inlineText(from: attributedLine)
             guard styled.text == line.text else { return line }
             var copy = TextLine(content: styled, rect: line.rect, fontSize: line.fontSize, monospaced: line.monospaced)
             copy.structure = line.structure
+            // A fixture records the size extraction gave the line when it was captured, and its
+            // attributed text before extraction trimmed it. Replay from the line's own runs what
+            // `textLine` reads there and older fixtures do not record: the bullet-item size and
+            // the word space PDFKit kept at the line's end (#180). A fixture captured before
+            // either rule then still shows the defect when the rule is stubbed out.
+            if !line.monospaced, let size = NativeTextReader.bulletItemBodySize(in: attributedLine) {
+                copy.fontSize = size
+            }
+            copy.trailingSpace = !line.monospaced && match.text.last?.isWhitespace == true
             return copy
         }
         return result

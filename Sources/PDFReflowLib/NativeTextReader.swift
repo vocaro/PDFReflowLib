@@ -493,6 +493,9 @@ enum NativeTextReader {
         // need not agree with string offsets at synthesized newlines on current OS builds.
         var result = TextLine(content: styled ?? InlineText(text), rect: bounds,
             fontSize: size, monospaced: mono)
+        // The space PDFKit reported at the line's end, which `text` no longer carries: evidence
+        // that this piece was cut inside a line rather than at a line break (#180).
+        result.trailingSpace = !mono && semantic.last?.isWhitespace == true && !text.isEmpty
         if !mono, styled != nil, let attributed, let bodySize = dropCapBodySize(in: attributed),
            bounds.height >= bodySize * 2, bounds.width >= bodySize * 8 {
             result.fontSize = bodySize
@@ -501,8 +504,56 @@ enum NativeTextReader {
         } else if !mono, styled != nil, let attributed, let titleSize = displayNumeralTitleSize(in: attributed) {
             // The line's typography is the title's; the numeral is its ornament (#55).
             result.fontSize = titleSize
+        } else if !mono, styled != nil, let attributed, let itemSize = bulletItemBodySize(in: attributed) {
+            // The line's typography is the item's; the bullet is its ornament (#180).
+            result.fontSize = itemSize
         }
         return result
+    }
+
+    /// A list item measured from the bullet glyph that opens it rather than from its own text
+    /// (#180). PDFKit reports one size a line, taken from its first run, and a source is free to
+    /// draw the bullet from a smaller font than the item: TeX's `\labelitemi` is a 6.97-point
+    /// glyph before 9.96-point text, so the IEEEtran paper's `• Controllability: …` reports 6.97
+    /// and every size test the item's own type would pass — `continuesListItem`'s above all — sees
+    /// a line a third smaller than the lines that wrap under it.
+    ///
+    /// The evidence is a first run of nothing but bullets and whitespace (the marker; the same
+    /// reading `isBulletRun` takes for scripts) before a larger, non-blank run, with substantial
+    /// text after the marker: three words of two or more letters, and fifteen letters in all, so
+    /// that a short label opening a list (`• Units of measurement:`) is an item while the pair of
+    /// scan marks a scanned book's text layer reads as `✓ 5 1/J.tJ RtJ.tJ` is not. The
+    /// size is the first text run's, not the whole line's, because an item's text carries scripts
+    /// as any other prose line does. A bullet drawn *larger* than its text is left alone: it
+    /// overstates the line rather than hiding it, which is a different defect.
+    static func bulletItemBodySize(in attributed: NSAttributedString) -> CGFloat? {
+        guard attributed.length > 0 else { return nil }
+        var markerRange = NSRange()
+        let marker = attributed.attributes(at: 0, effectiveRange: &markerRange)
+        let glyphs = (attributed.string as NSString).substring(with: markerRange)
+        guard glyphs.contains(where: bulletCharacters.contains),
+              glyphs.allSatisfy({ $0.isWhitespace || bulletCharacters.contains($0) }),
+              markerRange.length < attributed.length,
+              let cap = marker[.font] as? PlatformFont, cap.pointSize.isFinite, cap.pointSize > 0 else { return nil }
+        let rest = NSRange(location: markerRange.length, length: attributed.length - markerRange.length)
+        let itemText = (attributed.string as NSString).substring(with: rest)
+        guard itemText.filter(\.isLetter).count >= 15,
+              itemText.split(whereSeparator: \.isWhitespace).filter({ $0.filter(\.isLetter).count >= 2 }).count >= 3,
+              !itemText.contains("\n"), !itemText.contains("\r") else { return nil }
+        var size: CGFloat?
+        attributed.enumerateAttributes(in: rest) { attributes, range, stop in
+            guard size == nil else { stop.pointee = true; return }
+            let text = (attributed.string as NSString).substring(with: range)
+            guard !text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else { return }
+            guard let font = attributes[.font] as? PlatformFont, font.pointSize.isFinite,
+                  font.pointSize > 0, font.pointSize <= 100_000 else { stop.pointee = true; return }
+            size = font.pointSize
+            stop.pointee = true
+        }
+        guard let body = size, body > cap.pointSize + 0.05,
+              !cap.fontName.lowercased().contains("courier"),
+              !cap.fontName.lowercased().contains("mono") else { return nil }
+        return body
     }
 
     /// A chapter opener's display numeral fused by PDFKit with the title beside it (The Fed

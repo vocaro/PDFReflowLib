@@ -1,0 +1,11 @@
+===== page 38 =====
+--- baseline
++++ candidate
+@@ -2,5 +2,3 @@
+ PARA | Example 61.
+-PARA | Notice here the x is on both the left and right sides of the equation. This can make it diﬃcult to decide which side to work with. We fix this by moving one of the terms with x to the other side, much like we moved a constant term. It doesn’t matter which term gets moved, 4x or 2x,
+-PARA | however, it would be the
+-PARA | author’s suggestion to move the smaller term (to avoid negative coeﬃcients). For this reason we begin this problem by clearing the positive 2x by subtracting 2x from both sides.
++PARA | Notice here the x is on both the left and right sides of the equation. This can make it diﬃcult to decide which side to work with. We fix this by moving one of the terms with x to the other side, much like we moved a constant term. It doesn’t matter which term gets moved, 4x or 2x, however, it would be the author’s suggestion to move the smaller term (to avoid negative coeﬃcients). For this reason we begin this problem by clearing the positive 2x by subtracting 2x from both sides.
+ PARA | The previous example shows the check on this solution. Here the solution is plugged into the x on both the left and right sides before simplifying.
+

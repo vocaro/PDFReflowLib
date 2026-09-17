@@ -1,0 +1,27 @@
+===== page 4 =====
+--- baseline
++++ candidate
+@@ -7,5 +7,3 @@
+ PARA | Algorithm 3 Send Message
+-PARA | Receive event.
+-PARA | Next, we describe how RepCl is updated when
+-PARA | 𝑗 (with timestamp ⟨𝑚𝑥.𝑗, offset.𝑗[], counter.𝑗[]⟩receives a message 𝑚 with timestamp ⟨𝑚𝑥.𝑚, offset.𝑚[], counter.𝑚[]⟩. First, we compute 𝑛𝑒𝑤𝑚𝑥 which is the maximum of 𝑚𝑥.𝑗, 𝑚𝑥.𝑚 and epoch.𝑗. Timestamps of 𝑗 and 𝑚 are then shifted to 𝑛𝑒𝑤𝑚𝑥 using the Shift operation. These timestamps are then merged to obtain the 𝑚𝑥 and offset values of the new event, say 𝑓. Now, we check if the knowledge that 𝑓 has about epochs is the same as that of 𝑒 (the previous event on 𝑗) or 𝑚. If all three are in the same epoch then counter.𝑗.𝑗 is set to one more than the maximum of counter.𝑗.𝑘 and counter.𝑚.𝑘. If only 𝑒 and 𝑓 are in the same epoch, counter.𝑗.𝑗 is incremented by 1. If only 𝑚 and 𝑓 are in the same epoch, counter.𝑗 is set to counter.𝑚 and the value of counter.𝑗.𝑗 is incremented by 1. If none of these conditions apply then counters are reset to 0.
++PARA | Receive event. Next, we describe how RepCl is updated when 𝑗 (with timestamp ⟨𝑚𝑥.𝑗, offset.𝑗[], counter.𝑗[]⟩receives a message 𝑚 with timestamp ⟨𝑚𝑥.𝑚, offset.𝑚[], counter.𝑚[]⟩. First, we compute 𝑛𝑒𝑤𝑚𝑥 which is the maximum of 𝑚𝑥.𝑗, 𝑚𝑥.𝑚 and epoch.𝑗. Timestamps of 𝑗 and 𝑚 are then shifted to 𝑛𝑒𝑤𝑚𝑥 using the Shift operation. These timestamps are then merged to obtain the 𝑚𝑥 and offset values of the new event, say 𝑓. Now, we check if the knowledge that 𝑓 has about epochs is the same as that of 𝑒 (the previous event on 𝑗) or 𝑚. If all three are in the same epoch then counter.𝑗.𝑗 is set to one more than the maximum of counter.𝑗.𝑘 and counter.𝑚.𝑘. If only 𝑒 and 𝑓 are in the same epoch, counter.𝑗.𝑗 is incremented by 1. If only 𝑚 and 𝑓 are in the same epoch, counter.𝑗 is set to counter.𝑚 and the value of counter.𝑗.𝑗 is incremented by 1. If none of these conditions apply then counters are reset to 0.
+ PARA | Algorithm 4 Receive Message
+
+===== page 6 =====
+--- baseline
++++ candidate
+@@ -6,9 +6,5 @@
+ PARA | Next, we show that this representation allows us to reduce the cost of storage as well as the cost of computing timestamps or comparing them (using < relation). Specifically, all these costs are proportional to the number of processes that have communicated with 𝑗 recently.
+-PARA | With representation in Figure 4, first, we note that finding the location of the 1s in the given bitmap can be done in time that is proportional to the number of 1s in the bitmap. ((𝑛−(𝑛&(𝑛−1) will return the number with only the rightmost 1). Thus, we have Observation 1:
+-PARA | Shift and MergeSameEpoch can be implemented
+-PARA | using 𝑂(𝑥) time where 𝑥 is the number of bits set to 1 in the bitmap.
++PARA | With representation in Figure 4, first, we note that finding the location of the 1s in the given bitmap can be done in time that is proportional to the number of 1s in the bitmap. ((𝑛−(𝑛&(𝑛−1) will return the number with only the rightmost 1). Thus, we have Observation 1: Shift and MergeSameEpoch can be implemented using 𝑂(𝑥) time where 𝑥 is the number of bits set to 1 in the bitmap.
+ PARA | Figure 4: Sample 𝑅𝑒𝑝𝐶𝑙 representation.
+-PARA | Note that this means that the time to compute the timestamp for send/receive at process 𝑗 is not dependent upon the number of processes in the system. But only processes that have recently communicated with process 𝑗. In turn, this means that Observation 2:
+-PARA | Send and Receive can be implemented using 𝑂(𝑥)
+-PARA | time where 𝑥 is the number of bits set to 1 in the bitmap. Observation 3: Given two timestamps, 𝑅𝑒𝑝𝐶𝑙.𝑒 and 𝑅𝑒𝑝𝐶𝑙.𝑓, we can determine if 𝑅𝑒𝑝𝐶𝑙.𝑒 < 𝑅𝑒𝑝𝐶𝑙.𝑓 in 𝑂(𝑥) time where 𝑥 is the number of bits set to 1 in 𝑒 and 𝑓.
++PARA | Note that this means that the time to compute the timestamp for send/receive at process 𝑗 is not dependent upon the number of processes in the system. But only processes that have recently communicated with process 𝑗. In turn, this means that Observation 2: Send and Receive can be implemented using 𝑂(𝑥) time where 𝑥 is the number of bits set to 1 in the bitmap. Observation 3: Given two timestamps, 𝑅𝑒𝑝𝐶𝑙.𝑒 and 𝑅𝑒𝑝𝐶𝑙.𝑓, we can determine if 𝑅𝑒𝑝𝐶𝑙.𝑒 < 𝑅𝑒𝑝𝐶𝑙.𝑓 in 𝑂(𝑥) time where 𝑥 is the number of bits set to 1 in 𝑒 and 𝑓.
+ PARA | It follows that the number of bits that are 1 in a given timestamp identifies not only the storage cost of the timestamps but also the time to compute these timestamps at run time. Effectively, this also identifies the overhead of the timestamps that enable the replay of the computation. Hence, in Section 7, we focus on identifying scenarios where the cost of storing these offsets is within the limits identified by the user.
+

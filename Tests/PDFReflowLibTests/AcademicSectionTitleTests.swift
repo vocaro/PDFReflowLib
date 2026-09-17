@@ -94,8 +94,9 @@ private func preformatted(_ blocks: [ReflowBlock]) -> [String] {
     let references = paragraphs(reflow(try sourcePage(10)))
     for entry in ["[3] A. Hagberg, P. Swart, and D. Schult. Exploring network structure, dynamics, and function using networkx. http://networkx.github.io, 2008.",
                   "[4] L. Meyn. A closed-form solution to multi-point scheduling problems. In AIAA Modeling and Simulation Technologies Conference, page 7911, 2010.",
-                  // An entry whose first line is a list of initials rather than words.
-                  "[7] J. L. Rios, I. S. Smith, P. Venkatesan, D. R. Smith, V. Baskaran, S. M. Jurcak, S. K. Iyer, and P. Verma. UTM UAS service supplier development: Sprint 2 toward technical capability level 4."] {
+                  // An entry whose first line is a list of initials rather than words, and whose
+                  // last row PDFKit split at its word space (`NASA`, rejoined since #180).
+                  "[7] J. L. Rios, I. S. Smith, P. Venkatesan, D. R. Smith, V. Baskaran, S. M. Jurcak, S. K. Iyer, and P. Verma. UTM UAS service supplier development: Sprint 2 toward technical capability level 4. NASA Technical Memorandum, 2018."] {
         #expect(references.contains(entry), "\(entry)")
     }
     let steps = paragraphs(reflow(try sourcePage(5)))

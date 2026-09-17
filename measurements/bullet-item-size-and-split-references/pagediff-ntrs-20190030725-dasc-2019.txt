@@ -1,0 +1,42 @@
+===== page 5 =====
+--- baseline
++++ candidate
+@@ -4,4 +4,2 @@
+ PARA | for two other possible reasons:
+-PARA | cannot reach node k+ 1 at any available time.
+-PARA | flight f at k−1 from which the flight can reach node k at an available time instant at k.
+ PARA | We illustrate each of these reasons in the following two paragraphs, using also figure 2. For this figure, the assumption that k−1 is the first node for flight f no longer holds. Controllability: In figure 2(A), we see that by leaving node kat Tk, flight f will be able to reach node k+1 only within a certain time window, shown in blue. Now consider a different Tk; see figure 2(B). The resulting new reachable time window at k+ 1 is contained entirely in an unavailable time window. This makes node k effectively unavailable to flight f at the latter choice of Tk
+@@ -49,4 +47,2 @@
+ PARA | Step 4. Use the algorithm in Ref. [4] to compute the available time windows for f at the nodes on its route (the region shown green in Ref. [4, Fig. 2(c)]), using:
+-PARA | unavailable time windows (shown red in Ref. [4, Fig. 2]),
+-PARA | travel times (e.g., Ref. [4, Equations (5), (6), (7)]).
+ PARA | Step 5. The output of Step 4 is a collection of time windows of availability of nodes in rf for flight f. Since a node on the route of f can have multiple such time windows (we can assume they are pairwise nonoverlapping), denote the j-th such window at node ni
+@@ -72,5 +68,5 @@
+ PARA | f
+-LIST | • Controllability: By leaving node k at time Tk, flight f
+-LIST | • Reachability: There is no time instant Tk−1 available to
+-LIST | • the totality of the intervals (7), (8), (9) as the
+-LIST | • the travel time bounds specified in (5.a) as the
++LIST | • Controllability: By leaving node k at time Tk, flight f cannot reach node k+ 1 at any available time.
++LIST | • Reachability: There is no time instant Tk−1 available to flight f at k−1 from which the flight can reach node k at an available time instant at k.
++LIST | • the totality of the intervals (7), (8), (9) as the unavailable time windows (shown red in Ref. [4, Fig. 2]),
++LIST | • the travel time bounds specified in (5.a) as the travel times (e.g., Ref. [4, Equations (5), (6), (7)]).
+
+===== page 10 =====
+--- baseline
++++ candidate
+@@ -2,5 +2,3 @@
+ PARA | TABLE III: A high-level outline of the scheduling algorithm of section V.
+-PARA | [1] M. S. Andersen, J. Dahl, and L. Vandenberghe.
+-PARA | CVXOPT: A
+-PARA | python package for convex optimization, version 1.1.5. seas.ucla.edu/ ∼vandenbe/publications/coneprog.pdf , 2012.
++PARA | [1] M. S. Andersen, J. Dahl, and L. Vandenberghe. CVXOPT: A python package for convex optimization, version 1.1.5. seas.ucla.edu/ ∼vandenbe/publications/coneprog.pdf , 2012.
+ PARA | [2] FAA-E-3025. Time-Based Flow Management (TBFM) system specifi-cation document (SSD). Federal Aviation Administration, Washington, D.C., 2014.
+@@ -10,5 +8,3 @@
+ PARA | [6] C. H. Papadimitriou and K. Steiglitz. Combinatorial Optimization; Algorithms and Complexity. Dover Publications, 1998.
+-PARA | [7] J. L. Rios, I. S. Smith, P. Venkatesan, D. R. Smith, V. Baskaran, S. M. Jurcak, S. K. Iyer, and P. Verma. UTM UAS service supplier development: Sprint 2 toward technical capability level 4.
+-PARA | NASA
+-PARA | Technical Memorandum, 2018.
++PARA | [7] J. L. Rios, I. S. Smith, P. Venkatesan, D. R. Smith, V. Baskaran, S. M. Jurcak, S. K. Iyer, and P. Verma. UTM UAS service supplier development: Sprint 2 toward technical capability level 4. NASA Technical Memorandum, 2018.
+ PARA | [8] A. S. Tanenbaum and M. Van Steen. Distributed systems: principles and paradigms. Prentice-Hall, 2007.
+

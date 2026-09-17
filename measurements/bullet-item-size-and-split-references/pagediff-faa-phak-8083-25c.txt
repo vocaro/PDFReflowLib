@@ -1,0 +1,10 @@
+===== page 510 =====
+--- baseline
++++ candidate
+@@ -12,4 +12,3 @@
+ PARA | VY. Best rate-of-climb speed. This airspeed provides the most altitude gain in a given period of time.
+-PARA | VYSE.
+-PARA | Best rate-of-climb speed with one engine inoperative. This airspeed provides the most altitude gain in a given period of time in a light, twin-engine airplane following an engine failure.
++PARA | VYSE. Best rate-of-climb speed with one engine inoperative. This airspeed provides the most altitude gain in a given period of time in a light, twin-engine airplane following an engine failure.
+ PARA | W WAAS. See wide area augmentation system.
+

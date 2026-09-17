@@ -29,6 +29,10 @@ struct TextLine: Equatable {
     /// more than 45° from left to right (a rotated caption, #122); nil for native and upright text.
     /// `rect` is then the rotated line's axis-aligned bounds, which do not say which way it reads.
     var readingDirection: CGVector?
+    /// The extraction reported a word space at the end of this line, which `text` no longer
+    /// carries (#180). A line PDFKit ended at a line break carries none, so a piece that does is
+    /// one PDFKit cut inside a line, at a space it had already measured.
+    var trailingSpace = false
 
     init(text: String, rect: CGRect, fontSize: CGFloat, monospaced: Bool = false, wraps: Bool? = nil) {
         self.init(content: InlineText(text), rect: rect, fontSize: fontSize, monospaced: monospaced, wraps: wraps)
@@ -57,6 +61,7 @@ struct TextLine: Equatable {
 extension TextLine: Codable {
     private enum CodingKeys: String, CodingKey {
         case content, rect, fontSize, monospaced, wraps, readingRect, structure, readingDirection
+        case trailingSpace
     }
 
     init(from decoder: Decoder) throws {
@@ -69,6 +74,7 @@ extension TextLine: Codable {
         readingRect = try values.decodeIfPresent(CGRect.self, forKey: .readingRect)
         structure = try values.decodeIfPresent(TextStructure.self, forKey: .structure)
         readingDirection = try values.decodeIfPresent(CGVector.self, forKey: .readingDirection)
+        trailingSpace = try values.decodeIfPresent(Bool.self, forKey: .trailingSpace) ?? false
     }
 
     func encode(to encoder: Encoder) throws {
@@ -81,6 +87,7 @@ extension TextLine: Codable {
         try values.encodeIfPresent(readingRect, forKey: .readingRect)
         try values.encodeIfPresent(structure, forKey: .structure)
         try values.encodeIfPresent(readingDirection, forKey: .readingDirection)
+        if trailingSpace { try values.encode(true, forKey: .trailingSpace) }
     }
 }
 

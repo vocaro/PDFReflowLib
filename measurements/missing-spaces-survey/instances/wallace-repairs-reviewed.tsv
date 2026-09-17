@@ -1,0 +1,156 @@
+page	line	left	right	verdict	after
+14	11	6	and	split	Reduce 21 and 28 by dividing by 7. Reduce 6 and 16 by dividing by 2
+22	14	=3	and	other	p(q + 6)when p =3 and q = 5
+22	15	3	and	split	Replace p with 3 and q with 5
+25	5	6	and	split	6 ; use p = 6 and q =5
+29	6	7	is	split	The 7 is added to the x
+29	7	7	from	split	Subtract 7 from both sides to get rid of it
+29	28	5	is	split	The 5 is negative, or subtracted from x
+29	29	5	to	split	Add 5 to both sides
+34	21	4	from	split	Subtract 4 from both sides
+34	34	8	from	split	Subtract 8 from both sides
+37	35	3	to	split	+3 +3 Add 3 to both sides
+38	23	6	to	split	Add 6 to both sides
+39	36	3	and−	other	Distribute 3 and− 4 through parenthesis
+40	19	3	through	split	Distribute 4 and 3 through parenthesis
+40	20	+9	and	other	Combine like terms− 24 +9 and 3x + 8x
+40	33	2	in	split	Plug 2 in for each x. Multiply inside parenthesis
+41	28	2	through	split	Distribute 2 through parenthesis
+44	52	1	from	split	Subtract 1 from both sides
+51	43	4	for	split	47) 5a− 7b = 4 for b
+51	89	8	for	split	48) 4x− 5y = 8 for x
+52	27	5	from	split	Subtract 5 from both sides
+54	16	2	from	split	Subtract 2 from both sides
+55	5	7	from	split	Subtract 7 from both sides
+58	35	2	and	split	x is jointly proportional to y and z and x =48 when y = 2 and z = 4
+65	37	1(2	total)to	other	Add another 1(2 total)to get the third
+66	9	2	to	split	Even numbers, so we add 2 to get the next
+66	11	(4	total)to	other	Add 2 more (4 total)to get the third
+66	21	6	from	split	Subtract 6 from both sides
+66	45	(4	total)to	other	Add 2 more (4 total)to get the third
+72	46	2	to	split	2 to both Adam′s and Brian′s now column as shown
+73	39	5	in	split	Five years ago is− 5 in the change column.
+73	51	5	from	split	Subtract 5 from now column to get the change
+74	20	2	from	split	Subtract 2 from both sides
+74	41	+2	for	other	The change is +2 for two years in the future
+75	7	2	from	split	Subtract 2 from both sides
+75	51	8	added	split	Now we have an 8 added to the t
+80	37	8	miles,	split	8 We have total distance, 8 miles, under distance
+81	7	2	mph	split	Bob walks 2 mph faster than Fred
+81	9	2	mph	split	Bob is r + 2, showing 2 mph faster
+81	38	4	in	split	To answer the question completely we plug 4 in for
+82	47	6	showing	split	Mike′s time is t + 6 showing his 6 hour head start
+82	47	6	hour	split	Mike′s time is t + 6 showing his 6 hour head start
+83	1	2	hours	split	Our solution for t, she catches him after 2 hours
+83	58	2	in	split	To answer the question we plug 2 in for t
+92	21	6	to	split	+6 + 6 Add 6 to both sides
+98	42	1	to	split	Add 1 to both sides
+99	26	6	from	split	Subtract 6 from both sides
+109	20	4	to	split	+4 + 4 Add 4 to both sides
+114	24	9	from	split	Subtract 9 from both sides
+114	45	4	to	split	Add 4 to each side
+119	18	2	and	split	Start at 2 and shade below
+120	25	2	from	split	Subtract 2 from both sides
+120	28	1	to	split	Add− 1 to both sides
+120	29	4	from	split	Subtract− 4 from both sides
+127	23	0	or	split	4) 10r > 0 or r− 5<− 12
+129	14	5	to	split	+ 5+5 +5 + 5 Add 5 to both sides
+130	10	9	from	split	Subtract 9 from both sides
+130	28	1	from	split	Subtract 1 from all three parts
+141	41	5	from	split	Subtract 5 from both sides
+142	11	4	from	split	Solve for the lone variable, subtract 4 from both sides
+147	13	6	from	split	Subtract 6 from both sides
+155	3	5	and−	other	LCM of 5 and− 10 is 10.
+155	19	3	is	split	The LCM of 1 and− 3 is 3
+159	62	5	from	split	Subtract 5 from both sides
+160	0	5	quarters	split	5 quarters and 6 dimes Our Solution
+160	0	6	dimes	split	5 quarters and 6 dimes Our Solution
+171	37	1	in	split	is pure, 100% or 1 in our table, written as a
+179	44	4	on	split	Put the exponent of 4 on each factor, multiplying powers
+180	0	2	on	split	Put the exponent of 2 on each factor, multiplying powers
+180	13	3	on	split	Put the exponent of 3 on each factor, multiplying powers
+186	38	2	with	split	Move 2 with negative exponent down and z0 =1
+189	3	5	places	split	big number. Move decimal right 5 places
+192	19	+6	when	other	− 4x +6 when x =− 4
+192	38	+6	when	other	− x2 + 2x +6 when x =3
+194	24	5	when	split	m4 + 8m3 + 14m2 +13m + 5 when m =− 6
+198	26	7	by	split	245 Multiply 7 by 5 then 3
+198	26	5	then	split	245 Multiply 7 by 5 then 3
+198	29	2	by	split	Use 0 for placeholder, multiply 2 by 5 then 3
+198	29	5	then	split	Use 0 for placeholder, multiply 2 by 5 then 3
+219	9	7	and	split	y + 7 and 7+ y are the same, use either one
+219	32	5	in	split	Need to switch subtraction order, use− 5 in middle
+219	33	3	match	split	Now 2x− 3 match on both! Factor out this GCF
+222	9	6	and	split	6 and 3, split the middle term
+222	17	3	and−	other	− 3x− x +3− 3 and− 1, split the middle term
+223	36	9	and	split	− 9 and 2, write the factors
+224	27	5	and−	other	− 5 and− 3, write the factors
+226	25	9	and	split	The numbers are 9 and 2, split the middle term
+227	18	4	and−	other	The numbers are 4 and− 5, split the middle term
+230	40	3	and−	other	The numbers are− 3 and− 3, the same! Perfect square
+232	34	4	and	split	The numbers are 4 and 4, the same! Perfect Square
+234	31	7	and	split	7 and 7, perfect square!
+235	24	9	and−	other	− 9x− 4x +1)− 9 and− 4, split middle term
+237	32	3	and	split	The numbers are− 3 and 4, split the middle term
+238	18	5	and−	other	The numbers are− 5 and− 3
+238	36	6	and−	other	The numbers are 6 and− 2
+239	20	6	and−	other	(2x− 3)2 =0− 6 and− 6, a perfect square!
+240	8	3	and−	other	The numbers are− 3 and− 4
+240	19	9	and−	other	The numbers are 9 and− 2
+243	25	5	from	split	x 0 or 3x +5 0 Subtract 5 from second equation
+245	12	8	by	split	Reduce by dividing 24 and 8 by 4
+245	23	3	and	split	Divide out common factor (3x− 1) and divide 3 and 6 by 3
+245	23	6	by	split	Divide out common factor (3x− 1) and divide 3 and 6 by 3
+249	6	(3	and	split	Reduce coeﬃcients by dividing out common factors (3 and 5)
+253	8	8	and	split	Find the LCD of 8 and 6
+260	60	4	factor	split	Divide out x− 4 factor
+265	24	2	in	split	Factor out 2 in denominator
+270	12	8	from	split	Subtract 8 from both sides
+271	23	9	points	split	Don′t know visitor score, but home is 9 points less
+276	7	6	from	split	Subtract 6 from both sides
+276	15	3	in	split	Check− 3 in (x + 1)(x +2), it works
+276	17	1	in	split	Check 1 in (x + 1)(x +2), it works
+300	32	3	more	split	Index is 4, we need four twos in denominator, need 3 more
+319	17	4	and	split	Combine like terms 2+ 4 and 5i− 7i
+319	29	3	and−	other	Combine like terms 4− 3 and− 8i + 5i
+320	27	1	and	split	=− 1 and i3 =− i
+326	22	2	from	split	Subtract 2 from both sides
+327	12	6	from	split	Subtract 6 from both sides
+329	42	4	to	split	Add 4 to both sides of second equation
+332	20	3	and−	other	positive and one negative: x = 3 and− 3
+334	15	4	from	split	Subtract 4 from both sides
+334	21	6	from	split	Subtract 6 from both sides
+334	30	1	from	split	Subtract 1 from both sides
+335	35	2	to	split	+ 2 + 2 Add 2 to both sides
+340	24	5	from	split	Subtract 5 from both sides
+340	39	2	to	split	Add 2 to both sides
+348	12	4	and−	other	The solutions are 4 and− 2
+349	18	3	from	split	Subtract 3 from both sides
+350	31	4	from	split	Subtract 4 from both sides
+350	54	3	from	split	Subtract 3 from both sides
+353	23	1	power	split	Raise both sides to− 1 power
+353	39	6	from	split	Subtract 6 from both sides
+357	13	4	more,	split	Length is 4 more, or x +4, and area is 40.
+358	17	5	in	split	5 in by 8in Our Solution
+359	9	4	more,	split	x We don′t know width, x, length is 4 more, x +4
+359	32	2	ft	split	2 ft by 6ft Our Solution
+360	43	8	by	split	12 +2x Draw picture, picture if 8 by 10
+361	9	2	inches	split	2 inches Our Solution
+367	22	Electrician:2	hr,	other	Electrician:2 hr, Apprentice: 3 hours Our Solution
+367	22	3	hours	split	Electrician:2 hr, Apprentice: 3 hours Our Solution
+373	42	3	less	split	When he sold, he sold 3 less (n− 3), for S5
+374	58	2	less	split	There were 2 less that actually paid (n− 2)
+374	59	S4	more	split	and they had to pay S4 more (p +4). The
+375	39	1	to	split	Add 1 to both sides
+377	35	2	or	split	Solving for rate, divide by r + 2 or r− 2
+387	36	5	a	split	− x = 5 a function?
+389	18	2	in	split	Substitute− 2 in for x in the function
+389	37	7	in	split	Substitute− 7 in for a in the function
+402	56	4	into	split	Distribute 3 and 4 into numerators
+403	41	2	to	split	+ 2 +2 Add 2 to both sides
+404	25	3	to	split	Subtract 4xy and add 3 to both sides
+406	29	1	from	split	Subtract 1 from both sides
+407	4	3	and	split	Multiply exponents 3 and 3x
+407	25	4	from	split	Subtract 4 from both sides
+407	45	2	and	split	Multiply exponents− 2 and 2x
+412	14	5	from	split	Subtract 5 from both sides

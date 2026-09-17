@@ -1,0 +1,23 @@
+page	line	token	pieces	leftFont	rightFont	fontChange	gapEm	dy	spaceGlyph	native	found
+211	69	(VN0)—the	(V + N0)—the	XGOTCU+Times-Roman	XGOTCU+Times-Roman	yes	0.032	-2.00	no	• Upper limit of green arc (VN0)—the maximum	yes
+401	5	30	3 + 0	-	-	-	-	-	-	30	no
+401	8	21	2 + 1	HIMBMA+Times-Italic	HIMBMA+Times-Italic	no	-0.009	0.00	no	21	yes
+401	11	12	1 + 2	XGOTCU+Times-Roman	XGOTCU+Times-Roman	no	0.000	0.00	no	12	yes
+416	74	*50	*5 + 0	XGOTCU+Times-Roman	XGOTCU+Times-Roman	no	0.115	0.00	no	*50	yes
+458	41	1,6852,599	1,685 + 2,599	Helvetica	Helvetica	no	1.465	0.00	no	0 771 1,6852,599 3,5123,701	yes
+458	41	3,5123,701	3,512 + 3,701	Helvetica	Helvetica	no	1.464	0.00	no	0 771 1,6852,599 3,5123,701	yes
+458	43	03,550	0 + 3,550	Helvetica	Helvetica	no	0.756	0.00	no	03,550 7,570 11,98016,820 18,105	yes
+458	43	11,98016,820	11,980 + 16,820	Helvetica	Helvetica	no	0.849	0.00	no	03,550 7,570 11,98016,820 18,105	yes
+458	46	1,5772,424	1,577 + 2,424	Helvetica	Helvetica	no	1.465	0.00	no	0 730 1,5772,424 3,2724,045	yes
+458	46	3,2724,045	3,272 + 4,045	Helvetica	Helvetica	no	1.464	0.00	no	0 730 1,5772,424 3,2724,045	yes
+458	48	03,190	0 + 3,190	Helvetica	Helvetica	no	0.694	0.00	no	03,190 6,570 10,230 14,200 18,105	yes
+459	31	M0.82M0.80	M0.82 + M0.80	Helvetica	Helvetica	no	1.386	0.00	no	M0.82M0.80 M0.74	yes
+459	32	290Speed	290 + Speed	Helvetica	Helvetica	no	0.655	0.00	no	290Speed	yes
+459	34	310Speed	310 + Speed	Helvetica	Helvetica	no	0.593	0.00	no	310Speed 481 469 434	yes
+459	35	0.1780.199	0.178 + 0.199	Helvetica	Helvetica	no	1.214	0.00	no	Spc Range 0.165 0.1780.199	yes
+459	38	350Speed	350 + Speed	Helvetica	Helvetica	no	0.655	0.00	no	350Speed 473 461 427	yes
+459	40	370Speed	370 + Speed	Helvetica	Helvetica	no	0.655	0.00	no	370Speed 470 459 424	yes
+459	42	390Speed	390 + Speed	Helvetica	Helvetica	no	0.655	0.00	no	390Speed 459 424	yes
+459	45	FL310FL330	FL310 + FL330	Helvetica	Helvetica	no	1.191	0.00	no	FL290 FL310FL330 FL350FL370 FL390	yes
+459	45	FL350FL370	FL350 + FL370	Helvetica	Helvetica	no	1.287	0.00	no	FL290 FL310FL330 FL350FL370 FL390	yes
+510	4	VNO.	V + NO.	HIMBMA+Times-Bold	HIMBMA+Times-Bold	yes	0.032	-2.00	no	VNO. The maximum structural cruising speed. Do not	yes

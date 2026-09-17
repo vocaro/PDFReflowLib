@@ -165,16 +165,21 @@ private struct BoundaryFont {
     var firstChar: Int? = 32
     var widths: [Double]? = Array(repeating: 500, count: 95)
     var map: String? = simpleUnicodeMap()
+    /// An inline `/Encoding` value (a name or a dictionary), written verbatim.
+    var encoding: String?
+    var subtype = "Type1"
 }
 
-/// A page whose fonts are simple Type1 dictionaries with Widths and ToUnicode streams.
-private func boundaryPDF(fonts: [BoundaryFont], operators: String) throws -> CGPDFDocument {
+/// A page whose fonts are simple Type1 dictionaries with Widths and ToUnicode streams, and
+/// optionally inline ExtGState dictionaries (`/Name << ... >>` entries).
+private func boundaryPDF(fonts: [BoundaryFont], operators: String, extGState: String? = nil) throws -> CGPDFDocument {
     var objects = ["<< /Type /Catalog /Pages 2 0 R >>", "<< /Type /Pages /Kids [3 0 R] /Count 1 >>", "",
                    testPDFStream(operators)]
     var resources: [String] = []
     for font in fonts {
         let index = objects.count + 1
-        var dictionary = "<< /Type /Font /Subtype /Type1 /BaseFont /\(font.name)"
+        var dictionary = "<< /Type /Font /Subtype /\(font.subtype) /BaseFont /\(font.name)"
+        if let encoding = font.encoding { dictionary += " /Encoding \(encoding)" }
         if let firstChar = font.firstChar, let widths = font.widths {
             dictionary += " /FirstChar \(firstChar) /LastChar \(firstChar + widths.count - 1) /Widths ["
                 + widths.map { String(format: "%g", $0) }.joined(separator: " ") + "]"
@@ -185,13 +190,15 @@ private func boundaryPDF(fonts: [BoundaryFont], operators: String) throws -> CGP
         resources.append("/\(font.name) \(index) 0 R")
     }
     objects[2] = "<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << "
-        + resources.joined(separator: " ") + " >> >> /Contents 4 0 R >>"
+        + resources.joined(separator: " ") + " >>" + (extGState.map { " /ExtGState << \($0) >>" } ?? "")
+        + " >> /Contents 4 0 R >>"
     let provider = try #require(CGDataProvider(data: testPDF(objects: objects) as CFData))
     return try #require(CGPDFDocument(provider))
 }
 
-private func boundaryEvidence(_ operators: String, fonts: [BoundaryFont] = [BoundaryFont(name: "Fa"), BoundaryFont(name: "Fb")]) throws -> [NativeSpacingReader.Evidence] {
-    let document = try boundaryPDF(fonts: fonts, operators: operators)
+private func boundaryEvidence(_ operators: String, fonts: [BoundaryFont] = [BoundaryFont(name: "Fa"), BoundaryFont(name: "Fb")],
+                              extGState: String? = nil) throws -> [NativeSpacingReader.Evidence] {
+    let document = try boundaryPDF(fonts: fonts, operators: operators, extGState: extGState)
     return NativeSpacingReader.read(try #require(document.page(at: 1)))
 }
 
@@ -412,4 +419,98 @@ private func adobeUnicodeMap(_ entries: String = simpleSpacingMap()) -> String {
     let adobeType3 = NativeSpacingReader.read(try #require(try spacingPDF(show, map: adobeUnicodeMap()).page(at: 1)))
     #expect(adobeType3.count == 1)
     #expect(adobeType3.first?.text == nil)
+}
+
+// MARK: - Wallace: WinAnsi-encoded Type1 fonts, `gs` without a font, trailing TJ adjustments (#110)
+
+/// Ghostscript's TeX output (Wallace): Type1 fonts with Widths and a WinAnsi encoding, no ToUnicode.
+private func wallaceFont(_ name: String, encoding: String = "<< /Type /Encoding /BaseEncoding /WinAnsiEncoding /Differences [ 126 /tilde ] >>") -> BoundaryFont {
+    BoundaryFont(name: name, map: nil, encoding: encoding)
+}
+
+@Test func wallaceDigitBeforeTextFontRestoresItsWordSpaceAndMathStaysJoined() throws {
+    let fonts = [wallaceFont("R35"), wallaceFont("R46", encoding: "/WinAnsiEncoding"), wallaceFont("R44")]
+    let states = "/R7 << /Type /ExtGState /OPM 1 >>"
+    // Wallace page 29, `Subtract 7 from both sides`: the digit is a CMR12 show that Ghostscript
+    // ends with a trailing adjustment, `[(7)178.413]TJ`; the text resumes 0.16 em after the digit's
+    // advance, in the EC text font. Every page sets `/R7 gs` first. 10-point fonts, 500-unit advances.
+    let reproducer = "/R7 gs BT /R35 10 Tf 1 0 0 1 40 700 Tm (Subtract) Tj /R46 10 Tf 1 0 0 1 82 700 Tm [(7)178.413] TJ /R35 10 Tf 1 0 0 1 88.6 700 Tm (from) Tj ET"
+    let evidence = try boundaryEvidence(reproducer, fonts: fonts, extGState: states)
+    #expect(evidence.map(\.unicode) == ["Subtract", "7", "from"])
+    func close(_ ends: [CGFloat?], _ expected: [CGFloat]) -> Bool {
+        ends.count == expected.count && zip(ends, expected).allSatisfy { end, value in end.map { abs($0 - value) < 0.001 } ?? false }
+    }
+    #expect(close(evidence.map(\.end), [80, 87, 108.6]), "the trailing adjustment moves no glyph of its show")
+    #expect(repairedBoundary(evidence, "Subtract 7from") == "Subtract 7 from")
+    // Wallace page 24, `− 5y`: the coefficient ends with the same kind of adjustment and the CMMI12
+    // variable follows at 0.05 em. Subtracting the adjustment from the end measured 0.23 em and
+    // inserted `5 y` inside formulas; the glyphs' own gap keeps it joined.
+    let formula = "/R7 gs BT /R35 10 Tf 1 0 0 1 40 700 Tm (Subtract) Tj /R46 10 Tf 1 0 0 1 82 700 Tm [(5)178.413] TJ /R44 10 Tf 1 0 0 1 87.5 700 Tm (y) Tj ET"
+    let math = try boundaryEvidence(formula, fonts: fonts, extGState: states)
+    #expect(close(math.map(\.end), [80, 87, 92.5]))
+    #expect(repairedBoundary(math, "Subtract 5y") == "Subtract 5y")
+    // Adjustments between strings still move the glyphs after them.
+    let inner = try boundaryEvidence("BT /R46 10 Tf 1 0 0 1 82 700 Tm [(7)-300(8)178.413] TJ ET", fonts: fonts)
+    #expect(inner.first?.end == 95)
+}
+
+@Test func graphicsStateWithoutAFontKeepsEvidenceAndAnyOtherDisqualifies() throws {
+    let upright = "BT /Fa 10 Tf 1 0 0 1 40 700 Tm (event) Tj /Fb 10 Tf 1 0 0 1 68 700 Tm (e) Tj /Fa 10 Tf 1 0 0 1 76 700 Tm (must) Tj ET"
+    let states = "/R7 << /Type /ExtGState /OPM 1 /CA 0.5 >> /WithFont << /Type /ExtGState /Font [null 12] >> /NotADictionary 3"
+    for prefix in ["/R7 gs ", "q /R7 gs Q "] {
+        #expect(repairedBoundary(try boundaryEvidence(prefix + upright, extGState: states), "event emust") == "event e must")
+    }
+    let insideText = "BT /Fa 10 Tf 1 0 0 1 40 700 Tm (event) Tj /R7 gs /Fb 10 Tf 1 0 0 1 68 700 Tm (e) Tj /Fa 10 Tf 1 0 0 1 76 700 Tm (must) Tj ET"
+    #expect(repairedBoundary(try boundaryEvidence(insideText, extGState: states), "event emust") == "event e must")
+    for prefix in ["/WithFont gs ", "/Missing gs ", "/NotADictionary gs ", "gs "] {
+        #expect(try boundaryEvidence(prefix + upright, extGState: states).isEmpty)
+    }
+    // Nonzero character or word spacing still disqualifies the page, as before.
+    for prefix in ["/R7 gs 1 Tc ", "/R7 gs 1 Tw "] {
+        #expect(try boundaryEvidence(prefix + upright, extGState: states).isEmpty)
+    }
+}
+
+@Test func onlyWinAnsiEncodedType1FontsWithoutToUnicodeDecodeThroughTheirEncoding() throws {
+    let plain = try #require(NativeSpacingReader.winAnsiUnicodeMap(differences: []))
+    #expect(plain.count == 95)
+    #expect(plain[32] == " " && plain[65] == "A" && plain[126] == "~")
+    #expect(plain[31] == nil && plain[127] == nil && plain[146] == nil)
+    // Wallace's EC text fonts: quotes and ligatures through Differences; an unknown name removes its code.
+    let ec = try #require(NativeSpacingReader.winAnsiUnicodeMap(differences: [
+        .code(16), .name("quotedblleft"), .name("quotedblright"), .code(27), .name("ff"), .name("fi"),
+        .code(39), .name("quoteright"), .code(55), .name("seven"), .code(65), .name("Omega"),
+    ]))
+    #expect(ec[16] == "\u{201C}" && ec[17] == "\u{201D}" && ec[27] == "\u{FB00}" && ec[28] == "\u{FB01}")
+    #expect(ec[39] == "\u{2019}" && ec[55] == "7")
+    #expect(ec[65] == nil)
+    let bad: [[NativeSpacingReader.EncodingDifference]] = [[.name("a")], [.code(256)], [.code(-1)],
+        [.code(255), .name("a"), .name("b")], Array(repeating: .code(1), count: 257)]
+    for differences in bad {
+        #expect(NativeSpacingReader.winAnsiUnicodeMap(differences: differences) == nil)
+    }
+    let ops = "BT /Fa 10 Tf 1 0 0 1 40 700 Tm (event) Tj /Fb 10 Tf 1 0 0 1 68 700 Tm (e) Tj /Fa 10 Tf 1 0 0 1 76 700 Tm (must) Tj ET"
+    func second(_ font: BoundaryFont) throws -> String? { try boundaryEvidence(ops, fonts: [BoundaryFont(name: "Fa"), font])[1].unicode }
+    #expect(try second(BoundaryFont(name: "Fb", map: nil, encoding: "/WinAnsiEncoding")) == "e")
+    #expect(try second(BoundaryFont(name: "Fb", map: nil, encoding: "/WinAnsiEncoding", subtype: "MMType1")) == "e")
+    #expect(try second(BoundaryFont(name: "Fb", map: nil, encoding: "<< /Differences [ 101 /e ] /BaseEncoding /WinAnsiEncoding >>")) == "e")
+    // Other encodings, a dictionary without a WinAnsi base, TrueType (whose codes select glyphs
+    // through the font's cmap), a Differences name the table lacks or before any code, and a font
+    // whose ToUnicode map is present but rejected do not decode, so their lines are not matched.
+    let undecoded = [
+        BoundaryFont(name: "Fb", map: nil),
+        BoundaryFont(name: "Fb", map: nil, encoding: "/MacRomanEncoding"),
+        BoundaryFont(name: "Fb", map: nil, encoding: "<< /Differences [ 101 /e ] >>"),
+        BoundaryFont(name: "Fb", map: nil, encoding: "<< /BaseEncoding /StandardEncoding >>"),
+        BoundaryFont(name: "Fb", map: nil, encoding: "<< /BaseEncoding /WinAnsiEncoding /Differences [ 101 /epsilon1 ] >>"),
+        BoundaryFont(name: "Fb", map: nil, encoding: "<< /BaseEncoding /WinAnsiEncoding /Differences [ /e ] >>"),
+        BoundaryFont(name: "Fb", map: nil, encoding: "/WinAnsiEncoding", subtype: "TrueType"),
+        BoundaryFont(name: "Fb", map: "not a cmap", encoding: "/WinAnsiEncoding"),
+    ]
+    for font in undecoded {
+        #expect(try second(font) == nil)
+        #expect(repairedBoundary(try boundaryEvidence(ops, fonts: [BoundaryFont(name: "Fa"), font]), "event emust") == "event emust")
+    }
+    // A page whose simple fonts lack both ToUnicode and a supported encoding is not scanned.
+    #expect(try boundaryEvidence(ops, fonts: [BoundaryFont(name: "Fa", map: nil), BoundaryFont(name: "Fb", map: nil)]).isEmpty)
 }

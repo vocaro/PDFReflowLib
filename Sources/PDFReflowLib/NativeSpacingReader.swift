@@ -196,11 +196,96 @@ enum NativeSpacingReader {
         return unicodeMap(normalized)
     }
 
+    /// One `Differences` array element: a code that starts a run, or the next code's glyph name.
+    enum EncodingDifference: Equatable {
+        case code(Int)
+        case name(String)
+    }
+
+    /// Adobe Glyph List names a `Differences` array may assign: printable ASCII, and the quotes,
+    /// dashes and ligatures TeX text fonts encode there. Any other name leaves its code undecoded.
+    private static let differenceGlyphs: [String: String] = {
+        var table: [String: String] = [
+            "space": " ", "exclam": "!", "quotedbl": "\"", "numbersign": "#", "dollar": "$", "percent": "%",
+            "ampersand": "&", "quotesingle": "'", "parenleft": "(", "parenright": ")", "asterisk": "*",
+            "plus": "+", "comma": ",", "hyphen": "-", "period": ".", "slash": "/", "colon": ":",
+            "semicolon": ";", "less": "<", "equal": "=", "greater": ">", "question": "?", "at": "@",
+            "bracketleft": "[", "backslash": "\\", "bracketright": "]", "asciicircum": "^",
+            "underscore": "_", "grave": "`", "braceleft": "{", "bar": "|", "braceright": "}",
+            "asciitilde": "~", "quoteleft": "\u{2018}", "quoteright": "\u{2019}",
+            "quotedblleft": "\u{201C}", "quotedblright": "\u{201D}", "endash": "\u{2013}",
+            "emdash": "\u{2014}", "ff": "\u{FB00}", "fi": "\u{FB01}", "fl": "\u{FB02}",
+            "ffi": "\u{FB03}", "ffl": "\u{FB04}",
+        ]
+        for (index, name) in ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"].enumerated() {
+            table[name] = String(index)
+        }
+        for scalar in UInt8(ascii: "A")...UInt8(ascii: "Z") {
+            let upper = String(UnicodeScalar(scalar))
+            table[upper] = upper
+            table[upper.lowercased()] = upper.lowercased()
+        }
+        return table
+    }()
+
+    /// The codes of a Type1 font without a ToUnicode map, read through `WinAnsiEncoding` (#110).
+    /// Ghostscript's TeX output (Wallace) writes no ToUnicode for its Computer Modern fonts, only
+    /// this encoding, by name or as the `BaseEncoding` of a `Differences` dictionary. A Type1
+    /// font draws the glyph its encoding names, so codes 32–126 read as the ASCII characters
+    /// WinAnsi names, and a `Differences` entry gives its code the character of its glyph name
+    /// (`differenceGlyphs`). An unknown name removes its code, so no line that draws it can be
+    /// matched. More than 256 entries, a name before any code, or a code outside 0–255 fails.
+    static func winAnsiUnicodeMap(differences: [EncodingDifference]) -> [UInt8: String]? {
+        guard differences.count <= 256 else { return nil }
+        var result: [UInt8: String] = [:]
+        for code in UInt8(32)...126 { result[code] = String(UnicodeScalar(code)) }
+        var next: Int?
+        for entry in differences {
+            switch entry {
+            case .code(let code):
+                guard (0...255).contains(code) else { return nil }
+                next = code
+            case .name(let name):
+                guard let code = next, code <= 255 else { return nil }
+                result[UInt8(code)] = differenceGlyphs[name]
+                next = code + 1
+            }
+        }
+        return result
+    }
+
+    private static func encodingUnicodeMap(_ dict: CGPDFDictionaryRef) -> [UInt8: String]? {
+        var name: UnsafePointer<CChar>?, encoding: CGPDFDictionaryRef?
+        if CGPDFDictionaryGetName(dict, "Encoding", &name), let name {
+            return String(cString: name) == "WinAnsiEncoding" ? winAnsiUnicodeMap(differences: []) : nil
+        }
+        var base: UnsafePointer<CChar>?, array: CGPDFArrayRef?
+        guard CGPDFDictionaryGetDictionary(dict, "Encoding", &encoding), let encoding,
+              CGPDFDictionaryGetName(encoding, "BaseEncoding", &base), let base,
+              String(cString: base) == "WinAnsiEncoding" else { return nil }
+        guard CGPDFDictionaryGetArray(encoding, "Differences", &array), let array else {
+            return winAnsiUnicodeMap(differences: [])
+        }
+        let count = CGPDFArrayGetCount(array)
+        guard count <= 256 else { return nil }
+        var differences: [EncodingDifference] = []
+        for index in 0..<count {
+            var code: CGPDFInteger = 0, glyph: UnsafePointer<CChar>?
+            if CGPDFArrayGetInteger(array, index, &code) {
+                differences.append(.code(code))
+            } else if CGPDFArrayGetName(array, index, &glyph), let glyph {
+                differences.append(.name(String(cString: glyph)))
+            } else { return nil }
+        }
+        return winAnsiUnicodeMap(differences: differences)
+    }
+
     private struct Font {
         var id: Int
         /// The Type3 identity-matrix bfchar map that authorizes space removal.
         var map: [UInt8: String]?
-        /// Any supported one-byte ToUnicode map, for word-boundary evidence.
+        /// Any supported one-byte ToUnicode map, or a Type1 font's WinAnsi encoding without one,
+        /// for word-boundary evidence.
         var unicode: [UInt8: String]?
         /// Simple-font glyph advances in text space per unit of font size.
         var widths: [UInt8: CGFloat]?
@@ -264,17 +349,22 @@ enum NativeSpacingReader {
             }
             if let values {
                 var previousWasString = false
+                // An adjustment moves the glyphs after it. A trailing one moves none of this show's
+                // glyphs, and every accepted show is positioned on its own, so it cannot shorten the
+                // measured end (#110: Ghostscript ends each TeX math show with one, `[(5)178.4]TJ`).
+                var pending: CGFloat = 0
                 for i in 0..<CGPDFArrayGetCount(values) {
                     var string: CGPDFStringRef?
                     var number: CGPDFReal = 0
                     if CGPDFArrayGetString(values, i, &string), let string {
+                        advance -= pending; pending = 0
                         append(string); previousWasString = true
                     } else if CGPDFArrayGetNumber(values, i, &number), number.isFinite {
                         // Consecutive/initial adjustments and actual word-size gaps are ambiguous.
                         if !previousWasString || number < -10 { valid = false }
                         if number < 0 && number >= -10 { gaps.insert(value.utf16.count) }
                         previousWasString = false
-                        advance -= number / 1000 * size
+                        pending += number / 1000 * size
                     } else { valid = false; decodable = false; measurable = false }
                 }
             } else if let single {
@@ -326,7 +416,11 @@ enum NativeSpacingReader {
             return result
         }
         guard ["Type1", "TrueType", "MMType1"].contains(kind) else { return result }
-        if let data { result.unicode = simpleFontUnicodeMap(data) }
+        if let data {
+            result.unicode = simpleFontUnicodeMap(data)
+        } else if kind != "TrueType" {
+            result.unicode = encodingUnicodeMap(dict)
+        }
         var first: CGPDFInteger = 0, widths: CGPDFArrayRef?
         if CGPDFDictionaryGetInteger(dict, "FirstChar", &first), first >= 0, first <= 255,
            CGPDFDictionaryGetArray(dict, "Widths", &widths), let widths, CGPDFArrayGetCount(widths) <= 256 {
@@ -358,8 +452,9 @@ enum NativeSpacingReader {
                           CGPDFDictionaryGetName(dict, "Subtype", &subtype), let subtype else { return }
                     let kind = String(cString: subtype)
                     let simple = ["Type1", "TrueType", "MMType1"].contains(kind)
-                        && CGPDFDictionaryGetStream(dict, "ToUnicode", &stream)
                         && CGPDFDictionaryGetArray(dict, "Widths", &widths)
+                        && (CGPDFDictionaryGetStream(dict, "ToUnicode", &stream)
+                            || kind != "TrueType" && NativeSpacingReader.encodingUnicodeMap(dict) != nil)
                     if kind == "Type3" || simple {
                         Unmanaged<FontPresence>.fromOpaque(info!).takeUnretainedValue().found = true
                     }
@@ -456,7 +551,19 @@ enum NativeSpacingReader {
             let s = Self.state(info)
             if !s.accept(scanner) || Self.numbers(scanner, 1) != [100] { s.invalid = true }
         }
-        for op in ["'", "\"", "gs", "BI"] {
+        // A graphics state parameter dictionary moves no text unless it selects a font; one that
+        // does, or a missing resource, is unmodeled (#110: every Wallace page sets `/OPM` by `gs`).
+        CGPDFOperatorTableSetCallback(table, "gs") { scanner, info in
+            let s = Self.state(info)
+            var name: UnsafePointer<CChar>?, dict: CGPDFDictionaryRef?, font: CGPDFObjectRef?
+            guard s.accept(scanner), CGPDFScannerPopName(scanner, &name), let name,
+                  let object = CGPDFContentStreamGetResource(CGPDFScannerGetContentStream(scanner), "ExtGState", name),
+                  CGPDFObjectGetValue(object, .dictionary, &dict), let dict,
+                  !CGPDFDictionaryGetObject(dict, "Font", &font) else {
+                s.invalid = true; return
+            }
+        }
+        for op in ["'", "\"", "BI"] {
             CGPDFOperatorTableSetCallback(table, op) { _, info in Self.state(info).invalid = true }
         }
         // An XObject is opaque: an image carries no text, and a Form's content is not scanned,

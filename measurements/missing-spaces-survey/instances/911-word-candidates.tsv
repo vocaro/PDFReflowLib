@@ -1,0 +1,100 @@
+page	line	token	pieces	class	atRunBoundary	marked
+19	3	Tuesday,	Tue + sday,	word	no	Tuesday, September 11, 2001, dawned temperate and nearly cloudless in
+19	3	September	Se + ptembe + r	word	no	Tuesday, September 11, 2001, dawned temperate and nearly cloudless in
+19	3	2001,	20 + 01,	word	no	Tuesday, September 11, 2001, dawned temperate and nearly cloudless in
+27	6	ExecutiveVice	Executive + Vice	word	no	At 9:00,American Airlines ExecutiveVice President Gerard Arpey learned
+52	10	FAA.175This	FAA.175 + This	word	yes	the FAA.¦175¦This statement was incorrect.There was no hijack to report at 9:16.
+60	24	LarryArnold	Larry + Arnold	word	no	NORAD.But we know that at 10:31,General LarryArnold instructed his staff
+89	3	chapter	chapte + r	word	no	In chapter 2, we described the growth of a new kind of terrorism, and a
+96	16	Act.29This	Act.29 + This	word	yes	1978 Congress passed the Foreign Intelligence Surveillance Act.¦29¦This law reg-
+131	37	JoWhite,	Jo + White,	word	no	of the FBI’s NewYork Field Office, in briefing Mary JoWhite, the U.S.Attor-
+138	13	network.”57The	network.”57 + The	word	yes	icans”from the “Bin Ladin network.”¦57¦The paper called for diplomacy to deny
+140	14	1997.67Though	1997.67 + Though	word	yes	been detained by the Saudi government in 1997.¦67¦Though U.S.officials repeat-
+146	21	Iraq.”110This	Iraq.”110 + This	word	yes	used by Iraq.”¦110¦This language about al Qaeda’s “understanding”with Iraq had
+152	18	Baghdad.”135Though	Baghdad.”135 + Though	word	yes	knowledge,old wily Usama will likely boogie to Baghdad.”¦135¦Though told also
+156	27	CIA.161When	CIA.161 + When	word	yes	interagency meeting and cleared with the CIA.¦161¦When the former Bin Ladin
+165	16	whileYousef	while + Yousef	word	no	During the fall of 1992, whileYousef was building the bomb he would use in
+170	24	ofYemen.27	of + Yemen.27	word	no	plying the waters along the southwest coast ofYemen.¦27
+173	45	theYemeni	the + Yemeni	word	no	was wanted by theYemeni authorities.¦44
+174	17	forYemenis.To	for + Yemenis.To	word	no	were fewer martyrdom opportunities forYemenis.To overcome this problem,
+177	29	toYemen	to + Yemen	word	no	eled toYemen instead.¦61
+186	30	fromYemen—especially	from + Yemen—especially	word	no	generalized suspicion that visa applicants fromYemen—especially young men
+192	3	chapters	chapte + r + s	word	no	In chapters 3 and 4 we described how the U.S. government adjusted its
+194	33	necessary.16Tenet	necessary.16 + Tenet	word	yes	used if necessary.¦16¦Tenet would later send a message to all CIA personnel over-
+199	15	fromYemen.43	from + Yemen.43	word	no	traveled fromYemen.¦43
+200	26	“where.”59The	“where.”59 + The	word	yes	question not of “if”but rather of “when”and “where.”¦59¦The Principals Com=
+203	11	theTreasury	the + Treasury	word	no	Emergency Economic Powers Act.This gave theTreasury Department’s Office
+211	40	inWashington	in + Washington	word	no	both Ambassador Bodine inYemen and CIA analysts inWashington presumed
+217	1	askedTenet	asked + Tenet	word	no	us he askedTenet whether the CIA could kill Bin Ladin,andTenet replied that
+219	22	theTaliban	the + Taliban	word	no	to theTaliban and Pakistan over the al Qaeda sanctuary in Afghanistan,on pos=
+220	2	BeforeVice	Before + Vice	word	no	forced into knee-jerk responses.”¦177 ¦BeforeVice President Cheney visited the
+229	4	theTaliban	the + Taliban	word	no	reconnaissance purposes.He recalled that theTaliban had spotted a Predator in
+230	12	callTenet.“Either	call + Tenet.“Either	word	no	straw.He angrily asked Rice to callTenet.“Either al Qida is a threat worth act=
+234	13	went.8They	went.8 + They	word	yes	Airport,we do not know where they went.¦8¦They appear to have obtained assis=
+238	32	toYemen	to + Yemen	word	no	charges), he was deported toYemen on May 21, 2004, after the U.S.Attorney
+239	8	inYemen	in + Yemen	word	no	thus a U.S. citizen,Aulaqi grew up inYemen and studied in the United States
+240	7	inYemen,	in + Yemen,	word	no	Mihdhar’s mind seems to have been with his family back inYemen, as evi=
+266	39	LasVegas’s	Las + Vegas’s	word	no	Beyond LasVegas’s reputation for welcoming tourists, we have seen no credi=
+270	21	delayedTal=	delayed + Tal=	word	no	But on September 9,the Massoud assassination took place.The delayedTal=
+280	30	toWashington)	to + Washington)	word	no	ident between August 31 (after the President had returned toWashington) and
+283	7	NewYork	New + York	word	no	NewYork Field Office.¦50
+284	24	inYemen	in + Yemen	word	no	One of the members of the FBI’s investigative team inYemen realized that
+284	41	suspicious.59Yet	suspicious.59 + Yet	word	yes	seem even more suspicious.¦59¦Yet we found no effort by the CIA to renew the
+290	20	General.86We	General.86 + We	word	yes	Department of Justice Inspector General.¦86¦We will recap it briefly here.In July
+293	17	InternationalTerrorism	International + Terrorism	word	no	InternationalTerrorism Operations Section (ITOS), recalled being told about
+293	28	NewYork.	New + York.	word	no	from London to NewYork. He was told that the FBI had arrested Moussaoui
+296	15	TheWTC	The + WTC	word	no	TheWTC actually consisted of seven buildings,including one hotel,spread
+298	3	theTwinTowers.The	theTwin + Towers.The	word	no	nated on a parking garage ramp beneath theTwinTowers.The explosion killed
+298	20	theWTC	the + WTC	word	no	Towers with the false impression that helicopter rescues were part of theWTC
+299	29	PortAuthority	Port + Authority	word	no	York,the NewYork Police Department,the PortAuthority Police Department
+301	26	PortAuthority	Port + Authority	word	no	to be activated by members of the PortAuthority police when the FDNY units
+302	12	NewYork.”	New + York.”	word	no	Control of Emergencies in the City of NewYork.” Its purpose was to elim=
+309	2	knewthat	knew + that	word	no	inoperable....We knewthat at the height of the day there were as many
+316	6	NorthTower	North + Tower	word	no	or receive communications—the chiefs in the NorthTower lobby decided not
+320	37	andVesey	and + Vesey	word	no	The ESU command post at Church andVesey streets coordinated all NYPD
+321	40	theWTC	the + WTC	word	no	north and east and then out of theWTC complex.This exit route ensured that
+323	28	andVesey.155	and + Vesey.155	word	no	at Church andVesey.¦155
+327	16	theWTC.Three	the + WTC.Three	word	no	Street to continue running north,well away from theWTC.Three of the most
+329	32	NewYork	New + York	word	no	themselves around the clock to putting NewYork City back on its feet.¦189
+333	12	NewYork.There	New + York.There	word	no	from the far more difficult task in NewYork.There was a single incident, and
+333	36	NewYork,	New + York,	word	no	response to the attacks on 9/11 was necessarily improvised. In NewYork, the
+341	14	lesson	le + sson	word	no	The lesson of 9/11 for civilians and first responders can be stated simply:
+343	2	After	Afte + r	word	no	After the attacks had occurred, while crisis managers were still sorting
+347	36	departed.29The	departed.29 + The	word	yes	before the flights departed.¦29¦The Federal Aviation Administration rep-
+348	12	somber.32The	somber.32 + The	word	yes	dent’s mood as somber.¦32¦The long day was not yet over.When the larger meet-
+348	15	council.”33This	council.”33 + This	word	yes	council.”¦33¦This group usually includedVice President Cheney,Secretary of State
+354	41	issued	issue + d	word	no	Having issued directives to guide his administration’s preparations for
+354	41	directives	directive + s	word	no	Having issued directives to guide his administration’s preparations for
+357	2	composing	compo + sing	word	no	In composing this narrative, we have tried to remember that we write
+363	33	thousands.”18Yet	thousands.”18 + Yet	word	yes	dreds of thousands.”¦18¦Yet the possibility was imaginable,and imagined.In early
+379	4	Three	Thre + e	word	no	Three years after 9/11, Americans are still thinking and talking about
+379	4	years	year + s	word	no	Three years after 9/11, Americans are still thinking and talking about
+379	4	after	afte + r	word	no	Three years after 9/11, Americans are still thinking and talking about
+399	18	CooperativeThreat	Cooperative + Threat	word	no	in this area, the CooperativeThreat Reduction Program (usually referred to as
+417	3	presently	pre + se + ntly	word	no	As presently configured, the national security institutions of the U.S.
+417	3	configured,	configure + d,	word	no	As presently configured, the national security institutions of the U.S.
+450	64	NewYork	New + York	word	no	rity, NewYork Field Office, 1997–2001; Chief
+457	14	NewYork	New + York	word	no	David Lim, Police Department, Port Authority of NewYork and New Jersey
+458	14	NewYork	New + York	word	no	Ken Holden, Commissioner, NewYork City Department of
+461	8	NewYork	New + York	word	no	Stephen J. Schulhofer, NewYork University, School of Law
+464	9	NewYork	New + York	word	no	Bernard B. Kerik, former Commissioner, NewYork Police Department
+464	10	ThomasVon	Thomas + Von	word	no	ThomasVon Essen, former Commissioner, Fire Department of New York
+464	11	NewYork	New + York	word	no	Richard Sheirer, former Director, NewYork City Office of
+464	13	NewYork	New + York	word	no	Raymond W. Kelly, Commissioner, NewYork Police Department
+464	14	NewYork	New + York	word	no	Nicholas Scoppetta, Commissioner, Fire Department of NewYork
+464	15	NewYork	New + York	word	no	Joseph F. Bruno, Director, NewYork City Office of Emergency Management
+464	18	NewYork	New + York	word	no	Jerome M. Hauer, former Commissioner, NewYork City Office of
+465	15	NewYork	New + York	word	no	Benedict Sliney, Operations Manager, NewYork Terminal Radar Approach
+477	41	NewYork	New + York	word	no	123. FAA audio file, NewYork Center, position R42, 8:42–8:45; FAA memo,“Full Transcript;Aircraft Acci-
+477	48	NewYork	New + York	word	no	124. FAA audio file, Herndon Command Center, NewYork Center position, line 5114, 8:48.
+479	39	NewYork	New + York	word	no	Center, NewYork Center position, line 5154.
+488	9	InconclusiveTies	Inconclusive + Ties	word	no	2003. See also DIA analytic report,“Special Analysis: Iraq’s InconclusiveTies to Al-Qaida,” July 31, 2002; CIA ana-
+499	25	JoWhite	Jo + White	word	no	26.Mike interviews (Dec.11,2003;Jan.6,2004);Jeff interview (Dec.17,2003);Mary JoWhite interview (May
+507	8	AhmedYousef,	Ahmed + Yousef,	word	no	Ramzi AhmedYousef, No. 98-1041(L) (2d Cir. filed Aug. 25, 2000), pp. 85–86, 88–91.The latter explosion caused
+521	19	ToAttack	To + Attack	word	no	“Reported Plan ToAttack U.S.Presidential Plane If HeVisits Pakistan,”Feb.18,2000;NSC email,Clarke to Berger,
+525	50	byYemen	by + Yemen	word	no	“Information provided byYemen intelligence,” Dec. 17, 2000.
+529	13	DC-CovertAction	DC-Covert + Action	word	no	ing,Friday,June 29,2001,”June 28,2001;see DOS memo,“Pakistan/Afghanistan DC-CovertAction Issue,”undated
+554	32	LarryThompson	Larry + Thompson	word	no	their views on the facts surrounding their meetings. LarryThompson interview (Jan. 29, 2004); Dale Watson inter-
+564	24	PortAuthority	Port + Authority	word	no	scripts of recorded PortAuthority calls and radio channels,Sept.11,2001,vol.II,channel X,pp.25–31;PortAuthor-
+566	24	PortAuthority	Port + Authority	word	no	119.For their commencing operations,see PortAuthority recording,WTC channel 30 (repeater channel),Sept.
+571	44	NewYork	New + York	word	no	OEM.” NewYork City memo, Office of the Mayor,“Direction and Control of Emergencies in the City of New

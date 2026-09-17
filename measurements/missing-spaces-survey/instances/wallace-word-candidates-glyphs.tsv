@@ -1,0 +1,882 @@
+page	line	token	pieces	leftFont	rightFont	fontChange	gapEm	dy	spaceGlyph	native	found
+14	11	6and	6 + and	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Reduce 21 and 28 by dividing by 7. Reduce 6and 16 by dividing by 2	yes
+14	21	8and	8 + and	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Find the LCD of 8and 12 	yes
+22	15	3and	3 + and	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Replace p with 3and q with 5	yes
+22	26	6and	6 + and	-	-	-	-	-	-	3 when x =− 6and z =− 2 Replace all x′s with 6 and z′s with 2	no
+24	33	6into	6 + into	-	-	-	-	-	-	Distribute 2 into first parenthesis and− 6into second	no
+24	41	4into	4 + into	-	-	-	-	-	-	Distribute 4into first parenthesis,− 1into second	no
+24	41	1into	1 + into	-	-	-	-	-	-	Distribute 4into first parenthesis,− 1into second	no
+25	5	6and	6 + and	-	-	-	-	-	-	6 ; use p = 6and q =5	no
+25	13	1and	1 + and	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	2 ;use m = 1and n =2	yes
+25	32	y2	y + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	2) y2 + y− z;use y =5, z =1	yes
+26	12	4k2	4k + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.033	4.20	no	57)− 4k2	yes
+26	24	4v2)	4v + 2)	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.039	4.32	no	77) (2− 4v2) +(3v2 +2v)	yes
+26	25	2k2)	2k + 2)	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.033	4.32	no	79) (4− 2k2)+ (8− 2k2)	yes
+29	6	7is	7 + is	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	The 7is added to the x	yes
+29	7	7from	7 + from	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Subtract 7from both sides to get rid of it	yes
+29	28	5is	5 + is	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	The 5is negative, or subtracted from x	yes
+29	29	5to	5 + to	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Add 5to both sides	yes
+33	28	4multiplied	4 + multiplied	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Now we focus on the 4multiplied by x	yes
+34	21	4from	4 + from	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Subtract 4from both sides	yes
+34	34	8from	8 + from	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Subtract 8from both sides	yes
+37	35	3to	3 + to	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	+3 +3 Add 3to both sides	yes
+38	23	6to	6 + to	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Add 6to both sides	yes
+39	23	2through	2 + through	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Distribute the 2through parenthesis	yes
+40	19	3through	3 + through	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Distribute 4 and 3through parenthesis	yes
+40	33	2in	2 + in	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Plug 2in for each x. Multiply inside parenthesis	yes
+41	15	3through	3 + through	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Distribute 3through parenthesis	yes
+41	28	2through	2 + through	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Distribute 2through parenthesis	yes
+44	44	6with	6 + with	-	-	-	-	-	-	6 Reduce 6with each denominator	no
+44	52	1from	1 + from	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Subtract 1from both sides	yes
+45	63	4with	4 + with	-	-	-	-	-	-	2 Reduce 4with each denominator	no
+47	5	πr2	πr + 2	-	-	-	-	-	-	for one specific variable. For example, we may have a formula such as A= πr2 +	no
+47	9	πr2	πr + 2	JJCYQV+CMMI8	QJAIEQ+CMR6	yes	0.033	2.88	no	A− πr2	yes
+51	43	4for	4 + for	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	47) 5a− 7b = 4for b	yes
+51	65	Eq	E + q	JJCYQV+CMMI8	RZZLOJ+CMMI6	yes	0.034	-1.20	no	Ea− Eq	yes
+51	70	πr2	πr + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.031	4.20	no	28) S= πrh + πr2 for h	yes
+51	89	8for	8 + for	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	48) 4x− 5y = 8for x	yes
+52	27	5from	5 + from	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Subtract 5from both sides	yes
+54	16	2from	2 + from	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Subtract 2from both sides	yes
+55	5	7from	7 + from	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Subtract 7from both sides	yes
+58	35	2and	2 + and	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	x is jointly proportional to y and z and x =48 when y = 2and z = 4	yes
+60	14	3for	3 + for	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Using constant, substitute 220 for principle and 3for time	yes
+60	46	4for	4 + for	-	-	-	-	-	-	Using the constant, use 4for r, don′t forget the squared!	no
+66	9	2to	2 + to	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Even numbers, so we add 2to get the next	yes
+66	21	6from	6 + from	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Subtract 6from both sides	yes
+68	21	9by	9 + by	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	The dimensions of the rectangle are 9by 13.	yes
+72	46	2to	2 + to	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	2to both Adam′s and Brian′s now column as shown	yes
+73	39	5in	5 + in	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Five years ago is− 5in the change column.	yes
+73	51	5from	5 + from	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Subtract 5from now column to get the change	yes
+74	20	2from	2 + from	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Subtract 2from both sides	yes
+75	7	2from	2 + from	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Subtract 2from both sides	yes
+75	51	8added	8 + added	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Now we have an 8added to the t	yes
+80	37	8miles,	8 + miles,	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	8 We have total distance, 8miles, under distance	yes
+81	7	2mph	2 + mph	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Bob walks 2mph faster than Fred	yes
+81	9	2mph	2 + mph	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Bob is r + 2, showing 2mph faster	yes
+81	38	4in	4 + in	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	To answer the question completely we plug 4in for	yes
+82	17	toboth	to + both	CDUUDX+EuropeanComputerModern-R	CDUUDX+EuropeanComputerModern-R	no	0.123	0.00	no	Add 4t toboth sides sovariableis onlyon one side	yes
+82	17	sovariableis	so + variable + is	CDUUDX+EuropeanComputerModern-R	CDUUDX+EuropeanComputerModern-R	no	0.123	0.00	no	Add 4t toboth sides sovariableis onlyon one side	yes
+82	17	sovariableis	so + variable + is	CDUUDX+EuropeanComputerModern-R	CDUUDX+EuropeanComputerModern-R	no	0.117	0.00	no	Add 4t toboth sides sovariableis onlyon one side	yes
+82	17	onlyon	only + on	CDUUDX+EuropeanComputerModern-R	CDUUDX+EuropeanComputerModern-R	no	0.115	0.00	no	Add 4t toboth sides sovariableis onlyon one side	yes
+82	47	6showing	6 + showing	-	-	-	-	-	-	Mike′s time is t + 6showing his 6hour head start	no
+82	47	6hour	6 + hour	-	-	-	-	-	-	Mike′s time is t + 6showing his 6hour head start	no
+83	1	2hours	2 + hours	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Our solution for t, she catches him after 2hours	yes
+83	58	2in	2 + in	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	To answer the question we plug 2in for t	yes
+92	21	6to	6 + to	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	+6 + 6 Add 6to both sides	yes
+98	42	1to	1 + to	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Add 1to both sides	yes
+99	26	6from	6 + from	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Subtract 6from both sides	yes
+109	20	4to	4 + to	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	+4 + 4 Add 4to both sides	yes
+109	50	2from	2 + from	-	-	-	-	-	-	5 Solve for y. Subtract 2from both sides	no
+114	5	5x	5 + x	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.147	4.80	no	5x + 4 	yes
+114	24	9from	9 + from	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Subtract 9from both sides	yes
+114	45	4to	4 + to	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Add 4to each side	yes
+119	18	2and	2 + and	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Start at 2and shade below	yes
+120	25	2from	2 + from	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Subtract 2from both sides	yes
+120	28	1to	1 + to	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Add− 1to both sides	yes
+120	29	4from	4 + from	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Subtract− 4from both sides	yes
+120	39	5from	5 + from	-	-	-	-	-	-	5− 2x 11 Subtract 5from both sides	no
+125	18	3to	3 + to	-	-	-	-	-	-	8 3x− 7 and 2x− 3 > 1 Add 7 or 3to both sides	no
+126	23	2from	2 + from	-	-	-	-	-	-	− 6− 4x +2 < 2 Subtract 2from all three parts	no
+126	29	0and	0 + and	-	-	-	-	-	-	0 < x 2 Graph x between 0and 2	no
+127	19	3or	3 + or	-	-	-	-	-	-	29) 1+5k 7k− 3or k− 10 > 2k + 10	no
+127	20	1and	1 + and	-	-	-	-	-	-	31) 2x+ 9 10x+ 1and 3x− 2 < 7x+ 2	no
+127	23	0or	0 + or	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	4) 10r > 0or r− 5<− 12	yes
+127	29	0and	0 + and	-	-	-	-	-	-	12)− 6+ v 0and 2v > 4	no
+127	36	6or	6 + or	-	-	-	-	-	-	22)− 6− 8x− 6or 2+ 10x > 82	no
+127	38	6or	6 + or	-	-	-	-	-	-	26) 4n + 8< 3n− 6or 10n− 8 9 +9n	no
+129	14	5to	5 + to	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	+ 5+5 +5 + 5 Add 5to both sides	yes
+129	29	4to	4 + to	-	-	-	-	-	-	− 4− 3|x| − 16 Add 4to both sides	no
+130	10	9from	9 + from	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Subtract 9from both sides	yes
+130	28	1from	1 + from	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Subtract 1from all three parts	yes
+139	31	3first	3 + first	-	-	-	-	-	-	Solve this equation, distributing− 3first	no
+140	32	3first	3 + first	-	-	-	-	-	-	Solve this equation, distributing 3first	no
+141	41	5from	5 + from	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Subtract 5from both sides	yes
+142	11	4from	4 + from	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Solve for the lone variable, subtract 4from both sides	yes
+147	13	6from	6 + from	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Subtract 6from both sides	yes
+147	31	6and	6 + and	-	-	-	-	-	-	We can get opposites in front of x, find LCM of 6and 9,	no
+153	15	4and	4 + and	-	-	-	-	-	-	Start with first two equations. LCM of 4and 6is 12.	no
+153	15	6is	6 + is	-	-	-	-	-	-	Start with first two equations. LCM of 4and 6is 12.	no
+153	31	8is	8 + is	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	The LCM of 6and− 8is 24.	yes
+154	2	tousesubstitution	to + use + substitution	CDUUDX+EuropeanComputerModern-R	CDUUDX+EuropeanComputerModern-R	no	0.113	0.00	no	(B) 5y + 5z =5 Thesecondequationissolvedforz tousesubstitution	yes
+154	2	tousesubstitution	to + use + substitution	CDUUDX+EuropeanComputerModern-R	CDUUDX+EuropeanComputerModern-R	no	0.107	0.00	no	(B) 5y + 5z =5 Thesecondequationissolvedforz tousesubstitution	yes
+155	19	3is	3 + is	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	The LCM of 1 and− 3is 3	yes
+159	62	5from	5 + from	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Subtract 5from both sides	yes
+160	0	5quarters	5 + quarters	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	5quarters and 6dimes Our Solution	yes
+160	0	6dimes	6 + dimes	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	5quarters and 6dimes Our Solution	yes
+161	59	3times	3 + times	CXWKAE+CMBX12	RULTEX+EuropeanComputerModern-B	yes	0.130	0.00	no	3times as many 8cent stamples as 5cent stamps	yes
+161	59	8cent	8 + cent	CXWKAE+CMBX12	RULTEX+EuropeanComputerModern-B	yes	0.120	0.00	no	3times as many 8cent stamples as 5cent stamps	yes
+161	59	5cent	5 + cent	CXWKAE+CMBX12	RULTEX+EuropeanComputerModern-B	yes	0.130	0.00	no	3times as many 8cent stamples as 5cent stamps	yes
+171	37	1in	1 + in	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	is pure, 100% or 1in our table, written as a	yes
+177	28	5xy2z3	5xy + 2z + 3	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.045	4.32	no	2x3y5z· 5xy2z3 	yes
+177	28	5xy2z3	5xy + 2z + 3	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.047	4.32	no	2x3y5z· 5xy2z3 	yes
+179	42	(x3yz2)4	(x3 + yz + 2)4	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.086	-4.32	no	(x3yz2)4 	yes
+179	42	(x3yz2)4	(x3 + yz + 2)4	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.047	4.32	no	(x3yz2)4 	yes
+179	43	x12y4z8	x12y + 4z + 8	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.045	4.32	no	x12y4z8 Our solution	yes
+179	43	x12y4z8	x12y + 4z + 8	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.047	4.32	no	x12y4z8 Our solution	yes
+179	44	4on	4 + on	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Put the exponent of 4on each factor, multiplying powers	yes
+180	0	2on	2 + on	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Put the exponent of 2on each factor, multiplying powers	yes
+180	12	(4x2y5)3	(4x2 + y + 5)3	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.071	-4.32	no	(4x2y5)3 	yes
+180	12	(4x2y5)3	(4x2 + y + 5)3	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.045	4.32	no	(4x2y5)3 	yes
+180	13	3on	3 + on	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Put the exponent of 3on each factor, multiplying powers	yes
+180	14	43x6y15	43x6 + y + 15	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.086	-4.32	no	43x6y15 Evaluate 43	yes
+180	14	43x6y15	43x6 + y + 15	MXANZU+CMMI12	NATYDJ+EuropeanComputerModern-R	yes	0.035	4.32	no	43x6y15 Evaluate 43	yes
+180	15	64x6y15	64x6 + y + 15	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.086	-4.32	no	64x6y15 Our Solution	yes
+180	15	64x6y15	64x6 + y + 15	MXANZU+CMMI12	NATYDJ+EuropeanComputerModern-R	yes	0.035	4.32	no	64x6y15 Our Solution	yes
+180	29	5x4y2)3	5x4 + y + 2)3	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.086	-4.32	no	(4x3y· 5x4y2)3 	yes
+180	29	5x4y2)3	5x4 + y + 2)3	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	(4x3y· 5x4y2)3 	yes
+180	31	(20x7y3)3	(20x7 + y + 3)3	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.086	-4.32	no	(20x7y3)3 	yes
+180	31	(20x7y3)3	(20x7 + y + 3)3	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	(20x7y3)3 	yes
+180	33	203x21y9	203x21y + 9	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	203x21y9 Evaluate 203	yes
+180	34	8000x21y9	8000x21y + 9	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	8000x21y9 Our Solution	yes
+182	10	(2u3v2)2	(2u3v + 2)2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.039	4.32	no	13) (2u3v2)2	yes
+182	18	4x3y4	4x3 + y + 4	-	-	-	-	-	-	23) 4x3y4	no
+182	20	(x3y4	(x3 + y + 4	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.086	-4.32	no	25) (x3y4	yes
+182	20	(x3y4	(x3 + y + 4	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	25) (x3y4	yes
+182	21	2x2y3)2	2x2 + y + 3)2	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.086	-4.32	no	· 2x2y3)2	yes
+182	21	2x2y3)2	2x2 + y + 3)2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	· 2x2y3)2	yes
+182	22	2x(x4y4)4	2x(x4 + y + 4)4	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.071	-4.32	no	27) 2x(x4y4)4	yes
+182	22	2x(x4y4)4	2x(x4 + y + 4)4	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.045	4.32	no	27) 2x(x4y4)4	yes
+182	23	7y5	7 + y + 5	-	-	-	-	-	-	29) 2x 7y5	no
+182	24	4x2y3	4x2 + y3	QJAIEQ+CMR6	JJCYQV+CMMI8	yes	0.072	-2.28	no	3x3y· 4x2y3	yes
+182	28	2y17	2y + 17	-	-	-	-	-	-	33) 2y17	no
+182	29	(2x2y4)4	(2x2 + y + 4)4	QJAIEQ+CMR6	JJCYQV+CMMI8	yes	0.051	-2.28	no	(2x2y4)4	yes
+182	29	(2x2y4)4	(2x2 + y + 4)4	JJCYQV+CMMI8	QJAIEQ+CMR6	yes	0.047	2.28	no	(2x2y4)4	yes
+182	35	2xy5	2xy + 5	-	-	-	-	-	-	37) 2xy5	no
+182	36	2x2y3	2x2 + y + 3	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.086	-4.32	no	· 2x2y3	yes
+182	36	2x2y3	2x2 + y + 3	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	· 2x2y3	yes
+182	37	2xy4	2xy + 4	JJCYQV+CMMI8	QJAIEQ+CMR6	yes	0.032	2.28	no	2xy4 · y3	yes
+182	38	q3r2	q + 3r + 2	-	-	-	-	-	-	39) q3r2	no
+182	41	zy3	zy + 3	-	-	-	-	-	-	41) zy3	no
+182	42	z3	z + 3	-	-	-	-	-	-	· z3 x4y4	no
+182	42	x4y4	x4 + y + 4	-	-	-	-	-	-	· z3 x4y4	no
+182	46	2zx2y2	2zx2 + y + 2	QJAIEQ+CMR6	JJCYQV+CMMI8	yes	0.072	-2.88	no	· 2zx2y2	yes
+182	46	2zx2y2	2zx2 + y + 2	JJCYQV+CMMI8	QJAIEQ+CMR6	yes	0.047	2.88	no	· 2zx2y2	yes
+182	47	(x2z3)2	(x2z + 3)2	JJCYQV+CMMI8	QJAIEQ+CMR6	yes	0.048	2.28	no	(x2z3)2	yes
+182	54	xy2	xy + 2	-	-	-	-	-	-	· xy2	no
+182	65	xy3	xy + 3	-	-	-	-	-	-	24) xy3	no
+182	67	(u2v2	(u2v + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.039	4.32	no	26) (u2v2	yes
+182	77	(y4)2	(y + 4)2	JJCYQV+CMMI8	QJAIEQ+CMR6	yes	0.047	2.88	no	· (y4)2	yes
+182	78	2y4	2y + 4	JJCYQV+CMMI8	QJAIEQ+CMR6	yes	0.047	2.88	no	2y4	yes
+182	82	2x2y4	2x2 + y4	QJAIEQ+CMR6	JJCYQV+CMMI8	yes	0.072	-2.28	no	2x2y4 · x2	yes
+182	83	2x4y5	2x4 + y + 5	-	-	-	-	-	-	40) 2x4y5	no
+182	84	2z10	2z + 10	JJCYQV+CMMI8	NATYDJ+EuropeanComputerModern-R	yes	0.048	2.88	no	· 2z10 x2y7	yes
+182	84	x2y7	x2 + y + 7	QJAIEQ+CMR6	JJCYQV+CMMI8	yes	0.072	-2.88	no	· 2z10 x2y7	yes
+182	84	x2y7	x2 + y + 7	JJCYQV+CMMI8	QJAIEQ+CMR6	yes	0.032	2.88	no	· 2z10 x2y7	yes
+182	85	(xy2z2)4	(xy + 2z + 2)4	JJCYQV+CMMI8	QJAIEQ+CMR6	yes	0.047	2.40	no	(xy2z2)4	yes
+182	85	(xy2z2)4	(xy + 2z + 2)4	JJCYQV+CMMI8	QJAIEQ+CMR6	yes	0.048	2.40	no	(xy2z2)4	yes
+182	86	2q3	2q + 3	-	-	-	-	-	-	42) 2q3 p3r4	no
+182	86	p3r4	p3r + 4	-	-	-	-	-	-	42) 2q3 p3r4	no
+184	47	e−4f2	e−4 + f + 2	-	-	-	-	-	-	2d−1 e−4f2 	no
+184	49	2b2f2	2b2 + f + 2	-	-	-	-	-	-	2b2f2 Our Solution	no
+185	41	6x−5y3	6x−5 + y + 3	-	-	-	-	-	-	6x−5y3 	no
+185	43	6x−5y3	6x−5 + y + 3	-	-	-	-	-	-	6x−5y3 	no
+186	13	3and	3 + and	-	-	-	-	-	-	2 Move 3and b to denominator because of negative exponents	no
+186	31	9x−6y6	9x−6 + y + 6	-	-	-	-	-	-	9x−6y6	no
+186	38	2with	2 + with	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Move 2with negative exponent down and z0 =1	yes
+186	38	z0	z + 0	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.047	4.32	no	Move 2with negative exponent down and z0 =1	yes
+186	41	x6y9	x6 + y + 9	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.086	-4.32	no	x6y9	yes
+186	41	x6y9	x6 + y + 9	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	x6y9	yes
+186	43	x6y9	x6 + y + 9	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.086	-4.32	no	x6y9	yes
+186	43	x6y9	x6 + y + 9	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	x6y9	yes
+187	4	(2xy3)4	(2xy + 3)4	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.045	4.32	no	· (2xy3)4	yes
+187	6	(2x2y2)4x−4	(2x2 + y + 2)4x−4	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.086	-4.32	no	5) (2x2y2)4x−4	yes
+187	6	(2x2y2)4x−4	(2x2 + y + 2)4x−4	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	5) (2x2y2)4x−4	yes
+187	7	(x3y4)3	(x3 + y + 4)3	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.071	-4.32	no	7) (x3y4)3	yes
+187	7	(x3y4)3	(x3 + y + 4)3	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	7) (x3y4)3	yes
+187	8	x−4y4	x−4 + y + 4	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.071	-4.32	no	· x−4y4	yes
+187	8	x−4y4	x−4 + y + 4	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	· x−4y4	yes
+187	10	3y3	3y + 3	-	-	-	-	-	-	3x 3y3 · 3x0	no
+187	19	(x0y2)4	(x0 + y2)4	QJAIEQ+CMR6	JJCYQV+CMMI8	yes	0.072	-2.28	no	(x0y2)4	yes
+187	26	y3	y + 3	-	-	-	-	-	-	25) y3	no
+187	28	(x4y2)3	(x4 + y + 2)3	QJAIEQ+CMR6	JJCYQV+CMMI8	yes	0.071	-2.28	no	(x4y2)3	yes
+187	28	(x4y2)3	(x4 + y + 2)3	JJCYQV+CMMI8	QJAIEQ+CMR6	yes	0.032	2.28	no	(x4y2)3	yes
+187	35	y(2x4y2)2	y(2x4 + y + 2)2	-	-	-	-	-	-	31) y(2x4y2)2	no
+187	36	2x4y0	2x4 + y + 0	QJAIEQ+CMR6	JJCYQV+CMMI8	yes	0.051	-2.28	no	2x4y0	yes
+187	36	2x4y0	2x4 + y + 0	JJCYQV+CMMI8	QJAIEQ+CMR6	yes	0.047	2.28	no	2x4y0	yes
+187	38	2x4y4z	2x4 + y4z	-	-	-	-	-	-	2x4y4z 2	no
+187	39	(zy2)4	(zy + 2)4	JJCYQV+CMMI8	QJAIEQ+CMR6	yes	0.047	2.40	no	· (zy2)4	yes
+187	42	(2kj3)2	(2kj + 3)2	JJCYQV+CMMI8	QJAIEQ+CMR6	yes	0.052	2.28	no	(2kj3)2	yes
+187	47	z3	z + 3	-	-	-	-	-	-	z3 · x2y3z 1	no
+187	47	x2y3z	x2 + y3z	-	-	-	-	-	-	z3 · x2y3z 1	no
+187	50	2x3y2	2x3 + y + 2	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.086	-4.20	no	4) 2x3y2	yes
+187	50	2x3y2	2x3 + y + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.20	no	4) 2x3y2	yes
+187	56	3y3	3y + 3	-	-	-	-	-	-	10) 3y3	no
+187	57	2x4y	2x4 + y	-	-	-	-	-	-	3yx3 · 2x4y 3	no
+187	58	3x3y2	3x3 + y + 2	-	-	-	-	-	-	12) 3x3y2	no
+187	61	2xy2	2xy + 2	-	-	-	-	-	-	14) 2xy2	no
+187	62	4x3y	4x3 + y	-	-	-	-	-	-	· 4x3y 4	no
+187	65	2y2	2y + 2	-	-	-	-	-	-	16) 2x 2y2	no
+187	71	2y2	2y + 2	-	-	-	-	-	-	22) 2y2	no
+187	74	(x4y	(x4 + y	-	-	-	-	-	-	(x4y 3) 1	no
+187	76	2xy4	2xy + 4	-	-	-	-	-	-	· 2xy4	no
+187	91	2q4	2q + 4	-	-	-	-	-	-	38) 2q4	no
+189	3	5places	5 + places	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	big number. Move decimal right 5places	yes
+189	8	3places	3 + places	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.132	0.00	no	is a small number. Move decimal left 3places	yes
+194	24	5when	5 + when	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	m4 + 8m3 + 14m2 +13m + 5when m =− 6	yes
+194	32	(3v4	(3v + 4	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.039	4.68	no	16) (3v4 + 1)+ (5− v4)	yes
+194	32	v4)	v + 4)	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.039	4.32	no	16) (3v4 + 1)+ (5− v4)	yes
+195	1	(6r2	(6r + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.031	4.32	no	22) (1+ 6r2)+ (6r2	yes
+195	28	(8r4	(8r + 4	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.031	4.32	no	35) (8r4	yes
+195	29	5r3	5r + 3	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.031	4.32	no	− 5r3 +5r2)+ (2r2 + 2r3	yes
+195	30	7r4	7r + 4	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.031	4.32	no	− 7r4 +1)	yes
+197	8	14y2	14y + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.045	4.32	no	12x2 + 21xy− 8xy− 14y2 	yes
+197	10	14y2	14y + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.045	4.32	no	12x2 +13xy− 14y2 Our Solution	yes
+197	49	14y2	14y + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.045	4.32	no	(7y)(− 2y)=− 14y2 	yes
+197	51	14y2	14y + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.045	4.32	no	− 8xy +21xy− 14y2 	yes
+197	53	14y2	14y + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.045	4.32	no	12x2 +13xy− 14y2 Our Solution	yes
+198	19	14y2	14y + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	− 8xy + 21xy− 14y2 and	yes
+198	26	7by	7 + by	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	245 Multiply 7by 5then 3	yes
+198	26	5then	5 + then	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	245 Multiply 7by 5then 3	yes
+198	29	2by	2 + by	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Use 0 for placeholder, multiply 2by 5then 3	yes
+198	29	5then	5 + then	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Use 0 for placeholder, multiply 2by 5then 3	yes
+198	40	14y2	14y + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.045	4.32	no	− 8xy− 14y2 	yes
+198	42	14y2	14y + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.045	4.32	no	12x2 +13xy− 14y2 	yes
+199	13	5by	5 + by	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Multiply− 5by each term	yes
+199	28	5y2	5y + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	− 4xy− 10xy− 5y2 8x2	yes
+199	31	5y2	5y + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	− 14xy− 5y2 8x2	yes
+199	36	5y2	5y + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.045	4.32	no	− 10xy + 5y2	yes
+199	39	5y2	5y + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	− 14xy + 5y2	yes
+200	13	7)(6r2	7)(6r + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.031	4.32	no	23) (r− 7)(6r2	yes
+200	18	4y2)	4y + 2)	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	− 7xy + 4y2)	yes
+200	21	(5k2	(5k + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.033	4.32	no	31) (5k2 +3k +3)(3k2 + 3k + 6)	yes
+200	42	6v2)(6u2	6v + 2)(6u2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.039	4.32	no	32) (7u2 + 8uv− 6v2)(6u2 +4uv + 3v2)	yes
+200	42	3v2)	3v + 2)	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.039	4.32	no	32) (7u2 + 8uv− 6v2)(6u2 +4uv + 3v2)	yes
+202	9	36y2	36y + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	− 36y2 	yes
+206	31	1573	157 + 3	-	-	-	-	-	-	1573	no
+210	31	4r2	4r + 2	-	-	-	-	-	-	21) 4r2	no
+210	58	r2	r + 2	JJCYQV+CMMI8	QJAIEQ+CMR6	yes	0.033	2.88	no	− r2	yes
+210	64	4v3	4v + 3	-	-	-	-	-	-	43) 4v3	no
+210	65	21v2	21v + 2	JJCYQV+CMMI8	QJAIEQ+CMR6	yes	0.040	2.88	no	− 21v2 + 6v + 19	yes
+210	69	3k3	3k + 3	JJCYQV+CMMI8	QJAIEQ+CMR6	yes	0.034	2.88	no	3k3 + 4k2 + 2k	yes
+210	100	3v2	3v + 2	-	-	-	-	-	-	26) 3v2	no
+210	104	8k3	8k + 3	-	-	-	-	-	-	30) 8k3	no
+210	126	66k2	66k + 2	JJCYQV+CMMI8	QJAIEQ+CMR6	yes	0.034	2.88	no	− 66k2 + 12k + 37	yes
+213	3	24x4y2z,	24x4 + y + 2z,	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.071	-4.32	no	GCF of 24x4y2z, 18x2y4	yes
+213	3	24x4y2z,	24x4 + y + 2z,	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.045	4.32	no	GCF of 24x4y2z, 18x2y4	yes
+213	4	12x3yz5	12x3 + yz + 5	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.071	-4.32	no	, and 12x3yz5	yes
+213	4	12x3yz5	12x3 + yz + 5	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.047	4.32	no	, and 12x3yz5	yes
+213	12	x2y	x2 + y	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.071	-4.32	no	x2y 	yes
+213	14	6x2y	6x2 + y	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.071	-4.32	no	GCF = 6x2y Our Solution	yes
+213	56	3x3y2z	3x3 + y + 2z	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.071	-4.20	no	3x3y2z + 5x4y3z5	yes
+213	56	3x3y2z	3x3 + y + 2z	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.045	4.20	no	3x3y2z + 5x4y3z5	yes
+213	57	4xy4	4xy + 4	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.20	no	− 4xy4 GCF is xy2	yes
+214	0	3x3y2z	3x3 + y2z	FKJCVH+CMR7	RKECRD+CMMI10	yes	0.085	-3.60	no	3x3y2z	yes
+214	1	xy2	xy + 2	-	-	-	-	-	-	xy2 =3x2z,	no
+214	2	4xy4	4xy + 4	RKECRD+CMMI10	FKJCVH+CMR7	yes	0.040	3.60	no	− 4xy4	yes
+214	4	xy2	xy + 2	-	-	-	-	-	-	xy2 = 5x3yz5	no
+214	4	5x3yz5	5x3 + yz + 5	-	-	-	-	-	-	xy2 = 5x3yz5	no
+214	6	xy2	xy + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	xy2	yes
+214	7	xy2(3x2z	xy + 2(3x2z	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	xy2(3x2z +5x3yz5	yes
+214	8	4y2	4y + 2	RKECRD+CMMI10	FKJCVH+CMR7	yes	0.040	3.60	no	=− 4y2 	yes
+214	10	4y2)	4y + 2)	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	− 4y2) Our Solution	yes
+214	38	12x5y2	12x5 + y + 2	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.071	-4.32	no	12x5y2	yes
+214	38	12x5y2	12x5 + y + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	12x5y2	yes
+214	39	2x3y2(6x2	2x3 + y + 2(6x2	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.071	-4.32	no	2x3y2(6x2	yes
+214	39	2x3y2(6x2	2x3 + y + 2(6x2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	2x3y2(6x2	yes
+214	40	6x4y4	6x4 + y + 4	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.071	-4.32	no	− 6x4y4 +8x3y5 	yes
+214	40	6x4y4	6x4 + y + 4	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	− 6x4y4 +8x3y5 	yes
+214	43	3xy2	3xy + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	− 3xy2 +4y3) Our Solution	yes
+215	17	35x3y3z	35x3 + y + 3z	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.071	-4.32	no	21) 20x8y2z2 +15x5y2z + 35x3y3z	yes
+215	17	35x3y3z	35x3 + y + 3z	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.045	4.32	no	21) 20x8y2z2 +15x5y2z + 35x3y3z	yes
+215	18	50x2y	50x2 + y	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.086	-4.32	no	23) 50x2y + 10y2 + 70xz2	yes
+215	18	10y2	10y + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.045	4.32	no	23) 50x2y + 10y2 + 70xz2	yes
+215	18	70xz2	70xz + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.047	4.32	no	23) 50x2y + 10y2 + 70xz2	yes
+215	25	27x2y5	27x2 + y + 5	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.086	-4.32	no	8) 27x2y5	yes
+215	25	27x2y5	27x2 + y + 5	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	8) 27x2y5	yes
+215	26	72x3y2	72x3 + y + 2	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.086	-4.32	no	− 72x3y2	yes
+215	26	72x3y2	72x3 + y + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	− 72x3y2	yes
+215	27	8x3y2	8x3 + y + 2	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.086	-4.32	no	10) 8x3y2 +4x3	yes
+215	27	8x3y2	8x3 + y + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	10) 8x3y2 +4x3	yes
+215	31	27y7	27y + 7	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.045	4.20	no	18) 27y7 +12y2x + 9y2	yes
+215	31	9y2	9y + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.20	no	18) 27y7 +12y2x + 9y2	yes
+215	34	15q2r2	15q + 2r + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.038	4.32	no	22) 3p +12q− 15q2r2	yes
+215	34	15q2r2	15q + 2r + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.031	4.32	no	22) 3p +12q− 15q2r2	yes
+215	35	30y4z3x5	30y + 4z + 3x5	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.045	4.32	no	24) 30y4z3x5 +50y4z5	yes
+215	35	30y4z3x5	30y + 4z + 3x5	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.047	4.32	no	24) 30y4z3x5 +50y4z5	yes
+215	36	10y4z3x	10y + 4z + 3x	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.045	4.32	no	− 10y4z3x	yes
+215	36	10y4z3x	10y + 4z + 3x	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.047	4.32	no	− 10y4z3x	yes
+215	44	10y7	10y + 7	-	-	-	-	-	-	32)− 10y7 +6y10	no
+215	45	8y8x	8y + 8x	-	-	-	-	-	-	− 4y10x− 8y8x	no
+216	4	5xy	5x + y	MXANZU+CMMI12	MXANZU+CMMI12	no	0.106	0.00	no	GCF is often a monomial like in the problem 5xy + 10xz the GCF is the mono-	yes
+219	9	7and	7 + and	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	y + 7and 7+ y are the same, use either one	yes
+219	32	5in	5 + in	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Need to switch subtraction order, use− 5in middle	yes
+219	33	3match	3 + match	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Now 2x− 3match on both! Factor out this GCF	yes
+220	2	40r3	40r + 3	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.031	4.32	no	1) 40r3	yes
+220	3	8r2	8r + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.031	4.32	no	− 8r2	yes
+220	18	28y2x	28y + 2x	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.20	no	− 28y2x	yes
+220	19	8y2	8y + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.045	4.32	no	19) 40xy + 35x− 8y2	yes
+220	29	14v3	14v + 3	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.039	4.32	no	4) 14v3 + 10v2	yes
+220	29	10v2	10v + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.039	4.32	no	4) 14v3 + 10v2	yes
+220	37	49r2	49r + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.031	4.32	no	− 49r2 +18r− 21	yes
+220	44	25y2	25y + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.045	4.32	no	24) 24xy + 25y2	yes
+220	45	30y3	30y + 3	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.045	4.32	no	− 20x− 30y3	yes
+222	9	6and	6 + and	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	6and 3, split the middle term	yes
+223	36	9and	9 + and	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	− 9and 2, write the factors	yes
+224	14	6and	6 + and	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	1· 6and 2· 3 	yes
+225	16	15v2	15v + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.039	4.32	no	− 8uv + 15v2	yes
+225	20	12y2	12y + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	23) x2 + xy− 12y2	yes
+225	21	12y2	12y + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	25) x2 + 4xy− 12y2	yes
+225	41	14v2	14v + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.039	4.32	no	− 9uv + 14v2	yes
+225	46	5v2	5v + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.039	4.32	no	30) 5v2 + 20v− 25	yes
+226	25	9and	9 + and	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	The numbers are 9and 2, split the middle term	yes
+227	13	5y2	5y + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	− xy− 5y2 	yes
+227	14	5y2	5y + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	4x2 +4xy− 5xy− 5y2 	yes
+228	12	5k2	5k + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.033	4.32	no	13) 5k2 +13k +6	yes
+228	16	49y2	49y + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	19) 5x2 + 28xy− 49y2	yes
+228	19	21k2	21k + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.033	4.32	no	23) 21k2	yes
+228	24	4k2	4k + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.033	4.32	no	29) 4k2	yes
+228	32	8y2	8y + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	− 52xy + 8y2	yes
+228	35	7v2	7v + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.039	4.20	no	4) 7v2	yes
+228	39	3r2	3r + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.031	4.32	no	8) 3r2	yes
+228	42	5k2	5k + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.033	4.32	no	12) 5k2	yes
+228	44	3r2	3r + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.031	4.32	no	14) 3r2 + 16r +21	yes
+228	45	10v2	10v + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.039	4.20	no	16) 3u2 + 13uv− 10v2	yes
+228	47	5y2	5y + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	− 2xy− 5y2	yes
+228	48	28v2	28v + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.039	4.32	no	20) 5u2 + 31uv− 28v2	yes
+228	52	4r2	4r + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.031	4.32	no	26) 4r2 + r− 3	yes
+228	54	4r2	4r + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.031	4.32	no	30) 4r2 + 3r− 7	yes
+228	59	36v2	36v + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.039	4.32	no	− 3uv− 36v2	yes
+231	1	25y2	25y + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	4x2 + 20xy + 25y2 	yes
+231	5	Usesquareroots	Use + square + roots	-	-	-	-	-	-	Usesquareroots fromfirstandlastterms andsignfromthemiddle	no
+231	34	4r2)	4r + 2)	-	-	-	-	-	-	(5p 2r)(25p2 10r 4r2) Use formula, use SOAP to fill in signs	no
+232	34	4and	4 + and	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	The numbers are 4and 4, the same! Perfect Square	yes
+233	2	r2	r + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.031	4.32	no	1) r2	yes
+233	4	v2	v + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.039	4.32	no	3) v2	yes
+233	8	9k2	9k + 2	-	-	-	-	-	-	7) 9k2	no
+233	38	z4	z + 4	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.047	4.32	no	43) 16− z4	yes
+233	40	y4	y + 4	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.20	no	− y4	yes
+233	47	4v2	4v + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.039	4.32	no	6) 4v2	yes
+233	55	k2	k + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.033	4.32	no	16) k2 +4k +4	yes
+233	58	k2	k + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.033	4.32	no	20) k2	yes
+234	27	196y2	196y + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.045	4.32	no	4x2 + 56xy + 196y2 	yes
+234	28	49y2)	49y + 2)	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.045	4.32	no	4(x2 + 14xy + 49y2) 	yes
+234	31	7and	7 + and	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	7and 7, perfect square!	yes
+235	2	2y	2 + y	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.071	-4.32	no	5x 2y +15xy− 35x2	yes
+235	17	108x3y2	108x3 + y + 2	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.071	-4.32	no	108x3y2	yes
+235	17	108x3y2	108x3 + y + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.045	4.32	no	108x3y2	yes
+235	18	39x2y2	39x2 + y + 2	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.071	-4.32	no	− 39x2y2 + 3xy2 	yes
+235	18	39x2y2	39x2 + y + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.045	4.32	no	− 39x2y2 + 3xy2 	yes
+235	18	3xy2	3xy + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.045	4.32	no	− 39x2y2 + 3xy2 	yes
+235	19	3xy2	3xy + 2	-	-	-	-	-	-	GCF first, 3xy2	no
+235	20	3xy2(36x2	3xy + 2(36x2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.20	no	3xy2(36x2	yes
+235	23	3xy2(36x2	3xy + 2(36x2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.20	no	3xy2(36x2	yes
+236	4	4v2	4v + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.039	4.32	no	− 9uv + 4v2	yes
+236	15	25y2	25y + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	− 25y2	yes
+236	20	20y2x	20y + 2x	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	23) 2x3 + 6x2y− 20y2x	yes
+236	25	3k3	3k + 3	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.033	4.20	no	31) 3k3	yes
+236	26	27k2	27k + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.033	4.20	no	− 27k2 +60k	yes
+236	29	y2	y + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	− 8xy + y2	yes
+236	32	60y2x	60y + 2x	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.20	no	39) 9x3 + 21x2y− 60y2x	yes
+236	39	5x2y	5x2 + y	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.071	-4.32	no	8) 2x3 + 5x2y + 3y2x	yes
+236	39	3y2x	3y + 2x	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.045	4.32	no	8) 2x3 + 5x2y + 3y2x	yes
+236	44	125v2	125v + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.039	4.32	no	− 150uv + 125v2	yes
+236	46	27y3	27y + 3	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	− 27y3	yes
+236	59	18y2	18y + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	− 18y2	yes
+236	60	2k2	2k + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.033	4.20	no	34) 2k2 +k− 10	yes
+236	61	v2	v + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.039	4.32	no	36) v2 + v	yes
+236	65	2u2v2	2u2v + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.039	4.32	no	42) 2u2v2	yes
+236	66	11uv3	11uv + 3	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.039	4.32	no	− 11uv3 +15v4	yes
+237	32	3and	3 + and	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	The numbers are− 3and 4, split the middle term	yes
+241	18	7r2	7r + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.031	4.32	no	21) 7r2 + 84=− 49r	yes
+241	21	3v2	3v + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.039	4.32	no	25) 3v2 + 7v =40	yes
+241	23	4k2	4k + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.033	4.32	no	29) 4k2 +18k− 23 = 6k− 7	yes
+241	37	v2	v + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.039	4.32	no	14) v2	yes
+241	41	7k2	7k + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.033	4.32	no	18) 7k2 +57k +13 = 5	yes
+243	25	5from	5 + from	-	-	-	-	-	-	x 0 or 3x +5 0 Subtract 5from second equation	no
+244	9	5in	5 + in	-	-	-	-	-	-	x2 + 6x +8 when x =− 6 Substitute− 5in for each variable	no
+244	29	15x4y2	15x4 + y + 2	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.071	-4.32	no	15x4y2	yes
+244	29	15x4y2	15x4 + y + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.045	4.32	no	15x4y2	yes
+244	30	25x2y6	25x2 + y + 6	-	-	-	-	-	-	25x2y6 	no
+244	32	5y4	5y + 4	-	-	-	-	-	-	5y4 Our Solution	no
+245	12	8by	8 + by	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Reduce by dividing 24 and 8by 4	yes
+245	23	3and	3 + and	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Divide out common factor (3x− 1) and divide 3and 6by 3	yes
+245	23	6by	6 + by	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Divide out common factor (3x− 1) and divide 3and 6by 3	yes
+246	10	3k2	3k + 2	-	-	-	-	-	-	7) 3k2 + 30k	no
+247	24	2k2	2k + 2	JJCYQV+CMMI8	QJAIEQ+CMR6	yes	0.034	2.88	no	− 2k2	yes
+249	5	24y4	24y + 4	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.045	4.32	no	24y4	yes
+249	6	(3and	(3 + and	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Reduce coeﬃcients by dividing out common factors (3and 5)	yes
+249	12	33x5y4	33x5 + y + 4	-	-	-	-	-	-	33x5y4 Our Solution	no
+251	79	7r2	7r + 2	-	-	-	-	-	-	39) 7r2	no
+251	149	7k2	7k + 2	JJCYQV+CMMI8	QJAIEQ+CMR6	yes	0.034	2.88	no	7k2	yes
+253	8	8and	8 + and	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Find the LCD of 8and 6 	yes
+253	11	8that	8 + that	-	-	-	-	-	-	24 is the first multiple of 8that is also divisible by 6	no
+253	16	4x2y5	4x2 + y + 5	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.086	-4.32	no	Find the LCD of 4x2y5 and 6x4y3z6	yes
+253	16	4x2y5	4x2 + y + 5	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	Find the LCD of 4x2y5 and 6x4y3z6	yes
+253	17	4and	4 + and	-	-	-	-	-	-	First find the LCD of coeﬃcients 4and 6	no
+256	83	5x2y,	5x2 + y,	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.086	-4.20	no	12) 5x2y, 25x3y5z	yes
+256	83	25x3y5z	25x3 + y + 5z	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.071	-4.20	no	12) 5x2y, 25x3y5z	yes
+256	83	25x3y5z	25x3 + y + 5z	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.20	no	12) 5x2y, 25x3y5z	yes
+258	35	6by	6 + by	-	-	-	-	-	-	4 The LCD is 12. Build up, multiply 6by 2and 4 by 3	no
+258	35	2and	2 + and	-	-	-	-	-	-	4 The LCD is 12. Build up, multiply 6by 2and 4 by 3	no
+260	60	4factor	4 + factor	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Divide out x− 4factor	yes
+261	37	2x2y	2x2 + y	QJAIEQ+CMR6	JJCYQV+CMMI8	yes	0.072	-2.28	no	2x2y	yes
+261	110	x2y	x2 + y	QJAIEQ+CMR6	JJCYQV+CMMI8	yes	0.072	-2.28	no	x2y	yes
+261	195	4z2	4z + 2	JJCYQV+CMMI8	QJAIEQ+CMR6	yes	0.048	2.28	no	4z2	yes
+265	24	2in	2 + in	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Factor out 2in denominator	yes
+265	46	4(m2)	4(m + 2)	-	-	-	-	-	-	m(m2)+ 4(m2)	no
+267	43	a2	a + 2	JJCYQV+CMMI8	CDUUDX+EuropeanComputerModern-R	yes	18.226	-4.80	no	a2	yes
+267	56	a2	a + 2	JJCYQV+CMMI8	CDUUDX+EuropeanComputerModern-R	yes	18.226	-4.80	no	a2	yes
+267	80	x−2y	x−2 + y	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.071	-4.32	no	x−2y +xy−2	yes
+270	12	8from	8 + from	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Subtract 8from both sides	yes
+270	33	k2	k + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.033	4.32	no	k2 +k− 6= 24 	yes
+270	37	k2	k + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.033	4.32	no	k2 +k− 30 =0 Factor	yes
+271	3	8feet,	8 + feet,	-	-	-	-	-	-	The flagpole has a shadow of 8feet, but we don′t know the height	no
+271	23	9points	9 + points	-	-	-	-	-	-	Don′t know visitor score, but home is 9points less	no
+271	26	6for	6 + for	-	-	-	-	-	-	7 Home team scored 6for every 7 the visitor scored	no
+274	10	3x−	3 + x−	-	-	-	-	-	-	3x−	no
+276	7	6from	6 + from	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Subtract 6from both sides	yes
+276	15	3in	3 + in	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Check− 3in (x + 1)(x +2), it works	yes
+276	17	1in	1 + in	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Check 1in (x + 1)(x +2), it works	yes
+276	58	5in	5 + in	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Check 5in (x− 1)(x− 2), it works	yes
+276	60	2in	2 + in	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Check− 2in (x− 1)(x− 2), it works	yes
+280	42	1lbs	1 + lbs	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	1lbs	yes
+281	2	1lbs	1 + lbs	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	1lbs	yes
+281	39	1ft	1 + ft	-	-	-	-	-	-	factor would be squared, 1ft	no
+281	45	8cubic	8 + cubic	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Convert 8cubic feet to yd3 Write 8ft3 as fraction, put it over 1	yes
+283	24	1tab	1 + tab	-	-	-	-	-	-	1tab Convert tab to mg, put tab in denominator	no
+283	30	1tab	1 + tab	CXAFAS+CMR10	KZVVQK+EuropeanComputerModern-R	yes	0.168	0.00	no	1tab	yes
+283	31	1dose	1 + dose	CXAFAS+CMR10	KZVVQK+EuropeanComputerModern-R	yes	0.168	0.00	no	1dose	yes
+283	39	1dose	1 + dose	CXAFAS+CMR10	KZVVQK+EuropeanComputerModern-R	yes	0.168	0.00	no	1dose	yes
+290	18	y6	y + 6	-	-	-	-	-	-	√ · y6	no
+290	19	z10	z + 10	MXANZU+CMMI12	NATYDJ+EuropeanComputerModern-R	yes	0.047	4.20	no	· z10	yes
+290	35	y9	y + 9	-	-	-	-	-	-	√ · y9	no
+290	36	z6	z + 6	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.047	4.32	no	· z6	yes
+291	14	196v2	196v + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.039	4.32	no	15) 196v2	yes
+291	18	100k4	100k + 4	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.043	4.32	no	19)− 100k4	yes
+291	23	45x2y2	45x2 + y + 2	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.086	-4.32	no	25) 45x2y2	yes
+291	23	45x2y2	45x2 + y + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	25) 45x2y2	yes
+291	24	16x3y3	16x3 + y + 3	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.086	-4.32	no	27) 16x3y3	yes
+291	24	16x3y3	16x3 + y + 3	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	27) 16x3y3	yes
+291	25	320x4y4	320x4 + y + 4	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.071	-4.32	no	29) 320x4y4	yes
+291	25	320x4y4	320x4 + y + 4	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.045	4.32	no	29) 320x4y4	yes
+291	26	80xy2	80xy + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.045	4.32	no	31) 6 80xy2	yes
+291	27	245x2y3	245x2 + y + 3	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.071	-4.20	no	33) 5 245x2y3	yes
+291	27	245x2y3	245x2 + y + 3	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.045	4.20	no	33) 5 245x2y3	yes
+291	31	80hj4k	80hj + 4k	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.056	4.32	no	39) 2 80hj4k	yes
+291	60	72x2y2	72x2 + y + 2	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.071	-4.32	no	34) 2 72x2y2	yes
+291	60	72x2y2	72x2 + y + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.045	4.32	no	34) 2 72x2y2	yes
+291	61	72x3y4	72x3 + y + 4	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.071	-4.32	no	36)− 5 72x3y4	yes
+291	61	72x3y4	72x3 + y + 4	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	36)− 5 72x3y4	yes
+291	64	32xy2z3	32xy + 2z + 3	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	40)− 32xy2z3	yes
+291	64	32xy2z3	32xy + 2z + 3	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.047	4.32	no	40)− 32xy2z3	yes
+291	65	32m2p4q	32m2 + p4 + q	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.071	-4.20	no	42)− 8 32m2p4q	yes
+291	65	32m2p4q	32m2 + p4 + q	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.071	-4.20	no	42)− 8 32m2p4q	yes
+293	38	x25y17z3	x25y + 17z + 3	MXANZU+CMMI12	NATYDJ+EuropeanComputerModern-R	yes	0.035	4.32	no	x25y17z3	yes
+293	38	x25y17z3	x25y + 17z + 3	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.047	4.32	no	x25y17z3	yes
+293	39	x5y3	x5 + y + 3	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.071	-4.32	no	x5y3 y2z3	yes
+293	39	x5y3	x5 + y + 3	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	x5y3 y2z3	yes
+293	39	y2z3	y + 2z + 3	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.045	4.32	no	x5y3 y2z3	yes
+293	39	y2z3	y + 2z + 3	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.047	4.32	no	x5y3 y2z3	yes
+293	42	5R	5 + R	-	-	-	-	-	-	5 = 5R 0, so x5 came out, no x’s	no
+293	44	3R2,	3 + R + 2,	-	-	-	-	-	-	5 = 3R2, so y3 came out, and y2 remains	no
+293	44	y3	y + 3	-	-	-	-	-	-	5 = 3R2, so y3 came out, and y2 remains	no
+293	44	y2	y + 2	-	-	-	-	-	-	5 = 3R2, so y3 came out, and y2 remains	no
+293	46	0R3,	0R + 3,	-	-	-	-	-	-	5 = 0R3, all three or z3 remained inside. The	no
+293	46	z3	z + 3	-	-	-	-	-	-	5 = 0R3, all three or z3 remained inside. The	no
+293	51	8works!	8 + works!	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Looking for cubes that divide into 40. The number 8works!	yes
+294	20	48v7	48v + 7	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.039	4.32	no	21)− 2− 48v7	yes
+294	24	135x5y3	135x5 + y + 3	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.086	-4.32	no	25)− 135x5y3	yes
+294	24	135x5y3	135x5 + y + 3	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	25)− 135x5y3	yes
+294	26	32x4y4	32x4 + y + 4	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.086	-4.32	no	27)− 32x4y4	yes
+294	26	32x4y4	32x4 + y + 4	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	27)− 32x4y4	yes
+294	28	256x4y6	256x4 + y + 6	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.071	-4.32	no	29) 256x4y6	yes
+294	28	256x4y6	256x4 + y + 6	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.045	4.32	no	29) 256x4y6	yes
+294	30	81x3y7	81x3 + y + 7	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.086	-4.32	no	31) 7− 81x3y7	yes
+294	30	81x3y7	81x3 + y + 7	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	31) 7− 81x3y7	yes
+294	32	375u2v8	375u2v + 8	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.039	4.32	no	33) 2 375u2v8	yes
+294	36	54m8n3p7	54m8n3 + p7	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.071	-4.32	no	37) 6− 54m8n3p7	yes
+294	63	64u5v3	64u5v + 3	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.039	4.32	no	26) 64u5v3	yes
+294	66	189x3y6	189x3 + y + 6	-	-	-	-	-	-	30) 189x3y6	no
+294	69	56x2y8	56x2 + y + 8	-	-	-	-	-	-	32)− 4 56x2y8	no
+294	73	135xy3	135xy + 3	-	-	-	-	-	-	36) 3 135xy3	no
+294	79	324x7yz7	324x7 + yz + 7	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.071	-4.32	no	42)− 6 324x7yz7	yes
+294	79	324x7yz7	324x7 + yz + 7	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.047	4.32	no	42)− 6 324x7yz7	yes
+299	51	5and	5 + and	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	√ by dividing by 5and 2 respectively	yes
+300	13	1more	1 + more	-	-	-	-	-	-	√ Index is 2, we need two fives in denominator, need 1more	no
+300	32	3more	3 + more	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Index is 4, we need four twos in denominator, need 3more	yes
+300	50	1more	1 + more	-	-	-	-	-	-	Index is 3, we need three fives in denominator, need 1more	no
+301	23	1more	1 + more	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	√ Index is 2, need two elevens, need 1more	yes
+301	36	6x3y4z	6x3 + y + 4z	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.071	-4.32	no	18 6x3y4z	yes
+301	36	6x3y4z	6x3 + y + 4z	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	18 6x3y4z	yes
+301	38	10xy6z3	10xy + 6z + 3	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	3.36	no	8 10xy6z3	yes
+301	38	10xy6z3	10xy + 6z + 3	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.047	3.36	no	8 10xy6z3	yes
+301	42	5y2z3	5y + 2z + 3	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	3.48	no	4 5y2z3	yes
+301	42	5y2z3	5y + 2z + 3	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.047	3.48	no	4 5y2z3	yes
+301	46	5y2z3	5y + 2z + 3	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	3.48	no	4 5y2z3	yes
+301	46	5y2z3	5y + 2z + 3	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.047	3.48	no	4 5y2z3	yes
+301	51	53y2z	53 + y + 2z	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.086	-4.32	no	53y2z	yes
+301	51	53y2z	53 + y + 2z	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	53y2z	yes
+301	53	53y2z	53 + y + 2z	-	-	-	-	-	-	4 Multiply numerator and denominator by 53y2z	no
+301	54	53y2z	53 + y + 2z	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.086	-4.32	no	53y2z	yes
+301	54	53y2z	53 + y + 2z	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	53y2z	yes
+301	55	375x2y2z	375x2 + y + 2z	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.086	-4.32	no	9 375x2y2z	yes
+301	55	375x2y2z	375x2 + y + 2z	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	9 375x2y2z	yes
+301	59	375x2y2z	375x2 + y + 2z	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.086	-4.32	no	9 375x2y2z	yes
+301	59	375x2y2z	375x2 + y + 2z	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	9 375x2y2z	yes
+302	39	3x3y3	3x3 + y + 3	-	-	-	-	-	-	4 3x3y3	no
+302	42	3p	3 + p	LDDDSE+CMR8	JJCYQV+CMMI8	yes	0.056	0.00	no	3p	yes
+302	51	5r4	5r + 4	-	-	-	-	-	-	37) 5 5r4	no
+302	53	8r2	8r + 2	-	-	-	-	-	-	8r2	no
+302	57	5r3	5r + 3	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.031	4.32	no	4) 5r3	yes
+302	58	10r2	10r + 2	-	-	-	-	-	-	√ · − 5 10r2	no
+302	90	3xy4	3xy + 4	JJCYQV+CMMI8	QJAIEQ+CMR6	yes	0.047	2.28	no	5 3xy4	yes
+310	64	•9p	•9 + p	-	-	-	-	-	-	•9p to represent 9	no
+311	74	x2y	x2 + y	QJAIEQ+CMR6	MXANZU+CMMI12	yes	0.232	-2.52	no	x2y	yes
+312	22	2x−1y	2x−1 + y	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.071	-4.32	no	2x−1y	yes
+313	70	xy2)0	xy + 2)0	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.045	4.32	no	20) (x· xy2)0	yes
+313	71	(x0y	(x0 + y	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.086	-4.20	no	21) (x0y	yes
+313	86	4v2	4 + v + 2	QJAIEQ+CMR6	JJCYQV+CMMI8	yes	0.112	-1.80	no	4v2	yes
+313	86	4v2	4 + v + 2	JJCYQV+CMMI8	QJAIEQ+CMR6	yes	0.040	2.28	no	4v2	yes
+313	94	4y	4 + y	QJAIEQ+CMR6	JJCYQV+CMMI8	yes	0.172	-1.80	no	4y	yes
+313	110	2n	2 + n	QJAIEQ+CMR6	JJCYQV+CMMI8	yes	-0.009	-2.76	no	2n 2	yes
+313	133	4y	4 + y	-	-	-	-	-	-	4y 1)	no
+313	141	2y0)	2 + y + 0)	-	-	-	-	-	-	2y0)	no
+313	143	y4	y + 4	-	-	-	-	-	-	y4 · x 2y	no
+313	150	(uv2)	(uv + 2)	-	-	-	-	-	-	33) (uv2)	no
+313	157	3y3)	3 + y + 3)	QJAIEQ+CMR6	JJCYQV+CMMI8	yes	0.172	-1.68	no	3y3)	yes
+313	157	3y3)	3 + y + 3)	JJCYQV+CMMI8	QJAIEQ+CMR6	yes	0.032	2.28	no	3y3)	yes
+313	179	4v2	4 + v + 2	QJAIEQ+CMR6	JJCYQV+CMMI8	yes	0.112	-1.80	no	4v2	yes
+313	179	4v2	4 + v + 2	JJCYQV+CMMI8	QJAIEQ+CMR6	yes	0.040	2.28	no	4v2	yes
+314	10	x6y2	x6 + y + 2	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.071	-4.20	no	x6y2	yes
+314	10	x6y2	x6 + y + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.045	4.20	no	x6y2	yes
+314	12	(x6y2)	(x6 + y + 2)	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.071	-4.32	no	(x6y2)	yes
+314	12	(x6y2)	(x6 + y + 2)	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.045	4.32	no	(x6y2)	yes
+314	25	x3y	x3 + y	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.086	-4.32	no	x3y	yes
+315	48	x2y	x2 + y	-	-	-	-	-	-	5 x2y	no
+315	49	x3y4	x3 + y + 4	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.071	-4.32	no	x3y4	yes
+315	49	x3y4	x3 + y + 4	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.045	4.32	no	x3y4	yes
+315	61	8xy3	8xy + 3	-	-	-	-	-	-	3 8xy3	no
+315	62	4x2y	4x2 + y	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.071	-4.32	no	4x2y	yes
+315	63	8as	8 + as	-	-	-	-	-	-	4 Rewrite 4 as 22 and 8as 23	no
+315	64	23xy3	23xy + 3	-	-	-	-	-	-	3 23xy3	no
+315	65	22x2y	22x2 + y	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.086	-4.32	no	22x2y	yes
+316	4	9as	9 + as	-	-	-	-	-	-	3 Rewrite 9as 32	no
+316	24	x7y2z	x7 + y + 2z	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.071	-3.36	no	x7y2z	yes
+316	24	x7y2z	x7 + y + 2z	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.045	3.36	no	x7y2z	yes
+316	28	x21y6z3	x21y + 6z + 3	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	3.48	no	x21y6z3	yes
+316	28	x21y6z3	x21y + 6z + 3	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.047	3.48	no	x21y6z3	yes
+316	31	y6z5	y + 6z + 5	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	y6z5	yes
+316	31	y6z5	y + 6z + 5	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.047	4.32	no	y6z5	yes
+316	34	y6z5	y + 6z + 5	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	y6z5	yes
+316	34	y6z5	y + 6z + 5	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.047	4.32	no	y6z5	yes
+317	3	16x4y6	16x4 + y + 6	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.086	-4.32	no	1) 16x4y6	yes
+317	3	16x4y6	16x4 + y + 6	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	1) 16x4y6	yes
+317	10	x6y9	x6 + y + 9	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.071	-4.32	no	7) x6y9	yes
+317	10	x6y9	x6 + y + 9	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	7) x6y9	yes
+317	14	8x3y6	8x3 + y + 6	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.086	-4.32	no	11) 8x3y6	yes
+317	14	8x3y6	8x3 + y + 6	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	11) 8x3y6	yes
+317	16	9x2y6	9x2 + y + 6	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.086	-4.32	no	2) 9x2y6	yes
+317	16	9x2y6	9x2 + y + 6	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	2) 9x2y6	yes
+317	23	64x8y4	64x8 + y + 4	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.086	-4.32	no	8) 64x8y4	yes
+317	23	64x8y4	64x8 + y + 4	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	8) 64x8y4	yes
+317	25	25y2	25y + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.045	4.32	no	10) 25y2	yes
+317	27	81x8y12	81x8 + y + 12	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.086	-4.32	no	12) 81x8y12	yes
+317	27	81x8y12	81x8 + y + 12	MXANZU+CMMI12	NATYDJ+EuropeanComputerModern-R	yes	0.035	4.32	no	12) 81x8y12	yes
+317	38	x2y	x2 + y	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.086	-4.32	no	19) x2y	yes
+317	42	xy2	xy + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	21) xy2	yes
+317	44	x2y	x2 + y	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.086	-4.32	no	x2y	yes
+317	55	xy3	xy + 3	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	29) xy3 x2y	yes
+317	55	x2y	x2 + y	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.071	-4.32	no	29) xy3 x2y	yes
+317	59	3xy2z	3xy + 2z	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.20	no	33) 3xy2z	yes
+317	60	9x3yz2	9x3 + yz + 2	-	-	-	-	-	-	3 9x3yz2	no
+317	99	x2yz3	x2 + yz + 3	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.086	-4.32	no	24) x2yz3	yes
+317	99	x2yz3	x2 + yz + 3	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.037	4.32	no	24) x2yz3	yes
+317	100	x2yz2	x2 + yz + 2	-	-	-	-	-	-	6 x2yz2	no
+317	112	2x3y3	2x3 + y + 3	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.086	-4.32	no	32) 2x3y3 4xy2	yes
+317	112	2x3y3	2x3 + y + 3	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	32) 2x3y3 4xy2	yes
+317	112	4xy2	4 + xy + 2	PZGVTZ+CMR12	MXANZU+CMMI12	yes	0.002	0.00	no	32) 2x3y3 4xy2	yes
+317	112	4xy2	4 + xy + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	32) 2x3y3 4xy2	yes
+319	17	4and	4 + and	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Combine like terms 2+ 4and 5i− 7i	yes
+320	27	1and	1 + and	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	=− 1and i3 =− i	yes
+322	13	1is	1 + is	-	-	-	-	-	-	√ Square root of− 1is i, square root of 4is 2	no
+322	13	4is	4 + is	-	-	-	-	-	-	√ Square root of− 1is i, square root of 4is 2	no
+322	40	1and	1 + and	-	-	-	-	-	-	√ Take square root of− 1and 100	no
+326	22	2from	2 + from	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Subtract 2from both sides	yes
+327	12	6from	6 + from	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Subtract 6from both sides	yes
+329	27	1from	1 + from	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Subtract x and 1from both sides	yes
+329	42	4to	4 + to	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Add 4to both sides of second equation	yes
+330	42	0first	0 + first	-	-	-	-	-	-	3(0)+ 9− (0)+ 4 =− 1 Check x = 0first	no
+334	15	4from	4 + from	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Subtract 4from both sides	yes
+334	21	6from	6 + from	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Subtract 6from both sides	yes
+334	30	1from	1 + from	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Subtract 1from both sides	yes
+335	6	2equations!	2 + equations!	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Solve, need 2equations!	yes
+335	35	2to	2 + to	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	+ 2 + 2 Add 2to both sides	yes
+337	28	5from	5 + from	-	-	-	-	-	-	x +5 =± 3 2√ Subtract 5from both sides	no
+338	2	bx	b + x	MXANZU+CMMI12	MXANZU+CMMI12	no	0.116	0.00	no	of the form x2 + bx + c, and a perfect square, the third term, c, can be easily	yes
+340	1	2x2	2 + x2	PZGVTZ+CMR12	MXANZU+CMMI12	yes	0.002	0.00	no	2x2 + 20x 	yes
+340	24	5from	5 + from	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Subtract 5from both sides	yes
+340	39	2to	2 + to	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Add 2to both sides	yes
+342	12	y2	y + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.20	no	7) y2	yes
+342	18	v2	v + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.039	4.32	no	11) v2	yes
+342	21	5k2	5k + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.033	4.32	no	15) 5k2	yes
+342	32	3k2	3k + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.033	4.32	no	29) 3k2 +9= 6k	yes
+342	40	v2	v + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.039	4.32	no	41) v2 + 5v + 28 =0	yes
+342	43	k2	k + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.033	4.32	no	45) k2	yes
+342	48	8r2	8r + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.031	4.32	no	51) 8r2 + 10r =− 55	yes
+342	58	r2	r + 2	-	-	-	-	-	-	6) r2	no
+342	76	6r2	6r + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.031	4.32	no	22) 6r2 + 12r− 24=− 6	yes
+342	79	v2	v + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.039	4.32	no	26) v2	yes
+342	89	3r2	3r + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.031	4.20	no	38)− 3r2 +12r + 49=− 6r2	yes
+342	89	6r2	6r + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.031	4.20	no	38)− 3r2 +12r + 49=− 6r2	yes
+342	101	10v2	10v + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.039	4.32	no	56) 10v2	yes
+342	104	4v2	4v + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.039	4.32	no	− 15v = 27 + 4v2	yes
+347	7	3r2	3r + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.031	4.32	no	7) 3r2	yes
+347	11	v2	v + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.039	4.32	no	11) v2	yes
+347	14	3k2	3k + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.033	4.32	no	15) 3k2 +3k− 4= 7	yes
+347	28	3k2	3k + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.033	4.32	no	2) 3k2 +2= 0	yes
+347	44	3r2	3r + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.031	4.20	no	24) 3r2 + 4=− 6r	yes
+347	47	6v2	6v + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.039	4.32	no	28) 6v2 = 4+ 6v	yes
+347	49	2k2	2k + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.033	4.32	no	32) 2k2 +6k− 16 = 2k	yes
+347	54	7r2	7r + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.031	4.32	no	37) 7r2	yes
+348	15	4from	4 + from	-	-	-	-	-	-	− 4− 4 +2 + 2 Subtract 4from first, add 2to second	no
+348	15	2to	2 + to	-	-	-	-	-	-	− 4− 4 +2 + 2 Subtract 4from first, add 2to second	no
+348	37	2from	2 + from	-	-	-	-	-	-	Subtract 2from the first, subtract 3from the second	no
+348	37	3from	3 + from	-	-	-	-	-	-	Subtract 2from the first, subtract 3from the second	no
+349	18	3from	3 + from	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Subtract 3from both sides	yes
+349	31	2from	2 + from	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Subtract 2from both sides	yes
+350	13	2from	2 + from	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Subtract 2from both sides	yes
+350	31	4from	4 + from	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Subtract 4from both sides	yes
+350	54	3from	3 + from	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Subtract 3from both sides	yes
+352	6	ax2	a + x2	MXANZU+CMMI12	MXANZU+CMMI12	no	0.108	0.00	no	ax2 + bx + c, however, we can use the skills learned to solve quadratics to solve	yes
+352	22	y2	y + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.20	no	y2 =x4 Square both sides	yes
+352	23	y2	y + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.20	no	y2	yes
+352	25	y2	y + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.045	4.20	no	Substitute y for x2 and y2 for x4	yes
+353	23	1power	1 + power	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Raise both sides to− 1power	yes
+353	39	6from	6 + from	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Subtract 6from both sides	yes
+353	44	y2	y + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	y2	yes
+353	46	2y2	2y + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.045	4.20	no	2y2 + y− 6 =0 	yes
+354	9	y2	y + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.20	no	y2 = (x− 7)2 	yes
+354	11	3y2	3y + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	3y2	yes
+354	48	y2	y + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	y2 =(x2	yes
+354	50	y2	y + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.20	no	y2	yes
+354	66	9to	9 + to	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Add 9to both sides of each equation	yes
+355	5	3to	3 + to	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Add 3to both sides	yes
+355	16	y2	y + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	y2	yes
+355	18	y2	y + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	y2	yes
+355	20	y2	y + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.045	4.32	no	Substitute y2 for x6 and y for x3	yes
+356	14	z6	z + 6	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.047	4.32	no	11) z6	yes
+356	16	6z4	6z + 4	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.047	4.32	no	13) 6z4	yes
+356	17	z2	z + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.047	4.32	no	− z2	yes
+356	56	y4	y + 4	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	2) y4	yes
+356	57	9y2	9y + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	− 9y2 +20 = 0	yes
+356	58	y4	y + 4	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.20	no	4) y4	yes
+356	59	29y2	29y + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.20	no	− 29y2 +100 = 0	yes
+356	62	y4	y + 4	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.20	no	8) y4	yes
+356	63	40y2	40y + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.20	no	− 40y2 +144 = 0	yes
+356	66	y4	y + 4	-	-	-	-	-	-	12) y4	no
+356	67	2y2	2y + 2	-	-	-	-	-	-	− 2y2 =24	no
+357	13	4more,	4 + more,	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Length is 4more, or x +4, and area is 40.	yes
+358	17	5in	5 + in	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	5in by 8in Our Solution	yes
+359	9	4more,	4 + more,	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	x We don′t know width, x, length is 4more, x +4	yes
+359	31	2to	2 + to	-	-	-	-	-	-	x +4is the length. Substitute 2to find	no
+359	32	2ft	2 + ft	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	2ft by 6ft Our Solution	yes
+360	43	8by	8 + by	-	-	-	-	-	-	12 +2x Draw picture, picture if 8by 10	no
+361	9	2inches	2 + inches	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	2inches Our Solution	yes
+364	47	22	2 + 2	CDUUDX+EuropeanComputerModern-R	PZGVTZ+CMR12	yes	8.304	0.00	no	22	yes
+364	51	22	2 + 2	-	-	-	-	-	-	5 Together time, 22	no
+364	53	22	2 + 2	CDUUDX+EuropeanComputerModern-R	PZGVTZ+CMR12	yes	8.304	0.00	no	22	yes
+366	36	112	1 + 12	-	-	-	-	-	-	1 hr 12 min = 112	no
+366	38	112	1 + 12	-	-	-	-	-	-	112	no
+366	39	11	1 + 1	-	-	-	-	-	-	60 = 11	no
+367	18	1from	1 + from	-	-	-	-	-	-	5 or x =3 Subtract 1from each to find electrician	no
+367	22	3hours	3 + hours	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Electrician:2hr, Apprentice: 3hours Our Solution	yes
+369	24	11	1 + 1	-	-	-	-	-	-	22) One pipe can fill a cistern in 11	no
+373	42	3less	3 + less	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	When he sold, he sold 3less (n− 3), for S5	yes
+373	49	Findequatinosby	Find + equatinos + by	CDUUDX+EuropeanComputerModern-R	CDUUDX+EuropeanComputerModern-R	no	0.108	0.00	no	np=56 Findequatinosby multiplyingnumberbyprice	yes
+373	49	Findequatinosby	Find + equatinos + by	CDUUDX+EuropeanComputerModern-R	CDUUDX+EuropeanComputerModern-R	no	0.116	0.00	no	np=56 Findequatinosby multiplyingnumberbyprice	yes
+374	58	2less	2 + less	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	There were 2less that actually paid (n− 2)	yes
+374	59	S4more	S4 + more	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	and they had to pay S4more (p +4). The	yes
+375	39	1to	1 + to	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Add 1to both sides	yes
+376	49	2r2	2r + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.031	4.32	no	2r2 + 100r− 1200=120r 	yes
+376	53	2r2	2r + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.031	4.32	no	2r2	yes
+376	56	r2	r + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.031	4.32	no	r2	yes
+377	35	2or	2 + or	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Solving for rate, divide by r + 2or r− 2	yes
+377	62	2r2	2r + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.031	4.20	no	2r2	yes
+387	36	5a	5 + a	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	− x = 5a function? 	yes
+388	25	3and	3 + and	-	-	-	-	-	-	− 3and 2. If x were one of those two values, the function would be undefined.	no
+389	18	2in	2 + in	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Substitute− 2in for x in the function	yes
+389	37	7in	7 + in	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Substitute− 7in for a in the function	yes
+391	10	y2	y + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.20	no	f) y2	yes
+391	12	y2	y + 2	-	-	-	-	-	-	h) x2 + y2 =1	no
+402	27	5inverses?	5 + inverses?	-	-	-	-	-	-	2− 5inverses? Calculate composition	no
+402	56	4into	4 + into	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Distribute 3 and 4into numerators	yes
+403	41	2to	2 + to	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	+ 2 +2 Add 2to both sides	yes
+404	5	4from	4 + from	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Subtract 4from both sides	yes
+404	25	3to	3 + to	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Subtract 4xy and add 3to both sides	yes
+406	29	1from	1 + from	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Subtract 1from both sides	yes
+407	2	8as	8 + as	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Rewrite 8as 23 and 32 as 25	yes
+407	4	3and	3 + and	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Multiply exponents 3and 3x	yes
+407	25	4from	4 + from	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Subtract 4from both sides	yes
+407	45	2and	2 + and	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Multiply exponents− 2and 2x	yes
+407	57	axay	axa + y	MXANZU+CMMI12	JJCYQV+CMMI8	yes	0.038	4.32	no	add the exponents using the property that states axay =ax+y	yes
+408	10	1to	1 + to	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Add 1to both sides	yes
+408	23	axay	axa + y	-	-	-	-	-	-	= a n and axay = ax+y	no
+409	52	243p	243 + p	CDUUDX+EuropeanComputerModern-R	JJCYQV+CMMI8	yes	0.033	4.32	no	22) 243p =27−3p	yes
+409	62	8p	8 + p	-	-	-	-	-	-	· 8p =(1	no
+410	46	log2	log + 2	CDUUDX+EuropeanComputerModern-R	CDUUDX+EuropeanComputerModern-R	no	0.364	0.00	no	log2	yes
+412	14	5from	5 + from	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	Subtract 5from both sides	yes
+422	20	1so	1 + so	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	, put over 1so we have proportion	yes
+422	47	1so	1 + so	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	, put over 1so we have a proportion	yes
+431	24	a2	a + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.008	4.32	no	a2 +b2	yes
+440	69	7k2	7k + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.043	4.32	no	41)− 7k2 + 42k	yes
+441	3	68k2	68k + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.033	4.32	no	57)− 68k2	yes
+441	26	v2	v + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.039	4.20	no	77)− v2 + 2v +2	yes
+441	28	4k2	4k + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.043	4.32	no	79)− 4k2 + 12	yes
+443	142	πr2	πr + 2	JJCYQV+CMMI8	QJAIEQ+CMR6	yes	0.033	2.88	no	s− πr2	yes
+449	39	11x	11 + x	-	-	-	-	-	-	11x + 70	no
+452	6	9or	9 + or	-	-	-	-	-	-	1) n− 9or n 2: (− ∞,− 9] [2, ∞)	no
+452	7	4or	4 + or	-	-	-	-	-	-	2) m− 4or m <− 5 : ( − ∞,− 5) [− 4, ∞)	no
+452	8	5or	5 + or	-	-	-	-	-	-	3) x 5or x <− 5: ( − ∞,− 5) [5, ∞)	no
+452	9	0or	0 + or	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	4) r > 0or r <− 7 : ( − ∞ − 7), (0, ∞)	yes
+452	11	7or	7 + or	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	6) n <− 7or n > 8 : ( − ∞ − 7), (8, ∞)	yes
+452	25	8or	8 + or	PZGVTZ+CMR12	CDUUDX+EuropeanComputerModern-R	yes	0.162	0.00	no	20) r > 8or r <− 6: : ( − ∞,− 6) (8, ∞)	yes
+452	27	0or	0 + or	-	-	-	-	-	-	22) x 0or x > 8 : ( − ∞, 0] (8, ∞)	no
+452	29	5or	5 + or	-	-	-	-	-	-	24) n 5or n < 1: ( − ∞, 1) [5, ∞)	no
+453	3	1or	1 + or	-	-	-	-	-	-	28) a 1or a 19 : ( − ∞, 1] [19, ∞)	no
+457	14	x3y6	x3 + y + 6	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.086	-4.32	no	8) x3y6	yes
+457	14	x3y6	x3 + y + 6	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	8) x3y6	yes
+457	20	x3y3	x3 + y + 3	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.086	-4.32	no	14) x3y3	yes
+457	20	x3y3	x3 + y + 3	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	14) x3y3	yes
+457	22	16x4y4	16x4 + y + 4	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.086	-4.20	no	16) 16x4y4	yes
+457	22	16x4y4	16x4 + y + 4	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.20	no	16) 16x4y4	yes
+457	24	32x8y10	32x8 + y + 10	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.086	-4.32	no	1) 32x8y10	yes
+457	24	32x8y10	32x8 + y + 10	MXANZU+CMMI12	NATYDJ+EuropeanComputerModern-R	yes	0.035	4.32	no	1) 32x8y10	yes
+457	44	m2	m + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.007	4.32	no	21) m2	yes
+457	45	xy3	xy + 3	-	-	-	-	-	-	22) xy3	no
+457	47	4x2y	4x2 + y	-	-	-	-	-	-	23) 4x2y	no
+457	51	4x10y14	4x10 + y + 14	NATYDJ+EuropeanComputerModern-R	MXANZU+CMMI12	yes	0.048	-4.32	no	25) 4x10y14	yes
+457	51	4x10y14	4x10 + y + 14	MXANZU+CMMI12	NATYDJ+EuropeanComputerModern-R	yes	0.035	4.32	no	25) 4x10y14	yes
+457	52	8u18v6	8u18v + 6	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.039	4.32	no	26) 8u18v6	yes
+457	53	2x17y16	2x17 + y + 16	NATYDJ+EuropeanComputerModern-R	MXANZU+CMMI12	yes	0.048	-4.32	no	27) 2x17y16	yes
+457	53	2x17y16	2x17 + y + 16	MXANZU+CMMI12	NATYDJ+EuropeanComputerModern-R	yes	0.035	4.32	no	27) 2x17y16	yes
+457	63	y5x2	y + 5 + x2	-	-	-	-	-	-	34) y5x2	no
+457	68	2x2y	2x2 + y	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.071	-4.32	no	37) 2x2y	yes
+457	69	2y2	2y + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	38) 2y2	yes
+457	73	256q4r8	256q + 4r + 8	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.038	4.32	no	42) 256q4r8	yes
+457	73	256q4r8	256q + 4r + 8	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.031	4.32	no	42) 256q4r8	yes
+457	74	4y4z	4y + 4z	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.20	no	43) 4y4z	yes
+457	78	2x3y2	2x3 + y + 2	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.071	-4.32	no	4) 2x3y2	yes
+457	78	2x3y2	2x3 + y + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.045	4.32	no	4) 2x3y2	yes
+458	0	16x4y8	16x4 + y + 8	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.086	-4.32	no	5) 16x4y8	yes
+458	0	16x4y8	16x4 + y + 8	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	5) 16x4y8	yes
+458	2	y16	y + 16	-	-	-	-	-	-	7) y16 x5	no
+458	11	y8x5	y + 8 + x5	-	-	-	-	-	-	12) y8x5	no
+458	41	y8x4	y + 8x4	-	-	-	-	-	-	20) y8x4	no
+458	50	x15y	x15 + y	NATYDJ+EuropeanComputerModern-R	JJCYQV+CMMI8	yes	0.114	-2.28	no	x15y	yes
+458	51	4y4	4y + 4	-	-	-	-	-	-	26) 4y4	no
+458	54	4y5	4y + 5	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.045	4.32	no	28) 4y5	yes
+458	74	2y5x4	2y + 5x4	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	31) 2y5x4	yes
+458	78	x2y11z	x2 + y11z	QJAIEQ+CMR6	JJCYQV+CMMI8	yes	0.072	-2.40	no	x2y11z	yes
+458	82	j6	j + 6	JJCYQV+CMMI8	QJAIEQ+CMR6	yes	0.052	2.28	no	h3k j6	yes
+458	90	y4z4	y4z + 4	JJCYQV+CMMI8	QJAIEQ+CMR6	yes	0.048	2.28	no	y4z4	yes
+459	20	2v4	2v + 4	RKECRD+CMMI10	FKJCVH+CMR7	yes	0.033	3.60	no	16) 2v4 + 6	yes
+459	36	12v3	12v + 3	RKECRD+CMMI10	FKJCVH+CMR7	yes	0.033	3.60	no	26) 12v3 + 3v +3	yes
+459	47	r4	r + 4	RKECRD+CMMI10	FKJCVH+CMR7	yes	0.031	3.60	no	35) r4	yes
+459	48	3r3	3r + 3	RKECRD+CMMI10	FKJCVH+CMR7	yes	0.031	3.60	no	− 3r3 + 7r2 +1	yes
+459	48	7r2	7r + 2	RKECRD+CMMI10	FKJCVH+CMR7	yes	0.031	3.60	no	− 3r3 + 7r2 +1	yes
+459	65	32k2	32k + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.033	4.32	no	2) 32k2 +16k	yes
+459	75	4r2	4r + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.031	4.32	no	10) 4r2 + 40r+64	yes
+459	79	15v2	15v + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.039	4.20	no	13) 15v2	yes
+459	88	4y2	4y + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.045	4.32	no	− 14xy− 4y2	yes
+459	89	21v2	21v + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.039	4.32	no	18) 16u2 + 10uv− 21v2	yes
+459	92	48v2	48v + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.039	4.32	no	− 34uv− 48v2	yes
+459	96	6r3	6r + 3	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.031	4.32	no	23) 6r3	yes
+459	97	43r2	43r + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.031	4.32	no	− 43r2 +12r− 35	yes
+460	15	15k4	15k + 4	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.033	4.32	no	31) 15k4 +24k3 +48k2 + 27k + 18	yes
+460	32	18v4	18v + 4	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.039	4.32	no	− 18v4	yes
+460	46	4r2	4r + 2	RKECRD+CMMI10	FKJCVH+CMR7	yes	0.031	3.60	no	8) 4r2	yes
+460	52	16y2	16y + 2	RKECRD+CMMI10	FKJCVH+CMR7	yes	0.040	3.48	no	11) 16y2	yes
+460	58	9y2	9y + 2	RKECRD+CMMI10	FKJCVH+CMR7	yes	0.040	3.60	no	14) 9y2	yes
+460	62	4y2	4y + 2	RKECRD+CMMI10	FKJCVH+CMR7	yes	0.040	3.60	no	− 4y2	yes
+460	65	v2	v + 2	RKECRD+CMMI10	FKJCVH+CMR7	yes	0.045	3.60	no	18) v2 +8v + 16	yes
+460	71	49k2	49k + 2	RKECRD+CMMI10	FKJCVH+CMR7	yes	0.033	3.60	no	22) 49k2	yes
+460	82	4y2	4y + 2	RKECRD+CMMI10	FKJCVH+CMR7	yes	0.040	3.60	no	29) 4x2 + 8xy + 4y2	yes
+460	83	25y2	25y + 2	-	-	-	-	-	-	30) 64x2 + 80xy + 25y2	no
+460	84	4r2	4r + 2	RKECRD+CMMI10	FKJCVH+CMR7	yes	0.031	3.60	no	31) 25 + 20r + 4r2	yes
+460	90	16v2	16v + 2	RKECRD+CMMI10	FKJCVH+CMR7	yes	0.045	3.60	no	35) 16v2	yes
+460	97	16k2	16k + 2	RKECRD+CMMI10	FKJCVH+CMR7	yes	0.033	3.60	no	39) 16k2 +16k + 4	yes
+460	110	3k2	3k + 2	-	-	-	-	-	-	4) 3k2	no
+461	70	8k2	8k + 2	-	-	-	-	-	-	30) 8k2	no
+461	85	k2	k + 2	-	-	-	-	-	-	34) k2	no
+461	100	r2	r + 2	-	-	-	-	-	-	39) r2 +3r− 4−	no
+461	110	v2	v + 2	-	-	-	-	-	-	43) v2	no
+461	116	4x3(2y2	4x3(2y + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	10) 4x3(2y2 +1)	yes
+462	2	3y2(9y5	3y + 2(9y + 5	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	18) 3y2(9y5 + 4x +3)	yes
+462	2	3y2(9y5	3y + 2(9y + 5	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.045	4.32	no	18) 3y2(9y5 + 4x +3)	yes
+462	6	5x3y2z(4x5z	5x3 + y + 2z(4x5z	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.086	-4.32	no	21) 5x3y2z(4x5z +3x2 + 7y)	yes
+462	6	5x3y2z(4x5z	5x3 + y + 2z(4x5z	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	21) 5x3y2z(4x5z +3x2 + 7y)	yes
+462	7	5q2r2)	5q + 2r + 2)	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.038	4.32	no	22) 3(p + 4q− 5q2r2)	yes
+462	7	5q2r2)	5q + 2r + 2)	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.031	4.32	no	22) 3(p + 4q− 5q2r2)	yes
+462	8	10(5x2y	10(5x2 + y	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.086	-4.32	no	23) 10(5x2y + y2 +7xz2)	yes
+462	8	y2	y + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	23) 10(5x2y + y2 +7xz2)	yes
+462	9	10y4z3	10y + 4z + 3	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.045	4.32	no	24) 10y4z3 (3x5 + 5z2	yes
+462	9	10y4z3	10y + 4z + 3	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.047	4.32	no	24) 10y4z3 (3x5 + 5z2	yes
+462	9	5z2	5z + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.047	4.32	no	24) 10y4z3 (3x5 + 5z2	yes
+462	21	3y3	3y + 3	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.045	4.32	no	32) 2y7(− 5+ 3y3	yes
+462	22	2xy3	2xy + 3	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.045	4.32	no	− 2xy3	yes
+462	25	(8r2	(8r + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.031	4.32	no	1) (8r2	yes
+462	31	(2v2	(2v + 2	-	-	-	-	-	-	4) (2v2	no
+462	45	(7r2	(7r + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.031	4.32	no	12) (7r2 +3)(6r− 7)	yes
+464	7	9y2)	9y + 2)	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.045	4.32	no	12) 5(25x2 + 9y2)	yes
+464	35	9y2)	9y + 2)	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.045	4.32	no	− 12xy + 9y2)	yes
+464	38	25y2)	25y + 2)	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.045	4.32	no	− 15xy + 25y2)	yes
+464	43	z2	z + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.037	4.56	no	43) (4+ z2 )(2+ z)(2− z)	yes
+464	45	y2)(x	y + 2)(x	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	45) (x2 + y2)(x + y)(x− y)	yes
+464	54	16y2)	16y + 2)	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.045	4.32	no	5) 2(− x + 4y)(x2 + 4xy + 16y2)	yes
+465	5	9y2)	9y + 2)	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	16) (x− 3y)(x2 +3xy + 9y2)	yes
+468	1	25x3y5z	25x3 + y + 5z	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.086	-4.32	no	12) 25x3y5z	yes
+468	1	25x3y5z	25x3 + y + 5z	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	12) 25x3y5z	yes
+469	3	x2y2	x2 + y + 2	QJAIEQ+CMR6	JJCYQV+CMMI8	yes	0.052	-2.28	no	x2y2	yes
+469	3	x2y2	x2 + y + 2	JJCYQV+CMMI8	QJAIEQ+CMR6	yes	0.047	2.28	no	x2y2	yes
+469	16	3y2	3y + 2	-	-	-	-	-	-	15) 3y2	no
+469	18	2x2y2	2x2 + y + 2	-	-	-	-	-	-	2x2y2	no
+470	0	y2	y + 2	-	-	-	-	-	-	33)x2 + y2	no
+472	43	10k2	10k + 2	-	-	-	-	-	-	19)− 10k2	no
+472	61	8x2y2	8x2 + y + 2	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.071	-4.32	no	29) 8x2y2 5	yes
+472	61	8x2y2	8x2 + y + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.045	4.32	no	29) 8x2y2 5	yes
+472	78	4v2	4v + 2	-	-	-	-	-	-	21) 4v2 6v	no
+472	93	4xy2	4xy + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	29) 4xy2 4x	yes
+472	105	30y2x	30y + 2x	-	-	-	-	-	-	36)− 30y2x 2x	no
+472	107	48x2z2y	48x2z + 2 + y	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.047	4.32	no	37)− 48x2z2y 5	yes
+472	107	48x2z2y	48x2z + 2 + y	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.086	-4.32	no	37)− 48x2z2y 5	yes
+472	111	8j2	8j + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.057	4.32	no	39) 8j2 5hk	yes
+472	119	3xy2	3xy + 2	-	-	-	-	-	-	30) 3xy2 7	no
+472	121	21xy2	21xy + 2	-	-	-	-	-	-	31)− 21xy2 3y	no
+472	122	8y2	8y + 2	-	-	-	-	-	-	32)− 8y2 7x2y2	no
+472	122	7x2y2	7x2 + y + 2	-	-	-	-	-	-	32)− 8y2 7x2y2	no
+472	125	10v2	10v + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.039	4.32	no	33) 10v2 3u2v2	yes
+472	125	3u2v2	3u2v + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.039	4.32	no	33) 10v2 3u2v2	yes
+472	133	2m2p	2m2 + p	-	-	-	-	-	-	37)− 18m2np2 2m2p	no
+472	137	8xy3z2	8xy + 3z + 2	-	-	-	-	-	-	39) 18xy 8xy3z2	no
+472	141	14hj2k2	14hj + 2k + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.066	4.32	no	41) 14hj2k2 8h2	yes
+472	141	14hj2k2	14hj + 2k + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.033	4.32	no	41) 14hj2k2 8h2	yes
+473	1	4x3yz3	4x3 + yz + 3	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.086	-4.32	no	42)− 18xz 4x3yz3	yes
+473	1	4x3yz3	4x3 + yz + 3	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.037	4.32	no	42)− 18xz 4x3yz3	yes
+473	66	25r2	25r + 2	-	-	-	-	-	-	4)− 25r2 2r	no
+474	53	16xy2	16xy + 2	JJCYQV+CMMI8	QJAIEQ+CMR6	yes	0.047	2.40	no	16xy2	yes
+474	73	10r2	10r + 2	-	-	-	-	-	-	37) 5 10r2	no
+476	7	4x2y3	4x2 + y + 3	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.086	-4.32	no	1) 4x2y3	yes
+476	7	4x2y3	4x2 + y + 3	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	1) 4x2y3	yes
+476	8	3xy3	3xy + 3	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	2) 3xy3	yes
+476	20	x2y3	x2 + y + 3	-	-	-	-	-	-	7) x2y3	no
+476	22	8x4y2	8x4 + y + 2	-	-	-	-	-	-	8) 8x4y2	no
+476	24	x3y2z	x3 + y + 2z	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.086	-4.32	no	9) x3y2z	yes
+476	24	x3y2z	x3 + y + 2z	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.32	no	9) x3y2z	yes
+476	27	2xy2	2xy + 2	-	-	-	-	-	-	11) 2xy2	no
+476	30	3x2y3	3x2 + y + 3	-	-	-	-	-	-	12) 3x2y3	no
+476	33	49x3y2	49x3 + y + 2	-	-	-	-	-	-	15) 49x3y2	no
+476	36	27y5z5	27y + 5z + 5	-	-	-	-	-	-	16) 27y5z5	no
+476	42	x9y7	x9 + y + 7	-	-	-	-	-	-	19) x9y7	no
+476	46	x11y10	x11y + 10	-	-	-	-	-	-	21) x11y10	no
+476	53	x22y11z27	x22y + 11z + 27	MXANZU+CMMI12	NATYDJ+EuropeanComputerModern-R	yes	0.045	4.32	no	24) x22y11z27	yes
+476	53	x22y11z27	x22y + 11z + 27	MXANZU+CMMI12	NATYDJ+EuropeanComputerModern-R	yes	0.047	4.32	no	24) x22y11z27	yes
+476	61	xy5	xy + 5	-	-	-	-	-	-	29) xy xy5	no
+476	66	2xy2	2xy + 2	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.045	4.32	no	32) 2xy2 2x5y	yes
+476	66	2x5y	2x5 + y	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.086	-4.32	no	32) 2xy2 2x5y	yes
+476	67	59049xy11z10	59049xy + 11z + 10	-	-	-	-	-	-	33) x 59049xy11z10	no
+476	79	x2y5	x2 + y + 5	LDDDSE+CMR8	MXANZU+CMMI12	yes	0.071	-4.20	no	39) x2y5	yes
+476	79	x2y5	x2 + y + 5	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.035	4.20	no	39) x2y5	yes
+476	87	xy8z3	xy + 8z + 3	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.036	4.32	no	42) yz xy8z3	yes
+476	87	xy8z3	xy + 8z + 3	MXANZU+CMMI12	LDDDSE+CMR8	yes	0.047	4.32	no	42) yz xy8z3	yes
+482	7	11	1 + 1	-	-	-	-	-	-	7) 11	no
+484	66	16x2	16 + x2	-	-	-	-	-	-	16x2	no

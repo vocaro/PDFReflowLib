@@ -1,0 +1,770 @@
+page	line	token	pieces	class	atRunBoundary	marked
+14	11	6and	6 + and	word	no	Reduce 21 and 28 by dividing by 7. Reduce 6and 16 by dividing by 2
+14	21	8and	8 + and	word	no	Find the LCD of 8and 12 
+22	15	3and	3 + and	word	no	Replace p with 3and q with 5
+22	26	6and	6 + and	word	no	3 when x =− 6and z =− 2 Replace all x¦′¦s with 6 and z¦′¦s with 2
+24	33	6into	6 + into	word	no	Distribute 2 into first parenthesis and− 6into second
+24	41	4into	4 + into	word	no	Distribute 4into first parenthesis,− 1into second
+24	41	1into	1 + into	word	no	Distribute 4into first parenthesis,− 1into second
+25	5	6and	6 + and	word	no	6 ¦; use p = 6and q =5
+25	13	1and	1 + and	word	no	2 ¦;use m = 1and n =2
+25	32	y2	y + 2	word	yes	2) y¦2 ¦+ y− z;use y =5, z =1
+26	12	4k2	4k + 2	word	yes	57)− 4k¦2
+26	24	4v2)	4v + 2)	word	yes	77) (2− 4v¦2¦) +(3v¦2 ¦+2v)
+26	25	2k2)	2k + 2)	word	yes	79) (4− 2k¦2¦)+ (8− 2k¦2¦)
+29	6	7is	7 + is	word	no	The 7is added to the x
+29	7	7from	7 + from	word	no	Subtract 7from both sides to get rid of it
+29	28	5is	5 + is	word	no	The 5is negative, or subtracted from x
+29	29	5to	5 + to	word	no	Add 5to both sides
+33	28	4multiplied	4 + multiplied	word	no	Now we focus on the 4multiplied by x
+34	21	4from	4 + from	word	no	Subtract 4from both sides
+34	34	8from	8 + from	word	no	Subtract 8from both sides
+37	35	3to	3 + to	word	no	+3 +3 Add 3to both sides
+38	23	6to	6 + to	word	no	Add 6to both sides
+39	23	2through	2 + through	word	no	Distribute the 2through parenthesis
+40	19	3through	3 + through	word	no	Distribute 4 and 3through parenthesis
+40	33	2in	2 + in	word	no	Plug 2in for each x. Multiply inside parenthesis
+41	15	3through	3 + through	word	no	Distribute 3through parenthesis
+41	28	2through	2 + through	word	no	Distribute 2through parenthesis
+44	44	6with	6 + with	word	no	6 Reduce 6with each denominator
+44	52	1from	1 + from	word	no	Subtract 1from both sides
+45	63	4with	4 + with	word	no	2 Reduce 4with each denominator
+47	5	πr2	πr + 2	word	yes	for one specific variable. For example, we may have a formula such as A= πr¦2 ¦+
+47	9	πr2	πr + 2	word	yes	A− πr¦2
+51	43	4for	4 + for	word	no	47) 5a− 7b = 4for b
+51	65	Eq	E + q	word	yes	E¦a¦− E¦q
+51	70	πr2	πr + 2	word	yes	28) S= πrh + πr¦2 ¦for h
+51	89	8for	8 + for	word	no	48) 4x− 5y = 8for x
+52	27	5from	5 + from	word	no	Subtract 5from both sides
+54	16	2from	2 + from	word	no	Subtract 2from both sides
+55	5	7from	7 + from	word	no	Subtract 7from both sides
+58	35	2and	2 + and	word	no	x is jointly proportional to y and z and x =48 when y = 2and z = 4
+60	14	3for	3 + for	word	no	Using constant, substitute 220 for principle and 3for time
+60	46	4for	4 + for	word	no	Using the constant, use 4for r, don¦′¦t forget the squared!
+66	9	2to	2 + to	word	no	Even numbers, so we add 2to get the next
+66	21	6from	6 + from	word	no	Subtract 6from both sides
+68	21	9by	9 + by	word	no	The dimensions of the rectangle are 9by 13.
+72	46	2to	2 + to	word	no	2to both Adam¦′¦s and Brian¦′¦s now column as shown
+73	39	5in	5 + in	word	no	Five years ago is− 5in the change column.
+73	51	5from	5 + from	word	no	Subtract 5from now column to get the change
+74	20	2from	2 + from	word	no	Subtract 2from both sides
+75	7	2from	2 + from	word	no	Subtract 2from both sides
+75	51	8added	8 + added	word	no	Now we have an 8added to the t
+80	37	8miles,	8 + miles,	word	no	8 We have total distance, 8miles, under distance
+81	7	2mph	2 + mph	word	no	Bob walks 2mph faster than Fred
+81	9	2mph	2 + mph	word	no	Bob is r + 2, showing 2mph faster
+81	38	4in	4 + in	word	no	To answer the question completely we plug 4in for
+82	17	toboth	to + both	word	no	Add 4t toboth sides sovariableis onlyon one side
+82	17	sovariableis	so + variable + is	word	no	Add 4t toboth sides sovariableis onlyon one side
+82	17	onlyon	only + on	word	no	Add 4t toboth sides sovariableis onlyon one side
+82	47	6showing	6 + showing	word	no	Mike¦′¦s time is t + 6showing his 6hour head start
+82	47	6hour	6 + hour	word	no	Mike¦′¦s time is t + 6showing his 6hour head start
+83	1	2hours	2 + hours	word	no	Our solution for t, she catches him after 2hours
+83	58	2in	2 + in	word	no	To answer the question we plug 2in for t
+92	21	6to	6 + to	word	no	+6 + 6 Add 6to both sides
+98	42	1to	1 + to	word	no	Add 1to both sides
+99	26	6from	6 + from	word	no	Subtract 6from both sides
+109	20	4to	4 + to	word	no	+4 + 4 Add 4to both sides
+109	50	2from	2 + from	word	no	5 Solve for y. Subtract 2from both sides
+114	5	5x	5 + x	word	no	5x + 4 
+114	24	9from	9 + from	word	no	Subtract 9from both sides
+114	45	4to	4 + to	word	no	Add 4to each side
+119	18	2and	2 + and	word	no	Start at 2and shade below
+120	25	2from	2 + from	word	no	Subtract 2from both sides
+120	28	1to	1 + to	word	no	Add− 1to both sides
+120	29	4from	4 + from	word	no	Subtract− 4from both sides
+120	39	5from	5 + from	word	no	5− 2x 11 Subtract 5from both sides
+125	18	3to	3 + to	word	no	8 3x− 7 and 2x− 3 > 1 Add 7 or 3to both sides
+126	23	2from	2 + from	word	no	− 6− 4x +2 < 2 Subtract 2from all three parts
+126	29	0and	0 + and	word	no	0 < x 2 Graph x between 0and 2
+127	19	3or	3 + or	word	no	29) 1+5k 7k− 3or k− 10 > 2k + 10
+127	20	1and	1 + and	word	no	31) ¦2x+ 9 10x+ 1and 3x− 2 < 7x+ 2
+127	23	0or	0 + or	word	no	4) 10r > 0or r− 5<− 12
+127	29	0and	0 + and	word	no	12)− 6+ v 0and 2v > 4
+127	36	6or	6 + or	word	no	22)− 6− 8x− 6or 2+ 10x > 82
+127	38	6or	6 + or	word	no	26) 4n + 8< 3n− 6or 10n− 8 9 +9n
+129	14	5to	5 + to	word	no	+ 5+5 +5 + 5 Add 5to both sides
+129	29	4to	4 + to	word	no	− 4− 3|x| − 16 Add 4to both sides
+130	10	9from	9 + from	word	no	Subtract 9from both sides
+130	28	1from	1 + from	word	no	Subtract 1from all three parts
+139	31	3first	3 + first	word	no	Solve this equation, distributing− 3first
+140	32	3first	3 + first	word	no	Solve this equation, distributing 3first
+141	41	5from	5 + from	word	no	Subtract 5from both sides
+142	11	4from	4 + from	word	no	Solve for the lone variable, subtract 4from both sides
+147	13	6from	6 + from	word	no	Subtract 6from both sides
+147	31	6and	6 + and	word	no	We can get opposites in front of x, find LCM of 6and 9,
+153	15	4and	4 + and	word	no	Start with first two equations. LCM of 4and 6is 12.
+153	15	6is	6 + is	word	no	Start with first two equations. LCM of 4and 6is 12.
+153	31	8is	8 + is	word	no	The LCM of 6and− 8is 24.
+154	2	tousesubstitution	to + use + substitution	word	no	(B) 5y + 5z =5 Thesecondequationissolvedforz tousesubstitution
+155	19	3is	3 + is	word	no	The LCM of 1 and− 3is 3
+159	62	5from	5 + from	word	no	Subtract 5from both sides
+160	0	5quarters	5 + quarters	word	no	5quarters and 6dimes Our Solution
+160	0	6dimes	6 + dimes	word	no	5quarters and 6dimes Our Solution
+161	59	3times	3 + times	word	no	3times as many 8cent stamples as 5cent stamps
+161	59	8cent	8 + cent	word	no	3times as many 8cent stamples as 5cent stamps
+161	59	5cent	5 + cent	word	no	3times as many 8cent stamples as 5cent stamps
+171	37	1in	1 + in	word	no	is pure, 100% or 1in our table, written as a
+177	28	5xy2z3	5xy + 2z + 3	word	yes	2x¦3¦y¦5¦z· 5xy¦2¦z¦3 
+179	42	(x3yz2)4	(x3 + yz + 2)4	word	yes	(x¦3¦yz¦2¦)¦4 
+179	43	x12y4z8	x12y + 4z + 8	word	yes	x¦12¦y¦4¦z¦8 ¦Our solution
+179	44	4on	4 + on	word	no	Put the exponent of 4on each factor, multiplying powers
+180	0	2on	2 + on	word	no	Put the exponent of 2on each factor, multiplying powers
+180	12	(4x2y5)3	(4x2 + y + 5)3	word	yes	(4x¦2¦y¦5¦)¦3 
+180	13	3on	3 + on	word	no	Put the exponent of 3on each factor, multiplying powers
+180	14	43x6y15	43x6 + y + 15	word	yes	4¦3¦x¦6¦y¦15 ¦Evaluate 4¦3
+180	15	64x6y15	64x6 + y + 15	word	yes	64x¦6¦y¦15 ¦Our Solution
+180	29	5x4y2)3	5x4 + y + 2)3	word	yes	(4x¦3¦y· 5x¦4¦y¦2¦)¦3 
+180	31	(20x7y3)3	(20x7 + y + 3)3	word	yes	(20x¦7¦y¦3¦)¦3 
+180	33	203x21y9	203x21y + 9	word	yes	20¦3¦x¦21¦y¦9 ¦Evaluate 20¦3
+180	34	8000x21y9	8000x21y + 9	word	yes	8000x¦21¦y¦9 ¦Our Solution
+182	10	(2u3v2)2	(2u3v + 2)2	word	yes	13) (2u¦3¦v¦2¦)¦2
+182	18	4x3y4	4x3 + y + 4	word	yes	23) ¦4x¦3¦y¦4
+182	20	(x3y4	(x3 + y + 4	word	yes	25) (x¦3¦y¦4
+182	21	2x2y3)2	2x2 + y + 3)2	word	yes	· 2x¦2¦y¦3¦)¦2
+182	22	2x(x4y4)4	2x(x4 + y + 4)4	word	yes	27) 2x(x¦4¦y¦4¦)¦4
+182	23	7y5	7 + y + 5	word	yes	29) ¦2x ¦7¦y¦5
+182	24	4x2y3	4x2 + y3	word	yes	3x¦3¦y· 4x¦2¦y¦3
+182	28	2y17	2y + 17	word	yes	33) ¦2y¦17
+182	29	(2x2y4)4	(2x2 + y + 4)4	word	yes	(2x¦2¦y¦4¦)¦4
+182	35	2xy5	2xy + 5	word	yes	37) ¦2xy¦5
+182	36	2x2y3	2x2 + y + 3	word	yes	· 2x¦2¦y¦3
+182	37	2xy4	2xy + 4	word	yes	2xy¦4 ¦· y¦3
+182	38	q3r2	q + 3r + 2	word	yes	39) ¦q¦3¦r¦2
+182	41	zy3	zy + 3	word	yes	41) ¦zy¦3
+182	42	z3	z + 3	word	yes	· z¦3 ¦x¦4¦y¦4
+182	42	x4y4	x4 + y + 4	word	yes	· z¦3 ¦x¦4¦y¦4
+182	46	2zx2y2	2zx2 + y + 2	word	yes	· 2zx¦2¦y¦2
+182	47	(x2z3)2	(x2z + 3)2	word	yes	(x¦2¦z¦3¦)¦2
+182	54	xy2	xy + 2	word	yes	· xy¦2
+182	65	xy3	xy + 3	word	yes	24) ¦xy¦3
+182	67	(u2v2	(u2v + 2	word	yes	26) (u¦2¦v¦2
+182	77	(y4)2	(y + 4)2	word	yes	· (y¦4¦)¦2
+182	78	2y4	2y + 4	word	yes	2y¦4
+182	82	2x2y4	2x2 + y4	word	yes	2x¦2¦y¦4 ¦· x¦2
+182	83	2x4y5	2x4 + y + 5	word	yes	40) ¦2x¦4¦y¦5
+182	84	2z10	2z + 10	word	yes	· 2z¦10 ¦x¦2¦y¦7
+182	84	x2y7	x2 + y + 7	word	yes	· 2z¦10 ¦x¦2¦y¦7
+182	85	(xy2z2)4	(xy + 2z + 2)4	word	yes	(xy¦2¦z¦2¦)¦4
+182	86	2q3	2q + 3	word	yes	42) ¦2q¦3 ¦p¦3¦r¦4
+182	86	p3r4	p3r + 4	word	yes	42) ¦2q¦3 ¦p¦3¦r¦4
+184	47	e−4f2	e−4 + f + 2	word	yes	2d¦−1 ¦e¦−4¦f¦2 
+184	49	2b2f2	2b2 + f + 2	word	yes	2b¦2¦f¦2 ¦Our Solution
+185	41	6x−5y3	6x−5 + y + 3	word	yes	6x¦−5¦y¦3 
+185	43	6x−5y3	6x−5 + y + 3	word	yes	6x¦−5¦y¦3 
+186	13	3and	3 + and	word	no	2 Move 3and b to denominator because of negative exponents
+186	31	9x−6y6	9x−6 + y + 6	word	yes	9x¦−6¦y¦6
+186	38	2with	2 + with	word	no	Move 2with negative exponent down and z¦0 ¦=1
+186	38	z0	z + 0	word	yes	Move 2with negative exponent down and z¦0 ¦=1
+186	41	x6y9	x6 + y + 9	word	yes	x¦6¦y¦9
+186	43	x6y9	x6 + y + 9	word	yes	x¦6¦y¦9
+187	4	(2xy3)4	(2xy + 3)4	word	yes	· (2xy¦3¦)¦4
+187	6	(2x2y2)4x−4	(2x2 + y + 2)4x−4	word	yes	5) (2x¦2¦y¦2¦)¦4¦x¦−4
+187	7	(x3y4)3	(x3 + y + 4)3	word	yes	7) (x¦3¦y¦4¦)¦3
+187	8	x−4y4	x−4 + y + 4	word	yes	· x¦−4¦y¦4
+187	10	3y3	3y + 3	word	yes	3x ¦3¦y¦3 ¦· 3x¦0
+187	19	(x0y2)4	(x0 + y2)4	word	yes	(x¦0¦y¦2¦)¦4
+187	26	y3	y + 3	word	yes	25) ¦y¦3
+187	28	(x4y2)3	(x4 + y + 2)3	word	yes	(x¦4¦y¦2¦)¦3
+187	35	y(2x4y2)2	y(2x4 + y + 2)2	word	yes	31) ¦y(2x¦4¦y¦2¦)¦2
+187	36	2x4y0	2x4 + y + 0	word	yes	2x¦4¦y¦0
+187	38	2x4y4z	2x4 + y4z	word	yes	2x¦4¦y¦4¦z ¦2
+187	39	(zy2)4	(zy + 2)4	word	yes	· (zy¦2¦)¦4
+187	42	(2kj3)2	(2kj + 3)2	word	yes	(2kj¦3¦)¦2
+187	47	z3	z + 3	word	yes	z¦3 ¦· x¦2¦y¦3¦z ¦1
+187	47	x2y3z	x2 + y3z	word	yes	z¦3 ¦· x¦2¦y¦3¦z ¦1
+187	50	2x3y2	2x3 + y + 2	word	yes	4) 2x¦3¦y¦2
+187	56	3y3	3y + 3	word	yes	10) ¦3y¦3
+187	57	2x4y	2x4 + y	word	yes	3yx¦3 ¦· 2x¦4¦y ¦3
+187	58	3x3y2	3x3 + y + 2	word	yes	12) ¦3x¦3¦y¦2
+187	61	2xy2	2xy + 2	word	yes	14) ¦2xy¦2
+187	62	4x3y	4x3 + y	word	yes	· 4x¦3¦y ¦4
+187	65	2y2	2y + 2	word	yes	16) ¦2x ¦2¦y¦2
+187	71	2y2	2y + 2	word	yes	22) ¦2y¦2
+187	74	(x4y	(x4 + y	word	yes	(x¦4¦y ¦3¦) ¦1
+187	76	2xy4	2xy + 4	word	yes	· 2xy¦4
+187	91	2q4	2q + 4	word	yes	38) ¦2q¦4
+189	3	5places	5 + places	word	no	big number. Move decimal right 5places
+189	8	3places	3 + places	word	no	is a small number. Move decimal left 3places
+194	24	5when	5 + when	word	no	m¦4 ¦+ 8m¦3 ¦+ 14m¦2 ¦+13m + 5when m =− 6
+194	32	(3v4	(3v + 4	word	yes	16) (3v¦4 ¦+ 1)+ (5− v¦4¦)
+194	32	v4)	v + 4)	word	yes	16) (3v¦4 ¦+ 1)+ (5− v¦4¦)
+195	1	(6r2	(6r + 2	word	yes	22) (1+ 6r¦2¦)+ (6r¦2
+195	28	(8r4	(8r + 4	word	yes	35) (8r¦4
+195	29	5r3	5r + 3	word	yes	− 5r¦3 ¦+5r¦2¦)+ (2r¦2 ¦+ 2r¦3
+195	30	7r4	7r + 4	word	yes	− 7r¦4 ¦+1)
+197	8	14y2	14y + 2	word	yes	12x¦2 ¦+ 21xy− 8xy− 14y¦2 
+197	10	14y2	14y + 2	word	yes	12x¦2 ¦+13xy− 14y¦2 ¦Our Solution
+197	49	14y2	14y + 2	word	yes	(7y)(− 2y)=− 14y¦2 
+197	51	14y2	14y + 2	word	yes	− 8xy +21xy− 14y¦2 
+197	53	14y2	14y + 2	word	yes	12x¦2 ¦+13xy− 14y¦2 ¦Our Solution
+198	19	14y2	14y + 2	word	yes	− 8xy + 21xy− 14y¦2 ¦and
+198	26	7by	7 + by	word	no	245 Multiply 7by 5then 3
+198	26	5then	5 + then	word	no	245 Multiply 7by 5then 3
+198	29	2by	2 + by	word	no	Use 0 for placeholder, multiply 2by 5then 3
+198	29	5then	5 + then	word	no	Use 0 for placeholder, multiply 2by 5then 3
+198	40	14y2	14y + 2	word	yes	− 8xy− 14y¦2 
+198	42	14y2	14y + 2	word	yes	12x¦2 ¦+13xy− 14y¦2 
+199	13	5by	5 + by	word	no	Multiply− 5by each term
+199	28	5y2	5y + 2	word	yes	− 4xy− 10xy− 5y¦2 ¦8x¦2
+199	31	5y2	5y + 2	word	yes	− 14xy− 5y¦2 ¦8x¦2
+199	36	5y2	5y + 2	word	yes	− 10xy + 5y¦2
+199	39	5y2	5y + 2	word	yes	− 14xy + 5y¦2
+200	13	7)(6r2	7)(6r + 2	word	yes	23) (r− 7)(6r¦2
+200	18	4y2)	4y + 2)	word	yes	− 7xy + 4y¦2¦)
+200	21	(5k2	(5k + 2	word	yes	31) (5k¦2 ¦+3k +3)(3k¦2 ¦+ 3k + 6)
+200	42	6v2)(6u2	6v + 2)(6u2	word	yes	32) (7u¦2 ¦+ 8uv− 6v¦2¦)(6u¦2 ¦+4uv + 3v¦2¦)
+200	42	3v2)	3v + 2)	word	yes	32) (7u¦2 ¦+ 8uv− 6v¦2¦)(6u¦2 ¦+4uv + 3v¦2¦)
+202	9	36y2	36y + 2	word	yes	− 36y¦2 
+206	31	1573	157 + 3	word	no	1573
+210	31	4r2	4r + 2	word	yes	21) ¦4r¦2
+210	58	r2	r + 2	word	yes	− r¦2
+210	64	4v3	4v + 3	word	yes	43) ¦4v¦3
+210	65	21v2	21v + 2	word	yes	− 21v¦2 ¦+ 6v + 19
+210	69	3k3	3k + 3	word	yes	3k¦3 ¦+ 4k¦2 ¦+ 2k
+210	100	3v2	3v + 2	word	yes	26) ¦3v¦2
+210	104	8k3	8k + 3	word	yes	30) ¦8k¦3
+210	126	66k2	66k + 2	word	yes	− 66k¦2 ¦+ 12k + 37
+213	3	24x4y2z,	24x4 + y + 2z,	word	yes	GCF of 24x¦4¦y¦2¦z, 18x¦2¦y¦4
+213	4	12x3yz5	12x3 + yz + 5	word	yes	, and 12x¦3¦yz¦5
+213	12	x2y	x2 + y	word	yes	x¦2¦y 
+213	14	6x2y	6x2 + y	word	yes	GCF = 6x¦2¦y Our Solution
+213	56	3x3y2z	3x3 + y + 2z	word	yes	3x¦3¦y¦2¦z + 5x¦4¦y¦3¦z¦5
+213	57	4xy4	4xy + 4	word	yes	− 4xy¦4 ¦GCF is xy¦2
+214	0	3x3y2z	3x3 + y2z	word	yes	3x¦3¦y¦2¦z
+214	1	xy2	xy + 2	word	yes	xy¦2 ¦=3x¦2¦z,
+214	2	4xy4	4xy + 4	word	yes	− 4xy¦4
+214	4	xy2	xy + 2	word	yes	xy¦2 ¦= 5x¦3¦yz¦5
+214	4	5x3yz5	5x3 + yz + 5	word	yes	xy¦2 ¦= 5x¦3¦yz¦5
+214	6	xy2	xy + 2	word	yes	xy¦2
+214	7	xy2(3x2z	xy + 2(3x2z	word	yes	xy¦2¦(3x¦2¦z +5x¦3¦yz¦5
+214	8	4y2	4y + 2	word	yes	=− 4y¦2 
+214	10	4y2)	4y + 2)	word	yes	− 4y¦2¦) Our Solution
+214	38	12x5y2	12x5 + y + 2	word	yes	12x¦5¦y¦2
+214	39	2x3y2(6x2	2x3 + y + 2(6x2	word	yes	2x¦3¦y¦2¦(6x¦2
+214	40	6x4y4	6x4 + y + 4	word	yes	− 6x¦4¦y¦4 ¦+8x¦3¦y¦5 
+214	43	3xy2	3xy + 2	word	yes	− 3xy¦2 ¦+4y¦3¦) Our Solution
+215	17	35x3y3z	35x3 + y + 3z	word	yes	21) 20x¦8¦y¦2¦z¦2 ¦+15x¦5¦y¦2¦z + 35x¦3¦y¦3¦z
+215	18	50x2y	50x2 + y	word	yes	23) 50x¦2¦y + 10y¦2 ¦+ 70xz¦2
+215	18	10y2	10y + 2	word	yes	23) 50x¦2¦y + 10y¦2 ¦+ 70xz¦2
+215	18	70xz2	70xz + 2	word	yes	23) 50x¦2¦y + 10y¦2 ¦+ 70xz¦2
+215	25	27x2y5	27x2 + y + 5	word	yes	8) 27x¦2¦y¦5
+215	26	72x3y2	72x3 + y + 2	word	yes	− 72x¦3¦y¦2
+215	27	8x3y2	8x3 + y + 2	word	yes	10) 8x¦3¦y¦2 ¦+4x¦3
+215	31	27y7	27y + 7	word	yes	18) 27y¦7 ¦+12y¦2¦x + 9y¦2
+215	31	9y2	9y + 2	word	yes	18) 27y¦7 ¦+12y¦2¦x + 9y¦2
+215	34	15q2r2	15q + 2r + 2	word	yes	22) 3p +12q− 15q¦2¦r¦2
+215	35	30y4z3x5	30y + 4z + 3x5	word	yes	24) 30y¦4¦z¦3¦x¦5 ¦+50y¦4¦z¦5
+215	36	10y4z3x	10y + 4z + 3x	word	yes	− 10y¦4¦z¦3¦x
+215	44	10y7	10y + 7	word	yes	32)− 10y¦7 ¦+6y¦10
+215	45	8y8x	8y + 8x	word	yes	− 4y¦10¦x− 8y¦8¦x
+216	4	5xy	5x + y	word	no	GCF is often a monomial like in the problem 5xy + 10xz the GCF is the mono-
+219	9	7and	7 + and	word	no	y + 7and 7+ y are the same, use either one
+219	32	5in	5 + in	word	no	Need to switch subtraction order, use− 5in middle
+219	33	3match	3 + match	word	no	Now 2x− 3match on both! Factor out this GCF
+220	2	40r3	40r + 3	word	yes	1) 40r¦3
+220	3	8r2	8r + 2	word	yes	− 8r¦2
+220	18	28y2x	28y + 2x	word	yes	− 28y¦2¦x
+220	19	8y2	8y + 2	word	yes	19) 40xy + 35x− 8y¦2
+220	29	14v3	14v + 3	word	yes	4) 14v¦3 ¦+ 10v¦2
+220	29	10v2	10v + 2	word	yes	4) 14v¦3 ¦+ 10v¦2
+220	37	49r2	49r + 2	word	yes	− 49r¦2 ¦+18r− 21
+220	44	25y2	25y + 2	word	yes	24) 24xy + 25y¦2
+220	45	30y3	30y + 3	word	yes	− 20x− 30y¦3
+222	9	6and	6 + and	word	no	6and 3, split the middle term
+223	36	9and	9 + and	word	no	− 9and 2, write the factors
+224	14	6and	6 + and	word	no	1· 6and 2· 3 
+225	16	15v2	15v + 2	word	yes	− 8uv + 15v¦2
+225	20	12y2	12y + 2	word	yes	23) x¦2 ¦+ xy− 12y¦2
+225	21	12y2	12y + 2	word	yes	25) x¦2 ¦+ 4xy− 12y¦2
+225	41	14v2	14v + 2	word	yes	− 9uv + 14v¦2
+225	46	5v2	5v + 2	word	yes	30) 5v¦2 ¦+ 20v− 25
+226	25	9and	9 + and	word	no	The numbers are 9and 2, split the middle term
+227	13	5y2	5y + 2	word	yes	− xy− 5y¦2 
+227	14	5y2	5y + 2	word	yes	4x¦2 ¦+4xy− 5xy− 5y¦2 
+228	12	5k2	5k + 2	word	yes	13) 5k¦2 ¦+13k +6
+228	16	49y2	49y + 2	word	yes	19) 5x¦2 ¦+ 28xy− 49y¦2
+228	19	21k2	21k + 2	word	yes	23) 21k¦2
+228	24	4k2	4k + 2	word	yes	29) 4k¦2
+228	32	8y2	8y + 2	word	yes	− 52xy + 8y¦2
+228	35	7v2	7v + 2	word	yes	4) 7v¦2
+228	39	3r2	3r + 2	word	yes	8) 3r¦2
+228	42	5k2	5k + 2	word	yes	12) 5k¦2
+228	44	3r2	3r + 2	word	yes	14) 3r¦2 ¦+ 16r +21
+228	45	10v2	10v + 2	word	yes	16) 3u¦2 ¦+ 13uv− 10v¦2
+228	47	5y2	5y + 2	word	yes	− 2xy− 5y¦2
+228	48	28v2	28v + 2	word	yes	20) 5u¦2 ¦+ 31uv− 28v¦2
+228	52	4r2	4r + 2	word	yes	26) 4r¦2 ¦+ r− 3
+228	54	4r2	4r + 2	word	yes	30) 4r¦2 ¦+ 3r− 7
+228	59	36v2	36v + 2	word	yes	− 3uv− 36v¦2
+231	1	25y2	25y + 2	word	yes	4x¦2 ¦+ 20xy + 25y¦2 
+231	5	Usesquareroots	Use + square + roots	word	no	Usesquareroots fromfirstandlastterms andsignfromthemiddle
+231	34	4r2)	4r + 2)	word	yes	(5p 2r)(25p¦2 ¦10r 4r¦2¦) Use formula, use SOAP to fill in signs
+232	34	4and	4 + and	word	no	The numbers are 4and 4, the same! Perfect Square
+233	2	r2	r + 2	word	yes	1) r¦2
+233	4	v2	v + 2	word	yes	3) v¦2
+233	8	9k2	9k + 2	word	yes	7) 9k¦2
+233	38	z4	z + 4	word	yes	43) 16− z¦4
+233	40	y4	y + 4	word	yes	− y¦4
+233	47	4v2	4v + 2	word	yes	6) 4v¦2
+233	55	k2	k + 2	word	yes	16) k¦2 ¦+4k +4
+233	58	k2	k + 2	word	yes	20) k¦2
+234	27	196y2	196y + 2	word	yes	4x¦2 ¦+ 56xy + 196y¦2 
+234	28	49y2)	49y + 2)	word	yes	4(x¦2 ¦+ 14xy + 49y¦2¦) 
+234	31	7and	7 + and	word	no	7and 7, perfect square!
+235	2	2y	2 + y	word	yes	5x ¦2¦y +15xy− 35x¦2
+235	17	108x3y2	108x3 + y + 2	word	yes	108x¦3¦y¦2
+235	18	39x2y2	39x2 + y + 2	word	yes	− 39x¦2¦y¦2 ¦+ 3xy¦2 
+235	18	3xy2	3xy + 2	word	yes	− 39x¦2¦y¦2 ¦+ 3xy¦2 
+235	19	3xy2	3xy + 2	word	yes	GCF first, 3xy¦2
+235	20	3xy2(36x2	3xy + 2(36x2	word	yes	3xy¦2¦(36x¦2
+235	23	3xy2(36x2	3xy + 2(36x2	word	yes	3xy¦2¦(36x¦2
+236	4	4v2	4v + 2	word	yes	− 9uv + 4v¦2
+236	15	25y2	25y + 2	word	yes	− 25y¦2
+236	20	20y2x	20y + 2x	word	yes	23) 2x¦3 ¦+ 6x¦2¦y− 20y¦2¦x
+236	25	3k3	3k + 3	word	yes	31) 3k¦3
+236	26	27k2	27k + 2	word	yes	− 27k¦2 ¦+60k
+236	29	y2	y + 2	word	yes	− 8xy + y¦2
+236	32	60y2x	60y + 2x	word	yes	39) 9x¦3 ¦+ 21x¦2¦y− 60y¦2¦x
+236	39	5x2y	5x2 + y	word	yes	8) 2x¦3 ¦+ 5x¦2¦y + 3y¦2¦x
+236	39	3y2x	3y + 2x	word	yes	8) 2x¦3 ¦+ 5x¦2¦y + 3y¦2¦x
+236	44	125v2	125v + 2	word	yes	− 150uv + 125v¦2
+236	46	27y3	27y + 3	word	yes	− 27y¦3
+236	59	18y2	18y + 2	word	yes	− 18y¦2
+236	60	2k2	2k + 2	word	yes	34) 2k¦2 ¦+k− 10
+236	61	v2	v + 2	word	yes	36) v¦2 ¦+ v
+236	65	2u2v2	2u2v + 2	word	yes	42) 2u¦2¦v¦2
+236	66	11uv3	11uv + 3	word	yes	− 11uv¦3 ¦+15v¦4
+237	32	3and	3 + and	word	no	The numbers are− 3and 4, split the middle term
+241	18	7r2	7r + 2	word	yes	21) 7r¦2 ¦+ 84=− 49r
+241	21	3v2	3v + 2	word	yes	25) 3v¦2 ¦+ 7v =40
+241	23	4k2	4k + 2	word	yes	29) 4k¦2 ¦+18k− 23 = 6k− 7
+241	37	v2	v + 2	word	yes	14) v¦2
+241	41	7k2	7k + 2	word	yes	18) 7k¦2 ¦+57k +13 = 5
+243	25	5from	5 + from	word	no	x 0 or 3x +5 0 Subtract 5from second equation
+244	9	5in	5 + in	word	no	x¦2 ¦+ 6x +8 when x =− 6 Substitute− 5in for each variable
+244	29	15x4y2	15x4 + y + 2	word	yes	15x¦4¦y¦2
+244	30	25x2y6	25x2 + y + 6	word	yes	25x¦2¦y¦6 
+244	32	5y4	5y + 4	word	yes	5y¦4 ¦Our Solution
+245	12	8by	8 + by	word	no	Reduce by dividing 24 and 8by 4
+245	23	3and	3 + and	word	no	Divide out common factor (3x− 1) and divide 3and 6by 3
+245	23	6by	6 + by	word	no	Divide out common factor (3x− 1) and divide 3and 6by 3
+246	10	3k2	3k + 2	word	yes	7) ¦3k¦2 ¦+ 30k
+247	24	2k2	2k + 2	word	yes	− 2k¦2
+249	5	24y4	24y + 4	word	yes	24y¦4
+249	6	(3and	(3 + and	word	no	Reduce coeﬃcients by dividing out common factors (3and 5)
+249	12	33x5y4	33x5 + y + 4	word	yes	33x¦5¦y¦4 ¦Our Solution
+251	79	7r2	7r + 2	word	yes	39) ¦7r¦2
+251	149	7k2	7k + 2	word	yes	7k¦2
+253	8	8and	8 + and	word	no	Find the LCD of 8and 6 
+253	11	8that	8 + that	word	no	24 is the first multiple of 8that is also divisible by 6
+253	16	4x2y5	4x2 + y + 5	word	yes	Find the LCD of 4x¦2¦y¦5 ¦and 6x¦4¦y¦3¦z¦6
+253	17	4and	4 + and	word	no	First find the LCD of coeﬃcients 4and 6
+256	83	5x2y,	5x2 + y,	word	yes	12) 5x¦2¦y, 25x¦3¦y¦5¦z
+256	83	25x3y5z	25x3 + y + 5z	word	yes	12) 5x¦2¦y, 25x¦3¦y¦5¦z
+258	35	6by	6 + by	word	no	4 The LCD is 12. Build up, multiply 6by 2and 4 by 3
+258	35	2and	2 + and	word	no	4 The LCD is 12. Build up, multiply 6by 2and 4 by 3
+260	60	4factor	4 + factor	word	no	Divide out x− 4factor
+261	37	2x2y	2x2 + y	word	yes	2x¦2¦y
+261	110	x2y	x2 + y	word	yes	x¦2¦y
+261	195	4z2	4z + 2	word	yes	4z¦2
+265	24	2in	2 + in	word	no	Factor out 2in denominator
+265	46	4(m2)	4(m + 2)	word	yes	m(m¦2¦)+ ¦4(m¦2¦)
+267	43	a2	a + 2	word	no	a2
+267	56	a2	a + 2	word	no	a2
+267	80	x−2y	x−2 + y	word	yes	x¦−2¦y +xy¦−2
+270	12	8from	8 + from	word	no	Subtract 8from both sides
+270	33	k2	k + 2	word	yes	k¦2 ¦+k− 6= 24 
+270	37	k2	k + 2	word	yes	k¦2 ¦+k− 30 =0 Factor
+271	3	8feet,	8 + feet,	word	no	The flagpole has a shadow of 8feet, but we don¦′¦t know the height
+271	23	9points	9 + points	word	no	Don¦′¦t know visitor score, but home is 9points less
+271	26	6for	6 + for	word	no	7 Home team scored 6for every 7 the visitor scored
+274	10	3x−	3 + x−	word	no	3x−
+276	7	6from	6 + from	word	no	Subtract 6from both sides
+276	15	3in	3 + in	word	no	Check− 3in (x + 1)(x +2), it works
+276	17	1in	1 + in	word	no	Check 1in (x + 1)(x +2), it works
+276	58	5in	5 + in	word	no	Check 5in (x− 1)(x− 2), it works
+276	60	2in	2 + in	word	no	Check− 2in (x− 1)(x− 2), it works
+280	42	1lbs	1 + lbs	word	no	1lbs
+281	2	1lbs	1 + lbs	word	no	1lbs
+281	39	1ft	1 + ft	word	no	factor would be squared, ¦1ft
+281	45	8cubic	8 + cubic	word	no	Convert 8cubic feet to yd¦3 ¦Write 8ft¦3 ¦as fraction, put it over 1
+283	24	1tab	1 + tab	word	no	1tab Convert tab to mg, put tab in denominator
+283	30	1tab	1 + tab	word	no	1tab
+283	31	1dose	1 + dose	word	no	1dose
+283	39	1dose	1 + dose	word	no	1dose
+290	18	y6	y + 6	word	yes	√ · y¦6
+290	19	z10	z + 10	word	yes	· z¦10
+290	35	y9	y + 9	word	yes	√ · y¦9
+290	36	z6	z + 6	word	yes	· z¦6
+291	14	196v2	196v + 2	word	yes	15) 196v¦2
+291	18	100k4	100k + 4	word	yes	19)− 100k¦4
+291	23	45x2y2	45x2 + y + 2	word	yes	25) 45x¦2¦y¦2
+291	24	16x3y3	16x3 + y + 3	word	yes	27) 16x¦3¦y¦3
+291	25	320x4y4	320x4 + y + 4	word	yes	29) 320x¦4¦y¦4
+291	26	80xy2	80xy + 2	word	yes	31) 6 80xy¦2
+291	27	245x2y3	245x2 + y + 3	word	yes	33) 5 245x¦2¦y¦3
+291	31	80hj4k	80hj + 4k	word	yes	39) 2 80hj¦4¦k
+291	60	72x2y2	72x2 + y + 2	word	yes	34) 2 72x¦2¦y¦2
+291	61	72x3y4	72x3 + y + 4	word	yes	36)− 5 72x¦3¦y¦4
+291	64	32xy2z3	32xy + 2z + 3	word	yes	40)− 32xy¦2¦z¦3
+291	65	32m2p4q	32m2 + p4 + q	word	yes	42)− 8 32m¦2¦p¦4¦q
+293	38	x25y17z3	x25y + 17z + 3	word	yes	x¦25¦y¦17¦z¦3
+293	39	x5y3	x5 + y + 3	word	yes	x¦5¦y¦3 ¦y¦2¦z¦3
+293	39	y2z3	y + 2z + 3	word	yes	x¦5¦y¦3 ¦y¦2¦z¦3
+293	42	5R	5 + R	word	no	5 ¦= 5R 0, so x¦5 ¦came out, no x’s
+293	44	3R2,	3 + R + 2,	word	no	5 ¦= 3R2, so y¦3 ¦came out, and y¦2 ¦remains
+293	44	y3	y + 3	word	yes	5 ¦= 3R2, so y¦3 ¦came out, and y¦2 ¦remains
+293	44	y2	y + 2	word	yes	5 ¦= 3R2, so y¦3 ¦came out, and y¦2 ¦remains
+293	46	0R3,	0R + 3,	word	no	5 ¦= 0R3, all three or z¦3 ¦remained inside. The
+293	46	z3	z + 3	word	yes	5 ¦= 0R3, all three or z¦3 ¦remained inside. The
+293	51	8works!	8 + works!	word	no	Looking for cubes that divide into 40. The number 8works!
+294	20	48v7	48v + 7	word	yes	21)− 2− 48v¦7
+294	24	135x5y3	135x5 + y + 3	word	yes	25)− 135x¦5¦y¦3
+294	26	32x4y4	32x4 + y + 4	word	yes	27)− 32x¦4¦y¦4
+294	28	256x4y6	256x4 + y + 6	word	yes	29) 256x¦4¦y¦6
+294	30	81x3y7	81x3 + y + 7	word	yes	31) 7− 81x¦3¦y¦7
+294	32	375u2v8	375u2v + 8	word	yes	33) 2 375u¦2¦v¦8
+294	36	54m8n3p7	54m8n3 + p7	word	yes	37) 6− 54m¦8¦n¦3¦p¦7
+294	63	64u5v3	64u5v + 3	word	yes	26) 64u¦5¦v¦3
+294	66	189x3y6	189x3 + y + 6	word	yes	30) 189x¦3¦y¦6
+294	69	56x2y8	56x2 + y + 8	word	yes	32)− 4 56x¦2¦y¦8
+294	73	135xy3	135xy + 3	word	yes	36) 3 135xy¦3
+294	79	324x7yz7	324x7 + yz + 7	word	yes	42)− 6 324x¦7¦yz¦7
+299	51	5and	5 + and	word	no	√ by dividing by 5and 2 respectively
+300	13	1more	1 + more	word	no	√ Index is 2, we need two fives in denominator, need 1more
+300	32	3more	3 + more	word	no	Index is 4, we need four twos in denominator, need 3more
+300	50	1more	1 + more	word	no	Index is 3, we need three fives in denominator, need 1more
+301	23	1more	1 + more	word	no	√ Index is 2, need two elevens, need 1more
+301	36	6x3y4z	6x3 + y + 4z	word	yes	18 6x¦3¦y¦4¦z
+301	38	10xy6z3	10xy + 6z + 3	word	yes	8 10xy¦6¦z¦3
+301	42	5y2z3	5y + 2z + 3	word	yes	4 5y¦2¦z¦3
+301	46	5y2z3	5y + 2z + 3	word	yes	4 5y¦2¦z¦3
+301	51	53y2z	53 + y + 2z	word	yes	5¦3¦y¦2¦z
+301	53	53y2z	53 + y + 2z	word	yes	4 ¦Multiply numerator and denominator by 5¦3¦y¦2¦z
+301	54	53y2z	53 + y + 2z	word	yes	5¦3¦y¦2¦z
+301	55	375x2y2z	375x2 + y + 2z	word	yes	9 375x¦2¦y¦2¦z
+301	59	375x2y2z	375x2 + y + 2z	word	yes	9 375x¦2¦y¦2¦z
+302	39	3x3y3	3x3 + y + 3	word	yes	4 3x¦3¦y¦3
+302	42	3p	3 + p	word	no	3p
+302	51	5r4	5r + 4	word	yes	37) ¦5 5r¦4
+302	53	8r2	8r + 2	word	yes	8r¦2
+302	57	5r3	5r + 3	word	yes	4) 5r¦3
+302	58	10r2	10r + 2	word	yes	√ · − 5 10r¦2
+302	90	3xy4	3xy + 4	word	yes	5 3xy¦4
+310	64	•9p	•9 + p	word	yes	•9¦p ¦to represent 9
+311	74	x2y	x2 + y	word	yes	x¦2¦y
+312	22	2x−1y	2x−1 + y	word	yes	2x¦−1¦y
+313	70	xy2)0	xy + 2)0	word	yes	20) (x· xy¦2¦)¦0
+313	71	(x0y	(x0 + y	word	yes	21) (x¦0¦y
+313	86	4v2	4 + v + 2	word	yes	4¦v¦2
+313	94	4y	4 + y	word	yes	4¦y
+313	110	2n	2 + n	word	yes	2¦n ¦2
+313	133	4y	4 + y	word	yes	4¦y ¦1¦)
+313	141	2y0)	2 + y + 0)	word	yes	2¦y¦0¦)
+313	143	y4	y + 4	word	yes	y¦4 ¦· x ¦2¦y
+313	150	(uv2)	(uv + 2)	word	yes	33) ¦(uv¦2¦)
+313	157	3y3)	3 + y + 3)	word	yes	3¦y¦3¦)
+313	179	4v2	4 + v + 2	word	yes	4¦v¦2
+314	10	x6y2	x6 + y + 2	word	yes	x¦6¦y¦2
+314	12	(x6y2)	(x6 + y + 2)	word	yes	(x¦6¦y¦2¦)
+314	25	x3y	x3 + y	word	yes	x¦3¦y
+315	48	x2y	x2 + y	word	yes	5 ¦x¦2¦y
+315	49	x3y4	x3 + y + 4	word	yes	x¦3¦y¦4
+315	61	8xy3	8xy + 3	word	yes	3 ¦8xy¦3
+315	62	4x2y	4x2 + y	word	yes	4x¦2¦y
+315	63	8as	8 + as	word	no	4 ¦Rewrite 4 as 2¦2 ¦and 8as 2¦3
+315	64	23xy3	23xy + 3	word	yes	3 ¦2¦3¦xy¦3
+315	65	22x2y	22x2 + y	word	yes	2¦2¦x¦2¦y
+316	4	9as	9 + as	word	no	3 ¦Rewrite 9as 3¦2
+316	24	x7y2z	x7 + y + 2z	word	yes	x¦7¦y¦2¦z
+316	28	x21y6z3	x21y + 6z + 3	word	yes	x¦21¦y¦6¦z¦3
+316	31	y6z5	y + 6z + 5	word	yes	y¦6¦z¦5
+316	34	y6z5	y + 6z + 5	word	yes	y¦6¦z¦5
+317	3	16x4y6	16x4 + y + 6	word	yes	1) 16x¦4¦y¦6
+317	10	x6y9	x6 + y + 9	word	yes	7) x¦6¦y¦9
+317	14	8x3y6	8x3 + y + 6	word	yes	11) 8x¦3¦y¦6
+317	16	9x2y6	9x2 + y + 6	word	yes	2) 9x¦2¦y¦6
+317	23	64x8y4	64x8 + y + 4	word	yes	8) 64x¦8¦y¦4
+317	25	25y2	25y + 2	word	yes	10) 25y¦2
+317	27	81x8y12	81x8 + y + 12	word	yes	12) 81x¦8¦y¦12
+317	38	x2y	x2 + y	word	yes	19) x¦2¦y
+317	42	xy2	xy + 2	word	yes	21) xy¦2
+317	44	x2y	x2 + y	word	yes	x¦2¦y
+317	55	xy3	xy + 3	word	yes	29) xy¦3 ¦x¦2¦y
+317	55	x2y	x2 + y	word	yes	29) xy¦3 ¦x¦2¦y
+317	59	3xy2z	3xy + 2z	word	yes	33) 3xy¦2¦z
+317	60	9x3yz2	9x3 + yz + 2	word	yes	3 ¦9x¦3¦yz¦2
+317	99	x2yz3	x2 + yz + 3	word	yes	24) x¦2¦yz¦3
+317	100	x2yz2	x2 + yz + 2	word	yes	6 ¦x¦2¦yz¦2
+317	112	2x3y3	2x3 + y + 3	word	yes	32) 2x¦3¦y¦3 ¦4xy¦2
+317	112	4xy2	4 + xy + 2	word	no	32) 2x¦3¦y¦3 ¦4xy¦2
+319	17	4and	4 + and	word	no	Combine like terms 2+ 4and 5i− 7i
+320	27	1and	1 + and	word	no	=− 1and i¦3 ¦=− i
+322	13	1is	1 + is	word	no	√ Square root of− 1is i, square root of 4is 2
+322	13	4is	4 + is	word	no	√ Square root of− 1is i, square root of 4is 2
+322	40	1and	1 + and	word	no	√ Take square root of− 1and 100
+326	22	2from	2 + from	word	no	Subtract 2from both sides
+327	12	6from	6 + from	word	no	Subtract 6from both sides
+329	27	1from	1 + from	word	no	Subtract x and 1from both sides
+329	42	4to	4 + to	word	no	Add 4to both sides of second equation
+330	42	0first	0 + first	word	no	3(0)+ 9− (0)+ 4 =− 1 Check x = 0first
+334	15	4from	4 + from	word	no	Subtract 4from both sides
+334	21	6from	6 + from	word	no	Subtract 6from both sides
+334	30	1from	1 + from	word	no	Subtract 1from both sides
+335	6	2equations!	2 + equations!	word	no	Solve, need 2equations!
+335	35	2to	2 + to	word	no	+ 2 + 2 Add 2to both sides
+337	28	5from	5 + from	word	no	x +5 =± 3 2√ Subtract 5from both sides
+338	2	bx	b + x	word	no	of the form x¦2 ¦+ bx + c, and a perfect square, the third term, c, can be easily
+340	1	2x2	2 + x2	word	no	2x¦2 ¦+ 20x 
+340	24	5from	5 + from	word	no	Subtract 5from both sides
+340	39	2to	2 + to	word	no	Add 2to both sides
+342	12	y2	y + 2	word	yes	7) y¦2
+342	18	v2	v + 2	word	yes	11) v¦2
+342	21	5k2	5k + 2	word	yes	15) 5k¦2
+342	32	3k2	3k + 2	word	yes	29) 3k¦2 ¦+9= 6k
+342	40	v2	v + 2	word	yes	41) v¦2 ¦+ 5v + 28 =0
+342	43	k2	k + 2	word	yes	45) k¦2
+342	48	8r2	8r + 2	word	yes	51) 8r¦2 ¦+ 10r =− 55
+342	58	r2	r + 2	word	yes	6) r¦2
+342	76	6r2	6r + 2	word	yes	22) 6r¦2 ¦+ 12r− 24=− 6
+342	79	v2	v + 2	word	yes	26) v¦2
+342	89	3r2	3r + 2	word	yes	38)− 3r¦2 ¦+12r + 49=− 6r¦2
+342	89	6r2	6r + 2	word	yes	38)− 3r¦2 ¦+12r + 49=− 6r¦2
+342	101	10v2	10v + 2	word	yes	56) 10v¦2
+342	104	4v2	4v + 2	word	yes	− 15v = 27 + 4v¦2
+347	7	3r2	3r + 2	word	yes	7) 3r¦2
+347	11	v2	v + 2	word	yes	11) v¦2
+347	14	3k2	3k + 2	word	yes	15) 3k¦2 ¦+3k− 4= 7
+347	28	3k2	3k + 2	word	yes	2) 3k¦2 ¦+2= 0
+347	44	3r2	3r + 2	word	yes	24) 3r¦2 ¦+ 4=− 6r
+347	47	6v2	6v + 2	word	yes	28) 6v¦2 ¦= 4+ 6v
+347	49	2k2	2k + 2	word	yes	32) 2k¦2 ¦+6k− 16 = 2k
+347	54	7r2	7r + 2	word	yes	37) 7r¦2
+348	15	4from	4 + from	word	no	− 4− 4 +2 + 2 Subtract 4from first, add 2to second
+348	15	2to	2 + to	word	no	− 4− 4 +2 + 2 Subtract 4from first, add 2to second
+348	37	2from	2 + from	word	no	Subtract 2from the first, subtract 3from the second
+348	37	3from	3 + from	word	no	Subtract 2from the first, subtract 3from the second
+349	18	3from	3 + from	word	no	Subtract 3from both sides
+349	31	2from	2 + from	word	no	Subtract 2from both sides
+350	13	2from	2 + from	word	no	Subtract 2from both sides
+350	31	4from	4 + from	word	no	Subtract 4from both sides
+350	54	3from	3 + from	word	no	Subtract 3from both sides
+352	6	ax2	a + x2	word	no	ax¦2 ¦+ bx + c, however, we can use the skills learned to solve quadratics to solve
+352	22	y2	y + 2	word	yes	y¦2 ¦=x¦4 ¦Square both sides
+352	23	y2	y + 2	word	yes	y¦2
+352	25	y2	y + 2	word	yes	Substitute y for x¦2 ¦and y¦2 ¦for x¦4
+353	23	1power	1 + power	word	no	Raise both sides to− 1power
+353	39	6from	6 + from	word	no	Subtract 6from both sides
+353	44	y2	y + 2	word	yes	y¦2
+353	46	2y2	2y + 2	word	yes	2y¦2 ¦+ y− 6 =0 
+354	9	y2	y + 2	word	yes	y¦2 ¦= (x− 7)¦2 
+354	11	3y2	3y + 2	word	yes	3y¦2
+354	48	y2	y + 2	word	yes	y¦2 ¦=(x¦2
+354	50	y2	y + 2	word	yes	y¦2
+354	66	9to	9 + to	word	no	Add 9to both sides of each equation
+355	5	3to	3 + to	word	no	Add 3to both sides
+355	16	y2	y + 2	word	yes	y¦2
+355	18	y2	y + 2	word	yes	y¦2
+355	20	y2	y + 2	word	yes	Substitute y¦2 ¦for x¦6 ¦and y for x¦3
+356	14	z6	z + 6	word	yes	11) z¦6
+356	16	6z4	6z + 4	word	yes	13) 6z¦4
+356	17	z2	z + 2	word	yes	− z¦2
+356	56	y4	y + 4	word	yes	2) y¦4
+356	57	9y2	9y + 2	word	yes	− 9y¦2 ¦+20 = 0
+356	58	y4	y + 4	word	yes	4) y¦4
+356	59	29y2	29y + 2	word	yes	− 29y¦2 ¦+100 = 0
+356	62	y4	y + 4	word	yes	8) y¦4
+356	63	40y2	40y + 2	word	yes	− 40y¦2 ¦+144 = 0
+356	66	y4	y + 4	word	yes	12) y¦4
+356	67	2y2	2y + 2	word	yes	− 2y¦2 ¦=24
+357	13	4more,	4 + more,	word	no	Length is 4more, or x +4, and area is 40.
+358	17	5in	5 + in	word	no	5in by 8in Our Solution
+359	9	4more,	4 + more,	word	no	x We don¦′¦t know width, x, length is 4more, x +4
+359	31	2to	2 + to	word	no	x +4is the length. Substitute 2to find
+359	32	2ft	2 + ft	word	no	2ft by 6ft Our Solution
+360	43	8by	8 + by	word	no	12 +2x Draw picture, picture if 8by 10
+361	9	2inches	2 + inches	word	no	2inches Our Solution
+364	47	22	2 + 2	word	yes	2¦2
+364	51	22	2 + 2	word	no	5 Together time, 22
+364	53	22	2 + 2	word	no	22
+366	36	112	1 + 12	word	no	1 hr 12 min = 112
+366	38	112	1 + 12	word	no	112
+366	39	11	1 + 1	word	no	60 = 11
+367	18	1from	1 + from	word	no	5 or x =3 Subtract 1from each to find electrician
+367	22	3hours	3 + hours	word	no	Electrician:2hr, Apprentice: 3hours Our Solution
+369	24	11	1 + 1	word	yes	22) One pipe can fill a cistern in 1¦1
+373	42	3less	3 + less	word	no	When he sold, he sold 3less (n− 3), for S5
+373	49	Findequatinosby	Find + equatinos + by	word	no	np=56 Findequatinosby multiplyingnumberbyprice
+374	58	2less	2 + less	word	no	There were 2less that actually paid (n− 2)
+374	59	S4more	S4 + more	word	no	and they had to pay S4more (p +4). The
+375	39	1to	1 + to	word	no	Add 1to both sides
+376	49	2r2	2r + 2	word	yes	2r¦2 ¦+ 100r− 1200=120r 
+376	53	2r2	2r + 2	word	yes	2r¦2
+376	56	r2	r + 2	word	yes	r¦2
+377	35	2or	2 + or	word	no	Solving for rate, divide by r + 2or r− 2
+377	62	2r2	2r + 2	word	yes	2r¦2
+387	36	5a	5 + a	word	no	− x = 5a function? 
+388	25	3and	3 + and	word	no	− 3and 2. If x were one of those two values, the function would be undefined.
+389	18	2in	2 + in	word	no	Substitute− 2in for x in the function
+389	37	7in	7 + in	word	no	Substitute− 7in for a in the function
+391	10	y2	y + 2	word	yes	f) y¦2
+391	12	y2	y + 2	word	yes	h) x¦2 ¦+ y¦2 ¦=1
+402	27	5inverses?	5 + inverses?	word	no	2− 5inverses? Calculate composition
+402	56	4into	4 + into	word	no	Distribute 3 and 4into numerators
+403	41	2to	2 + to	word	no	+ 2 +2 Add 2to both sides
+404	5	4from	4 + from	word	no	Subtract 4from both sides
+404	25	3to	3 + to	word	no	Subtract 4xy and add 3to both sides
+406	29	1from	1 + from	word	no	Subtract 1from both sides
+407	2	8as	8 + as	word	no	Rewrite 8as 2¦3 ¦and 32 as 2¦5
+407	4	3and	3 + and	word	no	Multiply exponents 3and 3x
+407	25	4from	4 + from	word	no	Subtract 4from both sides
+407	45	2and	2 + and	word	no	Multiply exponents− 2and 2x
+407	57	axay	axa + y	word	yes	add the exponents using the property that states a¦x¦a¦y ¦=a¦x+y
+408	10	1to	1 + to	word	no	Add 1to both sides
+408	23	axay	axa + y	word	yes	= a ¦n ¦and a¦x¦a¦y ¦= a¦x+y
+409	52	243p	243 + p	word	yes	22) 243¦p ¦=27¦−3p
+409	62	8p	8 + p	word	yes	· 8¦p ¦=(¦1
+410	46	log2	log + 2	word	yes	log¦2
+412	14	5from	5 + from	word	no	Subtract 5from both sides
+422	20	1so	1 + so	word	no	, put over 1so we have proportion
+422	47	1so	1 + so	word	no	, put over 1so we have a proportion
+431	24	a2	a + 2	word	yes	a¦2 ¦+b¦2
+440	69	7k2	7k + 2	word	yes	41)− 7k¦2 ¦+ 42k
+441	3	68k2	68k + 2	word	yes	57)− 68k¦2
+441	26	v2	v + 2	word	yes	77)− v¦2 ¦+ 2v +2
+441	28	4k2	4k + 2	word	yes	79)− 4k¦2 ¦+ 12
+443	142	πr2	πr + 2	word	yes	s− πr¦2
+449	39	11x	11 + x	word	yes	11¦x + ¦70
+452	6	9or	9 + or	word	no	1) n− 9or n 2: (− ∞,− 9] [2, ∞)
+452	7	4or	4 + or	word	no	2) m− 4or m <− 5 : ( − ∞,− 5) [− 4, ∞)
+452	8	5or	5 + or	word	no	3) x 5or x <− 5: ( − ∞,− 5) [5, ∞)
+452	9	0or	0 + or	word	no	4) r > 0or r <− 7 : ( − ∞ − 7), (0, ∞)
+452	11	7or	7 + or	word	no	6) n <− 7or n > 8 : ( − ∞ − 7), (8, ∞)
+452	25	8or	8 + or	word	no	20) r > 8or r <− 6: : ( − ∞,− 6) (8, ∞)
+452	27	0or	0 + or	word	no	22) x 0or x > 8 : ( − ∞, 0] (8, ∞)
+452	29	5or	5 + or	word	no	24) n 5or n < 1: ( − ∞, 1) [5, ∞)
+453	3	1or	1 + or	word	no	28) a 1or a 19 : ( − ∞, 1] [19, ∞)
+457	14	x3y6	x3 + y + 6	word	yes	8) x¦3¦y¦6
+457	20	x3y3	x3 + y + 3	word	yes	14) x¦3¦y¦3
+457	22	16x4y4	16x4 + y + 4	word	yes	16) 16x¦4¦y¦4
+457	24	32x8y10	32x8 + y + 10	word	yes	1) 32x¦8¦y¦10
+457	44	m2	m + 2	word	yes	21) m¦2
+457	45	xy3	xy + 3	word	yes	22) ¦xy¦3
+457	47	4x2y	4x2 + y	word	yes	23) ¦4x¦2¦y
+457	51	4x10y14	4x10 + y + 14	word	yes	25) 4x¦10¦y¦14
+457	52	8u18v6	8u18v + 6	word	yes	26) 8u¦18¦v¦6
+457	53	2x17y16	2x17 + y + 16	word	yes	27) 2x¦17¦y¦16
+457	63	y5x2	y + 5 + x2	word	yes	34) ¦y¦5¦x¦2
+457	68	2x2y	2x2 + y	word	yes	37) 2x¦2¦y
+457	69	2y2	2y + 2	word	yes	38) 2y¦2
+457	73	256q4r8	256q + 4r + 8	word	yes	42) 256q¦4¦r¦8
+457	74	4y4z	4y + 4z	word	yes	43) 4y¦4¦z
+457	78	2x3y2	2x3 + y + 2	word	yes	4) 2x¦3¦y¦2
+458	0	16x4y8	16x4 + y + 8	word	yes	5) 16x¦4¦y¦8
+458	2	y16	y + 16	word	yes	7) y¦16 ¦x¦5
+458	11	y8x5	y + 8 + x5	word	yes	12) ¦y¦8¦x¦5
+458	41	y8x4	y + 8x4	word	yes	20) ¦y¦8¦x¦4
+458	50	x15y	x15 + y	word	yes	x¦15¦y
+458	51	4y4	4y + 4	word	yes	26) 4y¦4
+458	54	4y5	4y + 5	word	yes	28) 4y¦5
+458	74	2y5x4	2y + 5x4	word	yes	31) 2y¦5¦x¦4
+458	78	x2y11z	x2 + y11z	word	yes	x¦2¦y¦11¦z
+458	82	j6	j + 6	word	yes	h¦3¦k j¦6
+458	90	y4z4	y4z + 4	word	yes	y¦4¦z¦4
+459	20	2v4	2v + 4	word	yes	16) 2v¦4 ¦+ 6
+459	36	12v3	12v + 3	word	yes	26) 12v¦3 ¦+ 3v +3
+459	47	r4	r + 4	word	yes	35) r¦4
+459	48	3r3	3r + 3	word	yes	− 3r¦3 ¦+ 7r¦2 ¦+1
+459	48	7r2	7r + 2	word	yes	− 3r¦3 ¦+ 7r¦2 ¦+1
+459	65	32k2	32k + 2	word	yes	2) 32k¦2 ¦+16k
+459	75	4r2	4r + 2	word	yes	10) 4r¦2 ¦+ 40r+64
+459	79	15v2	15v + 2	word	yes	13) 15v¦2
+459	88	4y2	4y + 2	word	yes	− 14xy− 4y¦2
+459	89	21v2	21v + 2	word	yes	18) 16u¦2 ¦+ 10uv− 21v¦2
+459	92	48v2	48v + 2	word	yes	− 34uv− 48v¦2
+459	96	6r3	6r + 3	word	yes	23) 6r¦3
+459	97	43r2	43r + 2	word	yes	− 43r¦2 ¦+12r− 35
+460	15	15k4	15k + 4	word	yes	31) 15k¦4 ¦+24k¦3 ¦+48k¦2 ¦+ 27k + 18
+460	32	18v4	18v + 4	word	yes	− 18v¦4
+460	46	4r2	4r + 2	word	yes	8) 4r¦2
+460	52	16y2	16y + 2	word	yes	11) 16y¦2
+460	58	9y2	9y + 2	word	yes	14) 9y¦2
+460	62	4y2	4y + 2	word	yes	− 4y¦2
+460	65	v2	v + 2	word	yes	18) v¦2 ¦+8v + 16
+460	71	49k2	49k + 2	word	yes	22) 49k¦2
+460	82	4y2	4y + 2	word	yes	29) 4x¦2 ¦+ 8xy + 4y¦2
+460	83	25y2	25y + 2	word	yes	30) 64x¦2 ¦+ 80xy + 25y¦2
+460	84	4r2	4r + 2	word	yes	31) 25 + 20r + 4r¦2
+460	90	16v2	16v + 2	word	yes	35) 16v¦2
+460	97	16k2	16k + 2	word	yes	39) 16k¦2 ¦+16k + 4
+460	110	3k2	3k + 2	word	yes	4) ¦3k¦2
+461	70	8k2	8k + 2	word	yes	30) 8k¦2
+461	85	k2	k + 2	word	yes	34) k¦2
+461	100	r2	r + 2	word	yes	39) r¦2 ¦+3r− 4−
+461	110	v2	v + 2	word	yes	43) v¦2
+461	116	4x3(2y2	4x3(2y + 2	word	yes	10) 4x¦3¦(2y¦2 ¦+1)
+462	2	3y2(9y5	3y + 2(9y + 5	word	yes	18) 3y¦2¦(9y¦5 ¦+ 4x +3)
+462	6	5x3y2z(4x5z	5x3 + y + 2z(4x5z	word	yes	21) 5x¦3¦y¦2¦z(4x¦5¦z +3x¦2 ¦+ 7y)
+462	7	5q2r2)	5q + 2r + 2)	word	yes	22) 3(p + 4q− 5q¦2¦r¦2¦)
+462	8	10(5x2y	10(5x2 + y	word	yes	23) 10(5x¦2¦y + y¦2 ¦+7xz¦2¦)
+462	8	y2	y + 2	word	yes	23) 10(5x¦2¦y + y¦2 ¦+7xz¦2¦)
+462	9	10y4z3	10y + 4z + 3	word	yes	24) 10y¦4¦z¦3 ¦(3x¦5 ¦+ 5z¦2
+462	9	5z2	5z + 2	word	yes	24) 10y¦4¦z¦3 ¦(3x¦5 ¦+ 5z¦2
+462	21	3y3	3y + 3	word	yes	32) 2y¦7¦(− 5+ 3y¦3
+462	22	2xy3	2xy + 3	word	yes	− 2xy¦3
+462	25	(8r2	(8r + 2	word	yes	1) (8r¦2
+462	31	(2v2	(2v + 2	word	yes	4) (2v¦2
+462	45	(7r2	(7r + 2	word	yes	12) (7r¦2 ¦+3)(6r− 7)
+464	7	9y2)	9y + 2)	word	yes	12) 5(25x¦2 ¦+ 9y¦2¦)
+464	35	9y2)	9y + 2)	word	yes	− 12xy + 9y¦2¦)
+464	38	25y2)	25y + 2)	word	yes	− 15xy + 25y¦2¦)
+464	43	z2	z + 2	word	yes	43) (4+ z¦2 ¦)(2+ z)(2− z)
+464	45	y2)(x	y + 2)(x	word	yes	45) (x¦2 ¦+ y¦2¦)(x + y)(x− y)
+464	54	16y2)	16y + 2)	word	yes	5) 2(− x + 4y)(x¦2 ¦+ 4xy + 16y¦2¦)
+465	5	9y2)	9y + 2)	word	yes	16) (x− 3y)(x¦2 ¦+3xy + 9y¦2¦)
+468	1	25x3y5z	25x3 + y + 5z	word	yes	12) 25x¦3¦y¦5¦z
+469	3	x2y2	x2 + y + 2	word	yes	x¦2¦y¦2
+469	16	3y2	3y + 2	word	yes	15) ¦3y¦2
+469	18	2x2y2	2x2 + y + 2	word	yes	2x¦2¦y¦2
+470	0	y2	y + 2	word	yes	33)¦x¦2 ¦+ y¦2
+472	43	10k2	10k + 2	word	yes	19)− 10k¦2
+472	61	8x2y2	8x2 + y + 2	word	yes	29) 8x¦2¦y¦2 ¦5
+472	78	4v2	4v + 2	word	yes	21) 4v¦2 ¦6v
+472	93	4xy2	4xy + 2	word	yes	29) 4xy¦2 ¦4x
+472	105	30y2x	30y + 2x	word	yes	36)− 30y¦2¦x 2x
+472	107	48x2z2y	48x2z + 2 + y	word	yes	37)− 48x¦2¦z¦2¦y 5
+472	111	8j2	8j + 2	word	yes	39) 8j¦2 ¦5hk
+472	119	3xy2	3xy + 2	word	yes	30) 3xy¦2 ¦7
+472	121	21xy2	21xy + 2	word	yes	31)− 21xy¦2 ¦3y
+472	122	8y2	8y + 2	word	yes	32)− 8y¦2 ¦7x¦2¦y¦2
+472	122	7x2y2	7x2 + y + 2	word	yes	32)− 8y¦2 ¦7x¦2¦y¦2
+472	125	10v2	10v + 2	word	yes	33) 10v¦2 ¦3u¦2¦v¦2
+472	125	3u2v2	3u2v + 2	word	yes	33) 10v¦2 ¦3u¦2¦v¦2
+472	133	2m2p	2m2 + p	word	yes	37)− 18m¦2¦np¦2 ¦2m¦2¦p
+472	137	8xy3z2	8xy + 3z + 2	word	yes	39) 18xy 8xy¦3¦z¦2
+472	141	14hj2k2	14hj + 2k + 2	word	yes	41) 14hj¦2¦k¦2 ¦8h¦2
+473	1	4x3yz3	4x3 + yz + 3	word	yes	42)− 18xz 4x¦3¦yz¦3
+473	66	25r2	25r + 2	word	yes	4)− 25r¦2 ¦2r
+474	53	16xy2	16xy + 2	word	yes	16xy¦2
+474	73	10r2	10r + 2	word	yes	37) ¦5 10r¦2
+476	7	4x2y3	4x2 + y + 3	word	yes	1) 4x¦2¦y¦3
+476	8	3xy3	3xy + 3	word	yes	2) 3xy¦3
+476	20	x2y3	x2 + y + 3	word	yes	7) x¦2¦y¦3
+476	22	8x4y2	8x4 + y + 2	word	yes	8) 8x¦4¦y¦2
+476	24	x3y2z	x3 + y + 2z	word	yes	9) x¦3¦y¦2¦z
+476	27	2xy2	2xy + 2	word	yes	11) 2xy¦2
+476	30	3x2y3	3x2 + y + 3	word	yes	12) 3x¦2¦y¦3
+476	33	49x3y2	49x3 + y + 2	word	yes	15) 49x¦3¦y¦2
+476	36	27y5z5	27y + 5z + 5	word	yes	16) 27y¦5¦z¦5
+476	42	x9y7	x9 + y + 7	word	yes	19) x¦9¦y¦7
+476	46	x11y10	x11y + 10	word	yes	21) x¦11¦y¦10
+476	53	x22y11z27	x22y + 11z + 27	word	yes	24) x¦22¦y¦11¦z¦27
+476	61	xy5	xy + 5	word	yes	29) xy xy¦5
+476	66	2xy2	2xy + 2	word	yes	32) 2xy¦2 ¦2x¦5¦y
+476	66	2x5y	2x5 + y	word	yes	32) 2xy¦2 ¦2x¦5¦y
+476	67	59049xy11z10	59049xy + 11z + 10	word	yes	33) x 59049xy¦11¦z¦10
+476	79	x2y5	x2 + y + 5	word	yes	39) x¦2¦y¦5
+476	87	xy8z3	xy + 8z + 3	word	yes	42) yz xy¦8¦z¦3
+482	7	11	1 + 1	word	yes	7) 1¦1
+484	66	16x2	16 + x2	word	yes	16¦x¦2

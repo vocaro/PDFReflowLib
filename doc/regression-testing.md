@@ -903,6 +903,23 @@ removal. The [census](../measurements/spacing-one-byte-maps/record.md) shows tha
 changes. The reader's unmodeled-state gates disqualify every FAA, DGA and Fed page whatever the
 map: `gs` first (a nonzero `Tc` on one FAA page), then `Tc`, `Tw` and unpositioned shows.
 
+Three tests cover Wallace's missing word spaces after a digit
+([#110](https://github.com/vocaro/PDFReflowLib/issues/110),
+[survey](../measurements/missing-spaces-survey/record.md)).
+`wallaceDigitBeforeTextFontRestoresItsWordSpaceAndMathStaysJoined` reproduces page 29's
+`Subtract 7 from`: WinAnsi-encoded Type1 fonts without ToUnicode, a `/R7 gs` that sets no font, and a
+digit show that ends with a trailing adjustment (`[(7)178.413]TJ`). The shows must decode and
+measure, and the line must be repaired. Its control, page 24's `5y` at 0.05 em, must stay joined.
+It fails if the trailing adjustment shortens the show's end, as it once did in formulas.
+`graphicsStateWithoutAFontKeepsEvidenceAndAnyOtherDisqualifies` accepts a font-free ExtGState
+before or inside text. An ExtGState with a `Font` entry, a missing or non-dictionary resource, a
+bare `gs`, and nonzero `Tc` or `Tw` still yield no evidence.
+`onlyWinAnsiEncodedType1FontsWithoutToUnicodeDecodeThroughTheirEncoding` pins the WinAnsi table
+(ASCII 32–126, `Differences` quotes, ligatures and digit names; an unknown name removes its code;
+malformed and oversized arrays fail). It also checks what does not decode: MacRoman, Standard or
+missing base encodings, TrueType, unknown names, a name before any code, and a font whose ToUnicode
+map is present but rejected. The Wallace contract pins pages 34, 40 and 230.
+
 `AcademicFrontMatterTests.swift` uses the pinned Replay Clocks pages 1, 3 and 4. Page 1 must drop
 the rotated stamp with a `furnitureRemoved` warning, rank `Replay Clocks` (level 2) above the
 author names (3) and the `ABSTRACT` / `1 INTRODUCTION` labels (4), and keep the abstract,

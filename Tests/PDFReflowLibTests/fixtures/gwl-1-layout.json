@@ -1,0 +1,3686 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        72.024000000000001,
+        63.719999999999999,
+        199.57499999999999,
+        9.9629999999999939
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : "U.S. Government work not protected by U.S. copyright"
+        }
+      ],
+      "text" : "U.S. Government work not protected by U.S. copyright"
+    },
+    {
+      "rect" : [
+        303.05000000000001,
+        50.112000000000002,
+        6,
+        13.283999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 12,
+          "text" : "1"
+        }
+      ],
+      "text" : "1"
+    },
+    {
+      "rect" : [
+        62.880000000000003,
+        725.8713600000001,
+        486.29164000000003,
+        22.184279999999944
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 20.039999999999999,
+          "text" : "Investigation of Atmospheric Boundary-Layer Effects on"
+        }
+      ],
+      "text" : "Investigation of Atmospheric Boundary-Layer Effects on"
+    },
+    {
+      "rect" : [
+        146.78,
+        700.53136000000006,
+        318.52152000000001,
+        22.184280000000058
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 20.039999999999999,
+          "text" : "Launch-Vehicle Ground Wind Loads"
+        }
+      ],
+      "text" : "Launch-Vehicle Ground Wind Loads"
+    },
+    {
+      "rect" : [
+        170.42000000000002,
+        681.22864000000004,
+        270.78252000000003,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "Thomas G. Ivanco, Donald F. Keller, and Jennifer L. Pinkerton"
+        }
+      ],
+      "text" : "Thomas G. Ivanco, Donald F. Keller, and Jennifer L. Pinkerton"
+    },
+    {
+      "rect" : [
+        237.05000000000001,
+        670.30864000000008,
+        137.89620000000008,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "NASA Langley Research Center"
+        }
+      ],
+      "text" : "NASA Langley Research Center"
+    },
+    {
+      "rect" : [
+        240.77000000000001,
+        659.26864,
+        130.50588000000002,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "Aeroelasticity Branch, MS 340"
+        }
+      ],
+      "text" : "Aeroelasticity Branch, MS 340"
+    },
+    {
+      "rect" : [
+        262.25,
+        648.22864000000004,
+        87.448800000000006,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "Hampton, VA 23681"
+        }
+      ],
+      "text" : "Hampton, VA 23681"
+    },
+    {
+      "rect" : [
+        106.10000000000001,
+        637.30864000000008,
+        402.28880000000004,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "Thomas.G.Ivanco@nasa.gov, Donald.F.Keller@nasa.gov, and Jennifer.L.Pinkerton@nasa.gov"
+        }
+      ],
+      "text" : "Thomas.G.Ivanco@nasa.gov, Donald.F.Keller@nasa.gov, and Jennifer.L.Pinkerton@nasa.gov"
+    },
+    {
+      "rect" : [
+        54,
+        592.87600000000009,
+        242.98700000000002,
+        9.9629999999999654
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldItalicMT",
+          "fontSize" : 9,
+          "text" : "Abstract"
+        },
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9,
+          "text" : "—A launch vehicle ground-wind-loads program is"
+        }
+      ],
+      "text" : "Abstract—A launch vehicle ground-wind-loads program is"
+    },
+    {
+      "rect" : [
+        54,
+        582.43600000000004,
+        242.75700000000006,
+        9.9629999999999654
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9,
+          "text" : "underway at the NASA Langley Transonic Dynamics Tunnel."
+        }
+      ],
+      "text" : "underway at the NASA Langley Transonic Dynamics Tunnel."
+    },
+    {
+      "rect" : [
+        54,
+        572.1160000000001,
+        242.87399999999997,
+        9.9629999999999654
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9,
+          "text" : "The objectives are to quantify key aerodynamic and structural"
+        }
+      ],
+      "text" : "The objectives are to quantify key aerodynamic and structural"
+    },
+    {
+      "rect" : [
+        54,
+        561.79600000000005,
+        243.04700000000003,
+        9.9629999999999654
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9,
+          "text" : "characteristics that impact the occurrence of large wind-"
+        }
+      ],
+      "text" : "characteristics that impact the occurrence of large wind-"
+    },
+    {
+      "rect" : [
+        54,
+        551.476,
+        242.87399999999991,
+        9.9629999999999654
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9,
+          "text" : "induced oscillations of a launch vehicle when exposed to ground"
+        }
+      ],
+      "text" : "induced oscillations of a launch vehicle when exposed to ground"
+    },
+    {
+      "rect" : [
+        54,
+        541.03600000000006,
+        242.82899999999989,
+        9.9629999999999654
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9,
+          "text" : "winds prior to launch. Of particular interest is the dynamic"
+        }
+      ],
+      "text" : "winds prior to launch. Of particular interest is the dynamic"
+    },
+    {
+      "rect" : [
+        54,
+        530.71600000000001,
+        242.91899999999981,
+        9.9629999999999654
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9,
+          "text" : "response of a launch vehicle when a von Kármán vortex street"
+        }
+      ],
+      "text" : "response of a launch vehicle when a von Kármán vortex street"
+    },
+    {
+      "rect" : [
+        54,
+        520.3660000000001,
+        243.01700000000005,
+        9.9629999999999654
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9,
+          "text" : "forms in the wake of the vehicle resulting in quasiperiodic lift"
+        }
+      ],
+      "text" : "forms in the wake of the vehicle resulting in quasiperiodic lift"
+    },
+    {
+      "rect" : [
+        54,
+        510.04599999999999,
+        243.01400000000001,
+        9.9630000000000223
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9,
+          "text" : "and drag forces. Vehicle response to these quasiperiodic forces"
+        }
+      ],
+      "text" : "and drag forces. Vehicle response to these quasiperiodic forces"
+    },
+    {
+      "rect" : [
+        54,
+        499.726,
+        242.79300000000001,
+        9.9630000000000223
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9,
+          "text" : "can become quite large when the frequency of vortex shedding"
+        }
+      ],
+      "text" : "can become quite large when the frequency of vortex shedding"
+    },
+    {
+      "rect" : [
+        54,
+        489.286,
+        242.93600000000004,
+        9.9630000000000223
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9,
+          "text" : "nears that of a lowly-damped structural mode thereby exciting"
+        }
+      ],
+      "text" : "nears that of a lowly-damped structural mode thereby exciting"
+    },
+    {
+      "rect" : [
+        54,
+        478.96600000000001,
+        78.03000000000003,
+        9.9630000000000223
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9,
+          "text" : "a resonant response."
+        }
+      ],
+      "text" : "a resonant response."
+    },
+    {
+      "rect" : [
+        54,
+        458.56599999999997,
+        242.98700000000002,
+        9.9630000000000223
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9,
+          "text" : "Wind approaching the vehicle can be characterized by a varying"
+        }
+      ],
+      "text" : "Wind approaching the vehicle can be characterized by a varying"
+    },
+    {
+      "rect" : [
+        54,
+        448.24599999999998,
+        242.66699999999992,
+        9.9630000000000223
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9,
+          "text" : "speed with height and turbulence content. The combination of"
+        }
+      ],
+      "text" : "speed with height and turbulence content. The combination of"
+    },
+    {
+      "rect" : [
+        54,
+        437.92599999999999,
+        242.73899999999981,
+        9.9630000000000223
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9,
+          "text" : "both the varying speed and turbulence content is referred to"
+        }
+      ],
+      "text" : "both the varying speed and turbulence content is referred to"
+    },
+    {
+      "rect" : [
+        54,
+        427.60599999999999,
+        243.06200000000001,
+        9.9630000000000223
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9,
+          "text" : "herein as the atmospheric boundary-layer. The importance of"
+        }
+      ],
+      "text" : "herein as the atmospheric boundary-layer. The importance of"
+    },
+    {
+      "rect" : [
+        54,
+        417.166,
+        243.04700000000003,
+        9.9630000000000223
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9,
+          "text" : "the atmospheric boundary-layer upon launch vehicle wind-"
+        }
+      ],
+      "text" : "the atmospheric boundary-layer upon launch vehicle wind-"
+    },
+    {
+      "rect" : [
+        54,
+        406.846,
+        242.89999999999998,
+        9.9630000000000223
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9,
+          "text" : "induced oscillation response has long been questioned, and its"
+        }
+      ],
+      "text" : "induced oscillation response has long been questioned, and its"
+    },
+    {
+      "rect" : [
+        54,
+        396.52600000000001,
+        242.81099999999981,
+        9.9630000000000223
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9,
+          "text" : "effects are not well understood. Although there are several"
+        }
+      ],
+      "text" : "effects are not well understood. Although there are several"
+    },
+    {
+      "rect" : [
+        54,
+        386.20600000000002,
+        242.86499999999978,
+        9.9630000000000223
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9,
+          "text" : "facilities around the world dedicated to replicating atmospheric"
+        }
+      ],
+      "text" : "facilities around the world dedicated to replicating atmospheric"
+    },
+    {
+      "rect" : [
+        54,
+        375.88599999999997,
+        243.07400000000007,
+        9.9630000000000223
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9,
+          "text" : "boundary layers, the development of such a boundary layer in a"
+        }
+      ],
+      "text" : "boundary layers, the development of such a boundary layer in a"
+    },
+    {
+      "rect" : [
+        54,
+        365.44599999999997,
+        242.93299999999999,
+        9.9630000000000223
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9,
+          "text" : "wind tunnel capable of producing flight-representative"
+        }
+      ],
+      "text" : "wind tunnel capable of producing flight-representative"
+    },
+    {
+      "rect" : [
+        54,
+        355.10599999999999,
+        242.91200000000003,
+        9.9630000000000223
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9,
+          "text" : "Reynolds numbers for aeroelastically-scaled launch vehicle"
+        }
+      ],
+      "text" : "Reynolds numbers for aeroelastically-scaled launch vehicle"
+    },
+    {
+      "rect" : [
+        54,
+        344.786,
+        170.71200000000005,
+        9.9630000000000223
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9,
+          "text" : "models has only recently been accomplished."
+        }
+      ],
+      "text" : "models has only recently been accomplished."
+    },
+    {
+      "rect" : [
+        54,
+        324.38599999999997,
+        242.71199999999988,
+        9.9630000000000223
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9,
+          "text" : "The NASA Langley Transonic Dynamics Tunnel is capable of"
+        }
+      ],
+      "text" : "The NASA Langley Transonic Dynamics Tunnel is capable of"
+    },
+    {
+      "rect" : [
+        54,
+        314.06599999999997,
+        242.83400000000006,
+        9.9630000000000223
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9,
+          "text" : "simulating flight-representative Reynolds numbers of launch"
+        }
+      ],
+      "text" : "simulating flight-representative Reynolds numbers of launch"
+    },
+    {
+      "rect" : [
+        54,
+        303.74599999999998,
+        242.81099999999992,
+        9.9630000000000223
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9,
+          "text" : "vehicles on the pad and is uniquely capable of replicating many"
+        }
+      ],
+      "text" : "vehicles on the pad and is uniquely capable of replicating many"
+    },
+    {
+      "rect" : [
+        54,
+        293.30599999999998,
+        242.77199999999988,
+        9.9630000000000223
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9,
+          "text" : "fluid-structure scaling parameters typical of aeroelastic tests."
+        }
+      ],
+      "text" : "fluid-structure scaling parameters typical of aeroelastic tests."
+    },
+    {
+      "rect" : [
+        54,
+        282.98599999999999,
+        242.87399999999985,
+        9.9630000000000223
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9,
+          "text" : "Recent test efforts successfully developed representative"
+        }
+      ],
+      "text" : "Recent test efforts successfully developed representative"
+    },
+    {
+      "rect" : [
+        54,
+        272.666,
+        242.84000000000003,
+        9.9630000000000223
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9,
+          "text" : "atmospheric boundary-layers for three launch sites in the"
+        }
+      ],
+      "text" : "atmospheric boundary-layers for three launch sites in the"
+    },
+    {
+      "rect" : [
+        54,
+        262.346,
+        242.76600000000002,
+        9.9630000000000223
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9,
+          "text" : "Transonic Dynamics Tunnel, thereby allowing all known"
+        }
+      ],
+      "text" : "Transonic Dynamics Tunnel, thereby allowing all known"
+    },
+    {
+      "rect" : [
+        54,
+        252.02600000000001,
+        242.81000000000006,
+        9.9630000000000223
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9,
+          "text" : "aerodynamic and fluid-structure coupling parameters to be"
+        }
+      ],
+      "text" : "aerodynamic and fluid-structure coupling parameters to be"
+    },
+    {
+      "rect" : [
+        54,
+        241.58600000000001,
+        154.06200000000001,
+        9.9629999999999939
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9,
+          "text" : "simultaneously simulated for those sites."
+        }
+      ],
+      "text" : "simultaneously simulated for those sites."
+    },
+    {
+      "rect" : [
+        54,
+        221.30600000000001,
+        242.78900000000004,
+        9.9629999999999939
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9,
+          "text" : "Dynamic aeroelastically-scaled models representative of typical"
+        }
+      ],
+      "text" : "Dynamic aeroelastically-scaled models representative of typical"
+    },
+    {
+      "rect" : [
+        54,
+        210.86600000000001,
+        242.89799999999991,
+        9.9629999999999939
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9,
+          "text" : "large launch vehicles were constructed for testing. Aeroelastic"
+        }
+      ],
+      "text" : "large launch vehicles were constructed for testing. Aeroelastic"
+    },
+    {
+      "rect" : [
+        54,
+        200.54600000000002,
+        242.75699999999995,
+        9.9629999999999939
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9,
+          "text" : "scaling includes matching geometry, mode shapes, reduced"
+        }
+      ],
+      "text" : "scaling includes matching geometry, mode shapes, reduced"
+    },
+    {
+      "rect" : [
+        54,
+        190.22600000000003,
+        242.74800000000005,
+        9.9629999999999939
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9,
+          "text" : "frequencies, damping, running mass ratios, and running"
+        }
+      ],
+      "text" : "frequencies, damping, running mass ratios, and running"
+    },
+    {
+      "rect" : [
+        54,
+        179.876,
+        242.75699999999995,
+        9.9629999999999939
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9,
+          "text" : "stiffness ratios. The models were tested in smooth uniform flow"
+        }
+      ],
+      "text" : "stiffness ratios. The models were tested in smooth uniform flow"
+    },
+    {
+      "rect" : [
+        54,
+        169.43600000000001,
+        243.05900000000003,
+        9.9629999999999939
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9,
+          "text" : "and then immersed in the atmospheric boundary-layer for"
+        }
+      ],
+      "text" : "and then immersed in the atmospheric boundary-layer for"
+    },
+    {
+      "rect" : [
+        54,
+        159.11600000000001,
+        242.90099999999984,
+        9.9629999999999939
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9,
+          "text" : "comparison of these effects. Dynamic data were acquired"
+        }
+      ],
+      "text" : "comparison of these effects. Dynamic data were acquired"
+    },
+    {
+      "rect" : [
+        54,
+        148.79600000000002,
+        242.61299999999994,
+        9.9629999999999939
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9,
+          "text" : "measuring unsteady pressure, acceleration, and base bending"
+        }
+      ],
+      "text" : "measuring unsteady pressure, acceleration, and base bending"
+    },
+    {
+      "rect" : [
+        54,
+        138.47600000000003,
+        33.543000000000006,
+        9.9629999999999939
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9,
+          "text" : "moment."
+        }
+      ],
+      "text" : "moment."
+    },
+    {
+      "rect" : [
+        54,
+        118.07599999999999,
+        242.99099999999987,
+        9.9629999999999939
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9,
+          "text" : "It was discovered that peak dynamic loads resulting from"
+        }
+      ],
+      "text" : "It was discovered that peak dynamic loads resulting from"
+    },
+    {
+      "rect" : [
+        54,
+        107.756,
+        242.96000000000004,
+        9.9629999999999939
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9,
+          "text" : "resonant wind-induced oscillation response are similar when"
+        }
+      ],
+      "text" : "resonant wind-induced oscillation response are similar when"
+    },
+    {
+      "rect" : [
+        54,
+        97.439999999999998,
+        242.69399999999985,
+        9.9629999999999939
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9,
+          "text" : "acquired in either smooth uniform flow or an atmospheric"
+        }
+      ],
+      "text" : "acquired in either smooth uniform flow or an atmospheric"
+    },
+    {
+      "rect" : [
+        54,
+        87,
+        242.92700000000002,
+        9.9629999999999939
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9,
+          "text" : "boundary-layer. This indicates that resonant lock-in events are"
+        }
+      ],
+      "text" : "boundary-layer. This indicates that resonant lock-in events are"
+    },
+    {
+      "rect" : [
+        54,
+        76.679999999999993,
+        243.01099999999997,
+        9.9630000000000081
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9,
+          "text" : "minimally impacted by representative turbulence and/or wind"
+        }
+      ],
+      "text" : "minimally impacted by representative turbulence and/or wind"
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        592.87600000000009,
+        243.12200000000001,
+        9.9629999999999654
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9,
+          "text" : "profile. Alternately, nonresonant wind-induced oscillation"
+        }
+      ],
+      "text" : "profile. Alternately, nonresonant wind-induced oscillation"
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        582.43600000000004,
+        242.87399999999997,
+        9.9629999999999654
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9,
+          "text" : "response events are stronger when acquired in an atmospheric"
+        }
+      ],
+      "text" : "response events are stronger when acquired in an atmospheric"
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        572.1160000000001,
+        242.97499999999985,
+        9.9629999999999654
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9,
+          "text" : "boundary-layer. This indicates that a lowly-damped structural"
+        }
+      ],
+      "text" : "boundary-layer. This indicates that a lowly-damped structural"
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        561.79600000000005,
+        242.78399999999982,
+        9.9629999999999654
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9,
+          "text" : "response will increase when exposed to an increased magnitude"
+        }
+      ],
+      "text" : "response will increase when exposed to an increased magnitude"
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        551.476,
+        242.84699999999992,
+        9.9629999999999654
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9,
+          "text" : "of random excitation, which is consistent with historical"
+        }
+      ],
+      "text" : "of random excitation, which is consistent with historical"
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        541.03600000000006,
+        242.85499999999996,
+        9.9629999999999654
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9,
+          "text" : "comparisons. Loads created by the resonant response events"
+        }
+      ],
+      "text" : "comparisons. Loads created by the resonant response events"
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        530.71600000000001,
+        243.13100000000003,
+        9.9629999999999654
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9,
+          "text" : "were substantially stronger than those from the nonresonant"
+        }
+      ],
+      "text" : "were substantially stronger than those from the nonresonant"
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        520.3660000000001,
+        242.892,
+        9.9629999999999654
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9,
+          "text" : "response events. Therefore, if testing is done to simply identify"
+        }
+      ],
+      "text" : "response events. Therefore, if testing is done to simply identify"
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        510.04599999999999,
+        242.95999999999998,
+        9.9630000000000223
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9,
+          "text" : "worst-case conditions and load magnitude, then smooth uniform"
+        }
+      ],
+      "text" : "worst-case conditions and load magnitude, then smooth uniform"
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        499.726,
+        242.90900000000005,
+        9.9630000000000223
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9,
+          "text" : "flow is likely an adequate test technique. However, if"
+        }
+      ],
+      "text" : "flow is likely an adequate test technique. However, if"
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        489.286,
+        242.80199999999985,
+        9.9630000000000223
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9,
+          "text" : "nonresonant response loads are of primary interest, then"
+        }
+      ],
+      "text" : "nonresonant response loads are of primary interest, then"
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        478.96600000000001,
+        198.62000000000006,
+        9.9630000000000223
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9,
+          "text" : "atmospheric boundary-layer simulation is required."
+        }
+      ],
+      "text" : "atmospheric boundary-layer simulation is required."
+    },
+    {
+      "rect" : [
+        383.59000000000003,
+        455.27800000000002,
+        105.7944,
+        13.283999999999992
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 12,
+          "text" : "T"
+        },
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9.4800000000000004,
+          "text" : "ABLE OF "
+        },
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 12,
+          "text" : "C"
+        },
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9.4800000000000004,
+          "text" : "ONTENTS"
+        }
+      ],
+      "text" : "TABLE OF CONTENTS"
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        436.52536000000003,
+        243.05000000000001,
+        12.221279999999979
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 11.040000000000001,
+          "text" : "1."
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9,
+          "text" : " "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 11.040000000000001,
+          "text" : "I"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9,
+          "text" : "NTRODUCTION"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 11.040000000000001,
+          "text" : " ....................................................... 1"
+        }
+      ],
+      "text" : "1. INTRODUCTION ....................................................... 1"
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        422.96536000000003,
+        243.05000000000001,
+        12.221279999999979
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 11.040000000000001,
+          "text" : "2."
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9,
+          "text" : " "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 11.040000000000001,
+          "text" : "T"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9,
+          "text" : "EST "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 11.040000000000001,
+          "text" : "D"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9,
+          "text" : "ESCRIPTION"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 11.040000000000001,
+          "text" : " ................................................. 2"
+        }
+      ],
+      "text" : "2. TEST DESCRIPTION ................................................. 2"
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        409.28536000000003,
+        243.05000000000001,
+        12.221279999999979
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 11.040000000000001,
+          "text" : "3."
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9,
+          "text" : " "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 11.040000000000001,
+          "text" : "D"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9,
+          "text" : "ESIGN AND "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 11.040000000000001,
+          "text" : "D"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9,
+          "text" : "EVELOPMENT OF THE "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 11.040000000000001,
+          "text" : "ABL ............ 3"
+        }
+      ],
+      "text" : "3. DESIGN AND DEVELOPMENT OF THE ABL ............ 3"
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        395.60536000000002,
+        243.05000000000001,
+        12.221279999999979
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 11.040000000000001,
+          "text" : "4."
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9,
+          "text" : " "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 11.040000000000001,
+          "text" : "L"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9,
+          "text" : "AUNCH "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 11.040000000000001,
+          "text" : "V"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9,
+          "text" : "EHICLE "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 11.040000000000001,
+          "text" : "M"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9,
+          "text" : "ODEL "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 11.040000000000001,
+          "text" : "D"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9,
+          "text" : "ESCRIPTION"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 11.040000000000001,
+          "text" : " ............. 6"
+        }
+      ],
+      "text" : "4. LAUNCH VEHICLE MODEL DESCRIPTION ............. 6"
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        382.04536000000002,
+        243.05000000000001,
+        12.221279999999979
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 11.040000000000001,
+          "text" : "5."
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9,
+          "text" : " "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 11.040000000000001,
+          "text" : "T"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9,
+          "text" : "EST "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 11.040000000000001,
+          "text" : "R"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9,
+          "text" : "ESULTS AND "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 11.040000000000001,
+          "text" : "A"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9,
+          "text" : "NALYSIS"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 11.040000000000001,
+          "text" : " ............................... 8"
+        }
+      ],
+      "text" : "5. TEST RESULTS AND ANALYSIS ............................... 8"
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        368.36536000000001,
+        243.05000000000001,
+        12.221279999999979
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 11.040000000000001,
+          "text" : "6."
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9,
+          "text" : " "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 11.040000000000001,
+          "text" : "C"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9,
+          "text" : "ONCLUSIONS"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 11.040000000000001,
+          "text" : " ....................................................... 12"
+        }
+      ],
+      "text" : "6. CONCLUSIONS ....................................................... 12"
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        354.66536000000002,
+        243.05000000000001,
+        12.221279999999979
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 11.040000000000001,
+          "text" : "A"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9,
+          "text" : "PPENDIX"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 11.040000000000001,
+          "text" : " .................................................................. 13"
+        }
+      ],
+      "text" : "APPENDIX .................................................................. 13"
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        340.98536000000001,
+        243.05000000000001,
+        12.221279999999979
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 11.040000000000001,
+          "text" : "A"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9,
+          "text" : "CKNOWLEDGEMENTS"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 11.040000000000001,
+          "text" : " ............................................ 19"
+        }
+      ],
+      "text" : "ACKNOWLEDGEMENTS ............................................ 19"
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        327.42536000000001,
+        243.05000000000001,
+        12.221279999999979
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 11.040000000000001,
+          "text" : "R"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9,
+          "text" : "EFERENCES"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 11.040000000000001,
+          "text" : " ............................................................. 19"
+        }
+      ],
+      "text" : "REFERENCES ............................................................. 19"
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        313.74536000000001,
+        243.05000000000001,
+        12.221279999999979
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 11.040000000000001,
+          "text" : "B"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9,
+          "text" : "IOGRAPHY"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 11.040000000000001,
+          "text" : " ............................................................... 20"
+        }
+      ],
+      "text" : "BIOGRAPHY ............................................................... 20"
+    },
+    {
+      "rect" : [
+        337.38999999999999,
+        279.21800000000002,
+        88.184880000000021,
+        13.283999999999992
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 12,
+          "text" : "1."
+        },
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9.4800000000000004,
+          "text" : " "
+        },
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 12,
+          "text" : "I"
+        },
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9.4800000000000004,
+          "text" : "NTRODUCTION"
+        }
+      ],
+      "text" : "1. INTRODUCTION"
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        261.89864,
+        242.91572000000002,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "A launch vehicle ground-wind-loads (GWL) program is"
+        }
+      ],
+      "text" : "A launch vehicle ground-wind-loads (GWL) program is"
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        250.37863999999999,
+        242.73516000000001,
+        11.025720000000007
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "underway at the NASA Langley Transonic Dynamics Tunnel"
+        }
+      ],
+      "text" : "underway at the NASA Langley Transonic Dynamics Tunnel"
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        238.85863999999998,
+        242.63555999999988,
+        11.025720000000007
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "(TDT). This program aims to quantify key aerodynamic and"
+        }
+      ],
+      "text" : "(TDT). This program aims to quantify key aerodynamic and"
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        227.45864,
+        242.77500000000003,
+        11.025720000000007
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "launch vehicle structural characteristics that impact vortex"
+        }
+      ],
+      "text" : "launch vehicle structural characteristics that impact vortex"
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        215.93863999999999,
+        242.88812000000001,
+        11.025720000000007
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "shedding and wind-induced oscillation (WIO) in order to"
+        }
+      ],
+      "text" : "shedding and wind-induced oscillation (WIO) in order to"
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        204.41863999999998,
+        242.88331999999997,
+        11.025720000000007
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "determine best test practices. WIO can result in large"
+        }
+      ],
+      "text" : "determine best test practices. WIO can result in large"
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        192.89864,
+        242.87240000000014,
+        11.025720000000007
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "sustained oscillations of lowly-damped structural modes and"
+        }
+      ],
+      "text" : "sustained oscillations of lowly-damped structural modes and"
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        181.34863999999999,
+        242.85467999999986,
+        11.025720000000007
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "could damage launch vehicles or impact guidance and control"
+        }
+      ],
+      "text" : "could damage launch vehicles or impact guidance and control"
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        169.82863999999998,
+        242.99000000000018,
+        11.025720000000007
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "or launch support systems. Dynamic aeroelastically-scaled"
+        }
+      ],
+      "text" : "or launch support systems. Dynamic aeroelastically-scaled"
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        158.42864,
+        242.7086000000001,
+        11.025720000000007
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "wind-tunnel model tests are often conducted to identify wind"
+        }
+      ],
+      "text" : "wind-tunnel model tests are often conducted to identify wind"
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        146.90863999999999,
+        242.74511999999987,
+        11.025720000000007
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "azimuth and speed combinations of concern to guide vehicle"
+        }
+      ],
+      "text" : "azimuth and speed combinations of concern to guide vehicle"
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        135.38863999999998,
+        242.54591999999997,
+        11.025720000000007
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "design or operational decisions. For NASA programs, these"
+        }
+      ],
+      "text" : "design or operational decisions. For NASA programs, these"
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        123.86864,
+        242.78852000000001,
+        11.025720000000007
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "wind-tunnel tests have typically been conducted with"
+        }
+      ],
+      "text" : "wind-tunnel tests have typically been conducted with"
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        112.34864,
+        242.90204000000011,
+        11.025720000000007
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "relatively smooth uniform flow at or near flight Reynolds"
+        }
+      ],
+      "text" : "relatively smooth uniform flow at or near flight Reynolds"
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        100.94864000000001,
+        242.67540000000002,
+        11.025720000000007
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "numbers, with scaling parameters carefully selected to mimic"
+        }
+      ],
+      "text" : "numbers, with scaling parameters carefully selected to mimic"
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        89.432640000000006,
+        242.83375999999993,
+        11.025720000000007
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "full-scale aerostructural coupling. This methodology has"
+        }
+      ],
+      "text" : "full-scale aerostructural coupling. This methodology has"
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        77.91264000000001,
+        242.64551999999998,
+        11.025720000000007
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "been employed by NASA during and since the Apollo"
+        }
+      ],
+      "text" : "been employed by NASA during and since the Apollo"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    612,
+    792
+  ],
+  "caseID" : "ntrs-20200002975-gwl-2020",
+  "graphics" : [
+
+  ],
+  "lines" : [
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        72.024000000000001,
+        63.719999999999999,
+        199.57499999999999,
+        9.9629999999999939
+      ],
+      "text" : "U.S. Government work not protected by U.S. copyright"
+    },
+    {
+      "fontSize" : 12,
+      "monospaced" : false,
+      "rect" : [
+        303.05000000000001,
+        50.112000000000002,
+        6,
+        13.283999999999999
+      ],
+      "text" : "1"
+    },
+    {
+      "fontSize" : 20.039999999999999,
+      "monospaced" : false,
+      "rect" : [
+        62.880000000000003,
+        725.8713600000001,
+        486.29164000000003,
+        22.184279999999944
+      ],
+      "structure" : {
+        "group" : 1,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 1
+      },
+      "text" : "Investigation of Atmospheric Boundary-Layer Effects on"
+    },
+    {
+      "fontSize" : 20.039999999999999,
+      "monospaced" : false,
+      "rect" : [
+        146.78,
+        700.53136000000006,
+        318.52152000000001,
+        22.184280000000058
+      ],
+      "structure" : {
+        "group" : 1,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 1
+      },
+      "text" : "Launch-Vehicle Ground Wind Loads"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        170.42000000000002,
+        681.22864000000004,
+        270.78252000000003,
+        11.025719999999978
+      ],
+      "text" : "Thomas G. Ivanco, Donald F. Keller, and Jennifer L. Pinkerton"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        237.05000000000001,
+        670.30864000000008,
+        137.89620000000008,
+        11.025719999999978
+      ],
+      "text" : "NASA Langley Research Center"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        240.77000000000001,
+        659.26864,
+        130.50588000000002,
+        11.025719999999978
+      ],
+      "text" : "Aeroelasticity Branch, MS 340"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        262.25,
+        648.22864000000004,
+        87.448800000000006,
+        11.025719999999978
+      ],
+      "text" : "Hampton, VA 23681"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        106.10000000000001,
+        637.30864000000008,
+        402.28880000000004,
+        11.025719999999978
+      ],
+      "text" : "Thomas.G.Ivanco@nasa.gov, Donald.F.Keller@nasa.gov, and Jennifer.L.Pinkerton@nasa.gov"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        592.87600000000009,
+        242.98700000000002,
+        9.9629999999999654
+      ],
+      "structure" : {
+        "group" : 3,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 8
+      },
+      "text" : "Abstract—A launch vehicle ground-wind-loads program is"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        582.43600000000004,
+        242.75700000000006,
+        9.9629999999999654
+      ],
+      "structure" : {
+        "group" : 3,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 8
+      },
+      "text" : "underway at the NASA Langley Transonic Dynamics Tunnel."
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        572.1160000000001,
+        242.87399999999997,
+        9.9629999999999654
+      ],
+      "structure" : {
+        "group" : 3,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 8
+      },
+      "text" : "The objectives are to quantify key aerodynamic and structural"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        561.79600000000005,
+        243.04700000000003,
+        9.9629999999999654
+      ],
+      "structure" : {
+        "group" : 3,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 8
+      },
+      "text" : "characteristics that impact the occurrence of large wind-"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        551.476,
+        242.87399999999991,
+        9.9629999999999654
+      ],
+      "structure" : {
+        "group" : 3,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 8
+      },
+      "text" : "induced oscillations of a launch vehicle when exposed to ground"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        541.03600000000006,
+        242.82899999999989,
+        9.9629999999999654
+      ],
+      "structure" : {
+        "group" : 3,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 8
+      },
+      "text" : "winds prior to launch. Of particular interest is the dynamic"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        530.71600000000001,
+        242.91899999999981,
+        9.9629999999999654
+      ],
+      "structure" : {
+        "group" : 3,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 8
+      },
+      "text" : "response of a launch vehicle when a von Kármán vortex street"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        520.3660000000001,
+        243.01700000000005,
+        9.9629999999999654
+      ],
+      "structure" : {
+        "group" : 3,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 8
+      },
+      "text" : "forms in the wake of the vehicle resulting in quasiperiodic lift"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        510.04599999999999,
+        243.01400000000001,
+        9.9630000000000223
+      ],
+      "structure" : {
+        "group" : 3,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 8
+      },
+      "text" : "and drag forces. Vehicle response to these quasiperiodic forces"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        499.726,
+        242.79300000000001,
+        9.9630000000000223
+      ],
+      "structure" : {
+        "group" : 3,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 8
+      },
+      "text" : "can become quite large when the frequency of vortex shedding"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        489.286,
+        242.93600000000004,
+        9.9630000000000223
+      ],
+      "structure" : {
+        "group" : 3,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 8
+      },
+      "text" : "nears that of a lowly-damped structural mode thereby exciting"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        478.96600000000001,
+        78.03000000000003,
+        9.9630000000000223
+      ],
+      "structure" : {
+        "group" : 3,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 8
+      },
+      "text" : "a resonant response."
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        458.56599999999997,
+        242.98700000000002,
+        9.9630000000000223
+      ],
+      "structure" : {
+        "group" : 4,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 9
+      },
+      "text" : "Wind approaching the vehicle can be characterized by a varying"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        448.24599999999998,
+        242.66699999999992,
+        9.9630000000000223
+      ],
+      "structure" : {
+        "group" : 4,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 9
+      },
+      "text" : "speed with height and turbulence content. The combination of"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        437.92599999999999,
+        242.73899999999981,
+        9.9630000000000223
+      ],
+      "structure" : {
+        "group" : 4,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 9
+      },
+      "text" : "both the varying speed and turbulence content is referred to"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        427.60599999999999,
+        243.06200000000001,
+        9.9630000000000223
+      ],
+      "structure" : {
+        "group" : 4,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 9
+      },
+      "text" : "herein as the atmospheric boundary-layer. The importance of"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        417.166,
+        243.04700000000003,
+        9.9630000000000223
+      ],
+      "structure" : {
+        "group" : 4,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 9
+      },
+      "text" : "the atmospheric boundary-layer upon launch vehicle wind-"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        406.846,
+        242.89999999999998,
+        9.9630000000000223
+      ],
+      "structure" : {
+        "group" : 4,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 9
+      },
+      "text" : "induced oscillation response has long been questioned, and its"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        396.52600000000001,
+        242.81099999999981,
+        9.9630000000000223
+      ],
+      "structure" : {
+        "group" : 4,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 9
+      },
+      "text" : "effects are not well understood. Although there are several"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        386.20600000000002,
+        242.86499999999978,
+        9.9630000000000223
+      ],
+      "structure" : {
+        "group" : 4,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 9
+      },
+      "text" : "facilities around the world dedicated to replicating atmospheric"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        375.88599999999997,
+        243.07400000000007,
+        9.9630000000000223
+      ],
+      "structure" : {
+        "group" : 4,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 9
+      },
+      "text" : "boundary layers, the development of such a boundary layer in a"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        365.44599999999997,
+        242.93299999999999,
+        9.9630000000000223
+      ],
+      "structure" : {
+        "group" : 4,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 9
+      },
+      "text" : "wind tunnel capable of producing flight-representative"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        355.10599999999999,
+        242.91200000000003,
+        9.9630000000000223
+      ],
+      "structure" : {
+        "group" : 4,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 9
+      },
+      "text" : "Reynolds numbers for aeroelastically-scaled launch vehicle"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        344.786,
+        170.71200000000005,
+        9.9630000000000223
+      ],
+      "structure" : {
+        "group" : 4,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 9
+      },
+      "text" : "models has only recently been accomplished."
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        324.38599999999997,
+        242.71199999999988,
+        9.9630000000000223
+      ],
+      "structure" : {
+        "group" : 5,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 10
+      },
+      "text" : "The NASA Langley Transonic Dynamics Tunnel is capable of"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        314.06599999999997,
+        242.83400000000006,
+        9.9630000000000223
+      ],
+      "structure" : {
+        "group" : 5,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 10
+      },
+      "text" : "simulating flight-representative Reynolds numbers of launch"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        303.74599999999998,
+        242.81099999999992,
+        9.9630000000000223
+      ],
+      "structure" : {
+        "group" : 5,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 10
+      },
+      "text" : "vehicles on the pad and is uniquely capable of replicating many"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        293.30599999999998,
+        242.77199999999988,
+        9.9630000000000223
+      ],
+      "structure" : {
+        "group" : 5,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 10
+      },
+      "text" : "fluid-structure scaling parameters typical of aeroelastic tests."
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        282.98599999999999,
+        242.87399999999985,
+        9.9630000000000223
+      ],
+      "structure" : {
+        "group" : 5,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 10
+      },
+      "text" : "Recent test efforts successfully developed representative"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        272.666,
+        242.84000000000003,
+        9.9630000000000223
+      ],
+      "structure" : {
+        "group" : 5,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 10
+      },
+      "text" : "atmospheric boundary-layers for three launch sites in the"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        262.346,
+        242.76600000000002,
+        9.9630000000000223
+      ],
+      "structure" : {
+        "group" : 5,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 10
+      },
+      "text" : "Transonic Dynamics Tunnel, thereby allowing all known"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        252.02600000000001,
+        242.81000000000006,
+        9.9630000000000223
+      ],
+      "structure" : {
+        "group" : 5,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 10
+      },
+      "text" : "aerodynamic and fluid-structure coupling parameters to be"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        241.58600000000001,
+        154.06200000000001,
+        9.9629999999999939
+      ],
+      "structure" : {
+        "group" : 5,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 10
+      },
+      "text" : "simultaneously simulated for those sites."
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        221.30600000000001,
+        242.78900000000004,
+        9.9629999999999939
+      ],
+      "structure" : {
+        "group" : 6,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 11
+      },
+      "text" : "Dynamic aeroelastically-scaled models representative of typical"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        210.86600000000001,
+        242.89799999999991,
+        9.9629999999999939
+      ],
+      "structure" : {
+        "group" : 6,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 11
+      },
+      "text" : "large launch vehicles were constructed for testing. Aeroelastic"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        200.54600000000002,
+        242.75699999999995,
+        9.9629999999999939
+      ],
+      "structure" : {
+        "group" : 6,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 11
+      },
+      "text" : "scaling includes matching geometry, mode shapes, reduced"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        190.22600000000003,
+        242.74800000000005,
+        9.9629999999999939
+      ],
+      "structure" : {
+        "group" : 6,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 11
+      },
+      "text" : "frequencies, damping, running mass ratios, and running"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        179.876,
+        242.75699999999995,
+        9.9629999999999939
+      ],
+      "structure" : {
+        "group" : 6,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 11
+      },
+      "text" : "stiffness ratios. The models were tested in smooth uniform flow"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        169.43600000000001,
+        243.05900000000003,
+        9.9629999999999939
+      ],
+      "structure" : {
+        "group" : 6,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 11
+      },
+      "text" : "and then immersed in the atmospheric boundary-layer for"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        159.11600000000001,
+        242.90099999999984,
+        9.9629999999999939
+      ],
+      "structure" : {
+        "group" : 6,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 11
+      },
+      "text" : "comparison of these effects. Dynamic data were acquired"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        148.79600000000002,
+        242.61299999999994,
+        9.9629999999999939
+      ],
+      "structure" : {
+        "group" : 6,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 11
+      },
+      "text" : "measuring unsteady pressure, acceleration, and base bending"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        138.47600000000003,
+        33.543000000000006,
+        9.9629999999999939
+      ],
+      "structure" : {
+        "group" : 6,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 11
+      },
+      "text" : "moment."
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        118.07599999999999,
+        242.99099999999987,
+        9.9629999999999939
+      ],
+      "structure" : {
+        "group" : 7,
+        "headingLevel" : 0,
+        "lineCount" : 17,
+        "opensWithSplitMarker" : false,
+        "order" : 12
+      },
+      "text" : "It was discovered that peak dynamic loads resulting from"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        107.756,
+        242.96000000000004,
+        9.9629999999999939
+      ],
+      "structure" : {
+        "group" : 7,
+        "headingLevel" : 0,
+        "lineCount" : 17,
+        "opensWithSplitMarker" : false,
+        "order" : 12
+      },
+      "text" : "resonant wind-induced oscillation response are similar when"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        97.439999999999998,
+        242.69399999999985,
+        9.9629999999999939
+      ],
+      "structure" : {
+        "group" : 7,
+        "headingLevel" : 0,
+        "lineCount" : 17,
+        "opensWithSplitMarker" : false,
+        "order" : 12
+      },
+      "text" : "acquired in either smooth uniform flow or an atmospheric"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        87,
+        242.92700000000002,
+        9.9629999999999939
+      ],
+      "structure" : {
+        "group" : 7,
+        "headingLevel" : 0,
+        "lineCount" : 17,
+        "opensWithSplitMarker" : false,
+        "order" : 12
+      },
+      "text" : "boundary-layer. This indicates that resonant lock-in events are"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        76.679999999999993,
+        243.01099999999997,
+        9.9630000000000081
+      ],
+      "structure" : {
+        "group" : 7,
+        "headingLevel" : 0,
+        "lineCount" : 17,
+        "opensWithSplitMarker" : false,
+        "order" : 12
+      },
+      "text" : "minimally impacted by representative turbulence and/or wind"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        592.87600000000009,
+        243.12200000000001,
+        9.9629999999999654
+      ],
+      "structure" : {
+        "group" : 7,
+        "headingLevel" : 0,
+        "lineCount" : 17,
+        "opensWithSplitMarker" : false,
+        "order" : 12
+      },
+      "text" : "profile. Alternately, nonresonant wind-induced oscillation"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        582.43600000000004,
+        242.87399999999997,
+        9.9629999999999654
+      ],
+      "structure" : {
+        "group" : 7,
+        "headingLevel" : 0,
+        "lineCount" : 17,
+        "opensWithSplitMarker" : false,
+        "order" : 12
+      },
+      "text" : "response events are stronger when acquired in an atmospheric"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        572.1160000000001,
+        242.97499999999985,
+        9.9629999999999654
+      ],
+      "structure" : {
+        "group" : 7,
+        "headingLevel" : 0,
+        "lineCount" : 17,
+        "opensWithSplitMarker" : false,
+        "order" : 12
+      },
+      "text" : "boundary-layer. This indicates that a lowly-damped structural"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        561.79600000000005,
+        242.78399999999982,
+        9.9629999999999654
+      ],
+      "structure" : {
+        "group" : 7,
+        "headingLevel" : 0,
+        "lineCount" : 17,
+        "opensWithSplitMarker" : false,
+        "order" : 12
+      },
+      "text" : "response will increase when exposed to an increased magnitude"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        551.476,
+        242.84699999999992,
+        9.9629999999999654
+      ],
+      "structure" : {
+        "group" : 7,
+        "headingLevel" : 0,
+        "lineCount" : 17,
+        "opensWithSplitMarker" : false,
+        "order" : 12
+      },
+      "text" : "of random excitation, which is consistent with historical"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        541.03600000000006,
+        242.85499999999996,
+        9.9629999999999654
+      ],
+      "structure" : {
+        "group" : 7,
+        "headingLevel" : 0,
+        "lineCount" : 17,
+        "opensWithSplitMarker" : false,
+        "order" : 12
+      },
+      "text" : "comparisons. Loads created by the resonant response events"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        530.71600000000001,
+        243.13100000000003,
+        9.9629999999999654
+      ],
+      "structure" : {
+        "group" : 7,
+        "headingLevel" : 0,
+        "lineCount" : 17,
+        "opensWithSplitMarker" : false,
+        "order" : 12
+      },
+      "text" : "were substantially stronger than those from the nonresonant"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        520.3660000000001,
+        242.892,
+        9.9629999999999654
+      ],
+      "structure" : {
+        "group" : 7,
+        "headingLevel" : 0,
+        "lineCount" : 17,
+        "opensWithSplitMarker" : false,
+        "order" : 12
+      },
+      "text" : "response events. Therefore, if testing is done to simply identify"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        510.04599999999999,
+        242.95999999999998,
+        9.9630000000000223
+      ],
+      "structure" : {
+        "group" : 7,
+        "headingLevel" : 0,
+        "lineCount" : 17,
+        "opensWithSplitMarker" : false,
+        "order" : 12
+      },
+      "text" : "worst-case conditions and load magnitude, then smooth uniform"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        499.726,
+        242.90900000000005,
+        9.9630000000000223
+      ],
+      "structure" : {
+        "group" : 7,
+        "headingLevel" : 0,
+        "lineCount" : 17,
+        "opensWithSplitMarker" : false,
+        "order" : 12
+      },
+      "text" : "flow is likely an adequate test technique. However, if"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        489.286,
+        242.80199999999985,
+        9.9630000000000223
+      ],
+      "structure" : {
+        "group" : 7,
+        "headingLevel" : 0,
+        "lineCount" : 17,
+        "opensWithSplitMarker" : false,
+        "order" : 12
+      },
+      "text" : "nonresonant response loads are of primary interest, then"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        478.96600000000001,
+        198.62000000000006,
+        9.9630000000000223
+      ],
+      "structure" : {
+        "group" : 7,
+        "headingLevel" : 0,
+        "lineCount" : 17,
+        "opensWithSplitMarker" : false,
+        "order" : 12
+      },
+      "text" : "atmospheric boundary-layer simulation is required."
+    },
+    {
+      "fontSize" : 12,
+      "monospaced" : false,
+      "rect" : [
+        383.59000000000003,
+        455.27800000000002,
+        105.7944,
+        13.283999999999992
+      ],
+      "text" : "TABLE OF CONTENTS"
+    },
+    {
+      "fontSize" : 11.040000000000001,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        436.52536000000003,
+        243.05000000000001,
+        12.221279999999979
+      ],
+      "text" : "1. INTRODUCTION ....................................................... 1"
+    },
+    {
+      "fontSize" : 11.040000000000001,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        422.96536000000003,
+        243.05000000000001,
+        12.221279999999979
+      ],
+      "text" : "2. TEST DESCRIPTION ................................................. 2"
+    },
+    {
+      "fontSize" : 11.040000000000001,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        409.28536000000003,
+        243.05000000000001,
+        12.221279999999979
+      ],
+      "text" : "3. DESIGN AND DEVELOPMENT OF THE ABL ............ 3"
+    },
+    {
+      "fontSize" : 11.040000000000001,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        395.60536000000002,
+        243.05000000000001,
+        12.221279999999979
+      ],
+      "text" : "4. LAUNCH VEHICLE MODEL DESCRIPTION ............. 6"
+    },
+    {
+      "fontSize" : 11.040000000000001,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        382.04536000000002,
+        243.05000000000001,
+        12.221279999999979
+      ],
+      "text" : "5. TEST RESULTS AND ANALYSIS ............................... 8"
+    },
+    {
+      "fontSize" : 11.040000000000001,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        368.36536000000001,
+        243.05000000000001,
+        12.221279999999979
+      ],
+      "text" : "6. CONCLUSIONS ....................................................... 12"
+    },
+    {
+      "fontSize" : 11.040000000000001,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        354.66536000000002,
+        243.05000000000001,
+        12.221279999999979
+      ],
+      "text" : "APPENDIX .................................................................. 13"
+    },
+    {
+      "fontSize" : 11.040000000000001,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        340.98536000000001,
+        243.05000000000001,
+        12.221279999999979
+      ],
+      "text" : "ACKNOWLEDGEMENTS ............................................ 19"
+    },
+    {
+      "fontSize" : 11.040000000000001,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        327.42536000000001,
+        243.05000000000001,
+        12.221279999999979
+      ],
+      "text" : "REFERENCES ............................................................. 19"
+    },
+    {
+      "fontSize" : 11.040000000000001,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        313.74536000000001,
+        243.05000000000001,
+        12.221279999999979
+      ],
+      "text" : "BIOGRAPHY ............................................................... 20"
+    },
+    {
+      "fontSize" : 12,
+      "monospaced" : false,
+      "rect" : [
+        337.38999999999999,
+        279.21800000000002,
+        88.184880000000021,
+        13.283999999999992
+      ],
+      "structure" : {
+        "group" : 8,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 39
+      },
+      "text" : "1. INTRODUCTION"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        261.89864,
+        242.91572000000002,
+        11.025719999999978
+      ],
+      "structure" : {
+        "group" : 9,
+        "headingLevel" : 0,
+        "lineCount" : 17,
+        "opensWithSplitMarker" : false,
+        "order" : 40
+      },
+      "text" : "A launch vehicle ground-wind-loads (GWL) program is"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        250.37863999999999,
+        242.73516000000001,
+        11.025720000000007
+      ],
+      "structure" : {
+        "group" : 9,
+        "headingLevel" : 0,
+        "lineCount" : 17,
+        "opensWithSplitMarker" : false,
+        "order" : 40
+      },
+      "text" : "underway at the NASA Langley Transonic Dynamics Tunnel"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        238.85863999999998,
+        242.63555999999988,
+        11.025720000000007
+      ],
+      "structure" : {
+        "group" : 9,
+        "headingLevel" : 0,
+        "lineCount" : 17,
+        "opensWithSplitMarker" : false,
+        "order" : 40
+      },
+      "text" : "(TDT). This program aims to quantify key aerodynamic and"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        227.45864,
+        242.77500000000003,
+        11.025720000000007
+      ],
+      "structure" : {
+        "group" : 9,
+        "headingLevel" : 0,
+        "lineCount" : 17,
+        "opensWithSplitMarker" : false,
+        "order" : 40
+      },
+      "text" : "launch vehicle structural characteristics that impact vortex"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        215.93863999999999,
+        242.88812000000001,
+        11.025720000000007
+      ],
+      "structure" : {
+        "group" : 9,
+        "headingLevel" : 0,
+        "lineCount" : 17,
+        "opensWithSplitMarker" : false,
+        "order" : 40
+      },
+      "text" : "shedding and wind-induced oscillation (WIO) in order to"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        204.41863999999998,
+        242.88331999999997,
+        11.025720000000007
+      ],
+      "structure" : {
+        "group" : 9,
+        "headingLevel" : 0,
+        "lineCount" : 17,
+        "opensWithSplitMarker" : false,
+        "order" : 40
+      },
+      "text" : "determine best test practices. WIO can result in large"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        192.89864,
+        242.87240000000014,
+        11.025720000000007
+      ],
+      "structure" : {
+        "group" : 9,
+        "headingLevel" : 0,
+        "lineCount" : 17,
+        "opensWithSplitMarker" : false,
+        "order" : 40
+      },
+      "text" : "sustained oscillations of lowly-damped structural modes and"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        181.34863999999999,
+        242.85467999999986,
+        11.025720000000007
+      ],
+      "structure" : {
+        "group" : 9,
+        "headingLevel" : 0,
+        "lineCount" : 17,
+        "opensWithSplitMarker" : false,
+        "order" : 40
+      },
+      "text" : "could damage launch vehicles or impact guidance and control"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        169.82863999999998,
+        242.99000000000018,
+        11.025720000000007
+      ],
+      "structure" : {
+        "group" : 9,
+        "headingLevel" : 0,
+        "lineCount" : 17,
+        "opensWithSplitMarker" : false,
+        "order" : 40
+      },
+      "text" : "or launch support systems. Dynamic aeroelastically-scaled"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        158.42864,
+        242.7086000000001,
+        11.025720000000007
+      ],
+      "structure" : {
+        "group" : 9,
+        "headingLevel" : 0,
+        "lineCount" : 17,
+        "opensWithSplitMarker" : false,
+        "order" : 40
+      },
+      "text" : "wind-tunnel model tests are often conducted to identify wind"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        146.90863999999999,
+        242.74511999999987,
+        11.025720000000007
+      ],
+      "structure" : {
+        "group" : 9,
+        "headingLevel" : 0,
+        "lineCount" : 17,
+        "opensWithSplitMarker" : false,
+        "order" : 40
+      },
+      "text" : "azimuth and speed combinations of concern to guide vehicle"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        135.38863999999998,
+        242.54591999999997,
+        11.025720000000007
+      ],
+      "structure" : {
+        "group" : 9,
+        "headingLevel" : 0,
+        "lineCount" : 17,
+        "opensWithSplitMarker" : false,
+        "order" : 40
+      },
+      "text" : "design or operational decisions. For NASA programs, these"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        123.86864,
+        242.78852000000001,
+        11.025720000000007
+      ],
+      "structure" : {
+        "group" : 9,
+        "headingLevel" : 0,
+        "lineCount" : 17,
+        "opensWithSplitMarker" : false,
+        "order" : 40
+      },
+      "text" : "wind-tunnel tests have typically been conducted with"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        112.34864,
+        242.90204000000011,
+        11.025720000000007
+      ],
+      "structure" : {
+        "group" : 9,
+        "headingLevel" : 0,
+        "lineCount" : 17,
+        "opensWithSplitMarker" : false,
+        "order" : 40
+      },
+      "text" : "relatively smooth uniform flow at or near flight Reynolds"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        100.94864000000001,
+        242.67540000000002,
+        11.025720000000007
+      ],
+      "structure" : {
+        "group" : 9,
+        "headingLevel" : 0,
+        "lineCount" : 17,
+        "opensWithSplitMarker" : false,
+        "order" : 40
+      },
+      "text" : "numbers, with scaling parameters carefully selected to mimic"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        89.432640000000006,
+        242.83375999999993,
+        11.025720000000007
+      ],
+      "structure" : {
+        "group" : 9,
+        "headingLevel" : 0,
+        "lineCount" : 17,
+        "opensWithSplitMarker" : false,
+        "order" : 40
+      },
+      "text" : "full-scale aerostructural coupling. This methodology has"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        77.91264000000001,
+        242.64551999999998,
+        11.025720000000007
+      ],
+      "structure" : {
+        "group" : 9,
+        "headingLevel" : 0,
+        "lineCount" : 17,
+        "opensWithSplitMarker" : false,
+        "order" : 40
+      },
+      "text" : "been employed by NASA during and since the Apollo"
+    }
+  ],
+  "page" : 1,
+  "paints" : [
+
+  ],
+  "rightsBasis" : "Page 1 states U.S. Government work not protected by U.S. copyright; the paper's byline and the NTRS record place all three authors at NASA Langley Research Center (17 U.S.C. 105). The NTRS API copyright record (checked 2026-09-17) gives determinationType GOV_PUBLIC_USE_PERMITTED, containsThirdPartyMaterial false, belongsToPublisher false and licenseType NO; distribution PUBLIC, no export control. No figure or photo carries a third-party credit: Figures 1-21 and A1-A5 are NASA facility sketches, photos, drawings and plots of NASA test data, and no NASA insignia is visible in them. The page-20 author portraits carry no credit at all. Owner approved on 2026-09-17. Not relicensed under MIT.",
+  "sourceSHA256" : "a98e4fcdea40b8ea7023880dd88966f04198b4ec311fced0bb9ebb2dec45fe6d",
+  "sourceTitle" : "Investigation of Atmospheric Boundary-Layer Effects on Launch-Vehicle Ground Wind Loads",
+  "sourceURL" : "https://ntrs.nasa.gov/api/citations/20200002975/downloads/20200002975.pdf"
+}

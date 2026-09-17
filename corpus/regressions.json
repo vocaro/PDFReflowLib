@@ -6423,7 +6423,7 @@
     {
       "id": "ntrs-20200002975-gwl-2020",
       "sourceSHA256": "a98e4fcdea40b8ea7023880dd88966f04198b4ec311fced0bb9ebb2dec45fe6d",
-      "basis": "All 20 source pages visually reviewed against 60 DPI Poppler renders (page 1 header and page 11 figures at higher resolution). Protects only output that matches the source: the title, TABLE OF CONTENTS, the numbered section titles 1-6, APPENDIX, BIOGRAPHY and the italic subsection titles as headings; references that the source tags as headings read as paragraphs (#154); the author, affiliation and government-work lines; single-column-order prose on pages 3, 4, 6 and 12, including the page-6 paragraph that continues from the left column into the right; the Word subscript in V_ref and the superscript Reynolds-number exponents; figure captions and preserved figure images; the paragraph that continues from page 9 across the text at the top of figure page 10 into page 11; the appendix captions on pages 14-18; the reference entries in order; and the biographies beside their three portraits. Not pinned because wrong now: line-by-line column interleaving on pages 1, 2, 5, 8, 9, 10 and 11 and right-before-left blocks on pages 7-8 (#153); kept or heading folios, and references split after their first line (#154); Symbol-font private-use alpha and bullets and 45degree (#155). No committed rasters: see the manifest's rights note. Page 1's ten borderless links draw nothing: no Original page image, an annotationsNotConverted warning (#151).",
+      "basis": "All 20 source pages visually reviewed against 60 DPI Poppler renders (page 1 header and page 11 figures at higher resolution). Protects only output that matches the source: the title, TABLE OF CONTENTS, the numbered section titles 1-6, APPENDIX, BIOGRAPHY and the italic subsection titles as headings; references that the source tags as headings read as paragraphs (#154); the author, affiliation and government-work lines; single-column-order prose on pages 3, 4, 6 and 12, including the page-6 paragraph that continues from the left column into the right; the Word subscript in V_ref and the superscript Reynolds-number exponents; figure captions and preserved figure images; the paragraph that continues from page 9 across the text at the top of figure page 10 into page 11; the appendix captions on pages 14-18; the reference entries in order; and the biographies beside their three portraits. Not pinned because wrong now: line-by-line column interleaving on pages 1, 2, 5, 8, 9, 10 and 11 and right-before-left blocks on pages 7-8 (#153); kept or heading folios, and references split after their first line (#154); Symbol-font private-use alpha and bullets and 45degree (#155). No committed rasters: see the manifest's rights note. Page 1's ten borderless links draw nothing: no Original page image, an annotationsNotConverted warning (#151). Protects only output that matches the source: the title, TABLE OF CONTENTS, 1. INTRODUCTION and the italic subsection titles as headings; the author, affiliation and government-work lines; single-column-order prose on pages 3, 4, 6 and 12, including the page-6 paragraph that continues from the left column into the right; the Word subscript in V_ref and the superscript Reynolds-number exponents; figure captions and preserved figure images; the paragraph that continues from page 9 across the text at the top of figure page 10 into page 11; the appendix captions on pages 14-18; the reference entries in order; and the biographies beside their three portraits. Pages 1, 2, 5, 7, 8, 9 and 11 now read column by column and are pinned, each page reviewed again on its render; page 10's Figure 16 and caption follow the paragraph that runs from page 9 into page 11, so they read inside page 11 (#153). Not pinned because wrong now: section titles 2-6 as <pre>, kept or heading folios and references as headings (#154);",
       "pages": [
         {
           "page": 1,
@@ -6439,7 +6439,15 @@
             "Aeroelasticity Branch, MS 340",
             "Hampton, VA 23681",
             "Thomas.G.Ivanco@nasa.gov, Donald.F.Keller@nasa.gov, and Jennifer.L.Pinkerton@nasa.gov",
-            "Abstract—A launch vehicle ground-wind-loads program is"
+            "Abstract—A launch vehicle ground-wind-loads program is",
+            "Wind approaching the vehicle can be characterized by a varying",
+            "The NASA Langley Transonic Dynamics Tunnel is capable of simulating",
+            "Dynamic aeroelastically-scaled models representative of typical",
+            "It was discovered that peak dynamic loads resulting from",
+            "U.S. Government work not protected by U.S. copyright",
+            "profile. Alternately, nonresonant wind-induced oscillation",
+            "TABLE OF CONTENTS",
+            "A launch vehicle ground-wind-loads (GWL) program is"
           ],
           "text": [
             "U.S. Government work not protected by U.S. copyright",
@@ -6456,6 +6464,19 @@
             "Data Acquisition",
             "Wind-Tunnel Facility",
             "2. TEST DESCRIPTION"
+          ],
+          "orderedText": [
+            "program and has been theorized to capture the peak response",
+            "Atmospheric-boundary-layer (ABL) test techniques have",
+            "The purpose of the research effort described in this paper",
+            "TEST DESCRIPTION",
+            "Wind-Tunnel Facility",
+            "The TDT is a large, variable pressure, transonic wind tunnel",
+            "Unlike typical wind-tunnel testing",
+            "Figure 1. Sketch of the Transonic Dynamics Tunnel",
+            "Data Acquisition",
+            "Data records were sampled at 10 kHz",
+            "Data record length was 8.7 seconds"
           ],
           "paragraphs": [
             "The purpose of the research effort described in this paper is to evaluate the effect of an ABL upon the WIO response of launch vehicles and to create a database for community use. Aeroelastically-scaled models of representative vehicles were constructed and were tested at flight-representative Reynolds numbers.",
@@ -6537,6 +6558,15 @@
         },
         {
           "page": 5,
+          "orderedText": [
+            "Figure 4. Results of velocity profile simulation in the TDT",
+            "the velocity deficit seen between 14 and 15.5 feet",
+            "For comparison, typical velocity profile results",
+            "Figure 5. Uniform flow velocity profile",
+            "In addition to velocity profile, target turbulence spectra",
+            "Figure 6. Comparison of target turbulence spectra",
+            "Target velocity-turbulence intensities were computed"
+          ],
           "text": [
             "Figure 4. Results of velocity profile simulation in the TDT for three launch sites",
             "Figure 5. Uniform flow velocity profile"
@@ -6582,6 +6612,17 @@
             "Instrumentation",
             "Vibration Characteristics"
           ],
+          "orderedText": [
+            "Figure 9. Research model installed in TDT",
+            "Instrumentation",
+            "Visible in Figures 9 and 11",
+            "Vibration Characteristics",
+            "The first mode frequency was 30.2",
+            "Wind-Tunnel Conditions",
+            "The data presented in this section were acquired in heavy gas",
+            "Surface roughness was added",
+            "Figure 10. Aluminum base details"
+          ],
           "text": [
             "Figure 9. Research model installed in TDT, looking",
             "Figure 10. Aluminum base details, research model"
@@ -6606,7 +6647,36 @@
           "minimumImages": 2
         },
         {
+          "page": 8,
+          "orderedText": [
+            "Figure 11. Assembly drawing, research model",
+            "Figure 12. Mode shape of first mode, research model",
+            "TEST RESULTS AND ANALYSIS",
+            "Present Focus",
+            "Comparison testing was done between uniform flow",
+            "A typical test run was conducted",
+            "All data presented in this report were acquired",
+            "A second research model was designed and constructed",
+            "Determination of Comparable Velocities",
+            "To compare loads between uniform and ABL flow",
+            "Comparison of Loads",
+            "Load Computation and Reduction"
+          ],
+          "minimumImages": 2,
+          "headings": [
+            "5. TEST RESULTS AND ANALYSIS"
+          ]
+        },
+        {
           "page": 9,
+          "orderedText": [
+            "Figure 13. ABL velocity profile and equivalent uniform",
+            "Figure 14. Illustration of load components",
+            "Static Loads",
+            "Plotting these same results for specific wind azimuth",
+            "Static bending moment due to drag acquired at a series",
+            "Figure 15. Static bending moment due to drag, research"
+          ],
           "text": [
             "Figure 13. ABL velocity profile and equivalent uniform",
             "Figure 14. Illustration of load components",
@@ -6618,7 +6688,10 @@
               "next": "from drag for many conditions. Second, data can be decomposed into regions of low response and high response."
             }
           ],
-          "minimumImages": 3
+          "minimumImages": 3,
+          "absentText": [
+            "Figure 16. Static bending moment due to drag, research model, segregated"
+          ]
         },
         {
           "page": 10,
@@ -6628,6 +6701,18 @@
               "next": "when exposed to an increased broad-band forcing."
             }
           ]
+        },
+        {
+          "page": 11,
+          "orderedText": [
+            "Figure 17a. Peak bending moment due to lift, research",
+            "Figure 17b. Peak bending moment due to lift, research",
+            "There are three uniform flow data points",
+            "Maximum Resultant Loads",
+            "Figure 18. Maximum resultant bending moment",
+            "Loads Acquired with a Proprietary Model"
+          ],
+          "minimumImages": 3
         },
         {
           "page": 12,
@@ -6778,19 +6863,13 @@
           "headings": [
             "BIOGRAPHY"
           ]
-        },
-        {
-          "page": 8,
-          "headings": [
-            "5. TEST RESULTS AND ANALYSIS"
-          ]
         }
       ]
     },
     {
       "id": "ntrs-20190030725-dasc-2019",
       "sourceSHA256": "7c2137098ffb75153e0049b970272db97bc91e13168028dc7b53fbe2deb92caa",
-      "basis": "Source pages 1-10 visually reviewed against 60 DPI Poppler renders and the extracted text layer. Protects output that matches the source now: the title as a heading; the two author blocks in column order; the abstract and index terms as whole, separate paragraphs; the 1st/2nd author superscripts; whole prose sentences and paragraphs across both columns on every page, including the introduction's continuation from page 1 to page 2; the order of section, subsection, step, bullet and numbered-requirement openings, with the page-6 dash items as separate paragraphs; figure, table and display-equation crops present; the Figure 1 caption, table captions and footnote text; the invariant (6) line; and the reference entries in order. Not pinned because wrong now: section and appendix headings as paragraphs or <pre>, subsection titles run into their first paragraph, bullets and numbered requirements as <pre>, steps and references split after their first line, inline math and multi-line index stacks broken into one-token paragraphs with private-use brace pieces, parts of displays (4), (5), (8)-(12) and the page-9 matrices left outside their crops, the page-6 separation-matrix crop swallowing two prose lines, the page-4 Figure 2 caption interleaving with the right column, page 9's right column read before the left column's appendices, merged paragraphs, a split at page 1's column break and section III's paragraph split at the page-2 footnote (see the review file). No committed rasters.",
+      "basis": "Source pages 1-10 visually reviewed against 60 DPI Poppler renders and the extracted text layer. Protects output that matches the source now: the title as a heading; the two author blocks in column order; the abstract and index terms as whole, separate paragraphs; the 1st/2nd author superscripts; whole prose sentences and paragraphs across both columns on every page, including the introduction's continuation from page 1 to page 2; the order of section, subsection, step, bullet and numbered-requirement openings, with the page-6 dash items as separate paragraphs; figure, table and display-equation crops present; the Figure 1 caption, table captions and footnote text; the invariant (6) line; and the reference entries in order. Not pinned because wrong now: section and appendix headings as paragraphs or <pre>, subsection titles run into their first paragraph, bullets and numbered requirements as <pre>, steps and references split after their first line, inline math and multi-line index stacks broken into one-token paragraphs with private-use brace pieces, parts of displays (4), (5), (8)-(12) and the page-9 matrices left outside their crops, the page-6 separation-matrix crop swallowing two prose lines, merged paragraphs, a split at page 1's column break and section III's paragraph split at the page-2 footnote (see the review file). Pages 4, 9 and 10 were reviewed again on their renders and their column order is pinned: the left column and Figure 1's caption before Figure 2's, the summary and both appendices before the quadratic program, and Table III's caption whole before REFERENCES (#153). No committed rasters.",
       "pages": [
         {
           "page": 1,
@@ -6919,12 +6998,13 @@
         },
         {
           "page": 4,
-          "paragraphs": [
-            "(B) The resulting time windows unavailable to flight f because of the separation constraint (4.b) and the ETA constraint (4.a), which results in a semi-infinite unavailable interval (bottommost at k−1)."
-          ],
           "orderedText": [
             "Fig. 1: (A) The STAs of previously scheduled flights",
+            "the separation requirements with the STAs of those",
             "Fig. 2: (A) The only times (shown in blue) reachable at node"
+          ],
+          "paragraphs": [
+            "(B) The resulting time windows unavailable to flight f because of the separation constraint (4.b) and the ETA constraint (4.a), which results in a semi-infinite unavailable interval (bottommost at k−1)."
           ],
           "minimumImages": 2
         },
@@ -7060,6 +7140,7 @@
             "For n being the k-th node along the route",
             "The problem of scheduling flight f can then be written as the Quadratic Program",
             "We now recast problem (12)",
+            "The quadratic objective function is",
             "For this problem class, the cvxopt Python module [1]",
             "from cvxopt import solvers"
           ],
@@ -7086,6 +7167,8 @@
           "page": 10,
           "orderedText": [
             "TABLE III: A high-level outline of the scheduling algorithm",
+            "of section V.",
+            "REFERENCES",
             "[1] M. S. Andersen, J. Dahl, and L. Vandenberghe.",
             "[2] FAA-E-3025.",
             "[3] A. Hagberg, P. Swart, and D. Schult.",
@@ -7108,7 +7191,7 @@
     {
       "id": "usda-ars-agresearch-2012-11",
       "sourceSHA256": "2673d1fded74ad89c8b5c59dc325c7884601e1aca5b5755b15a105c1f5b0d761",
-      "basis": "Source pages 1-24 visually reviewed against 60 DPI Poppler renders and the extracted text layer. Protects only output that matches the source now: the cover lines in order with Keeping Our Troops Safe and From Insects as headings; the masthead date, volume and ISSN lines; photo presence on photo pages; printed photo credits with their gallery numbers; whole captions on pages 6, 9 and 12; sentences inside the reflowed feature and short-article prose on pages 6, 9, 12, 13, 15, 18 and 19 in source order; the back-cover mailing instruction; and running-foot removal warnings. Not pinned because wrong now: body text, sidebars, pull quotes, the contents, the Forum column and the two-page index held inside preserved-region crops (pages 2-5, 7, 8, 10, 14, 16, 22, 23) or whole-page images (pages 20, 21); side-by-side column prose split into one paragraph per line and interleaved (pages 6, 8, 9, 11, 13, 15, 17-19); subheads as bold paragraphs, some run into their first paragraph; separate source paragraphs merged across column breaks; the running foot kept with its bullet as a superscript l; the red end-of-story mark tripled as ***; rotated credits placed away from their photos; mailing-panel lines as h6 headings (see the review file). No committed rasters: page 24 carries only agency logos and the mailing panel, and the index holly ornaments are uncredited. The 55 borderless link annotations draw nothing: no reviewed page carries an Original page image, and link pages warn annotationsNotConverted (#151).",
+      "basis": "Source pages 1-24 visually reviewed against 60 DPI Poppler renders and the extracted text layer. Protects only output that matches the source now: the cover lines in order with Keeping Our Troops Safe and From Insects as headings; the masthead date, volume and ISSN lines; photo presence on photo pages; printed photo credits with their gallery numbers; whole captions on pages 6, 9 and 12; sentences inside the reflowed feature and short-article prose on pages 6, 9, 12, 13, 15, 18 and 19 in source order; the back-cover mailing instruction; and running-foot removal warnings. Not pinned because wrong now: body text, sidebars, pull quotes, the contents, the Forum column and the two-page index held inside preserved-region crops (pages 2-5, 7, 8, 10, 14, 16, 22, 23) or whole-page images (pages 20, 21); side-by-side column prose split into one paragraph per line and interleaved on pages 6 and 17, where a column runs on into a wider measure below (#153); subheads as bold paragraphs, some run into their first paragraph; separate source paragraphs merged across column breaks; the running foot kept with its bullet as a superscript l; the red end-of-story mark tripled as ***; rotated credits placed away from their photos; mailing-panel lines as h6 headings (see the review file). No committed rasters: page 24 carries only agency logos and the mailing panel, and the index holly ornaments are uncredited. The 55 borderless link annotations draw nothing: no reviewed page carries an Original page image, and link pages warn annotationsNotConverted (#151). Pages 8, 9, 11, 12, 13, 15, 18 and 19 were reviewed again on their renders and read column by column, the running foot beyond the columns; their order is pinned (#153).",
       "pages": [
         {
           "page": 1,
@@ -7215,6 +7298,7 @@
             "see which ones are more effective,” Li says.",
             "who is examining sand fly populations that transmit leishmaniasis in her country.",
             "Fighting Filth Flies",
+            "Nonbiting flies that shuttle between filth and food",
             "rhea, the most common reason for absence from duty in the U.S. military.",
             "CMAVE’s Geden recently teamed with researchers at an Australian public-health",
             "At Gainseville, Florida, entomologist Chris Geden",
@@ -7233,6 +7317,15 @@
         },
         {
           "page": 11,
+          "orderedText": [
+            "Treated uniforms have been standard practice since 1951",
+            "Bernier developed a bite-protection as-say",
+            "Uniform fabric specimens are tested",
+            "In 2011, scientists examined alternative fabrics",
+            "Bernier and chemist Chauhan have created an attachable",
+            "The U.S. military treats uniforms with permethrin",
+            "STEPHEN AUSMUS (D2624-2)"
+          ],
           "text": [
             "STEPHEN AUSMUS (D2624-2)"
           ],
@@ -7278,15 +7371,18 @@
         },
         {
           "page": 15,
+          "orderedText": [
+            "Applying pesticides is no simple task.",
+            "that will result from that setup and allows users",
+            "The apps incorporate the latest science of spray technology",
+            "aircraft, and they allow users to save data for later use or e-mail it to colleagues.",
+            "This public-health project was funded by the Deployed War-Fighter Protection program",
+            "The aerial spray app walks users through the process of adjusting nozzles and settings."
+          ],
           "paragraphs": [
             "One app is designed for ground-based spraying for mosquitoes and other threats to public health. It covers 60 different sprayers made by 19 manufacturers and was developed jointly with the U.S. Department of Defense’s Navy Entomology Center of Excellence in Jacksonville, Florida.",
             "The board funds ARS efforts to develop methods to protect military personnel from insect-transmitted diseases. (See story beginning on page 4.)",
             "Based on the specific operating conditions, the app helps the user select the right size nozzle opening, spray pressure, nozzle orientation, and airspeed so that pesticides are delivered at the desired droplet sizes."
-          ],
-          "orderedText": [
-            "aircraft, and they allow users to save data for later use or e-mail it to colleagues.",
-            "This public-health project was funded by the Deployed War-Fighter Protection program",
-            "The aerial spray app walks users through the process of adjusting nozzles and settings."
           ],
           "minimumImages": 1,
           "pageReference": false
@@ -7310,16 +7406,18 @@
         },
         {
           "page": 18,
-          "paragraphs": [
-            "“There are 11 water treatment plants that discharge into the middle Santa Ana River in our study area, and that discharge makes up 90 percent of the summer flow.”",
-            "The sites included urban areas, agricultural areas, parks, national forest lands—which provided information about bacterial contributions from wildlife and other background sources in undeveloped areas—and three wastewater treatment plants.",
-            "Then the scientists extracted E. coli bacteria from each sample and used pulsed-field gel electrophoresis (PFGE) to find distinctive segments of the organism’s DNA that could be used to assign isolates to different groups."
-          ],
           "orderedText": [
+            "“People blame cows for so many things,”",
+            "Public-health officials use E. coli as an indicator",
             "Ibekwe, who works at the U.S. Salinity Laboratory in Riverside, California",
             "Sourcing Solutions",
             "The sites included urban areas",
             "Then the scientists extracted E. coli bacteria"
+          ],
+          "paragraphs": [
+            "“There are 11 water treatment plants that discharge into the middle Santa Ana River in our study area, and that discharge makes up 90 percent of the summer flow.”",
+            "The sites included urban areas, agricultural areas, parks, national forest lands—which provided information about bacterial contributions from wildlife and other background sources in undeveloped areas—and three wastewater treatment plants.",
+            "Then the scientists extracted E. coli bacteria from each sample and used pulsed-field gel electrophoresis (PFGE) to find distinctive segments of the organism’s DNA that could be used to assign isolates to different groups."
           ],
           "text": [
             "PEGGY GREB (D2691-1)"

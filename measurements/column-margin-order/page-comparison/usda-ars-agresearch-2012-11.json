@@ -1,0 +1,140 @@
+{
+  "passed": false,
+  "provenanceErrors": [],
+  "case": "usda-ars-agresearch-2012-11",
+  "executionContexts": {
+    "baseline": "host-terminal",
+    "candidate": "host-terminal"
+  },
+  "baselineConverterSHA256": "3e951ae5ecca20bbc299bf0c8681e2507be86aa650966fcb055f9c4939a11350",
+  "candidateConverterSHA256": "274ec24adc5885c1da8dd938cbf573db5d492577fca71b9709e18f3ab1db1c51",
+  "sameConverter": false,
+  "visionModelCaches": {
+    "baseline": {
+      "mode": "inherited",
+      "executableName": "pdf-reflow",
+      "programsSHA256": "b7e8a53e3b55832cf440fa89ea3c27b3546abbdce99932be2c12871a79ad171a"
+    },
+    "candidate": {
+      "mode": "inherited",
+      "executableName": "pdf-reflow",
+      "programsSHA256": "b7e8a53e3b55832cf440fa89ea3c27b3546abbdce99932be2c12871a79ad171a"
+    }
+  },
+  "sameVisionPrograms": true,
+  "changedOCRPages": [],
+  "ocrTextVolume": {
+    "pages": 0,
+    "baselineWords": 0,
+    "candidateWords": 0,
+    "pagesWithFewerWords": {
+      "baseline": [],
+      "candidate": []
+    }
+  },
+  "changedPages": [
+    8,
+    9,
+    11,
+    12,
+    13,
+    15,
+    18,
+    19
+  ],
+  "changedPageFields": {
+    "8": [
+      "images",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "scripts",
+      "text"
+    ],
+    "9": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "11": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text",
+      "warnings"
+    ],
+    "12": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "13": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "15": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "scripts",
+      "text",
+      "warnings"
+    ],
+    "18": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "19": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "preformattedLines",
+      "scripts",
+      "text"
+    ]
+  },
+  "changedImages": [],
+  "navigationChanged": false,
+  "changedNavigationPages": [],
+  "pageMarkersEqual": true,
+  "changedReportFields": [
+    "warnings"
+  ],
+  "idOnlyShifts": {
+    "pageCount": 5,
+    "fields": {
+      "paragraphIDs": 5
+    },
+    "navigationEntries": 0,
+    "pages": {
+      "10": [
+        "paragraphIDs"
+      ],
+      "16": [
+        "paragraphIDs"
+      ],
+      "17": [
+        "paragraphIDs"
+      ],
+      "22": [
+        "paragraphIDs"
+      ],
+      "24": [
+        "paragraphIDs"
+      ]
+    }
+  },
+  "imageRenames": {
+    "count": 0,
+    "pairs": []
+  },
+  "scope": "Per page: text, block records, element markup, image bytes, link targets and warnings, with generated identifiers (block ordinals, element ids, spine file names, image asset names) normalized; page markers; image assets by bytes; navigation entries; conversion report. Not CSS, package metadata, decoded image equivalence or a fidelity qualification."
+}

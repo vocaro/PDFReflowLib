@@ -1,0 +1,48 @@
+{
+  "baseline": {
+    "commit": "b1c7043",
+    "cli": "release build of b1c7043 (LayoutReconstructor.swift restored from b1c7043 in the worktree)",
+    "converterSHA256": "3e951ae5ecca20bbc299bf0c8681e2507be86aa650966fcb055f9c4939a11350"
+  },
+  "candidate": {
+    "commit": "b1c7043 + working tree",
+    "converterSHA256": "274ec24adc5885c1da8dd938cbf573db5d492577fca71b9709e18f3ab1db1c51",
+    "sourceLayoutReconstructorSHA256": "d96ac44672a5e3e42016342f13faea4f6ed79a96b7d04ddb1bece7b19e643e13"
+  },
+  "environmentProbeSHA256": "cbf9fabb801c2acd89433d713236eacac103824f3749e254b0b1ef15c4bc72e3",
+  "sources": {
+    "ntrs-20200002975-gwl-2020": "a98e4fcdea40b8ea7023880dd88966f04198b4ec311fced0bb9ebb2dec45fe6d",
+    "ntrs-20190030725-dasc-2019": "7c2137098ffb75153e0049b970272db97bc91e13168028dc7b53fbe2deb92caa",
+    "usda-ars-agresearch-2012-11": "2673d1fded74ad89c8b5c59dc325c7884601e1aca5b5755b15a105c1f5b0d761",
+    "faa-phak-8083-25c": "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
+    "wallace-algebra-2010": "856bd81edc61c50496982ddc849138f4e0e56fd0ddf0edb53fee9bb0830d0678",
+    "arxiv-replay-clocks-2023": "1e8172e4a347bdf6722dacc38755f6fb3299866336b8153f51b2c13f3ac6109a",
+    "fed-explained-2021": "8db8fd9e1de63ac25a6f9585d78ded12f45ab56f0c14c52c199b36b368f84d60",
+    "gpo-911-2004": "657d41475eb3a9a5e3e87a6c7c51ac1dfbe1af7566d1abff7bf7286e7e1c0e1b",
+    "census-rrs2002-01": "0f97380ae4308581bd70013b7317faafd7c217654236bd31d1448f26eae56905",
+    "nbs-jres-geltman-1977": "44653967317ce75f324b8051cdf2f123429ca1cbd199fefbffabe9acb9b0c86d",
+    "usgs-mcs2025-copper": "348b1e224d830a51e6d35cf81343eead26a0cb2a4e74c474d699b7faed1b10e6",
+    "ntrs-20180003024-earthdata-slides-2018": "f0a1ea3f5711228a9de2544fd1a94b05cfb8d9323fe3a4c253542f5a6ead5c94",
+    "ntrs-20210020887-techport-thm-2021": "0fce4b68983ad8a216c8228ec44697c61ab41977ad41733c465ebebec3976ff0"
+  },
+  "fixtures": {
+    "Tests/PDFReflowLibTests/fixtures/gwl-1-layout.json": "0c5e8123325ce6f808d59c11400e85017e54a3ead31944c42c8fbbbde7bfc14c",
+    "Tests/PDFReflowLibTests/fixtures/gwl-2-layout.json": "1772be6d6e06e59424820218c1e0c3208b962a082a708c8dc52b59b0784c3248",
+    "Tests/PDFReflowLibTests/fixtures/gwl-10-layout.json": "74b6dc549183863bb3660de12c473796f235f7b92fab9b6da4965da59920ee64",
+    "Tests/PDFReflowLibTests/fixtures/gwl-11-layout.json": "b58b830d1a93722fa6203be4e442a4524f214c6ca4e57433568d8954c64c8390",
+    "Tests/PDFReflowLibTests/fixtures/dasc-4-layout.json": "9394b16b6f43f87cd23ce7a3a9218e42db948d7abc8f6493f0fc8037c4f29f0d",
+    "Tests/PDFReflowLibTests/fixtures/dasc-9-layout.json": "84f47e46ae46a154dfbd425f1899c052a5a29dfdb08a990dedcedba23a349008",
+    "Tests/PDFReflowLibTests/fixtures/dasc-10-layout.json": "de71b9e813079274328e3f6915166a1c7bd7020ff19dcfa4b3dc8257406a633c",
+    "Tests/PDFReflowLibTests/fixtures/usda-15-layout.json": "7479f4060cdb0759026fdc85f8dd71428effeec03df3738eb93914d3151b2855",
+    "Tests/PDFReflowLibTests/fixtures/algebra-263-layout.json": "0cf8b61c167d9b2c60fc5db4baf05f7dc6c8f0eff9b45ce53855980f54f5c53b"
+  },
+  "commands": {
+    "lane": "python3 tools/run_corpus_regressions.py --converter <CLI> --epubcheck /opt/homebrew/bin/epubcheck --environment-probe <probe> --execution-context host-terminal --output <dir> --case <id> (one case per call, baseline then candidate)",
+    "compare": "python3 tools/compare_conversion_runs.py --allow-different-converters --detail --baseline <dir>/<id> --candidate <dir>/<id> --output page-comparison/<id>.json",
+    "survey": "convert every English corpus book with both CLIs at --raster-dpi 72 --reference-images never --maximum-output-bytes unlimited and diff the spine blocks page by page",
+    "contracts": "python3 tools/check_corpus_content.py --case <id> --evaluation <dir>/<id>",
+    "capture": "swiftc Sources/PDFReflowLib/{NativeTextReader,ConversionTypes,DocumentModel,ReflowDocument,GraphicsReader,NativeSpacingReader,StructureTreeReader,MarkedTextReader,FontWeightReader}.swift tools/capture-layout-fixture.swift -o capture; capture <case> <page> Tests/PDFReflowLibTests/fixtures/<name>-layout.json",
+    "probe": "xcrun swiftc -parse-as-library -O Sources/PDFReflowLib/{PageRasterizer,ConversionTypes,DocumentModel,ReflowDocument}.swift tools/probe-raster-environment.swift -o probe",
+    "renders": "pdftoppm -f <page> -l <page> -r 60..80 -png corpus/cache/<file> <out>"
+  }
+}

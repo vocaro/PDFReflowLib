@@ -1,0 +1,820 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        300.05000000000001,
+        50.112000000000002,
+        12,
+        13.283999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 12,
+          "text" : "10"
+        }
+      ],
+      "text" : "10"
+    },
+    {
+      "rect" : [
+        54,
+        737.64864000000011,
+        242.77940000000001,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "from drag for many conditions. Second, data can be"
+        }
+      ],
+      "text" : "from drag for many conditions. Second, data can be"
+    },
+    {
+      "rect" : [
+        54,
+        726.12864000000002,
+        242.54591999999991,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "decomposed into regions of low response and high response."
+        }
+      ],
+      "text" : "decomposed into regions of low response and high response."
+    },
+    {
+      "rect" : [
+        54,
+        714.60864000000004,
+        243.00620000000004,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "It is theorized here that the regions of low response"
+        }
+      ],
+      "text" : "It is theorized here that the regions of low response"
+    },
+    {
+      "rect" : [
+        54,
+        703.18864000000008,
+        242.8235600000001,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "correspond to nonresonant WIO, whereas the regions of high"
+        }
+      ],
+      "text" : "correspond to nonresonant WIO, whereas the regions of high"
+    },
+    {
+      "rect" : [
+        54,
+        691.6686400000001,
+        242.67539999999997,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "response correspond to resonant WIO. Also included in"
+        }
+      ],
+      "text" : "response correspond to resonant WIO. Also included in"
+    },
+    {
+      "rect" : [
+        54,
+        680.14864000000011,
+        242.87959999999998,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "Figure 17 are curves intersecting nonresonant data at 70 ft/s"
+        }
+      ],
+      "text" : "Figure 17 are curves intersecting nonresonant data at 70 ft/s"
+    },
+    {
+      "rect" : [
+        54,
+        668.62864000000002,
+        242.83475999999996,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "and scaled with dynamic pressure. This curve represents the"
+        }
+      ],
+      "text" : "and scaled with dynamic pressure. This curve represents the"
+    },
+    {
+      "rect" : [
+        54,
+        657.10864000000004,
+        242.97620000000001,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "expected magnitude associated with the change in"
+        }
+      ],
+      "text" : "expected magnitude associated with the change in"
+    },
+    {
+      "rect" : [
+        54,
+        645.58864000000005,
+        242.72519999999997,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "aerodynamic force magnitude. Any data lying on these curves"
+        }
+      ],
+      "text" : "aerodynamic force magnitude. Any data lying on these curves"
+    },
+    {
+      "rect" : [
+        54,
+        634.18864000000008,
+        242.74512000000004,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "share the same dynamic coefficients. Any data lying above"
+        }
+      ],
+      "text" : "share the same dynamic coefficients. Any data lying above"
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        737.64864000000011,
+        242.59571999999997,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "these curves indicate that there is some form of aeroelastic"
+        }
+      ],
+      "text" : "these curves indicate that there is some form of aeroelastic"
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        726.12864000000002,
+        242.83076,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "response such as: a resonant excitation, an aerostructural"
+        }
+      ],
+      "text" : "response such as: a resonant excitation, an aerostructural"
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        714.60864000000004,
+        242.62560000000002,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "coupling where structural motion increases the aerodynamic"
+        }
+      ],
+      "text" : "coupling where structural motion increases the aerodynamic"
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        703.18864000000008,
+        242.79491999999988,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "coefficient magnitude, or both of these phenomena. It is these"
+        }
+      ],
+      "text" : "coefficient magnitude, or both of these phenomena. It is these"
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        691.6686400000001,
+        242.68535999999989,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "occurrences of aeroelastic response that are of particular"
+        }
+      ],
+      "text" : "occurrences of aeroelastic response that are of particular"
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        680.14864000000011,
+        242.97656000000001,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "interest since the loads can grow suddenly and become very"
+        }
+      ],
+      "text" : "interest since the loads can grow suddenly and become very"
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        668.62864000000002,
+        243.05011999999994,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "large, especially for lowly-damped structures [1]-[4], [18]."
+        }
+      ],
+      "text" : "large, especially for lowly-damped structures [1]-[4], [18]."
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        657.10864000000004,
+        242.64551999999998,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "The third observation is that the ABL simulation produces"
+        }
+      ],
+      "text" : "The third observation is that the ABL simulation produces"
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        645.58864000000005,
+        242.70527999999985,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "consistently higher nonresonant response. This behavior is"
+        }
+      ],
+      "text" : "consistently higher nonresonant response. This behavior is"
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        634.06864000000007,
+        238.38008000000008,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "expected since a lowly-damped structure will respond more"
+        }
+      ],
+      "text" : "expected since a lowly-damped structure will respond more"
+    },
+    {
+      "rect" : [
+        92.784000000000006,
+        81.152640000000005,
+        425.98952000000008,
+        11.025720000000007
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "Figure 16. Static bending moment due to drag, research model, segregated by azimuth angle regions"
+        }
+      ],
+      "text" : "Figure 16. Static bending moment due to drag, research model, segregated by azimuth angle regions"
+    },
+    {
+      "rect" : [
+        56.800000000000004,
+        99.170000000000002,
+        498.40000000000003,
+        524.63999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    612,
+    792
+  ],
+  "caseID" : "ntrs-20200002975-gwl-2020",
+  "graphics" : [
+    [
+      56.800000000000004,
+      99.170000000000002,
+      498.40000000000003,
+      524.59000000000003
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 12,
+      "monospaced" : false,
+      "rect" : [
+        300.05000000000001,
+        50.112000000000002,
+        12,
+        13.283999999999999
+      ],
+      "text" : "10"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        737.64864000000011,
+        242.77940000000001,
+        11.025719999999978
+      ],
+      "structure" : {
+        "group" : 125,
+        "headingLevel" : 0,
+        "lineCount" : 20,
+        "opensWithSplitMarker" : false,
+        "order" : 171
+      },
+      "text" : "from drag for many conditions. Second, data can be"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        726.12864000000002,
+        242.54591999999991,
+        11.025719999999978
+      ],
+      "structure" : {
+        "group" : 125,
+        "headingLevel" : 0,
+        "lineCount" : 20,
+        "opensWithSplitMarker" : false,
+        "order" : 171
+      },
+      "text" : "decomposed into regions of low response and high response."
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        714.60864000000004,
+        243.00620000000004,
+        11.025719999999978
+      ],
+      "structure" : {
+        "group" : 125,
+        "headingLevel" : 0,
+        "lineCount" : 20,
+        "opensWithSplitMarker" : false,
+        "order" : 171
+      },
+      "text" : "It is theorized here that the regions of low response"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        703.18864000000008,
+        242.8235600000001,
+        11.025719999999978
+      ],
+      "structure" : {
+        "group" : 125,
+        "headingLevel" : 0,
+        "lineCount" : 20,
+        "opensWithSplitMarker" : false,
+        "order" : 171
+      },
+      "text" : "correspond to nonresonant WIO, whereas the regions of high"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        691.6686400000001,
+        242.67539999999997,
+        11.025719999999978
+      ],
+      "structure" : {
+        "group" : 125,
+        "headingLevel" : 0,
+        "lineCount" : 20,
+        "opensWithSplitMarker" : false,
+        "order" : 171
+      },
+      "text" : "response correspond to resonant WIO. Also included in"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        680.14864000000011,
+        242.87959999999998,
+        11.025719999999978
+      ],
+      "structure" : {
+        "group" : 125,
+        "headingLevel" : 0,
+        "lineCount" : 20,
+        "opensWithSplitMarker" : false,
+        "order" : 171
+      },
+      "text" : "Figure 17 are curves intersecting nonresonant data at 70 ft/s"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        668.62864000000002,
+        242.83475999999996,
+        11.025719999999978
+      ],
+      "structure" : {
+        "group" : 125,
+        "headingLevel" : 0,
+        "lineCount" : 20,
+        "opensWithSplitMarker" : false,
+        "order" : 171
+      },
+      "text" : "and scaled with dynamic pressure. This curve represents the"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        657.10864000000004,
+        242.97620000000001,
+        11.025719999999978
+      ],
+      "structure" : {
+        "group" : 125,
+        "headingLevel" : 0,
+        "lineCount" : 20,
+        "opensWithSplitMarker" : false,
+        "order" : 171
+      },
+      "text" : "expected magnitude associated with the change in"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        645.58864000000005,
+        242.72519999999997,
+        11.025719999999978
+      ],
+      "structure" : {
+        "group" : 125,
+        "headingLevel" : 0,
+        "lineCount" : 20,
+        "opensWithSplitMarker" : false,
+        "order" : 171
+      },
+      "text" : "aerodynamic force magnitude. Any data lying on these curves"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        634.18864000000008,
+        242.74512000000004,
+        11.025719999999978
+      ],
+      "structure" : {
+        "group" : 125,
+        "headingLevel" : 0,
+        "lineCount" : 20,
+        "opensWithSplitMarker" : false,
+        "order" : 171
+      },
+      "text" : "share the same dynamic coefficients. Any data lying above"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        737.64864000000011,
+        242.59571999999997,
+        11.025719999999978
+      ],
+      "structure" : {
+        "group" : 125,
+        "headingLevel" : 0,
+        "lineCount" : 20,
+        "opensWithSplitMarker" : false,
+        "order" : 171
+      },
+      "text" : "these curves indicate that there is some form of aeroelastic"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        726.12864000000002,
+        242.83076,
+        11.025719999999978
+      ],
+      "structure" : {
+        "group" : 125,
+        "headingLevel" : 0,
+        "lineCount" : 20,
+        "opensWithSplitMarker" : false,
+        "order" : 171
+      },
+      "text" : "response such as: a resonant excitation, an aerostructural"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        714.60864000000004,
+        242.62560000000002,
+        11.025719999999978
+      ],
+      "structure" : {
+        "group" : 125,
+        "headingLevel" : 0,
+        "lineCount" : 20,
+        "opensWithSplitMarker" : false,
+        "order" : 171
+      },
+      "text" : "coupling where structural motion increases the aerodynamic"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        703.18864000000008,
+        242.79491999999988,
+        11.025719999999978
+      ],
+      "structure" : {
+        "group" : 125,
+        "headingLevel" : 0,
+        "lineCount" : 20,
+        "opensWithSplitMarker" : false,
+        "order" : 171
+      },
+      "text" : "coefficient magnitude, or both of these phenomena. It is these"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        691.6686400000001,
+        242.68535999999989,
+        11.025719999999978
+      ],
+      "structure" : {
+        "group" : 125,
+        "headingLevel" : 0,
+        "lineCount" : 20,
+        "opensWithSplitMarker" : false,
+        "order" : 171
+      },
+      "text" : "occurrences of aeroelastic response that are of particular"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        680.14864000000011,
+        242.97656000000001,
+        11.025719999999978
+      ],
+      "structure" : {
+        "group" : 125,
+        "headingLevel" : 0,
+        "lineCount" : 20,
+        "opensWithSplitMarker" : false,
+        "order" : 171
+      },
+      "text" : "interest since the loads can grow suddenly and become very"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        668.62864000000002,
+        243.05011999999994,
+        11.025719999999978
+      ],
+      "structure" : {
+        "group" : 125,
+        "headingLevel" : 0,
+        "lineCount" : 20,
+        "opensWithSplitMarker" : false,
+        "order" : 171
+      },
+      "text" : "large, especially for lowly-damped structures [1]-[4], [18]."
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        657.10864000000004,
+        242.64551999999998,
+        11.025719999999978
+      ],
+      "structure" : {
+        "group" : 125,
+        "headingLevel" : 0,
+        "lineCount" : 20,
+        "opensWithSplitMarker" : false,
+        "order" : 171
+      },
+      "text" : "The third observation is that the ABL simulation produces"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        645.58864000000005,
+        242.70527999999985,
+        11.025719999999978
+      ],
+      "structure" : {
+        "group" : 125,
+        "headingLevel" : 0,
+        "lineCount" : 20,
+        "opensWithSplitMarker" : false,
+        "order" : 171
+      },
+      "text" : "consistently higher nonresonant response. This behavior is"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        634.06864000000007,
+        238.38008000000008,
+        11.025719999999978
+      ],
+      "structure" : {
+        "group" : 125,
+        "headingLevel" : 0,
+        "lineCount" : 20,
+        "opensWithSplitMarker" : false,
+        "order" : 171
+      },
+      "text" : "expected since a lowly-damped structure will respond more"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        92.784000000000006,
+        81.152640000000005,
+        425.98952000000008,
+        11.025720000000007
+      ],
+      "structure" : {
+        "group" : 127,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 174
+      },
+      "text" : "Figure 16. Static bending moment due to drag, research model, segregated by azimuth angle regions"
+    }
+  ],
+  "page" : 10,
+  "paints" : [
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : true,
+      "rect" : [
+        56.800000000000004,
+        99.170000000000002,
+        498.40000000000003,
+        524.59000000000003
+      ]
+    }
+  ],
+  "rightsBasis" : "Page 1 states U.S. Government work not protected by U.S. copyright; the paper's byline and the NTRS record place all three authors at NASA Langley Research Center (17 U.S.C. 105). The NTRS API copyright record (checked 2026-09-17) gives determinationType GOV_PUBLIC_USE_PERMITTED, containsThirdPartyMaterial false, belongsToPublisher false and licenseType NO; distribution PUBLIC, no export control. No figure or photo carries a third-party credit: Figures 1-21 and A1-A5 are NASA facility sketches, photos, drawings and plots of NASA test data, and no NASA insignia is visible in them. The page-20 author portraits carry no credit at all. Owner approved on 2026-09-17. Not relicensed under MIT.",
+  "sourceSHA256" : "a98e4fcdea40b8ea7023880dd88966f04198b4ec311fced0bb9ebb2dec45fe6d",
+  "sourceTitle" : "Investigation of Atmospheric Boundary-Layer Effects on Launch-Vehicle Ground Wind Loads",
+  "sourceURL" : "https://ntrs.nasa.gov/api/citations/20200002975/downloads/20200002975.pdf"
+}

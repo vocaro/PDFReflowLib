@@ -1,0 +1,271 @@
+{
+  "passed": false,
+  "provenanceErrors": [],
+  "case": "faa-phak-8083-25c",
+  "executionContexts": {
+    "baseline": "host-terminal",
+    "candidate": "host-terminal"
+  },
+  "baselineConverterSHA256": "3e951ae5ecca20bbc299bf0c8681e2507be86aa650966fcb055f9c4939a11350",
+  "candidateConverterSHA256": "274ec24adc5885c1da8dd938cbf573db5d492577fca71b9709e18f3ab1db1c51",
+  "sameConverter": false,
+  "visionModelCaches": {
+    "baseline": {
+      "mode": "inherited",
+      "executableName": "pdf-reflow",
+      "programsSHA256": "b7e8a53e3b55832cf440fa89ea3c27b3546abbdce99932be2c12871a79ad171a"
+    },
+    "candidate": {
+      "mode": "inherited",
+      "executableName": "pdf-reflow",
+      "programsSHA256": "b7e8a53e3b55832cf440fa89ea3c27b3546abbdce99932be2c12871a79ad171a"
+    }
+  },
+  "sameVisionPrograms": true,
+  "changedOCRPages": [],
+  "ocrTextVolume": {
+    "pages": 0,
+    "baselineWords": 0,
+    "candidateWords": 0,
+    "pagesWithFewerWords": {
+      "baseline": [],
+      "candidate": []
+    }
+  },
+  "changedPages": [
+    230,
+    341,
+    391,
+    397,
+    461
+  ],
+  "changedPageFields": {
+    "230": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "341": [
+      "images",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "391": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "397": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "461": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ]
+  },
+  "changedImages": [],
+  "navigationChanged": false,
+  "changedNavigationPages": [],
+  "pageMarkersEqual": true,
+  "changedReportFields": [],
+  "idOnlyShifts": {
+    "pageCount": 59,
+    "fields": {
+      "paragraphIDs": 59
+    },
+    "navigationEntries": 1,
+    "pages": {
+      "462": [
+        "paragraphIDs"
+      ],
+      "463": [
+        "paragraphIDs"
+      ],
+      "464": [
+        "paragraphIDs"
+      ],
+      "465": [
+        "paragraphIDs"
+      ],
+      "466": [
+        "paragraphIDs"
+      ],
+      "467": [
+        "paragraphIDs"
+      ],
+      "468": [
+        "paragraphIDs"
+      ],
+      "469": [
+        "paragraphIDs"
+      ],
+      "470": [
+        "paragraphIDs"
+      ],
+      "471": [
+        "paragraphIDs"
+      ],
+      "472": [
+        "paragraphIDs"
+      ],
+      "473": [
+        "paragraphIDs"
+      ],
+      "474": [
+        "paragraphIDs"
+      ],
+      "476": [
+        "paragraphIDs"
+      ],
+      "477": [
+        "paragraphIDs"
+      ],
+      "478": [
+        "paragraphIDs"
+      ],
+      "479": [
+        "paragraphIDs"
+      ],
+      "480": [
+        "paragraphIDs"
+      ],
+      "481": [
+        "paragraphIDs"
+      ],
+      "482": [
+        "paragraphIDs"
+      ],
+      "483": [
+        "paragraphIDs"
+      ],
+      "484": [
+        "paragraphIDs"
+      ],
+      "485": [
+        "paragraphIDs"
+      ],
+      "486": [
+        "paragraphIDs"
+      ],
+      "487": [
+        "paragraphIDs"
+      ],
+      "488": [
+        "paragraphIDs"
+      ],
+      "489": [
+        "paragraphIDs"
+      ],
+      "490": [
+        "paragraphIDs"
+      ],
+      "491": [
+        "paragraphIDs"
+      ],
+      "492": [
+        "paragraphIDs"
+      ],
+      "493": [
+        "paragraphIDs"
+      ],
+      "494": [
+        "paragraphIDs"
+      ],
+      "495": [
+        "paragraphIDs"
+      ],
+      "496": [
+        "paragraphIDs"
+      ],
+      "497": [
+        "paragraphIDs"
+      ],
+      "498": [
+        "paragraphIDs"
+      ],
+      "499": [
+        "paragraphIDs"
+      ],
+      "500": [
+        "paragraphIDs"
+      ],
+      "501": [
+        "paragraphIDs"
+      ],
+      "502": [
+        "paragraphIDs"
+      ],
+      "503": [
+        "paragraphIDs"
+      ],
+      "504": [
+        "paragraphIDs"
+      ],
+      "505": [
+        "paragraphIDs"
+      ],
+      "506": [
+        "paragraphIDs"
+      ],
+      "507": [
+        "paragraphIDs"
+      ],
+      "508": [
+        "paragraphIDs"
+      ],
+      "509": [
+        "paragraphIDs"
+      ],
+      "510": [
+        "paragraphIDs"
+      ],
+      "511": [
+        "paragraphIDs"
+      ],
+      "513": [
+        "paragraphIDs"
+      ],
+      "514": [
+        "paragraphIDs"
+      ],
+      "515": [
+        "paragraphIDs"
+      ],
+      "516": [
+        "paragraphIDs"
+      ],
+      "517": [
+        "paragraphIDs"
+      ],
+      "518": [
+        "paragraphIDs"
+      ],
+      "519": [
+        "paragraphIDs"
+      ],
+      "520": [
+        "paragraphIDs"
+      ],
+      "521": [
+        "paragraphIDs"
+      ],
+      "522": [
+        "paragraphIDs"
+      ]
+    }
+  },
+  "imageRenames": {
+    "count": 0,
+    "pairs": []
+  },
+  "scope": "Per page: text, block records, element markup, image bytes, link targets and warnings, with generated identifiers (block ordinals, element ids, spine file names, image asset names) normalized; page markers; image assets by bytes; navigation entries; conversion report. Not CSS, package metadata, decoded image equivalence or a fidelity qualification."
+}

@@ -1,0 +1,26 @@
+== widest-band-only (exit 1)
+   ✘ Test aFigureOverTwoOfThreeColumnsLeavesTheSecondGutter() failed after 0.083 seconds with 1 issue.
+== no-moved-cut (exit 1)
+   ✘ Test theCutMovesPastAnOverhangingFigureOnlyBetweenProseColumns() failed after 0.001 seconds with 1 issue.
+== moved-cut-without-prose (exit 1)
+   ✘ Test formulaCropsBesideTheirNotesKeepTheRowOrder() failed after 0.065 seconds with 1 issue.
+== no-figure-as-column-content (exit 1)
+   ✘ Test aPreservedTableBesideItsCaptionIsColumnContent() failed after 0.037 seconds with 1 issue.
+== no-margin-bands (exit 1)
+   ✘ Test marginBandsSetAsideWhatCrossesTheGutterAboveAndBelowTheColumns() failed after 0.001 seconds with 1 issue.
+   ✘ Test aFolioInTheGutterDoesNotStopTheColumnCut() failed after 0.063 seconds with 1 issue.
+   ✘ Test aCrossedPagesFigureFollowsTheParagraphThatRunsThroughIt() failed after 0.066 seconds with 1 issue.
+   ✘ Test aFigureOverTwoOfThreeColumnsLeavesTheSecondGutter() failed after 0.085 seconds with 1 issue.
+== no-band-columns (exit 1)
+   ✘ Test onlyABandBothColumnsRunOnBeneathGivesWayToTheGutter() failed after 0.001 seconds with 1 issue.
+   ✘ Test columnsBreakingAParagraphAtTheSameHeightStillReadDownEachColumn() failed after 0.049 seconds with 1 issue.
+   ✘ Test appendixColumnsReadWholeAcrossAParagraphBand() failed after 0.092 seconds with 1 issue.
+== band-without-both-columns (exit 1)
+   ✘ Test onlyABandBothColumnsRunOnBeneathGivesWayToTheGutter() failed after 0.015 seconds with 1 issue.
+   ✘ Test sectionsStackedOverTwoBulletColumnsKeepTheirOrder() failed after 0.061 seconds with 1 issue.
+== prose-without-words-or-type (exit 1)
+   ✘ Test marginBandsSetAsideWhatCrossesTheGutterAboveAndBelowTheColumns() failed after 0.012 seconds with 1 issue.
+== band-without-a-running-column (exit 1)
+   ✘ Test onlyABandBothColumnsRunOnBeneathGivesWayToTheGutter() failed after 0.017 seconds with 1 issue.
+== no-crossed-page-figures (exit 1)
+   ✘ Test aCrossedPagesFigureFollowsTheParagraphThatRunsThroughIt() failed after 0.057 seconds with 1 issue.

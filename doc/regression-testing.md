@@ -115,7 +115,7 @@ are, in the page markup). Evidence and negative controls on real output are in
 ## Current content coverage
 
 <!-- counts:coverage -->
-[corpus/regressions.json](../corpus/regressions.json) has 2655 targeted checks on 507 reviewed pages
+[corpus/regressions.json](../corpus/regressions.json) has 2734 targeted checks on 508 reviewed pages
 across 21 documents: *Pilot's Handbook of Aeronautical Knowledge*, *Beginning and Intermediate
 Algebra*, *The 9/11 Commission Report*, *The Fed Explained*, *Dietary Guidelines for Americans*,
 *Our Flag*, *Preparedness 101*, *Project Blue Book Special Report No. 14*, *Mineral Commodity
@@ -125,10 +125,10 @@ Bremsstrahlung in Electron-Ion Collisions*, *Replay Clocks*, *Complaint for a Ci
 *Investigation of Atmospheric Boundary-Layer Effects on Launch-Vehicle Ground Wind Loads*, *A
 Scheduling Algorithm Compatible with a Distributed Management of Arrivals in the National Airspace
 System*, *Agricultural Research*, *Earthdata Cloud Analytics Project* and *Tank Health Monitoring*.
-They comprise 999 ordered-text, 191 text, 347 paragraph, 193 absent-text, 222 heading,
+They comprise 1075 ordered-text, 191 text, 347 paragraph, 194 absent-text, 222 heading,
 34 absent-heading, 80 list-item, 1 preformatted-lines, 28 script, 6 absent-script, 11 footnote,
 34 note-link, 56 paragraph-continuation, 1 list-item-continuation, 8 paragraph-separation,
-80 distinct-paragraph, 177 image-presence, 42 page-reference, 88 warning, 25 absent-warning,
+80 distinct-paragraph, 179 image-presence, 42 page-reference, 88 warning, 25 absent-warning,
 17 source-region, 3 glyph-structure, 3 image-appearance and 9 table-cell checks, counted as
 `tools/check_corpus_content.py` counts them.
 <!-- counts:end -->
@@ -560,7 +560,7 @@ the page's structure validates, each line also records the tag the pipeline appl
 since #89/#90); older fixtures and untagged lines have none, and `SourceLayoutFixture` restores it.
 Source review, baseline failures, cross-document safeguards and full-run evidence are retained
 in [the three-fix measurement](../measurements/three-fidelity-fixes/record.md). The suite contains
-<!-- counts:swift-tests -->775 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->237 Python tests<!-- counts:end -->.
+<!-- counts:swift-tests -->787 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->237 Python tests<!-- counts:end -->.
 The comparison tests include a real-Poppler image URL check through the safe HTTP handler
 (simple and positioned modes, paths with spaces); absent Poppler is an explicit skip.
 
@@ -1004,6 +1004,26 @@ column cut makes redundant on these pages. The DGA contract checks the absent wa
 and headings on pages 3–5, the callouts and first bullet row on pages 6 and 8, and page 2's footnotes;
 the baseline fails exactly those 17 checks. See the
 [DGA preservation evidence](../measurements/dga-preservation/record.md).
+
+## Columns a folio, a running foot or a spanning figure leaves uncut
+
+`ColumnMarginOrderTests.swift` covers [#153](https://github.com/vocaro/PDFReflowLib/issues/153) with
+source-derived fixtures from the Word IEEE paper, the IEEEtran paper and the USDA magazine. `gwl-2`
+must read the left column whole before the right with the folio last, where the folio sits 6 pt
+under the columns in their 18-pt gutter; `gwl-1` must read the abstract down each column across the
+10.4-pt band both columns break at, with the contents entries' leaders discounted as column content;
+`dasc-9` must read the summary and both appendices before the right column's quadratic program;
+`dasc-10` must keep Table III's caption whole beside the references, a preserved table counting as
+column content; `dasc-4` must read the left column and Figure 1's caption before Figure 2's, the cut
+moving past a crop that overhangs the gutter by 4 pt; and `usda-15` must open the article in the left
+column, the cut falling to the second gutter where the display photo covers the first. Negative
+controls: `dga-3-illustrated` must keep its stacked sections in order, since the right column ends
+52 pt above the band under the protein section, and `algebra-263` must keep each formula crop beside
+its note rather than reading the crops as a column. Synthetic controls refuse the margin bands for a
+scanned table's halves of figures and for lines that merge a margin rule into the text beside them,
+and refuse the moved cut where notes stand beside formula crops. The Word paper's contract checks
+pages 1, 2, 5, 7, 9 and 11, the IEEEtran contract pages 4, 9 and 10, and the magazine's pages 9, 11,
+15 and 18. See the [column margin order evidence](../measurements/column-margin-order/record.md).
 
 ## Sentences split around figures at column and page breaks
 

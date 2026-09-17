@@ -1,0 +1,3915 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        48.963999999999999,
+        734.52407840000001,
+        251.0575199999999,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "TABLE III: A high-level outline of the scheduling algorithm"
+        }
+      ],
+      "text" : "TABLE III: A high-level outline of the scheduling algorithm"
+    },
+    {
+      "rect" : [
+        48.963999999999999,
+        722.56907839999997,
+        53.180358799999993,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "of section V."
+        }
+      ],
+      "text" : "of section V."
+    },
+    {
+      "rect" : [
+        110.117,
+        695.94802240000001,
+        76.851014400000011,
+        8.0607936000000109
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "What is being done "
+        }
+      ],
+      "text" : "What is being done "
+    },
+    {
+      "rect" : [
+        254.09700000000001,
+        695.94802240000001,
+        36.000096000000013,
+        8.0607936000000109
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "In which"
+        }
+      ],
+      "text" : "In which"
+    },
+    {
+      "rect" : [
+        254.09700000000001,
+        685.98502240000005,
+        36.000096000000013,
+        8.0607936000000109
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "steps in"
+        }
+      ],
+      "text" : "steps in"
+    },
+    {
+      "rect" : [
+        254.09700000000001,
+        676.02302240000006,
+        36.000096000000013,
+        8.0607936000000109
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "section V"
+        }
+      ],
+      "text" : "section V"
+    },
+    {
+      "rect" : [
+        54.941000000000003,
+        665.5992576000001,
+        187.20275040000004,
+        8.1594239999999445
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "For each node n on the route of f, compute the"
+        }
+      ],
+      "text" : "For each node n on the route of f, compute the"
+    },
+    {
+      "rect" : [
+        54.941000000000031,
+        655.63625760000014,
+        187.20165599999999,
+        8.1594239999999445
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "time windows unavailable to flight f at n because"
+        }
+      ],
+      "text" : "time windows unavailable to flight f at n because"
+    },
+    {
+      "rect" : [
+        54.941000000000003,
+        645.67325760000017,
+        187.20049919999994,
+        8.0159615999999687
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "of the flight’s ETA and because of the separation re-"
+        }
+      ],
+      "text" : "of the flight’s ETA and because of the separation re-"
+    },
+    {
+      "rect" : [
+        54.941000000000003,
+        635.71125760000018,
+        187.2004992,
+        8.0159615999999687
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "quirement with the already scheduled flights’ STAs."
+        }
+      ],
+      "text" : "quirement with the already scheduled flights’ STAs."
+    },
+    {
+      "rect" : [
+        54.941000000000003,
+        625.74825760000022,
+        187.20049919999994,
+        8.0159615999999687
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "These time windows are determined by constraints"
+        }
+      ],
+      "text" : "These time windows are determined by constraints"
+    },
+    {
+      "rect" : [
+        54.941000000000003,
+        615.78525760000025,
+        12.696422400000003,
+        8.0159615999999687
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "(4)."
+        }
+      ],
+      "text" : "(4)."
+    },
+    {
+      "rect" : [
+        254.09700000000001,
+        665.5992576000001,
+        14.346239999999995,
+        8.0159615999999687
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "1, 2"
+        }
+      ],
+      "text" : "1, 2"
+    },
+    {
+      "rect" : [
+        54.941000000000003,
+        605.37045920000003,
+        187.2015888,
+        8.2132223999999496
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "If the ETA at the first node on the route of f is"
+        }
+      ],
+      "text" : "If the ETA at the first node on the route of f is"
+    },
+    {
+      "rect" : [
+        54.941000000000003,
+        595.46225760000004,
+        187.20049920000002,
+        8.0159615999999687
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "frozen, add the corresponding time window to the"
+        }
+      ],
+      "text" : "frozen, add the corresponding time window to the"
+    },
+    {
+      "rect" : [
+        54.941000000000003,
+        585.49925760000008,
+        187.1971872,
+        8.1594239999999445
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "list of the time windows unavailable to f at that"
+        }
+      ],
+      "text" : "list of the time windows unavailable to f at that"
+    },
+    {
+      "rect" : [
+        54.941000000000003,
+        575.53625760000011,
+        19.672281600000005,
+        8.0159615999999687
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "node."
+        }
+      ],
+      "text" : "node."
+    },
+    {
+      "rect" : [
+        254.09700000000001,
+        605.42425760000003,
+        4.4831999999999823,
+        8.0159615999999687
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "3"
+        }
+      ],
+      "text" : "3"
+    },
+    {
+      "rect" : [
+        54.941000000000003,
+        565.17525760000001,
+        187.20049919999997,
+        8.0159615999999687
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "Using the algorithm in Ref. [4], update the un-"
+        }
+      ],
+      "text" : "Using the algorithm in Ref. [4], update the un-"
+    },
+    {
+      "rect" : [
+        54.941000000000003,
+        555.21225760000004,
+        187.20049919999997,
+        8.0159615999999687
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "available time windows to include the limitations"
+        }
+      ],
+      "text" : "available time windows to include the limitations"
+    },
+    {
+      "rect" : [
+        54.941000000000003,
+        545.25025760000005,
+        187.20049920000002,
+        8.0159615999999687
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "on controllability and reachability, as explained in"
+        }
+      ],
+      "text" : "on controllability and reachability, as explained in"
+    },
+    {
+      "rect" : [
+        54.941000000000003,
+        535.28725760000009,
+        40.241203200000001,
+        8.0159615999999687
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "section IV."
+        }
+      ],
+      "text" : "section IV."
+    },
+    {
+      "rect" : [
+        254.09700000000001,
+        565.17525760000001,
+        4.4831999999999823,
+        8.0159615999999687
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "4"
+        }
+      ],
+      "text" : "4"
+    },
+    {
+      "rect" : [
+        54.941000000000003,
+        514.96325760000002,
+        187.19732000000002,
+        8.1594239999999445
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "Because the speed of f is bounded, if f reaches a"
+        }
+      ],
+      "text" : "Because the speed of f is bounded, if f reaches a"
+    },
+    {
+      "rect" : [
+        54.941000000000031,
+        505.00125759999997,
+        187.20049919999997,
+        8.0159616000000256
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "node in a given time window, the next node may not"
+        }
+      ],
+      "text" : "node in a given time window, the next node may not"
+    },
+    {
+      "rect" : [
+        54.941000000000031,
+        495.03825759999995,
+        187.20049920000008,
+        8.0159616000000256
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "be reachable in some of its available time windows."
+        }
+      ],
+      "text" : "be reachable in some of its available time windows."
+    },
+    {
+      "rect" : [
+        54.941000000000031,
+        485.07525759999993,
+        135.74159584,
+        9.8941968000000315
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "For every two consecutive nodes n"
+        },
+        {
+          "baselineOffset" : 3.8090000000000259,
+          "fontName" : "Helvetica",
+          "fontSize" : 5.9776000000000007,
+          "text" : "k"
+        }
+      ],
+      "text" : "For every two consecutive nodes nk"
+    },
+    {
+      "rect" : [
+        186.73200000000003,
+        483.99634559999993,
+        27.746162879999986,
+        11.083108799999991
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -1.8559999999999945,
+          "fontName" : "Helvetica",
+          "fontSize" : 5.9776000000000007,
+          "text" : "f "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : ", n"
+        },
+        {
+          "baselineOffset" : 3.9189999999999827,
+          "fontName" : "Helvetica",
+          "fontSize" : 5.9776000000000007,
+          "text" : "k+1"
+        }
+      ],
+      "text" : "f , nk+1"
+    },
+    {
+      "rect" : [
+        201.16000000000003,
+        483.27534559999992,
+        40.982766400000003,
+        9.8158736000000317
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -2.5769999999999982,
+          "fontName" : "Helvetica",
+          "fontSize" : 5.9776000000000007,
+          "text" : "f "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "on the"
+        }
+      ],
+      "text" : "f on the"
+    },
+    {
+      "rect" : [
+        54.941000000000031,
+        462.62215999999995,
+        107.03786880000001,
+        20.646521600000028
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "route of f, consider each pair"
+        }
+      ],
+      "text" : "route of f, consider each pair"
+    },
+    {
+      "rect" : [
+        66.019000000000034,
+        456.13225759999995,
+        70.005595839999984,
+        9.8941968000000315
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "time window at n"
+        },
+        {
+          "baselineOffset" : 3.8090000000000259,
+          "fontName" : "Helvetica",
+          "fontSize" : 5.9776000000000007,
+          "text" : "k"
+        }
+      ],
+      "text" : "time window at nk"
+    },
+    {
+      "rect" : [
+        132.07400000000004,
+        455.05334559999994,
+        7.0146000000000015,
+        11.083108799999991
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -1.8559999999999945,
+          "fontName" : "Helvetica",
+          "fontSize" : 5.9776000000000007,
+          "text" : "f "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : ", "
+        }
+      ],
+      "text" : "f , "
+    },
+    {
+      "rect" : [
+        151.19324000000003,
+        455.05334559999994,
+        79.372922879999976,
+        11.083108799999991
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "time window at n"
+        },
+        {
+          "baselineOffset" : 3.9189999999999827,
+          "fontName" : "Helvetica",
+          "fontSize" : 5.9776000000000007,
+          "text" : "k+1"
+        }
+      ],
+      "text" : "time window at nk+1"
+    },
+    {
+      "rect" : [
+        217.24800000000002,
+        454.33234559999994,
+        22.458576319999992,
+        14.046243199999992
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 5.9776000000000007,
+          "text" : "f"
+        }
+      ],
+      "text" : "f"
+    },
+    {
+      "rect" : [
+        227.20400000000004,
+        444.18925759999996,
+        14.938022399999994,
+        8.0159616000000256
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "(13)"
+        }
+      ],
+      "text" : "(13)"
+    },
+    {
+      "rect" : [
+        54.941000000000031,
+        434.22625759999994,
+        187.20049919999991,
+        8.0159616000000256
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "and record the pair if the latter window is attainable"
+        }
+      ],
+      "text" : "and record the pair if the latter window is attainable"
+    },
+    {
+      "rect" : [
+        54.941000000000031,
+        424.26425759999995,
+        187.2004992,
+        8.0159616000000256
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "from the former. Regard these pairs as links in a"
+        }
+      ],
+      "text" : "from the former. Regard these pairs as links in a"
+    },
+    {
+      "rect" : [
+        54.941000000000031,
+        414.30125759999993,
+        187.19928640000001,
+        8.0159616000000256
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "graph, which will be called the scheduling graph"
+        }
+      ],
+      "text" : "graph, which will be called the scheduling graph"
+    },
+    {
+      "rect" : [
+        54.941000000000031,
+        404.33825759999991,
+        187.20081440000001,
+        8.1594240000000582
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "for f, and with the available time windows being"
+        }
+      ],
+      "text" : "for f, and with the available time windows being"
+    },
+    {
+      "rect" : [
+        54.941000000000031,
+        394.37625759999992,
+        127.50220800000002,
+        8.0159616000000256
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "the nodes of the scheduling graph."
+        }
+      ],
+      "text" : "the nodes of the scheduling graph."
+    },
+    {
+      "rect" : [
+        254.09700000000001,
+        514.96325760000002,
+        36.000096000000013,
+        8.0159615999999687
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "5, 6;"
+        }
+      ],
+      "text" : "5, 6;"
+    },
+    {
+      "rect" : [
+        254.09700000000001,
+        505.00125759999997,
+        28.665580800000015,
+        8.0159616000000256
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "window"
+        }
+      ],
+      "text" : "window"
+    },
+    {
+      "rect" : [
+        254.09700000000001,
+        495.03825759999995,
+        13.942752000000013,
+        8.0159616000000256
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "pair"
+        }
+      ],
+      "text" : "pair"
+    },
+    {
+      "rect" : [
+        254.09700000000001,
+        485.07525759999993,
+        36.000096000000013,
+        8.0159616000000256
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "(13) is"
+        }
+      ],
+      "text" : "(13) is"
+    },
+    {
+      "rect" : [
+        254.09700000000001,
+        475.11325759999994,
+        28.665580800000015,
+        8.0159616000000256
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "window"
+        }
+      ],
+      "text" : "window"
+    },
+    {
+      "rect" : [
+        254.09700000000001,
+        465.15025759999992,
+        32.019014400000032,
+        8.0159616000000256
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "pair (10)"
+        }
+      ],
+      "text" : "pair (10)"
+    },
+    {
+      "rect" : [
+        409.61200000000002,
+        730.93807839999999,
+        55.800460499999929,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "R"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701000000000004,
+          "text" : "EFERENCES"
+        }
+      ],
+      "text" : "REFERENCES"
+    },
+    {
+      "rect" : [
+        315.96299999999997,
+        716.57345840000005,
+        189.56085840000003,
+        7.1252693999999792
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701000000000004,
+          "text" : "[1] M. S. Andersen, J. Dahl, and L. Vandenberghe. "
+        }
+      ],
+      "text" : "[1] M. S. Andersen, J. Dahl, and L. Vandenberghe. "
+    },
+    {
+      "rect" : [
+        518.02894529999992,
+        716.57345840000005,
+        45.007154700000115,
+        7.1252693999999792
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701000000000004,
+          "text" : "CVXOPT: A"
+        }
+      ],
+      "text" : "CVXOPT: A"
+    },
+    {
+      "rect" : [
+        330.23699999999997,
+        707.60745840000004,
+        231.93858660000001,
+        7.1252693999999792
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701000000000004,
+          "text" : "python package for convex optimization, version 1.1.5. seas.ucla.edu/"
+        }
+      ],
+      "text" : "python package for convex optimization, version 1.1.5. seas.ucla.edu/"
+    },
+    {
+      "rect" : [
+        330.23699999999997,
+        698.64045840000006,
+        147.46378499999997,
+        7.7867416000000276
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 1.5819999999999936,
+          "fontName" : "Helvetica",
+          "fontSize" : 5.9776000000000007,
+          "text" : "∼"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701000000000004,
+          "text" : "vandenbe/publications/coneprog.pdf , 2012."
+        }
+      ],
+      "text" : "∼vandenbe/publications/coneprog.pdf , 2012."
+    },
+    {
+      "rect" : [
+        315.96299999999997,
+        689.67445840000005,
+        247.0750309,
+        7.1252693999999792
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701000000000004,
+          "text" : "[2] FAA-E-3025. Time-Based Flow Management (TBFM) system specifi-"
+        }
+      ],
+      "text" : "[2] FAA-E-3025. Time-Based Flow Management (TBFM) system specifi-"
+    },
+    {
+      "rect" : [
+        330.23699999999997,
+        680.70845840000004,
+        232.80071750000002,
+        7.1252693999999792
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701000000000004,
+          "text" : "cation document (SSD). Federal Aviation Administration, Washington,"
+        }
+      ],
+      "text" : "cation document (SSD). Federal Aviation Administration, Washington,"
+    },
+    {
+      "rect" : [
+        330.23699999999997,
+        671.74145840000006,
+        37.770303899999988,
+        7.1252693999999792
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701000000000004,
+          "text" : "D.C., 2014."
+        }
+      ],
+      "text" : "D.C., 2014."
+    },
+    {
+      "rect" : [
+        315.96299999999997,
+        662.77545840000005,
+        247.07309999999984,
+        7.1252693999999792
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701000000000004,
+          "text" : "[3] A. Hagberg, P. Swart, and D. Schult. Exploring network structure,"
+        }
+      ],
+      "text" : "[3] A. Hagberg, P. Swart, and D. Schult. Exploring network structure,"
+    },
+    {
+      "rect" : [
+        330.23699999999997,
+        653.80945840000004,
+        232.80181820000007,
+        7.1252693999999792
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701000000000004,
+          "text" : "dynamics, and function using networkx. http://networkx.github.io, 2008."
+        }
+      ],
+      "text" : "dynamics, and function using networkx. http://networkx.github.io, 2008."
+    },
+    {
+      "rect" : [
+        315.96299999999997,
+        644.84245840000006,
+        247.07309999999984,
+        7.1252693999999792
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701000000000004,
+          "text" : "[4] L. Meyn. A closed-form solution to multi-point scheduling problems."
+        }
+      ],
+      "text" : "[4] L. Meyn. A closed-form solution to multi-point scheduling problems."
+    },
+    {
+      "rect" : [
+        330.23699999999997,
+        635.87645840000005,
+        232.79512790000001,
+        7.1252693999999792
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701000000000004,
+          "text" : "In AIAA Modeling and Simulation Technologies Conference, page 7911,"
+        }
+      ],
+      "text" : "In AIAA Modeling and Simulation Technologies Conference, page 7911,"
+    },
+    {
+      "rect" : [
+        330.23699999999997,
+        626.90945840000006,
+        17.932725000000005,
+        7.1252693999999792
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701000000000004,
+          "text" : "2010."
+        }
+      ],
+      "text" : "2010."
+    },
+    {
+      "rect" : [
+        315.96299999999997,
+        617.94345840000005,
+        247.07309999999984,
+        7.1252693999999792
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701000000000004,
+          "text" : "[5] D. Mulfinger and A. Sadovsky. Design and evaluation of a stochastic"
+        }
+      ],
+      "text" : "[5] D. Mulfinger and A. Sadovsky. Design and evaluation of a stochastic"
+    },
+    {
+      "rect" : [
+        330.23699999999997,
+        608.97745840000005,
+        232.79984979999995,
+        7.1252693999999792
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701000000000004,
+          "text" : "time-based arrival scheduling simulation system. In 11th AIAA Aviation"
+        }
+      ],
+      "text" : "time-based arrival scheduling simulation system. In 11th AIAA Aviation"
+    },
+    {
+      "rect" : [
+        330.23699999999997,
+        600.19377070000007,
+        232.79865089999998,
+        6.8702262000000474
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701000000000004,
+          "italic" : true,
+          "text" : "Technology, Integration, and Operations (ATIO) Conference, including"
+        }
+      ],
+      "text" : "Technology, Integration, and Operations (ATIO) Conference, including"
+    },
+    {
+      "rect" : [
+        330.23699999999997,
+        591.04445840000005,
+        232.79952500000002,
+        7.1252693999999792
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701000000000004,
+          "text" : "the AIAA Balloon Systems Conference and 19th AIAA Lighter-Than,"
+        }
+      ],
+      "text" : "the AIAA Balloon Systems Conference and 19th AIAA Lighter-Than,"
+    },
+    {
+      "rect" : [
+        330.23699999999997,
+        582.07845840000005,
+        56.49206879999997,
+        7.1252693999999792
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701000000000004,
+          "text" : "page 6874, 2011."
+        }
+      ],
+      "text" : "page 6874, 2011."
+    },
+    {
+      "rect" : [
+        315.96299999999997,
+        573.11145840000006,
+        247.07688770000004,
+        7.1252693999999792
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701000000000004,
+          "text" : "[6] C. H. Papadimitriou and K. Steiglitz. Combinatorial Optimization;"
+        }
+      ],
+      "text" : "[6] C. H. Papadimitriou and K. Steiglitz. Combinatorial Optimization;"
+    },
+    {
+      "rect" : [
+        330.23699999999997,
+        564.14545840000005,
+        179.35841240000002,
+        7.1252693999999792
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701000000000004,
+          "text" : "Algorithms and Complexity. Dover Publications, 1998."
+        }
+      ],
+      "text" : "Algorithms and Complexity. Dover Publications, 1998."
+    },
+    {
+      "rect" : [
+        315.96299999999997,
+        555.17845840000007,
+        247.07310000000007,
+        7.1252693999999792
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701000000000004,
+          "text" : "[7] J. L. Rios, I. S. Smith, P. Venkatesan, D. R. Smith, V. Baskaran,"
+        }
+      ],
+      "text" : "[7] J. L. Rios, I. S. Smith, P. Venkatesan, D. R. Smith, V. Baskaran,"
+    },
+    {
+      "rect" : [
+        330.23699999999997,
+        546.21245840000006,
+        232.79865089999998,
+        7.1252693999999792
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701000000000004,
+          "text" : "S. M. Jurcak, S. K. Iyer, and P. Verma. UTM UAS service supplier"
+        }
+      ],
+      "text" : "S. M. Jurcak, S. K. Iyer, and P. Verma. UTM UAS service supplier"
+    },
+    {
+      "rect" : [
+        330.23699999999997,
+        537.24645840000005,
+        203.70778589999998,
+        7.1252693999999792
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701000000000004,
+          "text" : "development: Sprint 2 toward technical capability level 4. "
+        }
+      ],
+      "text" : "development: Sprint 2 toward technical capability level 4. "
+    },
+    {
+      "rect" : [
+        544.21100000000001,
+        537.24645840000005,
+        18.825376200000051,
+        7.1252693999999792
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701000000000004,
+          "italic" : true,
+          "text" : "NASA"
+        }
+      ],
+      "text" : "NASA"
+    },
+    {
+      "rect" : [
+        330.23699999999997,
+        528.27945840000007,
+        100.67778500000003,
+        7.1252693999999792
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701000000000004,
+          "text" : "Technical Memorandum, 2018."
+        }
+      ],
+      "text" : "Technical Memorandum, 2018."
+    },
+    {
+      "rect" : [
+        315.96299999999997,
+        519.31345840000006,
+        247.0752202000001,
+        7.1252693999999792
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701000000000004,
+          "text" : "[8] A. S. Tanenbaum and M. Van Steen. Distributed systems: principles"
+        }
+      ],
+      "text" : "[8] A. S. Tanenbaum and M. Van Steen. Distributed systems: principles"
+    },
+    {
+      "rect" : [
+        330.23699999999997,
+        510.34745840000005,
+        119.59112920000001,
+        7.1252693999999792
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701000000000004,
+          "text" : "and paradigms. Prentice-Hall, 2007."
+        }
+      ],
+      "text" : "and paradigms. Prentice-Hall, 2007."
+    },
+    {
+      "rect" : [
+        315.96299999999997,
+        501.38045840000007,
+        247.07309999999984,
+        7.1252693999999792
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701000000000004,
+          "text" : "[9] S. Torres and K. L Delpome. An integrated approach to air traffic"
+        }
+      ],
+      "text" : "[9] S. Torres and K. L Delpome. An integrated approach to air traffic"
+    },
+    {
+      "rect" : [
+        330.23699999999997,
+        492.41445840000006,
+        232.80286939999996,
+        7.1252693999999792
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701000000000004,
+          "text" : "management to achieve trajectory based operations. In 2012 IEEE/AIAA"
+        }
+      ],
+      "text" : "management to achieve trajectory based operations. In 2012 IEEE/AIAA"
+    },
+    {
+      "rect" : [
+        330.23699999999997,
+        483.44745840000007,
+        232.7989996,
+        7.1252693999999792
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701000000000004,
+          "text" : "31st Digital Avionics Systems Conference (DASC), pages 3E6–1. IEEE,"
+        }
+      ],
+      "text" : "31st Digital Avionics Systems Conference (DASC), pages 3E6–1. IEEE,"
+    },
+    {
+      "rect" : [
+        330.23699999999997,
+        474.48145840000007,
+        17.932725000000005,
+        7.1252693999999792
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701000000000004,
+          "text" : "2012."
+        }
+      ],
+      "text" : "2012."
+    },
+    {
+      "rect" : [
+        311.97799999999995,
+        465.51545840000006,
+        251.05814999999996,
+        7.1252693999999792
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701000000000004,
+          "text" : "[10] K. Tumer and A. Agogino. Distributed agent-based air traffic flow"
+        }
+      ],
+      "text" : "[10] K. Tumer and A. Agogino. Distributed agent-based air traffic flow"
+    },
+    {
+      "rect" : [
+        330.23699999999997,
+        456.54845840000007,
+        232.80178139999998,
+        7.1252693999999792
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701000000000004,
+          "text" : "management. In Proceedings of the 6th international joint conference"
+        }
+      ],
+      "text" : "management. In Proceedings of the 6th international joint conference"
+    },
+    {
+      "rect" : [
+        330.23699999999997,
+        447.58245840000006,
+        232.40722260000007,
+        7.1252693999999792
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701000000000004,
+          "text" : "on Autonomous agents and multiagent systems, page 255. ACM, 2007."
+        }
+      ],
+      "text" : "on Autonomous agents and multiagent systems, page 255. ACM, 2007."
+    },
+    {
+      "rect" : [
+        54.941000000000003,
+        384.01525759999998,
+        187.2004992,
+        8.0159616000000256
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "For each link in the scheduling graph, define a"
+        }
+      ],
+      "text" : "For each link in the scheduling graph, define a"
+    },
+    {
+      "rect" : [
+        54.941000000000003,
+        374.05225759999996,
+        187.20049919999994,
+        8.0159616000000256
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "“weight” that reflects the stakeholders’ and arbiter’s"
+        }
+      ],
+      "text" : "“weight” that reflects the stakeholders’ and arbiter’s"
+    },
+    {
+      "rect" : [
+        54.941000000000003,
+        364.08925759999994,
+        187.1972672,
+        8.1594240000000582
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "preferences. The scheduling graph for f becomes a"
+        }
+      ],
+      "text" : "preferences. The scheduling graph for f becomes a"
+    },
+    {
+      "rect" : [
+        54.941000000000003,
+        354.12725759999995,
+        187.20306719999999,
+        8.0159616000000256
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "weighted graph [6]. Compute a shortest path in this"
+        }
+      ],
+      "text" : "weighted graph [6]. Compute a shortest path in this"
+    },
+    {
+      "rect" : [
+        54.940999999999974,
+        344.16425759999993,
+        22.658092800000006,
+        8.0159616000000256
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "graph."
+        }
+      ],
+      "text" : "graph."
+    },
+    {
+      "rect" : [
+        254.09700000000001,
+        384.01525759999998,
+        14.346239999999995,
+        8.0159616000000256
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "7, 8"
+        }
+      ],
+      "text" : "7, 8"
+    },
+    {
+      "rect" : [
+        54.941000000000003,
+        333.80325759999999,
+        187.2004992,
+        8.0159616000000256
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "The shortest path computed in the scheduling graph"
+        }
+      ],
+      "text" : "The shortest path computed in the scheduling graph"
+    },
+    {
+      "rect" : [
+        54.941000000000003,
+        323.84025759999997,
+        187.1993600000001,
+        8.1594240000000582
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "for f is a sequence of available time windows,"
+        }
+      ],
+      "text" : "for f is a sequence of available time windows,"
+    },
+    {
+      "rect" : [
+        54.941000000000017,
+        313.87825759999998,
+        187.20462400000002,
+        8.0159616000000256
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "which will be called weight-optimal time windows"
+        }
+      ],
+      "text" : "which will be called weight-optimal time windows"
+    },
+    {
+      "rect" : [
+        54.941000000000017,
+        303.91525759999996,
+        187.20506880000005,
+        8.1594240000000582
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "for f. Each weight-optimal time window is assigned"
+        }
+      ],
+      "text" : "for f. Each weight-optimal time window is assigned"
+    },
+    {
+      "rect" : [
+        54.941000000000017,
+        293.95225759999994,
+        84.461595839999987,
+        9.8941968000000315
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "to one of the nodes n"
+        },
+        {
+          "baselineOffset" : 3.8090000000000259,
+          "fontName" : "Helvetica",
+          "fontSize" : 5.9776000000000007,
+          "text" : "k"
+        }
+      ],
+      "text" : "to one of the nodes nk"
+    },
+    {
+      "rect" : [
+        135.45200000000003,
+        292.87334559999994,
+        106.68610240000004,
+        9.0948736000000281
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -1.8559999999999945,
+          "fontName" : "Helvetica",
+          "fontSize" : 5.9776000000000007,
+          "text" : "f "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : ",. Each next weight-optimal"
+        }
+      ],
+      "text" : "f ,. Each next weight-optimal"
+    },
+    {
+      "rect" : [
+        54.941000000000031,
+        283.99025759999995,
+        187.2004992,
+        8.0159616000000256
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "time window is reachable from the previous one"
+        }
+      ],
+      "text" : "time window is reachable from the previous one"
+    },
+    {
+      "rect" : [
+        54.941000000000031,
+        274.02725759999993,
+        187.20049919999997,
+        8.0159616000000256
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "(i.e., from the one at the previous node). Within the"
+        }
+      ],
+      "text" : "(i.e., from the one at the previous node). Within the"
+    },
+    {
+      "rect" : [
+        54.941000000000031,
+        264.06425759999991,
+        149.68159584,
+        9.8941968000000315
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "weight-optimal time window at each n"
+        },
+        {
+          "baselineOffset" : 3.8090000000000259,
+          "fontName" : "Helvetica",
+          "fontSize" : 5.9776000000000007,
+          "text" : "k"
+        }
+      ],
+      "text" : "weight-optimal time window at each nk"
+    },
+    {
+      "rect" : [
+        200.67200000000003,
+        262.9853455999999,
+        41.473475199999996,
+        9.0948736000000281
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -1.8559999999999945,
+          "fontName" : "Helvetica",
+          "fontSize" : 5.9776000000000007,
+          "text" : "f "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : ", compute"
+        }
+      ],
+      "text" : "f , compute"
+    },
+    {
+      "rect" : [
+        80.666000000000025,
+        255.85534559999994,
+        8.3773235299999982,
+        7.1246765999999582
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -2.5079999999999814,
+          "fontName" : "Helvetica",
+          "fontSize" : 5.9776000000000007,
+          "text" : "n"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 4.9813000000000001,
+          "text" : "k"
+        }
+      ],
+      "text" : "nk"
+    },
+    {
+      "rect" : [
+        54.941000000000031,
+        248.85545919999993,
+        25.725079999999991,
+        8.0697600000000307
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "an STA"
+        }
+      ],
+      "text" : "an STA"
+    },
+    {
+      "rect" : [
+        85.267000000000024,
+        253.93662779999991,
+        3.4072091999999969,
+        4.4233943999999781
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 4.9813000000000001,
+          "text" : "f"
+        }
+      ],
+      "text" : "f"
+    },
+    {
+      "rect" : [
+        80.666000000000025,
+        248.68634559999992,
+        159.53786719999999,
+        8.2388736000000335
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -1,
+          "fontName" : "Helvetica",
+          "fontSize" : 5.9776000000000007,
+          "text" : "n "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "using the following heuristic procedure:"
+        }
+      ],
+      "text" : "n using the following heuristic procedure:"
+    },
+    {
+      "rect" : [
+        64.904000000000025,
+        236.90045919999991,
+        166.38991135999999,
+        9.9479952000000083
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 5.9776000000000007,
+          "text" : "• "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "At the first node on the route of f, let STA"
+        },
+        {
+          "baselineOffset" : 3.8089999999999975,
+          "fontName" : "Helvetica",
+          "fontSize" : 5.9776000000000007,
+          "text" : "1"
+        }
+      ],
+      "text" : "• At the first node on the route of f, let STA1"
+    },
+    {
+      "rect" : [
+        227.64100000000002,
+        235.87434559999991,
+        14.500740159999992,
+        9.2393359999999802
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -0.92850000000001387,
+          "fontName" : "Helvetica",
+          "fontSize" : 5.9776000000000007,
+          "text" : "f "
+        },
+        {
+          "baselineOffset" : 0.92849999999998545,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "="
+        }
+      ],
+      "text" : "f ="
+    },
+    {
+      "rect" : [
+        74.701000000000022,
+        226.99125759999993,
+        167.43855360000009,
+        8.0159615999999971
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "(starting time of weight-optimal time window"
+        }
+      ],
+      "text" : "(starting time of weight-optimal time window"
+    },
+    {
+      "rect" : [
+        74.701000000000022,
+        217.0282575999999,
+        48.364761600000008,
+        8.0159615999999971
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "at this node)."
+        }
+      ],
+      "text" : "at this node)."
+    },
+    {
+      "rect" : [
+        64.904000000000025,
+        207.01245919999994,
+        163.41016287999997,
+        10.056995200000017
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 5.9776000000000007,
+          "text" : "• "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "At all subsequent nodes n, let STA"
+        },
+        {
+          "baselineOffset" : 3.9180000000000064,
+          "fontName" : "Helvetica",
+          "fontSize" : 5.9776000000000007,
+          "text" : "n+1"
+        }
+      ],
+      "text" : "• At all subsequent nodes n, let STAn+1"
+    },
+    {
+      "rect" : [
+        214.471,
+        205.26634559999994,
+        27.67074015999998,
+        9.9593359999999791
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -1.2884999999999991,
+          "fontName" : "Helvetica",
+          "fontSize" : 5.9776000000000007,
+          "text" : "f "
+        },
+        {
+          "baselineOffset" : 1.2884999999999991,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "="
+        }
+      ],
+      "text" : "f ="
+    },
+    {
+      "rect" : [
+        74.700999999999993,
+        196.89045919999992,
+        18.722958720000008,
+        9.9479952000000083
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "STA"
+        },
+        {
+          "baselineOffset" : 3.8089999999999975,
+          "fontName" : "Helvetica",
+          "fontSize" : 5.9776000000000007,
+          "text" : "n"
+        }
+      ],
+      "text" : "STAn"
+    },
+    {
+      "rect" : [
+        88.822999999999993,
+        195.86434559999992,
+        153.31868160000005,
+        9.2393359999999802
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -1.8569999999999993,
+          "fontName" : "Helvetica",
+          "fontSize" : 5.9776000000000007,
+          "text" : "f "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "+ (the nominal travel time for f from"
+        }
+      ],
+      "text" : "f + (the nominal travel time for f from"
+    },
+    {
+      "rect" : [
+        74.701000000000022,
+        186.98125759999994,
+        45.46841120000002,
+        8.1594239999999729
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "n to n + 1)."
+        }
+      ],
+      "text" : "n to n + 1)."
+    },
+    {
+      "rect" : [
+        64.904000000000025,
+        177.01925759999995,
+        177.2355536,
+        8.0159615999999971
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 5.9776000000000007,
+          "text" : "• "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "If possible, subtract the same positive time"
+        }
+      ],
+      "text" : "• If possible, subtract the same positive time"
+    },
+    {
+      "rect" : [
+        74.701000000000022,
+        167.00245919999995,
+        167.44355200000004,
+        8.0697599999999738
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "length from all the STAs, to “remove the"
+        }
+      ],
+      "text" : "length from all the STAs, to “remove the"
+    },
+    {
+      "rect" : [
+        74.70100000000005,
+        157.09325759999996,
+        167.43855360000003,
+        8.0159615999999971
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "slack”; i.e., to make sure that at least one of"
+        }
+      ],
+      "text" : "slack”; i.e., to make sure that at least one of"
+    },
+    {
+      "rect" : [
+        74.70100000000005,
+        147.13125759999997,
+        167.43855360000001,
+        8.0159615999999971
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "them is at the first time instant of its time"
+        }
+      ],
+      "text" : "them is at the first time instant of its time"
+    },
+    {
+      "rect" : [
+        74.70100000000005,
+        137.16825759999995,
+        30.324364799999998,
+        8.0159615999999971
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "window."
+        }
+      ],
+      "text" : "window."
+    },
+    {
+      "rect" : [
+        254.09700000000001,
+        333.80325759999999,
+        4.4831999999999823,
+        8.0159616000000256
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "9"
+        }
+      ],
+      "text" : "9"
+    },
+    {
+      "rect" : [
+        54.941000000000003,
+        116.7904592,
+        187.19785280000005,
+        8.0697600000000023
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "If all the STAs thus computed fit into the cor-"
+        }
+      ],
+      "text" : "If all the STAs thus computed fit into the cor-"
+    },
+    {
+      "rect" : [
+        54.941000000000003,
+        106.8822576,
+        187.2004992,
+        8.0159615999999971
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "responding weight-optimal time windows, report"
+        }
+      ],
+      "text" : "responding weight-optimal time windows, report"
+    },
+    {
+      "rect" : [
+        54.941000000000003,
+        96.919257599999995,
+        187.20072320000003,
+        8.1594240000000013
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "them as the computed schedule for f. Otherwise,"
+        }
+      ],
+      "text" : "them as the computed schedule for f. Otherwise,"
+    },
+    {
+      "rect" : [
+        54.941000000000031,
+        86.956257600000001,
+        187.2004992,
+        8.0159615999999971
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "solve a Quadratic Program (appendix B) for such"
+        }
+      ],
+      "text" : "solve a Quadratic Program (appendix B) for such"
+    },
+    {
+      "rect" : [
+        54.941000000000031,
+        76.940459199999992,
+        187.2004192,
+        8.0697600000000023
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "STAs as satisfy the constraints and result in travel"
+        }
+      ],
+      "text" : "STAs as satisfy the constraints and result in travel"
+    },
+    {
+      "rect" : [
+        54.941000000000031,
+        67.031257599999989,
+        187.20222720000004,
+        8.1594240000000013
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "speeds for f that are as close to the nominal as"
+        }
+      ],
+      "text" : "speeds for f that are as close to the nominal as"
+    },
+    {
+      "rect" : [
+        54.941000000000031,
+        57.068257599999988,
+        31.633459200000004,
+        8.0159616000000042
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "possible."
+        }
+      ],
+      "text" : "possible."
+    },
+    {
+      "rect" : [
+        254.09700000000001,
+        116.84425760000001,
+        8.966399999999993,
+        8.0159615999999971
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "10"
+        }
+      ],
+      "text" : "10"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    612,
+    792
+  ],
+  "caseID" : "ntrs-20190030725-dasc-2019",
+  "graphics" : [
+    [
+      46.963999999999999,
+      53.817,
+      251.11100000000005,
+      663.14099999999985
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.963999999999999,
+        734.52407840000001,
+        251.0575199999999,
+        8.9065643999999793
+      ],
+      "text" : "TABLE III: A high-level outline of the scheduling algorithm"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.963999999999999,
+        722.56907839999997,
+        53.180358799999993,
+        8.9065643999999793
+      ],
+      "text" : "of section V."
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        110.117,
+        695.94802240000001,
+        76.851014400000011,
+        8.0607936000000109
+      ],
+      "text" : "What is being done"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        254.09700000000001,
+        695.94802240000001,
+        36.000096000000013,
+        8.0607936000000109
+      ],
+      "text" : "In which"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        254.09700000000001,
+        685.98502240000005,
+        36.000096000000013,
+        8.0607936000000109
+      ],
+      "text" : "steps in"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        254.09700000000001,
+        676.02302240000006,
+        36.000096000000013,
+        8.0607936000000109
+      ],
+      "text" : "section V"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        54.941000000000003,
+        665.5992576000001,
+        187.20275040000004,
+        8.1594239999999445
+      ],
+      "text" : "For each node n on the route of f, compute the"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        54.941000000000031,
+        655.63625760000014,
+        187.20165599999999,
+        8.1594239999999445
+      ],
+      "text" : "time windows unavailable to flight f at n because"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        54.941000000000003,
+        645.67325760000017,
+        187.20049919999994,
+        8.0159615999999687
+      ],
+      "text" : "of the flight’s ETA and because of the separation re-"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        54.941000000000003,
+        635.71125760000018,
+        187.2004992,
+        8.0159615999999687
+      ],
+      "text" : "quirement with the already scheduled flights’ STAs."
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        54.941000000000003,
+        625.74825760000022,
+        187.20049919999994,
+        8.0159615999999687
+      ],
+      "text" : "These time windows are determined by constraints"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        54.941000000000003,
+        615.78525760000025,
+        12.696422400000003,
+        8.0159615999999687
+      ],
+      "text" : "(4)."
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        254.09700000000001,
+        665.5992576000001,
+        14.346239999999995,
+        8.0159615999999687
+      ],
+      "text" : "1, 2"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        54.941000000000003,
+        605.37045920000003,
+        187.2015888,
+        8.2132223999999496
+      ],
+      "text" : "If the ETA at the first node on the route of f is"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        54.941000000000003,
+        595.46225760000004,
+        187.20049920000002,
+        8.0159615999999687
+      ],
+      "text" : "frozen, add the corresponding time window to the"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        54.941000000000003,
+        585.49925760000008,
+        187.1971872,
+        8.1594239999999445
+      ],
+      "text" : "list of the time windows unavailable to f at that"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        54.941000000000003,
+        575.53625760000011,
+        19.672281600000005,
+        8.0159615999999687
+      ],
+      "text" : "node."
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        254.09700000000001,
+        605.42425760000003,
+        4.4831999999999823,
+        8.0159615999999687
+      ],
+      "text" : "3"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        54.941000000000003,
+        565.17525760000001,
+        187.20049919999997,
+        8.0159615999999687
+      ],
+      "text" : "Using the algorithm in Ref. [4], update the un-"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        54.941000000000003,
+        555.21225760000004,
+        187.20049919999997,
+        8.0159615999999687
+      ],
+      "text" : "available time windows to include the limitations"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        54.941000000000003,
+        545.25025760000005,
+        187.20049920000002,
+        8.0159615999999687
+      ],
+      "text" : "on controllability and reachability, as explained in"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        54.941000000000003,
+        535.28725760000009,
+        40.241203200000001,
+        8.0159615999999687
+      ],
+      "text" : "section IV."
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        254.09700000000001,
+        565.17525760000001,
+        4.4831999999999823,
+        8.0159615999999687
+      ],
+      "text" : "4"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        54.941000000000003,
+        514.96325760000002,
+        187.19732000000002,
+        8.1594239999999445
+      ],
+      "text" : "Because the speed of f is bounded, if f reaches a"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        54.941000000000031,
+        505.00125759999997,
+        187.20049919999997,
+        8.0159616000000256
+      ],
+      "text" : "node in a given time window, the next node may not"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        54.941000000000031,
+        495.03825759999995,
+        187.20049920000008,
+        8.0159616000000256
+      ],
+      "text" : "be reachable in some of its available time windows."
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        54.941000000000031,
+        485.07525759999993,
+        135.74159584,
+        9.8941968000000315
+      ],
+      "text" : "For every two consecutive nodes nk"
+    },
+    {
+      "fontSize" : 5.9776000000000007,
+      "monospaced" : false,
+      "rect" : [
+        186.73200000000003,
+        483.99634559999993,
+        27.746162879999986,
+        11.083108799999991
+      ],
+      "text" : "f , nk+1"
+    },
+    {
+      "fontSize" : 5.9776000000000007,
+      "monospaced" : false,
+      "rect" : [
+        201.16000000000003,
+        483.27534559999992,
+        40.982766400000003,
+        9.8158736000000317
+      ],
+      "text" : "f on the"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        54.941000000000031,
+        462.62215999999995,
+        107.03786880000001,
+        20.646521600000028
+      ],
+      "text" : "route of f, consider each pair"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        66.019000000000034,
+        456.13225759999995,
+        70.005595839999984,
+        9.8941968000000315
+      ],
+      "text" : "time window at nk"
+    },
+    {
+      "fontSize" : 5.9776000000000007,
+      "monospaced" : false,
+      "rect" : [
+        132.07400000000004,
+        455.05334559999994,
+        7.0146000000000015,
+        11.083108799999991
+      ],
+      "text" : "f ,"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        151.19324000000003,
+        455.05334559999994,
+        79.372922879999976,
+        11.083108799999991
+      ],
+      "text" : "time window at nk+1"
+    },
+    {
+      "fontSize" : 5.9776000000000007,
+      "monospaced" : false,
+      "rect" : [
+        217.24800000000002,
+        454.33234559999994,
+        22.458576319999992,
+        14.046243199999992
+      ],
+      "text" : "f"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        227.20400000000004,
+        444.18925759999996,
+        14.938022399999994,
+        8.0159616000000256
+      ],
+      "text" : "(13)"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        54.941000000000031,
+        434.22625759999994,
+        187.20049919999991,
+        8.0159616000000256
+      ],
+      "text" : "and record the pair if the latter window is attainable"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        54.941000000000031,
+        424.26425759999995,
+        187.2004992,
+        8.0159616000000256
+      ],
+      "text" : "from the former. Regard these pairs as links in a"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        54.941000000000031,
+        414.30125759999993,
+        187.19928640000001,
+        8.0159616000000256
+      ],
+      "text" : "graph, which will be called the scheduling graph"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        54.941000000000031,
+        404.33825759999991,
+        187.20081440000001,
+        8.1594240000000582
+      ],
+      "text" : "for f, and with the available time windows being"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        54.941000000000031,
+        394.37625759999992,
+        127.50220800000002,
+        8.0159616000000256
+      ],
+      "text" : "the nodes of the scheduling graph."
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        254.09700000000001,
+        514.96325760000002,
+        36.000096000000013,
+        8.0159615999999687
+      ],
+      "text" : "5, 6;"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        254.09700000000001,
+        505.00125759999997,
+        28.665580800000015,
+        8.0159616000000256
+      ],
+      "text" : "window"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        254.09700000000001,
+        495.03825759999995,
+        13.942752000000013,
+        8.0159616000000256
+      ],
+      "text" : "pair"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        254.09700000000001,
+        485.07525759999993,
+        36.000096000000013,
+        8.0159616000000256
+      ],
+      "text" : "(13) is"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        254.09700000000001,
+        475.11325759999994,
+        28.665580800000015,
+        8.0159616000000256
+      ],
+      "text" : "window"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        254.09700000000001,
+        465.15025759999992,
+        32.019014400000032,
+        8.0159616000000256
+      ],
+      "text" : "pair (10)"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        409.61200000000002,
+        730.93807839999999,
+        55.800460499999929,
+        8.9065643999999793
+      ],
+      "text" : "REFERENCES"
+    },
+    {
+      "fontSize" : 7.9701000000000004,
+      "monospaced" : false,
+      "rect" : [
+        315.96299999999997,
+        716.57345840000005,
+        189.56085840000003,
+        7.1252693999999792
+      ],
+      "text" : "[1] M. S. Andersen, J. Dahl, and L. Vandenberghe."
+    },
+    {
+      "fontSize" : 7.9701000000000004,
+      "monospaced" : false,
+      "rect" : [
+        518.02894529999992,
+        716.57345840000005,
+        45.007154700000115,
+        7.1252693999999792
+      ],
+      "text" : "CVXOPT: A"
+    },
+    {
+      "fontSize" : 7.9701000000000004,
+      "monospaced" : false,
+      "rect" : [
+        330.23699999999997,
+        707.60745840000004,
+        231.93858660000001,
+        7.1252693999999792
+      ],
+      "text" : "python package for convex optimization, version 1.1.5. seas.ucla.edu/"
+    },
+    {
+      "fontSize" : 5.9776000000000007,
+      "monospaced" : false,
+      "rect" : [
+        330.23699999999997,
+        698.64045840000006,
+        147.46378499999997,
+        7.7867416000000276
+      ],
+      "text" : "∼vandenbe/publications/coneprog.pdf , 2012."
+    },
+    {
+      "fontSize" : 7.9701000000000004,
+      "monospaced" : false,
+      "rect" : [
+        315.96299999999997,
+        689.67445840000005,
+        247.0750309,
+        7.1252693999999792
+      ],
+      "text" : "[2] FAA-E-3025. Time-Based Flow Management (TBFM) system specifi-"
+    },
+    {
+      "fontSize" : 7.9701000000000004,
+      "monospaced" : false,
+      "rect" : [
+        330.23699999999997,
+        680.70845840000004,
+        232.80071750000002,
+        7.1252693999999792
+      ],
+      "text" : "cation document (SSD). Federal Aviation Administration, Washington,"
+    },
+    {
+      "fontSize" : 7.9701000000000004,
+      "monospaced" : false,
+      "rect" : [
+        330.23699999999997,
+        671.74145840000006,
+        37.770303899999988,
+        7.1252693999999792
+      ],
+      "text" : "D.C., 2014."
+    },
+    {
+      "fontSize" : 7.9701000000000004,
+      "monospaced" : false,
+      "rect" : [
+        315.96299999999997,
+        662.77545840000005,
+        247.07309999999984,
+        7.1252693999999792
+      ],
+      "text" : "[3] A. Hagberg, P. Swart, and D. Schult. Exploring network structure,"
+    },
+    {
+      "fontSize" : 7.9701000000000004,
+      "monospaced" : false,
+      "rect" : [
+        330.23699999999997,
+        653.80945840000004,
+        232.80181820000007,
+        7.1252693999999792
+      ],
+      "text" : "dynamics, and function using networkx. http://networkx.github.io, 2008."
+    },
+    {
+      "fontSize" : 7.9701000000000004,
+      "monospaced" : false,
+      "rect" : [
+        315.96299999999997,
+        644.84245840000006,
+        247.07309999999984,
+        7.1252693999999792
+      ],
+      "text" : "[4] L. Meyn. A closed-form solution to multi-point scheduling problems."
+    },
+    {
+      "fontSize" : 7.9701000000000004,
+      "monospaced" : false,
+      "rect" : [
+        330.23699999999997,
+        635.87645840000005,
+        232.79512790000001,
+        7.1252693999999792
+      ],
+      "text" : "In AIAA Modeling and Simulation Technologies Conference, page 7911,"
+    },
+    {
+      "fontSize" : 7.9701000000000004,
+      "monospaced" : false,
+      "rect" : [
+        330.23699999999997,
+        626.90945840000006,
+        17.932725000000005,
+        7.1252693999999792
+      ],
+      "text" : "2010."
+    },
+    {
+      "fontSize" : 7.9701000000000004,
+      "monospaced" : false,
+      "rect" : [
+        315.96299999999997,
+        617.94345840000005,
+        247.07309999999984,
+        7.1252693999999792
+      ],
+      "text" : "[5] D. Mulfinger and A. Sadovsky. Design and evaluation of a stochastic"
+    },
+    {
+      "fontSize" : 7.9701000000000004,
+      "monospaced" : false,
+      "rect" : [
+        330.23699999999997,
+        608.97745840000005,
+        232.79984979999995,
+        7.1252693999999792
+      ],
+      "text" : "time-based arrival scheduling simulation system. In 11th AIAA Aviation"
+    },
+    {
+      "fontSize" : 7.9701000000000004,
+      "monospaced" : false,
+      "rect" : [
+        330.23699999999997,
+        600.19377070000007,
+        232.79865089999998,
+        6.8702262000000474
+      ],
+      "text" : "Technology, Integration, and Operations (ATIO) Conference, including"
+    },
+    {
+      "fontSize" : 7.9701000000000004,
+      "monospaced" : false,
+      "rect" : [
+        330.23699999999997,
+        591.04445840000005,
+        232.79952500000002,
+        7.1252693999999792
+      ],
+      "text" : "the AIAA Balloon Systems Conference and 19th AIAA Lighter-Than,"
+    },
+    {
+      "fontSize" : 7.9701000000000004,
+      "monospaced" : false,
+      "rect" : [
+        330.23699999999997,
+        582.07845840000005,
+        56.49206879999997,
+        7.1252693999999792
+      ],
+      "text" : "page 6874, 2011."
+    },
+    {
+      "fontSize" : 7.9701000000000004,
+      "monospaced" : false,
+      "rect" : [
+        315.96299999999997,
+        573.11145840000006,
+        247.07688770000004,
+        7.1252693999999792
+      ],
+      "text" : "[6] C. H. Papadimitriou and K. Steiglitz. Combinatorial Optimization;"
+    },
+    {
+      "fontSize" : 7.9701000000000004,
+      "monospaced" : false,
+      "rect" : [
+        330.23699999999997,
+        564.14545840000005,
+        179.35841240000002,
+        7.1252693999999792
+      ],
+      "text" : "Algorithms and Complexity. Dover Publications, 1998."
+    },
+    {
+      "fontSize" : 7.9701000000000004,
+      "monospaced" : false,
+      "rect" : [
+        315.96299999999997,
+        555.17845840000007,
+        247.07310000000007,
+        7.1252693999999792
+      ],
+      "text" : "[7] J. L. Rios, I. S. Smith, P. Venkatesan, D. R. Smith, V. Baskaran,"
+    },
+    {
+      "fontSize" : 7.9701000000000004,
+      "monospaced" : false,
+      "rect" : [
+        330.23699999999997,
+        546.21245840000006,
+        232.79865089999998,
+        7.1252693999999792
+      ],
+      "text" : "S. M. Jurcak, S. K. Iyer, and P. Verma. UTM UAS service supplier"
+    },
+    {
+      "fontSize" : 7.9701000000000004,
+      "monospaced" : false,
+      "rect" : [
+        330.23699999999997,
+        537.24645840000005,
+        203.70778589999998,
+        7.1252693999999792
+      ],
+      "text" : "development: Sprint 2 toward technical capability level 4."
+    },
+    {
+      "fontSize" : 7.9701000000000004,
+      "monospaced" : false,
+      "rect" : [
+        544.21100000000001,
+        537.24645840000005,
+        18.825376200000051,
+        7.1252693999999792
+      ],
+      "text" : "NASA"
+    },
+    {
+      "fontSize" : 7.9701000000000004,
+      "monospaced" : false,
+      "rect" : [
+        330.23699999999997,
+        528.27945840000007,
+        100.67778500000003,
+        7.1252693999999792
+      ],
+      "text" : "Technical Memorandum, 2018."
+    },
+    {
+      "fontSize" : 7.9701000000000004,
+      "monospaced" : false,
+      "rect" : [
+        315.96299999999997,
+        519.31345840000006,
+        247.0752202000001,
+        7.1252693999999792
+      ],
+      "text" : "[8] A. S. Tanenbaum and M. Van Steen. Distributed systems: principles"
+    },
+    {
+      "fontSize" : 7.9701000000000004,
+      "monospaced" : false,
+      "rect" : [
+        330.23699999999997,
+        510.34745840000005,
+        119.59112920000001,
+        7.1252693999999792
+      ],
+      "text" : "and paradigms. Prentice-Hall, 2007."
+    },
+    {
+      "fontSize" : 7.9701000000000004,
+      "monospaced" : false,
+      "rect" : [
+        315.96299999999997,
+        501.38045840000007,
+        247.07309999999984,
+        7.1252693999999792
+      ],
+      "text" : "[9] S. Torres and K. L Delpome. An integrated approach to air traffic"
+    },
+    {
+      "fontSize" : 7.9701000000000004,
+      "monospaced" : false,
+      "rect" : [
+        330.23699999999997,
+        492.41445840000006,
+        232.80286939999996,
+        7.1252693999999792
+      ],
+      "text" : "management to achieve trajectory based operations. In 2012 IEEE/AIAA"
+    },
+    {
+      "fontSize" : 7.9701000000000004,
+      "monospaced" : false,
+      "rect" : [
+        330.23699999999997,
+        483.44745840000007,
+        232.7989996,
+        7.1252693999999792
+      ],
+      "text" : "31st Digital Avionics Systems Conference (DASC), pages 3E6–1. IEEE,"
+    },
+    {
+      "fontSize" : 7.9701000000000004,
+      "monospaced" : false,
+      "rect" : [
+        330.23699999999997,
+        474.48145840000007,
+        17.932725000000005,
+        7.1252693999999792
+      ],
+      "text" : "2012."
+    },
+    {
+      "fontSize" : 7.9701000000000004,
+      "monospaced" : false,
+      "rect" : [
+        311.97799999999995,
+        465.51545840000006,
+        251.05814999999996,
+        7.1252693999999792
+      ],
+      "text" : "[10] K. Tumer and A. Agogino. Distributed agent-based air traffic flow"
+    },
+    {
+      "fontSize" : 7.9701000000000004,
+      "monospaced" : false,
+      "rect" : [
+        330.23699999999997,
+        456.54845840000007,
+        232.80178139999998,
+        7.1252693999999792
+      ],
+      "text" : "management. In Proceedings of the 6th international joint conference"
+    },
+    {
+      "fontSize" : 7.9701000000000004,
+      "monospaced" : false,
+      "rect" : [
+        330.23699999999997,
+        447.58245840000006,
+        232.40722260000007,
+        7.1252693999999792
+      ],
+      "text" : "on Autonomous agents and multiagent systems, page 255. ACM, 2007."
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        54.941000000000003,
+        384.01525759999998,
+        187.2004992,
+        8.0159616000000256
+      ],
+      "text" : "For each link in the scheduling graph, define a"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        54.941000000000003,
+        374.05225759999996,
+        187.20049919999994,
+        8.0159616000000256
+      ],
+      "text" : "“weight” that reflects the stakeholders’ and arbiter’s"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        54.941000000000003,
+        364.08925759999994,
+        187.1972672,
+        8.1594240000000582
+      ],
+      "text" : "preferences. The scheduling graph for f becomes a"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        54.941000000000003,
+        354.12725759999995,
+        187.20306719999999,
+        8.0159616000000256
+      ],
+      "text" : "weighted graph [6]. Compute a shortest path in this"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        54.940999999999974,
+        344.16425759999993,
+        22.658092800000006,
+        8.0159616000000256
+      ],
+      "text" : "graph."
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        254.09700000000001,
+        384.01525759999998,
+        14.346239999999995,
+        8.0159616000000256
+      ],
+      "text" : "7, 8"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        54.941000000000003,
+        333.80325759999999,
+        187.2004992,
+        8.0159616000000256
+      ],
+      "text" : "The shortest path computed in the scheduling graph"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        54.941000000000003,
+        323.84025759999997,
+        187.1993600000001,
+        8.1594240000000582
+      ],
+      "text" : "for f is a sequence of available time windows,"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        54.941000000000017,
+        313.87825759999998,
+        187.20462400000002,
+        8.0159616000000256
+      ],
+      "text" : "which will be called weight-optimal time windows"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        54.941000000000017,
+        303.91525759999996,
+        187.20506880000005,
+        8.1594240000000582
+      ],
+      "text" : "for f. Each weight-optimal time window is assigned"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        54.941000000000017,
+        293.95225759999994,
+        84.461595839999987,
+        9.8941968000000315
+      ],
+      "text" : "to one of the nodes nk"
+    },
+    {
+      "fontSize" : 5.9776000000000007,
+      "monospaced" : false,
+      "rect" : [
+        135.45200000000003,
+        292.87334559999994,
+        106.68610240000004,
+        9.0948736000000281
+      ],
+      "text" : "f ,. Each next weight-optimal"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        54.941000000000031,
+        283.99025759999995,
+        187.2004992,
+        8.0159616000000256
+      ],
+      "text" : "time window is reachable from the previous one"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        54.941000000000031,
+        274.02725759999993,
+        187.20049919999997,
+        8.0159616000000256
+      ],
+      "text" : "(i.e., from the one at the previous node). Within the"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        54.941000000000031,
+        264.06425759999991,
+        149.68159584,
+        9.8941968000000315
+      ],
+      "text" : "weight-optimal time window at each nk"
+    },
+    {
+      "fontSize" : 5.9776000000000007,
+      "monospaced" : false,
+      "rect" : [
+        200.67200000000003,
+        262.9853455999999,
+        41.473475199999996,
+        9.0948736000000281
+      ],
+      "text" : "f , compute"
+    },
+    {
+      "fontSize" : 5.9776000000000007,
+      "monospaced" : false,
+      "rect" : [
+        80.666000000000025,
+        255.85534559999994,
+        8.3773235299999982,
+        7.1246765999999582
+      ],
+      "text" : "nk"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        54.941000000000031,
+        248.85545919999993,
+        25.725079999999991,
+        8.0697600000000307
+      ],
+      "text" : "an STA"
+    },
+    {
+      "fontSize" : 4.9813000000000001,
+      "monospaced" : false,
+      "rect" : [
+        85.267000000000024,
+        253.93662779999991,
+        3.4072091999999969,
+        4.4233943999999781
+      ],
+      "text" : "f"
+    },
+    {
+      "fontSize" : 5.9776000000000007,
+      "monospaced" : false,
+      "rect" : [
+        80.666000000000025,
+        248.68634559999992,
+        159.53786719999999,
+        8.2388736000000335
+      ],
+      "text" : "n using the following heuristic procedure:"
+    },
+    {
+      "fontSize" : 5.9776000000000007,
+      "monospaced" : false,
+      "rect" : [
+        64.904000000000025,
+        236.90045919999991,
+        166.38991135999999,
+        9.9479952000000083
+      ],
+      "text" : "• At the first node on the route of f, let STA1"
+    },
+    {
+      "fontSize" : 5.9776000000000007,
+      "monospaced" : false,
+      "rect" : [
+        227.64100000000002,
+        235.87434559999991,
+        14.500740159999992,
+        9.2393359999999802
+      ],
+      "text" : "f ="
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        74.701000000000022,
+        226.99125759999993,
+        167.43855360000009,
+        8.0159615999999971
+      ],
+      "text" : "(starting time of weight-optimal time window"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        74.701000000000022,
+        217.0282575999999,
+        48.364761600000008,
+        8.0159615999999971
+      ],
+      "text" : "at this node)."
+    },
+    {
+      "fontSize" : 5.9776000000000007,
+      "monospaced" : false,
+      "rect" : [
+        64.904000000000025,
+        207.01245919999994,
+        163.41016287999997,
+        10.056995200000017
+      ],
+      "text" : "• At all subsequent nodes n, let STAn+1"
+    },
+    {
+      "fontSize" : 5.9776000000000007,
+      "monospaced" : false,
+      "rect" : [
+        214.471,
+        205.26634559999994,
+        27.67074015999998,
+        9.9593359999999791
+      ],
+      "text" : "f ="
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        74.700999999999993,
+        196.89045919999992,
+        18.722958720000008,
+        9.9479952000000083
+      ],
+      "text" : "STAn"
+    },
+    {
+      "fontSize" : 5.9776000000000007,
+      "monospaced" : false,
+      "rect" : [
+        88.822999999999993,
+        195.86434559999992,
+        153.31868160000005,
+        9.2393359999999802
+      ],
+      "text" : "f + (the nominal travel time for f from"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        74.701000000000022,
+        186.98125759999994,
+        45.46841120000002,
+        8.1594239999999729
+      ],
+      "text" : "n to n + 1)."
+    },
+    {
+      "fontSize" : 5.9776000000000007,
+      "monospaced" : false,
+      "rect" : [
+        64.904000000000025,
+        177.01925759999995,
+        177.2355536,
+        8.0159615999999971
+      ],
+      "text" : "• If possible, subtract the same positive time"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        74.701000000000022,
+        167.00245919999995,
+        167.44355200000004,
+        8.0697599999999738
+      ],
+      "text" : "length from all the STAs, to “remove the"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        74.70100000000005,
+        157.09325759999996,
+        167.43855360000003,
+        8.0159615999999971
+      ],
+      "text" : "slack”; i.e., to make sure that at least one of"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        74.70100000000005,
+        147.13125759999997,
+        167.43855360000001,
+        8.0159615999999971
+      ],
+      "text" : "them is at the first time instant of its time"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        74.70100000000005,
+        137.16825759999995,
+        30.324364799999998,
+        8.0159615999999971
+      ],
+      "text" : "window."
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        254.09700000000001,
+        333.80325759999999,
+        4.4831999999999823,
+        8.0159616000000256
+      ],
+      "text" : "9"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        54.941000000000003,
+        116.7904592,
+        187.19785280000005,
+        8.0697600000000023
+      ],
+      "text" : "If all the STAs thus computed fit into the cor-"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        54.941000000000003,
+        106.8822576,
+        187.2004992,
+        8.0159615999999971
+      ],
+      "text" : "responding weight-optimal time windows, report"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        54.941000000000003,
+        96.919257599999995,
+        187.20072320000003,
+        8.1594240000000013
+      ],
+      "text" : "them as the computed schedule for f. Otherwise,"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        54.941000000000031,
+        86.956257600000001,
+        187.2004992,
+        8.0159615999999971
+      ],
+      "text" : "solve a Quadratic Program (appendix B) for such"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        54.941000000000031,
+        76.940459199999992,
+        187.2004192,
+        8.0697600000000023
+      ],
+      "text" : "STAs as satisfy the constraints and result in travel"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        54.941000000000031,
+        67.031257599999989,
+        187.20222720000004,
+        8.1594240000000013
+      ],
+      "text" : "speeds for f that are as close to the nominal as"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        54.941000000000031,
+        57.068257599999988,
+        31.633459200000004,
+        8.0159616000000042
+      ],
+      "text" : "possible."
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        254.09700000000001,
+        116.84425760000001,
+        8.966399999999993,
+        8.0159615999999971
+      ],
+      "text" : "10"
+    }
+  ],
+  "page" : 10,
+  "paints" : [
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        46.963999999999999,
+        712.95799999999997,
+        251.11100000000005,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        246.119,
+        702.79600000000005,
+        4,
+        13.962999999999965
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        294.07499999999999,
+        702.79600000000005,
+        4,
+        13.962999999999965
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        246.119,
+        672.90800000000002,
+        4,
+        33.888000000000034
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        294.07499999999999,
+        672.90800000000002,
+        4,
+        33.888000000000034
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        46.963999999999999,
+        672.70900000000006,
+        251.11100000000005,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        246.119,
+        612.73400000000004,
+        4,
+        63.775999999999954
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        294.07499999999999,
+        612.73400000000004,
+        4,
+        63.775999999999954
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        46.963999999999999,
+        612.53399999999999,
+        251.11100000000005,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        246.119,
+        572.48400000000004,
+        4,
+        43.850999999999999
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        294.07499999999999,
+        572.48400000000004,
+        4,
+        43.850999999999999
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        46.963999999999999,
+        572.28499999999997,
+        251.11100000000005,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        246.119,
+        522.27300000000002,
+        4,
+        53.812999999999988
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        294.07499999999999,
+        522.27300000000002,
+        4,
+        53.812999999999988
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        46.963999999999999,
+        522.07399999999996,
+        251.11100000000005,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        246.119,
+        391.32400000000001,
+        4,
+        134.55000000000001
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        294.07499999999999,
+        391.32400000000001,
+        4,
+        134.55000000000001
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        46.963999999999999,
+        391.125,
+        251.11100000000005,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        246.119,
+        341.11200000000002,
+        4,
+        53.812999999999988
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        294.07499999999999,
+        341.11200000000002,
+        4,
+        53.812999999999988
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        46.963999999999999,
+        340.91300000000001,
+        251.11100000000005,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        246.119,
+        124.154,
+        4,
+        220.56
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        294.07499999999999,
+        124.154,
+        4,
+        220.56
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        46.963999999999999,
+        123.95400000000001,
+        251.11100000000005,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        246.119,
+        54.017000000000003,
+        4,
+        73.738
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        294.07499999999999,
+        54.017000000000003,
+        4,
+        73.738
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        46.963999999999999,
+        53.817,
+        251.11100000000005,
+        4
+      ]
+    }
+  ],
+  "rightsBasis" : "The paper's byline places both authors, A. Sadovsky and R. Windhorst, in the Aviation Systems Division, NASA Ames Research Center, with nasa.gov addresses, and the NTRS record lists both at NASA Ames Research Center (center ARC): a work of the United States Government under 17 U.S.C. 105. The PDF carries no copyright notice or government-work statement. The NTRS API copyright record (checked 2026-09-17) gives determinationType GOV_PUBLIC_USE_PERMITTED, containsThirdPartyMaterial false, belongsToPublisher false and belongsToAuthors false; distribution PUBLIC, no export control. No figure or table carries a credit, and none is third-party: Figures 1-2 are the authors' time-window plots, the Table I and II route networks are generated with networkx (Ref. [3]) from the paper's own sample problems, and Table III is the authors' outline. No NASA insignia or photographs appear. Owner approved on 2026-09-17. Not relicensed under MIT.",
+  "sourceSHA256" : "7c2137098ffb75153e0049b970272db97bc91e13168028dc7b53fbe2deb92caa",
+  "sourceTitle" : "A Scheduling Algorithm Compatible with a Distributed Management of Arrivals in the National Airspace System",
+  "sourceURL" : "https://ntrs.nasa.gov/api/citations/20190030725/downloads/20190030725.pdf"
+}

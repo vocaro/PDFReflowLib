@@ -1,0 +1,5381 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        175.303,
+        720.87205000000006,
+        22.845075000000008,
+        7.6889999999999645
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.6000000000000005,
+          "text" : "Flight "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Oblique",
+          "fontSize" : 6.6000000000000005,
+          "text" : "f"
+        }
+      ],
+      "text" : "Flight f"
+    },
+    {
+      "rect" : [
+        215.49317119331499,
+        693.36450286342517,
+        24.484140312500017,
+        8.3761424999999008
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -2.5265624999999545,
+          "fontName" : "Helvetica-Oblique",
+          "fontSize" : 6.6000000000000005,
+          "text" : "STA"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Oblique",
+          "fontSize" : 4.620000000000001,
+          "text" : "k "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 4.620000000000001,
+          "text" : "+ 1"
+        }
+      ],
+      "text" : "STAk + 1"
+    },
+    {
+      "rect" : [
+        228.229108693315,
+        692.02709536342513,
+        4.4998799999999903,
+        5.3822999999999865
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Oblique",
+          "fontSize" : 4.620000000000001,
+          "text" : "m"
+        }
+      ],
+      "text" : "m"
+    },
+    {
+      "rect" : [
+        166.77196042767002,
+        666.81066263831508,
+        15.874120625000018,
+        8.3761424999999008
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Oblique",
+          "fontSize" : 6.6000000000000005,
+          "text" : "STA"
+        },
+        {
+          "baselineOffset" : 2.5265624999999545,
+          "fontName" : "Helvetica-Oblique",
+          "fontSize" : 4.620000000000001,
+          "text" : "k"
+        }
+      ],
+      "text" : "STAk"
+    },
+    {
+      "rect" : [
+        179.50789792767003,
+        665.47325513831504,
+        4.4998799999999903,
+        5.3822999999999865
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Oblique",
+          "fontSize" : 4.620000000000001,
+          "text" : "m"
+        }
+      ],
+      "text" : "m"
+    },
+    {
+      "rect" : [
+        85.344999999999999,
+        645.8539750000001,
+        2.1560000000000059,
+        6.4075000000000273
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Oblique",
+          "fontSize" : 5.5,
+          "italic" : true,
+          "text" : "t"
+        }
+      ],
+      "text" : "t"
+    },
+    {
+      "rect" : [
+        96.982117979520012,
+        635.83118237576014,
+        24.484140312500017,
+        8.3761424999999008
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -2.5265624999999545,
+          "fontName" : "Helvetica-Oblique",
+          "fontSize" : 6.6000000000000005,
+          "text" : "STA"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Oblique",
+          "fontSize" : 4.620000000000001,
+          "text" : "k "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 4.620000000000001,
+          "text" : "1"
+        }
+      ],
+      "text" : "STAk 1"
+    },
+    {
+      "rect" : [
+        109.71805547952002,
+        634.4937748757601,
+        4.4998800000000045,
+        5.3822999999999865
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Oblique",
+          "fontSize" : 4.620000000000001,
+          "text" : "m"
+        }
+      ],
+      "text" : "m"
+    },
+    {
+      "rect" : [
+        215.49317119331499,
+        620.34144224445515,
+        24.484140312500017,
+        8.3761424999999008
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -2.5265624999999545,
+          "fontName" : "Helvetica-Oblique",
+          "fontSize" : 6.6000000000000005,
+          "text" : "STA"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Oblique",
+          "fontSize" : 4.620000000000001,
+          "text" : "k "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 4.620000000000001,
+          "text" : "+ 1"
+        }
+      ],
+      "text" : "STAk + 1"
+    },
+    {
+      "rect" : [
+        228.229108693315,
+        619.00403474445511,
+        2.929079999999999,
+        5.3822999999999865
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Oblique",
+          "fontSize" : 4.620000000000001,
+          "text" : "n"
+        }
+      ],
+      "text" : "n"
+    },
+    {
+      "rect" : [
+        166.77196042767002,
+        593.78760201934517,
+        15.874120625000018,
+        8.3761424999999008
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Oblique",
+          "fontSize" : 6.6000000000000005,
+          "text" : "STA"
+        },
+        {
+          "baselineOffset" : 2.5265624999999545,
+          "fontName" : "Helvetica-Oblique",
+          "fontSize" : 4.620000000000001,
+          "text" : "k"
+        }
+      ],
+      "text" : "STAk"
+    },
+    {
+      "rect" : [
+        179.50789792767003,
+        592.45019451934513,
+        2.929079999999999,
+        5.3822999999999865
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Oblique",
+          "fontSize" : 4.620000000000001,
+          "text" : "n"
+        }
+      ],
+      "text" : "n"
+    },
+    {
+      "rect" : [
+        96.982117979520012,
+        587.14226696309504,
+        24.464804375,
+        8.3830174999999372
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -2.5334374999999909,
+          "fontName" : "Helvetica-Oblique",
+          "fontSize" : 6.6000000000000005,
+          "text" : "ETA"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Oblique",
+          "fontSize" : 4.620000000000001,
+          "text" : "k "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 4.620000000000001,
+          "text" : "1"
+        }
+      ],
+      "text" : "ETAk 1"
+    },
+    {
+      "rect" : [
+        109.69871954202002,
+        585.804859463095,
+        1.6262399999999957,
+        5.3822999999999865
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Oblique",
+          "fontSize" : 4.620000000000001,
+          "text" : "f"
+        }
+      ],
+      "text" : "f"
+    },
+    {
+      "rect" : [
+        120.72247339307501,
+        563.18567500000006,
+        131.94557665135002,
+        6.4075000000000273
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Oblique",
+          "fontSize" : 5.5,
+          "text" : "k "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 5.5,
+          "text" : "1 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Oblique",
+          "fontSize" : 5.5,
+          "text" : "k k "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 5.5,
+          "text" : "+ 1"
+        }
+      ],
+      "text" : "k 1 k k + 1"
+    },
+    {
+      "rect" : [
+        179.98659375,
+        555.44270625000001,
+        13.728000000000009,
+        6.4075000000000273
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 5.5,
+          "text" : "node"
+        }
+      ],
+      "text" : "node"
+    },
+    {
+      "rect" : [
+        54.941000000000003,
+        549.22607840000001,
+        13.828088800000003,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "(A)"
+        }
+      ],
+      "text" : "(A)"
+    },
+    {
+      "rect" : [
+        175.303,
+        527.20405000000005,
+        22.845075000000008,
+        7.6889999999999645
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.6000000000000005,
+          "text" : "Flight "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Oblique",
+          "fontSize" : 6.6000000000000005,
+          "text" : "f"
+        }
+      ],
+      "text" : "Flight f"
+    },
+    {
+      "rect" : [
+        215.49252559346999,
+        499.647047259315,
+        24.484140312500017,
+        8.3761424999999576
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -2.5265625000000114,
+          "fontName" : "Helvetica-Oblique",
+          "fontSize" : 6.6000000000000005,
+          "text" : "STA"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Oblique",
+          "fontSize" : 4.620000000000001,
+          "text" : "k "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 4.620000000000001,
+          "text" : "+ 1"
+        }
+      ],
+      "text" : "STAk + 1"
+    },
+    {
+      "rect" : [
+        228.22846309347,
+        498.30963975931496,
+        4.4998799999999903,
+        5.3822999999999865
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Oblique",
+          "fontSize" : 4.620000000000001,
+          "text" : "m"
+        }
+      ],
+      "text" : "m"
+    },
+    {
+      "rect" : [
+        166.77241308966001,
+        472.39608978574,
+        15.874120625000018,
+        8.3761424999999576
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Oblique",
+          "fontSize" : 6.6000000000000005,
+          "text" : "STA"
+        },
+        {
+          "baselineOffset" : 2.5265625000000114,
+          "fontName" : "Helvetica-Oblique",
+          "fontSize" : 4.620000000000001,
+          "text" : "k"
+        }
+      ],
+      "text" : "STAk"
+    },
+    {
+      "rect" : [
+        179.50835058966001,
+        471.05868228573996,
+        4.4998799999999903,
+        5.3822999999999865
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Oblique",
+          "fontSize" : 4.620000000000001,
+          "text" : "m"
+        }
+      ],
+      "text" : "m"
+    },
+    {
+      "rect" : [
+        85.344999999999999,
+        452.18597499999998,
+        2.1560000000000059,
+        6.4075000000000273
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Oblique",
+          "fontSize" : 5.5,
+          "italic" : true,
+          "text" : "t"
+        }
+      ],
+      "text" : "t"
+    },
+    {
+      "rect" : [
+        96.984143827410008,
+        440.60330606656004,
+        24.484140312500017,
+        8.3761424999999576
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -2.5265625000000114,
+          "fontName" : "Helvetica-Oblique",
+          "fontSize" : 6.6000000000000005,
+          "text" : "STA"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Oblique",
+          "fontSize" : 4.620000000000001,
+          "text" : "k "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 4.620000000000001,
+          "text" : "1"
+        }
+      ],
+      "text" : "STAk 1"
+    },
+    {
+      "rect" : [
+        109.72008132741001,
+        439.26589856656,
+        4.4998800000000045,
+        5.3822999999999865
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Oblique",
+          "fontSize" : 4.620000000000001,
+          "text" : "m"
+        }
+      ],
+      "text" : "m"
+    },
+    {
+      "rect" : [
+        215.49252559346999,
+        424.70691420702502,
+        24.484140312500017,
+        8.3761424999999576
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -2.5265625000000114,
+          "fontName" : "Helvetica-Oblique",
+          "fontSize" : 6.6000000000000005,
+          "text" : "STA"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Oblique",
+          "fontSize" : 4.620000000000001,
+          "text" : "k "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 4.620000000000001,
+          "text" : "+ 1"
+        }
+      ],
+      "text" : "STAk + 1"
+    },
+    {
+      "rect" : [
+        228.22846309347,
+        423.36950670702498,
+        2.929079999999999,
+        5.3822999999999865
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Oblique",
+          "fontSize" : 4.620000000000001,
+          "text" : "n"
+        }
+      ],
+      "text" : "n"
+    },
+    {
+      "rect" : [
+        166.77241308966001,
+        397.45595673345002,
+        15.874120625000018,
+        8.3761424999999576
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Oblique",
+          "fontSize" : 6.6000000000000005,
+          "text" : "STA"
+        },
+        {
+          "baselineOffset" : 2.5265625000000114,
+          "fontName" : "Helvetica-Oblique",
+          "fontSize" : 4.620000000000001,
+          "text" : "k"
+        }
+      ],
+      "text" : "STAk"
+    },
+    {
+      "rect" : [
+        179.50835058966001,
+        396.11854923344998,
+        2.929079999999999,
+        5.3822999999999865
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Oblique",
+          "fontSize" : 4.620000000000001,
+          "text" : "n"
+        }
+      ],
+      "text" : "n"
+    },
+    {
+      "rect" : [
+        96.984143827410008,
+        390.63634236501503,
+        24.464804375,
+        8.3830174999999372
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -2.5334374999999909,
+          "fontName" : "Helvetica-Oblique",
+          "fontSize" : 6.6000000000000005,
+          "text" : "ETA"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Oblique",
+          "fontSize" : 4.620000000000001,
+          "text" : "k "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 4.620000000000001,
+          "text" : "1"
+        }
+      ],
+      "text" : "ETAk 1"
+    },
+    {
+      "rect" : [
+        109.70074538991001,
+        389.29893486501499,
+        1.6262399999999957,
+        5.3822999999999865
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Oblique",
+          "fontSize" : 4.620000000000001,
+          "text" : "f"
+        }
+      ],
+      "text" : "f"
+    },
+    {
+      "rect" : [
+        120.72380911697002,
+        369.517675,
+        131.94290520355997,
+        6.4075000000000273
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Oblique",
+          "fontSize" : 5.5,
+          "text" : "k "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 5.5,
+          "text" : "1 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Oblique",
+          "fontSize" : 5.5,
+          "text" : "k k "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 5.5,
+          "text" : "+ 1"
+        }
+      ],
+      "text" : "k 1 k k + 1"
+    },
+    {
+      "rect" : [
+        179.98659375,
+        361.77470624999995,
+        13.728000000000009,
+        6.4075000000000273
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 5.5,
+          "text" : "node"
+        }
+      ],
+      "text" : "node"
+    },
+    {
+      "rect" : [
+        54.941000000000003,
+        355.5580784,
+        13.2801458,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "(B)"
+        }
+      ],
+      "text" : "(B)"
+    },
+    {
+      "rect" : [
+        48.963999999999999,
+        337.56630280000002,
+        251.05799439999998,
+        9.1257416000000262
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "Fig. 1: (A) The "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Oblique",
+          "fontSize" : 9.9626000000000001,
+          "text" : "STA"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "s of previously scheduled flights m,nand"
+        }
+      ],
+      "text" : "Fig. 1: (A) The STAs of previously scheduled flights m,nand"
+    },
+    {
+      "rect" : [
+        48.96399999999997,
+        325.61130280000003,
+        251.05418960000006,
+        9.6836471999999958
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "the "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Oblique",
+          "fontSize" : 9.9626000000000001,
+          "text" : "ETA "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "of flight f at node k−1 (here, for the purpose of"
+        }
+      ],
+      "text" : "the ETA of flight f at node k−1 (here, for the purpose of"
+    },
+    {
+      "rect" : [
+        48.96399999999997,
+        313.71507840000004,
+        251.05751999999998,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "illustrating semi-infinite unavailable intervals, assumed to be"
+        }
+      ],
+      "text" : "illustrating semi-infinite unavailable intervals, assumed to be"
+    },
+    {
+      "rect" : [
+        48.96399999999997,
+        301.76007840000005,
+        251.05909100000005,
+        9.0659660000000031
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "the first node on the route of flight f), each shown on the"
+        }
+      ],
+      "text" : "the first node on the route of flight f), each shown on the"
+    },
+    {
+      "rect" : [
+        48.96399999999997,
+        289.80507840000007,
+        251.05751999999993,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "corresponding node’s copy of the (vertical) time axis. (B) The"
+        }
+      ],
+      "text" : "corresponding node’s copy of the (vertical) time axis. (B) The"
+    },
+    {
+      "rect" : [
+        48.96399999999997,
+        277.85007840000009,
+        251.06030260000003,
+        9.0659660000000031
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "resulting time windows unavailable to flight f because of the"
+        }
+      ],
+      "text" : "resulting time windows unavailable to flight f because of the"
+    },
+    {
+      "rect" : [
+        48.96399999999997,
+        265.83530280000008,
+        251.06087460000001,
+        8.9663400000000024
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "separation constraint (4.b) and the "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Oblique",
+          "fontSize" : 9.9626000000000001,
+          "text" : "ETA "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "constraint (4.a), which"
+        }
+      ],
+      "text" : "separation constraint (4.b) and the ETA constraint (4.a), which"
+    },
+    {
+      "rect" : [
+        48.96399999999997,
+        253.94007840000009,
+        251.05751999999993,
+        8.9065644000000077
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "results in a semi-infinite unavailable interval (bottommost at"
+        }
+      ],
+      "text" : "results in a semi-infinite unavailable interval (bottommost at"
+    },
+    {
+      "rect" : [
+        48.96399999999997,
+        241.9840784000001,
+        28.46619579999998,
+        9.6238716000000295
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "k−1)."
+        }
+      ],
+      "text" : "k−1)."
+    },
+    {
+      "rect" : [
+        48.963999999999956,
+        205.66930280000011,
+        251.05573580000004,
+        8.9663400000000024
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "the separation requirements with the "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Oblique",
+          "fontSize" : 9.9626000000000001,
+          "text" : "STA"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "s of those previously"
+        }
+      ],
+      "text" : "the separation requirements with the STAs of those previously"
+    },
+    {
+      "rect" : [
+        48.96399999999997,
+        193.77407840000009,
+        211.36652159999997,
+        8.9065644000000077
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "scheduled flights that use any or all of these nodes."
+        }
+      ],
+      "text" : "scheduled flights that use any or all of these nodes."
+    },
+    {
+      "rect" : [
+        58.926999999999971,
+        181.00007840000009,
+        241.09492000000006,
+        8.9065644000000077
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "On having computed all the time windows unavailable"
+        }
+      ],
+      "text" : "On having computed all the time windows unavailable"
+    },
+    {
+      "rect" : [
+        48.96399999999997,
+        168.98530280000008,
+        250.74452956000002,
+        9.1257416000000262
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "because of the previously scheduled flights’ "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Oblique",
+          "fontSize" : 9.9626000000000001,
+          "text" : "STA"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "s at node k"
+        }
+      ],
+      "text" : "because of the previously scheduled flights’ STAs at node k"
+    },
+    {
+      "rect" : [
+        48.963999999999999,
+        157.09007840000007,
+        251.05829439999997,
+        9.0659660000000315
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "(figure 1(B)),–i.e., for reasons of time separation at k–and"
+        }
+      ],
+      "text" : "(figure 1(B)),–i.e., for reasons of time separation at k–and"
+    },
+    {
+      "rect" : [
+        48.96399999999997,
+        145.07430280000008,
+        251.05721880000002,
+        9.1257416000000262
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "because of flight f’s own "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Oblique",
+          "fontSize" : 9.9626000000000001,
+          "text" : "ETA "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "constraint at its first node,"
+        }
+      ],
+      "text" : "because of flight f’s own ETA constraint at its first node,"
+    },
+    {
+      "rect" : [
+        48.96399999999997,
+        133.17907840000007,
+        251.05751999999993,
+        8.9065644000000077
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "it is generally incorrect to conclude that all the other time"
+        }
+      ],
+      "text" : "it is generally incorrect to conclude that all the other time"
+    },
+    {
+      "rect" : [
+        48.96399999999997,
+        121.22407840000008,
+        251.05514620000005,
+        9.0659660000000031
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "instants at k are available to flight f. This is because the"
+        }
+      ],
+      "text" : "instants at k are available to flight f. This is because the"
+    },
+    {
+      "rect" : [
+        48.96399999999997,
+        109.26907840000008,
+        251.05555100000001,
+        9.0659659999999889
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "availability of node k to flight f is affected not only by the"
+        }
+      ],
+      "text" : "availability of node k to flight f is affected not only by the"
+    },
+    {
+      "rect" : [
+        48.963999999999942,
+        97.254302800000076,
+        251.0576418,
+        9.1257415999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "other flights’ "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Oblique",
+          "fontSize" : 9.9626000000000001,
+          "text" : "STA"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "s at k, but also by flight f’s speed range."
+        }
+      ],
+      "text" : "other flights’ STAs at k, but also by flight f’s speed range."
+    },
+    {
+      "rect" : [
+        48.963999999999942,
+        85.359078400000087,
+        251.05948100000001,
+        10.606738800000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "A generic time instant T"
+        },
+        {
+          "baselineOffset" : 3.6149999999999949,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "k "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "at node k, although separation-"
+        }
+      ],
+      "text" : "A generic time instant Tk at node k, although separation-"
+    },
+    {
+      "rect" : [
+        48.963999999999913,
+        73.403078400000084,
+        250.74452956000002,
+        9.0659659999999889
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "compliant, may yet be effectively unavailable for f’s use at k"
+        }
+      ],
+      "text" : "compliant, may yet be effectively unavailable for f’s use at k"
+    },
+    {
+      "rect" : [
+        421.68629200000004,
+        595.56959992456007,
+        8.6920000000000073,
+        9.6637000754399196
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -2.8535999999999149,
+          "fontName" : "Helvetica-Oblique",
+          "fontSize" : 9.0200003280000018,
+          "italic" : true,
+          "text" : "T"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Oblique",
+          "fontSize" : 6.1500000000000004,
+          "italic" : true,
+          "text" : "k"
+        }
+      ],
+      "text" : "Tk"
+    },
+    {
+      "rect" : [
+        437.26041616538089,
+        628.33246749824605,
+        33.365780369380843,
+        34.994000630733353
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Tahoma",
+          "fontSize" : 7.7900009137870416,
+          "text" : "traveling at"
+        }
+      ],
+      "text" : "traveling at"
+    },
+    {
+      "rect" : [
+        444.18420916538093,
+        621.93646749824609,
+        37.554171828410745,
+        39.522037171943225
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Tahoma",
+          "fontSize" : 7.7900009137870416,
+          "text" : "lowest speed"
+        }
+      ],
+      "text" : "lowest speed"
+    },
+    {
+      "rect" : [
+        437.86649688773417,
+        595.82773858873361,
+        37.372933617326169,
+        29.953248898534298
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Tahoma",
+          "fontSize" : 7.7900004361680768,
+          "text" : "traveling at"
+        }
+      ],
+      "text" : "traveling at"
+    },
+    {
+      "rect" : [
+        443.24655788773413,
+        588.15253858873359,
+        44.89479481143627,
+        35.177154100386588
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Tahoma",
+          "fontSize" : 7.7900004361680768,
+          "text" : "highest speed"
+        }
+      ],
+      "text" : "highest speed"
+    },
+    {
+      "rect" : [
+        499.62885000000006,
+        653.13441986420798,
+        57.296686548191929,
+        6.9281807917919878
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Tahoma",
+          "fontSize" : 5.7400006560000003,
+          "text" : "The only time window"
+        }
+      ],
+      "text" : "The only time window"
+    },
+    {
+      "rect" : [
+        499.62885000000006,
+        642.50721986420808,
+        46.745417342332757,
+        6.9281807917919878
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Tahoma",
+          "fontSize" : 5.7400006560000003,
+          "text" : "reachable at node "
+        }
+      ],
+      "text" : "reachable at node "
+    },
+    {
+      "rect" : [
+        548.30732999999998,
+        642.50721986420808,
+        18.467876700214561,
+        6.9281807917919878
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Tahoma",
+          "fontSize" : 5.7400006560000003,
+          "text" : "k+1by"
+        }
+      ],
+      "text" : "k+1by"
+    },
+    {
+      "rect" : [
+        499.62885000000006,
+        631.88001986420807,
+        66.486427000093954,
+        6.9281807917919878
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Tahoma",
+          "fontSize" : 5.7400006560000003,
+          "text" : "leaving node kat time T"
+        },
+        {
+          "baselineOffset" : 1.5743999999999687,
+          "fontName" : "Tahoma",
+          "fontSize" : 4.1000003280000001,
+          "text" : "k"
+        }
+      ],
+      "text" : "leaving node kat time Tk"
+    },
+    {
+      "rect" : [
+        566.21285,
+        631.88001986420807,
+        1.7392201987679528,
+        6.9281807917919878
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Tahoma",
+          "fontSize" : 5.7400006560000003,
+          "text" : "."
+        }
+      ],
+      "text" : "."
+    },
+    {
+      "rect" : [
+        317.95499999999993,
+        548.45607840000002,
+        13.828088799999989,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "(A)"
+        }
+      ],
+      "text" : "(A)"
+    },
+    {
+      "rect" : [
+        423.74910399999999,
+        459.11699992272003,
+        8.9039999999999964,
+        9.8994000772799495
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -2.9231999999999516,
+          "fontName" : "Helvetica-Oblique",
+          "fontSize" : 9.2400003359999996,
+          "italic" : true,
+          "text" : "T"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Oblique",
+          "fontSize" : 6.2999999999999989,
+          "italic" : true,
+          "text" : "k"
+        }
+      ],
+      "text" : "Tk"
+    },
+    {
+      "rect" : [
+        317.95499999999998,
+        377.03907840000005,
+        13.280145800000014,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "(B)"
+        }
+      ],
+      "text" : "(B)"
+    },
+    {
+      "rect" : [
+        378.76302371499565,
+        307.98768232442779,
+        38.823108565447228,
+        29.62109893845917
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Tahoma",
+          "fontSize" : 7.9799995717105823,
+          "text" : "traveling at"
+        }
+      ],
+      "text" : "traveling at"
+    },
+    {
+      "rect" : [
+        383.9677897149956,
+        299.82288232442784,
+        44.146469999503722,
+        33.024930570458309
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Tahoma",
+          "fontSize" : 7.9799995717105823,
+          "text" : "lowest speed"
+        }
+      ],
+      "text" : "lowest speed"
+    },
+    {
+      "rect" : [
+        383.68141931864062,
+        266.57369792747016,
+        36.956759640894006,
+        32.791363558248975
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Tahoma",
+          "fontSize" : 7.9799992727203009,
+          "text" : "traveling at"
+        }
+      ],
+      "text" : "traveling at"
+    },
+    {
+      "rect" : [
+        389.81656931864063,
+        259.1144979274701,
+        44.203930009878036,
+        38.748466053594314
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Tahoma",
+          "fontSize" : 7.9799992727203009,
+          "text" : "highest speed"
+        }
+      ],
+      "text" : "highest speed"
+    },
+    {
+      "rect" : [
+        436.91236600000002,
+        316.83019992272,
+        8.9039579999999887,
+        9.8994000772800064
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -2.9232000000000085,
+          "fontName" : "Helvetica-Oblique",
+          "fontSize" : 9.2400003359999996,
+          "italic" : true,
+          "text" : "T"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Oblique",
+          "fontSize" : 6.2999999999999989,
+          "italic" : true,
+          "text" : "k"
+        }
+      ],
+      "text" : "Tk"
+    },
+    {
+      "rect" : [
+        317.95499999999998,
+        205.62107839999999,
+        13.280145800000014,
+        8.9065644000000077
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "(C)"
+        }
+      ],
+      "text" : "(C)"
+    },
+    {
+      "rect" : [
+        311.97800000000001,
+        187.6890784,
+        251.0575199999999,
+        8.9065644000000077
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "Fig. 2: (A) The only times (shown in blue) reachable at node"
+        }
+      ],
+      "text" : "Fig. 2: (A) The only times (shown in blue) reachable at node"
+    },
+    {
+      "rect" : [
+        311.97800000000001,
+        175.73407839999999,
+        251.06279279999995,
+        10.606738800000016
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "k+1 by leaving node kat time instant T"
+        },
+        {
+          "baselineOffset" : 3.6150000000000091,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "k"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : ". (B) With a different"
+        }
+      ],
+      "text" : "k+1 by leaving node kat time instant Tk. (B) With a different"
+    },
+    {
+      "rect" : [
+        311.97799999999995,
+        163.7780784,
+        251.0546458,
+        10.607738800000021
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "choice of T"
+        },
+        {
+          "baselineOffset" : 3.6160000000000139,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "k"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : ", on leaving node kat time T"
+        },
+        {
+          "baselineOffset" : 3.6160000000000139,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "k"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : ", flight f can reach"
+        }
+      ],
+      "text" : "choice of Tk, on leaving node kat time Tk, flight f can reach"
+    },
+    {
+      "rect" : [
+        311.97800000000001,
+        151.82307839999999,
+        251.05799719999999,
+        9.0659660000000315
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "node k+ 1 only at times that are already unavailable to f at"
+        }
+      ],
+      "text" : "node k+ 1 only at times that are already unavailable to f at"
+    },
+    {
+      "rect" : [
+        311.97799999999995,
+        139.86807839999997,
+        251.05799720000005,
+        9.0659660000000315
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "k+ 1. This makes node k effectively unavailable to flight f at"
+        }
+      ],
+      "text" : "k+ 1. This makes node k effectively unavailable to flight f at"
+    },
+    {
+      "rect" : [
+        311.97799999999995,
+        127.91307839999997,
+        251.05591440000001,
+        10.606738800000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "T"
+        },
+        {
+          "baselineOffset" : 3.6150000000000091,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "k"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : ". (C) The only times of leaving node k−1 that allow the"
+        }
+      ],
+      "text" : "Tk. (C) The only times of leaving node k−1 that allow the"
+    },
+    {
+      "rect" : [
+        311.97799999999995,
+        115.95807839999998,
+        251.05912799999999,
+        10.606738799999988
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "flight to reach node k at time T"
+        },
+        {
+          "baselineOffset" : 3.6149999999999949,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "k "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "are the times unavailable to"
+        }
+      ],
+      "text" : "flight to reach node k at time Tk are the times unavailable to"
+    },
+    {
+      "rect" : [
+        311.97799999999995,
+        104.00207839999997,
+        45.264650000000017,
+        9.6238715999999869
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "f at k−1."
+        }
+      ],
+      "text" : "f at k−1."
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    612,
+    792
+  ],
+  "caseID" : "ntrs-20190030725-dasc-2019",
+  "graphics" : [
+    [
+      80.725000000000009,
+      357.70999999999998,
+      229.67944999999997,
+      383.74745000000013
+    ],
+    [
+      337.11099999999999,
+      207.773,
+      225.28758000000005,
+      506.67159000000004
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 6.6000000000000005,
+      "monospaced" : false,
+      "rect" : [
+        175.303,
+        720.87205000000006,
+        22.845075000000008,
+        7.6889999999999645
+      ],
+      "text" : "Flight f"
+    },
+    {
+      "fontSize" : 6.6000000000000005,
+      "monospaced" : false,
+      "rect" : [
+        215.49317119331499,
+        693.36450286342517,
+        24.484140312500017,
+        8.3761424999999008
+      ],
+      "text" : "STAk + 1"
+    },
+    {
+      "fontSize" : 4.620000000000001,
+      "monospaced" : false,
+      "rect" : [
+        228.229108693315,
+        692.02709536342513,
+        4.4998799999999903,
+        5.3822999999999865
+      ],
+      "text" : "m"
+    },
+    {
+      "fontSize" : 6.6000000000000005,
+      "monospaced" : false,
+      "rect" : [
+        166.77196042767002,
+        666.81066263831508,
+        15.874120625000018,
+        8.3761424999999008
+      ],
+      "text" : "STAk"
+    },
+    {
+      "fontSize" : 4.620000000000001,
+      "monospaced" : false,
+      "rect" : [
+        179.50789792767003,
+        665.47325513831504,
+        4.4998799999999903,
+        5.3822999999999865
+      ],
+      "text" : "m"
+    },
+    {
+      "fontSize" : 5.5,
+      "monospaced" : false,
+      "rect" : [
+        85.344999999999999,
+        645.8539750000001,
+        2.1560000000000059,
+        6.4075000000000273
+      ],
+      "text" : "t"
+    },
+    {
+      "fontSize" : 6.6000000000000005,
+      "monospaced" : false,
+      "rect" : [
+        96.982117979520012,
+        635.83118237576014,
+        24.484140312500017,
+        8.3761424999999008
+      ],
+      "text" : "STAk 1"
+    },
+    {
+      "fontSize" : 4.620000000000001,
+      "monospaced" : false,
+      "rect" : [
+        109.71805547952002,
+        634.4937748757601,
+        4.4998800000000045,
+        5.3822999999999865
+      ],
+      "text" : "m"
+    },
+    {
+      "fontSize" : 6.6000000000000005,
+      "monospaced" : false,
+      "rect" : [
+        215.49317119331499,
+        620.34144224445515,
+        24.484140312500017,
+        8.3761424999999008
+      ],
+      "text" : "STAk + 1"
+    },
+    {
+      "fontSize" : 4.620000000000001,
+      "monospaced" : false,
+      "rect" : [
+        228.229108693315,
+        619.00403474445511,
+        2.929079999999999,
+        5.3822999999999865
+      ],
+      "text" : "n"
+    },
+    {
+      "fontSize" : 6.6000000000000005,
+      "monospaced" : false,
+      "rect" : [
+        166.77196042767002,
+        593.78760201934517,
+        15.874120625000018,
+        8.3761424999999008
+      ],
+      "text" : "STAk"
+    },
+    {
+      "fontSize" : 4.620000000000001,
+      "monospaced" : false,
+      "rect" : [
+        179.50789792767003,
+        592.45019451934513,
+        2.929079999999999,
+        5.3822999999999865
+      ],
+      "text" : "n"
+    },
+    {
+      "fontSize" : 6.6000000000000005,
+      "monospaced" : false,
+      "rect" : [
+        96.982117979520012,
+        587.14226696309504,
+        24.464804375,
+        8.3830174999999372
+      ],
+      "text" : "ETAk 1"
+    },
+    {
+      "fontSize" : 4.620000000000001,
+      "monospaced" : false,
+      "rect" : [
+        109.69871954202002,
+        585.804859463095,
+        1.6262399999999957,
+        5.3822999999999865
+      ],
+      "text" : "f"
+    },
+    {
+      "fontSize" : 5.5,
+      "monospaced" : false,
+      "rect" : [
+        120.72247339307501,
+        563.18567500000006,
+        131.94557665135002,
+        6.4075000000000273
+      ],
+      "text" : "k 1 k k + 1"
+    },
+    {
+      "fontSize" : 5.5,
+      "monospaced" : false,
+      "rect" : [
+        179.98659375,
+        555.44270625000001,
+        13.728000000000009,
+        6.4075000000000273
+      ],
+      "text" : "node"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        54.941000000000003,
+        549.22607840000001,
+        13.828088800000003,
+        8.9065643999999793
+      ],
+      "text" : "(A)"
+    },
+    {
+      "fontSize" : 6.6000000000000005,
+      "monospaced" : false,
+      "rect" : [
+        175.303,
+        527.20405000000005,
+        22.845075000000008,
+        7.6889999999999645
+      ],
+      "text" : "Flight f"
+    },
+    {
+      "fontSize" : 6.6000000000000005,
+      "monospaced" : false,
+      "rect" : [
+        215.49252559346999,
+        499.647047259315,
+        24.484140312500017,
+        8.3761424999999576
+      ],
+      "text" : "STAk + 1"
+    },
+    {
+      "fontSize" : 4.620000000000001,
+      "monospaced" : false,
+      "rect" : [
+        228.22846309347,
+        498.30963975931496,
+        4.4998799999999903,
+        5.3822999999999865
+      ],
+      "text" : "m"
+    },
+    {
+      "fontSize" : 6.6000000000000005,
+      "monospaced" : false,
+      "rect" : [
+        166.77241308966001,
+        472.39608978574,
+        15.874120625000018,
+        8.3761424999999576
+      ],
+      "text" : "STAk"
+    },
+    {
+      "fontSize" : 4.620000000000001,
+      "monospaced" : false,
+      "rect" : [
+        179.50835058966001,
+        471.05868228573996,
+        4.4998799999999903,
+        5.3822999999999865
+      ],
+      "text" : "m"
+    },
+    {
+      "fontSize" : 5.5,
+      "monospaced" : false,
+      "rect" : [
+        85.344999999999999,
+        452.18597499999998,
+        2.1560000000000059,
+        6.4075000000000273
+      ],
+      "text" : "t"
+    },
+    {
+      "fontSize" : 6.6000000000000005,
+      "monospaced" : false,
+      "rect" : [
+        96.984143827410008,
+        440.60330606656004,
+        24.484140312500017,
+        8.3761424999999576
+      ],
+      "text" : "STAk 1"
+    },
+    {
+      "fontSize" : 4.620000000000001,
+      "monospaced" : false,
+      "rect" : [
+        109.72008132741001,
+        439.26589856656,
+        4.4998800000000045,
+        5.3822999999999865
+      ],
+      "text" : "m"
+    },
+    {
+      "fontSize" : 6.6000000000000005,
+      "monospaced" : false,
+      "rect" : [
+        215.49252559346999,
+        424.70691420702502,
+        24.484140312500017,
+        8.3761424999999576
+      ],
+      "text" : "STAk + 1"
+    },
+    {
+      "fontSize" : 4.620000000000001,
+      "monospaced" : false,
+      "rect" : [
+        228.22846309347,
+        423.36950670702498,
+        2.929079999999999,
+        5.3822999999999865
+      ],
+      "text" : "n"
+    },
+    {
+      "fontSize" : 6.6000000000000005,
+      "monospaced" : false,
+      "rect" : [
+        166.77241308966001,
+        397.45595673345002,
+        15.874120625000018,
+        8.3761424999999576
+      ],
+      "text" : "STAk"
+    },
+    {
+      "fontSize" : 4.620000000000001,
+      "monospaced" : false,
+      "rect" : [
+        179.50835058966001,
+        396.11854923344998,
+        2.929079999999999,
+        5.3822999999999865
+      ],
+      "text" : "n"
+    },
+    {
+      "fontSize" : 6.6000000000000005,
+      "monospaced" : false,
+      "rect" : [
+        96.984143827410008,
+        390.63634236501503,
+        24.464804375,
+        8.3830174999999372
+      ],
+      "text" : "ETAk 1"
+    },
+    {
+      "fontSize" : 4.620000000000001,
+      "monospaced" : false,
+      "rect" : [
+        109.70074538991001,
+        389.29893486501499,
+        1.6262399999999957,
+        5.3822999999999865
+      ],
+      "text" : "f"
+    },
+    {
+      "fontSize" : 5.5,
+      "monospaced" : false,
+      "rect" : [
+        120.72380911697002,
+        369.517675,
+        131.94290520355997,
+        6.4075000000000273
+      ],
+      "text" : "k 1 k k + 1"
+    },
+    {
+      "fontSize" : 5.5,
+      "monospaced" : false,
+      "rect" : [
+        179.98659375,
+        361.77470624999995,
+        13.728000000000009,
+        6.4075000000000273
+      ],
+      "text" : "node"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        54.941000000000003,
+        355.5580784,
+        13.2801458,
+        8.9065643999999793
+      ],
+      "text" : "(B)"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.963999999999999,
+        337.56630280000002,
+        251.05799439999998,
+        9.1257416000000262
+      ],
+      "text" : "Fig. 1: (A) The STAs of previously scheduled flights m,nand"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.96399999999997,
+        325.61130280000003,
+        251.05418960000006,
+        9.6836471999999958
+      ],
+      "text" : "the ETA of flight f at node k−1 (here, for the purpose of"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.96399999999997,
+        313.71507840000004,
+        251.05751999999998,
+        8.9065643999999793
+      ],
+      "text" : "illustrating semi-infinite unavailable intervals, assumed to be"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.96399999999997,
+        301.76007840000005,
+        251.05909100000005,
+        9.0659660000000031
+      ],
+      "text" : "the first node on the route of flight f), each shown on the"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.96399999999997,
+        289.80507840000007,
+        251.05751999999993,
+        8.9065643999999793
+      ],
+      "text" : "corresponding node’s copy of the (vertical) time axis. (B) The"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.96399999999997,
+        277.85007840000009,
+        251.06030260000003,
+        9.0659660000000031
+      ],
+      "text" : "resulting time windows unavailable to flight f because of the"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.96399999999997,
+        265.83530280000008,
+        251.06087460000001,
+        8.9663400000000024
+      ],
+      "text" : "separation constraint (4.b) and the ETA constraint (4.a), which"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.96399999999997,
+        253.94007840000009,
+        251.05751999999993,
+        8.9065644000000077
+      ],
+      "text" : "results in a semi-infinite unavailable interval (bottommost at"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.96399999999997,
+        241.9840784000001,
+        28.46619579999998,
+        9.6238716000000295
+      ],
+      "text" : "k−1)."
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.963999999999956,
+        205.66930280000011,
+        251.05573580000004,
+        8.9663400000000024
+      ],
+      "text" : "the separation requirements with the STAs of those previously"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.96399999999997,
+        193.77407840000009,
+        211.36652159999997,
+        8.9065644000000077
+      ],
+      "text" : "scheduled flights that use any or all of these nodes."
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        58.926999999999971,
+        181.00007840000009,
+        241.09492000000006,
+        8.9065644000000077
+      ],
+      "text" : "On having computed all the time windows unavailable"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.96399999999997,
+        168.98530280000008,
+        250.74452956000002,
+        9.1257416000000262
+      ],
+      "text" : "because of the previously scheduled flights’ STAs at node k"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.963999999999999,
+        157.09007840000007,
+        251.05829439999997,
+        9.0659660000000315
+      ],
+      "text" : "(figure 1(B)),–i.e., for reasons of time separation at k–and"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.96399999999997,
+        145.07430280000008,
+        251.05721880000002,
+        9.1257416000000262
+      ],
+      "text" : "because of flight f’s own ETA constraint at its first node,"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.96399999999997,
+        133.17907840000007,
+        251.05751999999993,
+        8.9065644000000077
+      ],
+      "text" : "it is generally incorrect to conclude that all the other time"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.96399999999997,
+        121.22407840000008,
+        251.05514620000005,
+        9.0659660000000031
+      ],
+      "text" : "instants at k are available to flight f. This is because the"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.96399999999997,
+        109.26907840000008,
+        251.05555100000001,
+        9.0659659999999889
+      ],
+      "text" : "availability of node k to flight f is affected not only by the"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.963999999999942,
+        97.254302800000076,
+        251.0576418,
+        9.1257415999999978
+      ],
+      "text" : "other flights’ STAs at k, but also by flight f’s speed range."
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.963999999999942,
+        85.359078400000087,
+        251.05948100000001,
+        10.606738800000002
+      ],
+      "text" : "A generic time instant Tk at node k, although separation-"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.963999999999913,
+        73.403078400000084,
+        250.74452956000002,
+        9.0659659999999889
+      ],
+      "text" : "compliant, may yet be effectively unavailable for f’s use at k"
+    },
+    {
+      "fontSize" : 9.0200003280000018,
+      "monospaced" : false,
+      "rect" : [
+        421.68629200000004,
+        595.56959992456007,
+        8.6920000000000073,
+        9.6637000754399196
+      ],
+      "text" : "Tk"
+    },
+    {
+      "fontSize" : 7.7900009137870416,
+      "monospaced" : false,
+      "rect" : [
+        437.26041616538089,
+        628.33246749824605,
+        33.365780369380843,
+        34.994000630733353
+      ],
+      "text" : "traveling at"
+    },
+    {
+      "fontSize" : 7.7900009137870416,
+      "monospaced" : false,
+      "rect" : [
+        444.18420916538093,
+        621.93646749824609,
+        37.554171828410745,
+        39.522037171943225
+      ],
+      "text" : "lowest speed"
+    },
+    {
+      "fontSize" : 7.7900004361680768,
+      "monospaced" : false,
+      "rect" : [
+        437.86649688773417,
+        595.82773858873361,
+        37.372933617326169,
+        29.953248898534298
+      ],
+      "text" : "traveling at"
+    },
+    {
+      "fontSize" : 7.7900004361680768,
+      "monospaced" : false,
+      "rect" : [
+        443.24655788773413,
+        588.15253858873359,
+        44.89479481143627,
+        35.177154100386588
+      ],
+      "text" : "highest speed"
+    },
+    {
+      "fontSize" : 5.7400006560000003,
+      "monospaced" : false,
+      "rect" : [
+        499.62885000000006,
+        653.13441986420798,
+        57.296686548191929,
+        6.9281807917919878
+      ],
+      "text" : "The only time window"
+    },
+    {
+      "fontSize" : 5.7400006560000003,
+      "monospaced" : false,
+      "rect" : [
+        499.62885000000006,
+        642.50721986420808,
+        46.745417342332757,
+        6.9281807917919878
+      ],
+      "text" : "reachable at node"
+    },
+    {
+      "fontSize" : 5.7400006560000003,
+      "monospaced" : false,
+      "rect" : [
+        548.30732999999998,
+        642.50721986420808,
+        18.467876700214561,
+        6.9281807917919878
+      ],
+      "text" : "k+1by"
+    },
+    {
+      "fontSize" : 5.7400006560000003,
+      "monospaced" : false,
+      "rect" : [
+        499.62885000000006,
+        631.88001986420807,
+        66.486427000093954,
+        6.9281807917919878
+      ],
+      "text" : "leaving node kat time Tk"
+    },
+    {
+      "fontSize" : 5.7400006560000003,
+      "monospaced" : false,
+      "rect" : [
+        566.21285,
+        631.88001986420807,
+        1.7392201987679528,
+        6.9281807917919878
+      ],
+      "text" : "."
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        317.95499999999993,
+        548.45607840000002,
+        13.828088799999989,
+        8.9065643999999793
+      ],
+      "text" : "(A)"
+    },
+    {
+      "fontSize" : 9.2400003359999996,
+      "monospaced" : false,
+      "rect" : [
+        423.74910399999999,
+        459.11699992272003,
+        8.9039999999999964,
+        9.8994000772799495
+      ],
+      "text" : "Tk"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        317.95499999999998,
+        377.03907840000005,
+        13.280145800000014,
+        8.9065643999999793
+      ],
+      "text" : "(B)"
+    },
+    {
+      "fontSize" : 7.9799995717105823,
+      "monospaced" : false,
+      "rect" : [
+        378.76302371499565,
+        307.98768232442779,
+        38.823108565447228,
+        29.62109893845917
+      ],
+      "text" : "traveling at"
+    },
+    {
+      "fontSize" : 7.9799995717105823,
+      "monospaced" : false,
+      "rect" : [
+        383.9677897149956,
+        299.82288232442784,
+        44.146469999503722,
+        33.024930570458309
+      ],
+      "text" : "lowest speed"
+    },
+    {
+      "fontSize" : 7.9799992727203009,
+      "monospaced" : false,
+      "rect" : [
+        383.68141931864062,
+        266.57369792747016,
+        36.956759640894006,
+        32.791363558248975
+      ],
+      "text" : "traveling at"
+    },
+    {
+      "fontSize" : 7.9799992727203009,
+      "monospaced" : false,
+      "rect" : [
+        389.81656931864063,
+        259.1144979274701,
+        44.203930009878036,
+        38.748466053594314
+      ],
+      "text" : "highest speed"
+    },
+    {
+      "fontSize" : 9.2400003359999996,
+      "monospaced" : false,
+      "rect" : [
+        436.91236600000002,
+        316.83019992272,
+        8.9039579999999887,
+        9.8994000772800064
+      ],
+      "text" : "Tk"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        317.95499999999998,
+        205.62107839999999,
+        13.280145800000014,
+        8.9065644000000077
+      ],
+      "text" : "(C)"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97800000000001,
+        187.6890784,
+        251.0575199999999,
+        8.9065644000000077
+      ],
+      "text" : "Fig. 2: (A) The only times (shown in blue) reachable at node"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97800000000001,
+        175.73407839999999,
+        251.06279279999995,
+        10.606738800000016
+      ],
+      "text" : "k+1 by leaving node kat time instant Tk. (B) With a different"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97799999999995,
+        163.7780784,
+        251.0546458,
+        10.607738800000021
+      ],
+      "text" : "choice of Tk, on leaving node kat time Tk, flight f can reach"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97800000000001,
+        151.82307839999999,
+        251.05799719999999,
+        9.0659660000000315
+      ],
+      "text" : "node k+ 1 only at times that are already unavailable to f at"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97799999999995,
+        139.86807839999997,
+        251.05799720000005,
+        9.0659660000000315
+      ],
+      "text" : "k+ 1. This makes node k effectively unavailable to flight f at"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97799999999995,
+        127.91307839999997,
+        251.05591440000001,
+        10.606738800000002
+      ],
+      "text" : "Tk. (C) The only times of leaving node k−1 that allow the"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97799999999995,
+        115.95807839999998,
+        251.05912799999999,
+        10.606738799999988
+      ],
+      "text" : "flight to reach node k at time Tk are the times unavailable to"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97799999999995,
+        104.00207839999997,
+        45.264650000000017,
+        9.6238715999999869
+      ],
+      "text" : "f at k−1."
+    }
+  ],
+  "page" : 4,
+  "paints" : [
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        96.869710089640009,
+        578.31588463267008,
+        2.1999999999999886,
+        2.2000000000000455
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        96.869710089640009,
+        578.31588463267008,
+        2.1999999999999886,
+        2.2000000000000455
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        274.63628991036001,
+        710.41931536727509,
+        2.2000000000000455,
+        2.2000000000000455
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        274.63628991036001,
+        710.41931536727509,
+        2.2000000000000455,
+        2.2000000000000455
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        124.53240285000001,
+        586.07392300000004,
+        6.1301411999999971,
+        6.1301406500000439
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        124.53240285000001,
+        634.75596355000005,
+        6.1301411999999971,
+        6.1301406500000439
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        183.78792940000002,
+        665.73544394999999,
+        6.1301411999999971,
+        6.1301406500000439
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        183.78792940000002,
+        592.71238285000004,
+        6.1301411999999971,
+        6.1301412000000255
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        243.04345595000001,
+        619.26622335000002,
+        6.1301412000000255,
+        6.1301406500000439
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        243.04345595000001,
+        692.2892839000001,
+        6.1301412000000255,
+        6.1301406499999302
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        125.59747345000001,
+        572.28680000000008,
+        3.9999999999999858,
+        146.36159999999995
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        125.59747345000001,
+        568.36180000000002,
+        3.9999999999999858,
+        5.9250000000000682
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        123.56206518995,
+        563.97967500000004,
+        7.4430000000000121,
+        4.4565000000000055
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        119.36356518995001,
+        561.93717500000002,
+        15.482499999999987,
+        9.3280000000000882
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        184.85300000000001,
+        572.28680000000008,
+        4,
+        146.36159999999995
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        184.85300000000001,
+        568.36180000000002,
+        4,
+        5.9250000000000682
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        244.10852654999999,
+        572.28680000000008,
+        4,
+        146.36159999999995
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        244.10852654999999,
+        568.36180000000002,
+        4,
+        5.9250000000000682
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        86.64500000000001,
+        570.28680000000008,
+        4,
+        150.36159999999995
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        283.06100000000004,
+        570.28680000000008,
+        4,
+        150.36159999999995
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        86.64500000000001,
+        570.28680000000008,
+        200.41600000000003,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        86.64500000000001,
+        716.64840000000004,
+        200.41600000000003,
+        4
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        112.22717977639502,
+        590.48994446309496,
+        6.8921199999999914,
+        4.3834600000000137
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        109.02043977639501,
+        589.09424446309504,
+        13.005300000000005,
+        7.8355199999999741
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        112.24651571389502,
+        639.17198487576002,
+        6.8921199999999914,
+        4.3834600000000137
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        109.03977571389501,
+        637.7762848757601,
+        13.005300000000005,
+        7.8355199999999741
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        80.725000000000009,
+        551.37800000000004,
+        229.67944999999997,
+        190.07945000000007
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        80.725000000000009,
+        551.37800000000004,
+        229.67944999999997,
+        190.07945000000007
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        124.98389015000001,
+        390.02976899999999,
+        5.2298373999999797,
+        5.2298374000000081
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        124.98389015000001,
+        432.52888114999996,
+        5.2298373999999797,
+        5.2298374000000081
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        124.98389015000001,
+        450.58988234999998,
+        5.2298373999999797,
+        5.2298374000000081
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        184.2380813,
+        389.71888424999997,
+        5.2298374000000081,
+        5.2298374000000081
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        184.2380813,
+        405.97669009999998,
+        5.2298374000000081,
+        5.2298374000000081
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        184.2380813,
+        462.38255170000002,
+        5.2298374000000081,
+        5.2298373999999512
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        184.2380813,
+        481.57360325000002,
+        5.2298374000000081,
+        5.2298373999999512
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        243.49227245000003,
+        413.45813879999997,
+        5.2298373999999797,
+        5.2298374000000081
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        243.49227245000003,
+        432.54858765,
+        5.2298373999999797,
+        5.2298374000000081
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        243.49227245000003,
+        490.92858239999998,
+        5.2298373999999797,
+        5.2298374000000081
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        243.49227245000003,
+        509.17327590000002,
+        5.2298373999999797,
+        5.2298373999999512
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        96.871713675455013,
+        385.26108309585499,
+        2.1999999999999886,
+        2.2000000000000455
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        96.871713675455013,
+        385.26108309585499,
+        2.1999999999999886,
+        2.2000000000000455
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        274.63428632449001,
+        516.66091439067498,
+        2.2000000000000455,
+        2.2000000000000455
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        274.63428632449001,
+        516.66091439067498,
+        2.2000000000000455,
+        2.2000000000000455
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        124.53373880000001,
+        389.57961710000001,
+        6.1301406500000155,
+        6.1301406499999871
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        124.53373880000001,
+        439.53970584999996,
+        6.1301406500000155,
+        6.1301406500000439
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        183.78792940000002,
+        471.33248939999999,
+        6.1301411999999971,
+        6.1301412000000255
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        183.78792940000002,
+        396.39235654999999,
+        6.1301411999999971,
+        6.1301406499999871
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        243.04212055000002,
+        423.64331379999999,
+        6.1301406500000155,
+        6.1301412000000255
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        243.04212055000002,
+        498.58344720000002,
+        6.1301406500000155,
+        6.1301406499999302
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        123.85955650000001,
+        382.62183054999997,
+        7.4785052499999978,
+        7.478505250000012
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        125.59880885000001,
+        378.61879999999996,
+        4,
+        146.36160000000007
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        125.59880885000001,
+        374.69380000000001,
+        4,
+        5.9249999999999545
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        123.56340091384502,
+        370.31167499999998,
+        7.4430000000000121,
+        4.4565000000000055
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        119.36490091384502,
+        368.26917500000002,
+        15.482499999999987,
+        9.3279999999999745
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        184.85300000000001,
+        378.61879999999996,
+        4,
+        146.36160000000007
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        184.85300000000001,
+        374.69380000000001,
+        4,
+        5.9249999999999545
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        244.10719115000003,
+        378.61879999999996,
+        4,
+        146.36160000000007
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        244.10719115000003,
+        374.69380000000001,
+        4,
+        5.9249999999999545
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        125.59880885000001,
+        384.36108289999999,
+        4,
+        10.283604799999978
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        125.59880885000001,
+        433.14379984999999,
+        4,
+        22.061001200000021
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        184.85300000000001,
+        390.33380294999995,
+        4,
+        20.257805850000011
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        184.85300000000001,
+        462.9974704,
+        4,
+        23.191051549999997
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        244.10719115000003,
+        414.0730575,
+        4,
+        23.090448849999973
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        244.10719115000003,
+        491.54350109999996,
+        4,
+        22.244693500000039
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        86.64500000000001,
+        376.61879999999996,
+        4,
+        150.36159999999995
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        283.06100000000004,
+        376.61879999999996,
+        4,
+        150.36159999999995
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        86.64500000000001,
+        376.61879999999996,
+        200.41600000000003,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        86.64500000000001,
+        522.98039999999992,
+        200.41600000000003,
+        4
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        112.22920562428502,
+        393.984019865015,
+        6.8921199999999914,
+        4.3834600000000137
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        109.022465624285,
+        392.58831986501502,
+        13.005300000000005,
+        7.8355199999999741
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        112.24854156178502,
+        443.94410856656003,
+        6.8921199999999914,
+        4.3834600000000137
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        109.04180156178501,
+        442.54840856656006,
+        13.005300000000005,
+        7.8355199999999741
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        80.725000000000009,
+        357.70999999999998,
+        229.67944999999997,
+        190.07945000000001
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        80.725000000000009,
+        357.70999999999998,
+        229.67944999999997,
+        190.07945000000001
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : true,
+      "image" : false,
+      "rect" : [
+        337.11099999999999,
+        550.60900000000004,
+        222.87558999999999,
+        163.83559000000002
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : true,
+      "image" : false,
+      "rect" : [
+        337.11099999999999,
+        550.60900000000004,
+        222.87558999999999,
+        163.83559000000002
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : true,
+      "image" : false,
+      "rect" : [
+        337.11099999999999,
+        550.60900000000004,
+        210.66246899999999,
+        163.83559000000002
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : true,
+      "image" : false,
+      "rect" : [
+        338.80299260000004,
+        558.86990600000001,
+        187.31673999999998,
+        140.69928900000002
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        374.58284943381096,
+        607.98926463422004,
+        5.147833935199003,
+        5.1486131878000378
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        374.58284943381096,
+        628.30122518048006,
+        5.147833935199003,
+        5.1486645569050324
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        429.88744007277995,
+        570.61502504074701,
+        5.1477826032400458,
+        5.1486491461735113
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        429.88744007277995,
+        587.51330308333706,
+        5.1477826032400458,
+        5.1486491461735113
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        429.88744007277995,
+        638.74995798300506,
+        5.1477826032400458,
+        5.1486131878000378
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        429.88744007277995,
+        655.07053907076499,
+        5.1477826032400458,
+        5.1486131878000378
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        485.19197937978993,
+        595.59698174402001,
+        5.1478339351990599,
+        5.1486645569050324
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        485.19197937978993,
+        610.13823977279003,
+        5.1478339351990599,
+        5.1486131878000378
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        485.19197937978993,
+        665.00696778912504,
+        5.1478339351990599,
+        5.1486645569050324
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        485.19197937978993,
+        682.67552556119006,
+        5.1478339351990599,
+        5.1486645569050324
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        348.47784000000001,
+        566.558943,
+        2.0532787700000199,
+        2.054763380000054
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        514.39159700000005,
+        689.82544300000006,
+        2.0532787700000199,
+        2.0547633799999403
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        375.15674073543096,
+        560.86990600000001,
+        4,
+        136.69928900000002
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        375.15674073543096,
+        557.0720022818,
+        4,
+        5.7979186750000054
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        368.91992800000003,
+        551.58190999999999,
+        6.9618810000000053,
+        7.9040610000000697
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        378.57879000000003,
+        551.58190999999999,
+        6.2277760000000058,
+        7.7448170000000118
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        373.257113,
+        552.97914900000001,
+        7.2133750000000418,
+        4.4263590000000477
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        430.46133137439995,
+        560.86990600000001,
+        4,
+        136.69928900000002
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        430.46133137439995,
+        557.0720022818,
+        4,
+        5.7979186750000054
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        429.10104000000001,
+        551.58190999999999,
+        6.9618810000000053,
+        7.9040610000000697
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        485.76592201336899,
+        560.86990600000001,
+        4,
+        136.69928900000002
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        485.76592201336899,
+        557.0720022818,
+        4,
+        5.7979186750000054
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        479.52911300000005,
+        551.58190999999999,
+        6.9618399999999951,
+        7.9040610000000697
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        483.86625700000002,
+        551.58190999999999,
+        7.2133750000000418,
+        7.2208370000000741
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        489.18793400000004,
+        551.58190999999999,
+        6.2278170000000159,
+        7.7448170000000118
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        424.51998700000001,
+        550.60900000000004,
+        6.3510220000000004,
+        0.61776699999995799
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        427.58965700000005,
+        550.60900000000004,
+        6.576849999999979,
+        0.61776699999995799
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        430.73115900000005,
+        550.60900000000004,
+        6.5101429999999709,
+        1.6451449999999568
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        433.99074100000001,
+        550.60900000000004,
+        6.6025159999999801,
+        0.61776699999995799
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        337.11099999999999,
+        628.79274099999998,
+        4.7834162000000333,
+        7.6061140000000478
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        375.15674073543096,
+        608.56357122812005,
+        4,
+        24.312011915365019
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        430.46133137439995,
+        571.18934704537855,
+        4,
+        20.898283179500481
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        430.46133137439995,
+        639.32426457690508,
+        4,
+        20.320581087759933
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        485.76592201336899,
+        596.17133970702503,
+        4,
+        18.541206659665022
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        485.76592201336899,
+        665.58127438302506,
+        4,
+        21.668557772065014
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        338.80298538399995,
+        558.8699209568,
+        4,
+        140.69935269760003
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        522.11967736479994,
+        558.8699209568,
+        4,
+        140.69935269760003
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        338.80298538399995,
+        558.8699209568,
+        187.31669198079999,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        338.80298538399995,
+        695.56927365440004,
+        187.31669198079999,
+        4
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        420.285302,
+        699.10085300000003,
+        6.58099100000004,
+        8.4937640000000556
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        423.80375800000002,
+        699.10085300000003,
+        4.5544019999999819,
+        8.6848240000000487
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        425.51518000000004,
+        699.10085300000003,
+        4.5543609999999717,
+        8.6848240000000487
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        426.98634200000004,
+        697.82481000000007,
+        7.0121470000000272,
+        8.7280379999999695
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        431.11815799999999,
+        699.10085300000003,
+        6.8212100000000646,
+        8.6848240000000487
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        434.62796300000002,
+        699.10085300000003,
+        6.1005119999999806,
+        8.3273040000000265
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        439.25374699999998,
+        699.10085300000003,
+        6.5255180000000337,
+        8.6848240000000487
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        429.58840700000002,
+        597.146973,
+        5.889280000000042,
+        5.8892799999999852
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        429.58840700000002,
+        597.14697317948162,
+        5.8892798205184249,
+        5.8892798205183681
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        431.20101900000003,
+        598.75954400000001,
+        58.441279867448031,
+        62.213253682338859
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        431.47768700000006,
+        598.09161300000005,
+        58.164597689008417,
+        40.671119665849574
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        486.83305800000005,
+        634.41541725169111,
+        11.87197342539082,
+        26.210091748308855
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : true,
+      "image" : false,
+      "rect" : [
+        495.26725000000005,
+        628.56584700000008,
+        64.719339999999931,
+        37.12030429999993
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        485.98960600000004,
+        634.41541725169111,
+        4.0000258267692175,
+        26.210091748308855
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        337.11099999999999,
+        550.60900000000004,
+        222.87558999999999,
+        163.83559000000002
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        337.11099999999999,
+        550.60900000000004,
+        222.87558999999999,
+        163.83559000000002
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : true,
+      "image" : false,
+      "rect" : [
+        337.11099999999999,
+        379.19100000000003,
+        225.28758000000005,
+        167.83158000000003
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : true,
+      "image" : false,
+      "rect" : [
+        337.11099999999999,
+        379.19100000000003,
+        225.28758000000005,
+        167.83158000000003
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : true,
+      "image" : false,
+      "rect" : [
+        337.11099999999999,
+        379.19100000000003,
+        215.80057799999997,
+        167.83158000000003
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : true,
+      "image" : false,
+      "rect" : [
+        338.89304119999997,
+        387.70217200000002,
+        191.78788000000009,
+        144.03341799999998
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        375.54557746878197,
+        438.01956377164004,
+        5.1758298848380377,
+        5.1766281435999417
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        375.54557746878197,
+        458.82693798976004,
+        5.1758298848380377,
+        5.1766807656099445
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        432.19906056235999,
+        399.73375735881399,
+        5.1757773008799859,
+        5.1766649790070005
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        432.19906056235999,
+        417.04418852439403,
+        5.1757773008799859,
+        5.1766649790070005
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        432.19906056235999,
+        469.53051793381002,
+        5.1757773008799859,
+        5.1766281435999986
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        432.19906056235999,
+        486.24916197493002,
+        5.1757773008799859,
+        5.1766281435999986
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        488.85249107198001,
+        425.32503007923998,
+        5.1758298848379809,
+        5.1766807656100013
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        488.85249107198001,
+        440.22095293798003,
+        5.1758298848379809,
+        5.1766281435999986
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        488.85249107198001,
+        496.42794261325002,
+        5.1758298848379809,
+        5.1766807656099445
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        488.85249107198001,
+        514.52744081877995,
+        5.1758298848379809,
+        5.1766807656100582
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        348.75507999999996,
+        395.529966,
+        2.1033587400000329,
+        2.104879560000029
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        518.71551399999998,
+        521.80296599999997,
+        2.103358739999976,
+        2.1048795600000858
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        376.13346611922202,
+        389.70217200000002,
+        4,
+        140.03341799999998
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        376.13346611922202,
+        385.86041697159999,
+        4,
+        5.8417703499999902
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        369.74453599999998,
+        380.23642000000001,
+        7.0341220000000249,
+        7.9992819999999938
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        379.63897999999995,
+        380.23642000000001,
+        6.2821120000000406,
+        7.8361540000000218
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        374.18750599999998,
+        381.66773800000004,
+        7.2917499999999791,
+        4.4367579999999975
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        432.78694921279998,
+        389.70217200000002,
+        4,
+        140.03341799999998
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        432.78694921279998,
+        385.86041697159999,
+        4,
+        5.8417703499999902
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        431.39347999999995,
+        380.23642000000001,
+        7.0341220000000249,
+        7.9992819999999938
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        489.440432306378,
+        389.70217200000002,
+        4,
+        140.03341799999998
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        489.440432306378,
+        385.86041697159999,
+        4,
+        5.8417703499999902
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        483.05150600000002,
+        380.23642000000001,
+        7.0340799999999604,
+        7.9992819999999938
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        487.49443399999996,
+        380.23642000000001,
+        7.2917499999999791,
+        7.2993940000000066
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        492.94590799999997,
+        380.23642000000001,
+        6.2821540000000482,
+        7.8361540000000218
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        426.700694,
+        379.19100000000003,
+        6.4083640000000059,
+        0.58405399999998053
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        429.845234,
+        379.19100000000003,
+        6.639699999999948,
+        0.58405399999998053
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        433.06335799999999,
+        379.19100000000003,
+        6.5713660000000118,
+        1.6364899999999807
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        436.40244199999995,
+        379.19100000000003,
+        6.665992000000017,
+        0.58405399999998053
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        337.11099999999999,
+        459.33044200000001,
+        4.8513044000000036,
+        7.6940680000000157
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        376.13346611922202,
+        438.60787784344001,
+        4,
+        24.807426840130006
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        432.78694921279998,
+        400.32208721721702,
+        4,
+        21.310436427780985
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        432.78694921279998,
+        470.11883200560999,
+        4,
+        20.718644041120001
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        489.440432306378,
+        425.91339677305001,
+        4,
+        18.895870236729991
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        489.440432306378,
+        497.01625668505,
+        4,
+        22.099498205529983
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        338.89303380799998,
+        387.70218732159998,
+        4,
+        144.03348325120004
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        526.68086461760004,
+        387.70218732159998,
+        4,
+        144.03348325120004
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        338.89303380799998,
+        387.70218732159998,
+        191.78783080960005,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        338.89303380799998,
+        527.73567057280002,
+        191.78783080960005,
+        4
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        422.36272399999996,
+        531.353386,
+        6.6439420000000382,
+        8.6033680000000459
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        425.96699599999999,
+        531.353386,
+        4.567924000000005,
+        8.7990879999999834
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        427.72015999999996,
+        531.353386,
+        4.5678820000000542,
+        8.7990879999999834
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        429.22720400000003,
+        530.04621999999995,
+        7.0856139999999641,
+        8.8433560000000853
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        433.45979599999998,
+        531.353386,
+        6.8900199999999927,
+        8.7990879999999834
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        437.055206,
+        531.353386,
+        6.1517440000000079,
+        8.4328480000000354
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        441.793814,
+        531.353386,
+        6.5871159999999804,
+        8.7990879999999834
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        431.89273400000002,
+        460.71031000000005,
+        5.935359999999946,
+        5.935359999999946
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        431.89273400000002,
+        460.71031018385918,
+        5.9353598161408172,
+        5.9353598161408172
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        433.54467799999998,
+        462.36225400000001,
+        60.294334179596774,
+        55.97604671581837
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        433.82809399999996,
+        461.67799000000002,
+        60.010903655341622,
+        40.295113402357629
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        337.11099999999999,
+        379.19100000000003,
+        225.28758000000005,
+        167.83158000000003
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        337.11099999999999,
+        379.19100000000003,
+        225.28758000000005,
+        167.83158000000003
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : true,
+      "image" : false,
+      "rect" : [
+        337.11099999999999,
+        207.773,
+        225.28758000000005,
+        167.83158
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : true,
+      "image" : false,
+      "rect" : [
+        337.11099999999999,
+        207.773,
+        225.28758000000005,
+        167.83158
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : true,
+      "image" : false,
+      "rect" : [
+        337.11099999999999,
+        207.773,
+        215.80057799999997,
+        167.83158
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : true,
+      "image" : false,
+      "rect" : [
+        338.89304119999997,
+        216.28417200000001,
+        191.78788000000009,
+        144.03341799999998
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        375.54557746878197,
+        266.60156377164003,
+        5.1758298848380377,
+        5.1766281435999417
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        375.54557746878197,
+        287.40893798976003,
+        5.1758298848380377,
+        5.1766807656099445
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        432.19906056235999,
+        228.31575735881398,
+        5.1757773008799859,
+        5.1766649790070005
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        432.19906056235999,
+        245.626188524394,
+        5.1757773008799859,
+        5.1766649790070005
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        432.19906056235999,
+        298.11251793381001,
+        5.1757773008799859,
+        5.1766281435999986
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        432.19906056235999,
+        314.83116197493001,
+        5.1757773008799859,
+        5.1766281435999986
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        488.85249107198001,
+        253.90703007924,
+        5.1758298848379809,
+        5.1766807656099729
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        488.85249107198001,
+        268.80295293798002,
+        5.1758298848379809,
+        5.1766281435999986
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        488.85249107198001,
+        325.00994261325002,
+        5.1758298848379809,
+        5.1766807656099445
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        488.85249107198001,
+        343.10944081878,
+        5.1758298848379809,
+        5.1766807656100013
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        348.75507999999996,
+        224.11196600000002,
+        2.1033587400000329,
+        2.1048795600000005
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        518.71551399999998,
+        350.38496600000002,
+        2.103358739999976,
+        2.104879560000029
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        376.13346611922202,
+        218.28417200000001,
+        4,
+        140.03341799999998
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        376.13346611922202,
+        214.44241697159998,
+        4,
+        5.8417703500000187
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        369.74453599999998,
+        208.81842,
+        7.0341220000000249,
+        7.9992819999999938
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        379.63897999999995,
+        208.81842,
+        6.2821120000000406,
+        7.8361540000000218
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        374.18750599999998,
+        210.24973800000001,
+        7.2917499999999791,
+        4.4367579999999975
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        432.78694921279998,
+        218.28417200000001,
+        4,
+        140.03341799999998
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        432.78694921279998,
+        214.44241697159998,
+        4,
+        5.8417703500000187
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        431.39347999999995,
+        208.81842,
+        7.0341220000000249,
+        7.9992819999999938
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        489.440432306378,
+        218.28417200000001,
+        4,
+        140.03341799999998
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        489.440432306378,
+        214.44241697159998,
+        4,
+        5.8417703500000187
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        483.05150600000002,
+        208.81842,
+        7.0340799999999604,
+        7.9992819999999938
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        487.49443399999996,
+        208.81842,
+        7.2917499999999791,
+        7.2993940000000066
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        492.94590799999997,
+        208.81842,
+        6.2821540000000482,
+        7.8361540000000218
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        426.700694,
+        207.773,
+        6.4083640000000059,
+        0.58405400000000895
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        429.845234,
+        207.773,
+        6.639699999999948,
+        0.58405400000000895
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        433.06335799999999,
+        207.773,
+        6.5713660000000118,
+        1.6364900000000091
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        436.40244199999995,
+        207.773,
+        6.665992000000017,
+        0.58405400000000895
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        337.11099999999999,
+        287.912442,
+        4.8513044000000036,
+        7.6940680000000157
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        376.13346611922202,
+        267.18987784344,
+        4,
+        24.807426840130006
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        432.78694921279998,
+        228.90408721721701,
+        4,
+        21.310436427780985
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        432.78694921279998,
+        298.70083200560998,
+        4,
+        20.718644041120001
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        489.440432306378,
+        254.49539677305,
+        4,
+        18.895870236729991
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        489.440432306378,
+        325.59825668504999,
+        4,
+        22.099498205529983
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        338.89303380799998,
+        216.2841873216,
+        4,
+        144.03348325120001
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        526.68086461760004,
+        216.2841873216,
+        4,
+        144.03348325120001
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        338.89303380799998,
+        216.2841873216,
+        191.78783080960005,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        338.89303380799998,
+        356.31767057280001,
+        191.78783080960005,
+        4
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        422.36272399999996,
+        359.93538599999999,
+        6.6439420000000382,
+        8.6033680000000459
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        425.96699599999999,
+        359.93538599999999,
+        4.567924000000005,
+        8.7990879999999834
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        427.72015999999996,
+        359.93538599999999,
+        4.5678820000000542,
+        8.7990879999999834
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        429.22720400000003,
+        358.62822,
+        7.0856139999999641,
+        8.8433560000000284
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        433.45979599999998,
+        359.93538599999999,
+        6.8900199999999927,
+        8.7990879999999834
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        437.055206,
+        359.93538599999999,
+        6.1517440000000079,
+        8.4328480000000354
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        441.793814,
+        359.93538599999999,
+        6.5871159999999804,
+        8.7990879999999834
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        431.89273400000002,
+        318.46487999999999,
+        5.935359999999946,
+        5.9353600000000029
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        431.89273400000002,
+        318.46488018385918,
+        5.9353598161408172,
+        5.9353598161408172
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        375.51768799999996,
+        266.91030000000001,
+        60.972101674264024,
+        51.026449705715208
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        376.47889999999995,
+        288.63320399999998,
+        60.381508974464793,
+        39.431540571011169
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        337.11099999999999,
+        207.773,
+        225.28758000000005,
+        167.83158
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        337.11099999999999,
+        207.773,
+        225.28758000000005,
+        167.83158
+      ]
+    }
+  ],
+  "rightsBasis" : "The paper's byline places both authors, A. Sadovsky and R. Windhorst, in the Aviation Systems Division, NASA Ames Research Center, with nasa.gov addresses, and the NTRS record lists both at NASA Ames Research Center (center ARC): a work of the United States Government under 17 U.S.C. 105. The PDF carries no copyright notice or government-work statement. The NTRS API copyright record (checked 2026-09-17) gives determinationType GOV_PUBLIC_USE_PERMITTED, containsThirdPartyMaterial false, belongsToPublisher false and belongsToAuthors false; distribution PUBLIC, no export control. No figure or table carries a credit, and none is third-party: Figures 1-2 are the authors' time-window plots, the Table I and II route networks are generated with networkx (Ref. [3]) from the paper's own sample problems, and Table III is the authors' outline. No NASA insignia or photographs appear. Owner approved on 2026-09-17. Not relicensed under MIT.",
+  "sourceSHA256" : "7c2137098ffb75153e0049b970272db97bc91e13168028dc7b53fbe2deb92caa",
+  "sourceTitle" : "A Scheduling Algorithm Compatible with a Distributed Management of Arrivals in the National Airspace System",
+  "sourceURL" : "https://ntrs.nasa.gov/api/citations/20190030725/downloads/20190030725.pdf"
+}

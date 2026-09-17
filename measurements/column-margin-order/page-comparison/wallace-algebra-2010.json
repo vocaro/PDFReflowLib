@@ -1,0 +1,1074 @@
+{
+  "passed": false,
+  "provenanceErrors": [],
+  "case": "wallace-algebra-2010",
+  "executionContexts": {
+    "baseline": "host-terminal",
+    "candidate": "host-terminal"
+  },
+  "baselineConverterSHA256": "3e951ae5ecca20bbc299bf0c8681e2507be86aa650966fcb055f9c4939a11350",
+  "candidateConverterSHA256": "274ec24adc5885c1da8dd938cbf573db5d492577fca71b9709e18f3ab1db1c51",
+  "sameConverter": false,
+  "visionModelCaches": {
+    "baseline": {
+      "mode": "inherited",
+      "executableName": "pdf-reflow",
+      "programsSHA256": "b7e8a53e3b55832cf440fa89ea3c27b3546abbdce99932be2c12871a79ad171a"
+    },
+    "candidate": {
+      "mode": "inherited",
+      "executableName": "pdf-reflow",
+      "programsSHA256": "b7e8a53e3b55832cf440fa89ea3c27b3546abbdce99932be2c12871a79ad171a"
+    }
+  },
+  "sameVisionPrograms": true,
+  "changedOCRPages": [],
+  "ocrTextVolume": {
+    "pages": 0,
+    "baselineWords": 0,
+    "candidateWords": 0,
+    "pagesWithFewerWords": {
+      "baseline": [],
+      "candidate": []
+    }
+  },
+  "changedPages": [
+    125,
+    126
+  ],
+  "changedPageFields": {
+    "125": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "126": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ]
+  },
+  "changedImages": [],
+  "navigationChanged": false,
+  "changedNavigationPages": [],
+  "pageMarkersEqual": true,
+  "changedReportFields": [],
+  "idOnlyShifts": {
+    "pageCount": 334,
+    "fields": {
+      "paragraphIDs": 334
+    },
+    "navigationEntries": 0,
+    "pages": {
+      "127": [
+        "paragraphIDs"
+      ],
+      "128": [
+        "paragraphIDs"
+      ],
+      "129": [
+        "paragraphIDs"
+      ],
+      "130": [
+        "paragraphIDs"
+      ],
+      "131": [
+        "paragraphIDs"
+      ],
+      "132": [
+        "paragraphIDs"
+      ],
+      "133": [
+        "paragraphIDs"
+      ],
+      "134": [
+        "paragraphIDs"
+      ],
+      "135": [
+        "paragraphIDs"
+      ],
+      "136": [
+        "paragraphIDs"
+      ],
+      "137": [
+        "paragraphIDs"
+      ],
+      "138": [
+        "paragraphIDs"
+      ],
+      "139": [
+        "paragraphIDs"
+      ],
+      "140": [
+        "paragraphIDs"
+      ],
+      "141": [
+        "paragraphIDs"
+      ],
+      "142": [
+        "paragraphIDs"
+      ],
+      "143": [
+        "paragraphIDs"
+      ],
+      "144": [
+        "paragraphIDs"
+      ],
+      "146": [
+        "paragraphIDs"
+      ],
+      "147": [
+        "paragraphIDs"
+      ],
+      "148": [
+        "paragraphIDs"
+      ],
+      "149": [
+        "paragraphIDs"
+      ],
+      "150": [
+        "paragraphIDs"
+      ],
+      "151": [
+        "paragraphIDs"
+      ],
+      "152": [
+        "paragraphIDs"
+      ],
+      "153": [
+        "paragraphIDs"
+      ],
+      "154": [
+        "paragraphIDs"
+      ],
+      "155": [
+        "paragraphIDs"
+      ],
+      "156": [
+        "paragraphIDs"
+      ],
+      "158": [
+        "paragraphIDs"
+      ],
+      "159": [
+        "paragraphIDs"
+      ],
+      "160": [
+        "paragraphIDs"
+      ],
+      "161": [
+        "paragraphIDs"
+      ],
+      "162": [
+        "paragraphIDs"
+      ],
+      "163": [
+        "paragraphIDs"
+      ],
+      "164": [
+        "paragraphIDs"
+      ],
+      "167": [
+        "paragraphIDs"
+      ],
+      "168": [
+        "paragraphIDs"
+      ],
+      "169": [
+        "paragraphIDs"
+      ],
+      "170": [
+        "paragraphIDs"
+      ],
+      "171": [
+        "paragraphIDs"
+      ],
+      "172": [
+        "paragraphIDs"
+      ],
+      "176": [
+        "paragraphIDs"
+      ],
+      "177": [
+        "paragraphIDs"
+      ],
+      "178": [
+        "paragraphIDs"
+      ],
+      "179": [
+        "paragraphIDs"
+      ],
+      "180": [
+        "paragraphIDs"
+      ],
+      "181": [
+        "paragraphIDs"
+      ],
+      "182": [
+        "paragraphIDs"
+      ],
+      "183": [
+        "paragraphIDs"
+      ],
+      "184": [
+        "paragraphIDs"
+      ],
+      "185": [
+        "paragraphIDs"
+      ],
+      "186": [
+        "paragraphIDs"
+      ],
+      "187": [
+        "paragraphIDs"
+      ],
+      "188": [
+        "paragraphIDs"
+      ],
+      "189": [
+        "paragraphIDs"
+      ],
+      "190": [
+        "paragraphIDs"
+      ],
+      "191": [
+        "paragraphIDs"
+      ],
+      "192": [
+        "paragraphIDs"
+      ],
+      "193": [
+        "paragraphIDs"
+      ],
+      "194": [
+        "paragraphIDs"
+      ],
+      "196": [
+        "paragraphIDs"
+      ],
+      "197": [
+        "paragraphIDs"
+      ],
+      "198": [
+        "paragraphIDs"
+      ],
+      "199": [
+        "paragraphIDs"
+      ],
+      "200": [
+        "paragraphIDs"
+      ],
+      "201": [
+        "paragraphIDs"
+      ],
+      "202": [
+        "paragraphIDs"
+      ],
+      "203": [
+        "paragraphIDs"
+      ],
+      "204": [
+        "paragraphIDs"
+      ],
+      "205": [
+        "paragraphIDs"
+      ],
+      "206": [
+        "paragraphIDs"
+      ],
+      "207": [
+        "paragraphIDs"
+      ],
+      "208": [
+        "paragraphIDs"
+      ],
+      "209": [
+        "paragraphIDs"
+      ],
+      "211": [
+        "paragraphIDs"
+      ],
+      "212": [
+        "paragraphIDs"
+      ],
+      "213": [
+        "paragraphIDs"
+      ],
+      "214": [
+        "paragraphIDs"
+      ],
+      "215": [
+        "paragraphIDs"
+      ],
+      "216": [
+        "paragraphIDs"
+      ],
+      "217": [
+        "paragraphIDs"
+      ],
+      "218": [
+        "paragraphIDs"
+      ],
+      "219": [
+        "paragraphIDs"
+      ],
+      "220": [
+        "paragraphIDs"
+      ],
+      "221": [
+        "paragraphIDs"
+      ],
+      "222": [
+        "paragraphIDs"
+      ],
+      "223": [
+        "paragraphIDs"
+      ],
+      "224": [
+        "paragraphIDs"
+      ],
+      "225": [
+        "paragraphIDs"
+      ],
+      "226": [
+        "paragraphIDs"
+      ],
+      "227": [
+        "paragraphIDs"
+      ],
+      "228": [
+        "paragraphIDs"
+      ],
+      "229": [
+        "paragraphIDs"
+      ],
+      "230": [
+        "paragraphIDs"
+      ],
+      "231": [
+        "paragraphIDs"
+      ],
+      "232": [
+        "paragraphIDs"
+      ],
+      "233": [
+        "paragraphIDs"
+      ],
+      "234": [
+        "paragraphIDs"
+      ],
+      "235": [
+        "paragraphIDs"
+      ],
+      "236": [
+        "paragraphIDs"
+      ],
+      "237": [
+        "paragraphIDs"
+      ],
+      "238": [
+        "paragraphIDs"
+      ],
+      "239": [
+        "paragraphIDs"
+      ],
+      "240": [
+        "paragraphIDs"
+      ],
+      "241": [
+        "paragraphIDs"
+      ],
+      "242": [
+        "paragraphIDs"
+      ],
+      "243": [
+        "paragraphIDs"
+      ],
+      "244": [
+        "paragraphIDs"
+      ],
+      "245": [
+        "paragraphIDs"
+      ],
+      "246": [
+        "paragraphIDs"
+      ],
+      "248": [
+        "paragraphIDs"
+      ],
+      "249": [
+        "paragraphIDs"
+      ],
+      "250": [
+        "paragraphIDs"
+      ],
+      "253": [
+        "paragraphIDs"
+      ],
+      "254": [
+        "paragraphIDs"
+      ],
+      "255": [
+        "paragraphIDs"
+      ],
+      "256": [
+        "paragraphIDs"
+      ],
+      "257": [
+        "paragraphIDs"
+      ],
+      "258": [
+        "paragraphIDs"
+      ],
+      "259": [
+        "paragraphIDs"
+      ],
+      "260": [
+        "paragraphIDs"
+      ],
+      "262": [
+        "paragraphIDs"
+      ],
+      "263": [
+        "paragraphIDs"
+      ],
+      "264": [
+        "paragraphIDs"
+      ],
+      "265": [
+        "paragraphIDs"
+      ],
+      "267": [
+        "paragraphIDs"
+      ],
+      "268": [
+        "paragraphIDs"
+      ],
+      "269": [
+        "paragraphIDs"
+      ],
+      "270": [
+        "paragraphIDs"
+      ],
+      "271": [
+        "paragraphIDs"
+      ],
+      "272": [
+        "paragraphIDs"
+      ],
+      "274": [
+        "paragraphIDs"
+      ],
+      "275": [
+        "paragraphIDs"
+      ],
+      "276": [
+        "paragraphIDs"
+      ],
+      "277": [
+        "paragraphIDs"
+      ],
+      "279": [
+        "paragraphIDs"
+      ],
+      "280": [
+        "paragraphIDs"
+      ],
+      "281": [
+        "paragraphIDs"
+      ],
+      "282": [
+        "paragraphIDs"
+      ],
+      "283": [
+        "paragraphIDs"
+      ],
+      "285": [
+        "paragraphIDs"
+      ],
+      "286": [
+        "paragraphIDs"
+      ],
+      "287": [
+        "paragraphIDs"
+      ],
+      "288": [
+        "paragraphIDs"
+      ],
+      "289": [
+        "paragraphIDs"
+      ],
+      "290": [
+        "paragraphIDs"
+      ],
+      "291": [
+        "paragraphIDs"
+      ],
+      "292": [
+        "paragraphIDs"
+      ],
+      "293": [
+        "paragraphIDs"
+      ],
+      "294": [
+        "paragraphIDs"
+      ],
+      "295": [
+        "paragraphIDs"
+      ],
+      "296": [
+        "paragraphIDs"
+      ],
+      "297": [
+        "paragraphIDs"
+      ],
+      "298": [
+        "paragraphIDs"
+      ],
+      "299": [
+        "paragraphIDs"
+      ],
+      "300": [
+        "paragraphIDs"
+      ],
+      "301": [
+        "paragraphIDs"
+      ],
+      "302": [
+        "paragraphIDs"
+      ],
+      "303": [
+        "paragraphIDs"
+      ],
+      "304": [
+        "paragraphIDs"
+      ],
+      "305": [
+        "paragraphIDs"
+      ],
+      "306": [
+        "paragraphIDs"
+      ],
+      "307": [
+        "paragraphIDs"
+      ],
+      "310": [
+        "paragraphIDs"
+      ],
+      "311": [
+        "paragraphIDs"
+      ],
+      "312": [
+        "paragraphIDs"
+      ],
+      "313": [
+        "paragraphIDs"
+      ],
+      "314": [
+        "paragraphIDs"
+      ],
+      "315": [
+        "paragraphIDs"
+      ],
+      "316": [
+        "paragraphIDs"
+      ],
+      "317": [
+        "paragraphIDs"
+      ],
+      "318": [
+        "paragraphIDs"
+      ],
+      "319": [
+        "paragraphIDs"
+      ],
+      "320": [
+        "paragraphIDs"
+      ],
+      "321": [
+        "paragraphIDs"
+      ],
+      "322": [
+        "paragraphIDs"
+      ],
+      "323": [
+        "paragraphIDs"
+      ],
+      "325": [
+        "paragraphIDs"
+      ],
+      "326": [
+        "paragraphIDs"
+      ],
+      "327": [
+        "paragraphIDs"
+      ],
+      "328": [
+        "paragraphIDs"
+      ],
+      "329": [
+        "paragraphIDs"
+      ],
+      "331": [
+        "paragraphIDs"
+      ],
+      "332": [
+        "paragraphIDs"
+      ],
+      "333": [
+        "paragraphIDs"
+      ],
+      "334": [
+        "paragraphIDs"
+      ],
+      "335": [
+        "paragraphIDs"
+      ],
+      "336": [
+        "paragraphIDs"
+      ],
+      "337": [
+        "paragraphIDs"
+      ],
+      "338": [
+        "paragraphIDs"
+      ],
+      "339": [
+        "paragraphIDs"
+      ],
+      "340": [
+        "paragraphIDs"
+      ],
+      "341": [
+        "paragraphIDs"
+      ],
+      "342": [
+        "paragraphIDs"
+      ],
+      "343": [
+        "paragraphIDs"
+      ],
+      "344": [
+        "paragraphIDs"
+      ],
+      "345": [
+        "paragraphIDs"
+      ],
+      "346": [
+        "paragraphIDs"
+      ],
+      "347": [
+        "paragraphIDs"
+      ],
+      "348": [
+        "paragraphIDs"
+      ],
+      "349": [
+        "paragraphIDs"
+      ],
+      "350": [
+        "paragraphIDs"
+      ],
+      "351": [
+        "paragraphIDs"
+      ],
+      "352": [
+        "paragraphIDs"
+      ],
+      "353": [
+        "paragraphIDs"
+      ],
+      "354": [
+        "paragraphIDs"
+      ],
+      "355": [
+        "paragraphIDs"
+      ],
+      "356": [
+        "paragraphIDs"
+      ],
+      "357": [
+        "paragraphIDs"
+      ],
+      "358": [
+        "paragraphIDs"
+      ],
+      "359": [
+        "paragraphIDs"
+      ],
+      "360": [
+        "paragraphIDs"
+      ],
+      "361": [
+        "paragraphIDs"
+      ],
+      "363": [
+        "paragraphIDs"
+      ],
+      "364": [
+        "paragraphIDs"
+      ],
+      "365": [
+        "paragraphIDs"
+      ],
+      "366": [
+        "paragraphIDs"
+      ],
+      "367": [
+        "paragraphIDs"
+      ],
+      "368": [
+        "paragraphIDs"
+      ],
+      "369": [
+        "paragraphIDs"
+      ],
+      "370": [
+        "paragraphIDs"
+      ],
+      "371": [
+        "paragraphIDs"
+      ],
+      "372": [
+        "paragraphIDs"
+      ],
+      "373": [
+        "paragraphIDs"
+      ],
+      "374": [
+        "paragraphIDs"
+      ],
+      "375": [
+        "paragraphIDs"
+      ],
+      "376": [
+        "paragraphIDs"
+      ],
+      "377": [
+        "paragraphIDs"
+      ],
+      "379": [
+        "paragraphIDs"
+      ],
+      "380": [
+        "paragraphIDs"
+      ],
+      "381": [
+        "paragraphIDs"
+      ],
+      "382": [
+        "paragraphIDs"
+      ],
+      "383": [
+        "paragraphIDs"
+      ],
+      "384": [
+        "paragraphIDs"
+      ],
+      "385": [
+        "paragraphIDs"
+      ],
+      "386": [
+        "paragraphIDs"
+      ],
+      "387": [
+        "paragraphIDs"
+      ],
+      "388": [
+        "paragraphIDs"
+      ],
+      "389": [
+        "paragraphIDs"
+      ],
+      "390": [
+        "paragraphIDs"
+      ],
+      "391": [
+        "paragraphIDs"
+      ],
+      "392": [
+        "paragraphIDs"
+      ],
+      "393": [
+        "paragraphIDs"
+      ],
+      "394": [
+        "paragraphIDs"
+      ],
+      "395": [
+        "paragraphIDs"
+      ],
+      "396": [
+        "paragraphIDs"
+      ],
+      "397": [
+        "paragraphIDs"
+      ],
+      "398": [
+        "paragraphIDs"
+      ],
+      "401": [
+        "paragraphIDs"
+      ],
+      "402": [
+        "paragraphIDs"
+      ],
+      "403": [
+        "paragraphIDs"
+      ],
+      "404": [
+        "paragraphIDs"
+      ],
+      "405": [
+        "paragraphIDs"
+      ],
+      "406": [
+        "paragraphIDs"
+      ],
+      "407": [
+        "paragraphIDs"
+      ],
+      "408": [
+        "paragraphIDs"
+      ],
+      "409": [
+        "paragraphIDs"
+      ],
+      "410": [
+        "paragraphIDs"
+      ],
+      "411": [
+        "paragraphIDs"
+      ],
+      "412": [
+        "paragraphIDs"
+      ],
+      "413": [
+        "paragraphIDs"
+      ],
+      "414": [
+        "paragraphIDs"
+      ],
+      "415": [
+        "paragraphIDs"
+      ],
+      "416": [
+        "paragraphIDs"
+      ],
+      "417": [
+        "paragraphIDs"
+      ],
+      "418": [
+        "paragraphIDs"
+      ],
+      "419": [
+        "paragraphIDs"
+      ],
+      "420": [
+        "paragraphIDs"
+      ],
+      "421": [
+        "paragraphIDs"
+      ],
+      "422": [
+        "paragraphIDs"
+      ],
+      "423": [
+        "paragraphIDs"
+      ],
+      "424": [
+        "paragraphIDs"
+      ],
+      "425": [
+        "paragraphIDs"
+      ],
+      "426": [
+        "paragraphIDs"
+      ],
+      "427": [
+        "paragraphIDs"
+      ],
+      "428": [
+        "paragraphIDs"
+      ],
+      "429": [
+        "paragraphIDs"
+      ],
+      "430": [
+        "paragraphIDs"
+      ],
+      "431": [
+        "paragraphIDs"
+      ],
+      "432": [
+        "paragraphIDs"
+      ],
+      "433": [
+        "paragraphIDs"
+      ],
+      "434": [
+        "paragraphIDs"
+      ],
+      "435": [
+        "paragraphIDs"
+      ],
+      "436": [
+        "paragraphIDs"
+      ],
+      "438": [
+        "paragraphIDs"
+      ],
+      "440": [
+        "paragraphIDs"
+      ],
+      "441": [
+        "paragraphIDs"
+      ],
+      "442": [
+        "paragraphIDs"
+      ],
+      "443": [
+        "paragraphIDs"
+      ],
+      "444": [
+        "paragraphIDs"
+      ],
+      "445": [
+        "paragraphIDs"
+      ],
+      "446": [
+        "paragraphIDs"
+      ],
+      "447": [
+        "paragraphIDs"
+      ],
+      "448": [
+        "paragraphIDs"
+      ],
+      "449": [
+        "paragraphIDs"
+      ],
+      "450": [
+        "paragraphIDs"
+      ],
+      "451": [
+        "paragraphIDs"
+      ],
+      "452": [
+        "paragraphIDs"
+      ],
+      "453": [
+        "paragraphIDs"
+      ],
+      "454": [
+        "paragraphIDs"
+      ],
+      "455": [
+        "paragraphIDs"
+      ],
+      "456": [
+        "paragraphIDs"
+      ],
+      "457": [
+        "paragraphIDs"
+      ],
+      "458": [
+        "paragraphIDs"
+      ],
+      "459": [
+        "paragraphIDs"
+      ],
+      "460": [
+        "paragraphIDs"
+      ],
+      "461": [
+        "paragraphIDs"
+      ],
+      "462": [
+        "paragraphIDs"
+      ],
+      "463": [
+        "paragraphIDs"
+      ],
+      "464": [
+        "paragraphIDs"
+      ],
+      "465": [
+        "paragraphIDs"
+      ],
+      "466": [
+        "paragraphIDs"
+      ],
+      "467": [
+        "paragraphIDs"
+      ],
+      "469": [
+        "paragraphIDs"
+      ],
+      "470": [
+        "paragraphIDs"
+      ],
+      "471": [
+        "paragraphIDs"
+      ],
+      "472": [
+        "paragraphIDs"
+      ],
+      "473": [
+        "paragraphIDs"
+      ],
+      "474": [
+        "paragraphIDs"
+      ],
+      "475": [
+        "paragraphIDs"
+      ],
+      "476": [
+        "paragraphIDs"
+      ],
+      "477": [
+        "paragraphIDs"
+      ],
+      "478": [
+        "paragraphIDs"
+      ],
+      "479": [
+        "paragraphIDs"
+      ],
+      "480": [
+        "paragraphIDs"
+      ],
+      "481": [
+        "paragraphIDs"
+      ],
+      "482": [
+        "paragraphIDs"
+      ],
+      "483": [
+        "paragraphIDs"
+      ],
+      "484": [
+        "paragraphIDs"
+      ],
+      "485": [
+        "paragraphIDs"
+      ],
+      "486": [
+        "paragraphIDs"
+      ],
+      "487": [
+        "paragraphIDs"
+      ],
+      "488": [
+        "paragraphIDs"
+      ]
+    }
+  },
+  "imageRenames": {
+    "count": 0,
+    "pairs": []
+  },
+  "scope": "Per page: text, block records, element markup, image bytes, link targets and warnings, with generated identifiers (block ordinals, element ids, spine file names, image asset names) normalized; page markers; image assets by bytes; navigation entries; conversion report. Not CSS, package metadata, decoded image equivalence or a fidelity qualification."
+}

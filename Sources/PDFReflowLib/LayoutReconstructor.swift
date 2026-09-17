@@ -1588,46 +1588,15 @@ enum LayoutReconstructor {
 
     // Recursive whitespace cuts: columns first, except that a single-line heading band above
     // them is cut off first (`headingBand`); a spanning heading is separated by a horizontal cut
-    // before retrying columns; a gutter hidden by overhanging figures is measured over text last.
+    // before retrying columns; a gutter hidden by overhanging figures is measured over text last,
+    // and content above or below the columns that crosses their gutter — a folio, a running foot's
+    // rule, a spanning figure — is set aside last of all (`marginBands`, #153).
     // No page-wide y/x sort of interleaved column text.
     static func ordered(_ elements: [Element], bodySize: CGFloat, depth: Int = 0) -> [Element] {
         guard elements.count > 1, depth < 32 else { return elements }
         if let rotated = rotatedLineOrder(elements) { return rotated }
-        /// The widest whitespace band in one direction, measured over `measured`. The cut is
-        /// kept only when every element of the region falls wholly on one side of it: ordering
-        /// drops an element that straddles its cut, so a subset may not choose a line that the
-        /// elements it leaves out would cross.
         func gap(horizontal: Bool, measuring measured: [Element], in part: [Element]? = nil) -> CGFloat? {
-            let region = part ?? elements
-            guard measured.count > 1 else { return nil }
-            let intervals = measured.map { horizontal ? ($0.rect.minX, $0.rect.maxX) : ($0.rect.minY, $0.rect.maxY) }
-                .sorted { $0.0 < $1.0 }
-            var end = intervals[0].1
-            var best: (CGFloat, CGFloat)?
-            for interval in intervals.dropFirst() {
-                let width = interval.0 - end
-                if width > bodySize * (horizontal ? 0.75 : 1.1), width > (best?.0 ?? 0) {
-                    let middle = (end + interval.0) / 2
-                    // A narrow gutter is evidence for prose columns only when both sides
-                    // contain substantial text lines. Short labels and numeric answer cells
-                    // need row associations; the whitespace alone must not separate them.
-                    if horizontal, width <= bodySize * 1.5 {
-                        let left = region.filter { $0.rect.maxX < middle }
-                        let right = region.filter { $0.rect.minX > middle }
-                        let proseColumns = [left, right].allSatisfy { column in
-                            column.filter { $0.line != nil && $0.rect.width >= bodySize * 12 }.count >= 2
-                        }
-                        if !proseColumns { end = max(end, interval.1); continue }
-                    }
-                    best = (width, middle)
-                }
-                end = max(end, interval.1)
-            }
-            guard let middle = best?.1, region.allSatisfy({
-                horizontal ? ($0.rect.maxX < middle || $0.rect.minX > middle)
-                    : ($0.rect.maxY < middle || $0.rect.minY > middle)
-            }) else { return nil }
-            return middle
+            whitespaceCut(horizontal: horizontal, measuring: measured, in: part ?? elements, bodySize: bodySize)
         }
         if let x = gap(horizontal: true, measuring: elements) {
             if let y = headingBand(elements, gutter: x, bodySize: bodySize) {
@@ -1661,7 +1630,20 @@ enum LayoutReconstructor {
                     + ordered(parts.foot, bodySize: bodySize, depth: depth + 1)
             }
             // A heading left alone at the foot of the part above heads the part below (#103).
-            let y = trailingHeading(elements, cut: y, bodySize: bodySize) ?? y
+            if let moved = trailingHeading(elements, cut: y, bodySize: bodySize) {
+                return ordered(elements.filter { $0.rect.minY > moved }, bodySize: bodySize, depth: depth + 1)
+                    + ordered(elements.filter { $0.rect.maxY < moved }, bodySize: bodySize, depth: depth + 1)
+            }
+            // Two prose columns that both break a paragraph at the band read down each column
+            // rather than across it (#153, DASC page 9).
+            if width <= bodySize * 1.5, let parts = marginBands(elements, bodySize: bodySize, across: y, gutter: {
+                gap(horizontal: true, measuring: $0.filter { $0.line != nil }, in: $0)
+            }) {
+                return ordered(parts.head, bodySize: bodySize, depth: depth + 1)
+                    + ordered(parts.columns.filter { $0.rect.maxX < parts.gutter }, bodySize: bodySize, depth: depth + 1)
+                    + ordered(parts.columns.filter { $0.rect.minX > parts.gutter }, bodySize: bodySize, depth: depth + 1)
+                    + ordered(parts.foot, bodySize: bodySize, depth: depth + 1)
+            }
             return ordered(elements.filter { $0.rect.minY > y }, bodySize: bodySize, depth: depth + 1)
                 + ordered(elements.filter { $0.rect.maxY < y }, bodySize: bodySize, depth: depth + 1)
         }
@@ -1701,12 +1683,197 @@ enum LayoutReconstructor {
                 + ordered(elements.filter { $0.rect.maxX <= x }, bodySize: bodySize, depth: depth + 1)
                 + ordered(elements.filter { $0.rect.minX >= x }, bodySize: bodySize, depth: depth + 1)
         }
+        // Content set wholly above or below two prose columns, across their gutter (#153).
+        if let parts = marginBands(elements, bodySize: bodySize, gutter: {
+            gap(horizontal: true, measuring: $0.filter { $0.line != nil }, in: $0)
+        }) {
+            return ordered(parts.head, bodySize: bodySize, depth: depth + 1)
+                + ordered(parts.columns.filter { $0.rect.maxX < parts.gutter }, bodySize: bodySize, depth: depth + 1)
+                + ordered(parts.columns.filter { $0.rect.minX > parts.gutter }, bodySize: bodySize, depth: depth + 1)
+                + ordered(parts.foot, bodySize: bodySize, depth: depth + 1)
+        }
         // Blocks set beside each other at different leadings, with no whitespace between them
         // (the CDC comic's speech balloons beside its caption boxes, #122), read block by block.
         if let blocks = interleavedBlocks(elements, bodySize: bodySize) {
             return blocks.flatMap { sortedByRows($0, bodySize: bodySize) }
         }
         return noteColumnsInNumberOrder(sortedByRows(elements, bodySize: bodySize), bodySize: bodySize)
+    }
+
+    /// The widest whitespace band in one direction, measured over `measured`. The cut is
+    /// kept only when every element of `region` falls wholly on one side of it: ordering
+    /// drops an element that straddles its cut, so a subset may not choose a line that the
+    /// elements it leaves out would cross. Where the band's middle is straddled, the cut may
+    /// move within the band to any line no element crosses (#153).
+    static func whitespaceCut(horizontal: Bool, measuring measured: [Element], in region: [Element],
+                              bodySize: CGFloat) -> CGFloat? {
+        guard measured.count > 1 else { return nil }
+        let intervals = measured.map { horizontal ? ($0.rect.minX, $0.rect.maxX) : ($0.rect.minY, $0.rect.maxY) }
+            .sorted { $0.0 < $1.0 }
+        var end = intervals[0].1
+        var gaps: [(width: CGFloat, low: CGFloat, high: CGFloat)] = []
+        for interval in intervals.dropFirst() {
+            let width = interval.0 - end
+            if width > bodySize * (horizontal ? 0.75 : 1.1) {
+                let middle = (end + interval.0) / 2
+                // A narrow gutter is evidence for prose columns only when both sides
+                // contain substantial text lines. Short labels and numeric answer cells
+                // need row associations; the whitespace alone must not separate them. A figure
+                // or table preserved at a column's measure counts beside at least one such line:
+                // DASC page 10 sets Table III under its caption beside the references (#153), while
+                // Wallace's tables with notes beside them hold no line on the tables' side.
+                let left = region.filter { horizontal ? $0.rect.maxX < middle : false }
+                let right = region.filter { horizontal ? $0.rect.minX > middle : false }
+                let proseColumns = !horizontal || width > bodySize * 1.5 || [left, right].allSatisfy { column in
+                    let wide = column.filter { $0.rect.width >= bodySize * 12 }
+                    let lines = wide.filter { $0.line != nil }.count
+                    return lines >= 1 && lines + wide.filter { $0.image != nil || $0.table != nil }.count >= 2
+                }
+                if proseColumns { gaps.append((width, end, interval.0)) }
+            }
+            end = max(end, interval.1)
+        }
+        func low(_ element: Element) -> CGFloat { horizontal ? element.rect.minX : element.rect.minY }
+        func high(_ element: Element) -> CGFloat { horizontal ? element.rect.maxX : element.rect.maxY }
+        func clear(_ cut: CGFloat) -> Bool { region.allSatisfy { high($0) < cut || low($0) > cut } }
+        // The widest band first. Measured over a subset, a figure can cross it: where prose runs
+        // beside prose, the cut moves within the band to a line nothing crosses (DASC page 4's
+        // figure overhangs the gutter by 4 pt; USDA page 11's by 6); otherwise it falls to the next
+        // widest band (a figure over the first two of three columns leaves the second gutter,
+        // USDA page 15). A formula crop beside its note is not prose beside prose (Wallace).
+        for gap in gaps.sorted(by: { $0.width > $1.width }) {
+            let middle = (gap.low + gap.high) / 2
+            if clear(middle) { return middle }
+            let edges = ([gap.low, gap.high] + region.flatMap { [low($0), high($0)] }.filter { $0 > gap.low && $0 < gap.high })
+                .sorted()
+            if let cut = zip(edges, edges.dropFirst()).filter({ $1 > $0 }).map({ ($0 + $1) / 2 })
+                .sorted(by: { abs($0 - middle) < abs($1 - middle) })
+                .first(where: { horizontal && clear($0) && proseBesideProse(region, gutter: $0, bodySize: bodySize, minimum: 2) }) {
+                return cut
+            }
+        }
+        return nil
+    }
+
+    /// Whether a part holds prose on both sides of a gutter, running beside each other: at least
+    /// `minimum` text lines 12 bodies wide on each side. `prose: false` asks for the width alone —
+    /// a column's contents page of dot leaders is column content, though it is not prose. Otherwise
+    /// the wide lines must carry at least two thirds of that side's
+    /// characters, four fifths of them letters or spaces. A table's label column, a contents page's
+    /// entry numbers or a graph's axis labels set most of their text in short lines, however wide a
+    /// merged row may be, and a table half's rows are figures rather than words (the Blue Book's
+    /// scanned statistical tables, whose halves read row by row). Both columns are also set in the
+    /// page's body type (the wide lines' median size within a quarter of it), so a scan whose lines
+    /// merge a margin rule into the text beside it is no column of prose (the Blue Book's contents).
+    static func proseBesideProse(_ part: [Element], gutter: CGFloat, bodySize: CGFloat, minimum: Int,
+                                 prose: Bool = true) -> Bool {
+        guard minimum > 0 else { return false }
+        var extents: [CGRect] = []
+        for side in [part.filter { $0.rect.maxX < gutter }, part.filter { $0.rect.minX > gutter }] {
+            let lines = side.compactMap { element in
+                element.line.map { (rect: element.rect, text: $0.text, size: $0.fontSize) }
+            }
+            let wide = lines.filter { $0.rect.width >= bodySize * 12 }
+            let letters = wide.reduce(0) { $0 + withoutLeaders($1.text).filter { $0.isLetter || $0 == " " }.count }
+            let characters = wide.reduce(0) { $0 + withoutLeaders($1.text).count }
+            let sizes = wide.map(\.size).sorted()
+            guard wide.count >= minimum else { return false }
+            if prose {
+                guard letters * 5 >= characters * 4,
+                      characters * 3 >= lines.reduce(0, { $0 + $1.text.count }) * 2,
+                      let median = sizes.isEmpty ? nil : sizes[sizes.count / 2],
+                      median >= bodySize * 0.8, median <= bodySize * 1.25 else { return false }
+            }
+            extents.append(union(wide.map(\.rect)))
+        }
+        return min(extents[0].maxY, extents[1].maxY) > max(extents[0].minY, extents[1].minY)
+    }
+
+    /// A line's text without its leaders: a run of three or more of one character that is neither a
+    /// letter nor a digit (a contents entry's dots), which carries no words but is column content.
+    static func withoutLeaders(_ text: String) -> String {
+        var result = ""
+        var run: [Character] = []
+        func flush() {
+            if run.count < 3 || run[0].isLetter || run[0].isNumber { result += run }
+            run = []
+        }
+        for character in text {
+            if character == run.last { run.append(character) } else { flush(); run = [character] }
+        }
+        flush()
+        return result
+    }
+
+    /// Whether a horizontal band falls where both columns break and each column runs on beneath it.
+    /// On each side of the gutter the whitespace around the band reaches no more than 4.5 bodies,
+    /// so the band is the paragraph space the two columns happen to share rather than the space
+    /// under a section that ends higher in one column (DGA page 3 sets its `Consume Dairy` heading
+    /// 52 pt below the right column's last bullet); and the first line of the column's measure
+    /// beneath the band is body text near the column's edge (within three bodies, for an indented
+    /// or centred opening), not a heading in display type that starts a section there. The Word paper's abstract and DASC
+    /// page 9's appendices run on in both columns; a section heading under one column does not.
+    static func breaksBothColumns(_ columns: [Element], gutter: CGFloat, band: CGFloat, bodySize: CGFloat) -> Bool {
+        [columns.filter { $0.rect.maxX < gutter }, columns.filter { $0.rect.minX > gutter }].allSatisfy { side in
+            guard let above = side.filter({ $0.rect.minY > band }).map(\.rect.minY).min(),
+                  let below = side.filter({ $0.rect.maxY < band }).map(\.rect.maxY).max(),
+                  above - below <= bodySize * 4.5 else { return false }
+            let wide = side.filter { $0.line != nil && $0.rect.width >= bodySize * 12 }
+            guard let edge = wide.filter({ $0.rect.minY > band }).map(\.rect.minX).min(),
+                  let opening = wide.filter({ $0.rect.maxY < band }).max(by: { $0.rect.maxY < $1.rect.maxY })
+            else { return false }
+            return !isHeadingType(opening, bodySize: bodySize) && abs(opening.rect.minX - edge) <= bodySize * 3
+        }
+    }
+
+    /// Two prose columns with content set wholly above or below them that crosses their gutter,
+    /// separated from them only by whitespace narrower than the horizontal cut's 1.1 body. A folio
+    /// centred in the gutter under the columns' last lines (the Word paper's 6 pt), a running foot's
+    /// rule across the page (the USDA magazine), or a figure over both columns with its caption
+    /// leaves no cut at all, and the row sort interleaves the columns line by line (#153).
+    ///
+    /// Tries the region's whitespace bands, nearest the top and bottom first: the part above a
+    /// head band and the part below a foot band are set aside, and what remains must be cut by
+    /// its text gutter into prose columns running beside each other (two lines at least 12 bodies
+    /// wide on each side) while the region as a whole is not. Set-aside content crosses that gutter
+    /// and holds no prose beside prose. Returns the head, the columns and the foot; nil otherwise.
+    ///
+    /// Given `across`, a whitespace band narrower than paragraph spacing that the region would
+    /// otherwise be cut at, the columns must also hold prose beside prose both above and below it:
+    /// the two columns break a paragraph at the same height (DASC page 9, the Word paper's
+    /// abstract), and they read down each column rather than across the band. The region itself
+    /// may then be the columns.
+    static func marginBands(_ elements: [Element], bodySize: CGFloat, across band: CGFloat? = nil,
+                            gutter: ([Element]) -> CGFloat?)
+        -> (head: [Element], columns: [Element], gutter: CGFloat, foot: [Element])? {
+        let bands = horizontalBands(elements).map(\.y).filter { $0 != band }
+        guard !bands.isEmpty || band != nil else { return nil }
+        let limit = 8
+        let heads = [CGFloat.greatestFiniteMagnitude] + bands.prefix(limit)
+        let feet = [-CGFloat.greatestFiniteMagnitude] + bands.reversed().prefix(limit)
+        for foot in feet {
+            for head in heads where head > foot && (band != nil || head != heads[0] || foot != feet[0]) {
+                let columns = elements.filter { $0.rect.maxY < head && $0.rect.minY > foot }
+                guard let x = gutter(columns), proseBesideProse(columns, gutter: x, bodySize: bodySize, minimum: 2)
+                else { continue }
+                if let band {
+                    guard band < head, band > foot,
+                          proseBesideProse(columns.filter { $0.rect.minY > band }, gutter: x, bodySize: bodySize,
+                                           minimum: 1, prose: false),
+                          proseBesideProse(columns.filter { $0.rect.maxY < band }, gutter: x, bodySize: bodySize,
+                                           minimum: 1, prose: false),
+                          breaksBothColumns(columns, gutter: x, band: band, bodySize: bodySize)
+                    else { continue }
+                }
+                let above = elements.filter { $0.rect.minY > head }, below = elements.filter { $0.rect.maxY < foot }
+                let outside = above + below
+                guard outside.isEmpty && band != nil || outside.contains(where: { $0.rect.minX < x && $0.rect.maxX > x }),
+                      !proseBesideProse(above, gutter: x, bodySize: bodySize, minimum: 1, prose: false),
+                      !proseBesideProse(below, gutter: x, bodySize: bodySize, minimum: 1, prose: false) else { continue }
+                return (above, columns, x, below)
+            }
+        }
+        return nil
     }
 
     /// The printed number of a note line: its first run is raised and holds one to three digits
@@ -3474,14 +3641,25 @@ enum LayoutReconstructor {
             while start > 0, case .heading = blocks[start - 1].content { start -= 1 }
             let headings = Array(blocks[start..<anchors.previous])
             let after = blocks[(anchors.previous + 1)...]
-            let trailing = after.filter { !skipped.contains($0.page) }
+            // A figure and its caption on a page the paragraph already runs into belong after it,
+            // as a skipped page's figures do: that page's marker is inside the joined text, and
+            // keeping them ahead would place them before it, inside the page before (#153, the
+            // Word paper's Figure 16 on page 10, read inside page 9). A folio keeps its place.
+            let opened = blocks[anchors.previous].page
+            func crossed(_ block: ReflowBlock) -> Bool {
+                guard block.page > opened, !skipped.contains(block.page) else { return false }
+                if case .image = block.content { return true }
+                return isCaption(block.text.trimmingCharacters(in: .whitespacesAndNewlines))
+            }
+            let trailing = after.filter { !skipped.contains($0.page) && !crossed($0) }
+            let later = after.filter(crossed)
             let skippedBlocks = after.filter {
                 guard skipped.contains($0.page) else { return false }
                 if case .sourcePage = $0.content { return false }
                 return true
             }
             blocks.replaceSubrange(start..., with: trailing.filter { !$0.isFootnote } + headings + [joined]
-                + trailing.filter(\.isFootnote) + skippedBlocks)
+                + trailing.filter(\.isFootnote) + later + skippedBlocks)
             remaining.remove(at: anchors.next)
         } else {
             blocks.append(ReflowBlock(content: .sourcePage(page.number), page: page.number))

@@ -626,7 +626,9 @@ Wallace pages 175 and 437; #97), which leaves the page's boundary without text. 
 This is conservative spatial evidence, not validated PDF tag consumption or a universal header
 classifier. Synthetic invisible-text layers retain the established whole-document repeated-margin
 rule in the outer 7%, because their typography does not supply native font evidence. Narrow whitespace cuts require substantial text on both sides, so
-short name/description cells do not become independent prose columns. Before a column gutter is
+short name/description cells do not become independent prose columns; a figure or table preserved
+at a column's measure counts beside at least one such line, so a table crop under its caption is
+column content (#153). Before a column gutter is
 cut, a single text line that stands alone between horizontal whitespace bands (at 0.8 body) is
 cut off first when both columns still run beside each other beneath it, so a centred title or a
 section label heads every column rather than the one the widest gutter leaves it in (#47); a
@@ -639,7 +641,35 @@ list lines) alone beneath the last band of more than 1.1 body in the part above 
 so the heading reads with the content below it rather than inside the columns above it; and where
 no cut exists at all, a heading-type line and the figures in its row, with nothing else reaching into
 the row's height, separate the content above the row from the content below it, each part cut on its
-own (DGA pages 4 and 9, #103). Where no cut and no bullet-column split applies, the reading-order
+own (DGA pages 4 and 9, #103). Whichever band is cut, the cut is taken at the band's middle unless an element crosses it: where
+prose runs beside prose the cut moves inside the band to a line nothing crosses, so a figure
+overhanging its column by a few points joins that column (DASC page 4), and otherwise the next
+widest band is tried, so a figure covering the first two of three columns still leaves the second
+gutter (the USDA magazine, #153).
+
+Content set wholly above or below two prose columns can cross their gutter and leave the page with
+no cut at all: a folio centred in the gutter under the columns' last lines (the Word paper's 6 pt),
+a running foot's rule across the page (the USDA magazine), or a figure over both columns with its
+caption. The region's whitespace bands, from the top and from the bottom, are tried in turn (eight
+from each end): what lies above a head band and below a foot band is set aside, and the rest must
+be cut by its text-measured gutter into prose columns running beside each other while the region as
+a whole is not. Prose beside prose means at least two lines 12 bodies wide on each side, carrying
+two thirds of that side's characters, four fifths of them letters or spaces once contents leaders
+are discounted, and set in the page's body type, so a scanned table's halves of figures, a contents
+page's entry numbers and lines that merge a margin rule into the text beside them are not columns.
+The set-aside content crosses the gutter and holds no prose beside prose itself; it reads before
+and after the columns (#153).
+
+The same evidence keeps two columns reading down each column where they break a paragraph at the
+same height: a horizontal band no wider than paragraph spacing gives way to the gutter when both
+columns hold content on both sides of it and the whitespace around it reaches no more than 4.5
+bodies on either side, so a section that ends higher in one column still reads as a section (DGA
+page 3) while the Word paper's abstract and DASC page 9's appendices read column by column (#153).
+A paragraph that continues onto the next page takes that page's figures and captions with it,
+ahead of the page after: their markers lie inside the joined text, and they would otherwise read
+inside the page before it (the Word paper's Figure 16, #153).
+
+Where no cut and no bullet-column split applies, the reading-order
 sort still reads two centred units set beside each other whole (#122, CDC pages 14, 23 and 34): the
 region's lines are grouped from the top into stacks at ordinary leading, and when they form exactly
 two, both centred (line centres spread less than half as far as left edges), their centres apart by

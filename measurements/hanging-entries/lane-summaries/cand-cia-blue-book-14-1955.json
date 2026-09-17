@@ -1,0 +1,48 @@
+{
+  "passed": true,
+  "converterSHA256": "44349b3350ff8b6403e15a311f25994a87a138cd10320262775823b1f43799fc",
+  "results": [
+    {
+      "case": "cia-blue-book-14-1955",
+      "passed": true,
+      "reviewPages": [
+        12,
+        74,
+        150
+      ],
+      "contentChecks": 9,
+      "errors": [],
+      "scope": "Reviewed text/order/script-context/image-presence, source-region, glyph-structure, appearance and table-cell checks; not full-book fidelity qualification."
+    }
+  ],
+  "notRun": [
+    "faa-phak-8083-25c",
+    "wallace-algebra-2010",
+    "gpo-911-2004",
+    "fed-explained-2021",
+    "dga-2025-2030",
+    "gpo-our-flag-2003",
+    "cdc-zombie-pandemic-2011",
+    "usgs-mcs2025-copper",
+    "scotus-loper-bright-2024",
+    "census-rrs2002-01",
+    "uscis-m618-arabic-2015",
+    "irs-p596-zhs-2025",
+    "nbs-jres-geltman-1977",
+    "arxiv-replay-clocks-2023",
+    "uscourts-pro-se-1-2016",
+    "ntrs-20200002975-gwl-2020"
+  ],
+  "knownUnsupportedFullConversions": [
+    {
+      "id": "gpo-warren-1964",
+      "reason": "Known default image-output ceiling failure; the nine-page excerpt regression is recorded separately.",
+      "issue": 5
+    },
+    {
+      "id": "noaa-nca5-2023",
+      "reason": "Known default image-output ceiling failure. Full conversions with explicit larger storage caps are measured separately in measurements/noaa-output-policies/record.md; this gate retains library defaults.",
+      "issue": 5
+    }
+  ]
+}

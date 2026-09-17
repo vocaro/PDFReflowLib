@@ -1,0 +1,8 @@
+==== page 12: lost 1, gained 1, OTHER MARKUP CHANGED
+  - <sup>'...wArn/ngs havb' after 'onight.\neeen issued For\n'
+  + <sup>'havb' after ' issued For\n...wArn/ngs '
+==== page 18: lost 1, gained 0
+  - <sub>'iNTeresTine...' after "ap\nthe viru s' d n a...\n"
+==== page 26: lost 1, gained 0
+  - <sup>'DO ME A fAVOr AND' after 'a s t AND TAKE CHANCBS!\n'
+TOTAL {'lost sup': 2, 'gained sup': 1, 'pages': 3, 'pages with other changes': 1, 'lost sub': 1}

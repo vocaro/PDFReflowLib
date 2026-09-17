@@ -1,0 +1,6 @@
+==== page 3
+@@ -13 +13,3 @@
+-<p><strong>Requirement 1. </strong>If 𝑒 happened before 𝑓 then 𝑅𝑒𝑝𝐶𝑙.𝑒 &lt; 𝑅𝑒𝑝𝐶𝑙.𝑓, i.e., 𝑒 will always be replayed before 𝑓 <strong>Requirement 2. </strong>If 𝑓 occurred far after 𝑒, i.e., 𝑒 and 𝑓 could not have occurred simultaneously under clock drift gua
++<p><strong>Requirement 1. </strong>If 𝑒 happened before 𝑓 then 𝑅𝑒𝑝𝐶𝑙.𝑒 &lt; 𝑅𝑒𝑝𝐶𝑙.𝑓, i.e., 𝑒 will always be replayed before 𝑓</p>
++<p><strong>Requirement 2. </strong>If 𝑓 occurred far after 𝑒, i.e., 𝑒 and 𝑓 could not have occurred simultaneously under clock drift guarantee of E<sub>1 </sub>where E<sub>1 </sub>≈E then 𝑒 will be replayed before 𝑓, i.e., 𝑅𝑒𝑝𝐶𝑙.𝑒 &lt; 𝑅𝑒𝑝𝐶𝑙.𝑓</p>
++<p><strong>Requirement 3. </strong>If 𝑒 and 𝑓 could have occurred in any order</p>

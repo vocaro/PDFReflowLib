@@ -482,7 +482,8 @@ enum NativeTextReader {
             let tolerance = max(0.5, run.size * 0.12)
             // Some PDFKit selections combine several OCR lines, represented as baseline
             // shifts of a full line height. Those are layout offsets, not inline scripts.
-            if !(hasDropCap && run.first), !display, run.offset.isFinite, abs(run.offset) <= run.size * 0.75 {
+            if !(hasDropCap && run.first), !display, hasScriptBase(run, index: index, in: styled),
+               run.offset.isFinite, abs(run.offset) <= run.size * 0.75 {
                 if run.offset > tolerance { style.insert(.superscript) }
                 else if run.offset < -tolerance { style.insert(.subscript) }
             }
@@ -501,6 +502,19 @@ enum NativeTextReader {
             runs.append(.text(run.text, style))
         }
         return InlineText(elements: runs).trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+
+    /// A script is set smaller than, or as large as, the text it is raised or lowered from, so a
+    /// shifted run needs another visible run in its selection at least nearly its own size (#138).
+    /// The Fed's regulation letters (pages 82/83: a 12-point `F` beside its 8-point name, or `KK`
+    /// alone in its selection) sit 2.74 points lower only because PDFKit measures both from a common
+    /// baseline; they are cell labels, not subscripts.
+    private static func hasScriptBase(_ run: StyledRun, index: Int, in runs: [StyledRun]) -> Bool {
+        runs.indices.contains { other in
+            other != index && runs[other].hasFont && runs[other].size.isFinite
+                && runs[other].size >= run.size / 1.1
+                && !runs[other].text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+        }
     }
 
     /// PDFKit can split a row at a closing quote kerned back over the period before it and then

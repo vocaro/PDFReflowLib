@@ -343,8 +343,20 @@ private func paragraphTexts(_ blocks: [ReflowBlock]) -> [String] {
     }
     // A run-in head closing with a period is emphasis, not a section opening (#60's rule).
     #expect(turns.contains { $0.hasPrefix("Military Notification and Response. NORAD heard nothing") })
-    // Negative control: without resource weights the turns run together.
-    let fused = paragraphTexts(reflow(fixture.styledContent(fontWeights: false), labelStyles: []))
+    // Negative control: without resource weights the turns run together. Each turn also wraps into a
+    // hanging indent, which now sets the turns apart by itself (#134), so the control sets the wrapped
+    // lines flush on the turns' edge first.
+    var plain = fixture.styledContent(fontWeights: false)
+    let edges = LayoutReconstructor.hangingEntryEdges(plain.lines)
+    #expect(!edges.isEmpty)
+    for index in plain.lines.indices {
+        let line = plain.lines[index]
+        if let edge = edges.first(where: { line.rect.minX - $0.x >= $0.size * 0.5 && line.rect.minX - $0.x <= $0.size * 2.5 }) {
+            plain.lines[index].rect.origin.x = edge.x
+        }
+    }
+    #expect(LayoutReconstructor.hangingEntryEdges(plain.lines).isEmpty)
+    let fused = paragraphTexts(reflow(plain, labelStyles: []))
     #expect(!fused.contains("FAA: No, he is a hijack."))
     #expect(fused.contains { $0.contains("right? FAA: No, he is a hijack.") })
 }

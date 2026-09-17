@@ -742,6 +742,7 @@ enum LayoutReconstructor {
                               recordingSubheadings: Bool = false) -> [TextLine] {
         guard !page.hasSyntheticTextStyle, !page.recognized else { return [] }
         var labels: [TextLine] = []
+        let entryEdges = hangingEntryEdges(lines, body: body)
         for line in lines.sorted(by: { $0.rect.maxY > $1.rect.maxY }) {
             let subheading = line.fontSize < body * 1.15
             // A list item (an answer-key entry, a contents line) keeps its list representation.
@@ -777,8 +778,13 @@ enum LayoutReconstructor {
                     guard let below = nearestBelow(title), title.rect.minY - below.rect.maxY < body * 0.8,
                           abs(below.fontSize - body) <= body * 0.1, !LabelStyle(below, body: body).bold else { return false }
                     let paragraph = abs(below.rect.minX - line.rect.minX) <= body * 0.5 && below.rect.width > title.rect.width
+                    // A bold title can head entries narrower than itself where the page's entries wrap
+                    // into a hanging indent on the title's own edge (9/11 page 458's `Intelligence
+                    // Oversight and the Joint Inquiry` over `Senator Bob Graham (D-Fla.)`; #134).
+                    let entries = abs(below.rect.minX - line.rect.minX) <= body * 0.5 && !isList(below.text)
+                        && hangingEntryEdge(of: below, in: entryEdges) != nil
                     // An italic title opens ordinary body text or a list, never more italic type.
-                    return style.bold ? paragraph
+                    return style.bold ? paragraph || entries
                         : !LabelStyle(below, body: body).italic
                             && (paragraph && !isList(below.text) || opensListBeneath(below, title: line, body: body))
                 }
@@ -795,10 +801,15 @@ enum LayoutReconstructor {
                 // `Use of Chart Supplement U.S. (formerly Airport/` / `Facility Directory)`; #102).
                 // The first line may run the column's measure, as a wrapping title does. Only a
                 // style the book already repeats qualifies; pairs are no evidence of their own.
+                // Where the page's entries wrap into a hanging indent on the title's edge, a title
+                // wraps into it too (9/11 page 458's `Law Enforcement, Domestic Intelligence, and` /
+                // `Homeland Security`, one em in; #134).
                 guard styles.contains(style), let second = nearestBelow(line), LabelStyle(second, body: body) == style,
-                      abs(second.fontSize - line.fontSize) <= line.fontSize * 0.1,
-                      abs(second.rect.minX - line.rect.minX) <= body * 0.5, second.rect.width <= prose * 0.9,
-                      stacksUnderHeading(second, after: line), !opensHeading(second.text),
+                      abs(second.fontSize - line.fontSize) <= line.fontSize * 0.1 else { continue }
+                let hanging = hangingEntryEdge(of: line, in: entryEdges) != nil
+                    && stacksUnderHeading(second, after: line, hangingIndent: true)
+                guard hanging || abs(second.rect.minX - line.rect.minX) <= body * 0.5 && stacksUnderHeading(second, after: line),
+                      second.rect.width <= prose * 0.9, !opensHeading(second.text),
                       !isList(second.text), !isContentsEntry(line.text), !isContentsEntry(second.text),
                       let end = second.text.last, !".,;:".contains(end) else { continue }
                 let text = line.text + " " + second.text
@@ -1010,11 +1021,17 @@ enum LayoutReconstructor {
     /// REPCL AND ITS` (#83), and the 9/11 report `LAW ENFORCEMENT COMMUNITY` under `3.2
     /// ADAPTATION—AND NONADAPTATION—IN THE`. The indent is past the shared edge but no wider than
     /// the number and its space can be set: 0.6 em per character and one em for the space.
-    static func stacksUnderHeading(_ line: TextLine, after previous: TextLine, hanging: Bool = false) -> Bool {
+    static func stacksUnderHeading(_ line: TextLine, after previous: TextLine, hanging: Bool = false,
+                                   hangingIndent: Bool = false) -> Bool {
         let size = max(previous.fontSize, line.fontSize)
         guard abs(previous.fontSize - line.fontSize) <= size * 0.1, !sameRow(previous.rect, line.rect),
               line.rect.minY < previous.rect.minY, line.rect.maxY >= previous.rect.minY - size,
               previous.rect.minY - line.rect.minY <= size * 2.2 else { return false }
+        // A title wrapped into its page's hanging indent (`hangingEntryEdges`, #134).
+        if hangingIndent {
+            let indent = line.rect.minX - previous.rect.minX
+            return indent >= size * 0.5 && indent <= size * 2.5
+        }
         if abs(previous.rect.minX - line.rect.minX) <= size * 0.6
             || abs(previous.rect.midX - line.rect.midX) <= size * 0.6
             || abs(previous.rect.maxX - line.rect.maxX) <= size * 0.6 { return true }
@@ -1023,6 +1040,67 @@ enum LayoutReconstructor {
         let indent = line.rect.minX - previous.rect.minX
         let characters = CGFloat(previous.text.distance(from: number.lowerBound, to: number.upperBound))
         return indent > size * 0.6 && indent <= size * (0.6 * characters + 1)
+    }
+
+    /// A left edge whose entries wrap into a hanging indent (#134). The 9/11 report's hearings
+    /// appendix (pages 458–465) lists each panel's witnesses one to an entry, flush left, and sets
+    /// an entry's wrapped lines one em in (`Ken Holden, Commissioner, New York City Department of` /
+    /// `Design and Construction`); a panel title that wraps does the same. Such a pair is a line on
+    /// the edge that ends no sentence, with a line directly beneath it at ordinary leading, in its
+    /// size, starting 0.5–2.5 ems further in and not centred under it. Prose that indents its
+    /// paragraphs' first lines sets the same step under a line that ends a sentence (or a colon
+    /// or semicolon), so an edge qualifies only when it has at least one wrapped-entry pair and no
+    /// such opening. A wholly bold upper line is a title, and a title wrapped into the indent is no
+    /// evidence for itself (FAA page 21's two-line subhead). Lists, code, centred display lines,
+    /// leader entries (an index's sub-entries, FAA page 521) and a line without letters over an
+    /// indented one (Loper Bright's footnote rule over `*Together with No. 22–1219, …`) are no
+    /// evidence either.
+    struct HangingEdge {
+        var x: CGFloat
+        var size: CGFloat
+        /// The wrapped-entry pairs seen on the edge.
+        var pairs: Int
+    }
+
+    /// The page's hanging-entry edges (see `HangingEdge`). With `body`, only lines in the body's size
+    /// are evidence: a heading-size title hung under its section number is `continuesHeading`'s
+    /// (Replay Clocks page 6, #83).
+    static func hangingEntryEdges(_ lines: [TextLine], body: CGFloat? = nil) -> [HangingEdge] {
+        var pairs: [(x: CGFloat, size: CGFloat, wraps: Bool)] = []
+        for upper in lines where !upper.monospaced && !isList(upper.text) && upper.fontSize > 0
+            && upper.text.contains(where: \.isLetter) && !LabelStyle(upper, body: upper.fontSize).bold
+            && body.map({ abs(upper.fontSize - $0) <= $0 * 0.1 }) != false {
+            let size = upper.fontSize
+            guard let lower = lines.filter({ other in
+                other != upper && !sameRow(other.rect, upper.rect) && abs(other.fontSize - size) <= size * 0.1
+                    && other.rect.maxY <= upper.rect.minY + size * 0.4
+                    && other.rect.minX < upper.rect.maxX && other.rect.maxX > upper.rect.minX
+            }).max(by: { $0.rect.maxY < $1.rect.maxY }) else { continue }
+            let gap = upper.rect.minY - lower.rect.maxY
+            let indent = lower.rect.minX - upper.rect.minX
+            guard gap >= -size * 0.4, gap < size * 0.9, indent >= size * 0.5, indent <= size * 2.5,
+                  !lower.monospaced, !isList(lower.text),
+                  abs((lower.rect.minX - upper.rect.minX) - (upper.rect.maxX - lower.rect.maxX)) > size * 0.5,
+                  !upper.text.contains("...."), !lower.text.contains("....") else { continue }
+            let ends = lastCharacterBeforeMarker(upper).map { ".!?:;".contains($0) } ?? true
+            pairs.append((upper.rect.minX, size, !ends))
+        }
+        var edges: [HangingEdge] = []
+        for pair in pairs where pair.wraps {
+            func sameEdge(_ x: CGFloat, _ size: CGFloat) -> Bool {
+                abs(x - pair.x) <= pair.size * 0.5 && abs(size - pair.size) <= pair.size * 0.1
+            }
+            guard !pairs.contains(where: { !$0.wraps && sameEdge($0.x, $0.size) }),
+                  !edges.contains(where: { sameEdge($0.x, $0.size) }) else { continue }
+            edges.append(HangingEdge(x: pair.x, size: pair.size,
+                                     pairs: pairs.filter { $0.wraps && sameEdge($0.x, $0.size) }.count))
+        }
+        return edges
+    }
+
+    /// The hanging-entry edge (`hangingEntryEdges`) a line stands on, if any.
+    static func hangingEntryEdge(of line: TextLine, in edges: [HangingEdge]) -> HangingEdge? {
+        edges.first { abs(line.rect.minX - $0.x) <= $0.size * 0.5 && abs(line.fontSize - $0.size) <= $0.size * 0.1 }
     }
 
     /// Terminal punctuation past closing quotes and brackets; a colon ends a heading's first
@@ -2148,6 +2226,47 @@ enum LayoutReconstructor {
         let labels = sectionLabels(in: free.map(untagged), body: reflowBody,
                                    headingThreshold: headingThreshold, page: page, styles: labelStyles)
             + boxTitles(in: free.map(untagged), page: page)
+        // Edges whose entries wrap into a hanging indent (#134): a label's second line hanging on
+        // one continues its title, and a line back on the edge opens the next entry.
+        let entryEdges = page.hasSyntheticTextStyle || page.recognized ? [] : hangingEntryEdges(free.map(untagged), body: reflowBody)
+        func continuesHangingTitle(_ line: TextLine, after previous: TextLine, heading: String) -> Bool {
+            labels.contains(untagged(line)) && labels.contains(untagged(previous))
+                && hangingEntryEdge(of: previous, in: entryEdges) != nil
+                && stacksUnderHeading(line, after: previous, hangingIndent: true)
+                && !LayoutReconstructor.endsSentence(heading) && !opensHeading(line.text)
+        }
+        // A line on a hanging-entry edge opens a new entry after the open paragraph's last line
+        // when that line is an entry's wrapped continuation (hanging in the indent under the entry's
+        // first line, which this paragraph opened on the edge or in the indent where an entry runs on
+        // from the previous page, page 462; a paragraph's indented first line is no continuation,
+        // Loper Bright page 8), or is itself on
+        // the edge and ends early: this line's first word would have fit after it, short of the
+        // edge's widest line, so the break was the author's (9/11 page 458's `Senator John McCain
+        // (R-Az.)` / `Senator Joseph Lieberman (D-Conn.)`). Where two or more entries wrap on the
+        // edge, a line ending an em short of the widest one is enough, as the widest line need not
+        // reach the measure (page 459's `Stephen McHale, …, Transportation Security Agency` over
+        // `Major General O.K. Steele`). Justified prose fills its measure. A line opening in lowercase
+        // or after a line-end hyphen continues its sentence, and an entry opens with a word.
+        func opensHangingEntry(_ line: TextLine, after prev: TextLine, first: TextLine?) -> Bool {
+            guard !line.monospaced, !prev.monospaced, !line.text.contains("...."), !prev.text.contains("...."),
+                  line.text.first(where: \.isLetter)?.isLowercase == false,
+                  prev.text.last.map({ "-\u{00AD}/".contains($0) }) == false,
+                  let first, first.text.contains(where: \.isLetter),
+                  let edge = hangingEntryEdge(of: line, in: entryEdges),
+                  abs(prev.fontSize - edge.size) <= edge.size * 0.1 else { return false }
+            func hangs(_ other: TextLine) -> Bool {
+                other.rect.minX - edge.x >= edge.size * 0.5 && other.rect.minX - edge.x <= edge.size * 2.5
+            }
+            let opensOnEdge = hangingEntryEdge(of: first, in: [edge]) != nil
+            if hangs(prev) { return prev != first && (opensOnEdge || hangs(first)) }
+            guard opensOnEdge else { return false }
+            let offset = prev.rect.minX - edge.x
+            guard abs(offset) <= edge.size * 0.5, let word = line.text.split(whereSeparator: \.isWhitespace).first else { return false }
+            let right = free.filter { hangingEntryEdge(of: $0, in: [edge]) != nil }.map(\.rect.maxX).max() ?? prev.rect.maxX
+            let wordWidth = line.rect.width * CGFloat(word.count + 1) / CGFloat(max(1, line.text.count))
+            return prev.rect.maxX + wordWidth + edge.size * 0.5 <= right
+                || edge.pairs >= 2 && prev.rect.maxX <= right - edge.size
+        }
         // The page's own typography for a heading, before any tag is consulted. A contents entry
         // is never a heading; a multi-line display sentence is a pull quote (handled below).
         // Neither is a separated margin line that opens or closes with this page's number:
@@ -2435,6 +2554,8 @@ enum LayoutReconstructor {
         }
         var paragraph = InlineText()
         var previous: TextLine?
+        // The open paragraph's first line, where this loop opened it (`opensHangingEntry`).
+        var paragraphFirst: TextLine?
         var codeOrigin: CGFloat?
         // The vertical gap the open paragraph's last line was attached at: the leading a
         // section lead-in must exceed to read as added space (#60).
@@ -2451,6 +2572,7 @@ enum LayoutReconstructor {
             previous = nil
             previousGap = nil
             opening = nil
+            paragraphFirst = nil
         }
         // A paragraph's opening line can stand further from the column's edge than the lines it
         // wraps onto, which the same-column test (within one and a half bodies) does not admit (#147):
@@ -2859,6 +2981,7 @@ enum LayoutReconstructor {
                 previousGap = nil
                 // A group's only line opened the paragraph, and its tag set it apart.
                 opening = taggedOpening ? (last, true) : nil
+                paragraphFirst = nil
             }
             flushTagged()
             if !line.monospaced { codeOrigin = nil }
@@ -2871,7 +2994,8 @@ enum LayoutReconstructor {
                    case let .heading(id, text, level) = result[last].content,
                    sameRow(row.first.rect, line.rect) && abs(row.first.fontSize - line.fontSize) <= line.fontSize * 0.1
                     && line.rect.minX - row.last.rect.maxX <= line.fontSize * 3
-                    || continuesHeading(text.text, with: line, after: row.last) {
+                    || continuesHeading(text.text, with: line, after: row.last)
+                    || continuesHangingTitle(line, after: row.last, heading: text.text) {
                     result[last].content = .heading(id: id, text: join(text, line.content, vocabulary: vocabulary,
                         page: page.number, warnings: &warnings), level: level)
                     headingRow = (row.first, line)
@@ -2948,13 +3072,15 @@ enum LayoutReconstructor {
                         && line.fontSize >= reflowBody * 0.95 && isCaption(paragraph.text)
                     if prev.wraps == false || !sameColumn || shortEnding || endsCaption
                         || opensSection(line, after: prev, gap: verticalGap, leading: previousGap)
-                        || opensSpacedParagraph(line, after: prev, gap: verticalGap, leading: previousGap) {
+                        || opensSpacedParagraph(line, after: prev, gap: verticalGap, leading: previousGap)
+                        || opensHangingEntry(line, after: prev, first: paragraphFirst) {
                         flush()
                     } else { attachedGap = inflation > 0 ? previousGap : verticalGap }
                 }
                 if paragraph.elements.isEmpty {
                     paragraph = line.content
                     opening = (line, evidencedOpening)
+                    paragraphFirst = line
                 } else {
                     paragraph = join(paragraph, line.content, vocabulary: vocabulary,
                         page: page.number, warnings: &warnings)

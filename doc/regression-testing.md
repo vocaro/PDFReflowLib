@@ -113,7 +113,7 @@ are, in the page markup). Evidence and negative controls on real output are in
 ## Current content coverage
 
 <!-- counts:coverage -->
-[corpus/regressions.json](../corpus/regressions.json) has 2011 targeted checks on 426 reviewed pages
+[corpus/regressions.json](../corpus/regressions.json) has 2028 targeted checks on 429 reviewed pages
 across 17 documents: *Pilot's Handbook of Aeronautical Knowledge*, *Beginning and Intermediate
 Algebra*, *The 9/11 Commission Report*, *The Fed Explained*, *Dietary Guidelines for Americans*,
 *Our Flag*, *Preparedness 101*, *Project Blue Book Special Report No. 14*, *Mineral Commodity
@@ -121,9 +121,9 @@ Summaries 2025*, *Loper Bright Enterprises v. Raimondo*, *Disclosure Risk Assess
 Microdata Protection*, *Welcome to the United States*, *Publication 596*, *Stimulated Multiphoton
 Bremsstrahlung in Electron-Ion Collisions*, *Replay Clocks*, *Complaint for a Civil Case* and
 *Investigation of Atmospheric Boundary-Layer Effects on Launch-Vehicle Ground Wind Loads*. They
-comprise 705 ordered-text, 151 text, 271 paragraph, 164 absent-text, 187 heading, 32 absent-heading,
+comprise 705 ordered-text, 151 text, 275 paragraph, 164 absent-text, 192 heading, 32 absent-heading,
 58 list-item, 1 preformatted-lines, 20 script, 11 footnote, 34 note-link, 55 paragraph-continuation,
-1 list-item-continuation, 8 paragraph-separation, 53 distinct-paragraph, 142 image-presence,
+1 list-item-continuation, 8 paragraph-separation, 61 distinct-paragraph, 142 image-presence,
 62 warning, 24 absent-warning, 17 source-region, 3 glyph-structure, 3 image-appearance and
 9 table-cell checks, counted as `tools/check_corpus_content.py` counts them.
 <!-- counts:end -->
@@ -266,7 +266,10 @@ first row of `<td>` cells still serves as the header (#121). With `rowHeaders` t
 `rowHeaderColumns` lists the 1-based columns whose cells name their rows instead of the first grid
 cell, for side-by-side label/value lists. An optional `groupHeaders` (boolean) checks the group rows
 named by `group`: when true the group row nearest before each matched row must be
-`<th scope="rowgroup">` cells opening their own `<tbody>`, when false data cells (#124). The Fed's
+`<th scope="rowgroup">` cells opening their own `<tbody>`, when false data cells (#124). An optional
+`scriptCells` (boolean) checks inline markup in every cell of the table: when false no cell may hold a
+`<sup>` or `<sub>` element, when true some cell must, since the cell text is compared without markup
+(#138). The Fed's
 entity/overview table (page 64) and regulation table (page 83) are the first corpus tables emitted
 as `<table>` (#54, shaded rows and rules; other tables remain images under #36/#31) and carry
 reviewed transcriptions; `tools/test_table_cells.py` keeps the checker's negative controls, and the
@@ -283,11 +286,14 @@ each table's caption. Pages 46, 47, 64, 83, 109 and 120 require row-header first
 a `<th>` header row over data cells; FAA page 131 transcribes the borderless load-factor table with
 a `<th>` header and no row headers (#121). Page 47 also requires the liabilities labels (column 3)
 as row headers, and pages 82, 83 and 120 require their section rows as rowgroup headers, each
-opening its own body (#124). See the
+opening its own body (#124). Pages 82, 83 and 109 require the regulation tables' cells to hold no
+superscript or subscript: the 12-point regulation letters are cell text, not scripts of their 8-point
+names (#138). See the
 [ruled-table and header-rule evidence](../measurements/ruled-tables-and-header-rules/record.md), the
 [table caption and tag evidence](../measurements/table-captions-and-tags/record.md) and the
 [table header and borderless-table evidence](../measurements/table-headers-and-borderless/record.md) and the
-[table leftovers evidence](../measurements/table-leftovers/record.md).
+[table leftovers evidence](../measurements/table-leftovers/record.md) and the
+[cell-label script evidence](../measurements/cell-label-scripts/record.md).
 
 ## Adding or changing a regression
 
@@ -516,7 +522,7 @@ the page's structure validates, each line also records the tag the pipeline appl
 since #89/#90); older fixtures and untagged lines have none, and `SourceLayoutFixture` restores it.
 Source review, baseline failures, cross-document safeguards and full-run evidence are retained
 in [the three-fix measurement](../measurements/three-fidelity-fixes/record.md). The suite contains
-<!-- counts:swift-tests -->712 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->230 Python tests<!-- counts:end -->.
+<!-- counts:swift-tests -->720 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->231 Python tests<!-- counts:end -->.
 The comparison tests include a real-Poppler image URL check through the safe HTTP handler
 (simple and positioned modes, paths with spaces); absent Poppler is an explicit skip.
 
@@ -764,6 +770,22 @@ column, and a label set at the leading the paragraph already wraps at. Six sourc
 carry bold emphasis, bulleted definitions, box run-in heads, heading rules, exercises and a dash
 separator (FAA 211/212, Fed 32, Our Flag 27, algebra 289, Loper 60) keep every block boundary
 they had at `62877e6`.
+
+## Hanging-indent entries
+
+`HangingEntryTests.swift` covers [#134](https://github.com/vocaro/PDFReflowLib/issues/134). The 9/11
+report's hearings appendix lists each panel's witnesses one to an entry, flush left, and wraps an entry
+or a panel title one em into a hanging indent. A page edge qualifies when a line that ends no sentence
+wraps into such an indent and no line ending a sentence (or a colon) sits over a first-line indent
+there. On such an edge a line opens a new entry after an entry's wrapped continuation, or after a line
+that ended early, and a bold title in the book's label style may wrap into the indent or head entries
+narrower than itself. Source fixtures of pages 458 and 462 check the titles as headings and one
+paragraph per witness, including a wrapped entry and one continued from the previous page. Synthetic
+controls reject paragraph openings, lines above the body size, a rule over an indented note, index
+sub-entries, centred lines, wider steps and list lines as evidence. They also keep justified prose, a
+lowercase or hyphenated continuation and a paragraph's indented first line whole, and read neither
+title without a wrapped entry. The 9/11 contract checks pages 41 (transcript turns), 458 and 462. See
+the [hanging-entries evidence](../measurements/hanging-entries/record.md).
 
 ## Headings beside trailing figures and wide section titles
 

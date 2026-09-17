@@ -1,0 +1,340 @@
+# tools/script-survey.swift over each English source: every run the ce2cf5b/96667ce rule marks sup/sub,
+# classed by the largest other visible run of its PDFKit selection (larger: >1.1x every other; lone: no other;
+# same: within 0.9-1.1x; smaller). 'larger' and 'lone' are what #138 stops reading as scripts;
+# up to 25 examples each.
+
+## 22-451_7m58
+sup smaller: 48
+
+## 2311.07842v1
+sub larger: 10
+sub smaller: 40
+sup larger: 2
+sup smaller: 7
+--- sub larger
+  p5 "∴−1 < (" size=9.0 off=-4.76 others[7.3/0.00] line="∴−1 < (𝑚𝑝𝑡.𝑓"
+  p5 "−⌊" size=9.0 off=-4.76 others[7.3/-7.98 7.3/0.00] line="𝐼 −⌊𝑚𝑝𝑡.𝑓"
+  p5 "⌋)−(" size=9.0 off=-4.76 others[7.3/-7.98 7.3/0.00] line="𝐼 ⌋)−(𝑚𝑝𝑡.𝑒"
+  p5 "−⌊" size=9.0 off=-4.76 others[7.3/-7.98 7.3/0.00] line="𝐼 −⌊𝑚𝑝𝑡.𝑒"
+  p5 "∴−1 < (" size=9.0 off=-4.76 others[7.3/0.00] line="∴−1 < (𝑚𝑝𝑡.𝑓"
+  p5 "−⌊" size=9.0 off=-4.76 others[7.3/-7.98 7.3/0.00] line="𝐼 −⌊𝑚𝑝𝑡.𝑒"
+  p5 "∴−1 < (" size=9.0 off=-4.75 others[7.3/0.00] line="∴−1 < (𝑚𝑝𝑡.𝑓−𝑚𝑝𝑡.𝑒"
+  p5 "∴ |" size=9.0 off=-4.76 others[7.3/0.00] line="∴ |𝑚𝑝𝑡.𝑒"
+  p5 "∴ |⌊" size=9.0 off=-4.76 others[7.3/0.00] line="∴ |⌊𝑚𝑝𝑡.𝑒"
+  p5 "⌋−⌊" size=9.0 off=-4.76 others[7.3/-7.98 7.3/0.00] line="𝐼 ⌋−⌊𝑚𝑝𝑡.𝑓"
+--- sup larger
+  p3 "⌋." size=9.0 off=1.61 others[7.3/-1.61] line="𝐼 ⌋."
+  p5 "−" size=9.0 off=1.61 others[7.3/-1.61] line="𝐼−"
+
+## Beginning_and_Intermediate_Algebra
+sub larger: 1141
+sub lone: 140
+sub same: 1151
+sub smaller: 1124
+sup larger: 224
+sup lone: 13
+sup same: 385
+sup smaller: 5011
+--- sub larger
+  p11 "48)" size=12.0 off=-6.24 others[8.0/0.00] line="48)− 12"
+  p11 "47)" size=12.0 off=-6.24 others[8.0/0.00] line="47)− 49"
+  p11 "49)" size=12.0 off=-6.24 others[8.0/0.00] line="49)− 2"
+  p11 "53)" size=12.0 off=-6.24 others[8.0/0.00] line="53)− 35"
+  p11 "55)" size=12.0 off=-6.24 others[8.0/0.00] line="55)− 8"
+  p11 "57)" size=12.0 off=-6.24 others[8.0/0.00] line="57)− 16"
+  p16 "2) " size=12.0 off=-3.12 others[8.0/3.12] line="2) 25"
+  p16 "4) " size=12.0 off=-3.12 others[8.0/3.12] line="4) 24"
+  p16 "6) " size=12.0 off=-3.12 others[8.0/3.12] line="6) 30"
+  p16 "8) " size=12.0 off=-3.12 others[8.0/3.12] line="8) 36"
+  p16 "18) " size=12.0 off=-3.12 others[8.0/3.12] line="18) 126"
+  p16 "20) " size=12.0 off=-3.12 others[8.0/3.12] line="20) 160"
+  p16 "1) " size=12.0 off=-3.12 others[8.0/3.12] line="1) 42"
+  p16 "3) " size=12.0 off=-3.12 others[8.0/3.12] line="3) 35"
+  p16 "5) " size=12.0 off=-3.12 others[8.0/3.12] line="5) 54"
+  p16 "7) " size=12.0 off=-3.12 others[8.0/3.12] line="7) 45"
+  p16 "9) " size=12.0 off=-3.12 others[8.0/3.12] line="9) 27"
+  p17 "39)" size=12.0 off=-6.12 others[8.0/0.00] line="39)− 1"
+  p17 "÷" size=12.0 off=-6.12 others[8.0/-10.92 8.0/0.00] line="9 ÷− 1"
+  p17 "41)" size=12.0 off=-6.24 others[8.0/0.00] line="41)− 3"
+  p17 "47)" size=12.0 off=-6.24 others[8.0/0.00] line="47)− 9"
+  p17 "49)" size=12.0 off=-6.12 others[8.0/0.00] line="49)− 2"
+  p17 "÷" size=12.0 off=-6.12 others[8.0/-10.92 8.0/0.00] line="9 ÷− 3"
+  p17 "38)" size=12.0 off=-6.24 others[8.0/0.00] line="38)− 12"
+  p17 "÷" size=12.0 off=-6.24 others[8.0/-11.04 8.0/0.00] line="7 ÷− 9"
+--- sub lone
+  p9 "− 9 " size=12.0 off=-7.80 others[] line="− 9 "
+  p9 "− 3 " size=12.0 off=-7.80 others[] line="− 3 "
+  p12 "84 " size=12.0 off=-7.80 others[] line="84 "
+  p12 "21 " size=12.0 off=-7.80 others[] line="21 "
+  p13 "55 " size=12.0 off=-7.80 others[] line="55 "
+  p13 "11 " size=12.0 off=-7.80 others[] line="11 "
+  p14 "28 " size=12.0 off=-7.80 others[] line="28 "
+  p15 "9· 2 " size=12.0 off=-7.80 others[] line="9· 2 "
+  p15 "18 " size=12.0 off=-7.80 others[] line="18 "
+  p20 "3− 1 " size=12.0 off=-7.80 others[] line="3− 1 "
+  p21 "21) " size=12.0 off=-6.24 others[] line="21) "
+  p21 "24) " size=12.0 off=-6.24 others[] line="24) "
+  p49 "2− b " size=12.0 off=-7.80 others[] line="2− b "
+  p50 "2− b " size=12.0 off=-7.80 others[] line="2− b "
+  p50 "2− b " size=12.0 off=-7.80 others[] line="2− b "
+  p50 "2− b " size=12.0 off=-7.68 others[] line="2− b "
+  p90 "Down 4" size=12.0 off=-2.40 others[] line="Down 4"
+  p96 "Run 3 " size=12.0 off=-6.60 others[] line="Run 3 "
+  p97 "− 2 " size=12.0 off=-7.80 others[] line="− 2 "
+  p99 "x +3 " size=12.0 off=-7.68 others[] line="x +3 "
+  p109 "10 " size=12.0 off=-7.80 others[] line="10 "
+  p135 "2x +2y=− 6 " size=12.0 off=-7.44 others[] line="2x +2y=− 6 "
+  p137 "3x− 9y= 18 " size=12.0 off=-7.44 others[] line="3x− 9y= 18 "
+  p139 "y =2x− 3 " size=12.0 off=-7.44 others[] line="y =2x− 3 "
+  p139 "y = 3x− 7 " size=12.0 off=-7.56 others[] line="y = 3x− 7 "
+--- sup larger
+  p16 ")" size=12.0 off=2.34 others[8.0/-2.34] line="9 )"
+  p16 ")" size=12.0 off=2.40 others[8.0/-2.40] line="9 )"
+  p16 ")" size=12.0 off=2.34 others[8.0/-2.34] line="8 )"
+  p16 ")" size=12.0 off=2.40 others[8.0/-2.40] line="8 )"
+  p16 ")" size=12.0 off=2.40 others[8.0/-2.40] line="2 )"
+  p16 ")" size=12.0 off=2.40 others[8.0/-2.40] line="4 )"
+  p16 ")" size=12.0 off=2.40 others[8.0/-2.40] line="2 )"
+  p16 ")" size=12.0 off=2.40 others[8.0/-2.40] line="5 )"
+  p16 ")" size=12.0 off=2.40 others[8.0/-2.40] line="3 )"
+  p16 ")" size=12.0 off=2.40 others[8.0/-2.40] line="2 )"
+  p16 ")" size=12.0 off=2.40 others[8.0/-2.40] line="5 )"
+  p16 ")" size=12.0 off=2.40 others[8.0/-2.40] line="7 )"
+  p16 ")" size=12.0 off=2.34 others[8.0/-2.34] line="6 )"
+  p16 ")" size=12.0 off=2.40 others[8.0/-2.40] line="8 )"
+  p16 ")" size=12.0 off=2.40 others[8.0/-2.40] line="7 )"
+  p16 ")" size=12.0 off=2.40 others[8.0/-2.40] line="5 )"
+  p17 ")" size=12.0 off=2.40 others[8.0/-2.40] line="3 )"
+  p17 ")" size=12.0 off=2.40 others[8.0/-2.40] line="7 )"
+  p17 ")" size=12.0 off=2.40 others[8.0/-2.40] line="3 )"
+  p17 ")" size=12.0 off=2.40 others[8.0/-2.40] line="3 )"
+  p17 ")" size=12.0 off=2.40 others[8.0/-2.40] line="6 )"
+  p17 ")" size=12.0 off=2.40 others[8.0/-2.40] line="7 )"
+  p17 ")" size=12.0 off=2.40 others[8.0/-2.40] line="3 )"
+  p17 ")" size=12.0 off=2.40 others[8.0/-2.40] line="8 )"
+  p17 ")" size=12.0 off=2.40 others[8.0/-2.40] line="5 )"
+--- sup lone
+  p90 "Down 3 " size=12.0 off=2.40 others[] line="Down 3 "
+  p141 "Second Equation, y" size=12.0 off=6.96 others[] line="Second Equation, y"
+  p244 "Exponents first" size=12.0 off=4.32 others[] line="Exponents first"
+  p244 "Multiply" size=12.0 off=7.80 others[] line="Multiply"
+  p254 "Our Solution" size=12.0 off=7.80 others[] line="Our Solution"
+  p255 "Our Solution" size=12.0 off=6.48 others[] line="Our Solution"
+  p265 "FOIL" size=12.0 off=7.80 others[] line="FOIL"
+  p265 "Combine like terms" size=12.0 off=2.16 others[] line="Combine like terms"
+  p311 "10 " size=6.0 off=2.64 others[] line="10 "
+  p315 "12 " size=6.0 off=2.64 others[] line="12 "
+  p316 "3 " size=8.0 off=5.04 others[] line="3 "
+  p339 "+ 6+6" size=12.0 off=7.20 others[] line="+ 6+6"
+  p388 "3x− 1" size=12.0 off=7.20 others[] line="3x− 1"
+
+## CDOC-108hdoc97
+sup smaller: 2
+
+## CIA-UAP-015-Project_Blue_Book_Special_Report_No_14
+sub larger: 675
+sub lone: 19
+sub same: 1308
+sub smaller: 6008
+sup larger: 538
+sup lone: 92
+sup same: 844
+sup smaller: 10932
+--- sub larger
+  p3 "I " size=32.6 off=-8.40 others[19.6/8.40] line="I \\"
+  p4 "\\I " size=25.1 off=-8.64 others[13.1/0.00 13.1/0.00 13.1/0.00] line="\\I SPECIAL REPORT NO. 14"
+  p4 ":1 " size=22.8 off=-12.00 others[11.4/0.00 11.6/0.00] line=":1 5 MAY 1955"
+  p35 "-" size=21.4 off=-5.39 others[18.6/7.33 18.6/1.80 15.8/-1.80] line="\' \' \' -"
+  p35 "cu" size=8.2 off=-1.32 others[6.7/1.32] line="N) cu"
+  p36 "u\n" size=14.2 off=-2.16 others[7.3/3.59 8.3/0.00 7.8/0.00] line="Ccuu\n~\n~"
+  p36 "u\n" size=14.2 off=-2.16 others[7.8/0.00 7.4/0.00] line="u\n~\n~"
+  p36 "u\n" size=14.2 off=-2.16 others[7.8/0.00 7.4/0.00] line="u\n~\n~"
+  p36 "u\n" size=14.2 off=-2.16 others[7.8/0.00 7.4/0.00] line="u\n~\n~"
+  p36 "u\n" size=14.2 off=-2.16 others[7.8/0.00 7.4/0.00] line="u\n~\n~"
+  p36 "u\n" size=14.2 off=-2.16 others[7.8/0.00 7.4/0.00] line="u\n~\n~"
+  p36 "u\n" size=14.2 off=-2.16 others[7.8/0.00 7.4/0.00] line="u\n~\n~"
+  p36 "u\n" size=14.2 off=-2.16 others[7.8/0.00 7.4/0.00] line="u\n~\n~"
+  p36 "u\n" size=14.2 off=-2.16 others[7.8/0.00 7.4/0.00] line="u\n~\n~"
+  p38 "20-" size=13.8 off=-2.16 others[7.9/2.15] line="(!) 20-"
+  p40 "40" size=11.9 off=-1.44 others[7.6/1.44 7.1/1.44 10.3/-3.61] line="40I U) to"
+  p40 "- " size=24.0 off=-6.97 others[12.4/0.00] line="- I\\"
+  p40 "\' " size=8.4 off=-1.68 others[6.1/1.68] line="\' /"
+  p40 "I " size=9.5 off=-1.45 others[8.2/2.88 7.3/0.00 7.6/-1.45] line="(/) \' I I"
+  p40 "I" size=6.6 off=-4.56 others[5.6/0.00] line="Cl) I"
+  p41 "4" size=62.7 off=-10.31 others[14.2/26.88 37.8/0.00] line="20- 4\\~11111111111111111111111~~::==:=-.IIIIIIIIIII"
+  p43 "\"" size=19.2 off=-3.36 others[11.7/0.00] line="\".c"
+  p43 "\'" size=13.0 off=-2.04 others[7.6/2.03] line="I \'"
+  p43 "\\ " size=11.6 off=-2.28 others[7.6/2.28] line="\\ I"
+  p43 "-so" size=18.6 off=-3.61 others[11.9/0.00 14.0/0.00] line="&, 80- -so"
+--- sub lone
+  p5 "29" size=7.1 off=-1.20 others[] line="29"
+  p57 "45\'" size=4.9 off=-1.44 others[] line="45\'"
+  p108 "153" size=6.9 off=-1.67 others[] line="153"
+  p115 "252" size=7.1 off=-0.96 others[] line="252"
+  p118 "Total " size=5.2 off=-0.72 others[] line="Total "
+  p119 "\"\' " size=19.7 off=-8.88 others[] line="\"\' "
+  p143 "Enluabon " size=5.5 off=-0.95 others[] line="Enluabon "
+  p149 "IOT\"\'L " size=5.5 off=-0.96 others[] line="IOT\"\'L "
+  p163 "Ewaluabon " size=4.5 off=-0.73 others[] line="Ewaluabon "
+  p163 "1:- " size=11.8 off=-1.69 others[] line="1:- "
+  p163 "Tolol " size=5.1 off=-0.72 others[] line="Tolol "
+  p169 "Evaluation " size=5.0 off=-0.71 others[] line="Evaluation "
+  p174 "Efll•tioo " size=5.3 off=-0.71 others[] line="Efll•tioo "
+  p205 "Evalution " size=4.9 off=-0.72 others[] line="Evalution "
+  p211 "Evaluation " size=5.0 off=-0.60 others[] line="Evaluation "
+  p214 "Evaluation " size=4.7 off=-0.72 others[] line="Evaluation "
+  p215 "SPee,o.s" size=6.7 off=-0.96 others[] line="SPee,o.s"
+  p235 "Evaluation " size=5.1 off=-0.71 others[] line="Evaluation "
+  p250 "\' l" size=7.8 off=-2.76 others[] line="\' l"
+--- sup larger
+  p3 "I " size=33.7 off=6.97 others[23.4/0.72 22.9/0.00 24.4/-0.72] line="I SPECIAL REPORT N0.14"
+  p33 "... " size=8.4 off=1.20 others[7.4/1.20 6.7/-0.24] line="... 40t I "
+  p34 "I" size=11.8 off=1.92 others[7.2/0.00] line="II"
+  p35 "\' " size=13.8 off=2.04 others[7.2/-2.05] line="\' I"
+  p35 "\'," size=14.6 off=7.20 others[13.0/0.00] line="\',\',"
+  p40 "-" size=13.4 off=2.40 others[11.1/0.00] line="100 -"
+  p40 "u " size=11.9 off=2.16 others[7.3/-2.16] line="u I"
+  p40 ".c. " size=10.6 off=5.04 others[7.3/0.00 7.9/-0.48] line=".c. I (.)"
+  p40 "0 " size=8.0 off=2.88 others[5.8/0.00] line="0 Cl)"
+  p40 "w " size=12.2 off=5.51 others[8.5/0.00 8.5/0.00 10.2/-6.25] line="w \' II"
+  p41 "100- " size=13.0 off=7.69 others[11.2/0.00] line="100- lnsuf. info"
+  p43 "," size=16.0 off=7.21 others[11.4/0.00 12.2/0.00] line="In bldg. ,"
+  p43 ",,--" size=11.7 off=4.57 others[8.4/0.00 6.1/0.00 6.5/0.00] line=",,--1_-:;.,\'\n~\n~\n~"
+  p43 "I" size=7.6 off=1.44 others[6.6/-1.44] line="\\ I"
+  p43 "I" size=7.6 off=0.96 others[6.0/-0.96] line="\\ I"
+  p43 "40-" size=13.8 off=1.92 others[5.6/0.00 8.0/0.00] line="(1,1 0 40-"
+  p56 "C " size=5.4 off=1.93 others[4.5/0.00] line="C Cl>"
+  p56 "C " size=5.4 off=2.15 others[4.6/0.00] line="C Cl>"
+  p56 ", " size=15.2 off=2.40 others[8.4/-2.40] line=", \'"
+  p56 ":\n" size=14.2 off=3.84 others[8.6/0.00] line=":\n~"
+  p56 ":\n" size=14.2 off=3.84 others[8.6/0.00] line=":\n~"
+  p56 ":\n" size=14.2 off=3.84 others[8.6/0.00] line=":\n~"
+  p58 "~ " size=6.8 off=3.12 others[4.7/0.00] line="~ 35\""
+  p75 "I " size=31.2 off=5.64 others[15.8/-5.65] line="I \'"
+  p80 "I" size=31.2 off=5.52 others[16.7/-5.52] line="\' I"
+--- sup lone
+  p5 "14" size=7.1 off=0.97 others[] line="14"
+  p33 "50t " size=7.4 off=1.44 others[] line="50t "
+  p38 "60- " size=13.9 off=7.20 others[] line="60- "
+  p106 "111" size=6.9 off=0.95 others[] line="111"
+  p106 "112" size=7.0 off=1.21 others[] line="112"
+  p108 "140" size=6.9 off=1.44 others[] line="140"
+  p108 "140" size=6.9 off=1.20 others[] line="140"
+  p108 "140" size=7.0 off=1.44 others[] line="140"
+  p108 "142" size=7.0 off=1.68 others[] line="142"
+  p108 "143" size=7.0 off=1.68 others[] line="143"
+  p108 "145" size=7.0 off=1.44 others[] line="145"
+  p110 "191" size=6.9 off=0.95 others[] line="191"
+  p112 "210" size=7.1 off=0.96 others[] line="210"
+  p112 "212" size=7.0 off=0.95 others[] line="212"
+  p112 "213" size=7.0 off=0.95 others[] line="213"
+  p119 "0-Balloon " size=5.2 off=1.19 others[] line="0-Balloon "
+  p119 "2-Airaafl " size=5.4 off=0.96 others[] line="2-Airaafl "
+  p119 "4-Binls " size=5.2 off=0.97 others[] line="4-Binls "
+  p119 "I\"\"-.\' " size=7.4 off=0.97 others[] line="I\"\"-.\' "
+  p119 "6-lnsuffic.lnfo. " size=5.2 off=1.20 others[] line="6-lnsuffic.lnfo. "
+  p119 "7-Psydlllogical " size=5.4 off=0.72 others[] line="7-Psydlllogical "
+  p119 "II-Unknown " size=4.9 off=1.20 others[] line="II-Unknown "
+  p119 "9--0ther " size=5.1 off=0.96 others[] line="9--0ther "
+  p119 "Total " size=5.3 off=0.96 others[] line="Total "
+  p120 "g\' " size=5.5 off=0.72 others[] line="g\' "
+
+## DGA
+sub smaller: 5
+sup smaller: 8
+
+## GPO-911REPORT
+sub same: 1
+sup smaller: 1741
+
+## cdc_6023_DS1
+sub lone: 1
+sub same: 3
+sub smaller: 1
+sup larger: 1
+sup lone: 1
+sup same: 1
+sup smaller: 1
+--- sub lone
+  p18 "iNTeresTine..." size=10.0 off=-3.60 others[] line="iNTeresTine..."
+--- sup larger
+  p12 "...wArn/ngs " size=11.5 off=5.00 others[9.2/5.00] line="...wArn/ngs havb"
+--- sup lone
+  p26 "DO ME A fAVOr AND" size=10.0 off=4.10 others[] line="DO ME A fAVOr AND"
+
+## faa-h-8083-25c
+sub larger: 2
+sub lone: 1
+sub same: 6
+sub smaller: 164
+sup lone: 2
+sup same: 12
+sup smaller: 12
+--- sub larger
+  p233 "Multi-engine airspeed indicator. " size=9.0 off=-5.54 others[8.0/-5.54] line="Figure 9-2. Multi-engine airspeed indicator. "
+  p262 "KE = ½ × m × v" size=10.0 off=-5.00 others[7.0/-1.67] line="KE = ½ × m × v2 "
+--- sub lone
+  p165 "portions of propeller blade. " size=9.0 off=-2.29 others[] line="portions of propeller blade. "
+--- sup lone
+  p163 "housing. " size=10.0 off=5.25 others[] line="housing. "
+  p457 "Payload " size=6.0 off=2.66 others[] line="Payload "
+
+## jresv82n3p173_A1b
+sub smaller: 10
+sup same: 3
+sup smaller: 15
+
+## mcs2025-copper
+sup smaller: 24
+
+## rrs2002-01
+sub same: 15
+sub smaller: 78
+sup larger: 7
+sup same: 34
+sup smaller: 30
+--- sup larger
+  p18 "w" size=10.1 off=1.56 others[7.1/0.00] line="wj"
+  p19 "!" size=10.1 off=1.44 others[7.1/0.00] line="!K"
+  p19 "w" size=10.1 off=1.26 others[7.1/4.86 7.1/-1.26] line="wT4"
+  p19 "w" size=10.1 off=1.26 others[7.1/4.86 7.1/-1.26] line="wTn"
+  p19 "w" size=10.1 off=1.44 others[7.1/0.00] line="w4"
+  p19 "w" size=10.1 off=1.56 others[7.1/0.00] line="w5"
+  p19 "w" size=10.1 off=1.44 others[7.1/0.00] line="wn"
+
+## the-fed-explained
+sub larger: 16
+sub lone: 12
+sub same: 2
+sup same: 2
+sup smaller: 9
+--- sub larger
+  p82 "F " size=12.0 off=-2.74 others[8.0/0.00] line="F Limitations on Interbank Liabilities "
+  p82 "H " size=12.0 off=-2.74 others[8.0/0.00] line="H Membership of State Banking Institutions in the"
+  p82 "I " size=12.0 off=-2.74 others[8.0/0.00] line="I Issue and Cancellation of Federal Reserve Bank"
+  p82 "K " size=12.0 off=-2.74 others[8.0/0.00] line="K International Banking Operations "
+  p82 "L " size=12.0 off=-2.74 others[8.0/0.00] line="L Management Official Interlocks "
+  p82 "O " size=12.0 off=-2.74 others[8.0/0.00] line="O Loans to Executive Officers, Directors, and Principal"
+  p82 "Q " size=12.0 off=-2.74 others[8.0/0.00] line="Q Capital Adequacy of Bank Holding Companies,"
+  p82 "R " size=12.0 off=-2.74 others[8.0/0.00] line="R Exceptions for Banks from the Definition of Broker in"
+  p82 "S " size=12.0 off=-2.74 others[8.0/0.00] line="S Reimbursement for Providing Financial Records;"
+  p82 "W " size=12.0 off=-2.74 others[8.0/0.00] line="W Transactions Between Member Banks and Their"
+  p83 "Y " size=12.0 off=-2.75 others[8.0/0.00] line="Y Bank Holding Companies and Change in Bank"
+  p83 "A " size=12.0 off=-2.74 others[8.0/0.00] line="A Extensions of Credit by Federal Reserve Banks "
+  p83 "D " size=12.0 off=-2.74 others[8.0/0.00] line="D Reserve Requirements of Depository"
+  p83 "T " size=12.0 off=-2.74 others[8.0/0.00] line="T Credit by Brokers and Dealers "
+  p83 "U " size=12.0 off=-2.74 others[8.0/0.00] line="U Credit by Banks and Persons Other Than"
+  p83 "X " size=12.0 off=-2.74 others[8.0/0.00] line="X Borrowers of Securities Credit "
+--- sub lone
+  p82 "KK " size=12.0 off=-2.74 others[] line="KK "
+  p82 "NN " size=12.0 off=-2.74 others[] line="NN "
+  p82 "VV " size=12.0 off=-2.74 others[] line="VV "
+  p83 "LL " size=12.0 off=-2.74 others[] line="LL "
+  p83 "MM " size=12.0 off=-2.74 others[] line="MM "
+  p83 "OO " size=12.0 off=-2.74 others[] line="OO "
+  p83 "QQ " size=12.0 off=-2.74 others[] line="QQ "
+  p83 "RR " size=12.0 off=-2.74 others[] line="RR "
+  p83 "TT " size=12.0 off=-2.74 others[] line="TT "
+  p83 "WW " size=12.0 off=-2.74 others[] line="WW "
+  p83 "XX " size=12.0 off=-2.74 others[] line="XX "
+  p83 "YY " size=12.0 off=-2.74 others[] line="YY "

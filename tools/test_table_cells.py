@@ -340,6 +340,39 @@ class TableCellTests(unittest.TestCase):
             with self.assertRaises(ValueError, msg=invalid):
                 table_cells.validate(dict(expectation, groupHeaders=invalid))
 
+    def test_script_cells_reject_sup_or_sub_markup_anywhere_in_the_table(self):
+        # Fed page 82's regulation letters (#138): `<sub>F</sub>` reads as the same cell text.
+        emitted = (f'<table {XHTML}><thead><tr><th>Regulation</th><th>Description</th></tr></thead><tbody>'
+                   '<tr><th scope="row">F Limitations on Interbank Liabilities</th><td>Prescribes standards</td></tr>'
+                   '<tr><th scope="row">KK Swaps Margin</th><td>Establishes margin</td></tr></tbody></table>')
+        expectation = {'columns': ['Regulation', 'Description'], 'scriptCells': False,
+                       'rows': [{'label': 'F', 'values': ['F Limitations on Interbank Liabilities', 'Prescribes standards']}]}
+        self.assertEqual(grids(emitted)[0]['scripts'], 0)
+        self.assertEqual(table_cells.check_page(expectation, grids(emitted)), [])
+        failing = {
+            # The #124 output: the matched row's letter a subscript.
+            'matched row': emitted.replace('>F Limitations', '><sub>F</sub> Limitations'),
+            # A row the expectation does not name, and a nested script.
+            'other row': emitted.replace('>KK Swaps', '><sub>KK</sub> Swaps'),
+            'data cell': emitted.replace('>Establishes margin<', '>Establishes margin<sup>1</sup><'),
+            'nested': emitted.replace('>Establishes margin<', '><em>Establishes <sup>a</sup></em> margin<'),
+        }
+        for name, table in failing.items():
+            self.assertNotEqual(table, emitted, name)
+            errors = table_cells.check_page(expectation, grids(table))
+            self.assertEqual(len(errors), 1, (name, errors))
+            self.assertIn('script cells: 1 cells', errors[0], name)
+        # Emphasis alone is not a script; true requires one; without the key markup is not judged.
+        self.assertEqual(table_cells.check_page(expectation, grids(emitted.replace('>KK Swaps', '><strong>KK</strong> Swaps'))), [])
+        self.assertTrue(table_cells.check_page(dict(expectation, scriptCells=True), grids(emitted)))
+        self.assertEqual(table_cells.check_page(dict(expectation, scriptCells=True), grids(failing['other row'])), [])
+        del expectation['scriptCells']
+        self.assertEqual(table_cells.check_page(expectation, grids(failing['matched row'])), [])
+        self.assertEqual(table_cells.grid_from_table(ET.fromstring(SALIENT))['scripts'], 3)
+        for invalid in ['no', 0, None]:
+            with self.assertRaises(ValueError, msg=invalid):
+                table_cells.validate(dict(expectation, scriptCells=invalid))
+
     def test_usgs_review_transcriptions_validate_as_expectations(self):
         review = json.loads((ROOT / 'corpus/usgs-mcs2025-copper-review.json').read_text())
         for table in review['tableReferences']:

@@ -35,6 +35,7 @@ enum LayoutReconstructor {
                 if word.contains(where: isLigature) { vocabulary.insert(ligaturesSpelledOut(word)) }
             }
             addAddressVocabulary(of: line.text, to: &vocabulary)
+            addNumberPrefixVocabulary(of: line.text, to: &vocabulary)
             previous = line.text
         }
     }
@@ -180,6 +181,20 @@ enum LayoutReconstructor {
             }
             elements.removeAll { if case let .text(value, _) = $0 { value.isEmpty } else { false } }
             page.lines[index].replaceContent(InlineText(elements: elements))
+        }
+    }
+
+    /// Words the book sets as a compound's first half before a number, inside a line (`mid-1980s`,
+    /// `pre-9/11`), for a line-end hyphen before a digit (#131). Word splitting drops the digits,
+    /// so `mid-1980s` would leave only `mid-`, which every line ending `mid-` leaves too; the
+    /// entries sit under a prefix no word can hold.
+    static func addNumberPrefixVocabulary(of text: String, to vocabulary: inout Set<String>) {
+        guard text.contains("-") else { return }
+        let characters = Array(text)
+        for index in characters.indices.dropFirst().dropLast() where characters[index] == "-" {
+            guard characters[index + 1].isASCII, characters[index + 1].isNumber else { continue }
+            let word = characters[..<index].reversed().prefix(while: \.isLetter)
+            if !word.isEmpty { vocabulary.insert(numberPrefixKey + String(word.reversed()).lowercased()) }
         }
     }
 
@@ -2843,6 +2858,7 @@ enum LayoutReconstructor {
         flush()
         joinColumnContinuations(&result, page: page, images: images.map(\.0) + clusters(page.tints, distance: 4),
                                 vocabulary: vocabulary, warnings: &warnings)
+        joinWordBreaks(&result, page: page.number, vocabulary: vocabulary, warnings: &warnings)
         for note in footnotes?.notes ?? [] {
             var text = FootnoteDetector.normalizedMarker(elements[note.range.lowerBound].line!.content)
             for index in note.range.dropFirst() {
@@ -3200,6 +3216,45 @@ enum LayoutReconstructor {
             let between = Array(blocks[(index + 1)..<next])
             blocks.replaceSubrange((index + 1)...next, with: between)
             index -= 1
+        }
+    }
+
+    /// A block whose text ends in a word-break hyphen continues in the next block when that block
+    /// opens lowercase (#131). The halves of one word cannot stand in two paragraphs, so the break
+    /// itself is the evidence, whatever split the lines: a line whose detached note marker set it
+    /// in note type (9/11 page 220, `178 In March 2001, the CIA’s brief-` + `ing slides…`), a row
+    /// piece PDFKit split off (page 438, `the intel-` + `ligence establishment…`), or a wrapped
+    /// line the paragraph rules set apart (Fed page 20's `maximum em-` + `ployment`, Loper Bright
+    /// page 4's `trig-` + `gered`). Two letters precede the hyphen, as a word break leaves at least
+    /// two (never the Blue Book's OCR debris `/9, Z-` + `r.,mbel`). The left block is a paragraph or
+    /// a list item, the right one a paragraph that opens no note of its own, neither with a
+    /// validated role other than a paragraph. The blocks are adjacent in reading order and on one
+    /// page. The hyphen policy decides the join, as it does inside a paragraph, but the blocks stay
+    /// apart where it has no evidence (`uncertainHyphen`): reading order can place a broken
+    /// fragment beside the wrong neighbour (NOAA's `acidifica-` before `oceans, animal…`).
+    private static func joinWordBreaks(_ blocks: inout [ReflowBlock], page: Int, vocabulary: Set<String>,
+                                       warnings: inout [ConversionWarning]) {
+        var index = 0
+        while index + 1 < blocks.count {
+            let (leftBlock, rightBlock) = (blocks[index], blocks[index + 1])
+            guard let left = joinableText(leftBlock.content), case let .paragraph(right) = rightBlock.content,
+                  rightBlock.note == nil, (leftBlock.taggedLevel ?? 0) == 0, (rightBlock.taggedLevel ?? 0) == 0,
+                  left.text.hasSuffix("-"), left.text.dropLast().suffix(2).filter(\.isLetter).count == 2,
+                  right.text.first?.isLowercase == true else {
+                index += 1
+                continue
+            }
+            // The blocks' separation stands unless the book vouches for the word or the compound.
+            var uncertain: [ConversionWarning] = []
+            _ = joinOperation(left.text, right.text, vocabulary: vocabulary, page: page, warnings: &uncertain)
+            guard uncertain.isEmpty else {
+                index += 1
+                continue
+            }
+            let text = join(left, right, vocabulary: vocabulary, page: page, warnings: &warnings)
+            if case .preformatted = leftBlock.content { blocks[index].content = .preformatted(text) }
+            else { blocks[index].content = .paragraph(text) }
+            blocks.remove(at: index + 1)
         }
     }
 
@@ -3654,9 +3709,9 @@ enum LayoutReconstructor {
     /// run opening the next, which must end at a space or closing punctuation. Every
     /// hyphen-separated segment is capitals and digits (`NY`, `280350`, `130H`) or digits with a
     /// short lowercase suffix (`7e`). One segment must mix digits and letters, or the line must end
-    /// in a segment of capitals before a digit. Prose compounds keep the prose rule (`non-` +
-    /// `Muslims`, `mid-` + `1990s`), as do citation ranges running into the next citation (`601-` +
-    /// `CE 1318`) and hyphenated words before a folio (`pres-` + `62`).
+    /// in a segment of capitals before a digit. Prose compounds, number ranges, citation ranges
+    /// running into the next citation (`601-` + `CE 1318`) and hyphenated words before a folio
+    /// (`pres-` + `62`) are no codes; `compoundOperation` decides them (#131).
     static func codeContinues(_ left: String, _ right: String) -> Bool {
         guard left.hasSuffix("-"), let next = right.first, next.isASCII, next.isNumber || next.isUppercase else { return false }
         let isCodeCharacter: (Character) -> Bool = { $0.isASCII && ($0.isLetter || $0.isNumber || $0 == "-") }
@@ -3683,9 +3738,51 @@ enum LayoutReconstructor {
         return mixed || capitals
     }
 
+    /// A line-end hyphen before a capital or a digit, outside addresses and alphanumeric codes
+    /// (#131). Nil leaves the join to the rules after it.
+    ///
+    /// - A word before a capital is a compound whose second half is a name or an acronym (`non-` +
+    ///   `Muslims`, `Israeli-` + `Palestinian`, `Single-` + `Pilot`, `pre-` + `APA`): the hyphen
+    ///   stays with no space. When the book prints the halves as one word and never the compound,
+    ///   the hyphen goes (`CENT-` + `COM` where the notes print `CENTCOM`, `Harper-` + `Collins`).
+    /// - A word of two or more letters before a digit keeps its hyphen only where the book sets
+    ///   that word before a number inside a line (`mid-` + `1990s` beside `mid-1980s`, `pre-` +
+    ///   `9/11`). Other words keep the space: a hyphen set for a dash (`Airplanes-` + `14 CFR`) or
+    ///   a word broken before a folio (`pres-` + `62`).
+    /// - A number before a number continues a number code or range (`CTC 96-` + `30015`, `SD
+    ///   108-` + `00`, Warren's `pp. 105-` + `106`): both runs are digits and hyphens, standing
+    ///   apart from other words, and one number has at least two digits (not the Blue Book's OCR
+    ///   column labels `6-` + `7.`). A number before a capital is a citation running into the next
+    ///   (`601-` + `CE 1318`) and keeps the space.
+    private static func compoundOperation(_ left: String, _ right: String, vocabulary: Set<String>) -> JoinOperation? {
+        guard left.hasSuffix("-"), let next = right.first, next.isUppercase || next.isNumber,
+              let before = left.dropLast().last else { return nil }
+        if before.isASCII, before.isNumber {
+            guard next.isASCII, next.isNumber else { return nil }
+            let isNumberCharacter: (Character) -> Bool = { $0.isASCII && ($0.isNumber || $0 == "-") }
+            let leftRun = left.reversed().prefix(while: isNumberCharacter)
+            if let outside = left.dropLast(leftRun.count).last, !outside.isWhitespace, !"([".contains(outside) { return nil }
+            let rightRun = right.prefix(while: isNumberCharacter)
+            if let after = right.dropFirst(rightRun.count).first, !after.isWhitespace, !".,;:)]”’\"'".contains(after) {
+                return nil
+            }
+            let segments = (String(leftRun.reversed()) + rightRun).split(separator: "-", omittingEmptySubsequences: false)
+            return segments.contains(where: \.isEmpty) || !segments.contains(where: { $0.count >= 2 }) ? nil : .concatenate
+        }
+        guard before.isLetter else { return nil }
+        let prefix = String(left.dropLast().reversed().prefix(while: \.isLetter).reversed()).lowercased()
+        if next.isNumber {
+            return prefix.count >= 2 && vocabulary.contains(numberPrefixKey + prefix) ? .concatenate : nil
+        }
+        let suffix = right.prefix(while: \.isLetter).lowercased()
+        if vocabulary.contains(prefix + suffix), !vocabulary.contains(prefix + "-" + suffix) { return .removeHyphen }
+        return .concatenate
+    }
+
     private static let addressDelimiters = Set("/.?#&=:")
     private static let addressPrefixKey = "\u{1}address:"
     private static let addressSegmentKey = "\u{1}segment:"
+    private static let numberPrefixKey = "\u{1}number-prefix:"
 
     /// An address without its scheme or `www.`, lowercased: the form address evidence compares.
     static func normalizedAddress(_ address: Substring) -> String {
@@ -3752,6 +3849,7 @@ enum LayoutReconstructor {
            let next = right.first, next.isLetter || next.isNumber { return .concatenate }
         if addressContinues(left, right) { return .concatenate }
         if codeContinues(left, right) { return .concatenate }
+        if let operation = compoundOperation(left, right, vocabulary: vocabulary) { return operation }
         guard left.hasSuffix("-"), right.first?.isLowercase == true else { return .space }
         if let address = trailingAddress(left) {
             return addressHyphenOperation(address, right, vocabulary: vocabulary, page: page, warnings: &warnings)

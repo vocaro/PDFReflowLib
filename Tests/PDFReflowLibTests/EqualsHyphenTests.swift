@@ -84,7 +84,8 @@ private func linked(_ page: PageContent, images: [CGRect], chapter: Int, marker:
     #expect(text[172]?.contains("could supply such excep-tional commodities.") == true)
     #expect(warnings.contains { $0.code == .uncertainHyphen && $0.page == 172 })
     // Before a digit the restored hyphen follows the prose rule, as a printed `-` does (`a mid-` +
-    // `1990s peak` in AddressJoinTests).
+    // `1990s peak` in AddressJoinTests): these three pages never set `mid-` before a number inside
+    // a line, so the space stays; the whole book does, and joins `mid-1990s` (#131).
     #expect(text[242]?.contains("had taken lessons in the mid- 1990s), Atta started") == true)
 }
 
@@ -183,28 +184,30 @@ private func join(_ left: String, _ right: String) -> String {
         #expect(LayoutReconstructor.codeContinues(left, right), "\(left) | \(right)")
         #expect(join(left, right) == left + right, "\(left) | \(right)")
     }
-    // Controls: prose compounds, citation ranges and hyphenated words before a folio or note number
-    // keep today's space; so do pure numbers, lone letters and continuations that are no code run.
-    let others: [(String, String)] = [
-        ("refused to meet with non-", "Muslims.The United"),
-        ("the Israeli-", "Palestinian peace process"),
-        ("a Small Group meeting in mid-", "November,the"),
-        ("taken lessons in the mid-", "1990s), Atta"),
-        ("The pre-", "9/11 FBI"),
-        ("(CENT-", "COM), 1997–2000"),
-        ("14 H 601-", "CE 1318; see also"),
-        ("12 H 183-", "WFAA-TV reel PKF-10"),
-        ("varies inversely as the pres-", "62"),
-        ("on the results of the investi-", "22S. 50 U.S.C."),
-        ("Suspects,” CTC 96-", "30015,July 5,1996;"),
-        ("40-", "I"),
-        ("100-", "Location"),
-        ("in the less-than-", "5-second group."),
-        ("a dash -", "5 more"),
+    // Controls: prose compounds, citation ranges, hyphenated words before a folio or note number,
+    // pure numbers, lone letters and continuations that are no code run are not codes. Citation
+    // ranges and words before a folio keep today's space; compounds before a capital and number
+    // codes follow their own rules (#131, `LineEndCompoundTests`).
+    let others: [(left: String, right: String, spaced: Bool)] = [
+        ("refused to meet with non-", "Muslims.The United", false),
+        ("the Israeli-", "Palestinian peace process", false),
+        ("a Small Group meeting in mid-", "November,the", false),
+        ("taken lessons in the mid-", "1990s), Atta", true),
+        ("The pre-", "9/11 FBI", true),
+        ("(CENT-", "COM), 1997–2000", false),
+        ("14 H 601-", "CE 1318; see also", true),
+        ("12 H 183-", "WFAA-TV reel PKF-10", true),
+        ("varies inversely as the pres-", "62", true),
+        ("on the results of the investi-", "22S. 50 U.S.C.", true),
+        ("Suspects,” CTC 96-", "30015,July 5,1996;", false),
+        ("40-", "I", true),
+        ("100-", "Location", true),
+        ("in the less-than-", "5-second group.", true),
+        ("a dash -", "5 more", true),
     ]
-    for (left, right) in others {
+    for (left, right, spaced) in others {
         #expect(!LayoutReconstructor.codeContinues(left, right), "\(left) | \(right)")
-        #expect(join(left, right) == left + " " + right, "\(left) | \(right)")
+        #expect(join(left, right) == left + (spaced ? " " : "") + right, "\(left) | \(right)")
     }
     // Addresses keep their own rules (#79): a hyphen before a digit continues with no space.
     #expect(join("http://english.daralhayat.com/Spec/02-", "2004/Article-20040213-ac4") ==

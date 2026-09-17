@@ -1,0 +1,37 @@
+--- a/Sources/PDFReflowLib/LayoutReconstructor.swift
++++ b/Sources/PDFReflowLib/LayoutReconstructor.swift
+@@ -3243,6 +3243,7 @@
+                 continue
+             }
+             let text = join(left, right, vocabulary: vocabulary, page: page, warnings: &warnings)
++            surveyLog("block\t\(page)\t\(text.text.count - left.text.count - right.text.count)\t\(left.text.suffix(40))\t\(right.text.prefix(40))")
+             if case .preformatted = leftBlock.content { blocks[index].content = .preformatted(text) }
+             else { blocks[index].content = .paragraph(text) }
+             blocks.remove(at: index + 1)
+@@ -3768,6 +3769,14 @@
+         let suffix = right.prefix(while: \.isLetter).lowercased()
+         if vocabulary.contains(prefix + suffix), !vocabulary.contains(prefix + "-" + suffix) { return .removeHyphen }
+         return .concatenate
++    }
++
++    static func surveyLog(_ message: String) {
++        guard let path = ProcessInfo.processInfo.environment["PDFREFLOW_JOIN_LOG"],
++              let handle = FileHandle(forWritingAtPath: path) ?? (FileManager.default.createFile(atPath: path, contents: nil) ? FileHandle(forWritingAtPath: path) : nil) else { return }
++        handle.seekToEndOfFile()
++        handle.write(Data((message.replacingOccurrences(of: "\n", with: "\\n") + "\n").utf8))
++        try? handle.close()
+     }
+ 
+     private static let addressDelimiters = Set("/.?#&=:")
+@@ -3840,7 +3849,10 @@
+            let next = right.first, next.isLetter || next.isNumber { return .concatenate }
+         if addressContinues(left, right) { return .concatenate }
+         if codeContinues(left, right) { return .concatenate }
+-        if let operation = compoundOperation(left, right, vocabulary: vocabulary) { return operation }
++        if let operation = compoundOperation(left, right, vocabulary: vocabulary) {
++            surveyLog("compound\t\(page)\t\(operation)\t\(left.suffix(40))\t\(right.prefix(40))")
++            return operation
++        }
+         guard left.hasSuffix("-"), right.first?.isLowercase == true else { return .space }
+         if let address = trailingAddress(left) {
+             return addressHyphenOperation(address, right, vocabulary: vocabulary, page: page, warnings: &warnings)

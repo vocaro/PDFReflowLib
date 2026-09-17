@@ -112,12 +112,12 @@ are, in the page markup). Evidence and negative controls on real output are in
 
 ## Current content coverage
 
-[corpus/regressions.json](../corpus/regressions.json) has 1633 targeted checks on 377 reviewed pages
+[corpus/regressions.json](../corpus/regressions.json) has 1667 targeted checks on 390 reviewed pages
 across 15 documents: FAA, algebra, 9/11, The Fed Explained, Dietary Guidelines, Our Flag, the CDC
 comic, Blue Book, and the seven #30 cases (USGS copper tables, Loper Bright footnotes, the Census
 unmapped-encoding report, the USCIS Arabic guide, IRS Publication 596 in Simplified Chinese, and
-the NBS and Replay Clocks academic papers). They comprise 506 ordered-text, 124 text, 214 paragraph,
-133 absent-text, 170 heading, 32 absent-heading, 56 list-item, 1 preformatted-lines, 17 script,
+the NBS and Replay Clocks academic papers). They comprise 506 ordered-text, 137 text, 219 paragraph,
+148 absent-text, 170 heading, 32 absent-heading, 57 list-item, 1 preformatted-lines, 17 script,
 11 footnote, 34 note-link, 43 paragraph-continuation, 1 list-item-continuation, 7 paragraph-separation,
 39 distinct-paragraph, 128 image-presence, 63 warning, 22 absent-warning, 17 source-region,
 3 glyph-structure, 3 image-appearance and 9 table-cell checks, counted as `tools/check_corpus_content.py` counts them. All source-page
@@ -505,7 +505,7 @@ the page's structure validates, each line also records the tag the pipeline appl
 since #89/#90); older fixtures and untagged lines have none, and `SourceLayoutFixture` restores it.
 Source review, baseline failures, cross-document safeguards and full-run evidence are retained
 in [the three-fix measurement](../measurements/three-fidelity-fixes/record.md). The suite contains
-679 Swift tests with no known-issue wrappers, and 219 Python tests.
+685 Swift tests with no known-issue wrappers, and 219 Python tests.
 The comparison tests include a real-Poppler image URL check through the safe HTTP handler
 (simple and positioned modes, paths with spaces); absent Poppler is an explicit skip.
 

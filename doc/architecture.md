@@ -389,8 +389,25 @@ digits and hyphens ending the line (not after an address character) and the run 
 next, which ends at a space or closing punctuation. Every hyphen-separated segment is capitals
 and digits or digits with a one- or two-letter lowercase suffix (`7e`), and one segment mixes
 digits and letters, or the line ends in a segment of two or more capitals before a digit.
-Prose compounds (`non-` + `Muslims`, `mid-` + `1990s`) and citation ranges running into the
-next citation (`601-` + `CE 1318`) keep the space.
+Outside addresses and codes, a line-end hyphen after a word before a capital keeps the hyphen with
+no space, as a compound whose second half is a name or acronym (#131: `non-` + `Muslims`,
+`Single-` + `Pilot`, `pre-` + `APA`), unless the book prints the halves as one word and never the
+compound, when it goes (`CENT-` + `COM` beside `CENTCOM`). A word of two or more letters before a
+digit keeps its hyphen only where the book sets that word before a number inside a line
+(`mid-` + `1990s` beside `mid-1980s`); vocabulary collection records such words under a key no
+word can hold, since word splitting leaves `mid-` for every line ending `mid-` too. Otherwise the
+space stays (`Airplanes-` + `14 CFR`, a hyphen set for a dash; `pres-` + `62`, a word before a
+folio). A number before a number joins with its hyphen when both runs are digits and hyphens
+standing apart from other words and one number has two digits (`CTC 96-` + `30015`, `pp. 105-` +
+`106`); a number before a capital is a citation running into the next (`601-` + `CE 1318`) and
+keeps the space. After a page's blocks are built (and its column continuations joined), a
+paragraph or list item ending in a hyphen after two letters joins the next block when that block
+is a paragraph opening lowercase and opening no note, neither with a validated role other than
+a paragraph: the halves of one word cannot stand in two paragraphs, whatever split them (9/11
+page 220's `brief-` + `ing` after a detached note marker, page 438's `intel-` split from its
+row). The hyphen policy above decides that join, and the blocks stay apart where it has no
+evidence and would warn, since reading order can set a broken fragment beside the wrong
+neighbour (NOAA's `acidifica-` before `oceans, animal…`).
 A book may print its line-end hyphen as another glyph. The 9/11 report's chapters 5–9 set every
 word break with the embedded Bembo's `equal` glyph (width 667, a two-bar outline, ToUnicode
 U+003D), so it extracts as `=` (#126). Extraction counts, over the book's native pages, lines

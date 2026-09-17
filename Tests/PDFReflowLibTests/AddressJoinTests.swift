@@ -73,9 +73,11 @@ func lineBrokenInsideAnAddressJoinsWithoutASpace(left: String, right: String, jo
         "market-committee.htm.", vocabulary: [], page: 1, warnings: &warnings)
         == "https://www.federalreserve.gov/aboutthefed/structure-federal-open-market-committee.htm.")
     #expect(warnings.map(\.code) == [.uncertainHyphen])
-    // Prose hyphens are untouched: a capital or digit after a prose hyphen keeps its space.
+    // Prose hyphens outside addresses follow the prose rules (#131): a compound before a capital
+    // keeps its hyphen with no space, and a word before a digit does so only where the book uses it
+    // as a prefix inside a line, which an empty vocabulary never does.
     warnings = []
-    #expect(LayoutReconstructor.join("the pre-", "Columbian era", vocabulary: [], page: 1, warnings: &warnings) == "the pre- Columbian era")
+    #expect(LayoutReconstructor.join("the pre-", "Columbian era", vocabulary: [], page: 1, warnings: &warnings) == "the pre-Columbian era")
     #expect(LayoutReconstructor.join("a mid-", "1990s peak", vocabulary: [], page: 1, warnings: &warnings) == "a mid- 1990s peak")
     #expect(LayoutReconstructor.join("state-of-the-", "art", vocabulary: ["stateoftheart"], page: 1, warnings: &warnings) == "state-of-the-art")
 }

@@ -224,6 +224,7 @@ enum EPUBWriter {
         div.footnote { font-size: 0.85em; }
         table { border-collapse: collapse; margin: 0 0 1em; }
         th, td { border: 1px solid #999; padding: 0.3em; text-align: left; vertical-align: top; }
+        caption { text-align: left; } caption p { margin: 0 0 0.4em; }
         """, publication.appendingPathComponent("style.css"))
         // Caller-supplied values make the archive byte-reproducible; defaults vary per run.
         let identifier = xml(packageIdentifier ?? "urn:uuid:" + UUID().uuidString)

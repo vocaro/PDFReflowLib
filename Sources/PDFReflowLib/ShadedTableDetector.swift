@@ -23,7 +23,40 @@ enum ShadedTableDetector {
         var bounds: CGRect
         var columns: Int
         var rows: [Row]
+        /// The table's caption inside its box, directly above its first row (#113): title lines
+        /// set larger than the cells, then the description beneath them in the cells' size.
+        /// Both are empty when the lines above the table do not read that way.
+        var title: [TextLine] = []
+        var description: [TextLine] = []
         var lines: [TextLine] { rows.flatMap { $0.cells.flatMap(\.lines) } }
+        /// The caption and the cells: every line the table block reads.
+        var ownedLines: [TextLine] { title + description + lines }
+    }
+
+    /// The caption rows directly above a table's first row, scanned upward: description lines in
+    /// the cells' size, then title lines at least 15% larger. Each row holds one line, every line
+    /// shares the title's left edge, and consecutive lines are no further apart than two body
+    /// sizes. The scan stops at the first line that fits none of this (a box's own prose above
+    /// the table), and yields no caption without a title line or with more description than a
+    /// short introduction.
+    static func caption(above lines: [TextLine], bodySize: CGFloat) -> (title: [TextLine], description: [TextLine]) {
+        var title: [TextLine] = [], description: [TextLine] = []
+        for line in lines.sorted(by: { $0.rect.midY < $1.rect.midY }) {
+            // A line sharing its height with another is a row of several cells or columns.
+            guard !lines.contains(where: { $0 != line && $0.rect.minY < line.rect.midY && $0.rect.maxY > line.rect.midY }) else { break }
+            let previous = (title.first ?? description.first)
+            if let previous, line.rect.minY - previous.rect.maxY > bodySize * 2 { break }
+            if line.fontSize >= bodySize * 1.15 {
+                if let first = title.first ?? description.first, abs(first.rect.minX - line.rect.minX) > bodySize { break }
+                if let first = title.first, abs(first.fontSize - line.fontSize) > 0.5 { break }
+                title.insert(line, at: 0)
+            } else if title.isEmpty, abs(line.fontSize - bodySize) <= bodySize * 0.1,
+                      description.first.map({ abs($0.rect.minX - line.rect.minX) <= bodySize }) ?? true {
+                description.insert(line, at: 0)
+            } else { break }
+        }
+        guard !title.isEmpty, title.count <= 3, description.count <= 6 else { return ([], []) }
+        return (title, description)
     }
 
     static func tables(in page: PageContent, lines: [TextLine]) -> [Table] {
@@ -176,7 +209,9 @@ enum ShadedTableDetector {
             }
             let bodyRows = result.filter { !$0.header && $0.cells.count > 1 }
             guard bodyRows.count >= 2, bodyRows.contains(where: { $0.cells.filter { !$0.lines.isEmpty }.count >= 2 }) else { return nil }
-            return Table(bounds: union(Array(rowRects[start...last])), columns: columns.count, rows: result)
+            let caption = caption(above: rowLines[..<start].flatMap { $0 }, bodySize: bodySize)
+            return Table(bounds: union(Array(rowRects[start...last])), columns: columns.count, rows: result,
+                         title: caption.title, description: caption.description)
         }
     }
 }

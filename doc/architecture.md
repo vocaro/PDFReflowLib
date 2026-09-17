@@ -56,7 +56,9 @@ native emphasis and scripts; inserted newlines/indentation are unstyled, and the
 escapes raw text before adding inline elements inside `<pre>`. Equations and most tables preserved as images are image references, not reconstructed
 math trees or semantic tables. A text table whose shaded rows and rules the layout can read is a
 table block of rows and cells (header rows, column spans, styled cell text with source-page
-boundaries) that the EPUB writer serializes as `<table>` (#54). Output independence does not
+boundaries) that the EPUB writer serializes as `<table>` (#54). A table's own title and description
+are caption paragraphs of that block, serialized as `<p>` elements of the table's `<caption>`, not
+headings or prose before it (#113). Output independence does not
 imply richer PDF understanding.
 
 ## Reconstruction boundary
@@ -402,6 +404,14 @@ empty columns beside them. One pair of columns reads as one when PDFKit merged a
 into its neighbour, as the Fed's "Regulation (by letter and name)" header names it. Cell lines
 join like paragraph lines. Text outside the rows, a body line crossing a column, a section row
 in another size, fewer than two columns or two body rows leave the block to ordinary reflow.
+The lines inside the block above the table's first row are its caption when, scanned upward from
+the table, they are body-sized description lines (at most six) under one to three title lines at
+least 15% larger, one line per row on one left edge and no more than two body sizes apart; the
+scan stops at anything else, such as a box's own prose above the table, and without a title line
+there is no caption (#113). Tagged `Table`/`TR`/`TH`/`TD` structure is not consumed: the tag
+survey found every table the geometry reads cell-for-cell identical to its tags, and the remaining
+tagged tables either lie inside preserved figures or share merged lines between cells (see the
+[table caption and tag evidence](../measurements/table-captions-and-tags/record.md)).
 Tinted boxes are read as units: their elements are ordered among themselves, the box follows
 the lines beside it and precedes the lines below it, as its image did, and paragraphs never
 join across its edge. Small text inside reflowed boxes and tables does not lower the heading

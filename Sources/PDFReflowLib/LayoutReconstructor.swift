@@ -1699,7 +1699,7 @@ enum LayoutReconstructor {
             !stamps.contains(line) && !images.contains { $0.0.intersects(line.rect) }
         }
         let tables = ShadedTableDetector.tables(in: page, lines: lines)
-        let tableLines = tables.flatMap(\.lines)
+        let tableLines = tables.flatMap(\.ownedLines)
         // A marker PDFKit split from its item's text rejoins it before anything reads the lines.
         // So do the pieces of a prose row PDFKit split at an inline radical (#95).
         let (free, mathMinusRows) = joinedRows(joiningMarkerPieces(lines.filter { line in !tableLines.contains(line) }),
@@ -1740,7 +1740,7 @@ enum LayoutReconstructor {
         }
         let spatial = boxed(free.map { Element(rect: $0.readingRect ?? $0.rect, line: $0) }
             + images.map { Element(rect: $0.0, image: $0.1) }
-            + tables.enumerated().map { Element(rect: $0.element.bounds, table: $0.offset) },
+            + tables.enumerated().map { Element(rect: $0.element.ownedLines.map(\.rect).reduce($0.element.bounds) { $0.union($1) }, table: $0.offset) },
             tints: page.tints, bodySize: body)
         // A line runs on into the line beneath it: set directly below at ordinary leading on the
         // same left edge in the same type, neither a heading, a list item nor a leader entry, and
@@ -2499,7 +2499,11 @@ enum LayoutReconstructor {
                 }, span: cell.span)
             }, header: row.header)
         }
-        return ReflowBlock.Table(columns: table.columns, rows: rows)
+        // The title and the description are separate caption paragraphs, joined like prose.
+        let caption = [table.title, table.description].filter { !$0.isEmpty }.map { lines in
+            lines.dropFirst().reduce(lines[0].content) { join($0, $1.content, vocabulary: vocabulary, page: page, warnings: &warnings) }
+        }
+        return ReflowBlock.Table(columns: table.columns, rows: rows, caption: caption)
     }
 
     static func imageBlock(assetID: String, page: Int, reference: Bool = false) -> ReflowBlock {

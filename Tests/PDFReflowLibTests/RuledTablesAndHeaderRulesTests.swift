@@ -145,11 +145,11 @@ private func fed46(mergedHeader: Bool, paints edit: ([GraphicsReader.Paint]) -> 
     #expect(table.rows[1].cells[1].text.text == "Interest paid on funds that banks hold in their reserve balance accounts at their Federal Reserve Bank.")
     #expect(table.rows[2].cells[2].text.text.hasSuffix("acts as a supplementary tool for moving the federal funds rate within the target range."))
     #expect(table.rows[4].cells[2].text.text == "Because banks are unlikely to borrow at a rate that’s higher than the discount rate, the discount window helps put a ceiling on the federal funds rate.")
-    // The title band reflows as text before the table; the body prose and the sidebar keep reading.
+    // The title band is the table's caption (#113); the body prose and the sidebar keep reading.
     let texts = blocks.map(\.text)
-    let title = try #require(texts.firstIndex { $0.hasPrefix("Table 3.1 Traditional tools in an ample-reserves regime") })
-    let tableIndex = try #require(blocks.firstIndex { if case .table = $0.content { true } else { false } })
-    #expect(title < tableIndex)
+    #expect(table.caption.map(\.text) == ["Table 3.1 Traditional tools in an ample-reserves regime",
+        "In recent years, the Federal Reserve has successfully implemented monetary policy with a varying degree of ample reserves in the banking system."])
+    #expect(!blocks.contains { if case .table = $0.content { false } else { $0.text.contains("Traditional tools in an ample-reserves regime") } })
     #expect(texts.contains { $0.contains("risks to the economic outlook were implemented") })
     #expect(texts.contains { $0.hasPrefix("Learn more about how the Fed uses") })
 }

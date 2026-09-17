@@ -1,0 +1,1369 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        298.88,
+        748.51210000000003,
+        223.11919999999998,
+        9.3120000000000118
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "Fostering Payment and Settlement System Safety and Efficiency "
+        }
+      ],
+      "text" : "Fostering Payment and Settlement System Safety and Efficiency "
+    },
+    {
+      "rect" : [
+        541.39919999999995,
+        748.51210000000003,
+        9.6000000000000227,
+        9.3120000000000118
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "93"
+        }
+      ],
+      "text" : "93"
+    },
+    {
+      "rect" : [
+        91.200000000000003,
+        689.56810000000007,
+        178.58159999999998,
+        13.703999999999951
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 12,
+          "text" : "Automated Clearinghouse Service"
+        }
+      ],
+      "text" : "Automated Clearinghouse Service"
+    },
+    {
+      "rect" : [
+        91.200000000000003,
+        666.86810000000003,
+        415.19499999999982,
+        11.639999999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "The ACH is a nationwide electronic payment system, developed jointly by the private sector and"
+        }
+      ],
+      "text" : "The ACH is a nationwide electronic payment system, developed jointly by the private sector and"
+    },
+    {
+      "rect" : [
+        91.200000000000003,
+        650.86810000000003,
+        418.94199999999984,
+        11.639999999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "the Federal Reserve in the early 1970s as a more efficient alternative to checks. At that time, it"
+        }
+      ],
+      "text" : "the Federal Reserve in the early 1970s as a more efficient alternative to checks. At that time, it"
+    },
+    {
+      "rect" : [
+        91.200000000000003,
+        634.86810000000003,
+        415.54399999999987,
+        11.639999999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "seemed that the increasing volume of paper checks used by businesses and consumers would"
+        }
+      ],
+      "text" : "seemed that the increasing volume of paper checks used by businesses and consumers would"
+    },
+    {
+      "rect" : [
+        91.200000000000003,
+        618.86810000000003,
+        422.94199999999961,
+        11.639999999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "eventually exceed the ability of the existing equipment to process and sort the checks efficiently."
+        }
+      ],
+      "text" : "eventually exceed the ability of the existing equipment to process and sort the checks efficiently."
+    },
+    {
+      "rect" : [
+        91.200000000000003,
+        589.40809999999999,
+        76.659000000000006,
+        15.312000000000012
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11,
+          "text" : "How ACH Works"
+        }
+      ],
+      "text" : "How ACH Works"
+    },
+    {
+      "rect" : [
+        91.200000000000003,
+        574.86810000000003,
+        429.79599999999988,
+        11.639999999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "The ACH has grown into a major nationwide electronic payment mechanism that processes files of"
+        }
+      ],
+      "text" : "The ACH has grown into a major nationwide electronic payment mechanism that processes files of"
+    },
+    {
+      "rect" : [
+        91.200000000000003,
+        558.86810000000003,
+        429.84599999999983,
+        11.639999999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "electronic funds transfers (payments). In general, ACH transactions are either credit or debit trans-"
+        }
+      ],
+      "text" : "electronic funds transfers (payments). In general, ACH transactions are either credit or debit trans-"
+    },
+    {
+      "rect" : [
+        91.200000000000003,
+        542.86810000000003,
+        412.44599999999991,
+        11.639999999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "fers ("
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "figure 6.5"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "). In an ACH credit transfer, an individual, corporation, or other entity (originator)"
+        }
+      ],
+      "text" : "fers (figure 6.5). In an ACH credit transfer, an individual, corporation, or other entity (originator)"
+    },
+    {
+      "rect" : [
+        91.200000000000003,
+        526.86810000000003,
+        420.0929999999999,
+        11.639999999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "“pushes” or sends funds from its account to that of the receiver. In a debit transfer, the receiver"
+        }
+      ],
+      "text" : "“pushes” or sends funds from its account to that of the receiver. In a debit transfer, the receiver"
+    },
+    {
+      "rect" : [
+        91.200000000000003,
+        510.86810000000003,
+        294.19499999999994,
+        11.639999999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "authorizes an originator to “pull” funds from the receiver’s account."
+        }
+      ],
+      "text" : "authorizes an originator to “pull” funds from the receiver’s account."
+    },
+    {
+      "rect" : [
+        91.200000000000003,
+        478.86810000000003,
+        426.14399999999995,
+        11.639999999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "The Reserve Banks and the Electronic Payments Network, a private organization, are currently the"
+        }
+      ],
+      "text" : "The Reserve Banks and the Electronic Payments Network, a private organization, are currently the"
+    },
+    {
+      "rect" : [
+        91.200000000000003,
+        462.86810000000003,
+        410.19299999999993,
+        11.639999999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "two national ACH operators. As an ACH operator, the Reserve Banks receive files of payments"
+        }
+      ],
+      "text" : "two national ACH operators. As an ACH operator, the Reserve Banks receive files of payments"
+    },
+    {
+      "rect" : [
+        91.200000000000003,
+        446.86810000000003,
+        425.1939999999999,
+        11.639999999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "from originating institutions, edit and sort the payments, deliver the payments to receiving institu-"
+        }
+      ],
+      "text" : "from originating institutions, edit and sort the payments, deliver the payments to receiving institu-"
+    },
+    {
+      "rect" : [
+        91.200000000000003,
+        430.86810000000003,
+        425.64299999999963,
+        11.639999999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "tions, and settle the payments by crediting and debiting the institutions’ accounts. Unlike Fedwire"
+        }
+      ],
+      "text" : "tions, and settle the payments by crediting and debiting the institutions’ accounts. Unlike Fedwire"
+    },
+    {
+      "rect" : [
+        91.200000000000003,
+        414.86810000000003,
+        420.14599999999967,
+        11.639999999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "transfers, which are processed and settled immediately, ACH transactions are value-dated—that"
+        }
+      ],
+      "text" : "transfers, which are processed and settled immediately, ACH transactions are value-dated—that"
+    },
+    {
+      "rect" : [
+        91.200000000000003,
+        398.86810000000003,
+        423.69199999999984,
+        11.639999999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "is, the originator of the ACH transaction includes the settlement date in the payment instructions"
+        }
+      ],
+      "text" : "is, the originator of the ACH transaction includes the settlement date in the payment instructions"
+    },
+    {
+      "rect" : [
+        91.200000000000003,
+        382.86810000000003,
+        156.60000000000002,
+        11.639999999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "when they originate the transaction."
+        }
+      ],
+      "text" : "when they originate the transaction."
+    },
+    {
+      "rect" : [
+        91.200000000000003,
+        350.86810000000003,
+        401.79299999999984,
+        11.639999999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "In the past, the United States had several regional ACH systems, but over time, the industry"
+        }
+      ],
+      "text" : "In the past, the United States had several regional ACH systems, but over time, the industry"
+    },
+    {
+      "rect" : [
+        91.200000000000003,
+        334.86810000000003,
+        422.79199999999986,
+        11.639999999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "consolidated to the current structure of two national ACH systems. In 2019, the Federal Reserve"
+        }
+      ],
+      "text" : "consolidated to the current structure of two national ACH systems. In 2019, the Federal Reserve"
+    },
+    {
+      "rect" : [
+        91.200000000000003,
+        318.86810000000003,
+        421.39500000000004,
+        11.639999999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "processed more than 15.5 billion commercial ACH payments, worth approximately $28.1 trillion,"
+        }
+      ],
+      "text" : "processed more than 15.5 billion commercial ACH payments, worth approximately $28.1 trillion,"
+    },
+    {
+      "rect" : [
+        91.200000000000003,
+        302.86810000000003,
+        380.99599999999998,
+        11.639999999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "and more than 1.7 billion government ACH payments, worth approximately $5.8 trillion."
+        }
+      ],
+      "text" : "and more than 1.7 billion government ACH payments, worth approximately $5.8 trillion."
+    },
+    {
+      "rect" : [
+        91.200000000000003,
+        270.86810000000003,
+        432.04799999999972,
+        11.639999999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "The ACH was originally designed to help automate recurring payments, such as government benefit"
+        }
+      ],
+      "text" : "The ACH was originally designed to help automate recurring payments, such as government benefit"
+    },
+    {
+      "rect" : [
+        91.200000000000003,
+        254.86810000000003,
+        412.09499999999963,
+        11.639999999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "payments, payroll payments, and consumer mortgage and utility payments. Much of the recent"
+        }
+      ],
+      "text" : "payments, payroll payments, and consumer mortgage and utility payments. Much of the recent"
+    },
+    {
+      "rect" : [
+        103.7,
+        203.74010000000001,
+        266.19599999999997,
+        11.840000000000003
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Figure 6.5. Examples of automated clearinghouse transfers"
+        }
+      ],
+      "text" : "Figure 6.5. Examples of automated clearinghouse transfers"
+    },
+    {
+      "rect" : [
+        103.7,
+        186.75220000000002,
+        403.2727999999999,
+        9.3120000000000118
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "Automated clearinghouse (ACH) transfers can be categorized as either “credit transfers” or “debit transfers” based"
+        }
+      ],
+      "text" : "Automated clearinghouse (ACH) transfers can be categorized as either “credit transfers” or “debit transfers” based"
+    },
+    {
+      "rect" : [
+        103.7,
+        176.75220000000002,
+        218.07599999999996,
+        9.3120000000000118
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "on the type of instruction sent by the originator of the transfer."
+        }
+      ],
+      "text" : "on the type of instruction sent by the originator of the transfer."
+    },
+    {
+      "rect" : [
+        107.7,
+        155.26430000000002,
+        38.519999999999996,
+        9.0480000000000018
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "Credit transfer "
+        }
+      ],
+      "text" : "Credit transfer "
+    },
+    {
+      "rect" : [
+        309.30000000000001,
+        155.26430000000002,
+        36.47199999999998,
+        9.0480000000000018
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "Debit transfer"
+        }
+      ],
+      "text" : "Debit transfer"
+    },
+    {
+      "rect" : [
+        107.69999999999999,
+        139.77630000000002,
+        55.73599999999999,
+        9.0159999999999911
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "Payroll direct deposits"
+        }
+      ],
+      "text" : "Payroll direct deposits"
+    },
+    {
+      "rect" : [
+        107.69999999999999,
+        126.17630000000003,
+        157.64719999999994,
+        9.0159999999999911
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "Government benefit payments, such as Social Security benefits"
+        }
+      ],
+      "text" : "Government benefit payments, such as Social Security benefits"
+    },
+    {
+      "rect" : [
+        107.69999999999999,
+        112.57630000000003,
+        119.87199999999996,
+        9.0160000000000053
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "Corporate payments to contractors and vendors"
+        }
+      ],
+      "text" : "Corporate payments to contractors and vendors"
+    },
+    {
+      "rect" : [
+        309.30000000000001,
+        139.77630000000005,
+        180.06159999999994,
+        9.0159999999999911
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "Direct debits of recurring consumer bills, such as mortgages, utility pay-"
+        }
+      ],
+      "text" : "Direct debits of recurring consumer bills, such as mortgages, utility pay-"
+    },
+    {
+      "rect" : [
+        317.30000000000001,
+        129.77630000000005,
+        80.623999999999967,
+        9.0159999999999911
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "ments, and insurance premiums"
+        }
+      ],
+      "text" : "ments, and insurance premiums"
+    },
+    {
+      "rect" : [
+        309.30000000000001,
+        116.17630000000005,
+        115.07839999999999,
+        9.0160000000000053
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "Checks converted by merchants to ACH debits"
+        }
+      ],
+      "text" : "Checks converted by merchants to ACH debits"
+    },
+    {
+      "rect" : [
+        309.30000000000001,
+        102.57630000000006,
+        153.7999999999999,
+        9.0160000000000053
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "One-time payments authorized over the internet or telephone"
+        }
+      ],
+      "text" : "One-time payments authorized over the internet or telephone"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    612,
+    792
+  ],
+  "caseID" : "fed-explained-2021",
+  "graphics" : [
+    [
+      58,
+      742.01210000000003,
+      496,
+      4
+    ],
+    [
+      89.200000000000003,
+      81.952200000000005,
+      436.00000000000006,
+      139.14780000000002
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        298.88,
+        748.51210000000003,
+        223.11919999999998,
+        9.3120000000000118
+      ],
+      "text" : "Fostering Payment and Settlement System Safety and Efficiency"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        541.39919999999995,
+        748.51210000000003,
+        9.6000000000000227,
+        9.3120000000000118
+      ],
+      "text" : "93"
+    },
+    {
+      "fontSize" : 12,
+      "monospaced" : false,
+      "rect" : [
+        91.200000000000003,
+        689.56810000000007,
+        178.58159999999998,
+        13.703999999999951
+      ],
+      "structure" : {
+        "group" : 460,
+        "headingLevel" : 5,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 5931
+      },
+      "text" : "Automated Clearinghouse Service"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        91.200000000000003,
+        666.86810000000003,
+        415.19499999999982,
+        11.639999999999986
+      ],
+      "structure" : {
+        "group" : 461,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 5932
+      },
+      "text" : "The ACH is a nationwide electronic payment system, developed jointly by the private sector and"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        91.200000000000003,
+        650.86810000000003,
+        418.94199999999984,
+        11.639999999999986
+      ],
+      "structure" : {
+        "group" : 461,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 5932
+      },
+      "text" : "the Federal Reserve in the early 1970s as a more efficient alternative to checks. At that time, it"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        91.200000000000003,
+        634.86810000000003,
+        415.54399999999987,
+        11.639999999999986
+      ],
+      "structure" : {
+        "group" : 461,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 5932
+      },
+      "text" : "seemed that the increasing volume of paper checks used by businesses and consumers would"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        91.200000000000003,
+        618.86810000000003,
+        422.94199999999961,
+        11.639999999999986
+      ],
+      "structure" : {
+        "group" : 461,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 5932
+      },
+      "text" : "eventually exceed the ability of the existing equipment to process and sort the checks efficiently."
+    },
+    {
+      "fontSize" : 11,
+      "monospaced" : false,
+      "rect" : [
+        91.200000000000003,
+        589.40809999999999,
+        76.659000000000006,
+        15.312000000000012
+      ],
+      "structure" : {
+        "group" : 462,
+        "headingLevel" : 6,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 5933
+      },
+      "text" : "How ACH Works"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        91.200000000000003,
+        574.86810000000003,
+        429.79599999999988,
+        11.639999999999986
+      ],
+      "text" : "The ACH has grown into a major nationwide electronic payment mechanism that processes files of"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        91.200000000000003,
+        558.86810000000003,
+        429.84599999999983,
+        11.639999999999986
+      ],
+      "text" : "electronic funds transfers (payments). In general, ACH transactions are either credit or debit trans-"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        91.200000000000003,
+        542.86810000000003,
+        412.44599999999991,
+        11.639999999999986
+      ],
+      "text" : "fers (figure 6.5). In an ACH credit transfer, an individual, corporation, or other entity (originator)"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        91.200000000000003,
+        526.86810000000003,
+        420.0929999999999,
+        11.639999999999986
+      ],
+      "text" : "“pushes” or sends funds from its account to that of the receiver. In a debit transfer, the receiver"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        91.200000000000003,
+        510.86810000000003,
+        294.19499999999994,
+        11.639999999999986
+      ],
+      "text" : "authorizes an originator to “pull” funds from the receiver’s account."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        91.200000000000003,
+        478.86810000000003,
+        426.14399999999995,
+        11.639999999999986
+      ],
+      "structure" : {
+        "group" : 464,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 5937
+      },
+      "text" : "The Reserve Banks and the Electronic Payments Network, a private organization, are currently the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        91.200000000000003,
+        462.86810000000003,
+        410.19299999999993,
+        11.639999999999986
+      ],
+      "structure" : {
+        "group" : 464,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 5937
+      },
+      "text" : "two national ACH operators. As an ACH operator, the Reserve Banks receive files of payments"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        91.200000000000003,
+        446.86810000000003,
+        425.1939999999999,
+        11.639999999999986
+      ],
+      "structure" : {
+        "group" : 464,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 5937
+      },
+      "text" : "from originating institutions, edit and sort the payments, deliver the payments to receiving institu-"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        91.200000000000003,
+        430.86810000000003,
+        425.64299999999963,
+        11.639999999999986
+      ],
+      "structure" : {
+        "group" : 464,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 5937
+      },
+      "text" : "tions, and settle the payments by crediting and debiting the institutions’ accounts. Unlike Fedwire"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        91.200000000000003,
+        414.86810000000003,
+        420.14599999999967,
+        11.639999999999986
+      ],
+      "structure" : {
+        "group" : 464,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 5937
+      },
+      "text" : "transfers, which are processed and settled immediately, ACH transactions are value-dated—that"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        91.200000000000003,
+        398.86810000000003,
+        423.69199999999984,
+        11.639999999999986
+      ],
+      "structure" : {
+        "group" : 464,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 5937
+      },
+      "text" : "is, the originator of the ACH transaction includes the settlement date in the payment instructions"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        91.200000000000003,
+        382.86810000000003,
+        156.60000000000002,
+        11.639999999999986
+      ],
+      "structure" : {
+        "group" : 464,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 5937
+      },
+      "text" : "when they originate the transaction."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        91.200000000000003,
+        350.86810000000003,
+        401.79299999999984,
+        11.639999999999986
+      ],
+      "structure" : {
+        "group" : 465,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 5938
+      },
+      "text" : "In the past, the United States had several regional ACH systems, but over time, the industry"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        91.200000000000003,
+        334.86810000000003,
+        422.79199999999986,
+        11.639999999999986
+      ],
+      "structure" : {
+        "group" : 465,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 5938
+      },
+      "text" : "consolidated to the current structure of two national ACH systems. In 2019, the Federal Reserve"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        91.200000000000003,
+        318.86810000000003,
+        421.39500000000004,
+        11.639999999999986
+      ],
+      "structure" : {
+        "group" : 465,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 5938
+      },
+      "text" : "processed more than 15.5 billion commercial ACH payments, worth approximately $28.1 trillion,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        91.200000000000003,
+        302.86810000000003,
+        380.99599999999998,
+        11.639999999999986
+      ],
+      "structure" : {
+        "group" : 465,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 5938
+      },
+      "text" : "and more than 1.7 billion government ACH payments, worth approximately $5.8 trillion."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        91.200000000000003,
+        270.86810000000003,
+        432.04799999999972,
+        11.639999999999986
+      ],
+      "structure" : {
+        "group" : 466,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 5939
+      },
+      "text" : "The ACH was originally designed to help automate recurring payments, such as government benefit"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        91.200000000000003,
+        254.86810000000003,
+        412.09499999999963,
+        11.639999999999986
+      ],
+      "structure" : {
+        "group" : 466,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 5939
+      },
+      "text" : "payments, payroll payments, and consumer mortgage and utility payments. Much of the recent"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        103.7,
+        203.74010000000001,
+        266.19599999999997,
+        11.840000000000003
+      ],
+      "text" : "Figure 6.5. Examples of automated clearinghouse transfers"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        103.7,
+        186.75220000000002,
+        403.2727999999999,
+        9.3120000000000118
+      ],
+      "text" : "Automated clearinghouse (ACH) transfers can be categorized as either “credit transfers” or “debit transfers” based"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        103.7,
+        176.75220000000002,
+        218.07599999999996,
+        9.3120000000000118
+      ],
+      "text" : "on the type of instruction sent by the originator of the transfer."
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        107.7,
+        155.26430000000002,
+        38.519999999999996,
+        9.0480000000000018
+      ],
+      "text" : "Credit transfer"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        309.30000000000001,
+        155.26430000000002,
+        36.47199999999998,
+        9.0480000000000018
+      ],
+      "text" : "Debit transfer"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        107.69999999999999,
+        139.77630000000002,
+        55.73599999999999,
+        9.0159999999999911
+      ],
+      "text" : "Payroll direct deposits"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        107.69999999999999,
+        126.17630000000003,
+        157.64719999999994,
+        9.0159999999999911
+      ],
+      "text" : "Government benefit payments, such as Social Security benefits"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        107.69999999999999,
+        112.57630000000003,
+        119.87199999999996,
+        9.0160000000000053
+      ],
+      "text" : "Corporate payments to contractors and vendors"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        309.30000000000001,
+        139.77630000000005,
+        180.06159999999994,
+        9.0159999999999911
+      ],
+      "text" : "Direct debits of recurring consumer bills, such as mortgages, utility pay-"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        317.30000000000001,
+        129.77630000000005,
+        80.623999999999967,
+        9.0159999999999911
+      ],
+      "text" : "ments, and insurance premiums"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        309.30000000000001,
+        116.17630000000005,
+        115.07839999999999,
+        9.0160000000000053
+      ],
+      "text" : "Checks converted by merchants to ACH debits"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        309.30000000000001,
+        102.57630000000006,
+        153.7999999999999,
+        9.0160000000000053
+      ],
+      "text" : "One-time payments authorized over the internet or telephone"
+    }
+  ],
+  "page" : 97,
+  "paints" : [
+    {
+      "frame" : false,
+      "rect" : [
+        58,
+        742.01210000000003,
+        496,
+        4
+      ]
+    },
+    {
+      "frame" : true,
+      "rect" : [
+        89.700000000000003,
+        198.24000000000001,
+        435.00000000000006,
+        22.860000000000014
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        89.200000000000003,
+        217.10000000000002,
+        436.00000000000006,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        89.700000000000003,
+        198.24010000000001,
+        4,
+        22.359999999999985
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        520.70000000000005,
+        198.24010000000001,
+        4,
+        22.359999999999985
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        89.700000000000003,
+        170.75220000000002,
+        4,
+        31.488
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        520.70000000000005,
+        170.75220000000002,
+        4,
+        31.488
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        89.700000000000003,
+        82.452200000000005,
+        4,
+        92.300000000000011
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        520.70000000000005,
+        82.452200000000005,
+        4,
+        92.300000000000011
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        89.200000000000003,
+        81.952200000000005,
+        436.00000000000006,
+        4
+      ]
+    },
+    {
+      "frame" : true,
+      "rect" : [
+        101.7,
+        151.26400000000001,
+        205.60000000000002,
+        17.488
+      ]
+    },
+    {
+      "frame" : true,
+      "rect" : [
+        303.30000000000001,
+        151.26400000000001,
+        205.60000000000002,
+        17.488
+      ]
+    },
+    {
+      "frame" : true,
+      "rect" : [
+        101.7,
+        96.576000000000008,
+        205.60000000000002,
+        58.688000000000002
+      ]
+    },
+    {
+      "frame" : true,
+      "rect" : [
+        303.30000000000001,
+        96.576000000000008,
+        205.60000000000002,
+        58.688000000000002
+      ]
+    }
+  ],
+  "rightsBasis" : "Federal Reserve Board educational publication, retained as external development material. PDF is not bundled or relicensed under MIT.",
+  "sourceSHA256" : "8db8fd9e1de63ac25a6f9585d78ded12f45ab56f0c14c52c199b36b368f84d60",
+  "sourceTitle" : "The Fed Explained: What the Central Bank Does",
+  "sourceURL" : "https://www.federalreserve.gov/aboutthefed/files/the-fed-explained.pdf"
+}

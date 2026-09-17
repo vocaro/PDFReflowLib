@@ -1,0 +1,73 @@
+.E.E.E.E..E...
+======================================================================
+ERROR: test_caption_paragraphs_must_be_the_tables_own_in_order (test_table_cells.TableCellTests.test_caption_paragraphs_must_be_the_tables_own_in_order)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/table-captions/negpy/tools/test_table_cells.py", line 182, in test_caption_paragraphs_must_be_the_tables_own_in_order
+    errors = table_cells.check_page(table_a_expectation(), grids(table))
+  File "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/table-captions/negpy/tools/table_cells.py", line 156, in check_page
+    validate(expectation)
+    ~~~~~~~~^^^^^^^^^^^^^
+  File "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/table-captions/negpy/tools/table_cells.py", line 80, in validate
+    raise ValueError('Table cells expectation needs columns and rows (optional title)')
+ValueError: Table cells expectation needs columns and rows (optional title)
+
+======================================================================
+ERROR: test_headers_spanning_a_label_and_an_amount_column_match_table_a (test_table_cells.TableCellTests.test_headers_spanning_a_label_and_an_amount_column_match_table_a)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/table-captions/negpy/tools/test_table_cells.py", line 141, in test_headers_spanning_a_label_and_an_amount_column_match_table_a
+    self.assertEqual(table_cells.check_page(table_a_expectation(), grids(TABLE_A)), [])
+                     ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/table-captions/negpy/tools/table_cells.py", line 156, in check_page
+    validate(expectation)
+    ~~~~~~~~^^^^^^^^^^^^^
+  File "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/table-captions/negpy/tools/table_cells.py", line 80, in validate
+    raise ValueError('Table cells expectation needs columns and rows (optional title)')
+ValueError: Table cells expectation needs columns and rows (optional title)
+
+======================================================================
+ERROR: test_invalid_spanning_and_caption_expectations_are_rejected (test_table_cells.TableCellTests.test_invalid_spanning_and_caption_expectations_are_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/table-captions/negpy/tools/test_table_cells.py", line 207, in test_invalid_spanning_and_caption_expectations_are_rejected
+    table_cells.validate(table_a_expectation())
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/table-captions/negpy/tools/table_cells.py", line 80, in validate
+    raise ValueError('Table cells expectation needs columns and rows (optional title)')
+ValueError: Table cells expectation needs columns and rows (optional title)
+
+======================================================================
+ERROR: test_spanning_header_negative_controls (test_table_cells.TableCellTests.test_spanning_header_negative_controls)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/table-captions/negpy/tools/test_table_cells.py", line 170, in test_spanning_header_negative_controls
+    self.assertTrue(table_cells.check_page(table_a_expectation(), grids(table)), name)
+                    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/table-captions/negpy/tools/table_cells.py", line 156, in check_page
+    validate(expectation)
+    ~~~~~~~~^^^^^^^^^^^^^
+  File "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/table-captions/negpy/tools/table_cells.py", line 80, in validate
+    raise ValueError('Table cells expectation needs columns and rows (optional title)')
+ValueError: Table cells expectation needs columns and rows (optional title)
+
+======================================================================
+ERROR: test_caption_paragraphs_are_page_paragraphs_but_not_headings (test_table_cells.TableContractTests.test_caption_paragraphs_are_page_paragraphs_but_not_headings)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/table-captions/negpy/tools/test_table_cells.py", line 252, in test_caption_paragraphs_are_page_paragraphs_but_not_headings
+    result = self.check('<span epub:type="pagebreak" id="page-1"/>' + TABLE_A.replace(f' {XHTML}', ''))
+  File "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/table-captions/negpy/tools/test_table_cells.py", line 230, in check
+    return assess(self.case, self.contract, {'case': self.case, 'runPassed': True, 'conversionExitCode': 0},
+                  {'pageCount': self.case['pages']}, pages, markers)
+  File "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/table-captions/negpy/tools/check_corpus_content.py", line 474, in assess
+    table_cells.validate(expectation)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/table-captions/negpy/tools/table_cells.py", line 80, in validate
+    raise ValueError('Table cells expectation needs columns and rows (optional title)')
+ValueError: Table cells expectation needs columns and rows (optional title)
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.006s
+
+FAILED (errors=5)

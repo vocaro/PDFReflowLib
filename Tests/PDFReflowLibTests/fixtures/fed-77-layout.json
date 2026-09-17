@@ -1353,10 +1353,21 @@
       "rect" : [
         175.20400000000001,
         498.03640000000001,
-        179.56,
+        56.208000000000027,
         9.0480000000000018
       ],
-      "text" : "Depository institutions Bank holding companies (BHCs)"
+      "text" : "Depository institutions"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        274.00400000000002,
+        498.03640000000001,
+        80.759999999999991,
+        9.0480000000000018
+      ],
+      "text" : "Bank holding companies (BHCs)"
     },
     {
       "fontSize" : 8,
@@ -1851,6 +1862,13 @@
         105.19080000000002,
         13.704000000000008
       ],
+      "structure" : {
+        "group" : 355,
+        "headingLevel" : 5,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 5177
+      },
       "text" : "Examination Report"
     },
     {
@@ -1862,6 +1880,13 @@
         416.39199999999988,
         11.640000000000001
       ],
+      "structure" : {
+        "group" : 356,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 5178
+      },
       "text" : "In addition to assigning ratings, examiners also prepare a detailed report that, besides formally"
     },
     {
@@ -1873,10 +1898,325 @@
         415.49299999999971,
         11.640000000000001
       ],
+      "structure" : {
+        "group" : 356,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 5178
+      },
       "text" : "communicating the ratings, (1) describes the institution’s activities and management structure,"
     }
   ],
   "page" : 77,
+  "paints" : [
+    {
+      "frame" : false,
+      "rect" : [
+        58,
+        742.01210000000003,
+        496,
+        4
+      ]
+    },
+    {
+      "frame" : true,
+      "rect" : [
+        88.5,
+        561.77999999999997,
+        436,
+        34.860000000000014
+      ]
+    },
+    {
+      "frame" : true,
+      "rect" : [
+        88.5,
+        162.809,
+        436,
+        402.971
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        88,
+        592.64010000000007,
+        437,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        88.5,
+        561.78030000000001,
+        4,
+        34.360000000000014
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        520.5,
+        561.78030000000001,
+        4,
+        34.360000000000014
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        88.5,
+        197.61070000000001,
+        4,
+        368.17000000000002
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        520.5,
+        197.61070000000001,
+        4,
+        368.17000000000002
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        88.5,
+        163.30870000000002,
+        4,
+        38.301999999999992
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        520.5,
+        163.30870000000002,
+        4,
+        38.301999999999992
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        88,
+        162.80870000000002,
+        437,
+        4
+      ]
+    },
+    {
+      "frame" : true,
+      "rect" : [
+        100.5,
+        509.28400000000005,
+        410.30000000000001,
+        21.007999999999981
+      ]
+    },
+    {
+      "frame" : true,
+      "rect" : [
+        100.5,
+        472.27600000000001,
+        69.5,
+        41.007999999999981
+      ]
+    },
+    {
+      "frame" : true,
+      "rect" : [
+        166,
+        472.27600000000001,
+        344.80000000000001,
+        41.007999999999981
+      ]
+    },
+    {
+      "frame" : true,
+      "rect" : [
+        100.5,
+        270.86899999999997,
+        69.5,
+        205.40800000000002
+      ]
+    },
+    {
+      "frame" : true,
+      "rect" : [
+        166,
+        270.86899999999997,
+        344.80000000000001,
+        205.40800000000002
+      ]
+    },
+    {
+      "frame" : true,
+      "rect" : [
+        100.5,
+        203.86100000000005,
+        69.5,
+        71.007999999999981
+      ]
+    },
+    {
+      "frame" : true,
+      "rect" : [
+        166,
+        203.86100000000005,
+        344.80000000000001,
+        71.007999999999981
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        100.5,
+        509.28450000000004,
+        69.5,
+        3.9999999999999432
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        166,
+        509.28450000000004,
+        106,
+        3.9999999999999432
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        268,
+        509.28450000000004,
+        136,
+        3.9999999999999432
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        400,
+        509.28450000000004,
+        110.80000000000001,
+        3.9999999999999432
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        100.5,
+        472.2765,
+        69.5,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        166,
+        472.2765,
+        106,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        268,
+        472.2765,
+        136,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        400,
+        472.2765,
+        110.80000000000001,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        100.5,
+        270.86860000000001,
+        69.5,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        166,
+        270.86860000000001,
+        106,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        268,
+        270.86860000000001,
+        136,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        400,
+        270.86860000000001,
+        110.80000000000001,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        100.5,
+        203.86070000000001,
+        69.5,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        166,
+        203.86070000000001,
+        106,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        268,
+        203.86070000000001,
+        136,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        400,
+        203.86070000000001,
+        110.80000000000001,
+        4
+      ]
+    }
+  ],
   "rightsBasis" : "Federal Reserve Board educational publication, retained as external development material. PDF is not bundled or relicensed under MIT.",
   "sourceSHA256" : "8db8fd9e1de63ac25a6f9585d78ded12f45ab56f0c14c52c199b36b368f84d60",
   "sourceTitle" : "The Fed Explained: What the Central Bank Does",

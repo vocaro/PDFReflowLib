@@ -1091,6 +1091,13 @@
         409.3429999999999,
         11.639999999999986
       ],
+      "structure" : {
+        "group" : 540,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 6288
+      },
       "text" : "In 2010, the Dodd-Frank Act provided the Board additional authority to regulate and supervise"
     },
     {
@@ -1102,6 +1109,13 @@
         415.24399999999986,
         11.639999999999986
       ],
+      "structure" : {
+        "group" : 540,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 6288
+      },
       "text" : "certain payment, clearing, and settlement systems and activities that have been designated as"
     },
     {
@@ -1113,6 +1127,13 @@
         427.39599999999967,
         11.639999999999986
       ],
+      "structure" : {
+        "group" : 540,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 6288
+      },
       "text" : "systemically important, as well as prescribe rules related to debit card interchange fees. In 2011,"
     },
     {
@@ -1124,6 +1145,13 @@
         412.9959999999997,
         11.639999999999986
       ],
+      "structure" : {
+        "group" : 540,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 6288
+      },
       "text" : "in accordance with the Dodd-Frank Act, the Board adopted rules limiting debit card interchange"
     },
     {
@@ -1135,6 +1163,13 @@
         421.99399999999997,
         11.639999999999986
       ],
+      "structure" : {
+        "group" : 540,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 6288
+      },
       "text" : "fees of certain issuers and prohibiting network exclusivity arrangements and routing restrictions."
     },
     {
@@ -1146,6 +1181,13 @@
         421.94399999999979,
         11.639999999999986
       ],
+      "structure" : {
+        "group" : 540,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 6288
+      },
       "text" : "In 2012, pursuant to the Dodd-Frank Act, the Board adopted rules setting forth risk-management"
     },
     {
@@ -1157,6 +1199,13 @@
         430.89699999999988,
         11.639999999999986
       ],
+      "structure" : {
+        "group" : 540,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 6288
+      },
       "text" : "standards for certain financial market utilities (FMUs) and requirements regarding advanced notice"
     },
     {
@@ -1168,6 +1217,13 @@
         407.29399999999993,
         11.639999999999986
       ],
+      "structure" : {
+        "group" : 540,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 6288
+      },
       "text" : "to the Board from certain FMUs of material changes to their rules, procedures, or operations."
     },
     {
@@ -1179,6 +1235,13 @@
         168.19079999999997,
         13.703999999999994
       ],
+      "structure" : {
+        "group" : 541,
+        "headingLevel" : 4,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 6289
+      },
       "text" : "Expedited Funds Availability Act"
     },
     {
@@ -1190,6 +1253,13 @@
         428.44399999999979,
         11.640000000000001
       ],
+      "structure" : {
+        "group" : 542,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 6290
+      },
       "text" : "The EFAA broadened the Federal Reserve Board’s authority to regulate interbank payments, includ-"
     },
     {
@@ -1201,6 +1271,13 @@
         214.04699999999997,
         11.640000000000001
       ],
+      "structure" : {
+        "group" : 542,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 6290
+      },
       "text" : "ing payments not handled by the Reserve Banks."
     },
     {
@@ -1264,10 +1341,21 @@
       "rect" : [
         118.654,
         620.55290000000002,
-        145.79999999999995,
+        3.2000000000000028,
         9.47199999999998
       ],
-      "text" : "J Collection of Checks and Other Items by Federal"
+      "text" : "J"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        143.76599999999999,
+        620.55290000000002,
+        120.68799999999996,
+        9.47199999999998
+      ],
+      "text" : "Collection of Checks and Other Items by Federal"
     },
     {
       "fontSize" : 8,
@@ -1601,6 +1689,359 @@
     }
   ],
   "page" : 109,
+  "paints" : [
+    {
+      "frame" : false,
+      "rect" : [
+        58,
+        742.01210000000003,
+        496,
+        4
+      ]
+    },
+    {
+      "frame" : true,
+      "rect" : [
+        88.510000000000005,
+        679.44000000000005,
+        435.98000000000002,
+        22.860000000000014
+      ]
+    },
+    {
+      "frame" : true,
+      "rect" : [
+        88.510000000000005,
+        389.798,
+        435.98000000000002,
+        293.64200000000005
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        88.010000000000005,
+        698.30000000000007,
+        436.98000000000002,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        88.510000000000005,
+        679.4402,
+        4,
+        22.360000000000014
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        520.49000000000001,
+        679.4402,
+        4,
+        22.360000000000014
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        88.510000000000005,
+        390.29810000000003,
+        4,
+        47.302000000000021
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        520.49000000000001,
+        390.29810000000003,
+        4,
+        47.302000000000021
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        88.010000000000005,
+        389.79810000000003,
+        436.98000000000002,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        88.510000000000005,
+        433.60000000000002,
+        4,
+        249.84000000000003
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        520.49000000000001,
+        433.60000000000002,
+        4,
+        249.84000000000003
+      ]
+    },
+    {
+      "frame" : true,
+      "rect" : [
+        100.51000000000001,
+        631.80099999999993,
+        408.40000000000003,
+        21.008000000000038
+      ]
+    },
+    {
+      "frame" : true,
+      "rect" : [
+        100.51000000000001,
+        449.75300000000004,
+        39.499999999999986,
+        186.048
+      ]
+    },
+    {
+      "frame" : true,
+      "rect" : [
+        136.00999999999999,
+        449.75300000000004,
+        147.27999999999997,
+        186.048
+      ]
+    },
+    {
+      "frame" : true,
+      "rect" : [
+        279.29000000000002,
+        449.75300000000004,
+        229.62,
+        186.048
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        279.29000000000002,
+        648.80880000000002,
+        229.62,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        279.29000000000002,
+        631.80090000000007,
+        229.62,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        100.51000000000001,
+        604.79300000000001,
+        39.499999999999986,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        136.00999999999999,
+        604.79300000000001,
+        147.27999999999997,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        279.29000000000002,
+        604.79300000000001,
+        229.62,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        100.51000000000001,
+        577.78510000000006,
+        39.499999999999986,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        136.00999999999999,
+        577.78510000000006,
+        147.27999999999997,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        279.29000000000002,
+        577.78510000000006,
+        229.62,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        100.51000000000001,
+        540.77719999999999,
+        39.499999999999986,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        136.00999999999999,
+        540.77719999999999,
+        147.27999999999997,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        279.29000000000002,
+        540.77719999999999,
+        229.62,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        100.51000000000001,
+        503.76930000000004,
+        39.499999999999986,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        136.00999999999999,
+        503.76930000000004,
+        147.27999999999997,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        279.29000000000002,
+        503.76930000000004,
+        229.62,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        100.51000000000001,
+        648.80880000000002,
+        39.499999999999986,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        136.00999999999999,
+        648.80880000000002,
+        147.27999999999997,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        100.51000000000001,
+        631.80090000000007,
+        39.499999999999986,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        136.00999999999999,
+        631.80090000000007,
+        147.27999999999997,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        100.51000000000001,
+        476.76140000000004,
+        39.499999999999986,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        136.00999999999999,
+        476.76140000000004,
+        147.27999999999997,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        279.29000000000002,
+        476.76140000000004,
+        229.62,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        100.51000000000001,
+        449.7534,
+        39.499999999999986,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        136.00999999999999,
+        449.7534,
+        147.27999999999997,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        279.29000000000002,
+        449.7534,
+        229.62,
+        4
+      ]
+    }
+  ],
   "rightsBasis" : "Federal Reserve Board educational publication, retained as external development material. PDF is not bundled or relicensed under MIT.",
   "sourceSHA256" : "8db8fd9e1de63ac25a6f9585d78ded12f45ab56f0c14c52c199b36b368f84d60",
   "sourceTitle" : "The Fed Explained: What the Central Bank Does",

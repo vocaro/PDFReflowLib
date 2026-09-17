@@ -17,7 +17,7 @@ HTML = '{http://www.w3.org/1999/xhtml}'
 OPF = '{http://www.idpf.org/2007/opf}'
 EPUB = '{http://www.idpf.org/2007/ops}'
 HEADINGS = {HTML + 'h' + str(n) for n in range(1, 7)}
-BLOCKS = HEADINGS | {HTML + tag for tag in ('p', 'pre', 'figure', 'li', 'table', 'tr', 'th', 'td')}
+BLOCKS = HEADINGS | {HTML + tag for tag in ('p', 'pre', 'figure', 'li', 'table', 'caption', 'tr', 'th', 'td')}
 DEFAULT_MAX_ENTRIES = 10_000
 DEFAULT_MAX_UNCOMPRESSED_BYTES = 512 * 1024 * 1024
 

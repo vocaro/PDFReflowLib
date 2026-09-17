@@ -161,6 +161,9 @@ struct ReflowBlock: Sendable, Equatable {
         }
         var columns: Int
         var rows: [Row]
+        /// Caption paragraphs in reading order (the title, then its description); empty when the
+        /// table has no caption of its own.
+        var caption: [InlineText] = []
     }
     enum Content: Sendable, Equatable {
         case paragraph(InlineText)
@@ -192,7 +195,7 @@ struct ReflowBlock: Sendable, Equatable {
         switch content {
         case let .paragraph(text), let .heading(_, text, _): text.text
         case let .preformatted(text), let .footnote(text): text.text
-        case let .table(table): table.rows.flatMap(\.cells).map(\.text.text).joined(separator: " ")
+        case let .table(table): (table.caption.map(\.text) + table.rows.flatMap(\.cells).map(\.text.text)).joined(separator: " ")
         case .image, .sourcePage: ""
         }
     }
@@ -201,7 +204,7 @@ struct ReflowBlock: Sendable, Equatable {
         case let .paragraph(text), let .heading(_, text, _): text.sourcePages
         case let .sourcePage(page): [page]
         case let .preformatted(text), let .footnote(text): text.sourcePages
-        case let .table(table): table.rows.flatMap(\.cells).flatMap(\.text.sourcePages)
+        case let .table(table): table.caption.flatMap(\.sourcePages) + table.rows.flatMap(\.cells).flatMap(\.text.sourcePages)
         case .image: []
         }
     }

@@ -225,7 +225,13 @@ A `tableCells` expectation carries a reviewed transcription (`columns`, `rows` w
 `values` and optional `group`, in the shape of `corpus/usgs-mcs2025-copper-review.json`) and passes
 only when a `<table>` on that page maps every column through its header path and every row's cells
 equal the expected values under those columns, with group rows preceding their members. Swapped,
-shifted or merged cells, missing rows or groups, and tables rendered as prose fail. The Fed's
+shifted or merged cells, missing rows or groups, and tables rendered as prose fail. A header cell
+that spans a label column and an amount column names each column beneath it as
+`{"header", "span", "column"}`; the header path must end in a cell with exactly that colspan, so an
+unspanned or wider header fails. A row whose label sits under such a column names it with
+`labelColumn`. An optional `caption` lists the table's caption paragraphs, which must equal the
+paragraphs of that table's `<caption>` in order, so a title emitted as prose or merged with its
+description fails (#113, #114). Caption paragraphs are also page paragraphs, never headings. The Fed's
 entity/overview table (page 64) and regulation table (page 83) are the first corpus tables emitted
 as `<table>` (#54, shaded rows and rules; other tables remain images under #36/#31) and carry
 reviewed transcriptions; `tools/test_table_cells.py` keeps the checker's negative controls, and the
@@ -236,9 +242,11 @@ A `maximumImages` expectation (a non-negative integer) fails a page with more im
 including source-page reference images; it pins decoration that must not become an image. The Fed
 contract uses it on pages 32, 46, 47, 64 and 120 and Our Flag on pages 12 and 54, where the
 running-header or top-margin rule used to be a crop (#66), with `tableCells` transcriptions of Fed
-Table 3.1 (page 46) and of the label columns of Box 3.5's Table A (page 47, whose amounts are
-ordered text because its spanning headers cover two columns each; #65). See the
-[ruled-table and header-rule evidence](../measurements/ruled-tables-and-header-rules/record.md).
+Table 3.1 (page 46) and of Box 3.5's Table A (page 47, whose amounts are cells under headers
+spanning a label and an amount column; #65, #114). Pages 46, 47, 64, 83, 97, 109 and 120 check
+each table's caption. See the
+[ruled-table and header-rule evidence](../measurements/ruled-tables-and-header-rules/record.md) and the
+[table caption and tag evidence](../measurements/table-captions-and-tags/record.md).
 
 ## Adding or changing a regression
 
@@ -366,6 +374,14 @@ with the column-joint split (#65): page 46's merged `Tool Definition In practice
 lines and page 83's regulation letters are separate from their names;
 `RuledTablesAndHeaderRulesTests.swift` re-merges page 46's header to reproduce the crop and builds
 a synthetic ruled PDF whose header PDFKit merges.
+
+`TableCaptionTests.swift` covers table captions (#113) with source-derived `fed-{46,47,64,83,97,109,120}`
+fixtures (each table's title, then its description, is its caption and reads nowhere else; Box
+3.5's prose above Table A stays outside it), synthetic controls for the caption rule (no title,
+two lines in a row, an offset or resized description, a wide gap, a long introduction, four title
+lines, text above the caption) and caption serialization. `fed-47` and `fed-97` are new captures;
+`fed-77` and `fed-109` were recaptured (#114): they gain `paints`, the column-joint split and the
+tags the pipeline now applies, and their heading and body checks also hold with the tags removed.
 
 ## Source-derived fidelity controls
 

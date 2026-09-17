@@ -356,8 +356,11 @@ func fedSidebarBoxesReflowAsHeadingAndParagraphs(_ number: Int, _ title: String,
     #expect(table.rows[1].cells[0].text.text == "Financial Stability Board Established: 2009 Location: Basel, Switzerland Website: https://www.fsb.org")
     #expect(table.rows[1].cells[1].text.text.hasPrefix("The Financial Stability Board (FSB), successor to the Financial Stability Forum"))
     #expect(table.rows.map { $0.cells[0].text.text.prefix(12) } == ["Internationa", "Financial St", "Central bank", "Bank for Int", "G7 & G20 Est", "Internationa", "Organisation", "World Bank E"])
-    #expect(blocks.contains { $0.hasReflowedText && $0.text.hasPrefix("Figure 4.6. Monitoring financial system stability") })
-    #expect(blocks.contains { $0.hasReflowedText && $0.text.hasPrefix("What happens in the global economy") })
+    // The title band's title and the description beneath it are the table's caption (#113).
+    #expect(table.caption.count == 2)
+    #expect(table.caption.first?.text == "Figure 4.6. Monitoring financial system stability requires global cooperation")
+    #expect(table.caption.last?.text.hasPrefix("What happens in the global economy") == true)
+    #expect(!blocks.contains { if case .table = $0.content { false } else { $0.text.contains("Figure 4.6.") || $0.text.contains("What happens in the global economy") } })
 }
 
 @Test func fedRegulationTableReadsSectionsAndMergedLetterCells() throws {

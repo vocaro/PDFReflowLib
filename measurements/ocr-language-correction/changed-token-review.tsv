@@ -1,0 +1,320 @@
+book	page	op	off	on	review
+census	2	replace	Buresu	Bureau	better
+census	2	replace	{villiam.e.yancey,william.e.vinkler,robert.h.creecy}@census.gov Abatract.	{villiam.e.yancey, william.e.vinkler, robert.h.creecy}@census.gov Abstract.	better
+census	2	replace	adlitive	additive	better
+census	2	replace	[ 5]),	[5),	worse
+census	2	replace	([	(|	worse
+census	2	replace	([	(|	worse
+census	2	replace	([ 6],	([6],	neutral
+census	2	replace	resulta	results	better
+census	3	replace	by5.	by 5.	better
+census	3	replace	Ilag	llag	neutral
+census	3	replace	that.	that	better
+census	3	replace	Becaase	Because	better
+census	4	replace	[	|	worse
+census	4	replace	(Xg),	(Xy),	neutral
+census	4	replace	≤	S	worse
+census	4	replace	S j	Sj	neutral
+census	4	replace	(Xg)	(X)	neutral
+census	4	replace	e	&	worse
+census	4	replace	[	|	worse
+census	4	replace	[ 9]	[9]	neutral
+census	4	replace	[ 7]	[7]	neutral
+census	4	replace	s	&	neutral
+census	4	replace	k	&	worse
+census	4	replace	d.0	d. 0	neutral
+census	5	delete	(		neutral
+census	5	replace	=/1+d	= /1+d	neutral
+census	5	replace	that.	that	better
+census	5	replace	set.	set	better
+census	5	insert		a	neutral
+census	5	replace	(Х).	(X).	better
+census	5	replace	Г.	I.	neutral
+census	5	replace	cach	each	better
+census	5	delete	[		worse
+census	5	replace	T„,	T,	neutral
+census	5	replace	R. ≤T,.	R≤T,.	neutral
+census	5	replace	clerical	clerica!	worse
+census	5	replace	Tx,	T,	neutral
+census	5	replace	Iồạạand Tx,	Iạạand T,	neutral
+census	6	replace	probabilties	probabilities	better
+census	6	replace	Pr(7Є Г)	Pr(7€Г)	neutral
+census	6	replace	Є ГM)	€ГМ)	neutral
+census	6	replace	Є	€	neutral
+census	6	replace	disasreements	disagreements	better
+census	6	replace	Ine	The	better
+census	6	insert		|	worse
+census	6	replace	Io	To	better
+census	6	replace	algoritbm tor	algorithm for	better
+census	6	replace	assumpuions	assumptions	better
+census	6	replace	maxe simpie univariate	make simple univarate	mixed
+census	6	replace	tne matcnine weignts	the matching weights	better
+census	6	replace	lnkage soitware.	unkage software.	mixed
+census	6	replace	hnear dowmward	hear downward	mixed
+census	6	replace	asreement matchine	agreement matching	better
+census	6	replace	weicht	weight	better
+census	6	delete	Wnj = max({Waj - (Wgr - Wdie)|2 - b1], Wais).		garbled-line-dropped
+census	6	delete	Wadi = max({ Wadi - (4hugr - W0dis)|Loga - 1088 Y, Mdie),		garbled-line-dropped
+census	6	replace	(|log a,	(log a ,	neutral
+census	6	replace	(U S t	(0 St	better
+census	6	replace	Lhe hull	L'he full	better
+census	6	replace	cenerally	generally	better
+census	6	replace	necessarly	necessarily	better
+census	6	replace	wel.	wel	neutral
+census	6	replace	probabihties	probabilties	neutral
+census	6	replace	ruller	ruler	worse
+census	6	replace	i	&	neutral
+census	6	replace	identihable	identifiable	better
+census	7	replace	(i,j)	(i, j)	neutral
+census	7	replace	Io	lo	neutral
+census	7	replace	(i,j),	(i,),	worse
+census	7	replace	(i,j) E	(i,) €	worse
+census	7	replace	(k,l)	(k, l)	neutral
+census	7	delete	[		worse
+census	7	replace	(PLD),computed	(PLD), computed	better
+census	7	replace	[ 5].	[5].	neutral
+census	7	replace	[ 5],	[5],	neutral
+census	7	replace	al	al.	better
+census	7	replace	[ 5]	[5]	neutral
+census	7	replace	Tp,	Ty,	neutral
+census	8	replace	x	×	better
+census	8	delete	mnLŻ		garbled-line-dropped
+census	8	replace	xg	xy	neutral
+census	8	replace	IL1	ILL	worse
+census	8	replace	u	¡	worse
+census	9	replace	IL1s.	ILls.	worse
+census	9	delete	Cov(Х)зż		garbled-line-dropped
+census	9	replace	(X)„;	(X),;	neutral
+census	9	replace	(Y)jj	(Y);;	worse
+census	9	replace	І5	15	neutral
+census	9	delete	mim-1E|or(N)- Con()ol		garbled-line-dropped
+census	10	replace	IL3,I14,	113, 114,	worse
+census	10	replace	IL3	I L3	worse
+census	11	replace	IL1a	ILla	worse
+census	11	replace	II4	IIA	neutral
+census	11	replace	IL1	ILL	worse
+census	12	replace	rukswp10	rukswp 10	worse
+census	12	replace	add10	add 10	worse
+census	12	replace	0.1009	0.1009.	worse
+census	12	replace	a	&	neutral
+census	12	replace	Sscore	Score	worse
+census	12	replace	Sscore	Score	worse
+census	12	replace	add10	add 10	worse
+census	12	replace	scalmixaddO1	scalmixaddOl	neutral
+census	12	replace	acalmixadd10	scalmixadd 10	mixed
+census	13	replace	IL1a	ILla	worse
+census	13	replace	ПIA	TIA	neutral
+census	13	replace	Statiatica,	Statistica,	better
+census	13	replace	IILA	ILA	neutral
+census	13	replace	TLA	TA	neutral
+census	13	replace	interpalation	interpolation	better
+census	14	replace	/	1	neutral
+census	14	replace	rnkswpl5	rakswpls	worse
+census	14	replace	I	l	better
+census	14	replace	IL1	ILI	worse
+census	14	replace	[	|	worse
+census	15	replace	ПЛ IL1s IL.2 IL3 s1 mkawp05	sl m kawp05	worse
+census	15	replace	mixadd10	mixadd 10	worse
+census	16	replace	IL1a	ILla	worse
+census	16	replace	ПIA	TIA	neutral
+census	16	replace	[8], [	8],	worse
+census	16	replace	[	|	worse
+census	16	replace	[	|	worse
+census	17	replace	[ 1]	[1]	neutral
+census	17	replace	[ 7]	[7]	neutral
+census	17	replace	Oficual Stalistics,	Official Statistics,	better
+census	17	replace	Procecdings	Proceedings	better
+census	17	replace	Americon	American	better
+census	17	replace	Melhods.	Methods.	better
+census	17	replace	Rescarch	Research	better
+census	17	replace	M. ,	M.,	better
+census	18	replace	Stotistical	Statistical	better
+census	18	replace	Wiukler,	Winkler,	better
+census	18	replace	Surney	Survey	better
+census	18	replace	x	×	better
+census	18	delete	Z=Х+dY		worse
+census	18	replace	N	A	worse
+census	18	replace	[f, w.V (0.,	Ew V (0,	neutral
+census	18	replace	[] &x	[ &	neutral
+census	18	replace	[f,	Lf,	neutral
+census	18	replace	oxE,	oL,	neutral
+census	18	replace	я=EÌ(«і)†	&=£Ì(«)	neutral
+census	18	replace	y=ฏรพ	y= [พ	neutral
+census	18	delete	wкV(Øк.о)		garbled-line-dropped
+census	18	replace	[K-, wy9r	[K, wOr	neutral
+census	18	replace	LF, w292.	L, wO?.	neutral
+census	19	delete	Vx = - WK I		garbled-line-dropped
+census	19	delete	S =		neutral
+census	19	replace	(VI-03,0%) +}N (-V1-03,0%)	(VI-03,03) +½N(-VI-03,02)	neutral
+census	19	replace	ø	o	neutral
+census	19	replace	=l.	=I.	neutral
+census	20	delete	=VI+d+ (1-VItà)"		garbled-line-dropped
+cdc	13	replace	(WHINE!) UН? WHД?	(WHINE!> ИН? WHA?	mixed
+cdc	16	replace	CERTERG	CENTERE	better
+cdc	16	delete	УďпG		garbled-line-dropped
+warren	21	replace	Trip. .	Trip..	neutral
+warren	21	replace	DEPOSITORY .	DEPOSITORY.	neutral
+warren	30	replace	performs-Head	performs Head	neutral
+warren	50	replace	varions	various	better
+warren	50	replace	Kuby	Ruby	better
+warren	50	replace	(h)	(½)	worse
+warren	50	replace	Becnuse	Benuse	neutral
+warren	100	replace	view.es	view es	neutral
+warren	890	replace	(Murphoo-	(Murpho-	neutral
+warren	890	replace	(Call) :	(Call):	neutral
+warren	890	replace	1	I	neutral
+warren	890	replace	T LI H	LIF	neutral
+warren	890	replace	farvey	Harvey	better
+warren	890	replace	ovan),	ovan) ,	neutral
+warren	890	replace	(3425 8	(3425.8	neutral
+warren	890	replace	(Delgndo) gomefhing (hornle)	(Delgado) gomething hornle)	better
+warren	890	replace	Dostoievsky"y. (ỌẠỗ&something	Dostoievsky y. Ạ¿something	neutral
+warren	890	replace	S H 300	$ H300	worse
+warren	890	replace	(KoteltOs- 310 6,322-328	(HotelOs- 3106, 322-328	worse
+warren	890	replace	( н	1 +	neutral
+warren	890	replace	сf.	с.	worse
+warren	890	replace	822 (05-	822, 05-	neutral
+warren	890	replace	29 4 282g4 d	2 14 28284	neutral
+warren	890	replace	H	1	worse
+warren	890	replace	F'olsom	Folsom	better
+warren	890	replace	Bt.	Bu.	neutral
+warren	890	replace	106 ;	106;	better
+warren	890	replace	Hl	HI	neutral
+warren	890	replace	86-91 : cf.	86-91: ef.	worse
+warren	890	replace	biầ:	bia:	neutral
+warren	890	replace	C ) e 306, 0,2,212	Cal 36, 02,212	worse
+warren	890	replace	sșÍ	pșÍ	neutral
+warren	890	replace	Oe	O	neutral
+warren	890	replace	305 ;	305;	better
+warren	890	replace	chutch.	church.	better
+warren	890	replace	(sirs. deorge	(sis. George	better
+warren	890	replace	oavald	oarald	neutral
+warren	890	replace	Frat s53 p... T14 sockhg.C.	Fat sp... 14 stockho	neutral
+warren	890	replace	(-	-	neutral
+warren	890	replace	bave	have	better
+warren	890	delete	RNSSRCOSO ECOORà		garbled-line-dropped
+warren	890	replace	8 ;	8;	better
+warren	890	replace	FRE	PR	neutral
+warren	890	replace	CF:	CE:	better
+warren	890	replace	Oet.	Oct.	better
+warren	890	insert		Oswald) -	neutral
+warren	890	delete	(60: 1. ceil b.10- Oswald) -		garbled-line-dropped
+warren	890	replace	Snsder).	Snyder).	better
+warren	890	delete	133. cs 2t, eutry ol c		garbled-line-dropped
+warren	890	replace	tocumenes	documents	better
+warren	890	replace	VIn P	VI. F	better
+warren	890	replace	287-29fenerallzśîŚł	287-29 fenerallśîł	neutral
+warren	890	replace	eneraltr	emerall	neutral
+warren	890	replace	01.3	01 3	neutral
+warren	890	replace	(John Cn)	(John. C	neutral
+warren	890	replace	(Snyder) ;	(Snyder);	better
+warren	890	replace	05950:	07950	neutral
+warren	890	replace	CB	CE	better
+warren	890	replace	CF 2684;	CE 3684;	mixed
+warren	890	replace	822	22	neutral
+warren	890	replace	4930: see О СР 35 в Ссть 010. 020: 8 н	4930 : se8	worse
+warren	910	replace	Dowhey,	Downey,	better
+warren	910	replace	Ddwin	Edwin	better
+warren	910	replace	Euins,	Buins,	worse
+warren	910	replace	Pischer,	Discher,	neutral
+warren	910	replace	Garfleld,	Garfield,	better
+bluebook-sample	58	replace	MORTH	NORTH	better
+bluebook-sample	110	replace	Pvaluation	Evaluation	better
+bluebook-sample	112	replace	icars	Tears	neutral
+bluebook-sample	113	replace	Oojccis	Oojects	neutral
+bluebook-sample	113	replace	Sipntings	Signtings	neutral
+bluebook-sample	114	replace	Oblect Signtings	Object Sightings	better
+bluebook-sample	115	replace	Tablc	Tabic	neutral
+bluebook-sample	118	replace	67/722311	67/ 722311	neutral
+bluebook-sample	122	replace	Cortre DRHI	CortHo DRNI	neutral
+bluebook-sample	122	replace	CraeTadal	Cra adal	neutral
+bluebook-sample	123	replace	C-Edlxe IAstrovial	C-Edlixe Istraria	neutral
+bluebook-sample	126	replace	15.4	15. 4	worse
+bluebook-sample	127	insert		0.0 اهماهه	neutral
+bluebook-sample	127	replace	Pterca	Perce	neutral
+bluebook-sample	128	replace	Hcertà	Heerta	neutral
+bluebook-sample	129	replace	DE UNIE आद&7MA5 YEAR, EEBRUARY	FEBRUARY	mixed
+bluebook-sample	131	replace	asal Cera	sal Cara	neutral
+bluebook-sample	132	replace	2.15 82 18.0	2. 15 8.218.0	worse
+bluebook-sample	132	insert		00	neutral
+bluebook-sample	137	replace	00	0.0	unclear
+bluebook-sample	137	replace	/0.3	10.3	unclear
+bluebook-sample	139	replace	THBLE	THELE	neutral
+bluebook-sample	139	replace	12//32	12/32	neutral
+bluebook-sample	140	replace	SI6ATINES BY SIGNTING RELIRGILITY	SIGATINES	worse
+bluebook-sample	140	replace	0.12	عa	worse
+bluebook-sample	140	delete	19		unclear
+bluebook-sample	145	insert		REHABILITY _GROUPS, EXCELLENT FOR	neutral
+bluebook-sample	146	replace	4เ72 23.5020 4120	412.0	neutral
+bluebook-sample	147	replace	Doutrd	Doutd|	neutral
+bluebook-sample	150	replace	dal	del	neutral
+bluebook-sample	150	replace	HLugh Prance,	Hugh Prence,	neutral
+bluebook-sample	150	replace	BIACA ENSNT GLW, JNDETRRAMAZK COUAR	BLACK	mixed
+bluebook-sample	155	insert		4//00g a0/10022 saa sa0lree.17 100.0 0.01/00	neutral
+bluebook-sample	157	insert		a24.2e0g 2 00 00 00	neutral
+bluebook-sample	158	replace	Docbasl	Docbaal	neutral
+bluebook-sample	158	replace	(CrTai / Onadal	(Crai Onaal	neutral
+bluebook-sample	159	replace	Balicon	Bal icon nC ne	worse
+bluebook-sample	159	replace	201.1 127	20 1.1 1 27	unclear
+bluebook-sample	159	replace	0000	000.0	unclear
+bluebook-sample	160	replace	Psychciagical	Paychciagical	neutral
+bluebook-sample	160	insert		41752 2501608	neutral
+bluebook-sample	160	delete	421000.0		neutral
+bluebook-sample	160	delete	151		unclear
+bluebook-sample	162	replace	Cart	Cert	neutral
+bluebook-sample	162	delete	2.40.0 9.1 مم		neutral
+bluebook-sample	164	insert		316 5.91 59:188	neutral
+bluebook-sample	164	delete	:3s		neutral
+bluebook-sample	167	delete	2080108品		neutral
+bluebook-sample	168	replace	ANE	AND	better
+bluebook-sample	168	replace	0000	00.00	unclear
+bluebook-sample	168	replace	BURATION ST&HTING,	DURATION STAHTING,	better
+bluebook-sample	172	replace	1/./	1//	neutral
+bluebook-sample	173	replace	SELONOS	SECONOS	neutral
+bluebook-sample	175	replace	Homber Cedan Doaxti	Hamber Cadan Doesni	neutral
+bluebook-sample	176	replace	25.C 0.0250 62 63 63	00	worse
+bluebook-sample	176	insert		25ao 0.o saa d.0 ao 0.0	neutral
+bluebook-sample	181	replace	100	1 00	worse
+bluebook-sample	188	replace	Ml.:	el:	neutral
+bluebook-sample	188	replace	253	2531 15,8	unclear
+bluebook-sample	193	insert		3.0 0.0	unclear
+bluebook-sample	194	delete	3-Balxen 3-Ught Phoce 5 Clauda, Dest, efc. 308et Totas		worse
+bluebook-sample	196	replace	Totk Cotain	Tote Cotan	neutral
+bluebook-sample	200	insert		Fer Crat	neutral
+bluebook-sample	200	replace	47109-12	47 109-12	unclear
+bluebook-sample	201	replace	SIATED	STATED	better
+bluebook-sample	202	replace	38albson SChaés Dusl el: Paycte	38albon Payche	worse
+bluebook-sample	202	replace	Latthi Telu 524	Latti Tell 5 24	neutral
+bluebook-sample	205	replace	AL YEATE	ALL YEARS	better
+bluebook-sample	207	replace	Fela Dtallxs _0 11032	Tela D tallxs 0 1 1032	neutral
+bluebook-sample	207	replace	Dathi	Dath	neutral
+bluebook-sample	208	replace	Chl	CAl	neutral
+bluebook-sample	210	replace	25560	251560	unclear
+bluebook-sample	213	replace	Deseti	Deseli	neutral
+bluebook-sample	216	replace	1 500	1500	unclear
+bluebook-sample	217	replace	54184	5418.4	unclear
+bluebook-sample	219	replace	Bache) toal	Bahe) oal	neutral
+bluebook-sample	220	replace	SUNHGHT	SUNHAHT	neutral
+bluebook-sample	220	replace	Eralation HLiga Phenco S-Clauds, Dust, otc 7- Prychelegical -LEkDoNT 30вm Total KSUNLIGNT	SUNLIGNT	worse
+bluebook-sample	221	replace	0.3 27	0.32.7	worse
+bluebook-sample	223	replace	Namber	★ 익수 Number	mixed
+bluebook-sample	226	delete	OTHER NOT STATED		unclear
+bluebook-sample	228	replace	IM CAR SOUTOCORS	SOUTOCORS.	worse
+bluebook-sample	228	replace	BOUTD218S	BOUTDOOES	neutral
+bluebook-sample	232	delete	IueaTion		neutral
+bluebook-sample	237	replace	aitL	autL	neutral
+bluebook-sample	239	replace	DSJECE	D&JECE	neutral
+bluebook-sample	239	replace	) Bailsen •Asteaeial ¡Ciovés,	Bailan ¡Clovos,	worse
+bluebook-sample	240	replace	JECONOS fambe	ECONOS	neutral
+bluebook-sample	244	replace	2/225	2|/225	neutral
+bluebook-sample	248	delete	2014249.		neutral
+bluebook-sample	248	replace	00100	00.100	unclear
+bluebook-sample	249	replace	Evataation	Evaaation	neutral
+bluebook-sample	250	replace	2250.00	2250 00	unclear
+bluebook-sample	250	insert		131	unclear
+bluebook-sample	254	replace	8.12 071421	8.1207.1421	unclear
+bluebook-sample	254	replace	000 0 1279 00121	0.00 0127900121	unclear
+bluebook-sample	256	replace	Lkirown	Likinown	neutral
+bluebook-sample	257	delete	(5		neutral
+bluebook-sample	275	replace	ㅭ	No	better
+bluebook-sample	294	insert		3	unclear

@@ -1,0 +1,81 @@
+{
+  "passed": false,
+  "converterSHA256": "671a28985c9f16d706e84c6a25d43228fbfad53ae52266a10d82fce443b0b48d",
+  "results": [
+    {
+      "case": "dga-2025-2030",
+      "passed": false,
+      "reviewPages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        8,
+        9,
+        6,
+        7,
+        10
+      ],
+      "contentChecks": 45,
+      "errors": [
+        "Page 3: missing paragraph '+ Prioritize high-quality, nutrient-dense protein foods as part of a healthy dietary pattern.'",
+        "Page 3: missing paragraph '+ Consume meat with no or limited added sugars, refined carbohydrates or starches, or chemical additives.'",
+        "Page 3: unexpected quality warning pageImageFallback, unsupportedGraphics",
+        "Page 4: missing paragraph '+ Prioritize fiber-rich whole grains.' for distinction check",
+        "Page 4: missing or reordered text '+ 100% fruit or vegetable juice'",
+        "Page 4: missing or reordered text 'Vegetables and fruits serving goals'",
+        "Page 4: missing or reordered text '- Vegetables: 3 servings per day'",
+        "Page 4: missing or reordered text '- Fruits: 2 servings per day'",
+        "Page 4: missing or reordered text 'Incorporate Healthy Fats'",
+        "Page 4: missing or reordered text '+ Healthy fats are plentiful'",
+        "Page 5: missing paragraph '+ Limit foods and beverages that include artificial flavors'",
+        "Page 5: missing paragraph 'or end in \u201c-ose.\u201d' for distinction check",
+        "Page 8: missing paragraph '+ Focus on whole, nutrient-dense foods such as protein foods, dairy, vegetables, fruits, healthy fats, and whole grains.'",
+        "Page 8: missing paragraph '+ Adolescents should eat nutrient-dense foods such as dairy, leafy greens, and iron-rich animal foods, while significantly limiting sugary drinks and energy drinks and avoiding highly processed foods.'",
+        "Page 9: missing paragraph '+ Pregnant women should consume diverse nutrient-dense foods, including iron-rich meats, folate-rich greens and legumes'",
+        "Page 9: missing paragraph '+ Some older adults need fewer calories but still require equal or greater amounts of key nutrients such as protein, vitamin B12, vitamin D, and calcium. To meet these needs, they should prioritize nutrient-dense foods such as dairy, meats, seafood,'",
+        "Page 9: missing paragraph 'eggs, legumes, and whole plant foods (vegetables and fruits, whole grains, nuts, and seeds). When dietary intake or absorption is insufficient, fortified foods or supplements may be needed under medical supervision.'",
+        "Page 9: missing or reordered text 'Older Adults'",
+        "Page 9: missing or reordered text '+ Some older adults need fewer calories'",
+        "Page 9: missing or reordered text 'nutrient-dense foods such as dairy, meats, seafood,'",
+        "Page 9: missing or reordered text 'eggs, legumes, and whole plant foods'",
+        "Page 6: missing text 'People who should completely avoid alcohol include pregnant women'",
+        "Page 6: unexpected quality warning pageImageFallback, unsupportedGraphics",
+        "Page 7: missing heading 'Special Populations & Considerations'",
+        "Page 7: unexpected quality warning pageImageFallback, unsupportedGraphics",
+        "Page 10: missing paragraph 'Individuals with certain chronic diseases may experience improved health outcomes when following a lower carbohydrate diet.'",
+        "Page 10: unexpected quality warning pageImageFallback, unsupportedGraphics"
+      ],
+      "scope": "Reviewed text/order/script-context/image-presence, source-region, glyph-structure, appearance and table-cell checks; not full-book fidelity qualification."
+    }
+  ],
+  "notRun": [
+    "faa-phak-8083-25c",
+    "wallace-algebra-2010",
+    "gpo-911-2004",
+    "fed-explained-2021",
+    "gpo-our-flag-2003",
+    "cdc-zombie-pandemic-2011",
+    "cia-blue-book-14-1955",
+    "usgs-mcs2025-copper",
+    "scotus-loper-bright-2024",
+    "census-rrs2002-01",
+    "uscis-m618-arabic-2015",
+    "irs-p596-zhs-2025",
+    "nbs-jres-geltman-1977",
+    "arxiv-replay-clocks-2023"
+  ],
+  "knownUnsupportedFullConversions": [
+    {
+      "id": "gpo-warren-1964",
+      "reason": "Known default image-output ceiling failure; the nine-page excerpt regression is recorded separately.",
+      "issue": 5
+    },
+    {
+      "id": "noaa-nca5-2023",
+      "reason": "Known default image-output ceiling failure. Full conversions with explicit larger storage caps are measured separately in measurements/noaa-output-policies/record.md; this gate retains library defaults.",
+      "issue": 5
+    }
+  ]
+}

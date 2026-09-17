@@ -1,0 +1,131 @@
+{
+  "passed": false,
+  "provenanceErrors": [],
+  "case": "faa-phak-8083-25c",
+  "executionContexts": {
+    "baseline": "host-terminal",
+    "candidate": "host-terminal"
+  },
+  "baselineConverterSHA256": "2ea063441db18937fd4d1cc5ffcb702459b383ce6b7969218cad6d5b31d531ac",
+  "candidateConverterSHA256": "e85a9f8d27a184316ad64aa3634bb493a4811c191e87b1341c12a597246ab17f",
+  "sameConverter": false,
+  "visionModelCaches": {
+    "baseline": {
+      "mode": "inherited",
+      "executableName": "pdf-reflow-base",
+      "programsSHA256": "117fb2440ec075c382194cd363f92bd3b9c83846fede7e2d99ec7f3ca7a7331c"
+    },
+    "candidate": {
+      "mode": "inherited",
+      "executableName": "pdf-reflow-cand",
+      "programsSHA256": "22614cb0d67a8299f20da78a741db0b43f328b8fc7a2760ed28c0de40fec086d"
+    }
+  },
+  "sameVisionPrograms": false,
+  "changedOCRPages": [],
+  "changedPages": [
+    225,
+    226,
+    286,
+    287,
+    288,
+    301,
+    302
+  ],
+  "changedPageFields": {
+    "225": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "226": [
+      "anchors",
+      "headings",
+      "images",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text",
+      "warnings"
+    ],
+    "286": [
+      "anchors",
+      "headings",
+      "images",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text",
+      "warnings"
+    ],
+    "287": [
+      "markup",
+      "paragraphIDs"
+    ],
+    "288": [
+      "anchors",
+      "headings",
+      "images",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text",
+      "warnings"
+    ],
+    "301": [
+      "markup",
+      "paragraphIDs"
+    ],
+    "302": [
+      "anchors",
+      "headings",
+      "images",
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text",
+      "warnings"
+    ]
+  },
+  "changedImages": [
+    "EPUB/images/image-290.png",
+    "EPUB/images/image-373.png",
+    "EPUB/images/image-374.png",
+    "EPUB/images/image-375.png",
+    "EPUB/images/image-376.png",
+    "EPUB/images/image-377.png",
+    "EPUB/images/image-394.png",
+    "EPUB/images/image-396.png"
+  ],
+  "navigationChanged": true,
+  "changedNavigationPages": [
+    226,
+    286,
+    288,
+    302
+  ],
+  "pageMarkersEqual": true,
+  "changedReportFields": [
+    "imageCount",
+    "reflowedPageCount",
+    "warnings"
+  ],
+  "idOnlyShifts": {
+    "pageCount": 284,
+    "fields": {
+      "anchors": 34,
+      "images": 144,
+      "listItemIDs": 67,
+      "markup": 144,
+      "paragraphIDs": 274
+    },
+    "navigationEntries": null
+  },
+  "imageRenames": {
+    "count": 220
+  },
+  "scope": "Per page: text, block records, element markup, image bytes, link targets and warnings, with generated identifiers (block ordinals, element ids, spine file names, image asset names) normalized; page markers; image assets by bytes; navigation entries; conversion report. Not CSS, package metadata, decoded image equivalence or a fidelity qualification."
+}

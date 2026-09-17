@@ -4,6 +4,12 @@ import Foundation
 /// Finds painted regions, not just raw image resources. Cropping the original rendering preserves
 /// masks, clipping, vector paths and labels without reimplementing their PDF compositing semantics.
 enum GraphicsReader {
+    /// Operators scanned per page before the page is kept whole as an image. It bounds scanning
+    /// time only: paints, shows and covers keep their own caps, so memory never grows with it.
+    /// Dense vector illustrations on FAA pages 226, 286, 288 and 302 take 101,594–183,417
+    /// operations (about 0.15 s on a Mac); page 448's 1.95 million, which also exceeds the paint
+    /// cap, still falls back.
+    static let operationBudget = 250_000
     /// One painted footprint. `frame` marks a path made only of `re` rectangles (filled or
     /// stroked) painted outside any `/Figure` marked content: a sidebar box, a tint band or a
     /// table cell background rather than figure ink. Whether it is decoration is decided later
@@ -161,7 +167,7 @@ enum GraphicsReader {
 
         func accept() -> Bool {
             operations += 1
-            if operations > 100_000 { unsupported = true; return false }
+            if operations > GraphicsReader.operationBudget { unsupported = true; return false }
             return true
         }
         func finishPath() {

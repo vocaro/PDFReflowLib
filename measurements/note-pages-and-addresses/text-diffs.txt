@@ -1,0 +1,78 @@
+# Word-level text changes, 4bc0914 release CLI (identical to the 7a29c09 comparison) -> candidate (library defaults)
+# Whitespace-split words per source page; each line is one changed span.
+
+## gpo-911-2004
+p543 replace: 'mus- cle' -> 'muscle'
+p570 replace: 'www.panynj.gov/AboutthePortAuthority /PortAuthorityPolice/InMemoriam/).' -> 'www.panynj.gov/AboutthePortAuthority/PortAuthorityPolice/InMemoriam/).'
+p571 replace: 'Preserved region from page 571' -> 'www.cnn.com/SPECIALS/2001/memorial/index.html); company contacts, June 29, 2004 (online at http://worldtradeaftermath.com/wta/contacts/companies_list.asp?letter=a); CNN,WTC tenants, 2001 (online at www.cnn.com/SPECIALS/2001/trade.center/tenants1.html); September 11 personal tributes, June 19, 2004'
+p571 replace: 'Comman- ders.Terrorist' -> 'Commanders.Terrorist'
+p571 insert: '' -> 'Original page 571'
+p571 delete: 'Original page 571' -> ''
+p572 replace: 'tran- scripts,we' -> 'transcripts,we'
+p572 replace: 'deter- mined' -> 'determined'
+p577 replace: 'www.cbsnews.com/stories /2004/03/19/60minutes/printable607356.shtml),President' -> 'www.cbsnews.com/stories/2004/03/19/60minutes/printable607356.shtml),President'
+p578 replace: 'Esti- mate,”' -> 'Estimate,”'
+p578 replace: 'Coun- cil' -> 'Council'
+p581 replace: 'includ- ing' -> 'including'
+p581 replace: 'www.house.gov /international_relations/108/burn0319.htm).' -> 'www.house.gov/international_relations/108/burn0319.htm).'
+p581 replace: [44 chars] -> [579 chars] after “report, “America”: 'Admired,Yet Its New Vulnerability Seen as Good Thing, Say Opinion Leaders; Little Support for Expanding War on Terrorism” (online at http://people-press.org/reports/print.php3?ReportID=145). For the q'…
+p581 replace: 'http://english.daralhayat.com/Spec/02- 2004/Article-20040213-ac40bdaf-c0a8-01ed-004e-5e7ac897d678/story.html).' -> 'http://english.daralhayat.com/Spec/02-2004/Article-20040213-ac40bdaf-c0a8-01ed-004e-5e7ac897d678/story.html).'
+p581 replace: 'inter- view' -> 'interview'
+p581 replace: 'Non- proliferation' -> 'Non-proliferation'
+p581 replace: 'Home- land' -> 'Homeland'
+p582 replace: [34 chars] -> [324 chars] after “two years”: 'for the requirement of tamper-proof passports.Testimony of Thomas Ridge before the House Judiciary Committee, Apr. 21, 2004 (online at www.dhs.gov/dhspublic/display?theme=45&content=3498&print=true). '…
+p582 insert: '' -> 'Original page 582'
+p582 delete: 'Original page 582' -> ''
+p582 replace: 'Coun-' -> 'Council report,“Visa Backlog Costs U.S. Exporters More Than $30 Billion Since 2002, New Study Finds,” June 2, 2004 (online at www.nftc.org/newsflash/newsflash.asp?Mode=View&articleid=1686&Category=All).'
+p583 replace: 'Preserved region from page 583 tive' -> '39.These issues are on the G-8 agenda.White House press release,“G-8 Secure and Facilitated Travel Initiative'
+p583 replace: 'Infor- mation' -> 'Information'
+p583 replace: 'Chal- lenges,' -> 'Challenges,'
+p583 replace: 'let- ter' -> 'letter'
+changed spans: 26
+
+## fed-explained-2021
+p19 replace: 'https://www. federalreserve.gov/aboutthefed/directors/about.htm.' -> 'https://www.federalreserve.gov/aboutthefed/directors/about.htm.'
+p20 replace: 'https://www. federalrserve.gov/aboutthefed/structure-federal-open-market-committee.htm.' -> 'https://www.federalrserve.gov/aboutthefed/structure-federal-open-market-committee.htm.'
+p22 replace: 'https://www.federalreserve. gov/aboutthefed/advisorydefault.htm.' -> 'https://www.federalreserve.gov/aboutthefed/advisorydefault.htm.'
+p33 replace: 'https://www.federalreserve.gov /monetarypolicy/fomccalendars.htm.' -> 'https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm.'
+p35 replace: 'https://www. federalreserve.gov/monetarypolicy/mpr_default.htm.' -> 'https://www.federalreserve.gov/monetarypolicy/mpr_default.htm.'
+p36 replace: 'https://www. federalreserve.gov/monetarypolicy/timeline-forward-guidance-about-the-federal-funds-rate.htm.' -> 'https://www.federalreserve.gov/monetarypolicy/timeline-forward-guidance-about-the-federal-funds-rate.htm.'
+p37 replace: 'https://www.federalreserve.gov/monetarypolicy/bst_ openmarketops.htm.' -> 'https://www.federalreserve.gov/monetarypolicy/bst_openmarketops.htm.'
+p39 replace: 'https://www. federalreserve.gov/publications/files/balance_sheet_developments_report_202008.pdf.pdf.' -> 'https://www.federalreserve.gov/publications/files/balance_sheet_developments_report_202008.pdf.pdf.'
+p41 replace: 'https://www.federalreserve. gov/monetarypolicy/reqresbalances.htm.' -> 'https://www.federalreserve.gov/monetarypolicy/reqresbalances.htm.'
+p47 replace: 'https://www. federalreserve.gov/releases/h41/.' -> 'https://www.federalreserve.gov/releases/h41/.'
+p54 replace: '(https://www. federalreserve.gov/publications/financial-stability-report.htm).' -> '(https://www.federalreserve.gov/publications/financial-stability-report.htm).'
+p54 replace: 'https://www. federalreserve.gov/publications/2019-may-financial-stability-report-overview.htm).' -> 'https://www.federalreserve.gov/publications/2019-may-financial-stability-report-overview.htm).'
+p56 replace: 'https://www. federalreserve.gov/data/scoos.htm.' -> 'https://www.federalreserve.gov/data/scoos.htm.'
+p60 replace: 'https://www. federalreserve.gov/newsevents/pressreleases/bcreg20160908b.htm.' -> 'https://www.federalreserve.gov/newsevents/pressreleases/bcreg20160908b.htm.'
+p63 replace: '(https://home. treasury.gov/policy-issues/financial-markets-financial-institutions-and-fiscal-service/fsoc).' -> '(https://home.treasury.gov/policy-issues/financial-markets-financial-institutions-and-fiscal-service/fsoc).'
+p64 replace: 'https://www.bis.org/central_bank_hub_ overview.htm' -> 'https://www.bis.org/central_bank_hub_overview.htm'
+p68 replace: 'https://www.federalreserve. gov/publications/annual-report.htm.' -> 'https://www.federalreserve.gov/publications/annual-report.htm.'
+p72 replace: '(https://www.ffiec. gov/NPW)' -> '(https://www.ffiec.gov/NPW)'
+p83 replace: 'Preserved region from' -> 'Reserve regulations governing the payment system,” on'
+p83 replace: '83' -> '109. To view the full text of these and other Federal Reserve regulations, visit https://www.ecfr.gov/cgi-bin/ECFR?page=browse and select “Title 12” of the Code of Federal Regulations.'
+p105 replace: 'https://www.federalreserve.gov/paymentsystems. htm.' -> 'https://www.federalreserve.gov/paymentsystems.htm.'
+p111 replace: '(https://www.federalreserve.gov/paymentsystems/psr_about. htm)' -> '(https://www.federalreserve.gov/paymentsystems/psr_about.htm)'
+p111 replace: 'https://www. federalreserve.gov/paymentsystems.htm.' -> 'https://www.federalreserve.gov/paymentsystems.htm.'
+p113 replace: 'https://www.federalreserve. gov/paymentsystems/2019-December-The-Federal-Reserve-Payments-Study.htm).' -> 'https://www.federalreserve.gov/paymentsystems/2019-December-The-Federal-Reserve-Payments-Study.htm).'
+p114 replace: 'https://www. federalreserve.gov/paymentsystems.htm).' -> 'https://www.federalreserve.gov/paymentsystems.htm).'
+p114 replace: 'https://www.federalreserve. gov/paymentsystems.htm).' -> 'https://www.federalreserve.gov/paymentsystems.htm).'
+p128 replace: 'https://www.federalreserve. gov/consumerscommunities/shed.htm.' -> 'https://www.federalreserve.gov/consumerscommunities/shed.htm.'
+changed spans: 27
+
+## faa-phak-8083-25c
+p25 replace: 'www. faa.gov/regulations_policies.' -> 'www.faa.gov/regulations_policies.'
+p25 replace: 'www.faa.gov/regulations_policies/advisory_ circulars/' -> 'www.faa.gov/regulations_policies/advisory_circulars/'
+p29 replace: 'www. aopa.org/whatsnew/notams.html.' -> 'www.aopa.org/whatsnew/notams.html.'
+p34 replace: 'http://av-info.faa.gov/PilotSchool. asp,' -> 'http://av-info.faa.gov/PilotSchool.asp,'
+p92 replace: 'Preserved region from page 92' -> 'Administration (NOAA) website (www.srh.noaa.gov/epz/?n=wxcalc_densityaltitude) for density altitude, enter the 22.22 for 8,000 feet in the station pressure window. Enter'
+p92 replace: '(www.wahiduddin.net/calc/density_ altitude.htm)' -> '(www.wahiduddin.net/calc/density_altitude.htm)'
+p372 replace: '(NACO)—www.faa. gov/air_traffic/flight_info/aeronav' -> '(NACO)—www.faa.gov/air_traffic/flight_info/aeronav'
+p372 replace: '(AIM)—www.faa. gov/air_traffic/publications/atpubs/aim/' -> '(AIM)—www.faa.gov/air_traffic/publications/atpubs/aim/'
+p418 replace: 'www. navcen.uscg.gov.' -> 'www.navcen.uscg.gov.'
+p419 replace: 'http://tycho.usno.navy.mil/gpscurr. html.' -> 'http://tycho.usno.navy.mil/gpscurr.html.'
+p451 replace: 'www. faa.gov.' -> 'www.faa.gov.'
+changed spans: 11
+
+## scotus-loper-bright-2024, wallace-algebra-2010
+No block, text or image changes.

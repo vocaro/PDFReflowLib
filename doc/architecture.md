@@ -174,6 +174,20 @@ that at least three same-size lines of the column share within a quarter body si
 line must sit on the column's majority left edge (or outdent from an indented opening line)
 at ordinary line spacing. Bullets never continue prose; ragged-right columns, hanging-indent
 continuations and OCR lines that Vision marks as unwrapped keep the list representation.
+Joined lines meet at a space except in three cases. A line-ending hyphen before a lowercase
+letter is removed when the book's vocabulary knows the joined word and not the compound, and
+kept otherwise. A slash after a letter, digit or slash before a letter or digit joins
+(`runway/` + `taxiway`, #70). A break inside a web address joins (#79). The address is the run
+of URL characters ending the line: it has a scheme, starts with `www.` or opens with a domain
+and a slash, and holds a dot. It continues without a space after `_ = & ? # % ~` that follows a
+letter or digit, or after a percent escape. It also continues after a dot that follows a letter
+or digit when the next line starts lowercase or with a word that is not a bare number
+(`https://www.` + `federalreserve.gov`, `10.1080/14693062.` + `2022.2061405`), after a hyphen
+before a digit or capital, and before a line opening with `/ . _ ? # = & % ~` and a letter or
+digit. A hyphen before a lowercase letter stays with the hyphen policy, because typesetters
+hyphenate inside addresses too. A period after a closing parenthesis, or before a capital, ends
+the sentence. The same test keeps a list item's first wrapped line after a marker line ending
+inside an address (`(AIM)—www.faa.` + `gov/…`).
 `FootnoteDetector` recognizes page-bottom footnotes: a line of three or more dash characters
 after at least three body-size lines, followed to the end of the page only by untagged
 proportional lines at most 90% of that body size, in one column at close spacing, each note
@@ -195,12 +209,18 @@ a superscript. `NumberedNoteDetector` recognizes a chapter's endnotes on a page 
 head reads `NOTES TO CHAPTER N`: consecutive numbered starts at one indent, wrapped lines at
 one dedented edge (which may open with `p. 11` or an initial), an unnumbered line at the
 indent as a further paragraph of the current note, and a larger `N+1 Title` line followed by
-note 1 as the next chapter's opening, which switches the scope mid-page. The first start is the
+note 1 as the next chapter's opening, which switches the scope mid-page. A head naming two
+consecutive chapters (`NOTES TO CHAPTERS 9-10`) opens with the first and is accepted only when the
+page switches to the second. A list inside a note continues that note (#80). It opens after at
+most 1.6 body sizes of space, with a bullet at or inside the note indent or with `1.` (or
+`1 and 2.`) one to three body sizes inside it. Bullets wrap to one hanging edge; numbered items
+count up and wrap back to the note indent, and an unnumbered line at their edge is a further
+paragraph. Each item is a further paragraph of the note. The first start is the
 first numbered line on the edge most numbered lines share, so a dedented `5.This` or a year
 does not set the indent. Each note paragraph carries a `NoteKey` (number, chapter scope); a
 page-bottom footnote carries one with page scope; a note's later paragraphs and marker-less
-continuations carry none. Images, tags, OCR or synthetic text, lists inside notes and heads
-naming two chapters (`NOTES TO CHAPTERS 9-10`) still refuse the page. Heading-size evidence excludes text already preserved inside images
+continuations carry none. Images, tags, OCR or synthetic text, lettered lists and list items
+that do not follow those shapes still refuse the page. Heading-size evidence excludes text already preserved inside images
 when at least three remaining lines and 200 characters support the dominant reflowable font size.
 Candidates within 10% of that supported body size are suppressed, while the original 25%
 page-size threshold still applies. This retains existing modestly larger section headings. Short titles
@@ -292,7 +312,9 @@ body-size estimate.
 A thin painted rule beneath prose is that text's decoration and seeds no crop; a rule inside a
 short mathematical line (a radical's vinculum, an exercise bar) or between a word-free term and
 a term starting beneath it (a fraction bar) keeps those lines in one crop, and an isolated rule
-remains a crop, as before. Rows of divisor bars beneath equations are not table headers. Whole-line expansion admits the lines a graphic
+remains a crop, as before. A line with an equals sign seeds a formula crop only when that sign
+is outside a web address's query string (`print.php3?ReportID=145`, `item_id=1645&content_type_id=7`),
+so notes citing such addresses keep their text (#80). Rows of divisor bars beneath equations are not table headers. Whole-line expansion admits the lines a graphic
 captures and the other pieces of their rows, then trims the crop away from lines it merely
 touches. It does not chain from text line to text line through overlapping leading, so a
 label underline, a column rule or an inline equation beside tightly leaded prose does not

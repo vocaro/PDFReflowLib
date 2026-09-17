@@ -16,9 +16,11 @@ enum NumberedNoteDetector {
         var notes: [Int: Note] = [:]
     }
 
-    /// The chapter named by a top-margin `NOTES TO CHAPTER N` running head, with an optional
-    /// folio on either side. `NOTES TO CHAPTERS 9-10` names no single chapter.
-    static func chapter(on page: PageContent) -> Int? {
+    /// The chapters named by a top-margin running head, with an optional folio on either side:
+    /// `NOTES TO CHAPTER N` names `N...N`; `NOTES TO CHAPTERS N-M` (hyphen or en dash) names
+    /// `N...M` only for consecutive chapters, a page that closes one chapter's notes and opens
+    /// the next's (9/11 pages 572 and 578, #80).
+    static func chapters(on page: PageContent) -> ClosedRange<Int>? {
         guard !page.recognized, !page.hasSyntheticTextStyle, !page.requiresPageImage else { return nil }
         for line in page.lines {
             guard line.rect.midY >= page.bounds.minY + page.bounds.height * 0.9 else { continue }
@@ -28,14 +30,22 @@ enum NumberedNoteDetector {
             }
             if words.first.map(number) == true { words.removeFirst() }
             guard (4...5).contains(words.count), words[0] == "NOTES", words[1] == "TO",
-                  words[2] == "CHAPTER", number(words[3]), let chapter = Int(words[3]), chapter > 0,
                   words.count == 4 || number(words[4]) else { continue }
-            return chapter
+            if words[2] == "CHAPTER", number(words[3]), let chapter = Int(words[3]), chapter > 0 {
+                return chapter...chapter
+            }
+            let bounds = words[3].split(omittingEmptySubsequences: false) { $0 == "-" || $0 == "\u{2013}" }
+            guard words[2] == "CHAPTERS", bounds.count == 2, number(bounds[0]), number(bounds[1]),
+                  let first = Int(bounds[0]), let last = Int(bounds[1]), first > 0, last == first + 1 else { continue }
+            return first...last
         }
         return nil
     }
 
-    static func hasHeading(on page: PageContent) -> Bool { chapter(on: page) != nil }
+    /// The first chapter a notes running head names.
+    static func chapter(on page: PageContent) -> Int? { chapters(on: page)?.lowerBound }
+
+    static func hasHeading(on page: PageContent) -> Bool { chapters(on: page) != nil }
 
     /// Element indices map to a note's first element. Refuse the page if any later content
     /// breaks the sequence, typography, close line spacing or first-line indentation pattern.
@@ -79,15 +89,19 @@ enum NumberedNoteDetector {
     /// line at the indent is a further paragraph of the current note (page 469's note 1, page
     /// 473's note 66). A larger line `N Title` naming the next chapter, followed by note 1,
     /// switches the scope mid-page (page 484: chapter 1's note 241, then chapter 2's notes).
+    /// `lastChapter` is the second chapter a `NOTES TO CHAPTERS N-M` head names (nil reads it
+    /// from the page when `chapter` is nil too): such a page must switch to that chapter.
     static func layout(in elements: [LayoutReconstructor.Element], page: PageContent,
-                       chapter: Int? = nil) -> Layout? {
-        analyze(elements, page: page, chapter: chapter).layout
+                       chapter: Int? = nil, lastChapter: Int? = nil) -> Layout? {
+        analyze(elements, page: page, chapter: chapter, lastChapter: lastChapter).layout
     }
 
     static func analyze(_ elements: [LayoutReconstructor.Element], page: PageContent,
-                        chapter: Int? = nil) -> (layout: Layout?, reason: String) {
+                        chapter: Int? = nil, lastChapter: Int? = nil) -> (layout: Layout?, reason: String) {
         guard !page.recognized, !page.hasSyntheticTextStyle, !page.requiresPageImage else { return (nil, "page fallback") }
-        guard let heading = chapter ?? self.chapter(on: page) else { return (nil, "no heading") }
+        let read = chapter == nil ? chapters(on: page) : nil
+        guard let heading = chapter ?? read?.lowerBound else { return (nil, "no heading") }
+        let last = chapter == nil ? read?.upperBound : lastChapter
         guard elements.allSatisfy({ $0.image == nil }) else { return (nil, "image") }
         guard let first = firstStart(in: elements), let initial = elements[first].line else {
             return (nil, "no numbered start")
@@ -98,6 +112,9 @@ enum NumberedNoteDetector {
         var start = first, expected = number(of: initial)!, count = 0, chapter = heading
         var continuationX: CGFloat?
         var previous: TextLine?
+        // A list inside the current note: its items' edge, whether they are bullets, the next
+        // item number, and the bullets' hanging edge once a wrapped line has set it.
+        var sublist: (x: CGFloat, bullet: Bool, next: Int, wrapX: CGFloat?)?
         for index in first..<elements.count {
             guard let line = elements[index].line, !line.monospaced, line.structure == nil else {
                 return (nil, "element \(index): monospaced or tagged")
@@ -117,13 +134,66 @@ enum NumberedNoteDetector {
                 }
                 chapter += 1
                 expected = 1
+                sublist = nil
                 // The heading's spacing was checked above; note 1 needs no further gap test.
                 previous = nil
                 continue
             }
+            // A note's own list opens with its first item (a bullet at or inside the note indent,
+            // or `1.` inside it) and may be set off by added space.
+            let marker = count >= 1 ? subItem(line) : nil
+            let opensSublist = sublist == nil && previous != nil && marker.map { marker in
+                let inset = line.rect.minX - initial.rect.minX
+                return marker.bullet ? inset >= -size * 0.25 && inset <= size * 3
+                    : marker.first == 1 && inset >= size && inset <= size * 3
+            } == true
             if let previous {
                 let gap = previous.rect.minY - line.rect.maxY
-                guard gap >= -size * 0.2, gap <= size * 0.8 else { return (nil, "element \(index): gap") }
+                guard gap >= -size * 0.2, gap <= (opensSublist ? size * 1.6 : size * 0.8) else {
+                    return (nil, "element \(index): gap")
+                }
+            }
+            if let marker, opensSublist {
+                sublist = (line.rect.minX, marker.bullet, marker.last + 1, nil)
+                start = index
+                layout.paragraphs[index] = start
+                previous = line
+                continue
+            }
+            if let open = sublist {
+                let onItemEdge = abs(line.rect.minX - open.x) <= size * 0.25
+                if onItemEdge, let marker, marker.bullet == open.bullet, open.bullet || marker.first == open.next {
+                    // The list's next item.
+                    sublist?.next = marker.last + 1
+                    start = index
+                    layout.paragraphs[index] = start
+                    previous = line
+                    continue
+                }
+                if !open.bullet, onItemEdge, marker == nil, line.text.filter(\.isLetter).count >= 10,
+                   line.text.range(of: "^(?:[•*−-]|[A-Za-z][.)]|[0-9]+[.)])\\s", options: .regularExpression) == nil {
+                    // A numbered item's further paragraph, set at the item edge (as the source
+                    // continues note 107's list on page 544: `In December 1999, …` under item 9).
+                    start = index
+                    layout.paragraphs[index] = start
+                    previous = line
+                    continue
+                }
+                // A wrapped item line: numbered items wrap back to the note indent (and never
+                // open the note the sequence expects there); bullets wrap to a hanging edge.
+                let hanging = line.rect.minX - open.x
+                let wraps = open.bullet
+                    ? hanging > size * 0.25 && hanging <= size * 1.5
+                        && open.wrapX.map { abs($0 - line.rect.minX) <= size * 0.25 } ?? true
+                    : atIndent && number(of: line) != expected
+                if wraps, previous?.wraps != false, marker == nil,
+                   line.text.range(of: "^(?:[•*−-]|[A-Za-z]\\))\\s", options: .regularExpression) == nil {
+                    if open.bullet { sublist?.wrapX = line.rect.minX }
+                    layout.paragraphs[index] = start
+                    previous = line
+                    continue
+                }
+                sublist = nil
             }
             if atIndent, let value = number(of: line) {
                 guard value == expected else { return (nil, "element \(index): expected \(expected), found \(value)") }
@@ -155,8 +225,20 @@ enum NumberedNoteDetector {
             previous = line
         }
         guard count >= 3 else { return (nil, "fewer than three notes") }
+        // A two-chapter head is evidence only for a page that really opens the second chapter.
+        if let last, last != heading, chapter != last { return (nil, "head names chapter \(last)") }
         guard continuationX != nil else { return (nil, "no dedented continuation") }
         return (layout, "accepted")
+    }
+
+    /// An item of a list inside a note: a bullet, or a number (`1.`, `4 and 5.`) followed by
+    /// a capitalized word. `first` and `last` are the item's numbers (zero for a bullet).
+    static func subItem(_ line: TextLine) -> (bullet: Bool, first: Int, last: Int)? {
+        if line.text.hasPrefix("• "), line.text.filter(\.isLetter).count >= 4 { return (true, 0, 0) }
+        guard let match = line.text.firstMatch(of: /^([1-9][0-9]{0,2})(?: and ([1-9][0-9]{0,2}))?\.\s*\p{Lu}/),
+              let first = Int(match.1) else { return nil }
+        let last = match.2.flatMap { Int($0) } ?? first
+        return last == first || last == first + 1 ? (false, first, last) : nil
     }
 
     /// `2 The Foundation of the New Terrorism`: the chapter number, whitespace, then a title

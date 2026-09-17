@@ -526,6 +526,18 @@ enum LayoutReconstructor {
         }
     }
 
+    /// A word whose equals signs belong to a web address's query string, not an equation: an
+    /// address with a query (`…/print.php3?ReportID=145).`, `www.nftc.org/…?Mode=View&…`), or
+    /// the wrapped rest of one, two or more `name=value` pairs joined by `&`
+    /// (`item_id=1645&content_type_id=7).`). 9/11 notes pages 571 and 581–583 lost the lines
+    /// around such addresses to formula crops (#80).
+    static func isURLQuery(_ word: Substring) -> Bool {
+        if let query = word.firstIndex(of: "?"), let equals = word.firstIndex(of: "="), query < equals,
+           word[..<query].contains(where: { $0 == "/" || $0 == "." }) { return true }
+        return word.range(of: #"(?:^|[(?&])[A-Za-z_][A-Za-z0-9_.-]*=[^\s&=]*(?:&[A-Za-z_][A-Za-z0-9_.-]*=[^\s&=]*)+[).,;]*$"#,
+                          options: .regularExpression) != nil
+    }
+
     /// Expand crops to whole intersecting text lines so a label cannot be cut in half.
     static func graphicsWithLabels(_ page: PageContent) -> [CGRect] {
         // Displayed formulas have spatial meaning (superscripts, fractions, aligned terms)
@@ -533,7 +545,8 @@ enum LayoutReconstructor {
         let formulas = page.lines.filter { line in
             guard !line.monospaced, line.text.count < 160 else { return false }
             let mathSymbols = line.text.rangeOfCharacter(from: CharacterSet(charactersIn: "∫∑∏√∂∇≈≠≤≥∞")) != nil
-            let equation = line.text.contains("=") && line.text.split(whereSeparator: \.isWhitespace).count <= 12
+            let words = line.text.split(whereSeparator: \.isWhitespace)
+            let equation = words.count <= 12 && words.contains { $0.contains("=") && !isURLQuery($0) }
             return mathSymbols || equation
         }.map { $0.rect.insetBy(dx: -4, dy: -8) }
         // A rule underlining one text line is that text's decoration, not a figure. Rows of
@@ -796,13 +809,15 @@ enum LayoutReconstructor {
     }
 
     /// `noteChapter` is the chapter named by this page's `NOTES TO CHAPTER N` running head,
-    /// retained before furniture removal; nil for pages without one. `continuesNote` states
+    /// retained before furniture removal; nil for pages without one. `noteLastChapter` is the
+    /// second chapter a `NOTES TO CHAPTERS N-M` head names. `continuesNote` states
     /// that the previous page ended in a page-bottom footnote, so a marker-less note under
     /// this page's separator may continue it. `labelStyles` is the book's section-label
     /// typography (`labelStyles(from:)`).
     static func blocks(page: PageContent, images: [(CGRect, String)], vocabulary: Set<String>,
                        warnings: inout [ConversionWarning], noteChapter: Int? = nil,
-                       continuesNote: Bool = false, labelStyles: Set<LabelStyle> = []) -> [ReflowBlock] {
+                       noteLastChapter: Int? = nil, continuesNote: Bool = false,
+                       labelStyles: Set<LabelStyle> = []) -> [ReflowBlock] {
         let body = max(4, bodySize(page.lines))
         // A rotated stamp in the outer margin is furniture, never content or a heading.
         let stamps = rotatedMarginLines(page)
@@ -897,7 +912,8 @@ enum LayoutReconstructor {
             guard let footnotes else { return true }
             return !footnotes.range.contains(index) && index != footnotes.separator
         }
-        let noteLayout = NumberedNoteDetector.layout(in: elements, page: page, chapter: noteChapter)
+        let noteLayout = NumberedNoteDetector.layout(in: elements, page: page, chapter: noteChapter,
+            lastChapter: noteLastChapter)
         let noteGroups = noteLayout?.paragraphs ?? [:]
         func isHeadingCandidate(_ line: TextLine) -> Bool {
             line.structure == nil && headingTypography(line)
@@ -1015,9 +1031,11 @@ enum LayoutReconstructor {
             // A marker line that ends one is as likely to be the whole item, leaving the
             // indented line under it to open a paragraph (Loper Bright page 64's wrapped
             // citation, whose next paragraph opens on a first-line indent).
+            // A period inside a web address ends nothing (FAA page 372's `(AIM)—www.faa.` +
+            // `gov/air_traffic/…`, #79).
             let closing: Set<Character> = ["\u{201D}", "\u{2019}", "\"", "'", ")", "]"]
             guard let ending = item.last.text.reversed().first(where: { !$0.isWhitespace && !closing.contains($0) }),
-                  !".!?".contains(ending) else { return false }
+                  !".!?".contains(ending) || addressContinues(item.last.text, line.text) else { return false }
             return true
         }
         // PDFKit can detach a body note marker that falls past a justified line's right edge
@@ -1626,6 +1644,58 @@ enum LayoutReconstructor {
 
     private enum JoinOperation { case space, concatenate, removeHyphen }
 
+    private static let addressCharacters = Set("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-._~:/?#[]@!$&()*+,;=%")
+
+    private static func isASCIIAlphanumeric(_ character: Character?) -> Bool {
+        character.map { $0.isASCII && ($0.isLetter || $0.isNumber) } ?? false
+    }
+
+    /// The web address `text` ends inside: the run of URL characters that ends it, after any
+    /// whitespace, dash or quote (`(NACO)—www.faa.` on FAA page 372) and without leading opening
+    /// punctuation, when that run has a scheme (`https://`), starts with `www.`, or opens with a
+    /// domain and a slash (`ffiec.gov/`).
+    static func trailingAddress(_ text: String) -> Substring? {
+        let start = text.lastIndex(where: { !addressCharacters.contains($0) }).map { text.index(after: $0) } ?? text.startIndex
+        let word = text[start...].drop { "([<:;,".contains($0) }
+        guard word.count >= 2, word.contains("."),
+              word.range(of: "^(?:[A-Za-z][A-Za-z0-9+.-]*://|www\\.|[A-Za-z0-9-]+(?:\\.[A-Za-z0-9-]+)*\\.[A-Za-z]{2,}/)",
+                         options: [.regularExpression, .caseInsensitive]) != nil else { return nil }
+        return word
+    }
+
+    /// A line broken inside a web address continues it with no space (#79). The break is inside
+    /// the address when the address ends in a character that cannot end one after a letter or
+    /// digit (`bst_` + `openmarketops.htm`, `?content_` + `item_id=…`), in a dot after a letter or
+    /// digit before a lowercase continuation (`https://www.` + `federalreserve.gov`) or a
+    /// continuation that is not a bare number (`10.1080/14693062.` + `2022.2061405`, never `2004`),
+    /// in a hyphen before a digit or capital (`Spec/02-` + `2004/Article…`), or when the next line
+    /// opens with such a character (`www.federalreserve.gov` + `/monetarypolicy/…`). A hyphen
+    /// before a lowercase letter stays with the hyphen policy: the Fed's typesetter hyphenates
+    /// inside addresses (`communi-` + `cations.htm`) as well as breaking at real ones. A period
+    /// after a closing parenthesis, or before a capital, ends the sentence.
+    private static func addressContinues(_ left: String, _ right: String) -> Bool {
+        guard let next = right.first, let address = trailingAddress(left), let last = address.last else { return false }
+        // A percent escape encodes a character the address continues past (`Lithium%20` +
+        // `Batteries%200621_0.pdf`).
+        if address.range(of: "%[0-9A-Fa-f]{0,2}$", options: .regularExpression) != nil {
+            return isASCIIAlphanumeric(next) || next == "%"
+        }
+        let before = address.dropLast().last
+        switch last {
+        case "_", "=", "&", "?", "#", "%", "~":
+            return isASCIIAlphanumeric(before) && isASCIIAlphanumeric(next)
+        case ".":
+            guard isASCIIAlphanumeric(before), next.isASCII else { return false }
+            if next.isLowercase { return true }
+            let word = right.prefix { !$0.isWhitespace }.reversed().drop { ".,;:)]".contains($0) }
+            return next.isNumber && word.contains { !$0.isNumber }
+        case "-":
+            return next.isASCII && (next.isNumber || next.isUppercase)
+        default:
+            return isASCIIAlphanumeric(last) && "/._?#=&%~".contains(next) && isASCIIAlphanumeric(right.dropFirst().first)
+        }
+    }
+
     private static func joinOperation(_ left: String, _ right: String, vocabulary: Set<String>, page: Int,
                                       warnings: inout [ConversionWarning]) -> JoinOperation {
         if left.hasSuffix("\u{00ad}") { return .removeHyphen }
@@ -1636,6 +1706,7 @@ enum LayoutReconstructor {
         // does one after other punctuation, which in the corpus is only damaged OCR (#70).
         if left.hasSuffix("/"), let before = left.dropLast().last, before.isLetter || before.isNumber || before == "/",
            let next = right.first, next.isLetter || next.isNumber { return .concatenate }
+        if addressContinues(left, right) { return .concatenate }
         guard left.hasSuffix("-"), right.first?.isLowercase == true else { return .space }
         let prefix = left.dropLast().reversed().prefix(while: { $0.isLetter }).reversed()
         let suffix = right.prefix(while: { $0.isLetter })

@@ -170,7 +170,7 @@ enum PDFReflowLibPipeline {
         var labelEvidence: [LayoutReconstructor.LabelStyle: Int] = [:]
         var furniture = FurnitureDetector.Ledger()
         /// Pages headed `NOTES TO CHAPTER N`, by chapter number.
-        var numberedNotePages: [Int: Int] = [:]
+        var numberedNotePages: [Int: ClosedRange<Int>] = [:]
         var recognizedPages = 0
         var characters = 0
         for i in 0..<total {
@@ -221,7 +221,7 @@ enum PDFReflowLibPipeline {
                 LayoutReconstructor.addVocabulary(of: content, to: &vocabulary)
                 for style in LayoutReconstructor.labelEvidence(on: content) { labelEvidence[style, default: 0] += 1 }
             }
-            if let chapter = NumberedNoteDetector.chapter(on: content) { numberedNotePages[content.number] = chapter }
+            if let chapters = NumberedNoteDetector.chapters(on: content) { numberedNotePages[content.number] = chapters }
             if options.removeRepeatedHeadersAndFooters { FurnitureDetector.collect(content, pageIndex: i, into: &furniture) }
             if content.recognized { recognizedPages += 1 }
             try store.store(content, at: i)
@@ -282,7 +282,8 @@ enum PDFReflowLibPipeline {
                     }
                     pageBlocks = LayoutReconstructor.blocks(page: content, images: images,
                         vocabulary: vocabulary, warnings: &warnings,
-                        noteChapter: numberedNotePages[content.number],
+                        noteChapter: numberedNotePages[content.number]?.lowerBound,
+                        noteLastChapter: numberedNotePages[content.number]?.upperBound,
                         continuesNote: previousPage != nil && blocks.last?.isFootnote == true,
                         labelStyles: labelStyles)
                     if pageBlocks.contains(where: \.hasReflowedText) {

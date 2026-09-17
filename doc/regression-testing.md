@@ -100,13 +100,13 @@ are, in the page markup). Evidence and negative controls on real output are in
 
 ## Current content coverage
 
-[corpus/regressions.json](../corpus/regressions.json) has 895 targeted checks on 183 reviewed pages
+[corpus/regressions.json](../corpus/regressions.json) has 945 targeted checks on 199 reviewed pages
 across 15 documents: FAA, algebra, 9/11, The Fed Explained, Dietary Guidelines, Our Flag, the CDC
 comic, Blue Book, and the seven #30 cases (USGS copper tables, Loper Bright footnotes, the Census
 unmapped-encoding report, the USCIS Arabic guide, IRS Publication 596 in Simplified Chinese, and
-the NBS and Replay Clocks academic papers). They comprise 277 ordered-text, 82 text, 99 paragraph,
-87 absent-text, 74 heading, 12 absent-heading, 26 list-item, 17 script, 11 footnote, 10 note-link,
-27 paragraph-continuation, 1 list-item-continuation, 5 paragraph-separation, 9 distinct-paragraph,
+the NBS and Replay Clocks academic papers). They comprise 277 ordered-text, 92 text, 117 paragraph,
+92 absent-text, 74 heading, 12 absent-heading, 29 list-item, 17 script, 11 footnote, 20 note-link,
+28 paragraph-continuation, 1 list-item-continuation, 5 paragraph-separation, 12 distinct-paragraph,
 82 image-presence, 55 warning, 1 absent-warning, 12 source-region, 3 glyph-structure,
 3 image-appearance and 2 table-cell checks, counted as `tools/check_corpus_content.py` counts them. All source-page
 anchors must also remain complete and ordered, and semantic text must contain no image attachment placeholders.
@@ -366,7 +366,7 @@ swiftc Sources/PDFReflowLib/NativeTextReader.swift Sources/PDFReflowLib/Conversi
 Run from the repository root. The tool verifies the cached PDF against the manifest SHA-256.
 Source review, baseline failures, cross-document safeguards and full-run evidence are retained
 in [the three-fix measurement](../measurements/three-fidelity-fixes/record.md). The suite contains
-361 Swift tests with no known-issue wrappers, and 186 Python tests.
+379 Swift tests with no known-issue wrappers, and 186 Python tests.
 The comparison tests include a real-Poppler image URL check through the safe HTTP handler
 (simple and positioned modes, paths with spaces); absent Poppler is an explicit skip.
 

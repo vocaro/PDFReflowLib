@@ -5,7 +5,7 @@
     {
       "id": "faa-phak-8083-25c",
       "sourceSHA256": "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
-      "basis": "Source pages 16 and 121 visually reviewed. Protects the introductory prose and figure preservation; does not approve page-121 column order. Pages 91/511 are source-reviewed narrow-gutter column-order regressions; the complete left column precedes the right. Reviewed chapter-page folios on pages 16/91 must remain absent from prose. Pages 211/212 visually reviewed: V-speed designators retain their source subscripts in bulleted definitions; source ASI figures remain preserved. Source pages 50/325 visually reviewed for tag-restored left-column-before-right-column order; page 81 caption remains beside the preceding image, before body prose. Page 191 reviewed: four separate left-column items precede the ammeter paragraph; the remaining page is still preserved as an image. Pages 35-36 and 116-117 visually reviewed: each two-column paragraph continues from the bottom of one page onto the next and must remain one paragraph across the source-page marker (#27). Figure 5-36 on page 121 reviewed in color (blue sky, yellow labels, aircraft): the preserved crop must keep its scale, ink contrast and hues (#27). Pages 22-25 and 52-53 visually reviewed (#45): the paragraph between page 22's figures, page 24's right column continued below the figure that opens page 25, and the tagged page 52 continued on the untagged page 53 must each remain one paragraph across the source-page marker. Pages 27, 191 and 365 source rasters reviewed (#69, #70): a bullet PDFKit splits from its text opens that item, not the tail of the block above, and a line broken after a slash inside a compound (`runway/` + `taxiway`, `alternator/` + `generator`) joins without a space. Pages 33, 43, 49, 201 and 370 source rasters reviewed (#63, #73): a section title that opens a paragraph continued on the next page follows the figure caption that closes its page and directly precedes that paragraph (pages 33, 49, 201); a two-line title set nearly the column's width is one heading (pages 43, 370). Pages 136, 159 and 340 source rasters reviewed, with pages 91, 156, 165, 199 and 262 checked against extracted geometry (#76, #82): a 10-point bold or 11-point bold-italic sub-heading on its own line is a heading followed by its paragraph, not the paragraph's opening words; page 159's unpainted `Figure 5-16.` caption text ends at its own last line; page 340's two column titles on one row are two headings.",
+      "basis": "Source pages 16 and 121 visually reviewed. Protects the introductory prose and figure preservation; does not approve page-121 column order. Pages 91/511 are source-reviewed narrow-gutter column-order regressions; the complete left column precedes the right. Reviewed chapter-page folios on pages 16/91 must remain absent from prose. Pages 211/212 visually reviewed: V-speed designators retain their source subscripts in bulleted definitions; source ASI figures remain preserved. Source pages 50/325 visually reviewed for tag-restored left-column-before-right-column order; page 81 caption remains beside the preceding image, before body prose. Page 191 reviewed: four separate left-column items precede the ammeter paragraph; the remaining page is still preserved as an image. Pages 35-36 and 116-117 visually reviewed: each two-column paragraph continues from the bottom of one page onto the next and must remain one paragraph across the source-page marker (#27). Figure 5-36 on page 121 reviewed in color (blue sky, yellow labels, aircraft): the preserved crop must keep its scale, ink contrast and hues (#27). Pages 22-25 and 52-53 visually reviewed (#45): the paragraph between page 22's figures, page 24's right column continued below the figure that opens page 25, and the tagged page 52 continued on the untagged page 53 must each remain one paragraph across the source-page marker. Pages 27, 191 and 365 source rasters reviewed (#69, #70): a bullet PDFKit splits from its text opens that item, not the tail of the block above, and a line broken after a slash inside a compound (`runway/` + `taxiway`, `alternator/` + `generator`) joins without a space. Pages 33, 43, 49, 201 and 370 source rasters reviewed (#63, #73): a section title that opens a paragraph continued on the next page follows the figure caption that closes its page and directly precedes that paragraph (pages 33, 49, 201); a two-line title set nearly the column's width is one heading (pages 43, 370). Pages 136, 159 and 340 source rasters reviewed, with pages 91, 156, 165, 199 and 262 checked against extracted geometry (#76, #82): a 10-point bold or 11-point bold-italic sub-heading on its own line is a heading followed by its paragraph, not the paragraph's opening words; page 159's unpainted `Figure 5-16.` caption text ends at its own last line; page 340's two column titles on one row are two headings. Pages 25, 92 and 372 source rasters reviewed (#79): addresses broken after a dot or underscore rejoin without a space, including `(NACO)—www.faa.` + `gov/…` and the AIM bullet whose marker line ends inside its address; page 92’s `?n=wxcalc_densityaltitude` address no longer seeds a formula crop that split its paragraph.",
       "pages": [
         {
           "page": 16,
@@ -418,6 +418,31 @@
           "absentHeadings": [
             "Runway Safety Area Runway Safety Area Boundary Sign"
           ]
+        },
+        {
+          "page": 92,
+          "paragraphs": [
+            "Using the National Oceanic and Atmospheric Administration (NOAA) website (www.srh.noaa.gov/epz/?n=wxcalc_densityaltitude) for density altitude, enter the 22.22 for 8,000 feet in the station pressure window. Enter a temperature of 80° and a dew point of 75°.",
+            "Another website (www.wahiduddin.net/calc/density_altitude.htm) provides a more straight forward method"
+          ]
+        },
+        {
+          "page": 372,
+          "listItems": [
+            "• FAA National Aeronautical Navigation Services (AeroNav), formerly known as the National Aeronautical Charting Office (NACO)—www.faa.gov/air_traffic/flight_info/aeronav",
+            "• Aeronautical Information Manual (AIM)—www.faa.gov/air_traffic/publications/atpubs/aim/",
+            "• Chart Supplement U.S. (formerly Airport/Facility Directory)—www.faa.gov/air_traffic/flight_info/aeronav/digital_products/dafd/search/"
+          ],
+          "absentText": [
+            "www.faa. gov"
+          ]
+        },
+        {
+          "page": 25,
+          "text": [
+            "downloaded at www.faa.gov/regulations_policies.",
+            "www.faa.gov/regulations_policies/advisory_circulars/ provides a database"
+          ]
         }
       ]
     },
@@ -656,7 +681,7 @@
     {
       "id": "gpo-911-2004",
       "sourceSHA256": "657d41475eb3a9a5e3e87a6c7c51ac1dfbe1af7566d1abff7bf7286e7e1c0e1b",
-      "basis": "Existing reviewed positiveTextChecks in gpo-911-2004-review.json; native word boundaries must survive. Header/source-body checks cover visually reviewed physical pages 20/21, 65/67 and 472; chapter 1 title is reviewed on page 19. Captured source geometry protects remaining lines on 21 pages; no external prototype heading statistics are reproduced. Page 20 protects the already-supported raised reference 4 after 7:45. Reviewed pages 472/473/532 protect selected numbered paragraphs, a second paragraph within note 66, and the dedented chapter-number continuation inside note 9. General multi-paragraph/cross-page ownership and chapter-scoped reference links remain unqualified. Pages 20-21 and 24-25 visually reviewed: each paragraph continues onto the next page and must remain one paragraph across the source-page marker (#27). Pages 13-16, 126-127, 192-193 and 357-358 visually reviewed (#45): the bottom folios 108, 174 and 339 on chapter-opening pages and the front-matter folios xiii/xv stay separate paragraphs that never absorb the following page's text, while the body paragraph above each chapter-opening folio continues onto the next page. Pages 19, 20, 64, 65, 469 and 484 visually reviewed (#11): each chapter’s endnotes are numbered from 1, so a marker links only to the note of its own chapter (outline chapter openings validated on the page): page 19’s 1 and page 20’s 4 reach chapter 1’s notes 1 and 4 on page 469, where note 1’s second indented paragraph stays a paragraph of its own; page 64’s 241 reaches chapter 1’s last note on page 484, while page 65’s 1 reaches chapter 2’s note 1 under the chapter-opening heading on that same page. Every linked note returns to its first reference. Pages 13–18, 467–468 and 571–585 visually reviewed (#62): a note-page or front-matter running head whose folio is 18 (Arabic) or 0 (Roman) from the physical page is margin furniture even where no three pages repeat its text, and is never a heading; the genuine per-chapter notes titles (10 Wartime, 11 Foresight—and Hindsight, 12 What to Do?) stay in the navigation, and the prose each removed head had separated joins across the page boundary. #45's front-matter separation checks now name the first paragraph that follows each folio, since the head between them is gone; the folio still must not absorb it. Pages 365 and 374 source rasters reviewed (#69): item 4 is one list item although PDFKit splits its `4.` marker, and `10.August 2001` (no space after the period) is the tenth item beside spaced items 6-9, with item 4's indented second paragraph and items 3 and 9 as controls. Page 492 protects a URL rejoined after a line-ending slash (#70). Page 91 checked against extracted geometry (#83): `3.2 ADAPTATION—AND NONADAPTATION—IN THE` and its hanging second line `LAW ENFORCEMENT COMMUNITY` are one heading.",
+      "basis": "Existing reviewed positiveTextChecks in gpo-911-2004-review.json; native word boundaries must survive. Header/source-body checks cover visually reviewed physical pages 20/21, 65/67 and 472; chapter 1 title is reviewed on page 19. Captured source geometry protects remaining lines on 21 pages; no external prototype heading statistics are reproduced. Page 20 protects the already-supported raised reference 4 after 7:45. Reviewed pages 472/473/532 protect selected numbered paragraphs, a second paragraph within note 66, and the dedented chapter-number continuation inside note 9. General multi-paragraph/cross-page ownership and chapter-scoped reference links remain unqualified. Pages 20-21 and 24-25 visually reviewed: each paragraph continues onto the next page and must remain one paragraph across the source-page marker (#27). Pages 13-16, 126-127, 192-193 and 357-358 visually reviewed (#45): the bottom folios 108, 174 and 339 on chapter-opening pages and the front-matter folios xiii/xv stay separate paragraphs that never absorb the following page's text, while the body paragraph above each chapter-opening folio continues onto the next page. Pages 19, 20, 64, 65, 469 and 484 visually reviewed (#11): each chapter’s endnotes are numbered from 1, so a marker links only to the note of its own chapter (outline chapter openings validated on the page): page 19’s 1 and page 20’s 4 reach chapter 1’s notes 1 and 4 on page 469, where note 1’s second indented paragraph stays a paragraph of its own; page 64’s 241 reaches chapter 1’s last note on page 484, while page 65’s 1 reaches chapter 2’s note 1 under the chapter-opening heading on that same page. Every linked note returns to its first reference. Pages 13–18, 467–468 and 571–585 visually reviewed (#62): a note-page or front-matter running head whose folio is 18 (Arabic) or 0 (Roman) from the physical page is margin furniture even where no three pages repeat its text, and is never a heading; the genuine per-chapter notes titles (10 Wartime, 11 Foresight—and Hindsight, 12 What to Do?) stay in the navigation, and the prose each removed head had separated joins across the page boundary. #45's front-matter separation checks now name the first paragraph that follows each folio, since the head between them is gone; the folio still must not absorb it. Pages 365 and 374 source rasters reviewed (#69): item 4 is one list item although PDFKit splits its `4.` marker, and `10.August 2001` (no space after the period) is the tenth item beside spaced items 6-9, with item 4's indented second paragraph and items 3 and 9 as controls. Page 492 protects a URL rejoined after a line-ending slash (#70). Page 91 checked against extracted geometry (#83): `3.2 ADAPTATION—AND NONADAPTATION—IN THE` and its hanging second line `LAW ENFORCEMENT COMMUNITY` are one heading. Pages 543, 571, 572, 578 and 581-583 source rasters reviewed (#80): every note on those endnote pages is one paragraph with its wrapped lines, keyed to its chapter and reached from its body marker (pages 253, 334, 341, 343, 356, 357, 393, 406 and 422); a web address with `=` no longer seeds a formula crop that swallowed note lines on 571 and 581-583 (only the reference image remains there); pages 572 and 578 are headed NOTES TO CHAPTERS 9-10 / 10-11 and switch chapters at their titles; note 107’s numbered candidate list (543) and note 4’s bullets (583) are further paragraphs of their notes. Addresses broken inside themselves rejoin without a space on 570 and 581 (#79).",
       "pages": [
         {
           "page": 15,
@@ -811,9 +836,17 @@
         {
           "page": 581,
           "absentText": [
-            "NOTES TO CHAPTER 12"
+            "NOTES TO CHAPTER 12",
+            "content_ item_id"
           ],
-          "minimumImages": 2
+          "minimumImages": 1,
+          "paragraphs": [
+            "(online at http://people-press.org/reports/print.php3?ReportID=145). For the quotation, see Pew Global Attitudes Project report",
+            "(online at www.pewtrusts.com/ideas/ideas_item.cfm?content_item_id=1645&content_type_id=7)."
+          ],
+          "text": [
+            "(online at http://english.daralhayat.com/Spec/02-2004/Article-20040213-ac40bdaf-c0a8-01ed-004e-5e7ac897d678/story.html)."
+          ]
         },
         {
           "page": 486,
@@ -860,7 +893,16 @@
           "absentText": [
             "NOTES TO CHAPTER 12"
           ],
-          "minimumImages": 2
+          "minimumImages": 1,
+          "paragraphs": [
+            "Testimony of Thomas Ridge before the House Judiciary Committee, Apr. 21, 2004 (online at www.dhs.gov/dhspublic/display?theme=45&content=3498&print=true). Program planners"
+          ],
+          "continuedParagraphs": [
+            {
+              "end": "the Iraq war; and per",
+              "next": "haps cyclical economic factors.For the cost to the United States of visa backlogs,see National Foreign Trade Council report"
+            }
+          ]
         },
         {
           "page": 583,
@@ -870,7 +912,18 @@
           "headings": [
             "How to Do It? A Different Way of Organizing the Government"
           ],
-          "minimumImages": 2
+          "minimumImages": 1,
+          "paragraphs": [
+            "(online at www.nftc.org/newsflash/newsflash.asp?Mode=View&articleid=1686&Category=All).",
+            "39.These issues are on the G-8 agenda.White House press release,“G-8 Secure and Facilitated Travel Initiative (SAFTI),”June 9,2004",
+            "• Similarly, the FBI’s Counterterrorism Division would remain, as now, the operational arm of the Bureau to combat terrorism."
+          ],
+          "distinctParagraphs": [
+            {
+              "first": "should be concentrated more effectively than they are now.",
+              "second": "• The DCI’s Counterterrorist Center would become a CIA unit"
+            }
+          ]
         },
         {
           "page": 24,
@@ -938,6 +991,14 @@
             {
               "end": "339",
               "next": "not enough to man a full platoon"
+            }
+          ],
+          "noteLinks": [
+            {
+              "marker": "1",
+              "before": "pregnant with conflicting meanings.”",
+              "note": "Roberta Wohlstetter, Pearl Harbor:Warning and Decision",
+              "notePage": 578
             }
           ]
         },
@@ -1079,6 +1140,10 @@
               "end": "according to one of the ESU offi",
               "next": "cers and one of the firefighters in the North Tower"
             }
+          ],
+          "paragraphs": [
+            "(online at http://worldtradeaftermath.com/wta/contacts/companies_list.asp?letter=a); CNN,WTC tenants, 2001 (online at www.cnn.com/SPECIALS/2001/trade.center/tenants1.html); September 11 personal tributes",
+            "203.Appended to the directive was a list of different types of emergencies with designated Incident Commanders.Terrorist incidents"
           ]
         },
         {
@@ -1092,6 +1157,16 @@
           ],
           "warningCodesAnyOf": [
             "furnitureRemoved"
+          ],
+          "paragraphs": [
+            "209. Based on more than 100 interviews we conducted and our review of 500 internal FDNY interview transcripts,we",
+            "1.All times are Eastern Daylight Time."
+          ],
+          "distinctParagraphs": [
+            {
+              "first": "4.White House record, Situation Room Communications Log, Sept. 11, 2001.",
+              "second": "5.White House transcript, Rice interview with Bob Woodward"
+            }
           ]
         },
         {
@@ -1116,6 +1191,10 @@
           ],
           "warningCodesAnyOf": [
             "furnitureRemoved"
+          ],
+          "paragraphs": [
+            "86. DOD Special Operations Command and Central Command briefings",
+            "1. Roberta Wohlstetter, Pearl Harbor:Warning and Decision (Stanford Univ. Press, 1962), p. 387."
           ]
         },
         {
@@ -1201,13 +1280,131 @@
             "LAW ENFORCEMENT COMMUNITY",
             "3.2 ADAPTATION—AND NONADAPTATION—IN THE"
           ]
+        },
+        {
+          "page": 543,
+          "paragraphs": [
+            "104. Intelligence reports, interrogations of KSM, May 15, 2003; Jan. 9, 2004;Apr. 2, 2004; Intelligence report, interrogation of Khallad, Apr. 13, 2004;",
+            "107. Intelligence report, interrogation of Khallad,Apr. 5, 2004; Intelligence report, interrogation of KSM, Mar. 20, 2004. The candidate operatives were",
+            "1. Muhammad Mani Ahmad al Kahtani. Currently in custody, he is the last known Saudi muscle candidate to be sent to the United States",
+            "4 and 5. Saeed al Baluchi and Qutaybah al Najdi. Both were sent to Saudi Arabia via Bahrain, where Najdi was stopped"
+          ],
+          "distinctParagraphs": [
+            {
+              "first": "The candidate operatives were",
+              "second": "1. Muhammad Mani Ahmad al Kahtani."
+            }
+          ],
+          "absentText": [
+            "mus- cle"
+          ]
+        },
+        {
+          "page": 570,
+          "text": [
+            "(online at www.panynj.gov/AboutthePortAuthority/PortAuthorityPolice/InMemoriam/)."
+          ]
+        },
+        {
+          "page": 253,
+          "noteLinks": [
+            {
+              "marker": "104",
+              "before": "media committee.",
+              "note": "Intelligence reports, interrogations of KSM, May 15, 2003; Jan. 9, 2004",
+              "notePage": 543
+            },
+            {
+              "marker": "107",
+              "before": "ended up with only the 19.",
+              "note": "The candidate operatives were",
+              "notePage": 543
+            }
+          ]
+        },
+        {
+          "page": 334,
+          "noteLinks": [
+            {
+              "marker": "200",
+              "before": "civilians below the impact zone.",
+              "note": "CNN,WTC tenants, 2001 (online at www.cnn.com/SPECIALS/2001/trade.center/tenants1.html)",
+              "notePage": 571
+            }
+          ]
+        },
+        {
+          "page": 343,
+          "noteLinks": [
+            {
+              "marker": "1",
+              "before": "White House Situation Room that morning.",
+              "note": "All times are Eastern Daylight Time.",
+              "notePage": 572
+            }
+          ]
+        },
+        {
+          "page": 356,
+          "noteLinks": [
+            {
+              "marker": "86",
+              "before": "logistics, and communications.",
+              "note": "DOD Special Operations Command and Central Command briefings",
+              "notePage": 578
+            }
+          ]
+        },
+        {
+          "page": 393,
+          "noteLinks": [
+            {
+              "marker": "24",
+              "before": "among Muslims in Nigeria.”",
+              "note": "ideas_item.cfm?content_item_id=1645&content_type_id=7",
+              "notePage": 581
+            }
+          ]
+        },
+        {
+          "page": 422,
+          "noteLinks": [
+            {
+              "marker": "4",
+              "before": "updating plans to follow through on cases.",
+              "note": "should be concentrated more effectively than they are now.",
+              "notePage": 583
+            }
+          ]
+        },
+        {
+          "page": 341,
+          "noteLinks": [
+            {
+              "marker": "210",
+              "before": "radio signal strength.",
+              "note": "A New Weapon for Firefighters",
+              "notePage": 572
+            }
+          ]
+        },
+        {
+          "page": 406,
+          "noteLinks": [
+            {
+              "marker": "36",
+              "before": "given the possible security dangers.",
+              "note": "The logical and timely rollout of such a program",
+              "notePage": 582
+            }
+          ]
         }
       ]
     },
     {
       "id": "fed-explained-2021",
       "sourceSHA256": "8db8fd9e1de63ac25a6f9585d78ded12f45ab56f0c14c52c199b36b368f84d60",
-      "basis": "Page 9 source raster reviewed: five functions in source order alongside Figure 1.1. Page 45 retains a graphic, without claiming its labels or arrows are semantically reconstructed. Physical page 46 source raster and native typography reviewed: prose beside the sidebar and above Table 3.1 must remain paragraphs, with both graphic regions retained. Source pages 13, 32, 54, 75, 77, 103, 109 and 123 visually reviewed; preserve ordinary prose and six genuine modest-size section headings beside graphics. Cover source and structure element 4417 reviewed: the title/subtitle spans form one H1, while Public Education & Outreach remains paragraph text. Pages 11-12 and 21-22 visually reviewed (#45): the paragraph above Figure 1.3 and the ragged-right advisory-council paragraph each continue onto the next page as one paragraph across the source-page marker. Pages 32, 40, 46, 58, 64, 83 and 120 source rasters reviewed (#54): the shaded sidebar boxes reflow as a heading and paragraphs, the Box 3.3 charts stay one image whose region is rendered from the source (corpus/references/fed-explained-2021/box-3-3-charts), the page-46 sidebar reflows beside a preserved Table 3.1, and the entity/overview and regulation tables are transcribed cell by cell from the source; the regulation table reads its letter and name columns as the one \"Regulation (by letter and name)\" column its own header names, and page 120 continues without a header, so its rows are checked in order rather than as cells. Contents page 5 and chapter opener 8 source rasters and page 25 reviewed (#55): the contents page's dot-leader entries are prose under one Contents heading, the chapter numeral and its two-line title are one heading without a subscript, the four-line pull quote is one paragraph, and the two-line section title is one heading. Pages 9, 21 and 58 visually reviewed against 80-DPI source renders (#50, #64). Page 9 is one bulleted column with a hanging indent: each bullet is one block holding its wrapped lines. Page 21's numbered advisory-council item wraps across the page boundary and stays one block with the page-22 marker inside it. Page 58's panel sets two bullet columns under one spanning label: the left column's five items read before the right column's five, each item whole. The source's own repetition of \"Commercial Paper Funding Facility\" in the left column is reproduced, not corrected; the blue label bands remain paragraphs rather than headings, which is not blessed. Pages 4, 14 and 116 source rasters and structure trees reviewed (#72): those pages paint a page-sized background (page 4 a tint rectangle, the chapter openers a photograph) behind visible native text, and the colophon's source tags every edition, ISSN and DOI line as its own P, printed one per line; each chapter opener's H2 title is one heading and its P pull quote one paragraph above the chapter contents entries, which stay paragraphs. The review warning and source reference on these pages remain. Pages 37, 64 and 120 (#70): URLs and two-line table labels broken after a slash (`https://` + `www.`, `Act/` + `Regulation E*`) join without a space.",
+      "basis": "Page 9 source raster reviewed: five functions in source order alongside Figure 1.1. Page 45 retains a graphic, without claiming its labels or arrows are semantically reconstructed. Physical page 46 source raster and native typography reviewed: prose beside the sidebar and above Table 3.1 must remain paragraphs, with both graphic regions retained. Source pages 13, 32, 54, 75, 77, 103, 109 and 123 visually reviewed; preserve ordinary prose and six genuine modest-size section headings beside graphics. Cover source and structure element 4417 reviewed: the title/subtitle spans form one H1, while Public Education & Outreach remains paragraph text. Pages 11-12 and 21-22 visually reviewed (#45): the paragraph above Figure 1.3 and the ragged-right advisory-council paragraph each continue onto the next page as one paragraph across the source-page marker. Pages 32, 40, 46, 58, 64, 83 and 120 source rasters reviewed (#54): the shaded sidebar boxes reflow as a heading and paragraphs, the Box 3.3 charts stay one image whose region is rendered from the source (corpus/references/fed-explained-2021/box-3-3-charts), the page-46 sidebar reflows beside a preserved Table 3.1, and the entity/overview and regulation tables are transcribed cell by cell from the source; the regulation table reads its letter and name columns as the one \"Regulation (by letter and name)\" column its own header names, and page 120 continues without a header, so its rows are checked in order rather than as cells. Contents page 5 and chapter opener 8 source rasters and page 25 reviewed (#55): the contents page's dot-leader entries are prose under one Contents heading, the chapter numeral and its two-line title are one heading without a subscript, the four-line pull quote is one paragraph, and the two-line section title is one heading. Pages 9, 21 and 58 visually reviewed against 80-DPI source renders (#50, #64). Page 9 is one bulleted column with a hanging indent: each bullet is one block holding its wrapped lines. Page 21's numbered advisory-council item wraps across the page boundary and stays one block with the page-22 marker inside it. Page 58's panel sets two bullet columns under one spanning label: the left column's five items read before the right column's five, each item whole. The source's own repetition of \"Commercial Paper Funding Facility\" in the left column is reproduced, not corrected; the blue label bands remain paragraphs rather than headings, which is not blessed. Pages 4, 14 and 116 source rasters and structure trees reviewed (#72): those pages paint a page-sized background (page 4 a tint rectangle, the chapter openers a photograph) behind visible native text, and the colophon's source tags every edition, ISSN and DOI line as its own P, printed one per line; each chapter opener's H2 title is one heading and its P pull quote one paragraph above the chapter contents entries, which stay paragraphs. The review warning and source reference on these pages remain. Pages 37, 64 and 120 (#70): URLs and two-line table labels broken after a slash (`https://` + `www.`, `Act/` + `Regulation E*`) join without a space. Pages 19, 36, 37, 64, 83 and 105 source rasters reviewed (#79): an address broken after an underscore, a dot or before a slash rejoins without a space (`bst_openmarketops.htm`), and the page-83 note citing `ECFR?page=browse` is text, not a formula crop.",
       "pages": [
         {
           "page": 1,
@@ -1410,6 +1607,9 @@
                 }
               ]
             }
+          ],
+          "text": [
+            "Website: https://www.bis.org/central_bank_hub_overview.htm"
           ]
         },
         {
@@ -1474,6 +1674,10 @@
                 }
               ]
             }
+          ],
+          "text": [
+            "see figure 6.11, “Federal Reserve regulations governing the payment system,” on page 109.",
+            "visit https://www.ecfr.gov/cgi-bin/ECFR?page=browse and select “Title 12” of the Code of Federal Regulations."
           ]
         },
         {
@@ -1620,7 +1824,31 @@
         {
           "page": 37,
           "text": [
-            "https://www.federalreserve.gov/monetarypolicy/bst_"
+            "More information on LSAPs is available at https://www.federalreserve.gov/monetarypolicy/bst_openmarketops.htm."
+          ],
+          "absentText": [
+            "bst_ openmarketops"
+          ]
+        },
+        {
+          "page": 19,
+          "text": [
+            "https://www.federalreserve.gov/aboutthefed/directors/about.htm."
+          ]
+        },
+        {
+          "page": 36,
+          "text": [
+            "https://www.federalreserve.gov/monetarypolicy/timeline-forward-guidance-about-the-federal-funds-rate.htm."
+          ]
+        },
+        {
+          "page": 105,
+          "text": [
+            "https://www.federalreserve.gov/paymentsystems.htm."
+          ],
+          "absentText": [
+            "paymentsystems. htm"
           ]
         }
       ]

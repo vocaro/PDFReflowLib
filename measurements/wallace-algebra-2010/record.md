@@ -13,8 +13,9 @@ zero errors/warnings, and 3,086 CLI progress events pass the monotonic/bounds/co
 This is one Mac observation, excluding separate Apple services; physical mobile memory and
 repeated in-app conversion remain unqualified.
 
-`result.json`, `progress.log`, `memory-samples.json` and `epubcheck.log` are the final baseline's
-unmodified generated receipts. An earlier exploratory run establishes the initial budget;
+`result.json`, `memory-samples.json` and `epubcheck.log` are the final baseline's unmodified
+generated receipts; `progress.log.gz` losslessly compresses its complete 4,445,108-byte
+progress/debug log. An earlier exploratory run establishes the initial budget;
 this final run independently verifies it after review metadata is recorded.
 
 ## Visual spot checks

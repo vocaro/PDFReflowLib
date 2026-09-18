@@ -122,7 +122,9 @@ heading precision and timeline row/column ownership are unchanged by that work.
 changed books; `reviewedChangeBoundaryPassed: true` records their narrower successful checks.
 This keeps drift detection separate from correctness adjudication. `before-content.json` retains
 the eight expected old-output header failures; all candidate contracts pass. Complete receipts,
-logs and selected parsed pages are compressed without modifying their contents.
+logs and selected parsed pages are compressed without modifying their contents. The per-case raw
+progress logs and memory-sample series were dropped in #196; each case's `result.json.gz` keeps their summary (progress-check events and result, sampled
+and converter peak memory).
 
 Full Warren/NOAA remain excluded from the default corpus lane for the previously recorded image
 budget failures. No PDFKit leak, physical-device performance or full-book fidelity claim is made.

@@ -91,8 +91,10 @@ DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer python3 \
 The Simulator identifier is host-specific. The collector requires eight passing evaluations,
 unchanged per-page semantics and image bytes/order, valid new packing, and resolved navigation.
 The permanent test gates do not require the old EPUBs. Per-case compressed receipts retain
-conversion/content results, progress, memory samples and EPUBCheck; final macOS/Python/corpus
-and iOS logs are retained separately.
+conversion/content results and EPUBCheck; final macOS/Python/corpus and iOS logs are retained
+separately. The raw progress logs and memory-sample series were dropped in #196;
+each case's `result.json.gz` keeps their summary (progress-check events and result, sampled
+and converter peak memory).
 
 Full Warren and NOAA remain explicitly excluded from the default successful-conversion corpus
 lane because of the image-output ceiling. Chapter-bookmark validation, safe subdivision within

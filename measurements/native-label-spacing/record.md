@@ -81,7 +81,9 @@ same two text replacements allowed. The standard drift comparator correctly repo
 change; the collector separately accepts that exact reviewed delta.
 
 Receipts and final gate results are recorded in the adjacent compressed logs, comparison summary,
-corpus summary and identity manifest. Full EPUBs remain local under `.build/issue14/`.
+corpus summary and identity manifest. The per-case raw progress logs and memory-sample series
+were dropped in #196; each case's `result.json.gz` keeps their summary (progress-check events and result, sampled
+and converter peak memory). Full EPUBs remain local under `.build/issue14/`.
 Final results: 180 Swift tests on macOS and iOS 27 Simulator; 102 Python tests; eight fresh native
 extraction processes; six fixture conversions; eight policy conversions and twelve rejection/
 cleanup cases. The complete corpus passes 262 content checks on 64 reviewed pages, EPUBCheck,

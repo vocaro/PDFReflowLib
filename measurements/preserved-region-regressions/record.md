@@ -5,6 +5,8 @@ eight complete corpus evaluations with library defaults. The executable SHA-256 
 `a0b41e852b61ffc49e5b0196d7256605465ee45ff5cbdeed08d887394540fce8`.
 [Implementation identities](implementation-identities.json), [run metrics](runs.json),
 [content summary](summary.json) and [gate log](corpus-gate.log.gz) identify the measured build.
+The per-case raw progress logs and memory-sample series were dropped in #196; each case's `result.json.gz` keeps their summary (progress-check events and result, sampled
+and converter peak memory).
 All runs pass EPUBCheck, progress, existing peak-RSS budgets and the unchanged 55 content checks
 on 18 reviewed pages across 2,151 source pages. These checks do not establish whole-book fidelity.
 

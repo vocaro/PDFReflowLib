@@ -98,7 +98,9 @@ open and this scan is not fidelity-qualified.
 
 These are single-run measurements on macOS 27 arm64 using the release converter and library
 defaults. [Run metrics](runs.json) and each case directory retain evaluator results, conversion
-reports, content assessments, progress, memory samples and EPUBCheck logs.
+reports, content assessments and EPUBCheck logs. The raw progress logs and memory-sample series
+were dropped in #196; each case's `result.json.gz` keeps their summary (progress-check events and result, sampled
+and converter peak memory).
 
 | Complete document | Seconds | Peak converter RSS MiB | RSS limit MiB |
 | --- | ---: | ---: | ---: |

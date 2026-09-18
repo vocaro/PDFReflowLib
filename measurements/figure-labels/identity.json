@@ -31,7 +31,7 @@
     "Tests/PDFReflowLibTests/fixtures/algebra-465-layout.json": "65ad3b5c8000758d521688779b733a89d86719c101e6d40bd53822dc7a215604"
   },
   "artefacts": {
-    "label-distances.tsv": "the baseline label survey over every cached corpus source (11,115 measurements)",
+    "label-distances.tsv.gz": "the baseline label survey over every cached corpus source (11,115 measurements), gzipped",
     "survey.swift": "the label survey; no fixture or EPUB is committed",
     "../answer-key-columns/page-comparison/wallace-algebra-2010.json": "the shared conversion comparison",
     "../answer-key-columns/guard-mutations.log": "each single-guard mutation of both rules against the new tests"

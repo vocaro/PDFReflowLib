@@ -96,8 +96,10 @@ relationships, links to notes and return navigation are unimplemented. The exist
 ## Reproduction and retained artifacts
 
 Large PDFs/EPUBs and binaries remain ignored under the corpus cache and
-`.build/numbered-notes-recheck`. The collector preserves compressed receipts, probes, progress,
-memory samples, EPUBCheck results and test logs here, without replacing historical evidence.
+`.build/numbered-notes-recheck`. The collector preserves compressed receipts, probes, EPUBCheck results and test logs here,
+without replacing historical evidence. The raw progress logs and memory-sample series it also
+writes were dropped in #196; each case's `result.json.gz` keeps their summary (progress-check events and result, sampled
+and converter peak memory).
 `identity.json` binds the implementation, new fixture, contract, collector and converter hashes.
 The source audit reuses `../source-layouts.json.gz` for the 48 admitted pages.
 

@@ -78,8 +78,10 @@ python3 tools/check_corpus_content.py --case fed-explained-2021 \
   --evaluation /path/to/evaluation/fed-explained-2021
 ```
 
-The per-case directories retain evaluator results, reports, progress and memory samples as gzip,
-and EPUBCheck/content assessments as text/JSON. Complete EPUBs and originals remain ignored.
+The per-case directories retain evaluator results and reports as gzip, and EPUBCheck/content
+assessments as text/JSON. Their raw progress logs and memory-sample series were dropped in #196;
+each case's `result.json.gz` keeps their summary (progress-check events and result, sampled
+and converter peak memory). Complete EPUBs and originals remain ignored.
 [Contract/checker identities](content-contract-identities.json) identify the final definitions.
 Timing figures are individual process measurements on a shared host; do not infer a performance
 trend from differences between runs. RSS covers the converter process, not external Apple

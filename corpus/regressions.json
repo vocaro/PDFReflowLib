@@ -3198,6 +3198,14 @@
           ]
         },
         {
+          "page": 897,
+          "preformattedBlocks": [
+            "1. Martin Isaacs DE 1, but see footnote 9.",
+            "2. Ibid., 1 H 318 (Robert Oswald).",
+            "6. CE 1159: 1 H 3 (Marina Oswald)."
+          ]
+        },
+        {
           "page": 910,
           "pageReference": true,
           "warningCodesAnyOf": [
@@ -5957,6 +5965,9 @@
               "end": "the Dodd-Frank Act stress tests for large banking",
               "next": "institutions and the Financial Stability Report"
             }
+          ],
+          "preformattedBlocks": [
+            "* Leverage ratio is the ratio of tier 1 capital to total assets."
           ]
         },
         {
@@ -6910,6 +6921,12 @@
           ]
         },
         {
+          "page": 6,
+          "paragraphs": [
+            "1) Get a Kit"
+          ]
+        },
+        {
           "page": 7,
           "minimumImages": 1,
           "warningCodesAnyOf": [
@@ -7053,7 +7070,7 @@
     {
       "id": "cia-blue-book-14-1955",
       "sourceSHA256": "90e05e77fc088c29758c2ddda514c0c12f317e5686ee213d348db2f9da152ee3",
-      "basis": "Reviewed negative quality case: require a source image and explicit review/fallback signal. No correct table-transcription claim. Page 12 preserves the existing margin-artifact suppression, body transcription and source reference; source-derived margin fixtures distinguish that cleanup from speculative OCR correction. #180: page 109's index entry `Table Al06.` keeps the title beside it, as its neighbours already did.",
+      "basis": "Reviewed negative quality case: require a source image and explicit review/fallback signal. No correct table-transcription claim. Page 12 preserves the existing margin-artifact suppression, body transcription and source reference; source-derived margin fixtures distinguish that cleanup from speculative OCR correction. #180: page 109's index entry `Table Al06.` keeps the title beside it, as its neighbours already did. #195: questionnaire items whose printed numbers run consecutively are ordered lists keeping their numbers (pages 270, 283); numbers with gaps stay preformatted (page 288).",
       "pages": [
         {
           "page": 12,
@@ -7091,6 +7108,46 @@
           "page": 109,
           "paragraphs": [
             "Table Al06. Evaluation of All Sightings for All Years by Duration of Sighting for Months"
+          ]
+        },
+        {
+          "page": 270,
+          "lists": [
+            {
+              "kind": "ol",
+              "start": 22,
+              "items": [
+                "Your fuJ.1 name:",
+                "Your address:",
+                "Your occupation:",
+                "Last school you attended:"
+              ]
+            }
+          ]
+        },
+        {
+          "page": 283,
+          "lists": [
+            {
+              "kind": "ol",
+              "start": 17,
+              "items": [
+                "Draw a picture that will show the shape of the object",
+                "The edges of the object were:"
+              ]
+            }
+          ],
+          "preformattedBlocks": [
+            "b. Like a bright star",
+            "c. Sharply outlined"
+          ]
+        },
+        {
+          "page": 288,
+          "preformattedBlocks": [
+            "39. Do you think you can estimate the speed of the object?",
+            "40. Do you think you can estimate how far away from you the object was?",
+            "41. Please give the following information about yourself:"
           ]
         }
       ]
@@ -7774,6 +7831,9 @@
           "minimumImages": 1,
           "warningCodesAnyOf": [
             "damagedTextEncoding"
+          ],
+          "paragraphs": [
+            "3. If R < Tx, then designate pair as a nonlink."
           ]
         },
         {
@@ -8246,7 +8306,10 @@
               "caption": "FIGURE 2. Cycle-averaged rate of classical energy"
             }
           ],
-          "pageReference": true
+          "pageReference": true,
+          "preformattedBlocks": [
+            "3. Quantum Description"
+          ]
         },
         {
           "page": 4,

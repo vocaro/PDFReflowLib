@@ -9,6 +9,16 @@
       "acceptance": "Preserve source aspect ratio and title."
     },
     {
+      "page": 5,
+      "target": "Poem with turned lines",
+      "acceptance": "Each verse line stays a line of its own; no turned line joins the line above it (#200)."
+    },
+    {
+      "page": 6,
+      "target": "Front-matter credits in two columns",
+      "acceptance": "Each staff entry wrapped into its hanging indent reads whole, and the wrapped committee title is one paragraph (#200)."
+    },
+    {
       "page": 7,
       "target": "Front-matter staff list",
       "acceptance": "One paragraph per entry, with an entry wrapped into its hanging indent kept whole (#181)."
@@ -24,9 +34,19 @@
       "acceptance": "Begin logical chapter navigation at this boundary."
     },
     {
+      "page": 47,
+      "target": "Painting under two columns with corner art",
+      "acceptance": "The right column reflows to its last line; the painting’s crop takes no text (#200)."
+    },
+    {
       "page": 48,
       "target": "Figure 1.5 beside prose and a full-width callout",
-      "acceptance": "Preserve legend, axes, caption and paragraph order; reflow the left column, its sub-heading and both captions beside the figure crop (#181)."
+      "acceptance": "Preserve legend, axes, caption and paragraph order; reflow the left column, its sub-heading and both captions beside the figure crop (#181); the bold figure lead is a paragraph apart from its caption (#200)."
+    },
+    {
+      "page": 69,
+      "target": "Painting with an underlined photo credit",
+      "acceptance": "Both columns reflow; the credit is no table sub-header and no crop takes the columns (#200)."
     },
     {
       "page": 79,
@@ -64,14 +84,34 @@
       "acceptance": "One paragraph per one-line author entry on a page with no wrapped line of its own (#181)."
     },
     {
+      "page": 453,
+      "target": "Figure caption running overleaf",
+      "acceptance": "The caption broken at a line-end hyphen (re-/gardless) continues onto page 454 as one paragraph (#200)."
+    },
+    {
+      "page": 488,
+      "target": "Chapter 10 authors",
+      "acceptance": "The widest one-line author entry is a paragraph of its own (#200)."
+    },
+    {
       "page": 900,
       "target": "Middle-book workload sample",
       "acceptance": "Measure graphics and text handling beyond the failed reconstruction prefix."
     },
     {
+      "page": 1182,
+      "target": "Figure 25.8 lead and caption running overleaf",
+      "acceptance": "The bold lead is its own paragraph; the caption broken at prev-/alent continues onto page 1183 (#200)."
+    },
+    {
       "page": 1700,
       "target": "Late focus-section sample",
       "acceptance": "Distinguish unnumbered focus sections from numbered chapters; one paragraph per contributor entry (#181)."
+    },
+    {
+      "page": 1738,
+      "target": "Appendix 1 authors",
+      "acceptance": "A block of two one-line author entries is two paragraphs (#200)."
     },
     {
       "page": 1834,

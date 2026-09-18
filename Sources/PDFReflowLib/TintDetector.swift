@@ -533,7 +533,13 @@ enum TintDetector {
                 if continues(text, beyond: rect, lines: lines) {
                     // The picture is not the text's own: its block runs on past the picture, which
                     // keeps what lies beyond the block (magazine page 14's columns over the flag).
-                    result[index].rect = rest
+                    // Where at least half of that lies under another picture it is the page's
+                    // backdrop and keeps nothing: NOAA page 47's corner art lies under the left
+                    // column and, below it, behind the painting (55% of what it keeps), and that
+                    // piece, merged with the painting's crop, took the right column's last two
+                    // lines (#200). Page 57's corner art keeps a piece above its column that a
+                    // photograph covers a fifth of, and keeps it.
+                    if coverage(of: rest, by: others) >= 0.5 { removed.insert(index) } else { result[index].rect = rest }
                     continue
                 }
                 // Otherwise the text stands inside the picture, which keeps it unless it is set

@@ -1771,6 +1771,9 @@ enum LayoutReconstructor {
         /// #181), the least gap that sets an entry apart: an entry opens only that far below the
         /// line above it, never at the edge's own wrap.
         var spacing: CGFloat? = nil
+        /// On such an edge, the lines that open an entry of a run at the edge's even spacing, below
+        /// the entry above them in the run.
+        var openings: [CGRect] = []
     }
 
     /// The page's hanging-entry edges (see `HangingEdge`). With `body`, only lines in the body's size
@@ -1886,23 +1889,91 @@ enum LayoutReconstructor {
     /// fifth of a size over the wrap below the line above it (`HangingEdge.spacing`).
     static func spacedEntryEdges(_ lines: [TextLine], body: CGFloat, bookWrap: CGFloat? = nil) -> [HangingEdge] {
         edgeWraps(lines, body: body).compactMap { found in
-            let edge = found.lines, size = found.size, beneath = found.beneath
+            let size = found.size
             guard let wrap = found.wrap ?? bookWrap else { return nil }
             let spaced = wrap + size * 0.2
-            let qualified = edge.indices.contains { start in
-                var last = start, count = 1
-                var first: CGFloat?
-                while !found.fills(last), let next = beneath[last], next.gap >= spaced,
-                      abs(next.gap - (first ?? next.gap)) <= size * 0.1 {
-                    first = first ?? next.gap
-                    last = next.line
-                    count += 1
-                    if count >= 3 { return true }
-                }
-                return false
-            }
-            return qualified ? HangingEdge(x: found.x, size: size, pairs: 0, spacing: spaced) : nil
+            let openings = evenRuns(found, spacing: spaced).filter { $0.lines.count >= 3 }
+                .flatMap { run in run.lines.dropFirst().map { found.lines[$0].rect } }
+            return openings.isEmpty ? nil : HangingEdge(x: found.x, size: size, pairs: 0, spacing: spaced, openings: openings)
         }
+    }
+
+    /// Two entries are no run, but the book's own runs show the spacings its entries stand at
+    /// (`bookSpacings`, #200): two lines on an edge, the lower the nearest beneath the upper at
+    /// one of them within a tenth of a size and at least a fifth of a size over the wrap, the upper
+    /// not reaching the measure, are two entries (page 1738's two authors, 7.7 points apart as
+    /// page 1700's contributors are). Each pair is the upper line's rectangle and the lower's. The
+    /// pair qualifies no edge: the lines around it keep their own rules.
+    static func spacedEntryPairs(_ lines: [TextLine], body: CGFloat, bookWrap: CGFloat? = nil,
+                                 bookSpacings: [CGFloat]) -> [(upper: CGRect, lower: CGRect)] {
+        guard !bookSpacings.isEmpty else { return [] }
+        return edgeWraps(lines, body: body).flatMap { found -> [(upper: CGRect, lower: CGRect)] in
+            let size = found.size
+            guard let wrap = found.wrap ?? bookWrap else { return [] }
+            return evenRuns(found, spacing: wrap + size * 0.2).filter { run in
+                run.lines.count == 2 && bookSpacings.contains { abs($0 - run.gap) <= size * 0.1 }
+            }.map { (found.lines[$0.lines[0]].rect, found.lines[$0.lines[1]].rect) }
+        }
+    }
+
+    /// An edge's runs (see `spacedEntryEdges`): lines each the nearest beneath the one before it,
+    /// at gaps of at least `spacing` within a tenth of a size of the first, no upper line reaching
+    /// the measure; each run's lines top to bottom, of two or more, and its first gap. A line
+    /// opens at most one run.
+    private static func evenRuns(_ found: EdgeWrap, spacing: CGFloat) -> [(lines: [Int], gap: CGFloat)] {
+        var runs: [(lines: [Int], gap: CGFloat)] = []
+        var taken = Set<Int>()
+        for start in found.lines.indices where !taken.contains(start) {
+            var run = [start]
+            var first: CGFloat?
+            while let last = run.last, !found.fills(last), let next = found.beneath[last], next.gap >= spacing,
+                  abs(next.gap - (first ?? next.gap)) <= found.size * 0.1, !run.contains(next.line) {
+                first = first ?? next.gap
+                run.append(next.line)
+            }
+            guard let gap = first else { continue }
+            taken.formUnion(run.dropLast())
+            runs.append((run, gap))
+        }
+        // A run begun lower on a line an earlier run already reached is that run's tail.
+        return runs.filter { run in
+            !runs.contains { other in other.lines.count > run.lines.count && Set(run.lines).isSubset(of: other.lines) }
+        }
+    }
+
+    /// The spacings at which a page's one-line entries stand apart (#200): each run of three or more
+    /// lines on an edge of the body's size (`evenRuns`) at least a fifth of a size over the page's
+    /// wrap, or over nothing where the page shows none, since the book's wrap is not yet known. The
+    /// book keeps those at least that fifth of a size over its wrap (`bookSpacings(from:wraps:)`).
+    static func spacingEvidence(on page: PageContent) -> (size: Int, gaps: [CGFloat])? {
+        guard !page.recognized, !page.hasSyntheticTextStyle else { return nil }
+        let body = bodySize(page.lines)
+        guard body > 0 else { return nil }
+        let gaps = edgeWraps(page.lines, body: body).flatMap { found in
+            evenRuns(found, spacing: (found.wrap ?? 0) + found.size * 0.2).filter { $0.lines.count >= 3 }.map(\.gap)
+        }
+        return gaps.isEmpty ? nil : (wrapKey(body), gaps)
+    }
+
+    /// The book's entry spacings at each body size: a spacing its pages' runs (`spacingEvidence`)
+    /// stand at, within a tenth of a size, on at least three pages, and at least a fifth of a size
+    /// over the book's wrap at that size. Each is the median of the runs within that tenth.
+    static func bookSpacings(from evidence: [Int: [[CGFloat]]], wraps: [Int: CGFloat]) -> [Int: [CGFloat]] {
+        var result: [Int: [CGFloat]] = [:]
+        for (key, pages) in evidence {
+            guard let wrap = wraps[key] else { continue }
+            let size = CGFloat(key) / 2
+            var spacings: [CGFloat] = []
+            for gap in pages.flatMap({ $0 }).sorted() where gap >= wrap + size * 0.2
+                && !spacings.contains(where: { abs($0 - gap) <= size * 0.1 }) {
+                let near = pages.filter { $0.contains { abs($0 - gap) <= size * 0.1 } }
+                guard near.count >= 3 else { continue }
+                let values = near.flatMap { $0.filter { abs($0 - gap) <= size * 0.1 } }.sorted()
+                spacings.append(values[values.count / 2])
+            }
+            if !spacings.isEmpty { result[key] = spacings }
+        }
+        return result
     }
 
     /// The gap at which a page's text of the body's size wraps (#181): the median over its edges
@@ -1939,9 +2010,10 @@ enum LayoutReconstructor {
     /// The page's left edges of body-size lines that could hold entries (see `spacedEntryEdges`),
     /// each with its lines top to bottom, each line's nearest neighbour beneath it on the edge inside
     /// the prose window, whether a line reaches the edge's measure, and the edge's wrap.
-    private static func edgeWraps(_ lines: [TextLine], body: CGFloat)
-        -> [(x: CGFloat, size: CGFloat, lines: [TextLine], beneath: [(line: Int, gap: CGFloat)?],
-             fills: (Int) -> Bool, wrap: CGFloat?)] {
+    private typealias EdgeWrap = (x: CGFloat, size: CGFloat, lines: [TextLine], beneath: [(line: Int, gap: CGFloat)?],
+                                  fills: (Int) -> Bool, wrap: CGFloat?)
+
+    private static func edgeWraps(_ lines: [TextLine], body: CGFloat) -> [EdgeWrap] {
         guard lines.count <= TintDetector.blockTextLineLimit else { return [] }
         let candidates = lines.filter { line in
             !line.monospaced && !isList(line.text) && line.fontSize > 0 && line.text.contains(where: \.isLetter)
@@ -1949,8 +2021,7 @@ enum LayoutReconstructor {
                 && !LabelStyle(line, body: line.fontSize).bold
         }.sorted { $0.rect.maxY > $1.rect.maxY }
         guard candidates.count >= 4 else { return [] }
-        var result: [(x: CGFloat, size: CGFloat, lines: [TextLine], beneath: [(line: Int, gap: CGFloat)?],
-                      fills: (Int) -> Bool, wrap: CGFloat?)] = []
+        var result: [EdgeWrap] = []
         var assigned = Set<Int>()
         for index in candidates.indices where !assigned.contains(index) {
             let anchor = candidates[index], size = anchor.fontSize
@@ -1969,9 +2040,11 @@ enum LayoutReconstructor {
                 let gap = edge[upper].rect.minY - edge[lower].rect.maxY
                 return gap >= -size * 0.4 && gap < size * 0.9 ? (lower, gap) : nil
             }
-            let fills = { (line: Int) in edge[line].rect.maxX >= measure - size }
-            // A line or two at the widest is no measure: they may be the longest entries.
-            let full = edge.indices.filter(fills)
+            // A line or two at the widest is no measure: they may be the longest entries, and such a
+            // line fills nothing (NOAA page 343's `Stephen D. LeDuc, …, Office of Research and
+            // Development` is its edge's widest line and an entry of its run, #200).
+            let full = edge.indices.filter { edge[$0].rect.maxX >= measure - size }
+            let fills = { (line: Int) in full.count >= 3 && edge[line].rect.maxX >= measure - size }
             let wrap = full.count >= 3 ? full.compactMap { beneath[$0]?.gap }.min() : nil
             result.append((anchor.rect.minX, size, edge, beneath, fills, wrap))
         }
@@ -3732,6 +3805,35 @@ enum LayoutReconstructor {
         return lines.contains { hangs($0) && $0.rect.maxX >= right - size * 0.5 }
     }
 
+    /// The lines on `edge`, in `size`, with a line hanging beneath them at ordinary leading, half a
+    /// size to `indent` in (an entry's first line and its wrapped line), counted by whether each
+    /// first line was full: the hanging line's first word would not have fitted after it, short of
+    /// the widest of those first lines (the entries' own measure; a running foot on the edge is
+    /// none of theirs). A list whose entries wrap into a hanging indent wraps them because they
+    /// are full, while verse that turns its lines into the indent breaks them where the verse
+    /// does: NOAA page 5's `It is a forgotten pleasure, the pleasure` stops short of the measure
+    /// its longer lines set, where `of` would have fitted, as do two more of its ten couplets
+    /// (#200). `full` judges any pair against the same measure.
+    static func hangingWraps(in lines: [TextLine], edge: CGFloat, size: CGFloat, indent: CGFloat)
+        -> (wrapped: Int, short: Int, full: (TextLine, TextLine) -> Bool) {
+        func sized(_ line: TextLine) -> Bool { abs(line.fontSize - size) <= size * 0.1 }
+        let pairs = lines.filter { sized($0) && abs($0.rect.minX - edge) <= size * 0.5 }.compactMap { upper in
+            lines.first { lower in
+                let inset = lower.rect.minX - edge, gap = upper.rect.minY - lower.rect.maxY
+                return inset >= size * 0.5 && inset <= indent && gap >= -size * 0.4 && gap < size * 0.9
+                    && sized(lower) && lower.rect.minX < upper.rect.maxX
+            }.map { (upper, $0) }
+        }
+        let right = pairs.map(\.0.rect.maxX).max() ?? 0
+        let full = { (upper: TextLine, lower: TextLine) -> Bool in
+            guard let word = lower.text.split(whereSeparator: \.isWhitespace).first else { return false }
+            let wordWidth = lower.rect.width * CGFloat(word.count + 1) / CGFloat(max(1, lower.text.count))
+            return upper.rect.maxX + wordWidth + size * 0.5 > max(right, upper.rect.maxX)
+        }
+        let wrapped = pairs.filter(full).count
+        return (wrapped, pairs.count - wrapped, full)
+    }
+
     /// Whether the page opens its paragraphs on a first-line indent of `step`, in `size` (#159).
     ///
     /// *Agricultural Research* indents each paragraph's first line ten points in a ten-and-a-half
@@ -3830,6 +3932,7 @@ enum LayoutReconstructor {
                        slideDeck: Bool = false,
                        imageKinds: [String: PreservedImageKind] = [:],
                        imageCaptions: [String: String] = [:], bookWraps: [Int: CGFloat] = [:],
+                       bookSpacings: [Int: [CGFloat]] = [:],
                        documentBody: CGFloat? = nil) -> [ReflowBlock] {
         let body = max(4, bodySize(page.lines))
         // A rotated stamp in the outer margin is furniture, never content or a heading.
@@ -3917,7 +4020,12 @@ enum LayoutReconstructor {
             : hangingEntryEdges(free.map(untagged), body: reflowBody, titles: labelStyles)
         // Edges whose one-line entries stand apart by added space instead (#181): a line back on
         // one opens the next entry as on a hanging edge. They head no titles.
-        let spacedEdges = page.hasSyntheticTextStyle || page.recognized ? [] : spacedEntryEdges(free.map(untagged), body: reflowBody, bookWrap: bookWraps[wrapKey(reflowBody)])
+        let spacedEdges = page.hasSyntheticTextStyle || page.recognized ? []
+            : spacedEntryEdges(free.map(untagged), body: reflowBody, bookWrap: bookWraps[wrapKey(reflowBody)])
+        // Two one-line entries at one of the book's entry spacings (#200).
+        let spacedPairs = page.hasSyntheticTextStyle || page.recognized ? []
+            : spacedEntryPairs(free.map(untagged), body: reflowBody, bookWrap: bookWraps[wrapKey(reflowBody)],
+                               bookSpacings: bookSpacings[wrapKey(reflowBody)] ?? [])
         func continuesHangingTitle(_ line: TextLine, after previous: TextLine, heading: String) -> Bool {
             labels.contains(untagged(line)) && labels.contains(untagged(previous))
                 && hangingEntryEdge(of: previous, in: entryEdges) != nil
@@ -3940,8 +4048,10 @@ enum LayoutReconstructor {
             guard !line.monospaced, !prev.monospaced, !line.text.contains("...."), !prev.text.contains("...."),
                   line.text.first(where: \.isLetter)?.isLowercase == false,
                   prev.text.last.map({ "-\u{00AD}/".contains($0) }) == false,
-                  let first, first.text.contains(where: \.isLetter),
-                  let edge = hangingEntryEdge(of: line, in: entryEdges + spacedEdges),
+                  let first, first.text.contains(where: \.isLetter) else { return false }
+            // Two entries at one of the book's entry spacings (`spacedEntryPairs`, #200).
+            if spacedPairs.contains(where: { $0.upper == prev.rect && $0.lower == line.rect }) { return true }
+            guard let edge = hangingEntryEdge(of: line, in: entryEdges + spacedEdges),
                   abs(prev.fontSize - edge.size) <= edge.size * 0.1 else { return false }
             func hangs(_ other: TextLine) -> Bool {
                 other.rect.minX - edge.x >= edge.size * 0.5 && other.rect.minX - edge.x <= edge.size * 2.5
@@ -3953,9 +4063,20 @@ enum LayoutReconstructor {
             // On an edge whose entries stand apart by added space (#181), the entry is set that
             // far below the line above it; a line at the edge's own wrap continues its entry.
             if let spacing = edge.spacing, prev.rect.minY - line.rect.maxY < spacing { return false }
+            // A line of a run at the edge's even spacing opens its entry however far the line above
+            // it ran: the widest entry on a page sets the edge's widest line (NOAA page 488's
+            // `Charles S. Colgan, …, Center for the Blue Economy` over `Sarah R. Cooley, …`, #200).
+            if edge.spacing != nil, edge.openings.contains(line.rect) { return true }
             guard abs(offset) <= edge.size * 0.5, let word = line.text.split(whereSeparator: \.isWhitespace).first else { return false }
             let right = free.filter { hangingEntryEdge(of: $0, in: [edge]) != nil }.map(\.rect.maxX).max() ?? prev.rect.maxX
             let wordWidth = line.rect.width * CGFloat(word.count + 1) / CGFloat(max(1, line.text.count))
+            // The edge's entries are the evidence, so two lines of one size other than theirs are
+            // none of them: NOAA page 6's 11-point committee title, wrapped over its 10-point
+            // entries (`Federal Steering Committee for the Fifth National Climate` / `Assessment`),
+            // #200. A 10-point sub-title under such a title still opens.
+            let entrySize = abs(prev.fontSize - line.fontSize) > edge.size * 0.05
+                || abs(prev.fontSize - edge.size) <= edge.size * 0.05
+            guard entrySize else { return false }
             if prev.rect.maxX + wordWidth + edge.size * 0.5 <= right || edge.pairs >= 2 && prev.rect.maxX <= right - edge.size {
                 return true
             }
@@ -4332,6 +4453,14 @@ enum LayoutReconstructor {
         //   that edge below the initial. The drop-cap line carries `NativeTextReader`'s evidence
         //   (`readingRect`, the body-height row beside the initial); the lines beside it lie within
         //   the initial's depth and end on the drop-cap line's right edge.
+        // `hangingWraps` for an edge, size and indent, read once per page: it pairs the page's lines.
+        var pageHangingWraps: [[CGFloat]: (wrapped: Int, short: Int, full: (TextLine, TextLine) -> Bool)] = [:]
+        func hangingWrapsOnce(edge: CGFloat, size: CGFloat, indent: CGFloat) -> (wrapped: Int, short: Int, full: (TextLine, TextLine) -> Bool) {
+            if let known = pageHangingWraps[[edge, size, indent]] { return known }
+            let wraps = hangingWraps(in: free, edge: edge, size: size, indent: indent)
+            pageHangingWraps[[edge, size, indent]] = wraps
+            return wraps
+        }
         func continuesOpening(_ line: TextLine, after prev: TextLine) -> Bool {
             // The upper line reads as words across a measure of at least twelve bodies, as `wraps`
             // asks. A table's stub column fails (Blue Book page 142's scanned `Evaluation` over
@@ -4367,39 +4496,27 @@ enum LayoutReconstructor {
             // drift: NOAA's front matter lists its staff one to an entry at ordinary leading and wraps
             // an entry 1.8 ems in (`Brooke C. Stewart, Managing Editor and Lead Science Editor, North
             // Carolina` / `State University (through July 2023)`, #181). The edge's own wrapped
-            // entries are the evidence, so the opening's space is not asked; three of them share a
-            // measure (below), so the pair being read is never its own evidence (a lone reading-list
+            // entries are the evidence, so the opening's space is not asked; at least two of them
+            // wrap full (below), so the pair being read is never its own evidence (a lone reading-list
             // entry under a line at ordinary leading keeps #147's answer). The
             // wrapped line carries on in words: it opens with a letter, a digit or a bracket, and
             // neither line sets arithmetic, so a form's checkbox under its question (Pro Se page 3's
             // `☐ Federal question`) and a worked example's next step beneath its annotation (Wallace
-            // page 19's `2+3(5)2 Exponents`) stay apart. And the entry's first line was full: the
-            // wrapped line's first word would not have fitted after it, short of the widest line on
-            // the edge that has a line hanging beneath it (the entries' own measure; a running foot on
-            // the edge is none of theirs), as `opensHangingEntry` asks the other way round, and that
-            // measure is one three of those lines reach within a size. A poem that indents alternate
-            // lines breaks them where the verse does, at no shared measure (NOAA page 5's `It is a
-            // forgotten pleasure, the pleasure` / `of the unexpected blue-bellied lizard`), and each
-            // stays a line of its own.
+            // page 19's `2+3(5)2 Exponents`) stay apart. And the entry's first line was full
+            // (`hangingWraps`), as `opensHangingEntry` asks the other way round, as are at least two of
+            // the edge's wrapped entries and three in four of them. The measure need not be one three
+            // lines share: NOAA page 6 wraps two entries a column, whose first lines end 19 points
+            // apart (`Susan C. Aragon-Long , … / USGS Liaison to` / `USGCRP (through January 2022)`,
+            // #200). A poem that turns its lines into the indent breaks them where the verse does
+            // (NOAA page 5's `It is a forgotten pleasure, the pleasure` / `of the unexpected
+            // blue-bellied lizard`), and each stays a line of its own.
             if opening.line == prev, prev.readingRect == nil, let edge = hangingEntryEdge(of: prev, in: entryEdges),
                abs(line.fontSize - edge.size) <= edge.size * 0.1,
                line.text.first.map({ $0.isLetter || $0.isNumber || $0 == "(" }) == true,
                ![prev.text, line.text].contains(where: { $0.rangeOfCharacter(from: Self.arithmetic) != nil }),
-               line.rect.minX - edge.x >= max(body * 1.5, edge.size * 0.5), line.rect.minX - edge.x <= edge.size * 2.5,
-               let word = line.text.split(whereSeparator: \.isWhitespace).first {
-                func hangsBeneath(_ upper: TextLine) -> Bool {
-                    free.contains { lower in
-                        let indent = lower.rect.minX - edge.x, gap = upper.rect.minY - lower.rect.maxY
-                        return indent >= edge.size * 0.5 && indent <= edge.size * 2.5 && gap >= -edge.size * 0.4
-                            && gap < edge.size * 0.9 && abs(lower.fontSize - edge.size) <= edge.size * 0.1
-                            && lower.rect.minX < upper.rect.maxX
-                    }
-                }
-                let full = free.filter { hangingEntryEdge(of: $0, in: [edge]) != nil && hangsBeneath($0) }.map(\.rect.maxX)
-                let right = full.max() ?? prev.rect.maxX
-                let wordWidth = line.rect.width * CGFloat(word.count + 1) / CGFloat(max(1, line.text.count))
-                if full.filter({ $0 >= right - edge.size }).count >= 3,
-                   prev.rect.maxX + wordWidth + edge.size * 0.5 > right { return true }
+               line.rect.minX - edge.x >= max(body * 1.5, edge.size * 0.5), line.rect.minX - edge.x <= edge.size * 2.5 {
+                let wraps = hangingWrapsOnce(edge: edge.x, size: edge.size, indent: edge.size * 2.5)
+                if wraps.wrapped >= 2, wraps.short * 3 <= wraps.wrapped, wraps.full(prev, line) { return true }
             }
             guard opening.evidenced, opening.line == prev, prev.readingRect == nil else { return false }
             // At least three lines on `edge`'s left edge end where the opening line does: it fills
@@ -4423,6 +4540,12 @@ enum LayoutReconstructor {
             // the runs of wrapped lines instead (IEEEtran's references and algorithm steps, #162).
             if hangingEntry { return true }
             guard -indent <= body * 3 else { return false }
+            // Verse set apart by stanza hangs its turned lines the same way, but breaks where the
+            // verse does (`hangingWraps`): NOAA page 5 sets each couplet apart, the first lines of
+            // three reach a measure, and `Species to species in the same blue air, smoke—` would
+            // run on into `wing flutter buzzing, a car horn coming.` (#200).
+            let wraps = hangingWrapsOnce(edge: prev.rect.minX, size: prev.fontSize, indent: body * 3)
+            guard wraps.short * 3 <= wraps.wrapped else { return false }
             let leading = prev.rect.minY - line.rect.maxY
             guard let above = free.filter({ $0 != prev && !sameRow($0.rect, prev.rect) && $0.rect.minY >= prev.rect.maxY - body * 0.4
                 && $0.rect.minX < prev.rect.maxX && $0.rect.maxX > prev.rect.minX }).min(by: { $0.rect.minY < $1.rect.minY })
@@ -4769,6 +4892,19 @@ enum LayoutReconstructor {
             else { return false }
             return endsSentence(prev)
         }
+        // A caption opens on its bold label (`Figure 1.5.`), whatever it stands under: NOAA sets each
+        // figure's bold one-line lead directly over its caption at ordinary leading (page 48's `The
+        // US has warmed rapidly since the 1970s.` over `Figure 1.5. The graph shows…`, #200). The
+        // line opens with the label in bold, the line above ends a sentence and is no caption's,
+        // and both stand on one edge in one type; a figure named inside a sentence is not bold.
+        func opensBoldCaption(_ line: TextLine, after prev: TextLine) -> Bool {
+            guard !page.hasSyntheticTextStyle, !page.recognized, line.structure == nil, isCaption(line.text),
+                  !isCaption(paragraph.text), case let .text(value, style)? = line.content.elements.first,
+                  style.contains(.bold), isCaption(value.trimmingCharacters(in: .whitespaces)),
+                  abs(line.fontSize - prev.fontSize) <= max(line.fontSize, prev.fontSize) * 0.1,
+                  abs(prev.rect.minX - line.rect.minX) <= body * 0.5 else { return false }
+            return endsSentence(prev)
+        }
         // The open heading's first line (the row PDFKit split) and its latest line (for the
         // line stacked beneath it).
         var headingRow: (first: TextLine, last: TextLine)?
@@ -5012,6 +5148,7 @@ enum LayoutReconstructor {
                         || opensIndentedParagraph(line, after: prev)
                         || opensSection(line, after: prev, gap: verticalGap, leading: previousGap)
                         || opensSpacedParagraph(line, after: prev, gap: verticalGap, leading: previousGap)
+                        || opensBoldCaption(line, after: prev)
                         || opensHangingEntry(line, after: prev, first: paragraphFirst) {
                         flush()
                     } else { attachedGap = inflation > 0 ? previousGap : verticalGap }
@@ -5358,8 +5495,14 @@ enum LayoutReconstructor {
         let boxes = steppingOverBoxes ? clusters(previousPage.tints, distance: 4) : []
         var stepped: [CGRect] = []
         func steppedOver(_ block: ReflowBlock) -> Bool {
-            if isSkippable(block, page: previousPage) { return true }
             let text = block.text.trimmingCharacters(in: .whitespacesAndNewlines)
+            // A caption broken at a line-end hyphen runs on overleaf: NOAA page 1182's Figure 25.8
+            // caption ends `…with cropland prev-` over page 1183's `alent in the eastern portion`
+            // (#200, once the figure's lead no longer opens that paragraph).
+            if isSkippable(block, page: previousPage),
+               !(block.page == previousPage.number && isCaption(text) && text.last.map({ "-\u{00AD}".contains($0) }) == true) {
+                return true
+            }
             guard !boxes.isEmpty, block.page == previousPage.number, !text.isEmpty,
                   let top = firstLine(of: text, in: previousPage.lines),
                   let bottom = lastLine(of: text, in: previousPage.lines),

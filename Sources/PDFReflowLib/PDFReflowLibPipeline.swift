@@ -123,6 +123,15 @@ enum PDFReflowLibPipeline {
         return false
     }
 
+    /// Whether lines hold a numeric grid (`holdsNumericGrid`) outside every table of aligned
+    /// columns layout reads (`BorderlessTableDetector.alignedTables`, #150). Extraction has split
+    /// such a table's rows into cells, which no longer hold two numbers each.
+    static func holdsUnreadNumericGrid(_ lines: [TextLine]) -> Bool {
+        guard holdsNumericGrid(lines) else { return false }
+        let read = BorderlessTableDetector.alignedTables(in: lines).flatMap(\.ownedLines)
+        return holdsNumericGrid(lines.filter { !read.contains($0) })
+    }
+
     /// Progress covers extraction/reconstruction only, from zero to one.
     ///
     /// Extraction is one pass over every page that keeps only document-wide evidence:
@@ -263,11 +272,12 @@ enum PDFReflowLibPipeline {
                 // The font evidence stands unless line repair read the page's index-glyph shows and
                 // repaired every line (#143): a show in an undecoded font, or a glyph without an
                 // established character, leaves its line unrepaired or its show unplaced, so such a
-                // page drew only established characters. A repaired page holding a numeric grid also
-                // keeps it: no table path reconstructs Census's rule-headed tables (pages 12 and 15),
-                // which reflow as run-together cells, while recognition keeps them as table images.
+                // page drew only established characters. A repaired page holding a numeric grid that
+                // no table reads also keeps it, since its rows would reflow as run-together cells
+                // while recognition keeps the table as an image; the grids layout reads as tables
+                // (`BorderlessTableDetector.alignedTables`, Census pages 12 and 15, #150) do not.
                 let repaired = glyphReport.repairedLines > 0 && glyphReport.unrepairedLines == 0
-                    && !holdsNumericGrid(content.lines)
+                    && !holdsUnreadNumericGrid(content.lines)
                 return (content, !content.lines.isEmpty && !requiresPageImage && !repaired && TextEncodingCheck.hasUnmappedFont(reference),
                         pageSized, graphics, annotations.visible, backdropReference)
             }

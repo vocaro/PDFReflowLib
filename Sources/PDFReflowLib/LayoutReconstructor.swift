@@ -3503,7 +3503,10 @@ enum LayoutReconstructor {
         }
         let shaded = ShadedTableDetector.tables(in: page, lines: lines)
         let shadedLines = shaded.flatMap(\.ownedLines)
-        let tables = shaded + BorderlessTableDetector.tables(in: lines.filter { !shadedLines.contains($0) })
+        let borderless = shaded + BorderlessTableDetector.tables(in: lines.filter { !shadedLines.contains($0) })
+        let borderlessLines = borderless.flatMap(\.ownedLines)
+        // Tables of aligned columns under a header, without rules, bands or capital headings (#150).
+        let tables = borderless + BorderlessTableDetector.alignedTables(in: lines.filter { !borderlessLines.contains($0) })
         let tableLines = tables.flatMap(\.ownedLines)
         // A marker PDFKit split from its item's text rejoins it before anything reads the lines.
         // So do the pieces of a prose row PDFKit split at an inline radical (#95), and the pieces

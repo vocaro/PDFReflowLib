@@ -40,11 +40,15 @@ private typealias CaptureFont = UIFont
         // A form's ruled blanks (#152): its text and choice fields over the rules printed for them.
         let blanks = AnnotationEvidence.blanks(on: page, paints: graphics.paints.map(\.rect))
         // Lines as the pipeline extracts them: cells merged across a ruled grid's column joints
-        // (#65) or a borderless table's column gap (#121) are split, and so are rows read across
-        // a form's blank (#152).
+        // (#65), a borderless table's column gap (#121) or an aligned column grid's channels
+        // (#150) are split, and so are rows read across a form's blank (#152). Index-named glyphs
+        // read through the characters the document's own words establish (#143; fixtures captured
+        // before #150 were read without them).
+        let decodings = try GlyphIndexDecoder.read(source, language: "en")
         var lines = try NativeTextReader.lines(on: page, limit: 100_000,
             columnJoints: GraphicsReader.columnJoints(graphics.paints.map(\.rect)),
-            borderlessTableInk: graphics.paints.map(\.rect), blanks: blanks, removingOverprints: !keepOverprints)
+            borderlessTableInk: graphics.paints.map(\.rect), blanks: blanks, glyphDecodings: decodings,
+            removingOverprints: !keepOverprints)
         // The tags the pipeline applies where the page's structure validates: every group that
         // matches its lines, even when another does not (`structure` per line; absent in fixtures
         // captured before #89/#90).
@@ -60,7 +64,7 @@ private typealias CaptureFont = UIFont
         // italic font resource carry `mathItalic` (#142). Fixtures captured before each carry no
         // such field.
         let selections = page.selection(for: page.bounds(for: .cropBox))?.selectionsByLine() ?? []
-        let weights = FontWeightReader.read(reference)
+        let weights = FontWeightReader.read(reference, decodings: decodings)
         // Symbol fonts' private-use characters are decoded as the pipeline decodes them (#155).
         let privateUse = PrivateUseDecoder.characters(on: reference)
         let selectionBounds = selections.map { $0.bounds(for: page) }

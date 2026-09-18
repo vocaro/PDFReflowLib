@@ -86,6 +86,8 @@ enum NativeTextReader {
             if let ink = borderlessTableInk {
                 lines = try splitBorderlessTables(lines, ink: ink, on: page, includeStyle: includeStyle, weights: weights,
                                                   privateUse: privateUse)
+                lines = try splitColumnGrids(lines, on: page, includeStyle: includeStyle, weights: weights,
+                                             privateUse: privateUse)
             }
             // Last, because every step above matches line text to the page's own characters and
             // shows, where a ligature is one character (`NativeSpacingReader` reads the glyph `ff`
@@ -480,6 +482,182 @@ enum NativeTextReader {
             }
         }
         return result
+    }
+
+    /// A line's glyphs, each measured with PDFKit's one-character selection, joined into words at
+    /// gaps under a quarter em. Each word spans the line's height, so words group into the line's
+    /// baseline. Where the line's text has as many words, they take its words: index-glyph repair
+    /// (#143) rewrote the characters PDFKit reports for them.
+    private static func glyphWords(_ line: TextLine, on page: PDFPage) -> [ColumnGrid.Piece]? {
+        guard let selection = page.selection(for: line.rect) else { return nil }
+        let em = max(4, line.fontSize)
+        let area = line.rect.insetBy(dx: -0.5, dy: -0.5)
+        var glyphs: [(character: Character, box: CGRect)] = []
+        for index in 0..<selection.numberOfTextRanges(on: page) {
+            let range = selection.range(at: index, on: page)
+            guard range.location != NSNotFound, range.length > 0, range.length <= 2_000 else { continue }
+            for offset in range.location..<(range.location + range.length) {
+                guard let one = page.selection(for: NSRange(location: offset, length: 1)),
+                      let character = one.string?.first, !character.isWhitespace else { continue }
+                let box = one.bounds(for: page)
+                // A synthesized line break selects the glyph before it again.
+                guard box.isFinite, !box.isNull, box.width > 0, box.height > 0,
+                      area.contains(CGPoint(x: box.midX, y: box.midY)), glyphs.last?.box != box else { continue }
+                glyphs.append((character, box))
+            }
+        }
+        guard !glyphs.isEmpty else { return nil }
+        var words: [(text: String, minX: CGFloat, maxX: CGFloat)] = []
+        for glyph in glyphs.sorted(by: { $0.box.minX < $1.box.minX }) {
+            if let last = words.last, glyph.box.minX - last.maxX < em * 0.25 {
+                words[words.count - 1].text.append(glyph.character)
+                words[words.count - 1].maxX = max(last.maxX, glyph.box.maxX)
+            } else { words.append((String(glyph.character), glyph.box.minX, glyph.box.maxX)) }
+        }
+        let tokens = line.text.split(whereSeparator: \.isWhitespace).map(String.init)
+        return words.enumerated().map { index, word in
+            ColumnGrid.Piece(rect: CGRect(x: word.minX, y: line.rect.minY, width: word.maxX - word.minX, height: line.rect.height),
+                             text: tokens.count == words.count ? tokens[index] : word.text, size: line.fontSize, id: index)
+        }
+    }
+
+    /// A line cut into the cells its word groups make (`parts`, left to right). When the line's
+    /// text has one word for each of its `measured` glyph words, each cell takes its words' share
+    /// of the line's own text, styles and repairs included (PDFKit's selections inside a Census row
+    /// would report the index glyphs undecoded, #143); otherwise PDFKit's rectangle selections
+    /// measure each cell between the midpoints of the gaps. The cells must spell the line exactly,
+    /// apart from the whitespace between them.
+    private static func cells(of line: TextLine, parts: [[ColumnGrid.Piece]], measured: Int, on page: PDFPage,
+                              includeStyle: Bool, weights: [FontWeightReader.Show],
+                              privateUse: PrivateUseCharacters) -> [TextLine]? {
+        let cuts = zip(parts, parts.dropFirst()).map { ($0.last!.rect.maxX + $1.first!.rect.minX) / 2 }
+        let edges = [line.rect.minX] + cuts + [line.rect.maxX]
+        var pieces: [TextLine] = []
+        if line.text.split(whereSeparator: \.isWhitespace).count == measured,
+           let slices = slices(line.content, tokenCounts: parts.map(\.count)) {
+            for (part, slice) in zip(parts, slices) {
+                var cell = line
+                cell.replaceContent(slice)
+                cell.rect = CGRect(x: part[0].rect.minX, y: line.rect.minY,
+                                   width: part[part.count - 1].rect.maxX - part[0].rect.minX, height: line.rect.height)
+                cell.readingRect = nil
+                cell.trailingSpace = pieces.count < parts.count - 1 || line.trailingSpace
+                pieces.append(cell)
+            }
+        } else {
+            for (start, end) in zip(edges, edges.dropFirst()) {
+                guard let next = piece(of: line.rect, from: start, to: end, on: page, includeStyle: includeStyle,
+                                       weights: weights, privateUse: privateUse),
+                      next.rect.minX >= start - 1, next.rect.maxX <= end + 1 else { return nil }
+                pieces.append(next)
+            }
+        }
+        guard pieces.count == parts.count,
+              squeezed(pieces.map(\.text).joined(separator: " ")) == squeezed(line.text) else { return nil }
+        return pieces
+    }
+
+    /// Styled text divided at its whitespace into parts of `tokenCounts` words each, trimmed; nil
+    /// when the text holds anything but plain runs or a different number of words.
+    static func slices(_ text: InlineText, tokenCounts: [Int]) -> [InlineText]? {
+        guard !tokenCounts.isEmpty, tokenCounts.allSatisfy({ $0 > 0 }) else { return nil }
+        var parts = [InlineText](repeating: InlineText(), count: tokenCounts.count)
+        var part = 0, words = 0, inWord = false
+        for element in text.elements {
+            guard case let .text(value, style) = element else { return nil }
+            for character in value {
+                if character.isWhitespace {
+                    inWord = false
+                } else if !inWord {
+                    inWord = true
+                    if words == tokenCounts[part] {
+                        part += 1; words = 0
+                        guard part < tokenCounts.count else { return nil }
+                    }
+                    words += 1
+                }
+                if case let .text(last, lastStyle)? = parts[part].elements.last, lastStyle == style {
+                    parts[part].elements[parts[part].elements.count - 1] = .text(last + String(character), style)
+                } else { parts[part].elements.append(.text(String(character), style)) }
+            }
+        }
+        guard part == tokenCounts.count - 1, words == tokenCounts[part] else { return nil }
+        return parts.map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
+    }
+
+    /// Borderless tables of aligned columns under a header whose rows PDFKit merges (#150, #137;
+    /// Census's `rnkswp05 0.8861 0.9620`, FAA page 410's `T 12,000' and below 25`). Candidate
+    /// regions come from the lines: at least three of them ending in a number at one right edge
+    /// (`ColumnGrid.regions`), so ordinary pages measure nothing. The lines of each region are
+    /// measured glyph by glyph into words, and `ColumnGrid` reads their grid; each line whose words
+    /// fall into more than one cell is cut between them (`cells(of:)`). The cuts are kept only when
+    /// every line of the grid cuts and the cut lines read as the same grid in layout, so a table
+    /// either reaches layout whole or not at all.
+    private static func splitColumnGrids(_ lines: [TextLine], on page: PDFPage, includeStyle: Bool,
+                                         weights: [FontWeightReader.Show], privateUse: PrivateUseCharacters) throws -> [TextLine] {
+        let pieces = lines.enumerated().filter { !$0.element.monospaced }.map {
+            ColumnGrid.Piece(rect: $0.element.rect, text: $0.element.text, size: $0.element.fontSize, id: $0.offset)
+        }
+        let regions = ColumnGrid.regions(in: pieces, capped: false)
+        guard !regions.isEmpty else { return lines }
+        var replacements: [Int: [TextLine]] = [:]
+        for region in regions {
+            try Task.checkCancellation()
+            // Each region line as words, identified by the line and the word's place in it.
+            var words: [ColumnGrid.Piece] = []
+            var owners: [(line: Int, word: Int)] = []
+            for piece in region.rows.flatMap({ $0 }) where replacements[piece.id] == nil {
+                let measured = glyphWords(lines[piece.id], on: page)
+                    ?? [ColumnGrid.Piece(rect: piece.rect, text: piece.text, size: piece.size)]
+                for (index, var word) in measured.enumerated() {
+                    word.id = owners.count
+                    owners.append((piece.id, index))
+                    words.append(word)
+                }
+            }
+            let rows = ColumnGrid.baselines(words)
+            for grid in ColumnGrid.grids(in: rows, beside: region.beside) {
+                // Each line's words in order, with their places in the grid.
+                var placed: [Int: [(word: ColumnGrid.Piece, placement: ColumnGrid.Placement)]] = [:]
+                for (baseline, placements) in grid.placements.enumerated() {
+                    for (index, placement) in placements.enumerated() {
+                        guard let placement else { continue }
+                        let word = rows[baseline][index]
+                        placed[owners[word.id].line, default: []].append((word, placement))
+                    }
+                }
+                var cut: [Int: [TextLine]] = [:]
+                var complete = true
+                for (index, entries) in placed {
+                    let ordered = entries.sorted { $0.word.rect.minX < $1.word.rect.minX }
+                    var parts: [[ColumnGrid.Piece]] = []
+                    var places: [ColumnGrid.Placement] = []
+                    for entry in ordered {
+                        if places.last == entry.placement { parts[parts.count - 1].append(entry.word) }
+                        else { parts.append([entry.word]); places.append(entry.placement) }
+                    }
+                    // A cell's words are contiguous in its line.
+                    guard Set(places.map { "\($0.row):\($0.columns)" }).count == places.count else { complete = false; break }
+                    guard parts.count >= 2 else { continue }
+                    let line = lines[index]
+                    let measured = owners.filter { $0.line == index }.count
+                    guard let pieces = cells(of: line, parts: parts, measured: measured, on: page, includeStyle: includeStyle,
+                                             weights: weights, privateUse: privateUse) else { complete = false; break }
+                    cut[index] = pieces
+                }
+                guard complete, !cut.isEmpty else { continue }
+                // Layout must read the same table from the cut lines.
+                let gridLines = Set(placed.keys)
+                let after = gridLines.sorted().flatMap { cut[$0] ?? [lines[$0]] }
+                let cells = after.map { ColumnGrid.Piece(rect: $0.rect, text: $0.text, size: $0.fontSize) }
+                let reread = ColumnGrid.regions(in: cells, capped: true).flatMap { ColumnGrid.grids(in: $0.rows, beside: $0.beside) }
+                guard reread.contains(where: { $0.rows == grid.rows && $0.columns == grid.columns
+                    && $0.placements.flatMap { $0 }.compactMap { $0 }.count == cells.count }) else { continue }
+                replacements.merge(cut) { first, _ in first }
+            }
+        }
+        guard !replacements.isEmpty else { return lines }
+        return lines.indices.flatMap { replacements[$0] ?? [lines[$0]] }
     }
 
     private static func extractLines(on page: PDFPage, limit: Int, includeStyle: Bool, weights: [FontWeightReader.Show],

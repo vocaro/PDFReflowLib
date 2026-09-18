@@ -65,7 +65,8 @@ table block of rows and cells (header rows, column spans, styled cell text with 
 boundaries) that the EPUB writer serializes as `<table>` (#54). A table's own title and description
 are caption paragraphs of that block, serialized as `<p>` elements of the table's `<caption>`, not
 headings or prose before it (#113). A body cell that names its row is a row-header cell, serialized
-as `<th scope="row">`; a borderless table with capital column headings is a table block too (#121).
+as `<th scope="row">`; a borderless table with capital column headings is a table block too (#121),
+and so is a table whose columns only their alignment draws, under a header (#150).
 A section row, one header cell spanning every column, names the rows beneath it: it opens its own
 `<tbody>` and is serialized as `<th scope="rowgroup">` (#124).
 Output independence does not
@@ -264,7 +265,15 @@ the same way without rules (#121, FAA page 131): where PDFKit keeps one row's tw
 ems' leading, in the same size, are read against that gap, and their crossing lines are cut where
 the selections show two ems of whitespace, only when the run opens with a heading in capitals on
 both sides, at least three rows hold text on both sides, an em of whitespace is common to every
-row and nothing painted lies within it. Before either of those, a line whose content-stream shows
+row and nothing painted lies within it. A table of aligned columns under a header (#150, Census's
+`rnkswp05 0.8861 0.9620`, FAA page 410's `T 12,000' and below 25`) is split last: where at least
+three lines end in a number at one right edge, the lines around them are measured glyph by glyph
+into words, `ColumnGrid` reads the words' grid (below), and each line whose words fall into more
+than one cell is cut between them. A cell takes its words' share of the line's own styled,
+repaired text when the line has one word per glyph word (PDFKit's selections inside a Census row
+report the index glyphs undecoded), and PDFKit's rectangle selections otherwise; the cuts are kept
+only when every line of the grid cuts, spelling it exactly, and layout reads the same grid from
+the cut lines. Before any of those, a line whose content-stream shows
 stand at least eight ems and a quarter of the page apart is cut there (#14, the *Dietary Guidelines*
 cover's `& Healthy Fats` and `& Fruits`, which label the two sides of the food pyramid on one
 baseline): PDFKit's character positions on such a page need not follow the text, but its rectangle
@@ -922,6 +931,35 @@ columns starts a row, one with text in a single column continues the row above, 
 row must fill every column, with at least two body rows; no row headers are inferred (FAA tags
 page 131's first cells `TD`). See the
 [table header and borderless-table evidence](../measurements/table-headers-and-borderless/record.md).
+`BorderlessTableDetector.alignedTables` reads a table whose columns only their alignment draws,
+with no rules, bands or capital headings (#150; `ColumnGrid`, Census pages 12 and 15, FAA page 410).
+Candidates are three or more cells ending in a number at one right edge; the window around them is
+the run of columns of cells at most fifteen ems wide, so a page column of prose beside the table
+stays out. The body is a run of baselines at no more than 1.8 ems' leading in one size whose pieces
+fall into columns: ink between channels at least 0.6 em wide clear through every baseline and at
+least twice any gap inside a cell, and, where numbers stand a word space apart (Census Table 8), a
+stack of numbers ending every baseline of a column at one right edge splits off as a column of its
+own. Every column is flush left or right and at most fifteen ems wide; a baseline with first-column
+text opens a row and one without continues it, adding to at most one cell that already holds text
+(FAA's wrapped altitude and the distance set on its last line), and every row fills every column,
+at least three of them. One column holds one number in every row, no column opens every row with a
+list marker, and no row holds dot leaders. A header of one to three baselines stands directly above
+the body inside its width: its lowest row places cells in at least two columns (a line whose words
+are each centred on a column divides there, Census's `d metric l metric`), with a heading over every
+column of numbers, and a row with first-column text over numbers reads as a body row, so no body row
+heads the rest (years may head their columns over an empty label heading); a higher row's cell that ends on a column's
+flush edge within a tenth of an em, as the heading beneath it does, continues that heading
+(`Distance` above `(Miles)`), and its other cells share the columns beneath by nearest centre
+(`d Metric` over three scores). A body without a header is no table, and none of its rows heads the
+rest. Text within two ems of the grid's edge on at least half its body's baselines, found only beside
+its rows, continues the grid past that edge (a label column too wide to be one), so it is no table; a
+page column beside a table runs on above or below it. Lines tagged as headings are never cells, and a line tagged as a paragraph is one only when
+its whole paragraph is inside the table. Header cells span the columns they head; first cells name
+their rows by #121's rule (Census's labels do, FAA's repeated `H` does not). Worked examples beside
+their comments, contents lists, glossaries, rosters, answer grids and dot-leader charts have no
+numeric column, no header, a marker column or leaders, and keep their reflow; FAA's glossary page
+columns, 9/11's staff roster, abbreviation list and flight timelines and Our Flag's committee roster
+are among them. See the [aligned-column table evidence](../measurements/aligned-column-tables/record.md).
 Tinted boxes are read as units: their elements are ordered among themselves, the box follows
 the lines beside it and precedes the lines below it, as its image did, and paragraphs never
 join across its edge. Small text inside reflowed boxes and tables does not lower the heading
@@ -1126,12 +1164,14 @@ words (at least three words of three letters, letters half the visible character
 lines are one typeset line split inside one show (Census page 17's `[2]` and its entry), so they are
 read as one line over their union, which then holds every show of the row for repair, spacing and
 style (#149); a continuation in figures (page 12's row labels and rates) stays in its pieces for the
-table path. A page keeps the font evidence unless
-every line with index-glyph shows was repaired and its lines hold no numeric grid (three rows of at
-least two decimal numbers making up half their words: no table path reconstructs Census's
-rule-headed tables, which would reflow as run-together cells while recognition keeps table images),
-and the English statistics judge PDFKit's own text. Census pages 3 and 17 reflow natively; its table
-pages and pages with math fonts, which follow no constant offset, keep `damagedTextEncoding`. See the
+table path. A page keeps the font evidence unless every line with index-glyph shows was repaired and its
+lines hold no numeric grid outside the tables of aligned columns layout reads (three rows of at
+least two decimal numbers making up half their words, which would reflow as run-together cells
+while recognition keeps table images; #150: extraction has split a read table's rows into cells),
+and the English statistics judge PDFKit's own text. Census pages 3, 12, 15 and 17 reflow natively,
+pages 12 and 15 with their four tables; pages with math fonts, which follow no constant offset,
+keep `damagedTextEncoding`. See also the
+[aligned-column table evidence](../measurements/aligned-column-tables/record.md). See the
 [index-glyph evidence](../measurements/glyph-index-decoding/record.md) and the
 [follow-up evidence](../measurements/index-glyph-follow-ups/record.md) (#149), which records why
 the math fonts stay undecoded: `cmmi`'s letters sit at their own codes but its Greek 134 and 136

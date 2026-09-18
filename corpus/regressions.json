@@ -1069,6 +1069,61 @@
           "page": 410,
           "absentHeadings": [
             "Distance"
+          ],
+          "tableCells": [
+            {
+              "title": "VOR/VORTAC NAVAIDS: Normal Usable Altitudes and Radius Distances",
+              "columns": [
+                "Class",
+                "Altitudes"
+              ],
+              "headerCells": true,
+              "rowHeaders": false,
+              "rows": [
+                {
+                  "label": "T",
+                  "values": [
+                    "T",
+                    "12,000' and below"
+                  ]
+                },
+                {
+                  "label": "L",
+                  "values": [
+                    "L",
+                    "Below 18,000'"
+                  ]
+                },
+                {
+                  "label": "H",
+                  "values": [
+                    "H",
+                    "Below 14,500'"
+                  ]
+                },
+                {
+                  "label": "H",
+                  "values": [
+                    "H",
+                    "Within the conterminous 48 states only, between 14,500 and 17,999'"
+                  ]
+                },
+                {
+                  "label": "H",
+                  "values": [
+                    "H",
+                    "18,000'—FL 450"
+                  ]
+                },
+                {
+                  "label": "H",
+                  "values": [
+                    "H",
+                    "FL 450—60,000'"
+                  ]
+                }
+              ]
+            }
           ]
         },
         {
@@ -6445,19 +6500,118 @@
         },
         {
           "page": 12,
-          "minimumImages": 3,
-          "warningCodesAnyOf": [
-            "damagedTextEncoding"
+          "absentWarningCodes": [
+            "damagedTextEncoding",
+            "ocrUsed"
+          ],
+          "maximumImages": 0,
+          "paragraphs": [
+            "Table 2. Domingo Data Reidentification Rates",
+            "Table 3. Domingo Data Scoring Metrics"
           ],
           "absentText": [
-            "0.9620 rnkswp10",
-            "0.7287 rnkswp15",
             "Wdeoh 51",
             "uqnvzs38"
           ],
-          "imageAlternatives": [
-            "Table kept as an image",
-            "The printed page, for comparison"
+          "tableCells": [
+            {
+              "title": "Table 2. Domingo Data Reidentification Rates",
+              "columns": [
+                "d metric",
+                "l metric"
+              ],
+              "headerCells": true,
+              "rowHeaders": true,
+              "rows": [
+                {
+                  "label": "rnkswp05",
+                  "values": [
+                    "0.8861",
+                    "0.9620"
+                  ]
+                },
+                {
+                  "label": "add05",
+                  "values": [
+                    "0.7972",
+                    "0.7500"
+                  ]
+                },
+                {
+                  "label": "mixadd20",
+                  "values": [
+                    "0.0139",
+                    "0.1009"
+                  ]
+                },
+                {
+                  "label": "scalmixadd20",
+                  "values": [
+                    "0.0269",
+                    "0.1241"
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "Table 3. Domingo Data Scoring Metrics",
+              "columns": [
+                "d Metric Ascore",
+                "d Metric Dscore",
+                "d Metric Sscore",
+                "l Metric Ascore",
+                "l Metric Dscore",
+                "l Metric Sscore"
+              ],
+              "headerCells": true,
+              "rowHeaders": true,
+              "rows": [
+                {
+                  "label": "rnkswp05",
+                  "values": [
+                    "46.11",
+                    "47.06",
+                    "46.66",
+                    "49.90",
+                    "50.85",
+                    "49.45"
+                  ]
+                },
+                {
+                  "label": "rnkswp15",
+                  "values": [
+                    "6.11",
+                    "8.36",
+                    "5.91",
+                    "20.87",
+                    "23.12",
+                    "30.67"
+                  ]
+                },
+                {
+                  "label": "mixadd05",
+                  "values": [
+                    "9.27",
+                    "12.16",
+                    "9.93",
+                    "19.64",
+                    "22.53",
+                    "20.30"
+                  ]
+                },
+                {
+                  "label": "scalmixadd20",
+                  "values": [
+                    "2.89",
+                    "7.06",
+                    "4.94",
+                    "7.75",
+                    "11.92",
+                    "9.80"
+                  ]
+                }
+              ]
+            }
           ]
         },
         {
@@ -6476,13 +6630,128 @@
         },
         {
           "page": 15,
-          "minimumImages": 3,
-          "warningCodesAnyOf": [
-            "damagedTextEncoding"
+          "absentWarningCodes": [
+            "damagedTextEncoding",
+            "ocrUsed"
+          ],
+          "maximumImages": 0,
+          "paragraphs": [
+            "Table 7. Kim-Winker Data Scoring Metrics",
+            "Table 8. S4 Return Type Information Loss, 8 Variables, 5885 Records"
           ],
           "absentText": [
-            "88.32 rnkswp10",
-            "13.85 add01_sw"
+            "Wdeoh ;1",
+            "uqnvzs38"
+          ],
+          "tableCells": [
+            {
+              "title": "Table 7. Kim-Winker Data Scoring Metrics",
+              "columns": [
+                "Full File Matches Ascore",
+                "Full File Matches Dscore",
+                "Full File Matches Sscore",
+                "20% Zone Matches Ascore",
+                "20% Zone Matches Dscore",
+                "20% Zone Matches Sscore"
+              ],
+              "headerCells": true,
+              "rowHeaders": true,
+              "rows": [
+                {
+                  "label": "rnkswp05",
+                  "values": [
+                    "98.35",
+                    "98.21",
+                    "88.32",
+                    "98.35",
+                    "98.21",
+                    "88.32"
+                  ]
+                },
+                {
+                  "label": "add01_sw",
+                  "values": [
+                    "0.70",
+                    "16.80",
+                    "11.65",
+                    "0.65",
+                    "16.75",
+                    "11.60"
+                  ]
+                },
+                {
+                  "label": "scalmixadd20",
+                  "values": [
+                    "1.33",
+                    "16.91",
+                    "4.22",
+                    "0.49",
+                    "16.12",
+                    "3.43"
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "Table 8. S4 Return Type Information Loss, 8 Variables, 5885 Records",
+              "columns": [
+                "IL1",
+                "IL1s",
+                "IL2",
+                "IL3",
+                "IL4",
+                "IL5",
+                "s0",
+                "s1",
+                "s2"
+              ],
+              "headerCells": true,
+              "rowHeaders": true,
+              "rows": [
+                {
+                  "label": "rnkswp05",
+                  "values": [
+                    "0.114",
+                    "0.081",
+                    "1.407",
+                    "39.020",
+                    "158.950",
+                    "0.123",
+                    "48.875",
+                    "39.923",
+                    "40.141"
+                  ]
+                },
+                {
+                  "label": "add_sw01",
+                  "values": [
+                    "1.364",
+                    "0.964",
+                    "0.027",
+                    "0.343",
+                    "0.240",
+                    "0.017",
+                    "0.156",
+                    "0.398",
+                    "0.312"
+                  ]
+                },
+                {
+                  "label": "scalmixadd20",
+                  "values": [
+                    "1.681",
+                    "1.004",
+                    "0.256",
+                    "0.693",
+                    "0.069",
+                    "0.033",
+                    "0.263",
+                    "0.547",
+                    "0.341"
+                  ]
+                }
+              ]
+            }
           ]
         },
         {

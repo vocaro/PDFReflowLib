@@ -115,7 +115,7 @@ are, in the page markup). Evidence and negative controls on real output are in
 ## Current content coverage
 
 <!-- counts:coverage -->
-[corpus/regressions.json](../corpus/regressions.json) has 3417 targeted checks on 560 reviewed pages
+[corpus/regressions.json](../corpus/regressions.json) has 3422 targeted checks on 560 reviewed pages
 across 22 documents: *Pilot's Handbook of Aeronautical Knowledge*, *Beginning and Intermediate
 Algebra*, *The 9/11 Commission Report*, *The Fed Explained*, *Dietary Guidelines for Americans*,
 *Fifth National Climate Assessment*, *Our Flag*, *Preparedness 101*, *Project Blue Book Special
@@ -125,13 +125,13 @@ Report No. 14*, *Mineral Commodity Summaries 2025*, *Loper Bright Enterprises v.
 Clocks*, *Complaint for a Civil Case*, *Investigation of Atmospheric Boundary-Layer Effects on
 Launch-Vehicle Ground Wind Loads*, *A Scheduling Algorithm Compatible with a Distributed Management
 of Arrivals in the National Airspace System*, *Agricultural Research*, *Earthdata Cloud Analytics
-Project* and *Tank Health Monitoring*. They comprise 1136 ordered-text, 242 text, 418 paragraph,
-291 absent-text, 271 heading, 36 heading-level, 50 absent-heading, 93 list-item,
+Project* and *Tank Health Monitoring*. They comprise 1136 ordered-text, 242 text, 422 paragraph,
+289 absent-text, 271 heading, 36 heading-level, 50 absent-heading, 93 list-item,
 1 preformatted-lines, 29 script, 8 absent-script, 11 footnote, 34 note-link,
 61 paragraph-continuation, 1 list-item-continuation, 8 paragraph-separation, 99 distinct-paragraph,
-201 image-presence, 44 captioned-image, 22 image-alternative, 102 page-reference, 113 warning,
-111 absent-warning, 17 source-region, 5 glyph-structure, 4 image-appearance and 9 table-cell checks,
-counted as `tools/check_corpus_content.py` counts them.
+201 image-presence, 44 captioned-image, 20 image-alternative, 102 page-reference, 111 warning,
+113 absent-warning, 17 source-region, 5 glyph-structure, 4 image-appearance and 14 table-cell
+checks, counted as `tools/check_corpus_content.py` counts them.
 <!-- counts:end -->
 
 All source-page anchors must also remain complete and ordered, and semantic text must contain no image attachment placeholders.
@@ -361,7 +361,11 @@ names (#138). See the
 [table caption and tag evidence](../measurements/table-captions-and-tags/record.md) and the
 [table header and borderless-table evidence](../measurements/table-headers-and-borderless/record.md) and the
 [table leftovers evidence](../measurements/table-leftovers/record.md) and the
-[cell-label script evidence](../measurements/cell-label-scripts/record.md).
+[cell-label script evidence](../measurements/cell-label-scripts/record.md). Census pages 12 and 15
+transcribe their four tables of aligned columns (#150): header paths through the spanning group
+headings (`d Metric Ascore`, `20% Zone Matches Sscore`), row-header labels, and numbers a word space
+apart in Table 8; FAA page 410 transcribes the VOR/VORTAC table's class and altitude columns, the
+wrapped altitude joined, with no row headers (#137).
 
 ## Adding or changing a regression
 
@@ -404,7 +408,7 @@ swiftc Sources/PDFReflowLib/NativeTextReader.swift Sources/PDFReflowLib/Conversi
   Sources/PDFReflowLib/DocumentModel.swift Sources/PDFReflowLib/ReflowDocument.swift \
   Sources/PDFReflowLib/GraphicsReader.swift Sources/PDFReflowLib/NativeSpacingReader.swift \
   Sources/PDFReflowLib/FontWeightReader.swift Sources/PDFReflowLib/PrivateUseDecoder.swift \
-  tools/capture-algebra-layout.swift \
+  Sources/PDFReflowLib/ColumnGrid.swift tools/capture-algebra-layout.swift \
   -o /tmp/capture-algebra-layout
 /tmp/capture-algebra-layout corpus/cache/Beginning_and_Intermediate_Algebra.pdf /tmp/algebra-17-layout.json
 ```
@@ -521,6 +525,24 @@ alone (repeated labels or a label without its own value cost only that list its 
 header cell over one column, a single spanning header cell and spans short of the body's columns as
 controls that keep the first-column rule.
 
+## Tables of aligned columns
+
+`AlignedColumnTablesTests.swift` covers #150 and #137. Source-derived `census-12`, `census-15` and
+`faa-410` fixtures (captured with index-glyph decoding and the aligned-column split) read as tables:
+Census Tables 2 and 3 with their row labels and the group headings each spanning three scores,
+Tables 7 and 8 with Table 8's numbers a word space apart, and FAA's service volumes with `Distance`
+above `(Miles)` as one heading and the wrapped altitude and its distance in one row; the titles stay
+paragraphs. Re-merging each row as PDFKit returns it reproduces the defect: no table, and the Census
+pages keep the numeric-grid guard. FAA's paragraph tag over the wrapped altitude's second line and
+its `100` admits them, with a tag reaching outside the table and a heading tag as controls. Synthetic
+lines control the rule: no header, two rows, no numeric column, a marker column, dot leaders, a cell
+wider than fifteen ems, a partial body row above the body, a ragged column, two timelines side by
+side (a line continuing two cells), a prose page column beside the table, centred and stacked
+higher headings, and a numeric grid of range cells that a read table releases from the guard. A
+synthetic PDF sets Census Table 2 with each row one TJ show, which PDFKit returns as one line;
+extraction splits it into cells, and without the header it stays whole. See the
+[aligned-column table evidence](../measurements/aligned-column-tables/record.md).
+
 ## Labels joined across a page
 
 `DetachedLabelTests.swift` covers [#14](https://github.com/vocaro/PDFReflowLib/issues/14): PDFKit
@@ -603,9 +625,15 @@ swiftc Sources/PDFReflowLib/NativeTextReader.swift Sources/PDFReflowLib/Conversi
   Sources/PDFReflowLib/FontWeightReader.swift Sources/PDFReflowLib/PrivateUseDecoder.swift \
   Sources/PDFReflowLib/AnnotationEvidence.swift \
   tools/capture-layout-fixture.swift \
+  Sources/PDFReflowLib/GlyphIndexDecoder.swift Sources/PDFReflowLib/TextEncodingCheck.swift \
+  Sources/PDFReflowLib/ColumnGrid.swift tools/capture-layout-fixture.swift \
   -o /tmp/capture-layout-fixture
 /tmp/capture-layout-fixture faa-phak-8083-25c 91 /tmp/faa-91-layout.json
 ```
+
+Since #150 the tool reads index-named glyphs through the characters the document's own words
+establish (#143), as the pipeline does, and extraction splits a table of aligned columns into cells;
+fixtures captured before read Census's text shifted.
 
 Since #125 an attributed run drawn in a bold font resource that PDFKit does not name bold (a
 `Dm`, `Demi` or `Semibold` face, or any embedded font PDFKit reports as `Helvetica`) records
@@ -622,7 +650,7 @@ the page's structure validates, each line also records the tag the pipeline appl
 since #89/#90); older fixtures and untagged lines have none, and `SourceLayoutFixture` restores it.
 Source review, baseline failures, cross-document safeguards and full-run evidence are retained
 in [the three-fix measurement](../measurements/three-fidelity-fixes/record.md). The suite contains
-<!-- counts:swift-tests -->930 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->245 Python tests<!-- counts:end -->.
+<!-- counts:swift-tests -->944 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->245 Python tests<!-- counts:end -->.
 The comparison tests include a real-Poppler image URL check through the safe HTTP handler
 (simple and positioned modes, paths with spaces); absent Poppler is an explicit skip.
 

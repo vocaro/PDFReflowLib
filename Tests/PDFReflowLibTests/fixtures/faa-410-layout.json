@@ -1,0 +1,3500 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        532.42380000000003,
+        33.709700000000005,
+        25.57000000000005,
+        12.310000000000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "16-23"
+        }
+      ],
+      "text" : "16-23"
+    },
+    {
+      "rect" : [
+        72.003800000000012,
+        719.5696999999999,
+        237.01399999999995,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "VORs and VORTACs are classed according to operational"
+        }
+      ],
+      "text" : "VORs and VORTACs are classed according to operational"
+    },
+    {
+      "rect" : [
+        72.003800000000012,
+        707.0696999999999,
+        111.90000000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "use. There are three classes:"
+        }
+      ],
+      "text" : "use. There are three classes:"
+    },
+    {
+      "rect" : [
+        81,
+        690.06640000000004,
+        3.5,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "•"
+        }
+      ],
+      "text" : "•"
+    },
+    {
+      "rect" : [
+        99,
+        690.06640000000004,
+        51.930000000000007,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "T (Terminal)"
+        }
+      ],
+      "text" : "T (Terminal)"
+    },
+    {
+      "rect" : [
+        81,
+        673.06640000000004,
+        3.5,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "•"
+        }
+      ],
+      "text" : "•"
+    },
+    {
+      "rect" : [
+        99,
+        673.06640000000004,
+        66.100000000000023,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "L (Low altitude)"
+        }
+      ],
+      "text" : "L (Low altitude)"
+    },
+    {
+      "rect" : [
+        81,
+        656.06640000000004,
+        3.5,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "•"
+        }
+      ],
+      "text" : "•"
+    },
+    {
+      "rect" : [
+        99,
+        656.06640000000004,
+        68.879999999999995,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "H (High altitude)"
+        }
+      ],
+      "text" : "H (High altitude)"
+    },
+    {
+      "rect" : [
+        72,
+        631.06640000000004,
+        236.98699999999997,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "The normal useful range for the various classes is shown in"
+        }
+      ],
+      "text" : "The normal useful range for the various classes is shown in"
+    },
+    {
+      "rect" : [
+        72,
+        618.56640000000004,
+        78.329999999999984,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the following table:"
+        }
+      ],
+      "text" : "the following table:"
+    },
+    {
+      "rect" : [
+        136.80000000000001,
+        601.27640000000008,
+        116.37999999999994,
+        12.019999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "VOR/VORTAC NAVAIDS"
+        }
+      ],
+      "text" : "VOR/VORTAC NAVAIDS"
+    },
+    {
+      "rect" : [
+        96.210000000000008,
+        589.06640000000004,
+        188.58999999999995,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Normal Usable Altitudes and Radius Distances"
+        }
+      ],
+      "text" : "Normal Usable Altitudes and Radius Distances"
+    },
+    {
+      "rect" : [
+        255.96000000000001,
+        564.06640000000004,
+        53.049999999999983,
+        11.340000000000032
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 10,
+          "text" : "Distance"
+        }
+      ],
+      "text" : "Distance"
+    },
+    {
+      "rect" : [
+        74.5,
+        551.56640000000004,
+        234.49899999999997,
+        11.340000000000032
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 10,
+          "text" : "Class Altitudes ( M i l e s )"
+        }
+      ],
+      "text" : "Class Altitudes ( M i l e s )"
+    },
+    {
+      "rect" : [
+        74.5,
+        539.06640000000004,
+        234.49900000000002,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "T 12,000' and below 25"
+        }
+      ],
+      "text" : "T 12,000' and below 25"
+    },
+    {
+      "rect" : [
+        74.5,
+        526.56640000000004,
+        234.49900000000002,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "L Below 18,000' 40"
+        }
+      ],
+      "text" : "L Below 18,000' 40"
+    },
+    {
+      "rect" : [
+        74.5,
+        514.06640000000004,
+        234.49900000000002,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "H Below 14,500' 40"
+        }
+      ],
+      "text" : "H Below 14,500' 40"
+    },
+    {
+      "rect" : [
+        74.5,
+        501.56640000000004,
+        206.15999999999997,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "H Within the conterminous 48 states"
+        }
+      ],
+      "text" : "H Within the conterminous 48 states"
+    },
+    {
+      "rect" : [
+        144,
+        489.06640000000004,
+        165,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "only, between 14,500 and 17,999' 100"
+        }
+      ],
+      "text" : "only, between 14,500 and 17,999' 100"
+    },
+    {
+      "rect" : [
+        74.5,
+        476.56640000000004,
+        234.5,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "H 18,000'—FL 450 130"
+        }
+      ],
+      "text" : "H 18,000'—FL 450 130"
+    },
+    {
+      "rect" : [
+        74.5,
+        464.06640000000004,
+        234.5,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "H FL 450—60,000' 100"
+        }
+      ],
+      "text" : "H FL 450—60,000' 100"
+    },
+    {
+      "rect" : [
+        72,
+        439.06640000000004,
+        237.01300000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "The useful range of certain facilities may be less than 50"
+        }
+      ],
+      "text" : "The useful range of certain facilities may be less than 50"
+    },
+    {
+      "rect" : [
+        72,
+        426.56640000000004,
+        237.00499999999994,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "miles. For further information concerning these restrictions,"
+        }
+      ],
+      "text" : "miles. For further information concerning these restrictions,"
+    },
+    {
+      "rect" : [
+        72,
+        414.06640000000004,
+        237.01399999999995,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "refer to the Communication/NAVAID Remarks in the Chart"
+        }
+      ],
+      "text" : "refer to the Communication/NAVAID Remarks in the Chart"
+    },
+    {
+      "rect" : [
+        72,
+        401.56640000000004,
+        68.060000000000002,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Supplement U.S."
+        }
+      ],
+      "text" : "Supplement U.S."
+    },
+    {
+      "rect" : [
+        72,
+        376.56640000000004,
+        236.89999999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "The accuracy of course alignment of VOR radials is"
+        }
+      ],
+      "text" : "The accuracy of course alignment of VOR radials is"
+    },
+    {
+      "rect" : [
+        72,
+        364.06640000000004,
+        237.08999999999992,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "considered to be excellent. It is generally within plus or minus"
+        }
+      ],
+      "text" : "considered to be excellent. It is generally within plus or minus"
+    },
+    {
+      "rect" : [
+        72,
+        351.56640000000004,
+        237.01299999999981,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "1°. However, certain parts of the VOR receiver equipment"
+        }
+      ],
+      "text" : "1°. However, certain parts of the VOR receiver equipment"
+    },
+    {
+      "rect" : [
+        72,
+        339.06640000000004,
+        237.01599999999991,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "deteriorate, affecting its accuracy. This is particularly true"
+        }
+      ],
+      "text" : "deteriorate, affecting its accuracy. This is particularly true"
+    },
+    {
+      "rect" : [
+        72,
+        326.56640000000004,
+        237.00699999999995,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "at great distances from the VOR station. The best assurance"
+        }
+      ],
+      "text" : "at great distances from the VOR station. The best assurance"
+    },
+    {
+      "rect" : [
+        72,
+        314.06640000000004,
+        237.00999999999993,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "of maintaining an accurate VOR receiver is periodic checks"
+        }
+      ],
+      "text" : "of maintaining an accurate VOR receiver is periodic checks"
+    },
+    {
+      "rect" : [
+        72,
+        301.56640000000004,
+        237.00599999999991,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "and calibrations. VOR accuracy checks are not a regulatory"
+        }
+      ],
+      "text" : "and calibrations. VOR accuracy checks are not a regulatory"
+    },
+    {
+      "rect" : [
+        72,
+        289.06640000000004,
+        237.00299999999993,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "requirement for VFR flight. However, to assure accuracy of"
+        }
+      ],
+      "text" : "requirement for VFR flight. However, to assure accuracy of"
+    },
+    {
+      "rect" : [
+        72,
+        276.56640000000004,
+        237.00400000000002,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the equipment, these checks should be accomplished quite"
+        }
+      ],
+      "text" : "the equipment, these checks should be accomplished quite"
+    },
+    {
+      "rect" : [
+        72,
+        264.06640000000004,
+        237.01699999999994,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "frequently and a complete calibration should be performed"
+        }
+      ],
+      "text" : "frequently and a complete calibration should be performed"
+    },
+    {
+      "rect" : [
+        72,
+        251.56640000000004,
+        237.01900000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "each year. The following means are provided for pilots to"
+        }
+      ],
+      "text" : "each year. The following means are provided for pilots to"
+    },
+    {
+      "rect" : [
+        72,
+        239.06640000000004,
+        87.740000000000009,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "check VOR accuracy:"
+        }
+      ],
+      "text" : "check VOR accuracy:"
+    },
+    {
+      "rect" : [
+        81,
+        222.06640000000002,
+        3.5,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "•"
+        }
+      ],
+      "text" : "•"
+    },
+    {
+      "rect" : [
+        99,
+        222.06640000000002,
+        120.54000000000002,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "FAA VOR test facility (VOT)"
+        }
+      ],
+      "text" : "FAA VOR test facility (VOT)"
+    },
+    {
+      "rect" : [
+        81,
+        205.06640000000002,
+        3.5,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "•"
+        }
+      ],
+      "text" : "•"
+    },
+    {
+      "rect" : [
+        99,
+        205.06640000000002,
+        121.64000000000004,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Certified airborne checkpoints"
+        }
+      ],
+      "text" : "Certified airborne checkpoints"
+    },
+    {
+      "rect" : [
+        81,
+        188.06640000000002,
+        3.5,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "•"
+        }
+      ],
+      "text" : "•"
+    },
+    {
+      "rect" : [
+        99,
+        188.06640000000002,
+        210.10699999999997,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Certified ground checkpoints located on airport"
+        }
+      ],
+      "text" : "Certified ground checkpoints located on airport"
+    },
+    {
+      "rect" : [
+        99,
+        175.56640000000002,
+        32.759999999999991,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "surfaces"
+        }
+      ],
+      "text" : "surfaces"
+    },
+    {
+      "rect" : [
+        72,
+        150.56640000000002,
+        236.99000000000001,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "If an aircraft has two VOR receivers installed, a dual VOR"
+        }
+      ],
+      "text" : "If an aircraft has two VOR receivers installed, a dual VOR"
+    },
+    {
+      "rect" : [
+        72,
+        138.06640000000002,
+        237.03000000000003,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "receiver check can be made. To accomplish the dual receiver"
+        }
+      ],
+      "text" : "receiver check can be made. To accomplish the dual receiver"
+    },
+    {
+      "rect" : [
+        72,
+        125.56640000000002,
+        237.03300000000002,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "check, a pilot must tune both VOR receivers to the same VOR"
+        }
+      ],
+      "text" : "check, a pilot must tune both VOR receivers to the same VOR"
+    },
+    {
+      "rect" : [
+        72,
+        113.06640000000002,
+        236.97000000000003,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "ground facility. The maximum permissible variation between"
+        }
+      ],
+      "text" : "ground facility. The maximum permissible variation between"
+    },
+    {
+      "rect" : [
+        72,
+        100.56640000000002,
+        236.98000000000002,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the two indicated bearings is 4°. A list of the airborne and"
+        }
+      ],
+      "text" : "the two indicated bearings is 4°. A list of the airborne and"
+    },
+    {
+      "rect" : [
+        72,
+        88.066400000000016,
+        236.83999999999992,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "ground checkpoints is published in the Chart Supplement U.S."
+        }
+      ],
+      "text" : "ground checkpoints is published in the Chart Supplement U.S."
+    },
+    {
+      "rect" : [
+        321,
+        719.56640000000004,
+        236.99599999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Basically, these checks consist of verifying that the VOR"
+        }
+      ],
+      "text" : "Basically, these checks consist of verifying that the VOR"
+    },
+    {
+      "rect" : [
+        321,
+        707.06640000000004,
+        237.00999999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "radials the aircraft equipment receives are aligned with the"
+        }
+      ],
+      "text" : "radials the aircraft equipment receives are aligned with the"
+    },
+    {
+      "rect" : [
+        321,
+        694.56640000000004,
+        237.11000000000013,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "radials the station transmits. There are not specific tolerances"
+        }
+      ],
+      "text" : "radials the station transmits. There are not specific tolerances"
+    },
+    {
+      "rect" : [
+        321,
+        682.06640000000004,
+        237.005,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "in VOR checks required for VFR flight. But as a guide to"
+        }
+      ],
+      "text" : "in VOR checks required for VFR flight. But as a guide to"
+    },
+    {
+      "rect" : [
+        321,
+        669.56640000000004,
+        237.005,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "assure acceptable accuracy, the required IFR tolerances can"
+        }
+      ],
+      "text" : "assure acceptable accuracy, the required IFR tolerances can"
+    },
+    {
+      "rect" : [
+        321,
+        657.06640000000004,
+        236.87999999999988,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "be used—±4° for ground checks and ±6° for airborne checks."
+        }
+      ],
+      "text" : "be used—±4° for ground checks and ±6° for airborne checks."
+    },
+    {
+      "rect" : [
+        321,
+        644.56640000000004,
+        176.62,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "These checks can be performed by the pilot."
+        }
+      ],
+      "text" : "These checks can be performed by the pilot."
+    },
+    {
+      "rect" : [
+        321,
+        619.56640000000004,
+        237.00999999999988,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "The VOR transmitting station can be positively identified"
+        }
+      ],
+      "text" : "The VOR transmitting station can be positively identified"
+    },
+    {
+      "rect" : [
+        321,
+        607.06640000000004,
+        236.84999999999991,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "by its Morse code identification or by a recorded voice"
+        }
+      ],
+      "text" : "by its Morse code identification or by a recorded voice"
+    },
+    {
+      "rect" : [
+        321,
+        594.56640000000004,
+        237.00099999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "identification that states the name of the station followed by"
+        }
+      ],
+      "text" : "identification that states the name of the station followed by"
+    },
+    {
+      "rect" : [
+        321,
+        582.06640000000004,
+        237.00600000000009,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "“VOR.” Many FSSs transmit voice messages on the same"
+        }
+      ],
+      "text" : "“VOR.” Many FSSs transmit voice messages on the same"
+    },
+    {
+      "rect" : [
+        321,
+        569.56640000000004,
+        237.03499999999985,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "frequency that the VOR operates. Voice transmissions should"
+        }
+      ],
+      "text" : "frequency that the VOR operates. Voice transmissions should"
+    },
+    {
+      "rect" : [
+        321,
+        557.06640000000004,
+        237,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "not be relied upon to identify stations because many FSSs"
+        }
+      ],
+      "text" : "not be relied upon to identify stations because many FSSs"
+    },
+    {
+      "rect" : [
+        321,
+        544.56640000000004,
+        237.01700000000005,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "remotely transmit over several omniranges that have names"
+        }
+      ],
+      "text" : "remotely transmit over several omniranges that have names"
+    },
+    {
+      "rect" : [
+        321,
+        532.06640000000004,
+        236.99900000000002,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "different from that of the transmitting FSS. If the VOR is"
+        }
+      ],
+      "text" : "different from that of the transmitting FSS. If the VOR is"
+    },
+    {
+      "rect" : [
+        321,
+        519.56640000000004,
+        237.00599999999997,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "out of service for maintenance, the coded identification is"
+        }
+      ],
+      "text" : "out of service for maintenance, the coded identification is"
+    },
+    {
+      "rect" : [
+        321,
+        507.06640000000004,
+        237.01799999999992,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "removed and not transmitted. This serves to alert pilots that"
+        }
+      ],
+      "text" : "removed and not transmitted. This serves to alert pilots that"
+    },
+    {
+      "rect" : [
+        321,
+        494.56640000000004,
+        237.00999999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "this station should not be used for navigation. VOR receivers"
+        }
+      ],
+      "text" : "this station should not be used for navigation. VOR receivers"
+    },
+    {
+      "rect" : [
+        321,
+        482.06640000000004,
+        236.90000000000009,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "are designed with an alarm flag to indicate when signal"
+        }
+      ],
+      "text" : "are designed with an alarm flag to indicate when signal"
+    },
+    {
+      "rect" : [
+        321,
+        469.56640000000004,
+        237.08999999999992,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "strength is inadequate to operate the navigational equipment."
+        }
+      ],
+      "text" : "strength is inadequate to operate the navigational equipment."
+    },
+    {
+      "rect" : [
+        321,
+        457.06640000000004,
+        237.01300000000015,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "This happens if the aircraft is too far from the VOR or the"
+        }
+      ],
+      "text" : "This happens if the aircraft is too far from the VOR or the"
+    },
+    {
+      "rect" : [
+        321,
+        444.56640000000004,
+        237.00999999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "aircraft is too low and, therefore, is out of the line of sight"
+        }
+      ],
+      "text" : "aircraft is too low and, therefore, is out of the line of sight"
+    },
+    {
+      "rect" : [
+        321,
+        432.06640000000004,
+        106.67000000000002,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "of the transmitting signals."
+        }
+      ],
+      "text" : "of the transmitting signals."
+    },
+    {
+      "rect" : [
+        321,
+        405.84340000000003,
+        69.069000000000017,
+        13.310000000000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Times-BoldItalic",
+          "fontSize" : 11,
+          "italic" : true,
+          "text" : "Using the VOR"
+        }
+      ],
+      "text" : "Using the VOR"
+    },
+    {
+      "rect" : [
+        321,
+        392.06640000000004,
+        236.82500000000005,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "In review, for VOR radio navigation, there are two"
+        }
+      ],
+      "text" : "In review, for VOR radio navigation, there are two"
+    },
+    {
+      "rect" : [
+        321,
+        379.56640000000004,
+        237.02000000000021,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "components required: ground transmitter and aircraft"
+        }
+      ],
+      "text" : "components required: ground transmitter and aircraft"
+    },
+    {
+      "rect" : [
+        321,
+        367.06640000000004,
+        237.00699999999983,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "receiving equipment. The ground transmitter is located at a"
+        }
+      ],
+      "text" : "receiving equipment. The ground transmitter is located at a"
+    },
+    {
+      "rect" : [
+        321,
+        354.56640000000004,
+        237.02699999999993,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "specific position on the ground and transmits on an assigned"
+        }
+      ],
+      "text" : "specific position on the ground and transmits on an assigned"
+    },
+    {
+      "rect" : [
+        321,
+        342.06640000000004,
+        237.01199999999994,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "frequency. The aircraft equipment includes a receiver with"
+        }
+      ],
+      "text" : "frequency. The aircraft equipment includes a receiver with"
+    },
+    {
+      "rect" : [
+        321,
+        329.56640000000004,
+        237.0139999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "a tuning device and a VOR or omninavigation instrument."
+        }
+      ],
+      "text" : "a tuning device and a VOR or omninavigation instrument."
+    },
+    {
+      "rect" : [
+        321,
+        317.06640000000004,
+        237.1400000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "The navigation instrument could be a course deviation"
+        }
+      ],
+      "text" : "The navigation instrument could be a course deviation"
+    },
+    {
+      "rect" : [
+        321,
+        304.56640000000004,
+        236.79399999999987,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "indicator (CDI), horizontal situation indicator (HSI), or a"
+        }
+      ],
+      "text" : "indicator (CDI), horizontal situation indicator (HSI), or a"
+    },
+    {
+      "rect" : [
+        321,
+        292.06640000000004,
+        237.00799999999981,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "radio magnetic indicator (RMI). Each of these instruments"
+        }
+      ],
+      "text" : "radio magnetic indicator (RMI). Each of these instruments"
+    },
+    {
+      "rect" : [
+        321,
+        279.56640000000004,
+        154.70000000000005,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "indicates the course to the tuned VOR."
+        }
+      ],
+      "text" : "indicates the course to the tuned VOR."
+    },
+    {
+      "rect" : [
+        321,
+        253.99640000000005,
+        153.91000000000003,
+        13.189999999999998
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 10,
+          "text" : "Course Deviation Indicator (CDI)"
+        }
+      ],
+      "text" : "Course Deviation Indicator (CDI)"
+    },
+    {
+      "rect" : [
+        321,
+        241.56640000000004,
+        237.01499999999987,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "The CDI is found in most training aircraft. It consists of an"
+        }
+      ],
+      "text" : "The CDI is found in most training aircraft. It consists of an"
+    },
+    {
+      "rect" : [
+        321,
+        229.06640000000004,
+        236.99000000000012,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "omnibearing selector (OBS) sometimes referred to as the"
+        }
+      ],
+      "text" : "omnibearing selector (OBS) sometimes referred to as the"
+    },
+    {
+      "rect" : [
+        321,
+        216.56640000000004,
+        236.99799999999993,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "course selector, a CDI needle (left-right needle), and a TO/"
+        }
+      ],
+      "text" : "course selector, a CDI needle (left-right needle), and a TO/"
+    },
+    {
+      "rect" : [
+        321,
+        204.06640000000004,
+        68.889999999999986,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "FROM indicator."
+        }
+      ],
+      "text" : "FROM indicator."
+    },
+    {
+      "rect" : [
+        321,
+        179.06640000000004,
+        236.99999999999989,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "The course selector is an azimuth dial that can be rotated to"
+        }
+      ],
+      "text" : "The course selector is an azimuth dial that can be rotated to"
+    },
+    {
+      "rect" : [
+        321,
+        166.56640000000004,
+        237.01900000000001,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "select a desired radial or to determine the radial over which"
+        }
+      ],
+      "text" : "select a desired radial or to determine the radial over which"
+    },
+    {
+      "rect" : [
+        321,
+        154.06640000000004,
+        236.98199999999997,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the aircraft is flying. In addition, the magnetic course “TO”"
+        }
+      ],
+      "text" : "the aircraft is flying. In addition, the magnetic course “TO”"
+    },
+    {
+      "rect" : [
+        321,
+        141.56640000000004,
+        170.25000000000006,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "or “FROM” the station can be determined."
+        }
+      ],
+      "text" : "or “FROM” the station can be determined."
+    },
+    {
+      "rect" : [
+        321,
+        116.56640000000004,
+        237.00399999999991,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "When the course selector is rotated, it moves the CDI or"
+        }
+      ],
+      "text" : "When the course selector is rotated, it moves the CDI or"
+    },
+    {
+      "rect" : [
+        321,
+        104.06640000000004,
+        237.00299999999993,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "needle to indicate the position of the radial relative to the"
+        }
+      ],
+      "text" : "needle to indicate the position of the radial relative to the"
+    },
+    {
+      "rect" : [
+        321,
+        91.566400000000044,
+        237.0139999999999,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "aircraft. If the course selector is rotated until the deviation"
+        }
+      ],
+      "text" : "aircraft. If the course selector is rotated until the deviation"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    594,
+    774
+  ],
+  "caseID" : "faa-phak-8083-25c",
+  "graphics" : [
+
+  ],
+  "lines" : [
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        532.42380000000003,
+        33.709700000000005,
+        25.57000000000005,
+        12.310000000000002
+      ],
+      "text" : "16-23"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72.003800000000012,
+        719.5696999999999,
+        237.01399999999995,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5758,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 27724
+      },
+      "text" : "VORs and VORTACs are classed according to operational"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72.003800000000012,
+        707.0696999999999,
+        111.90000000000001,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5758,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 27725
+      },
+      "text" : "use. There are three classes:"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        81,
+        690.06640000000004,
+        3.5,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5759,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 27726
+      },
+      "text" : "•"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        690.06640000000004,
+        51.930000000000007,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5759,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 27726
+      },
+      "text" : "T (Terminal)"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        81,
+        673.06640000000004,
+        3.5,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5760,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 27727
+      },
+      "text" : "•"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        673.06640000000004,
+        66.100000000000023,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5760,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 27727
+      },
+      "text" : "L (Low altitude)"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        81,
+        656.06640000000004,
+        3.5,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5761,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 27728
+      },
+      "text" : "•"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        656.06640000000004,
+        68.879999999999995,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5761,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 27728
+      },
+      "text" : "H (High altitude)"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        631.06640000000004,
+        236.98699999999997,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5762,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 27729
+      },
+      "text" : "The normal useful range for the various classes is shown in"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        618.56640000000004,
+        78.329999999999984,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5762,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 27730
+      },
+      "text" : "the following table:"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        136.80000000000001,
+        601.27640000000008,
+        116.37999999999994,
+        12.019999999999982
+      ],
+      "structure" : {
+        "group" : 5763,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 27731
+      },
+      "text" : "VOR/VORTAC NAVAIDS"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        96.210000000000008,
+        589.06640000000004,
+        188.58999999999995,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5764,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 27732
+      },
+      "text" : "Normal Usable Altitudes and Radius Distances"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        255.96000000000001,
+        564.06640000000004,
+        53.049999999999983,
+        11.340000000000032
+      ],
+      "text" : "Distance"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        74.5,
+        551.56640000000004,
+        22.22999999999999,
+        11.340000000000032
+      ],
+      "text" : "Class"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        149,
+        551.56640000000004,
+        35.560000000000002,
+        11.340000000000032
+      ],
+      "text" : "Altitudes"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        268.55999999999995,
+        551.56640000000004,
+        40.439000000000021,
+        11.340000000000032
+      ],
+      "text" : "( M i l e s )"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        74.5,
+        539.06640000000004,
+        6.1099999999999994,
+        11.470000000000027
+      ],
+      "text" : "T"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        144,
+        539.06640000000004,
+        73.180000000000007,
+        11.470000000000027
+      ],
+      "text" : "12,000' and below"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        298.142,
+        539.06640000000004,
+        10.857000000000028,
+        11.470000000000027
+      ],
+      "text" : "25"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        74.5,
+        526.56640000000004,
+        6.1099999999999994,
+        11.470000000000027
+      ],
+      "text" : "L"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        144,
+        526.56640000000004,
+        57.909999999999997,
+        11.470000000000027
+      ],
+      "text" : "Below 18,000'"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        298.142,
+        526.56640000000004,
+        10.857000000000028,
+        11.470000000000027
+      ],
+      "text" : "40"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        74.5,
+        514.06640000000004,
+        7.2199999999999989,
+        11.470000000000027
+      ],
+      "text" : "H"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        144,
+        514.06640000000004,
+        57.909999999999997,
+        11.470000000000027
+      ],
+      "text" : "Below 14,500'"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        298.142,
+        514.06640000000004,
+        10.857000000000028,
+        11.470000000000027
+      ],
+      "text" : "40"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        74.5,
+        501.56640000000004,
+        7.2199999999999989,
+        11.470000000000027
+      ],
+      "text" : "H"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        144,
+        501.56640000000004,
+        136.65999999999997,
+        11.470000000000027
+      ],
+      "text" : "Within the conterminous 48 states"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        144,
+        489.06640000000004,
+        134.84000000000003,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5771,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 27739
+      },
+      "text" : "only, between 14,500 and 17,999'"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        292.60000000000002,
+        489.06640000000004,
+        16.399999999999977,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5771,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 27739
+      },
+      "text" : "100"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        74.5,
+        476.56640000000004,
+        7.2199999999999989,
+        11.470000000000027
+      ],
+      "text" : "H"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        144,
+        476.56640000000004,
+        68.469999999999999,
+        11.470000000000027
+      ],
+      "text" : "18,000'—FL 450"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        292.60000000000002,
+        476.56640000000004,
+        16.399999999999977,
+        11.470000000000027
+      ],
+      "text" : "130"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        74.5,
+        464.06640000000004,
+        7.2199999999999989,
+        11.470000000000027
+      ],
+      "text" : "H"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        144,
+        464.06640000000004,
+        68.469999999999999,
+        11.470000000000027
+      ],
+      "text" : "FL 450—60,000'"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        292.60000000000002,
+        464.06640000000004,
+        16.399999999999977,
+        11.470000000000027
+      ],
+      "text" : "100"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        439.06640000000004,
+        237.01300000000003,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5774,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 27742
+      },
+      "text" : "The useful range of certain facilities may be less than 50"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        426.56640000000004,
+        237.00499999999994,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5774,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 27743
+      },
+      "text" : "miles. For further information concerning these restrictions,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        414.06640000000004,
+        237.01399999999995,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5774,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 27744
+      },
+      "text" : "refer to the Communication/NAVAID Remarks in the Chart"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        401.56640000000004,
+        68.060000000000002,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5774,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 27745
+      },
+      "text" : "Supplement U.S."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        376.56640000000004,
+        236.89999999999998,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5775,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 27746
+      },
+      "text" : "The accuracy of course alignment of VOR radials is"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        364.06640000000004,
+        237.08999999999992,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5775,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 27747
+      },
+      "text" : "considered to be excellent. It is generally within plus or minus"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        351.56640000000004,
+        237.01299999999981,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5775,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 27748
+      },
+      "text" : "1°. However, certain parts of the VOR receiver equipment"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        339.06640000000004,
+        237.01599999999991,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5775,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 27749
+      },
+      "text" : "deteriorate, affecting its accuracy. This is particularly true"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        326.56640000000004,
+        237.00699999999995,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5775,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 27750
+      },
+      "text" : "at great distances from the VOR station. The best assurance"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        314.06640000000004,
+        237.00999999999993,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5775,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 27751
+      },
+      "text" : "of maintaining an accurate VOR receiver is periodic checks"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        301.56640000000004,
+        237.00599999999991,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5775,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 27752
+      },
+      "text" : "and calibrations. VOR accuracy checks are not a regulatory"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        289.06640000000004,
+        237.00299999999993,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5775,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 27753
+      },
+      "text" : "requirement for VFR flight. However, to assure accuracy of"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        276.56640000000004,
+        237.00400000000002,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5775,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 27754
+      },
+      "text" : "the equipment, these checks should be accomplished quite"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        264.06640000000004,
+        237.01699999999994,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5775,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 27755
+      },
+      "text" : "frequently and a complete calibration should be performed"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        251.56640000000004,
+        237.01900000000001,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5775,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 27756
+      },
+      "text" : "each year. The following means are provided for pilots to"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        239.06640000000004,
+        87.740000000000009,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 5775,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 27757
+      },
+      "text" : "check VOR accuracy:"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        81,
+        222.06640000000002,
+        3.5,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 5776,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 27758
+      },
+      "text" : "•"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        222.06640000000002,
+        120.54000000000002,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 5776,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 27758
+      },
+      "text" : "FAA VOR test facility (VOT)"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        81,
+        205.06640000000002,
+        3.5,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 5777,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 27759
+      },
+      "text" : "•"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        205.06640000000002,
+        121.64000000000004,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 5777,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 27759
+      },
+      "text" : "Certified airborne checkpoints"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        81,
+        188.06640000000002,
+        3.5,
+        11.469999999999999
+      ],
+      "text" : "•"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        188.06640000000002,
+        210.10699999999997,
+        11.469999999999999
+      ],
+      "text" : "Certified ground checkpoints located on airport"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        175.56640000000002,
+        32.759999999999991,
+        11.469999999999999
+      ],
+      "text" : "surfaces"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        150.56640000000002,
+        236.99000000000001,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 5779,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 27762
+      },
+      "text" : "If an aircraft has two VOR receivers installed, a dual VOR"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        138.06640000000002,
+        237.03000000000003,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 5779,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 27763
+      },
+      "text" : "receiver check can be made. To accomplish the dual receiver"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        125.56640000000002,
+        237.03300000000002,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 5779,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 27764
+      },
+      "text" : "check, a pilot must tune both VOR receivers to the same VOR"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        113.06640000000002,
+        236.97000000000003,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 5779,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 27765
+      },
+      "text" : "ground facility. The maximum permissible variation between"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        100.56640000000002,
+        236.98000000000002,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 5779,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 27766
+      },
+      "text" : "the two indicated bearings is 4°. A list of the airborne and"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        88.066400000000016,
+        236.83999999999992,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 5779,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 27767
+      },
+      "text" : "ground checkpoints is published in the Chart Supplement U.S."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        719.56640000000004,
+        236.99599999999998,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5780,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 27768
+      },
+      "text" : "Basically, these checks consist of verifying that the VOR"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        707.06640000000004,
+        237.00999999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5780,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 27769
+      },
+      "text" : "radials the aircraft equipment receives are aligned with the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        694.56640000000004,
+        237.11000000000013,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5780,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 27770
+      },
+      "text" : "radials the station transmits. There are not specific tolerances"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        682.06640000000004,
+        237.005,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5780,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 27771
+      },
+      "text" : "in VOR checks required for VFR flight. But as a guide to"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        669.56640000000004,
+        237.005,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5780,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 27772
+      },
+      "text" : "assure acceptable accuracy, the required IFR tolerances can"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        657.06640000000004,
+        236.87999999999988,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5780,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 27773
+      },
+      "text" : "be used—±4° for ground checks and ±6° for airborne checks."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        644.56640000000004,
+        176.62,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5780,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 27774
+      },
+      "text" : "These checks can be performed by the pilot."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        619.56640000000004,
+        237.00999999999988,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5781,
+        "headingLevel" : 0,
+        "lineCount" : 16,
+        "opensWithSplitMarker" : false,
+        "order" : 27775
+      },
+      "text" : "The VOR transmitting station can be positively identified"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        607.06640000000004,
+        236.84999999999991,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5781,
+        "headingLevel" : 0,
+        "lineCount" : 16,
+        "opensWithSplitMarker" : false,
+        "order" : 27776
+      },
+      "text" : "by its Morse code identification or by a recorded voice"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        594.56640000000004,
+        237.00099999999998,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5781,
+        "headingLevel" : 0,
+        "lineCount" : 16,
+        "opensWithSplitMarker" : false,
+        "order" : 27777
+      },
+      "text" : "identification that states the name of the station followed by"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        582.06640000000004,
+        237.00600000000009,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5781,
+        "headingLevel" : 0,
+        "lineCount" : 16,
+        "opensWithSplitMarker" : false,
+        "order" : 27778
+      },
+      "text" : "“VOR.” Many FSSs transmit voice messages on the same"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        569.56640000000004,
+        237.03499999999985,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5781,
+        "headingLevel" : 0,
+        "lineCount" : 16,
+        "opensWithSplitMarker" : false,
+        "order" : 27779
+      },
+      "text" : "frequency that the VOR operates. Voice transmissions should"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        557.06640000000004,
+        237,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5781,
+        "headingLevel" : 0,
+        "lineCount" : 16,
+        "opensWithSplitMarker" : false,
+        "order" : 27780
+      },
+      "text" : "not be relied upon to identify stations because many FSSs"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        544.56640000000004,
+        237.01700000000005,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5781,
+        "headingLevel" : 0,
+        "lineCount" : 16,
+        "opensWithSplitMarker" : false,
+        "order" : 27781
+      },
+      "text" : "remotely transmit over several omniranges that have names"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        532.06640000000004,
+        236.99900000000002,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5781,
+        "headingLevel" : 0,
+        "lineCount" : 16,
+        "opensWithSplitMarker" : false,
+        "order" : 27782
+      },
+      "text" : "different from that of the transmitting FSS. If the VOR is"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        519.56640000000004,
+        237.00599999999997,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5781,
+        "headingLevel" : 0,
+        "lineCount" : 16,
+        "opensWithSplitMarker" : false,
+        "order" : 27783
+      },
+      "text" : "out of service for maintenance, the coded identification is"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        507.06640000000004,
+        237.01799999999992,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5781,
+        "headingLevel" : 0,
+        "lineCount" : 16,
+        "opensWithSplitMarker" : false,
+        "order" : 27784
+      },
+      "text" : "removed and not transmitted. This serves to alert pilots that"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        494.56640000000004,
+        237.00999999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5781,
+        "headingLevel" : 0,
+        "lineCount" : 16,
+        "opensWithSplitMarker" : false,
+        "order" : 27785
+      },
+      "text" : "this station should not be used for navigation. VOR receivers"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        482.06640000000004,
+        236.90000000000009,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5781,
+        "headingLevel" : 0,
+        "lineCount" : 16,
+        "opensWithSplitMarker" : false,
+        "order" : 27786
+      },
+      "text" : "are designed with an alarm flag to indicate when signal"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        469.56640000000004,
+        237.08999999999992,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5781,
+        "headingLevel" : 0,
+        "lineCount" : 16,
+        "opensWithSplitMarker" : false,
+        "order" : 27787
+      },
+      "text" : "strength is inadequate to operate the navigational equipment."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        457.06640000000004,
+        237.01300000000015,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5781,
+        "headingLevel" : 0,
+        "lineCount" : 16,
+        "opensWithSplitMarker" : false,
+        "order" : 27788
+      },
+      "text" : "This happens if the aircraft is too far from the VOR or the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        444.56640000000004,
+        237.00999999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5781,
+        "headingLevel" : 0,
+        "lineCount" : 16,
+        "opensWithSplitMarker" : false,
+        "order" : 27789
+      },
+      "text" : "aircraft is too low and, therefore, is out of the line of sight"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        432.06640000000004,
+        106.67000000000002,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5781,
+        "headingLevel" : 0,
+        "lineCount" : 16,
+        "opensWithSplitMarker" : false,
+        "order" : 27790
+      },
+      "text" : "of the transmitting signals."
+    },
+    {
+      "fontSize" : 11,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        405.84340000000003,
+        69.069000000000017,
+        13.310000000000002
+      ],
+      "structure" : {
+        "group" : 5782,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 27791
+      },
+      "text" : "Using the VOR"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        392.06640000000004,
+        236.82500000000005,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5783,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 27792
+      },
+      "text" : "In review, for VOR radio navigation, there are two"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        379.56640000000004,
+        237.02000000000021,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5783,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 27793
+      },
+      "text" : "components required: ground transmitter and aircraft"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        367.06640000000004,
+        237.00699999999983,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5783,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 27794
+      },
+      "text" : "receiving equipment. The ground transmitter is located at a"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        354.56640000000004,
+        237.02699999999993,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5783,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 27795
+      },
+      "text" : "specific position on the ground and transmits on an assigned"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        342.06640000000004,
+        237.01199999999994,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5783,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 27796
+      },
+      "text" : "frequency. The aircraft equipment includes a receiver with"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        329.56640000000004,
+        237.0139999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5783,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 27797
+      },
+      "text" : "a tuning device and a VOR or omninavigation instrument."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        317.06640000000004,
+        237.1400000000001,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5783,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 27798
+      },
+      "text" : "The navigation instrument could be a course deviation"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        304.56640000000004,
+        236.79399999999987,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5783,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 27799
+      },
+      "text" : "indicator (CDI), horizontal situation indicator (HSI), or a"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        292.06640000000004,
+        237.00799999999981,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5783,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 27800
+      },
+      "text" : "radio magnetic indicator (RMI). Each of these instruments"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        279.56640000000004,
+        154.70000000000005,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5783,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 27801
+      },
+      "text" : "indicates the course to the tuned VOR."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        253.99640000000005,
+        153.91000000000003,
+        13.189999999999998
+      ],
+      "structure" : {
+        "group" : 5784,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 27802
+      },
+      "text" : "Course Deviation Indicator (CDI)"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        241.56640000000004,
+        237.01499999999987,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 5785,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 27803
+      },
+      "text" : "The CDI is found in most training aircraft. It consists of an"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        229.06640000000004,
+        236.99000000000012,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 5785,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 27804
+      },
+      "text" : "omnibearing selector (OBS) sometimes referred to as the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        216.56640000000004,
+        236.99799999999993,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 5785,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 27805
+      },
+      "text" : "course selector, a CDI needle (left-right needle), and a TO/"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        204.06640000000004,
+        68.889999999999986,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 5785,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 27806
+      },
+      "text" : "FROM indicator."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        179.06640000000004,
+        236.99999999999989,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 5786,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 27807
+      },
+      "text" : "The course selector is an azimuth dial that can be rotated to"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        166.56640000000004,
+        237.01900000000001,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 5786,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 27808
+      },
+      "text" : "select a desired radial or to determine the radial over which"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        154.06640000000004,
+        236.98199999999997,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 5786,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 27809
+      },
+      "text" : "the aircraft is flying. In addition, the magnetic course “TO”"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        141.56640000000004,
+        170.25000000000006,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 5786,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 27810
+      },
+      "text" : "or “FROM” the station can be determined."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        116.56640000000004,
+        237.00399999999991,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 5787,
+        "headingLevel" : 0,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 27811
+      },
+      "text" : "When the course selector is rotated, it moves the CDI or"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        104.06640000000004,
+        237.00299999999993,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 5787,
+        "headingLevel" : 0,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 27812
+      },
+      "text" : "needle to indicate the position of the radial relative to the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        91.566400000000044,
+        237.0139999999999,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 5787,
+        "headingLevel" : 0,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 27813
+      },
+      "text" : "aircraft. If the course selector is rotated until the deviation"
+    }
+  ],
+  "page" : 410,
+  "paints" : [
+
+  ],
+  "rightsBasis" : "U.S. Government publication, retained as an external development corpus source. The PDF is not bundled or relicensed under the library license.",
+  "sourceSHA256" : "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
+  "sourceTitle" : "Pilot's Handbook of Aeronautical Knowledge, FAA-H-8083-25C",
+  "sourceURL" : "https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/faa-h-8083-25c.pdf"
+}

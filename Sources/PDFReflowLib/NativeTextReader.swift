@@ -43,7 +43,9 @@ enum NativeTextReader {
     }
 
     /// `borderlessTableInk`, when given (the page's painted rectangles), also splits the rows of
-    /// a borderless table whose cells PDFKit merges into one line; see `splitBorderlessTables`.
+    /// a borderless table whose cells PDFKit merges into one line; see `splitBorderlessTables`, and
+    /// the rows of a list PDFKit merges where it reads the others apart (`splitAtRowEdges`); a page
+    /// the pipeline reads as native typography passes it, and invisible text over a scan does not.
     /// `glyphDecodings` are the characters the document established for index-glyph fonts
     /// (`GlyphIndexDecoder`); lines drawn in them are repaired, and `report` counts the outcome.
     /// `removingOverprints` drops a line that only overprints another (`withoutOverprints`, #165);
@@ -88,6 +90,8 @@ enum NativeTextReader {
                                                   privateUse: privateUse)
                 lines = try splitColumnGrids(lines, on: page, includeStyle: includeStyle, weights: weights,
                                              privateUse: privateUse)
+                lines = try splitAtRowEdges(lines, on: page, includeStyle: includeStyle, weights: weights,
+                                            privateUse: privateUse)
             }
             // Last, because every step above matches line text to the page's own characters and
             // shows, where a ligature is one character (`NativeSpacingReader` reads the glyph `ff`
@@ -675,6 +679,103 @@ enum NativeTextReader {
         }
         guard !replacements.isEmpty else { return lines }
         return lines.indices.flatMap { replacements[$0] ?? [lines[$0]] }
+    }
+
+    /// An Arabic page number (optionally prefixed by its chapter's number or its part's letter,
+    /// `5-17` or `C-2`) or a Roman numeral.
+    static func isFolio(_ text: String) -> Bool {
+        !text.isEmpty && text.range(of: "^(?:(?:[0-9]+-|[A-Za-z]-)?[0-9]+|m{0,3}(?:cm|cd|d?c{0,3})(?:xc|xl|l?x{0,3})(?:ix|iv|v?i{0,3}))$",
+            options: [.regularExpression, .caseInsensitive]) != nil
+    }
+
+    /// Two edges a page's rows share (#199): at least four rows set a line of one size at `left`
+    /// and, on its baseline, the next line of that size at `x`, at least two ems past its end.
+    /// `rows` counts them.
+    struct RowEdge: Equatable {
+        var left: CGFloat
+        var x: CGFloat
+        var size: CGFloat
+        var rows: Int
+    }
+
+    /// The edges on which a page's rows set two columns that PDFKit read apart: the Table of Names'
+    /// names at 44.7 and descriptions at 152.7 (9/11 pages 449–456). Each line is paired with the
+    /// nearest line before it on its baseline (within 1.5 points), in its size (within 5%); pairs
+    /// whose two left edges each fall within a point of another's are one edge. A line beside a
+    /// neighbouring column's line is paired with that line, whose edge is the other column's.
+    static func rowEdges(_ lines: [TextLine]) -> [RowEdge] {
+        let usable = lines.filter { !$0.monospaced && $0.readingDirection == nil && $0.fontSize > 0 }
+        guard usable.count >= 5, usable.count <= 10_000 else { return [] }
+        func sameSize(_ a: CGFloat, _ b: CGFloat) -> Bool { abs(a - b) <= max(a, b) * 0.05 }
+        let rows = usable.sorted { $0.rect.minY < $1.rect.minY }
+        var pairs: [(left: CGFloat, x: CGFloat, size: CGFloat)] = []
+        var low = 0
+        for line in rows {
+            while rows[low].rect.minY < line.rect.minY - 1.5 { low += 1 }
+            var nearest: TextLine?
+            var index = low
+            while index < rows.count, rows[index].rect.minY <= line.rect.minY + 1.5 {
+                let other = rows[index]
+                if other != line, sameSize(other.fontSize, line.fontSize), other.rect.maxX <= line.rect.minX,
+                   other.rect.maxX > nearest?.rect.maxX ?? -.infinity { nearest = other }
+                index += 1
+            }
+            if let nearest, nearest.rect.maxX <= line.rect.minX - max(4, line.fontSize) * 2 {
+                pairs.append((nearest.rect.minX, line.rect.minX, line.fontSize))
+            }
+        }
+        pairs.sort { ($0.x, $0.left) < ($1.x, $1.left) }
+        var edges: [RowEdge] = []
+        for (start, first) in pairs.enumerated() {
+            guard !edges.contains(where: { sameSize($0.size, first.size) && first.x - $0.x <= 1
+                && abs(first.left - $0.left) <= 1 }) else { continue }
+            let group = pairs[start...].prefix { $0.x - first.x <= 1 }
+                .filter { sameSize($0.size, first.size) && abs($0.left - first.left) <= 1 }
+            if group.count >= 4 { edges.append(RowEdge(left: first.left, x: first.x, size: first.size, rows: group.count)) }
+        }
+        return edges
+    }
+
+    /// Rows PDFKit reads as one line where it reads the page's other rows apart (#199): the Table of
+    /// Names sets each name at the page's edge and its description on the same baseline 108 points
+    /// in, and PDFKit returns most rows as two lines, but `John Ashcroft Attorney General, 2001–`
+    /// (page 449) and `Janet Reno Attorney General, 1993–2001` (page 451) as one, which then reads
+    /// as a name without a description and runs into the next name. A line that starts on a row
+    /// edge's left edge (`rowEdges`), in its size, and crosses its second is cut there when the
+    /// glyphs on either side stand at least two ems apart and the right piece begins on the second
+    /// edge, within a point, as its neighbours' second columns do; the pieces must spell the line
+    /// apart from the whitespace at the cut (`cut`). A page number is no second column: a contents
+    /// entry keeps the folio it ends in (NOAA's `Future Land-Use Options 6-17`, the CIA report's
+    /// `for Each Segregation 26`), which reconstruction reads with it. The edge must hold more rows
+    /// PDFKit read apart than lines crossing it, so a list PDFKit mostly merges (the report's flight
+    /// timelines, page 51) is left as read. A prose line crossing the edge has only word spaces
+    /// there and stays whole.
+    private static func splitAtRowEdges(_ lines: [TextLine], on page: PDFPage, includeStyle: Bool,
+                                        weights: [FontWeightReader.Show], privateUse: PrivateUseCharacters) throws -> [TextLine] {
+        let edges = rowEdges(lines)
+        guard !edges.isEmpty else { return lines }
+        func crosses(_ line: TextLine, _ edge: RowEdge) -> Bool {
+            let em = max(4, line.fontSize)
+            return !line.monospaced && line.readingDirection == nil
+                && abs(edge.size - line.fontSize) <= max(edge.size, line.fontSize) * 0.05
+                && abs(line.rect.minX - edge.left) <= 1 && edge.x - edge.left >= em * 2 && line.rect.maxX > edge.x + em
+        }
+        let kept = edges.filter { edge in lines.filter { crosses($0, edge) }.count < edge.rows }
+        guard !kept.isEmpty else { return lines }
+        var result: [TextLine] = []
+        for line in lines {
+            try Task.checkCancellation()
+            let em = max(4, line.fontSize)
+            var halves: (left: TextLine, right: TextLine)?
+            for x in kept.filter({ crosses(line, $0) }).map(\.x).sorted() {
+                if let pieces = cut(line, at: x - 0.5, gap: em * 2, on: page, includeStyle: includeStyle, weights: weights,
+                                    privateUse: privateUse),
+                   abs(pieces.right.rect.minX - x) <= 1, !isFolio(pieces.right.text) { halves = pieces; break }
+            }
+            guard let halves else { result.append(line); continue }
+            result += [halves.left, halves.right]
+        }
+        return result
     }
 
     private static func extractLines(on page: PDFPage, limit: Int, includeStyle: Bool, weights: [FontWeightReader.Show],

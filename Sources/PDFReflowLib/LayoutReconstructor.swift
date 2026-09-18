@@ -144,6 +144,7 @@ enum LayoutReconstructor {
             line.readingRect = old.readingRect
             line.structure = old.structure
             line.listTag = old.listTag
+            line.markerTextEdge = old.markerTextEdge
             page.lines[index] = line
         }
     }
@@ -3882,8 +3883,18 @@ enum LayoutReconstructor {
 
     /// Small labels inside preserved images must not turn the surrounding prose into headings.
     /// Keep the page estimate when too little reflowable text remains to establish a body size.
-    static func headingBodySize(_ lines: [TextLine], pageBody: CGFloat) -> CGFloat {
-        establishedBodySize(lines).map { max(pageBody, $0) } ?? pageBody
+    ///
+    /// A page too bare to establish its body can still read its size from the document (#167):
+    /// where the reflowable lines are commonest in the document's body size (`documentBody`), set
+    /// under the page estimate, the page estimate is the type inside its crops and the reflowable
+    /// text is the document's body. TechPort page 4 sets its three tables at 9.7 points, which
+    /// their crops keep, over 190 characters of 9-point text; measured against 9.7 its 10.5-point
+    /// `Closeout Documentation` and `Images` were no titles, where the same titles over 9-point
+    /// text on pages 1-3 are.
+    static func headingBodySize(_ lines: [TextLine], pageBody: CGFloat, documentBody: CGFloat? = nil) -> CGFloat {
+        if let established = establishedBodySize(lines) { return max(pageBody, established) }
+        if let documentBody, documentBody < pageBody, !lines.isEmpty, bodySize(lines) == documentBody { return documentBody }
+        return pageBody
     }
 
     /// The body size the lines establish: at least three lines and 200 characters in their commonest size.
@@ -3931,7 +3942,8 @@ enum LayoutReconstructor {
                        neighbouringMarkers: [PageMarker] = [],
                        slideDeck: Bool = false,
                        imageKinds: [String: PreservedImageKind] = [:],
-                       imageCaptions: [String: String] = [:], bookWraps: [Int: CGFloat] = [:],
+                       imageCaptions: [String: String] = [:], imageMath: [String: [MathExpression]] = [:],
+                       bookWraps: [Int: CGFloat] = [:],
                        bookSpacings: [Int: [CGFloat]] = [:],
                        documentBody: CGFloat? = nil) -> [ReflowBlock] {
         let body = max(4, bodySize(page.lines))
@@ -3972,7 +3984,7 @@ enum LayoutReconstructor {
         // page whose sidebar outweighs its prose keeps that prose as paragraphs (#54).
         let boxes = clusters(page.tints, distance: 4)
         let outside = free.filter { line in !boxes.contains { $0.contains(CGPoint(x: line.rect.midX, y: line.rect.midY)) } }
-        let reflowBody = headingBodySize(outside, pageBody: body)
+        let reflowBody = headingBodySize(outside, pageBody: body, documentBody: documentBody)
         let documentFloor = documentHeadingFloor(outside, documentBody: documentBody)
         let headingThreshold = max(body * 1.25, reflowBody * 1.1, documentFloor)
         // A heading line is wider than tall unless it is one or two characters; rotated text
@@ -4953,9 +4965,13 @@ enum LayoutReconstructor {
                 flushTagged()
                 flush()
                 codeOrigin = nil
-                result.append(imageBlock(assetID: path, page: page.number,
-                                         kind: imageKinds[path] ?? .artwork,
-                                         sourceCaption: imageCaptions[path] ?? ""))
+                var block = imageBlock(assetID: path, page: page.number, kind: imageKinds[path] ?? .artwork,
+                                       sourceCaption: imageCaptions[path] ?? "")
+                if let math = imageMath[path], case var .image(image) = block.content {
+                    image.math = math
+                    block.content = .image(image)
+                }
+                result.append(block)
                 continue
             }
             if let index = element.table {
@@ -5158,9 +5174,11 @@ enum LayoutReconstructor {
                     opening = (line, evidencedOpening)
                     paragraphFirst = line
                 } else {
-                    // A line-end hyphen the extractor never saw closes up with no space (#157).
-                    if let prev = previous, lostLineEndHyphen(prev, line, measures: measures,
-                                                              vocabulary: vocabulary) {
+                    // A line-end hyphen the extractor never saw (#157), or one the page never
+                    // printed (#199), closes up with no space.
+                    if let prev = previous, lostLineEndHyphen(prev, line, measures: measures, vocabulary: vocabulary)
+                        || (!page.recognized && !page.hasSyntheticTextStyle
+                            && unprintedLineEndHyphen(prev, line, vocabulary: vocabulary)) {
                         paragraph.append(line.content)
                     } else {
                         paragraph = join(paragraph, line.content, vocabulary: vocabulary,
@@ -6100,10 +6118,7 @@ enum LayoutReconstructor {
 
     /// An Arabic page number (optionally prefixed by its chapter's number or its part's letter,
     /// `5-17` or `C-2`) or a Roman numeral.
-    private static func isFolio(_ text: String) -> Bool {
-        !text.isEmpty && text.range(of: "^(?:(?:[0-9]+-|[A-Za-z]-)?[0-9]+|m{0,3}(?:cm|cd|d?c{0,3})(?:xc|xl|l?x{0,3})(?:ix|iv|v?i{0,3}))$",
-            options: [.regularExpression, .caseInsensitive]) != nil
-    }
+    private static func isFolio(_ text: String) -> Bool { NativeTextReader.isFolio(text) }
 
     private static func inMargin(_ line: TextLine, of page: PageContent) -> Bool {
         guard page.bounds.height > 0 else { return false }
@@ -6334,6 +6349,29 @@ enum LayoutReconstructor {
         return true
     }
 
+    /// A word the page breaks across two lines without printing a hyphen at all (#199): the 9/11
+    /// report's Table of Names sets `…Palestinian; al Qaeda asso` over `ciate; currently in U.S.
+    /// custody` (page 453), and neither the text shows nor the rendered page carry a hyphen, so
+    /// #157's missing advance is not there to measure, and the column is ragged besides. The words
+    /// alone decide: `last` ends in a lowercase run of letters and `next` opens with one, in the same
+    /// type; neither half is a word of the system's English lexicon, while the two joined are, and
+    /// the book prints the joined word itself (`Hamburg cell associate`, the same page). #186's
+    /// lengths apply: two letters a side and six in all. Two words a line break separates are
+    /// words, so they keep their space; so does a document not declared English.
+    static func unprintedLineEndHyphen(_ last: TextLine, _ next: TextLine, vocabulary: Set<String>) -> Bool {
+        guard vocabulary.contains(englishLexiconKey), !last.monospaced, !next.monospaced,
+              abs(next.fontSize - last.fontSize) <= last.fontSize * 0.1,
+              let tail = last.text.split(whereSeparator: \.isWhitespace).last,
+              let head = next.text.split(whereSeparator: \.isWhitespace).first,
+              tail.allSatisfy({ $0.isLetter && $0.isLowercase }) else { return false }
+        let prefix = String(tail), suffix = String(head.prefix { $0.isLetter })
+        guard suffix.allSatisfy(\.isLowercase), prefix.count >= 2, suffix.count >= 2, prefix.count + suffix.count >= 6,
+              vocabulary.contains(prefix + suffix), TextLayerPlausibility.lexiconContains(prefix + suffix) == true,
+              TextLayerPlausibility.lexiconContains(prefix) == false,
+              TextLayerPlausibility.lexiconContains(suffix) == false else { return false }
+        return true
+    }
+
     /// One word broken across `left` and `right`, with the book's evidence for the join (#148).
     /// `left` ends in a hyphen after two letters, `right` opens lowercase, and the hyphen policy
     /// decides the break without warning `uncertainHyphen`, so the book prints the joined word
@@ -6528,7 +6566,8 @@ enum LayoutReconstructor {
 
     /// The evidence a list-marker line leaves for `ListBuilder` (#194).
     static func listEvidence(_ line: TextLine, recognized: Bool) -> ReflowBlock.ListEvidence {
-        ReflowBlock.ListEvidence(edge: line.rect.minX, fontSize: line.fontSize, recognized: recognized, tag: line.listTag)
+        ReflowBlock.ListEvidence(edge: line.rect.minX, fontSize: line.fontSize, recognized: recognized, tag: line.listTag,
+                                 textEdge: line.markerTextEdge)
     }
 
     /// A numbered or lettered marker opening a line (`12.`, `b)`, `P.`) before a space: its kind
@@ -6640,6 +6679,28 @@ enum LayoutReconstructor {
         default:
             return isASCIIAlphanumeric(last) && "/._?#=&%~".contains(next) && isASCIIAlphanumeric(right.dropFirst().first)
         }
+    }
+
+    /// A browser breaks a long address wherever its column runs out, inside a word as readily as
+    /// after a slash (#167): TechPort's captions end `(https://techport.nasa.gov/imag` and go on
+    /// `e/41317)`. Nothing in the characters at such a break says the address goes on, but its
+    /// brackets do. The break is inside the address when the address ends in a letter or digit
+    /// and opens this line's bracket (`(`, `[` or `<`) without closing it, and the next line's
+    /// first word, before any sentence punctuation, is address characters closing that bracket
+    /// with at least one address separator (`/`, `.`, `=`, `?`, `&`, `#`, `%`, `_`, `~`) of its
+    /// own. A parenthesis the address leaves open over words (`(see https://…` + `for details)`)
+    /// keeps its space, and a hyphen at the break stays the hyphen policy's to decide.
+    private static func bracketedAddressContinues(_ left: String, _ right: String) -> Bool {
+        guard let address = trailingAddress(left), isASCIIAlphanumeric(address.last),
+              let opening = left[..<address.startIndex].last else { return false }
+        let pairs: [Character: Character] = ["(": ")", "[": "]", "<": ">"]
+        guard let closing = pairs[opening], !address.contains(closing) else { return false }
+        var word = Substring(right.prefix { !$0.isWhitespace })
+        while let last = word.last, ".,;:".contains(last) { word = word.dropLast() }
+        guard word.last == closing else { return false }
+        let inside = word.dropLast()
+        return !inside.isEmpty && !inside.contains(opening) && inside.allSatisfy(addressCharacters.contains)
+            && inside.contains { "/.=?&#%_~".contains($0) }
     }
 
     /// A line broken at a hyphen inside an alphanumeric code before a digit or capital continues
@@ -6789,7 +6850,7 @@ enum LayoutReconstructor {
         // does one after other punctuation, which in the corpus is only damaged OCR (#70).
         if left.hasSuffix("/"), let before = left.dropLast().last, before.isLetter || before.isNumber || before == "/",
            let next = right.first, next.isLetter || next.isNumber { return .concatenate }
-        if addressContinues(left, right) { return .concatenate }
+        if addressContinues(left, right) || bracketedAddressContinues(left, right) { return .concatenate }
         if codeContinues(left, right) { return .concatenate }
         if let operation = compoundOperation(left, right, vocabulary: vocabulary) { return operation }
         guard left.hasSuffix("-"), right.first?.isLowercase == true else { return .space }

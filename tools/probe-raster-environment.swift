@@ -5,7 +5,7 @@ import PDFKit
 import Vision
 
 // Diagnostic only. Compile with PageRasterizer.swift, ConversionTypes.swift,
-// DocumentModel.swift and ReflowDocument.swift. The PDF path is explicit so the
+// DocumentModel.swift, ReflowDocument.swift and ImageContentClassifier.swift. The PDF path is explicit so the
 // probe and converter use the same verified source even outside corpus/cache.
 // The context label is supplied by the caller; it is not sandbox detection.
 @main struct ProbeRasterEnvironment {

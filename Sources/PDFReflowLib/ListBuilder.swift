@@ -39,7 +39,7 @@ enum ListBuilder {
         var length: Int
     }
 
-    private static let bullets: Set<Character> = ["•", "-", "+", "*"]
+    static let bullets: Set<Character> = ["•", "-", "+", "*"]
 
     /// The marker opening `text`, when it is one this pass can make a list of. A minus sign
     /// (`−`) is not one: every such line in the corpus is a row of a displayed derivation (#109).
@@ -197,18 +197,19 @@ enum ListBuilder {
         for (position, candidate) in candidates.enumerated() where !accepted.contains(candidate.index)
             && position > 0 && position + 1 < candidates.count {
             let before = candidates[position - 1], after = candidates[position + 1]
-            let em = max(candidate.evidence.fontSize, 1)
             guard accepted.contains(before.index), accepted.contains(after.index),
                   contiguous(before.index, candidate.index, among: candidateIndices),
                   contiguous(candidate.index, after.index, among: candidateIndices),
                   candidate.page == before.page, candidate.marker.value == nil,
-                  candidate.evidence.edge > before.evidence.edge + em * 0.8,
-                  candidate.evidence.edge <= before.evidence.edge + em * 5 else { continue }
+                  setsDeeper(candidate.evidence, than: before.evidence) else { continue }
             accepted.insert(candidate.index)
         }
 
         // List elements, depth and openings. `stack` holds the list open at each depth.
-        struct Level { var edge: CGFloat; var page: Int; var run: Int; var marker: Marker; var tag: ListTag? }
+        struct Level { var evidence: ReflowBlock.ListEvidence; var page: Int; var run: Int; var marker: Marker
+            var edge: CGFloat { evidence.edge }
+            var tag: ListTag? { evidence.tag }
+        }
         var stack: [Level] = []
         var previousAccepted: Int?
         let items = candidates.filter { accepted.contains($0.index) }
@@ -217,12 +218,10 @@ enum ListBuilder {
         // follow on page 147, above `2.`.
         func nestsBeforeNextSibling(_ position: Int, of parent: Level) -> Bool {
             let item = items[position]
-            let em = max(item.evidence.fontSize, 1)
             for next in items[(position + 1)...] {
                 guard contiguous(items[position].index, next.index, among: accepted) else { return false }
                 guard next.marker.family != parent.marker.family else {
-                    return next.page == item.page && item.evidence.edge > next.evidence.edge + em * 0.8
-                        && item.evidence.edge <= next.evidence.edge + em * 5
+                    return next.page == item.page && setsDeeper(item.evidence, than: next.evidence)
                 }
             }
             return false
@@ -230,8 +229,7 @@ enum ListBuilder {
         for (position, candidate) in items.enumerated() {
             let evidence = candidate.evidence
             let em = max(evidence.fontSize, 1)
-            let level = Level(edge: evidence.edge, page: candidate.page, run: candidate.run,
-                              marker: candidate.marker, tag: evidence.tag)
+            let level = Level(evidence: evidence, page: candidate.page, run: candidate.run, marker: candidate.marker)
             let continues = previousAccepted.map { contiguous($0, candidate.index, among: accepted) } ?? false
             if !continues { stack = [] }
             var opens = true
@@ -251,7 +249,7 @@ enum ListBuilder {
                 }
             } else {
                 let top = stack[stack.count - 1]
-                if candidate.page == top.page && evidence.edge > top.edge + em * 0.8 && evidence.edge <= top.edge + em * 5
+                if candidate.page == top.page && setsDeeper(evidence, than: top.evidence)
                     || candidate.page != top.page && candidate.marker.family != top.marker.family
                     && nestsBeforeNextSibling(position, of: top) {
                     // A marker set deeper on the same page opens a list inside the open item.
@@ -277,6 +275,20 @@ enum ListBuilder {
                 kind: candidate.marker.value == nil ? .unordered : .ordered,
                 level: stack.count - 1, opensList: opens))
         }
+    }
+
+    /// Whether a marker is set deeper than an open item's, so it opens a list inside that item: right
+    /// of the item's marker by more than 0.8 and at most five type sizes, or, where the item's
+    /// marker was drawn and its text edge is known (#167), at most five type sizes past that edge.
+    /// A browser indents a nested HTML list by the list's padding from the item's text, not its
+    /// marker: the TechPort print sets its nested bullets 52.5 points (5.8 sizes) right of their
+    /// parents' and 41 points right of the parents' text.
+    static func setsDeeper(_ item: ReflowBlock.ListEvidence, than open: ReflowBlock.ListEvidence) -> Bool {
+        let em = max(item.fontSize, 1)
+        guard item.edge > open.edge + em * 0.8 else { return false }
+        if item.edge <= open.edge + em * 5 { return true }
+        guard let text = open.textEdge else { return false }
+        return item.edge <= text + em * 5
     }
 
     /// `text` without its first `count` characters (the printed marker and its space). Page

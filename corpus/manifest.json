@@ -1390,17 +1390,12 @@
       ],
       "attribution": "Rudy Werlink (NASA Kennedy Space Center), Tank Health Monitoring, NASA TechPort project 97058 data sheet, printed 08/24/2021. Source: https://ntrs.nasa.gov/citations/20210020887. The PDF is unmodified.",
       "downloadVerification": "Fresh download through tools/fetch_corpus.py into an empty temporary cache matched this identity on 2026-09-17, as did an independent curl download and the survey's earlier download. NTRS returned HTTP 503 for about 25 minutes before that, and intermittently afterwards.",
-      "reviewStatus": "Converted with EPUBCheck, progress and 128 MiB Mac RSS gate (61 MiB peak). Contract protects the main-column headings, whole and separate Project Introduction paragraphs, bullet item text and order on pages 2-3, the page-4 closeout and Figure 1 text, and image presence on pages 1 and 3-5. Header-band, sidebar, table and gallery crops, the print footer in the reading flow, bullet-marker crops, page-4 heading structure and the link-forced page images are unqualified.",
+      "reviewStatus": "Converted with EPUBCheck, progress and 128 MiB Mac RSS gate (61 MiB peak). Contract protects the main-column headings, whole and separate Project Introduction paragraphs, bullet item text and order on pages 2-3, the page-4 closeout and Figure 1 text, and image presence on pages 1 and 3-5. Since #167 it also protects the print footer's removal, real lists with their nesting on pages 2-3, the page-4 title levels and the whole wrapped URLs. Header-band, sidebar, table and gallery crops and the link-forced page images are unqualified.",
       "knownFidelityIssues": [
         {
           "page": 1,
           "issue": "Header band text (division, title, project status) kept inside a crop with the insignia on every page; sidebar panels (photo caption, table of contents, organization, management, TRL, technology areas) kept only as page-height crops on pages 1-3; page-4 tables and page-5 gallery captions only in crops, with a stray e/41319) paragraph.",
           "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/166"
-        },
-        {
-          "page": 2,
-          "issue": "Print footer (accessible-alternative line, URL, Page N, Printed on date and time) kept as body paragraphs with a TechPort logo crop on every page; bullet markers become 17 px crops before paragraph items and nesting is lost (pages 2-3); Closeout Documentation merged into its paragraph and Images not a heading, wrapped URLs get a space (page 4).",
-          "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/167"
         },
         {
           "page": 3,

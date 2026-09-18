@@ -20,8 +20,8 @@ enum FurnitureDetector {
         /// a type size. Two such candidates, and a pair with one of each, compare heights.
         var estimatedSize: Bool
         var isFolio: Bool
-        /// The outermost-row lines a second-row candidate sits beneath; it is removed only
-        /// when all of them are.
+        /// The outermost-row lines a second-row candidate sits beneath, or the other lines of a
+        /// stacked foot (#167); it is removed only when all of them are.
         var dependsOn: [Int] = []
     }
 
@@ -48,6 +48,8 @@ enum FurnitureDetector {
         fileprivate var folios: [FolioCandidate] = []
         fileprivate var syntheticOccurrences: [String: Int] = [:]
         fileprivate var pageCount = 0
+        /// Graphics standing in a page's head or foot margin, by edge and rectangle (#167).
+        fileprivate var marginGraphics: [String: [(pageIndex: Int, number: Int, rect: CGRect)]] = [:]
         init() {}
     }
 
@@ -60,6 +62,8 @@ enum FurnitureDetector {
         fileprivate var syntheticOccurrences: [String: Int] = [:]
         fileprivate var syntheticThreshold = Int.max
         fileprivate var pageCount = 0
+        /// Margin graphics repeated in place on three nearby pages, by page (#167).
+        fileprivate var repeatedGraphics: [Int: Set<CGRect>] = [:]
     }
 
     static func strip(_ pages: inout [PageContent]) -> [ConversionWarning] {
@@ -85,6 +89,16 @@ enum FurnitureDetector {
         }
         guard page.bounds.height > 0, page.bounds.isFinite else { return }
         let height = page.bounds.height
+        // Art in the outer eighth of the page, keyed by where it stands to the half point, so a
+        // logo printed in the same place on every page can go with the furniture beside it.
+        for graphic in page.graphics where graphic.isFinite {
+            let edge = graphic.maxY <= page.bounds.minY + height * 0.125 ? "bottom"
+                : graphic.minY >= page.bounds.maxY - height * 0.125 ? "top" : nil
+            guard let edge else { continue }
+            let key = edge + ":" + [graphic.minX, graphic.minY, graphic.width, graphic.height]
+                .map { String(Int(($0 * 2).rounded())) }.joined(separator: ",")
+            ledger.marginGraphics[key, default: []].append((pageIndex, page.number, graphic))
+        }
         func position(_ line: TextLine) -> CGFloat { (line.rect.midY - page.bounds.minY) / height }
         // The top band is the outer fifth of the page: a slip opinion's running head sits at
         // 82–85% under a deep head margin, whereas report headers sit above 90%. Retain the
@@ -193,8 +207,51 @@ enum FurnitureDetector {
                     }
                 }
             }
+            // A browser counts its printed pages as `3/5` (#167): Chromium's own footer sets the
+            // page's URL at the left and that count at the right. The count at a boundary is the page
+            // number over the unchanging total, normalized as `Page 3 of 5` is.
+            for index in Set([0, words.count - 1]) {
+                let parts = words[index].split(separator: "/", omittingEmptySubsequences: false)
+                guard parts.count == 2, let value = Int(parts[0]), let total = Int(parts[1]),
+                      value >= 1, value <= total else { continue }
+                let (offset, overflow) = value.subtractingReportingOverflow(page.number)
+                guard !overflow else { continue }
+                var normalized = words
+                normalized[index] = "#(offset=\(offset))/\(total)"
+                ledger.groups[edge + normalized.joined(separator: " "), default: []].append(candidate)
+            }
         }
         let all = Array(page.lines.indices)
+        /// A running foot of several stacked rows (#167). A browser's print footer sets `Printed on`
+        /// with its date and time, a line of text over the page's URL, and `Page N` in rows closer
+        /// together than a line height, so no row of it is set apart from the next and none was a
+        /// candidate. Where a line of the outermost row is no candidate on its own (neither set
+        /// apart, nor a bare folio, nor ruled off), the rows stacked on it (each
+        /// nearer the stack than its own separation) form one block with it; a block within the
+        /// outer eighth of the page, of at most eight lines, is set apart from the body as one
+        /// outermost row is, and every line of it is a candidate removed only with all the others.
+        /// Each must still repeat in its own run, so a page's last lines never qualify.
+        func recordFootStack() {
+            let outer = all.filter { inBand(page.lines[$0], top: false) && outermost($0, top: false, among: all) }
+            guard !outer.allSatisfy(recorded.contains), var top = outer.map({ page.lines[$0].rect.maxY }).max() else { return }
+            var stack = Set(outer)
+            while true {
+                let stacked = all.filter { index in
+                    let line = page.lines[index]
+                    return !stack.contains(index) && line.rect.minY - top < max(line.rect.height, height * 0.012)
+                }
+                guard !stacked.isEmpty else { break }
+                stack.formUnion(stacked)
+                top = max(top, stacked.map { page.lines[$0].rect.maxY }.max()!)
+                guard stack.count <= 8 else { return }
+            }
+            guard stack.count > outer.count, (top - page.bounds.minY) / height <= 0.125,
+                  stack.count < all.count else { return }
+            for lineIndex in stack.sorted() where !recorded.contains(lineIndex) {
+                record(lineIndex, top: false, separation: -.infinity,
+                       dependsOn: stack.sorted().filter { $0 != lineIndex })
+            }
+        }
         for lineIndex in all {
             let line = page.lines[lineIndex]
             let top = position(line) >= 0.5
@@ -203,6 +260,7 @@ enum FurnitureDetector {
             guard inBand(line, top: top), outermost(lineIndex, top: top, among: all) else { continue }
             record(lineIndex, top: top, separation: max(line.rect.height, height * 0.012))
         }
+        recordFootStack()
         // A two-row running head: beneath an outermost top row made only of candidates, the
         // next row inward is also eligible when it stays within three of its line heights
         // of that row and keeps at least half a line height from the body. It is removed
@@ -282,6 +340,30 @@ enum FurnitureDetector {
         }
     }
 
+    /// The art that goes with removed furniture (#167): a graphic repeated in place in the same
+    /// margin on three nearby pages (`Plan.repeatedGraphics`), standing level with a removed line of
+    /// that margin, with no kept line of that half of the page between it and the page's edge. The
+    /// TechPort print sets its site's logo beside the print footer on every page, and with the footer
+    /// removed the logo stood alone as a crop at every page's end. A repeated logo in a margin no
+    /// removed line shares, and art the body reaches past, stays.
+    private static func marksBeside(_ removed: [TextLine], kept: [TextLine], repeated: Set<CGRect>,
+                                    on page: PageContent) -> [CGRect] {
+        guard !repeated.isEmpty else { return [] }
+        return page.graphics.filter { graphic in
+            guard repeated.contains(graphic) else { return false }
+            let top = graphic.midY >= page.bounds.midY
+            let beside = removed.contains { line in
+                (line.rect.midY >= page.bounds.midY) == top
+                    && line.rect.minY < graphic.maxY && line.rect.maxY > graphic.minY
+            }
+            let outward = kept.allSatisfy { line in
+                (line.rect.midY >= page.bounds.midY) != top
+                    || (top ? line.rect.maxY <= graphic.minY : line.rect.minY >= graphic.maxY)
+            }
+            return beside && outward
+        }
+    }
+
     /// Whether a margin line is a note explaining a marker printed on its own page: it opens with
     /// a raised number (`LayoutReconstructor.raisedNoteNumber`) that another line of the page
     /// carries raised inside its text. Such a line belongs to its page however many pages repeat
@@ -351,6 +433,21 @@ enum FurnitureDetector {
             finish()
         }
         resolveFolios(ledger, into: &plan)
+        for group in ledger.marginGraphics.values {
+            var run: [(pageIndex: Int, number: Int, rect: CGRect)] = []
+            func finish() {
+                guard Set(run.map(\.number)).count >= 3 else { return }
+                for item in run { plan.repeatedGraphics[item.pageIndex, default: []].insert(item.rect) }
+            }
+            for item in group.sorted(by: { $0.number < $1.number }) {
+                if let last = run.last, !(0...2).contains(item.number - last.number) {
+                    finish()
+                    run.removeAll(keepingCapacity: true)
+                }
+                run.append(item)
+            }
+            finish()
+        }
         return plan
     }
 
@@ -420,10 +517,16 @@ enum FurnitureDetector {
             guard !kept.isEmpty, kept.count != page.lines.count else { return nil }
         } else {
             guard var removed = plan.native[pageIndex], !removed.isEmpty else { return nil }
-            // A second header row goes only with the whole row above it.
-            for (lineIndex, outer) in plan.dependencies[pageIndex] ?? [:]
-            where !outer.allSatisfy(removed.contains) {
-                removed.remove(lineIndex)
+            // A second header row goes only with the whole row above it, and the lines of a stacked
+            // foot only all together (#167): drop a dependent line until each left has its own.
+            var settled = false
+            while !settled {
+                settled = true
+                for (lineIndex, outer) in plan.dependencies[pageIndex] ?? [:]
+                where removed.contains(lineIndex) && !outer.allSatisfy(removed.contains) {
+                    removed.remove(lineIndex)
+                    settled = false
+                }
             }
             guard !removed.isEmpty else { return nil }
             kept = page.lines.enumerated().filter { !removed.contains($0.offset) }.map(\.element)
@@ -433,6 +536,9 @@ enum FurnitureDetector {
             guard !kept.isEmpty || removed.isSubset(of: plan.bareFolios[pageIndex] ?? []) else { return nil }
             let rules = removed.flatMap { rulesSettingOff(page.lines[$0], kept: kept, on: page) }
             page.graphics.removeAll { rules.contains($0) }
+            let marks = marksBeside(removed.map { page.lines[$0] }, kept: kept,
+                                    repeated: plan.repeatedGraphics[pageIndex] ?? [], on: page)
+            page.graphics.removeAll { marks.contains($0) }
         }
         page.lines = kept
         return ConversionWarning(code: .furnitureRemoved, page: page.number,

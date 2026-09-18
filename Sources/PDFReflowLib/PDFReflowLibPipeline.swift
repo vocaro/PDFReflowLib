@@ -230,18 +230,25 @@ enum PDFReflowLibPipeline {
                 if !requiresPageImage && !syntheticStyle {
                     _ = HiddenTextFilter.removeHidden(&content.lines, graphics: graphics)
                 }
+                // A printed form's blanks carry no field (#197): its rules and rows of type say
+                // where they stand, once the lines are known.
+                if native {
+                    content.blanks += FormBlank.printed(paints: graphics.paints.map(\.rect), lines: content.lines, fields: blanks)
+                }
                 // Rectangles behind prose (sidebar frames, tint bands, cell shading) stop
                 // seeding crops once the text shows they are decoration; everything else
                 // clusters exactly as the reader's regions did. A page that paints nothing
                 // page-sized but its own backdrop composes the art beside that backdrop (#164),
                 // so a slide's placeholders and boxes do not take the text drawn on them.
                 if !requiresPageImage {
-                    let paints = graphics.paints.filter { paint in !blanks.contains { $0.rule.contains(paint.rect) } }
+                    let paints = graphics.paints.filter { paint in !content.blanks.contains { $0.rule.contains(paint.rect) } }
                     let art = artBesideBackdrops(paints, lines: content.lines, bounds: bounds)
                     let composed = TintDetector.compose(art ?? paints, lines: content.lines, bounds: bounds)
                     content.graphics = composed.graphics
                     content.tints = composed.tints
                     content.separators = composed.separators
+                    // List bullets drawn as shapes open their lines as `•`, not as crops (#167).
+                    if !syntheticStyle { DrawnBulletReader.apply(&content, paints: graphics.paints) }
                 }
                 content.requiresPageImage = requiresPageImage
                 content.hasSyntheticTextStyle = syntheticStyle
@@ -682,8 +689,27 @@ enum PDFReflowLibPipeline {
                 } else {
                     var images: [(CGRect, String)] = []
                     var imageKinds: [String: PreservedImageKind] = [:]
+                    var imageMath: [String: [MathExpression]] = [:]
                     let classified = LayoutReconstructor.classifiedGraphics(content)
+                    // A mathematical crop whose glyphs and bars prove its structure is written as
+                    // MathML (#190), each row with its own crop as the fallback image. The page's
+                    // glyphs are read once, and only for a born-digital page with such a crop.
+                    var pageGlyphs: MathRecognizer.PageGlyphs?
                     for (rect, kind) in classified {
+                        if kind == .equation, !content.recognized, !content.hasSyntheticTextStyle, let reference = page.pageRef {
+                            let glyphs = try pageGlyphs ?? NativeTextReader.withExtractionLock { MathRecognizer.glyphs(on: reference) }
+                            pageGlyphs = glyphs
+                            if let rows = MathRecognizer.rows(in: rect, page: glyphs, graphics: content.graphics,
+                                                                     lines: content.lines, body: LayoutReconstructor.bodySize(content.lines)) {
+                                let expressions = try rows.map { row in
+                                    MathExpression(label: row.label, node: row.node, fallbackAssetID: try saveImage(row.rect))
+                                }
+                                images.append((rect, expressions[0].fallbackAssetID))
+                                imageKinds[expressions[0].fallbackAssetID] = kind
+                                imageMath[expressions[0].fallbackAssetID] = expressions
+                                continue
+                            }
+                        }
                         let assetID = try saveImage(rect)
                         images.append((rect, assetID))
                         imageKinds[assetID] = kind
@@ -694,7 +720,9 @@ enum PDFReflowLibPipeline {
                     let captioned = LayoutReconstructor.sourceCaptions(for: regions, in: content)
                     let imageCaptions = Dictionary(uniqueKeysWithValues:
                         images.compactMap { rect, assetID in captioned[rect].map { (assetID, $0) } })
-                    if !images.isEmpty {
+                    // A crop written as MathML is no picture: the page's warning names only crops
+                    // that stay images.
+                    if images.contains(where: { imageMath[$0.1] == nil }) {
                         warnings.append(.init(code: .imageRegion, page: i + 1,
                             message: "Graphical regions retain source appearance as images; their internal text does not reflow."))
                     }
@@ -712,7 +740,7 @@ enum PDFReflowLibPipeline {
                         continuesNote: previousPage != nil && blocks.last?.isFootnote == true,
                         labelStyles: labelStyles, headingStyles: headingStyles,
                         neighbouringMarkers: (listMarkers[content.number - 1] ?? []) + (listMarkers[content.number + 1] ?? []),
-                        slideDeck: slideDeck, imageKinds: imageKinds, imageCaptions: imageCaptions,
+                        slideDeck: slideDeck, imageKinds: imageKinds, imageCaptions: imageCaptions, imageMath: imageMath,
                         bookWraps: bookWraps, documentBody: documentBody)
                     if pageBlocks.contains(where: \.hasReflowedText) {
                         reflowed += 1

@@ -80,7 +80,10 @@ enum BorderlessTableDetector {
                 rows: [.init(cells: heading.map { .init(lines: [$0], span: 1) }, header: true)]
                     + grid.map { .init(cells: $0.map { .init(lines: $0.sorted { $0.rect.minY > $1.rect.minY }, span: 1) }, header: false) })
             used += owned
-            tables.append(result)
+            var titled = result
+            titled.title = title(above: result.bounds, in: lines.filter { !used.contains($0) }, bodySize: size)
+            used += titled.title
+            tables.append(titled)
         }
         return tables
     }
@@ -131,10 +134,46 @@ enum BorderlessTableDetector {
                 guard lines.allSatisfy({ line in line.structure.map { !groups.contains($0.group) } ?? true
                     || owned.contains { usable[$0] == line } }) else { continue }
                 used.formUnion(owned)
-                tables.append(ShadedTableDetector.Table(bounds: union(owned.map { usable[$0].rect }), columns: grid.columns,
-                                                        rows: ShadedTableDetector.rowHeaders(result)))
+                let bounds = union(owned.map { usable[$0].rect })
+                let size = owned.map { usable[$0].fontSize }.sorted()[owned.count / 2]
+                let taken = tables.flatMap(\.ownedLines) + owned.map { usable[$0] }
+                tables.append(ShadedTableDetector.Table(bounds: bounds, columns: grid.columns,
+                                                        rows: ShadedTableDetector.rowHeaders(result),
+                                                        title: title(above: bounds, in: lines.filter { !taken.contains($0) }, bodySize: size)))
             }
         }
         return tables
+    }
+
+    /// A table's title set in the cells' own size (#198), which `ShadedTableDetector.caption`
+    /// cannot tell from the text above by size: the lines directly above the table, within its
+    /// width widened by an em, the nearest within three body sizes of its top and each higher one
+    /// within two of the line beneath, each alone on its baseline there, untagged or tagged as
+    /// text, in the cells' size and sharing a left edge or a centre with the others, up to a
+    /// line that opens with a table label closed by a period, a colon, a dash or a capital, or
+    /// standing alone (`Table 2.`, `TABLE III`), at most three lines in all; a sentence naming a
+    /// table (`Table 2 shows…`) is no title.
+    ///
+    /// Census page 12 sets `Table 2. Domingo Data Reidentification Rates` 2.2 body sizes above its
+    /// header. Without the label the lines stay prose: FAA page 410's `Normal Usable Altitudes and
+    /// Radius Distances` over its VOR/VORTAC table is a title in form alone.
+    static func title(above table: CGRect, in lines: [TextLine], bodySize: CGFloat) -> [TextLine] {
+        let em = max(4, bodySize)
+        let band = lines.filter { $0.rect.maxX > table.minX - em && $0.rect.minX < table.maxX + em && $0.rect.minY >= table.maxY - 1.5 }
+        var title: [TextLine] = []
+        var top = table.maxY
+        for line in band.sorted(by: { $0.rect.minY < $1.rect.minY }) {
+            guard title.count < 3, line.rect.minY - top <= em * (title.isEmpty ? 3 : 2),
+                  !band.contains(where: { $0 != line && $0.rect.minY < line.rect.midY && $0.rect.maxY > line.rect.midY }),
+                  (line.structure?.headingLevel ?? 0) == 0, !line.monospaced, line.readingDirection == nil,
+                  abs(line.fontSize - bodySize) <= bodySize * 0.15,
+                  title.first.map({ abs($0.rect.minX - line.rect.minX) <= em * 0.5 || abs($0.rect.midX - line.rect.midX) <= em * 0.5 }) ?? true
+            else { return [] }
+            title.insert(line, at: 0)
+            if line.text.range(of: #"^(?:Table|TABLE)\s+(?:[A-Z]?[0-9]+(?:[-–.][0-9]+)*|[IVXLC]{1,6}|[A-Z])(?:[.:]|\s*[—–-]|\s+[A-Z]|\s*$)"#,
+                               options: .regularExpression) != nil { return title }
+            top = line.rect.maxY
+        }
+        return []
     }
 }

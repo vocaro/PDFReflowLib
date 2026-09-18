@@ -250,10 +250,10 @@ pages; archive the measured settings and results alongside each recommendation. 
 [raster qualification](../measurements/raster-qualification/record.md) covers JPEG 0.60–0.95
 and 96–300 DPI on 17 pages and 120/180/240 DPI on four complete books on one Mac;
 `tools/raster_sweep.py` reruns that page sweep on any reviewed target list. Physical-device
-raster and memory budgets, whole-book behaviour at 96/150/300 DPI, Warren's 0.059% margin under
-the default output budget, and reader-facing legibility beyond the Vision proxy remain
-unqualified. The corpus reference-image checks assume 180 DPI, so a changed default also needs
-regenerated references.
+raster and memory budgets, whole-book behaviour at 96/150/300 DPI, and reader-facing legibility
+beyond the Vision proxy remain unqualified. The corpus reference-image checks assume 180 DPI, so a
+changed default also needs regenerated references, and the gated Warren report fits the default
+output budget by only 0.060% (#202), so a default that adds image bytes to scans fails its case.
 
 ## Supplementary references versus required images
 

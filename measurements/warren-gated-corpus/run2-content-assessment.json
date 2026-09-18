@@ -1,0 +1,30 @@
+{
+  "case": "gpo-warren-1964",
+  "passed": true,
+  "reviewPages": [
+    1,
+    7,
+    21,
+    29,
+    30,
+    50,
+    90,
+    100,
+    103,
+    291,
+    384,
+    498,
+    520,
+    549,
+    553,
+    556,
+    636,
+    885,
+    890,
+    910,
+    920
+  ],
+  "contentChecks": 175,
+  "errors": [],
+  "scope": "Reviewed text/order/script-context/image-presence, source-region, glyph-structure, appearance and table-cell checks; not full-book fidelity qualification."
+}

@@ -41,12 +41,13 @@ private func listLines(_ blocks: [ReflowBlock]) -> [String] {
 }
 
 /// The five form pages as the pipeline reconstructs them: furniture stripped document-wide, each
-/// page's crops, its blocks, and heading levels ranked over the whole form.
-private func reconstructForm() throws -> (pages: [PageContent], crops: [[CGRect]], blocks: [ReflowBlock]) {
+/// page's crops, its blocks, and heading levels ranked over the whole form. `fields: false` reads
+/// the form as a printed one, with no field over any rule (#197).
+private func reconstructForm(fields: Bool = true) throws -> (pages: [PageContent], crops: [[CGRect]], blocks: [ReflowBlock]) {
     var pages = try (1...5).map { number -> PageContent in
         let fixture = try SourceLayoutFixture.load("uscourts-\(number)")
         #expect(fixture.sourceSHA256 == proSeSHA256)
-        return fixture.styledContent()
+        return fixture.styledContent(fields: fields)
     }
     _ = LayoutReconstructor.stripFurniture(&pages)
     var crops: [[CGRect]] = [], blocks: [ReflowBlock] = []
@@ -91,6 +92,21 @@ private func reconstructForm() throws -> (pages: [PageContent], crops: [[CGRect]
     let defendants = try #require(caption.firstIndex { $0.hasPrefix("(Write the full name of each defendant") })
     let caseNumber = try #require(caption.firstIndex { $0.hasPrefix("Case No.") })
     #expect(defendants < caseNumber)
+    // The caption's name boxes and the answer areas under II.A, 3, III and IV each read as a blank
+    // of their own where they close (#197): above the party label, after the prompt.
+    func follows(_ page: Int, _ prompt: String) -> String? {
+        let texts = on(page).map(\.text)
+        return texts.firstIndex { $0.hasPrefix(prompt) }.flatMap { $0 + 1 < texts.count ? texts[$0 + 1] : nil }
+    }
+    #expect(follows(1, "-v-") == FormBlank.text)
+    #expect(caption[try #require(caption.firstIndex(of: "Plaintiff(s)")) - 1] == FormBlank.text)
+    #expect(caption[try #require(caption.firstIndex(of: "Defendant(s)")) - 1] == FormBlank.text)
+    #expect(follows(3, "List the specific federal statutes") == FormBlank.text)
+    #expect(follows(4, "The amount in controversy") == FormBlank.text)
+    #expect(follows(4, "Write a short and plain statement") == FormBlank.text)
+    #expect(on(5).first?.text == FormBlank.text)
+    #expect(on(2).allSatisfy { $0.text != FormBlank.text })
+    #expect(blocks.filter { $0.text == FormBlank.text }.count == 6)
 
     // Page 2: every defendant label stands alone.
     #expect(paragraphs(on(2)).filter { $0 == "Name " + FormBlank.text }.count == 4)
@@ -228,8 +244,9 @@ private func reconstructForm() throws -> (pages: [PageContent], crops: [[CGRect]
     #expect(result.document.blocks.filter { if case .image = $0.content { true } else { false } }.count == 1,
             "\(result.document.blocks.map(\.text)) \(result.warnings)")
     #expect(text.contains("The page closes with a sentence of ordinary prose."))
-    // Without the fields, every rule is a graphic as before: the blanks' rules crop or vanish by
-    // their own geometry, and the labels are no rows of a form.
+    // Without the fields the page is a printed form (#197): a rule beside a label on its row is
+    // still its blank. The row PDFKit reads across its rule has text over the rule, which no
+    // printed blank may have, and the rule under no field is still the page's crop.
     let unfilled = dir.appendingPathComponent("unfilled.pdf")
     try testPDF(objects: [
         "<< /Type /Catalog /Pages 2 0 R >>",
@@ -240,7 +257,106 @@ private func reconstructForm() throws -> (pages: [PageContent], crops: [[CGRect]
     ]).write(to: unfilled)
     let bare = try await PDFReflowLibPipeline.reconstruct(from: unfilled, options: options,
         workspace: dir.appendingPathComponent("work-unfilled"), progress: { _ in })
-    #expect(!bare.document.blocks.contains { $0.text.contains(FormBlank.text) })
+    let printed = bare.document.blocks.map(\.text)
+    #expect(printed.contains("Name ____") && printed.contains("Street Address ____"), "\(printed)")
+    #expect(!printed.contains { $0.hasPrefix("State of (name)") && $0.contains(FormBlank.text) }, "\(printed)")
+    #expect(printed.contains("The page closes with a sentence of ordinary prose."))
+}
+
+// MARK: - Printed blanks
+
+@Test func printedBlanksAreRulesBesideARowOfType() {
+    let lines = [
+        line("Provide the information below for each plaintiff named in the complaint. Attach additional pages if",
+             rect(110.9, 278.1, 439.3, 12.2)),
+        line("Name", rect(146.9, 246.9, 26.1, 12.2)),
+        line("Street Address", rect(146.9, 228.1, 64.4, 12.2)),
+        line("The plaintiff, (name)", rect(182.9, 629.5, 89.1, 12.2)),
+        line(", is a citizen of the", rect(488.9, 629.5, 80.7, 12.2)),
+    ]
+    let paints = [
+        rect(274.6, 241.6, 305.3, 4.1),                                  // Name's rule
+        rect(274.6, 222.9, 150.0, 4.1), rect(420.0, 222.9, 160.0, 4.1),  // one rule drawn in two pieces
+        rect(274.6, 624.9, 215.4, 4.1),                                  // the sentence's blank
+    ]
+    let blanks = FormBlank.printed(paints: paints, lines: lines)
+    // Bottom to top; the rule drawn in pieces is one.
+    #expect(blanks.map(\.rule) == [paints[1].union(paints[2]), paints[0], paints[3]])
+    // Each blank's field is its row, so the row sets it in its text as a field's blank.
+    #expect(blanks.allSatisfy { blank in lines.contains { blank.sharesRow(with: $0.rect) } })
+    #expect(LayoutReconstructor.joiningBlankRows(lines, blanks: blanks).map(\.text)
+            == [lines[0].text, "Name ____", "Street Address ____", "The plaintiff, (name) ____, is a citizen of the"])
+    // A rule a field already claims is the field's.
+    let field = FormBlank(rule: paints[0], field: rect(276.9, 242.7, 298.2, 16.4))
+    #expect(FormBlank.printed(paints: paints, lines: lines, fields: [field]).map(\.rule) == [paints[1].union(paints[2]), paints[3]])
+
+    // Controls, each a rule on a row of type that is no blank.
+    func none(_ lines: [TextLine], _ paints: [CGRect], _ comment: Comment) {
+        #expect(FormBlank.printed(paints: paints, lines: lines).isEmpty, comment)
+    }
+    let label = line("Total", rect(146.9, 400, 26.1, 12.2))
+    let rule = rect(274.6, 394.6, 305.3, 4.1)
+    none([label], [rule, rect(272.6, 380, 4.1, 40)], "a rule meeting a grid's vertical rule")
+    none([label], [rule, rect(300, 380, 60, 16)], "a rule meeting a box")
+    none([label, line("Jane Q. Public", rect(300, 400, 80, 12.2))], [rule], "a value printed on the rule")
+    none([line("Underlined words in a sentence", rect(270, 400, 140, 12.2))], [rule], "an underline")
+    none([line("5)", rect(250, 400, 10, 12.2)), line("7", rect(283, 400, 6, 12.2))],
+         [rect(263, 398, 16, 4)], "a radical's bar beside its sign")
+    none([line("10 ____ 11", rect(72, 60, 300, 10))], [rect(70, 80, 150, 4.1)], "a footnote separator on no row")
+    var far = label
+    far.rect.origin.x = rule.maxX + 11 * 2
+    none([far], [rule], "text after the rule beyond a font size")
+    far.rect.origin.x = rule.minX - 11 * 11 - far.rect.width
+    none([far], [rule], "a label more than ten font sizes before the rule")
+    // Two columns: the left column's line sits on the baseline of the right column's rules.
+    let left = line("associated with the statements in their Key Messages (Tables 1, 2).", rect(72, 400, 230, 12.2))
+    let floatRule = rect(313, 394.6, 259, 4.1)
+    none([left, line("A paper's float rule as wide as the column's own lines, set here.", rect(315, 420, 255, 12.2))],
+         [floatRule], "a column's rule as wide as its lines")
+    none([left, line("Rising temperatures and extreme rainfall damage buildings,", rect(342, 378, 212, 12.2))],
+         [floatRule], "a separator across the next column's ragged list")
+    // A caption under the blank, short of its end, leaves it a blank (`Case No.`).
+    #expect(FormBlank.printed(paints: [floatRule], lines: [left,
+        line("(to be filled in by the Clerk’s Office)", rect(317, 380, 131, 10), size: 9)]).count == 1)
+}
+
+@Test func printedFormReadsItsLabelsAndSentencesAsTheFieldsDo() throws {
+    // Pro Se 1 without its fields: the same rules beside the same rows are blanks by themselves.
+    let (_, _, blocks) = try reconstructForm(fields: false)
+    let text = blocks.map(\.text)
+    for label in ["Name", "Street Address", "Case No.", "Date of signing:", "Signature of Attorney", "Bar Number"] {
+        #expect(text.contains(label + " " + FormBlank.text), "\(label)")
+    }
+    #expect(blocks.filter { $0.page == 2 && $0.text == "Name " + FormBlank.text }.count == 4)
+    #expect(text.contains("The plaintiff, (name) ____, is a citizen of the State of (name) ____."))
+    #expect(text.contains("The defendant, (name) ____, is a citizen of the State of (name) ____. Or is a citizen of (foreign nation) ____."))
+    // An answer area without its field is a set of rules on no row: no blank is made of it.
+    #expect(!text.contains(FormBlank.text))
+}
+
+// MARK: - Answer areas
+
+@Test func answerAreasReadAsABlankOfTheirOwn() {
+    let area = FormBlank(rule: rect(111.8, 412.5, 466.1, 4.1), field: rect(113.1, 412.3, 464.1, 67.8))
+    let prompt = line("are at issue in this case.", rect(110.9, 482.4, 103.2, 12.2))
+    let next = line("B. If the Basis for Jurisdiction Is Diversity of Citizenship", rect(74.9, 390.0, 300, 12.2))
+    let lines = [prompt, next]
+    let areas = LayoutReconstructor.answerAreas(lines, blanks: [area], images: [], body: 11)
+    #expect(areas.map(\.text) == [FormBlank.text])
+    #expect(areas.first?.wraps == false && areas.first?.fontSize == 11)
+    #expect(areas.first.map { $0.rect.minX == 113.8 && $0.rect.minY == area.rule.midY } == true)
+    // It reads between the prompt and the next section, apart from both.
+    var warnings: [ConversionWarning] = []
+    let blocks = LayoutReconstructor.blocks(page: page(lines, blanks: [area]), images: [], vocabulary: [], warnings: &warnings)
+    #expect(blocks.map(\.text) == [prompt.text, FormBlank.text, next.text], "\(blocks.map(\.text))")
+
+    // Controls: a one-line field is a row's blank; an area with type in it, or under a crop, is left.
+    let oneLine = FormBlank(rule: rect(276.6, 241.6, 301.3, 4.1), field: rect(276.9, 242.7, 298.2, 16.4))
+    #expect(LayoutReconstructor.answerAreas(lines, blanks: [oneLine], images: [], body: 11).isEmpty)
+    let filled = lines + [line("The Clean Water Act, 33 U.S.C. § 1251", rect(120, 450, 200, 12.2))]
+    #expect(LayoutReconstructor.answerAreas(filled, blanks: [area], images: [], body: 11).isEmpty)
+    #expect(LayoutReconstructor.answerAreas(lines, blanks: [area], images: [rect(100, 420, 300, 40)], body: 11).isEmpty)
+    #expect(LayoutReconstructor.answerAreas(lines, blanks: [], images: [], body: 11).isEmpty)
 }
 
 // MARK: - Marker pieces on tab stops
@@ -351,6 +467,17 @@ private func reconstructForm() throws -> (pages: [PageContent], crops: [[CGRect]
     var alone = Array(blocks.dropFirst(2))
     LayoutReconstructor.rankHeadingLevels(&alone)
     #expect(headings(alone).map(\.level) == [2, 3, 4])
+    // An outline that opens at capitals ranks them where a Roman tier would stand (#197): its
+    // tiers count from the outermost the document sets, not from a Roman tier it never uses.
+    var lettered = [blocks[0], blocks[1], heading("A. Plaintiff", size: 11, depth: 1), heading("1. Plaintiff", size: 11, depth: 2),
+                    heading("B. Defendant", size: 11, depth: 1)]
+    LayoutReconstructor.rankHeadingLevels(&lettered)
+    #expect(headings(lettered).map(\.level) == [2, 3, 4, 5, 4])
+    // A Roman tier anywhere in the document keeps the lettered one beneath it, on every page.
+    var mixed = lettered + [heading("II. Jurisdiction", size: 11, depth: 0)]
+    mixed[mixed.count - 1].page = 3
+    LayoutReconstructor.rankHeadingLevels(&mixed)
+    #expect(headings(mixed).map(\.level) == [2, 3, 5, 6, 5, 4])
     var flat = blocks.map { block -> ReflowBlock in var copy = block; copy.outlineDepth = nil; return copy }
     LayoutReconstructor.rankHeadingLevels(&flat)
     #expect(headings(flat).map(\.level) == [2, 3, 4, 4, 4])

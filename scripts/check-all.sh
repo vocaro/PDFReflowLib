@@ -19,6 +19,12 @@ python3 -m unittest discover -s tools -p 'test_*.py' -v
 # --swift-list also requires the static Swift test count to equal the suite swift test just built.
 python3 tools/update_doc_counts.py --check --swift-list
 swift build -c release
+# The capability probe's documented build (doc/corpus.md) must compile as written: it names the
+# library sources the rasterizer needs, and one it came to need went missing there (#204).
+PROBE_BUILD="$(sed -n '/^xcrun swiftc -parse-as-library/,/-o \.build\/raster-environment\/probe$/p' doc/corpus.md)"
+if [[ -z "$PROBE_BUILD" ]]; then echo "doc/corpus.md no longer documents the probe build." >&2; exit 1; fi
+mkdir -p .build/raster-environment
+bash -euo pipefail -c "$PROBE_BUILD"
 BINARY_DIR="$(swift build -c release --show-bin-path)"
 WORK="$(mktemp -d "${TMPDIR:-/tmp}/pdfreflow-checks.XXXXXX")"
 echo "Validation results: $WORK"

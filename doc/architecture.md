@@ -46,7 +46,7 @@ the evidence needed to infer reading order, paragraphs, image crops and word joi
 | Ordered blocks | Paragraph, heading with logical identifier and level, preformatted text, list item, page-bottom footnote, image, source-page boundary |
 | List item | Text without its printed marker, the marker, the printed number of a numbered item, kind (bulleted or numbered), depth and whether it opens a list element |
 | Inline text | Text runs carrying bold/italic/maths-italic/superscript/subscript flags, interspersed with source-page boundaries |
-| Image block | Logical asset identifier, alternative text and provenance |
+| Image block | Logical asset identifier, alternative text, provenance and, for a crop read as mathematics, its MathML expressions (#190) |
 | Asset registry | Identifier, local file URL and image format |
 | Block provenance | Physical source page where the block begins |
 
@@ -241,7 +241,15 @@ page 455), whose shows each belong to
 one piece alone and together spell the pieces joined by a space; the row's spaces are read as one
 line's, and each piece takes those inside its own text. A soft hyphen (U+00AD) the last show draws
 at a line's end and PDFKit leaves out is put back when the shows otherwise spell the line, any
-whitespace PDFKit sets standing for a space glyph (#177, Our Flag's line-end hyphens). Rotated shows, Form XObjects and fonts without Widths or maps supply no evidence, Type3
+whitespace PDFKit sets standing for a space glyph (#177, Our Flag's line-end hyphens). Letter-spaced
+type that PDFKit spells a space apart reads whole (#198, FAA page 410's `( M i l e s )`): a run of
+at least three glyphs of one show, most of them letters and none a space or a mathematical operator, whose
+gaps (character and word spacing plus adjustments) are equal within 0.02 em and between 0.1 and
+0.5 em, standing whole-word apart from its neighbours (a space glyph, an operator, the show's edge
+or a gap 0.05 em wider), loses the spaces PDFKit sets between its characters where the run appears
+exactly once in the line holding its first glyph, and the line's other repairs then read it whole.
+Justified TeX's one-letter word between two equal word spaces (`d|o a q|uick`) is not whole-word
+apart, and the 9/11 report's spaced ellipses (`need . . . a`) are mostly periods. Rotated shows, Form XObjects and fonts without Widths or maps supply no evidence, Type3
 space removal ignores shows with character or word spacing, and unsupported text state still
 disqualifies the page: a `gs` whose ExtGState sets a font or does not resolve, nonzero `Ts`, `Tr`,
 `Tz`, `Tc` or `Tw` beyond 1000 units, and a show without its own positioning that follows a show
@@ -1068,6 +1076,15 @@ their comments, contents lists, glossaries, rosters, answer grids and dot-leader
 numeric column, no header, a marker column or leaders, and keep their reflow; FAA's glossary page
 columns, 9/11's staff roster, abbreviation list and flight timelines and Our Flag's committee roster
 are among them. See the [aligned-column table evidence](../measurements/aligned-column-tables/record.md).
+Both borderless readers take a title set in the cells' own size as the table's caption (#198): the
+lines directly above the table within its width widened by an em, the nearest within three body
+sizes of its top and each higher one within two of the line beneath, each alone on its baseline
+there, untagged or tagged as text, in the cells' size and sharing a left edge or a centre, up to a
+line that opens with a table label closed by a period, a colon, a dash or a capital, or standing
+alone (Census's `Table 2. Domingo Data Reidentification Rates`), three lines at most. Without the
+label the lines stay prose (FAA page 410's `Normal Usable Altitudes and Radius Distances`), and a
+sentence that names a table (`Table 2 shows…`) is no title. See the
+[table follow-up evidence](../measurements/table-follow-ups/record.md).
 Tinted boxes are read as units: their elements are ordered among themselves, the box follows
 the lines beside it and precedes the lines below it, as its image did, and paragraphs never
 join across its edge. Small text inside reflowed boxes and tables does not lower the heading
@@ -1144,7 +1161,31 @@ Only text outside those regions reflows. `FractionRegionDetector` groups short h
 mathematical terms above and below, optionally including a nearby equation prefix. It leaves
 long rules, prose, code and connected table grids to existing handling. Whole-line expansion
 supplies the crop margin once; fraction detection does not repeatedly enlarge already complete
-regions. Arbitrary mathematical structures remain outside this bounded detector. Attachment placeholders become word boundaries at native extraction,
+regions. Arbitrary mathematical structures remain outside this bounded detector.
+
+An `equation` crop on a born-digital page is then offered to `MathRecognizer` (#190), which reads
+it from the content stream glyph by glyph (`NativeSpacingReader.read(recordingGlyphs:)`: each
+glyph's character, advance, baseline and size; a `CMSY` symbol its ToUnicode map leaves out reads
+through its `Differences` glyph name) rather than from PDFKit's lines, which join a label, a
+numerator and an operator into one. It proves three structures and nothing else: a bar fraction
+(a thin painted rule with one row just above and one just below, each centred on it, the wider
+spanning it, the bar on its row's maths axis, nothing else touching the stack), a superscript (a
+smaller glyph raised a fifth to three quarters of the row's size straight after a number, a
+variable or a bracketed group) and a row of numbers, maths italic variables, operators and
+brackets on one baseline with no gap over three quarters of an em, balanced brackets, operators
+between operands and operands side by side only when set close. A crop may hold several rows and
+a row several exercises, each opened by its printed label (`52)`). Every glyph, rule and text line
+in the crop must be accounted for; a word, an upright letter, a bold glyph, a subscript, a
+radical, an undecodable show or any other mark leaves the whole crop an image. A read crop becomes
+an image block carrying `math` expressions: the writer emits each row as `<p class="math">label
+<math alttext="…" altimg="…">…</math></p>`, where `altimg` is the row's own crop (MathML's fallback
+for a reading system without it) and `alttext` a linear form (`(−1)/9 ÷ (−1)/2`); a sign after an
+operator is grouped with its operand so it renders and speaks as a prefix, and a fraction whose
+terms are body size is wrapped in `<mstyle displaystyle="true">`. Spine documents holding MathML
+carry the manifest property `mathml`. The page's `imageRegion` warning names only crops that stay
+images. Evidence and coverage are in the [MathML record](../measurements/mathml/record.md).
+
+Attachment placeholders become word boundaries at native extraction,
 with empty selections discarded before layout, vocabulary, OCR selection and coverage counting.
 
 Existing text over a graphic covering more than 75% of the page gets `unverifiedTextLayer` and

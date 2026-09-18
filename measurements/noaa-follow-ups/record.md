@@ -98,10 +98,9 @@ two-line panel becomes a crop).
 
 ### Designs measured and rejected
 
-- **Stroke width in `GraphicsReader`** for page 40: its box title is one 20-pt stroked line, read as a
-  thin rule through the title. Padding a wide stroke by its half width made it title art, but the
-  pale tab strip above it still captures the title within its two-point padding, and the change moves
-  every thick stroke in the corpus. Reverted; follow-up below.
+- **Stroke width in `GraphicsReader`, for every stroke** (the first attempt at page 40): padding any
+  stroke by its half width moves every thick stroke in the corpus, curves included, and still left
+  page 40's tab strip capturing the title. The narrow form that was kept is under *Page 40* below.
 
 ## Before and after (`07c1bbd` → candidate)
 
@@ -125,14 +124,14 @@ EPUBs deleted after review. 65–75 GB free throughout; load average 20–52 fro
   47 and 69 regain 18 and 238 words; 66 leaves the page-image path (the corner-art rule) with its
   text unchanged; 453/454 and 1182/1183 carry their captions across the page. Book text 724,484 →
   725,017 words. Image bytes change on pages 40, 47, 66 and 69 only.
-- **Page 40 is worse in one respect**: the photo credit's false table no longer sends the page down
+- **Page 40 (superseded by *Page 40* below)**: the photo credit's false table no longer sends the page down
   #117's page-image path, so its box now reflows as crops read it — the box title, on the 20-pt stroke
   above, is inside a crop (text 374 → 371 words; the title reads only in the image), and the box's
   bullet panels read as a two-column table. Its source-page image is gone. On the base the page's
   fallback reflowed everything as text beside that image: `<h6>Box 1.1. Mitigation, Adaptation, and
   Resilience</h6>` and the three bullets as `<ul><li>`. So the title's eight words are no longer text
   a screen reader reaches (its crop's alt text is `Illustration`); the bullets' text is still there,
-  as table cells, with their wrapped lines in separate rows. Follow-up below.
+  as table cells, with their wrapped lines in separate rows. Fixed in the follow-up below.
 - **Wallace** (book spacings 5.42 and 9.74): worked-example annotations split one note per step
   (49, 75, 120, 135, 160, 163, 168, 171), and 119, 240, 299 split at real paragraph breaks (6.2–6.5 pt
   gaps against a 2.7 pt wrap), all read against the source geometry. **FAA 55** splits the T-E-A-M
@@ -158,14 +157,59 @@ Per page, `spacingEvidence` and `spacedEntryPairs` each read `edgeWraps` once mo
 pairs the page's lines once per edge (memoized). Alternating base and candidate under the same load:
 NOAA 156.8 / 158.4 s user, Wallace 37.3 / 36.0 s.
 
+## Page 40: title bands and bullet panels (owner follow-up)
+
+The owner required page 40 to be at least as accessible as on the base: the box title as text
+(ideally a heading), the bullets as a list. Measured against the #200 commit merged with `f90a567`
+(`bd68044`, "prev") and the same plus this change ("cand").
+
+**Root causes and rules.**
+
+- **Wide straight strokes are bands** (`GraphicsReader.paint`, `Paint.band`). NOAA sets its box and Key
+  Message titles on one straight 20-pt stroke. The reader padded every stroke by two points, so the
+  stroke read as a thin rule through the title, and a thin rule striking through a line captures it.
+  A horizontal or vertical stroke whose half width exceeds that padding is now recorded as the band
+  it paints: its width across the stroke, its butt ends adding nothing along it, `filled`, no frame,
+  marked `band`. Curves, diagonals and ordinary rules keep the padded path, so nothing else moves.
+- **A dropped title band takes its edging** (`TintDetector.withoutTitleBackdrops`). As a non-frame
+  paint the band is judged as title art and dropped; a textless strip laid along its top or bottom,
+  within its width and no taller (page 40's pale tab, whose padding reached the title), goes with it.
+- **A band behind text inside a box is the box's tint** (`composeTints`): page 1490's and page 1000's
+  box titles sit on bands inside the box's tinted cluster, where a thin rule used to be a separator.
+  The band is a tint candidate and no longer counts as ink, so it does not carve a crop over them.
+- **A box sub-heading bounds a figure's band** (`composeTints`, the carved band): page 62's
+  `Exemplifying Indigenous Resilience` (11 pt over 9-pt box prose) stands above the photograph it
+  introduces; the carve took it with the photograph once the page stopped falling back to its page
+  image. A title set 15% over the block's prose now bounds the band as prose does.
+- **A shaded table's marker column is a list** (`ShadedTableDetector.tables`): a first column holding
+  nothing but list markers is a list's markers, so page 40's three bullet panels no longer read as a
+  table of `•` and text; the list pass makes them list items.
+
+**Lanes** (prev → cand, before the `48afc81` merge; each case's two EPUBs compared with
+`tools/pagediff.py` and `tools/imgdiff.py`, then deleted). All 20 non-Warren cases pass on both.
+
+- **NOAA**: 302 pages change, 299 gaining text (1,323 words) and none losing any. They are overwhelmingly
+  box and Key Message titles that were crops and now read as headings (`Key Message 2.1 Climate Is
+  Changing, and Scientists Understand Why` on page 84, 109 Key Message titles in all). Page 40 reads its
+  title as an `h6` and its bullets as three `li`. Pages 27, 28 and 62 gain a small crop each (a textless
+  tab strip) with their text unchanged.
+- **Page 25** now falls back to its page image: all its text reflows beside the image, including the
+  table rows that were half inside crops (with "Mathematical expression" alt text), but its two partial
+  `<table>`s and the `Table 1.`/`Table 2.` headings become paragraphs.
+- **Magazine** pages 5 and 15 change image bytes only (a wide stroke's crop); no text changes.
+- **The other 18 cases**: no change at all.
+
+**Tests**: `StrokeBandTitlesTests.swift` (synthetic strokes; pages 40, 84, 1000, 1490 and 62, with a
+thin-rule control; a marker column against a labelled one). Mutations ([mutants40.log](mutants40.log),
+`tools/mutate40.py`): 6 of 6 kill a test; a stacked-strip rule that survived was removed as redundant.
+**Contract**: page 40 pins the title as a heading and the three bullets as list items (the prev binary
+fails all four); pages 62, 84, 1000 and 1490 pin their titles as headings (page 84's fails on prev).
+
 ## Remaining gaps and follow-ups
 
-1. **Page 40's box title** (`GraphicsReader` ignores stroke width: a 20-pt stroked band is a thin rule
-   through its title) and **its bullet panels read as a table**; with the false credit table gone,
-   the page no longer falls back to its page image.
-2. **Page 25's shaded tables** (rows in fills the table reader does not read; region crops with
-   "Mathematical expression" alt text), #150's area.
-3. **Page 1738's `Cover Art` / `Diane Burko`**: both lines are wholly bold, so neither is evidence on
+1. **Page 25's tables** read as paragraphs beside the page image (rows in fills the table reader does
+   not read; #150's area).
+2. **Page 1738's `Cover Art` / `Diane Burko`**: both lines are wholly bold, so neither is evidence on
    the edge, and they stay one paragraph (page 488's pair splits through its three-run edge).
-4. **Page 6's `J. Michael Kuperberg` lines** are preformatted: `J.` reads as a lettered list marker
+3. **Page 6's `J. Michael Kuperberg` lines** are preformatted: `J.` reads as a lettered list marker
    (#194's list pass).

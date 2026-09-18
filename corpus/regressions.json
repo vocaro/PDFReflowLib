@@ -6330,7 +6330,7 @@
     {
       "id": "noaa-nca5-2023",
       "sourceSHA256": "1942cbf346dc2c711fea413d6d6543edb8bc1e3a88d4c3a85e733c6b6d3577bf",
-      "basis": "Source pages 1, 33, 48, 80, 139, 900, 1700 and 1834 reviewed against 70 DPI Poppler renders while adding the case to the lane (#5). The full report completes under library defaults since the written page rasters stopped carrying their constant alpha plane; before that it failed the 512 MiB entry budget. Protects the four properties that decide whether the book is usable: every one of the 1,834 source pages is anchored and the book reports no recognized page, because the text layer is native throughout; the chapter covers on pages 80 and 139 reflow their chapter line and title and keep the full-bleed artwork as a source-page image, which is the only place that artwork survives; the ordinary illustrated pages 48, 900 and 1700 carry their figures as region crops and must not fall back to a whole-page image; and page 1834's agency seals and addresses, which the graphics reader refuses, stay as an image under pageImageFallback. Page 48's callout, page 900's Figure 20.2 caption and page 1700's author block are the reflowed text checked on those pages. Since #181, page 48's left column, its sub-heading and both Figure 1.5 captions reflow beside the figure's crop (the corner art's feathered transparency-group box no longer reads as ink), and the book's one-line author and contributor entries are a paragraph each (pages 81, 343 and 1700; page 7's staff entries also keep their wrapped lines, 1.8 ems in, with the entry); reviewed against 80 DPI renders of pages 7, 48, 81, 343 and 1700. This does not qualify whole-book fidelity. Since #200, a spaced run’s widest entry opens its own paragraph (page 488), two entries at one of the book’s entry spacings are two paragraphs (page 1738), the front-matter poem keeps its lines (page 5), page 6’s two wrapped staff entries a column and its wrapped committee title read whole, each figure’s bold lead stands apart from its caption (page 48), a photo credit underlined as a link no longer crops both columns as a table (page 69), and corner art behind a painting no longer takes the right column’s last lines (page 47), and a caption broken at a line-end hyphen at the page’s foot continues overleaf (pages 453 and 1182); reviewed against 60 DPI renders of pages 5, 6, 47, 48 and 69 and the extracted geometry of pages 488 and 1738.",
+      "basis": "Source pages 1, 33, 48, 80, 139, 900, 1700 and 1834 reviewed against 70 DPI Poppler renders while adding the case to the lane (#5). The full report completes under library defaults since the written page rasters stopped carrying their constant alpha plane; before that it failed the 512 MiB entry budget. Protects the four properties that decide whether the book is usable: every one of the 1,834 source pages is anchored and the book reports no recognized page, because the text layer is native throughout; the chapter covers on pages 80 and 139 reflow their chapter line and title and keep the full-bleed artwork as a source-page image, which is the only place that artwork survives; the ordinary illustrated pages 48, 900 and 1700 carry their figures as region crops and must not fall back to a whole-page image; and page 1834's agency seals and addresses, which the graphics reader refuses, stay as an image under pageImageFallback. Page 48's callout, page 900's Figure 20.2 caption and page 1700's author block are the reflowed text checked on those pages. Since #181, page 48's left column, its sub-heading and both Figure 1.5 captions reflow beside the figure's crop (the corner art's feathered transparency-group box no longer reads as ink), and the book's one-line author and contributor entries are a paragraph each (pages 81, 343 and 1700; page 7's staff entries also keep their wrapped lines, 1.8 ems in, with the entry); reviewed against 80 DPI renders of pages 7, 48, 81, 343 and 1700. This does not qualify whole-book fidelity. Since #200, a spaced run’s widest entry opens its own paragraph (page 488), two entries at one of the book’s entry spacings are two paragraphs (page 1738), the front-matter poem keeps its lines (page 5), page 6’s two wrapped staff entries a column and its wrapped committee title read whole, each figure’s bold lead stands apart from its caption (page 48), a photo credit underlined as a link no longer crops both columns as a table (page 69), and corner art behind a painting no longer takes the right column’s last lines (page 47), and a caption broken at a line-end hyphen at the page’s foot continues overleaf (pages 453 and 1182); reviewed against 60 DPI renders of pages 5, 6, 47, 48 and 69 and the extracted geometry of pages 488 and 1738. Box and Key Message titles set on wide straight strokes read as headings, not crops, and page 40’s bullets on shaded panels read as list items rather than table cells (pages 40, 62, 84, 1000 and 1490, reviewed against 60 DPI renders and their extracted geometry).",
       "pages": [
         {
           "page": 1,
@@ -6395,6 +6395,17 @@
           "pageReference": true
         },
         {
+          "page": 40,
+          "headings": [
+            "Box 1.1. Mitigation, Adaptation, and Resilience"
+          ],
+          "listItems": [
+            "Mitigation: Measures to reduce the amount and rate of future climate change",
+            "Adaptation: The process of adjusting to an actual or expected environmental change",
+            "Resilience: The ability to prepare for threats and hazards"
+          ]
+        },
+        {
           "page": 47,
           "paragraphs": [
             "deliver substantial emissions reductions, but additional options are needed to reach net zero"
@@ -6420,6 +6431,13 @@
               "first": "The US has warmed rapidly since the 1970s.",
               "second": "Figure 1.5. The graph shows the change"
             }
+          ]
+        },
+        {
+          "page": 62,
+          "headings": [
+            "Box 1.3. Indigenous Ways of Life and Spiritual Health",
+            "Exemplifying Indigenous Resilience"
           ]
         },
         {
@@ -6450,6 +6468,12 @@
               "first": "Deepti Singh, Washington State University Vancouver",
               "second": "Aradhna Tripati, University of California, Los Angeles"
             }
+          ]
+        },
+        {
+          "page": 84,
+          "headings": [
+            "Key Message 2.1 Climate Is Changing, and Scientists Understand Why"
           ]
         },
         {
@@ -6506,6 +6530,12 @@
           "pageReference": false
         },
         {
+          "page": 1000,
+          "headings": [
+            "Box 22.2. Reshaping FEMA Policy to Aid Disaster Recovery in the Gullah Geechee Cultural Heritage Corridor"
+          ]
+        },
+        {
           "page": 1182,
           "paragraphs": [
             "The Northern Great Plains region shows wide geographical variations in land use and social vulnerability."
@@ -6515,6 +6545,12 @@
               "end": "Figure 25.8. The figure shows the geography of resource- and land-based livelihoods",
               "next": "alent in the eastern portion of the region"
             }
+          ]
+        },
+        {
+          "page": 1490,
+          "headings": [
+            "Box 30.1. Historical Under-Resourcing Results in Continuing Data Inequities for the Pacific Islands Region and US Caribbean"
           ]
         },
         {

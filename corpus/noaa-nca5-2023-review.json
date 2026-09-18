@@ -34,6 +34,11 @@
       "acceptance": "Begin logical chapter navigation at this boundary."
     },
     {
+      "page": 40,
+      "target": "Box 1.1 title band and bullet panels",
+      "acceptance": "The box title reads as a heading and its three bullets as list items, as text a screen reader reaches (#200)."
+    },
+    {
       "page": 47,
       "target": "Painting under two columns with corner art",
       "acceptance": "The right column reflows to its last line; the painting’s crop takes no text (#200)."
@@ -67,6 +72,11 @@
       "page": 84,
       "target": "Chapter 2 key message",
       "acceptance": "Keep key-message heading and body together."
+    },
+    {
+      "page": 84,
+      "target": "Key Message title band",
+      "acceptance": "The Key Message label and title read as one heading, not an image (#200)."
     },
     {
       "page": 95,

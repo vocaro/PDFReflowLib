@@ -283,6 +283,13 @@ enum ShadedTableDetector {
             // a table and nothing else is newly accepted.
             let bodyRows = result.filter { (!$0.header || columnBandHeader) && $0.cells.count > 1 }
             guard bodyRows.count >= 2, bodyRows.contains(where: { $0.cells.filter { !$0.lines.isEmpty }.count >= 2 }) else { return nil }
+            // A first column that holds nothing but list markers is a list's markers, each item on
+            // a shaded panel of its own (NOAA page 40's Box 1.1: `•` beside `Mitigation: …`, #200).
+            let markers = bodyRows.compactMap { $0.cells.first?.lines }.filter { !$0.isEmpty }
+            guard !(markers.count >= 2 && markers.allSatisfy { $0.allSatisfy { line in
+                line.text.trimmingCharacters(in: .whitespaces)
+                    .range(of: "^(?:[•◦▪■●–-]|[0-9]{1,3}[.)]|[A-Za-z][.)])$", options: .regularExpression) != nil } })
+            else { return nil }
             result = rowHeaders(result)
             let caption = caption(above: rowLines[..<start].flatMap { $0 }, bodySize: bodySize)
             return Table(bounds: union(Array(rowRects[start...last])), columns: columns.count, rows: result,

@@ -113,7 +113,8 @@ class RegionTests(unittest.TestCase):
     def test_short_titles(self):
         self.assertEqual(counts.short_title('Dietary Guidelines for Americans, 2025–2030'),
                          'Dietary Guidelines for Americans')
-        self.assertEqual(counts.short_title('Publication 596 (ZH-S), Earned Income Credit'), 'Publication 596')
+        self.assertEqual(counts.short_title('Tank Health Monitoring (NASA TechPort project 97058)'),
+                         'Tank Health Monitoring')
         self.assertEqual(counts.short_title('The Fed Explained: What the Central Bank Does'), 'The Fed Explained')
 
 

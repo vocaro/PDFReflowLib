@@ -225,14 +225,14 @@ the internal seams and extension points.
 ## Development and regression tests
 
 For changes to extraction, layout or rendering, run `scripts/check-all.sh --corpus` before
-pushing. This opt-in lane converts <!-- counts:documents -->22<!-- counts:end --> complete cached documents and checks reviewed content,
+pushing. This opt-in lane converts <!-- counts:documents -->20<!-- counts:end --> complete cached documents and checks reviewed content,
 EPUB conformance, progress and resource budgets, then converts four of them twice with one binary
 and requires identical output. Missing sources fail with acquisition instructions; there are no
 automatic downloads. `scripts/check-all.sh --fast` remains the offline synthetic lane (it also
 converts each fixture twice and requires byte-identical EPUBs).
 Python tool tests and the source-region, glyph-structure and image-appearance checks require numpy
 and Pillow. Poppler is needed only to render new region references. The reviewed contracts hold
-<!-- counts:contract-summary -->3516 checks on 572 pages of 22 documents<!-- counts:end -->, including full-resolution stroke checks for equations and a
+<!-- counts:contract-summary -->3495 checks on 568 pages of 20 documents<!-- counts:end -->, including full-resolution stroke checks for equations and a
 table, scale/contrast/color checks for a flag and an FAA figure, and <!-- counts:table-cell-checks -->14<!-- counts:end --> cell checks on tables
 emitted as text. See [regression testing](doc/regression-testing.md) for coverage, limitations and
 adding a case.
@@ -305,10 +305,10 @@ interchange format; the supported public output remains EPUB 3. See
 920-page scanned Warren Commission report, the 585-page digital 9/11 Commission report, and
 135-page The Fed Explained, plus the 10-page illustrated Dietary Guidelines for Americans
 (2025–2030), the 1,834-page Fifth National Climate Assessment, the 56-page Our Flag booklet, the 42-page CDC Zombie Pandemic comic, the 312-page
-Blue Book scanned-table report, and seven smaller sources for borderless tables, page-bottom
-footnotes, damaged text encodings, Arabic and Simplified Chinese layouts, and scanned and
-born-digital two-column academic papers,
-by exact byte identity.
+Blue Book scanned-table report, and five smaller sources for borderless tables, page-bottom
+footnotes, damaged text encodings, and scanned and born-digital two-column academic papers,
+by exact byte identity. The corpus is English-only for now: the library's right-to-left and CJK
+handling stays, but no corpus document exercises it until non-English support is taken up again.
 Fetch originals with
 `python3 tools/fetch_corpus.py --all`; verified copies live in gitignored `corpus/cache/`.
 Tests do not download documents. Some publisher endpoints require a manually supplied cache

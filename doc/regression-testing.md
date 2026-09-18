@@ -12,7 +12,7 @@ A valid EPUB can still contain incorrect text, wrong reading order or unreadable
   pixels, including crop origins, rotations, annotations and resource ceilings. Preserved-region
   tests also inspect fraction bars, raised exponents and all six cells of a ruled table in actual
   EPUB images at 72/144 DPI, with surrounding-prose and code controls.
-- `scripts/check-all.sh --corpus`: the same checks plus <!-- counts:documents -->22<!-- counts:end --> complete PDF conversions,
+- `scripts/check-all.sh --corpus`: the same checks plus <!-- counts:documents -->20<!-- counts:end --> complete PDF conversions,
   sequentially, with EPUBCheck, monotonic progress, pinned source identities,
   [memory budgets](corpus.md) (the lowest peak of up to two conversions, since
   one measurement of a book's peak resident size varies by about 100 MiB under load, #140)
@@ -115,23 +115,23 @@ are, in the page markup). Evidence and negative controls on real output are in
 ## Current content coverage
 
 <!-- counts:coverage -->
-[corpus/regressions.json](../corpus/regressions.json) has 3516 targeted checks on 572 reviewed pages
-across 22 documents: *Pilot's Handbook of Aeronautical Knowledge*, *Beginning and Intermediate
+[corpus/regressions.json](../corpus/regressions.json) has 3495 targeted checks on 568 reviewed pages
+across 20 documents: *Pilot's Handbook of Aeronautical Knowledge*, *Beginning and Intermediate
 Algebra*, *The 9/11 Commission Report*, *The Fed Explained*, *Dietary Guidelines for Americans*,
 *Fifth National Climate Assessment*, *Our Flag*, *Preparedness 101*, *Project Blue Book Special
 Report No. 14*, *Mineral Commodity Summaries 2025*, *Loper Bright Enterprises v. Raimondo*,
-*Disclosure Risk Assessment in Perturbative Microdata Protection*, *Welcome to the United States*,
-*Publication 596*, *Stimulated Multiphoton Bremsstrahlung in Electron-Ion Collisions*, *Replay
-Clocks*, *Complaint for a Civil Case*, *Investigation of Atmospheric Boundary-Layer Effects on
-Launch-Vehicle Ground Wind Loads*, *A Scheduling Algorithm Compatible with a Distributed Management
-of Arrivals in the National Airspace System*, *Agricultural Research*, *Earthdata Cloud Analytics
-Project* and *Tank Health Monitoring*. They comprise 1149 ordered-text, 245 text, 446 paragraph,
-295 absent-text, 279 heading, 36 heading-level, 64 absent-heading, 93 list-item,
-1 preformatted-lines, 29 script, 10 absent-script, 11 footnote, 34 note-link,
-61 paragraph-continuation, 1 list-item-continuation, 8 paragraph-separation, 122 distinct-paragraph,
-201 image-presence, 45 captioned-image, 20 image-alternative, 102 page-reference, 111 warning,
-113 absent-warning, 17 source-region, 5 glyph-structure, 4 image-appearance and 14 table-cell
-checks, counted as `tools/check_corpus_content.py` counts them.
+*Disclosure Risk Assessment in Perturbative Microdata Protection*, *Stimulated Multiphoton
+Bremsstrahlung in Electron-Ion Collisions*, *Replay Clocks*, *Complaint for a Civil Case*,
+*Investigation of Atmospheric Boundary-Layer Effects on Launch-Vehicle Ground Wind Loads*, *A
+Scheduling Algorithm Compatible with a Distributed Management of Arrivals in the National Airspace
+System*, *Agricultural Research*, *Earthdata Cloud Analytics Project* and *Tank Health Monitoring*.
+They comprise 1137 ordered-text, 239 text, 446 paragraph, 295 absent-text, 278 heading,
+36 heading-level, 64 absent-heading, 93 list-item, 1 preformatted-lines, 29 script,
+10 absent-script, 11 footnote, 34 note-link, 61 paragraph-continuation, 1 list-item-continuation,
+8 paragraph-separation, 122 distinct-paragraph, 199 image-presence, 45 captioned-image,
+20 image-alternative, 102 page-reference, 111 warning, 113 absent-warning, 17 source-region,
+5 glyph-structure, 4 image-appearance and 14 table-cell checks, counted as
+`tools/check_corpus_content.py` counts them.
 <!-- counts:end -->
 
 All source-page anchors must also remain complete and ordered, and semantic text must contain no image attachment placeholders.

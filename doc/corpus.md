@@ -39,8 +39,6 @@ work offline. Tests and conversion never fetch sources automatically.
 | `usgs-mcs2025-copper` | 2 | Borderless tables, indentation-only row groups, spanning headers | 128 MiB |
 | `scotus-loper-bright-2024` | 114 | Page-bottom footnotes continuing across pages, dash separators | 128 MiB |
 | `census-rrs2002-01` | 20 | Born-digital text layer with no Unicode mapping (shifted letters); 2 pages decoded natively, 17 recognized by default | 512 MiB |
-| `uscis-m618-arabic-2015` | 116 | Right-to-left Arabic with embedded Latin and numbers | 256 MiB |
-| `irs-p596-zhs-2025` | 36 | Simplified Chinese mixed with Latin identifiers and amounts | 256 MiB |
 | `uscourts-pro-se-1-2016` | 5 | Fillable AcroForm: field labels beside blanks, checkboxes, push buttons | 128 MiB |
 | `ntrs-20200002975-gwl-2020` | 20 | Microsoft Word export: tagged IEEE two-column paper, Symbol-font characters | 256 MiB |
 | `usda-ars-agresearch-2012-11` | 24 | InDesign magazine: wrapped photos, sidebars, pull quotes, two-page index | 512 MiB |
@@ -67,7 +65,7 @@ footprint against 419–443 MiB resident) and no more stable on one with them (B
 `--ocr always`: 468–603 against 548–593). `sampledPeakPhysicalFootprintBytes` remains the
 0.1-second sampling, which can miss a peak by 60–90 MiB. Measured spreads are in the
 [run-to-run variance record](../measurements/run-to-run-variance/record.md).
-The seven [#30 cases](#issue-30-coverage-expansion) are gated with reviewed contracts; their
+The five [#30 cases](#issue-30-coverage-expansion) are gated with reviewed contracts; their
 selection and download identities are in [their record](../measurements/corpus-candidates-30/record.md).
 The [Pro Se 1 form](#complaint-for-a-civil-case-pro-se-1), the
 [Word-exported NASA paper](#ground-wind-loads-paper-word-2013), the
@@ -523,7 +521,8 @@ tracks the warning/refusal behavior; passing the signal contract will not establ
 
 ## Issue #30 coverage expansion
 
-Seven small public-domain or CC BY sources add layouts the earlier corpus lacked. All fetch
+Five small public-domain or CC BY sources add layouts the earlier corpus lacked (issue #30 added
+seven; the two non-English ones were [later removed](#non-english-documents-removed)). All fetch
 directly and verify by byte count and SHA-256. Each has a baseline record, review targets and a
 reviewed content contract that checks only source-verified output; every one also exposes
 defects tracked as separate issues rather than blessed as golden output.
@@ -534,8 +533,7 @@ swift build -c release --scratch-path .build/corpus-cli
 python3 tools/run_corpus_regressions.py --converter .build/corpus-cli/out/Products/Release/pdf-reflow \
   --epubcheck /opt/homebrew/bin/epubcheck --output /tmp/corpus-30 \
   --case usgs-mcs2025-copper --case scotus-loper-bright-2024 --case census-rrs2002-01 \
-  --case uscis-m618-arabic-2015 --case irs-p596-zhs-2025 --case nbs-jres-geltman-1977 \
-  --case arxiv-replay-clocks-2023
+  --case nbs-jres-geltman-1977 --case arxiv-replay-clocks-2023
 ```
 
 | Case | Gap | Baseline finding | Tracking |
@@ -543,16 +541,30 @@ python3 tools/run_corpus_regressions.py --converter .build/corpus-cli/out/Produc
 | [`usgs-mcs2025-copper`](../measurements/usgs-mcs2025-copper/record.md) | Borderless tables | Tables preserved as readable crops, but adjacent prose is absorbed into them | [#36](https://github.com/vocaro/PDFReflowLib/issues/36) |
 | [`scotus-loper-bright-2024`](../measurements/scotus-loper-bright-2024/record.md) | Page-bottom footnotes | Text complete; footnotes merge into body paragraphs; 75 citation-leading lines become preformatted | [#40](https://github.com/vocaro/PDFReflowLib/issues/40), [#39](https://github.com/vocaro/PDFReflowLib/issues/39) |
 | [`census-rrs2002-01`](../measurements/census-rrs2002-01/record.md) | Damaged encoding | Resolved: shifted-letter pages report `damagedTextEncoding`, keep a source image and are recognized by default ([evidence](../measurements/damaged-text-encoding/record.md)); pages set only in the EC text fonts decode natively ([evidence](../measurements/glyph-index-decoding/record.md)) | [#38](https://github.com/vocaro/PDFReflowLib/issues/38), [#143](https://github.com/vocaro/PDFReflowLib/issues/143) |
-| [`uscis-m618-arabic-2015`](../measurements/uscis-m618-arabic-2015/record.md) | Right-to-left script | Arabic words correct; mixed-direction runs fragment and reverse | [#41](https://github.com/vocaro/PDFReflowLib/issues/41) |
-| [`irs-p596-zhs-2025`](../measurements/irs-p596-zhs-2025/record.md) | CJK script | Order and amounts correct; spaces inserted inside CJK; some columns rasterized | [#42](https://github.com/vocaro/PDFReflowLib/issues/42), [#36](https://github.com/vocaro/PDFReflowLib/issues/36) |
 | [`nbs-jres-geltman-1977`](../measurements/nbs-jres-geltman-1977/record.md) | Scanned two-column paper | Inline images force page fallback on pages 1–6 | [#37](https://github.com/vocaro/PDFReflowLib/issues/37) |
 | [`arxiv-replay-clocks-2023`](../measurements/arxiv-replay-clocks-2023/record.md) | Born-digital ACM paper | Prose order correct; front-matter headings, section labels and math spacing wrong | [#43](https://github.com/vocaro/PDFReflowLib/issues/43) |
 
 The NBS paper stands in for an owner-supplied, ACM-copyrighted Lamport CACM article in the same
 two-column scanned format. Replay Clocks is CC BY 4.0: retain the attribution recorded in the
-manifest. USCIS states some guide images are licensed, so that case commits no page rasters.
-Vertical CJK, Hebrew and Devanagari layouts remain uncovered for lack of clearly licensed sources
-([#44](https://github.com/vocaro/PDFReflowLib/issues/44)).
+manifest.
+
+
+### Non-English documents removed
+
+The corpus is English-only for now. On the owner's request, its two non-English documents were
+removed from the manifest, the regression contracts and the corpus gate until non-English support
+is taken up again. The library's right-to-left, CJK and script handling is unchanged; only its
+corpus coverage is gone. Their baseline records stay under `measurements/` as history, and
+right-to-left and CJK fidelity remain tracked in [#41](https://github.com/vocaro/PDFReflowLib/issues/41),
+[#42](https://github.com/vocaro/PDFReflowLib/issues/42) and, for vertical CJK, Hebrew and
+Devanagari sources, [#44](https://github.com/vocaro/PDFReflowLib/issues/44). To restore them
+exactly, re-add their manifest entries, contracts and review files from the commit before the
+removal; the pinned identities are:
+
+| Case | Title | Source | Bytes | SHA-256 |
+| --- | --- | --- | ---: | --- |
+| `uscis-m618-arabic-2015` | *Welcome to the United States: A Guide for New Immigrants* (M-618-A, Arabic, rev. 09/15), USCIS, 116 pages | [USCIS Settling in the U.S.](https://www.uscis.gov/citizenship-resource-center/civic-assimilation/settling-in-the-us); download <https://www.uscis.gov/sites/default/files/document/guides/M-618_a.pdf> (`M-618_a.pdf`) | 4,156,497 | `354effbbe38450664959b8832d136cfd158d3c17d1ba777b8b1e4a5b6aa36d54` |
+| `irs-p596-zhs-2025` | *Publication 596 (ZH-S), Earned Income Credit (EIC), 2025* (Simplified Chinese), IRS, 36 pages | [About Publication 596](https://www.irs.gov/forms-pubs/about-publication-596); download <https://www.irs.gov/pub/irs-prior/p596zhs--2025.pdf> (`p596zhs--2025.pdf`) | 2,674,617 | `7d1cff45bc567f1257ea1aa1e2ce67945aafb12708b2e22901ce6392436590c2` |
 
 
 ## Complaint for a Civil Case (Pro Se 1)

@@ -7041,65 +7041,6 @@
       ]
     },
     {
-      "id": "uscis-m618-arabic-2015",
-      "sourceSHA256": "354effbbe38450664959b8832d136cfd158d3c17d1ba777b8b1e4a5b6aa36d54",
-      "basis": "Source pages 5 and 21 visually reviewed. Protects the Arabic contents heading and first entry, and page-21 Arabic prose with embedded English terms and URLs plus the preserved card image. Does not bless reversed form/phone numbers, mirrored parentheses or bidirectional fragments split into separate paragraphs (#41).",
-      "pages": [
-        {
-          "page": 5,
-          "headings": [
-            "جدول المحتويات"
-          ],
-          "orderedText": [
-            "مرحبا بكم في الولايات المتحدة دليل المهاجرين الجدد",
-            "الأقسام والوكالات الفدرالية",
-            "حقوقك ومسؤولياتك كمقيم دائم"
-          ]
-        },
-        {
-          "page": 21,
-          "text": [
-            "[Permanent Resident Card]",
-            "www.uscis.gov/uscis-elis",
-            "[USCIS Forms Line]",
-            "بطاقة الإقامة الدائمة"
-          ],
-          "minimumImages": 1
-        }
-      ]
-    },
-    {
-      "id": "irs-p596-zhs-2025",
-      "sourceSHA256": "7d1cff45bc567f1257ea1aa1e2ce67945aafb12708b2e22901ce6392436590c2",
-      "basis": "Source pages 1 and 16 visually reviewed. Protects the English catalog footer and cover image on page 1, and page-16 left-column examples before the right-column military and chapter-4 prose, the four earned-income limits in source order, and CJK text with embedded Latin identifiers and amounts. Does not bless page 1/3 prose and contents captured inside preserved-region images, the split cover title, or spaces inserted inside justified CJK lines (#36, #42).",
-      "pages": [
-        {
-          "page": 1,
-          "text": [
-            "Publication 596 (zh-s) (2025) Catalog Number 47309A"
-          ],
-          "minimumImages": 1
-        },
-        {
-          "page": 16,
-          "orderedText": [
-            "即使您父母不能申请或不申报 EIC",
-            "示例 1——不需要提交报税表。",
-            "示例 3——提交报税表是为了享受 EIC。",
-            "驻扎在美国境外的军人。",
-            "您必须再满足一条规则才能申报 EIC。",
-            "61,555 美元（已婚联合报税为 68,675 美元）",
-            "57,310 美元（已婚联合报税为 64,430 美元）",
-            "50,434 美元（已婚联合报税为 57,554 美元）",
-            "19,104 美元（已婚联合报税为 26,214 美元）"
-          ],
-          "text": [
-            "请在 （表格 1040 或 1040-SR）第 27b 行勾选“Clergy filing Schedule SE”"
-          ]
-        }
-      ]
-    },
-    {
       "id": "nbs-jres-geltman-1977",
       "sourceSHA256": "44653967317ce75f324b8051cdf2f123429ca1cbd199fefbffabe9acb9b0c86d",
       "basis": "Source pages 1-7 visually reviewed against renders. Pages 1-6 carry Adobe Paper Capture inline images over what its OCR could not transcribe; they are evidence, not crop bounds (#37). Every page reflows with the unverified-text warning and its source-page reference. Figures 1 and 2 are each one whole crop ending above their captions, which stay text; their OCR labels do not reflow. Display equations with evidence, and those the formula heuristic crops, grow to their whole display row with the equation number; the region references exclude the source-page image, which contains every region. Unboxed equation (8) remains OCR text. Page 7 protects the unverified-text warning over its inherited Paper Capture OCR and the reference heading. After #36 the closing left-column prose must reflow as text in source order, ending with its final line inside one paragraph; the inline equation `u0 = eE0/mω` inside a justified line earlier in the column is prose, not a displayed formula, so that line and its neighbours reflow in the paragraph instead of a three-line crop (#51). Reference transcriptions are noisy and are not asserted. #162: page 7’s hanging-indent references keep their wrapped lines. Figures 1 and 2 reviewed again on the page-2 and page-3 renders (#27): each caption must stand next after its crop in the page's block order. Every page keeps its `Original page N` reference image beside the reflowed inherited OCR, and page 7 reports no page-image fallback, unsupported graphics or fresh recognition. Pages 6 and 7 reviewed: the conclusion's sentence ending `the magnitude of the applied electric field` continues `equals the mean atomic field strength` at the head of page 7 and must remain one paragraph across the marker. #187: the listed pages carry each named alternative text on some image — the caption the source prints beside the figure, or the kind the crop's own evidence names — and no image on them states its provenance or nothing in `alt`; source pages rendered and reviewed (measurements/preserved-image-alt-text/record.md).",

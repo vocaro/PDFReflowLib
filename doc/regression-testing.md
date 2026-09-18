@@ -115,7 +115,7 @@ are, in the page markup). Evidence and negative controls on real output are in
 ## Current content coverage
 
 <!-- counts:coverage -->
-[corpus/regressions.json](../corpus/regressions.json) has 3311 targeted checks on 556 reviewed pages
+[corpus/regressions.json](../corpus/regressions.json) has 3312 targeted checks on 556 reviewed pages
 across 22 documents: *Pilot's Handbook of Aeronautical Knowledge*, *Beginning and Intermediate
 Algebra*, *The 9/11 Commission Report*, *The Fed Explained*, *Dietary Guidelines for Americans*,
 *Fifth National Climate Assessment*, *Our Flag*, *Preparedness 101*, *Project Blue Book Special
@@ -125,7 +125,7 @@ Report No. 14*, *Mineral Commodity Summaries 2025*, *Loper Bright Enterprises v.
 Clocks*, *Complaint for a Civil Case*, *Investigation of Atmospheric Boundary-Layer Effects on
 Launch-Vehicle Ground Wind Loads*, *A Scheduling Algorithm Compatible with a Distributed Management
 of Arrivals in the National Airspace System*, *Agricultural Research*, *Earthdata Cloud Analytics
-Project* and *Tank Health Monitoring*. They comprise 1135 ordered-text, 237 text, 397 paragraph,
+Project* and *Tank Health Monitoring*. They comprise 1135 ordered-text, 238 text, 397 paragraph,
 269 absent-text, 268 heading, 20 heading-level, 50 absent-heading, 89 list-item,
 1 preformatted-lines, 29 script, 8 absent-script, 11 footnote, 34 note-link,
 61 paragraph-continuation, 1 list-item-continuation, 8 paragraph-separation, 92 distinct-paragraph,
@@ -604,7 +604,7 @@ the page's structure validates, each line also records the tag the pipeline appl
 since #89/#90); older fixtures and untagged lines have none, and `SourceLayoutFixture` restores it.
 Source review, baseline failures, cross-document safeguards and full-run evidence are retained
 in [the three-fix measurement](../measurements/three-fidelity-fixes/record.md). The suite contains
-<!-- counts:swift-tests -->895 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->242 Python tests<!-- counts:end -->.
+<!-- counts:swift-tests -->903 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->242 Python tests<!-- counts:end -->.
 The comparison tests include a real-Poppler image URL check through the safe HTTP handler
 (simple and positioned modes, paths with spaces); absent Poppler is an explicit skip.
 
@@ -1634,6 +1634,29 @@ The CDC contract requires `implausibleTextLayer` and the reviewed recognized dia
 `ocrUsed` on the plausible page-39 checklist. It fails on the pre-#93 conversion on all seven
 pages. The [plausibility evidence](../measurements/text-layer-plausibility/record.md) records the
 survey of all 1,353 image-backed pages in the English corpus and the review of every failing page.
+
+### Pages whose writing is drawn
+
+`ImageOnlyPageTests.swift` covers [#176](https://github.com/vocaro/PDFReflowLib/issues/176) on
+synthetic slides built from real glyph outlines: a 720×405 page with a dark full-bleed fill, a
+folio drawn as text and a sentence drawn as filled glyph paths is recognized under `.automatic` and
+`.automaticKeepingImageBackedText` and not under `.never`; the same page printed dark on light is
+recognized too. Three negative controls are left alone: the same slide with discs instead of
+writing, the same slide with its sentence inside a placed raster (the photograph case), and a slide
+whose sentence is ordinary visible text. Unit tests pin the letter-less predicate (a folio, a
+section folio and an answer key of surds reflow no words; `5 Goals` does), the two-row threshold,
+the English gate and the one render it allows, and the ink polarity: white writing on a dark ground
+reads three rows only once the page is measured against its own background, the same writing dark
+on light reads three without inversion, and a mostly dark page whose printed text already forms
+rows is never inverted. With `inkIsBackground` forced false the polarity tests and the white-on-dark
+slide fail; with `minimumImageOnlyRows` at 100 both end-to-end recognitions fail; with
+`reflowsNoWords` forced true the predicate and render-count tests fail; with the page's images no
+longer excluded the photograph control fails.
+
+The deck contract requires slide 5's recognized question and its source-page reference, and fails
+on the pre-#176 conversion with exactly those two errors. The
+[image-only evidence](../measurements/image-only-pages/record.md) records the survey of every page
+of all 23 corpus books and the twenty cases compared against the baseline.
 
 ## Slide decks
 

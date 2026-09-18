@@ -1020,6 +1020,25 @@ OCR candidate under
 `.automaticKeepingImageBackedText` and `.never` keep the layer with its `unverifiedTextLayer`
 warning and reference. See [conversion options](conversion-options.md#implausible-inherited-text).
 
+The same ink evidence answers the opposite question (#176). A page whose text layer holds **no
+letter** — nothing, or only a folio — reflows no word of its own, and its writing, if it has any,
+is in its art. `TextLayerPlausibility.judgeImageOnly` renders such a page at 180 DPI and, when at
+least two rows of text-shaped ink stand outside the layer's lines and outside its placed and inline
+images, treats it as a page with no text layer at all: every automatic policy recognizes it, so its
+words reach the reading order instead of being lost with the artwork. A page whose art forms no such
+row — a chart, an answer key of bare surds — is never recognized on this evidence and keeps its
+crops, and neither is a page whose only rows are what a photograph shows (a blackboard, a mountain
+face), which is the picture's content and not the page's. A page with a word of its own is never
+rendered. English books only. When recognition of such a page reads
+nothing, the page is left exactly as it was extracted, with its crops, rather than becoming one
+page-sized image, and says so with `ocrFailed`.
+
+`OCRTextCoverage` reads ink against the page's own background. A slide printed white on dark blue
+puts almost every pixel below any ink threshold, so the darker side is one page-sized component
+and no text row is found at all; when a measurement finds no row and the darker side covers more
+than half the page, that side is the background and the page is measured again inverted (#176).
+A page whose dark ink already forms rows is never inverted, so no reading that works today changes.
+
 `AnnotationEvidence` decides which annotations earn a source-page reference (#151). A form widget is
 read for what it holds: a push button is a viewer control, an unchecked box and a field that is
 empty or whose value the page already prints under it show nothing beyond the printed page, while a

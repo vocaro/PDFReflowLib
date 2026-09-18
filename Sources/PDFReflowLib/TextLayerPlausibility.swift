@@ -24,6 +24,10 @@ import Synchronization
 ///
 /// Only English (`en`, `en-*`) is judged; the lexicon is `NLEmbedding.wordEmbedding(for: .english)`
 /// (57,171 words on macOS 27; no network or download), and without it only the ink test runs.
+///
+/// The same ink evidence answers the opposite question (#176): a page with no text layer worth
+/// reflowing, whose art is writing, is an image-only page and is recognized like a page with no
+/// text layer at all. See `judgeImageOnly`.
 enum TextLayerPlausibility {
     enum Finding: Equatable, Sendable {
         /// `english` of `judged` words are English words.
@@ -56,6 +60,49 @@ enum TextLayerPlausibility {
     /// The ink test's resolution, independent of the client's `rasterDPI` so the test does not
     /// change with output policy; the client's pixel ceiling still applies.
     static let inkTestDPI = 180.0
+
+    /// Rows of drawn writing that make a page with no words of its own an image-only page (#176).
+    /// One row is a label, an axis or a caption inside a figure, which the figure's own crop
+    /// carries; two rows standing outside the layer are writing the page never reflowed. Slide 5
+    /// of the Earthdata deck, the corpus's only such page, shows three.
+    static let minimumImageOnlyRows = 2
+
+    /// Whether a page's text layer would reflow no word of its own: it holds no letter (#176).
+    ///
+    /// The Earthdata deck's slide 5 draws its only sentence as vector outlines, and its text layer
+    /// holds the folio `5` and nothing else; furniture removal takes that away, so the slide
+    /// reaches the reader with no text at all. A page with no text layer is already recognized
+    /// under an automatic policy, and a folio does not make the page any less text-less. Answer
+    /// keys of bare fractions and surds (*Beginning and Intermediate Algebra* pages 309 and 439)
+    /// hold no letter either and do reflow, which the ink test below separates.
+    static func reflowsNoWords(_ lines: [TextLine]) -> Bool {
+        !lines.contains { $0.text.contains(where: \.isLetter) }
+    }
+
+    /// Whether such a page's art carries writing: enough rows of text-shaped ink, measured against
+    /// the page's own background and away from its photographs, lie outside the layer's lines.
+    /// Decorative art and charts of symbols form no such row, so they are never recognized on this
+    /// evidence.
+    ///
+    /// The writing must be what the page itself draws, not what its pictures show. A photograph is
+    /// a picture of the world, and the ink test cannot tell a blackboard of arithmetic or the
+    /// strata of Mount Rushmore (the Arabic civics cards' pages 62 and 88) from typeset rows.
+    /// Its crop already preserves it, and recognizing the page would put the picture's incidental
+    /// lettering into the reading order and take every crop away.
+    static func carriesDrawnText(_ measurement: OCRTextCoverage.Measurement) -> Bool {
+        measurement.uncoveredRows >= minimumImageOnlyRows
+    }
+
+    /// Whether a page that reflows no words is an image-only page whose writing should be
+    /// recognized. `measureInk` renders the page, measures its lines' coverage and is the caller's
+    /// place to set the page's pictures aside. Only books declared English are judged: the rule and
+    /// its thresholds were reviewed on English pages alone (#176).
+    static func judgeImageOnly(lines: [TextLine], language: String,
+                               measureInk: () throws -> OCRTextCoverage.Measurement?) rethrows -> Bool {
+        guard TextEncodingCheck.supports(language: language), reflowsNoWords(lines),
+              let measurement = try measureInk() else { return false }
+        return carriesDrawnText(measurement)
+    }
 
     /// The English lexicon, loaded once; nil when the system provides none. Lookups are serialized
     /// because `NLEmbedding` makes no thread-safety promise and conversions can run concurrently.
@@ -131,17 +178,19 @@ enum TextLayerPlausibility {
         return inkFinding(measurement, englishWords: english)
     }
 
-    /// Text-shaped ink outside `lines` on the rendered page.
-    static func measureInk(page: PDFPage, bounds: CGRect, lines: [TextLine],
+    /// Text-shaped ink outside `lines` on the rendered page, ignoring anything inside `excluding`.
+    static func measureInk(page: PDFPage, bounds: CGRect, lines: [TextLine], excluding: [CGRect] = [],
                            options: ConversionOptions) throws -> OCRTextCoverage.Measurement? {
         var rasterOptions = options
         rasterOptions.rasterDPI = inkTestDPI
         let image = try PageRasterizer.image(page: page, rect: bounds, options: rasterOptions)
-        let normalized = lines.map { line in
-            CGRect(x: (line.rect.minX - bounds.minX) / bounds.width, y: (line.rect.minY - bounds.minY) / bounds.height,
-                   width: line.rect.width / bounds.width, height: line.rect.height / bounds.height)
+        func normalize(_ rect: CGRect) -> CGRect {
+            CGRect(x: (rect.minX - bounds.minX) / bounds.width, y: (rect.minY - bounds.minY) / bounds.height,
+                   width: rect.width / bounds.width, height: rect.height / bounds.height)
         }
-        return OCRTextCoverage.measure(image: image, lines: normalized, pixelsPerPoint: Double(image.width) / bounds.width)
+        return OCRTextCoverage.measure(image: image, lines: lines.map { normalize($0.rect) },
+                                       excluded: excluding.map(normalize),
+                                       pixelsPerPoint: Double(image.width) / bounds.width)
     }
 
     /// What became of a failing layer.

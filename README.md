@@ -192,6 +192,12 @@ that fall back to images skip unused attributed-text decoding. Failures use
   `.automaticKeepingImageBackedText` and `.never` keep it. On the English corpus it fails 27 CDC
   pages and seven Warren pages and no other page
   ([measurements](measurements/text-layer-plausibility/record.md)).
+- A page whose text layer holds no letter at all — nothing, or only a folio — reflows nothing, so
+  if its own drawing (not its photographs) carries at least two rows of text-shaped ink outside
+  that layer, it is recognized like a page with no text layer, and its words reach the reading
+  order. Ink is read against the page's own background, so a slide printed white on dark blue is
+  not mistaken for a blank one. Decorative art, charts and answer keys of bare surds are left with
+  their crops ([measurements](measurements/image-only-pages/record.md)).
 - Rotated pages, unsupported drawing operations and pages without recoverable text use an
   explicitly warned whole-page image fallback. An annotation that changes what a reader sees (a
   bordered link, a stamp, a checked box, a filled or signed field) gets a source reference image
@@ -224,7 +230,7 @@ automatic downloads. `scripts/check-all.sh --fast` remains the offline synthetic
 converts each fixture twice and requires byte-identical EPUBs).
 Python tool tests and the source-region, glyph-structure and image-appearance checks require numpy
 and Pillow. Poppler is needed only to render new region references. The reviewed contracts hold
-<!-- counts:contract-summary -->3311 checks on 556 pages of 22 documents<!-- counts:end -->, including full-resolution stroke checks for equations and a
+<!-- counts:contract-summary -->3312 checks on 556 pages of 22 documents<!-- counts:end -->, including full-resolution stroke checks for equations and a
 table, scale/contrast/color checks for a flag and an FAA figure, and <!-- counts:table-cell-checks -->9<!-- counts:end --> cell checks on tables
 emitted as text. See [regression testing](doc/regression-testing.md) for coverage, limitations and
 adding a case.

@@ -160,7 +160,7 @@ enum PDFReflowLibPipeline {
         /// it never truncates a page.
         func extractPage(_ i: Int, limit: Int, warnings: inout [ConversionWarning])
             throws -> (content: PageContent, attemptsOCR: Bool, damagedEncoding: Bool,
-                       implausibleLayer: TextLayerPlausibility.Finding?) {
+                       implausibleLayer: TextLayerPlausibility.Finding?, drawnText: Bool) {
             // The pool includes every PDFKit accessor, not only string extraction. Page
             // references and annotation arrays also carry autoreleased rendering resources.
             let glyphReport = NativeTextReader.IndexGlyphReport()
@@ -276,7 +276,7 @@ enum PDFReflowLibPipeline {
                 return BlankPageDetector.rendersWhite(reference, bounds: content.bounds)
             }) {
                 content.requiresPageImage = false
-                return (content, false, false, nil)
+                return (content, false, false, nil, false)
             }
             let invisibleText = graphics.hasInvisibleText
             let bounds = content.bounds
@@ -304,9 +304,29 @@ enum PDFReflowLibPipeline {
                 } : nil
             let automaticOCR = options.ocr == .automatic || options.ocr == .automaticIncludingImageBackedText
                 || options.ocr == .automaticKeepingImageBackedText
+            let noText = raw.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+            // A page that reflows no word of its own, but draws writing over its ground, has no
+            // text layer to judge: its sentence is artwork (#176). Such a page is recognized like
+            // a page with no text layer at all, under every automatic policy, so its words reach
+            // the reading order instead of being lost with the art that carries them. A page whose
+            // art forms no row of text-shaped ink — a chart, a diagram of symbols — keeps its crops
+            // untouched, and so does a page whose only rows are inside a photograph, which is a
+            // picture of the world rather than writing the page set. Pages with no text at all are
+            // already recognized above, and image-backed text is #93's question, so neither is
+            // rendered again here.
+            let drawsText = !noText && !imageBackedText && !damagedEncoding && !content.requiresPageImage
+                && automaticOCR
+            let placedImages = graphics.paints.filter(\.image).map(\.rect) + graphics.inlineImages
+            let drawnText = try drawsText
+                && TextLayerPlausibility.judgeImageOnly(lines: content.lines, language: options.language) {
+                    try autoreleasepool {
+                        try TextLayerPlausibility.measureInk(page: try document.page(at: i), bounds: bounds,
+                                                             lines: content.lines, excluding: placedImages,
+                                                             options: options)
+                    }
+                }
             let needsOCR = options.ocr == .always || (automaticOCR &&
-                (raw.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty || damaged > max(2, raw.count / 50)
-                 || damagedEncoding))
+                (noText || damaged > max(2, raw.count / 50) || damagedEncoding || drawnText))
                 || (options.ocr == .automaticIncludingImageBackedText && imageBackedText)
                 || (options.ocr == .automatic && implausibleLayer != nil)
             let attemptsOCR = needsOCR && !content.requiresPageImage
@@ -320,7 +340,7 @@ enum PDFReflowLibPipeline {
                                 ? "supplementary references are disabled, so read the source PDF instead."
                                 : "read the accompanying source-page image instead."))))
             }
-            if attemptsOCR { return (content, true, damagedEncoding, implausibleLayer) }
+            if attemptsOCR { return (content, true, damagedEncoding, implausibleLayer, drawnText) }
             if damagedEncoding {
                 content.preservePageReference = true
                 for index in content.lines.indices { content.lines[index].structure = nil }
@@ -395,7 +415,7 @@ enum PDFReflowLibPipeline {
             if content.lines.isEmpty && !content.requiresPageImage {
                 content.requiresPageImage = true
             }
-            return (content, false, damagedEncoding, implausibleLayer)
+            return (content, false, damagedEncoding, implausibleLayer, drawnText)
         }
 
         let store = PageStore(directory: workspace.appendingPathComponent("pages"))
@@ -437,35 +457,59 @@ enum PDFReflowLibPipeline {
             if extracted.attemptsOCR {
                 await progress(.init(stage: .recognizing, fractionCompleted: 0.6875 * Double(i) / Double(total),
                     page: i + 1, totalPages: total))
+                // A page recognized only because its art is writing (#176) already carries that art
+                // in its own crops, which the reader can still look at. When recognition reads
+                // nothing there is no transcription to put in their place, so the page keeps the
+                // crops it was extracted with instead of becoming one page-sized image.
+                let keepsCropsIfUnread = extracted.drawnText
+                // Recognition read nothing from a page whose art is its only writing: say so, and
+                // leave the extracted page (its crops and its folio) exactly as it was.
+                func unreadDrawnText() {
+                    warnings.append(.init(code: .ocrFailed, page: i + 1,
+                        message: "This page reflows no text of its own and its artwork holds writing, but recognition "
+                            + "of the page failed or found no text; the artwork is preserved as images and its "
+                            + "writing does not reflow."))
+                }
+                var kept = false
                 do {
                     let recognized = try await OCRReader.read(page: try document.page(at: i), options: options)
-                    reportImplausibleLayer(recognized.lines.isEmpty ? .pageImage : .replaced)
-                    content.lines = recognized.lines
-                    content.recognized = true
-                    content.hasSyntheticTextStyle = false
-                    content.preservePageReference = content.preservePageReference || !recognized.lines.isEmpty
-                    content.graphics = recognized.tables
-                    content.tints = []
-                    content.separators = []
-                    content.requiresPageImage = recognized.lines.isEmpty
-                    warnings.append(.init(code: .ocrUsed, page: i + 1,
-                        message: "Text is OCR transcription. " + (options.referenceImages == .never && !recognized.lines.isEmpty
-                            ? "Supplementary references are disabled; compare unrecognized visual content with the source PDF."
-                            : "The original page image preserves unrecognized visual content.")
-                            + OCRReader.coverageNote(retriedInBands: recognized.retriedInBands,
-                                uncoveredTextFraction: recognized.uncoveredTextFraction,
-                                referencesDisabled: options.referenceImages == .never)
-                            // Once per conversion, on the first recognized page (#106).
-                            + (warnings.contains { $0.code == .ocrUsed } ? "" : OCRReader.languageFallbackNote(for: options.language))))
+                    if recognized.lines.isEmpty, keepsCropsIfUnread {
+                        unreadDrawnText()
+                        kept = true
+                    } else {
+                        reportImplausibleLayer(recognized.lines.isEmpty ? .pageImage : .replaced)
+                        content.lines = recognized.lines
+                        content.recognized = true
+                        content.hasSyntheticTextStyle = false
+                        content.preservePageReference = content.preservePageReference || !recognized.lines.isEmpty
+                        content.graphics = recognized.tables
+                        content.tints = []
+                        content.separators = []
+                        content.requiresPageImage = recognized.lines.isEmpty
+                        warnings.append(.init(code: .ocrUsed, page: i + 1,
+                            message: "Text is OCR transcription. " + (options.referenceImages == .never && !recognized.lines.isEmpty
+                                ? "Supplementary references are disabled; compare unrecognized visual content with the source PDF."
+                                : "The original page image preserves unrecognized visual content.")
+                                + OCRReader.coverageNote(retriedInBands: recognized.retriedInBands,
+                                    uncoveredTextFraction: recognized.uncoveredTextFraction,
+                                    referencesDisabled: options.referenceImages == .never)
+                                // Once per conversion, on the first recognized page (#106).
+                                + (warnings.contains { $0.code == .ocrUsed } ? "" : OCRReader.languageFallbackNote(for: options.language))))
+                    }
                 } catch is CancellationError { throw CancellationError() }
                 catch {
                     try Task.checkCancellation()
-                    content.requiresPageImage = true
-                    reportImplausibleLayer(.pageImage)
-                    warnings.append(.init(code: .ocrFailed, page: i + 1,
-                        message: "OCR failed; the source page is preserved as an image."))
+                    if keepsCropsIfUnread {
+                        unreadDrawnText()
+                        kept = true
+                    } else {
+                        content.requiresPageImage = true
+                        reportImplausibleLayer(.pageImage)
+                        warnings.append(.init(code: .ocrFailed, page: i + 1,
+                            message: "OCR failed; the source page is preserved as an image."))
+                    }
                 }
-                if content.lines.isEmpty && !content.requiresPageImage {
+                if !kept, content.lines.isEmpty, !content.requiresPageImage {
                     content.requiresPageImage = true
                 }
             }

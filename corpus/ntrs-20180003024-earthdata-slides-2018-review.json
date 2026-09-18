@@ -26,7 +26,7 @@
     {
       "page": 5,
       "target": "Question slide without a text layer",
-      "acceptance": "Correct now: the italic question has no text layer (Poppler finds only the slide number), so it is carried by its image alone and no text is invented. Since #164 that image is the question's own region, beside the NASA insignia, instead of a full source-page image."
+      "acceptance": "Correct now: the italic question has no text layer (Poppler finds only the slide number), so the slide reflows no word of its own; since #176 it is recognized like a page with no text layer at all and the question reaches the reading text as `How do we support user analysis of very large data volumes?`, beside the source-page image that recognition attaches, which carries the artwork and the NASA insignia. Wrong now: the insignia's NASA wordmark is recognized too and ranks as an h2 heading above the question (#18-style OCR heading noise). Between #164 and #176 the slide instead kept the question's own region and the insignia as two crops and no text at all."
     },
     {
       "page": 6,

@@ -90,6 +90,34 @@ reading order, styles and headings on those pages come from the recognized text 
 book's heading levels are ranked again. See the
 [plausibility measurements](../measurements/text-layer-plausibility/record.md).
 
+### Pages whose writing is drawn
+
+A page can have the opposite problem: no text layer worth reflowing, and its sentence drawn as
+artwork (#176). A page with no text layer at all is already recognized under every automatic
+policy; a folio does not make a page any less text-less, so the same holds for a page whose text
+layer holds **no letter**. Such a page is rendered at 180 DPI and its text-shaped ink measured as
+above, ignoring everything inside its placed and inline images: when at least **two** rows of it
+stand outside the layer's lines, its writing is drawn and the page is recognized. A page whose art
+forms no such row — a chart, an answer key of bare fractions and surds — is never recognized on this
+evidence and keeps its crops, and neither is a page whose only rows are inside a picture. Writing
+the page draws is content its producer typeset; writing a photograph shows (a blackboard of
+arithmetic, the strata of a mountain) belongs to the picture, which the page's own crop preserves.
+English books only, and a page holding a word of its own is never rendered. Recognition attaches its
+source-page reference, which carries the artwork, in place of the page's crops; when it reads
+nothing the page is left exactly as it was extracted, and reports `ocrFailed` with "This page
+reflows no text of its own and its artwork holds writing, but recognition of the page failed or
+found no text; the artwork is preserved as images and its writing does not reflow."
+
+Ink is measured against the page's own background. A slide printed white on dark blue puts almost
+all of its pixels below any ink threshold, so counting components darker than that threshold finds
+one page-sized blob and no writing. When a measurement finds no text row and the darker side of the
+threshold covers more than half the page, that side is the background and the page is measured
+again inverted; a page whose dark ink already forms rows is never inverted. Across the 23 corpus
+books, 60 pages hold a letter-less text layer, 43 of them are rendered, and one — slide 5 of the
+Earthdata deck, whose question is drawn as vector outlines white on dark blue — is recognized by
+this rule. See the
+[image-only page measurements](../measurements/image-only-pages/record.md).
+
 Recognition can succeed while silently leaving text out. One compile of Vision's models dropped
 whole Census paragraphs (#116); both compiles measured on Warren dropped body text on some pages
 with note markers; and the compiles measured on the Blue Book dropped most cells of many

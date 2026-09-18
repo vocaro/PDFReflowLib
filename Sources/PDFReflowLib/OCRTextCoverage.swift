@@ -9,6 +9,9 @@ import CoreGraphics
 /// height side by side, the shape of printed or typed text) and measures how much of that ink
 /// lies outside every recognized line box. Artwork, rules, fills and speckle rarely form such rows,
 /// so sparse or illustrated pages keep a low uncovered share when recognition is complete.
+///
+/// Ink is read against the page's own background: a page whose darker side shows no text row at
+/// all and covers most of the page is printed light on dark, and is measured inverted (#176).
 enum OCRTextCoverage {
     struct Measurement: Equatable, Sendable {
         /// Rows of glyph-sized ink found on the page, outside excluded regions.
@@ -44,9 +47,28 @@ enum OCRTextCoverage {
         return measure(gray, lines: lines, excluded: excluded, pixelsPerPoint: pixelsPerPoint)
     }
 
+    /// A page's ink is what stands out from its own background, which is not always the darker
+    /// side of the threshold: a slide printed white on dark blue puts 98% of its pixels below any
+    /// threshold, so the darker side is one page-sized component and the measurement finds no row
+    /// at all (#176). When that happens — no text row, and the darker side covering more than
+    /// `maximumBackgroundInk` of the page — the darker side is the background and the page is
+    /// measured again inverted. A page that already shows text rows keeps them, so no page whose
+    /// dark ink the measurement can already read changes its reading.
+    static let maximumBackgroundInk = 0.5
+
     static func measure(_ raster: GrayRaster, lines: [CGRect], excluded: [CGRect],
                         pixelsPerPoint: Double, collectBoxes: Bool = false,
                         minimumGlyphs: Int = 5) -> Measurement {
+        let measurement = measureInk(raster, lines: lines, excluded: excluded, pixelsPerPoint: pixelsPerPoint,
+                                     collectBoxes: collectBoxes, minimumGlyphs: minimumGlyphs)
+        guard measurement.textRows == 0, raster.inkIsBackground() else { return measurement }
+        return measureInk(raster.inverted(), lines: lines, excluded: excluded, pixelsPerPoint: pixelsPerPoint,
+                          collectBoxes: collectBoxes, minimumGlyphs: minimumGlyphs)
+    }
+
+    private static func measureInk(_ raster: GrayRaster, lines: [CGRect], excluded: [CGRect],
+                                   pixelsPerPoint: Double, collectBoxes: Bool,
+                                   minimumGlyphs: Int) -> Measurement {
         let width = raster.width, height = raster.height
         guard width > 0, height > 0, pixelsPerPoint > 0 else { return Measurement() }
         let threshold = raster.inkThreshold()
@@ -256,6 +278,21 @@ enum OCRTextCoverage {
                 if between > best { best = between; threshold = value }
             }
             return UInt8(min(170, max(96, threshold)))
+        }
+
+        /// Whether the darker side of the ink threshold covers more of the page than the lighter
+        /// side, which makes it the page's background rather than its ink.
+        func inkIsBackground() -> Bool {
+            guard !pixels.isEmpty else { return false }
+            let threshold = inkThreshold()
+            var dark = 0
+            for value in pixels where value < threshold { dark += 1 }
+            return Double(dark) > Double(pixels.count) * OCRTextCoverage.maximumBackgroundInk
+        }
+
+        /// The same page with its luminance reversed, so writing lighter than its ground becomes ink.
+        func inverted() -> GrayRaster {
+            GrayRaster(width: width, height: height, pixels: pixels.map { 255 - $0 })
         }
 
         struct Component { var minX: Int, minY: Int, maxX: Int, maxY: Int, pixels: Int }

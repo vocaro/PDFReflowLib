@@ -2725,6 +2725,10 @@
             "Egyptian; high-ranking member",
             "Mahmud Ahmed",
             "Director General of Pakistan’s Inter-Services"
+          ],
+          "paragraphs": [
+            "Mohammed Farrah Aidid",
+            "Somali warlord who challenged U.S. presence in Somalia in the early 1990s (deceased)"
           ]
         },
         {
@@ -3792,6 +3796,22 @@
           ],
           "absentText": [
             "CENT- COM"
+          ],
+          "orderedText": [
+            "Roger Cressey",
+            "NSC counterterrorism official",
+            "Ralph Eberhart",
+            "Commander in Chief, NORAD"
+          ],
+          "distinctParagraphs": [
+            {
+              "first": "Roger Cressey",
+              "second": "Ralph Eberhart"
+            },
+            {
+              "first": "Louis Freeh",
+              "second": "Scott Fry"
+            }
           ]
         },
         {
@@ -3867,6 +3887,115 @@
               "first": "Andrew P. Studdert, former Chief Operating Officer, United Airlines",
               "second": "Gerard J. Arpey, Chief Executive Officer, American Airlines"
             }
+          ]
+        },
+        {
+          "page": 454,
+          "paragraphs": [
+            "Khalid Sheikh Mohammed",
+            "Mullah Mohammed Omar"
+          ]
+        },
+        {
+          "page": 456,
+          "orderedText": [
+            "during the 1990s",
+            "Prince Turki bin Faisal",
+            "Saudi intelligence chief prior to 9/11",
+            "Ramzi Yousef",
+            "(a.k.a.Abdul Basit) Pakistani",
+            "Khalid Saeed Ahmad al Zahrani",
+            "Saudi; candidate 9/11 hijacker",
+            "Abu Zubaydah",
+            "see Zein al Abideen Mohamed Hussein"
+          ],
+          "paragraphs": [
+            "Khalid Saeed Ahmad al Zahrani",
+            "Mohammed Haydar Zammar"
+          ],
+          "distinctParagraphs": [
+            {
+              "first": "Prince Turki bin Faisal",
+              "second": "Ramzi Yousef"
+            },
+            {
+              "first": "Emirati; Minister of State",
+              "second": "see Zein al Abideen Mohamed Hussein"
+            }
+          ]
+        },
+        {
+          "page": 457,
+          "headings": [
+            "The Experience of the Attack",
+            "The Attackers, Intelligence, and Counterterrorism Policy"
+          ],
+          "paragraphs": [
+            "Harry Waizer, survivor, Cantor Fitzgerald, LP",
+            "Daniel Byman, Georgetown University",
+            "of its investigation, convening for a total of 19 days and receiving testimony from 160 witnesses. The following",
+            "order of their appearance. All witnesses appearing during the 2004 calendar year testified under oath."
+          ],
+          "distinctParagraphs": [
+            {
+              "first": "The Honorable George Pataki, Governor, State of New York",
+              "second": "The Honorable Michael R. Bloomberg, Mayor, City of New York"
+            },
+            {
+              "first": "David Lim, Police Department, Port Authority of New York and New Jersey",
+              "second": "Lee Ielpi, Fire Department of New York (retired)"
+            },
+            {
+              "first": "Allison Vadhan, Families of Flight 93",
+              "second": "Daniel Byman, Georgetown University"
+            }
+          ]
+        },
+        {
+          "page": 461,
+          "headings": [
+            "Preventive Detention: Use of Immigration Laws and Enemy Combatant Designations to Combat Terrorism",
+            "Protecting Privacy, Preventing Terrorism"
+          ],
+          "paragraphs": [
+            "Jan Ting, Temple University"
+          ]
+        },
+        {
+          "page": 463,
+          "distinctParagraphs": [
+            {
+              "first": "The Honorable Louis J. Freeh, former Director, Federal Bureau of Investigation",
+              "second": "The Honorable Janet Reno, former Attorney General of the United States"
+            },
+            {
+              "first": "The Honorable Robert S. Mueller III, Director, Federal Bureau of Investigation",
+              "second": "Maureen Baginski, Executive Assistant Director for Intelligence"
+            },
+            {
+              "first": "Thomas J. Pickard",
+              "second": "Ambassador J. Cofer Black"
+            }
+          ]
+        },
+        {
+          "page": 464,
+          "distinctParagraphs": [
+            {
+              "first": "Joseph F. Bruno, Director, New York City Office of Emergency Management",
+              "second": "The Honorable Rudolph W. Giuliani, former Mayor, City of New York"
+            },
+            {
+              "first": "Adam B. Drucker, Supervisory Special Agent, Federal Bureau of Investigation",
+              "second": "CIA Officials"
+            },
+            {
+              "first": "Alan Reiss, former Director",
+              "second": "Joseph Morris, former Chief"
+            }
+          ],
+          "paragraphs": [
+            "Alan Reiss, former Director, World Trade Center, Port Authority of New York and New Jersey"
           ]
         },
         {
@@ -9487,6 +9616,12 @@
             "Air quality, no-till spring cereal rotations and, Jul-19",
             "compounds in hulls may benefit health, Feb-22",
             "ARS Scientists: All-Purpose Agronomists, Aug-2"
+          ],
+          "distinctParagraphs": [
+            {
+              "first": "American beautyberry, natural insect repellency, Nov/Dec-4",
+              "second": "Ammonia, new system captures from livestock waste, Nov/Dec-21"
+            }
           ]
         },
         {
@@ -9506,6 +9641,16 @@
           "text": [
             "Zoonotic diseases, leptospirosis, Jan-10",
             "Wheat, statistical approach used in breeding, Apr-13"
+          ],
+          "distinctParagraphs": [
+            {
+              "first": "Insects, monitor to study feeding behavior of, May/Jun-20",
+              "second": "Insect-transmitted diseases, protecting troops from, Nov/Dec-2, 4"
+            },
+            {
+              "first": "Wastewater, new system captures ammonia in, Nov/Dec-21",
+              "second": "Water availability, satellite monitoring of, Feb-2, 4"
+            }
           ]
         }
       ]

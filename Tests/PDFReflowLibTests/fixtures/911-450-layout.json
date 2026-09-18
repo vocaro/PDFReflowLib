@@ -1,0 +1,2040 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        39.660000000000004,
+        562.53440000000012,
+        180.03070000000005,
+        8.6069999999999709
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.5,
+          "text" : "432 APPENDIX"
+        }
+      ],
+      "text" : "432 APPENDIX"
+    },
+    {
+      "rect" : [
+        39.660000000000004,
+        537.85505000000001,
+        59.365950000000019,
+        9.2865000000000464
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "Roger Cressey "
+        }
+      ],
+      "text" : "Roger Cressey "
+    },
+    {
+      "rect" : [
+        39.660000000000004,
+        526.60464999999999,
+        63.219950000000004,
+        9.2865000000000464
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "Ralph Eberhart "
+        }
+      ],
+      "text" : "Ralph Eberhart "
+    },
+    {
+      "rect" : [
+        39.658975000000012,
+        504.10384999999991,
+        60.814274999999995,
+        9.2864999999999895
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "Tommy Franks "
+        }
+      ],
+      "text" : "Tommy Franks "
+    },
+    {
+      "rect" : [
+        39.658975000000012,
+        481.60304999999988,
+        46.403800000000004,
+        9.2864999999999895
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "Louis Freeh "
+        }
+      ],
+      "text" : "Louis Freeh "
+    },
+    {
+      "rect" : [
+        39.660000000000011,
+        470.35264999999987,
+        37.538574999999994,
+        9.2864999999999895
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "Scott Fry "
+        }
+      ],
+      "text" : "Scott Fry "
+    },
+    {
+      "rect" : [
+        39.658975000000012,
+        447.85184999999984,
+        48.427149999999997,
+        9.2864999999999895
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "Jane Garvey "
+        }
+      ],
+      "text" : "Jane Garvey "
+    },
+    {
+      "rect" : [
+        39.658975000000012,
+        425.35104999999982,
+        62.99752500000001,
+        9.2864999999999895
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "Newt Gingrich "
+        }
+      ],
+      "text" : "Newt Gingrich "
+    },
+    {
+      "rect" : [
+        39.658975000000012,
+        414.1006499999998,
+        72.609975000000006,
+        9.2864999999999895
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "Rudolph Giuliani "
+        }
+      ],
+      "text" : "Rudolph Giuliani "
+    },
+    {
+      "rect" : [
+        39.658975000000012,
+        402.85024999999979,
+        52.084350000000001,
+        9.2864999999999895
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "John Gordon "
+        }
+      ],
+      "text" : "John Gordon "
+    },
+    {
+      "rect" : [
+        39.660000000000011,
+        391.59984999999978,
+        45.816475000000011,
+        9.2864999999999895
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "Al Gore, Jr. "
+        }
+      ],
+      "text" : "Al Gore, Jr. "
+    },
+    {
+      "rect" : [
+        39.660000000000011,
+        380.34944999999976,
+        54.994325000000003,
+        9.2864999999999895
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "Scott Gration "
+        }
+      ],
+      "text" : "Scott Gration "
+    },
+    {
+      "rect" : [
+        39.657950000000014,
+        357.84864999999974,
+        64.495050000000006,
+        9.2864999999999895
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "Stephen Hadley "
+        }
+      ],
+      "text" : "Stephen Hadley "
+    },
+    {
+      "rect" : [
+        39.658975000000012,
+        346.59824999999972,
+        60.976224999999985,
+        9.2864999999999895
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "Dennis Hastert "
+        }
+      ],
+      "text" : "Dennis Hastert "
+    },
+    {
+      "rect" : [
+        39.658975000000012,
+        335.34784999999971,
+        61.829025000000016,
+        9.2864999999999895
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "Karl Inderfurth "
+        }
+      ],
+      "text" : "Karl Inderfurth "
+    },
+    {
+      "rect" : [
+        39.657950000000014,
+        312.84704999999968,
+        64.157824999999988,
+        9.2864999999999895
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "Donald Kerrick "
+        }
+      ],
+      "text" : "Donald Kerrick "
+    },
+    {
+      "rect" : [
+        39.658975000000012,
+        301.59664999999967,
+        70.486175000000003,
+        9.2864999999999895
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "Zalmay Khalilzad "
+        }
+      ],
+      "text" : "Zalmay Khalilzad "
+    },
+    {
+      "rect" : [
+        39.657950000000014,
+        267.84544999999963,
+        57.764899999999997,
+        9.2864999999999895
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "Anthony Lake "
+        }
+      ],
+      "text" : "Anthony Lake "
+    },
+    {
+      "rect" : [
+        39.660000000000011,
+        256.59504999999962,
+        41.791299999999993,
+        9.2864999999999895
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "Trent Lott "
+        }
+      ],
+      "text" : "Trent Lott "
+    },
+    {
+      "rect" : [
+        39.660000000000011,
+        245.34464999999963,
+        66.633200000000002,
+        9.2864999999999895
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "Mary McCarthy "
+        }
+      ],
+      "text" : "Mary McCarthy "
+    },
+    {
+      "rect" : [
+        39.660000000000011,
+        234.09424999999962,
+        68.981474999999989,
+        9.2864999999999895
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "John McLaughlin "
+        }
+      ],
+      "text" : "John McLaughlin "
+    },
+    {
+      "rect" : [
+        39.657950000000014,
+        211.59344999999959,
+        62.096549999999993,
+        9.2864999999999895
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "William Milam "
+        }
+      ],
+      "text" : "William Milam "
+    },
+    {
+      "rect" : [
+        39.657950000000014,
+        200.34304999999958,
+        66.875100000000018,
+        9.2864999999999895
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "Norman Mineta "
+        }
+      ],
+      "text" : "Norman Mineta "
+    },
+    {
+      "rect" : [
+        39.658975000000012,
+        189.09264999999957,
+        64.748225000000005,
+        9.2864999999999895
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "Robert Mueller "
+        }
+      ],
+      "text" : "Robert Mueller "
+    },
+    {
+      "rect" : [
+        39.658975000000012,
+        177.84224999999955,
+        60.837849999999989,
+        9.2864999999999895
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "Richard Myers "
+        }
+      ],
+      "text" : "Richard Myers "
+    },
+    {
+      "rect" : [
+        39.657950000000014,
+        155.34144999999953,
+        53.186224999999993,
+        9.2864999999999895
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "John O’Neill "
+        }
+      ],
+      "text" : "John O’Neill "
+    },
+    {
+      "rect" : [
+        39.656925000000015,
+        110.3398499999995,
+        51.702025000000006,
+        9.2865000000000038
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "Paul O’Neill "
+        }
+      ],
+      "text" : "Paul O’Neill "
+    },
+    {
+      "rect" : [
+        39.657950000000014,
+        99.089449999999502,
+        48.181149999999988,
+        9.2865000000000038
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "James Pavitt "
+        }
+      ],
+      "text" : "James Pavitt "
+    },
+    {
+      "rect" : [
+        39.658975000000012,
+        76.588649999999504,
+        66.062275000000014,
+        9.2865000000000038
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "Thomas Pickard "
+        }
+      ],
+      "text" : "Thomas Pickard "
+    },
+    {
+      "rect" : [
+        147.66835000000003,
+        537.85505000000001,
+        172.49212500000016,
+        9.2865000000000464
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "NSC counterterrorism official, 1999–2001"
+        }
+      ],
+      "text" : "NSC counterterrorism official, 1999–2001"
+    },
+    {
+      "rect" : [
+        147.65912500000002,
+        526.60464999999999,
+        194.76947500000006,
+        9.2865000000000464
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "Commander in Chief, NORAD and U.S. Space"
+        }
+      ],
+      "text" : "Commander in Chief, NORAD and U.S. Space"
+    },
+    {
+      "rect" : [
+        159.65982500000001,
+        515.35424999999998,
+        73.275199999999984,
+        9.2865000000000464
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "Command, 2000–"
+        }
+      ],
+      "text" : "Command, 2000–"
+    },
+    {
+      "rect" : [
+        147.65912500000002,
+        504.10384999999991,
+        190.13647500000008,
+        9.2864999999999895
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "Commander, U.S. Central Command (CENT-"
+        }
+      ],
+      "text" : "Commander, U.S. Central Command (CENT-"
+    },
+    {
+      "rect" : [
+        159.65880000000001,
+        492.8534499999999,
+        78.206474999999983,
+        9.2864999999999895
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "COM), 2001–2003"
+        }
+      ],
+      "text" : "COM), 2001–2003"
+    },
+    {
+      "rect" : [
+        147.66219999999998,
+        481.60304999999988,
+        203.99857500000024,
+        9.2864999999999895
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "Director,Federal Bureau of Investigation,1993–2001"
+        }
+      ],
+      "text" : "Director,Federal Bureau of Investigation,1993–2001"
+    },
+    {
+      "rect" : [
+        147.66424999999998,
+        470.35264999999987,
+        184.74087500000002,
+        9.2864999999999895
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "Director of Operations for the Joint Chiefs of"
+        }
+      ],
+      "text" : "Director of Operations for the Joint Chiefs of"
+    },
+    {
+      "rect" : [
+        159.65880000000001,
+        459.10224999999986,
+        67.74532499999998,
+        9.2864999999999895
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "Staff, 1998–2000"
+        }
+      ],
+      "text" : "Staff, 1998–2000"
+    },
+    {
+      "rect" : [
+        147.65912500000002,
+        447.85184999999984,
+        191.31830000000002,
+        9.2864999999999895
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "Administrator, Federal Aviation Administration,"
+        }
+      ],
+      "text" : "Administrator, Federal Aviation Administration,"
+    },
+    {
+      "rect" : [
+        159.65880000000001,
+        436.60144999999983,
+        45.321400000000011,
+        9.2864999999999895
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "1997–2002"
+        }
+      ],
+      "text" : "1997–2002"
+    },
+    {
+      "rect" : [
+        147.65707500000002,
+        425.35104999999982,
+        136.77805000000012,
+        9.2864999999999895
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "Speaker of the House, 1995–1999"
+        }
+      ],
+      "text" : "Speaker of the House, 1995–1999"
+    },
+    {
+      "rect" : [
+        147.65810000000005,
+        414.1006499999998,
+        152.68810000000013,
+        9.2864999999999895
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "Mayor, City of New York, 1994–2001"
+        }
+      ],
+      "text" : "Mayor, City of New York, 1994–2001"
+    },
+    {
+      "rect" : [
+        147.65502500000002,
+        402.85024999999979,
+        203.94835000000023,
+        9.2864999999999895
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "Deputy Director of Central Intelligence, 1997–2000"
+        }
+      ],
+      "text" : "Deputy Director of Central Intelligence, 1997–2000"
+    },
+    {
+      "rect" : [
+        147.66835000000003,
+        391.59984999999978,
+        190.37017500000019,
+        9.2864999999999895
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "Vice President of the United States,1993–2001"
+        }
+      ],
+      "text" : "Vice President of the United States,1993–2001"
+    },
+    {
+      "rect" : [
+        147.66117500000001,
+        380.34944999999976,
+        178.22802500000012,
+        9.2864999999999895
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "Fry’s Chief Information Operations Officer,"
+        }
+      ],
+      "text" : "Fry’s Chief Information Operations Officer,"
+    },
+    {
+      "rect" : [
+        159.65777500000002,
+        369.09904999999975,
+        45.321399999999983,
+        9.2864999999999895
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "2000–2001"
+        }
+      ],
+      "text" : "2000–2001"
+    },
+    {
+      "rect" : [
+        147.64990000000003,
+        357.84864999999974,
+        167.86220000000012,
+        9.2864999999999895
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "Deputy National Security Advisor, 2001–"
+        }
+      ],
+      "text" : "Deputy National Security Advisor, 2001–"
+    },
+    {
+      "rect" : [
+        147.66322500000001,
+        346.59824999999972,
+        116.6798500000001,
+        9.2864999999999895
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "Speaker of the House, 1999–"
+        }
+      ],
+      "text" : "Speaker of the House, 1999–"
+    },
+    {
+      "rect" : [
+        147.66015000000004,
+        335.34784999999971,
+        170.37037500000002,
+        9.2864999999999895
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "Assistant Secretary of State for South Asia,"
+        }
+      ],
+      "text" : "Assistant Secretary of State for South Asia,"
+    },
+    {
+      "rect" : [
+        159.65777500000002,
+        324.0974499999997,
+        45.321399999999983,
+        9.2864999999999895
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "1997–2001"
+        }
+      ],
+      "text" : "1997–2001"
+    },
+    {
+      "rect" : [
+        147.66014999999999,
+        312.84704999999968,
+        187.9573250000002,
+        9.2864999999999895
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "Deputy National Security Advisor, 2000–2001"
+        }
+      ],
+      "text" : "Deputy National Security Advisor, 2000–2001"
+    },
+    {
+      "rect" : [
+        147.65707500000002,
+        301.59664999999967,
+        187.98397500000004,
+        9.2864999999999895
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "NSC Senior Director for Near East and South"
+        }
+      ],
+      "text" : "NSC Senior Director for Near East and South"
+    },
+    {
+      "rect" : [
+        159.65777500000002,
+        290.34624999999966,
+        156.59027500000002,
+        9.2864999999999895
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "Asia and Special Envoy to Afghanistan,"
+        }
+      ],
+      "text" : "Asia and Special Envoy to Afghanistan,"
+    },
+    {
+      "rect" : [
+        159.65777500000002,
+        279.09584999999964,
+        45.321399999999983,
+        9.2864999999999895
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "2001–2003"
+        }
+      ],
+      "text" : "2001–2003"
+    },
+    {
+      "rect" : [
+        147.65605000000002,
+        267.84544999999963,
+        154.57102500000022,
+        9.2864999999999895
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "National Security Advisor, 1993–1997"
+        }
+      ],
+      "text" : "National Security Advisor, 1993–1997"
+    },
+    {
+      "rect" : [
+        147.66732500000001,
+        256.59504999999962,
+        144.43275000000006,
+        9.2864999999999895
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "Senate Majority Leader, 1996–2001"
+        }
+      ],
+      "text" : "Senate Majority Leader, 1996–2001"
+    },
+    {
+      "rect" : [
+        147.66015000000002,
+        245.34464999999963,
+        195.76782500000016,
+        9.2864999999999895
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "NSC senior director for intelligence, 1998–2001"
+        }
+      ],
+      "text" : "NSC senior director for intelligence, 1998–2001"
+    },
+    {
+      "rect" : [
+        147.65707500000002,
+        234.09424999999962,
+        158.33687500000013,
+        9.2864999999999895
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "Deputy Director of Central Intelligence,"
+        }
+      ],
+      "text" : "Deputy Director of Central Intelligence,"
+    },
+    {
+      "rect" : [
+        159.65777500000002,
+        222.84384999999961,
+        44.091400000000021,
+        9.2864999999999895
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "2000–2004"
+        }
+      ],
+      "text" : "2000–2004"
+    },
+    {
+      "rect" : [
+        147.65912500000002,
+        211.59344999999959,
+        163.24457500000011,
+        9.2864999999999895
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "U.S.Ambassador to Pakistan, 1998–2001"
+        }
+      ],
+      "text" : "U.S.Ambassador to Pakistan, 1998–2001"
+    },
+    {
+      "rect" : [
+        147.65502500000002,
+        200.34304999999958,
+        140.25280000000009,
+        9.2864999999999895
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "Secretary of Transportation, 2001–"
+        }
+      ],
+      "text" : "Secretary of Transportation, 2001–"
+    },
+    {
+      "rect" : [
+        147.65707500000002,
+        189.09264999999957,
+        194.22930000000014,
+        9.2864999999999895
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "Director, Federal Bureau of Investigation, 2001–"
+        }
+      ],
+      "text" : "Director, Federal Bureau of Investigation, 2001–"
+    },
+    {
+      "rect" : [
+        147.66630000000004,
+        177.84224999999955,
+        196.73337500000008,
+        9.2864999999999895
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "Chairman of the Joint Chiefs, September 2001–;"
+        }
+      ],
+      "text" : "Chairman of the Joint Chiefs, September 2001–;"
+    },
+    {
+      "rect" : [
+        159.65777500000002,
+        166.59184999999954,
+        161.02544999999998,
+        9.2864999999999895
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "Joint Chiefs Vice Chairman, 2000–2001"
+        }
+      ],
+      "text" : "Joint Chiefs Vice Chairman, 2000–2001"
+    },
+    {
+      "rect" : [
+        147.65605000000002,
+        155.34144999999953,
+        194.97037500000002,
+        9.2864999999999895
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "FBI Special Agent in Charge for National Secu-"
+        }
+      ],
+      "text" : "FBI Special Agent in Charge for National Secu-"
+    },
+    {
+      "rect" : [
+        159.65777500000002,
+        144.09104999999951,
+        186.460825,
+        9.2864999999999895
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "rity, NewYork Field Office, 1997–2001; Chief"
+        }
+      ],
+      "text" : "rity, NewYork Field Office, 1997–2001; Chief"
+    },
+    {
+      "rect" : [
+        159.65777500000002,
+        132.8406499999995,
+        180.054575,
+        9.2864999999999895
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "of Security of the World Trade Center, killed"
+        }
+      ],
+      "text" : "of Security of the World Trade Center, killed"
+    },
+    {
+      "rect" : [
+        159.65777500000002,
+        121.5902499999995,
+        33.303275000000014,
+        9.2865000000000038
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "on 9/11"
+        }
+      ],
+      "text" : "on 9/11"
+    },
+    {
+      "rect" : [
+        147.65707500000002,
+        110.3398499999995,
+        148.5727250000001,
+        9.2865000000000038
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "Secretary of the Treasury, 2001–2002"
+        }
+      ],
+      "text" : "Secretary of the Treasury, 2001–2002"
+    },
+    {
+      "rect" : [
+        147.66322500000001,
+        99.089449999999502,
+        151.40890000000013,
+        9.2865000000000038
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "Deputy Director of Operations, CIA,"
+        }
+      ],
+      "text" : "Deputy Director of Operations, CIA,"
+    },
+    {
+      "rect" : [
+        159.65880000000001,
+        87.839049999999503,
+        45.321400000000011,
+        9.2865000000000038
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "1999–2004"
+        }
+      ],
+      "text" : "1999–2004"
+    },
+    {
+      "rect" : [
+        147.66220000000004,
+        76.588649999999504,
+        197.17105000000009,
+        9.2865000000000038
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "Acting Director, Federal Bureau of Investigation,"
+        }
+      ],
+      "text" : "Acting Director, Federal Bureau of Investigation,"
+    },
+    {
+      "rect" : [
+        159.65880000000001,
+        65.338249999999505,
+        136.28604999999996,
+        9.2865000000000038
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "June 25, 2001–September 4, 2001"
+        }
+      ],
+      "text" : "June 25, 2001–September 4, 2001"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    396,
+    612
+  ],
+  "caseID" : "gpo-911-2004",
+  "graphics" : [
+
+  ],
+  "lines" : [
+    {
+      "fontSize" : 9.5,
+      "monospaced" : false,
+      "rect" : [
+        39.660000000000004,
+        562.53440000000012,
+        180.03070000000005,
+        8.6069999999999709
+      ],
+      "text" : "432 APPENDIX"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        39.660000000000004,
+        537.85505000000001,
+        59.365950000000019,
+        9.2865000000000464
+      ],
+      "text" : "Roger Cressey"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        39.660000000000004,
+        526.60464999999999,
+        63.219950000000004,
+        9.2865000000000464
+      ],
+      "text" : "Ralph Eberhart"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        39.658975000000012,
+        504.10384999999991,
+        60.814274999999995,
+        9.2864999999999895
+      ],
+      "text" : "Tommy Franks"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        39.658975000000012,
+        481.60304999999988,
+        46.403800000000004,
+        9.2864999999999895
+      ],
+      "text" : "Louis Freeh"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        39.660000000000011,
+        470.35264999999987,
+        37.538574999999994,
+        9.2864999999999895
+      ],
+      "text" : "Scott Fry"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        39.658975000000012,
+        447.85184999999984,
+        48.427149999999997,
+        9.2864999999999895
+      ],
+      "text" : "Jane Garvey"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        39.658975000000012,
+        425.35104999999982,
+        62.99752500000001,
+        9.2864999999999895
+      ],
+      "text" : "Newt Gingrich"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        39.658975000000012,
+        414.1006499999998,
+        72.609975000000006,
+        9.2864999999999895
+      ],
+      "text" : "Rudolph Giuliani"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        39.658975000000012,
+        402.85024999999979,
+        52.084350000000001,
+        9.2864999999999895
+      ],
+      "text" : "John Gordon"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        39.660000000000011,
+        391.59984999999978,
+        45.816475000000011,
+        9.2864999999999895
+      ],
+      "text" : "Al Gore, Jr."
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        39.660000000000011,
+        380.34944999999976,
+        54.994325000000003,
+        9.2864999999999895
+      ],
+      "text" : "Scott Gration"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        39.657950000000014,
+        357.84864999999974,
+        64.495050000000006,
+        9.2864999999999895
+      ],
+      "text" : "Stephen Hadley"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        39.658975000000012,
+        346.59824999999972,
+        60.976224999999985,
+        9.2864999999999895
+      ],
+      "text" : "Dennis Hastert"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        39.658975000000012,
+        335.34784999999971,
+        61.829025000000016,
+        9.2864999999999895
+      ],
+      "text" : "Karl Inderfurth"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        39.657950000000014,
+        312.84704999999968,
+        64.157824999999988,
+        9.2864999999999895
+      ],
+      "text" : "Donald Kerrick"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        39.658975000000012,
+        301.59664999999967,
+        70.486175000000003,
+        9.2864999999999895
+      ],
+      "text" : "Zalmay Khalilzad"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        39.657950000000014,
+        267.84544999999963,
+        57.764899999999997,
+        9.2864999999999895
+      ],
+      "text" : "Anthony Lake"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        39.660000000000011,
+        256.59504999999962,
+        41.791299999999993,
+        9.2864999999999895
+      ],
+      "text" : "Trent Lott"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        39.660000000000011,
+        245.34464999999963,
+        66.633200000000002,
+        9.2864999999999895
+      ],
+      "text" : "Mary McCarthy"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        39.660000000000011,
+        234.09424999999962,
+        68.981474999999989,
+        9.2864999999999895
+      ],
+      "text" : "John McLaughlin"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        39.657950000000014,
+        211.59344999999959,
+        62.096549999999993,
+        9.2864999999999895
+      ],
+      "text" : "William Milam"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        39.657950000000014,
+        200.34304999999958,
+        66.875100000000018,
+        9.2864999999999895
+      ],
+      "text" : "Norman Mineta"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        39.658975000000012,
+        189.09264999999957,
+        64.748225000000005,
+        9.2864999999999895
+      ],
+      "text" : "Robert Mueller"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        39.658975000000012,
+        177.84224999999955,
+        60.837849999999989,
+        9.2864999999999895
+      ],
+      "text" : "Richard Myers"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        39.657950000000014,
+        155.34144999999953,
+        53.186224999999993,
+        9.2864999999999895
+      ],
+      "text" : "John O’Neill"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        39.656925000000015,
+        110.3398499999995,
+        51.702025000000006,
+        9.2865000000000038
+      ],
+      "text" : "Paul O’Neill"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        39.657950000000014,
+        99.089449999999502,
+        48.181149999999988,
+        9.2865000000000038
+      ],
+      "text" : "James Pavitt"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        39.658975000000012,
+        76.588649999999504,
+        66.062275000000014,
+        9.2865000000000038
+      ],
+      "text" : "Thomas Pickard"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        147.66835000000003,
+        537.85505000000001,
+        172.49212500000016,
+        9.2865000000000464
+      ],
+      "text" : "NSC counterterrorism official, 1999–2001"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        147.65912500000002,
+        526.60464999999999,
+        194.76947500000006,
+        9.2865000000000464
+      ],
+      "text" : "Commander in Chief, NORAD and U.S. Space"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        159.65982500000001,
+        515.35424999999998,
+        73.275199999999984,
+        9.2865000000000464
+      ],
+      "text" : "Command, 2000–"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        147.65912500000002,
+        504.10384999999991,
+        190.13647500000008,
+        9.2864999999999895
+      ],
+      "text" : "Commander, U.S. Central Command (CENT-"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        159.65880000000001,
+        492.8534499999999,
+        78.206474999999983,
+        9.2864999999999895
+      ],
+      "text" : "COM), 2001–2003"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        147.66219999999998,
+        481.60304999999988,
+        203.99857500000024,
+        9.2864999999999895
+      ],
+      "text" : "Director,Federal Bureau of Investigation,1993–2001"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        147.66424999999998,
+        470.35264999999987,
+        184.74087500000002,
+        9.2864999999999895
+      ],
+      "text" : "Director of Operations for the Joint Chiefs of"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        159.65880000000001,
+        459.10224999999986,
+        67.74532499999998,
+        9.2864999999999895
+      ],
+      "text" : "Staff, 1998–2000"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        147.65912500000002,
+        447.85184999999984,
+        191.31830000000002,
+        9.2864999999999895
+      ],
+      "text" : "Administrator, Federal Aviation Administration,"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        159.65880000000001,
+        436.60144999999983,
+        45.321400000000011,
+        9.2864999999999895
+      ],
+      "text" : "1997–2002"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        147.65707500000002,
+        425.35104999999982,
+        136.77805000000012,
+        9.2864999999999895
+      ],
+      "text" : "Speaker of the House, 1995–1999"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        147.65810000000005,
+        414.1006499999998,
+        152.68810000000013,
+        9.2864999999999895
+      ],
+      "text" : "Mayor, City of New York, 1994–2001"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        147.65502500000002,
+        402.85024999999979,
+        203.94835000000023,
+        9.2864999999999895
+      ],
+      "text" : "Deputy Director of Central Intelligence, 1997–2000"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        147.66835000000003,
+        391.59984999999978,
+        190.37017500000019,
+        9.2864999999999895
+      ],
+      "text" : "Vice President of the United States,1993–2001"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        147.66117500000001,
+        380.34944999999976,
+        178.22802500000012,
+        9.2864999999999895
+      ],
+      "text" : "Fry’s Chief Information Operations Officer,"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        159.65777500000002,
+        369.09904999999975,
+        45.321399999999983,
+        9.2864999999999895
+      ],
+      "text" : "2000–2001"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        147.64990000000003,
+        357.84864999999974,
+        167.86220000000012,
+        9.2864999999999895
+      ],
+      "text" : "Deputy National Security Advisor, 2001–"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        147.66322500000001,
+        346.59824999999972,
+        116.6798500000001,
+        9.2864999999999895
+      ],
+      "text" : "Speaker of the House, 1999–"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        147.66015000000004,
+        335.34784999999971,
+        170.37037500000002,
+        9.2864999999999895
+      ],
+      "text" : "Assistant Secretary of State for South Asia,"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        159.65777500000002,
+        324.0974499999997,
+        45.321399999999983,
+        9.2864999999999895
+      ],
+      "text" : "1997–2001"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        147.66014999999999,
+        312.84704999999968,
+        187.9573250000002,
+        9.2864999999999895
+      ],
+      "text" : "Deputy National Security Advisor, 2000–2001"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        147.65707500000002,
+        301.59664999999967,
+        187.98397500000004,
+        9.2864999999999895
+      ],
+      "text" : "NSC Senior Director for Near East and South"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        159.65777500000002,
+        290.34624999999966,
+        156.59027500000002,
+        9.2864999999999895
+      ],
+      "text" : "Asia and Special Envoy to Afghanistan,"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        159.65777500000002,
+        279.09584999999964,
+        45.321399999999983,
+        9.2864999999999895
+      ],
+      "text" : "2001–2003"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        147.65605000000002,
+        267.84544999999963,
+        154.57102500000022,
+        9.2864999999999895
+      ],
+      "text" : "National Security Advisor, 1993–1997"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        147.66732500000001,
+        256.59504999999962,
+        144.43275000000006,
+        9.2864999999999895
+      ],
+      "text" : "Senate Majority Leader, 1996–2001"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        147.66015000000002,
+        245.34464999999963,
+        195.76782500000016,
+        9.2864999999999895
+      ],
+      "text" : "NSC senior director for intelligence, 1998–2001"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        147.65707500000002,
+        234.09424999999962,
+        158.33687500000013,
+        9.2864999999999895
+      ],
+      "text" : "Deputy Director of Central Intelligence,"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        159.65777500000002,
+        222.84384999999961,
+        44.091400000000021,
+        9.2864999999999895
+      ],
+      "text" : "2000–2004"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        147.65912500000002,
+        211.59344999999959,
+        163.24457500000011,
+        9.2864999999999895
+      ],
+      "text" : "U.S.Ambassador to Pakistan, 1998–2001"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        147.65502500000002,
+        200.34304999999958,
+        140.25280000000009,
+        9.2864999999999895
+      ],
+      "text" : "Secretary of Transportation, 2001–"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        147.65707500000002,
+        189.09264999999957,
+        194.22930000000014,
+        9.2864999999999895
+      ],
+      "text" : "Director, Federal Bureau of Investigation, 2001–"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        147.66630000000004,
+        177.84224999999955,
+        196.73337500000008,
+        9.2864999999999895
+      ],
+      "text" : "Chairman of the Joint Chiefs, September 2001–;"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        159.65777500000002,
+        166.59184999999954,
+        161.02544999999998,
+        9.2864999999999895
+      ],
+      "text" : "Joint Chiefs Vice Chairman, 2000–2001"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        147.65605000000002,
+        155.34144999999953,
+        194.97037500000002,
+        9.2864999999999895
+      ],
+      "text" : "FBI Special Agent in Charge for National Secu-"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        159.65777500000002,
+        144.09104999999951,
+        186.460825,
+        9.2864999999999895
+      ],
+      "text" : "rity, New York Field Office, 1997–2001; Chief"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        159.65777500000002,
+        132.8406499999995,
+        180.054575,
+        9.2864999999999895
+      ],
+      "text" : "of Security of the World Trade Center, killed"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        159.65777500000002,
+        121.5902499999995,
+        33.303275000000014,
+        9.2865000000000038
+      ],
+      "text" : "on 9/11"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        147.65707500000002,
+        110.3398499999995,
+        148.5727250000001,
+        9.2865000000000038
+      ],
+      "text" : "Secretary of the Treasury, 2001–2002"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        147.66322500000001,
+        99.089449999999502,
+        151.40890000000013,
+        9.2865000000000038
+      ],
+      "text" : "Deputy Director of Operations, CIA,"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        159.65880000000001,
+        87.839049999999503,
+        45.321400000000011,
+        9.2865000000000038
+      ],
+      "text" : "1999–2004"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        147.66220000000004,
+        76.588649999999504,
+        197.17105000000009,
+        9.2865000000000038
+      ],
+      "text" : "Acting Director, Federal Bureau of Investigation,"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        159.65880000000001,
+        65.338249999999505,
+        136.28604999999996,
+        9.2865000000000038
+      ],
+      "text" : "June 25, 2001–September 4, 2001"
+    }
+  ],
+  "page" : 450,
+  "paints" : [
+
+  ],
+  "rightsBasis" : "Official U.S. Government commission report, retained as external development material. Source PDF is not bundled or relicensed under MIT.",
+  "sourceSHA256" : "657d41475eb3a9a5e3e87a6c7c51ac1dfbe1af7566d1abff7bf7286e7e1c0e1b",
+  "sourceTitle" : "The 9/11 Commission Report",
+  "sourceURL" : "https://www.govinfo.gov/content/pkg/GPO-911REPORT/pdf/GPO-911REPORT.pdf"
+}

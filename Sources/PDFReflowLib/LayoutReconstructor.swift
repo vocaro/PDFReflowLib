@@ -1254,7 +1254,7 @@ enum LayoutReconstructor {
                               recordingSubheadings: Bool = false) -> [TextLine] {
         guard !page.hasSyntheticTextStyle, !page.recognized else { return [] }
         var labels: [TextLine] = []
-        let entryEdges = hangingEntryEdges(lines, body: body)
+        let entryEdges = hangingEntryEdges(lines, body: body, titles: styles)
         // The leading the body wraps at, for a title set under the body's own size.
         let bodyGap = ordinaryLineGap(body, in: lines, body: body)
         for line in lines.sorted(by: { $0.rect.maxY > $1.rect.maxY }) {
@@ -1332,9 +1332,15 @@ enum LayoutReconstructor {
                         : !LabelStyle(below, body: body).italic
                             && (paragraph && !isList(below.text) || opensListBeneath(below, title: line, body: body))
                 }
+                // A title over hanging entries can wrap from a first line wider than any entry:
+                // 9/11 page 461's `Preventive Detention: Use of Immigration Laws and Enemy Combatant
+                // Des-` runs the page's full measure over `ignations to Combat Terrorism` (#161). Only
+                // the two-line path below admits it, in the book's style over its entries.
+                let wideTitle = !smaller && style.bold && styles.contains(style)
+                    && hangingEntryEdge(of: line, in: entryEdges) != nil
                 guard style.bold || !smaller && style.italic && !isCaption(line.text),
                       recordingSubheadings || styles.contains(style),
-                      prose > 0, line.rect.width <= prose else { continue }
+                      prose > 0, line.rect.width <= prose || wideTitle else { continue }
                 if line.rect.width <= prose * 0.9, !style.italic || isTitleCase(line.text), opens(beneath: line) {
                     labels.append(line)
                     continue
@@ -1710,17 +1716,31 @@ enum LayoutReconstructor {
     /// leader entries (an index's sub-entries, FAA page 521) and a line without letters over an
     /// indented one (Loper Bright's footnote rule over `*Together with No. 22–1219, …`) are no
     /// evidence either.
+    ///
+    /// A page can list entries in the book's hanging style without any entry long enough to wrap
+    /// (9/11 page 457, #161). Its edge qualifies by the titles over it instead (`titled`): at least
+    /// two lines wholly bold in a style of `titles` (the book's recurring label styles) stand on the
+    /// edge, each over an entry on it in its own size at ordinary leading; no entry of that size
+    /// wraps flush onto the edge beneath it (a line opening in lowercase, or after a line-end
+    /// hyphen or slash); none opens on an indent under a sentence's end; and the size has no
+    /// justified measure on the page, since lines filling a measure are prose however they are
+    /// headed.
     struct HangingEdge {
         var x: CGFloat
         var size: CGFloat
         /// The wrapped-entry pairs seen on the edge.
         var pairs: Int
+        /// Qualified by the titles over its entries rather than by a wrapped entry.
+        var titled = false
+        /// No entry of the edge's size continues flush on the edge: its only wraps hang.
+        var hangsOnly = false
     }
 
     /// The page's hanging-entry edges (see `HangingEdge`). With `body`, only lines in the body's size
     /// are evidence: a heading-size title hung under its section number is `continuesHeading`'s
     /// (Replay Clocks page 6, #83).
-    static func hangingEntryEdges(_ lines: [TextLine], body: CGFloat? = nil) -> [HangingEdge] {
+    static func hangingEntryEdges(_ lines: [TextLine], body: CGFloat? = nil,
+                                  titles: Set<LabelStyle> = []) -> [HangingEdge] {
         var pairs: [(x: CGFloat, size: CGFloat, wraps: Bool)] = []
         for upper in lines where !upper.monospaced && !isList(upper.text) && upper.fontSize > 0
             && upper.text.contains(where: \.isLetter) && !LabelStyle(upper, body: upper.fontSize).bold
@@ -1750,7 +1770,58 @@ enum LayoutReconstructor {
             edges.append(HangingEdge(x: pair.x, size: pair.size,
                                      pairs: pairs.filter { $0.wraps && sameEdge($0.x, $0.size) }.count))
         }
-        return edges
+        // The line set directly beneath `upper` at ordinary leading in its size, if any.
+        func beneath(_ upper: TextLine) -> TextLine? {
+            let size = upper.fontSize
+            guard let lower = lines.filter({ other in
+                other != upper && !sameRow(other.rect, upper.rect) && abs(other.fontSize - size) <= size * 0.1
+                    && other.rect.maxY <= upper.rect.minY + size * 0.4
+                    && other.rect.minX < upper.rect.maxX && other.rect.maxX > upper.rect.minX
+            }).max(by: { $0.rect.maxY < $1.rect.maxY }) else { return nil }
+            let gap = upper.rect.minY - lower.rect.maxY
+            return gap >= -size * 0.4 && gap < size * 0.9 ? lower : nil
+        }
+        func entryLine(_ line: TextLine) -> Bool {
+            !line.monospaced && !isList(line.text) && line.fontSize > 0 && !LabelStyle(line, body: line.fontSize).bold
+        }
+        func on(_ line: TextLine, _ x: CGFloat, _ size: CGFloat) -> Bool {
+            abs(line.rect.minX - x) <= size * 0.5 && abs(line.fontSize - size) <= size * 0.1
+        }
+        // An entry of the edge's size that runs on flush beneath another on the edge.
+        func runsOnFlush(_ x: CGFloat, _ size: CGFloat) -> Bool {
+            lines.contains { upper in
+                guard entryLine(upper), on(upper, x, size), let lower = beneath(upper), entryLine(lower),
+                      on(lower, x, size) else { return false }
+                return lower.text.first(where: \.isLetter)?.isLowercase == true
+                    || upper.text.last.map({ "-\u{00AD}/".contains($0) }) == true
+            }
+        }
+        // Titled edges (#161): no wrapped entry, but titles in the book's label style over entries.
+        if !titles.isEmpty {
+            let measures = justifiedMeasures(lines)
+            var heads: [(x: CGFloat, size: CGFloat)] = []
+            for title in lines where !title.monospaced && title.fontSize > 0
+                && titles.contains(LabelStyle(title, body: body ?? title.fontSize)) && LabelStyle(title, body: title.fontSize).bold
+                && body.map({ abs(title.fontSize - $0) <= $0 * 0.1 }) != false {
+                guard let entry = beneath(title), entryLine(entry), on(entry, title.rect.minX, title.fontSize) else { continue }
+                heads.append((title.rect.minX, title.fontSize))
+            }
+            for head in heads {
+                func sameEdge(_ x: CGFloat, _ size: CGFloat) -> Bool {
+                    abs(x - head.x) <= head.size * 0.5 && abs(size - head.size) <= head.size * 0.1
+                }
+                guard heads.filter({ sameEdge($0.x, $0.size) }).count >= 2,
+                      !edges.contains(where: { sameEdge($0.x, $0.size) }),
+                      !pairs.contains(where: { !$0.wraps && sameEdge($0.x, $0.size) }),
+                      measures[Int(head.size.rounded())] == nil, !runsOnFlush(head.x, head.size) else { continue }
+                edges.append(HangingEdge(x: head.x, size: head.size, pairs: 0, titled: true))
+            }
+        }
+        return edges.map { edge in
+            var edge = edge
+            edge.hangsOnly = !runsOnFlush(edge.x, edge.size)
+            return edge
+        }
     }
 
     /// The hanging-entry edge (`hangingEntryEdges`) a line stands on, if any.
@@ -2350,6 +2421,7 @@ enum LayoutReconstructor {
     static func ordered(_ elements: [Element], bodySize: CGFloat, depth: Int = 0) -> [Element] {
         guard elements.count > 1, depth < 32 else { return elements }
         if let rotated = rotatedLineOrder(elements) { return rotated }
+        if let entries = namedEntries(elements) { return entries }
         func gap(horizontal: Bool, measuring measured: [Element], in part: [Element]? = nil) -> CGFloat? {
             whitespaceCut(horizontal: horizontal, measuring: measured, in: part ?? elements, bodySize: bodySize)
         }
@@ -2717,6 +2789,92 @@ enum LayoutReconstructor {
             let thickness = min(a.rect.width, a.rect.height, b.rect.width, b.rect.height)
             return abs(across(a) - across(b)) > thickness * 0.4 ? across(a) < across(b) : along(a) < along(b)
         }
+    }
+
+    /// A list of names, each set beside its description (#161). The 9/11 report's Table of Names
+    /// (pages 449–456) sets each name flush left and its description on the same baseline in a
+    /// second column 108 points in, and wraps both into a one-em hanging indent (`Khalid Saeed Ahmad` /
+    /// `al Zahrani` beside `Saudi; candidate 9/11 hijacker`). The whitespace between the columns cut
+    /// the page in two where a long name left 17–35 points of it (pages 450 and 456 read every name,
+    /// then every description), and elsewhere the row sort took a wrapped name's second line between
+    /// its description's lines (`Mohammed Farrah`, `Somali warlord…`, `Aidid`, `Somalia in…`).
+    ///
+    /// The layout is read from the region's lines in its most common size: every one stands on the
+    /// names' edge (an entry's first line), in the hanging indent a name wraps into, or on the
+    /// descriptions' edge or in its indent. At least four names, and two thirds of them, share their
+    /// baseline with a line on the descriptions' edge (a line PDFKit read across both columns stands
+    /// for its own entry), and the widest name is at most three fifths of the widest description, so
+    /// two prose columns (their lines about equally wide) are never read as one. Lines in any other
+    /// size (a centred section title, a folio) keep their place between the entries. Each entry
+    /// reads its name's lines, then its description's, and a description continued from the
+    /// previous page reads first. Nil for any other region.
+    static func namedEntries(_ elements: [Element]) -> [Element]? {
+        guard elements.count >= 8, elements.allSatisfy({ $0.line != nil && $0.box == nil && !$0.boundary }) else { return nil }
+        var tally: [Int: Int] = [:]
+        for element in elements { tally[Int((element.line!.fontSize * 2).rounded()), default: 0] += 1 }
+        guard let common = tally.max(by: { ($0.value, $1.key) < ($1.value, $0.key) })?.key else { return nil }
+        let size = CGFloat(common) / 2
+        guard size > 0 else { return nil }
+        let indices = Array(elements.indices)
+        let entry = indices.filter { index in
+            let line = elements[index].line!
+            return abs(line.fontSize - size) <= size * 0.05 && !line.monospaced && !isList(line.text)
+        }
+        guard entry.count >= 8, let edge = entry.map({ elements[$0].rect.minX }).min() else { return nil }
+        let names = entry.filter { abs(elements[$0].rect.minX - edge) <= size * 0.5 }
+        // A name is words: a column of codes beside their meanings (the Blue Book's scanned code
+        // tables, page 303's `0`, `1`… beside `5 second and less`) is a table.
+        guard names.allSatisfy({ elements[$0].line!.text.filter(\.isLetter).count >= 2 }) else { return nil }
+        func partner(of name: Int) -> Int? {
+            let rect = elements[name].rect
+            return entry.first { $0 != name && abs(elements[$0].rect.minY - rect.minY) <= size * 0.2
+                && elements[$0].rect.minX > rect.maxX + size * 0.5 }
+        }
+        let partners = names.compactMap { name in partner(of: name).map { (name: name, description: $0) } }
+        guard partners.count >= 4, partners.count * 3 >= names.count * 2 else { return nil }
+        let starts = partners.map { elements[$0.description].rect.minX }.sorted()
+        let column = starts[starts.count / 2]
+        guard starts.allSatisfy({ abs($0 - column) <= size * 0.5 }) else { return nil }
+        func hangs(_ x: CGFloat, from start: CGFloat) -> Bool { x - start >= size * 0.5 && x - start <= size * 2.5 }
+        var descriptions: [Int] = [], wrapped: [Int] = []
+        for index in entry where !names.contains(index) {
+            let rect = elements[index].rect
+            if abs(rect.minX - column) <= size * 0.5 || hangs(rect.minX, from: column) {
+                descriptions.append(index)
+            } else if hangs(rect.minX, from: edge), rect.maxX < column - size * 0.5 {
+                wrapped.append(index)
+            } else {
+                return nil
+            }
+        }
+        let widestName = partners.map { elements[$0.name].rect.width }.max() ?? 0
+        let widestDescription = descriptions.map { elements[$0].rect.width }.max() ?? 0
+        guard widestName <= widestDescription * 0.6 else { return nil }
+        // Entries and the other lines (`starters`) in reading order; every remaining line belongs
+        // to the nearest starter at or above it.
+        let others = indices.filter { !entry.contains($0) }
+        let starters = (names + others).sorted { elements[$0].rect.maxY > elements[$1].rect.maxY }
+        var owned: [Int: [Int]] = [:]
+        var leading: [Int] = []
+        for index in wrapped + descriptions {
+            let rect = elements[index].rect
+            let owner = starters.filter { elements[$0].rect.minY >= rect.minY - size * 0.2 }
+                .min { elements[$0].rect.minY < elements[$1].rect.minY }
+            if let owner { owned[owner, default: []].append(index) } else { leading.append(index) }
+        }
+        func topDown(_ group: [Int]) -> [Element] {
+            group.sorted { elements[$0].rect.maxY > elements[$1].rect.maxY }.map { elements[$0] }
+        }
+        var result = topDown(leading)
+        for starter in starters {
+            let group = owned[starter] ?? []
+            if names.contains(starter) {
+                result += [elements[starter]] + topDown(group.filter(wrapped.contains)) + topDown(group.filter(descriptions.contains))
+            } else {
+                result += [elements[starter]] + topDown(group)
+            }
+        }
+        return result
     }
 
     /// The reading-order sort: rows from the top, left to right within a row. A floated box reads
@@ -3554,7 +3712,8 @@ enum LayoutReconstructor {
             + outline.map(\.line)
         // Edges whose entries wrap into a hanging indent (#134): a label's second line hanging on
         // one continues its title, and a line back on the edge opens the next entry.
-        let entryEdges = page.hasSyntheticTextStyle || page.recognized ? [] : hangingEntryEdges(free.map(untagged), body: reflowBody)
+        let entryEdges = page.hasSyntheticTextStyle || page.recognized ? []
+            : hangingEntryEdges(free.map(untagged), body: reflowBody, titles: labelStyles)
         func continuesHangingTitle(_ line: TextLine, after previous: TextLine, heading: String) -> Bool {
             labels.contains(untagged(line)) && labels.contains(untagged(previous))
                 && hangingEntryEdge(of: previous, in: entryEdges) != nil
@@ -3590,8 +3749,16 @@ enum LayoutReconstructor {
             guard abs(offset) <= edge.size * 0.5, let word = line.text.split(whereSeparator: \.isWhitespace).first else { return false }
             let right = free.filter { hangingEntryEdge(of: $0, in: [edge]) != nil }.map(\.rect.maxX).max() ?? prev.rect.maxX
             let wordWidth = line.rect.width * CGFloat(word.count + 1) / CGFloat(max(1, line.text.count))
-            return prev.rect.maxX + wordWidth + edge.size * 0.5 <= right
-                || edge.pairs >= 2 && prev.rect.maxX <= right - edge.size
+            if prev.rect.maxX + wordWidth + edge.size * 0.5 <= right || edge.pairs >= 2 && prev.rect.maxX <= right - edge.size {
+                return true
+            }
+            // Where the edge's entries only ever wrap into the indent, and two or more do (or the
+            // book's titles head them), a line back on the edge is the next entry however far the
+            // one above it ran: 9/11 page 463's `The Honorable Louis J. Freeh, …` is its page's
+            // widest line, over `The Honorable Janet Reno, …` (#161). A line filling the page's
+            // justified measure is prose, and its paragraph runs on.
+            let justified = measures[Int(prev.fontSize.rounded())].map { prev.rect.maxX >= $0 - body * 0.75 } ?? false
+            return (edge.pairs >= 2 || edge.titled) && edge.hangsOnly && !justified
         }
         // In a deck, this slide's title (`slideTitle`) and its body. A slide's title is decided by
         // where it stands, not by a size the slide has too few body words to establish; and once

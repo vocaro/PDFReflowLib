@@ -876,6 +876,19 @@ entries above continue opens higher still. Each part is then cut on its own, by 
 A grid numbered along its rows (#78's graphs, the exercise sets set two to a row) interleaves its
 columns' numbers and is refused at every band.
 
+A list of names set beside their descriptions reads entry by entry before any whitespace cut is
+tried (#161, `namedEntries`). The 9/11 report's Table of Names sets each name flush left and its
+description on the name's baseline 108 points in, both wrapping one em into a hanging indent. A long
+name leaves too little gutter for the narrow-gutter prose test on most pages, and the row sort then
+took a wrapped name's second line between its description's lines; where the longest name leaves
+17–35 points the gutter test passed and the page read every name, then every description (pages 450
+and 456). The region's lines in its most common size must all stand on the names' edge, the
+descriptions' edge or either one's indent; at least four names, and two thirds of them, share a
+baseline with a description's first line on one edge; and the widest name is at most three fifths
+of the widest description, so two prose columns never qualify. Each name then reads with its wrapped
+lines and its description, lines in any other size keep their place between entries, and a
+description continued from the previous page reads first.
+
 Where no cut and no bullet-column split applies, the reading-order
 sort still reads two centred units set beside each other whole (#122, CDC pages 14, 23 and 34): the
 region's lines are grouped from the top into stacks at ordinary leading, and when they form exactly

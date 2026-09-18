@@ -115,7 +115,7 @@ are, in the page markup). Evidence and negative controls on real output are in
 ## Current content coverage
 
 <!-- counts:coverage -->
-[corpus/regressions.json](../corpus/regressions.json) has 3422 targeted checks on 560 reviewed pages
+[corpus/regressions.json](../corpus/regressions.json) has 3467 targeted checks on 566 reviewed pages
 across 22 documents: *Pilot's Handbook of Aeronautical Knowledge*, *Beginning and Intermediate
 Algebra*, *The 9/11 Commission Report*, *The Fed Explained*, *Dietary Guidelines for Americans*,
 *Fifth National Climate Assessment*, *Our Flag*, *Preparedness 101*, *Project Blue Book Special
@@ -125,10 +125,10 @@ Report No. 14*, *Mineral Commodity Summaries 2025*, *Loper Bright Enterprises v.
 Clocks*, *Complaint for a Civil Case*, *Investigation of Atmospheric Boundary-Layer Effects on
 Launch-Vehicle Ground Wind Loads*, *A Scheduling Algorithm Compatible with a Distributed Management
 of Arrivals in the National Airspace System*, *Agricultural Research*, *Earthdata Cloud Analytics
-Project* and *Tank Health Monitoring*. They comprise 1136 ordered-text, 242 text, 422 paragraph,
-289 absent-text, 271 heading, 36 heading-level, 50 absent-heading, 93 list-item,
+Project* and *Tank Health Monitoring*. They comprise 1149 ordered-text, 242 text, 434 paragraph,
+289 absent-text, 275 heading, 36 heading-level, 50 absent-heading, 93 list-item,
 1 preformatted-lines, 29 script, 8 absent-script, 11 footnote, 34 note-link,
-61 paragraph-continuation, 1 list-item-continuation, 8 paragraph-separation, 99 distinct-paragraph,
+61 paragraph-continuation, 1 list-item-continuation, 8 paragraph-separation, 115 distinct-paragraph,
 201 image-presence, 44 captioned-image, 20 image-alternative, 102 page-reference, 111 warning,
 113 absent-warning, 17 source-region, 5 glyph-structure, 4 image-appearance and 14 table-cell
 checks, counted as `tools/check_corpus_content.py` counts them.
@@ -650,7 +650,7 @@ the page's structure validates, each line also records the tag the pipeline appl
 since #89/#90); older fixtures and untagged lines have none, and `SourceLayoutFixture` restores it.
 Source review, baseline failures, cross-document safeguards and full-run evidence are retained
 in [the three-fix measurement](../measurements/three-fidelity-fixes/record.md). The suite contains
-<!-- counts:swift-tests -->944 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->245 Python tests<!-- counts:end -->.
+<!-- counts:swift-tests -->951 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->245 Python tests<!-- counts:end -->.
 The comparison tests include a real-Poppler image URL check through the safe HTTP handler
 (simple and positioned modes, paths with spaces); absent Poppler is an explicit skip.
 
@@ -988,6 +988,23 @@ sub-entries, centred lines, wider steps and list lines as evidence. They also ke
 lowercase or hyphenated continuation and a paragraph's indented first line whole, and read neither
 title without a wrapped entry. The 9/11 contract checks pages 41 (transcript turns), 458 and 462. See
 the [hanging-entries evidence](../measurements/hanging-entries/record.md).
+
+`HearingListsAndNamesTests.swift` covers [#161](https://github.com/vocaro/PDFReflowLib/issues/161).
+Where an edge's entries only ever wrap into the indent (none of that size runs on flush in lowercase
+or after a hyphen) and two or more do, a line back on the edge opens the next entry however wide the
+line above it, unless that line fills the page's justified measure. Page 457 has no wrapped entry;
+its edge qualifies instead by two or more bold titles in the book's label style, each over an entry on
+its edge, where the entries' size has no justified measure and no entry runs on flush. A title in that
+style on such an edge may wrap from a first line wider than its entries (page 461). The Table of
+Names reads name by name (`namedEntries`): every line of its size stands on the names' or the
+descriptions' edge or either one's indent, most names share a baseline with a description, and no name
+is wider than three fifths of the widest description. Source fixtures of pages 450, 451, 456, 457, 461,
+463 and 464 check each case; synthetic controls keep justified prose, a lowercase flush continuation
+and a single wrapped entry whole, refuse a titled edge with one title, no book style, a measure or a
+lowercase run-on, and read neither two prose columns nor a stray line as names. The 9/11 contract
+checks pages 450, 451, 454 and 456–457, 461 and 463–464, and the USDA magazine's index pages 22–23
+keep adjacent one-line entries apart. See the
+[hearing-list and Table of Names evidence](../measurements/hearing-lists-and-names/record.md).
 
 ## Headings beside trailing figures and wide section titles
 

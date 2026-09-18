@@ -49,6 +49,8 @@ enum EPUBWriter {
         var reservedBytes = 0
         var anchors: [String: String] = [:]
         var linkedDocuments: Set<String> = []
+        // Spine documents holding MathML (#190), which the manifest must declare.
+        var mathDocuments: Set<String> = []
         var referenced: Set<NoteKey> = []
         for block in book.blocks {
             switch block.content {
@@ -108,6 +110,8 @@ enum EPUBWriter {
             }
             let name = nextChapterName()
             if links > 0 || !ids.isEmpty { linkedDocuments.insert(name) }
+            // Escaped text cannot spell an element; only the encoder writes `<math `.
+            if markup.contains("<math ") { mathDocuments.insert(name) }
             for id in ids { anchors[id] = name }
             reservedBytes += links * linkReservation
             for number in sourcePages {
@@ -285,7 +289,8 @@ enum EPUBWriter {
         let modified = ISO8601DateFormatter().string(from: modificationDate)
         let author = book.metadata.author.map { "<dc:creator>\(xml($0))</dc:creator>" } ?? ""
         let manifest = chapters.enumerated().map {
-            "<item id=\"c\($0.offset)\" href=\"\($0.element)\" media-type=\"application/xhtml+xml\"/>"
+            "<item id=\"c\($0.offset)\" href=\"\($0.element)\" media-type=\"application/xhtml+xml\""
+                + (mathDocuments.contains($0.element) ? " properties=\"mathml\"/>" : "/>")
         }.joined() + imagePaths.enumerated().map {
             "<item id=\"img\($0.offset)\" href=\"\($0.element)\" media-type=\"\(book.assets[$0.offset].format.mediaType)\"/>"
         }.joined()

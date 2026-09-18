@@ -3829,7 +3829,8 @@ enum LayoutReconstructor {
                        neighbouringMarkers: [PageMarker] = [],
                        slideDeck: Bool = false,
                        imageKinds: [String: PreservedImageKind] = [:],
-                       imageCaptions: [String: String] = [:], bookWraps: [Int: CGFloat] = [:],
+                       imageCaptions: [String: String] = [:], imageMath: [String: [MathExpression]] = [:],
+                       bookWraps: [Int: CGFloat] = [:],
                        documentBody: CGFloat? = nil) -> [ReflowBlock] {
         let body = max(4, bodySize(page.lines))
         // A rotated stamp in the outer margin is furniture, never content or a heading.
@@ -4817,9 +4818,13 @@ enum LayoutReconstructor {
                 flushTagged()
                 flush()
                 codeOrigin = nil
-                result.append(imageBlock(assetID: path, page: page.number,
-                                         kind: imageKinds[path] ?? .artwork,
-                                         sourceCaption: imageCaptions[path] ?? ""))
+                var block = imageBlock(assetID: path, page: page.number, kind: imageKinds[path] ?? .artwork,
+                                       sourceCaption: imageCaptions[path] ?? "")
+                if let math = imageMath[path], case var .image(image) = block.content {
+                    image.math = math
+                    block.content = .image(image)
+                }
+                result.append(block)
                 continue
             }
             if let index = element.table {

@@ -40,8 +40,10 @@ struct ReflowDocument: Sendable, Equatable {
             if case let .heading(_, _, level) = block.content, !(1...6).contains(level) {
                 throw ValidationError.invalidHeadingLevel(level)
             }
-            if case let .image(image) = block.content, !identifiers.contains(image.assetID) {
-                throw ValidationError.missingAsset(image.assetID)
+            if case let .image(image) = block.content {
+                for asset in [image.assetID] + image.math.map(\.fallbackAssetID) where !identifiers.contains(asset) {
+                    throw ValidationError.missingAsset(asset)
+                }
             }
         }
         for page in chapterStartPages {
@@ -228,6 +230,74 @@ enum PreservedImageKind: String, Sendable, Equatable, Codable {
     }
 }
 
+/// One printed row of a preserved crop that `MathRecognizer` read as mathematics (#190): the
+/// exercise label printed before it, if any, and the expression, with the crop of the row as
+/// the fallback image for a reading system that does not render MathML.
+struct MathExpression: Sendable, Equatable {
+    /// The structures the recognizer proves; anything else keeps its crop.
+    indirect enum Node: Sendable, Equatable {
+        case number(String)
+        /// A variable: one letter set in a maths italic font.
+        case identifier(String)
+        case `operator`(String)
+        /// A run of nodes: the whole expression, a bracketed group (brackets included), or a
+        /// numerator, denominator or exponent of more than one node.
+        case row([Node])
+        /// A numerator over a denominator. `display` where the book sets both terms at body size
+        /// (a displayed fraction) rather than in the smaller type of a fraction inside a line.
+        case fraction(Node, Node, display: Bool = false)
+        case superscript(Node, Node)
+    }
+    /// The printed label (`52)`), which stays text beside the expression.
+    var label: String?
+    var node: Node
+    var fallbackAssetID: String
+
+    /// The expression as linear text, for `alttext`: `27/3`, `(−1)/9 ÷ (−1)/2`, `x^2`.
+    var linearText: String { Self.linear(node) }
+
+    private static func linear(_ node: Node) -> String {
+        switch node {
+        case let .number(value), let .identifier(value): return value
+        case let .operator(value): return value
+        case let .row(nodes):
+            var text = ""
+            for (index, child) in nodes.enumerated() {
+                // A binary operator or relation stands apart; a sign before its operand does not.
+                if case let .operator(symbol) = child, !"()".contains(symbol), index > 0,
+                   !isOpening(nodes[index - 1]) {
+                    text += " \(symbol) "
+                } else {
+                    text += linear(child)
+                }
+            }
+            return text
+        case let .fraction(numerator, denominator, _):
+            return grouped(numerator) + "/" + grouped(denominator)
+        case let .superscript(base, script):
+            return grouped(base) + "^" + grouped(script)
+        }
+    }
+
+    /// Whether a node opens an operand position: an operator (other than a closing bracket).
+    private static func isOpening(_ node: Node) -> Bool {
+        if case let .operator(symbol) = node { return symbol != ")" }
+        return false
+    }
+
+    /// A fraction's term or a script in linear text: bracketed unless it is one token or already a
+    /// bracketed group.
+    private static func grouped(_ node: Node) -> String {
+        switch node {
+        case .number, .identifier: return linear(node)
+        case let .row(nodes):
+            if case .operator("(")? = nodes.first, case .operator(")")? = nodes.last { return linear(node) }
+            return "(" + linear(node) + ")"
+        default: return "(" + linear(node) + ")"
+        }
+    }
+}
+
 struct ReflowBlock: Sendable, Equatable {
     /// A preserved image. It has no caption of its own (#187): a caption the source prints stays
     /// the block the source set beside the figure, which is where `captionedImages` checks it and
@@ -238,6 +308,10 @@ struct ReflowBlock: Sendable, Equatable {
         var alternativeText: String
         /// Where the image came from, for the reader that wants it: `title`, never `alt` (#187).
         var provenance: String = ""
+        /// The crop read as mathematics (#190), one expression per printed row, in reading order.
+        /// When present it is written instead of the picture; each expression names its own row's
+        /// crop as the fallback image, and `assetID` is the first of them.
+        var math: [MathExpression] = []
     }
     /// A text table: rows of cells in column order, each cell spanning one or more columns
     /// (a section row is one cell spanning them all). Header rows precede the body. Cell text

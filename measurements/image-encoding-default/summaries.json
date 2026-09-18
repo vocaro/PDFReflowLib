@@ -1,0 +1,1066 @@
+[
+ {
+  "case": "arxiv-replay-clocks-2023",
+  "images": 34,
+  "jpegImages": 0,
+  "baselineImageBytes": 948166,
+  "candidateImageBytes": 948166,
+  "baselineEntryBytes": 1018736,
+  "candidateEntryBytes": 1018736,
+  "worstEdgeBlockMAE": null,
+  "jpegWithEdgeErrorAtLeast30": 0,
+  "missingFromBaseline": [],
+  "dimensionMismatches": [],
+  "sameImageCount": true,
+  "nonImageEntriesDifferingBeyondImageNames": [],
+  "lane": {
+   "baseline": {
+    "converterSHA256": "80b96c2f2fafd0ec15b97e870b2af2f8d44b2f74dd0beb39eda37bdae9e43950",
+    "conversionSeconds": 1.1842916670138948,
+    "converterCPUSeconds": 1.102573,
+    "converterPeakRSSBytes": 169787392,
+    "converterPeakPhysicalFootprintBytes": 51430264,
+    "outputBytes": 951899,
+    "epubcheckExitCode": 0,
+    "runPassed": true
+   },
+   "candidate": {
+    "converterSHA256": "e17822db0187d2ffd68089e161222393fa510938ed0554b6de39c640194221f9",
+    "conversionSeconds": 1.3196418749867007,
+    "converterCPUSeconds": 1.20986,
+    "converterPeakRSSBytes": 172752896,
+    "converterPeakPhysicalFootprintBytes": 54363024,
+    "outputBytes": 951898,
+    "epubcheckExitCode": 0,
+    "runPassed": true
+   }
+  },
+  "comparison": {
+   "changedPages": 0,
+   "changedPageFields": [],
+   "changedReportFields": [],
+   "navigationChanged": false,
+   "provenanceErrors": 0,
+   "pageMarkersEqual": true
+  }
+ },
+ {
+  "case": "cdc-zombie-pandemic-2011",
+  "images": 42,
+  "jpegImages": 36,
+  "baselineImageBytes": 130420244,
+  "candidateImageBytes": 33030769,
+  "baselineEntryBytes": 130464773,
+  "candidateEntryBytes": 33075334,
+  "worstEdgeBlockMAE": 41.47,
+  "jpegWithEdgeErrorAtLeast30": 1,
+  "missingFromBaseline": [],
+  "dimensionMismatches": [],
+  "sameImageCount": true,
+  "nonImageEntriesDifferingBeyondImageNames": [],
+  "lane": {
+   "baseline": {
+    "converterSHA256": "80b96c2f2fafd0ec15b97e870b2af2f8d44b2f74dd0beb39eda37bdae9e43950",
+    "conversionSeconds": 13.741720916994382,
+    "converterCPUSeconds": 12.128712,
+    "converterPeakRSSBytes": 457080832,
+    "converterPeakPhysicalFootprintBytes": 350503968,
+    "outputBytes": 130205094,
+    "epubcheckExitCode": 0,
+    "runPassed": true
+   },
+   "candidate": {
+    "converterSHA256": "e17822db0187d2ffd68089e161222393fa510938ed0554b6de39c640194221f9",
+    "conversionSeconds": 13.359650124999462,
+    "converterCPUSeconds": 12.490361,
+    "converterPeakRSSBytes": 452673536,
+    "converterPeakPhysicalFootprintBytes": 345949192,
+    "outputBytes": 32620083,
+    "epubcheckExitCode": 0,
+    "runPassed": true
+   }
+  },
+  "comparison": {
+   "changedPages": 36,
+   "changedPageFields": [
+    "images",
+    "markup",
+    "pageReferences"
+   ],
+   "changedReportFields": [],
+   "navigationChanged": false,
+   "provenanceErrors": 0,
+   "pageMarkersEqual": true
+  }
+ },
+ {
+  "case": "census-rrs2002-01",
+  "images": 51,
+  "jpegImages": 0,
+  "baselineImageBytes": 5569330,
+  "candidateImageBytes": 5569330,
+  "baselineEntryBytes": 5631431,
+  "candidateEntryBytes": 5631431,
+  "worstEdgeBlockMAE": null,
+  "jpegWithEdgeErrorAtLeast30": 0,
+  "missingFromBaseline": [],
+  "dimensionMismatches": [],
+  "sameImageCount": true,
+  "nonImageEntriesDifferingBeyondImageNames": [],
+  "lane": {
+   "baseline": {
+    "converterSHA256": "80b96c2f2fafd0ec15b97e870b2af2f8d44b2f74dd0beb39eda37bdae9e43950",
+    "conversionSeconds": 6.297395417001098,
+    "converterCPUSeconds": 5.334683,
+    "converterPeakRSSBytes": 275890176,
+    "converterPeakPhysicalFootprintBytes": 380748832,
+    "outputBytes": 4989370,
+    "epubcheckExitCode": 0,
+    "runPassed": true
+   },
+   "candidate": {
+    "converterSHA256": "e17822db0187d2ffd68089e161222393fa510938ed0554b6de39c640194221f9",
+    "conversionSeconds": 6.872172999981558,
+    "converterCPUSeconds": 5.872144,
+    "converterPeakRSSBytes": 274497536,
+    "converterPeakPhysicalFootprintBytes": 375538720,
+    "outputBytes": 4989371,
+    "epubcheckExitCode": 0,
+    "runPassed": true
+   }
+  },
+  "comparison": {
+   "changedPages": 0,
+   "changedPageFields": [],
+   "changedReportFields": [],
+   "navigationChanged": false,
+   "provenanceErrors": 0,
+   "pageMarkersEqual": true
+  }
+ },
+ {
+  "case": "cia-blue-book-14-1955",
+  "images": 424,
+  "jpegImages": 98,
+  "baselineImageBytes": 197874838,
+  "candidateImageBytes": 195272130,
+  "baselineEntryBytes": 199016836,
+  "candidateEntryBytes": 196414226,
+  "worstEdgeBlockMAE": 1.81,
+  "jpegWithEdgeErrorAtLeast30": 0,
+  "missingFromBaseline": [],
+  "dimensionMismatches": [],
+  "sameImageCount": true,
+  "nonImageEntriesDifferingBeyondImageNames": [],
+  "lane": {
+   "baseline": {
+    "converterSHA256": "80b96c2f2fafd0ec15b97e870b2af2f8d44b2f74dd0beb39eda37bdae9e43950",
+    "conversionSeconds": 47.29380783298984,
+    "converterCPUSeconds": 46.97623,
+    "converterPeakRSSBytes": 277135360,
+    "converterPeakPhysicalFootprintBytes": 254411760,
+    "outputBytes": 191880005,
+    "epubcheckExitCode": 0,
+    "runPassed": true
+   },
+   "candidate": {
+    "converterSHA256": "e17822db0187d2ffd68089e161222393fa510938ed0554b6de39c640194221f9",
+    "conversionSeconds": 55.52525579198846,
+    "converterCPUSeconds": 54.574495,
+    "converterPeakRSSBytes": 265207808,
+    "converterPeakPhysicalFootprintBytes": 242254808,
+    "outputBytes": 187398369,
+    "epubcheckExitCode": 0,
+    "runPassed": true
+   }
+  },
+  "comparison": {
+   "changedPages": 87,
+   "changedPageFields": [
+    "images",
+    "markup",
+    "pageReferences"
+   ],
+   "changedReportFields": [],
+   "navigationChanged": false,
+   "provenanceErrors": 0,
+   "pageMarkersEqual": true
+  }
+ },
+ {
+  "case": "dga-2025-2030",
+  "images": 37,
+  "jpegImages": 16,
+  "baselineImageBytes": 4829622,
+  "candidateImageBytes": 1909509,
+  "baselineEntryBytes": 4862287,
+  "candidateEntryBytes": 1942190,
+  "worstEdgeBlockMAE": 24.11,
+  "jpegWithEdgeErrorAtLeast30": 0,
+  "missingFromBaseline": [],
+  "dimensionMismatches": [],
+  "sameImageCount": true,
+  "nonImageEntriesDifferingBeyondImageNames": [],
+  "lane": {
+   "baseline": {
+    "converterSHA256": "80b96c2f2fafd0ec15b97e870b2af2f8d44b2f74dd0beb39eda37bdae9e43950",
+    "conversionSeconds": 0.8558243339939509,
+    "converterCPUSeconds": 0.770725,
+    "converterPeakRSSBytes": 106577920,
+    "converterPeakPhysicalFootprintBytes": 70091640,
+    "outputBytes": 4748532,
+    "epubcheckExitCode": 0,
+    "runPassed": true
+   },
+   "candidate": {
+    "converterSHA256": "e17822db0187d2ffd68089e161222393fa510938ed0554b6de39c640194221f9",
+    "conversionSeconds": 0.8512747079948895,
+    "converterCPUSeconds": 0.8262689999999999,
+    "converterPeakRSSBytes": 107036672,
+    "converterPeakPhysicalFootprintBytes": 70484856,
+    "outputBytes": 1805958,
+    "epubcheckExitCode": 0,
+    "runPassed": true
+   }
+  },
+  "comparison": {
+   "changedPages": 10,
+   "changedPageFields": [
+    "images",
+    "markup",
+    "pageReferences"
+   ],
+   "changedReportFields": [],
+   "navigationChanged": false,
+   "provenanceErrors": 0,
+   "pageMarkersEqual": true
+  }
+ },
+ {
+  "case": "faa-phak-8083-25c",
+  "images": 567,
+  "jpegImages": 136,
+  "baselineImageBytes": 215483408,
+  "candidateImageBytes": 129919798,
+  "baselineEntryBytes": 217590404,
+  "candidateEntryBytes": 132026930,
+  "worstEdgeBlockMAE": 53.62,
+  "jpegWithEdgeErrorAtLeast30": 27,
+  "missingFromBaseline": [],
+  "dimensionMismatches": [],
+  "sameImageCount": true,
+  "nonImageEntriesDifferingBeyondImageNames": [],
+  "lane": {
+   "baseline": {
+    "converterSHA256": "80b96c2f2fafd0ec15b97e870b2af2f8d44b2f74dd0beb39eda37bdae9e43950",
+    "conversionSeconds": 50.451150917011546,
+    "converterCPUSeconds": 50.543199,
+    "converterPeakRSSBytes": 848281600,
+    "converterPeakPhysicalFootprintBytes": 560268512,
+    "outputBytes": 215470094,
+    "epubcheckExitCode": 0,
+    "runPassed": true
+   },
+   "candidate": {
+    "converterSHA256": "e17822db0187d2ffd68089e161222393fa510938ed0554b6de39c640194221f9",
+    "conversionSeconds": 53.847331708006095,
+    "converterCPUSeconds": 52.501376,
+    "converterPeakRSSBytes": 847216640,
+    "converterPeakPhysicalFootprintBytes": 558531904,
+    "outputBytes": 129428852,
+    "epubcheckExitCode": 0,
+    "runPassed": true
+   }
+  },
+  "comparison": {
+   "changedPages": 105,
+   "changedPageFields": [
+    "images",
+    "markup",
+    "pageReferences"
+   ],
+   "changedReportFields": [],
+   "navigationChanged": false,
+   "provenanceErrors": 0,
+   "pageMarkersEqual": true
+  }
+ },
+ {
+  "case": "fed-explained-2021",
+  "images": 57,
+  "jpegImages": 12,
+  "baselineImageBytes": 28014588,
+  "candidateImageBytes": 13487259,
+  "baselineEntryBytes": 28370125,
+  "candidateEntryBytes": 13842808,
+  "worstEdgeBlockMAE": 25.95,
+  "jpegWithEdgeErrorAtLeast30": 0,
+  "missingFromBaseline": [],
+  "dimensionMismatches": [],
+  "sameImageCount": true,
+  "nonImageEntriesDifferingBeyondImageNames": [],
+  "lane": {
+   "baseline": {
+    "converterSHA256": "80b96c2f2fafd0ec15b97e870b2af2f8d44b2f74dd0beb39eda37bdae9e43950",
+    "conversionSeconds": 7.5839186669909395,
+    "converterCPUSeconds": 6.5068399999999995,
+    "converterPeakRSSBytes": 292225024,
+    "converterPeakPhysicalFootprintBytes": 178668432,
+    "outputBytes": 27879810,
+    "epubcheckExitCode": 0,
+    "runPassed": true
+   },
+   "candidate": {
+    "converterSHA256": "e17822db0187d2ffd68089e161222393fa510938ed0554b6de39c640194221f9",
+    "conversionSeconds": 5.986528583016479,
+    "converterCPUSeconds": 6.037317,
+    "converterPeakRSSBytes": 286785536,
+    "converterPeakPhysicalFootprintBytes": 178291576,
+    "outputBytes": 13288445,
+    "epubcheckExitCode": 0,
+    "runPassed": true
+   }
+  },
+  "comparison": {
+   "changedPages": 10,
+   "changedPageFields": [
+    "images",
+    "markup",
+    "pageReferences"
+   ],
+   "changedReportFields": [],
+   "navigationChanged": false,
+   "provenanceErrors": 0,
+   "pageMarkersEqual": true
+  }
+ },
+ {
+  "case": "gpo-911-2004",
+  "images": 50,
+  "jpegImages": 34,
+  "baselineImageBytes": 5711742,
+  "candidateImageBytes": 3105494,
+  "baselineEntryBytes": 8234179,
+  "candidateEntryBytes": 5627965,
+  "worstEdgeBlockMAE": 1.66,
+  "jpegWithEdgeErrorAtLeast30": 0,
+  "missingFromBaseline": [],
+  "dimensionMismatches": [],
+  "sameImageCount": true,
+  "nonImageEntriesDifferingBeyondImageNames": [],
+  "lane": {
+   "baseline": {
+    "converterSHA256": "80b96c2f2fafd0ec15b97e870b2af2f8d44b2f74dd0beb39eda37bdae9e43950",
+    "conversionSeconds": 15.371103207988199,
+    "converterCPUSeconds": 15.045169,
+    "converterPeakRSSBytes": 88850432,
+    "converterPeakPhysicalFootprintBytes": 66519856,
+    "outputBytes": 6448223,
+    "epubcheckExitCode": 0,
+    "runPassed": true
+   },
+   "candidate": {
+    "converterSHA256": "e17822db0187d2ffd68089e161222393fa510938ed0554b6de39c640194221f9",
+    "conversionSeconds": 13.435575540992431,
+    "converterCPUSeconds": 13.336312000000001,
+    "converterPeakRSSBytes": 87670784,
+    "converterPeakPhysicalFootprintBytes": 65356640,
+    "outputBytes": 3798132,
+    "epubcheckExitCode": 0,
+    "runPassed": true
+   }
+  },
+  "comparison": {
+   "changedPages": 14,
+   "changedPageFields": [
+    "images",
+    "markup"
+   ],
+   "changedReportFields": [],
+   "navigationChanged": false,
+   "provenanceErrors": 0,
+   "pageMarkersEqual": true
+  }
+ },
+ {
+  "case": "gpo-our-flag-2003",
+  "images": 123,
+  "jpegImages": 19,
+  "baselineImageBytes": 11505636,
+  "candidateImageBytes": 7098118,
+  "baselineEntryBytes": 11627407,
+  "candidateEntryBytes": 7219908,
+  "worstEdgeBlockMAE": 28.47,
+  "jpegWithEdgeErrorAtLeast30": 0,
+  "missingFromBaseline": [],
+  "dimensionMismatches": [],
+  "sameImageCount": true,
+  "nonImageEntriesDifferingBeyondImageNames": [],
+  "lane": {
+   "baseline": {
+    "converterSHA256": "80b96c2f2fafd0ec15b97e870b2af2f8d44b2f74dd0beb39eda37bdae9e43950",
+    "conversionSeconds": 1.9263093750050757,
+    "converterCPUSeconds": 1.78317,
+    "converterPeakRSSBytes": 106299392,
+    "converterPeakPhysicalFootprintBytes": 177062800,
+    "outputBytes": 11510694,
+    "epubcheckExitCode": 0,
+    "runPassed": true
+   },
+   "candidate": {
+    "converterSHA256": "e17822db0187d2ffd68089e161222393fa510938ed0554b6de39c640194221f9",
+    "conversionSeconds": 2.049806041002739,
+    "converterCPUSeconds": 1.888458,
+    "converterPeakRSSBytes": 100990976,
+    "converterPeakPhysicalFootprintBytes": 170886056,
+    "outputBytes": 7051993,
+    "epubcheckExitCode": 0,
+    "runPassed": true
+   }
+  },
+  "comparison": {
+   "changedPages": 16,
+   "changedPageFields": [
+    "images",
+    "markup",
+    "pageReferences"
+   ],
+   "changedReportFields": [],
+   "navigationChanged": false,
+   "provenanceErrors": 0,
+   "pageMarkersEqual": true
+  }
+ },
+ {
+  "case": "gpo-warren-1964",
+  "images": 932,
+  "jpegImages": 932,
+  "baselineImageBytes": 1111366829,
+  "candidateImageBytes": 533625871,
+  "baselineEntryBytes": 1114294736,
+  "candidateEntryBytes": 536554710,
+  "worstEdgeBlockMAE": 18.14,
+  "jpegWithEdgeErrorAtLeast30": 0,
+  "missingFromBaseline": [],
+  "dimensionMismatches": [],
+  "sameImageCount": true,
+  "nonImageEntriesDifferingBeyondImageNames": [],
+  "lane": "not gated: separate CLI runs, see record"
+ },
+ {
+  "case": "irs-p596-zhs-2025",
+  "images": 146,
+  "jpegImages": 1,
+  "baselineImageBytes": 14227354,
+  "candidateImageBytes": 13875974,
+  "baselineEntryBytes": 14375991,
+  "candidateEntryBytes": 14024612,
+  "worstEdgeBlockMAE": 2.0,
+  "jpegWithEdgeErrorAtLeast30": 0,
+  "missingFromBaseline": [],
+  "dimensionMismatches": [],
+  "sameImageCount": true,
+  "nonImageEntriesDifferingBeyondImageNames": [],
+  "lane": {
+   "baseline": {
+    "converterSHA256": "80b96c2f2fafd0ec15b97e870b2af2f8d44b2f74dd0beb39eda37bdae9e43950",
+    "conversionSeconds": 7.818558375001885,
+    "converterCPUSeconds": 7.843731,
+    "converterPeakRSSBytes": 165330944,
+    "converterPeakPhysicalFootprintBytes": 92275432,
+    "outputBytes": 14118438,
+    "epubcheckExitCode": 0,
+    "runPassed": true
+   },
+   "candidate": {
+    "converterSHA256": "e17822db0187d2ffd68089e161222393fa510938ed0554b6de39c640194221f9",
+    "conversionSeconds": 7.9633720419951715,
+    "converterCPUSeconds": 7.972725,
+    "converterPeakRSSBytes": 165150720,
+    "converterPeakPhysicalFootprintBytes": 91587304,
+    "outputBytes": 13763616,
+    "epubcheckExitCode": 0,
+    "runPassed": true
+   }
+  },
+  "comparison": {
+   "changedPages": 1,
+   "changedPageFields": [
+    "images",
+    "markup"
+   ],
+   "changedReportFields": [],
+   "navigationChanged": false,
+   "provenanceErrors": 0,
+   "pageMarkersEqual": true
+  }
+ },
+ {
+  "case": "nbs-jres-geltman-1977",
+  "images": 42,
+  "jpegImages": 42,
+  "baselineImageBytes": 6835092,
+  "candidateImageBytes": 4880169,
+  "baselineEntryBytes": 6873854,
+  "candidateEntryBytes": 4918973,
+  "worstEdgeBlockMAE": 1.86,
+  "jpegWithEdgeErrorAtLeast30": 0,
+  "missingFromBaseline": [],
+  "dimensionMismatches": [],
+  "sameImageCount": true,
+  "nonImageEntriesDifferingBeyondImageNames": [],
+  "lane": {
+   "baseline": {
+    "converterSHA256": "80b96c2f2fafd0ec15b97e870b2af2f8d44b2f74dd0beb39eda37bdae9e43950",
+    "conversionSeconds": 2.046919957996579,
+    "converterCPUSeconds": 1.9433610000000001,
+    "converterPeakRSSBytes": 280526848,
+    "converterPeakPhysicalFootprintBytes": 86361024,
+    "outputBytes": 6777624,
+    "epubcheckExitCode": 0,
+    "runPassed": true
+   },
+   "candidate": {
+    "converterSHA256": "e17822db0187d2ffd68089e161222393fa510938ed0554b6de39c640194221f9",
+    "conversionSeconds": 2.273829166981159,
+    "converterCPUSeconds": 2.164309,
+    "converterPeakRSSBytes": 282935296,
+    "converterPeakPhysicalFootprintBytes": 88720344,
+    "outputBytes": 4711453,
+    "epubcheckExitCode": 0,
+    "runPassed": true
+   }
+  },
+  "comparison": {
+   "changedPages": 7,
+   "changedPageFields": [
+    "images",
+    "markup",
+    "pageReferences"
+   ],
+   "changedReportFields": [],
+   "navigationChanged": false,
+   "provenanceErrors": 0,
+   "pageMarkersEqual": true
+  }
+ },
+ {
+  "case": "noaa-nca5-2023",
+  "images": 1544,
+  "jpegImages": 126,
+  "baselineImageBytes": 502533162,
+  "candidateImageBytes": 310239728,
+  "baselineEntryBytes": 509394704,
+  "candidateEntryBytes": 317101396,
+  "worstEdgeBlockMAE": 51.34,
+  "jpegWithEdgeErrorAtLeast30": 14,
+  "missingFromBaseline": [],
+  "dimensionMismatches": [],
+  "sameImageCount": true,
+  "nonImageEntriesDifferingBeyondImageNames": [],
+  "lane": {
+   "baseline": {
+    "converterSHA256": "80b96c2f2fafd0ec15b97e870b2af2f8d44b2f74dd0beb39eda37bdae9e43950",
+    "conversionSeconds": 122.46987154200906,
+    "converterCPUSeconds": 120.75531000000001,
+    "converterPeakRSSBytes": 1046134784,
+    "converterPeakPhysicalFootprintBytes": 475498152,
+    "outputBytes": 501712328,
+    "epubcheckExitCode": 0,
+    "runPassed": true
+   },
+   "candidate": {
+    "converterSHA256": "e17822db0187d2ffd68089e161222393fa510938ed0554b6de39c640194221f9",
+    "conversionSeconds": 137.93959379199077,
+    "converterCPUSeconds": 130.97644,
+    "converterPeakRSSBytes": 1026899968,
+    "converterPeakPhysicalFootprintBytes": 381797960,
+    "outputBytes": 308515311,
+    "epubcheckExitCode": 0,
+    "runPassed": true
+   }
+  },
+  "comparison": {
+   "changedPages": 125,
+   "changedPageFields": [
+    "images",
+    "markup",
+    "pageReferences"
+   ],
+   "changedReportFields": [],
+   "navigationChanged": false,
+   "provenanceErrors": 0,
+   "pageMarkersEqual": true
+  }
+ },
+ {
+  "case": "ntrs-20180003024-earthdata-slides-2018",
+  "images": 21,
+  "jpegImages": 4,
+  "baselineImageBytes": 3213302,
+  "candidateImageBytes": 3165029,
+  "baselineEntryBytes": 3230921,
+  "candidateEntryBytes": 3182652,
+  "worstEdgeBlockMAE": 30.86,
+  "jpegWithEdgeErrorAtLeast30": 4,
+  "missingFromBaseline": [],
+  "dimensionMismatches": [],
+  "sameImageCount": true,
+  "nonImageEntriesDifferingBeyondImageNames": [],
+  "lane": {
+   "baseline": {
+    "converterSHA256": "80b96c2f2fafd0ec15b97e870b2af2f8d44b2f74dd0beb39eda37bdae9e43950",
+    "conversionSeconds": 0.8718569169868715,
+    "converterCPUSeconds": 0.780426,
+    "converterPeakRSSBytes": 89440256,
+    "converterPeakPhysicalFootprintBytes": 162907000,
+    "outputBytes": 3012140,
+    "epubcheckExitCode": 0,
+    "runPassed": true
+   },
+   "candidate": {
+    "converterSHA256": "e17822db0187d2ffd68089e161222393fa510938ed0554b6de39c640194221f9",
+    "conversionSeconds": 1.064193708007224,
+    "converterCPUSeconds": 0.9663529999999999,
+    "converterPeakRSSBytes": 89473024,
+    "converterPeakPhysicalFootprintBytes": 163054480,
+    "outputBytes": 2878012,
+    "epubcheckExitCode": 0,
+    "runPassed": true
+   }
+  },
+  "comparison": {
+   "changedPages": 4,
+   "changedPageFields": [
+    "images",
+    "markup",
+    "pageReferences"
+   ],
+   "changedReportFields": [],
+   "navigationChanged": false,
+   "provenanceErrors": 0,
+   "pageMarkersEqual": true
+  }
+ },
+ {
+  "case": "ntrs-20190030725-dasc-2019",
+  "images": 28,
+  "jpegImages": 0,
+  "baselineImageBytes": 887795,
+  "candidateImageBytes": 887795,
+  "baselineEntryBytes": 937538,
+  "candidateEntryBytes": 937538,
+  "worstEdgeBlockMAE": null,
+  "jpegWithEdgeErrorAtLeast30": 0,
+  "missingFromBaseline": [],
+  "dimensionMismatches": [],
+  "sameImageCount": true,
+  "nonImageEntriesDifferingBeyondImageNames": [],
+  "lane": {
+   "baseline": {
+    "converterSHA256": "80b96c2f2fafd0ec15b97e870b2af2f8d44b2f74dd0beb39eda37bdae9e43950",
+    "conversionSeconds": 0.7594185410125647,
+    "converterCPUSeconds": 0.6733539999999999,
+    "converterPeakRSSBytes": 50937856,
+    "converterPeakPhysicalFootprintBytes": 32342784,
+    "outputBytes": 861301,
+    "epubcheckExitCode": 0,
+    "runPassed": true
+   },
+   "candidate": {
+    "converterSHA256": "e17822db0187d2ffd68089e161222393fa510938ed0554b6de39c640194221f9",
+    "conversionSeconds": 0.7549443329917267,
+    "converterCPUSeconds": 0.735185,
+    "converterPeakRSSBytes": 53133312,
+    "converterPeakPhysicalFootprintBytes": 34439912,
+    "outputBytes": 861303,
+    "epubcheckExitCode": 0,
+    "runPassed": true
+   }
+  },
+  "comparison": {
+   "changedPages": 0,
+   "changedPageFields": [],
+   "changedReportFields": [],
+   "navigationChanged": false,
+   "provenanceErrors": 0,
+   "pageMarkersEqual": true
+  }
+ },
+ {
+  "case": "ntrs-20200002975-gwl-2020",
+  "images": 31,
+  "jpegImages": 15,
+  "baselineImageBytes": 6167607,
+  "candidateImageBytes": 4484846,
+  "baselineEntryBytes": 6230887,
+  "candidateEntryBytes": 4548141,
+  "worstEdgeBlockMAE": 39.45,
+  "jpegWithEdgeErrorAtLeast30": 2,
+  "missingFromBaseline": [],
+  "dimensionMismatches": [],
+  "sameImageCount": true,
+  "nonImageEntriesDifferingBeyondImageNames": [],
+  "lane": {
+   "baseline": {
+    "converterSHA256": "80b96c2f2fafd0ec15b97e870b2af2f8d44b2f74dd0beb39eda37bdae9e43950",
+    "conversionSeconds": 0.9861437499930616,
+    "converterCPUSeconds": 0.9212859999999999,
+    "converterPeakRSSBytes": 130777088,
+    "converterPeakPhysicalFootprintBytes": 52331336,
+    "outputBytes": 6118826,
+    "epubcheckExitCode": 0,
+    "runPassed": true
+   },
+   "candidate": {
+    "converterSHA256": "e17822db0187d2ffd68089e161222393fa510938ed0554b6de39c640194221f9",
+    "conversionSeconds": 1.0955467080057133,
+    "converterCPUSeconds": 1.061129,
+    "converterPeakRSSBytes": 133349376,
+    "converterPeakPhysicalFootprintBytes": 56345464,
+    "outputBytes": 4272407,
+    "epubcheckExitCode": 0,
+    "runPassed": true
+   }
+  },
+  "comparison": {
+   "changedPages": 11,
+   "changedPageFields": [
+    "images",
+    "markup"
+   ],
+   "changedReportFields": [],
+   "navigationChanged": false,
+   "provenanceErrors": 0,
+   "pageMarkersEqual": true
+  }
+ },
+ {
+  "case": "ntrs-20210020887-techport-thm-2021",
+  "images": 39,
+  "jpegImages": 3,
+  "baselineImageBytes": 770745,
+  "candidateImageBytes": 687498,
+  "baselineEntryBytes": 789918,
+  "candidateEntryBytes": 706674,
+  "worstEdgeBlockMAE": 20.89,
+  "jpegWithEdgeErrorAtLeast30": 0,
+  "missingFromBaseline": [],
+  "dimensionMismatches": [],
+  "sameImageCount": true,
+  "nonImageEntriesDifferingBeyondImageNames": [],
+  "lane": {
+   "baseline": {
+    "converterSHA256": "80b96c2f2fafd0ec15b97e870b2af2f8d44b2f74dd0beb39eda37bdae9e43950",
+    "conversionSeconds": 0.31231199999456294,
+    "converterCPUSeconds": 0.252895,
+    "converterPeakRSSBytes": 40370176,
+    "converterPeakPhysicalFootprintBytes": 19186408,
+    "outputBytes": 753956,
+    "epubcheckExitCode": 0,
+    "runPassed": true
+   },
+   "candidate": {
+    "converterSHA256": "e17822db0187d2ffd68089e161222393fa510938ed0554b6de39c640194221f9",
+    "conversionSeconds": 0.3269553749996703,
+    "converterCPUSeconds": 0.289666,
+    "converterPeakRSSBytes": 42975232,
+    "converterPeakPhysicalFootprintBytes": 21758696,
+    "outputBytes": 664984,
+    "epubcheckExitCode": 0,
+    "runPassed": true
+   }
+  },
+  "comparison": {
+   "changedPages": 2,
+   "changedPageFields": [
+    "images",
+    "markup"
+   ],
+   "changedReportFields": [],
+   "navigationChanged": false,
+   "provenanceErrors": 0,
+   "pageMarkersEqual": true
+  }
+ },
+ {
+  "case": "scotus-loper-bright-2024",
+  "images": 0,
+  "jpegImages": 0,
+  "baselineImageBytes": 0,
+  "candidateImageBytes": 0,
+  "baselineEntryBytes": 274662,
+  "candidateEntryBytes": 274662,
+  "worstEdgeBlockMAE": null,
+  "jpegWithEdgeErrorAtLeast30": 0,
+  "missingFromBaseline": [],
+  "dimensionMismatches": [],
+  "sameImageCount": true,
+  "nonImageEntriesDifferingBeyondImageNames": [],
+  "lane": {
+   "baseline": {
+    "converterSHA256": "80b96c2f2fafd0ec15b97e870b2af2f8d44b2f74dd0beb39eda37bdae9e43950",
+    "conversionSeconds": 1.945049417001428,
+    "converterCPUSeconds": 1.845928,
+    "converterPeakRSSBytes": 43040768,
+    "converterPeakPhysicalFootprintBytes": 25297664,
+    "outputBytes": 98628,
+    "epubcheckExitCode": 0,
+    "runPassed": true
+   },
+   "candidate": {
+    "converterSHA256": "e17822db0187d2ffd68089e161222393fa510938ed0554b6de39c640194221f9",
+    "conversionSeconds": 1.9323204169922974,
+    "converterCPUSeconds": 1.8155839999999999,
+    "converterPeakRSSBytes": 42385408,
+    "converterPeakPhysicalFootprintBytes": 24642304,
+    "outputBytes": 98627,
+    "epubcheckExitCode": 0,
+    "runPassed": true
+   }
+  },
+  "comparison": {
+   "changedPages": 0,
+   "changedPageFields": [],
+   "changedReportFields": [],
+   "navigationChanged": false,
+   "provenanceErrors": 0,
+   "pageMarkersEqual": true
+  }
+ },
+ {
+  "case": "uscis-m618-arabic-2015",
+  "images": 150,
+  "jpegImages": 44,
+  "baselineImageBytes": 53503035,
+  "candidateImageBytes": 34877864,
+  "baselineEntryBytes": 53786178,
+  "candidateEntryBytes": 35161051,
+  "worstEdgeBlockMAE": 28.75,
+  "jpegWithEdgeErrorAtLeast30": 0,
+  "missingFromBaseline": [],
+  "dimensionMismatches": [],
+  "sameImageCount": true,
+  "nonImageEntriesDifferingBeyondImageNames": [],
+  "lane": {
+   "baseline": {
+    "converterSHA256": "80b96c2f2fafd0ec15b97e870b2af2f8d44b2f74dd0beb39eda37bdae9e43950",
+    "conversionSeconds": 7.483333167008823,
+    "converterCPUSeconds": 7.493633,
+    "converterPeakRSSBytes": 148439040,
+    "converterPeakPhysicalFootprintBytes": 84214720,
+    "outputBytes": 53404388,
+    "epubcheckExitCode": 0,
+    "runPassed": true
+   },
+   "candidate": {
+    "converterSHA256": "e17822db0187d2ffd68089e161222393fa510938ed0554b6de39c640194221f9",
+    "conversionSeconds": 8.182612292002887,
+    "converterCPUSeconds": 8.152819000000001,
+    "converterPeakRSSBytes": 148226048,
+    "converterPeakPhysicalFootprintBytes": 88114112,
+    "outputBytes": 34728765,
+    "epubcheckExitCode": 0,
+    "runPassed": true
+   }
+  },
+  "comparison": {
+   "changedPages": 44,
+   "changedPageFields": [
+    "images",
+    "markup"
+   ],
+   "changedReportFields": [],
+   "navigationChanged": false,
+   "provenanceErrors": 0,
+   "pageMarkersEqual": true
+  }
+ },
+ {
+  "case": "uscourts-pro-se-1-2016",
+  "images": 21,
+  "jpegImages": 0,
+  "baselineImageBytes": 12876,
+  "candidateImageBytes": 12876,
+  "baselineEntryBytes": 28057,
+  "candidateEntryBytes": 28057,
+  "worstEdgeBlockMAE": null,
+  "jpegWithEdgeErrorAtLeast30": 0,
+  "missingFromBaseline": [],
+  "dimensionMismatches": [],
+  "sameImageCount": true,
+  "nonImageEntriesDifferingBeyondImageNames": [],
+  "lane": {
+   "baseline": {
+    "converterSHA256": "80b96c2f2fafd0ec15b97e870b2af2f8d44b2f74dd0beb39eda37bdae9e43950",
+    "conversionSeconds": 0.2201149579777848,
+    "converterCPUSeconds": 0.14687099999999997,
+    "converterPeakRSSBytes": 36798464,
+    "converterPeakPhysicalFootprintBytes": 15909680,
+    "outputBytes": 19096,
+    "epubcheckExitCode": 0,
+    "runPassed": true
+   },
+   "candidate": {
+    "converterSHA256": "e17822db0187d2ffd68089e161222393fa510938ed0554b6de39c640194221f9",
+    "conversionSeconds": 0.21757208299823105,
+    "converterCPUSeconds": 0.155005,
+    "converterPeakRSSBytes": 39501824,
+    "converterPeakPhysicalFootprintBytes": 18547456,
+    "outputBytes": 19097,
+    "epubcheckExitCode": 0,
+    "runPassed": true
+   }
+  },
+  "comparison": {
+   "changedPages": 0,
+   "changedPageFields": [],
+   "changedReportFields": [],
+   "navigationChanged": false,
+   "provenanceErrors": 0,
+   "pageMarkersEqual": true
+  }
+ },
+ {
+  "case": "usda-ars-agresearch-2012-11",
+  "images": 64,
+  "jpegImages": 21,
+  "baselineImageBytes": 28424399,
+  "candidateImageBytes": 10283493,
+  "baselineEntryBytes": 28535068,
+  "candidateEntryBytes": 10394183,
+  "worstEdgeBlockMAE": 73.86,
+  "jpegWithEdgeErrorAtLeast30": 2,
+  "missingFromBaseline": [],
+  "dimensionMismatches": [],
+  "sameImageCount": true,
+  "nonImageEntriesDifferingBeyondImageNames": [],
+  "lane": {
+   "baseline": {
+    "converterSHA256": "80b96c2f2fafd0ec15b97e870b2af2f8d44b2f74dd0beb39eda37bdae9e43950",
+    "conversionSeconds": 4.730059708002955,
+    "converterCPUSeconds": 4.726216999999999,
+    "converterPeakRSSBytes": 298156032,
+    "converterPeakPhysicalFootprintBytes": 127009560,
+    "outputBytes": 28419441,
+    "epubcheckExitCode": 0,
+    "runPassed": true
+   },
+   "candidate": {
+    "converterSHA256": "e17822db0187d2ffd68089e161222393fa510938ed0554b6de39c640194221f9",
+    "conversionSeconds": 5.0315258339978755,
+    "converterCPUSeconds": 4.936977,
+    "converterPeakRSSBytes": 300285952,
+    "converterPeakPhysicalFootprintBytes": 127009512,
+    "outputBytes": 10221601,
+    "epubcheckExitCode": 0,
+    "runPassed": true
+   }
+  },
+  "comparison": {
+   "changedPages": 18,
+   "changedPageFields": [
+    "images",
+    "markup",
+    "pageReferences"
+   ],
+   "changedReportFields": [],
+   "navigationChanged": false,
+   "provenanceErrors": 0,
+   "pageMarkersEqual": true
+  }
+ },
+ {
+  "case": "usgs-mcs2025-copper",
+  "images": 3,
+  "jpegImages": 0,
+  "baselineImageBytes": 342525,
+  "candidateImageBytes": 342525,
+  "baselineEntryBytes": 353366,
+  "candidateEntryBytes": 353366,
+  "worstEdgeBlockMAE": null,
+  "jpegWithEdgeErrorAtLeast30": 0,
+  "missingFromBaseline": [],
+  "dimensionMismatches": [],
+  "sameImageCount": true,
+  "nonImageEntriesDifferingBeyondImageNames": [],
+  "lane": {
+   "baseline": {
+    "converterSHA256": "80b96c2f2fafd0ec15b97e870b2af2f8d44b2f74dd0beb39eda37bdae9e43950",
+    "conversionSeconds": 0.32409066599211656,
+    "converterCPUSeconds": 0.19888599999999998,
+    "converterPeakRSSBytes": 36044800,
+    "converterPeakPhysicalFootprintBytes": 19759920,
+    "outputBytes": 333508,
+    "epubcheckExitCode": 0,
+    "runPassed": true
+   },
+   "candidate": {
+    "converterSHA256": "e17822db0187d2ffd68089e161222393fa510938ed0554b6de39c640194221f9",
+    "conversionSeconds": 0.32426012502401136,
+    "converterCPUSeconds": 0.197552,
+    "converterPeakRSSBytes": 38027264,
+    "converterPeakPhysicalFootprintBytes": 21775176,
+    "outputBytes": 333510,
+    "epubcheckExitCode": 0,
+    "runPassed": true
+   }
+  },
+  "comparison": {
+   "changedPages": 0,
+   "changedPageFields": [],
+   "changedReportFields": [],
+   "navigationChanged": false,
+   "provenanceErrors": 0,
+   "pageMarkersEqual": true
+  }
+ },
+ {
+  "case": "wallace-algebra-2010",
+  "images": 1979,
+  "jpegImages": 16,
+  "baselineImageBytes": 40446274,
+  "candidateImageBytes": 40439269,
+  "baselineEntryBytes": 41481038,
+  "candidateEntryBytes": 41474049,
+  "worstEdgeBlockMAE": 1.73,
+  "jpegWithEdgeErrorAtLeast30": 0,
+  "missingFromBaseline": [],
+  "dimensionMismatches": [],
+  "sameImageCount": true,
+  "nonImageEntriesDifferingBeyondImageNames": [],
+  "lane": {
+   "baseline": {
+    "converterSHA256": "80b96c2f2fafd0ec15b97e870b2af2f8d44b2f74dd0beb39eda37bdae9e43950",
+    "conversionSeconds": 27.334472417016514,
+    "converterCPUSeconds": 28.022706,
+    "converterPeakRSSBytes": 91717632,
+    "converterPeakPhysicalFootprintBytes": 69976928,
+    "outputBytes": 38893107,
+    "epubcheckExitCode": 0,
+    "runPassed": true
+   },
+   "candidate": {
+    "converterSHA256": "e17822db0187d2ffd68089e161222393fa510938ed0554b6de39c640194221f9",
+    "conversionSeconds": 31.348810875002528,
+    "converterCPUSeconds": 32.112575,
+    "converterPeakRSSBytes": 95846400,
+    "converterPeakPhysicalFootprintBytes": 70304632,
+    "outputBytes": 38869804,
+    "epubcheckExitCode": 0,
+    "runPassed": true
+   }
+  },
+  "comparison": {
+   "changedPages": 9,
+   "changedPageFields": [
+    "images",
+    "markup"
+   ],
+   "changedReportFields": [],
+   "navigationChanged": false,
+   "provenanceErrors": 0,
+   "pageMarkersEqual": true
+  }
+ }
+]

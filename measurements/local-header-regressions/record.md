@@ -11,7 +11,8 @@ timeline label ownership or endnote reconstruction.
 The run uses the macOS 27 arm64 release CLI, library defaults, and the eight complete pinned
 corpus PDFs (2,151 pages). `identity.json` records the base revision, exact working-tree source,
 test and fixture hashes, system and Xcode versions. Each case's compressed evaluator receipt
-records the converter hash, input identity, resource measurements, progress and EPUB validation.
+records the converter hash, input identity, resource measurements, progress and EPUB validation;
+the raw progress logs and memory-sample series behind it were dropped in #196.
 The comparison baseline is the retained default-policy corpus run documented in
 [client-options](../client-options/record.md), not a newly timed old-build run. Timings are
 observations, not a controlled performance comparison.

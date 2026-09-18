@@ -75,7 +75,7 @@ private func reconstruct(_ pdf: Data) async throws -> PDFReflowLibPipeline.Resul
 }
 
 private func hasReference(_ result: PDFReflowLibPipeline.Result) -> Bool {
-    result.document.blocks.contains { if case let .image(image) = $0.content { image.caption.hasPrefix("Original page") } else { false } }
+    result.document.blocks.contains { if case let .image(image) = $0.content { image.provenance.hasPrefix("Source page") && image.alternativeText == PreservedImageKind.sourcePage.alternativeText } else { false } }
 }
 
 @Test func artThatOnlyClustersIntoAPageSizedRegionReflowsWithoutTheReviewSignal() async throws {

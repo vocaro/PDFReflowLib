@@ -49,7 +49,8 @@ outside every crop and within 14 pt of one, the distance to that crop in each di
 the line stands inside the crop's span, the crop's size, how many lines it holds, the longest of
 them, whether any of them carries a word, and whether a painted region of at least a body square
 reaches into it. All 11,115 measurements are in
-[label-distances.tsv](label-distances.tsv), measured on the baseline.
+[label-distances.tsv.gz](label-distances.tsv.gz) (the survey's unmodified 1,424,964-byte TSV,
+gzipped), measured on the baseline.
 
 **197** of them are one or two ASCII letters or digits overlapping a crop's span in exactly one
 direction — the population the rule could ever take. They separate completely:
@@ -164,7 +165,7 @@ body; a diagram drawn smaller than its own type would not qualify.
 # the label survey: every line outside every crop within 14 pt of one, with the crop's geometry
 swiftc -swift-version 6 -O $(ls Sources/PDFReflowLib/*.swift | grep -v 'EPUBWriter\|PDFConverter\|PDFReflowLibPipeline\|EPUBTextEncoder') \
   measurements/figure-labels/survey.swift -o /tmp/label-survey
-for pdf in corpus/cache/*.pdf; do /tmp/label-survey "$pdf" 14; done > label-distances.tsv
+for pdf in corpus/cache/*.pdf; do /tmp/label-survey "$pdf" 14; done | gzip -9n > label-distances.tsv.gz
 # the fixtures
 swiftc Sources/PDFReflowLib/{NativeTextReader,ConversionTypes,DocumentModel,ReflowDocument,GraphicsReader,NativeSpacingReader,StructureTreeReader,MarkedTextReader,FontWeightReader,PrivateUseDecoder}.swift \
   tools/capture-layout-fixture.swift -o /tmp/capture-layout-fixture

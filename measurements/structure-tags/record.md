@@ -57,7 +57,9 @@ identities are in `identity.json`. The comparison baseline is retained build `a9
   The only word edits are the reviewed low-/level and flag-/pole joins.
 
 `collect.py` enforces the complete comparison and regenerates the per-book receipts, source
-contract results and identity record. It rejects unreviewed word/order changes and image/script
+contract results and identity record. The per-book raw progress logs and memory-sample series
+were dropped in #196; each case's `result.json.gz` keeps their summary (progress-check events and result, sampled
+and converter peak memory). It rejects unreviewed word/order changes and image/script
 loss. These checks establish bounded improvements and content preservation, not visual approval
 of every paragraph. Full Warren and NOAA default conversions remain explicit exclusions under
 #5; physical iPhone/iPad performance remains unqualified.

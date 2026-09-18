@@ -61,7 +61,6 @@ enum LayoutReconstructor {
             }
             for word in words {
                 vocabulary.insert(String(word))
-                if word.contains(where: isLigature) { vocabulary.insert(ligaturesSpelledOut(word)) }
             }
             addAddressVocabulary(of: line.text, to: &vocabulary)
             addNumberPrefixVocabulary(of: line.text, to: &vocabulary)
@@ -89,35 +88,6 @@ enum LayoutReconstructor {
         guard let previous, previous.hasSuffix("-") || previous.hasSuffix("\u{00ad}") || endsWithEqualsHyphen(previous),
               line.text.first?.isLowercase == true, let first, !first.contains("-") else { return false }
         return true
-    }
-
-    /// The Latin typographic ligatures U+FB00–U+FB06.
-    static func isLigature(_ character: Character) -> Bool {
-        character.unicodeScalars.contains { (0xFB00...0xFB06).contains($0.value) }
-    }
-
-    /// A vocabulary word with its ligatures spelled out (#123). Wallace prints `diﬀerent` with U+FB00
-    /// wherever the word is whole, while a line break extracts plain letters (`dif-` + `ferent`,
-    /// pages 50 and 218), so the book's own evidence for the join was never found and the hyphen
-    /// stayed with a warning. `addVocabulary` records a word holding a ligature both as printed
-    /// and spelled out, so the hyphen lookups are unchanged and a break inside a ligature word
-    /// (`oﬃ-` + `cial`) still finds the printed form. Only U+FB00–U+FB06 are spelled out, not the
-    /// rest of Unicode compatibility mapping (superscripts, fractions, full-width forms), and
-    /// emitted text keeps its ligatures.
-    static func ligaturesSpelledOut<S: StringProtocol>(_ word: S) -> String {
-        var result = ""
-        for character in word {
-            switch character {
-            case "\u{FB00}": result += "ff"
-            case "\u{FB01}": result += "fi"
-            case "\u{FB02}": result += "fl"
-            case "\u{FB03}": result += "ffi"
-            case "\u{FB04}": result += "ffl"
-            case "\u{FB05}", "\u{FB06}": result += "st"
-            default: result.append(character)
-            }
-        }
-        return result
     }
 
     /// A line whose last character may be a book's line-end hyphen printed as `=` (#126): the 9/11
@@ -1288,7 +1258,7 @@ enum LayoutReconstructor {
                               recordingSubheadings: Bool = false) -> [TextLine] {
         guard !page.hasSyntheticTextStyle, !page.recognized else { return [] }
         var labels: [TextLine] = []
-        let entryEdges = hangingEntryEdges(lines, body: body)
+        let entryEdges = hangingEntryEdges(lines, body: body, titles: styles)
         // The leading the body wraps at, for a title set under the body's own size.
         let bodyGap = ordinaryLineGap(body, in: lines, body: body)
         for line in lines.sorted(by: { $0.rect.maxY > $1.rect.maxY }) {
@@ -1339,10 +1309,39 @@ enum LayoutReconstructor {
                             && other.rect.maxY <= title.rect.minY + body * 0.4
                     }.max(by: { $0.rect.maxY < $1.rect.maxY })
                 }
-                // Whether `title`'s paragraph opens directly beneath it (#76, #97).
+                // The line opening the text a title heads past a picture set directly beneath it
+                // (#186): *Agricultural Research*'s `Fighting Filth Flies` heads a sidebar over the
+                // sidebar's photograph and its caption, 142 points above the sidebar's first line.
+                // The picture (no thin rule) stands within four fifths of a body of the title's foot
+                // and spans the title's left edge; everything in the title's measure between the
+                // picture and the opening is set smaller than the body (its caption and credit); and
+                // the opening stands within four bodies of the last of them, since a caption the
+                // picture's crop takes is no line here (page 9's two caption lines and 31 points).
+                // A caption's own label is no title of the text beneath.
+                func pastFigure(_ title: TextLine) -> TextLine? {
+                    guard !isCaption(title.text), let figure = page.graphics.filter({ graphic in
+                              !isThinRule(graphic) && graphic.minX <= title.rect.minX + body * 0.5
+                                  && graphic.maxX >= title.rect.maxX && graphic.maxY <= title.rect.minY + body * 0.4
+                                  && title.rect.minY - graphic.maxY < body * 0.8
+                          }).max(by: { $0.maxY < $1.maxY }) else { return nil }
+                    let beneath = lines.filter { other in
+                        other != title && other.rect.minX < title.rect.maxX && other.rect.maxX > title.rect.minX
+                            && other.rect.maxY <= figure.minY + body * 0.4
+                    }.sorted { $0.rect.maxY > $1.rect.maxY }
+                    guard let opening = beneath.firstIndex(where: { $0.fontSize >= body * 0.9 }) else { return nil }
+                    let foot = beneath[..<opening].map(\.rect.minY).min() ?? figure.minY
+                    return foot - beneath[opening].rect.maxY < body * 4 ? beneath[opening] : nil
+                }
+                // Whether `title`'s paragraph opens directly beneath it (#76, #97), or past the picture
+                // set beneath it (#186).
                 func opens(beneath title: TextLine) -> Bool {
-                    guard let below = nearestBelow(title), title.rect.minY - below.rect.maxY < body * 0.8,
-                          abs(below.fontSize - body) <= body * 0.1, !LabelStyle(below, body: body).bold else { return false }
+                    if let direct = nearestBelow(title), title.rect.minY - direct.rect.maxY < body * 0.8 {
+                        if opens(title, with: direct) { return true }
+                    }
+                    return pastFigure(title).map { opens(title, with: $0) } ?? false
+                }
+                func opens(_ title: TextLine, with below: TextLine) -> Bool {
+                    guard abs(below.fontSize - body) <= body * 0.1, !LabelStyle(below, body: body).bold else { return false }
                     // The paragraph can open on the column's own first-line indent instead of on
                     // the title's edge (the magazine indents ten points at a ten-and-a-half point
                     // body, #159). The page's indent pattern is the evidence, as it is for the
@@ -1366,9 +1365,15 @@ enum LayoutReconstructor {
                         : !LabelStyle(below, body: body).italic
                             && (paragraph && !isList(below.text) || opensListBeneath(below, title: line, body: body))
                 }
+                // A title over hanging entries can wrap from a first line wider than any entry:
+                // 9/11 page 461's `Preventive Detention: Use of Immigration Laws and Enemy Combatant
+                // Des-` runs the page's full measure over `ignations to Combat Terrorism` (#161). Only
+                // the two-line path below admits it, in the book's style over its entries.
+                let wideTitle = !smaller && style.bold && styles.contains(style)
+                    && hangingEntryEdge(of: line, in: entryEdges) != nil
                 guard style.bold || !smaller && style.italic && !isCaption(line.text),
                       recordingSubheadings || styles.contains(style),
-                      prose > 0, line.rect.width <= prose else { continue }
+                      prose > 0, line.rect.width <= prose || wideTitle else { continue }
                 if line.rect.width <= prose * 0.9, !style.italic || isTitleCase(line.text), opens(beneath: line) {
                     labels.append(line)
                     continue
@@ -1744,17 +1749,35 @@ enum LayoutReconstructor {
     /// leader entries (an index's sub-entries, FAA page 521) and a line without letters over an
     /// indented one (Loper Bright's footnote rule over `*Together with No. 22–1219, …`) are no
     /// evidence either.
+    ///
+    /// A page can list entries in the book's hanging style without any entry long enough to wrap
+    /// (9/11 page 457, #161). Its edge qualifies by the titles over it instead (`titled`): at least
+    /// two lines wholly bold in a style of `titles` (the book's recurring label styles) stand on the
+    /// edge, each over an entry on it in its own size at ordinary leading; no entry of that size
+    /// wraps flush onto the edge beneath it (a line opening in lowercase, or after a line-end
+    /// hyphen or slash); none opens on an indent under a sentence's end; and the size has no
+    /// justified measure on the page, since lines filling a measure are prose however they are
+    /// headed.
     struct HangingEdge {
         var x: CGFloat
         var size: CGFloat
         /// The wrapped-entry pairs seen on the edge.
         var pairs: Int
+        /// Qualified by the titles over its entries rather than by a wrapped entry.
+        var titled = false
+        /// No entry of the edge's size continues flush on the edge: its only wraps hang.
+        var hangsOnly = false
+        /// For an edge whose one-line entries stand apart by added space (`spacedEntryEdges`,
+        /// #181), the least gap that sets an entry apart: an entry opens only that far below the
+        /// line above it, never at the edge's own wrap.
+        var spacing: CGFloat? = nil
     }
 
     /// The page's hanging-entry edges (see `HangingEdge`). With `body`, only lines in the body's size
     /// are evidence: a heading-size title hung under its section number is `continuesHeading`'s
     /// (Replay Clocks page 6, #83).
-    static func hangingEntryEdges(_ lines: [TextLine], body: CGFloat? = nil) -> [HangingEdge] {
+    static func hangingEntryEdges(_ lines: [TextLine], body: CGFloat? = nil,
+                                  titles: Set<LabelStyle> = []) -> [HangingEdge] {
         var pairs: [(x: CGFloat, size: CGFloat, wraps: Bool)] = []
         for upper in lines where !upper.monospaced && !isList(upper.text) && upper.fontSize > 0
             && upper.text.contains(where: \.isLetter) && !LabelStyle(upper, body: upper.fontSize).bold
@@ -1784,7 +1807,175 @@ enum LayoutReconstructor {
             edges.append(HangingEdge(x: pair.x, size: pair.size,
                                      pairs: pairs.filter { $0.wraps && sameEdge($0.x, $0.size) }.count))
         }
-        return edges
+        // The line set directly beneath `upper` at ordinary leading in its size, if any.
+        func beneath(_ upper: TextLine) -> TextLine? {
+            let size = upper.fontSize
+            guard let lower = lines.filter({ other in
+                other != upper && !sameRow(other.rect, upper.rect) && abs(other.fontSize - size) <= size * 0.1
+                    && other.rect.maxY <= upper.rect.minY + size * 0.4
+                    && other.rect.minX < upper.rect.maxX && other.rect.maxX > upper.rect.minX
+            }).max(by: { $0.rect.maxY < $1.rect.maxY }) else { return nil }
+            let gap = upper.rect.minY - lower.rect.maxY
+            return gap >= -size * 0.4 && gap < size * 0.9 ? lower : nil
+        }
+        func entryLine(_ line: TextLine) -> Bool {
+            !line.monospaced && !isList(line.text) && line.fontSize > 0 && !LabelStyle(line, body: line.fontSize).bold
+        }
+        func on(_ line: TextLine, _ x: CGFloat, _ size: CGFloat) -> Bool {
+            abs(line.rect.minX - x) <= size * 0.5 && abs(line.fontSize - size) <= size * 0.1
+        }
+        // An entry of the edge's size that runs on flush beneath another on the edge.
+        func runsOnFlush(_ x: CGFloat, _ size: CGFloat) -> Bool {
+            lines.contains { upper in
+                guard entryLine(upper), on(upper, x, size), let lower = beneath(upper), entryLine(lower),
+                      on(lower, x, size) else { return false }
+                return lower.text.first(where: \.isLetter)?.isLowercase == true
+                    || upper.text.last.map({ "-\u{00AD}/".contains($0) }) == true
+            }
+        }
+        // Titled edges (#161): no wrapped entry, but titles in the book's label style over entries.
+        if !titles.isEmpty {
+            let measures = justifiedMeasures(lines)
+            var heads: [(x: CGFloat, size: CGFloat)] = []
+            for title in lines where !title.monospaced && title.fontSize > 0
+                && titles.contains(LabelStyle(title, body: body ?? title.fontSize)) && LabelStyle(title, body: title.fontSize).bold
+                && body.map({ abs(title.fontSize - $0) <= $0 * 0.1 }) != false {
+                guard let entry = beneath(title), entryLine(entry), on(entry, title.rect.minX, title.fontSize) else { continue }
+                heads.append((title.rect.minX, title.fontSize))
+            }
+            for head in heads {
+                func sameEdge(_ x: CGFloat, _ size: CGFloat) -> Bool {
+                    abs(x - head.x) <= head.size * 0.5 && abs(size - head.size) <= head.size * 0.1
+                }
+                guard heads.filter({ sameEdge($0.x, $0.size) }).count >= 2,
+                      !edges.contains(where: { sameEdge($0.x, $0.size) }),
+                      !pairs.contains(where: { !$0.wraps && sameEdge($0.x, $0.size) }),
+                      measures[Int(head.size.rounded())] == nil, !runsOnFlush(head.x, head.size) else { continue }
+                edges.append(HangingEdge(x: head.x, size: head.size, pairs: 0, titled: true))
+            }
+        }
+        return edges.map { edge in
+            var edge = edge
+            edge.hangsOnly = !runsOnFlush(edge.x, edge.size)
+            return edge
+        }
+    }
+
+    /// A left edge whose one-line entries stand apart by added space (#181). NOAA's chapter
+    /// openers list each chapter's authors and contributors one to a line, a name and an
+    /// affiliation, flush on one edge and never wrapped, so #134's hanging indent never appears:
+    /// `Robert G. Byron, Montana Health Professionals for a Healthy Climate` / `Amy E. East, US
+    /// Geological Survey` ran together, and nothing ends a sentence between them. The book shows
+    /// how its own text wraps at that size — the recommended citation beneath runs to the measure
+    /// a tenth of a point under the line above — and the entries stand 3.2 points apart (page 81)
+    /// or 7.7 (page 1700), at one even leading from the first to the last.
+    ///
+    /// The edge's wrap (`edgeWraps`) is the least gap under a line that reaches within one size
+    /// of the edge's widest line, to the nearest line directly beneath it on the edge: that line
+    /// filled the measure, so the next continued it. The measure needs three lines to reach it, as
+    /// #157's does, since the widest line or two may be the longest entries (page 692's). Where the
+    /// edge has none (page 343 sets its citation overleaf, and page 81's reaches its measure on two
+    /// lines), the book's wrap at that size stands in (`bookWrap`). A run
+    /// is at least three lines on the edge, each the nearest beneath the one before it, at gaps
+    /// within a tenth of a size of the first and at least a fifth of a size over the wrap, and
+    /// none of the run's upper lines reaches the measure. A paragraph's wrapped lines sit at the
+    /// wrap, and space between paragraphs never repeats three lines running unless each is a
+    /// paragraph of its own. Lists, code, leader entries, wholly bold labels and lines out of the
+    /// body's size are no evidence, as for `hangingEntryEdges`, and a page of more than
+    /// `TintDetector.blockTextLineLimit` lines has none. An entry on such an edge opens only that
+    /// fifth of a size over the wrap below the line above it (`HangingEdge.spacing`).
+    static func spacedEntryEdges(_ lines: [TextLine], body: CGFloat, bookWrap: CGFloat? = nil) -> [HangingEdge] {
+        edgeWraps(lines, body: body).compactMap { found in
+            let edge = found.lines, size = found.size, beneath = found.beneath
+            guard let wrap = found.wrap ?? bookWrap else { return nil }
+            let spaced = wrap + size * 0.2
+            let qualified = edge.indices.contains { start in
+                var last = start, count = 1
+                var first: CGFloat?
+                while !found.fills(last), let next = beneath[last], next.gap >= spaced,
+                      abs(next.gap - (first ?? next.gap)) <= size * 0.1 {
+                    first = first ?? next.gap
+                    last = next.line
+                    count += 1
+                    if count >= 3 { return true }
+                }
+                return false
+            }
+            return qualified ? HangingEdge(x: found.x, size: size, pairs: 0, spacing: spaced) : nil
+        }
+    }
+
+    /// The gap at which a page's text of the body's size wraps (#181): the median over its edges
+    /// (`edgeWraps`) of each edge's own wrap, nil when no line on any edge fills its measure. The
+    /// book's wrap at a size is the median of its pages' (`PDFReflowLibPipeline`), which stands in
+    /// for an edge of one-line entries on a page with no wrapped line of its own.
+    static func wrapGap(_ lines: [TextLine], body: CGFloat) -> CGFloat? {
+        let wraps = edgeWraps(lines, body: body).compactMap(\.wrap).sorted()
+        return wraps.isEmpty ? nil : wraps[wraps.count / 2]
+    }
+
+    /// A page's evidence for its book's wrap (#181): its body size, to the half point, and the gap
+    /// its text of that size wraps at (`wrapGap`). A recognized page or a synthetic text layer's
+    /// geometry is Vision's, not the book's, and gives none.
+    static func wrapEvidence(on page: PageContent) -> (size: Int, gap: CGFloat)? {
+        guard !page.recognized, !page.hasSyntheticTextStyle else { return nil }
+        let body = bodySize(page.lines)
+        guard body > 0, let gap = wrapGap(page.lines, body: body) else { return nil }
+        return (wrapKey(body), gap)
+    }
+
+    /// The book's wrap at each body size: the median of its pages' (`wrapEvidence`), where at least
+    /// three pages give one.
+    static func bookWraps(from evidence: [Int: [CGFloat]]) -> [Int: CGFloat] {
+        evidence.compactMapValues { gaps in
+            guard gaps.count >= 3 else { return nil }
+            return gaps.sorted()[gaps.count / 2]
+        }
+    }
+
+    /// A body size to the half point, the key of `bookWraps`.
+    static func wrapKey(_ size: CGFloat) -> Int { Int((size * 2).rounded()) }
+
+    /// The page's left edges of body-size lines that could hold entries (see `spacedEntryEdges`),
+    /// each with its lines top to bottom, each line's nearest neighbour beneath it on the edge inside
+    /// the prose window, whether a line reaches the edge's measure, and the edge's wrap.
+    private static func edgeWraps(_ lines: [TextLine], body: CGFloat)
+        -> [(x: CGFloat, size: CGFloat, lines: [TextLine], beneath: [(line: Int, gap: CGFloat)?],
+             fills: (Int) -> Bool, wrap: CGFloat?)] {
+        guard lines.count <= TintDetector.blockTextLineLimit else { return [] }
+        let candidates = lines.filter { line in
+            !line.monospaced && !isList(line.text) && line.fontSize > 0 && line.text.contains(where: \.isLetter)
+                && !line.text.contains("....") && abs(line.fontSize - body) <= body * 0.1
+                && !LabelStyle(line, body: line.fontSize).bold
+        }.sorted { $0.rect.maxY > $1.rect.maxY }
+        guard candidates.count >= 4 else { return [] }
+        var result: [(x: CGFloat, size: CGFloat, lines: [TextLine], beneath: [(line: Int, gap: CGFloat)?],
+                      fills: (Int) -> Bool, wrap: CGFloat?)] = []
+        var assigned = Set<Int>()
+        for index in candidates.indices where !assigned.contains(index) {
+            let anchor = candidates[index], size = anchor.fontSize
+            let onEdge = candidates.indices.filter { other in
+                !assigned.contains(other) && abs(candidates[other].rect.minX - anchor.rect.minX) <= size * 0.5
+                    && abs(candidates[other].fontSize - size) <= size * 0.1
+            }
+            assigned.formUnion(onEdge)
+            let edge = onEdge.map { candidates[$0] }
+            guard edge.count >= 4, let measure = edge.map(\.rect.maxX).max() else { continue }
+            let beneath: [(line: Int, gap: CGFloat)?] = edge.indices.map { upper in
+                guard let lower = edge.indices.filter({ other in
+                    other != upper && !sameRow(edge[other].rect, edge[upper].rect)
+                        && edge[other].rect.maxY <= edge[upper].rect.minY + size * 0.4
+                }).max(by: { edge[$0].rect.maxY < edge[$1].rect.maxY }) else { return nil }
+                let gap = edge[upper].rect.minY - edge[lower].rect.maxY
+                return gap >= -size * 0.4 && gap < size * 0.9 ? (lower, gap) : nil
+            }
+            let fills = { (line: Int) in edge[line].rect.maxX >= measure - size }
+            // A line or two at the widest is no measure: they may be the longest entries.
+            let full = edge.indices.filter(fills)
+            let wrap = full.count >= 3 ? full.compactMap { beneath[$0]?.gap }.min() : nil
+            result.append((anchor.rect.minX, size, edge, beneath, fills, wrap))
+        }
+        return result
     }
 
     /// The hanging-entry edge (`hangingEntryEdges`) a line stands on, if any.
@@ -1920,6 +2111,8 @@ enum LayoutReconstructor {
     }
 
     private static let mathSymbols = CharacterSet(charactersIn: "∫∑∏√∂∇≈≠≤≥∞")
+    /// Arithmetic set in a line, for the hanging-entry continuation (#181).
+    static let arithmetic = CharacterSet(charactersIn: "+=−×÷∫∑∏√∂∇≈≠≤≥∞")
     /// Signs of inline mathematics at which PDFKit splits a prose row (`joiningRowPieces`).
     private static let rowMathSymbols = mathSymbols.union(CharacterSet(charactersIn: "=·×÷±−"))
 
@@ -2188,6 +2381,34 @@ enum LayoutReconstructor {
 
     /// Expand crops to whole intersecting text lines so a label cannot be cut in half.
     static func graphicsWithLabels(_ page: PageContent) -> [CGRect] {
+        classifiedGraphics(page).map(\.rect)
+    }
+
+    /// What one crop seed says about the crop that holds it (#187).
+    private enum SeedEvidence {
+        /// A displayed formula line, a fraction, or a rule that keeps a mathematical line.
+        case formula
+        case table
+        case listing
+        /// Painted art at least a body size wide and tall: a drawing, a chart, a picture.
+        case art
+        /// A painted mark smaller than the type (a fraction bar under one digit, a radical sign,
+        /// a bullet): it says nothing about the crop on its own, so the text beside it decides.
+        case mark
+    }
+
+    /// The same crops, each with what its own seeds say it holds (#187). Alternative text has to
+    /// name the content, and the only evidence the converter has about a crop is which detector
+    /// seeded it: a displayed formula or a fraction, a table region the layout could not reflow,
+    /// an algorithm listing between its rules, or drawn and placed art. A crop's kind is the
+    /// reduction of the evidence of every seed the finished crop holds, in that precedence: a
+    /// table region's claim is the strongest evidence on the page, a listing's rules next, then
+    /// art, since a drawing routinely swallows one of its own labels. A crop with none of those is
+    /// read from the lines it holds: an equation when they read as mathematics, text when most of
+    /// them read as words (a formula seed can take a prose line with it, and an underlined link
+    /// fragment in a reference list reads as a mathematical line to the formula seed), and art when
+    /// it holds only marks and no text.
+    static func classifiedGraphics(_ page: PageContent) -> [(rect: CGRect, kind: PreservedImageKind)] {
         let body = max(4, bodySize(page.lines))
         // Displayed formulas have spatial meaning (superscripts, fractions, aligned terms)
         // that line concatenation cannot reproduce. Preserve recognizable formulas as crops.
@@ -2230,9 +2451,18 @@ enum LayoutReconstructor {
                     && rect.midY >= line.rect.minY - 3 && rect.midY <= line.rect.maxY
             }
         }
-        let otherSeeds = formulas + TableRegionDetector.regions(in: page) + FractionRegionDetector.regions(in: page)
-            + tables + floats.regions
-        let graphics = page.graphics.compactMap { rect -> CGRect? in
+        let numericTables = TableRegionDetector.regions(in: page)
+        let fractions = FractionRegionDetector.regions(in: page)
+        let otherSeeds = formulas + numericTables + fractions + tables + floats.regions
+        // What each seed says the crop holds (#187). `drawn` adds the painted seeds' own below.
+        var evidence: [(CGRect, SeedEvidence)] =
+            formulas.map { ($0, .formula) } + fractions.map { ($0, .mark) }
+            + numericTables.map { ($0, .table) } + tables.map { ($0, .table) }
+            + floats.regions.map { ($0, .listing) }
+        // A rule that keeps a mathematical line is that display's own bar, not a drawing, and a
+        // mark smaller than the type is no drawing either; everything else painted is art.
+        func painted(_ rect: CGRect) -> SeedEvidence { rect.width < body || rect.height < body ? .mark : .art }
+        let drawn = page.graphics.compactMap { rect -> (CGRect, SeedEvidence)? in
             // A radical's bar inside a prose row decorates that row (`is written as √25.`, `if
             // we found √8 on`): the tall rectangle PDFKit gives the radical piece would otherwise
             // read as a fraction's terms around it, and a bar over one or two digits is shorter
@@ -2243,12 +2473,20 @@ enum LayoutReconstructor {
                isProseRow(owner, in: page.lines, body: body) {
                 return nil
             }
-            if let art = titleArt(rect, in: page.lines, body: body) { return art }
-            guard isThinRule(rect) else { return rect }
+            // What placed the graphic may already know what it holds (#187).
+            switch page.graphicKinds[rect] {
+            case .equation: return (rect, .formula)
+            case .table: return (rect, .table)
+            default: break
+            }
+            if let art = titleArt(rect, in: page.lines, body: body) { return art.map { ($0, painted($0)) } }
+            guard isThinRule(rect) else { return (rect, painted(rect)) }
             if tables.contains(where: { $0.contains(rect) }) || floats.decorations.contains(rect) { return nil }
-            // A fraction bar keeps the terms it touches, as any intersecting graphic does.
+            // A fraction bar keeps the terms it touches, as any intersecting graphic does. Its
+            // test reads only a short letter-free line over it, which NOAA's underlined DOI
+            // fragments also satisfy, so it is a mark and the crop's text decides (#187).
             if isFractionBar(rect, in: page.lines, body: body) {
-                return page.lines.filter { rect.intersects($0.rect) }.reduce(rect) { $0.union($1.rect) }
+                return (page.lines.filter { rect.intersects($0.rect) }.reduce(rect) { $0.union($1.rect) }, .mark)
             }
             // A rule inside one line's box belongs to that line: a radical's vinculum or an
             // exercise bar keeps its short mathematical line; an underline beneath prose is
@@ -2257,12 +2495,21 @@ enum LayoutReconstructor {
             guard let owner = owner(of: rect) else {
                 let isolated = !page.graphics.contains { $0 != rect && $0.insetBy(dx: -4, dy: -4).intersects(rect) }
                     && !otherSeeds.contains { $0.insetBy(dx: -4, dy: -4).intersects(rect) }
-                return isolated && isDecorationRule(rect, in: page.lines, bounds: page.bounds, body: body) ? nil : rect
+                // A short rule is a mark the crop's text decides (the bar Wallace sets under
+                // `+ 7/2 + 7/2` in a worked step, page 43, five bodies long); a long one may rule
+                // a table or frame a drawing, and stays art as before.
+                return isolated && isDecorationRule(rect, in: page.lines, bounds: page.bounds, body: body)
+                    ? nil : (rect, rect.width <= body * 6 ? .mark : .art)
             }
+            // Such a line is only letter-free: an underlined link fragment in a reference list
+            // (`1029/2019GL082077`) qualifies as readily as a radical's vinculum, so the rule
+            // is a mark whose crop the text inside decides.
             let mathematical = owner.text.count <= 40 && !owner.monospaced
                 && owner.text.range(of: #"[A-Za-z]{3,}"#, options: .regularExpression) == nil
-            return mathematical ? rect.union(owner.rect) : nil
+            return mathematical ? (rect.union(owner.rect), .mark) : nil
         }
+        let graphics = drawn.map(\.0)
+        evidence += drawn
         let seeds = graphics + otherSeeds
         // Running text keeps crops apart and stops them growing over it (#158).
         let text = TintDetector.blockText(page.lines)
@@ -2280,7 +2527,32 @@ enum LayoutReconstructor {
             // the image clips part of it (for example, a raised exponent beside a fraction).
             regions = merged(regions, text: text)
         }
-        return regions.map(\.bounds)
+        // A seed is the crop's own when the crop holds its centre: a formula seed reaches eight
+        // points past its line, so the line beside a crop would otherwise lend it its evidence.
+        return regions.map { region in
+            let held = evidence.filter { region.bounds.contains(CGPoint(x: $0.0.midX, y: $0.0.midY)) }.map(\.1)
+            return (region.bounds, kind(of: region.bounds, evidence: held, in: page))
+        }
+    }
+
+    /// A crop's kind from the evidence of the seeds it holds (`classifiedGraphics`).
+    private static func kind(of crop: CGRect, evidence: [SeedEvidence], in page: PageContent) -> PreservedImageKind {
+        if evidence.contains(.table) { return .table }
+        if evidence.contains(.listing) { return .listing }
+        if evidence.contains(.art) { return .artwork }
+        let held = page.lines.filter { crop.intersects($0.rect) }
+        guard !held.isEmpty else { return .artwork }
+        // A displayed formula line makes the crop mathematics, whatever annotates it: Wallace's
+        // worked examples set `Subtract 7 from both sides` beside each step, and its rules are
+        // stated in words before the formula (`Zero Power Rule of Exponents: a0 = 1`).
+        if evidence.contains(.formula) { return .equation }
+        // Marks alone decide nothing, so the lines do. A line of prose reads as words over at
+        // least eight tokens: a word problem's line can, a fraction's `35 Our Solution` cannot. A
+        // crop at least half of whose lines are prose holds text: a word problem whose inline
+        // mixed number seeded a crop (Wallace page 369), or a reference entry over the bare DOI
+        // fragment whose underline reads as a fraction bar (NOAA's reference lists).
+        let prose = held.filter { isWordy($0.text) && $0.text.split(whereSeparator: \.isWhitespace).count >= 8 }.count
+        return prose * 2 >= held.count ? .text : .equation
     }
 
     struct Element {
@@ -2305,6 +2577,7 @@ enum LayoutReconstructor {
     static func ordered(_ elements: [Element], bodySize: CGFloat, depth: Int = 0) -> [Element] {
         guard elements.count > 1, depth < 32 else { return elements }
         if let rotated = rotatedLineOrder(elements) { return rotated }
+        if let entries = namedEntries(elements) { return entries }
         func gap(horizontal: Bool, measuring measured: [Element], in part: [Element]? = nil) -> CGFloat? {
             whitespaceCut(horizontal: horizontal, measuring: measured, in: part ?? elements, bodySize: bodySize)
         }
@@ -2672,6 +2945,92 @@ enum LayoutReconstructor {
             let thickness = min(a.rect.width, a.rect.height, b.rect.width, b.rect.height)
             return abs(across(a) - across(b)) > thickness * 0.4 ? across(a) < across(b) : along(a) < along(b)
         }
+    }
+
+    /// A list of names, each set beside its description (#161). The 9/11 report's Table of Names
+    /// (pages 449–456) sets each name flush left and its description on the same baseline in a
+    /// second column 108 points in, and wraps both into a one-em hanging indent (`Khalid Saeed Ahmad` /
+    /// `al Zahrani` beside `Saudi; candidate 9/11 hijacker`). The whitespace between the columns cut
+    /// the page in two where a long name left 17–35 points of it (pages 450 and 456 read every name,
+    /// then every description), and elsewhere the row sort took a wrapped name's second line between
+    /// its description's lines (`Mohammed Farrah`, `Somali warlord…`, `Aidid`, `Somalia in…`).
+    ///
+    /// The layout is read from the region's lines in its most common size: every one stands on the
+    /// names' edge (an entry's first line), in the hanging indent a name wraps into, or on the
+    /// descriptions' edge or in its indent. At least four names, and two thirds of them, share their
+    /// baseline with a line on the descriptions' edge (a line PDFKit read across both columns stands
+    /// for its own entry), and the widest name is at most three fifths of the widest description, so
+    /// two prose columns (their lines about equally wide) are never read as one. Lines in any other
+    /// size (a centred section title, a folio) keep their place between the entries. Each entry
+    /// reads its name's lines, then its description's, and a description continued from the
+    /// previous page reads first. Nil for any other region.
+    static func namedEntries(_ elements: [Element]) -> [Element]? {
+        guard elements.count >= 8, elements.allSatisfy({ $0.line != nil && $0.box == nil && !$0.boundary }) else { return nil }
+        var tally: [Int: Int] = [:]
+        for element in elements { tally[Int((element.line!.fontSize * 2).rounded()), default: 0] += 1 }
+        guard let common = tally.max(by: { ($0.value, $1.key) < ($1.value, $0.key) })?.key else { return nil }
+        let size = CGFloat(common) / 2
+        guard size > 0 else { return nil }
+        let indices = Array(elements.indices)
+        let entry = indices.filter { index in
+            let line = elements[index].line!
+            return abs(line.fontSize - size) <= size * 0.05 && !line.monospaced && !isList(line.text)
+        }
+        guard entry.count >= 8, let edge = entry.map({ elements[$0].rect.minX }).min() else { return nil }
+        let names = entry.filter { abs(elements[$0].rect.minX - edge) <= size * 0.5 }
+        // A name is words: a column of codes beside their meanings (the Blue Book's scanned code
+        // tables, page 303's `0`, `1`… beside `5 second and less`) is a table.
+        guard names.allSatisfy({ elements[$0].line!.text.filter(\.isLetter).count >= 2 }) else { return nil }
+        func partner(of name: Int) -> Int? {
+            let rect = elements[name].rect
+            return entry.first { $0 != name && abs(elements[$0].rect.minY - rect.minY) <= size * 0.2
+                && elements[$0].rect.minX > rect.maxX + size * 0.5 }
+        }
+        let partners = names.compactMap { name in partner(of: name).map { (name: name, description: $0) } }
+        guard partners.count >= 4, partners.count * 3 >= names.count * 2 else { return nil }
+        let starts = partners.map { elements[$0.description].rect.minX }.sorted()
+        let column = starts[starts.count / 2]
+        guard starts.allSatisfy({ abs($0 - column) <= size * 0.5 }) else { return nil }
+        func hangs(_ x: CGFloat, from start: CGFloat) -> Bool { x - start >= size * 0.5 && x - start <= size * 2.5 }
+        var descriptions: [Int] = [], wrapped: [Int] = []
+        for index in entry where !names.contains(index) {
+            let rect = elements[index].rect
+            if abs(rect.minX - column) <= size * 0.5 || hangs(rect.minX, from: column) {
+                descriptions.append(index)
+            } else if hangs(rect.minX, from: edge), rect.maxX < column - size * 0.5 {
+                wrapped.append(index)
+            } else {
+                return nil
+            }
+        }
+        let widestName = partners.map { elements[$0.name].rect.width }.max() ?? 0
+        let widestDescription = descriptions.map { elements[$0].rect.width }.max() ?? 0
+        guard widestName <= widestDescription * 0.6 else { return nil }
+        // Entries and the other lines (`starters`) in reading order; every remaining line belongs
+        // to the nearest starter at or above it.
+        let others = indices.filter { !entry.contains($0) }
+        let starters = (names + others).sorted { elements[$0].rect.maxY > elements[$1].rect.maxY }
+        var owned: [Int: [Int]] = [:]
+        var leading: [Int] = []
+        for index in wrapped + descriptions {
+            let rect = elements[index].rect
+            let owner = starters.filter { elements[$0].rect.minY >= rect.minY - size * 0.2 }
+                .min { elements[$0].rect.minY < elements[$1].rect.minY }
+            if let owner { owned[owner, default: []].append(index) } else { leading.append(index) }
+        }
+        func topDown(_ group: [Int]) -> [Element] {
+            group.sorted { elements[$0].rect.maxY > elements[$1].rect.maxY }.map { elements[$0] }
+        }
+        var result = topDown(leading)
+        for starter in starters {
+            let group = owned[starter] ?? []
+            if names.contains(starter) {
+                result += [elements[starter]] + topDown(group.filter(wrapped.contains)) + topDown(group.filter(descriptions.contains))
+            } else {
+                result += [elements[starter]] + topDown(group)
+            }
+        }
+        return result
     }
 
     /// The reading-order sort: rows from the top, left to right within a row. A floated box reads
@@ -3159,8 +3518,18 @@ enum LayoutReconstructor {
     /// size, and everything measured against it, differ between identical runs (#140).
     static func bodySize(_ lines: [TextLine]) -> CGFloat {
         var weights: [Int: Int] = [:]
+        addBodyWeights(of: lines, to: &weights)
+        return bodySize(weights: weights) ?? 12
+    }
+
+    /// Characters per rounded type size, the evidence `bodySize` weighs; accumulated over a document's
+    /// native pages it gives the document's body (#186).
+    static func addBodyWeights(of lines: [TextLine], to weights: inout [Int: Int]) {
         for line in lines { weights[Int(line.fontSize.rounded()), default: 0] += line.text.count }
-        return CGFloat(weights.max { ($0.value, -$0.key) < ($1.value, -$1.key) }?.key ?? 12)
+    }
+
+    static func bodySize(weights: [Int: Int]) -> CGFloat? {
+        weights.max { ($0.value, -$0.key) < ($1.value, -$1.key) }.map { CGFloat($0.key) }
     }
 
     /// The justified measure of the column `line` stands in: the column's own dominant type size
@@ -3412,12 +3781,28 @@ enum LayoutReconstructor {
     /// Small labels inside preserved images must not turn the surrounding prose into headings.
     /// Keep the page estimate when too little reflowable text remains to establish a body size.
     static func headingBodySize(_ lines: [TextLine], pageBody: CGFloat) -> CGFloat {
+        establishedBodySize(lines).map { max(pageBody, $0) } ?? pageBody
+    }
+
+    /// The body size the lines establish: at least three lines and 200 characters in their commonest size.
+    static func establishedBodySize(_ lines: [TextLine]) -> CGFloat? {
         let candidate = bodySize(lines)
         let matching = lines.filter { Int($0.fontSize.rounded()) == Int(candidate) }
-        guard matching.count >= 3, matching.reduce(0, { $0 + $1.text.count }) >= 200 else {
-            return pageBody
-        }
-        return max(pageBody, candidate)
+        guard matching.count >= 3, matching.reduce(0, { $0 + $1.text.count }) >= 200 else { return nil }
+        return candidate
+    }
+
+    /// The smallest heading size on a page whose reflowable text establishes no body of its own
+    /// (#186). Such a page (a back cover, a cover) measures its display lines against type it barely
+    /// sets: *Agricultural Research*'s back cover estimates an 8-point body from the subscribe box
+    /// inside its crop, and its 10-point return address and 11-point web line became headings in a
+    /// magazine whose columns are set at 10.5. There a heading must also clear the document's body
+    /// (`documentBody`, the size most of its native text is set in) as the page threshold clears the
+    /// page's: a line the document's own body would not raise heads nothing on a page too bare to say
+    /// otherwise. A page that establishes its body keeps its own measure.
+    static func documentHeadingFloor(_ lines: [TextLine], documentBody: CGFloat?) -> CGFloat {
+        guard let documentBody, establishedBodySize(lines) == nil else { return 0 }
+        return documentBody * 1.1
     }
 
     /// `noteChapter` is the chapter named by this page's `NOTES TO CHAPTER N` running head,
@@ -3432,7 +3817,8 @@ enum LayoutReconstructor {
     /// open list and last note to the next page. `continuingNote` is the previous page's last note,
     /// which the lines above this page's first note start may continue (#11). `slideDeck` says the
     /// document reads as a deck (`isSlide(_:)`), so this page's slide title, if it has one, is a
-    /// heading and nothing set smaller than it is (#165).
+    /// heading and nothing set smaller than it is (#165). `documentBody` is the size most of the
+    /// document's native text is set in (`documentBodySize`), for a page too bare to state its own (#186).
     static func blocks(page: PageContent, images: [(CGRect, String)], vocabulary: Set<String>,
                        warnings: inout [ConversionWarning], noteChapter: Int? = nil,
                        noteLastChapter: Int? = nil, continuingNoteList: NumberedNoteDetector.OpenList? = nil,
@@ -3441,7 +3827,10 @@ enum LayoutReconstructor {
                        continuesNote: Bool = false,
                        labelStyles: Set<LabelStyle> = [], headingStyles: Set<LabelStyle> = [],
                        neighbouringMarkers: [PageMarker] = [],
-                       slideDeck: Bool = false) -> [ReflowBlock] {
+                       slideDeck: Bool = false,
+                       imageKinds: [String: PreservedImageKind] = [:],
+                       imageCaptions: [String: String] = [:], bookWraps: [Int: CGFloat] = [:],
+                       documentBody: CGFloat? = nil) -> [ReflowBlock] {
         let body = max(4, bodySize(page.lines))
         // A rotated stamp in the outer margin is furniture, never content or a heading.
         let stamps = rotatedMarginLines(page)
@@ -3456,7 +3845,10 @@ enum LayoutReconstructor {
         }
         let shaded = ShadedTableDetector.tables(in: page, lines: lines)
         let shadedLines = shaded.flatMap(\.ownedLines)
-        let tables = shaded + BorderlessTableDetector.tables(in: lines.filter { !shadedLines.contains($0) })
+        let borderless = shaded + BorderlessTableDetector.tables(in: lines.filter { !shadedLines.contains($0) })
+        let borderlessLines = borderless.flatMap(\.ownedLines)
+        // Tables of aligned columns under a header, without rules, bands or capital headings (#150).
+        let tables = borderless + BorderlessTableDetector.alignedTables(in: lines.filter { !borderlessLines.contains($0) })
         let tableLines = tables.flatMap(\.ownedLines)
         // A marker PDFKit split from its item's text rejoins it before anything reads the lines.
         // So do the pieces of a prose row PDFKit split at an inline radical (#95), and the pieces
@@ -3478,12 +3870,25 @@ enum LayoutReconstructor {
         let boxes = clusters(page.tints, distance: 4)
         let outside = free.filter { line in !boxes.contains { $0.contains(CGPoint(x: line.rect.midX, y: line.rect.midY)) } }
         let reflowBody = headingBodySize(outside, pageBody: body)
-        let headingThreshold = max(body * 1.25, reflowBody * 1.1)
+        let documentFloor = documentHeadingFloor(outside, documentBody: documentBody)
+        let headingThreshold = max(body * 1.25, reflowBody * 1.1, documentFloor)
         // A heading line is wider than tall unless it is one or two characters; rotated text
         // outside the margin keeps its paragraph representation.
         func isHeadingSize(_ line: TextLine) -> Bool {
             !page.hasSyntheticTextStyle && line.fontSize >= headingThreshold && line.text.count < 200
                 && (line.rect.width >= line.rect.height || line.text.count <= 2)
+                && (line.text.first?.isLowercase != true || stacksWithDisplay(line))
+        }
+        // A title opens with a capital, a digit or a mark. A heading-size line standing alone that
+        // opens in lowercase is display text that heads nothing: the magazine's cover follows its
+        // 40-point `From Insects` with a 15-point `pages 2, 4-14` (#186), and the 9/11 report's cover
+        // sets `official government edition`. A line stacked with another of its size, above or
+        // below, is part of a title or a pull quote and keeps its size's reading.
+        func stacksWithDisplay(_ line: TextLine) -> Bool {
+            free.contains { other in
+                other != line && other.fontSize >= headingThreshold
+                    && (stacksUnderHeading(line, after: other) || stacksUnderHeading(other, after: line))
+            }
         }
         // Labels are measured against the supported reflowable body, as the threshold is, so
         // small table text cannot make a page's ordinary prose read as labels.
@@ -3495,8 +3900,12 @@ enum LayoutReconstructor {
         // An outline's section labels, ranked by their tier rather than their size (#152).
         let outline = page.hasSyntheticTextStyle || page.recognized ? [] : outlineSectionLabels(in: free.map(untagged), body: reflowBody)
         func outlineDepth(_ line: TextLine) -> Int? { outline.first { $0.line == untagged(line) }?.depth }
+        // On a page too bare to state its body, a label its size alone sets apart must clear the
+        // document's body as a heading must (`documentHeadingFloor`, #186); a sub-heading set at or
+        // under the body keeps its own evidence of style and placement.
         let labels = sectionLabels(in: free.map(untagged), body: reflowBody,
                                    headingThreshold: headingThreshold, page: page, styles: labelStyles)
+            .filter { $0.fontSize >= documentFloor || $0.fontSize < reflowBody * 1.15 }
             + boxTitles(in: free.map(untagged), page: page)
             // A two-column paper's centred small-capital sections and italic lettered subsections,
             // both set at the body's own size (#162).
@@ -3504,7 +3913,11 @@ enum LayoutReconstructor {
             + outline.map(\.line)
         // Edges whose entries wrap into a hanging indent (#134): a label's second line hanging on
         // one continues its title, and a line back on the edge opens the next entry.
-        let entryEdges = page.hasSyntheticTextStyle || page.recognized ? [] : hangingEntryEdges(free.map(untagged), body: reflowBody)
+        let entryEdges = page.hasSyntheticTextStyle || page.recognized ? []
+            : hangingEntryEdges(free.map(untagged), body: reflowBody, titles: labelStyles)
+        // Edges whose one-line entries stand apart by added space instead (#181): a line back on
+        // one opens the next entry as on a hanging edge. They head no titles.
+        let spacedEdges = page.hasSyntheticTextStyle || page.recognized ? [] : spacedEntryEdges(free.map(untagged), body: reflowBody, bookWrap: bookWraps[wrapKey(reflowBody)])
         func continuesHangingTitle(_ line: TextLine, after previous: TextLine, heading: String) -> Bool {
             labels.contains(untagged(line)) && labels.contains(untagged(previous))
                 && hangingEntryEdge(of: previous, in: entryEdges) != nil
@@ -3528,7 +3941,7 @@ enum LayoutReconstructor {
                   line.text.first(where: \.isLetter)?.isLowercase == false,
                   prev.text.last.map({ "-\u{00AD}/".contains($0) }) == false,
                   let first, first.text.contains(where: \.isLetter),
-                  let edge = hangingEntryEdge(of: line, in: entryEdges),
+                  let edge = hangingEntryEdge(of: line, in: entryEdges + spacedEdges),
                   abs(prev.fontSize - edge.size) <= edge.size * 0.1 else { return false }
             func hangs(_ other: TextLine) -> Bool {
                 other.rect.minX - edge.x >= edge.size * 0.5 && other.rect.minX - edge.x <= edge.size * 2.5
@@ -3537,11 +3950,22 @@ enum LayoutReconstructor {
             if hangs(prev) { return prev != first && (opensOnEdge || hangs(first)) }
             guard opensOnEdge else { return false }
             let offset = prev.rect.minX - edge.x
+            // On an edge whose entries stand apart by added space (#181), the entry is set that
+            // far below the line above it; a line at the edge's own wrap continues its entry.
+            if let spacing = edge.spacing, prev.rect.minY - line.rect.maxY < spacing { return false }
             guard abs(offset) <= edge.size * 0.5, let word = line.text.split(whereSeparator: \.isWhitespace).first else { return false }
             let right = free.filter { hangingEntryEdge(of: $0, in: [edge]) != nil }.map(\.rect.maxX).max() ?? prev.rect.maxX
             let wordWidth = line.rect.width * CGFloat(word.count + 1) / CGFloat(max(1, line.text.count))
-            return prev.rect.maxX + wordWidth + edge.size * 0.5 <= right
-                || edge.pairs >= 2 && prev.rect.maxX <= right - edge.size
+            if prev.rect.maxX + wordWidth + edge.size * 0.5 <= right || edge.pairs >= 2 && prev.rect.maxX <= right - edge.size {
+                return true
+            }
+            // Where the edge's entries only ever wrap into the indent, and two or more do (or the
+            // book's titles head them), a line back on the edge is the next entry however far the
+            // one above it ran: 9/11 page 463's `The Honorable Louis J. Freeh, …` is its page's
+            // widest line, over `The Honorable Janet Reno, …` (#161). A line filling the page's
+            // justified measure is prose, and its paragraph runs on.
+            let justified = measures[Int(prev.fontSize.rounded())].map { prev.rect.maxX >= $0 - body * 0.75 } ?? false
+            return (edge.pairs >= 2 || edge.titled) && edge.hangsOnly && !justified
         }
         // In a deck, this slide's title (`slideTitle`) and its body. A slide's title is decided by
         // where it stands, not by a size the slide has too few body words to establish; and once
@@ -3937,6 +4361,45 @@ enum LayoutReconstructor {
                 guard abs(prev.rect.maxX - cap.rect.maxX) <= body * 0.5 else { return false }
                 if prev == cap { return beside(line) }
                 return beside(prev) && abs(line.rect.minX - cap.rect.minX) <= body * 0.5
+            }
+            // An entry's first line on the page's hanging-entry edge (`hangingEntryEdges`, #134) runs
+            // on into a line in the edge's indent, however wide the indent is against a paragraph's
+            // drift: NOAA's front matter lists its staff one to an entry at ordinary leading and wraps
+            // an entry 1.8 ems in (`Brooke C. Stewart, Managing Editor and Lead Science Editor, North
+            // Carolina` / `State University (through July 2023)`, #181). The edge's own wrapped
+            // entries are the evidence, so the opening's space is not asked; three of them share a
+            // measure (below), so the pair being read is never its own evidence (a lone reading-list
+            // entry under a line at ordinary leading keeps #147's answer). The
+            // wrapped line carries on in words: it opens with a letter, a digit or a bracket, and
+            // neither line sets arithmetic, so a form's checkbox under its question (Pro Se page 3's
+            // `☐ Federal question`) and a worked example's next step beneath its annotation (Wallace
+            // page 19's `2+3(5)2 Exponents`) stay apart. And the entry's first line was full: the
+            // wrapped line's first word would not have fitted after it, short of the widest line on
+            // the edge that has a line hanging beneath it (the entries' own measure; a running foot on
+            // the edge is none of theirs), as `opensHangingEntry` asks the other way round, and that
+            // measure is one three of those lines reach within a size. A poem that indents alternate
+            // lines breaks them where the verse does, at no shared measure (NOAA page 5's `It is a
+            // forgotten pleasure, the pleasure` / `of the unexpected blue-bellied lizard`), and each
+            // stays a line of its own.
+            if opening.line == prev, prev.readingRect == nil, let edge = hangingEntryEdge(of: prev, in: entryEdges),
+               abs(line.fontSize - edge.size) <= edge.size * 0.1,
+               line.text.first.map({ $0.isLetter || $0.isNumber || $0 == "(" }) == true,
+               ![prev.text, line.text].contains(where: { $0.rangeOfCharacter(from: Self.arithmetic) != nil }),
+               line.rect.minX - edge.x >= max(body * 1.5, edge.size * 0.5), line.rect.minX - edge.x <= edge.size * 2.5,
+               let word = line.text.split(whereSeparator: \.isWhitespace).first {
+                func hangsBeneath(_ upper: TextLine) -> Bool {
+                    free.contains { lower in
+                        let indent = lower.rect.minX - edge.x, gap = upper.rect.minY - lower.rect.maxY
+                        return indent >= edge.size * 0.5 && indent <= edge.size * 2.5 && gap >= -edge.size * 0.4
+                            && gap < edge.size * 0.9 && abs(lower.fontSize - edge.size) <= edge.size * 0.1
+                            && lower.rect.minX < upper.rect.maxX
+                    }
+                }
+                let full = free.filter { hangingEntryEdge(of: $0, in: [edge]) != nil && hangsBeneath($0) }.map(\.rect.maxX)
+                let right = full.max() ?? prev.rect.maxX
+                let wordWidth = line.rect.width * CGFloat(word.count + 1) / CGFloat(max(1, line.text.count))
+                if full.filter({ $0 >= right - edge.size }).count >= 3,
+                   prev.rect.maxX + wordWidth + edge.size * 0.5 > right { return true }
             }
             guard opening.evidenced, opening.line == prev, prev.readingRect == nil else { return false }
             // At least three lines on `edge`'s left edge end where the opening line does: it fills
@@ -4354,7 +4817,9 @@ enum LayoutReconstructor {
                 flushTagged()
                 flush()
                 codeOrigin = nil
-                result.append(imageBlock(assetID: path, page: page.number))
+                result.append(imageBlock(assetID: path, page: page.number,
+                                         kind: imageKinds[path] ?? .artwork,
+                                         sourceCaption: imageCaptions[path] ?? ""))
                 continue
             }
             if let index = element.table {
@@ -4751,9 +5216,19 @@ enum LayoutReconstructor {
         return ReflowBlock.Table(columns: table.columns, rows: rows, caption: caption)
     }
 
-    static func imageBlock(assetID: String, page: Int, reference: Bool = false) -> ReflowBlock {
-        let caption = reference ? "Original page \(page)" : "Preserved region from page \(page)"
-        return ReflowBlock(content: .image(.init(assetID: assetID, alternativeText: caption, caption: caption)), page: page)
+    /// A preserved image with alternative text that says what it holds and provenance kept out of
+    /// it (#187). `sourceCaption` is the caption the page itself prints for this figure, which
+    /// describes it better than any kind can; it is empty for every crop the converter cannot
+    /// pair with one, and it stays in the reading text as its own block either way.
+    static func imageBlock(assetID: String, page: Int, kind: PreservedImageKind = .artwork,
+                           sourceCaption: String = "") -> ReflowBlock {
+        let provenance = switch kind {
+        case .sourcePage, .page: "Source page \(page)"
+        default: "Preserved region from page \(page)"
+        }
+        let alternative = sourceCaption.isEmpty ? kind.alternativeText : sourceCaption
+        return ReflowBlock(content: .image(.init(assetID: assetID, alternativeText: alternative,
+                                                 provenance: provenance)), page: page)
     }
 
     /// Preserve the source boundary inside a continuing paragraph, without a format-specific marker.
@@ -5257,6 +5732,95 @@ enum LayoutReconstructor {
         text.range(of: "^(?:Figure|Table)\\s+[0-9]", options: .regularExpression) != nil
     }
 
+    /// The label a printed caption opens with (`Figure 3.2`, `Fig. 1`, `TABLE I`, `Algorithm 2`),
+    /// or nil where the line opens no caption (#187). Wider than `isCaption`, which decides what
+    /// carries body text and must stay tight: this only chooses alternative text, and the corpus
+    /// prints its captions in all of these forms.
+    static func captionLabel(_ text: String) -> String? {
+        let trimmed = text.trimmingCharacters(in: .whitespaces)
+        let pattern = "^(?:figure|fig\\.|table|plate|chart|exhibit|map|algorithm|listing|box)"
+            + "\\s+(?:[A-Z]?[0-9]+(?:[-\u{2013}.][0-9]+)*|[IVXLCDM]{1,6})(?![A-Za-z0-9])"
+        guard let range = trimmed.range(of: pattern, options: [.regularExpression, .caseInsensitive]) else {
+            return nil
+        }
+        return String(trimmed[range])
+    }
+
+    /// A printed caption shortened for alternative text (#187): whole up to 200 characters,
+    /// otherwise its sentences that fit (the FAA's `Figure 11-3. Field elevation versus pressure.`
+    /// before three sentences of worked example), or its words that fit and an ellipsis.
+    static func alternativeText(caption: String) -> String {
+        let limit = 200
+        guard caption.count > limit else { return caption }
+        let head = String(caption.prefix(limit))
+        let label = captionLabel(caption)?.count ?? 0
+        if let end = head.ranges(of: /[.!?](?=\s)/).last?.upperBound,
+           head.distance(from: head.startIndex, to: end) > label + 1 {
+            return String(head[..<end])
+        }
+        let words = head.split(separator: " ", omittingEmptySubsequences: true).dropLast()
+        return words.joined(separator: " ") + "\u{2026}"
+    }
+
+    /// The caption a page prints for each crop, where the page leaves no doubt which crop it
+    /// names (#187): exactly one caption stands directly against the crop and that caption stands
+    /// directly against no other crop. Keyed by the crop's rectangle.
+    ///
+    /// A caption is the line opening with a printed label, outside every crop, within one and a
+    /// half body sizes above or below the crop and overlapping its measure, together with the
+    /// lines set directly beneath it in its own type (the rest of the caption's sentence). Where
+    /// two crops or two captions compete the page says nothing reliable, so the crop keeps its
+    /// kind: #27 records that adjacency proves pairing survived, never that a pairing is right,
+    /// and the magazine sets one caption above its photograph and another beside a second.
+    static func sourceCaptions(for regions: [CGRect], in page: PageContent) -> [CGRect: String] {
+        guard !regions.isEmpty else { return [:] }
+        let body = max(4, bodySize(page.lines))
+        let candidates = page.lines.filter { line in
+            captionLabel(line.text) != nil && !regions.contains { region in region.intersects(line.rect) }
+        }
+        guard !candidates.isEmpty else { return [:] }
+        func against(_ line: TextLine, _ region: CGRect) -> Bool {
+            let overlap = min(line.rect.maxX, region.maxX) - max(line.rect.minX, region.minX)
+            guard overlap > 0 else { return false }
+            let below = region.minY - line.rect.maxY
+            let above = line.rect.minY - region.maxY
+            return (below >= -1 && below <= body * 1.5) || (above >= -1 && above <= body * 1.5)
+        }
+        var pairs: [CGRect: TextLine] = [:]
+        for region in regions {
+            let touching = candidates.filter { against($0, region) }
+            guard touching.count == 1, let caption = touching.first,
+                  regions.filter({ against(caption, $0) }).count == 1 else { continue }
+            pairs[region] = caption
+        }
+        return pairs.mapValues { caption in
+            var text = caption.text.trimmingCharacters(in: .whitespaces)
+            // The caption's own wrapped lines: set directly beneath it at the caption's own tight
+            // leading, in its type, within its measure. A section title or the body text after a
+            // caption stands further off (the Word paper's `Data Acquisition`, 6.1 points under
+            // Figure 1's second line where its lines stand 0.5 apart) and ends the caption, as
+            // does a smaller credit line (TechPort's 8.2-point description under the 9-point lines
+            // of `Figure 1: essential signal chain of the MPG technology`). PDFKit sizes a line by
+            // its first run, so a caption whose bold label is set a point smaller reads a point
+            // under its own wrapped lines (the FAA's 8-point `Figure 12-5. …` over 9-point `the
+            // Earth.`): a wrapped line may stand a point from the caption's first line, and no
+            // more than half a point under the line before it.
+            let beneath = page.lines.filter { line in
+                abs(line.fontSize - caption.fontSize) <= 1 && line.rect.maxY < caption.rect.minY + line.rect.height * 0.5
+                    && line.rect.minX >= caption.rect.minX - body && line.rect.minX < caption.rect.maxX
+                    && captionLabel(line.text) == nil && !regions.contains { $0.intersects(line.rect) }
+            }.sorted { $0.rect.maxY > $1.rect.maxY }
+            var floor = caption.rect.minY, size = caption.fontSize
+            for line in beneath {
+                guard floor - line.rect.maxY <= caption.fontSize * 0.4, line.fontSize >= size - 0.5 else { break }
+                text += " " + line.text.trimmingCharacters(in: .whitespaces)
+                floor = line.rect.minY
+                size = line.fontSize
+            }
+            return alternativeText(caption: text.trimmingCharacters(in: .whitespaces))
+        }
+    }
+
     /// An Arabic page number (optionally prefixed by its chapter's number or its part's letter,
     /// `5-17` or `C-2`) or a Roman numeral.
     private static func isFolio(_ text: String) -> Bool {
@@ -5487,7 +6051,8 @@ enum LayoutReconstructor {
               abs(next.fontSize - last.fontSize) <= last.fontSize * 0.1 else { return false }
         var uncertain: [ConversionWarning] = []
         let text = last.text.trimmingCharacters(in: .whitespaces)
-        let operation = joinOperation(text + "-", next.text, vocabulary: vocabulary, page: 0, warnings: &uncertain)
+        let operation = joinOperation(text + "-", next.text, vocabulary: vocabulary, page: 0, lexicon: false,
+                                      warnings: &uncertain)
         guard uncertain.isEmpty, case .removeHyphen = operation else { return false }
         return true
     }
@@ -5938,7 +6503,7 @@ enum LayoutReconstructor {
     }
 
     private static func joinOperation(_ left: String, _ right: String, vocabulary: Set<String>, page: Int,
-                                      warnings: inout [ConversionWarning]) -> JoinOperation {
+                                      lexicon: Bool = true, warnings: inout [ConversionWarning]) -> JoinOperation {
         if left.hasSuffix("\u{00ad}") { return .removeHyphen }
         // A line broken after a slash inside a compound or an address (`runway/` + `taxiway`,
         // `and/` + `or`, `www.faa.gov/` + `pilots/`, `https://` + `www.`) continues it with no
@@ -5966,8 +6531,32 @@ enum LayoutReconstructor {
         if inflectionVouches(prefix: String(prefix).lowercased(), suffix: suffix.lowercased(), vocabulary: vocabulary) {
             return .removeHyphen
         }
+        if lexicon, lexiconVouches(prefix: String(prefix).lowercased(), suffix: suffix.lowercased(), vocabulary: vocabulary) {
+            return .removeHyphen
+        }
         uncertainHyphen(page: page, warnings: &warnings)
         return .concatenate
+    }
+
+    /// Marks the vocabulary of a document declared English, whose word breaks the system's English
+    /// lexicon may decide (`lexiconVouches`, #186).
+    static let englishLexiconKey = "\u{1}lexicon:en"
+
+    /// A line-end hyphen the book's own words cannot decide, in an English document (#186). A
+    /// 24-page magazine prints `com-` + `panies`, `infec-` + `tions` and `compli-` + `ance` and never
+    /// the words whole or in another inflection, so #115's evidence is missing although the words are
+    /// ordinary. The system's English lexicon (`TextLayerPlausibility.lexiconContains`, the list the
+    /// text-layer judgement reads) vouches for the join when it holds the joined word and the halves
+    /// are not both words, of the lexicon or the book, with #115's lengths: two letters a side and six
+    /// in all. The compound was already refused: the book prints neither it nor an inflection of it.
+    /// A compound whose halves are both words (`on-` + `going`, `sharp-` + `edged`) keeps its hyphen
+    /// and warns, as before. Only a hyphen the page printed consults the lexicon; a hyphen PDFKit lost
+    /// (#157) needs the book's own evidence.
+    static func lexiconVouches(prefix: String, suffix: String, vocabulary: Set<String>) -> Bool {
+        guard vocabulary.contains(englishLexiconKey), prefix.count >= 2, suffix.count >= 2, prefix.count + suffix.count >= 6,
+              TextLayerPlausibility.lexiconContains(prefix + suffix) == true else { return false }
+        func word(_ text: String) -> Bool { vocabulary.contains(text) || TextLayerPlausibility.lexiconContains(text) == true }
+        return !(word(prefix) && word(suffix))
     }
 
     private static let inflections = ["s", "es", "d", "ed", "ing", "ly"]

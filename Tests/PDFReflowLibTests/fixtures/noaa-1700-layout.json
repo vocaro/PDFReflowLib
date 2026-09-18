@@ -1,0 +1,939 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        54,
+        767.47000000000003,
+        155.60000000000005,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Fifth National Climate Assessment"
+        }
+      ],
+      "text" : "Fifth National Climate Assessment"
+    },
+    {
+      "rect" : [
+        51.279998779000003,
+        16.990000000000002,
+        149.66100000000006,
+        13.27
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "F2-2 | Focus on Western Wildfires"
+        }
+      ],
+      "text" : "F2-2 | Focus on Western Wildfires"
+    },
+    {
+      "rect" : [
+        54,
+        704.49599999999998,
+        294.9672000091681,
+        31.847999999999956
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 24,
+          "text" : "Focus on Western Wildfires"
+        }
+      ],
+      "text" : "Focus on Western Wildfires"
+    },
+    {
+      "rect" : [
+        54,
+        667.906012207,
+        159.60280000534794,
+        18.577999999999975
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 14,
+          "text" : "Authors and Contributors"
+        }
+      ],
+      "text" : "Authors and Contributors"
+    },
+    {
+      "rect" : [
+        54,
+        639.49001220699995,
+        151.17000000764,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Federal Coordinating Lead Author"
+        }
+      ],
+      "text" : "Federal Coordinating Lead Author"
+    },
+    {
+      "rect" : [
+        54,
+        622.99001220699995,
+        257.63249964062993,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Allison R. Crimmins"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", US Global Change Research Program"
+        }
+      ],
+      "text" : "Allison R. Crimmins, US Global Change Research Program"
+    },
+    {
+      "rect" : [
+        54,
+        597.99001220699995,
+        92.913000001910007,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Chapter Lead Author"
+        }
+      ],
+      "text" : "Chapter Lead Author"
+    },
+    {
+      "rect" : [
+        54,
+        581.49001220699995,
+        343.03839771264006,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Steven M. Ostoja"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", USDA Agricultural Research Service, California Climate Hub"
+        }
+      ],
+      "text" : "Steven M. Ostoja, USDA Agricultural Research Service, California Climate Hub"
+    },
+    {
+      "rect" : [
+        54,
+        556.49001220699995,
+        102.31100000762999,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Technical Contributors"
+        }
+      ],
+      "text" : "Technical Contributors"
+    },
+    {
+      "rect" : [
+        54,
+        539.99001220699995,
+        306.05099982172999,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Robert G. Byron"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", Montana Health Professionals for a Healthy Climate"
+        }
+      ],
+      "text" : "Robert G. Byron, Montana Health Professionals for a Healthy Climate"
+    },
+    {
+      "rect" : [
+        54,
+        518.99001220699995,
+        151.73649944617995,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Amy E. East"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", US Geological Survey"
+        }
+      ],
+      "text" : "Amy E. East, US Geological Survey"
+    },
+    {
+      "rect" : [
+        54,
+        497.99001220700001,
+        207.52340698199998,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Michael Méndez"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", University of California, Irvine"
+        }
+      ],
+      "text" : "Michael Méndez, University of California, Irvine"
+    },
+    {
+      "rect" : [
+        54,
+        476.99001220700001,
+        330.94729759937002,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Susan M. O’Neill"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", USDA Forest Service, Pacific Northwest Research Station"
+        }
+      ],
+      "text" : "Susan M. O’Neill, USDA Forest Service, Pacific Northwest Research Station"
+    },
+    {
+      "rect" : [
+        54,
+        455.99001220700001,
+        335.88389733037002,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "David L. Peterson"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", USDA Forest Service, Pacific Northwest Research Station"
+        }
+      ],
+      "text" : "David L. Peterson, USDA Forest Service, Pacific Northwest Research Station"
+    },
+    {
+      "rect" : [
+        54,
+        434.99001220700001,
+        191.40839880299998,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Jeffrey R. Pierce"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", Colorado State University"
+        }
+      ],
+      "text" : "Jeffrey R. Pierce, Colorado State University"
+    },
+    {
+      "rect" : [
+        54,
+        413.99001220700001,
+        297.98260193182,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Crystal Raymond"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", University of Washington, Climate Impacts Group"
+        }
+      ],
+      "text" : "Crystal Raymond, University of Washington, Climate Impacts Group"
+    },
+    {
+      "rect" : [
+        54,
+        392.99001220700001,
+        232.96689898599999,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Aradhna Tripati"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", University of California, Los Angeles"
+        }
+      ],
+      "text" : "Aradhna Tripati, University of California, Los Angeles"
+    },
+    {
+      "rect" : [
+        54,
+        371.99001220700001,
+        302.33490698200001,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Ambarish Vaidyanathan"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", Centers for Disease Control and Prevention"
+        }
+      ],
+      "text" : "Ambarish Vaidyanathan, Centers for Disease Control and Prevention"
+    },
+    {
+      "rect" : [
+        54,
+        342.49001220700001,
+        61.024000003819992,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Review Editor"
+        }
+      ],
+      "text" : "Review Editor"
+    },
+    {
+      "rect" : [
+        54,
+        325.99001220700001,
+        400.67889883352012,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Ellen M. Considine"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", Harvard T.H. Chan School of Public Health, Department of Biostatistics"
+        }
+      ],
+      "text" : "Ellen M. Considine, Harvard T.H. Chan School of Public Health, Department of Biostatistics"
+    },
+    {
+      "rect" : [
+        54,
+        300.99001220700001,
+        42.656999992370004,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Cover Art"
+        }
+      ],
+      "text" : "Cover Art"
+    },
+    {
+      "rect" : [
+        54,
+        284.49001220700001,
+        55.564000000000007,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "David Zeiset"
+        }
+      ],
+      "text" : "David Zeiset"
+    },
+    {
+      "rect" : [
+        54,
+        119.38999847400001,
+        105.34999999999997,
+        13.27000000000001
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Recommended Citation"
+        }
+      ],
+      "text" : "Recommended Citation"
+    },
+    {
+      "rect" : [
+        54,
+        100.88999847400001,
+        472.8920000095402,
+        13.849999999999994
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Ostoja, S.M., A.R. Crimmins, R.G. Byron, A.E. East, M. Méndez, S.M. O’Neill, D.L. Peterson, J.R. Pierce, C."
+        }
+      ],
+      "text" : "Ostoja, S.M., A.R. Crimmins, R.G. Byron, A.E. East, M. Méndez, S.M. O’Neill, D.L. Peterson, J.R. Pierce, C."
+    },
+    {
+      "rect" : [
+        54,
+        86.759998474,
+        466.76429809499996,
+        13.980000000000004
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Raymond, A. Tripati, and A. Vaidyanathan, 2023: Focus on western wildfires In: "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "italic" : true,
+          "text" : "Fifth National Climate"
+        }
+      ],
+      "text" : "Raymond, A. Tripati, and A. Vaidyanathan, 2023: Focus on western wildfires In: Fifth National Climate"
+    },
+    {
+      "rect" : [
+        54,
+        72.759998474,
+        502.95239975333993,
+        13.980000000000004
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "italic" : true,
+          "text" : "Assessment"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ". Crimmins, A.R., C.W. Avery, D.R. Easterling, K.E. Kunkel, B.C. Stewart, and T.K. Maycock, Eds. U.S."
+        }
+      ],
+      "text" : "Assessment. Crimmins, A.R., C.W. Avery, D.R. Easterling, K.E. Kunkel, B.C. Stewart, and T.K. Maycock, Eds. U.S."
+    },
+    {
+      "rect" : [
+        54,
+        58.889998474000002,
+        446.55438549799999,
+        13.850000000000001
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Global Change Research Program, Washington, DC, USA. https://doi.org/10.7930/NCA5.2023.F2"
+        }
+      ],
+      "text" : "Global Change Research Program, Washington, DC, USA. https://doi.org/10.7930/NCA5.2023.F2"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    612,
+    792
+  ],
+  "caseID" : "noaa-nca5-2023",
+  "graphics" : [
+    [
+      0,
+      661.70001220699999,
+      229.11799621500001,
+      27
+    ],
+    [
+      52,
+      283.20001220699999,
+      59.556999206,
+      4
+    ],
+    [
+      317.32638549799998,
+      57.599998474000003,
+      185.22700500000002,
+      4
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        767.47000000000003,
+        155.60000000000005,
+        13.269999999999982
+      ],
+      "text" : "Fifth National Climate Assessment"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        51.279998779000003,
+        16.990000000000002,
+        149.66100000000006,
+        13.27
+      ],
+      "text" : "F2-2 | Focus on Western Wildfires"
+    },
+    {
+      "fontSize" : 24,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        704.49599999999998,
+        294.9672000091681,
+        31.847999999999956
+      ],
+      "text" : "Focus on Western Wildfires"
+    },
+    {
+      "fontSize" : 14,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        667.906012207,
+        159.60280000534794,
+        18.577999999999975
+      ],
+      "text" : "Authors and Contributors"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        639.49001220699995,
+        151.17000000764,
+        13.269999999999982
+      ],
+      "text" : "Federal Coordinating Lead Author"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        622.99001220699995,
+        257.63249964062993,
+        13.269999999999982
+      ],
+      "text" : "Allison R. Crimmins, US Global Change Research Program"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        597.99001220699995,
+        92.913000001910007,
+        13.269999999999982
+      ],
+      "text" : "Chapter Lead Author"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        581.49001220699995,
+        343.03839771264006,
+        13.269999999999982
+      ],
+      "text" : "Steven M. Ostoja, USDA Agricultural Research Service, California Climate Hub"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        556.49001220699995,
+        102.31100000762999,
+        13.269999999999982
+      ],
+      "text" : "Technical Contributors"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        539.99001220699995,
+        306.05099982172999,
+        13.269999999999982
+      ],
+      "text" : "Robert G. Byron, Montana Health Professionals for a Healthy Climate"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        518.99001220699995,
+        151.73649944617995,
+        13.269999999999982
+      ],
+      "text" : "Amy E. East, US Geological Survey"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        497.99001220700001,
+        207.52340698199998,
+        13.269999999999982
+      ],
+      "text" : "Michael Méndez, University of California, Irvine"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        476.99001220700001,
+        330.94729759937002,
+        13.269999999999982
+      ],
+      "text" : "Susan M. O’Neill, USDA Forest Service, Pacific Northwest Research Station"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        455.99001220700001,
+        335.88389733037002,
+        13.269999999999982
+      ],
+      "text" : "David L. Peterson, USDA Forest Service, Pacific Northwest Research Station"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        434.99001220700001,
+        191.40839880299998,
+        13.269999999999982
+      ],
+      "text" : "Jeffrey R. Pierce, Colorado State University"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        413.99001220700001,
+        297.98260193182,
+        13.269999999999982
+      ],
+      "text" : "Crystal Raymond, University of Washington, Climate Impacts Group"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        392.99001220700001,
+        232.96689898599999,
+        13.269999999999982
+      ],
+      "text" : "Aradhna Tripati, University of California, Los Angeles"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        371.99001220700001,
+        302.33490698200001,
+        13.269999999999982
+      ],
+      "text" : "Ambarish Vaidyanathan, Centers for Disease Control and Prevention"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        342.49001220700001,
+        61.024000003819992,
+        13.269999999999982
+      ],
+      "text" : "Review Editor"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        325.99001220700001,
+        400.67889883352012,
+        13.269999999999982
+      ],
+      "text" : "Ellen M. Considine, Harvard T.H. Chan School of Public Health, Department of Biostatistics"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        300.99001220700001,
+        42.656999992370004,
+        13.269999999999982
+      ],
+      "text" : "Cover Art"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        284.49001220700001,
+        55.564000000000007,
+        13.269999999999982
+      ],
+      "text" : "David Zeiset"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        119.38999847400001,
+        105.34999999999997,
+        13.27000000000001
+      ],
+      "text" : "Recommended Citation"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        100.88999847400001,
+        472.8920000095402,
+        13.849999999999994
+      ],
+      "text" : "Ostoja, S.M., A.R. Crimmins, R.G. Byron, A.E. East, M. Méndez, S.M. O’Neill, D.L. Peterson, J.R. Pierce, C."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        86.759998474,
+        466.76429809499996,
+        13.980000000000004
+      ],
+      "text" : "Raymond, A. Tripati, and A. Vaidyanathan, 2023: Focus on western wildfires In: Fifth National Climate"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        72.759998474,
+        502.95239975333993,
+        13.980000000000004
+      ],
+      "text" : "Assessment. Crimmins, A.R., C.W. Avery, D.R. Easterling, K.E. Kunkel, B.C. Stewart, and T.K. Maycock, Eds. U.S."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        58.889998474000002,
+        446.55438549799999,
+        13.850000000000001
+      ],
+      "text" : "Global Change Research Program, Washington, DC, USA. https://doi.org/10.7930/NCA5.2023.F2"
+    }
+  ],
+  "page" : 1700,
+  "paints" : [
+    {
+      "filled" : true,
+      "frame" : true,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        0,
+        661.70001220699999,
+        229.11799621500001,
+        27
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        52,
+        283.20001220699999,
+        59.556999206,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        317.32638549799998,
+        57.599998474000003,
+        185.22700500000002,
+        4
+      ]
+    }
+  ],
+  "rightsBasis" : "NOAA repository explicitly identifies CC0 Public Domain. This records the publisher declaration, not a new owner-confirmed rights determination or shipped-catalog admission.",
+  "sourceSHA256" : "1942cbf346dc2c711fea413d6d6543edb8bc1e3a88d4c3a85e733c6b6d3577bf",
+  "sourceTitle" : "Fifth National Climate Assessment",
+  "sourceURL" : "https://repository.library.noaa.gov/view/noaa/61592/noaa_61592_DS1.pdf"
+}

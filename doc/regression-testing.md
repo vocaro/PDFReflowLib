@@ -12,7 +12,7 @@ A valid EPUB can still contain incorrect text, wrong reading order or unreadable
   pixels, including crop origins, rotations, annotations and resource ceilings. Preserved-region
   tests also inspect fraction bars, raised exponents and all six cells of a ruled table in actual
   EPUB images at 72/144 DPI, with surrounding-prose and code controls.
-- `scripts/check-all.sh --corpus`: the same checks plus <!-- counts:documents -->22<!-- counts:end --> complete PDF conversions,
+- `scripts/check-all.sh --corpus`: the same checks plus <!-- counts:documents -->20<!-- counts:end --> complete PDF conversions,
   sequentially, with EPUBCheck, monotonic progress, pinned source identities,
   [memory budgets](corpus.md) (the lowest peak of up to two conversions, since
   one measurement of a book's peak resident size varies by about 100 MiB under load, #140)
@@ -115,23 +115,23 @@ are, in the page markup). Evidence and negative controls on real output are in
 ## Current content coverage
 
 <!-- counts:coverage -->
-[corpus/regressions.json](../corpus/regressions.json) has 3435 targeted checks on 562 reviewed pages
-across 22 documents: *Pilot's Handbook of Aeronautical Knowledge*, *Beginning and Intermediate
+[corpus/regressions.json](../corpus/regressions.json) has 3537 targeted checks on 572 reviewed pages
+across 20 documents: *Pilot's Handbook of Aeronautical Knowledge*, *Beginning and Intermediate
 Algebra*, *The 9/11 Commission Report*, *The Fed Explained*, *Dietary Guidelines for Americans*,
 *Fifth National Climate Assessment*, *Our Flag*, *Preparedness 101*, *Project Blue Book Special
 Report No. 14*, *Mineral Commodity Summaries 2025*, *Loper Bright Enterprises v. Raimondo*,
-*Disclosure Risk Assessment in Perturbative Microdata Protection*, *Welcome to the United States*,
-*Publication 596*, *Stimulated Multiphoton Bremsstrahlung in Electron-Ion Collisions*, *Replay
-Clocks*, *Complaint for a Civil Case*, *Investigation of Atmospheric Boundary-Layer Effects on
-Launch-Vehicle Ground Wind Loads*, *A Scheduling Algorithm Compatible with a Distributed Management
-of Arrivals in the National Airspace System*, *Agricultural Research*, *Earthdata Cloud Analytics
-Project* and *Tank Health Monitoring*. They comprise 1136 ordered-text, 242 text, 404 paragraph,
-291 absent-text, 271 heading, 36 heading-level, 50 absent-heading, 88 list-item, 40 list,
-21 preformatted-block, 1 preformatted-lines, 29 script, 8 absent-script, 11 footnote, 34 note-link,
-61 paragraph-continuation, 1 list-item-continuation, 8 paragraph-separation, 97 distinct-paragraph,
-201 image-presence, 44 captioned-image, 102 page-reference, 113 warning, 111 absent-warning,
-17 source-region, 5 glyph-structure, 4 image-appearance and 9 table-cell checks, counted as
-`tools/check_corpus_content.py` counts them.
+*Disclosure Risk Assessment in Perturbative Microdata Protection*, *Stimulated Multiphoton
+Bremsstrahlung in Electron-Ion Collisions*, *Replay Clocks*, *Complaint for a Civil Case*,
+*Investigation of Atmospheric Boundary-Layer Effects on Launch-Vehicle Ground Wind Loads*, *A
+Scheduling Algorithm Compatible with a Distributed Management of Arrivals in the National Airspace
+System*, *Agricultural Research*, *Earthdata Cloud Analytics Project* and *Tank Health Monitoring*.
+They comprise 1137 ordered-text, 239 text, 432 paragraph, 295 absent-text, 278 heading,
+36 heading-level, 64 absent-heading, 88 list-item, 40 list, 21 preformatted-block,
+1 preformatted-lines, 29 script, 10 absent-script, 11 footnote, 34 note-link,
+61 paragraph-continuation, 1 list-item-continuation, 8 paragraph-separation, 120 distinct-paragraph,
+200 image-presence, 45 captioned-image, 20 image-alternative, 102 page-reference, 111 warning,
+113 absent-warning, 17 source-region, 5 glyph-structure, 5 image-appearance and 14 table-cell
+checks, counted as `tools/check_corpus_content.py` counts them.
 <!-- counts:end -->
 
 All source-page anchors must also remain complete and ordered, and semantic text must contain no image attachment placeholders.
@@ -196,7 +196,9 @@ on selected regions; robust visual/semantic contracts still need expansion. The 
 lane does not supply a whole-book quality score or physical-device performance qualification.
 
 The full Warren conversion remains explicitly excluded from this successful-conversion lane because
-of the known image-output ceiling failure (#5); the pinned Warren excerpt separately checks its two
+of the image-output ceiling (#5): under the automatic encoding default it now fits the 512 MiB
+budget, but by only 316,202 bytes (0.059%), and whether that is a pass is #5's decision
+([evidence](../measurements/image-encoding-default/record.md)); the pinned Warren excerpt separately checks its two
 textless pages. NOAA joined the lane once its entry bytes fell under the default budget
 ([evidence](../measurements/opaque-page-rasters/record.md)), and is gated like any other case.
 Exclusions are listed in output, never counted as passes.
@@ -231,7 +233,7 @@ the Wallace exercise still scores 0.97, which is why the glyph-structure check b
 
 A page that reflows beside its source-page reference image carries every region inside that image,
 which also satisfies a region reference (0.98–0.99 on NBS). `"excludePageReference": true` on an
-`imageRegions` expectation skips the page's `Original page N` image, so only a crop can pass. Five
+`imageRegions` expectation skips the page's source-page reference image, so only a crop can pass. Five
 such references cover NBS figures 1 and 2 and display equations (4), (11) and (15): the converter's
 crops score 0.985–0.998, while the Paper Capture evidence boxes alone, half of figure 1 or equation
 (4) without its number cannot be placed at all. See the
@@ -271,7 +273,12 @@ reference samples whose converted hue is within 30° with at least half the chro
 The Colorado flag on Our Flag page 33, FAA figure 5-36, the USGS statistics table and the CDC comic's
 image-only page 13 are checked; page 13 is the first colour check on artwork rather than a chart or a
 flag (the lamp's yellow glow over blue-grey night panels), and its crop scores 1.00 scale, 0.99
-contrast and 1.00 agreement over 1,247 colored samples.
+contrast and 1.00 agreement over 1,247 colored samples. The FAA page-67 attitude indicator, the
+drawn illustration the automatic encoding keeps PNG (#193), is checked inside its figure crop
+(0.99 agreement over 373 colored samples; a grayscale copy scores 0.00). At 36 DPI the check cannot
+see chroma subsampling: a JPEG 0.90 copy of the same crop scores the same, so the encoding choice
+itself is pinned by `ImageContentClassifierTests`, not here
+([evidence](../measurements/image-encoding-default/record.md)).
 Correct crops score 0.98–1.00 scale, 0.55–0.99 contrast and 0.99+ color agreement; grayscale,
 channel-swapped, level-compressed and downscaled crops fail (agreement ≤ 0.36, contrast ≤ 0.18,
 scale ≤ 0.79). Scale is a pixel-dimension check, not a sharpness measure. Glyph structure stays a
@@ -313,7 +320,10 @@ spine reader separates cell text with spaces and parses each table into a grid. 
 [table-cells record](../measurements/table-cells/record.md).
 
 A `pageReference` expectation (a boolean) requires the page to carry, or not to carry, the
-converter's `Original page N` image, independently of its region crops (#151). Since #27's coverage
+converter's source-page reference image, independently of its region crops (#151). The reader knows
+that image by `title="Source page N"` with the alternative text `The printed page, for comparison`
+(a whole-page fallback shares the title, not the text), or, in an EPUB from before #187, by
+`alt="Original page N"`, so baselines still compare. Since #27's coverage
 pass it also covers every page of the TechPort print and the IEEEtran paper, pages 2–20 of the Word
 paper and eight more magazine pages (all false: their annotations draw nothing), and all seven NBS
 pages (true: the scan keeps its source page beside the inherited OCR).
@@ -325,10 +335,10 @@ and `paragraphs`, which ask only that the page holds the phrase. A `captionedIma
 (`{"caption"}`, with an optional `"position"` of `after` — the default — or `before`) adds the
 placement: the reader records each page's own outermost blocks (`p`, `pre`, `li`, `table`,
 `h1`–`h6`) and its images in document order, and some block holding the phrase must be the
-immediate neighbour of an image on that side. The converter's generic `<figcaption>` never enters
-that sequence, so a preserved region's own caption cannot separate a figure from the caption the
-source printed; a block a page marker interrupts keeps only the text it holds on the page it opened,
-so a caption is judged on its own page.
+immediate neighbour of an image on that side. A `<figcaption>` never enters that sequence (the
+converter has written none since #187, and one in an older EPUB cannot separate a figure from the
+caption the source printed); a block a page marker interrupts keeps only the text it holds on the
+page it opened, so a caption is judged on its own page.
 
 Forty-four pairs are checked: 23 FAA `Figure N-M.` captions on sixteen pages, the Word paper's
 Figure 3 and its five appendix captions, the IEEEtran paper's Fig. 1 (below its figure) and the
@@ -340,6 +350,20 @@ caption survives, a removed caption, a caption on the wrong side and a caption o
 same mutations on real output fail on FAA page 262, the Word paper's page 14, the IEEEtran page 7
 and NBS page 2. The check proves the pairing survived, not that a caption sits beside the right
 figure. See the [caption-pairing and page-policy evidence](../measurements/figure-captions-and-page-policy/record.md).
+
+An `imageAlternatives` expectation (a nonempty list of strings) names alternative text that some
+image on the page must carry exactly, whitespace normalized: the caption the source prints beside a
+figure, or the kind the converter names from a crop's evidence (`Mathematical expression`, `Table
+kept as an image`, `Illustration`, `Whole page kept as an image`, `The printed page, for comparison`;
+#187). A page that names any also fails if an image on it carries empty alternative text or the
+provenance the converter wrote there before #187 (`Preserved region from page N`, `Original page
+N`). Twenty-two checks on fourteen pages cover FAA pages 262 and 288 (printed captions, one wrapped, and
+page 262's kinetic-energy display), Wallace pages 96, 343 and 427 (graphs, the quadratic-formula
+derivation, the right-triangle answers), both USGS pages and Census page 12 (tables), the Word
+paper's Figure 1 and Figure A1, Replay Clocks page 3 (a figure, an algorithm float and a display),
+NBS page 2, Our Flag page 27's flag-size table and CDC page 2, a whole-page fallback. Python
+controls reject a missing kind, provenance or empty text beside a correct one, and malformed
+expectations. See the [alternative-text evidence](../measurements/preserved-image-alt-text/record.md).
 
 A `maximumImages` expectation (a non-negative integer) fails a page with more images than that,
 including source-page reference images; it pins decoration that must not become an image. The Fed
@@ -358,7 +382,11 @@ names (#138). See the
 [table caption and tag evidence](../measurements/table-captions-and-tags/record.md) and the
 [table header and borderless-table evidence](../measurements/table-headers-and-borderless/record.md) and the
 [table leftovers evidence](../measurements/table-leftovers/record.md) and the
-[cell-label script evidence](../measurements/cell-label-scripts/record.md).
+[cell-label script evidence](../measurements/cell-label-scripts/record.md). Census pages 12 and 15
+transcribe their four tables of aligned columns (#150): header paths through the spanning group
+headings (`d Metric Ascore`, `20% Zone Matches Sscore`), row-header labels, and numbers a word space
+apart in Table 8; FAA page 410 transcribes the VOR/VORTAC table's class and altitude columns, the
+wrapped altitude joined, with no row headers (#137).
 
 ## Adding or changing a regression
 
@@ -401,7 +429,7 @@ swiftc Sources/PDFReflowLib/NativeTextReader.swift Sources/PDFReflowLib/Conversi
   Sources/PDFReflowLib/DocumentModel.swift Sources/PDFReflowLib/ReflowDocument.swift \
   Sources/PDFReflowLib/GraphicsReader.swift Sources/PDFReflowLib/NativeSpacingReader.swift \
   Sources/PDFReflowLib/FontWeightReader.swift Sources/PDFReflowLib/PrivateUseDecoder.swift \
-  tools/capture-algebra-layout.swift \
+  Sources/PDFReflowLib/ColumnGrid.swift tools/capture-algebra-layout.swift \
   -o /tmp/capture-algebra-layout
 /tmp/capture-algebra-layout corpus/cache/Beginning_and_Intermediate_Algebra.pdf /tmp/algebra-17-layout.json
 ```
@@ -518,6 +546,24 @@ alone (repeated labels or a label without its own value cost only that list its 
 header cell over one column, a single spanning header cell and spans short of the body's columns as
 controls that keep the first-column rule.
 
+## Tables of aligned columns
+
+`AlignedColumnTablesTests.swift` covers #150 and #137. Source-derived `census-12`, `census-15` and
+`faa-410` fixtures (captured with index-glyph decoding and the aligned-column split) read as tables:
+Census Tables 2 and 3 with their row labels and the group headings each spanning three scores,
+Tables 7 and 8 with Table 8's numbers a word space apart, and FAA's service volumes with `Distance`
+above `(Miles)` as one heading and the wrapped altitude and its distance in one row; the titles stay
+paragraphs. Re-merging each row as PDFKit returns it reproduces the defect: no table, and the Census
+pages keep the numeric-grid guard. FAA's paragraph tag over the wrapped altitude's second line and
+its `100` admits them, with a tag reaching outside the table and a heading tag as controls. Synthetic
+lines control the rule: no header, two rows, no numeric column, a marker column, dot leaders, a cell
+wider than fifteen ems, a partial body row above the body, a ragged column, two timelines side by
+side (a line continuing two cells), a prose page column beside the table, centred and stacked
+higher headings, and a numeric grid of range cells that a read table releases from the guard. A
+synthetic PDF sets Census Table 2 with each row one TJ show, which PDFKit returns as one line;
+extraction splits it into cells, and without the header it stays whole. See the
+[aligned-column table evidence](../measurements/aligned-column-tables/record.md).
+
 ## Labels joined across a page
 
 `DetachedLabelTests.swift` covers [#14](https://github.com/vocaro/PDFReflowLib/issues/14): PDFKit
@@ -600,9 +646,15 @@ swiftc Sources/PDFReflowLib/NativeTextReader.swift Sources/PDFReflowLib/Conversi
   Sources/PDFReflowLib/FontWeightReader.swift Sources/PDFReflowLib/PrivateUseDecoder.swift \
   Sources/PDFReflowLib/AnnotationEvidence.swift \
   tools/capture-layout-fixture.swift \
+  Sources/PDFReflowLib/GlyphIndexDecoder.swift Sources/PDFReflowLib/TextEncodingCheck.swift \
+  Sources/PDFReflowLib/ColumnGrid.swift tools/capture-layout-fixture.swift \
   -o /tmp/capture-layout-fixture
 /tmp/capture-layout-fixture faa-phak-8083-25c 91 /tmp/faa-91-layout.json
 ```
+
+Since #150 the tool reads index-named glyphs through the characters the document's own words
+establish (#143), as the pipeline does, and extraction splits a table of aligned columns into cells;
+fixtures captured before read Census's text shifted.
 
 Since #125 an attributed run drawn in a bold font resource that PDFKit does not name bold (a
 `Dm`, `Demi` or `Semibold` face, or any embedded font PDFKit reports as `Helvetica`) records
@@ -619,7 +671,7 @@ the page's structure validates, each line also records the tag the pipeline appl
 since #89/#90); older fixtures and untagged lines have none, and `SourceLayoutFixture` restores it.
 Source review, baseline failures, cross-document safeguards and full-run evidence are retained
 in [the three-fix measurement](../measurements/three-fidelity-fixes/record.md). The suite contains
-<!-- counts:swift-tests -->933 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->245 Python tests<!-- counts:end -->.
+<!-- counts:swift-tests -->993 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->248 Python tests<!-- counts:end -->.
 The comparison tests include a real-Poppler image URL check through the safe HTTP handler
 (simple and positioned modes, paths with spaces); absent Poppler is an explicit skip.
 
@@ -649,7 +701,7 @@ balloon's last line, close centres, a list line, shared baselines, an overhangin
 records each rotated line's `readingDirection`; its sideways caption reads in line order, and
 synthetic lines check both rotations, mixed directions, upright text, the direction's threshold, its
 scaling in a retry band and its page-store encoding. Wallace pages 50 and 218 (`algebra-50`,
-`algebra-218`) join `dif-` + `ferent` on the book's `diﬀerent`, and page 64 (`algebra-64`) keeps its
+`algebra-218`) join `dif-` + `ferent` on the book's `diﬀerent` (spelled out since #189), and page 64 (`algebra-64`) keeps its
 spaced example lines out of the list items, with and without crops; synthetic controls keep a
 wrapped line at the ordinary gap, a spaced line opening lowercase and a page with no measurable gap
 in the item. The CDC contract adds pages 14, 17, 23 and 34 and the Wallace contract pages 50, 64 and
@@ -696,9 +748,18 @@ complete-conversion gate. A passing excerpt does not qualify the complete book.
 prose, graphical crops and required page fallbacks. It verifies independent page/region JPEG
 and PNG bytes with matching EPUB media types, clean/noisy smallest-encoding choices, unchanged
 raster dimensions, invalid qualities, and size-failure cleanup without false completion.
+`ImageContentClassifierTests.swift` covers the automatic default (#193): features pinned to a
+hand-computed raster the survey prototype agrees with, the same features from the context buffer
+the converter reads and from the finished image, positive and negative controls for every verdict
+(photograph, neutral scan, coloured chart, drawn illustration crop against its page reference and
+against a shaded crop under 30% flat, text pages by page evidence), and a three-figure page whose
+photograph alone goes to JPEG by default while bare `smallest` also takes the illustration and
+named encodings apply exactly. Disabling the flat-share tightening, or admitting every image as
+neutral, fails them.
 
 `check-conversion-policies.py` runs actual CLI policy combinations through independent
-EPUB structure checks, optional EPUBCheck and the internal reader. Invalid and over-budget
+EPUB structure checks, optional EPUBCheck and the internal reader. The automatic encoding named
+explicitly (`automatic`, `automatic:0.9`) must write byte-identical images to the default. Invalid and over-budget
 requests must fail without output or completion. Header/footer cases require `prose.pdf`'s
 running header to be absent by default and with `remove`, present on all three pages with `keep`,
 and byte-identical across two `keep` runs with a pinned identifier and date. Invalid values
@@ -942,6 +1003,32 @@ rule in place of a picture. The magazine contract adds eleven absent-foot, six h
 paragraph and nine captioned-image checks; see the
 [foot-rule, indent and credit evidence](../measurements/foot-rules-indents-and-credits/record.md).
 
+## Dingbats, misreported capitals, bare-page headings and lexicon word breaks
+
+`MagazineLeftoversTests.swift` covers [#186](https://github.com/vocaro/PDFReflowLib/issues/186), the
+leftovers of #159 on USDA ARS *Agricultural Research*. In-memory PDFs copy the magazine's font
+dictionaries and maps: its composite `WVUHWN+MonotypeSorts`, whose map reads the back cover's bullet
+as `l` (Zapf Dingbats' code for ●), reads `ars.usda.gov/ar ● Follow us` with `Follow`'s letters kept
+and no superscript, as do `ZapfDingbats` and `ITCZapfDingbats`; the same map under a text font's name
+keeps its `l`. Its `Helvetica-Condensed` credit font, whose map reads code `Z` as `z` while the
+WinAnsi encoding and the `CharSet` name only `/Z`, reads `BRAD FRITZ (D2697-1)`; a `CharSet` listing
+`/z` too, a symbolic font and a map naming another letter keep the map's reading. A raised bullet a
+word space from both neighbours is no script (#155's control `a <sup>•</sup> b` now reads `a • b`),
+while one against a word, and a raised letter, stay scripts.
+
+Source fixtures `usda-1` and `usda-24` (text and geometry only) require the back cover's return
+address, `Official Business` and web line as paragraphs against the document's 10.5-point body (the
+page's own 8-point estimate, the control, still makes them headings) and the cover's lone
+lowercase `pages 2, 4-14` as a paragraph under its headings; synthetic controls keep an 11.5-point
+title on a page that states its own 9-point body, and a two-line title whose second line opens in
+lowercase. `usda-9`'s `Fighting Filth Flies` is a heading whose sidebar text opens past its
+photograph; without the picture, with the text five bodies further down, or without the book's
+recurring subhead style it stays a paragraph. Lexicon joins (`com-` + `panies`) need a document
+declared English, and leave `on-` + `going`, `e-` + `mail`, an unknown word and a compound the
+book prints. The contracts add checks to the magazine (pages 1, 6, 9, 13, 15, 19, 24), the 9/11
+report (pages 3 and 172), the CDC comic, Census, Fed and Wallace; see the
+[magazine-leftovers evidence](../measurements/magazine-leftovers/record.md).
+
 ## Hanging-indent entries
 
 `HangingEntryTests.swift` covers [#134](https://github.com/vocaro/PDFReflowLib/issues/134). The 9/11
@@ -957,6 +1044,33 @@ sub-entries, centred lines, wider steps and list lines as evidence. They also ke
 lowercase or hyphenated continuation and a paragraph's indented first line whole, and read neither
 title without a wrapped entry. The 9/11 contract checks pages 41 (transcript turns), 458 and 462. See
 the [hanging-entries evidence](../measurements/hanging-entries/record.md).
+
+`HearingListsAndNamesTests.swift` covers [#161](https://github.com/vocaro/PDFReflowLib/issues/161).
+Where an edge's entries only ever wrap into the indent (none of that size runs on flush in lowercase
+or after a hyphen) and two or more do, a line back on the edge opens the next entry however wide the
+line above it, unless that line fills the page's justified measure. Page 457 has no wrapped entry;
+its edge qualifies instead by two or more bold titles in the book's label style, each over an entry on
+its edge, where the entries' size has no justified measure and no entry runs on flush. A title in that
+style on such an edge may wrap from a first line wider than its entries (page 461). The Table of
+Names reads name by name (`namedEntries`): every line of its size stands on the names' or the
+descriptions' edge or either one's indent, most names share a baseline with a description, and no name
+is wider than three fifths of the widest description. Source fixtures of pages 450, 451, 456, 457, 461,
+463 and 464 check each case; synthetic controls keep justified prose, a lowercase flush continuation
+and a single wrapped entry whole, refuse a titled edge with one title, no book style, a measure or a
+lowercase run-on, and read neither two prose columns nor a stray line as names. The 9/11 contract
+checks pages 450, 451, 454 and 456–457, 461 and 463–464, and the USDA magazine's index pages 22–23
+keep adjacent one-line entries apart. See the
+[hearing-list and Table of Names evidence](../measurements/hearing-lists-and-names/record.md).
+`FeatheredGroupsAndSpacedEntriesTests.swift` covers [#181](https://github.com/vocaro/PDFReflowLib/issues/181).
+NOAA's author and contributor blocks set one entry to a line at an even open leading, and never wrap
+one, so no hanging indent shows; source fixtures of pages 81, 343 and 1700 check one paragraph per
+entry with the book's wrap, and the fused block without it. Synthetic controls refuse entries at the
+citation's own leading, two entries, uneven leading, a paragraph filling its measure at open leading,
+lines out of the body's size and bold labels, and keep an entry's wrapped line at the wrap with its
+entry. Page 7's fixture checks staff entries wrapped 1.8 ems into their hanging indent as one
+paragraph each; controls keep an indented line under a sentence, a line three ems in, a checkbox and a
+worked step apart. The same file covers page 48's corner art (below, under crops over running text).
+See the [feathered groups and spaced entries evidence](../measurements/feathered-groups-and-spaced-entries/record.md).
 
 ## Headings beside trailing figures and wide section titles
 
@@ -1212,7 +1326,9 @@ codes and a narrow band keep their crop; a sidebar panel of headings, labelled f
 contents list reflows, while a ratings grid in three columns and a panel with rules between its
 rows keep their images. An original in-memory PDF checks that a form's box records no footprint
 where its own paint covers it and marks that paint `grouped`, with a form whose paint covers only a
-corner as the control, and another checks that a page-wide gradient keeps its article's text and a
+corner as the control (#181 adds a feathered box standing eight points over its art, which its paint
+fills to nine tenths, and NOAA page 48's fixture, whose left column, sub-heading and Figure 1.5
+captions leave the figure's crop, with the group's box as a paint of its own as the control), and another checks that a page-wide gradient keeps its article's text and a
 source-page reference instead of a page image (a control page without the gradient warns nothing).
 `ShadingTests` records the page-wide gradient as a paint rather than an unsupported drawing.
 
@@ -1784,7 +1900,7 @@ larger shifted one (#138's Fed letter), runs separated by a space, a script foll
 third baseline, an equal-size run, opposite-side shifts and a nested index (the DASC paper's `STA`
 with `n` raised and `i` raised again, #163). The Supreme Court's Symbol bullets (`scotus-86`) and the
 spaces after them are list marks, not superscripts, while a raised note marker opening a line, a
-raised degree sign (Wallace's `29◦`) and a raised bullet inside a line stay superscripts. NASA page 13
+raised degree sign (Wallace's `29◦`) and a raised bullet set against a word stay superscripts (one standing a word space apart is no script, #186). NASA page 13
 (`ntrs-13`) reflows its five decoded bullets as five list items, each with its wrapped line.
 `LineEndCompoundTests.swift` adds `45-` + `degree-increment`: a hyphen after a number is a compound
 hyphen, not a word break.
@@ -1923,3 +2039,19 @@ and profile tools with negative controls, and the
 [retention measurement](../measurements/page-retention/record.md) records byte-identical
 output against the pre-change converter on all ten complete books for the spill store and
 the two retired alternatives, whose sources and tests are retained beside the record.
+
+## Presentation-form ligatures
+
+`FallbackBlocksAndLigaturesTests.swift` covers [#189](https://github.com/vocaro/PDFReflowLib/issues/189):
+each of U+FB00–U+FB06 spells out to its one-step compatibility decomposition (`ﬅ` keeps its long
+s), by scalar, with other compatibility forms (`²`, `½`, `ｆ`, `ĳ`) as controls; styles, note
+references, source-page boundaries and a line's geometry survive, and a line without a ligature is
+untouched. Wallace pages 50 and 218 reflow `different` from fixtures replayed as extraction now
+hands them over (`SourceLayoutFixture.content()` spells out as extraction does), with the lines as
+captured (`spelledOut: false`) as the negative control that keeps `dif-ferent` and its warning.
+`GlyphIndexDecodingTests.swift` converts the rebuilt Census page 17 through the pipeline and finds no
+ligature in its blocks, which fails with the extraction step removed, and shows the step must come
+last: the page's decoded shows spell `ﬃ` as one character, so a line spelled out before spacing
+loses its word gaps. The content checker fails any page of a contracted EPUB that holds one of
+U+FB00–U+FB06, and no contract phrase may hold one. See the
+[ligature evidence](../measurements/presentation-ligatures/record.md).

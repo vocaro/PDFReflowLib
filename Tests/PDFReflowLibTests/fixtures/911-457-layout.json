@@ -1,0 +1,844 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        152.22929999999999,
+        484.64640000000003,
+        97,
+        14.495999999999981
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 16,
+          "text" : "APPENDIX C"
+        }
+      ],
+      "text" : "APPENDIX C"
+    },
+    {
+      "rect" : [
+        103.21809999999999,
+        444.64640000000003,
+        195.0752,
+        14.495999999999981
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 16,
+          "text" : "COMMISSION HEARINGS"
+        }
+      ],
+      "text" : "COMMISSION HEARINGS"
+    },
+    {
+      "rect" : [
+        44.700000000000003,
+        381.62860000000001,
+        311.99174999999997,
+        9.5129999999999768
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.5,
+          "text" : "The Commission held 12 public hearings during the course of its investiga-"
+        }
+      ],
+      "text" : "The Commission held 12 public hearings during the course of its investiga-"
+    },
+    {
+      "rect" : [
+        44.700000000000003,
+        369.62815000000001,
+        311.9801999999998,
+        9.5129999999999768
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.5,
+          "text" : "tion, convening for a total of 19 days and receiving testimony from 160 wit-"
+        }
+      ],
+      "text" : "tion, convening for a total of 19 days and receiving testimony from 160 wit-"
+    },
+    {
+      "rect" : [
+        44.701050000000002,
+        357.6277,
+        311.99069999999972,
+        9.5129999999999768
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.5,
+          "text" : "nesses. The following is a list of hearings and witnesses in order of their"
+        }
+      ],
+      "text" : "nesses. The following is a list of hearings and witnesses in order of their"
+    },
+    {
+      "rect" : [
+        44.701050000000002,
+        345.62725,
+        311.96549999999985,
+        9.5129999999999768
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.5,
+          "text" : "appearance. All witnesses appearing during the 2004 calendar year testified"
+        }
+      ],
+      "text" : "appearance. All witnesses appearing during the 2004 calendar year testified"
+    },
+    {
+      "rect" : [
+        44.701050000000002,
+        333.6268,
+        48.090000000000011,
+        9.5129999999999768
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.5,
+          "text" : "under oath."
+        }
+      ],
+      "text" : "under oath."
+    },
+    {
+      "rect" : [
+        44.701050000000002,
+        306.69009999999997,
+        130.82055000000003,
+        9.4395000000000095
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.5,
+          "text" : "FIRST PUBLIC HEARING"
+        }
+      ],
+      "text" : "FIRST PUBLIC HEARING"
+    },
+    {
+      "rect" : [
+        44.700000000000003,
+        296.03210000000001,
+        190.45980000000009,
+        8.0910000000000082
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "italic" : true,
+          "text" : "Alexander Hamilton Customs House, NewYork, N.Y."
+        }
+      ],
+      "text" : "Alexander Hamilton Customs House, NewYork, N.Y."
+    },
+    {
+      "rect" : [
+        44.700900000000004,
+        285.03230000000002,
+        85.574699999999964,
+        8.0910000000000082
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "italic" : true,
+          "text" : "March 31–April 1, 2003"
+        }
+      ],
+      "text" : "March 31–April 1, 2003"
+    },
+    {
+      "rect" : [
+        44.700000000000003,
+        268.47860000000003,
+        215.48340000000007,
+        8.1539999999999964
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "The Honorable George Pataki, Governor, State of New York"
+        }
+      ],
+      "text" : "The Honorable George Pataki, Governor, State of New York"
+    },
+    {
+      "rect" : [
+        44.700000000000003,
+        257.47880000000004,
+        234.67770000000002,
+        8.1539999999999964
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "The Honorable Michael R. Bloomberg, Mayor, City of New York"
+        }
+      ],
+      "text" : "The Honorable Michael R. Bloomberg, Mayor, City of New York"
+    },
+    {
+      "rect" : [
+        44.700000000000003,
+        241.03310000000002,
+        119.02049999999996,
+        8.0910000000000082
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "The Experience of the Attack"
+        }
+      ],
+      "text" : "The Experience of the Attack"
+    },
+    {
+      "rect" : [
+        44.700000000000003,
+        229.97930000000002,
+        159.52590000000004,
+        8.1539999999999964
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "Harry Waizer, survivor, Cantor Fitzgerald, LP"
+        }
+      ],
+      "text" : "Harry Waizer, survivor, Cantor Fitzgerald, LP"
+    },
+    {
+      "rect" : [
+        44.700000000000003,
+        218.97950000000003,
+        271.72260000000011,
+        8.1539999999999964
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "David Lim, Police Department, Port Authority of NewYork and New Jersey"
+        }
+      ],
+      "text" : "David Lim, Police Department, Port Authority of NewYork and New Jersey"
+    },
+    {
+      "rect" : [
+        44.700000000000003,
+        207.97970000000004,
+        173.51010000000008,
+        8.1539999999999964
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "Lee Ielpi, Fire Department of New York (retired)"
+        }
+      ],
+      "text" : "Lee Ielpi, Fire Department of New York (retired)"
+    },
+    {
+      "rect" : [
+        44.700900000000004,
+        196.97990000000004,
+        197.99010000000004,
+        8.1539999999999964
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "Lieutenant Colonel Brian Birdwell, United States Army"
+        }
+      ],
+      "text" : "Lieutenant Colonel Brian Birdwell, United States Army"
+    },
+    {
+      "rect" : [
+        44.700900000000004,
+        185.98010000000005,
+        155.30939999999998,
+        8.1539999999999964
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "Craig Sincock, United States Army (retired)"
+        }
+      ],
+      "text" : "Craig Sincock, United States Army (retired)"
+    },
+    {
+      "rect" : [
+        44.699100000000001,
+        169.53440000000006,
+        121.0842,
+        8.0910000000000082
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "Representatives of the Victims"
+        }
+      ],
+      "text" : "Representatives of the Victims"
+    },
+    {
+      "rect" : [
+        44.699100000000001,
+        158.48060000000007,
+        142.82640000000004,
+        8.1539999999999964
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "Stephen Push, Families of September 11"
+        }
+      ],
+      "text" : "Stephen Push, Families of September 11"
+    },
+    {
+      "rect" : [
+        44.699100000000001,
+        147.48080000000007,
+        134.47440000000006,
+        8.1539999999999964
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "Mary Fetchet,Voices of September 11"
+        }
+      ],
+      "text" : "Mary Fetchet,Voices of September 11"
+    },
+    {
+      "rect" : [
+        44.699100000000001,
+        136.48100000000008,
+        152.51130000000001,
+        8.1539999999999964
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "Mindy Kleinberg, September 11 Advocates"
+        }
+      ],
+      "text" : "Mindy Kleinberg, September 11 Advocates"
+    },
+    {
+      "rect" : [
+        44.699100000000001,
+        125.4812000000001,
+        129.03930000000003,
+        8.1540000000000106
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "Allison Vadhan, Families of Flight 93"
+        }
+      ],
+      "text" : "Allison Vadhan, Families of Flight 93"
+    },
+    {
+      "rect" : [
+        44.699100000000001,
+        109.03550000000008,
+        228.5415000000001,
+        8.090999999999994
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "The Attackers, Intelligence, and Counterterrorism Policy"
+        }
+      ],
+      "text" : "The Attackers, Intelligence, and Counterterrorism Policy"
+    },
+    {
+      "rect" : [
+        44.699100000000001,
+        97.981700000000089,
+        139.47930000000002,
+        8.1539999999999964
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "Daniel Byman, Georgetown University"
+        }
+      ],
+      "text" : "Daniel Byman, Georgetown University"
+    },
+    {
+      "rect" : [
+        44.700000000000003,
+        86.981900000000095,
+        137.28420000000006,
+        8.1539999999999964
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "Abraham D. Sofaer, Hoover Institution"
+        }
+      ],
+      "text" : "Abraham D. Sofaer, Hoover Institution"
+    },
+    {
+      "rect" : [
+        44.700000000000003,
+        75.982100000000102,
+        126.13140000000003,
+        8.1539999999999964
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "Brian Jenkins, RAND Corporation"
+        }
+      ],
+      "text" : "Brian Jenkins, RAND Corporation"
+    },
+    {
+      "rect" : [
+        44.700000000000003,
+        64.982300000000109,
+        157.8186,
+        8.1539999999999964
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "Magnus Ranstorp, University of St.Andrews"
+        }
+      ],
+      "text" : "Magnus Ranstorp, University of St.Andrews"
+    },
+    {
+      "rect" : [
+        342.7353,
+        45.534399999999998,
+        13.970700000000022,
+        8.6069999999999993
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.5,
+          "text" : "439"
+        }
+      ],
+      "text" : "439"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    396,
+    612
+  ],
+  "caseID" : "gpo-911-2004",
+  "graphics" : [
+
+  ],
+  "lines" : [
+    {
+      "fontSize" : 16,
+      "monospaced" : false,
+      "rect" : [
+        152.22929999999999,
+        484.64640000000003,
+        97,
+        14.495999999999981
+      ],
+      "text" : "APPENDIX C"
+    },
+    {
+      "fontSize" : 16,
+      "monospaced" : false,
+      "rect" : [
+        103.21809999999999,
+        444.64640000000003,
+        195.0752,
+        14.495999999999981
+      ],
+      "text" : "COMMISSION HEARINGS"
+    },
+    {
+      "fontSize" : 10.5,
+      "monospaced" : false,
+      "rect" : [
+        44.700000000000003,
+        381.62860000000001,
+        311.99174999999997,
+        9.5129999999999768
+      ],
+      "text" : "The Commission held 12 public hearings during the course of its investiga-"
+    },
+    {
+      "fontSize" : 10.5,
+      "monospaced" : false,
+      "rect" : [
+        44.700000000000003,
+        369.62815000000001,
+        311.9801999999998,
+        9.5129999999999768
+      ],
+      "text" : "tion, convening for a total of 19 days and receiving testimony from 160 wit-"
+    },
+    {
+      "fontSize" : 10.5,
+      "monospaced" : false,
+      "rect" : [
+        44.701050000000002,
+        357.6277,
+        311.99069999999972,
+        9.5129999999999768
+      ],
+      "text" : "nesses. The following is a list of hearings and witnesses in order of their"
+    },
+    {
+      "fontSize" : 10.5,
+      "monospaced" : false,
+      "rect" : [
+        44.701050000000002,
+        345.62725,
+        311.96549999999985,
+        9.5129999999999768
+      ],
+      "text" : "appearance. All witnesses appearing during the 2004 calendar year testified"
+    },
+    {
+      "fontSize" : 10.5,
+      "monospaced" : false,
+      "rect" : [
+        44.701050000000002,
+        333.6268,
+        48.090000000000011,
+        9.5129999999999768
+      ],
+      "text" : "under oath."
+    },
+    {
+      "fontSize" : 10.5,
+      "monospaced" : false,
+      "rect" : [
+        44.701050000000002,
+        306.69009999999997,
+        130.82055000000003,
+        9.4395000000000095
+      ],
+      "text" : "FIRST PUBLIC HEARING"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        44.700000000000003,
+        296.03210000000001,
+        190.45980000000009,
+        8.0910000000000082
+      ],
+      "text" : "Alexander Hamilton Customs House, New York, N.Y."
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        44.700900000000004,
+        285.03230000000002,
+        85.574699999999964,
+        8.0910000000000082
+      ],
+      "text" : "March 31–April 1, 2003"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        44.700000000000003,
+        268.47860000000003,
+        215.48340000000007,
+        8.1539999999999964
+      ],
+      "text" : "The Honorable George Pataki, Governor, State of New York"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        44.700000000000003,
+        257.47880000000004,
+        234.67770000000002,
+        8.1539999999999964
+      ],
+      "text" : "The Honorable Michael R. Bloomberg, Mayor, City of New York"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        44.700000000000003,
+        241.03310000000002,
+        119.02049999999996,
+        8.0910000000000082
+      ],
+      "text" : "The Experience of the Attack"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        44.700000000000003,
+        229.97930000000002,
+        159.52590000000004,
+        8.1539999999999964
+      ],
+      "text" : "Harry Waizer, survivor, Cantor Fitzgerald, LP"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        44.700000000000003,
+        218.97950000000003,
+        271.72260000000011,
+        8.1539999999999964
+      ],
+      "text" : "David Lim, Police Department, Port Authority of New York and New Jersey"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        44.700000000000003,
+        207.97970000000004,
+        173.51010000000008,
+        8.1539999999999964
+      ],
+      "text" : "Lee Ielpi, Fire Department of New York (retired)"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        44.700900000000004,
+        196.97990000000004,
+        197.99010000000004,
+        8.1539999999999964
+      ],
+      "text" : "Lieutenant Colonel Brian Birdwell, United States Army"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        44.700900000000004,
+        185.98010000000005,
+        155.30939999999998,
+        8.1539999999999964
+      ],
+      "text" : "Craig Sincock, United States Army (retired)"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        44.699100000000001,
+        169.53440000000006,
+        121.0842,
+        8.0910000000000082
+      ],
+      "text" : "Representatives of the Victims"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        44.699100000000001,
+        158.48060000000007,
+        142.82640000000004,
+        8.1539999999999964
+      ],
+      "text" : "Stephen Push, Families of September 11"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        44.699100000000001,
+        147.48080000000007,
+        134.47440000000006,
+        8.1539999999999964
+      ],
+      "text" : "Mary Fetchet, Voices of September 11"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        44.699100000000001,
+        136.48100000000008,
+        152.51130000000001,
+        8.1539999999999964
+      ],
+      "text" : "Mindy Kleinberg, September 11 Advocates"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        44.699100000000001,
+        125.4812000000001,
+        129.03930000000003,
+        8.1540000000000106
+      ],
+      "text" : "Allison Vadhan, Families of Flight 93"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        44.699100000000001,
+        109.03550000000008,
+        228.5415000000001,
+        8.090999999999994
+      ],
+      "text" : "The Attackers, Intelligence, and Counterterrorism Policy"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        44.699100000000001,
+        97.981700000000089,
+        139.47930000000002,
+        8.1539999999999964
+      ],
+      "text" : "Daniel Byman, Georgetown University"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        44.700000000000003,
+        86.981900000000095,
+        137.28420000000006,
+        8.1539999999999964
+      ],
+      "text" : "Abraham D. Sofaer, Hoover Institution"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        44.700000000000003,
+        75.982100000000102,
+        126.13140000000003,
+        8.1539999999999964
+      ],
+      "text" : "Brian Jenkins, RAND Corporation"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        44.700000000000003,
+        64.982300000000109,
+        157.8186,
+        8.1539999999999964
+      ],
+      "text" : "Magnus Ranstorp, University of St. Andrews"
+    },
+    {
+      "fontSize" : 9.5,
+      "monospaced" : false,
+      "rect" : [
+        342.7353,
+        45.534399999999998,
+        13.970700000000022,
+        8.6069999999999993
+      ],
+      "text" : "439"
+    }
+  ],
+  "page" : 457,
+  "paints" : [
+
+  ],
+  "rightsBasis" : "Official U.S. Government commission report, retained as external development material. Source PDF is not bundled or relicensed under MIT.",
+  "sourceSHA256" : "657d41475eb3a9a5e3e87a6c7c51ac1dfbe1af7566d1abff7bf7286e7e1c0e1b",
+  "sourceTitle" : "The 9/11 Commission Report",
+  "sourceURL" : "https://www.govinfo.gov/content/pkg/GPO-911REPORT/pdf/GPO-911REPORT.pdf"
+}

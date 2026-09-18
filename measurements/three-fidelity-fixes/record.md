@@ -134,7 +134,9 @@ The simulator identifier used by the retained run is
 `C4966BA9-56CD-4F21-9829-68567AAE8E6F`. Fixture capture instructions are in
 [regression testing](../../doc/regression-testing.md). Input identities are verified before
 conversion/capture. Manifest status prose is updated after evaluation; each case's retained
-`result.json.gz` records its actual evaluation metadata and pinned PDF identity.
+`result.json.gz` records its actual evaluation metadata and pinned PDF identity. The per-case raw
+progress logs and memory-sample series were dropped in #196; each case's `result.json.gz` keeps their summary (progress-check events and result, sampled
+and converter peak memory).
 
 Algebra excerpts derive from *Beginning and Intermediate Algebra*, copyright 2010 Tyler Wallace,
 [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/),

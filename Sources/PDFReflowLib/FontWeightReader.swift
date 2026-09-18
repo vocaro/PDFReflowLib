@@ -244,6 +244,9 @@ enum FontWeightReader {
         var wideUnicode: [UInt16: String]?
         /// A simple font that names its glyphs by index and has no ToUnicode map (#143).
         var indexGlyphs: IndexGlyphFont?
+        /// Codes whose glyph is not the character the font's map reports for it, with the character
+        /// the glyph draws (`drawnGlyphs`, #186); nil where the font gives no such evidence.
+        var redrawn: [UInt16: String]? = nil
     }
 
     // MARK: - Index-named glyphs (#143)
@@ -363,8 +366,97 @@ enum FontWeightReader {
             info.indexGlyphs = index
             if let decoded = decodings[index.key] { info.unicode = decoded }
         }
+        info.redrawn = drawnGlyphs(dict, descriptor: descriptor, subtype: subtype, flags: flags, hasMap: hasMap,
+                                   unicode: info.unicode, wideUnicode: info.wideUnicode)
         return info
     }
+
+    // MARK: - Glyphs the map misreports (#186)
+
+    /// Codes whose glyph the font's own evidence says is another character than its map reports,
+    /// with the character drawn:
+    ///
+    /// - A **dingbat font** (`ZapfDingbats`, `ITC Zapf Dingbats`, `Monotype Sorts`, by `BaseFont`,
+    ///   descriptor `FontName` or `FontFamily`) addresses its pictographs by ASCII codes, and a map
+    ///   that copies those codes reports letters. *Agricultural Research*'s back cover draws the bullet
+    ///   between two web addresses from `WVUHWN+MonotypeSorts`, whose map reads glyph 79 as `l`; in the
+    ///   Zapf Dingbats encoding code `l` is the black circle ●. Each code the map reports as a character
+    ///   of that encoding reads as the encoding's pictograph (`zapfDingbats`).
+    /// - A **Type 1 text font whose map contradicts its encoding in case only**: the magazine sets its
+    ///   photo credits in capitals with the author's lower-case letters in `ActualText`, and
+    ///   `Helvetica-Condensed`'s map reads code `Z` as `z`, so PDFKit reports `BRAD FRITz`. A
+    ///   non-symbolic Type 1 font draws the glyph its encoding names, and the descriptor's `CharSet`,
+    ///   where the font lists one, holds that glyph and not the map's (`/Z`, no `/z`); the letter
+    ///   drawn is the encoding's.
+    static func drawnGlyphs(_ dict: CGPDFDictionaryRef, descriptor: CGPDFDictionaryRef?, subtype: String, flags: Int?,
+                            hasMap: Bool, unicode: [UInt8: String]?, wideUnicode: [UInt16: String]?) -> [UInt16: String]? {
+        var result: [UInt16: String] = [:]
+        var names: [String] = []
+        if let base = name(dict, "BaseFont") { names.append(base) }
+        if let descriptor {
+            if let fontName = name(descriptor, "FontName") { names.append(fontName) }
+            var family: CGPDFStringRef?
+            if CGPDFDictionaryGetString(descriptor, "FontFamily", &family), let family,
+               let text = CGPDFStringCopyTextString(family) as String? { names.append(text) }
+        }
+        if names.contains(where: isDingbatFamily) {
+            var reported: [UInt16: String] = wideUnicode ?? [:]
+            if wideUnicode == nil, let unicode { for (code, text) in unicode { reported[UInt16(code)] = text } }
+            for (code, text) in reported {
+                guard text.unicodeScalars.count == 1, let scalar = text.unicodeScalars.first, scalar.value <= 0xFF,
+                      let drawn = zapfDingbats[UInt8(scalar.value)] else { continue }
+                result[code] = drawn
+            }
+        } else if hasMap, subtype == "Type1" || subtype == "MMType1", let unicode, let flags,
+                  flags & 32 != 0, flags & 4 == 0, let encoded = NativeSpacingReader.encodingUnicodeMap(dict) {
+            let listed = descriptor.flatMap(charSet)
+            for (code, reported) in unicode {
+                guard let drawn = encoded[code], drawn != reported, reported.count == 1, drawn.count == 1,
+                      let r = reported.unicodeScalars.first, let d = drawn.unicodeScalars.first,
+                      r.isASCII, d.isASCII, r.properties.isAlphabetic, d.properties.isAlphabetic,
+                      reported.lowercased() == drawn.lowercased(),
+                      listed.map({ $0.contains(drawn) && !$0.contains(reported) }) ?? true else { continue }
+                result[UInt16(code)] = drawn
+            }
+        }
+        return result.isEmpty ? nil : result
+    }
+
+    /// Zapf Dingbats and its clones (Monotype Sorts, `Dingbats`), subset tags and suffixes aside.
+    static func isDingbatFamily(_ name: String) -> Bool {
+        let letters = strippedName(name).lowercased().filter(\.isLetter)
+        return letters.hasPrefix("zapfdingbats") || letters.hasPrefix("itczapfdingbats") || letters == "dingbats"
+            || letters.hasPrefix("monotypesorts")
+    }
+
+    /// The glyph names a descriptor's `CharSet` lists (`/parenleft/A/B`).
+    private static func charSet(_ descriptor: CGPDFDictionaryRef) -> Set<String>? {
+        var value: CGPDFStringRef?
+        guard CGPDFDictionaryGetString(descriptor, "CharSet", &value), let value,
+              let text = CGPDFStringCopyTextString(value) as String?, text.utf16.count <= 65_536 else { return nil }
+        return Set(text.split(separator: "/").map(String.init).filter { !$0.isEmpty && $0.count <= 64 })
+    }
+
+    /// The Zapf Dingbats encoding: Adobe's `a1`–`a191` glyphs by code, as the Adobe Glyph List for New
+    /// Fonts maps them. Codes 0x21–0x7E follow the Unicode Dingbats block (U+2700 + code − 0x20) except
+    /// where Unicode already held the pictograph (☎ ☛ ☞ ★ ● ■ ▲ ▼ ◆ ◗).
+    static let zapfDingbats: [UInt8: String] = {
+        var table: [UInt8: String] = [:]
+        func set(_ code: Int, _ scalar: Int) { table[UInt8(code)] = String(UnicodeScalar(UInt32(scalar))!) }
+        for code in 0x21...0x7E { set(code, 0x2700 + code - 0x20) }
+        for (code, scalar) in [(0x25, 0x260E), (0x2A, 0x261B), (0x2B, 0x261E), (0x48, 0x2605), (0x6C, 0x25CF),
+                               (0x6E, 0x25A0), (0x73, 0x25B2), (0x74, 0x25BC), (0x75, 0x25C6), (0x77, 0x25D7)] {
+            set(code, scalar)
+        }
+        for code in 0xA1...0xA7 { set(code, 0x2761 + code - 0xA1) }
+        for (code, scalar) in [(0xA8, 0x2663), (0xA9, 0x2666), (0xAA, 0x2665), (0xAB, 0x2660)] { set(code, scalar) }
+        for code in 0xAC...0xB5 { set(code, 0x2460 + code - 0xAC) }
+        for code in 0xB6...0xD4 { set(code, 0x2776 + code - 0xB6) }
+        for (code, scalar) in [(0xD5, 0x2192), (0xD6, 0x2194), (0xD7, 0x2195)] { set(code, scalar) }
+        for code in 0xD8...0xEF { set(code, 0x2798 + code - 0xD8) }
+        for code in 0xF1...0xFE { set(code, 0x27B1 + code - 0xF1) }
+        return table
+    }()
 
     /// A simple font's codes are one byte whatever codespace its ToUnicode map declares. PScript5
     /// writes a symbol-style `<00> <EF>` and `<F000> <FFFF>` pair over one-byte entries (the Supreme
@@ -475,6 +567,9 @@ enum FontWeightReader {
         var glyphs: [IndexGlyph]? = nil
         /// Identifies the index-glyph font (`IndexGlyphFont.key`); nil in any other font.
         var indexFont: String? = nil
+        /// Each glyph's reported text and the character it draws where that differs (`drawnGlyphs`,
+        /// #186); nil unless one of the show's glyphs does.
+        var redraws: [GlyphRedraw]? = nil
 
         var styled: Bool { weight == .bold || italic == true || mathItalic == true }
     }
@@ -488,6 +583,13 @@ enum FontWeightReader {
         var wordStart: Bool
         /// The character the document established for the code; nil where it established none.
         var text: String?
+    }
+
+    /// One glyph as its font's map reports it and, where the font's evidence says otherwise, the
+    /// character it draws (#186).
+    struct GlyphRedraw: Equatable {
+        var reported: String
+        var drawn: String?
     }
 
     /// TeX's interword glue shrinks to about 0.17 em; kerns and italic corrections stay far below.
@@ -573,6 +675,9 @@ enum FontWeightReader {
                 }
             }
         }
+        // Each glyph's reported text beside the character it draws, where the font misreports one (#186).
+        let redrawn = info?.redrawn
+        var redraws: [GlyphRedraw]? = redrawn == nil ? nil : []
         for (string, _) in strings where text != nil {
             let count = CGPDFStringGetLength(string)
             guard let bytes = CGPDFStringGetBytePtr(string), count <= 4096 else { text = nil; break }
@@ -580,20 +685,24 @@ enum FontWeightReader {
                 // An Identity-H show's codes are two bytes, high byte first.
                 guard count % 2 == 0 else { text = nil; break }
                 for index in stride(from: 0, to: count, by: 2) {
-                    guard let decoded = wide[UInt16(bytes[index]) << 8 | UInt16(bytes[index + 1])],
-                          (text?.utf16.count ?? 0) < 8192 else { text = nil; break }
+                    let code = UInt16(bytes[index]) << 8 | UInt16(bytes[index + 1])
+                    guard let decoded = wide[code], (text?.utf16.count ?? 0) < 8192 else { text = nil; break }
                     text? += decoded
+                    redraws?.append(GlyphRedraw(reported: decoded, drawn: redrawn?[code]))
                 }
             } else {
                 for index in 0..<count {
                     guard let decoded = info?.unicode?[bytes[index]], (text?.utf16.count ?? 0) < 8192 else { text = nil; break }
                     text? += decoded
+                    redraws?.append(GlyphRedraw(reported: decoded, drawn: redrawn?[UInt16(bytes[index])]))
                 }
             }
         }
+        if text == nil || redraws?.contains(where: { $0.drawn != nil }) != true { redraws = nil }
         s.shows.append(Show(origin: origin, size: s.size * transform.d, font: s.font ?? 0,
                             weight: info?.weight, text: text, placed: placed, italic: info?.italic,
-                            mathItalic: info?.mathItalic, glyphs: glyphs, indexFont: info?.indexGlyphs?.key))
+                            mathItalic: info?.mathItalic, glyphs: glyphs, indexFont: info?.indexGlyphs?.key,
+                            redraws: redraws))
     }
 
     private static func scan(_ content: CGPDFContentStreamRef, _ s: State) {
@@ -754,11 +863,12 @@ enum FontWeightReader {
 
     /// The page's text shows, or none when the content stream cannot be scanned or no show is
     /// drawn in a bold or italic font (then no line can gain a style) or in an index-glyph font
-    /// (then no line needs `repairIndexGlyphs`, #143). `decodings` are the characters the document
+    /// (then no line needs `repairIndexGlyphs`, #143) or with a glyph its map misreports (then no line
+    /// needs `redrawGlyphs`, #186). `decodings` are the characters the document
     /// established for index-glyph fonts.
     static func read(_ page: CGPDFPage, decodings: [String: [UInt8: String]] = [:]) -> [Show] {
         let shows = read(page, fonts: nil, decodings: decodings)
-        return shows.contains(where: { $0.styled || $0.indexFont != nil }) ? shows : []
+        return shows.contains(where: { $0.styled || $0.indexFont != nil || $0.redraws != nil }) ? shows : []
     }
 
     /// The page's shows and, when `fonts` is given, every font resource it selected (survey).
@@ -864,6 +974,46 @@ enum FontWeightReader {
     /// By origin; a show drawn straight after another keeps stream order.
     private static func readingOrder(_ shows: [Show]) -> [Show] {
         shows.enumerated().sorted(by: { ($0.element.origin.x, $0.offset) < ($1.element.origin.x, $1.offset) }).map(\.element)
+    }
+
+    /// A line's characters rewritten as its glyphs draw them where the font's map misreports one
+    /// (`drawnGlyphs`, #186): `●` for Monotype Sorts' `l`, `Z` for a credit font's `z`. The line's
+    /// shows (`lineShows`) must all decode, and their reported characters, in reading order, must
+    /// spell the line apart from whitespace, so each misreported glyph is found at its own place
+    /// (the magazine's `ars.usda.gov/ar l Follow us` keeps the `l`s of `Follow`). Anything else
+    /// leaves the line as it was.
+    static func redrawGlyphs(_ shows: [Show], in attributed: NSAttributedString, bounds: CGRect,
+                             allBounds: [CGRect]) -> NSAttributedString {
+        let area = bounds.insetBy(dx: -0.75, dy: -0.75)
+        guard attributed.length > 0, shows.contains(where: { $0.redraws != nil && area.contains($0.origin) }) else { return attributed }
+        // A line the page draws twice in one place (the magazine's page-23 running foot, 0.17 points
+        // apart) is one line: the copy's rectangle claims no show from it, and the copy's shows are
+        // the line's own drawn again, so they spell nothing more.
+        func copies(_ other: CGRect) -> Bool {
+            let overlap = other.intersection(bounds)
+            return other != bounds && !overlap.isNull && overlap.width * overlap.height >= 0.9 * max(other.width * other.height, bounds.width * bounds.height)
+        }
+        guard let (owned, _) = lineShows(shows, bounds: bounds, allBounds: allBounds.filter { !copies($0) }) else { return attributed }
+        var matches: [Show] = []
+        for show in owned where !matches.contains(where: { kept in
+            kept.text == show.text && kept.font == show.font && abs(kept.size - show.size) <= 0.01
+                && abs(kept.origin.x - show.origin.x) <= 0.5 && abs(kept.origin.y - show.origin.y) <= 0.5
+        }) { matches.append(show) }
+        guard matches.contains(where: { $0.redraws != nil }), matches.allSatisfy({ $0.text != nil }) else { return attributed }
+        var slots: [IndexGlyphSlot] = []
+        for show in readingOrder(matches) {
+            guard let redraws = show.redraws else {
+                slots += letters(show.text ?? "").map { IndexGlyphSlot(view: [$0], text: nil, wordStart: false) }
+                continue
+            }
+            for glyph in redraws {
+                let view = letters(glyph.reported)
+                guard !view.isEmpty else { continue }
+                slots.append(IndexGlyphSlot(view: view, text: glyph.drawn, wordStart: false))
+            }
+        }
+        guard let spelled = spell(attributed, with: slots), spelled.consumed == slots.count else { return attributed }
+        return spelled.text
     }
 
     /// Whether `repairIndexGlyphs` found index-glyph shows on a line, and rewrote it.

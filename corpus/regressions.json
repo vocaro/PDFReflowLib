@@ -5,7 +5,7 @@
     {
       "id": "faa-phak-8083-25c",
       "sourceSHA256": "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
-      "basis": "Source pages 16 and 121 visually reviewed. Protects the introductory prose and figure preservation; does not approve page-121 column order. Pages 91/511 are source-reviewed narrow-gutter column-order regressions; the complete left column precedes the right. Reviewed chapter-page folios on pages 16/91 must remain absent from prose. Pages 211/212 visually reviewed: V-speed designators retain their source subscripts in bulleted definitions; source ASI figures remain preserved. Source pages 50/325 visually reviewed for tag-restored left-column-before-right-column order; page 81 caption remains beside the preceding image, before body prose. Page 191 reviewed: four separate left-column items precede the ammeter paragraph; since #98 the bus-bar and fuse paragraphs, the loadmeter, voltage-regulator and hydraulic paragraphs reflow and only the master-switch figure is preserved. Pages 35-36 and 116-117 visually reviewed: each two-column paragraph continues from the bottom of one page onto the next and must remain one paragraph across the source-page marker (#27). Figure 5-36 on page 121 reviewed in color (blue sky, yellow labels, aircraft): the preserved crop must keep its scale, ink contrast and hues (#27). Pages 22-25 and 52-53 visually reviewed (#45): the paragraph between page 22's figures, page 24's right column continued below the figure that opens page 25, and the tagged page 52 continued on the untagged page 53 must each remain one paragraph across the source-page marker. Pages 27, 191 and 365 source rasters reviewed (#69, #70): a bullet PDFKit splits from its text opens that item, not the tail of the block above, and a line broken after a slash inside a compound (`runway/` + `taxiway`, `alternator/` + `generator`) joins without a space. Pages 33, 43, 49, 201 and 370 source rasters reviewed (#63, #73): a section title that opens a paragraph continued on the next page follows the figure caption that closes its page and directly precedes that paragraph (pages 33, 49, 201); a two-line title set nearly the column's width is one heading (pages 43, 370). Pages 136, 159 and 340 source rasters reviewed, with pages 91, 156, 165, 199 and 262 checked against extracted geometry (#76, #82): a 10-point bold or 11-point bold-italic sub-heading on its own line is a heading followed by its paragraph, not the paragraph's opening words; page 159's `Figure 6-20.` caption ends at its own last line and the unpainted `Figure 5-16.` caption left outside the artwork's clip is not emitted (#85); page 340's two column titles on one row are two headings. Pages 25, 92 and 372 source rasters reviewed (#79): addresses broken after a dot or underscore rejoin without a space, including `(NACO)—www.faa.` + `gov/…` and the AIM bullet whose marker line ends inside its address; page 92’s `?n=wxcalc_densityaltitude` address no longer seeds a formula crop that split its paragraph. Pages 88, 98, 203, 231 and 335 (#84): chapter openers tagged P remain headings once their text-free Form XObjects no longer discard the page tags; page 203 source-reviewed, its tagged group spanning Introduction and the next section falls back. Page 89 (#75) source-reviewed: the applied tags read the viscosity and friction columns in order. Pages 105, 211 and 227 source-reviewed: paragraphs and a caption the source tags in pieces read as one element. Page 227 source raster reviewed (#77): the compass-rose figure's group box overhangs its rounded frame into the left column, but only its clipped part is figure ink, so the sentence ending `true course desired.` reflows whole; the word equations under `Step 1:`, `Step 2:` and `course is known:` are body text in the column's measure and reflow in order. Pages 96, 114, 127, 128, 179, 235, 263, 360, 366 and 412 (#89) source-reviewed: a paragraph the source tags in two pieces, one of them falling back beside a figure or in a justified column spaced only around a heading, reads as one paragraph; page 319's TAF change groups and page 416's NDB table rows stay separate. Pages 27, 45, 49, 54, 72, 152, 285, 311, 383, 409 and 429 (#90) source-reviewed: tagged titles in the book's bold, bold-italic and italic title styles are headings, stacked titles stay two headings, and titles on pages 54 and 152 follow their figure directly above the paragraph they open; contents labels (pages 6, 15) and a centred table title (416) are not headings. Lettered appendix folios A-5 to A-7 and C-2 to C-4 are furniture, not headings. Pages 340, 401, 317, 439 and 108 source rasters reviewed (#86): a figure set across both columns' full measure, within points of their first or last lines, reads before or after the complete columns; each column reads whole (page 340's left column before `Some taxiway stubs`, page 401's left column before `Suppose a flight`, page 317's items 8-11 before item 12 and the METAR example, page 439's two drug paragraphs before the right column, page 108's last left-column line before figure 5-16). Pages 47, 48, 228, 447, 460 and 512 (#97) source-reviewed: untagged 10-point italic titles in the book's recurring italic title style (pages 228, 447) and italic titles over bullet lists (48) are headings; the PAVE titles A = Aircraft and V = EnVironment are text, not formula crops; the blank pages 460 and 512 carry no folio. Page 410's italic table header Distance is not a heading. Pages 24, 55, 64, 207, 249, 251, 318, 392 and 416 (#91) source-reviewed: with space-only shows no longer rejecting their tag groups, tagged table rows, time-zone rows, address lines and checklist entries stay separate paragraphs. Pages 6, 21 and 404 source-reviewed (#102): the two-line bold sub-headings The Professional Air Traffic Controllers / Organization (PATCO) Strike and Use of Chart Supplement U.S. (formerly Airport/ / Facility Directory) are one heading each; page 6's contents entries A = Aircraft through Human Factors are text, not a preserved region. Pages 7, 12 and 15 (#105) source-reviewed: the bare Roman folios at the foot of the front matter (iii to xvi, pages 3 to 15) are furniture, not paragraphs. Pages 19, 96, 130, 146, 191, 351 and 361 (#98, #52) source-reviewed: a path or image drawn beyond the frame that clips it no longer claims the column beside the figure; page 19's left column reads whole before the right column, the prose and headings beside each figure reflow in column order, and every figure stays preserved. Pages 226, 286, 288 and 302 (#13) source-reviewed: dense vector illustrations of 101,594–183,417 operations no longer exceed the graphics reader's operation budget, so the columns, headings, bullets and captions beside each complete figure reflow instead of a whole-page image, and the sentences that cross from pages 225, 287 and 301 continue. Page 348 source-reviewed: both two-line titles and their paragraphs reflow beside the four preserved figures. Page 448's 1.95-million-operation illustration still exceeds the budget and the paint cap and keeps its page image. Page 131 source raster reviewed (#121): the borderless CATEGORY / LIMIT LOAD FACTOR table reads as a table, its header row th, the two-line Utility label one cell, the footnote marker on Normal kept, with no row headers (the tags mark those cells TD). Compounds broken at a line-end hyphen before a capital keep the hyphen with no space (#131: 6 `Single-Pilot`, 360 `Services-Broadcast`). #151: the 1,857 borderless links draw nothing (pages 6, 7, 12 and 15 carry no Original page image); page 362's reviewer highlight over Clearing Procedures is white, multiplied over the page, so it draws nothing either and the page warns annotationsNotConverted without an image. Figure captions on pages 81, 108, 165, 199, 226, 262, 286, 288, 302, 317, 341, 348, 391, 397, 401 and 439 reviewed again on their renders (#27): the book sets every `Figure N-M.` caption directly beneath the artwork it names, so each of these 23 captions must stand next after an image in the page's own block order, not merely appear on the page. Adjacency is all that is claimed; which figure a caption sits beside is not. #180: page 510's glossary entry `VYSE.` keeps its definition, as its neighbours already did.",
+      "basis": "Source pages 16 and 121 visually reviewed. Protects the introductory prose and figure preservation; does not approve page-121 column order. Pages 91/511 are source-reviewed narrow-gutter column-order regressions; the complete left column precedes the right. Reviewed chapter-page folios on pages 16/91 must remain absent from prose. Pages 211/212 visually reviewed: V-speed designators retain their source subscripts in bulleted definitions; source ASI figures remain preserved. Source pages 50/325 visually reviewed for tag-restored left-column-before-right-column order; page 81 caption remains beside the preceding image, before body prose. Page 191 reviewed: four separate left-column items precede the ammeter paragraph; since #98 the bus-bar and fuse paragraphs, the loadmeter, voltage-regulator and hydraulic paragraphs reflow and only the master-switch figure is preserved. Pages 35-36 and 116-117 visually reviewed: each two-column paragraph continues from the bottom of one page onto the next and must remain one paragraph across the source-page marker (#27). Figure 5-36 on page 121 reviewed in color (blue sky, yellow labels, aircraft): the preserved crop must keep its scale, ink contrast and hues (#27). Pages 22-25 and 52-53 visually reviewed (#45): the paragraph between page 22's figures, page 24's right column continued below the figure that opens page 25, and the tagged page 52 continued on the untagged page 53 must each remain one paragraph across the source-page marker. Pages 27, 191 and 365 source rasters reviewed (#69, #70): a bullet PDFKit splits from its text opens that item, not the tail of the block above, and a line broken after a slash inside a compound (`runway/` + `taxiway`, `alternator/` + `generator`) joins without a space. Pages 33, 43, 49, 201 and 370 source rasters reviewed (#63, #73): a section title that opens a paragraph continued on the next page follows the figure caption that closes its page and directly precedes that paragraph (pages 33, 49, 201); a two-line title set nearly the column's width is one heading (pages 43, 370). Pages 136, 159 and 340 source rasters reviewed, with pages 91, 156, 165, 199 and 262 checked against extracted geometry (#76, #82): a 10-point bold or 11-point bold-italic sub-heading on its own line is a heading followed by its paragraph, not the paragraph's opening words; page 159's `Figure 6-20.` caption ends at its own last line and the unpainted `Figure 5-16.` caption left outside the artwork's clip is not emitted (#85); page 340's two column titles on one row are two headings. Pages 25, 92 and 372 source rasters reviewed (#79): addresses broken after a dot or underscore rejoin without a space, including `(NACO)—www.faa.` + `gov/…` and the AIM bullet whose marker line ends inside its address; page 92’s `?n=wxcalc_densityaltitude` address no longer seeds a formula crop that split its paragraph. Pages 88, 98, 203, 231 and 335 (#84): chapter openers tagged P remain headings once their text-free Form XObjects no longer discard the page tags; page 203 source-reviewed, its tagged group spanning Introduction and the next section falls back. Page 89 (#75) source-reviewed: the applied tags read the viscosity and friction columns in order. Pages 105, 211 and 227 source-reviewed: paragraphs and a caption the source tags in pieces read as one element. Page 227 source raster reviewed (#77): the compass-rose figure's group box overhangs its rounded frame into the left column, but only its clipped part is figure ink, so the sentence ending `true course desired.` reflows whole; the word equations under `Step 1:`, `Step 2:` and `course is known:` are body text in the column's measure and reflow in order. Pages 96, 114, 127, 128, 179, 235, 263, 360, 366 and 412 (#89) source-reviewed: a paragraph the source tags in two pieces, one of them falling back beside a figure or in a justified column spaced only around a heading, reads as one paragraph; page 319's TAF change groups and page 416's NDB table rows stay separate. Pages 27, 45, 49, 54, 72, 152, 285, 311, 383, 409 and 429 (#90) source-reviewed: tagged titles in the book's bold, bold-italic and italic title styles are headings, stacked titles stay two headings, and titles on pages 54 and 152 follow their figure directly above the paragraph they open; contents labels (pages 6, 15) and a centred table title (416) are not headings. Lettered appendix folios A-5 to A-7 and C-2 to C-4 are furniture, not headings. Pages 340, 401, 317, 439 and 108 source rasters reviewed (#86): a figure set across both columns' full measure, within points of their first or last lines, reads before or after the complete columns; each column reads whole (page 340's left column before `Some taxiway stubs`, page 401's left column before `Suppose a flight`, page 317's items 8-11 before item 12 and the METAR example, page 439's two drug paragraphs before the right column, page 108's last left-column line before figure 5-16). Pages 47, 48, 228, 447, 460 and 512 (#97) source-reviewed: untagged 10-point italic titles in the book's recurring italic title style (pages 228, 447) and italic titles over bullet lists (48) are headings; the PAVE titles A = Aircraft and V = EnVironment are text, not formula crops; the blank pages 460 and 512 carry no folio. Page 410's italic table header Distance is not a heading. Pages 24, 55, 64, 207, 249, 251, 318, 392 and 416 (#91) source-reviewed: with space-only shows no longer rejecting their tag groups, tagged table rows, time-zone rows, address lines and checklist entries stay separate paragraphs. Pages 6, 21 and 404 source-reviewed (#102): the two-line bold sub-headings The Professional Air Traffic Controllers / Organization (PATCO) Strike and Use of Chart Supplement U.S. (formerly Airport/ / Facility Directory) are one heading each; page 6's contents entries A = Aircraft through Human Factors are text, not a preserved region. Pages 7, 12 and 15 (#105) source-reviewed: the bare Roman folios at the foot of the front matter (iii to xvi, pages 3 to 15) are furniture, not paragraphs. Pages 19, 96, 130, 146, 191, 351 and 361 (#98, #52) source-reviewed: a path or image drawn beyond the frame that clips it no longer claims the column beside the figure; page 19's left column reads whole before the right column, the prose and headings beside each figure reflow in column order, and every figure stays preserved. Pages 226, 286, 288 and 302 (#13) source-reviewed: dense vector illustrations of 101,594–183,417 operations no longer exceed the graphics reader's operation budget, so the columns, headings, bullets and captions beside each complete figure reflow instead of a whole-page image, and the sentences that cross from pages 225, 287 and 301 continue. Page 348 source-reviewed: both two-line titles and their paragraphs reflow beside the four preserved figures. Page 448's 1.95-million-operation illustration still exceeds the budget and the paint cap and keeps its page image. Page 131 source raster reviewed (#121): the borderless CATEGORY / LIMIT LOAD FACTOR table reads as a table, its header row th, the two-line Utility label one cell, the footnote marker on Normal kept, with no row headers (the tags mark those cells TD). Compounds broken at a line-end hyphen before a capital keep the hyphen with no space (#131: 6 `Single-Pilot`, 360 `Services-Broadcast`). #151: the 1,857 borderless links draw nothing (pages 6, 7, 12 and 15 carry no Original page image); page 362's reviewer highlight over Clearing Procedures is white, multiplied over the page, so it draws nothing either and the page warns annotationsNotConverted without an image. Figure captions on pages 81, 108, 165, 199, 226, 262, 286, 288, 302, 317, 341, 348, 391, 397, 401 and 439 reviewed again on their renders (#27): the book sets every `Figure N-M.` caption directly beneath the artwork it names, so each of these 23 captions must stand next after an image in the page's own block order, not merely appear on the page. Adjacency is all that is claimed; which figure a caption sits beside is not. #180: page 510's glossary entry `VYSE.` keeps its definition, as its neighbours already did. #187: the listed pages carry each named alternative text on some image — the caption the source prints beside the figure, or the kind the crop's own evidence names — and no image on them states its provenance or nothing in `alt`; source pages rendered and reviewed (measurements/preserved-image-alt-text/record.md).",
       "pages": [
         {
           "page": 3,
@@ -46,6 +46,15 @@
           ],
           "text": [
             "Normal, slipping, and skidding turns at a constant altitude."
+          ],
+          "minimumImages": 1
+        },
+        {
+          "page": 67,
+          "imageAppearance": [
+            {
+              "reference": "corpus/references/faa-phak-8083-25c/page-67-attitude-indicator-color.png"
+            }
           ],
           "minimumImages": 1
         },
@@ -339,6 +348,11 @@
             {
               "caption": "Figure 11-6. Power versus speed."
             }
+          ],
+          "imageAlternatives": [
+            "Figure 11-5. Drag versus speed.",
+            "Figure 11-6. Power versus speed.",
+            "Mathematical expression"
           ]
         },
         {
@@ -1121,6 +1135,61 @@
           "page": 410,
           "absentHeadings": [
             "Distance"
+          ],
+          "tableCells": [
+            {
+              "title": "VOR/VORTAC NAVAIDS: Normal Usable Altitudes and Radius Distances",
+              "columns": [
+                "Class",
+                "Altitudes"
+              ],
+              "headerCells": true,
+              "rowHeaders": false,
+              "rows": [
+                {
+                  "label": "T",
+                  "values": [
+                    "T",
+                    "12,000' and below"
+                  ]
+                },
+                {
+                  "label": "L",
+                  "values": [
+                    "L",
+                    "Below 18,000'"
+                  ]
+                },
+                {
+                  "label": "H",
+                  "values": [
+                    "H",
+                    "Below 14,500'"
+                  ]
+                },
+                {
+                  "label": "H",
+                  "values": [
+                    "H",
+                    "Within the conterminous 48 states only, between 14,500 and 17,999'"
+                  ]
+                },
+                {
+                  "label": "H",
+                  "values": [
+                    "H",
+                    "18,000'—FL 450"
+                  ]
+                },
+                {
+                  "label": "H",
+                  "values": [
+                    "H",
+                    "FL 450—60,000'"
+                  ]
+                }
+              ]
+            }
           ]
         },
         {
@@ -1479,6 +1548,10 @@
             {
               "caption": "Figure 12-5. Three-cell circulation pattern due to the rotation of the Earth."
             }
+          ],
+          "imageAlternatives": [
+            "Figure 12-4. Atmosphere weights.",
+            "Figure 12-5. Three-cell circulation pattern due to the rotation of the Earth."
           ]
         },
         {
@@ -1881,25 +1954,25 @@
     {
       "id": "wallace-algebra-2010",
       "sourceSHA256": "856bd81edc61c50496982ddc849138f4e0e56fd0ddf0edb53fee9bb0830d0678",
-      "basis": "Page 12 source raster reviewed; license and page-347 formula targets come from the existing corpus review. Does not bless flattened inline exponents or validate every equation image. Page 343 preserves the source's squared exponent in its actual introductory context; the source typo \"from\" is intentional. Page 26 visually reviewed: numbered exercise 80 has squared exponents on both 7a and 6a; retaining those scripts does not qualify other exercise layout. Pages 18-19 and 43-44 visually reviewed: each paragraph continues onto the next page and must remain one paragraph across the source-page marker (#27). Page 343 source raster reviewed for the \"Our Solution\" line x = (-b +/- sqrt(b^2 - 4ac)) / 2a: its exponent, radical sign and fraction bar are checked stroke by stroke at full resolution, as are both exponents of exercise 35 on page 347 (#27). Pages 10, 438, 289, 291 and 471 visually reviewed (#29): section 0.1 exercises and their answers keep every number within each column's order (column-major page order is not blessed, only within-column order), the 8.1 square-root exercises and the page-289 derivations are preserved as warned image regions, and the 7.8 dimensional-analysis answers keep thirty text entries. Does not bless the displaced chapter heading on page 438. Page 40 visually reviewed (#50): the five-step list keeps one block per step, and item 4's wrapped line (\"multiply or\" / \"divide)\"), set in the item's hanging indent, stays inside item 4 while item 5 opens a new block. The aligned derivation below it remains a warned image and is not blessed. Page 101 source raster reviewed (#69): exercises 17 and 28, whose numbers PDFKit splits from their point pairs, are single entries like exercise 18. Pages 288, 289 and 291 source rasters reviewed (#58, #49): sentences with inline radicals (page 288's square-root introduction and product-rule sentence, page 289's opening sentence) and the page-291 instruction reflow as text, while page 288's Example 377 table and displayed product rule, the page-289 derivations and every page-291 exercise stay preserved. PDFKit's separate radical pieces (`√ on`, `√ by spliting`, `√ . There are sev-`) rejoin their rows and paragraphs in reading order on pages 288, 289 and 299 (#95); the pieces keep PDFKit's own order inside a row (`36· 5 √` for √36·5), which is not blessed. Page 429 source raster reviewed (#71): `When we are solving a triangle` opens a paragraph set off by added space under the paragraph threshold. Pages 448 and 487 source rasters reviewed (#78): page 448's graphs, numbered along their rows three to a row, read 15-22 in number order; page 487's sub-answers a-i, set in three columns above answers 2-15, read before them. Exercise sets numbered two to a row (pages 10, 26) keep their column order. Pages 175 and 437 (#97) source-reviewed: blank pages whose only text is the folio carry no text once the folio run removes it. Pages 5 and 211 source-reviewed (#102): the contents entry 6.3 Trinomials where a = 1 with its leader is text, not a preserved region. Pages 2, 9, 90, 120, 180, 318, 321 and 401 source-reviewed (#109): a line holding an inline minus, times or radical sign, whose rectangle extends 8.5 points past its type, continues its paragraph into the next line; page 90's point descriptions and page 401's two paragraphs stay separate; page 321's radicand − 1 reads inside its sentence; the license's minus bullets on page 2 and the derivation lines on pages 9 and 120 stay list lines. Pages 34, 40 and 230 source rasters reviewed (#110): a digit set in CMR12 before prose in the EC text font keeps its word space (`Subtract 8 from`, `Plug 2 in`, `The numbers are− 3 and− 3`); PDFKit dropped it and NativeSpacingReader restores it from the fonts' WinAnsi encodings. The flattened minus spacing (`− 3`) is not blessed. Pages 50, 218 and 64 source rasters reviewed (#123): `dif-` + `ferent` joins as `different`, which the book prints with the U+FB00 ligature; the spaced example lines `Three more than a number becomes x + 3` and `Four less than a number becomes x− 4` are paragraphs of their own after their list items. The `Is` bullet inside page 64's formula crop is not blessed. A word broken across two paragraph blocks joins through the hyphen policy (#131: 92 `connect`). Page 101 (#14) reviewed against the source: exercises 9 and 10 each head their own graph on opposite sides of the measure, and PDFKit returns both markers as one line; each marker now reads before its own graph. Pages 16, 252, 340, 343, 424 and 471 source rasters reviewed (#46, #48): a crop takes the piece of a display row that its edge left just outside, because PDFKit breaks such a row at a raised exponent or a fraction. Page 343's \"Factor\" line keeps its leading x² inside the preserved equation instead of emitting a flattened \"x2 +\" paragraph after Example 465, and page 340's derivations leak no \"x2\"; each of page 16's thirty-six fraction exercises and page 252's four is one region with no marker-and-sign stub; page 471's answers 22 and 29 are single regions while the thirty 7.8 dimensional-analysis answers and answers 21, 23, 28, 32 and 33 stay text; page 424's eight triangles keep their side lengths and vertex labels while every exercise number stays a text entry. Page 252 then holds only its four exercise images, and its multiplication dots are no longer navigation headings. Column-major answer-key order, the order of page 424's remaining labels and the page-16 reading order are not blessed. #180: page 38's justified line, which PDFKit split at the stretched space after `4x or 2x,`, is read as one line of its paragraph. Pages 427, 463, 465, 482 and 486 source rasters reviewed (#178, #179): an answer key numbered down its columns reads down them, so page 465's first key reads 11-42 and its second 1-34, page 486's exponential answers 1-40, page 463's three keys 7-34, 1-40 and 1-4, and page 482's simultaneous-product and revenue keys in number order; column-major order is blessed for those keys, while page 486's first key, whose other columns are crops and carry no numbering, still reads across its rows and is not blessed. The key titles' placement inside their keys is not blessed. Each right triangle on pages 424 and 427 keeps its own vertex letters and side lengths inside its crop, as the 65-degree label and the right-angle mark already were, while every exercise number stays a text entry of its own.",
+      "basis": "Page 12 source raster reviewed; license and page-347 formula targets come from the existing corpus review. Does not bless flattened inline exponents or validate every equation image. Page 343 preserves the source's squared exponent in its actual introductory context; the source typo \"from\" is intentional. Page 26 visually reviewed: numbered exercise 80 has squared exponents on both 7a and 6a; retaining those scripts does not qualify other exercise layout. Pages 18-19 and 43-44 visually reviewed: each paragraph continues onto the next page and must remain one paragraph across the source-page marker (#27). Page 343 source raster reviewed for the \"Our Solution\" line x = (-b +/- sqrt(b^2 - 4ac)) / 2a: its exponent, radical sign and fraction bar are checked stroke by stroke at full resolution, as are both exponents of exercise 35 on page 347 (#27). Pages 10, 438, 289, 291 and 471 visually reviewed (#29): section 0.1 exercises and their answers keep every number within each column's order (column-major page order is not blessed, only within-column order), the 8.1 square-root exercises and the page-289 derivations are preserved as warned image regions, and the 7.8 dimensional-analysis answers keep thirty text entries. Does not bless the displaced chapter heading on page 438. Page 40 visually reviewed (#50): the five-step list keeps one block per step, and item 4's wrapped line (\"multiply or\" / \"divide)\"), set in the item's hanging indent, stays inside item 4 while item 5 opens a new block. The aligned derivation below it remains a warned image and is not blessed. Page 101 source raster reviewed (#69): exercises 17 and 28, whose numbers PDFKit splits from their point pairs, are single entries like exercise 18. Pages 288, 289 and 291 source rasters reviewed (#58, #49): sentences with inline radicals (page 288's square-root introduction and product-rule sentence, page 289's opening sentence) and the page-291 instruction reflow as text, while page 288's Example 377 table and displayed product rule, the page-289 derivations and every page-291 exercise stay preserved. PDFKit's separate radical pieces (`√ on`, `√ by spliting`, `√ . There are sev-`) rejoin their rows and paragraphs in reading order on pages 288, 289 and 299 (#95); the pieces keep PDFKit's own order inside a row (`36· 5 √` for √36·5), which is not blessed. Page 429 source raster reviewed (#71): `When we are solving a triangle` opens a paragraph set off by added space under the paragraph threshold. Pages 448 and 487 source rasters reviewed (#78): page 448's graphs, numbered along their rows three to a row, read 15-22 in number order; page 487's sub-answers a-i, set in three columns above answers 2-15, read before them. Exercise sets numbered two to a row (pages 10, 26) keep their column order. Pages 175 and 437 (#97) source-reviewed: blank pages whose only text is the folio carry no text once the folio run removes it. Pages 5 and 211 source-reviewed (#102): the contents entry 6.3 Trinomials where a = 1 with its leader is text, not a preserved region. Pages 2, 9, 90, 120, 180, 318, 321 and 401 source-reviewed (#109): a line holding an inline minus, times or radical sign, whose rectangle extends 8.5 points past its type, continues its paragraph into the next line; page 90's point descriptions and page 401's two paragraphs stay separate; page 321's radicand − 1 reads inside its sentence; the license's minus bullets on page 2 and the derivation lines on pages 9 and 120 stay list lines. Pages 34, 40 and 230 source rasters reviewed (#110): a digit set in CMR12 before prose in the EC text font keeps its word space (`Subtract 8 from`, `Plug 2 in`, `The numbers are− 3 and− 3`); PDFKit dropped it and NativeSpacingReader restores it from the fonts' WinAnsi encodings. The flattened minus spacing (`− 3`) is not blessed. Pages 50, 218 and 64 source rasters reviewed (#123): `dif-` + `ferent` joins as `different`, which the book prints with the U+FB00 ligature; the spaced example lines `Three more than a number becomes x + 3` and `Four less than a number becomes x− 4` are paragraphs of their own after their list items. The `Is` bullet inside page 64's formula crop is not blessed. A word broken across two paragraph blocks joins through the hyphen policy (#131: 92 `connect`). Page 101 (#14) reviewed against the source: exercises 9 and 10 each head their own graph on opposite sides of the measure, and PDFKit returns both markers as one line; each marker now reads before its own graph. Pages 16, 252, 340, 343, 424 and 471 source rasters reviewed (#46, #48): a crop takes the piece of a display row that its edge left just outside, because PDFKit breaks such a row at a raised exponent or a fraction. Page 343's \"Factor\" line keeps its leading x² inside the preserved equation instead of emitting a flattened \"x2 +\" paragraph after Example 465, and page 340's derivations leak no \"x2\"; each of page 16's thirty-six fraction exercises and page 252's four is one region with no marker-and-sign stub; page 471's answers 22 and 29 are single regions while the thirty 7.8 dimensional-analysis answers and answers 21, 23, 28, 32 and 33 stay text; page 424's eight triangles keep their side lengths and vertex labels while every exercise number stays a text entry. Page 252 then holds only its four exercise images, and its multiplication dots are no longer navigation headings. Column-major answer-key order, the order of page 424's remaining labels and the page-16 reading order are not blessed. #180: page 38's justified line, which PDFKit split at the stretched space after `4x or 2x,`, is read as one line of its paragraph. Pages 427, 463, 465, 482 and 486 source rasters reviewed (#178, #179): an answer key numbered down its columns reads down them, so page 465's first key reads 11-42 and its second 1-34, page 486's exponential answers 1-40, page 463's three keys 7-34, 1-40 and 1-4, and page 482's simultaneous-product and revenue keys in number order; column-major order is blessed for those keys, while page 486's first key, whose other columns are crops and carry no numbering, still reads across its rows and is not blessed. The key titles' placement inside their keys is not blessed. Each right triangle on pages 424 and 427 keeps its own vertex letters and side lengths inside its crop, as the 65-degree label and the right-angle mark already were, while every exercise number stays a text entry of its own. #187: the listed pages carry each named alternative text on some image — the caption the source prints beside the figure, or the kind the crop's own evidence names — and no image on them states its provenance or nothing in `alt`; source pages rendered and reviewed (measurements/preserved-image-alt-text/record.md).",
       "pages": [
         {
           "page": 7,
           "text": [
             "− 5 + ( − 3) Same sign, add 5 + 3, keep the negative",
-            "Diﬀerent signs, subtract 7 − 2, use sign from bigger number, negative"
+            "Different signs, subtract 7 − 2, use sign from bigger number, negative"
           ],
           "absentText": [
             "5+ (− 3)",
             "add 5+ 3",
             "subtract 7− 2",
-            "Diﬀ erent"
+            "Diff erent"
           ]
         },
         {
           "page": 8,
           "text": [
-            "4 + ( − 3) Diﬀerent signs, subtract 4 − 3, use sign from bigger number, positive",
+            "4 + ( − 3) Different signs, subtract 4 − 3, use sign from bigger number, positive",
             "9 − ( − 4) Add the opposite of − 4 9 + 4 Same sign, add 9 + 4, keep the positive"
           ],
           "absentText": [
@@ -1907,7 +1980,7 @@
             "subtract 4− 3",
             "opposite of− 4",
             "9 +4",
-            "Diﬀ erent"
+            "Diff erent"
           ]
         },
         {
@@ -2105,6 +2178,9 @@
           "minimumImages": 1,
           "absentText": [
             "Example 465. x2 +"
+          ],
+          "imageAlternatives": [
+            "Mathematical expression"
           ]
         },
         {
@@ -2381,7 +2457,7 @@
           "paragraphs": [
             "Then if we multiply both sides of the equation again by i, the equation becomes i4",
             "One more time gives i6 = i2 =− 1. And if this pattern continues we see a cycle forming",
-            "As there are 4 diﬀerent possible answers in this cycle, if we divide the exponent by 4"
+            "As there are 4 different possible answers in this cycle, if we divide the exponent by 4"
           ]
         },
         {
@@ -2493,6 +2569,10 @@
               "tag": "sup",
               "text": "− y"
             }
+          ],
+          "imageAlternatives": [
+            "Illustration",
+            "Mathematical expression"
           ]
         },
         {
@@ -2557,7 +2637,7 @@
         {
           "page": 38,
           "paragraphs": [
-            "It doesn’t matter which term gets moved, 4x or 2x, however, it would be the author’s suggestion to move the smaller term (to avoid negative coeﬃcients)."
+            "It doesn’t matter which term gets moved, 4x or 2x, however, it would be the author’s suggestion to move the smaller term (to avoid negative coefficients)."
           ]
         },
         {
@@ -2574,7 +2654,10 @@
             "C 40)"
           ],
           "minimumImages": 4,
-          "maximumImages": 4
+          "maximumImages": 4,
+          "imageAlternatives": [
+            "Illustration"
+          ]
         },
         {
           "page": 463,
@@ -2656,6 +2739,16 @@
           ],
           "absentText": [
             "1) 0 15) 1 29) 0"
+          ]
+        },
+        {
+          "page": 266,
+          "headings": [
+            "7.5 Practice - Complex Fractions"
+          ],
+          "absentHeadings": [
+            "1)",
+            "Solve."
           ]
         }
       ]
@@ -2794,6 +2887,10 @@
             "Egyptian; high-ranking member",
             "Mahmud Ahmed",
             "Director General of Pakistan’s Inter-Services"
+          ],
+          "paragraphs": [
+            "Mohammed Farrah Aidid",
+            "Somali warlord who challenged U.S. presence in Somalia in the early 1990s (deceased)"
           ]
         },
         {
@@ -3711,7 +3808,7 @@
         {
           "page": 172,
           "text": [
-            "could supply such excep-tional commodities."
+            "could supply such exceptional commodities."
           ],
           "warningCodesAnyOf": [
             "uncertainHyphen"
@@ -3724,6 +3821,9 @@
               "note": "For the scheme’s lukewarm reception, see Intelligence report",
               "notePage": 509
             }
+          ],
+          "absentText": [
+            "excep-tional"
           ]
         },
         {
@@ -3929,6 +4029,22 @@
           ],
           "absentText": [
             "CENT- COM"
+          ],
+          "orderedText": [
+            "Roger Cressey",
+            "NSC counterterrorism official",
+            "Ralph Eberhart",
+            "Commander in Chief, NORAD"
+          ],
+          "distinctParagraphs": [
+            {
+              "first": "Roger Cressey",
+              "second": "Ralph Eberhart"
+            },
+            {
+              "first": "Louis Freeh",
+              "second": "Scott Fry"
+            }
           ]
         },
         {
@@ -4007,6 +4123,115 @@
           ]
         },
         {
+          "page": 454,
+          "paragraphs": [
+            "Khalid Sheikh Mohammed",
+            "Mullah Mohammed Omar"
+          ]
+        },
+        {
+          "page": 456,
+          "orderedText": [
+            "during the 1990s",
+            "Prince Turki bin Faisal",
+            "Saudi intelligence chief prior to 9/11",
+            "Ramzi Yousef",
+            "(a.k.a.Abdul Basit) Pakistani",
+            "Khalid Saeed Ahmad al Zahrani",
+            "Saudi; candidate 9/11 hijacker",
+            "Abu Zubaydah",
+            "see Zein al Abideen Mohamed Hussein"
+          ],
+          "paragraphs": [
+            "Khalid Saeed Ahmad al Zahrani",
+            "Mohammed Haydar Zammar"
+          ],
+          "distinctParagraphs": [
+            {
+              "first": "Prince Turki bin Faisal",
+              "second": "Ramzi Yousef"
+            },
+            {
+              "first": "Emirati; Minister of State",
+              "second": "see Zein al Abideen Mohamed Hussein"
+            }
+          ]
+        },
+        {
+          "page": 457,
+          "headings": [
+            "The Experience of the Attack",
+            "The Attackers, Intelligence, and Counterterrorism Policy"
+          ],
+          "paragraphs": [
+            "Harry Waizer, survivor, Cantor Fitzgerald, LP",
+            "Daniel Byman, Georgetown University",
+            "of its investigation, convening for a total of 19 days and receiving testimony from 160 witnesses. The following",
+            "order of their appearance. All witnesses appearing during the 2004 calendar year testified under oath."
+          ],
+          "distinctParagraphs": [
+            {
+              "first": "The Honorable George Pataki, Governor, State of New York",
+              "second": "The Honorable Michael R. Bloomberg, Mayor, City of New York"
+            },
+            {
+              "first": "David Lim, Police Department, Port Authority of New York and New Jersey",
+              "second": "Lee Ielpi, Fire Department of New York (retired)"
+            },
+            {
+              "first": "Allison Vadhan, Families of Flight 93",
+              "second": "Daniel Byman, Georgetown University"
+            }
+          ]
+        },
+        {
+          "page": 461,
+          "headings": [
+            "Preventive Detention: Use of Immigration Laws and Enemy Combatant Designations to Combat Terrorism",
+            "Protecting Privacy, Preventing Terrorism"
+          ],
+          "paragraphs": [
+            "Jan Ting, Temple University"
+          ]
+        },
+        {
+          "page": 463,
+          "distinctParagraphs": [
+            {
+              "first": "The Honorable Louis J. Freeh, former Director, Federal Bureau of Investigation",
+              "second": "The Honorable Janet Reno, former Attorney General of the United States"
+            },
+            {
+              "first": "The Honorable Robert S. Mueller III, Director, Federal Bureau of Investigation",
+              "second": "Maureen Baginski, Executive Assistant Director for Intelligence"
+            },
+            {
+              "first": "Thomas J. Pickard",
+              "second": "Ambassador J. Cofer Black"
+            }
+          ]
+        },
+        {
+          "page": 464,
+          "distinctParagraphs": [
+            {
+              "first": "Joseph F. Bruno, Director, New York City Office of Emergency Management",
+              "second": "The Honorable Rudolph W. Giuliani, former Mayor, City of New York"
+            },
+            {
+              "first": "Adam B. Drucker, Supervisory Special Agent, Federal Bureau of Investigation",
+              "second": "CIA Officials"
+            },
+            {
+              "first": "Alan Reiss, former Director",
+              "second": "Joseph Morris, former Chief"
+            }
+          ],
+          "paragraphs": [
+            "Alan Reiss, former Director, World Trade Center, Port Authority of New York and New Jersey"
+          ]
+        },
+        {
           "page": 146,
           "listItems": [
             "Reporting [—] suggests Bin Ladin and his allies are preparing for attacks in the US"
@@ -4068,6 +4293,18 @@
           "page": 50,
           "paragraphs": [
             "9:24 NEADS scrambles Langley fighter jets in search of AA 11"
+          ]
+        },
+        {
+          "page": 3,
+          "headings": [
+            "THE 9/11 COMMISSION REPORT"
+          ],
+          "absentHeadings": [
+            "official government edition"
+          ],
+          "paragraphs": [
+            "official government edition"
           ]
         },
         {
@@ -5079,6 +5316,15 @@
           "absentText": [
             "community- oriented laws"
           ]
+        },
+        {
+          "page": 62,
+          "absentHeadings": [
+            "Figure 4.5. The framework for monitoring U.S. financial system stability"
+          ],
+          "paragraphs": [
+            "Figure 4.5. The framework for monitoring U.S. financial system stability"
+          ]
         }
       ]
     },
@@ -5400,7 +5646,7 @@
     {
       "id": "noaa-nca5-2023",
       "sourceSHA256": "1942cbf346dc2c711fea413d6d6543edb8bc1e3a88d4c3a85e733c6b6d3577bf",
-      "basis": "Source pages 1, 33, 48, 80, 139, 900, 1700 and 1834 reviewed against 70 DPI Poppler renders while adding the case to the lane (#5). The full report completes under library defaults since the written page rasters stopped carrying their constant alpha plane; before that it failed the 512 MiB entry budget. Protects the four properties that decide whether the book is usable: every one of the 1,834 source pages is anchored and the book reports no recognized page, because the text layer is native throughout; the chapter covers on pages 80 and 139 reflow their chapter line and title and keep the full-bleed artwork as a source-page image, which is the only place that artwork survives; the ordinary illustrated pages 48, 900 and 1700 carry their figures as region crops and must not fall back to a whole-page image; and page 1834's agency seals and addresses, which the graphics reader refuses, stay as an image under pageImageFallback. Page 48's callout, page 900's Figure 20.2 caption and page 1700's author block are the reflowed text checked on those pages. This does not approve the pages where text is still trapped inside a region crop (page 48's left column and Figure 1.5 caption) or page 1700's ten Technical Contributors lines run into one paragraph, both tracked as #181, and it does not qualify whole-book fidelity.",
+      "basis": "Source pages 1, 33, 48, 80, 139, 900, 1700 and 1834 reviewed against 70 DPI Poppler renders while adding the case to the lane (#5). The full report completes under library defaults since the written page rasters stopped carrying their constant alpha plane; before that it failed the 512 MiB entry budget. Protects the four properties that decide whether the book is usable: every one of the 1,834 source pages is anchored and the book reports no recognized page, because the text layer is native throughout; the chapter covers on pages 80 and 139 reflow their chapter line and title and keep the full-bleed artwork as a source-page image, which is the only place that artwork survives; the ordinary illustrated pages 48, 900 and 1700 carry their figures as region crops and must not fall back to a whole-page image; and page 1834's agency seals and addresses, which the graphics reader refuses, stay as an image under pageImageFallback. Page 48's callout, page 900's Figure 20.2 caption and page 1700's author block are the reflowed text checked on those pages. Since #181, page 48's left column, its sub-heading and both Figure 1.5 captions reflow beside the figure's crop (the corner art's feathered transparency-group box no longer reads as ink), and the book's one-line author and contributor entries are a paragraph each (pages 81, 343 and 1700; page 7's staff entries also keep their wrapped lines, 1.8 ems in, with the entry); reviewed against 80 DPI renders of pages 7, 48, 81, 343 and 1700. This does not qualify whole-book fidelity.",
       "pages": [
         {
           "page": 1,
@@ -5408,6 +5654,18 @@
             "Fifth National Climate Assessment"
           ],
           "pageReference": true
+        },
+        {
+          "page": 7,
+          "paragraphs": [
+            "Brooke C. Stewart, Managing Editor and Lead Science Editor, North Carolina State University (through July 2023)"
+          ],
+          "distinctParagraphs": [
+            {
+              "first": "Brooke C. Stewart, Managing Editor",
+              "second": "Thomas K. Maycock, Senior Science Editor"
+            }
+          ]
         },
         {
           "page": 33,
@@ -5419,10 +5677,15 @@
         {
           "page": 48,
           "headings": [
-            "How the United States Is Experiencing Climate Change"
+            "How the United States Is Experiencing Climate Change",
+            "Current climate changes are unprecedented over thousands of years"
           ],
           "paragraphs": [
-            "As extreme events and other climate hazards intensify, harmful impacts on people across the United States are increasing."
+            "As extreme events and other climate hazards intensify, harmful impacts on people across the United States are increasing.",
+            "Global greenhouse gas emissions from human activities continue to increase, resulting in rapid warming (Figure 1.5)",
+            "As the world’s climate has shifted toward warmer conditions",
+            "The US has warmed rapidly since the 1970s.",
+            "Figure 1.5. The graph shows the change in US annual average surface temperature during 1895–2022"
           ],
           "minimumImages": 1,
           "pageReference": false
@@ -5438,6 +5701,19 @@
           "pageReference": true
         },
         {
+          "page": 81,
+          "distinctParagraphs": [
+            {
+              "first": "Alexander Robel, Georgia Institute of Technology",
+              "second": "Deepti Singh, Washington State University Vancouver"
+            },
+            {
+              "first": "Deepti Singh, Washington State University Vancouver",
+              "second": "Aradhna Tripati, University of California, Los Angeles"
+            }
+          ]
+        },
+        {
           "page": 139,
           "headings": [
             "Earth Systems Processes"
@@ -5446,6 +5722,19 @@
             "Fifth National Climate Assessment: Chapter 3"
           ],
           "pageReference": true
+        },
+        {
+          "page": 343,
+          "distinctParagraphs": [
+            {
+              "first": "Michelle Baumflek, USDA Forest Service",
+              "second": "William A. Gould, USDA Forest Service"
+            },
+            {
+              "first": "Ning Liu, USDA Forest Service",
+              "second": "D. Max Smith, USDA Forest Service"
+            }
+          ]
         },
         {
           "page": 900,
@@ -5469,9 +5758,20 @@
           "paragraphs": [
             "Allison R. Crimmins, US Global Change Research Program",
             "Steven M. Ostoja, USDA Agricultural Research Service, California Climate Hub",
-            "Ellen M. Considine, Harvard T.H. Chan School of Public Health, Department of Biostatistics"
+            "Ellen M. Considine, Harvard T.H. Chan School of Public Health, Department of Biostatistics",
+            "Amy E. East, US Geological Survey"
           ],
-          "pageReference": false
+          "pageReference": false,
+          "distinctParagraphs": [
+            {
+              "first": "Robert G. Byron, Montana Health Professionals for a Healthy Climate",
+              "second": "Amy E. East, US Geological Survey"
+            },
+            {
+              "first": "Jeffrey R. Pierce, Colorado State University",
+              "second": "Crystal Raymond, University of Washington"
+            }
+          ]
         },
         {
           "page": 1834,
@@ -5485,7 +5785,7 @@
     {
       "id": "gpo-our-flag-2003",
       "sourceSHA256": "a47a3153b649022a52b53e7b0c40b55bfea24e7980bbe32fe6fee0cf1936bbd8",
-      "basis": "Page 27 source raster reviewed; page-33 four-flag target retained from existing review. Does not accept the broken drop-cap, table, or state-description order. Page 27 includes a third region for its table, alongside the two source heading rules. Whole-table containment and ten row associations have source-derived Swift regressions. Source pages 34/42/43 visually reviewed: four illustrated entries follow alphabetical row order, with all four images retained. Protects ordering from changes to margin removal; not general tag/figure ownership qualification. Page 31 visually reviewed: preserve the heading boundary between Flag and for, plus the source photograph. Drop-cap ordering remains unqualified. Physical pages 7/31 visually reviewed: a decorative drop cap must not promote the opening body line to a heading or put its continuation first. Paragraph checks use intact source phrases and do not accept the separate initial-word spacing defect. Page 9 source review confirms the line-ending some-/times join after corrected order; page 30 retains genuine fraction superscripts beside its drop cap. Page 29 source title and logical tree (H3 /K 0) reviewed: both printed lines form one heading, with the Capitol image retained. Page 30 source flag-/pole line break is a joined word. Page 33 source raster reviewed in color: the Colorado flag (blue and white stripes, red C, gold disc) must keep its scale, ink contrast and hues (#27). Pages 33, 34, 42 and 43 reviewed (#62): the printed page number in the margin is retained text and is not a heading. Page 12 (#89) source-reviewed: the Beecher and Wilson quotations, tagged one line per group, join where each line wraps onto the next. Drop caps join their words on pages 5, 7, 13, 27 and 31 (`The`, not `T he`; `Any` and `Archeological` after an `A` initial); page 47's `On`, set without a space glyph, is the control (#135). Paragraph openings (#147) source-reviewed on pages 5, 7, 10, 12, 49, 51, 53 and 54: a first line indented two ems runs onto the lines beneath it, the lines set beside a drop cap run on into the text that returns to the edge below the initial, one-line quotation groups continue into their wrapped lines, and a reading-list entry's hanging lines join the entry; the paragraph breaks before `Years later`, before the Beecher quotation, before `Strong evidence` and between two reading-list entries remain. Page 4 (#14) reviewed against the source: the Joint Committee's two columns are set on shared baselines and PDFKit returns each pair of entries as one line; the rows' text stays whole and in column order, a control for the detached-label split, whose only change here is that Chairman and Vice Chairman keep separate italic runs. #162: page 15’s flag labels stay paragraphs; the centred BENNINGTON FLAG is no heading. Pages 10-11, 22-23 and 23-24 reviewed on their renders (#27): the 50-star paragraph, flag-code paragraph (h) and paragraph (m) each run from the foot of one page onto the next and must remain one paragraph across the source-page marker. The page-27 flag-size table also carries a glyph-structure reference: every digit of both headers and all ten dot-leader rows must survive in the crop, which the 36 DPI region check cannot see.",
+      "basis": "Page 27 source raster reviewed; page-33 four-flag target retained from existing review. Does not accept the broken drop-cap, table, or state-description order. Page 27 includes a third region for its table, alongside the two source heading rules. Whole-table containment and ten row associations have source-derived Swift regressions. Source pages 34/42/43 visually reviewed: four illustrated entries follow alphabetical row order, with all four images retained. Protects ordering from changes to margin removal; not general tag/figure ownership qualification. Page 31 visually reviewed: preserve the heading boundary between Flag and for, plus the source photograph. Drop-cap ordering remains unqualified. Physical pages 7/31 visually reviewed: a decorative drop cap must not promote the opening body line to a heading or put its continuation first. Paragraph checks use intact source phrases and do not accept the separate initial-word spacing defect. Page 9 source review confirms the line-ending some-/times join after corrected order; page 30 retains genuine fraction superscripts beside its drop cap. Page 29 source title and logical tree (H3 /K 0) reviewed: both printed lines form one heading, with the Capitol image retained. Page 30 source flag-/pole line break is a joined word. Page 33 source raster reviewed in color: the Colorado flag (blue and white stripes, red C, gold disc) must keep its scale, ink contrast and hues (#27). Pages 33, 34, 42 and 43 reviewed (#62): the printed page number in the margin is retained text and is not a heading. Page 12 (#89) source-reviewed: the Beecher and Wilson quotations, tagged one line per group, join where each line wraps onto the next. Drop caps join their words on pages 5, 7, 13, 27 and 31 (`The`, not `T he`; `Any` and `Archeological` after an `A` initial); page 47's `On`, set without a space glyph, is the control (#135). Paragraph openings (#147) source-reviewed on pages 5, 7, 10, 12, 49, 51, 53 and 54: a first line indented two ems runs onto the lines beneath it, the lines set beside a drop cap run on into the text that returns to the edge below the initial, one-line quotation groups continue into their wrapped lines, and a reading-list entry's hanging lines join the entry; the paragraph breaks before `Years later`, before the Beecher quotation, before `Strong evidence` and between two reading-list entries remain. Page 4 (#14) reviewed against the source: the Joint Committee's two columns are set on shared baselines and PDFKit returns each pair of entries as one line; the rows' text stays whole and in column order, a control for the detached-label split, whose only change here is that Chairman and Vice Chairman keep separate italic runs. #162: page 15’s flag labels stay paragraphs; the centred BENNINGTON FLAG is no heading. Pages 10-11, 22-23 and 23-24 reviewed on their renders (#27): the 50-star paragraph, flag-code paragraph (h) and paragraph (m) each run from the foot of one page onto the next and must remain one paragraph across the source-page marker. The page-27 flag-size table also carries a glyph-structure reference: every digit of both headers and all ten dot-leader rows must survive in the crop, which the 36 DPI region check cannot see. #187: the listed pages carry each named alternative text on some image — the caption the source prints beside the figure, or the kind the crop's own evidence names — and no image on them states its provenance or nothing in `alt`; source pages rendered and reviewed (measurements/preserved-image-alt-text/record.md).",
       "pages": [
         {
           "page": 5,
@@ -5559,6 +5859,9 @@
             {
               "reference": "corpus/references/gpo-our-flag-2003/page-27-flag-size-table-glyphs.png"
             }
+          ],
+          "imageAlternatives": [
+            "Table kept as an image"
           ]
         },
         {
@@ -5868,7 +6171,7 @@
     {
       "id": "cdc-zombie-pandemic-2011",
       "sourceSHA256": "d95e9ec2d8cf52cb8c218a6195e132ec140725018358fd2122928bab8a13efc3",
-      "basis": "Page 39 checklist source raster reviewed. Page 13 protects artwork and its transcription warning. Pages 5, 7, 14, 20, 23, 31 and 34 source rasters reviewed against the #93 conversion: their inherited layers fail the plausibility test (too few English words; pages 20 and 31 too little text for the ink) and are replaced by OCR, which reads the dialogue the layer garbled or omitted (page 7 `MAN I FORGOT I HAD THIS`, all three page-20 balloons, page 31's caption boxes and balloons). The damaged native words must be absent and the page must report implausibleTextLayer. Page 39's plausible checklist keeps its native text without that warning. The native-layer order checks from #122 on pages 14, 23 and 34 are replaced by the same balloon-before-broadcast order in the recognized text. The rotated OCR caption on page 17 reads its three lines in order. Phrases avoid apostrophes and words Vision misreads in this compile (#94). Balloon order across panels (#18), balloons split into several paragraphs, sound effects read as headings and Cyrillic look-alike letters in short exclamations are not blessed. Page 13 reviewed in colour on its render (#27): the image-only comic page's crop must keep the reviewed region's scale, ink contrast and hues (the lamp's yellow glow over the blue-grey night panels), which the grayscale region check cannot see.",
+      "basis": "Page 39 checklist source raster reviewed. Page 13 protects artwork and its transcription warning. Pages 5, 7, 14, 20, 23, 31 and 34 source rasters reviewed against the #93 conversion: their inherited layers fail the plausibility test (too few English words; pages 20 and 31 too little text for the ink) and are replaced by OCR, which reads the dialogue the layer garbled or omitted (page 7 `MAN I FORGOT I HAD THIS`, all three page-20 balloons, page 31's caption boxes and balloons). The damaged native words must be absent and the page must report implausibleTextLayer. Page 39's plausible checklist keeps its native text without that warning. The native-layer order checks from #122 on pages 14, 23 and 34 are replaced by the same balloon-before-broadcast order in the recognized text. The rotated OCR caption on page 17 reads its three lines in order. Phrases avoid apostrophes and words Vision misreads in this compile (#94). Balloon order across panels (#18), balloons split into several paragraphs, sound effects read as headings and Cyrillic look-alike letters in short exclamations are not blessed. Page 13 reviewed in colour on its render (#27): the image-only comic page's crop must keep the reviewed region's scale, ink contrast and hues (the lamp's yellow glow over the blue-grey night panels), which the grayscale region check cannot see. #187: the listed pages carry each named alternative text on some image — the caption the source prints beside the figure, or the kind the crop's own evidence names — and no image on them states its provenance or nothing in `alt`; source pages rendered and reviewed (measurements/preserved-image-alt-text/record.md).",
       "pages": [
         {
           "page": 5,
@@ -5883,6 +6186,9 @@
           "absentText": [
             "sreANee",
             "v/eus"
+          ],
+          "absentHeadings": [
+            "http://emergency.cdc.gov"
           ]
         },
         {
@@ -6017,6 +6323,12 @@
             "implausibleTextLayer",
             "ocrUsed"
           ]
+        },
+        {
+          "page": 2,
+          "imageAlternatives": [
+            "Whole page kept as an image"
+          ]
         }
       ]
     },
@@ -6068,7 +6380,7 @@
     {
       "id": "usgs-mcs2025-copper",
       "sourceSHA256": "348b1e224d830a51e6d35cf81343eead26a0cb2a4e74c474d699b7faed1b10e6",
-      "basis": "Source pages 1 and 2 visually reviewed. Protects the unit note, author line, preserved statistics, tariff and world-production tables with source-region image checks, the COMEX paragraph and the ordered superscript table-note markers. After #36, the Domestic Production, Recycling, Import Sources, Depletion Allowance, Government Stockpile, Events, World Resources and Substitutes prose must reflow as text in source order while the three borderless tables stay preserved images; table labels and cells must not be flattened into prose. After #60, each bold run-in section label opens its own paragraph although the source sets about 0.3 pt of space between sections, so Import Sources, Government Stockpile, World Mine and Refinery Production and Reserves and Substitutes are not swallowed by the section above them. After #61, page 2's table notes, which carry no drawn rule and are marked with a raised letter or digit set tight against the note, form page-bottom note blocks in source order, the body prose above them stays body text, and the raised 6 and 8 in that prose link to their notes. The sup markers inside prose are not otherwise qualified here, and the COMEX paragraph, set a blank line below the Events section but without a bold label (7.9 pt box gap at 13.76 pt line rectangles, 11.04 pt leading), is its own paragraph (#71). The Salient Statistics table image is also checked stroke by stroke at full resolution (every digit, label and rule) and for scale and ink contrast; cell association will use tableCells once the table is emitted as text (#27). The page-2 world production and reserves table also carries a glyph-structure reference (#27): every figure of the nineteen country rows, the spanning headers, the estimate and reserve markers and the underlined totals must survive in the crop.",
+      "basis": "Source pages 1 and 2 visually reviewed. Protects the unit note, author line, preserved statistics, tariff and world-production tables with source-region image checks, the COMEX paragraph and the ordered superscript table-note markers. After #36, the Domestic Production, Recycling, Import Sources, Depletion Allowance, Government Stockpile, Events, World Resources and Substitutes prose must reflow as text in source order while the three borderless tables stay preserved images; table labels and cells must not be flattened into prose. After #60, each bold run-in section label opens its own paragraph although the source sets about 0.3 pt of space between sections, so Import Sources, Government Stockpile, World Mine and Refinery Production and Reserves and Substitutes are not swallowed by the section above them. After #61, page 2's table notes, which carry no drawn rule and are marked with a raised letter or digit set tight against the note, form page-bottom note blocks in source order, the body prose above them stays body text, and the raised 6 and 8 in that prose link to their notes. The sup markers inside prose are not otherwise qualified here, and the COMEX paragraph, set a blank line below the Events section but without a bold label (7.9 pt box gap at 13.76 pt line rectangles, 11.04 pt leading), is its own paragraph (#71). The Salient Statistics table image is also checked stroke by stroke at full resolution (every digit, label and rule) and for scale and ink contrast; cell association will use tableCells once the table is emitted as text (#27). The page-2 world production and reserves table also carries a glyph-structure reference (#27): every figure of the nineteen country rows, the spanning headers, the estimate and reserve markers and the underlined totals must survive in the crop. #187: the listed pages carry each named alternative text on some image — the caption the source prints beside the figure, or the kind the crop's own evidence names — and no image on them states its provenance or nothing in `alt`; source pages rendered and reviewed (measurements/preserved-image-alt-text/record.md).",
       "pages": [
         {
           "page": 1,
@@ -6121,6 +6433,9 @@
             "Mine, recoverable",
             "Net import reliance",
             "2603.00.0010"
+          ],
+          "imageAlternatives": [
+            "Table kept as an image"
           ]
         },
         {
@@ -6204,6 +6519,9 @@
             {
               "reference": "corpus/references/usgs-mcs2025-copper/page-2-world-production-glyphs.png"
             }
+          ],
+          "imageAlternatives": [
+            "Table kept as an image"
           ]
         }
       ]
@@ -6644,7 +6962,7 @@
     {
       "id": "census-rrs2002-01",
       "sourceSHA256": "0f97380ae4308581bd70013b7317faafd7c217654236bd31d1448f26eae56905",
-      "basis": "Source page 1 (Word cover) visually reviewed as the clean in-document control for a report whose LaTeX body fonts name their glyphs by index with no Unicode mapping (#38). Since #143 the EC text fonts (dcr, dcbx, dcti) are decoded through the offset the document's own words establish: pages 3 and 17, drawn in those fonts alone and holding no numeric table, reflow from native text without damagedTextEncoding, OCR or a source-page image, and their reviewed phrases (page 3's heading, first sentence, subsection title and numbered fields 1, 12 and 13; page 17's body and references with ligatures, dashes and an italic journal title) were read from 200-dpi renders of the source pages. Pages 12 and 15 are tables no table path reconstructs; they keep damagedTextEncoding and their table images, and must never reflow the table rows run together as prose (Table 2's `0.9620 rnkswp10`, Table 7's `13.85 add01_sw`). Pages 2, 4-11, 13, 14, 16 and 18-20 draw undecodable math or typewriter fonts or lines PDFKit breaks, and must still report damagedTextEncoding and keep a source-page image. Does not bless OCR accuracy on those pages. Page 3's paragraph after the income list opens on an indented first line that runs onto `public-use CPS file`, and page 17's first reference hangs `Incomplete Data via the EM Algorithm` under a first line set apart by space; each reads as one paragraph (#147). #162: page 17’s hanging-indent references keep their wrapped lines.",
+      "basis": "Source page 1 (Word cover) visually reviewed as the clean in-document control for a report whose LaTeX body fonts name their glyphs by index with no Unicode mapping (#38). Since #143 the EC text fonts (dcr, dcbx, dcti) are decoded through the offset the document's own words establish: pages 3 and 17, drawn in those fonts alone and holding no numeric table, reflow from native text without damagedTextEncoding, OCR or a source-page image, and their reviewed phrases (page 3's heading, first sentence, subsection title and numbered fields 1, 12 and 13; page 17's body and references with ligatures, dashes and an italic journal title) were read from 200-dpi renders of the source pages. Pages 12 and 15 are tables no table path reconstructs; they keep damagedTextEncoding and their table images, and must never reflow the table rows run together as prose (Table 2's `0.9620 rnkswp10`, Table 7's `13.85 add01_sw`). Pages 2, 4-11, 13, 14, 16 and 18-20 draw undecodable math or typewriter fonts or lines PDFKit breaks, and must still report damagedTextEncoding and keep a source-page image. Does not bless OCR accuracy on those pages. Page 3's paragraph after the income list opens on an indented first line that runs onto `public-use CPS file`, and page 17's first reference hangs `Incomplete Data via the EM Algorithm` under a first line set apart by space; each reads as one paragraph (#147). #162: page 17’s hanging-indent references keep their wrapped lines. #187: the listed pages carry each named alternative text on some image — the caption the source prints beside the figure, or the kind the crop's own evidence names — and no image on them states its provenance or nothing in `alt`; source pages rendered and reviewed (measurements/preserved-image-alt-text/record.md).",
       "pages": [
         {
           "page": 1,
@@ -6679,12 +6997,12 @@
           ],
           "orderedText": [
             "2 Data Files",
-            "Two data ﬁles were used.",
+            "Two data files were used.",
             "2.1 Domingo-Ferrer and Mateo-Sanz",
             "The Data Extraction System (http://www.census.gov/DES)",
             "Total income",
-            "Aged exemption ﬂag",
-            "Schedule D ﬂag"
+            "Aged exemption flag",
+            "Schedule D flag"
           ],
           "absentText": [
             "5GdwdIlohv",
@@ -6698,7 +7016,7 @@
           ],
           "maximumImages": 0,
           "paragraphs": [
-            "identiﬁers and data from the public-use CPS ﬁle."
+            "identifiers and data from the public-use CPS file."
           ],
           "lists": [
             {
@@ -6714,11 +7032,11 @@
               "kind": "ol",
               "start": 1,
               "items": [
-                "Aged exemption ﬂag",
-                "Schedule D ﬂag",
-                "Schedule E ﬂag",
-                "Schedule C ﬂag",
-                "Schedule F ﬂag"
+                "Aged exemption flag",
+                "Schedule D flag",
+                "Schedule E flag",
+                "Schedule C flag",
+                "Schedule F flag"
               ]
             }
           ]
@@ -6728,6 +7046,9 @@
           "minimumImages": 1,
           "warningCodesAnyOf": [
             "damagedTextEncoding"
+          ],
+          "absentHeadings": [
+            "of re-identification. The methods of information loss are those described by"
           ]
         },
         {
@@ -6742,6 +7063,9 @@
           "minimumImages": 1,
           "warningCodesAnyOf": [
             "damagedTextEncoding"
+          ],
+          "absentHeadings": [
+            "general, we use the Expectation-Maximization (EM) algorithm 1 to estimate"
           ]
         },
         {
@@ -6781,15 +7105,118 @@
         },
         {
           "page": 12,
-          "minimumImages": 3,
-          "warningCodesAnyOf": [
-            "damagedTextEncoding"
+          "absentWarningCodes": [
+            "damagedTextEncoding",
+            "ocrUsed"
+          ],
+          "maximumImages": 0,
+          "paragraphs": [
+            "Table 2. Domingo Data Reidentification Rates",
+            "Table 3. Domingo Data Scoring Metrics"
           ],
           "absentText": [
-            "0.9620 rnkswp10",
-            "0.7287 rnkswp15",
             "Wdeoh 51",
             "uqnvzs38"
+          ],
+          "tableCells": [
+            {
+              "title": "Table 2. Domingo Data Reidentification Rates",
+              "columns": [
+                "d metric",
+                "l metric"
+              ],
+              "headerCells": true,
+              "rowHeaders": true,
+              "rows": [
+                {
+                  "label": "rnkswp05",
+                  "values": [
+                    "0.8861",
+                    "0.9620"
+                  ]
+                },
+                {
+                  "label": "add05",
+                  "values": [
+                    "0.7972",
+                    "0.7500"
+                  ]
+                },
+                {
+                  "label": "mixadd20",
+                  "values": [
+                    "0.0139",
+                    "0.1009"
+                  ]
+                },
+                {
+                  "label": "scalmixadd20",
+                  "values": [
+                    "0.0269",
+                    "0.1241"
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "Table 3. Domingo Data Scoring Metrics",
+              "columns": [
+                "d Metric Ascore",
+                "d Metric Dscore",
+                "d Metric Sscore",
+                "l Metric Ascore",
+                "l Metric Dscore",
+                "l Metric Sscore"
+              ],
+              "headerCells": true,
+              "rowHeaders": true,
+              "rows": [
+                {
+                  "label": "rnkswp05",
+                  "values": [
+                    "46.11",
+                    "47.06",
+                    "46.66",
+                    "49.90",
+                    "50.85",
+                    "49.45"
+                  ]
+                },
+                {
+                  "label": "rnkswp15",
+                  "values": [
+                    "6.11",
+                    "8.36",
+                    "5.91",
+                    "20.87",
+                    "23.12",
+                    "30.67"
+                  ]
+                },
+                {
+                  "label": "mixadd05",
+                  "values": [
+                    "9.27",
+                    "12.16",
+                    "9.93",
+                    "19.64",
+                    "22.53",
+                    "20.30"
+                  ]
+                },
+                {
+                  "label": "scalmixadd20",
+                  "values": [
+                    "2.89",
+                    "7.06",
+                    "4.94",
+                    "7.75",
+                    "11.92",
+                    "9.80"
+                  ]
+                }
+              ]
+            }
           ]
         },
         {
@@ -6808,13 +7235,128 @@
         },
         {
           "page": 15,
-          "minimumImages": 3,
-          "warningCodesAnyOf": [
-            "damagedTextEncoding"
+          "absentWarningCodes": [
+            "damagedTextEncoding",
+            "ocrUsed"
+          ],
+          "maximumImages": 0,
+          "paragraphs": [
+            "Table 7. Kim-Winker Data Scoring Metrics",
+            "Table 8. S4 Return Type Information Loss, 8 Variables, 5885 Records"
           ],
           "absentText": [
-            "88.32 rnkswp10",
-            "13.85 add01_sw"
+            "Wdeoh ;1",
+            "uqnvzs38"
+          ],
+          "tableCells": [
+            {
+              "title": "Table 7. Kim-Winker Data Scoring Metrics",
+              "columns": [
+                "Full File Matches Ascore",
+                "Full File Matches Dscore",
+                "Full File Matches Sscore",
+                "20% Zone Matches Ascore",
+                "20% Zone Matches Dscore",
+                "20% Zone Matches Sscore"
+              ],
+              "headerCells": true,
+              "rowHeaders": true,
+              "rows": [
+                {
+                  "label": "rnkswp05",
+                  "values": [
+                    "98.35",
+                    "98.21",
+                    "88.32",
+                    "98.35",
+                    "98.21",
+                    "88.32"
+                  ]
+                },
+                {
+                  "label": "add01_sw",
+                  "values": [
+                    "0.70",
+                    "16.80",
+                    "11.65",
+                    "0.65",
+                    "16.75",
+                    "11.60"
+                  ]
+                },
+                {
+                  "label": "scalmixadd20",
+                  "values": [
+                    "1.33",
+                    "16.91",
+                    "4.22",
+                    "0.49",
+                    "16.12",
+                    "3.43"
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "Table 8. S4 Return Type Information Loss, 8 Variables, 5885 Records",
+              "columns": [
+                "IL1",
+                "IL1s",
+                "IL2",
+                "IL3",
+                "IL4",
+                "IL5",
+                "s0",
+                "s1",
+                "s2"
+              ],
+              "headerCells": true,
+              "rowHeaders": true,
+              "rows": [
+                {
+                  "label": "rnkswp05",
+                  "values": [
+                    "0.114",
+                    "0.081",
+                    "1.407",
+                    "39.020",
+                    "158.950",
+                    "0.123",
+                    "48.875",
+                    "39.923",
+                    "40.141"
+                  ]
+                },
+                {
+                  "label": "add_sw01",
+                  "values": [
+                    "1.364",
+                    "0.964",
+                    "0.027",
+                    "0.343",
+                    "0.240",
+                    "0.017",
+                    "0.156",
+                    "0.398",
+                    "0.312"
+                  ]
+                },
+                {
+                  "label": "scalmixadd20",
+                  "values": [
+                    "1.681",
+                    "1.004",
+                    "0.256",
+                    "0.693",
+                    "0.069",
+                    "0.033",
+                    "0.263",
+                    "0.547",
+                    "0.341"
+                  ]
+                }
+              ]
+            }
           ]
         },
         {
@@ -6827,18 +7369,18 @@
         {
           "page": 17,
           "orderedText": [
-            "re-identiﬁcation risk is only slightly worse",
-            "additional scoring metrics and more applications to diﬀerent data situations",
+            "re-identification risk is only slightly worse",
+            "additional scoring metrics and more applications to different data situations",
             "[1] Dempster, A. P., Laird, N. M. and Rubin, D. B.: Maximum Likelihood from",
             "Journal of the Royal Statistical Society, B, 39 (1977) 1–38.",
             "Fellegi, I. P., and Sunter, A. B.: A Theory for Record Linkage, Journal of the American Statistical Association, 64, (1969) 1183–1210.",
-            "Journal of Oﬃcial Statistics, 9, (1993) 383–406.",
-            "Lambert, D.: Measures of Disclosure Risk and Harm, Journal of Oﬃcial Statistics, 9, (1993) 313–331."
+            "Journal of Official Statistics, 9, (1993) 383–406.",
+            "Lambert, D.: Measures of Disclosure Risk and Harm, Journal of Official Statistics, 9, (1993) 313–331."
           ],
           "absentText": [
             "Uhihuhqfhv",
             "R!fldo",
-            "JournalofOﬃcialStatistics"
+            "JournalofOfficialStatistics"
           ],
           "absentWarningCodes": [
             "damagedTextEncoding",
@@ -6878,68 +7420,9 @@
       ]
     },
     {
-      "id": "uscis-m618-arabic-2015",
-      "sourceSHA256": "354effbbe38450664959b8832d136cfd158d3c17d1ba777b8b1e4a5b6aa36d54",
-      "basis": "Source pages 5 and 21 visually reviewed. Protects the Arabic contents heading and first entry, and page-21 Arabic prose with embedded English terms and URLs plus the preserved card image. Does not bless reversed form/phone numbers, mirrored parentheses or bidirectional fragments split into separate paragraphs (#41).",
-      "pages": [
-        {
-          "page": 5,
-          "headings": [
-            "جدول المحتويات"
-          ],
-          "orderedText": [
-            "مرحبا بكم في الولايات المتحدة دليل المهاجرين الجدد",
-            "الأقسام والوكالات الفدرالية",
-            "حقوقك ومسؤولياتك كمقيم دائم"
-          ]
-        },
-        {
-          "page": 21,
-          "text": [
-            "[Permanent Resident Card]",
-            "www.uscis.gov/uscis-elis",
-            "[USCIS Forms Line]",
-            "بطاقة الإقامة الدائمة"
-          ],
-          "minimumImages": 1
-        }
-      ]
-    },
-    {
-      "id": "irs-p596-zhs-2025",
-      "sourceSHA256": "7d1cff45bc567f1257ea1aa1e2ce67945aafb12708b2e22901ce6392436590c2",
-      "basis": "Source pages 1 and 16 visually reviewed. Protects the English catalog footer and cover image on page 1, and page-16 left-column examples before the right-column military and chapter-4 prose, the four earned-income limits in source order, and CJK text with embedded Latin identifiers and amounts. Does not bless page 1/3 prose and contents captured inside preserved-region images, the split cover title, or spaces inserted inside justified CJK lines (#36, #42).",
-      "pages": [
-        {
-          "page": 1,
-          "text": [
-            "Publication 596 (zh-s) (2025) Catalog Number 47309A"
-          ],
-          "minimumImages": 1
-        },
-        {
-          "page": 16,
-          "orderedText": [
-            "即使您父母不能申请或不申报 EIC",
-            "示例 1——不需要提交报税表。",
-            "示例 3——提交报税表是为了享受 EIC。",
-            "驻扎在美国境外的军人。",
-            "您必须再满足一条规则才能申报 EIC。",
-            "61,555 美元（已婚联合报税为 68,675 美元）",
-            "57,310 美元（已婚联合报税为 64,430 美元）",
-            "50,434 美元（已婚联合报税为 57,554 美元）",
-            "19,104 美元（已婚联合报税为 26,214 美元）"
-          ],
-          "text": [
-            "请在 （表格 1040 或 1040-SR）第 27b 行勾选“Clergy filing Schedule SE”"
-          ]
-        }
-      ]
-    },
-    {
       "id": "nbs-jres-geltman-1977",
       "sourceSHA256": "44653967317ce75f324b8051cdf2f123429ca1cbd199fefbffabe9acb9b0c86d",
-      "basis": "Source pages 1-7 visually reviewed against renders. Pages 1-6 carry Adobe Paper Capture inline images over what its OCR could not transcribe; they are evidence, not crop bounds (#37). Every page reflows with the unverified-text warning and its source-page reference. Figures 1 and 2 are each one whole crop ending above their captions, which stay text; their OCR labels do not reflow. Display equations with evidence, and those the formula heuristic crops, grow to their whole display row with the equation number; the region references exclude the source-page image, which contains every region. Unboxed equation (8) remains OCR text. Page 7 protects the unverified-text warning over its inherited Paper Capture OCR and the reference heading. After #36 the closing left-column prose must reflow as text in source order, ending with its final line inside one paragraph; the inline equation `u0 = eE0/mω` inside a justified line earlier in the column is prose, not a displayed formula, so that line and its neighbours reflow in the paragraph instead of a three-line crop (#51). Reference transcriptions are noisy and are not asserted. #162: page 7’s hanging-indent references keep their wrapped lines. Figures 1 and 2 reviewed again on the page-2 and page-3 renders (#27): each caption must stand next after its crop in the page's block order. Every page keeps its `Original page N` reference image beside the reflowed inherited OCR, and page 7 reports no page-image fallback, unsupported graphics or fresh recognition. Pages 6 and 7 reviewed: the conclusion's sentence ending `the magnitude of the applied electric field` continues `equals the mean atomic field strength` at the head of page 7 and must remain one paragraph across the marker.",
+      "basis": "Source pages 1-7 visually reviewed against renders. Pages 1-6 carry Adobe Paper Capture inline images over what its OCR could not transcribe; they are evidence, not crop bounds (#37). Every page reflows with the unverified-text warning and its source-page reference. Figures 1 and 2 are each one whole crop ending above their captions, which stay text; their OCR labels do not reflow. Display equations with evidence, and those the formula heuristic crops, grow to their whole display row with the equation number; the region references exclude the source-page image, which contains every region. Unboxed equation (8) remains OCR text. Page 7 protects the unverified-text warning over its inherited Paper Capture OCR and the reference heading. After #36 the closing left-column prose must reflow as text in source order, ending with its final line inside one paragraph; the inline equation `u0 = eE0/mω` inside a justified line earlier in the column is prose, not a displayed formula, so that line and its neighbours reflow in the paragraph instead of a three-line crop (#51). Reference transcriptions are noisy and are not asserted. #162: page 7’s hanging-indent references keep their wrapped lines. Figures 1 and 2 reviewed again on the page-2 and page-3 renders (#27): each caption must stand next after its crop in the page's block order. Every page keeps its `Original page N` reference image beside the reflowed inherited OCR, and page 7 reports no page-image fallback, unsupported graphics or fresh recognition. Pages 6 and 7 reviewed: the conclusion's sentence ending `the magnitude of the applied electric field` continues `equals the mean atomic field strength` at the head of page 7 and must remain one paragraph across the marker. #187: the listed pages carry each named alternative text on some image — the caption the source prints beside the figure, or the kind the crop's own evidence names — and no image on them states its provenance or nothing in `alt`; source pages rendered and reviewed (measurements/preserved-image-alt-text/record.md).",
       "pages": [
         {
           "page": 1,
@@ -7003,7 +7486,11 @@
               "caption": "FIGURE 1. Trajectory of an electron"
             }
           ],
-          "pageReference": true
+          "pageReference": true,
+          "imageAlternatives": [
+            "Mathematical expression",
+            "The printed page, for comparison"
+          ]
         },
         {
           "page": 3,
@@ -7131,7 +7618,7 @@
     {
       "id": "arxiv-replay-clocks-2023",
       "sourceSHA256": "1e8172e4a347bdf6722dacc38755f6fb3299866336b8153f51b2c13f3ac6109a",
-      "basis": "Source pages 1, 3 and 4 visually reviewed. Protects abstract, ACM reference and introduction order in the left column before the right-column drone illustration; section 3.1-3.2 order around Figure 1; and algorithm captions with surrounding prose in two-column order. After #43: the rotated arXiv stamp is omitted (furnitureRemoved), the title, ABSTRACT, INTRODUCTION and numbered section labels are headings separate from their paragraphs, the word spaces after mathematical-italic variables are restored from the source text operators, and each algorithm listing is one preserved region beneath its reflowed caption. Author names remain headings ranked below the title. Pages 1-2 visually reviewed (#45): the right-column paragraph that ends page 1 continues at the head of page 2's left column as one paragraph across the source-page marker. Page 6 source raster reviewed (#83): the section 6 title, whose second line hangs under the title text past its number, is one heading. #151: its 75 borderless citation links draw nothing, so pages 1, 3, 4, 6 and 10 carry no Original page image. #162: page 10’s reference [11] keeps its wrapped line. #180: the run-in lead-ins on pages 4 and 6 (`Receive event.`, `Observation 1:`) keep the text set beside them, which PDFKit split off at the line's own word space.",
+      "basis": "Source pages 1, 3 and 4 visually reviewed. Protects abstract, ACM reference and introduction order in the left column before the right-column drone illustration; section 3.1-3.2 order around Figure 1; and algorithm captions with surrounding prose in two-column order. After #43: the rotated arXiv stamp is omitted (furnitureRemoved), the title, ABSTRACT, INTRODUCTION and numbered section labels are headings separate from their paragraphs, the word spaces after mathematical-italic variables are restored from the source text operators, and each algorithm listing is one preserved region beneath its reflowed caption. Author names remain headings ranked below the title. Pages 1-2 visually reviewed (#45): the right-column paragraph that ends page 1 continues at the head of page 2's left column as one paragraph across the source-page marker. Page 6 source raster reviewed (#83): the section 6 title, whose second line hangs under the title text past its number, is one heading. #151: its 75 borderless citation links draw nothing, so pages 1, 3, 4, 6 and 10 carry no Original page image. #162: page 10’s reference [11] keeps its wrapped line. #180: the run-in lead-ins on pages 4 and 6 (`Receive event.`, `Observation 1:`) keep the text set beside them, which PDFKit split off at the line's own word space. #187: the listed pages carry each named alternative text on some image — the caption the source prints beside the figure, or the kind the crop's own evidence names — and no image on them states its provenance or nothing in `alt`; source pages rendered and reviewed (measurements/preserved-image-alt-text/record.md).",
       "pages": [
         {
           "page": 1,
@@ -7204,7 +7691,12 @@
             "Choose a random event",
             "𝑒is the event"
           ],
-          "pageReference": false
+          "pageReference": false,
+          "imageAlternatives": [
+            "Figure 1: Sample Execution Sequence and Application of Replay Algorithm.",
+            "Algorithm 1 ReplayEvents Operation",
+            "Mathematical expression"
+          ]
         },
         {
           "page": 4,
@@ -7716,7 +8208,7 @@
     {
       "id": "ntrs-20200002975-gwl-2020",
       "sourceSHA256": "a98e4fcdea40b8ea7023880dd88966f04198b4ec311fced0bb9ebb2dec45fe6d",
-      "basis": "All 20 source pages visually reviewed against 60 DPI Poppler renders (page 1 header and page 11 figures at higher resolution). Protects only output that matches the source: the title, TABLE OF CONTENTS, the numbered section titles 1-6, APPENDIX, BIOGRAPHY and the italic subsection titles as headings; references that the source tags as headings read as paragraphs (#154); the author, affiliation and government-work lines; single-column-order prose on pages 3, 4, 6 and 12, including the page-6 paragraph that continues from the left column into the right; the Word subscript in V_ref and the superscript Reynolds-number exponents; figure captions and preserved figure images; the paragraph that continues from page 9 across the text at the top of figure page 10 into page 11; the appendix captions on pages 14-18; the reference entries in order; and the biographies beside their three portraits. Not pinned because wrong now: line-by-line column interleaving on pages 1, 2, 5, 8, 9, 10 and 11 and right-before-left blocks on pages 7-8 (#153); kept or heading folios, and references split after their first line (#154); Symbol-font private-use alpha and bullets and 45degree (#155). No committed rasters: see the manifest's rights note. Page 1's ten borderless links draw nothing: no Original page image, an annotationsNotConverted warning (#151). Protects only output that matches the source: the title, TABLE OF CONTENTS, 1. INTRODUCTION and the italic subsection titles as headings; the author, affiliation and government-work lines; single-column-order prose on pages 3, 4, 6 and 12, including the page-6 paragraph that continues from the left column into the right; the Word subscript in V_ref and the superscript Reynolds-number exponents; figure captions and preserved figure images; the paragraph that continues from page 9 across the text at the top of figure page 10 into page 11; the appendix captions on pages 14-18; the reference entries in order; and the biographies beside their three portraits. Pages 1, 2, 5, 7, 8, 9 and 11 now read column by column and are pinned, each page reviewed again on its render; page 10's Figure 16 and caption follow the paragraph that runs from page 9 into page 11, so they read inside page 11 (#153). Not pinned because wrong now: section titles 2-6 as <pre>, kept or heading folios and references as headings (#154); #162: page 19’s hanging-indent references keep their wrapped author lines. All 20 pages reviewed again for what the conversion must not do (#27): the Word export's text layer is genuine, so no page may report fresh recognition, a damaged encoding, an implausible or unverified text layer, or a whole-page image fallback, and no page but the reviewed exceptions may take an `Original page N` image (pages 2-20 join page 1 under #151). The page-4 Figure 3 caption and the page 14-18 appendix captions sit directly beneath their plots on the renders, so each must stand next after an image, and each appendix page discloses its preserved region.",
+      "basis": "All 20 source pages visually reviewed against 60 DPI Poppler renders (page 1 header and page 11 figures at higher resolution). Protects only output that matches the source: the title, TABLE OF CONTENTS, the numbered section titles 1-6, APPENDIX, BIOGRAPHY and the italic subsection titles as headings; references that the source tags as headings read as paragraphs (#154); the author, affiliation and government-work lines; single-column-order prose on pages 3, 4, 6 and 12, including the page-6 paragraph that continues from the left column into the right; the Word subscript in V_ref and the superscript Reynolds-number exponents; figure captions and preserved figure images; the paragraph that continues from page 9 across the text at the top of figure page 10 into page 11; the appendix captions on pages 14-18; the reference entries in order; and the biographies beside their three portraits. Not pinned because wrong now: line-by-line column interleaving on pages 1, 2, 5, 8, 9, 10 and 11 and right-before-left blocks on pages 7-8 (#153); kept or heading folios, and references split after their first line (#154); Symbol-font private-use alpha and bullets and 45degree (#155). No committed rasters: see the manifest's rights note. Page 1's ten borderless links draw nothing: no Original page image, an annotationsNotConverted warning (#151). Protects only output that matches the source: the title, TABLE OF CONTENTS, 1. INTRODUCTION and the italic subsection titles as headings; the author, affiliation and government-work lines; single-column-order prose on pages 3, 4, 6 and 12, including the page-6 paragraph that continues from the left column into the right; the Word subscript in V_ref and the superscript Reynolds-number exponents; figure captions and preserved figure images; the paragraph that continues from page 9 across the text at the top of figure page 10 into page 11; the appendix captions on pages 14-18; the reference entries in order; and the biographies beside their three portraits. Pages 1, 2, 5, 7, 8, 9 and 11 now read column by column and are pinned, each page reviewed again on its render; page 10's Figure 16 and caption follow the paragraph that runs from page 9 into page 11, so they read inside page 11 (#153). Not pinned because wrong now: section titles 2-6 as <pre>, kept or heading folios and references as headings (#154); #162: page 19’s hanging-indent references keep their wrapped author lines. All 20 pages reviewed again for what the conversion must not do (#27): the Word export's text layer is genuine, so no page may report fresh recognition, a damaged encoding, an implausible or unverified text layer, or a whole-page image fallback, and no page but the reviewed exceptions may take an `Original page N` image (pages 2-20 join page 1 under #151). The page-4 Figure 3 caption and the page 14-18 appendix captions sit directly beneath their plots on the renders, so each must stand next after an image, and each appendix page discloses its preserved region. #187: the listed pages carry each named alternative text on some image — the caption the source prints beside the figure, or the kind the crop's own evidence names — and no image on them states its provenance or nothing in `alt`; source pages rendered and reviewed (measurements/preserved-image-alt-text/record.md).",
       "pages": [
         {
           "page": 1,
@@ -7794,6 +8286,9 @@
             "unverifiedTextLayer",
             "damagedTextEncoding",
             "implausibleTextLayer"
+          ],
+          "imageAlternatives": [
+            "Figure 1. Sketch of the Transonic Dynamics Tunnel with cutaways revealing key features"
           ]
         },
         {
@@ -8210,6 +8705,9 @@
             "unverifiedTextLayer",
             "damagedTextEncoding",
             "implausibleTextLayer"
+          ],
+          "imageAlternatives": [
+            "Figure A1. Peak bending moment due to lift, research model, segregated by azimuth angle regions"
           ]
         },
         {
@@ -8880,7 +9378,7 @@
     {
       "id": "usda-ars-agresearch-2012-11",
       "sourceSHA256": "2673d1fded74ad89c8b5c59dc325c7884601e1aca5b5755b15a105c1f5b0d761",
-      "basis": "Source pages 1-24 visually reviewed against 60 DPI Poppler renders and the extracted text layer. Protects only output that matches the source now: the cover lines in order with Keeping Our Troops Safe and From Insects as headings; the masthead date, volume and ISSN lines; photo presence on photo pages; printed photo credits with their gallery numbers; whole captions on pages 6, 9 and 12; sentences inside the reflowed feature and short-article prose on pages 6, 9, 12, 13, 15, 18 and 19 in source order; the back-cover mailing instruction; and running-foot removal warnings. Not pinned because wrong now: side-by-side column prose split into one paragraph per line and interleaved on page 6, where a column runs on into a wider measure below (#153); the cover’s tagline and contents line and the back cover’s mailing panel as h4/h5/h6 headings that enter the contents; the back cover’s dingbat as a superscript l; the small-cap credit read as `BRAD FRITz`; and line-end hyphens kept inside joined paragraphs (`com-panies`, `infec-tions`, `compli-ance`) (see the review file). Pages 4, 6-13, 15, 17-19 and 22 reviewed again on their renders (#159): the magazine rules its running foot off under every column, so the foot is absent and furnitureRemoved reported wherever a page carried one; the nine-point bold subheads on pages 12, 13, 17, 18 and 19 are headings, `How Much Pressure Can a` / `Leaf Take?` one heading over two lines; each column’s ten-point first-line indent opens a paragraph, so the source paragraphs on pages 9, 12, 13, 15, 18 and 19 stay separate; and each six-point photo credit stands next to the picture it names, before it where the magazine sets the credit above the photograph (pages 4, 15, 17) and after it where it sets it below (pages 6, 9, 12, 17, 19). Page 6’s two subheads and page 9’s `Fighting Filth Flies` are not pinned as headings: #153 still interleaves page 6’s columns, and the sidebar title on page 9 stands over its photograph, not over its own paragraph. No committed rasters: page 24 carries only agency logos and the mailing panel, and the index holly ornaments are uncredited. The 55 borderless link annotations draw nothing: no reviewed page carries an Original page image, and link pages warn annotationsNotConverted (#151). Pages 8, 9, 11, 12, 13, 15, 18 and 19 were reviewed again on their renders and read column by column, the running foot beyond the columns; their order is pinned (#153). All 24 pages reviewed again for what the conversion must not do (#27): the InDesign magazine's text layer is genuine, so no page may report fresh recognition, a damaged encoding or an implausible text layer, and only pages 20-21 (known #158 fallbacks) may report a whole-page image fallback and only pages 1 and 13 may take an `Original page N` image. Pages 14, 22 and 23 are new review pages: the feature page and both index pages keep their preserved regions and disclose them, with no reflowed text pinned, because #158 holds all of their body text inside crops. Pages 2, 3, 13, 14, 16 and 20-23 reviewed again at 50 DPI with every crop outlined (#158): the FORUM columns and the signature box, the masthead staff list, the contents entries, the breadfruit caption, the columns over the faded flag, the peach-orchard title and its photograph caption, both boxed-title articles over their page-wide gradient, and the 2012 index entries are text; only the photographs, ornaments and the flag's own strip stay images. Page 13's photograph no longer covers the page, so its text carries no review warning. Column order on pages 14 and 20-23 is not approved (#153), so those pages are checked by phrase rather than in order.",
+      "basis": "Source pages 1-24 visually reviewed against 60 DPI Poppler renders and the extracted text layer. Protects only output that matches the source now: the cover lines in order with Keeping Our Troops Safe and From Insects as headings; the masthead date, volume and ISSN lines; photo presence on photo pages; printed photo credits with their gallery numbers; whole captions on pages 6, 9 and 12; sentences inside the reflowed feature and short-article prose on pages 6, 9, 12, 13, 15, 18 and 19 in source order; the back-cover mailing instruction; and running-foot removal warnings. Not pinned because wrong now: side-by-side column prose split into one paragraph per line and interleaved on page 6, where a column runs on into a wider measure below (#153); the cover’s tagline and contents line and the back cover’s mailing panel as h4/h5/h6 headings that enter the contents; the back cover’s dingbat as a superscript l; the small-cap credit read as `BRAD FRITz`; and line-end hyphens kept inside joined paragraphs (`com-panies`, `infec-tions`, `compli-ance`) (see the review file). Pages 4, 6-13, 15, 17-19 and 22 reviewed again on their renders (#159): the magazine rules its running foot off under every column, so the foot is absent and furnitureRemoved reported wherever a page carried one; the nine-point bold subheads on pages 12, 13, 17, 18 and 19 are headings, `How Much Pressure Can a` / `Leaf Take?` one heading over two lines; each column’s ten-point first-line indent opens a paragraph, so the source paragraphs on pages 9, 12, 13, 15, 18 and 19 stay separate; and each six-point photo credit stands next to the picture it names, before it where the magazine sets the credit above the photograph (pages 4, 15, 17) and after it where it sets it below (pages 6, 9, 12, 17, 19). Page 6’s two subheads and page 9’s `Fighting Filth Flies` are not pinned as headings: #153 still interleaves page 6’s columns, and the sidebar title on page 9 stands over its photograph, not over its own paragraph. No committed rasters: page 24 carries only agency logos and the mailing panel, and the index holly ornaments are uncredited. The 55 borderless link annotations draw nothing: no reviewed page carries an Original page image, and link pages warn annotationsNotConverted (#151). Pages 8, 9, 11, 12, 13, 15, 18 and 19 were reviewed again on their renders and read column by column, the running foot beyond the columns; their order is pinned (#153). All 24 pages reviewed again for what the conversion must not do (#27): the InDesign magazine's text layer is genuine, so no page may report fresh recognition, a damaged encoding or an implausible text layer, and only pages 20-21 (known #158 fallbacks) may report a whole-page image fallback and only pages 1 and 13 may take an `Original page N` image. Pages 14, 22 and 23 are new review pages: the feature page and both index pages keep their preserved regions and disclose them, with no reflowed text pinned, because #158 holds all of their body text inside crops. Pages 2, 3, 13, 14, 16 and 20-23 reviewed again at 50 DPI with every crop outlined (#158): the FORUM columns and the signature box, the masthead staff list, the contents entries, the breadfruit caption, the columns over the faded flag, the peach-orchard title and its photograph caption, both boxed-title articles over their page-wide gradient, and the 2012 index entries are text; only the photographs, ornaments and the flag's own strip stay images. Page 13's photograph no longer covers the page, so its text carries no review warning. Column order on pages 14 and 20-23 is not approved (#153), so those pages are checked by phrase rather than in order. #186 (measurements/magazine-leftovers/record.md): the back cover’s Monotype Sorts bullet reads ● and is no superscript, page 15’s credit reads the capital Z its glyph draws, the back cover’s address, Official Business and web line and the cover’s pages 2, 4-14 are no headings, page 9’s sidebar title is a heading, pages 6, 15 and 19 join their word breaks, and page 13’s credit stands before its photograph, read against the 60 DPI renders.",
       "pages": [
         {
           "page": 1,
@@ -8903,6 +9401,12 @@
             "pageImageFallback",
             "damagedTextEncoding",
             "implausibleTextLayer"
+          ],
+          "absentHeadings": [
+            "pages 2, 4-14"
+          ],
+          "paragraphs": [
+            "pages 2, 4-14"
           ]
         },
         {
@@ -9014,7 +9518,8 @@
           ],
           "text": [
             "PEGGY GREB (D2693-1)",
-            "PEGGY GREB (D2695-1)"
+            "PEGGY GREB (D2695-1)",
+            "commercial companies interested in producing it"
           ],
           "minimumImages": 2,
           "pageReference": false,
@@ -9026,7 +9531,8 @@
             "implausibleTextLayer"
           ],
           "absentText": [
-            "Agricultural Research l November/December 2012"
+            "Agricultural Research l November/December 2012",
+            "com-panies"
           ],
           "warningCodesAnyOf": [
             "furnitureRemoved"
@@ -9135,6 +9641,9 @@
             {
               "caption": "STEPHEN AUSMUS (D2619-4)"
             }
+          ],
+          "headings": [
+            "Fighting Filth Flies"
           ]
         },
         {
@@ -9268,6 +9777,12 @@
               "first": "Spatial repellents are used in field conditions",
               "second": "“For example, the individual soldier may be on sentry duty"
             }
+          ],
+          "captionedImages": [
+            {
+              "caption": "SETH BRITCH (D2644-1)",
+              "position": "before"
+            }
           ]
         },
         {
@@ -9295,7 +9810,9 @@
             "implausibleTextLayer"
           ],
           "absentText": [
-            "Agricultural Research l November/December 2012"
+            "Agricultural Research l November/December 2012",
+            "BRAD FRITz",
+            "compli-ance"
           ],
           "warningCodesAnyOf": [
             "furnitureRemoved"
@@ -9312,9 +9829,12 @@
           ],
           "captionedImages": [
             {
-              "caption": "BRAD FRITz (D2697-1)",
+              "caption": "BRAD FRITZ (D2697-1)",
               "position": "before"
             }
+          ],
+          "text": [
+            "ensure product label compliance with many agrochemical products"
           ]
         },
         {
@@ -9425,7 +9945,8 @@
             "Finally, Ibekwe was surprised"
           ],
           "text": [
-            "PEGGY GREB (D2687-1)"
+            "PEGGY GREB (D2687-1)",
+            "an antibiotic commonly used to treat a range of infections in humans"
           ],
           "minimumImages": 1,
           "pageReference": false,
@@ -9437,7 +9958,8 @@
             "implausibleTextLayer"
           ],
           "absentText": [
-            "Agricultural Research l November/December 2012"
+            "Agricultural Research l November/December 2012",
+            "infec-tions"
           ],
           "warningCodesAnyOf": [
             "furnitureRemoved"
@@ -9500,7 +10022,10 @@
         {
           "page": 24,
           "paragraphs": [
-            "Please return the mailing label from this magazine:"
+            "Please return the mailing label from this magazine:",
+            "5601 Sunnyside Ave. Beltsville, MD 20705-5129",
+            "Official Business",
+            "Visit us at ars.usda.gov/ar ● Follow us at twitter.com/USDA_ARS"
           ],
           "pageReference": false,
           "warningCodesAnyOf": [
@@ -9512,6 +10037,27 @@
             "unverifiedTextLayer",
             "damagedTextEncoding",
             "implausibleTextLayer"
+          ],
+          "absentHeadings": [
+            "U.S. Department of Agriculture Agricultural Research Magazine",
+            "5601 Sunnyside Ave.",
+            "Beltsville, MD 20705-5129",
+            "Official Business",
+            "Visit us at ars.usda.gov/ar l Follow us at twitter.com/USDA_ARS",
+            "Visit us at ars.usda.gov/ar ● Follow us at twitter.com/USDA_ARS"
+          ],
+          "absentText": [
+            "ars.usda.gov/ar l Follow"
+          ],
+          "absentScripts": [
+            {
+              "tag": "sup",
+              "text": "l"
+            },
+            {
+              "tag": "sup",
+              "text": "●"
+            }
           ]
         },
         {
@@ -9559,6 +10105,12 @@
             "Air quality, no-till spring cereal rotations and, Jul-19",
             "compounds in hulls may benefit health, Feb-22",
             "ARS Scientists: All-Purpose Agronomists, Aug-2"
+          ],
+          "distinctParagraphs": [
+            {
+              "first": "American beautyberry, natural insect repellency, Nov/Dec-4",
+              "second": "Ammonia, new system captures from livestock waste, Nov/Dec-21"
+            }
           ]
         },
         {
@@ -9578,6 +10130,16 @@
           "text": [
             "Zoonotic diseases, leptospirosis, Jan-10",
             "Wheat, statistical approach used in breeding, Apr-13"
+          ],
+          "distinctParagraphs": [
+            {
+              "first": "Insects, monitor to study feeding behavior of, May/Jun-20",
+              "second": "Insect-transmitted diseases, protecting troops from, Nov/Dec-2, 4"
+            },
+            {
+              "first": "Wastewater, new system captures ammonia in, Nov/Dec-21",
+              "second": "Water availability, satellite monitoring of, Feb-2, 4"
+            }
           ]
         }
       ]
@@ -10444,7 +11006,7 @@
   "excludedFullConversions": [
     {
       "id": "gpo-warren-1964",
-      "reason": "Known default image-output ceiling failure: 920 full-page colour scans need 1,062.69 MiB of entry bytes as PNG and 512.33 MiB with the smaller of PNG and JPEG 0.90 per image, against the 512 MiB default. The nine-page excerpt regression is recorded separately.",
+      "reason": "Image-output ceiling (#5): 920 full-page colour scans need 1,062.69 MiB of entry bytes as PNG; under the automatic encoding default (#193) the whole book fits the 512 MiB default by only 316,202 bytes (0.059%), so it stays out of the gated lane until #5 decides whether that margin is a pass. The nine-page excerpt regression is recorded separately.",
       "issue": 5
     }
   ]

@@ -551,8 +551,17 @@ enum GraphicsReader {
                         // unclassified footprint: InDesign wraps a sidebar's `re f`, a caption's
                         // shaded box or a drop shadow in a transparency group whose box is what
                         // they paint, and the box read as solid ink over the text on them (#158).
+                        // The box is the wrapped object's bounds grown by the spread of its
+                        // effect, so a feather or a blur leaves a border its paints never reach:
+                        // NOAA page 48 wraps its 30%-opacity corner art in a group whose box
+                        // stands eight points above the art, and that border claimed the page's
+                        // left column (#181). A box its paints all but fill is the group's own
+                        // bounds, whatever the effect spread; a box that keeps a tenth of itself
+                        // beyond them reaches past the object and is a footprint of its own.
                         let own = s.paints[startCount...]
-                        let covered = own.reduce(CGRect.null) { $0.union($1.rect) }.insetBy(dx: -2, dy: -2).contains(rect)
+                        let ownBounds = own.reduce(CGRect.null) { $0.union($1.rect) }
+                        let covered = ownBounds.insetBy(dx: -2, dy: -2).contains(rect)
+                            || Self.fills(rect, by: ownBounds)
                         if covered, let widest = own.indices.max(by: { own[$0].rect.width * own[$0].rect.height < own[$1].rect.width * own[$1].rect.height }) {
                             s.paints[widest].grouped = true
                         }
@@ -590,6 +599,20 @@ enum GraphicsReader {
                       hasInvisibleText: s.invisibleText, textShows: s.shows, covers: s.covers, slantedShows: s.slantedShows,
                       textPlacementUnsupported: s.textPlacementUnsupported || s.inText,
                       inlineImages: s.inlineImages.map { $0.intersection(bounds) }.filter { !$0.isNull && !$0.isEmpty })
+    }
+
+    /// Whether a form's own paints all but fill its box: they cover at least nine tenths of its
+    /// area (#181). A transparency group's box is the object it wraps grown by the spread of the
+    /// effect that made the group — a drop shadow's offset, a blur's or a feather's radius — so
+    /// the box stands a border clear of everything the form paints. A box that keeps more than a
+    /// tenth of itself beyond its paints reaches past the object into the page and is recorded.
+    static func fills(_ rect: CGRect, by bounds: CGRect) -> Bool {
+        guard !rect.isNull, rect.isFinite, !bounds.isNull, bounds.isFinite else { return false }
+        let area = rect.width * rect.height
+        guard area > 0 else { return false }
+        let shared = bounds.intersection(rect)
+        guard !shared.isNull else { return false }
+        return shared.width * shared.height >= area * 0.9
     }
 
     static func axisAligned(_ m: CGAffineTransform) -> Bool {

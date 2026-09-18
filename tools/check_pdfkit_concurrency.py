@@ -22,6 +22,7 @@ SOURCES = [
     'Sources/PDFReflowLib/NativeSpacingReader.swift',
     'Sources/PDFReflowLib/FontWeightReader.swift',
     'Sources/PDFReflowLib/PrivateUseDecoder.swift',
+    'Sources/PDFReflowLib/ColumnGrid.swift',
     'Sources/PDFReflowLib/DocumentModel.swift',
     'Sources/PDFReflowLib/ReflowDocument.swift',
     'Sources/PDFReflowLib/ConversionTypes.swift',

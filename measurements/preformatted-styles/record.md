@@ -49,7 +49,9 @@ Final validation on macOS 27, Xcode 27, arm64, release CLI with default conversi
 
 The baseline is commit `0fd4728`, retained from the complete native-line-boundary measurement.
 `identity.json` pins the final runtime/test/tool/fixture bytes and collector, plus OS/toolchain.
-`corpus-summary.json` and the per-case compressed receipts retain exact results.
+`corpus-summary.json` and the per-case compressed receipts retain exact results. The per-case raw
+progress logs and memory-sample series were dropped in #196; each case's `result.json.gz` keeps their summary (progress-check events and result, sampled
+and converter peak memory).
 
 ## Complete before/after comparison
 

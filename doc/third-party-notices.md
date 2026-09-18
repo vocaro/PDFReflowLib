@@ -100,7 +100,9 @@ cases are low-resolution renders of U.S. government works, with provenance in ea
 Review rasters, Poppler text inspections and selected converted XHTML under
 `measurements/{usgs-mcs2025-copper,scotus-loper-bright-2024,census-rrs2002-01,irs-p596-zhs-2025,nbs-jres-geltman-1977,uscis-m618-arabic-2015}/`
 derive from U.S. government works (USGS, the Supreme Court, the Census Bureau, the IRS, NBS/NIST
-and USCIS). Their rights evidence is recorded per case in `corpus/manifest.json`; USCIS states
+and USCIS). Their rights evidence is recorded per case in `corpus/manifest.json`, or for the IRS
+and USCIS cases, since removed from the corpus, in the manifest's history (see
+[non-English documents removed](corpus.md#non-english-documents-removed)); USCIS states
 some guide images are licensed, so no USCIS rasters are committed. These review resources are
 not relicensed under MIT.
 

@@ -21,8 +21,9 @@ separate Apple services. This is one fresh-process Mac observation, not a physic
 budget or a successful full-book conversion. A preceding exploratory run also fails the
 same output ceiling; the retained result is the isolated-build confirmation.
 
-`result.json` and `memory-samples.json` are unmodified generated receipts. `progress.log.gz`
-losslessly compresses the complete progress/debug log; `progress-audit.json` records its raw
+`result.json` is an unmodified generated receipt, and `memory-samples.json.gz` losslessly
+compresses the 323,646-byte memory-sample series. `progress.log.gz` losslessly compresses the
+complete progress/debug log; `progress-audit.json` records its raw
 identity and verifies monotonic events, the incomplete terminal fraction, and cleanup. The
 runner's `progressCheck.passed: false` reflects missing successful completion, not backwards
 progress. Only one page enters the recognizing stage during extraction. A Mac memory ceiling

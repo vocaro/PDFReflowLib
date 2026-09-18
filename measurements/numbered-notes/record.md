@@ -99,8 +99,10 @@ results do not establish physical-device budgets. The rejected prototype does no
 
 `comparison-summary.json` records complete-book EPUB hashes, changed pages and image identities.
 `control-comparison.json` records repeated-baseline, clean-baseline, clean-candidate and refined-
-candidate comparisons. Per-case directories retain compressed reports, progress, memory and
-EPUBCheck receipts for the baseline, candidate and controls. `source-layouts.json.gz` contains
+candidate comparisons. Per-case directories retain compressed results, reports, content assessments and EPUBCheck
+receipts for the baseline, candidate and controls. Their raw progress logs and memory-sample
+series were dropped in #196; each case's `result.json.gz` keeps their summary (progress-check events and result, sampled
+and converter peak memory). `source-layouts.json.gz` contains
 native extraction evidence for the 48 changed 9/11 pages; these are government-report excerpts,
 not newly authored library text. Originals and complete EPUBs stay in the ignored cache/build
 directories. `identity.json` pins the collector, rejected refinement/tests and retained contract.

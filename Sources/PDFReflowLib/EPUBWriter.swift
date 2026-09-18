@@ -273,7 +273,7 @@ enum EPUBWriter {
         body { margin: 1em; line-height: 1.5; overflow-wrap: break-word; }
         p { margin: 0 0 0.8em; } h1, h2 { break-after: avoid; }
         img { max-width: 100%; height: auto; } figure { margin: 1em 0; }
-        figcaption { font-size: 0.85em; } pre { white-space: pre-wrap; overflow-wrap: anywhere; }
+        pre { white-space: pre-wrap; overflow-wrap: anywhere; }
         div.footnote { font-size: 0.85em; }
         table { border-collapse: collapse; margin: 0 0 1em; }
         th, td { border: 1px solid #999; padding: 0.3em; text-align: left; vertical-align: top; }

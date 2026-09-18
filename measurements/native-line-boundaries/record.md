@@ -75,8 +75,9 @@ DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer python3 \
 The Simulator identifier and temporary paths are host-specific. The collector requires eight
 passing complete evaluations and rejects changes outside the two reviewed titles. Permanent
 regression gates do not require the retained old EPUBs. Compressed per-case receipts contain
-conversion/content results, progress, memory samples and EPUBCheck; platform gate logs are
-retained separately.
+conversion/content results and EPUBCheck; platform gate logs are retained separately. The raw
+progress logs and memory-sample series were dropped in #196; each case's `result.json.gz` keeps their summary (progress-check events and result, sampled
+and converter peak memory).
 
 Full Warren/NOAA default conversions remain explicitly excluded from the successful-conversion
 corpus lane. Physical-device qualification, PDFKit leaks, arbitrary mathematical layout and

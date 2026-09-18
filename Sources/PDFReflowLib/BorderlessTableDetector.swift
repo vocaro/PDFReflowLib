@@ -84,4 +84,57 @@ enum BorderlessTableDetector {
         }
         return tables
     }
+
+    /// Borderless tables of aligned columns under a header (#150, #137; `ColumnGrid`), read from
+    /// the lines extraction split at their columns: unrotated, proportional lines, none tagged as a
+    /// heading. A line tagged as a paragraph belongs to the table only when every line of its
+    /// paragraph does (FAA page 410 tags a wrapped altitude's second line and its `100` as one),
+    /// so tagged prose never becomes a row. Each header cell spans the columns `ColumnGrid` placed
+    /// it over, and an empty header column is an empty cell; body cells span one column. First
+    /// cells name their rows by the #121 rule (`ShadedTableDetector.rowHeaders`): Census's
+    /// `rnkswp05`, `add01`, … do; FAA page 410's repeated `H` does not.
+    static func alignedTables(in lines: [TextLine]) -> [ShadedTableDetector.Table] {
+        let usable = lines.filter { ($0.structure?.headingLevel ?? 0) == 0 && !$0.monospaced && $0.readingDirection == nil }
+        let pieces = usable.enumerated().map { ColumnGrid.Piece(rect: $0.element.rect, text: $0.element.text, size: $0.element.fontSize, id: $0.offset) }
+        var tables: [ShadedTableDetector.Table] = []
+        var used = Set<Int>()
+        for region in ColumnGrid.regions(in: pieces, capped: true) {
+            let rows = region.rows.map { $0.filter { !used.contains($0.id) } }.filter { !$0.isEmpty }
+            for grid in ColumnGrid.grids(in: rows, beside: region.beside) {
+                var cells = [[(lines: [TextLine], columns: Range<Int>)]](repeating: [], count: grid.rows)
+                var owned = Set<Int>()
+                for (baseline, placements) in grid.placements.enumerated() {
+                    for (index, placement) in placements.enumerated() {
+                        guard let placement else { continue }
+                        let line = usable[rows[baseline][index].id]
+                        owned.insert(rows[baseline][index].id)
+                        if let existing = cells[placement.row].firstIndex(where: { $0.columns == placement.columns }) {
+                            cells[placement.row][existing].lines.append(line)
+                        } else { cells[placement.row].append(([line], placement.columns)) }
+                    }
+                }
+                var result: [ShadedTableDetector.Table.Row] = []
+                for (index, row) in cells.enumerated() {
+                    let header = index < grid.headerRows
+                    var filled: [ShadedTableDetector.Table.Cell] = []
+                    var column = 0
+                    for cell in row.sorted(by: { $0.columns.lowerBound < $1.columns.lowerBound }) {
+                        while column < cell.columns.lowerBound { filled.append(.init(lines: [], span: 1)); column += 1 }
+                        let ordered = cell.lines.sorted { $0.rect.minY > $1.rect.minY + 1.5 || abs($0.rect.minY - $1.rect.minY) <= 1.5 && $0.rect.minX < $1.rect.minX }
+                        filled.append(.init(lines: ordered, span: cell.columns.count))
+                        column = cell.columns.upperBound
+                    }
+                    while column < grid.columns { filled.append(.init(lines: [], span: 1)); column += 1 }
+                    result.append(.init(cells: filled, header: header))
+                }
+                let groups = Set(owned.compactMap { usable[$0].structure?.group })
+                guard lines.allSatisfy({ line in line.structure.map { !groups.contains($0.group) } ?? true
+                    || owned.contains { usable[$0] == line } }) else { continue }
+                used.formUnion(owned)
+                tables.append(ShadedTableDetector.Table(bounds: union(owned.map { usable[$0].rect }), columns: grid.columns,
+                                                        rows: ShadedTableDetector.rowHeaders(result)))
+            }
+        }
+        return tables
+    }
 }

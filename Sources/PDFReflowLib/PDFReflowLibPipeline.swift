@@ -107,7 +107,7 @@ enum PDFReflowLibPipeline {
     /// Whether lines form a numeric grid (#143): at least three rows, each holding at least two
     /// decimal numbers (`0.8861`, `158.950`) that make up at least half its words. Census's table rows
     /// (`rnkswp05 0.8861 0.9620`, `46.11 47.06 46.66 49.90 50.85 49.45`) qualify; its prose, numbered
-    /// fields (`12. Aged exemption ﬂag`) and references (`B, 39 (1977) 1–38.`) do not.
+    /// fields (`12. Aged exemption flag`) and references (`B, 39 (1977) 1–38.`) do not.
     static func holdsNumericGrid(_ lines: [TextLine]) -> Bool {
         let decimal = try! NSRegularExpression(pattern: #"^[-−+]?\d+\.\d+%?$"#)
         var rows = 0
@@ -121,6 +121,15 @@ enum PDFReflowLibPipeline {
             if rows >= 3 { return true }
         }
         return false
+    }
+
+    /// Whether lines hold a numeric grid (`holdsNumericGrid`) outside every table of aligned
+    /// columns layout reads (`BorderlessTableDetector.alignedTables`, #150). Extraction has split
+    /// such a table's rows into cells, which no longer hold two numbers each.
+    static func holdsUnreadNumericGrid(_ lines: [TextLine]) -> Bool {
+        guard holdsNumericGrid(lines) else { return false }
+        let read = BorderlessTableDetector.alignedTables(in: lines).flatMap(\.ownedLines)
+        return holdsNumericGrid(lines.filter { !read.contains($0) })
     }
 
     /// Progress covers extraction/reconstruction only, from zero to one.
@@ -145,6 +154,10 @@ enum PDFReflowLibPipeline {
         // words before any page is read (#143).
         let glyphDecodings = try GlyphIndexDecoder.read(source, language: options.language)
         var chapterStartPages: Set<Int> = []
+        /// Pages whose type, if any, arrives inside an image: no text layer, or text over a
+        /// page-sized graphic. The encoding classifier reads a typeset full-page raster of such a
+        /// page as a scan rather than born-digital text (#193).
+        var pagesDrawnFromImage: Set<Int> = []
         // Chapter evidence for note references: the spine's labelled chapters, or an outline
         // that numbers its chapters without the word. Each candidate must still match its page.
         let noteChapterCandidates = chapterCandidates.isEmpty
@@ -271,11 +284,12 @@ enum PDFReflowLibPipeline {
                 // The font evidence stands unless line repair read the page's index-glyph shows and
                 // repaired every line (#143): a show in an undecoded font, or a glyph without an
                 // established character, leaves its line unrepaired or its show unplaced, so such a
-                // page drew only established characters. A repaired page holding a numeric grid also
-                // keeps it: no table path reconstructs Census's rule-headed tables (pages 12 and 15),
-                // which reflow as run-together cells, while recognition keeps them as table images.
+                // page drew only established characters. A repaired page holding a numeric grid that
+                // no table reads also keeps it, since its rows would reflow as run-together cells
+                // while recognition keeps the table as an image; the grids layout reads as tables
+                // (`BorderlessTableDetector.alignedTables`, Census pages 12 and 15, #150) do not.
                 let repaired = glyphReport.repairedLines > 0 && glyphReport.unrepairedLines == 0
-                    && !holdsNumericGrid(content.lines)
+                    && !holdsUnreadNumericGrid(content.lines)
                 return (content, !content.lines.isEmpty && !requiresPageImage && !repaired && TextEncodingCheck.hasUnmappedFont(reference),
                         pageSized, graphics, annotations.visible, backdropReference)
             }
@@ -318,6 +332,7 @@ enum PDFReflowLibPipeline {
             let automaticOCR = options.ocr == .automatic || options.ocr == .automaticIncludingImageBackedText
                 || options.ocr == .automaticKeepingImageBackedText
             let noText = raw.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+            if noText || imageBackedText { pagesDrawnFromImage.insert(i) }
             // A page that reflows no word of its own, but draws writing over its ground, has no
             // text layer to judge: its sentence is artwork (#176). Such a page is recognized like
             // a page with no text layer at all, under every automatic policy, so its words reach
@@ -375,14 +390,17 @@ enum PDFReflowLibPipeline {
                         && ($0.rect.width > 4.01 || $0.rect.height > 4.01)
                         && !graphics.inlineImages.contains($0.rect)
                 }
-                let grown: [CGRect]? = try autoreleasepool {
+                let grown: [(rect: CGRect, display: Bool)]? = try autoreleasepool {
                     guard let reference = try document.page(at: i).pageRef,
                           let ink = ScanEvidenceRegions.inkMap(reference, bounds: bounds) else { return nil }
-                    return ScanEvidenceRegions.regions(evidence: graphics.inlineImages, lines: content.lines,
-                                                       bounds: bounds, ink: ink)
+                    return ScanEvidenceRegions.classifiedRegions(evidence: graphics.inlineImages, lines: content.lines,
+                                                                 bounds: bounds, ink: ink)
                 }
                 if let grown {
-                    retainedGraphics = TintDetector.compose(paints, lines: content.lines, bounds: bounds).graphics + grown
+                    retainedGraphics = TintDetector.compose(paints, lines: content.lines, bounds: bounds).graphics
+                        + grown.map(\.rect)
+                    content.graphicKinds = Dictionary(grown.filter(\.display).map { ($0.rect, .equation) },
+                                                      uniquingKeysWith: { first, _ in first })
                 } else {
                     // A figure that cannot be grown whole is never cropped in pieces.
                     content.requiresPageImage = true
@@ -448,6 +466,10 @@ enum PDFReflowLibPipeline {
         var labelEvidence: [LayoutReconstructor.LabelStyle: Int] = [:]
         /// Pages whose heading-size lines are set in each style (#84).
         var headingEvidence: [LayoutReconstructor.LabelStyle: Int] = [:]
+        /// The gaps each page's text wraps at, by body size (#181).
+        var wrapEvidence: [Int: [CGFloat]] = [:]
+        /// Characters per type size over the native pages: the document's body (#186).
+        var bodyWeights: [Int: Int] = [:]
         var furniture = FurnitureDetector.Ledger()
         /// Each page's numbered and lettered line markers, by page number (#146).
         var listMarkers: [Int: [LayoutReconstructor.PageMarker]] = [:]
@@ -502,6 +524,8 @@ enum PDFReflowLibPipeline {
                         content.hasSyntheticTextStyle = false
                         content.preservePageReference = content.preservePageReference || !recognized.lines.isEmpty
                         content.graphics = recognized.tables
+                        content.graphicKinds = Dictionary(recognized.tables.map { ($0, .table) },
+                                                          uniquingKeysWith: { first, _ in first })
                         content.tints = []
                         content.separators = []
                         content.requiresPageImage = recognized.lines.isEmpty
@@ -549,6 +573,10 @@ enum PDFReflowLibPipeline {
                 equalsHyphens.add(content)
                 for style in LayoutReconstructor.labelEvidence(on: content) { labelEvidence[style, default: 0] += 1 }
                 for style in LayoutReconstructor.headingEvidence(on: content) { headingEvidence[style, default: 0] += 1 }
+                if let wrap = LayoutReconstructor.wrapEvidence(on: content) { wrapEvidence[wrap.size, default: []].append(wrap.gap) }
+                if !content.recognized, !content.hasSyntheticTextStyle, !content.requiresPageImage {
+                    LayoutReconstructor.addBodyWeights(of: content.lines, to: &bodyWeights)
+                }
             } else {
                 // An unread page carries no word across its far edge either.
                 previousLine = nil
@@ -578,6 +606,11 @@ enum PDFReflowLibPipeline {
         let labelStyles = LayoutReconstructor.labelStyles(from: labelEvidence)
         let equalsMarksHyphens = equalsHyphens.marksHyphens
         let headingStyles = LayoutReconstructor.labelStyles(from: headingEvidence)
+        let bookWraps = LayoutReconstructor.bookWraps(from: wrapEvidence)
+        wrapEvidence = [:]
+        let documentBody = LayoutReconstructor.bodySize(weights: bodyWeights)
+        // An English document's word breaks may consult the system lexicon where its own words are silent (#186).
+        if TextEncodingCheck.supports(language: options.language) { vocabulary.insert(LayoutReconstructor.englishLexiconKey) }
         // A deck: at least three pages, every one the same landscape size, and two thirds of the
         // pages carrying text read as slides. A landscape book (NOAA's, 1,834 letter pages on
         // their side) sets thousands of characters to a slide's few hundred and heads its pages
@@ -619,9 +652,21 @@ enum PDFReflowLibPipeline {
                     try Task.checkCancellation()
                     let assetID = "image-\(assets.count + 1)"
                     let encoded = try autoreleasepool {
-                        let image = try PageRasterizer.image(page: page, rect: rect, options: options, applyRotation: rotate)
+                        // `.automatic` is decided here, where the image's role and its page are known,
+                        // from the raster's own buffer (#193).
+                        let requested = fullPage ? options.fullPageImageEncoding : options.regionImageEncoding
+                        var measured: ImageContentClassifier.Features?
+                        let image = try PageRasterizer.image(page: page, rect: rect, options: options, applyRotation: rotate,
+                            inspect: requested.isAutomatic ? { measured = ImageContentClassifier.features($0,
+                                width: $1, height: $2, bytesPerRow: $3) } : nil)
+                        // Only a supplementary reference sits beside its page's reflowed text; a required
+                        // fallback (the rotated page) is the page's only copy and is judged like a crop,
+                        // as the survey measured it.
+                        let encoding = ImageContentClassifier.resolve(requested, role: fullPage && !rotate ? .page : .region,
+                            pageDrawnFromImage: pagesDrawnFromImage.contains(i),
+                            features: measured ?? ImageContentClassifier.features(of: image))
                         return try PageRasterizer.encode(image, at: workspace.appendingPathComponent("assets/" + assetID),
-                            encoding: fullPage ? options.fullPageImageEncoding : options.regionImageEncoding)
+                            encoding: encoding)
                     }
                     imageBytes += Int64(try encoded.url.resourceValues(forKeys: [.fileSizeKey]).fileSize ?? 0)
                     guard imageBytes <= options.maximumOutputBytes else { throw ConversionError.resourceLimit("image output bytes") }
@@ -631,15 +676,24 @@ enum PDFReflowLibPipeline {
                 var pageBlocks: [ReflowBlock]
                 if content.requiresPageImage {
                     let path = try saveImage(content.bounds, fullPage: true, rotate: true)
-                    pageBlocks = [LayoutReconstructor.imageBlock(assetID: path, page: i + 1)]
+                    pageBlocks = [LayoutReconstructor.imageBlock(assetID: path, page: i + 1, kind: .page)]
                     warnings.append(.init(code: .pageImageFallback, page: i + 1,
                         message: "This page is preserved as an image and does not reflow."))
                 } else {
                     var images: [(CGRect, String)] = []
-                    for rect in LayoutReconstructor.graphicsWithLabels(content) {
-                        images.append((rect, try saveImage(rect)))
+                    var imageKinds: [String: PreservedImageKind] = [:]
+                    let classified = LayoutReconstructor.classifiedGraphics(content)
+                    for (rect, kind) in classified {
+                        let assetID = try saveImage(rect)
+                        images.append((rect, assetID))
+                        imageKinds[assetID] = kind
                     }
                     regions = images.map(\.0)
+                    // The caption the page prints beside a crop describes it better than its kind
+                    // can (#187); it stays in the reading text as its own block either way.
+                    let captioned = LayoutReconstructor.sourceCaptions(for: regions, in: content)
+                    let imageCaptions = Dictionary(uniqueKeysWithValues:
+                        images.compactMap { rect, assetID in captioned[rect].map { (assetID, $0) } })
                     if !images.isEmpty {
                         warnings.append(.init(code: .imageRegion, page: i + 1,
                             message: "Graphical regions retain source appearance as images; their internal text does not reflow."))
@@ -658,7 +712,8 @@ enum PDFReflowLibPipeline {
                         continuesNote: previousPage != nil && blocks.last?.isFootnote == true,
                         labelStyles: labelStyles, headingStyles: headingStyles,
                         neighbouringMarkers: (listMarkers[content.number - 1] ?? []) + (listMarkers[content.number + 1] ?? []),
-                        slideDeck: slideDeck)
+                        slideDeck: slideDeck, imageKinds: imageKinds, imageCaptions: imageCaptions,
+                        bookWraps: bookWraps, documentBody: documentBody)
                     if pageBlocks.contains(where: \.hasReflowedText) {
                         reflowed += 1
                     }
@@ -667,7 +722,7 @@ enum PDFReflowLibPipeline {
                         || (options.referenceImages == .automatic && content.preservePageReference)
                     if includeReference {
                         pageBlocks.append(LayoutReconstructor.imageBlock(assetID: try saveImage(content.bounds, fullPage: true),
-                            page: i + 1, reference: true))
+                            page: i + 1, kind: .sourcePage))
                         warnings.append(.init(code: .imageRegion, page: i + 1,
                             message: "A source-page reference image accompanies reflowed text to preserve all visual content."))
                     } else if content.preservePageReference {
@@ -717,7 +772,8 @@ enum PDFReflowLibPipeline {
         // Verified bulleted and numbered runs become real list items once every join and link is
         // made; everything else list-shaped stays preformatted (#194).
         ListBuilder.build(&blocks)
-        let title = options.title ?? document.title
+        // The PDF's own title is extracted text too, so it is spelled out as the pages are (#189).
+        let title = options.title ?? document.title.map { InlineText.spellingOutLigatures($0) }
             ?? source.deletingPathExtension().lastPathComponent
         let reflowedDocument = ReflowDocument(metadata: .init(title: title.isEmpty ? "Untitled" : title,
             language: options.language, author: options.author), blocks: blocks, assets: assets,

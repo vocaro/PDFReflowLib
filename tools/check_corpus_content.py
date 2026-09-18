@@ -22,6 +22,14 @@ LISTS = {HTML + 'ul', HTML + 'ol'}
 # The outermost blocks a page's content reads as, in document order, beside its images: the
 # sequence a caption's placement beside its figure is judged in (`captionedImages`).
 SEQUENCE_BLOCKS = HEADINGS | {HTML + tag for tag in ('p', 'pre', 'li', 'table')}
+# The converter's supplementary source-page image: `title="Source page N"` with this alternative
+# text (#187), or, in EPUBs from before #187, `alt="Original page N"`. A whole-page fallback shares
+# the title but not the alternative text, so it is never taken for a reference.
+SOURCE_PAGE_ALT = 'The printed page, for comparison'
+# Alternative text that states where an image came from rather than what it shows (before #187).
+PROVENANCE_ALT = re.compile(r'(?:Preserved region from page|Original page) \d+')
+# The Latin typographic ligatures, which converted text never holds (#189).
+PRESENTATION_LIGATURE = re.compile('[ﬀ-ﬆ]')
 DEFAULT_MAX_ENTRIES = 10_000
 DEFAULT_MAX_UNCOMPRESSED_BYTES = 512 * 1024 * 1024
 # Every expectation key `assess` counts, as (documented name, keys, counted once per page). List
@@ -49,6 +57,7 @@ CHECK_TYPES = (
     ('distinct-paragraph', ('distinctParagraphs',), False),
     ('image-presence', ('minimumImages', 'maximumImages'), True),
     ('captioned-image', ('captionedImages',), False),
+    ('image-alternative', ('imageAlternatives',), False),
     ('page-reference', ('pageReference',), True),
     ('warning', ('warningCodesAnyOf',), True),
     ('absent-warning', ('absentWarningCodes',), True),
@@ -95,6 +104,13 @@ def cli_inspection_limit(value):
 
 def normalized(text):
     return ' '.join(text.split())
+
+
+def is_page_reference(image, page):
+    """Whether an `img` is the converter's source-page reference image for `page`."""
+    if image.get('alt') == f'Original page {page}':
+        return True
+    return image.get('title') == f'Source page {page}' and image.get('alt') == SOURCE_PAGE_ALT
 
 
 def read_pages(path, *, max_entries=DEFAULT_MAX_ENTRIES,
@@ -183,8 +199,9 @@ def read_pages(path, *, max_entries=DEFAULT_MAX_ENTRIES,
                         raise ValueError('Missing image asset: ' + asset)
                     pages[current]['images'].append(asset)
                     pages[current]['blocks'].append({'kind': 'image', 'asset': asset})
+                    pages[current].setdefault('alternatives', []).append(normalized(element.get('alt', '')))
                     # The converter's supplementary source-page image, which contains every region.
-                    if element.get('alt') == f'Original page {current}':
+                    if is_page_reference(element, current):
                         pages[current].setdefault('pageReferences', []).append(asset)
                 if element.tag == HTML + 'table' and current is not None:
                     import table_cells
@@ -412,6 +429,12 @@ def assess(case, contract, result, report, pages, markers, image_data=None, refe
         errors.append('Missing, duplicated or reordered source pages')
     if any('\ufffc' in page['text'] for page in pages.values()):
         errors.append('Object placeholder in semantic text')
+    # Extraction writes ligatures as letters (#189): a reading font without the presentation form
+    # draws it from a fallback font, which reads as a gap inside the word.
+    ligature_pages = sorted(number for number, page in pages.items() if PRESENTATION_LIGATURE.search(page['text']))
+    if ligature_pages:
+        errors.append(f'Presentation-form ligature (U+FB00-U+FB06) in semantic text on {len(ligature_pages)} '
+                      f'pages, first {ligature_pages[:5]}')
     expected = contract['pages']
     numbers = [item['page'] for item in expected]
     if (not expected or len(numbers) != len(set(numbers))
@@ -752,8 +775,24 @@ def assess(case, contract, result, report, pages, markers, image_data=None, refe
             elif not any(kind == 'image' for kind, _ in neighbours):
                 errors.append(f'Page {number}: caption {pairing["caption"]!r} does not stand '
                               + ('after' if after else 'before') + ' an image')
+        # Alternative text some image on the page must carry exactly: the source's own caption or
+        # the kind the converter names from its evidence (#187). A page that names any also
+        # requires every image on it to carry alternative text that is neither empty nor the
+        # provenance the converter used to write there.
+        alternatives = item.get('imageAlternatives', [])
+        if 'imageAlternatives' in item and (not isinstance(alternatives, list) or not alternatives or not all(
+                isinstance(text, str) and normalized(text) for text in alternatives)):
+            raise ValueError('Image alternatives must be a nonempty list of nonempty strings')
+        for text in alternatives:
+            checks += 1
+            if normalized(text) not in page.get('alternatives', []):
+                errors.append(f'Page {number}: no image carries the alternative text {text!r}')
+        if alternatives:
+            for text in page.get('alternatives', []):
+                if not text or PROVENANCE_ALT.fullmatch(text):
+                    errors.append(f'Page {number}: an image carries alternative text {text!r} that says nothing of its content')
         if 'pageReference' in item:
-            # Whether the converter's `Original page N` source-page image accompanies the page:
+            # Whether the converter's source-page reference image accompanies the page:
             # true where visible content needs it, false where nothing on the page does (#151).
             wanted = item['pageReference']
             if type(wanted) is not bool:

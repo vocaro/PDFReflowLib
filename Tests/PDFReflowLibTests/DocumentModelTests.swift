@@ -100,7 +100,8 @@ private func line(_ text: String, x: Double, y: Double, width: Double = 200,
     var warnings: [ConversionWarning] = []
     let blocks = LayoutReconstructor.blocks(page: page, images: [(rect, "opaque-id")], vocabulary: [], warnings: &warnings)
     #expect(blocks == [ReflowBlock(content: .image(.init(assetID: "opaque-id",
-        alternativeText: "Preserved region from page 4", caption: "Preserved region from page 4")), page: 4)])
+        alternativeText: "Illustration",
+        provenance: "Preserved region from page 4")), page: 4)])
 }
 
 @Test func documentRejectsUnresolvedAndDuplicateAssets() throws {
@@ -133,7 +134,7 @@ private func line(_ text: String, x: Double, y: Double, width: Double = 200,
     let book = ReflowDocument(metadata: .init(title: "Title <&>", language: "en", author: "A & B"), blocks: [
         .init(content: .sourcePage(1), page: 1),
         .init(content: .paragraph(InlineText(elements: [.text("conver", .bold), .sourcePage(2), .text("sion", [])])), page: 1),
-        .init(content: .image(.init(assetID: "../logical-id", alternativeText: "A \"label\"", caption: "A & B")), page: 2),
+        .init(content: .image(.init(assetID: "../logical-id", alternativeText: "A \"label\"", provenance: "A & B")), page: 2),
     ], assets: [.init(id: "../logical-id", fileURL: source)])
     let saved = book
     let output = try await EPUBWriter.write(book, maximumOutputBytes: 1_000_000, directory: directory,
@@ -150,7 +151,9 @@ private func line(_ text: String, x: Double, y: Double, width: Double = 200,
     let chapter = String(decoding: try data("EPUB/chapter-1.xhtml"), as: UTF8.self)
     #expect(chapter.contains("<strong>conver</strong><span"))
     #expect(chapter.contains("/>sion</p>"))
-    #expect(chapter.contains("alt=\"A &quot;label&quot;\""))
+    #expect(chapter.contains("alt=\"A &quot;label&quot;\" title=\"A &amp; B\"/></figure>"))
+    // The converter prints no caption of its own (#187).
+    #expect(!chapter.contains("<figcaption"))
     #expect(!chapter.contains("logical-id"))
     let nav = String(decoding: try data("EPUB/nav.xhtml"), as: UTF8.self)
     #expect(nav.contains("chapter-1.xhtml#page-1"))

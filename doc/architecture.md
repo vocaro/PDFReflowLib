@@ -29,6 +29,12 @@ object graph or a serialized interchange file.
 `PageContent` is the spatial extraction representation. Each physical page contains bounds,
 positioned `TextLine` values, font sizes, monospaced/wrap hints, optional validated structure associations, graphic rectangles and fallback
 flags. A text line contains `InlineText`: raw Unicode text runs with bold, italic, maths italic, superscript and subscript style flags.
+The one exception to raw text is the Latin ligatures U+FB00–U+FB06, which extraction writes as the
+letters they join (`ﬀ` as `ff`, `ﬅ` as `ſt`; `InlineText.spellingOutLigatures`, #189). Native
+extraction does it as its last step, because the steps before it match line text to the page's
+shows, where a ligature is one character; recognized lines and the PDF's own title are spelled
+out too. So no rule and no writer sees a presentation form, and a reading font without one
+(Charter, Times New Roman, Avenir Next) never falls back to another font inside a word.
 Geometry remains in unrotated PDF page coordinates with a bottom-left origin. This stage retains
 the evidence needed to infer reading order, paragraphs, image crops and word joins.
 
@@ -40,7 +46,7 @@ the evidence needed to infer reading order, paragraphs, image crops and word joi
 | Ordered blocks | Paragraph, heading with logical identifier and level, preformatted text, list item, page-bottom footnote, image, source-page boundary |
 | List item | Text without its printed marker, the marker, the printed number of a numbered item, kind (bulleted or numbered), depth and whether it opens a list element |
 | Inline text | Text runs carrying bold/italic/maths-italic/superscript/subscript flags, interspersed with source-page boundaries |
-| Image block | Logical asset identifier, alternative text and caption |
+| Image block | Logical asset identifier, alternative text and provenance |
 | Asset registry | Identifier, local file URL and image format |
 | Block provenance | Physical source page where the block begins |
 
@@ -61,7 +67,8 @@ table block of rows and cells (header rows, column spans, styled cell text with 
 boundaries) that the EPUB writer serializes as `<table>` (#54). A table's own title and description
 are caption paragraphs of that block, serialized as `<p>` elements of the table's `<caption>`, not
 headings or prose before it (#113). A body cell that names its row is a row-header cell, serialized
-as `<th scope="row">`; a borderless table with capital column headings is a table block too (#121).
+as `<th scope="row">`; a borderless table with capital column headings is a table block too (#121),
+and so is a table whose columns only their alignment draws, under a header (#150).
 A section row, one header cell spanning every column, names the rows beneath it: it opens its own
 `<tbody>` and is serialized as `<th scope="rowgroup">` (#124).
 Output independence does not
@@ -233,7 +240,12 @@ image-backed. A form's box records no footprint of its own where the form's own 
 cover it, which marks the widest of them `grouped` instead (#158): a drop shadow, a tint or an
 opacity effect makes InDesign wrap one object in a transparency group whose box is exactly what it
 paints, and that box read as solid ink over the prose on it, so a magazine's masthead box, caption
-band and pull quote could not be read as decoration. A shading painted across the whole page is
+band and pull quote could not be read as decoration. The box is the object grown by its effect's
+spread, so "cover" means within two points or over nine tenths of the box's area (#181): NOAA's
+overview pages wrap their 30%-opacity corner art in a group whose feathered box stands eight points
+above the art, and that border read as ink over the left column, a sub-heading and a figure's
+captions (page 48). A box that keeps more than a tenth of itself beyond its paints is still recorded.
+A shading painted across the whole page is
 recorded like any other paint rather than forcing the page image: it is the page's background, and
 the page-sized-graphic signal takes it from there, so the magazine's boxed-title articles reflow
 with a source-page reference instead of losing their title and text to an image. The reader also
@@ -260,7 +272,15 @@ the same way without rules (#121, FAA page 131): where PDFKit keeps one row's tw
 ems' leading, in the same size, are read against that gap, and their crossing lines are cut where
 the selections show two ems of whitespace, only when the run opens with a heading in capitals on
 both sides, at least three rows hold text on both sides, an em of whitespace is common to every
-row and nothing painted lies within it. Before either of those, a line whose content-stream shows
+row and nothing painted lies within it. A table of aligned columns under a header (#150, Census's
+`rnkswp05 0.8861 0.9620`, FAA page 410's `T 12,000' and below 25`) is split last: where at least
+three lines end in a number at one right edge, the lines around them are measured glyph by glyph
+into words, `ColumnGrid` reads the words' grid (below), and each line whose words fall into more
+than one cell is cut between them. A cell takes its words' share of the line's own styled,
+repaired text when the line has one word per glyph word (PDFKit's selections inside a Census row
+report the index glyphs undecoded), and PDFKit's rectangle selections otherwise; the cuts are kept
+only when every line of the grid cuts, spelling it exactly, and layout reads the same grid from
+the cut lines. Before any of those, a line whose content-stream shows
 stand at least eight ems and a quarter of the page apart is cut there (#14, the *Dietary Guidelines*
 cover's `& Healthy Fats` and `& Fruits`, which label the two sides of the food pyramid on one
 baseline): PDFKit's character positions on such a page need not follow the text, but its rectangle
@@ -498,7 +518,23 @@ full stop or a semicolon. On that evidence the indent may reach four bodies (the
 under `Step 10.`), and the entry's first line need only carry three real words rather than read as
 words, since a reference opens on a list of initials (`[7] J. L. Rios, I. S. Smith, …`). A paragraph group whose only
 line is such an indented opening continues into a group or untagged line beneath it that opens
-lowercase or follows a hyphen (Our Flag's quotations, tagged one line per group). A line that an inline expression makes taller than the page's ordinary line at its size
+lowercase or follows a hyphen (Our Flag's quotations, tagged one line per group).
+On an edge whose entries wrap into a hanging indent (#134's `hangingEntryEdges`), an entry's first
+line also runs on into a line in that indent wider than a paragraph's drift (NOAA's front matter wraps
+its staff entries 1.8 ems in, #181), when the wrapped line opens with a letter, digit or bracket,
+neither line sets arithmetic, and the first line was full: three of the edge's lines with a line
+hanging beneath them end within a size of the widest, and the wrapped line's first word would not
+have fitted before it. A lone entry unspaced from the line above keeps #147's answer, and a poem's
+couplets broken short keep their lines. One-line entries that never wrap show no hanging indent at all; they
+show added space instead (#181, NOAA's author and contributor blocks, `Robert G. Byron, …` / `Amy E.
+East, …`). `spacedEntryEdges` reads an edge's wrap — the least gap under a line reaching the measure
+three lines share, to the line beneath it, or where the edge has no such measure the book's wrap at
+that body size, the median of its pages' collected during extraction (`bookWraps`) — and qualifies the
+edge when at least three lines on it stand at one even gap (within a tenth of a size) at least a fifth
+of a size over that wrap, none of them reaching the measure. Lists, code, leader entries, wholly bold
+labels and lines out of the body's size are no evidence. On such an edge a line opens the next entry
+by #134's ends-early test, and only where it stands that far below the line above, so an entry's own
+wrapped line at the wrap continues it. A line that an inline expression makes taller than the page's ordinary line at its size
 (Wallace's minus, times and radical glyphs extend a rectangle 8.5 points past the type), at most
 twice that height and set as prose on its paragraph's measure, may overlap by its extra height
 as well, and its gap is not taken as the paragraph's leading for the added-space rule (#71, #109).
@@ -525,11 +561,16 @@ letter is removed when the book's vocabulary knows the joined word and not the c
 knows neither, the hyphen is also removed when the book uses another inflected form of the joined
 word (an ending `s es d ed ing ly` taken off, a dropped `e` restored, and an ending put back:
 `sep-` + `arates` beside `separate`), no such form of the compound, and the halves are not both
-book words, with at least six letters in all (#115). Otherwise it is kept. The vocabulary skips the word that opens a lowercase line after a line-end hyphen
+book words, with at least six letters in all (#115). In a document declared English, a break the
+book's words leave undecided is then decided by the system's English lexicon (the one
+`TextLayerPlausibility` reads): the hyphen goes when the lexicon holds the joined word and the halves
+are not both words of the lexicon or the book, with the same lengths (#186: the magazine's `com-` +
+`panies`, the 9/11 report's `excep-` + `tional`). A hyphen PDFKit lost (#157) still needs the book's
+own evidence. Otherwise it is kept. The vocabulary skips the word that opens a lowercase line after a line-end hyphen
 or soft hyphen, because it is the rest of a broken word (`es-` + `timates.html`), unless it holds
 a hyphen of its own (`straight-` + `and-level`); the same letters seen anywhere else count (#101). A
-word printed with a Latin ligature (U+FB00–U+FB06) is recorded both as printed and spelled out, so
-Wallace's `diﬀerent` vouches for `dif-` + `ferent`; emitted text keeps its ligatures (#123). A slash after a letter, digit or slash before a letter or digit joins
+word printed with a Latin ligature (U+FB00–U+FB06) reaches the vocabulary spelled out, as all text
+does (#189), so Wallace's `diﬀerent` vouches for `dif-` + `ferent` (#123). A slash after a letter, digit or slash before a letter or digit joins
 (`runway/` + `taxiway`, #70). A break inside a web address joins (#79). The address is the run
 of URL characters ending the line: it has a scheme, starts with `www.` or opens with a domain
 and a slash, and holds a dot. It continues without a space after `_ = & ? # % ~` that follows a
@@ -689,7 +730,11 @@ continuations carry none. Images, tags, OCR or synthetic text, lettered lists an
 that do not follow those shapes still refuse the page. Heading-size evidence excludes text already preserved inside images
 when at least three remaining lines and 200 characters support the dominant reflowable font size.
 Candidates within 10% of that supported body size are suppressed, while the original 25%
-page-size threshold still applies. This retains existing modestly larger section headings. Short titles
+page-size threshold still applies. A page whose reflowable text supports no body of its own (a
+cover, a back cover) must also set its headings 10% over the document's body, the size most of
+its native text is set in, and so must a label its size alone sets apart; a heading-size line
+standing alone that opens in lowercase heads nothing (#186: the magazine's return address and
+`pages 2, 4-14`, the 9/11 report's `official government edition`). This retains existing modestly larger section headings. Short titles
 beside images retain the existing page evidence. The separate page-size estimate still governs
 whitespace cuts and paragraph geometry. Below that threshold, a section label set at least 15%
 over the supported body (acmart's `ABSTRACT`, the 9/11 report's `1.1 INSIDE THE FOUR FLIGHTS`)
@@ -716,7 +761,10 @@ untagged `Southerly Turning Errors`, `Drugs`; #97). A sub-heading of either kind
 lines is one label when both lines share a style the book already repeats, the second stacks
 under the first on its edge at heading leading and ends no sentence, and the paragraph opens
 beneath the second line (FAA's `The Professional Air Traffic Controllers` / `Organization (PATCO)
-Strike`; the pair is no style evidence of its own; #102).
+Strike`; the pair is no style evidence of its own; #102). The paragraph may also open past a
+picture set directly beneath the title (no thin rule, within four fifths of a body, spanning the
+title's left edge) and the smaller type under the picture, within four bodies of it: a sidebar's
+title over the sidebar's photograph (the magazine's `Fighting Filth Flies`; #186).
 A two-column academic paper sets both its heading levels at the body's own size, which neither the
 threshold nor a `LabelStyle` can reach, so `academicSectionTitles` reads them from the column's
 measure instead (#162; the IEEEtran conference paper `ntrs-20190030725-dasc-2019`). The measure is
@@ -875,6 +923,19 @@ entries above continue opens higher still. Each part is then cut on its own, by 
 A grid numbered along its rows (#78's graphs, the exercise sets set two to a row) interleaves its
 columns' numbers and is refused at every band.
 
+A list of names set beside their descriptions reads entry by entry before any whitespace cut is
+tried (#161, `namedEntries`). The 9/11 report's Table of Names sets each name flush left and its
+description on the name's baseline 108 points in, both wrapping one em into a hanging indent. A long
+name leaves too little gutter for the narrow-gutter prose test on most pages, and the row sort then
+took a wrapped name's second line between its description's lines; where the longest name leaves
+17–35 points the gutter test passed and the page read every name, then every description (pages 450
+and 456). The region's lines in its most common size must all stand on the names' edge, the
+descriptions' edge or either one's indent; at least four names, and two thirds of them, share a
+baseline with a description's first line on one edge; and the widest name is at most three fifths
+of the widest description, so two prose columns never qualify. Each name then reads with its wrapped
+lines and its description, lines in any other size keep their place between entries, and a
+description continued from the previous page reads first.
+
 Where no cut and no bullet-column split applies, the reading-order
 sort still reads two centred units set beside each other whole (#122, CDC pages 14, 23 and 34): the
 region's lines are grouped from the top into stacks at ordinary leading, and when they form exactly
@@ -930,6 +991,35 @@ columns starts a row, one with text in a single column continues the row above, 
 row must fill every column, with at least two body rows; no row headers are inferred (FAA tags
 page 131's first cells `TD`). See the
 [table header and borderless-table evidence](../measurements/table-headers-and-borderless/record.md).
+`BorderlessTableDetector.alignedTables` reads a table whose columns only their alignment draws,
+with no rules, bands or capital headings (#150; `ColumnGrid`, Census pages 12 and 15, FAA page 410).
+Candidates are three or more cells ending in a number at one right edge; the window around them is
+the run of columns of cells at most fifteen ems wide, so a page column of prose beside the table
+stays out. The body is a run of baselines at no more than 1.8 ems' leading in one size whose pieces
+fall into columns: ink between channels at least 0.6 em wide clear through every baseline and at
+least twice any gap inside a cell, and, where numbers stand a word space apart (Census Table 8), a
+stack of numbers ending every baseline of a column at one right edge splits off as a column of its
+own. Every column is flush left or right and at most fifteen ems wide; a baseline with first-column
+text opens a row and one without continues it, adding to at most one cell that already holds text
+(FAA's wrapped altitude and the distance set on its last line), and every row fills every column,
+at least three of them. One column holds one number in every row, no column opens every row with a
+list marker, and no row holds dot leaders. A header of one to three baselines stands directly above
+the body inside its width: its lowest row places cells in at least two columns (a line whose words
+are each centred on a column divides there, Census's `d metric l metric`), with a heading over every
+column of numbers, and a row with first-column text over numbers reads as a body row, so no body row
+heads the rest (years may head their columns over an empty label heading); a higher row's cell that ends on a column's
+flush edge within a tenth of an em, as the heading beneath it does, continues that heading
+(`Distance` above `(Miles)`), and its other cells share the columns beneath by nearest centre
+(`d Metric` over three scores). A body without a header is no table, and none of its rows heads the
+rest. Text within two ems of the grid's edge on at least half its body's baselines, found only beside
+its rows, continues the grid past that edge (a label column too wide to be one), so it is no table; a
+page column beside a table runs on above or below it. Lines tagged as headings are never cells, and a line tagged as a paragraph is one only when
+its whole paragraph is inside the table. Header cells span the columns they head; first cells name
+their rows by #121's rule (Census's labels do, FAA's repeated `H` does not). Worked examples beside
+their comments, contents lists, glossaries, rosters, answer grids and dot-leader charts have no
+numeric column, no header, a marker column or leaders, and keep their reflow; FAA's glossary page
+columns, 9/11's staff roster, abbreviation list and flight timelines and Our Flag's committee roster
+are among them. See the [aligned-column table evidence](../measurements/aligned-column-tables/record.md).
 Tinted boxes are read as units: their elements are ordered among themselves, the box follows
 the lines beside it and precedes the lines below it, as its image did, and paragraphs never
 join across its edge. Small text inside reflowed boxes and tables does not lower the heading
@@ -1134,12 +1224,14 @@ words (at least three words of three letters, letters half the visible character
 lines are one typeset line split inside one show (Census page 17's `[2]` and its entry), so they are
 read as one line over their union, which then holds every show of the row for repair, spacing and
 style (#149); a continuation in figures (page 12's row labels and rates) stays in its pieces for the
-table path. A page keeps the font evidence unless
-every line with index-glyph shows was repaired and its lines hold no numeric grid (three rows of at
-least two decimal numbers making up half their words: no table path reconstructs Census's
-rule-headed tables, which would reflow as run-together cells while recognition keeps table images),
-and the English statistics judge PDFKit's own text. Census pages 3 and 17 reflow natively; its table
-pages and pages with math fonts, which follow no constant offset, keep `damagedTextEncoding`. See the
+table path. A page keeps the font evidence unless every line with index-glyph shows was repaired and its
+lines hold no numeric grid outside the tables of aligned columns layout reads (three rows of at
+least two decimal numbers making up half their words, which would reflow as run-together cells
+while recognition keeps table images; #150: extraction has split a read table's rows into cells),
+and the English statistics judge PDFKit's own text. Census pages 3, 12, 15 and 17 reflow natively,
+pages 12 and 15 with their four tables; pages with math fonts, which follow no constant offset,
+keep `damagedTextEncoding`. See also the
+[aligned-column table evidence](../measurements/aligned-column-tables/record.md). See the
 [index-glyph evidence](../measurements/glyph-index-decoding/record.md) and the
 [follow-up evidence](../measurements/index-glyph-follow-ups/record.md) (#149), which records why
 the math fonts stay undecoded: `cmmi`'s letters sit at their own codes but its Greek 134 and 136
@@ -1159,6 +1251,16 @@ Wingdings bullets. A code point a font yields without evidence, or that two font
 differently, stays. `NativeTextReader` replaces the characters last, one UTF-16 unit each, after
 spacing and style evidence have compared PDFKit's text with the shows' own maps. See the
 [symbol-font and script-base evidence](../measurements/symbol-fonts-and-script-bases/record.md).
+
+A map can also report a character the glyph does not draw without any private-use value (#186).
+A dingbat font (`ZapfDingbats`, `ITC Zapf Dingbats`, `Monotype Sorts`) addresses its pictographs by
+ASCII codes, and a map that copies them reports letters: the magazine's bullet reads `l`, the Zapf
+Dingbats code for ●. A non-symbolic Type 1 font whose map contradicts its encoding in case only,
+with the encoding's glyph and not the map's in its `CharSet`, draws the encoding's letter (the
+magazine's credits read `BRAD FRITz`). `FontWeightReader` records each such glyph beside the
+character it draws, and `redrawGlyphs` rewrites a line's characters where the line's decoded shows
+spell it, after spacing and style evidence; a line the page draws twice in one place counts once.
+A bullet a word space from the words on both sides separates them and is no superscript.
 
 `GraphicsReader` tracks text rendering mode across saved graphics state and nested forms. When
 all observed text uses invisible mode 3 and a graphic covers most of the page, extraction skips
@@ -1189,7 +1291,22 @@ only the clip applies there. Tagged groups that lose a line keep true line count
 added; a removed head that furniture removal used to take no longer reports `furnitureRemoved`.
 
 `PageRasterizer` renders source-composited regions to bounded rasters. Client policy independently
-selects PNG, JPEG quality, or the smaller encoding for full-page images and cropped regions.
+selects PNG, JPEG quality, or the smaller encoding for full-page images and cropped regions, or
+leaves the default, `.automatic(jpegQuality: 0.90)`, which is decided per image (#193).
+`ImageContentClassifier` reads the raster before it is encoded, in the pipeline's `saveImage`,
+which knows the two things the rasterizer does not: the image's role (a supplementary page
+reference, or a crop; a required fallback is its page's only copy and is judged as a crop) and
+whether its page draws its type from an image (no text layer, or text over a page-sized graphic;
+recorded during extraction). One pass over the pixels gives the survey prototype's features (the
+modal colour and the shares near it, the share whose hue differs from it, the distinct colours,
+and the flat, step-edge and ramp shares of the grey gradient), plus one pass per batch of
+candidate grounds for the exact modal colour. They are read through `PageRasterizer.image`'s
+`inspect` hook from the bitmap context's own buffer, because reading a finished `CGImage`'s
+pixels copies them. Lossy is permitted for neutral images, photographs, tonal scans, continuous-tone
+art (except crops that are drawn illustration, at least 30% flat) and full-page `mixed`
+references; the permitted image goes through `.smallest`, the rest through `.png`, so
+`PageRasterizer.encode` keeps its contract and an explicitly named encoding bypasses the
+classifier. See [conversion options](conversion-options.md#automatic-encoding).
 The asset registry records the actual format and file URL; the writer uses matching extensions
 and MIME types. Encoding selection retains at most one raster and two candidate files at a time.
 Each raster is drawn over an opaque white fill, so its alpha channel is a constant 255 plane;
@@ -1248,7 +1365,28 @@ paths from counters and streams those files directly into ZIP entries; it does n
 whole image collection into another staging tree. Asset identifiers are opaque and cannot
 choose archive paths. Model validation rejects missing/duplicate assets and empty documents.
 
-`EPUBTextEncoder` owns XML escaping, style tags, page markers and figure markup. `EPUBWriter`
+`EPUBTextEncoder` owns XML escaping, style tags, page markers and figure markup. A preserved image
+is `<figure><img alt="…" title="…"/></figure>` with no `<figcaption>` (#187): the converter has no
+caption of its own to print, and a caption the source prints is already its own block beside the
+figure, where `captionedImages` checks it. `alt` names the content and `title` keeps the provenance
+(`Preserved region from page N`, or `Source page N` for a whole page). The alternative text is the
+source's own caption where the page leaves no doubt which crop it names
+(`LayoutReconstructor.sourceCaptions`: exactly one line opening with a printed label — `Figure 3.2`,
+`Fig. 1`, `TABLE I`, `Algorithm 2`, `Box 18.1` — stands within one and a half bodies above or below
+the crop, over its measure, and against no other crop; its wrapped lines follow at its own tight
+leading and size; over 200 characters it keeps the sentences that fit). Otherwise it is the crop's
+kind, read from the seeds that made it (`classifiedGraphics`): a table region's claim (`Table kept
+as an image`), an algorithm float (`Algorithm listing`), painted art at least a body size each way
+(`Illustration`), a displayed formula line (`Mathematical expression`), and, for a crop that only
+marks seeded — a fraction bar, a rule inside a letter-free line, a free-standing rule no longer than
+six bodies (a worked step's underline), a mark smaller than the type — the
+lines it holds: text when at least half are prose of eight tokens or more (`Text kept as an image`),
+mathematics otherwise. A page that does not reflow is `Whole page kept as an image`; a source-page
+reference is `The printed page, for comparison`. A chart, a line drawing and a photograph are one
+kind of evidence to a converter that never decodes the image (placed rasters hold the FAA's
+drawings, NOAA's charts, the comic's panels and Warren's scans alike), so art is never called a
+photograph or a chart. See the [alternative-text evidence](../measurements/preserved-image-alt-text/record.md).
+`EPUBWriter`
 owns spine splitting, heading/page navigation, OPF metadata, CSS, resource naming and
 ZIPFoundation packaging. It accepts a `ReflowDocument` and an output-size ceiling, with no PDF
 or OCR dependency. EPUB progress is combined with pipeline progress by `PDFConverter`; only

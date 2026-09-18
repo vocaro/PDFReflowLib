@@ -19,7 +19,10 @@ evidence. Open follow-up work belongs in GitHub issues, not here.
   [warren-image-encoding evidence](../measurements/warren-image-encoding/record.md). Taking the
   smaller of PNG and JPEG 0.90 per image, the best a per-image encoding choice can do at that
   quality, still leaves the book 349,408 bytes over the 512 MiB default
-  ([opaque-page-rasters evidence](../measurements/opaque-page-rasters/record.md)). The
+  ([opaque-page-rasters evidence](../measurements/opaque-page-rasters/record.md)); applied to
+  regions as well it fits by 310,259 bytes ([survey](../measurements/image-encoding/record.md)),
+  and the automatic default adopted in #193 does the same for this book, fitting by 316,202 bytes
+  ([evidence](../measurements/image-encoding-default/record.md)). No quality was tuned for it. The
   underlying ceiling is tracked in [#5](https://github.com/vocaro/PDFReflowLib/issues/5).
 - **Grayscale page rasters.** Rewriting the scans as 8-bit gray would cost about 73% of their
   bytes, but the pages are yellowed paper whose channels differ by a mean of 26–55 levels, so it

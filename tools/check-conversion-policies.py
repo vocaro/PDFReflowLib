@@ -35,7 +35,12 @@ def main():
     fixtures = ROOT / 'Tests/PDFReflowLibTests/fixtures'
     cases = [
         ('page-jpeg', 'graphics', ['--reference-images', 'always', '--full-page-image-encoding', 'jpeg:0.9',
+                                  '--region-image-encoding', 'png',
                                   '--maximum-output-bytes', 'unlimited', '--maximum-epub-bytes', '1048576'], 4),
+        # The automatic default (#193), named explicitly and left implicit, must write the same images.
+        ('automatic-default', 'graphics', ['--reference-images', 'always'], 4),
+        ('automatic-named', 'graphics', ['--reference-images', 'always', '--full-page-image-encoding', 'automatic',
+                                         '--region-image-encoding', 'automatic:0.9'], 4),
         ('region-jpeg', 'graphics', ['--reference-images', 'never', '--region-image-encoding', 'jpeg:0.95'], 3),
         ('fallback-smallest', 'scanned', ['--no-ocr', '--reference-images', 'never',
                                         '--full-page-image-encoding', 'smallest:0.9'], 1),
@@ -52,6 +57,7 @@ def main():
         ('headers-keep-pinned-b', 'prose', ['--repeated-headers-and-footers', 'keep', *PINNED], 0),
     ]
     results = []
+    automatic_default = None
     for name, fixture, flags, image_count in cases:
         output = args.output / (name + '.epub')
         command = [converter, str(fixtures / (fixture + '.pdf')), str(output), *flags]
@@ -80,6 +86,12 @@ def main():
                 assert sum(n.endswith('.jpg') for n in images) == 1
                 assert sum(n.endswith('.png') for n in images) == 3
             if name == 'region-jpeg': assert all(n.endswith('.jpg') for n in images)
+            if name.startswith('automatic-'):
+                written = {n: book.read(n) for n in images}
+                if name == 'automatic-named':
+                    assert written == automatic_default, 'named automatic differs from the default'
+                else:
+                    automatic_default = written
         view_epub.prepare(output, args.output / (name + '-reader'))
         if args.epubcheck:
             with (args.output / (name + '-epubcheck.log')).open('w') as log:
@@ -90,6 +102,8 @@ def main():
     failures = [
         ['--reference-images', 'invalid'], ['--region-image-encoding', 'jpeg:nan'],
         ['--full-page-image-encoding', 'smallest:1.1'], ['--full-page-image-encoding', 'jpeg:-0.1'],
+        ['--region-image-encoding', 'automatic:1.1'], ['--full-page-image-encoding', 'automatic:'],
+        ['--full-page-image-encoding', 'lossless'],
         ['--maximum-output-bytes', '0'], ['--maximum-epub-bytes', '-1'], ['--maximum-epub-bytes'],
         ['--unknown', 'x'], ['--maximum-epub-bytes', '1'], ['--maximum-output-bytes', '1'],
         ['--ocr', 'invalid'], ['--ocr'],

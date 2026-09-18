@@ -62,7 +62,9 @@ full-corpus comparison and positive heading controls accompany the targeted fix.
 
 `comparison-summary.json` records EPUB identities and changed pages. `reviewed-pages.json`
 retains before/after parsed text and semantics for all seven changed pages. Each corpus directory
-contains compressed evaluation, conversion, content, progress, memory and EPUBCheck receipts.
+contains compressed evaluation, conversion, content and EPUBCheck receipts. The raw progress logs
+and memory-sample series were dropped in #196; each case's `result.json.gz` keeps their summary (progress-check events and result, sampled
+and converter peak memory).
 `release-gate.log.gz` and `release-ios-tests.log.gz` record the final successful gates.
 
 ## Reproduction

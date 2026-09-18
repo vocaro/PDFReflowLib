@@ -92,6 +92,18 @@ class CorpusContentTests(unittest.TestCase):
         self.pages[2]['text'] += '\ufffc'
         self.assertFalse(self.check()['passed'])
 
+    def test_presentation_form_ligatures_fail_on_any_page(self):
+        # #189: every Latin ligature U+FB00-U+FB06 fails, on a page with or without expectations.
+        self.assertTrue(self.check()['passed'])
+        for ligature in '\ufb00\ufb01\ufb02\ufb03\ufb04\ufb05\ufb06':
+            pages = {1: dict(self.pages[1]), 2: dict(self.pages[2], text='omega di' + ligature + 'erent')}
+            result = self.check(pages=pages)
+            self.assertFalse(result['passed'])
+            self.assertIn('Presentation-form ligature', ' '.join(result['errors']))
+        # Controls: the spelled-out letters, the neighbouring code points and other compatibility forms pass.
+        for text in ('omega different', 'omega \ufaff \ufb07 \ufb13', 'omega x\u00b2 \u00bd \uff46 \u0133'):
+            self.assertTrue(self.check(pages={1: self.pages[1], 2: dict(self.pages[2], text=text)})['passed'], text)
+
     def test_furniture_absence_and_real_heading_semantics(self):
         self.contract['pages'][0].update(absentText=['RUNNING HEADER'], headings=['alpha beta'])
         self.pages[1]['headings'] = ['alpha beta']
@@ -492,6 +504,8 @@ class CorpusContentTests(unittest.TestCase):
     def test_manifest_contracts_have_pinned_sources_and_useful_checks(self):
         cases = {c['id']: c for c in json.loads((ROOT / 'corpus/manifest.json').read_text())['documents']}
         definitions = json.loads((ROOT / 'corpus/regressions.json').read_text())
+        # A phrase holding a presentation-form ligature could never be found (#189).
+        self.assertNotRegex(json.dumps(definitions, ensure_ascii=False), '[ﬀ-ﬆ]')
         ids = [c['id'] for c in definitions['cases']]
         self.assertEqual(len(ids), len(set(ids)))
         self.assertTrue(ids)
@@ -543,6 +557,46 @@ class CorpusContentTests(unittest.TestCase):
         self.assertEqual(markers, [1, 2])
         self.assertEqual(pages[1]['text'], 'conver')
         self.assertEqual(pages[2]['text'], 'sion later')
+
+    def test_page_reference_is_read_from_title_and_alternative_text(self):
+        """#187: the reference carries its provenance in `title`; a fallback shares the title only."""
+        def references(image):
+            pages, _ = read_pages(self.epub('<span epub:type="pagebreak" id="page-1"/>' + image, ''))
+            return pages[1].get('pageReferences', [])
+        self.assertEqual(references('<img src="picture.png" alt="The printed page, for comparison" title="Source page 1"/>'),
+                         ['EPUB/picture.png'])
+        # EPUBs from before #187 name it in `alt`, so baselines still compare.
+        self.assertEqual(references('<img src="picture.png" alt="Original page 1"/>'), ['EPUB/picture.png'])
+        for image in ['<img src="picture.png" alt="Whole page kept as an image" title="Source page 1"/>',
+                      '<img src="picture.png" alt="The printed page, for comparison" title="Source page 2"/>',
+                      '<img src="picture.png" alt="The printed page, for comparison"/>',
+                      '<img src="picture.png" alt="Illustration" title="Preserved region from page 1"/>']:
+            self.assertEqual(references(image), [], image)
+
+    def test_image_alternatives_require_the_text_and_no_provenance_beside_it(self):
+        pages, _ = read_pages(self.epub(
+            '<span epub:type="pagebreak" id="page-1"/><p>alpha beta</p>'
+            '<figure><img src="picture.png" alt="Figure  3. The  rake" title="Preserved region from page 1"/></figure>', ''))
+        self.assertEqual(pages[1]['alternatives'], ['Figure 3. The rake'])
+        self.contract['pages'][0]['imageAlternatives'] = ['Figure 3. The rake']
+        self.pages[1]['alternatives'] = ['Figure 3. The rake', 'Mathematical expression']
+        self.assertTrue(self.check()['passed'])
+        self.contract['pages'][0]['imageAlternatives'] = ['Figure 3. The rake', 'Mathematical expression']
+        self.assertTrue(self.check()['passed'])
+        # A kind the page does not carry fails.
+        self.contract['pages'][0]['imageAlternatives'] = ['Table kept as an image']
+        result = self.check()
+        self.assertFalse(result['passed'])
+        self.assertIn("Page 1: no image carries the alternative text 'Table kept as an image'", result['errors'])
+        # Provenance or nothing in any image's alternative text fails the page, as before #187.
+        self.contract['pages'][0]['imageAlternatives'] = ['Figure 3. The rake']
+        for bad in ['Preserved region from page 1', 'Original page 1', '']:
+            self.pages[1]['alternatives'] = ['Figure 3. The rake', bad]
+            self.assertFalse(self.check()['passed'], bad)
+        for invalid in ([], 'Illustration', [''], [3]):
+            self.contract['pages'][0]['imageAlternatives'] = invalid
+            with self.assertRaises(ValueError):
+                self.check()
 
     def test_captions_do_not_satisfy_text_and_missing_assets_fail(self):
         body = '<span epub:type="pagebreak" id="page-1"/><figure><img src="picture.png"/><figcaption>alpha beta</figcaption></figure>'

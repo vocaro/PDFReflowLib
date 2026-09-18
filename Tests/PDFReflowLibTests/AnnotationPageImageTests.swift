@@ -79,7 +79,8 @@ private func reconstruct(_ pages: AnnotatedPages, references: ConversionOptions.
 
 private func references(on page: Int, _ result: PDFReflowLibPipeline.Result) -> Int {
     result.document.blocks.filter {
-        if case let .image(image) = $0.content { $0.page == page && image.alternativeText == "Original page \(page)" } else { false }
+        if case let .image(image) = $0.content { $0.page == page && image.provenance == "Source page \(page)"
+            && image.alternativeText == PreservedImageKind.sourcePage.alternativeText } else { false }
     }.count
 }
 

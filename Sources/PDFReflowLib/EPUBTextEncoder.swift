@@ -209,7 +209,11 @@ enum EPUBTextEncoder {
             guard let path = imagePaths[image.assetID] else {
                 throw ReflowDocument.ValidationError.missingAsset(image.assetID)
             }
-            return "<figure><img src=\"\(xml(path))\" alt=\"\(xml(image.alternativeText))\"/><figcaption>\(xml(image.caption))</figcaption></figure>"
+            // No `<figcaption>`: the converter has no caption of its own to print, and a caption
+            // the source prints is already the block beside this figure (#187). `title` carries
+            // the provenance that `alt` used to state.
+            let title = image.provenance.isEmpty ? "" : " title=\"\(xml(image.provenance))\""
+            return "<figure><img src=\"\(xml(path))\" alt=\"\(xml(image.alternativeText))\"\(title)/></figure>"
         }
     }
 }

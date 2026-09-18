@@ -33,7 +33,7 @@ private actor PolicyProgress {
         let warning = try #require(report.warnings.first { $0.code == .unverifiedTextLayer })
         #expect(warning.message.contains("accompanying") == (policy != .never))
         #expect(report.warnings.contains { $0.code == .referenceImageOmitted } == (policy == .never))
-        #expect(text.contains("Original page 1") == (policy != .never))
+        #expect(text.contains("title=\"Source page 1\"") == (policy != .never))
     }
 }
 

@@ -119,6 +119,47 @@ struct InlineText: Sendable, Equatable, Codable {
 
     mutating func append(_ other: InlineText) { elements += other.elements }
 
+    /// The Latin typographic ligatures U+FB00–U+FB06.
+    static func isLigature(_ character: Character) -> Bool {
+        character.unicodeScalars.contains { (0xFB00...0xFB06).contains($0.value) }
+    }
+
+    /// Text with the Latin typographic ligatures U+FB00–U+FB06 written as the letters they join
+    /// (#189): `ﬀ ﬁ ﬂ ﬃ ﬄ ﬅ ﬆ` become `ff fi fl ffi ffl ſt st`, their Unicode compatibility
+    /// decompositions. A ligature is the font's business, not the text's: Wallace's EC fonts give
+    /// `ﬀ` and `ﬃ` their own code points, and a reading font without a glyph for them (Charter,
+    /// Times New Roman, Avenir Next, the system font) draws them from a fallback font, which a
+    /// reader saw as `Diﬀ erent`. The letters also search and speak as words. Nothing else of
+    /// Unicode compatibility mapping is applied: superscripts, fractions and full-width forms stay.
+    static func spellingOutLigatures<S: StringProtocol>(_ text: S) -> String {
+        // By scalar, so a ligature carrying a combining mark (`ﬁ́`) is spelled out too.
+        var result = String.UnicodeScalarView()
+        for scalar in text.unicodeScalars {
+            switch scalar.value {
+            case 0xFB00: result += "ff".unicodeScalars
+            case 0xFB01: result += "fi".unicodeScalars
+            case 0xFB02: result += "fl".unicodeScalars
+            case 0xFB03: result += "ffi".unicodeScalars
+            case 0xFB04: result += "ffl".unicodeScalars
+            case 0xFB05: result += "\u{017F}t".unicodeScalars
+            case 0xFB06: result += "st".unicodeScalars
+            default: result.append(scalar)
+            }
+        }
+        return String(result)
+    }
+
+    /// The same runs, styles and source-page boundaries, with each run's ligatures spelled out.
+    func spellingOutLigatures() -> InlineText {
+        InlineText(elements: elements.map {
+            switch $0 {
+            case let .text(value, style): .text(Self.spellingOutLigatures(value), style)
+            case let .noteReference(value, style, key): .noteReference(Self.spellingOutLigatures(value), style, key)
+            case .sourcePage: $0
+            }
+        })
+    }
+
     mutating func removeLastCharacter() {
         for index in elements.indices.reversed() {
             if case let .text(value, style) = elements[index], !value.isEmpty {
@@ -147,11 +188,56 @@ struct InlineText: Sendable, Equatable, Codable {
     }
 }
 
+/// What a preserved image holds, as far as the evidence that made it can say (#187).
+///
+/// Alternative text has to describe content, and the only thing the converter knows about a crop
+/// is which detector seeded it. These are those detectors' claims, not a picture classifier:
+/// `artwork` covers every drawn or placed illustration, because a vector chart, a line diagram
+/// and a photograph are one kind of evidence to a converter that never decodes the image.
+enum PreservedImageKind: String, Sendable, Equatable, Codable {
+    /// A displayed formula, a stacked fraction or another mathematical display.
+    case equation
+    /// A table the layout could not read as text: aligned numeric rows, underlined columns.
+    case table
+    /// A typeset algorithm listing between its rules.
+    case listing
+    /// Drawn or placed art: a diagram, a chart, a map, an illustration or a photograph.
+    case artwork
+    /// Lines that read as words, kept inside a crop that no drawing, table or listing seeded.
+    case text
+    /// A whole page that does not reflow at all.
+    case page
+    /// A whole-page picture that accompanies the page's own reflowed text.
+    case sourcePage
+
+    /// The alternative text for an image of this kind with no printed caption beside it. Short,
+    /// and true of every crop the kind admits: naming a chart, a photograph or a graph would
+    /// claim more than the seed evidence establishes. A screen reader announces the image role
+    /// itself, so only kinds whose content a reader would expect as text (a table, running text,
+    /// a whole page) say that it is kept as an image: its words cannot be read out.
+    var alternativeText: String {
+        switch self {
+        case .equation: "Mathematical expression"
+        case .table: "Table kept as an image"
+        case .listing: "Algorithm listing"
+        case .artwork: "Illustration"
+        case .text: "Text kept as an image"
+        case .page: "Whole page kept as an image"
+        case .sourcePage: "The printed page, for comparison"
+        }
+    }
+}
+
 struct ReflowBlock: Sendable, Equatable {
+    /// A preserved image. It has no caption of its own (#187): a caption the source prints stays
+    /// the block the source set beside the figure, which is where `captionedImages` checks it and
+    /// where a sighted reader already reads it, and the converter has no caption to add. What it
+    /// carries instead is alternative text naming the content and provenance for `title`.
     struct Image: Sendable, Equatable {
         var assetID: String
         var alternativeText: String
-        var caption: String
+        /// Where the image came from, for the reader that wants it: `title`, never `alt` (#187).
+        var provenance: String = ""
     }
     /// A text table: rows of cells in column order, each cell spanning one or more columns
     /// (a section row is one cell spanning them all). Header rows precede the body. Cell text

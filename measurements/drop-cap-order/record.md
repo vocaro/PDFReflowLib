@@ -58,7 +58,9 @@ Final default-policy release CLI validation, macOS 27 / Xcode 27 arm64:
 
 `identity.json` pins runtime/test/tool/fixture bytes and toolchain; the baseline is `bd62936`,
 retained from the complete preformatted-style run. The compressed logs and per-case receipts
-record the final run. Physical-device performance remains unqualified. Full Warren and NOAA
+record the final run; the per-case raw progress logs and memory-sample series were dropped in
+#196, and each case's `result.json.gz` keeps their summary (progress-check events and result, sampled
+and converter peak memory). Physical-device performance remains unqualified. Full Warren and NOAA
 default conversions remain explicit exclusions, not passing cases.
 
 ## Complete comparison

@@ -1,0 +1,653 @@
+page 19	header []	rows 5	columns 2	em 12.0	widestCellEm 6.7	y 673	x 217
+    2+3(9−4)2 | Parenthesisfrst
+    2+3(5)2 | Exponents
+    2+3(25) | Multiply
+page 19	header []	rows 3	columns 2	em 12.0	widestCellEm 10.5	y 527	x 204
+    30÷3·2 | Dividefrst(lefttoright!)
+    10·2 | Multiply
+    20 | OurSolution
+page 19	header []	rows 4	columns 2	em 12.0	widestCellEm 11.3	y 199	x 176
+    2{64+56(−1)} | Finishmultiplying
+    2{64−56} | Subtractinsideparenthesis
+    2{8} | Multiply
+page 20	header []	rows 7	columns 2	em 12.0	widestCellEm 12.7	y 291	x 123
+    1+3|−16−(−8)|+2|3+25| | Addinsideabsolutevalues
+    1+3|−8|+2|28| | Evaluateabsolutevalues
+    1+3(8)+2(28) | Multiplylefttoright
+page 22	header []	rows 4	columns 2	em 12.0	widestCellEm 12.1	y 429	x 146
+    p(q+6)whenp=3andq=5 | Replacepwith3andqwith5
+    (3)((5)+6) | Evaluateparenthesis
+    (3)(11) | Multiply
+page 22	header []	rows 5	columns 2	em 12.0	widestCellEm 11.6	y 146	x 173
+    −6+(−2)(−6)(5)(−2) | Multiplylefttoright
+    −6+12(5)(−2) | Multiplylefttoright
+    −6+60(−2) | Multiply
+page 24	header []	rows 3	columns 2	em 12.0	widestCellEm 13.7	y 658	x 166
+    −(4x−5y+6) | Negativecanbethoughtofas−1
+    −1(4x−5y+6) | Multiplyeachtermby−1
+    −4x+5y−6 | OurSolution
+page 24	header []	rows 3	columns 2	em 12.0	widestCellEm 14.1	y 502	x 172
+    5+3(2x−4) | Distribute3,multiplingeachterm
+    5+6x−12 | Combineliketerms5−12
+    −7+6x | OurSolution
+page 28	header []	rows 3	columns 2	em 12.0	widestCellEm 7.5	y 416	x 204
+    4(−5)+16=−4 | Multiply4(−5)
+    −20+16=−4 | Add−20+16
+    −4=−4 | True!
+page 28	header []	rows 3	columns 2	em 12.0	widestCellEm 6.4	y 250	x 218
+    4(3)+16=−4 | Multiply4(3)
+    12+16=−4 | Add12+16
+    2884 | False!
+page 30	header []	rows 3	columns 2	em 12.0	widestCellEm 11.7	y 238	x 193
+    −5x = 30 | Variableismultipliedby−5
+    −5−5 | Dividebothsidesby−5
+    x=−6 | OurSolution!
+page 33	header []	rows 3	columns 2	em 12.0	widestCellEm 6.9	y 111	x 210
+    4(3)−20=−8 | Multiply4(3)
+    12−20=−8 | Subtract12−20
+    −8=−8 | True!
+page 37	header []	rows 4	columns 2	em 12.0	widestCellEm 13.5	y 421	x 173
+    4(2x−6)=16 | Distribute4throughparenthesis
+    8x−24=16 | Focusonthesubtractionfrst
+    +24+24 | Add24tobothsides
+page 37	header []	rows 4	columns 2	em 12.0	widestCellEm 12.1	y 129	x 154
+    6x−12+9=15 | Combineliketerms,−12+9
+    6x−3=15 | Focusonthesubtractionfrst
+    +3 +3 | Add3tobothsides
+page 38	header []	rows 4	columns 2	em 12.0	widestCellEm 13.2	y 382	x 181
+    2x−6=10 | Focusonthesubtractionfrst
+    +6 +6 | Add6tobothsides
+    2x=16 | Focusonthemultiplicationby2
+page 39	header []	rows 3	columns 2	em 12.0	widestCellEm 12.3	y 356	x 175
+    4x−10=18 | Focusonthesubtractionof10
+    +10+10 | Add10tobothsides
+    4x=28 | Focusonmultiplicationby4
+page 40	header []	rows 3	columns 2	em 12.0	widestCellEm 11.6	y 209	x 180
+    6=3x | Focusonmultiplicationby3
+    3 3 | Dividebothsidesby3
+    2=x | OurSolution
+page 41	header []	rows 3	columns 2	em 12.0	widestCellEm 14.2	y 284	x 146
+    2(3x−5)−4x=2x+7 | Distribute2throughparenthesis
+    6x−10−4x=2x+7 | Combineliketerms6x−4x
+    2x−10=2x+7 | Noticethevariableisonbothsides
+page 42	header []	rows 17	columns 2	em 12.0	widestCellEm 14.8	y 682	x 84
+    1) 2−(−3a−8)=1 | 2) 2(−3n+8)=−20
+    3)−5(−4+2v)=−50 | 4) 2−8(−4+3x)=34
+    5) 66=6(6+5x) | 6) 32=2−5(−4n+6)
+page 42	header []	rows 3	columns 2	em 12.0	widestCellEm 14.6	y 330	x 84
+    37)−8(n−7)+3(3n−3)=41 | 38)−76=5(1+3b)+3(3b−3)
+    39)−61=−5(5r−4)+4(3r−4) | 40)−6(x−8)−4(x−2)=−4
+    41)−2(8n−4)=8(1−n) | 42)−4(1+a)=2a−8(5+3a)
+page 44	header []	rows 4	columns 2	em 12.0	widestCellEm 11.7	y 560	x 163
+    (3)3x−(6)7=(2)5 | Multiplyouteachterm
+    9x−42=10 | Focusonsubtractionby42
+    +42+42 | Add42tobothsides
+page 50	header []	rows 4	columns 2	em 12.0	widestCellEm 13.4	y 691	x 180
+    (2−b)a=A | reduce(2−b)withdenominator
+    2a−ab=A | Distributethroughparenthesis
+    −2a−2a | Subtract2afrombothsides
+page 54	header []	rows 4	columns 2	em 12.0	widestCellEm 13.7	y 405	x 136
+    2−4|2x+3|=−18 | Noticeabsolutevalueisnotalone
+    −2−2 | Subtract2frombothsides
+    −4|2x+3|=−20 | Absolutevaluestillnotalone
+page 55	header []	rows 3	columns 2	em 12.0	widestCellEm 14.6	y 698	x 159
+    7+|2x−5|=4 | Noticeabsolutevalueisnotalone
+    −7−7 | Subtract7frombothsides
+    |2x−5|=−3 | Resultofabsolutevalueisnegative!
+page 58	header []	rows 3	columns 2	em 12.0	widestCellEm 12.7	y 276	x 184
+    cd=k | ′′indirectly′′tellsusto multiply
+    (4.5)(6)=k | Substituteknownvalues
+    27=k | Evaluatetofndourconstant
+page 64	header []	rows 3	columns 2	em 12.0	widestCellEm 12.4	y 228	x 111
+    5x−28=232 | Istranslatestoequals
+    +28+28 | Add28tobothsides
+    5x=260 | Thevariableismultipliedby5
+page 66	header []	rows 3	columns 2	em 12.0	widestCellEm 14.7	y 137	x 136
+    x=23 | Oursolutionforx
+    First23 | Replacexwith23intheoriginallist
+    Second(23)+2=25 | Thenumbersare23,25,and27
+page 67	header []	rows 4	columns 2	em 12.0	widestCellEm 14.9	y 381	x 127
+    x+2x+x−40=180 | Heretheparenthesisarenotneeded.
+    4x−40=180 | Combineliketerms,x+2x+x
+    +40 +40 | Add40tobothsides
+page 74	header []	rows 4	columns 2	em 12.0	widestCellEm 14.4	y 622	x 156
+    x+7+x−5=28 | Removeparenthesis
+    2x+2=28 | Combineliketermsx+xand7−5
+    −2−2 | Subtract2frombothsides
+page 75	header []	rows 3	columns 2	em 12.0	widestCellEm 12.4	y 736	x 181
+    4x+2=102 | Solvethetwo−stepequation
+    −2−2 | Subtract2frombothsides
+    4x=100 | Thevariableismultipliedby4
+page 83	header []	rows 5	columns 2	em 12.0	widestCellEm 12.9	y 223	x 175
+    15t+100=130 | Combineliketerms55t−40t
+    −100−100 | Subtract100frombothsides
+    15t=30 | Thevariableismultipliedby30
+page 92	header []	rows 3	columns 2	em 12.0	widestCellEm 10.9	y 188	x 150
+    2(3)−3y=6 | Nextx=3
+    6−3y=6 | Multiply
+    −6−6 | Subtract9frombothsides
+page 99	header []	rows 3	columns 2	em 12.0	widestCellEm 6.4	y 560	x 167
+    25(x+3)=4(5) | Simplify
+    2(x+3)=20 | Distribute
+    2x+6=20 | Solve.
+page 103	header []	rows 3	columns 2	em 12.0	widestCellEm 11.4	y 461	x 249
+    −2x−2x | Subtract2xfrombothsides
+    −4y=−2x+6 | Putxtermfrst
+    −4−14−34 | Divideeachtermby−4
+page 109	header []	rows 3	columns 2	em 12.0	widestCellEm 9.5	y 614	x 126
+    y−4=−3(x−(−3)) | Simplifysigns
+    y−4=−3(x+3) | Distributeslope
+    y−4=−3x−9 | Solvefory
+page 113	header []	rows 3	columns 2	em 12.0	widestCellEm 11.4	y 582	x 84
+    −3x−3x | Subtract3xfrombothsides
+    −4y=−3x+2 | Putxtermfrst
+    −4−34−14 | Divideeachtermby−4
+page 113	header []	rows 4	columns 2	em 12.0	widestCellEm 13.7	y 329	x 149
+    2x−3y=6 | Wefrstneedslopeofparallelline
+    −2x−2x | Subtract2xfromeachside
+    −3y=−2x+6 | Putxtermfrst
+page 114	header []	rows 4	columns 2	em 12.0	widestCellEm 7.4	y 204	x 138
+    y−4=0(x−3) | Distributeslope
+    y−4=0 | Solvefory
+    +4+4 | Add4toeachside
+page 120	header []	rows 4	columns 2	em 12.0	widestCellEm 10.9	y 377	x 148
+    5>1 | Add3tobothsides
+    8>4 | Subtract2frombothsides
+    6>2 | Multiplybothsidesby3
+page 120	header []	rows 4	columns 2	em 12.0	widestCellEm 11.8	y 299	x 120
+    6>3 | Add−1tobothsides
+    5>2 | Subtract−4frombothsides
+    9>6 | Multiplybothsidesby−2
+page 121	header []	rows 3	columns 2	em 12.0	widestCellEm 12.7	y 410	x 96
+    3(2x−4)+4x<4(3x−7)+8 | Distribute
+    6x−12+4x<12x−28+8 | Combineliketerms
+    10x−12<12x−20 | Movevariabletooneside
+page 124	header []	rows 3	columns 2	em 12.0	widestCellEm 9.9	y 411	x 104
+    2x−5>3 or 4−xx6 | Solveeachinequality
+    +5+5−4−4 | Addorsubtractfrst
+    2x>8 or−xx2 | Divide
+page 130	header []	rows 4	columns 2	em 12.0	widestCellEm 14.8	y 382	x 153
+    |4x+1|<3 | Absolutevalueisless,usethreepart
+    −3<4x+1<3 | Solve
+    −1−1−1 | Subtract1fromallthreeparts
+page 134	header []	rows 3	columns 2	em 12.0	widestCellEm 5.9	y 321	x 165
+    3(2)−(1)=5 | Firstequation
+    6−1=5 | Evaluate
+    5=5 | True
+page 139	header []	rows 4	columns 2	em 12.0	widestCellEm 9.7	y 387	x 106
+    y=2(5)−3 | Evaluate,multiplyfrst
+    y=10−3 | Subtract
+    y=7 | Wenowalsohavey
+page 140	header []	rows 4	columns 2	em 12.0	widestCellEm 9.7	y 630	x 131
+    y=3(2)−7 | Evaluate,multiplyfrst
+    y=6−7 | Subtract
+    y=−1 | Wenowalsohavey
+page 140	header []	rows 3	columns 2	em 12.0	widestCellEm 9.7	y 200	x 128
+    x=6+5(−1) | Evaluate,multiplyfrst
+    x=6−5 | Subtract
+    x=1 | Wenowalsohavex
+page 154	header []	rows 4	columns 2	em 12.0	widestCellEm 12.8	y 613	x 124
+    z=1−y | Plugintountouchedequation
+    −13y+8(1−y)=−55 | Distribute
+    −13y+8−8y=−55 | Combineliketerms−13y−8y
+page 160	header []	rows 3	columns 2	em 12.0	widestCellEm 14.7	y 146	x 144
+    1.5c+2(41−c)=73.5 | Substituteintountouchedequation
+    1.5c+82−2c=73.5 | Distribute
+    −0.5c+82=73.5 | Combineliketerms
+page 163	header []	rows 3	columns 2	em 12.0	widestCellEm 13.4	y 631	x 117
+    −1000−1000 | Subtract1000frombothsides
+    x=3000 | Wehavex,S3000investedat6%
+    S1000at9%andS3000at6% | OurSolution
+page 163	header []	rows 4	columns 2	em 12.0	widestCellEm 13.8	y 167	x 138
+    x=0.07 | Wehaveourx,7%interest
+    (0.07)+0.04 | Secondaccountis4%higher
+    0.11 | TheaccountwithS8000isat11%
+page 171	header []	rows 5	columns 2	em 12.0	widestCellEm 14.7	y 736	x 148
+    4(30−n)+2.5n=105 | Substituteintountouchedequation
+    120−4n+2.5n=105 | Distribute
+    120−1.5n=105 | Combineliketerms
+page 171	header []	rows 3	columns 2	em 12.0	widestCellEm 14.7	y 612	x 86
+    c=30−(10) | Plugintoc=equationtofndc
+    c=20 | Wehaveourc,20lbsofchocolate
+    10lbsofnutsand20lbsofchocolate | OurSolution
+page 178	header []	rows 3	columns 2	em 12.0	widestCellEm 14.0	y 317	x 195
+    2a·22a23 | TAhdidsemxepaonnsewnteshavea2threetimes
+    ·a2 ·a2 | Addexponents
+    a6 | Oursolution
+page 192	header []	rows 3	columns 2	em 12.0	widestCellEm 5.9	y 111	x 191
+    −9+2(3)+6 | Multiply
+    −9+6+6 | Add
+    3 | OurSolution
+page 197	header []	rows 3	columns 2	em 12.0	widestCellEm 13.0	y 640	x 114
+    3x(4x+7y)−2y(4x+7y) | Distributethe3xand−2y
+    12x2+21xy−8xy−14y2 | Combineliketerms21xy−8xy
+    12x2+13xy−14y2 | OurSolution
+page 197	header []	rows 5	columns 2	em 12.0	widestCellEm 12.7	y 180	x 166
+    (4x+7y)(3x−2y) | UseFOILtomultiply
+    (4x)(3x)=12x2 | F−Firstterms(4x)(3x)
+    (4x)(−2y)=−8xy | O−Outsideterms(4x)(−2y)
+page 199	header []	rows 3	columns 2	em 12.0	widestCellEm 9.6	y 207	x 131
+    3(2x2+10x−4x−20) | Combineliketerms
+    3(2x2+6x−20) | Distributethe3
+    6x2+18x−60 | OurSolution
+page 201	header []	rows 3	columns 2	em 12.0	widestCellEm 11.3	y 444	x 176
+    (a+b)(a−b) | Distribute(a+b)
+    a(a+b)−b(a+b) | Distributeaand−b
+    a2+ab−ab−b2 | Combineliketermsab−ab
+page 203	header []	rows 5	columns 2	em 12.0	widestCellEm 10.3	y 598	x 191
+    (2x+5)2 | Recognizeperfectsquare
+    (2x)2=4x2 | Squarethefrst
+    2(2x)(5)=20x | Twicetheproduct
+page 222	header []	rows 4	columns 2	em 12.0	widestCellEm 13.0	y 632	x 164
+    x2+9x+18 | Wanttomultiplyto18,addto9
+    x2+6x+3x+18 | 6and3,splitthemiddleterm
+    x(x+6)+3(x+6) | Factorbygrouping
+page 222	header []	rows 4	columns 2	em 12.0	widestCellEm 14.0	y 131	x 151
+    −9ab+14b2 | Wanttomultiplyto14,addto−9
+    −7ab−2ab+14b2 | −7and−2,splitthemiddleterm
+    a(a−7b)−2b(a−7b) | Factorbygrouping
+page 223	header []	rows 4	columns 2	em 12.0	widestCellEm 12.0	y 624	x 170
+    x2+5x−6 | Wanttomultiplyto6,add5
+    x2+2x+3x−6 | 2and3,splitthemiddleterm
+    x(x+2)+3(x−2) | Factorbygrouping
+page 223	header []	rows 4	columns 2	em 12.0	widestCellEm 13.5	y 412	x 161
+    x2+5x−6 | Wanttomultiplyto−6,addto5
+    x2+6x−x−6 | 6and−1,splitthemiddleterm
+    x(x+6)−1(x+6) | Factorbygrouping
+page 232	header []	rows 3	columns 2	em 12.0	widestCellEm 9.6	y 587	x 192
+    SumofSquares | a2+b2 =Prime
+    PerfectSquare | a2+2ab+b2=(a+b)2
+    SumofCubes | a3+b3=(a+b)(a2
+page 235	header []	rows 4	columns 2	em 12.0	widestCellEm 11.5	y 657	x 159
+    5x2y+15xy−35x2 −105x | GCFfrst,5x
+    5x(xy+3y−7x−21) | Fourterms,trygrouping
+    5x[y(x+3)−7(x+3)] | (x+3)match!
+page 237	header []	rows 3	columns 2	em 12.0	widestCellEm 11.4	y 380	x 159
+    (2x−3)(5x+1)=0 | Onefactormustbezero
+    2x−3=0 or 5x+1=0 | Seteachfactorequaltozero
+    +3+3−1−1 | Solveeachequation
+page 237	header []	rows 3	columns 2	em 12.0	widestCellEm 11.4	y 111	x 94
+    x(4x−3)+1(4x−3)=0 | Factorbygrouping
+    (4x−3)(x+1)=0 | Onefactormustbezero
+    4x−3=0 or x+1=0 | Seteachfactorequaltozero
+page 238	header []	rows 4	columns 2	em 12.0	widestCellEm 11.4	y 247	x 101
+    (x−6)(x+2)=0 | Thenumbersare6and−2
+    x−6=0 or x+2=0 | Seteachfactorequaltozero
+    +6+6−2−2 | Solveeachequation
+page 239	header []	rows 3	columns 2	em 12.0	widestCellEm 11.4	y 147	x 114
+    −8x=0 | FactorouttheGCFof4x
+    4x(x−2)=0 | Onefactormustbezero
+    4x=0 or x−2=0 | Seteachfactorequaltozero
+page 240	header []	rows 4	columns 2	em 12.0	widestCellEm 13.8	y 536	x 86
+    3(2x2+9x−2x−9)=0 | Thenumbersare9and−2
+    3[x(2x+9)−1(2x+9)]=0 | Factorbygrouping
+    3(2x+9)(x−1)=0 | Onefactormustbezero
+page 243	header []	rows 3	columns 2	em 12.0	widestCellEm 13.4	y 359	x 204
+    3x2+5xx0 | Factor
+    x(3x+5))0 | Seteachfactornotequaltozero
+    xx0 or 3x+550 | Subtract5fromsecondequation
+page 270	header []	rows 7	columns 2	em 12.0	widestCellEm 11.4	y 432	x 165
+    k−2 | Calculatecrossproduct
+    (k+3)(k−2)=(8)(3) | FOILandmultiply
+    k2+k−6=24 | Makeequationequalzero
+page 271	header []	rows 4	columns 2	em 12.0	widestCellEm 11.4	y 292	x 118
+    7(x−9)=6x | Distribute
+    7x−63=6x | Movevariablestooneside
+    −7x−7x | Subtract7xfrombothsides
+page 274	header []	rows 4	columns 2	em 12.0	widestCellEm 9.0	y 404	x 177
+    2(4)x−5(2)=3(3) | Multiply
+    8x−10=9 | Solve
+    +10+10 | Add10tobothsides
+page 275	header []	rows 3	columns 2	em 12.0	widestCellEm 10.5	y 547	x 168
+    5x+5+3x(x+2)=x2 | Distribute
+    5x+5+3x2+6x=x2 | Combineliketerms
+    3x2+11x+5=x2 | Makeequationequalzero
+page 275	header []	rows 3	columns 2	em 12.0	widestCellEm 11.4	y 477	x 166
+    2x2+11x+5=0 | Factor
+    (2x+1)(x+5)=0 | Seteachfactorequaltozero
+    2x+1=0 or x+5=0 | Solveeachequation
+page 276	header []	rows 3	columns 2	em 12.0	widestCellEm 10.5	y 727	x 182
+    x(x+1)+1(x+2)=5 | Distribute
+    x2+x+x+2=5 | Combineliketerms
+    x2+2x+2=5 | Makeequatinoequalzero
+page 276	header []	rows 4	columns 2	em 12.0	widestCellEm 11.4	y 665	x 184
+    −5−5 | Subtract6frombothsides
+    x2+2x−3=0 | Factor
+    (x+3)(x−1)=0 | Seteachfactorequaltozero
+page 276	header []	rows 4	columns 2	em 12.0	widestCellEm 11.4	y 211	x 196
+    −11−11 | Subtract11frombothsides
+    −3x−10=0 | Factor
+    (x−5)(x+2)=0 | Seteachfactorequaltozero
+page 277	header []	rows 3	columns 2	em 12.0	widestCellEm 11.4	y 344	x 175
+    −13x−46 | Factor
+    0=(5x−23)(x+2) | Seteachfactorequaltozero
+    5x−23=0 or x+2=0 | Solveeachequation
+page 319	header []	rows 3	columns 2	em 12.0	widestCellEm 12.8	y 720	x 201
+    i35 | Divideexponentby4
+    8R3 | Useremainderasexponentoni
+    i3 | Simplify
+page 319	header []	rows 4	columns 2	em 12.0	widestCellEm 12.9	y 616	x 198
+    i124 | Divideexponentby4
+    31R0 | Useremainderasexponentoni
+    i0 | Simplify
+page 320	header []	rows 3	columns 2	em 12.0	widestCellEm 6.9	y 691	x 201
+    21i2 | Simplifyi2=−1
+    21(−1) | Multiply
+    −21 | OurSolution
+page 320	header []	rows 3	columns 2	em 12.0	widestCellEm 6.9	y 578	x 213
+    −35i | Simplifyi2 =−1
+    15(−1)−35i | Multiply
+    −15−35i | OurSolution
+page 320	header []	rows 3	columns 2	em 12.0	widestCellEm 9.8	y 482	x 132
+    (2−4i)(3+5i) | FOIL
+    6+10i−12i−20i2 | Simplifyi2
+    6+10i−12i−20(−1) | Multiply
+page 320	header []	rows 3	columns 2	em 12.0	widestCellEm 11.9	y 317	x 172
+    −54i3 | Simplifyi2 =−1andi3=−i
+    36(−1)−54(−i) | Multiply
+    −36+54i | OurSolution
+page 320	header []	rows 3	columns 2	em 12.0	widestCellEm 13.4	y 111	x 195
+    =25(−1)=−25 | Squarethelast,simplifyi2 =−1
+    16−40i−25 | Combineliketerms
+    −9−40i | OurSolution
+page 323	header []	rows 3	columns 2	em 12.0	widestCellEm 11.9	y 372	x 84
+    23) (−8−6i)(−4+2i) | 24) (−6i)(3−2i)−(7i)(4i)
+    25) (1+5i)(2+i) | 26) (−2+i)(3−5i)
+    27)−9i+5i | 28)−3+2i
+page 326	header []	rows 4	columns 2	em 12.0	widestCellEm 6.1	y 253	x 159
+    22√7(124)++2==44 | MAdudltiply
+    √16=4 16 | Squareroot
+    4=4 | True!Itworks!
+page 327	header []	rows 3	columns 2	em 12.0	widestCellEm 11.4	y 183	x 110
+    −14x+24 | Factor
+    0=(x−12)(x−2) | Seteachfactorequaltozero
+    x−12=0 or x−2=0 | Solveeachequation
+page 328	header []	rows 4	columns 2	em 12.0	widestCellEm 9.1	y 743	x 162
+    √48+1=5 | Add
+    12+√49 √49=5 | Takeroot
+    12+7=5 | Add
+page 328	header []	rows 3	columns 2	em 12.0	widestCellEm 11.4	y 200	x 171
+    3x−8=x | Solve
+    −3x−3x | Subtract3xfrombothsides
+    −8=−2x | Dividebothsidesby−2
+page 329	header []	rows 3	columns 2	em 12.0	widestCellEm 5.8	y 736	x 189
+    2−2=0 | Subtract
+    0=0 | True!Itworks
+    x=4 | OurSolution
+page 329	header []	rows 4	columns 2	em 12.0	widestCellEm 14.2	y 508	x 107
+    √x | Isolatefrstrootbyadding√x
+    √2x+=1√x √x+1 | Squarebothsides
+    (√2x+1 √2x+1)2=(√x √x+1)2 | Evaluateexponents,recall(a+b)2
+page 329	header []	rows 4	columns 2	em 12.0	widestCellEm 13.3	y 429	x 119
+    −x−1−x−√1 | SSuqubatrraecbtoxthansidd1esfrombothsides
+    x=2√x √x1 | SSuqubatrraecbtoxthansidd1esf
+    (x)2=(2√x √x)2 | Evaluateexponents
+page 329	header []	rows 3	columns 2	em 12.0	widestCellEm 11.4	y 341	x 132
+    −4x=0 | Factor
+    x(x−4)=0 | Seteachfactorequaltozero
+    x=0 or x−4=0 | Solve
+page 330	header []	rows 4	columns 2	em 12.0	widestCellEm 14.3	y 465	x 171
+    −4x−16−4x−16 | Subtract4xand16frombothsides
+    4x2+12x=0 | Factor
+    4x(x+3)=0 | Seteachfactorequaltozero
+page 330	header []	rows 4	columns 2	em 12.0	widestCellEm 10.9	y 329	x 140
+    3(099)+√449(0−)+√4==−−11 | CTahkeeckroxo=ts0frst
+    √449(0−)+√4 +√4==−−11 | CTahkeeckroxo=ts
+    3−2=−1 | Subtract
+page 330	header []	rows 4	columns 2	em 12.0	widestCellEm 12.6	y 224	x 120
+    (√−−9939)++9− 4444((√−−033−))++√1===−−−111 | CATahdkdee
+    44(√−03−)+√1 +√1==−−11 | ATadkderoots
+    0−1=−1 | Subtract
+page 334	header []	rows 3	columns 2	em 12.0	widestCellEm 9.1	y 620	x 190
+    (x+4)3=125 | Useoddrootproperty
+    (x+4)3 =√125 √125 | Simplifyroots
+    x+4=5 | Solve
+page 334	header []	rows 3	columns 2	em 12.0	widestCellEm 11.5	y 444	x 187
+    −6−6 | Subtract6frombothsides
+    (6x+1)2=√4 | USismepevliefynrroooottsproperty(±)
+    =√4 | USismepevliefynrrooootts
+page 334	header []	rows 3	columns 2	em 12.0	widestCellEm 11.2	y 374	x 117
+    6x+1=2 or 6x+1=−2 | Solveeachequation
+    −1−1−1−1 | Subtract1frombothsides
+    6x=1 or 6x=−3 | Dividebothsidesby6
+page 335	header []	rows 4	columns 2	em 12.0	widestCellEm 7.8	y 307	x 159
+    54√8−2562)3 = 64 | Evaluate root
+    43=64 | Evaluateexponent
+    64=64 | True!Itworks
+page 340	header []	rows 3	columns 2	em 12.0	widestCellEm 12.2	y 592	x 141
+    x2+10x+25=1 | Factor
+    (x+5)2=1 | Solvewithevenrootproperty
+    √1 | Simplifyroots
+page 348	header []	rows 3	columns 2	em 12.0	widestCellEm 13.5	y 386	x 154
+    x−4=0 or x+2=0 | Theseexpressionsarethefactors
+    (x−4)(x+2)=0 | FOIL
+    x2+2x−4x−8 | Combineliketerms
+page 350	header []	rows 3	columns 2	em 12.0	widestCellEm 7.7	y 181	x 178
+    2x−3=±5i | Squarebothsides
+    −12x+9=5i2 | i2 =−1
+    −12x+9=−25 | Makeequaltozero
+page 353	header []	rows 4	columns 2	em 12.0	widestCellEm 13.6	y 645	x 94
+    −b−6=0 | Substituteb2fora−2andbfora−1
+    (b−3)(b+2)=0 | Solve.Wewillsolvebyfactoring
+    b−3=0 or b+2=0 | Seteachfactorequaltozero
+page 353	header []	rows 3	columns 2	em 12.0	widestCellEm 14.0	y 283	x 131
+    2y2+y−6=0 | Solve.Wewillfactorthisequation
+    (2y−3)(y+2)=0 | Seteachfactorequaltozero
+    2y−3=0 or y+2=0 | Solveeachequation
+page 354	header []	rows 3	columns 2	em 12.0	widestCellEm 11.5	y 626	x 115
+    3(x−7)2 −2(x−7)+5=0 | Quadraticform
+    y=x−7 | Defnenewvariable
+    y2=(x−7)2 | Squarebothsides
+page 354	header []	rows 4	columns 2	em 12.0	widestCellEm 12.4	y 573	x 135
+    −2y+5=0 | Substitutevaluesintooriginal
+    (3y−5)(y+1)=0 | Factor
+    3y−5=0 or y+1=0 | Seteachfactorequaltozero
+page 354	header []	rows 5	columns 2	em 12.0	widestCellEm 13.5	y 248	x 180
+    −6x | Makenewvariable
+    −6x)2 | Squarebothsides
+    −7y+12=0 | Substituteintooriginalequation
+page 355	header []	rows 3	columns 2	em 12.0	widestCellEm 13.4	y 473	x 141
+    −9y+8=0 | Substitutey2forx6andyforx3
+    (y−1)(y−8)=0 | Solve.Wewillsolvebyfactoring.
+    y−1=0 or y−8=0 | Seteachfactorequaltozero
+page 358	header []	rows 4	columns 2	em 12.0	widestCellEm 11.4	y 700	x 118
+    −40−40 | Makeequationequalzero
+    x2+3x−40=0 | Factor
+    (x−5)(x+8)=0 | Seteachfactorequaltozero
+page 360	header []	rows 3	columns 2	em 12.0	widestCellEm 9.2	y 618	x 146
+    −26x+324=1 | Add169tobothsides
+    (x−13)2=1 | Factor
+    x−13=±1 | Squarerootbothsides
+page 366	header []	rows 4	columns 2	em 12.0	widestCellEm 12.1	y 695	x 159
+    12x+12(x−10)=x(x−10) | Reducefraction
+    12x+12x−120=x2 −10x | Distribute
+    24x−120=x2 −10x | Combineliketerms
+page 366	header []	rows 3	columns 2	em 12.0	widestCellEm 11.4	y 625	x 186
+    −34x+120 | Factor
+    0=(x−30)(x−4) | Seteachfactorequaltozero
+    x−30=0 or x−4=0 | Solveeachequation
+page 367	header []	rows 3	columns 2	em 12.0	widestCellEm 10.7	y 736	x 159
+    6x+6(x−1)=5x(x−1) | Reduceeachfraction
+    6x+6x−6=5x2 −5x | Distribute
+    12x−6=5x2 −5x | Combineliketerms
+page 367	header []	rows 3	columns 2	em 12.0	widestCellEm 11.4	y 666	x 169
+    −17x+6 | Factor
+    0=(5x−2)(x−3) | Seteachfactorequaltozero
+    5x−2=0 or x−3=0 | Solveeachequation
+page 370	header []	rows 8	columns 2	em 12.0	widestCellEm 13.1	y 303	x 140
+    48(x+3)−2x(x+3)=54x | Distribute
+    48x+144−2x2 −6x=54x | Combineliketerms
+    −2x2+42x+144=54x | Makeequationequalzero
+page 371	header []	rows 3	columns 2	em 12.0	widestCellEm 12.4	y 459	x 128
+    −35(x+6)−2x(x+6)=5x | Distribute
+    −35x−210−2x2 −12x=5x | Combineliketerms
+    −2x2 −47x−210=5x | Makeequationequalzero
+page 371	header []	rows 4	columns 2	em 12.0	widestCellEm 11.4	y 390	x 159
+    −2x2 −52x−210=0 | Divideeachtermby−2
+    x2+26x+105=0 | Factor
+    (x+5)(x+21)=0 | Seteachfactorequaltozero
+page 374	header []	rows 3	columns 2	em 12.0	widestCellEm 12.0	y 636	x 128
+    56(n−3)+5n(n−3)=60n | Reducefractions
+    56n−168+5n2 −15n=60n | Combineliketerms
+    5n2+41n−168=60n | Movealltermstooneside
+page 375	header []	rows 4	columns 2	em 12.0	widestCellEm 11.7	y 676	x 132
+    96(n−2)+4n(n−2)=96n | Reducefractions
+    96n−192+4n2 −8n=96n | Distribute
+    4n2+88n−192=96n | Combineliketerms
+page 376	header []	rows 4	columns 2	em 12.0	widestCellEm 13.0	y 381	x 123
+    120(r−10)+2r2 −20r=120r | Reduceeachfraction
+    120r−1200+2r2 −20r=120r | Distribute
+    2r2+100r−1200=120r | Combineliketerms
+page 376	header []	rows 3	columns 2	em 12.0	widestCellEm 11.4	y 294	x 149
+    −10r−600=0 | Factor
+    (r−30)(r+20)=0 | Seteachfactorequaltozero
+    r−30=0 and r+20=0 | Solveeachequation
+page 377	header []	rows 3	columns 2	em 12.0	widestCellEm 11.4	y 230	x 162
+    −15r−8=0 | Factor
+    (2r+1)(r−8)=0 | Seteachfactorequaltozero
+    2r+1=0 or r−8=0 | Solveeachequation
+page 380	header []	rows 3	columns 2	em 12.0	widestCellEm 0.6	y 385	x 238
+    x | y
+    0 | 3
+    1 | 0
+page 381	header []	rows 3	columns 2	em 12.0	widestCellEm 8.1	y 111	x 156
+    y=4−8+3 | Evaluate
+    y=−1 | They−coordinate
+    (−2,−1) | Vertexasapoint
+page 388	header []	rows 3	columns 2	em 12.0	widestCellEm 13.0	y 447	x 148
+    x2+x−660 | Solvebyfactoring
+    (x+3)(x−2))0 | Seteachfactornotequaltozero
+    x+330 and x−220 | Solveeachequation
+page 389	header []	rows 4	columns 2	em 12.0	widestCellEm 11.2	y 424	x 134
+    f(−2)=3(−2)2 −4(−2) | Evaluate,exponentsfrst
+    f(−2)=3(4)−4(−2) | Multiply
+    f(−2)=12+8 | Add
+page 389	header []	rows 5	columns 2	em 12.0	widestCellEm 14.6	y 293	x 147
+    h(x)=32x−6;fndh(4) | Substitute4inforxinthefunction
+    h(4)=32(4)−6 | Simplifyexponent,mutiplyingfrst
+    h(4)=38−6 | Subtractinexponent
+page 389	header []	rows 3	columns 2	em 12.0	widestCellEm 10.9	y 111	x 167
+    k(−7)=2|−7+4| | Addinsideabsolutevalues
+    k(−7)=2|−3| | Evaluateabsolutevalue
+    k(−7)=2(3) | Multiply
+page 390	header []	rows 3	columns 2	em 12.0	widestCellEm 14.3	y 554	x 143
+    g(x)=x4+1;fndg(3x) | Replacexinthefunctionwith(3x)
+    g(3x)=(3x)4+1 | Simplifyexponet
+    g(3x)=81x4+1 | OurSolution
+page 390	header []	rows 4	columns 2	em 12.0	widestCellEm 12.3	y 406	x 134
+    −(t+1) | Squarebinomial
+    p(t+1)=t2+2t+1−(t+1) | Distributenegative
+    p(t+1)=t2+2t+1−t−1 | Combineliketerms
+page 393	header []	rows 3	columns 2	em 12.0	widestCellEm 12.8	y 250	x 200
+    f(−3)+g(−3) | Addthetwofunctionstogether
+    (10)+(−2) | Add
+    8 | OurSolution
+page 394	header []	rows 3	columns 2	em 12.0	widestCellEm 9.6	y 368	x 101
+    (2x−4)−(x2 −x+5) | Distributethenegative
+    2x−4−x2+x−5 | Combineliketerms
+    −x2+3x−9 | OurSolution
+page 395	header []	rows 4	columns 2	em 12.0	widestCellEm 8.4	y 294	x 154
+    [2(3x)−1][(3x)+4] | Multiplyour2(3x)
+    (6x−1)(3x+4) | FOIL
+    18x2+24x−3x−4 | Combineliketerms
+page 396	header []	rows 4	columns 2	em 12.0	widestCellEm 13.8	y 609	x 125
+    b(3)=(3)−5=−2 | Thissolutionisputintoa,a(−2)
+    a(−2)=(−2)2 −2(−2)+1 | Evaluate
+    a(−2)=4+4+1 | Add
+page 397	header []	rows 4	columns 2	em 12.0	widestCellEm 9.4	y 543	x 139
+    −(x+3) | Evaluateexponent
+    (x2+6x+9)−(x+3) | Distributenegative
+    x2+6x+9−x−3 | Combineliketerms
+page 402	header []	rows 4	columns 2	em 12.0	widestCellEm 10.1	y 351	x 191
+    x2x−−5510++55 | DCoismtrbuibnteeli2k
+    x−10+5 | Combineliketerms
+    x−5 | Didnotsimplifytox
+page 406	header []	rows 3	columns 2	em 12.0	widestCellEm 12.8	y 267	x 184
+    52x+1=125 | Rewrite125as53
+    52x+1=53 | Samebase,setexponentsequal
+    2x+1=3 | Solve
+page 407	header []	rows 4	columns 2	em 12.0	widestCellEm 12.8	y 718	x 187
+    83x=32 | Rewrite8as23and32as25
+    (23)3x=25 | Multiplyexponents3and3x
+    29x=25 | Samebase,setexponentsequal
+page 411	header []	rows 5	columns 2	em 12.0	widestCellEm 12.8	y 533	x 174
+    Evaluatelog264 | Setlogarithmequaltox
+    log264=x | Changetoexponentform
+    2x=64 | Writeascommonbase,64=26
+page 411	header []	rows 4	columns 2	em 12.0	widestCellEm 13.1	y 404	x 152
+    Evaluatelog1255 | Setlogarithmequaltox
+    log1255=x | Changetoexponentform
+    125x=5 | Writeascommonbase,125=53
+page 412	header []	rows 3	columns 2	em 12.0	widestCellEm 11.5	y 658	x 198
+    log5x=2 | Changetoexponentialform
+    52=x | Evaluateexponent
+    25=x | OurSolution
+page 412	header []	rows 3	columns 2	em 12.0	widestCellEm 11.5	y 562	x 181
+    log2(3x+5)=4 | Changetoexponentialform
+    24=3x+5 | Evaluateexponent
+    16=3x+5 | Solve
+page 412	header []	rows 3	columns 2	em 12.0	widestCellEm 11.5	y 393	x 198
+    logx8=3 | Changetoexponentialform
+    x3=8 | Cuberootofbothsides
+    x=2 | OurSolution
+page 415	header []	rows 3	columns 2	em 12.0	widestCellEm 13.9	y 467	x 161
+    3000=P(1.00125)52·4 | Multiplyexponent
+    3000=P(1.00125)208 | Evaluateexponent
+    3000=P(1.2967195288) | Divideeachsideby1.296719528
+page 415	header []	rows 3	columns 2	em 12.0	widestCellEm 8.8	y 155	x 138
+    A=4000(1.0025)12·7 | Multiplyexponents
+    A=4000(1.0025)84 | Evaluateexponent
+    A=4000(1.2333548) | Multiply
+page 416	header []	rows 3	columns 2	em 12.0	widestCellEm 11.8	y 578	x 106
+    A=4000(1.000082199)365·7 | Multiplyexponent
+    A=4000(1.000082199)2555 | Evaluateexponent
+    A=4000(1.233667411) | Multiply
+page 417	header []	rows 4	columns 2	em 12.0	widestCellEm 11.8	y 490	x 158
+    P=4000,r=0.03,t=7 | Identifyeachofthevariables
+    A=4000e0.03·7 | Multiplyexponent
+    A=4000e0.21 | Evaluatee0.21
+page 417	header []	rows 4	columns 2	em 12.0	widestCellEm 11.8	y 237	x 155
+    P=6.16,r=0.12,t=100 | Identifyeachofthevariables
+    A=6.16e0.12·100 | Multiplyexponent
+    A=6.16e12 | Evaluate
+page 430	header []	rows 4	columns 2	em 12.0	widestCellEm 9.2	y 363	x 110
+    52+7.12=c2 | Evaluateexponents
+    25+50.41=c2 | Add
+    75.41=c2 | Squarerootbothsides
+page 431	header []	rows 4	columns 2	em 12.0	widestCellEm 9.2	y 361	x 148
+    92+32 =c2 | Evaluateexponents
+    81+9=c2 | Add
+    90=c2 | Squarerootbothsides
+page 438	header []	rows 7	columns 2	em 12.0	widestCellEm 3.3	y 636	x 84
+    2) 5 | 23) 11
+    3) 2 | 24) 9
+    4) 2 | 25)−3
+page 438	header []	rows 6	columns 2	em 12.0	widestCellEm 3.8	y 479	x 84
+    9)−2 | 30)−8
+    10)−5 | 31)−4
+    11) 4 | 32)−35
+page 438	header []	rows 3	columns 2	em 12.0	widestCellEm 3.8	y 330	x 84
+    16)−9 | 37)−56
+    17)−1 | 38)−6
+    18)−2 | 39)−36 40) 63
+page 440	header []	rows 8	columns 2	em 12.0	widestCellEm 3.8	y 673	x 84
+    2)−1 | 11)−10
+    3) 5 | 12)−9
+    4) 180 | 13) 20
+page 441	header []	rows 9	columns 2	em 12.0	widestCellEm 9.5	y 714	x 84
+    55)−3x+8x2 | 65)−72n−48−8n2
+    56)−89x+81 | 66)−42b−45−4b2
+    57)−68k2 −8k | 67) 79−79v
+page 441	header []	rows 4	columns 2	em 12.0	widestCellEm 4.3	y 362	x 84
+    4) 4 | 18) 4
+    5) 10 | 19) 20
+    6) 6 | 20)−208 21) 3
+page 442	header []	rows 3	columns 2	em 12.0	widestCellEm 3.3	y 230	x 84
+    8)−4 | 23)−1
+    9) 0 | 24)−1
+    10) 3 | 25) 8
+page 477	header []	rows 4	columns 2	em 12.0	widestCellEm 5.7	y 653	x 84
+    3)−3+9i | 24) 16−18i
+    4)−1−6i | 25)−3+11i
+    5)−3−13i | 26)−1+13i 27) 9i+5
+hits 163

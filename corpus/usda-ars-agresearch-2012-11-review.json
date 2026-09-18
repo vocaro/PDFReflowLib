@@ -6,7 +6,7 @@
     {
       "page": 1,
       "target": "Cover: header strip, nameplate, cover lines and tagline over a full-bleed flag photo",
-      "acceptance": "Correct now: header strip lines, Keeping Our Troops Safe, From Insects and pages 2, 4-14 in order; the two cover lines are headings; the photo is kept in the Original page 1 image. Wrong now: the Agricultural Research nameplate is outlined art and has no text; pages 2, 4-14 and the tagline are h4 headings and enter the contents; unverifiedTextLayer for text over the page-sized photo."
+      "acceptance": "Correct now: header strip lines, Keeping Our Troops Safe, From Insects and pages 2, 4-14 in order; the two cover lines are headings; pages 2, 4-14 is a paragraph (#186); the photo is kept in the Original page 1 image. Wrong now: the Agricultural Research nameplate is outlined art and has no text; the tagline is an h6 heading and enters the contents; unverifiedTextLayer for text over the page-sized photo."
     },
     {
       "page": 2,
@@ -31,7 +31,7 @@
     {
       "page": 6,
       "target": "DWFP: three columns, subhead, wide paragraph under the columns and two captioned photos",
-      "acceptance": "Correct now: the Left: and Below: captions are whole, separate paragraphs; the two photos and both credits are present; the full-width Jatropha paragraphs read in order. Wrong now: the three columns above interleave line by line with one paragraph per line (#153); the Unlocking the Chemistries of Folk Remedies subhead is two bold paragraphs; Mis-/sissippi split across paragraphs; com-panies keeps its hyphen; the full-width paragraphs are merged into one; the running foot is kept with its bullet as <sup>l</sup> (#159)."
+      "acceptance": "Correct now: commercial companies joins its word break (#186); the Left: and Below: captions are whole, separate paragraphs; the two photos and both credits are present; the full-width Jatropha paragraphs read in order. Wrong now: the three columns above interleave line by line with one paragraph per line (#153); the Unlocking the Chemistries of Folk Remedies subhead is two bold paragraphs; Mis-/sissippi split across paragraphs; the full-width paragraphs are merged into one; the running foot is kept with its bullet as <sup>l</sup> (#159)."
     },
     {
       "page": 7,
@@ -46,7 +46,7 @@
     {
       "page": 9,
       "target": "DWFP: Fighting Filth Flies sidebar with fly photo, wide screenhouse photo",
-      "acceptance": "Correct now: the left and right column prose above the photo reflows as text; the wide screenhouse caption is one whole paragraph; the STEPHEN AUSMUS (D2619-4) credit. Wrong now: the left column's three source paragraphs are merged into one, as are the right column's; the right column precedes the middle column's closing lines (Nonbiting flies ... cause diar-), which interleave line by line (#153); Fighting Filth Flies is a bold paragraph; the fly photo, its caption and rotated credit (D2620-1) are in a crop (#158); running foot kept (#159)."
+      "acceptance": "Correct now: Fighting Filth Flies is a heading before the sidebar’s photograph and text (#186); the left and right column prose above the photo reflows as text; the wide screenhouse caption is one whole paragraph; the STEPHEN AUSMUS (D2619-4) credit. Wrong now: the left column's three source paragraphs are merged into one, as are the right column's; the right column precedes the middle column's closing lines (Nonbiting flies ... cause diar-), which interleave line by line (#153); the fly photo, its caption and rotated credit (D2620-1) are in a crop (#158); running foot kept (#159)."
     },
     {
       "page": 10,
@@ -66,7 +66,7 @@
     {
       "page": 13,
       "target": "DWFP: Kenya fogger photo with caption, Taking It to the Field subhead, three columns",
-      "acceptance": "Correct now: the caption's sentences reflow; SETH BRITCH (D2644-1) credit; the photo is in the page image; the running foot is removed. Wrong now: the caption is merged with the first column line (what works and what doesn't); the three columns interleave line by line (#153); Taking It to the Field is a bold paragraph; the whole page is also an Original page 13 image, for the unverified text layer over the page-sized photo, not for its links (#151); unverifiedTextLayer."
+      "acceptance": "Correct now: the caption's sentences reflow; SETH BRITCH (D2644-1) credit, set above the photograph, stands directly before it; the photo is in the page image; the running foot is removed. Wrong now: the caption is merged with the first column line (what works and what doesn't); the three columns interleave line by line (#153); Taking It to the Field is a bold paragraph; the whole page is also an Original page 13 image, for the unverified text layer over the page-sized photo, not for its links (#151); unverifiedTextLayer."
     },
     {
       "page": 14,
@@ -76,7 +76,7 @@
     {
       "page": 15,
       "target": "Spraying Insecticide? There's an App for That! display title, phone photo, three columns, byline",
-      "acceptance": "Correct now: the right column's top paragraphs (aircraft ... compli-) read in order with whole sentences; the phone photo is preserved. Wrong now: the right column top precedes the article's start in the left column; its three source paragraphs are merged into one; the rest interleaves line by line (#153); the display title and caption are in a crop (#158); the credit reads BRAD FRITz for Brad Fritz; the end mark * is tripled as ***; running foot kept (#159)."
+      "acceptance": "Correct now: the credit reads BRAD FRITZ, the capitals the page draws, and compliance joins its word break (#186); the right column's top paragraphs (aircraft ... compli-) read in order with whole sentences; the phone photo is preserved. Wrong now: the right column top precedes the article's start in the left column; its three source paragraphs are merged into one; the rest interleaves line by line (#153); the display title and caption are in a crop (#158); the end mark * is tripled as ***; running foot kept (#159)."
     },
     {
       "page": 16,
@@ -96,7 +96,7 @@
     {
       "page": 19,
       "target": "E. coli end: three columns, water-sampling photo with caption, byline, program note",
-      "acceptance": "Correct now: the A Range of Resistance paragraphs and the Tetracycline paragraphs have whole sentences in order; credit PEGGY GREB (D2687-1); photo preserved. Wrong now: the top of the three columns interleaves line by line (#153); lines beginning with italic E. coli become <pre>; A Range of Resistance runs into its paragraph and later paragraphs merge; infec-tions keeps its hyphen; the caption is in a crop (#158); end mark tripled as ***; running foot kept (#159)."
+      "acceptance": "Correct now: infections joins its word break (#186); the A Range of Resistance paragraphs and the Tetracycline paragraphs have whole sentences in order; credit PEGGY GREB (D2687-1); photo preserved. Wrong now: the top of the three columns interleaves line by line (#153); lines beginning with italic E. coli become <pre>; A Range of Resistance runs into its paragraph and later paragraphs merge; the caption is in a crop (#158); end mark tripled as ***; running foot kept (#159)."
     },
     {
       "page": 20,
@@ -121,7 +121,7 @@
     {
       "page": 24,
       "target": "Back cover: return address, postal indicia, mailing panel, 150 Years mark and subscribe box",
-      "acceptance": "Correct now: the mailing-label instruction is a paragraph. Wrong now: the return address lines, Official Business and the web/Twitter line are h6 headings and enter the contents; the postal indicia and subscribe box are crops; the bullet is <sup>l</sup> (#159). No source-page image (#151)."
+      "acceptance": "Correct now: the mailing-label instruction, the return address, Official Business and the web/Twitter line are paragraphs, and the bullet between the two addresses reads ●, not a superscript (#186). Wrong now: the agency logo’s crop stands between the address’s second and third lines; the postal indicia and subscribe box are crops. No source-page image (#151)."
     }
   ],
   "scope": "Manual targets from 60 DPI Poppler renders of all 24 pages, the EPUB's block structure and the Poppler text layer. InDesign CS5 magazine, untagged; 12 standard Arial and Times fonts not embedded; 55 link annotations. No region, glyph or appearance references are committed: page 24 carries agency logos and the mailing panel, and the index holly ornaments are uncredited; see the manifest rights note."

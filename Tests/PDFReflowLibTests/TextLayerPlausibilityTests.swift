@@ -187,7 +187,7 @@ import Testing
 private func imageBackedPDF(imageLines: [String], layerLines: [String?]) throws -> Data {
     let page = CGRect(x: 0, y: 0, width: 612, height: 792)
     let scale = 2.0
-    let font = CTFontCreateWithName("Helvetica" as CFString, 14, nil)
+    let font = pdfKitGated { CTFontCreateWithName("Helvetica" as CFString, 14, nil) }
     func baseline(_ index: Int) -> CGFloat { 700 - CGFloat(index) * 26 }
     func line(_ text: String, font: CTFont) -> CTLine {
         CTLineCreateWithAttributedString(NSAttributedString(string: text, attributes: [
@@ -201,10 +201,12 @@ private func imageBackedPDF(imageLines: [String], layerLines: [String?]) throws 
     bitmap.setFillColor(gray: 1, alpha: 1)
     bitmap.fill(CGRect(x: 0, y: 0, width: page.width * scale, height: page.height * scale))
     bitmap.setFillColor(gray: 0, alpha: 1)
-    let large = CTFontCreateWithName("Helvetica" as CFString, 14 * scale, nil)
-    for (index, text) in imageLines.enumerated() {
-        bitmap.textPosition = CGPoint(x: 72 * scale, y: baseline(index) * scale)
-        CTLineDraw(line(text, font: large), bitmap)
+    pdfKitGated {
+        let large = CTFontCreateWithName("Helvetica" as CFString, 14 * scale, nil)
+        for (index, text) in imageLines.enumerated() {
+            bitmap.textPosition = CGPoint(x: 72 * scale, y: baseline(index) * scale)
+            CTLineDraw(line(text, font: large), bitmap)
+        }
     }
     let image = try #require(bitmap.makeImage())
     let data = NSMutableData()
@@ -214,10 +216,12 @@ private func imageBackedPDF(imageLines: [String], layerLines: [String?]) throws 
     pdf.beginPDFPage(nil)
     pdf.draw(image, in: page)
     pdf.setTextDrawingMode(.invisible)
-    for (index, text) in layerLines.enumerated() {
-        guard let text else { continue }
-        pdf.textPosition = CGPoint(x: 72, y: baseline(index))
-        CTLineDraw(line(text, font: font), pdf)
+    pdfKitGated {
+        for (index, text) in layerLines.enumerated() {
+            guard let text else { continue }
+            pdf.textPosition = CGPoint(x: 72, y: baseline(index))
+            CTLineDraw(line(text, font: font), pdf)
+        }
     }
     pdf.endPDFPage()
     pdf.closePDF()

@@ -50,7 +50,7 @@ private func attributed(_ runs: [(String, String, CGFloat)]) -> NSAttributedStri
     let value = NSMutableAttributedString(string: "")
     for (text, name, size) in runs {
         var attributes: [NSAttributedString.Key: Any] = [:]
-        attributes[.font] = TestFont(name: name, size: size)
+        attributes[.font] = pdfKitGated { TestFont(name: name, size: size) }
         value.append(NSAttributedString(string: text, attributes: attributes))
     }
     return value

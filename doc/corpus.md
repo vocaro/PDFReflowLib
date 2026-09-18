@@ -750,11 +750,14 @@ python3 tools/run_corpus_regressions.py --converter .build/release/pdf-reflow \
 
 The run passes EPUBCheck, progress and the 128 MiB Mac RSS gate (49–51 MiB peak). The
 [review points](../corpus/ntrs-20190030725-dasc-2019-review.json) cover all 10 pages. The contract
-holds 208 checks, all on output that matches the source: the title heading, author blocks,
+holds 313 checks, all on output that matches the source: the title heading, author blocks,
 abstract and index terms, whole prose paragraphs in column order, the page 1 to 2 continuation,
 the order of section, step, bullet and requirement openings, separate dash items, figure, table and display crops,
 captions (Fig. 1 beneath its figure, TABLE I and TABLE III above their tables), footnote text and
-reference order; and, on every page, no source-page image and no recognition, damaged-encoding,
+reference order; sentences whole across symbols with stacked indices, marked up on their base, and
+displays, cases braces and matrices whole in their crops with no delimiter piece left as text
+([#163](https://github.com/vocaro/PDFReflowLib/issues/163), [evidence](../measurements/stacked-scripts-and-display-crops/record.md));
+and, on every page, no source-page image and no recognition, damaged-encoding,
 implausible-layer, unverified-layer, structure-fallback or page-image-fallback warning.
 
 The paper reflows with no structure fallbacks, but these defects remain:
@@ -762,10 +765,10 @@ The paper reflows with no structure fallbacks, but these defects remain:
   subsection titles swallow their first line. Bullets and requirements are `<pre>`, and steps and
   references split after their first line. Paragraphs split at a column break and at a footnote
   ([#162](https://github.com/vocaro/PDFReflowLib/issues/162)).
-- Symbols with stacked indices shatter their sentences into one-token paragraphs. Several
-  displays are partly cropped and partly loose text, with 146 private-use brace pieces. The
-  separation-matrix crop swallows two prose lines
-  ([#163](https://github.com/vocaro/PDFReflowLib/issues/163)).
+- A nested index reads as one script level (`STA<sup>nih</sup><sub>h</sub>` for
+  STA^{n^i_h}_h). Page 9's `−→x min,` stands as text beside the crop of ½xᵀPx + qᵀx, which takes
+  `the form` from the sentence before it, and the line holding (a_k, ā_k) is cropped as text for
+  its overbars ([#163](https://github.com/vocaro/PDFReflowLib/issues/163)).
 - The Figure 2 caption, page 9's appendices and the Table III caption are out of column order
   ([#153](https://github.com/vocaro/PDFReflowLib/issues/153)).
 

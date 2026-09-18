@@ -140,21 +140,29 @@ private func statisticsTable(baseline: CGFloat) -> (lines: [TextLine], rules: [C
         "The instructions repeat the eligibility rules for a qualifying child in detail.",
     ], baseline: 689, widths: [450, 440, 430])
     #expect(regions(links, [45, 90, 135].map { underline(x: $0, baseline: 700, width: 35) }).isEmpty)
-    // A right-hand column subheader underlined whole needs at least three numeric rows below.
-    func tariff(rows: Int) -> [TextLine] {
+    // A right-hand column subheader underlined whole needs at least three numeric rows below,
+    // reaching under it as the copper page's tariff rows do (46–522 under `12–31–24` at 468–512).
+    func tariff(rows: Int, width: CGFloat = 476) -> [TextLine] {
         [proseLine("Tariff: Item Number Normal Trade Relations", baseline: 700, width: 300),
          proseLine("12–31–24", x: 468, baseline: 689, width: 44)] + (0..<rows).map {
-            proseLine("Copper item \($0 + 1) 7403.00.0000 Free.", baseline: 678 - CGFloat($0) * 11, width: 300)
+            proseLine("Copper item \($0 + 1) 7403.00.0000 Free.", baseline: 678 - CGFloat($0) * 11, width: width)
         }
     }
     // Too few rows: not a table. The underlined short piece keeps a crop of its own line, as
     // any short mathematical line with a rule does, but the rows and heading reflow.
-    let sparse = regions(tariff(rows: 2), [underline(x: 468, baseline: 689, width: 44)])
+    let rule = underline(x: 468, baseline: 689, width: 44)
+    #expect(TableRegionDetector.underlinedColumnRegions(in: PageContent(number: 1, bounds: pageBounds,
+        lines: tariff(rows: 2), graphics: [rule])).isEmpty)
+    let sparse = regions(tariff(rows: 2, width: 300), [rule])
     #expect(sparse.count == 1)
-    #expect(tariff(rows: 2).filter { line in sparse.contains { $0.intersects(line.rect) } }.map(\.text) == ["12–31–24"])
+    #expect(tariff(rows: 2, width: 300).filter { line in sparse.contains { $0.intersects(line.rect) } }.map(\.text) == ["12–31–24"])
     let preserved = regions(tariff(rows: 5), [underline(x: 468, baseline: 689, width: 44)])
     #expect(preserved.count == 1)
     #expect(tariff(rows: 5).allSatisfy { line in preserved.contains { $0.contains(line.rect) } })
+    // Rows that stop short of the piece are another column's: the piece heads none of them (#200,
+    // a photo credit underlined as a link over the facing column's prose).
+    let beside = regions(tariff(rows: 5, width: 300), [underline(x: 468, baseline: 689, width: 44)])
+    #expect(tariff(rows: 5, width: 300).filter { line in beside.contains { $0.intersects(line.rect) } }.map(\.text) == ["12–31–24"])
 }
 
 @Test func fractionBarsBeneathNumeratorsStillCropTheirTerms() throws {

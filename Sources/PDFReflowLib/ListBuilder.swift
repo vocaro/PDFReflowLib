@@ -12,11 +12,14 @@ import Foundation
 /// - **Numbered items** (`1.`, `2)`): a run of at least two whose printed numbers ascend by one.
 ///   A `1` always opens a new run. A run with a gap or a step back stays preformatted: an `<ol>`
 ///   would print numbers the source does not have. So does a run whose every item stands alone
-///   between other blocks (numbered section titles, not a list).
+///   between other blocks (numbered section titles, not a list). A transcription of a scan offers
+///   numbered items only, under the same rules (#195).
 ///
-/// Everything else keeps its preformatted form and printed marker: lettered items, a minus sign
-/// (which opens derivation rows), transcriptions of scans, contents entries, reference lists,
-/// exercise sets and answer keys, and a marker line with no sibling.
+/// A marker line with nothing list-shaped on its page or the pages beside it, and an accepted item
+/// that other blocks set apart from the rest of its run, become paragraphs that keep their printed
+/// markers: a list element holds two items or more (#195). Everything else keeps its preformatted form and printed
+/// marker: lettered items, a minus sign (which opens derivation rows), bullets in transcriptions of
+/// scans, contents entries, reference lists, exercise sets and answer keys.
 ///
 /// A *run* chains each candidate to the latest candidate of its family (one bullet glyph; numbers
 /// with one punctuation, one or two apart as `LayoutReconstructor.ListMarker.isSibling` reads them)
@@ -87,6 +90,7 @@ enum ListBuilder {
     }
 
     static func build(_ blocks: inout [ReflowBlock]) {
+        paragraphLoneMarkedLines(&blocks)
         // Runs: a candidate continues the run of the latest candidate of its family, whatever other
         // blocks stand between, when that one is on this page or the previous one (and, for numbers,
         // a sibling). Candidates of other families between them are items nested in the run's
@@ -98,14 +102,27 @@ enum ListBuilder {
         // Numbered list-shaped blocks that are not candidates (a value, a term, an expression),
         // by page and punctuation: an answer key's or an exercise grid's entries.
         var apparatus: [Int: [Character: Int]] = [:]
+        // Every list-shaped block, and the printed number of each numbered one that is no candidate.
+        var listShaped: [Int] = []
+        var numberedEntries: [Int: Marker] = [:]
         for (index, block) in blocks.enumerated() {
             guard case let .preformatted(text) = block.content, let evidence = block.listEvidence else { continue }
             let plain = text.text
-            guard !evidence.recognized, !plain.contains("\n"), !LayoutReconstructor.isContentsEntry(plain),
-                  let marker = marker(plain), readsAsItem(String(plain.dropFirst(marker.length))) else {
+            listShaped.append(index)
+            // A transcription of a scan offers numbered items only: its "bullets" are recognition
+            // of table rules and headers (the CIA report's `- Per Cent`), while its numbered items
+            // are held to the same verified numbering as any other (the CIA questionnaire's `22.
+            // Your full name:` to `28.`, #195).
+            guard !plain.contains("\n"), !LayoutReconstructor.isContentsEntry(plain),
+                  let marker = marker(plain), !(evidence.recognized && marker.value == nil),
+                  readsAsItem(String(plain.dropFirst(marker.length))) else {
                 latest = [:]
                 if let range = plain.range(of: "^[0-9]{1,3}[.)]", options: .regularExpression), let punctuation = plain[range].last {
                     apparatus[block.page, default: [:]][punctuation, default: 0] += 1
+                    let token = plain[range]
+                    if let value = Int(token.dropLast()) {
+                        numberedEntries[index] = Marker(family: .number(punctuation), printed: String(token), value: value, length: token.count)
+                    }
                 }
                 continue
             }
@@ -187,6 +204,23 @@ enum ListBuilder {
                 if case let .number(punctuation) = members[0].marker.family {
                     let others = Set(members.map(\.page)).reduce(0) { $0 + (apparatus[$1]?[punctuation] ?? 0) }
                     guard others <= members.count else { continue }
+                    // In a transcription, recognition garbles some entries of a notes apparatus into no
+                    // item while their numbers survive, so the readable entries between them form short
+                    // runs (the Warren report's page 897: `1. Martin Isaacs DE 1` to `3.`, then `4. Isaacs
+                    // DE 1 : CE 1159.`). A run whose numbering the list-shaped block beside it continues
+                    // is part of that apparatus; a list's run is set off by other blocks or options (the
+                    // CIA questionnaire's lettered answers).
+                    if members.contains(where: \.evidence.recognized),
+                       let first = listShaped.firstIndex(of: members[0].index),
+                       let last = listShaped.firstIndex(of: members[members.count - 1].index) {
+                        let continues = [(first - 1, -1), (last + 1, 1)].contains { position, step in
+                            guard listShaped.indices.contains(position), let entry = numberedEntries[listShaped[position]],
+                                  entry.family == members[0].marker.family, let value = entry.value,
+                                  let end = (step < 0 ? members[0] : members[members.count - 1]).marker.value else { return false }
+                            return value == end + step
+                        }
+                        guard !continues else { continue }
+                    }
                 }
             }
             accepted.formUnion(members.map(\.index))
@@ -204,6 +238,19 @@ enum ListBuilder {
                   setsDeeper(candidate.evidence, than: before.evidence) else { continue }
             accepted.insert(candidate.index)
         }
+        // A piece of a verified run that other blocks set apart on both sides is one item, not a list:
+        // it is a paragraph keeping its printed marker, as a lone marked line is (#195): the CIA
+        // questionnaire's `28.`, set apart from `22.`–`27.` by the lines left to write on.
+        let ordered = candidates.map(\.index).filter(accepted.contains)
+        for (position, index) in ordered.enumerated() {
+            let joinsBefore = position > 0 && contiguous(ordered[position - 1], index, among: accepted)
+            let joinsAfter = position + 1 < ordered.count && contiguous(index, ordered[position + 1], among: accepted)
+            guard !joinsBefore, !joinsAfter, case let .preformatted(text) = blocks[index].content else { continue }
+            blocks[index].content = .paragraph(text)
+            blocks[index].listEvidence = nil
+        }
+        accepted = accepted.filter { if case .preformatted = blocks[$0].content { true } else { false } }
+        guard !accepted.isEmpty else { return }
 
         // List elements, depth and openings. `stack` holds the list open at each depth.
         struct Level { var evidence: ReflowBlock.ListEvidence; var page: Int; var run: Int; var marker: Marker
@@ -274,6 +321,45 @@ enum ListBuilder {
                 ordinal: candidate.marker.value,
                 kind: candidate.marker.value == nil ? .unordered : .ordered,
                 level: stack.count - 1, opensList: opens))
+        }
+    }
+
+    /// A marked line with no other list-shaped block on its page or the pages beside it has nothing
+    /// to form a list with (#195): it becomes a paragraph that keeps its printed marker, rather than
+    /// preformatted text or a one-item list (the CDC comic's `1) Get a Kit`). A number whose nearest
+    /// numbered line either way, however far, is its sibling belongs to a sequence spread over the
+    /// document, such as section titles (the Geltman paper's `3. Quantum Description` between `2.`
+    /// on page 1 and `4.` on page 6), and stays as printed. So does a note's asterisk (`* Estimated`),
+    /// which is not a bullet.
+    static func paragraphLoneMarkedLines(_ blocks: inout [ReflowBlock]) {
+        let listShaped = blocks.indices.filter { index in
+            guard case .preformatted = blocks[index].content else { return false }
+            return blocks[index].listEvidence != nil
+        }
+        let markers = listShaped.map { index in
+            blocks[index].text.contains("\n") ? nil : marker(blocks[index].text)
+        }
+        var lone: [Int] = []
+        for (position, index) in listShaped.enumerated() {
+            guard case let .preformatted(text) = blocks[index].content, let marker = markers[position] else { continue }
+            let plain = text.text
+            guard !LayoutReconstructor.isContentsEntry(plain), marker.family != .bullet("*"),
+                  readsAsItem(String(plain.dropFirst(marker.length))) else { continue }
+            let neighbours = [position - 1, position + 1].filter(listShaped.indices.contains).map { listShaped[$0] }
+            guard !neighbours.contains(where: { abs(blocks[$0].page - blocks[index].page) <= 1 }) else { continue }
+            if let value = marker.value {
+                let before = markers[..<position].last { $0?.family == marker.family } ?? nil
+                let after = markers[(position + 1)...].first { $0?.family == marker.family } ?? nil
+                guard ![before, after].contains(where: { other in
+                    other?.value.map { (1...2).contains(abs($0 - value)) } ?? false
+                }) else { continue }
+            }
+            lone.append(index)
+        }
+        for index in lone {
+            guard case let .preformatted(text) = blocks[index].content else { continue }
+            blocks[index].content = .paragraph(text)
+            blocks[index].listEvidence = nil
         }
     }
 

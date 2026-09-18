@@ -1,0 +1,14 @@
+verse guard (#147 path): KILLED aVerseTurnedIntoAHangingIndentIsNoListOfEntries, noaaPoemKeepsItsLines
+verse guard (hanging path): KILLED aHangingEntryRunsIntoAWideIndentOnlyOnItsPagesHangingEdge, aVerseTurnedIntoAHangingIndentIsNoListOfEntries, noaaPoemKeepsItsLines
+two wrapped entries, not three sharing a measure: KILLED noaaFrontMatterWrapsTwoEntriesAColumn
+run openings: KILLED anEntryAsWideAsTheEdgeIsNoMeasureOfItsOwnRun, noaaWidestEntryOfASpacedRunOpensItsOwnParagraph
+lone widest line fills: KILLED anEntryAsWideAsTheEdgeIsNoMeasureOfItsOwnRun
+book spacing pairs: KILLED twoEntriesStandApartAtTheBooksEntrySpacing
+entry size: KILLED noaaFrontMatterWrapsTwoEntriesAColumn
+bold caption: KILLED aBoldCaptionLabelOpensItsCaption
+bold caption bold label: KILLED aBoldCaptionLabelOpensItsCaption
+subheader column: KILLED noaaPhotoCreditIsNoTableSubheader
+backdrop behind a picture: KILLED noaaCornerArtBehindAPaintingIsABackdrop
+caption broken at a hyphen: KILLED aCaptionBrokenAtAHyphenRunsOnOverleaf (added with its rule)
+backdrop threshold: SURVIVED (first pass; page 57 control added)
+backdrop threshold: KILLED noaaCornerArtBehindAPaintingIsABackdrop (second pass)

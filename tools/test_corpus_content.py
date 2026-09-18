@@ -258,6 +258,30 @@ class CorpusContentTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 self.check()
 
+    def test_pull_quote_contract_requires_a_pull_quote_aside_on_the_page(self):
+        self.contract['pages'][0]['pullQuotes'] = ['alpha beta']
+        self.pages[1]['pullQuotes'] = ['alpha beta']
+        self.assertTrue(self.check()['passed'])
+        self.pages[1]['pullQuotes'] = []
+        self.pages[1]['paragraphs'] = ['alpha beta']  # The same words as prose cannot pass.
+        self.pages[1]['headings'] = ['alpha beta']  # Nor as a heading.
+        self.assertFalse(self.check()['passed'])
+        self.pages[2]['pullQuotes'] = ['alpha beta']  # Nor on the wrong page.
+        self.assertFalse(self.check()['passed'])
+        for phrase in ['', '  ', 123]:
+            self.contract['pages'][0]['pullQuotes'] = [phrase]
+            with self.assertRaises(ValueError):
+                self.check()
+
+    def test_pull_quote_parser_reads_the_aside_and_its_paragraph(self):
+        path = self.epub('<span epub:type="pagebreak" id="page-1"/><p>body one</p>'
+                         '<aside class="pullquote" role="doc-pullquote"><p>“quoted words.”—A Speaker</p></aside>'
+                         '<p>body two</p>', '<span epub:type="pagebreak" id="page-2"/><p>page two</p>')
+        pages, _ = read_pages(path)
+        self.assertEqual(pages[1]['pullQuotes'], ['“quoted words.”—A Speaker'])
+        self.assertEqual(pages[1]['paragraphs'], ['body one', '“quoted words.”—A Speaker', 'body two'])
+        self.assertEqual(pages[1]['headings'], [])
+
     def test_note_parser_keeps_note_text_on_its_pages_and_in_its_paragraph(self):
         path = self.epub('<span epub:type="pagebreak" id="page-1"/><p>body one</p>'
                          '<div class="footnote" role="doc-footnote"><p><sup>1</sup> note one'

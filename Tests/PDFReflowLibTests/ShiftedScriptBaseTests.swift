@@ -20,7 +20,7 @@ private func line(_ runs: [(String, Double, Double)]) -> NSAttributedString {
     let value = NSMutableAttributedString(string: "")
     for (text, size, offset) in runs {
         value.append(NSAttributedString(string: text, attributes: [
-            .font: ScriptFont(name: "Helvetica", size: size)!,
+            .font: pdfKitGated { ScriptFont(name: "Helvetica", size: size) }!,
             NSAttributedString.Key(kCTBaselineOffsetAttributeName as String): offset,
         ]))
     }
@@ -65,8 +65,9 @@ private func sourceHTML(_ fixture: String, _ text: String) throws -> String {
     // opposite sides): offsets as stated.
     #expect(html([("x", 12, 0), ("raised", 12, 4), ("low", 8, -3)]) == "x<sup>raised</sup><sub>low</sub>")
     // A nested index (DASC page 5's `STA` with `n` raised and `i` raised again, #163): the base is itself a
-    // smaller script of the run before it, so the stated offsets stand.
-    #expect(html([("STA", 10, 0), ("n", 7, 3), ("i", 5, 5.5), (" occurring", 10, 0)]) == "STA<sup>n</sup>i occurring")
+    // smaller script of the run before it, so it is no base, and `i` is measured from `n`, the script it
+    // touches, and read into its superscript (one level, as a run carries one script style).
+    #expect(html([("STA", 10, 0), ("n", 7, 3), ("i", 5, 5.5), (" occurring", 10, 0)]) == "STA<sup>ni</sup> occurring")
     // A run of the same size is no script of the run before it.
     #expect(html([("6a", 12, -7.8), ("2", 12, -4.32), (" First identify LCD", 12, 0)]) == "<sub>6a2</sub> First identify LCD")
 }

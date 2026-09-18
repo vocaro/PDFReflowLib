@@ -18,7 +18,7 @@ func explicitBaselineOffsetsPreserveScriptWithoutGuessingFromSmallFonts(useFound
     for (text, offset, size) in [("base", 0.0, 12.0), ("small", 0, 8), ("raised", 4, 12),
                                 ("lowered", -3, 8), ("noise", 0.1, 12)] {
         value.append(NSAttributedString(string: text, attributes: [
-            .font: BaselineFont(name: "Helvetica-BoldOblique", size: size)!,
+            .font: pdfKitGated { BaselineFont(name: "Helvetica-BoldOblique", size: size) }!,
             (useFoundationKey ? .baselineOffset : NSAttributedString.Key(kCTBaselineOffsetAttributeName as String)): offset,
         ]))
     }

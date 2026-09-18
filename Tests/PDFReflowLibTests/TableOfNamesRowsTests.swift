@@ -36,10 +36,12 @@ private func namesPDF(apart: Int = 10, merged: [(name: String, description: Stri
     var y = 700 - apart * 12
     for row in merged {
         // The name's advance, from the font's widths, then an adjustment to x 153.
-        let font = CTFontCreateWithName("Times-Roman" as CFString, 10, nil)
-        let line = CTLineCreateWithAttributedString(NSAttributedString(string: row.name,
-            attributes: [NSAttributedString.Key(kCTFontAttributeName as String): font]))
-        let width = CTLineGetTypographicBounds(line, nil, nil, nil)
+        let width = pdfKitGated {
+            let font = CTFontCreateWithName("Times-Roman" as CFString, 10, nil)
+            let line = CTLineCreateWithAttributedString(NSAttributedString(string: row.name,
+                attributes: [NSAttributedString.Key(kCTFontAttributeName as String): font]))
+            return CTLineGetTypographicBounds(line, nil, nil, nil)
+        }
         let pad = Int(((153 - 45) - width) / 10 * 1000)
         content += "BT /F1 10 Tf 45 \(y) Td [(\(row.name)) -\(pad) (\(row.description))] TJ ET\n"
         y -= 12

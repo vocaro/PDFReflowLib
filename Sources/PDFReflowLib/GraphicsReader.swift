@@ -51,9 +51,10 @@ enum GraphicsReader {
     /// callout box is and a stroked streamline is not (#117). `grouped` marks a paint that fills
     /// the box of the transparency-group form drawing it, so the box itself records no footprint
     /// of its own: a drop shadow, a tint or an opacity effect makes InDesign wrap one object in
-    /// such a form (#158). `frame` is described above `columnJoints`.
+    /// such a form (#158). `band` marks the footprint of one wide straight stroke, the band it
+    /// paints (#200). `frame` is described above `columnJoints`.
     struct Paint: Equatable, Sendable {
-        var rect: CGRect; var frame: Bool; var image = false; var filled = false; var grouped = false
+        var rect: CGRect; var frame: Bool; var image = false; var filled = false; var grouped = false; var band = false
     }
     /// Where one text-showing operator placed its text, for deciding whether it can be seen
     /// (#74, #85). In horizontal writing every glyph of a show sits on `baseline`; `left` is a
@@ -126,9 +127,12 @@ enum GraphicsReader {
     private struct Saved {
         var matrix: CGAffineTransform, white: Bool, clip: CGRect, mode: Int
         var textClip: CGRect, coverClip: CGRect, text: TextParameters, appearance: Appearance
+        var lineWidth: CGFloat
     }
     private final class State {
         var matrix = CGAffineTransform.identity
+        /// The stroke width `w` set, in user space.
+        var lineWidth: CGFloat = 1
         var saved: [Saved] = []
         var textRenderingMode = 0
         var invisibleText = false
@@ -200,11 +204,12 @@ enum GraphicsReader {
         }
         func save() -> Saved {
             Saved(matrix: matrix, white: white, clip: clip, mode: textRenderingMode, textClip: textClip,
-                  coverClip: coverClip, text: text, appearance: appearance)
+                  coverClip: coverClip, text: text, appearance: appearance, lineWidth: lineWidth)
         }
         func restore(_ saved: Saved) {
             matrix = saved.matrix; white = saved.white; clip = saved.clip; textRenderingMode = saved.mode
             textClip = saved.textClip; coverClip = saved.coverClip; text = saved.text; appearance = saved.appearance
+            lineWidth = saved.lineWidth
         }
         /// Records an opaque paint over `rect` (already in page space), if nothing can make it
         /// translucent or conditional.
@@ -281,9 +286,23 @@ enum GraphicsReader {
             textOffset = 0
             positioned = true; chainStart = nil
         }
-        func paint(filled: Bool = false) {
+        /// A stroke's ink reaches half its width past its path, which the footprint's two-point
+        /// padding holds for an ordinary rule. A straight horizontal or vertical stroke wider than
+        /// that is a band, filled as a rectangle would be: NOAA sets its box and Key Message titles
+        /// on 20-point strokes (page 40), which read as thin rules through the titles and took them
+        /// into crops (#200). Its footprint is the band, the stroke's butt ends adding nothing along
+        /// it; it is no frame, so a band behind a title is judged as title art. Any other stroke
+        /// keeps its padded path.
+        func paint(filled: Bool = false, stroked: Bool = false) {
             defer { finishPath() }
             guard accept(), !path.isNull else { return }
+            let half = stroked ? lineWidth * sqrt(abs(matrix.a * matrix.d - matrix.b * matrix.c)) / 2 : 0
+            if half.isFinite, half > 2, !pathIsRectangles, pathAxisAligned, (path.width == 0) != (path.height == 0) {
+                let band = path.insetBy(dx: path.width == 0 ? -half : 0, dy: path.height == 0 ? -half : 0)
+                guard let shown = visible(band) else { return }
+                add(shown, frame: false, filled: true, band: true)
+                return
+            }
             guard let shown = visible(path.insetBy(dx: -2, dy: -2)) else { return }
             add(shown, frame: pathIsRectangles && figureDepth == 0, filled: filled)
         }
@@ -296,8 +315,8 @@ enum GraphicsReader {
             let shown = rect.intersection(clip)
             return shown.isNull || shown.isEmpty ? nil : shown
         }
-        func add(_ rect: CGRect, frame: Bool = false, image: Bool = false, filled: Bool = false) {
-            if paints.count < 10_000 { paints.append(Paint(rect: rect, frame: frame, image: image, filled: filled)) }
+        func add(_ rect: CGRect, frame: Bool = false, image: Bool = false, filled: Bool = false, band: Bool = false) {
+            if paints.count < 10_000 { paints.append(Paint(rect: rect, frame: frame, image: image, filled: filled, band: band)) }
             else { unsupported = true }
         }
     }
@@ -410,17 +429,21 @@ enum GraphicsReader {
             if !Self.axisAligned(s.matrix) { s.pathAxisAligned = false }
         }
         for op in ["S", "s"] {
-            CGPDFOperatorTableSetCallback(table, op) { _, info in Self.state(info).paint() }
+            CGPDFOperatorTableSetCallback(table, op) { _, info in Self.state(info).paint(stroked: true) }
         }
         for op in ["b", "b*"] {
-            CGPDFOperatorTableSetCallback(table, op) { _, info in Self.state(info).paint(filled: true) }
+            CGPDFOperatorTableSetCallback(table, op) { _, info in Self.state(info).paint(filled: true, stroked: true) }
         }
         for op in ["B", "B*"] {
             CGPDFOperatorTableSetCallback(table, op) { _, info in
                 let s = Self.state(info)
                 s.coverFill()
-                s.paint(filled: true)
+                s.paint(filled: true, stroked: true)
             }
+        }
+        CGPDFOperatorTableSetCallback(table, "w") { scanner, info in
+            let s = Self.state(info)
+            if let width = Self.numbers(scanner, 1)?.first, width.isFinite, width >= 0 { s.lineWidth = width }
         }
         for op in ["f", "F", "f*"] {
             CGPDFOperatorTableSetCallback(table, op) { _, info in
@@ -592,7 +615,7 @@ enum GraphicsReader {
         let paints = s.paints.compactMap { paint -> Paint? in
             let visible = paint.rect.intersection(bounds)
             return visible.isNull ? nil : Paint(rect: visible, frame: paint.frame, image: paint.image,
-                                                filled: paint.filled, grouped: paint.grouped)
+                                                filled: paint.filled, grouped: paint.grouped, band: paint.band)
         }
         return Result(regions: clusters(paints.map(\.rect), distance: 4), paints: paints,
                       unsupported: s.unsupported, hasOnlyInvisibleText: !s.unsupported && s.invisibleText && !s.visibleText,

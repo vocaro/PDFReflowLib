@@ -30,13 +30,15 @@ private func scanImage(_ lines: [String]) throws -> CGImage {
     small.setFillColor(CGColor(gray: 1, alpha: 1))
     small.fill(CGRect(x: 0, y: 0, width: width, height: height))
     small.scaleBy(x: scale, y: scale)
-    let font = CTFontCreateWithName("Times New Roman" as CFString, 30, nil)
-    for (index, line) in lines.enumerated() {
-        let text = NSAttributedString(string: line, attributes: [
-            NSAttributedString.Key(kCTFontAttributeName as String): font,
-            NSAttributedString.Key(kCTForegroundColorAttributeName as String): CGColor(gray: 0, alpha: 1)])
-        small.textPosition = CGPoint(x: 120, y: CGFloat(height - 200 - index * 52))
-        CTLineDraw(CTLineCreateWithAttributedString(text), small)
+    pdfKitGated {
+        let font = CTFontCreateWithName("Times New Roman" as CFString, 30, nil)
+        for (index, line) in lines.enumerated() {
+            let text = NSAttributedString(string: line, attributes: [
+                NSAttributedString.Key(kCTFontAttributeName as String): font,
+                NSAttributedString.Key(kCTForegroundColorAttributeName as String): CGColor(gray: 0, alpha: 1)])
+            small.textPosition = CGPoint(x: 120, y: CGFloat(height - 200 - index * 52))
+            CTLineDraw(CTLineCreateWithAttributedString(text), small)
+        }
     }
     let big = try #require(CGContext(data: nil, width: width, height: height, bitsPerComponent: 8, bytesPerRow: 0,
                                      space: space, bitmapInfo: info))

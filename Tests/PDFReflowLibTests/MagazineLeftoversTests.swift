@@ -166,9 +166,10 @@ private let credit = "BT /F2 6 Tf 36.08 761.19 Td (BRAD FRITZ \\(D2697-1\\)) Tj 
     for phrase in ["5601 Sunnyside Ave.", "Official Business", "Visit us at ars.usda.gov/ar ● Follow us at twitter.com/USDA_ARS"] {
         #expect(texts.contains { $0.contains(phrase) }, "\(phrase) in \(texts)")
     }
-    // Control: measured against the page's own 8-point estimate, as before, they are headings.
+    // Control: measured against the page's own 8-point estimate, as before, they are headings. The
+    // return address reads as one, its logo no longer between its lines (#201).
     let before = headings(reflow(page))
-    #expect(before.contains("Official Business") && before.contains("5601 Sunnyside Ave."), "\(before)")
+    #expect(before.contains("Official Business") && before.contains { $0.contains("5601 Sunnyside Ave.") }, "\(before)")
 }
 
 @Test func theDocumentsBodyDoesNotLowerAPageThatStatesItsOwn() {

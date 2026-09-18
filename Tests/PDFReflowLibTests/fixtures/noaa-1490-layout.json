@@ -1,0 +1,1554 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        54,
+        767.47000000000003,
+        155.60000000000005,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Fifth National Climate Assessment"
+        }
+      ],
+      "text" : "Fifth National Climate Assessment"
+    },
+    {
+      "rect" : [
+        51.279998779000003,
+        16.990000000000002,
+        206.19300000000001,
+        13.27
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "30-6 | Hawai‘i and US-Affiliated Pacific Islands"
+        }
+      ],
+      "text" : "30-6 | Hawai‘i and US-Affiliated Pacific Islands"
+    },
+    {
+      "rect" : [
+        54,
+        717.58000000000004,
+        109.47200000763999,
+        26.539999999999964
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 20,
+          "text" : "Introduction"
+        }
+      ],
+      "text" : "Introduction"
+    },
+    {
+      "rect" : [
+        54,
+        697.15999999999997,
+        468.0538998410002,
+        13.980000000000018
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "italic" : true,
+          "text" : "Moananuiākea"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", Hawaiian for the Pacific Ocean, connects a diverse group of island peoples who share"
+        }
+      ],
+      "text" : "Moananuiākea, Hawaiian for the Pacific Ocean, connects a diverse group of island peoples who share"
+    },
+    {
+      "rect" : [
+        54,
+        683.28999999999996,
+        490.43299999236012,
+        13.850000000000023
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "reciprocal and spiritual relationships with the lands, waters, natural resources, and cultures of the region."
+        }
+      ],
+      "text" : "reciprocal and spiritual relationships with the lands, waters, natural resources, and cultures of the region."
+    },
+    {
+      "rect" : [
+        54,
+        669.28999999999996,
+        485.67399658199997,
+        13.850000000000023
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Indigenous Knowledge systems derived from thousands of years of stewardship and underlying observa-"
+        }
+      ],
+      "text" : "Indigenous Knowledge systems derived from thousands of years of stewardship and underlying observa-"
+    },
+    {
+      "rect" : [
+        54,
+        655.28999999999996,
+        485.80619506799997,
+        13.850000000000023
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "tions have sustained Pacific Islanders, as evidenced in the cultural practices of seafaring,"
+        },
+        {
+          "baselineOffset" : 3.3300170889999663,
+          "fontName" : "Helvetica",
+          "fontSize" : 5.8300000000000001,
+          "text" : "1"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : " canoe building,"
+        }
+      ],
+      "text" : "tions have sustained Pacific Islanders, as evidenced in the cultural practices of seafaring,1 canoe building,"
+    },
+    {
+      "rect" : [
+        54,
+        641.28999999999996,
+        491.14928588800001,
+        13.850000000000023
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "agroforestry (a farming system that includes trees),"
+        },
+        {
+          "baselineOffset" : 3.3300170889999663,
+          "fontName" : "Helvetica",
+          "fontSize" : 5.8300000000000001,
+          "text" : "2,3,4,5"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : " harvesting fish and other marine life,"
+        },
+        {
+          "baselineOffset" : 3.3300170889999663,
+          "fontName" : "Helvetica",
+          "fontSize" : 5.8300000000000001,
+          "text" : "6,7,8"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : " traditional"
+        }
+      ],
+      "text" : "agroforestry (a farming system that includes trees),2,3,4,5 harvesting fish and other marine life,6,7,8 traditional"
+    },
+    {
+      "rect" : [
+        54,
+        627.28999999999996,
+        153.630153759,
+        13.850000000000023
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "medicine,"
+        },
+        {
+          "baselineOffset" : 3.3300170889999663,
+          "fontName" : "Helvetica",
+          "fontSize" : 5.8300000000000001,
+          "text" : "9"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : " and managing water."
+        },
+        {
+          "baselineOffset" : 3.3300170889999663,
+          "fontName" : "Helvetica",
+          "fontSize" : 5.8300000000000001,
+          "text" : "10"
+        }
+      ],
+      "text" : "medicine,9 and managing water.10"
+    },
+    {
+      "rect" : [
+        54,
+        603.92999999999995,
+        500.07779931600021,
+        14.210000000000036
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "The Pacific Islands region is defined here as Hawaiʻi and the US-Affiliated Pacific Islands (USAPI). The USAPI"
+        }
+      ],
+      "text" : "The Pacific Islands region is defined here as Hawaiʻi and the US-Affiliated Pacific Islands (USAPI). The USAPI"
+    },
+    {
+      "rect" : [
+        54,
+        590.28999999999996,
+        486.99400001143999,
+        13.850000000000023
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "comprises the Commonwealth of the Northern Mariana Islands (CNMI); the unincorporated territories of"
+        }
+      ],
+      "text" : "comprises the Commonwealth of the Northern Mariana Islands (CNMI); the unincorporated territories of"
+    },
+    {
+      "rect" : [
+        54,
+        576.28999999999996,
+        483.20300001525993,
+        13.850000000000023
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "American Sāmoa, Guam, and the Pacific Remote Islands (PRI); and the Freely Associated States (FAS): the"
+        }
+      ],
+      "text" : "American Sāmoa, Guam, and the Pacific Remote Islands (PRI); and the Freely Associated States (FAS): the"
+    },
+    {
+      "rect" : [
+        54,
+        562.28999999999996,
+        495.97200000190992,
+        13.850000000000023
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Federated States of Micronesia (FSM), the Republic of the Marshall Islands (RMI), and the Republic of Palau."
+        }
+      ],
+      "text" : "Federated States of Micronesia (FSM), the Republic of the Marshall Islands (RMI), and the Republic of Palau."
+    },
+    {
+      "rect" : [
+        54,
+        548.28999999999996,
+        470.34400000190976,
+        13.850000000000023
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "The region spans a vast geography and encompasses over 2,000 islands, ranging from small low-lying"
+        }
+      ],
+      "text" : "The region spans a vast geography and encompasses over 2,000 islands, ranging from small low-lying"
+    },
+    {
+      "rect" : [
+        54,
+        534.28999999999996,
+        483.07299999809015,
+        13.850000000000023
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "atolls to large volcanic islands, with the highest peak rising to 13,803 feet (Figures 30.1, 30.2). Marine and"
+        }
+      ],
+      "text" : "atolls to large volcanic islands, with the highest peak rising to 13,803 feet (Figures 30.1, 30.2). Marine and"
+    },
+    {
+      "rect" : [
+        54,
+        520.28999999999996,
+        481.29399999999998,
+        13.850000000000023
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "terrestrial biodiversity and species endemism are exceptionally high. These islands (excluding FAS) total"
+        }
+      ],
+      "text" : "terrestrial biodiversity and species endemism are exceptionally high. These islands (excluding FAS) total"
+    },
+    {
+      "rect" : [
+        54,
+        506.29000000000002,
+        499.98300000191023,
+        13.849999999999966
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "only 14,060 square miles in land area but define nearly half (47.2%) of the entire US exclusive economic zone"
+        }
+      ],
+      "text" : "only 14,060 square miles in land area but define nearly half (47.2%) of the entire US exclusive economic zone"
+    },
+    {
+      "rect" : [
+        54,
+        492.29000000000002,
+        495.45299999426993,
+        13.850000000000023
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "(EEZ). The islands also support more than two dozen defense installations key to US security, including the"
+        }
+      ],
+      "text" : "(EEZ). The islands also support more than two dozen defense installations key to US security, including the"
+    },
+    {
+      "rect" : [
+        54,
+        478.29000000000002,
+        487.57400000191001,
+        13.850000000000023
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "headquarters for the US Indo-Pacific Command. As a consequence of colonization, the lands, waters, and"
+        }
+      ],
+      "text" : "headquarters for the US Indo-Pacific Command. As a consequence of colonization, the lands, waters, and"
+    },
+    {
+      "rect" : [
+        54,
+        464.29000000000002,
+        494.90721191399996,
+        13.850000000000023
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "peoples of the Pacific Islands were significantly involved in World War II,"
+        },
+        {
+          "baselineOffset" : 3.3299865719999957,
+          "fontName" : "Helvetica",
+          "fontSize" : 5.8300000000000001,
+          "text" : "11"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : " resulting in widespread environ-"
+        }
+      ],
+      "text" : "peoples of the Pacific Islands were significantly involved in World War II,11 resulting in widespread environ-"
+    },
+    {
+      "rect" : [
+        54,
+        450.29000000000002,
+        419.94830569300001,
+        13.850000000000023
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "mental devastation, displacement of Indigenous Peoples, and nuclear weapons testing."
+        },
+        {
+          "baselineOffset" : 3.3299865719999957,
+          "fontName" : "Helvetica",
+          "fontSize" : 5.8300000000000001,
+          "text" : "12,13,14"
+        }
+      ],
+      "text" : "mental devastation, displacement of Indigenous Peoples, and nuclear weapons testing.12,13,14"
+    },
+    {
+      "rect" : [
+        54,
+        427.29000000000002,
+        495.75300000190987,
+        13.850000000000023
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "The 1.9 million people who call the region home are predominantly (more than 77%) Pacific Islanders, many"
+        }
+      ],
+      "text" : "The 1.9 million people who call the region home are predominantly (more than 77%) Pacific Islanders, many"
+    },
+    {
+      "rect" : [
+        54,
+        413.29000000000002,
+        484.85400001526,
+        13.850000000000023
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "of whom are Indigenous Peoples (CHamoru, Chuukese, Kosraean, Marshallese, Native Hawaiian, Palauan,"
+        }
+      ],
+      "text" : "of whom are Indigenous Peoples (CHamoru, Chuukese, Kosraean, Marshallese, Native Hawaiian, Palauan,"
+    },
+    {
+      "rect" : [
+        54,
+        399.29000000000002,
+        489.15719604399999,
+        13.850000000000023
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Pohnpeian, Samoan, Yapese, and others)—who speak more than 20 Indigenous languages"
+        },
+        {
+          "baselineOffset" : 3.3299865719999957,
+          "fontName" : "Helvetica",
+          "fontSize" : 5.8300000000000001,
+          "text" : "15"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "—and members"
+        }
+      ],
+      "text" : "Pohnpeian, Samoan, Yapese, and others)—who speak more than 20 Indigenous languages15—and members"
+    },
+    {
+      "rect" : [
+        54,
+        384.93000000000001,
+        468.50831054599996,
+        14.210000000000036
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "of diverse communities of Asian heritage. Population is declining on all islands (except Hawaiʻi) and is"
+        }
+      ],
+      "text" : "of diverse communities of Asian heritage. Population is declining on all islands (except Hawaiʻi) and is"
+    },
+    {
+      "rect" : [
+        54,
+        371.29000000000002,
+        485.90709350118004,
+        13.850000000000023
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "increasingly urban."
+        },
+        {
+          "baselineOffset" : 3.3299865719999957,
+          "fontName" : "Helvetica",
+          "fontSize" : 5.8300000000000001,
+          "text" : "16,17,18,19,20,21,22"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : " Important economic sectors include tourism, agriculture, and fishing, with"
+        }
+      ],
+      "text" : "increasingly urban.16,17,18,19,20,21,22 Important economic sectors include tourism, agriculture, and fishing, with"
+    },
+    {
+      "rect" : [
+        54,
+        357.29000000000002,
+        478.32499999617994,
+        13.850000000000023
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "government assistance, foreign direct investment, and remittances as major sources of capital. Average"
+        }
+      ],
+      "text" : "government assistance, foreign direct investment, and remittances as major sources of capital. Average"
+    },
+    {
+      "rect" : [
+        54,
+        342.93000000000001,
+        488.99228292900011,
+        14.210000000000036
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "per capita income ranges from a high of 124% above the US average in Hawaiʻi to 4%–20% in the FAS."
+        },
+        {
+          "baselineOffset" : 3.3299865719999957,
+          "fontName" : "Helvetica",
+          "fontSize" : 5.8300000000000001,
+          "text" : "22,23,24"
+        }
+      ],
+      "text" : "per capita income ranges from a high of 124% above the US average in Hawaiʻi to 4%–20% in the FAS.22,23,24"
+    },
+    {
+      "rect" : [
+        54,
+        329.29000000000002,
+        493.18400000190991,
+        13.850000000000023
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Governance arrangements across the islands vary, but all share histories of colonization that contribute to"
+        }
+      ],
+      "text" : "Governance arrangements across the islands vary, but all share histories of colonization that contribute to"
+    },
+    {
+      "rect" : [
+        54,
+        315.29000000000002,
+        496.59299999617997,
+        13.850000000000023
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "structural inequities and vulnerabilities that exacerbate the social and economic impacts of climate change"
+        }
+      ],
+      "text" : "structural inequities and vulnerabilities that exacerbate the social and economic impacts of climate change"
+    },
+    {
+      "rect" : [
+        54,
+        301.29000000000002,
+        59.288402270000006,
+        13.850000000000023
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "(Box 30.1)."
+        },
+        {
+          "baselineOffset" : 3.3299865719999957,
+          "fontName" : "Helvetica",
+          "fontSize" : 5.8300000000000001,
+          "text" : "14,25"
+        }
+      ],
+      "text" : "(Box 30.1).14,25"
+    },
+    {
+      "rect" : [
+        54,
+        258.20600000000002,
+        379.17180000534796,
+        18.577999999999975
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 14,
+          "text" : "Box 30.1. Historical Under-Resourcing Results in Continuing"
+        }
+      ],
+      "text" : "Box 30.1. Historical Under-Resourcing Results in Continuing"
+    },
+    {
+      "rect" : [
+        54,
+        243.20599999999999,
+        398.39520000267396,
+        18.578000000000003
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 14,
+          "text" : "Data Inequities for the Pacific Islands Region and US Caribbean"
+        }
+      ],
+      "text" : "Data Inequities for the Pacific Islands Region and US Caribbean"
+    },
+    {
+      "rect" : [
+        63,
+        219.06100000000001,
+        478.98900000859499,
+        11.943000000000012
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "The Pacific Islands region and the US Caribbean continue to face similar climate change–related challenges (Ch. 23; see"
+        }
+      ],
+      "text" : "The Pacific Islands region and the US Caribbean continue to face similar climate change–related challenges (Ch. 23; see"
+    },
+    {
+      "rect" : [
+        63,
+        207.06100000000001,
+        481.50939062499992,
+        11.943000000000012
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "Keener et al. 2018"
+        },
+        {
+          "baselineOffset" : 2.9969940180000094,
+          "fontName" : "Helvetica",
+          "fontSize" : 5.2469999999999999,
+          "text" : "26"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "), including geographic isolation and reliance on imports, critical dependence on local natural resourc-"
+        }
+      ],
+      "text" : "Keener et al. 201826), including geographic isolation and reliance on imports, critical dependence on local natural resourc-"
+    },
+    {
+      "rect" : [
+        63,
+        195.06100000000001,
+        474.04350000343766,
+        11.943000000000012
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "es (fresh water, fisheries), and vulnerabilities to drought, sea level rise (SLR), and natural disasters. Missing data in both"
+        }
+      ],
+      "text" : "es (fresh water, fisheries), and vulnerabilities to drought, sea level rise (SLR), and natural disasters. Missing data in both"
+    },
+    {
+      "rect" : [
+        63,
+        183.06100000000001,
+        473.59440000343795,
+        11.943000000000012
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "regions is representative of ongoing exclusion in data collection efforts and perpetuates historical social injustices that"
+        }
+      ],
+      "text" : "regions is representative of ongoing exclusion in data collection efforts and perpetuates historical social injustices that"
+    },
+    {
+      "rect" : [
+        63,
+        171.06100000000001,
+        462.63240000687586,
+        11.943000000000012
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "are reinforced by colonial and postcolonial governance systems (KM 31.2). In the Pacific Islands, this has resulted in"
+        }
+      ],
+      "text" : "are reinforced by colonial and postcolonial governance systems (KM 31.2). In the Pacific Islands, this has resulted in"
+    },
+    {
+      "rect" : [
+        63,
+        159.06100000000001,
+        482.07780000343814,
+        11.943000000000012
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "sparse and discontinuous climate data records, the absence of coastal flood hazard modeling and detailed SLR exposure"
+        }
+      ],
+      "text" : "sparse and discontinuous climate data records, the absence of coastal flood hazard modeling and detailed SLR exposure"
+    },
+    {
+      "rect" : [
+        63,
+        147.06100000000001,
+        472.44402197200009,
+        11.943000000000012
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "mapping for most islands, a lack of downscaled future climate projections in most locations (App. 3), insufficient infor-"
+        }
+      ],
+      "text" : "mapping for most islands, a lack of downscaled future climate projections in most locations (App. 3), insufficient infor-"
+    },
+    {
+      "rect" : [
+        63,
+        135.06100000000001,
+        475.665414306,
+        11.943000000000012
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "mation about groundwater and surface water resources, and limited data on ecosystem response."
+        },
+        {
+          "baselineOffset" : 2.9969940180000094,
+          "fontName" : "Helvetica",
+          "fontSize" : 5.2469999999999999,
+          "text" : "15,27,28,29,30"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : " Similar gaps"
+        }
+      ],
+      "text" : "mation about groundwater and surface water resources, and limited data on ecosystem response.15,27,28,29,30 Similar gaps"
+    },
+    {
+      "rect" : [
+        63,
+        123.06100000000001,
+        477.757800006867,
+        11.943000000000012
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "are apparent in socioeconomic and health data: for example, on migration and health outcomes, including morbidity and"
+        }
+      ],
+      "text" : "are apparent in socioeconomic and health data: for example, on migration and health outcomes, including morbidity and"
+    },
+    {
+      "rect" : [
+        63,
+        111.06100000000001,
+        480.76449918699996,
+        11.942999999999998
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "mortality related to extreme weather events; food supply chain vulnerabilities; and resource-dependent livelihoods."
+        },
+        {
+          "baselineOffset" : 2.9970016470000047,
+          "fontName" : "Helvetica",
+          "fontSize" : 5.2469999999999999,
+          "text" : "31,32,33,34"
+        }
+      ],
+      "text" : "mortality related to extreme weather events; food supply chain vulnerabilities; and resource-dependent livelihoods.31,32,33,34"
+    },
+    {
+      "rect" : [
+        63,
+        99.061000000000007,
+        469.31399999999985,
+        11.942999999999998
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "Indigenous Knowledge systems and stewardship are foundational in responding to climate change, but generations of"
+        }
+      ],
+      "text" : "Indigenous Knowledge systems and stewardship are foundational in responding to climate change, but generations of"
+    },
+    {
+      "rect" : [
+        63,
+        87.061000000000007,
+        484.24327734300005,
+        11.942999999999998
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "knowledge have been undervalued, suppressed, and ignored by Western science and were only recently recognized as val-"
+        }
+      ],
+      "text" : "knowledge have been undervalued, suppressed, and ignored by Western science and were only recently recognized as val-"
+    },
+    {
+      "rect" : [
+        63,
+        75.061000000000007,
+        482.94369433843804,
+        11.942999999999998
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "id knowledge sources at the federal level."
+        },
+        {
+          "baselineOffset" : 2.9970016470000047,
+          "fontName" : "Helvetica",
+          "fontSize" : 5.2469999999999999,
+          "text" : "35,36,37"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : " This lack of climate-relevant data is evident throughout NCA5. Filling these"
+        }
+      ],
+      "text" : "id knowledge sources at the federal level.35,36,37 This lack of climate-relevant data is evident throughout NCA5. Filling these"
+    },
+    {
+      "rect" : [
+        63,
+        63.061,
+        406.10070000343808,
+        11.943000000000005
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "data gaps could better enable data-driven decision-making and improve climate services in the region."
+        }
+      ],
+      "text" : "data gaps could better enable data-driven decision-making and improve climate services in the region."
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    612,
+    792
+  ],
+  "caseID" : "noaa-nca5-2023",
+  "graphics" : [
+    [
+      7,
+      52.25,
+      553,
+      235.75
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        767.47000000000003,
+        155.60000000000005,
+        13.269999999999982
+      ],
+      "text" : "Fifth National Climate Assessment"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        51.279998779000003,
+        16.990000000000002,
+        206.19300000000001,
+        13.27
+      ],
+      "text" : "30-6 | Hawai‘i and US-Affiliated Pacific Islands"
+    },
+    {
+      "fontSize" : 20,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        717.58000000000004,
+        109.47200000763999,
+        26.539999999999964
+      ],
+      "text" : "Introduction"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        697.15999999999997,
+        468.0538998410002,
+        13.980000000000018
+      ],
+      "text" : "Moananuiākea, Hawaiian for the Pacific Ocean, connects a diverse group of island peoples who share"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        683.28999999999996,
+        490.43299999236012,
+        13.850000000000023
+      ],
+      "text" : "reciprocal and spiritual relationships with the lands, waters, natural resources, and cultures of the region."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        669.28999999999996,
+        485.67399658199997,
+        13.850000000000023
+      ],
+      "text" : "Indigenous Knowledge systems derived from thousands of years of stewardship and underlying observa-"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        655.28999999999996,
+        485.80619506799997,
+        13.850000000000023
+      ],
+      "text" : "tions have sustained Pacific Islanders, as evidenced in the cultural practices of seafaring,1 canoe building,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        641.28999999999996,
+        491.14928588800001,
+        13.850000000000023
+      ],
+      "text" : "agroforestry (a farming system that includes trees),2,3,4,5 harvesting fish and other marine life,6,7,8 traditional"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        627.28999999999996,
+        153.630153759,
+        13.850000000000023
+      ],
+      "text" : "medicine,9 and managing water.10"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        603.92999999999995,
+        500.07779931600021,
+        14.210000000000036
+      ],
+      "text" : "The Pacific Islands region is defined here as Hawaiʻi and the US-Affiliated Pacific Islands (USAPI). The USAPI"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        590.28999999999996,
+        486.99400001143999,
+        13.850000000000023
+      ],
+      "text" : "comprises the Commonwealth of the Northern Mariana Islands (CNMI); the unincorporated territories of"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        576.28999999999996,
+        483.20300001525993,
+        13.850000000000023
+      ],
+      "text" : "American Sāmoa, Guam, and the Pacific Remote Islands (PRI); and the Freely Associated States (FAS): the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        562.28999999999996,
+        495.97200000190992,
+        13.850000000000023
+      ],
+      "text" : "Federated States of Micronesia (FSM), the Republic of the Marshall Islands (RMI), and the Republic of Palau."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        548.28999999999996,
+        470.34400000190976,
+        13.850000000000023
+      ],
+      "text" : "The region spans a vast geography and encompasses over 2,000 islands, ranging from small low-lying"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        534.28999999999996,
+        483.07299999809015,
+        13.850000000000023
+      ],
+      "text" : "atolls to large volcanic islands, with the highest peak rising to 13,803 feet (Figures 30.1, 30.2). Marine and"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        520.28999999999996,
+        481.29399999999998,
+        13.850000000000023
+      ],
+      "text" : "terrestrial biodiversity and species endemism are exceptionally high. These islands (excluding FAS) total"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        506.29000000000002,
+        499.98300000191023,
+        13.849999999999966
+      ],
+      "text" : "only 14,060 square miles in land area but define nearly half (47.2%) of the entire US exclusive economic zone"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        492.29000000000002,
+        495.45299999426993,
+        13.850000000000023
+      ],
+      "text" : "(EEZ). The islands also support more than two dozen defense installations key to US security, including the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        478.29000000000002,
+        487.57400000191001,
+        13.850000000000023
+      ],
+      "text" : "headquarters for the US Indo-Pacific Command. As a consequence of colonization, the lands, waters, and"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        464.29000000000002,
+        494.90721191399996,
+        13.850000000000023
+      ],
+      "text" : "peoples of the Pacific Islands were significantly involved in World War II,11 resulting in widespread environ-"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        450.29000000000002,
+        419.94830569300001,
+        13.850000000000023
+      ],
+      "text" : "mental devastation, displacement of Indigenous Peoples, and nuclear weapons testing.12,13,14"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        427.29000000000002,
+        495.75300000190987,
+        13.850000000000023
+      ],
+      "text" : "The 1.9 million people who call the region home are predominantly (more than 77%) Pacific Islanders, many"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        413.29000000000002,
+        484.85400001526,
+        13.850000000000023
+      ],
+      "text" : "of whom are Indigenous Peoples (CHamoru, Chuukese, Kosraean, Marshallese, Native Hawaiian, Palauan,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        399.29000000000002,
+        489.15719604399999,
+        13.850000000000023
+      ],
+      "text" : "Pohnpeian, Samoan, Yapese, and others)—who speak more than 20 Indigenous languages15—and members"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        384.93000000000001,
+        468.50831054599996,
+        14.210000000000036
+      ],
+      "text" : "of diverse communities of Asian heritage. Population is declining on all islands (except Hawaiʻi) and is"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        371.29000000000002,
+        485.90709350118004,
+        13.850000000000023
+      ],
+      "text" : "increasingly urban.16,17,18,19,20,21,22 Important economic sectors include tourism, agriculture, and fishing, with"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        357.29000000000002,
+        478.32499999617994,
+        13.850000000000023
+      ],
+      "text" : "government assistance, foreign direct investment, and remittances as major sources of capital. Average"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        342.93000000000001,
+        488.99228292900011,
+        14.210000000000036
+      ],
+      "text" : "per capita income ranges from a high of 124% above the US average in Hawaiʻi to 4%–20% in the FAS.22,23,24"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        329.29000000000002,
+        493.18400000190991,
+        13.850000000000023
+      ],
+      "text" : "Governance arrangements across the islands vary, but all share histories of colonization that contribute to"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        315.29000000000002,
+        496.59299999617997,
+        13.850000000000023
+      ],
+      "text" : "structural inequities and vulnerabilities that exacerbate the social and economic impacts of climate change"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        301.29000000000002,
+        59.288402270000006,
+        13.850000000000023
+      ],
+      "text" : "(Box 30.1).14,25"
+    },
+    {
+      "fontSize" : 14,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        258.20600000000002,
+        379.17180000534796,
+        18.577999999999975
+      ],
+      "text" : "Box 30.1. Historical Under-Resourcing Results in Continuing"
+    },
+    {
+      "fontSize" : 14,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        243.20599999999999,
+        398.39520000267396,
+        18.578000000000003
+      ],
+      "text" : "Data Inequities for the Pacific Islands Region and US Caribbean"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        63,
+        219.06100000000001,
+        478.98900000859499,
+        11.943000000000012
+      ],
+      "text" : "The Pacific Islands region and the US Caribbean continue to face similar climate change–related challenges (Ch. 23; see"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        63,
+        207.06100000000001,
+        481.50939062499992,
+        11.943000000000012
+      ],
+      "text" : "Keener et al. 201826), including geographic isolation and reliance on imports, critical dependence on local natural resourc-"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        63,
+        195.06100000000001,
+        474.04350000343766,
+        11.943000000000012
+      ],
+      "text" : "es (fresh water, fisheries), and vulnerabilities to drought, sea level rise (SLR), and natural disasters. Missing data in both"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        63,
+        183.06100000000001,
+        473.59440000343795,
+        11.943000000000012
+      ],
+      "text" : "regions is representative of ongoing exclusion in data collection efforts and perpetuates historical social injustices that"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        63,
+        171.06100000000001,
+        462.63240000687586,
+        11.943000000000012
+      ],
+      "text" : "are reinforced by colonial and postcolonial governance systems (KM 31.2). In the Pacific Islands, this has resulted in"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        63,
+        159.06100000000001,
+        482.07780000343814,
+        11.943000000000012
+      ],
+      "text" : "sparse and discontinuous climate data records, the absence of coastal flood hazard modeling and detailed SLR exposure"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        63,
+        147.06100000000001,
+        472.44402197200009,
+        11.943000000000012
+      ],
+      "text" : "mapping for most islands, a lack of downscaled future climate projections in most locations (App. 3), insufficient infor-"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        63,
+        135.06100000000001,
+        475.665414306,
+        11.943000000000012
+      ],
+      "text" : "mation about groundwater and surface water resources, and limited data on ecosystem response.15,27,28,29,30 Similar gaps"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        63,
+        123.06100000000001,
+        477.757800006867,
+        11.943000000000012
+      ],
+      "text" : "are apparent in socioeconomic and health data: for example, on migration and health outcomes, including morbidity and"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        63,
+        111.06100000000001,
+        480.76449918699996,
+        11.942999999999998
+      ],
+      "text" : "mortality related to extreme weather events; food supply chain vulnerabilities; and resource-dependent livelihoods.31,32,33,34"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        63,
+        99.061000000000007,
+        469.31399999999985,
+        11.942999999999998
+      ],
+      "text" : "Indigenous Knowledge systems and stewardship are foundational in responding to climate change, but generations of"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        63,
+        87.061000000000007,
+        484.24327734300005,
+        11.942999999999998
+      ],
+      "text" : "knowledge have been undervalued, suppressed, and ignored by Western science and were only recently recognized as val-"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        63,
+        75.061000000000007,
+        482.94369433843804,
+        11.942999999999998
+      ],
+      "text" : "id knowledge sources at the federal level.35,36,37 This lack of climate-relevant data is evident throughout NCA5. Filling these"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        63,
+        63.061,
+        406.10070000343808,
+        11.943000000000005
+      ],
+      "text" : "data gaps could better enable data-driven decision-making and improve climate services in the region."
+    }
+  ],
+  "page" : 1490,
+  "paints" : [
+    {
+      "band" : false,
+      "filled" : true,
+      "frame" : true,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        7,
+        239.70399474999999,
+        553,
+        29.596000000000004
+      ]
+    },
+    {
+      "band" : false,
+      "filled" : true,
+      "frame" : true,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        7,
+        259.5,
+        512.5,
+        28.5
+      ]
+    },
+    {
+      "band" : true,
+      "filled" : true,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        9,
+        256.739990234,
+        549,
+        20
+      ]
+    },
+    {
+      "band" : false,
+      "filled" : true,
+      "frame" : true,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        52,
+        52.25,
+        508,
+        191.5
+      ]
+    }
+  ],
+  "rightsBasis" : "NOAA repository explicitly identifies CC0 Public Domain. This records the publisher declaration, not a new owner-confirmed rights determination or shipped-catalog admission.",
+  "sourceSHA256" : "1942cbf346dc2c711fea413d6d6543edb8bc1e3a88d4c3a85e733c6b6d3577bf",
+  "sourceTitle" : "Fifth National Climate Assessment",
+  "sourceURL" : "https://repository.library.noaa.gov/view/noaa/61592/noaa_61592_DS1.pdf"
+}

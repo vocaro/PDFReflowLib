@@ -368,6 +368,10 @@ struct ReflowBlock: Sendable, Equatable {
         /// A page-bottom note; its own raised marker, when present, opens the text. Body
         /// prose is never placed in one, and a note is not linked to its reference.
         case footnote(InlineText)
+        /// A quotation set in display type apart from the running text (#201): a magazine's pull
+        /// quote, which the source prints over its own box and which heads nothing. Written as an
+        /// `aside` with DPUB-ARIA pull-quote semantics, outside the headings and the navigation.
+        case pullQuote(InlineText)
         case image(Image)
         case table(Table)
         case sourcePage(Int)
@@ -411,7 +415,7 @@ struct ReflowBlock: Sendable, Equatable {
     var text: String {
         switch content {
         case let .paragraph(text), let .heading(_, text, _): text.text
-        case let .preformatted(text), let .footnote(text): text.text
+        case let .preformatted(text), let .footnote(text), let .pullQuote(text): text.text
         case let .listItem(item): item.text.text
         case let .table(table): (table.caption.map(\.text) + table.rows.flatMap(\.cells).map(\.text.text)).joined(separator: " ")
         case .image, .sourcePage: ""
@@ -421,7 +425,7 @@ struct ReflowBlock: Sendable, Equatable {
         switch content {
         case let .paragraph(text), let .heading(_, text, _): text.sourcePages
         case let .sourcePage(page): [page]
-        case let .preformatted(text), let .footnote(text): text.sourcePages
+        case let .preformatted(text), let .footnote(text), let .pullQuote(text): text.sourcePages
         case let .listItem(item): item.text.sourcePages
         case let .table(table): table.caption.flatMap(\.sourcePages) + table.rows.flatMap(\.cells).flatMap(\.text.sourcePages)
         case .image: []
@@ -429,7 +433,7 @@ struct ReflowBlock: Sendable, Equatable {
     }
     var hasReflowedText: Bool {
         switch content {
-        case .paragraph, .heading, .preformatted, .listItem, .footnote, .table: true
+        case .paragraph, .heading, .preformatted, .listItem, .footnote, .pullQuote, .table: true
         case .image, .sourcePage: false
         }
     }

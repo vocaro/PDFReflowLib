@@ -44,7 +44,7 @@ private func preformatted(_ blocks: [ReflowBlock]) -> [String] {
 
     let page318 = paragraphs(try sourceBlocks("algebra-318"))
     let cycle = try #require(page318.first { $0.hasPrefix("With this definition, the square root of a negative number") })
-    #expect(cycle.contains("Then if we multiply both sides of the equation again by i, the equation becomes i4 =− i2 =− (− 1) = 1, or simply i4 = 1. Multiplying again by i gives i5 = i. One more time gives i6 = i2 =− 1. And if this pattern continues we see a cycle forming, the exponents on i change we cycle through simplified answers of i,− 1,− i, 1. As there are 4 diﬀerent possible answers in this cycle,"))
+    #expect(cycle.contains("Then if we multiply both sides of the equation again by i, the equation becomes i4 =− i2 =− (− 1) = 1, or simply i4 = 1. Multiplying again by i gives i5 = i. One more time gives i6 = i2 =− 1. And if this pattern continues we see a cycle forming, the exponents on i change we cycle through simplified answers of i,− 1,− i, 1. As there are 4 different possible answers in this cycle,"))
     #expect(cycle.hasSuffix("we can simplify any exponent on i by learning just the following four values:"))
     // The World View Note, set off by added space, still opens its own paragraphs (#71).
     #expect(page318.contains { $0.hasPrefix("World View Note: When mathematics was first used") && $0.hasSuffix("made up negative numbers when they found use for them.") })

@@ -92,7 +92,10 @@ struct SourceLayoutFixture: Decodable {
     }
     /// The page as extraction hands it to layout. With `paints`, tint removal runs as in the
     /// pipeline; `tinted: false` keeps every painted footprint as a crop seed, as before #54.
-    func content(tinted: Bool = true) -> PageContent {
+    /// Extraction ends by spelling ligatures out (#189), which fixtures captured before it do not
+    /// record, so each line is spelled out here as extraction would; `spelledOut: false` replays
+    /// the lines as captured.
+    func content(tinted: Bool = true, spelledOut: Bool = true) -> PageContent {
         func rect(_ values: [Double]) -> CGRect {
             precondition(values.count == 4)
             return CGRect(x: values[0], y: values[1], width: values[2], height: values[3])
@@ -102,6 +105,7 @@ struct SourceLayoutFixture: Decodable {
                                 monospaced: source.monospaced)
             line.structure = source.structure
             line.readingDirection = source.readingDirection.map { CGVector(dx: $0[0], dy: $0[1]) }
+            if spelledOut { line.spellOutLigatures() }
             return line
         }
         var page = PageContent(number: page, bounds: rect(bounds), lines: textLines, graphics: graphics.map(rect))
@@ -122,15 +126,19 @@ struct SourceLayoutFixture: Decodable {
 
     /// The page with each line's native style runs (emphasis, superscripts), as the
     /// converter extracts them; lines without a matching attributed selection stay plain.
-    func styledContent(fontWeights: Bool = true) -> PageContent {
-        var result = content()
+    func styledContent(fontWeights: Bool = true, spelledOut: Bool = true) -> PageContent {
+        var result = content(spelledOut: spelledOut)
+        // Attributed lines hold PDFKit's characters, ligatures included; they are matched and
+        // replayed spelled out as the line is.
+        func spelled(_ text: String) -> String { spelledOut ? InlineText.spellingOutLigatures(text) : text }
         let attributed = Dictionary(attributedLines.map {
-            ($0.text.trimmingCharacters(in: .whitespacesAndNewlines), $0)
+            (spelled($0.text.trimmingCharacters(in: .whitespacesAndNewlines)), $0)
         }, uniquingKeysWith: { first, _ in first })
         result.lines = result.lines.map { line in
             guard let match = attributed[line.text] else { return line }
             let attributedLine = match.attributedString(fontWeights: fontWeights)
-            let styled = NativeTextReader.inlineText(from: attributedLine)
+            var styled = NativeTextReader.inlineText(from: attributedLine)
+            if spelledOut { styled = styled.spellingOutLigatures() }
             guard styled.text == line.text else { return line }
             var copy = TextLine(content: styled, rect: line.rect, fontSize: line.fontSize, monospaced: line.monospaced)
             copy.structure = line.structure

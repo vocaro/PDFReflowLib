@@ -143,6 +143,7 @@ enum OCRReader {
         let lines: [TextLine] = recognition.lines.map { line in
             let rect = pageRect(line.box)
             var result = TextLine(text: line.text, rect: rect, fontSize: rect.height, wraps: line.wraps)
+            result.spellOutLigatures()
             if let edge = line.topEdge {
                 result.readingDirection = readingDirection(from: (0, 0), to: (Double(edge.dx), Double(edge.dy)), in: bounds)
             }

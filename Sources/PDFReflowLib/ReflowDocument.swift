@@ -119,6 +119,47 @@ struct InlineText: Sendable, Equatable, Codable {
 
     mutating func append(_ other: InlineText) { elements += other.elements }
 
+    /// The Latin typographic ligatures U+FB00–U+FB06.
+    static func isLigature(_ character: Character) -> Bool {
+        character.unicodeScalars.contains { (0xFB00...0xFB06).contains($0.value) }
+    }
+
+    /// Text with the Latin typographic ligatures U+FB00–U+FB06 written as the letters they join
+    /// (#189): `ﬀ ﬁ ﬂ ﬃ ﬄ ﬅ ﬆ` become `ff fi fl ffi ffl ſt st`, their Unicode compatibility
+    /// decompositions. A ligature is the font's business, not the text's: Wallace's EC fonts give
+    /// `ﬀ` and `ﬃ` their own code points, and a reading font without a glyph for them (Charter,
+    /// Times New Roman, Avenir Next, the system font) draws them from a fallback font, which a
+    /// reader saw as `Diﬀ erent`. The letters also search and speak as words. Nothing else of
+    /// Unicode compatibility mapping is applied: superscripts, fractions and full-width forms stay.
+    static func spellingOutLigatures<S: StringProtocol>(_ text: S) -> String {
+        // By scalar, so a ligature carrying a combining mark (`ﬁ́`) is spelled out too.
+        var result = String.UnicodeScalarView()
+        for scalar in text.unicodeScalars {
+            switch scalar.value {
+            case 0xFB00: result += "ff".unicodeScalars
+            case 0xFB01: result += "fi".unicodeScalars
+            case 0xFB02: result += "fl".unicodeScalars
+            case 0xFB03: result += "ffi".unicodeScalars
+            case 0xFB04: result += "ffl".unicodeScalars
+            case 0xFB05: result += "\u{017F}t".unicodeScalars
+            case 0xFB06: result += "st".unicodeScalars
+            default: result.append(scalar)
+            }
+        }
+        return String(result)
+    }
+
+    /// The same runs, styles and source-page boundaries, with each run's ligatures spelled out.
+    func spellingOutLigatures() -> InlineText {
+        InlineText(elements: elements.map {
+            switch $0 {
+            case let .text(value, style): .text(Self.spellingOutLigatures(value), style)
+            case let .noteReference(value, style, key): .noteReference(Self.spellingOutLigatures(value), style, key)
+            case .sourcePage: $0
+            }
+        })
+    }
+
     mutating func removeLastCharacter() {
         for index in elements.indices.reversed() {
             if case let .text(value, style) = elements[index], !value.isEmpty {

@@ -29,6 +29,12 @@ object graph or a serialized interchange file.
 `PageContent` is the spatial extraction representation. Each physical page contains bounds,
 positioned `TextLine` values, font sizes, monospaced/wrap hints, optional validated structure associations, graphic rectangles and fallback
 flags. A text line contains `InlineText`: raw Unicode text runs with bold, italic, maths italic, superscript and subscript style flags.
+The one exception to raw text is the Latin ligatures U+FB00–U+FB06, which extraction writes as the
+letters they join (`ﬀ` as `ff`, `ﬅ` as `ſt`; `InlineText.spellingOutLigatures`, #189). Native
+extraction does it as its last step, because the steps before it match line text to the page's
+shows, where a ligature is one character; recognized lines and the PDF's own title are spelled
+out too. So no rule and no writer sees a presentation form, and a reading font without one
+(Charter, Times New Roman, Avenir Next) never falls back to another font inside a word.
 Geometry remains in unrotated PDF page coordinates with a bottom-left origin. This stage retains
 the evidence needed to infer reading order, paragraphs, image crops and word joins.
 
@@ -517,8 +523,8 @@ word (an ending `s es d ed ing ly` taken off, a dropped `e` restored, and an end
 book words, with at least six letters in all (#115). Otherwise it is kept. The vocabulary skips the word that opens a lowercase line after a line-end hyphen
 or soft hyphen, because it is the rest of a broken word (`es-` + `timates.html`), unless it holds
 a hyphen of its own (`straight-` + `and-level`); the same letters seen anywhere else count (#101). A
-word printed with a Latin ligature (U+FB00–U+FB06) is recorded both as printed and spelled out, so
-Wallace's `diﬀerent` vouches for `dif-` + `ferent`; emitted text keeps its ligatures (#123). A slash after a letter, digit or slash before a letter or digit joins
+word printed with a Latin ligature (U+FB00–U+FB06) reaches the vocabulary spelled out, as all text
+does (#189), so Wallace's `diﬀerent` vouches for `dif-` + `ferent` (#123). A slash after a letter, digit or slash before a letter or digit joins
 (`runway/` + `taxiway`, #70). A break inside a web address joins (#79). The address is the run
 of URL characters ending the line: it has a scheme, starts with `www.` or opens with a domain
 and a slash, and holds a dot. It continues without a space after `_ = & ? # % ~` that follows a

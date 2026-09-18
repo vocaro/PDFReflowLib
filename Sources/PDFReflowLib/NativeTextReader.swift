@@ -87,6 +87,10 @@ enum NativeTextReader {
                 lines = try splitBorderlessTables(lines, ink: ink, on: page, includeStyle: includeStyle, weights: weights,
                                                   privateUse: privateUse)
             }
+            // Last, because every step above matches line text to the page's own characters and
+            // shows, where a ligature is one character (`NativeSpacingReader` reads the glyph `ff`
+            // as U+FB00, `GlyphIndexDecoder` index 27 too). From here on it is letters (#189).
+            for index in lines.indices { lines[index].spellOutLigatures() }
             return lines
         }
     }

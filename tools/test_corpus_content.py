@@ -92,6 +92,18 @@ class CorpusContentTests(unittest.TestCase):
         self.pages[2]['text'] += '\ufffc'
         self.assertFalse(self.check()['passed'])
 
+    def test_presentation_form_ligatures_fail_on_any_page(self):
+        # #189: every Latin ligature U+FB00-U+FB06 fails, on a page with or without expectations.
+        self.assertTrue(self.check()['passed'])
+        for ligature in '\ufb00\ufb01\ufb02\ufb03\ufb04\ufb05\ufb06':
+            pages = {1: dict(self.pages[1]), 2: dict(self.pages[2], text='omega di' + ligature + 'erent')}
+            result = self.check(pages=pages)
+            self.assertFalse(result['passed'])
+            self.assertIn('Presentation-form ligature', ' '.join(result['errors']))
+        # Controls: the spelled-out letters, the neighbouring code points and other compatibility forms pass.
+        for text in ('omega different', 'omega \ufaff \ufb07 \ufb13', 'omega x\u00b2 \u00bd \uff46 \u0133'):
+            self.assertTrue(self.check(pages={1: self.pages[1], 2: dict(self.pages[2], text=text)})['passed'], text)
+
     def test_furniture_absence_and_real_heading_semantics(self):
         self.contract['pages'][0].update(absentText=['RUNNING HEADER'], headings=['alpha beta'])
         self.pages[1]['headings'] = ['alpha beta']
@@ -425,6 +437,8 @@ class CorpusContentTests(unittest.TestCase):
     def test_manifest_contracts_have_pinned_sources_and_useful_checks(self):
         cases = {c['id']: c for c in json.loads((ROOT / 'corpus/manifest.json').read_text())['documents']}
         definitions = json.loads((ROOT / 'corpus/regressions.json').read_text())
+        # A phrase holding a presentation-form ligature could never be found (#189).
+        self.assertNotRegex(json.dumps(definitions, ensure_ascii=False), '[ﬀ-ﬆ]')
         ids = [c['id'] for c in definitions['cases']]
         self.assertEqual(len(ids), len(set(ids)))
         self.assertTrue(ids)

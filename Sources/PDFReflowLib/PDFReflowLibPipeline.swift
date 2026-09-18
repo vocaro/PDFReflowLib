@@ -107,7 +107,7 @@ enum PDFReflowLibPipeline {
     /// Whether lines form a numeric grid (#143): at least three rows, each holding at least two
     /// decimal numbers (`0.8861`, `158.950`) that make up at least half its words. Census's table rows
     /// (`rnkswp05 0.8861 0.9620`, `46.11 47.06 46.66 49.90 50.85 49.45`) qualify; its prose, numbered
-    /// fields (`12. Aged exemption ﬂag`) and references (`B, 39 (1977) 1–38.`) do not.
+    /// fields (`12. Aged exemption flag`) and references (`B, 39 (1977) 1–38.`) do not.
     static func holdsNumericGrid(_ lines: [TextLine]) -> Bool {
         let decimal = try! NSRegularExpression(pattern: #"^[-−+]?\d+\.\d+%?$"#)
         var rows = 0
@@ -714,7 +714,8 @@ enum PDFReflowLibPipeline {
             return candidate.number
         }
         noteLinks.rescopedPages = rescoped
-        let title = options.title ?? document.title
+        // The PDF's own title is extracted text too, so it is spelled out as the pages are (#189).
+        let title = options.title ?? document.title.map { InlineText.spellingOutLigatures($0) }
             ?? source.deletingPathExtension().lastPathComponent
         let reflowedDocument = ReflowDocument(metadata: .init(title: title.isEmpty ? "Untitled" : title,
             language: options.language, author: options.author), blocks: blocks, assets: assets,

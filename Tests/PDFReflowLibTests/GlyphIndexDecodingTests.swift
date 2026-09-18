@@ -241,6 +241,18 @@ private func key(of baseFont: String, in document: CGPDFDocument) throws -> Stri
     #expect(page12[0] == "Table 2. Domingo Data Reidentiﬁcation Rates")
     // Control: without established characters the shows do not decode and no space is read.
     #expect(try spaced(3, decodings: [:])[0] == "5GdwdIlohv")
+    // Spacing matches a line's characters to the decoded shows, where `ﬃ` is one character: a line
+    // spelled out before it no longer matches, and its word gaps are lost. So extraction spells
+    // ligatures out only after every such step (#189).
+    let index17 = try #require(source.pages.firstIndex { $0.page == 17 })
+    let lines17 = source.pages[index17].lines
+    let evidence17 = NativeSpacingReader.read(try #require(document.page(at: index17 + 1)), decodings: decodings)
+    let repaired17 = try repairedCensusLines(source.pages[index17], in: document, at: index17 + 1, decodings: decodings).lines
+    #expect(repaired17[30].contains("\u{FB03}"))
+    let spelledEarly = InlineText.spellingOutLigatures(repaired17[30])
+    #expect(NativeSpacingReader.apply(evidence17, to: NSAttributedString(string: spelledEarly), bounds: lines17[30].bounds,
+                                      allBounds: lines17.map(\.bounds)).string == spelledEarly)
+    #expect(InlineText.spellingOutLigatures(page17[30]) == "of Official Statistics, 9, (1993) 383–406.")
 }
 
 // MARK: - Rows PDFKit splits inside one show (#149)
@@ -329,8 +341,10 @@ private func joinedCensusRows(_ source: CensusSource, _ number: Int, in document
     let blocks = result.document.blocks.filter { $0.page == page }.map(\.text)
     #expect(blocks.contains { $0.hasPrefix("[2] Dalenius, T. and Reiss, S. P. Data-swapping:") }, "\(blocks)")
     // PDFKit reads this row whole in the rebuilt page; the captured split is `censusReferenceRowsThatOneShowSets…`'s.
-    #expect(blocks.contains { $0.hasPrefix("[ 12] Lambert, D.: Measures of Disclosure Risk and Harm, Journal of Oﬃcial Statistics, 9,") },
+    #expect(blocks.contains { $0.hasPrefix("[ 12] Lambert, D.: Measures of Disclosure Risk and Harm, Journal of Official Statistics, 9,") },
             "\(blocks)")
+    // The decoded Cork ligatures (`ﬃ`, index 30) reach the text as letters (#189).
+    #expect(!blocks.contains { $0.contains(where: InlineText.isLigature) }, "\(blocks)")
     // No reference number stands alone as a block.
     #expect(!blocks.contains { $0.range(of: #"^\[ ?\d+\]$"#, options: .regularExpression) != nil }, "\(blocks)")
 }

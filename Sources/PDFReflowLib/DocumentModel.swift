@@ -53,6 +53,14 @@ struct TextLine: Equatable {
         self.content = content
         text = content.text
     }
+
+    /// Writes the line's ligature characters as letters (`InlineText.spellingOutLigatures`, #189).
+    /// Extraction ends with this, native and recognized alike, so every rule after it and the
+    /// EPUB see letters only.
+    mutating func spellOutLigatures() {
+        guard text.contains(where: InlineText.isLigature) else { return }
+        replaceContent(content.spellingOutLigatures())
+    }
 }
 
 // Extracted pages can be held outside memory between the extraction and reconstruction

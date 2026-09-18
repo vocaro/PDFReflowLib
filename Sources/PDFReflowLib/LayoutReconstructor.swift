@@ -61,7 +61,6 @@ enum LayoutReconstructor {
             }
             for word in words {
                 vocabulary.insert(String(word))
-                if word.contains(where: isLigature) { vocabulary.insert(ligaturesSpelledOut(word)) }
             }
             addAddressVocabulary(of: line.text, to: &vocabulary)
             addNumberPrefixVocabulary(of: line.text, to: &vocabulary)
@@ -89,35 +88,6 @@ enum LayoutReconstructor {
         guard let previous, previous.hasSuffix("-") || previous.hasSuffix("\u{00ad}") || endsWithEqualsHyphen(previous),
               line.text.first?.isLowercase == true, let first, !first.contains("-") else { return false }
         return true
-    }
-
-    /// The Latin typographic ligatures U+FB00–U+FB06.
-    static func isLigature(_ character: Character) -> Bool {
-        character.unicodeScalars.contains { (0xFB00...0xFB06).contains($0.value) }
-    }
-
-    /// A vocabulary word with its ligatures spelled out (#123). Wallace prints `diﬀerent` with U+FB00
-    /// wherever the word is whole, while a line break extracts plain letters (`dif-` + `ferent`,
-    /// pages 50 and 218), so the book's own evidence for the join was never found and the hyphen
-    /// stayed with a warning. `addVocabulary` records a word holding a ligature both as printed
-    /// and spelled out, so the hyphen lookups are unchanged and a break inside a ligature word
-    /// (`oﬃ-` + `cial`) still finds the printed form. Only U+FB00–U+FB06 are spelled out, not the
-    /// rest of Unicode compatibility mapping (superscripts, fractions, full-width forms), and
-    /// emitted text keeps its ligatures.
-    static func ligaturesSpelledOut<S: StringProtocol>(_ word: S) -> String {
-        var result = ""
-        for character in word {
-            switch character {
-            case "\u{FB00}": result += "ff"
-            case "\u{FB01}": result += "fi"
-            case "\u{FB02}": result += "fl"
-            case "\u{FB03}": result += "ffi"
-            case "\u{FB04}": result += "ffl"
-            case "\u{FB05}", "\u{FB06}": result += "st"
-            default: result.append(character)
-            }
-        }
-        return result
     }
 
     /// A line whose last character may be a book's line-end hyphen printed as `=` (#126): the 9/11

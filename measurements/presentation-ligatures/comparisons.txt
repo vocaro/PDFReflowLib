@@ -1,0 +1,140 @@
+== wallace-algebra-2010 comparator exit 1
+   comparator passed=False provenanceErrors=0 changedPages=107 changedImages=0 navigationChanged=False changedReportFields=[] changedOCRPages=[] sameVisionPrograms=True pageMarkersEqual=True
+pages 489/489; text differs on 107 pages; differs beyond ligatures on 0 []; ligatures left in candidate text 0
+entries: text entries differing beyond ligatures 11 ['EPUB/chapter-10.xhtml', 'EPUB/chapter-11.xhtml', 'EPUB/chapter-12.xhtml', 'EPUB/chapter-13.xhtml', 'EPUB/chapter-2.xhtml', 'EPUB/chapter-3.xhtml', 'EPUB/chapter-7.xhtml', 'EPUB/chapter-8.xhtml']; other entries differing 0 []
+spine files 15/15; concatenated bodies equal after spelling out: True
+wallace-algebra-2010.epub 182 {'U+FB00': 139, 'U+FB03': 43}
+wallace-algebra-2010.epub 0 {}
+== census-rrs2002-01 comparator exit 1
+   comparator passed=False provenanceErrors=0 changedPages=2 changedImages=0 navigationChanged=False changedReportFields=[] changedOCRPages=[] sameVisionPrograms=True pageMarkersEqual=True
+pages 20/20; text differs on 2 pages; differs beyond ligatures on 0 []; ligatures left in candidate text 0
+entries: text entries differing beyond ligatures 1 ['EPUB/package.opf']; other entries differing 0 []
+spine files 1/1; concatenated bodies equal after spelling out: True
+census-rrs2002-01.epub 28 {'U+FB00': 1, 'U+FB01': 18, 'U+FB02': 5, 'U+FB03': 4}
+census-rrs2002-01.epub 0 {}
+== faa-phak-8083-25c comparator exit 0
+   comparator passed=True provenanceErrors=0 changedPages=0 changedImages=0 navigationChanged=False changedReportFields=[] changedOCRPages=[] sameVisionPrograms=True pageMarkersEqual=True
+pages 522/522; text differs on 0 pages; differs beyond ligatures on 0 []; ligatures left in candidate text 0
+entries: text entries differing beyond ligatures 1 ['EPUB/package.opf']; other entries differing 0 []
+spine files 33/33; concatenated bodies equal after spelling out: True
+faa-phak-8083-25c.epub 0 {}
+faa-phak-8083-25c.epub 0 {}
+== gpo-911-2004 comparator exit 0
+   comparator passed=True provenanceErrors=0 changedPages=0 changedImages=0 navigationChanged=False changedReportFields=[] changedOCRPages=[] sameVisionPrograms=True pageMarkersEqual=True
+pages 585/585; text differs on 0 pages; differs beyond ligatures on 0 []; ligatures left in candidate text 0
+entries: text entries differing beyond ligatures 1 ['EPUB/package.opf']; other entries differing 0 []
+spine files 42/42; concatenated bodies equal after spelling out: True
+gpo-911-2004.epub 0 {}
+gpo-911-2004.epub 0 {}
+== fed-explained-2021 comparator exit 0
+   comparator passed=True provenanceErrors=0 changedPages=0 changedImages=0 navigationChanged=False changedReportFields=[] changedOCRPages=[] sameVisionPrograms=True pageMarkersEqual=True
+pages 135/135; text differs on 0 pages; differs beyond ligatures on 0 []; ligatures left in candidate text 0
+entries: text entries differing beyond ligatures 1 ['EPUB/package.opf']; other entries differing 0 []
+spine files 6/6; concatenated bodies equal after spelling out: True
+fed-explained-2021.epub 0 {}
+fed-explained-2021.epub 0 {}
+== dga-2025-2030 comparator exit 0
+   comparator passed=True provenanceErrors=0 changedPages=0 changedImages=0 navigationChanged=False changedReportFields=[] changedOCRPages=[] sameVisionPrograms=True pageMarkersEqual=True
+pages 10/10; text differs on 0 pages; differs beyond ligatures on 0 []; ligatures left in candidate text 0
+entries: text entries differing beyond ligatures 1 ['EPUB/package.opf']; other entries differing 0 []
+spine files 1/1; concatenated bodies equal after spelling out: True
+dga-2025-2030.epub 0 {}
+dga-2025-2030.epub 0 {}
+== gpo-our-flag-2003 comparator exit 0
+   comparator passed=True provenanceErrors=0 changedPages=0 changedImages=0 navigationChanged=False changedReportFields=[] changedOCRPages=[] sameVisionPrograms=True pageMarkersEqual=True
+pages 56/56; text differs on 0 pages; differs beyond ligatures on 0 []; ligatures left in candidate text 0
+entries: text entries differing beyond ligatures 1 ['EPUB/package.opf']; other entries differing 0 []
+spine files 2/2; concatenated bodies equal after spelling out: True
+gpo-our-flag-2003.epub 0 {}
+gpo-our-flag-2003.epub 0 {}
+== cdc-zombie-pandemic-2011 comparator exit 0
+   comparator passed=True provenanceErrors=0 changedPages=0 changedImages=0 navigationChanged=False changedReportFields=[] changedOCRPages=[] sameVisionPrograms=True pageMarkersEqual=True
+pages 42/42; text differs on 0 pages; differs beyond ligatures on 0 []; ligatures left in candidate text 0
+entries: text entries differing beyond ligatures 1 ['EPUB/package.opf']; other entries differing 0 []
+spine files 1/1; concatenated bodies equal after spelling out: True
+cdc-zombie-pandemic-2011.epub 0 {}
+cdc-zombie-pandemic-2011.epub 0 {}
+== cia-blue-book-14-1955 comparator exit 0
+   comparator passed=True provenanceErrors=0 changedPages=0 changedImages=0 navigationChanged=False changedReportFields=[] changedOCRPages=[] sameVisionPrograms=True pageMarkersEqual=True
+pages 312/312; text differs on 0 pages; differs beyond ligatures on 0 []; ligatures left in candidate text 0
+entries: text entries differing beyond ligatures 1 ['EPUB/package.opf']; other entries differing 0 []
+spine files 19/19; concatenated bodies equal after spelling out: True
+cia-blue-book-14-1955.epub 0 {}
+cia-blue-book-14-1955.epub 0 {}
+== usgs-mcs2025-copper comparator exit 0
+   comparator passed=True provenanceErrors=0 changedPages=0 changedImages=0 navigationChanged=False changedReportFields=[] changedOCRPages=[] sameVisionPrograms=True pageMarkersEqual=True
+pages 2/2; text differs on 0 pages; differs beyond ligatures on 0 []; ligatures left in candidate text 0
+entries: text entries differing beyond ligatures 1 ['EPUB/package.opf']; other entries differing 0 []
+spine files 1/1; concatenated bodies equal after spelling out: True
+usgs-mcs2025-copper.epub 0 {}
+usgs-mcs2025-copper.epub 0 {}
+== scotus-loper-bright-2024 comparator exit 0
+   comparator passed=True provenanceErrors=0 changedPages=0 changedImages=0 navigationChanged=False changedReportFields=[] changedOCRPages=[] sameVisionPrograms=True pageMarkersEqual=True
+pages 114/114; text differs on 0 pages; differs beyond ligatures on 0 []; ligatures left in candidate text 0
+entries: text entries differing beyond ligatures 1 ['EPUB/package.opf']; other entries differing 0 []
+spine files 5/5; concatenated bodies equal after spelling out: True
+scotus-loper-bright-2024.epub 0 {}
+scotus-loper-bright-2024.epub 0 {}
+== nbs-jres-geltman-1977 comparator exit 0
+   comparator passed=True provenanceErrors=0 changedPages=0 changedImages=0 navigationChanged=False changedReportFields=[] changedOCRPages=[] sameVisionPrograms=True pageMarkersEqual=True
+pages 7/7; text differs on 0 pages; differs beyond ligatures on 0 []; ligatures left in candidate text 0
+entries: text entries differing beyond ligatures 1 ['EPUB/package.opf']; other entries differing 0 []
+spine files 1/1; concatenated bodies equal after spelling out: True
+nbs-jres-geltman-1977.epub 0 {}
+nbs-jres-geltman-1977.epub 0 {}
+== arxiv-replay-clocks-2023 comparator exit 0
+   comparator passed=True provenanceErrors=0 changedPages=0 changedImages=0 navigationChanged=False changedReportFields=[] changedOCRPages=[] sameVisionPrograms=True pageMarkersEqual=True
+pages 12/12; text differs on 0 pages; differs beyond ligatures on 0 []; ligatures left in candidate text 0
+entries: text entries differing beyond ligatures 1 ['EPUB/package.opf']; other entries differing 0 []
+spine files 2/2; concatenated bodies equal after spelling out: True
+arxiv-replay-clocks-2023.epub 0 {}
+arxiv-replay-clocks-2023.epub 0 {}
+== uscourts-pro-se-1-2016 comparator exit 0
+   comparator passed=True provenanceErrors=0 changedPages=0 changedImages=0 navigationChanged=False changedReportFields=[] changedOCRPages=[] sameVisionPrograms=True pageMarkersEqual=True
+pages 5/5; text differs on 0 pages; differs beyond ligatures on 0 []; ligatures left in candidate text 0
+entries: text entries differing beyond ligatures 1 ['EPUB/package.opf']; other entries differing 0 []
+spine files 1/1; concatenated bodies equal after spelling out: True
+uscourts-pro-se-1-2016.epub 0 {}
+uscourts-pro-se-1-2016.epub 0 {}
+== ntrs-20200002975-gwl-2020 comparator exit 0
+   comparator passed=True provenanceErrors=0 changedPages=0 changedImages=0 navigationChanged=False changedReportFields=[] changedOCRPages=[] sameVisionPrograms=True pageMarkersEqual=True
+pages 20/20; text differs on 0 pages; differs beyond ligatures on 0 []; ligatures left in candidate text 0
+entries: text entries differing beyond ligatures 1 ['EPUB/package.opf']; other entries differing 0 []
+spine files 1/1; concatenated bodies equal after spelling out: True
+ntrs-20200002975-gwl-2020.epub 0 {}
+ntrs-20200002975-gwl-2020.epub 0 {}
+== ntrs-20190030725-dasc-2019 comparator exit 0
+   comparator passed=True provenanceErrors=0 changedPages=0 changedImages=0 navigationChanged=False changedReportFields=[] changedOCRPages=[] sameVisionPrograms=True pageMarkersEqual=True
+pages 10/10; text differs on 0 pages; differs beyond ligatures on 0 []; ligatures left in candidate text 0
+entries: text entries differing beyond ligatures 1 ['EPUB/package.opf']; other entries differing 0 []
+spine files 1/1; concatenated bodies equal after spelling out: True
+ntrs-20190030725-dasc-2019.epub 0 {}
+ntrs-20190030725-dasc-2019.epub 0 {}
+== usda-ars-agresearch-2012-11 comparator exit 0
+   comparator passed=True provenanceErrors=0 changedPages=0 changedImages=0 navigationChanged=False changedReportFields=[] changedOCRPages=[] sameVisionPrograms=True pageMarkersEqual=True
+pages 24/24; text differs on 0 pages; differs beyond ligatures on 0 []; ligatures left in candidate text 0
+entries: text entries differing beyond ligatures 1 ['EPUB/package.opf']; other entries differing 0 []
+spine files 2/2; concatenated bodies equal after spelling out: True
+usda-ars-agresearch-2012-11.epub 0 {}
+usda-ars-agresearch-2012-11.epub 0 {}
+== ntrs-20180003024-earthdata-slides-2018 comparator exit 0
+   comparator passed=True provenanceErrors=0 changedPages=0 changedImages=0 navigationChanged=False changedReportFields=[] changedOCRPages=[] sameVisionPrograms=True pageMarkersEqual=True
+pages 21/21; text differs on 0 pages; differs beyond ligatures on 0 []; ligatures left in candidate text 0
+entries: text entries differing beyond ligatures 1 ['EPUB/package.opf']; other entries differing 0 []
+spine files 1/1; concatenated bodies equal after spelling out: True
+ntrs-20180003024-earthdata-slides-2018.epub 0 {}
+ntrs-20180003024-earthdata-slides-2018.epub 0 {}
+== ntrs-20210020887-techport-thm-2021 comparator exit 0
+   comparator passed=True provenanceErrors=0 changedPages=0 changedImages=0 navigationChanged=False changedReportFields=[] changedOCRPages=[] sameVisionPrograms=True pageMarkersEqual=True
+pages 5/5; text differs on 0 pages; differs beyond ligatures on 0 []; ligatures left in candidate text 0
+entries: text entries differing beyond ligatures 1 ['EPUB/package.opf']; other entries differing 0 []
+spine files 1/1; concatenated bodies equal after spelling out: True
+ntrs-20210020887-techport-thm-2021.epub 0 {}
+ntrs-20210020887-techport-thm-2021.epub 0 {}
+== noaa-nca5-2023 comparator exit 1
+   comparator passed=False provenanceErrors=0 changedPages=1 changedImages=0 navigationChanged=False changedReportFields=[] changedOCRPages=[] sameVisionPrograms=True pageMarkersEqual=True
+pages 1834/1834; text differs on 1 pages; differs beyond ligatures on 0 []; ligatures left in candidate text 0
+entries: text entries differing beyond ligatures 1 ['EPUB/package.opf']; other entries differing 0 []
+spine files 125/125; concatenated bodies equal after spelling out: True
+noaa-nca5-2023.epub 1 {'U+FB00': 1}
+noaa-nca5-2023.epub 0 {}

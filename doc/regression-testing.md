@@ -622,7 +622,7 @@ the page's structure validates, each line also records the tag the pipeline appl
 since #89/#90); older fixtures and untagged lines have none, and `SourceLayoutFixture` restores it.
 Source review, baseline failures, cross-document safeguards and full-run evidence are retained
 in [the three-fix measurement](../measurements/three-fidelity-fixes/record.md). The suite contains
-<!-- counts:swift-tests -->930 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->244 Python tests<!-- counts:end -->.
+<!-- counts:swift-tests -->930 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->245 Python tests<!-- counts:end -->.
 The comparison tests include a real-Poppler image URL check through the safe HTTP handler
 (simple and positioned modes, paths with spaces); absent Poppler is an explicit skip.
 
@@ -652,7 +652,7 @@ balloon's last line, close centres, a list line, shared baselines, an overhangin
 records each rotated line's `readingDirection`; its sideways caption reads in line order, and
 synthetic lines check both rotations, mixed directions, upright text, the direction's threshold, its
 scaling in a retry band and its page-store encoding. Wallace pages 50 and 218 (`algebra-50`,
-`algebra-218`) join `dif-` + `ferent` on the book's `diﬀerent`, and page 64 (`algebra-64`) keeps its
+`algebra-218`) join `dif-` + `ferent` on the book's `diﬀerent` (spelled out since #189), and page 64 (`algebra-64`) keeps its
 spaced example lines out of the list items, with and without crops; synthetic controls keep a
 wrapped line at the ordinary gap, a spaced line opening lowercase and a page with no measurable gap
 in the item. The CDC contract adds pages 14, 17, 23 and 34 and the Wallace contract pages 50, 64 and
@@ -1924,3 +1924,19 @@ and profile tools with negative controls, and the
 [retention measurement](../measurements/page-retention/record.md) records byte-identical
 output against the pre-change converter on all ten complete books for the spill store and
 the two retired alternatives, whose sources and tests are retained beside the record.
+
+## Presentation-form ligatures
+
+`FallbackBlocksAndLigaturesTests.swift` covers [#189](https://github.com/vocaro/PDFReflowLib/issues/189):
+each of U+FB00–U+FB06 spells out to its one-step compatibility decomposition (`ﬅ` keeps its long
+s), by scalar, with other compatibility forms (`²`, `½`, `ｆ`, `ĳ`) as controls; styles, note
+references, source-page boundaries and a line's geometry survive, and a line without a ligature is
+untouched. Wallace pages 50 and 218 reflow `different` from fixtures replayed as extraction now
+hands them over (`SourceLayoutFixture.content()` spells out as extraction does), with the lines as
+captured (`spelledOut: false`) as the negative control that keeps `dif-ferent` and its warning.
+`GlyphIndexDecodingTests.swift` converts the rebuilt Census page 17 through the pipeline and finds no
+ligature in its blocks, which fails with the extraction step removed, and shows the step must come
+last: the page's decoded shows spell `ﬃ` as one character, so a line spelled out before spacing
+loses its word gaps. The content checker fails any page of a contracted EPUB that holds one of
+U+FB00–U+FB06, and no contract phrase may hold one. See the
+[ligature evidence](../measurements/presentation-ligatures/record.md).

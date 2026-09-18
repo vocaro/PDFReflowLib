@@ -27,6 +27,8 @@ SEQUENCE_BLOCKS = HEADINGS | {HTML + tag for tag in ('p', 'pre', 'li', 'table')}
 SOURCE_PAGE_ALT = 'The printed page, for comparison'
 # Alternative text that states where an image came from rather than what it shows (before #187).
 PROVENANCE_ALT = re.compile(r'(?:Preserved region from page|Original page) \d+')
+# The Latin typographic ligatures, which converted text never holds (#189).
+PRESENTATION_LIGATURE = re.compile('[ﬀ-ﬆ]')
 DEFAULT_MAX_ENTRIES = 10_000
 DEFAULT_MAX_UNCOMPRESSED_BYTES = 512 * 1024 * 1024
 # Every expectation key `assess` counts, as (documented name, keys, counted once per page). List
@@ -375,6 +377,12 @@ def assess(case, contract, result, report, pages, markers, image_data=None, refe
         errors.append('Missing, duplicated or reordered source pages')
     if any('\ufffc' in page['text'] for page in pages.values()):
         errors.append('Object placeholder in semantic text')
+    # Extraction writes ligatures as letters (#189): a reading font without the presentation form
+    # draws it from a fallback font, which reads as a gap inside the word.
+    ligature_pages = sorted(number for number, page in pages.items() if PRESENTATION_LIGATURE.search(page['text']))
+    if ligature_pages:
+        errors.append(f'Presentation-form ligature (U+FB00-U+FB06) in semantic text on {len(ligature_pages)} '
+                      f'pages, first {ligature_pages[:5]}')
     expected = contract['pages']
     numbers = [item['page'] for item in expected]
     if (not expected or len(numbers) != len(set(numbers))

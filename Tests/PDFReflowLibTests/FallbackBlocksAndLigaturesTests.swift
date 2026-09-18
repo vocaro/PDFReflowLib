@@ -190,11 +190,12 @@ func sourceBalloonBesideACaptionBoxReadsWhole(name: String, expected: [String]) 
     #expect(try JSONDecoder().decode(TextLine.self, from: JSONEncoder().encode(encoded)) == encoded)
 }
 
-// MARK: - #123 item 1: ligatures in hyphen evidence
+// MARK: - #123 item 1 and #189: ligatures in hyphen evidence and in the text
 
 // Wallace prints `diﬀerent` with U+FB00 wherever the word is whole, but a line break extracts
-// plain letters, so `dif-` + `ferent` (pages 50 and 218) kept its hyphen with a warning. The
-// vocabulary now also records such words with their ligatures spelled out; emitted text keeps them.
+// plain letters, so `dif-` + `ferent` (pages 50 and 218) kept its hyphen with a warning (#123).
+// Extraction now spells every ligature out (#189), so the whole word is `different` in the
+// vocabulary and in the text alike, and a reading font without U+FB00 has nothing to fall back on.
 @Test func sourceDifferentJoinsOnTheBooksLigatureSpelling() throws {
     #expect(try SourceLayoutFixture.load("algebra-50").sourceSHA256 == algebraSHA256)
     #expect(try SourceLayoutFixture.load("algebra-218").sourceSHA256 == algebraSHA256)
@@ -203,18 +204,36 @@ func sourceBalloonBesideACaptionBoxReadsWhole(name: String, expected: [String]) 
         LayoutReconstructor.addVocabulary(of: try SourceLayoutFixture.load(name).content(), to: &vocabulary)
     }
     #expect(vocabulary.contains("different"))
-    #expect(vocabulary.contains("di\u{FB00}erent"))
-    let (_, page50, warnings50) = try reflow("algebra-50", vocabulary: vocabulary, regions: true)
+    #expect(!vocabulary.contains { $0.contains(where: InlineText.isLigature) })
+    let (page, page50, warnings50) = try reflow("algebra-50", vocabulary: vocabulary, regions: true)
+    #expect(!page.lines.contains { $0.text.contains(where: InlineText.isLigature) })
     let text50 = page50.map(\.text).joined(separator: "\n")
-    #expect(text50.contains("they are just written in a different form because we solved them in diﬀerent ways."))
-    #expect(text50.contains("slightly diﬀerent manner"))
+    #expect(text50.contains("they are just written in a different form because we solved them in different ways."))
+    #expect(text50.contains("slightly different manner"))
+    #expect(!text50.contains(where: InlineText.isLigature))
     #expect(!text50.contains("dif-ferent"))
     #expect(!warnings50.contains { $0.code == .uncertainHyphen })
     let (_, page218, warnings218) = try reflow("algebra-218", vocabulary: vocabulary, regions: true)
     #expect(page218.map(\.text).joined(separator: "\n").contains("more than just the signs are different. In this case"))
     #expect(!warnings218.contains { $0.code == .uncertainHyphen })
 
-    // Negative control: the same pages without the spelled-out word keep the hyphen and warn.
+    // Negative controls. The lines as PDFKit reports them hold U+FB00 and record only
+    // `diﬀerent`, which no break's halves spell, so the hyphen stays with a warning.
+    var printed: Set<String> = []
+    for name in ["algebra-50", "algebra-218"] {
+        LayoutReconstructor.addVocabulary(of: try SourceLayoutFixture.load(name).content(spelledOut: false), to: &printed)
+    }
+    #expect(printed.contains("di\u{FB00}erent"))
+    #expect(!printed.contains("different"))
+    let unspelled = try SourceLayoutFixture.load("algebra-50").content(spelledOut: false)
+    var unspelledWarnings: [ConversionWarning] = []
+    let unspelledText = LayoutReconstructor.blocks(page: unspelled,
+        images: LayoutReconstructor.graphicsWithLabels(unspelled).enumerated().map { ($0.element, "image-\($0.offset)") },
+        vocabulary: printed, warnings: &unspelledWarnings).map(\.text).joined(separator: "\n")
+    #expect(unspelledText.contains("dif-ferent form"))
+    #expect(unspelledText.contains("slightly di\u{FB00}erent manner"))
+    #expect(unspelledWarnings.contains { $0.code == .uncertainHyphen })
+    // And the spelled-out pages without the word keep the hyphen and warn.
     var unfolded = vocabulary
     unfolded.remove("different")
     let (_, before, beforeWarnings) = try reflow("algebra-50", vocabulary: unfolded, regions: true)
@@ -222,21 +241,55 @@ func sourceBalloonBesideACaptionBoxReadsWhole(name: String, expected: [String]) 
     #expect(beforeWarnings.contains { $0.code == .uncertainHyphen })
 }
 
-@Test func vocabularyRecordsLigatureWordsSpelledOut() throws {
-    #expect(LayoutReconstructor.ligaturesSpelledOut("diﬀerent ﬁre ﬂow oﬃce baﬄe ﬅ ﬆ") == "different fire flow office baffle st st")
+@Test func extractionSpellsLigaturesOut() throws {
+    #expect(InlineText.spellingOutLigatures("diﬀerent ﬁre ﬂow oﬃce baﬄe ﬅ ﬆ") == "different fire flow office baffle \u{017F}t st")
+    // By scalar: a ligature carrying a combining mark is one character, and is spelled out too.
+    #expect(InlineText.spellingOutLigatures("\u{FB01}\u{0301}x") == "fi\u{0301}x")
     // Only the Latin ligatures are spelled out: other compatibility forms stay.
-    #expect(LayoutReconstructor.ligaturesSpelledOut("x² ½ ｆ") == "x² ½ ｆ")
+    #expect(InlineText.spellingOutLigatures("x² ½ ｆ ĳ ǆ") == "x² ½ ｆ ĳ ǆ")
+    for scalar in UInt32(0xFB00)...0xFB06 {
+        let ligature = String(Character(UnicodeScalar(scalar)!))
+        let spelled = InlineText.spellingOutLigatures(ligature)
+        #expect(!spelled.contains(where: InlineText.isLigature))
+        // Each is the character's Unicode compatibility decomposition, taken one step: U+FB05 keeps
+        // its long s (`ſt`), which full NFKD would go on to fold to `s`.
+        #expect(spelled.decomposedStringWithCompatibilityMapping == ligature.decomposedStringWithCompatibilityMapping)
+        #expect(spelled.unicodeScalars.count == ligature.decomposedStringWithCompatibilityMapping.unicodeScalars.count)
+    }
+    #expect(!InlineText.isLigature("f") && !InlineText.isLigature("\u{FB13}") && !InlineText.isLigature("\u{FAFF}"))
+
+    // Runs keep their styles, note references and source-page boundaries.
+    let key = NoteKey(number: 1, scope: .page(4))
+    let content = InlineText(elements: [
+        .text("the e\u{FB00}ect", []), .sourcePage(4), .text("o\u{FB03}ce", .italic),
+        .noteReference("\u{FB01}", .superscript, key),
+    ])
+    #expect(content.spellingOutLigatures().elements == [
+        .text("the effect", []), .sourcePage(4), .text("office", .italic), .noteReference("fi", .superscript, key),
+    ])
+    var line = TextLine(content: content, rect: .init(x: 1, y: 2, width: 300, height: 12), fontSize: 12)
+    line.trailingSpace = true
+    line.spellOutLigatures()
+    #expect(line.text == "the effectofficefi")
+    #expect(line.rect == .init(x: 1, y: 2, width: 300, height: 12) && line.trailingSpace)
+    let plain = TextLine(text: "plain", rect: .zero, fontSize: 10)
+    var unchanged = plain
+    unchanged.spellOutLigatures()
+    #expect(unchanged == plain)
+
+    // Hyphen evidence then reads letters on both sides of a break, whether the break fell inside a
+    // ligature or beside it.
     var vocabulary: Set<String> = []
-    LayoutReconstructor.addVocabulary(of: PageContent(number: 1, bounds: .init(x: 0, y: 0, width: 600, height: 800), lines: [
+    var page = PageContent(number: 1, bounds: .init(x: 0, y: 0, width: 600, height: 800), lines: [
         TextLine(text: "The eﬀect of an oﬃcial ﬁgure", rect: .init(x: 0, y: 700, width: 300, height: 12), fontSize: 12),
-    ], graphics: []), to: &vocabulary)
-    #expect(vocabulary.isSuperset(of: ["effect", "official", "figure", "eﬀect", "oﬃcial", "ﬁgure", "the", "of", "an"]))
-    #expect(vocabulary.count == 9)
+    ], graphics: [])
+    for index in page.lines.indices { page.lines[index].spellOutLigatures() }
+    LayoutReconstructor.addVocabulary(of: page, to: &vocabulary)
+    #expect(vocabulary == ["the", "effect", "of", "an", "official", "figure"])
     var warnings: [ConversionWarning] = []
-    // Plain halves find the spelled-out word, a ligature in a half the printed one; the text keeps its glyphs.
     #expect(LayoutReconstructor.join("the ef-", "fect of", vocabulary: vocabulary, page: 1, warnings: &warnings) == "the effect of")
-    #expect(LayoutReconstructor.join("an oﬃ-", "cial figure", vocabulary: vocabulary, page: 1, warnings: &warnings) == "an oﬃcial figure")
-    #expect(LayoutReconstructor.join("a ﬁg-", "ure", vocabulary: vocabulary, page: 1, warnings: &warnings) == "a ﬁgure")
+    #expect(LayoutReconstructor.join("an offi-", "cial figure", vocabulary: vocabulary, page: 1, warnings: &warnings) == "an official figure")
+    #expect(LayoutReconstructor.join("a fig-", "ure", vocabulary: vocabulary, page: 1, warnings: &warnings) == "a figure")
     #expect(warnings.isEmpty)
     // Control: a word the book never prints, ligature or not, keeps its hyphen and warns.
     #expect(LayoutReconstructor.join("a baf-", "fle", vocabulary: vocabulary, page: 1, warnings: &warnings) == "a baf-fle")

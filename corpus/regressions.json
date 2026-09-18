@@ -1771,19 +1771,19 @@
           "page": 7,
           "text": [
             "− 5 + ( − 3) Same sign, add 5 + 3, keep the negative",
-            "Diﬀerent signs, subtract 7 − 2, use sign from bigger number, negative"
+            "Different signs, subtract 7 − 2, use sign from bigger number, negative"
           ],
           "absentText": [
             "5+ (− 3)",
             "add 5+ 3",
             "subtract 7− 2",
-            "Diﬀ erent"
+            "Diff erent"
           ]
         },
         {
           "page": 8,
           "text": [
-            "4 + ( − 3) Diﬀerent signs, subtract 4 − 3, use sign from bigger number, positive",
+            "4 + ( − 3) Different signs, subtract 4 − 3, use sign from bigger number, positive",
             "9 − ( − 4) Add the opposite of − 4 9 + 4 Same sign, add 9 + 4, keep the positive"
           ],
           "absentText": [
@@ -1791,7 +1791,7 @@
             "subtract 4− 3",
             "opposite of− 4",
             "9 +4",
-            "Diﬀ erent"
+            "Diff erent"
           ]
         },
         {
@@ -2250,7 +2250,7 @@
           "paragraphs": [
             "Then if we multiply both sides of the equation again by i, the equation becomes i4",
             "One more time gives i6 = i2 =− 1. And if this pattern continues we see a cycle forming",
-            "As there are 4 diﬀerent possible answers in this cycle, if we divide the exponent by 4"
+            "As there are 4 different possible answers in this cycle, if we divide the exponent by 4"
           ]
         },
         {
@@ -2430,7 +2430,7 @@
         {
           "page": 38,
           "paragraphs": [
-            "It doesn’t matter which term gets moved, 4x or 2x, however, it would be the author’s suggestion to move the smaller term (to avoid negative coeﬃcients)."
+            "It doesn’t matter which term gets moved, 4x or 2x, however, it would be the author’s suggestion to move the smaller term (to avoid negative coefficients)."
           ]
         },
         {
@@ -6365,12 +6365,12 @@
           ],
           "orderedText": [
             "2 Data Files",
-            "Two data ﬁles were used.",
+            "Two data files were used.",
             "2.1 Domingo-Ferrer and Mateo-Sanz",
             "The Data Extraction System (http://www.census.gov/DES)",
             "1. Total income",
-            "12. Aged exemption ﬂag",
-            "13. Schedule D ﬂag"
+            "12. Aged exemption flag",
+            "13. Schedule D flag"
           ],
           "absentText": [
             "5GdwdIlohv",
@@ -6384,7 +6384,7 @@
           ],
           "maximumImages": 0,
           "paragraphs": [
-            "identiﬁers and data from the public-use CPS ﬁle."
+            "identifiers and data from the public-use CPS file."
           ]
         },
         {
@@ -6495,18 +6495,18 @@
         {
           "page": 17,
           "orderedText": [
-            "re-identiﬁcation risk is only slightly worse",
-            "additional scoring metrics and more applications to diﬀerent data situations",
+            "re-identification risk is only slightly worse",
+            "additional scoring metrics and more applications to different data situations",
             "[1] Dempster, A. P., Laird, N. M. and Rubin, D. B.: Maximum Likelihood from",
             "Journal of the Royal Statistical Society, B, 39 (1977) 1–38.",
             "Fellegi, I. P., and Sunter, A. B.: A Theory for Record Linkage, Journal of the American Statistical Association, 64, (1969) 1183–1210.",
-            "Journal of Oﬃcial Statistics, 9, (1993) 383–406.",
-            "Lambert, D.: Measures of Disclosure Risk and Harm, Journal of Oﬃcial Statistics, 9, (1993) 313–331."
+            "Journal of Official Statistics, 9, (1993) 383–406.",
+            "Lambert, D.: Measures of Disclosure Risk and Harm, Journal of Official Statistics, 9, (1993) 313–331."
           ],
           "absentText": [
             "Uhihuhqfhv",
             "R!fldo",
-            "JournalofOﬃcialStatistics"
+            "JournalofOfficialStatistics"
           ],
           "absentWarningCodes": [
             "damagedTextEncoding",

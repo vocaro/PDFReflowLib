@@ -222,7 +222,7 @@ private func attributed(_ runs: [(String, CGFloat, Double)]) -> NSAttributedStri
     let value = NSMutableAttributedString()
     for (text, size, offset) in runs {
         value.append(NSAttributedString(string: text, attributes: [
-            .font: TestFont(name: "Helvetica", size: size)!,
+            .font: pdfKitGated { TestFont(name: "Helvetica", size: size) }!,
             NSAttributedString.Key(kCTBaselineOffsetAttributeName as String): offset,
         ]))
     }

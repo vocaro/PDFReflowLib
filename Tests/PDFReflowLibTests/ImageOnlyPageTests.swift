@@ -97,7 +97,7 @@ private func raster(width: Int = 400, height: Int = 200, background: UInt8, ink:
 private func drawnTextPDF(sentence: [String], folio: String?, background: CGFloat,
                           ink: CGFloat, decoration: Bool = false) throws -> Data {
     let page = CGRect(x: 0, y: 0, width: 720, height: 405)
-    let font = CTFontCreateWithName("Helvetica" as CFString, 40, nil)
+    let font = pdfKitGated { CTFontCreateWithName("Helvetica" as CFString, 40, nil) }
     let data = NSMutableData()
     var box = page
     let consumer = try #require(CGDataConsumer(data: data as CFMutableData))
@@ -106,38 +106,40 @@ private func drawnTextPDF(sentence: [String], folio: String?, background: CGFloa
     pdf.setFillColor(gray: background, alpha: 1)
     pdf.fill(page)
     pdf.setFillColor(gray: ink, alpha: 1)
-    if decoration {
-        // Art with no writing in it: three plain discs, the size of the sentence's words.
-        for index in 0..<3 {
-            pdf.fillEllipse(in: CGRect(x: 120 + index * 180, y: 160, width: 120, height: 120))
-        }
-    } else {
-        for (index, text) in sentence.enumerated() {
-            let line = CTLineCreateWithAttributedString(NSAttributedString(string: text, attributes: [
-                NSAttributedString.Key(kCTFontAttributeName as String): font]))
-            let origin = CGPoint(x: 90, y: 240 - CGFloat(index) * 60)
-            for run in CTLineGetGlyphRuns(line) as? [CTRun] ?? [] {
-                let count = CTRunGetGlyphCount(run)
-                var glyphs = [CGGlyph](repeating: 0, count: count)
-                var positions = [CGPoint](repeating: .zero, count: count)
-                CTRunGetGlyphs(run, CFRange(), &glyphs)
-                CTRunGetPositions(run, CFRange(), &positions)
-                for (glyph, position) in zip(glyphs, positions) {
-                    guard let path = CTFontCreatePathForGlyph(font, glyph, nil) else { continue }
-                    var transform = CGAffineTransform(translationX: origin.x + position.x,
-                                                      y: origin.y + position.y)
-                    if let moved = path.copy(using: &transform) { pdf.addPath(moved) }
-                }
+    pdfKitGated {
+        if decoration {
+            // Art with no writing in it: three plain discs, the size of the sentence's words.
+            for index in 0..<3 {
+                pdf.fillEllipse(in: CGRect(x: 120 + index * 180, y: 160, width: 120, height: 120))
             }
-            pdf.fillPath()
+        } else {
+            for (index, text) in sentence.enumerated() {
+                let line = CTLineCreateWithAttributedString(NSAttributedString(string: text, attributes: [
+                    NSAttributedString.Key(kCTFontAttributeName as String): font]))
+                let origin = CGPoint(x: 90, y: 240 - CGFloat(index) * 60)
+                for run in CTLineGetGlyphRuns(line) as? [CTRun] ?? [] {
+                    let count = CTRunGetGlyphCount(run)
+                    var glyphs = [CGGlyph](repeating: 0, count: count)
+                    var positions = [CGPoint](repeating: .zero, count: count)
+                    CTRunGetGlyphs(run, CFRange(), &glyphs)
+                    CTRunGetPositions(run, CFRange(), &positions)
+                    for (glyph, position) in zip(glyphs, positions) {
+                        guard let path = CTFontCreatePathForGlyph(font, glyph, nil) else { continue }
+                        var transform = CGAffineTransform(translationX: origin.x + position.x,
+                                                          y: origin.y + position.y)
+                        if let moved = path.copy(using: &transform) { pdf.addPath(moved) }
+                    }
+                }
+                pdf.fillPath()
+            }
         }
-    }
-    if let folio {
-        let small = CTFontCreateWithName("Helvetica" as CFString, 12, nil)
-        pdf.textPosition = CGPoint(x: 680, y: 24)
-        CTLineDraw(CTLineCreateWithAttributedString(NSAttributedString(string: folio, attributes: [
-            NSAttributedString.Key(kCTFontAttributeName as String): small,
-            NSAttributedString.Key(kCTForegroundColorFromContextAttributeName as String): true])), pdf)
+        if let folio {
+            let small = CTFontCreateWithName("Helvetica" as CFString, 12, nil)
+            pdf.textPosition = CGPoint(x: 680, y: 24)
+            CTLineDraw(CTLineCreateWithAttributedString(NSAttributedString(string: folio, attributes: [
+                NSAttributedString.Key(kCTFontAttributeName as String): small,
+                NSAttributedString.Key(kCTForegroundColorFromContextAttributeName as String): true])), pdf)
+        }
     }
     pdf.endPDFPage()
     pdf.closePDF()
@@ -201,12 +203,14 @@ private func photographPDF(sentence: [String], folio: String) throws -> Data {
     bitmap.setFillColor(gray: 0.25, alpha: 1)
     bitmap.fill(CGRect(x: 0, y: 0, width: picture.width * scale, height: picture.height * scale))
     bitmap.setFillColor(gray: 1, alpha: 1)
-    let large = CTFontCreateWithName("Helvetica" as CFString, 40 * scale, nil)
-    for (index, text) in sentence.enumerated() {
-        bitmap.textPosition = CGPoint(x: 30 * scale, y: (150 - CGFloat(index) * 60) * scale)
-        CTLineDraw(CTLineCreateWithAttributedString(NSAttributedString(string: text, attributes: [
-            NSAttributedString.Key(kCTFontAttributeName as String): large,
-            NSAttributedString.Key(kCTForegroundColorFromContextAttributeName as String): true])), bitmap)
+    pdfKitGated {
+        let large = CTFontCreateWithName("Helvetica" as CFString, 40 * scale, nil)
+        for (index, text) in sentence.enumerated() {
+            bitmap.textPosition = CGPoint(x: 30 * scale, y: (150 - CGFloat(index) * 60) * scale)
+            CTLineDraw(CTLineCreateWithAttributedString(NSAttributedString(string: text, attributes: [
+                NSAttributedString.Key(kCTFontAttributeName as String): large,
+                NSAttributedString.Key(kCTForegroundColorFromContextAttributeName as String): true])), bitmap)
+        }
     }
     let image = try #require(bitmap.makeImage())
     let data = NSMutableData()
@@ -218,11 +222,13 @@ private func photographPDF(sentence: [String], folio: String) throws -> Data {
     pdf.fill(page)
     pdf.draw(image, in: picture)
     pdf.setFillColor(gray: 1, alpha: 1)
-    let small = CTFontCreateWithName("Helvetica" as CFString, 12, nil)
-    pdf.textPosition = CGPoint(x: 670, y: 24)
-    CTLineDraw(CTLineCreateWithAttributedString(NSAttributedString(string: folio, attributes: [
-        NSAttributedString.Key(kCTFontAttributeName as String): small,
-        NSAttributedString.Key(kCTForegroundColorFromContextAttributeName as String): true])), pdf)
+    pdfKitGated {
+        let small = CTFontCreateWithName("Helvetica" as CFString, 12, nil)
+        pdf.textPosition = CGPoint(x: 670, y: 24)
+        CTLineDraw(CTLineCreateWithAttributedString(NSAttributedString(string: folio, attributes: [
+            NSAttributedString.Key(kCTFontAttributeName as String): small,
+            NSAttributedString.Key(kCTForegroundColorFromContextAttributeName as String): true])), pdf)
+    }
     pdf.endPDFPage()
     pdf.closePDF()
     return data as Data
@@ -253,12 +259,14 @@ private func nativeSlidePDF() throws -> Data {
     pdf.setFillColor(gray: 0.25, alpha: 1)
     pdf.fill(page)
     pdf.setFillColor(gray: 1, alpha: 1)
-    let font = CTFontCreateWithName("Helvetica" as CFString, 40, nil)
-    for (index, text) in question.enumerated() {
-        pdf.textPosition = CGPoint(x: 90, y: 240 - CGFloat(index) * 60)
-        CTLineDraw(CTLineCreateWithAttributedString(NSAttributedString(string: text, attributes: [
-            NSAttributedString.Key(kCTFontAttributeName as String): font,
-            NSAttributedString.Key(kCTForegroundColorFromContextAttributeName as String): true])), pdf)
+    pdfKitGated {
+        let font = CTFontCreateWithName("Helvetica" as CFString, 40, nil)
+        for (index, text) in question.enumerated() {
+            pdf.textPosition = CGPoint(x: 90, y: 240 - CGFloat(index) * 60)
+            CTLineDraw(CTLineCreateWithAttributedString(NSAttributedString(string: text, attributes: [
+                NSAttributedString.Key(kCTFontAttributeName as String): font,
+                NSAttributedString.Key(kCTForegroundColorFromContextAttributeName as String): true])), pdf)
+        }
     }
     pdf.endPDFPage()
     pdf.closePDF()

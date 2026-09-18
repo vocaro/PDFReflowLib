@@ -27,7 +27,7 @@ func textLayerPDF(_ text: String, imageSize: Int = 300, invisible: Bool = true) 
     for (raw, expected) in [("~~", ""), ("Before~after", "Before after"), ("~Before after~", "Before after")] {
         let document = try #require(PDFDocument(data: textLayerPDF(raw)))
         let page = try #require(document.page(at: 0))
-        #expect(page.string?.contains("\u{FFFC}") == true) // Prove the extraction defect is exercised.
+        #expect(pdfKitGated { page.string }?.contains("\u{FFFC}") == true) // Prove the extraction defect is exercised.
         for styled in [true, false] {
             let lines = try NativeTextReader.lines(on: page, limit: 1000, includeStyle: styled)
             #expect(lines.map(\.text).joined() == expected)

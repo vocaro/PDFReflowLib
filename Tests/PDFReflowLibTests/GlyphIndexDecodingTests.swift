@@ -589,11 +589,12 @@ private func indexGlyphPDF(_ pages: [[(font: String, text: String)]]) -> Data {
     let page = try #require(PDFDocument(data: data)?.page(at: 0))
     let shows = FontWeightReader.read(try #require(page.pageRef), decodings: decodings)
     #expect(FontWeightReader.indexGlyphSlots(shows)?.compactMap(\.text).joined().hasPrefix("Twodatafileswereused.") == true)
-    let selection = try #require(page.selection(for: page.bounds(for: .cropBox))?.selectionsByLine())
+    let selection = try #require(pdfKitGated { page.selection(for: page.bounds(for: .cropBox))?.selectionsByLine() })
     #expect(selection.count == 1)
     var carry: FontWeightReader.IndexGlyphCarry?
     let line = try #require(selection.first)
-    let repair = FontWeightReader.repairIndexGlyphs(shows, in: try #require(line.attributedString), bounds: line.bounds(for: page),
-                                                    allBounds: [line.bounds(for: page)], carry: &carry)
+    let (attributed, bounds) = pdfKitGated { (line.attributedString, line.bounds(for: page)) }
+    let repair = FontWeightReader.repairIndexGlyphs(shows, in: try #require(attributed), bounds: bounds,
+                                                    allBounds: [bounds], carry: &carry)
     #expect(repair.outcome == .unrepaired)
 }

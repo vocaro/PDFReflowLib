@@ -25,18 +25,20 @@ private struct SyntheticPage {
 
     /// Draws one line of text with its baseline at `y` points and records its box as Vision would.
     mutating func text(_ string: String, x: CGFloat, y: CGFloat, size: CGFloat = 10, white: Bool = false) {
-        let font = CTFontCreateWithName("Helvetica" as CFString, size, nil)
-        let color = CGColor(gray: white ? 1 : 0, alpha: 1)
-        let attributed = NSAttributedString(string: string, attributes: [
-            NSAttributedString.Key(kCTFontAttributeName as String): font,
-            NSAttributedString.Key(kCTForegroundColorAttributeName as String): color])
-        let line = CTLineCreateWithAttributedString(attributed)
-        var ascent: CGFloat = 0, descent: CGFloat = 0, leading: CGFloat = 0
-        let width = CTLineGetTypographicBounds(line, &ascent, &descent, &leading)
-        context.textPosition = CGPoint(x: x, y: y)
-        CTLineDraw(line, context)
-        lineBoxes.append(CGRect(x: x / Self.size.width, y: (y - descent) / Self.size.height,
-                                width: width / Self.size.width, height: (ascent + descent) / Self.size.height))
+        pdfKitGated {
+            let font = CTFontCreateWithName("Helvetica" as CFString, size, nil)
+            let color = CGColor(gray: white ? 1 : 0, alpha: 1)
+            let attributed = NSAttributedString(string: string, attributes: [
+                NSAttributedString.Key(kCTFontAttributeName as String): font,
+                NSAttributedString.Key(kCTForegroundColorAttributeName as String): color])
+            let line = CTLineCreateWithAttributedString(attributed)
+            var ascent: CGFloat = 0, descent: CGFloat = 0, leading: CGFloat = 0
+            let width = CTLineGetTypographicBounds(line, &ascent, &descent, &leading)
+            context.textPosition = CGPoint(x: x, y: y)
+            CTLineDraw(line, context)
+            lineBoxes.append(CGRect(x: x / Self.size.width, y: (y - descent) / Self.size.height,
+                                    width: width / Self.size.width, height: (ascent + descent) / Self.size.height))
+        }
     }
 
     mutating func paragraphs(lines: Int, top: CGFloat = 740) {
@@ -76,14 +78,16 @@ private struct SyntheticPage {
         bytesPerRow: 0, space: CGColorSpaceCreateDeviceRGB(),
         bitmapInfo: CGImageAlphaInfo.premultipliedFirst.rawValue | CGBitmapInfo.byteOrder32Little.rawValue))
     let words = "Recognition quality depends on the scan, the typeface and the compiled models in use"
-    let font = CTFontCreateWithName("Helvetica" as CFString, 10, nil)
-    let line = CTLineCreateWithAttributedString(NSAttributedString(string: words, attributes: [
-        NSAttributedString.Key(kCTFontAttributeName as String): font,
-        NSAttributedString.Key(kCTForegroundColorAttributeName as String): CGColor(gray: 0, alpha: 1)]))
-    bgra.scaleBy(x: SyntheticPage.scale, y: SyntheticPage.scale)
-    for index in 0..<40 {
-        bgra.textPosition = CGPoint(x: 72, y: 740 - CGFloat(index) * 14)
-        CTLineDraw(line, bgra)
+    pdfKitGated {
+        let font = CTFontCreateWithName("Helvetica" as CFString, 10, nil)
+        let line = CTLineCreateWithAttributedString(NSAttributedString(string: words, attributes: [
+            NSAttributedString.Key(kCTFontAttributeName as String): font,
+            NSAttributedString.Key(kCTForegroundColorAttributeName as String): CGColor(gray: 0, alpha: 1)]))
+        bgra.scaleBy(x: SyntheticPage.scale, y: SyntheticPage.scale)
+        for index in 0..<40 {
+            bgra.textPosition = CGPoint(x: 72, y: 740 - CGFloat(index) * 14)
+            CTLineDraw(line, bgra)
+        }
     }
     let transparentImage = try #require(bgra.makeImage())
     let kept = Array(page.lineBoxes.prefix(8))

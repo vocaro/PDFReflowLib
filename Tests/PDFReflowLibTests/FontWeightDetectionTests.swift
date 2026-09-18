@@ -123,8 +123,10 @@ private func line(_ lines: [TextLine], _ prefix: String) throws -> TextLine {
     // PDFKit names none of these fonts bold, so its name rule alone reads every line regular; the
     // resources do not.
     let page = try #require(document.page(at: 0))
-    let names = (page.selection(for: page.bounds(for: .cropBox))?.selectionsByLine() ?? []).compactMap {
-        ($0.attributedString?.attribute(.font, at: 0, effectiveRange: nil) as? WeightTestFont)?.fontName
+    let names = pdfKitGated {
+        (page.selection(for: page.bounds(for: .cropBox))?.selectionsByLine() ?? []).compactMap {
+            ($0.attributedString?.attribute(.font, at: 0, effectiveRange: nil) as? WeightTestFont)?.fontName
+        }
     }
     #expect(names.count == 3 && names.allSatisfy { !$0.lowercased().contains("bold") })
     #expect(try boldText(line(lines, "Tool Definition")) == "Tool Definition")
@@ -177,9 +179,9 @@ private func show(_ x: CGFloat, _ y: CGFloat, _ text: String?, _ weight: FontWei
 /// PDFKit-like runs: each piece its own run (a distinct attribute value), all named Helvetica.
 private func pdfkitRuns(_ pieces: [String]) -> NSAttributedString {
     let value = NSMutableAttributedString()
+    let font = pdfKitGated { WeightTestFont(name: "Helvetica", size: 10) }!
     for (index, piece) in pieces.enumerated() {
-        value.append(NSAttributedString(string: piece, attributes: [.font: WeightTestFont(name: "Helvetica", size: 10)!,
-                                                                    NSAttributedString.Key("run"): index]))
+        value.append(NSAttributedString(string: piece, attributes: [.font: font, NSAttributedString.Key("run"): index]))
     }
     return value
 }
@@ -470,8 +472,10 @@ func mathItalicText(_ line: TextLine) -> String {
                                                      (2, 72, 600, "Leaning descriptor"), (3, 72, 550, "xyz"),
                                                      (4, 72, 500, "The History of"), (5, 72, 450, "Upright roman")])
     let page = try #require(document.page(at: 0))
-    let names = (page.selection(for: page.bounds(for: .cropBox))?.selectionsByLine() ?? []).compactMap {
-        ($0.attributedString?.attribute(.font, at: 0, effectiveRange: nil) as? WeightTestFont)?.fontName.lowercased()
+    let names = pdfKitGated {
+        (page.selection(for: page.bounds(for: .cropBox))?.selectionsByLine() ?? []).compactMap {
+            ($0.attributedString?.attribute(.font, at: 0, effectiveRange: nil) as? WeightTestFont)?.fontName.lowercased()
+        }
     }
     #expect(names.count == 6 && names.allSatisfy { !$0.contains("italic") && !$0.contains("oblique") })
     let lines = try styledLines(document)
@@ -510,8 +514,10 @@ func mathItalicText(_ line: TextLine) -> String {
     // Negative control: PDFKit names none of the substituted fonts italic, so the slope comes
     // only from the page's own font resources.
     let page = try #require(document.page(at: 0))
-    let names = (page.selection(for: page.bounds(for: .cropBox))?.selectionsByLine() ?? []).compactMap {
-        ($0.attributedString?.attribute(.font, at: 0, effectiveRange: nil) as? WeightTestFont)?.fontName.lowercased()
+    let names = pdfKitGated {
+        (page.selection(for: page.bounds(for: .cropBox))?.selectionsByLine() ?? []).compactMap {
+            ($0.attributedString?.attribute(.font, at: 0, effectiveRange: nil) as? WeightTestFont)?.fontName.lowercased()
+        }
     }
     #expect(!names.isEmpty && names.allSatisfy { !$0.contains("italic") && !$0.contains("oblique") })
     let lines = try styledLines(document)
@@ -668,7 +674,7 @@ func mathItalicText(_ line: TextLine) -> String {
 private func resourceRuns(_ pieces: [(String, Bool, Bool)]) -> NSAttributedString {
     let value = NSMutableAttributedString()
     for (index, piece) in pieces.enumerated() {
-        var attributes: [NSAttributedString.Key: Any] = [.font: WeightTestFont(name: "Helvetica", size: 10)!, NSAttributedString.Key("run"): index]
+        var attributes: [NSAttributedString.Key: Any] = [.font: pdfKitGated { WeightTestFont(name: "Helvetica", size: 10) }!, NSAttributedString.Key("run"): index]
         if piece.1 { attributes[FontWeightReader.boldAttribute] = true }
         if piece.2 { attributes[FontWeightReader.italicAttribute] = true }
         value.append(NSAttributedString(string: piece.0, attributes: attributes))
@@ -689,7 +695,7 @@ private func slopeRuns(_ pieces: [(String, Bool)], baselineOffset: Double = 0) -
     let value = NSMutableAttributedString()
     for piece in pieces {
         var attributes: [NSAttributedString.Key: Any] = [
-            .font: WeightTestFont(name: "Helvetica", size: 10)!,
+            .font: pdfKitGated { WeightTestFont(name: "Helvetica", size: 10) }!,
             NSAttributedString.Key(kCTBaselineOffsetAttributeName as String): baselineOffset,
         ]
         if piece.1 { attributes[FontWeightReader.mathItalicAttribute] = true }
@@ -712,7 +718,7 @@ private func slopeRuns(_ pieces: [(String, Bool)], baselineOffset: Double = 0) -
     // Control: a genuine script is still read. `2` is raised, at 0.55 of the size beside it.
     let raised = NSMutableAttributedString(attributedString: slopeRuns([("8", false), ("x", true)]))
     raised.append(NSAttributedString(string: "2", attributes: [
-        .font: WeightTestFont(name: "Helvetica", size: 5.5)!,
+        .font: pdfKitGated { WeightTestFont(name: "Helvetica", size: 5.5) }!,
         NSAttributedString.Key(kCTBaselineOffsetAttributeName as String): 3.0,
     ]))
     #expect(EPUBTextEncoder.inline(NativeTextReader.inlineText(from: raised)) == "8<i>x</i><sup>2</sup>")

@@ -14,7 +14,7 @@ private func boundaryText(_ values: [(String, Double, Double)], foundationKey: B
     let input = NSMutableAttributedString(string: "")
     for (text, offset, size) in values {
         input.append(NSAttributedString(string: text, attributes: [
-            .font: BoundaryFont(name: "Helvetica", size: size)!,
+            .font: pdfKitGated { BoundaryFont(name: "Helvetica", size: size) }!,
             (foundationKey ? .baselineOffset : NSAttributedString.Key(kCTBaselineOffsetAttributeName as String)): offset,
         ]))
     }

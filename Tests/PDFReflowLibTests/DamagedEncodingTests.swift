@@ -22,11 +22,13 @@ func shiftedGlyphNamePDF(_ lines: [String], mapped: Bool) -> Data {
 /// One page per entry, each with its own Type3 font; built from raw objects because PDFKit's
 /// document writer merges identical font resources when pages are inserted from other documents.
 func shiftedGlyphNamePDF(pages: [(lines: [String], mapped: Bool)]) -> Data {
-    let helvetica = CTFontCreateWithName("Helvetica" as CFString, 1000, nil)
+    let helvetica = pdfKitGated { CTFontCreateWithName("Helvetica" as CFString, 1000, nil) }
     func width(_ code: Int) -> Int {
         var character = UniChar(code), glyph = CGGlyph()
-        CTFontGetGlyphsForCharacters(helvetica, &character, &glyph, 1)
-        return Int(CTFontGetAdvancesForGlyphs(helvetica, .horizontal, &glyph, nil, 1).rounded())
+        return pdfKitGated {
+            CTFontGetGlyphsForCharacters(helvetica, &character, &glyph, 1)
+            return Int(CTFontGetAdvancesForGlyphs(helvetica, .horizontal, &glyph, nil, 1).rounded())
+        }
     }
     func escaped(_ text: String) -> String {
         text.replacingOccurrences(of: "\\", with: "\\\\").replacingOccurrences(of: "(", with: "\\(").replacingOccurrences(of: ")", with: "\\)")
@@ -92,7 +94,7 @@ private func hasImage(_ block: ReflowBlock) -> Bool {
 @Test func shiftedGlyphNamesWithoutToUnicodeReproduceTheCensusMechanism() throws {
     let damaged = try #require(PDFDocument(data: shiftedGlyphNamePDF(sampleLines, mapped: false)))
     let page = try #require(damaged.page(at: 0))
-    let text = try #require(page.string)
+    let text = try #require(pdfKitGated { page.string })
     #expect(text.contains("Wzr gdwd ilohv zhuh xvhg1"))
     #expect(TextEncodingCheck.hasUnmappedFont(try #require(page.pageRef)))
     #expect(TextEncodingCheck.isImplausible(text, language: "en"))
@@ -177,7 +179,7 @@ private func hasImage(_ block: ReflowBlock) -> Bool {
         for index in 0..<document.pageCount {
             let page = try #require(document.page(at: index))
             #expect(!TextEncodingCheck.hasUnmappedFont(try #require(page.pageRef)), "\(name) page \(index + 1)")
-            #expect(!TextEncodingCheck.isImplausible(page.string ?? "", language: "en"), "\(name) page \(index + 1)")
+            #expect(!TextEncodingCheck.isImplausible(pdfKitGated { page.string } ?? "", language: "en"), "\(name) page \(index + 1)")
         }
     }
 }

@@ -50,7 +50,7 @@ struct SourceLayoutFixture: Decodable {
                 var attributes: [NSAttributedString.Key: Any] = [
                     NSAttributedString.Key(kCTBaselineOffsetAttributeName as String): run.baselineOffset,
                 ]
-                attributes[.font] = FixtureFont(name: run.fontName, size: run.fontSize)
+                attributes[.font] = pdfKitGated { FixtureFont(name: run.fontName, size: run.fontSize) }
                 if fontWeights, run.bold == true { attributes[FontWeightReader.boldAttribute] = true }
                 if fontWeights, run.italic == true { attributes[FontWeightReader.italicAttribute] = true }
                 if fontWeights, run.mathItalic == true { attributes[FontWeightReader.mathItalicAttribute] = true }

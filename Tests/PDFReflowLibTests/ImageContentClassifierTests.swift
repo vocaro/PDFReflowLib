@@ -193,15 +193,17 @@ private func figuresPDF() throws -> Data {
     let consumer = try #require(CGDataConsumer(data: data as CFMutableData))
     let pdf = try #require(CGContext(consumer: consumer, mediaBox: &box, nil))
     pdf.beginPDFPage(nil)
-    let font = CTFontCreateWithName("Helvetica" as CFString, 11, nil)
-    let lines = ["The photograph below is captured tone and may be stored as JPEG.",
-                 "The illustration and the chart beneath it are drawn in colour and stay lossless.",
-                 "All three are preserved as images; this paragraph reflows as text."]
-    for (index, text) in lines.enumerated() {
-        let line = CTLineCreateWithAttributedString(NSAttributedString(string: text, attributes: [
-            NSAttributedString.Key(kCTFontAttributeName as String): font]))
-        pdf.textPosition = CGPoint(x: 72, y: 750 - CGFloat(index) * 14)
-        CTLineDraw(line, pdf)
+    pdfKitGated {
+        let font = CTFontCreateWithName("Helvetica" as CFString, 11, nil)
+        let lines = ["The photograph below is captured tone and may be stored as JPEG.",
+                     "The illustration and the chart beneath it are drawn in colour and stay lossless.",
+                     "All three are preserved as images; this paragraph reflows as text."]
+        for (index, text) in lines.enumerated() {
+            let line = CTLineCreateWithAttributedString(NSAttributedString(string: text, attributes: [
+                NSAttributedString.Key(kCTFontAttributeName as String): font]))
+            pdf.textPosition = CGPoint(x: 72, y: 750 - CGFloat(index) * 14)
+            CTLineDraw(line, pdf)
+        }
     }
     var noise = Noise(seed: 29)
     let photograph = try raster(width: 360, height: 240) { x, y in

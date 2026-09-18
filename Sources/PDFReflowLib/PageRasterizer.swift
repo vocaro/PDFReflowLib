@@ -4,8 +4,12 @@ import PDFKit
 import UniformTypeIdentifiers
 
 enum PageRasterizer {
+    /// `inspect` sees the finished pixels in the context's own buffer (RGBA8 rows, top row first:
+    /// bytes, width, height, bytes per row) before the image is made; reading a `CGImage`'s
+    /// pixels later would copy them.
     static func image(page: PDFPage, rect: CGRect, options: ConversionOptions,
-                      applyRotation: Bool = false) throws -> CGImage {
+                      applyRotation: Bool = false,
+                      inspect: ((UnsafeBufferPointer<UInt8>, Int, Int, Int) -> Void)? = nil) throws -> CGImage {
         guard let reference = page.pageRef, rect.isFinite, rect.width > 0, rect.height > 0 else {
             throw ConversionError.resourceLimit("invalid page geometry")
         }
@@ -46,6 +50,10 @@ enum PageRasterizer {
             annotation.draw(with: .cropBox, in: context)
             context.restoreGState()
         }
+        if let inspect, let data = context.data {
+            inspect(UnsafeBufferPointer(start: data.assumingMemoryBound(to: UInt8.self),
+                                        count: context.bytesPerRow * height), width, height, context.bytesPerRow)
+        }
         guard let image = context.makeImage() else {
             throw ConversionError.resourceLimit("raster creation failed")
         }
@@ -64,6 +72,11 @@ enum PageRasterizer {
         case .jpeg(let quality):
             try write(image, to: jpeg, jpegQuality: quality)
             return (jpeg, .jpeg)
+        case .automatic:
+            // Callers that know the image's role and page resolve this themselves; without that
+            // evidence, judge it as a region crop, the stricter role.
+            return try encode(image, at: baseURL, encoding: ImageContentClassifier.resolve(encoding,
+                image: image, role: .region, pageDrawnFromImage: false))
         case .smallest(let quality):
             try write(image, to: png)
             try Task.checkCancellation()

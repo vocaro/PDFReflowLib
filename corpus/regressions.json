@@ -50,6 +50,15 @@
           "minimumImages": 1
         },
         {
+          "page": 67,
+          "imageAppearance": [
+            {
+              "reference": "corpus/references/faa-phak-8083-25c/page-67-attitude-indicator-color.png"
+            }
+          ],
+          "minimumImages": 1
+        },
+        {
           "page": 91,
           "orderedText": [
             "must be defined.",
@@ -10563,7 +10572,7 @@
   "excludedFullConversions": [
     {
       "id": "gpo-warren-1964",
-      "reason": "Known default image-output ceiling failure: 920 full-page colour scans need 1,062.69 MiB of entry bytes as PNG and 512.33 MiB with the smaller of PNG and JPEG 0.90 per image, against the 512 MiB default. The nine-page excerpt regression is recorded separately.",
+      "reason": "Image-output ceiling (#5): 920 full-page colour scans need 1,062.69 MiB of entry bytes as PNG; under the automatic encoding default (#193) the whole book fits the 512 MiB default by only 316,202 bytes (0.059%), so it stays out of the gated lane until #5 decides whether that margin is a pass. The nine-page excerpt regression is recorded separately.",
       "issue": 5
     }
   ]

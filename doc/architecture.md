@@ -1277,7 +1277,22 @@ only the clip applies there. Tagged groups that lose a line keep true line count
 added; a removed head that furniture removal used to take no longer reports `furnitureRemoved`.
 
 `PageRasterizer` renders source-composited regions to bounded rasters. Client policy independently
-selects PNG, JPEG quality, or the smaller encoding for full-page images and cropped regions.
+selects PNG, JPEG quality, or the smaller encoding for full-page images and cropped regions, or
+leaves the default, `.automatic(jpegQuality: 0.90)`, which is decided per image (#193).
+`ImageContentClassifier` reads the raster before it is encoded, in the pipeline's `saveImage`,
+which knows the two things the rasterizer does not: the image's role (a supplementary page
+reference, or a crop; a required fallback is its page's only copy and is judged as a crop) and
+whether its page draws its type from an image (no text layer, or text over a page-sized graphic;
+recorded during extraction). One pass over the pixels gives the survey prototype's features (the
+modal colour and the shares near it, the share whose hue differs from it, the distinct colours,
+and the flat, step-edge and ramp shares of the grey gradient), plus one pass per batch of
+candidate grounds for the exact modal colour. They are read through `PageRasterizer.image`'s
+`inspect` hook from the bitmap context's own buffer, because reading a finished `CGImage`'s
+pixels copies them. Lossy is permitted for neutral images, photographs, tonal scans, continuous-tone
+art (except crops that are drawn illustration, at least 30% flat) and full-page `mixed`
+references; the permitted image goes through `.smallest`, the rest through `.png`, so
+`PageRasterizer.encode` keeps its contract and an explicitly named encoding bypasses the
+classifier. See [conversion options](conversion-options.md#automatic-encoding).
 The asset registry records the actual format and file URL; the writer uses matching extensions
 and MIME types. Encoding selection retains at most one raster and two candidate files at a time.
 Each raster is drawn over an opaque white fill, so its alpha channel is a constant 255 plane;

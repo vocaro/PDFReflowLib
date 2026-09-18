@@ -256,7 +256,12 @@ whole book needs 1,114,310,156 entry bytes as PNG, 2.08× the default, and 537,2
 per-image encoding choice can do at that quality. Its 910 full-page references are colour scans,
 and 512 MiB over 920 pages is 583 KiB a page. What is left is a policy decision about default
 encoding, raster DPI, or references on books where nearly every page is unverified, not a
-measurement. The measurement runner retains the failure and memory/progress evidence. A
+measurement. The measurement runner retains the failure and memory/progress evidence.
+That decision was taken for encoding in #193: under the automatic default the whole book
+converts within the 512 MiB default by 316,202 bytes (0.059%), every image JPEG 0.90, which is
+the same outcome as `smallest:0.9` for both roles
+([evidence](../measurements/image-encoding-default/record.md)); the book stays out of the gated
+lane until #5 decides whether that margin is a pass. A
 [full-book encoding experiment](../measurements/warren-image-encoding/record.md)
 completes with an explicit 2 GiB experimental override; the default-budget gate remains unresolved.
 The [production client-policy runs](../measurements/client-options/record.md) also complete all

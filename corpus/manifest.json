@@ -210,7 +210,7 @@
           "resolution": "Source pages 1 and 920 retain image-only fallback; the pinned nine-page excerpt has seven reflowed pages. See measurements/quality-and-raster-fixes/record.md."
         }
       ],
-      "baselineStatus": "Fails maximumOutputBytes (image output) after the last completed reconstruction page 436/920; no EPUB is published. The whole book needs 1,062.69 MiB of entry bytes as PNG, or 512.33 MiB with the smaller of PNG and JPEG 0.90 per image, against the 512 MiB default. See measurements/gpo-warren-1964/record.md and measurements/opaque-page-rasters/record.md.",
+      "baselineStatus": "Under the automatic image-encoding default (#193) the whole book converts within the 512 MiB default, 316,202 bytes (0.059%) under it: 536,554,710 entry bytes, every one of its 932 images as JPEG 0.90, EPUBCheck clean. As PNG it needs 1,062.69 MiB of entry bytes. Still excluded from the gated lane pending #5's decision on so thin a margin. See measurements/image-encoding-default/record.md, measurements/gpo-warren-1964/record.md and measurements/opaque-page-rasters/record.md.",
       "baselineTrackingURL": "https://github.com/vocaro/PDFReflowLib/issues/5",
       "rightsClearance": {
         "status": "owner-confirmed",

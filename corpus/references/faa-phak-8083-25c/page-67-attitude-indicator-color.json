@@ -1,0 +1,23 @@
+{
+  "case": "faa-phak-8083-25c",
+  "sourceSHA256": "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
+  "page": 67,
+  "regionPoints": [
+    308.0,
+    63.0,
+    358.0,
+    113.0
+  ],
+  "target": "Figure 2-22 attitude indicator: blue sky over brown ground with the yellow aircraft symbol, the survey's worst lossy case (#193)",
+  "renderer": "pdftoppm version 26.04.0",
+  "renderDPI": 180,
+  "referenceDPI": 36,
+  "kind": "color",
+  "mode": "RGB",
+  "inkThreshold": 200,
+  "pixels": [
+    25,
+    25
+  ],
+  "sha256": "1a47bbf2c42fd42d777eba720cf22fc9097becf92a2889158075bc93f0b899fe"
+}

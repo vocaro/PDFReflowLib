@@ -154,6 +154,10 @@ enum PDFReflowLibPipeline {
         // words before any page is read (#143).
         let glyphDecodings = try GlyphIndexDecoder.read(source, language: options.language)
         var chapterStartPages: Set<Int> = []
+        /// Pages whose type, if any, arrives inside an image: no text layer, or text over a
+        /// page-sized graphic. The encoding classifier reads a typeset full-page raster of such a
+        /// page as a scan rather than born-digital text (#193).
+        var pagesDrawnFromImage: Set<Int> = []
         // Chapter evidence for note references: the spine's labelled chapters, or an outline
         // that numbers its chapters without the word. Each candidate must still match its page.
         let noteChapterCandidates = chapterCandidates.isEmpty
@@ -320,6 +324,7 @@ enum PDFReflowLibPipeline {
             let automaticOCR = options.ocr == .automatic || options.ocr == .automaticIncludingImageBackedText
                 || options.ocr == .automaticKeepingImageBackedText
             let noText = raw.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+            if noText || imageBackedText { pagesDrawnFromImage.insert(i) }
             // A page that reflows no word of its own, but draws writing over its ground, has no
             // text layer to judge: its sentence is artwork (#176). Such a page is recognized like
             // a page with no text layer at all, under every automatic policy, so its words reach
@@ -633,9 +638,21 @@ enum PDFReflowLibPipeline {
                     try Task.checkCancellation()
                     let assetID = "image-\(assets.count + 1)"
                     let encoded = try autoreleasepool {
-                        let image = try PageRasterizer.image(page: page, rect: rect, options: options, applyRotation: rotate)
+                        // `.automatic` is decided here, where the image's role and its page are known,
+                        // from the raster's own buffer (#193).
+                        let requested = fullPage ? options.fullPageImageEncoding : options.regionImageEncoding
+                        var measured: ImageContentClassifier.Features?
+                        let image = try PageRasterizer.image(page: page, rect: rect, options: options, applyRotation: rotate,
+                            inspect: requested.isAutomatic ? { measured = ImageContentClassifier.features($0,
+                                width: $1, height: $2, bytesPerRow: $3) } : nil)
+                        // Only a supplementary reference sits beside its page's reflowed text; a required
+                        // fallback (the rotated page) is the page's only copy and is judged like a crop,
+                        // as the survey measured it.
+                        let encoding = ImageContentClassifier.resolve(requested, role: fullPage && !rotate ? .page : .region,
+                            pageDrawnFromImage: pagesDrawnFromImage.contains(i),
+                            features: measured ?? ImageContentClassifier.features(of: image))
                         return try PageRasterizer.encode(image, at: workspace.appendingPathComponent("assets/" + assetID),
-                            encoding: fullPage ? options.fullPageImageEncoding : options.regionImageEncoding)
+                            encoding: encoding)
                     }
                     imageBytes += Int64(try encoded.url.resourceValues(forKeys: [.fileSizeKey]).fileSize ?? 0)
                     guard imageBytes <= options.maximumOutputBytes else { throw ConversionError.resourceLimit("image output bytes") }

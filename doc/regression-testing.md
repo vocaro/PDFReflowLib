@@ -115,7 +115,7 @@ are, in the page markup). Evidence and negative controls on real output are in
 ## Current content coverage
 
 <!-- counts:coverage -->
-[corpus/regressions.json](../corpus/regressions.json) has 3495 targeted checks on 568 reviewed pages
+[corpus/regressions.json](../corpus/regressions.json) has 3497 targeted checks on 569 reviewed pages
 across 20 documents: *Pilot's Handbook of Aeronautical Knowledge*, *Beginning and Intermediate
 Algebra*, *The 9/11 Commission Report*, *The Fed Explained*, *Dietary Guidelines for Americans*,
 *Fifth National Climate Assessment*, *Our Flag*, *Preparedness 101*, *Project Blue Book Special
@@ -128,9 +128,9 @@ System*, *Agricultural Research*, *Earthdata Cloud Analytics Project* and *Tank 
 They comprise 1137 ordered-text, 239 text, 446 paragraph, 295 absent-text, 278 heading,
 36 heading-level, 64 absent-heading, 93 list-item, 1 preformatted-lines, 29 script,
 10 absent-script, 11 footnote, 34 note-link, 61 paragraph-continuation, 1 list-item-continuation,
-8 paragraph-separation, 122 distinct-paragraph, 199 image-presence, 45 captioned-image,
+8 paragraph-separation, 122 distinct-paragraph, 200 image-presence, 45 captioned-image,
 20 image-alternative, 102 page-reference, 111 warning, 113 absent-warning, 17 source-region,
-5 glyph-structure, 4 image-appearance and 14 table-cell checks, counted as
+5 glyph-structure, 5 image-appearance and 14 table-cell checks, counted as
 `tools/check_corpus_content.py` counts them.
 <!-- counts:end -->
 
@@ -182,7 +182,9 @@ on selected regions; robust visual/semantic contracts still need expansion. The 
 lane does not supply a whole-book quality score or physical-device performance qualification.
 
 The full Warren conversion remains explicitly excluded from this successful-conversion lane because
-of the known image-output ceiling failure (#5); the pinned Warren excerpt separately checks its two
+of the image-output ceiling (#5): under the automatic encoding default it now fits the 512 MiB
+budget, but by only 316,202 bytes (0.059%), and whether that is a pass is #5's decision
+([evidence](../measurements/image-encoding-default/record.md)); the pinned Warren excerpt separately checks its two
 textless pages. NOAA joined the lane once its entry bytes fell under the default budget
 ([evidence](../measurements/opaque-page-rasters/record.md)), and is gated like any other case.
 Exclusions are listed in output, never counted as passes.
@@ -257,7 +259,12 @@ reference samples whose converted hue is within 30° with at least half the chro
 The Colorado flag on Our Flag page 33, FAA figure 5-36, the USGS statistics table and the CDC comic's
 image-only page 13 are checked; page 13 is the first colour check on artwork rather than a chart or a
 flag (the lamp's yellow glow over blue-grey night panels), and its crop scores 1.00 scale, 0.99
-contrast and 1.00 agreement over 1,247 colored samples.
+contrast and 1.00 agreement over 1,247 colored samples. The FAA page-67 attitude indicator, the
+drawn illustration the automatic encoding keeps PNG (#193), is checked inside its figure crop
+(0.99 agreement over 373 colored samples; a grayscale copy scores 0.00). At 36 DPI the check cannot
+see chroma subsampling: a JPEG 0.90 copy of the same crop scores the same, so the encoding choice
+itself is pinned by `ImageContentClassifierTests`, not here
+([evidence](../measurements/image-encoding-default/record.md)).
 Correct crops score 0.98–1.00 scale, 0.55–0.99 contrast and 0.99+ color agreement; grayscale,
 channel-swapped, level-compressed and downscaled crops fail (agreement ≤ 0.36, contrast ≤ 0.18,
 scale ≤ 0.79). Scale is a pixel-dimension check, not a sharpness measure. Glyph structure stays a
@@ -650,7 +657,7 @@ the page's structure validates, each line also records the tag the pipeline appl
 since #89/#90); older fixtures and untagged lines have none, and `SourceLayoutFixture` restores it.
 Source review, baseline failures, cross-document safeguards and full-run evidence are retained
 in [the three-fix measurement](../measurements/three-fidelity-fixes/record.md). The suite contains
-<!-- counts:swift-tests -->972 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->245 Python tests<!-- counts:end -->.
+<!-- counts:swift-tests -->980 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->245 Python tests<!-- counts:end -->.
 The comparison tests include a real-Poppler image URL check through the safe HTTP handler
 (simple and positioned modes, paths with spaces); absent Poppler is an explicit skip.
 
@@ -727,9 +734,18 @@ complete-conversion gate. A passing excerpt does not qualify the complete book.
 prose, graphical crops and required page fallbacks. It verifies independent page/region JPEG
 and PNG bytes with matching EPUB media types, clean/noisy smallest-encoding choices, unchanged
 raster dimensions, invalid qualities, and size-failure cleanup without false completion.
+`ImageContentClassifierTests.swift` covers the automatic default (#193): features pinned to a
+hand-computed raster the survey prototype agrees with, the same features from the context buffer
+the converter reads and from the finished image, positive and negative controls for every verdict
+(photograph, neutral scan, coloured chart, drawn illustration crop against its page reference and
+against a shaded crop under 30% flat, text pages by page evidence), and a three-figure page whose
+photograph alone goes to JPEG by default while bare `smallest` also takes the illustration and
+named encodings apply exactly. Disabling the flat-share tightening, or admitting every image as
+neutral, fails them.
 
 `check-conversion-policies.py` runs actual CLI policy combinations through independent
-EPUB structure checks, optional EPUBCheck and the internal reader. Invalid and over-budget
+EPUB structure checks, optional EPUBCheck and the internal reader. The automatic encoding named
+explicitly (`automatic`, `automatic:0.9`) must write byte-identical images to the default. Invalid and over-budget
 requests must fail without output or completion. Header/footer cases require `prose.pdf`'s
 running header to be absent by default and with `remove`, present on all three pages with `keep`,
 and byte-identical across two `keep` runs with a pinned identifier and date. Invalid values

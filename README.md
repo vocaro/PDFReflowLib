@@ -58,7 +58,11 @@ output is never overwritten. Input and output must be local file URLs. The calle
 security-scoped access alive until conversion returns and owns the destination's lifetime.
 
 Clients independently control reference inclusion, full-page and cropped-region encoding,
-JPEG quality, and output size. Existing defaults remain automatic references and PNG.
+JPEG quality, and output size. The defaults are automatic references and automatic image
+encoding, `.automatic(jpegQuality: 0.90)`: each image is classified, and photographs, painted
+art, tonal scans, full-page mixed references and uncoloured images keep the smaller of PNG and
+JPEG 0.90 while coloured line art, charts, drawn illustration crops and coloured text pages stay
+PNG. Naming `.png`, `.jpeg(quality:)` or `.smallest(jpegQuality:)` applies exactly that.
 
 ```swift
 options.referenceImages = .never          // Supplementary references only
@@ -68,9 +72,9 @@ options.maximumOutputBytes = .max         // Disable the entry-byte budget
 options.maximumEPUBBytes = 512 * 1_024 * 1_024 // Cap the final ZIP file
 ```
 
-`.smallest(jpegQuality: 0.90)` encodes PNG and JPEG and keeps the smaller file; it does not
-assess visual fidelity. `.always` adds references on every reconstructed page; `.never` retains
-required image-only fallbacks and figure crops, with warnings when recommended references are
+`.smallest(jpegQuality: 0.90)` encodes PNG and JPEG and keeps the smaller file; on its own it
+does not assess visual fidelity, which is what the automatic default adds. `.always` adds
+references on every reconstructed page; `.never` retains required image-only fallbacks and figure crops, with warnings when recommended references are
 omitted. [Conversion options](doc/conversion-options.md#recommended-starting-settings) gives measured starting
 settings, provisional recommended ranges, and each control's tradeoffs.
 
@@ -232,7 +236,7 @@ automatic downloads. `scripts/check-all.sh --fast` remains the offline synthetic
 converts each fixture twice and requires byte-identical EPUBs).
 Python tool tests and the source-region, glyph-structure and image-appearance checks require numpy
 and Pillow. Poppler is needed only to render new region references. The reviewed contracts hold
-<!-- counts:contract-summary -->3495 checks on 568 pages of 20 documents<!-- counts:end -->, including full-resolution stroke checks for equations and a
+<!-- counts:contract-summary -->3497 checks on 569 pages of 20 documents<!-- counts:end -->, including full-resolution stroke checks for equations and a
 table, scale/contrast/color checks for a flag and an FAA figure, and <!-- counts:table-cell-checks -->14<!-- counts:end --> cell checks on tables
 emitted as text. See [regression testing](doc/regression-testing.md) for coverage, limitations and
 adding a case.

@@ -201,7 +201,7 @@ enum EPUBTextEncoder {
                         referenceID: (NoteKey) -> String? = { _ in nil }) throws -> String {
         switch block.content {
         case let .paragraph(text), let .heading(_, text, _): return inline(text, referenceID: referenceID)
-        case let .preformatted(text), let .footnote(text): return inline(text, referenceID: referenceID)
+        case let .preformatted(text), let .footnote(text), let .pullQuote(text): return inline(text, referenceID: referenceID)
         case let .listItem(item): return inline(item.text, referenceID: referenceID)
         case let .table(table): return Self.table(table)
         case let .sourcePage(page): return sourcePage(page)

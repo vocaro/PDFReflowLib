@@ -51,6 +51,7 @@ CHECK_TYPES = (
     ('script', ('scripts',), False),
     ('absent-script', ('absentScripts',), False),
     ('footnote', ('notes',), False),
+    ('pull-quote', ('pullQuotes',), False),
     ('note-link', ('noteLinks',), False),
     ('paragraph-continuation', ('continuedParagraphs',), False),
     ('list-item-continuation', ('continuedListItems',), False),
@@ -143,6 +144,7 @@ def read_pages(path, *, max_entries=DEFAULT_MAX_ENTRIES,
     item_id = 0
     block_id = 0
     note_id = 0
+    quote_id = 0
     # Every list element in document order: its kind, start, depth and items. An item's text
     # accumulates across page markers; its page is the one its first text lands on.
     lists = []
@@ -163,7 +165,7 @@ def read_pages(path, *, max_entries=DEFAULT_MAX_ENTRIES,
             chapter = PurePosixPath('EPUB') / manifest[reference.get('idref')]
             tree = ET.fromstring(archive.read(str(chapter)))
 
-            def append(text, script=None, heading=None, paragraph=None, note=None, item=None, block=None):
+            def append(text, script=None, heading=None, paragraph=None, note=None, item=None, block=None, quote=None):
                 if item is not None and text:
                     record = items[item]
                     record['text'] += text
@@ -181,6 +183,8 @@ def read_pages(path, *, max_entries=DEFAULT_MAX_ENTRIES,
                         page['paragraphs'][paragraph] = page['paragraphs'].get(paragraph, '') + text
                     if note is not None:
                         page['notes'][note] = page['notes'].get(note, '') + text
+                    if quote is not None:
+                        page['pullQuotes'][quote] = page['pullQuotes'].get(quote, '') + text
                     if item is not None:
                         page['listItems'][item] = page['listItems'].get(item, '') + text
                     if block is not None:
@@ -193,8 +197,8 @@ def read_pages(path, *, max_entries=DEFAULT_MAX_ENTRIES,
                             spans.append({'tag': script, 'start': start, 'end': start + len(text)})
 
             def walk(element, script=None, heading=None, paragraph=None, note=None, item=None, block=None,
-                     within=None, depth=0):
-                nonlocal current, heading_id, paragraph_id, note_id, item_id, block_id, sequence_depth
+                     within=None, depth=0, quote=None):
+                nonlocal current, heading_id, paragraph_id, note_id, item_id, block_id, quote_id, sequence_depth
                 pagebreak = 'pagebreak' in element.get(EPUB + 'type', '').split()
                 if pagebreak:
                     marker_id = element.get('id', '')
@@ -204,7 +208,7 @@ def read_pages(path, *, max_entries=DEFAULT_MAX_ENTRIES,
                     if current in pages:
                         raise ValueError('Duplicate page boundary')
                     markers.append(current)
-                    pages[current] = {'text': '', 'images': [], 'math': [], 'scripts': [], 'headings': {}, 'paragraphs': {}, 'listItems': {}, 'notes': {}, 'tables': [],
+                    pages[current] = {'text': '', 'images': [], 'math': [], 'scripts': [], 'headings': {}, 'paragraphs': {}, 'listItems': {}, 'notes': {}, 'pullQuotes': {}, 'tables': [],
                                       'preformatted': {}, 'noterefs': [], 'anchors': {}, 'blocks': []}
                 # An expression written as MathML (#190): its markup, linear alternative text, the
                 # label its paragraph prints before it and its fallback image. Its tokens are not page
@@ -264,7 +268,7 @@ def read_pages(path, *, max_entries=DEFAULT_MAX_ENTRIES,
                     if element.tag == HTML + 'ol' and not re.fullmatch(r'[1-9]\d*', start):
                         raise ValueError('Invalid list start')
                     # A list nested in an item follows the item's own text: keep the words apart.
-                    append(' ', script, heading, paragraph, note, item, block)
+                    append(' ', script, heading, paragraph, note, item, block, quote=quote)
                     within = {'kind': element.tag[len(HTML):], 'depth': depth,
                               'start': int(start) if element.tag == HTML + 'ol' else None, 'items': []}
                     lists.append(within)
@@ -282,6 +286,10 @@ def read_pages(path, *, max_entries=DEFAULT_MAX_ENTRIES,
                 if element.get('role') == 'doc-footnote':
                     note_id += 1
                     note = note_id
+                # A pull quote set apart as an aside (#201); its inner paragraph is also a paragraph.
+                if element.get('role') == 'doc-pullquote':
+                    quote_id += 1
+                    quote = quote_id
                 # The page's own outermost blocks, in document order beside its images, so a
                 # caption's place next to its figure can be read (`captionedImages`). A block a
                 # page marker interrupts keeps only the text it holds on the page it opened.
@@ -291,18 +299,18 @@ def read_pages(path, *, max_entries=DEFAULT_MAX_ENTRIES,
                 opening_break = (element.tag in SEQUENCE_BLOCKS and children and not (element.text or '').strip()
                                  and 'pagebreak' in children[0].get(EPUB + 'type', '').split())
                 if opening_break:
-                    walk(children[0], script, heading, paragraph, note, item, block, within, depth)
+                    walk(children[0], script, heading, paragraph, note, item, block, within, depth, quote=quote)
                 sequence = None
                 if element.tag in SEQUENCE_BLOCKS:
                     if current is not None and sequence_depth == 0:
                         sequence = (current, {'kind': 'text', 'start': len(pages[current]['text'])})
                         pages[current]['blocks'].append(sequence[1])
                     sequence_depth += 1
-                append(element.text, script, heading, paragraph, note, item, block)
+                append(element.text, script, heading, paragraph, note, item, block, quote=quote)
                 for position, child in enumerate(children):
                     if not (opening_break and position == 0):
-                        walk(child, script, heading, paragraph, note, item, block, within, depth)
-                    append(child.tail, script, heading, paragraph, note, item, block)
+                        walk(child, script, heading, paragraph, note, item, block, within, depth, quote=quote)
+                    append(child.tail, script, heading, paragraph, note, item, block, quote=quote)
                 if element.tag in SEQUENCE_BLOCKS:
                     sequence_depth -= 1
                 if sequence is not None:
@@ -352,6 +360,7 @@ def read_pages(path, *, max_entries=DEFAULT_MAX_ENTRIES,
         page['lists'] = []
         page['paragraphs'] = [normalized(text) for text in page['paragraphs'].values()]
         page['notes'] = [normalized(text) for text in page['notes'].values()]
+        page['pullQuotes'] = [normalized(text) for text in page['pullQuotes'].values()]
     # Each list element, on every page one of its items opens on, with its items' whole text.
     for record in lists:
         shape = {'kind': record['kind'], 'start': record['start'], 'level': record['depth'],
@@ -591,6 +600,13 @@ def assess(case, contract, result, report, pages, markers, image_data=None, refe
             # The phrase must sit inside one page-bottom footnote block, not in body prose.
             if not any(normalized(phrase) in note for note in page.get('notes', [])):
                 errors.append(f'Page {number}: missing footnote {phrase!r}')
+        for phrase in item.get('pullQuotes', []):
+            if not isinstance(phrase, str) or not normalized(phrase):
+                raise ValueError('Empty or invalid pull-quote phrase')
+            checks += 1
+            # The phrase must sit inside one pull-quote aside (#201), not in a heading or body prose.
+            if not any(normalized(phrase) in quote for quote in page.get('pullQuotes', [])):
+                errors.append(f'Page {number}: missing pull quote {phrase!r}')
         # Two passages that open separate paragraphs on this page. `paragraphs` matches a phrase
         # inside any paragraph, so it cannot see a section lead-in swallowed by the paragraph
         # above it (#60); this names both passages and requires no paragraph to carry both.

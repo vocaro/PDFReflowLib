@@ -167,14 +167,30 @@
         1,
         7,
         21,
+        29,
         30,
         50,
+        90,
         100,
+        103,
+        291,
+        384,
+        498,
+        520,
+        549,
+        553,
+        556,
+        636,
+        885,
         890,
         910,
         920
       ],
-      "reviewStatus": "Full default conversion fails the image-output ceiling; nine-page excerpt spot checks expose text-layer, reflow and column-order defects. Full-book fidelity is unqualified.",
+      "reviewStatus": "Gated full conversion under library defaults (#202): 21 pages reviewed against source renders and pinned in corpus/regressions.json. Full-book fidelity and OCR accuracy are unqualified.",
+      "memoryBudget": {
+        "maxPeakRSSMiB": 1536,
+        "scope": "macOS 27 arm64 release CLI, library defaults; regression ceiling over measured peaks of 1,081-1,115 MiB under concurrent load, not a physical iOS device budget"
+      },
       "knownFidelityIssues": [
         {
           "page": 50,
@@ -190,7 +206,9 @@
           "trackingURLs": [
             "https://github.com/vocaro/PDFReflowLib/issues/2",
             "https://github.com/vocaro/PDFReflowLib/issues/6"
-          ]
+          ],
+          "status": "resolved",
+          "resolution": "In the whole-book conversion notes 415-476 precede note 477; the gated contract pins the order. See measurements/warren-gated-corpus/record.md."
         },
         {
           "page": 910,
@@ -198,7 +216,9 @@
           "trackingURLs": [
             "https://github.com/vocaro/PDFReflowLib/issues/2",
             "https://github.com/vocaro/PDFReflowLib/issues/6"
-          ]
+          ],
+          "status": "resolved",
+          "resolution": "In the whole-book conversion the left column finishes through Fair Play for Cuba Committee before Federal Bureau of Investigation, and no entry is a heading; the gated contract pins the order. See measurements/warren-gated-corpus/record.md."
         },
         {
           "page": 920,
@@ -210,8 +230,8 @@
           "resolution": "Source pages 1 and 920 retain image-only fallback; the pinned nine-page excerpt has seven reflowed pages. See measurements/quality-and-raster-fixes/record.md."
         }
       ],
-      "baselineStatus": "Under the automatic image-encoding default (#193) the whole book converts within the 512 MiB default, 316,202 bytes (0.059%) under it: 536,554,710 entry bytes, every one of its 932 images as JPEG 0.90, EPUBCheck clean. As PNG it needs 1,062.69 MiB of entry bytes. Still excluded from the gated lane pending #5's decision on so thin a margin. See measurements/image-encoding-default/record.md, measurements/gpo-warren-1964/record.md and measurements/opaque-page-rasters/record.md.",
-      "baselineTrackingURL": "https://github.com/vocaro/PDFReflowLib/issues/5",
+      "baselineStatus": "Gated in the default-policy corpus lane (#202). Under the automatic image-encoding default (#193) the whole book converts within the 512 MiB default output budget with 319,972 bytes (0.060%) to spare: 536,550,940 entry bytes, all 932 images JPEG, EPUBCheck clean. A change that adds that many image bytes fails the gate, which is the intended signal. See measurements/warren-gated-corpus/record.md and measurements/image-encoding-default/record.md.",
+      "baselineTrackingURL": "https://github.com/vocaro/PDFReflowLib/issues/202",
       "rightsClearance": {
         "status": "owner-confirmed",
         "scope": "Commercial use and redistribution of the development corpus; retain applicable license attribution."

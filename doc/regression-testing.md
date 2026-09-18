@@ -12,7 +12,7 @@ A valid EPUB can still contain incorrect text, wrong reading order or unreadable
   pixels, including crop origins, rotations, annotations and resource ceilings. Preserved-region
   tests also inspect fraction bars, raised exponents and all six cells of a ruled table in actual
   EPUB images at 72/144 DPI, with surrounding-prose and code controls.
-- `scripts/check-all.sh --corpus`: the same checks plus <!-- counts:documents -->20<!-- counts:end --> complete PDF conversions,
+- `scripts/check-all.sh --corpus`: the same checks plus <!-- counts:documents -->21<!-- counts:end --> complete PDF conversions,
   sequentially, with EPUBCheck, monotonic progress, pinned source identities,
   [memory budgets](corpus.md) (the lowest peak of up to two conversions, since
   one measurement of a book's peak resident size varies by about 100 MiB under load, #140)
@@ -115,23 +115,24 @@ are, in the page markup). Evidence and negative controls on real output are in
 ## Current content coverage
 
 <!-- counts:coverage -->
-[corpus/regressions.json](../corpus/regressions.json) has 3632 targeted checks on 585 reviewed pages
-across 20 documents: *Pilot's Handbook of Aeronautical Knowledge*, *Beginning and Intermediate
-Algebra*, *The 9/11 Commission Report*, *The Fed Explained*, *Dietary Guidelines for Americans*,
-*Fifth National Climate Assessment*, *Our Flag*, *Preparedness 101*, *Project Blue Book Special
-Report No. 14*, *Mineral Commodity Summaries 2025*, *Loper Bright Enterprises v. Raimondo*,
-*Disclosure Risk Assessment in Perturbative Microdata Protection*, *Stimulated Multiphoton
-Bremsstrahlung in Electron-Ion Collisions*, *Replay Clocks*, *Complaint for a Civil Case*,
-*Investigation of Atmospheric Boundary-Layer Effects on Launch-Vehicle Ground Wind Loads*, *A
-Scheduling Algorithm Compatible with a Distributed Management of Arrivals in the National Airspace
-System*, *Agricultural Research*, *Earthdata Cloud Analytics Project* and *Tank Health Monitoring*.
-They comprise 1137 ordered-text, 246 text, 451 paragraph, 341 absent-text, 278 heading,
-38 heading-level, 64 absent-heading, 88 list-item, 46 list, 21 preformatted-block,
-1 preformatted-lines, 29 script, 10 absent-script, 11 footnote, 34 note-link,
-70 paragraph-continuation, 1 list-item-continuation, 8 paragraph-separation, 121 distinct-paragraph,
-205 image-presence, 45 captioned-image, 20 image-alternative, 102 page-reference, 111 warning,
-113 absent-warning, 17 source-region, 5 glyph-structure, 5 image-appearance and 14 table-cell
-checks, counted as `tools/check_corpus_content.py` counts them.
+[corpus/regressions.json](../corpus/regressions.json) has 3807 targeted checks on 606 reviewed pages
+across 21 documents: *Pilot's Handbook of Aeronautical Knowledge*, *Beginning and Intermediate
+Algebra*, *Report of the President’s Commission on the Assassination of President John F. Kennedy*,
+*The 9/11 Commission Report*, *The Fed Explained*, *Dietary Guidelines for Americans*, *Fifth
+National Climate Assessment*, *Our Flag*, *Preparedness 101*, *Project Blue Book Special Report No.
+14*, *Mineral Commodity Summaries 2025*, *Loper Bright Enterprises v. Raimondo*, *Disclosure Risk
+Assessment in Perturbative Microdata Protection*, *Stimulated Multiphoton Bremsstrahlung in
+Electron-Ion Collisions*, *Replay Clocks*, *Complaint for a Civil Case*, *Investigation of
+Atmospheric Boundary-Layer Effects on Launch-Vehicle Ground Wind Loads*, *A Scheduling Algorithm
+Compatible with a Distributed Management of Arrivals in the National Airspace System*, *Agricultural
+Research*, *Earthdata Cloud Analytics Project* and *Tank Health Monitoring*. They comprise
+1231 ordered-text, 246 text, 459 paragraph, 341 absent-text, 278 heading, 38 heading-level,
+64 absent-heading, 88 list-item, 46 list, 21 preformatted-block, 1 preformatted-lines, 29 script,
+10 absent-script, 11 footnote, 34 note-link, 72 paragraph-continuation, 1 list-item-continuation,
+8 paragraph-separation, 125 distinct-paragraph, 215 image-presence, 45 captioned-image,
+20 image-alternative, 120 page-reference, 132 warning, 131 absent-warning, 17 source-region,
+5 glyph-structure, 5 image-appearance and 14 table-cell checks, counted as
+`tools/check_corpus_content.py` counts them.
 <!-- counts:end -->
 
 All source-page anchors must also remain complete and ordered, and semantic text must contain no image attachment placeholders.
@@ -195,14 +196,15 @@ the source-region, glyph-structure and appearance checks below cover selected re
 on selected regions; robust visual/semantic contracts still need expansion. The corpus
 lane does not supply a whole-book quality score or physical-device performance qualification.
 
-The full Warren conversion remains explicitly excluded from this successful-conversion lane because
-of the image-output ceiling (#5): under the automatic encoding default it now fits the 512 MiB
-budget, but by only 316,202 bytes (0.059%), and whether that is a pass is #5's decision
-([evidence](../measurements/image-encoding-default/record.md)); the pinned Warren excerpt separately checks its two
-textless pages. NOAA joined the lane once its entry bytes fell under the default budget
-([evidence](../measurements/opaque-page-rasters/record.md)), and is gated like any other case.
-Exclusions are listed in output, never counted as passes.
-The manifest consistency test requires every corpus document to be covered or explicitly excluded.
+The full Warren conversion is gated like any other case (#202). Under the automatic encoding
+default it fits the 512 MiB output budget by 319,972 bytes (0.060%), so a change that adds that
+many image bytes to the book fails the lane rather than passing unnoticed; its case takes about
+nine minutes under load and writes a 532 MB EPUB
+([evidence](../measurements/warren-gated-corpus/record.md)). NOAA joined the lane once its entry
+bytes fell under the default budget ([evidence](../measurements/opaque-page-rasters/record.md)).
+`excludedFullConversions` in `corpus/regressions.json` is empty; any exclusion added there is
+listed in output, never counted as a pass. The manifest consistency test requires every corpus
+document to be covered or explicitly excluded.
 
 ## Source-region image checks
 
@@ -755,9 +757,9 @@ words, and their absent broken forms. See the
 `InvisibleTextTests.swift` covers exclusively hidden OCR text, visible Courier and genuine
 font-size headings, mixed text modes, saved graphics state, nested forms and malformed modes.
 Warren pages 50/910 supply pinned source geometry; ordinary prose/index entries must not become
-code/headings, while source points 10/11 retain list formatting. The nine-page real Warren excerpt
-is evaluated separately because the full 920-page conversion remains outside the successful
-complete-conversion gate. A passing excerpt does not qualify the complete book.
+code/headings, while source points 10/11 retain list formatting. The full 920-page conversion is
+in the corpus lane (#202); the nine-page excerpt remains a quick visual-diagnosis aid and does not
+qualify the complete book.
 
 ## Conversion policy coverage
 

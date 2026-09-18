@@ -190,6 +190,83 @@ struct FormBlank: Equatable, Codable {
         }
     }
 
+    /// The blanks a printed form draws with no field over them (#197): a form made to be filled in
+    /// by hand, or one whose fields were never added, prints the same rules as the US Courts form
+    /// and has no widget to say where they stand. The rule must say so itself. A blank is a rule a
+    /// reader writes on: on the baseline of a row of type, beside that row's text, not under it,
+    /// with nothing set over it. The magazine's mailing coupon (`To stop mailing`, `To change your
+    /// address`, each on its rule) is one; before, the labels and rules were one crop.
+    ///
+    /// A rule is thin as `blanks(fields:paints:)` reads one, and collinear rules that touch are one
+    /// rule, as a form draws a blank twice or in pieces. It stands alone: any other paint meeting
+    /// it (a grid's vertical rule, a box, a crossing rule) makes it part of a drawing or a table,
+    /// where an empty cell's border is no blank. Its row is a line whose foot lies within half a
+    /// font size above the rule's middle or a third of the line's height below it, where a baseline
+    /// rule and an underline both stand. The line ends before the rule, within ten font sizes, as a
+    /// label stands to the left of its field across a tab stop (104 points at 11 points for the
+    /// form's `Name`), or runs on after it within a font size, as a sentence does. A blank is at
+    /// least three font sizes long, room to write a word; a radical's bar beside its sign is not
+    /// (Wallace pages 472–480). No line may stand over the rule between its middle and the top of
+    /// its row, so an underline, a value printed on a rule, the words over a table's rule and a
+    /// fraction's numerator are none, and a rule on no row of type (an answer area's lines, a
+    /// footnote separator, a rule under a heading) is none.
+    ///
+    /// A column's own rule can stand level with a line of the next column: a paper's float rule
+    /// (Replay Clocks pages 3 and 5), a list's separator (NOAA page 53), a section bar. A rule is
+    /// its column's when a line within six font sizes of it starts within its span (or half a font
+    /// size before it) and ends within two font sizes of its end, or a twentieth of its length: the
+    /// rule spans that column's type. A form's blank spans no such line; a caption set under it
+    /// (`(to be filled in by the Clerk’s Office)` under `Case No.`) stops well short of its end.
+    ///
+    /// The blank's field is the row it is set in, from the rule to the top of the row's line.
+    /// `fields` are the page's blanks with a field over them; a rule already in one is theirs.
+    static func printed(paints: [CGRect], lines: [TextLine], fields: [FormBlank] = []) -> [FormBlank] {
+        func isRule(_ paint: CGRect) -> Bool {
+            paint.isFinite && paint.height <= 6 && paint.width >= max(12, paint.height * 3)
+        }
+        var rules: [CGRect] = []
+        for paint in paints.filter(isRule).sorted(by: { ($0.midY, $0.minX) < ($1.midY, $1.minX) })
+            where !fields.contains(where: { $0.rule.contains(paint) }) {
+            if let last = rules.last, abs(last.midY - paint.midY) <= 1, paint.minX <= last.maxX + 1 {
+                rules[rules.count - 1] = last.union(paint)
+            } else {
+                rules.append(paint)
+            }
+        }
+        let text = lines.filter { line in
+            line.readingDirection == nil && !line.monospaced && !line.text.trimmingCharacters(in: .whitespaces).isEmpty
+        }
+        return rules.compactMap { rule in
+            // The rule as drawn, without `GraphicsReader`'s two points of padding at its ends.
+            let drawn = rule.insetBy(dx: 2, dy: 0)
+            guard drawn.width > 0 else { return nil }
+            let row = text.filter { line in
+                rule.midY >= line.rect.minY - line.fontSize * 0.5 && rule.midY <= line.rect.minY + line.rect.height / 3
+            }
+            let left = row.filter { $0.rect.maxX <= drawn.minX + 2 && drawn.minX - $0.rect.maxX <= $0.fontSize * 10 }
+                .max { $0.rect.maxX < $1.rect.maxX }
+            let right = row.filter { $0.rect.minX >= drawn.maxX - 2 && $0.rect.minX - drawn.maxX <= $0.fontSize }
+                .min { $0.rect.minX < $1.rect.minX }
+            guard let anchor = left ?? right, anchor.rect.maxY > rule.midY + 1,
+                  drawn.width >= anchor.fontSize * 3 else { return nil }
+            let outline = rule.insetBy(dx: -1, dy: -1)
+            guard !paints.contains(where: { $0.isFinite && $0.intersects(outline) && !outline.contains($0) }) else { return nil }
+            // A rule across a column of type is that column's: a line near it starts within its
+            // span and ends where it does.
+            let em = anchor.fontSize
+            guard !text.contains(where: { line in
+                !row.contains(line) && abs(line.rect.midY - rule.midY) <= em * 6
+                    && line.rect.minX >= drawn.minX - em * 0.5 && line.rect.minX < drawn.maxX
+                    && abs(line.rect.maxX - drawn.maxX) <= max(em * 2, drawn.width * 0.05)
+            }) else { return nil }
+            let field = CGRect(x: drawn.minX, y: rule.minY, width: drawn.width, height: anchor.rect.maxY - rule.minY)
+            let over = CGRect(x: drawn.minX + 1, y: rule.midY, width: drawn.width - 2, height: anchor.rect.maxY - 1 - rule.midY)
+            guard over.width > 0, over.height > 0,
+                  !text.contains(where: { $0.rect.intersects(over) }) else { return nil }
+            return FormBlank(rule: rule, field: field)
+        }
+    }
+
     /// Whether the field holds one line of the type on `row` (a line beside it or around it), so
     /// that its blank belongs to that row. A taller field is an answer area whose rule closes it.
     func sharesRow(with row: CGRect) -> Bool {

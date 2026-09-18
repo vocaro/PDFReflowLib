@@ -115,7 +115,7 @@ are, in the page markup). Evidence and negative controls on real output are in
 ## Current content coverage
 
 <!-- counts:coverage -->
-[corpus/regressions.json](../corpus/regressions.json) has 3951 targeted checks on 617 reviewed pages
+[corpus/regressions.json](../corpus/regressions.json) has 3960 targeted checks on 619 reviewed pages
 across 21 documents: *Pilot's Handbook of Aeronautical Knowledge*, *Beginning and Intermediate
 Algebra*, *Report of the President’s Commission on the Assassination of President John F. Kennedy*,
 *The 9/11 Commission Report*, *The Fed Explained*, *Dietary Guidelines for Americans*, *Fifth
@@ -126,11 +126,11 @@ Electron-Ion Collisions*, *Replay Clocks*, *Complaint for a Civil Case*, *Invest
 Atmospheric Boundary-Layer Effects on Launch-Vehicle Ground Wind Loads*, *A Scheduling Algorithm
 Compatible with a Distributed Management of Arrivals in the National Airspace System*, *Agricultural
 Research*, *Earthdata Cloud Analytics Project* and *Tank Health Monitoring*. They comprise
-1336 ordered-text, 246 text, 463 paragraph, 361 absent-text, 278 heading, 38 heading-level,
+1331 ordered-text, 250 text, 463 paragraph, 363 absent-text, 278 heading, 38 heading-level,
 64 absent-heading, 88 list-item, 46 list, 21 preformatted-block, 1 preformatted-lines, 29 script,
 10 absent-script, 11 footnote, 34 note-link, 72 paragraph-continuation, 1 list-item-continuation,
-8 paragraph-separation, 132 distinct-paragraph, 212 image-presence, 45 captioned-image,
-20 image-alternative, 120 page-reference, 132 warning, 131 absent-warning, 16 source-region,
+8 paragraph-separation, 132 distinct-paragraph, 217 image-presence, 45 captioned-image,
+20 image-alternative, 119 page-reference, 134 warning, 133 absent-warning, 16 source-region,
 4 glyph-structure, 5 image-appearance, 14 table-cell and 13 math-expression checks, counted as
 `tools/check_corpus_content.py` counts them.
 <!-- counts:end -->
@@ -698,7 +698,7 @@ the page's structure validates, each line also records the tag the pipeline appl
 since #89/#90); older fixtures and untagged lines have none, and `SourceLayoutFixture` restores it.
 Source review, baseline failures, cross-document safeguards and full-run evidence are retained
 in [the three-fix measurement](../measurements/three-fidelity-fixes/record.md). The suite contains
-<!-- counts:swift-tests -->1031 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->253 Python tests<!-- counts:end -->.
+<!-- counts:swift-tests -->1034 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->253 Python tests<!-- counts:end -->.
 The comparison tests include a real-Poppler image URL check through the safe HTTP handler
 (simple and positioned modes, paths with spaces); absent Poppler is an explicit skip.
 
@@ -1881,6 +1881,29 @@ The CDC contract requires `implausibleTextLayer` and the reviewed recognized dia
 `ocrUsed` on the plausible page-39 checklist. It fails on the pre-#93 conversion on all seven
 pages. The [plausibility evidence](../measurements/text-layer-plausibility/record.md) records the
 survey of all 1,353 image-backed pages in the English corpus and the review of every failing page.
+
+Suspect layers and recognitions (#7) are covered by the same suite. `misreadWordsAreDamagedWordsNoNeighbourCompletes`
+pins the misread count (`tbe`, `witb`, `vhen` and `sreANee` count; `fi e ld stre ngth` and `th e`
+join into words and do not; `McDonald` is neutral) and the tenth threshold. The checksum-pinned
+Warren page 636 (`warren-636-layout.json`, carbon typescript at 0.5 English) and CDC page 4
+(`cdc-4-layout.json`, 0.6) fail the misread test while prose, index, witness-list and Blue Book
+fixtures still pass every word test. `otherScriptsAreDamageAndRecognizedTitlesMustReadAsWords` pins
+the heading rule on Blue Book table titles and month names (kept) and on cells, digit strings,
+`Pags`, Warren's `Tag De Praciy Glii tant ami She` and mixed-script readings (refused).
+`recognitionIsJudgedByItsEnglishShareUnlessItIsAnotherLanguage` pins `judgeRecognized` on Warren
+552's handwriting (discarded), a French passage in an English book (kept) and a comic reading that
+misreads a tenth of its words (kept), and `readsBetter`. Every new warning message is pinned. The
+French-scan test in `OCRLanguageTests` is the end-to-end control for the language exemption: without
+it the `en` conversion of the French scan discards both pages.
+
+The Warren contract requires, on hospital notes 549, 553 and 556, `implausibleRecognition`, one
+whole-page image and no `ocrUsed` or `unverifiedTextLayer`; on typescript page 636, the
+`implausibleTextLayer` warning, recognized phrases read from the output and checked against the
+source (`and he told me about the things at`) and no inherited `ftboot`; and on typescript 664,
+`implausibleTextLayer` with the layer kept (no `ocrUsed`). The CDC contract adds page 4, whose
+misread layer is replaced by recognition. The [suspect-layer evidence](../measurements/suspect-text-layers/record.md)
+records the survey of every image-backed page and of recognition of every page of the five scanned
+books, and the review of every flagged page.
 
 ### Pages whose writing is drawn
 

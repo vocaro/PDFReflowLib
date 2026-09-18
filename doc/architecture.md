@@ -1191,6 +1191,18 @@ OCR candidate under
 `.automaticKeepingImageBackedText` and `.never` keep the layer with its `unverifiedTextLayer`
 warning and reference. See [conversion options](conversion-options.md#implausible-inherited-text).
 
+A third word test (#7) fails a layer that reads as English but misreads a tenth of its words in
+place: damaged words of three or more letters, or irregular capitals, that no neighbouring word
+completes (`WordCounts.misread`). Under `.automatic` such a page is extracted as an unverified page
+*and* recognized (`comparesLayer`); recognition replaces the layer only if it reads as English and
+misreads a smaller share (`readsBetter`), otherwise the extracted layer stands and the recognition
+is dropped. Every recognition in an English book is then judged by the English-share test
+(`judgeRecognized`): a reading under half English that the language recognizer does not confidently
+name as another language is noise, reported as `implausibleRecognition`, and the page becomes a page
+image (or keeps its crops, for a page recognized for its drawn writing). `LayoutReconstructor`
+admits a recognized line in an English book as a heading only when `readsAsWords` holds, so table
+cells and handwriting read at heading size stay out of the navigation.
+
 The same ink evidence answers the opposite question (#176). A page whose text layer holds **no
 letter** — nothing, or only a folio — reflows no word of its own, and its writing, if it has any,
 is in its art. `TextLayerPlausibility.judgeImageOnly` renders such a page at 180 DPI and, when at

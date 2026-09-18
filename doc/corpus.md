@@ -487,6 +487,8 @@ and [comic grouping #18](https://github.com/vocaro/PDFReflowLib/issues/18) track
 [#93](../measurements/text-layer-plausibility/record.md) the damaged layer on 27 pages fails the
 plausibility test and is replaced by OCR under the default policy, each page reporting
 `implausibleTextLayer`: dialogue units with reflowed text rise from about 124 to 222 of 231.
+Since [#7](../measurements/suspect-text-layers/record.md) page 4's layer, 0.6 English but misread
+in place (`ALriSHT`), is flagged too and replaced by recognition that reads better.
 The measured 3,341 extracted whitespace tokens include OCR noise; they are not dialogue coverage.
 
 

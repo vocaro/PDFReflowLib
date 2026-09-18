@@ -130,6 +130,11 @@ public struct ConversionWarning: Sendable, Codable, Equatable {
         /// page can be reviewed; the message states what failed and whether OCR replaced the text,
         /// left only the page image (recognition failed or found nothing) or the policy kept it.
         case implausibleTextLayer
+        /// OCR of the page image that fails the same English test (fewer than half its words are
+        /// English words: handwriting, or print recognition cannot read). The recognized text is
+        /// discarded and the page is preserved as an image; a page recognized only because its art
+        /// holds writing keeps its crops instead. Reported on every such page, under every policy.
+        case implausibleRecognition
     }
     public let code: Code
     public let page: Int

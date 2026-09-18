@@ -43,7 +43,7 @@ apply independently, and cancellation remains cooperative during platform recogn
 ### Implausible inherited text
 
 Text inherited over a page-sized graphic (the pages that would report `unverifiedTextLayer`) is
-tested before any recognition (#93). The layer fails when either holds:
+tested before any recognition (#93). The layer fails when any of these holds:
 
 - **Too few English words.** Whitespace-separated words are sorted into English words (in the
   system English lexicon, `NLEmbedding.wordEmbedding(for: .english)`, 57,171 words on macOS 27,
@@ -53,6 +53,12 @@ tested before any recognition (#93). The layer fails when either holds:
   words broken by symbols). With at least 20 English and damaged words, fewer than half English
   fails. A layer where a fifth or more of the tokens hold digits (statistical tables, notes pages)
   is not judged.
+- **Words misread in place (#7).** Under the same conditions, a layer fails when a tenth or more of
+  all its words (English, damaged and neutral) are damaged words of three or more letters, or
+  irregular capitals, that no neighbouring word joins into an English word. Warren's carbon
+  typescripts read half to three quarters English and fail it (`tcld t» ftboot` for "told me
+  about"); text split inside its words (`fi e ld stre ngth`) joins up and passes. Letters of another
+  script make a word damaged, and a compound name's capitals (`McDonald`) are neutral.
 - **Too little text for the ink.** When the layer holds fewer than 32 English words, the page is
   rendered at 180 DPI (the client's pixel ceiling applies) and its text-shaped ink found as in the
   recognition coverage check below. The layer fails when its lines leave at least 75% of that ink,
@@ -89,6 +95,35 @@ lists (0.65) is the nearest plausible layer to the threshold. Converting the CDC
 reading order, styles and headings on those pages come from the recognized text instead; the
 book's heading levels are ranked again. See the
 [plausibility measurements](../measurements/text-layer-plausibility/record.md).
+
+A layer that fails only the misread test is compared with its recognition under `.automatic`
+(#7): the page is recognized, and recognition replaces the layer only when it reads as English and
+misreads a smaller share of its own words. Otherwise the layer stays, with `unverifiedTextLayer`,
+its source-page reference and a message ending "The page image was recognized again, but OCR
+failed or read it no better, so the existing text is retained; read the accompanying original page
+image instead." Recognition of Warren's faint carbon typescripts misreads as much as their layers
+do (pages 627–664 keep 12 of 17 layers), while recognition of photographed documents misreads far
+less (pages 201, 501, 502, 566, 601 and 602 are replaced). `.automaticIncludingImageBackedText` and
+`.always` replace such a layer as they replace every image-backed layer.
+
+Recognition itself is judged by the same English share, under every policy, in English books
+(#7). When fewer than half of at least 20 judged words are English words, the recognized text is
+noise (handwriting read as mixed Latin, Arabic and Cyrillic letters), which serves a reader worse
+than the image: it is discarded, the page is preserved as an image, and the page reports
+`implausibleRecognition` ("OCR of this page image does not read as English: only 18 of 91 words are
+English words (handwriting, or print recognition cannot read). The recognized text was discarded;
+the page is preserved as an image and does not reflow."). A page recognized only because its art
+holds writing keeps its crops instead. Recognition that the system's language recognizer names as
+another language with at least 0.95 confidence is text in that language and is kept (a French scan
+converted with the default `en`). On a page whose layer failed too, `implausibleTextLayer` ends "The
+existing text was discarded, but OCR of the page image does not read as English either, so the page
+is preserved as an image and does not reflow." In the corpus this discards the recognition of five
+handwritten Warren hospital notes (549 and 552–554, 556) by default, and of 13 handwritten pages
+under `.always`. A recognized line in an English book is a heading, and so a navigation entry, only
+when it reads as English words: no letter of another script, an English word of two or more
+letters, English words at least half of its words and digits in at most half its tokens. Under
+`.always` the Blue Book's headings fall from 8,848 to 799. See the
+[suspect-layer measurements](../measurements/suspect-text-layers/record.md).
 
 ### Pages whose writing is drawn
 

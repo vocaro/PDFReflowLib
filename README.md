@@ -198,6 +198,16 @@ that fall back to images skip unused attributed-text decoding. Failures use
   `.automaticKeepingImageBackedText` and `.never` keep it. On the English corpus it fails 27 CDC
   pages and seven Warren pages and no other page
   ([measurements](measurements/text-layer-plausibility/record.md)).
+- A layer that reads as English but misreads a tenth or more of its words in place (a damaged
+  word of three or more letters that no neighbour joins into a word: `tcld t» ftboot` on Warren's
+  carbon typescripts) also reports `implausibleTextLayer` (#7). By default the page is recognized
+  again and the reading that misreads fewer words is kept. Recognition that reads under half
+  English (handwriting) is never reflowed: it reports `implausibleRecognition` and the page becomes
+  an image, unless the system's language recognizer confidently names another language. A
+  recognized line becomes a heading, and a navigation entry, only when it reads as English words.
+  The corpus flags 24 more pages (23 Warren typescripts and document photographs, CDC page 4),
+  all reviewed as damaged, and discards five Warren recognitions of handwriting
+  ([measurements](measurements/suspect-text-layers/record.md)).
 - A page whose text layer holds no letter at all — nothing, or only a folio — reflows nothing, so
   if its own drawing (not its photographs) carries at least two rows of text-shaped ink outside
   that layer, it is recognized like a page with no text layer, and its words reach the reading
@@ -238,7 +248,7 @@ automatic downloads. `scripts/check-all.sh --fast` remains the offline synthetic
 converts each fixture twice and requires byte-identical EPUBs).
 Python tool tests and the source-region, glyph-structure and image-appearance checks require numpy
 and Pillow. Poppler is needed only to render new region references. The reviewed contracts hold
-<!-- counts:contract-summary -->3951 checks on 617 pages of 21 documents<!-- counts:end -->, including full-resolution stroke checks for equations and a
+<!-- counts:contract-summary -->3960 checks on 619 pages of 21 documents<!-- counts:end -->, including full-resolution stroke checks for equations and a
 table, scale/contrast/color checks for a flag and an FAA figure, and <!-- counts:table-cell-checks -->14<!-- counts:end --> cell checks on tables
 emitted as text. See [regression testing](doc/regression-testing.md) for coverage, limitations and
 adding a case.

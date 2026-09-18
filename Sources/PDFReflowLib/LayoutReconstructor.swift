@@ -4172,6 +4172,10 @@ enum LayoutReconstructor {
         // is never a heading; a multi-line display sentence is a pull quote (handled below).
         // Neither is a separated margin line that opens or closes with this page's number:
         // that is a running head, whatever furniture removal made of it (#62).
+        // A recognized line in an English book is a heading only if it reads as words: a table
+        // cell or a reading of handwriting set large is not a title, and every heading is a
+        // navigation entry (#7).
+        let judgesTitleWords = page.recognized && vocabulary.contains(englishLexiconKey)
         func headingTypography(_ line: TextLine) -> Bool {
             if let title = slideTitle.first {
                 if slideTitle.contains(untagged(line)) { return true }
@@ -4179,6 +4183,7 @@ enum LayoutReconstructor {
             }
             return (isHeadingSize(line) || labels.contains(untagged(line)))
                 && !isContentsEntry(line.text) && !isHeaderLike(line, in: page, bothBands: true)
+                && (!judgesTitleWords || TextLayerPlausibility.readsAsWords(line.text))
         }
         // A section icon reads in its heading's row (#117). DGA pages 3–6 set a circular photo in
         // the margin beside each section title, taller than the title: it reaches into the last

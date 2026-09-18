@@ -81,6 +81,15 @@ import Testing
         let value = try counts(name)
         #expect(TextLayerPlausibility.wordFinding(value) == nil, "\(name): \(value)")
     }
+    // #7: carbon typescript read in place (`tcld t» ftboot`) is half English, and misread.
+    let typescript = try counts("warren-636")
+    guard case .misreadWords(let misread, let words, _)? = TextLayerPlausibility.wordFinding(typescript) else {
+        Issue.record("warren-636: \(typescript)"); return
+    }
+    #expect(Double(misread) >= Double(words) * TextLayerPlausibility.minimumMisreadShare)
+    #expect(Double(typescript.english) >= Double(typescript.judged) * TextLayerPlausibility.maximumEnglishShare)
+    // So is the comic's page 4 (#168), 0.6 English.
+    if case .misreadWords? = TextLayerPlausibility.wordFinding(try counts("cdc-4")) {} else { Issue.record("cdc-4 passed") }
     // Negative control for the numeric guard: a handwritten statistical table and a notes page read
     // under half English, and only their numbers keep them from being judged.
     for name in ["blue-149", "warren-885"] {
@@ -89,6 +98,60 @@ import Testing
         #expect(Double(value.numericTokens) >= Double(value.tokens) * TextLayerPlausibility.maximumNumericShare, "\(name): \(value)")
         #expect(TextLayerPlausibility.wordFinding(value) == nil, "\(name): \(value)")
     }
+}
+
+@Test func misreadWordsAreDamagedWordsNoNeighbourCompletes() {
+    let lexicon: Set<String> = ["the", "field", "strength", "with", "when"]
+    let counts = TextLayerPlausibility.wordCounts("tbe fi e ld stre ngth witb vhen McDonald sreANee th e") { lexicon.contains($0) }
+    // Misread: tbe, witb, vhen, sreANee. Split, not misread: fi e ld, stre ngth, th e (joined with a
+    // neighbour they make field, strength, the). A compound name's capitals are not damage.
+    #expect(counts.misread == 4)
+    #expect(counts.misreadExamples == ["tbe", "witb", "vhen"])
+    #expect(counts.neutral == 1)
+    typealias Counts = TextLayerPlausibility.WordCounts
+    #expect(TextLayerPlausibility.wordFinding(Counts(english: 18, damaged: 2, neutral: 0, tokens: 20, misread: 2,
+                                                     misreadExamples: ["tbe"]))
+        == .misreadWords(misread: 2, words: 20, examples: ["tbe"]))
+    #expect(TextLayerPlausibility.wordFinding(Counts(english: 18, damaged: 2, neutral: 1, tokens: 21, misread: 2)) == nil)
+}
+
+@Test func otherScriptsAreDamageAndRecognizedTitlesMustReadAsWords() throws {
+    try #require(TextLayerPlausibility.englishWordCounts("the") != nil, "no system English lexicon")
+    // Recognition of handwriting and of the comic's all-caps exclamations.
+    let mixed = TextLayerPlausibility.wordCounts("DeالasTaxaع НИН the") { $0 == "the" }
+    #expect(mixed.damaged == 2 && mixed.english == 1)
+    #expect(TextLayerPlausibility.foreignLetters("НИН?!") == 3)
+    #expect(TextLayerPlausibility.foreignLetters("Besançon, Việt, ﬁeld") == 0)
+    for title in ["INDEX OF TABLES", "Table A59. Evaluation of All Sightings for 1952", "SEPTEMBER", "SECTION D",
+                  "PARKLAND MEMORIAL HOSPITAL"] {
+        #expect(TextLayerPlausibility.readsAsWords(title), "\(title)")
+    }
+    // Blue Book cells and Warren handwriting read at heading size under `--ocr always` (#129).
+    for noise in ["139", "1952 1950", "a0 0.0", "• a0", "0 00 a0 a0 a o e 00.00 a0", "Pags", "Certaia Doubtlul Total Cotai",
+                  "Tag De Praciy Glii tant ami She", "стрлда ві. 1)", "Crมn C Tม Cour oi Ica"] {
+        #expect(!TextLayerPlausibility.readsAsWords(noise), "\(noise)")
+    }
+}
+
+@Test func recognitionIsJudgedByItsEnglishShareUnlessItIsAnotherLanguage() throws {
+    try #require(TextLayerPlausibility.englishWordCounts("the") != nil, "no system English lexicon")
+    func lines(_ text: String) -> [TextLine] { [TextLine(text: text, rect: CGRect(x: 0, y: 0, width: 100, height: 10), fontSize: 10)] }
+    // Warren page 552's recognition, abridged: handwriting read as noise.
+    let noise = "PARKLAND MEMORIAL HOSPITAL ADMISSION NOTE iar mhele aandeuzen tro gret ancr fuom lhe sae intr ond deta "
+        + "vrenl mit shert oo kaat pols reat erad huoi fis tne aad lov ot pert"
+    #expect(TextLayerPlausibility.judgeRecognized(lines: lines(noise), language: "en") != nil)
+    #expect(TextLayerPlausibility.judgeRecognized(lines: lines(noise), language: "fr") == nil)
+    // A page in French is text, not noise, in a book declared English.
+    let french = "Le général a été élevé à Besançon, où l'été est très chaud. Après la rentrée, les élèves répètent leurs "
+        + "leçons à côté du théâtre. La société française préfère les fenêtres ouvertes même en hiver."
+    #expect(TextLayerPlausibility.readsAsAnotherLanguage(french))
+    #expect(TextLayerPlausibility.judgeRecognized(lines: lines(french), language: "en") == nil)
+    // Misreading a tenth of its words does not discard a recognition that reads as English.
+    let comic = Array(repeating: "MAN I FORGOT I HAD THIS. IT USED TO BE MY DAD'S powtred radic", count: 3).joined(separator: " ")
+    #expect(TextLayerPlausibility.judgeRecognized(lines: lines(comic), language: "en") == nil)
+    #expect(TextLayerPlausibility.readsBetter(lines(comic), than: 30, of: 100, language: "en"))
+    #expect(!TextLayerPlausibility.readsBetter(lines(comic), than: 1, of: 100, language: "en"))
+    #expect(!TextLayerPlausibility.readsBetter(lines(noise), than: 50, of: 100, language: "en"))
 }
 
 @Test func warningStatesWhatFailedAndWhatWasDone() {
@@ -103,6 +166,18 @@ import Testing
         + "because the OCR policy keeps it; read the source PDF instead.")
     #expect(TextLayerPlausibility.message(.fewEnglishWords(english: 1, judged: 20), outcome: .pageImage, referencesDisabled: false)
         .hasSuffix("The existing text was discarded, but OCR of the page image failed or found no text, so the page is preserved as an image."))
+    let misread = TextLayerPlausibility.message(.misreadWords(misread: 58, words: 244, examples: ["tcld", "ftboot", "ftt"]),
+                                                outcome: .keptOverRecognition, referencesDisabled: false)
+    #expect(misread == "Existing text over a page-sized image is a damaged transcription: 58 of its 244 words are misread, "
+        + "not English words or names (such as \u{201C}tcld\u{201D}, \u{201C}ftboot\u{201D}, \u{201C}ftt\u{201D}). The page image was "
+        + "recognized again, but OCR failed or read it no better, so the existing text is retained; read the accompanying "
+        + "original page image instead.")
+    #expect(TextLayerPlausibility.message(.fewEnglishWords(english: 10, judged: 31), outcome: .implausibleRecognition,
+                                          referencesDisabled: false)
+        .hasSuffix("OCR of the page image does not read as English either, so the page is preserved as an image and does not reflow."))
+    #expect(TextLayerPlausibility.recognitionMessage(.fewEnglishWords(english: 12, judged: 87), keepsCrops: false)
+        == "OCR of this page image does not read as English: only 12 of 87 words are English words (handwriting, or print "
+        + "recognition cannot read). The recognized text was discarded; the page is preserved as an image and does not reflow.")
 }
 
 // MARK: End to end

@@ -1,0 +1,1302 @@
+book	page	tokens	numericTokens	english	damaged	neutral	misread	englishShare	misreadShare	numericShare	letters	foreignLetters	uncoveredRows	uncoveredFraction	fails	recognitionFails	examples
+bluebook-ocr	1	54	8	33	6	6	6	0.846	0.133	0.148	241	0			misread	-	FoR AcÊ bes
+bluebook-ocr	2	64	7	54	0	3	0	1.000	0.000	0.109	306	0			-	-	
+bluebook-ocr	3	39	7	27	1	6	1	0.964	0.029	0.179	182	0			-	-	ASDAfile
+bluebook-ocr	4	43	5	34	1	4	0	0.971	0.000	0.116	215	3			-	-	
+bluebook-ocr	5	312	32	255	4	21	3	0.985	0.011	0.103	1638	0			-	-	stions iii vii
+bluebook-ocr	6	404	55	230	51	90	29	0.819	0.078	0.136	2099	0			-	-	continuca eigure aigamnas
+bluebook-ocr	7	262	17	202	2	39	0	0.990	0.000	0.065	1131	0			-	-	
+bluebook-ocr	8	483	7	464	12	5	6	0.975	0.012	0.014	2615	0			-	-	unidentified unidentified unidentified
+bluebook-ocr	9	409	37	348	13	10	2	0.964	0.005	0.090	1923	0			-	-	unidentified viii
+bluebook-ocr	10	194	6	181	4	0	3	0.978	0.016	0.031	1008	0			-	-	unidentified unidentified unidentified
+bluebook-ocr	11	469	11	421	18	22	10	0.959	0.022	0.023	2332	0			-	-	chainlike unidentified unidentified
+bluebook-ocr	12	433	7	409	13	4	3	0.969	0.007	0.016	2300	0			-	-	unidentified unidentified unidentified
+bluebook-ocr	13	441	6	416	8	11	1	0.981	0.002	0.014	2235	0			-	-	condensations
+bluebook-ocr	14	386	16	358	11	4	3	0.970	0.008	0.041	1949	0			-	-	unidentified unidentified unidentified
+bluebook-ocr	15	473	5	441	18	9	2	0.961	0.004	0.011	2367	0			-	-	suggestibility unidentified
+bluebook-ocr	16	473	4	446	19	11	8	0.959	0.017	0.008	2343	0			-	-	unidentified thehe dat
+bluebook-ocr	17	376	3	358	16	2	6	0.957	0.016	0.008	1914	0			-	-	misplacement subserial unduplicated
+bluebook-ocr	18	332	28	289	7	4	2	0.976	0.007	0.084	1572	0			-	-	subserial fulfiiled
+bluebook-ocr	19	389	14	372	3	1	1	0.992	0.003	0.036	2089	0			-	-	subserial
+bluebook-ocr	20	349	4	332	12	1	1	0.965	0.003	0.011	1884	0			-	-	etc
+bluebook-ocr	21	395	6	375	11	4	4	0.972	0.010	0.015	2050	0			-	-	unidentified prima facie
+bluebook-ocr	22	339	1	327	7	3	2	0.979	0.006	0.003	1886	0			-	-	refractions distortions
+bluebook-ocr	23	462	2	445	15	2	6	0.967	0.013	0.004	2488	0			-	-	unidentified planation planatihe
+bluebook-ocr	24	369	4	359	6	1	1	0.984	0.003	0.011	1975	0			-	-	unidentified
+bluebook-ocr	25	420	10	400	8	0	1	0.980	0.002	0.024	2227	0			-	-	sortings
+bluebook-ocr	26	436	11	415	9	3	1	0.979	0.002	0.025	2154	0			-	-	specular
+bluebook-ocr	27	86	60	21	2	1	0	0.913	0.000	0.698	107	2			-	-	
+bluebook-ocr	28	74	34	28	1	3	0	0.966	0.000	0.459	168	3			-	-	
+bluebook-ocr	29	65	33	25	2	3	0	0.926	0.000	0.508	158	2			-	-	
+bluebook-ocr	30	62	33	25	2	0	2	0.926	0.074	0.532	140	0			-	-	tAstronom rical
+bluebook-ocr	31	81	35	31	3	11	1	0.912	0.022	0.432	210	1			-	-	nown
+bluebook-ocr	32	78	44	32	6	0	3	0.842	0.079	0.564	180	2			-	-	istronomica SSSb eors
+bluebook-ocr	33	35	14	20	0	2	0	1.000	0.000	0.400	129	0			-	-	
+bluebook-ocr	34	114	49	40	7	8	1	0.851	0.018	0.430	320	0			-	-	łśą
+bluebook-ocr	35	63	32	28	2	2	0	0.933	0.000	0.508	152	0			-	-	
+bluebook-ocr	36	61	17	43	1	2	1	0.977	0.022	0.279	295	0			-	-	suf
+bluebook-ocr	37	60	24	28	2	3	0	0.933	0.000	0.400	175	1			-	-	
+bluebook-ocr	38	91	37	48	0	4	0	1.000	0.000	0.407	269	0			-	-	
+bluebook-ocr	39	88	39	34	10	1	8	0.773	0.178	0.443	226	2			-	-	min min sec
+bluebook-ocr	40	95	40	36	10	12	9	0.783	0.155	0.421	232	1			-	-	OvErI min min
+bluebook-ocr	41	73	27	41	4	3	4	0.911	0.083	0.370	261	0			-	-	EInsuf conica coM
+bluebook-ocr	42	80	31	35	5	5	4	0.875	0.089	0.388	234	0			-	-	mph mph thon
+bluebook-ocr	43	76	37	33	2	1	2	0.943	0.056	0.487	164	0			-	-	bidg yeors
+bluebook-ocr	44	37	13	24	0	1	0	1.000	0.000	0.351	129	0			-	-	
+bluebook-ocr	45	49	19	30	0	1	0	1.000	0.000	0.388	149	0			-	-	
+bluebook-ocr	46	51	21	29	3	0	3	0.906	0.094	0.412	149	0			-	-	mph mph mph
+bluebook-ocr	47	54	22	33	1	0	0	0.971	0.000	0.407	176	0			-	-	
+bluebook-ocr	48	59	22	35	3	0	1	0.921	0.026	0.373	186	2			-	-	conica
+bluebook-ocr	49	55	15	41	0	0	0	1.000	0.000	0.273	204	0			-	-	
+bluebook-ocr	50	47	10	28	0	10	0	1.000	0.000	0.213	241	0			-	-	
+bluebook-ocr	51	47	10	28	0	10	0	1.000	0.000	0.213	225	0			-	-	
+bluebook-ocr	52	46	8	28	1	9	1	0.966	0.026	0.174	220	0			-	-	pril
+bluebook-ocr	53	55	11	31	0	13	0	1.000	0.000	0.200	285	0			-	-	
+bluebook-ocr	54	47	10	27	0	11	0	1.000	0.000	0.213	213	0			-	-	
+bluebook-ocr	55	48	11	28	0	10	0	1.000	0.000	0.229	221	0			-	-	
+bluebook-ocr	56	63	5	37	17	5	2	0.685	0.034	0.079	278	22			-	-	SUMOUx tenn
+bluebook-ocr	57	39	2	33	0	4	0	1.000	0.000	0.051	196	0			-	-	
+bluebook-ocr	58	163	47	73	4	50	0	0.948	0.000	0.288	677	9			-	-	
+bluebook-ocr	59	95	34	46	2	11	1	0.958	0.017	0.358	348	3			-	-	sightl
+bluebook-ocr	60	74	24	33	2	13	2	0.943	0.042	0.324	269	0			-	-	wes insuf
+bluebook-ocr	61	63	21	33	1	8	0	0.971	0.000	0.333	238	2			-	-	
+bluebook-ocr	62	63	21	31	6	7	4	0.838	0.091	0.333	250	1			-	-	alloor lonta waco
+bluebook-ocr	63	61	20	34	3	5	1	0.919	0.024	0.328	228	1			-	-	nsuf
+bluebook-ocr	64	50	15	29	2	4	1	0.935	0.029	0.300	194	0			-	-	nsut
+bluebook-ocr	65	436	24	360	19	23	9	0.950	0.022	0.055	1773	0			-	-	ephemeris lat cos
+bluebook-ocr	66	13	3	11	0	0	0	1.000	0.000	0.231	53	0			-	-	
+bluebook-ocr	67	54	14	37	2	3	0	0.949	0.000	0.259	192	2			-	-	
+bluebook-ocr	68	406	21	364	3	11	1	0.992	0.003	0.052	1651	0			-	-	histograms
+bluebook-ocr	69	51	23	31	1	0	0	0.969	0.000	0.451	162	1			-	-	
+bluebook-ocr	70	299	60	232	3	2	0	0.987	0.000	0.201	1204	0			-	-	
+bluebook-ocr	71	420	13	394	6	8	0	0.985	0.000	0.031	1939	0			-	-	
+bluebook-ocr	72	80	37	35	3	7	0	0.921	0.000	0.463	198	6			-	-	
+bluebook-ocr	73	75	34	33	2	7	0	0.943	0.000	0.453	180	0			-	-	
+bluebook-ocr	74	86	39	40	4	7	1	0.909	0.020	0.453	232	0			-	-	îŚę
+bluebook-ocr	75	87	39	33	11	7	8	0.750	0.157	0.448	222	3			-	-	sec lessi sec
+bluebook-ocr	76	81	36	35	7	7	4	0.833	0.082	0.444	202	0			-	-	mph mph mph
+bluebook-ocr	77	92	35	50	2	6	0	0.962	0.000	0.380	275	1			-	-	
+bluebook-ocr	78	324	9	306	4	9	1	0.987	0.003	0.028	1577	0			-	-	unidentified
+bluebook-ocr	79	359	14	338	6	7	3	0.983	0.009	0.039	1722	0			-	-	cannot mph mph
+bluebook-ocr	80	91	47	36	3	7	0	0.923	0.000	0.516	203	1			-	-	
+bluebook-ocr	81	74	32	35	4	8	0	0.897	0.000	0.432	191	0			-	-	
+bluebook-ocr	82	86	36	41	3	7	0	0.932	0.000	0.419	234	0			-	-	
+bluebook-ocr	83	102	52	34	13	7	9	0.723	0.167	0.510	228	0			-	-	sec sec sec
+bluebook-ocr	84	84	39	35	6	8	3	0.854	0.061	0.464	206	0			-	-	mphi mph mph
+bluebook-ocr	85	90	32	51	2	7	0	0.962	0.000	0.356	282	0			-	-	
+bluebook-ocr	86	418	10	407	9	5	3	0.978	0.007	0.024	2092	0			-	-	mph mph unidentified
+bluebook-ocr	87	489	16	467	10	2	7	0.979	0.015	0.033	2413	0			-	-	UNKNOWNSiại unrecognizable missiles
+bluebook-ocr	88	243	21	221	1	3	0	0.995	0.000	0.086	951	0			-	-	
+bluebook-ocr	89	240	11	227	1	3	0	0.996	0.000	0.046	1036	0			-	-	
+bluebook-ocr	90	89	6	83	0	2	0	1.000	0.000	0.067	375	0			-	-	
+bluebook-ocr	91	126	9	114	0	3	0	1.000	0.000	0.071	495	0			-	-	
+bluebook-ocr	92	152	7	140	0	3	0	1.000	0.000	0.046	624	0			-	-	
+bluebook-ocr	93	122	9	109	1	4	1	0.991	0.009	0.074	521	0			-	-	originl
+bluebook-ocr	94	81	10	67	1	2	1	0.985	0.014	0.123	309	0			-	-	approx
+bluebook-ocr	95	156	12	141	0	2	0	1.000	0.000	0.077	576	0			-	-	
+bluebook-ocr	96	158	10	148	1	1	0	0.993	0.000	0.063	686	0			-	-	
+bluebook-ocr	97	324	16	305	4	1	1	0.987	0.003	0.049	1432	0			-	-	mph
+bluebook-ocr	98	3	1	2	0	0	0	1.000	0.000	0.333	13	0			-	-	
+bluebook-ocr	99	450	12	436	1	2	1	0.998	0.002	0.027	1975	0			-	-	etc
+bluebook-ocr	100	9	6	3	0	1	0	1.000	0.000	0.667	24	0			-	-	
+bluebook-ocr	101	353	18	322	3	9	0	0.991	0.000	0.051	1537	0			-	-	
+bluebook-ocr	102	320	22	285	4	13	0	0.986	0.000	0.069	1357	0			-	-	
+bluebook-ocr	103	520	5	508	7	2	2	0.986	0.004	0.010	2391	0			-	-	saucerl saucersại
+bluebook-ocr	104	416	2	407	8	1	3	0.981	0.007	0.005	2118	0			-	-	strate unidentified unidentified
+bluebook-ocr	105	13	2	10	1	0	0	0.909	0.000	0.154	77	1			-	-	
+bluebook-ocr	106	376	76	308	0	10	0	1.000	0.000	0.202	1552	0			-	-	
+bluebook-ocr	107	325	65	260	3	9	3	0.989	0.011	0.200	1593	0			-	-	yee aionting wroups
+bluebook-ocr	108	404	43	259	35	90	17	0.881	0.044	0.106	1793	0			-	-	lears tor ghtnR
+bluebook-ocr	109	392	68	227	46	79	19	0.832	0.054	0.173	1664	0			-	-	sbe valuaton otSlratng
+bluebook-ocr	110	431	34	317	30	65	16	0.914	0.039	0.079	1870	0			-	-	AilO lear beconds
+bluebook-ocr	111	393	52	305	12	51	7	0.962	0.019	0.132	1743	0			-	-	tor rcars byshapc
+bluebook-ocr	112	453	49	304	41	79	24	0.881	0.057	0.108	2083	1			-	-	tor tor ble
+bluebook-ocr	113	445	36	333	31	67	20	0.915	0.046	0.081	2118	0			-	-	tor tor rellow
+bluebook-ocr	114	460	52	344	32	57	19	0.915	0.044	0.113	2137	0			-	-	osonhngs lor sipanng
+bluebook-ocr	115	130	13	90	6	29	4	0.938	0.032	0.100	610	0			-	-	uicwest tae uasion
+bluebook-ocr	116	551	361	35	68	126	32	0.340	0.140	0.655	949	37			-	-	YEAes eir cos
+bluebook-ocr	117	196	124	17	21	54	8	0.447	0.087	0.633	420	20			-	-	catica roal CeriaA
+bluebook-ocr	118	435	320	17	51	72	20	0.250	0.143	0.736	577	59			-	-	LAubsece ical batic
+bluebook-ocr	119	242	136	15	31	80	12	0.326	0.095	0.562	531	22			-	-	elz mnto JAryarty
+bluebook-ocr	120	362	226	21	61	87	27	0.256	0.160	0.624	628	33			-	-	hon oweed etz
+bluebook-ocr	121	605	406	127	47	76	16	0.730	0.064	0.671	1161	12			-	-	etc thoul TCertain
+bluebook-ocr	122	354	230	20	62	88	23	0.244	0.135	0.650	613	53			-	-	elz THtH EsBeuaeY
+bluebook-ocr	123	597	409	111	34	73	10	0.766	0.046	0.685	1135	5			-	-	elc etc lasuffic
+bluebook-ocr	124	652	476	124	28	52	8	0.816	0.039	0.730	1096	16			-	-	etc etc hfo
+bluebook-ocr	125	713	540	119	24	67	10	0.832	0.048	0.757	1104	14			-	-	etc thd TToda
+bluebook-ocr	126	252	146	22	35	62	15	0.386	0.126	0.579	477	19			-	-	JAdueRy pEcar coon
+bluebook-ocr	127	355	222	20	52	88	17	0.278	0.106	0.625	606	62			-	-	efc sobe LANKARr
+bluebook-ocr	128	360	251	23	38	67	14	0.377	0.109	0.697	499	39			-	-	SClaNte oon SChads
+bluebook-ocr	129	626	450	128	27	61	9	0.826	0.042	0.719	1112	11			-	-	etc ther etc
+bluebook-ocr	130	580	405	131	23	65	7	0.851	0.032	0.698	1131	9			-	-	etc AlL bthul
+bluebook-ocr	131	381	285	19	52	53	20	0.268	0.161	0.748	486	34			-	-	tallzon SChehs eic
+bluebook-ocr	132	707	523	126	34	62	10	0.787	0.045	0.740	1132	15			-	-	uabon etc AUGUsT
+bluebook-ocr	133	295	165	22	57	64	18	0.278	0.126	0.559	562	63			-	-	cião oel aun
+bluebook-ocr	134	612	433	117	35	65	10	0.770	0.046	0.708	1122	12			-	-	etc etc îŚ
+bluebook-ocr	135	426	265	29	65	98	23	0.309	0.120	0.622	768	65			-	-	mafic soz lcon
+bluebook-ocr	136	613	436	128	28	65	8	0.821	0.036	0.711	1125	13			-	-	elc lod btfal
+bluebook-ocr	137	342	209	21	59	88	29	0.263	0.173	0.611	618	37			-	-	SCinath elc SCheth
+bluebook-ocr	138	659	491	131	37	48	10	0.780	0.046	0.745	1112	21			-	-	elc hur elc
+bluebook-ocr	139	493	328	35	76	91	29	0.315	0.144	0.665	802	45			-	-	sarber TCx TOl
+bluebook-ocr	140	671	461	148	44	81	9	0.771	0.033	0.687	1296	13			-	-	etc ther ICertan
+bluebook-ocr	141	911	643	187	48	97	15	0.796	0.045	0.706	1666	10			-	-	etc insuffic ther
+bluebook-ocr	142	630	427	150	31	63	7	0.829	0.029	0.678	1238	9			-	-	etc etc tfal
+bluebook-ocr	143	825	535	205	65	90	16	0.759	0.044	0.648	1727	15			-	-	etc ther BIrds
+bluebook-ocr	144	355	223	23	36	94	12	0.390	0.078	0.628	644	39			-	-	knter oul TYea
+bluebook-ocr	145	645	445	41	94	108	39	0.304	0.160	0.690	1044	89			-	-	kpal sychola leon
+bluebook-ocr	146	512	316	31	77	136	40	0.287	0.164	0.617	1063	39			-	-	EIRELENt PooR CeranTDeriki
+bluebook-ocr	147	583	393	45	61	117	32	0.425	0.143	0.674	951	30			-	-	SCloets ezutic wanom
+bluebook-ocr	148	452	322	107	15	41	6	0.877	0.037	0.712	872	2			-	-	thuif etc inb
+bluebook-ocr	149	537	301	32	101	123	56	0.241	0.219	0.561	1127	64			-	-	feR fre las
+bluebook-ocr	150	579	366	46	68	145	29	0.404	0.112	0.632	1057	49			-	-	dal lson LANcecaial
+bluebook-ocr	151	516	335	32	66	112	28	0.327	0.133	0.649	823	50			-	-	cedt petalegical poe
+bluebook-ocr	152	844	575	195	28	101	9	0.874	0.028	0.681	1618	10			-	-	TeTAL tfalTotal bhurlTotal
+bluebook-ocr	153	609	398	42	67	157	21	0.385	0.079	0.654	1046	28			-	-	eao șŘ SChads
+bluebook-ocr	154	545	364	40	73	107	42	0.354	0.191	0.668	884	17			-	-	YEAEs CaT eNU
+bluebook-ocr	155	242	136	24	36	76	14	0.400	0.103	0.562	539	13			-	-	tisa SCheds asaltic
+bluebook-ocr	156	814	564	185	41	77	18	0.819	0.059	0.693	1529	3			-	-	AtL ertanDoubtfalTotal etc
+bluebook-ocr	157	767	517	193	35	70	13	0.846	0.044	0.674	1529	5			-	-	PifR etc etc
+bluebook-ocr	158	247	142	21	34	67	11	0.382	0.090	0.575	479	24			-	-	adl elc vic
+bluebook-ocr	159	814	578	189	26	66	6	0.879	0.021	0.710	1426	8			-	-	elc etc lee
+bluebook-ocr	160	765	520	190	33	75	9	0.852	0.030	0.680	1527	6			-	-	etc ther etc
+bluebook-ocr	161	225	150	23	23	50	13	0.500	0.135	0.667	402	3			-	-	raiuartae botra tetan
+bluebook-ocr	162	552	378	46	66	83	30	0.411	0.154	0.685	755	38			-	-	val zabion ChNÉ
+bluebook-ocr	163	530	357	37	58	108	23	0.389	0.113	0.674	828	42			-	-	satcion arta ota
+bluebook-ocr	164	482	332	30	68	90	20	0.306	0.106	0.689	696	54			-	-	fosa oiạẠạ zeA
+bluebook-ocr	165	305	218	20	26	52	16	0.435	0.163	0.715	436	7			-	-	kon InsEtiC ber
+bluebook-ocr	166	805	546	205	40	80	9	0.837	0.028	0.678	1638	17			-	-	etc TDoubtful etc
+bluebook-ocr	167	425	270	36	58	96	19	0.383	0.100	0.635	800	44			-	-	LoL CRt TotM
+bluebook-ocr	168	840	587	185	42	89	12	0.815	0.038	0.699	1615	9			-	-	etc hhe ęŘŚ
+bluebook-ocr	169	464	338	105	16	41	3	0.868	0.019	0.728	808	6			-	-	etc tfal etc
+bluebook-ocr	170	420	267	41	53	102	18	0.436	0.092	0.636	778	43			-	-	auta sek efc
+bluebook-ocr	171	811	561	182	35	94	8	0.839	0.026	0.692	1611	12			-	-	etc etc NoT
+bluebook-ocr	172	803	551	189	41	81	8	0.822	0.026	0.686	1599	13			-	-	etc ther ŘșŘŚ
+bluebook-ocr	173	169	112	16	22	43	6	0.421	0.074	0.663	371	29			-	-	IAstwesical LedulTaK SChNds
+bluebook-ocr	174	454	315	38	46	79	20	0.452	0.123	0.694	672	30			-	-	otc kngical ERSRUaRY
+bluebook-ocr	175	626	428	127	41	62	11	0.756	0.048	0.684	1181	1			-	-	leb etc lnsuffic
+bluebook-ocr	176	445	292	39	50	91	22	0.438	0.122	0.656	671	16			-	-	ral zation ical
+bluebook-ocr	177	385	264	30	55	71	23	0.353	0.147	0.686	586	49			-	-	gpe helogical catn
+bluebook-ocr	178	408	294	24	57	64	21	0.296	0.145	0.721	494	27			-	-	EEALRARy JAsUBRY bevere
+bluebook-ocr	179	444	302	29	45	94	21	0.392	0.125	0.680	673	30			-	-	AuESCEiCal SAuorat logizal
+bluebook-ocr	180	424	272	41	68	81	15	0.376	0.079	0.642	682	44			-	-	troufikc saacfic APrycbolagi
+bluebook-ocr	181	458	312	27	56	95	18	0.325	0.101	0.681	742	30			-	-	bokny BeRIL aeis
+bluebook-ocr	182	434	318	34	37	77	15	0.479	0.101	0.733	594	17			-	-	loce LAsteseeical rafic
+bluebook-ocr	183	447	311	27	74	67	43	0.267	0.256	0.696	617	37			-	-	VEtes aera tor
+bluebook-ocr	184	460	296	31	60	103	28	0.341	0.144	0.643	782	22			-	-	aation SLigh setic
+bluebook-ocr	185	451	308	32	54	80	25	0.372	0.151	0.683	703	45			-	-	JexuARy ahil toai
+bluebook-ocr	186	397	272	27	56	75	22	0.325	0.139	0.685	618	16			-	-	baed potn eaden
+bluebook-ocr	187	448	298	30	40	110	15	0.429	0.083	0.665	753	22			-	-	DoxtrA wah ical
+bluebook-ocr	188	430	289	38	47	102	25	0.447	0.134	0.672	736	26			-	-	lcon aaaoce alaaiae
+bluebook-ocr	189	353	257	11	44	66	15	0.200	0.124	0.728	535	51			-	-	kyjcal eoaeaeee aoneae
+bluebook-ocr	190	554	373	130	34	66	11	0.793	0.048	0.673	1193	3			-	-	etc hhe etc
+bluebook-ocr	191	502	345	39	59	98	27	0.398	0.138	0.687	758	29			-	-	ken LAntzecnical aal
+bluebook-ocr	192	414	257	30	65	97	32	0.316	0.167	0.621	718	22			-	-	SEtawds acaney JAeERSt
+bluebook-ocr	193	437	317	32	44	81	12	0.421	0.076	0.725	605	24			-	-	sads etz eeaaa
+bluebook-ocr	194	579	390	125	37	68	11	0.772	0.048	0.674	1186	4			-	-	etc tafo tfolTotal
+bluebook-ocr	195	436	308	26	48	78	27	0.351	0.178	0.706	631	16			-	-	oic ycholegicd taion
+bluebook-ocr	196	399	267	21	54	79	18	0.280	0.117	0.669	660	43			-	-	LVIADic liope SCheds
+bluebook-ocr	197	403	264	23	54	87	20	0.299	0.122	0.655	710	40			-	-	JasuReY cnsn possil
+bluebook-ocr	198	771	545	171	45	75	21	0.792	0.072	0.707	1507	5			-	-	FaR etc GInsuffic
+bluebook-ocr	199	581	372	36	76	118	45	0.321	0.196	0.640	980	29			-	-	VALUATIOs TetM OodON
+bluebook-ocr	200	763	512	207	34	65	9	0.859	0.029	0.671	1501	6			-	-	etc lola șŘš
+bluebook-ocr	201	250	195	9	25	44	9	0.265	0.115	0.780	285	11			-	-	POse efc sOze
+bluebook-ocr	202	793	564	162	32	88	14	0.835	0.050	0.711	1465	3			-	-	etc ther aZ
+bluebook-ocr	203	736	496	199	39	54	10	0.836	0.034	0.674	1517	4			-	-	etc lele ŘŚš
+bluebook-ocr	204	474	334	30	54	93	27	0.357	0.153	0.705	719	22			-	-	ocel pinin fou
+bluebook-ocr	205	382	260	96	19	31	7	0.835	0.048	0.681	741	1			-	-	etc inf ther
+bluebook-ocr	206	781	541	199	41	71	12	0.829	0.039	0.693	1518	7			-	-	etc TDodbttul ęął
+bluebook-ocr	207	676	443	195	35	63	8	0.848	0.027	0.655	1519	3			-	-	elc saaroa eak
+bluebook-ocr	208	499	312	41	56	124	26	0.423	0.118	0.625	855	32			-	-	faliace LigI issuffic
+bluebook-ocr	209	264	177	19	36	51	18	0.345	0.170	0.670	423	14			-	-	zatico CeESE CWAke
+bluebook-ocr	210	766	525	199	37	46	11	0.843	0.039	0.685	1520	14			-	-	etc lesuffic gOther
+bluebook-ocr	211	519	328	43	62	131	27	0.410	0.114	0.632	979	34			-	-	zatico tenze iti
+bluebook-ocr	212	453	293	33	82	101	26	0.287	0.120	0.647	834	40			-	-	etar LAsnonical SCkehi
+bluebook-ocr	213	515	308	44	74	137	32	0.373	0.125	0.598	1036	32			-	-	ArES tor cnon
+bluebook-ocr	214	491	291	40	80	137	23	0.333	0.089	0.593	994	45			-	-	salixa heuffic kgical
+bluebook-ocr	215	512	321	38	61	128	27	0.384	0.119	0.627	921	28			-	-	falizce sixoeial SChedh
+bluebook-ocr	216	768	519	203	44	60	10	0.822	0.033	0.676	1581	18			-	-	etc etc ther
+bluebook-ocr	217	375	243	25	70	77	21	0.263	0.122	0.648	635	49			-	-	HeNDRED HeVE SanT
+bluebook-ocr	218	740	507	202	27	52	5	0.882	0.018	0.685	1502	6			-	-	etc etc bttulTota
+bluebook-ocr	219	354	218	36	49	67	33	0.424	0.217	0.616	617	17			-	-	pata etz PeI
+bluebook-ocr	220	535	351	160	30	41	7	0.842	0.030	0.656	1193	10			-	-	etc gther KuR
+bluebook-ocr	221	305	194	27	43	62	11	0.386	0.083	0.636	526	50			-	-	tarber ros iatee
+bluebook-ocr	222	468	302	107	17	53	5	0.863	0.028	0.645	876	11			-	-	aURING NeEMBE TVariableTotal
+bluebook-ocr	223	174	73	28	33	54	9	0.459	0.078	0.420	440	21			-	-	rane CiaT VeH
+bluebook-ocr	224	397	212	121	16	52	1	0.883	0.005	0.534	905	5			-	-	AUsUsT
+bluebook-ocr	225	409	240	109	13	59	3	0.893	0.017	0.587	889	12			-	-	adloo leo tIN
+bluebook-ocr	226	412	233	109	23	66	5	0.826	0.025	0.566	920	8			-	-	łął voo koo
+bluebook-ocr	227	409	231	102	4	65	2	0.962	0.012	0.565	860	0			-	-	kO tumber
+bluebook-ocr	228	257	142	31	33	62	9	0.484	0.071	0.553	483	40			-	-	iDuTtoORS FEBpKaRY esie
+bluebook-ocr	229	572	366	41	100	128	45	0.291	0.167	0.640	1030	45			-	-	efc kogi SEcOrDs
+bluebook-ocr	230	896	611	213	58	77	20	0.786	0.057	0.682	1748	13			-	-	etc insuffic FaR
+bluebook-ocr	231	848	568	193	42	92	16	0.821	0.049	0.670	1722	19			-	-	yEdAS SEcerDs valcation
+bluebook-ocr	232	806	524	205	44	87	12	0.823	0.036	0.650	1729	7			-	-	etc VeD etc
+bluebook-ocr	233	899	615	205	55	78	24	0.788	0.071	0.684	1699	18			-	-	etc insuffic tfal
+bluebook-ocr	234	834	555	213	47	84	15	0.819	0.044	0.665	1731	15			-	-	elc ther etc
+bluebook-ocr	235	512	316	39	71	127	32	0.355	0.135	0.617	944	25			-	-	kers SEGeNTHCoł aal
+bluebook-ocr	236	854	557	208	42	77	14	0.832	0.043	0.652	1697	11			-	-	ICertainDoubtfdTotal etc etc
+bluebook-ocr	237	563	349	61	91	116	36	0.401	0.134	0.620	1043	38			-	-	linnet tạco efr
+bluebook-ocr	238	862	580	204	58	86	19	0.779	0.055	0.673	1737	17			-	-	etc LiL șŘîŚ
+bluebook-ocr	239	543	370	38	70	111	34	0.352	0.155	0.681	949	26			-	-	PreT SEcoras acae
+bluebook-ocr	240	526	342	49	52	126	29	0.485	0.128	0.650	1006	19			-	-	LAsseceial AixuM ics
+bluebook-ocr	241	540	347	35	70	129	34	0.333	0.145	0.643	959	32			-	-	SEOmas ceranPOet VAtOT
+bluebook-ocr	242	841	555	217	51	83	17	0.810	0.048	0.660	1758	11			-	-	etc bnfo șęŘŚš
+bluebook-ocr	243	259	169	23	42	45	10	0.354	0.091	0.653	419	34			-	-	sEcONes SLen CHot
+bluebook-ocr	244	867	591	219	30	92	9	0.880	0.026	0.682	1724	8			-	-	etc ZŘš etc
+bluebook-ocr	245	814	537	209	37	98	13	0.850	0.038	0.660	1754	10			-	-	tfulTotal ąęł elc
+bluebook-ocr	246	353	213	105	15	48	5	0.875	0.030	0.603	874	3			-	-	etc etc ełś
+bluebook-ocr	247	583	386	41	66	131	33	0.383	0.139	0.662	993	29			-	-	ETOJo AsCoNeiH clc
+bluebook-ocr	248	833	533	222	41	95	14	0.844	0.039	0.640	1765	21			-	-	etc etc tnfo
+bluebook-ocr	249	243	147	22	34	54	18	0.393	0.164	0.605	446	8			-	-	zce JUgH OriL
+bluebook-ocr	250	459	284	28	83	101	47	0.252	0.222	0.619	892	49			-	-	OBaloen chiogical sote
+bluebook-ocr	251	238	135	20	48	53	25	0.294	0.207	0.567	500	26			-	-	ftal looe nsatic
+bluebook-ocr	252	715	470	173	37	93	18	0.824	0.059	0.657	1587	7			-	-	ALasK etc eZ
+bluebook-ocr	253	228	134	16	37	52	21	0.302	0.200	0.588	469	22			-	-	otc toh teul
+bluebook-ocr	254	688	485	152	34	77	12	0.817	0.046	0.705	1366	3			-	-	etc WeTH EAsE
+bluebook-ocr	255	532	350	39	53	132	26	0.424	0.116	0.658	990	21			-	-	ade efc kjcas
+bluebook-ocr	256	422	294	29	58	83	29	0.333	0.171	0.697	716	40			-	-	SChxota elc logiart
+bluebook-ocr	257	345	199	30	46	91	20	0.395	0.120	0.577	693	22			-	-	SChds ofc APsyckological
+bluebook-ocr	258	341	232	27	37	64	18	0.422	0.141	0.680	560	17			-	-	ruds louce ofr
+bluebook-ocr	259	381	254	21	31	89	13	0.404	0.092	0.667	662	42			-	-	ote sote tsdl
+bluebook-ocr	260	512	304	170	25	60	8	0.872	0.031	0.594	1310	4			-	-	etc ther etc
+bluebook-ocr	261	332	189	36	25	103	16	0.590	0.098	0.569	737	17			-	-	koon SClzoda elc
+bluebook-ocr	262	500	284	177	25	62	10	0.876	0.038	0.568	1347	5			-	-	etc insutfic tafo
+bluebook-ocr	263	9	2	5	0	1	0	1.000	0.000	0.222	29	0			-	-	
+bluebook-ocr	264	69	17	41	0	11	0	1.000	0.000	0.246	247	0			-	-	
+bluebook-ocr	265	9	2	5	1	1	0	0.833	0.000	0.222	39	6			-	-	
+bluebook-ocr	266	155	12	131	3	9	2	0.978	0.014	0.077	699	0			-	-	ẠỌDay thie
+bluebook-ocr	267	160	7	129	19	6	4	0.872	0.026	0.044	656	0			-	-	triefly fron lcoked
+bluebook-ocr	268	147	6	120	11	10	5	0.916	0.035	0.041	613	0			-	-	etc silow detaile
+bluebook-ocr	269	47	2	44	1	0	1	0.978	0.022	0.043	224	0			-	-	dissappearance
+bluebook-ocr	270	74	9	60	4	1	4	0.938	0.062	0.122	323	0			-	-	adüress comsents shocts
+bluebook-ocr	271	8	3	4	1	1	0	0.800	0.000	0.375	42	1			-	-	
+bluebook-ocr	272	168	10	140	14	4	0	0.909	0.000	0.060	658	0			-	-	
+bluebook-ocr	273	174	12	151	7	3	0	0.956	0.000	0.069	682	0			-	-	
+bluebook-ocr	274	205	15	164	22	4	2	0.882	0.011	0.073	854	0			-	-	drection les
+bluebook-ocr	275	218	20	189	9	1	4	0.955	0.020	0.092	820	1			-	-	folloving kow kmow
+bluebook-ocr	276	242	14	212	12	3	1	0.946	0.004	0.058	949	0			-	-	ansver
+bluebook-ocr	277	106	5	98	2	2	2	0.980	0.020	0.047	398	0			-	-	wil draving
+bluebook-ocr	278	125	8	114	0	3	0	1.000	0.000	0.064	489	0			-	-	
+bluebook-ocr	279	23	2	20	1	0	1	0.952	0.048	0.087	105	0			-	-	addtional
+bluebook-ocr	280	12	2	6	2	2	0	0.750	0.000	0.167	47	9			-	-	
+bluebook-ocr	281	281	10	247	17	7	3	0.936	0.011	0.036	1217	0			-	-	questionnoire unidentified cerial
+bluebook-ocr	282	314	13	267	28	2	2	0.905	0.007	0.041	1188	0			-	-	bockground nswered
+bluebook-ocr	283	133	5	115	11	0	5	0.913	0.040	0.038	527	0			-	-	ond otc orrow
+bluebook-ocr	284	236	9	209	11	4	2	0.950	0.009	0.038	910	0			-	-	certin cleor
+bluebook-ocr	285	288	20	232	23	3	0	0.910	0.000	0.069	1112	0			-	-	
+bluebook-ocr	286	106	3	100	1	2	1	0.990	0.010	0.028	399	0			-	-	smoller
+bluebook-ocr	287	197	13	165	16	1	3	0.912	0.016	0.066	726	0			-	-	nomes thot onswered
+bluebook-ocr	288	129	5	110	10	3	3	0.917	0.024	0.039	548	1			-	-	estimte informotion troining
+bluebook-ocr	289	109	1	100	6	2	2	0.943	0.019	0.009	505	0			-	-	thot detoils
+bluebook-ocr	290	1	1	0	0	0	0			1.000	0	0			-	-	
+bluebook-ocr	291	9	3	5	1	1	0	0.833	0.000	0.333	28	3			-	-	
+bluebook-ocr	292	71	10	56	4	4	1	0.933	0.016	0.141	270	1			-	-	ualifies
+bluebook-ocr	293	165	55	100	1	9	1	0.990	0.009	0.333	615	0			-	-	ike
+bluebook-ocr	294	188	58	105	1	12	0	0.991	0.000	0.309	623	0			-	-	
+bluebook-ocr	295	174	54	87	9	25	3	0.906	0.025	0.310	597	2			-	-	obiect labors obs
+bluebook-ocr	296	133	27	79	9	23	7	0.898	0.063	0.203	661	0			-	-	MaJ lst etc
+bluebook-ocr	297	3	2	0	1	0	1	0.000	1.000	0.667	3	0			-	-	pue
+bluebook-ocr	298	83	27	47	1	8	0	0.979	0.000	0.325	307	1			-	-	
+bluebook-ocr	299	136	65	56	24	9	2	0.700	0.022	0.478	481	10			-	-	LLPe tude
+bluebook-ocr	300	9	3	5	1	1	0	0.833	0.000	0.333	26	0			-	-	
+bluebook-ocr	301	207	34	162	4	11	1	0.976	0.006	0.164	856	0			-	-	aopearing
+bluebook-ocr	302	135	45	83	12	3	2	0.874	0.020	0.333	600	5			-	-	lla LLf
+bluebook-ocr	303	168	58	105	2	2	0	0.981	0.000	0.345	597	1			-	-	
+bluebook-ocr	304	211	64	137	4	6	3	0.972	0.020	0.303	781	0			-	-	mph mph mph
+bluebook-ocr	305	145	42	92	4	16	1	0.958	0.009	0.290	672	3			-	-	THTATuI
+bluebook-ocr	306	150	52	85	3	12	2	0.966	0.020	0.347	565	1			-	-	POOr etc
+bluebook-ocr	307	7	3	3	1	1	0	0.750	0.000	0.429	20	5			-	-	
+bluebook-ocr	308	82	10	68	2	5	0	0.971	0.000	0.122	393	1			-	-	
+bluebook-ocr	309	142	50	82	9	6	2	0.901	0.021	0.352	596	4			-	-	lle LigHT
+bluebook-ocr	310	5	1	0	2	3	2	0.000	0.400	0.200	17	0			-	-	pue EXHIBiT
+bluebook-ocr	311	274	149	89	24	25	4	0.788	0.029	0.544	716	24			-	-	sCCCEaCOCCC ceedgda SAfSS
+bluebook-ocr	312	6	1	4	0	1	0	1.000	0.000	0.167	21	0			-	-	
+cdc-ocr	1	17	1	15	0	1	0	1.000	0.000	0.059	99	0			-	-	
+cdc-ocr	2	0	0	0	0	0	0				0	0			-	-	
+cdc-ocr	3	67	0	54	0	11	0	1.000	0.000	0.000	290	0			-	-	
+cdc-ocr	4	41	1	37	1	2	0	0.974	0.000	0.024	153	1			-	-	
+cdc-ocr	5	86	0	79	1	6	0	0.988	0.000	0.000	516	3			-	-	
+cdc-ocr	6	58	1	49	1	7	1	0.980	0.018	0.017	256	0			-	-	ergency
+cdc-ocr	7	154	0	119	25	10	24	0.826	0.156	0.000	750	1			misread	-	powtred radic ald
+cdc-ocr	8	54	0	46	2	5	0	0.958	0.000	0.000	243	6			-	-	
+cdc-ocr	9	59	0	48	0	10	0	1.000	0.000	0.000	256	0			-	-	
+cdc-ocr	10	56	0	41	3	12	0	0.932	0.000	0.000	224	12			-	-	
+cdc-ocr	11	83	0	69	0	14	0	1.000	0.000	0.000	334	0			-	-	
+cdc-ocr	12	185	0	174	0	11	0	1.000	0.000	0.000	829	0			-	-	
+cdc-ocr	13	27	0	24	2	0	0	0.923	0.000	0.000	99	2			-	-	
+cdc-ocr	14	71	0	66	0	5	0	1.000	0.000	0.000	291	0			-	-	
+cdc-ocr	15	6	2	4	0	0	0	1.000	0.000	0.333	30	0			-	-	
+cdc-ocr	16	7	0	2	1	4	0	0.667	0.000	0.000	33	2			-	-	
+cdc-ocr	17	14	0	12	0	2	0	1.000	0.000	0.000	74	0			-	-	
+cdc-ocr	18	67	0	59	0	8	0	1.000	0.000	0.000	276	0			-	-	
+cdc-ocr	19	46	2	43	0	2	0	1.000	0.000	0.043	213	0			-	-	
+cdc-ocr	20	26	0	24	0	2	0	1.000	0.000	0.000	113	0			-	-	
+cdc-ocr	21	146	1	137	0	9	0	1.000	0.000	0.007	600	0			-	-	
+cdc-ocr	22	86	0	74	0	11	0	1.000	0.000	0.000	333	0			-	-	
+cdc-ocr	23	146	0	134	0	12	0	1.000	0.000	0.000	607	0			-	-	
+cdc-ocr	24	109	1	105	0	4	0	1.000	0.000	0.009	405	0			-	-	
+cdc-ocr	25	49	1	43	0	5	0	1.000	0.000	0.020	180	0			-	-	
+cdc-ocr	26	54	3	45	0	7	0	1.000	0.000	0.056	192	0			-	-	
+cdc-ocr	27	110	0	103	0	7	0	1.000	0.000	0.000	448	0			-	-	
+cdc-ocr	28	60	0	56	0	5	0	1.000	0.000	0.000	252	0			-	-	
+cdc-ocr	29	76	0	72	2	2	0	0.973	0.000	0.000	359	11			-	-	
+cdc-ocr	30	71	0	68	1	2	1	0.986	0.014	0.000	324	0			-	-	ẠỗẠỌWE
+cdc-ocr	31	97	0	92	0	6	0	1.000	0.000	0.000	439	0			-	-	
+cdc-ocr	32	61	0	57	0	4	0	1.000	0.000	0.000	274	0			-	-	
+cdc-ocr	33	90	0	79	1	10	0	0.988	0.000	0.000	348	3			-	-	
+cdc-ocr	34	110	0	99	0	11	0	1.000	0.000	0.000	446	0			-	-	
+cdc-ocr	35	24	0	23	0	1	0	1.000	0.000	0.000	89	0			-	-	
+cdc-ocr	36	2	0	2	0	0	0	1.000	0.000	0.000	6	0			-	-	
+cdc-ocr	37	55	0	55	0	0	0	1.000	0.000	0.000	260	0			-	-	
+cdc-ocr	38	0	0	0	0	0	0				0	0			-	-	
+cdc-ocr	39	215	4	194	1	10	1	0.995	0.005	0.019	1143	0			-	-	nonperishable
+cdc-ocr	40	0	0	0	0	0	0				0	0			-	-	
+cdc-ocr	41	0	0	0	0	0	0				0	0			-	-	
+cdc-ocr	42	1	1	1	0	1	0	1.000	0.000	1.000	3	0			-	-	
+census-ocr	1	89	4	69	0	16	0	1.000	0.000	0.045	491	0			-	-	
+census-ocr	2	339	16	285	23	16	10	0.925	0.031	0.047	1848	0			-	-	perturbative microdata adlitive
+census-ocr	3	294	26	248	5	23	2	0.980	0.007	0.088	1341	0			-	-	cannot sex
+census-ocr	4	476	23	365	41	31	15	0.899	0.034	0.048	2083	0			-	-	univariate pre covariance
+census-ocr	5	404	13	329	19	36	6	0.945	0.016	0.032	1775	2			-	-	covariance nonlinks ratics
+census-ocr	6	487	18	373	65	27	46	0.852	0.099	0.037	2351	6			-	-	nonmatches probabilties hrst
+census-ocr	7	501	13	432	25	31	3	0.945	0.006	0.026	2350	0			-	-	downweight min compres
+census-ocr	8	431	13	386	10	21	2	0.975	0.005	0.030	1933	1			-	-	mnLŻ aij
+census-ocr	9	392	8	361	12	13	2	0.968	0.005	0.020	1772	3			-	-	covariance mim
+census-ocr	10	305	21	259	11	12	8	0.959	0.028	0.069	1401	0			-	-	covariance covariance covariance
+census-ocr	11	455	148	293	23	16	12	0.927	0.036	0.325	1610	0			-	-	rukswp rnkswp rukswp
+census-ocr	12	156	131	17	26	9	23	0.395	0.442	0.840	313	0			-	-	mnkswp rukswp rukswp
+census-ocr	13	450	231	205	26	24	20	0.887	0.078	0.513	1237	1			-	-	scalmixadd mixadd mixadd
+census-ocr	14	357	51	293	21	8	19	0.933	0.059	0.143	1635	0			-	-	rukswp rnkswp rnkswpl
+census-ocr	15	254	229	18	27	12	25	0.400	0.439	0.902	327	2			-	-	ascore pscore ascore
+census-ocr	16	431	146	278	16	8	12	0.946	0.040	0.339	1565	1			-	-	rukswp rnkswp rukswp
+census-ocr	17	399	37	259	6	97	2	0.977	0.006	0.093	1997	0			-	-	covariance crodata
+census-ocr	18	381	29	256	35	52	6	0.880	0.017	0.076	1563	9			-	-	oxE covariance derdetermined
+census-ocr	19	228	20	179	12	15	5	0.937	0.024	0.088	918	0			-	-	bimodal ofo uncorrelated
+census-ocr	20	54	2	41	6	5	2	0.872	0.038	0.037	221	0			-	-	covariance VItà
+nbs-ocr	1	717	31	585	57	33	31	0.911	0.046	0.043	3473	2			-	-	lon deseribed tor
+nbs-ocr	2	456	28	371	41	24	19	0.900	0.044	0.061	1957	0			-	-	fteld regton collison
+nbs-ocr	3	591	28	491	34	33	10	0.935	0.018	0.047	2704	3			-	-	fiy nfho quantization
+nbs-ocr	4	665	56	512	54	57	18	0.905	0.029	0.084	2905	9			-	-	FDams jth sorptions
+nbs-ocr	5	610	51	502	40	36	14	0.926	0.024	0.084	2783	0			-	-	tuổ gocs semiclassical
+nbs-ocr	6	694	43	585	40	32	21	0.936	0.032	0.062	3180	1			-	-	paom multiphoton clcar
+nbs-ocr	7	481	90	237	14	154	6	0.944	0.015	0.187	1811	0			-	-	bremsstrahlung anygiven characteristies
+warren-ocr	1	0	0	0	0	0	0				0	0			-	-	
+warren-ocr	2	0	0	0	0	0	0				0	0			-	-	
+warren-ocr	3	0	0	0	0	0	0				0	0			-	-	
+warren-ocr	4	0	0	0	0	0	0				0	0			-	-	
+warren-ocr	5	11	0	9	0	2	0	1.000	0.000	0.000	67	0			-	-	
+warren-ocr	6	14	5	6	1	4	0	0.857	0.000	0.357	60	0			-	-	
+warren-ocr	7	22	1	14	0	7	0	1.000	0.000	0.045	121	0			-	-	
+warren-ocr	8	36	7	18	2	9	0	0.900	0.000	0.194	168	4			-	-	
+warren-ocr	9	135	0	38	0	97	0	1.000	0.000	0.000	679	0			-	-	
+warren-ocr	10	0	0	0	0	0	0				0	0			-	-	
+warren-ocr	11	93	10	33	14	36	9	0.702	0.108	0.108	434	11			misread	-	imasl assassinstion ite
+warren-ocr	12	0	0	0	0	0	0				0	0			-	-	
+warren-ocr	13	400	12	335	18	36	11	0.949	0.028	0.030	2020	0			-	-	assassination assassination assassin
+warren-ocr	14	479	7	394	22	55	8	0.947	0.017	0.015	2518	0			-	-	assassination assassin assassination
+warren-ocr	15	445	6	400	11	31	3	0.973	0.007	0.013	2442	0			-	-	ican accomphshment assassination
+warren-ocr	16	484	23	407	30	24	11	0.931	0.024	0.048	2621	0			-	-	ber teken pohce
+warren-ocr	17	466	7	427	15	17	5	0.966	0.011	0.015	2483	0			-	-	stal assassination assassination
+warren-ocr	18	473	2	441	16	14	8	0.965	0.017	0.004	2468	0			-	-	publie assassination assassination
+warren-ocr	19	293	3	264	13	14	2	0.953	0.007	0.010	1523	0			-	-	dys assassin
+warren-ocr	20	0	0	0	0	0	0				0	0			-	-	
+warren-ocr	21	194	37	136	3	15	2	0.978	0.013	0.191	877	0			-	-	vii xvii
+warren-ocr	22	225	42	159	1	24	1	0.994	0.005	0.187	1024	0			-	-	KVili
+warren-ocr	23	229	44	144	1	36	0	0.993	0.000	0.192	1034	0			-	-	
+warren-ocr	24	258	40	180	1	40	0	0.994	0.000	0.155	1284	0			-	-	
+warren-ocr	25	186	32	135	2	17	1	0.985	0.006	0.172	991	0			-	-	xxi
+warren-ocr	26	251	42	182	3	26	1	0.984	0.005	0.167	1240	0			-	-	xxii
+warren-ocr	27	246	43	152	2	50	1	0.987	0.005	0.175	1095	1			-	-	xxiii
+warren-ocr	28	162	46	101	1	9	1	0.990	0.009	0.284	725	0			-	-	XxiV
+warren-ocr	29	340	9	279	6	46	2	0.979	0.006	0.026	1615	0			-	-	assassination assassination
+warren-ocr	30	501	8	449	13	36	6	0.972	0.012	0.016	2510	0			-	-	midmorning bubbletop followup
+warren-ocr	31	548	3	510	14	24	9	0.973	0.016	0.005	2532	0			-	-	arriva resounded bullet
+warren-ocr	32	545	5	492	17	33	10	0.967	0.018	0.009	2637	0			-	-	ing gaied heartbent
+warren-ocr	33	529	9	491	10	22	8	0.980	0.015	0.017	2475	0			-	-	brilding direetly tolda
+warren-ocr	34	557	23	479	22	40	15	0.956	0.028	0.041	2485	0			-	-	oflices inghouse landladies
+warren-ocr	35	564	6	500	19	44	12	0.963	0.021	0.011	2491	0			-	-	gunman shootine receivec
+warren-ocr	36	543	9	483	13	40	9	0.974	0.017	0.017	2499	0			-	-	suspeets assassination handeufled
+warren-ocr	37	561	20	472	13	59	5	0.973	0.009	0.036	2565	0			-	-	riffe assassination assassination
+warren-ocr	38	507	9	445	21	36	10	0.955	0.020	0.018	2475	0			-	-	reentered betweer personalty
+warren-ocr	39	544	29	469	18	35	3	0.963	0.006	0.053	2436	0			-	-	reentered minimun martialed
+warren-ocr	40	535	21	448	7	65	3	0.985	0.006	0.039	2469	0			-	-	ordereo suicide ington
+warren-ocr	41	522	19	432	8	66	4	0.982	0.008	0.036	2402	0			-	-	retur wald becanse
+warren-ocr	42	548	15	446	7	81	5	0.985	0.009	0.027	2469	0			-	-	scuflle leit assassination
+warren-ocr	43	546	10	467	9	61	6	0.981	0.011	0.018	2509	0			-	-	openmg tober roominghouse
+warren-ocr	44	546	16	455	19	56	14	0.960	0.026	0.029	2498	0			-	-	assas sination murder
+warren-ocr	45	529	12	465	15	40	9	0.969	0.017	0.023	2509	0			-	-	polce detuils urgings
+warren-ocr	46	431	9	386	22	16	12	0.946	0.028	0.021	2135	0			-	-	murder assassination killed
+warren-ocr	47	453	10	398	21	28	13	0.950	0.029	0.022	2173	0			-	-	bullet bullet bullet
+warren-ocr	48	465	9	392	28	33	13	0.933	0.029	0.019	2218	0			-	-	kill killed assassination
+warren-ocr	49	461	13	388	17	42	7	0.958	0.016	0.028	2222	0			-	-	killed IIarvey assassinate
+warren-ocr	50	467	6	404	22	35	12	0.948	0.026	0.013	2292	0			-	-	varions assassination assassination
+warren-ocr	51	433	6	402	19	7	9	0.955	0.021	0.014	2261	0			-	-	tributed assassinate hostilty
+warren-ocr	52	447	3	413	16	16	5	0.963	0.011	0.007	2306	0			-	-	specifie direet assassination
+warren-ocr	53	425	8	395	17	5	6	0.959	0.014	0.019	2286	0			-	-	assassination rarious assassination
+warren-ocr	54	429	10	397	19	4	6	0.954	0.014	0.023	2316	0			-	-	assassination thet immediatety
+warren-ocr	55	133	2	129	1	1	0	0.992	0.000	0.015	727	0			-	-	
+warren-ocr	56	328	9	282	9	29	2	0.969	0.006	0.027	1628	0			-	-	prepurations assassination
+warren-ocr	57	475	12	412	7	46	3	0.983	0.006	0.025	2308	0			-	-	speciai vorking arrang
+warren-ocr	58	500	12	438	10	41	3	0.978	0.006	0.024	2456	0			-	-	involvedạẠại photorraphs assassination
+warren-ocr	59	502	15	445	7	37	3	0.985	0.006	0.030	2464	0			-	-	luncheón retur direet
+warren-ocr	60	510	12	465	5	29	1	0.989	0.002	0.024	2370	0			-	-	wayz
+warren-ocr	61	62	12	38	0	13	0	1.000	0.000	0.194	318	0			-	-	
+warren-ocr	62	33	4	14	2	13	1	0.875	0.034	0.121	180	1			-	-	commlsston
+warren-ocr	63	43	3	31	0	9	0	1.000	0.000	0.070	222	0			-	-	
+warren-ocr	64	39	4	18	0	15	0	1.000	0.000	0.103	165	0			-	-	
+warren-ocr	65	31	3	20	1	7	0	0.952	0.000	0.097	149	3			-	-	
+warren-ocr	66	32	3	25	1	4	0	0.962	0.000	0.094	155	2			-	-	
+warren-ocr	67	501	16	447	22	23	10	0.953	0.020	0.032	2474	0			-	-	trisect ạiElm traffie
+warren-ocr	68	416	18	345	11	46	6	0.969	0.015	0.043	2001	0			-	-	aroused kennedy aeprosen
+warren-ocr	69	488	13	414	13	52	8	0.970	0.017	0.027	2526	0			-	-	aroused twentics ber
+warren-ocr	70	436	13	357	12	57	7	0.967	0.016	0.030	2015	0			-	-	fternoon motoreade repliedạỗẠạthat
+warren-ocr	71	431	6	384	9	37	5	0.977	0.012	0.014	2212	0			-	-	plainclothesmen nedy proximately
+warren-ocr	72	13	3	9	0	1	0	1.000	0.000	0.231	64	0			-	-	
+warren-ocr	73	521	18	477	11	35	8	0.977	0.015	0.035	2542	0			-	-	ceived bubbletop cach
+warren-ocr	74	450	16	410	15	31	9	0.965	0.020	0.036	2305	0			-	-	cade followup followup
+warren-ocr	75	9	1	7	0	1	0	1.000	0.000	0.111	57	0			-	-	
+warren-ocr	76	454	15	401	11	34	8	0.973	0.018	0.033	2285	0			-	-	followup followup followup
+warren-ocr	77	496	23	440	11	28	6	0.976	0.013	0.046	2191	0			-	-	followup bullet assassination
+warren-ocr	78	549	16	488	17	36	9	0.966	0.017	0.029	2414	0			-	-	immediatelyẠạ kill killed
+warren-ocr	79	500	9	459	15	24	12	0.968	0.024	0.018	2242	0			-	-	followup frst furched
+warren-ocr	80	447	15	396	5	35	4	0.988	0.009	0.034	2121	0			-	-	assassination followup assassination
+warren-ocr	81	496	20	402	19	62	13	0.955	0.027	0.040	2393	0			-	-	followup followup ạỊisince
+warren-ocr	82	515	17	419	24	67	15	0.946	0.029	0.033	2469	0			-	-	bullet estab tracheal
+warren-ocr	83	469	8	437	12	18	3	0.973	0.006	0.017	2265	0			-	-	bullet autopsyạẠcould accomphished
+warren-ocr	84	478	27	389	16	60	7	0.960	0.015	0.056	2292	0			-	-	bullet diffieulty reexpand
+warren-ocr	85	477	18	406	17	49	6	0.960	0.013	0.038	2409	0			-	-	followup assassi equipmentạẠạẠạ
+warren-ocr	86	485	15	439	13	28	1	0.971	0.002	0.031	2457	0			-	-	staft
+warren-ocr	87	398	22	318	13	61	4	0.961	0.010	0.055	1913	0			-	-	neth nedy miute
+warren-ocr	88	391	19	354	20	8	10	0.947	0.026	0.049	1882	0			-	-	gumshot cansed crisseross
+warren-ocr	89	304	8	272	11	14	8	0.961	0.027	0.026	1533	0			-	-	eifect killed conneetion
+warren-ocr	90	59	8	45	0	6	0	1.000	0.000	0.136	219	0			-	-	
+warren-ocr	91	464	10	430	7	18	5	0.984	0.011	0.022	2059	0			-	-	steamfitter frecracker hisself
+warren-ocr	92	507	5	458	11	35	8	0.977	0.016	0.010	2217	0			-	-	nan floori assassina
+warren-ocr	93	486	9	431	9	47	4	0.980	0.008	0.019	2113	0			-	-	cariis riffe followup
+warren-ocr	94	21	3	8	0	10	0	1.000	0.000	0.143	88	0			-	-	
+warren-ocr	95	16	2	5	1	8	1	0.833	0.071	0.125	66	0			-	-	DINLAzO
+warren-ocr	96	460	11	407	7	32	4	0.983	0.009	0.024	1996	0			-	-	windowiại indistinct warehouseman
+warren-ocr	97	16	3	10	1	2	1	0.909	0.077	0.188	79	0			-	-	occupled
+warren-ocr	98	482	4	438	10	21	6	0.978	0.013	0.008	1918	0			-	-	atter wel usạiỊ
+warren-ocr	99	519	15	474	9	26	4	0.981	0.008	0.029	2390	0			-	-	fring assassi testifiedạỊWell
+warren-ocr	100	526	30	474	8	25	2	0.983	0.004	0.057	2549	0			-	-	observedạii motorcadeại
+warren-ocr	101	37	5	24	0	6	0	1.000	0.000	0.135	172	0			-	-	
+warren-ocr	102	22	3	16	0	3	0	1.000	0.000	0.136	120	0			-	-	
+warren-ocr	103	32	4	21	0	6	0	1.000	0.000	0.125	155	0			-	-	
+warren-ocr	104	510	17	457	11	31	7	0.976	0.014	0.033	2340	0			-	-	locationạis riffe ber
+warren-ocr	105	513	12	469	25	14	21	0.949	0.041	0.023	2364	0			-	-	tenths tenths residueiẠạ
+warren-ocr	106	14	3	7	0	3	0	1.000	0.000	0.214	71	0			-	-	
+warren-ocr	107	465	12	404	19	36	14	0.955	0.031	0.026	2261	0			-	-	bullet bullet bullet
+warren-ocr	108	17	2	13	0	2	0	1.000	0.000	0.118	89	0			-	-	
+warren-ocr	109	501	34	438	22	28	11	0.952	0.023	0.068	2304	0			-	-	afteiward bullet bullet
+warren-ocr	110	5	2	3	0	0	0	1.000	0.000	0.400	19	0			-	-	
+warren-ocr	111	19	7	8	1	6	1	0.889	0.067	0.368	85	0			-	-	riffe
+warren-ocr	112	492	14	436	26	22	17	0.944	0.035	0.028	2410	0			-	-	telescopie bullet licher
+warren-ocr	113	451	10	397	28	26	21	0.934	0.047	0.022	2352	1			-	-	bullet mutilated exammations
+warren-ocr	114	530	15	460	32	27	24	0.935	0.046	0.028	2413	0			-	-	wasihe pointof thexihe
+warren-ocr	115	464	12	411	24	27	17	0.945	0.037	0.026	2158	0			-	-	bullets bullets nally
+warren-ocr	116	517	9	478	22	8	17	0.956	0.033	0.017	2455	0			-	-	mately rlihe mastoid
+warren-ocr	117	474	11	417	19	31	12	0.956	0.026	0.023	2150	0			-	-	missile bullet purtially
+warren-ocr	118	496	12	447	8	32	3	0.982	0.006	0.024	2345	0			-	-	assassination bullet bullet
+warren-ocr	119	541	20	492	20	19	16	0.961	0.030	0.037	2500	0			-	-	bullets missile bullet
+warren-ocr	120	547	21	519	16	9	13	0.970	0.024	0.038	2462	0			-	-	bullet bullet bullet
+warren-ocr	121	544	29	488	16	32	10	0.968	0.019	0.053	2515	0			-	-	ernor nipple wis
+warren-ocr	122	580	23	547	24	11	20	0.958	0.034	0.040	2669	0			-	-	bullet missile sixteenths
+warren-ocr	123	548	24	492	28	14	23	0.946	0.043	0.044	2618	0			-	-	bullets bullet infficted
+warren-ocr	124	436	8	404	18	11	8	0.957	0.018	0.018	2110	0			-	-	bullet bullet missile
+warren-ocr	125	509	22	454	18	29	11	0.962	0.022	0.043	2404	0			-	-	assassination assassin bullet
+warren-ocr	126	550	32	486	16	25	8	0.968	0.015	0.058	2399	0			-	-	assassin curbline gunman
+warren-ocr	127	14	2	12	0	1	0	1.000	0.000	0.143	82	0			-	-	
+warren-ocr	128	46	8	33	0	6	0	1.000	0.000	0.174	201	0			-	-	
+warren-ocr	129	48	8	33	0	6	0	1.000	0.000	0.167	202	0			-	-	
+warren-ocr	130	50	8	32	1	6	0	0.970	0.000	0.160	202	1			-	-	
+warren-ocr	131	47	9	31	0	9	0	1.000	0.000	0.191	202	0			-	-	
+warren-ocr	132	12	2	9	0	1	0	1.000	0.000	0.167	72	0			-	-	
+warren-ocr	133	559	31	498	23	18	17	0.956	0.032	0.055	2605	0			-	-	tenths und assassin
+warren-ocr	134	559	39	484	29	18	12	0.943	0.023	0.070	2449	42			-	-	nally bullet injunes
+warren-ocr	135	522	13	480	27	12	21	0.947	0.040	0.025	2539	0			-	-	ernor ins bullet
+warren-ocr	136	61	9	37	0	17	0	1.000	0.000	0.148	289	0			-	-	
+warren-ocr	137	517	14	455	26	28	17	0.946	0.033	0.027	2483	0			-	-	bullet bulletiạ bullet
+warren-ocr	138	532	13	501	17	9	15	0.967	0.028	0.024	2468	0			-	-	bullet bullet hitherto
+warren-ocr	139	441	9	411	9	9	6	0.979	0.014	0.020	2039	0			-	-	circalated hred assassin
+warren-ocr	140	569	15	517	19	21	14	0.965	0.025	0.026	2634	0			-	-	bullet bullet bullet
+warren-ocr	141	13	2	9	0	3	0	1.000	0.000	0.154	75	0			-	-	
+warren-ocr	142	46	7	33	0	6	0	1.000	0.000	0.152	202	0			-	-	
+warren-ocr	143	501	16	469	14	6	5	0.971	0.010	0.032	2336	0			-	-	bullet gunman esily
+warren-ocr	144	561	14	500	19	36	17	0.963	0.031	0.025	2541	0			-	-	shotạỗạồhit bullet bullet
+warren-ocr	145	462	16	425	17	8	14	0.962	0.031	0.035	2175	0			-	-	bullet cannot bullet
+warren-ocr	146	330	21	254	13	49	10	0.951	0.032	0.064	1593	0			-	-	bullets killed nally
+warren-ocr	147	513	45	395	21	59	13	0.950	0.027	0.088	2224	0			-	-	riffe handprinting sume
+warren-ocr	148	81	18	31	5	27	1	0.861	0.016	0.222	328	9			-	-	fandy
+warren-ocr	149	534	20	451	14	55	5	0.970	0.010	0.037	2463	2			-	-	ased assassination assassination
+warren-ocr	150	516	12	418	18	73	7	0.959	0.014	0.023	2359	0			-	-	posta organi fictitions
+warren-ocr	151	503	14	426	28	38	14	0.938	0.028	0.028	2392	0			-	-	riffe IIe vere
+warren-ocr	152	509	7	454	27	27	12	0.944	0.024	0.014	2390	0			-	-	palmprints identifica palmprint
+warren-ocr	153	532	22	460	25	32	15	0.948	0.029	0.041	2416	1			-	-	butt assassination assassination
+warren-ocr	154	24	5	19	0	3	0	1.000	0.000	0.208	123	0			-	-	
+warren-ocr	155	511	11	469	6	33	3	0.987	0.006	0.022	2532	0			-	-	ohotograph testifed clariiying
+warren-ocr	156	521	25	441	9	56	4	0.980	0.008	0.048	2368	0			-	-	testifed assassination assassination
+warren-ocr	157	439	24	336	18	63	13	0.949	0.031	0.055	2062	0			-	-	telescopie assassination palmprint
+warren-ocr	158	515	28	420	3	68	3	0.993	0.006	0.054	2261	0			-	-	rodsiại assassination hra
+warren-ocr	159	520	15	439	13	52	9	0.971	0.018	0.029	2172	0			-	-	assassination testifed approxımately
+warren-ocr	160	24	3	17	0	6	0	1.000	0.000	0.125	118	0			-	-	
+warren-ocr	161	569	27	494	7	44	5	0.986	0.009	0.047	2431	0			-	-	assassination afteroon dayiại
+warren-ocr	162	506	14	444	19	32	16	0.959	0.032	0.028	2144	0			-	-	thatiạiis riffe butt
+warren-ocr	163	511	13	436	17	42	10	0.962	0.020	0.025	2260	0			-	-	DayẠạITS palmprint palmprint
+warren-ocr	164	448	17	400	13	19	8	0.969	0.019	0.038	2088	0			-	-	felting tound conduet
+warren-ocr	165	429	15	366	22	25	16	0.943	0.039	0.035	1922	0			-	-	scopic baugh becanse
+warren-ocr	166	37	2	34	1	0	0	0.971	0.000	0.054	207	1			-	-	
+warren-ocr	167	35	2	32	0	2	0	1.000	0.000	0.057	185	0			-	-	
+warren-ocr	168	532	28	471	20	23	8	0.959	0.016	0.053	2389	0			-	-	nisles blm tian
+warren-ocr	169	521	18	457	17	38	6	0.964	0.012	0.035	2451	0			-	-	palmprint cannot las
+warren-ocr	170	39	4	29	0	6	0	1.000	0.000	0.103	196	0			-	-	
+warren-ocr	171	491	21	426	17	38	8	0.962	0.017	0.043	2262	1			-	-	assassination elevatoriạia pushbutton
+warren-ocr	172	555	49	459	20	31	11	0.958	0.022	0.088	2403	0			-	-	nan testifed assassination
+warren-ocr	173	550	23	473	25	34	11	0.950	0.021	0.042	2448	0			-	-	hibits assassination kneelng
+warren-ocr	174	527	18	460	16	35	12	0.966	0.023	0.034	2268	0			-	-	assassin assassination assassination
+warren-ocr	175	539	15	488	13	31	10	0.974	0.019	0.028	2470	0			-	-	probative assassin aor
+warren-ocr	176	23	2	16	1	4	0	0.941	0.000	0.087	113	4			-	-	
+warren-ocr	177	533	19	466	18	36	10	0.963	0.019	0.036	2397	0			-	-	employces assassination assassination
+warren-ocr	178	66	8	32	1	24	0	0.970	0.000	0.121	301	2			-	-	
+warren-ocr	179	539	16	513	13	4	6	0.975	0.011	0.030	2219	0			-	-	ass closmng apper
+warren-ocr	180	569	26	526	10	20	7	0.981	0.013	0.046	2515	0			-	-	caunot faceạẠạass reenacted
+warren-ocr	181	569	10	529	18	23	9	0.967	0.016	0.018	2601	0			-	-	hittle conchided accompaned
+warren-ocr	182	551	12	487	7	58	4	0.986	0.007	0.022	2547	0			-	-	vhat ause reentered
+warren-ocr	183	565	29	492	12	49	4	0.976	0.007	0.051	2504	0			-	-	oll affer ihe
+warren-ocr	184	470	14	407	15	36	10	0.964	0.022	0.030	2193	0			-	-	questionedạẠạỊi lrving palmprint
+warren-ocr	185	487	23	407	20	39	16	0.953	0.034	0.047	2127	0			-	-	roominghouse killed fol
+warren-ocr	186	102	16	46	2	41	0	0.958	0.000	0.157	427	0			-	-	
+warren-ocr	187	467	13	392	7	47	5	0.982	0.011	0.028	1852	0			-	-	assassination theạẠlower salis
+warren-ocr	188	533	16	447	15	62	5	0.968	0.010	0.030	2423	2			-	-	roominghouse roominghouse reetly
+warren-ocr	189	492	25	411	13	46	10	0.969	0.021	0.051	2096	0			-	-	IIe handeuffed ust
+warren-ocr	190	503	14	443	18	29	15	0.961	0.031	0.028	1990	0			-	-	ahost askedẠMay hereạẠại
+warren-ocr	191	541	37	436	8	73	7	0.982	0.014	0.068	2340	0			-	-	und eab approxımately
+warren-ocr	192	43	2	20	1	17	0	0.952	0.000	0.047	223	0			-	-	
+warren-ocr	193	501	45	392	25	51	13	0.940	0.028	0.090	2140	0			-	-	tenths roominghouse murder
+warren-ocr	194	563	24	493	15	42	5	0.970	0.009	0.043	2397	0			-	-	ther gunman damn
+warren-ocr	195	555	18	467	22	57	16	0.955	0.029	0.032	2468	0			-	-	sie corer continned
+warren-ocr	196	545	24	457	23	56	12	0.952	0.022	0.044	2430	1			-	-	probative gunman eut
+warren-ocr	197	550	22	477	15	54	7	0.970	0.013	0.040	2391	0			-	-	murder onẠạẠại laway
+warren-ocr	198	10	2	6	0	2	0	1.000	0.000	0.200	45	0			-	-	
+warren-ocr	199	510	22	424	18	59	7	0.959	0.014	0.043	2459	0			-	-	wereshown affdavit und
+warren-ocr	200	476	10	406	33	37	25	0.925	0.053	0.021	2343	1			-	-	bullets bullets bullets
+warren-ocr	201	373	68	113	57	143	28	0.665	0.089	0.182	1445	44			-	-	itie eunber arge
+warren-ocr	202	517	44	407	8	68	5	0.981	0.010	0.085	2189	0			-	-	tributor BbL sse
+warren-ocr	203	502	25	406	11	64	5	0.974	0.010	0.050	2286	0			-	-	murder gunman jcket
+warren-ocr	204	477	16	393	14	59	9	0.966	0.019	0.034	2160	0			-	-	gunman thouglit slayer
+warren-ocr	205	23	3	14	0	7	0	1.000	0.000	0.130	106	0			-	-	
+warren-ocr	206	580	23	502	14	51	13	0.973	0.023	0.040	2424	0			-	-	lobbyạẠạia tur offce
+warren-ocr	207	557	12	473	26	50	20	0.948	0.036	0.022	2453	0			-	-	tective himiẠại ald
+warren-ocr	208	460	14	386	16	46	12	0.960	0.027	0.030	2242	0			-	-	homicide naaved asted
+warren-ocr	209	488	13	401	10	69	8	0.976	0.017	0.027	2183	0			-	-	riffe demied riffe
+warren-ocr	210	497	17	420	10	55	8	0.977	0.016	0.034	2153	0			-	-	oflice thatẠỊsG roominghouse
+warren-ocr	211	474	19	402	18	35	8	0.957	0.018	0.040	2046	0			-	-	bullet roz bullet
+warren-ocr	212	535	22	471	15	29	11	0.969	0.021	0.041	2170	0			-	-	bassy ean ete
+warren-ocr	213	541	32	463	15	36	9	0.969	0.018	0.059	2456	0			-	-	testimonv ary IIe
+warren-ocr	214	530	8	445	38	37	30	0.921	0.058	0.015	2564	0			-	-	tas faken approxmately
+warren-ocr	215	508	14	439	14	46	10	0.969	0.020	0.028	2411	0			-	-	probative bullet probative
+warren-ocr	216	493	31	403	6	56	2	0.985	0.004	0.063	2102	0			-	-	wald statedạẠạithere
+warren-ocr	217	466	13	401	17	35	13	0.959	0.029	0.028	2099	0			-	-	IIe probative assassin
+warren-ocr	218	430	11	376	15	20	11	0.962	0.027	0.026	1827	0			-	-	werenot difli cultiạes
+warren-ocr	219	484	20	437	9	21	5	0.980	0.011	0.041	2215	0			-	-	alinement experti gın
+warren-ocr	220	414	14	365	6	40	0	0.984	0.000	0.034	1939	0			-	-	
+warren-ocr	221	532	31	462	30	18	25	0.939	0.049	0.058	2392	0			-	-	assassination assassin probabihty
+warren-ocr	222	608	32	535	25	20	22	0.955	0.038	0.053	2592	0			-	-	assassination assassin firers
+warren-ocr	223	485	20	414	24	33	19	0.945	0.040	0.041	2292	0			-	-	riffe assassination assassination
+warren-ocr	224	347	8	308	11	22	9	0.966	0.026	0.023	1695	0			-	-	ort choury ine
+warren-ocr	225	124	3	102	0	16	0	1.000	0.000	0.024	717	0			-	-	
+warren-ocr	226	0	0	0	0	0	0				0	0			-	-	
+warren-ocr	227	506	35	415	9	54	4	0.979	0.008	0.069	2286	0			-	-	liilerent nterrogations IIe
+warren-ocr	228	474	8	428	13	22	6	0.971	0.013	0.017	2212	0			-	-	handeuffed handeuffed frontiại
+warren-ocr	229	420	7	356	9	47	6	0.975	0.015	0.017	1933	1			-	-	kill murder assassi
+warren-ocr	230	449	12	412	7	12	4	0.983	0.009	0.027	2106	0			-	-	loor udmits ofices
+warren-ocr	231	14	3	9	1	2	0	0.900	0.000	0.214	63	0			-	-	
+warren-ocr	232	510	3	464	21	15	11	0.957	0.022	0.006	2420	0			-	-	homicide corridoriạis homicide
+warren-ocr	233	16	4	8	1	4	1	0.889	0.077	0.250	77	0			-	-	foor
+warren-ocr	234	506	8	451	16	26	8	0.966	0.016	0.016	2433	0			-	-	securty identaty killed
+warren-ocr	235	13	2	8	0	3	0	1.000	0.000	0.154	65	0			-	-	
+warren-ocr	236	497	7	450	13	26	4	0.972	0.008	0.014	2334	0			-	-	admonitions camermen frantie
+warren-ocr	237	530	9	475	13	29	9	0.973	0.017	0.017	2343	0			-	-	jai transter transter
+warren-ocr	238	555	11	506	10	32	3	0.981	0.005	0.020	2599	0			-	-	testifed morningos levator
+warren-ocr	239	18	2	7	4	5	0	0.636	0.000	0.111	86	11			-	-	
+warren-ocr	240	515	5	492	7	13	1	0.986	0.002	0.010	2534	0			-	-	reenter
+warren-ocr	241	523	15	475	6	24	1	0.988	0.002	0.029	2367	0			-	-	offcers
+warren-ocr	242	21	4	11	2	4	2	0.846	0.118	0.190	108	0			-	-	areaway jall
+warren-ocr	243	548	7	490	8	46	7	0.984	0.013	0.013	2473	0			-	-	eilect contein followup
+warren-ocr	244	475	15	412	17	32	9	0.960	0.020	0.032	2122	0			-	-	din ilhe aen
+warren-ocr	245	32	4	23	0	5	0	1.000	0.000	0.125	154	0			-	-	
+warren-ocr	246	15	4	6	0	5	0	1.000	0.000	0.267	69	0			-	-	
+warren-ocr	247	547	15	506	16	14	5	0.969	0.009	0.027	2600	0			-	-	assassin kill assassina
+warren-ocr	248	20	4	11	0	5	0	1.000	0.000	0.200	103	0			-	-	
+warren-ocr	249	540	23	492	8	24	4	0.984	0.008	0.043	2380	0			-	-	shootmng oflicer respeets
+warren-ocr	250	521	17	493	8	14	2	0.984	0.004	0.033	2456	0			-	-	atter oficer
+warren-ocr	251	5	2	3	0	0	0	1.000	0.000	0.400	19	0			-	-	
+warren-ocr	252	522	19	461	15	33	9	0.968	0.018	0.036	2469	0			-	-	staft assassina tion
+warren-ocr	253	418	7	376	13	21	6	0.967	0.015	0.017	2122	0			-	-	seeurity kill offce
+warren-ocr	254	501	9	471	13	12	4	0.973	0.008	0.018	2533	0			-	-	tive assassination pressroom
+warren-ocr	255	507	7	477	17	15	5	0.966	0.010	0.014	2493	0			-	-	shp homieide attack
+warren-ocr	256	493	3	470	10	8	5	0.979	0.010	0.006	2335	0			-	-	acceptec aroused urday
+warren-ocr	257	487	9	429	31	24	12	0.933	0.025	0.018	2288	0			-	-	ures authorty himạẠạ
+warren-ocr	258	489	9	449	10	24	5	0.978	0.010	0.018	2280	0			-	-	ruther effeet oflicials
+warren-ocr	259	478	2	441	17	14	10	0.963	0.021	0.004	2275	0			-	-	LLc whived tpenselved
+warren-ocr	260	18	3	13	0	2	0	1.000	0.000	0.167	86	0			-	-	
+warren-ocr	261	499	11	451	11	32	6	0.976	0.012	0.022	2169	0			-	-	oficials riffe defnitely
+warren-ocr	262	453	7	411	9	21	1	0.979	0.002	0.015	1994	0			-	-	killed
+warren-ocr	263	517	13	453	23	36	12	0.952	0.023	0.025	2479	0			-	-	promptu oceasions eridence
+warren-ocr	264	512	11	461	14	26	8	0.971	0.016	0.021	2302	0			-	-	immeditely killed killed
+warren-ocr	265	449	10	392	25	27	17	0.940	0.038	0.022	2228	0			-	-	olt taxieah ver
+warren-ocr	266	525	8	467	24	32	10	0.951	0.019	0.015	2564	0			-	-	employce ing dificulty
+warren-ocr	267	476	10	439	15	17	7	0.967	0.015	0.021	2378	0			-	-	riffe mformation publie
+warren-ocr	268	478	1	448	19	10	13	0.959	0.027	0.002	2444	0			-	-	vere suffcient murders
+warren-ocr	269	454	6	421	14	16	5	0.968	0.011	0.013	2197	0			-	-	tions assassination ses
+warren-ocr	270	281	4	260	11	9	7	0.959	0.025	0.014	1392	0			-	-	publie mmediately assassination
+warren-ocr	271	361	1	325	15	20	10	0.956	0.028	0.003	1845	0			-	-	assassination assassinate killed
+warren-ocr	272	506	7	446	23	33	14	0.951	0.028	0.014	2647	0			-	-	assassination assassination itselt
+warren-ocr	273	466	2	429	11	25	6	0.975	0.013	0.004	2383	0			-	-	assassination nedy contradiet
+warren-ocr	274	487	18	404	19	51	5	0.955	0.011	0.037	2412	0			-	-	traflic eircumstances inchuding
+warren-ocr	275	510	19	410	19	62	12	0.956	0.024	0.037	2379	0			-	-	iller vou seekng
+warren-ocr	276	531	8	465	25	37	14	0.949	0.027	0.015	2333	0			-	-	weaind paterods saparmentiin
+warren-ocr	277	521	17	466	31	13	24	0.938	0.047	0.033	2522	0			-	-	assassin assassin assassin
+warren-ocr	278	554	16	509	12	27	10	0.977	0.018	0.029	2504	0			-	-	dow assas sination
+warren-ocr	279	545	16	487	10	36	6	0.980	0.011	0.029	2402	0			-	-	baldiại affi assassination
+warren-ocr	280	497	13	422	23	41	17	0.948	0.035	0.026	2352	0			-	-	contradieted assassination assassination
+warren-ocr	281	560	30	465	18	50	10	0.963	0.019	0.054	2510	0			-	-	assassination oflicers outại
+warren-ocr	282	487	12	419	15	40	4	0.965	0.008	0.025	2304	0			-	-	assassination assassination himselt
+warren-ocr	283	414	4	376	17	16	8	0.957	0.020	0.010	1943	0			-	-	vance assassination assassination
+warren-ocr	284	507	13	433	15	48	8	0.967	0.016	0.026	2385	0			-	-	aet yearsạ assassinating
+warren-ocr	285	580	27	504	5	48	0	0.990	0.000	0.047	2558	0			-	-	
+warren-ocr	286	523	31	439	10	51	3	0.978	0.006	0.059	2379	0			-	-	dayng grented abouf
+warren-ocr	287	603	19	503	28	61	18	0.947	0.030	0.032	3017	0			-	-	assassination dhary soviet
+warren-ocr	288	567	13	470	34	54	26	0.933	0.047	0.023	2769	0			-	-	tually beleve suicide
+warren-ocr	289	75	4	20	42	9	28	0.323	0.394	0.053	309	25			words	words	thet porçy hisity
+warren-ocr	290	488	19	419	16	37	5	0.963	0.011	0.039	2379	0			-	-	beạire vokedạ relusal
+warren-ocr	291	59	6	16	28	11	21	0.364	0.382	0.102	234	0			words	words	wich agornat oction
+warren-ocr	292	370	24	94	139	115	109	0.403	0.313	0.065	1452	35			words	words	iF SEGMy LiKE
+warren-ocr	293	532	17	451	26	47	8	0.945	0.015	0.032	2594	0			-	-	expatriation oflicial heạẠạhad
+warren-ocr	294	488	15	430	7	40	2	0.984	0.004	0.031	2256	0			-	-	vember ber
+warren-ocr	295	460	12	399	15	40	4	0.964	0.009	0.026	2183	0			-	-	inormal suicide wald
+warren-ocr	296	24	3	15	0	6	0	1.000	0.000	0.125	107	0			-	-	
+warren-ocr	297	528	34	435	17	51	7	0.962	0.014	0.064	2411	0			-	-	wald nion freeạim
+warren-ocr	298	39	4	24	0	11	0	1.000	0.000	0.103	190	0			-	-	
+warren-ocr	299	51	4	18	0	28	0	1.000	0.000	0.078	247	0			-	-	
+warren-ocr	300	536	13	476	19	35	4	0.962	0.008	0.024	2554	0			-	-	retur wald hibit
+warren-ocr	301	243	11	70	147	13	114	0.323	0.496	0.045	956	11			words	words	vhene pesit pearia
+warren-ocr	302	538	28	454	21	46	12	0.956	0.023	0.052	2467	0			-	-	trequan avie ihim
+warren-ocr	303	487	19	413	22	42	15	0.949	0.031	0.039	2374	0			-	-	ington agreementiạon vid
+warren-ocr	304	463	3	406	10	37	3	0.976	0.007	0.006	2236	0			-	-	notity unidentified LEmbassy
+warren-ocr	305	496	19	428	13	43	4	0.971	0.008	0.038	2426	0			-	-	etc spotchecked expatriated
+warren-ocr	306	518	19	435	10	60	2	0.978	0.004	0.037	2472	0			-	-	mnade becaase
+warren-ocr	307	487	18	425	14	29	5	0.968	0.011	0.037	2311	0			-	-	portant sccurity predeparture
+warren-ocr	308	505	19	455	14	40	6	0.970	0.012	0.038	2484	0			-	-	chaimed somol unusully
+warren-ocr	309	523	21	445	3	74	1	0.993	0.002	0.040	2558	0			-	-	sian
+warren-ocr	310	542	23	429	13	78	7	0.971	0.013	0.042	2440	0			-	-	wite unti trin
+warren-ocr	311	511	24	420	15	65	10	0.966	0.020	0.047	2440	0			-	-	specchless attack schildt
+warren-ocr	312	521	22	391	13	105	9	0.968	0.018	0.042	2457	0			-	-	schildts assassination iob
+warren-ocr	313	521	24	408	15	87	8	0.965	0.016	0.046	2412	0			-	-	zave assassination thoronghly
+warren-ocr	314	531	15	467	13	46	6	0.973	0.011	0.028	2599	0			-	-	delphia tor piss
+warren-ocr	315	458	11	389	24	43	9	0.942	0.020	0.024	2392	0			-	-	assassination appeudix affliated
+warren-ocr	316	521	13	438	18	51	12	0.961	0.024	0.025	2495	0			-	-	fietitious contaet tember
+warren-ocr	317	497	12	426	12	55	8	0.973	0.016	0.024	2476	0			-	-	assassination testifed assassination
+warren-ocr	318	444	12	381	12	42	3	0.969	0.007	0.027	2049	0			-	-	concieve adrerse expeet
+warren-ocr	319	527	13	470	23	28	9	0.953	0.017	0.025	2444	0			-	-	guarnatee proceedure iden
+warren-ocr	320	545	16	455	18	62	8	0.962	0.015	0.029	2584	0			-	-	theỗạNew chapterạẠạẠạỊ testihed
+warren-ocr	321	484	17	418	13	47	4	0.970	0.008	0.035	2344	0			-	-	attack attack inducedby
+warren-ocr	322	472	8	292	101	78	90	0.743	0.191	0.017	2265	0			misread	-	ter despife contantions
+warren-ocr	323	496	14	417	16	50	4	0.963	0.008	0.028	2337	0			-	-	liam rightwing orgamizations
+warren-ocr	324	475	12	396	19	51	7	0.954	0.015	0.025	2249	0			-	-	varions knownạẠạồỊ publiely
+warren-ocr	325	516	29	439	19	37	7	0.959	0.014	0.056	2445	0			-	-	nume attack favarable
+warren-ocr	326	507	21	439	10	50	7	0.978	0.014	0.041	2525	0			-	-	rey liternture proofạẠạẠi
+warren-ocr	327	480	17	389	17	64	10	0.958	0.021	0.035	2275	0			-	-	vere ber assassination
+warren-ocr	328	133	20	22	34	58	17	0.393	0.149	0.150	557	24			words	words	dnm niita peTao
+warren-ocr	329	538	18	434	16	72	7	0.964	0.013	0.033	2437	0			-	-	ber tember ber
+warren-ocr	330	552	4	471	25	39	14	0.950	0.026	0.007	2358	1			-	-	lan ruage evi
+warren-ocr	331	64	2	32	13	16	7	0.711	0.115	0.031	306	14			misread	-	KeiG diU rstatter
+warren-ocr	332	489	13	414	20	54	7	0.954	0.014	0.027	2461	0			-	-	assassination poltical mexico
+warren-ocr	333	534	10	468	16	48	7	0.967	0.013	0.019	2667	0			-	-	supphed conhdential truthtul
+warren-ocr	334	121	20	53	5	44	2	0.914	0.020	0.165	592	0			-	-	del del
+warren-ocr	335	544	9	464	19	58	13	0.961	0.024	0.017	2560	0			-	-	assassination assassinated assassination
+warren-ocr	336	547	7	482	8	55	7	0.984	0.013	0.013	2549	0			-	-	assassination killed assassination
+warren-ocr	337	523	26	422	16	65	8	0.963	0.016	0.050	2504	0			-	-	assassination assassination concem
+warren-ocr	338	530	11	449	16	54	12	0.966	0.023	0.021	2367	0			-	-	cedure assassination ber
+warren-ocr	339	212	16	43	126	28	75	0.254	0.381	0.075	750	34			words	words	sape ond remtatim
+warren-ocr	340	544	28	450	12	58	5	0.974	0.010	0.051	2472	0			-	-	assassination assassination elosed
+warren-ocr	341	512	17	434	19	50	8	0.958	0.016	0.033	2575	0			-	-	thereof assassination testihed
+warren-ocr	342	516	10	446	4	64	1	0.991	0.002	0.019	2467	0			-	-	roominghouse
+warren-ocr	343	541	14	457	16	58	7	0.966	0.013	0.026	2539	0			-	-	ficititious signifcance wald
+warren-ocr	344	567	19	489	18	52	8	0.964	0.014	0.034	2557	0			-	-	aftributed unidentified specined
+warren-ocr	345	546	17	468	16	54	4	0.967	0.007	0.031	2470	0			-	-	assassination midafternoon wald
+warren-ocr	346	522	9	460	14	43	6	0.970	0.012	0.017	2438	0			-	-	inject licityiạiiS heriẠạồ
+warren-ocr	347	530	19	459	14	43	6	0.970	0.012	0.036	2457	0			-	-	similurity ose scems
+warren-ocr	348	535	18	464	14	52	8	0.971	0.015	0.034	2508	0			-	-	assassination sporterizing assassination
+warren-ocr	349	511	13	420	19	64	4	0.957	0.008	0.025	2410	0			-	-	coemployees assassination assassination
+warren-ocr	350	546	17	440	11	77	6	0.976	0.011	0.031	2394	0			-	-	eration unidentified imprisoned
+warren-ocr	351	551	46	404	6	101	3	0.985	0.006	0.083	2404	0			-	-	trev eled thet
+warren-ocr	352	559	19	433	20	99	14	0.956	0.025	0.034	2502	0			-	-	bevond frailways arivitiese
+warren-ocr	353	524	13	437	12	67	7	0.973	0.014	0.025	2495	0			-	-	forepart uncorroborated assassination
+warren-ocr	354	536	9	451	15	67	9	0.968	0.017	0.017	2549	0			-	-	ment intervièwed sia
+warren-ocr	355	515	5	418	15	79	8	0.965	0.016	0.010	2445	3			-	-	uppendix wald assassination
+warren-ocr	356	515	19	452	8	37	3	0.983	0.006	0.037	2486	0			-	-	dereloped goverment disbursements
+warren-ocr	357	521	24	441	11	55	5	0.976	0.010	0.046	2453	0			-	-	cluding adeqaate ber
+warren-ocr	358	544	32	458	12	49	7	0.974	0.013	0.059	2407	0			-	-	ẠỊinever roominghouse diffieult
+warren-ocr	359	541	23	443	8	73	4	0.982	0.008	0.043	2488	0			-	-	inexpensively rerused narket
+warren-ocr	360	539	14	459	10	58	6	0.979	0.011	0.026	2568	0			-	-	assassmation assassination ofice
+warren-ocr	361	453	17	377	22	42	13	0.945	0.029	0.038	2203	0			-	-	imaginationiạ kill determino
+warren-ocr	362	525	21	448	12	59	0	0.974	0.000	0.040	2545	0			-	-	
+warren-ocr	363	486	17	420	13	42	6	0.970	0.013	0.035	2268	0			-	-	partment sittmg fred
+warren-ocr	364	559	32	480	13	43	4	0.974	0.007	0.057	2506	0			-	-	oflice bulding irom
+warren-ocr	365	515	28	435	11	56	6	0.975	0.012	0.054	2335	0			-	-	deseribed assas sination
+warren-ocr	366	518	23	442	19	43	7	0.959	0.014	0.044	2265	0			-	-	bac sceing betore
+warren-ocr	367	106	7	50	23	26	21	0.685	0.212	0.066	488	3			misread	-	VDt maitu aprance
+warren-ocr	368	540	19	498	13	25	9	0.975	0.017	0.035	2465	0			-	-	assassinationạẠẠi postservice assassination
+warren-ocr	369	38	4	32	1	3	1	0.970	0.028	0.105	185	0			-	-	rimmed
+warren-ocr	370	534	16	466	9	42	4	0.981	0.008	0.030	2430	0			-	-	assassination kill historyạẠạồ
+warren-ocr	371	530	14	473	13	38	7	0.973	0.013	0.026	2503	0			-	-	floorạạis extolled leftwing
+warren-ocr	372	515	11	446	15	51	7	0.967	0.014	0.021	2475	0			-	-	assassination ads roing
+warren-ocr	373	501	17	444	15	27	13	0.967	0.027	0.034	2185	0			-	-	whys trving bothạiTs
+warren-ocr	374	539	11	482	9	43	5	0.982	0.009	0.020	2486	0			-	-	sheking assassination rifleshots
+warren-ocr	375	521	15	440	26	49	12	0.944	0.023	0.029	2503	0			-	-	sttion offcer nondrinker
+warren-ocr	376	525	26	443	7	62	4	0.984	0.008	0.050	2407	0			-	-	assassinated helpiul testifed
+warren-ocr	377	529	26	437	9	67	4	0.980	0.008	0.049	2451	1			-	-	cago assassination assassination
+warren-ocr	378	533	35	424	10	73	8	0.977	0.016	0.066	2387	0			-	-	parently aetion moring
+warren-ocr	379	218	49	95	30	53	10	0.760	0.056	0.225	834	42			-	-	preuncliget musse jore
+warren-ocr	380	542	27	478	14	39	5	0.972	0.009	0.050	2495	0			-	-	oneạẠỗạ confhcting charaeteristically
+warren-ocr	381	492	17	432	10	35	4	0.977	0.008	0.035	2192	0			-	-	regulerly washateria zoss
+warren-ocr	382	535	16	479	18	23	8	0.964	0.015	0.030	2237	0			-	-	falth rith wreaths
+warren-ocr	383	103	6	82	1	18	0	0.988	0.000	0.058	463	4			-	-	
+warren-ocr	384	20	3	12	0	5	0	1.000	0.000	0.150	97	0			-	-	
+warren-ocr	385	527	25	441	34	36	13	0.928	0.025	0.047	2488	0			-	-	ments assassination disagred
+warren-ocr	386	540	12	474	15	46	8	0.969	0.015	0.022	2645	0			-	-	accuraey hitchhiked assassination
+warren-ocr	387	506	15	435	13	53	1	0.971	0.002	0.030	2397	0			-	-	intotthe
+warren-ocr	388	520	22	449	14	41	6	0.970	0.012	0.042	2333	0			-	-	tor testifed ber
+warren-ocr	389	547	22	455	7	72	1	0.985	0.002	0.040	2556	0			-	-	oflice
+warren-ocr	390	527	19	463	17	38	6	0.965	0.012	0.036	2575	0			-	-	assertedly roominghouses publie
+warren-ocr	391	547	24	447	14	67	6	0.970	0.011	0.044	2486	0			-	-	wald twistboard ber
+warren-ocr	392	524	18	448	6	59	4	0.987	0.008	0.034	2483	0			-	-	pianoplayer guerite displaved
+warren-ocr	393	487	19	436	17	26	11	0.962	0.023	0.039	2395	0			-	-	acquaintunceship obvi ated
+warren-ocr	394	484	16	439	21	26	6	0.954	0.012	0.033	2425	0			-	-	attacks poolhall gogue
+warren-ocr	395	536	12	500	11	23	5	0.978	0.009	0.022	2539	0			-	-	testamony ultraconservative raaio
+warren-ocr	396	535	27	441	9	70	1	0.980	0.002	0.050	2443	0			-	-	offce
+warren-ocr	397	523	22	442	17	57	13	0.963	0.025	0.042	2510	0			-	-	nightelubs assassination ber
+warren-ocr	398	506	18	448	14	41	5	0.970	0.010	0.036	2453	0			-	-	jeeps assassination jeep
+warren-ocr	399	516	30	443	12	38	3	0.974	0.006	0.058	2474	0			-	-	ersville vears assassination
+warren-ocr	400	494	26	418	16	44	5	0.963	0.010	0.053	2365	0			-	-	verifiction intoxicated slayer
+warren-ocr	401	485	8	450	15	17	6	0.968	0.012	0.016	2469	0			-	-	assassination kill confederates
+warren-ocr	402	216	3	171	10	32	4	0.945	0.019	0.014	1050	0			-	-	assassinate assassination assassination
+warren-ocr	403	378	1	348	12	17	8	0.967	0.021	0.003	1849	0			-	-	assassin assassination assassination
+warren-ocr	404	519	3	481	14	21	6	0.972	0.012	0.006	2495	0			-	-	charncterized testifed assassination
+warren-ocr	405	523	19	439	8	59	4	0.982	0.008	0.036	2367	0			-	-	assassinate kill treted
+warren-ocr	406	535	17	481	10	31	8	0.980	0.015	0.032	2346	0			-	-	exeuses saleslady urgings
+warren-ocr	407	544	13	473	18	43	9	0.963	0.017	0.024	2494	1			-	-	retur dope narcotics
+warren-ocr	408	497	5	444	30	19	12	0.937	0.024	0.010	2363	0			-	-	wald topies togs
+warren-ocr	409	516	3	461	19	36	11	0.960	0.021	0.006	2488	0			-	-	characterizations ceptualisation characteristie
+warren-ocr	410	498	7	453	12	28	5	0.974	0.010	0.014	2317	0			-	-	tion hus experencing
+warren-ocr	411	529	5	475	6	45	1	0.988	0.002	0.009	2393	0			-	-	litera
+warren-ocr	412	528	14	464	15	35	3	0.969	0.006	0.027	2372	0			-	-	ture kill cetera
+warren-ocr	413	550	7	492	23	30	8	0.955	0.015	0.013	2595	0			-	-	manifestution wald shipsạẠạồi
+warren-ocr	414	543	18	490	13	27	4	0.974	0.008	0.033	2440	0			-	-	butạẠỌhe kill pugnaciousness
+warren-ocr	415	544	14	479	13	41	3	0.974	0.006	0.026	2554	0			-	-	aiter kill cum
+warren-ocr	416	449	11	375	24	37	5	0.940	0.011	0.024	2015	0			-	-	testifed cond iodtthinkd
+warren-ocr	417	497	6	429	16	33	10	0.964	0.021	0.012	2147	0			-	-	wald ies defnitel
+warren-ocr	418	499	14	439	9	39	2	0.980	0.004	0.028	2242	0			-	-	permnission indefnitely
+warren-ocr	419	507	7	460	14	18	6	0.970	0.012	0.014	2200	0			-	-	sprit enterpraising surpress
+warren-ocr	420	467	15	390	25	31	20	0.940	0.045	0.032	1924	0			-	-	kill american defence
+warren-ocr	421	477	16	413	22	33	13	0.949	0.028	0.034	2276	0			-	-	appling aS alhided
+warren-ocr	422	435	16	363	27	33	24	0.931	0.057	0.037	1983	0			-	-	sid hertrat chilad
+warren-ocr	423	490	10	440	15	26	7	0.967	0.015	0.020	2214	0			-	-	explosiveiạồi assassination indepence
+warren-ocr	424	31	4	19	0	8	0	1.000	0.000	0.129	155	0			-	-	
+warren-ocr	425	435	10	383	30	12	25	0.927	0.059	0.023	2096	0			-	-	abonded american alot
+warren-ocr	426	395	7	348	21	18	18	0.943	0.047	0.018	1937	0			-	-	sociaty prefered prefered
+warren-ocr	427	498	8	446	35	11	31	0.927	0.063	0.016	2321	0			-	-	offen enerehiet capitatist
+warren-ocr	428	477	15	394	9	57	3	0.978	0.007	0.031	2160	0			-	-	forạẠạany benei sia
+warren-ocr	429	482	15	421	9	43	7	0.979	0.015	0.031	2171	0			-	-	workedand IIe wasạẠinterfering
+warren-ocr	430	527	20	467	17	34	7	0.965	0.014	0.038	2458	0			-	-	highchair buyiẠạ telhng
+warren-ocr	431	520	22	443	28	34	18	0.941	0.036	0.042	2460	0			-	-	apti bperxent oatioe
+warren-ocr	432	522	31	441	16	44	7	0.965	0.014	0.059	2350	0			-	-	wøs becanse wasạẠạkinda
+warren-ocr	433	426	7	404	5	16	5	0.988	0.012	0.016	1913	0			-	-	attack himạẠạif soe
+warren-ocr	434	499	4	458	21	15	12	0.956	0.024	0.008	2296	0			-	-	assassination attack assassination
+warren-ocr	435	0	0	0	0	0	0				0	0			-	-	
+warren-ocr	436	550	23	458	16	62	8	0.966	0.015	0.042	2493	0			-	-	iofficialy tlone attacked
+warren-ocr	437	92	8	65	0	18	0	1.000	0.000	0.087	427	0			-	-	
+warren-ocr	438	480	15	409	19	43	5	0.956	0.011	0.031	2258	0			-	-	ent cleancutnessiạẠại itypet
+warren-ocr	439	524	12	459	23	31	12	0.952	0.023	0.023	2272	0			-	-	thestruggle continne opion
+warren-ocr	440	495	18	432	13	37	9	0.971	0.019	0.036	2128	0			-	-	peared attacked ser
+warren-ocr	441	556	21	466	14	64	7	0.971	0.013	0.038	2393	0			-	-	hijąck tember delphia
+warren-ocr	442	544	15	460	23	48	12	0.952	0.023	0.028	2576	0			-	-	assassination vember doiạs
+warren-ocr	443	516	12	446	17	45	7	0.963	0.014	0.023	2410	0			-	-	assassination encounterediạẠại assassinated
+warren-ocr	444	492	10	431	20	35	17	0.956	0.035	0.020	2214	0			-	-	attened attack personalties
+warren-ocr	445	541	13	479	5	50	2	0.990	0.004	0.024	2334	0			-	-	aspeet argumentsạii
+warren-ocr	446	539	13	477	7	43	6	0.986	0.011	0.024	2344	0			-	-	occa una ission
+warren-ocr	447	586	14	501	17	59	10	0.967	0.017	0.024	2495	0			-	-	ging assassination birthdav
+warren-ocr	448	522	18	468	7	34	5	0.985	0.010	0.034	2089	0			-	-	interrest assassination viet
+warren-ocr	449	511	10	472	7	26	4	0.985	0.008	0.020	2030	0			-	-	attack moming determne
+warren-ocr	450	551	14	502	3	36	3	0.994	0.006	0.025	2392	0			-	-	peared assassinating mike
+warren-ocr	451	494	4	458	19	16	13	0.960	0.026	0.008	2340	0			-	-	assassinate assassination expeet
+warren-ocr	452	52	1	46	1	4	1	0.979	0.020	0.019	253	0			-	-	assassinating
+warren-ocr	453	369	15	310	15	32	9	0.954	0.025	0.041	1869	0			-	-	assassinated attacks eleet
+warren-ocr	454	471	1	432	19	19	11	0.958	0.023	0.002	2377	0			-	-	publshed dillicult reluetance
+warren-ocr	455	506	6	475	5	21	4	0.990	0.008	0.012	2409	0			-	-	ington himselt ington
+warren-ocr	456	430	2	395	18	14	6	0.956	0.014	0.005	2257	1			-	-	publie assassination assassination
+warren-ocr	457	490	15	436	15	27	9	0.967	0.019	0.031	2480	0			-	-	assassination assassination abusive
+warren-ocr	458	499	14	442	26	19	19	0.944	0.039	0.028	2477	0			-	-	aceepted assassination automatie
+warren-ocr	459	508	19	450	25	17	21	0.947	0.043	0.037	2526	0			-	-	residenceiạiạ assassination dential
+warren-ocr	460	460	6	439	8	14	4	0.982	0.009	0.013	2352	0			-	-	agamst sufety assassination
+warren-ocr	461	507	4	436	27	42	16	0.942	0.032	0.008	2553	0			-	-	requred schedulec aren
+warren-ocr	462	530	16	421	27	72	9	0.940	0.017	0.030	2521	0			-	-	ạẠạwhen inasmnch oceasion
+warren-ocr	463	529	15	428	16	74	5	0.964	0.010	0.028	2513	0			-	-	partieularly coucluded informa
+warren-ocr	464	458	7	398	12	43	6	0.971	0.013	0.015	2190	0			-	-	apphcation aetivities thereof
+warren-ocr	465	493	13	411	10	67	5	0.976	0.010	0.026	2321	0			-	-	faet thrent conduet
+warren-ocr	466	514	18	407	8	84	1	0.981	0.002	0.035	2310	0			-	-	ntizen
+warren-ocr	467	486	17	401	13	61	8	0.969	0.017	0.035	2208	0			-	-	reestablished roominghouse leal
+warren-ocr	468	466	7	411	12	39	7	0.972	0.015	0.015	2194	0			-	-	assassination courtmartialed specifie
+warren-ocr	469	510	14	439	8	55	5	0.982	0.010	0.027	2420	0			-	-	chanceạẠạồ assassination assassin
+warren-ocr	470	489	4	435	15	35	7	0.967	0.014	0.008	2281	0			-	-	assassin assassination assassination
+warren-ocr	471	516	8	461	10	39	4	0.979	0.008	0.016	2504	0			-	-	fles ageney assassination
+warren-ocr	472	414	2	378	17	17	9	0.957	0.022	0.005	2291	0			-	-	roominghouse assassination assassination
+warren-ocr	473	516	6	465	17	29	5	0.965	0.010	0.012	2623	0			-	-	becanse entorcement ofher
+warren-ocr	474	491	9	438	27	20	17	0.942	0.035	0.018	2529	0			-	-	systemtc assigument fravelng
+warren-ocr	475	488	2	469	9	11	3	0.981	0.006	0.004	2494	0			-	-	assassination praetical buildinos
+warren-ocr	476	496	8	455	17	22	8	0.964	0.016	0.016	2384	0			-	-	poliey cannot egard
+warren-ocr	477	0	0	0	0	0	0				0	0			-	-	
+warren-ocr	478	543	18	497	19	16	12	0.963	0.023	0.033	2475	1			-	-	aecompanied liquons shiit
+warren-ocr	479	511	5	495	8	6	1	0.984	0.002	0.010	2487	0			-	-	ofhcial
+warren-ocr	480	513	8	485	11	16	4	0.978	0.008	0.016	2645	0			-	-	assassination nedy bullet
+warren-ocr	481	512	8	477	17	14	7	0.966	0.014	0.016	2525	0			-	-	assassination followup identi
+warren-ocr	482	436	4	402	26	8	17	0.939	0.039	0.009	2236	0			-	-	emergeney motoreades eflort
+warren-ocr	483	463	8	427	24	11	14	0.947	0.030	0.017	2321	0			-	-	trauds assassination assassination
+warren-ocr	484	456	6	420	18	14	9	0.959	0.020	0.013	2415	0			-	-	thereto authori elear
+warren-ocr	485	476	10	445	18	12	10	0.961	0.021	0.021	2536	0			-	-	defning chey suffcient
+warren-ocr	486	511	1	481	10	19	3	0.980	0.006	0.002	2657	0			-	-	receivedạẠạindicating substuntial beleved
+warren-ocr	487	506	2	468	29	11	12	0.942	0.024	0.004	2681	0			-	-	anthered peeonalald hecome
+warren-ocr	488	458	2	438	17	3	3	0.963	0.007	0.004	2538	0			-	-	assassination assas sination
+warren-ocr	489	469	7	422	26	18	12	0.942	0.026	0.015	2482	0			-	-	assassi fieldas assassination
+warren-ocr	490	472	14	433	10	21	2	0.977	0.004	0.030	2438	0			-	-	FBl satisty
+warren-ocr	491	485	5	454	20	16	7	0.958	0.014	0.010	2473	0			-	-	boni fied assassins
+warren-ocr	492	498	5	453	27	15	13	0.944	0.026	0.010	2627	0			-	-	feld thereunder linison
+warren-ocr	493	542	5	505	29	7	21	0.946	0.039	0.009	2957	0			-	-	thet comeại assassination
+warren-ocr	494	467	18	425	18	14	3	0.959	0.007	0.039	2384	0			-	-	publie assassination detuil
+warren-ocr	495	482	18	451	9	10	7	0.980	0.015	0.037	2508	0			-	-	bemg avaul ofien
+warren-ocr	496	455	6	427	16	10	6	0.964	0.013	0.013	2330	0			-	-	cannot assassination ageneres
+warren-ocr	497	100	1	95	3	1	1	0.969	0.010	0.010	526	0			-	-	assassination
+warren-ocr	498	0	0	0	0	0	0				0	0			-	-	
+warren-ocr	499	239	13	166	26	39	21	0.865	0.091	0.054	1199	0			-	-	ursuant suthority ascartain
+warren-ocr	500	304	3	246	12	43	10	0.953	0.033	0.010	1583	0			-	-	atudy facte assassination
+warren-ocr	501	540	12	412	92	24	65	0.817	0.123	0.022	2532	0			misread	-	anthorisiog establiched amassination
+warren-ocr	502	97	14	67	8	11	7	0.893	0.081	0.144	440	0			-	-	prohce proecution applioation
+warren-ocr	503	459	36	352	5	69	0	0.986	0.000	0.078	1958	0			-	-	
+warren-ocr	504	461	41	321	7	92	4	0.979	0.010	0.089	1923	0			-	-	reelected cum laude
+warren-ocr	505	518	29	347	20	116	16	0.946	0.033	0.056	2086	0			-	-	vania summa cum
+warren-ocr	506	33	4	17	1	10	1	0.944	0.036	0.121	100	0			-	-	sity
+warren-ocr	507	475	29	330	16	97	12	0.954	0.027	0.061	2063	0			-	-	adelphia magna cum
+warren-ocr	508	493	25	356	17	95	13	0.954	0.028	0.051	2172	0			-	-	summa cum lande
+warren-ocr	509	420	20	254	11	134	8	0.958	0.020	0.048	1882	0			-	-	und summa cum
+warren-ocr	510	83	1	7	0	75	0	1.000	0.000	0.012	397	0			-	-	
+warren-ocr	511	372	30	157	38	150	6	0.805	0.017	0.081	1571	0			-	-	partment partment assassination
+warren-ocr	512	445	40	124	52	219	15	0.705	0.038	0.090	1774	0			-	-	EẠi SẠỊại ment
+warren-ocr	513	408	45	129	44	187	4	0.746	0.011	0.110	1570	0			-	-	TedC KỊẠạiẠạ partment
+warren-ocr	514	418	47	130	52	192	10	0.714	0.027	0.112	1658	4			-	-	oD partment partment
+warren-ocr	515	397	44	99	44	212	10	0.692	0.028	0.111	1547	0			-	-	eD LawryP LydiaẠỊại
+warren-ocr	516	436	48	126	45	216	4	0.737	0.010	0.110	1613	0			-	-	FranklinP partment partment
+warren-ocr	517	415	41	129	44	199	12	0.746	0.032	0.099	1614	1			-	-	walds ToL acquaintanee
+warren-ocr	518	459	43	130	47	229	3	0.734	0.007	0.094	1797	0			-	-	EdwinẠỊi assassination roominghouse
+warren-ocr	519	433	45	125	43	219	4	0.744	0.010	0.104	1673	0			-	-	IIẠạồạẠ partment partment
+warren-ocr	520	451	48	120	56	225	13	0.682	0.032	0.106	1764	0			-	-	AỊẠi WẠỊại partment
+warren-ocr	521	409	37	117	44	208	9	0.727	0.024	0.090	1656	0			-	-	partment partment wald
+warren-ocr	522	434	50	117	47	216	8	0.713	0.021	0.115	1551	0			-	-	CarlP wald partment
+warren-ocr	523	419	41	132	46	201	9	0.742	0.024	0.098	1627	0			-	-	partment JackP nedy
+warren-ocr	524	409	40	127	48	190	14	0.726	0.038	0.098	1603	0			-	-	nold SamẠỌại IDẠạỊạ
+warren-ocr	525	379	35	136	42	164	8	0.764	0.023	0.092	1589	0			-	-	RẠi tem partment
+warren-ocr	526	423	39	113	50	221	11	0.693	0.029	0.092	1686	0			-	-	mir fber pariment
+warren-ocr	527	420	42	119	45	209	10	0.726	0.027	0.100	1675	0			-	-	lam HomerP partment
+warren-ocr	528	75	8	23	9	36	2	0.719	0.029	0.107	311	0			-	-	AẠỊồiỊi assassination
+warren-ocr	529	354	8	314	24	10	10	0.929	0.029	0.023	1713	0			-	-	affrmations stenographic swom
+warren-ocr	530	438	14	402	16	8	4	0.962	0.009	0.032	2042	0			-	-	affdavits affiant tking
+warren-ocr	531	236	5	226	5	0	3	0.978	0.013	0.021	1112	0			-	-	ment testifving stenographic
+warren-ocr	532	373	24	295	15	41	6	0.952	0.017	0.064	1755	0			-	-	assassinated recorered killed
+warren-ocr	533	465	11	395	24	38	18	0.943	0.039	0.024	2231	0			-	-	constable constables martialed
+warren-ocr	534	518	8	465	14	32	6	0.971	0.012	0.015	2542	0			-	-	instinets kidnap kill
+warren-ocr	535	481	5	435	22	23	15	0.952	0.031	0.010	2398	0			-	-	vestigation assassination assassination
+warren-ocr	536	478	12	421	15	31	11	0.966	0.024	0.025	2267	0			-	-	teau trai tember
+warren-ocr	537	507	11	457	13	33	7	0.972	0.014	0.022	2489	0			-	-	assassinate encespapers discontinned
+warren-ocr	538	485	9	433	30	19	17	0.935	0.035	0.019	2314	0			-	-	anarchist anarchists anarchist
+warren-ocr	539	521	16	468	18	27	14	0.963	0.027	0.031	2418	0			-	-	sassin bullet assassination
+warren-ocr	540	515	24	449	17	34	7	0.964	0.014	0.047	2399	0			-	-	kill kill kill
+warren-ocr	541	507	19	431	20	43	11	0.956	0.022	0.037	2515	0			-	-	incrensed assassins assassins
+warren-ocr	542	499	14	448	23	22	4	0.951	0.008	0.028	2526	0			-	-	periodiạồi nonfiscal fellows
+warren-ocr	543	94	10	77	4	4	2	0.951	0.024	0.106	455	0			-	-	ington ing
+warren-ocr	544	145	22	73	25	27	21	0.745	0.168	0.152	560	0			misread	-	exsctly lincusino proncunced
+warren-ocr	545	322	9	169	73	73	64	0.698	0.203	0.028	1555	5			misread	-	ene che che
+warren-ocr	546	210	6	101	72	32	65	0.584	0.317	0.029	1092	8			misread	-	cxuchse ancerior tubee
+warren-ocr	547	149	7	25	103	17	83	0.195	0.572	0.047	731	7			words	words	BAAiCA sateud emergenig
+warren-ocr	548	72	6	14	41	11	35	0.255	0.530	0.083	328	1			words	-	scanul unfunșia vor
+warren-ocr	549	111	9	32	62	10	47	0.340	0.452	0.081	467	7			words	words	PERRął ald tne
+warren-ocr	550	21	5	5	11	4	8	0.312	0.400	0.238	116	0			-	-	artauit benepit pneed
+warren-ocr	551	133	6	32	77	19	47	0.294	0.367	0.045	530	46			words	words	femint pau cauteted
+warren-ocr	552	125	15	12	75	26	55	0.138	0.487	0.120	508	11			words	words	iar mhele aandeuzen
+warren-ocr	553	121	13	18	73	20	46	0.198	0.414	0.107	471	36			words	words	dien chel atenzepeA
+warren-ocr	554	51	7	15	18	14	11	0.455	0.234	0.137	233	9			words	words	RobotN penales callt
+warren-ocr	555	18	2	6	5	6	2	0.545	0.118	0.111	97	11			-	-	SThweateru oef
+warren-ocr	556	98	13	21	47	18	30	0.309	0.349	0.133	418	17			words	words	ägrany ihasivatas vis
+warren-ocr	557	366	7	293	22	44	18	0.930	0.050	0.019	2048	15			-	-	resuscitative chis discinguished
+warren-ocr	558	190	7	162	7	13	6	0.959	0.033	0.037	946	3			-	-	resuscitative resuscitative herniation
+warren-ocr	559	485	41	291	132	45	97	0.688	0.207	0.085	2250	3			misread	-	pRE OpeRATive vound
+warren-ocr	560	648	13	424	193	23	175	0.687	0.273	0.020	3122	10			misread	-	rogged rongeur plure
+warren-ocr	561	462	17	291	121	37	106	0.706	0.236	0.037	2182	10			misread	-	PVt pREOpemATVEmnuted rracture
+warren-ocr	562	256	5	190	54	8	46	0.779	0.183	0.020	1234	0			misread	-	dohn seels preoence
+warren-ocr	563	364	17	237	72	46	63	0.767	0.177	0.047	1753	1			misread	-	ANESTHESOLOGISTc nnc chcat
+warren-ocr	564	381	27	181	138	50	119	0.567	0.322	0.071	1867	1			misread	-	oflabdomen hol vascelar
+warren-ocr	565	494	16	400	41	40	41	0.907	0.085	0.032	2418	0			-	-	heratons mobilised retroperitoneal
+warren-ocr	566	95	17	39	9	30	3	0.812	0.038	0.179	416	30			-	-	HoveSCe CDEạU pounda
+warren-ocr	567	498	15	368	66	55	59	0.848	0.121	0.030	2504	3			misread	-	inforration fidina motoreade
+warren-ocr	568	418	20	340	55	10	35	0.861	0.086	0.048	1936	1			-	-	aro exceilent nucous
+warren-ocr	569	523	17	421	66	21	53	0.864	0.104	0.033	2605	5			misread	-	meacuring beveling fron
+warren-ocr	570	460	16	378	57	12	41	0.869	0.092	0.035	2343	3			-	-	supra clavicular caviby
+warren-ocr	571	412	8	341	38	29	34	0.900	0.083	0.019	2008	10			-	-	therefor perforsting unknow
+warren-ocr	572	391	14	292	78	17	64	0.789	0.165	0.036	2002	0			misread	-	brein waighs gns
+warren-ocr	573	314	8	262	26	22	22	0.910	0.071	0.025	1744	0			-	-	exanination fro representetive
+warren-ocr	574	81	7	49	6	21	6	0.891	0.079	0.086	419	0			-	-	ProM aucopsy copias
+warren-ocr	575	437	6	391	16	25	13	0.961	0.030	0.014	2118	0			-	-	firearrs ningham bullets
+warren-ocr	576	482	4	461	15	4	9	0.968	0.019	0.008	2282	0			-	-	ive bullets microscopie
+warren-ocr	577	512	1	504	7	3	1	0.986	0.002	0.002	2153	0			-	-	miero
+warren-ocr	578	440	1	419	14	6	11	0.968	0.025	0.002	2061	0			-	-	microscopie ctually bullet
+warren-ocr	579	474	6	442	14	11	10	0.969	0.021	0.013	2195	0			-	-	difterent characteristies bullet
+warren-ocr	580	492	5	476	9	6	4	0.981	0.008	0.010	2096	0			-	-	anc menta kmown
+warren-ocr	581	428	11	383	22	19	14	0.946	0.033	0.026	1961	0			-	-	dissimi larities fring
+warren-ocr	582	528	24	479	16	26	6	0.968	0.012	0.045	2513	0			-	-	shing chambering mierometer
+warren-ocr	583	509	15	475	15	15	11	0.969	0.022	0.029	2329	0			-	-	tridgesiẠại bullets reloadingại
+warren-ocr	584	11	3	8	0	1	0	1.000	0.000	0.273	38	0			-	-	
+warren-ocr	585	510	31	461	14	14	12	0.971	0.025	0.061	2307	0			-	-	assassin riffe assassin
+warren-ocr	586	494	22	433	25	18	16	0.945	0.034	0.045	2231	0			-	-	boreiạẠạồ bullet cannelure
+warren-ocr	587	461	19	387	32	42	27	0.924	0.059	0.041	2376	0			-	-	revolveriẠạ bullets bullets
+warren-ocr	588	489	3	440	25	24	17	0.946	0.035	0.006	2266	0			-	-	bullet pos sibihty
+warren-ocr	589	520	12	478	24	8	13	0.952	0.025	0.023	2382	0			-	-	benzidine suspeet diphenylamine
+warren-ocr	590	477	9	440	20	15	13	0.957	0.027	0.019	2320	0			-	-	oileloth priuted bullet
+warren-ocr	591	485	16	453	12	10	6	0.974	0.013	0.033	2404	0			-	-	fngerprints palmprints palmprints
+warren-ocr	592	24	3	20	0	2	0	1.000	0.000	0.125	138	0			-	-	
+warren-ocr	593	514	6	473	22	21	15	0.956	0.029	0.012	2418	0			-	-	palmprints hifted usaally
+warren-ocr	594	494	20	398	28	58	21	0.934	0.043	0.040	2344	0			-	-	palmprint identihed palmprints
+warren-ocr	595	473	32	379	14	53	5	0.964	0.011	0.068	2186	0			-	-	nameL siged assassination
+warren-ocr	596	485	6	459	18	6	7	0.962	0.014	0.012	2478	0			-	-	sible copybook nonidentification
+warren-ocr	597	465	15	420	16	20	8	0.963	0.018	0.032	2205	0			-	-	CoLE examınation reoucangmnthe
+warren-ocr	598	488	20	418	16	46	3	0.963	0.006	0.041	2213	0			-	-	upstroke duted posi
+warren-ocr	599	463	14	392	17	45	5	0.958	0.011	0.030	2299	0			-	-	applica hion opaqued
+warren-ocr	600	537	17	479	14	41	6	0.972	0.011	0.032	2528	0			-	-	typewriting uninked indentations
+warren-ocr	601	176	26	89	20	47	6	0.817	0.038	0.148	777	28			-	-	hocul heen chutched
+warren-ocr	602	154	11	107	3	30	3	0.973	0.021	0.071	682	0			-	-	requured classined prode
+warren-ocr	603	522	13	470	31	20	22	0.938	0.042	0.025	2591	0			-	-	tives egative opaquing
+warren-ocr	604	504	11	427	41	31	25	0.912	0.050	0.022	2394	0			-	-	gyes ansthe faet
+warren-ocr	605	470	24	402	10	48	5	0.976	0.011	0.051	2279	0			-	-	indentations typewriting gret
+warren-ocr	606	445	12	381	9	55	4	0.977	0.009	0.027	2208	1			-	-	wordsạWNEW penman interlinear
+warren-ocr	607	511	17	468	15	20	6	0.969	0.012	0.033	2478	0			-	-	assassi felting felted
+warren-ocr	608	441	10	376	14	45	6	0.964	0.014	0.023	2191	0			-	-	hines bullets bullets
+warren-ocr	609	454	22	382	24	40	20	0.941	0.045	0.048	2321	0			-	-	distinquished assassination bullets
+warren-ocr	610	459	32	412	19	9	11	0.956	0.025	0.070	2248	0			-	-	ity bullet bullet
+warren-ocr	611	489	32	420	29	24	18	0.935	0.038	0.065	2407	0			-	-	bullets bullet bullet
+warren-ocr	612	456	24	404	22	16	12	0.948	0.027	0.053	2182	0			-	-	bullet missile bullet
+warren-ocr	613	507	24	445	25	23	17	0.947	0.034	0.047	2482	1			-	-	bullet bullet yawing
+warren-ocr	614	518	26	453	25	24	19	0.948	0.038	0.050	2379	0			-	-	bullet mutilated mutilated
+warren-ocr	615	20	2	13	0	3	0	1.000	0.000	0.100	96	0			-	-	
+warren-ocr	616	488	24	424	28	20	11	0.938	0.023	0.049	2420	0			-	-	assassination ber fusi
+warren-ocr	617	10	4	6	0	2	0	1.000	0.000	0.400	40	0			-	-	
+warren-ocr	618	564	19	517	32	11	20	0.942	0.036	0.034	2636	0			-	-	delustered delustering ugent
+warren-ocr	619	516	21	470	20	24	16	0.959	0.031	0.041	2436	0			-	-	fusi fuctuate fusi
+warren-ocr	620	504	26	459	12	35	7	0.975	0.014	0.052	2306	0			-	-	butt butt rrease
+warren-ocr	621	524	41	473	18	29	9	0.963	0.017	0.078	2420	0			-	-	rephotographed rephoto esseutially
+warren-ocr	622	20	2	16	0	2	0	1.000	0.000	0.100	96	0			-	-	
+warren-ocr	623	476	6	447	14	10	8	0.970	0.017	0.013	2199	0			-	-	negntive fnished defne
+warren-ocr	624	451	15	413	20	13	11	0.954	0.025	0.033	2157	0			-	-	shadowgraph shadowgraph shadowgraph
+warren-ocr	625	377	20	342	13	12	4	0.963	0.011	0.053	1803	0			-	-	rephotograph retonch rephotographing
+warren-ocr	626	108	8	79	4	17	1	0.952	0.010	0.074	514	0			-	-	stenographic
+warren-ocr	627	312	7	212	50	44	38	0.809	0.124	0.022	1266	0			misread	-	invostiration eearvey fron
+warren-ocr	628	347	5	216	94	31	78	0.697	0.229	0.014	1392	1			misread	-	offico atked troupht
+warren-ocr	629	362	6	255	67	34	55	0.792	0.154	0.017	1377	1			misread	-	compeny wae alout
+warren-ocr	630	313	9	200	68	40	57	0.746	0.185	0.029	1306	0			misread	-	beadquertars thet tean
+warren-ocr	631	272	9	181	51	31	46	0.780	0.175	0.033	1137	0			misread	-	gaid kecping garego
+warren-ocr	632	339	5	233	69	34	59	0.772	0.176	0.015	1330	0			misread	-	wes frem ues
+warren-ocr	633	320	4	235	59	23	55	0.799	0.174	0.013	1227	0			misread	-	hore ther clothac
+warren-ocr	634	331	4	209	99	20	86	0.679	0.262	0.012	1328	2			misread	-	libortics ducs hin
+warren-ocr	635	313	7	216	55	38	46	0.797	0.149	0.022	1286	0			misread	-	rleane vorked liam
+warren-ocr	636	312	6	220	65	21	58	0.772	0.190	0.019	1286	0			misread	-	thinge hept reaidence
+warren-ocr	637	304	8	214	65	20	59	0.767	0.197	0.026	1271	1			misread	-	ahle chey pas
+warren-ocr	638	308	5	248	31	24	28	0.889	0.092	0.016	1241	0			-	-	lmowledge deniod hin
+warren-ocr	639	281	7	226	42	7	40	0.843	0.145	0.025	1228	2			misread	-	wenring lcoking chirt
+warren-ocr	640	413	15	303	25	68	20	0.924	0.051	0.036	1857	3			-	-	rnv poriod thenselves
+warren-ocr	641	205	5	168	14	21	14	0.923	0.069	0.024	894	0			-	-	llcors oSwal approxinately
+warren-ocr	642	282	11	197	33	37	29	0.857	0.109	0.039	1338	0			misread	-	interviexed thst mede
+warren-ocr	643	196	19	104	23	49	21	0.819	0.119	0.097	911	0			misread	-	cont dnfant knowm
+warren-ocr	644	173	29	79	14	51	10	0.849	0.069	0.168	746	0			-	-	thite longhan indastinct
+warren-ocr	645	163	22	93	11	36	8	0.894	0.057	0.135	681	3			-	-	ORagon cara deted
+warren-ocr	646	47	7	18	3	19	3	0.857	0.075	0.149	246	0			-	-	steck werk etc
+warren-ocr	647	350	9	282	26	34	19	0.916	0.056	0.026	1507	0			-	-	opery taee zent
+warren-ocr	648	5	3	0	0	2	0		0.000	0.600	10	0			-	-	
+warren-ocr	649	371	15	237	61	57	49	0.795	0.138	0.040	1565	1			misread	-	intervieFed capieity OSmaiD
+warren-ocr	650	341	9	255	48	30	39	0.842	0.117	0.026	1542	0			misread	-	ios epproxiaately mfter
+warren-ocr	651	308	5	242	12	48	12	0.953	0.040	0.016	1421	0			-	-	interviowed overstopped inmediately
+warren-ocr	652	59	3	40	4	12	4	0.909	0.071	0.051	281	0			-	-	namos whon bedn
+warren-ocr	653	312	7	241	17	47	13	0.934	0.043	0.022	1398	1			-	-	BOOicHOiT agsinst scarch
+warren-ocr	654	502	8	294	121	79	111	0.708	0.225	0.016	2085	0			misread	-	iatorviov wich interviev
+warren-ocr	655	544	14	368	112	54	101	0.767	0.189	0.026	2289	5			misread	-	pala noscession saven
+warren-ocr	656	535	26	211	199	106	177	0.515	0.343	0.049	2469	0			misread	-	ubout efvice emptata
+warren-ocr	657	580	8	394	92	88	83	0.811	0.145	0.014	2582	0			misread	-	ani circuretances irrodiatoly
+warren-ocr	658	648	5	440	145	62	128	0.752	0.198	0.008	2867	0			misread	-	belioved opiate dafinitely
+warren-ocr	659	603	9	369	159	69	149	0.699	0.250	0.015	2804	0			misread	-	tekon treatmant roon
+warren-ocr	660	47	5	34	6	3	6	0.850	0.140	0.106	188	0			misread	-	previded availablo vious
+warren-ocr	661	500	13	328	110	51	100	0.749	0.204	0.026	2106	0			misread	-	nemorandum interviev norning
+warren-ocr	662	607	11	390	163	47	148	0.705	0.247	0.018	2584	0			misread	-	stcted thet tho
+warren-ocr	663	596	8	354	175	67	157	0.669	0.263	0.013	2641	0			misread	-	vao comauniot stuted
+warren-ocr	664	542	9	293	205	42	189	0.588	0.350	0.017	2210	0			misread	-	hin noxt norning
+warren-ocr	665	432	4	397	16	16	13	0.961	0.030	0.009	2218	0			-	-	assassinations assassination bruited
+warren-ocr	666	506	2	474	22	9	17	0.956	0.034	0.004	2646	0			-	-	assassination eal uncor
+warren-ocr	667	393	15	350	10	20	6	0.972	0.016	0.038	1989	0			-	-	assassination assassin ber
+warren-ocr	668	452	7	414	7	35	6	0.983	0.013	0.015	2288	0			-	-	overpas assassination conerete
+warren-ocr	669	483	6	445	17	26	15	0.963	0.031	0.012	2346	0			-	-	bullets assassination bul
+warren-ocr	670	483	6	448	6	29	4	0.987	0.008	0.012	2269	0			-	-	bullet tured assassinated
+warren-ocr	671	476	9	426	6	44	4	0.986	0.008	0.019	2284	0			-	-	mons mons venetian
+warren-ocr	672	492	14	426	12	55	9	0.973	0.018	0.028	2365	0			-	-	assassina tion assassination
+warren-ocr	673	492	14	440	14	41	6	0.969	0.012	0.028	2373	0			-	-	diflicult frst wald
+warren-ocr	674	488	11	424	17	53	13	0.961	0.026	0.023	2364	0			-	-	riffe assassination assassination
+warren-ocr	675	491	9	435	8	51	3	0.982	0.006	0.018	2393	0			-	-	woukd riffe festified
+warren-ocr	676	459	13	396	20	38	15	0.952	0.033	0.028	2116	0			-	-	mfle andPatrolman stoppedạẠạiạ
+warren-ocr	677	502	21	426	14	53	7	0.968	0.014	0.042	2392	0			-	-	ber assassination broadeast
+warren-ocr	678	437	16	370	15	45	13	0.961	0.030	0.037	2060	0			-	-	ley approxı mately
+warren-ocr	679	474	10	386	26	66	12	0.937	0.025	0.021	2383	0			-	-	slayer suspecta assassin
+warren-ocr	680	520	5	443	14	66	8	0.969	0.015	0.010	2501	0			-	-	lippit basedạimostly killed
+warren-ocr	681	516	9	446	5	67	3	0.989	0.006	0.017	2369	0			-	-	roominghouse riffe assassination
+warren-ocr	682	462	3	406	10	53	6	0.976	0.013	0.006	2280	0			-	-	assassination theatreại distriet
+warren-ocr	683	458	8	380	22	55	11	0.945	0.024	0.017	2234	0			-	-	abusedạẠạ assas sination
+warren-ocr	684	532	14	456	9	64	3	0.981	0.006	0.026	2476	0			-	-	amountạẠạ techmician sup
+warren-ocr	685	438	7	375	11	58	3	0.972	0.007	0.016	2220	0			-	-	plemented assassins kov
+warren-ocr	686	469	20	388	16	55	7	0.960	0.015	0.043	2219	0			-	-	ber assassinated murder
+warren-ocr	687	468	7	385	10	73	3	0.975	0.006	0.015	2235	0			-	-	thereẠạ visus owin
+warren-ocr	688	496	7	409	12	79	6	0.971	0.012	0.014	2290	0			-	-	cannot assassination roominghouse
+warren-ocr	689	451	14	371	10	64	9	0.974	0.020	0.031	2240	0			-	-	assassination assassination riffe
+warren-ocr	690	455	16	382	17	51	9	0.957	0.020	0.035	2209	0			-	-	attack und slete
+warren-ocr	691	435	13	356	16	63	9	0.957	0.021	0.030	2195	0			-	-	attack prearrangement ren
+warren-ocr	692	465	11	394	16	56	7	0.961	0.015	0.024	2309	0			-	-	suflicient assassination motoreade
+warren-ocr	693	476	15	415	4	54	1	0.990	0.002	0.032	2292	1			-	-	assassination
+warren-ocr	694	504	15	426	14	58	7	0.968	0.014	0.030	2361	0			-	-	battered assassination assassination
+warren-ocr	695	509	19	406	16	76	11	0.962	0.022	0.037	2404	0			-	-	betore assassination assassination
+warren-ocr	696	178	9	139	4	33	1	0.972	0.006	0.051	841	0			-	-	assassi
+warren-ocr	697	411	16	324	12	55	7	0.964	0.018	0.039	1757	0			-	-	beingione asin aạẠạhappy
+warren-ocr	698	557	28	452	9	70	5	0.980	0.009	0.050	2420	0			-	-	attack doetor vear
+warren-ocr	699	546	14	442	17	74	10	0.963	0.019	0.026	2411	0			-	-	leve ime homeạ
+warren-ocr	700	522	23	432	14	63	11	0.969	0.022	0.044	2423	0			-	-	incomeại elate togetheriạiạo
+warren-ocr	701	536	20	468	12	44	5	0.975	0.010	0.037	2474	0			-	-	deseribed familyt wbut
+warren-ocr	702	561	26	465	10	67	4	0.979	0.007	0.046	2402	0			-	-	signifed thev stockboy
+warren-ocr	703	525	29	454	11	50	7	0.976	0.014	0.055	2254	0			-	-	famiharity retumed funnybooks
+warren-ocr	704	573	41	485	12	54	7	0.976	0.013	0.072	2424	0			-	-	friendsạẠạ eran ber
+warren-ocr	705	525	21	460	13	39	6	0.973	0.012	0.040	2444	0			-	-	diseuss truaney snid
+warren-ocr	706	526	25	452	8	53	2	0.983	0.004	0.048	2516	0			-	-	outsfanding wald
+warren-ocr	707	564	24	496	12	42	5	0.976	0.009	0.043	2533	0			-	-	commnitment medioere publie
+warren-ocr	708	492	33	408	9	55	6	0.978	0.013	0.067	2091	0			-	-	theipersonal shoesaleman stockboy
+warren-ocr	709	395	34	324	8	36	2	0.976	0.005	0.086	1741	0			-	-	ect sociahst
+warren-ocr	710	536	39	456	10	45	5	0.979	0.010	0.073	2362	0			-	-	proficieney ruary traffie
+warren-ocr	711	532	47	435	11	57	6	0.975	0.012	0.088	2336	0			-	-	ing ont aireraft
+warren-ocr	712	532	47	430	19	55	7	0.958	0.014	0.088	2424	0			-	-	martialed assaulting oversea
+warren-ocr	713	521	10	459	20	39	10	0.958	0.019	0.019	2415	0			-	-	brigiẠạian himcompetent chiefar
+warren-ocr	714	526	17	443	20	51	12	0.957	0.023	0.032	2549	0			-	-	lking fellows barracksạẠạ
+warren-ocr	715	544	33	456	17	57	8	0.964	0.015	0.061	2477	0			-	-	trymg rightiạỊạibut oflicials
+warren-ocr	716	505	25	421	19	47	6	0.957	0.012	0.050	2351	0			-	-	aquire tion knowlege
+warren-ocr	717	449	27	379	7	44	3	0.982	0.007	0.060	2030	0			-	-	transterred drance ber
+warren-ocr	718	516	17	436	6	61	4	0.986	0.008	0.033	2205	0			-	-	harly gradaated standoffish
+warren-ocr	719	511	15	437	15	51	9	0.967	0.018	0.029	2406	0			-	-	flabbergassted agreeed politly
+warren-ocr	720	539	15	469	18	43	16	0.963	0.030	0.028	2494	0			-	-	retured afteroon suicide
+warren-ocr	721	538	19	463	17	42	11	0.965	0.021	0.035	2433	0			-	-	futureiạiại offce tele
+warren-ocr	722	542	21	482	8	40	5	0.984	0.009	0.039	2385	0			-	-	eitizenship wald lonelinessẠại
+warren-ocr	723	547	9	501	8	30	6	0.984	0.011	0.016	2279	0			-	-	recived cannot nction
+warren-ocr	724	546	13	488	15	36	12	0.970	0.022	0.024	2500	0			-	-	distortions dis tortions
+warren-ocr	725	520	38	434	8	48	3	0.982	0.006	0.073	2180	0			-	-	tthe netsova tina
+warren-ocr	726	547	31	472	20	38	9	0.959	0.017	0.057	2475	0			-	-	dinryos prossidy máss
+warren-ocr	727	537	12	481	17	35	9	0.966	0.017	0.022	2311	0			-	-	retum habituatated generaly
+warren-ocr	728	521	17	470	21	27	6	0.957	0.012	0.033	2540	0			-	-	asạia wasạỗẠạẠa ist
+warren-ocr	729	547	23	469	23	38	11	0.953	0.021	0.042	2464	0			-	-	tion rending disire
+warren-ocr	730	538	24	451	9	61	6	0.980	0.012	0.045	2452	0			-	-	citızens identifed wasstill
+warren-ocr	731	562	20	499	16	35	9	0.969	0.016	0.036	2490	0			-	-	unheppy unele emplovees
+warren-ocr	732	506	19	446	18	21	12	0.961	0.025	0.038	2058	0			-	-	neboribos dis quiting
+warren-ocr	733	528	13	474	3	45	3	0.994	0.006	0.025	2478	0			-	-	welliạ apphed ofter
+warren-ocr	734	541	8	472	19	45	9	0.961	0.017	0.015	2510	0			-	-	expatriating imprisoned wonld
+warren-ocr	735	484	22	420	15	30	11	0.966	0.024	0.045	2097	0			-	-	nessceary ect wheather
+warren-ocr	736	577	22	507	27	31	15	0.949	0.027	0.038	2569	0			-	-	visaiại forạẠnervous haustionạẠại
+warren-ocr	737	557	17	486	7	47	1	0.986	0.002	0.031	2446	0			-	-	wirich
+warren-ocr	738	0	0	0	0	0	0				0	0			-	-	
+warren-ocr	739	531	28	460	13	37	7	0.973	0.014	0.053	2296	0			-	-	vould taughter chemises
+warren-ocr	740	514	22	452	11	38	5	0.976	0.010	0.043	2305	0			-	-	sos teeling goverments
+warren-ocr	741	506	21	428	17	49	6	0.962	0.012	0.042	2245	0			-	-	intentionlly unintentionlly sis
+warren-ocr	742	554	29	451	21	62	16	0.956	0.030	0.052	2386	0			-	-	wasồạỗimore hesti hed
+warren-ocr	743	560	21	478	15	60	5	0.970	0.009	0.037	2475	0			-	-	manuseript jnst ell
+warren-ocr	744	526	16	448	12	65	5	0.974	0.010	0.030	2479	0			-	-	highchair sFinally assassination
+warren-ocr	745	518	17	440	6	73	4	0.987	0.008	0.033	2482	0			-	-	nid ander becausc
+warren-ocr	746	494	21	392	18	66	6	0.956	0.013	0.043	2186	0			-	-	fvery httle clnic
+warren-ocr	747	521	21	450	19	46	13	0.959	0.025	0.040	2424	0			-	-	tias applie tion
+warren-ocr	748	534	20	461	6	59	2	0.987	0.004	0.037	2464	0			-	-	thissa schildt
+warren-ocr	749	583	13	502	11	59	5	0.979	0.009	0.022	2481	0			-	-	sss returniạiro markedlyans
+warren-ocr	750	520	17	427	13	74	5	0.970	0.010	0.033	2513	6			-	-	assassination viet signedỗẠMarina
+warren-ocr	751	495	25	412	10	58	6	0.976	0.013	0.051	2195	0			-	-	utili fies pienic
+warren-ocr	752	542	23	473	15	46	12	0.969	0.022	0.042	2415	0			-	-	ing attack riffe
+warren-ocr	753	566	22	485	13	55	3	0.974	0.005	0.039	2472	0			-	-	lish primanly ret
+warren-ocr	754	554	30	433	17	83	7	0.962	0.013	0.054	2386	0			-	-	chaim wald lubrication
+warren-ocr	755	517	19	442	10	48	4	0.978	0.008	0.037	2296	0			-	-	eflort applica basie
+warren-ocr	756	554	14	465	15	65	8	0.969	0.015	0.025	2498	0			-	-	cou rets formuate
+warren-ocr	757	532	23	436	14	67	9	0.969	0.017	0.043	2444	0			-	-	oss vald broadeaster
+warren-ocr	758	490	29	387	25	58	11	0.939	0.023	0.059	2215	0			-	-	thestation wes hijack
+warren-ocr	759	570	25	486	8	56	5	0.984	0.009	0.044	2463	0			-	-	notepaper nao roominghouse
+warren-ocr	760	537	21	445	10	70	6	0.978	0.011	0.039	2382	0			-	-	emplovee reputa bility
+warren-ocr	761	571	24	478	17	59	9	0.966	0.016	0.042	2451	0			-	-	nutive cannot suiteases
+warren-ocr	762	511	13	417	9	70	3	0.979	0.006	0.025	2298	0			-	-	intransit ber intransit
+warren-ocr	763	531	26	464	10	46	3	0.979	0.006	0.049	2362	0			-	-	corse jai alai
+warren-ocr	764	520	44	400	21	73	11	0.950	0.022	0.085	2317	0			-	-	inseribed nese del
+warren-ocr	765	536	28	451	9	66	4	0.980	0.008	0.052	2299	0			-	-	hitchhiked parfially festified
+warren-ocr	766	511	29	410	19	71	9	0.956	0.018	0.057	2286	0			-	-	varions inchuding sian
+warren-ocr	767	496	16	405	15	65	6	0.964	0.012	0.032	2272	0			-	-	whereabonts oflice subsequenty
+warren-ocr	768	443	16	369	11	53	4	0.971	0.009	0.036	1939	0			-	-	fhat fietitious fhat
+warren-ocr	769	305	41	216	9	41	5	0.960	0.019	0.134	1389	0			-	-	acquamntances gare inctuding
+warren-ocr	770	206	57	105	8	32	7	0.929	0.048	0.277	819	0			-	-	utilitiesi bumor loanạẠỊạ
+warren-ocr	771	194	51	109	7	16	7	0.940	0.053	0.263	737	0			-	-	offce tures salaryồại
+warren-ocr	772	224	62	128	9	16	6	0.934	0.039	0.277	812	4			-	-	salaryồẠại rentalạẠại salaryạẠạ
+warren-ocr	773	183	59	86	10	23	9	0.896	0.076	0.322	643	0			-	-	costạẠại cellaneous paymentsẠại
+warren-ocr	774	383	14	312	8	49	2	0.975	0.005	0.037	1860	0			-	-	assassination mndication
+warren-ocr	775	451	13	370	12	59	6	0.969	0.014	0.029	2079	0			-	-	urday presentably IIe
+warren-ocr	776	512	7	454	9	36	7	0.981	0.014	0.014	2437	0			-	-	partyliner therein irrevocableạẠạSnyder
+warren-ocr	777	402	21	334	10	40	7	0.971	0.018	0.052	1950	0			-	-	whiel withholdmg todoso
+warren-ocr	778	511	21	430	15	46	12	0.966	0.024	0.041	2360	0			-	-	iori inae veri
+warren-ocr	779	485	13	419	23	25	11	0.948	0.024	0.027	2306	0			-	-	expatriated nationanty tigations
+warren-ocr	780	410	20	347	13	33	8	0.964	0.020	0.049	1770	0			-	-	ruary toreigner cannot
+warren-ocr	781	505	15	444	14	33	8	0.969	0.016	0.030	2309	0			-	-	oflcials undobtedly cascs
+warren-ocr	782	495	9	428	18	40	9	0.960	0.019	0.018	2397	0			-	-	ostmarked wouldẠạendeavor despatch
+warren-ocr	783	513	16	453	17	29	11	0.964	0.022	0.031	2351	2			-	-	completelv eitizenship deseribed
+warren-ocr	784	416	12	370	21	15	11	0.946	0.027	0.029	1860	0			-	-	thave strikcout expatriating
+warren-ocr	785	449	17	378	14	40	10	0.964	0.023	0.038	2185	0			-	-	instruetions ạẠỌThis despatch
+warren-ocr	786	484	21	417	15	33	8	0.965	0.017	0.043	2250	0			-	-	despatch hinself wald
+warren-ocr	787	462	25	395	17	29	8	0.959	0.018	0.054	2145	0			-	-	expatriated eitizen renuneiation
+warren-ocr	788	499	24	436	18	29	14	0.960	0.029	0.048	2337	0			-	-	thatmy expatriation sach
+warren-ocr	789	494	21	419	22	29	8	0.950	0.017	0.043	2244	0			-	-	nonquota oraanization nonquota
+warren-ocr	790	484	11	429	13	29	5	0.971	0.011	0.023	2368	0			-	-	nonquota publie relving
+warren-ocr	791	461	19	383	22	44	8	0.946	0.018	0.041	2191	0			-	-	classjfied oflice tobert
+warren-ocr	792	514	26	429	17	48	6	0.962	0.012	0.051	2424	0			-	-	ary oflice indorse
+warren-ocr	793	448	6	399	8	32	1	0.980	0.002	0.013	2171	0			-	-	retur
+warren-ocr	794	488	24	423	22	26	5	0.951	0.011	0.049	2360	0			-	-	leared rration expatriated
+warren-ocr	795	449	11	413	13	11	4	0.969	0.009	0.024	2171	0			-	-	operntion voluntariness aạẠồma
+warren-ocr	796	477	23	415	18	25	5	0.958	0.011	0.048	2347	0			-	-	terial tasue rranted
+warren-ocr	797	473	16	402	16	42	8	0.962	0.017	0.034	2212	0			-	-	regalations earher anong
+warren-ocr	798	477	27	414	14	27	8	0.967	0.018	0.057	2272	0			-	-	anv ruary ruary
+warren-ocr	799	411	11	370	24	10	4	0.939	0.010	0.027	2057	0			-	-	atizenship reters enroute
+warren-ocr	800	456	6	419	10	24	1	0.977	0.002	0.013	2158	0			-	-	nane
+warren-ocr	801	388	44	279	10	59	6	0.965	0.017	0.113	1658	0			-	-	leit nctivity expatriated
+warren-ocr	802	472	25	409	14	27	3	0.967	0.007	0.053	2171	0			-	-	expatriated expatriation fle
+warren-ocr	803	439	19	385	21	13	10	0.948	0.024	0.043	2094	0			-	-	cnint osvale prsp
+warren-ocr	804	461	9	413	24	12	19	0.945	0.042	0.020	2303	0			-	-	ạactivity conduet sucl
+warren-ocr	805	444	18	380	13	39	6	0.967	0.014	0.041	2160	0			-	-	vould whuch denned
+warren-ocr	806	287	6	260	8	13	3	0.970	0.011	0.021	1456	0			-	-	instable readmittance retur
+warren-ocr	807	428	25	359	11	33	6	0.970	0.015	0.058	1948	0			-	-	publie ber fict
+warren-ocr	808	481	30	400	17	41	9	0.959	0.020	0.062	2262	0			-	-	eustomary detesting hfe
+warren-ocr	809	423	14	372	25	14	20	0.937	0.049	0.033	2101	0			-	-	arated earher burean
+warren-ocr	810	432	13	373	19	27	10	0.952	0.024	0.030	2021	0			-	-	rencted egocentrie enrly
+warren-ocr	811	493	21	403	22	44	14	0.948	0.030	0.043	2308	0			-	-	anvthing cookmng fishbone
+warren-ocr	812	443	24	378	8	35	4	0.979	0.010	0.054	2228	0			-	-	attack une schoo
+warren-ocr	813	473	9	418	29	23	15	0.935	0.032	0.019	2400	0			-	-	knickknacks occasioned inspeetor
+warren-ocr	814	433	17	379	8	35	4	0.979	0.009	0.039	2043	0			-	-	himạẠại lightninglike ciselts
+warren-ocr	815	467	19	415	11	37	6	0.974	0.013	0.041	2278	0			-	-	rucetruck appearancei eut
+warren-ocr	816	503	34	431	17	36	12	0.962	0.025	0.068	2398	0			-	-	cannot sucess ful
+warren-ocr	817	471	16	422	11	35	4	0.975	0.009	0.034	2437	0			-	-	considera punchboards ethnie
+warren-ocr	818	473	36	396	28	29	12	0.934	0.026	0.076	2357	0			-	-	poolroom shoit abohshed
+warren-ocr	819	455	22	406	16	25	10	0.962	0.022	0.048	2232	0			-	-	bastard attacked hin
+warren-ocr	820	462	27	386	21	41	11	0.948	0.025	0.058	2188	0			-	-	erated fonght fushionableperson
+warren-ocr	821	487	21	407	20	49	12	0.953	0.025	0.043	2357	0			-	-	coconspirators partici confederates
+warren-ocr	822	501	44	413	13	48	8	0.969	0.017	0.088	2222	0			-	-	briet dancehalls remamed
+warren-ocr	823	507	26	447	12	33	6	0.974	0.012	0.051	2377	0			-	-	bnt testifed estab
+warren-ocr	824	485	23	433	21	21	12	0.954	0.025	0.047	2455	0			-	-	emplovees fcly thein
+warren-ocr	825	506	43	434	8	37	6	0.982	0.013	0.085	2363	0			-	-	amatenr acute hought
+warren-ocr	826	449	64	367	13	12	5	0.966	0.013	0.143	2006	1			-	-	assassination cosigned numerons
+warren-ocr	827	509	37	428	25	28	12	0.945	0.025	0.073	2313	0			-	-	uby deduetions txes
+warren-ocr	828	478	61	391	12	21	9	0.970	0.021	0.128	2156	0			-	-	twistboards fiberboards twistboards
+warren-ocr	829	445	26	384	19	31	8	0.953	0.018	0.058	2227	0			-	-	und elub killed
+warren-ocr	830	472	35	371	18	60	6	0.954	0.013	0.074	2134	0			-	-	quent cago weckend
+warren-ocr	831	491	27	420	13	41	7	0.970	0.015	0.055	2244	0			-	-	cme difheulties sporadie
+warren-ocr	832	405	20	370	6	19	1	0.984	0.003	0.049	2032	1			-	-	blackjacked
+warren-ocr	833	512	23	463	16	22	8	0.967	0.016	0.045	2291	0			-	-	attacked kike iại
+warren-ocr	834	186	5	172	6	4	3	0.966	0.016	0.027	898	0			-	-	explaned mav hander
+warren-ocr	835	424	7	386	10	19	4	0.975	0.010	0.017	1774	0			-	-	examınation deteetor ToxAHuL
+warren-ocr	836	487	9	421	16	42	4	0.963	0.008	0.018	2312	0			-	-	examına tion verv
+warren-ocr	837	456	12	401	11	33	4	0.973	0.009	0.026	2210	0			-	-	der psychitrist interrogatories
+warren-ocr	838	316	18	269	2	39	1	0.993	0.003	0.057	1237	0			-	-	assassination
+warren-ocr	839	337	19	275	3	48	1	0.989	0.003	0.056	1310	0			-	-	assassination
+warren-ocr	840	289	16	233	8	43	6	0.967	0.021	0.055	1098	0			-	-	aash vou assassination
+warren-ocr	841	442	9	405	23	12	8	0.946	0.018	0.020	2358	0			-	-	poly reactionsiạẠại pneumograph
+warren-ocr	842	461	12	427	16	14	5	0.964	0.011	0.026	2264	0			-	-	tion examinee ẠạỊOther
+warren-ocr	843	395	9	361	11	18	4	0.970	0.010	0.023	2006	0			-	-	realityẠạ examinee nonconclusive
+warren-ocr	844	59	2	56	1	1	0	0.982	0.000	0.034	291	0			-	-	
+warren-ocr	845	395	97	183	23	99	10	0.888	0.033	0.246	1288	2			-	-	sel torth LAw
+warren-ocr	846	525	235	35	45	200	15	0.438	0.054	0.448	1018	20			-	-	yamere șŘš rels
+warren-ocr	847	563	250	46	46	214	16	0.500	0.052	0.444	1121	18			-	-	manl aret juld
+warren-ocr	848	497	210	54	39	190	20	0.581	0.071	0.423	1010	15			-	-	reonn bce tbid
+warren-ocr	849	527	265	47	36	182	7	0.566	0.026	0.503	835	35			-	-	inid kia syew
+warren-ocr	850	465	215	46	30	177	8	0.605	0.032	0.462	952	5			-	-	neytel und staferent
+warren-ocr	851	816	373	104	40	276	10	0.722	0.024	0.457	1453	13			-	-	mủi della wald
+warren-ocr	852	865	419	84	21	306	6	0.800	0.015	0.484	1280	8			-	-	inl zier brdie
+warren-ocr	853	538	280	60	31	165	14	0.659	0.055	0.520	840	11			-	-	ston ruir bert
+warren-ocr	854	468	251	48	32	146	10	0.600	0.044	0.536	724	9			-	-	truy zśą pam
+warren-ocr	855	463	230	38	27	174	8	0.585	0.033	0.497	787	16			-	-	LẺTelle pD BrowT
+warren-ocr	856	477	253	39	34	158	9	0.534	0.039	0.530	803	26			-	-	eeon ningham suzrey
+warren-ocr	857	728	326	76	37	255	12	0.673	0.033	0.448	1144	9			-	-	ahm schildt schils
+warren-ocr	858	824	356	83	39	311	11	0.680	0.025	0.432	1565	17			-	-	supra irade CurTLeo
+warren-ocr	859	968	403	146	54	330	27	0.730	0.051	0.416	1914	18			-	-	AGller tnotes ati
+warren-ocr	860	432	200	79	42	120	19	0.653	0.079	0.463	822	14			-	-	andio supra WPAATy
+warren-ocr	861	442	205	58	37	158	17	0.611	0.067	0.464	914	5			-	-	WYe iBlel palne
+warren-ocr	862	850	355	193	62	247	24	0.757	0.048	0.418	1778	7			-	-	peared datelined CIồỊẠỊẠ
+warren-ocr	863	777	313	155	43	229	11	0.783	0.026	0.403	1530	9			-	-	llya commentina sie
+warren-ocr	864	894	305	130	69	350	27	0.653	0.049	0.341	1876	10			-	-	che supra supra
+warren-ocr	865	433	165	80	45	147	12	0.640	0.044	0.381	918	22			-	-	ioid tussian assassination
+warren-ocr	866	901	418	139	65	257	4	0.681	0.009	0.464	1468	20			-	-	łŚł ert gare
+warren-ocr	867	518	291	44	40	163	11	0.524	0.045	0.562	762	21			-	-	arina dars therealter
+warren-ocr	868	914	386	155	58	283	22	0.728	0.044	0.422	1625	20			-	-	supra ian búc
+warren-ocr	869	958	401	108	62	350	25	0.635	0.048	0.419	1793	13			-	-	wald rens chiaty
+warren-ocr	870	956	446	113	47	320	17	0.706	0.035	0.467	1482	14			-	-	nhso seșŚęł alse
+warren-ocr	871	473	216	57	51	150	16	0.528	0.062	0.457	794	39			-	-	hayer arth dE
+warren-ocr	872	960	426	144	35	317	13	0.804	0.026	0.444	1426	3			-	-	mick bert fard
+warren-ocr	873	968	501	110	36	290	12	0.753	0.028	0.518	1353	0			-	-	ŘłŚŘ alxo liam
+warren-ocr	874	836	396	116	53	257	17	0.686	0.040	0.474	1386	5			-	-	íšŘș supra pD
+warren-ocr	875	519	232	50	45	202	14	0.526	0.047	0.447	985	16			-	-	COswald bE TPIEi
+warren-ocr	876	829	379	110	50	290	15	0.688	0.033	0.457	1448	5			-	-	oswal supra inira
+warren-ocr	877	604	255	70	57	229	22	0.551	0.062	0.422	1217	23			-	-	disenssion activitles inira
+warren-ocr	878	580	220	101	62	199	30	0.620	0.083	0.379	1364	22			-	-	wald ohencind ibid
+warren-ocr	879	511	211	86	81	150	35	0.515	0.110	0.413	1100	27			-	-	ohnL rames anhid
+warren-ocr	880	580	208	129	111	169	53	0.537	0.130	0.359	1557	52			-	-	fanttachment orrele kellernkau
+warren-ocr	881	524	181	183	59	124	32	0.756	0.087	0.345	1682	17			-	-	MenạẠạẠ GrenS tnlag
+warren-ocr	882	466	226	66	56	136	23	0.541	0.089	0.485	943	27			-	-	razer auu rona
+warren-ocr	883	519	297	29	25	168	7	0.537	0.032	0.572	696	11			-	-	latona della ęšî
+warren-ocr	884	504	246	57	30	192	10	0.655	0.036	0.488	864	18			-	-	rir hiđ fregory
+warren-ocr	885	585	249	79	144	124	79	0.354	0.228	0.426	1071	34			-	-	IdL supra supra
+warren-ocr	886	420	176	41	47	145	8	0.466	0.034	0.419	791	41			-	-	PEs supra supra
+warren-ocr	887	548	224	105	63	181	30	0.625	0.086	0.409	1188	5			-	-	hese uerle skgaal
+warren-ocr	888	515	219	74	65	177	30	0.532	0.095	0.425	1074	10			-	-	che oriana tre
+warren-ocr	889	483	212	74	46	157	13	0.617	0.047	0.439	917	8			-	-	offcial deslgnate gnits
+warren-ocr	890	596	291	75	63	177	24	0.543	0.076	0.488	1072	19			-	-	farvey ovan gomefhing
+warren-ocr	891	936	422	187	39	265	8	0.827	0.016	0.451	1698	11			-	-	ạẠạồFort descrbed aine
+warren-ocr	892	580	290	66	65	179	22	0.504	0.071	0.500	883	19			-	-	ancicar prabem seten
+warren-ocr	893	617	306	60	56	218	22	0.517	0.066	0.496	1075	9			-	-	ste OTrrina nito
+warren-ocr	894	736	323	63	36	289	12	0.636	0.031	0.439	1461	24			-	-	lerer iarina sec
+warren-ocr	895	531	252	50	40	193	14	0.556	0.049	0.475	951	21			-	-	grecoDe sce schilût
+warren-ocr	896	594	284	79	62	188	18	0.560	0.055	0.478	1086	16			-	-	aguler stuckes PAIMel
+warren-ocr	897	909	419	73	37	347	7	0.664	0.015	0.461	1395	7			-	-	oswaid mond arina
+warren-ocr	898	619	188	151	96	184	54	0.611	0.125	0.304	1664	30			-	-	pevate atiet lee
+warren-ocr	899	395	191	60	35	120	11	0.632	0.051	0.484	759	19			-	-	ssion anpearance utic
+warren-ocr	900	771	355	165	72	192	37	0.696	0.086	0.460	1677	25			-	-	sec sec supra
+warren-ocr	901	432	169	87	79	104	37	0.524	0.137	0.391	1083	31			-	-	sezs StaLCE sess
+warren-ocr	902	764	388	96	45	216	6	0.681	0.017	0.508	1017	7			-	-	cF rubestenšșŘš sce
+warren-ocr	903	767	384	119	58	200	10	0.672	0.027	0.501	981	9			-	-	supra alI supra
+warren-ocr	904	840	431	88	51	249	13	0.633	0.034	0.513	1123	20			-	-	eStali supra supra
+warren-ocr	905	916	454	90	64	267	16	0.584	0.038	0.496	1251	14			-	-	cuby íšŚ sou
+warren-ocr	906	661	360	81	32	186	8	0.717	0.027	0.545	872	4			-	-	stzons kuby outsl
+warren-ocr	907	146	66	24	6	55	0	0.800	0.000	0.452	261	3			-	-	
+warren-ocr	908	412	166	50	1	197	0	0.980	0.000	0.403	1213	0			-	-	
+warren-ocr	909	530	318	37	2	178	0	0.949	0.000	0.600	1041	1			-	-	
+warren-ocr	910	487	263	50	2	175	0	0.962	0.000	0.540	1112	0			-	-	
+warren-ocr	911	455	189	46	2	221	1	0.958	0.004	0.415	1250	1			-	-	HIall
+warren-ocr	912	508	282	36	1	196	0	0.973	0.000	0.555	1176	1			-	-	
+warren-ocr	913	481	303	29	3	155	1	0.906	0.005	0.630	916	0			-	-	vorman
+warren-ocr	914	498	260	59	2	183	0	0.967	0.000	0.522	1190	2			-	-	
+warren-ocr	915	490	308	31	0	161	0	1.000	0.000	0.629	1000	0			-	-	
+warren-ocr	916	358	182	33	1	142	0	0.971	0.000	0.508	920	1			-	-	
+warren-ocr	917	0	0	0	0	0	0				0	0			-	-	
+warren-ocr	918	0	0	0	0	0	0				0	0			-	-	
+warren-ocr	919	6	4	0	0	2	0		0.000	0.667	16	0			-	-	
+warren-ocr	920	0	0	0	0	0	0				0	0			-	-	

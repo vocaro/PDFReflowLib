@@ -173,7 +173,7 @@ enum PDFReflowLibPipeline {
         /// it never truncates a page.
         func extractPage(_ i: Int, limit: Int, warnings: inout [ConversionWarning])
             throws -> (content: PageContent, attemptsOCR: Bool, damagedEncoding: Bool,
-                       implausibleLayer: TextLayerPlausibility.Finding?, drawnText: Bool) {
+                       implausibleLayer: TextLayerPlausibility.Finding?, drawnText: Bool, comparesLayer: Bool) {
             // The pool includes every PDFKit accessor, not only string extraction. Page
             // references and annotation arrays also carry autoreleased rendering resources.
             let glyphReport = NativeTextReader.IndexGlyphReport()
@@ -310,7 +310,7 @@ enum PDFReflowLibPipeline {
                 return BlankPageDetector.rendersWhite(reference, bounds: content.bounds)
             }) {
                 content.requiresPageImage = false
-                return (content, false, false, nil, false)
+                return (content, false, false, nil, false, false)
             }
             let invisibleText = graphics.hasInvisibleText
             let bounds = content.bounds
@@ -365,6 +365,13 @@ enum PDFReflowLibPipeline {
                 || (options.ocr == .automaticIncludingImageBackedText && imageBackedText)
                 || (options.ocr == .automatic && implausibleLayer != nil)
             let attemptsOCR = needsOCR && !content.requiresPageImage
+            // A layer that reads as English but misreads its words in place (#7) is recognized
+            // again, and the better reading kept: recognition of a faint carbon typescript misreads
+            // as much as the layer does (Warren pages 627–664), of a photographed document far less.
+            // The layer is extracted as an unverified page would be, so it can stand if it wins.
+            let comparesLayer: Bool
+            if attemptsOCR, options.ocr == .automatic, case .misreadWords? = implausibleLayer { comparesLayer = true }
+            else { comparesLayer = false }
             if damagedEncoding {
                 warnings.append(.init(code: .damagedTextEncoding, page: i + 1,
                     message: "Native text has no usable Unicode mapping (custom font encoding without ToUnicode) "
@@ -375,7 +382,7 @@ enum PDFReflowLibPipeline {
                                 ? "supplementary references are disabled, so read the source PDF instead."
                                 : "read the accompanying source-page image instead."))))
             }
-            if attemptsOCR { return (content, true, damagedEncoding, implausibleLayer, drawnText) }
+            if attemptsOCR && !comparesLayer { return (content, true, damagedEncoding, implausibleLayer, drawnText, false) }
             if damagedEncoding {
                 content.preservePageReference = true
                 for index in content.lines.indices {
@@ -459,7 +466,7 @@ enum PDFReflowLibPipeline {
             if content.lines.isEmpty && !content.requiresPageImage {
                 content.requiresPageImage = true
             }
-            return (content, false, damagedEncoding, implausibleLayer, drawnText)
+            return (content, attemptsOCR, damagedEncoding, implausibleLayer, drawnText, comparesLayer)
         }
 
         let store = PageStore(directory: workspace.appendingPathComponent("pages"))
@@ -521,11 +528,32 @@ enum PDFReflowLibPipeline {
                 var kept = false
                 do {
                     let recognized = try await OCRReader.read(page: try document.page(at: i), options: options)
-                    if recognized.lines.isEmpty, keepsCropsIfUnread {
-                        unreadDrawnText()
+                    // Recognition that does not read as English is noise, not a transcription (#7):
+                    // a reader is better served by the page image than by text made of it.
+                    let implausibleRecognition = TextLayerPlausibility.judgeRecognized(lines: recognized.lines,
+                                                                                       language: options.language)
+                    if let finding = implausibleRecognition, !extracted.comparesLayer {
+                        warnings.append(.init(code: .implausibleRecognition, page: i + 1,
+                            message: TextLayerPlausibility.recognitionMessage(finding, keepsCrops: keepsCropsIfUnread)))
+                    }
+                    if extracted.comparesLayer, case .misreadWords(let misread, let words, _)? = extracted.implausibleLayer,
+                       !TextLayerPlausibility.readsBetter(recognized.lines, than: misread, of: words, language: options.language) {
+                        // The damaged layer stands: recognition read no better. The page stays as extracted,
+                        // an unverified layer with its source-page reference.
+                        reportImplausibleLayer(.keptOverRecognition)
                         kept = true
+                    } else if recognized.lines.isEmpty || implausibleRecognition != nil, keepsCropsIfUnread {
+                        if implausibleRecognition == nil { unreadDrawnText() }
+                        kept = true
+                    } else if implausibleRecognition != nil {
+                        reportImplausibleLayer(.implausibleRecognition)
+                        content.requiresPageImage = true
                     } else {
                         reportImplausibleLayer(recognized.lines.isEmpty ? .pageImage : .replaced)
+                        // The layer extracted for comparison lost: so does its review warning.
+                        if extracted.comparesLayer {
+                            warnings.removeAll { $0.code == .unverifiedTextLayer && $0.page == i + 1 }
+                        }
                         content.lines = recognized.lines
                         content.recognized = true
                         content.hasSyntheticTextStyle = false
@@ -549,7 +577,12 @@ enum PDFReflowLibPipeline {
                 } catch is CancellationError { throw CancellationError() }
                 catch {
                     try Task.checkCancellation()
-                    if keepsCropsIfUnread {
+                    if extracted.comparesLayer {
+                        reportImplausibleLayer(.keptOverRecognition)
+                        warnings.append(.init(code: .ocrFailed, page: i + 1,
+                            message: "OCR failed; the existing text layer is retained."))
+                        kept = true
+                    } else if keepsCropsIfUnread {
                         unreadDrawnText()
                         kept = true
                     } else {

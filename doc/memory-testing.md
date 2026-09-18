@@ -56,7 +56,9 @@ python3 -m unittest discover -s tools -p 'test_*.py' -v
 
 `tools/probe-pdfkit-memory.swift` imports only Apple SDKs. It repeatedly opens each source page
 in an autorelease pool and discards every extracted object. `plain` reads selection strings,
-`line` reads each line's attributed string, and `page` reads the page's attributed string.
+`line` reads each line's attributed string, and `page` reads the page's attributed string. `text-line`
+reads only lines with text other than attachments, as the library does, and `union` reads those
+lines in one request per page (#4).
 Run modes in separate processes. Output records peak RSS and physical footprint after each pass.
 
 ```sh
@@ -77,6 +79,32 @@ Apple report **FB24783799** tracks the framework-path leak. The
 [submission evidence](../measurements/apple-feedback-pdfkit/record.md) includes the standalone
 reproducer, fresh plain/attributed measurements and full allocation diagnostics. The issue remains
 unresolved; a submitted report is not an Apple-confirmed diagnosis.
+
+## Repeated conversions in one process
+
+An app that converts several PDFs in one process keeps every attributed string PDFKit leaked
+while doing so. `measurements/pdfkit-repeated-conversions/measure.sh` builds a small harness that
+converts the given PDFs through the public API a number of times in one process, with pinned
+packaging, and prints the physical footprint, peak RSS and default malloc zone after every
+conversion. `LEAKS=1` adds a `leaks` count after every round on the Mac; `SIMULATOR=<udid>` runs
+it in a booted iOS Simulator instead.
+
+```sh
+LEAKS=1 measurements/pdfkit-repeated-conversions/measure.sh 10 \
+    corpus/cache/THM-Close-Out-Report-and-Exec-Summ-for-STI-Review.pdf \
+    corpus/cache/the-fed-explained.pdf corpus/cache/November-December2012.pdf
+```
+
+Every leaked allocation is an attributed string from `PDFSelection.attributedString`, which
+`NativeTextReader` requests for a page's styled lines. It requests them as one union selection
+per page and slices each line out, which leaves about a quarter fewer leaked bytes and a
+twentieth of the leaked objects of one request per line, with byte-identical output. What is
+left is the page's text itself, about 5 MiB per FAA conversion. The physical footprint after a
+conversion swings by hundreds of MiB with the allocator's reclaim of freed pages, so it cannot
+bound the growth; the leak count and the default zone can. `tools/check_repeated_conversions.py`
+gates the leaked objects each Fed conversion adds, in a process of its own; the package tests run
+suites in parallel, so they check the single request per page instead of measuring memory. See the
+[record](../measurements/pdfkit-repeated-conversions/record.md).
 
 ## Page retention strategies
 

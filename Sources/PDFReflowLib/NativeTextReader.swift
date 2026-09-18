@@ -996,6 +996,14 @@ enum NativeTextReader {
         // PDFKit's text of every line, beside its rectangle: a line the shows it holds do not spell
         // may be one piece of a row PDFKit split (`NativeSpacingReader.rowPieceSpaces`, #177).
         let textsByLine = selections.map(\.string)
+        // Every line the loop below reads with style: one with visible text over a real rectangle.
+        let styledLines = includeStyle ? selections.indices.filter { index in
+            guard let raw = textsByLine[index], !raw.replacingOccurrences(of: "\u{FFFC}", with: " ")
+                .trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else { return false }
+            let bounds = boundsByLine[index]
+            return bounds.isFinite && !bounds.isNull && bounds.width > 0 && bounds.height > 0
+        } : []
+        let attributedByLine = attributedTexts(of: styledLines, in: selections, texts: textsByLine, on: page)
         var result: [TextLine] = []
         var carry: FontWeightReader.IndexGlyphCarry?
         let indexGlyphs = weights.contains { $0.indexFont != nil }
@@ -1039,7 +1047,7 @@ enum NativeTextReader {
             report?.nativeText.append(raw)
             // Object-only selections were discarded before requesting attributed text,
             // which can make PDFKit decode large image attachments.
-            var attributed = includeStyle ? line.attributedString : nil
+            var attributed = includeStyle ? attributedByLine[index] ?? line.attributedString : nil
             // Index-named glyphs PDFKit reports as other characters are rewritten first (#143), so
             // spacing and style evidence read the characters the page draws.
             let exact = attributed?.string == raw
@@ -1073,6 +1081,48 @@ enum NativeTextReader {
             }
         }
         return result
+    }
+
+    /// The attributed text of the lines at `indices`, read with one PDFKit request for the page.
+    /// PDFKit leaks every attributed string it returns (FB24783799, #4): the string, its runs and
+    /// a font and attribute dictionary per run. A request per line leaves that whole graph behind
+    /// for every line; one request for their union leaves the page's characters once. Each line's
+    /// slice of the union carries the attributes its own request returns. A page whose union text
+    /// does not align with its lines (`lineRanges`) returns nothing, and its lines are requested
+    /// one by one as before; so does a page with a single styled line.
+    static func attributedTexts(of indices: [Int], in selections: [PDFSelection], texts: [String?],
+                                        on page: PDFPage) -> [Int: NSAttributedString] {
+        guard indices.count > 1, let document = page.document else { return [:] }
+        let union = PDFSelection(document: document)
+        union.add(indices.map { selections[$0] })
+        // The plain text is checked before the attributed request, which is the one that leaks. The
+        // two need not agree on where a newline separates lines, so each is aligned on its own.
+        let lines = indices.map { texts[$0] ?? "" }
+        guard let plain = union.string, lineRanges(of: lines, in: plain) != nil,
+              let whole = union.attributedString, let ranges = lineRanges(of: lines, in: whole.string) else { return [:] }
+        return Dictionary(uniqueKeysWithValues: zip(indices, ranges.map(whole.attributedSubstring)))
+    }
+
+    /// Where each line's text lies in the text of their union: in order, each directly after the
+    /// previous one or after a single newline, and nothing after the last. PDFKit separates lines
+    /// of different rows with a newline and runs pieces of one row together. Nil when the union's
+    /// text is anything else, such as lines out of reading order or a line holding a newline.
+    static func lineRanges(of lines: [String], in union: String) -> [NSRange]? {
+        let text = union as NSString
+        var ranges: [NSRange] = []
+        var cursor = 0
+        for line in lines {
+            let length = (line as NSString).length
+            func holds(at location: Int) -> Bool {
+                location + length <= text.length
+                    && (text.substring(with: NSRange(location: location, length: length)) as NSString).isEqual(to: line)
+            }
+            if !holds(at: cursor), cursor < text.length, text.character(at: cursor) == 0x0A { cursor += 1 }
+            guard length > 0, holds(at: cursor) else { return nil }
+            ranges.append(NSRange(location: cursor, length: length))
+            cursor += length
+        }
+        return cursor == text.length ? ranges : nil
     }
 
     /// Two PDFKit lines of one row that a single index-glyph show spans (#149). PDFKit reads Census

@@ -40,6 +40,8 @@ python3 tools/check-conversion-policies.py --converter "$BINARY_DIR/pdf-reflow" 
 python3 tools/check_reproducibility.py --converter "$BINARY_DIR/pdf-reflow" --output "$WORK/repeat-fixtures" --fixtures
 if [[ $CORPUS == 1 ]]; then
     python3 tools/check_structure_memory.py
+    # PDFKit's attributed-text leak across three in-process Fed conversions (#4; ~3 min with the build).
+    python3 tools/check_repeated_conversions.py
     python3 tools/run_corpus_regressions.py --converter "$BINARY_DIR/pdf-reflow" \
         --epubcheck "$(command -v epubcheck)" --output "$WORK/corpus"
     # Repeat-run identity on tagged, OCR and untagged books (#68; ~20 s, EPUBs kept only on failure).

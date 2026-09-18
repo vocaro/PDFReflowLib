@@ -2881,6 +2881,29 @@
           ]
         },
         {
+          "page": 449,
+          "orderedText": [
+            "John Ashcroft",
+            "Attorney General, 2001–",
+            "Monte Belger",
+            "Acting Deputy Administrator, Federal Aviation"
+          ],
+          "distinctParagraphs": [
+            {
+              "first": "John Ashcroft",
+              "second": "Attorney General, 2001–"
+            },
+            {
+              "first": "Attorney General, 2001–",
+              "second": "Monte Belger"
+            },
+            {
+              "first": "Madeleine Albright",
+              "second": "Secretary of State, 1997–2001"
+            }
+          ]
+        },
+        {
           "page": 451,
           "orderedText": [
             "Abdullah bin Abdul Aziz",
@@ -2895,6 +2918,30 @@
           "paragraphs": [
             "Mohammed Farrah Aidid",
             "Somali warlord who challenged U.S. presence in Somalia in the early 1990s (deceased)"
+          ],
+          "distinctParagraphs": [
+            {
+              "first": "Janet Reno",
+              "second": "Attorney General, 1993–2001"
+            },
+            {
+              "first": "Attorney General, 1993–2001",
+              "second": "Condoleezza Rice"
+            },
+            {
+              "first": "Colin Powell",
+              "second": "Secretary of State, 2001–"
+            }
+          ]
+        },
+        {
+          "page": 453,
+          "paragraphs": [
+            "(a.k.a. Abu Zubaydah) Palestinian; al Qaeda associate; currently in U.S. custody",
+            "Moroccan; Hamburg cell associate"
+          ],
+          "absentText": [
+            "asso ciate"
           ]
         },
         {
@@ -4135,6 +4182,12 @@
           "paragraphs": [
             "Khalid Sheikh Mohammed",
             "Mullah Mohammed Omar"
+          ],
+          "distinctParagraphs": [
+            {
+              "first": "Khallad",
+              "second": "see Tawfiq bin Attash"
+            }
           ]
         },
         {

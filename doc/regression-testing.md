@@ -115,7 +115,7 @@ are, in the page markup). Evidence and negative controls on real output are in
 ## Current content coverage
 
 <!-- counts:coverage -->
-[corpus/regressions.json](../corpus/regressions.json) has 3587 targeted checks on 585 reviewed pages
+[corpus/regressions.json](../corpus/regressions.json) has 3601 targeted checks on 587 reviewed pages
 across 20 documents: *Pilot's Handbook of Aeronautical Knowledge*, *Beginning and Intermediate
 Algebra*, *The 9/11 Commission Report*, *The Fed Explained*, *Dietary Guidelines for Americans*,
 *Fifth National Climate Assessment*, *Our Flag*, *Preparedness 101*, *Project Blue Book Special
@@ -125,10 +125,10 @@ Bremsstrahlung in Electron-Ion Collisions*, *Replay Clocks*, *Complaint for a Ci
 *Investigation of Atmospheric Boundary-Layer Effects on Launch-Vehicle Ground Wind Loads*, *A
 Scheduling Algorithm Compatible with a Distributed Management of Arrivals in the National Airspace
 System*, *Agricultural Research*, *Earthdata Cloud Analytics Project* and *Tank Health Monitoring*.
-They comprise 1137 ordered-text, 242 text, 450 paragraph, 314 absent-text, 278 heading,
+They comprise 1141 ordered-text, 242 text, 452 paragraph, 315 absent-text, 278 heading,
 36 heading-level, 64 absent-heading, 88 list-item, 40 list, 21 preformatted-block,
 1 preformatted-lines, 29 script, 10 absent-script, 11 footnote, 34 note-link,
-70 paragraph-continuation, 1 list-item-continuation, 8 paragraph-separation, 121 distinct-paragraph,
+70 paragraph-continuation, 1 list-item-continuation, 8 paragraph-separation, 128 distinct-paragraph,
 200 image-presence, 45 captioned-image, 20 image-alternative, 102 page-reference, 111 warning,
 113 absent-warning, 17 source-region, 5 glyph-structure, 5 image-appearance and 14 table-cell
 checks, counted as `tools/check_corpus_content.py` counts them.
@@ -671,7 +671,7 @@ the page's structure validates, each line also records the tag the pipeline appl
 since #89/#90); older fixtures and untagged lines have none, and `SourceLayoutFixture` restores it.
 Source review, baseline failures, cross-document safeguards and full-run evidence are retained
 in [the three-fix measurement](../measurements/three-fidelity-fixes/record.md). The suite contains
-<!-- counts:swift-tests -->1002 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->248 Python tests<!-- counts:end -->.
+<!-- counts:swift-tests -->1007 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->248 Python tests<!-- counts:end -->.
 The comparison tests include a real-Poppler image URL check through the safe HTTP handler
 (simple and positioned modes, paths with spaces); absent Poppler is an explicit skip.
 
@@ -1079,6 +1079,19 @@ lowercase run-on, and read neither two prose columns nor a stray line as names. 
 checks pages 450, 451, 454 and 456–457, 461 and 463–464, and the USDA magazine's index pages 22–23
 keep adjacent one-line entries apart. See the
 [hearing-list and Table of Names evidence](../measurements/hearing-lists-and-names/record.md).
+`TableOfNamesRowsTests.swift` covers [#199](https://github.com/vocaro/PDFReflowLib/issues/199).
+Extraction cuts a row PDFKit returns as one line where it reads the page's other rows apart
+(`NativeTextReader.splitAtRowEdges`): at least four rows set a line at one edge and the nearest line
+after it, in its size and two ems or more past its end, at a second edge; a line starting on the first
+edge and crossing the second is cut there when the second piece begins on that edge, the glyphs stand
+two ems apart and the piece is no page number, provided fewer lines cross the edge than the rows read
+apart. Only a page read as native typography is cut. A synthetic PDF checks the cut and keeps an edge
+three rows share, a contents entry's folio, a list PDFKit mostly merges and prose whole; source fixtures
+of pages 449 and 451 read `John Ashcroft` and `Janet Reno` beside their offices. A word the page breaks
+without printing any hyphen (page 453's `asso` over `ciate`) closes up where neither half is a word of
+the English lexicon, the joined word is, and the book prints it (`unprintedLineEndHyphen`); page 453's
+fixture checks the join with and without the lexicon. The 9/11 contract checks pages 449, 451, 453 and
+454. See the [Table of Names rows evidence](../measurements/table-of-names-rows/record.md).
 `FeatheredGroupsAndSpacedEntriesTests.swift` covers [#181](https://github.com/vocaro/PDFReflowLib/issues/181).
 NOAA's author and contributor blocks set one entry to a line at an even open leading, and never wrap
 one, so no hanging indent shows; source fixtures of pages 81, 343 and 1700 check one paragraph per

@@ -1,0 +1,24 @@
+2	7	𝑓 or 𝑝𝑡.𝑒 + E < 𝑝𝑡.𝑓 ([6]). Here, ℎ𝑙𝑐.𝑒 denotes the Hybrid Logical
+2	100	by at most E, where E is a parameter, i.e., ∀𝑗,𝑘 :: |𝑝𝑡.𝑗 − 𝑝𝑡.𝑘| ≤ E.
+3	24	5: 𝑆 = 𝑆 − {𝑒}
+3	66	0 < 𝐼 ≤ E such that E = 𝜖 ∗ 𝐼, where 𝜖 is an integer. The timeline
+3	94	𝑚𝑥.𝑗 − offset.𝑗.𝑘. Hence, Shift operation changes offset.𝑗.𝑘 to
+3	95	be offset.𝑗.𝑘 + (𝑛𝑒𝑤𝑚𝑥 − 𝑚𝑥). Furthermore, if this value is more
+5	16	𝑚𝑥.𝑓 > 𝑚𝑥.𝑒 + 𝜖
+5	40	Lemma 2: |𝑚𝑥.𝑒 −𝑚𝑎𝑥𝑡.𝑓| ≤ 𝜖∧(𝑒||𝑓) ⇒ 𝑅𝑒𝑝𝐶𝑙.𝑒||𝑅𝑒𝑝𝐶𝑙.𝑓
+5	45	ment. Specifically, we show that by letting E1 = E + 𝐼, the second
+5	60	By definition of 𝑚𝑥, 𝑚𝑥.𝑓 = ⌊𝑚𝑝𝑡.𝑓
+5	64	−1 < (𝑥 − ⌊𝑥⌋) − (𝑦 − ⌊𝑦⌋) < 1
+5	84	within E1 = E + 𝐼 then 𝑒 will be replayed before 𝑓, i.e., 𝑅𝑒𝑝𝐶𝑙.𝑒 <
+5	90	aware of to be 𝑚𝑝𝑡.𝑒(respectively, 𝑚𝑝𝑡.𝑓), we observe that |𝑚𝑝𝑡.𝑒 −
+5	101	∴ |𝑚𝑥.𝑒 − 𝑚𝑥.𝑓| ≤ 𝜖 by definition of 𝑚𝑥
+6	34	information about the offset of 𝑘 to mean that offset.𝑗.𝑘 = 𝜖.
+8	2	(b) 𝑛 = 64.
+8	16	(a) 𝑛 = 32.
+8	34	reordering may occur when events 𝑒 and 𝑓 differ by time E + 𝐼.
+9	35	(d) E = 2 ms, 𝑛 = 64, and 𝜏 = 8.
+10	35	before 𝑓 (as defined in [6]) or 𝑓 occurred E1 ≈ E time after 𝑒 then
+10	39	occurred within time E2 ≈ E then the replay permits them to be
+10	42	and E2 = E − 𝐼, where 𝐼 is a parameter to 𝑅𝑒𝑝𝐶𝑙. We analyzed
+12	6	(d) 𝛼 = 20 messages/s, 𝑛 = 64.
+12	8	Figure 15: Clock Size vs E when varying 𝐼, 𝛿 = 8𝜇𝑠.

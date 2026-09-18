@@ -1,0 +1,169 @@
+2	7	𝑒|+	𝑓 or 𝑝𝑡.𝑒 + E < 𝑝𝑡.𝑓 ([6]). Here, ℎ𝑙𝑐.𝑒 denotes the Hybrid Logical
+2	7	+|E	𝑓 or 𝑝𝑡.𝑒 + E < 𝑝𝑡.𝑓 ([6]). Here, ℎ𝑙𝑐.𝑒 denotes the Hybrid Logical
+2	7	E|<	𝑓 or 𝑝𝑡.𝑒 + E < 𝑝𝑡.𝑓 ([6]). Here, ℎ𝑙𝑐.𝑒 denotes the Hybrid Logical
+2	16	𝑒|−	𝑓 such that |𝑝𝑡.𝑒 − 𝑝𝑡.𝑓| < E and 𝑒||𝑓, i.e., the events are causally
+2	16	−|𝑝	𝑓 such that |𝑝𝑡.𝑒 − 𝑝𝑡.𝑓| < E and 𝑒||𝑓, i.e., the events are causally
+2	16	||<	𝑓 such that |𝑝𝑡.𝑒 − 𝑝𝑡.𝑓| < E and 𝑒||𝑓, i.e., the events are causally
+2	89	≤|𝑣	words, 𝑣𝑐.𝑒 < 𝑣𝑐.𝑓 iff (∀𝑗 :: 𝑣𝑐.𝑒.𝑗 ≤ 𝑣𝑐.𝑓.𝑗)∧(∃𝑗 :: 𝑣𝑐.𝑒.𝑗 < 𝑣𝑐.𝑓.𝑗).
+2	100	𝑗|−	by at most E, where E is a parameter, i.e., ∀𝑗,𝑘 :: |𝑝𝑡.𝑗 − 𝑝𝑡.𝑘| ≤ E.
+2	100	−|𝑝	by at most E, where E is a parameter, i.e., ∀𝑗,𝑘 :: |𝑝𝑡.𝑗 − 𝑝𝑡.𝑘| ≤ E.
+2	100	||≤	by at most E, where E is a parameter, i.e., ∀𝑗,𝑘 :: |𝑝𝑡.𝑗 − 𝑝𝑡.𝑘| ≤ E.
+2	100	≤|E	by at most E, where E is a parameter, i.e., ∀𝑗,𝑘 :: |𝑝𝑡.𝑗 − 𝑝𝑡.𝑘| ≤ E.
+3	20	𝑒|=	𝐹𝑟𝑜𝑛𝑡𝐿𝑖𝑛𝑒 = {𝑒|(𝑒,𝑡𝑠.𝑒)∈𝑆∧¬(∃𝑓 : (𝑓,𝑡𝑠.𝑓)∈𝑆∧𝑡𝑠.𝑓 <
+3	24	𝑆|=	5: 𝑆 = 𝑆 − {𝑒}
+3	24	𝑆|−	5: 𝑆 = 𝑆 − {𝑒}
+3	24	−|{	5: 𝑆 = 𝑆 − {𝑒}
+3	45	||≤	|𝑝𝑡.𝑗−𝑝𝑡.𝑘| ≤ E. The goal of RepCl is to assign a timestamp 𝑅𝑒𝑝𝐶𝑙.𝑒
+3	45	≤|E	|𝑝𝑡.𝑗−𝑝𝑡.𝑘| ≤ E. The goal of RepCl is to assign a timestamp 𝑅𝑒𝑝𝐶𝑙.𝑒
+3	51	≈|E	of E1 where E1 ≈ E then 𝑒 will be replayed before 𝑓, i.e.,
+3	55	≈|E	E2, where E2 ≈ E then 𝑅𝑒𝑝𝐶𝑙.𝑒||𝑅𝑒𝑝𝐶𝑙.𝑓 (i.e., ¬(𝑅𝑒𝑝𝐶𝑙.𝑒 <
+3	66	≤|E	0 < 𝐼 ≤ E such that E = 𝜖 ∗ 𝐼, where 𝜖 is an integer. The timeline
+3	66	E|=	0 < 𝐼 ≤ E such that E = 𝜖 ∗ 𝐼, where 𝜖 is an integer. The timeline
+3	66	𝜖|∗	0 < 𝐼 ≤ E such that E = 𝜖 ∗ 𝐼, where 𝜖 is an integer. The timeline
+3	66	∗|𝐼	0 < 𝐼 ≤ E such that E = 𝜖 ∗ 𝐼, where 𝜖 is an integer. The timeline
+3	79	𝑗|−	𝑚𝑥.𝑗 − offset.𝑗.𝑘 denotes the maximum epoch value of 𝑘 that 𝑗
+3	79	−|o	𝑚𝑥.𝑗 − offset.𝑗.𝑘 denotes the maximum epoch value of 𝑘 that 𝑗
+3	90	𝑗|−	to change the value of 𝑚𝑥. Since 𝑚𝑥.𝑗 − offset.𝑗.𝑘 denotes the
+3	90	−|o	to change the value of 𝑚𝑥. Since 𝑚𝑥.𝑗 − offset.𝑗.𝑘 denotes the
+3	93	𝑥|−	of 𝑘 then 𝑛𝑒𝑤𝑚𝑥 − newoffset.𝑗.𝑘 should remain the same as
+3	93	−|n	of 𝑘 then 𝑛𝑒𝑤𝑚𝑥 − newoffset.𝑗.𝑘 should remain the same as
+3	94	𝑗|−	𝑚𝑥.𝑗 − offset.𝑗.𝑘. Hence, Shift operation changes offset.𝑗.𝑘 to
+3	94	−|o	𝑚𝑥.𝑗 − offset.𝑗.𝑘. Hence, Shift operation changes offset.𝑗.𝑘 to
+3	95	𝑘|+	be offset.𝑗.𝑘 + (𝑛𝑒𝑤𝑚𝑥 − 𝑚𝑥). Furthermore, if this value is more
+3	95	+|(	be offset.𝑗.𝑘 + (𝑛𝑒𝑤𝑚𝑥 − 𝑚𝑥). Furthermore, if this value is more
+3	95	𝑥|−	be offset.𝑗.𝑘 + (𝑛𝑒𝑤𝑚𝑥 − 𝑚𝑥). Furthermore, if this value is more
+3	95	−|𝑚	be offset.𝑗.𝑘 + (𝑛𝑒𝑤𝑚𝑥 − 𝑚𝑥). Furthermore, if this value is more
+4	24	𝑥|−	it equal to 𝑛𝑒𝑤𝑚𝑥 − epoch.𝑗. The Shift operation is illustrated in
+4	24	−|e	it equal to 𝑛𝑒𝑤𝑚𝑥 − epoch.𝑗. The Shift operation is illustrated in
+4	30	𝑘|+	4: 𝑡𝑠.offset.𝑘 ←offset.𝑘 + (𝑛𝑒𝑤𝑚𝑥 − 𝑡𝑠.𝑚𝑥)
+4	30	+|(	4: 𝑡𝑠.offset.𝑘 ←offset.𝑘 + (𝑛𝑒𝑤𝑚𝑥 − 𝑡𝑠.𝑚𝑥)
+4	30	𝑥|−	4: 𝑡𝑠.offset.𝑘 ←offset.𝑘 + (𝑛𝑒𝑤𝑚𝑥 − 𝑡𝑠.𝑚𝑥)
+4	30	−|𝑡	4: 𝑡𝑠.offset.𝑘 ←offset.𝑘 + (𝑛𝑒𝑤𝑚𝑥 − 𝑡𝑠.𝑚𝑥)
+4	37	𝑥|−	2: new_offset ←𝑛𝑒𝑤𝑚𝑥 − epoch.𝑗
+4	37	−|e	2: new_offset ←𝑛𝑒𝑤𝑚𝑥 − epoch.𝑗
+4	38	𝑗|=	3: if (𝑚𝑥.𝑗 = 𝑛𝑒𝑤𝑚𝑥∧offset.𝑗.𝑗 = new_offset) then
+4	38	𝑗|=	3: if (𝑚𝑥.𝑗 = 𝑛𝑒𝑤𝑚𝑥∧offset.𝑗.𝑗 = new_offset) then
+4	39	𝑗|+	4: counter.𝑗.𝑗 ←counter.𝑗.𝑗 + 1
+4	39	+|1	4: counter.𝑗.𝑗 ←counter.𝑗.𝑗 + 1
+4	42	𝑥|−	7: offset.𝑗.𝑗 ←min(𝑛𝑒𝑤𝑚𝑥 − epoch.𝑗,𝜖)
+4	42	−|e	7: offset.𝑗.𝑗 ←min(𝑛𝑒𝑤𝑚𝑥 − epoch.𝑗,𝜖)
+4	72	𝑗|+	10: counter.𝑗.𝑗 ←counter.𝑗.𝑗 + 1
+4	72	+|1	10: counter.𝑗.𝑗 ←counter.𝑗.𝑗 + 1
+4	74	𝑗|+	12: counter.𝑗.𝑗 ←counter.𝑗.𝑗 + 1
+4	74	+|1	12: counter.𝑗.𝑗 ←counter.𝑗.𝑗 + 1
+4	77	𝑗|+	15: counter.𝑗.𝑗 ←counter.𝑗.𝑗 + 1
+4	77	+|1	15: counter.𝑗.𝑗 ←counter.𝑗.𝑗 + 1
+4	81	𝐼|=	ure 1. Assuming that 𝜖 = 5,𝐼 = 1, and E = 5, the RepCl timestamps
+4	81	E|=	ure 1. Assuming that 𝜖 = 5,𝐼 = 1, and E = 5, the RepCl timestamps
+4	102	𝑒|=	Definition 1: Given timestamp 𝑅𝑒𝑝𝐶𝑙.𝑒 =
+5	6	𝑘|=	4: 𝑡𝑠.offset.𝑗.𝑘 = 𝑚𝑖𝑛(𝑡1.offset.𝑗.𝑘,𝑡2.offset.𝑗.𝑘)
+5	14	𝑓|=	𝑅𝑒𝑝𝐶𝑙.𝑓 = ⟨𝑚𝑥.𝑓, offset.𝑓[], counter.𝑓[]⟩, we say that
+5	16	+|𝜖	𝑚𝑥.𝑓 > 𝑚𝑥.𝑒 + 𝜖
+5	25	𝑓|−	close, i.e., |𝑚𝑥.𝑓 − 𝑚𝑥.𝑒| ≤ 𝜖, then, we compare the offsets. Since
+5	25	−|𝑚	close, i.e., |𝑚𝑥.𝑓 − 𝑚𝑥.𝑒| ≤ 𝜖, then, we compare the offsets. Since
+5	25	||≤	close, i.e., |𝑚𝑥.𝑓 − 𝑚𝑥.𝑒| ≤ 𝜖, then, we compare the offsets. Since
+5	25	≤|𝜖	close, i.e., |𝑚𝑥.𝑓 − 𝑚𝑥.𝑒| ≤ 𝜖, then, we compare the offsets. Since
+5	40	𝑒|−	Lemma 2: |𝑚𝑥.𝑒 −𝑚𝑎𝑥𝑡.𝑓| ≤ 𝜖∧(𝑒||𝑓) ⇒ 𝑅𝑒𝑝𝐶𝑙.𝑒||𝑅𝑒𝑝𝐶𝑙.𝑓
+5	40	||≤	Lemma 2: |𝑚𝑥.𝑒 −𝑚𝑎𝑥𝑡.𝑓| ≤ 𝜖∧(𝑒||𝑓) ⇒ 𝑅𝑒𝑝𝐶𝑙.𝑒||𝑅𝑒𝑝𝐶𝑙.𝑓
+5	40	≤|𝜖	Lemma 2: |𝑚𝑥.𝑒 −𝑚𝑎𝑥𝑡.𝑓| ≤ 𝜖∧(𝑒||𝑓) ⇒ 𝑅𝑒𝑝𝐶𝑙.𝑒||𝑅𝑒𝑝𝐶𝑙.𝑓
+5	45	E|+	ment. Specifically, we show that by letting E1 = E + 𝐼, the second
+5	45	+|𝐼	ment. Specifically, we show that by letting E1 = E + 𝐼, the second
+5	57	+|E	If 𝑚𝑝𝑡.𝑓 > 𝑚𝑝𝑡.𝑒 + E1 then 𝑓 cannot occur before 𝑒 under the
+5	60	𝑓|=	By definition of 𝑚𝑥, 𝑚𝑥.𝑓 = ⌊𝑚𝑝𝑡.𝑓
+5	64	𝑥|−	−1 < (𝑥 − ⌊𝑥⌋) − (𝑦 − ⌊𝑦⌋) < 1
+5	64	−|⌊	−1 < (𝑥 − ⌊𝑥⌋) − (𝑦 − ⌊𝑦⌋) < 1
+5	64	)|−	−1 < (𝑥 − ⌊𝑥⌋) − (𝑦 − ⌊𝑦⌋) < 1
+5	64	−|(	−1 < (𝑥 − ⌊𝑥⌋) − (𝑦 − ⌊𝑦⌋) < 1
+5	64	𝑦|−	−1 < (𝑥 − ⌊𝑥⌋) − (𝑦 − ⌊𝑦⌋) < 1
+5	64	−|⌊	−1 < (𝑥 − ⌊𝑥⌋) − (𝑦 − ⌊𝑦⌋) < 1
+5	64	)|<	−1 < (𝑥 − ⌊𝑥⌋) − (𝑦 − ⌊𝑦⌋) < 1
+5	76	𝑓|−	Now, if 𝑚𝑝𝑡.𝑓 − 𝑚𝑝𝑡.𝑒 > E + 𝐼 then we can rewrite the second
+5	76	−|𝑚	Now, if 𝑚𝑝𝑡.𝑓 − 𝑚𝑝𝑡.𝑒 > E + 𝐼 then we can rewrite the second
+5	76	E|+	Now, if 𝑚𝑝𝑡.𝑓 − 𝑚𝑝𝑡.𝑒 > E + 𝐼 then we can rewrite the second
+5	76	+|𝐼	Now, if 𝑚𝑝𝑡.𝑓 − 𝑚𝑝𝑡.𝑒 > E + 𝐼 then we can rewrite the second
+5	79	𝑓|−	we have 𝜖 < (𝑚𝑥.𝑓 −𝑚𝑥.𝑒). In other words,𝑚𝑝𝑡.𝑓 −𝑚𝑝𝑡.𝑒 > E+𝐼 ⇒
+5	79	𝑓|−	we have 𝜖 < (𝑚𝑥.𝑓 −𝑚𝑥.𝑒). In other words,𝑚𝑝𝑡.𝑓 −𝑚𝑝𝑡.𝑒 > E+𝐼 ⇒
+5	80	𝑒|+	(𝑚𝑥.𝑓 > 𝑚𝑥.𝑒 + 𝜖). By Definition 1, we have 𝑅𝑒𝑝𝐶𝑙.𝑒 < 𝑅𝑒𝑝𝐶𝑙.𝑓.
+5	80	+|𝜖	(𝑚𝑥.𝑓 > 𝑚𝑥.𝑒 + 𝜖). By Definition 1, we have 𝑅𝑒𝑝𝐶𝑙.𝑒 < 𝑅𝑒𝑝𝐶𝑙.𝑓.
+5	84	E|+	within E1 = E + 𝐼 then 𝑒 will be replayed before 𝑓, i.e., 𝑅𝑒𝑝𝐶𝑙.𝑒 <
+5	84	+|𝐼	within E1 = E + 𝐼 then 𝑒 will be replayed before 𝑓, i.e., 𝑅𝑒𝑝𝐶𝑙.𝑒 <
+5	88	E|−	guaranteed that clocks were synchronized to be within E2 = E −
+5	90	𝑒|−	aware of to be 𝑚𝑝𝑡.𝑒(respectively, 𝑚𝑝𝑡.𝑓), we observe that |𝑚𝑝𝑡.𝑒 −
+5	91	||≤	𝑚𝑝𝑡.𝑓| ≤ E2. Furthermore, 𝑒 and 𝑓 must be causally concurrent.
+5	91	≤|E	𝑚𝑝𝑡.𝑓| ≤ E2. Furthermore, 𝑒 and 𝑓 must be causally concurrent.
+5	93	𝑒|−	If |𝑚𝑝𝑡.𝑒 − 𝑚𝑝𝑡.𝑓| ≤ E − 𝐼, we have
+5	93	−|𝑚	If |𝑚𝑝𝑡.𝑒 − 𝑚𝑝𝑡.𝑓| ≤ E − 𝐼, we have
+5	93	||≤	If |𝑚𝑝𝑡.𝑒 − 𝑚𝑝𝑡.𝑓| ≤ E − 𝐼, we have
+5	93	≤|E	If |𝑚𝑝𝑡.𝑒 − 𝑚𝑝𝑡.𝑓| ≤ E − 𝐼, we have
+5	93	E|−	If |𝑚𝑝𝑡.𝑒 − 𝑚𝑝𝑡.𝑓| ≤ E − 𝐼, we have
+5	93	−|𝐼	If |𝑚𝑝𝑡.𝑒 − 𝑚𝑝𝑡.𝑓| ≤ E − 𝐼, we have
+5	97	||≤	𝐼 | ≤ 𝜖 − 1 // since E = 𝜖 ∗ 𝐼
+5	97	𝜖|−	𝐼 | ≤ 𝜖 − 1 // since E = 𝜖 ∗ 𝐼
+5	97	−|1	𝐼 | ≤ 𝜖 − 1 // since E = 𝜖 ∗ 𝐼
+5	97	E|=	𝐼 | ≤ 𝜖 − 1 // since E = 𝜖 ∗ 𝐼
+5	97	𝜖|∗	𝐼 | ≤ 𝜖 − 1 // since E = 𝜖 ∗ 𝐼
+5	97	∗|𝐼	𝐼 | ≤ 𝜖 − 1 // since E = 𝜖 ∗ 𝐼
+5	101	𝑒|−	∴ |𝑚𝑥.𝑒 − 𝑚𝑥.𝑓| ≤ 𝜖 by definition of 𝑚𝑥
+5	101	−|𝑚	∴ |𝑚𝑥.𝑒 − 𝑚𝑥.𝑓| ≤ 𝜖 by definition of 𝑚𝑥
+5	101	||≤	∴ |𝑚𝑥.𝑒 − 𝑚𝑥.𝑓| ≤ 𝜖 by definition of 𝑚𝑥
+5	101	≤|𝜖	∴ |𝑚𝑥.𝑒 − 𝑚𝑥.𝑓| ≤ 𝜖 by definition of 𝑚𝑥
+6	4	E|−	tem where clocks were synchronized to be within E − 𝐼 then
+6	4	−|𝐼	tem where clocks were synchronized to be within E − 𝐼 then
+6	14	E|=	Now, if E = 1𝑚𝑠 then the value of the offset could be as large as
+6	17	E|=	not seriously impact the replay. For example, if E = 1𝑚𝑠 and 𝐼 =
+6	17	𝐼|=	not seriously impact the replay. For example, if E = 1𝑚𝑠 and 𝐼 =
+6	26	𝑛|+	efficient computation. As written, 𝑅𝑒𝑝𝐶𝑙 will require 2𝑛 +1 integers.
+6	32	𝑘|=	the clock synchronization assumption. In this case, offset.𝑗.𝑘 = 𝜖.
+6	34	𝑘|=	information about the offset of 𝑘 to mean that offset.𝑗.𝑘 = 𝜖.
+6	52	𝑛|−	proportional to the number of 1s in the bitmap. ((𝑛 − (𝑛&(𝑛 − 1)
+6	52	−|(	proportional to the number of 1s in the bitmap. ((𝑛 − (𝑛&(𝑛 − 1)
+6	52	𝑛|−	proportional to the number of 1s in the bitmap. ((𝑛 − (𝑛&(𝑛 − 1)
+6	52	−|1	proportional to the number of 1s in the bitmap. ((𝑛 − (𝑛&(𝑛 − 1)
+7	2	𝑛|=	(a) 𝛼 = 20 messages/s, 𝑛 = 32.
+7	3	𝑛|=	(b) 𝛼 = 40 messages/s, 𝑛 = 32.
+7	4	𝑛|=	(c) 𝛼 = 160 messages/s, 𝑛 = 32.
+7	5	𝑛|=	(d) 𝛼 = 20 messages/s, 𝑛 = 64.
+7	7	𝛿|=	Figure 5: 𝜏 vs E when varying 𝐼, 𝛿 = 8𝜇𝑠.
+7	8	𝑛|=	(f) 𝛼 = 160 messages/s, 𝑛 = 64.
+7	11	E|=	in the simulation to ensure that if E = 1𝑚𝑠 then the worst-case
+8	1	𝑛|=	(a) 𝑛 = 32.
+8	2	𝑛|=	(b) 𝑛 = 64.
+8	4	𝑛|=	(a) 𝑛 = 32.
+8	5	𝑛|=	(b) 𝑛 = 64.
+8	16	𝑛|=	(a) 𝑛 = 32.
+8	17	𝑛|=	(b) 𝑛 = 64.
+8	34	E|+	reordering may occur when events 𝑒 and 𝑓 differ by time E + 𝐼.
+8	34	+|𝐼	reordering may occur when events 𝑒 and 𝑓 differ by time E + 𝐼.
+8	37	𝑛|=	(a) 𝑛 = 32.
+8	38	𝑛|=	(b) 𝑛 = 64.
+8	39	E|=	Figure 9: 𝜏 vs 𝐼 when varying 𝛿, E = 2 ms, 𝛼 = 20 messages/s.
+8	40	𝐼|−	Varying 𝛼: For every point in the 𝐼 − 𝜏 trend, lower 𝛼 values
+8	40	−|𝜏	Varying 𝛼: For every point in the 𝐼 − 𝜏 trend, lower 𝛼 values
+8	46	𝑛|=	(a) 𝑛 = 32.
+8	47	𝑛|=	(b) 𝑛 = 64.
+8	48	E|=	Figure 10: 𝜏 vs 𝐼 when varying 𝛼, E = 2 ms, 𝛿 = 8 𝜇𝑠.
+8	56	𝑛|=	(a) 𝑛 = 32.
+8	57	𝑛|=	(b) 𝑛 = 64.
+8	58	E|=	Figure 11: 𝜏 vs 𝛿 when varying 𝛼, E = 4 ms, 𝐼 = 16 𝜇𝑠.
+9	32	E|=	(a) E = 1 ms, 𝑛 = 32, and 𝜏 = 8.
+9	32	𝑛|=	(a) E = 1 ms, 𝑛 = 32, and 𝜏 = 8.
+9	33	E|=	(b) E = 2 ms, 𝑛 = 32, and 𝜏 = 8.
+9	33	𝑛|=	(b) E = 2 ms, 𝑛 = 32, and 𝜏 = 8.
+9	34	E|=	(c) E = 1 ms, 𝑛 = 64, and 𝜏 = 8.
+9	34	𝑛|=	(c) E = 1 ms, 𝑛 = 64, and 𝜏 = 8.
+9	35	E|=	(d) E = 2 ms, 𝑛 = 64, and 𝜏 = 8.
+9	35	𝑛|=	(d) E = 2 ms, 𝑛 = 64, and 𝜏 = 8.
+10	10	E|<	implements 𝑅𝑒𝑝𝐶𝑙 with E < E𝑎 then the resulting replay will still
+10	12	E|−	satisfied with E2 = E − 𝐼.
+10	12	−|𝐼	satisfied with E2 = E − 𝐼.
+10	35	≈|E	before 𝑓 (as defined in [6]) or 𝑓 occurred E1 ≈ E time after 𝑒 then
+10	39	≈|E	occurred within time E2 ≈ E then the replay permits them to be
+10	41	E|+	We presented 𝑅𝑒𝑝𝐶𝑙 to solve the replay problem with E1 = E +𝐼
+10	42	E|−	and E2 = E − 𝐼, where 𝐼 is a parameter to 𝑅𝑒𝑝𝐶𝑙. We analyzed
+10	42	−|𝐼	and E2 = E − 𝐼, where 𝐼 is a parameter to 𝑅𝑒𝑝𝐶𝑙. We analyzed
+12	3	𝑛|=	(a) 𝛼 = 20 messages/s, 𝑛 = 32.
+12	4	𝑛|=	(b) 𝛼 = 40 messages/s, 𝑛 = 32.
+12	5	𝑛|=	(c) 𝛼 = 160 messages/s, 𝑛 = 32.
+12	6	𝑛|=	(d) 𝛼 = 20 messages/s, 𝑛 = 64.
+12	8	𝛿|=	Figure 15: Clock Size vs E when varying 𝐼, 𝛿 = 8𝜇𝑠.
+12	9	𝑛|=	(f) 𝛼 = 160 messages/s, 𝑛 = 64.

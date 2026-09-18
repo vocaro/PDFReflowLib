@@ -31,6 +31,9 @@ enum NativeSpacingReader {
         var sentenceCandidates: [Int: CGFloat] = [:]
         /// Whether the show sets nonzero character or word spacing, the producer condition of #119.
         var spaced = false
+        /// Gaps in em at the show's adjusted glyph boundaries beside a mathematical operator, by UTF-16
+        /// offset in `unicode`, read whatever the show's spacing state (#188); `operatorSpace` decides them.
+        var operatorGaps: [Int: CGFloat] = [:]
 
         /// The characters of the show's last word (after its last space character, word space or
         /// sentence space), and whether that word begins the show.
@@ -73,6 +76,7 @@ enum NativeSpacingReader {
     /// Two same-font boundaries are also restored (#119, the 9/11 report): a word space that a
     /// TJ adjustment sets between two glyphs of one show (`Evidence.wordSpaces`), and a note
     /// reference, a raised show of digits in a smaller size, followed by a capital at a word gap.
+    /// So is the math space beside an operator, inside a show or between two (#188, `operatorSpace`).
     static func missingSpaces(in native: String, shows: [Evidence]) -> [Int]? {
         var source: [UInt16] = [], boundaries: Set<Int> = []
         var previous: Evidence?
@@ -126,6 +130,21 @@ enum NativeSpacingReader {
             }
             for offset in show.wordSpaces.union(show.sentenceSpaces) where offset > 0 && offset < unicode.utf16.count {
                 boundaries.insert(source.count + offset)
+            }
+            // The math space beside an operator (#188): inside the show at a TJ adjustment, or
+            // between two shows on one baseline (Wallace's `(|−` and `−|5`, a font change at each sign).
+            let scalars = unicode.unicodeScalars
+            for (offset, gap) in show.operatorGaps where offset > 0 && offset < unicode.utf16.count {
+                let index = String.Index(utf16Offset: offset, in: unicode)
+                if let before = scalars.index(index, offsetBy: -1, limitedBy: scalars.startIndex),
+                   operatorSpace(left: scalars[before], right: scalars[index], gap: gap) {
+                    boundaries.insert(source.count + offset)
+                }
+            }
+            if let previous, let end = previous.end, let left = previous.unicode?.unicodeScalars.last, let right = scalars.first,
+               abs(previous.origin.y - show.origin.y) <= max(previous.size, show.size) * 0.1,
+               operatorSpace(left: left, right: right, gap: (show.origin.x - end) / max(previous.size, show.size)) {
+                boundaries.insert(source.count)
             }
             previousStart = source.count
             source += unicode.utf16
@@ -203,6 +222,27 @@ enum NativeSpacingReader {
         let chained = left == "." && before.map(CharacterSet.uppercaseLetters.contains) == true && after == "."
         let narrow = overhang && (closing || CharacterSet.lowercaseLetters.contains(left)) && !chained
         return gap >= (narrow ? overhangWordSpaceGap : wordSpaceGap)
+    }
+
+    /// Binary operators and relations that TeX and TeXmacs set apart from their operands with a math
+    /// space (#188). The ASCII hyphen, the slash and the middle dot are prose punctuation too.
+    static let mathOperators = Set("+\u{2212}\u{00D7}\u{00F7}\u{00B1}\u{2213}\u{2217}\u{22C5}=\u{2260}<>\u{2264}\u{2265}\u{2248}\u{2261}".unicodeScalars)
+    /// TeX's thin math space is 1/6 em (0.167). Of Wallace's 29,790 gaps beside an operator, 24,961
+    /// measure 0.15–0.2 em and none 0.14–0.15 em; script-size signs sit near 0.047 em.
+    static let operatorSpaceGap: CGFloat = 0.15
+
+    /// Whether a gap of `gap` em between `left` and `right` is the math space beside an operator:
+    /// either side is a mathematical operator, neither is whitespace, and the gap is at least a thin
+    /// space and at most an em. TeX and TeXmacs set these spaces as kerns, never as space glyphs,
+    /// and PDFKit's own threshold falls inside the band they occupy (Wallace: `add 5+ 3` for
+    /// `5 + 3`, whose gaps are 0.163 and 0.172 em; Replay Clocks: `𝑛= 32` at 0.285 em). The gap
+    /// alone decides: a script-size operator (Wallace's exponents, 0.047 em), a unary sign that TeX
+    /// sets closed and two relations TeX sets together (Replay's `>>`, 0.043 em) stay joined, and
+    /// juxtaposed variables (`x|y`, #119) have no operator.
+    static func operatorSpace(left: Unicode.Scalar, right: Unicode.Scalar, gap: CGFloat) -> Bool {
+        guard gap.isFinite, gap >= operatorSpaceGap, gap <= 1,
+              mathOperators.contains(left) || mathOperators.contains(right) else { return false }
+        return !left.properties.isWhitespace && !right.properties.isWhitespace
     }
 
     /// A note reference set as its own show (9/11: a 7.2-point digit raised 2.25 points before
@@ -647,6 +687,16 @@ enum NativeSpacingReader {
             }
             if decodable, !unicode.isEmpty {
                 item.unicode = unicode
+                // Math spaces are kerns in every producer, so these are read without the spacing
+                // state that #119's word spaces require (Wallace's Ghostscript sets Tc = Tw = 0).
+                let scalars = unicode.unicodeScalars
+                for boundary in boundaries where boundary.offset > 0 && boundary.offset < unicode.utf16.count {
+                    let index = String.Index(utf16Offset: boundary.offset, in: unicode)
+                    guard let before = scalars.index(index, offsetBy: -1, limitedBy: scalars.startIndex),
+                          NativeSpacingReader.mathOperators.contains(scalars[before])
+                            || NativeSpacingReader.mathOperators.contains(scalars[index]) else { continue }
+                    item.operatorGaps[boundary.offset] = boundary.gap
+                }
             }
             // Word spaces inside a show are read only where the producer justifies with character or
             // word spacing and folds a kerned space into an adjustment (9/11's Distiller output: 99.9%

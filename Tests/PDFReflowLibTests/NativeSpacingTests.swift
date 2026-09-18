@@ -862,3 +862,187 @@ private func nineElevenRepairs(_ page: NineElevenSource.Page, operators: String?
     #expect(repairedBoundary(try line(closing: " \\)", next: 71.6), "(x-6 )when") == "(x-6 )when")
     #expect(repairedBoundary(try line(closing: "."), "(x-6.when") == "(x-6.when")
 }
+
+// MARK: - Math spaces beside operators (#188)
+
+/// Source pages captured by `measurements/math-operator-spaces/capture.swift`: font resources with
+/// their ToUnicode maps and encodings, graphics states, the decoded content stream and PDFKit's lines.
+private struct OperatorSource: Decodable {
+    struct Font: Decodable {
+        var resourceName: String
+        var subtype: String
+        var firstChar: Int?
+        var widths: [Double]?
+        var toUnicode: String?
+        var encoding: String?
+    }
+    struct Line: Decodable { var text: String; var rect: [Double] }
+    struct Page: Decodable {
+        var page: Int
+        var fonts: [Font]
+        var extGStates: [String: String]
+        var operators: String
+        var lines: [Line]
+    }
+    var sourceSHA256: String
+    var pages: [Page]
+    static func load(_ name: String) throws -> Self {
+        try JSONDecoder().decode(Self.self, from: Data(contentsOf: Bundle.module.resourceURL!
+            .appendingPathComponent("fixtures/\(name)-text-operators.json")))
+    }
+}
+
+/// The spacing evidence of a fixture page rebuilt from its fonts, graphics states and content stream
+/// (`operators` replaces the stream).
+private func operatorEvidence(_ page: OperatorSource.Page, operators: String? = nil) throws -> [NativeSpacingReader.Evidence] {
+    let fonts = page.fonts.map {
+        BoundaryFont(name: $0.resourceName, firstChar: $0.firstChar, widths: $0.widths, map: $0.toUnicode,
+                     encoding: $0.encoding, subtype: $0.subtype)
+    }
+    let states = page.extGStates.sorted { $0.key < $1.key }.map { "/\($0.key) \($0.value)" }.joined(separator: " ")
+    let document = try boundaryPDF(fonts: fonts, operators: operators ?? page.operators, extGState: states.isEmpty ? nil : states)
+    return NativeSpacingReader.read(try #require(document.page(at: 1)))
+}
+
+/// Every line of a fixture page that the spacing reader changes, as NativeTextReader applies it,
+/// keyed by PDFKit's text (trailing whitespace trimmed).
+private func operatorRepairs(_ page: OperatorSource.Page, operators: String? = nil) throws -> [String: String] {
+    let evidence = try operatorEvidence(page, operators: operators)
+    let bounds = page.lines.map { CGRect(x: $0.rect[0], y: $0.rect[1], width: $0.rect[2], height: $0.rect[3]) }
+    var repaired: [String: String] = [:]
+    for (index, line) in page.lines.enumerated() {
+        let result = NativeSpacingReader.apply(evidence, to: NSAttributedString(string: line.text), bounds: bounds[index], allBounds: bounds).string
+        if result != line.text {
+            repaired[line.text.trimmingCharacters(in: .whitespaces)] = result.trimmingCharacters(in: .whitespaces)
+        }
+    }
+    return repaired
+}
+
+@Test func operatorSpaceSeparatesTheMathSpaceFromKernsScriptsAndClosedSigns() {
+    func space(_ left: Unicode.Scalar, _ right: Unicode.Scalar, _ gap: CGFloat) -> Bool {
+        NativeSpacingReader.operatorSpace(left: left, right: right, gap: gap)
+    }
+    // Measured on Wallace page 7 (`− 5 + ( − 3)`, `add 5 + 3`): every gap beside an operator is TeX's
+    // thin space, 0.160–0.172 em, whichever side PDFKit spaced; and Replay Clocks' `𝑛 = 32` at 0.285 em.
+    #expect(space("5", "+", 0.1629) && space("+", "(", 0.1719) && space("(", "\u{2212}", 0.1601))
+    #expect(space("\u{2212}", "5", 0.1655) && space("=", "\u{2212}", 0.1600) && space("\u{1D45B}", "=", 0.2851))
+    #expect(space("\u{2264}", "E", 0.3) && space("\u{00D7}", "1", 0.2) && space("f", "\u{2212}", 0.1624))
+    // The thresholds: a thin space at 0.15 em (Wallace sets no operator gap from 0.14 to 0.15 em) up to an em.
+    #expect(space("5", "+", 0.15) && !space("5", "+", 0.1499))
+    #expect(space("5", "+", 1) && !space("5", "+", 1.01))
+    // Kerns stay joined: Replay's caption (e) sets `𝑛=` at 0.035 em where its siblings set 0.285, TeX
+    // sets two relations together (`>>`, 0.043 em), and Wallace's script-size signs sit at 0.047 em.
+    #expect(!space("\u{1D45B}", "=", 0.0349) && !space(">", ">", 0.043) && !space("\u{2212}", "5", 0.0473))
+    // No operator (juxtaposed variables, #119's kerns; the ASCII hyphen, slash and middle dot are prose
+    // punctuation), whitespace on either side, or no measurement.
+    #expect(!space("x", "y", 0.3) && !space("-", "5", 0.3) && !space("/", "2", 0.3) && !space("\u{00B7}", "2", 0.3))
+    #expect(!space(" ", "+", 0.3) && !space("+", " ", 0.3) && !space("5", "+", .nan) && !space("5", "+", .infinity))
+}
+
+@Test func wallaceWorkedExamplesSpaceEveryOperatorAsTheSourceSetsIt() throws {
+    let source = try OperatorSource.load("algebra-7-8")
+    #expect(source.sourceSHA256 == (try SourceLayoutFixture.load("algebra-10")).sourceSHA256)
+    let seven = try #require(source.pages.first { $0.page == 7 }), eight = try #require(source.pages.first { $0.page == 8 })
+    // Every change on the two pages, reviewed on 150-dpi renders (math-operator-spaces record): TeXmacs
+    // sets one thin space on both sides of each sign, the unary minus included (`( − 3)`), as kerns.
+    // PDFKit kept the space after the sign and dropped the one before (#188: `− 5+ (− 3)`, `add 5+ 3`).
+    #expect(try operatorRepairs(seven) == [
+        "− 5+ (− 3)": "− 5 + ( − 3)",
+        "Same sign, add 5+ 3, keep the negative": "Same sign, add 5 + 3, keep the negative",
+        "− 7+ (− 5)": "− 7 + ( − 5)",
+        "Same sign, add 7+ 5, keep the negative": "Same sign, add 7 + 5, keep the negative",
+        "− 7+ 2": "− 7 + 2",
+        "Diﬀerent signs, subtract 7− 2, use sign from bigger number, negative":
+            "Diﬀerent signs, subtract 7 − 2, use sign from bigger number, negative",
+        "− 4+ 6": "− 4 + 6",
+        "Diﬀerent signs, subtract 6− 4, use sign from bigger number, positive":
+            "Diﬀerent signs, subtract 6 − 4, use sign from bigger number, positive",
+    ])
+    let repaired = try operatorRepairs(eight)
+    #expect(repaired == [
+        "4+(− 3)": "4 + ( − 3)",
+        "Diﬀerent signs, subtract 4− 3, use sign from bigger number, positive":
+            "Diﬀerent signs, subtract 4 − 3, use sign from bigger number, positive",
+        "7+(− 10)": "7 + ( − 10)",
+        "Diﬀerent signs, subtract 10− 7, use sign from bigger number, negative":
+            "Diﬀerent signs, subtract 10 − 7, use sign from bigger number, negative",
+        "8− 3": "8 − 3",
+        "8+(− 3)": "8 + ( − 3)",
+        "Diﬀerent signs, subtract 8− 3, use sign from bigger number, positive":
+            "Diﬀerent signs, subtract 8 − 3, use sign from bigger number, positive",
+        "− 4− 6": "− 4 − 6",
+        "− 4+ (− 6)": "− 4 + ( − 6)",
+        "Same sign, add 4+ 6, keep the negative": "Same sign, add 4 + 6, keep the negative",
+        "9− (− 4)": "9 − ( − 4)",
+        "9 +4": "9 + 4",
+        "Add the opposite of− 4": "Add the opposite of − 4",
+        "Same sign, add 9+ 4, keep the positive": "Same sign, add 9 + 4, keep the positive",
+        "− 6− (− 2)": "− 6 − ( − 2)",
+        "− 6 +2": "− 6 + 2",
+        "Add the opposite of− 2": "Add the opposite of − 2",
+        "Diﬀerent sign, subtract 6− 2, use sign from bigger number, negative":
+            "Diﬀerent sign, subtract 6 − 2, use sign from bigger number, negative",
+    ])
+    // #189: no line gains a space after its ﬀ ligature, whose in-word gap is a kern (−0.005 to 0.017 em).
+    #expect(repaired.values.allSatisfy { !$0.contains("\u{FB00} ") })
+    #expect(eight.lines.filter { $0.text.contains("Diﬀerent") }.count == 4)
+    // Negative controls on the same source. Example 1's `5|+` adjustment at 0.12 em (below the thin
+    // space) leaves that boundary as PDFKit read it while the other signs gain their spaces; Ghostscript
+    // sets no character or word spacing, so none of this depends on #119's producer condition.
+    let example = "[(5)-162.863(+)-171.939(\\()159.952]TJ"
+    #expect(seven.operators.contains(example) && !seven.operators.contains(" Tc") && !seven.operators.contains(" Tw"))
+    let kern = try operatorRepairs(seven, operators: seven.operators.replacingOccurrences(of: example, with: "[(5)-120(+)-171.939(\\()159.952]TJ"))
+    #expect(kern["− 5+ (− 3)"] == "− 5+ ( − 3)")
+    // The same adjustments between digits record nothing: only a boundary beside an operator is read.
+    let shows = try operatorEvidence(seven)
+    #expect(shows.first { $0.unicode == "5+(" }.map { $0.operatorGaps.keys.sorted() } == [1, 2])
+    #expect(shows.allSatisfy { !$0.spaced && $0.wordSpaces.isEmpty })
+    let digits = try operatorEvidence(seven, operators: seven.operators.replacingOccurrences(of: example, with: "[(5)-162.863(7)-171.939(\\()159.952]TJ"))
+    #expect(digits.first { $0.unicode == "57(" }?.operatorGaps.isEmpty == true)
+}
+
+@Test func replayCaptionsSpaceTheirRelationsAndKeepTheOneTheAuthorsSetClosed() throws {
+    let source = try OperatorSource.load("replay-7")
+    #expect(source.sourceSHA256 == (try SourceLayoutFixture.load("replay-1")).sourceSHA256)
+    let page = try #require(source.pages.first)
+    // pdfLaTeX sets a relation's thick space as the gap between shows: 0.285 em after `𝑛` (LibertineMathMI)
+    // before `=` (txmiaX), which PDFKit dropped. Caption (e) is set `𝑛=` at 0.035 em in the source and
+    // stays so, beside five siblings that gain the space (render reviewed in the record). The page's
+    // other repairs are #43's font-change word spaces (`Ewhile`), which hold no operator.
+    let repaired = try operatorRepairs(page).filter { $0.key.unicodeScalars.contains(where: NativeSpacingReader.mathOperators.contains) }
+    #expect(repaired == [
+        "(a) 𝛼 = 20 messages/s, 𝑛= 32.": "(a) 𝛼 = 20 messages/s, 𝑛 = 32.",
+        "(b) 𝛼 = 40 messages/s, 𝑛= 32.": "(b) 𝛼 = 40 messages/s, 𝑛 = 32.",
+        "(c) 𝛼 = 160 messages/s, 𝑛= 32.": "(c) 𝛼 = 160 messages/s, 𝑛 = 32.",
+        "(d) 𝛼 = 20 messages/s, 𝑛= 64.": "(d) 𝛼 = 20 messages/s, 𝑛 = 64.",
+        "Figure 5: 𝜏 vs Ewhen varying 𝐼, 𝛿= 8𝜇𝑠.": "Figure 5: 𝜏 vs E when varying 𝐼, 𝛿 = 8𝜇𝑠.",
+        "(f) 𝛼 = 160 messages/s, 𝑛= 64.": "(f) 𝛼 = 160 messages/s, 𝑛 = 64.",
+        "in the simulation to ensure that if E= 1𝑚𝑠 then the worst-case": "in the simulation to ensure that if E = 1𝑚𝑠 then the worst-case",
+    ])
+    #expect(page.lines.contains { $0.text.hasPrefix("(e) 𝛼 = 40 messages/s, 𝑛= 64.") })
+}
+
+@Test func whetherASignStandsApartDoesNotDecideThatARowIsProse() {
+    // Wallace page 89's paragraph beside its coordinate plane, every line on one measure. Its last
+    // line was `representing x =1, 2, 3.` as PDFKit spaced it; with both math spaces read, a sign
+    // counted as a token of its own tipped the row under isWordy's 40% and into a formula crop.
+    func line(_ text: String, _ y: CGFloat) -> TextLine {
+        TextLine(text: text, rect: CGRect(x: 400, y: y, width: 300, height: 12), fontSize: 12)
+    }
+    let paragraph = [line("The plane is divided into four sections by a horizontal", 700),
+                     line("number line and a vertical number line. Where the two", 688),
+                     line("lines meet in the center is called the origin. This center", 676),
+                     line("origin is where x = 0 and y = 0. As we move to the right", 664)]
+    for text in ["from zero, representing x =1, 2, 3....", "from zero, representing x = 1, 2, 3....",
+                 "from zero, representing x=1, 2, 3....", "from zero, representing x = 1 , 2 , 3 ...."] {
+        let row = line(text, 652)
+        #expect(LayoutReconstructor.isProseRow(row, in: paragraph + [row], body: 12) == !text.contains(" , "), "\(text)")
+    }
+    // Controls on the same measure: terms still count, so a row of arithmetic with two words is not
+    // prose however its signs are spaced, and neither is a derivation step.
+    for text in ["the sum 3 + 4 = 7 + 1 = 8 − 2", "the sum 3+ 4= 7+ 1= 8− 2", "x = 1; y = 2(1) − 3 = 2 − 3 = − 1"] {
+        let row = line(text, 652)
+        #expect(!LayoutReconstructor.isProseRow(row, in: paragraph + [row], body: 12), "\(text)")
+    }
+}

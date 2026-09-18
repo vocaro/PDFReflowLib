@@ -1,0 +1,419 @@
+1	101	in	>	>	0.0430	0	1	0	activated a white LED at time 𝑡2 where 𝑡2 >> 𝑡1. In other words, an
+1	101	cross	>	𝑡	0.2648	1	1	1	activated a white LED at time 𝑡2 where 𝑡2 >> 𝑡1. In other words, an
+2	6	cross	𝑒	<	0.4880	1	1	1	skew, E, they guarantee that ℎ𝑙𝑐.𝑒 < ℎ𝑙𝑐.𝑓 if 𝑒 happened before
+2	6	cross	<	ℎ	0.3734	1	1	1	skew, E, they guarantee that ℎ𝑙𝑐.𝑒 < ℎ𝑙𝑐.𝑓 if 𝑒 happened before
+2	7	in	+	E	0.2490	0	1	1	𝑓 or 𝑝𝑡.𝑒+E< 𝑝𝑡.𝑓 ([6]). Here, ℎ𝑙𝑐.𝑒 denotes the Hybrid Logical
+2	7	cross	𝑒	+	0.2991	0	1	1	𝑓 or 𝑝𝑡.𝑒+E< 𝑝𝑡.𝑓 ([6]). Here, ℎ𝑙𝑐.𝑒 denotes the Hybrid Logical
+2	7	cross	E	<	0.3769	0	1	1	𝑓 or 𝑝𝑡.𝑒+E< 𝑝𝑡.𝑓 ([6]). Here, ℎ𝑙𝑐.𝑒 denotes the Hybrid Logical
+2	7	cross	<	𝑝	0.2968	1	1	1	𝑓 or 𝑝𝑡.𝑒+E< 𝑝𝑡.𝑓 ([6]). Here, ℎ𝑙𝑐.𝑒 denotes the Hybrid Logical
+2	9	cross	𝑒	<	0.3693	1	1	1	process 𝑒. In other words, ℎ𝑙𝑐.𝑒 < ℎ𝑙𝑐.𝑓 if 𝑓 causally depends upon
+2	9	cross	<	ℎ	0.2549	1	1	1	process 𝑒. In other words, ℎ𝑙𝑐.𝑒 < ℎ𝑙𝑐.𝑓 if 𝑓 causally depends upon
+2	16	cross	𝑒	−	0.2920	0	1	1	𝑓 such that |𝑝𝑡.𝑒−𝑝𝑡.𝑓|< Eand 𝑒||𝑓, i.e., the events are causally
+2	16	cross	−	𝑝	0.2020	0	1	1	𝑓 such that |𝑝𝑡.𝑒−𝑝𝑡.𝑓|< Eand 𝑒||𝑓, i.e., the events are causally
+2	16	cross	|	<	0.3388	0	1	1	𝑓 such that |𝑝𝑡.𝑒−𝑝𝑡.𝑓|< Eand 𝑒||𝑓, i.e., the events are causally
+2	16	cross	<	E	0.3198	1	1	1	𝑓 such that |𝑝𝑡.𝑒−𝑝𝑡.𝑓|< Eand 𝑒||𝑓, i.e., the events are causally
+2	18	cross	𝑒	<	0.3692	1	1	1	loss of generality, let ℎ𝑙𝑐.𝑒 < ℎ𝑙𝑐.𝑓. In this situation, when we replay
+2	18	cross	<	ℎ	0.2548	1	1	1	loss of generality, let ℎ𝑙𝑐.𝑒 < ℎ𝑙𝑐.𝑓. In this situation, when we replay
+2	41	cross	𝑒	<	0.3703	1	1	1	𝑒 then 𝑅𝑒𝑝𝐶𝑙.𝑒 < 𝑅𝑒𝑝𝐶𝑙.𝑓, i.e., the replay will cause 𝑒 to replayed
+2	41	cross	<	𝑅	0.2804	1	1	1	𝑒 then 𝑅𝑒𝑝𝐶𝑙.𝑒 < 𝑅𝑒𝑝𝐶𝑙.𝑓, i.e., the replay will cause 𝑒 to replayed
+2	76	cross	a	<	0.3141	1	1	1	timestamping algorithm defines a < relation that identifies how
+2	76	cross	<	r	0.3147	1	1	1	timestamping algorithm defines a < relation that identifies how
+2	79	cross	e	<	0.2496	1	1	1	timestamp 𝑙.𝑒to every event 𝑒. The < relation for Lamport’s logical
+2	79	cross	<	r	0.2503	1	1	1	timestamp 𝑙.𝑒to every event 𝑒. The < relation for Lamport’s logical
+2	80	cross	d	<	0.2717	1	1	1	clocks is the standard < for integers. Likewise, the physical times-
+2	80	cross	<	f	0.2728	1	1	1	clocks is the standard < for integers. Likewise, the physical times-
+2	83	cross	e	<	0.2267	1	1	1	curred, and the < relation is the same as that over integers. A vector
+2	83	cross	<	r	0.2281	1	1	1	curred, and the < relation is the same as that over integers. A vector
+2	85	cross	e	<	0.2711	1	1	1	that includes an entry 𝑣𝑐.𝑒.𝑗 for every process 𝑗. The < relation on
+2	85	cross	<	r	0.2717	1	1	1	that includes an entry 𝑣𝑐.𝑒.𝑗 for every process 𝑗. The < relation on
+2	89	cross	𝑒	<	0.3692	1	1	1	words, 𝑣𝑐.𝑒 < 𝑣𝑐.𝑓 iff (∀𝑗 :: 𝑣𝑐.𝑒.𝑗 ≤𝑣𝑐.𝑓.𝑗)∧(∃𝑗 :: 𝑣𝑐.𝑒.𝑗 < 𝑣𝑐.𝑓.𝑗).
+2	89	cross	<	𝑣	0.2747	1	1	1	words, 𝑣𝑐.𝑒 < 𝑣𝑐.𝑓 iff (∀𝑗 :: 𝑣𝑐.𝑒.𝑗 ≤𝑣𝑐.𝑓.𝑗)∧(∃𝑗 :: 𝑣𝑐.𝑒.𝑗 < 𝑣𝑐.𝑓.𝑗).
+2	89	cross	𝑗	≤	0.4012	1	1	1	words, 𝑣𝑐.𝑒 < 𝑣𝑐.𝑓 iff (∀𝑗 :: 𝑣𝑐.𝑒.𝑗 ≤𝑣𝑐.𝑓.𝑗)∧(∃𝑗 :: 𝑣𝑐.𝑒.𝑗 < 𝑣𝑐.𝑓.𝑗).
+2	89	cross	≤	𝑣	0.2829	0	1	1	words, 𝑣𝑐.𝑒 < 𝑣𝑐.𝑓 iff (∀𝑗 :: 𝑣𝑐.𝑒.𝑗 ≤𝑣𝑐.𝑓.𝑗)∧(∃𝑗 :: 𝑣𝑐.𝑒.𝑗 < 𝑣𝑐.𝑓.𝑗).
+2	89	cross	𝑗	<	0.3913	1	1	1	words, 𝑣𝑐.𝑒 < 𝑣𝑐.𝑓 iff (∀𝑗 :: 𝑣𝑐.𝑒.𝑗 ≤𝑣𝑐.𝑓.𝑗)∧(∃𝑗 :: 𝑣𝑐.𝑒.𝑗 < 𝑣𝑐.𝑓.𝑗).
+2	89	cross	<	𝑣	0.2747	1	1	1	words, 𝑣𝑐.𝑒 < 𝑣𝑐.𝑓 iff (∀𝑗 :: 𝑣𝑐.𝑒.𝑗 ≤𝑣𝑐.𝑓.𝑗)∧(∃𝑗 :: 𝑣𝑐.𝑒.𝑗 < 𝑣𝑐.𝑓.𝑗).
+2	90	cross	e	<	0.2800	1	1	1	Note that while the < relation is defined by the timestamping
+2	90	cross	<	r	0.2809	1	1	1	Note that while the < relation is defined by the timestamping
+2	91	cross	e	<	0.2683	1	1	1	algorithm, the properties of the < relation vary. For example, log-
+2	91	cross	<	r	0.2697	1	1	1	algorithm, the properties of the < relation vary. For example, log-
+2	93	cross	𝑒	<	0.5340	1	1	1	𝑙.𝑒 < 𝑙.𝑓. Vector clocks provide two-way causality information,
+2	93	cross	<	𝑙	0.4180	1	1	1	𝑙.𝑒 < 𝑙.𝑓. Vector clocks provide two-way causality information,
+2	94	cross	𝑒	<	0.3795	1	1	1	i.e., 𝑒 hb𝑓 ⇔𝑣𝑐.𝑒 < 𝑣𝑐.𝑓. By contrast, (unsynchronized) physical
+2	94	cross	<	𝑣	0.2849	1	1	1	i.e., 𝑒 hb𝑓 ⇔𝑣𝑐.𝑒 < 𝑣𝑐.𝑓. By contrast, (unsynchronized) physical
+2	100	cross	𝑗	−	0.3103	0	1	1	by at most E, where Eis a parameter, i.e., ∀𝑗,𝑘 :: |𝑝𝑡.𝑗−𝑝𝑡.𝑘|≤E.
+2	100	cross	−	𝑝	0.1979	0	1	1	by at most E, where Eis a parameter, i.e., ∀𝑗,𝑘 :: |𝑝𝑡.𝑗−𝑝𝑡.𝑘|≤E.
+2	100	in	|	≤	0.3480	0	1	1	by at most E, where Eis a parameter, i.e., ∀𝑗,𝑘 :: |𝑝𝑡.𝑗−𝑝𝑡.𝑘|≤E.
+2	100	in	≤	E	0.3280	0	1	1	by at most E, where Eis a parameter, i.e., ∀𝑗,𝑘 :: |𝑝𝑡.𝑗−𝑝𝑡.𝑘|≤E.
+3	11	cross	𝑓	<	0.5506	1	1	1	{𝑒|¬(∃𝑓 : 𝑡𝑠.𝑓 < 𝑡𝑠.𝑒)}. We replay one of these events randomly.
+3	11	cross	<	𝑡	0.3072	1	1	1	{𝑒|¬(∃𝑓 : 𝑡𝑠.𝑓 < 𝑡𝑠.𝑒)}. We replay one of these events randomly.
+3	19	cross	𝑆	≠	0.3583	1	1	1	2: while 𝑆 ≠ 𝜙 do
+3	19	cross	≠	𝜙	0.2427	1	1	1	2: while 𝑆 ≠ 𝜙 do
+3	20	cross	𝑒	=	0.3488	0	1	1	𝐹𝑟𝑜𝑛𝑡𝐿𝑖𝑛𝑒= {𝑒|(𝑒,𝑡𝑠.𝑒)∈𝑆∧¬(∃𝑓 : (𝑓,𝑡𝑠.𝑓)∈𝑆∧𝑡𝑠.𝑓 <
+3	20	cross	=	{	0.3027	1	1	1	𝐹𝑟𝑜𝑛𝑡𝐿𝑖𝑛𝑒= {𝑒|(𝑒,𝑡𝑠.𝑒)∈𝑆∧¬(∃𝑓 : (𝑓,𝑡𝑠.𝑓)∈𝑆∧𝑡𝑠.𝑓 <
+3	20	cross	𝑓	<	0.5082	1	1	1	𝐹𝑟𝑜𝑛𝑡𝐿𝑖𝑛𝑒= {𝑒|(𝑒,𝑡𝑠.𝑒)∈𝑆∧¬(∃𝑓 : (𝑓,𝑡𝑠.𝑓)∈𝑆∧𝑡𝑠.𝑓 <
+3	24	cross	𝑆	=	0.3583	0	1	1	5: 𝑆= 𝑆−{𝑒}
+3	24	cross	=	𝑆	0.2478	1	1	1	5: 𝑆= 𝑆−{𝑒}
+3	24	in	−	{	0.2470	0	1	1	5: 𝑆= 𝑆−{𝑒}
+3	24	cross	𝑆	−	0.3027	0	1	1	5: 𝑆= 𝑆−{𝑒}
+3	45	cross	𝑗	−	0.1362	0	1	0	|𝑝𝑡.𝑗−𝑝𝑡.𝑘|≤E. The goal of RepCl is to assign a timestamp 𝑅𝑒𝑝𝐶𝑙.𝑒
+3	45	cross	−	𝑝	0.0227	0	1	0	|𝑝𝑡.𝑗−𝑝𝑡.𝑘|≤E. The goal of RepCl is to assign a timestamp 𝑅𝑒𝑝𝐶𝑙.𝑒
+3	45	in	≤	E	0.3280	0	1	1	|𝑝𝑡.𝑗−𝑝𝑡.𝑘|≤E. The goal of RepCl is to assign a timestamp 𝑅𝑒𝑝𝐶𝑙.𝑒
+3	45	in	|	≤	0.3480	0	1	1	|𝑝𝑡.𝑗−𝑝𝑡.𝑘|≤E. The goal of RepCl is to assign a timestamp 𝑅𝑒𝑝𝐶𝑙.𝑒
+3	48	cross	𝑒	<	0.3687	1	1	1	𝑅𝑒𝑝𝐶𝑙.𝑒 < 𝑅𝑒𝑝𝐶𝑙.𝑓, i.e., 𝑒 will always be replayed before 𝑓
+3	48	cross	<	𝑅	0.2799	1	1	1	𝑅𝑒𝑝𝐶𝑙.𝑒 < 𝑅𝑒𝑝𝐶𝑙.𝑓, i.e., 𝑒 will always be replayed before 𝑓
+3	51	in	≈	E	0.3920	0	1	1	of E1 where E1 ≈Ethen 𝑒 will be replayed before 𝑓, i.e.,
+3	52	cross	𝑒	<	0.3687	1	1	1	𝑅𝑒𝑝𝐶𝑙.𝑒 < 𝑅𝑒𝑝𝐶𝑙.𝑓
+3	52	cross	<	𝑅	0.2799	1	1	1	𝑅𝑒𝑝𝐶𝑙.𝑒 < 𝑅𝑒𝑝𝐶𝑙.𝑓
+3	55	in	≈	E	0.2980	0	1	1	E2, where E2 ≈Ethen 𝑅𝑒𝑝𝐶𝑙.𝑒||𝑅𝑒𝑝𝐶𝑙.𝑓 (i.e., ¬(𝑅𝑒𝑝𝐶𝑙.𝑒 <
+3	55	cross	𝑒	<	0.3697	1	1	1	E2, where E2 ≈Ethen 𝑅𝑒𝑝𝐶𝑙.𝑒||𝑅𝑒𝑝𝐶𝑙.𝑓 (i.e., ¬(𝑅𝑒𝑝𝐶𝑙.𝑒 <
+3	56	cross	𝑓	<	0.5082	1	1	1	𝑅𝑒𝑝𝐶𝑙.𝑓)∧¬(𝑅𝑒𝑝𝐶𝑙.𝑓 < 𝑅𝑒𝑝𝐶𝑙.𝑒))
+3	56	cross	<	𝑅	0.2798	1	1	1	𝑅𝑒𝑝𝐶𝑙.𝑓)∧¬(𝑅𝑒𝑝𝐶𝑙.𝑓 < 𝑅𝑒𝑝𝐶𝑙.𝑒))
+3	66	cross	0	<	0.2943	1	1	1	0 < 𝐼 ≤Esuch that E= 𝜖∗𝐼, where 𝜖 is an integer. The timeline
+3	66	cross	<	𝐼	0.2853	1	1	1	0 < 𝐼 ≤Esuch that E= 𝜖∗𝐼, where 𝜖 is an integer. The timeline
+3	66	in	≤	E	0.3280	0	1	1	0 < 𝐼 ≤Esuch that E= 𝜖∗𝐼, where 𝜖 is an integer. The timeline
+3	66	cross	𝐼	≤	0.4184	1	1	1	0 < 𝐼 ≤Esuch that E= 𝜖∗𝐼, where 𝜖 is an integer. The timeline
+3	66	cross	E	=	0.3394	0	1	1	0 < 𝐼 ≤Esuch that E= 𝜖∗𝐼, where 𝜖 is an integer. The timeline
+3	66	cross	=	𝜖	0.2433	1	1	1	0 < 𝐼 ≤Esuch that E= 𝜖∗𝐼, where 𝜖 is an integer. The timeline
+3	66	cross	𝜖	∗	0.2939	0	1	1	0 < 𝐼 ≤Esuch that E= 𝜖∗𝐼, where 𝜖 is an integer. The timeline
+3	66	cross	∗	𝐼	0.2074	0	1	1	0 < 𝐼 ≤Esuch that E= 𝜖∗𝐼, where 𝜖 is an integer. The timeline
+3	79	cross	𝑗	−	0.3234	0	1	1	𝑚𝑥.𝑗−offset.𝑗.𝑘 denotes the maximum epoch value of 𝑘 that 𝑗
+3	79	cross	−	o	0.2308	0	1	1	𝑚𝑥.𝑗−offset.𝑗.𝑘 denotes the maximum epoch value of 𝑘 that 𝑗
+3	90	cross	𝑗	−	0.3604	0	1	1	to change the value of 𝑚𝑥. Since 𝑚𝑥.𝑗−offset.𝑗.𝑘 denotes the
+3	90	cross	−	o	0.2678	0	1	1	to change the value of 𝑚𝑥. Since 𝑚𝑥.𝑗−offset.𝑗.𝑘 denotes the
+3	93	cross	𝑥	−	0.4498	0	1	1	of 𝑘 then 𝑛𝑒𝑤𝑚𝑥−newoffset.𝑗.𝑘 should remain the same as
+3	93	cross	−	n	0.3598	0	1	1	of 𝑘 then 𝑛𝑒𝑤𝑚𝑥−newoffset.𝑗.𝑘 should remain the same as
+3	94	cross	𝑗	−	0.4028	0	1	1	𝑚𝑥.𝑗−offset.𝑗.𝑘. Hence, Shift operation changes offset.𝑗.𝑘 to
+3	94	cross	−	o	0.3103	0	1	1	𝑚𝑥.𝑗−offset.𝑗.𝑘. Hence, Shift operation changes offset.𝑗.𝑘 to
+3	95	in	+	(	0.2720	0	1	1	be offset.𝑗.𝑘+(𝑛𝑒𝑤𝑚𝑥−𝑚𝑥). Furthermore, if this value is more
+3	95	cross	𝑘	+	0.2972	0	1	1	be offset.𝑗.𝑘+(𝑛𝑒𝑤𝑚𝑥−𝑚𝑥). Furthermore, if this value is more
+3	95	cross	𝑥	−	0.3118	0	1	1	be offset.𝑗.𝑘+(𝑛𝑒𝑤𝑚𝑥−𝑚𝑥). Furthermore, if this value is more
+3	95	cross	−	𝑚	0.1589	0	1	1	be offset.𝑗.𝑘+(𝑛𝑒𝑤𝑚𝑥−𝑚𝑥). Furthermore, if this value is more
+3	100	cross	𝜖	=	0.3493	1	1	1	𝑚𝑥 is changed to 20 will result in ⟨20,[8,10,18]⟩. If 𝜖 = 15, this will
+3	100	cross	=	1	0.2777	1	1	1	𝑚𝑥 is changed to 20 will result in ⟨20,[8,10,18]⟩. If 𝜖 = 15, this will
+4	1	cross	𝜖	=	0.0715	0	1	0	Figure 2: Working of Shift() on Process 0. Here, 𝜖=15, and the
+4	24	cross	𝑥	−	0.3182	0	1	1	it equal to 𝑛𝑒𝑤𝑚𝑥−epoch.𝑗. The Shift operation is illustrated in
+4	24	cross	−	e	0.2282	0	1	1	it equal to 𝑛𝑒𝑤𝑚𝑥−epoch.𝑗. The Shift operation is illustrated in
+4	30	in	+	(	0.2720	0	1	1	4: 𝑡𝑠.offset.𝑘 ←offset.𝑘+(𝑛𝑒𝑤𝑚𝑥−𝑡𝑠.𝑚𝑥)
+4	30	cross	𝑘	+	0.2978	0	1	1	4: 𝑡𝑠.offset.𝑘 ←offset.𝑘+(𝑛𝑒𝑤𝑚𝑥−𝑡𝑠.𝑚𝑥)
+4	30	cross	𝑥	−	0.3122	0	1	1	4: 𝑡𝑠.offset.𝑘 ←offset.𝑘+(𝑛𝑒𝑤𝑚𝑥−𝑡𝑠.𝑚𝑥)
+4	30	cross	−	𝑡	0.1872	0	1	1	4: 𝑡𝑠.offset.𝑘 ←offset.𝑘+(𝑛𝑒𝑤𝑚𝑥−𝑡𝑠.𝑚𝑥)
+4	32	cross	𝑘	>	0.3743	1	1	1	if 𝑡𝑠.offset.𝑘 > 𝜖 then
+4	32	cross	>	𝜖	0.2647	1	1	1	if 𝑡𝑠.offset.𝑘 > 𝜖 then
+4	37	cross	𝑥	−	0.3112	0	1	1	2: new_offset ←𝑛𝑒𝑤𝑚𝑥−epoch.𝑗
+4	37	cross	−	e	0.2222	0	1	1	2: new_offset ←𝑛𝑒𝑤𝑚𝑥−epoch.𝑗
+4	38	cross	𝑗	=	0.3712	0	1	1	3: if (𝑚𝑥.𝑗= 𝑛𝑒𝑤𝑚𝑥∧offset.𝑗.𝑗= new_offset)then
+4	38	cross	=	𝑛	0.2378	1	1	1	3: if (𝑚𝑥.𝑗= 𝑛𝑒𝑤𝑚𝑥∧offset.𝑗.𝑗= new_offset)then
+4	38	cross	𝑗	=	0.3708	0	1	1	3: if (𝑚𝑥.𝑗= 𝑛𝑒𝑤𝑚𝑥∧offset.𝑗.𝑗= new_offset)then
+4	38	cross	=	n	0.2778	1	1	1	3: if (𝑚𝑥.𝑗= 𝑛𝑒𝑤𝑚𝑥∧offset.𝑗.𝑗= new_offset)then
+4	39	cross	𝑗	+	0.3152	0	1	1	4: counter.𝑗.𝑗 ←counter.𝑗.𝑗+1
+4	39	cross	+	1	0.2223	0	1	1	4: counter.𝑗.𝑗 ←counter.𝑗.𝑗+1
+4	42	cross	𝑥	−	0.3122	0	1	1	7: offset.𝑗.𝑗 ←min(𝑛𝑒𝑤𝑚𝑥−epoch.𝑗,𝜖)
+4	42	cross	−	e	0.2222	0	1	1	7: offset.𝑗.𝑗 ←min(𝑛𝑒𝑤𝑚𝑥−epoch.𝑗,𝜖)
+4	72	cross	𝑗	+	0.3152	0	1	1	10: counter.𝑗.𝑗 ←counter.𝑗.𝑗+1
+4	72	cross	+	1	0.2223	0	1	1	10: counter.𝑗.𝑗 ←counter.𝑗.𝑗+1
+4	74	cross	𝑗	+	0.3152	0	1	1	12: counter.𝑗.𝑗 ←counter.𝑗.𝑗+1
+4	74	cross	+	1	0.2223	0	1	1	12: counter.𝑗.𝑗 ←counter.𝑗.𝑗+1
+4	77	cross	𝑗	+	0.3152	0	1	1	15: counter.𝑗.𝑗 ←counter.𝑗.𝑗+1
+4	77	cross	+	1	0.2223	0	1	1	15: counter.𝑗.𝑗 ←counter.𝑗.𝑗+1
+4	81	cross	𝜖	=	0.3500	1	1	1	ure 1. Assuming that 𝜖 = 5,𝐼= 1,and E= 5, the RepCl timestamps
+4	81	cross	=	5	0.2785	1	1	1	ure 1. Assuming that 𝜖 = 5,𝐼= 1,and E= 5, the RepCl timestamps
+4	81	cross	𝐼	=	0.3881	0	1	1	ure 1. Assuming that 𝜖 = 5,𝐼= 1,and E= 5, the RepCl timestamps
+4	81	cross	=	1	0.2785	1	1	1	ure 1. Assuming that 𝜖 = 5,𝐼= 1,and E= 5, the RepCl timestamps
+4	81	cross	E	=	0.3395	0	1	1	ure 1. Assuming that 𝜖 = 5,𝐼= 1,and E= 5, the RepCl timestamps
+4	81	cross	=	5	0.2785	1	1	1	ure 1. Assuming that 𝜖 = 5,𝐼= 1,and E= 5, the RepCl timestamps
+4	99	cross	e	<	0.2767	1	1	1	In this section, first, we define the < relation on two timestamps
+4	99	cross	<	r	0.2780	1	1	1	In this section, first, we define the < relation on two timestamps
+4	100	cross	s	<	0.3215	1	1	1	𝑅𝑒𝑝𝐶𝑙.𝑒 and 𝑅𝑒𝑝𝐶𝑙.𝑓. Then, we identify the properties of this <
+4	102	cross	𝑒	=	0.3488	0	1	1	Definition 1: Given timestamp 𝑅𝑒𝑝𝐶𝑙.𝑒=
+5	4	in	=	n	0.2500	1	1	1	2: Timestamp 𝑡𝑠 = new Timestamp
+5	4	cross	𝑠	=	0.3205	1	1	1	2: Timestamp 𝑡𝑠 = new Timestamp
+5	6	cross	𝑘	=	0.3533	0	1	1	4: 𝑡𝑠.offset.𝑗.𝑘= 𝑚𝑖𝑛(𝑡1.offset.𝑗.𝑘,𝑡2.offset.𝑗.𝑘)
+5	6	cross	=	𝑚	0.2147	1	1	1	4: 𝑡𝑠.offset.𝑗.𝑘= 𝑚𝑖𝑛(𝑡1.offset.𝑗.𝑘,𝑡2.offset.𝑗.𝑘)
+5	10	cross	𝑥	≠	0.3673	1	1	1	2: if 𝑡1.𝑚𝑥 ≠ 𝑡2.𝑚𝑥∨(∃𝑗𝑡1.offset.𝑗 ≠ 𝑡2.offset.𝑗)then
+5	10	cross	≠	𝑡	0.2427	1	1	1	2: if 𝑡1.𝑚𝑥 ≠ 𝑡2.𝑚𝑥∨(∃𝑗𝑡1.offset.𝑗 ≠ 𝑡2.offset.𝑗)then
+5	10	cross	𝑗	≠	0.3708	1	1	1	2: if 𝑡1.𝑚𝑥 ≠ 𝑡2.𝑚𝑥∨(∃𝑗𝑡1.offset.𝑗 ≠ 𝑡2.offset.𝑗)then
+5	10	cross	≠	𝑡	0.2427	1	1	1	2: if 𝑡1.𝑚𝑥 ≠ 𝑡2.𝑚𝑥∨(∃𝑗𝑡1.offset.𝑗 ≠ 𝑡2.offset.𝑗)then
+5	14	cross	𝑓	=	0.4873	0	1	1	𝑅𝑒𝑝𝐶𝑙.𝑓= ⟨𝑚𝑥.𝑓,offset.𝑓[],counter.𝑓[]⟩, we say that
+5	14	cross	=	⟨	0.3177	1	1	1	𝑅𝑒𝑝𝐶𝑙.𝑓= ⟨𝑚𝑥.𝑓,offset.𝑓[],counter.𝑓[]⟩, we say that
+5	15	cross	𝑒	<	0.3697	1	1	1	𝑅𝑒𝑝𝐶𝑙.𝑒 < 𝑅𝑒𝑝𝐶𝑙.𝑓 iff
+5	15	cross	<	𝑅	0.2798	1	1	1	𝑅𝑒𝑝𝐶𝑙.𝑒 < 𝑅𝑒𝑝𝐶𝑙.𝑓 iff
+5	16	cross	𝑓	>	0.5586	1	1	1	𝑚𝑥.𝑓 > 𝑚𝑥.𝑒 +𝜖
+5	16	cross	>	𝑚	0.2368	1	1	1	𝑚𝑥.𝑓 > 𝑚𝑥.𝑒 +𝜖
+5	16	cross	𝑒	+	0.2992	1	1	1	𝑚𝑥.𝑓 > 𝑚𝑥.𝑒 +𝜖
+5	16	cross	+	𝜖	0.1872	0	1	1	𝑚𝑥.𝑓 > 𝑚𝑥.𝑒 +𝜖
+5	23	cross	e	<	0.3253	1	1	1	The above < relation first compares if 𝑚𝑥.𝑓 and 𝑚𝑥.𝑒 are far
+5	23	cross	<	r	0.3259	1	1	1	The above < relation first compares if 𝑚𝑥.𝑓 and 𝑚𝑥.𝑒 are far
+5	24	cross	𝑒	<	0.3706	1	1	1	apart. If that is the case, we define 𝑅𝑒𝑝𝐶𝑙.𝑒 < 𝑅𝑒𝑝𝐶𝑙.𝑓. If they are
+5	24	cross	<	𝑅	0.2808	1	1	1	apart. If that is the case, we define 𝑅𝑒𝑝𝐶𝑙.𝑒 < 𝑅𝑒𝑝𝐶𝑙.𝑓. If they are
+5	25	cross	𝑓	−	0.4379	0	1	1	close, i.e., |𝑚𝑥.𝑓−𝑚𝑥.𝑒|≤𝜖, then, we compare the offsets. Since
+5	25	cross	−	𝑚	0.1654	0	1	1	close, i.e., |𝑚𝑥.𝑓−𝑚𝑥.𝑒|≤𝜖, then, we compare the offsets. Since
+5	25	in	|	≤	0.3630	0	1	1	close, i.e., |𝑚𝑥.𝑓−𝑚𝑥.𝑒|≤𝜖, then, we compare the offsets. Since
+5	25	cross	≤	𝜖	0.2886	0	1	1	close, i.e., |𝑚𝑥.𝑓−𝑚𝑥.𝑒|≤𝜖, then, we compare the offsets. Since
+5	26	cross	𝑒	−	0.0701	0	1	0	𝑚𝑥.𝑒−offset.𝑒.𝑘 identifies the knowledge 𝑒 had about the epoch of
+5	26	cross	−	o	-0.0001	0	1	0	𝑚𝑥.𝑒−offset.𝑒.𝑘 identifies the knowledge 𝑒 had about the epoch of
+5	28	cross	f	<	0.2293	1	1	1	determine if < relation holds between 𝑅𝑒𝑝𝐶𝑙.𝑒and 𝑅𝑒𝑝𝐶𝑙.𝑓. Finally,
+5	28	cross	<	r	0.2299	1	1	1	determine if < relation holds between 𝑅𝑒𝑝𝐶𝑙.𝑒and 𝑅𝑒𝑝𝐶𝑙.𝑓. Finally,
+5	34	cross	𝑒	<	0.5321	1	1	1	that 𝑅𝑒𝑝𝐶𝑙.𝑒||𝑅𝑒𝑝𝐶𝑙.𝑓 iff ¬(𝑅𝑒𝑝𝐶𝑙.𝑒 < 𝑅𝑒𝑝𝐶𝑙.𝑓)∧¬(𝑅𝑒𝑝𝐶𝑙.𝑓 <
+5	34	cross	<	𝑅	0.4422	1	1	1	that 𝑅𝑒𝑝𝐶𝑙.𝑒||𝑅𝑒𝑝𝐶𝑙.𝑓 iff ¬(𝑅𝑒𝑝𝐶𝑙.𝑒 < 𝑅𝑒𝑝𝐶𝑙.𝑓)∧¬(𝑅𝑒𝑝𝐶𝑙.𝑓 <
+5	34	cross	𝑓	<	0.6706	1	1	1	that 𝑅𝑒𝑝𝐶𝑙.𝑒||𝑅𝑒𝑝𝐶𝑙.𝑓 iff ¬(𝑅𝑒𝑝𝐶𝑙.𝑒 < 𝑅𝑒𝑝𝐶𝑙.𝑓)∧¬(𝑅𝑒𝑝𝐶𝑙.𝑓 <
+5	39	cross	𝑒	<	0.3697	1	1	1	Lemma 1: (e happened before f) ⇒𝑅𝑒𝑝𝐶𝑙.𝑒 < 𝑅𝑒𝑝𝐶𝑙.𝑓
+5	39	cross	<	𝑅	0.2798	1	1	1	Lemma 1: (e happened before f) ⇒𝑅𝑒𝑝𝐶𝑙.𝑒 < 𝑅𝑒𝑝𝐶𝑙.𝑓
+5	40	cross	𝑒	−	0.2767	0	1	1	Lemma 2: |𝑚𝑥.𝑒−𝑚𝑎𝑥𝑡.𝑓|≤𝜖∧(𝑒||𝑓) ⇒ 𝑅𝑒𝑝𝐶𝑙.𝑒||𝑅𝑒𝑝𝐶𝑙.𝑓
+5	40	cross	−	𝑚	0.1437	0	1	0	Lemma 2: |𝑚𝑥.𝑒−𝑚𝑎𝑥𝑡.𝑓|≤𝜖∧(𝑒||𝑓) ⇒ 𝑅𝑒𝑝𝐶𝑙.𝑒||𝑅𝑒𝑝𝐶𝑙.𝑓
+5	40	in	|	≤	0.3480	0	1	1	Lemma 2: |𝑚𝑥.𝑒−𝑚𝑎𝑥𝑡.𝑓|≤𝜖∧(𝑒||𝑓) ⇒ 𝑅𝑒𝑝𝐶𝑙.𝑒||𝑅𝑒𝑝𝐶𝑙.𝑓
+5	40	cross	≤	𝜖	0.2725	0	1	1	Lemma 2: |𝑚𝑥.𝑒−𝑚𝑎𝑥𝑡.𝑓|≤𝜖∧(𝑒||𝑓) ⇒ 𝑅𝑒𝑝𝐶𝑙.𝑒||𝑅𝑒𝑝𝐶𝑙.𝑓
+5	45	in	E	+	0.2820	0	1	1	ment. Specifically, we show that by letting E1 = E+𝐼, the second
+5	45	cross	=	E	0.2978	1	1	1	ment. Specifically, we show that by letting E1 = E+𝐼, the second
+5	45	cross	+	𝐼	0.2057	0	1	1	ment. Specifically, we show that by letting E1 = E+𝐼, the second
+5	57	cross	𝑓	>	0.6970	1	1	1	If 𝑚𝑝𝑡.𝑓 > 𝑚𝑝𝑡.𝑒 +E1 then 𝑓 cannot occur before 𝑒 under the
+5	57	cross	>	𝑚	0.4266	1	1	1	If 𝑚𝑝𝑡.𝑓 > 𝑚𝑝𝑡.𝑒 +E1 then 𝑓 cannot occur before 𝑒 under the
+5	57	in	+	E	0.3180	0	1	1	If 𝑚𝑝𝑡.𝑓 > 𝑚𝑝𝑡.𝑒 +E1 then 𝑓 cannot occur before 𝑒 under the
+5	57	cross	𝑒	+	0.3691	1	1	1	If 𝑚𝑝𝑡.𝑓 > 𝑚𝑝𝑡.𝑒 +E1 then 𝑓 cannot occur before 𝑒 under the
+5	59	cross	𝑒	<	0.3687	1	1	1	situation, it is guaranteed that 𝑅𝑒𝑝𝐶𝑙.𝑒 < 𝑅𝑒𝑝𝐶𝑙.𝑓.
+5	59	cross	<	𝑅	0.2799	1	1	1	situation, it is guaranteed that 𝑅𝑒𝑝𝐶𝑙.𝑒 < 𝑅𝑒𝑝𝐶𝑙.𝑓.
+5	60	cross	𝑓	=	0.5225	0	1	1	By definition of 𝑚𝑥, 𝑚𝑥.𝑓= ⌊𝑚𝑝𝑡.𝑓
+5	60	cross	=	⌊	0.3739	1	1	1	By definition of 𝑚𝑥, 𝑚𝑥.𝑓= ⌊𝑚𝑝𝑡.𝑓
+5	64	cross	−	1	0.0000	0	1	0	−1 < (𝑥−⌊𝑥⌋)−(𝑦−⌊𝑦⌋)< 1
+5	64	cross	1	<	0.2987	1	1	1	−1 < (𝑥−⌊𝑥⌋)−(𝑦−⌊𝑦⌋)< 1
+5	64	cross	<	(	0.3498	1	1	1	−1 < (𝑥−⌊𝑥⌋)−(𝑦−⌊𝑦⌋)< 1
+5	64	in	−	⌊	0.2820	0	1	1	−1 < (𝑥−⌊𝑥⌋)−(𝑦−⌊𝑦⌋)< 1
+5	64	cross	𝑥	−	0.3117	0	1	1	−1 < (𝑥−⌊𝑥⌋)−(𝑦−⌊𝑦⌋)< 1
+5	64	in	)	−	0.2720	0	1	1	−1 < (𝑥−⌊𝑥⌋)−(𝑦−⌊𝑦⌋)< 1
+5	64	in	−	(	0.2720	0	1	1	−1 < (𝑥−⌊𝑥⌋)−(𝑦−⌊𝑦⌋)< 1
+5	64	in	−	⌊	0.2820	0	1	1	−1 < (𝑥−⌊𝑥⌋)−(𝑦−⌊𝑦⌋)< 1
+5	64	cross	𝑦	−	0.2727	0	1	1	−1 < (𝑥−⌊𝑥⌋)−(𝑦−⌊𝑦⌋)< 1
+5	64	cross	)	<	0.3487	0	1	1	−1 < (𝑥−⌊𝑥⌋)−(𝑦−⌊𝑦⌋)< 1
+5	64	cross	<	1	0.2998	1	1	1	−1 < (𝑥−⌊𝑥⌋)−(𝑦−⌊𝑦⌋)< 1
+5	65	cross	∴	−	1.1717	0	1	0	∴−1 < (𝑚𝑝𝑡.𝑓
+5	65	cross	−	1	0.0000	0	1	0	∴−1 < (𝑚𝑝𝑡.𝑓
+5	65	cross	1	<	0.2987	1	1	1	∴−1 < (𝑚𝑝𝑡.𝑓
+5	65	cross	<	(	0.3498	1	1	1	∴−1 < (𝑚𝑝𝑡.𝑓
+5	70	cross	∴	−	1.1717	0	1	0	∴−1 < (𝑚𝑝𝑡.𝑓
+5	70	cross	−	1	0.0000	0	1	0	∴−1 < (𝑚𝑝𝑡.𝑓
+5	70	cross	1	<	0.2987	1	1	1	∴−1 < (𝑚𝑝𝑡.𝑓
+5	70	cross	<	(	0.3498	1	1	1	∴−1 < (𝑚𝑝𝑡.𝑓
+5	76	cross	𝑓	−	0.4310	0	1	1	Now, if 𝑚𝑝𝑡.𝑓−𝑚𝑝𝑡.𝑒 > E+𝐼 then we can rewrite the second
+5	76	cross	−	𝑚	0.1595	0	1	1	Now, if 𝑚𝑝𝑡.𝑓−𝑚𝑝𝑡.𝑒 > E+𝐼 then we can rewrite the second
+5	76	cross	𝑒	>	0.3696	1	1	1	Now, if 𝑚𝑝𝑡.𝑓−𝑚𝑝𝑡.𝑒 > E+𝐼 then we can rewrite the second
+5	76	in	E	+	0.2830	0	1	1	Now, if 𝑚𝑝𝑡.𝑓−𝑚𝑝𝑡.𝑒 > E+𝐼 then we can rewrite the second
+5	76	cross	>	E	0.3206	1	1	1	Now, if 𝑚𝑝𝑡.𝑓−𝑚𝑝𝑡.𝑒 > E+𝐼 then we can rewrite the second
+5	76	cross	+	𝐼	0.2080	0	1	1	Now, if 𝑚𝑝𝑡.𝑓−𝑚𝑝𝑡.𝑒 > E+𝐼 then we can rewrite the second
+5	79	cross	𝜖	<	0.3703	1	1	1	we have 𝜖 < (𝑚𝑥.𝑓−𝑚𝑥.𝑒). In other words,𝑚𝑝𝑡.𝑓−𝑚𝑝𝑡.𝑒 > E+𝐼 ⇒
+5	79	cross	<	(	0.3498	1	1	1	we have 𝜖 < (𝑚𝑥.𝑓−𝑚𝑥.𝑒). In other words,𝑚𝑝𝑡.𝑓−𝑚𝑝𝑡.𝑒 > E+𝐼 ⇒
+5	79	cross	𝑓	−	0.2162	0	1	1	we have 𝜖 < (𝑚𝑥.𝑓−𝑚𝑥.𝑒). In other words,𝑚𝑝𝑡.𝑓−𝑚𝑝𝑡.𝑒 > E+𝐼 ⇒
+5	79	cross	−	𝑚	-0.0563	0	1	0	we have 𝜖 < (𝑚𝑥.𝑓−𝑚𝑥.𝑒). In other words,𝑚𝑝𝑡.𝑓−𝑚𝑝𝑡.𝑒 > E+𝐼 ⇒
+5	79	cross	𝑓	−	0.2162	0	1	1	we have 𝜖 < (𝑚𝑥.𝑓−𝑚𝑥.𝑒). In other words,𝑚𝑝𝑡.𝑓−𝑚𝑝𝑡.𝑒 > E+𝐼 ⇒
+5	79	cross	−	𝑚	-0.0564	0	1	0	we have 𝜖 < (𝑚𝑥.𝑓−𝑚𝑥.𝑒). In other words,𝑚𝑝𝑡.𝑓−𝑚𝑝𝑡.𝑒 > E+𝐼 ⇒
+5	79	cross	𝑒	>	0.3688	1	1	1	we have 𝜖 < (𝑚𝑥.𝑓−𝑚𝑥.𝑒). In other words,𝑚𝑝𝑡.𝑓−𝑚𝑝𝑡.𝑒 > E+𝐼 ⇒
+5	79	in	E	+	0.0680	0	1	0	we have 𝜖 < (𝑚𝑥.𝑓−𝑚𝑥.𝑒). In other words,𝑚𝑝𝑡.𝑓−𝑚𝑝𝑡.𝑒 > E+𝐼 ⇒
+5	79	cross	>	E	0.3198	1	1	1	we have 𝜖 < (𝑚𝑥.𝑓−𝑚𝑥.𝑒). In other words,𝑚𝑝𝑡.𝑓−𝑚𝑝𝑡.𝑒 > E+𝐼 ⇒
+5	79	cross	+	𝐼	-0.0086	0	1	0	we have 𝜖 < (𝑚𝑥.𝑓−𝑚𝑥.𝑒). In other words,𝑚𝑝𝑡.𝑓−𝑚𝑝𝑡.𝑒 > E+𝐼 ⇒
+5	80	cross	𝑓	>	0.5637	1	1	1	(𝑚𝑥.𝑓 > 𝑚𝑥.𝑒+𝜖). By Definition 1, we have 𝑅𝑒𝑝𝐶𝑙.𝑒 < 𝑅𝑒𝑝𝐶𝑙.𝑓.
+5	80	cross	>	𝑚	0.2931	1	1	1	(𝑚𝑥.𝑓 > 𝑚𝑥.𝑒+𝜖). By Definition 1, we have 𝑅𝑒𝑝𝐶𝑙.𝑒 < 𝑅𝑒𝑝𝐶𝑙.𝑓.
+5	80	cross	𝑒	+	0.3158	0	1	1	(𝑚𝑥.𝑓 > 𝑚𝑥.𝑒+𝜖). By Definition 1, we have 𝑅𝑒𝑝𝐶𝑙.𝑒 < 𝑅𝑒𝑝𝐶𝑙.𝑓.
+5	80	cross	+	𝜖	0.2097	0	1	1	(𝑚𝑥.𝑓 > 𝑚𝑥.𝑒+𝜖). By Definition 1, we have 𝑅𝑒𝑝𝐶𝑙.𝑒 < 𝑅𝑒𝑝𝐶𝑙.𝑓.
+5	80	cross	𝑒	<	0.4252	1	1	1	(𝑚𝑥.𝑓 > 𝑚𝑥.𝑒+𝜖). By Definition 1, we have 𝑅𝑒𝑝𝐶𝑙.𝑒 < 𝑅𝑒𝑝𝐶𝑙.𝑓.
+5	80	cross	<	𝑅	0.3361	1	1	1	(𝑚𝑥.𝑓 > 𝑚𝑥.𝑒+𝜖). By Definition 1, we have 𝑅𝑒𝑝𝐶𝑙.𝑒 < 𝑅𝑒𝑝𝐶𝑙.𝑓.
+5	84	in	E	+	0.2830	0	1	1	within E1 = E+𝐼 then 𝑒 will be replayed before 𝑓, i.e., 𝑅𝑒𝑝𝐶𝑙.𝑒 <
+5	84	cross	=	E	0.2980	1	1	1	within E1 = E+𝐼 then 𝑒 will be replayed before 𝑓, i.e., 𝑅𝑒𝑝𝐶𝑙.𝑒 <
+5	84	cross	+	𝐼	0.2077	0	1	1	within E1 = E+𝐼 then 𝑒 will be replayed before 𝑓, i.e., 𝑅𝑒𝑝𝐶𝑙.𝑒 <
+5	84	cross	𝑒	<	0.3691	1	1	1	within E1 = E+𝐼 then 𝑒 will be replayed before 𝑓, i.e., 𝑅𝑒𝑝𝐶𝑙.𝑒 <
+5	88	in	E	−	0.2830	0	1	1	guaranteed that clocks were synchronized to be within E2 = E−
+5	88	cross	=	E	0.2981	1	1	1	guaranteed that clocks were synchronized to be within E2 = E−
+5	90	cross	𝑒	−	0.1641	0	1	1	aware of to be 𝑚𝑝𝑡.𝑒(respectively, 𝑚𝑝𝑡.𝑓), we observe that |𝑚𝑝𝑡.𝑒−
+5	91	in	≤	E	0.3970	0	1	1	𝑚𝑝𝑡.𝑓|≤E2. Furthermore, 𝑒 and 𝑓 must be causally concurrent.
+5	91	in	|	≤	0.4160	0	1	1	𝑚𝑝𝑡.𝑓|≤E2. Furthermore, 𝑒 and 𝑓 must be causally concurrent.
+5	93	cross	𝑒	−	0.2932	0	1	1	If |𝑚𝑝𝑡.𝑒−𝑚𝑝𝑡.𝑓|≤E−𝐼, we have
+5	93	cross	−	𝑚	0.1592	0	1	1	If |𝑚𝑝𝑡.𝑒−𝑚𝑝𝑡.𝑓|≤E−𝐼, we have
+5	93	in	E	−	0.2830	0	1	1	If |𝑚𝑝𝑡.𝑒−𝑚𝑝𝑡.𝑓|≤E−𝐼, we have
+5	93	in	≤	E	0.3280	0	1	1	If |𝑚𝑝𝑡.𝑒−𝑚𝑝𝑡.𝑓|≤E−𝐼, we have
+5	93	in	|	≤	0.3480	0	1	1	If |𝑚𝑝𝑡.𝑒−𝑚𝑝𝑡.𝑓|≤E−𝐼, we have
+5	93	cross	−	𝐼	0.2069	0	1	1	If |𝑚𝑝𝑡.𝑒−𝑚𝑝𝑡.𝑓|≤E−𝐼, we have
+5	97	in	|	≤	0.3480	0	1	1	𝐼 |≤ 𝜖−1 // since E= 𝜖∗𝐼
+5	97	cross	≤	𝜖	0.5226	1	1	1	𝐼 |≤ 𝜖−1 // since E= 𝜖∗𝐼
+5	97	cross	𝜖	−	0.2937	0	1	1	𝐼 |≤ 𝜖−1 // since E= 𝜖∗𝐼
+5	97	cross	−	1	0.2222	0	1	1	𝐼 |≤ 𝜖−1 // since E= 𝜖∗𝐼
+5	97	cross	E	=	0.3387	0	1	1	𝐼 |≤ 𝜖−1 // since E= 𝜖∗𝐼
+5	97	cross	=	𝜖	0.2428	1	1	1	𝐼 |≤ 𝜖−1 // since E= 𝜖∗𝐼
+5	97	cross	𝜖	∗	0.2938	0	1	1	𝐼 |≤ 𝜖−1 // since E= 𝜖∗𝐼
+5	97	cross	∗	𝐼	0.2072	0	1	1	𝐼 |≤ 𝜖−1 // since E= 𝜖∗𝐼
+5	101	cross	𝑒	−	0.2932	0	1	1	∴ |𝑚𝑥.𝑒−𝑚𝑥.𝑓|≤𝜖 by definition of 𝑚𝑥
+5	101	cross	−	𝑚	0.1592	0	1	1	∴ |𝑚𝑥.𝑒−𝑚𝑥.𝑓|≤𝜖 by definition of 𝑚𝑥
+5	101	in	|	≤	0.3480	0	1	1	∴ |𝑚𝑥.𝑒−𝑚𝑥.𝑓|≤𝜖 by definition of 𝑚𝑥
+5	101	cross	≤	𝜖	0.2725	0	1	1	∴ |𝑚𝑥.𝑒−𝑚𝑥.𝑓|≤𝜖 by definition of 𝑚𝑥
+6	4	in	E	−	0.4130	0	1	1	tem where clocks were synchronized to be within E−𝐼 then
+6	4	cross	−	𝐼	0.3373	0	1	1	tem where clocks were synchronized to be within E−𝐼 then
+6	14	cross	E	=	0.3894	0	1	1	Now, if E= 1𝑚𝑠 then the value of the offset could be as large as
+6	14	cross	=	1	0.3220	1	1	1	Now, if E= 1𝑚𝑠 then the value of the offset could be as large as
+6	17	cross	E	=	0.3771	0	1	1	not seriously impact the replay. For example, if E= 1𝑚𝑠 and 𝐼=
+6	17	cross	=	1	0.3099	1	1	1	not seriously impact the replay. For example, if E= 1𝑚𝑠 and 𝐼=
+6	17	cross	𝐼	=	0.4261	0	1	1	not seriously impact the replay. For example, if E= 1𝑚𝑠 and 𝐼=
+6	26	cross	𝑛	+	0.1523	0	1	1	efficient computation. As written, 𝑅𝑒𝑝𝐶𝑙will require 2𝑛+1 integers.
+6	26	cross	+	1	0.1172	0	1	0	efficient computation. As written, 𝑅𝑒𝑝𝐶𝑙will require 2𝑛+1 integers.
+6	32	cross	𝑘	=	0.3533	0	1	1	the clock synchronization assumption. In this case, offset.𝑗.𝑘= 𝜖.
+6	32	cross	=	𝜖	0.2428	1	1	1	the clock synchronization assumption. In this case, offset.𝑗.𝑘= 𝜖.
+6	34	cross	𝑘	=	0.3532	0	1	1	information about the offset of 𝑘 to mean that offset.𝑗.𝑘= 𝜖.
+6	34	cross	=	𝜖	0.2428	1	1	1	information about the offset of 𝑘 to mean that offset.𝑗.𝑘= 𝜖.
+6	38	cross	0	=	0.2829	1	1	1	process 1 is 0, it implies that offset.𝑗.0 = 𝜖. The offset for process
+6	38	cross	=	𝜖	0.2535	1	1	1	process 1 is 0, it implies that offset.𝑗.0 = 𝜖. The offset for process
+6	47	cross	g	<	0.2703	1	1	1	comparing them (using < relation). Specifically, all these costs are
+6	47	cross	<	r	0.2712	1	1	1	comparing them (using < relation). Specifically, all these costs are
+6	52	in	−	(	0.2770	0	1	1	proportional to the number of 1s in the bitmap. ((𝑛−(𝑛&(𝑛−1)
+6	52	cross	𝑛	−	0.2616	0	1	1	proportional to the number of 1s in the bitmap. ((𝑛−(𝑛&(𝑛−1)
+6	52	cross	𝑛	−	0.2616	0	1	1	proportional to the number of 1s in the bitmap. ((𝑛−(𝑛&(𝑛−1)
+6	52	cross	−	1	0.2221	0	1	1	proportional to the number of 1s in the bitmap. ((𝑛−(𝑛&(𝑛−1)
+6	66	cross	𝑒	<	0.4354	1	1	1	can determine if 𝑅𝑒𝑝𝐶𝑙.𝑒 < 𝑅𝑒𝑝𝐶𝑙.𝑓 in 𝑂(𝑥)time where 𝑥 is the
+6	66	cross	<	𝑅	0.3453	1	1	1	can determine if 𝑅𝑒𝑝𝐶𝑙.𝑒 < 𝑅𝑒𝑝𝐶𝑙.𝑓 in 𝑂(𝑥)time where 𝑥 is the
+7	2	in	=	2	0.2500	1	1	1	(a) 𝛼 = 20 messages/s, 𝑛= 32. 
+7	2	cross	𝛼	=	0.3405	1	1	1	(a) 𝛼 = 20 messages/s, 𝑛= 32. 
+7	2	in	=	3	0.2500	1	1	1	(a) 𝛼 = 20 messages/s, 𝑛= 32. 
+7	2	cross	𝑛	=	0.2851	0	1	1	(a) 𝛼 = 20 messages/s, 𝑛= 32. 
+7	3	in	=	4	0.2500	1	1	1	(b) 𝛼 = 40 messages/s, 𝑛= 32. 
+7	3	cross	𝛼	=	0.3405	1	1	1	(b) 𝛼 = 40 messages/s, 𝑛= 32. 
+7	3	in	=	3	0.2500	1	1	1	(b) 𝛼 = 40 messages/s, 𝑛= 32. 
+7	3	cross	𝑛	=	0.2850	0	1	1	(b) 𝛼 = 40 messages/s, 𝑛= 32. 
+7	4	in	=	1	0.2500	1	1	1	(c) 𝛼 = 160 messages/s, 𝑛= 32.
+7	4	cross	𝛼	=	0.3405	1	1	1	(c) 𝛼 = 160 messages/s, 𝑛= 32.
+7	4	in	=	3	0.2500	1	1	1	(c) 𝛼 = 160 messages/s, 𝑛= 32.
+7	4	cross	𝑛	=	0.2851	0	1	1	(c) 𝛼 = 160 messages/s, 𝑛= 32.
+7	5	in	=	2	0.2500	1	1	1	(d) 𝛼 = 20 messages/s, 𝑛= 64. 
+7	5	cross	𝛼	=	0.3405	1	1	1	(d) 𝛼 = 20 messages/s, 𝑛= 64. 
+7	5	in	=	6	0.2500	1	1	1	(d) 𝛼 = 20 messages/s, 𝑛= 64. 
+7	5	cross	𝑛	=	0.2850	0	1	1	(d) 𝛼 = 20 messages/s, 𝑛= 64. 
+7	6	in	=	4	0.2500	1	1	1	(e) 𝛼 = 40 messages/s, 𝑛= 64. 
+7	6	cross	𝛼	=	0.3405	1	1	1	(e) 𝛼 = 40 messages/s, 𝑛= 64. 
+7	6	in	=	6	0.2500	1	1	1	(e) 𝛼 = 40 messages/s, 𝑛= 64. 
+7	6	cross	𝑛	=	0.0349	0	1	0	(e) 𝛼 = 40 messages/s, 𝑛= 64. 
+7	7	cross	𝛿	=	0.3598	0	1	1	Figure 5: 𝜏 vs Ewhen varying 𝐼, 𝛿= 8𝜇𝑠.
+7	7	cross	=	8	0.2778	1	1	1	Figure 5: 𝜏 vs Ewhen varying 𝐼, 𝛿= 8𝜇𝑠.
+7	8	in	=	1	0.2500	1	1	1	(f) 𝛼 = 160 messages/s, 𝑛= 64.
+7	8	cross	𝛼	=	0.3405	1	1	1	(f) 𝛼 = 160 messages/s, 𝑛= 64.
+7	8	in	=	6	0.2500	1	1	1	(f) 𝛼 = 160 messages/s, 𝑛= 64.
+7	8	cross	𝑛	=	0.2850	0	1	1	(f) 𝛼 = 160 messages/s, 𝑛= 64.
+7	11	cross	E	=	0.4483	0	1	1	in the simulation to ensure that if E= 1𝑚𝑠 then the worst-case
+7	11	cross	=	1	0.3797	1	1	1	in the simulation to ensure that if E= 1𝑚𝑠 then the worst-case
+8	1	in	=	3	0.2500	1	1	1	(a) 𝑛= 32. 
+8	1	cross	𝑛	=	0.2851	0	1	1	(a) 𝑛= 32. 
+8	2	in	=	6	0.2500	1	1	1	(b) 𝑛= 64.
+8	2	cross	𝑛	=	0.2851	0	1	1	(b) 𝑛= 64.
+8	3	in	=	8	0.2510	1	1	1	Figure 6: 𝜎 vs Ewhen varying 𝐼, 𝛿 = 8 𝜇𝑠, 𝛼 = 160 messages/s.
+8	3	cross	𝛿	=	0.3319	1	1	1	Figure 6: 𝜎 vs Ewhen varying 𝐼, 𝛿 = 8 𝜇𝑠, 𝛼 = 160 messages/s.
+8	3	in	=	1	0.2500	1	1	1	Figure 6: 𝜎 vs Ewhen varying 𝐼, 𝛿 = 8 𝜇𝑠, 𝛼 = 160 messages/s.
+8	3	cross	𝛼	=	0.3355	1	1	1	Figure 6: 𝜎 vs Ewhen varying 𝐼, 𝛿 = 8 𝜇𝑠, 𝛼 = 160 messages/s.
+8	4	in	=	3	0.2500	1	1	1	(a) 𝑛= 32. 
+8	4	cross	𝑛	=	0.2851	0	1	1	(a) 𝑛= 32. 
+8	5	in	=	6	0.2500	1	1	1	(b) 𝑛= 64.
+8	5	cross	𝑛	=	0.2850	0	1	1	(b) 𝑛= 64.
+8	6	in	=	8	0.4710	1	1	1	Figure 7: 𝜏 vs E when varying 𝛿, 𝐼 = 8 𝜇𝑠, 𝛼 = 40 mes-
+8	6	cross	𝐼	=	0.5792	1	1	1	Figure 7: 𝜏 vs E when varying 𝛿, 𝐼 = 8 𝜇𝑠, 𝛼 = 40 mes-
+8	6	in	=	4	0.4710	1	1	1	Figure 7: 𝜏 vs E when varying 𝛿, 𝐼 = 8 𝜇𝑠, 𝛼 = 40 mes-
+8	6	cross	𝛼	=	0.5552	1	1	1	Figure 7: 𝜏 vs E when varying 𝛿, 𝐼 = 8 𝜇𝑠, 𝛼 = 40 mes-
+8	16	in	=	3	0.2500	1	1	1	(a) 𝑛= 32. 
+8	16	cross	𝑛	=	0.2851	0	1	1	(a) 𝑛= 32. 
+8	17	in	=	6	0.2500	1	1	1	(b) 𝑛= 64.
+8	17	cross	𝑛	=	0.2850	0	1	1	(b) 𝑛= 64.
+8	18	in	=	4	0.2500	1	1	1	Figure 8: 𝜏 vs Ewhen varying 𝛼, 𝐼 = 4 𝜇𝑠, 𝛿 = 8 𝜇𝑠.
+8	18	cross	𝐼	=	0.3599	1	1	1	Figure 8: 𝜏 vs Ewhen varying 𝛼, 𝐼 = 4 𝜇𝑠, 𝛿 = 8 𝜇𝑠.
+8	18	in	=	8	0.2500	1	1	1	Figure 8: 𝜏 vs Ewhen varying 𝛼, 𝐼 = 4 𝜇𝑠, 𝛿 = 8 𝜇𝑠.
+8	18	cross	𝛿	=	0.3320	1	1	1	Figure 8: 𝜏 vs Ewhen varying 𝛼, 𝐼 = 4 𝜇𝑠, 𝛿 = 8 𝜇𝑠.
+8	34	in	E	+	0.3330	0	1	1	reordering may occur when events 𝑒 and 𝑓 differ by time E+𝐼.
+8	34	cross	+	𝐼	0.2567	0	1	1	reordering may occur when events 𝑒 and 𝑓 differ by time E+𝐼.
+8	37	in	=	3	0.2500	1	1	1	(a) 𝑛= 32. 
+8	37	cross	𝑛	=	0.2851	0	1	1	(a) 𝑛= 32. 
+8	38	in	=	6	0.2500	1	1	1	(b) 𝑛= 64.
+8	38	cross	𝑛	=	0.2851	0	1	1	(b) 𝑛= 64.
+8	39	in	=	2	0.2500	1	1	1	Figure 9: 𝜏 vs 𝐼 when varying 𝛿, E= 2 ms, 𝛼 = 20 messages/s.
+8	39	cross	E	=	0.3109	0	1	1	Figure 9: 𝜏 vs 𝐼 when varying 𝛿, E= 2 ms, 𝛼 = 20 messages/s.
+8	39	in	=	2	0.2500	1	1	1	Figure 9: 𝜏 vs 𝐼 when varying 𝛿, E= 2 ms, 𝛼 = 20 messages/s.
+8	39	cross	𝛼	=	0.3355	1	1	1	Figure 9: 𝜏 vs 𝐼 when varying 𝛿, E= 2 ms, 𝛼 = 20 messages/s.
+8	40	cross	𝐼	−	0.3603	0	1	1	Varying 𝛼: For every point in the 𝐼−𝜏 trend, lower 𝛼 values
+8	40	cross	−	𝜏	0.2053	0	1	1	Varying 𝛼: For every point in the 𝐼−𝜏 trend, lower 𝛼 values
+8	46	in	=	3	0.2500	1	1	1	(a) 𝑛= 32. 
+8	46	cross	𝑛	=	0.2851	0	1	1	(a) 𝑛= 32. 
+8	47	in	=	6	0.2500	1	1	1	(b) 𝑛= 64.
+8	47	cross	𝑛	=	0.2851	0	1	1	(b) 𝑛= 64.
+8	48	in	=	2	0.2500	1	1	1	Figure 10: 𝜏 vs 𝐼 when varying 𝛼, E= 2 ms, 𝛿 = 8 𝜇𝑠.
+8	48	cross	E	=	0.3109	0	1	1	Figure 10: 𝜏 vs 𝐼 when varying 𝛼, E= 2 ms, 𝛿 = 8 𝜇𝑠.
+8	48	in	=	8	0.2500	1	1	1	Figure 10: 𝜏 vs 𝐼 when varying 𝛼, E= 2 ms, 𝛿 = 8 𝜇𝑠.
+8	48	cross	𝛿	=	0.3320	1	1	1	Figure 10: 𝜏 vs 𝐼 when varying 𝛼, E= 2 ms, 𝛿 = 8 𝜇𝑠.
+8	56	in	=	3	0.2500	1	1	1	(a) 𝑛= 32. 
+8	56	cross	𝑛	=	0.2851	0	1	1	(a) 𝑛= 32. 
+8	57	in	=	6	0.2500	1	1	1	(b) 𝑛= 64.
+8	57	cross	𝑛	=	0.2851	0	1	1	(b) 𝑛= 64.
+8	58	in	=	4	0.2500	1	1	1	Figure 11: 𝜏 vs 𝛿 when varying 𝛼, E= 4 ms, 𝐼 = 16 𝜇𝑠.
+8	58	cross	E	=	0.3110	0	1	1	Figure 11: 𝜏 vs 𝛿 when varying 𝛼, E= 4 ms, 𝐼 = 16 𝜇𝑠.
+8	58	in	=	1	0.2500	1	1	1	Figure 11: 𝜏 vs 𝛿 when varying 𝛼, E= 4 ms, 𝐼 = 16 𝜇𝑠.
+8	58	cross	𝐼	=	0.3601	1	1	1	Figure 11: 𝜏 vs 𝛿 when varying 𝛼, E= 4 ms, 𝐼 = 16 𝜇𝑠.
+9	11	cross	𝜏	=	0.3658	1	1	1	For 𝜏 = 8, the feasibility regions are shown in Figure 12a. Here,
+9	11	cross	=	8	0.2760	1	1	1	For 𝜏 = 8, the feasibility regions are shown in Figure 12a. Here,
+9	12	cross	𝜏	=	0.4001	1	1	1	the blue dots identify the data points where 𝜏 = 8 is feasible and
+9	12	cross	=	8	0.3060	1	1	1	the blue dots identify the data points where 𝜏 = 8 is feasible and
+9	13	cross	𝜏	=	0.3762	1	1	1	the red dots represent the data points where 𝜏 = 8 is not feasible.
+9	13	cross	=	8	0.2825	1	1	1	the red dots represent the data points where 𝜏 = 8 is not feasible.
+9	14	cross	𝜏	=	0.3658	1	1	1	The green line identifies the bounds where 𝜏 = 8 is feasible. We find
+9	14	cross	=	8	0.2778	1	1	1	The green line identifies the bounds where 𝜏 = 8 is feasible. We find
+9	32	in	=	1	0.2500	1	1	1	(a) E= 1 ms, 𝑛= 32, and 𝜏 = 8. 
+9	32	cross	E	=	0.3110	0	1	1	(a) E= 1 ms, 𝑛= 32, and 𝜏 = 8. 
+9	32	in	=	3	0.2500	1	1	1	(a) E= 1 ms, 𝑛= 32, and 𝜏 = 8. 
+9	32	cross	𝑛	=	0.2851	0	1	1	(a) E= 1 ms, 𝑛= 32, and 𝜏 = 8. 
+9	32	in	=	8	0.2500	1	1	1	(a) E= 1 ms, 𝑛= 32, and 𝜏 = 8. 
+9	32	cross	𝜏	=	0.3434	1	1	1	(a) E= 1 ms, 𝑛= 32, and 𝜏 = 8. 
+9	33	in	=	2	0.2500	1	1	1	(b) E= 2 ms, 𝑛= 32, and 𝜏 = 8.
+9	33	cross	E	=	0.3110	0	1	1	(b) E= 2 ms, 𝑛= 32, and 𝜏 = 8.
+9	33	in	=	3	0.2500	1	1	1	(b) E= 2 ms, 𝑛= 32, and 𝜏 = 8.
+9	33	cross	𝑛	=	0.2850	0	1	1	(b) E= 2 ms, 𝑛= 32, and 𝜏 = 8.
+9	33	in	=	8	0.2500	1	1	1	(b) E= 2 ms, 𝑛= 32, and 𝜏 = 8.
+9	33	cross	𝜏	=	0.3436	1	1	1	(b) E= 2 ms, 𝑛= 32, and 𝜏 = 8.
+9	34	in	=	1	0.2500	1	1	1	(c) E= 1 ms, 𝑛= 64, and 𝜏 = 8. 
+9	34	cross	E	=	0.3110	0	1	1	(c) E= 1 ms, 𝑛= 64, and 𝜏 = 8. 
+9	34	in	=	6	0.2500	1	1	1	(c) E= 1 ms, 𝑛= 64, and 𝜏 = 8. 
+9	34	cross	𝑛	=	0.2851	0	1	1	(c) E= 1 ms, 𝑛= 64, and 𝜏 = 8. 
+9	34	in	=	8	0.2500	1	1	1	(c) E= 1 ms, 𝑛= 64, and 𝜏 = 8. 
+9	34	cross	𝜏	=	0.3434	1	1	1	(c) E= 1 ms, 𝑛= 64, and 𝜏 = 8. 
+9	35	in	=	2	0.2500	1	1	1	(d) E= 2 ms, 𝑛= 64, and 𝜏 = 8.
+9	35	cross	E	=	0.3110	0	1	1	(d) E= 2 ms, 𝑛= 64, and 𝜏 = 8.
+9	35	in	=	6	0.2500	1	1	1	(d) E= 2 ms, 𝑛= 64, and 𝜏 = 8.
+9	35	cross	𝑛	=	0.2850	0	1	1	(d) E= 2 ms, 𝑛= 64, and 𝜏 = 8.
+9	35	in	=	8	0.2500	1	1	1	(d) E= 2 ms, 𝑛= 64, and 𝜏 = 8.
+9	35	cross	𝜏	=	0.3436	1	1	1	(d) E= 2 ms, 𝑛= 64, and 𝜏 = 8.
+9	48	cross	ℎ	<	0.3342	1	1	1	𝑥 happened before 𝑦then 𝑣ℎ < 𝑣𝑘.
+9	48	cross	<	𝑣	0.2747	1	1	1	𝑥 happened before 𝑦then 𝑣ℎ < 𝑣𝑘.
+10	10	cross	E	<	0.3603	0	1	1	implements 𝑅𝑒𝑝𝐶𝑙 with E< E𝑎 then the resulting replay will still
+10	10	cross	<	E	0.3203	1	1	1	implements 𝑅𝑒𝑝𝐶𝑙 with E< E𝑎 then the resulting replay will still
+10	12	in	E	−	0.2830	0	1	1	satisfied with E2 = E−𝐼.
+10	12	cross	=	E	0.2978	1	1	1	satisfied with E2 = E−𝐼.
+10	12	cross	−	𝐼	0.2075	0	1	1	satisfied with E2 = E−𝐼.
+10	35	in	≈	E	0.2980	0	1	1	before 𝑓 (as defined in [6]) or 𝑓 occurred E1 ≈Etime after 𝑒 then
+10	39	in	≈	E	0.3140	0	1	1	occurred within time E2 ≈Ethen the replay permits them to be
+10	41	in	E	+	0.2130	0	1	1	We presented 𝑅𝑒𝑝𝐶𝑙to solve the replay problem with E1 = E+𝐼
+10	41	cross	=	E	0.2978	1	1	1	We presented 𝑅𝑒𝑝𝐶𝑙to solve the replay problem with E1 = E+𝐼
+10	41	cross	+	𝐼	0.1374	0	1	0	We presented 𝑅𝑒𝑝𝐶𝑙to solve the replay problem with E1 = E+𝐼
+10	42	in	E	−	0.3470	0	1	1	and E2 = E−𝐼, where 𝐼 is a parameter to 𝑅𝑒𝑝𝐶𝑙. We analyzed
+10	42	cross	=	E	0.4585	1	1	1	and E2 = E−𝐼, where 𝐼 is a parameter to 𝑅𝑒𝑝𝐶𝑙. We analyzed
+10	42	cross	−	𝐼	0.2719	0	1	1	and E2 = E−𝐼, where 𝐼 is a parameter to 𝑅𝑒𝑝𝐶𝑙. We analyzed
+12	3	in	=	2	0.2500	1	1	1	(a) 𝛼 = 20 messages/s, 𝑛= 32. 
+12	3	cross	𝛼	=	0.3405	1	1	1	(a) 𝛼 = 20 messages/s, 𝑛= 32. 
+12	3	in	=	3	0.2500	1	1	1	(a) 𝛼 = 20 messages/s, 𝑛= 32. 
+12	3	cross	𝑛	=	0.2851	0	1	1	(a) 𝛼 = 20 messages/s, 𝑛= 32. 
+12	4	in	=	4	0.2500	1	1	1	(b) 𝛼 = 40 messages/s, 𝑛= 32. 
+12	4	cross	𝛼	=	0.3405	1	1	1	(b) 𝛼 = 40 messages/s, 𝑛= 32. 
+12	4	in	=	3	0.2500	1	1	1	(b) 𝛼 = 40 messages/s, 𝑛= 32. 
+12	4	cross	𝑛	=	0.2850	0	1	1	(b) 𝛼 = 40 messages/s, 𝑛= 32. 
+12	5	in	=	1	0.2500	1	1	1	(c) 𝛼 = 160 messages/s, 𝑛= 32.
+12	5	cross	𝛼	=	0.3405	1	1	1	(c) 𝛼 = 160 messages/s, 𝑛= 32.
+12	5	in	=	3	0.2500	1	1	1	(c) 𝛼 = 160 messages/s, 𝑛= 32.
+12	5	cross	𝑛	=	0.2851	0	1	1	(c) 𝛼 = 160 messages/s, 𝑛= 32.
+12	6	in	=	2	0.2500	1	1	1	(d) 𝛼 = 20 messages/s, 𝑛= 64. 
+12	6	cross	𝛼	=	0.3405	1	1	1	(d) 𝛼 = 20 messages/s, 𝑛= 64. 
+12	6	in	=	6	0.2500	1	1	1	(d) 𝛼 = 20 messages/s, 𝑛= 64. 
+12	6	cross	𝑛	=	0.2850	0	1	1	(d) 𝛼 = 20 messages/s, 𝑛= 64. 
+12	7	in	=	4	0.2500	1	1	1	(e) 𝛼 = 40 messages/s, 𝑛= 64. 
+12	7	cross	𝛼	=	0.3405	1	1	1	(e) 𝛼 = 40 messages/s, 𝑛= 64. 
+12	7	in	=	6	0.2500	1	1	1	(e) 𝛼 = 40 messages/s, 𝑛= 64. 
+12	7	cross	𝑛	=	0.0349	0	1	0	(e) 𝛼 = 40 messages/s, 𝑛= 64. 
+12	8	cross	𝛿	=	0.3598	0	1	1	Figure 15: Clock Size vs Ewhen varying 𝐼, 𝛿= 8𝜇𝑠.
+12	8	cross	=	8	0.2777	1	1	1	Figure 15: Clock Size vs Ewhen varying 𝐼, 𝛿= 8𝜇𝑠.
+12	9	in	=	1	0.2500	1	1	1	(f) 𝛼 = 160 messages/s, 𝑛= 64.
+12	9	cross	𝛼	=	0.3405	1	1	1	(f) 𝛼 = 160 messages/s, 𝑛= 64.
+12	9	in	=	6	0.2500	1	1	1	(f) 𝛼 = 160 messages/s, 𝑛= 64.
+12	9	cross	𝑛	=	0.2850	0	1	1	(f) 𝛼 = 160 messages/s, 𝑛= 64.

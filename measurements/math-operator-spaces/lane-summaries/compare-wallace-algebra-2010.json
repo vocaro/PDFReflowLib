@@ -1,0 +1,1898 @@
+{
+  "passed": false,
+  "provenanceErrors": [],
+  "case": "wallace-algebra-2010",
+  "executionContexts": {
+    "baseline": "host-terminal",
+    "candidate": "host-terminal"
+  },
+  "baselineConverterSHA256": "6150e1cc4300591522c394fc4ab46712fd2b1890dd4b17f03df274511879dfe7",
+  "candidateConverterSHA256": "8992b6b171950e04bdfc39a9a81073a241100848f0f088b576c2db5d61422a5e",
+  "sameConverter": false,
+  "visionModelCaches": {
+    "baseline": {
+      "mode": "inherited",
+      "executableName": "pdf-reflow",
+      "programsSHA256": "22614cb0d67a8299f20da78a741db0b43f328b8fc7a2760ed28c0de40fec086d"
+    },
+    "candidate": {
+      "mode": "inherited",
+      "executableName": "pdf-reflow",
+      "programsSHA256": "22614cb0d67a8299f20da78a741db0b43f328b8fc7a2760ed28c0de40fec086d"
+    }
+  },
+  "sameVisionPrograms": true,
+  "changedOCRPages": [],
+  "ocrTextVolume": {
+    "pages": 0,
+    "baselineWords": 0,
+    "candidateWords": 0,
+    "pagesWithFewerWords": {
+      "baseline": [],
+      "candidate": []
+    }
+  },
+  "changedPages": [
+    5,
+    7,
+    8,
+    9,
+    10,
+    11,
+    19,
+    20,
+    21,
+    23,
+    24,
+    25,
+    26,
+    28,
+    29,
+    31,
+    41,
+    42,
+    47,
+    48,
+    49,
+    52,
+    53,
+    54,
+    55,
+    58,
+    64,
+    65,
+    66,
+    67,
+    69,
+    72,
+    73,
+    74,
+    79,
+    81,
+    83,
+    89,
+    90,
+    91,
+    92,
+    93,
+    94,
+    96,
+    97,
+    98,
+    101,
+    102,
+    104,
+    108,
+    109,
+    111,
+    112,
+    113,
+    114,
+    115,
+    116,
+    118,
+    119,
+    120,
+    121,
+    122,
+    123,
+    125,
+    126,
+    127,
+    128,
+    129,
+    130,
+    131,
+    132,
+    134,
+    135,
+    136,
+    137,
+    139,
+    140,
+    141,
+    146,
+    147,
+    152,
+    154,
+    161,
+    163,
+    177,
+    178,
+    179,
+    185,
+    189,
+    190,
+    191,
+    192,
+    193,
+    194,
+    195,
+    196,
+    197,
+    198,
+    199,
+    200,
+    201,
+    202,
+    203,
+    204,
+    205,
+    208,
+    209,
+    212,
+    214,
+    215,
+    216,
+    217,
+    218,
+    219,
+    220,
+    221,
+    222,
+    223,
+    224,
+    225,
+    226,
+    227,
+    228,
+    229,
+    230,
+    231,
+    232,
+    233,
+    235,
+    236,
+    237,
+    239,
+    245,
+    249,
+    250,
+    253,
+    254,
+    255,
+    256,
+    257,
+    260,
+    263,
+    275,
+    276,
+    295,
+    305,
+    319,
+    321,
+    322,
+    323,
+    332,
+    333,
+    334,
+    338,
+    344,
+    345,
+    346,
+    348,
+    351,
+    356,
+    357,
+    358,
+    359,
+    361,
+    366,
+    373,
+    374,
+    376,
+    377,
+    380,
+    381,
+    382,
+    383,
+    387,
+    389,
+    390,
+    393,
+    394,
+    395,
+    397,
+    401,
+    403,
+    404,
+    406,
+    428,
+    438,
+    440,
+    441,
+    442,
+    443,
+    444,
+    445,
+    447,
+    448,
+    451,
+    452,
+    453,
+    454,
+    455,
+    459,
+    460,
+    461,
+    462,
+    463,
+    464,
+    465,
+    466,
+    467,
+    468,
+    470,
+    471,
+    477,
+    478,
+    479,
+    481,
+    482,
+    484,
+    485,
+    486,
+    487
+  ],
+  "changedPageFields": {
+    "5": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "7": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "preformattedLines",
+      "text"
+    ],
+    "8": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "preformattedLines",
+      "text"
+    ],
+    "9": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "preformattedLines",
+      "text"
+    ],
+    "10": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "preformattedLines",
+      "text"
+    ],
+    "11": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "preformattedLines",
+      "text"
+    ],
+    "19": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "scripts",
+      "text"
+    ],
+    "20": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "21": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "preformattedLines",
+      "scripts",
+      "text"
+    ],
+    "23": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "preformattedLines",
+      "scripts",
+      "text"
+    ],
+    "24": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "preformattedLines",
+      "text"
+    ],
+    "25": [
+      "images",
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "preformattedLines",
+      "scripts",
+      "text"
+    ],
+    "26": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "preformattedLines",
+      "scripts",
+      "text"
+    ],
+    "28": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "29": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "31": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "41": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "preformattedLines",
+      "text"
+    ],
+    "42": [
+      "images",
+      "markup"
+    ],
+    "47": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "48": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "49": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "52": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "53": [
+      "images",
+      "markup"
+    ],
+    "54": [
+      "images",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "55": [
+      "images",
+      "markup"
+    ],
+    "58": [
+      "images",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "64": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "65": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "66": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "67": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "69": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "preformattedLines",
+      "text"
+    ],
+    "72": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "scripts",
+      "text"
+    ],
+    "73": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "scripts",
+      "text"
+    ],
+    "74": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "79": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "81": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "83": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "89": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "90": [
+      "images",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "91": [
+      "images",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "92": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "93": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "94": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "preformattedLines",
+      "text"
+    ],
+    "96": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "scripts",
+      "text"
+    ],
+    "97": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "scripts",
+      "text"
+    ],
+    "98": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "101": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "preformattedLines",
+      "text"
+    ],
+    "102": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "104": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "108": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "109": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "111": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "preformattedLines",
+      "text"
+    ],
+    "112": [
+      "images",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "113": [
+      "images",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "114": [
+      "images",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "115": [
+      "images",
+      "markup"
+    ],
+    "116": [
+      "images",
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "preformattedLines",
+      "text"
+    ],
+    "118": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "119": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "120": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "121": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "122": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "preformattedLines",
+      "text"
+    ],
+    "123": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "preformattedLines",
+      "text"
+    ],
+    "125": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "126": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "127": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "preformattedLines",
+      "text"
+    ],
+    "128": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "129": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "130": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "131": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "scripts",
+      "text"
+    ],
+    "132": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "preformattedLines",
+      "text"
+    ],
+    "134": [
+      "images",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "135": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "136": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "137": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "139": [
+      "images",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "140": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "141": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "146": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "147": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "152": [
+      "images",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "154": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "161": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "163": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "177": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "scripts",
+      "text"
+    ],
+    "178": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "scripts",
+      "text"
+    ],
+    "179": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "scripts",
+      "text"
+    ],
+    "185": [
+      "images",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "scripts",
+      "text"
+    ],
+    "189": [
+      "images",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "scripts",
+      "text"
+    ],
+    "190": [
+      "images",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "scripts",
+      "text"
+    ],
+    "191": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "preformattedLines",
+      "scripts",
+      "text"
+    ],
+    "192": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "scripts",
+      "text"
+    ],
+    "193": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "preformattedLines",
+      "scripts",
+      "text"
+    ],
+    "194": [
+      "images",
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "preformattedLines",
+      "scripts",
+      "text"
+    ],
+    "195": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "preformattedLines",
+      "scripts",
+      "text"
+    ],
+    "196": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "preformattedLines",
+      "scripts",
+      "text"
+    ],
+    "197": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "preformattedLines",
+      "scripts",
+      "text"
+    ],
+    "198": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "scripts",
+      "text"
+    ],
+    "199": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "scripts",
+      "text"
+    ],
+    "200": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "preformattedLines",
+      "scripts",
+      "text"
+    ],
+    "201": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "scripts",
+      "text"
+    ],
+    "202": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "scripts",
+      "text"
+    ],
+    "203": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "preformattedLines",
+      "scripts",
+      "text"
+    ],
+    "204": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "preformattedLines",
+      "scripts",
+      "text"
+    ],
+    "205": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "preformattedLines",
+      "scripts",
+      "text"
+    ],
+    "208": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "preformattedLines",
+      "scripts",
+      "text"
+    ],
+    "209": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "scripts",
+      "text"
+    ],
+    "212": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "scripts",
+      "text"
+    ],
+    "214": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "preformattedLines",
+      "scripts",
+      "text"
+    ],
+    "215": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "preformattedLines",
+      "scripts",
+      "text"
+    ],
+    "216": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "217": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "218": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "scripts",
+      "text"
+    ],
+    "219": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "preformattedLines",
+      "text"
+    ],
+    "220": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "preformattedLines",
+      "scripts",
+      "text"
+    ],
+    "221": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "scripts",
+      "text"
+    ],
+    "222": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "preformattedLines",
+      "scripts",
+      "text"
+    ],
+    "223": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "scripts",
+      "text"
+    ],
+    "224": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "preformattedLines",
+      "scripts",
+      "text"
+    ],
+    "225": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "preformattedLines",
+      "scripts",
+      "text"
+    ],
+    "226": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "scripts",
+      "text"
+    ],
+    "227": [
+      "images",
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "preformattedLines",
+      "scripts",
+      "text"
+    ],
+    "228": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "preformattedLines",
+      "scripts",
+      "text"
+    ],
+    "229": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "scripts",
+      "text"
+    ],
+    "230": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "scripts",
+      "text"
+    ],
+    "231": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "preformattedLines",
+      "scripts",
+      "text"
+    ],
+    "232": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "scripts",
+      "text"
+    ],
+    "233": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "preformattedLines",
+      "scripts",
+      "text"
+    ],
+    "235": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "preformattedLines",
+      "scripts",
+      "text"
+    ],
+    "236": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "preformattedLines",
+      "scripts",
+      "text"
+    ],
+    "237": [
+      "images",
+      "markup"
+    ],
+    "239": [
+      "images",
+      "markup"
+    ],
+    "245": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "scripts",
+      "text"
+    ],
+    "249": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "250": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "253": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "scripts",
+      "text"
+    ],
+    "254": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "preformattedLines",
+      "scripts",
+      "text"
+    ],
+    "255": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "256": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "preformattedLines",
+      "scripts",
+      "text"
+    ],
+    "257": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "260": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "263": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "275": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "276": [
+      "images",
+      "markup"
+    ],
+    "295": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "305": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "319": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "preformattedLines",
+      "text"
+    ],
+    "321": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "322": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "323": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "preformattedLines",
+      "scripts",
+      "text"
+    ],
+    "332": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "scripts",
+      "text"
+    ],
+    "333": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "334": [
+      "images",
+      "markup"
+    ],
+    "338": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "scripts",
+      "text"
+    ],
+    "344": [
+      "images",
+      "markup"
+    ],
+    "345": [
+      "images",
+      "markup"
+    ],
+    "346": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "348": [
+      "images",
+      "markup"
+    ],
+    "351": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "preformattedLines",
+      "text"
+    ],
+    "356": [
+      "images",
+      "markup"
+    ],
+    "357": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "358": [
+      "images",
+      "markup"
+    ],
+    "359": [
+      "images",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "361": [
+      "images",
+      "markup"
+    ],
+    "366": [
+      "images",
+      "markup"
+    ],
+    "373": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "374": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "scripts",
+      "text"
+    ],
+    "376": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "377": [
+      "images",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "380": [
+      "images",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "scripts",
+      "text"
+    ],
+    "381": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "preformattedLines",
+      "scripts",
+      "text"
+    ],
+    "382": [
+      "images",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "scripts",
+      "text"
+    ],
+    "383": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "scripts",
+      "text"
+    ],
+    "387": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "389": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "390": [
+      "images",
+      "markup"
+    ],
+    "393": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "394": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "preformattedLines",
+      "scripts",
+      "text"
+    ],
+    "395": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "preformattedLines",
+      "scripts",
+      "text"
+    ],
+    "397": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "preformattedLines",
+      "scripts",
+      "text"
+    ],
+    "401": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "scripts",
+      "text"
+    ],
+    "403": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "404": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "scripts",
+      "text"
+    ],
+    "406": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "scripts",
+      "text"
+    ],
+    "428": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "438": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "preformattedLines",
+      "text"
+    ],
+    "440": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "preformattedLines",
+      "scripts",
+      "text"
+    ],
+    "441": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "preformattedLines",
+      "scripts",
+      "text"
+    ],
+    "442": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "preformattedLines",
+      "text"
+    ],
+    "443": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "preformattedLines",
+      "text"
+    ],
+    "444": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "preformattedLines",
+      "text"
+    ],
+    "445": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "preformattedLines",
+      "scripts",
+      "text"
+    ],
+    "447": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "preformattedLines",
+      "text"
+    ],
+    "448": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "preformattedLines",
+      "text"
+    ],
+    "451": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "preformattedLines",
+      "text"
+    ],
+    "452": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "preformattedLines",
+      "text"
+    ],
+    "453": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "preformattedLines",
+      "text"
+    ],
+    "454": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "preformattedLines",
+      "text"
+    ],
+    "455": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "preformattedLines",
+      "text"
+    ],
+    "459": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "preformattedLines",
+      "scripts",
+      "text"
+    ],
+    "460": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "preformattedLines",
+      "scripts",
+      "text"
+    ],
+    "461": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "preformattedLines",
+      "scripts",
+      "text"
+    ],
+    "462": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "preformattedLines",
+      "scripts",
+      "text"
+    ],
+    "463": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "preformattedLines",
+      "scripts",
+      "text"
+    ],
+    "464": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "preformattedLines",
+      "scripts",
+      "text"
+    ],
+    "465": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "preformattedLines",
+      "scripts",
+      "text"
+    ],
+    "466": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "preformattedLines",
+      "scripts",
+      "text"
+    ],
+    "467": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "preformattedLines",
+      "scripts",
+      "text"
+    ],
+    "468": [
+      "anchors",
+      "headingLevels",
+      "headingRanks",
+      "headings",
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "preformattedLines",
+      "scripts",
+      "text"
+    ],
+    "470": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "preformattedLines",
+      "text"
+    ],
+    "471": [
+      "headingRanks",
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "preformattedLines",
+      "scripts",
+      "text"
+    ],
+    "477": [
+      "headingRanks",
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "preformattedLines",
+      "text"
+    ],
+    "478": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "preformattedLines",
+      "text"
+    ],
+    "479": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "preformattedLines",
+      "text"
+    ],
+    "481": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "preformattedLines",
+      "text"
+    ],
+    "482": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "preformattedLines",
+      "text"
+    ],
+    "484": [
+      "headingRanks",
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "preformattedLines",
+      "scripts",
+      "text"
+    ],
+    "485": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "preformattedLines",
+      "scripts",
+      "text"
+    ],
+    "486": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "preformattedLines",
+      "text"
+    ],
+    "487": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "preformattedLines",
+      "text"
+    ]
+  },
+  "changedImages": [
+    "EPUB/images/image-108.png",
+    "EPUB/images/image-109.png",
+    "EPUB/images/image-110.png",
+    "EPUB/images/image-111.png",
+    "EPUB/images/image-167.png",
+    "EPUB/images/image-168.png",
+    "EPUB/images/image-209.png",
+    "EPUB/images/image-213.png",
+    "EPUB/images/image-217.png",
+    "EPUB/images/image-226.png",
+    "EPUB/images/image-286.png",
+    "EPUB/images/image-291.png",
+    "EPUB/images/image-370.png",
+    "EPUB/images/image-373.png",
+    "EPUB/images/image-376.png",
+    "EPUB/images/image-380.png",
+    "EPUB/images/image-383.png",
+    "EPUB/images/image-388.png",
+    "EPUB/images/image-389.png",
+    "EPUB/images/image-390.png",
+    "EPUB/images/image-391.png",
+    "EPUB/images/image-392.png",
+    "EPUB/images/image-393.png",
+    "EPUB/images/image-441.png",
+    "EPUB/images/image-442.png",
+    "EPUB/images/image-459.png",
+    "EPUB/images/image-482.png",
+    "EPUB/images/image-484.png",
+    "EPUB/images/image-600.png",
+    "EPUB/images/image-635.png",
+    "EPUB/images/image-638.png",
+    "EPUB/images/image-641.png",
+    "EPUB/images/image-648.png",
+    "EPUB/images/image-651.png",
+    "EPUB/images/image-721.png",
+    "EPUB/images/image-724.png",
+    "EPUB/images/image-725.png",
+    "EPUB/images/image-726.png",
+    "EPUB/images/image-730.png",
+    "EPUB/images/image-731.png",
+    "EPUB/images/image-735.png",
+    "EPUB/images/image-736.png",
+    "EPUB/images/image-741.png",
+    "EPUB/images/image-972.png",
+    "EPUB/images/image-977.png",
+    "EPUB/images/image-1175.png",
+    "EPUB/images/image-1180.png",
+    "EPUB/images/image-1208.png",
+    "EPUB/images/image-1210.png",
+    "EPUB/images/image-1211.png",
+    "EPUB/images/image-1213.png",
+    "EPUB/images/image-1215.png",
+    "EPUB/images/image-1216.png",
+    "EPUB/images/image-1217.png",
+    "EPUB/images/image-1222.png",
+    "EPUB/images/image-1241.png",
+    "EPUB/images/image-1245.png",
+    "EPUB/images/image-1246.png",
+    "EPUB/images/image-1248.png",
+    "EPUB/images/image-1250.png",
+    "EPUB/images/image-1252.png",
+    "EPUB/images/image-1253.png",
+    "EPUB/images/image-1257.png",
+    "EPUB/images/image-1267.png",
+    "EPUB/images/image-1272.png",
+    "EPUB/images/image-1300.png",
+    "EPUB/images/image-1305.png",
+    "EPUB/images/image-1306.png",
+    "EPUB/images/image-1311.png",
+    "EPUB/images/image-1313.png",
+    "EPUB/images/image-1318.png",
+    "EPUB/images/image-1338.png",
+    "EPUB/images/image-1343.png"
+  ],
+  "navigationChanged": true,
+  "changedNavigationPages": [
+    468
+  ],
+  "pageMarkersEqual": true,
+  "changedReportFields": [
+    "imageCount"
+  ],
+  "idOnlyShifts": {
+    "pageCount": 253,
+    "fields": {
+      "anchors": 3,
+      "images": 201,
+      "listItemIDs": 59,
+      "markup": 201,
+      "paragraphIDs": 225
+    },
+    "navigationEntries": null
+  },
+  "imageRenames": {
+    "count": 1717
+  },
+  "scope": "Per page: text, block records, element markup, image bytes, link targets and warnings, with generated identifiers (block ordinals, element ids, spine file names, image asset names) normalized; page markers; image assets by bytes; navigation entries; conversion report. Not CSS, package metadata, decoded image equivalence or a fidelity qualification."
+}

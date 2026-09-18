@@ -1759,18 +1759,45 @@
       "basis": "Page 12 source raster reviewed; license and page-347 formula targets come from the existing corpus review. Does not bless flattened inline exponents or validate every equation image. Page 343 preserves the source's squared exponent in its actual introductory context; the source typo \"from\" is intentional. Page 26 visually reviewed: numbered exercise 80 has squared exponents on both 7a and 6a; retaining those scripts does not qualify other exercise layout. Pages 18-19 and 43-44 visually reviewed: each paragraph continues onto the next page and must remain one paragraph across the source-page marker (#27). Page 343 source raster reviewed for the \"Our Solution\" line x = (-b +/- sqrt(b^2 - 4ac)) / 2a: its exponent, radical sign and fraction bar are checked stroke by stroke at full resolution, as are both exponents of exercise 35 on page 347 (#27). Pages 10, 438, 289, 291 and 471 visually reviewed (#29): section 0.1 exercises and their answers keep every number within each column's order (column-major page order is not blessed, only within-column order), the 8.1 square-root exercises and the page-289 derivations are preserved as warned image regions, and the 7.8 dimensional-analysis answers keep thirty text entries. Does not bless the displaced chapter heading on page 438. Page 40 visually reviewed (#50): the five-step list keeps one block per step, and item 4's wrapped line (\"multiply or\" / \"divide)\"), set in the item's hanging indent, stays inside item 4 while item 5 opens a new block. The aligned derivation below it remains a warned image and is not blessed. Page 101 source raster reviewed (#69): exercises 17 and 28, whose numbers PDFKit splits from their point pairs, are single entries like exercise 18. Pages 288, 289 and 291 source rasters reviewed (#58, #49): sentences with inline radicals (page 288's square-root introduction and product-rule sentence, page 289's opening sentence) and the page-291 instruction reflow as text, while page 288's Example 377 table and displayed product rule, the page-289 derivations and every page-291 exercise stay preserved. PDFKit's separate radical pieces (`√ on`, `√ by spliting`, `√ . There are sev-`) rejoin their rows and paragraphs in reading order on pages 288, 289 and 299 (#95); the pieces keep PDFKit's own order inside a row (`36· 5 √` for √36·5), which is not blessed. Page 429 source raster reviewed (#71): `When we are solving a triangle` opens a paragraph set off by added space under the paragraph threshold. Pages 448 and 487 source rasters reviewed (#78): page 448's graphs, numbered along their rows three to a row, read 15-22 in number order; page 487's sub-answers a-i, set in three columns above answers 2-15, read before them. Exercise sets numbered two to a row (pages 10, 26) keep their column order. Pages 175 and 437 (#97) source-reviewed: blank pages whose only text is the folio carry no text once the folio run removes it. Pages 5 and 211 source-reviewed (#102): the contents entry 6.3 Trinomials where a = 1 with its leader is text, not a preserved region. Pages 2, 9, 90, 120, 180, 318, 321 and 401 source-reviewed (#109): a line holding an inline minus, times or radical sign, whose rectangle extends 8.5 points past its type, continues its paragraph into the next line; page 90's point descriptions and page 401's two paragraphs stay separate; page 321's radicand − 1 reads inside its sentence; the license's minus bullets on page 2 and the derivation lines on pages 9 and 120 stay list lines. Pages 34, 40 and 230 source rasters reviewed (#110): a digit set in CMR12 before prose in the EC text font keeps its word space (`Subtract 8 from`, `Plug 2 in`, `The numbers are− 3 and− 3`); PDFKit dropped it and NativeSpacingReader restores it from the fonts' WinAnsi encodings. The flattened minus spacing (`− 3`) is not blessed. Pages 50, 218 and 64 source rasters reviewed (#123): `dif-` + `ferent` joins as `different`, which the book prints with the U+FB00 ligature; the spaced example lines `Three more than a number becomes x + 3` and `Four less than a number becomes x− 4` are paragraphs of their own after their list items. The `Is` bullet inside page 64's formula crop is not blessed. A word broken across two paragraph blocks joins through the hyphen policy (#131: 92 `connect`). Page 101 (#14) reviewed against the source: exercises 9 and 10 each head their own graph on opposite sides of the measure, and PDFKit returns both markers as one line; each marker now reads before its own graph. Pages 16, 252, 340, 343, 424 and 471 source rasters reviewed (#46, #48): a crop takes the piece of a display row that its edge left just outside, because PDFKit breaks such a row at a raised exponent or a fraction. Page 343's \"Factor\" line keeps its leading x² inside the preserved equation instead of emitting a flattened \"x2 +\" paragraph after Example 465, and page 340's derivations leak no \"x2\"; each of page 16's thirty-six fraction exercises and page 252's four is one region with no marker-and-sign stub; page 471's answers 22 and 29 are single regions while the thirty 7.8 dimensional-analysis answers and answers 21, 23, 28, 32 and 33 stay text; page 424's eight triangles keep their side lengths and vertex labels while every exercise number stays a text entry. Page 252 then holds only its four exercise images, and its multiplication dots are no longer navigation headings. Column-major answer-key order, the order of page 424's remaining labels and the page-16 reading order are not blessed. #180: page 38's justified line, which PDFKit split at the stretched space after `4x or 2x,`, is read as one line of its paragraph. Pages 427, 463, 465, 482 and 486 source rasters reviewed (#178, #179): an answer key numbered down its columns reads down them, so page 465's first key reads 11-42 and its second 1-34, page 486's exponential answers 1-40, page 463's three keys 7-34, 1-40 and 1-4, and page 482's simultaneous-product and revenue keys in number order; column-major order is blessed for those keys, while page 486's first key, whose other columns are crops and carry no numbering, still reads across its rows and is not blessed. The key titles' placement inside their keys is not blessed. Each right triangle on pages 424 and 427 keeps its own vertex letters and side lengths inside its crop, as the 65-degree label and the right-angle mark already were, while every exercise number stays a text entry of its own.",
       "pages": [
         {
+          "page": 7,
+          "text": [
+            "− 5 + ( − 3) Same sign, add 5 + 3, keep the negative",
+            "Diﬀerent signs, subtract 7 − 2, use sign from bigger number, negative"
+          ],
+          "absentText": [
+            "5+ (− 3)",
+            "add 5+ 3",
+            "subtract 7− 2",
+            "Diﬀ erent"
+          ]
+        },
+        {
+          "page": 8,
+          "text": [
+            "4 + ( − 3) Diﬀerent signs, subtract 4 − 3, use sign from bigger number, positive",
+            "9 − ( − 4) Add the opposite of − 4 9 + 4 Same sign, add 9 + 4, keep the positive"
+          ],
+          "absentText": [
+            "4+(− 3)",
+            "subtract 4− 3",
+            "opposite of− 4",
+            "9 +4",
+            "Diﬀ erent"
+          ]
+        },
+        {
           "page": 10,
           "orderedText": [
             "Evaluate each expression.",
-            "1) 1− 3",
-            "29) (− 7) +7",
+            "1) 1 − 3",
+            "29) ( − 7) + 7",
             "Find each product.",
-            "31) (4)(− 1)",
-            "43) (− 5)(4)"
+            "31) (4)( − 1)",
+            "43) ( − 5)(4)"
           ],
           "text": [
-            "2) 4− (− 1)",
-            "44) (− 3)(− 9)"
+            "2) 4 − ( − 1)",
+            "44) ( − 3)( − 9)"
           ],
           "headings": [
             "0.1 Practice - Integers"
@@ -1782,24 +1809,24 @@
             "Answers - Chapter 0",
             "0.1",
             "Answers - Integers",
-            "1)− 2",
+            "1) − 2",
             "2) 5",
             "13) 3",
-            "21)− 7",
+            "21) − 7",
             "22) 0",
             "42) 4",
-            "43)− 20",
-            "60)− 9",
+            "43) − 20",
+            "60) − 9",
             "0.2",
             "Answers - Fractions"
           ],
           "text": [
             "22) 0",
-            "31)− 4",
+            "31) − 4",
             "42) 4",
-            "43)− 20",
+            "43) − 20",
             "44) 27",
-            "60)− 9",
+            "60) − 9",
             "Answers - Integers"
           ],
           "headings": [
@@ -1857,7 +1884,7 @@
           "page": 471,
           "orderedText": [
             "28) 1",
-            "33)− 10",
+            "33) − 10",
             "7.8",
             "Answers - Dimensional Analysis",
             "1) 12320 yd",
@@ -1876,7 +1903,9 @@
           "minimumImages": 1,
           "absentText": [
             "22)− 2,",
-            "29)−"
+            "29)−",
+            "22) − 2,",
+            "29) −"
           ]
         },
         {
@@ -1951,15 +1980,15 @@
         {
           "page": 23,
           "text": [
-            "5x− 2y− 8x +7y",
-            "Combine like terms 5x− 8x and− 2y + 7y"
+            "5x − 2y − 8x + 7y",
+            "Combine like terms 5x − 8x and − 2y + 7y"
           ],
           "scripts": [
             {
               "tag": "sup",
               "text": "2",
               "before": "Our Solution Example 33. 8x",
-              "after": "− 3x + 7− 2x"
+              "after": "− 3x + 7 − 2x"
             }
           ],
           "absentScripts": [
@@ -1976,19 +2005,19 @@
         {
           "page": 26,
           "text": [
-            "80) (7a2 +7a)− (6a2 + 4a)"
+            "80) (7a2 + 7a) − (6a2 + 4a)"
           ],
           "scripts": [
             {
               "tag": "sup",
               "text": "2",
               "before": "80) (7a",
-              "after": "+7a)− (6a"
+              "after": "+ 7a) − (6a"
             },
             {
               "tag": "sup",
               "text": "2",
-              "before": "+7a)− (6a",
+              "before": "+ 7a) − (6a",
               "after": "+ 4a)"
             }
           ]
@@ -2035,7 +2064,7 @@
         {
           "page": 230,
           "paragraphs": [
-            "Multiply to 9, add to− 6 The numbers are− 3 and− 3, the same! Perfect square"
+            "Multiply to 9, add to − 6 The numbers are − 3 and − 3, the same! Perfect square"
           ],
           "absentText": [
             "3and"
@@ -2053,8 +2082,8 @@
         {
           "page": 101,
           "listItems": [
-            "17) (− 16,− 14), (11,− 14)",
-            "28) (− 18,− 5), (14,− 3)",
+            "17) ( − 16, − 14), (11, − 14)",
+            "28) ( − 18, − 5), (14, − 3)",
             "18) (13, 15), (2, 10)"
           ],
           "orderedText": [
@@ -2166,7 +2195,7 @@
           "page": 9,
           "paragraphs": [
             "The second problem is a multiplication problem because there is nothing between the 3 and the parenthesis.",
-            "but if the signs match on multiplication, the answer is positive, (− 3)(− 7) = 21.",
+            "but if the signs match on multiplication, the answer is positive, ( − 3)( − 7) = 21.",
             "is subtraction because the subtraction separates the 3 from what comes after it."
           ],
           "listItems": [
@@ -2179,13 +2208,13 @@
         {
           "page": 90,
           "paragraphs": [
-            "The second point, B (− 2, 1), is left 2 (negative moves backwards), up 1.",
-            "The third point, C (3,− 4) is right 3, down 4 (negative moves backwards)."
+            "The second point, B ( − 2, 1), is left 2 (negative moves backwards), up 1.",
+            "The third point, C (3, − 4) is right 3, down 4 (negative moves backwards)."
           ],
           "distinctParagraphs": [
             {
-              "first": "The second point, B (− 2, 1), is left 2",
-              "second": "The third point, C (3,− 4) is right 3"
+              "first": "The second point, B ( − 2, 1), is left 2",
+              "second": "The third point, C (3, − 4) is right 3"
             }
           ]
         },
@@ -2215,7 +2244,7 @@
         {
           "page": 401,
           "paragraphs": [
-            "If we plug this output into the inverse function we get f−1(8) = (8)− 5= 3, which is the original input.",
+            "If we plug this output into the inverse function we get f−1(8) = (8)− 5 = 3, which is the original input.",
             "If it is anything but x the functions are not inverses."
           ],
           "distinctParagraphs": [
@@ -2239,7 +2268,7 @@
           ],
           "paragraphs": [
             "Three more than a number becomes x + 3",
-            "Four less than a number becomes x− 4"
+            "Four less than a number becomes x − 4"
           ]
         },
         {
@@ -2307,7 +2336,7 @@
             {
               "tag": "sub",
               "text": "1",
-              "before": "(x2, y2) is y2− y",
+              "before": "(x2, y2) is y2 − y",
               "after": "x2− x1"
             }
           ],
@@ -2407,53 +2436,56 @@
         {
           "page": 463,
           "orderedText": [
-            "7) (b +8)(b + 4)",
-            "16) (m− 5n)(m− 10n)",
-            "17) (u− 5v)(u− 3v)",
-            "34) 6(m− 9n)(m +3n)",
+            "7) (b + 8)(b + 4)",
+            "16) (m − 5n)(m − 10n)",
+            "17) (u − 5v)(u − 3v)",
+            "34) 6(m − 9n)(m + 3n)",
             "6.4",
-            "1) (7x− 6)(x− 6)",
-            "14) (3r +7)(r +3)",
-            "15) (3x− 5)(x− 4)",
-            "28) (3p +7)(2p− 1)",
-            "29) (k− 4)(4k− 1)",
-            "40) 2(3x +2y)(2x +7y)",
+            "1) (7x − 6)(x − 6)",
+            "14) (3r + 7)(r + 3)",
+            "15) (3x − 5)(x − 4)",
+            "28) (3p + 7)(2p − 1)",
+            "29) (k − 4)(4k − 1)",
+            "40) 2(3x + 2y)(2x + 7y)",
             "6.5",
-            "1) (r + 4)(r− 4)",
-            "4) (x +1)(x− 1)"
+            "1) (r + 4)(r − 4)",
+            "4) (x + 1)(x − 1)"
           ],
           "absentText": [
             "7) (b +8)(b + 4) 17)",
+            "7) (b + 8)(b + 4) 17)",
             "26) 4(x + 7)(x +6) 6.4"
           ]
         },
         {
           "page": 465,
           "orderedText": [
-            "11) n(n− 1)",
-            "26) (4m− n)(16m2 +4mn +n2)",
-            "27) (3x− 4)(9x2 + 12x +16)",
-            "42) v2(2u− 5v)(u− 3v)",
-            "1) 7,− 2",
-            "7) 2,− 7",
+            "11) n(n − 1)",
+            "26) (4m − n)(16m2 + 4mn + n2)",
+            "27) (3x − 4)(9x2 + 12x + 16)",
+            "42) v2(2u − 5v)(u − 3v)",
+            "1) 7, − 2",
+            "7) 2, − 7",
             "Answers - Solve by Factoring",
             "13) 4, 0",
             "24) 4, 0",
-            "29)− 4, 1",
-            "32)− 4,− 6"
+            "29) − 4, 1",
+            "32) − 4, − 6"
           ],
           "absentText": [
             "11) n(n− 1) 27)",
-            "7) 2,− 7 30)"
+            "11) n(n − 1) 27)",
+            "7) 2,− 7 30)",
+            "7) 2, − 7 30)"
           ]
         },
         {
           "page": 482,
           "orderedText": [
             "Answers - Simultaneous Product",
-            "4) (8, 15), (− 10,− 12)",
-            "7) (45, 2), (− 10,− 9)",
-            "12) (8, 10), (− 10,− 8)",
+            "4) (8, 15), ( − 10, − 12)",
+            "7) (45, 2), ( − 10, − 9)",
+            "12) (8, 10), ( − 10, − 8)",
             "9.10",
             "1) 12",
             "8) 12 @ S6",
@@ -6847,6 +6879,15 @@
           "pageReference": false,
           "paragraphs": [
             "Observation 1: Shift and MergeSameEpoch can be implemented using 𝑂(𝑥) time where 𝑥 is the number of bits set to 1 in the bitmap."
+          ]
+        },
+        {
+          "page": 7,
+          "paragraphs": [
+            "in the simulation to ensure that if E = 1𝑚𝑠 then the worst-case clock skew is indeed 1𝑚𝑠."
+          ],
+          "absentText": [
+            "if E= 1𝑚𝑠"
           ]
         },
         {

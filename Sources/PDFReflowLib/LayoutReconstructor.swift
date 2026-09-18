@@ -1700,10 +1700,15 @@ enum LayoutReconstructor {
     /// Text that reads as words: at least two words of three or more letters, and words of two
     /// or more letters making up at least 40% of the tokens. Prose dense with inline mathematics
     /// (`is where x = 0 and y = 0. As we move`) stays above that share, single-letter variables
-    /// do not count; whether a wordy row is prose is decided by its measure.
+    /// do not count; whether a wordy row is prose is decided by its measure. A token of operator
+    /// signs alone is not a term: whether a sign stands apart depends only on whether the math
+    /// space beside it was read (#188: PDFKit kept it on one side of Wallace's signs and dropped it
+    /// on the other, so `representing x =1, 2, 3.` was two tokens where `x = 1` is three).
     private static func isWordy(_ text: String) -> Bool {
         let share = wordShare(text, minimum: 2)
-        return wordShare(text).words >= 2 && share.words * 5 >= share.tokens * 2
+        let signs = text.split(whereSeparator: \.isWhitespace)
+            .filter { $0.unicodeScalars.allSatisfy(NativeSpacingReader.mathOperators.contains) }.count
+        return wordShare(text).words >= 2 && share.words * 5 >= (share.tokens - signs) * 2
     }
 
     private static let functionWords: Set<String> = [

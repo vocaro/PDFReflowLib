@@ -77,10 +77,24 @@ private func sourceHTML(_ fixture: String, _ text: String) throws -> String {
     #expect(html([("•", 7.98, 1.02), (" ", 7.98, 1.02), ("Under the Medicare program", 10.98, 0)]) == "• Under the Medicare program")
     #expect(html([(" ", 10.98, 0), ("▪", 7.98, -1.5), (" Item", 10.98, 0)]) == "▪ Item")
     // Controls: a raised note marker opening a line, a raised degree sign (Wallace's `29◦`), and a raised
-    // bullet inside a line are still superscripts.
+    // bullet set against a word inside a line are still superscripts.
     #expect(html([("*", 7.98, 1.02), (" ", 7.98, 1.02), ("Note text", 10.98, 0)]) == "<sup>* </sup>Note text")
     #expect(html([("29", 12, 0), ("◦", 8, 4)]) == "29<sup>◦</sup>")
-    #expect(html([("a ", 10.98, 0), ("•", 7.98, 1.02), (" b", 10.98, 0)]) == "a <sup>•</sup> b")
+    #expect(html([("a", 10.98, 0), ("•", 7.98, 1.02), (" b", 10.98, 0)]) == "a<sup>•</sup> b")
+}
+
+@Test func aBulletStandingApartInsideALineIsNoScript() {
+    // #186: a raised bullet a word space from the words on both sides separates them (the magazine's
+    // back cover: a 6-point Monotype Sorts bullet raised one point between 11-point addresses). Until
+    // #186 this was a control that stayed a superscript; nothing it is set against is its base.
+    #expect(html([("a ", 10.98, 0), ("•", 7.98, 1.02), (" b", 10.98, 0)]) == "a • b")
+    #expect(html([("ars.usda.gov/ar", 11, 0), (" ", 11, 0), ("●", 6, 1), (" ", 11, 0), ("Follow us", 11, 0)])
+        == "ars.usda.gov/ar ● Follow us")
+    // A bullet ending the line after a space stands apart too; one touching a word on either side does not.
+    #expect(html([("a ", 10.98, 0), ("•", 7.98, 1.02)]) == "a •")
+    #expect(html([("a ", 10.98, 0), ("•", 7.98, 1.02), ("b", 10.98, 0)]) == "a <sup>•</sup>b")
+    // A raised letter standing apart is still a script: only bullets separate.
+    #expect(html([("a ", 10.98, 0), ("l", 6, 1), (" b", 10.98, 0)]) == "a <sup>l</sup> b")
 }
 
 @Test func symbolBulletListsReflowAsListItems() throws {

@@ -115,7 +115,7 @@ are, in the page markup). Evidence and negative controls on real output are in
 ## Current content coverage
 
 <!-- counts:coverage -->
-[corpus/regressions.json](../corpus/regressions.json) has 3481 targeted checks on 569 reviewed pages
+[corpus/regressions.json](../corpus/regressions.json) has 3516 targeted checks on 572 reviewed pages
 across 22 documents: *Pilot's Handbook of Aeronautical Knowledge*, *Beginning and Intermediate
 Algebra*, *The 9/11 Commission Report*, *The Fed Explained*, *Dietary Guidelines for Americans*,
 *Fifth National Climate Assessment*, *Our Flag*, *Preparedness 101*, *Project Blue Book Special
@@ -125,11 +125,11 @@ Report No. 14*, *Mineral Commodity Summaries 2025*, *Loper Bright Enterprises v.
 Clocks*, *Complaint for a Civil Case*, *Investigation of Atmospheric Boundary-Layer Effects on
 Launch-Vehicle Ground Wind Loads*, *A Scheduling Algorithm Compatible with a Distributed Management
 of Arrivals in the National Airspace System*, *Agricultural Research*, *Earthdata Cloud Analytics
-Project* and *Tank Health Monitoring*. They comprise 1149 ordered-text, 242 text, 440 paragraph,
-289 absent-text, 276 heading, 36 heading-level, 50 absent-heading, 93 list-item,
-1 preformatted-lines, 29 script, 8 absent-script, 11 footnote, 34 note-link,
+Project* and *Tank Health Monitoring*. They comprise 1149 ordered-text, 245 text, 446 paragraph,
+295 absent-text, 279 heading, 36 heading-level, 64 absent-heading, 93 list-item,
+1 preformatted-lines, 29 script, 10 absent-script, 11 footnote, 34 note-link,
 61 paragraph-continuation, 1 list-item-continuation, 8 paragraph-separation, 122 distinct-paragraph,
-201 image-presence, 44 captioned-image, 20 image-alternative, 102 page-reference, 111 warning,
+201 image-presence, 45 captioned-image, 20 image-alternative, 102 page-reference, 111 warning,
 113 absent-warning, 17 source-region, 5 glyph-structure, 4 image-appearance and 14 table-cell
 checks, counted as `tools/check_corpus_content.py` counts them.
 <!-- counts:end -->
@@ -650,7 +650,7 @@ the page's structure validates, each line also records the tag the pipeline appl
 since #89/#90); older fixtures and untagged lines have none, and `SourceLayoutFixture` restores it.
 Source review, baseline failures, cross-document safeguards and full-run evidence are retained
 in [the three-fix measurement](../measurements/three-fidelity-fixes/record.md). The suite contains
-<!-- counts:swift-tests -->959 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->245 Python tests<!-- counts:end -->.
+<!-- counts:swift-tests -->972 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->245 Python tests<!-- counts:end -->.
 The comparison tests include a real-Poppler image URL check through the safe HTTP handler
 (simple and positioned modes, paths with spaces); absent Poppler is an explicit skip.
 
@@ -972,6 +972,32 @@ line over half the picture's width, a body of space, a line outside the measure,
 rule in place of a picture. The magazine contract adds eleven absent-foot, six heading, thirteen
 paragraph and nine captioned-image checks; see the
 [foot-rule, indent and credit evidence](../measurements/foot-rules-indents-and-credits/record.md).
+
+## Dingbats, misreported capitals, bare-page headings and lexicon word breaks
+
+`MagazineLeftoversTests.swift` covers [#186](https://github.com/vocaro/PDFReflowLib/issues/186), the
+leftovers of #159 on USDA ARS *Agricultural Research*. In-memory PDFs copy the magazine's font
+dictionaries and maps: its composite `WVUHWN+MonotypeSorts`, whose map reads the back cover's bullet
+as `l` (Zapf Dingbats' code for ●), reads `ars.usda.gov/ar ● Follow us` with `Follow`'s letters kept
+and no superscript, as do `ZapfDingbats` and `ITCZapfDingbats`; the same map under a text font's name
+keeps its `l`. Its `Helvetica-Condensed` credit font, whose map reads code `Z` as `z` while the
+WinAnsi encoding and the `CharSet` name only `/Z`, reads `BRAD FRITZ (D2697-1)`; a `CharSet` listing
+`/z` too, a symbolic font and a map naming another letter keep the map's reading. A raised bullet a
+word space from both neighbours is no script (#155's control `a <sup>•</sup> b` now reads `a • b`),
+while one against a word, and a raised letter, stay scripts.
+
+Source fixtures `usda-1` and `usda-24` (text and geometry only) require the back cover's return
+address, `Official Business` and web line as paragraphs against the document's 10.5-point body (the
+page's own 8-point estimate, the control, still makes them headings) and the cover's lone
+lowercase `pages 2, 4-14` as a paragraph under its headings; synthetic controls keep an 11.5-point
+title on a page that states its own 9-point body, and a two-line title whose second line opens in
+lowercase. `usda-9`'s `Fighting Filth Flies` is a heading whose sidebar text opens past its
+photograph; without the picture, with the text five bodies further down, or without the book's
+recurring subhead style it stays a paragraph. Lexicon joins (`com-` + `panies`) need a document
+declared English, and leave `on-` + `going`, `e-` + `mail`, an unknown word and a compound the
+book prints. The contracts add checks to the magazine (pages 1, 6, 9, 13, 15, 19, 24), the 9/11
+report (pages 3 and 172), the CDC comic, Census, Fed and Wallace; see the
+[magazine-leftovers evidence](../measurements/magazine-leftovers/record.md).
 
 ## Hanging-indent entries
 
@@ -1842,7 +1868,7 @@ larger shifted one (#138's Fed letter), runs separated by a space, a script foll
 third baseline, an equal-size run, opposite-side shifts and a nested index (the DASC paper's `STA`
 with `n` raised and `i` raised again, #163). The Supreme Court's Symbol bullets (`scotus-86`) and the
 spaces after them are list marks, not superscripts, while a raised note marker opening a line, a
-raised degree sign (Wallace's `29◦`) and a raised bullet inside a line stay superscripts. NASA page 13
+raised degree sign (Wallace's `29◦`) and a raised bullet set against a word stay superscripts (one standing a word space apart is no script, #186). NASA page 13
 (`ntrs-13`) reflows its five decoded bullets as five list items, each with its wrapped line.
 `LineEndCompoundTests.swift` adds `45-` + `degree-increment`: a hyphen after a number is a compound
 hyphen, not a word break.

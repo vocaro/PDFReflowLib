@@ -207,10 +207,27 @@ enum NativeTextReader {
                 text = repair.text
                 semantic = repair.text.string.trimmingCharacters(in: .whitespacesAndNewlines)
             }
-            return privateUse.decode(FontWeightReader.apply(weights, to: text, bounds: bounds, allBounds: [bounds]))
+            let styled = FontWeightReader.apply(weights, to: text, bounds: bounds, allBounds: [bounds])
+            let drawn = redrawn(styled, semantic: semantic, bounds: bounds, allBounds: [bounds], weights: weights)
+            semantic = drawn.semantic
+            return privateUse.decode(drawn.attributed ?? styled)
         } : nil
         return textLine(semantic: privateUse.decode(semantic.replacingOccurrences(of: "\u{FFFC}", with: " ")),
                         bounds: bounds, attributed: attributed)
+    }
+
+    /// A line with the glyphs its fonts' maps misreport rewritten as drawn (`FontWeightReader.redrawGlyphs`,
+    /// #186), and its semantic text to match. The line is left as it was unless its attributed text is
+    /// its semantic text, so the two never disagree.
+    private static func redrawn(_ attributed: NSAttributedString?, semantic: String, bounds: CGRect, allBounds: [CGRect],
+                                weights: [FontWeightReader.Show]) -> (attributed: NSAttributedString?, semantic: String) {
+        guard let attributed, weights.contains(where: { $0.redraws != nil }) else { return (attributed, semantic) }
+        let drawn = FontWeightReader.redrawGlyphs(weights, in: attributed, bounds: bounds, allBounds: allBounds)
+        func plain(_ text: String) -> String {
+            text.replacingOccurrences(of: "\u{FFFC}", with: " ").trimmingCharacters(in: .whitespacesAndNewlines)
+        }
+        guard drawn.string != attributed.string, plain(attributed.string) == plain(semantic) else { return (attributed, semantic) }
+        return (drawn, drawn.string.replacingOccurrences(of: "\u{FFFC}", with: " "))
     }
 
     /// A line cut in two at `x`: both pieces exist, spell the line apart from the whitespace at
@@ -687,10 +704,14 @@ enum NativeTextReader {
             let weighted = repaired.map {
                 FontWeightReader.apply(weights, to: $0, bounds: bounds, allBounds: allBounds)
             }
+            // Glyphs a map misreports are redrawn after spacing and style evidence, which compare
+            // PDFKit's characters with those maps (#186).
+            let (drawn, text) = redrawn(weighted, semantic: corrected ?? semantic, bounds: bounds,
+                                        allBounds: allBounds, weights: weights)
             // Private-use characters are decoded last: spacing and style evidence compare PDFKit's
             // characters with the shows' own maps, which hold the same private-use values (#155).
-            return textLine(semantic: privateUse.decode(corrected ?? semantic),
-                            bounds: bounds, attributed: weighted.map(privateUse.decode))
+            return textLine(semantic: privateUse.decode(text),
+                            bounds: bounds, attributed: drawn.map(privateUse.decode))
         }
         // A repaired line whose last show PDFKit continues on the next line of its row (the carry),
         // held with its PDFKit characters until that line is read (`joinsSplitShow`).
@@ -1020,6 +1041,7 @@ enum NativeTextReader {
             // shifted in the selection (#144); a base on a shifted baseline is no script.
             let offset = run.offset - (baselines.reference[index] ?? 0)
             if !(hasDropCap && run.first), !display, !baselines.base[index], !isBulletRun(index, in: styled),
+               !isSeparatorBullet(index, in: styled),
                hasScriptBase(run, index: index, in: styled), offset.isFinite, abs(offset) <= run.size * 0.75 {
                 if offset > tolerance { style.insert(.superscript) }
                 else if offset < -tolerance { style.insert(.subscript) }
@@ -1109,6 +1131,22 @@ enum NativeTextReader {
         func bulletsAndSpace(_ text: String) -> Bool { text.allSatisfy { $0.isWhitespace || bulletCharacters.contains($0) } }
         guard bulletsAndSpace(runs[index].text), runs[...index].allSatisfy({ bulletsAndSpace($0.text) }) else { return false }
         return runs[...index].contains { $0.text.contains(where: bulletCharacters.contains) }
+    }
+
+    /// A bullet standing apart between two words (#186): the run holds bullets and whitespace only, and
+    /// whitespace separates it from the text on either side, or it ends the line. A script is set against
+    /// its base; a bullet set a word space from both neighbours separates them, however it is raised
+    /// (*Agricultural Research*'s back cover sets `ars.usda.gov/ar ● Follow us`, a 6-point Monotype Sorts
+    /// bullet raised one point between 11-point addresses). A bullet touching a word stays measured.
+    private static func isSeparatorBullet(_ index: Int, in runs: [StyledRun]) -> Bool {
+        let text = runs[index].text
+        guard text.contains(where: bulletCharacters.contains),
+              text.allSatisfy({ $0.isWhitespace || bulletCharacters.contains($0) }) else { return false }
+        let before = runs[..<index].last { !$0.text.isEmpty }?.text.last
+        let after = runs[(index + 1)...].first { !$0.text.isEmpty }?.text.first
+        return (text.first?.isWhitespace == true || before.map(\.isWhitespace) ?? true)
+            && (text.last?.isWhitespace == true || after.map(\.isWhitespace) ?? true)
+            && (before != nil || after != nil)
     }
 
     /// A script is set smaller than, or as large as, the text it is raised or lowered from, so a

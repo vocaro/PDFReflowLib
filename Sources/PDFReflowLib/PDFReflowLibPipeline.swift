@@ -449,6 +449,8 @@ enum PDFReflowLibPipeline {
         var headingEvidence: [LayoutReconstructor.LabelStyle: Int] = [:]
         /// The gaps each page's text wraps at, by body size (#181).
         var wrapEvidence: [Int: [CGFloat]] = [:]
+        /// Characters per type size over the native pages: the document's body (#186).
+        var bodyWeights: [Int: Int] = [:]
         var furniture = FurnitureDetector.Ledger()
         /// Each page's numbered and lettered line markers, by page number (#146).
         var listMarkers: [Int: [LayoutReconstructor.PageMarker]] = [:]
@@ -553,6 +555,9 @@ enum PDFReflowLibPipeline {
                 for style in LayoutReconstructor.labelEvidence(on: content) { labelEvidence[style, default: 0] += 1 }
                 for style in LayoutReconstructor.headingEvidence(on: content) { headingEvidence[style, default: 0] += 1 }
                 if let wrap = LayoutReconstructor.wrapEvidence(on: content) { wrapEvidence[wrap.size, default: []].append(wrap.gap) }
+                if !content.recognized, !content.hasSyntheticTextStyle, !content.requiresPageImage {
+                    LayoutReconstructor.addBodyWeights(of: content.lines, to: &bodyWeights)
+                }
             } else {
                 // An unread page carries no word across its far edge either.
                 previousLine = nil
@@ -584,6 +589,9 @@ enum PDFReflowLibPipeline {
         let headingStyles = LayoutReconstructor.labelStyles(from: headingEvidence)
         let bookWraps = LayoutReconstructor.bookWraps(from: wrapEvidence)
         wrapEvidence = [:]
+        let documentBody = LayoutReconstructor.bodySize(weights: bodyWeights)
+        // An English document's word breaks may consult the system lexicon where its own words are silent (#186).
+        if TextEncodingCheck.supports(language: options.language) { vocabulary.insert(LayoutReconstructor.englishLexiconKey) }
         // A deck: at least three pages, every one the same landscape size, and two thirds of the
         // pages carrying text read as slides. A landscape book (NOAA's, 1,834 letter pages on
         // their side) sets thousands of characters to a slide's few hundred and heads its pages
@@ -674,7 +682,7 @@ enum PDFReflowLibPipeline {
                         labelStyles: labelStyles, headingStyles: headingStyles,
                         neighbouringMarkers: (listMarkers[content.number - 1] ?? []) + (listMarkers[content.number + 1] ?? []),
                         slideDeck: slideDeck, imageKinds: imageKinds, imageCaptions: imageCaptions,
-                        bookWraps: bookWraps)
+                        bookWraps: bookWraps, documentBody: documentBody)
                     if pageBlocks.contains(where: \.hasReflowedText) {
                         reflowed += 1
                     }

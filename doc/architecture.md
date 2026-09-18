@@ -550,7 +550,12 @@ letter is removed when the book's vocabulary knows the joined word and not the c
 knows neither, the hyphen is also removed when the book uses another inflected form of the joined
 word (an ending `s es d ed ing ly` taken off, a dropped `e` restored, and an ending put back:
 `sep-` + `arates` beside `separate`), no such form of the compound, and the halves are not both
-book words, with at least six letters in all (#115). Otherwise it is kept. The vocabulary skips the word that opens a lowercase line after a line-end hyphen
+book words, with at least six letters in all (#115). In a document declared English, a break the
+book's words leave undecided is then decided by the system's English lexicon (the one
+`TextLayerPlausibility` reads): the hyphen goes when the lexicon holds the joined word and the halves
+are not both words of the lexicon or the book, with the same lengths (#186: the magazine's `com-` +
+`panies`, the 9/11 report's `excep-` + `tional`). A hyphen PDFKit lost (#157) still needs the book's
+own evidence. Otherwise it is kept. The vocabulary skips the word that opens a lowercase line after a line-end hyphen
 or soft hyphen, because it is the rest of a broken word (`es-` + `timates.html`), unless it holds
 a hyphen of its own (`straight-` + `and-level`); the same letters seen anywhere else count (#101). A
 word printed with a Latin ligature (U+FB00–U+FB06) reaches the vocabulary spelled out, as all text
@@ -711,7 +716,11 @@ continuations carry none. Images, tags, OCR or synthetic text, lettered lists an
 that do not follow those shapes still refuse the page. Heading-size evidence excludes text already preserved inside images
 when at least three remaining lines and 200 characters support the dominant reflowable font size.
 Candidates within 10% of that supported body size are suppressed, while the original 25%
-page-size threshold still applies. This retains existing modestly larger section headings. Short titles
+page-size threshold still applies. A page whose reflowable text supports no body of its own (a
+cover, a back cover) must also set its headings 10% over the document's body, the size most of
+its native text is set in, and so must a label its size alone sets apart; a heading-size line
+standing alone that opens in lowercase heads nothing (#186: the magazine's return address and
+`pages 2, 4-14`, the 9/11 report's `official government edition`). This retains existing modestly larger section headings. Short titles
 beside images retain the existing page evidence. The separate page-size estimate still governs
 whitespace cuts and paragraph geometry. Below that threshold, a section label set at least 15%
 over the supported body (acmart's `ABSTRACT`, the 9/11 report's `1.1 INSIDE THE FOUR FLIGHTS`)
@@ -738,7 +747,10 @@ untagged `Southerly Turning Errors`, `Drugs`; #97). A sub-heading of either kind
 lines is one label when both lines share a style the book already repeats, the second stacks
 under the first on its edge at heading leading and ends no sentence, and the paragraph opens
 beneath the second line (FAA's `The Professional Air Traffic Controllers` / `Organization (PATCO)
-Strike`; the pair is no style evidence of its own; #102).
+Strike`; the pair is no style evidence of its own; #102). The paragraph may also open past a
+picture set directly beneath the title (no thin rule, within four fifths of a body, spanning the
+title's left edge) and the smaller type under the picture, within four bodies of it: a sidebar's
+title over the sidebar's photograph (the magazine's `Fighting Filth Flies`; #186).
 A two-column academic paper sets both its heading levels at the body's own size, which neither the
 threshold nor a `LabelStyle` can reach, so `academicSectionTitles` reads them from the column's
 measure instead (#162; the IEEEtran conference paper `ntrs-20190030725-dasc-2019`). The measure is
@@ -1225,6 +1237,16 @@ Wingdings bullets. A code point a font yields without evidence, or that two font
 differently, stays. `NativeTextReader` replaces the characters last, one UTF-16 unit each, after
 spacing and style evidence have compared PDFKit's text with the shows' own maps. See the
 [symbol-font and script-base evidence](../measurements/symbol-fonts-and-script-bases/record.md).
+
+A map can also report a character the glyph does not draw without any private-use value (#186).
+A dingbat font (`ZapfDingbats`, `ITC Zapf Dingbats`, `Monotype Sorts`) addresses its pictographs by
+ASCII codes, and a map that copies them reports letters: the magazine's bullet reads `l`, the Zapf
+Dingbats code for ●. A non-symbolic Type 1 font whose map contradicts its encoding in case only,
+with the encoding's glyph and not the map's in its `CharSet`, draws the encoding's letter (the
+magazine's credits read `BRAD FRITz`). `FontWeightReader` records each such glyph beside the
+character it draws, and `redrawGlyphs` rewrites a line's characters where the line's decoded shows
+spell it, after spacing and style evidence; a line the page draws twice in one place counts once.
+A bullet a word space from the words on both sides separates them and is no superscript.
 
 `GraphicsReader` tracks text rendering mode across saved graphics state and nested forms. When
 all observed text uses invisible mode 3 and a graphic covers most of the page, extraction skips

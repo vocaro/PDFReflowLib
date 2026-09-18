@@ -1305,10 +1305,39 @@ enum LayoutReconstructor {
                             && other.rect.maxY <= title.rect.minY + body * 0.4
                     }.max(by: { $0.rect.maxY < $1.rect.maxY })
                 }
-                // Whether `title`'s paragraph opens directly beneath it (#76, #97).
+                // The line opening the text a title heads past a picture set directly beneath it
+                // (#186): *Agricultural Research*'s `Fighting Filth Flies` heads a sidebar over the
+                // sidebar's photograph and its caption, 142 points above the sidebar's first line.
+                // The picture (no thin rule) stands within four fifths of a body of the title's foot
+                // and spans the title's left edge; everything in the title's measure between the
+                // picture and the opening is set smaller than the body (its caption and credit); and
+                // the opening stands within four bodies of the last of them, since a caption the
+                // picture's crop takes is no line here (page 9's two caption lines and 31 points).
+                // A caption's own label is no title of the text beneath.
+                func pastFigure(_ title: TextLine) -> TextLine? {
+                    guard !isCaption(title.text), let figure = page.graphics.filter({ graphic in
+                              !isThinRule(graphic) && graphic.minX <= title.rect.minX + body * 0.5
+                                  && graphic.maxX >= title.rect.maxX && graphic.maxY <= title.rect.minY + body * 0.4
+                                  && title.rect.minY - graphic.maxY < body * 0.8
+                          }).max(by: { $0.maxY < $1.maxY }) else { return nil }
+                    let beneath = lines.filter { other in
+                        other != title && other.rect.minX < title.rect.maxX && other.rect.maxX > title.rect.minX
+                            && other.rect.maxY <= figure.minY + body * 0.4
+                    }.sorted { $0.rect.maxY > $1.rect.maxY }
+                    guard let opening = beneath.firstIndex(where: { $0.fontSize >= body * 0.9 }) else { return nil }
+                    let foot = beneath[..<opening].map(\.rect.minY).min() ?? figure.minY
+                    return foot - beneath[opening].rect.maxY < body * 4 ? beneath[opening] : nil
+                }
+                // Whether `title`'s paragraph opens directly beneath it (#76, #97), or past the picture
+                // set beneath it (#186).
                 func opens(beneath title: TextLine) -> Bool {
-                    guard let below = nearestBelow(title), title.rect.minY - below.rect.maxY < body * 0.8,
-                          abs(below.fontSize - body) <= body * 0.1, !LabelStyle(below, body: body).bold else { return false }
+                    if let direct = nearestBelow(title), title.rect.minY - direct.rect.maxY < body * 0.8 {
+                        if opens(title, with: direct) { return true }
+                    }
+                    return pastFigure(title).map { opens(title, with: $0) } ?? false
+                }
+                func opens(_ title: TextLine, with below: TextLine) -> Bool {
+                    guard abs(below.fontSize - body) <= body * 0.1, !LabelStyle(below, body: body).bold else { return false }
                     // The paragraph can open on the column's own first-line indent instead of on
                     // the title's edge (the magazine indents ten points at a ten-and-a-half point
                     // body, #159). The page's indent pattern is the evidence, as it is for the
@@ -3485,8 +3514,18 @@ enum LayoutReconstructor {
     /// size, and everything measured against it, differ between identical runs (#140).
     static func bodySize(_ lines: [TextLine]) -> CGFloat {
         var weights: [Int: Int] = [:]
+        addBodyWeights(of: lines, to: &weights)
+        return bodySize(weights: weights) ?? 12
+    }
+
+    /// Characters per rounded type size, the evidence `bodySize` weighs; accumulated over a document's
+    /// native pages it gives the document's body (#186).
+    static func addBodyWeights(of lines: [TextLine], to weights: inout [Int: Int]) {
         for line in lines { weights[Int(line.fontSize.rounded()), default: 0] += line.text.count }
-        return CGFloat(weights.max { ($0.value, -$0.key) < ($1.value, -$1.key) }?.key ?? 12)
+    }
+
+    static func bodySize(weights: [Int: Int]) -> CGFloat? {
+        weights.max { ($0.value, -$0.key) < ($1.value, -$1.key) }.map { CGFloat($0.key) }
     }
 
     /// The justified measure of the column `line` stands in: the column's own dominant type size
@@ -3738,12 +3777,28 @@ enum LayoutReconstructor {
     /// Small labels inside preserved images must not turn the surrounding prose into headings.
     /// Keep the page estimate when too little reflowable text remains to establish a body size.
     static func headingBodySize(_ lines: [TextLine], pageBody: CGFloat) -> CGFloat {
+        establishedBodySize(lines).map { max(pageBody, $0) } ?? pageBody
+    }
+
+    /// The body size the lines establish: at least three lines and 200 characters in their commonest size.
+    static func establishedBodySize(_ lines: [TextLine]) -> CGFloat? {
         let candidate = bodySize(lines)
         let matching = lines.filter { Int($0.fontSize.rounded()) == Int(candidate) }
-        guard matching.count >= 3, matching.reduce(0, { $0 + $1.text.count }) >= 200 else {
-            return pageBody
-        }
-        return max(pageBody, candidate)
+        guard matching.count >= 3, matching.reduce(0, { $0 + $1.text.count }) >= 200 else { return nil }
+        return candidate
+    }
+
+    /// The smallest heading size on a page whose reflowable text establishes no body of its own
+    /// (#186). Such a page (a back cover, a cover) measures its display lines against type it barely
+    /// sets: *Agricultural Research*'s back cover estimates an 8-point body from the subscribe box
+    /// inside its crop, and its 10-point return address and 11-point web line became headings in a
+    /// magazine whose columns are set at 10.5. There a heading must also clear the document's body
+    /// (`documentBody`, the size most of its native text is set in) as the page threshold clears the
+    /// page's: a line the document's own body would not raise heads nothing on a page too bare to say
+    /// otherwise. A page that establishes its body keeps its own measure.
+    static func documentHeadingFloor(_ lines: [TextLine], documentBody: CGFloat?) -> CGFloat {
+        guard let documentBody, establishedBodySize(lines) == nil else { return 0 }
+        return documentBody * 1.1
     }
 
     /// `noteChapter` is the chapter named by this page's `NOTES TO CHAPTER N` running head,
@@ -3758,7 +3813,8 @@ enum LayoutReconstructor {
     /// open list and last note to the next page. `continuingNote` is the previous page's last note,
     /// which the lines above this page's first note start may continue (#11). `slideDeck` says the
     /// document reads as a deck (`isSlide(_:)`), so this page's slide title, if it has one, is a
-    /// heading and nothing set smaller than it is (#165).
+    /// heading and nothing set smaller than it is (#165). `documentBody` is the size most of the
+    /// document's native text is set in (`documentBodySize`), for a page too bare to state its own (#186).
     static func blocks(page: PageContent, images: [(CGRect, String)], vocabulary: Set<String>,
                        warnings: inout [ConversionWarning], noteChapter: Int? = nil,
                        noteLastChapter: Int? = nil, continuingNoteList: NumberedNoteDetector.OpenList? = nil,
@@ -3769,7 +3825,8 @@ enum LayoutReconstructor {
                        neighbouringMarkers: [PageMarker] = [],
                        slideDeck: Bool = false,
                        imageKinds: [String: PreservedImageKind] = [:],
-                       imageCaptions: [String: String] = [:], bookWraps: [Int: CGFloat] = [:]) -> [ReflowBlock] {
+                       imageCaptions: [String: String] = [:], bookWraps: [Int: CGFloat] = [:],
+                       documentBody: CGFloat? = nil) -> [ReflowBlock] {
         let body = max(4, bodySize(page.lines))
         // A rotated stamp in the outer margin is furniture, never content or a heading.
         let stamps = rotatedMarginLines(page)
@@ -3809,12 +3866,25 @@ enum LayoutReconstructor {
         let boxes = clusters(page.tints, distance: 4)
         let outside = free.filter { line in !boxes.contains { $0.contains(CGPoint(x: line.rect.midX, y: line.rect.midY)) } }
         let reflowBody = headingBodySize(outside, pageBody: body)
-        let headingThreshold = max(body * 1.25, reflowBody * 1.1)
+        let documentFloor = documentHeadingFloor(outside, documentBody: documentBody)
+        let headingThreshold = max(body * 1.25, reflowBody * 1.1, documentFloor)
         // A heading line is wider than tall unless it is one or two characters; rotated text
         // outside the margin keeps its paragraph representation.
         func isHeadingSize(_ line: TextLine) -> Bool {
             !page.hasSyntheticTextStyle && line.fontSize >= headingThreshold && line.text.count < 200
                 && (line.rect.width >= line.rect.height || line.text.count <= 2)
+                && (line.text.first?.isLowercase != true || stacksWithDisplay(line))
+        }
+        // A title opens with a capital, a digit or a mark. A heading-size line standing alone that
+        // opens in lowercase is display text that heads nothing: the magazine's cover follows its
+        // 40-point `From Insects` with a 15-point `pages 2, 4-14` (#186), and the 9/11 report's cover
+        // sets `official government edition`. A line stacked with another of its size, above or
+        // below, is part of a title or a pull quote and keeps its size's reading.
+        func stacksWithDisplay(_ line: TextLine) -> Bool {
+            free.contains { other in
+                other != line && other.fontSize >= headingThreshold
+                    && (stacksUnderHeading(line, after: other) || stacksUnderHeading(other, after: line))
+            }
         }
         // Labels are measured against the supported reflowable body, as the threshold is, so
         // small table text cannot make a page's ordinary prose read as labels.
@@ -3826,8 +3896,12 @@ enum LayoutReconstructor {
         // An outline's section labels, ranked by their tier rather than their size (#152).
         let outline = page.hasSyntheticTextStyle || page.recognized ? [] : outlineSectionLabels(in: free.map(untagged), body: reflowBody)
         func outlineDepth(_ line: TextLine) -> Int? { outline.first { $0.line == untagged(line) }?.depth }
+        // On a page too bare to state its body, a label its size alone sets apart must clear the
+        // document's body as a heading must (`documentHeadingFloor`, #186); a sub-heading set at or
+        // under the body keeps its own evidence of style and placement.
         let labels = sectionLabels(in: free.map(untagged), body: reflowBody,
                                    headingThreshold: headingThreshold, page: page, styles: labelStyles)
+            .filter { $0.fontSize >= documentFloor || $0.fontSize < reflowBody * 1.15 }
             + boxTitles(in: free.map(untagged), page: page)
             // A two-column paper's centred small-capital sections and italic lettered subsections,
             // both set at the body's own size (#162).
@@ -5934,7 +6008,8 @@ enum LayoutReconstructor {
               abs(next.fontSize - last.fontSize) <= last.fontSize * 0.1 else { return false }
         var uncertain: [ConversionWarning] = []
         let text = last.text.trimmingCharacters(in: .whitespaces)
-        let operation = joinOperation(text + "-", next.text, vocabulary: vocabulary, page: 0, warnings: &uncertain)
+        let operation = joinOperation(text + "-", next.text, vocabulary: vocabulary, page: 0, lexicon: false,
+                                      warnings: &uncertain)
         guard uncertain.isEmpty, case .removeHyphen = operation else { return false }
         return true
     }
@@ -6357,7 +6432,7 @@ enum LayoutReconstructor {
     }
 
     private static func joinOperation(_ left: String, _ right: String, vocabulary: Set<String>, page: Int,
-                                      warnings: inout [ConversionWarning]) -> JoinOperation {
+                                      lexicon: Bool = true, warnings: inout [ConversionWarning]) -> JoinOperation {
         if left.hasSuffix("\u{00ad}") { return .removeHyphen }
         // A line broken after a slash inside a compound or an address (`runway/` + `taxiway`,
         // `and/` + `or`, `www.faa.gov/` + `pilots/`, `https://` + `www.`) continues it with no
@@ -6385,8 +6460,32 @@ enum LayoutReconstructor {
         if inflectionVouches(prefix: String(prefix).lowercased(), suffix: suffix.lowercased(), vocabulary: vocabulary) {
             return .removeHyphen
         }
+        if lexicon, lexiconVouches(prefix: String(prefix).lowercased(), suffix: suffix.lowercased(), vocabulary: vocabulary) {
+            return .removeHyphen
+        }
         uncertainHyphen(page: page, warnings: &warnings)
         return .concatenate
+    }
+
+    /// Marks the vocabulary of a document declared English, whose word breaks the system's English
+    /// lexicon may decide (`lexiconVouches`, #186).
+    static let englishLexiconKey = "\u{1}lexicon:en"
+
+    /// A line-end hyphen the book's own words cannot decide, in an English document (#186). A
+    /// 24-page magazine prints `com-` + `panies`, `infec-` + `tions` and `compli-` + `ance` and never
+    /// the words whole or in another inflection, so #115's evidence is missing although the words are
+    /// ordinary. The system's English lexicon (`TextLayerPlausibility.lexiconContains`, the list the
+    /// text-layer judgement reads) vouches for the join when it holds the joined word and the halves
+    /// are not both words, of the lexicon or the book, with #115's lengths: two letters a side and six
+    /// in all. The compound was already refused: the book prints neither it nor an inflection of it.
+    /// A compound whose halves are both words (`on-` + `going`, `sharp-` + `edged`) keeps its hyphen
+    /// and warns, as before. Only a hyphen the page printed consults the lexicon; a hyphen PDFKit lost
+    /// (#157) needs the book's own evidence.
+    static func lexiconVouches(prefix: String, suffix: String, vocabulary: Set<String>) -> Bool {
+        guard vocabulary.contains(englishLexiconKey), prefix.count >= 2, suffix.count >= 2, prefix.count + suffix.count >= 6,
+              TextLayerPlausibility.lexiconContains(prefix + suffix) == true else { return false }
+        func word(_ text: String) -> Bool { vocabulary.contains(text) || TextLayerPlausibility.lexiconContains(text) == true }
+        return !(word(prefix) && word(suffix))
     }
 
     private static let inflections = ["s", "es", "d", "ed", "ing", "ly"]

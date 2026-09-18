@@ -2588,6 +2588,16 @@
           "absentText": [
             "1) 0 15) 1 29) 0"
           ]
+        },
+        {
+          "page": 266,
+          "headings": [
+            "7.5 Practice - Complex Fractions"
+          ],
+          "absentHeadings": [
+            "1)",
+            "Solve."
+          ]
         }
       ]
     },
@@ -3604,7 +3614,7 @@
         {
           "page": 172,
           "text": [
-            "could supply such excep-tional commodities."
+            "could supply such exceptional commodities."
           ],
           "warningCodesAnyOf": [
             "uncertainHyphen"
@@ -3617,6 +3627,9 @@
               "note": "For the scheme’s lukewarm reception, see Intelligence report",
               "notePage": 509
             }
+          ],
+          "absentText": [
+            "excep-tional"
           ]
         },
         {
@@ -4060,6 +4073,18 @@
           "page": 50,
           "paragraphs": [
             "9:24 NEADS scrambles Langley fighter jets in search of AA 11"
+          ]
+        },
+        {
+          "page": 3,
+          "headings": [
+            "THE 9/11 COMMISSION REPORT"
+          ],
+          "absentHeadings": [
+            "official government edition"
+          ],
+          "paragraphs": [
+            "official government edition"
           ]
         }
       ]
@@ -5025,6 +5050,15 @@
           "absentText": [
             "community- oriented laws"
           ]
+        },
+        {
+          "page": 62,
+          "absentHeadings": [
+            "Figure 4.5. The framework for monitoring U.S. financial system stability"
+          ],
+          "paragraphs": [
+            "Figure 4.5. The framework for monitoring U.S. financial system stability"
+          ]
         }
       ]
     },
@@ -5805,6 +5839,9 @@
           "absentText": [
             "sreANee",
             "v/eus"
+          ],
+          "absentHeadings": [
+            "http://emergency.cdc.gov"
           ]
         },
         {
@@ -6630,6 +6667,9 @@
           "minimumImages": 1,
           "warningCodesAnyOf": [
             "damagedTextEncoding"
+          ],
+          "absentHeadings": [
+            "of re-identification. The methods of information loss are those described by"
           ]
         },
         {
@@ -6644,6 +6684,9 @@
           "minimumImages": 1,
           "warningCodesAnyOf": [
             "damagedTextEncoding"
+          ],
+          "absentHeadings": [
+            "general, we use the Expectation-Maximization (EM) algorithm 1 to estimate"
           ]
         },
         {
@@ -8991,7 +9034,7 @@
     {
       "id": "usda-ars-agresearch-2012-11",
       "sourceSHA256": "2673d1fded74ad89c8b5c59dc325c7884601e1aca5b5755b15a105c1f5b0d761",
-      "basis": "Source pages 1-24 visually reviewed against 60 DPI Poppler renders and the extracted text layer. Protects only output that matches the source now: the cover lines in order with Keeping Our Troops Safe and From Insects as headings; the masthead date, volume and ISSN lines; photo presence on photo pages; printed photo credits with their gallery numbers; whole captions on pages 6, 9 and 12; sentences inside the reflowed feature and short-article prose on pages 6, 9, 12, 13, 15, 18 and 19 in source order; the back-cover mailing instruction; and running-foot removal warnings. Not pinned because wrong now: side-by-side column prose split into one paragraph per line and interleaved on page 6, where a column runs on into a wider measure below (#153); the cover’s tagline and contents line and the back cover’s mailing panel as h4/h5/h6 headings that enter the contents; the back cover’s dingbat as a superscript l; the small-cap credit read as `BRAD FRITz`; and line-end hyphens kept inside joined paragraphs (`com-panies`, `infec-tions`, `compli-ance`) (see the review file). Pages 4, 6-13, 15, 17-19 and 22 reviewed again on their renders (#159): the magazine rules its running foot off under every column, so the foot is absent and furnitureRemoved reported wherever a page carried one; the nine-point bold subheads on pages 12, 13, 17, 18 and 19 are headings, `How Much Pressure Can a` / `Leaf Take?` one heading over two lines; each column’s ten-point first-line indent opens a paragraph, so the source paragraphs on pages 9, 12, 13, 15, 18 and 19 stay separate; and each six-point photo credit stands next to the picture it names, before it where the magazine sets the credit above the photograph (pages 4, 15, 17) and after it where it sets it below (pages 6, 9, 12, 17, 19). Page 6’s two subheads and page 9’s `Fighting Filth Flies` are not pinned as headings: #153 still interleaves page 6’s columns, and the sidebar title on page 9 stands over its photograph, not over its own paragraph. No committed rasters: page 24 carries only agency logos and the mailing panel, and the index holly ornaments are uncredited. The 55 borderless link annotations draw nothing: no reviewed page carries an Original page image, and link pages warn annotationsNotConverted (#151). Pages 8, 9, 11, 12, 13, 15, 18 and 19 were reviewed again on their renders and read column by column, the running foot beyond the columns; their order is pinned (#153). All 24 pages reviewed again for what the conversion must not do (#27): the InDesign magazine's text layer is genuine, so no page may report fresh recognition, a damaged encoding or an implausible text layer, and only pages 20-21 (known #158 fallbacks) may report a whole-page image fallback and only pages 1 and 13 may take an `Original page N` image. Pages 14, 22 and 23 are new review pages: the feature page and both index pages keep their preserved regions and disclose them, with no reflowed text pinned, because #158 holds all of their body text inside crops. Pages 2, 3, 13, 14, 16 and 20-23 reviewed again at 50 DPI with every crop outlined (#158): the FORUM columns and the signature box, the masthead staff list, the contents entries, the breadfruit caption, the columns over the faded flag, the peach-orchard title and its photograph caption, both boxed-title articles over their page-wide gradient, and the 2012 index entries are text; only the photographs, ornaments and the flag's own strip stay images. Page 13's photograph no longer covers the page, so its text carries no review warning. Column order on pages 14 and 20-23 is not approved (#153), so those pages are checked by phrase rather than in order.",
+      "basis": "Source pages 1-24 visually reviewed against 60 DPI Poppler renders and the extracted text layer. Protects only output that matches the source now: the cover lines in order with Keeping Our Troops Safe and From Insects as headings; the masthead date, volume and ISSN lines; photo presence on photo pages; printed photo credits with their gallery numbers; whole captions on pages 6, 9 and 12; sentences inside the reflowed feature and short-article prose on pages 6, 9, 12, 13, 15, 18 and 19 in source order; the back-cover mailing instruction; and running-foot removal warnings. Not pinned because wrong now: side-by-side column prose split into one paragraph per line and interleaved on page 6, where a column runs on into a wider measure below (#153); the cover’s tagline and contents line and the back cover’s mailing panel as h4/h5/h6 headings that enter the contents; the back cover’s dingbat as a superscript l; the small-cap credit read as `BRAD FRITz`; and line-end hyphens kept inside joined paragraphs (`com-panies`, `infec-tions`, `compli-ance`) (see the review file). Pages 4, 6-13, 15, 17-19 and 22 reviewed again on their renders (#159): the magazine rules its running foot off under every column, so the foot is absent and furnitureRemoved reported wherever a page carried one; the nine-point bold subheads on pages 12, 13, 17, 18 and 19 are headings, `How Much Pressure Can a` / `Leaf Take?` one heading over two lines; each column’s ten-point first-line indent opens a paragraph, so the source paragraphs on pages 9, 12, 13, 15, 18 and 19 stay separate; and each six-point photo credit stands next to the picture it names, before it where the magazine sets the credit above the photograph (pages 4, 15, 17) and after it where it sets it below (pages 6, 9, 12, 17, 19). Page 6’s two subheads and page 9’s `Fighting Filth Flies` are not pinned as headings: #153 still interleaves page 6’s columns, and the sidebar title on page 9 stands over its photograph, not over its own paragraph. No committed rasters: page 24 carries only agency logos and the mailing panel, and the index holly ornaments are uncredited. The 55 borderless link annotations draw nothing: no reviewed page carries an Original page image, and link pages warn annotationsNotConverted (#151). Pages 8, 9, 11, 12, 13, 15, 18 and 19 were reviewed again on their renders and read column by column, the running foot beyond the columns; their order is pinned (#153). All 24 pages reviewed again for what the conversion must not do (#27): the InDesign magazine's text layer is genuine, so no page may report fresh recognition, a damaged encoding or an implausible text layer, and only pages 20-21 (known #158 fallbacks) may report a whole-page image fallback and only pages 1 and 13 may take an `Original page N` image. Pages 14, 22 and 23 are new review pages: the feature page and both index pages keep their preserved regions and disclose them, with no reflowed text pinned, because #158 holds all of their body text inside crops. Pages 2, 3, 13, 14, 16 and 20-23 reviewed again at 50 DPI with every crop outlined (#158): the FORUM columns and the signature box, the masthead staff list, the contents entries, the breadfruit caption, the columns over the faded flag, the peach-orchard title and its photograph caption, both boxed-title articles over their page-wide gradient, and the 2012 index entries are text; only the photographs, ornaments and the flag's own strip stay images. Page 13's photograph no longer covers the page, so its text carries no review warning. Column order on pages 14 and 20-23 is not approved (#153), so those pages are checked by phrase rather than in order. #186 (measurements/magazine-leftovers/record.md): the back cover’s Monotype Sorts bullet reads ● and is no superscript, page 15’s credit reads the capital Z its glyph draws, the back cover’s address, Official Business and web line and the cover’s pages 2, 4-14 are no headings, page 9’s sidebar title is a heading, pages 6, 15 and 19 join their word breaks, and page 13’s credit stands before its photograph, read against the 60 DPI renders.",
       "pages": [
         {
           "page": 1,
@@ -9014,6 +9057,12 @@
             "pageImageFallback",
             "damagedTextEncoding",
             "implausibleTextLayer"
+          ],
+          "absentHeadings": [
+            "pages 2, 4-14"
+          ],
+          "paragraphs": [
+            "pages 2, 4-14"
           ]
         },
         {
@@ -9125,7 +9174,8 @@
           ],
           "text": [
             "PEGGY GREB (D2693-1)",
-            "PEGGY GREB (D2695-1)"
+            "PEGGY GREB (D2695-1)",
+            "commercial companies interested in producing it"
           ],
           "minimumImages": 2,
           "pageReference": false,
@@ -9137,7 +9187,8 @@
             "implausibleTextLayer"
           ],
           "absentText": [
-            "Agricultural Research l November/December 2012"
+            "Agricultural Research l November/December 2012",
+            "com-panies"
           ],
           "warningCodesAnyOf": [
             "furnitureRemoved"
@@ -9246,6 +9297,9 @@
             {
               "caption": "STEPHEN AUSMUS (D2619-4)"
             }
+          ],
+          "headings": [
+            "Fighting Filth Flies"
           ]
         },
         {
@@ -9379,6 +9433,12 @@
               "first": "Spatial repellents are used in field conditions",
               "second": "“For example, the individual soldier may be on sentry duty"
             }
+          ],
+          "captionedImages": [
+            {
+              "caption": "SETH BRITCH (D2644-1)",
+              "position": "before"
+            }
           ]
         },
         {
@@ -9406,7 +9466,9 @@
             "implausibleTextLayer"
           ],
           "absentText": [
-            "Agricultural Research l November/December 2012"
+            "Agricultural Research l November/December 2012",
+            "BRAD FRITz",
+            "compli-ance"
           ],
           "warningCodesAnyOf": [
             "furnitureRemoved"
@@ -9423,9 +9485,12 @@
           ],
           "captionedImages": [
             {
-              "caption": "BRAD FRITz (D2697-1)",
+              "caption": "BRAD FRITZ (D2697-1)",
               "position": "before"
             }
+          ],
+          "text": [
+            "ensure product label compliance with many agrochemical products"
           ]
         },
         {
@@ -9536,7 +9601,8 @@
             "Finally, Ibekwe was surprised"
           ],
           "text": [
-            "PEGGY GREB (D2687-1)"
+            "PEGGY GREB (D2687-1)",
+            "an antibiotic commonly used to treat a range of infections in humans"
           ],
           "minimumImages": 1,
           "pageReference": false,
@@ -9548,7 +9614,8 @@
             "implausibleTextLayer"
           ],
           "absentText": [
-            "Agricultural Research l November/December 2012"
+            "Agricultural Research l November/December 2012",
+            "infec-tions"
           ],
           "warningCodesAnyOf": [
             "furnitureRemoved"
@@ -9611,7 +9678,10 @@
         {
           "page": 24,
           "paragraphs": [
-            "Please return the mailing label from this magazine:"
+            "Please return the mailing label from this magazine:",
+            "5601 Sunnyside Ave. Beltsville, MD 20705-5129",
+            "Official Business",
+            "Visit us at ars.usda.gov/ar ● Follow us at twitter.com/USDA_ARS"
           ],
           "pageReference": false,
           "warningCodesAnyOf": [
@@ -9623,6 +9693,27 @@
             "unverifiedTextLayer",
             "damagedTextEncoding",
             "implausibleTextLayer"
+          ],
+          "absentHeadings": [
+            "U.S. Department of Agriculture Agricultural Research Magazine",
+            "5601 Sunnyside Ave.",
+            "Beltsville, MD 20705-5129",
+            "Official Business",
+            "Visit us at ars.usda.gov/ar l Follow us at twitter.com/USDA_ARS",
+            "Visit us at ars.usda.gov/ar ● Follow us at twitter.com/USDA_ARS"
+          ],
+          "absentText": [
+            "ars.usda.gov/ar l Follow"
+          ],
+          "absentScripts": [
+            {
+              "tag": "sup",
+              "text": "l"
+            },
+            {
+              "tag": "sup",
+              "text": "●"
+            }
           ]
         },
         {

@@ -70,8 +70,10 @@ private typealias CaptureFont = UIFont
         let selectionBounds = selections.map { $0.bounds(for: page) }
         for (selection, lineBounds) in zip(selections, selectionBounds) {
             guard let native = selection.attributedString else { continue }
-            let attributed = PrivateUseDecoder.decode(
-                FontWeightReader.apply(weights, to: native, bounds: lineBounds, allBounds: selectionBounds), privateUse)
+            // Glyphs a font's map misreports are redrawn as the pipeline redraws them (#186).
+            let attributed = PrivateUseDecoder.decode(FontWeightReader.redrawGlyphs(weights,
+                in: FontWeightReader.apply(weights, to: native, bounds: lineBounds, allBounds: selectionBounds),
+                bounds: lineBounds, allBounds: selectionBounds), privateUse)
             var runs: [[String: Any]] = []
             attributed.enumerateAttributes(in: NSRange(location: 0, length: attributed.length)) { attrs, range, _ in
                 let font = attrs[.font] as? CaptureFont

@@ -1,0 +1,1179 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        34.694200000000023,
+        756.64640000000009,
+        139.95999999999998,
+        13.860000000000014
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Arial-BoldMT",
+          "fontSize" : 10,
+          "text" : "U.S. Department of Agriculture"
+        }
+      ],
+      "text" : "U.S. Department of Agriculture"
+    },
+    {
+      "rect" : [
+        246.25420000000003,
+        756.51640000000009,
+        136.67999999999995,
+        13.860000000000014
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Arial-BoldMT",
+          "fontSize" : 10,
+          "text" : "Agricultural Research Service"
+        }
+      ],
+      "text" : "Agricultural Research Service"
+    },
+    {
+      "rect" : [
+        453.55549999999999,
+        755.56670000000008,
+        123.49687899999998,
+        13.860000000000014
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Arial-BoldMT",
+          "fontSize" : 9.9378999999999991,
+          "text" : "November/December 2012"
+        }
+      ],
+      "text" : "November/December 2012"
+    },
+    {
+      "rect" : [
+        136.1104,
+        335.37382640000004,
+        337.94351360000007,
+        82.222863799999971
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 68.5762,
+          "text" : "Keeping Our"
+        }
+      ],
+      "text" : "Keeping Our"
+    },
+    {
+      "rect" : [
+        144.4081202000001,
+        256.7855012,
+        321.41664940000004,
+        82.222863800000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 68.5762,
+          "text" : "Troops Safe"
+        }
+      ],
+      "text" : "Troops Safe"
+    },
+    {
+      "rect" : [
+        213.01730000000001,
+        173.92194720000001,
+        184.13227140000001,
+        48.73263080000001
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 40.142200000000003,
+          "text" : "From Insects"
+        }
+      ],
+      "text" : "From Insects"
+    },
+    {
+      "rect" : [
+        267.06549999999999,
+        130.47931840000001,
+        85.262585399999978,
+        18.585767599999997
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 15.061400000000001,
+          "text" : "pages 2, 4-14"
+        }
+      ],
+      "text" : "pages 2, 4-14"
+    },
+    {
+      "rect" : [
+        63.762900000000002,
+        30.135655199999999,
+        493.24310370000006,
+        19.483417800000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Arial-BoldMT",
+          "fontSize" : 14.057300000000001,
+          "text" : "Agricultural Research Service"
+        },
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Arial-BoldItalicMT",
+          "fontSize" : 14.057300000000001,
+          "italic" : true,
+          "text" : " • Solving Problems for the Growing World"
+        }
+      ],
+      "text" : "Agricultural Research Service • Solving Problems for the Growing World"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    612,
+    792
+  ],
+  "caseID" : "usda-ars-agresearch-2012-11",
+  "graphics" : [
+    [
+      0,
+      0,
+      612,
+      792
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        34.694200000000023,
+        756.64640000000009,
+        139.95999999999998,
+        13.860000000000014
+      ],
+      "text" : "U.S. Department of Agriculture"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        246.25420000000003,
+        756.51640000000009,
+        136.67999999999995,
+        13.860000000000014
+      ],
+      "text" : "Agricultural Research Service"
+    },
+    {
+      "fontSize" : 9.9378999999999991,
+      "monospaced" : false,
+      "rect" : [
+        453.55549999999999,
+        755.56670000000008,
+        123.49687899999998,
+        13.860000000000014
+      ],
+      "text" : "November/December 2012"
+    },
+    {
+      "fontSize" : 68.5762,
+      "monospaced" : false,
+      "rect" : [
+        136.1104,
+        335.37382640000004,
+        337.94351360000007,
+        82.222863799999971
+      ],
+      "text" : "Keeping Our"
+    },
+    {
+      "fontSize" : 68.5762,
+      "monospaced" : false,
+      "rect" : [
+        144.4081202000001,
+        256.7855012,
+        321.41664940000004,
+        82.222863800000027
+      ],
+      "text" : "Troops Safe"
+    },
+    {
+      "fontSize" : 40.142200000000003,
+      "monospaced" : false,
+      "rect" : [
+        213.01730000000001,
+        173.92194720000001,
+        184.13227140000001,
+        48.73263080000001
+      ],
+      "text" : "From Insects"
+    },
+    {
+      "fontSize" : 15.061400000000001,
+      "monospaced" : false,
+      "rect" : [
+        267.06549999999999,
+        130.47931840000001,
+        85.262585399999978,
+        18.585767599999997
+      ],
+      "text" : "pages 2, 4-14"
+    },
+    {
+      "fontSize" : 14.057300000000001,
+      "monospaced" : false,
+      "rect" : [
+        63.762900000000002,
+        30.135655199999999,
+        493.24310370000006,
+        19.483417800000002
+      ],
+      "text" : "Agricultural Research Service • Solving Problems for the Growing World"
+    }
+  ],
+  "page" : 1,
+  "paints" : [
+    {
+      "filled" : true,
+      "frame" : true,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        0,
+        740.96100000000001,
+        612,
+        51.038999999999987
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : true,
+      "rect" : [
+        0,
+        0,
+        612,
+        744.60083010000005
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : true,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        0,
+        0,
+        612,
+        78.417000000000002
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : true,
+      "grouped" : true,
+      "image" : false,
+      "rect" : [
+        352.21800000000002,
+        649.01800000000003,
+        237.23999999999995,
+        64.799999999999955
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        348.3582002,
+        659.27230049999991,
+        231.08199999999994,
+        58.766000000000076
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : true,
+      "grouped" : true,
+      "image" : false,
+      "rect" : [
+        352.21800000000002,
+        649.01800000000003,
+        237.23999999999995,
+        64.799999999999955
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        348.3582002,
+        659.27230049999991,
+        231.08199999999994,
+        58.766000000000076
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : true,
+      "grouped" : true,
+      "image" : false,
+      "rect" : [
+        39.300000000000004,
+        632.81799999999998,
+        303.48000000000002,
+        81.360000000000014
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        35.440103899999997,
+        643.14799819999996,
+        297.35700000000003,
+        74.8900000000001
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : true,
+      "grouped" : true,
+      "image" : false,
+      "rect" : [
+        39.300000000000004,
+        632.81799999999998,
+        303.48000000000002,
+        81.360000000000014
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        35.440103899999997,
+        643.14799819999996,
+        297.35700000000003,
+        74.8900000000001
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : true,
+      "grouped" : true,
+      "image" : false,
+      "rect" : [
+        269.07600000000002,
+        120.205,
+        95.039999999999964,
+        22.679999999999993
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : true,
+      "grouped" : true,
+      "image" : false,
+      "rect" : [
+        142.422,
+        169.85599999999999,
+        343.08000000000004,
+        232.19999999999999
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : true,
+      "grouped" : true,
+      "image" : false,
+      "rect" : [
+        65.882599999999996,
+        20.09,
+        504.36040000000003,
+        24.119900000000005
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        61.762596900000005,
+        33.420703599999996,
+        14.096999999999994,
+        14.063000000000002
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        72.631906200000003,
+        30.462305900000004,
+        11.111000000000004,
+        14.412999999999997
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        81.709000500000002,
+        33.421500600000002,
+        8.722999999999999,
+        11.454000000000001
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : true,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        87.402000000000001,
+        33.420999999999999,
+        5.929000000000002,
+        14.062999999999995
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        91.023796500000003,
+        33.256307100000001,
+        10.876999999999995,
+        11.619
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        99.365795700000007,
+        33.256203599999999,
+        10.631,
+        11.454999999999998
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : true,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        108.13500000000001,
+        33.420999999999999,
+        5.929000000000002,
+        14.063000000000002
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        111.38479530000001,
+        33.256693399999996,
+        8.296999999999997,
+        14.027999999999999
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        116.96110210000001,
+        33.256203599999999,
+        10.631,
+        11.454999999999998
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        125.64750760000001,
+        33.421500600000002,
+        8.7230000000000132,
+        11.454000000000001
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        130.83340490000001,
+        33.256204599999997,
+        10.842999999999989,
+        11.619
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : true,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        139.30000000000001,
+        33.420999999999999,
+        5.929000000000002,
+        14.063000000000002
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        147.412397,
+        33.421203599999998,
+        13.047000000000025,
+        14.063000000000002
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        157.1219954,
+        33.2560073,
+        10.836000000000013,
+        11.619
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        164.9635026,
+        33.256504200000002,
+        10.808999999999997,
+        11.619
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        173.03920119999998,
+        33.2560073,
+        10.836000000000013,
+        11.619
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        181.05239900000001,
+        33.256204599999997,
+        10.842999999999989,
+        11.619
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        189.43620390000001,
+        33.421500600000002,
+        8.7230000000000132,
+        11.454000000000001
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        194.70479630000003,
+        33.256307100000001,
+        10.876999999999981,
+        11.619
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        203.08169559999999,
+        33.420703599999996,
+        10.637,
+        14.063000000000002
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        215.36079419999999,
+        33.242694800000002,
+        12.182000000000016,
+        14.412999999999997
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        224.81630079999999,
+        33.2560073,
+        10.836000000000013,
+        11.619
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        233.25470060000001,
+        33.421500600000002,
+        8.7230000000000132,
+        11.454000000000001
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        238.0153005,
+        33.421203599999998,
+        11.570999999999998,
+        11.289999999999999
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : true,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        246.90700000000001,
+        33.420999999999999,
+        5.929000000000002,
+        14.062999999999995
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        250.5280995,
+        33.256307100000001,
+        10.87700000000001,
+        11.619
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        258.34939709999998,
+        33.2560073,
+        10.836000000000013,
+        11.619
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        271.04690299999999,
+        36.359195299999996,
+        8.0570000000000164,
+        8.0560000000000045
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        279.88980479999998,
+        33.249896400000004,
+        12.632000000000005,
+        14.405000000000001
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        289.38379549999996,
+        33.249292799999999,
+        11.571000000000026,
+        11.633000000000003
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        297.80879329999999,
+        33.421203599999998,
+        8.07000000000005,
+        14.063000000000002
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        302.35569700000002,
+        33.420693399999998,
+        11.639999999999986,
+        11.289999999999999
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        309.82709839999995,
+        33.4210967,
+        8.0710000000000264,
+        14.062999999999995
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        313.90100100000001,
+        33.421203599999998,
+        11.72199999999998,
+        11.460999999999999
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        322.4772949,
+        30.462504599999995,
+        12.312000000000012,
+        14.420000000000002
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        335.3812021,
+        33.421102399999995,
+        13.300999999999988,
+        14.063000000000002
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        344.78129580000001,
+        33.421203599999998,
+        10.211999999999989,
+        11.460999999999999
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        350.7907017,
+        33.249292799999999,
+        11.571000000000026,
+        11.633000000000003
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        359.17409500000002,
+        33.249203600000001,
+        11.948999999999955,
+        14.234999999999999
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        367.9431012,
+        33.421203599999998,
+        8.07000000000005,
+        14.063000000000002
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        372.25659460000003,
+        33.249601699999999,
+        10.980999999999995,
+        11.632999999999996
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        379.89979549999998,
+        33.421203599999998,
+        15.70999999999998,
+        11.460999999999999
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        392.34780699999999,
+        33.249605100000004,
+        11.447000000000003,
+        11.632999999999996
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        404.79809899999998,
+        33.420693399999998,
+        9.8620000000000232,
+        14.234999999999999
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        409.71649819999999,
+        33.249292799999999,
+        11.571000000000026,
+        11.633000000000003
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        418.04550169999999,
+        33.421203599999998,
+        10.211999999999989,
+        11.460999999999999
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        428.30689480000001,
+        33.249702999999997,
+        8.4340000000000259,
+        13.987000000000002
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        432.66179410000001,
+        33.420897799999999,
+        11.715000000000032,
+        14.063000000000002
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        441.61529819999998,
+        33.249601699999999,
+        10.980999999999995,
+        11.632999999999996
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        454.04610350000002,
+        33.249998400000003,
+        13.801999999999964,
+        14.404999999999994
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        464.3314972,
+        33.421203599999998,
+        10.211999999999989,
+        11.460999999999999
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        470.34090309999999,
+        33.249292799999999,
+        11.571000000000026,
+        11.633000000000003
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        479.22580040000003,
+        33.420693399999998,
+        14.803999999999974,
+        11.289999999999999
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        489.85430479999997,
+        33.4210967,
+        8.0710000000000264,
+        14.062999999999995
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        493.92820740000002,
+        33.421203599999998,
+        11.72199999999998,
+        11.460999999999999
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        502.50450130000002,
+        30.462504599999995,
+        12.312000000000012,
+        14.420000000000002
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        516.48620449999999,
+        33.420703599999996,
+        17.364000000000033,
+        14.063000000000002
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        528.84470250000004,
+        33.249292799999999,
+        11.570999999999913,
+        11.633000000000003
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        537.1737061,
+        33.421203599999998,
+        10.211999999999989,
+        11.460999999999999
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        542.88090639999996,
+        33.421203599999998,
+        8.07000000000005,
+        14.063000000000002
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        547.20870400000001,
+        33.249703599999997,
+        12.566000000000031,
+        14.234000000000002
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : true,
+      "image" : false,
+      "rect" : [
+        0,
+        740.66410000000008,
+        612,
+        4
+      ]
+    }
+  ],
+  "rightsBasis" : "Published by the Agricultural Research Service, U.S. Department of Agriculture: a work of the United States Government under 17 U.S.C. 105. The page-3 masthead states: Most information in this magazine is public property and may be reprinted without permission (except where copyright is noted); no copyright, courtesy or permission notice appears anywhere in the issue. The masthead staff are the ARS Information Staff, every article byline is ARS (Ann Perry, Dennis O'Brien, Marcia Wood, Sandra Avant), and the page-2 Forum is by Daniel Strickman, ARS National Program Leader. All 24 printed photo numbers (D2619-4 through D2700-2 and K5657-3; photographers Peggy Greb, Stephen Ausmus, Seth Britch, Brad Fritz, Regis Lefebure, Neil Sanscrainte and Dong Wang) were resolved on 2026-09-17 in the ARS Image Gallery (https://www.ars.usda.gov/oc/images/photos/nov12/<id>/), with photographers matching the printed credits. The gallery rights page (https://www.ars.usda.gov/oc/images/copyright/, checked 2026-09-17) says its photos are copyright-free, public domain unless otherwise indicated, may not be used to infer or imply ARS endorsement of any product, company, or position, and asks for credit to the Agricultural Research Service. The masthead also states no endorsement by USDA is implied. Uncredited elements are the flag treatments on pages 1, 2 and 14 (the cover photo is D2700-2), small holly ornaments on the index pages 22-23, and the USDA, ARS and 150 Years marks and mailing panel on page 24. Owner approved on 2026-09-17. Not relicensed under MIT.",
+  "sourceSHA256" : "2673d1fded74ad89c8b5c59dc325c7884601e1aca5b5755b15a105c1f5b0d761",
+  "sourceTitle" : "Agricultural Research, Vol. 60, No. 10 (November/December 2012)",
+  "sourceURL" : "https://agresearchmag.ars.usda.gov/AR/archive/2012/Nov/November-December2012.pdf"
+}

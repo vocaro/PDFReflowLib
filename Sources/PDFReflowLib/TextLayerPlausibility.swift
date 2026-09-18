@@ -108,6 +108,12 @@ enum TextLayerPlausibility {
     /// because `NLEmbedding` makes no thread-safety promise and conversions can run concurrently.
     private static let lexicon = Mutex<NLEmbedding?>(NLEmbedding.wordEmbedding(for: .english))
 
+    /// Whether the system's English lexicon holds `word` (lowercase); nil when there is none. Line-end
+    /// hyphens the book's own words cannot decide consult it (#186).
+    static func lexiconContains(_ word: String) -> Bool? {
+        lexicon.withLock { embedding in embedding.map { $0.contains(word) } }
+    }
+
     /// Word counts against the system lexicon; nil when there is none.
     static func englishWordCounts(_ text: String) -> WordCounts? {
         lexicon.withLock { embedding in

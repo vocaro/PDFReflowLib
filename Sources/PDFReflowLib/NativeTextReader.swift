@@ -28,7 +28,12 @@ enum NativeTextReader {
         }
         defer { extractionLock.unlock() }
         try Task.checkCancellation()
-        return try operation()
+        // Drain what the operation autoreleased before unlocking. PDFKit returns its selections
+        // and attributed strings, with the fonts they carry, autoreleased; drained by the
+        // caller's pool while another thread holds the gate, they abort that thread's
+        // `attributedString` with the same NSFont exception (#21: 18 of 492 eight-thread
+        // processes aborted with the drain outside, none of 485 with it inside).
+        return try autoreleasepool { try operation() }
     }
 
     /// What line repair found on a page drawn in index-named glyphs (#143).

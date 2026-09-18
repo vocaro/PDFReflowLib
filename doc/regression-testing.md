@@ -698,7 +698,7 @@ the page's structure validates, each line also records the tag the pipeline appl
 since #89/#90); older fixtures and untagged lines have none, and `SourceLayoutFixture` restores it.
 Source review, baseline failures, cross-document safeguards and full-run evidence are retained
 in [the three-fix measurement](../measurements/three-fidelity-fixes/record.md). The suite contains
-<!-- counts:swift-tests -->1025 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->253 Python tests<!-- counts:end -->.
+<!-- counts:swift-tests -->1025 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->259 Python tests<!-- counts:end -->.
 The comparison tests include a real-Poppler image URL check through the safe HTTP handler
 (simple and positioned modes, paths with spaces); absent Poppler is an explicit skip.
 
@@ -2101,6 +2101,12 @@ and reap the child process group. A zero exit without a complete matching positi
 receipt is a failure. Python negative tests enforce these properties. A finite passing campaign
 is bounded evidence, not proof that all concurrent PDFKit use is safe. The smoke gate runs
 only the mitigated native path; raw attributed controls belong to explicit diagnostic runs.
+
+A gated extraction still aborts when another thread of the process makes a font, lays out text
+with CoreText, reads PDFKit text, or releases what an extraction autoreleased
+([gate-drain evidence](../measurements/pdfkit-gate-drain/record.md)). `tools/check_pdfkit_gate.py`
+(run by its Python test) fails on any such call in `Sources/` or `Tests/` made outside
+`NativeTextReader.withExtractionLock` or the tests' `pdfKitGated`.
 
 See [measured failures, mitigation and limits](../measurements/pdfkit-concurrency/record.md).
 

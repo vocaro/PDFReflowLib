@@ -196,7 +196,7 @@ private func runs(_ pieces: [(String, CGFloat, Double)]) -> NSAttributedString {
     let value = NSMutableAttributedString(string: "")
     for (text, size, offset) in pieces {
         value.append(NSAttributedString(string: text, attributes: [
-            .font: NavigationFont(name: "Helvetica", size: size)!,
+            .font: pdfKitGated { NavigationFont(name: "Helvetica", size: size) }!,
             NSAttributedString.Key(kCTBaselineOffsetAttributeName as String): offset,
         ]))
     }

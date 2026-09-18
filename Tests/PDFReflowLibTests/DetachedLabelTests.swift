@@ -46,9 +46,11 @@ private func page(_ data: Data) throws -> PDFPage {
 
 /// The lines PDFKit itself returns, before any repair.
 private func native(_ page: PDFPage) -> [String] {
-    (page.selection(for: page.bounds(for: .cropBox))?.selectionsByLine() ?? [])
-        .compactMap { $0.string?.trimmingCharacters(in: .whitespacesAndNewlines) }
-        .filter { !$0.isEmpty }
+    pdfKitGated {
+        (page.selection(for: page.bounds(for: .cropBox))?.selectionsByLine() ?? [])
+            .compactMap { $0.string?.trimmingCharacters(in: .whitespacesAndNewlines) }
+            .filter { !$0.isEmpty }
+    }
 }
 
 private func read(_ page: PDFPage) throws -> [TextLine] {

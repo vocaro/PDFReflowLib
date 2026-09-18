@@ -34,6 +34,9 @@ enum NativeSpacingReader {
         /// Gaps in em at the show's adjusted glyph boundaries beside a mathematical operator, by UTF-16
         /// offset in `unicode`, read whatever the show's spacing state (#188); `operatorSpace` decides them.
         var operatorGaps: [Int: CGFloat] = [:]
+        /// Letter-spaced runs (`letterSpacedRuns`): each run's first glyph in page space and its
+        /// characters, which PDFKit's text of the line may spell a space apart (#198).
+        var letterRuns: [(origin: CGPoint, text: String)] = []
         /// Each glyph's character and its advance along the baseline in page space, recorded only when
         /// `read` is asked for them (`MathRecognizer`, #190) and every glyph decodes and measures; nil
         /// otherwise. A code the font's map leaves out reads through its `Differences` glyph name when
@@ -254,6 +257,79 @@ enum NativeSpacingReader {
         guard gap.isFinite, gap >= operatorSpaceGap, gap <= 1,
               mathOperators.contains(left) || mathOperators.contains(right) else { return false }
         return !left.properties.isWhitespace && !right.properties.isWhitespace
+    }
+
+    /// Letter-spacing between a tenth and half an em. Below it PDFKit keeps the glyphs together; at
+    /// 0.6 em and above such a gap is a column gap (`characterSpacingColumnGap`).
+    static let letterSpacing: ClosedRange<CGFloat> = 0.1...0.5
+
+    /// Runs of letter-spaced type among a show's glyphs (text, gap in em after the glyph before):
+    /// at least three glyphs, most of them letters, none whitespace or an operator, whose gaps are
+    /// equal within 0.02 em and inside `letterSpacing` (#198). FAA page 410 sets its table heading
+    /// `(Miles)` as `[( )-578 (\()-192.7 (M)-192.7 (i)-192.6 (l)-192.5 (e)-192.5 (s)-192.9 (\))]TJ`,
+    /// 0.19 em between every glyph, and PDFKit reads it `( M i l e s )`. A word space in
+    /// letter-spaced type is a space glyph or a wider gap and ends the run, and kerning is narrower
+    /// than it. The 9/11 report spaces its ellipses the same way (`need . . . a`); they are mostly
+    /// periods and keep their spaces.
+    static func letterSpacedRuns(_ glyphs: [(x: CGFloat, text: String, gap: CGFloat)]) -> [Range<Int>] {
+        var runs: [Range<Int>] = []
+        // A mathematical operator's thin space (#188) is not letter-spacing.
+        func visible(_ index: Int) -> Bool {
+            !glyphs[index].text.isEmpty
+                && !glyphs[index].text.unicodeScalars.contains { $0.properties.isWhitespace || mathOperators.contains($0) }
+        }
+        // A run is whole words: the glyphs beside it are spaces, operators or the show's edge, or
+        // stand a wider gap away. Justified TeX sets word spaces as adjustments too, so a one-letter
+        // word between two equal spaces (`d|o a q|uick`) spaces three glyphs alike inside words.
+        func close(_ start: Int?, _ end: Int) {
+            guard let start, end - start >= 3,
+                  glyphs[start..<end].filter({ $0.text.unicodeScalars.allSatisfy(CharacterSet.letters.contains) }).count * 2 > end - start
+            else { return }
+            let widest = glyphs[(start + 1)..<end].map(\.gap).max()!
+            func apart(_ index: Int, gap: CGFloat) -> Bool { !glyphs.indices.contains(index) || !visible(index) || gap >= widest + 0.05 }
+            guard apart(start - 1, gap: glyphs[start].gap), apart(end, gap: end < glyphs.count ? glyphs[end].gap : 0) else { return }
+            runs.append(start..<end)
+        }
+        var start: Int?
+        for index in glyphs.indices {
+            guard visible(index) else { close(start, index); start = nil; continue }
+            guard let first = start else { start = index; continue }
+            let gaps = glyphs[(first + 1)...index].map(\.gap)
+            if letterSpacing.contains(glyphs[index].gap), gaps.max()! - gaps.min()! <= 0.02 { continue }
+            close(first, index)
+            // A gap that breaks the run's spacing may open a run with the glyph before it.
+            start = letterSpacing.contains(glyphs[index].gap) ? index - 1 : index
+        }
+        close(start, glyphs.count)
+        return runs
+    }
+
+    /// The UTF-16 offsets of the spaces PDFKit sets between the glyphs of letter-spaced runs in
+    /// `native`: each run must appear exactly once with single spaces between some of its
+    /// characters, and at least one run must hold a space. Nil otherwise.
+    static func letterSpaces(in native: String, runs: [String]) -> [Int]? {
+        let extracted = Array(native.utf16)
+        var removed: [Int] = []
+        for run in runs {
+            let characters = Array(run.utf16)
+            guard !characters.isEmpty else { return nil }
+            var matches: [[Int]] = []
+            for start in extracted.indices where extracted[start] == characters[0] {
+                var j = start + 1, spaces: [Int] = [], matched = true
+                for character in characters.dropFirst() {
+                    if j < extracted.count, extracted[j] == 32, j + 1 < extracted.count, extracted[j + 1] == character {
+                        spaces.append(j); j += 2
+                    } else if j < extracted.count, extracted[j] == character {
+                        j += 1
+                    } else { matched = false; break }
+                }
+                if matched { matches.append(spaces) }
+            }
+            guard matches.count == 1 else { return nil }
+            removed += matches[0]
+        }
+        guard !removed.isEmpty, Set(removed).count == removed.count else { return nil }
+        return removed.sorted()
     }
 
     /// A note reference set as its own show (9/11: a 7.2-point digit raised 2.25 points before
@@ -651,6 +727,9 @@ enum NativeSpacingReader {
             // Recorded glyphs read a code the map leaves out through its maths glyph name.
             var glyphs: [Evidence.Glyph]? = recordsGlyphs && size > 0 && font?.widths != nil ? [] : nil
             let spacing = (characterSpacing, wordSpacing)
+            // Each glyph's start along the show in text space, its characters and its gap in em
+            // after the glyph before it (character and word spacing plus any adjustment), #198.
+            var spacings: [(x: CGFloat, text: String, gap: CGFloat)] = [], gapBefore: CGFloat = 0
             func append(_ string: CGPDFStringRef) {
                 let count = CGPDFStringGetLength(string)
                 guard count <= 4096, value.utf16.count + count <= 4096,
@@ -665,6 +744,8 @@ enum NativeSpacingReader {
                             glyphs?.append(.init(text: character, minX: start, maxX: start + width * size * transform.a))
                         } else { glyphs = nil }
                     }
+                    if measurable, spacings.count < 4096 { spacings.append((advance, font.unicode?[code] ?? "", gapBefore)) }
+                    gapBefore = (spacing.0 + (code == 32 ? spacing.1 : 0)) / size
                     if valid, let decoded = font.map?[code] { value += decoded } else { valid = false }
                     if decodable, let decoded = font.unicode?[code], unicode.utf16.count + decoded.utf16.count <= 4096 {
                         glyphStarts.insert(unicode.utf16.count)
@@ -725,6 +806,7 @@ enum NativeSpacingReader {
                         if count > 0 { strings += 1; lastCount = count; sinceGlyph = 0 }
                     } else if CGPDFArrayGetNumber(values, i, &number), number.isFinite {
                         sinceGlyph += number
+                        gapBefore -= number / 1000
                         // Consecutive/initial adjustments and actual word-size gaps are ambiguous.
                         if !previousWasString || number < -10 { valid = false }
                         if number < 0 && number >= -10 { gaps.insert(value.utf16.count) }
@@ -818,6 +900,12 @@ enum NativeSpacingReader {
                         // title, `Encyclopedia|.Six`; a show split inside a word, `June,T|enet`).
                         item.sentenceCandidates[offset] = gap
                     }
+                }
+            }
+            if measurable {
+                item.letterRuns = NativeSpacingReader.letterSpacedRuns(spacings).map {
+                    (CGPoint(x: transform.tx + spacings[$0.lowerBound].x * transform.a, y: transform.ty),
+                     spacings[$0].map(\.text).joined())
                 }
             }
             // A glyph's ink ends at its width; the spacing after the last one moves no glyph.
@@ -1073,10 +1161,12 @@ enum NativeSpacingReader {
 
     /// `allTexts`, when given, holds PDFKit's text for each of `allBounds`, so a line whose own
     /// shows do not spell it can be read as a piece of its row (`rowPieceSpaces`, #177).
-    static func apply(_ evidence: [Evidence], to attributed: NSAttributedString, bounds: CGRect,
+    static func apply(_ evidence: [Evidence], to original: NSAttributedString, bounds: CGRect,
                       allBounds: [CGRect], allTexts: [String?] = []) -> NSAttributedString {
         guard evidence.count <= 10_000, allBounds.count <= 10_000,
-              evidence.count * allBounds.count <= 2_000_000 else { return attributed }
+              evidence.count * allBounds.count <= 2_000_000 else { return original }
+        // The line is read, and repaired further, with its letter-spaced runs whole.
+        let attributed = withoutLetterSpaces(evidence, in: original, bounds: bounds, allBounds: allBounds)
         func owned(_ show: Evidence) -> Bool {
             allBounds.filter({ $0.insetBy(dx: -0.75, dy: -0.75).contains(show.origin) }).count == 1
         }
@@ -1116,6 +1206,21 @@ enum NativeSpacingReader {
               let offsets = rowPieceSpaces(evidence, text: attributed.string, bounds: bounds,
                                            allBounds: allBounds, allTexts: allTexts) else { return attributed }
         return inserting(offsets)
+    }
+
+    /// The line without the spaces PDFKit sets inside its letter-spaced runs (#198). A run starts
+    /// inside its show, after any space glyphs PDFKit leaves off the line, so the line holding it is
+    /// the one line rectangle holding its first glyph.
+    private static func withoutLetterSpaces(_ evidence: [Evidence], in attributed: NSAttributedString, bounds: CGRect,
+                                            allBounds: [CGRect]) -> NSAttributedString {
+        let area = bounds.insetBy(dx: -0.75, dy: -0.75)
+        let runs = evidence.flatMap(\.letterRuns).filter { run in
+            area.contains(run.origin) && allBounds.filter({ $0.insetBy(dx: -0.75, dy: -0.75).contains(run.origin) }).count == 1
+        }
+        guard !runs.isEmpty, let offsets = letterSpaces(in: attributed.string, runs: runs.map(\.text)) else { return attributed }
+        let repaired = NSMutableAttributedString(attributedString: attributed)
+        for offset in offsets.reversed() { repaired.deleteCharacters(in: NSRange(location: offset, length: 1)) }
+        return repaired
     }
 
     /// Whether the line's shows end in a soft hyphen (U+00AD) that PDFKit's text of the line lacks,

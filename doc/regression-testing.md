@@ -12,7 +12,7 @@ A valid EPUB can still contain incorrect text, wrong reading order or unreadable
   pixels, including crop origins, rotations, annotations and resource ceilings. Preserved-region
   tests also inspect fraction bars, raised exponents and all six cells of a ruled table in actual
   EPUB images at 72/144 DPI, with surrounding-prose and code controls.
-- `scripts/check-all.sh --corpus`: the same checks plus <!-- counts:documents -->20<!-- counts:end --> complete PDF conversions,
+- `scripts/check-all.sh --corpus`: the same checks plus <!-- counts:documents -->21<!-- counts:end --> complete PDF conversions,
   sequentially, with EPUBCheck, monotonic progress, pinned source identities,
   [memory budgets](corpus.md) (the lowest peak of up to two conversions, since
   one measurement of a book's peak resident size varies by about 100 MiB under load, #140)
@@ -115,23 +115,24 @@ are, in the page markup). Evidence and negative controls on real output are in
 ## Current content coverage
 
 <!-- counts:coverage -->
-[corpus/regressions.json](../corpus/regressions.json) has 3655 targeted checks on 585 reviewed pages
-across 20 documents: *Pilot's Handbook of Aeronautical Knowledge*, *Beginning and Intermediate
-Algebra*, *The 9/11 Commission Report*, *The Fed Explained*, *Dietary Guidelines for Americans*,
-*Fifth National Climate Assessment*, *Our Flag*, *Preparedness 101*, *Project Blue Book Special
-Report No. 14*, *Mineral Commodity Summaries 2025*, *Loper Bright Enterprises v. Raimondo*,
-*Disclosure Risk Assessment in Perturbative Microdata Protection*, *Stimulated Multiphoton
-Bremsstrahlung in Electron-Ion Collisions*, *Replay Clocks*, *Complaint for a Civil Case*,
-*Investigation of Atmospheric Boundary-Layer Effects on Launch-Vehicle Ground Wind Loads*, *A
-Scheduling Algorithm Compatible with a Distributed Management of Arrivals in the National Airspace
-System*, *Agricultural Research*, *Earthdata Cloud Analytics Project* and *Tank Health Monitoring*.
-They comprise 1146 ordered-text, 246 text, 457 paragraph, 341 absent-text, 278 heading,
-38 heading-level, 64 absent-heading, 88 list-item, 46 list, 21 preformatted-block,
-1 preformatted-lines, 29 script, 10 absent-script, 11 footnote, 34 note-link,
-70 paragraph-continuation, 1 list-item-continuation, 8 paragraph-separation, 121 distinct-paragraph,
-202 image-presence, 45 captioned-image, 20 image-alternative, 102 page-reference, 111 warning,
-113 absent-warning, 16 source-region, 4 glyph-structure, 5 image-appearance, 14 table-cell and
-13 math-expression checks, counted as `tools/check_corpus_content.py` counts them.
+[corpus/regressions.json](../corpus/regressions.json) has 3840 targeted checks on 608 reviewed pages
+across 21 documents: *Pilot's Handbook of Aeronautical Knowledge*, *Beginning and Intermediate
+Algebra*, *Report of the President’s Commission on the Assassination of President John F. Kennedy*,
+*The 9/11 Commission Report*, *The Fed Explained*, *Dietary Guidelines for Americans*, *Fifth
+National Climate Assessment*, *Our Flag*, *Preparedness 101*, *Project Blue Book Special Report No.
+14*, *Mineral Commodity Summaries 2025*, *Loper Bright Enterprises v. Raimondo*, *Disclosure Risk
+Assessment in Perturbative Microdata Protection*, *Stimulated Multiphoton Bremsstrahlung in
+Electron-Ion Collisions*, *Replay Clocks*, *Complaint for a Civil Case*, *Investigation of
+Atmospheric Boundary-Layer Effects on Launch-Vehicle Ground Wind Loads*, *A Scheduling Algorithm
+Compatible with a Distributed Management of Arrivals in the National Airspace System*, *Agricultural
+Research*, *Earthdata Cloud Analytics Project* and *Tank Health Monitoring*. They comprise
+1244 ordered-text, 246 text, 463 paragraph, 342 absent-text, 278 heading, 38 heading-level,
+64 absent-heading, 88 list-item, 46 list, 21 preformatted-block, 1 preformatted-lines, 29 script,
+10 absent-script, 11 footnote, 34 note-link, 72 paragraph-continuation, 1 list-item-continuation,
+8 paragraph-separation, 132 distinct-paragraph, 212 image-presence, 45 captioned-image,
+20 image-alternative, 120 page-reference, 132 warning, 131 absent-warning, 16 source-region,
+4 glyph-structure, 5 image-appearance, 14 table-cell and 13 math-expression checks, counted as
+`tools/check_corpus_content.py` counts them.
 <!-- counts:end -->
 
 All source-page anchors must also remain complete and ordered, and semantic text must contain no image attachment placeholders.
@@ -195,14 +196,15 @@ the source-region, glyph-structure and appearance checks below cover selected re
 on selected regions; robust visual/semantic contracts still need expansion. The corpus
 lane does not supply a whole-book quality score or physical-device performance qualification.
 
-The full Warren conversion remains explicitly excluded from this successful-conversion lane because
-of the image-output ceiling (#5): under the automatic encoding default it now fits the 512 MiB
-budget, but by only 316,202 bytes (0.059%), and whether that is a pass is #5's decision
-([evidence](../measurements/image-encoding-default/record.md)); the pinned Warren excerpt separately checks its two
-textless pages. NOAA joined the lane once its entry bytes fell under the default budget
-([evidence](../measurements/opaque-page-rasters/record.md)), and is gated like any other case.
-Exclusions are listed in output, never counted as passes.
-The manifest consistency test requires every corpus document to be covered or explicitly excluded.
+The full Warren conversion is gated like any other case (#202). Under the automatic encoding
+default it fits the 512 MiB output budget by 319,972 bytes (0.060%), so a change that adds that
+many image bytes to the book fails the lane rather than passing unnoticed; its case takes about
+nine minutes under load and writes a 532 MB EPUB
+([evidence](../measurements/warren-gated-corpus/record.md)). NOAA joined the lane once its entry
+bytes fell under the default budget ([evidence](../measurements/opaque-page-rasters/record.md)).
+`excludedFullConversions` in `corpus/regressions.json` is empty; any exclusion added there is
+listed in output, never counted as a pass. The manifest consistency test requires every corpus
+document to be covered or explicitly excluded.
 
 ## Source-region image checks
 
@@ -565,8 +567,8 @@ controls that keep the first-column rule.
 `faa-410` fixtures (captured with index-glyph decoding and the aligned-column split) read as tables:
 Census Tables 2 and 3 with their row labels and the group headings each spanning three scores,
 Tables 7 and 8 with Table 8's numbers a word space apart, and FAA's service volumes with `Distance`
-above `(Miles)` as one heading and the wrapped altitude and its distance in one row; the titles stay
-paragraphs. Re-merging each row as PDFKit returns it reproduces the defect: no table, and the Census
+above `(Miles)` as one heading and the wrapped altitude and its distance in one row; since #198 the
+Census titles are their tables' captions, while FAA's untitled lines stay paragraphs. Re-merging each row as PDFKit returns it reproduces the defect: no table, and the Census
 pages keep the numeric-grid guard. FAA's paragraph tag over the wrapped altitude's second line and
 its `100` admits them, with a tag reaching outside the table and a heading tag as controls. Synthetic
 lines control the rule: no header, two rows, no numeric column, a marker column, dot leaders, a cell
@@ -576,6 +578,19 @@ higher headings, and a numeric grid of range cells that a read table releases fr
 synthetic PDF sets Census Table 2 with each row one TJ show, which PDFKit returns as one line;
 extraction splits it into cells, and without the header it stays whole. See the
 [aligned-column table evidence](../measurements/aligned-column-tables/record.md).
+
+#198 adds `aTableTitleInTheCellsSizeIsTheCaptionOnlyUnderItsLabel`: a title set in the cells' size
+under a `Table N.` label (one line, wrapped and centred, or with a description beneath) is the
+table's caption and reads nowhere else, with controls for lines without a label, a sentence naming
+the table, a line too far above, a larger size, a heading tag, a line sharing the title's baseline,
+unaligned lines and four lines. `letterSpacedTypeThatPDFKitSpellsApartReadsWhole`
+(`NativeSpacingTests.swift`) reads FAA page 410's `[( )-578 (\()-192.7 (M)…]TJ` as `(Miles)`, and
+character-spaced capitals with their word space kept, with kerning, uneven gaps, column gaps,
+digits, operators' thin spaces, justified TeX's one-letter words, the 9/11 report's spaced ellipses
+and ambiguous or shared runs as controls, and a font change's hidden space on the same line still
+restored; the `faa-410` fixture was recaptured, its heading line now `(Miles)`. The Census contract
+checks each title as its table's `caption`, and FAA page 410's names the distance column. See the
+[table follow-up evidence](../measurements/table-follow-ups/record.md).
 
 ## Labels joined across a page
 
@@ -683,7 +698,7 @@ the page's structure validates, each line also records the tag the pipeline appl
 since #89/#90); older fixtures and untagged lines have none, and `SourceLayoutFixture` restores it.
 Source review, baseline failures, cross-document safeguards and full-run evidence are retained
 in [the three-fix measurement](../measurements/three-fidelity-fixes/record.md). The suite contains
-<!-- counts:swift-tests -->1018 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->249 Python tests<!-- counts:end -->.
+<!-- counts:swift-tests -->1025 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->249 Python tests<!-- counts:end -->.
 The comparison tests include a real-Poppler image URL check through the safe HTTP handler
 (simple and positioned modes, paths with spaces); absent Poppler is an explicit skip.
 
@@ -768,9 +783,9 @@ words, and their absent broken forms. See the
 `InvisibleTextTests.swift` covers exclusively hidden OCR text, visible Courier and genuine
 font-size headings, mixed text modes, saved graphics state, nested forms and malformed modes.
 Warren pages 50/910 supply pinned source geometry; ordinary prose/index entries must not become
-code/headings, while source points 10/11 retain list formatting. The nine-page real Warren excerpt
-is evaluated separately because the full 920-page conversion remains outside the successful
-complete-conversion gate. A passing excerpt does not qualify the complete book.
+code/headings, while source points 10/11 retain list formatting. The full 920-page conversion is
+in the corpus lane (#202); the nine-page excerpt remains a quick visual-diagnosis aid and does not
+qualify the complete book.
 
 ## Conversion policy coverage
 
@@ -1091,6 +1106,19 @@ lowercase run-on, and read neither two prose columns nor a stray line as names. 
 checks pages 450, 451, 454 and 456–457, 461 and 463–464, and the USDA magazine's index pages 22–23
 keep adjacent one-line entries apart. See the
 [hearing-list and Table of Names evidence](../measurements/hearing-lists-and-names/record.md).
+`TableOfNamesRowsTests.swift` covers [#199](https://github.com/vocaro/PDFReflowLib/issues/199).
+Extraction cuts a row PDFKit returns as one line where it reads the page's other rows apart
+(`NativeTextReader.splitAtRowEdges`): at least four rows set a line at one edge and the nearest line
+after it, in its size and two ems or more past its end, at a second edge; a line starting on the first
+edge and crossing the second is cut there when the second piece begins on that edge, the glyphs stand
+two ems apart and the piece is no page number, provided fewer lines cross the edge than the rows read
+apart. Only a page read as native typography is cut. A synthetic PDF checks the cut and keeps an edge
+three rows share, a contents entry's folio, a list PDFKit mostly merges and prose whole; source fixtures
+of pages 449 and 451 read `John Ashcroft` and `Janet Reno` beside their offices. A word the page breaks
+without printing any hyphen (page 453's `asso` over `ciate`) closes up where neither half is a word of
+the English lexicon, the joined word is, and the book prints it (`unprintedLineEndHyphen`); page 453's
+fixture checks the join with and without the lexicon. The 9/11 contract checks pages 449, 451, 453 and
+454. See the [Table of Names rows evidence](../measurements/table-of-names-rows/record.md).
 `FeatheredGroupsAndSpacedEntriesTests.swift` covers [#181](https://github.com/vocaro/PDFReflowLib/issues/181).
 NOAA's author and contributor blocks set one entry to a line at an even open leading, and never wrap
 one, so no hanging indent shows; source fixtures of pages 81, 343 and 1700 check one paragraph per

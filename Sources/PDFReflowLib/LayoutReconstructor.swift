@@ -5068,9 +5068,11 @@ enum LayoutReconstructor {
                     opening = (line, evidencedOpening)
                     paragraphFirst = line
                 } else {
-                    // A line-end hyphen the extractor never saw closes up with no space (#157).
-                    if let prev = previous, lostLineEndHyphen(prev, line, measures: measures,
-                                                              vocabulary: vocabulary) {
+                    // A line-end hyphen the extractor never saw (#157), or one the page never
+                    // printed (#199), closes up with no space.
+                    if let prev = previous, lostLineEndHyphen(prev, line, measures: measures, vocabulary: vocabulary)
+                        || (!page.recognized && !page.hasSyntheticTextStyle
+                            && unprintedLineEndHyphen(prev, line, vocabulary: vocabulary)) {
                         paragraph.append(line.content)
                     } else {
                         paragraph = join(paragraph, line.content, vocabulary: vocabulary,
@@ -6004,10 +6006,7 @@ enum LayoutReconstructor {
 
     /// An Arabic page number (optionally prefixed by its chapter's number or its part's letter,
     /// `5-17` or `C-2`) or a Roman numeral.
-    private static func isFolio(_ text: String) -> Bool {
-        !text.isEmpty && text.range(of: "^(?:(?:[0-9]+-|[A-Za-z]-)?[0-9]+|m{0,3}(?:cm|cd|d?c{0,3})(?:xc|xl|l?x{0,3})(?:ix|iv|v?i{0,3}))$",
-            options: [.regularExpression, .caseInsensitive]) != nil
-    }
+    private static func isFolio(_ text: String) -> Bool { NativeTextReader.isFolio(text) }
 
     private static func inMargin(_ line: TextLine, of page: PageContent) -> Bool {
         guard page.bounds.height > 0 else { return false }
@@ -6235,6 +6234,29 @@ enum LayoutReconstructor {
         let operation = joinOperation(text + "-", next.text, vocabulary: vocabulary, page: 0, lexicon: false,
                                       warnings: &uncertain)
         guard uncertain.isEmpty, case .removeHyphen = operation else { return false }
+        return true
+    }
+
+    /// A word the page breaks across two lines without printing a hyphen at all (#199): the 9/11
+    /// report's Table of Names sets `…Palestinian; al Qaeda asso` over `ciate; currently in U.S.
+    /// custody` (page 453), and neither the text shows nor the rendered page carry a hyphen, so
+    /// #157's missing advance is not there to measure, and the column is ragged besides. The words
+    /// alone decide: `last` ends in a lowercase run of letters and `next` opens with one, in the same
+    /// type; neither half is a word of the system's English lexicon, while the two joined are, and
+    /// the book prints the joined word itself (`Hamburg cell associate`, the same page). #186's
+    /// lengths apply: two letters a side and six in all. Two words a line break separates are
+    /// words, so they keep their space; so does a document not declared English.
+    static func unprintedLineEndHyphen(_ last: TextLine, _ next: TextLine, vocabulary: Set<String>) -> Bool {
+        guard vocabulary.contains(englishLexiconKey), !last.monospaced, !next.monospaced,
+              abs(next.fontSize - last.fontSize) <= last.fontSize * 0.1,
+              let tail = last.text.split(whereSeparator: \.isWhitespace).last,
+              let head = next.text.split(whereSeparator: \.isWhitespace).first,
+              tail.allSatisfy({ $0.isLetter && $0.isLowercase }) else { return false }
+        let prefix = String(tail), suffix = String(head.prefix { $0.isLetter })
+        guard suffix.allSatisfy(\.isLowercase), prefix.count >= 2, suffix.count >= 2, prefix.count + suffix.count >= 6,
+              vocabulary.contains(prefix + suffix), TextLayerPlausibility.lexiconContains(prefix + suffix) == true,
+              TextLayerPlausibility.lexiconContains(prefix) == false,
+              TextLayerPlausibility.lexiconContains(suffix) == false else { return false }
         return true
     }
 

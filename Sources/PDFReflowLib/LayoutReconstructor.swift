@@ -59,6 +59,14 @@ enum LayoutReconstructor {
                     vocabulary.insert(String(split.initial).lowercased() + split.fragment.lowercased())
                 }
             }
+            // A line ending in the book's `=` hyphen (#126) ends with the first half of a broken
+            // word, which the split above reads as a word since `=` is no hyphen yet: the evidence
+            // that the book hyphenates with it is the whole book's (`EqualsHyphenEvidence`). The
+            // half is no word either way (#201): the 9/11 report's `unquestion=` + `ably` recorded
+            // `unquestion`, and with the lexicon's `ably` the halves read as two words.
+            if endsWithEqualsHyphen(line.text), !words.isEmpty {
+                words.removeLast()
+            }
             for word in words {
                 vocabulary.insert(String(word))
             }
@@ -2016,11 +2024,19 @@ enum LayoutReconstructor {
     /// stays a heading. `lines` are the page's lines in reading order and `candidates` names
     /// the heading-size and label lines among them.
     static func pullQuoteLines(in lines: [TextLine], candidates: (TextLine) -> Bool) -> [TextLine] {
-        var quotes: [TextLine] = []
+        pullQuoteRuns(in: lines, candidates: candidates).flatMap { $0 }
+    }
+
+    /// `pullQuoteLines`, one run per quote. A quote may close on its speaker's name after a dash
+    /// (`…per night.”—Douglas Burkett`, `…the real world.”` / `—Dan Kline`, #201): the sentence
+    /// ends before the attribution (`endsAttributedSentence`).
+    static func pullQuoteRuns(in lines: [TextLine], candidates: (TextLine) -> Bool) -> [[TextLine]] {
+        var quotes: [[TextLine]] = []
         var run: [TextLine] = []
         func close() {
-            if run.count >= 2, let last = run.last, endsSentence(last.text),
-               run.reduce(0, { $0 + wordCount($1.text) }) >= 8 { quotes += run }
+            let text = run.map(\.text).joined(separator: " ")
+            if run.count >= 2, endsSentence(text) || endsAttributedSentence(text),
+               run.reduce(0, { $0 + wordCount($1.text) }) >= 8 { quotes.append(run) }
             run = []
         }
         for line in lines {
@@ -2030,6 +2046,22 @@ enum LayoutReconstructor {
         }
         close()
         return quotes
+    }
+
+    /// A sentence closed by its speaker's name: terminal punctuation (past closing quotes), a dash,
+    /// then one to four capitalized words (`…nothing worked.”—Douglas Burkett`, `… world.” —Dan Kline`).
+    static func endsAttributedSentence(_ text: String) -> Bool {
+        text.range(of: #"[.!?][”’"')\]]*\s*[—–]\s*\p{Lu}[\p{L}.'’-]*(?:\s+\p{Lu}[\p{L}.'’-]*){0,3}\s*$"#,
+                   options: .regularExpression) != nil
+    }
+
+    /// A pull quote that quotes someone (#201): it opens with a quotation mark or closes on its
+    /// speaker's name (`endsAttributedSentence`). Such a quote is set apart from the text as an
+    /// aside. Display prose without either — a chapter opener's summary sentence (the Fed's, #55)
+    /// — stays the paragraph it has always been.
+    static func isQuotation(_ run: [TextLine]) -> Bool {
+        let text = run.map(\.text).joined(separator: " ").trimmingCharacters(in: .whitespaces)
+        return text.first.map { "\u{201C}\u{2018}\"'".contains($0) } == true || endsAttributedSentence(text)
     }
 
     /// Heading sizes ranked into tiers (7% apart), largest first.
@@ -3998,6 +4030,17 @@ enum LayoutReconstructor {
             }
             return (isHeadingSize(line) || labels.contains(untagged(line)))
                 && !isContentsEntry(line.text) && !isHeaderLike(line, in: page, bothBands: true)
+                && !closesBarePage(line)
+        }
+        // A display line in the foot band of a page too bare to state its body (`documentFloor`),
+        // with no text beneath it, heads nothing (#201). The magazine's cover closes on its 14-point
+        // bold tagline, `Agricultural Research Service • Solving Problems for the Growing World`, in
+        // the page's lowest tenth under its cover lines. A heading at the foot of a page of running
+        // text heads the section the next page opens (#103); a bare page runs on into no section.
+        func closesBarePage(_ line: TextLine) -> Bool {
+            guard documentFloor > 0, page.bounds.height > 0,
+                  (line.rect.midY - page.bounds.minY) / page.bounds.height <= 0.1 else { return false }
+            return !free.contains { $0 != line && $0.rect.midY < line.rect.minY }
         }
         // A section icon reads in its heading's row (#117). DGA pages 3–6 set a circular photo in
         // the margin beside each section title, taller than the title: it reaches into the last
@@ -4011,8 +4054,32 @@ enum LayoutReconstructor {
                 isHeadingSize(line) && line.rect.minX >= rect.maxX && line.rect.minX - rect.maxX <= body * 2
                     && line.rect.midY > rect.minY && line.rect.midY < rect.maxY && rect.height <= line.rect.height * 3
             }
-            guard let title = titles.max(by: { $0.rect.maxY < $1.rect.maxY }) else { return rect }
-            return CGRect(x: rect.minX, y: title.rect.minY, width: rect.width, height: title.rect.height)
+            if let title = titles.max(by: { $0.rect.maxY < $1.rect.maxY }) {
+                return CGRect(x: rect.minX, y: title.rect.minY, width: rect.width, height: title.rect.height)
+            }
+            return besideBlock(rect).map { CGRect(x: rect.minX, y: $0.rect.minY, width: rect.width, height: $0.rect.height) } ?? rect
+        }
+        // A picture set level with a block of lines to its right reads at the block's first line,
+        // before it, so the block reads on unbroken (#201). The magazine's back cover sets its ARS
+        // logo (x 36–72) level with the four lines of its return address (x 80): ordered by its
+        // middle, it fell between the address's second and third lines. The region holds none of the
+        // page's text; the block is the lines whose middles lie within its height, set within two
+        // bodies to its right, stacked at ordinary leading and spanning that height. A crop holding
+        // text rows is no such picture: Wallace's worked examples set each step's note level with the
+        // formula row it explains (pages 40, 72, 217), and those rows keep their pairing. Returns the
+        // block's first line.
+        func besideBlock(_ rect: CGRect) -> TextLine? {
+            guard !page.lines.contains(where: { $0.rect.intersects(rect) }) else { return nil }
+            let stack = free.filter { line in
+                line.rect.midY > rect.minY && line.rect.midY < rect.maxY && line.rect.maxX > rect.minX
+            }.sorted { $0.rect.minY > $1.rect.minY }
+            guard stack.count >= 2, let top = stack.first, let bottom = stack.last,
+                  stack.allSatisfy({ $0.rect.minX >= rect.maxX && $0.rect.minX - rect.maxX <= body * 2 }),
+                  top.rect.maxY >= rect.maxY - body * 0.5, bottom.rect.minY <= rect.minY + body * 0.5,
+                  zip(stack, stack.dropFirst()).allSatisfy({ upper, lower in
+                      upper.rect.minY - lower.rect.maxY < max(upper.fontSize, lower.fontSize) * 0.9
+                  }) else { return nil }
+            return top
         }
         let spatial = boxed(free.map { Element(rect: $0.readingRect ?? $0.rect, line: $0) }
             + braces.map { Element(rect: union($0.map(\.rect)), boundary: true) }
@@ -4265,7 +4332,11 @@ enum LayoutReconstructor {
         func isHeadingCandidate(_ line: TextLine) -> Bool {
             line.structure == nil && headingTypography(line)
         }
-        let quotes = pullQuoteLines(in: bodyElements.compactMap { elements[$0].line }, candidates: isHeadingCandidate)
+        let quoteRuns = pullQuoteRuns(in: bodyElements.compactMap { elements[$0].line }, candidates: isHeadingCandidate)
+        let quotes = quoteRuns.flatMap { $0 }
+        // The quotations among them, each read as one aside (#201); the run the open one reads.
+        let quotations = quoteRuns.filter(isQuotation)
+        var openQuotation: Int?
         var result: [ReflowBlock] = []
         var note: (Int, InlineText)?
         func flushNote() {
@@ -4927,6 +4998,17 @@ enum LayoutReconstructor {
             }
             flushTagged()
             if !line.monospaced { codeOrigin = nil }
+            if let run = quotations.firstIndex(where: { $0.contains(line) }) {
+                if openQuotation == run, let last = result.indices.last, case let .pullQuote(text) = result[last].content {
+                    result[last].content = .pullQuote(join(text, line.content, vocabulary: vocabulary,
+                        page: page.number, warnings: &warnings))
+                } else {
+                    flush()
+                    result.append(ReflowBlock(content: .pullQuote(line.content), page: page.number))
+                    openQuotation = run
+                }
+                continue
+            }
             if isHeadingCandidate(line), !quotes.contains(line) {
                 // PDFKit splits a heading row at a wide gap (a section number and its title);
                 // the pieces form one heading, as do the lines of a title set over several
@@ -5865,11 +5947,11 @@ enum LayoutReconstructor {
         }
     }
 
-    /// Preserved images, page-bottom footnotes, figure captions and bare folios in the margin
-    /// do not carry body text.
+    /// Preserved images, page-bottom footnotes, pull quotes (#201), figure captions and bare folios
+    /// in the margin do not carry body text.
     private static func isSkippable(_ block: ReflowBlock, page: PageContent) -> Bool {
         switch block.content {
-        case .image, .footnote: return true
+        case .image, .footnote, .pullQuote: return true
         case .paragraph: break
         case .heading, .preformatted, .listItem, .table, .sourcePage: return false
         }
@@ -6747,11 +6829,40 @@ enum LayoutReconstructor {
     /// A compound whose halves are both words (`on-` + `going`, `sharp-` + `edged`) keeps its hyphen
     /// and warns, as before. Only a hyphen the page printed consults the lexicon; a hyphen PDFKit lost
     /// (#157) needs the book's own evidence.
+    ///
+    /// A word the lexicon lists only in another form is still its word (#201): the joined word is
+    /// vouched for when the lexicon holds it without one inflectional ending (`launder-` + `ings`,
+    /// under `laundering`), or when it is a lexicon word under a prefix that closes up
+    /// (`nonagri-` + `cultural`, under `agricultural`) and the break falls inside that word, where
+    /// no compound's hyphen stands. A break at the prefix itself (`non-` + `agricultural`) may be
+    /// the compound's own hyphen and stays undecided.
     static func lexiconVouches(prefix: String, suffix: String, vocabulary: Set<String>) -> Bool {
-        guard vocabulary.contains(englishLexiconKey), prefix.count >= 2, suffix.count >= 2, prefix.count + suffix.count >= 6,
-              TextLayerPlausibility.lexiconContains(prefix + suffix) == true else { return false }
-        func word(_ text: String) -> Bool { vocabulary.contains(text) || TextLayerPlausibility.lexiconContains(text) == true }
+        guard vocabulary.contains(englishLexiconKey), prefix.count >= 2, suffix.count >= 2, prefix.count + suffix.count >= 6
+        else { return false }
+        func listed(_ text: String) -> Bool { TextLayerPlausibility.lexiconContains(text) == true }
+        let joined = prefix + suffix
+        guard listed(joined) || inflectionStems(joined).contains(where: listed) || closedPrefixes.contains(where: { closing in
+            joined.hasPrefix(closing) && prefix.count > closing.count && joined.count - closing.count >= 5
+                && listed(String(joined.dropFirst(closing.count)))
+        }) else { return false }
+        func word(_ text: String) -> Bool { vocabulary.contains(text) || listed(text) }
         return !(word(prefix) && word(suffix))
+    }
+
+    /// Prefixes English sets solid before a word (`nonagricultural`, `multicolored`, `reelected`).
+    private static let closedPrefixes = ["non", "un", "re", "pre", "anti", "multi", "over", "under", "inter", "semi", "sub", "super"]
+
+    /// A word without one inflectional ending, with a dropped final `e` restored (`launderings` →
+    /// `laundering`, `distributing` → `distribut`, `distribute`); stems shorter than four letters are
+    /// not evidence.
+    static func inflectionStems(_ word: String) -> Set<String> {
+        var stems: Set<String> = []
+        for ending in inflections where word.hasSuffix(ending) && word.count - ending.count >= 4 {
+            let stem = String(word.dropLast(ending.count))
+            stems.insert(stem)
+            if !stem.hasSuffix("e") { stems.insert(stem + "e") }
+        }
+        return stems
     }
 
     private static let inflections = ["s", "es", "d", "ed", "ing", "ly"]
@@ -6760,12 +6871,7 @@ enum LayoutReconstructor {
     /// ending, with a dropped final `e` restored (`separates` → `separate`, `distributing` →
     /// `distribut`, `distribute`), each with every ending added back.
     static func inflectedForms(_ word: String) -> Set<String> {
-        var stems: Set<String> = [word]
-        for ending in inflections where word.hasSuffix(ending) && word.count - ending.count >= 4 {
-            let stem = String(word.dropLast(ending.count))
-            stems.insert(stem)
-            if !stem.hasSuffix("e") { stems.insert(stem + "e") }
-        }
+        let stems = inflectionStems(word).union([word])
         var forms = stems
         for stem in stems {
             for ending in inflections {

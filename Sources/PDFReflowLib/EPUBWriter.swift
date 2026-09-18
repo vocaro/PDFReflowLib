@@ -229,6 +229,8 @@ enum EPUBWriter {
                     if let linked {
                         markup = "<div class=\"footnote\" role=\"doc-footnote\" id=\"\(xml(linked.id))\"><p>\(linked.payload)</p></div>\n"
                     } else { markup = "<div class=\"footnote\" role=\"doc-footnote\"><p>\(payload)</p></div>\n" }
+                // A pull quote is set apart from the text it interrupts and heads nothing (#201).
+                case .pullQuote: markup = "<aside class=\"pullquote\" role=\"doc-pullquote\"><p>\(payload)</p></aside>\n"
                 case .image, .table: markup = payload + "\n"
                 case .sourcePage: preconditionFailure("Source boundaries are handled above")
                 }
@@ -279,6 +281,7 @@ enum EPUBWriter {
         img { max-width: 100%; height: auto; } figure { margin: 1em 0; }
         pre { white-space: pre-wrap; overflow-wrap: anywhere; }
         div.footnote { font-size: 0.85em; }
+        aside.pullquote { margin: 1em 2em; font-size: 1.15em; }
         table { border-collapse: collapse; margin: 0 0 1em; }
         th, td { border: 1px solid #999; padding: 0.3em; text-align: left; vertical-align: top; }
         caption { text-align: left; } caption p { margin: 0 0 0.4em; }

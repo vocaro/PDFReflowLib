@@ -81,7 +81,7 @@
     {
       "page": 20,
       "target": "Biographies with portraits",
-      "acceptance": "Correct now: three portraits preserved; each biography's text complete and in order. Correct now also: BIOGRAPHY is an h3. Wrong now: each biography splits into two paragraphs around its portrait."
+      "acceptance": "Correct now: three portraits preserved; each biography's text complete and in order. Correct now also: BIOGRAPHY is an h3. Wrong now: the first two biographies split into two paragraphs around their portraits. The third, whose lines stand level with its portrait, is one paragraph with the portrait before it (#201)."
     }
   ],
   "scope": "Manual targets from 60 DPI Poppler renders of all 20 pages (page 1 header, Figures 1-2 and page-11 figures at 90-110 DPI). Microsoft Word 2013 export, tagged, IEEE two-column template; 13 pages report structureFallback. No region, glyph or appearance references are committed; see the manifest rights note."

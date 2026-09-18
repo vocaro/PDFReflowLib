@@ -115,7 +115,7 @@ are, in the page markup). Evidence and negative controls on real output are in
 ## Current content coverage
 
 <!-- counts:coverage -->
-[corpus/regressions.json](../corpus/regressions.json) has 3654 targeted checks on 587 reviewed pages
+[corpus/regressions.json](../corpus/regressions.json) has 3680 targeted checks on 590 reviewed pages
 across 20 documents: *Pilot's Handbook of Aeronautical Knowledge*, *Beginning and Intermediate
 Algebra*, *The 9/11 Commission Report*, *The Fed Explained*, *Dietary Guidelines for Americans*,
 *Fifth National Climate Assessment*, *Our Flag*, *Preparedness 101*, *Project Blue Book Special
@@ -125,12 +125,12 @@ Bremsstrahlung in Electron-Ion Collisions*, *Replay Clocks*, *Complaint for a Ci
 *Investigation of Atmospheric Boundary-Layer Effects on Launch-Vehicle Ground Wind Loads*, *A
 Scheduling Algorithm Compatible with a Distributed Management of Arrivals in the National Airspace
 System*, *Agricultural Research*, *Earthdata Cloud Analytics Project* and *Tank Health Monitoring*.
-They comprise 1141 ordered-text, 246 text, 453 paragraph, 342 absent-text, 278 heading,
-38 heading-level, 64 absent-heading, 88 list-item, 46 list, 21 preformatted-block,
-1 preformatted-lines, 29 script, 10 absent-script, 11 footnote, 34 note-link,
+They comprise 1141 ordered-text, 250 text, 459 paragraph, 347 absent-text, 278 heading,
+38 heading-level, 71 absent-heading, 88 list-item, 46 list, 21 preformatted-block,
+1 preformatted-lines, 29 script, 10 absent-script, 11 footnote, 3 pull-quote, 34 note-link,
 70 paragraph-continuation, 1 list-item-continuation, 8 paragraph-separation, 128 distinct-paragraph,
-202 image-presence, 45 captioned-image, 20 image-alternative, 102 page-reference, 111 warning,
-113 absent-warning, 16 source-region, 4 glyph-structure, 5 image-appearance, 14 table-cell and
+202 image-presence, 46 captioned-image, 20 image-alternative, 102 page-reference, 110 warning,
+114 absent-warning, 16 source-region, 4 glyph-structure, 5 image-appearance, 14 table-cell and
 13 math-expression checks, counted as `tools/check_corpus_content.py` counts them.
 <!-- counts:end -->
 
@@ -683,7 +683,7 @@ the page's structure validates, each line also records the tag the pipeline appl
 since #89/#90); older fixtures and untagged lines have none, and `SourceLayoutFixture` restores it.
 Source review, baseline failures, cross-document safeguards and full-run evidence are retained
 in [the three-fix measurement](../measurements/three-fidelity-fixes/record.md). The suite contains
-<!-- counts:swift-tests -->1020 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->249 Python tests<!-- counts:end -->.
+<!-- counts:swift-tests -->1029 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->251 Python tests<!-- counts:end -->.
 The comparison tests include a real-Poppler image URL check through the safe HTTP handler
 (simple and positioned modes, paths with spaces); absent Poppler is an explicit skip.
 
@@ -1058,6 +1058,39 @@ declared English, and leave `on-` + `going`, `e-` + `mail`, an unknown word and 
 book prints. The contracts add checks to the magazine (pages 1, 6, 9, 13, 15, 19, 24), the 9/11
 report (pages 3 and 172), the CDC comic, Census, Fed and Wallace; see the
 [magazine-leftovers evidence](../measurements/magazine-leftovers/record.md).
+
+## Pull quotes, cover taglines, logos beside text and word forms
+
+`MagazineCoverAndQuoteTests.swift` covers [#201](https://github.com/vocaro/PDFReflowLib/issues/201),
+the magazine's leftovers after #186. Source fixtures `usda-11` and `usda-12` (text and geometry only)
+require each pull quote as one `.pullQuote` block, written `<aside class="pullquote"
+role="doc-pullquote">`, closing on its speaker (`…per night.”—Douglas Burkett`, `… world.”
+—Dan Kline`) and heading nothing. A display sentence reads as a pull quote when it ends in terminal
+punctuation or in an attribution after it (`endsAttributedSentence`), and is set apart as an aside
+only when it quotes someone: it opens with a quotation mark or closes on a name. The same sentence
+without quotation marks stays the paragraph #55 made it (the Fed's chapter openers), a two-line
+title stays one heading, and a title's dash (`Remarks—John Smith`) is no attribution. The EPUB test
+requires the aside markup and keeps the quote out of the navigation.
+
+`usda-1` requires the cover's tagline, the page's last line and alone in its foot band, as a
+paragraph on a page too bare to state its body; without the document's body it stays a heading (the
+control), as does a title at the foot of a page of running text (#103) and a bare page's title set
+above its foot band or with a line beneath it. `usda-24` requires the ARS logo, which holds no text
+and stands level with the four-line return address to its right, before the whole address; Wallace's
+formula crops beside their steps' notes (pages 40 and 263) keep their pairing, since their crops hold
+text.
+
+The 9/11 report's `unquestion=` + `ably` joins once the vocabulary no longer records the half before
+a line-end `=` as a word; with it recorded (the control), both halves read as words and the hyphen
+stays. The lexicon vouches for `launder-` + `ings` through `laundering` and for `nonagri-` +
+`cultural` through `agricultural` under a closing prefix, while `non-` + `agricultural` (a break at
+the prefix), `as-` + `say` (two words) and `pyre-` + `throids` (no listed form) keep their hyphen.
+
+Corpus contracts support `pullQuotes`: a phrase must sit inside one pull-quote aside on that page,
+and the same words as a heading, as prose or on another page cannot pass. The contracts add checks
+to the magazine (pages 1, 2, 11, 12, 14, 24), the 9/11 report (pages 172, 298, 358), NOAA (page 53)
+and the NASA Word paper (page 20); see the
+[cover-and-quotes evidence](../measurements/magazine-cover-and-quotes/record.md).
 
 ## Hanging-indent entries
 

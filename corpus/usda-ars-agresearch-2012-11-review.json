@@ -6,12 +6,12 @@
     {
       "page": 1,
       "target": "Cover: header strip, nameplate, cover lines and tagline over a full-bleed flag photo",
-      "acceptance": "Correct now: header strip lines, Keeping Our Troops Safe, From Insects and pages 2, 4-14 in order; the two cover lines are headings; pages 2, 4-14 is a paragraph (#186); the photo is kept in the Original page 1 image. Wrong now: the Agricultural Research nameplate is outlined art and has no text; the tagline is an h6 heading and enters the contents; unverifiedTextLayer for text over the page-sized photo."
+      "acceptance": "Correct now: header strip lines, Keeping Our Troops Safe, From Insects and pages 2, 4-14 in order; the two cover lines are headings; pages 2, 4-14 is a paragraph (#186); the photo is kept in the Original page 1 image. Wrong now: the Agricultural Research nameplate is outlined art and has no text; unverifiedTextLayer for text over the page-sized photo. #201: the tagline, alone in the page’s foot band with nothing beneath it, is a paragraph and no heading."
     },
     {
       "page": 2,
       "target": "FORUM column: flag banner, title, three columns and the signature box",
-      "acceptance": "Correct now: the banner is preserved; the running foot is removed. Wrong now: the title, all three columns of prose, the (See story on page 4/15) links and the Daniel Strickman signature box are held inside a preserved-region crop, so no column text reflows (#158). The borderless links add no source-page image (#151)."
+      "acceptance": "Correct now: the banner is preserved; the running foot is removed. Wrong now: the title, all three columns of prose, the (See story on page 4/15) links and the Daniel Strickman signature box are held inside a preserved-region crop, so no column text reflows (#158). The borderless links add no source-page image (#151). #201: `nonagri-` + `cultural` joins as `nonagricultural` (the lexicon lists `agricultural`, and the break falls inside it)."
     },
     {
       "page": 3,
@@ -56,12 +56,12 @@
     {
       "page": 11,
       "target": "DWFP: Douglas Burkett pull quote, uniform lab photo and caption",
-      "acceptance": "Correct now: the STEPHEN AUSMUS (D2624-2) credit; the photo is preserved. Wrong now: the pull quote is only a crop, with no text (#158); the column prose reads one paragraph per line with the left and right columns interleaved, and the two-line caption interleaves with the left column's last line (#153); running foot kept (#159)."
+      "acceptance": "Correct now: the STEPHEN AUSMUS (D2624-2) credit; the photo is preserved. Wrong now: the pull quote is only a crop, with no text (#158); the column prose reads one paragraph per line with the left and right columns interleaved, and the two-line caption interleaves with the left column's last line (#153); running foot kept (#159). #201: the pull quote reflows as one pull-quote aside that closes on `—Douglas Burkett`, no heading; `launder-` + `ings` joins as `launderings`."
     },
     {
       "page": 12,
       "target": "DWFP: Dan Kline pull quote, Rounding Up the Best Equipment subhead, Iraq photo",
-      "acceptance": "Correct now: the Chauhan patent paragraph and the Iraq caption are whole, separate paragraphs; the SPARC equipment-rodeo sentence is whole; SETH BRITCH (D2643-1) credit. Wrong now: the Rounding Up the Best Equipment subhead runs into its paragraph; the right column's top paragraphs are merged and read before the middle column's last lines, and the bottom lines interleave (#153); the pull quote is a crop with no text (#158); running foot kept (#159)."
+      "acceptance": "Correct now: the Chauhan patent paragraph and the Iraq caption are whole, separate paragraphs; the SPARC equipment-rodeo sentence is whole; SETH BRITCH (D2643-1) credit. Wrong now: the Rounding Up the Best Equipment subhead runs into its paragraph; the right column's top paragraphs are merged and read before the middle column's last lines, and the bottom lines interleave (#153); the pull quote is a crop with no text (#158); running foot kept (#159). #201: the pull quote reflows as one pull-quote aside with its `—Dan Kline` line, no heading."
     },
     {
       "page": 13,
@@ -71,7 +71,7 @@
     {
       "page": 14,
       "target": "DWFP end: three columns, Getting Products to Troops subhead, Ken Linthicum pull quote over a full-page flag background",
-      "acceptance": "Wrong now: the whole text area, including the Sandra Avant byline, program note and contact paragraph and the pull quote, is one crop over the flag background, and no text reflows (#158). No source-page image (#151)."
+      "acceptance": "Wrong now: the whole text area, including the Sandra Avant byline, program note and contact paragraph and the pull quote, is one crop over the flag background, and no text reflows (#158). No source-page image (#151). #201: the pull quote reflows as one pull-quote aside that closes on `—Ken Linthicum`, no heading."
     },
     {
       "page": 15,
@@ -121,7 +121,7 @@
     {
       "page": 24,
       "target": "Back cover: return address, postal indicia, mailing panel, 150 Years mark and subscribe box",
-      "acceptance": "Correct now: the mailing-label instruction, the return address, Official Business and the web/Twitter line are paragraphs, and the bullet between the two addresses reads ●, not a superscript (#186). Wrong now: the agency logo’s crop stands between the address’s second and third lines; the postal indicia and subscribe box are crops. No source-page image (#151)."
+      "acceptance": "Correct now: the mailing-label instruction, the return address, Official Business and the web/Twitter line are paragraphs, and the bullet between the two addresses reads ●, not a superscript (#186). Wrong now: the postal indicia and subscribe box are crops. No source-page image (#151). #201: the ARS logo’s crop, level with the return address, reads before the whole address."
     }
   ],
   "scope": "Manual targets from 60 DPI Poppler renders of all 24 pages, the EPUB's block structure and the Poppler text layer. InDesign CS5 magazine, untagged; 12 standard Arial and Times fonts not embedded; 55 link annotations. No region, glyph or appearance references are committed: page 24 carries agency logos and the mailing panel, and the index holly ornaments are uncredited; see the manifest rights note."

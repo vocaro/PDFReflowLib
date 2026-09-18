@@ -686,6 +686,9 @@ enum NativeTextReader {
         guard let selection = page.selection(for: page.bounds(for: .cropBox)) else { return [] }
         let selections = selection.selectionsByLine()
         let boundsByLine = selections.map { $0.bounds(for: page) }
+        // PDFKit's text of every line, beside its rectangle: a line the shows it holds do not spell
+        // may be one piece of a row PDFKit split (`NativeSpacingReader.rowPieceSpaces`, #177).
+        let textsByLine = selections.map(\.string)
         var result: [TextLine] = []
         var carry: FontWeightReader.IndexGlyphCarry?
         let indexGlyphs = weights.contains { $0.indexFont != nil }
@@ -695,9 +698,9 @@ enum NativeTextReader {
         defer { if carry != nil { report?.unrepairedLines += 1 } }
         // Spacing and style evidence applied to a line's (repaired) characters.
         func finish(_ attributed: NSAttributedString?, semantic: String, exact: Bool, bounds: CGRect,
-                    allBounds: [CGRect]) -> TextLine {
+                    allBounds: [CGRect], allTexts: [String?] = []) -> TextLine {
             let repaired = attributed.map {
-                exact ? NativeSpacingReader.apply(spacing, to: $0, bounds: bounds, allBounds: allBounds) : $0
+                exact ? NativeSpacingReader.apply(spacing, to: $0, bounds: bounds, allBounds: allBounds, allTexts: allTexts) : $0
             }
             let corrected = repaired?.string != attributed?.string
                 ? repaired?.string.replacingOccurrences(of: "\u{FFFC}", with: " ") : nil
@@ -716,9 +719,9 @@ enum NativeTextReader {
         // A repaired line whose last show PDFKit continues on the next line of its row (the carry),
         // held with its PDFKit characters until that line is read (`joinsSplitShow`).
         var held: (attributed: NSAttributedString, bounds: CGRect, output: Int)?
-        for line in selections {
+        for (index, line) in selections.enumerated() {
             try Task.checkCancellation()
-            guard let raw = line.string else { continue }
+            guard let raw = textsByLine[index] else { continue }
             // U+FFFC names an attachment, not a word. Retain a boundary between adjacent
             // words; the graphics reader preserves the object's visible content separately.
             var semantic = raw.replacingOccurrences(of: "\u{FFFC}", with: " ")
@@ -750,7 +753,8 @@ enum NativeTextReader {
                     report?.unrepairedLines += 1
                 }
             }
-            result.append(finish(attributed, semantic: semantic, exact: exact, bounds: bounds, allBounds: boundsByLine))
+            result.append(finish(attributed, semantic: semantic, exact: exact, bounds: bounds, allBounds: boundsByLine,
+                                 allTexts: textsByLine))
             if continued, let previous, previous.output == result.count - 2, let original = unrepaired,
                let joined = joinsSplitShow(previous.attributed, previous.bounds, original, bounds,
                                            continuation: semantic, weights: weights, allBounds: boundsByLine) {

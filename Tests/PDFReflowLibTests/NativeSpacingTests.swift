@@ -547,9 +547,9 @@ private struct NineElevenSource: Decodable {
     }
     var sourceSHA256: String
     var pages: [Page]
-    static func load() throws -> Self {
+    static func load(_ name: String = "911-text-operators") throws -> Self {
         try JSONDecoder().decode(Self.self, from: Data(contentsOf: Bundle.module.resourceURL!
-            .appendingPathComponent("fixtures/911-text-operators.json")))
+            .appendingPathComponent("fixtures/\(name).json")))
     }
 }
 
@@ -570,7 +570,8 @@ private func insertedPairs(_ native: String, _ repaired: String) -> [String] {
 
 /// A fixture page rebuilt from its source fonts, graphics states and content stream, with PDFKit's
 /// native lines repaired as NativeTextReader does: the inserted pairs and the repaired lines.
-private func nineElevenRepairs(_ page: NineElevenSource.Page, operators: String? = nil) throws -> (pairs: [String], text: [String]) {
+private func nineElevenRepairs(_ page: NineElevenSource.Page, operators: String? = nil,
+                               rows: Bool = false) throws -> (pairs: [String], text: [String]) {
     let fonts = page.fonts.map {
         BoundaryFont(name: $0.resourceName, firstChar: $0.firstChar, widths: $0.widths, map: $0.toUnicode, subtype: $0.subtype)
     }
@@ -580,7 +581,8 @@ private func nineElevenRepairs(_ page: NineElevenSource.Page, operators: String?
     let bounds = page.lines.map { CGRect(x: $0.rect[0], y: $0.rect[1], width: $0.rect[2], height: $0.rect[3]) }
     var pairs: [String] = [], text: [String] = []
     for (index, line) in page.lines.enumerated() {
-        let repaired = NativeSpacingReader.apply(evidence, to: NSAttributedString(string: line.text), bounds: bounds[index], allBounds: bounds).string
+        let repaired = NativeSpacingReader.apply(evidence, to: NSAttributedString(string: line.text), bounds: bounds[index],
+                                                 allBounds: bounds, allTexts: rows ? page.lines.map(\.text) : []).string
         pairs += insertedPairs(line.text, repaired)
         text.append(repaired)
     }
@@ -1045,4 +1047,116 @@ private func operatorRepairs(_ page: OperatorSource.Page, operators: String? = n
         let row = line(text, 652)
         #expect(!LayoutReconstructor.isProseRow(row, in: paragraph + [row], body: 12), "\(text)")
     }
+}
+
+// #177: 9/11 pages 254, 259 and 438 set one justified show across a row PDFKit returns as two
+// lines (`…each had arrived.Hawsawi ` and `told`; `ning for what later became ` and `the 9/11
+// attack.At the time…`; `…the agencies,to conduct oversight of ` and `the intel-`), so neither
+// piece is spelled by the shows it holds and #119's word space had no line to go in. Read as
+// pieces of their row, each piece takes the spaces inside its own text. Every insertion was read
+// on the source render (split-rows-and-soft-hyphens record).
+@Test func nineElevenSplitRowsTakeTheirRowsWordSpaces() throws {
+    let source = try NineElevenSource.load("911-split-row-operators")
+    #expect(source.sourceSHA256 == (try NineElevenSource.load()).sourceSHA256)
+    // Page 455 is the appendix's list of names, where one show runs from the name column into the
+    // description column 38 points to its right (`Eyad al Rababah` / `Jordanian;Virginia resident…`).
+    let expected: [Int: [String]] = [254: ["arrived. Hawsawi"], 259: ["attack. At"], 438: ["agencies, to"],
+                                     455: ["Jordanian; Virginia", "(a.k.a. Abu", "(a.k.a. Abu", "(a.k.a. Abu"]]
+    for page in source.pages {
+        let rows = try nineElevenRepairs(page, rows: true)
+        let alone = try nineElevenRepairs(page)
+        let gained = rows.pairs.filter { !alone.pairs.contains($0) }
+        #expect(gained == expected[page.page] ?? ["page missing"], "page \(page.page)")
+        // Without the row the same pieces take no space at all: the defect.
+        #expect(!alone.pairs.contains { expected[page.page]?.contains($0) == true }, "page \(page.page)")
+        // Every other line reads exactly as it does alone: the row reading adds only what a piece lacks.
+        #expect(zip(rows.text, alone.text).filter { $0 != $1 }.count == expected[page.page]?.count, "page \(page.page)")
+    }
+    // Page 254's `told` owns no show; its row puts no space in it.
+    let page254 = try #require(source.pages.first { $0.page == 254 })
+    let told = try #require(page254.lines.firstIndex { $0.text == "told" })
+    #expect(try nineElevenRepairs(page254, rows: true).text[told] == "told")
+}
+
+// The row reading's own conditions (#177), on one show `…had arrived.Hawsawi told ` whose word
+// space at `.|H` PDFKit's split leaves in the first of two pieces.
+@Test func rowPieceSpacesNeedTheWholeRowSpelledByShowsItOwns() {
+    let text = "check that each had arrived.Hawsawi told "
+    let space = text.utf16.count - "Hawsawi told ".utf16.count
+    let show = NativeSpacingReader.Evidence(origin: CGPoint(x: 40, y: 67.7), text: text, unicode: text, end: 354.5,
+                                            size: 10.25, font: 1, wordSpaces: [space], spaced: true)
+    let first = CGRect(x: 39.66, y: 65.35, width: 291.97, height: 9.29)
+    func repaired(_ pieces: [(String, CGRect)], _ shows: [NativeSpacingReader.Evidence] = [show],
+                  texts: Bool = true) -> [String] {
+        pieces.map { piece in
+            NativeSpacingReader.apply(shows, to: NSAttributedString(string: piece.0), bounds: piece.1,
+                                      allBounds: pieces.map(\.1), allTexts: texts ? pieces.map(\.0) : []).string
+        }
+    }
+    let told = ("told", CGRect(x: 335.87, y: 65.35, width: 15.81, height: 9.29))
+    #expect(repaired([("check that each had arrived.Hawsawi ", first), told])
+        == ["check that each had arrived. Hawsawi ", "told"])
+    // Controls. Without the row's texts, the pieces stay as PDFKit read them (the pre-#177 reading).
+    #expect(repaired([("check that each had arrived.Hawsawi ", first), told], texts: false)
+        == ["check that each had arrived.Hawsawi ", "told"])
+    // A second piece further than a line's height away is not the same row's, unless the show
+    // measures past its start by more than that height.
+    let far = ("told", CGRect(x: 350, y: 65.35, width: 15.81, height: 9.29))
+    #expect(repaired([("check that each had arrived.Hawsawi ", first), far])[0] == "check that each had arrived.Hawsawi ")
+    var longer = show
+    longer.end = 370
+    #expect(repaired([("check that each had arrived.Hawsawi ", first), far], [longer])[0]
+        == "check that each had arrived. Hawsawi ")
+    // A piece on another baseline is not.
+    let lower = ("told", CGRect(x: 335.87, y: 60, width: 15.81, height: 9.29))
+    #expect(repaired([("check that each had arrived.Hawsawi ", first), lower])[0] == "check that each had arrived.Hawsawi ")
+    // The pieces must be what the show spells: a second piece with other text refuses the row.
+    let other = ("said", told.1)
+    #expect(repaired([("check that each had arrived.Hawsawi ", first), other])[0] == "check that each had arrived.Hawsawi ")
+    // A show whose origin two line rectangles hold is not the row's to read.
+    let overlapping = ("check that each", CGRect(x: 39, y: 65.35, width: 80, height: 9.29))
+    #expect(repaired([("check that each had arrived.Hawsawi ", first), told, overlapping])[0]
+        == "check that each had arrived.Hawsawi ")
+}
+
+// #177: *Our Flag* maps its line-end hyphen to U+00AD, and PDFKit leaves the character out of the
+// line, so `…did not become a real` over `ity until June 20, 1782.` read as two words. The show the
+// page draws ends in the soft hyphen; the line gets it back, and the join removes it as it removes
+// every soft hyphen (`joinOperation`).
+@Test func aSoftHyphenPDFKitDropsAtTheLineEndIsRestored() {
+    let drawn = "beliefs, values, and sovereignty of the new Nation, did not become a real\u{00AD}"
+    let show = NativeSpacingReader.Evidence(origin: CGPoint(x: 64, y: 499.2), text: drawn, unicode: drawn, end: 369.02,
+                                            size: 9, font: 1, spaced: true)
+    let bounds = CGRect(x: 64, y: 496.95, width: 302.02, height: 8.87)
+    func line(_ native: String, _ shows: [NativeSpacingReader.Evidence] = [show]) -> String {
+        NativeSpacingReader.apply(shows, to: NSAttributedString(string: native), bounds: bounds, allBounds: [bounds]).string
+    }
+    let native = "beliefs, values, and sovereignty of the new Nation, did not become a real"
+    #expect(line(native) == native + "\u{00AD}")
+    #expect(NativeSpacingReader.droppedSoftHyphen(native, shows: [show]))
+    // PDFKit's line break where the page draws a space glyph (page 25's `ner\nwhatsoever.`) is
+    // whitespace for whitespace.
+    let broken = "ner whatsoever. It should not be embroidered on such articles as cush\u{00AD}"
+    let second = NativeSpacingReader.Evidence(origin: CGPoint(x: 82, y: 415.4), text: broken, unicode: broken, end: 369,
+                                              size: 9, font: 1, spaced: true)
+    #expect(NativeSpacingReader.droppedSoftHyphen("ner\nwhatsoever. It should not be embroidered on such articles as cush",
+                                                  shows: [second]))
+    // Controls: a line PDFKit read with its hyphen, a show that ends in a letter, a line the show
+    // does not spell, and a soft hyphen after something other than a letter.
+    #expect(line(native + "\u{00AD}") == native + "\u{00AD}")
+    let plain = NativeSpacingReader.Evidence(origin: show.origin, text: String(drawn.dropLast()),
+                                             unicode: String(drawn.dropLast()), end: 366, size: 9, font: 1, spaced: true)
+    #expect(line(native, [plain]) == native)
+    #expect(line("beliefs, values, and sovereignty of the old Nation, did not become a real") != native + "\u{00AD}")
+    let dash = NativeSpacingReader.Evidence(origin: show.origin, text: "1776–\u{00AD}", unicode: "1776–\u{00AD}", end: 100,
+                                            size: 9, font: 1, spaced: true)
+    #expect(!NativeSpacingReader.droppedSoftHyphen("1776–", shows: [dash]))
+    // The layout's join removes the restored soft hyphen as it removes every one.
+    var warnings: [ConversionWarning] = []
+    let lines = [TextLine(text: native + "\u{00AD}", rect: bounds, fontSize: 9),
+                 TextLine(text: "ity until June 20, 1782.", rect: CGRect(x: 64, y: 485, width: 100, height: 8.87), fontSize: 9)]
+    let page = PageContent(number: 47, bounds: CGRect(x: 0, y: 0, width: 423, height: 652), lines: lines, graphics: [])
+    let text = LayoutReconstructor.blocks(page: page, images: [], vocabulary: [], warnings: &warnings).map(\.text)
+    #expect(text.contains { $0.contains("did not become a reality until June 20, 1782.") })
+    #expect(!warnings.contains { $0.code == .uncertainHyphen })
 }

@@ -1,0 +1,1252 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        58.800000000000004,
+        748.51210000000003,
+        9.6000000000000014,
+        9.3120000000000118
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "24"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : " "
+        }
+      ],
+      "text" : "24 "
+    },
+    {
+      "rect" : [
+        88.800000000000011,
+        748.51210000000003,
+        167.19999999999999,
+        9.3120000000000118
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "The Fed Explained: What the Central Bank Does"
+        }
+      ],
+      "text" : "The Fed Explained: What the Central Bank Does"
+    },
+    {
+      "rect" : [
+        90,
+        687.02420000000006,
+        229.83679999999998,
+        18.94399999999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 16,
+          "text" : "The Conduct of Monetary Policy"
+        }
+      ],
+      "text" : "The Conduct of Monetary Policy"
+    },
+    {
+      "rect" : [
+        90,
+        665.32420000000002,
+        421.34599999999989,
+        11.639999999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Monetary policy affects the U.S. economy—and the achievement of the dual mandate—primarily"
+        }
+      ],
+      "text" : "Monetary policy affects the U.S. economy—and the achievement of the dual mandate—primarily"
+    },
+    {
+      "rect" : [
+        90,
+        649.32420000000002,
+        431.1419999999996,
+        11.639999999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "through its influence on interest rates and overall financial conditions. With this in mind, the FOMC"
+        }
+      ],
+      "text" : "through its influence on interest rates and overall financial conditions. With this in mind, the FOMC"
+    },
+    {
+      "rect" : [
+        90,
+        633.32420000000002,
+        427.54399999999987,
+        11.639999999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "decides on the appropriate position or “stance” of monetary policy. Over time, the Committee has"
+        }
+      ],
+      "text" : "decides on the appropriate position or “stance” of monetary policy. Over time, the Committee has"
+    },
+    {
+      "rect" : [
+        90,
+        617.32420000000002,
+        424.6959999999998,
+        11.639999999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "raised and lowered its target range for the policy rate, which is the federal funds rate ("
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "figure 3.2"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ")."
+        }
+      ],
+      "text" : "raised and lowered its target range for the policy rate, which is the federal funds rate (figure 3.2)."
+    },
+    {
+      "rect" : [
+        90,
+        585.32420000000002,
+        430.89499999999975,
+        11.639999999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "When the FOMC changes the target range for the federal funds rate, other interest rates and finan-"
+        }
+      ],
+      "text" : "When the FOMC changes the target range for the federal funds rate, other interest rates and finan-"
+    },
+    {
+      "rect" : [
+        90,
+        569.32420000000002,
+        424.89599999999996,
+        11.639999999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "cial conditions more broadly adjust in response, thus affecting household and business spending"
+        }
+      ],
+      "text" : "cial conditions more broadly adjust in response, thus affecting household and business spending"
+    },
+    {
+      "rect" : [
+        90,
+        553.32420000000002,
+        115,
+        11.639999999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "decisions (see "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "figure 3.1"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ")."
+        }
+      ],
+      "text" : "decisions (see figure 3.1)."
+    },
+    {
+      "rect" : [
+        90,
+        521.32420000000002,
+        423.94399999999996,
+        11.840000000000032
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Short-term interest rates. "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Short-term interest rates—for example, the rate of return paid to hold-"
+        }
+      ],
+      "text" : "Short-term interest rates. Short-term interest rates—for example, the rate of return paid to hold-"
+    },
+    {
+      "rect" : [
+        90,
+        505.32420000000002,
+        422.09299999999985,
+        11.639999999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "ers of U.S. Treasury bills or commercial paper (a short-term debt security) issued by private com-"
+        }
+      ],
+      "text" : "ers of U.S. Treasury bills or commercial paper (a short-term debt security) issued by private com-"
+    },
+    {
+      "rect" : [
+        90,
+        489.32420000000002,
+        428.44299999999976,
+        11.639999999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "panies—are affected by changes in the target range for the federal funds rate. Short-term interest"
+        }
+      ],
+      "text" : "panies—are affected by changes in the target range for the federal funds rate. Short-term interest"
+    },
+    {
+      "rect" : [
+        316,
+        473.32420000000002,
+        190.80000000000001,
+        11.639999999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "rates would decline if the FOMC reduced its"
+        }
+      ],
+      "text" : "rates would decline if the FOMC reduced its"
+    },
+    {
+      "rect" : [
+        316,
+        457.32420000000002,
+        187.697,
+        11.639999999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "target range for the federal funds rate, or if"
+        }
+      ],
+      "text" : "target range for the federal funds rate, or if"
+    },
+    {
+      "rect" : [
+        316,
+        441.32420000000002,
+        201.79699999999991,
+        11.639999999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "unfolding events or Federal Reserve communi-"
+        }
+      ],
+      "text" : "unfolding events or Federal Reserve communi-"
+    },
+    {
+      "rect" : [
+        316,
+        425.32420000000002,
+        195.80000000000007,
+        11.639999999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "cations led the public to think that the FOMC"
+        }
+      ],
+      "text" : "cations led the public to think that the FOMC"
+    },
+    {
+      "rect" : [
+        316,
+        409.32420000000002,
+        186.59999999999997,
+        11.639999999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "would soon reduce the target range for the"
+        }
+      ],
+      "text" : "would soon reduce the target range for the"
+    },
+    {
+      "rect" : [
+        316,
+        393.32420000000002,
+        194.79599999999999,
+        11.639999999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "federal funds rate to a level lower than previ-"
+        }
+      ],
+      "text" : "federal funds rate to a level lower than previ-"
+    },
+    {
+      "rect" : [
+        316,
+        377.32420000000002,
+        204.447,
+        11.639999999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "ously expected. Conversely, short-term interest"
+        }
+      ],
+      "text" : "ously expected. Conversely, short-term interest"
+    },
+    {
+      "rect" : [
+        90,
+        361.32420000000002,
+        420.39199999999971,
+        11.639999999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "rates would rise if the FOMC increased the federal funds rate target range, or if unfolding events"
+        }
+      ],
+      "text" : "rates would rise if the FOMC increased the federal funds rate target range, or if unfolding events"
+    },
+    {
+      "rect" : [
+        90,
+        345.32420000000002,
+        416.99499999999972,
+        11.639999999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "or Federal Reserve communications prompted the public to believe that the target range for the"
+        }
+      ],
+      "text" : "or Federal Reserve communications prompted the public to believe that the target range for the"
+    },
+    {
+      "rect" : [
+        90,
+        329.32420000000002,
+        369.14599999999979,
+        11.639999999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "federal funds rate would soon be moved to a higher level than had been anticipated."
+        }
+      ],
+      "text" : "federal funds rate would soon be moved to a higher level than had been anticipated."
+    },
+    {
+      "rect" : [
+        90,
+        297.32420000000002,
+        425.298,
+        11.839999999999975
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Longer-term interest rates and asset prices. "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Longer-term interest rates and the prices for a wide"
+        }
+      ],
+      "text" : "Longer-term interest rates and asset prices. Longer-term interest rates and the prices for a wide"
+    },
+    {
+      "rect" : [
+        90,
+        281.32420000000002,
+        415.59299999999979,
+        11.639999999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "range of financial and nonfinancial assets, including stocks, bonds, and real estate, respond to"
+        }
+      ],
+      "text" : "range of financial and nonfinancial assets, including stocks, bonds, and real estate, respond to"
+    },
+    {
+      "rect" : [
+        90,
+        265.32420000000002,
+        420.84399999999982,
+        11.639999999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "changes in the current and expected path of the federal funds rate. That is, medium- and longer-"
+        }
+      ],
+      "text" : "changes in the current and expected path of the federal funds rate. That is, medium- and longer-"
+    },
+    {
+      "rect" : [
+        90,
+        249.32420000000002,
+        405.94699999999966,
+        11.639999999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "term interest rates are affected by how people expect the federal funds rate to change in the"
+        }
+      ],
+      "text" : "term interest rates are affected by how people expect the federal funds rate to change in the"
+    },
+    {
+      "rect" : [
+        90,
+        233.32420000000002,
+        431.84299999999996,
+        11.639999999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "future. For example, if borrowers and lenders think, today, that the FOMC is likely to lower its target"
+        }
+      ],
+      "text" : "future. For example, if borrowers and lenders think, today, that the FOMC is likely to lower its target"
+    },
+    {
+      "rect" : [
+        90,
+        217.32420000000002,
+        426.94199999999978,
+        11.639999999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "for the federal funds rate substantially over the next several years, medium- and longer-term inter-"
+        }
+      ],
+      "text" : "for the federal funds rate substantially over the next several years, medium- and longer-term inter-"
+    },
+    {
+      "rect" : [
+        90,
+        201.32420000000002,
+        424.99299999999971,
+        11.639999999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "est rates today will incorporate those expectations, and those rates then will be lower than would"
+        }
+      ],
+      "text" : "est rates today will incorporate those expectations, and those rates then will be lower than would"
+    },
+    {
+      "rect" : [
+        90,
+        185.32420000000002,
+        99.800000000000011,
+        11.639999999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "otherwise be the case."
+        }
+      ],
+      "text" : "otherwise be the case."
+    },
+    {
+      "rect" : [
+        90,
+        153.32420000000002,
+        428.99299999999971,
+        11.639999999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Generally speaking, the effect on short-term interest rates of a single change in the FOMC’s target"
+        }
+      ],
+      "text" : "Generally speaking, the effect on short-term interest rates of a single change in the FOMC’s target"
+    },
+    {
+      "rect" : [
+        90,
+        137.32420000000002,
+        417.24299999999982,
+        11.639999999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "range for the federal funds rate will be somewhat larger than the effect on longer-term rates be-"
+        }
+      ],
+      "text" : "range for the federal funds rate will be somewhat larger than the effect on longer-term rates be-"
+    },
+    {
+      "rect" : [
+        90,
+        121.32420000000002,
+        423.99299999999994,
+        11.639999999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "cause long-term rates typically reflect the expected course of short-term rates over a long period."
+        }
+      ],
+      "text" : "cause long-term rates typically reflect the expected course of short-term rates over a long period."
+    },
+    {
+      "rect" : [
+        98.200000000000003,
+        463.71210000000002,
+        169.03920000000005,
+        9.47199999999998
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "Monetary policy: Easing and tightening defined"
+        }
+      ],
+      "text" : "Monetary policy: Easing and tightening defined"
+    },
+    {
+      "rect" : [
+        98.200000000000003,
+        448.1121,
+        183.43759999999997,
+        9.3120000000000118
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "The FOMC changes monetary policy primarily by rais-"
+        }
+      ],
+      "text" : "The FOMC changes monetary policy primarily by rais-"
+    },
+    {
+      "rect" : [
+        98.200000000000003,
+        436.1121,
+        179.83919999999995,
+        9.3120000000000118
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "ing or lowering its target range for the federal funds"
+        }
+      ],
+      "text" : "ing or lowering its target range for the federal funds"
+    },
+    {
+      "rect" : [
+        98.200000000000003,
+        424.1121,
+        191.19919999999996,
+        9.3120000000000118
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "rate. Lowering the target range represents an “easing”"
+        }
+      ],
+      "text" : "rate. Lowering the target range represents an “easing”"
+    },
+    {
+      "rect" : [
+        98.200000000000003,
+        412.1121,
+        190.19920000000002,
+        9.3120000000000118
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "of monetary policy, while increasing the target range is"
+        }
+      ],
+      "text" : "of monetary policy, while increasing the target range is"
+    },
+    {
+      "rect" : [
+        98.200000000000003,
+        400.1121,
+        81.238399999999999,
+        9.3120000000000118
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "a “tightening” of policy."
+        }
+      ],
+      "text" : "a “tightening” of policy."
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    612,
+    792
+  ],
+  "caseID" : "fed-explained-2021",
+  "graphics" : [
+    [
+      56.800000000000004,
+      742.01210000000003,
+      498.40000000000003,
+      4
+    ],
+    [
+      88.5,
+      392.41200000000003,
+      211,
+      88.488
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        58.800000000000004,
+        748.51210000000003,
+        9.6000000000000014,
+        9.3120000000000118
+      ],
+      "text" : "24"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        88.800000000000011,
+        748.51210000000003,
+        167.19999999999999,
+        9.3120000000000118
+      ],
+      "text" : "The Fed Explained: What the Central Bank Does"
+    },
+    {
+      "fontSize" : 16,
+      "monospaced" : false,
+      "rect" : [
+        90,
+        687.02420000000006,
+        229.83679999999998,
+        18.94399999999996
+      ],
+      "structure" : {
+        "group" : 91,
+        "headingLevel" : 3,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 2035
+      },
+      "text" : "The Conduct of Monetary Policy"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        90,
+        665.32420000000002,
+        421.34599999999989,
+        11.639999999999986
+      ],
+      "text" : "Monetary policy affects the U.S. economy—and the achievement of the dual mandate—primarily"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        90,
+        649.32420000000002,
+        431.1419999999996,
+        11.639999999999986
+      ],
+      "text" : "through its influence on interest rates and overall financial conditions. With this in mind, the FOMC"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        90,
+        633.32420000000002,
+        427.54399999999987,
+        11.639999999999986
+      ],
+      "text" : "decides on the appropriate position or “stance” of monetary policy. Over time, the Committee has"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        90,
+        617.32420000000002,
+        424.6959999999998,
+        11.639999999999986
+      ],
+      "text" : "raised and lowered its target range for the policy rate, which is the federal funds rate (figure 3.2)."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        90,
+        585.32420000000002,
+        430.89499999999975,
+        11.639999999999986
+      ],
+      "text" : "When the FOMC changes the target range for the federal funds rate, other interest rates and finan-"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        90,
+        569.32420000000002,
+        424.89599999999996,
+        11.639999999999986
+      ],
+      "text" : "cial conditions more broadly adjust in response, thus affecting household and business spending"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        90,
+        553.32420000000002,
+        115,
+        11.639999999999986
+      ],
+      "text" : "decisions (see figure 3.1)."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        90,
+        521.32420000000002,
+        423.94399999999996,
+        11.840000000000032
+      ],
+      "text" : "Short-term interest rates. Short-term interest rates—for example, the rate of return paid to hold-"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        90,
+        505.32420000000002,
+        422.09299999999985,
+        11.639999999999986
+      ],
+      "text" : "ers of U.S. Treasury bills or commercial paper (a short-term debt security) issued by private com-"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        90,
+        489.32420000000002,
+        428.44299999999976,
+        11.639999999999986
+      ],
+      "text" : "panies—are affected by changes in the target range for the federal funds rate. Short-term interest"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        316,
+        473.32420000000002,
+        190.80000000000001,
+        11.639999999999986
+      ],
+      "text" : "rates would decline if the FOMC reduced its"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        316,
+        457.32420000000002,
+        187.697,
+        11.639999999999986
+      ],
+      "text" : "target range for the federal funds rate, or if"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        316,
+        441.32420000000002,
+        201.79699999999991,
+        11.639999999999986
+      ],
+      "text" : "unfolding events or Federal Reserve communi-"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        316,
+        425.32420000000002,
+        195.80000000000007,
+        11.639999999999986
+      ],
+      "text" : "cations led the public to think that the FOMC"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        316,
+        409.32420000000002,
+        186.59999999999997,
+        11.639999999999986
+      ],
+      "text" : "would soon reduce the target range for the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        316,
+        393.32420000000002,
+        194.79599999999999,
+        11.639999999999986
+      ],
+      "text" : "federal funds rate to a level lower than previ-"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        316,
+        377.32420000000002,
+        204.447,
+        11.639999999999986
+      ],
+      "text" : "ously expected. Conversely, short-term interest"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        90,
+        361.32420000000002,
+        420.39199999999971,
+        11.639999999999986
+      ],
+      "text" : "rates would rise if the FOMC increased the federal funds rate target range, or if unfolding events"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        90,
+        345.32420000000002,
+        416.99499999999972,
+        11.639999999999986
+      ],
+      "text" : "or Federal Reserve communications prompted the public to believe that the target range for the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        90,
+        329.32420000000002,
+        369.14599999999979,
+        11.639999999999986
+      ],
+      "text" : "federal funds rate would soon be moved to a higher level than had been anticipated."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        90,
+        297.32420000000002,
+        425.298,
+        11.839999999999975
+      ],
+      "text" : "Longer-term interest rates and asset prices. Longer-term interest rates and the prices for a wide"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        90,
+        281.32420000000002,
+        415.59299999999979,
+        11.639999999999986
+      ],
+      "text" : "range of financial and nonfinancial assets, including stocks, bonds, and real estate, respond to"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        90,
+        265.32420000000002,
+        420.84399999999982,
+        11.639999999999986
+      ],
+      "text" : "changes in the current and expected path of the federal funds rate. That is, medium- and longer-"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        90,
+        249.32420000000002,
+        405.94699999999966,
+        11.639999999999986
+      ],
+      "text" : "term interest rates are affected by how people expect the federal funds rate to change in the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        90,
+        233.32420000000002,
+        431.84299999999996,
+        11.639999999999986
+      ],
+      "text" : "future. For example, if borrowers and lenders think, today, that the FOMC is likely to lower its target"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        90,
+        217.32420000000002,
+        426.94199999999978,
+        11.639999999999986
+      ],
+      "text" : "for the federal funds rate substantially over the next several years, medium- and longer-term inter-"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        90,
+        201.32420000000002,
+        424.99299999999971,
+        11.639999999999986
+      ],
+      "text" : "est rates today will incorporate those expectations, and those rates then will be lower than would"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        90,
+        185.32420000000002,
+        99.800000000000011,
+        11.639999999999986
+      ],
+      "text" : "otherwise be the case."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        90,
+        153.32420000000002,
+        428.99299999999971,
+        11.639999999999986
+      ],
+      "structure" : {
+        "group" : 96,
+        "headingLevel" : 0,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 2044
+      },
+      "text" : "Generally speaking, the effect on short-term interest rates of a single change in the FOMC’s target"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        90,
+        137.32420000000002,
+        417.24299999999982,
+        11.639999999999986
+      ],
+      "structure" : {
+        "group" : 96,
+        "headingLevel" : 0,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 2044
+      },
+      "text" : "range for the federal funds rate will be somewhat larger than the effect on longer-term rates be-"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        90,
+        121.32420000000002,
+        423.99299999999994,
+        11.639999999999986
+      ],
+      "structure" : {
+        "group" : 96,
+        "headingLevel" : 0,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 2044
+      },
+      "text" : "cause long-term rates typically reflect the expected course of short-term rates over a long period."
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        98.200000000000003,
+        463.71210000000002,
+        169.03920000000005,
+        9.47199999999998
+      ],
+      "text" : "Monetary policy: Easing and tightening defined"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        98.200000000000003,
+        448.1121,
+        183.43759999999997,
+        9.3120000000000118
+      ],
+      "text" : "The FOMC changes monetary policy primarily by rais-"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        98.200000000000003,
+        436.1121,
+        179.83919999999995,
+        9.3120000000000118
+      ],
+      "text" : "ing or lowering its target range for the federal funds"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        98.200000000000003,
+        424.1121,
+        191.19919999999996,
+        9.3120000000000118
+      ],
+      "text" : "rate. Lowering the target range represents an “easing”"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        98.200000000000003,
+        412.1121,
+        190.19920000000002,
+        9.3120000000000118
+      ],
+      "text" : "of monetary policy, while increasing the target range is"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        98.200000000000003,
+        400.1121,
+        81.238399999999999,
+        9.3120000000000118
+      ],
+      "text" : "a “tightening” of policy."
+    }
+  ],
+  "page" : 28,
+  "paints" : [
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        56.800000000000004,
+        742.01210000000003,
+        498.40000000000003,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : true,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        88.5,
+        392.41200000000003,
+        211,
+        88.488
+      ]
+    }
+  ],
+  "rightsBasis" : "Federal Reserve Board educational publication, retained as external development material. PDF is not bundled or relicensed under MIT.",
+  "sourceSHA256" : "8db8fd9e1de63ac25a6f9585d78ded12f45ab56f0c14c52c199b36b368f84d60",
+  "sourceTitle" : "The Fed Explained: What the Central Bank Does",
+  "sourceURL" : "https://www.federalreserve.gov/aboutthefed/files/the-fed-explained.pdf"
+}

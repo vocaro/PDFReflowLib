@@ -209,7 +209,15 @@ through a `WinAnsiEncoding` (codes 32–126 as ASCII, `Differences` names from a
 table, #110), or through the characters `GlyphIndexDecoder` established for an index-glyph font
 (#143), and must spell
 the line exactly apart from PDFKit's own spaces (a trailing source space glyph PDFKit trims is
-allowed); rotated shows, Form XObjects and fonts without Widths or maps supply no evidence, Type3
+allowed). Where PDFKit splits one show's row into several lines (9/11 page 254's `…had
+arrived.Hawsawi ` and a line `told` of its own, #177), the line is read as a piece of its row: the
+pieces on its baseline side by side, no gap wider than a line's height unless a show that starts in
+the left piece measures past the right one's start (the appendix's name and description columns,
+page 455), whose shows each belong to
+one piece alone and together spell the pieces joined by a space; the row's spaces are read as one
+line's, and each piece takes those inside its own text. A soft hyphen (U+00AD) the last show draws
+at a line's end and PDFKit leaves out is put back when the shows otherwise spell the line, any
+whitespace PDFKit sets standing for a space glyph (#177, Our Flag's line-end hyphens). Rotated shows, Form XObjects and fonts without Widths or maps supply no evidence, Type3
 space removal ignores shows with character or word spacing, and unsupported text state still
 disqualifies the page: a `gs` whose ExtGState sets a font or does not resolve, nonzero `Ts`, `Tr`,
 `Tz`, `Tc` or `Tw` beyond 1000 units, and a show without its own positioning that follows a show
@@ -433,6 +441,13 @@ than corrupting the text. A caption's wrapped lines, set smaller than the anchor
 caption and do not compete (#118). Up to two reflowed pages between that hold only preserved images,
 captions and folios, and no prose line even inside their regions, are stepped over (#118): their page
 markers join the next page's at the text boundary and their figures follow the joined paragraph.
+Failing that reading, a tinted box at the page's foot is stepped over too (#177, the Fed's Box 3.5
+under `…The vast major-` on page 47): every block the walk passes lies in one of the page's boxes
+(its first and last lines inside it), each such box stands beneath the anchor's last line and over
+its measure, the anchor is in no box, and the next page does not open inside one; the boxes' lines
+then do not compete with the anchor, and their blocks stay on their page ahead of the joined
+paragraph, as a figure's do. The first reading, which stops at the box's own last paragraph, is
+tried first, so a sidebar continued onto the next page keeps continuing there.
 The same evidence joins a paragraph at one column's foot to the next
 paragraph at a column head to its right on the same page (#111): they are adjacent in reading order
 apart from figures, captions and folios (which then follow the joined paragraph); the head line is
@@ -443,7 +458,15 @@ line, figure or box over the head line that crosses the gutter (that element its
 prose a crossing region swallowed still counting), so a section band bounds its section from the
 stacked sections above. A paragraph also continues in the next line of its own column when reading
 order set a figure or caption beside it between the two (#118): same size and left edge, directly
-below at no more than one and a half line heights, with no line between. Before those joins, a
+below at no more than one and a half line heights, with no line between. It continues, too, in the
+next line of a paragraph wrapped around a box or figure inset into its column's left edge (#177,
+the Fed's page 28, `…Short-term interest` / `rates would decline…` beside the sidebar and `…short-term
+interest` / `rates would rise…` beneath it): same size, directly below at the paragraph's pitch with
+no line between, right edges within two bodies, left edges more than half a body apart, and an inset
+that starts at the wider line's edge, ends at the narrower line's, stands within a pitch of the
+narrower line and clear of the wider one. Where a box's blocks were read between the two lines, the
+paragraph reaches past them to that next line (in its column or around the inset) at a word
+boundary as `joinWordBreaks` does at a broken word, and the box follows the paragraph. Before those joins, a
 figure or table caption that leaves its sentence open takes back the line it wraps onto when reading
 order read something else between them (#145, a caption at a column's foot interleaved with the
 prose beside it): a later paragraph on the page whose first line lies directly beneath the caption's
@@ -609,8 +632,9 @@ row). Where the next block is not the continuation, the first later block on the
 joins instead, provided its first line is the next line of the anchor's own column — directly
 beneath it, on its edge, in its type, with no line between — so a tinted box or figure read
 between the halves no longer cuts the word (#148, the Fed's sidebars on pages 22, 28, 56, 57 and
-80: `…banking insti-`, the box, then `tutions. Stress tests are required…`); the box keeps its
-place and follows the joined paragraph. The hyphen policy above decides that join, and the blocks
+80: `…banking insti-`, the box, then `tutions. Stress tests are required…`), or the next line of a
+paragraph wrapped around an inset box (#177, page 84's `…maintain a mini-` beside the sidebar and
+`mum liquidity buffer…` beneath it); the box keeps its place and follows the joined paragraph. The hyphen policy above decides that join, and the blocks
 stay apart where it has no evidence and would warn, since reading order can set a broken fragment
 beside the wrong neighbour (NOAA's `acidifica-` before `oceans, animal…`).
 A compound the source sets with a space after its hyphen, inside one printed line, closes up on
@@ -631,7 +655,9 @@ overhangs it — when at least three lines and a quarter of that size's lines re
 ending in a letter between a fifth and a half of its type size inside that measure lost a hyphen:
 the book's words then decide the break as they decide a printed one, and only a break the policy
 resolves by removing the hyphen closes up (`bom` + `barded` where the book prints `bombarded`;
-`real` + `ity`, which it never prints, keeps its space). Vocabulary collection skips the word
+`real` + `ity`, which it never prints, keeps its space on this evidence). The glyph itself is better
+evidence where the shows carry it: Our Flag maps its line-end hyphen to U+00AD, which extraction now
+restores (above), and a soft hyphen always joins (#177, `reality`). Vocabulary collection skips the word
 after such a line as it skips the word after a printed hyphen, and carries the line the page
 before carried on with, so a word a page break cut in half is skipped too. A recognized or
 synthetic page has no such measure.

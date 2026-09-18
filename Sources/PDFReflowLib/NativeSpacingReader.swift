@@ -1012,26 +1012,159 @@ enum NativeSpacingReader {
         return s.evidence
     }
 
+    /// `allTexts`, when given, holds PDFKit's text for each of `allBounds`, so a line whose own
+    /// shows do not spell it can be read as a piece of its row (`rowPieceSpaces`, #177).
     static func apply(_ evidence: [Evidence], to attributed: NSAttributedString, bounds: CGRect,
-                      allBounds: [CGRect]) -> NSAttributedString {
+                      allBounds: [CGRect], allTexts: [String?] = []) -> NSAttributedString {
         guard evidence.count <= 10_000, allBounds.count <= 10_000,
               evidence.count * allBounds.count <= 2_000_000 else { return attributed }
+        func owned(_ show: Evidence) -> Bool {
+            allBounds.filter({ $0.insetBy(dx: -0.75, dy: -0.75).contains(show.origin) }).count == 1
+        }
         let matches = evidence.filter { bounds.insetBy(dx: -0.75, dy: -0.75).contains($0.origin) }
-        // Every show must belong to this line alone; overlapping line rectangles are ambiguous.
-        guard !matches.isEmpty, matches.allSatisfy({ match in
-            allBounds.filter({ $0.insetBy(dx: -0.75, dy: -0.75).contains(match.origin) }).count == 1
-        }) else { return attributed }
         let repaired = NSMutableAttributedString(attributedString: attributed)
+        func inserting(_ offsets: [Int]) -> NSAttributedString {
+            for offset in offsets.reversed() {
+                let attributes = repaired.attributes(at: offset - 1, effectiveRange: nil)
+                repaired.insert(NSAttributedString(string: " ", attributes: attributes), at: offset)
+            }
+            return repaired
+        }
+        // Every show must belong to this line alone; overlapping line rectangles are ambiguous.
+        guard !matches.isEmpty, matches.allSatisfy(owned) else {
+            guard matches.allSatisfy(owned), let offsets = rowPieceSpaces(evidence, text: attributed.string, bounds: bounds,
+                                                                          allBounds: allBounds, allTexts: allTexts)
+            else { return attributed }
+            return inserting(offsets)
+        }
         if matches.count == 1, let offsets = matches[0].extraSpaces(in: attributed.string) {
             for offset in offsets.reversed() { repaired.deleteCharacters(in: NSRange(location: offset, length: 1)) }
             return repaired
         }
-        // One show can carry word spaces of its own (#119); a font change needs two.
-        guard let offsets = missingSpaces(in: attributed.string, shows: matches) else { return attributed }
-        for offset in offsets.reversed() {
-            let attributes = repaired.attributes(at: offset - 1, effectiveRange: nil)
-            repaired.insert(NSAttributedString(string: " ", attributes: attributes), at: offset)
+        // A soft hyphen the page draws at the line's end and PDFKit leaves out (#177) is put back,
+        // and the line is then read with it.
+        if droppedSoftHyphen(attributed.string, shows: matches), repaired.length > 0 {
+            let attributes = repaired.attributes(at: repaired.length - 1, effectiveRange: nil)
+            let end = repaired.string.utf16.count
+                - (repaired.string.reversed().prefix(while: \.isWhitespace).map { $0.utf16.count }.reduce(0, +))
+            repaired.insert(NSAttributedString(string: "\u{00AD}", attributes: attributes), at: end)
+            if let offsets = missingSpaces(in: repaired.string, shows: matches) { return inserting(offsets) }
+            return repaired
         }
-        return repaired
+        // One show can carry word spaces of its own (#119); a font change needs two.
+        if let offsets = missingSpaces(in: attributed.string, shows: matches) { return inserting(offsets) }
+        guard !spells(attributed.string, shows: matches),
+              let offsets = rowPieceSpaces(evidence, text: attributed.string, bounds: bounds,
+                                           allBounds: allBounds, allTexts: allTexts) else { return attributed }
+        return inserting(offsets)
+    }
+
+    /// Whether the line's shows end in a soft hyphen (U+00AD) that PDFKit's text of the line lacks,
+    /// and otherwise spell it (#177). *Our Flag* maps its line-end hyphen to U+00AD, the
+    /// discretionary hyphen, and PDFKit drops that character, so `…did not become a real` over
+    /// `ity until June 20, 1782.` (page 47) reads as two words though the page draws the hyphen
+    /// (`beliefs, values, and sovereignty of the new Nation, did not become a real­` is the show).
+    /// The book prints neither `reality` nor an inflected form, so the words alone could not close
+    /// the break (#148); the glyph the page draws does. The show's text is the evidence, not the
+    /// line's rectangle, which loses the glyph's advance with the character.
+    static func droppedSoftHyphen(_ native: String, shows: [Evidence]) -> Bool {
+        guard let last = shows.max(by: { $0.origin.x < $1.origin.x }), let unicode = last.unicode,
+              unicode.trimmingCharacters(in: .whitespaces).hasSuffix("\u{00AD}"),
+              !native.trimmingCharacters(in: .whitespacesAndNewlines).hasSuffix("\u{00AD}") else { return false }
+        var trimmed = shows
+        guard let index = trimmed.firstIndex(where: { $0.origin == last.origin && $0.unicode == last.unicode }) else { return false }
+        var text = unicode
+        while text.last?.isWhitespace == true { text.removeLast() }
+        text.removeLast()
+        guard text.last?.isLetter == true else { return false }
+        trimmed[index].unicode = text
+        return spells(native, shows: trimmed)
+    }
+
+    /// Whether the shows, in order along the line, spell `native` exactly apart from PDFKit's
+    /// whitespace and a trailing space glyph: the condition `missingSpaces` reads a line under,
+    /// except that any whitespace PDFKit sets may stand for a space glyph.
+    static func spells(_ native: String, shows: [Evidence]) -> Bool {
+        var source: [UInt16] = []
+        for show in shows.sorted(by: { $0.origin.x < $1.origin.x }) {
+            guard let unicode = show.unicode, !unicode.isEmpty else { return false }
+            source += unicode.utf16
+        }
+        let extracted = Array(native.utf16)
+        func whitespace(_ value: UInt16) -> Bool {
+            UnicodeScalar(value).map { CharacterSet.whitespacesAndNewlines.contains($0) } ?? false
+        }
+        var i = 0, j = 0
+        while i < source.count, j < extracted.count {
+            // PDFKit can set a line break where the page draws a space glyph (*Our Flag* page 25's
+            // `ner\nwhatsoever.`, the rest of the word the line above broke): whitespace for whitespace.
+            if source[i] == extracted[j] || whitespace(source[i]) && whitespace(extracted[j]) { i += 1; j += 1 }
+            else if whitespace(extracted[j]) { j += 1 }
+            else { return false }
+        }
+        while j < extracted.count, whitespace(extracted[j]) { j += 1 }
+        while i < source.count, j == extracted.count, whitespace(source[i]) { i += 1 }
+        return i == source.count && j == extracted.count
+    }
+
+    /// The missing spaces of one piece of a row PDFKit split into several lines (#177). The 9/11
+    /// report sets `…confirm that each had arrived.Hawsawi told ` as one justified show, which
+    /// PDFKit returns as the line `…had arrived.Hawsawi ` and a line `told` of its own, 4.2 points
+    /// to the right; `…what later became the 9/11 attack.At the time of their travel through ` is
+    /// `ning for what later became ` and `the 9/11 attack.At the time…`, and `…the agencies,to
+    /// conduct oversight of the intel-` loses `the intel-` to a line of its own. The show's origin
+    /// lies in the first piece, so neither piece is spelled by the shows it holds, and #119 and
+    /// #128 had the word space (a TJ adjustment) but no line to put it in.
+    ///
+    /// The row is the pieces on this piece's baseline (middles within a quarter of its height,
+    /// heights within a quarter), side by side left to right with no overlap and no gap wider than
+    /// the line's height, unless a show that starts in the left piece measures past the right
+    /// piece's start (the appendix's `Eyad al Rababah` and `Jordanian;Virginia resident who
+    /// helped Hazmi`, page 455, one show across a name column and a description column). Every show whose origin lies in one of them belongs to that piece
+    /// alone among the page's lines, and together, in order, they spell the pieces' text joined
+    /// by a space, exactly as they must spell one line. The row's missing spaces are then read as
+    /// one line's, and this piece takes those that fall inside its own text. None falls at a
+    /// junction, where the pieces are already apart. Nil where no such row exists, or it puts no
+    /// space in this piece.
+    static func rowPieceSpaces(_ evidence: [Evidence], text: String, bounds: CGRect, allBounds: [CGRect],
+                               allTexts: [String?]) -> [Int]? {
+        guard allTexts.count == allBounds.count, bounds.height > 0,
+              let own = allBounds.firstIndex(of: bounds) else { return nil }
+        let height = bounds.height
+        let row = allBounds.indices.filter {
+            abs(allBounds[$0].midY - bounds.midY) <= height * 0.25 && abs(allBounds[$0].height - height) <= height * 0.25
+                && allTexts[$0] != nil
+        }.sorted { allBounds[$0].minX < allBounds[$1].minX }
+        guard row.count >= 2, let at = row.firstIndex(of: own) else { return nil }
+        // Side by side: no overlap, and a gap no wider than the line's height unless a show that
+        // starts in the left piece runs on into the right one (the appendix's name and description
+        // columns, `Eyad al Rababah` and `Jordanian;Virginia resident…`, set as one show).
+        func adjacent(_ left: Int, _ right: Int) -> Bool {
+            let gap = allBounds[right].minX - allBounds[left].maxX
+            guard gap >= -0.75 else { return false }
+            return gap <= height || evidence.contains { show in
+                allBounds[left].insetBy(dx: -0.75, dy: -0.75).contains(show.origin)
+                    && (show.end ?? -.infinity) > allBounds[right].minX + height
+            }
+        }
+        var first = at, last = at
+        while first > 0, adjacent(row[first - 1], row[first]) { first -= 1 }
+        while last + 1 < row.count, adjacent(row[last], row[last + 1]) { last += 1 }
+        guard last > first else { return nil }
+        let pieces = Array(row[first...last])
+        let shows = evidence.filter { show in pieces.contains { allBounds[$0].insetBy(dx: -0.75, dy: -0.75).contains(show.origin) } }
+        guard !shows.isEmpty, shows.allSatisfy({ show in
+            allBounds.filter({ $0.insetBy(dx: -0.75, dy: -0.75).contains(show.origin) }).count == 1
+        }) else { return nil }
+        var joined = "", start = 0
+        for piece in pieces {
+            if !joined.isEmpty { joined += " " }
+            if piece == own { start = joined.utf16.count }
+            joined += piece == own ? text : allTexts[piece] ?? ""
+        }
+        let end = start + text.utf16.count
+        guard spells(joined, shows: shows), let offsets = missingSpaces(in: joined, shows: shows) else { return nil }
+        let inside = offsets.filter { $0 > start && $0 < end }.map { $0 - start }
+        return inside.isEmpty ? nil : inside
     }
 }

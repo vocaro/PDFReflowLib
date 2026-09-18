@@ -1,0 +1,71 @@
+{
+  "passed": false,
+  "provenanceErrors": [],
+  "case": "usda-ars-agresearch-2012-11",
+  "executionContexts": {
+    "baseline": "host-terminal",
+    "candidate": "host-terminal"
+  },
+  "baselineConverterSHA256": "3dae464159a6daf1092b37586b50bffb9e38f672d191a67b3a5316a1169fd0d5",
+  "candidateConverterSHA256": "5256137a3df31a999e1d0a3d6b03282208407c1d70599e11198173ccffe26115",
+  "sameConverter": false,
+  "visionModelCaches": {
+    "baseline": {
+      "mode": "inherited",
+      "executableName": "pdf-reflow",
+      "programsSHA256": "22614cb0d67a8299f20da78a741db0b43f328b8fc7a2760ed28c0de40fec086d"
+    },
+    "candidate": {
+      "mode": "inherited",
+      "executableName": "pdf-reflow",
+      "programsSHA256": "22614cb0d67a8299f20da78a741db0b43f328b8fc7a2760ed28c0de40fec086d"
+    }
+  },
+  "sameVisionPrograms": true,
+  "changedOCRPages": [],
+  "ocrTextVolume": {
+    "pages": 0,
+    "baselineWords": 0,
+    "candidateWords": 0,
+    "pagesWithFewerWords": {
+      "baseline": [],
+      "candidate": []
+    }
+  },
+  "changedPages": [
+    24
+  ],
+  "changedPageFields": {
+    "24": [
+      "images",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ]
+  },
+  "changedImages": [
+    "EPUB/images/image-59.png",
+    "EPUB/images/image-60.png"
+  ],
+  "navigationChanged": false,
+  "changedNavigationPages": [],
+  "pageMarkersEqual": true,
+  "changedReportFields": [],
+  "idOnlyShifts": {
+    "pageCount": 0,
+    "fields": {},
+    "navigationEntries": 0,
+    "pages": {}
+  },
+  "imageRenames": {
+    "count": 1,
+    "pairs": [
+      [
+        "EPUB/images/image-59.png",
+        "EPUB/images/image-60.png"
+      ]
+    ]
+  },
+  "scope": "Per page: text, block records, element markup, image bytes, link targets and warnings, with generated identifiers (block ordinals, element ids, spine file names, image asset names) normalized; page markers; image assets by bytes; navigation entries; conversion report. Not CSS, package metadata, decoded image equivalence or a fidelity qualification."
+}

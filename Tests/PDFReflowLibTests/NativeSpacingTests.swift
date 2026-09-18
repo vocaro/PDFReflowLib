@@ -1160,3 +1160,44 @@ private func operatorRepairs(_ page: OperatorSource.Page, operators: String? = n
     #expect(text.contains { $0.contains("did not become a reality until June 20, 1782.") })
     #expect(!warnings.contains { $0.code == .uncertainHyphen })
 }
+
+// MARK: - Letter-spaced type (#198)
+
+@Test func letterSpacedTypeThatPDFKitSpellsApartReadsWhole() throws {
+    // FAA page 410's distance heading: a space glyph PDFKit leaves off the line, then `(Miles)` with
+    // 0.19 em between every glyph. 10-point fonts with 500-unit advances.
+    func show(_ operators: String, spacing: String = "0 Tc 0 Tw") throws -> [NativeSpacingReader.Evidence] {
+        try boundaryEvidence("BT \(spacing) /Fa 10 Tf 1 0 0 1 40 700 Tm \(operators) ET")
+    }
+    let miles = try show(#"[( )-578 (\()-192.7 (M)-192.7 (i)-192.6 (l)-192.5 (e)-192.5 (s)-192.9 (\))] TJ"#)
+    #expect(miles.first?.letterRuns.map(\.text) == ["(Miles)"])
+    // The run starts at its first glyph, after the space glyph and its adjustment.
+    #expect(abs((miles.first?.letterRuns.first?.origin.x ?? 0) - 50.78) < 0.01)
+    #expect(repairedBoundary(miles, "( M i l e s )") == "(Miles)")
+    #expect(repairedBoundary(miles, "(M i l e s)") == "(Miles)")
+    #expect(repairedBoundary(miles, "Distance ( M i l e s )") == "Distance (Miles)")
+    // Character spacing letter-spaces a string alike; a space glyph ends a run, so the word space stays.
+    let spaced = try show("(MILES AWAY) Tj", spacing: "1.93 Tc 0 Tw")
+    #expect(spaced.first?.letterRuns.map(\.text) == ["MILES", "AWAY"])
+    #expect(repairedBoundary(spaced, "M I L E S A W A Y") == "MILES AWAY")
+    // Controls: kerning under a tenth of an em, uneven gaps, column gaps, digits alone, fewer than
+    // three glyphs, operators' thin spaces (#188), a one-letter word between two equal word spaces
+    // that justified TeX sets as adjustments (Wallace's `do a quick`), and text PDFKit reads whole.
+    for operators in ["[(M)-50(i)-50(l)-50(e)] TJ", "[(M)-192(i)-300(l)-192(e)-400(s)] TJ", "[(A)-700(B)-700(C)] TJ",
+                      "[(2)-200(0)-200(0)-200(0)] TJ", "[(H)-200(H)] TJ", "[(x)-167(+)-167(y)-167(=)-167(z)] TJ",
+                      "[(d)(o)-330(a)-330(q)(u)] TJ", "[(r)(a)-330(-)-330(I)(n)] TJ",
+                      // The 9/11 report's spaced ellipsis before a one-letter word (page 219's `need . . . a`).
+                      "[(need )(.)-250(.)-250(.)-250(a)( Principals)] TJ"] {
+        #expect(try show(operators).first?.letterRuns.isEmpty == true, "\(operators)")
+    }
+    #expect(repairedBoundary(miles, "(Miles)") == "(Miles)")
+    // A run PDFKit's text holds twice, or one that is not in the text, is left alone; so is a run
+    // whose first glyph falls inside two line rectangles.
+    #expect(NativeSpacingReader.letterSpaces(in: "M i l and M i l", runs: ["Mil"]) == nil)
+    #expect(NativeSpacingReader.letterSpaces(in: "M i l e", runs: ["Mile", "Yard"]) == nil)
+    #expect(NativeSpacingReader.apply(miles, to: NSAttributedString(string: "( M i l e s )"), bounds: boundaryRect,
+                                      allBounds: [boundaryRect, boundaryRect]).string == "( M i l e s )")
+    // The line's other repairs still apply once its runs are whole: here the space a font change hides.
+    let changed = try boundaryEvidence("BT /Fa 10 Tf 1 0 0 1 40 700 Tm (x) Tj ET BT /Fb 10 Tf 1 0 0 1 47 700 Tm [(W)-200(O)-200(R)-200(D)] TJ ET")
+    #expect(repairedBoundary(changed, "xW O R D") == "x WORD")
+}

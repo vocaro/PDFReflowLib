@@ -12,7 +12,7 @@ A valid EPUB can still contain incorrect text, wrong reading order or unreadable
   pixels, including crop origins, rotations, annotations and resource ceilings. Preserved-region
   tests also inspect fraction bars, raised exponents and all six cells of a ruled table in actual
   EPUB images at 72/144 DPI, with surrounding-prose and code controls.
-- `scripts/check-all.sh --corpus`: the same checks plus <!-- counts:documents -->20<!-- counts:end --> complete PDF conversions,
+- `scripts/check-all.sh --corpus`: the same checks plus <!-- counts:documents -->21<!-- counts:end --> complete PDF conversions,
   sequentially, with EPUBCheck, monotonic progress, pinned source identities,
   [memory budgets](corpus.md) (the lowest peak of up to two conversions, since
   one measurement of a book's peak resident size varies by about 100 MiB under load, #140)
@@ -115,23 +115,24 @@ are, in the page markup). Evidence and negative controls on real output are in
 ## Current content coverage
 
 <!-- counts:coverage -->
-[corpus/regressions.json](../corpus/regressions.json) has 3680 targeted checks on 590 reviewed pages
-across 20 documents: *Pilot's Handbook of Aeronautical Knowledge*, *Beginning and Intermediate
-Algebra*, *The 9/11 Commission Report*, *The Fed Explained*, *Dietary Guidelines for Americans*,
-*Fifth National Climate Assessment*, *Our Flag*, *Preparedness 101*, *Project Blue Book Special
-Report No. 14*, *Mineral Commodity Summaries 2025*, *Loper Bright Enterprises v. Raimondo*,
-*Disclosure Risk Assessment in Perturbative Microdata Protection*, *Stimulated Multiphoton
-Bremsstrahlung in Electron-Ion Collisions*, *Replay Clocks*, *Complaint for a Civil Case*,
-*Investigation of Atmospheric Boundary-Layer Effects on Launch-Vehicle Ground Wind Loads*, *A
-Scheduling Algorithm Compatible with a Distributed Management of Arrivals in the National Airspace
-System*, *Agricultural Research*, *Earthdata Cloud Analytics Project* and *Tank Health Monitoring*.
-They comprise 1141 ordered-text, 250 text, 459 paragraph, 347 absent-text, 278 heading,
-38 heading-level, 71 absent-heading, 88 list-item, 46 list, 21 preformatted-block,
-1 preformatted-lines, 29 script, 10 absent-script, 11 footnote, 3 pull-quote, 34 note-link,
-70 paragraph-continuation, 1 list-item-continuation, 8 paragraph-separation, 128 distinct-paragraph,
-202 image-presence, 46 captioned-image, 20 image-alternative, 102 page-reference, 110 warning,
-114 absent-warning, 16 source-region, 4 glyph-structure, 5 image-appearance, 14 table-cell and
-13 math-expression checks, counted as `tools/check_corpus_content.py` counts them.
+[corpus/regressions.json](../corpus/regressions.json) has 3866 targeted checks on 611 reviewed pages
+across 21 documents: *Pilot's Handbook of Aeronautical Knowledge*, *Beginning and Intermediate
+Algebra*, *Report of the President’s Commission on the Assassination of President John F. Kennedy*,
+*The 9/11 Commission Report*, *The Fed Explained*, *Dietary Guidelines for Americans*, *Fifth
+National Climate Assessment*, *Our Flag*, *Preparedness 101*, *Project Blue Book Special Report No.
+14*, *Mineral Commodity Summaries 2025*, *Loper Bright Enterprises v. Raimondo*, *Disclosure Risk
+Assessment in Perturbative Microdata Protection*, *Stimulated Multiphoton Bremsstrahlung in
+Electron-Ion Collisions*, *Replay Clocks*, *Complaint for a Civil Case*, *Investigation of
+Atmospheric Boundary-Layer Effects on Launch-Vehicle Ground Wind Loads*, *A Scheduling Algorithm
+Compatible with a Distributed Management of Arrivals in the National Airspace System*, *Agricultural
+Research*, *Earthdata Cloud Analytics Project* and *Tank Health Monitoring*. They comprise
+1244 ordered-text, 250 text, 469 paragraph, 347 absent-text, 278 heading, 38 heading-level,
+71 absent-heading, 88 list-item, 46 list, 21 preformatted-block, 1 preformatted-lines, 29 script,
+10 absent-script, 11 footnote, 3 pull-quote, 34 note-link, 72 paragraph-continuation,
+1 list-item-continuation, 8 paragraph-separation, 132 distinct-paragraph, 212 image-presence,
+46 captioned-image, 20 image-alternative, 120 page-reference, 131 warning, 132 absent-warning,
+16 source-region, 4 glyph-structure, 5 image-appearance, 14 table-cell and 13 math-expression
+checks, counted as `tools/check_corpus_content.py` counts them.
 <!-- counts:end -->
 
 All source-page anchors must also remain complete and ordered, and semantic text must contain no image attachment placeholders.
@@ -195,14 +196,15 @@ the source-region, glyph-structure and appearance checks below cover selected re
 on selected regions; robust visual/semantic contracts still need expansion. The corpus
 lane does not supply a whole-book quality score or physical-device performance qualification.
 
-The full Warren conversion remains explicitly excluded from this successful-conversion lane because
-of the image-output ceiling (#5): under the automatic encoding default it now fits the 512 MiB
-budget, but by only 316,202 bytes (0.059%), and whether that is a pass is #5's decision
-([evidence](../measurements/image-encoding-default/record.md)); the pinned Warren excerpt separately checks its two
-textless pages. NOAA joined the lane once its entry bytes fell under the default budget
-([evidence](../measurements/opaque-page-rasters/record.md)), and is gated like any other case.
-Exclusions are listed in output, never counted as passes.
-The manifest consistency test requires every corpus document to be covered or explicitly excluded.
+The full Warren conversion is gated like any other case (#202). Under the automatic encoding
+default it fits the 512 MiB output budget by 319,972 bytes (0.060%), so a change that adds that
+many image bytes to the book fails the lane rather than passing unnoticed; its case takes about
+nine minutes under load and writes a 532 MB EPUB
+([evidence](../measurements/warren-gated-corpus/record.md)). NOAA joined the lane once its entry
+bytes fell under the default budget ([evidence](../measurements/opaque-page-rasters/record.md)).
+`excludedFullConversions` in `corpus/regressions.json` is empty; any exclusion added there is
+listed in output, never counted as a pass. The manifest consistency test requires every corpus
+document to be covered or explicitly excluded.
 
 ## Source-region image checks
 
@@ -565,8 +567,8 @@ controls that keep the first-column rule.
 `faa-410` fixtures (captured with index-glyph decoding and the aligned-column split) read as tables:
 Census Tables 2 and 3 with their row labels and the group headings each spanning three scores,
 Tables 7 and 8 with Table 8's numbers a word space apart, and FAA's service volumes with `Distance`
-above `(Miles)` as one heading and the wrapped altitude and its distance in one row; the titles stay
-paragraphs. Re-merging each row as PDFKit returns it reproduces the defect: no table, and the Census
+above `(Miles)` as one heading and the wrapped altitude and its distance in one row; since #198 the
+Census titles are their tables' captions, while FAA's untitled lines stay paragraphs. Re-merging each row as PDFKit returns it reproduces the defect: no table, and the Census
 pages keep the numeric-grid guard. FAA's paragraph tag over the wrapped altitude's second line and
 its `100` admits them, with a tag reaching outside the table and a heading tag as controls. Synthetic
 lines control the rule: no header, two rows, no numeric column, a marker column, dot leaders, a cell
@@ -576,6 +578,19 @@ higher headings, and a numeric grid of range cells that a read table releases fr
 synthetic PDF sets Census Table 2 with each row one TJ show, which PDFKit returns as one line;
 extraction splits it into cells, and without the header it stays whole. See the
 [aligned-column table evidence](../measurements/aligned-column-tables/record.md).
+
+#198 adds `aTableTitleInTheCellsSizeIsTheCaptionOnlyUnderItsLabel`: a title set in the cells' size
+under a `Table N.` label (one line, wrapped and centred, or with a description beneath) is the
+table's caption and reads nowhere else, with controls for lines without a label, a sentence naming
+the table, a line too far above, a larger size, a heading tag, a line sharing the title's baseline,
+unaligned lines and four lines. `letterSpacedTypeThatPDFKitSpellsApartReadsWhole`
+(`NativeSpacingTests.swift`) reads FAA page 410's `[( )-578 (\()-192.7 (M)…]TJ` as `(Miles)`, and
+character-spaced capitals with their word space kept, with kerning, uneven gaps, column gaps,
+digits, operators' thin spaces, justified TeX's one-letter words, the 9/11 report's spaced ellipses
+and ambiguous or shared runs as controls, and a font change's hidden space on the same line still
+restored; the `faa-410` fixture was recaptured, its heading line now `(Miles)`. The Census contract
+checks each title as its table's `caption`, and FAA page 410's names the distance column. See the
+[table follow-up evidence](../measurements/table-follow-ups/record.md).
 
 ## Labels joined across a page
 
@@ -683,7 +698,7 @@ the page's structure validates, each line also records the tag the pipeline appl
 since #89/#90); older fixtures and untagged lines have none, and `SourceLayoutFixture` restores it.
 Source review, baseline failures, cross-document safeguards and full-run evidence are retained
 in [the three-fix measurement](../measurements/three-fidelity-fixes/record.md). The suite contains
-<!-- counts:swift-tests -->1029 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->251 Python tests<!-- counts:end -->.
+<!-- counts:swift-tests -->1034 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->251 Python tests<!-- counts:end -->.
 The comparison tests include a real-Poppler image URL check through the safe HTTP handler
 (simple and positioned modes, paths with spaces); absent Poppler is an explicit skip.
 
@@ -768,9 +783,9 @@ words, and their absent broken forms. See the
 `InvisibleTextTests.swift` covers exclusively hidden OCR text, visible Courier and genuine
 font-size headings, mixed text modes, saved graphics state, nested forms and malformed modes.
 Warren pages 50/910 supply pinned source geometry; ordinary prose/index entries must not become
-code/headings, while source points 10/11 retain list formatting. The nine-page real Warren excerpt
-is evaluated separately because the full 920-page conversion remains outside the successful
-complete-conversion gate. A passing excerpt does not qualify the complete book.
+code/headings, while source points 10/11 retain list formatting. The full 920-page conversion is
+in the corpus lane (#202); the nine-page excerpt remains a quick visual-diagnosis aid and does not
+qualify the complete book.
 
 ## Conversion policy coverage
 
@@ -1534,6 +1549,27 @@ rule); all at once, 61. The corpus contract adds heading levels, list items, who
 sentences, one paragraph per label, no crop and the folio's absence on all five pages; it fails 55
 of its 219 checks against the previous converter's evaluation and passes against this one. See the
 [form evidence](../measurements/form-blanks-and-outlines/record.md).
+
+#197 adds three follow-ups to the same suite. `FormBlank.printed` reads a printed form's blanks with
+no field over them: a thin rule standing alone on the baseline of a row of type, beside the row's
+text and with nothing over it. Its controls are a rule meeting a grid's vertical rule or a box, a
+value printed on the rule, an underline, a radical's bar, a footnote separator, text too far
+before or after the rule, and a column's rule level with a line of the next column (a float rule
+as wide as its column's lines, a separator across a ragged list); a caption set under a blank short
+of its end leaves it one. `SourceLayoutFixture` reads printed blanks from a fixture's paints as the
+pipeline does, and `fields: false` drops a fixture's field blanks: Pro Se 1 read that way still sets
+every label and fill-in sentence with its blanks. The synthetic AcroForm page without its fields
+now reads `Name ____` and `Street Address ____`, while its row PDFKit reads across a rule and its
+rule under no field stay as they were. `answerAreas` sets an empty field taller than two lines as a
+`____` paragraph where it closes: the Pro Se pages carry six (the caption's two name boxes, II.A,
+3, III and IV's area at the top of page 5), each between its prompt and what follows; a one-line
+field, an area with type in it and one under a crop get none. An outline's tiers rank from the
+outermost the document sets, so one opening at capitals ranks `A.` where a Roman tier would stand.
+Negative controls: 14 failures with printed blanks disabled, 12 with answer areas, 1 with fixed
+depth, 27 together. The corpus contracts add the six answer areas' order on Pro Se pages 1 and 3–5
+(229 checks; the previous converter fails 39) and the magazine's mailing coupon on page 24
+(`To stop mailing ____`, `To change your address ____`, which the previous converter kept inside a
+crop). See the [printed-blank evidence](../measurements/printed-form-blanks/record.md).
 
 ## Blank pages
 

@@ -26,7 +26,7 @@ work offline. Tests and conversion never fetch sources automatically.
 | --- | ---: | --- | ---: |
 | `faa-phak-8083-25c` | 522 | Columns, illustrations, diagrams, tables, glossary | 1,280 MiB |
 | `wallace-algebra-2010` | 489 | Fractions, radicals, powers, examples, exercises, answer keys | 256 MiB |
-| `gpo-warren-1964` | 920 | Scans, noisy existing OCR, notes, index, large image output | Unset: default conversion fails |
+| `gpo-warren-1964` | 920 | Scans, noisy existing OCR, notes, index, large image output | 1,536 MiB |
 | `gpo-911-2004` | 585 | Untagged digital text, alternating headers, tracked lettering, endnotes | 256 MiB |
 | `fed-explained-2021` | 135 | Tagged text, recurring tables, organization charts and flow diagrams | 768 MiB |
 | `dga-2025-2030` | 10 | Illustrated section bands, gradients, bullet columns and callouts | 192 MiB |
@@ -250,28 +250,28 @@ python3 tools/evaluate-real-document.py --case gpo-warren-1964 \
   --output /tmp/warren-baseline --epubcheck /opt/homebrew/bin/epubcheck
 ```
 
-The default-budget baseline exits unsuccessfully after reconstruction page 436 of 920 when
-page-image output exceeds 512 MiB (page 390 before written rasters
-[stopped carrying a constant alpha plane](../measurements/opaque-page-rasters/record.md)). The
-whole book needs 1,114,310,156 entry bytes as PNG, 2.08× the default, and 537,220,320 — still
-349,408 bytes over — when each image takes the smaller of PNG and JPEG 0.90, which is the best any
-per-image encoding choice can do at that quality. Its 910 full-page references are colour scans,
-and 512 MiB over 920 pages is 583 KiB a page. What is left is a policy decision about default
-encoding, raster DPI, or references on books where nearly every page is unverified, not a
-measurement. The measurement runner retains the failure and memory/progress evidence.
-That decision was taken for encoding in #193: under the automatic default the whole book
-converts within the 512 MiB default by 316,202 bytes (0.059%), every image JPEG 0.90, which is
-the same outcome as `smallest:0.9` for both roles
-([evidence](../measurements/image-encoding-default/record.md)); the book stays out of the gated
-lane until #5 decides whether that margin is a pass. A
-[full-book encoding experiment](../measurements/warren-image-encoding/record.md)
-completes with an explicit 2 GiB experimental override; the default-budget gate remains unresolved.
-The [production client-policy runs](../measurements/client-options/record.md) also complete all
-920 pages, with JPEG references or with supplementary references omitted, under explicit final
-EPUB caps. Both validate; source-layer fidelity and physical-device memory remain unqualified. There is no case memory ceiling yet;
-do not treat a failed run as successful resource qualification or raise limits just to pass.
+The whole book is a gated corpus case like the others (#202). Under library defaults it converts
+all 920 pages in about eight to nine minutes on a loaded Mac, peaks at 1,081–1,115 MiB resident
+(ceiling 1,536 MiB) and writes a 532 MB EPUB that passes EPUBCheck. Its 932 images, 910 of them
+full-page colour scans kept as source-page references, are all JPEG under the automatic encoding
+default (#193), and the entry bytes fit the 512 MiB default output budget by 319,972 bytes
+(0.060%). That margin is deliberate: the case runs with the defaults every client gets, so a
+change that adds that many image bytes to a scanned book fails it
+([evidence](../measurements/warren-gated-corpus/record.md)). Two conversions by one binary
+produce identical EPUBs apart from the generated package identifier and modification date,
+including all 17 recognized pages. Its contract pins 21 pages chosen to cover typed prose,
+contents, exhibits and photographs, the witness list, handwritten notes, typewritten facsimiles,
+two-column notes, the index and the image-only covers. It pins correct passages and the warnings
+the reader is given, never OCR accuracy.
 
-A bounded nine-page excerpt permits visual diagnosis while full conversion is blocked:
+As PNG the book needed 1,114,310,156 entry bytes, 2.08× the default, and stopped at page 436
+([evidence](../measurements/opaque-page-rasters/record.md)). A
+[full-book encoding experiment](../measurements/warren-image-encoding/record.md) completes with an
+explicit 2 GiB override, and the [production client-policy runs](../measurements/client-options/record.md)
+complete all 920 pages with JPEG references or with supplementary references omitted, under
+explicit final EPUB caps. Source-layer fidelity and physical-device memory remain unqualified.
+
+A bounded nine-page excerpt permits quicker visual diagnosis:
 
 ```sh
 python3 measurements/gpo-warren-1964/prepare-excerpt.py \
@@ -294,7 +294,8 @@ ordinary invisible Courier prose no longer becomes code, and OCR font geometry d
 headings. True heading recovery and index grouping remain unqualified. The [excerpt check](../measurements/quality-and-raster-fixes/record.md)
 excludes placeholders and counts seven reflowed pages, preserving the two textless pages as
 images. The excerpt passes EPUBCheck but is not fidelity-qualified. This case exercises trust in an existing OCR layer as well as
-new recognition: the default full run attempts fresh OCR on only one page.
+new recognition: the default full run recognizes 17 pages, the image-only covers and blank pages
+and the seven whose layer fails the plausibility test.
 
 Tracked defects: [full-book resource limit](https://github.com/vocaro/PDFReflowLib/issues/5),
 [OCR font/layout inference](https://github.com/vocaro/PDFReflowLib/issues/6),
@@ -612,7 +613,10 @@ by tier under the form's titles, the caption's column of `)` is dropped, the `Pa
 and the rule under the running header go with the furniture, and the Statement of Claim is one
 paragraph ([#152](https://github.com/vocaro/PDFReflowLib/issues/152); [evidence](../measurements/form-blanks-and-outlines/record.md)).
 The lettered items under the numbered parts (`a. If the plaintiff is an individual`) stay list
-lines, which the EPUB sets as `<pre>`.
+lines, which the EPUB sets as `<pre>`. The empty answer areas (the caption's two name boxes and the
+space under II.A, 3, III and IV) each read as a `____` paragraph where the area closes, so the
+reader knows space follows the prompt ([#197](https://github.com/vocaro/PDFReflowLib/issues/197);
+[evidence](../measurements/printed-form-blanks/record.md)).
 No region references are committed: the form has no images, only rules and boxes.
 
 
@@ -696,7 +700,8 @@ The run passes EPUBCheck, progress and the 512 MiB Mac RSS gate (276–314 MiB p
 contract holds 164 checks on all 24 pages, all on output that matches the source: the cover lines
 and headings, the masthead date lines, photo presence and printed credits, whole captions on pages
 6, 9 and 12, reflowed sentences in source order on pages 6, 9, 12, 13, 15, 18 and 19, the
-back-cover mailing instruction, and, on every page, no recognition, damaged-encoding or
+back-cover mailing instruction and its coupon's two labels, each on its ruled blank
+(`To stop mailing ____`, #197), and, on every page, no recognition, damaged-encoding or
 implausible-layer warning, with the whole-page fallback confined to pages 20–21 and the
 source-page image to pages 1 and 13. Pages 14, 22 and 23 hold their preserved regions and that
 disclosure only: #158 keeps all of their body text inside crops, so no reflowed text is pinned.

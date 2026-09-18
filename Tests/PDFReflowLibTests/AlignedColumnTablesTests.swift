@@ -72,10 +72,12 @@ private func merged(_ lines: [TextLine], within area: CGRect) -> [TextLine] {
     #expect(table3.rows[1].header && texts(table3.rows[1]) == ["", "Ascore", "Dscore", "Sscore", "Ascore", "Dscore", "Sscore"])
     #expect(texts(table3.rows[2]) == ["rnkswp05", "46.11", "47.06", "46.66", "49.90", "50.85", "49.45"])
     #expect(texts(table3.rows[14]) == ["scalmixadd20", "2.89", "7.06", "4.94", "7.75", "11.92", "9.80"])
-    // The titles stay paragraphs before their tables, and no row runs into the next.
+    // Each title, set in the cells' size, is its table's caption and reads nowhere else (#198); no
+    // row runs into the next.
+    #expect(table2.caption.map(\.text) == ["Table 2. Domingo Data Reidentification Rates"])
+    #expect(table3.caption.map(\.text) == ["Table 3. Domingo Data Scoring Metrics"])
     let prose = paragraphs(in: blocks).joined(separator: "\n")
-    #expect(prose.contains("Table 2. Domingo Data Reidentification Rates") && prose.contains("Table 3. Domingo Data Scoring Metrics"))
-    #expect(!prose.contains("0.9620") && !prose.contains("rnkswp10"))
+    #expect(!prose.contains("Domingo Data") && !prose.contains("0.9620") && !prose.contains("rnkswp10"))
     let markup = EPUBTextEncoder.table(table3)
     #expect(markup.contains(#"<th colspan="3">d Metric</th>"#) && markup.contains(#"<th scope="row">rnkswp05</th><td>46.11</td>"#))
 }
@@ -95,6 +97,9 @@ private func merged(_ lines: [TextLine], within area: CGRect) -> [TextLine] {
     #expect(texts(table8.rows[0]) == ["", "IL1", "IL1s", "IL2", "IL3", "IL4", "IL5", "s0", "s1", "s2"])
     #expect(texts(table8.rows[1]) == ["rnkswp05", "0.114", "0.081", "1.407", "39.020", "158.950", "0.123", "48.875", "39.923", "40.141"])
     #expect(texts(table8.rows[13]) == ["scalmixadd20", "1.681", "1.004", "0.256", "0.693", "0.069", "0.033", "0.263", "0.547", "0.341"])
+    // Table 8's title is wider than the table and centred over it (#198).
+    #expect(table7.caption.map(\.text) == ["Table 7. Kim-Winker Data Scoring Metrics"])
+    #expect(table8.caption.map(\.text) == ["Table 8. S4 Return Type Information Loss, 8 Variables, 5885 Records"])
 }
 
 @Test func censusRowsAsPDFKitMergesThemAreNoTableAndKeepTheNumericGridGuard() throws {
@@ -118,8 +123,8 @@ private func merged(_ lines: [TextLine], within area: CGRect) -> [TextLine] {
     let table = try #require(tables(in: blocks).first)
     #expect(tables(in: blocks).count == 1)
     try #require(table.columns == 3 && table.rows.count == 7)
-    // `Distance` above `(Miles)` is one heading; PDFKit reads the letter-spaced `(Miles)` apart.
-    #expect(table.rows[0].header && texts(table.rows[0]) == ["Class", "Altitudes", "Distance ( M i l e s )"])
+    // `Distance` above `(Miles)` is one heading; the letter-spaced `(Miles)` reads whole (#198).
+    #expect(table.rows[0].header && texts(table.rows[0]) == ["Class", "Altitudes", "Distance (Miles)"])
     #expect(table.rows.dropFirst().map(texts) == [
         ["T", "12,000' and below", "25"], ["L", "Below 18,000'", "40"], ["H", "Below 14,500'", "40"],
         ["H", "Within the conterminous 48 states only, between 14,500 and 17,999'", "100"],
@@ -128,6 +133,8 @@ private func merged(_ lines: [TextLine], within area: CGRect) -> [TextLine] {
     #expect(table.rows.allSatisfy { $0.cells.allSatisfy { !$0.header } })
     let prose = paragraphs(in: blocks).joined(separator: "\n")
     #expect(prose.contains("The normal useful range for the various classes is shown in the following table:"))
+    // The lines above the table open with no table label, so they stay paragraphs (#198).
+    #expect(table.caption.isEmpty && prose.contains("VOR/VORTAC NAVAIDS") && prose.contains("Normal Usable Altitudes and Radius Distances"))
     #expect(!prose.contains("12,000' and below") && !prose.contains("Altitudes ("))
     // Reproducer: the rows as PDFKit merges them read as no table.
     var unsplit = page
@@ -183,6 +190,52 @@ private let censusRows = [["", "d metric", "l metric"], ["rnkswp05", "0.8861", "
     let years = try #require(BorderlessTableDetector.alignedTables(in: grid([["", "2023", "2024"]] + censusRows.dropFirst(),
                                                                               columns: censusColumns)).first)
     #expect(years.rows[0].header && years.rows[0].cells.map { $0.lines.map(\.text).joined() } == ["", "2023", "2024"])
+}
+
+@Test func aTableTitleInTheCellsSizeIsTheCaptionOnlyUnderItsLabel() throws {
+    // The synthetic Table 2's header row stands at 600–610.35; its cells span 245–368.
+    let body = grid(censusRows, columns: censusColumns)
+    func line(_ text: String, y: CGFloat, x: CGFloat = 210, size: CGFloat = 9) -> TextLine {
+        TextLine(text: text, rect: CGRect(x: x, y: y, width: CGFloat(text.count) * size * 0.5, height: size * 1.15), fontSize: size)
+    }
+    func caption(_ above: [TextLine]) throws -> [String] {
+        let tables = BorderlessTableDetector.alignedTables(in: body + above)
+        try #require(tables.count == 1 && tables[0].rows.count == 5)
+        return tables[0].title.map(\.text)
+    }
+    // Census page 12: the title 2.2 body sizes above the header, wider than the table.
+    let title = "Table 2. Domingo Data Reidentification Rates"
+    #expect(try caption([line(title, y: 630)]) == [title])
+    #expect(try caption([line("TABLE III", y: 630, x: 280)]) == ["TABLE III"])
+    // A title wrapped under its label, each line centred over the other; a description under a title.
+    #expect(try caption([line("Table 2. Domingo Data", y: 641, x: 260), line("Reidentification Rates", y: 630, x: 258)])
+        == ["Table 2. Domingo Data", "Reidentification Rates"])
+    #expect(try caption([line("Table 2: Rates", y: 641, x: 245), line("Scores by method", y: 630, x: 245)])
+        == ["Table 2: Rates", "Scores by method"])
+    var tagged = line(title, y: 630)
+    tagged.structure = TextStructure(group: 1, order: 1, headingLevel: 3, lineCount: 1)
+    let controls: [(String, [TextLine])] = [
+        // FAA page 410's lines over its table carry no label.
+        ("no label", [line("Normal Usable Altitudes and Radius Distances", y: 630)]),
+        // A sentence naming the table opens a paragraph above it.
+        ("sentence", [line("Table 2 shows the rates", y: 630, x: 245)]),
+        ("too far", [line(title, y: 640)]),
+        ("larger", [line(title, y: 630, size: 11)]),
+        ("heading", [tagged]),
+        ("shares its baseline", [line("Table 2.", y: 630, x: 245), line("Rates", y: 630, x: 300)]),
+        ("unaligned", [line("Table 2. Domingo Data", y: 641, x: 245), line("Reidentification Rates", y: 630, x: 290)]),
+        ("four lines", [line("Table 2.", y: 663, x: 245), line("Domingo", y: 652, x: 245), line("Data", y: 641, x: 245),
+                        line("Rates", y: 630, x: 245)]),
+    ]
+    for (name, above) in controls {
+        #expect(try caption(above).isEmpty, "\(name)")
+    }
+    // The title belongs to the table: it is written as the caption and reads nowhere else.
+    var warnings: [ConversionWarning] = []
+    let page = PageContent(number: 12, bounds: CGRect(x: 0, y: 0, width: 612, height: 792), lines: body + [line(title, y: 630)], graphics: [])
+    let blocks = LayoutReconstructor.blocks(page: page, images: [], vocabulary: [], warnings: &warnings)
+    #expect(tables(in: blocks).first?.caption.map(\.text) == [title] && !paragraphs(in: blocks).contains(title))
+    #expect(EPUBTextEncoder.table(try #require(tables(in: blocks).first)).contains("<caption><p>Table 2. Domingo Data Reidentification Rates</p></caption>"))
 }
 
 /// The grids `ColumnGrid` reads from lines directly, as extraction reads a region's words.

@@ -5,7 +5,7 @@
     {
       "id": "faa-phak-8083-25c",
       "sourceSHA256": "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
-      "basis": "Source pages 16 and 121 visually reviewed. Protects the introductory prose and figure preservation; does not approve page-121 column order. Pages 91/511 are source-reviewed narrow-gutter column-order regressions; the complete left column precedes the right. Reviewed chapter-page folios on pages 16/91 must remain absent from prose. Pages 211/212 visually reviewed: V-speed designators retain their source subscripts in bulleted definitions; source ASI figures remain preserved. Source pages 50/325 visually reviewed for tag-restored left-column-before-right-column order; page 81 caption remains beside the preceding image, before body prose. Page 191 reviewed: four separate left-column items precede the ammeter paragraph; since #98 the bus-bar and fuse paragraphs, the loadmeter, voltage-regulator and hydraulic paragraphs reflow and only the master-switch figure is preserved. Pages 35-36 and 116-117 visually reviewed: each two-column paragraph continues from the bottom of one page onto the next and must remain one paragraph across the source-page marker (#27). Figure 5-36 on page 121 reviewed in color (blue sky, yellow labels, aircraft): the preserved crop must keep its scale, ink contrast and hues (#27). Pages 22-25 and 52-53 visually reviewed (#45): the paragraph between page 22's figures, page 24's right column continued below the figure that opens page 25, and the tagged page 52 continued on the untagged page 53 must each remain one paragraph across the source-page marker. Pages 27, 191 and 365 source rasters reviewed (#69, #70): a bullet PDFKit splits from its text opens that item, not the tail of the block above, and a line broken after a slash inside a compound (`runway/` + `taxiway`, `alternator/` + `generator`) joins without a space. Pages 33, 43, 49, 201 and 370 source rasters reviewed (#63, #73): a section title that opens a paragraph continued on the next page follows the figure caption that closes its page and directly precedes that paragraph (pages 33, 49, 201); a two-line title set nearly the column's width is one heading (pages 43, 370). Pages 136, 159 and 340 source rasters reviewed, with pages 91, 156, 165, 199 and 262 checked against extracted geometry (#76, #82): a 10-point bold or 11-point bold-italic sub-heading on its own line is a heading followed by its paragraph, not the paragraph's opening words; page 159's `Figure 6-20.` caption ends at its own last line and the unpainted `Figure 5-16.` caption left outside the artwork's clip is not emitted (#85); page 340's two column titles on one row are two headings. Pages 25, 92 and 372 source rasters reviewed (#79): addresses broken after a dot or underscore rejoin without a space, including `(NACO)—www.faa.` + `gov/…` and the AIM bullet whose marker line ends inside its address; page 92’s `?n=wxcalc_densityaltitude` address no longer seeds a formula crop that split its paragraph. Pages 88, 98, 203, 231 and 335 (#84): chapter openers tagged P remain headings once their text-free Form XObjects no longer discard the page tags; page 203 source-reviewed, its tagged group spanning Introduction and the next section falls back. Page 89 (#75) source-reviewed: the applied tags read the viscosity and friction columns in order. Pages 105, 211 and 227 source-reviewed: paragraphs and a caption the source tags in pieces read as one element. Page 227 source raster reviewed (#77): the compass-rose figure's group box overhangs its rounded frame into the left column, but only its clipped part is figure ink, so the sentence ending `true course desired.` reflows whole; the word equations under `Step 1:`, `Step 2:` and `course is known:` are body text in the column's measure and reflow in order. Pages 96, 114, 127, 128, 179, 235, 263, 360, 366 and 412 (#89) source-reviewed: a paragraph the source tags in two pieces, one of them falling back beside a figure or in a justified column spaced only around a heading, reads as one paragraph; page 319's TAF change groups and page 416's NDB table rows stay separate. Pages 27, 45, 49, 54, 72, 152, 285, 311, 383, 409 and 429 (#90) source-reviewed: tagged titles in the book's bold, bold-italic and italic title styles are headings, stacked titles stay two headings, and titles on pages 54 and 152 follow their figure directly above the paragraph they open; contents labels (pages 6, 15) and a centred table title (416) are not headings. Lettered appendix folios A-5 to A-7 and C-2 to C-4 are furniture, not headings. Pages 340, 401, 317, 439 and 108 source rasters reviewed (#86): a figure set across both columns' full measure, within points of their first or last lines, reads before or after the complete columns; each column reads whole (page 340's left column before `Some taxiway stubs`, page 401's left column before `Suppose a flight`, page 317's items 8-11 before item 12 and the METAR example, page 439's two drug paragraphs before the right column, page 108's last left-column line before figure 5-16). Pages 47, 48, 228, 447, 460 and 512 (#97) source-reviewed: untagged 10-point italic titles in the book's recurring italic title style (pages 228, 447) and italic titles over bullet lists (48) are headings; the PAVE titles A = Aircraft and V = EnVironment are text, not formula crops; the blank pages 460 and 512 carry no folio. Page 410's italic table header Distance is not a heading. Pages 24, 55, 64, 207, 249, 251, 318, 392 and 416 (#91) source-reviewed: with space-only shows no longer rejecting their tag groups, tagged table rows, time-zone rows, address lines and checklist entries stay separate paragraphs. Pages 6, 21 and 404 source-reviewed (#102): the two-line bold sub-headings The Professional Air Traffic Controllers / Organization (PATCO) Strike and Use of Chart Supplement U.S. (formerly Airport/ / Facility Directory) are one heading each; page 6's contents entries A = Aircraft through Human Factors are text, not a preserved region. Pages 7, 12 and 15 (#105) source-reviewed: the bare Roman folios at the foot of the front matter (iii to xvi, pages 3 to 15) are furniture, not paragraphs. Pages 19, 96, 130, 146, 191, 351 and 361 (#98, #52) source-reviewed: a path or image drawn beyond the frame that clips it no longer claims the column beside the figure; page 19's left column reads whole before the right column, the prose and headings beside each figure reflow in column order, and every figure stays preserved. Pages 226, 286, 288 and 302 (#13) source-reviewed: dense vector illustrations of 101,594–183,417 operations no longer exceed the graphics reader's operation budget, so the columns, headings, bullets and captions beside each complete figure reflow instead of a whole-page image, and the sentences that cross from pages 225, 287 and 301 continue. Page 348 source-reviewed: both two-line titles and their paragraphs reflow beside the four preserved figures. Page 448's 1.95-million-operation illustration still exceeds the budget and the paint cap and keeps its page image. Page 131 source raster reviewed (#121): the borderless CATEGORY / LIMIT LOAD FACTOR table reads as a table, its header row th, the two-line Utility label one cell, the footnote marker on Normal kept, with no row headers (the tags mark those cells TD). Compounds broken at a line-end hyphen before a capital keep the hyphen with no space (#131: 6 `Single-Pilot`, 360 `Services-Broadcast`). #151: the 1,857 borderless links draw nothing (pages 6, 7, 12 and 15 carry no Original page image); page 362's reviewer highlight over Clearing Procedures is white, multiplied over the page, so it draws nothing either and the page warns annotationsNotConverted without an image. Figure captions on pages 81, 108, 165, 199, 226, 262, 286, 288, 302, 317, 341, 348, 391, 397, 401 and 439 reviewed again on their renders (#27): the book sets every `Figure N-M.` caption directly beneath the artwork it names, so each of these 23 captions must stand next after an image in the page's own block order, not merely appear on the page. Adjacency is all that is claimed; which figure a caption sits beside is not. #180: page 510's glossary entry `VYSE.` keeps its definition, as its neighbours already did. #187: the listed pages carry each named alternative text on some image — the caption the source prints beside the figure, or the kind the crop's own evidence names — and no image on them states its provenance or nothing in `alt`; source pages rendered and reviewed (measurements/preserved-image-alt-text/record.md).",
+      "basis": "Source pages 16 and 121 visually reviewed. Protects the introductory prose and figure preservation; does not approve page-121 column order. Pages 91/511 are source-reviewed narrow-gutter column-order regressions; the complete left column precedes the right. Reviewed chapter-page folios on pages 16/91 must remain absent from prose. Pages 211/212 visually reviewed: V-speed designators retain their source subscripts in bulleted definitions; source ASI figures remain preserved. Source pages 50/325 visually reviewed for tag-restored left-column-before-right-column order; page 81 caption remains beside the preceding image, before body prose. Page 191 reviewed: four separate left-column items precede the ammeter paragraph; since #98 the bus-bar and fuse paragraphs, the loadmeter, voltage-regulator and hydraulic paragraphs reflow and only the master-switch figure is preserved. Pages 35-36 and 116-117 visually reviewed: each two-column paragraph continues from the bottom of one page onto the next and must remain one paragraph across the source-page marker (#27). Figure 5-36 on page 121 reviewed in color (blue sky, yellow labels, aircraft): the preserved crop must keep its scale, ink contrast and hues (#27). Pages 22-25 and 52-53 visually reviewed (#45): the paragraph between page 22's figures, page 24's right column continued below the figure that opens page 25, and the tagged page 52 continued on the untagged page 53 must each remain one paragraph across the source-page marker. Pages 27, 191 and 365 source rasters reviewed (#69, #70): a bullet PDFKit splits from its text opens that item, not the tail of the block above, and a line broken after a slash inside a compound (`runway/` + `taxiway`, `alternator/` + `generator`) joins without a space. Pages 33, 43, 49, 201 and 370 source rasters reviewed (#63, #73): a section title that opens a paragraph continued on the next page follows the figure caption that closes its page and directly precedes that paragraph (pages 33, 49, 201); a two-line title set nearly the column's width is one heading (pages 43, 370). Pages 136, 159 and 340 source rasters reviewed, with pages 91, 156, 165, 199 and 262 checked against extracted geometry (#76, #82): a 10-point bold or 11-point bold-italic sub-heading on its own line is a heading followed by its paragraph, not the paragraph's opening words; page 159's `Figure 6-20.` caption ends at its own last line and the unpainted `Figure 5-16.` caption left outside the artwork's clip is not emitted (#85); page 340's two column titles on one row are two headings. Pages 25, 92 and 372 source rasters reviewed (#79): addresses broken after a dot or underscore rejoin without a space, including `(NACO)—www.faa.` + `gov/…` and the AIM bullet whose marker line ends inside its address; page 92’s `?n=wxcalc_densityaltitude` address no longer seeds a formula crop that split its paragraph. Pages 88, 98, 203, 231 and 335 (#84): chapter openers tagged P remain headings once their text-free Form XObjects no longer discard the page tags; page 203 source-reviewed, its tagged group spanning Introduction and the next section falls back. Page 89 (#75) source-reviewed: the applied tags read the viscosity and friction columns in order. Pages 105, 211 and 227 source-reviewed: paragraphs and a caption the source tags in pieces read as one element. Page 227 source raster reviewed (#77): the compass-rose figure's group box overhangs its rounded frame into the left column, but only its clipped part is figure ink, so the sentence ending `true course desired.` reflows whole; the word equations under `Step 1:`, `Step 2:` and `course is known:` are body text in the column's measure and reflow in order. Pages 96, 114, 127, 128, 179, 235, 263, 360, 366 and 412 (#89) source-reviewed: a paragraph the source tags in two pieces, one of them falling back beside a figure or in a justified column spaced only around a heading, reads as one paragraph; page 319's TAF change groups and page 416's NDB table rows stay separate. Pages 27, 45, 49, 54, 72, 152, 285, 311, 383, 409 and 429 (#90) source-reviewed: tagged titles in the book's bold, bold-italic and italic title styles are headings, stacked titles stay two headings, and titles on pages 54 and 152 follow their figure directly above the paragraph they open; contents labels (pages 6, 15) and a centred table title (416) are not headings. Lettered appendix folios A-5 to A-7 and C-2 to C-4 are furniture, not headings. Pages 340, 401, 317, 439 and 108 source rasters reviewed (#86): a figure set across both columns' full measure, within points of their first or last lines, reads before or after the complete columns; each column reads whole (page 340's left column before `Some taxiway stubs`, page 401's left column before `Suppose a flight`, page 317's items 8-11 before item 12 and the METAR example, page 439's two drug paragraphs before the right column, page 108's last left-column line before figure 5-16). Pages 47, 48, 228, 447, 460 and 512 (#97) source-reviewed: untagged 10-point italic titles in the book's recurring italic title style (pages 228, 447) and italic titles over bullet lists (48) are headings; the PAVE titles A = Aircraft and V = EnVironment are text, not formula crops; the blank pages 460 and 512 carry no folio. Page 410's italic table header Distance is not a heading. Pages 24, 55, 64, 207, 249, 251, 318, 392 and 416 (#91) source-reviewed: with space-only shows no longer rejecting their tag groups, tagged table rows, time-zone rows, address lines and checklist entries stay separate paragraphs. Pages 6, 21 and 404 source-reviewed (#102): the two-line bold sub-headings The Professional Air Traffic Controllers / Organization (PATCO) Strike and Use of Chart Supplement U.S. (formerly Airport/ / Facility Directory) are one heading each; page 6's contents entries A = Aircraft through Human Factors are text, not a preserved region. Pages 7, 12 and 15 (#105) source-reviewed: the bare Roman folios at the foot of the front matter (iii to xvi, pages 3 to 15) are furniture, not paragraphs. Pages 19, 96, 130, 146, 191, 351 and 361 (#98, #52) source-reviewed: a path or image drawn beyond the frame that clips it no longer claims the column beside the figure; page 19's left column reads whole before the right column, the prose and headings beside each figure reflow in column order, and every figure stays preserved. Pages 226, 286, 288 and 302 (#13) source-reviewed: dense vector illustrations of 101,594–183,417 operations no longer exceed the graphics reader's operation budget, so the columns, headings, bullets and captions beside each complete figure reflow instead of a whole-page image, and the sentences that cross from pages 225, 287 and 301 continue. Page 348 source-reviewed: both two-line titles and their paragraphs reflow beside the four preserved figures. Page 448's 1.95-million-operation illustration still exceeds the budget and the paint cap and keeps its page image. Page 131 source raster reviewed (#121): the borderless CATEGORY / LIMIT LOAD FACTOR table reads as a table, its header row th, the two-line Utility label one cell, the footnote marker on Normal kept, with no row headers (the tags mark those cells TD). Compounds broken at a line-end hyphen before a capital keep the hyphen with no space (#131: 6 `Single-Pilot`, 360 `Services-Broadcast`). #151: the 1,857 borderless links draw nothing (pages 6, 7, 12 and 15 carry no Original page image); page 362's reviewer highlight over Clearing Procedures is white, multiplied over the page, so it draws nothing either and the page warns annotationsNotConverted without an image. Figure captions on pages 81, 108, 165, 199, 226, 262, 286, 288, 302, 317, 341, 348, 391, 397, 401 and 439 reviewed again on their renders (#27): the book sets every `Figure N-M.` caption directly beneath the artwork it names, so each of these 23 captions must stand next after an image in the page's own block order, not merely appear on the page. Adjacency is all that is claimed; which figure a caption sits beside is not. #180: page 510's glossary entry `VYSE.` keeps its definition, as its neighbours already did. #187: the listed pages carry each named alternative text on some image — the caption the source prints beside the figure, or the kind the crop's own evidence names — and no image on them states its provenance or nothing in `alt`; source pages rendered and reviewed (measurements/preserved-image-alt-text/record.md). #198: page 410's letter-spaced distance heading `(Miles)` reads whole, so its table names the distance column `Distance (Miles)` over the six distances read from the render (measurements/table-follow-ups/record.md).",
       "pages": [
         {
           "page": 3,
@@ -1141,7 +1141,8 @@
               "title": "VOR/VORTAC NAVAIDS: Normal Usable Altitudes and Radius Distances",
               "columns": [
                 "Class",
-                "Altitudes"
+                "Altitudes",
+                "Distance (Miles)"
               ],
               "headerCells": true,
               "rowHeaders": false,
@@ -1150,42 +1151,48 @@
                   "label": "T",
                   "values": [
                     "T",
-                    "12,000' and below"
+                    "12,000' and below",
+                    "25"
                   ]
                 },
                 {
                   "label": "L",
                   "values": [
                     "L",
-                    "Below 18,000'"
+                    "Below 18,000'",
+                    "40"
                   ]
                 },
                 {
                   "label": "H",
                   "values": [
                     "H",
-                    "Below 14,500'"
+                    "Below 14,500'",
+                    "40"
                   ]
                 },
                 {
                   "label": "H",
                   "values": [
                     "H",
-                    "Within the conterminous 48 states only, between 14,500 and 17,999'"
+                    "Within the conterminous 48 states only, between 14,500 and 17,999'",
+                    "100"
                   ]
                 },
                 {
                   "label": "H",
                   "values": [
                     "H",
-                    "18,000'—FL 450"
+                    "18,000'—FL 450",
+                    "130"
                   ]
                 },
                 {
                   "label": "H",
                   "values": [
                     "H",
-                    "FL 450—60,000'"
+                    "FL 450—60,000'",
+                    "100"
                   ]
                 }
               ]
@@ -2813,6 +2820,427 @@
           "absentHeadings": [
             "1)",
             "Solve."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gpo-warren-1964",
+      "sourceSHA256": "341cc3471750c9c3be68b95a34b52f6cbdc86c4392427a8483ee1c6bc53cfc19",
+      "basis": "#202: the whole 920-page book converts under library defaults and is gated like the other documents. Every phrase was read from the default conversion and checked against 90-dpi renders of the source pages (measurements/warren-gated-corpus/record.md). The book is a scan with an inherited OCR layer (mostly Courier, invisible): the contract pins correct passages and the explicit uncertainty the reader is given, and blesses no OCR accuracy. Typed-text pages (7, 21, 29, 30, 50, 100, 520, 885, 890, 910) keep the inherited layer with unverifiedTextLayer and their source-page image, and are not recognized again or replaced by an image; page 50's `bis known contacts witb tbe` is the existing layer's reading (gpo-warren-1964-review.json) and is not pinned. Page 29's and page 30's last paragraphs continue onto the next page. Page 520 (a witness list at 0.65 English) is not flagged implausible. Notes 885 and 890 read each column through before the next (notes 415-476 then 477), and index page 910 finishes its left column through Fair Play for Cuba Committee before Federal Bureau of Investigation. Exhibits: page 90's photograph is a crop beside its caption; pages 103 (a map with a photograph), 291 (a handwritten letter) and 384 (photographs) keep their printed captions and the page image, and pages 291 and 384 are the two that once reconstructed two ways (#140). Handwritten hospital notes 549, 553 and 556 report implausibleTextLayer and keep the page image; their recognized handwriting is noise and is not pinned. Typewritten exhibit page 636's inherited layer is noise the plausibility test passes; only its unverified warning and page image are pinned. The cover (1, with its signature annotation), blank page 498 and back cover 920 are each one whole-page image. Not pinned because the output is wrong: paragraph breaks inside dense note-marked pages (100 runs three source paragraphs together), OCR note markers (`^^`), page 50's numbered points 10 and 11 and the numbered notes, whose first lines become preformatted blocks with any wrapped lines as separate paragraphs, and index entries run together.",
+      "pages": [
+        {
+          "page": 1,
+          "minimumImages": 1,
+          "maximumImages": 1,
+          "warningCodesAnyOf": [
+            "annotationsNotConverted"
+          ]
+        },
+        {
+          "page": 7,
+          "pageReference": true,
+          "warningCodesAnyOf": [
+            "unverifiedTextLayer"
+          ],
+          "absentWarningCodes": [
+            "ocrUsed",
+            "implausibleTextLayer",
+            "pageImageFallback"
+          ],
+          "orderedText": [
+            "REPORT OF",
+            "THE PRESIDENT'S COMMISSION ON THE",
+            "ASSASSINATION OF",
+            "President John F. Kennedy",
+            "UNITED STATES",
+            "GOVERNMENT PRINTING OFFICE",
+            "WASHINGTON, D.C."
+          ],
+          "paragraphs": [
+            "President John F. Kennedy"
+          ]
+        },
+        {
+          "page": 21,
+          "pageReference": true,
+          "warningCodesAnyOf": [
+            "unverifiedTextLayer"
+          ],
+          "absentWarningCodes": [
+            "ocrUsed",
+            "implausibleTextLayer",
+            "pageImageFallback"
+          ],
+          "orderedText": [
+            "Contents",
+            "LETTER OF TRANSMITTAL vii",
+            "FOREWORD ix",
+            "Narrative of Events 1",
+            "Conclusions 18",
+            "Recommendations 25",
+            "Chapter II. THE ASSASSINATION 28",
+            "Parkland Memorial Hospital 52",
+            "The Race to the Hospital 52",
+            "The End of the Trip 59",
+            "The Presidential Automobile 76"
+          ]
+        },
+        {
+          "page": 29,
+          "pageReference": true,
+          "warningCodesAnyOf": [
+            "unverifiedTextLayer"
+          ],
+          "absentWarningCodes": [
+            "ocrUsed",
+            "implausibleTextLayer",
+            "pageImageFallback"
+          ],
+          "orderedText": [
+            "Summary and Conclusions",
+            "November 22, 1963, was a cruel and shocking act of violence",
+            "This Commission was created on November 29, 1963",
+            "NARRATIVE OF EVENTS",
+            "Following a testimonial dinner in Houston for U.S. Representative Albert Thomas",
+            "Planned for later that day were a motorcade through downtown Dallas"
+          ],
+          "paragraphs": [
+            "NARRATIVE OF EVENTS"
+          ],
+          "continuedParagraphs": [
+            {
+              "end": "Evident on this trip were the",
+              "next": "varied roles which an American President performs"
+            }
+          ]
+        },
+        {
+          "page": 30,
+          "pageReference": true,
+          "warningCodesAnyOf": [
+            "unverifiedTextLayer"
+          ],
+          "absentWarningCodes": [
+            "ocrUsed",
+            "implausibleTextLayer",
+            "pageImageFallback"
+          ],
+          "orderedText": [
+            "prospective candidate for reelection.",
+            "The Dallas motorcade, it was hoped, would evoke a demonstration of the President's personal popularity",
+            "By midmorning of November 22, clearing skies in Dallas dispelled the threat of rain",
+            "Directly behind the Presidential limousine was an open \"followup\" car with eight Secret Service agents",
+            "The motorcade left Love Field shortly after"
+          ],
+          "distinctParagraphs": [
+            {
+              "first": "By midmorning of November 22",
+              "second": "Directly behind the Presidential limousine"
+            },
+            {
+              "first": "Directly behind the Presidential limousine",
+              "second": "The motorcade left Love Field"
+            }
+          ],
+          "continuedParagraphs": [
+            {
+              "end": "the welcome became",
+              "next": "tumultuous."
+            }
+          ]
+        },
+        {
+          "page": 50,
+          "pageReference": true,
+          "warningCodesAnyOf": [
+            "unverifiedTextLayer"
+          ],
+          "absentWarningCodes": [
+            "ocrUsed",
+            "implausibleTextLayer",
+            "pageImageFallback"
+          ],
+          "orderedText": [
+            "September 26 to October 3, 1963",
+            "the Fair Play for Cuba Committee",
+            "All of the evidence before the Commission established that there was nothing to support the speculation that Oswald was an agent",
+            "Because of the difficulty of proving negatives to a certainty",
+            "of conspiracy, subversion, or disloyalty",
+            "The Commission could not make any definitive determination of Oswald's motives."
+          ],
+          "paragraphs": [
+            "Because of the difficulty of proving negatives to a certainty the possibility of others being involved with either Oswald or Ruby cannot be established categorically"
+          ]
+        },
+        {
+          "page": 90,
+          "minimumImages": 2,
+          "pageReference": true,
+          "warningCodesAnyOf": [
+            "unverifiedTextLayer"
+          ],
+          "absentWarningCodes": [
+            "ocrUsed",
+            "implausibleTextLayer",
+            "pageImageFallback"
+          ],
+          "orderedText": [
+            "Commission Exhibit No. 477",
+            "(Photograph taken on March 20, 1964, and marked by Brennan during his testimony to show the window (A) in which he saw a man with a rifle, and the window (B) on the fifth floor"
+          ]
+        },
+        {
+          "page": 100,
+          "pageReference": true,
+          "warningCodesAnyOf": [
+            "unverifiedTextLayer"
+          ],
+          "absentWarningCodes": [
+            "ocrUsed",
+            "implausibleTextLayer",
+            "pageImageFallback"
+          ],
+          "orderedText": [
+            "Patrolman Foster estimated that there were 10 or 11 people on the railroad bridge where he was assigned;",
+            "Investigation has disclosed 15 persons who were on the railroad bridge at this time",
+            "Another employee of the Union Terminal Co., Lee E. Bowers, Jr., was at work in a railroad tower",
+            "Special Agent Winston G. Lawson motioned through the windshield",
+            "After the third shot, Foster ran toward the Depository and shortly thereafter informed"
+          ]
+        },
+        {
+          "page": 103,
+          "pageReference": true,
+          "warningCodesAnyOf": [
+            "implausibleTextLayer"
+          ],
+          "absentWarningCodes": [
+            "pageImageFallback"
+          ],
+          "orderedText": [
+            "VIEW OF TRIPLE UNDERPASS",
+            "FROM LOCATION ON ELM STREET",
+            "TEXAS SCHOOL",
+            "BOOK DEPOSITORY",
+            "COMMISSION EXHIBIT No. 2215"
+          ]
+        },
+        {
+          "page": 291,
+          "pageReference": true,
+          "warningCodesAnyOf": [
+            "unverifiedTextLayer"
+          ],
+          "absentWarningCodes": [
+            "ocrUsed",
+            "implausibleTextLayer",
+            "pageImageFallback"
+          ],
+          "orderedText": [
+            "LETTER MAILED BY OSWALD TO THE AMERICAN",
+            "EMBASSY IN MOSCOW",
+            "Commission Exhibit No. 912"
+          ]
+        },
+        {
+          "page": 384,
+          "pageReference": true,
+          "warningCodesAnyOf": [
+            "unverifiedTextLayer"
+          ],
+          "absentWarningCodes": [
+            "ocrUsed",
+            "implausibleTextLayer",
+            "pageImageFallback"
+          ],
+          "paragraphs": [
+            "JACK RUBY MOVING TOWARD OSWALD IN FRONT OF NEWSMAN IKE PAPPAS"
+          ],
+          "orderedText": [
+            "JACK RUBY MOVING TOWARD OSWALD",
+            "PAPPAS DEPOSITION EXHIBIT 2"
+          ]
+        },
+        {
+          "page": 498,
+          "minimumImages": 1,
+          "maximumImages": 1,
+          "warningCodesAnyOf": [
+            "pageImageFallback"
+          ]
+        },
+        {
+          "page": 520,
+          "pageReference": true,
+          "warningCodesAnyOf": [
+            "unverifiedTextLayer"
+          ],
+          "absentWarningCodes": [
+            "ocrUsed",
+            "implausibleTextLayer",
+            "pageImageFallback"
+          ],
+          "orderedText": [
+            "Witness Description Testimony",
+            "Lovelady, Billy Nolan",
+            "Employee, TSBD Vol. VI, p. 336.",
+            "McClelland, Robert N.",
+            "Doctor, Parkland Hospital",
+            "Mitchell, Mary Ann",
+            "Molina, Joe R.",
+            "Employee, TSBD Vol. VI, p. 368."
+          ]
+        },
+        {
+          "page": 549,
+          "minimumImages": 2,
+          "pageReference": true,
+          "warningCodesAnyOf": [
+            "implausibleTextLayer"
+          ],
+          "absentWarningCodes": [
+            "pageImageFallback"
+          ],
+          "orderedText": [
+            "PARKLAND MEMORIAL HOSPITAL",
+            "ADMISSION NOTE"
+          ]
+        },
+        {
+          "page": 553,
+          "minimumImages": 1,
+          "pageReference": true,
+          "warningCodesAnyOf": [
+            "implausibleTextLayer"
+          ],
+          "absentWarningCodes": [
+            "pageImageFallback"
+          ]
+        },
+        {
+          "page": 556,
+          "pageReference": true,
+          "warningCodesAnyOf": [
+            "implausibleTextLayer"
+          ],
+          "absentWarningCodes": [
+            "pageImageFallback"
+          ],
+          "orderedText": [
+            "PARKLAND MEMORIAL HOSPITAL",
+            "ADMISSION NOTE",
+            "DATE AND HOUR:"
+          ]
+        },
+        {
+          "page": 636,
+          "minimumImages": 1,
+          "pageReference": true,
+          "warningCodesAnyOf": [
+            "unverifiedTextLayer"
+          ],
+          "absentWarningCodes": [
+            "pageImageFallback"
+          ]
+        },
+        {
+          "page": 885,
+          "pageReference": true,
+          "warningCodesAnyOf": [
+            "unverifiedTextLayer"
+          ],
+          "absentWarningCodes": [
+            "ocrUsed",
+            "implausibleTextLayer",
+            "pageImageFallback"
+          ],
+          "orderedText": [
+            "NOTES TO PAGES 593-663",
+            "395. Id. at 283.",
+            "404. 4 H 226 (Fritz).",
+            "405. 4 H 288",
+            "413. Id. at 687, 689-690.",
+            "APPENDIX XII",
+            "1. See supra, pp. 61-71.",
+            "2. See supra, pp. 71-72.",
+            "58. See supra, p. 167.",
+            "111. 11 H 434-442 (Warren A. Reynolds)"
+          ],
+          "paragraphs": [
+            "NOTES TO PAGES 593-663",
+            "APPENDIX XII"
+          ]
+        },
+        {
+          "page": 890,
+          "pageReference": true,
+          "warningCodesAnyOf": [
+            "unverifiedTextLayer"
+          ],
+          "absentWarningCodes": [
+            "ocrUsed",
+            "implausibleTextLayer",
+            "pageImageFallback"
+          ],
+          "orderedText": [
+            "NOTES TO PAGES 687-694",
+            "415. 8 H 232 (Delgado).",
+            "416. Id. at 233, 241, 246-248.",
+            "436. Folsom DE 1, p. 3.",
+            "476. CE 2675, p. 2.",
+            "477. Id. at 2-3",
+            "480. CE 2677.",
+            "536. CE 912."
+          ],
+          "paragraphs": [
+            "NOTES TO PAGES 687-694"
+          ]
+        },
+        {
+          "page": 910,
+          "pageReference": true,
+          "warningCodesAnyOf": [
+            "unverifiedTextLayer"
+          ],
+          "absentWarningCodes": [
+            "ocrUsed",
+            "implausibleTextLayer",
+            "pageImageFallback"
+          ],
+          "orderedText": [
+            "De Mohrenschildt, Jeanne, 282-283, 394, 400-401, 418, 717-718, 721, 724.",
+            "Department of the Treasury, 454, 457, 460, 464.",
+            "Dziemian, Dr. Arthur J., 109, 580, 584.",
+            "Executive Order No. 11130, 501-502.",
+            "Fain, John W., 326, 434.",
+            "Fair Play for Cuba Committee, 19, 21-22",
+            "Federal Bureau of Investigation, 13-14",
+            "Felde, Allan R., 682.",
+            "Fritz, Capt. J. Will",
+            "Gadash, Clyde, 344-345.",
+            "Granovsky, Frank, 786."
+          ],
+          "paragraphs": [
+            "Fair Play for Cuba Committee, 19, 21-22, 122, 244, 287-292, 301-302, 312-313, 315, 326, 331, 342-344, 390, 402, 404, 406-408, 410-413, 419, 435-436, 441-442, 567, 578, 661, 728-732, 734, 739, 744."
+          ],
+          "distinctParagraphs": [
+            {
+              "first": "Fair Play for Cuba Committee",
+              "second": "Federal Bureau of Investigation"
+            },
+            {
+              "first": "Executive Order No. 11130",
+              "second": "Fain, John W."
+            }
+          ]
+        },
+        {
+          "page": 920,
+          "minimumImages": 1,
+          "maximumImages": 1,
+          "warningCodesAnyOf": [
+            "pageImageFallback"
           ]
         }
       ]
@@ -7279,7 +7707,7 @@
     {
       "id": "census-rrs2002-01",
       "sourceSHA256": "0f97380ae4308581bd70013b7317faafd7c217654236bd31d1448f26eae56905",
-      "basis": "Source page 1 (Word cover) visually reviewed as the clean in-document control for a report whose LaTeX body fonts name their glyphs by index with no Unicode mapping (#38). Since #143 the EC text fonts (dcr, dcbx, dcti) are decoded through the offset the document's own words establish: pages 3 and 17, drawn in those fonts alone and holding no numeric table, reflow from native text without damagedTextEncoding, OCR or a source-page image, and their reviewed phrases (page 3's heading, first sentence, subsection title and numbered fields 1, 12 and 13; page 17's body and references with ligatures, dashes and an italic journal title) were read from 200-dpi renders of the source pages. Pages 12 and 15 are tables no table path reconstructs; they keep damagedTextEncoding and their table images, and must never reflow the table rows run together as prose (Table 2's `0.9620 rnkswp10`, Table 7's `13.85 add01_sw`). Pages 2, 4-11, 13, 14, 16 and 18-20 draw undecodable math or typewriter fonts or lines PDFKit breaks, and must still report damagedTextEncoding and keep a source-page image. Does not bless OCR accuracy on those pages. Page 3's paragraph after the income list opens on an indented first line that runs onto `public-use CPS file`, and page 17's first reference hangs `Incomplete Data via the EM Algorithm` under a first line set apart by space; each reads as one paragraph (#147). #162: page 17’s hanging-indent references keep their wrapped lines. #187: the listed pages carry each named alternative text on some image — the caption the source prints beside the figure, or the kind the crop's own evidence names — and no image on them states its provenance or nothing in `alt`; source pages rendered and reviewed (measurements/preserved-image-alt-text/record.md).",
+      "basis": "Source page 1 (Word cover) visually reviewed as the clean in-document control for a report whose LaTeX body fonts name their glyphs by index with no Unicode mapping (#38). Since #143 the EC text fonts (dcr, dcbx, dcti) are decoded through the offset the document's own words establish: pages 3 and 17, drawn in those fonts alone and holding no numeric table, reflow from native text without damagedTextEncoding, OCR or a source-page image, and their reviewed phrases (page 3's heading, first sentence, subsection title and numbered fields 1, 12 and 13; page 17's body and references with ligatures, dashes and an italic journal title) were read from 200-dpi renders of the source pages. Pages 12 and 15 are tables no table path reconstructs; they keep damagedTextEncoding and their table images, and must never reflow the table rows run together as prose (Table 2's `0.9620 rnkswp10`, Table 7's `13.85 add01_sw`). Pages 2, 4-11, 13, 14, 16 and 18-20 draw undecodable math or typewriter fonts or lines PDFKit breaks, and must still report damagedTextEncoding and keep a source-page image. Does not bless OCR accuracy on those pages. Page 3's paragraph after the income list opens on an indented first line that runs onto `public-use CPS file`, and page 17's first reference hangs `Incomplete Data via the EM Algorithm` under a first line set apart by space; each reads as one paragraph (#147). #162: page 17’s hanging-indent references keep their wrapped lines. #187: the listed pages carry each named alternative text on some image — the caption the source prints beside the figure, or the kind the crop's own evidence names — and no image on them states its provenance or nothing in `alt`; source pages rendered and reviewed (measurements/preserved-image-alt-text/record.md). #198: on pages 12 and 15 each table's title, set in the cells' own size under its `Table N.` label, is that table's <caption> and no separate paragraph (read from the 150-dpi renders; measurements/table-follow-ups/record.md).",
       "pages": [
         {
           "page": 1,
@@ -7427,10 +7855,6 @@
             "ocrUsed"
           ],
           "maximumImages": 0,
-          "paragraphs": [
-            "Table 2. Domingo Data Reidentification Rates",
-            "Table 3. Domingo Data Scoring Metrics"
-          ],
           "absentText": [
             "Wdeoh 51",
             "uqnvzs38"
@@ -7438,6 +7862,9 @@
           "tableCells": [
             {
               "title": "Table 2. Domingo Data Reidentification Rates",
+              "caption": [
+                "Table 2. Domingo Data Reidentification Rates"
+              ],
               "columns": [
                 "d metric",
                 "l metric"
@@ -7477,6 +7904,9 @@
             },
             {
               "title": "Table 3. Domingo Data Scoring Metrics",
+              "caption": [
+                "Table 3. Domingo Data Scoring Metrics"
+              ],
               "columns": [
                 "d Metric Ascore",
                 "d Metric Dscore",
@@ -7557,10 +7987,6 @@
             "ocrUsed"
           ],
           "maximumImages": 0,
-          "paragraphs": [
-            "Table 7. Kim-Winker Data Scoring Metrics",
-            "Table 8. S4 Return Type Information Loss, 8 Variables, 5885 Records"
-          ],
           "absentText": [
             "Wdeoh ;1",
             "uqnvzs38"
@@ -7568,6 +7994,9 @@
           "tableCells": [
             {
               "title": "Table 7. Kim-Winker Data Scoring Metrics",
+              "caption": [
+                "Table 7. Kim-Winker Data Scoring Metrics"
+              ],
               "columns": [
                 "Full File Matches Ascore",
                 "Full File Matches Dscore",
@@ -7616,6 +8045,9 @@
             },
             {
               "title": "Table 8. S4 Return Type Information Loss, 8 Variables, 5885 Records",
+              "caption": [
+                "Table 8. S4 Return Type Information Loss, 8 Variables, 5885 Records"
+              ],
               "columns": [
                 "IL1",
                 "IL1s",
@@ -8089,7 +8521,7 @@
     {
       "id": "uscourts-pro-se-1-2016",
       "sourceSHA256": "9fe218570d311b0deab9413e39efda41210e60f2a5221eb360d43912ce05a118",
-      "basis": "Source pages 1-5 visually reviewed against 70 DPI Poppler renders and the extracted text layer. Protects the court caption and COMPLAINT FOR A CIVIL CASE as headings; the caption's left block (plaintiff and defendant instructions) before its right block (Case No., Jury Trial); every fill-in label (plaintiff, four defendant and attorney blocks) present in source order; whole instruction paragraphs for sections I-V, kept separate from each other; the diversity-of-citizenship sentence fragments in source order; and the running header removed on every page. The AcroForm push buttons on page 5 (Save As..., Add Attachment, Reset) are widgets, not page content, and must not enter the text. #151: the 77 widgets are empty text fields, unchecked boxes, a choice and a text field whose values repeat the printed caption, and four push buttons, so no page carries an Original page image; each page warns annotationsNotConverted that its form fields are not interactive. The Jury Trial and jurisdiction box glyphs under the checkbox widgets read ☐. #152: the rules under the text fields are blanks, printed structure: no page keeps a crop, a blank set in a row of type reads ____ in that row, so each field label is its own paragraph (Name ____) and each fill-in sentence one paragraph (The plaintiff, (name) ____, is a citizen of the State of (name) ____.), with its lettered item title (a. If the plaintiff is an individual) apart from it; the outline labels are headings joined to their titles, ranked under the form's titles by tier (I.-V. level 4, A./B. level 5, 1.-3. level 6); the Statement of Claim is one paragraph; the column of ) brackets and the Page N of 5 folio are gone, and the double rule under the running header goes with it. All five pages: the form is born-digital Times with a usable text layer, so no page may report fresh recognition, a damaged encoding, an implausible or unverified text layer, or a whole-page image fallback (#27).",
+      "basis": "Source pages 1-5 visually reviewed against 70 DPI Poppler renders and the extracted text layer. Protects the court caption and COMPLAINT FOR A CIVIL CASE as headings; the caption's left block (plaintiff and defendant instructions) before its right block (Case No., Jury Trial); every fill-in label (plaintiff, four defendant and attorney blocks) present in source order; whole instruction paragraphs for sections I-V, kept separate from each other; the diversity-of-citizenship sentence fragments in source order; and the running header removed on every page. The AcroForm push buttons on page 5 (Save As..., Add Attachment, Reset) are widgets, not page content, and must not enter the text. #151: the 77 widgets are empty text fields, unchecked boxes, a choice and a text field whose values repeat the printed caption, and four push buttons, so no page carries an Original page image; each page warns annotationsNotConverted that its form fields are not interactive. The Jury Trial and jurisdiction box glyphs under the checkbox widgets read ☐. #152: the rules under the text fields are blanks, printed structure: no page keeps a crop, a blank set in a row of type reads ____ in that row, so each field label is its own paragraph (Name ____) and each fill-in sentence one paragraph (The plaintiff, (name) ____, is a citizen of the State of (name) ____.), with its lettered item title (a. If the plaintiff is an individual) apart from it; the outline labels are headings joined to their titles, ranked under the form's titles by tier (I.-V. level 4, A./B. level 5, 1.-3. level 6); the Statement of Claim is one paragraph; the column of ) brackets and the Page N of 5 folio are gone, and the double rule under the running header goes with it. All five pages: the form is born-digital Times with a usable text layer, so no page may report fresh recognition, a damaged encoding, an implausible or unverified text layer, or a whole-page image fallback (#27). #197: the empty answer areas, fields taller than two lines (the name boxes above Plaintiff(s) and Defendant(s), and the space under II.A, 3, III and IV, IV's on page 5 above V.), each read as a paragraph of their own, ____, where the area closes; page 2 has none.",
       "pages": [
         {
           "page": 1,
@@ -8127,9 +8559,11 @@
             "for the",
             "District of",
             "Division",
+            "____",
             "Plaintiff(s)",
             "(Write the full name of each plaintiff who is filing this complaint.",
             "-v-",
+            "____",
             "Defendant(s)",
             "(Write the full name of each defendant who is being sued.",
             "Case No.",
@@ -8156,7 +8590,8 @@
             "Jury Trial: (check one) ☐ Yes ☐ No",
             "Case No. ____",
             "Name ____",
-            "E-mail Address ____"
+            "E-mail Address ____",
+            "____"
           ],
           "distinctParagraphs": [
             {
@@ -8279,6 +8714,7 @@
             "Fill out the paragraphs in this section that apply to this case.",
             "If the Basis for Jurisdiction Is a Federal Question",
             "List the specific federal statutes, federal treaties, and/or provisions of the United States Constitution that are at issue in this case.",
+            "____",
             "If the Basis for Jurisdiction Is Diversity of Citizenship",
             "The Plaintiff(s)",
             "If the plaintiff is an individual",
@@ -8309,7 +8745,8 @@
             "☐ Diversity of citizenship",
             "The plaintiff, (name) ____, is a citizen of the State of (name) ____.",
             "The plaintiff, (name) ____, is incorporated under the laws of the State of (name) ____, and has its principal place of business in the State of (name) ____.",
-            "The defendant, (name) ____, is a citizen of the State of (name) ____. Or is a citizen of (foreign nation) ____."
+            "The defendant, (name) ____, is a citizen of the State of (name) ____. Or is a citizen of (foreign nation) ____.",
+            "____"
           ],
           "distinctParagraphs": [
             {
@@ -8386,11 +8823,13 @@
             "(If more than one defendant is named in the complaint, attach an additional page providing the same information for each additional defendant.)",
             "The Amount in Controversy",
             "The amount in controversy–the amount the plaintiff claims the defendant owes",
+            "____",
             "Statement of Claim",
             "Write a short and plain statement of the claim.",
             "Do not make legal arguments. State as briefly as possible the",
             "facts showing that each plaintiff is entitled to the damages or other relief sought.",
             "Attach additional pages if needed.",
+            "____",
             "Relief",
             "State briefly and precisely what damages or other relief the plaintiff asks the court to order."
           ],
@@ -8399,7 +8838,8 @@
             "The amount in controversy–the amount the plaintiff claims the defendant owes or the amount at stake–is more than $75,000, not counting interest and costs of court, because (explain):",
             "State briefly and precisely what damages or other relief the plaintiff asks the court to order. Do not make legal arguments. Include any basis for claiming that the wrongs alleged are continuing at the present time. Include the amounts of any actual damages claimed for the acts alleged and the basis for these amounts. Include any punitive or exemplary damages claimed, the amounts, and the reasons you claim you are entitled to actual or punitive money damages.",
             "The defendant, (name) ____, is incorporated under the laws of the State of (name) ____, and has its principal place of business in the State of (name) ____. Or is incorporated under the laws of (foreign nation) ____, and has its principal place of business in (name) ____.",
-            "Write a short and plain statement of the claim. Do not make legal arguments. State as briefly as possible the facts showing that each plaintiff is entitled to the damages or other relief sought. State how each defendant was involved and what each defendant did that caused the plaintiff harm or violated the plaintiff's rights, including the dates and places of that involvement or conduct. If more than one claim is asserted, number each claim and write a short and plain statement of each claim in a separate paragraph. Attach additional pages if needed."
+            "Write a short and plain statement of the claim. Do not make legal arguments. State as briefly as possible the facts showing that each plaintiff is entitled to the damages or other relief sought. State how each defendant was involved and what each defendant did that caused the plaintiff harm or violated the plaintiff's rights, including the dates and places of that involvement or conduct. If more than one claim is asserted, number each claim and write a short and plain statement of each claim in a separate paragraph. Attach additional pages if needed.",
+            "____"
           ],
           "distinctParagraphs": [
             {
@@ -8444,6 +8884,7 @@
         {
           "page": 5,
           "orderedText": [
+            "____",
             "Certification and Closing",
             "Under Federal Rule of Civil Procedure 11, by signing below,",
             "the complaint otherwise complies with the requirements of Rule 11.",
@@ -8470,7 +8911,8 @@
             "Signature of Plaintiff ____",
             "Printed Name of Plaintiff ____",
             "Bar Number ____",
-            "E-mail Address ____"
+            "E-mail Address ____",
+            "____"
           ],
           "distinctParagraphs": [
             {
@@ -9698,7 +10140,7 @@
     {
       "id": "usda-ars-agresearch-2012-11",
       "sourceSHA256": "2673d1fded74ad89c8b5c59dc325c7884601e1aca5b5755b15a105c1f5b0d761",
-      "basis": "Source pages 1-24 visually reviewed against 60 DPI Poppler renders and the extracted text layer. Protects only output that matches the source now: the cover lines in order with Keeping Our Troops Safe and From Insects as headings; the masthead date, volume and ISSN lines; photo presence on photo pages; printed photo credits with their gallery numbers; whole captions on pages 6, 9 and 12; sentences inside the reflowed feature and short-article prose on pages 6, 9, 12, 13, 15, 18 and 19 in source order; the back-cover mailing instruction; and running-foot removal warnings. Not pinned because wrong now: side-by-side column prose split into one paragraph per line and interleaved on page 6, where a column runs on into a wider measure below (#153); the cover’s tagline and contents line and the back cover’s mailing panel as h4/h5/h6 headings that enter the contents; the back cover’s dingbat as a superscript l; the small-cap credit read as `BRAD FRITz`; and line-end hyphens kept inside joined paragraphs (`com-panies`, `infec-tions`, `compli-ance`) (see the review file). Pages 4, 6-13, 15, 17-19 and 22 reviewed again on their renders (#159): the magazine rules its running foot off under every column, so the foot is absent and furnitureRemoved reported wherever a page carried one; the nine-point bold subheads on pages 12, 13, 17, 18 and 19 are headings, `How Much Pressure Can a` / `Leaf Take?` one heading over two lines; each column’s ten-point first-line indent opens a paragraph, so the source paragraphs on pages 9, 12, 13, 15, 18 and 19 stay separate; and each six-point photo credit stands next to the picture it names, before it where the magazine sets the credit above the photograph (pages 4, 15, 17) and after it where it sets it below (pages 6, 9, 12, 17, 19). Page 6’s two subheads and page 9’s `Fighting Filth Flies` are not pinned as headings: #153 still interleaves page 6’s columns, and the sidebar title on page 9 stands over its photograph, not over its own paragraph. No committed rasters: page 24 carries only agency logos and the mailing panel, and the index holly ornaments are uncredited. The 55 borderless link annotations draw nothing: no reviewed page carries an Original page image, and link pages warn annotationsNotConverted (#151). Pages 8, 9, 11, 12, 13, 15, 18 and 19 were reviewed again on their renders and read column by column, the running foot beyond the columns; their order is pinned (#153). All 24 pages reviewed again for what the conversion must not do (#27): the InDesign magazine's text layer is genuine, so no page may report fresh recognition, a damaged encoding or an implausible text layer, and only pages 20-21 (known #158 fallbacks) may report a whole-page image fallback and only pages 1 and 13 may take an `Original page N` image. Pages 14, 22 and 23 are new review pages: the feature page and both index pages keep their preserved regions and disclose them, with no reflowed text pinned, because #158 holds all of their body text inside crops. Pages 2, 3, 13, 14, 16 and 20-23 reviewed again at 50 DPI with every crop outlined (#158): the FORUM columns and the signature box, the masthead staff list, the contents entries, the breadfruit caption, the columns over the faded flag, the peach-orchard title and its photograph caption, both boxed-title articles over their page-wide gradient, and the 2012 index entries are text; only the photographs, ornaments and the flag's own strip stay images. Page 13's photograph no longer covers the page, so its text carries no review warning. Column order on pages 14 and 20-23 is not approved (#153), so those pages are checked by phrase rather than in order. #186 (measurements/magazine-leftovers/record.md): the back cover’s Monotype Sorts bullet reads ● and is no superscript, page 15’s credit reads the capital Z its glyph draws, the back cover’s address, Official Business and web line and the cover’s pages 2, 4-14 are no headings, page 9’s sidebar title is a heading, pages 6, 15 and 19 join their word breaks, and page 13’s credit stands before its photograph, read against the 60 DPI renders. #201 (measurements/magazine-cover-and-quotes/record.md): the cover’s tagline is a paragraph, not a heading; the pull quotes on pages 11, 12 and 14 are pull-quote asides with their speakers, not headings; the back cover’s ARS logo reads before the whole return address; and pages 2 and 11 join `nonagri-cultural` and `launder-ings`, read against the 50 DPI renders.",
+      "basis": "Source pages 1-24 visually reviewed against 60 DPI Poppler renders and the extracted text layer. Protects only output that matches the source now: the cover lines in order with Keeping Our Troops Safe and From Insects as headings; the masthead date, volume and ISSN lines; photo presence on photo pages; printed photo credits with their gallery numbers; whole captions on pages 6, 9 and 12; sentences inside the reflowed feature and short-article prose on pages 6, 9, 12, 13, 15, 18 and 19 in source order; the back-cover mailing instruction; and running-foot removal warnings. Not pinned because wrong now: side-by-side column prose split into one paragraph per line and interleaved on page 6, where a column runs on into a wider measure below (#153); the cover’s tagline and contents line and the back cover’s mailing panel as h4/h5/h6 headings that enter the contents; the back cover’s dingbat as a superscript l; the small-cap credit read as `BRAD FRITz`; and line-end hyphens kept inside joined paragraphs (`com-panies`, `infec-tions`, `compli-ance`) (see the review file). Pages 4, 6-13, 15, 17-19 and 22 reviewed again on their renders (#159): the magazine rules its running foot off under every column, so the foot is absent and furnitureRemoved reported wherever a page carried one; the nine-point bold subheads on pages 12, 13, 17, 18 and 19 are headings, `How Much Pressure Can a` / `Leaf Take?` one heading over two lines; each column’s ten-point first-line indent opens a paragraph, so the source paragraphs on pages 9, 12, 13, 15, 18 and 19 stay separate; and each six-point photo credit stands next to the picture it names, before it where the magazine sets the credit above the photograph (pages 4, 15, 17) and after it where it sets it below (pages 6, 9, 12, 17, 19). Page 6’s two subheads and page 9’s `Fighting Filth Flies` are not pinned as headings: #153 still interleaves page 6’s columns, and the sidebar title on page 9 stands over its photograph, not over its own paragraph. No committed rasters: page 24 carries only agency logos and the mailing panel, and the index holly ornaments are uncredited. The 55 borderless link annotations draw nothing: no reviewed page carries an Original page image, and link pages warn annotationsNotConverted (#151). Pages 8, 9, 11, 12, 13, 15, 18 and 19 were reviewed again on their renders and read column by column, the running foot beyond the columns; their order is pinned (#153). All 24 pages reviewed again for what the conversion must not do (#27): the InDesign magazine's text layer is genuine, so no page may report fresh recognition, a damaged encoding or an implausible text layer, and only pages 20-21 (known #158 fallbacks) may report a whole-page image fallback and only pages 1 and 13 may take an `Original page N` image. Pages 14, 22 and 23 are new review pages: the feature page and both index pages keep their preserved regions and disclose them, with no reflowed text pinned, because #158 holds all of their body text inside crops. Pages 2, 3, 13, 14, 16 and 20-23 reviewed again at 50 DPI with every crop outlined (#158): the FORUM columns and the signature box, the masthead staff list, the contents entries, the breadfruit caption, the columns over the faded flag, the peach-orchard title and its photograph caption, both boxed-title articles over their page-wide gradient, and the 2012 index entries are text; only the photographs, ornaments and the flag's own strip stay images. Page 13's photograph no longer covers the page, so its text carries no review warning. Column order on pages 14 and 20-23 is not approved (#153), so those pages are checked by phrase rather than in order. #186 (measurements/magazine-leftovers/record.md): the back cover’s Monotype Sorts bullet reads ● and is no superscript, page 15’s credit reads the capital Z its glyph draws, the back cover’s address, Official Business and web line and the cover’s pages 2, 4-14 are no headings, page 9’s sidebar title is a heading, pages 6, 15 and 19 join their word breaks, and page 13’s credit stands before its photograph, read against the 60 DPI renders. #197 (measurements/printed-form-blanks/record.md): the back cover's mailing coupon is a printed form with no fields; each label stands on its own ruled blank, so the labels read To stop mailing ____ and To change your address ____, in order under the instruction, instead of vanishing into a crop with their rules. #201 (measurements/magazine-cover-and-quotes/record.md): the cover’s tagline is a paragraph, not a heading; the pull quotes on pages 11, 12 and 14 are pull-quote asides with their speakers, not headings; the back cover’s ARS logo reads before the whole return address; and pages 2 and 11 join `nonagri-cultural` and `launder-ings`, read against the 50 DPI renders.",
       "pages": [
         {
           "page": 1,
@@ -10366,6 +10808,8 @@
             "5601 Sunnyside Ave. Beltsville, MD 20705-5129",
             "Official Business",
             "Visit us at ars.usda.gov/ar ● Follow us at twitter.com/USDA_ARS",
+            "To stop mailing ____",
+            "To change your address ____",
             "U.S. Department of Agriculture Agricultural Research Magazine 5601 Sunnyside Ave. Beltsville, MD 20705-5129"
           ],
           "pageReference": false,
@@ -10399,6 +10843,11 @@
               "tag": "sup",
               "text": "●"
             }
+          ],
+          "orderedText": [
+            "Please return the mailing label from this magazine:",
+            "To stop mailing ____",
+            "To change your address ____"
           ],
           "captionedImages": [
             {
@@ -11476,11 +11925,5 @@
       ]
     }
   ],
-  "excludedFullConversions": [
-    {
-      "id": "gpo-warren-1964",
-      "reason": "Image-output ceiling (#5): 920 full-page colour scans need 1,062.69 MiB of entry bytes as PNG; under the automatic encoding default (#193) the whole book fits the 512 MiB default by only 316,202 bytes (0.059%), so it stays out of the gated lane until #5 decides whether that margin is a pass. The nine-page excerpt regression is recorded separately.",
-      "issue": 5
-    }
-  ]
+  "excludedFullConversions": []
 }

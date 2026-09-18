@@ -391,7 +391,8 @@ struct ReflowBlock: Sendable, Equatable {
     /// `LayoutReconstructor.rankHeadingLevels`). Nil where no group vouches for the block.
     var taggedLevel: Int?
     /// The tier of an outline section label a heading was read from (0 Roman, 1 lettered, 2
-    /// numbered; `LayoutReconstructor.outlineSectionLabels`), ranked by tier beneath the size scale.
+    /// numbered; `LayoutReconstructor.outlineSectionLabels`), ranked by tier beneath the size scale
+    /// from the outermost tier the document sets (#197).
     var outlineDepth: Int?
     /// Where reconstruction read a list item's marker line (#194). Set on every preformatted block
     /// opened by a list marker; `ListBuilder` decides from it and the text whether the block is a

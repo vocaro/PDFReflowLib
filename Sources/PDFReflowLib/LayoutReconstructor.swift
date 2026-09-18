@@ -1124,6 +1124,20 @@ enum LayoutReconstructor {
             let kept = admitted.reduce(region.core) { $0.union($1) }
             for line in page.lines where !admitted.contains(line.rect) && bounds.intersects(line.rect) {
                 let rect = line.rect
+                // A delimiter column that reaches less than a point into the height of a line of
+                // prose holds none of its glyphs, as in `captures` (#163: display (5)'s brace ends
+                // 0.04 points into the prose line over it), so the cut may leave that sliver out
+                // rather than take the sentence. Only a delimiter, and only where no other kept line
+                // touches the prose line: a crop elsewhere keeps the reach it always had.
+                let reach = kept.intersection(rect)
+                let delimiters = page.lines.filter { admitted.contains($0.rect) && isDelimiterColumn($0) }.map(\.rect)
+                let slack: CGFloat = !reach.isNull && (reach.width < 1 || reach.height < 1)
+                    && isWordy(line.text) && wordShare(line.text).words >= 4
+                    && admitted.allSatisfy { !$0.intersects(rect) || delimiters.contains($0) }
+                    && delimiters.contains { delimiter in
+                        let overlap = min(delimiter.maxY, rect.maxY) - max(delimiter.minY, rect.minY)
+                        return overlap > 0 && overlap < 1
+                    } ? 1 : 0.01
                 let cuts = [
                     CGRect(x: bounds.minX, y: rect.maxY, width: bounds.width, height: bounds.maxY - rect.maxY),
                     CGRect(x: bounds.minX, y: bounds.minY, width: bounds.width, height: rect.minY - bounds.minY),
@@ -1132,7 +1146,7 @@ enum LayoutReconstructor {
                 // A cut rebuilt from origin and size can fall short of an edge it shares with
                 // the kept ink by rounding (FAA page 195: a figure box ending exactly at the
                 // crop's top); a hundredth of a point is below any drawn distinction.
-                ].filter { $0.width > 0 && $0.height > 0 && $0.insetBy(dx: -0.01, dy: -0.01).contains(kept) }
+                ].filter { $0.width > 0 && $0.height > 0 && $0.insetBy(dx: -slack, dy: -slack).contains(kept) }
                 if let cut = cuts.max(by: { $0.width * $0.height < $1.width * $1.height }) {
                     bounds = cut
                 } else if admitted.isEmpty && isThinRule(region.seed) {
@@ -2247,10 +2261,32 @@ enum LayoutReconstructor {
         let edges = CharacterSet(charactersIn: "\"'“”‘’.,;:!?")
         let tokens = line.text.split(whereSeparator: \.isWhitespace).map { String($0).trimmingCharacters(in: edges) }
         // Words of two or more letters: a single letter is a variable (`y Use two variables, x
-        // and y` opens a page-359 derivation row).
+        // and y` opens a page-359 derivation row). A piece of another column on the same row
+        // shares no row with them (#163: the DASC paper's `the Quadratic Program` over display
+        // (12), level with `hT = …` 178 points away across the gutter); Wallace sets its `Our
+        // Solution` 16 to 23 points from the derivation it closes. A raised or lowered run makes
+        // the row a term (page 6's `ETA` with its superscript `next node`, over `= ETAcurrent …`).
         if above, wordShare(line.text).words >= 1,
+           !line.content.elements.contains(where: { element in
+               if case let .text(_, style) = element { style.contains(.superscript) || style.contains(.subscript) } else { false }
+           }),
            tokens.allSatisfy({ $0.count >= 2 && $0.unicodeScalars.allSatisfy(CharacterSet.letters.contains) }),
-           !lines.contains(where: { $0 != line && sameRow($0.rect, line.rect) }) {
+           !lines.contains(where: { other in
+               other != line && sameRow(other.rect, line.rect)
+                   && max(other.rect.minX - line.rect.maxX, line.rect.minX - other.rect.maxX) <= body * 4
+           }) {
+            return true
+        }
+        // A sentence's wrapped line over a display: it runs on in lower case, four words or more with
+        // a variable among them and no term, number or operator (#163: the DASC paper's `route of f,
+        // compute the time window` over display (7)). A derivation's annotations open with a
+        // capital or a variable (`Length times width gives the area.`, `y Use two variables`).
+        if above, let opening = tokens.first, opening.count >= 3, opening.first?.isLowercase == true,
+           wordShare(line.text).words >= 4, isWordy(line.text),
+           line.text.rangeOfCharacter(from: rowMathSymbols.union(.decimalDigits).union(CharacterSet(charactersIn: "+<>"))) == nil,
+           !line.content.elements.contains(where: { element in
+               if case let .text(_, style) = element { style.contains(.superscript) || style.contains(.subscript) } else { false }
+           }) {
             return true
         }
         return isSentenceRow(line, in: lines) || isProseRow(line, in: lines, body: body)
@@ -2425,6 +2461,7 @@ enum LayoutReconstructor {
                 && !isLetterMnemonic(line)
             return (symbols || equation) && !isProseRow(line, in: page.lines, body: body)
                 && !continuesSentenceAbove(line, in: page.lines, body: body)
+                || isScriptDisplay(line, in: page.lines, body: body)
         }.map { line -> CGRect in
             var seed = line.rect.insetBy(dx: -4, dy: -8)
             for other in page.lines where other != line && seed.intersects(other.rect)
@@ -2440,7 +2477,7 @@ enum LayoutReconstructor {
                 }
             }
             return seed
-        }
+        } + delimitedDisplays(in: page, body: body)
         // A rule underlining one text line is that text's decoration, not a figure. Rows of
         // column-header underlines are table evidence instead (#36).
         let tables = TableRegionDetector.underlinedColumnRegions(in: page)
@@ -2533,6 +2570,90 @@ enum LayoutReconstructor {
             let held = evidence.filter { region.bounds.contains(CGPoint(x: $0.0.midX, y: $0.0.midY)) }.map(\.1)
             return (region.bounds, kind(of: region.bounds, evidence: held, in: page))
         }
+    }
+
+    /// The pieces TeX builds a tall delimiter from (U+239B–U+23AD: parenthesis, bracket and brace
+    /// hooks, extensions and middles), which `PrivateUseDecoder` reads from the Symbol font's
+    /// private-use values that PDFKit reports for `CMEX10` (#155).
+    static let delimiterPieces = CharacterSet(charactersIn: "\u{239B}"..."\u{23AD}")
+
+    /// A tall delimiter set in type (#163): a line of at least three delimiter pieces and nothing
+    /// else but spaces, an equation number or closing punctuation, at least twice as tall as its
+    /// type. PDFKit reads each such column of pieces as a line of its own (the IEEEtran paper's
+    /// cases braces `⎫ ⎪⎪⎪⎪⎬ ⎪⎪⎪⎪⎭` and matrix brackets `⎡ ⎢⎢⎢⎣`), and the brace and its
+    /// equation number stand apart from the terms and conditions it gathers.
+    static func isDelimiterColumn(_ line: TextLine) -> Bool {
+        guard !line.monospaced, line.rect.height >= line.fontSize * 2 else { return false }
+        let text = line.text.replacingOccurrences(of: #"\s*\(\d{1,3}\)$"#, with: "", options: .regularExpression)
+        let pieces = text.unicodeScalars.filter(delimiterPieces.contains).count
+        return pieces >= 3 && text.unicodeScalars.allSatisfy { delimiterPieces.contains($0) || " .,;".unicodeScalars.contains($0) }
+    }
+
+    /// A display a tall delimiter spans (#163): the delimiter column and every other line of its
+    /// text column whose middle the delimiter's height spans, except the column's running text. A
+    /// cases brace gathers terms on one side and conditions on the other, with case labels and the
+    /// equation number beyond; a matrix's brackets hold rows and the dots between them. Each of those pieces is a line PDFKit reads apart, and the formula seeds find
+    /// only the ones that carry a relation sign, so the display came out as several crops with its
+    /// conditions, labels, braces and number reflowed between them. The text column is the span of
+    /// the lines that fill a measure around the delimiter's centre, so a display in one column of
+    /// a two-column page takes nothing from the other.
+    static func delimitedDisplays(in page: PageContent, body: CGFloat) -> [CGRect] {
+        let delimiters = page.lines.filter(isDelimiterColumn)
+        guard !delimiters.isEmpty else { return [] }
+        let measures = page.lines.filter { !$0.monospaced && $0.rect.width >= body * 15 && isWordy($0.text) }
+        return delimiters.map { delimiter -> CGRect in
+            let centre = delimiter.rect.midX
+            let around = measures.filter { $0.rect.minX <= centre && $0.rect.maxX >= centre }
+            let column = around.isEmpty ? page.bounds
+                : CGRect(x: around.map(\.rect.minX).min()!, y: page.bounds.minY,
+                         width: around.map(\.rect.maxX).max()! - around.map(\.rect.minX).min()!, height: page.bounds.height)
+            // PDFKit measures the pieces in a substitute font whose descent falls short of the last
+            // piece's, so the column can stop above the row that piece closes (the page-9 matrix
+            // `P`'s `... −1 1`, whose middle is 5.5 points below). Its top is the top of its type:
+            // the prose line over display (5) ends exactly where the brace begins.
+            var span = delimiter.rect
+            span.origin.y -= delimiter.fontSize * 0.6
+            span.size.height += delimiter.fontSize * 0.6
+            let members = page.lines.filter { line in
+                guard line != delimiter, line.rect.height > 0,
+                      line.rect.minX >= column.minX - 2, line.rect.maxX <= column.maxX + 2 else { return false }
+                return line.rect.midY >= span.minY && line.rect.midY <= span.maxY
+                    && !(isWordy(line.text) && line.rect.width >= column.width * 0.8)
+                    && !isProseRow(line, in: page.lines, body: body)
+            }
+            return members.reduce(delimiter.rect) { $0.union($1.rect) }
+        }
+    }
+
+    /// A display row with scripts (#163): a line that carries a raised or lowered term, is no row
+    /// of the column's running text, and either ends with its equation number, `(8)`, on the right
+    /// edge of lines that fill its column, or opens with an operator sign before a term and carries
+    /// a stacked index, a superscript and a subscript set on one base, the way a display's continued
+    /// row does (page 9's `− 2 (sk−sk−1) Tnom k−1 + …` under the objective's `= ϵs1 + …`). TeX sets
+    /// a display's delimiters and stacked indices as pieces PDFKit cannot read (the interval brackets
+    /// of the DASC paper's (8) are extension glyphs with no character at all), so the display is kept
+    /// as it is drawn. A delimiter column that ends with the number is its display's own seed
+    /// (`delimitedDisplays`). A display of plain terms, `S(1), S(2), ..., S(f−1) (6)`, reads as the
+    /// text it is, and so does a worked step whose exponents stand alone (Wallace page 23's
+    /// `− 3x + 7 − 2x² + 4x − 3`).
+    static func isScriptDisplay(_ line: TextLine, in lines: [TextLine], body: CGFloat) -> Bool {
+        guard !line.monospaced, line.text.count < 160, !isDelimiterColumn(line) else { return false }
+        let scripts = line.content.elements.compactMap { element -> TextStyle? in
+            guard case let .text(value, style) = element, !value.trimmingCharacters(in: .whitespaces).isEmpty else { return nil }
+            return style.intersection([.superscript, .subscript])
+        }
+        guard scripts.contains(where: { !$0.isEmpty }) else { return false }
+        let stacked = zip(scripts, scripts.dropFirst()).contains { left, right in
+            !left.isEmpty && !right.isEmpty && left != right
+        }
+        let continued = stacked
+            && line.text.range(of: #"^[−+=±]\s*(?:[0-9(]|\p{L}(?!\p{L}))"#, options: .regularExpression) != nil
+        let numbered = line.text.range(of: #"[\s,.;]\(\d{1,3}\)$"#, options: .regularExpression) != nil
+            && lines.contains { other in
+                other != line && !other.monospaced && other.rect.width >= body * 15 && isWordy(other.text)
+                    && abs(other.rect.maxX - line.rect.maxX) <= 2
+            }
+        return (continued || numbered) && !isProseRow(line, in: lines, body: body)
     }
 
     /// A crop's kind from the evidence of the seeds it holds (`classifiedGraphics`).

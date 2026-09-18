@@ -193,6 +193,16 @@ enum FontWeightReader {
         baseFont.map(nameSlope) == .mathItalic
     }
 
+    /// Whether a font is TeX's maths extension (#163): Computer Modern's `CMEX10` or Latin Modern's
+    /// `LMMathExtension10`, from which TeX builds a display's tall brackets, braces and big operators.
+    /// PDFKit reports some of those glyphs as nothing at all, so their shows are the only evidence of
+    /// where they stand.
+    static func isMathExtension(baseFont: String?) -> Bool {
+        guard let baseFont else { return false }
+        let lower = strippedName(baseFont).lowercased()
+        return lower.range(of: #"^cmex[0-9]+$"#, options: .regularExpression) != nil || lower.contains("mathextension")
+    }
+
     /// Unicode's Mathematical Alphanumeric Symbols, whose characters state their own slope, and
     /// Letterlike Symbols, which fill that block's holes: the italic `h` is U+210E (`PLANCK
     /// CONSTANT`), not U+1D455, and newtx's map uses it (arXiv's `hlc.e`).
@@ -240,6 +250,8 @@ enum FontWeightReader {
         var mathItalic: Bool?
         /// A simple font's one-byte map: its ToUnicode map, or a Type1 font's WinAnsi encoding.
         var unicode: [UInt8: String]?
+        /// TeX's maths extension font (`isMathExtension`, #163).
+        var mathExtension = false
         /// A composite `Identity-H` font's two-byte ToUnicode map (#133).
         var wideUnicode: [UInt16: String]?
         /// A simple font that names its glyphs by index and has no ToUnicode map (#143).
@@ -349,6 +361,7 @@ enum FontWeightReader {
             info.weight = weight(baseFont: baseFont, fontWeight: fontWeight, flags: flags)
             info.italic = isItalic(baseFont: baseFont, italicAngle: italicAngle, flags: flags)
             info.mathItalic = isMathItalic(baseFont: baseFont)
+            info.mathExtension = isMathExtension(baseFont: baseFont)
         }
         var format = CGPDFDataFormat.raw
         let data = hasMap ? stream.flatMap { CGPDFStreamCopyData($0, &format) }.flatMap { format == .raw ? $0 as Data : nil } : nil
@@ -570,6 +583,8 @@ enum FontWeightReader {
         /// Each glyph's reported text and the character it draws where that differs (`drawnGlyphs`,
         /// #186); nil unless one of the show's glyphs does.
         var redraws: [GlyphRedraw]? = nil
+        /// Drawn in TeX's maths extension font (`isMathExtension`, #163).
+        var mathExtension = false
 
         var styled: Bool { weight == .bold || italic == true || mathItalic == true }
     }
@@ -702,7 +717,7 @@ enum FontWeightReader {
         s.shows.append(Show(origin: origin, size: s.size * transform.d, font: s.font ?? 0,
                             weight: info?.weight, text: text, placed: placed, italic: info?.italic,
                             mathItalic: info?.mathItalic, glyphs: glyphs, indexFont: info?.indexGlyphs?.key,
-                            redraws: redraws))
+                            redraws: redraws, mathExtension: info?.mathExtension ?? false))
     }
 
     private static func scan(_ content: CGPDFContentStreamRef, _ s: State) {
@@ -867,8 +882,12 @@ enum FontWeightReader {
     /// needs `redrawGlyphs`, #186). `decodings` are the characters the document
     /// established for index-glyph fonts.
     static func read(_ page: CGPDFPage, decodings: [String: [UInt8: String]] = [:]) -> [Show] {
-        let shows = read(page, fonts: nil, decodings: decodings)
-        return shows.contains(where: { $0.styled || $0.indexFont != nil || $0.redraws != nil }) ? shows : []
+        relevant(read(page, fonts: nil, decodings: decodings))
+    }
+
+    /// The shows `read` keeps: all of them where one can style, repair or redraw a line, else none.
+    static func relevant(_ shows: [Show]) -> [Show] {
+        shows.contains(where: { $0.styled || $0.indexFont != nil || $0.redraws != nil }) ? shows : []
     }
 
     /// The page's shows and, when `fonts` is given, every font resource it selected (survey).

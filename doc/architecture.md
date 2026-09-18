@@ -159,7 +159,29 @@ the comment beside it) is measured from that base: a run followed, with no space
 smaller run shifted to the same side and against it is the base and no script, and a base-size run
 after the script on the base's baseline resumes it; a base that is itself a smaller script of the run
 before it (a nested index) keeps the stated offsets (#144). A line's opening bullets and the spaces
-after them are never scripts (#144). Reconstruction attaches such a piece, on the
+after them are never scripts (#144). TeX raises the superscript of a symbol that also carries a
+subscript further than a lone one, past three quarters of the script's own size (the DASC paper's
+6.97-point `n` of `STAⁿ` 5.42 points up), so a script clearly smaller than the line's type, touching
+its base or continuing a script before it on that script's own baseline, is measured on the line's
+type (a higher outer exponent, Wallace's `(a²)³`, is a script of its own); a script touching
+another script is measured from it (the nested `i` of `n^i`), and a carrier clearly smaller than the
+line's type is a script, never a base (#163). A line that a painted bar crosses keeps the narrower
+reading, since a fraction's numerator is raised as far. PDFKit can also measure a selection from a
+script (`f ni+1`, whose 9.96-point `n` reads 4.26 points down): where every run of the largest size
+shares one shifted baseline and a script-sized run of at most two short words follows a letter or
+digit of one of them, touching it, on the selection's baseline, every run is measured from the
+larger runs' baseline, which also raises Wallace's `x²` read from its `2`.
+
+PDFKit ends a line where a stacked script moves back under the superscript before it, so a symbol
+with both a superscript and a subscript split its sentence into a line per piece, with a nested
+index a piece of its own (#163). `NativeTextReader.joiningStackedScripts` rejoins them last in
+extraction: a piece opening with a script smaller than the base's type, on the base's row, starting
+under the base's trailing scripts (by at most three quarters of the base size a character) or a
+quarter of the base size past its end, continues the base; so do a lone closing punctuation mark and
+a stack's last scripts alone. The short script-sized pieces over the stack join between them,
+raised or lowered by where they stand against the band the base and the continuation share, and
+flattened to that one level. A painted bar across the stack makes it a fraction, which stays as
+it was. Reconstruction attaches such a piece, on the
 previous line's row and within half a body size of its end, to that line without a space, as it
 attaches a detached digit marker. A bounded native drop-cap pattern uses the
 following body runs' font size and a top-aligned body-height `readingRect` for ordering. The
@@ -1084,7 +1106,9 @@ absorb the paragraph or column (#36); a line whose rectangle genuinely overlaps 
 is still admitted whole rather than clipped. A crop captures a line against the painted parts it
 was clustered from, not the box around them, and only where a part overlaps the line by more than
 a point in both directions, so a cluster's empty corner and an ornament's edge take nothing
-(#158). Where trimming cannot cut the crop away from a line of the page's running text, the crop
+(#158). Likewise a crop may cut away the sliver of a delimiter column (below) that reaches less than
+a point into the height of a prose line no other kept line touches, rather than take that line
+(#163: display (5)'s brace ends 0.04 points into the prose line over it). Where trimming cannot cut the crop away from a line of the page's running text, the crop
 gives up the outermost point of its own art rather than the column that line opens. A drawing
 also takes its own labels, set a word space
 from its ink (#179): Wallace's trigonometry answers letter each right triangle's vertices 1 to 11 pt
@@ -1099,6 +1123,23 @@ is what tells page 483's `5)` half a point from its graph from a vertex letter. 
 the bounds stabilize, so a merged crop cannot cut through a newly intersecting text line; two
 crops that do not overlap stay apart when the box around them would take running text that
 neither of them takes.
+Displays seed crops by their own structure too (#163). A tall delimiter set in type, a line of at
+least three of TeX's bracket and brace pieces (U+239B–U+23AD, which `PrivateUseDecoder` reads from
+`CMEX10`) at least twice as tall as its type, seeds its whole display: every line of its text column
+whose middle it spans (reaching 0.6 of its size below it), except the column's running text. So a
+cases brace takes its terms, conditions, case labels and equation number, and a matrix its rows and dots, where
+the relation signs alone left them in several crops with the pieces between them as text. A row
+carrying scripts seeds a formula when it ends with its equation number on its column's right edge,
+or opens with an operator sign and carries a stacked index, as a display's continued row does:
+TeX's interval brackets there are extension glyphs PDFKit reads as nothing, though it counts them
+in the rectangle of the prose line above: `NativeTextReader.trimmingUndrawnExtents` brings such a
+line's rectangle back to its own baseline (its first show's, `FontWeightReader`) where it reaches
+over a characterless glyph of TeX's maths extension font (`CMEX10`, `LMMathExtension10`) and into
+a piece of a numbered display, so the display's crop leaves the sentence alone. A row of words over
+a formula is its label only when it carries no script and no piece within four body sizes shares
+its row (a piece across the gutter does not count); a row running on in lower case, four words or
+more with no term, number or operator, is its sentence's wrapped line (`route of f, compute the
+time window` over display (7)).
 Only text outside those regions reflows. `FractionRegionDetector` groups short horizontal bars with nearby compact
 mathematical terms above and below, optionally including a nearby equation prefix. It leaves
 long rules, prose, code and connected table grids to existing handling. Whole-line expansion

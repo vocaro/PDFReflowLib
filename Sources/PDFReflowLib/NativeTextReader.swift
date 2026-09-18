@@ -54,9 +54,11 @@ enum NativeTextReader {
                       glyphDecodings: [String: [UInt8: String]] = [:], report: IndexGlyphReport? = nil,
                       removingOverprints: Bool = true) throws -> [TextLine] {
         try withExtractionLock {
-            // The page's text shows and their fonts' weights, for bold PDFKit cannot name (#125).
-            let weights = includeStyle && page.numberOfCharacters <= limit
-                ? page.pageRef.map { FontWeightReader.read($0, decodings: glyphDecodings) } ?? [] : []
+            // The page's text shows and their fonts' weights, for bold PDFKit cannot name (#125), and
+            // the maths extension glyphs among them, for a display's undrawn delimiters (#163).
+            let shows = includeStyle && page.numberOfCharacters <= limit
+                ? page.pageRef.map { FontWeightReader.read($0, fonts: nil, decodings: glyphDecodings) } ?? [] : []
+            let weights = FontWeightReader.relevant(shows)
             // Symbol fonts' private-use characters, read from the page's font resources the first time
             // a line holds one (#155).
             let privateUse = PrivateUseCharacters(page: page)
@@ -65,7 +67,8 @@ enum NativeTextReader {
             let spacing = includeStyle && page.numberOfCharacters <= limit
                 ? page.pageRef.map { NativeSpacingReader.read($0, decodings: glyphDecodings) } ?? [] : []
             var lines = try extractLines(on: page, limit: limit, includeStyle: includeStyle, weights: weights,
-                                         spacing: spacing, report: report, privateUse: privateUse)
+                                         spacing: spacing, report: report, privateUse: privateUse,
+                                         bars: (borderlessTableInk ?? []).filter(isBar))
             // Overprints go before any split. Dropping them changes what the page holds, while
             // every split below only divides a line the page already has, and each of those asks
             // which line a show or a rectangle belongs to: `splitDetachedShows` takes a cut only
@@ -89,6 +92,10 @@ enum NativeTextReader {
                 lines = try splitColumnGrids(lines, on: page, includeStyle: includeStyle, weights: weights,
                                              privateUse: privateUse)
             }
+            // A display's undrawn delimiters, which PDFKit counts in the line above, and a line
+            // PDFKit cut at a stacked script (#163).
+            lines = joiningStackedScripts(trimmingUndrawnExtents(lines, shows: shows),
+                                          rules: (borderlessTableInk ?? []).filter(isBar))
             // Last, because every step above matches line text to the page's own characters and
             // shows, where a ligature is one character (`NativeSpacingReader` reads the glyph `ff`
             // as U+FB00, `GlyphIndexDecoder` index 27 too). From here on it is letters (#189).
@@ -123,6 +130,205 @@ enum NativeTextReader {
             if !overprints { kept.append(line) }
         }
         return kept
+    }
+
+    /// A line of words whose rectangle reaches over a display's delimiter it does not hold (#163).
+    /// TeX draws a display's tall brackets from its maths extension font (`CMEX10`), and PDFKit maps
+    /// some of those glyphs to no character: it leaves them out of every line's text but counts them
+    /// in the rectangle of the prose line above the display (the DASC paper's `occurs on the route
+    /// of f, compute the time window`, 22.5 points tall at 9.96, whose bottom reaches 13.4 points
+    /// below its own glyphs and into display (8)). A crop over the display then took that line.
+    ///
+    /// The line's baseline is its first show's (the show of the line's size nearest its left edge,
+    /// within half an em, `FontWeightReader`). A line of letters, digits and punctuation with no
+    /// script reaches no further than a descender below that baseline, or an accent above it. Where
+    /// its rectangle reaches more than half an em below (or an em and a quarter above), a maths
+    /// extension glyph without a character starts in that part within the line's width, and a
+    /// piece of a numbered display beside or beneath it (a line ending with its equation number,
+    /// `f,h , (8)`) reaches into that part, the rectangle is brought back to 0.3 em below (or an em
+    /// above) the baseline. Wallace also draws radicals and fractions from `CMEX10` beside prose,
+    /// where PDFKit's rectangles carry displays that no seed of their own crops; only a numbered
+    /// display, which seeds its own crop (`LayoutReconstructor.isScriptDisplay`), is read.
+    static func trimmingUndrawnExtents(_ lines: [TextLine], shows: [FontWeightReader.Show]) -> [TextLine] {
+        let delimiters = shows.filter { $0.mathExtension && $0.text == nil }
+        guard !delimiters.isEmpty else { return lines }
+        let plain = CharacterSet.alphanumerics.union(.punctuationCharacters).union(.whitespaces)
+        return lines.map { line in
+            let em = line.fontSize
+            guard !line.monospaced, line.readingDirection == nil, line.readingRect == nil, em > 0,
+                  line.rect.height > em * 1.6, line.text.unicodeScalars.allSatisfy(plain.contains),
+                  line.text.split(whereSeparator: \.isWhitespace).filter({ $0.filter(\.isLetter).count >= 3 }).count >= 3,
+                  !line.content.elements.contains(where: { element in
+                      if case let .text(_, style) = element { style.contains(.superscript) || style.contains(.subscript) } else { false }
+                  }) else { return line }
+            let opening = shows.filter { show in
+                !show.mathExtension && abs(show.size - em) <= em * 0.15 && abs(show.origin.x - line.rect.minX) <= em * 0.5
+                    && show.origin.y >= line.rect.minY && show.origin.y <= line.rect.maxY
+            }.min { abs($0.origin.x - line.rect.minX) < abs($1.origin.x - line.rect.minX) }
+            guard let baseline = opening?.origin.y else { return line }
+            func overDelimiter(from low: CGFloat, to high: CGFloat) -> Bool {
+                high > low
+                    && delimiters.contains { show in
+                        show.origin.y > low && show.origin.y < high
+                            && show.origin.x >= line.rect.minX && show.origin.x <= line.rect.maxX
+                    }
+                    && lines.contains { other in
+                        other != line && other.rect.maxY > low && other.rect.minY < high
+                            && other.rect.maxX > line.rect.minX && other.rect.minX < line.rect.maxX + em * 4
+                            && other.text.range(of: #"\(\d{1,3}\)$"#, options: .regularExpression) != nil
+                    }
+            }
+            var bottom = line.rect.minY, top = line.rect.maxY
+            if bottom < baseline - em * 0.5, overDelimiter(from: bottom, to: baseline - em * 0.5) { bottom = baseline - em * 0.3 }
+            if top > baseline + em * 1.25, overDelimiter(from: baseline + em * 1.25, to: top) { top = baseline + em }
+            guard bottom != line.rect.minY || top != line.rect.maxY else { return line }
+            var trimmed = line
+            trimmed.rect = CGRect(x: line.rect.minX, y: bottom, width: line.rect.width, height: top - bottom)
+            return trimmed
+        }
+    }
+
+    /// Rejoins a line PDFKit cut at a stacked script (#163). A symbol with both a superscript and
+    /// a subscript is drawn base, superscript, then subscript, and the subscript moves back under
+    /// the superscript; PDFKit ends its line there and opens another at the subscript, which
+    /// runs on in the body type (the IEEEtran paper's `(i) the estimated time of arrival ETAn` and
+    /// `f , which is the estimated`, page 2). A nested index moves back again and becomes a piece
+    /// of its own (page 5's `Step 2. For each STAni`, a 5-point `h`, then `h occurring in the
+    /// computed schedules`). Each piece opened a paragraph, so one sentence read as up to twenty.
+    ///
+    /// The continuation opens with a script run, smaller than the base's type, on the base
+    /// piece's row. It starts under the base piece's trailing scripts, by at most the width those
+    /// scripts can take (three quarters of the base size a character, and a point and a half of
+    /// padding), or at most a quarter of the base size past its end; a subscript may open it
+    /// after a base with no script of its own, whose superscript PDFKit made a piece too
+    /// (`(ETA): ETA`, `ni`, `f`, `f , which is the nominal time.`). A superscript opening a piece
+    /// after plain text is a note marker, which `LayoutReconstructor.joinedRows` reads. The pieces
+    /// between them are the stack's scripts: at most six characters, smaller than the base's
+    /// type, starting within the stack and set on its row. A piece of closing punctuation PDFKit
+    /// cut after a script (`latter choice of Tk` and `.`, page 5) closes the line too, and so do a
+    /// stack's last scripts alone where the line ends with it (`reach ni+1` and `f`, page 5).
+    ///
+    /// A painted bar across the stack makes it a fraction instead (`rules`, the page's painted
+    /// footprints), and it is left as it was.
+    ///
+    /// The joined line reads base, scripts left to right, continuation, with no space, in the
+    /// base's size. A script piece is raised or lowered by where it stands against the band the
+    /// base and the continuation share; its own nesting is flattened into that one level, since a
+    /// run carries one script style. Joins repeat, so a line cut at several stacks (display (1),
+    /// `n1`, `f , n2`, `f , ..., n`, `Nf`, `f. (1)`) becomes one line.
+    static func joiningStackedScripts(_ lines: [TextLine], rules: [CGRect] = []) -> [TextLine] {
+        var lines = lines
+        func visible(_ line: TextLine) -> Int { line.text.filter { !$0.isWhitespace }.count }
+        func scriptStyle(_ style: TextStyle) -> Bool { style.contains(.superscript) || style.contains(.subscript) }
+        func opening(_ line: TextLine) -> TextStyle? {
+            for element in line.content.elements {
+                guard case let .text(value, style) = element,
+                      !value.trimmingCharacters(in: .whitespaces).isEmpty else { continue }
+                return style
+            }
+            return nil
+        }
+        // The visible characters of the scripts that end the line.
+        func trailingScripts(_ line: TextLine) -> Int {
+            var count = 0
+            for element in line.content.elements.reversed() {
+                guard case let .text(value, style) = element else { continue }
+                let characters = value.filter { !$0.isWhitespace }.count
+                guard characters > 0 else { continue }
+                guard scriptStyle(style) else { break }
+                count += characters
+            }
+            return count
+        }
+        func overlap(_ a: CGRect, _ b: CGRect) -> CGFloat { min(a.maxY, b.maxY) - max(a.minY, b.minY) }
+        func sameRow(_ a: CGRect, _ b: CGRect) -> Bool { overlap(a, b) >= min(a.height, b.height) * 0.5 }
+        let closing = CharacterSet(charactersIn: ".,;:)")
+        // A piece of a stack's scripts alone: short, smaller than the base, and read by PDFKit without
+        // a base of its own, so with no script style.
+        func scriptsAlone(_ piece: TextLine, size: CGFloat) -> Bool {
+            (1...6).contains(visible(piece)) && piece.fontSize <= size * 0.85
+                && !piece.content.elements.contains { element in
+                    if case let .text(_, style) = element { scriptStyle(style) } else { false }
+                }
+        }
+        func continues(_ base: TextLine, _ piece: TextLine) -> Bool {
+            guard !base.monospaced, !piece.monospaced, base.readingDirection == nil, piece.readingDirection == nil,
+                  base.structure == piece.structure, sameRow(base.rect, piece.rect),
+                  piece.rect.minX > base.rect.minX else { return false }
+            let size = base.fontSize
+            let scripts = trailingScripts(base)
+            // Only a stack's last scripts can end under the base's own scripts.
+            guard piece.rect.maxX > base.rect.maxX || scripts > 0 && scriptsAlone(piece, size: size) else { return false }
+            guard piece.rect.minX <= base.rect.maxX + size * 0.25,
+                  piece.rect.minX >= base.rect.maxX - CGFloat(scripts) * size * 0.75 - 1.5 else { return false }
+            // A fraction set in the line stacks its terms the same way, over a bar (Wallace's
+            // `rise` over `run`, `a5` over `a2`): its terms are no scripts of the text before them.
+            let start = min(base.rect.maxX, piece.rect.minX), end = max(base.rect.maxX, piece.rect.minX)
+            let row = base.rect.union(piece.rect)
+            if rules.contains(where: { rule in
+                rule.maxX > start - 1 && rule.minX < end + size && rule.midY > row.minY && rule.midY < row.maxY
+            }) { return false }
+            let text = piece.text.trimmingCharacters(in: .whitespaces)
+            if scripts > 0, (1...2).contains(text.count), text.unicodeScalars.allSatisfy(closing.contains),
+               abs(piece.fontSize - size) <= size * 0.15 {
+                return true
+            }
+            // The last scripts of a stack that ends the line (`flight f can leave node ni`, `f`).
+            if scripts > 0, scriptsAlone(piece, size: size) { return true }
+            guard let style = opening(piece), scriptStyle(style), piece.fontSize <= size * 0.85 else { return false }
+            return style.contains(.subscript) || scripts > 0
+        }
+        while true {
+            // Each base's continuation is the piece that starts furthest left, under the stack's
+            // outer scripts; a nested script stands further in (page 5's `Ani` continues in
+            // `f.`, not in the nested `f ,j` over it).
+            var join: (base: Int, piece: Int)?
+            for piece in lines.indices where opening(lines[piece]).map(scriptStyle) == true || visible(lines[piece]) <= 6 {
+                let bases = lines.indices.filter { $0 != piece && continues(lines[$0], lines[piece]) }
+                guard let base = bases.max(by: { overlap(lines[$0].rect, lines[piece].rect) < overlap(lines[$1].rect, lines[piece].rect) })
+                else { continue }
+                if let chosen = join, chosen.base < base
+                    || chosen.base == base && (lines[chosen.piece].rect.minX, -visible(lines[chosen.piece]))
+                        <= (lines[piece].rect.minX, -visible(lines[piece])) { continue }
+                join = (base, piece)
+            }
+            guard let (baseIndex, pieceIndex) = join else { return lines }
+            let base = lines[baseIndex], piece = lines[pieceIndex]
+            let size = base.fontSize
+            let tail = scriptsAlone(piece, size: size)
+            let start = min(base.rect.maxX, piece.rect.minX), end = max(base.rect.maxX, piece.rect.minX)
+            let row = base.rect.union(piece.rect)
+            // Where the piece holds only scripts, the base's own type sets the band.
+            let band = tail ? (bottom: base.rect.minY, top: base.rect.minY + size * 0.9)
+                : (bottom: max(base.rect.minY, piece.rect.minY), top: min(base.rect.maxY, piece.rect.maxY))
+            let middle = (band.bottom + band.top) / 2
+            func placed(_ fragment: TextLine) -> InlineText {
+                let style: TextStyle = fragment.rect.midY > middle + size * 0.1 ? .superscript
+                    : fragment.rect.midY < middle - size * 0.1 ? .subscript : []
+                return InlineText(elements: fragment.content.elements.map { element in
+                    guard case let .text(value, own) = element else { return element }
+                    return .text(value, own.subtracting([.superscript, .subscript]).union(style))
+                })
+            }
+            let fragments = lines.indices.filter { index in
+                let line = lines[index]
+                return index != baseIndex && index != pieceIndex && !line.monospaced && line.readingDirection == nil
+                    && (1...6).contains(visible(line)) && line.fontSize <= size * 0.85
+                    && line.rect.minX >= start - 1.5 && line.rect.minX <= end + size
+                    && line.rect.midY >= row.minY - size * 0.25 && line.rect.midY <= row.maxY + size * 0.25
+            }.sorted { (lines[$0].rect.minX, -lines[$0].rect.midY) < (lines[$1].rect.minX, -lines[$1].rect.midY) }
+            var content = base.content
+            for index in fragments { content.append(placed(lines[index])) }
+            content.append(tail ? placed(piece) : piece.content)
+            var joined = base
+            joined.replaceContent(content)
+            joined.rect = fragments.reduce(row) { $0.union(lines[$1].rect) }
+            joined.trailingSpace = piece.trailingSpace
+            joined.wraps = piece.wraps ?? base.wraps
+            let removed = Set(fragments + [pieceIndex])
+            lines[baseIndex] = joined
+            lines = lines.indices.filter { !removed.contains($0) }.map { lines[$0] }
+        }
     }
 
     /// The joints a line crosses inside a ruled grid: its middle lies within the joint's rows
@@ -679,7 +885,7 @@ enum NativeTextReader {
 
     private static func extractLines(on page: PDFPage, limit: Int, includeStyle: Bool, weights: [FontWeightReader.Show],
                                      spacing: [NativeSpacingReader.Evidence], report: IndexGlyphReport?,
-                                     privateUse: PrivateUseCharacters) throws -> [TextLine] {
+                                     privateUse: PrivateUseCharacters, bars: [CGRect] = []) throws -> [TextLine] {
         guard page.numberOfCharacters <= limit else {
             throw ConversionError.resourceLimit("too many characters")
         }
@@ -714,7 +920,8 @@ enum NativeTextReader {
             // Private-use characters are decoded last: spacing and style evidence compare PDFKit's
             // characters with the shows' own maps, which hold the same private-use values (#155).
             return textLine(semantic: privateUse.decode(text),
-                            bounds: bounds, attributed: drawn.map(privateUse.decode))
+                            bounds: bounds, attributed: drawn.map(privateUse.decode),
+                            measuresScriptsOnLineType: !bars.contains { $0.intersects(bounds) })
         }
         // A repaired line whose last show PDFKit continues on the next line of its row (the carry),
         // held with its PDFKit characters until that line is read (`joinsSplitShow`).
@@ -802,7 +1009,13 @@ enum NativeTextReader {
         return words >= 3 && letters * 2 >= visible.count
     }
 
-    static func textLine(semantic: String, bounds: CGRect, attributed: NSAttributedString?) -> TextLine {
+    /// A painted bar a point or two tall and wider than tall: a fraction's rule, or an underline.
+    static func isBar(_ rect: CGRect) -> Bool { rect.height <= 6 && rect.width > rect.height }
+
+    /// `measuresScriptsOnLineType` is `inlineText`'s: false where a bar crosses the line, whose
+    /// raised and lowered terms are then a fraction's (#163).
+    static func textLine(semantic: String, bounds: CGRect, attributed: NSAttributedString?,
+                         measuresScriptsOnLineType: Bool = true) -> TextLine {
         let font = (attributed?.length ?? 0) > 0
             ? attributed?.attribute(.font, at: 0, effectiveRange: nil) as? PlatformFont : nil
         let name = font?.fontName.lowercased() ?? ""
@@ -814,7 +1027,7 @@ enum NativeTextReader {
         var styled: InlineText?
         if let attributed, attributed.string.replacingOccurrences(of: "\u{FFFC}", with: " ")
             .trimmingCharacters(in: .whitespacesAndNewlines) == text {
-            styled = inlineText(from: attributed)
+            styled = inlineText(from: attributed, measuresScriptsOnLineType: measuresScriptsOnLineType)
         }
         // Keep each selection's own text with its geometry. PDFKit's characterBounds offsets
         // need not agree with string offsets at synthesized newlines on current OS builds.
@@ -974,7 +1187,10 @@ enum NativeTextReader {
         var resourceMathItalic: Bool { parts.contains { $0.mathItalic } }
     }
 
-    static func inlineText(from attributed: NSAttributedString) -> InlineText {
+    /// `measuresScriptsOnLineType: false` measures every script on its own size alone, as before
+    /// #163, for a line a fraction's bar crosses: its numerator is raised as far as a stacked
+    /// superscript.
+    static func inlineText(from attributed: NSAttributedString, measuresScriptsOnLineType: Bool = true) -> InlineText {
         let hasDropCap = dropCapBodySize(in: attributed) != nil
         var styled: [StyledRun] = []
         // The previous attributed run's attributes without the maths italic mark.
@@ -1012,8 +1228,17 @@ enum NativeTextReader {
             attributesWithoutSlope = rest as NSDictionary
         }
         remeasureQuotedMarker(&styled)
-        let baselines = shiftedBaselines(styled)
+        let baselines = shiftedBaselines(styled, rebasing: measuresScriptsOnLineType)
         var runs: [InlineText.Element] = []
+        // The offset of each run read as a script, for a script set against it, and the line's type:
+        // the largest size set on the line's own baseline.
+        var scriptOffsets: [Int: Double] = [:]
+        let lineType = styled.indices.filter { index in
+            let run = styled[index]
+            return run.hasFont && run.size.isFinite && run.size > 0 && run.offset.isFinite
+                && !run.text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+                && abs(run.offset - (baselines.reference[index] ?? 0)) <= max(0.5, run.size * 0.12)
+        }.map { styled[$0].size }.max() ?? 0
         for (index, run) in styled.enumerated() {
             var style = run.style
             let measured = run.hasFont && run.size.isFinite && run.size > 0 && run.offset.isFinite
@@ -1044,11 +1269,43 @@ enum NativeTextReader {
             // A run is measured from the baseline of the base it is set beside, where that base is itself
             // shifted in the selection (#144); a base on a shifted baseline is no script.
             let offset = run.offset - (baselines.reference[index] ?? 0)
+            // A script clearly smaller than the line's type, set against its base with no space or
+            // continuing a script before it on that script's own baseline, is measured on that type's
+            // scale (#163): TeX raises the superscript of a symbol that also carries a subscript
+            // further, and the DASC paper's `STAn` raises its 6.97-point `n` 5.42 points, past three
+            // quarters of the script's own size but not of the 9.96-point line's; `(k)` continues `r`
+            // in `STA^{r_f(k)}`, both 5.46 points up. A script on another baseline than the scripts
+            // before it is a separate script, never theirs: Wallace page 178's `(a²)³` raises its
+            // outer `3` 7.44 points beside the 4.32 of `2`, and reads as before. A fraction's
+            // numerator is raised as far, over a bar (`measuresScriptsOnLineType`). A script set
+            // against another script it touches (the `i` raised again over that `n`, 8.43 points
+            // up) is measured from that script.
+            var reach = run.size * 0.75, measuredOffset = offset
+            var group: [Int] = []
+            for earlier in styled[..<index].indices.reversed()
+            where !styled[earlier].text.trimmingCharacters(in: .whitespaces).isEmpty {
+                guard scriptOffsets[earlier] != nil else { break }
+                group.append(earlier)
+            }
+            let continuesScript = group.contains { earlier in
+                abs(styled[earlier].offset - run.offset) <= tolerance && abs(styled[earlier].size - run.size) <= run.size * 0.1
+            }
+            let touchesBase = group.isEmpty && previous?.text.last?.isWhitespace == false && run.text.first?.isWhitespace == false
+            if measuresScriptsOnLineType, measured, run.size <= lineType / 1.1, touchesBase || continuesScript {
+                reach = lineType * 0.75
+            }
+            if let previous, measured, previous.hasFont, previous.size.isFinite, previous.size >= run.size * 1.1,
+               previous.text.last?.isWhitespace == false, run.text.first?.isWhitespace == false,
+               let carrier = scriptOffsets[index - 1] {
+                reach = previous.size * 0.75
+                measuredOffset = run.offset - carrier
+            }
             if !(hasDropCap && run.first), !display, !baselines.base[index], !isBulletRun(index, in: styled),
                !isSeparatorBullet(index, in: styled),
-               hasScriptBase(run, index: index, in: styled), offset.isFinite, abs(offset) <= run.size * 0.75 {
+               hasScriptBase(run, index: index, in: styled), offset.isFinite, abs(measuredOffset) <= reach {
                 if offset > tolerance { style.insert(.superscript) }
                 else if offset < -tolerance { style.insert(.subscript) }
+                if style.contains(.superscript) || style.contains(.subscript) { scriptOffsets[index] = run.offset }
             }
             // PDFKit names a font only when the system has one by that name; the page's own font
             // resources state the weight and slope of the rest (#125, #133). A display initial or
@@ -1089,7 +1346,21 @@ enum NativeTextReader {
     /// that is itself clearly smaller than the run it follows with no space between is a script too: the
     /// DASC paper's nested indices (`STA` with `n` raised and `i` raised again, #163) keep the offsets
     /// the selection states.
-    private static func shiftedBaselines(_ runs: [StyledRun]) -> (reference: [Double?], base: [Bool]) {
+    ///
+    /// PDFKit can also take a selection's baseline from a script (#163): the DASC paper's `f ni+1`,
+    /// a piece of `n^i_f n^{i+1}_f`, measures its 9.96-point `n` 4.26 points down and the 6.97-point
+    /// `i+1` touching it at zero, and Wallace's `x` stands 3 points under its `2` in a selection of
+    /// the two alone. Where every run of the selection's largest size stands on one shifted baseline
+    /// within script reach, and a script follows a letter or digit of one of them, touching it, on
+    /// the selection's baseline, the largest runs' baseline is the line's and every run is measured
+    /// from it. The script is a script's size (0.4 of the base up to a tenth under it; the paper's
+    /// `ETA` carries a 9-point `next node`) and a script's length (at most twelve characters in two
+    /// words). So the Fed's regulation letter beside its 8-point name, a run of the base's own size,
+    /// a run set before the larger one, and a note marker after a closing quote
+    /// (`remeasureQuotedMarker` reads those) are not rebased. A carrier clearly smaller than the
+    /// selection's largest type is a script with a nested one, never a base. Neither reading applies
+    /// with `rebasing` false, on a line a fraction's bar crosses.
+    private static func shiftedBaselines(_ runs: [StyledRun], rebasing: Bool = true) -> (reference: [Double?], base: [Bool]) {
         var reference = [Double?](repeating: nil, count: runs.count)
         var base = [Bool](repeating: false, count: runs.count)
         func measured(_ run: StyledRun) -> Bool {
@@ -1102,6 +1373,27 @@ enum NativeTextReader {
         func shifted(_ run: StyledRun, from offset: Double) -> Bool {
             abs(run.offset - offset) > max(0.5, run.size * 0.12)
         }
+        let visible = runs.indices.filter { measured(runs[$0]) }
+        let largest = visible.map { runs[$0].size }.max() ?? 0
+        if visible.count == runs.filter({ !$0.text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty }).count,
+           rebasing, largest > 0 {
+            let full = visible.filter { runs[$0].size >= largest / 1.1 }
+            let offset = runs[full[0]].offset
+            func script(_ index: Int) -> Bool {
+                let run = runs[index], text = run.text.trimmingCharacters(in: .whitespaces)
+                return run.size >= largest * 0.4 && run.size < largest / 1.1 && !shifted(run, from: 0)
+                    && (1...12).contains(text.count) && text.split(whereSeparator: \.isWhitespace).count <= 2
+            }
+            func alphanumeric(_ character: Character?) -> Bool { character?.isLetter == true || character?.isNumber == true }
+            if full.allSatisfy({ !shifted(runs[$0], from: offset) }), shifted(runs[full[0]], from: 0),
+               abs(offset) <= largest * 0.75,
+               full.contains(where: { index in
+                   index + 1 < runs.count && script(index + 1) && touching(runs[index], runs[index + 1])
+                       && alphanumeric(runs[index].text.last)
+               }) {
+                reference = [Double?](repeating: offset, count: runs.count)
+            }
+        }
         for index in runs.indices.dropLast() {
             let carrier = runs[index], script = runs[index + 1]
             guard measured(carrier), measured(script), touching(carrier, script), script.size <= carrier.size / 1.1,
@@ -1110,6 +1402,10 @@ enum NativeTextReader {
                   abs(script.offset - carrier.offset) <= carrier.size * 0.75 else { continue }
             if index > 0, case let before = runs[index - 1], measured(before), touching(before, carrier),
                carrier.size <= before.size / 1.1 { continue }
+            // A carrier clearly smaller than the line's type is a script itself, whatever stands
+            // before it (#163): the DASC paper's `A` carries `r`, a 5-point `f ` and PDFKit's space,
+            // then `(k),j` raised 5.46 points with its own `k` beneath.
+            if rebasing, carrier.size <= largest / 1.1 { continue }
             base[index] = true
             reference[index + 1] = carrier.offset
             if index + 2 < runs.count, case let resumed = runs[index + 2], measured(resumed), touching(script, resumed),

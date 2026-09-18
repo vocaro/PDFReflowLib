@@ -9054,7 +9054,7 @@
     {
       "id": "ntrs-20190030725-dasc-2019",
       "sourceSHA256": "7c2137098ffb75153e0049b970272db97bc91e13168028dc7b53fbe2deb92caa",
-      "basis": "Source pages 1-10 visually reviewed against 60 DPI Poppler renders and the extracted text layer. Protects output that matches the source now: the title as a heading; the two author blocks in column order; the abstract and index terms as whole, separate paragraphs; the 1st/2nd author superscripts; whole prose sentences and paragraphs across both columns on every page, including the introduction's continuation from page 1 to page 2; the order of section, subsection, step, bullet and numbered-requirement openings, with the page-6 dash items as separate paragraphs; figure, table and display-equation crops present; the Figure 1 caption, table captions and footnote text; the invariant (6) line; and the reference entries in order. Not pinned because wrong now: section and appendix headings as paragraphs or <pre>, subsection titles run into their first paragraph, bullets and numbered requirements as <pre>, steps and references split after their first line, inline math and multi-line index stacks broken into one-token paragraphs with private-use brace pieces, parts of displays (4), (5), (8)-(12) and the page-9 matrices left outside their crops, the page-6 separation-matrix crop swallowing two prose lines, merged paragraphs, a split at page 1's column break and section III's paragraph split at the page-2 footnote (see the review file). Pages 4, 9 and 10 were reviewed again on their renders and their column order is pinned: the left column and Figure 1's caption before Figure 2's, the summary and both appendices before the quadratic program, and Table III's caption whole before REFERENCES (#153). No committed rasters. #162: IEEEtran sets its section titles in small capitals centred in the column and its subsection titles in italic on the column edge, both at the body size; pages 1-3, 5-7, 9 and 10 source-reviewed, each is one heading, the subsection titles no longer run into their first paragraph, and the references, algorithm steps and lettered constraint items keep their hanging-indent wrapped lines. The page-1 Index Terms line and the page-10 table caption are not headings. All 10 pages reviewed again for what the conversion must not do (#27): the pdfTeX paper's text layer is genuine and the paper reflows without falling back, so no page may report fresh recognition, a damaged encoding, an implausible or unverified text layer, a structure fallback or a whole-page image fallback, and no page takes an `Original page N` image. IEEEtran sets figure captions beneath the figure and table captions above the table: the page-4 Fig. 1 caption must stand next after its crop, and the page-7 TABLE I and page-10 TABLE III captions next before theirs. #180: TeX draws the itemize bullet from a smaller font than the item, so page 5's four entries keep the lines wrapped under them; page 6's dash items stay the separate paragraphs they are; and references [1] and [7] keep the piece PDFKit split off at the word space that justifies their last row.",
+      "basis": "Source pages 1-10 visually reviewed against 60 DPI Poppler renders and the extracted text layer. Protects output that matches the source now: the title as a heading; the two author blocks in column order; the abstract and index terms as whole, separate paragraphs; the 1st/2nd author superscripts; whole prose sentences and paragraphs across both columns on every page, including the introduction's continuation from page 1 to page 2; the order of section, subsection, step, bullet and numbered-requirement openings, with the page-6 dash items as separate paragraphs; figure, table and display-equation crops present; the Figure 1 caption, table captions and footnote text; the invariant (6) line; and the reference entries in order. Not pinned because wrong now: section and appendix headings as paragraphs or <pre>, subsection titles run into their first paragraph, bullets and numbered requirements as <pre>, steps and references split after their first line, nested indices flattened into one script level, merged paragraphs, a split at page 1's column break and section III's paragraph split at the page-2 footnote (see the review file). Pages 4, 9 and 10 were reviewed again on their renders and their column order is pinned: the left column and Figure 1's caption before Figure 2's, the summary and both appendices before the quadratic program, and Table III's caption whole before REFERENCES (#153). No committed rasters. #162: IEEEtran sets its section titles in small capitals centred in the column and its subsection titles in italic on the column edge, both at the body size; pages 1-3, 5-7, 9 and 10 source-reviewed, each is one heading, the subsection titles no longer run into their first paragraph, and the references, algorithm steps and lettered constraint items keep their hanging-indent wrapped lines. The page-1 Index Terms line and the page-10 table caption are not headings. All 10 pages reviewed again for what the conversion must not do (#27): the pdfTeX paper's text layer is genuine and the paper reflows without falling back, so no page may report fresh recognition, a damaged encoding, an implausible or unverified text layer, a structure fallback or a whole-page image fallback, and no page takes an `Original page N` image. IEEEtran sets figure captions beneath the figure and table captions above the table: the page-4 Fig. 1 caption must stand next after its crop, and the page-7 TABLE I and page-10 TABLE III captions next before theirs. #180: TeX draws the itemize bullet from a smaller font than the item, so page 5's four entries keep the lines wrapped under them; page 6's dash items stay the separate paragraphs they are; and references [1] and [7] keep the piece PDFKit split off at the word space that justifies their last row. #163: pages 2, 3, 5, 6 and 9 reviewed again on their renders. A symbol with stacked indices keeps its sentence whole (`ETAnif f , which is the nominal time`, `Step 2. For each STAnih h occurring …`), its superscript and subscript marked on the base; the sentence line over each of displays (7)-(10) stays in its step, where PDFKit counts the display's characterless bracket glyphs in that line's rectangle; displays (1)-(5), (7)-(12), the page-9 objective and the matrices P, q, G and h are crops, and no delimiter piece, condition, case label or matrix row they hold is left as text; display (5)'s crop leaves the line over it (`…each of the nodes in the same order.`) in its paragraph; the page-6 separation-matrix crop leaves `…and columns the leading one:` and `– Constraints of the types (4.c) and (5.a) are not imposed.` in the text. Not pinned: nested indices read as one level (`STAnih` for STA^{n^i_h}), page 9's `−→x min,` stands beside its crop, which takes `the form`, and page 9's `(a_k, ā_k)` line is cropped as text for its overbars.",
       "pages": [
         {
           "page": 1,
@@ -9151,7 +9151,10 @@
             "The complete set of arrival scheduling constraints is given in section III. The interdependence of the constraints is explained in section IV",
             "At some of the schedule-furnished nodes, some flights routed through that node may have pre-assigned and fixed STAs. In real operations, this can happen at a node that is within a flight’s freeze horizon [5]. Such nodes will be called schedule-frozen.",
             "flight f, provides every node on its route with a Scheduled Time of Arrival (STA) for that flight. In other words, a schedule is an assignment, to each flight f, of a table, denoted by S(f), of the format (refer to (1) for some of the notation):",
-            "A schedule will be defined here as a mapping that, for each flight f, provides every node on its route with a Scheduled Time of Arrival (STA)"
+            "A schedule will be defined here as a mapping that, for each flight f, provides every node on its route with a Scheduled Time of Arrival (STA)",
+            "Estimated Times of Arrival: Each node nif in the route (1) of each flight f is supplied with an Estimated Time of Arrival (ETA): ETAniff , which is the nominal time.",
+            "A flight’s minimal and maximal times for traversing a link: For each flight f and each link nif ni+1f , we are given the minimal and maximal traversal times",
+            "(i) the estimated time of arrival ETAnf , which is the estimated time when flight f can reach n or, if n is a departure airport, to leave n, and (ii) the scheduled time of arrival1 STAnf , which is the time"
           ],
           "text": [
             "If the node is a departure node, this time is actually the schedule time of departure, STD, but for cleanliness of exposition we retain the notation STA even in this case."
@@ -9162,7 +9165,7 @@
               "second": "The complete set of arrival scheduling constraints"
             }
           ],
-          "minimumImages": 1,
+          "minimumImages": 3,
           "headings": [
             "II. PROBLEM INPUT AND OUTPUT",
             "A. Input data",
@@ -9177,6 +9180,26 @@
             "unverifiedTextLayer",
             "damagedTextEncoding",
             "implausibleTextLayer"
+          ],
+          "scripts": [
+            {
+              "tag": "sup",
+              "text": "n",
+              "before": "(i) the estimated time of arrival ETA",
+              "after": "f , which is the estimated time"
+            },
+            {
+              "tag": "sub",
+              "text": "f",
+              "before": "(i) the estimated time of arrival ETAn",
+              "after": ", which is the estimated time"
+            },
+            {
+              "tag": "sup",
+              "text": "i+1",
+              "before": "For each flight f and each link nif n",
+              "after": "f , we are given the"
+            }
           ]
         },
         {
@@ -9201,15 +9224,37 @@
             "Each node used by one or more of the flights is assigned its own “copy” of the time axis. Following the presentation in Ref. [4], this will be illustrated here (figures 1 and 2, below) as a plot where the horizontal axis has only discrete points, corresponding to the nodes of the given flight, and each node’s copy of the time axis is drawn as a vertical axis, with upward being the direction of increasing time.",
             "This situation is illustrated notionally in figure 1(A). In general, there can be other previously scheduled flights, using any or all of the three nodes.",
             "The given flights are scheduled one at a time. In the computation of a schedule,",
-            "(c) For some nodes along the routes of some flights, the flight (a schedule-frozen flight) must traverse the node at exactly the ETA"
+            "(c) For some nodes along the routes of some flights, the flight (a schedule-frozen flight) must traverse the node at exactly the ETA",
+            "(a) The flight cannot leave its first node, n1f , earlier than at",
+            "Therefore, a no-passing constraint would imply that the two flights must traverse each of the nodes in the same order."
           ],
-          "minimumImages": 1,
+          "minimumImages": 2,
           "absentText": [
             "",
             "",
             "",
             "",
-            ""
+            "",
+            "⎪",
+            "⎫",
+            "⎬",
+            "⎭",
+            "⎡",
+            "⎢",
+            "⎣",
+            "⎤",
+            "⎥",
+            "⎦",
+            "⎛",
+            "⎜",
+            "⎝",
+            "at the first node",
+            "if flights f1, f2 reach n",
+            "in that order",
+            "if n has been schedule-frozen",
+            "Bounds on travel time",
+            "No passing on",
+            "is shared by the routes of"
           ],
           "headings": [
             "B. Node constraints",
@@ -9283,9 +9328,17 @@
             "The following interval notation will be used: (i) [a,b] denotes the interval with the endpoints included: a≤x≤b; (ii) ]a,b[ will denote the interval: a < x < b. The round parentheses, ( ), are reserved in this paper for ordered pairs.",
             "S(1), S(2), ..., S(f−1) (6)",
             "Assume the first (f−1) flights have been scheduled; i.e., the schedules of the form (3)",
-            "Step 4. Use the algorithm in Ref. [4] to compute the available time windows for f at the nodes on its route"
+            "Step 4. Use the algorithm in Ref. [4] to compute the available time windows for f at the nodes on its route",
+            "Step 2. For each STAnihh occurring in the computed schedules (6), i.e. for every flight h such that h<f and every node nih on the route of flight h, if this node also",
+            "denote the j-th such window at node nif by Anif ,jf.",
+            "flight f can leave node nif some time within window Anif ,j1f and reach ni+1f",
+            "This makes node k effectively unavailable to flight f at the latter choice of Tk.",
+            "Step 1. For the first node n1f (i.e., the departure node) on the route of f, compute the time window",
+            "if this node also occurs on the route of f, compute the time window",
+            "Step 3. For each node nif on the route of f at which the flight’s STA is frozen, compute the time window",
+            "form a graph with the time windows Anif ,jf as the nodes, and a window pair"
           ],
-          "minimumImages": 2,
+          "minimumImages": 4,
           "headings": [
             "V. ALGORITHM FORMULATION",
             "A. The algorithm invariants",
@@ -9305,6 +9358,24 @@
             "Reachability: There is no time instant Tk−1 available to flight f at k−1 from which the flight can reach node k at an available time instant at k.",
             "the totality of the intervals (7), (8), (9) as the unavailable time windows (shown red in Ref. [4, Fig. 2]),",
             "the travel time bounds specified in (5.a) as the travel times (e.g., Ref. [4, Equations (5), (6), (7)])."
+          ],
+          "scripts": [
+            {
+              "tag": "sup",
+              "text": "nih",
+              "before": "Step 2. For each STA",
+              "after": "h occurring in the computed schedules"
+            },
+            {
+              "tag": "sub",
+              "text": "h",
+              "before": "Step 2. For each STAnih",
+              "after": "occurring in the computed schedules"
+            }
+          ],
+          "absentText": [
+            "h−c",
+            "STAnih h"
           ]
         },
         {
@@ -9335,7 +9406,12 @@
             "– Each flight’s ETA at first node is chosen to make the flights contend for the arrival node.",
             "The ETAs for the flight’s subsequent nodes are estimated by assuming the flight leaves the first node at the provided ETA and travels at the nominal speed of 450.0 KTS:",
             "Step 8. Choose a path from those computed in step 7. It will be a sequence of time windows, indexed by the nodes on the route of f:",
-            "– Only four types of aircraft can appear in the problem instance: [s]mall, [m]edium, [L]arge, [H]eavy."
+            "– Only four types of aircraft can appear in the problem instance: [s]mall, [m]edium, [L]arge, [H]eavy.",
+            "Step 7. In the graph computed in step 6, find all paths from a time window An1f ,jf corresponding to a departure of f to a time window AnNff ,kf corresponding to an arrival of f.",
+            "Step 9. From each time window Anif ,jif in (11) select a desired STAniff . We do it in two steps.",
+            "Step 10. If one or more STArf (k)f fails to be in the corresponding time window Arf (k),jkf , then solve the Quadratic Program formulated in appendix B",
+            "These separations are specified, in nautical miles, in the form of a matrix, where the rows index the trailing aircraft, and columns the leading one:",
+            "– Constraints of the types (4.c) and (5.a) are not imposed. That is, passing is always allowed, and no flight has pre-existing STAs."
           ],
           "distinctParagraphs": [
             {
@@ -9347,7 +9423,7 @@
               "second": "– In each problem instance, all flights are routed to the same node"
             }
           ],
-          "minimumImages": 2,
+          "minimumImages": 4,
           "headings": [
             "VI. SAMPLE PROBLEMS AND SOLUTIONS"
           ],
@@ -9470,7 +9546,11 @@
             "A distributed system for managing diverse air traffic will need the capability of scheduling the given arriving flights in compliance with the operational constraints.",
             "Table III gives a high-level outline of the algorithm. In each part of the outline, we indicate the corresponding numbers of the steps in section V.",
             "We now recast problem (12) in a format that corresponds to that of the Python package cvxopt.",
-            "For this problem class, the cvxopt Python module [1] has a numerical quadratic programming solver that can be called as follows:"
+            "For this problem class, the cvxopt Python module [1] has a numerical quadratic programming solver that can be called as follows:",
+            "The problem of scheduling flight f can then be written as the Quadratic Program",
+            "The quadratic objective function is",
+            "The quadratic part of this sum has the tridiagonal matricial",
+            "(there are no linear equality constraints), where"
           ],
           "distinctParagraphs": [
             {
@@ -9478,11 +9558,28 @@
               "second": "Table III gives a high-level outline"
             }
           ],
-          "minimumImages": 3,
+          "minimumImages": 8,
           "absentText": [
             "",
             "",
-            ""
+            "",
+            "⎪",
+            "⎫",
+            "⎬",
+            "⎭",
+            "⎡",
+            "⎢",
+            "⎣",
+            "⎤",
+            "⎥",
+            "⎦",
+            "⎛",
+            "⎜",
+            "⎝",
+            "1−1",
+            "−1 2−1",
+            "Tnom 1",
+            "− 2 (sk−sk−1)"
           ],
           "headings": [
             "VIII. SUMMARY",

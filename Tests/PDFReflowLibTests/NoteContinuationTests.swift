@@ -238,11 +238,13 @@ private func attributed(_ runs: [(String, CGFloat, Double)]) -> NSAttributedStri
         let styled = NativeTextReader.inlineText(from: source.attributedString())
         #expect(styled.elements == [.text("\u{201D}", []), .text(String(text.dropFirst()), .superscript)], "\(name)")
     }
-    // Controls: exponents after letters or digits, a marker four digits long or at a third of the
-    // size (the Blue Book scan's `I39`), a marker run into text, and quotes lowered unevenly.
+    // Controls: a marker four digits long or at a third of the size (the Blue Book scan's `I39`), a
+    // marker run into text, and quotes lowered unevenly. An exponent after a letter or digit is never
+    // re-measured as a marker; it is read from its base's baseline instead (#163), and raised.
+    for runs in [[("x", 10.25, -3.44), ("2", 5.125, 0)], [("3", 10.25, -3.44), ("2", 5.125, 0)]] as [[(String, CGFloat, Double)]] {
+        #expect(NativeTextReader.inlineText(from: attributed(runs)).elements.last == .text("2", .superscript))
+    }
     let controls: [(String, [(String, CGFloat, Double)])] = [
-        ("x2", [("x", 10.25, -3.44), ("2", 5.125, 0)]),
-        ("32", [("3", 10.25, -3.44), ("2", 5.125, 0)]),
         ("four digits", [("\u{201D}", 10.25, -3.44), ("1234", 5.125, 0)]),
         ("small", [("\u{201D}", 31.9, -8.15), ("39", 7.24, 0)]),
         ("run on", [("\u{201D}", 10.25, -3.44), ("12", 5.125, 0), ("It", 10.25, -3.44)]),

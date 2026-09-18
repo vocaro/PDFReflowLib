@@ -1,8 +1,11 @@
+import contextlib
+import io
 import json
 from pathlib import Path
 import re
 import tempfile
 import unittest
+from unittest import mock
 
 import check_corpus_content
 from check_corpus_content import CHECK_TYPES, EXPECTATION_KEYS, ROOT, assess, count_checks
@@ -134,6 +137,43 @@ class StaleDetectionTests(unittest.TestCase):
             self.assertIn('9 Swift tests', (root / 'doc/regression-testing.md').read_text())
             self.assertEqual(len(counts.update(root, texts, check=False)), 1)
             self.assertEqual(counts.update(root, texts, check=True), [])
+
+    def test_conflict_markers_fail_check_and_block_writing(self):
+        # #208: both sides of a conflict around a region rewrite to the current count, so the diff
+        # alone could not see the markers, and writing would settle the conflict silently.
+        conflicted = ('Has\n<<<<<<< HEAD\n<!-- counts:documents -->2<!-- counts:end --> documents.\n'
+                      '=======\n<!-- counts:documents -->4<!-- counts:end --> documents.\n'
+                      '>>>>>>> 1f50940 (Merge)\n')
+        for check in (True, False):
+            with self.subTest(check=check), tempfile.TemporaryDirectory() as directory:
+                root = Path(directory)
+                (root / 'doc').mkdir()
+                (root / 'README.md').write_text(conflicted)
+                (root / 'doc/regression-testing.md').write_text('<!-- counts:swift-tests -->9 Swift tests<!-- counts:end -->\n')
+                with self.assertRaises(counts.ConflictMarkers) as raised:
+                    counts.update(root, {'documents': '3', 'swift-tests': '12 Swift tests'}, check=check)
+                self.assertEqual(raised.exception.args[0], ['README.md:2', 'README.md:4', 'README.md:6'])
+                self.assertEqual((root / 'README.md').read_text(), conflicted)
+                self.assertIn('9 Swift tests', (root / 'doc/regression-testing.md').read_text())
+
+    def test_conflict_markers_inside_a_block_region_are_found(self):
+        text = '<!-- counts:coverage -->\n<<<<<<< ours\nold\n||||||| base\nolder\n=======\nnew\n>>>>>>>\n<!-- counts:end -->\n'
+        self.assertEqual(counts.conflict_lines(text), [2, 4, 6, 8])
+
+    def test_ordinary_markdown_is_not_a_conflict(self):
+        text = 'Title\n========\n\na <<<<<<< b\n=======x\n  =======\n>>>>>>>>\n> quote\n'
+        self.assertEqual(counts.conflict_lines(text), [])
+
+    def test_main_reports_conflicts_without_a_diff(self):
+        stderr = io.StringIO()
+        with mock.patch.object(counts, 'swift_test_count', return_value=1), \
+                mock.patch.object(counts, 'python_test_count', return_value=1), \
+                mock.patch.object(counts, 'region_texts', return_value={}), \
+                mock.patch.object(counts, 'contract_counts', return_value={}), \
+                mock.patch.object(counts, 'update', side_effect=counts.ConflictMarkers(['README.md:7'])), \
+                contextlib.redirect_stderr(stderr):
+            self.assertEqual(counts.main(['--check']), 1)
+        self.assertIn('conflict markers at README.md:7', stderr.getvalue())
 
     def test_swift_count_ignores_comments_and_strings(self):
         with tempfile.TemporaryDirectory() as directory:

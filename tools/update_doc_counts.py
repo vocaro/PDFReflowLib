@@ -13,6 +13,9 @@ one test there. The Python count is what `unittest discover` in scripts/check-al
 
 usage: update_doc_counts.py [--check] [--swift-list]
   --check       write nothing; print a diff and exit 1 when a region is stale
+
+Either mode fails without writing when a managed document still holds git conflict markers
+(#208): rewriting its regions would silently settle the conflict and hide the markers from --check.
   --swift-list  also require the static Swift count to equal `swift test list --skip-build`
                 (needs the debug test build, as scripts/check-all.sh leaves it)
 """
@@ -34,6 +37,17 @@ DOCS = ('README.md', 'doc/regression-testing.md')
 WIDTH = 100
 KEEP = '\x00'
 REGION = re.compile(r'<!-- counts:(?P<name>[a-z-]+) -->(?P<body>.*?)<!-- counts:end -->', re.S)
+# Merge conflict markers: `<<<<<<< ours`, `||||||| base` (diff3 style), `=======` alone, `>>>>>>> theirs`.
+CONFLICT_MARKER = re.compile(r'^(?:(?:<{7}|\|{7}|>{7})(?: |$)|={7}[ \t]*$)', re.M)
+
+
+class ConflictMarkers(Exception):
+    """Managed documents that still hold unresolved merge conflicts, as `path:line` strings."""
+
+
+def conflict_lines(text):
+    """1-based line numbers of merge conflict markers in text."""
+    return [text.count('\n', 0, match.start()) + 1 for match in CONFLICT_MARKER.finditer(text)]
 
 
 def short_title(title):
@@ -115,11 +129,17 @@ def rewrite(text, texts):
 
 
 def update(root, texts, check):
-    """Return the unified diffs of stale documents, writing them unless check is set."""
+    """Return the unified diffs of stale documents, writing them unless check is set.
+
+    Raises ConflictMarkers, before writing anything, when any document holds conflict markers.
+    """
+    olds = {relative: (root / relative).read_text() for relative in DOCS}
+    conflicts = [f'{relative}:{line}' for relative, old in olds.items() for line in conflict_lines(old)]
+    if conflicts:
+        raise ConflictMarkers(conflicts)
     diffs = []
-    for relative in DOCS:
+    for relative, old in olds.items():
         path = root / relative
-        old = path.read_text()
         new = rewrite(old, texts)
         if new != old:
             diffs.append(''.join(difflib.unified_diff(old.splitlines(True), new.splitlines(True),
@@ -142,7 +162,12 @@ def main(argv=None):
                   f'{swift_tests} @Test declarations; fix swift_test_count.', file=sys.stderr)
             return 1
     texts = region_texts(contract_counts(), swift_tests, python_test_count())
-    diffs = update(ROOT, texts, args.check)
+    try:
+        diffs = update(ROOT, texts, args.check)
+    except ConflictMarkers as error:
+        print(f'Unresolved merge conflict markers at {", ".join(error.args[0])}. Resolve the conflict by '
+              f'hand, then run python3 tools/update_doc_counts.py.', file=sys.stderr)
+        return 1
     for diff in diffs:
         sys.stdout.write(diff)
     sys.stdout.flush()

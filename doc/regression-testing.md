@@ -698,7 +698,7 @@ the page's structure validates, each line also records the tag the pipeline appl
 since #89/#90); older fixtures and untagged lines have none, and `SourceLayoutFixture` restores it.
 Source review, baseline failures, cross-document safeguards and full-run evidence are retained
 in [the three-fix measurement](../measurements/three-fidelity-fixes/record.md). The suite contains
-<!-- counts:swift-tests -->1025 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->249 Python tests<!-- counts:end -->.
+<!-- counts:swift-tests -->1025 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->253 Python tests<!-- counts:end -->.
 The comparison tests include a real-Poppler image URL check through the safe HTTP handler
 (simple and positioned modes, paths with spaces); absent Poppler is an explicit skip.
 

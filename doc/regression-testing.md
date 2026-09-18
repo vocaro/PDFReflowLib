@@ -115,7 +115,7 @@ are, in the page markup). Evidence and negative controls on real output are in
 ## Current content coverage
 
 <!-- counts:coverage -->
-[corpus/regressions.json](../corpus/regressions.json) has 3537 targeted checks on 572 reviewed pages
+[corpus/regressions.json](../corpus/regressions.json) has 3587 targeted checks on 585 reviewed pages
 across 20 documents: *Pilot's Handbook of Aeronautical Knowledge*, *Beginning and Intermediate
 Algebra*, *The 9/11 Commission Report*, *The Fed Explained*, *Dietary Guidelines for Americans*,
 *Fifth National Climate Assessment*, *Our Flag*, *Preparedness 101*, *Project Blue Book Special
@@ -125,10 +125,10 @@ Bremsstrahlung in Electron-Ion Collisions*, *Replay Clocks*, *Complaint for a Ci
 *Investigation of Atmospheric Boundary-Layer Effects on Launch-Vehicle Ground Wind Loads*, *A
 Scheduling Algorithm Compatible with a Distributed Management of Arrivals in the National Airspace
 System*, *Agricultural Research*, *Earthdata Cloud Analytics Project* and *Tank Health Monitoring*.
-They comprise 1137 ordered-text, 239 text, 432 paragraph, 295 absent-text, 278 heading,
+They comprise 1137 ordered-text, 242 text, 450 paragraph, 314 absent-text, 278 heading,
 36 heading-level, 64 absent-heading, 88 list-item, 40 list, 21 preformatted-block,
 1 preformatted-lines, 29 script, 10 absent-script, 11 footnote, 34 note-link,
-61 paragraph-continuation, 1 list-item-continuation, 8 paragraph-separation, 120 distinct-paragraph,
+70 paragraph-continuation, 1 list-item-continuation, 8 paragraph-separation, 121 distinct-paragraph,
 200 image-presence, 45 captioned-image, 20 image-alternative, 102 page-reference, 111 warning,
 113 absent-warning, 17 source-region, 5 glyph-structure, 5 image-appearance and 14 table-cell
 checks, counted as `tools/check_corpus_content.py` counts them.
@@ -671,7 +671,7 @@ the page's structure validates, each line also records the tag the pipeline appl
 since #89/#90); older fixtures and untagged lines have none, and `SourceLayoutFixture` restores it.
 Source review, baseline failures, cross-document safeguards and full-run evidence are retained
 in [the three-fix measurement](../measurements/three-fidelity-fixes/record.md). The suite contains
-<!-- counts:swift-tests -->993 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->248 Python tests<!-- counts:end -->.
+<!-- counts:swift-tests -->1002 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->248 Python tests<!-- counts:end -->.
 The comparison tests include a real-Poppler image URL check through the safe HTTP handler
 (simple and positioned modes, paths with spaces); absent Poppler is an explicit skip.
 
@@ -734,6 +734,24 @@ measure, a continuation in another column or with a line between, a suspended hy
 address, a ragged column and a recognized page. The 9/11, Fed, Loper Bright, FAA and Our Flag
 contracts check the joined paragraphs and their spaced forms' absence. See the
 [split-row and lost-hyphen evidence](../measurements/split-rows-and-lost-hyphens/record.md).
+
+`BoxCutParagraphTests.swift` and three `NativeSpacingTests` cover
+[#177](https://github.com/vocaro/PDFReflowLib/issues/177). Fed 47→48 and 98→99 are paragraphs a box
+at the page's foot cuts (Box 3.5 with its table; figure 6.6's box with its `Source:` note), joined
+past the box, which stays on its page ahead of the paragraph; a synthetic foot box supplies the
+controls (no tint, a box beside rather than beneath, prose below the box, a next page that opens
+in a box). Fed 28 is a paragraph wrapped around a sidebar inset into its column, with
+`nextLineAroundInset` asserted on both junctions; Fed 84 is a word broken around such a sidebar;
+Fed 34 is a paragraph a box interrupts at a word boundary, with a closed sentence and a moved line
+as controls; synthetic lines check the inset's own conditions. `911-split-row-operators.json`
+holds 9/11 pages 254, 259, 438 and 455, whose rows PDFKit split (page 455's across the appendix's
+name and description columns), with exactly the reviewed insertions and every other line
+unchanged; synthetic shows check its conditions (texts supplied, adjacency and a show measuring
+across a wider gap, baseline, spelling, ownership). Our Flag's soft hyphen is restored where the show draws it
+and PDFKit's line lacks it, with a line break for a space glyph, and not after a non-letter. The
+Fed, 9/11, Our Flag and Wallace contracts check the joined paragraphs, the restored spaces and
+words, and their absent broken forms. See the
+[box-cut, split-row and soft-hyphen evidence](../measurements/box-cuts-and-split-row-spaces/record.md).
 
 `InvisibleTextTests.swift` covers exclusively hidden OCR text, visible Courier and genuine
 font-size headings, mixed text modes, saved graphics state, nested forms and malformed modes.

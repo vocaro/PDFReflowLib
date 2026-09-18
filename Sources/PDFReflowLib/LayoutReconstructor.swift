@@ -5040,9 +5040,9 @@ enum LayoutReconstructor {
         flushTagged()
         flush()
         joinWrappedCaptionLines(&result, page: page, body: body, vocabulary: vocabulary, warnings: &warnings)
-        joinColumnContinuations(&result, page: page, images: images.map(\.0) + clusters(page.tints, distance: 4),
-                                vocabulary: vocabulary, warnings: &warnings)
-        joinWordBreaks(&result, page: page, body: body, vocabulary: vocabulary, warnings: &warnings)
+        let insets = images.map(\.0) + clusters(page.tints, distance: 4)
+        joinColumnContinuations(&result, page: page, images: insets, vocabulary: vocabulary, warnings: &warnings)
+        joinWordBreaks(&result, page: page, body: body, insets: insets, vocabulary: vocabulary, warnings: &warnings)
         attachEdgeCredits(&result, page: page, images: images, body: body)
         for note in footnotes?.notes ?? [] {
             var text = FootnoteDetector.normalizedMarker(elements[note.range.lowerBound].line!.content)
@@ -5326,20 +5326,70 @@ enum LayoutReconstructor {
                                      skippedPages: [(page: PageContent, images: [CGRect])] = [],
                                      to pageBlocks: [ReflowBlock], page: PageContent, vocabulary: Set<String>,
                                      images: [CGRect], continuesNote: Bool = false) -> (previous: Int, next: Int)? {
+        for steppingOverBoxes in [false, true] {
+            if let found = continuation(from: blocks, previousPage: previousPage, previousImages: previousImages,
+                                        skippedPages: skippedPages, to: pageBlocks, page: page, vocabulary: vocabulary,
+                                        images: images, continuesNote: continuesNote,
+                                        steppingOverBoxes: steppingOverBoxes) { return found }
+        }
+        return nil
+    }
+
+    /// `continuation`, with `steppingOverBoxes` the second reading (#177): a box set at the foot
+    /// of the previous page, beneath the paragraph it cuts, is stepped over as a figure is. The
+    /// Fed's `…The vast major-` stands over Box 3.5 at the foot of page 47 and `ity of the Federal
+    /// Reserve’s assets…` opens page 48; page 98's `…all institu-` stands over figure 6.6's box,
+    /// whose source note is a paragraph of its own. Each block stepped over lies in one of the
+    /// page's tinted boxes (its first and last lines inside it), the paragraph's last line stands
+    /// above every such box, over its measure and in no box itself, and the next page does not
+    /// open inside a box. The boxes' lines then do not compete with the paragraph at the page's
+    /// foot. The first reading, which stops at the box's own last paragraph, is tried first, so a
+    /// sidebar that continues onto the next page keeps continuing there.
+    private static func continuation(from blocks: [ReflowBlock], previousPage: PageContent, previousImages: [CGRect],
+                                     skippedPages: [(page: PageContent, images: [CGRect])],
+                                     to pageBlocks: [ReflowBlock], page: PageContent, vocabulary: Set<String>,
+                                     images: [CGRect], continuesNote: Bool,
+                                     steppingOverBoxes: Bool) -> (previous: Int, next: Int)? {
         var previous = blocks.count - 1
         // Pages between that hold only figures, captions and folios, with their page markers.
         let skipped = Set(skippedPages.map(\.page.number))
-        if !skipped.isEmpty && continuesNote { return nil }
+        if !skipped.isEmpty && continuesNote || steppingOverBoxes && continuesNote { return nil }
         while previous >= 0, skipped.contains(blocks[previous].page) { previous -= 1 }
+        let boxes = steppingOverBoxes ? clusters(previousPage.tints, distance: 4) : []
+        var stepped: [CGRect] = []
+        func steppedOver(_ block: ReflowBlock) -> Bool {
+            if isSkippable(block, page: previousPage) { return true }
+            let text = block.text.trimmingCharacters(in: .whitespacesAndNewlines)
+            guard !boxes.isEmpty, block.page == previousPage.number, !text.isEmpty,
+                  let top = firstLine(of: text, in: previousPage.lines),
+                  let bottom = lastLine(of: text, in: previousPage.lines),
+                  let box = boxes.first(where: {
+                      $0.contains(CGPoint(x: top.rect.midX, y: top.rect.midY))
+                          && $0.contains(CGPoint(x: bottom.rect.midX, y: bottom.rect.midY))
+                  }) else { return false }
+            stepped.append(box)
+            return true
+        }
         // A footnote continued onto the previous page starts on an earlier one, and a join
         // moves an earlier page's footnotes behind the paragraph that continued.
         while previous >= 0, blocks[previous].page == previousPage.number
                 || blocks[previous].sourcePages.contains(previousPage.number)
                 || (blocks[previous].isFootnote && blocks[previous].page < previousPage.number),
-              isSkippable(blocks[previous], page: previousPage) { previous -= 1 }
+              steppedOver(blocks[previous]) { previous -= 1 }
         guard previous >= 0, let left = joinableText(blocks[previous].content),
               blocks[previous].page == previousPage.number
                 || blocks[previous].sourcePages.contains(previousPage.number) else { return nil }
+        var previousPage = previousPage
+        if steppingOverBoxes {
+            guard !stepped.isEmpty, let last = lastLine(of: left.text, in: previousPage.lines),
+                  !boxes.contains(where: { $0.contains(CGPoint(x: last.rect.midX, y: last.rect.midY)) }),
+                  stepped.allSatisfy({
+                      $0.maxY <= last.rect.minY + 1 && $0.minX < last.rect.maxX && $0.maxX > last.rect.minX
+                  }) else { return nil }
+            previousPage.lines.removeAll { line in
+                stepped.contains { $0.contains(CGPoint(x: line.rect.midX, y: line.rect.midY)) }
+            }
+        }
         var next = 0
         while next < pageBlocks.count, isSkippable(pageBlocks[next], page: page) { next += 1 }
         guard next < pageBlocks.count, case let .paragraph(right) = pageBlocks[next].content else { return nil }
@@ -5376,6 +5426,8 @@ enum LayoutReconstructor {
                   }
               }),
               let first = firstLine(of: right.text, in: page.lines),
+              !steppingOverBoxes || !clusters(page.tints, distance: 4)
+                .contains(where: { $0.contains(CGPoint(x: first.rect.midX, y: first.rect.midY)) }),
               !isHeaderLike(first, in: page), wordCount(first.text) >= 2,
               // A word the page break cut in half is evidence of its own, whatever else the line
               // carries: Loper Bright page 11's citations leave `…it author-` under half letters.
@@ -5418,10 +5470,17 @@ enum LayoutReconstructor {
             guard let left = joinableText(blocks[index].content) else { continue }
             var next = index + 1
             while next < blocks.count, isSkippable(blocks[next], page: page) { next += 1 }
-            guard next < blocks.count, case let .paragraph(right) = blocks[next].content,
-                  continuesColumn(left, blocks[index], into: right, blocks[next], page: page, images: images,
-                                  captions: captionTexts(blocks, page: page.number), body: body)
-            else { continue }
+            let captions = captionTexts(blocks, page: page.number)
+            if !(next < blocks.count && {
+                guard case let .paragraph(right) = blocks[next].content else { return false }
+                return continuesColumn(left, blocks[index], into: right, blocks[next], page: page, images: images,
+                                       captions: captions, body: body)
+            }()) {
+                guard let boxed = continuationPastBox(left, from: index, in: blocks, page: page, images: images,
+                                                      captions: captions, body: body) else { continue }
+                next = boxed
+            }
+            guard case let .paragraph(right) = blocks[next].content else { continue }
             let text = join(left, right, vocabulary: vocabulary, page: page.number, warnings: &warnings)
             if case .preformatted = blocks[index].content { blocks[index].content = .preformatted(text) }
             else { blocks[index].content = .paragraph(text) }
@@ -5431,6 +5490,42 @@ enum LayoutReconstructor {
             blocks.replaceSubrange((index + 1)...next, with: between)
             index -= 1
         }
+    }
+
+    /// The block past a tinted box read into the middle of a paragraph that is that paragraph's
+    /// continuation at a word boundary (#177), the counterpart of `joinWordBreaks`' reach for a
+    /// broken word. The blocks between are the page's box: each lies in one of its tinted boxes
+    /// (its first and last lines inside it), a box the anchor's last line is not in. The next block
+    /// continues the sentence by `continuesColumn`'s evidence, and its first line is the next line
+    /// of the anchor's own column (`nextLineInColumn`) or of the paragraph wrapped around an inset
+    /// (`nextLineAroundInset`); a column head elsewhere does not reach past a box. A broken word is
+    /// left to `joinWordBreaks`, which asks the book's words first.
+    private static func continuationPastBox(_ left: InlineText, from index: Int, in blocks: [ReflowBlock],
+                                            page: PageContent, images: [CGRect], captions: [String],
+                                            body: CGFloat) -> Int? {
+        let boxes = clusters(page.tints, distance: 4)
+        guard !boxes.isEmpty, !left.text.hasSuffix("-"), blocks[index].page == page.number,
+              let last = lastLine(of: left.text, in: page.lines) else { return nil }
+        func center(_ line: TextLine) -> CGPoint { CGPoint(x: line.rect.midX, y: line.rect.midY) }
+        let open = boxes.filter { !$0.contains(center(last)) }
+        func boxed(_ block: ReflowBlock) -> Bool {
+            let text = block.text.trimmingCharacters(in: .whitespacesAndNewlines)
+            guard block.page == page.number, !text.isEmpty, let top = firstLine(of: text, in: page.lines),
+                  let bottom = lastLine(of: text, in: page.lines) else { return false }
+            return open.contains { $0.contains(center(top)) && $0.contains(center(bottom)) }
+        }
+        var next = index + 1, crossed = false
+        while next < blocks.count, isSkippable(blocks[next], page: page) || boxed(blocks[next]) {
+            if !isSkippable(blocks[next], page: page) { crossed = true }
+            next += 1
+        }
+        guard crossed, next < blocks.count, case let .paragraph(right) = blocks[next].content,
+              let first = firstLine(of: right.text, in: page.lines),
+              nextLineInColumn(last, first, page: page, body: body)
+                || nextLineAroundInset(last, first, page: page, body: body, insets: images),
+              continuesColumn(left, blocks[index], into: right, blocks[next], page: page, images: images,
+                              captions: captions, body: body) else { return nil }
+        return next
     }
 
     /// A block whose text ends in a word-break hyphen continues in the next block when that block
@@ -5455,9 +5550,13 @@ enum LayoutReconstructor {
     /// (#148): the continuation's first line is the next line of the anchor's own column
     /// (`nextLineInColumn` — directly beneath it, on its edge, in its type, with no line between),
     /// and both blocks are this page's. The box keeps its place and follows the joined paragraph,
-    /// as a figure between a column's foot and the next column's head does.
+    /// as a figure between a column's foot and the next column's head does. The next line of a
+    /// paragraph wrapped around a box inset into its column (`nextLineAroundInset`) is its column's
+    /// next line too (#177, the Fed’s page 84: `…maintain a mini-` beside the sidebar, `mum
+    /// liquidity buffer…` on the full measure beneath it).
     private static func joinWordBreaks(_ blocks: inout [ReflowBlock], page: PageContent, body: CGFloat,
-                                       vocabulary: Set<String>, warnings: inout [ConversionWarning]) {
+                                       insets: [CGRect] = [], vocabulary: Set<String>,
+                                       warnings: inout [ConversionWarning]) {
         var index = 0
         while index + 1 < blocks.count {
             let leftBlock = blocks[index]
@@ -5479,6 +5578,7 @@ enum LayoutReconstructor {
                 guard blocks[candidate].page == page.number, let last = anchor ?? nil,
                       let first = firstLine(of: right.text, in: page.lines) else { return false }
                 return nextLineInColumn(last, first, page: page, body: body)
+                    || nextLineAroundInset(last, first, page: page, body: body, insets: insets)
             }
             guard let next = ((index + 1)..<blocks.count).first(where: continues),
                   case let .paragraph(right) = blocks[next].content else {
@@ -5566,6 +5666,8 @@ enum LayoutReconstructor {
         // page 230's `…twisted` / `into a helix`, beside figure 8-39): the next line lies directly
         // below, on the column's edge, at the paragraph's own line pitch.
         if nextLineInColumn(last, first, page: page, body: body) { return true }
+        // A box or figure inset into the column's edge, with the paragraph wrapped around it (#177).
+        if nextLineAroundInset(last, first, page: page, body: body, insets: images) { return true }
         // The next column's head is higher than the foot, or lower only beneath a figure that
         // heads that column and reaches above the foot (FAA page 411: `…by means of the` over
         // figure 16-29, `course select knob` under figure 16-30).
@@ -5607,6 +5709,38 @@ enum LayoutReconstructor {
               abs(first.rect.minX - last.rect.minX) <= body * 0.5,
               first.rect.maxY <= last.rect.minY + last.rect.height * 0.25,
               pitch <= max(last.rect.height, first.rect.height) * 1.5 else { return false }
+        return !page.lines.contains { other in
+            other != last && other != first && other.rect.midY < last.rect.midY && other.rect.midY > first.rect.midY
+                && other.rect.maxX > first.rect.minX && other.rect.minX < first.rect.maxX
+        }
+    }
+
+    /// `first` is the line after `last` in a paragraph wrapped around a box or figure inset into its
+    /// column's left edge (#177). The Fed's page 28 sets the sidebar `Monetary policy: Easing and
+    /// tightening defined` into the left of its measure, so `…the federal funds rate. Short-term
+    /// interest` runs the full measure, `rates would decline if the FOMC reduced its` opens the
+    /// narrowed lines beside the box, and `ously expected. Conversely, short-term interest` over
+    /// `rates would rise if the FOMC increased…` returns to the full measure beneath it. Both lines
+    /// are one size, directly beneath one another at the paragraph's pitch with no line between,
+    /// and reach the same right edge give or take two bodies; their left edges differ by more than
+    /// half a body, and an inset fills that indent: it starts at the wider line's edge, ends at
+    /// the narrower line's, stands within a line's pitch of the narrower line and clear of the
+    /// wider one.
+    static func nextLineAroundInset(_ last: TextLine, _ first: TextLine, page: PageContent, body: CGFloat,
+                                    insets: [CGRect]) -> Bool {
+        let pitch = last.rect.midY - first.rect.midY
+        guard Int(first.fontSize.rounded()) == Int(last.fontSize.rounded()),
+              first.rect.maxY <= last.rect.minY + last.rect.height * 0.25,
+              pitch <= max(last.rect.height, first.rect.height) * 1.5,
+              abs(first.rect.maxX - last.rect.maxX) <= body * 2 else { return false }
+        let (wide, narrow) = first.rect.minX < last.rect.minX ? (first.rect, last.rect) : (last.rect, first.rect)
+        let indent = narrow.minX - wide.minX
+        guard indent > body * 0.5, insets.contains(where: { inset in
+            inset.minX >= wide.minX - body && inset.minX <= wide.minX + indent * 0.5
+                && inset.maxX <= narrow.minX + body * 0.5 && inset.maxX >= wide.minX + indent * 0.5
+                && inset.minY <= narrow.maxY + pitch && inset.maxY >= narrow.minY - pitch
+                && !inset.intersects(wide.insetBy(dx: 0, dy: 1))
+        }) else { return false }
         return !page.lines.contains { other in
             other != last && other != first && other.rect.midY < last.rect.midY && other.rect.midY > first.rect.midY
                 && other.rect.maxX > first.rect.minX && other.rect.minX < first.rect.maxX

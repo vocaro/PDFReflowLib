@@ -1,0 +1,3086 @@
+{
+ "caseID": "gpo-911-2004",
+ "pages": [
+  {
+   "extGStates": {
+    "GS1": "<< /Type /ExtGState /SA false /OP false /SM .02 /op false /OPM 1 >>"
+   },
+   "fonts": [
+    {
+     "baseFont": "KAFHKN+Bembo",
+     "firstChar": 32,
+     "resourceName": "F1",
+     "sourceObject": "2481",
+     "subtype": "Type1",
+     "toUnicode": "/CIDInit /ProcSet findresource begin 12 dict begin begincmap /CIDSystemInfo <<\n/Registry (AAAAAA+F1+0) /Ordering (T1UV) /Supplement 0 >> def\n/CMapName /AAAAAA+F1+0 def\n/CMapType 2 def\n1 begincodespacerange <20> <eb> endcodespacerange\n12 beginbfchar\n<3d> <003D>\n<3f> <003F>\n<5d> <005D>\n<5f> <005F>\n<80> <2022>\n<84> <2014>\n<85> <2013>\n<a7> <00A7>\n<a9> <00A9>\n<b1> <00B1>\n<e9> <00E9>\n<eb> <00EB>\nendbfchar\n6 beginbfrange\n<20> <2a> <0020>\n<2c> <3b> <002C>\n<41> <5b> <0041>\n<61> <7a> <0061>\n<8d> <8e> <201C>\n<8f> <90> <2018>\nendbfrange\nendcmap CMapName currentdict /CMap defineresource pop end end\n",
+     "widths": [
+      278.0,
+      260.0,
+      406.0,
+      668.0,
+      458.0,
+      719.0,
+      729.0,
+      177.0,
+      302.0,
+      302.0,
+      510.0,
+      278.0,
+      260.0,
+      396.0,
+      260.0,
+      458.0,
+      490.0,
+      490.0,
+      490.0,
+      490.0,
+      490.0,
+      490.0,
+      490.0,
+      490.0,
+      490.0,
+      490.0,
+      260.0,
+      260.0,
+      278.0,
+      667.0,
+      278.0,
+      354.0,
+      278.0,
+      677.0,
+      635.0,
+      729.0,
+      760.0,
+      594.0,
+      531.0,
+      740.0,
+      792.0,
+      333.0,
+      302.0,
+      698.0,
+      552.0,
+      917.0,
+      813.0,
+      823.0,
+      563.0,
+      823.0,
+      802.0,
+      490.0,
+      677.0,
+      792.0,
+      688.0,
+      1000.0,
+      750.0,
+      708.0,
+      677.0,
+      302.0,
+      278.0,
+      302.0,
+      278.0,
+      500.0,
+      278.0,
+      396.0,
+      500.0,
+      427.0,
+      500.0,
+      438.0,
+      271.0,
+      469.0,
+      521.0,
+      260.0,
+      250.0,
+      500.0,
+      240.0,
+      792.0,
+      521.0,
+      521.0,
+      500.0,
+      500.0,
+      333.0,
+      302.0,
+      292.0,
+      521.0,
+      479.0,
+      740.0,
+      490.0,
+      469.0,
+      406.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      354.0,
+      278.0,
+      278.0,
+      278.0,
+      1000.0,
+      500.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      479.0,
+      479.0,
+      260.0,
+      260.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      469.0,
+      278.0,
+      760.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      667.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      438.0,
+      278.0,
+      438.0
+     ]
+    }
+   ],
+   "lines": [
+    {
+     "rect": [
+      39.66,
+      562.5344,
+      230.3408,
+      8.607
+     ],
+     "text": "236 THE 9/11 COMMISSION REPORT"
+    },
+    {
+     "rect": [
+      39.66,
+      537.8551,
+      312.0018,
+      9.2865
+     ],
+     "text": "only a handful of al Qaeda operatives who, according to KSM, was aware of"
+    },
+    {
+     "rect": [
+      39.66,
+      526.6047,
+      314.8277,
+      9.2865
+     ],
+     "text": "the full details of the planned planes operation.Abu Turab taught the opera="
+    },
+    {
+     "rect": [
+      39.66,
+      515.3543,
+      312.0336,
+      9.2865
+     ],
+     "text": "tives how to conduct hijackings,disarm air marshals,and handle explosives.He"
+    },
+    {
+     "rect": [
+      39.66,
+      504.1038,
+      314.796,
+      9.2865
+     ],
+     "text": "also trained them in bodybuilding and provided them with a few basic Eng="
+    },
+    {
+     "rect": [
+      39.66,
+      492.8534,
+      102.384,
+      9.4736
+     ],
+     "text": "lish words and phrases.108"
+    },
+    {
+     "rect": [
+      51.66,
+      481.6051,
+      300.0452,
+      9.2865
+     ],
+     "text": "According to KSM,Abu Turab even had the trainees butcher a sheep and a"
+    },
+    {
+     "rect": [
+      39.6614,
+      470.3547,
+      312.0336,
+      9.2865
+     ],
+     "text": "camel with a knife to prepare to use knives during the hijackings.The recruits"
+    },
+    {
+     "rect": [
+      39.6634,
+      459.1043,
+      312.0459,
+      9.2865
+     ],
+     "text": "learned to focus on storming the cockpit at the earliest opportunity when the"
+    },
+    {
+     "rect": [
+      39.6634,
+      447.8539,
+      311.9926,
+      9.2865
+     ],
+     "text": "doors first opened,and to worry about seizing control over the rest of the plane"
+    },
+    {
+     "rect": [
+      39.6624,
+      436.6034,
+      312.0131,
+      9.2865
+     ],
+     "text": "later.The operatives were taught about other kinds of attack as well, such as"
+    },
+    {
+     "rect": [
+      39.6634,
+      425.353,
+      312.0654,
+      9.2865
+     ],
+     "text": "truck bombing, so that they would not be able to disclose the exact nature of"
+    },
+    {
+     "rect": [
+      39.6644,
+      414.1026,
+      312.0387,
+      9.2865
+     ],
+     "text": "their operation if they were caught. According to KSM, the muscle did not"
+    },
+    {
+     "rect": [
+      39.6644,
+      402.8522,
+      312.1648,
+      9.2865
+     ],
+     "text": "learn the full details—including the plan to hijack planes and fly them into"
+    },
+    {
+     "rect": [
+      39.6644,
+      391.6018,
+      195.2177,
+      9.4752
+     ],
+     "text": "buildings—before reaching the United States.109"
+    },
+    {
+     "rect": [
+      51.66,
+      380.3551,
+      300.08,
+      9.2865
+     ],
+     "text": "After training in Afghanistan,the operatives went to a safehouse maintained"
+    },
+    {
+     "rect": [
+      39.6603,
+      369.1047,
+      312.0162,
+      9.2865
+     ],
+     "text": "by KSM in Karachi and stayed there temporarily before being deployed to the"
+    },
+    {
+     "rect": [
+      39.6603,
+      357.8543,
+      312.0192,
+      9.2865
+     ],
+     "text": "United States via the UAE.The safehouse was run by al Qaeda operative Abd"
+    },
+    {
+     "rect": [
+      39.6614,
+      346.6038,
+      312.0438,
+      9.2865
+     ],
+     "text": "al Rahim Ghulum Rabbani, also known as Abu Rahmah, a close associate of"
+    },
+    {
+     "rect": [
+      39.6624,
+      335.3534,
+      314.7857,
+      9.2865
+     ],
+     "text": "KSM who assisted him for three years by finding apartments and lending logis="
+    },
+    {
+     "rect": [
+      39.6634,
+      324.103,
+      180.3652,
+      9.2865
+     ],
+     "text": "tical support to operatives KSM would send."
+    },
+    {
+     "rect": [
+      51.66,
+      312.8526,
+      299.9857,
+      9.2865
+     ],
+     "text": "According to an al Qaeda facilitator, operatives were brought to the safe-"
+    },
+    {
+     "rect": [
+      39.6593,
+      301.6022,
+      311.9936,
+      9.2865
+     ],
+     "text": "house by a trusted Pakistani al Qaeda courier named Abdullah Sindhi, who"
+    },
+    {
+     "rect": [
+      39.6583,
+      290.3518,
+      311.9495,
+      9.2865
+     ],
+     "text": "also worked for KSM.The future hijackers usually arrived in groups of two"
+    },
+    {
+     "rect": [
+      39.6593,
+      279.1014,
+      311.9915,
+      9.2865
+     ],
+     "text": "or three, staying at the safe house for as long as two weeks.The facilitator has"
+    },
+    {
+     "rect": [
+      39.6583,
+      267.851,
+      311.9977,
+      9.2865
+     ],
+     "text": "identified each operative whom he assisted at KSM’s direction in the spring"
+    },
+    {
+     "rect": [
+      39.6583,
+      256.6006,
+      311.9946,
+      9.2865
+     ],
+     "text": "of 2001. Before the operatives left Pakistan, each of them received $10,000"
+    },
+    {
+     "rect": [
+      39.6562,
+      245.3502,
+      137.866,
+      9.4768
+     ],
+     "text": "from KSM for future expenses.110"
+    },
+    {
+     "rect": [
+      51.66,
+      234.1051,
+      300.0247,
+      9.2865
+     ],
+     "text": "From Pakistan, the operatives transited through the UAE en route to the"
+    },
+    {
+     "rect": [
+      39.6614,
+      222.8547,
+      314.9856,
+      9.2865
+     ],
+     "text": "United States. In the Emirates they were assisted primarily by al Qaeda oper="
+    },
+    {
+     "rect": [
+      39.6624,
+      211.6043,
+      312.0725,
+      9.2865
+     ],
+     "text": "atives Ali Abdul Aziz Ali and Mustafa al Hawsawi.Ali apparently assisted nine"
+    },
+    {
+     "rect": [
+      39.6644,
+      200.3538,
+      312.0121,
+      9.2865
+     ],
+     "text": "future hijackers between April and June 2001 as they came through Dubai.He"
+    },
+    {
+     "rect": [
+      39.6644,
+      189.1034,
+      312.0366,
+      9.2865
+     ],
+     "text": "helped them with plane tickets,traveler’s checks,and hotel reservations;he also"
+    },
+    {
+     "rect": [
+      39.6644,
+      177.853,
+      312.0326,
+      9.2865
+     ],
+     "text": "taught them about everyday aspects of life in the West, such as purchasing"
+    },
+    {
+     "rect": [
+      39.6654,
+      166.6026,
+      312.0787,
+      9.2865
+     ],
+     "text": "clothes and ordering food. Dubai, a modern city with easy access to a major"
+    },
+    {
+     "rect": [
+      39.6654,
+      155.3522,
+      312.0377,
+      9.2865
+     ],
+     "text": "airport, travel agencies, hotels, and Western commercial establishments, was an"
+    },
+    {
+     "rect": [
+      39.6654,
+      144.1018,
+      83.7053,
+      9.4752
+     ],
+     "text": "ideal transit point.111"
+    },
+    {
+     "rect": [
+      51.66,
+      132.8551,
+      300.037,
+      9.2865
+     ],
+     "text": "Ali reportedly assumed the operatives he was helping were involved in a big"
+    },
+    {
+     "rect": [
+      39.6614,
+      121.6047,
+      311.9976,
+      9.4724
+     ],
+     "text": "operation in the United States, he did not know the details.112 When he asked"
+    },
+    {
+     "rect": [
+      39.6602,
+      110.3547,
+      312.0151,
+      9.2865
+     ],
+     "text": "KSM to send him an assistant,KSM dispatched Hawsawi, who had worked on"
+    },
+    {
+     "rect": [
+      39.6612,
+      99.1043,
+      312.0582,
+      9.2865
+     ],
+     "text": "al Qaeda’s media committee in Kandahar. Hawsawi helped send the last four"
+    },
+    {
+     "rect": [
+      39.6612,
+      87.8539,
+      312.009,
+      9.2865
+     ],
+     "text": "operatives (other than Mihdhar) to the United States from the UAE. Hawsawi"
+    },
+    {
+     "rect": [
+      39.6612,
+      76.6035,
+      312.0684,
+      9.2865
+     ],
+     "text": "would consult with Atta about the hijackers’ travel schedules to the United"
+    },
+    {
+     "rect": [
+      39.6612,
+      65.3531,
+      291.9712,
+      9.2865
+     ],
+     "text": "States and later check with Atta to confirm that each had arrived.Hawsawi "
+    },
+    {
+     "rect": [
+      335.8698,
+      65.3531,
+      15.8075,
+      9.2865
+     ],
+     "text": "told"
+    }
+   ],
+   "operators": "q\r/RelativeColorimetric ri \r/GS1 gs\rBT\r/F1 1 Tf\r9.5 0 0 9.5 39.66 564.7479 Tm\r0 g\r0.0004 Tc\r-0.0002 Tw\r[(236 )-6845.9(THE 9/11 COMMISSION REPOR)112.3(T)0( )]TJ\r10.25 0 0 10.25 39.66 540.2433 Tm\r0.0002 Tc\r0.0462 Tw\r[(only a handful of al Qaeda operati)27.4(v)40.2(es who)51.2(,)0.1( )100.3(accor)21.1(ding to KSM, )102.8(w)30(a)0(s a)30.5(w)30(ar)20.2(e of )]TJ\r0 -1.0976 TD\r0.0458 Tw\r[(the full details of the planned planes operation.)-133.3(Ab)15.5(u )125.3(T)125.4(u)0(rab taught the opera=)]TJ\rT*\r-0.0516 Tw\r[(ti)20.2(v)40.2(e)0(s ho)40.8(w to conduct hijackings,)-120.9(d)0(isar)-43.7(m)-0.1( air mar)-17.8(s)0.1(hals,)-125.2(and handle explosi)24.1(v)40.2(es.)-125.9(H)-0.1(e )]TJ\rT*\r0.0342 Tw\r[(also trained them in bodyb)20.8(uilding and pr)33(o)40(v)0(ided them with a fe)24.2(w basic Eng=)]TJ\rT*\r-0.0001 Tw\r[(lish w)41.1(o)0.2(r)20.2(d)0(s and phrases.)]TJ\r7.175 0 0 7.175 131.4996 497.4983 Tm\r-0.0002 Tc\r0 Tw\r(108 )Tj\r10.25 0 0 10.25 51.66 483.9933 Tm\r0.0002 Tc\r-0.0159 Tw\r[(Accor)21.2(ding to KSM,)-79.6(Ab)15.5(u )125.2(T)125.4(u)0(rab e)21.1(v)40.2(en had the trainees b)19.3(u)0(tcher a sheep and a )]TJ\r-1.1706 -1.0976 TD\r-0.0213 Tw\r[(camel with a knife to pr)24.9(epar)20.8(e to use kni)22.2(v)40.2(e)0(s dur)-43.6(ing the hijackings.)-27.6(T)-0.1(he r)20.9(ecr)-24.2(uits )]TJ\r0.0002 -1.0976 TD\r-0.0228 Tw\r[(lear)-38.9(ned to focus on stor)-40.5(m)-0.1(ing the cockpit at the earliest oppor)-16.4(tunity when the )]TJ\rT*\r-0.0004 Tc\r-0.0691 Tw\r[(door)-19.9(s fir)-19.9(st opened,)-108.6(and to w)39.7(o)0.1(r)-39.9(r)-29.7(y about seizing contr)29.7(ol o)39.7(v)39.9(er the r)19.7(est of the plane )]TJ\r-0.0001 -1.0976 TD\r0.0002 Tc\r0.0583 Tw\r[(later)40.9(.)-111.2(The operati)22.6(v)40.2(es w)40.5(e)0.2(r)20.2(e)0.2( taught about other kinds of attack as w)48.3(e)0(ll,)-235.9(such as )]TJ\r0.0001 -1.0976 TD\r0.0003 Tc\r0.0013 Tw\r[(tr)-24.4(uck bombing, )103(so that the)22.2(y)0.1( w)40.4(ould not be ab)18(le to disclose the exact natur)26.3(e of )]TJ\r0.0001 -1.0976 TD\r0.0002 Tc\r0.0758 Tw\r[(their operation if the)24.7(y)0( w)40.3(e)0.2(r)20.2(e)0.2( caught. )181.7(Accor)21.2(ding to KSM, )102.8(the m)15.9(u)0(scle did not )]TJ\rT*\r0.0801 Tw\r[(lear)-38.9(n the full details\\204including the plan to hijack planes and fly them into )]TJ\rT*\r-0.0001 Tw\r[(b)15.1(u)0(ildings\\204befor)23.6(e r)20.5(eaching the United States.)]TJ\r7.175 0 0 7.175 224.3377 396.2483 Tm\r-0.0002 Tc\r0 Tw\r(109 )Tj\r10.25 0 0 10.25 51.66 382.7433 Tm\r0.0002 Tc\r-0.0455 Tw\r[(After training in )83.6(Afghanistan,)-129.5(the operati)22.4(v)40.2(es w)40.5(ent to a safehouse maintained )]TJ\r-1.1707 -1.0976 TD\r-0.0318 Tw\r[(b)25.1(y)0.2( KSM in Karachi and sta)34.9(y)40(ed ther)21.3(e temporar)-42.4(ily befor)21.8(e being deplo)42.7(y)40(ed to the )]TJ\rT*\r-0.0066 Tw\r[(United States via the U)70(A)-0.1(E.)-45.7(The safehouse w)33.3(a)0(s r)-24.2(un b)25.7(y)0.2( al Qaeda operati)23.7(v)40.2(e )80.2(Abd )]TJ\r0.0001 -1.0976 TD\r0.0222 Tw\r[(al Rahim Ghulum Rabbani, )106(also kno)41.5(wn as )80.8(Ab)15.5(u Rahmah, )102.3(a close associate of )]TJ\r0.0001 -1.0976 TD\r-0.0657 Tw\r[(KSM who assisted him for thr)26.3(ee y)40.5(ear)-19.1(s b)25.3(y)0.2( finding apar)-21.9(tments and lending lo)24.6(g)-29.6(i)0.7(s=)]TJ\r0.0001 -1.0976 TD\r-0.0001 Tw\r[(tical suppor)-21.9(t to operati)22.8(v)40.2(es KSM w)42.1(ould send. )]TJ\r1.1704 -1.0976 TD\r0.0047 Tc\r0.019 Tw\r[(Accor)19.6(ding to an al Qaeda f)-25.3(acilitator)39.5(, )95.3(operati)19.6(v)39.8(es w)39.6(e)0(r)19.6(e)-0.1( br)29.6(ought to the safe-)]TJ\r-1.1708 -1.0976 TD\r0.0048 Tc\r0.0463 Tw\r[(house b)24.8(y)0( a tr)-25(usted P)29.7(akistani al Qaeda cour)-45.1(ier named )79.6(Abdullah Sindhi, )99.7(who )]TJ\r-0.0001 -1.0976 TD\r0.0047 Tc\r0.0393 Tw\r[(also w)39.6(ork)29.6(ed for KSM.)-97.4(The futur)19.5(e hijack)29.5(er)-20(s usually ar)-40.1(r)-44.9(i)19.8(v)39.8(ed in g)-30.1(r)29.8(oups of tw)39.5(o )]TJ\r0.0001 -1.0976 TD\r-0.013 Tw\r[(or thr)19.6(ee)29.6(, )95.4(sta)29.6(ying at the safe house for as long as tw)39.3(o w)39.6(eeks.)-44.9(The f)-25.1(acilitator has )]TJ\r-0.0001 -1.0976 TD\r0.0048 Tc\r0.0301 Tw\r[(identified each operati)19.5(v)39.9(e)0( whom he assisted at KSM\\220)99.5(s dir)19.7(ection in the spr)-45.1(ing )]TJ\rT*\r0.066 Tw\r[(of 2001. )99.8(Befor)19.7(e the operati)19.6(v)39.9(es left P)29.7(akistan, )99.8(each of them r)19.6(ecei)19.7(v)39.9(ed $10,000 )]TJ\r-0.0002 -1.0976 TD\r0 Tw\r[(fr)29.7(om KSM for futur)19.6(e expenses.)]TJ\r7.175 0 0 7.175 166.9061 249.9983 Tm\r(110 )Tj\r10.25 0 0 10.25 51.66 236.4933 Tm\r0.0002 Tc\r0.0659 Tw\r[(Fr)30.3(om P)30.7(akistan, )101.7(the operati)22.4(v)40.2(es transited thr)33.3(ough the U)67.3(A)-0.1(E en r)31.4(oute to the )]TJ\r-1.1706 -1.0976 TD\r0.0003 Tc\r0.0036 Tw\r[(United States. )100.1(In the Emirates the)20.2(y w)40.1(e)0.3(r)20.3(e)0.3( assisted pr)-44.5(imar)-44.6(ily b)25.2(y)0.3( al Qaeda oper=)]TJ\r0.0001 -1.0976 TD\r0.0002 Tc\r0.0154 Tw\r[(ati)20.5(v)40.2(es )80.3(Ali )80.5(Abdul )81.2(Aziz )80.9(Ali and Mustaf)-21.6(a)0( al Ha)31.1(wsa)30.6(w)-0.1(i.)-113(Ali appar)21.9(ently assisted nine )]TJ\r0.0002 -1.0976 TD\r-0.0438 Tw\r[(futur)21(e)0( hijack)31.6(er)-19.3(s betw)41(een )80.6(Apr)-44.1(il and J)31.3(une 2001 as the)23.1(y)0( came thr)32.1(ough Dubai.)-131.6(H)-0.1(e )]TJ\rT*\r-0.0507 Tw\r[(helped them with plane tick)36(e)0(ts,)-126.6(tra)30.4(v)40.2(e)0(ler\\220)101.1(s checks,)-125.4(and hotel r)22.2(e)0(ser)-24(v)30.2(ations;)-125.7(he also )]TJ\rT*\r0.129 Tw\r[(taught them about e)24.2(v)40.2(er)-29.3(yda)30.6(y aspects of life in the )129.6(W)125.2(e)0(st, )100.7(such as pur)22.2(chasing )]TJ\r0.0001 -1.0976 TD\r0.0384 Tw\r[(clothes and or)23(der)-44.1(ing food. )102(Dubai, )101.4(a moder)-38(n city with easy access to a major )]TJ\rT*\r-0.0128 Tw\r[(air)-39.2(por)-24.1(t,)-165.1(tra)30.4(v)40.2(e)0(l agencies,)-162.7(hotels,)-163.7(and )125.7(W)125.2(e)0(ster)-38.6(n)0( commer)21.9(c)0(ial estab)17(lishments,)-162.9(w)30(a)0(s an )]TJ\rT*\r0.0001 Tc\r0 Tw\r(ideal transit point.)Tj\r7.175 0 0 7.175 112.8264 148.7483 Tm\r-0.0002 Tc\r(111 )Tj\r10.25 0 0 10.25 51.66 135.2433 Tm\r0.0002 Tc\r-0.0535 Tw\r[(Ali r)20.7(epor)-23.8(tedly assumed the operati)25.7(v)40.2(es he w)31.1(a)0(s helping w)42.4(e)0.2(r)20.2(e)0.2( in)40.3(v)40.2(o)0(lv)40.5(ed in a big )]TJ\r-1.1706 -1.0976 TD\r-0.0264 Tw\r[(operation in the United States,)-144.7(he did not kno)42.8(w the details.)]TJ\r7.175 0 0 7.175 277.8208 126.2483 Tm\r-0.0002 Tc\r0 Tw\r(112)Tj\r10.25 0 0 10.25 289.6659 123.9933 Tm\r0.0002 Tc\r-0.0264 Tw\r[(When he ask)32.5(ed )]TJ\r-24.3908 -1.0976 TD\r-0.0381 Tw\r[(KSM to send him an assistant,)-133.5(K)-0.1(SM dispatched Ha)34.2(wsa)30.6(w)-0.1(i,)-139.3(who had w)41.8(o)0(rk)30.5(ed on )]TJ\r0.0001 -1.0976 TD\r0.0309 Tw\r[(al Qaeda\\220)102.1(s media committee in Kandahar)46.8(. )100.2(Ha)30(wsa)30.6(w)-0.1(i helped send the last four )]TJ\rT*\r-0.0311 Tw\r[(operati)21.6(v)40.2(es \\(other than Mihdhar\\) to the United States fr)40.3(om the U)66.8(A)-0.1(E.)-146.2(Ha)30.4(wsa)30.6(w)-0.1(i )]TJ\rT*\r0.0877 Tw\r[(w)40(ould consult with )83.7(Atta about the hijack)34.6(er)-19.3(s\\220 )100.2(tra)30.4(v)40.2(e)0(l schedules to the United )]TJ\rT*\r-0.0036 Tc\r-0.0659 Tw\r[(States and later check with )79.7(Atta to confir)-45(m that each had ar)-39.9(r)-44.7(i)20(v)40(ed.)-108.6(Ha)29.7(wsa)29.7(wi )-208.5(told )]TJ\rET\rQ\r",
+   "page": 254
+  },
+  {
+   "extGStates": {
+    "GS1": "<< /Type /ExtGState /SA false /OP false /SM .02 /op false /OPM 1 >>"
+   },
+   "fonts": [
+    {
+     "baseFont": "KAFHKN+Bembo",
+     "firstChar": 32,
+     "resourceName": "F1",
+     "sourceObject": "2481",
+     "subtype": "Type1",
+     "toUnicode": "/CIDInit /ProcSet findresource begin 12 dict begin begincmap /CIDSystemInfo <<\n/Registry (AAAAAA+F1+0) /Ordering (T1UV) /Supplement 0 >> def\n/CMapName /AAAAAA+F1+0 def\n/CMapType 2 def\n1 begincodespacerange <20> <eb> endcodespacerange\n12 beginbfchar\n<3d> <003D>\n<3f> <003F>\n<5d> <005D>\n<5f> <005F>\n<80> <2022>\n<84> <2014>\n<85> <2013>\n<a7> <00A7>\n<a9> <00A9>\n<b1> <00B1>\n<e9> <00E9>\n<eb> <00EB>\nendbfchar\n6 beginbfrange\n<20> <2a> <0020>\n<2c> <3b> <002C>\n<41> <5b> <0041>\n<61> <7a> <0061>\n<8d> <8e> <201C>\n<8f> <90> <2018>\nendbfrange\nendcmap CMapName currentdict /CMap defineresource pop end end\n",
+     "widths": [
+      278.0,
+      260.0,
+      406.0,
+      668.0,
+      458.0,
+      719.0,
+      729.0,
+      177.0,
+      302.0,
+      302.0,
+      510.0,
+      278.0,
+      260.0,
+      396.0,
+      260.0,
+      458.0,
+      490.0,
+      490.0,
+      490.0,
+      490.0,
+      490.0,
+      490.0,
+      490.0,
+      490.0,
+      490.0,
+      490.0,
+      260.0,
+      260.0,
+      278.0,
+      667.0,
+      278.0,
+      354.0,
+      278.0,
+      677.0,
+      635.0,
+      729.0,
+      760.0,
+      594.0,
+      531.0,
+      740.0,
+      792.0,
+      333.0,
+      302.0,
+      698.0,
+      552.0,
+      917.0,
+      813.0,
+      823.0,
+      563.0,
+      823.0,
+      802.0,
+      490.0,
+      677.0,
+      792.0,
+      688.0,
+      1000.0,
+      750.0,
+      708.0,
+      677.0,
+      302.0,
+      278.0,
+      302.0,
+      278.0,
+      500.0,
+      278.0,
+      396.0,
+      500.0,
+      427.0,
+      500.0,
+      438.0,
+      271.0,
+      469.0,
+      521.0,
+      260.0,
+      250.0,
+      500.0,
+      240.0,
+      792.0,
+      521.0,
+      521.0,
+      500.0,
+      500.0,
+      333.0,
+      302.0,
+      292.0,
+      521.0,
+      479.0,
+      740.0,
+      490.0,
+      469.0,
+      406.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      354.0,
+      278.0,
+      278.0,
+      278.0,
+      1000.0,
+      500.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      479.0,
+      479.0,
+      260.0,
+      260.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      469.0,
+      278.0,
+      760.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      667.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      438.0,
+      278.0,
+      438.0
+     ]
+    },
+    {
+     "baseFont": "KAGBEE+Bembo-Bold",
+     "firstChar": 32,
+     "resourceName": "F6",
+     "sourceObject": "2173",
+     "subtype": "Type1",
+     "toUnicode": "/CIDInit /ProcSet findresource begin 12 dict begin begincmap /CIDSystemInfo <<\n/Registry (AAAAAA+F6+0) /Ordering (T1UV) /Supplement 0 >> def\n/CMapName /AAAAAA+F6+0 def\n/CMapType 2 def\n1 begincodespacerange <20> <90> endcodespacerange\n6 beginbfchar\n<20> <0020>\n<3f> <003F>\n<80> <2022>\n<84> <2014>\n<85> <2013>\n<90> <2019>\nendbfchar\n5 beginbfrange\n<28> <29> <0028>\n<2c> <3b> <002C>\n<41> <5a> <0041>\n<61> <7a> <0061>\n<8d> <8e> <201C>\nendbfrange\nendcmap CMapName currentdict /CMap defineresource pop end end\n",
+     "widths": [
+      333.0,
+      333.0,
+      333.0,
+      333.0,
+      333.0,
+      333.0,
+      333.0,
+      333.0,
+      354.0,
+      354.0,
+      333.0,
+      333.0,
+      313.0,
+      417.0,
+      313.0,
+      531.0,
+      500.0,
+      500.0,
+      500.0,
+      500.0,
+      500.0,
+      500.0,
+      500.0,
+      500.0,
+      500.0,
+      500.0,
+      313.0,
+      313.0,
+      333.0,
+      333.0,
+      333.0,
+      365.0,
+      333.0,
+      740.0,
+      698.0,
+      740.0,
+      823.0,
+      646.0,
+      594.0,
+      781.0,
+      833.0,
+      365.0,
+      344.0,
+      740.0,
+      604.0,
+      927.0,
+      813.0,
+      844.0,
+      646.0,
+      844.0,
+      771.0,
+      563.0,
+      729.0,
+      771.0,
+      750.0,
+      1000.0,
+      802.0,
+      750.0,
+      750.0,
+      333.0,
+      333.0,
+      333.0,
+      333.0,
+      333.0,
+      333.0,
+      479.0,
+      573.0,
+      490.0,
+      573.0,
+      479.0,
+      323.0,
+      552.0,
+      563.0,
+      292.0,
+      281.0,
+      542.0,
+      271.0,
+      927.0,
+      573.0,
+      573.0,
+      573.0,
+      573.0,
+      396.0,
+      375.0,
+      344.0,
+      573.0,
+      521.0,
+      781.0,
+      531.0,
+      521.0,
+      510.0,
+      333.0,
+      333.0,
+      333.0,
+      333.0,
+      333.0,
+      354.0,
+      333.0,
+      333.0,
+      333.0,
+      1000.0,
+      500.0,
+      333.0,
+      333.0,
+      333.0,
+      333.0,
+      333.0,
+      333.0,
+      333.0,
+      583.0,
+      583.0,
+      333.0,
+      313.0
+     ]
+    }
+   ],
+   "lines": [
+    {
+     "rect": [
+      152.7848,
+      562.5344,
+      203.9175,
+      8.607
+     ],
+     "text": "THE ATTACK LOOMS 241"
+    },
+    {
+     "rect": [
+      44.7,
+      537.8551,
+      312.009,
+      9.2865
+     ],
+     "text": "Moqed,flew into Iran from Bahrain.In February 2001,Khalid al Mihdhar may"
+    },
+    {
+     "rect": [
+      44.7,
+      526.6047,
+      312.0541,
+      9.2865
+     ],
+     "text": "have taken a flight from Syria to Iran, and then traveled further within Iran to"
+    },
+    {
+     "rect": [
+      44.7,
+      515.3543,
+      137.8211,
+      9.4728
+     ],
+     "text": "a point near the Afghan border.125"
+    },
+    {
+     "rect": [
+      56.7,
+      504.1051,
+      300.0073,
+      9.2865
+     ],
+     "text": "KSM and Binalshibh have confirmed that several of the 9/11 hijackers (at"
+    },
+    {
+     "rect": [
+      44.7003,
+      492.8547,
+      312.0233,
+      9.2865
+     ],
+     "text": "least eight, according to Binalshibh) transited Iran on their way to or from"
+    },
+    {
+     "rect": [
+      44.7003,
+      481.6043,
+      312.1279,
+      9.2865
+     ],
+     "text": "Afghanistan, taking advantage of the Iranian practice of not stamping Saudi"
+    },
+    {
+     "rect": [
+      44.7003,
+      470.3539,
+      312.0131,
+      9.2865
+     ],
+     "text": "passports.They deny any other reason for the hijackers’travel to Iran.They also"
+    },
+    {
+     "rect": [
+      44.7024,
+      459.1034,
+      251.4896,
+      9.4736
+     ],
+     "text": "deny any relationship between the hijackers and Hezbollah.126"
+    },
+    {
+     "rect": [
+      56.7,
+      447.8551,
+      300.0862,
+      9.2865
+     ],
+     "text": "In sum, there is strong evidence that Iran facilitated the transit of al Qaeda"
+    },
+    {
+     "rect": [
+      44.6993,
+      436.6047,
+      311.9967,
+      9.2865
+     ],
+     "text": "members into and out of Afghanistan before 9/11,and that some of these were"
+    },
+    {
+     "rect": [
+      44.6993,
+      425.3543,
+      314.8493,
+      9.2865
+     ],
+     "text": "future 9/11 hijackers.There also is circumstantial evidence that senior Hezbol="
+    },
+    {
+     "rect": [
+      44.6993,
+      414.1038,
+      312.0182,
+      9.2865
+     ],
+     "text": "lah operatives were closely tracking the travel of some of these future muscle"
+    },
+    {
+     "rect": [
+      44.6993,
+      402.8534,
+      314.8206,
+      9.2865
+     ],
+     "text": "hijackers into Iran in November 2000. However, we cannot rule out the pos="
+    },
+    {
+     "rect": [
+      44.7003,
+      391.603,
+      314.7468,
+      9.2865
+     ],
+     "text": "sibility of a remarkable coincidence—that is,that Hezbollah was actually focus="
+    },
+    {
+     "rect": [
+      44.7003,
+      380.3526,
+      312.0326,
+      9.2865
+     ],
+     "text": "ing on some other group of individuals traveling from Saudi Arabia during this"
+    },
+    {
+     "rect": [
+      44.6993,
+      369.1022,
+      208.7735,
+      9.4748
+     ],
+     "text": "same time frame, rather than the future hijackers.127"
+    },
+    {
+     "rect": [
+      56.7,
+      357.8551,
+      302.8352,
+      9.2865
+     ],
+     "text": "We have found no evidence that Iran or Hezbollah was aware of the plan="
+    },
+    {
+     "rect": [
+      44.7003,
+      346.6047,
+      107.0715,
+      9.2865
+     ],
+     "text": "ning for what later became "
+    },
+    {
+     "rect": [
+      156.8866,
+      346.6047,
+      199.8268,
+      9.2865
+     ],
+     "text": "the 9/11 attack.At the time of their travel through"
+    },
+    {
+     "rect": [
+      44.7003,
+      335.3543,
+      314.8062,
+      9.2865
+     ],
+     "text": "Iran, the al Qaeda operatives themselves were probably not aware of the spe="
+    },
+    {
+     "rect": [
+      44.7024,
+      324.1038,
+      148.5697,
+      9.2865
+     ],
+     "text": "cific details of their future operation."
+    },
+    {
+     "rect": [
+      56.699,
+      312.8534,
+      300.0277,
+      9.2865
+     ],
+     "text": "After 9/11, Iran and Hezbollah wished to conceal any past evidence of"
+    },
+    {
+     "rect": [
+      44.6983,
+      301.603,
+      314.8318,
+      9.2865
+     ],
+     "text": "cooperation with Sunni terrorists associated with al Qaeda.A senior Hezbol="
+    },
+    {
+     "rect": [
+      44.6983,
+      290.3526,
+      247.4247,
+      9.4744
+     ],
+     "text": "lah official disclaimed any Hezbollah involvement in 9/11.128"
+    },
+    {
+     "rect": [
+      56.7,
+      279.1051,
+      300.036,
+      9.2865
+     ],
+     "text": "We believe this topic requires further investigation by the U.S.government."
+    },
+    {
+     "rect": [
+      44.7,
+      244.6973,
+      209.928,
+      10.872
+     ],
+     "text": "7.4 FINAL STRATEGIES AND TACTICS"
+    },
+    {
+     "rect": [
+      44.7,
+      221.9166,
+      177.6438,
+      9.2148
+     ],
+     "text": "Final Preparations in the United States"
+    },
+    {
+     "rect": [
+      44.7,
+      210.6047,
+      314.7908,
+      9.2865
+     ],
+     "text": "During the early summer of 2001,Atta, assisted by Shehhi, was busy coordi="
+    },
+    {
+     "rect": [
+      44.7,
+      199.3542,
+      314.8144,
+      9.2865
+     ],
+     "text": "nating the arrival of most of the muscle hijackers in southern Florida—pick="
+    },
+    {
+     "rect": [
+      44.7,
+      188.1038,
+      312.0623,
+      9.2865
+     ],
+     "text": "ing them up at the airport, finding them places to stay, and helping them settle"
+    },
+    {
+     "rect": [
+      44.7,
+      176.8534,
+      93.9533,
+      9.4736
+     ],
+     "text": "in the United States.129"
+    },
+    {
+     "rect": [
+      56.7,
+      165.6051,
+      299.9867,
+      9.2865
+     ],
+     "text": "The majority settled in Florida.Some opened bank accounts,acquired mail-"
+    },
+    {
+     "rect": [
+      44.7003,
+      154.3547,
+      312.0356,
+      9.2865
+     ],
+     "text": "boxes, and rented cars. Several also joined local gyms, presumably to stay fit for"
+    },
+    {
+     "rect": [
+      44.7014,
+      143.1042,
+      312.0049,
+      9.2865
+     ],
+     "text": "the operation.Upon first arriving,most stayed in hotels and motels;but by mid-"
+    },
+    {
+     "rect": [
+      44.6993,
+      131.8538,
+      312.0654,
+      9.2865
+     ],
+     "text": "June, they settled in shared apartments relatively close to one another and"
+    },
+    {
+     "rect": [
+      44.6993,
+      120.6034,
+      312.0248,
+      9.4736
+     ],
+     "text": "Atta.130 Though these muscle hijackers did not travel much after arriving in"
+    },
+    {
+     "rect": [
+      44.6998,
+      109.3547,
+      311.9946,
+      9.2865
+     ],
+     "text": "the United States, two of them,Waleed al Shehri and Satam al Suqami, took"
+    },
+    {
+     "rect": [
+      44.6998,
+      98.1043,
+      54.08,
+      9.2865
+     ],
+     "text": "unusual trips."
+    },
+    {
+     "rect": [
+      56.6995,
+      86.8539,
+      299.9888,
+      9.2865
+     ],
+     "text": "On May 19, Shehri and Suqami flew from Fort Lauderdale to Freeport,"
+    },
+    {
+     "rect": [
+      44.6977,
+      75.6035,
+      312.0243,
+      9.2865
+     ],
+     "text": "the Bahamas,where they had reservations at the Bahamas Princess Resort.The"
+    },
+    {
+     "rect": [
+      44.6977,
+      64.3531,
+      312.0182,
+      9.2865
+     ],
+     "text": "two were turned away by Bahamian officials on arrival,however,because they"
+    }
+   ],
+   "operators": "q\r/RelativeColorimetric ri \r/GS1 gs\rBT\r/F1 1 Tf\r9.5 0 0 9.5 152.7848 564.7479 Tm\r0 g\r0.0004 Tc\r-0.0802 Tw\r[(THE A)77.3(T)0.9(T)75.4(A)40.4(CK )-78.6(LOOMS )-9706.4(241 )]TJ\r10.25 0 0 10.25 44.7 540.2433 Tm\r0.0002 Tc\r-0.0618 Tw\r[(Moqed,)-114.6(fle)20.4(w into Iran fr)32.7(om Bahrain.)-113.5(In F)20.5(ebr)-24.1(uar)-29.1(y 2001,)-114.8(Khalid al Mihdhar ma)34.6(y )]TJ\r0 -1.0976 TD\r-0.0126 Tw\r[(ha)30.3(v)40.2(e)0.2( tak)30.5(en a flight fr)32.5(om Syr)-43.4(ia to Iran, )102.2(and then tra)32.5(v)40.2(e)0(led fur)-23.2(t)0.1(her within Iran to )]TJ\rT*\r-0.0001 Tw\r[(a point near the )84(Afghan bor)22.6(der)40.6(.)]TJ\r7.175 0 0 7.175 171.9767 519.9983 Tm\r-0.0002 Tc\r0 Tw\r(125 )Tj\r10.25 0 0 10.25 56.7 506.4933 Tm\r0.0002 Tc\r0.0197 Tw\r[(KSM and Binalshibh ha)34.9(v)40.2(e)0.2( confir)-43.2(med that se)22.2(v)40.2(e)0(ral of the 9/11 hijack)34.7(er)-19.3(s \\(at )]TJ\r-1.1707 -1.0976 TD\r0.1075 Tw\r[(least eight, )102.5(accor)21.1(ding to Binalshibh\\) transited Iran on their w)39.7(a)30(y to or fr)31.4(om )]TJ\rT*\r0.088 Tw\r[(Afghanistan, )103.1(taking adv)32.2(antage of the Iranian practice of not stamping Saudi )]TJ\rT*\r-0.0516 Tw\r[(passpor)-23.1(ts.The)21.3(y den)20.8(y an)20.5(y other r)21.7(eason for the hijack)34.1(er)-19.3(s\\220)-126.2(tra)30.4(v)40.2(e)0(l to Iran.The)22.9(y)0( also )]TJ\r0.0002 -1.0976 TD\r-0.0001 Tw\r[(den)20.6(y an)20.7(y r)20.5(e)0(lationship betw)43.8(een the hijack)33.3(er)-19.3(s and Hezbollah.)]TJ\r7.175 0 0 7.175 285.6476 463.7483 Tm\r-0.0002 Tc\r0 Tw\r(126 )Tj\r10.25 0 0 10.25 56.7 450.2433 Tm\r0.0002 Tc\r0.005 Tw\r[(In sum, )101.5(ther)20.8(e is str)31.2(ong e)20.9(v)0(idence that Iran f)-20.7(acilitated the transit of al Qaeda )]TJ\r-1.1708 -1.0976 TD\r-0.0526 Tw\r[(member)-18(s into and out of )83.4(Afghanistan befor)24(e 9/11,)-123.9(and that some of these w)45(e)0.2(r)20.2(e)0( )]TJ\rT*\r0.0001 Tc\r-0.0569 Tw\r[(futur)21(e)-0.1( 9/11 hijack)32.2(e)-0.1(r)-19.3(s)0(.Ther)21.4(e also is cir)21.9(cumstantial e)22.8(v)-0.1(idence that senior Hezbol=)]TJ\rT*\r0.0002 Tc\r0.023 Tw\r[(lah operati)22.4(v)40.2(es w)40.5(e)0.2(r)20.2(e)0.2( closely tracking the tra)35.2(v)40.2(e)0(l of some of these futur)25.1(e)0( m)15.4(u)0(scle )]TJ\rT*\r-0.0304 Tw\r[(hijack)31.2(er)-19.3(s into Iran in No)43.2(v)40.2(e)0(mber 2000. )-239.4(Ho)40.4(w)40(e)20(v)40.2(e)0.2(r)40.2(,)-147.4(w)40(e)0.2( cannot r)-22.9(u)0(le out the pos=)]TJ\r0.0001 -1.0976 TD\r-0.0014 Tc\r-0.0681 Tw\r[(sibility of a r)19.8(emarkab)14.8(le coincidence\\204that is,)-108.5(that Hezbollah w)29.8(as actually focus=)]TJ\rT*\r0.0002 Tc\r-0.0514 Tw\r[(ing on some other g)-25.6(r)30.2(oup of indi)22.3(viduals tra)32.3(v)40.2(e)0(ling fr)31.5(om Saudi )81.9(Arabia dur)-42.4(ing this )]TJ\r-0.0001 -1.0976 TD\r-0.0001 Tw\r[(same time frame)33.8(, )100.5(rather than the futur)25(e)0( hijack)31.8(er)-19.3(s.)]TJ\r7.175 0 0 7.175 242.9284 373.7483 Tm\r-0.0002 Tc\r0 Tw\r(127 )Tj\r10.25 0 0 10.25 56.7 360.2433 Tm\r0.0002 Tc\r[(W)125.2(e)0.2( ha)30.3(v)40.2(e)0.2( found no e)21.3(v)0(idence that Iran or Hezbollah w)34.2(a)0(s a)30.3(w)30(ar)20.2(e of the plan=)]TJ\r-1.1707 -1.0976 TD\r-0.0515 Tw\r[(ning for what later became )-272.1(the 9/11 attack.)-43.2(At the time of their tra)34.7(v)40.2(e)0(l thr)31(ough )]TJ\rT*\r0.0233 Tw\r[(Iran, )101(the al Qaeda operati)24.3(v)40.2(es themselv)42.4(es w)40.5(e)0.2(r)20.2(e)0.2( pr)30.4(obab)15.9(ly not a)31.3(w)30(ar)20.2(e of the spe=)]TJ\r0.0002 -1.0976 TD\r0.0001 Tc\r0 Tw\r[(cific details of their futur)26.4(e)-0.1( operation. )]TJ\r1.1704 -1.0976 TD\r0.0002 Tc\r0.126 Tw\r[(After 9/11, )102.5(Iran and Hezbollah wished to conceal an)28.8(y past e)21.3(v)0(idence of )]TJ\r-1.1708 -1.0976 TD\r0.0085 Tw\r[(cooperation with Sunni ter)-33.5(r)30.2(or)-44.5(ists associated with al Qaeda.)-100.2(A senior Hezbol=)]TJ\rT*\r-0.0001 Tw\r[(lah official disclaimed an)26.2(y Hezbollah in)43.4(v)40.2(o)0(lv)40.5(ement in 9/11.)]TJ\r7.175 0 0 7.175 281.5786 294.9983 Tm\r-0.0002 Tc\r0 Tw\r(128 )Tj\r10.25 0 0 10.25 56.7 281.4933 Tm\r0.0002 Tc\r-0.0481 Tw\r[(W)125.2(e)0.2( belie)21.1(v)40.2(e)0.2( this topic r)22.4(equir)21.1(e)0(s fur)-23.7(t)0.1(her in)41.3(v)40.2(e)0(stigation b)27.6(y)0.2( the U)81(.)0.2(S)40.2(.)-129.7(go)40.3(v)40.2(e)0.2(r)-39.4(n)0(ment. )]TJ\r12 0 0 12 44.7 247.4933 Tm\r-0.0003 Tc\r0.0001 Tw\r[(7.4 FINAL STRA)73.4(TEGIES )78.9(AND )124.2(T)74.9(A)39.7(CTICS )]TJ\r/F6 1 Tf\r10.25 0 0 10.25 44.7 224.2433 Tm\r0.0002 Tc\r-0.0001 Tw\r[(Final Pr)22(eparations in the United States )]TJ\r/F1 1 Tf\rT*\r0.0393 Tw\r[(Dur)-44(i)0.1(ng the early summer of 2001,)-131.2(Atta,)-216.4(a)0(ssisted b)27.1(y)0.2( Shehhi,)-215.6(w)30(as b)15.6(u)0(sy coor)21.8(di=)]TJ\rT*\r0.0145 Tw\r[(nating the ar)-36.9(r)-44.5(i)20.2(v)30.2(a)0(l of most of the m)18.5(u)0(scle hijack)32.5(er)-19.3(s in souther)-37.2(n Flor)-43.6(ida\\204pick=)]TJ\rT*\r-0.0289 Tw\r[(ing them up at the air)-35.3(por)-24.1(t,)-148.9(finding them places to sta)35.6(y)120.1(,)-148.9(and helping them settle )]TJ\rT*\r-0.0001 Tw\r(in the United States.)Tj\r7.175 0 0 7.175 128.1089 181.4983 Tm\r-0.0002 Tc\r0 Tw\r(129 )Tj\r10.25 0 0 10.25 56.7 167.9933 Tm\r-0.0026 Tc\r-0.0669 Tw\r[(The major)-45.1(ity settled in Flor)-45.1(ida.)-108.6(Some opened bank accounts,)-108.7(acquir)19.7(ed mail-)]TJ\r-1.1707 -1.0976 TD\r0.0002 Tc\r-0.0328 Tw\r[(bo)40.3(x)40(e)0(s,)-144.8(and r)20.8(ented car)-17.7(s.)-145.1(Se)20.3(v)40.2(e)0(ral also joined local gyms,)-139.2(pr)20.3(esumab)16.5(ly to sta)31.5(y fit for )]TJ\r0.0001 -1.0976 TD\r-0.0035 Tc\r-0.066 Tw\r[(the operation.)-108.8(Upon fir)-19.9(st ar)-39.9(r)-44.8(i)19.9(ving,)-108.6(most sta)29.7(y)39.7(ed in hotels and motels;)-108.9(b)14.8(ut b)24.8(y)0( mid-)]TJ\r-0.0002 -1.0976 TD\r0.0002 Tc\r0.145 Tw\r[(J)30.2(une)30.6(, )100.3(the)20.5(y)0( settled in shar)23.3(ed apar)-23.3(tments r)21.7(e)0(lati)20.9(v)40.2(e)0(ly close to one another and )]TJ\rT*\r0 Tw\r(Atta.)Tj\r7.175 0 0 7.175 64.3442 125.2483 Tm\r-0.0002 Tc\r(130 )Tj\r10.25 0 0 10.25 77.0621 122.9933 Tm\r0.0002 Tc\r0.0586 Tw\r[(Though these m)18.3(u)0(scle hijack)32.5(er)-19.3(s did not tra)32.3(v)40.2(e)0(l m)15.6(uch after ar)-37.2(r)-44.5(i)20.2(ving in )]TJ\r-3.1573 -1.0976 TD\r0.0396 Tw\r[(the United States,)-213.7(t)0.1(w)40.2(o)0( of them,)-90.6(W)125.2(aleed al Shehr)-41.7(i and Satam al Suqami,)-213(took )]TJ\rT*\r0.0001 Tc\r0 Tw\r[(un)15.3(usual tr)-43.1(ips. )]TJ\r1.1707 -1.0976 TD\r0.0048 Tc\r0.0613 Tw\r[(On Ma)29.7(y 19, )99.8(Shehr)-45(i and Suqami fle)19.6(w fr)29.7(om F)19.7(o)0.1(r)-25(t)0( Lauder)19.7(dale to Fr)19.6(eepor)-25(t, )]TJ\r-1.1709 -1.0976 TD\r0.0021 Tc\r-0.0667 Tw\r[(the Bahamas,)-113.6(wher)19.7(e the)19.7(y had r)19.7(eser)-25(v)29.9(ations at the Bahamas Pr)-45.2(incess Resor)-25.1(t.)11.5(The )]TJ\rT*\r-0.0222 Tc\r0.0091 Tw\r[(t)-27.1(w)12.7(o w)12.7(e)-26.9(r)-7.3(e)-3.7( t)-27(u)-27(r)-66.9(n)-27(e)-27.1(d)-27.1( )23.3(away)-27( )23.3(by )]TJ\r10.203 0 TD\r0.0028 Tc\r-0.0404 Tw\r[(Bahamian officials on ar)-37.2(r)-41.9(i)22.8(v)32.8(al,)-138.6(ho)42.9(w)42.6(e)22.6(v)42.8(e)2.8(r)42.8(,)-133.7(because the)25.1(y)2.6( )]TJ\rET\rQ\r",
+   "page": 259
+  },
+  {
+   "extGStates": {
+    "GS1": "<< /Type /ExtGState /SA false /OP false /SM .02 /op false /OPM 1 >>"
+   },
+   "fonts": [
+    {
+     "baseFont": "KAFHKN+Bembo",
+     "firstChar": 32,
+     "resourceName": "F1",
+     "sourceObject": "2481",
+     "subtype": "Type1",
+     "toUnicode": "/CIDInit /ProcSet findresource begin 12 dict begin begincmap /CIDSystemInfo <<\n/Registry (AAAAAA+F1+0) /Ordering (T1UV) /Supplement 0 >> def\n/CMapName /AAAAAA+F1+0 def\n/CMapType 2 def\n1 begincodespacerange <20> <eb> endcodespacerange\n12 beginbfchar\n<3d> <003D>\n<3f> <003F>\n<5d> <005D>\n<5f> <005F>\n<80> <2022>\n<84> <2014>\n<85> <2013>\n<a7> <00A7>\n<a9> <00A9>\n<b1> <00B1>\n<e9> <00E9>\n<eb> <00EB>\nendbfchar\n6 beginbfrange\n<20> <2a> <0020>\n<2c> <3b> <002C>\n<41> <5b> <0041>\n<61> <7a> <0061>\n<8d> <8e> <201C>\n<8f> <90> <2018>\nendbfrange\nendcmap CMapName currentdict /CMap defineresource pop end end\n",
+     "widths": [
+      278.0,
+      260.0,
+      406.0,
+      668.0,
+      458.0,
+      719.0,
+      729.0,
+      177.0,
+      302.0,
+      302.0,
+      510.0,
+      278.0,
+      260.0,
+      396.0,
+      260.0,
+      458.0,
+      490.0,
+      490.0,
+      490.0,
+      490.0,
+      490.0,
+      490.0,
+      490.0,
+      490.0,
+      490.0,
+      490.0,
+      260.0,
+      260.0,
+      278.0,
+      667.0,
+      278.0,
+      354.0,
+      278.0,
+      677.0,
+      635.0,
+      729.0,
+      760.0,
+      594.0,
+      531.0,
+      740.0,
+      792.0,
+      333.0,
+      302.0,
+      698.0,
+      552.0,
+      917.0,
+      813.0,
+      823.0,
+      563.0,
+      823.0,
+      802.0,
+      490.0,
+      677.0,
+      792.0,
+      688.0,
+      1000.0,
+      750.0,
+      708.0,
+      677.0,
+      302.0,
+      278.0,
+      302.0,
+      278.0,
+      500.0,
+      278.0,
+      396.0,
+      500.0,
+      427.0,
+      500.0,
+      438.0,
+      271.0,
+      469.0,
+      521.0,
+      260.0,
+      250.0,
+      500.0,
+      240.0,
+      792.0,
+      521.0,
+      521.0,
+      500.0,
+      500.0,
+      333.0,
+      302.0,
+      292.0,
+      521.0,
+      479.0,
+      740.0,
+      490.0,
+      469.0,
+      406.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      354.0,
+      278.0,
+      278.0,
+      278.0,
+      1000.0,
+      500.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      479.0,
+      479.0,
+      260.0,
+      260.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      469.0,
+      278.0,
+      760.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      667.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      438.0,
+      278.0,
+      438.0
+     ]
+    },
+    {
+     "baseFont": "KAGBEE+Bembo-Bold",
+     "firstChar": 32,
+     "resourceName": "F6",
+     "sourceObject": "2173",
+     "subtype": "Type1",
+     "toUnicode": "/CIDInit /ProcSet findresource begin 12 dict begin begincmap /CIDSystemInfo <<\n/Registry (AAAAAA+F6+0) /Ordering (T1UV) /Supplement 0 >> def\n/CMapName /AAAAAA+F6+0 def\n/CMapType 2 def\n1 begincodespacerange <20> <90> endcodespacerange\n6 beginbfchar\n<20> <0020>\n<3f> <003F>\n<80> <2022>\n<84> <2014>\n<85> <2013>\n<90> <2019>\nendbfchar\n5 beginbfrange\n<28> <29> <0028>\n<2c> <3b> <002C>\n<41> <5a> <0041>\n<61> <7a> <0061>\n<8d> <8e> <201C>\nendbfrange\nendcmap CMapName currentdict /CMap defineresource pop end end\n",
+     "widths": [
+      333.0,
+      333.0,
+      333.0,
+      333.0,
+      333.0,
+      333.0,
+      333.0,
+      333.0,
+      354.0,
+      354.0,
+      333.0,
+      333.0,
+      313.0,
+      417.0,
+      313.0,
+      531.0,
+      500.0,
+      500.0,
+      500.0,
+      500.0,
+      500.0,
+      500.0,
+      500.0,
+      500.0,
+      500.0,
+      500.0,
+      313.0,
+      313.0,
+      333.0,
+      333.0,
+      333.0,
+      365.0,
+      333.0,
+      740.0,
+      698.0,
+      740.0,
+      823.0,
+      646.0,
+      594.0,
+      781.0,
+      833.0,
+      365.0,
+      344.0,
+      740.0,
+      604.0,
+      927.0,
+      813.0,
+      844.0,
+      646.0,
+      844.0,
+      771.0,
+      563.0,
+      729.0,
+      771.0,
+      750.0,
+      1000.0,
+      802.0,
+      750.0,
+      750.0,
+      333.0,
+      333.0,
+      333.0,
+      333.0,
+      333.0,
+      333.0,
+      479.0,
+      573.0,
+      490.0,
+      573.0,
+      479.0,
+      323.0,
+      552.0,
+      563.0,
+      292.0,
+      281.0,
+      542.0,
+      271.0,
+      927.0,
+      573.0,
+      573.0,
+      573.0,
+      573.0,
+      396.0,
+      375.0,
+      344.0,
+      573.0,
+      521.0,
+      781.0,
+      531.0,
+      521.0,
+      510.0,
+      333.0,
+      333.0,
+      333.0,
+      333.0,
+      333.0,
+      354.0,
+      333.0,
+      333.0,
+      333.0,
+      1000.0,
+      500.0,
+      333.0,
+      333.0,
+      333.0,
+      333.0,
+      333.0,
+      333.0,
+      333.0,
+      583.0,
+      583.0,
+      333.0,
+      313.0
+     ]
+    }
+   ],
+   "lines": [
+    {
+     "rect": [
+      39.66,
+      562.5344,
+      230.3408,
+      8.607
+     ],
+     "text": "420 THE 9/11 COMMISSION REPORT"
+    },
+    {
+     "rect": [
+      39.66,
+      537.8551,
+      312.0028,
+      9.2865
+     ],
+     "text": "makers and warfighters a decisive edge in any conflict where the interests of"
+    },
+    {
+     "rect": [
+      39.66,
+      526.6047,
+      311.9834,
+      9.2865
+     ],
+     "text": "the United States are vital. Not only does good intelligence win wars, but the"
+    },
+    {
+     "rect": [
+      39.66,
+      515.3543,
+      291.959,
+      9.2865
+     ],
+     "text": "best intelligence enables us to prevent them from happening altogether."
+    },
+    {
+     "rect": [
+      51.6587,
+      504.1038,
+      300.077,
+      9.2865
+     ],
+     "text": "Under the terms of existing rules and resolutions the House and Senate"
+    },
+    {
+     "rect": [
+      39.658,
+      492.8534,
+      312.0695,
+      9.2865
+     ],
+     "text": "intelligence committees lack the power, influence, and sustained capability to"
+    },
+    {
+     "rect": [
+      39.658,
+      481.603,
+      311.9987,
+      9.2865
+     ],
+     "text": "meet this challenge.While few members of Congress have the broad knowl-"
+    },
+    {
+     "rect": [
+      39.6559,
+      470.3526,
+      312.0049,
+      9.2865
+     ],
+     "text": "edge of intelligence activities or the know-how about the technologies"
+    },
+    {
+     "rect": [
+      39.6559,
+      459.1022,
+      312.1494,
+      9.2865
+     ],
+     "text": "employed, all members need to feel assured that good oversight is happening."
+    },
+    {
+     "rect": [
+      39.6559,
+      447.8518,
+      311.8962,
+      9.2865
+     ],
+     "text": "When their unfamiliarity with the subject is combined with the need to pre-"
+    },
+    {
+     "rect": [
+      39.6559,
+      436.6014,
+      226.8335,
+      9.2865
+     ],
+     "text": "serve security, a mandate emerges for substantial change."
+    },
+    {
+     "rect": [
+      51.6576,
+      425.351,
+      300.0339,
+      9.2865
+     ],
+     "text": "Tinkering with the existing structure is not sufficient. Either Congress"
+    },
+    {
+     "rect": [
+      39.659,
+      414.1006,
+      312.0428,
+      9.2865
+     ],
+     "text": "should create a joint committee for intelligence,using the Joint Atomic Energy"
+    },
+    {
+     "rect": [
+      39.659,
+      402.8502,
+      311.9905,
+      9.2865
+     ],
+     "text": "Committee as its model,or it should create House and Senate committees with"
+    },
+    {
+     "rect": [
+      39.659,
+      391.5998,
+      202.0624,
+      9.2865
+     ],
+     "text": "combined authorizing and appropriations powers."
+    },
+    {
+     "rect": [
+      51.6576,
+      380.3494,
+      300.0155,
+      9.2865
+     ],
+     "text": "Whichever of these two forms are chosen, the goal should be a structure—"
+    },
+    {
+     "rect": [
+      39.659,
+      369.099,
+      312.0356,
+      9.2865
+     ],
+     "text": "codified by resolution with powers expressly granted and carefully limited—"
+    },
+    {
+     "rect": [
+      39.659,
+      357.8486,
+      312.0233,
+      9.2865
+     ],
+     "text": "allowing a relatively small group of members of Congress, given time and"
+    },
+    {
+     "rect": [
+      39.659,
+      346.5982,
+      271.0162,
+      9.2865
+     ],
+     "text": "reason to master the subject and the agencies,to conduct oversight of "
+    },
+    {
+     "rect": [
+      314.9258,
+      346.5982,
+      36.7698,
+      9.2865
+     ],
+     "text": "the intel-"
+    },
+    {
+     "rect": [
+      39.659,
+      335.3478,
+      312.0397,
+      9.2865
+     ],
+     "text": "ligence establishment and be clearly accountable for their work.The staff of"
+    },
+    {
+     "rect": [
+      39.659,
+      324.0974,
+      312.0377,
+      9.2865
+     ],
+     "text": "this committee should be nonpartisan and work for the entire committee and"
+    },
+    {
+     "rect": [
+      39.659,
+      312.847,
+      113.6038,
+      9.2865
+     ],
+     "text": "not for individual members."
+    },
+    {
+     "rect": [
+      51.6576,
+      301.5966,
+      300.0052,
+      9.2865
+     ],
+     "text": "The other reforms we have suggested—for a National Counterterrorism"
+    },
+    {
+     "rect": [
+      39.66,
+      290.3462,
+      312.0244,
+      9.2865
+     ],
+     "text": "Center and a National Intelligence Director—will not work if congressional"
+    },
+    {
+     "rect": [
+      39.66,
+      279.0958,
+      312.0356,
+      9.2865
+     ],
+     "text": "oversight does not change too. Unity of effort in executive management can"
+    },
+    {
+     "rect": [
+      39.661,
+      267.8454,
+      234.3765,
+      9.2865
+     ],
+     "text": "be lost if it is fractured by divided congressional oversight."
+    },
+    {
+     "rect": [
+      39.658,
+      245.4072,
+      312.0223,
+      9.2148
+     ],
+     "text": "Recommendation: Congressional oversight for intelligence—and"
+    },
+    {
+     "rect": [
+      39.658,
+      234.1568,
+      312.0049,
+      9.2148
+     ],
+     "text": "counterterrorism—is now dysfunctional.Congress should address this"
+    },
+    {
+     "rect": [
+      39.658,
+      222.9064,
+      312.0531,
+      9.2148
+     ],
+     "text": "problem.We have considered various alternatives:A joint committee"
+    },
+    {
+     "rect": [
+      39.659,
+      211.656,
+      311.9957,
+      9.2148
+     ],
+     "text": "on the old model of the Joint Committee on Atomic Energy is one."
+    },
+    {
+     "rect": [
+      39.659,
+      200.4056,
+      312.009,
+      9.2148
+     ],
+     "text": "A single committee in each house of Congress, combining authoriz-"
+    },
+    {
+     "rect": [
+      39.659,
+      189.1552,
+      206.4217,
+      9.2148
+     ],
+     "text": "ing and appropriating authorities, is another."
+    },
+    {
+     "rect": [
+      51.6566,
+      166.5939,
+      288.024,
+      9.2865
+     ],
+     "text": "• The new committee or committees should conduct continuing stud-"
+    },
+    {
+     "rect": [
+      63.6563,
+      155.3435,
+      276.0233,
+      9.2865
+     ],
+     "text": "ies of the activities of the intelligence agencies and report problems"
+    },
+    {
+     "rect": [
+      63.6563,
+      144.0931,
+      275.9987,
+      9.2865
+     ],
+     "text": "relating to the development and use of intelligence to all members of"
+    },
+    {
+     "rect": [
+      63.6563,
+      132.8427,
+      91.0364,
+      9.2865
+     ],
+     "text": "the House and Senate."
+    },
+    {
+     "rect": [
+      51.6556,
+      116.0932,
+      287.9932,
+      9.2865
+     ],
+     "text": "• We have already recommended that the total level of funding for intel-"
+    },
+    {
+     "rect": [
+      63.6553,
+      104.8428,
+      276.0141,
+      9.2865
+     ],
+     "text": "ligence be made public, and that the national intelligence program be"
+    },
+    {
+     "rect": [
+      63.6563,
+      93.5924,
+      276.012,
+      9.2865
+     ],
+     "text": "appropriated to the National Intelligence Director, not to the secre-"
+    },
+    {
+     "rect": [
+      63.6563,
+      82.342,
+      66.5773,
+      9.288
+     ],
+     "text": "tary of defense.19"
+    }
+   ],
+   "operators": "q\r/RelativeColorimetric ri \r/GS1 gs\rBT\r/F1 1 Tf\r9.5 0 0 9.5 39.66 564.7479 Tm\r0 g\r0.0004 Tc\r-0.0002 Tw\r[(420 )-6845.9(THE 9/11 COMMISSION REPOR)112.3(T)0( )]TJ\r10.25 0 0 10.25 39.66 540.2433 Tm\r0.0048 Tc\r0.0151 Tw\r[(mak)29.7(er)-19.9(s and w)29.6(arfighter)-20(s a decisi)19.6(v)39.9(e)0( edge in an)19.6(y conflict wher)19.6(e the inter)19.6(ests of )]TJ\r0 -1.0976 TD\r0.0047 Tc\r-0.0359 Tw\r[(the United States ar)19.5(e vital. )99.8(Not only does good intelligence win w)29.3(a)0(r)-20(s)0.3(, )95.2(b)14.7(ut the )]TJ\rT*\r0.0001 Tw\r[(best intelligence enab)14.6(les us to pr)19.5(e)19.6(v)39.8(ent them fr)29.5(om happening alto)19.5(gether)39.6(. )]TJ\r1.1706 -1.0976 TD\r0.0002 Tc\r0.0934 Tw\r[(Under the ter)-41.9(m)-0.1(s of existing r)-21.5(u)0(les and r)21.9(e)0(solutions the House and Senate )]TJ\r-1.1708 -1.0976 TD\r0.0207 Tw\r[(intelligence committees lack the po)47.9(w)40(e)0.2(r)40.2(,)0.1( )100.2(influence)32.1(, )100.2(and sustained capability to )]TJ\rT*\r0.029 Tw\r[(meet this challenge)34.2(.)-81.8(W)-0.2(hile fe)21.7(w member)-17.5(s of Cong)-27.8(r)20.2(e)0(ss ha)31.1(v)40.2(e)0.2( the br)31.3(oad kno)41.5(wl-)]TJ\r-0.0002 -1.0976 TD\r0.2717 Tw\r[(edge of intelligence acti)25.5(v)0(ities or the kno)43.4(w-ho)40.9(w about the technolo)24.4(g)-29.6(ies )]TJ\rT*\r0.0003 Tc\r0.0026 Tw\r[(emplo)40.8(y)40.1(ed, )100.4(all member)-18(s need to feel assur)22.4(ed that good o)41.8(v)40.3(er)-19.3(sight is happening. )]TJ\rT*\r0 Tc\r-0.0027 Tw\r[(When their unf)-21.7(amiliar)-43.4(ity with the subject is combined with the need to pr)30.8(e-)]TJ\rT*\r0.0001 Tc\r0 Tw\r[(ser)-24.3(v)40.1(e secur)-43.2(ity)120.4(, )100.5(a mandate emerges for substantial change)40(. )]TJ\r1.1709 -1.0976 TD\r0.0002 Tc\r0.1705 Tw\r[(Tink)30.9(er)-44.4(ing with the existing str)-19.6(uctur)21.1(e is not sufficient. )103.9(Either Cong)-27(r)20.2(e)0(ss )]TJ\r-1.1706 -1.0976 TD\r-0.0654 Tw\r[(should cr)22(eate a joint committee for intelligence)38.6(,)-112.4(u)0(sing the J)32.2(o)0(int )80.8(Atomic Energy )]TJ\rT*\r-0.0011 Tc\r-0.0684 Tw\r[(Committee as its model,)-108.6(or it should cr)19.7(eate House and Senate committees with )]TJ\rT*\r0.0002 Tc\r-0.0001 Tw\r[(combined author)-40.7(izing and appr)33.4(opr)-44.1(iations po)42.3(w)40(e)0.2(r)-19.4(s)0.7(. )]TJ\r1.1706 -1.0976 TD\r-0.025 Tw\r[(Whiche)21.5(v)40.2(e)0(r of these tw)42.6(o for)-43.9(m)-0.1(s ar)20.9(e chosen, )102(the goal should be a str)-19.9(uctur)21.1(e\\204 )]TJ\r-1.1706 -1.0976 TD\r0.0352 Tw\r[(codified b)27.2(y)0.2( r)20.3(e)0(solution with po)43.8(w)40(e)0.2(r)-19.4(s)0.2( expr)20.9(essly g)-28.4(r)0.1(anted and car)23(efully limited\\204 )]TJ\rT*\r0.1364 Tw\r[(allo)40.6(wing a r)21.5(e)0(lati)20.9(v)40.2(e)0(ly small g)-27.5(r)30.2(oup of member)-16.5(s of Cong)-27.8(r)20.2(e)0(ss, )100.7(g)-29.6(i)20.2(v)40.2(en time and )]TJ\rT*\r-0.0024 Tc\r-0.0671 Tw\r[(r)20(eason to master the subject and the agencies,)-108.7(to conduct o)39.7(v)40(er)-19.8(sight of )-208.6(the intel-)]TJ\rT*\r0.0002 Tc\r0.0665 Tw\r[(ligence estab)17.9(lishment and be clearly accountab)22.6(le for their w)42.5(o)0(rk.)-118.8(T)-0.1(he staff of )]TJ\rT*\r-0.0139 Tw\r[(this committee should be nonpar)-17.5(tisan and w)42.1(o)0(rk for the entir)23.4(e committee and )]TJ\rT*\r-0.0001 Tw\r[(not for indi)22.8(vidual member)-16.2(s. )]TJ\r1.1706 -1.0976 TD\r0.0823 Tw\r[(The other r)22.3(e)0(for)-43.9(m)-0.1(s w)40.6(e)0.2( ha)30.4(v)40.2(e)0.2( suggested\\204for a National Counter)-16.7(ter)-39.1(r)30.2(or)-44.5(ism )]TJ\r-1.1705 -1.0976 TD\r0.0351 Tw\r[(Center and a National Intelligence Dir)28.7(ector\\204will not w)43.6(o)0(rk if cong)-27.4(r)20.2(e)0(ssional )]TJ\rT*\r0.0342 Tw\r[(o)40(v)40.2(er)-19.3(sight does not change too)55.4(.)0.1( )100.3(Unity of effor)-21.7(t)0.1( in ex)41(ecuti)21(v)40.2(e management can )]TJ\r0.0001 -1.0976 TD\r-0.0001 Tw\r[(be lost if it is fractur)25.4(ed b)25.9(y)0.2( di)20.6(vided cong)-27.1(r)20.2(e)0(ssional o)42.2(v)40.2(er)-19.3(sight. )]TJ\r/F6 1 Tf\r-0.0003 -2.1951 TD\r0.3878 Tw\r[(Recommendation: )104.7(Cong)-28.6(r)20(e)0(ssional o)42.2(v)40(er)-19.4(sight for intellig)18.9(ence\\204and )]TJ\r0 -1.0976 TD\r-0.0048 Tc\r-0.0784 Tw\r[(counter)-25(ter)-39.9(r)19.7(o)-0.1(r)-45(ism\\204is no)39.8(w dysfunctional.)-149.7(Cong)-29.8(r)19.7(ess should addr)19.8(ess this )]TJ\rT*\r0.0002 Tc\r-0.0273 Tw\r[(pr)20.3(oblem.)-79(W)125.2(e ha)30.5(v)40(e)0.2( consider)22.2(ed v)30.6(a)0.2(r)-44.5(i)0.1(ous alter)-37.4(nati)20.8(v)40(es:)-125.3(A)-0.1( joint committee )]TJ\r0.0001 -1.0976 TD\r0.0013 Tw\r[(on the old model of the J)35.4(o)0(int Committee on )84.3(Atomic Energy is one)34.9(. )]TJ\rT*\r-0.0388 Tw\r[(A single committee in each house of Cong)-19.9(r)20(e)0(ss, )101(combining author)-40.4(iz-)]TJ\rT*\r-0.0001 Tw\r[(ing and appr)23.2(opr)-44.1(iating author)-41.3(ities, )101.5(is another)42.5(. )]TJ\r/F1 1 Tf\r1.1705 -2.1951 TD\r-0.0491 Tw\r[(\\200 )-587.5(The ne)21.2(w committee or committees should conduct contin)26.3(uing stud-)]TJ\r1.1707 -1.0976 TD\r0.0462 Tw\r[(ies of the acti)22.8(v)0(ities of the intelligence agencies and r)28.8(epor)-23.8(t pr)30.5(ob)15.4(lems )]TJ\rT*\r-0.0302 Tw\r[(r)20.2(e)0(lating to the de)23.4(v)40.2(e)0(lopment and use of intelligence to all member)-9.1(s of )]TJ\rT*\r-0.0001 Tw\r[(the House and Senate)33.1(.)0.1( )]TJ\r-1.1708 -1.6341 TD\r-0.0046 Tc\r-0.0649 Tw\r[(\\200 )-608.1(W)125(e)0.1( ha)29.8(v)40.1(e)0.1( alr)19.8(eady r)19.8(ecommended that the total le)20(v)40.1(el of funding for intel-)]TJ\r1.1707 -1.0976 TD\r0.0002 Tc\r-0.0394 Tw\r[(ligence be made pub)19.3(lic)30.4(, )100.3(and that the national intelligence pr)38(o)20(g)-29.6(ram be )]TJ\r0.0001 -1.0976 TD\r0.0163 Tw\r[(appr)30.8(opr)-44.1(iated to the National Intelligence Dir)28.5(ector)41(, )100.2(not to the secr)22.9(e-)]TJ\rT*\r-0.0001 Tw\r[(tar)-29.1(y)0( of defense)32.8(.)]TJ\r5.125 0 0 5.125 125.21 88.1808 Tm\r0 Tw\r(19 )Tj\rET\rQ\r",
+   "page": 438
+  },
+  {
+   "extGStates": {
+    "GS1": "<< /Type /ExtGState /SA false /OP false /SM .02 /op false /OPM 1 >>"
+   },
+   "fonts": [
+    {
+     "baseFont": "KAFHKN+Bembo",
+     "firstChar": 32,
+     "resourceName": "F1",
+     "sourceObject": "2481",
+     "subtype": "Type1",
+     "toUnicode": "/CIDInit /ProcSet findresource begin 12 dict begin begincmap /CIDSystemInfo <<\n/Registry (AAAAAA+F1+0) /Ordering (T1UV) /Supplement 0 >> def\n/CMapName /AAAAAA+F1+0 def\n/CMapType 2 def\n1 begincodespacerange <20> <eb> endcodespacerange\n12 beginbfchar\n<3d> <003D>\n<3f> <003F>\n<5d> <005D>\n<5f> <005F>\n<80> <2022>\n<84> <2014>\n<85> <2013>\n<a7> <00A7>\n<a9> <00A9>\n<b1> <00B1>\n<e9> <00E9>\n<eb> <00EB>\nendbfchar\n6 beginbfrange\n<20> <2a> <0020>\n<2c> <3b> <002C>\n<41> <5b> <0041>\n<61> <7a> <0061>\n<8d> <8e> <201C>\n<8f> <90> <2018>\nendbfrange\nendcmap CMapName currentdict /CMap defineresource pop end end\n",
+     "widths": [
+      278.0,
+      260.0,
+      406.0,
+      668.0,
+      458.0,
+      719.0,
+      729.0,
+      177.0,
+      302.0,
+      302.0,
+      510.0,
+      278.0,
+      260.0,
+      396.0,
+      260.0,
+      458.0,
+      490.0,
+      490.0,
+      490.0,
+      490.0,
+      490.0,
+      490.0,
+      490.0,
+      490.0,
+      490.0,
+      490.0,
+      260.0,
+      260.0,
+      278.0,
+      667.0,
+      278.0,
+      354.0,
+      278.0,
+      677.0,
+      635.0,
+      729.0,
+      760.0,
+      594.0,
+      531.0,
+      740.0,
+      792.0,
+      333.0,
+      302.0,
+      698.0,
+      552.0,
+      917.0,
+      813.0,
+      823.0,
+      563.0,
+      823.0,
+      802.0,
+      490.0,
+      677.0,
+      792.0,
+      688.0,
+      1000.0,
+      750.0,
+      708.0,
+      677.0,
+      302.0,
+      278.0,
+      302.0,
+      278.0,
+      500.0,
+      278.0,
+      396.0,
+      500.0,
+      427.0,
+      500.0,
+      438.0,
+      271.0,
+      469.0,
+      521.0,
+      260.0,
+      250.0,
+      500.0,
+      240.0,
+      792.0,
+      521.0,
+      521.0,
+      500.0,
+      500.0,
+      333.0,
+      302.0,
+      292.0,
+      521.0,
+      479.0,
+      740.0,
+      490.0,
+      469.0,
+      406.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      354.0,
+      278.0,
+      278.0,
+      278.0,
+      1000.0,
+      500.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      479.0,
+      479.0,
+      260.0,
+      260.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      469.0,
+      278.0,
+      760.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      667.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      438.0,
+      278.0,
+      438.0
+     ]
+    },
+    {
+     "baseFont": "KAFJDA+Bembo-Italic",
+     "firstChar": 32,
+     "resourceName": "F5",
+     "sourceObject": "2170",
+     "subtype": "Type1",
+     "toUnicode": "/CIDInit /ProcSet findresource begin 12 dict begin begincmap /CIDSystemInfo <<\n/Registry (AAAAAA+F5+0) /Ordering (T1UV) /Supplement 0 >> def\n/CMapName /AAAAAA+F5+0 def\n/CMapType 2 def\n1 begincodespacerange <20> <a9> endcodespacerange\n6 beginbfchar\n<20> <0020>\n<26> <0026>\n<84> <2014>\n<85> <2013>\n<90> <2019>\n<a9> <00A9>\nendbfchar\n5 beginbfrange\n<2c> <3b> <002C>\n<41> <57> <0041>\n<59> <5a> <0059>\n<61> <7a> <0061>\n<8d> <8e> <201C>\nendbfrange\nendcmap CMapName currentdict /CMap defineresource pop end end\n",
+     "widths": [
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      708.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      292.0,
+      333.0,
+      292.0,
+      458.0,
+      510.0,
+      510.0,
+      510.0,
+      510.0,
+      510.0,
+      510.0,
+      510.0,
+      510.0,
+      510.0,
+      510.0,
+      292.0,
+      292.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      698.0,
+      615.0,
+      729.0,
+      760.0,
+      625.0,
+      563.0,
+      781.0,
+      760.0,
+      323.0,
+      302.0,
+      708.0,
+      583.0,
+      854.0,
+      771.0,
+      792.0,
+      563.0,
+      792.0,
+      698.0,
+      531.0,
+      656.0,
+      729.0,
+      698.0,
+      958.0,
+      278.0,
+      625.0,
+      688.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      406.0,
+      406.0,
+      271.0,
+      438.0,
+      344.0,
+      229.0,
+      375.0,
+      458.0,
+      240.0,
+      240.0,
+      458.0,
+      229.0,
+      677.0,
+      469.0,
+      396.0,
+      438.0,
+      417.0,
+      271.0,
+      302.0,
+      260.0,
+      469.0,
+      406.0,
+      604.0,
+      490.0,
+      438.0,
+      500.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      1000.0,
+      500.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      500.0,
+      500.0,
+      278.0,
+      292.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      760.0
+     ]
+    }
+   ],
+   "lines": [
+    {
+     "rect": [
+      44.7,
+      537.8551,
+      54.4173,
+      9.2865
+     ],
+     "text": "Fahd al Quso "
+    },
+    {
+     "rect": [
+      44.7,
+      515.3543,
+      50.9384,
+      9.2865
+     ],
+     "text": "Sayyid Qutb "
+    },
+    {
+     "rect": [
+      44.7,
+      492.8534,
+      68.0026,
+      9.2865
+     ],
+     "text": "Eyad al Rababah "
+    },
+    {
+     "rect": [
+      44.7,
+      470.3526,
+      94.8771,
+      9.2865
+     ],
+     "text": "Abd al Rahim Ghulum "
+    },
+    {
+     "rect": [
+      56.7007,
+      459.1022,
+      34.606,
+      9.2865
+     ],
+     "text": "Rabbani "
+    },
+    {
+     "rect": [
+      44.702,
+      436.6014,
+      81.0252,
+      9.2865
+     ],
+     "text": "Sheikh Omar Abdel "
+    },
+    {
+     "rect": [
+      56.6997,
+      425.3521,
+      35.1473,
+      9.2865
+     ],
+     "text": "Rahman "
+    },
+    {
+     "rect": [
+      44.7,
+      391.6009,
+      60.2946,
+      9.2865
+     ],
+     "text": "Saud al Rashid "
+    },
+    {
+     "rect": [
+      44.7,
+      380.3505,
+      63.961,
+      9.2865
+     ],
+     "text": "Ahmed Ressam "
+    },
+    {
+     "rect": [
+      44.7,
+      346.5993,
+      82.7882,
+      9.2865
+     ],
+     "text": "Mamdouh Mahmud "
+    },
+    {
+     "rect": [
+      56.7017,
+      335.3489,
+      22.3327,
+      9.2865
+     ],
+     "text": "Salim "
+    },
+    {
+     "rect": [
+      44.7031,
+      312.8481,
+      62.8653,
+      9.2865
+     ],
+     "text": "Yazeed al Salmi "
+    },
+    {
+     "rect": [
+      44.7041,
+      290.3473,
+      78.7743,
+      9.2865
+     ],
+     "text": "Abdul Rasul Sayyaf "
+    },
+    {
+     "rect": [
+      44.7,
+      267.8465,
+      58.876,
+      9.2865
+     ],
+     "text": "Aysel Senguen "
+    },
+    {
+     "rect": [
+      44.7,
+      256.5961,
+      54.1692,
+      9.2865
+     ],
+     "text": "Nawaz Sharif "
+    },
+    {
+     "rect": [
+      44.7,
+      234.0953,
+      73.9835,
+      9.2865
+     ],
+     "text": "Marwan al Shehhi "
+    },
+    {
+     "rect": [
+      44.7,
+      211.5945,
+      73.5407,
+      9.2865
+     ],
+     "text": "Mohand al Shehri "
+    },
+    {
+     "rect": [
+      44.7,
+      200.3441,
+      57.0945,
+      9.2865
+     ],
+     "text": "Wail al Shehri "
+    },
+    {
+     "rect": [
+      44.7,
+      189.0937,
+      68.5325,
+      9.2865
+     ],
+     "text": "Waleed al Shehri "
+    },
+    {
+     "rect": [
+      44.7,
+      177.8433,
+      99.1954,
+      9.2865
+     ],
+     "text": "Mohamedou Ould Slahi "
+    },
+    {
+     "rect": [
+      44.7,
+      155.3425,
+      49.3384,
+      9.2865
+     ],
+     "text": "Yazid Sufaat "
+    },
+    {
+     "rect": [
+      44.7,
+      144.0921,
+      66.8259,
+      9.2865
+     ],
+     "text": "Satam al Suqami "
+    },
+    {
+     "rect": [
+      44.7,
+      132.8417,
+      66.2806,
+      9.2865
+     ],
+     "text": "Madani al Tayyib "
+    },
+    {
+     "rect": [
+      44.7,
+      121.5913,
+      73.8277,
+      9.2865
+     ],
+     "text": "Zuhair al Thubaiti "
+    },
+    {
+     "rect": [
+      44.7,
+      110.3409,
+      75.9371,
+      9.2865
+     ],
+     "text": "Fahad al Thumairy "
+    },
+    {
+     "rect": [
+      44.7,
+      76.5897,
+      64.9635,
+      9.2865
+     ],
+     "text": "Hassan al Turabi "
+    },
+    {
+     "rect": [
+      176.45,
+      562.5344,
+      180.2578,
+      8.607
+     ],
+     "text": "APPENDIX 437"
+    },
+    {
+     "rect": [
+      152.6981,
+      537.8551,
+      177.5075,
+      9.2865
+     ],
+     "text": "Yemeni; al Qaeda co-conspirator arrested in"
+    },
+    {
+     "rect": [
+      164.6998,
+      526.6047,
+      125.8177,
+      9.2865
+     ],
+     "text": "Yemen for the USS Cole attack"
+    },
+    {
+     "rect": [
+      152.6961,
+      515.3543,
+      202.3227,
+      9.2865
+     ],
+     "text": "Egyptian writer; member of Muslim Brotherhood"
+    },
+    {
+     "rect": [
+      164.6998,
+      504.1038,
+      41.4592,
+      9.2865
+     ],
+     "text": "(deceased)"
+    },
+    {
+     "rect": [
+      152.7094,
+      492.8534,
+      188.8368,
+      9.2865
+     ],
+     "text": "Jordanian;Virginia resident who helped Hazmi"
+    },
+    {
+     "rect": [
+      164.6998,
+      481.603,
+      51.5667,
+      9.2865
+     ],
+     "text": "and Hanjour"
+    },
+    {
+     "rect": [
+      152.694,
+      470.3526,
+      185.3713,
+      9.2865
+     ],
+     "text": "(a.k.a.Abu Rahmah) Saudi; al Qaeda member"
+    },
+    {
+     "rect": [
+      164.7008,
+      459.1022,
+      189.419,
+      9.2865
+     ],
+     "text": "who worked closely with KSM in Karachi and"
+    },
+    {
+     "rect": [
+      164.7019,
+      447.8518,
+      140.6915,
+      9.2865
+     ],
+     "text": "assisted many of the 9/11 hijackers"
+    },
+    {
+     "rect": [
+      152.6991,
+      436.6014,
+      164.328,
+      9.2865
+     ],
+     "text": "(a.k.a. the Blind Sheikh) Egyptian cleric;"
+    },
+    {
+     "rect": [
+      164.6957,
+      425.3521,
+      173.717,
+      9.2865
+     ],
+     "text": "convicted for crimes related to 1993 World"
+    },
+    {
+     "rect": [
+      164.7008,
+      414.1017,
+      185.5393,
+      9.2865
+     ],
+     "text": "Trade Center bombing and 1995 plots against"
+    },
+    {
+     "rect": [
+      164.7008,
+      402.8513,
+      83.6933,
+      9.2865
+     ],
+     "text": "other NY landmarks"
+    },
+    {
+     "rect": [
+      152.7012,
+      391.6009,
+      122.1062,
+      9.2865
+     ],
+     "text": "Saudi; candidate 9/11 hijacker"
+    },
+    {
+     "rect": [
+      152.6991,
+      380.3505,
+      195.2451,
+      9.2865
+     ],
+     "text": "(a.k.a. Benni Antoine Noris) Algerian; convicted"
+    },
+    {
+     "rect": [
+      164.7008,
+      369.1001,
+      191.512,
+      9.2865
+     ],
+     "text": "in millennium plot to bomb Los Angeles Inter-"
+    },
+    {
+     "rect": [
+      164.7008,
+      357.8497,
+      64.8231,
+      9.2865
+     ],
+     "text": "national Airport"
+    },
+    {
+     "rect": [
+      152.6868,
+      346.5993,
+      202.5041,
+      9.2865
+     ],
+     "text": "(a.k.a.Abu Hajer al Iraqi) Iraqi; chief procurement"
+    },
+    {
+     "rect": [
+      164.7019,
+      335.3489,
+      185.7894,
+      9.2865
+     ],
+     "text": "officer for al Qaeda in Sudan; arrested in con-"
+    },
+    {
+     "rect": [
+      164.7029,
+      324.0985,
+      153.0858,
+      9.2865
+     ],
+     "text": "nection with 1998 embassy bombings"
+    },
+    {
+     "rect": [
+      152.7032,
+      312.8481,
+      191.8195,
+      9.2865
+     ],
+     "text": "Saudi; briefly a housemate of a 9/11 hijacker in"
+    },
+    {
+     "rect": [
+      164.7039,
+      301.5977,
+      42.3786,
+      9.2865
+     ],
+     "text": "San Diego"
+    },
+    {
+     "rect": [
+      152.7022,
+      290.3473,
+      201.5427,
+      9.2865
+     ],
+     "text": "Afghani; head of the Hizbul-Ittihad El-Islami, and"
+    },
+    {
+     "rect": [
+      164.7039,
+      279.0969,
+      58.8647,
+      9.2865
+     ],
+     "text": "KSM’s mentor"
+    },
+    {
+     "rect": [
+      152.695,
+      267.8465,
+      160.6206,
+      9.2865
+     ],
+     "text": "German; fiancée of 9/11 hijacker Jarrah"
+    },
+    {
+     "rect": [
+      152.7032,
+      256.5961,
+      152.1951,
+      9.2865
+     ],
+     "text": "Pakistani Prime Minister, 1990–1993,"
+    },
+    {
+     "rect": [
+      164.6998,
+      245.3457,
+      45.3214,
+      9.2865
+     ],
+     "text": "1997–1999"
+    },
+    {
+     "rect": [
+      152.696,
+      234.0953,
+      153.4476,
+      9.2865
+     ],
+     "text": "Emirati; 9/11 pilot/hijacker (UA 175)"
+    },
+    {
+     "rect": [
+      164.6998,
+      222.8449,
+      41.4592,
+      9.2865
+     ],
+     "text": "(deceased)"
+    },
+    {
+     "rect": [
+      152.695,
+      211.5945,
+      166.6978,
+      9.2865
+     ],
+     "text": "Saudi; 9/11 hijacker (UA 175) (deceased)"
+    },
+    {
+     "rect": [
+      152.7022,
+      200.3441,
+      161.171,
+      9.2865
+     ],
+     "text": "Saudi; 9/11 hijacker (AA 11) (deceased)"
+    },
+    {
+     "rect": [
+      152.6991,
+      189.0937,
+      161.172,
+      9.2865
+     ],
+     "text": "Saudi; 9/11 hijacker (AA 11) (deceased)"
+    },
+    {
+     "rect": [
+      152.6889,
+      177.8433,
+      191.6535,
+      9.2865
+     ],
+     "text": "(a.k.a.Abu Musab) Mauritanian; recruited 9/11"
+    },
+    {
+     "rect": [
+      164.7019,
+      166.5929,
+      86.7837,
+      9.2865
+     ],
+     "text": "hijackers in Germany"
+    },
+    {
+     "rect": [
+      152.7012,
+      155.3425,
+      155.7498,
+      9.2865
+     ],
+     "text": "Malaysian; member of Jemaah Islamiya"
+    },
+    {
+     "rect": [
+      152.696,
+      144.0921,
+      161.172,
+      9.2865
+     ],
+     "text": "Saudi; 9/11 hijacker (AA 11) (deceased)"
+    },
+    {
+     "rect": [
+      152.696,
+      132.8417,
+      197.1342,
+      9.2865
+     ],
+     "text": "Saudi; former head of al Qaeda finance committee"
+    },
+    {
+     "rect": [
+      152.7063,
+      121.5913,
+      122.1062,
+      9.2865
+     ],
+     "text": "Saudi; candidate 9/11 hijacker"
+    },
+    {
+     "rect": [
+      152.7001,
+      110.3409,
+      196.8082,
+      9.2865
+     ],
+     "text": "Saudi; Imam of King Fahd mosque in Los Ange-"
+    },
+    {
+     "rect": [
+      164.6998,
+      99.0905,
+      183.5027,
+      9.2865
+     ],
+     "text": "les; accredited diplomat at Saudi Consulate in"
+    },
+    {
+     "rect": [
+      164.7008,
+      87.8401,
+      47.765,
+      9.2865
+     ],
+     "text": "Los Angeles"
+    },
+    {
+     "rect": [
+      152.7053,
+      76.5897,
+      199.2887,
+      9.2865
+     ],
+     "text": "Sudan’s longtime hard-line ideological leader and"
+    },
+    {
+     "rect": [
+      164.7008,
+      65.3393,
+      175.6409,
+      9.2865
+     ],
+     "text": "Speaker of the country’s National Assembly"
+    }
+   ],
+   "operators": "q\r/RelativeColorimetric ri \r/GS1 gs\rBT\r/F1 1 Tf\r9.5 0 0 9.5 176.45 564.7479 Tm\r0 g\r0.0004 Tc\r12.1691 Tw\r(APPENDIX 437 )Tj\r10.25 0 0 10.25 44.7 540.2433 Tm\r0.0002 Tc\r-0.0001 Tw\r[(Fahd al Quso )-4949.1(Y)160.3(e)0(meni; )101.6(al Qaeda co-conspirator ar)-33(r)20.2(e)0(sted in )]TJ\r11.7073 -1.0976 TD\r[(Y)160.3(e)0(men for the USS )]TJ\r/F5 1 Tf\r7.9959 0 TD\r0 Tc\r0 Tw\r(Cole )Tj\r/F1 1 Tf\r1.975 0 TD\r0.0002 Tc\r(attack )Tj\r-21.6782 -1.0976 TD\r-0.0001 Tw\r[(Sa)30.3(yyid Qutb )-5288.3(Egyptian wr)-42(iter)-24(;)0.1( )100.5(member of Muslim Br)34.9(otherhood )]TJ\r11.7073 -1.0976 TD\r0 Tw\r(\\(deceased\\) )Tj\r-11.7073 -1.0976 TD\r-0.0001 Tw\r[(Ey)30.2(ad al Rababah )-3624.8(J)30.2(o)0.2(r)20(danian;Virg)-28(inia r)20.7(e)0(sident who helped Hazmi )]TJ\r11.7073 -1.0976 TD\r(and Hanjour )Tj\r-11.7073 -1.0976 TD\r[(Abd al Rahim Ghulum )-1001.4(\\(a.k.a.)-96.5(A)-0.1(b)15.5(u)0( Rahmah\\) Saudi;)-173.5(a)0(l Qaeda member )]TJ\r1.1708 -1.0976 TD\r[(Rabbani )-6882.1(who w)41.1(o)0(rk)30.5(ed closely with KSM in Karachi and )]TJ\r10.5367 -1.0976 TD\r[(assisted man)22.8(y)0( of the 9/11 hijack)34.8(er)-19.3(s )]TJ\r-11.7073 -1.0976 TD\r[(Sheikh Omar )83.1(Abdel )-2353.1(\\(a.k.a. )101.6(the Blind Sheikh\\) Egyptian cler)-36.9(ic; )]TJ\r1.1705 -1.0975 TD\r[(Rahman )-6828.9(con)40.6(victed for cr)-41.9(imes r)21.2(e)0(lated to 1993 )128.5(W)125.2(o)0(rld )]TJ\r10.5367 -1.0976 TD\r[(T)100.3(r)0.1(ade Center bombing and 1995 plots against )]TJ\rT*\r(other NY landmarks )Tj\r-11.7074 -1.0976 TD\r[(Saud al Rashid )-4376(Saudi; )101.5(candidate 9/11 hijack)35.2(e)0(r )]TJ\rT*\r[(Ahmed Ressam )-4018.1(\\(a.k.a. )101.7(Benni )81.3(Antoine Nor)-41.8(is\\) )80.5(Alger)-43.6(ian; )100.9(con)40.6(victed )]TJ\r11.7074 -1.0976 TD\r[(in millennium plot to bomb Los )88(Angeles Inter-)]TJ\rT*\r0.0001 Tc\r-0.0799 Tw\r[(national Air)-37.5(p)0.3(or)-24.4(t )]TJ\r-11.7074 -1.0976 TD\r0.0002 Tc\r-0.0001 Tw\r[(Mamdouh Mahm)18.6(ud )-2180.1(\\(a.k.a.)-96.5(A)-0.1(b)15.5(u)0( Hajer al Iraqi\\) Iraqi;)-172.6(chief pr)31.6(ocur)20.9(ement )]TJ\r1.1709 -1.0976 TD\r[(Salim )-8079.5(officer for al Qaeda in Sudan; )107.7(ar)-39.3(r)20.2(e)0(sted in con-)]TJ\r10.5367 -1.0976 TD\r(nection with 1998 embassy bombings )Tj\r-11.7073 -1.0976 TD\r[(Y)125.4(azeed al Salmi )-4125.1(Saudi; )101.5(br)-44.4(iefly a housemate of a 9/11 hijack)38.4(er in )]TJ\r11.7074 -1.0976 TD\r(San Diego )Tj\r-11.7073 -1.0976 TD\r[(Abdul Rasul Sa)33.6(yy)30.3(af )-2572.8(Afghani; )102.2(head of the Hizb)19.1(ul-Ittihad El-Islami, )105.2(and )]TJ\r11.7073 -1.0976 TD\r[(KSM\\220)101.2(s mentor )]TJ\r-11.7077 -1.0976 TD\r[(A)60.3(y)0(sel Senguen )-4513.8(Ger)-44.1(m)-0.1(an; )101.1(fianc\\351e of 9/11 hijack)35.3(er J)30.7(a)0.2(r)-39.4(r)0.1(ah )]TJ\rT*\r[(Na)30.4(w)30(az Shar)-43.1(if )-4973.8(P)30(akistani Pr)-42.2(ime Minister)43(,)0.1( )100.5(1990\\2051993, )]TJ\r11.7073 -1.0976 TD\r0 Tw\r(1997\\2051999 )Tj\r-11.7073 -1.0976 TD\r-0.0001 Tw\r[(Marw)30.9(an al Shehhi )-3040(Emirati; )102.1(9/11 pilot/hijack)34.1(er \\(U)66.1(A 175\\) )]TJ\r11.7073 -1.0976 TD\r0 Tw\r(\\(deceased\\) )Tj\r-11.7073 -1.0976 TD\r-0.0001 Tw\r[(Mohand al Shehr)-40.9(i )-3083.1(Saudi; )101.6(9/11 hijack)32.5(er \\(U)66(A 175\\) \\(deceased\\) )]TJ\rT*\r[(W)125.2(a)0(il al Shehr)-42(i )-4688.3(Saudi; )101.5(9/11 hijack)32.6(er \\(AA 11\\) \\(deceased\\) )]TJ\rT*\r[(W)125.2(a)0(leed al Shehr)-41.5(i )-3572.1(Saudi; )101.5(9/11 hijack)32.5(er \\(AA 11\\) \\(deceased\\) )]TJ\rT*\r[(Mohamedou Ould Slahi )-579.6(\\(a.k.a.)-96.5(A)-0.1(b)15.5(u)0( Musab\\) Maur)-41.4(itanian;)-176.1(r)20.2(ecr)-24.2(uited 9/11 )]TJ\r11.7075 -1.0976 TD\r[(hijack)31.2(er)-19.3(s in Ger)-42.6(m)-0.1(an)20.7(y )]TJ\r-11.7075 -1.0976 TD\r[(Y)125.4(azid Suf)-22.8(aat )-5444.9(Mala)30.9(ysian; )101.4(member of J)32.9(e)0(maah Islamiy)33.3(a)0( )]TJ\rT*\r[(Satam al Suqami )-3738.3(Saudi; )101.5(9/11 hijack)32.5(er \\(AA 11\\) \\(deceased\\) )]TJ\rT*\r-0.0148 Tc\r0 Tw\r[(Madani al )124.9(T)110(a)29.7(yyib )-3821.4(Saudi; )99.8(for)-45(mer head of al Qaeda finance committee )]TJ\rT*\r0.0002 Tc\r-0.0001 Tw\r[(Zuhair al )127.5(Thubaiti )-3056.2(Saudi; )101.5(candidate 9/11 hijack)35.2(er )]TJ\rT*\r[(Fahad al )127.2(Thumair)-27.7(y)0( )-2849.8(Saudi; )101.5(Imam of King Fahd mosque in Los )88.5(Ange-)]TJ\r11.7073 -1.0976 TD\r[(les; )100.9(accr)20.8(edited diplomat at Saudi Consulate in )]TJ\r0.0001 -1.0976 TD\r-0.08 Tw\r[(Los Angeles )]TJ\r-11.7074 -1.0976 TD\r-0.0001 Tw\r[(Hassan al )127.5(T)125.4(u)0(rabi )-3920.9(Sudan\\220)101.5(s longtime har)23.4(d-line ideolo)23(g)-29.6(ical leader and )]TJ\r11.7074 -1.0976 TD\r[(Speak)31.1(er of the countr)-25.7(y)0(\\220)100.4(s)0.1( National )82.5(Assemb)16.6(ly )]TJ\rET\rQ\r",
+   "page": 455
+  }
+ ],
+ "provenance": "Unmodified page font dictionaries (Subtype, BaseFont, FirstChar, Widths, decoded ToUnicode streams), ExtGState entries and complete decoded page content streams, read with mutool show from the checksum-pinned original; Encoding Differences and font programs are excluded. Native lines are PDFKit selectionsByLine strings and bounds on macOS 27.0.",
+ "rightsBasis": "Official U.S. Government commission report, retained as external development material. Source PDF is not bundled or relicensed under MIT.",
+ "sourceSHA256": "657d41475eb3a9a5e3e87a6c7c51ac1dfbe1af7566d1abff7bf7286e7e1c0e1b",
+ "sourceTitle": "The 9/11 Commission Report",
+ "sourceURL": "https://www.govinfo.gov/content/pkg/GPO-911REPORT/pdf/GPO-911REPORT.pdf"
+}

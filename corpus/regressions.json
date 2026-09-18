@@ -2443,7 +2443,7 @@
             "Square bracket means less than or equal to"
           ],
           "preformattedBlocks": [
-            "− 18 <− 12"
+            "− 18 < − 12"
           ]
         },
         {
@@ -2514,7 +2514,11 @@
             "Negative (subtract) in middle"
           ],
           "absentText": [
-            "(subtract)in middle"
+            "(subtract)in middle",
+            "10x− 16− 24x− 18"
+          ],
+          "paragraphs": [
+            "Combine like terms 10x − 24x and − 16 − 18"
           ]
         },
         {
@@ -4016,19 +4020,23 @@
           "page": 438,
           "paragraphs": [
             "the intelligence establishment and be clearly accountable for their work",
-            "to conduct oversight of the intelligence establishment and be clearly accountable"
+            "to conduct oversight of the intelligence establishment and be clearly accountable",
+            "master the subject and the agencies, to conduct oversight of the intelligence establishment"
           ],
           "absentText": [
-            "intel- ligence"
+            "intel- ligence",
+            "agencies,to"
           ]
         },
         {
           "page": 450,
           "text": [
-            "U.S. Central Command (CENTCOM), 2001–2003"
+            "U.S. Central Command (CENTCOM), 2001–2003",
+            "Director, Federal Bureau of Investigation, 1993–2001"
           ],
           "absentText": [
-            "CENT- COM"
+            "CENT- COM",
+            "Director,Federal"
           ],
           "orderedText": [
             "Roger Cressey",
@@ -4136,7 +4144,7 @@
             "Prince Turki bin Faisal",
             "Saudi intelligence chief prior to 9/11",
             "Ramzi Yousef",
-            "(a.k.a.Abdul Basit) Pakistani",
+            "(a.k.a. Abdul Basit) Pakistani",
             "Khalid Saeed Ahmad al Zahrani",
             "Saudi; candidate 9/11 hijacker",
             "Abu Zubaydah",
@@ -4280,13 +4288,19 @@
         {
           "page": 254,
           "paragraphs": [
-            "check with Atta to confirm that each had arrived.Hawsawi told"
+            "check with Atta to confirm that each had arrived. Hawsawi told"
+          ],
+          "absentText": [
+            "arrived.Hawsawi"
           ]
         },
         {
           "page": 259,
           "paragraphs": [
-            "the 9/11 attack.At the time of their travel through Iran, the al Qaeda operatives"
+            "the 9/11 attack. At the time of their travel through Iran, the al Qaeda operatives"
+          ],
+          "absentText": [
+            "attack.At"
           ]
         },
         {
@@ -4305,6 +4319,26 @@
           ],
           "paragraphs": [
             "official government edition"
+          ]
+        },
+        {
+          "page": 455,
+          "text": [
+            "Mohamedou Ould Slahi (a.k.a. Abu Musab) Mauritanian",
+            "Jordanian; Virginia resident who helped Hazmi"
+          ],
+          "absentText": [
+            "(a.k.a.Abu Musab)",
+            "Jordanian;Virginia"
+          ]
+        },
+        {
+          "page": 452,
+          "text": [
+            "(a.k.a. Abu Hafs al Masri) Egyptian; al Qaeda military commander"
+          ],
+          "absentText": [
+            "(a.k.a.Abu Hafs"
           ]
         },
         {
@@ -4444,6 +4478,12 @@
             {
               "reference": "corpus/references/fed-explained-2021/page-40-box-3-3-charts.png"
             }
+          ],
+          "continuedParagraphs": [
+            {
+              "end": "guaranteed by the U.S. Treasury or U.S. government agencies. When the",
+              "next": "securities are bought or sold, reserves in the banking system"
+            }
           ]
         },
         {
@@ -4518,7 +4558,13 @@
               "rowHeaders": true
             }
           ],
-          "maximumImages": 1
+          "maximumImages": 1,
+          "continuedParagraphs": [
+            {
+              "end": "significantly boosted the level of reserves",
+              "next": "in the banking system. (See subsection"
+            }
+          ]
         },
         {
           "page": 50,
@@ -4728,6 +4774,12 @@
               ],
               "headerCells": true,
               "rowHeaders": false
+            }
+          ],
+          "continuedParagraphs": [
+            {
+              "end": "payroll payments, and consumer mortgage and utility payments. Much of the recent",
+              "next": "growth in ACH payments has resulted from one-time transactions"
             }
           ]
         },
@@ -5034,6 +5086,12 @@
           ],
           "absentText": [
             "paymentsystems. htm"
+          ],
+          "continuedParagraphs": [
+            {
+              "end": "the First Liberty Loan—bonds issued to help finance the",
+              "next": "United States’ World War I effort."
+            }
           ]
         },
         {
@@ -5129,7 +5187,13 @@
               ]
             }
           ],
-          "maximumImages": 1
+          "maximumImages": 1,
+          "continuedParagraphs": [
+            {
+              "end": "key line items of the Federal Reserve’s balance sheet.) The vast major",
+              "next": "ity of the Federal Reserve’s assets are securities holdings"
+            }
+          ]
         },
         {
           "page": 63,
@@ -5206,7 +5270,8 @@
         {
           "page": 20,
           "paragraphs": [
-            "congressionally mandated goals of maximum employment and price stability"
+            "congressionally mandated goals of maximum employment and price stability",
+            "to achieve these dual objectives. At times, as an additional policy measure, the FOMC has used forward guidance"
           ],
           "absentText": [
             "em- ployment"
@@ -5230,7 +5295,8 @@
         {
           "page": 92,
           "paragraphs": [
-            "since the Federal Reserve was established in 1913. At that time, cash and checks were the predominant means of payment."
+            "since the Federal Reserve was established in 1913. At that time, cash and checks were the predominant means of payment.",
+            "carrying out monetary, supervisory, and lending responsibilities."
           ]
         },
         {
@@ -5266,10 +5332,18 @@
         {
           "page": 28,
           "paragraphs": [
-            "to a level lower than previously expected. Conversely, short-term interest"
+            "to a level lower than previously expected. Conversely, short-term interest",
+            "for the federal funds rate. Short-term interest rates would decline if the FOMC reduced its",
+            "lower than previously expected. Conversely, short-term interest rates would rise if the FOMC increased"
           ],
           "absentText": [
             "lower than previ- Monetary policy"
+          ],
+          "distinctParagraphs": [
+            {
+              "first": "short-term interest rates would rise if the FOMC increased",
+              "second": "The FOMC changes monetary policy primarily by raising or lowering"
+            }
           ]
         },
         {
@@ -5324,6 +5398,75 @@
           ],
           "paragraphs": [
             "Figure 4.5. The framework for monitoring U.S. financial system stability"
+          ]
+        },
+        {
+          "page": 98,
+          "continuedParagraphs": [
+            {
+              "end": "all output files be delivered electronically. That is, all institu",
+              "next": "tions dealing with the Federal Reserve directly were required"
+            }
+          ]
+        },
+        {
+          "page": 55,
+          "continuedParagraphs": [
+            {
+              "end": "the Dodd-Frank Act stress tests for large banking",
+              "next": "institutions and the Financial Stability Report"
+            }
+          ]
+        },
+        {
+          "page": 93,
+          "continuedParagraphs": [
+            {
+              "end": "used primarily for transactions between banks (interbank transactions)",
+              "next": "and between businesses. The check-collection system"
+            }
+          ]
+        },
+        {
+          "page": 100,
+          "continuedParagraphs": [
+            {
+              "end": "now opens at 9:00 p.m. eastern time (ET) on the night before a business",
+              "next": "day and closes at 7:00 p.m."
+            }
+          ]
+        },
+        {
+          "page": 34,
+          "paragraphs": [
+            "the risks and uncertainties attending the outlook, and the reasons for the Committee’s decisions."
+          ]
+        },
+        {
+          "page": 60,
+          "paragraphs": [
+            "the pernicious spillovers of distress at or between individual institutions and from those institutions to the broader economy."
+          ]
+        },
+        {
+          "page": 84,
+          "paragraphs": [
+            "with significant U.S. operations. These standards require these institutions to maintain a minimum liquidity buffer"
+          ],
+          "absentText": [
+            "mini- mum"
+          ]
+        },
+        {
+          "page": 94,
+          "paragraphs": [
+            "the practice of paying checks at less than their full face value. This practice of not remitting payment"
+          ]
+        },
+        {
+          "page": 122,
+          "paragraphs": [
+            "including its consumer compliance culture and how effectively it identifies and manages consumer compliance risk, to tailor the scope and resources needed"
           ]
         }
       ]
@@ -6047,14 +6190,15 @@
           "page": 47,
           "paragraphs": [
             "On July 4, 1776, the Continental Congress passed a resolution",
-            "each element has a specific meaning"
+            "each element has a specific meaning",
+            "did not become a reality until June 20, 1782.",
+            "White signifies purity and innocence, Red, hardiness"
           ],
           "absentText": [
             "O n July",
-            "a specific mean ing"
-          ],
-          "text": [
-            "did not become a real ity"
+            "a specific mean ing",
+            "real ity",
+            "inno cence"
           ]
         },
         {
@@ -6145,16 +6289,28 @@
         {
           "page": 52,
           "absentText": [
-            "BY THE PEO PLE"
+            "BY THE PEO PLE",
+            "CONSTITU TION"
           ],
           "text": [
             "OF THE PEOPLE, BY THE PEOPLE, FOR THE PEOPLE"
+          ],
+          "paragraphs": [
+            "TO SUPPORT ITS CONSTITUTION; TO OBEY ITS LAWS"
           ]
         },
         {
           "page": 15,
           "absentHeadings": [
             "BENNINGTON FLAG"
+          ],
+          "paragraphs": [
+            "the 50th anniversary of the Declaration of Independence in 1826. Its design is typical of the exuberant"
+          ],
+          "absentText": [
+            "Independ ence",
+            "uni form",
+            "ex uberant"
           ]
         },
         {
@@ -6164,6 +6320,27 @@
               "end": "and on the day of death and the following",
               "next": "day for a Member of Congress. As used in this subsection"
             }
+          ]
+        },
+        {
+          "page": 8,
+          "paragraphs": [
+            "brought to the attention of the public in 1870"
+          ],
+          "absentText": [
+            "pub lic"
+          ]
+        },
+        {
+          "page": 25,
+          "paragraphs": [
+            "Advertising signs should not be fastened to a staff or halyard from which the flag is flown.",
+            "embroidered on such articles as cushions or handkerchiefs"
+          ],
+          "absentText": [
+            "hal yard",
+            "addi tional",
+            "cush ions"
           ]
         }
       ]

@@ -62,7 +62,7 @@ the survey table); each baseline `<pre>` block was located in the candidate outp
 |---|---:|---:|---:|---:|---:|---:|---:|
 | faa-phak-8083-25c | 182 (816) | 69 (212, 16) | 6 | 14 | 24 | 813 / 813 | 212 / 216 |
 | gpo-911-2004 | 54 (180) | 3 (17, 0) | 4 | 16 | 8 | 179 / 179 | 13 / 17 |
-| noaa-nca5-2023 | 45 (168) | 0 | 1 | 2 | 10 | 168 / 168 | 0 / 2 |
+| noaa-nca5-2023 | 45 (168); 43 (172) on `798b3c3` | 0 | 1 | 2 | 10 | 168 / 168 | 0 / 2 |
 | fed-explained-2021 | 23 (79) | 8 (22, 2) | 0 | 2 | 4 | 78 / 78 | 22 / 24 |
 | dga-2025-2030 | 26 (86) | 0 | 5 | 0 | 4 | 18 / 18 | — |
 | census-rrs2002-01 | 0 | 1 (16, 0) | 0 | 0 | 0 | — | 16 / 16 |
@@ -163,7 +163,7 @@ checked on renders. Numbered and lettered markers keep the old rule.
 |---|---:|---|
 | faa-phak-8083-25c | 167 | none |
 | gpo-911-2004 | 62 | none |
-| noaa-nca5-2023 | 32 | none |
+| noaa-nca5-2023 | 32 (34 on `798b3c3`) | none |
 | fed-explained-2021 | 29 | none |
 | wallace-algebra-2010 | 9 | none |
 | dga-2025-2030 | 8 | none |
@@ -210,3 +210,17 @@ items) and `lists` (a list element's kind, `start`, depth and consecutive items)
   regroup exercise and reference entries, which are #195's.
 - A lone numbered item (CDC's `1) Get a Kit`) stays preformatted; a one-item `<ol>` is not evidence.
 - Warren is outside the gated lane (#5) and was not converted.
+
+## Re-verification on `798b3c3`
+
+The change was merged onto `fbe3464` and then `798b3c3` (#149, #150, #161, #177, #181, #186,
+#187, #188, #189, #193 and the removal of the two non-English cases). Contracts were merged three
+ways by case, page and key. Two edits overlapped: census page 3's ordered text (its printed markers
+are dropped and #189's spelled-out `fl` kept; the list checks' own `ﬂag` ligatures are spelled
+out too, which #189's contract test requires), and Wallace page 120's derivation row, now `− 18 <
+− 12` after #177, which stays a `preformattedBlocks` check. Against a `798b3c3` baseline, all 20
+cases pass one per call with EPUBCheck; every comparison shows no image, report or navigation
+change and complete page markers, and the per-page word diff (markers ignored) is empty. The list
+counts are those above for every book but NOAA, which on `798b3c3` has 43 bulleted lists of 172
+items. Wallace's rows split after an exponent (`<pre>− 8x− 20</pre>`, #177) open with a minus sign
+and stay preformatted.

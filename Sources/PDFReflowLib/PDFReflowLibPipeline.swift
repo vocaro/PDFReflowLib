@@ -242,6 +242,8 @@ enum PDFReflowLibPipeline {
                     content.graphics = composed.graphics
                     content.tints = composed.tints
                     content.separators = composed.separators
+                    // List bullets drawn as shapes open their lines as `•`, not as crops (#167).
+                    if !syntheticStyle { DrawnBulletReader.apply(&content, paints: graphics.paints) }
                 }
                 content.requiresPageImage = requiresPageImage
                 content.hasSyntheticTextStyle = syntheticStyle

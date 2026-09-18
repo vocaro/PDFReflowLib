@@ -49,6 +49,10 @@ struct TextLine: Equatable {
     /// the line names one item. `label` is the first show's: a line whose first show is an `Lbl`
     /// opens its item.
     var listTag: ListTag?
+    /// Where the text begins on a line opened by a list marker drawn as a shape rather than set in
+    /// type (`DrawnBulletReader`, #167). The line's `rect` starts at the marker; this is the item's
+    /// text edge, from which the list pass measures a nested marker.
+    var markerTextEdge: CGFloat?
 
     init(text: String, rect: CGRect, fontSize: CGFloat, monospaced: Bool = false, wraps: Bool? = nil) {
         self.init(content: InlineText(text), rect: rect, fontSize: fontSize, monospaced: monospaced, wraps: wraps)
@@ -85,7 +89,7 @@ struct TextLine: Equatable {
 extension TextLine: Codable {
     private enum CodingKeys: String, CodingKey {
         case content, rect, fontSize, monospaced, wraps, readingRect, structure, readingDirection
-        case trailingSpace, listTag
+        case trailingSpace, listTag, markerTextEdge
     }
 
     init(from decoder: Decoder) throws {
@@ -100,6 +104,7 @@ extension TextLine: Codable {
         readingDirection = try values.decodeIfPresent(CGVector.self, forKey: .readingDirection)
         trailingSpace = try values.decodeIfPresent(Bool.self, forKey: .trailingSpace) ?? false
         listTag = try values.decodeIfPresent(ListTag.self, forKey: .listTag)
+        markerTextEdge = try values.decodeIfPresent(CGFloat.self, forKey: .markerTextEdge)
     }
 
     func encode(to encoder: Encoder) throws {
@@ -114,6 +119,7 @@ extension TextLine: Codable {
         try values.encodeIfPresent(readingDirection, forKey: .readingDirection)
         if trailingSpace { try values.encode(true, forKey: .trailingSpace) }
         try values.encodeIfPresent(listTag, forKey: .listTag)
+        try values.encodeIfPresent(markerTextEdge, forKey: .markerTextEdge)
     }
 }
 

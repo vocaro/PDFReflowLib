@@ -11073,7 +11073,7 @@
     {
       "id": "ntrs-20210020887-techport-thm-2021",
       "sourceSHA256": "0fce4b68983ad8a216c8228ec44697c61ab41977ad41733c465ebebec3976ff0",
-      "basis": "All five source pages visually reviewed against 80 DPI Poppler renders (sidebar, gallery and header at 300 DPI) and the extracted text layer. Protects only output that matches the source: the main column's section titles as headings; the five Project Introduction paragraphs whole, separate and in order; every bullet item's text whole and in source order on pages 2-3, including the nested items; the See Image and See Figure lines; the closeout-document title and link text and the Figure 1 caption on page 4; and preserved images for the page-1 photo, the page-3 map, the page-4 figure and the page-5 gallery. Not pinned because wrong now: the header band's division, title and status lines kept inside a region crop with the insignia on every page; the right sidebar panels (photo caption, table of contents, organizational responsibility, project management, TRL chart, technology areas, destinations, mission type), the page-4 tables and the page-5 gallery captions kept only inside region crops; the Printed on, URL, page-number and accessible-alternative footer lines left in the reading flow; bullet markers as tiny image crops before paragraph items; Closeout Documentation merged into its paragraph and Images not a heading; a space inside the wrapped image URLs; and the source-page image forced by borderless links on every page (see the review file). No committed rasters: every page shows the NASA insignia (14 CFR 1221); see the manifest's rights note. All five pages reviewed again on their renders (#27): the 27 borderless link annotations draw nothing beyond the printed page, so no page takes an `Original page N` image and every page warns annotationsNotConverted (#151); the Chromium print's embedded Open Sans and Verdana give a genuine text layer, so no page may report fresh recognition, a damaged encoding, an implausible or unverified text layer, or a whole-page image fallback. The page-4 Figure 1 caption sits directly beneath its diagram and must stand next after an image. Page 5 keeps all three gallery pictures. Pages 1 and 5 reviewed again at 50 DPI with every crop outlined (#166): the header band's division, project title and state, the sidebar's caption and table of contents, and the gallery's three captions are text, while the insignia, the sidebar photograph and the three gallery pictures stay images. The gallery captions' order is not approved (#153).",
+      "basis": "All five source pages visually reviewed against 80 DPI Poppler renders (sidebar, gallery and header at 300 DPI) and the extracted text layer. Protects only output that matches the source: the main column's section titles as headings; the five Project Introduction paragraphs whole, separate and in order; every bullet item's text whole and in source order on pages 2-3, including the nested items; the See Image and See Figure lines; the closeout-document title and link text and the Figure 1 caption on page 4; and preserved images for the page-1 photo, the page-3 map, the page-4 figure and the page-5 gallery. Not pinned because wrong now: the header band's division, title and status lines kept inside a region crop with the insignia on every page; the right sidebar panels (photo caption, table of contents, organizational responsibility, project management, TRL chart, technology areas, destinations, mission type), the page-4 tables and the page-5 gallery captions kept only inside region crops; and the source-page image forced by borderless links on every page (see the review file). No committed rasters: every page shows the NASA insignia (14 CFR 1221); see the manifest's rights note. All five pages reviewed again on their renders (#27): the 27 borderless link annotations draw nothing beyond the printed page, so no page takes an `Original page N` image and every page warns annotationsNotConverted (#151); the Chromium print's embedded Open Sans and Verdana give a genuine text layer, so no page may report fresh recognition, a damaged encoding, an implausible or unverified text layer, or a whole-page image fallback. The page-4 Figure 1 caption sits directly beneath its diagram and must stand next after an image. Page 5 keeps all three gallery pictures. Pages 1 and 5 reviewed again at 50 DPI with every crop outlined (#166): the header band's division, project title and state, the sidebar's caption and table of contents, and the gallery's three captions are text, while the insignia, the sidebar photograph and the three gallery pictures stay images. The gallery captions' order is not approved (#153). Fixed in #167 and pinned from the reviewed output: Chromium's print footer (Printed on with its date and time, the accessible-alternative notice, the page URL and Page N) and the TechPort logo beside it leave every page as repeated furniture; the drawn square and circle bullets become the items of real lists, pages 2-3 holding no image but the insignia and the sidebar or map crops, with the nested items one level deeper under the item they follow in the source (Demostrated..., FPGA... and MPG technology is aimed:); Closeout Documentation and Images are h3 like the other main-column titles, the closeout link its own paragraph; and the wrapped image URLs join without a space.",
       "pages": [
         {
           "page": 1,
@@ -11128,7 +11128,15 @@
             "Advanced Exploration Systems Division",
             "Project Introduction 1",
             "Technology Maturity (TRL) 2"
-          ]
+          ],
+          "absentText": [
+            "Printed on 08/24/2021",
+            "03:51 PM CDT",
+            "please visit:",
+            "https://techport.nasa.gov/view/97058",
+            "Page 1"
+          ],
+          "maximumImages": 2
         },
         {
           "page": 2,
@@ -11161,6 +11169,58 @@
             "unverifiedTextLayer",
             "damagedTextEncoding",
             "implausibleTextLayer"
+          ],
+          "absentText": [
+            "Printed on 08/24/2021",
+            "03:51 PM CDT",
+            "please visit:",
+            "https://techport.nasa.gov/view/97058",
+            "Page 2"
+          ],
+          "maximumImages": 2,
+          "lists": [
+            {
+              "kind": "ul",
+              "level": 0,
+              "items": [
+                "High accuracy demonstrated on Orion Tank of ~0.25% average in settled state",
+                "Demostrated with Morpheus static engne frings under partial vacumn at GRC Plumbrook test facility",
+                "Zero-G accuracy is on the order of 1% as demonstrated in Flight",
+                "MPG Point Sensor readings provide another accurate method to establish fluid level",
+                "FPGA based avionics and algorithm design provide 1 HZ update on mass measurement"
+              ]
+            },
+            {
+              "kind": "ul",
+              "level": 1,
+              "items": [
+                "Can use one tank to develop FRF/mass reference table for all other tanks of the same part number and support system"
+              ]
+            },
+            {
+              "kind": "ul",
+              "level": 1,
+              "items": [
+                "Design provides Industrial and Rad Tolerant option for avionics for Deep Space Use"
+              ]
+            },
+            {
+              "kind": "ul",
+              "level": 0,
+              "items": [
+                "NASA requires accurate propellant mass gauging technology",
+                "MPG technology is aimed:",
+                "Mitigates typical estimation errors which can grow towards end of life ~ 10% or more"
+              ]
+            },
+            {
+              "kind": "ul",
+              "level": 1,
+              "items": [
+                "increasing human safety with accurate gauging",
+                "Monitoring propellant used for missions and ultimately limiting amount of propellant reserves/mass required"
+              ]
+            }
           ]
         },
         {
@@ -11188,6 +11248,28 @@
             "unverifiedTextLayer",
             "damagedTextEncoding",
             "implausibleTextLayer"
+          ],
+          "absentText": [
+            "Printed on 08/24/2021",
+            "03:51 PM CDT",
+            "please visit:",
+            "https://techport.nasa.gov/view/97058",
+            "Page 3"
+          ],
+          "maximumImages": 3,
+          "lists": [
+            {
+              "kind": "ul",
+              "level": 0,
+              "items": [
+                "Technology can be infused into future CLPS landers, Orion (EM- 3+), NASA HLS, Gateway MMH tanks, etc.",
+                "The technology has been highly successfully demonstrated to provide Tank health monitoring",
+                "Very low risk for forward plan for MPG CLIPS experiments",
+                "The capability is required for deep space missions manned and unmanned",
+                "To explore deep Space, the future is to develop very reliable much lighter spacecraft",
+                "Modal Propellant Gauge (MPG) allows a highly accurate, non-invasive, near real-time measurement"
+              ]
+            }
           ]
         },
         {
@@ -11215,6 +11297,31 @@
             "unverifiedTextLayer",
             "damagedTextEncoding",
             "implausibleTextLayer"
+          ],
+          "absentText": [
+            "Printed on 08/24/2021",
+            "03:51 PM CDT",
+            "please visit:",
+            "https://techport.nasa.gov/view/97058",
+            "Page 4",
+            "techport.nasa.gov/imag e/"
+          ],
+          "maximumImages": 5,
+          "headingLevels": [
+            {
+              "heading": "Closeout Documentation",
+              "level": 3
+            },
+            {
+              "heading": "Images",
+              "level": 3
+            }
+          ],
+          "paragraphs": [
+            "Tank Health Monitoring Close Out Report and Executive Summary (https://techport.nasa.gov/file/41595)"
+          ],
+          "text": [
+            "(https://techport.nasa.gov/image/41317)"
           ]
         },
         {
@@ -11234,8 +11341,20 @@
           "text": [
             "Existing propellant gauging",
             "The Basic Formula",
-            "Accurate measurement of cryogenic"
-          ]
+            "Accurate measurement of cryogenic",
+            "(https://techport.nasa.gov/image/41318)",
+            "(https://techport.nasa.gov/image/41316)",
+            "(https://techport.nasa.gov/image/41319)"
+          ],
+          "absentText": [
+            "Printed on 08/24/2021",
+            "03:51 PM CDT",
+            "please visit:",
+            "https://techport.nasa.gov/view/97058",
+            "Page 5",
+            "techport.nasa.gov/imag e/"
+          ],
+          "maximumImages": 4
         }
       ]
     }

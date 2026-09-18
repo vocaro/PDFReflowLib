@@ -115,7 +115,7 @@ are, in the page markup). Evidence and negative controls on real output are in
 ## Current content coverage
 
 <!-- counts:coverage -->
-[corpus/regressions.json](../corpus/regressions.json) has 3595 targeted checks on 585 reviewed pages
+[corpus/regressions.json](../corpus/regressions.json) has 3640 targeted checks on 585 reviewed pages
 across 20 documents: *Pilot's Handbook of Aeronautical Knowledge*, *Beginning and Intermediate
 Algebra*, *The 9/11 Commission Report*, *The Fed Explained*, *Dietary Guidelines for Americans*,
 *Fifth National Climate Assessment*, *Our Flag*, *Preparedness 101*, *Project Blue Book Special
@@ -125,11 +125,11 @@ Bremsstrahlung in Electron-Ion Collisions*, *Replay Clocks*, *Complaint for a Ci
 *Investigation of Atmospheric Boundary-Layer Effects on Launch-Vehicle Ground Wind Loads*, *A
 Scheduling Algorithm Compatible with a Distributed Management of Arrivals in the National Airspace
 System*, *Agricultural Research*, *Earthdata Cloud Analytics Project* and *Tank Health Monitoring*.
-They comprise 1137 ordered-text, 242 text, 450 paragraph, 314 absent-text, 278 heading,
-36 heading-level, 64 absent-heading, 88 list-item, 40 list, 21 preformatted-block,
+They comprise 1137 ordered-text, 246 text, 451 paragraph, 341 absent-text, 278 heading,
+38 heading-level, 64 absent-heading, 88 list-item, 46 list, 21 preformatted-block,
 1 preformatted-lines, 29 script, 10 absent-script, 11 footnote, 34 note-link,
 70 paragraph-continuation, 1 list-item-continuation, 8 paragraph-separation, 121 distinct-paragraph,
-197 image-presence, 45 captioned-image, 20 image-alternative, 102 page-reference, 111 warning,
+202 image-presence, 45 captioned-image, 20 image-alternative, 102 page-reference, 111 warning,
 113 absent-warning, 16 source-region, 4 glyph-structure, 5 image-appearance, 14 table-cell and
 13 math-expression checks, counted as `tools/check_corpus_content.py` counts them.
 <!-- counts:end -->
@@ -658,7 +658,6 @@ swiftc Sources/PDFReflowLib/NativeTextReader.swift Sources/PDFReflowLib/Conversi
   Sources/PDFReflowLib/StructureTreeReader.swift Sources/PDFReflowLib/MarkedTextReader.swift \
   Sources/PDFReflowLib/FontWeightReader.swift Sources/PDFReflowLib/PrivateUseDecoder.swift \
   Sources/PDFReflowLib/AnnotationEvidence.swift \
-  tools/capture-layout-fixture.swift \
   Sources/PDFReflowLib/GlyphIndexDecoder.swift Sources/PDFReflowLib/TextEncodingCheck.swift \
   Sources/PDFReflowLib/ColumnGrid.swift tools/capture-layout-fixture.swift \
   -o /tmp/capture-layout-fixture
@@ -684,7 +683,7 @@ the page's structure validates, each line also records the tag the pipeline appl
 since #89/#90); older fixtures and untagged lines have none, and `SourceLayoutFixture` restores it.
 Source review, baseline failures, cross-document safeguards and full-run evidence are retained
 in [the three-fix measurement](../measurements/three-fidelity-fixes/record.md). The suite contains
-<!-- counts:swift-tests -->1007 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->249 Python tests<!-- counts:end -->.
+<!-- counts:swift-tests -->1015 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->249 Python tests<!-- counts:end -->.
 The comparison tests include a real-Poppler image URL check through the safe HTTP handler
 (simple and positioned modes, paths with spaces); absent Poppler is an explicit skip.
 

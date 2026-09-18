@@ -402,6 +402,9 @@ struct ReflowBlock: Sendable, Equatable {
         var recognized = false
         /// The tagged list item the marker line belongs to, when the PDF tags it.
         var tag: ListTag?
+        /// Where the item's text begins past its marker, when the marker was drawn as a shape
+        /// (`TextLine.markerTextEdge`, #167); nil for a marker set in type.
+        var textEdge: CGFloat?
     }
 
     var text: String {

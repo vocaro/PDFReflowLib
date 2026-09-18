@@ -1099,13 +1099,22 @@ TeX's Cork table for an EC or DC font name, or through letters, digits and the p
 and TeX encodings share. `NativeTextReader` rewrites each PDFKit line whose shows all decode and
 whose PDFKit characters they spell (`FontWeightReader.repairIndexGlyphs`: a glyph PDFKit reports as
 nothing, a ligature, joins a neighbour in its word; glyphs PDFKit continues on a following line of
-the row carry over) before spacing and style repair read it. A page keeps the font evidence unless
+the row carry over) before spacing and style repair read it. Where a carry continues the row in
+words (at least three words of three letters, letters half the visible characters), the two PDFKit
+lines are one typeset line split inside one show (Census page 17's `[2]` and its entry), so they are
+read as one line over their union, which then holds every show of the row for repair, spacing and
+style (#149); a continuation in figures (page 12's row labels and rates) stays in its pieces for the
+table path. A page keeps the font evidence unless
 every line with index-glyph shows was repaired and its lines hold no numeric grid (three rows of at
 least two decimal numbers making up half their words: no table path reconstructs Census's
 rule-headed tables, which would reflow as run-together cells while recognition keeps table images),
 and the English statistics judge PDFKit's own text. Census pages 3 and 17 reflow natively; its table
 pages and pages with math fonts, which follow no constant offset, keep `damagedTextEncoding`. See the
-[index-glyph evidence](../measurements/glyph-index-decoding/record.md).
+[index-glyph evidence](../measurements/glyph-index-decoding/record.md) and the
+[follow-up evidence](../measurements/index-glyph-follow-ups/record.md) (#149), which records why
+the math fonts stay undecoded: `cmmi`'s letters sit at their own codes but its Greek 134 and 136
+places on, the font programs name only `G<n>` glyphs, and the math pages also draw Type3 bitmap
+fonts.
 
 Symbol fonts give PDFKit private-use code points (#155): Word writes a TrueType symbol font's
 built-in code `xx` as U+F0xx in its ToUnicode map (the NASA paper's alpha as U+F061, Supreme Court

@@ -6430,11 +6430,13 @@
             "[1] Dempster, A. P., Laird, N. M. and Rubin, D. B.: Maximum Likelihood from",
             "Journal of the Royal Statistical Society, B, 39 (1977) 1–38.",
             "Fellegi, I. P., and Sunter, A. B.: A Theory for Record Linkage, Journal of the American Statistical Association, 64, (1969) 1183–1210.",
-            "Journal of Oﬃcial Statistics, 9, (1993) 383–406."
+            "Journal of Oﬃcial Statistics, 9, (1993) 383–406.",
+            "Lambert, D.: Measures of Disclosure Risk and Harm, Journal of Oﬃcial Statistics, 9, (1993) 313–331."
           ],
           "absentText": [
             "Uhihuhqfhv",
-            "R!fldo"
+            "R!fldo",
+            "JournalofOﬃcialStatistics"
           ],
           "absentWarningCodes": [
             "damagedTextEncoding",
@@ -6443,7 +6445,11 @@
           "maximumImages": 0,
           "paragraphs": [
             "Maximum Likelihood from Incomplete Data via the EM Algorithm",
-            "[11] Kim, J. J. and Winkler, W. E.: Multiplicative Noise for Masking Continuous Data,"
+            "[11] Kim, J. J. and Winkler, W. E.: Multiplicative Noise for Masking Continuous Data,",
+            "[2] Dalenius, T. and Reiss, S. P. Data-swapping: A Technique for Disclosure Control",
+            "[ 5] Domingo-Ferrer, J., Mateo-Sanz, J. and Torra, Vincenc: Comparing SDC Methods",
+            "[ 8] Kim, J. J.: A Method for Limiting Disclosure in Microdata Based on Random",
+            "[ 12] Lambert, D.: Measures of Disclosure Risk and Harm,"
           ]
         },
         {

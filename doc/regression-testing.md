@@ -115,7 +115,7 @@ are, in the page markup). Evidence and negative controls on real output are in
 ## Current content coverage
 
 <!-- counts:coverage -->
-[corpus/regressions.json](../corpus/regressions.json) has 3312 targeted checks on 556 reviewed pages
+[corpus/regressions.json](../corpus/regressions.json) has 3318 targeted checks on 556 reviewed pages
 across 22 documents: *Pilot's Handbook of Aeronautical Knowledge*, *Beginning and Intermediate
 Algebra*, *The 9/11 Commission Report*, *The Fed Explained*, *Dietary Guidelines for Americans*,
 *Fifth National Climate Assessment*, *Our Flag*, *Preparedness 101*, *Project Blue Book Special
@@ -125,8 +125,8 @@ Report No. 14*, *Mineral Commodity Summaries 2025*, *Loper Bright Enterprises v.
 Clocks*, *Complaint for a Civil Case*, *Investigation of Atmospheric Boundary-Layer Effects on
 Launch-Vehicle Ground Wind Loads*, *A Scheduling Algorithm Compatible with a Distributed Management
 of Arrivals in the National Airspace System*, *Agricultural Research*, *Earthdata Cloud Analytics
-Project* and *Tank Health Monitoring*. They comprise 1135 ordered-text, 238 text, 397 paragraph,
-269 absent-text, 268 heading, 20 heading-level, 50 absent-heading, 89 list-item,
+Project* and *Tank Health Monitoring*. They comprise 1136 ordered-text, 238 text, 401 paragraph,
+270 absent-text, 268 heading, 20 heading-level, 50 absent-heading, 89 list-item,
 1 preformatted-lines, 29 script, 8 absent-script, 11 footnote, 34 note-link,
 61 paragraph-continuation, 1 list-item-continuation, 8 paragraph-separation, 92 distinct-paragraph,
 196 image-presence, 44 captioned-image, 102 page-reference, 113 warning, 111 absent-warning,
@@ -604,7 +604,7 @@ the page's structure validates, each line also records the tag the pipeline appl
 since #89/#90); older fixtures and untagged lines have none, and `SourceLayoutFixture` restores it.
 Source review, baseline failures, cross-document safeguards and full-run evidence are retained
 in [the three-fix measurement](../measurements/three-fidelity-fixes/record.md). The suite contains
-<!-- counts:swift-tests -->903 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->242 Python tests<!-- counts:end -->.
+<!-- counts:swift-tests -->906 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->242 Python tests<!-- counts:end -->.
 The comparison tests include a real-Poppler image URL check through the safe HTTP handler
 (simple and positioned modes, paths with spaces); absent Poppler is an explicit skip.
 
@@ -1603,6 +1603,27 @@ other body pages. The
 [index-glyph evidence](../measurements/glyph-index-decoding/record.md) surveys every English corpus
 book (no other index-glyph font and no shifted text), reviews Census against renders, and records the
 9/11 pages whose letter-spaced lines and citations gain spaces from the compensated-spacing rule.
+
+### Rows split inside one show
+
+Three tests in `GlyphIndexDecodingTests.swift` cover [#149](https://github.com/vocaro/PDFReflowLib/issues/149)'s
+reference rows. One show sets each Census reference number with its entry's first line, and PDFKit
+reads eight of them (`[2]`–`[8]`, `[ 12]`) as two lines; repair carried the show across, but the
+number stayed a paragraph of its own and entry 12's italic title, whose show the entry's line did not
+own, kept `JournalofOﬃcialStatistics`. On the captured page 17 lines, exactly those eight rows join
+(`[2] Dalenius, T. and Reiss, S. P. Data-swapping: A Technique for Disclosure Control`) and entry 12
+reads `Journal of Oﬃcial Statistics` once the joined line owns the row's shows, while the entry's
+line alone keeps the run-together title. Page 12's rows, which one show also sets and PDFKit also
+splits, stay in pieces because their continuation is figures, and without decodings nothing joins.
+`continuesInWords` pins the words-versus-figures rule. End to end, the rebuilt fixture's page 17
+under `.never` has no reference number as a block of its own. Disabling the join fails both Census
+tests; reading every continuation as words fails the page 12 control and the unit test.
+
+The Census contract adds four joined entries as paragraphs, entry 12 with its spaced title as
+ordered text and the run-together title as absent text; the `f3840f4` conversion fails exactly those
+six checks. The
+[follow-up evidence](../measurements/index-glyph-follow-ups/record.md) records the review and why the
+math pages, page 2 and page 16 keep OCR.
 
 ## Implausible inherited text layers
 

@@ -243,6 +243,98 @@ private func key(of baseFont: String, in document: CGPDFDocument) throws -> Stri
     #expect(try spaced(3, decodings: [:])[0] == "5GdwdIlohv")
 }
 
+// MARK: - Rows PDFKit splits inside one show (#149)
+
+/// Each pair of captured lines `NativeTextReader` reads as one (`joinsSplitShow`), keyed by the first
+/// line's index, as the joined line's text after spacing evidence.
+private func joinedCensusRows(_ source: CensusSource, _ number: Int, in document: CGPDFDocument,
+                              decodings: [String: [UInt8: String]]) throws -> [Int: String] {
+    let index = try #require(source.pages.firstIndex { $0.page == number })
+    let page = source.pages[index]
+    let pdfPage = try #require(document.page(at: index + 1))
+    let shows = FontWeightReader.read(pdfPage, decodings: decodings)
+    let evidence = NativeSpacingReader.read(pdfPage, decodings: decodings)
+    let bounds = page.lines.map(\.bounds)
+    var carry: FontWeightReader.IndexGlyphCarry?
+    var held: Int?, joined: [Int: String] = [:]
+    for (offset, line) in page.lines.enumerated() {
+        let handed = carry != nil, previous = held
+        let text = NSAttributedString(string: line.text)
+        let repair = FontWeightReader.repairIndexGlyphs(shows, in: text, bounds: line.bounds, allBounds: bounds, carry: &carry)
+        held = repair.outcome == .repaired && carry != nil ? offset : nil
+        guard let left = previous, handed, !repair.abandoned, repair.outcome == .repaired, carry == nil,
+              let pair = NativeTextReader.joinsSplitShow(NSAttributedString(string: page.lines[left].text), bounds[left],
+                                                         text, line.bounds, continuation: repair.text.string, weights: shows,
+                                                         allBounds: bounds) else { continue }
+        #expect(pair.bounds == bounds[left].union(line.bounds))
+        joined[left] = NativeSpacingReader.apply(evidence, to: pair.text, bounds: pair.bounds, allBounds: bounds).string
+    }
+    return joined
+}
+
+@Test func censusReferenceRowsThatOneShowSetsAreReadAsOneLine() throws {
+    let source = try CensusSource.load()
+    let document = try cgDocument(source.pdf())
+    let decodings = try GlyphIndexDecoder.read(document, language: "en")
+    // Page 17: PDFKit reads eight reference numbers as lines of their own although one show sets each
+    // number with its entry's first line; repair carries the show on, and the two read as one line.
+    let page17 = try joinedCensusRows(source, 17, in: document, decodings: decodings)
+    #expect(page17.count == 8)
+    #expect(page17.values.map { String($0.prefix(while: { $0 != "," })) }.sorted() == [
+        "[ 12] Lambert", "[ 3] De Waal", "[ 4] De Waal", "[ 5] Domingo-Ferrer", "[ 6] Fellegi", "[ 7] Fuller", "[ 8] Kim",
+        "[2] Dalenius",
+    ])
+    #expect(page17.values.contains("[2] Dalenius, T. and Reiss, S. P. Data-swapping: A Technique for Disclosure Control"))
+    // The italic title's word gaps are read once the joined line owns the whole row's shows.
+    #expect(page17.values.contains("[ 12] Lambert, D.: Measures of Disclosure Risk and Harm, Journal of Oﬃcial Statistics,"))
+    // Control: the entry's line alone does not own the show that begins at its number, so its
+    // shows do not spell it and no word gap is read.
+    let index = try #require(source.pages.firstIndex { $0.page == 17 })
+    let lines = source.pages[index].lines
+    let entry = try #require(lines.firstIndex { $0.text.hasPrefix("Odpehuw") })
+    let evidence = NativeSpacingReader.read(try #require(document.page(at: index + 1)), decodings: decodings)
+    let alone = "Lambert, D.: Measures of Disclosure Risk and Harm, JournalofOﬃcialStatistics,"
+    #expect(NativeSpacingReader.apply(evidence, to: NSAttributedString(string: alone), bounds: lines[entry].bounds,
+                                      allBounds: lines.map(\.bounds)).string == alone)
+    // Page 12: one show also sets each table row's label and figures, and PDFKit splits them the same way,
+    // but a continuation in figures stays a separate piece for the table path.
+    #expect(try joinedCensusRows(source, 12, in: document, decodings: decodings).isEmpty)
+    // Negative control: without established characters nothing repairs, nothing carries and nothing joins.
+    #expect(try joinedCensusRows(source, 17, in: document, decodings: [:]).isEmpty)
+}
+
+@Test func continuationsInWordsAreProseAndFiguresAreNot() {
+    #expect(NativeTextReader.continuesInWords("Dalenius, T. and Reiss, S. P. Data-swapping: A Technique"))
+    #expect(NativeTextReader.continuesInWords("Lambert, D.: Measures of Disclosure Risk and Harm,"))
+    #expect(!NativeTextReader.continuesInWords("46.11 47.06 46.66 49.90 50.85 49.45"))
+    #expect(!NativeTextReader.continuesInWords("0.8861 0.9620"))
+    // Two words of three or more letters are not enough, nor are words drowned in figures.
+    #expect(!NativeTextReader.continuesInWords("of Microdata, Survey"))
+    #expect(!NativeTextReader.continuesInWords("mean 46.11 47.06 46.66 49.90 median 50.85 49.45 total 0.12"))
+    #expect(!NativeTextReader.continuesInWords(""))
+}
+
+@Test func censusReferencePageReadsEachEntryAsOneParagraph() async throws {
+    let source = try CensusSource.load()
+    let dir = try testPDFDirectory(); defer { try? FileManager.default.removeItem(at: dir) }
+    let url = dir.appendingPathComponent("census-fixture.pdf")
+    try source.pdf().write(to: url)
+    var options = ConversionOptions(); options.ocr = .never
+    options.removeRepeatedHeadersAndFooters = false
+    let result = try await PDFReflowLibPipeline.reconstruct(from: url, options: options,
+        workspace: dir.appendingPathComponent("work"), progress: { _ in })
+    // Under `.never` the page's lines are read repaired whatever the page-level decision (the rebuilt page,
+    // without font programs, keeps #38's warning with or without #149).
+    let page = try #require(source.pages.firstIndex { $0.page == 17 }) + 1
+    let blocks = result.document.blocks.filter { $0.page == page }.map(\.text)
+    #expect(blocks.contains { $0.hasPrefix("[2] Dalenius, T. and Reiss, S. P. Data-swapping:") }, "\(blocks)")
+    // PDFKit reads this row whole in the rebuilt page; the captured split is `censusReferenceRowsThatOneShowSets…`'s.
+    #expect(blocks.contains { $0.hasPrefix("[ 12] Lambert, D.: Measures of Disclosure Risk and Harm, Journal of Oﬃcial Statistics, 9,") },
+            "\(blocks)")
+    // No reference number stands alone as a block.
+    #expect(!blocks.contains { $0.range(of: #"^\[ ?\d+\]$"#, options: .regularExpression) != nil }, "\(blocks)")
+}
+
 // MARK: - Tables and names
 
 @Test func corkAndSharedTablesDecodeOnlyCharactersTheirEncodingsFix() {

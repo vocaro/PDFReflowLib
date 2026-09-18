@@ -431,6 +431,25 @@ enum NativeTextReader {
             report.unrepairedLines += FontWeightReader.unplacedIndexShows(weights, allBounds: boundsByLine)
         }
         defer { if carry != nil { report?.unrepairedLines += 1 } }
+        // Spacing and style evidence applied to a line's (repaired) characters.
+        func finish(_ attributed: NSAttributedString?, semantic: String, exact: Bool, bounds: CGRect,
+                    allBounds: [CGRect]) -> TextLine {
+            let repaired = attributed.map {
+                exact ? NativeSpacingReader.apply(spacing, to: $0, bounds: bounds, allBounds: allBounds) : $0
+            }
+            let corrected = repaired?.string != attributed?.string
+                ? repaired?.string.replacingOccurrences(of: "\u{FFFC}", with: " ") : nil
+            let weighted = repaired.map {
+                FontWeightReader.apply(weights, to: $0, bounds: bounds, allBounds: allBounds)
+            }
+            // Private-use characters are decoded last: spacing and style evidence compare PDFKit's
+            // characters with the shows' own maps, which hold the same private-use values (#155).
+            return textLine(semantic: privateUse.decode(corrected ?? semantic),
+                            bounds: bounds, attributed: weighted.map(privateUse.decode))
+        }
+        // A repaired line whose last show PDFKit continues on the next line of its row (the carry),
+        // held with its PDFKit characters until that line is read (`joinsSplitShow`).
+        var held: (attributed: NSAttributedString, bounds: CGRect, output: Int)?
         for line in selections {
             try Task.checkCancellation()
             guard let raw = line.string else { continue }
@@ -447,7 +466,11 @@ enum NativeTextReader {
             // Index-named glyphs PDFKit reports as other characters are rewritten first (#143), so
             // spacing and style evidence read the characters the page draws.
             let exact = attributed?.string == raw
+            let unrepaired = attributed, previous = held
+            held = nil
+            var continued = false
             if let original = attributed, indexGlyphs {
+                let handed = carry != nil
                 let repair = FontWeightReader.repairIndexGlyphs(weights, in: original, bounds: bounds,
                                                                 allBounds: boundsByLine, carry: &carry)
                 if repair.abandoned { report?.unrepairedLines += 1 }
@@ -455,24 +478,58 @@ enum NativeTextReader {
                     attributed = repair.text
                     semantic = repair.text.string.replacingOccurrences(of: "\u{FFFC}", with: " ")
                     report?.repairedLines += 1
+                    continued = handed && !repair.abandoned && carry == nil
+                    if carry != nil { held = (original, bounds, result.count) }
                 } else if repair.outcome != .none {
                     report?.unrepairedLines += 1
                 }
             }
-            let repaired = attributed.map {
-                exact ? NativeSpacingReader.apply(spacing, to: $0, bounds: bounds, allBounds: boundsByLine) : $0
+            result.append(finish(attributed, semantic: semantic, exact: exact, bounds: bounds, allBounds: boundsByLine))
+            if continued, let previous, previous.output == result.count - 2, let original = unrepaired,
+               let joined = joinsSplitShow(previous.attributed, previous.bounds, original, bounds,
+                                           continuation: semantic, weights: weights, allBounds: boundsByLine) {
+                result.replaceSubrange((result.count - 2)..., with: [
+                    finish(joined.text, semantic: joined.text.string.replacingOccurrences(of: "\u{FFFC}", with: " "),
+                           exact: true, bounds: joined.bounds, allBounds: boundsByLine),
+                ])
             }
-            let corrected = repaired?.string != attributed?.string
-                ? repaired?.string.replacingOccurrences(of: "\u{FFFC}", with: " ") : nil
-            let weighted = repaired.map {
-                FontWeightReader.apply(weights, to: $0, bounds: bounds, allBounds: boundsByLine)
-            }
-            // Private-use characters are decoded last: spacing and style evidence compare PDFKit's
-            // characters with the shows' own maps, which hold the same private-use values (#155).
-            result.append(textLine(semantic: privateUse.decode(corrected ?? semantic),
-                                   bounds: bounds, attributed: weighted.map(privateUse.decode)))
         }
         return result
+    }
+
+    /// Two PDFKit lines of one row that a single index-glyph show spans (#149). PDFKit reads Census
+    /// page 17's reference number `[2]` as a line of its own and the entry's first line as another,
+    /// although one show sets both; #143's repair already carries the show's remaining glyphs from
+    /// the number's line to the entry's. When that continuation reads as words, the two are one
+    /// typeset line and are read as one: their PDFKit characters joined (with a space where neither
+    /// sets one), over the union of their rectangles, which holds every show of the row, so repair,
+    /// spacing and style evidence see the whole show at once. Each show still lies in one piece's
+    /// rectangle alone, so ownership among the page's lines is unchanged. Returns nil unless the
+    /// joined line repairs completely with nothing carried on. A row whose continuation is figures
+    /// (page 12's `rnkswp05` and its rates) stays in its pieces: those are a table's cells.
+    static func joinsSplitShow(_ left: NSAttributedString, _ leftBounds: CGRect, _ right: NSAttributedString,
+                               _ rightBounds: CGRect, continuation: String, weights: [FontWeightReader.Show],
+                               allBounds: [CGRect]) -> (text: NSAttributedString, bounds: CGRect)? {
+        guard left.length > 0, right.length > 0, continuesInWords(continuation) else { return nil }
+        let joined = NSMutableAttributedString(attributedString: left)
+        if left.string.last?.isWhitespace == false, right.string.first?.isWhitespace == false {
+            joined.append(NSAttributedString(string: " ", attributes: left.attributes(at: left.length - 1, effectiveRange: nil)))
+        }
+        joined.append(right)
+        let union = leftBounds.union(rightBounds)
+        var carry: FontWeightReader.IndexGlyphCarry?
+        let repair = FontWeightReader.repairIndexGlyphs(weights, in: joined, bounds: union, allBounds: allBounds, carry: &carry)
+        guard repair.outcome == .repaired, carry == nil, !repair.abandoned else { return nil }
+        return (repair.text, union)
+    }
+
+    /// Text that continues a line in words rather than figures: at least three words of three or
+    /// more letters, and letters making up at least half of its visible characters.
+    static func continuesInWords(_ text: String) -> Bool {
+        let visible = text.filter { !$0.isWhitespace }
+        let letters = visible.filter(\.isLetter).count
+        let words = text.split(whereSeparator: \.isWhitespace).filter { $0.filter(\.isLetter).count >= 3 }.count
+        return words >= 3 && letters * 2 >= visible.count
     }
 
     static func textLine(semantic: String, bounds: CGRect, attributed: NSAttributedString?) -> TextLine {

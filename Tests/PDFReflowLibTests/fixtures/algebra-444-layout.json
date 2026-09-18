@@ -1,0 +1,7083 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        128.16021000000001,
+        609.27413755999999,
+        8.3575358515834921,
+        7.3165609799999629
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "mathItalic" : true,
+          "text" : "ℓh"
+        }
+      ],
+      "text" : "ℓh"
+    },
+    {
+      "rect" : [
+        128.40003000000002,
+        595.22731249999993,
+        8.3205468699999869,
+        7.9701099999999769
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "3"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "mathItalic" : true,
+          "text" : "v"
+        }
+      ],
+      "text" : "3v"
+    },
+    {
+      "rect" : [
+        126.23987,
+        584.43413755999995,
+        12.532381380000004,
+        7.9464365199999065
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -1.1398450000000366,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "mathItalic" : true,
+          "text" : "πr"
+        },
+        {
+          "baselineOffset" : 1.1398449999999229,
+          "fontName" : "Helvetica",
+          "fontSize" : 5.9775800000000006,
+          "text" : "2"
+        }
+      ],
+      "text" : "πr2"
+    },
+    {
+      "rect" : [
+        84.9602,
+        740.06747250000001,
+        40.909872399999998,
+        12.770882700000016
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "30. "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "mathItalic" : true,
+          "text" : "r"
+        },
+        {
+          "baselineOffset" : -1.7999999999999545,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "1 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "="
+        }
+      ],
+      "text" : "30. r1 ="
+    },
+    {
+      "rect" : [
+        129.00001,
+        742.48838494999995,
+        46.37221138000001,
+        14.532379129999981
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "mathItalic" : true,
+          "text" : "L"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "− 2"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "mathItalic" : true,
+          "text" : "d"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "− "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "mathItalic" : true,
+          "text" : "πr"
+        },
+        {
+          "baselineOffset" : 2.8800800000000208,
+          "fontName" : "Helvetica",
+          "fontSize" : 5.9775800000000006,
+          "text" : "2"
+        }
+      ],
+      "text" : "L− 2d− πr2"
+    },
+    {
+      "rect" : [
+        149.76012,
+        737.43411756,
+        4.8617671000000087,
+        7.3165609799999629
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "mathItalic" : true,
+          "text" : "π"
+        }
+      ],
+      "text" : "π"
+    },
+    {
+      "rect" : [
+        84.9602,
+        715.10739249999995,
+        42.469632400000009,
+        12.650962700000036
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "31. "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "mathItalic" : true,
+          "text" : "T"
+        },
+        {
+          "baselineOffset" : -1.6800799999999754,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "1 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "="
+        }
+      ],
+      "text" : "31. T1 ="
+    },
+    {
+      "rect" : [
+        130.56017,
+        717.40838494999991,
+        40.37221138000001,
+        13.589037550000057
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "Rd− kAT"
+        },
+        {
+          "baselineOffset" : -1.2000000000000455,
+          "fontName" : "Helvetica",
+          "fontSize" : 5.9775800000000006,
+          "text" : "2"
+        }
+      ],
+      "text" : "Rd− kAT2"
+    },
+    {
+      "rect" : [
+        145.31988000000001,
+        712.29830678999986,
+        11.278956957269997,
+        7.4520528499999728
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "kA"
+        }
+      ],
+      "text" : "kA"
+    },
+    {
+      "rect" : [
+        84.9602,
+        688.34747249999998,
+        41.269632400000006,
+        12.770882700000016
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "32. "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "mathItalic" : true,
+          "text" : "v"
+        },
+        {
+          "baselineOffset" : -1.7999999999999545,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "="
+        }
+      ],
+      "text" : "32. v2 ="
+    },
+    {
+      "rect" : [
+        129.36017000000001,
+        695.86926638,
+        28.131961380000007,
+        8.3686261199999308
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "Pg + "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "mathItalic" : true,
+          "text" : "V"
+        },
+        {
+          "baselineOffset" : -1.5601599999999962,
+          "fontName" : "Helvetica",
+          "fontSize" : 5.9775800000000006,
+          "text" : "1"
+        }
+      ],
+      "text" : "Pg + V1"
+    },
+    {
+      "rect" : [
+        155.76014000000001,
+        700.78918638000005,
+        3.6523013800000115,
+        4.8717276999999513
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 5.9775800000000006,
+          "text" : "2"
+        }
+      ],
+      "text" : "2"
+    },
+    {
+      "rect" : [
+        140.03984,
+        685.30908638000005,
+        8.6925313800000197,
+        7.7215421600000127
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 1.2000000000000455,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "mathItalic" : true,
+          "text" : "V"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 5.9775800000000006,
+          "text" : "1"
+        }
+      ],
+      "text" : "V1"
+    },
+    {
+      "rect" : [
+        84.9602,
+        662.73924480000005,
+        37.429792400000011,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "33. "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "mathItalic" : true,
+          "text" : "a "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "="
+        }
+      ],
+      "text" : "33. a ="
+    },
+    {
+      "rect" : [
+        125.63993000000002,
+        664.36877494999999,
+        16.946710050000007,
+        13.589037550000057
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "mathItalic" : true,
+          "text" : "c"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "− "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "mathItalic" : true,
+          "text" : "b"
+        }
+      ],
+      "text" : "c− b"
+    },
+    {
+      "rect" : [
+        131.76024000000004,
+        659.43442756000002,
+        4.7661257800000101,
+        7.3165609799999629
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "mathItalic" : true,
+          "text" : "x"
+        }
+      ],
+      "text" : "x"
+    },
+    {
+      "rect" : [
+        84.9602,
+        637.65924480000001,
+        36.949722399999999,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "34. "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "mathItalic" : true,
+          "text" : "r "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "="
+        }
+      ],
+      "text" : "34. r ="
+    },
+    {
+      "rect" : [
+        125.03986,
+        645.27393755999992,
+        4.359650170000009,
+        7.3165609799999629
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "mathItalic" : true,
+          "text" : "d"
+        }
+      ],
+      "text" : "d"
+    },
+    {
+      "rect" : [
+        125.76017300000001,
+        634.23413755999991,
+        3.0605222400000116,
+        7.3165609799999629
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "mathItalic" : true,
+          "text" : "t"
+        }
+      ],
+      "text" : "t"
+    },
+    {
+      "rect" : [
+        129.8399,
+        620.31393756,
+        4.9334980900000005,
+        7.3165609799999629
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "mathItalic" : true,
+          "text" : "V"
+        }
+      ],
+      "text" : "V"
+    },
+    {
+      "rect" : [
+        84.9602,
+        612.69924480000009,
+        40.069662399999999,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "35. "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "mathItalic" : true,
+          "text" : "w "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "="
+        }
+      ],
+      "text" : "35. w ="
+    },
+    {
+      "rect" : [
+        84.9602,
+        587.97924480000006,
+        38.029792400000005,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "36. "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "mathItalic" : true,
+          "text" : "h"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "="
+        }
+      ],
+      "text" : "36. h="
+    },
+    {
+      "rect" : [
+        84.9602,
+        564.8991532,
+        12.781320151140719,
+        9.8729762399999572
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626400000000004,
+          "text" : "1.6"
+        }
+      ],
+      "text" : "1.6"
+    },
+    {
+      "rect" : [
+        84.960199999999986,
+        510.98330800000008,
+        46.537748000000022,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "1) 8,− 8"
+        }
+      ],
+      "text" : "1) 8,− 8"
+    },
+    {
+      "rect" : [
+        84.960199999999986,
+        489.74310800000006,
+        42.577998000000008,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "2) 7,− 7"
+        }
+      ],
+      "text" : "2) 7,− 7"
+    },
+    {
+      "rect" : [
+        84.960250000000002,
+        468.50330800000006,
+        42.577998000000008,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "3) 1,− 1"
+        }
+      ],
+      "text" : "3) 1,− 1"
+    },
+    {
+      "rect" : [
+        84.960300000000018,
+        447.26310800000005,
+        46.537748000000022,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "4) 2,− 2"
+        }
+      ],
+      "text" : "4) 2,− 2"
+    },
+    {
+      "rect" : [
+        84.960300000000018,
+        425.66310800000002,
+        38.701145600000004,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "5) 6,−"
+        }
+      ],
+      "text" : "5) 6,−"
+    },
+    {
+      "rect" : [
+        126.84000000000003,
+        441.69863679000002,
+        8.7349879075130161,
+        7.4520528499999728
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "29"
+        }
+      ],
+      "text" : "29"
+    },
+    {
+      "rect" : [
+        129.00016000000002,
+        430.34760249999999,
+        4.2321284100000014,
+        7.9701099999999769
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "4"
+        }
+      ],
+      "text" : "4"
+    },
+    {
+      "rect" : [
+        84.9602,
+        410.49924479999999,
+        24.334987907513025,
+        15.010954840000011
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -3.1199199999999792,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "6) "
+        },
+        {
+          "baselineOffset" : 3.119920000000036,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "38"
+        }
+      ],
+      "text" : "6) 38"
+    },
+    {
+      "rect" : [
+        102.60004000000001,
+        402.023008,
+        29.977878000000004,
+        20.443392000000017
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -4.680059999999969,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "9 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : ",− 6"
+        }
+      ],
+      "text" : "9 ,− 6"
+    },
+    {
+      "rect" : [
+        84.960070000000002,
+        379.10310800000002,
+        48.060915600000016,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "7)− 2,−"
+        }
+      ],
+      "text" : "7)− 2,−"
+    },
+    {
+      "rect" : [
+        138.23978,
+        383.78759250000002,
+        4.2321284100000014,
+        7.9701099999999769
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "3"
+        }
+      ],
+      "text" : "3"
+    },
+    {
+      "rect" : [
+        84.9602,
+        357.26300800000001,
+        44.617818000000014,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "8)− 3, 9"
+        }
+      ],
+      "text" : "8)− 3, 9"
+    },
+    {
+      "rect" : [
+        84.960170000000005,
+        334.34310800000003,
+        38.701145600000004,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "9) 3,−"
+        }
+      ],
+      "text" : "9) 3,−"
+    },
+    {
+      "rect" : [
+        126.83987000000002,
+        350.37863679000003,
+        8.7349879075130161,
+        7.4520528500000296
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "39"
+        }
+      ],
+      "text" : "39"
+    },
+    {
+      "rect" : [
+        129.00003000000001,
+        339.0276025,
+        4.2321284100000014,
+        7.9701099999999769
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "7"
+        }
+      ],
+      "text" : "7"
+    },
+    {
+      "rect" : [
+        84.9602,
+        317.37924479999998,
+        30.21468790751301,
+        15.010954840000011
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "10) "
+        },
+        {
+          "baselineOffset" : 6.2398400000000152,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "16"
+        }
+      ],
+      "text" : "10) 16"
+    },
+    {
+      "rect" : [
+        108.48012999999999,
+        308.903008,
+        29.97778799999999,
+        20.443392000000017
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -4.680059999999969,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "5 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : ",− 6"
+        }
+      ],
+      "text" : "5 ,− 6"
+    },
+    {
+      "rect" : [
+        84.960069999999973,
+        285.98310800000002,
+        44.580845600000004,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "11) 7,−"
+        }
+      ],
+      "text" : "11) 7,−"
+    },
+    {
+      "rect" : [
+        132.71986999999996,
+        302.01824679000003,
+        8.7349879075130161,
+        7.4520528499999728
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "29"
+        }
+      ],
+      "text" : "29"
+    },
+    {
+      "rect" : [
+        134.88002999999995,
+        290.66761250000002,
+        4.2321284100000014,
+        7.9701099999999769
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "3"
+        }
+      ],
+      "text" : "3"
+    },
+    {
+      "rect" : [
+        84.9602,
+        260.54300799999999,
+        31.501145600000001,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "12)−"
+        }
+      ],
+      "text" : "12)−"
+    },
+    {
+      "rect" : [
+        119.63990000000001,
+        276.26770249999998,
+        4.2321284100000014,
+        7.9701099999999769
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "1"
+        }
+      ],
+      "text" : "1"
+    },
+    {
+      "rect" : [
+        119.63990000000001,
+        260.54300799999999,
+        27.818017999999995,
+        20.443392000000017
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -4.7999700000000303,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "3 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : ",− 1"
+        }
+      ],
+      "text" : "3 ,− 1"
+    },
+    {
+      "rect" : [
+        84.960070000000002,
+        238.82310799999999,
+        56.366042363136017,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "13)− 9, 15"
+        }
+      ],
+      "text" : "13)− 9, 15"
+    },
+    {
+      "rect" : [
+        84.9602,
+        226.13915320000001,
+        12.781320151140719,
+        9.8729762400000141
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626400000000004,
+          "text" : "1.7"
+        }
+      ],
+      "text" : "1.7"
+    },
+    {
+      "rect" : [
+        84.960200000000015,
+        178.41914480000003,
+        19.626050599999985,
+        14.93164373999997
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -3.1201149999999984,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "1)"
+        },
+        {
+          "baselineOffset" : 3.1201149999999984,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "mathItalic" : true,
+          "text" : "c"
+        }
+      ],
+      "text" : "1)c"
+    },
+    {
+      "rect" : [
+        108.24000000000001,
+        178.4192448,
+        17.125396800000004,
+        11.967155200000008
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "="
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "mathItalic" : true,
+          "text" : "k"
+        }
+      ],
+      "text" : "=k"
+    },
+    {
+      "rect" : [
+        100.56023400000002,
+        174.99402756000001,
+        4.4951420400000046,
+        7.3165609799999913
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "mathItalic" : true,
+          "text" : "a"
+        }
+      ],
+      "text" : "a"
+    },
+    {
+      "rect" : [
+        84.960300000000004,
+        156.21924480000001,
+        22.045825780000001,
+        14.931643739999998
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -3.1201149999999984,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "2)"
+        },
+        {
+          "baselineOffset" : 3.1201149999999984,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "mathItalic" : true,
+          "text" : "x"
+        }
+      ],
+      "text" : "2)x"
+    },
+    {
+      "rect" : [
+        111.96000000000001,
+        156.21924480000001,
+        17.124996799999991,
+        11.967155200000008
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "="
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "mathItalic" : true,
+          "text" : "k"
+        }
+      ],
+      "text" : "=k"
+    },
+    {
+      "rect" : [
+        100.56031000000002,
+        152.73833679000003,
+        8.4888167139650079,
+        7.4520528500000012
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "yz"
+        }
+      ],
+      "text" : "yz"
+    },
+    {
+      "rect" : [
+        84.960000000000008,
+        133.1794448,
+        48.20519680000001,
+        11.979110399999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "3) wx= "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "mathItalic" : true,
+          "text" : "k"
+        }
+      ],
+      "text" : "3) wx= k"
+    },
+    {
+      "rect" : [
+        84.960100000000011,
+        112.77944480000001,
+        21.217682690000004,
+        14.931253740000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -3.1199200000000076,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "4)"
+        },
+        {
+          "baselineOffset" : 3.1199199999999934,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "mathItalic" : true,
+          "text" : "r"
+        }
+      ],
+      "text" : "4)r"
+    },
+    {
+      "rect" : [
+        100.56010000000002,
+        109.23433756,
+        7.6120713800000175,
+        7.9468265200000019
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -2.2800799999999981,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "mathItalic" : true,
+          "text" : "s"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 5.9775800000000006,
+          "text" : "2"
+        }
+      ],
+      "text" : "s2"
+    },
+    {
+      "rect" : [
+        84.960400000000007,
+        88.299144800000008,
+        22.064756099999997,
+        14.931643739999998
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "5) "
+        },
+        {
+          "baselineOffset" : 6.2402299999999968,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "mathItalic" : true,
+          "text" : "f"
+        }
+      ],
+      "text" : "5) f"
+    },
+    {
+      "rect" : [
+        100.5604,
+        84.81823679,
+        9.2219082287760017,
+        7.4520528500000012
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "xy"
+        }
+      ],
+      "text" : "xy"
+    },
+    {
+      "rect" : [
+        111.24000000000001,
+        112.7792448,
+        17.245396800000009,
+        11.967155199999993
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "= "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "mathItalic" : true,
+          "text" : "k"
+        }
+      ],
+      "text" : "= k"
+    },
+    {
+      "rect" : [
+        112.68000000000001,
+        88.299244800000011,
+        17.124996799999991,
+        11.967155199999993
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "="
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "mathItalic" : true,
+          "text" : "k"
+        }
+      ],
+      "text" : "=k"
+    },
+    {
+      "rect" : [
+        274.08017000000001,
+        744.04877494999994,
+        17.552048409999998,
+        13.589037550000057
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "mathItalic" : true,
+          "text" : "c"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "− 1"
+        }
+      ],
+      "text" : "c− 1"
+    },
+    {
+      "rect" : [
+        233.40000000000001,
+        742.4192448,
+        37.429832399999981,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "37. "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "mathItalic" : true,
+          "text" : "a "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "="
+        }
+      ],
+      "text" : "37. a ="
+    },
+    {
+      "rect" : [
+        281.03993000000003,
+        738.99412755999992,
+        3.6264000499999725,
+        7.3165609799999629
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "mathItalic" : true,
+          "text" : "b"
+        }
+      ],
+      "text" : "b"
+    },
+    {
+      "rect" : [
+        272.88017000000002,
+        721.12838494999994,
+        17.552048409999998,
+        13.589037550000057
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "mathItalic" : true,
+          "text" : "c"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "− 1"
+        }
+      ],
+      "text" : "c− 1"
+    },
+    {
+      "rect" : [
+        233.40000000000001,
+        719.49924480000004,
+        36.229832399999935,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "38. "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "mathItalic" : true,
+          "text" : "b"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "="
+        }
+      ],
+      "text" : "38. b="
+    },
+    {
+      "rect" : [
+        279.36025000000006,
+        716.07413755999994,
+        4.4951420400000188,
+        7.3165609799999629
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "mathItalic" : true,
+          "text" : "a"
+        }
+      ],
+      "text" : "a"
+    },
+    {
+      "rect" : [
+        272.16024000000004,
+        703.46770249999997,
+        24.615318964668063,
+        7.9701099999999769
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "5 + bw"
+        }
+      ],
+      "text" : "5 + bw"
+    },
+    {
+      "rect" : [
+        233.40000000000001,
+        696.21924480000007,
+        35.509902399999959,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "39. "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "mathItalic" : true,
+          "text" : "t"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "="
+        }
+      ],
+      "text" : "39. t="
+    },
+    {
+      "rect" : [
+        282.00010000000009,
+        692.91402756000002,
+        4.4951420400000188,
+        7.3165609799999629
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "mathItalic" : true,
+          "text" : "a"
+        }
+      ],
+      "text" : "a"
+    },
+    {
+      "rect" : [
+        276.60010000000005,
+        675.28838494999991,
+        20.833244009999987,
+        13.589037550000057
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "at− "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "mathItalic" : true,
+          "text" : "s"
+        }
+      ],
+      "text" : "at− s"
+    },
+    {
+      "rect" : [
+        233.40000000000001,
+        673.65924480000001,
+        39.949762400000026,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "40. "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "mathItalic" : true,
+          "text" : "w "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "="
+        }
+      ],
+      "text" : "40. w ="
+    },
+    {
+      "rect" : [
+        285.23994000000005,
+        670.23413755999991,
+        3.6264000499999725,
+        7.3165609799999629
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "mathItalic" : true,
+          "text" : "b"
+        }
+      ],
+      "text" : "b"
+    },
+    {
+      "rect" : [
+        274.56024000000002,
+        652.00838494999994,
+        22.541965314668005,
+        13.589037550000057
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "mathItalic" : true,
+          "text" : "c"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "− bx"
+        }
+      ],
+      "text" : "c− bx"
+    },
+    {
+      "rect" : [
+        233.40000000000001,
+        650.37924480000004,
+        37.909902399999993,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "41. "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "mathItalic" : true,
+          "text" : "x "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "="
+        }
+      ],
+      "text" : "41. x ="
+    },
+    {
+      "rect" : [
+        283.32000000000005,
+        646.95413755999994,
+        4.7661257799999817,
+        7.3165609799999629
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "mathItalic" : true,
+          "text" : "x"
+        }
+      ],
+      "text" : "x"
+    },
+    {
+      "rect" : [
+        233.40000000000001,
+        622.70300800000007,
+        71.222650399999935,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "42. "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "mathItalic" : true,
+          "text" : "x "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "= 3− 5"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "mathItalic" : true,
+          "text" : "y"
+        }
+      ],
+      "text" : "42. x = 3− 5y"
+    },
+    {
+      "rect" : [
+        274.56028999999995,
+        612.28848495,
+        18.445815779999975,
+        13.589037550000057
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "3− "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "mathItalic" : true,
+          "text" : "x"
+        }
+      ],
+      "text" : "3− x"
+    },
+    {
+      "rect" : [
+        233.40011999999996,
+        610.6593448000001,
+        38.029832399999975,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "43. "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "mathItalic" : true,
+          "text" : "y"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "="
+        }
+      ],
+      "text" : "43. y="
+    },
+    {
+      "rect" : [
+        281.76028999999994,
+        606.86761249999995,
+        4.232128409999973,
+        7.9701099999999769
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "5"
+        }
+      ],
+      "text" : "5"
+    },
+    {
+      "rect" : [
+        274.56024000000002,
+        589.36877494999999,
+        22.544067749999954,
+        13.589037550000057
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "7− 2"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "mathItalic" : true,
+          "text" : "y"
+        }
+      ],
+      "text" : "7− 2y"
+    },
+    {
+      "rect" : [
+        233.40000000000001,
+        587.73924480000005,
+        37.909902399999993,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "44. "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "mathItalic" : true,
+          "text" : "x "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "="
+        }
+      ],
+      "text" : "44. x ="
+    },
+    {
+      "rect" : [
+        423.00006000000008,
+        744.04877494999994,
+        22.766115780000007,
+        13.589037550000057
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "7− 3"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "mathItalic" : true,
+          "text" : "x"
+        }
+      ],
+      "text" : "7− 3x"
+    },
+    {
+      "rect" : [
+        283.68016,
+        584.06780249999997,
+        4.232128409999973,
+        7.9701099999999769
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "3"
+        }
+      ],
+      "text" : "3"
+    },
+    {
+      "rect" : [
+        381.72000000000003,
+        742.4192448,
+        38.150122400000043,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "45. "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "mathItalic" : true,
+          "text" : "y"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "="
+        }
+      ],
+      "text" : "45. y="
+    },
+    {
+      "rect" : [
+        381.72000000000003,
+        711.21924480000007,
+        37.550122400000021,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "46. "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "mathItalic" : true,
+          "text" : "a "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "="
+        }
+      ],
+      "text" : "46. a ="
+    },
+    {
+      "rect" : [
+        381.72000000000003,
+        680.37924480000004,
+        36.350122399999975,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "47. "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "mathItalic" : true,
+          "text" : "b"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "="
+        }
+      ],
+      "text" : "47. b="
+    },
+    {
+      "rect" : [
+        381.72000000000003,
+        649.53924480000001,
+        38.029802399999994,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "48. "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "mathItalic" : true,
+          "text" : "x "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "="
+        }
+      ],
+      "text" : "48. x ="
+    },
+    {
+      "rect" : [
+        381.72000000000003,
+        618.69924480000009,
+        38.150122400000043,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "49. "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "mathItalic" : true,
+          "text" : "y"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "="
+        }
+      ],
+      "text" : "49. y="
+    },
+    {
+      "rect" : [
+        381.72000000000003,
+        587.73924480000005,
+        38.989962400000024,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "50. "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "mathItalic" : true,
+          "text" : "f"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "="
+        }
+      ],
+      "text" : "50. f="
+    },
+    {
+      "rect" : [
+        432.23989000000012,
+        738.62750249999988,
+        4.232128409999973,
+        7.9701099999999769
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2"
+        }
+      ],
+      "text" : "2"
+    },
+    {
+      "rect" : [
+        422.40006000000005,
+        718.46770249999997,
+        21.628954768720064,
+        7.9701099999999769
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "7"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "mathItalic" : true,
+          "text" : "b "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "+ 4"
+        }
+      ],
+      "text" : "7b + 4"
+    },
+    {
+      "rect" : [
+        431.03989700000011,
+        707.42750249999995,
+        4.232128409999973,
+        7.9701099999999769
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "5"
+        }
+      ],
+      "text" : "5"
+    },
+    {
+      "rect" : [
+        421.20006000000001,
+        681.88846494999996,
+        22.712198409999985,
+        13.589037550000057
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "5"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "mathItalic" : true,
+          "text" : "a"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "− 4"
+        }
+      ],
+      "text" : "5a− 4"
+    },
+    {
+      "rect" : [
+        430.43990000000002,
+        676.58749249999994,
+        4.232128409999973,
+        7.9701099999999769
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "7"
+        }
+      ],
+      "text" : "7"
+    },
+    {
+      "rect" : [
+        422.88014000000004,
+        656.66778249999993,
+        22.544107750000023,
+        7.9701099999999769
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "8 + 5"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "mathItalic" : true,
+          "text" : "y"
+        }
+      ],
+      "text" : "8 + 5y"
+    },
+    {
+      "rect" : [
+        432.12002000000007,
+        645.74748249999993,
+        4.232128409999973,
+        7.9701099999999769
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "4"
+        }
+      ],
+      "text" : "4"
+    },
+    {
+      "rect" : [
+        423.00006000000008,
+        620.20846495000001,
+        22.952048409999975,
+        13.589037550000057
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "4"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "mathItalic" : true,
+          "text" : "x"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "− 8"
+        }
+      ],
+      "text" : "4x− 8"
+    },
+    {
+      "rect" : [
+        432.36021000000005,
+        614.90749249999999,
+        4.232128409999973,
+        7.9701099999999769
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "5"
+        }
+      ],
+      "text" : "5"
+    },
+    {
+      "rect" : [
+        423.96030000000007,
+        594.98770249999995,
+        30.334569980788956,
+        7.9701099999999769
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "9"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "mathItalic" : true,
+          "text" : "c "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "+ 160"
+        }
+      ],
+      "text" : "9c + 160"
+    },
+    {
+      "rect" : [
+        436.80015000000003,
+        584.06780249999997,
+        4.232128409999973,
+        7.9701099999999769
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "5"
+        }
+      ],
+      "text" : "5"
+    },
+    {
+      "rect" : [
+        136.19994,
+        395.01832679,
+        8.7349879075129877,
+        7.4520528500000296
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "10"
+        }
+      ],
+      "text" : "10"
+    },
+    {
+      "rect" : [
+        200.52019999999999,
+        542.01934480000011,
+        194.09605308597776,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Answers to Absolute Value Equations"
+        }
+      ],
+      "text" : "Answers to Absolute Value Equations"
+    },
+    {
+      "rect" : [
+        233.39993000000004,
+        508.70310800000004,
+        40.621115599999996,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "14) 3,−"
+        }
+      ],
+      "text" : "14) 3,−"
+    },
+    {
+      "rect" : [
+        277.20000000000005,
+        524.30749249999997,
+        4.232128409999973,
+        7.9701099999999769
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "5"
+        }
+      ],
+      "text" : "5"
+    },
+    {
+      "rect" : [
+        277.20000000000005,
+        513.38759249999998,
+        4.232128409999973,
+        7.9701099999999769
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "3"
+        }
+      ],
+      "text" : "3"
+    },
+    {
+      "rect" : [
+        233.40000000000001,
+        487.70300800000001,
+        50.377998000000019,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "15)− 2, 0"
+        }
+      ],
+      "text" : "15)− 2, 0"
+    },
+    {
+      "rect" : [
+        233.40005000000002,
+        467.30300800000003,
+        52.418247999999949,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "16) 0,− 2"
+        }
+      ],
+      "text" : "16) 0,− 2"
+    },
+    {
+      "rect" : [
+        233.40004999999996,
+        445.22290800000002,
+        31.501145599999973,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "17)−"
+        }
+      ],
+      "text" : "17)−"
+    },
+    {
+      "rect" : [
+        268.08014999999995,
+        460.94721250000003,
+        4.232128409999973,
+        7.9701099999999769
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "6"
+        }
+      ],
+      "text" : "6"
+    },
+    {
+      "rect" : [
+        268.08014999999995,
+        449.90741250000002,
+        16.537978000000066,
+        15.758987499999989
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -4.8000600000000304,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "7 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : ", 0"
+        }
+      ],
+      "text" : "7 , 0"
+    },
+    {
+      "rect" : [
+        233.39988000000002,
+        420.62300800000003,
+        42.611994399999986,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "18)− 4,"
+        }
+      ],
+      "text" : "18)− 4,"
+    },
+    {
+      "rect" : [
+        279.11983000000009,
+        436.34731250000004,
+        4.232128409999973,
+        7.9701099999999769
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "4"
+        }
+      ],
+      "text" : "4"
+    },
+    {
+      "rect" : [
+        279.11983000000009,
+        425.42741250000006,
+        4.232128409999973,
+        7.9701099999999769
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "3"
+        }
+      ],
+      "text" : "3"
+    },
+    {
+      "rect" : [
+        233.40000000000001,
+        396.14300800000001,
+        31.501145600000001,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "19)−"
+        }
+      ],
+      "text" : "19)−"
+    },
+    {
+      "rect" : [
+        268.08010000000002,
+        412.17853679000001,
+        8.7349998626780234,
+        7.4520528500000296
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "17"
+        }
+      ],
+      "text" : "17"
+    },
+    {
+      "rect" : [
+        270.23987,
+        400.82750249999998,
+        10.811944400000016,
+        15.328510300000062
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -2.3999850000000151,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2 "
+        },
+        {
+          "baselineOffset" : 2.3999850000000151,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : ","
+        }
+      ],
+      "text" : "2 ,"
+    },
+    {
+      "rect" : [
+        284.16016000000002,
+        411.86770250000001,
+        4.232128409999973,
+        7.9701099999999769
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "7"
+        }
+      ],
+      "text" : "7"
+    },
+    {
+      "rect" : [
+        284.16016000000002,
+        400.82750249999998,
+        4.232128409999973,
+        7.9701099999999769
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2"
+        }
+      ],
+      "text" : "2"
+    },
+    {
+      "rect" : [
+        233.40000000000001,
+        371.54300799999999,
+        31.501145600000001,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "20)−"
+        }
+      ],
+      "text" : "20)−"
+    },
+    {
+      "rect" : [
+        268.08010000000002,
+        387.26770249999998,
+        4.232128409999973,
+        7.9701099999999769
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "6"
+        }
+      ],
+      "text" : "6"
+    },
+    {
+      "rect" : [
+        268.08010000000002,
+        371.54300799999999,
+        27.817727999999988,
+        20.443392000000017
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -4.7999700000000303,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "5 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : ",− 2"
+        }
+      ],
+      "text" : "5 ,− 2"
+    },
+    {
+      "rect" : [
+        233.39998,
+        350.66290799999996,
+        61.658098000000024,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "21)− 6,− 8"
+        }
+      ],
+      "text" : "21)− 6,− 8"
+    },
+    {
+      "rect" : [
+        233.40003000000002,
+        328.58320799999996,
+        40.621115599999996,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "22) 6,−"
+        }
+      ],
+      "text" : "22) 6,−"
+    },
+    {
+      "rect" : [
+        277.20010000000002,
+        344.61834678999998,
+        8.7349998626780234,
+        7.4520528500000296
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "25"
+        }
+      ],
+      "text" : "25"
+    },
+    {
+      "rect" : [
+        279.36026000000004,
+        333.26771249999996,
+        4.232128409999973,
+        7.9701099999999769
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "3"
+        }
+      ],
+      "text" : "3"
+    },
+    {
+      "rect" : [
+        233.40000000000001,
+        303.98300799999998,
+        44.461345599999987,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "23) 1,−"
+        }
+      ],
+      "text" : "23) 1,−"
+    },
+    {
+      "rect" : [
+        281.16020000000003,
+        320.01814679,
+        8.7349998626780234,
+        7.4520528500000296
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "13"
+        }
+      ],
+      "text" : "13"
+    },
+    {
+      "rect" : [
+        283.20004000000006,
+        308.66751249999999,
+        4.232128409999973,
+        7.9701099999999769
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "7"
+        }
+      ],
+      "text" : "7"
+    },
+    {
+      "rect" : [
+        233.40000000000001,
+        283.10300799999999,
+        54.326264437888,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "24) 7,− 21"
+        }
+      ],
+      "text" : "24) 7,− 21"
+    },
+    {
+      "rect" : [
+        233.40007,
+        262.70300800000001,
+        56.24614455744009,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "25)− 2, 10"
+        }
+      ],
+      "text" : "25)− 2, 10"
+    },
+    {
+      "rect" : [
+        233.40012000000002,
+        240.622908,
+        31.501145599999973,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "26)−"
+        }
+      ],
+      "text" : "26)−"
+    },
+    {
+      "rect" : [
+        268.08022,
+        256.22729249999998,
+        4.232128409999973,
+        7.9701099999999769
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "7"
+        }
+      ],
+      "text" : "7"
+    },
+    {
+      "rect" : [
+        268.08022,
+        245.30739249999996,
+        16.537908000000016,
+        15.759007500000024
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -4.8000800000000652,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "5 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : ", 1"
+        }
+      ],
+      "text" : "5 , 1"
+    },
+    {
+      "rect" : [
+        246.60020000000003,
+        203.25934480000001,
+        101.90427411112961,
+        11.979110399999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Answers - Variation"
+        }
+      ],
+      "text" : "Answers - Variation"
+    },
+    {
+      "rect" : [
+        233.39980000000003,
+        178.65944480000002,
+        51.085126800000012,
+        13.298257700000022
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "6) jm"
+        },
+        {
+          "baselineOffset" : 4.3199199999999962,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "3 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "="
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "mathItalic" : true,
+          "text" : "k"
+        }
+      ],
+      "text" : "6) jm3 =k"
+    },
+    {
+      "rect" : [
+        233.39973000000003,
+        155.61924480000005,
+        20.357807320000006,
+        14.93164373999997
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "7) "
+        },
+        {
+          "baselineOffset" : 6.2402299999999968,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "mathItalic" : true,
+          "text" : "h"
+        }
+      ],
+      "text" : "7) h"
+    },
+    {
+      "rect" : [
+        257.04000000000002,
+        155.61924479999999,
+        17.125396800000033,
+        11.967155200000008
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "="
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "mathItalic" : true,
+          "text" : "k"
+        }
+      ],
+      "text" : "=k"
+    },
+    {
+      "rect" : [
+        249.59975200000002,
+        152.31442756000001,
+        3.6264000500000009,
+        7.3165609799999913
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "mathItalic" : true,
+          "text" : "b"
+        }
+      ],
+      "text" : "b"
+    },
+    {
+      "rect" : [
+        233.40010000000004,
+        133.05944479999999,
+        25.76612578000001,
+        14.931253740000017
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -3.1199200000000076,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "8)"
+        },
+        {
+          "baselineOffset" : 3.1199200000000076,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "x"
+        }
+      ],
+      "text" : "8)x"
+    },
+    {
+      "rect" : [
+        248.88018000000002,
+        127.35423756000003,
+        36.085216799999984,
+        17.672162439999965
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -6.8398500000000126,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "a b"
+        },
+        {
+          "baselineOffset" : -2.7597700000000032,
+          "fontName" : "Helvetica",
+          "fontSize" : 5.9775800000000006,
+          "text" : "2"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "√"
+        },
+        {
+          "baselineOffset" : 0.24000999999995543,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "= k"
+        }
+      ],
+      "text" : "a b2√= k"
+    },
+    {
+      "rect" : [
+        233.40010000000001,
+        107.6190448,
+        45.925096800000006,
+        11.979110399999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "9) ab= "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "mathItalic" : true,
+          "text" : "k"
+        }
+      ],
+      "text" : "9) ab= k"
+    },
+    {
+      "rect" : [
+        233.40020000000001,
+        86.739344799999998,
+        25.855342040000011,
+        14.931253740000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "10)"
+        },
+        {
+          "baselineOffset" : 6.2398400000000009,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "a"
+        }
+      ],
+      "text" : "10)a"
+    },
+    {
+      "rect" : [
+        255.24008700000002,
+        83.314237559999995,
+        24.223376577599993,
+        15.392362440000014
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -4.800060000000002,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "b "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "= 3"
+        }
+      ],
+      "text" : "b = 3"
+    },
+    {
+      "rect" : [
+        429.48028000000005,
+        524.61814678999986,
+        8.854897415452001,
+        7.4520528499999728
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "16"
+        }
+      ],
+      "text" : "16"
+    },
+    {
+      "rect" : [
+        381.72008000000005,
+        508.58300799999995,
+        44.581245599999988,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "27) 6,−"
+        }
+      ],
+      "text" : "27) 6,−"
+    },
+    {
+      "rect" : [
+        431.64005000000003,
+        513.38741249999987,
+        4.232128409999973,
+        7.9701099999999769
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "3"
+        }
+      ],
+      "text" : "3"
+    },
+    {
+      "rect" : [
+        381.72000000000003,
+        488.25924479999998,
+        25.712228409999966,
+        15.218177700000012
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "28) "
+        },
+        {
+          "baselineOffset" : 6.2398400000000152,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2"
+        }
+      ],
+      "text" : "28) 2"
+    },
+    {
+      "rect" : [
+        403.20010000000002,
+        484.4675125,
+        16.538027999999997,
+        15.758887499999958
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -4.7999599999999987,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "5 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : ", 0"
+        }
+      ],
+      "text" : "5 , 0"
+    },
+    {
+      "rect" : [
+        381.71987999999999,
+        449.06270799999999,
+        31.501145599999973,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "29)−"
+        }
+      ],
+      "text" : "29)−"
+    },
+    {
+      "rect" : [
+        416.39997999999997,
+        465.09823678999999,
+        8.854897415452001,
+        7.4520528499999728
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "13"
+        }
+      ],
+      "text" : "13"
+    },
+    {
+      "rect" : [
+        418.56013999999999,
+        453.8675025,
+        18.697988000000009,
+        15.638897499999985
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -4.6799700000000257,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "7 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : ", 1"
+        }
+      ],
+      "text" : "7 , 1"
+    },
+    {
+      "rect" : [
+        381.71998000000002,
+        422.06300800000002,
+        50.498308000000009,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "30)− 3, 5"
+        }
+      ],
+      "text" : "30)− 3, 5"
+    },
+    {
+      "rect" : [
+        381.72004000000004,
+        393.86300800000004,
+        31.501145599999973,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "31)−"
+        }
+      ],
+      "text" : "31)−"
+    },
+    {
+      "rect" : [
+        416.40014000000002,
+        409.58770250000003,
+        4.232128409999973,
+        7.9701099999999769
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "4"
+        }
+      ],
+      "text" : "4"
+    },
+    {
+      "rect" : [
+        416.40014000000002,
+        393.86300800000004,
+        19.981165599999997,
+        20.443392000000017
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -4.7999700000000303,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "3 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : ",−"
+        }
+      ],
+      "text" : "3 ,−"
+    },
+    {
+      "rect" : [
+        381.72000000000003,
+        363.26300800000001,
+        42.611994399999958,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "32)− 6,"
+        }
+      ],
+      "text" : "32)− 6,"
+    },
+    {
+      "rect" : [
+        427.56026000000003,
+        378.86778250000003,
+        4.232128409999973,
+        7.9701099999999769
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2"
+        }
+      ],
+      "text" : "2"
+    },
+    {
+      "rect" : [
+        427.56026000000003,
+        367.94748250000004,
+        4.232128409999973,
+        7.9701099999999769
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "5"
+        }
+      ],
+      "text" : "5"
+    },
+    {
+      "rect" : [
+        381.72000000000003,
+        341.01924479999997,
+        29.411994400000026,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "33) 7,"
+        }
+      ],
+      "text" : "33) 7,"
+    },
+    {
+      "rect" : [
+        414.36026000000004,
+        348.26770249999998,
+        4.232128409999973,
+        7.9701099999999769
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "1"
+        }
+      ],
+      "text" : "1"
+    },
+    {
+      "rect" : [
+        414.36026000000004,
+        337.22750249999996,
+        4.232128409999973,
+        7.9701099999999769
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "5"
+        }
+      ],
+      "text" : "5"
+    },
+    {
+      "rect" : [
+        381.72000000000003,
+        301.94300800000002,
+        31.501145599999973,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "34)−"
+        }
+      ],
+      "text" : "34)−"
+    },
+    {
+      "rect" : [
+        416.40010000000001,
+        317.97853679000002,
+        8.854897415452001,
+        7.4520528499999728
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "22"
+        }
+      ],
+      "text" : "22"
+    },
+    {
+      "rect" : [
+        418.56026000000003,
+        301.94300800000002,
+        22.140965600000015,
+        20.443392000000017
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -4.7999700000000303,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "5 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : ",−"
+        }
+      ],
+      "text" : "5 ,−"
+    },
+    {
+      "rect" : [
+        381.72000000000003,
+        271.22300799999999,
+        31.501145599999973,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "35)−"
+        }
+      ],
+      "text" : "35)−"
+    },
+    {
+      "rect" : [
+        416.40010000000001,
+        287.25853678999999,
+        8.854897415452001,
+        7.4520528499999728
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "19"
+        }
+      ],
+      "text" : "19"
+    },
+    {
+      "rect" : [
+        416.40010000000001,
+        271.22300799999999,
+        24.301125599999978,
+        20.443392000000017
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -4.7999700000000303,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "22"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : ",−"
+        }
+      ],
+      "text" : "22,−"
+    },
+    {
+      "rect" : [
+        381.72000000000003,
+        240.62300800000003,
+        40.741405600000007,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "36) 0,−"
+        }
+      ],
+      "text" : "36) 0,−"
+    },
+    {
+      "rect" : [
+        425.63996000000003,
+        256.65853679000003,
+        8.734975155336997,
+        7.4520528500000296
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "12"
+        }
+      ],
+      "text" : "12"
+    },
+    {
+      "rect" : [
+        427.68019000000004,
+        245.30750250000003,
+        4.232128409999973,
+        7.9701100000000054
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "5"
+        }
+      ],
+      "text" : "5"
+    },
+    {
+      "rect" : [
+        439.56026000000003,
+        409.58770250000003,
+        4.232128409999973,
+        7.9701099999999769
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2"
+        }
+      ],
+      "text" : "2"
+    },
+    {
+      "rect" : [
+        439.56026000000003,
+        398.54750250000001,
+        4.232128409999973,
+        7.9701099999999769
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "7"
+        }
+      ],
+      "text" : "7"
+    },
+    {
+      "rect" : [
+        446.03987999999998,
+        317.66770250000002,
+        4.232128409999973,
+        7.9701099999999769
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2"
+        }
+      ],
+      "text" : "2"
+    },
+    {
+      "rect" : [
+        443.88011,
+        306.93833678999999,
+        8.734975155336997,
+        7.4520528499999728
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "13"
+        }
+      ],
+      "text" : "13"
+    },
+    {
+      "rect" : [
+        443.88018,
+        287.25853678999999,
+        8.734975155336997,
+        7.4520528499999728
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "11"
+        }
+      ],
+      "text" : "11"
+    },
+    {
+      "rect" : [
+        443.88018,
+        276.21833678999997,
+        8.734975155336997,
+        7.4520528499999728
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "38"
+        }
+      ],
+      "text" : "38"
+    },
+    {
+      "rect" : [
+        381.72000000000003,
+        176.37924479999998,
+        28.051954139999964,
+        14.931253740000017
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "11) "
+        },
+        {
+          "baselineOffset" : 6.2398400000000152,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "mathItalic" : true,
+          "text" : "P"
+        }
+      ],
+      "text" : "11) P"
+    },
+    {
+      "rect" : [
+        403.20010000000002,
+        172.89834679000001,
+        8.1422285105049923,
+        7.4520528500000012
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "rq"
+        }
+      ],
+      "text" : "rq"
+    },
+    {
+      "rect" : [
+        414.12,
+        176.37924479999998,
+        26.126229249279959,
+        11.979110399999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "= 0.5"
+        }
+      ],
+      "text" : "= 0.5"
+    },
+    {
+      "rect" : [
+        381.71999999999997,
+        146.37924479999998,
+        56.846170049280033,
+        11.979110399999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "12) cd= 28"
+        }
+      ],
+      "text" : "12) cd= 28"
+    },
+    {
+      "rect" : [
+        381.7201,
+        117.5792448,
+        27.300722240000027,
+        14.931253739999988
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "13) "
+        },
+        {
+          "baselineOffset" : 6.2398400000000009,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "mathItalic" : true,
+          "text" : "t"
+        }
+      ],
+      "text" : "13) t"
+    },
+    {
+      "rect" : [
+        403.20014000000003,
+        114.03413755999999,
+        8.5722213799999736,
+        7.9468265200000019
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -2.2800799999999981,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "mathItalic" : true,
+          "text" : "u"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 5.9775800000000006,
+          "text" : "2"
+        }
+      ],
+      "text" : "u2"
+    },
+    {
+      "rect" : [
+        414.96000000000004,
+        117.5792448,
+        31.886289423616006,
+        11.979110399999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "=0.67"
+        }
+      ],
+      "text" : "=0.67"
+    },
+    {
+      "rect" : [
+        381.71970000000005,
+        88.299144799999993,
+        26.849164229999985,
+        14.931643739999998
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "14)"
+        },
+        {
+          "baselineOffset" : 6.2402299999999968,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "e"
+        }
+      ],
+      "text" : "14)e"
+    },
+    {
+      "rect" : [
+        403.19976000000003,
+        84.818236789999986,
+        26.983727488,
+        15.448163210000018
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -4.8000700000000194,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "fg "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "= 4"
+        }
+      ],
+      "text" : "fg = 4"
+    },
+    {
+      "rect" : [
+        297.12,
+        52.379053200000008,
+        15.061001094719984,
+        9.8729762399999998
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626400000000004,
+          "text" : "444"
+        }
+      ],
+      "text" : "444"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    595,
+    842
+  ],
+  "caseID" : "wallace-algebra-2010",
+  "graphics" : [
+    [
+      126.40000000000001,
+      744.62000000000012,
+      51.52000000000001,
+      4
+    ],
+    [
+      127.96000000000001,
+      719.54000000000008,
+      45.640000000000015,
+      4
+    ],
+    [
+      126.76000000000002,
+      692.78000000000009,
+      35.200000000000017,
+      4
+    ],
+    [
+      123.04000000000002,
+      666.5,
+      22.120000000000005,
+      4
+    ],
+    [
+      122.44000000000001,
+      641.42000000000007,
+      9.6400000000000006,
+      4
+    ],
+    [
+      125.56000000000002,
+      616.34000000000015,
+      13.600000000000009,
+      4
+    ],
+    [
+      123.64000000000001,
+      591.62000000000012,
+      17.800000000000011,
+      4
+    ],
+    [
+      271.48000000000002,
+      746.18000000000006,
+      22.71999999999997,
+      4
+    ],
+    [
+      270.28000000000003,
+      723.2600000000001,
+      22.71999999999997,
+      4
+    ],
+    [
+      269.56000000000006,
+      699.98000000000002,
+      29.439999999999941,
+      4
+    ],
+    [
+      274,
+      677.42000000000007,
+      26.080000000000041,
+      4
+    ],
+    [
+      271.96000000000004,
+      654.1400000000001,
+      27.519999999999982,
+      4
+    ],
+    [
+      271.96000000000004,
+      614.42000000000007,
+      23.680000000000007,
+      4
+    ],
+    [
+      271.96000000000004,
+      591.5,
+      27.759999999999991,
+      4
+    ],
+    [
+      420.40000000000003,
+      746.18000000000006,
+      27.879999999999995,
+      4
+    ],
+    [
+      419.80000000000001,
+      714.86000000000013,
+      26.800000000000011,
+      4
+    ],
+    [
+      418.60000000000002,
+      684.0200000000001,
+      27.879999999999995,
+      4
+    ],
+    [
+      420.28000000000003,
+      653.18000000000006,
+      27.760000000000048,
+      4
+    ],
+    [
+      420.40000000000003,
+      622.34000000000015,
+      28.119999999999948,
+      4
+    ],
+    [
+      421.36000000000007,
+      591.5,
+      35.319999999999993,
+      4
+    ],
+    [
+      124.24000000000001,
+      437.90000000000003,
+      13.719999999999999,
+      4
+    ],
+    [
+      97.9602,
+      414.26000000000005,
+      13.719800000000006,
+      4
+    ],
+    [
+      133.59999999999999,
+      391.22000000000003,
+      13.720000000000027,
+      4
+    ],
+    [
+      124.24000000000001,
+      346.58000000000004,
+      13.719999999999999,
+      4
+    ],
+    [
+      103.84000000000002,
+      321.14000000000004,
+      13.719999999999999,
+      4
+    ],
+    [
+      130.12,
+      298.10000000000002,
+      13.719999999999999,
+      4
+    ],
+    [
+      117.04000000000002,
+      272.78000000000003,
+      9.519999999999996,
+      4
+    ],
+    [
+      274.60000000000002,
+      520.82000000000005,
+      9.3999999999999773,
+      4
+    ],
+    [
+      265.48000000000002,
+      457.46000000000004,
+      9.4000000000000341,
+      4
+    ],
+    [
+      276.52000000000004,
+      432.86000000000007,
+      9.5199999999999818,
+      4
+    ],
+    [
+      265.48000000000002,
+      408.38000000000005,
+      25.600000000000023,
+      4
+    ],
+    [
+      265.48000000000002,
+      383.78000000000003,
+      9.4000000000000341,
+      4
+    ],
+    [
+      274.60000000000002,
+      340.70000000000005,
+      13.720000000000027,
+      4
+    ],
+    [
+      278.56000000000006,
+      316.22000000000003,
+      13.599999999999966,
+      4
+    ],
+    [
+      265.48000000000002,
+      252.74000000000001,
+      9.4000000000000341,
+      4
+    ],
+    [
+      426.88000000000005,
+      520.82000000000005,
+      13.71999999999997,
+      4
+    ],
+    [
+      400.60000000000002,
+      492.0200000000001,
+      9.3999999999999773,
+      4
+    ],
+    [
+      413.80000000000001,
+      461.30000000000001,
+      13.71999999999997,
+      4
+    ],
+    [
+      413.80000000000001,
+      406.10000000000002,
+      9.5199999999999818,
+      4
+    ],
+    [
+      436.96000000000004,
+      406.10000000000002,
+      9.5199999999999818,
+      4
+    ],
+    [
+      424.96000000000004,
+      375.38000000000005,
+      9.4000000000000341,
+      4
+    ],
+    [
+      411.76000000000005,
+      344.78000000000003,
+      9.4000000000000341,
+      4
+    ],
+    [
+      413.80000000000001,
+      314.06000000000006,
+      13.71999999999997,
+      4
+    ],
+    [
+      441.28000000000003,
+      314.06000000000006,
+      13.71999999999997,
+      4
+    ],
+    [
+      413.80000000000001,
+      283.46000000000004,
+      13.71999999999997,
+      4
+    ],
+    [
+      441.28000000000003,
+      283.46000000000004,
+      13.71999999999997,
+      4
+    ],
+    [
+      423.04000000000008,
+      252.74000000000001,
+      13.600000000000023,
+      4
+    ],
+    [
+      97.9602,
+      182.18000000000004,
+      9.6398000000000081,
+      4
+    ],
+    [
+      97.9602,
+      159.98000000000002,
+      13.479800000000012,
+      4
+    ],
+    [
+      97.9602,
+      116.54000000000002,
+      12.759800000000013,
+      4
+    ],
+    [
+      97.9602,
+      92.060200000000009,
+      14.199800000000025,
+      4
+    ],
+    [
+      246.28000000000003,
+      159.38000000000002,
+      10.119999999999948,
+      4
+    ],
+    [
+      246.28000000000003,
+      133.94000000000003,
+      20.919999999999959,
+      6.8799999999999955
+    ],
+    [
+      252.16000000000005,
+      90.5,
+      9.7599999999999625,
+      4
+    ],
+    [
+      400.60000000000002,
+      180.14000000000001,
+      13,
+      4
+    ],
+    [
+      400.60000000000002,
+      121.34000000000002,
+      13.840000000000032,
+      4
+    ],
+    [
+      400.60000000000002,
+      92.060200000000009,
+      12.040000000000077,
+      4
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        128.16021000000001,
+        609.27413755999999,
+        8.3575358515834921,
+        7.3165609799999629
+      ],
+      "text" : "ℓh"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        128.40003000000002,
+        595.22731249999993,
+        8.3205468699999869,
+        7.9701099999999769
+      ],
+      "text" : "3v"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        126.23987,
+        584.43413755999995,
+        12.532381380000004,
+        7.9464365199999065
+      ],
+      "text" : "πr2"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.9602,
+        740.06747250000001,
+        40.909872399999998,
+        12.770882700000016
+      ],
+      "text" : "30. r1 ="
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        129.00001,
+        742.48838494999995,
+        46.37221138000001,
+        14.532379129999981
+      ],
+      "text" : "L − 2d − πr2"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        149.76012,
+        737.43411756,
+        4.8617671000000087,
+        7.3165609799999629
+      ],
+      "text" : "π"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.9602,
+        715.10739249999995,
+        42.469632400000009,
+        12.650962700000036
+      ],
+      "text" : "31. T1 ="
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        130.56017,
+        717.40838494999991,
+        40.37221138000001,
+        13.589037550000057
+      ],
+      "text" : "Rd − kAT2"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        145.31988000000001,
+        712.29830678999986,
+        11.278956957269997,
+        7.4520528499999728
+      ],
+      "text" : "kA"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.9602,
+        688.34747249999998,
+        41.269632400000006,
+        12.770882700000016
+      ],
+      "text" : "32. v2 ="
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        129.36017000000001,
+        695.86926638,
+        28.131961380000007,
+        8.3686261199999308
+      ],
+      "text" : "Pg + V1"
+    },
+    {
+      "fontSize" : 5.9775800000000006,
+      "monospaced" : false,
+      "rect" : [
+        155.76014000000001,
+        700.78918638000005,
+        3.6523013800000115,
+        4.8717276999999513
+      ],
+      "text" : "2"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        140.03984,
+        685.30908638000005,
+        8.6925313800000197,
+        7.7215421600000127
+      ],
+      "text" : "V1"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.9602,
+        662.73924480000005,
+        37.429792400000011,
+        11.979110399999968
+      ],
+      "text" : "33. a ="
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        125.63993000000002,
+        664.36877494999999,
+        16.946710050000007,
+        13.589037550000057
+      ],
+      "text" : "c − b"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        131.76024000000004,
+        659.43442756000002,
+        4.7661257800000101,
+        7.3165609799999629
+      ],
+      "text" : "x"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.9602,
+        637.65924480000001,
+        36.949722399999999,
+        11.979110399999968
+      ],
+      "text" : "34. r ="
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        125.03986,
+        645.27393755999992,
+        4.359650170000009,
+        7.3165609799999629
+      ],
+      "text" : "d"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        125.76017300000001,
+        634.23413755999991,
+        3.0605222400000116,
+        7.3165609799999629
+      ],
+      "text" : "t"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        129.8399,
+        620.31393756,
+        4.9334980900000005,
+        7.3165609799999629
+      ],
+      "text" : "V"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.9602,
+        612.69924480000009,
+        40.069662399999999,
+        11.979110399999968
+      ],
+      "text" : "35. w ="
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.9602,
+        587.97924480000006,
+        38.029792400000005,
+        11.979110399999968
+      ],
+      "text" : "36. h ="
+    },
+    {
+      "fontSize" : 9.9626400000000004,
+      "monospaced" : false,
+      "rect" : [
+        84.9602,
+        564.8991532,
+        12.781320151140719,
+        9.8729762399999572
+      ],
+      "text" : "1.6"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960199999999986,
+        510.98330800000008,
+        46.537748000000022,
+        20.455347200000006
+      ],
+      "text" : "1) 8, − 8"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960199999999986,
+        489.74310800000006,
+        42.577998000000008,
+        20.455347200000006
+      ],
+      "text" : "2) 7, − 7"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960250000000002,
+        468.50330800000006,
+        42.577998000000008,
+        20.455347200000006
+      ],
+      "text" : "3) 1, − 1"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960300000000018,
+        447.26310800000005,
+        46.537748000000022,
+        20.455347200000006
+      ],
+      "text" : "4) 2, − 2"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960300000000018,
+        425.66310800000002,
+        38.701145600000004,
+        20.455347200000006
+      ],
+      "text" : "5) 6, −"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        126.84000000000003,
+        441.69863679000002,
+        8.7349879075130161,
+        7.4520528499999728
+      ],
+      "text" : "29"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        129.00016000000002,
+        430.34760249999999,
+        4.2321284100000014,
+        7.9701099999999769
+      ],
+      "text" : "4"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.9602,
+        410.49924479999999,
+        24.334987907513025,
+        15.010954840000011
+      ],
+      "text" : "6) 38"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        102.60004000000001,
+        402.023008,
+        29.977878000000004,
+        20.443392000000017
+      ],
+      "text" : "9 , − 6"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960070000000002,
+        379.10310800000002,
+        48.060915600000016,
+        20.455347200000006
+      ],
+      "text" : "7) − 2, −"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        138.23978,
+        383.78759250000002,
+        4.2321284100000014,
+        7.9701099999999769
+      ],
+      "text" : "3"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.9602,
+        357.26300800000001,
+        44.617818000000014,
+        20.455347200000006
+      ],
+      "text" : "8) − 3, 9"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960170000000005,
+        334.34310800000003,
+        38.701145600000004,
+        20.455347200000006
+      ],
+      "text" : "9) 3, −"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        126.83987000000002,
+        350.37863679000003,
+        8.7349879075130161,
+        7.4520528500000296
+      ],
+      "text" : "39"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        129.00003000000001,
+        339.0276025,
+        4.2321284100000014,
+        7.9701099999999769
+      ],
+      "text" : "7"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.9602,
+        317.37924479999998,
+        30.21468790751301,
+        15.010954840000011
+      ],
+      "text" : "10) 16"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        108.48012999999999,
+        308.903008,
+        29.97778799999999,
+        20.443392000000017
+      ],
+      "text" : "5 , − 6"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960069999999973,
+        285.98310800000002,
+        44.580845600000004,
+        20.455347200000006
+      ],
+      "text" : "11) 7, −"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        132.71986999999996,
+        302.01824679000003,
+        8.7349879075130161,
+        7.4520528499999728
+      ],
+      "text" : "29"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        134.88002999999995,
+        290.66761250000002,
+        4.2321284100000014,
+        7.9701099999999769
+      ],
+      "text" : "3"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.9602,
+        260.54300799999999,
+        31.501145600000001,
+        20.455347200000006
+      ],
+      "text" : "12) −"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        119.63990000000001,
+        276.26770249999998,
+        4.2321284100000014,
+        7.9701099999999769
+      ],
+      "text" : "1"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        119.63990000000001,
+        260.54300799999999,
+        27.818017999999995,
+        20.443392000000017
+      ],
+      "text" : "3 ,− 1"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960070000000002,
+        238.82310799999999,
+        56.366042363136017,
+        20.455347200000006
+      ],
+      "text" : "13) − 9, 15"
+    },
+    {
+      "fontSize" : 9.9626400000000004,
+      "monospaced" : false,
+      "rect" : [
+        84.9602,
+        226.13915320000001,
+        12.781320151140719,
+        9.8729762400000141
+      ],
+      "text" : "1.7"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960200000000015,
+        178.41914480000003,
+        19.626050599999985,
+        14.93164373999997
+      ],
+      "text" : "1)c"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        108.24000000000001,
+        178.4192448,
+        17.125396800000004,
+        11.967155200000008
+      ],
+      "text" : "= k"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        100.56023400000002,
+        174.99402756000001,
+        4.4951420400000046,
+        7.3165609799999913
+      ],
+      "text" : "a"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960300000000004,
+        156.21924480000001,
+        22.045825780000001,
+        14.931643739999998
+      ],
+      "text" : "2)x"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        111.96000000000001,
+        156.21924480000001,
+        17.124996799999991,
+        11.967155200000008
+      ],
+      "text" : "= k"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        100.56031000000002,
+        152.73833679000003,
+        8.4888167139650079,
+        7.4520528500000012
+      ],
+      "text" : "yz"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960000000000008,
+        133.1794448,
+        48.20519680000001,
+        11.979110399999996
+      ],
+      "text" : "3) wx = k"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960100000000011,
+        112.77944480000001,
+        21.217682690000004,
+        14.931253740000002
+      ],
+      "text" : "4)r"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        100.56010000000002,
+        109.23433756,
+        7.6120713800000175,
+        7.9468265200000019
+      ],
+      "text" : "s2"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960400000000007,
+        88.299144800000008,
+        22.064756099999997,
+        14.931643739999998
+      ],
+      "text" : "5) f"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        100.5604,
+        84.81823679,
+        9.2219082287760017,
+        7.4520528500000012
+      ],
+      "text" : "xy"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        111.24000000000001,
+        112.7792448,
+        17.245396800000009,
+        11.967155199999993
+      ],
+      "text" : "= k"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        112.68000000000001,
+        88.299244800000011,
+        17.124996799999991,
+        11.967155199999993
+      ],
+      "text" : "= k"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        274.08017000000001,
+        744.04877494999994,
+        17.552048409999998,
+        13.589037550000057
+      ],
+      "text" : "c − 1"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        233.40000000000001,
+        742.4192448,
+        37.429832399999981,
+        11.979110399999968
+      ],
+      "text" : "37. a ="
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        281.03993000000003,
+        738.99412755999992,
+        3.6264000499999725,
+        7.3165609799999629
+      ],
+      "text" : "b"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        272.88017000000002,
+        721.12838494999994,
+        17.552048409999998,
+        13.589037550000057
+      ],
+      "text" : "c − 1"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        233.40000000000001,
+        719.49924480000004,
+        36.229832399999935,
+        11.979110399999968
+      ],
+      "text" : "38. b ="
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        279.36025000000006,
+        716.07413755999994,
+        4.4951420400000188,
+        7.3165609799999629
+      ],
+      "text" : "a"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        272.16024000000004,
+        703.46770249999997,
+        24.615318964668063,
+        7.9701099999999769
+      ],
+      "text" : "5 + bw"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        233.40000000000001,
+        696.21924480000007,
+        35.509902399999959,
+        11.979110399999968
+      ],
+      "text" : "39. t ="
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        282.00010000000009,
+        692.91402756000002,
+        4.4951420400000188,
+        7.3165609799999629
+      ],
+      "text" : "a"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        276.60010000000005,
+        675.28838494999991,
+        20.833244009999987,
+        13.589037550000057
+      ],
+      "text" : "at − s"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        233.40000000000001,
+        673.65924480000001,
+        39.949762400000026,
+        11.979110399999968
+      ],
+      "text" : "40. w ="
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        285.23994000000005,
+        670.23413755999991,
+        3.6264000499999725,
+        7.3165609799999629
+      ],
+      "text" : "b"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        274.56024000000002,
+        652.00838494999994,
+        22.541965314668005,
+        13.589037550000057
+      ],
+      "text" : "c − bx"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        233.40000000000001,
+        650.37924480000004,
+        37.909902399999993,
+        11.979110399999968
+      ],
+      "text" : "41. x ="
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        283.32000000000005,
+        646.95413755999994,
+        4.7661257799999817,
+        7.3165609799999629
+      ],
+      "text" : "x"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        233.40000000000001,
+        622.70300800000007,
+        71.222650399999935,
+        20.455347200000006
+      ],
+      "text" : "42. x = 3 − 5y"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        274.56028999999995,
+        612.28848495,
+        18.445815779999975,
+        13.589037550000057
+      ],
+      "text" : "3 − x"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        233.40011999999996,
+        610.6593448000001,
+        38.029832399999975,
+        11.979110399999968
+      ],
+      "text" : "43. y ="
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        281.76028999999994,
+        606.86761249999995,
+        4.232128409999973,
+        7.9701099999999769
+      ],
+      "text" : "5"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        274.56024000000002,
+        589.36877494999999,
+        22.544067749999954,
+        13.589037550000057
+      ],
+      "text" : "7 − 2y"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        233.40000000000001,
+        587.73924480000005,
+        37.909902399999993,
+        11.979110399999968
+      ],
+      "text" : "44. x ="
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        423.00006000000008,
+        744.04877494999994,
+        22.766115780000007,
+        13.589037550000057
+      ],
+      "text" : "7 − 3x"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        283.68016,
+        584.06780249999997,
+        4.232128409999973,
+        7.9701099999999769
+      ],
+      "text" : "3"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        381.72000000000003,
+        742.4192448,
+        38.150122400000043,
+        11.979110399999968
+      ],
+      "text" : "45. y ="
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        381.72000000000003,
+        711.21924480000007,
+        37.550122400000021,
+        11.979110399999968
+      ],
+      "text" : "46. a ="
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        381.72000000000003,
+        680.37924480000004,
+        36.350122399999975,
+        11.979110399999968
+      ],
+      "text" : "47. b ="
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        381.72000000000003,
+        649.53924480000001,
+        38.029802399999994,
+        11.979110399999968
+      ],
+      "text" : "48. x ="
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        381.72000000000003,
+        618.69924480000009,
+        38.150122400000043,
+        11.979110399999968
+      ],
+      "text" : "49. y ="
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        381.72000000000003,
+        587.73924480000005,
+        38.989962400000024,
+        11.979110399999968
+      ],
+      "text" : "50. f ="
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        432.23989000000012,
+        738.62750249999988,
+        4.232128409999973,
+        7.9701099999999769
+      ],
+      "text" : "2"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        422.40006000000005,
+        718.46770249999997,
+        21.628954768720064,
+        7.9701099999999769
+      ],
+      "text" : "7b + 4"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        431.03989700000011,
+        707.42750249999995,
+        4.232128409999973,
+        7.9701099999999769
+      ],
+      "text" : "5"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        421.20006000000001,
+        681.88846494999996,
+        22.712198409999985,
+        13.589037550000057
+      ],
+      "text" : "5a − 4"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        430.43990000000002,
+        676.58749249999994,
+        4.232128409999973,
+        7.9701099999999769
+      ],
+      "text" : "7"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        422.88014000000004,
+        656.66778249999993,
+        22.544107750000023,
+        7.9701099999999769
+      ],
+      "text" : "8 + 5y"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        432.12002000000007,
+        645.74748249999993,
+        4.232128409999973,
+        7.9701099999999769
+      ],
+      "text" : "4"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        423.00006000000008,
+        620.20846495000001,
+        22.952048409999975,
+        13.589037550000057
+      ],
+      "text" : "4x − 8"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        432.36021000000005,
+        614.90749249999999,
+        4.232128409999973,
+        7.9701099999999769
+      ],
+      "text" : "5"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        423.96030000000007,
+        594.98770249999995,
+        30.334569980788956,
+        7.9701099999999769
+      ],
+      "text" : "9c + 160"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        436.80015000000003,
+        584.06780249999997,
+        4.232128409999973,
+        7.9701099999999769
+      ],
+      "text" : "5"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        136.19994,
+        395.01832679,
+        8.7349879075129877,
+        7.4520528500000296
+      ],
+      "text" : "10"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        200.52019999999999,
+        542.01934480000011,
+        194.09605308597776,
+        11.979110399999968
+      ],
+      "text" : "Answers to Absolute Value Equations"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        233.39993000000004,
+        508.70310800000004,
+        40.621115599999996,
+        20.455347200000006
+      ],
+      "text" : "14) 3, −"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        277.20000000000005,
+        524.30749249999997,
+        4.232128409999973,
+        7.9701099999999769
+      ],
+      "text" : "5"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        277.20000000000005,
+        513.38759249999998,
+        4.232128409999973,
+        7.9701099999999769
+      ],
+      "text" : "3"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        233.40000000000001,
+        487.70300800000001,
+        50.377998000000019,
+        20.455347200000006
+      ],
+      "text" : "15) − 2, 0"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        233.40005000000002,
+        467.30300800000003,
+        52.418247999999949,
+        20.455347200000006
+      ],
+      "text" : "16) 0, − 2"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        233.40004999999996,
+        445.22290800000002,
+        31.501145599999973,
+        20.455347200000006
+      ],
+      "text" : "17) −"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        268.08014999999995,
+        460.94721250000003,
+        4.232128409999973,
+        7.9701099999999769
+      ],
+      "text" : "6"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        268.08014999999995,
+        449.90741250000002,
+        16.537978000000066,
+        15.758987499999989
+      ],
+      "text" : "7 , 0"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        233.39988000000002,
+        420.62300800000003,
+        42.611994399999986,
+        20.455347200000006
+      ],
+      "text" : "18) − 4,"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        279.11983000000009,
+        436.34731250000004,
+        4.232128409999973,
+        7.9701099999999769
+      ],
+      "text" : "4"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        279.11983000000009,
+        425.42741250000006,
+        4.232128409999973,
+        7.9701099999999769
+      ],
+      "text" : "3"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        233.40000000000001,
+        396.14300800000001,
+        31.501145600000001,
+        20.455347200000006
+      ],
+      "text" : "19) −"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        268.08010000000002,
+        412.17853679000001,
+        8.7349998626780234,
+        7.4520528500000296
+      ],
+      "text" : "17"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        270.23987,
+        400.82750249999998,
+        10.811944400000016,
+        15.328510300000062
+      ],
+      "text" : "2 ,"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        284.16016000000002,
+        411.86770250000001,
+        4.232128409999973,
+        7.9701099999999769
+      ],
+      "text" : "7"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        284.16016000000002,
+        400.82750249999998,
+        4.232128409999973,
+        7.9701099999999769
+      ],
+      "text" : "2"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        233.40000000000001,
+        371.54300799999999,
+        31.501145600000001,
+        20.455347200000006
+      ],
+      "text" : "20) −"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        268.08010000000002,
+        387.26770249999998,
+        4.232128409999973,
+        7.9701099999999769
+      ],
+      "text" : "6"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        268.08010000000002,
+        371.54300799999999,
+        27.817727999999988,
+        20.443392000000017
+      ],
+      "text" : "5 ,− 2"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        233.39998,
+        350.66290799999996,
+        61.658098000000024,
+        20.455347200000006
+      ],
+      "text" : "21) − 6, − 8"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        233.40003000000002,
+        328.58320799999996,
+        40.621115599999996,
+        20.455347200000006
+      ],
+      "text" : "22) 6, −"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        277.20010000000002,
+        344.61834678999998,
+        8.7349998626780234,
+        7.4520528500000296
+      ],
+      "text" : "25"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        279.36026000000004,
+        333.26771249999996,
+        4.232128409999973,
+        7.9701099999999769
+      ],
+      "text" : "3"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        233.40000000000001,
+        303.98300799999998,
+        44.461345599999987,
+        20.455347200000006
+      ],
+      "text" : "23) 1, −"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        281.16020000000003,
+        320.01814679,
+        8.7349998626780234,
+        7.4520528500000296
+      ],
+      "text" : "13"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        283.20004000000006,
+        308.66751249999999,
+        4.232128409999973,
+        7.9701099999999769
+      ],
+      "text" : "7"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        233.40000000000001,
+        283.10300799999999,
+        54.326264437888,
+        20.455347200000006
+      ],
+      "text" : "24) 7, − 21"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        233.40007,
+        262.70300800000001,
+        56.24614455744009,
+        20.455347200000006
+      ],
+      "text" : "25) − 2, 10"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        233.40012000000002,
+        240.622908,
+        31.501145599999973,
+        20.455347200000006
+      ],
+      "text" : "26) −"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        268.08022,
+        256.22729249999998,
+        4.232128409999973,
+        7.9701099999999769
+      ],
+      "text" : "7"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        268.08022,
+        245.30739249999996,
+        16.537908000000016,
+        15.759007500000024
+      ],
+      "text" : "5 , 1"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        246.60020000000003,
+        203.25934480000001,
+        101.90427411112961,
+        11.979110399999996
+      ],
+      "text" : "Answers - Variation"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        233.39980000000003,
+        178.65944480000002,
+        51.085126800000012,
+        13.298257700000022
+      ],
+      "text" : "6) jm3 = k"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        233.39973000000003,
+        155.61924480000005,
+        20.357807320000006,
+        14.93164373999997
+      ],
+      "text" : "7) h"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        257.04000000000002,
+        155.61924479999999,
+        17.125396800000033,
+        11.967155200000008
+      ],
+      "text" : "= k"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        249.59975200000002,
+        152.31442756000001,
+        3.6264000500000009,
+        7.3165609799999913
+      ],
+      "text" : "b"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        233.40010000000004,
+        133.05944479999999,
+        25.76612578000001,
+        14.931253740000017
+      ],
+      "text" : "8)x"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        248.88018000000002,
+        127.35423756000003,
+        36.085216799999984,
+        17.672162439999965
+      ],
+      "text" : "a b2√= k"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        233.40010000000001,
+        107.6190448,
+        45.925096800000006,
+        11.979110399999996
+      ],
+      "text" : "9) ab = k"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        233.40020000000001,
+        86.739344799999998,
+        25.855342040000011,
+        14.931253740000002
+      ],
+      "text" : "10)a"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        255.24008700000002,
+        83.314237559999995,
+        24.223376577599993,
+        15.392362440000014
+      ],
+      "text" : "b = 3"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        429.48028000000005,
+        524.61814678999986,
+        8.854897415452001,
+        7.4520528499999728
+      ],
+      "text" : "16"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        381.72008000000005,
+        508.58300799999995,
+        44.581245599999988,
+        20.455347200000006
+      ],
+      "text" : "27) 6, −"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        431.64005000000003,
+        513.38741249999987,
+        4.232128409999973,
+        7.9701099999999769
+      ],
+      "text" : "3"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        381.72000000000003,
+        488.25924479999998,
+        25.712228409999966,
+        15.218177700000012
+      ],
+      "text" : "28) 2"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        403.20010000000002,
+        484.4675125,
+        16.538027999999997,
+        15.758887499999958
+      ],
+      "text" : "5 , 0"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        381.71987999999999,
+        449.06270799999999,
+        31.501145599999973,
+        20.455347200000006
+      ],
+      "text" : "29) −"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        416.39997999999997,
+        465.09823678999999,
+        8.854897415452001,
+        7.4520528499999728
+      ],
+      "text" : "13"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        418.56013999999999,
+        453.8675025,
+        18.697988000000009,
+        15.638897499999985
+      ],
+      "text" : "7 , 1"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        381.71998000000002,
+        422.06300800000002,
+        50.498308000000009,
+        20.455347200000006
+      ],
+      "text" : "30) − 3, 5"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        381.72004000000004,
+        393.86300800000004,
+        31.501145599999973,
+        20.455347200000006
+      ],
+      "text" : "31) −"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        416.40014000000002,
+        409.58770250000003,
+        4.232128409999973,
+        7.9701099999999769
+      ],
+      "text" : "4"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        416.40014000000002,
+        393.86300800000004,
+        19.981165599999997,
+        20.443392000000017
+      ],
+      "text" : "3 ,−"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        381.72000000000003,
+        363.26300800000001,
+        42.611994399999958,
+        20.455347200000006
+      ],
+      "text" : "32) − 6,"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        427.56026000000003,
+        378.86778250000003,
+        4.232128409999973,
+        7.9701099999999769
+      ],
+      "text" : "2"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        427.56026000000003,
+        367.94748250000004,
+        4.232128409999973,
+        7.9701099999999769
+      ],
+      "text" : "5"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        381.72000000000003,
+        341.01924479999997,
+        29.411994400000026,
+        11.979110400000025
+      ],
+      "text" : "33) 7,"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        414.36026000000004,
+        348.26770249999998,
+        4.232128409999973,
+        7.9701099999999769
+      ],
+      "text" : "1"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        414.36026000000004,
+        337.22750249999996,
+        4.232128409999973,
+        7.9701099999999769
+      ],
+      "text" : "5"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        381.72000000000003,
+        301.94300800000002,
+        31.501145599999973,
+        20.455347200000006
+      ],
+      "text" : "34) −"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        416.40010000000001,
+        317.97853679000002,
+        8.854897415452001,
+        7.4520528499999728
+      ],
+      "text" : "22"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        418.56026000000003,
+        301.94300800000002,
+        22.140965600000015,
+        20.443392000000017
+      ],
+      "text" : "5 , −"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        381.72000000000003,
+        271.22300799999999,
+        31.501145599999973,
+        20.455347200000006
+      ],
+      "text" : "35) −"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        416.40010000000001,
+        287.25853678999999,
+        8.854897415452001,
+        7.4520528499999728
+      ],
+      "text" : "19"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        416.40010000000001,
+        271.22300799999999,
+        24.301125599999978,
+        20.443392000000017
+      ],
+      "text" : "22,−"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        381.72000000000003,
+        240.62300800000003,
+        40.741405600000007,
+        20.455347200000006
+      ],
+      "text" : "36) 0, −"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        425.63996000000003,
+        256.65853679000003,
+        8.734975155336997,
+        7.4520528500000296
+      ],
+      "text" : "12"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        427.68019000000004,
+        245.30750250000003,
+        4.232128409999973,
+        7.9701100000000054
+      ],
+      "text" : "5"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        439.56026000000003,
+        409.58770250000003,
+        4.232128409999973,
+        7.9701099999999769
+      ],
+      "text" : "2"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        439.56026000000003,
+        398.54750250000001,
+        4.232128409999973,
+        7.9701099999999769
+      ],
+      "text" : "7"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        446.03987999999998,
+        317.66770250000002,
+        4.232128409999973,
+        7.9701099999999769
+      ],
+      "text" : "2"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        443.88011,
+        306.93833678999999,
+        8.734975155336997,
+        7.4520528499999728
+      ],
+      "text" : "13"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        443.88018,
+        287.25853678999999,
+        8.734975155336997,
+        7.4520528499999728
+      ],
+      "text" : "11"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        443.88018,
+        276.21833678999997,
+        8.734975155336997,
+        7.4520528499999728
+      ],
+      "text" : "38"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        381.72000000000003,
+        176.37924479999998,
+        28.051954139999964,
+        14.931253740000017
+      ],
+      "text" : "11) P"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        403.20010000000002,
+        172.89834679000001,
+        8.1422285105049923,
+        7.4520528500000012
+      ],
+      "text" : "rq"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        414.12,
+        176.37924479999998,
+        26.126229249279959,
+        11.979110399999996
+      ],
+      "text" : "= 0.5"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        381.71999999999997,
+        146.37924479999998,
+        56.846170049280033,
+        11.979110399999996
+      ],
+      "text" : "12) cd = 28"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        381.7201,
+        117.5792448,
+        27.300722240000027,
+        14.931253739999988
+      ],
+      "text" : "13) t"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        403.20014000000003,
+        114.03413755999999,
+        8.5722213799999736,
+        7.9468265200000019
+      ],
+      "text" : "u2"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        414.96000000000004,
+        117.5792448,
+        31.886289423616006,
+        11.979110399999996
+      ],
+      "text" : "= 0.67"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        381.71970000000005,
+        88.299144799999993,
+        26.849164229999985,
+        14.931643739999998
+      ],
+      "text" : "14)e"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        403.19976000000003,
+        84.818236789999986,
+        26.983727488,
+        15.448163210000018
+      ],
+      "text" : "fg = 4"
+    },
+    {
+      "fontSize" : 9.9626400000000004,
+      "monospaced" : false,
+      "rect" : [
+        297.12,
+        52.379053200000008,
+        15.061001094719984,
+        9.8729762399999998
+      ],
+      "text" : "444"
+    }
+  ],
+  "page" : 444,
+  "paints" : [
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        126.40000000000001,
+        744.62000000000012,
+        51.52000000000001,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        127.96000000000001,
+        719.54000000000008,
+        45.640000000000015,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        126.76000000000002,
+        692.78000000000009,
+        35.200000000000017,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        123.04000000000002,
+        666.5,
+        22.120000000000005,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        122.44000000000001,
+        641.42000000000007,
+        9.6400000000000006,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        125.56000000000002,
+        616.34000000000015,
+        13.600000000000009,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        123.64000000000001,
+        591.62000000000012,
+        17.800000000000011,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        271.48000000000002,
+        746.18000000000006,
+        22.71999999999997,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        270.28000000000003,
+        723.2600000000001,
+        22.71999999999997,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        269.56000000000006,
+        699.98000000000002,
+        29.439999999999941,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        274,
+        677.42000000000007,
+        26.080000000000041,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        271.96000000000004,
+        654.1400000000001,
+        27.519999999999982,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        271.96000000000004,
+        614.42000000000007,
+        23.680000000000007,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        271.96000000000004,
+        591.5,
+        27.759999999999991,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        420.40000000000003,
+        746.18000000000006,
+        27.879999999999995,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        419.80000000000001,
+        714.86000000000013,
+        26.800000000000011,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        418.60000000000002,
+        684.0200000000001,
+        27.879999999999995,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        420.28000000000003,
+        653.18000000000006,
+        27.760000000000048,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        420.40000000000003,
+        622.34000000000015,
+        28.119999999999948,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        421.36000000000007,
+        591.5,
+        35.319999999999993,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        124.24000000000001,
+        437.90000000000003,
+        13.719999999999999,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        97.9602,
+        414.26000000000005,
+        13.719800000000006,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        133.59999999999999,
+        391.22000000000003,
+        13.720000000000027,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        124.24000000000001,
+        346.58000000000004,
+        13.719999999999999,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        103.84000000000002,
+        321.14000000000004,
+        13.719999999999999,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        130.12,
+        298.10000000000002,
+        13.719999999999999,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        117.04000000000002,
+        272.78000000000003,
+        9.519999999999996,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        274.60000000000002,
+        520.82000000000005,
+        9.3999999999999773,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        265.48000000000002,
+        457.46000000000004,
+        9.4000000000000341,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        276.52000000000004,
+        432.86000000000007,
+        9.5199999999999818,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        265.48000000000002,
+        408.38000000000005,
+        13.71999999999997,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        281.56000000000006,
+        408.38000000000005,
+        9.5199999999999818,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        265.48000000000002,
+        383.78000000000003,
+        9.4000000000000341,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        274.60000000000002,
+        340.70000000000005,
+        13.720000000000027,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        278.56000000000006,
+        316.22000000000003,
+        13.599999999999966,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        265.48000000000002,
+        252.74000000000001,
+        9.4000000000000341,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        426.88000000000005,
+        520.82000000000005,
+        13.71999999999997,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        400.60000000000002,
+        492.0200000000001,
+        9.3999999999999773,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        413.80000000000001,
+        461.30000000000001,
+        13.71999999999997,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        413.80000000000001,
+        406.10000000000002,
+        9.5199999999999818,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        436.96000000000004,
+        406.10000000000002,
+        9.5199999999999818,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        424.96000000000004,
+        375.38000000000005,
+        9.4000000000000341,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        411.76000000000005,
+        344.78000000000003,
+        9.4000000000000341,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        413.80000000000001,
+        314.06000000000006,
+        13.71999999999997,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        441.28000000000003,
+        314.06000000000006,
+        13.71999999999997,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        413.80000000000001,
+        283.46000000000004,
+        13.71999999999997,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        441.28000000000003,
+        283.46000000000004,
+        13.71999999999997,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        423.04000000000008,
+        252.74000000000001,
+        13.600000000000023,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        97.9602,
+        182.18000000000004,
+        9.6398000000000081,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        97.9602,
+        159.98000000000002,
+        13.479800000000012,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        97.9602,
+        116.54000000000002,
+        12.759800000000013,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        97.9602,
+        92.060200000000009,
+        14.199800000000025,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        246.28000000000003,
+        159.38000000000002,
+        10.119999999999948,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        258.28000000000003,
+        133.94000000000003,
+        7.8400000000000318,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        246.28000000000003,
+        136.82000000000002,
+        20.919999999999959,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        252.16000000000005,
+        90.5,
+        9.7599999999999625,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        400.60000000000002,
+        180.14000000000001,
+        13,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        400.60000000000002,
+        121.34000000000002,
+        13.840000000000032,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        400.60000000000002,
+        92.060200000000009,
+        12.040000000000077,
+        4
+      ]
+    }
+  ],
+  "rightsBasis" : "Page 2 states Copyright 2010 Tyler Wallace and Creative Commons Attribution 3.0 Unported. The PDF remains an external local corpus source; it is not bundled or relicensed under MIT.",
+  "sourceSHA256" : "856bd81edc61c50496982ddc849138f4e0e56fd0ddf0edb53fee9bb0830d0678",
+  "sourceTitle" : "Beginning and Intermediate Algebra",
+  "sourceURL" : "https://s3.amazonaws.com/myopenmath/cfiles/19515/Beginning_and_Intermediate_Algebra.pdf"
+}

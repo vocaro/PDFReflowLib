@@ -115,7 +115,7 @@ are, in the page markup). Evidence and negative controls on real output are in
 ## Current content coverage
 
 <!-- counts:coverage -->
-[corpus/regressions.json](../corpus/regressions.json) has 3587 targeted checks on 585 reviewed pages
+[corpus/regressions.json](../corpus/regressions.json) has 3583 targeted checks on 585 reviewed pages
 across 20 documents: *Pilot's Handbook of Aeronautical Knowledge*, *Beginning and Intermediate
 Algebra*, *The 9/11 Commission Report*, *The Fed Explained*, *Dietary Guidelines for Americans*,
 *Fifth National Climate Assessment*, *Our Flag*, *Preparedness 101*, *Project Blue Book Special
@@ -125,7 +125,7 @@ Bremsstrahlung in Electron-Ion Collisions*, *Replay Clocks*, *Complaint for a Ci
 *Investigation of Atmospheric Boundary-Layer Effects on Launch-Vehicle Ground Wind Loads*, *A
 Scheduling Algorithm Compatible with a Distributed Management of Arrivals in the National Airspace
 System*, *Agricultural Research*, *Earthdata Cloud Analytics Project* and *Tank Health Monitoring*.
-They comprise 1137 ordered-text, 242 text, 450 paragraph, 314 absent-text, 278 heading,
+They comprise 1137 ordered-text, 242 text, 446 paragraph, 314 absent-text, 278 heading,
 36 heading-level, 64 absent-heading, 88 list-item, 40 list, 21 preformatted-block,
 1 preformatted-lines, 29 script, 10 absent-script, 11 footnote, 34 note-link,
 70 paragraph-continuation, 1 list-item-continuation, 8 paragraph-separation, 121 distinct-paragraph,
@@ -552,8 +552,8 @@ controls that keep the first-column rule.
 `faa-410` fixtures (captured with index-glyph decoding and the aligned-column split) read as tables:
 Census Tables 2 and 3 with their row labels and the group headings each spanning three scores,
 Tables 7 and 8 with Table 8's numbers a word space apart, and FAA's service volumes with `Distance`
-above `(Miles)` as one heading and the wrapped altitude and its distance in one row; the titles stay
-paragraphs. Re-merging each row as PDFKit returns it reproduces the defect: no table, and the Census
+above `(Miles)` as one heading and the wrapped altitude and its distance in one row; since #198 the
+Census titles are their tables' captions, while FAA's untitled lines stay paragraphs. Re-merging each row as PDFKit returns it reproduces the defect: no table, and the Census
 pages keep the numeric-grid guard. FAA's paragraph tag over the wrapped altitude's second line and
 its `100` admits them, with a tag reaching outside the table and a heading tag as controls. Synthetic
 lines control the rule: no header, two rows, no numeric column, a marker column, dot leaders, a cell
@@ -563,6 +563,19 @@ higher headings, and a numeric grid of range cells that a read table releases fr
 synthetic PDF sets Census Table 2 with each row one TJ show, which PDFKit returns as one line;
 extraction splits it into cells, and without the header it stays whole. See the
 [aligned-column table evidence](../measurements/aligned-column-tables/record.md).
+
+#198 adds `aTableTitleInTheCellsSizeIsTheCaptionOnlyUnderItsLabel`: a title set in the cells' size
+under a `Table N.` label (one line, wrapped and centred, or with a description beneath) is the
+table's caption and reads nowhere else, with controls for lines without a label, a sentence naming
+the table, a line too far above, a larger size, a heading tag, a line sharing the title's baseline,
+unaligned lines and four lines. `letterSpacedTypeThatPDFKitSpellsApartReadsWhole`
+(`NativeSpacingTests.swift`) reads FAA page 410's `[( )-578 (\()-192.7 (M)…]TJ` as `(Miles)`, and
+character-spaced capitals with their word space kept, with kerning, uneven gaps, column gaps,
+digits, operators' thin spaces, justified TeX's one-letter words, the 9/11 report's spaced ellipses
+and ambiguous or shared runs as controls, and a font change's hidden space on the same line still
+restored; the `faa-410` fixture was recaptured, its heading line now `(Miles)`. The Census contract
+checks each title as its table's `caption`, and FAA page 410's names the distance column. See the
+[table follow-up evidence](../measurements/table-follow-ups/record.md).
 
 ## Labels joined across a page
 
@@ -671,7 +684,7 @@ the page's structure validates, each line also records the tag the pipeline appl
 since #89/#90); older fixtures and untagged lines have none, and `SourceLayoutFixture` restores it.
 Source review, baseline failures, cross-document safeguards and full-run evidence are retained
 in [the three-fix measurement](../measurements/three-fidelity-fixes/record.md). The suite contains
-<!-- counts:swift-tests -->1002 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->248 Python tests<!-- counts:end -->.
+<!-- counts:swift-tests -->1004 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->248 Python tests<!-- counts:end -->.
 The comparison tests include a real-Poppler image URL check through the safe HTTP handler
 (simple and positioned modes, paths with spaces); absent Poppler is an explicit skip.
 

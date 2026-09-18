@@ -2825,6 +2825,427 @@
       ]
     },
     {
+      "id": "gpo-warren-1964",
+      "sourceSHA256": "341cc3471750c9c3be68b95a34b52f6cbdc86c4392427a8483ee1c6bc53cfc19",
+      "basis": "#202: the whole 920-page book converts under library defaults and is gated like the other documents. Every phrase was read from the default conversion and checked against 90-dpi renders of the source pages (measurements/warren-gated-corpus/record.md). The book is a scan with an inherited OCR layer (mostly Courier, invisible): the contract pins correct passages and the explicit uncertainty the reader is given, and blesses no OCR accuracy. Typed-text pages (7, 21, 29, 30, 50, 100, 520, 885, 890, 910) keep the inherited layer with unverifiedTextLayer and their source-page image, and are not recognized again or replaced by an image; page 50's `bis known contacts witb tbe` is the existing layer's reading (gpo-warren-1964-review.json) and is not pinned. Page 29's and page 30's last paragraphs continue onto the next page. Page 520 (a witness list at 0.65 English) is not flagged implausible. Notes 885 and 890 read each column through before the next (notes 415-476 then 477), and index page 910 finishes its left column through Fair Play for Cuba Committee before Federal Bureau of Investigation. Exhibits: page 90's photograph is a crop beside its caption; pages 103 (a map with a photograph), 291 (a handwritten letter) and 384 (photographs) keep their printed captions and the page image, and pages 291 and 384 are the two that once reconstructed two ways (#140). Handwritten hospital notes 549, 553 and 556 report implausibleTextLayer and keep the page image; their recognized handwriting is noise and is not pinned. Typewritten exhibit page 636's inherited layer is noise the plausibility test passes; only its unverified warning and page image are pinned. The cover (1, with its signature annotation), blank page 498 and back cover 920 are each one whole-page image. Not pinned because the output is wrong: paragraph breaks inside dense note-marked pages (100 runs three source paragraphs together), OCR note markers (`^^`), page 50's numbered points 10 and 11 and the numbered notes, whose first lines become preformatted blocks with any wrapped lines as separate paragraphs, and index entries run together.",
+      "pages": [
+        {
+          "page": 1,
+          "minimumImages": 1,
+          "maximumImages": 1,
+          "warningCodesAnyOf": [
+            "annotationsNotConverted"
+          ]
+        },
+        {
+          "page": 7,
+          "pageReference": true,
+          "warningCodesAnyOf": [
+            "unverifiedTextLayer"
+          ],
+          "absentWarningCodes": [
+            "ocrUsed",
+            "implausibleTextLayer",
+            "pageImageFallback"
+          ],
+          "orderedText": [
+            "REPORT OF",
+            "THE PRESIDENT'S COMMISSION ON THE",
+            "ASSASSINATION OF",
+            "President John F. Kennedy",
+            "UNITED STATES",
+            "GOVERNMENT PRINTING OFFICE",
+            "WASHINGTON, D.C."
+          ],
+          "paragraphs": [
+            "President John F. Kennedy"
+          ]
+        },
+        {
+          "page": 21,
+          "pageReference": true,
+          "warningCodesAnyOf": [
+            "unverifiedTextLayer"
+          ],
+          "absentWarningCodes": [
+            "ocrUsed",
+            "implausibleTextLayer",
+            "pageImageFallback"
+          ],
+          "orderedText": [
+            "Contents",
+            "LETTER OF TRANSMITTAL vii",
+            "FOREWORD ix",
+            "Narrative of Events 1",
+            "Conclusions 18",
+            "Recommendations 25",
+            "Chapter II. THE ASSASSINATION 28",
+            "Parkland Memorial Hospital 52",
+            "The Race to the Hospital 52",
+            "The End of the Trip 59",
+            "The Presidential Automobile 76"
+          ]
+        },
+        {
+          "page": 29,
+          "pageReference": true,
+          "warningCodesAnyOf": [
+            "unverifiedTextLayer"
+          ],
+          "absentWarningCodes": [
+            "ocrUsed",
+            "implausibleTextLayer",
+            "pageImageFallback"
+          ],
+          "orderedText": [
+            "Summary and Conclusions",
+            "November 22, 1963, was a cruel and shocking act of violence",
+            "This Commission was created on November 29, 1963",
+            "NARRATIVE OF EVENTS",
+            "Following a testimonial dinner in Houston for U.S. Representative Albert Thomas",
+            "Planned for later that day were a motorcade through downtown Dallas"
+          ],
+          "paragraphs": [
+            "NARRATIVE OF EVENTS"
+          ],
+          "continuedParagraphs": [
+            {
+              "end": "Evident on this trip were the",
+              "next": "varied roles which an American President performs"
+            }
+          ]
+        },
+        {
+          "page": 30,
+          "pageReference": true,
+          "warningCodesAnyOf": [
+            "unverifiedTextLayer"
+          ],
+          "absentWarningCodes": [
+            "ocrUsed",
+            "implausibleTextLayer",
+            "pageImageFallback"
+          ],
+          "orderedText": [
+            "prospective candidate for reelection.",
+            "The Dallas motorcade, it was hoped, would evoke a demonstration of the President's personal popularity",
+            "By midmorning of November 22, clearing skies in Dallas dispelled the threat of rain",
+            "Directly behind the Presidential limousine was an open \"followup\" car with eight Secret Service agents",
+            "The motorcade left Love Field shortly after"
+          ],
+          "distinctParagraphs": [
+            {
+              "first": "By midmorning of November 22",
+              "second": "Directly behind the Presidential limousine"
+            },
+            {
+              "first": "Directly behind the Presidential limousine",
+              "second": "The motorcade left Love Field"
+            }
+          ],
+          "continuedParagraphs": [
+            {
+              "end": "the welcome became",
+              "next": "tumultuous."
+            }
+          ]
+        },
+        {
+          "page": 50,
+          "pageReference": true,
+          "warningCodesAnyOf": [
+            "unverifiedTextLayer"
+          ],
+          "absentWarningCodes": [
+            "ocrUsed",
+            "implausibleTextLayer",
+            "pageImageFallback"
+          ],
+          "orderedText": [
+            "September 26 to October 3, 1963",
+            "the Fair Play for Cuba Committee",
+            "All of the evidence before the Commission established that there was nothing to support the speculation that Oswald was an agent",
+            "Because of the difficulty of proving negatives to a certainty",
+            "of conspiracy, subversion, or disloyalty",
+            "The Commission could not make any definitive determination of Oswald's motives."
+          ],
+          "paragraphs": [
+            "Because of the difficulty of proving negatives to a certainty the possibility of others being involved with either Oswald or Ruby cannot be established categorically"
+          ]
+        },
+        {
+          "page": 90,
+          "minimumImages": 2,
+          "pageReference": true,
+          "warningCodesAnyOf": [
+            "unverifiedTextLayer"
+          ],
+          "absentWarningCodes": [
+            "ocrUsed",
+            "implausibleTextLayer",
+            "pageImageFallback"
+          ],
+          "orderedText": [
+            "Commission Exhibit No. 477",
+            "(Photograph taken on March 20, 1964, and marked by Brennan during his testimony to show the window (A) in which he saw a man with a rifle, and the window (B) on the fifth floor"
+          ]
+        },
+        {
+          "page": 100,
+          "pageReference": true,
+          "warningCodesAnyOf": [
+            "unverifiedTextLayer"
+          ],
+          "absentWarningCodes": [
+            "ocrUsed",
+            "implausibleTextLayer",
+            "pageImageFallback"
+          ],
+          "orderedText": [
+            "Patrolman Foster estimated that there were 10 or 11 people on the railroad bridge where he was assigned;",
+            "Investigation has disclosed 15 persons who were on the railroad bridge at this time",
+            "Another employee of the Union Terminal Co., Lee E. Bowers, Jr., was at work in a railroad tower",
+            "Special Agent Winston G. Lawson motioned through the windshield",
+            "After the third shot, Foster ran toward the Depository and shortly thereafter informed"
+          ]
+        },
+        {
+          "page": 103,
+          "pageReference": true,
+          "warningCodesAnyOf": [
+            "implausibleTextLayer"
+          ],
+          "absentWarningCodes": [
+            "pageImageFallback"
+          ],
+          "orderedText": [
+            "VIEW OF TRIPLE UNDERPASS",
+            "FROM LOCATION ON ELM STREET",
+            "TEXAS SCHOOL",
+            "BOOK DEPOSITORY",
+            "COMMISSION EXHIBIT No. 2215"
+          ]
+        },
+        {
+          "page": 291,
+          "pageReference": true,
+          "warningCodesAnyOf": [
+            "unverifiedTextLayer"
+          ],
+          "absentWarningCodes": [
+            "ocrUsed",
+            "implausibleTextLayer",
+            "pageImageFallback"
+          ],
+          "orderedText": [
+            "LETTER MAILED BY OSWALD TO THE AMERICAN",
+            "EMBASSY IN MOSCOW",
+            "Commission Exhibit No. 912"
+          ]
+        },
+        {
+          "page": 384,
+          "pageReference": true,
+          "warningCodesAnyOf": [
+            "unverifiedTextLayer"
+          ],
+          "absentWarningCodes": [
+            "ocrUsed",
+            "implausibleTextLayer",
+            "pageImageFallback"
+          ],
+          "paragraphs": [
+            "JACK RUBY MOVING TOWARD OSWALD IN FRONT OF NEWSMAN IKE PAPPAS"
+          ],
+          "orderedText": [
+            "JACK RUBY MOVING TOWARD OSWALD",
+            "PAPPAS DEPOSITION EXHIBIT 2"
+          ]
+        },
+        {
+          "page": 498,
+          "minimumImages": 1,
+          "maximumImages": 1,
+          "warningCodesAnyOf": [
+            "pageImageFallback"
+          ]
+        },
+        {
+          "page": 520,
+          "pageReference": true,
+          "warningCodesAnyOf": [
+            "unverifiedTextLayer"
+          ],
+          "absentWarningCodes": [
+            "ocrUsed",
+            "implausibleTextLayer",
+            "pageImageFallback"
+          ],
+          "orderedText": [
+            "Witness Description Testimony",
+            "Lovelady, Billy Nolan",
+            "Employee, TSBD Vol. VI, p. 336.",
+            "McClelland, Robert N.",
+            "Doctor, Parkland Hospital",
+            "Mitchell, Mary Ann",
+            "Molina, Joe R.",
+            "Employee, TSBD Vol. VI, p. 368."
+          ]
+        },
+        {
+          "page": 549,
+          "minimumImages": 2,
+          "pageReference": true,
+          "warningCodesAnyOf": [
+            "implausibleTextLayer"
+          ],
+          "absentWarningCodes": [
+            "pageImageFallback"
+          ],
+          "orderedText": [
+            "PARKLAND MEMORIAL HOSPITAL",
+            "ADMISSION NOTE"
+          ]
+        },
+        {
+          "page": 553,
+          "minimumImages": 1,
+          "pageReference": true,
+          "warningCodesAnyOf": [
+            "implausibleTextLayer"
+          ],
+          "absentWarningCodes": [
+            "pageImageFallback"
+          ]
+        },
+        {
+          "page": 556,
+          "pageReference": true,
+          "warningCodesAnyOf": [
+            "implausibleTextLayer"
+          ],
+          "absentWarningCodes": [
+            "pageImageFallback"
+          ],
+          "orderedText": [
+            "PARKLAND MEMORIAL HOSPITAL",
+            "ADMISSION NOTE",
+            "DATE AND HOUR:"
+          ]
+        },
+        {
+          "page": 636,
+          "minimumImages": 1,
+          "pageReference": true,
+          "warningCodesAnyOf": [
+            "unverifiedTextLayer"
+          ],
+          "absentWarningCodes": [
+            "pageImageFallback"
+          ]
+        },
+        {
+          "page": 885,
+          "pageReference": true,
+          "warningCodesAnyOf": [
+            "unverifiedTextLayer"
+          ],
+          "absentWarningCodes": [
+            "ocrUsed",
+            "implausibleTextLayer",
+            "pageImageFallback"
+          ],
+          "orderedText": [
+            "NOTES TO PAGES 593-663",
+            "395. Id. at 283.",
+            "404. 4 H 226 (Fritz).",
+            "405. 4 H 288",
+            "413. Id. at 687, 689-690.",
+            "APPENDIX XII",
+            "1. See supra, pp. 61-71.",
+            "2. See supra, pp. 71-72.",
+            "58. See supra, p. 167.",
+            "111. 11 H 434-442 (Warren A. Reynolds)"
+          ],
+          "paragraphs": [
+            "NOTES TO PAGES 593-663",
+            "APPENDIX XII"
+          ]
+        },
+        {
+          "page": 890,
+          "pageReference": true,
+          "warningCodesAnyOf": [
+            "unverifiedTextLayer"
+          ],
+          "absentWarningCodes": [
+            "ocrUsed",
+            "implausibleTextLayer",
+            "pageImageFallback"
+          ],
+          "orderedText": [
+            "NOTES TO PAGES 687-694",
+            "415. 8 H 232 (Delgado).",
+            "416. Id. at 233, 241, 246-248.",
+            "436. Folsom DE 1, p. 3.",
+            "476. CE 2675, p. 2.",
+            "477. Id. at 2-3",
+            "480. CE 2677.",
+            "536. CE 912."
+          ],
+          "paragraphs": [
+            "NOTES TO PAGES 687-694"
+          ]
+        },
+        {
+          "page": 910,
+          "pageReference": true,
+          "warningCodesAnyOf": [
+            "unverifiedTextLayer"
+          ],
+          "absentWarningCodes": [
+            "ocrUsed",
+            "implausibleTextLayer",
+            "pageImageFallback"
+          ],
+          "orderedText": [
+            "De Mohrenschildt, Jeanne, 282-283, 394, 400-401, 418, 717-718, 721, 724.",
+            "Department of the Treasury, 454, 457, 460, 464.",
+            "Dziemian, Dr. Arthur J., 109, 580, 584.",
+            "Executive Order No. 11130, 501-502.",
+            "Fain, John W., 326, 434.",
+            "Fair Play for Cuba Committee, 19, 21-22",
+            "Federal Bureau of Investigation, 13-14",
+            "Felde, Allan R., 682.",
+            "Fritz, Capt. J. Will",
+            "Gadash, Clyde, 344-345.",
+            "Granovsky, Frank, 786."
+          ],
+          "paragraphs": [
+            "Fair Play for Cuba Committee, 19, 21-22, 122, 244, 287-292, 301-302, 312-313, 315, 326, 331, 342-344, 390, 402, 404, 406-408, 410-413, 419, 435-436, 441-442, 567, 578, 661, 728-732, 734, 739, 744."
+          ],
+          "distinctParagraphs": [
+            {
+              "first": "Fair Play for Cuba Committee",
+              "second": "Federal Bureau of Investigation"
+            },
+            {
+              "first": "Executive Order No. 11130",
+              "second": "Fain, John W."
+            }
+          ]
+        },
+        {
+          "page": 920,
+          "minimumImages": 1,
+          "maximumImages": 1,
+          "warningCodesAnyOf": [
+            "pageImageFallback"
+          ]
+        }
+      ]
+    },
+    {
       "id": "gpo-911-2004",
       "sourceSHA256": "657d41475eb3a9a5e3e87a6c7c51ac1dfbe1af7566d1abff7bf7286e7e1c0e1b",
       "basis": "Existing reviewed positiveTextChecks in gpo-911-2004-review.json; native word boundaries must survive. Header/source-body checks cover visually reviewed physical pages 20/21, 65/67 and 472; chapter 1 title is reviewed on page 19. Captured source geometry protects remaining lines on 21 pages; no external prototype heading statistics are reproduced. Page 20 protects the already-supported raised reference 4 after 7:45. Reviewed pages 472/473/532 protect selected numbered paragraphs, a second paragraph within note 66, and the dedented chapter-number continuation inside note 9. General multi-paragraph/cross-page ownership and chapter-scoped reference links remain unqualified. Pages 20-21 and 24-25 visually reviewed: each paragraph continues onto the next page and must remain one paragraph across the source-page marker (#27). Pages 13-16, 126-127, 192-193 and 357-358 visually reviewed (#45): the bottom folios 108, 174 and 339 on chapter-opening pages and the front-matter folios xiii/xv stay separate paragraphs that never absorb the following page's text, while the body paragraph above each chapter-opening folio continues onto the next page. Pages 19, 20, 64, 65, 469 and 484 visually reviewed (#11): each chapter’s endnotes are numbered from 1, so a marker links only to the note of its own chapter (outline chapter openings validated on the page): page 19’s 1 and page 20’s 4 reach chapter 1’s notes 1 and 4 on page 469, where note 1’s second indented paragraph stays a paragraph of its own; page 64’s 241 reaches chapter 1’s last note on page 484, while page 65’s 1 reaches chapter 2’s note 1 under the chapter-opening heading on that same page. Every linked note returns to its first reference. Pages 13–18, 467–468 and 571–585 visually reviewed (#62): a note-page or front-matter running head whose folio is 18 (Arabic) or 0 (Roman) from the physical page is margin furniture even where no three pages repeat its text, and is never a heading; the genuine per-chapter notes titles (10 Wartime, 11 Foresight—and Hindsight, 12 What to Do?) stay in the navigation, and the prose each removed head had separated joins across the page boundary. #45's front-matter separation checks now name the first paragraph that follows each folio, since the head between them is gone; the folio still must not absorb it. Pages 365 and 374 source rasters reviewed (#69): item 4 is one list item although PDFKit splits its `4.` marker, and `10.August 2001` (no space after the period) is the tenth item beside spaced items 6-9, with item 4's indented second paragraph and items 3 and 9 as controls. Page 492 protects a URL rejoined after a line-ending slash (#70). Page 91 checked against extracted geometry (#83): `3.2 ADAPTATION—AND NONADAPTATION—IN THE` and its hanging second line `LAW ENFORCEMENT COMMUNITY` are one heading. Pages 543, 571, 572, 578 and 581-583 source rasters reviewed (#80): every note on those endnote pages is one paragraph with its wrapped lines, keyed to its chapter and reached from its body marker (pages 253, 334, 341, 343, 356, 357, 393, 406 and 422); a web address with `=` no longer seeds a formula crop that swallowed note lines on 571 and 581-583 (no image remains there: the borderless note links draw nothing, #151); pages 572 and 578 are headed NOTES TO CHAPTERS 9-10 / 10-11 and switch chapters at their titles; note 107’s numbered candidate list (543) and note 4’s bullets (583) are further paragraphs of their notes. Addresses broken inside themselves rejoin without a space on 570 and 581 (#79). Pages 205, 496, 544 and 545 source rasters reviewed (#87): page 496's running head misprints NOTES TO CHAPTER 4 over chapter 3's notes 93–112, which continue page 495's note 92 while chapter 4's own notes 93–112 are on page 502, so pages 115 and 124 reach chapter 3's notes on 496 and page 143 reaches chapter 4's on 502; page 544 continues note 107's numbered candidate list from page 543, so its items 7–9 are further paragraphs of that note and page 234's markers 7 and 9 reach chapter 7's notes on page 532; on 545 item 10 is one paragraph with its wrapped lines and the item's further paragraph (Khalid al Zahrani) is whole; markers raised inside preserved list items link like those in paragraphs (page 205's bullet, page 430's item). Page 348 source-reviewed (#100 control): the framed sidebar opens with a two-line paragraph ending in note 30 over a first-line-indented paragraph; it has no title. Pages 362, 369, 497/498, 531/532, 545/546, 583/584 source rasters and the lines above every notes page's first note start reviewed (#11): a note continuing onto the next page at the notes' dedented wrap edge joins its paragraph there whatever opens the continuation (digits on 473, 508 and 540, a quote on 532, a bracket on 580, capitals on 546 and 582), while page 498's further paragraph at the note indent and page 584's flush-left paragraph after note 4's short last bullet stay paragraphs of their own, and note 3 on 532 stays distinct; the lines above a first note start keep their wrapped lines (498, 584); page 362's `”12` and page 369's `”32`, split from their lines at a kerned closing quote, are raised markers that reach chapter 11's notes 12 and 32 on pages 578 and 579. Pages 172, 210, 235, 242, 255 and 313 source-reviewed with the embedded Bembo font (#126): chapters 5–9 print every line-end word break with the `equal` glyph, which extracts as `=`; once the book's 993 `word=` line ends mark it as the hyphen, those breaks go through the hyphen policy (163 `terrorist`, 235 `February` and `encountered` joined, 172 `excep-tional` kept with a warning, 242 `mid=` a hyphen), the lines no longer seed crops, and markers 36, 132, 16 and 91 once inside them link (page 255's 116, freed by #119, is the control). FBI serials, report numbers and designations broken at a hyphen before a digit or capital continue with the hyphen and no space (#127: 43 `C-130H`, 441 `MI-5`, 537 and 546 serials), while 546's `Hijackers Timeline` and 581's addresses are unchanged. Pages 162 and 342 are blank (nothing painted): each keeps only its page marker, with no image or recognition (#132). Line-end hyphens reviewed across the book (#131): compounds broken before a capital keep the hyphen with no space (143 `non-Muslims`, 426 `Goldwater-Nichols`), or lose it where the book prints the halves as one word (450 `CENTCOM`); a word before a digit keeps it where the book sets that word before a number inside a line (242 `mid-1990s`, 372 `pre-9/11`); number codes join (486 `CTC 96-30015`, 554 `SD 108-00`); and a word broken across two blocks joins through the hyphen policy (220 `briefing` after note marker 178, 438 `intelligence` split from its row). Page 111's suspended `ultra-high- and` keeps its space, and page 147's item 2 keeps `training` inside its list item. Pages 41, 458 and 462 source rasters reviewed (#134): the hearings appendix lists each panel's witnesses one to an entry, flush left, and wraps an entry, or a panel title, one em into a hanging indent; each witness is its own paragraph, a wrapped entry is one paragraph (`Ken Holden, … Department of` / `Design and Construction`), page 462 opens with the indented end of an entry continued from page 461, and the two-line bold titles (`Law Enforcement, Domestic Intelligence, and` / `Homeland Security`, `State of the System: Civil Aviation Security` / `on September 11`) and the single-line title over narrower entries (`Intelligence Oversight and the Joint Inquiry`) are headings. Page 41's transcript sets each speaker's turn the same way: each turn is its own paragraph and a wrapped turn stays whole. Pages 570 and 571 visually reviewed (#151): their web-address links draw a one-point black border, so each keeps its Original page image with annotationsNotConverted. #162: page 50’s timeline entries keep the lines wrapped into their hanging indent.",
@@ -11423,11 +11844,5 @@
       ]
     }
   ],
-  "excludedFullConversions": [
-    {
-      "id": "gpo-warren-1964",
-      "reason": "Image-output ceiling (#5): 920 full-page colour scans need 1,062.69 MiB of entry bytes as PNG; under the automatic encoding default (#193) the whole book fits the 512 MiB default by only 316,202 bytes (0.059%), so it stays out of the gated lane until #5 decides whether that margin is a pass. The nine-page excerpt regression is recorded separately.",
-      "issue": 5
-    }
-  ]
+  "excludedFullConversions": []
 }

@@ -1961,7 +1961,7 @@
     {
       "id": "wallace-algebra-2010",
       "sourceSHA256": "856bd81edc61c50496982ddc849138f4e0e56fd0ddf0edb53fee9bb0830d0678",
-      "basis": "Page 12 source raster reviewed; license and page-347 formula targets come from the existing corpus review. Does not bless flattened inline exponents or validate every equation image. Page 343 preserves the source's squared exponent in its actual introductory context; the source typo \"from\" is intentional. Page 26 visually reviewed: numbered exercise 80 has squared exponents on both 7a and 6a; retaining those scripts does not qualify other exercise layout. Pages 18-19 and 43-44 visually reviewed: each paragraph continues onto the next page and must remain one paragraph across the source-page marker (#27). Page 343 source raster reviewed for the \"Our Solution\" line x = (-b +/- sqrt(b^2 - 4ac)) / 2a: its exponent, radical sign and fraction bar are checked stroke by stroke at full resolution, as were both exponents of exercise 35 on page 347 (#27) until #190 wrote it as MathML. Pages 10, 438, 289, 291 and 471 visually reviewed (#29): section 0.1 exercises and their answers keep every number within each column's order (column-major page order is not blessed, only within-column order), the 8.1 square-root exercises and the page-289 derivations are preserved as warned image regions, and the 7.8 dimensional-analysis answers keep thirty text entries. Does not bless the displaced chapter heading on page 438. Page 40 visually reviewed (#50): the five-step list keeps one block per step, and item 4's wrapped line (\"multiply or\" / \"divide)\"), set in the item's hanging indent, stays inside item 4 while item 5 opens a new block. The aligned derivation below it remains a warned image and is not blessed. Page 101 source raster reviewed (#69): exercises 17 and 28, whose numbers PDFKit splits from their point pairs, are single entries like exercise 18. Pages 288, 289 and 291 source rasters reviewed (#58, #49): sentences with inline radicals (page 288's square-root introduction and product-rule sentence, page 289's opening sentence) and the page-291 instruction reflow as text, while page 288's Example 377 table and displayed product rule, the page-289 derivations and every page-291 exercise stay preserved. PDFKit's separate radical pieces (`√ on`, `√ by spliting`, `√ . There are sev-`) rejoin their rows and paragraphs in reading order on pages 288, 289 and 299 (#95); the pieces keep PDFKit's own order inside a row (`36· 5 √` for √36·5), which is not blessed. Page 429 source raster reviewed (#71): `When we are solving a triangle` opens a paragraph set off by added space under the paragraph threshold. Pages 448 and 487 source rasters reviewed (#78): page 448's graphs, numbered along their rows three to a row, read 15-22 in number order; page 487's sub-answers a-i, set in three columns above answers 2-15, read before them. Exercise sets numbered two to a row (pages 10, 26) keep their column order. Pages 175 and 437 (#97) source-reviewed: blank pages whose only text is the folio carry no text once the folio run removes it. Pages 5 and 211 source-reviewed (#102): the contents entry 6.3 Trinomials where a = 1 with its leader is text, not a preserved region. Pages 2, 9, 90, 120, 180, 318, 321 and 401 source-reviewed (#109): a line holding an inline minus, times or radical sign, whose rectangle extends 8.5 points past its type, continues its paragraph into the next line; page 90's point descriptions and page 401's two paragraphs stay separate; page 321's radicand − 1 reads inside its sentence; the license's minus bullets on page 2 and the derivation lines on pages 9 and 120 stay list lines. Pages 34, 40 and 230 source rasters reviewed (#110): a digit set in CMR12 before prose in the EC text font keeps its word space (`Subtract 8 from`, `Plug 2 in`, `The numbers are− 3 and− 3`); PDFKit dropped it and NativeSpacingReader restores it from the fonts' WinAnsi encodings. The flattened minus spacing (`− 3`) is not blessed. Pages 50, 218 and 64 source rasters reviewed (#123): `dif-` + `ferent` joins as `different`, which the book prints with the U+FB00 ligature; the spaced example lines `Three more than a number becomes x + 3` and `Four less than a number becomes x− 4` are paragraphs of their own after their list items. The `Is` bullet inside page 64's formula crop is not blessed. A word broken across two paragraph blocks joins through the hyphen policy (#131: 92 `connect`). Page 101 (#14) reviewed against the source: exercises 9 and 10 each head their own graph on opposite sides of the measure, and PDFKit returns both markers as one line; each marker now reads before its own graph. Pages 16, 252, 340, 343, 424 and 471 source rasters reviewed (#46, #48): a crop takes the piece of a display row that its edge left just outside, because PDFKit breaks such a row at a raised exponent or a fraction. Page 343's \"Factor\" line keeps its leading x² inside the preserved equation instead of emitting a flattened \"x2 +\" paragraph after Example 465, and page 340's derivations leak no \"x2\"; each of page 16's thirty-six fraction exercises and page 252's four is one region with no marker-and-sign stub; page 471's answers 22 and 29 are single regions while the thirty 7.8 dimensional-analysis answers and answers 21, 23, 28, 32 and 33 stay text; page 424's eight triangles keep their side lengths and vertex labels while every exercise number stays a text entry. Page 252 then holds only its four exercise images, and its multiplication dots are no longer navigation headings. Column-major answer-key order, the order of page 424's remaining labels and the page-16 reading order are not blessed. #180: page 38's justified line, which PDFKit split at the stretched space after `4x or 2x,`, is read as one line of its paragraph. Pages 427, 463, 465, 482 and 486 source rasters reviewed (#178, #179): an answer key numbered down its columns reads down them, so page 465's first key reads 11-42 and its second 1-34, page 486's exponential answers 1-40, page 463's three keys 7-34, 1-40 and 1-4, and page 482's simultaneous-product and revenue keys in number order; column-major order is blessed for those keys, while page 486's first key, whose other columns are crops and carry no numbering, still reads across its rows and is not blessed. The key titles' placement inside their keys is not blessed. Each right triangle on pages 424 and 427 keeps its own vertex letters and side lengths inside its crop, as the 65-degree label and the right-angle mark already were, while every exercise number stays a text entry of its own. #187: the listed pages carry each named alternative text on some image — the caption the source prints beside the figure, or the kind the crop's own evidence names — and no image on them states its provenance or nothing in `alt`; source pages rendered and reviewed (measurements/preserved-image-alt-text/record.md). #190: pages 12, 16, 252, 347 and 438 reviewed against their source crops rendered beside the emitted MathML in WebKit (measurements/mathml/record.md): Example 15's two displayed fractions, page 16's fraction exercises (35 of 36; exercise 33, printed without its bracket, stays an image), page 252's rational-expression exercises 41, 43 and 44 (42, whose source sets its `ab` in upright type, stays an image), page 347's quadratic-formula exercises with their exponents, and page 438's fraction answers are pinned as MathML markup, linear alternative text and printed label; the page-347 region and stroke checks are retired with the image they measured.",
+      "basis": "Page 12 source raster reviewed; license and page-347 formula targets come from the existing corpus review. Does not bless flattened inline exponents or validate every equation image. Page 343 preserves the source's squared exponent in its actual introductory context; the source typo \"from\" is intentional. Page 26 visually reviewed: numbered exercise 80 has squared exponents on both 7a and 6a; retaining those scripts does not qualify other exercise layout. Pages 18-19 and 43-44 visually reviewed: each paragraph continues onto the next page and must remain one paragraph across the source-page marker (#27). Page 343 source raster reviewed for the \"Our Solution\" line x = (-b +/- sqrt(b^2 - 4ac)) / 2a: its exponent, radical sign and fraction bar are checked stroke by stroke at full resolution, as were both exponents of exercise 35 on page 347 (#27) until #190 wrote it as MathML. Pages 10, 438, 289, 291 and 471 visually reviewed (#29): section 0.1 exercises and their answers keep every number within each column's order (column-major page order is not blessed, only within-column order), the 8.1 square-root exercises and the page-289 derivations are preserved as warned image regions, and the 7.8 dimensional-analysis answers keep thirty text entries. Does not bless the displaced chapter heading on page 438. Page 40 visually reviewed (#50): the five-step list keeps one block per step, and item 4's wrapped line (\"multiply or\" / \"divide)\"), set in the item's hanging indent, stays inside item 4 while item 5 opens a new block. The aligned derivation below it remains a warned image and is not blessed. Page 101 source raster reviewed (#69): exercises 17 and 28, whose numbers PDFKit splits from their point pairs, are single entries like exercise 18. Pages 288, 289 and 291 source rasters reviewed (#58, #49): sentences with inline radicals (page 288's square-root introduction and product-rule sentence, page 289's opening sentence) and the page-291 instruction reflow as text, while page 288's Example 377 table and displayed product rule, the page-289 derivations and every page-291 exercise stay preserved. PDFKit's separate radical pieces (`√ on`, `√ by spliting`, `√ . There are sev-`) rejoin their rows and paragraphs in reading order on pages 288, 289 and 299 (#95); the pieces keep PDFKit's own order inside a row (`36· 5 √` for √36·5), which is not blessed. Page 429 source raster reviewed (#71): `When we are solving a triangle` opens a paragraph set off by added space under the paragraph threshold. Pages 448 and 487 source rasters reviewed (#78): page 448's graphs, numbered along their rows three to a row, read 15-22 in number order; page 487's sub-answers a-i, set in three columns above answers 2-15, read before them. Exercise sets numbered two to a row (pages 10, 26) keep their column order. Pages 175 and 437 (#97) source-reviewed: blank pages whose only text is the folio carry no text once the folio run removes it. Pages 5 and 211 source-reviewed (#102): the contents entry 6.3 Trinomials where a = 1 with its leader is text, not a preserved region. Pages 2, 9, 90, 120, 180, 318, 321 and 401 source-reviewed (#109): a line holding an inline minus, times or radical sign, whose rectangle extends 8.5 points past its type, continues its paragraph into the next line; page 90's point descriptions and page 401's two paragraphs stay separate; page 321's radicand − 1 reads inside its sentence; the license's minus bullets on page 2 and the derivation lines on pages 9 and 120 stay list lines. Pages 34, 40 and 230 source rasters reviewed (#110): a digit set in CMR12 before prose in the EC text font keeps its word space (`Subtract 8 from`, `Plug 2 in`, `The numbers are− 3 and− 3`); PDFKit dropped it and NativeSpacingReader restores it from the fonts' WinAnsi encodings. The flattened minus spacing (`− 3`) is not blessed. Pages 50, 218 and 64 source rasters reviewed (#123): `dif-` + `ferent` joins as `different`, which the book prints with the U+FB00 ligature; the spaced example lines `Three more than a number becomes x + 3` and `Four less than a number becomes x− 4` are paragraphs of their own after their list items. The `Is` bullet inside page 64's formula crop is not blessed. A word broken across two paragraph blocks joins through the hyphen policy (#131: 92 `connect`). Page 101 (#14) reviewed against the source: exercises 9 and 10 each head their own graph on opposite sides of the measure, and PDFKit returns both markers as one line; each marker now reads before its own graph. Pages 16, 252, 340, 343, 424 and 471 source rasters reviewed (#46, #48): a crop takes the piece of a display row that its edge left just outside, because PDFKit breaks such a row at a raised exponent or a fraction. Page 343's \"Factor\" line keeps its leading x² inside the preserved equation instead of emitting a flattened \"x2 +\" paragraph after Example 465, and page 340's derivations leak no \"x2\"; each of page 16's thirty-six fraction exercises and page 252's four is one region with no marker-and-sign stub; page 471's answers 22 and 29 are single regions while the thirty 7.8 dimensional-analysis answers and answers 21, 23, 28, 32 and 33 stay text; page 424's eight triangles keep their side lengths and vertex labels while every exercise number stays a text entry. Page 252 then holds only its four exercise images, and its multiplication dots are no longer navigation headings. Column-major answer-key order, the order of page 424's remaining labels and the page-16 reading order are not blessed. #180: page 38's justified line, which PDFKit split at the stretched space after `4x or 2x,`, is read as one line of its paragraph. Pages 427, 463, 465, 482 and 486 source rasters reviewed (#178, #179): an answer key numbered down its columns reads down them, so page 465's first key reads 11-42 and its second 1-34, page 486's exponential answers 1-40, page 463's three keys 7-34, 1-40 and 1-4, and page 482's simultaneous-product and revenue keys in number order; column-major order is blessed for those keys, while page 486's first key was then not blessed (see #185 below). Each right triangle on pages 424 and 427 keeps its own vertex letters and side lengths inside its crop, as the 65-degree label and the right-angle mark already were, while every exercise number stays a text entry of its own. #187: the listed pages carry each named alternative text on some image — the caption the source prints beside the figure, or the kind the crop's own evidence names — and no image on them states its provenance or nothing in `alt`; source pages rendered and reviewed (measurements/preserved-image-alt-text/record.md). #190: pages 12, 16, 252, 347 and 438 reviewed against their source crops rendered beside the emitted MathML in WebKit (measurements/mathml/record.md): Example 15's two displayed fractions, page 16's fraction exercises (35 of 36; exercise 33, printed without its bracket, stays an image), page 252's rational-expression exercises 41, 43 and 44 (42, whose source sets its `ab` in upright type, stays an image), page 347's quadratic-formula exercises with their exponents, and page 438's fraction answers are pinned as MathML markup, linear alternative text and printed label; the page-347 region and stroke checks are retired with the image they measured. #185: pages 438, 441, 444, 445, 447, 450, 451, 462, 463, 465, 466, 469, 482 and 486 source rasters reviewed against the reading order (measurements/answer-key-order/record.md): every answer key on them reads in printed number order, counting the numbers printed under its crops, with its section number and title ahead of it and a trailing section number after it; page 486's first key reads 3-9, the crop of 10-16 and then the crops of 17-29 and 30-40, which no text check can see and a unit test pins; page 447's graphs, numbered along their rows, read 3-14 in number order. Page 478's keys, whose crops merge entries of two columns, and the exercise sets' column-major order are not blessed.",
       "pages": [
         {
           "page": 7,
@@ -2051,6 +2051,9 @@
               "alttext": "8/3",
               "label": "4)"
             }
+          ],
+          "absentText": [
+            "3) Answers - Fractions"
           ]
         },
         {
@@ -2738,6 +2741,7 @@
             "17) (u − 5v)(u − 3v)",
             "34) 6(m − 9n)(m + 3n)",
             "6.4",
+            "Answers - Trinomials where a 1",
             "1) (7x − 6)(x − 6)",
             "14) (3r + 7)(r + 3)",
             "15) (3x − 5)(x − 4)",
@@ -2745,13 +2749,15 @@
             "29) (k − 4)(4k − 1)",
             "40) 2(3x + 2y)(2x + 7y)",
             "6.5",
+            "Answers - Factoring Special Products",
             "1) (r + 4)(r − 4)",
             "4) (x + 1)(x − 1)"
           ],
           "absentText": [
             "7) (b +8)(b + 4) 17)",
             "7) (b + 8)(b + 4) 17)",
-            "26) 4(x + 7)(x +6) 6.4"
+            "26) 4(x + 7)(x +6) 6.4",
+            "(r + 3) Answers - Trinomials where a 1"
           ]
         },
         {
@@ -2761,9 +2767,10 @@
             "26) (4m − n)(16m2 + 4mn + n2)",
             "27) (3x − 4)(9x2 + 12x + 16)",
             "42) v2(2u − 5v)(u − 3v)",
+            "6.7",
+            "Answers - Solve by Factoring",
             "1) 7, − 2",
             "7) 2, − 7",
-            "Answers - Solve by Factoring",
             "13) 4, 0",
             "24) 4, 0",
             "29) − 4, 1",
@@ -2773,28 +2780,40 @@
             "11) n(n− 1) 27)",
             "11) n(n − 1) 27)",
             "7) 2,− 7 30)",
-            "7) 2, − 7 30)"
+            "7) 2, − 7 30)",
+            "7) 2, − 7 Answers - Solve by Factoring"
           ]
         },
         {
           "page": 482,
           "orderedText": [
+            "9.8",
+            "Answers - Teamwork",
+            "1) 4 and 6",
+            "10) 15 days",
+            "11) 2 days",
+            "28) 12 and 36 min",
+            "9.9",
             "Answers - Simultaneous Product",
             "4) (8, 15), ( − 10, − 12)",
             "7) (45, 2), ( − 10, − 9)",
             "12) (8, 10), ( − 10, − 8)",
             "9.10",
+            "Answers - Revenue and Distance",
             "1) 12",
             "8) 12 @ S6",
-            "Answers - Revenue and Distance",
             "9) 60 mph, 80 mph",
             "16) 30 mph, 40 mph",
             "18) 36 mph",
-            "22) 4 mph"
+            "22) 4 mph",
+            "9.11"
           ],
           "absentText": [
             "10) (20, 3), (5, 12) 4) (8, 15)",
-            "1) 12 9) 60 mph"
+            "1) 12 9) 60 mph",
+            "10) 15 days Answers - Teamwork",
+            "Simultaneous Product 9.9",
+            "8) 12 @ S6 Answers - Revenue"
           ]
         },
         {
@@ -2820,6 +2839,163 @@
           "absentHeadings": [
             "1)",
             "Solve."
+          ]
+        },
+        {
+          "page": 441,
+          "orderedText": [
+            "Answers - Chapter 1",
+            "1.1",
+            "Answers to One-Step Equations",
+            "1) 7",
+            "14) 5",
+            "15) − 8",
+            "28) − 204",
+            "29) 5",
+            "40) − 380",
+            "1.2",
+            "Answers to Two-Step Equations",
+            "1) − 4"
+          ],
+          "absentText": [
+            "1) 7 15) − 8"
+          ]
+        },
+        {
+          "page": 444,
+          "orderedText": [
+            "1.6",
+            "Answers to Absolute Value Equations",
+            "1) 8, − 8",
+            "13) − 9, 15",
+            "30) − 3, 5",
+            "1.7",
+            "Answers - Variation"
+          ],
+          "absentText": [
+            "13) − 9, 15 1.7"
+          ]
+        },
+        {
+          "page": 445,
+          "orderedText": [
+            "22) 160 kg/cm3",
+            "23) 241,920,000 cans",
+            "37) 6.25 km",
+            "1.8",
+            "Answer Set - Number and Geometry",
+            "1) 11",
+            "16) 56, 56, 68",
+            "17) 64, 64, 52",
+            "32) 1000, 4000",
+            "33) 40, 200",
+            "45) 325, 950",
+            "1.9",
+            "Answers - Age Problems",
+            "1) 6, 16"
+          ],
+          "absentText": [
+            "22) 160 kg/cm3 1.8",
+            "16) 56, 56, 68 23)"
+          ]
+        },
+        {
+          "page": 447,
+          "orderedText": [
+            "Answers - Points and Lines",
+            "1) B(4, − 3)",
+            "K( − 4, 3) 2) 3) 4) 5) 6) 7) 8) 9) 10) 11) 12) 13) 14)"
+          ],
+          "absentText": [
+            "3) 6) 9) 12)"
+          ]
+        },
+        {
+          "page": 450,
+          "orderedText": [
+            "Answers - Point-Slope Form",
+            "1) 2) 3)",
+            "18) 19) 20)",
+            "36) 37)",
+            "52) 2.5",
+            "Answers - Parallel and Perpendicular Lines",
+            "1) 2",
+            "15) 2 16) 17) 18) 19) 20) 21) 22)"
+          ],
+          "absentText": [
+            "18) Answers - Point-Slope Form",
+            "22) 15) 2"
+          ]
+        },
+        {
+          "page": 451,
+          "orderedText": [
+            "32) 33)",
+            "40) 41)",
+            "48) Answers - Chapter 3",
+            "3.1",
+            "Answers - Solve and Graph Inequalities",
+            "8) m 1",
+            "12) x > 1"
+          ],
+          "absentText": [
+            "48) 32)",
+            "40) Answers - Chapter 3"
+          ]
+        },
+        {
+          "page": 462,
+          "orderedText": [
+            "6.2",
+            "Answers - Grouping",
+            "1) (8r2 − 5)(5r − 1)",
+            "10)(7n2 − 5)(n + 3)",
+            "11) (7x + 5)(y − 7)",
+            "27) (2x + 1)(8y − 3x)",
+            "6.3",
+            "1) (p + 9)(p + 8)",
+            "6) (x + 5)(x + 8)"
+          ],
+          "absentText": [
+            "(n + 3) 6.3"
+          ]
+        },
+        {
+          "page": 466,
+          "orderedText": [
+            "Answers - Chapter 7",
+            "7.1",
+            "Answers - Reduce Rational Expressions",
+            "1) 3",
+            "11) 0",
+            "19) 20)",
+            "36) 37)",
+            "50) 7.2",
+            "Answers - Multipy and Divide",
+            "1) 4x2",
+            "2) 3) 4)"
+          ],
+          "absentText": [
+            "Expressions 37)",
+            "2) Answers - Multipy and Divide"
+          ]
+        },
+        {
+          "page": 469,
+          "orderedText": [
+            "7) 8)",
+            "20) 21)",
+            "44) 7.5",
+            "Answers - Complex Fractions",
+            "1) 2)",
+            "11) 12)",
+            "14) 3x + 2",
+            "22) 23)",
+            "30) x2 − 1",
+            "32)"
+          ],
+          "absentText": [
+            "44) Answers - Complex Fractions"
           ]
         }
       ]

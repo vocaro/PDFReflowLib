@@ -2596,6 +2596,9 @@ enum LayoutReconstructor {
         /// A tinted box read as one float: its content is ordered on its own, and the box
         /// follows the lines beside it instead of interleaving with them.
         var box: [Element]?
+        /// The text lines a preserved region's crop covers. They are not reflowed, but an answer
+        /// key's numbers are still printed on them (`numberedMarkers`, #185).
+        var held: [TextLine] = []
     }
 
     // Recursive whitespace cuts: columns first, except that a single-line heading band above
@@ -2610,6 +2613,23 @@ enum LayoutReconstructor {
         if let entries = namedEntries(elements) { return entries }
         func gap(horizontal: Bool, measuring measured: [Element], in part: [Element]? = nil) -> CGFloat? {
             whitespaceCut(horizontal: horizontal, measuring: measured, in: part ?? elements, bodySize: bodySize)
+        }
+        // A key's title and section number, set closer over its columns than any band finds (#185).
+        // Each of those lines stands alone in its row, so they read from the top: a gutter cut would
+        // take a section number set at the margin ahead of the chapter title centred over it.
+        if let cut = keyHeading(elements, bodySize: bodySize) {
+            return ordered(elements.filter { $0.rect.minY > cut.upper }, bodySize: bodySize, depth: depth + 1)
+                + sortedByRows(elements.filter { $0.rect.maxY < cut.upper && $0.rect.minY > cut.lower }, bodySize: bodySize)
+                + ordered(elements.filter { $0.rect.maxY < cut.lower }, bodySize: bodySize, depth: depth + 1)
+        }
+        // One numbered key stacked under another, with no band wide enough to cut between them
+        // (#178). The numbering says where the upper key ends; each key is then cut on its own.
+        // It comes before every column cut (#185): two keys stacked on the same gutters read one
+        // column of both keys at a time, as page 462 read 6.2's left column and then 6.3's before
+        // 6.2's other two, and page 445's markers split its two keys' left columns from the rest.
+        if let y = numberedKeyBand(elements, bodySize: bodySize) {
+            return ordered(elements.filter { $0.rect.minY > y }, bodySize: bodySize, depth: depth + 1)
+                + ordered(elements.filter { $0.rect.maxY < y }, bodySize: bodySize, depth: depth + 1)
         }
         if let x = gap(horizontal: true, measuring: elements) {
             if let y = headingBand(elements, gutter: x, bodySize: bodySize) {
@@ -2705,11 +2725,10 @@ enum LayoutReconstructor {
                 + ordered(parts.columns.filter { $0.rect.minX > parts.gutter }, bodySize: bodySize, depth: depth + 1)
                 + ordered(parts.foot, bodySize: bodySize, depth: depth + 1)
         }
-        // One numbered key stacked under another, with no band wide enough to cut between them
-        // (#178). The numbering says where the upper key ends; each key is then cut on its own.
-        if let y = numberedKeyBand(elements, bodySize: bodySize) {
-            return ordered(elements.filter { $0.rect.minY > y }, bodySize: bodySize, depth: depth + 1)
-                + ordered(elements.filter { $0.rect.maxY < y }, bodySize: bodySize, depth: depth + 1)
+        // A key's columns set closer than a narrow gutter's prose test allows (#185).
+        if let x = numberedColumns(elements, bodySize: bodySize) {
+            return ordered(elements.filter { $0.rect.maxX < x }, bodySize: bodySize, depth: depth + 1)
+                + ordered(elements.filter { $0.rect.minX > x }, bodySize: bodySize, depth: depth + 1)
         }
         // Blocks set beside each other at different leadings, with no whitespace between them
         // (the CDC comic's speech balloons beside its caption boxes, #122), read block by block.
@@ -3376,8 +3395,8 @@ enum LayoutReconstructor {
     /// by design and must keep reading that way, so the geometry does not decide; the numbers do.
     ///
     /// Returns the region's `N)` labels when they form a grid read row-major: at least four
-    /// labels in two or more rows of at least two, at least three columns, each row's labels on
-    /// the first row's column edges, the numbers consecutive row by row, and nothing in the region
+    /// labels in two or more rows of at least two, at least three columns, each row the next label
+    /// down each column, the numbers consecutive row by row, and nothing in the region
     /// above the first row. Otherwise nil. Wallace sets its exercises two to a row and numbers them
     /// along the rows (`1)` | `2)`), but the book reads them column by column by contract (pages 10,
     /// 26 and 424's triangles), so a two-column grid is never reordered.
@@ -3389,17 +3408,23 @@ enum LayoutReconstructor {
             return (element.rect, number)
         }
         guard labels.count >= 4 else { return nil }
-        var rows: [[(rect: CGRect, number: Int)]] = []
-        for label in labels.sorted(by: { $0.rect.maxY > $1.rect.maxY }) {
-            if let anchor = rows.last?.first, anchor.rect.maxY - label.rect.maxY <= bodySize { rows[rows.count - 1].append(label) }
-            else { rows.append([label]) }
+        // A grid: the labels stand on the column edges, and a row is the i-th label down each
+        // column. Rows are counted down the columns rather than found by height, because a column
+        // can drift: page 447 sets each of its right column's graphs 4.4 pt lower than the row
+        // before, so `14)` stands 13.3 pt under `12)` and `13)`, beyond a body (#185).
+        var edges: [CGFloat] = []
+        for x in labels.map(\.rect.minX).sorted() where edges.last.map({ x - $0 > bodySize }) ?? true { edges.append(x) }
+        let columns = edges.indices.map { index in
+            labels.filter { label in edges.lastIndex(where: { label.rect.minX >= $0 }) == index }
+                .sorted { $0.rect.maxY > $1.rect.maxY }
         }
-        rows = rows.map { $0.sorted { $0.rect.minX < $1.rect.minX } }
-        guard rows.count >= 2, rows.filter({ $0.count >= 2 }).count >= 2,
-              let first = rows.first, first.count >= 3, rows.allSatisfy({ $0.count <= first.count }) else { return nil }
-        // A grid: the i-th label of every row stands on the i-th label's left edge in the first row.
-        guard rows.allSatisfy({ row in row.indices.allSatisfy { abs(row[$0].rect.minX - first[$0].rect.minX) <= bodySize } })
-        else { return nil }
+        guard columns.count >= 3, zip(columns, columns.dropFirst()).allSatisfy({ $0.count >= $1.count }) else { return nil }
+        let rows = (0..<columns[0].count).map { row in columns.filter { $0.count > row }.map { $0[row] } }
+        guard rows.count >= 2, rows.filter({ $0.count >= 2 }).count >= 2, let first = rows.first else { return nil }
+        // Each row stands below the one above it in every column it shares.
+        guard zip(rows, rows.dropFirst()).allSatisfy({ upper, lower in
+            zip(upper, lower).allSatisfy { $1.rect.maxY < $0.rect.minY }
+        }) else { return nil }
         let sequence = rows.flatMap { $0.map(\.number) }
         guard zip(sequence, sequence.dropFirst()).allSatisfy({ $1 == $0 + 1 }) else { return nil }
         // Every cell hangs beneath its label: nothing in the region stands above the first row.
@@ -3425,21 +3450,146 @@ enum LayoutReconstructor {
     /// key the entries above continue (1–7 over 8–11) opens higher still. A grid numbered along
     /// its rows (page 448's graphs, the two-to-a-row exercise sets on pages 10, 26 and 424)
     /// interleaves its columns' numbers and is refused at every band.
+    ///
+    /// Either key may carry the columns. Page 441's `Answers to One-Step Equations` reads 1–14,
+    /// 15–28 and 29–40 down three columns over the first row of the next key, `1)− 4 2) 7`, which
+    /// continues overleaf; the restart beneath it is the same evidence (#185). The numbers a crop
+    /// holds count as the entries' own (`numberedMarkers`).
     static func numberedKeyBand(_ elements: [Element], bodySize: CGFloat) -> CGFloat? {
-        let markers = elements.compactMap { element -> (rect: CGRect, number: Int)? in
-            guard let line = element.line, !line.monospaced,
-                  let range = line.text.range(of: #"^[0-9]{1,3}(?=\))"#, options: .regularExpression),
-                  let number = Int(line.text[range]), number > 0 else { return nil }
-            return (element.rect, number)
-        }
+        let markers = numberedMarkers(elements)
         guard markers.count >= 6 else { return nil }
-        for band in horizontalBands(elements) {
+        let bands = horizontalBands(elements)
+        for band in bands {
             let below = markers.filter { $0.rect.maxY < band.y }
             let above = markers.filter { $0.rect.minY > band.y }
             guard let opening = below.map(\.number).min(),
-                  let earliest = above.map(\.number).min(), opening <= earliest,
-                  readsDownColumns(below, bodySize: bodySize) else { continue }
-            return band.y
+                  let earliest = above.map(\.number).min(), opening <= earliest else { continue }
+            if !readsDownColumns(below, bodySize: bodySize) {
+                // Where only the key above reads down its columns, the key below must open on the
+                // band: the first row beneath it carries the restart. A band under a key's upper rows
+                // leaves their continuation beneath it, and a lower key's `1)` further down does not
+                // count.
+                guard readsDownColumns(above, bodySize: bodySize), let top = below.map(\.rect.maxY).max(),
+                      below.filter({ top - $0.rect.maxY <= bodySize * 0.5 }).map(\.number).min() == opening
+                else { continue }
+            }
+            // Every band between the same two markers divides the same keys; the widest is the space
+            // between them. Page 448's labels `21)` and `22)` stand over their graphs with a band
+            // between, above the next key's section number and title, and the key's boundary is the
+            // wider space under the graphs rather than the space between a label and its graph.
+            return bands.filter { other in
+                markers.filter { $0.rect.minY > other.y }.count == above.count
+                    && markers.filter { $0.rect.maxY < other.y }.count == below.count
+            }.max { $0.width < $1.width }?.y ?? band.y
+        }
+        return nil
+    }
+
+    /// The `N)` markers of a region: those opening its text lines, and those printed on the lines a
+    /// preserved region's crop covers (`Element.held`). Wallace preserves a fraction answer as a
+    /// crop that carries its own number, and where a column is all fractions the crops are the
+    /// column: page 486's first key sets 17–29 and 30–40 as two crops beside the text of 3–9, so
+    /// the numbers that say which way the key reads are all beneath the crops (#185).
+    static func numberedMarkers(_ elements: [Element]) -> [(rect: CGRect, number: Int)] {
+        func number(_ line: TextLine) -> Int? {
+            guard !line.monospaced, let range = line.text.range(of: #"^[0-9]{1,3}(?=\))"#, options: .regularExpression),
+                  let number = Int(line.text[range]), number > 0 else { return nil }
+            return number
+        }
+        return elements.flatMap { element -> [(rect: CGRect, number: Int)] in
+            if let line = element.line { return number(line).map { [(element.rect, $0)] } ?? [] }
+            return element.held.compactMap { line in number(line).map { (line.rect, $0) } }
+        }
+    }
+
+    /// The page's lines a preserved region covers: those its crop intersects, each given to the
+    /// crop it overlaps most, so that no line is counted under two crops.
+    static func heldLines(of region: CGRect, in lines: [TextLine], among regions: [CGRect]) -> [TextLine] {
+        func overlap(_ a: CGRect, _ b: CGRect) -> CGFloat {
+            let common = a.intersection(b)
+            return common.isNull ? 0 : common.width * common.height
+        }
+        return lines.filter { line in
+            guard region.intersects(line.rect) else { return false }
+            let own = overlap(region, line.rect)
+            return !regions.contains { $0 != region && overlap($0, line.rect) > own }
+        }
+    }
+
+    /// Title lines set over a key numbered down its columns (#185). Wallace centres each key's
+    /// `Answers - <topic>` title on the page, under its section number, and sets the key beneath
+    /// it closer than the 0.8 body `headingBand` needs: page 463's `Answers - Trinomials where a 1`
+    /// stands 3.2 pt over its entries, whose line boxes are raised by their exponents, and page
+    /// 465's `Answers - Solve by Factoring` 7.9 pt over a fraction crop in the right column. The
+    /// gutter cut then took the title with the column beneath it and read it after the first
+    /// column's whole list; page 482 read `Answers - Simultaneous Product` ahead of its `9.9`,
+    /// because `bulletColumns` lifts only the line that crosses its gutter.
+    ///
+    /// The rows standing wholly above every marker (`numberedMarkers`), taken from the key upward
+    /// while each holds a single line or crop, head the key when its markers read down their
+    /// columns (`readsDownColumns`, which needs two columns of two). Page 444 sets its `1.6` and its
+    /// title under the crops that close the previous key, so the rows above those lines are read
+    /// before them and the key after them; page 462 sets 6.3's title as a crop, for its `≠`, and
+    /// page 466's last key has four entries. Failing a heading, the single rows wholly below every
+    /// marker, taken from the key downward, close it: page 463's `6.5` stands 8.5 pt under the
+    /// second key's last row, in its left column, and read after the left column rather than after
+    /// the key. Returns the rows' extent: what stands wholly above it, the rows within it read from
+    /// the top, and what stands wholly below it. Nil otherwise. A key numbered along its rows never
+    /// reads down its columns, and a line set beside another over one column is not alone in its
+    /// row.
+    static func keyHeading(_ elements: [Element], bodySize: CGFloat) -> (upper: CGFloat, lower: CGFloat)? {
+        let markers = numberedMarkers(elements)
+        guard markers.count >= 4, let top = markers.map(\.rect.maxY).max(), let bottom = markers.map(\.rect.minY).min(),
+              readsDownColumns(markers, bodySize: bodySize) else { return nil }
+        /// The single-element rows of `outside`, walked from the key outward, and the cut beyond them.
+        func lines(_ outside: [Element], upward: Bool) -> (lines: [Element], beyond: CGFloat)? {
+            // Rows are runs of elements whose heights overlap, nearest the key first.
+            var rows: [(elements: [Element], low: CGFloat, high: CGFloat)] = []
+            for element in outside.sorted(by: { upward ? $0.rect.minY < $1.rect.minY : $0.rect.maxY > $1.rect.maxY }) {
+                if let last = rows.last, upward ? element.rect.minY < last.high : element.rect.maxY > last.low {
+                    rows[rows.count - 1] = (last.elements + [element], min(last.low, element.rect.minY), max(last.high, element.rect.maxY))
+                } else {
+                    rows.append(([element], element.rect.minY, element.rect.maxY))
+                }
+            }
+            let single = rows.prefix { $0.elements.count == 1 && $0.elements[0].box == nil && $0.elements[0].table == nil }
+            guard let far = single.last else { return nil }
+            let next = rows.dropFirst(single.count).first
+            return (single.flatMap(\.elements), next.map { upward ? ($0.low + far.high) / 2 : ($0.high + far.low) / 2 }
+                    ?? (upward ? .greatestFiniteMagnitude : -.greatestFiniteMagnitude))
+        }
+        let above = elements.filter { $0.rect.minY >= top }, below = elements.filter { $0.rect.maxY <= bottom }
+        if let head = lines(above, upward: true), let floor = head.lines.map(\.rect.minY).min(),
+           let ceiling = elements.filter({ $0.rect.minY < top }).map(\.rect.maxY).max(), ceiling < floor {
+            return (head.beyond, (floor + ceiling) / 2)
+        }
+        if let foot = lines(below, upward: false), let ceiling = foot.lines.map(\.rect.maxY).max(),
+           let floor = elements.filter({ $0.rect.maxY > bottom }).map(\.rect.minY).min(), ceiling < floor {
+            return ((floor + ceiling) / 2, foot.beyond)
+        }
+        return nil
+    }
+
+    /// A gutter between the columns of a key numbered down them that is too narrow for the prose
+    /// test `whitespaceCut` sets a narrow gutter (#185). Page 486's first key sets 3–9 as text over
+    /// a crop of 10–16 in its left column, 16.6 pt from a crop of 17–29: neither side holds a line
+    /// twelve bodies wide, so the page fell to the row sort, which read the middle column's crop
+    /// ahead of the left column's. The numbers are the evidence instead: when the region's markers
+    /// (`numberedMarkers`) read down their columns, returns the leftmost vertical line no element
+    /// crosses, in whitespace wider than the 0.75 body the whitespace cut asks, with markers on both
+    /// sides. Nil otherwise.
+    static func numberedColumns(_ elements: [Element], bodySize: CGFloat) -> CGFloat? {
+        let markers = numberedMarkers(elements)
+        guard markers.count >= 6, readsDownColumns(markers, bodySize: bodySize) else { return nil }
+        let intervals = elements.map { ($0.rect.minX, $0.rect.maxX) }.sorted { $0.0 < $1.0 }
+        guard var end = intervals.first?.1 else { return nil }
+        for interval in intervals.dropFirst() {
+            if interval.0 - end > bodySize * 0.75 {
+                let x = (end + interval.0) / 2
+                // Columns that read down in turn number every column left of the line lower.
+                if markers.contains(where: { $0.rect.midX < x }), markers.contains(where: { $0.rect.midX > x }) { return x }
+            }
+            end = max(end, interval.1)
         }
         return nil
     }
@@ -4047,7 +4197,7 @@ enum LayoutReconstructor {
         }
         let spatial = boxed(free.map { Element(rect: $0.readingRect ?? $0.rect, line: $0) }
             + braces.map { Element(rect: union($0.map(\.rect)), boundary: true) }
-            + images.map { Element(rect: readingRect(ofRegion: $0.0), image: $0.1) }
+            + images.map { Element(rect: readingRect(ofRegion: $0.0), image: $0.1, held: heldLines(of: $0.0, in: page.lines, among: images.map(\.0))) }
             + tables.enumerated().map { Element(rect: $0.element.ownedLines.map(\.rect).reduce($0.element.bounds) { $0.union($1) }, table: $0.offset) },
             tints: page.tints, bodySize: body)
         // A line runs on into the line beneath it: set directly below at ordinary leading on the

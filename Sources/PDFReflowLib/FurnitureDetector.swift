@@ -173,7 +173,10 @@ enum FurnitureDetector {
             }
             // Normalize only a boundary page number, with a consistent physical-page
             // offset. Keep internal digits (9/11, chapter numbers, dates) meaningful.
-            for index in Set([0, words.count - 1]) {
+            // A folio that counts the pages (`Page 3 of 5`, #152) ends with the unchanging total,
+            // so the page number is the word before `of`.
+            let counted = words.count >= 3 && words[words.count - 2] == "of" && Int(words[words.count - 1]) != nil
+            for index in Set([0, words.count - 1] + (counted ? [words.count - 3] : [])) {
                 if let value = Int(words[index]), value >= 0 {
                     var normalized = words
                     let (offset, overflow) = value.subtractingReportingOverflow(page.number)
@@ -250,6 +253,32 @@ enum FurnitureDetector {
         return (page.graphics + page.separators).contains { rule in
             guard rule.isFinite, rule.height <= thickest, rule.width >= narrowest else { return false }
             return rule.minY >= low && rule.maxY <= high
+        }
+    }
+
+    /// The page-wide rules that set a removed running head or foot off from the body (#152): a
+    /// rule belongs to the furniture it rules off and goes with it. The US Courts form draws a
+    /// double rule under its head on every page, and with the head removed the rule stayed as a
+    /// crop that showed the head's clipped lower half: its two hairlines, padded, stand 6.9 points
+    /// tall, past a thin rule's six, so `LayoutReconstructor.isDecorationRule` never read it.
+    ///
+    /// Such a rule is thin (at most the removed line's height), spans six tenths of the page, and
+    /// lies, without `GraphicsReader`'s two points of padding, between the removed line and the
+    /// nearest kept line inward of it, set against the removed line: within a quarter of its
+    /// height of it (the form's rule stands 0.2 points under its head), and nearer it than the
+    /// body. A table's closing rule above a running foot (NOAA pages 411 and 1565, 55 and 13.5
+    /// points off it) belongs to the table, and the magazine's foot rule (#159), 4.4 points over
+    /// a 12-point foot and on some pages nearer the photo credit above it, stays as it was.
+    private static func rulesSettingOff(_ line: TextLine, kept: [TextLine], on page: PageContent) -> [CGRect] {
+        let top = line.rect.midY >= page.bounds.midY
+        let inward = kept.filter { top ? $0.rect.midY < line.rect.midY : $0.rect.midY > line.rect.midY }
+        guard let edge = top ? inward.map(\.rect.maxY).max() : inward.map(\.rect.minY).min() else { return [] }
+        return page.graphics.filter { rule in
+            guard rule.isFinite, rule.width >= page.bounds.width * 0.6, rule.height <= line.rect.height else { return false }
+            let drawn = rule.insetBy(dx: 0, dy: min(2, rule.height * 0.49))
+            let (toLine, toBody) = top ? (line.rect.minY - drawn.maxY, drawn.minY - edge)
+                                       : (drawn.minY - line.rect.maxY, edge - drawn.maxY)
+            return toLine >= 0 && toBody >= 0 && toLine <= line.rect.height * 0.25 && toLine < toBody
         }
     }
 
@@ -402,6 +431,8 @@ enum FurnitureDetector {
             // but its folio (FAA `A-8` and `G-36`, the blank last pages of appendix A and the
             // glossary; #97): its page boundary survives without text.
             guard !kept.isEmpty || removed.isSubset(of: plan.bareFolios[pageIndex] ?? []) else { return nil }
+            let rules = removed.flatMap { rulesSettingOff(page.lines[$0], kept: kept, on: page) }
+            page.graphics.removeAll { rules.contains($0) }
         }
         page.lines = kept
         return ConversionWarning(code: .furnitureRemoved, page: page.number,

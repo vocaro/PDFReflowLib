@@ -186,12 +186,16 @@ enum PDFReflowLibPipeline {
                 // A ruled grid's column joints split table cells PDFKit merges into one line (#65),
                 // and so does the column gap of a borderless table with capital headings (#121).
                 let native = !requiresPageImage && !syntheticStyle
+                // A form's ruled blanks are printed structure (#152): a line PDFKit reads across
+                // one is cut there, and the rules seed no crops.
+                let blanks = native ? AnnotationEvidence.blanks(on: page, paints: graphics.paints.map(\.rect)) : []
                 var content = PageContent(number: i + 1, bounds: bounds,
                     lines: try NativeTextReader.lines(on: page, limit: limit, includeStyle: native,
                         columnJoints: native ? GraphicsReader.columnJoints(graphics.paints.map(\.rect)) : [],
                         borderlessTableInk: native ? graphics.paints.map(\.rect) : nil,
-                        glyphDecodings: glyphDecodings, report: glyphReport),
+                        blanks: blanks, glyphDecodings: glyphDecodings, report: glyphReport),
                     graphics: graphics.regions)
+                content.blanks = blanks
                 if !requiresPageImage && !syntheticStyle && options.ocr != .always, let structure,
                    let tags = structure.pages[i + 1], !tags.isEmpty,
                    !(StructureTreeReader.validates(tags, owners: structure.owners[i + 1] ?? [:], page: reference)
@@ -211,8 +215,9 @@ enum PDFReflowLibPipeline {
                 // page-sized but its own backdrop composes the art beside that backdrop (#164),
                 // so a slide's placeholders and boxes do not take the text drawn on them.
                 if !requiresPageImage {
-                    let art = artBesideBackdrops(graphics.paints, lines: content.lines, bounds: bounds)
-                    let composed = TintDetector.compose(art ?? graphics.paints, lines: content.lines, bounds: bounds)
+                    let paints = graphics.paints.filter { paint in !blanks.contains { $0.rule.contains(paint.rect) } }
+                    let art = artBesideBackdrops(paints, lines: content.lines, bounds: bounds)
+                    let composed = TintDetector.compose(art ?? paints, lines: content.lines, bounds: bounds)
                     content.graphics = composed.graphics
                     content.tints = composed.tints
                     content.separators = composed.separators

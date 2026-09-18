@@ -115,7 +115,7 @@ are, in the page markup). Evidence and negative controls on real output are in
 ## Current content coverage
 
 <!-- counts:coverage -->
-[corpus/regressions.json](../corpus/regressions.json) has 3338 targeted checks on 559 reviewed pages
+[corpus/regressions.json](../corpus/regressions.json) has 3395 targeted checks on 559 reviewed pages
 across 22 documents: *Pilot's Handbook of Aeronautical Knowledge*, *Beginning and Intermediate
 Algebra*, *The 9/11 Commission Report*, *The Fed Explained*, *Dietary Guidelines for Americans*,
 *Fifth National Climate Assessment*, *Our Flag*, *Preparedness 101*, *Project Blue Book Special
@@ -125,11 +125,11 @@ Report No. 14*, *Mineral Commodity Summaries 2025*, *Loper Bright Enterprises v.
 Clocks*, *Complaint for a Civil Case*, *Investigation of Atmospheric Boundary-Layer Effects on
 Launch-Vehicle Ground Wind Loads*, *A Scheduling Algorithm Compatible with a Distributed Management
 of Arrivals in the National Airspace System*, *Agricultural Research*, *Earthdata Cloud Analytics
-Project* and *Tank Health Monitoring*. They comprise 1136 ordered-text, 242 text, 402 paragraph,
-285 absent-text, 268 heading, 20 heading-level, 50 absent-heading, 89 list-item,
+Project* and *Tank Health Monitoring*. They comprise 1136 ordered-text, 242 text, 418 paragraph,
+291 absent-text, 271 heading, 36 heading-level, 50 absent-heading, 93 list-item,
 1 preformatted-lines, 29 script, 8 absent-script, 11 footnote, 34 note-link,
-61 paragraph-continuation, 1 list-item-continuation, 8 paragraph-separation, 92 distinct-paragraph,
-196 image-presence, 44 captioned-image, 102 page-reference, 113 warning, 111 absent-warning,
+61 paragraph-continuation, 1 list-item-continuation, 8 paragraph-separation, 99 distinct-paragraph,
+201 image-presence, 44 captioned-image, 102 page-reference, 113 warning, 111 absent-warning,
 17 source-region, 5 glyph-structure, 4 image-appearance and 9 table-cell checks, counted as
 `tools/check_corpus_content.py` counts them.
 <!-- counts:end -->
@@ -584,6 +584,7 @@ swiftc Sources/PDFReflowLib/NativeTextReader.swift Sources/PDFReflowLib/Conversi
   Sources/PDFReflowLib/GraphicsReader.swift Sources/PDFReflowLib/NativeSpacingReader.swift \
   Sources/PDFReflowLib/StructureTreeReader.swift Sources/PDFReflowLib/MarkedTextReader.swift \
   Sources/PDFReflowLib/FontWeightReader.swift Sources/PDFReflowLib/PrivateUseDecoder.swift \
+  Sources/PDFReflowLib/AnnotationEvidence.swift \
   tools/capture-layout-fixture.swift \
   -o /tmp/capture-layout-fixture
 /tmp/capture-layout-fixture faa-phak-8083-25c 91 /tmp/faa-91-layout.json
@@ -604,7 +605,7 @@ the page's structure validates, each line also records the tag the pipeline appl
 since #89/#90); older fixtures and untagged lines have none, and `SourceLayoutFixture` restores it.
 Source review, baseline failures, cross-document safeguards and full-run evidence are retained
 in [the three-fix measurement](../measurements/three-fidelity-fixes/record.md). The suite contains
-<!-- counts:swift-tests -->910 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->242 Python tests<!-- counts:end -->.
+<!-- counts:swift-tests -->920 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->242 Python tests<!-- counts:end -->.
 The comparison tests include a real-Poppler image URL check through the safe HTTP handler
 (simple and positioned modes, paths with spaces); absent Poppler is an explicit skip.
 
@@ -1292,6 +1293,41 @@ TechPort pages (its 27 borderless links), USDA pages 2–12, 14–19 and 22–24
 page reference; 9/11 pages 570 and 571, whose links draw a border, still do, and all seven NBS pages
 keep theirs beside the inherited OCR. See the
 [annotation evidence](../measurements/annotation-page-images/record.md).
+
+## Form blanks, outline labels and counted folios
+
+`FormBlanksAndOutlineTests.swift` covers #152. All five Pro Se 1 pages (`uscourts-1` … `uscourts-5`,
+captured with their blanks and with the rows PDFKit read across a blank already cut) run through
+furniture removal, crops, blocks and document-wide heading ranking: no page keeps a crop; the
+running head, the `Page N of 5` folio and the rule under the head are gone; the outline labels are
+headings at levels 4 (`I.`–`V.`), 5 (`A.`, `B.`) and 6 (`1.`–`3.`) under the form's 20- and 13-point
+titles; every field label is its own paragraph ending `____`; the fill-in sentences read whole with
+their lettered item titles apart as list lines; the Statement of Claim is one paragraph; and the
+caption's column of `)` is gone while the parties still read before the case number.
+
+Unit tests read each mechanism on its own with controls: `FormBlank.blanks` pairs fields with the
+rules along their lower edge (a rule drawn twice is one blank; a head rule, a box and a field with
+no rule are none); `joiningBlankRows` sets blanks into rows and ends a row at a trailing blank,
+leaving a value printed on a rule, an answer area, a tagged line and a page without blanks alone;
+marker pieces join across a tab stop only where both edges repeat and the gap is under 3.5 font
+sizes; a row cut at a sentence's two spaces joins only when the left piece kept its space, the gap
+is under three quarters of an em, the page sets that size ragged and the row is a line of the
+paragraph beneath it (#180's justified-column controls still hold); outline labels
+need two nested tiers and a bold label (a one-tier numbered list, numbered sentences, reversed
+nesting, plain type and a label off the body's size are none); outline tiers rank beneath the size
+scale; a bracket column needs three brackets on one edge at line pitch; and a counted folio and the
+rule touching a removed head go with the furniture, while a two-page run and a step count do not.
+A synthetic AcroForm page converts end to end: a single text show PDFKit reads across its blank is
+cut there, the labels and the sentence read with `____`, and a rule under no field is still the
+page's crop; without its fields the same page writes no blank.
+
+Negative controls: with each mechanism disabled the suite fails 23 expectations (row joining), 2
+(the extraction cut), 6 (blank rules left seeding crops), 12 (the tab-stop join), 2 (the sentence
+space), 9 (outline labels), 6 (tier ranking), 2 (the brace), 10 (the counted folio) and 11 (the head
+rule); all at once, 61. The corpus contract adds heading levels, list items, whole fill-in
+sentences, one paragraph per label, no crop and the folio's absence on all five pages; it fails 55
+of its 219 checks against the previous converter's evaluation and passes against this one. See the
+[form evidence](../measurements/form-blanks-and-outlines/record.md).
 
 ## Blank pages
 

@@ -6910,13 +6910,38 @@
     {
       "id": "uscourts-pro-se-1-2016",
       "sourceSHA256": "9fe218570d311b0deab9413e39efda41210e60f2a5221eb360d43912ce05a118",
-      "basis": "Source pages 1-5 visually reviewed against 70 DPI Poppler renders and the extracted text layer. Protects the court caption and COMPLAINT FOR A CIVIL CASE as headings; the caption's left block (plaintiff and defendant instructions) before its right block (Case No., Jury Trial); every fill-in label (plaintiff, four defendant and attorney blocks) present in source order; whole instruction paragraphs for sections I-V, kept separate from each other; the diversity-of-citizenship sentence fragments in source order; and the running header removed on every page. The AcroForm push buttons on page 5 (Save As..., Add Attachment, Reset) are widgets, not page content, and must not enter the text. Not pinned because wrong now: fill-in labels run together into one paragraph per block, sentences broken into fragments around blank rules, section numbers split from their titles or set as <pre>, the Statement of Claim paragraph split mid-line, the Page N of 5 folio kept (see the review file). No committed rasters: the form has no images and every region is text or rules. #151: the 77 widgets are empty text fields, unchecked boxes, a choice and a text field whose values repeat the printed caption, and four push buttons, so no page carries an Original page image; each page warns annotationsNotConverted that its form fields are not interactive. The Jury Trial and jurisdiction box glyphs under the checkbox widgets read ☐. All five pages: the form is born-digital Times with a usable text layer, so no page may report fresh recognition, a damaged encoding, an implausible or unverified text layer, or a whole-page image fallback (#27).",
+      "basis": "Source pages 1-5 visually reviewed against 70 DPI Poppler renders and the extracted text layer. Protects the court caption and COMPLAINT FOR A CIVIL CASE as headings; the caption's left block (plaintiff and defendant instructions) before its right block (Case No., Jury Trial); every fill-in label (plaintiff, four defendant and attorney blocks) present in source order; whole instruction paragraphs for sections I-V, kept separate from each other; the diversity-of-citizenship sentence fragments in source order; and the running header removed on every page. The AcroForm push buttons on page 5 (Save As..., Add Attachment, Reset) are widgets, not page content, and must not enter the text. #151: the 77 widgets are empty text fields, unchecked boxes, a choice and a text field whose values repeat the printed caption, and four push buttons, so no page carries an Original page image; each page warns annotationsNotConverted that its form fields are not interactive. The Jury Trial and jurisdiction box glyphs under the checkbox widgets read ☐. #152: the rules under the text fields are blanks, printed structure: no page keeps a crop, a blank set in a row of type reads ____ in that row, so each field label is its own paragraph (Name ____) and each fill-in sentence one paragraph (The plaintiff, (name) ____, is a citizen of the State of (name) ____.), with its lettered item title (a. If the plaintiff is an individual) apart from it; the outline labels are headings joined to their titles, ranked under the form's titles by tier (I.-V. level 4, A./B. level 5, 1.-3. level 6); the Statement of Claim is one paragraph; the column of ) brackets and the Page N of 5 folio are gone, and the double rule under the running header goes with it. All five pages: the form is born-digital Times with a usable text layer, so no page may report fresh recognition, a damaged encoding, an implausible or unverified text layer, or a whole-page image fallback (#27).",
       "pages": [
         {
           "page": 1,
           "headings": [
             "UNITED STATES DISTRICT COURT",
-            "COMPLAINT FOR A CIVIL CASE"
+            "COMPLAINT FOR A CIVIL CASE",
+            "I. The Parties to This Complaint",
+            "A. The Plaintiff(s)",
+            "B. The Defendant(s)"
+          ],
+          "headingLevels": [
+            {
+              "heading": "UNITED STATES DISTRICT COURT",
+              "level": 2
+            },
+            {
+              "heading": "COMPLAINT FOR A CIVIL CASE",
+              "level": 3
+            },
+            {
+              "heading": "I. The Parties to This Complaint",
+              "level": 4
+            },
+            {
+              "heading": "A. The Plaintiff(s)",
+              "level": 5
+            },
+            {
+              "heading": "B. The Defendant(s)",
+              "level": 5
+            }
           ],
           "orderedText": [
             "UNITED STATES DISTRICT COURT",
@@ -6949,7 +6974,10 @@
             "(Write the full name of each defendant who is being sued. If the names of all the defendants cannot fit in the space above, please write “see attached” in the space and attach an additional page with the full list of names.)",
             "Provide the information below for each plaintiff named in the complaint. Attach additional pages if needed.",
             "Provide the information below for each defendant named in the complaint, whether the defendant is an individual, a government agency, an organization, or a corporation. For an individual defendant, include the person's job or title (if known). Attach additional pages if needed.",
-            "Jury Trial: (check one) ☐ Yes ☐ No"
+            "Jury Trial: (check one) ☐ Yes ☐ No",
+            "Case No. ____",
+            "Name ____",
+            "E-mail Address ____"
           ],
           "distinctParagraphs": [
             {
@@ -6959,12 +6987,27 @@
             {
               "first": "Provide the information below for each plaintiff",
               "second": "Provide the information below for each defendant"
+            },
+            {
+              "first": "Name ____",
+              "second": "Street Address ____"
+            },
+            {
+              "first": "City and County ____",
+              "second": "State and Zip Code ____"
+            },
+            {
+              "first": "Telephone Number ____",
+              "second": "E-mail Address ____"
             }
           ],
           "absentText": [
             "Pro Se 1 (Rev. 12/16) Complaint for a Civil Case",
-            "’ Yes"
+            "’ Yes",
+            ") ) )",
+            "Page 1 of 5"
           ],
+          "maximumImages": 0,
           "warningCodesAnyOf": [
             "furnitureRemoved"
           ],
@@ -7013,11 +7056,21 @@
             {
               "first": "Defendant No. 3",
               "second": "Defendant No. 4"
+            },
+            {
+              "first": "Name ____",
+              "second": "Job or Title (if known) ____"
+            },
+            {
+              "first": "State and Zip Code ____",
+              "second": "Telephone Number ____"
             }
           ],
           "absentText": [
-            "Pro Se 1 (Rev. 12/16) Complaint for a Civil Case"
+            "Pro Se 1 (Rev. 12/16) Complaint for a Civil Case",
+            "Page 2 of 5"
           ],
+          "maximumImages": 0,
           "pageReference": false,
           "warningCodesAnyOf": [
             "annotationsNotConverted"
@@ -7028,6 +7081,11 @@
             "unverifiedTextLayer",
             "damagedTextEncoding",
             "implausibleTextLayer"
+          ],
+          "paragraphs": [
+            "Name ____",
+            "Job or Title (if known) ____",
+            "E-mail Address (if known) ____"
           ]
         },
         {
@@ -7069,7 +7127,15 @@
             "Fill out the paragraphs in this section that apply to this case.",
             "(If more than one plaintiff is named in the complaint, attach an additional page providing the same information for each additional plaintiff.)",
             "☐ Federal question",
-            "☐ Diversity of citizenship"
+            "☐ Diversity of citizenship",
+            "The plaintiff, (name) ____, is a citizen of the State of (name) ____.",
+            "The plaintiff, (name) ____, is incorporated under the laws of the State of (name) ____, and has its principal place of business in the State of (name) ____.",
+            "The defendant, (name) ____, is a citizen of the State of (name) ____. Or is a citizen of (foreign nation) ____."
+          ],
+          "listItems": [
+            "a. If the plaintiff is an individual",
+            "b. If the plaintiff is a corporation",
+            "a. If the defendant is an individual"
           ],
           "distinctParagraphs": [
             {
@@ -7083,13 +7149,15 @@
           ],
           "absentText": [
             "Pro Se 1 (Rev. 12/16) Complaint for a Civil Case",
-            "’ Federal"
+            "’ Federal",
+            "Page 3 of 5"
           ],
+          "maximumImages": 0,
           "absentScripts": [
             {
               "tag": "sub",
               "text": ".",
-              "before": "(foreign nation)"
+              "before": "(foreign nation) ____"
             }
           ],
           "pageReference": false,
@@ -7102,6 +7170,28 @@
             "unverifiedTextLayer",
             "damagedTextEncoding",
             "implausibleTextLayer"
+          ],
+          "headingLevels": [
+            {
+              "heading": "II. Basis for Jurisdiction",
+              "level": 4
+            },
+            {
+              "heading": "A. If the Basis for Jurisdiction Is a Federal Question",
+              "level": 5
+            },
+            {
+              "heading": "B. If the Basis for Jurisdiction Is Diversity of Citizenship",
+              "level": 5
+            },
+            {
+              "heading": "1. The Plaintiff(s)",
+              "level": 6
+            },
+            {
+              "heading": "2. The Defendant(s)",
+              "level": 6
+            }
           ]
         },
         {
@@ -7128,7 +7218,12 @@
           "paragraphs": [
             "(If more than one defendant is named in the complaint, attach an additional page providing the same information for each additional defendant.)",
             "The amount in controversy–the amount the plaintiff claims the defendant owes or the amount at stake–is more than $75,000, not counting interest and costs of court, because (explain):",
-            "State briefly and precisely what damages or other relief the plaintiff asks the court to order. Do not make legal arguments. Include any basis for claiming that the wrongs alleged are continuing at the present time. Include the amounts of any actual damages claimed for the acts alleged and the basis for these amounts. Include any punitive or exemplary damages claimed, the amounts, and the reasons you claim you are entitled to actual or punitive money damages."
+            "State briefly and precisely what damages or other relief the plaintiff asks the court to order. Do not make legal arguments. Include any basis for claiming that the wrongs alleged are continuing at the present time. Include the amounts of any actual damages claimed for the acts alleged and the basis for these amounts. Include any punitive or exemplary damages claimed, the amounts, and the reasons you claim you are entitled to actual or punitive money damages.",
+            "The defendant, (name) ____, is incorporated under the laws of the State of (name) ____, and has its principal place of business in the State of (name) ____. Or is incorporated under the laws of (foreign nation) ____, and has its principal place of business in (name) ____.",
+            "Write a short and plain statement of the claim. Do not make legal arguments. State as briefly as possible the facts showing that each plaintiff is entitled to the damages or other relief sought. State how each defendant was involved and what each defendant did that caused the plaintiff harm or violated the plaintiff's rights, including the dates and places of that involvement or conduct. If more than one claim is asserted, number each claim and write a short and plain statement of each claim in a separate paragraph. Attach additional pages if needed."
+          ],
+          "listItems": [
+            "b. If the defendant is a corporation"
           ],
           "distinctParagraphs": [
             {
@@ -7137,8 +7232,10 @@
             }
           ],
           "absentText": [
-            "Pro Se 1 (Rev. 12/16) Complaint for a Civil Case"
+            "Pro Se 1 (Rev. 12/16) Complaint for a Civil Case",
+            "Page 4 of 5"
           ],
+          "maximumImages": 0,
           "pageReference": false,
           "warningCodesAnyOf": [
             "annotationsNotConverted"
@@ -7149,6 +7246,20 @@
             "unverifiedTextLayer",
             "damagedTextEncoding",
             "implausibleTextLayer"
+          ],
+          "headingLevels": [
+            {
+              "heading": "3. The Amount in Controversy",
+              "level": 6
+            },
+            {
+              "heading": "III. Statement of Claim",
+              "level": 4
+            },
+            {
+              "heading": "IV. Relief",
+              "level": 4
+            }
           ]
         },
         {
@@ -7175,20 +7286,35 @@
           ],
           "paragraphs": [
             "Under Federal Rule of Civil Procedure 11, by signing below, I certify to the best of my knowledge, information, and belief that this complaint: (1) is not being presented for an improper purpose, such as to harass, cause unnecessary delay, or needlessly increase the cost of litigation; (2) is supported by existing law or by a nonfrivolous argument for extending, modifying, or reversing existing law; (3) the factual contentions have evidentiary support or, if specifically so identified, will likely have evidentiary support after a reasonable opportunity for further investigation or discovery; and (4) the complaint otherwise complies with the requirements of Rule 11.",
-            "I agree to provide the Clerk’s Office with any changes to my address where case–related papers may be served. I understand that my failure to keep a current address on file with the Clerk’s Office may result in the dismissal of my case."
+            "I agree to provide the Clerk’s Office with any changes to my address where case–related papers may be served. I understand that my failure to keep a current address on file with the Clerk’s Office may result in the dismissal of my case.",
+            "Date of signing: ____",
+            "Signature of Plaintiff ____",
+            "Printed Name of Plaintiff ____",
+            "Bar Number ____",
+            "E-mail Address ____"
           ],
           "distinctParagraphs": [
             {
               "first": "requirements of Rule 11.",
               "second": "I agree to provide the Clerk’s Office"
+            },
+            {
+              "first": "Signature of Attorney ____",
+              "second": "Printed Name of Attorney ____"
+            },
+            {
+              "first": "Bar Number ____",
+              "second": "Name of Law Firm ____"
             }
           ],
           "absentText": [
             "Pro Se 1 (Rev. 12/16) Complaint for a Civil Case",
             "Save As",
             "Add Attachment",
-            "Reset"
+            "Reset",
+            "Page 5 of 5"
           ],
+          "maximumImages": 0,
           "pageReference": false,
           "warningCodesAnyOf": [
             "annotationsNotConverted"
@@ -7199,6 +7325,20 @@
             "unverifiedTextLayer",
             "damagedTextEncoding",
             "implausibleTextLayer"
+          ],
+          "headingLevels": [
+            {
+              "heading": "V. Certification and Closing",
+              "level": 4
+            },
+            {
+              "heading": "A. For Parties Without an Attorney",
+              "level": 5
+            },
+            {
+              "heading": "B. For Attorneys",
+              "level": 5
+            }
           ]
         }
       ]

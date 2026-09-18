@@ -77,6 +77,13 @@ struct SourceLayoutFixture: Decodable {
     /// Unclustered painted footprints with their frame flag; fixtures captured before #54
     /// carry only the clustered `graphics`.
     var paints: [Paint]?
+    struct Blank: Decodable {
+        var rule: [Double]
+        var field: [Double]
+    }
+    /// A form's ruled blanks (#152); absent in fixtures captured before it and on pages without
+    /// form fields.
+    var blanks: [Blank]?
     var attributedLines: [AttributedLine]
 
     static func load(_ name: String) throws -> Self {
@@ -98,8 +105,11 @@ struct SourceLayoutFixture: Decodable {
             return line
         }
         var page = PageContent(number: page, bounds: rect(bounds), lines: textLines, graphics: graphics.map(rect))
+        page.blanks = (blanks ?? []).map { FormBlank(rule: rect($0.rule), field: rect($0.field)) }
         if tinted, let paints {
-            let composed = TintDetector.compose(paints.map {
+            // A blank's rules seed no crops, as in the pipeline.
+            let drawn = paints.filter { paint in !page.blanks.contains { $0.rule.contains(rect(paint.rect)) } }
+            let composed = TintDetector.compose(drawn.map {
                 GraphicsReader.Paint(rect: rect($0.rect), frame: $0.frame, image: $0.image ?? false,
                                      filled: $0.filled ?? false, grouped: $0.grouped ?? false) },
                                                 lines: textLines, bounds: page.bounds)

@@ -102,6 +102,9 @@ struct PageContent: Equatable, Codable {
     /// Thin rules inside those tinted blocks that separate rows and columns rather than
     /// drawing a figure. They seed no crops either; the table detector reads row edges from them.
     var separators: [CGRect] = []
+    /// Ruled fill-in blanks (`AnnotationEvidence.blanks`, #152): printed structure, not figures.
+    /// They seed no crops; a blank set in a row of type takes its place in that row's text.
+    var blanks: [FormBlank] = []
     var requiresPageImage = false
     var recognized = false
     var hasSyntheticTextStyle = false
@@ -114,6 +117,49 @@ struct ColumnJoint: Equatable {
     var x: CGFloat
     var minY: CGFloat
     var maxY: CGFloat
+}
+
+/// A ruled fill-in blank (#152): the thin rule a form's text or choice field is drawn over.
+struct FormBlank: Equatable, Codable {
+    /// The rule as painted (every thin paint under the field, after `GraphicsReader`'s padding).
+    var rule: CGRect
+    /// The field's rectangle. A one-line field spans the row of type its blank is set in.
+    var field: CGRect
+
+    /// How the blank reads in text: the form's own printed blanks are runs of underscores.
+    static let text = "____"
+
+    /// The blanks a page's form fields make of its painted rules. A form prints a rule for every
+    /// field, and a reader of the printed page writes on it; the field's rectangle is the form's
+    /// own statement of where that blank stands. Every rule under a field is part of one blank,
+    /// whether the form draws it as one paint or several (the US Courts form draws some twice,
+    /// overlapping).
+    ///
+    /// A rule is a padded 1-point line as `LayoutReconstructor.isThinRule` reads one: at most six
+    /// points tall, at least twelve long and three times its height. It belongs to a field when
+    /// at least four fifths of its width lie across the field and its middle lies in the field's
+    /// lower half or up to three points beneath it: a one-line field's rule runs along its bottom
+    /// edge, and an answer area's closes it. Rules outside every field — a running head's rule, an
+    /// underline, a table rule — are no blank, and nothing about them changes.
+    static func blanks(fields: [CGRect], paints: [CGRect]) -> [FormBlank] {
+        fields.compactMap { field in
+            guard field.isFinite, !field.isNull, field.width > 0, field.height > 0 else { return nil }
+            let rules = paints.filter { paint in
+                guard paint.height <= 6, paint.width >= max(12, paint.height * 3) else { return false }
+                let across = min(paint.maxX, field.maxX) - max(paint.minX, field.minX)
+                return across >= paint.width * 0.8
+                    && paint.midY >= field.minY - 3 && paint.midY <= field.minY + field.height * 0.5
+            }
+            return rules.isEmpty ? nil : FormBlank(rule: union(rules), field: field)
+        }
+    }
+
+    /// Whether the field holds one line of the type on `row` (a line beside it or around it), so
+    /// that its blank belongs to that row. A taller field is an answer area whose rule closes it.
+    func sharesRow(with row: CGRect) -> Bool {
+        let overlap = min(field.maxY, row.maxY) - max(field.minY, row.minY)
+        return field.height <= row.height * 2 && overlap >= min(field.height, row.height) * 0.5
+    }
 }
 
 func union(_ rects: [CGRect]) -> CGRect {

@@ -1051,6 +1051,22 @@ warning, worded for the lost interaction, and takes no image; checkbox widgets a
 glyph printed under them as `☐`/`☒` when every occurrence in the line lies under a box. See the
 [annotation evidence](../measurements/annotation-page-images/record.md).
 
+A form's text and choice fields also name its ruled blanks (#152). `FormBlank.blanks` pairs each
+visible field with the thin rules printed along its lower edge; those rules are printed structure,
+so extraction leaves them out of the paints that seed crops and records them on `PageContent.blanks`.
+Where PDFKit reads a row across a one-line field's blank as one line (`State of (name).`),
+`NativeTextReader` cuts it at the blank, provided nothing but the two characters PDFKit stretched
+over the gap stands on the rule. Reconstruction then sets the blank back into its row
+(`joiningBlankRows`): the pieces and blanks of a row read left to right as one line, each blank
+written `____`, and a row that ends in its blank does not wrap into the next, so a stacked label is
+its own paragraph and a fill-in sentence reads whole. A field taller than two lines of its row is an
+answer area whose closing rule joins nothing. A page's outline labels (`I.`, `A.`, `1.` on nested tab
+stops, at least one tier bold) are headings ranked by tier beneath the size scale
+(`outlineSectionLabels`, `rankHeadingLevels`); a column of lone bracket glyphs is a caption's brace,
+kept as a reading-order boundary but not as text; and furniture removal takes a counted folio
+(`Page 3 of 5`) and a page-wide rule set against a removed running head with it. See the
+[form evidence](../measurements/form-blanks-and-outlines/record.md).
+
 A page without text is an image-only fallback unless it is blank (#132). `BlankPageDetector`
 requires both kinds of evidence before recognition: the drawing places nothing (no extracted line,
 annotation that shows, text show, painted footprint, region or inline image, and nothing unsupported; a white

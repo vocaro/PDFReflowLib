@@ -1,0 +1,1326 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        38.880000000000003,
+        739.57632000000012,
+        157.51323000000002,
+        8.8338599999999587
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 7.9800000000000004,
+          "text" : "Pro Se 1 (Rev. 12/16) Complaint for a Civil Case"
+        }
+      ],
+      "text" : "Pro Se 1 (Rev. 12/16) Complaint for a Civil Case"
+    },
+    {
+      "rect" : [
+        146.88,
+        695.06832000000009,
+        8.2437840000000051,
+        12.154859999999985
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 10.98,
+          "text" : "b. "
+        }
+      ],
+      "text" : "b. "
+    },
+    {
+      "rect" : [
+        182.85240000000002,
+        695.06832000000009,
+        140.87998800000005,
+        12.154859999999985
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 10.98,
+          "text" : "If the defendant is a corporation"
+        }
+      ],
+      "text" : "If the defendant is a corporation"
+    },
+    {
+      "rect" : [
+        182.88534000000001,
+        676.34742000000006,
+        96.971159999999969,
+        12.155759999999987
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -0.00090000000000145519,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 10.98,
+          "text" : "The defendant, "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPS-ItalicMT",
+          "fontSize" : 9,
+          "text" : "(name) "
+        }
+      ],
+      "text" : "The defendant, (name) "
+    },
+    {
+      "rect" : [
+        470.88,
+        676.34742000000006,
+        99.07363799999996,
+        12.155759999999987
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 10.98,
+          "text" : ", is incorporated under"
+        }
+      ],
+      "text" : ", is incorporated under"
+    },
+    {
+      "rect" : [
+        182.87459999999999,
+        657.62742000000003,
+        129.32190000000003,
+        12.155759999999987
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 10.98,
+          "text" : "the laws of the State of "
+        },
+        {
+          "baselineOffset" : 0.00090000000000145519,
+          "fontName" : "TimesNewRomanPS-ItalicMT",
+          "fontSize" : 9,
+          "text" : "(name) "
+        }
+      ],
+      "text" : "the laws of the State of (name) "
+    },
+    {
+      "rect" : [
+        515.87990000000002,
+        657.62742000000003,
+        51.982614000000012,
+        12.155759999999987
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0.00090000000000145519,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 10.98,
+          "text" : ", and has its"
+        }
+      ],
+      "text" : ", and has its"
+    },
+    {
+      "rect" : [
+        182.87846000000002,
+        638.90742,
+        391.24644000000001,
+        12.155759999999987
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 10.98,
+          "text" : "principal place of business in the State of"
+        },
+        {
+          "baselineOffset" : 0.00090000000000145519,
+          "fontName" : "TimesNewRomanPS-ItalicMT",
+          "fontSize" : 9,
+          "text" : " (name)"
+        },
+        {
+          "baselineOffset" : 0.00090000000000145519,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 10.98,
+          "text" : "."
+        }
+      ],
+      "text" : "principal place of business in the State of (name)."
+    },
+    {
+      "rect" : [
+        182.87455999999997,
+        620.18741999999997,
+        391.25211999999999,
+        12.155860000000075
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 10.98,
+          "text" : "Or is incorporated under the laws of "
+        },
+        {
+          "baselineOffset" : 0.00100000000009004,
+          "fontName" : "TimesNewRomanPS-ItalicMT",
+          "fontSize" : 9,
+          "text" : "(foreign nation"
+        },
+        {
+          "baselineOffset" : 0.00100000000009004,
+          "fontName" : "TimesNewRomanPS-ItalicMT",
+          "fontSize" : 10.98,
+          "text" : ")"
+        },
+        {
+          "baselineOffset" : 0.00100000000009004,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 10.98,
+          "text" : ","
+        }
+      ],
+      "text" : "Or is incorporated under the laws of (foreign nation),"
+    },
+    {
+      "rect" : [
+        182.87633999999991,
+        601.46752000000004,
+        391.24856000000011,
+        12.155660000000012
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 10.98,
+          "text" : "and has its principal place of business in "
+        },
+        {
+          "baselineOffset" : 0.00080000000002655725,
+          "fontName" : "TimesNewRomanPS-ItalicMT",
+          "fontSize" : 9,
+          "text" : "(name)"
+        },
+        {
+          "baselineOffset" : 0.00080000000002655725,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 10.98,
+          "text" : "."
+        }
+      ],
+      "text" : "and has its principal place of business in (name)."
+    },
+    {
+      "rect" : [
+        146.88211999999999,
+        570.03258000000005,
+        420.411024,
+        12.154859999999985
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPS-ItalicMT",
+          "fontSize" : 10.98,
+          "italic" : true,
+          "text" : "(If more than one defendant is named in the complaint, attach an additional page providing the"
+        }
+      ],
+      "text" : "(If more than one defendant is named in the complaint, attach an additional page providing the"
+    },
+    {
+      "rect" : [
+        146.88211999999999,
+        557.37264000000005,
+        217.223928,
+        12.154859999999985
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPS-ItalicMT",
+          "fontSize" : 10.98,
+          "italic" : true,
+          "text" : "same information for each additional defendant.)"
+        }
+      ],
+      "text" : "same information for each additional defendant.)"
+    },
+    {
+      "rect" : [
+        110.87869999999998,
+        531.98688000000004,
+        160.370586,
+        12.154859999999985
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 10.98,
+          "text" : "3. The Amount in Controversy"
+        }
+      ],
+      "text" : "3. The Amount in Controversy"
+    },
+    {
+      "rect" : [
+        146.88211999999999,
+        506.54622000000001,
+        421.38808199999994,
+        12.157060000000058
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 10.98,
+          "text" : "The amount in controversy–the amount the plaintiff claims the defendant owes or the am"
+        },
+        {
+          "baselineOffset" : 0.002200000000016189,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 10.98,
+          "text" : "ount at"
+        }
+      ],
+      "text" : "The amount in controversy–the amount the plaintiff claims the defendant owes or the amount at"
+    },
+    {
+      "rect" : [
+        146.87990000000002,
+        493.82812000000001,
+        376.31254000000001,
+        12.158119999999997
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -0.003260000000011587,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 10.98,
+          "text" : "stake–is m"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 10.98,
+          "text" : "ore than $75,000, not counting interest and costs of court, because "
+        },
+        {
+          "baselineOffset" : -0.0030600000000049477,
+          "fontName" : "TimesNewRomanPS-ItalicMT",
+          "fontSize" : 9,
+          "text" : "(explain)"
+        },
+        {
+          "baselineOffset" : -0.0030600000000049477,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 10.98,
+          "text" : ":"
+        }
+      ],
+      "text" : "stake–is more than $75,000, not counting interest and costs of court, because (explain):"
+    },
+    {
+      "rect" : [
+        38.880000000000003,
+        400.28861999999998,
+        126.97712399999995,
+        12.155939999999987
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -0.0010800000000017462,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 10.98,
+          "text" : "III. "
+        },
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 10.98,
+          "text" : "Statement of Claim"
+        }
+      ],
+      "text" : "III. Statement of Claim"
+    },
+    {
+      "rect" : [
+        74.879039999999932,
+        374.90393999999998,
+        203.60433600000016,
+        12.159240000000011
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 10.98,
+          "text" : "Write a short and plain statement of the claim. "
+        }
+      ],
+      "text" : "Write a short and plain statement of the claim. "
+    },
+    {
+      "rect" : [
+        284.01949200000007,
+        374.90393999999998,
+        270.57921999999991,
+        12.159240000000011
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 10.98,
+          "text" : "Do not make legal arguments. State as briefly"
+        },
+        {
+          "baselineOffset" : 0.0043800000000260297,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 10.98,
+          "text" : " as possible the"
+        }
+      ],
+      "text" : "Do not make legal arguments. State as briefly as possible the"
+    },
+    {
+      "rect" : [
+        74.880099999999999,
+        362.18801999999999,
+        491.76126800000009,
+        12.155939999999987
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 10.98,
+          "text" : "facts showing that each plaintiff is entitled to the dam"
+        },
+        {
+          "baselineOffset" : 0.0010800000000017462,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 10.98,
+          "text" : "a"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 10.98,
+          "text" : "ges or other relief sought. State how each defendant was"
+        }
+      ],
+      "text" : "facts showing that each plaintiff is entitled to the damages or other relief sought. State how each defendant was"
+    },
+    {
+      "rect" : [
+        74.880099999999999,
+        349.46328,
+        484.65082400000017,
+        12.159299999999973
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 10.98,
+          "text" : "involved and what each defendant did that caused the plaintiff harm"
+        },
+        {
+          "baselineOffset" : -0.0044399999999882311,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 10.98,
+          "text" : " or violated the plaintiff'"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 10.98,
+          "text" : "s rights, including"
+        }
+      ],
+      "text" : "involved and what each defendant did that caused the plaintiff harm or violated the plaintiff's rights, including"
+    },
+    {
+      "rect" : [
+        74.880099999999999,
+        336.74732,
+        490.31746799999985,
+        12.15598
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -0.0011200000000144428,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 10.98,
+          "text" : "the dates and places of that involvem"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 10.98,
+          "text" : "ent or conduct. If more than one claim is asserted, number each claim"
+        },
+        {
+          "baselineOffset" : -0.0011200000000144428,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 10.98,
+          "text" : " and"
+        }
+      ],
+      "text" : "the dates and places of that involvement or conduct. If more than one claim is asserted, number each claim and"
+    },
+    {
+      "rect" : [
+        74.880099999999999,
+        324.02262000000002,
+        467.71619600000008,
+        12.159259999999961
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0.0043999999999755346,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 10.98,
+          "text" : "write a short and plain statem"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 10.98,
+          "text" : "ent of each claim in a separate paragraph. Attach additional pages if needed."
+        }
+      ],
+      "text" : "write a short and plain statement of each claim in a separate paragraph. Attach additional pages if needed."
+    },
+    {
+      "rect" : [
+        38.88659999999993,
+        209.06202000000005,
+        63.419382000000013,
+        12.154860000000014
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 10.98,
+          "text" : "IV. Relief"
+        }
+      ],
+      "text" : "IV. Relief"
+    },
+    {
+      "rect" : [
+        74.890019999999936,
+        183.67626000000004,
+        487.87588400000004,
+        12.165819999999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 10.98,
+          "text" : "State briefly and precisely what damages or other relief the plaintiff asks the court to order. Do not ma"
+        },
+        {
+          "baselineOffset" : 0.010959999999982983,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 10.98,
+          "text" : "ke legal"
+        }
+      ],
+      "text" : "State briefly and precisely what damages or other relief the plaintiff asks the court to order. Do not make legal"
+    },
+    {
+      "rect" : [
+        74.880099999999999,
+        170.96692000000002,
+        483.29015600000014,
+        12.160340000000019
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -0.0054800000000057025,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 10.98,
+          "text" : "argum"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 10.98,
+          "text" : "ents. Include any basis for claiming that the wrongs alleged are continuing at the present tim"
+        },
+        {
+          "baselineOffset" : -0.0054800000000057025,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 10.98,
+          "text" : "e. Include"
+        }
+      ],
+      "text" : "arguments. Include any basis for claiming that the wrongs alleged are continuing at the present time. Include"
+    },
+    {
+      "rect" : [
+        74.880099999999999,
+        158.24658000000002,
+        478.07582599999989,
+        12.154899999999969
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 3.9999999984274837e-05,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 10.98,
+          "text" : "the am"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 10.98,
+          "text" : "ounts of any actual damages claimed for the acts alleged and the basis for these amounts. Include any"
+        }
+      ],
+      "text" : "the amounts of any actual damages claimed for the acts alleged and the basis for these amounts. Include any"
+    },
+    {
+      "rect" : [
+        74.87903999999989,
+        145.52076000000002,
+        478.05825800000014,
+        12.160319999999984
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 10.98,
+          "text" : "punitive or exemplary damages claimed, the amounts, and the reasons you claim y"
+        },
+        {
+          "baselineOffset" : 0.0054599999999993543,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 10.98,
+          "text" : "ou are entitled to actual or"
+        }
+      ],
+      "text" : "punitive or exemplary damages claimed, the amounts, and the reasons you claim you are entitled to actual or"
+    },
+    {
+      "rect" : [
+        74.880099999999999,
+        132.80591999999999,
+        112.63507399999995,
+        12.154860000000014
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 10.98,
+          "text" : "punitive money damages."
+        }
+      ],
+      "text" : "punitive money damages."
+    },
+    {
+      "rect" : [
+        537.77999999999997,
+        27.19632,
+        38.19946200000004,
+        8.8338600000000014
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 7.9800000000000004,
+          "text" : "Page 4 of 5"
+        }
+      ],
+      "text" : "Page 4 of 5"
+    }
+  ],
+  "blanks" : [
+    {
+      "field" : [
+        287.178,
+        672.14200000000005,
+        180.89800000000002,
+        13.919999999999959
+      ],
+      "rule" : [
+        290.44,
+        671.08000000000004,
+        179.5,
+        4.1200000000000045
+      ]
+    },
+    {
+      "field" : [
+        324.21199999999999,
+        653.14200000000005,
+        189.904,
+        13.919999999999959
+      ],
+      "rule" : [
+        323.38,
+        652.36000000000001,
+        191.56000000000006,
+        4.1200000000000045
+      ]
+    },
+    {
+      "field" : [
+        400.05700000000002,
+        635.14200000000005,
+        167.65899999999999,
+        13.919999999999959
+      ],
+      "rule" : [
+        397.72000000000003,
+        633.63999999999999,
+        172.72000000000003,
+        4.1200000000000045
+      ]
+    },
+    {
+      "field" : [
+        412.43400000000003,
+        616.14200000000005,
+        155.68199999999996,
+        13.919999999999959
+      ],
+      "rule" : [
+        410.44,
+        614.91999999999996,
+        160.00000000000006,
+        4.1200000000000045
+      ]
+    },
+    {
+      "field" : [
+        399.19600000000003,
+        598.14200000000005,
+        168.91999999999996,
+        13.919999999999959
+      ],
+      "rule" : [
+        397.72000000000003,
+        596.20000000000005,
+        172.72000000000003,
+        4.1200000000000045
+      ]
+    },
+    {
+      "field" : [
+        148.11600000000001,
+        426.74700000000001,
+        429.58500000000004,
+        65.281999999999982
+      ],
+      "rule" : [
+        146.5,
+        426.88,
+        431.38,
+        4.1200000000000045
+      ]
+    },
+    {
+      "field" : [
+        71.116100000000003,
+        231.767,
+        506.14789999999999,
+        90.033999999999992
+      ],
+      "rule" : [
+        70,
+        235.48000000000002,
+        507.88,
+        4.1200000000000045
+      ]
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    612,
+    792
+  ],
+  "caseID" : "uscourts-pro-se-1-2016",
+  "graphics" : [
+    [
+      34,
+      734.5,
+      543.88,
+      6.8799999999999955
+    ],
+    [
+      290.44,
+      671.08000000000004,
+      179.5,
+      4.1200000000000045
+    ],
+    [
+      323.38,
+      652.36000000000001,
+      191.56000000000006,
+      4.1200000000000045
+    ],
+    [
+      397.72000000000003,
+      633.63999999999999,
+      172.72000000000003,
+      4.1200000000000045
+    ],
+    [
+      410.44,
+      614.91999999999996,
+      160.00000000000006,
+      4.1200000000000045
+    ],
+    [
+      397.72000000000003,
+      596.20000000000005,
+      172.72000000000003,
+      4.1200000000000045
+    ],
+    [
+      146.5,
+      426.88,
+      431.38,
+      4.1200000000000045
+    ],
+    [
+      70,
+      235.48000000000002,
+      507.88,
+      4.1200000000000045
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 7.9800000000000004,
+      "monospaced" : false,
+      "rect" : [
+        38.880000000000003,
+        739.57632000000012,
+        157.51323000000002,
+        8.8338599999999587
+      ],
+      "text" : "Pro Se 1 (Rev. 12/16) Complaint for a Civil Case"
+    },
+    {
+      "fontSize" : 10.98,
+      "monospaced" : false,
+      "rect" : [
+        146.88,
+        695.06832000000009,
+        8.2437840000000051,
+        12.154859999999985
+      ],
+      "text" : "b."
+    },
+    {
+      "fontSize" : 10.98,
+      "monospaced" : false,
+      "rect" : [
+        182.85240000000002,
+        695.06832000000009,
+        140.87998800000005,
+        12.154859999999985
+      ],
+      "text" : "If the defendant is a corporation"
+    },
+    {
+      "fontSize" : 10.98,
+      "monospaced" : false,
+      "rect" : [
+        182.88534000000001,
+        676.34742000000006,
+        96.971159999999969,
+        12.155759999999987
+      ],
+      "text" : "The defendant, (name)"
+    },
+    {
+      "fontSize" : 10.98,
+      "monospaced" : false,
+      "rect" : [
+        470.88,
+        676.34742000000006,
+        99.07363799999996,
+        12.155759999999987
+      ],
+      "text" : ", is incorporated under"
+    },
+    {
+      "fontSize" : 10.98,
+      "monospaced" : false,
+      "rect" : [
+        182.87459999999999,
+        657.62742000000003,
+        129.32190000000003,
+        12.155759999999987
+      ],
+      "text" : "the laws of the State of (name)"
+    },
+    {
+      "fontSize" : 10.98,
+      "monospaced" : false,
+      "rect" : [
+        515.87990000000002,
+        657.62742000000003,
+        51.982614000000012,
+        12.155759999999987
+      ],
+      "text" : ", and has its"
+    },
+    {
+      "fontSize" : 10.98,
+      "monospaced" : false,
+      "rect" : [
+        182.87846000000002,
+        638.90742,
+        216.84154000000001,
+        12.155759999999987
+      ],
+      "text" : "principal place of business in the State of (name)"
+    },
+    {
+      "fontSize" : 10.98,
+      "monospaced" : false,
+      "rect" : [
+        568.44000000000005,
+        638.90742,
+        5.6848999999999705,
+        12.155759999999987
+      ],
+      "text" : "."
+    },
+    {
+      "fontSize" : 10.98,
+      "monospaced" : false,
+      "rect" : [
+        182.87455999999997,
+        620.18741999999997,
+        229.56544000000002,
+        12.155860000000075
+      ],
+      "text" : "Or is incorporated under the laws of (foreign nation)"
+    },
+    {
+      "fontSize" : 10.98,
+      "monospaced" : false,
+      "rect" : [
+        568.44000000000005,
+        620.18741999999997,
+        5.6866799999999103,
+        12.155860000000075
+      ],
+      "text" : ","
+    },
+    {
+      "fontSize" : 10.98,
+      "monospaced" : false,
+      "rect" : [
+        182.87633999999991,
+        601.46752000000004,
+        216.84366000000011,
+        12.155660000000012
+      ],
+      "text" : "and has its principal place of business in (name)"
+    },
+    {
+      "fontSize" : 10.98,
+      "monospaced" : false,
+      "rect" : [
+        568.44000000000005,
+        601.46752000000004,
+        5.6848999999999705,
+        12.155660000000012
+      ],
+      "text" : "."
+    },
+    {
+      "fontSize" : 10.98,
+      "monospaced" : false,
+      "rect" : [
+        146.88211999999999,
+        570.03258000000005,
+        420.411024,
+        12.154859999999985
+      ],
+      "text" : "(If more than one defendant is named in the complaint, attach an additional page providing the"
+    },
+    {
+      "fontSize" : 10.98,
+      "monospaced" : false,
+      "rect" : [
+        146.88211999999999,
+        557.37264000000005,
+        217.223928,
+        12.154859999999985
+      ],
+      "text" : "same information for each additional defendant.)"
+    },
+    {
+      "fontSize" : 10.98,
+      "monospaced" : false,
+      "rect" : [
+        110.87869999999998,
+        531.98688000000004,
+        160.370586,
+        12.154859999999985
+      ],
+      "text" : "3. The Amount in Controversy"
+    },
+    {
+      "fontSize" : 10.98,
+      "monospaced" : false,
+      "rect" : [
+        146.88211999999999,
+        506.54622000000001,
+        421.38808199999994,
+        12.157060000000058
+      ],
+      "text" : "The amount in controversy–the amount the plaintiff claims the defendant owes or the amount at"
+    },
+    {
+      "fontSize" : 10.98,
+      "monospaced" : false,
+      "rect" : [
+        146.87990000000002,
+        493.82812000000001,
+        376.31254000000001,
+        12.158119999999997
+      ],
+      "text" : "stake–is more than $75,000, not counting interest and costs of court, because (explain):"
+    },
+    {
+      "fontSize" : 10.98,
+      "monospaced" : false,
+      "rect" : [
+        38.880000000000003,
+        400.28861999999998,
+        126.97712399999995,
+        12.155939999999987
+      ],
+      "text" : "III. Statement of Claim"
+    },
+    {
+      "fontSize" : 10.98,
+      "monospaced" : false,
+      "rect" : [
+        74.879039999999932,
+        374.90393999999998,
+        203.60433600000016,
+        12.159240000000011
+      ],
+      "text" : "Write a short and plain statement of the claim."
+    },
+    {
+      "fontSize" : 10.98,
+      "monospaced" : false,
+      "rect" : [
+        284.01949200000007,
+        374.90393999999998,
+        270.57921999999991,
+        12.159240000000011
+      ],
+      "text" : "Do not make legal arguments. State as briefly as possible the"
+    },
+    {
+      "fontSize" : 10.98,
+      "monospaced" : false,
+      "rect" : [
+        74.880099999999999,
+        362.18801999999999,
+        491.76126800000009,
+        12.155939999999987
+      ],
+      "text" : "facts showing that each plaintiff is entitled to the damages or other relief sought. State how each defendant was"
+    },
+    {
+      "fontSize" : 10.98,
+      "monospaced" : false,
+      "rect" : [
+        74.880099999999999,
+        349.46328,
+        484.65082400000017,
+        12.159299999999973
+      ],
+      "text" : "involved and what each defendant did that caused the plaintiff harm or violated the plaintiff's rights, including"
+    },
+    {
+      "fontSize" : 10.98,
+      "monospaced" : false,
+      "rect" : [
+        74.880099999999999,
+        336.74732,
+        490.31746799999985,
+        12.15598
+      ],
+      "text" : "the dates and places of that involvement or conduct. If more than one claim is asserted, number each claim and"
+    },
+    {
+      "fontSize" : 10.98,
+      "monospaced" : false,
+      "rect" : [
+        74.880099999999999,
+        324.02262000000002,
+        467.71619600000008,
+        12.159259999999961
+      ],
+      "text" : "write a short and plain statement of each claim in a separate paragraph. Attach additional pages if needed."
+    },
+    {
+      "fontSize" : 10.98,
+      "monospaced" : false,
+      "rect" : [
+        38.88659999999993,
+        209.06202000000005,
+        63.419382000000013,
+        12.154860000000014
+      ],
+      "text" : "IV. Relief"
+    },
+    {
+      "fontSize" : 10.98,
+      "monospaced" : false,
+      "rect" : [
+        74.890019999999936,
+        183.67626000000004,
+        487.87588400000004,
+        12.165819999999968
+      ],
+      "text" : "State briefly and precisely what damages or other relief the plaintiff asks the court to order. Do not make legal"
+    },
+    {
+      "fontSize" : 10.98,
+      "monospaced" : false,
+      "rect" : [
+        74.880099999999999,
+        170.96692000000002,
+        483.29015600000014,
+        12.160340000000019
+      ],
+      "text" : "arguments. Include any basis for claiming that the wrongs alleged are continuing at the present time. Include"
+    },
+    {
+      "fontSize" : 10.98,
+      "monospaced" : false,
+      "rect" : [
+        74.880099999999999,
+        158.24658000000002,
+        478.07582599999989,
+        12.154899999999969
+      ],
+      "text" : "the amounts of any actual damages claimed for the acts alleged and the basis for these amounts. Include any"
+    },
+    {
+      "fontSize" : 10.98,
+      "monospaced" : false,
+      "rect" : [
+        74.87903999999989,
+        145.52076000000002,
+        478.05825800000014,
+        12.160319999999984
+      ],
+      "text" : "punitive or exemplary damages claimed, the amounts, and the reasons you claim you are entitled to actual or"
+    },
+    {
+      "fontSize" : 10.98,
+      "monospaced" : false,
+      "rect" : [
+        74.880099999999999,
+        132.80591999999999,
+        112.63507399999995,
+        12.154860000000014
+      ],
+      "text" : "punitive money damages."
+    },
+    {
+      "fontSize" : 7.9800000000000004,
+      "monospaced" : false,
+      "rect" : [
+        537.77999999999997,
+        27.19632,
+        38.19946200000004,
+        8.8338600000000014
+      ],
+      "text" : "Page 4 of 5"
+    }
+  ],
+  "page" : 4,
+  "paints" : [
+    {
+      "filled" : true,
+      "frame" : true,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        34,
+        736.41999999999996,
+        543.88,
+        4.9600000000000364
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : true,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        34,
+        734.5,
+        543.88,
+        4.9600000000000364
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : true,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        290.44,
+        671.08000000000004,
+        179.5,
+        4.1200000000000045
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : true,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        323.38,
+        652.36000000000001,
+        146.56,
+        4.1200000000000045
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : true,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        466,
+        652.36000000000001,
+        48.940000000000055,
+        4.1200000000000045
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : true,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        397.72000000000003,
+        633.63999999999999,
+        117.22000000000003,
+        4.1200000000000045
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : true,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        511,
+        633.63999999999999,
+        59.440000000000055,
+        4.1200000000000045
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        410.44,
+        614.91999999999996,
+        160.00000000000006,
+        4.1200000000000045
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : true,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        397.72000000000003,
+        596.20000000000005,
+        16.660000000000025,
+        4.1200000000000045
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        410.44,
+        596.20000000000005,
+        160.00000000000006,
+        4.1200000000000045
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        146.5,
+        426.88,
+        431.38,
+        4.1200000000000045
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : true,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        70,
+        235.48000000000002,
+        507.88,
+        4.1200000000000045
+      ]
+    }
+  ],
+  "rightsBasis" : "Court form prepared by the Administrative Office of the United States Courts for the federal judiciary: a work of the United States Government under 17 U.S.C. 105. The PDF and its uscourts.gov form page carry no copyright notice or third-party credit, and the form contains no images. Owner approved on 2026-09-17. Not relicensed under MIT.",
+  "sourceSHA256" : "9fe218570d311b0deab9413e39efda41210e60f2a5221eb360d43912ce05a118",
+  "sourceTitle" : "Complaint for a Civil Case (Pro Se 1, Rev. 12/16)",
+  "sourceURL" : "https://www.uscourts.gov/sites/default/files/complaint_for_a_civil_case.pdf"
+}

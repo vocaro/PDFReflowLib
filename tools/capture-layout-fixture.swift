@@ -37,11 +37,14 @@ private typealias CaptureFont = UIFont
         // `graphics` are the clustered regions every fixture carries; `paints` are the
         // unclustered footprints with their frame flag, from which tests compose graphics.
         let graphics = GraphicsReader.read(reference)
+        // A form's ruled blanks (#152): its text and choice fields over the rules printed for them.
+        let blanks = AnnotationEvidence.blanks(on: page, paints: graphics.paints.map(\.rect))
         // Lines as the pipeline extracts them: cells merged across a ruled grid's column joints
-        // (#65) or a borderless table's column gap (#121) are split.
+        // (#65) or a borderless table's column gap (#121) are split, and so are rows read across
+        // a form's blank (#152).
         var lines = try NativeTextReader.lines(on: page, limit: 100_000,
             columnJoints: GraphicsReader.columnJoints(graphics.paints.map(\.rect)),
-            borderlessTableInk: graphics.paints.map(\.rect), removingOverprints: !keepOverprints)
+            borderlessTableInk: graphics.paints.map(\.rect), blanks: blanks, removingOverprints: !keepOverprints)
         // The tags the pipeline applies where the page's structure validates: every group that
         // matches its lines, even when another does not (`structure` per line; absent in fixtures
         // captured before #89/#90).
@@ -84,7 +87,7 @@ private typealias CaptureFont = UIFont
             if bounds.isFinite { entry["rect"] = rect(bounds) }
             attributedLines.append(entry)
         }
-        let payload: [String: Any] = [
+        var payload: [String: Any] = [
             "caseID": item["id"]!, "sourceSHA256": digest, "page": pageNumber,
             "sourceURL": item["downloadURL"] ?? item["url"] ?? "", "sourceTitle": item["title"]!,
             "rightsBasis": item["rightsBasis"] ?? "See corpus manifest and third-party notices.",
@@ -101,6 +104,8 @@ private typealias CaptureFont = UIFont
                 return entry
             }, "attributedLines": attributedLines,
         ]
+        // A form's blanks (#152); absent in fixtures captured before it and on pages without form fields.
+        if !blanks.isEmpty { payload["blanks"] = blanks.map { ["rule": rect($0.rule), "field": rect($0.field)] } }
         // JSON holds no infinity or NaN; name the element rather than abort inside the writer (#99).
         func nonFinite(_ value: Any, _ path: String) -> String? {
             switch value {

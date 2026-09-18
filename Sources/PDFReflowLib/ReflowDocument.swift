@@ -199,6 +199,9 @@ struct ReflowBlock: Sendable, Equatable {
     /// a heading, which it keeps unless the document ranks a larger heading no higher (see
     /// `LayoutReconstructor.rankHeadingLevels`). Nil where no group vouches for the block.
     var taggedLevel: Int?
+    /// The tier of an outline section label a heading was read from (0 Roman, 1 lettered, 2
+    /// numbered; `LayoutReconstructor.outlineSectionLabels`), ranked by tier beneath the size scale.
+    var outlineDepth: Int?
 
     var text: String {
         switch content {

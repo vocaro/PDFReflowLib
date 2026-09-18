@@ -1,0 +1,156 @@
+{
+  "passed": false,
+  "provenanceErrors": [],
+  "case": "uscourts-pro-se-1-2016",
+  "executionContexts": {
+    "baseline": "host-terminal",
+    "candidate": "host-terminal"
+  },
+  "baselineConverterSHA256": "ab9fb562aebd2e73894d8250fdce0a08b44c26f91bb1aabca825fa19917bb82c",
+  "candidateConverterSHA256": "528971b8e30a181c5a144da797766be899d4b963f8070a7f563ddc3d6eaf7000",
+  "sameConverter": false,
+  "visionModelCaches": {
+    "baseline": {
+      "mode": "inherited",
+      "executableName": "pdf-reflow",
+      "programsSHA256": "22614cb0d67a8299f20da78a741db0b43f328b8fc7a2760ed28c0de40fec086d"
+    },
+    "candidate": {
+      "mode": "inherited",
+      "executableName": "pdf-reflow",
+      "programsSHA256": "22614cb0d67a8299f20da78a741db0b43f328b8fc7a2760ed28c0de40fec086d"
+    }
+  },
+  "sameVisionPrograms": true,
+  "changedOCRPages": [],
+  "ocrTextVolume": {
+    "pages": 0,
+    "baselineWords": 0,
+    "candidateWords": 0,
+    "pagesWithFewerWords": {
+      "baseline": [],
+      "candidate": []
+    }
+  },
+  "changedPages": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "changedPageFields": {
+    "1": [
+      "anchors",
+      "headingLevels",
+      "headingRanks",
+      "headings",
+      "images",
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "preformattedLines",
+      "text",
+      "warnings"
+    ],
+    "2": [
+      "images",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text",
+      "warnings"
+    ],
+    "3": [
+      "anchors",
+      "headingLevels",
+      "headingRanks",
+      "headings",
+      "images",
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "preformattedLines",
+      "text",
+      "warnings"
+    ],
+    "4": [
+      "anchors",
+      "headingLevels",
+      "headingRanks",
+      "headings",
+      "images",
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "preformattedLines",
+      "text",
+      "warnings"
+    ],
+    "5": [
+      "anchors",
+      "headingLevels",
+      "headingRanks",
+      "headings",
+      "images",
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "preformattedLines",
+      "text",
+      "warnings"
+    ]
+  },
+  "changedImages": [
+    "EPUB/images/image-1.png",
+    "EPUB/images/image-2.png",
+    "EPUB/images/image-3.png",
+    "EPUB/images/image-4.png",
+    "EPUB/images/image-5.png",
+    "EPUB/images/image-6.png",
+    "EPUB/images/image-7.png",
+    "EPUB/images/image-8.png",
+    "EPUB/images/image-9.png",
+    "EPUB/images/image-10.png",
+    "EPUB/images/image-11.png",
+    "EPUB/images/image-12.png",
+    "EPUB/images/image-13.png",
+    "EPUB/images/image-14.png",
+    "EPUB/images/image-15.png",
+    "EPUB/images/image-16.png",
+    "EPUB/images/image-17.png",
+    "EPUB/images/image-18.png",
+    "EPUB/images/image-19.png",
+    "EPUB/images/image-20.png",
+    "EPUB/images/image-21.png"
+  ],
+  "navigationChanged": true,
+  "changedNavigationPages": [
+    1,
+    3,
+    4,
+    5
+  ],
+  "pageMarkersEqual": true,
+  "changedReportFields": [
+    "imageCount",
+    "warnings"
+  ],
+  "idOnlyShifts": {
+    "pageCount": 0,
+    "fields": {},
+    "navigationEntries": null
+  },
+  "imageRenames": {
+    "count": 0
+  },
+  "scope": "Per page: text, block records, element markup, image bytes, link targets and warnings, with generated identifiers (block ordinals, element ids, spine file names, image asset names) normalized; page markers; image assets by bytes; navigation entries; conversion report. Not CSS, package metadata, decoded image equivalence or a fidelity qualification."
+}

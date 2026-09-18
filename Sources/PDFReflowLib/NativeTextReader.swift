@@ -50,6 +50,7 @@ enum NativeTextReader {
     /// only `tools/capture-layout-fixture.swift` turns it off, to record PDFKit's lines as they come.
     static func lines(on page: PDFPage, limit: Int, includeStyle: Bool = true,
                       columnJoints: [ColumnJoint] = [], borderlessTableInk: [CGRect]? = nil,
+                      blanks: [FormBlank] = [],
                       glyphDecodings: [String: [UInt8: String]] = [:], report: IndexGlyphReport? = nil,
                       removingOverprints: Bool = true) throws -> [TextLine] {
         try withExtractionLock {
@@ -74,6 +75,10 @@ enum NativeTextReader {
             if removingOverprints { lines = withoutOverprints(lines) }
             lines = try splitDetachedShows(lines, shows: spacing, on: page, includeStyle: includeStyle,
                                            weights: weights, privateUse: privateUse)
+            if !blanks.isEmpty {
+                lines = try splitAtBlanks(lines, blanks: blanks, on: page, includeStyle: includeStyle, weights: weights,
+                                          privateUse: privateUse)
+            }
             if !columnJoints.isEmpty {
                 lines = try splitAtColumnJoints(lines, joints: columnJoints, on: page, includeStyle: includeStyle, weights: weights,
                                                 privateUse: privateUse)
@@ -250,6 +255,64 @@ enum NativeTextReader {
             guard pieces.count >= 2, squeezed(pieces.map(\.text).joined(separator: " ")) == squeezed(line.text) else {
                 result.append(line); continue
             }
+            result += pieces
+        }
+        return result
+    }
+
+    /// PDFKit reads some rows of a form across the ruled blank set in them as one line, the gap
+    /// collapsed: the US Courts form's `State of (name) ____.` comes back as `State of (name).`, and
+    /// four more such rows on pages 3 and 4 likewise (#152). Where a one-line field's blank
+    /// (`FormBlank.sharesRow`) lies wholly inside a line's extent, the line is cut at the blank's
+    /// middle, as a ruled grid's joint cuts a table row (`splitAtColumnJoints`), and the pieces must
+    /// spell the line (PDFKit may have closed the gap without a space, so spaces are not compared).
+    ///
+    /// PDFKit's geometry cannot show that the blank is empty: it stretches the boxes of the two
+    /// characters beside a collapsed gap across it, so `(name)` ends at the blank's middle and the
+    /// period after it begins there. What it can show is what stands over the blank: a selection
+    /// of the blank's interior, an em in from each end, holds only those two stretched boxes — a
+    /// bracket, a period, a comma, a space — and no letter or digit, where a value printed on the
+    /// rule would. The pieces then stand on their own sides of the rule.
+    /// The reconstruction sets the blank back between them (`LayoutReconstructor.joiningBlankRows`).
+    private static func splitAtBlanks(_ lines: [TextLine], blanks: [FormBlank], on page: PDFPage,
+                                      includeStyle: Bool, weights: [FontWeightReader.Show],
+                                      privateUse: PrivateUseCharacters) throws -> [TextLine] {
+        func letters(_ text: String) -> String { String(text.filter { !$0.isWhitespace }) }
+        var result: [TextLine] = []
+        for line in lines {
+            try Task.checkCancellation()
+            let em = max(4, line.fontSize)
+            // The rules as drawn, without `GraphicsReader`'s two points of padding.
+            let crossed = blanks.filter { $0.sharesRow(with: line.rect) }.map { $0.rule.insetBy(dx: 2, dy: 0) }
+                .filter { $0.width > 0 && line.rect.minX < $0.minX && line.rect.maxX > $0.maxX }
+                .sorted { $0.minX < $1.minX }
+            guard !crossed.isEmpty, !line.monospaced, line.readingDirection == nil else { result.append(line); continue }
+            let empty = crossed.allSatisfy { rule in
+                guard rule.width > em * 3 else { return false }
+                let interior = CGRect(x: rule.minX + em, y: line.rect.minY, width: rule.width - em * 2, height: line.rect.height)
+                let over = page.selection(for: interior)?.string ?? ""
+                return !over.contains { $0.isLetter || $0.isNumber }
+            }
+            let edges = [line.rect.minX] + crossed.map(\.midX) + [line.rect.maxX]
+            var pieces: [TextLine] = []
+            for (start, end) in zip(edges, edges.dropFirst()) where empty {
+                guard let next = piece(of: line.rect, from: start, to: end, on: page, includeStyle: includeStyle,
+                                       weights: weights, privateUse: privateUse) else { pieces = []; break }
+                pieces.append(next)
+            }
+            guard pieces.count == crossed.count + 1, letters(pieces.map(\.text).joined()) == letters(line.text) else {
+                result.append(line); continue
+            }
+            // Each piece keeps to its side of the rules beside it.
+            for index in pieces.indices {
+                var rect = pieces[index].rect
+                if index > 0 { rect = CGRect(x: max(rect.minX, crossed[index - 1].maxX), y: rect.minY,
+                                             width: rect.maxX - max(rect.minX, crossed[index - 1].maxX), height: rect.height) }
+                if index < crossed.count { rect.size.width = min(rect.maxX, crossed[index].minX) - rect.minX }
+                guard rect.width > 0 else { pieces = []; break }
+                pieces[index].rect = rect
+            }
+            guard !pieces.isEmpty else { result.append(line); continue }
             result += pieces
         }
         return result

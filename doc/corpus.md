@@ -579,16 +579,21 @@ python3 tools/run_corpus_regressions.py --converter .build/release/pdf-reflow \
 
 The run passes EPUBCheck, progress and the 128 MiB Mac RSS gate (64 MiB peak). The
 [review points](../corpus/uscourts-pro-se-1-2016-review.json) cover all five pages. The
-contract holds 162 checks: headings, caption and field-label order, whole instruction
-paragraphs, the running header's removal, the page-5 push buttons kept out of the text, and no
-page recognized, called damaged or implausible, or dropped to a whole-page image.
+contract checks headings and their levels, caption and field-label order, whole instruction
+paragraphs and fill-in sentences, one paragraph per field label, the running header and folio's
+removal, the page-5 push buttons kept out of the text, no crop on any page, and no page
+recognized, called damaged or implausible, or dropped to a whole-page image.
 The empty widgets, unchecked boxes and push buttons show nothing beyond the printed page, so no page
 gets a source-page image; each page warns that its form fields are not interactive, and the box
 glyphs under the checkbox widgets read `☐` ([#151](https://github.com/vocaro/PDFReflowLib/issues/151)).
-Other defects: stacked labels run together into one paragraph, fill-in sentences break apart at
-each blank, section labels are split or set as `<pre>`, one paragraph splits mid-line, and the
-`Page N of 5` folio stays in the text ([#152](https://github.com/vocaro/PDFReflowLib/issues/152)).
-A period after a blank becomes a subscript ([#144](https://github.com/vocaro/PDFReflowLib/issues/144)).
+The rules under the text fields are blanks: each reads `____` in the row it is set in, so a field
+label is a paragraph of its own (`Name ____`) and a fill-in sentence reads whole (`The plaintiff,
+(name) ____, is a citizen of the State of (name) ____.`). The outline labels are headings ranked
+by tier under the form's titles, the caption's column of `)` is dropped, the `Page N of 5` folio
+and the rule under the running header go with the furniture, and the Statement of Claim is one
+paragraph ([#152](https://github.com/vocaro/PDFReflowLib/issues/152); [evidence](../measurements/form-blanks-and-outlines/record.md)).
+The lettered items under the numbered parts (`a. If the plaintiff is an individual`) stay list
+lines, which the EPUB sets as `<pre>`.
 No region references are committed: the form has no images, only rules and boxes.
 
 

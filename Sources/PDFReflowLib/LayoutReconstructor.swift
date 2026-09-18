@@ -381,6 +381,45 @@ enum LayoutReconstructor {
         FurnitureDetector.strip(&pages)
     }
 
+    /// A brace drawn in type (#152): a column of at least three lines, each a single bracket glyph,
+    /// on one left edge (within a point) in one size, one under the next at no more than twice
+    /// their height. A court caption sets fifteen `)` down the middle of the page between the
+    /// parties and the case number, the way a typewriter drew the brace; they read as a paragraph
+    /// of fifteen brackets. A bracket in text stands beside words, and a matrix's brackets are
+    /// part of a formula's crop. The brace still divides the caption: it stands in the reading
+    /// order as a boundary, so the parties on its left read before the case number on its right,
+    /// as they did while its brackets were text.
+    static func bracketColumns(in lines: [TextLine]) -> [[TextLine]] {
+        let brackets = lines.filter { line in
+            line.readingDirection == nil && !line.monospaced
+                && ["(", ")", "[", "]", "{", "}"].contains(line.text.trimmingCharacters(in: .whitespaces))
+        }
+        var result: [[TextLine]] = []
+        var edges: [[TextLine]] = []
+        for line in brackets {
+            if let index = edges.firstIndex(where: { abs($0[0].rect.minX - line.rect.minX) <= 1 }) {
+                edges[index].append(line)
+            } else { edges.append([line]) }
+        }
+        for edge in edges {
+            var column: [TextLine] = []
+            func close() {
+                if column.count >= 3 { result.append(column) }
+                column = []
+            }
+            for line in edge.sorted(by: { $0.rect.maxY > $1.rect.maxY }) {
+                if let last = column.last, !(abs(last.fontSize - line.fontSize) <= last.fontSize * 0.1
+                    && last.rect.minY - line.rect.maxY <= max(last.rect.height, line.rect.height)
+                    && last.rect.minY > line.rect.minY) {
+                    close()
+                }
+                column.append(line)
+            }
+            close()
+        }
+        return result
+    }
+
     /// A painted 1-pt rule after GraphicsReader's two-point padding: an underline, a
     /// column-header rule or a separator, never a figure on its own.
     static func isThinRule(_ rect: CGRect) -> Bool {
@@ -479,12 +518,21 @@ enum LayoutReconstructor {
     /// earlier of the two pieces' orders, and every line of the group counts one line fewer, so the
     /// group stays complete. Its lines record that the group opens with a rejoined marker, which
     /// is what lets `structuredOrder` accept a group holding exactly that one list item (#81).
+    ///
+    /// An outline sets its markers on tab stops (#152): the US Courts form hangs `I.`, `A.` and `a.`
+    /// a half inch left of their titles, 2.3 to 2.6 font sizes of white space after the marker. Such
+    /// a gap still joins when both the marker and the text stand on edges the page repeats — its
+    /// tab stops, each shared by at least one other line starting there — up to three and a half
+    /// font sizes.
     static func joiningMarkerPieces(_ lines: [TextLine]) -> [TextLine] {
         var result = lines
         // Pieces already joined, and the marker pieces absorbed into the piece beside them.
         var claimed = Set<Int>(), absorbed = Set<Int>()
         // Tagged groups that absorbed a marker piece, with the number of pieces each absorbed.
         var joinedGroups: [Int: Int] = [:]
+        func tabStop(_ line: TextLine) -> Bool {
+            lines.contains { other in other != line && !sameRow(other.rect, line.rect) && abs(other.rect.minX - line.rect.minX) <= 1 }
+        }
         for (index, marker) in lines.enumerated() where !claimed.contains(index) && !marker.monospaced
             && isMarkerPiece(marker.text) {
             let size = marker.fontSize
@@ -495,7 +543,8 @@ enum LayoutReconstructor {
             let pieces = row.filter { other in
                 let line = lines[other]
                 let gap = line.rect.minX - marker.rect.maxX
-                return gap >= -1 && gap <= size * 2 && abs(line.fontSize - size) <= size * 0.1
+                return gap >= -1 && (gap <= size * 2 || gap <= size * 3.5 && tabStop(marker) && tabStop(line))
+                    && abs(line.fontSize - size) <= size * 0.1
                     && !line.monospaced && line.structure?.group == marker.structure?.group
                     && !isMarkerPiece(line.text)
             }
@@ -525,6 +574,96 @@ enum LayoutReconstructor {
             kept[index].structure?.opensWithSplitMarker = true
         }
         return kept
+    }
+
+    /// A form's row of type with its ruled blanks (#152). The US Courts form sets fill-in sentences
+    /// across the page's blanks (`The plaintiff, (name) ____, is a citizen of the`), and sets a
+    /// field label on each blank of a stack (`Name ____`, `Street Address ____`). PDFKit returns the
+    /// text on either side of a blank as separate lines, so each sentence came apart at every blank,
+    /// and the labels, one per row, ran on into one paragraph.
+    ///
+    /// The blanks are the form's own evidence (`AnnotationEvidence.blanks`): a one-line field
+    /// sharing a row with a line (`FormBlank.sharesRow`) is set in that row. Its row holds the
+    /// nearest untagged line ending before the blank and the nearest starting after it, and the
+    /// pieces and blanks of one row read left to right as one line, each blank written as
+    /// `FormBlank.text`: `The plaintiff, (name) ____, is a citizen of the`, `____.`. Punctuation
+    /// that follows a blank closes up to it. A row that ends in a blank is complete, as a label on
+    /// its field is, so its line does not wrap onto the next (`wraps` false); a row that ends in
+    /// text wraps as its last piece did, so a sentence runs on to the next row. A blank on no row
+    /// of type — an answer area's closing rule, a caption's name line — joins nothing.
+    static func joiningBlankRows(_ lines: [TextLine], blanks: [FormBlank]) -> [TextLine] {
+        guard !blanks.isEmpty else { return lines }
+        func eligible(_ line: TextLine) -> Bool {
+            line.structure == nil && !line.monospaced && line.readingDirection == nil
+                && !line.text.trimmingCharacters(in: .whitespaces).isEmpty
+        }
+        // Each row's pieces (line indices) and blanks (rule extents without padding), by root piece.
+        var parent = Array(lines.indices)
+        func root(_ index: Int) -> Int {
+            var index = index
+            while parent[index] != index { index = parent[index] }
+            return index
+        }
+        var rowBlanks: [(piece: Int, rule: CGRect)] = []
+        for blank in blanks {
+            let rule = blank.rule.insetBy(dx: 2, dy: 0)
+            let row = lines.indices.filter { eligible(lines[$0]) && blank.sharesRow(with: lines[$0].rect) }
+            // Text standing over the rule is something else (a filled-in value): leave the row alone.
+            guard !row.contains(where: { lines[$0].rect.maxX > rule.minX + 2 && lines[$0].rect.minX < rule.maxX - 2 })
+            else { continue }
+            let left = row.filter { lines[$0].rect.maxX <= rule.minX + 2 }.max { lines[$0].rect.maxX < lines[$1].rect.maxX }
+            let right = row.filter { lines[$0].rect.minX >= rule.maxX - 2 }.min { lines[$0].rect.minX < lines[$1].rect.minX }
+            guard let anchor = left ?? right else { continue }
+            if let left, let right { parent[root(right)] = root(left) }
+            rowBlanks.append((anchor, rule))
+        }
+        guard !rowBlanks.isEmpty else { return lines }
+        var replaced: [Int: TextLine] = [:]
+        var removed = Set<Int>()
+        let rows = Dictionary(grouping: lines.indices.filter { index in
+            rowBlanks.contains { root($0.piece) == root(index) }
+        }, by: root)
+        for (_, members) in rows {
+            enum Item { case piece(Int), blank(CGRect) }
+            let blanksHere = rowBlanks.filter { root($0.piece) == root(members[0]) }.map(\.rule)
+            let items = (members.map { Item.piece($0) } + blanksHere.map { Item.blank($0) }).sorted { a, b in
+                func x(_ item: Item) -> CGFloat {
+                    switch item { case let .piece(index): lines[index].rect.midX; case let .blank(rule): rule.midX }
+                }
+                return x(a) < x(b)
+            }
+            var content = InlineText()
+            var afterBlank = false
+            for item in items {
+                switch item {
+                case let .piece(index):
+                    let text = lines[index].text
+                    let closesUp = afterBlank && text.first.map { ",.;:)!?".contains($0) } == true
+                    if !content.elements.isEmpty, !closesUp { content.append(InlineText(" ")) }
+                    content.append(lines[index].content)
+                    afterBlank = false
+                case .blank:
+                    if !content.elements.isEmpty { content.append(InlineText(" ")) }
+                    content.append(InlineText(FormBlank.text))
+                    afterBlank = true
+                }
+            }
+            let pieces = members.map { lines[$0] }
+            let text = union(pieces.map(\.rect))
+            let extent = union(pieces.map(\.rect) + blanksHere)
+            let last = pieces.max { $0.rect.maxX < $1.rect.maxX }!
+            var joined = TextLine(content: content, rect: CGRect(x: extent.minX, y: text.minY, width: extent.width, height: text.height),
+                                  fontSize: pieces.map(\.fontSize).max() ?? last.fontSize,
+                                  wraps: afterBlank ? false : last.wraps)
+            joined.trailingSpace = !afterBlank && last.trailingSpace
+            // The row keeps the reading position of its earliest piece in page order.
+            let anchor = members.min()!
+            replaced[anchor] = joined
+            removed.formUnion(members.filter { $0 != anchor })
+        }
+        return lines.indices.compactMap { index in
+            removed.contains(index) ? nil : replaced[index] ?? lines[index]
+        }
     }
 
     /// PDFKit splits a prose row at an inline radical: `Not all numbers have a nice even square
@@ -723,6 +862,8 @@ enum LayoutReconstructor {
         var replaced: [Int: TextLine] = [:]
         var removed = Set<Int>()
         var mathMinusRows: [TextLine] = []
+        // The flush edge of each size, where the page justifies its type (#152).
+        let measures = justifiedMeasures(lines)
         for cluster in clusters {
             let pieces = cluster.sorted { lines[$0].rect.midX < lines[$1].rect.midX }
             let math = pieces.contains { lines[$0].text.rangeOfCharacter(from: rowMathSymbols) != nil }
@@ -750,18 +891,48 @@ enum LayoutReconstructor {
             // open or the right piece opens with a raised note marker.
             // A junction PDFKit made inside a justified line's own measure runs on whatever the
             // line's punctuation reads like, since the break is the line's word space (#180).
-            let runsOn = zip(pieces, pieces.dropFirst()).allSatisfy { left, right in
-                let size = typeSize(lines[right])
-                if stretchedWordSpace(lines[left], lines[right], size: size) { return true }
-                return lines[right].rect.minX - lines[left].rect.maxX <= size * 0.5
-                    && (!endsSentence(lines[left].content) || closesWithMarker(right))
+            func runs(atSentenceSpace: Bool) -> Bool {
+                zip(pieces, pieces.dropFirst()).allSatisfy { left, right in
+                    let size = typeSize(lines[right])
+                    if stretchedWordSpace(lines[left], lines[right], size: size) { return true }
+                    let gap = lines[right].rect.minX - lines[left].rect.maxX
+                    if gap <= size * 0.5, !endsSentence(lines[left].content) || closesWithMarker(right) { return true }
+                    // Two word spaces after a sentence: half an em in Times, a little over in
+                    // wider faces.
+                    return atSentenceSpace && lines[left].trailingSpace && endsSentence(lines[left].content)
+                        && gap > 0 && gap <= size * 0.75
+                }
+            }
+            let runsOn = runs(atSentenceSpace: false)
+            // A sentence can end at a junction too, where the left piece still carries the word
+            // space PDFKit measured after it (#152): a piece PDFKit ended at a line break carries
+            // none. The US Courts form sets two spaces after a sentence, and PDFKit cut its
+            // Statement of Claim's first line there (`…statement of the claim. ` and `Do not make
+            // legal arguments. …`), 5.54 points apart at 11 points. The form sets its prose ragged,
+            // so the row cannot share a justified measure; it is instead the first line of the
+            // paragraph beneath it: that paragraph's next line stands under it on the same left
+            // edge at ordinary leading, and the row reaches nine tenths of that line's width. Only
+            // where the page sets its type ragged: in a justified column a line reaches the
+            // measure, and a row that stops short of it is no line of the paragraph (#180).
+            let runsOnAtSentenceSpace = !math && !runsOn && runs(atSentenceSpace: true)
+            func opensParagraphBeneath() -> Bool {
+                guard measures[Int(typeSize(lines[pieces[0]]).rounded())] == nil else { return false }
+                let row = union(pieces.map { lines[$0].rect })
+                guard let beneath = lines.indices.filter({ index in
+                    let other = lines[index]
+                    let gap = row.minY - other.rect.maxY
+                    return !cluster.contains(index) && abs(other.rect.minX - row.minX) <= 2
+                        && abs(other.fontSize - body) <= body * 0.15 && gap >= -body * 0.4 && gap < body * 0.9
+                }).map({ lines[$0] }).max(by: { $0.rect.maxY < $1.rect.maxY }) else { return false }
+                return isWordy(beneath.text) && row.width >= beneath.rect.width * 0.9
             }
             // Outside mathematics the row must also be a full line of its justified paragraph,
             // sharing both edges with the lines around it. A short row that merely sits on a
             // paragraph's edge is something else set beside it: the FAA's heading `ATC
             // Instructions—` and `“Hold Short”`, two pieces of one row over the body text.
-            guard math || runsOn, !widened || clear,
-                  isProseRow(pieces: pieces.map { lines[$0] }, in: lines, body: body, fillingItsMeasure: !math)
+            guard math || runsOn || runsOnAtSentenceSpace, !widened || clear,
+                  runsOnAtSentenceSpace ? opensParagraphBeneath()
+                    : isProseRow(pieces: pieces.map { lines[$0] }, in: lines, body: body, fillingItsMeasure: !math)
             else { continue }
             var content = InlineText()
             for (position, index) in pieces.enumerated() {
@@ -1230,6 +1401,62 @@ enum LayoutReconstructor {
         return entries.count >= 3 ? labels.filter { !entries.contains($0) } : labels
     }
 
+    /// The section labels of an outline and their depth (#152): 0 for a Roman numeral, 1 for a
+    /// capital letter, 2 for a number. The US Courts form numbers its sections `I.`–`V.`, their
+    /// parts `A.` and `B.`, and theirs `1.`–`3.`, each tier's markers on its own tab stop half an
+    /// inch right of the tier above, all at the body's size; only the Roman and lettered tiers are
+    /// bold. The labels read as bold paragraphs, or as list lines (`<pre>`) where their marker is
+    /// a single letter or a number, since nothing about their size set them apart.
+    ///
+    /// The evidence is the outline itself, on the page. A label is a line at the body's size that
+    /// opens with its marker and a period, then a title: at most ten words in title case, opening
+    /// with a capital and ending without punctuation, so a numbered sentence is never one. The page
+    /// must set labels of at least two tiers, nested — every marker of an outer tier on an edge at
+    /// least a body size left of every marker of an inner one — and at least one label must be set
+    /// wholly in bold, as an outline heads its sections. A numbered list is one tier, and a list
+    /// under a lettered one nests in the other direction.
+    ///
+    /// A single `I`, `V`, `X`, `L` or `C` reads as Roman where a Roman label of more letters shares
+    /// its edge or a lettered label stands inside it; otherwise it is a letter. A lowercase tier
+    /// (`a.`, `b.`) enumerates items within its section and stays a list line.
+    static func outlineSectionLabels(in lines: [TextLine], body: CGFloat) -> [(line: TextLine, depth: Int)] {
+        struct Candidate { var line: TextLine; var marker: Substring; var depth: Int? }
+        var candidates: [Candidate] = []
+        for line in lines where !line.monospaced && line.readingDirection == nil && line.structure == nil
+            && abs(line.fontSize - body) <= body * 0.1 && line.text.count < 120 {
+            guard let match = line.text.range(of: #"^(?:[IVXLC]{1,6}|[A-Z]|[0-9]{1,2})\.\s+"#, options: .regularExpression)
+            else { continue }
+            let marker = line.text[match].prefix { $0 != "." }
+            let title = line.text[match.upperBound...].trimmingCharacters(in: .whitespaces)
+            guard let first = title.first, first.isUppercase, let last = title.last, !".,;:".contains(last),
+                  title.contains(where: \.isLetter), isTitleCase(title) else { continue }
+            let depth: Int?
+            if marker.allSatisfy(\.isNumber) { depth = 2 }
+            else if marker.count > 1 { depth = FurnitureDetector.folioValue(marker.lowercased()) == nil ? nil : 0 }
+            else { depth = "IVXLC".contains(marker) ? nil : 1 }
+            // A multi-letter marker that is no Roman numeral (`VV.`) is no label.
+            if depth == nil, marker.count > 1 { continue }
+            candidates.append(Candidate(line: line, marker: marker, depth: depth))
+        }
+        // Resolve single Roman letters against the page's other labels.
+        for index in candidates.indices where candidates[index].depth == nil {
+            let edge = candidates[index].line.rect.minX
+            let roman = candidates.contains { $0.depth == 0 && abs($0.line.rect.minX - edge) <= 2 }
+                || candidates.contains { $0.depth == 1 && $0.line.rect.minX >= edge + body }
+            candidates[index].depth = roman ? 0 : 1
+        }
+        let tiers = Dictionary(grouping: candidates, by: { $0.depth! })
+        guard tiers.count >= 2, candidates.contains(where: { LabelStyle($0.line, body: body).bold }) else { return [] }
+        for outer in tiers.keys {
+            for inner in tiers.keys where inner > outer {
+                guard let outerEdge = tiers[outer]!.map(\.line.rect.minX).max(),
+                      let innerEdge = tiers[inner]!.map(\.line.rect.minX).min(),
+                      outerEdge + body <= innerEdge else { return [] }
+            }
+        }
+        return candidates.map { ($0.line, $0.depth!) }
+    }
+
     /// A section label's typography relative to its page: its size and the body's (to the half
     /// point), whether every word is bold, and whether a line that is not bold is wholly italic.
     /// The FAA handbook sets its section titles in 12-point bold over 10-point prose, and its
@@ -1646,13 +1873,19 @@ enum LayoutReconstructor {
     /// a slide carries one title, and a deck sets each slide's title to fit the words on it, so
     /// the Earthdata deck's 52-, 32-, 30-, 28- and 26-point titles rank into four tiers of one rank.
     /// Every ranked heading of a deck is level 2; a validated level still holds, as it does above.
+    ///
+    /// An outline's section labels (`outlineDepth`, #152) are set at the body's size whatever their
+    /// tier, so their size says nothing of their rank. They take no part in the size tiers: the
+    /// outermost tier ranks where the size scale places its size, and each inner tier one level
+    /// deeper (to 6). The US Courts form's `I.` sections fall under its 20- and 13-point titles
+    /// at level 4, their `A.` parts at 5 and the numbered parts at 6.
     static func rankHeadingLevels(_ blocks: inout [ReflowBlock], slideDeck: Bool = false) {
         func ranker(_ sizes: [CGFloat]) -> (CGFloat) -> Int {
             let tiers = headingTiers(sizes)
             return { value in min(6, 2 + (tiers.firstIndex { value >= $0 * 0.93 } ?? tiers.count)) }
         }
         let headings = blocks.compactMap { block -> (size: CGFloat, validated: Int?)? in
-            guard let size = block.headingSize, case .heading = block.content else { return nil }
+            guard let size = block.headingSize, block.outlineDepth == nil, case .heading = block.content else { return nil }
             return (size, block.taggedLevel)
         }
         var largestTagged: [Int: CGFloat] = [:]
@@ -1677,6 +1910,7 @@ enum LayoutReconstructor {
                   case let .heading(id, text, _) = blocks[index].content else { continue }
             var level = ranked(size)
             if let validated = blocks[index].taggedLevel, !yields(validated) { level = validated }
+            if let depth = blocks[index].outlineDepth { level = min(6, level + depth) }
             blocks[index].content = .heading(id: id, text: text, level: level)
         }
     }
@@ -3211,16 +3445,20 @@ enum LayoutReconstructor {
             warnings.append(.init(code: .furnitureRemoved, page: page.number,
                 message: "Rotated margin text is omitted from the reflowed text."))
         }
+        // A caption's brace set as a column of bracket glyphs is decoration (#152).
+        let braces = bracketColumns(in: page.lines)
         let lines = page.lines.filter { line in
-            !stamps.contains(line) && !images.contains { $0.0.intersects(line.rect) }
+            !stamps.contains(line) && !braces.contains { $0.contains(line) } && !images.contains { $0.0.intersects(line.rect) }
         }
         let shaded = ShadedTableDetector.tables(in: page, lines: lines)
         let shadedLines = shaded.flatMap(\.ownedLines)
         let tables = shaded + BorderlessTableDetector.tables(in: lines.filter { !shadedLines.contains($0) })
         let tableLines = tables.flatMap(\.ownedLines)
         // A marker PDFKit split from its item's text rejoins it before anything reads the lines.
-        // So do the pieces of a prose row PDFKit split at an inline radical (#95).
-        let (free, mathMinusRows) = joinedRows(joiningMarkerPieces(lines.filter { line in !tableLines.contains(line) }),
+        // So do the pieces of a prose row PDFKit split at an inline radical (#95), and the pieces
+        // of a form's row with the ruled blanks between them (#152).
+        let (free, mathMinusRows) = joinedRows(joiningMarkerPieces(joiningBlankRows(lines.filter { line in !tableLines.contains(line) },
+                                                                                    blanks: page.blanks)),
                                                images: images.map(\.0), body: body)
         // A list line, except a joined prose row whose apparent marker is a minus sign (#109).
         func listLine(_ line: TextLine) -> Bool { isList(line.text) && !mathMinusRows.contains(line) }
@@ -3250,12 +3488,16 @@ enum LayoutReconstructor {
         func untagged(_ line: TextLine) -> TextLine {
             var copy = line; copy.structure = nil; return copy
         }
+        // An outline's section labels, ranked by their tier rather than their size (#152).
+        let outline = page.hasSyntheticTextStyle || page.recognized ? [] : outlineSectionLabels(in: free.map(untagged), body: reflowBody)
+        func outlineDepth(_ line: TextLine) -> Int? { outline.first { $0.line == untagged(line) }?.depth }
         let labels = sectionLabels(in: free.map(untagged), body: reflowBody,
                                    headingThreshold: headingThreshold, page: page, styles: labelStyles)
             + boxTitles(in: free.map(untagged), page: page)
             // A two-column paper's centred small-capital sections and italic lettered subsections,
             // both set at the body's own size (#162).
             + academicSectionTitles(in: free.map(untagged), body: reflowBody, page: page)
+            + outline.map(\.line)
         // Edges whose entries wrap into a hanging indent (#134): a label's second line hanging on
         // one continues its title, and a line back on the edge opens the next entry.
         let entryEdges = page.hasSyntheticTextStyle || page.recognized ? [] : hangingEntryEdges(free.map(untagged), body: reflowBody)
@@ -3333,6 +3575,7 @@ enum LayoutReconstructor {
             return CGRect(x: rect.minX, y: title.rect.minY, width: rect.width, height: title.rect.height)
         }
         let spatial = boxed(free.map { Element(rect: $0.readingRect ?? $0.rect, line: $0) }
+            + braces.map { Element(rect: union($0.map(\.rect)), boundary: true) }
             + images.map { Element(rect: readingRect(ofRegion: $0.0), image: $0.1) }
             + tables.enumerated().map { Element(rect: $0.element.ownedLines.map(\.rect).reduce($0.element.bounds) { $0.union($1) }, table: $0.offset) },
             tints: page.tints, bodySize: body)
@@ -4171,7 +4414,8 @@ enum LayoutReconstructor {
                 // the pieces form one heading, as do the lines of a title set over several
                 // lines (#55). The pieces of one row sit within a few ems of each other; two
                 // columns' titles on one row are two headings (FAA page 340, #76).
-                if let row = previousHeading, let last = result.indices.last,
+                // An outline's label opens a section of its own (#152).
+                if let row = previousHeading, let last = result.indices.last, outlineDepth(line) == nil,
                    case let .heading(id, text, level) = result[last].content,
                    sameRow(row.first.rect, line.rect) && abs(row.first.fontSize - line.fontSize) <= line.fontSize * 0.1
                     && line.rect.minX - row.last.rect.maxX <= line.fontSize * 3
@@ -4191,6 +4435,7 @@ enum LayoutReconstructor {
                 var heading = ReflowBlock(content: .heading(id: "heading-\(page.number)-\(result.count)", text: line.content),
                     page: page.number)
                 heading.headingSize = line.fontSize
+                heading.outlineDepth = outlineDepth(line)
                 result.append(heading)
                 headingRow = (line, line)
             } else if !page.hasSyntheticTextStyle && line.monospaced {

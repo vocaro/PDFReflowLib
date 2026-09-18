@@ -76,6 +76,16 @@ enum AnnotationEvidence {
         return judgment
     }
 
+    /// The page's ruled fill-in blanks (#152): its visible text and choice fields, each over the
+    /// rules the page prints for it (`FormBlank.blanks`).
+    static func blanks(on page: PDFPage, paints: [CGRect]) -> [FormBlank] {
+        let fields = page.annotations.filter { annotation in
+            annotation.type == "Widget" && annotation.shouldDisplay && !isHidden(annotation)
+                && (annotation.widgetFieldType == .text || annotation.widgetFieldType == .choice)
+        }.map(\.bounds)
+        return FormBlank.blanks(fields: fields, paints: paints)
+    }
+
     /// The annotation flags Hidden (bit 2) and NoView (bit 6).
     private static func isHidden(_ annotation: PDFAnnotation) -> Bool {
         guard let flags = annotation.annotationKeyValues[PDFAnnotationKey.flags] as? NSNumber else { return false }

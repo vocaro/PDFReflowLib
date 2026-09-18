@@ -96,6 +96,15 @@ enum ScanEvidenceRegions {
     /// in which case the page keeps its image. Evidence outside the text block's horizontal extent
     /// (a scan border) or over blank paper is dropped.
     static func regions(evidence: [CGRect], lines: [TextLine], bounds: CGRect, ink: InkMap) -> [CGRect]? {
+        classifiedRegions(evidence: evidence, lines: lines, bounds: bounds, ink: ink)?.map(\.rect)
+    }
+
+    /// The same crops, each marked `display` when it grew as a display row (an equation and its
+    /// number) rather than as a figure over its caption (#187): the page's paints alone would
+    /// call every one of them art. Crops that come together keep the mark only if every part
+    /// had it.
+    static func classifiedRegions(evidence: [CGRect], lines: [TextLine], bounds: CGRect,
+                                  ink: InkMap) -> [(rect: CGRect, display: Bool)]? {
         let body = LayoutReconstructor.bodySize(lines)
         let captionLines = lines.filter { isCaption($0.text) }
         let prose = lines.filter { !captionLines.contains($0) && LayoutReconstructor.isProseRow($0, in: lines, body: body) }
@@ -217,6 +226,7 @@ enum ScanEvidenceRegions {
         }
         // Antialiased stroke ends lighter than the ink threshold stay inside a two-point margin
         // on every side that keeps clear of prose and captions.
+        let displays = Set(result.indices.filter { $0 >= figureRegions.count })
         let padded = result.map { region -> CGRect in
             var region = region
             for side in 0..<4 {
@@ -232,6 +242,9 @@ enum ScanEvidenceRegions {
             }
             return region
         }
-        return clusters(padded, distance: 1)
+        return clusters(padded, distance: 1).map { cluster in
+            let parts = padded.indices.filter { cluster.contains(padded[$0]) }
+            return (cluster, !parts.isEmpty && parts.allSatisfy(displays.contains))
+        }
     }
 }

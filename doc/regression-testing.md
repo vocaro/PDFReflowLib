@@ -115,7 +115,7 @@ are, in the page markup). Evidence and negative controls on real output are in
 ## Current content coverage
 
 <!-- counts:coverage -->
-[corpus/regressions.json](../corpus/regressions.json) has 3395 targeted checks on 559 reviewed pages
+[corpus/regressions.json](../corpus/regressions.json) has 3417 targeted checks on 560 reviewed pages
 across 22 documents: *Pilot's Handbook of Aeronautical Knowledge*, *Beginning and Intermediate
 Algebra*, *The 9/11 Commission Report*, *The Fed Explained*, *Dietary Guidelines for Americans*,
 *Fifth National Climate Assessment*, *Our Flag*, *Preparedness 101*, *Project Blue Book Special
@@ -129,9 +129,9 @@ Project* and *Tank Health Monitoring*. They comprise 1136 ordered-text, 242 text
 291 absent-text, 271 heading, 36 heading-level, 50 absent-heading, 93 list-item,
 1 preformatted-lines, 29 script, 8 absent-script, 11 footnote, 34 note-link,
 61 paragraph-continuation, 1 list-item-continuation, 8 paragraph-separation, 99 distinct-paragraph,
-201 image-presence, 44 captioned-image, 102 page-reference, 113 warning, 111 absent-warning,
-17 source-region, 5 glyph-structure, 4 image-appearance and 9 table-cell checks, counted as
-`tools/check_corpus_content.py` counts them.
+201 image-presence, 44 captioned-image, 22 image-alternative, 102 page-reference, 113 warning,
+111 absent-warning, 17 source-region, 5 glyph-structure, 4 image-appearance and 9 table-cell checks,
+counted as `tools/check_corpus_content.py` counts them.
 <!-- counts:end -->
 
 All source-page anchors must also remain complete and ordered, and semantic text must contain no image attachment placeholders.
@@ -217,7 +217,7 @@ the Wallace exercise still scores 0.97, which is why the glyph-structure check b
 
 A page that reflows beside its source-page reference image carries every region inside that image,
 which also satisfies a region reference (0.98–0.99 on NBS). `"excludePageReference": true` on an
-`imageRegions` expectation skips the page's `Original page N` image, so only a crop can pass. Five
+`imageRegions` expectation skips the page's source-page reference image, so only a crop can pass. Five
 such references cover NBS figures 1 and 2 and display equations (4), (11) and (15): the converter's
 crops score 0.985–0.998, while the Paper Capture evidence boxes alone, half of figure 1 or equation
 (4) without its number cannot be placed at all. See the
@@ -299,7 +299,10 @@ spine reader separates cell text with spaces and parses each table into a grid. 
 [table-cells record](../measurements/table-cells/record.md).
 
 A `pageReference` expectation (a boolean) requires the page to carry, or not to carry, the
-converter's `Original page N` image, independently of its region crops (#151). Since #27's coverage
+converter's source-page reference image, independently of its region crops (#151). The reader knows
+that image by `title="Source page N"` with the alternative text `The printed page, for comparison`
+(a whole-page fallback shares the title, not the text), or, in an EPUB from before #187, by
+`alt="Original page N"`, so baselines still compare. Since #27's coverage
 pass it also covers every page of the TechPort print and the IEEEtran paper, pages 2–20 of the Word
 paper and eight more magazine pages (all false: their annotations draw nothing), and all seven NBS
 pages (true: the scan keeps its source page beside the inherited OCR).
@@ -311,10 +314,10 @@ and `paragraphs`, which ask only that the page holds the phrase. A `captionedIma
 (`{"caption"}`, with an optional `"position"` of `after` — the default — or `before`) adds the
 placement: the reader records each page's own outermost blocks (`p`, `pre`, `li`, `table`,
 `h1`–`h6`) and its images in document order, and some block holding the phrase must be the
-immediate neighbour of an image on that side. The converter's generic `<figcaption>` never enters
-that sequence, so a preserved region's own caption cannot separate a figure from the caption the
-source printed; a block a page marker interrupts keeps only the text it holds on the page it opened,
-so a caption is judged on its own page.
+immediate neighbour of an image on that side. A `<figcaption>` never enters that sequence (the
+converter has written none since #187, and one in an older EPUB cannot separate a figure from the
+caption the source printed); a block a page marker interrupts keeps only the text it holds on the
+page it opened, so a caption is judged on its own page.
 
 Forty-four pairs are checked: 23 FAA `Figure N-M.` captions on sixteen pages, the Word paper's
 Figure 3 and its five appendix captions, the IEEEtran paper's Fig. 1 (below its figure) and the
@@ -326,6 +329,20 @@ caption survives, a removed caption, a caption on the wrong side and a caption o
 same mutations on real output fail on FAA page 262, the Word paper's page 14, the IEEEtran page 7
 and NBS page 2. The check proves the pairing survived, not that a caption sits beside the right
 figure. See the [caption-pairing and page-policy evidence](../measurements/figure-captions-and-page-policy/record.md).
+
+An `imageAlternatives` expectation (a nonempty list of strings) names alternative text that some
+image on the page must carry exactly, whitespace normalized: the caption the source prints beside a
+figure, or the kind the converter names from a crop's evidence (`Mathematical expression`, `Table
+kept as an image`, `Illustration`, `Whole page kept as an image`, `The printed page, for comparison`;
+#187). A page that names any also fails if an image on it carries empty alternative text or the
+provenance the converter wrote there before #187 (`Preserved region from page N`, `Original page
+N`). Twenty-two checks on fourteen pages cover FAA pages 262 and 288 (printed captions, one wrapped, and
+page 262's kinetic-energy display), Wallace pages 96, 343 and 427 (graphs, the quadratic-formula
+derivation, the right-triangle answers), both USGS pages and Census page 12 (tables), the Word
+paper's Figure 1 and Figure A1, Replay Clocks page 3 (a figure, an algorithm float and a display),
+NBS page 2, Our Flag page 27's flag-size table and CDC page 2, a whole-page fallback. Python
+controls reject a missing kind, provenance or empty text beside a correct one, and malformed
+expectations. See the [alternative-text evidence](../measurements/preserved-image-alt-text/record.md).
 
 A `maximumImages` expectation (a non-negative integer) fails a page with more images than that,
 including source-page reference images; it pins decoration that must not become an image. The Fed
@@ -605,7 +622,7 @@ the page's structure validates, each line also records the tag the pipeline appl
 since #89/#90); older fixtures and untagged lines have none, and `SourceLayoutFixture` restores it.
 Source review, baseline failures, cross-document safeguards and full-run evidence are retained
 in [the three-fix measurement](../measurements/three-fidelity-fixes/record.md). The suite contains
-<!-- counts:swift-tests -->920 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->242 Python tests<!-- counts:end -->.
+<!-- counts:swift-tests -->930 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->244 Python tests<!-- counts:end -->.
 The comparison tests include a real-Poppler image URL check through the safe HTTP handler
 (simple and positioned modes, paths with spaces); absent Poppler is an explicit skip.
 

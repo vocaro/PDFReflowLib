@@ -205,3 +205,28 @@ private func evidenceRegions(_ pdf: Data) throws -> [CGRect]? {
     #expect(!result.warnings.contains { [.pageImageFallback, .unsupportedGraphics, .unverifiedTextLayer].contains($0.code) })
     #expect(result.document.assets.count == 1)
 }
+
+@Test func aScansDisplayRowIsAnEquationAndItsFigureAnIllustration() async throws {
+    // #187: Paper Capture's evidence is painted, so the page's paints alone would call the grown
+    // equation art. Growth knows which crop is a display row and which a figure over its caption.
+    let pdf = try scannedPage(evidence: strips)
+    let document = try #require(PDFDocument(data: pdf))
+    let page = try #require(document.page(at: 0))
+    let reference = try #require(page.pageRef)
+    let bounds = page.bounds(for: .cropBox)
+    let ink = try #require(ScanEvidenceRegions.inkMap(reference, bounds: bounds))
+    let classified = try #require(ScanEvidenceRegions.classifiedRegions(
+        evidence: GraphicsReader.read(reference).inlineImages,
+        lines: try NativeTextReader.lines(on: page, limit: 100_000, includeStyle: false), bounds: bounds, ink: ink))
+    #expect(classified.count == 2)
+    #expect(classified.filter(\.display).map(\.rect.maxY) .allSatisfy { $0 < 300 })
+    #expect(classified.filter { !$0.display }.map(\.rect.minY).allSatisfy { $0 > 300 })
+
+    let alternatives = try await scanReconstruct(pdf).document.blocks.compactMap { block -> String? in
+        if case let .image(image) = block.content { image.alternativeText } else { nil }
+    }
+    // The display row is mathematics and the page's reference the printed page. The figure's
+    // crop ends at its lowest ink, the axis label 38 points (3.8 bodies) over `FIGURE 1.`, too
+    // far for the caption to be named as its own, so it stays an illustration.
+    #expect(alternatives.sorted() == ["Illustration", "Mathematical expression", "The printed page, for comparison"])
+}

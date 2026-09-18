@@ -105,6 +105,10 @@ struct PageContent: Equatable, Codable {
     /// Ruled fill-in blanks (`AnnotationEvidence.blanks`, #152): printed structure, not figures.
     /// They seed no crops; a blank set in a row of type takes its place in that row's text.
     var blanks: [FormBlank] = []
+    /// What the step that placed a graphic already knows it holds, where the paint alone would
+    /// read as art (#187): a scan's evidence grown as a display row is an equation
+    /// (`ScanEvidenceRegions.classifiedRegions`), and a table Vision recognized is a table.
+    var graphicKinds: [CGRect: PreservedImageKind] = [:]
     var requiresPageImage = false
     var recognized = false
     var hasSyntheticTextStyle = false

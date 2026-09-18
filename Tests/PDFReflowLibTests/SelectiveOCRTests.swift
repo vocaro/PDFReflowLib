@@ -48,7 +48,7 @@ private actor SelectiveOCRProgress {
         if policy == .automaticIncludingImageBackedText {
             #expect(html.components(separatedBy: "<strong>Readable source text.</strong>").count - 1 == 2)
             #expect(report.warnings.contains { $0.code == .ocrUsed && $0.page == 1 })
-            #expect(html.contains("Source page 1") || html.contains("Original page 1"))
+            #expect(html.contains("title=\"Source page 1\""))
         }
     }
 }

@@ -39,7 +39,7 @@ the evidence needed to infer reading order, paragraphs, image crops and word joi
 | Metadata | Title, language and optional author |
 | Ordered blocks | Paragraph, heading with logical identifier and level, preformatted text, page-bottom footnote, image, source-page boundary |
 | Inline text | Text runs carrying bold/italic/maths-italic/superscript/subscript flags, interspersed with source-page boundaries |
-| Image block | Logical asset identifier, alternative text and caption |
+| Image block | Logical asset identifier, alternative text and provenance |
 | Asset registry | Identifier, local file URL and image format |
 | Block provenance | Physical source page where the block begins |
 
@@ -1234,7 +1234,28 @@ paths from counters and streams those files directly into ZIP entries; it does n
 whole image collection into another staging tree. Asset identifiers are opaque and cannot
 choose archive paths. Model validation rejects missing/duplicate assets and empty documents.
 
-`EPUBTextEncoder` owns XML escaping, style tags, page markers and figure markup. `EPUBWriter`
+`EPUBTextEncoder` owns XML escaping, style tags, page markers and figure markup. A preserved image
+is `<figure><img alt="…" title="…"/></figure>` with no `<figcaption>` (#187): the converter has no
+caption of its own to print, and a caption the source prints is already its own block beside the
+figure, where `captionedImages` checks it. `alt` names the content and `title` keeps the provenance
+(`Preserved region from page N`, or `Source page N` for a whole page). The alternative text is the
+source's own caption where the page leaves no doubt which crop it names
+(`LayoutReconstructor.sourceCaptions`: exactly one line opening with a printed label — `Figure 3.2`,
+`Fig. 1`, `TABLE I`, `Algorithm 2`, `Box 18.1` — stands within one and a half bodies above or below
+the crop, over its measure, and against no other crop; its wrapped lines follow at its own tight
+leading and size; over 200 characters it keeps the sentences that fit). Otherwise it is the crop's
+kind, read from the seeds that made it (`classifiedGraphics`): a table region's claim (`Table kept
+as an image`), an algorithm float (`Algorithm listing`), painted art at least a body size each way
+(`Illustration`), a displayed formula line (`Mathematical expression`), and, for a crop that only
+marks seeded — a fraction bar, a rule inside a letter-free line, a free-standing rule no longer than
+six bodies (a worked step's underline), a mark smaller than the type — the
+lines it holds: text when at least half are prose of eight tokens or more (`Text kept as an image`),
+mathematics otherwise. A page that does not reflow is `Whole page kept as an image`; a source-page
+reference is `The printed page, for comparison`. A chart, a line drawing and a photograph are one
+kind of evidence to a converter that never decodes the image (placed rasters hold the FAA's
+drawings, NOAA's charts, the comic's panels and Warren's scans alike), so art is never called a
+photograph or a chart. See the [alternative-text evidence](../measurements/preserved-image-alt-text/record.md).
+`EPUBWriter`
 owns spine splitting, heading/page navigation, OPF metadata, CSS, resource naming and
 ZIPFoundation packaging. It accepts a `ReflowDocument` and an output-size ceiling, with no PDF
 or OCR dependency. EPUB progress is combined with pipeline progress by `PDFConverter`; only

@@ -2184,6 +2184,34 @@ enum LayoutReconstructor {
 
     /// Expand crops to whole intersecting text lines so a label cannot be cut in half.
     static func graphicsWithLabels(_ page: PageContent) -> [CGRect] {
+        classifiedGraphics(page).map(\.rect)
+    }
+
+    /// What one crop seed says about the crop that holds it (#187).
+    private enum SeedEvidence {
+        /// A displayed formula line, a fraction, or a rule that keeps a mathematical line.
+        case formula
+        case table
+        case listing
+        /// Painted art at least a body size wide and tall: a drawing, a chart, a picture.
+        case art
+        /// A painted mark smaller than the type (a fraction bar under one digit, a radical sign,
+        /// a bullet): it says nothing about the crop on its own, so the text beside it decides.
+        case mark
+    }
+
+    /// The same crops, each with what its own seeds say it holds (#187). Alternative text has to
+    /// name the content, and the only evidence the converter has about a crop is which detector
+    /// seeded it: a displayed formula or a fraction, a table region the layout could not reflow,
+    /// an algorithm listing between its rules, or drawn and placed art. A crop's kind is the
+    /// reduction of the evidence of every seed the finished crop holds, in that precedence: a
+    /// table region's claim is the strongest evidence on the page, a listing's rules next, then
+    /// art, since a drawing routinely swallows one of its own labels. A crop with none of those is
+    /// read from the lines it holds: an equation when they read as mathematics, text when most of
+    /// them read as words (a formula seed can take a prose line with it, and an underlined link
+    /// fragment in a reference list reads as a mathematical line to the formula seed), and art when
+    /// it holds only marks and no text.
+    static func classifiedGraphics(_ page: PageContent) -> [(rect: CGRect, kind: PreservedImageKind)] {
         let body = max(4, bodySize(page.lines))
         // Displayed formulas have spatial meaning (superscripts, fractions, aligned terms)
         // that line concatenation cannot reproduce. Preserve recognizable formulas as crops.
@@ -2226,9 +2254,18 @@ enum LayoutReconstructor {
                     && rect.midY >= line.rect.minY - 3 && rect.midY <= line.rect.maxY
             }
         }
-        let otherSeeds = formulas + TableRegionDetector.regions(in: page) + FractionRegionDetector.regions(in: page)
-            + tables + floats.regions
-        let graphics = page.graphics.compactMap { rect -> CGRect? in
+        let numericTables = TableRegionDetector.regions(in: page)
+        let fractions = FractionRegionDetector.regions(in: page)
+        let otherSeeds = formulas + numericTables + fractions + tables + floats.regions
+        // What each seed says the crop holds (#187). `drawn` adds the painted seeds' own below.
+        var evidence: [(CGRect, SeedEvidence)] =
+            formulas.map { ($0, .formula) } + fractions.map { ($0, .mark) }
+            + numericTables.map { ($0, .table) } + tables.map { ($0, .table) }
+            + floats.regions.map { ($0, .listing) }
+        // A rule that keeps a mathematical line is that display's own bar, not a drawing, and a
+        // mark smaller than the type is no drawing either; everything else painted is art.
+        func painted(_ rect: CGRect) -> SeedEvidence { rect.width < body || rect.height < body ? .mark : .art }
+        let drawn = page.graphics.compactMap { rect -> (CGRect, SeedEvidence)? in
             // A radical's bar inside a prose row decorates that row (`is written as √25.`, `if
             // we found √8 on`): the tall rectangle PDFKit gives the radical piece would otherwise
             // read as a fraction's terms around it, and a bar over one or two digits is shorter
@@ -2239,12 +2276,20 @@ enum LayoutReconstructor {
                isProseRow(owner, in: page.lines, body: body) {
                 return nil
             }
-            if let art = titleArt(rect, in: page.lines, body: body) { return art }
-            guard isThinRule(rect) else { return rect }
+            // What placed the graphic may already know what it holds (#187).
+            switch page.graphicKinds[rect] {
+            case .equation: return (rect, .formula)
+            case .table: return (rect, .table)
+            default: break
+            }
+            if let art = titleArt(rect, in: page.lines, body: body) { return art.map { ($0, painted($0)) } }
+            guard isThinRule(rect) else { return (rect, painted(rect)) }
             if tables.contains(where: { $0.contains(rect) }) || floats.decorations.contains(rect) { return nil }
-            // A fraction bar keeps the terms it touches, as any intersecting graphic does.
+            // A fraction bar keeps the terms it touches, as any intersecting graphic does. Its
+            // test reads only a short letter-free line over it, which NOAA's underlined DOI
+            // fragments also satisfy, so it is a mark and the crop's text decides (#187).
             if isFractionBar(rect, in: page.lines, body: body) {
-                return page.lines.filter { rect.intersects($0.rect) }.reduce(rect) { $0.union($1.rect) }
+                return (page.lines.filter { rect.intersects($0.rect) }.reduce(rect) { $0.union($1.rect) }, .mark)
             }
             // A rule inside one line's box belongs to that line: a radical's vinculum or an
             // exercise bar keeps its short mathematical line; an underline beneath prose is
@@ -2253,12 +2298,21 @@ enum LayoutReconstructor {
             guard let owner = owner(of: rect) else {
                 let isolated = !page.graphics.contains { $0 != rect && $0.insetBy(dx: -4, dy: -4).intersects(rect) }
                     && !otherSeeds.contains { $0.insetBy(dx: -4, dy: -4).intersects(rect) }
-                return isolated && isDecorationRule(rect, in: page.lines, bounds: page.bounds, body: body) ? nil : rect
+                // A short rule is a mark the crop's text decides (the bar Wallace sets under
+                // `+ 7/2 + 7/2` in a worked step, page 43, five bodies long); a long one may rule
+                // a table or frame a drawing, and stays art as before.
+                return isolated && isDecorationRule(rect, in: page.lines, bounds: page.bounds, body: body)
+                    ? nil : (rect, rect.width <= body * 6 ? .mark : .art)
             }
+            // Such a line is only letter-free: an underlined link fragment in a reference list
+            // (`1029/2019GL082077`) qualifies as readily as a radical's vinculum, so the rule
+            // is a mark whose crop the text inside decides.
             let mathematical = owner.text.count <= 40 && !owner.monospaced
                 && owner.text.range(of: #"[A-Za-z]{3,}"#, options: .regularExpression) == nil
-            return mathematical ? rect.union(owner.rect) : nil
+            return mathematical ? (rect.union(owner.rect), .mark) : nil
         }
+        let graphics = drawn.map(\.0)
+        evidence += drawn
         let seeds = graphics + otherSeeds
         // Running text keeps crops apart and stops them growing over it (#158).
         let text = TintDetector.blockText(page.lines)
@@ -2276,7 +2330,32 @@ enum LayoutReconstructor {
             // the image clips part of it (for example, a raised exponent beside a fraction).
             regions = merged(regions, text: text)
         }
-        return regions.map(\.bounds)
+        // A seed is the crop's own when the crop holds its centre: a formula seed reaches eight
+        // points past its line, so the line beside a crop would otherwise lend it its evidence.
+        return regions.map { region in
+            let held = evidence.filter { region.bounds.contains(CGPoint(x: $0.0.midX, y: $0.0.midY)) }.map(\.1)
+            return (region.bounds, kind(of: region.bounds, evidence: held, in: page))
+        }
+    }
+
+    /// A crop's kind from the evidence of the seeds it holds (`classifiedGraphics`).
+    private static func kind(of crop: CGRect, evidence: [SeedEvidence], in page: PageContent) -> PreservedImageKind {
+        if evidence.contains(.table) { return .table }
+        if evidence.contains(.listing) { return .listing }
+        if evidence.contains(.art) { return .artwork }
+        let held = page.lines.filter { crop.intersects($0.rect) }
+        guard !held.isEmpty else { return .artwork }
+        // A displayed formula line makes the crop mathematics, whatever annotates it: Wallace's
+        // worked examples set `Subtract 7 from both sides` beside each step, and its rules are
+        // stated in words before the formula (`Zero Power Rule of Exponents: a0 = 1`).
+        if evidence.contains(.formula) { return .equation }
+        // Marks alone decide nothing, so the lines do. A line of prose reads as words over at
+        // least eight tokens: a word problem's line can, a fraction's `35 Our Solution` cannot. A
+        // crop at least half of whose lines are prose holds text: a word problem whose inline
+        // mixed number seeded a crop (Wallace page 369), or a reference entry over the bare DOI
+        // fragment whose underline reads as a fraction bar (NOAA's reference lists).
+        let prose = held.filter { isWordy($0.text) && $0.text.split(whereSeparator: \.isWhitespace).count >= 8 }.count
+        return prose * 2 >= held.count ? .text : .equation
     }
 
     struct Element {
@@ -3437,7 +3516,9 @@ enum LayoutReconstructor {
                        continuesNote: Bool = false,
                        labelStyles: Set<LabelStyle> = [], headingStyles: Set<LabelStyle> = [],
                        neighbouringMarkers: [PageMarker] = [],
-                       slideDeck: Bool = false) -> [ReflowBlock] {
+                       slideDeck: Bool = false,
+                       imageKinds: [String: PreservedImageKind] = [:],
+                       imageCaptions: [String: String] = [:]) -> [ReflowBlock] {
         let body = max(4, bodySize(page.lines))
         // A rotated stamp in the outer margin is furniture, never content or a heading.
         let stamps = rotatedMarginLines(page)
@@ -4320,7 +4401,9 @@ enum LayoutReconstructor {
                 flushTagged()
                 flush()
                 codeOrigin = nil
-                result.append(imageBlock(assetID: path, page: page.number))
+                result.append(imageBlock(assetID: path, page: page.number,
+                                         kind: imageKinds[path] ?? .artwork,
+                                         sourceCaption: imageCaptions[path] ?? ""))
                 continue
             }
             if let index = element.table {
@@ -4708,9 +4791,19 @@ enum LayoutReconstructor {
         return ReflowBlock.Table(columns: table.columns, rows: rows, caption: caption)
     }
 
-    static func imageBlock(assetID: String, page: Int, reference: Bool = false) -> ReflowBlock {
-        let caption = reference ? "Original page \(page)" : "Preserved region from page \(page)"
-        return ReflowBlock(content: .image(.init(assetID: assetID, alternativeText: caption, caption: caption)), page: page)
+    /// A preserved image with alternative text that says what it holds and provenance kept out of
+    /// it (#187). `sourceCaption` is the caption the page itself prints for this figure, which
+    /// describes it better than any kind can; it is empty for every crop the converter cannot
+    /// pair with one, and it stays in the reading text as its own block either way.
+    static func imageBlock(assetID: String, page: Int, kind: PreservedImageKind = .artwork,
+                           sourceCaption: String = "") -> ReflowBlock {
+        let provenance = switch kind {
+        case .sourcePage, .page: "Source page \(page)"
+        default: "Preserved region from page \(page)"
+        }
+        let alternative = sourceCaption.isEmpty ? kind.alternativeText : sourceCaption
+        return ReflowBlock(content: .image(.init(assetID: assetID, alternativeText: alternative,
+                                                 provenance: provenance)), page: page)
     }
 
     /// Preserve the source boundary inside a continuing paragraph, without a format-specific marker.
@@ -5212,6 +5305,95 @@ enum LayoutReconstructor {
 
     private static func isCaption(_ text: String) -> Bool {
         text.range(of: "^(?:Figure|Table)\\s+[0-9]", options: .regularExpression) != nil
+    }
+
+    /// The label a printed caption opens with (`Figure 3.2`, `Fig. 1`, `TABLE I`, `Algorithm 2`),
+    /// or nil where the line opens no caption (#187). Wider than `isCaption`, which decides what
+    /// carries body text and must stay tight: this only chooses alternative text, and the corpus
+    /// prints its captions in all of these forms.
+    static func captionLabel(_ text: String) -> String? {
+        let trimmed = text.trimmingCharacters(in: .whitespaces)
+        let pattern = "^(?:figure|fig\\.|table|plate|chart|exhibit|map|algorithm|listing|box)"
+            + "\\s+(?:[A-Z]?[0-9]+(?:[-\u{2013}.][0-9]+)*|[IVXLCDM]{1,6})(?![A-Za-z0-9])"
+        guard let range = trimmed.range(of: pattern, options: [.regularExpression, .caseInsensitive]) else {
+            return nil
+        }
+        return String(trimmed[range])
+    }
+
+    /// A printed caption shortened for alternative text (#187): whole up to 200 characters,
+    /// otherwise its sentences that fit (the FAA's `Figure 11-3. Field elevation versus pressure.`
+    /// before three sentences of worked example), or its words that fit and an ellipsis.
+    static func alternativeText(caption: String) -> String {
+        let limit = 200
+        guard caption.count > limit else { return caption }
+        let head = String(caption.prefix(limit))
+        let label = captionLabel(caption)?.count ?? 0
+        if let end = head.ranges(of: /[.!?](?=\s)/).last?.upperBound,
+           head.distance(from: head.startIndex, to: end) > label + 1 {
+            return String(head[..<end])
+        }
+        let words = head.split(separator: " ", omittingEmptySubsequences: true).dropLast()
+        return words.joined(separator: " ") + "\u{2026}"
+    }
+
+    /// The caption a page prints for each crop, where the page leaves no doubt which crop it
+    /// names (#187): exactly one caption stands directly against the crop and that caption stands
+    /// directly against no other crop. Keyed by the crop's rectangle.
+    ///
+    /// A caption is the line opening with a printed label, outside every crop, within one and a
+    /// half body sizes above or below the crop and overlapping its measure, together with the
+    /// lines set directly beneath it in its own type (the rest of the caption's sentence). Where
+    /// two crops or two captions compete the page says nothing reliable, so the crop keeps its
+    /// kind: #27 records that adjacency proves pairing survived, never that a pairing is right,
+    /// and the magazine sets one caption above its photograph and another beside a second.
+    static func sourceCaptions(for regions: [CGRect], in page: PageContent) -> [CGRect: String] {
+        guard !regions.isEmpty else { return [:] }
+        let body = max(4, bodySize(page.lines))
+        let candidates = page.lines.filter { line in
+            captionLabel(line.text) != nil && !regions.contains { region in region.intersects(line.rect) }
+        }
+        guard !candidates.isEmpty else { return [:] }
+        func against(_ line: TextLine, _ region: CGRect) -> Bool {
+            let overlap = min(line.rect.maxX, region.maxX) - max(line.rect.minX, region.minX)
+            guard overlap > 0 else { return false }
+            let below = region.minY - line.rect.maxY
+            let above = line.rect.minY - region.maxY
+            return (below >= -1 && below <= body * 1.5) || (above >= -1 && above <= body * 1.5)
+        }
+        var pairs: [CGRect: TextLine] = [:]
+        for region in regions {
+            let touching = candidates.filter { against($0, region) }
+            guard touching.count == 1, let caption = touching.first,
+                  regions.filter({ against(caption, $0) }).count == 1 else { continue }
+            pairs[region] = caption
+        }
+        return pairs.mapValues { caption in
+            var text = caption.text.trimmingCharacters(in: .whitespaces)
+            // The caption's own wrapped lines: set directly beneath it at the caption's own tight
+            // leading, in its type, within its measure. A section title or the body text after a
+            // caption stands further off (the Word paper's `Data Acquisition`, 6.1 points under
+            // Figure 1's second line where its lines stand 0.5 apart) and ends the caption, as
+            // does a smaller credit line (TechPort's 8.2-point description under the 9-point lines
+            // of `Figure 1: essential signal chain of the MPG technology`). PDFKit sizes a line by
+            // its first run, so a caption whose bold label is set a point smaller reads a point
+            // under its own wrapped lines (the FAA's 8-point `Figure 12-5. …` over 9-point `the
+            // Earth.`): a wrapped line may stand a point from the caption's first line, and no
+            // more than half a point under the line before it.
+            let beneath = page.lines.filter { line in
+                abs(line.fontSize - caption.fontSize) <= 1 && line.rect.maxY < caption.rect.minY + line.rect.height * 0.5
+                    && line.rect.minX >= caption.rect.minX - body && line.rect.minX < caption.rect.maxX
+                    && captionLabel(line.text) == nil && !regions.contains { $0.intersects(line.rect) }
+            }.sorted { $0.rect.maxY > $1.rect.maxY }
+            var floor = caption.rect.minY, size = caption.fontSize
+            for line in beneath {
+                guard floor - line.rect.maxY <= caption.fontSize * 0.4, line.fontSize >= size - 0.5 else { break }
+                text += " " + line.text.trimmingCharacters(in: .whitespaces)
+                floor = line.rect.minY
+                size = line.fontSize
+            }
+            return alternativeText(caption: text.trimmingCharacters(in: .whitespaces))
+        }
     }
 
     /// An Arabic page number (optionally prefixed by its chapter's number or its part's letter,

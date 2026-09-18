@@ -215,8 +215,10 @@ do not establish general textbook fidelity. Untagged borderless tables, arbitrar
 magazine layouts, footnote relationships, vertical/RTL reading order, and damaged font encodings
 still need broader qualification. The detector cannot identify every difficult region. Fonts,
 original colors, full tagged-PDF semantics, links and interactive elements are not reproduced.
-Cropped text is neither reflowable nor accessible as text; generic image descriptions identify
-its source page rather than inventing a description of the picture. Review warnings and compare
+Cropped text is neither reflowable nor accessible as text. A preserved image's alternative text is
+the caption the source prints beside it, or else the kind of content its evidence shows (an
+illustration, a mathematical expression, a table or text kept as an image); it never invents a
+description of the picture, and its source page is in its `title`. Review warnings and compare
 the source before distributing a derived book. [Architecture](doc/architecture.md) describes
 the internal seams and extension points.
 
@@ -230,7 +232,7 @@ automatic downloads. `scripts/check-all.sh --fast` remains the offline synthetic
 converts each fixture twice and requires byte-identical EPUBs).
 Python tool tests and the source-region, glyph-structure and image-appearance checks require numpy
 and Pillow. Poppler is needed only to render new region references. The reviewed contracts hold
-<!-- counts:contract-summary -->3395 checks on 559 pages of 22 documents<!-- counts:end -->, including full-resolution stroke checks for equations and a
+<!-- counts:contract-summary -->3417 checks on 560 pages of 22 documents<!-- counts:end -->, including full-resolution stroke checks for equations and a
 table, scale/contrast/color checks for a flag and an FAA figure, and <!-- counts:table-cell-checks -->9<!-- counts:end --> cell checks on tables
 emitted as text. See [regression testing](doc/regression-testing.md) for coverage, limitations and
 adding a case.

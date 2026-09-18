@@ -364,14 +364,17 @@ enum PDFReflowLibPipeline {
                         && ($0.rect.width > 4.01 || $0.rect.height > 4.01)
                         && !graphics.inlineImages.contains($0.rect)
                 }
-                let grown: [CGRect]? = try autoreleasepool {
+                let grown: [(rect: CGRect, display: Bool)]? = try autoreleasepool {
                     guard let reference = try document.page(at: i).pageRef,
                           let ink = ScanEvidenceRegions.inkMap(reference, bounds: bounds) else { return nil }
-                    return ScanEvidenceRegions.regions(evidence: graphics.inlineImages, lines: content.lines,
-                                                       bounds: bounds, ink: ink)
+                    return ScanEvidenceRegions.classifiedRegions(evidence: graphics.inlineImages, lines: content.lines,
+                                                                 bounds: bounds, ink: ink)
                 }
                 if let grown {
-                    retainedGraphics = TintDetector.compose(paints, lines: content.lines, bounds: bounds).graphics + grown
+                    retainedGraphics = TintDetector.compose(paints, lines: content.lines, bounds: bounds).graphics
+                        + grown.map(\.rect)
+                    content.graphicKinds = Dictionary(grown.filter(\.display).map { ($0.rect, .equation) },
+                                                      uniquingKeysWith: { first, _ in first })
                 } else {
                     // A figure that cannot be grown whole is never cropped in pieces.
                     content.requiresPageImage = true
@@ -488,6 +491,8 @@ enum PDFReflowLibPipeline {
                         content.hasSyntheticTextStyle = false
                         content.preservePageReference = content.preservePageReference || !recognized.lines.isEmpty
                         content.graphics = recognized.tables
+                        content.graphicKinds = Dictionary(recognized.tables.map { ($0, .table) },
+                                                          uniquingKeysWith: { first, _ in first })
                         content.tints = []
                         content.separators = []
                         content.requiresPageImage = recognized.lines.isEmpty
@@ -617,15 +622,24 @@ enum PDFReflowLibPipeline {
                 var pageBlocks: [ReflowBlock]
                 if content.requiresPageImage {
                     let path = try saveImage(content.bounds, fullPage: true, rotate: true)
-                    pageBlocks = [LayoutReconstructor.imageBlock(assetID: path, page: i + 1)]
+                    pageBlocks = [LayoutReconstructor.imageBlock(assetID: path, page: i + 1, kind: .page)]
                     warnings.append(.init(code: .pageImageFallback, page: i + 1,
                         message: "This page is preserved as an image and does not reflow."))
                 } else {
                     var images: [(CGRect, String)] = []
-                    for rect in LayoutReconstructor.graphicsWithLabels(content) {
-                        images.append((rect, try saveImage(rect)))
+                    var imageKinds: [String: PreservedImageKind] = [:]
+                    let classified = LayoutReconstructor.classifiedGraphics(content)
+                    for (rect, kind) in classified {
+                        let assetID = try saveImage(rect)
+                        images.append((rect, assetID))
+                        imageKinds[assetID] = kind
                     }
                     regions = images.map(\.0)
+                    // The caption the page prints beside a crop describes it better than its kind
+                    // can (#187); it stays in the reading text as its own block either way.
+                    let captioned = LayoutReconstructor.sourceCaptions(for: regions, in: content)
+                    let imageCaptions = Dictionary(uniqueKeysWithValues:
+                        images.compactMap { rect, assetID in captioned[rect].map { (assetID, $0) } })
                     if !images.isEmpty {
                         warnings.append(.init(code: .imageRegion, page: i + 1,
                             message: "Graphical regions retain source appearance as images; their internal text does not reflow."))
@@ -644,7 +658,7 @@ enum PDFReflowLibPipeline {
                         continuesNote: previousPage != nil && blocks.last?.isFootnote == true,
                         labelStyles: labelStyles, headingStyles: headingStyles,
                         neighbouringMarkers: (listMarkers[content.number - 1] ?? []) + (listMarkers[content.number + 1] ?? []),
-                        slideDeck: slideDeck)
+                        slideDeck: slideDeck, imageKinds: imageKinds, imageCaptions: imageCaptions)
                     if pageBlocks.contains(where: \.hasReflowedText) {
                         reflowed += 1
                     }
@@ -653,7 +667,7 @@ enum PDFReflowLibPipeline {
                         || (options.referenceImages == .automatic && content.preservePageReference)
                     if includeReference {
                         pageBlocks.append(LayoutReconstructor.imageBlock(assetID: try saveImage(content.bounds, fullPage: true),
-                            page: i + 1, reference: true))
+                            page: i + 1, kind: .sourcePage))
                         warnings.append(.init(code: .imageRegion, page: i + 1,
                             message: "A source-page reference image accompanies reflowed text to preserve all visual content."))
                     } else if content.preservePageReference {

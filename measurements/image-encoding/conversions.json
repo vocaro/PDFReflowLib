@@ -1,0 +1,435 @@
+{
+  "arxiv-replay-clocks-2023": {
+    "case": "arxiv-replay-clocks-2023",
+    "conversionReport": {
+      "imageCount": 34,
+      "pageCount": 12,
+      "recognizedPageCount": 0,
+      "reflowedPageCount": 12,
+      "seconds": 1.07
+    },
+    "entryBytes": 1018796,
+    "epubBytes": 951935,
+    "measuredImages": 34,
+    "options": [],
+    "pdf": "2311.07842v1.pdf",
+    "warningCodes": [
+      "annotationsNotConverted",
+      "furnitureRemoved",
+      "imageRegion",
+      "uncertainHyphen"
+    ]
+  },
+  "cdc-zombie-pandemic-2011": {
+    "case": "cdc-zombie-pandemic-2011",
+    "conversionReport": {
+      "imageCount": 42,
+      "pageCount": 42,
+      "recognizedPageCount": 36,
+      "reflowedPageCount": 38,
+      "seconds": 13.35
+    },
+    "entryBytes": 130465803,
+    "epubBytes": 130205211,
+    "measuredImages": 42,
+    "options": [],
+    "pdf": "cdc_6023_DS1.pdf",
+    "warningCodes": [
+      "annotationsNotConverted",
+      "imageRegion",
+      "implausibleTextLayer",
+      "ocrUsed",
+      "pageImageFallback",
+      "unverifiedTextLayer"
+    ]
+  },
+  "census-rrs2002-01": {
+    "case": "census-rrs2002-01",
+    "conversionReport": {
+      "imageCount": 51,
+      "pageCount": 20,
+      "recognizedPageCount": 17,
+      "reflowedPageCount": 20,
+      "seconds": 6.08
+    },
+    "entryBytes": 5631572,
+    "epubBytes": 4989426,
+    "measuredImages": 51,
+    "options": [],
+    "pdf": "rrs2002-01.pdf",
+    "warningCodes": [
+      "damagedTextEncoding",
+      "imageRegion",
+      "ocrUsed",
+      "uncertainHyphen"
+    ]
+  },
+  "cia-blue-book-14-1955": {
+    "case": "cia-blue-book-14-1955",
+    "conversionReport": {
+      "imageCount": 424,
+      "pageCount": 312,
+      "recognizedPageCount": 0,
+      "reflowedPageCount": 312,
+      "seconds": 50.43
+    },
+    "entryBytes": 199016836,
+    "epubBytes": 191880009,
+    "measuredImages": 424,
+    "options": [],
+    "pdf": "CIA-UAP-015-Project_Blue_Book_Special_Report_No_14.pdf",
+    "warningCodes": [
+      "furnitureRemoved",
+      "imageRegion",
+      "structureFallback",
+      "unverifiedTextLayer"
+    ]
+  },
+  "dga-2025-2030": {
+    "case": "dga-2025-2030",
+    "conversionReport": {
+      "imageCount": 37,
+      "pageCount": 10,
+      "recognizedPageCount": 0,
+      "reflowedPageCount": 10,
+      "seconds": 0.77
+    },
+    "entryBytes": 4862321,
+    "epubBytes": 4748537,
+    "measuredImages": 37,
+    "options": [],
+    "pdf": "DGA.pdf",
+    "warningCodes": [
+      "furnitureRemoved",
+      "imageRegion",
+      "structureFallback",
+      "unverifiedTextLayer"
+    ]
+  },
+  "faa-phak-8083-25c": {
+    "case": "faa-phak-8083-25c",
+    "conversionReport": {
+      "imageCount": 567,
+      "pageCount": 522,
+      "recognizedPageCount": 0,
+      "reflowedPageCount": 505,
+      "seconds": 47.45
+    },
+    "entryBytes": 217601152,
+    "epubBytes": 215478808,
+    "measuredImages": 567,
+    "options": [],
+    "pdf": "faa-h-8083-25c.pdf",
+    "warningCodes": [
+      "annotationsNotConverted",
+      "furnitureRemoved",
+      "imageRegion",
+      "pageImageFallback",
+      "structureFallback",
+      "uncertainHyphen",
+      "unsupportedGraphics",
+      "unverifiedTextLayer"
+    ]
+  },
+  "fed-explained-2021": {
+    "case": "fed-explained-2021",
+    "conversionReport": {
+      "imageCount": 57,
+      "pageCount": 135,
+      "recognizedPageCount": 1,
+      "reflowedPageCount": 129,
+      "seconds": 5.66
+    },
+    "entryBytes": 28371551,
+    "epubBytes": 27880288,
+    "measuredImages": 57,
+    "options": [],
+    "pdf": "the-fed-explained.pdf",
+    "warningCodes": [
+      "annotationsNotConverted",
+      "furnitureRemoved",
+      "imageRegion",
+      "ocrUsed",
+      "structureFallback",
+      "uncertainHyphen",
+      "unverifiedTextLayer"
+    ]
+  },
+  "gpo-911-2004": {
+    "case": "gpo-911-2004",
+    "conversionReport": {
+      "imageCount": 50,
+      "pageCount": 585,
+      "recognizedPageCount": 0,
+      "reflowedPageCount": 577,
+      "seconds": 13.34
+    },
+    "entryBytes": 8229748,
+    "epubBytes": 6446484,
+    "measuredImages": 50,
+    "options": [],
+    "pdf": "GPO-911REPORT.pdf",
+    "warningCodes": [
+      "annotationsNotConverted",
+      "furnitureRemoved",
+      "imageRegion",
+      "uncertainHyphen"
+    ]
+  },
+  "gpo-our-flag-2003": {
+    "case": "gpo-our-flag-2003",
+    "conversionReport": {
+      "imageCount": 123,
+      "pageCount": 56,
+      "recognizedPageCount": 2,
+      "reflowedPageCount": 55,
+      "seconds": 1.92
+    },
+    "entryBytes": 11628484,
+    "epubBytes": 11510890,
+    "measuredImages": 123,
+    "options": [],
+    "pdf": "CDOC-108hdoc97.pdf",
+    "warningCodes": [
+      "annotationsNotConverted",
+      "imageRegion",
+      "ocrUsed",
+      "pageImageFallback",
+      "structureFallback",
+      "uncertainHyphen",
+      "unverifiedTextLayer"
+    ]
+  },
+  "gpo-warren-1964": {
+    "case": "gpo-warren-1964",
+    "conversionReport": {
+      "imageCount": 932,
+      "pageCount": 920,
+      "recognizedPageCount": 17,
+      "reflowedPageCount": 910,
+      "seconds": 406.44
+    },
+    "entryBytes": 1114309483,
+    "epubBytes": 1112804678,
+    "measuredImages": 932,
+    "options": [],
+    "pdf": "GPO-WARRENCOMMISSIONREPORT.pdf",
+    "warningCodes": [
+      "annotationsNotConverted",
+      "furnitureRemoved",
+      "imageRegion",
+      "implausibleTextLayer",
+      "ocrUsed",
+      "pageImageFallback",
+      "uncertainHyphen",
+      "unverifiedTextLayer"
+    ]
+  },
+  "nbs-jres-geltman-1977": {
+    "case": "nbs-jres-geltman-1977",
+    "conversionReport": {
+      "imageCount": 42,
+      "pageCount": 7,
+      "recognizedPageCount": 0,
+      "reflowedPageCount": 7,
+      "seconds": 2.05
+    },
+    "entryBytes": 6873854,
+    "epubBytes": 6777626,
+    "measuredImages": 42,
+    "options": [],
+    "pdf": "jresv82n3p173_A1b.pdf",
+    "warningCodes": [
+      "furnitureRemoved",
+      "imageRegion",
+      "uncertainHyphen",
+      "unverifiedTextLayer"
+    ]
+  },
+  "noaa-nca5-2023": {
+    "case": "noaa-nca5-2023",
+    "conversionReport": {
+      "imageCount": 1548,
+      "pageCount": 1834,
+      "recognizedPageCount": 0,
+      "reflowedPageCount": 1824,
+      "seconds": 127.54
+    },
+    "entryBytes": 510379696,
+    "epubBytes": 502665353,
+    "measuredImages": 1548,
+    "options": [],
+    "pdf": "noaa_61592_DS1.pdf",
+    "warningCodes": [
+      "annotationsNotConverted",
+      "furnitureRemoved",
+      "imageRegion",
+      "pageImageFallback",
+      "structureFallback",
+      "uncertainHyphen",
+      "unsupportedGraphics",
+      "unverifiedTextLayer"
+    ]
+  },
+  "ntrs-20180003024-earthdata-slides-2018": {
+    "case": "ntrs-20180003024-earthdata-slides-2018",
+    "conversionReport": {
+      "imageCount": 22,
+      "pageCount": 21,
+      "recognizedPageCount": 0,
+      "reflowedPageCount": 20,
+      "seconds": 0.78
+    },
+    "entryBytes": 3187642,
+    "epubBytes": 2989202,
+    "measuredImages": 22,
+    "options": [],
+    "pdf": "20180003024.pdf",
+    "warningCodes": [
+      "furnitureRemoved",
+      "imageRegion"
+    ]
+  },
+  "ntrs-20190030725-dasc-2019": {
+    "case": "ntrs-20190030725-dasc-2019",
+    "conversionReport": {
+      "imageCount": 28,
+      "pageCount": 10,
+      "recognizedPageCount": 0,
+      "reflowedPageCount": 10,
+      "seconds": 0.64
+    },
+    "entryBytes": 950706,
+    "epubBytes": 874291,
+    "measuredImages": 28,
+    "options": [],
+    "pdf": "20190030725.pdf",
+    "warningCodes": [
+      "furnitureRemoved",
+      "imageRegion",
+      "uncertainHyphen"
+    ]
+  },
+  "ntrs-20200002975-gwl-2020": {
+    "case": "ntrs-20200002975-gwl-2020",
+    "conversionReport": {
+      "imageCount": 31,
+      "pageCount": 20,
+      "recognizedPageCount": 0,
+      "reflowedPageCount": 20,
+      "seconds": 0.95
+    },
+    "entryBytes": 6232295,
+    "epubBytes": 6119115,
+    "measuredImages": 31,
+    "options": [],
+    "pdf": "20200002975.pdf",
+    "warningCodes": [
+      "annotationsNotConverted",
+      "imageRegion",
+      "structureFallback",
+      "uncertainHyphen"
+    ]
+  },
+  "ntrs-20210020887-techport-thm-2021": {
+    "case": "ntrs-20210020887-techport-thm-2021",
+    "conversionReport": {
+      "imageCount": 37,
+      "pageCount": 5,
+      "recognizedPageCount": 0,
+      "reflowedPageCount": 5,
+      "seconds": 0.31
+    },
+    "entryBytes": 1051220,
+    "epubBytes": 996467,
+    "measuredImages": 37,
+    "options": [],
+    "pdf": "THM-Close-Out-Report-and-Exec-Summ-for-STI-Review.pdf",
+    "warningCodes": [
+      "annotationsNotConverted",
+      "imageRegion"
+    ]
+  },
+  "uscourts-pro-se-1-2016": {
+    "case": "uscourts-pro-se-1-2016",
+    "conversionReport": {
+      "imageCount": 21,
+      "pageCount": 5,
+      "recognizedPageCount": 0,
+      "reflowedPageCount": 5,
+      "seconds": 0.18
+    },
+    "entryBytes": 28129,
+    "epubBytes": 19132,
+    "measuredImages": 21,
+    "options": [],
+    "pdf": "complaint_for_a_civil_case.pdf",
+    "warningCodes": [
+      "annotationsNotConverted",
+      "furnitureRemoved",
+      "imageRegion"
+    ]
+  },
+  "usda-ars-agresearch-2012-11": {
+    "case": "usda-ars-agresearch-2012-11",
+    "conversionReport": {
+      "imageCount": 52,
+      "pageCount": 24,
+      "recognizedPageCount": 0,
+      "reflowedPageCount": 18,
+      "seconds": 5.84
+    },
+    "entryBytes": 38355404,
+    "epubBytes": 38208057,
+    "measuredImages": 52,
+    "options": [],
+    "pdf": "November-December2012.pdf",
+    "warningCodes": [
+      "annotationsNotConverted",
+      "furnitureRemoved",
+      "imageRegion",
+      "pageImageFallback",
+      "uncertainHyphen",
+      "unsupportedGraphics",
+      "unverifiedTextLayer"
+    ]
+  },
+  "usgs-mcs2025-copper": {
+    "case": "usgs-mcs2025-copper",
+    "conversionReport": {
+      "imageCount": 3,
+      "pageCount": 2,
+      "recognizedPageCount": 0,
+      "reflowedPageCount": 2,
+      "seconds": 0.2
+    },
+    "entryBytes": 353366,
+    "epubBytes": 333508,
+    "measuredImages": 3,
+    "options": [],
+    "pdf": "mcs2025-copper.pdf",
+    "warningCodes": [
+      "imageRegion"
+    ]
+  },
+  "wallace-algebra-2010": {
+    "case": "wallace-algebra-2010",
+    "conversionReport": {
+      "imageCount": 1975,
+      "pageCount": 489,
+      "recognizedPageCount": 0,
+      "reflowedPageCount": 479,
+      "seconds": 26.21
+    },
+    "entryBytes": 41471196,
+    "epubBytes": 38906177,
+    "measuredImages": 1975,
+    "options": [],
+    "pdf": "Beginning_and_Intermediate_Algebra.pdf",
+    "warningCodes": [
+      "furnitureRemoved",
+      "imageRegion",
+      "uncertainHyphen"
+    ]
+  }
+}

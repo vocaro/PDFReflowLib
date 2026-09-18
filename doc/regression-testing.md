@@ -115,7 +115,7 @@ are, in the page markup). Evidence and negative controls on real output are in
 ## Current content coverage
 
 <!-- counts:coverage -->
-[corpus/regressions.json](../corpus/regressions.json) has 3395 targeted checks on 559 reviewed pages
+[corpus/regressions.json](../corpus/regressions.json) has 3435 targeted checks on 562 reviewed pages
 across 22 documents: *Pilot's Handbook of Aeronautical Knowledge*, *Beginning and Intermediate
 Algebra*, *The 9/11 Commission Report*, *The Fed Explained*, *Dietary Guidelines for Americans*,
 *Fifth National Climate Assessment*, *Our Flag*, *Preparedness 101*, *Project Blue Book Special
@@ -125,10 +125,10 @@ Report No. 14*, *Mineral Commodity Summaries 2025*, *Loper Bright Enterprises v.
 Clocks*, *Complaint for a Civil Case*, *Investigation of Atmospheric Boundary-Layer Effects on
 Launch-Vehicle Ground Wind Loads*, *A Scheduling Algorithm Compatible with a Distributed Management
 of Arrivals in the National Airspace System*, *Agricultural Research*, *Earthdata Cloud Analytics
-Project* and *Tank Health Monitoring*. They comprise 1136 ordered-text, 242 text, 418 paragraph,
-291 absent-text, 271 heading, 36 heading-level, 50 absent-heading, 93 list-item,
-1 preformatted-lines, 29 script, 8 absent-script, 11 footnote, 34 note-link,
-61 paragraph-continuation, 1 list-item-continuation, 8 paragraph-separation, 99 distinct-paragraph,
+Project* and *Tank Health Monitoring*. They comprise 1136 ordered-text, 242 text, 404 paragraph,
+291 absent-text, 271 heading, 36 heading-level, 50 absent-heading, 88 list-item, 40 list,
+21 preformatted-block, 1 preformatted-lines, 29 script, 8 absent-script, 11 footnote, 34 note-link,
+61 paragraph-continuation, 1 list-item-continuation, 8 paragraph-separation, 97 distinct-paragraph,
 201 image-presence, 44 captioned-image, 102 page-reference, 113 warning, 111 absent-warning,
 17 source-region, 5 glyph-structure, 4 image-appearance and 9 table-cell checks, counted as
 `tools/check_corpus_content.py` counts them.
@@ -156,11 +156,25 @@ as paragraph text, and no element may carry the first on page N and the second o
 cross-page continuity in both directions, so a page folio that absorbs the next page's text fails
 the separation check while the body paragraph's own continuation check protects the real join.
 
-`listItems` and `continuedListItems` are the same two assertions for `<pre>` list items: one item
-element must hold a whole phrase, and one must end page N with the first phrase and carry the
-second on page N+1. Both read `<pre>` identities, which `continuedParagraphs` does not see, so a
-list item that regressed into a paragraph fails the list check rather than quietly satisfying the
-paragraph one. See the [list-continuation evidence](../measurements/list-continuations/record.md).
+`listItems` and `continuedListItems` are the same two assertions for list items (`<li>`, #194): one
+item element must hold a whole phrase, and one must end page N with the first phrase and carry the
+second on page N+1. Both read item identities, which `continuedParagraphs` does not see, so a list
+item that regressed into a paragraph or a `<pre>` fails the list check rather than quietly satisfying
+another one. An item's text excludes a list nested inside it. See the
+[list-continuation evidence](../measurements/list-continuations/record.md).
+
+`preformattedBlocks` names phrases one `<pre>` block on the page must hold whole: a list-shaped line the
+converter does not verify as a list item (an answer key's `1) 1− 3`, a lettered sub-item, a coded
+report) keeps its printed marker in a block of its own, and neither a list item nor a paragraph
+satisfies it.
+
+`lists` pins a list element: `{"kind": "ul" | "ol", "items": [...]}` with optional `start` (an `<ol>`'s
+first number, 1 when the element has none) and `level` (0 for a list outside any list). One list
+element of that kind, start and depth with an item opening on the page must hold the phrases in
+consecutive items, in order, so items that split into separate lists, flatten out of their parent
+item, lose their numbering or change order fail. Reading an EPUB also refuses a list element that
+holds anything but items, such as a page marker or a block, and reads a page marker that opens an
+item as starting that item's page ([real-list evidence](../measurements/real-lists/record.md)).
 
 `preformattedLines` names two or more lines that one `<pre>` block on the page must hold, each as a
 whole line of its own (its line breaks are read before whitespace is normalized) and in the order
@@ -605,7 +619,7 @@ the page's structure validates, each line also records the tag the pipeline appl
 since #89/#90); older fixtures and untagged lines have none, and `SourceLayoutFixture` restores it.
 Source review, baseline failures, cross-document safeguards and full-run evidence are retained
 in [the three-fix measurement](../measurements/three-fidelity-fixes/record.md). The suite contains
-<!-- counts:swift-tests -->920 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->242 Python tests<!-- counts:end -->.
+<!-- counts:swift-tests -->933 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->245 Python tests<!-- counts:end -->.
 The comparison tests include a real-Poppler image URL check through the safe HTTP handler
 (simple and positioned modes, paths with spaces); absent Poppler is an explicit skip.
 
@@ -1505,10 +1519,12 @@ Source-derived algebra page 26 checks both exponents in exercise 80. FAA pages 2
 independent V-speed subscript cases. Packaging tests protect inline page navigation, model
 immutability and counting style wrappers toward the spine body-size target.
 
-The corpus checker rejects flattened or misplaced scripts inside `<pre>`, including nested
-emphasis. Full-book contracts check both algebra exponents and four FAA V-speed subscripts in
+The corpus checker rejects flattened or misplaced scripts inside `<pre>` and list items, including
+nested emphasis. Full-book contracts check both algebra exponents and four FAA V-speed subscripts in
 source context. This preserves detected styles; it does not validate every script inference,
-repair exercise grouping, reconstruct semantic lists or establish chapter-scoped endnote links.
+repair exercise grouping or establish chapter-scoped endnote links. Verified bulleted and numbered
+runs are real lists (#194, [real-list record](../measurements/real-lists/record.md)); lettered,
+exercise, answer-key and reference entries are not yet (#195).
 See [the source review and complete corpus comparison](../measurements/preformatted-styles/record.md).
 
 ## Exercise and answer-key numbering

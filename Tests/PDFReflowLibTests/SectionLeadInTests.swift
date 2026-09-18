@@ -110,9 +110,11 @@ private func leadInPage(label: String = "Substitutes:", rest: String = " Aluminu
 /// continuation (#111): `faa-211`'s `White arc` definition ends the left column at `…the maximum flap`
 /// and continues at the right column's head (`speed. Approaches and landings…`), and `faa-212`'s left
 /// column ends `…enter the pitot system. Air` and continues `already in the system vents…` (18, 7 → 17, 6
-/// and 19, 9 → 18, 8).
+/// and 19, 9 → 18, 8). `faa-211` loses one more paragraph to its list (#194): `Most flying occurs within
+/// this range.` is the wrapped line of `• Green arc—the normal operating range of the aircraft.`, on the
+/// hanging indent the page's other bullets wrap to (17, 6 → 16, 5).
 @Test func sourceControlPagesKeepEveryBlockBoundary() throws {
-    for (name, expected) in [("faa-211", (17, 6, 0)), ("faa-212", (18, 8, 0)), ("fed-32", (12, 10, 0)),
+    for (name, expected) in [("faa-211", (16, 5, 0)), ("faa-212", (18, 8, 0)), ("fed-32", (12, 10, 0)),
                              ("flag-27", (13, 9, 0)), ("algebra-289", (34, 34, 0)), ("loper-60", (6, 5, 1))] {
         let page = try SourceLayoutFixture.load(name).styledContent()
         let blocks = leadInBlocks(page)

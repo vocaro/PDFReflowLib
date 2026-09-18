@@ -16,6 +16,7 @@ def synthetic_regressions():
         'text': ['alpha', 'beta'], 'orderedText': ['alpha', 'beta', 'gamma'],
         'absentText': ['zeta'], 'headings': ['Alpha'], 'absentHeadings': ['7'],
         'paragraphs': ['alpha'], 'listItems': ['one'], 'preformattedLines': [['a b', 'c d']],
+        'lists': [{'kind': 'ol', 'start': 2, 'items': ['one']}], 'preformattedBlocks': ['1) 5'],
         'notes': ['note'], 'distinctParagraphs': [{'first': 'alpha', 'second': 'beta'}],
         'noteLinks': [{'marker': '1', 'before': 'alpha', 'note': 'note'}],
         'continuedParagraphs': [{'end': 'end', 'next': 'next'}],
@@ -49,7 +50,7 @@ class ContractCountTests(unittest.TestCase):
         self.assertEqual(totals['pages'], 3)
         by_assess = sum(assessed_checks(c, 3) for c in contracts if c['pages'])
         self.assertEqual(totals['checks'], by_assess)
-        self.assertEqual(totals['checks'], 26)
+        self.assertEqual(totals['checks'], 28)
         self.assertEqual(totals['byType']['image-presence'], 3)
         self.assertEqual(totals['byType']['heading'], 3)
         self.assertEqual(totals['byType']['source-region'], 0)

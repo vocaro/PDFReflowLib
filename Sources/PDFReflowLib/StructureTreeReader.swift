@@ -7,6 +7,12 @@ enum StructureTreeReader {
         var pages: [Int: [Int: TextStructure]] = [:]
         // Paths through root K (-1 means dictionary K; nonnegative means array index).
         var owners: [Int: [Int: [Int]]] = [:]
+        /// Marked content inside a tagged list item (`L`, `LI`, `Lbl`, `LBody`, #194), by page and
+        /// MCID, with the owners that validate it. List roles form no paragraph group, so this
+        /// content is still reconstructed spatially (and still reported as a structure
+        /// fallback); the tags annotate its lines with the list, item, depth and label.
+        var listTags: [Int: [Int: ListTag]] = [:]
+        var listOwners: [Int: [Int: [Int]]] = [:]
         var present = false
         var rejected = false
     }
@@ -35,6 +41,12 @@ enum StructureTreeReader {
         var result = Index(present: true)
         var operations = 0
         var groupCounter = 0
+        var listCounter = 0
+        /// The `L` elements enclosing the walk, outermost first.
+        var listDepth: [Int] = []
+        /// Lists implied by `LI` elements set directly in another element, by that element.
+        var parentLists: [UInt: Int] = [:]
+        var itemCounter = 0
         var order = 0
 
         init(document: CGPDFDocument, root: CGPDFDictionaryRef) {
@@ -59,7 +71,7 @@ enum StructureTreeReader {
                 }
             }
             if let kids = object(root, "K") {
-                try walk(kids, parent: root, page: nil, group: nil, allowed: true, depth: 0, path: [], parentPath: [])
+                try walk(kids, parent: root, page: nil, group: nil, list: nil, allowed: true, depth: 0, path: [], parentPath: [])
             }
             for page in result.pages.keys {
                 result.pages[page] = result.pages[page]?.filter { !rejectedGroups.contains($0.value.group) }
@@ -78,13 +90,13 @@ enum StructureTreeReader {
             return role
         }
         func walk(_ value: CGPDFObjectRef, parent: CGPDFDictionaryRef, page: Int?, group: TextStructure?,
-                  allowed: Bool, depth: Int, path: [Int], parentPath: [Int]) throws {
+                  list: ListTag?, allowed: Bool, depth: Int, path: [Int], parentPath: [Int]) throws {
             try step(depth)
             switch CGPDFObjectGetType(value) {
             case .integer:
                 var id: CGPDFInteger = 0
                 guard CGPDFObjectGetValue(value, .integer, &id) else { throw Invalid.tree }
-                try reference(id, page: page, group: group, ownerPath: parentPath)
+                try reference(id, page: page, group: group, list: list, ownerPath: parentPath)
             case .array:
                 var kids: CGPDFArrayRef?
                 guard CGPDFObjectGetValue(value, .array, &kids), let kids,
@@ -92,7 +104,7 @@ enum StructureTreeReader {
                 for i in 0..<CGPDFArrayGetCount(kids) {
                     var child: CGPDFObjectRef?
                     guard CGPDFArrayGetObject(kids, i, &child), let child else { throw Invalid.tree }
-                    try walk(child, parent: parent, page: page, group: group, allowed: allowed, depth: depth + 1, path: path + [i], parentPath: parentPath)
+                    try walk(child, parent: parent, page: page, group: group, list: list, allowed: allowed, depth: depth + 1, path: path + [i], parentPath: parentPath)
                 }
             case .dictionary:
                 var dict: CGPDFDictionaryRef?
@@ -108,7 +120,7 @@ enum StructureTreeReader {
                     guard object(dict, "Stm") == nil, let id = integer(dict, "MCID") else {
                         reject(group); return
                     }
-                    try reference(id, page: localPage, group: group, ownerPath: parentPath)
+                    try reference(id, page: localPage, group: group, list: list, ownerPath: parentPath)
                     return
                 }
                 if name(dict, "Type") == "OBJR" { reject(group); return }
@@ -126,9 +138,35 @@ enum StructureTreeReader {
                 } else if !(group == nil ? containers.contains(role) : inline.contains(role)) {
                     reject(group); next = nil; childAllowed = false
                 }
-                if let kids = object(dict, "K") {
-                    try walk(kids, parent: dict, page: localPage, group: next, allowed: childAllowed, depth: depth + 1, path: path + [-1], parentPath: path)
+                // A list's roles still form no group, but they name the list, item, depth and label
+                // of the content beneath them. `list` is nil until an `LI`: an `L`'s own content
+                // outside any item belongs to no item.
+                var nextList = list
+                switch role {
+                case "L":
+                    listCounter += 1
+                    listDepth.append(listCounter)
+                case "LI":
+                    // An `LI` outside any `L` (Our Flag tags its folding steps as `Sect` > `LI`) is an
+                    // item of the list its parent element holds.
+                    itemCounter += 1
+                    let owner: Int
+                    if let open = listDepth.last { owner = open } else if let known = parentLists[UInt(bitPattern: parent.rawValue)] {
+                        owner = known
+                    } else {
+                        listCounter += 1
+                        owner = listCounter
+                        parentLists[UInt(bitPattern: parent.rawValue)] = owner
+                    }
+                    nextList = ListTag(list: owner, item: itemCounter, depth: max(0, listDepth.count - 1), label: false)
+                case "Lbl": nextList?.label = true
+                case "LBody": nextList?.label = false
+                default: break
                 }
+                if let kids = object(dict, "K") {
+                    try walk(kids, parent: dict, page: localPage, group: next, list: nextList, allowed: childAllowed, depth: depth + 1, path: path + [-1], parentPath: path)
+                }
+                if role == "L" { listDepth.removeLast() }
             case .null: break
             default: throw Invalid.tree
             }
@@ -137,7 +175,7 @@ enum StructureTreeReader {
             result.rejected = true
             if let group { rejectedGroups.insert(group.group) }
         }
-        func reference(_ id: Int, page: Int?, group: TextStructure?, ownerPath: [Int]) throws {
+        func reference(_ id: Int, page: Int?, group: TextStructure?, list: ListTag?, ownerPath: [Int]) throws {
             guard let page, id >= 0, id < 100_000,
                   references.insert("\(page):\(id)").inserted else { throw Invalid.tree }
             guard parentKeys[page] != nil else { throw Invalid.tree }
@@ -147,12 +185,16 @@ enum StructureTreeReader {
                 result.pages[page, default: [:]][id] = tag
                 result.owners[page, default: [:]][id] = ownerPath
             }
+            if let list {
+                result.listTags[page, default: [:]][id] = list
+                result.listOwners[page, default: [:]][id] = ownerPath
+            }
         }
     }
 
     /// Validate only this page's sparse ParentTree array in the caller's bounded page window.
     /// Resolving all such arrays in one CGPDFDocument can retain a quadratic number of null slots.
-    static func validates(_ tags: [Int: TextStructure], owners: [Int: [Int]], page: CGPDFPage) -> Bool {
+    static func validates<Tag>(_ tags: [Int: Tag], owners: [Int: [Int]], page: CGPDFPage) -> Bool {
         guard let pageDictionary = page.dictionary, let key = integer(pageDictionary, "StructParents"),
               let catalog = page.document?.catalog, let root = dictionary(catalog, "StructTreeRoot"),
               let parentTree = dictionary(root, "ParentTree"), let rootKids = object(root, "K") else { return false }

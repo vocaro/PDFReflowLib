@@ -229,3 +229,21 @@ private func element(_ text: String, x: Double, y: Double, width: Double) -> Lay
         #expect(text.filter { !$0.isWhitespace }.sorted() == characters)
     }
 }
+
+@Test func aBulletedItemWrapsAfterASentenceOnTheHangingIndentItsSiblingsWrapTo() {
+    // FAA page 211's `• Green arc—the normal operating range of the aircraft.` over `Most flying
+    // occurs within this range.` (#194): the page's other bullets wrap to the same indent, so the line
+    // continues its item although the marker line ends a sentence.
+    let lines = [line("• White arc—commonly referred to as the flap operating", x: 90, y: 700, width: 300),
+                 line("range since its lower limit represents the full flap", x: 103, y: 686, width: 290),
+                 line("• Green arc—the normal operating range of the aircraft.", x: 90, y: 672, width: 300),
+                 line("Most flying occurs within this range.", x: 103, y: 658, width: 200)]
+    #expect(items(blocks(page(lines))) == [
+        "• White arc—commonly referred to as the flap operating range since its lower limit represents the full flap",
+        "• Green arc—the normal operating range of the aircraft. Most flying occurs within this range."])
+    // Negative control: with no sibling wrapping to that indent, the line after a sentence opens a
+    // paragraph, as Loper Bright page 64's does beneath its lettered citation.
+    let alone = blocks(page([lines[2], lines[3]]))
+    #expect(items(alone) == ["• Green arc—the normal operating range of the aircraft."])
+    #expect(paragraphs(alone) == ["Most flying occurs within this range."])
+}

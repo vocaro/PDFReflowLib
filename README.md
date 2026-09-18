@@ -101,6 +101,8 @@ that fall back to images skip unused attributed-text decoding. Failures use
 - Validated PDF paragraph and H1–H6 tags supply grouping and heading levels. Complete tagged
   text groups can follow logical order inside spatial barriers. Unsupported or ambiguous tags
   report `structureFallback`; figures, lists, captions and OCR retain spatial reconstruction.
+  Tagged list items (`L`, `LI`, `Lbl`, `LBody`) are read as evidence of item boundaries, depth and
+  list identity.
   This is bounded tag support, not full tagged-PDF or accessibility reconstruction.
 - Soft hyphens are removed at wraps. A hard hyphen is removed only when the unbroken word occurs
   elsewhere in the book and there is no evidence of the corresponding compound. The remainder of
@@ -230,7 +232,7 @@ automatic downloads. `scripts/check-all.sh --fast` remains the offline synthetic
 converts each fixture twice and requires byte-identical EPUBs).
 Python tool tests and the source-region, glyph-structure and image-appearance checks require numpy
 and Pillow. Poppler is needed only to render new region references. The reviewed contracts hold
-<!-- counts:contract-summary -->3395 checks on 559 pages of 22 documents<!-- counts:end -->, including full-resolution stroke checks for equations and a
+<!-- counts:contract-summary -->3435 checks on 562 pages of 22 documents<!-- counts:end -->, including full-resolution stroke checks for equations and a
 table, scale/contrast/color checks for a flag and an FAA figure, and <!-- counts:table-cell-checks -->9<!-- counts:end --> cell checks on tables
 emitted as text. See [regression testing](doc/regression-testing.md) for coverage, limitations and
 adding a case.
@@ -285,7 +287,7 @@ together, then inspect every rendered page and rerun both suites.
 
 Reconstruction uses two custom in-memory Swift representations. `PageContent` holds positioned
 text, font/style evidence and graphic regions. `PDFReflowLibPipeline` turns these into a
-`ReflowDocument`: metadata, ordered paragraphs/headings/preformatted blocks, styled text runs,
+`ReflowDocument`: metadata, ordered paragraphs/headings/preformatted blocks/list items, styled text runs,
 source-page markers and image references. Images remain in temporary files; the model holds
 small asset records pointing to them. The spatial representation is released before writing.
 

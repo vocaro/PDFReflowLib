@@ -196,12 +196,20 @@ enum PDFReflowLibPipeline {
                         blanks: blanks, glyphDecodings: glyphDecodings, report: glyphReport),
                     graphics: graphics.regions)
                 content.blanks = blanks
-                if !requiresPageImage && !syntheticStyle && options.ocr != .always, let structure,
-                   let tags = structure.pages[i + 1], !tags.isEmpty,
-                   !(StructureTreeReader.validates(tags, owners: structure.owners[i + 1] ?? [:], page: reference)
-                     && MarkedTextReader.apply(tags, page: reference, lines: &content.lines)) {
-                    warnings.append(.init(code: .structureFallback, page: i + 1,
-                        message: "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups."))
+                if !requiresPageImage && !syntheticStyle && options.ocr != .always, let structure {
+                    let tags = structure.pages[i + 1] ?? [:]
+                    // Tagged list items annotate lines (#194); an unvalidated set is dropped silently,
+                    // since list roles form no groups whose fallback a warning would report.
+                    var listTags = structure.listTags[i + 1] ?? [:]
+                    if !listTags.isEmpty, !StructureTreeReader.validates(listTags,
+                        owners: structure.listOwners[i + 1] ?? [:], page: reference) { listTags = [:] }
+                    if !tags.isEmpty, !(StructureTreeReader.validates(tags, owners: structure.owners[i + 1] ?? [:], page: reference)
+                                       && MarkedTextReader.apply(tags, listTags: listTags, page: reference, lines: &content.lines)) {
+                        warnings.append(.init(code: .structureFallback, page: i + 1,
+                            message: "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups."))
+                    } else if tags.isEmpty, !listTags.isEmpty {
+                        _ = MarkedTextReader.apply([:], listTags: listTags, page: reference, lines: &content.lines)
+                    }
                 }
                 // Text the rendering never shows (beneath a later opaque image or fill, or wholly
                 // outside the clip) is not reflowed (#74, #85). After tag association, so a hidden
@@ -348,7 +356,10 @@ enum PDFReflowLibPipeline {
             if attemptsOCR { return (content, true, damagedEncoding, implausibleLayer, drawnText) }
             if damagedEncoding {
                 content.preservePageReference = true
-                for index in content.lines.indices { content.lines[index].structure = nil }
+                for index in content.lines.indices {
+                    content.lines[index].structure = nil
+                    content.lines[index].listTag = nil
+                }
             }
             // Inline images over an inherited OCR layer mark what recognition could not transcribe:
             // evidence for whole figures and display rows, not crops (#37). On such a page only the
@@ -385,7 +396,10 @@ enum PDFReflowLibPipeline {
                 // transcription whose tags (if any) cannot be trusted; visible native text drawn
                 // over a background image or tint keeps the roles `MarkedTextReader` validated.
                 if invisibleText {
-                    for index in content.lines.indices { content.lines[index].structure = nil }
+                    for index in content.lines.indices {
+                        content.lines[index].structure = nil
+                        content.lines[index].listTag = nil
+                    }
                 }
                 // A rule the page draws across its whole measure is furniture evidence, not art:
                 // *Agricultural Research* rules its running foot off under every column, and that
@@ -700,6 +714,9 @@ enum PDFReflowLibPipeline {
             return candidate.number
         }
         noteLinks.rescopedPages = rescoped
+        // Verified bulleted and numbered runs become real list items once every join and link is
+        // made; everything else list-shaped stays preformatted (#194).
+        ListBuilder.build(&blocks)
         let title = options.title ?? document.title
             ?? source.deletingPathExtension().lastPathComponent
         let reflowedDocument = ReflowDocument(metadata: .init(title: title.isEmpty ? "Untitled" : title,

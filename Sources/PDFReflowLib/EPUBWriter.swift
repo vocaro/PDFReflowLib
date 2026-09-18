@@ -54,6 +54,8 @@ enum EPUBWriter {
             switch block.content {
             case let .paragraph(text), let .preformatted(text):
                 for case let .noteReference(_, _, key) in text.elements { referenced.insert(key) }
+            case let .listItem(item):
+                for case let .noteReference(_, _, key) in item.text.elements { referenced.insert(key) }
             default: continue
             }
         }
@@ -120,6 +122,23 @@ enum EPUBWriter {
             // A heading waits for its following content before the document is closed.
             if bodyBytes + reservedBytes >= bodyTargetBytes, !keepsTrailingHeadings() { try finishChapter() }
         }
+        // The list element being written (#194). A list is packed as one unit, like a table: its
+        // items are buffered until a block that is not an item arrives, so a spine document never
+        // ends inside it. `levels` holds the element open at each depth.
+        var list: (markup: String, pages: [Int], links: Int, ids: [String],
+                   levels: [ReflowBlock.ListItem.Kind])?
+        func listTag(_ kind: ReflowBlock.ListItem.Kind) -> String { kind == .ordered ? "ol" : "ul" }
+        func opening(_ item: ReflowBlock.ListItem) -> String {
+            guard item.kind == .ordered else { return "<ul>" }
+            let start = item.ordinal ?? 1
+            return start == 1 ? "<ol>" : "<ol start=\"\(start)\">"
+        }
+        func flushList() throws {
+            guard let open = list else { return }
+            list = nil
+            let closing = open.levels.reversed().map { "</li></\(listTag($0))>" }.joined()
+            try append(open.markup + closing + "\n", sourcePages: open.pages, links: open.links, ids: open.ids)
+        }
         await progress(0)
         for (i, block) in book.blocks.enumerated() {
             try Task.checkCancellation()
@@ -127,12 +146,20 @@ enum EPUBWriter {
             if case let .sourcePage(number) = block.content {
                 // Consecutive boundaries describe empty source pages. Only the last boundary
                 // needs to travel with the following content; earlier ones can be packed normally.
+                // Inside a list an earlier boundary ends the open item, which may hold it; a list
+                // may contain only items.
                 if let pendingPage {
-                    try append(pendingPage.markup, sourcePages: [pendingPage.number], standaloneMarker: true)
+                    if list != nil {
+                        list!.markup += pendingPage.markup
+                        list!.pages.append(pendingPage.number)
+                    } else {
+                        try append(pendingPage.markup, sourcePages: [pendingPage.number], standaloneMarker: true)
+                    }
                 }
-                if book.chapterStartPages.contains(number) { trailingHeadings = nil; try finishChapter() }
+                if book.chapterStartPages.contains(number) { try flushList(); trailingHeadings = nil; try finishChapter() }
                 pendingPage = (number, EPUBTextEncoder.sourcePage(number))
             } else {
+                if case .listItem = block.content {} else { try flushList() }
                 var ids: [String] = []
                 var links = 0
                 // The first reference to a note carries the id its backlink targets.
@@ -166,6 +193,31 @@ enum EPUBWriter {
                     markup = "<h\(level) id=\"\(xml(id))\">\(payload)</h\(level)>\n"
                     heading = (id, block.text)
                 case .preformatted: markup = "<pre>\(payload)</pre>\n"
+                // A page boundary before an item opens the item: a list may contain only items.
+                case let .listItem(item):
+                    var open = list ?? (markup: "", pages: [], links: 0, ids: [], levels: [])
+                    let level = min(max(item.level, 0), open.levels.count)
+                    if open.levels.isEmpty || level == open.levels.count {
+                        open.markup += opening(item) + "<li>"
+                        open.levels.append(item.kind)
+                    } else {
+                        while open.levels.count > level + 1 {
+                            open.markup += "</li></\(listTag(open.levels.removeLast()))>"
+                        }
+                        if item.opensList || open.levels[level] != item.kind {
+                            open.markup += "</li></\(listTag(open.levels[level]))>" + opening(item) + "<li>"
+                            open.levels[level] = item.kind
+                        } else {
+                            open.markup += "</li><li>"
+                        }
+                    }
+                    open.markup += (pendingPage?.markup ?? "") + payload
+                    open.pages += pendingPage.map { [$0.number] + block.sourcePages } ?? block.sourcePages
+                    open.links += links
+                    open.ids += ids
+                    list = open
+                    pendingPage = nil
+                    continue
                 // A visible block with DPUB-ARIA note semantics. An `aside` with
                 // epub:type="footnote" is hidden from the flow by some reading systems
                 // unless a noteref links to it; an unlinked note keeps this visible form.
@@ -187,6 +239,7 @@ enum EPUBWriter {
                 await progress(0.45 * Double(i + 1) / Double(book.blocks.count))
             }
         }
+        try flushList()
         if let pendingPage { try append(pendingPage.markup, sourcePages: [pendingPage.number], standaloneMarker: true) }
         try finishChapter()
         // Qualify note and return links whose target lies in another spine document. Only

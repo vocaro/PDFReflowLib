@@ -173,6 +173,7 @@ enum LayoutReconstructor {
                                 wraps: old.wraps)
             line.readingRect = old.readingRect
             line.structure = old.structure
+            line.listTag = old.listTag
             page.lines[index] = line
         }
     }
@@ -556,6 +557,7 @@ enum LayoutReconstructor {
             var joined = TextLine(content: content, rect: marker.rect.union(text.rect), fontSize: text.fontSize,
                                   wraps: text.wraps)
             joined.readingRect = text.readingRect.map { $0.union(marker.rect) }
+            joined.listTag = sharedListTag([marker, text])
             // The join requires one group on both sides, so both tags are nil or both are set.
             if var tag = text.structure, let markerTag = marker.structure {
                 tag.order = min(tag.order, markerTag.order)
@@ -656,6 +658,7 @@ enum LayoutReconstructor {
                                   fontSize: pieces.map(\.fontSize).max() ?? last.fontSize,
                                   wraps: afterBlank ? false : last.wraps)
             joined.trailingSpace = !afterBlank && last.trailingSpace
+            joined.listTag = sharedListTag(pieces.sorted { $0.rect.minX < $1.rect.minX })
             // The row keeps the reading position of its earliest piece in page order.
             let anchor = members.min()!
             replaced[anchor] = joined
@@ -958,6 +961,7 @@ enum LayoutReconstructor {
             if pieces.contains(where: { lines[$0].readingRect != nil }) {
                 joined.readingRect = union(pieces.map { lines[$0].readingRect ?? lines[$0].rect })
             }
+            joined.listTag = sharedListTag(pieces.map { lines[$0] }.sorted { $0.rect.minX < $1.rect.minX })
             // The row keeps the reading position of its earliest piece in page order.
             let anchor = cluster.min()!
             replaced[anchor] = joined
@@ -3841,6 +3845,8 @@ enum LayoutReconstructor {
         var taggedLast: TextLine?
         // Whether `taggedLast` is the open tagged block's only line (`wraps`' `opening`, #147).
         var taggedOpening = false
+        // The open tagged block's first line: a list item's marker line (`listEvidence`).
+        var taggedFirst: TextLine?
         func flushTagged() {
             guard let (tag, text, size) = tagged else { return }
             // A paragraph group that is one rejoined list item (#81) keeps the representation
@@ -3851,9 +3857,12 @@ enum LayoutReconstructor {
             let content: ReflowBlock.Content = title
                 ? .heading(id: "heading-\(page.number)-\(result.count)", text: text, level: 2)
                 : tag.headingLevel == 0
-                ? (tag.opensWithSplitMarker && isList(text.text) ? .preformatted(text) : .paragraph(text))
+                ? ((tag.opensWithSplitMarker || opensWithPlusBullet(text.text)) && isList(text.text) ? .preformatted(text) : .paragraph(text))
                 : .heading(id: "heading-\(page.number)-\(result.count)", text: text, level: tag.headingLevel)
             var block = ReflowBlock(content: content, structureGroup: tag.group, page: page.number)
+            if case .preformatted = content, let first = taggedFirst {
+                block.listEvidence = listEvidence(first, recognized: page.recognized || page.hasSyntheticTextStyle)
+            }
             block.taggedLevel = title ? nil : tag.headingLevel
             // A tagged heading keeps its validated level, but its typography still belongs in the
             // document-wide scale: see `rankHeadingLevels`.
@@ -4121,6 +4130,9 @@ enum LayoutReconstructor {
             // `S. Martinuzzi, A.D. Syphard, …` at its hanging indent (#146).
             guard !listLine(line) || isLonely(line), !opensRepeatedDashItem(line),
                   line.fontSize <= item.marker.fontSize + 0.5 else { return false }
+            // Where the PDF tags its lists, the tags decide (#194): a line of the open item's `LI`
+            // continues it wherever it stands, and a line of another item does not.
+            if let open = item.marker.listTag, let tag = line.listTag { return tag.item == open.item }
             let verticalGap = item.last.rect.minY - line.rect.maxY
             // A tall marker line (Wallace page 2's license bullets, whose rectangles stand 17 points
             // against the page's 9.9) overlaps its wrapped line as a tall prose line does (#109, #115).
@@ -4153,8 +4165,30 @@ enum LayoutReconstructor {
             // `gov/air_traffic/…`, #79).
             let closing: Set<Character> = ["\u{201D}", "\u{2019}", "\"", "'", ")", "]"]
             guard let ending = item.last.text.reversed().first(where: { !$0.isWhitespace && !closing.contains($0) }),
-                  !".!?".contains(ending) || addressContinues(item.last.text, line.text) else { return false }
+                  !".!?".contains(ending) || addressContinues(item.last.text, line.text)
+                    || hangsLikeSiblings(line, marker: item.marker) else { return false }
             return true
+        }
+        // A bulleted item's wrapped line stands where the page's other items with that bullet on
+        // that edge wrap: the hanging indent is the page's, so the line continues the item even
+        // after a sentence (#194). FAA page 211's `• Green arc—the normal operating range of the
+        // aircraft.` wraps to `Most flying occurs within this range.`, which read as a paragraph. A
+        // numbered or lettered marker has no such evidence (Loper Bright page 64's `U. S. 134
+        // (1944), …` over a paragraph's first line).
+        func hangsLikeSiblings(_ line: TextLine, marker: TextLine) -> Bool {
+            guard let bullet = marker.text.first, "•+*-".contains(bullet),
+                  marker.text.dropFirst().first?.isWhitespace == true else { return false }
+            return free.contains { sibling in
+                sibling != marker && sibling.text.first == bullet && sibling.text.dropFirst().first?.isWhitespace == true
+                    && abs(sibling.rect.minX - marker.rect.minX) <= body * 0.5
+                    && abs(sibling.fontSize - marker.fontSize) <= marker.fontSize * 0.1
+                    && free.contains { wrapped in
+                        wrapped != line && abs(wrapped.rect.minX - line.rect.minX) <= body * 0.5
+                            && !isList(wrapped.text)
+                            && wrapped.rect.minX < sibling.rect.maxX && wrapped.rect.maxX > sibling.rect.minX
+                            && (-body * 0.4..<body * 0.9).contains(sibling.rect.minY - wrapped.rect.maxY)
+                    }
+            }
         }
         // PDFKit can detach a body note marker that falls past a justified line's right edge
         // into its own tiny line. A one-to-three digit line below body size, starting where the
@@ -4389,7 +4423,10 @@ enum LayoutReconstructor {
                 if let current = tagged {
                     tagged = (current.0, join(current.1, line.content, vocabulary: vocabulary,
                         page: page.number, warnings: &warnings), max(current.2, line.fontSize))
-                } else { tagged = (tag, line.content, line.fontSize) }
+                } else {
+                    tagged = (tag, line.content, line.fontSize)
+                    taggedFirst = line
+                }
                 continue
             }
             // The converse: an untagged line a paragraph group's last line wraps onto continues that
@@ -4453,7 +4490,10 @@ enum LayoutReconstructor {
             } else if listLine(line) || isTightMarker(line), !readsAsProse(line) {
                 flush()
                 // Preserve significant breaks and native styles; do not rewrite list markers or code.
-                result.append(ReflowBlock(content: .preformatted(line.content), page: page.number))
+                // `ListBuilder` reads the marker line's evidence once the document is complete.
+                var block = ReflowBlock(content: .preformatted(line.content), page: page.number)
+                block.listEvidence = listEvidence(line, recognized: page.recognized || page.hasSyntheticTextStyle)
+                result.append(block)
                 listItem = (marker: line, last: line, indent: nil, index: result.count - 1)
             } else if let item = openItem, continuesListItem(line, item: item),
                       case let .preformatted(text) = result[item.index].content {
@@ -4599,8 +4639,11 @@ enum LayoutReconstructor {
                 // The item opens the group: first by tag order, and first in spatial order among
                 // lines sharing that order (one marked section can hold several lines).
                 let opening = lines.min { $0.structure!.order < $1.structure!.order }
+                // A group opening with a `+` bullet is one item too (#194): the dietary guidelines tag
+                // each `+` item as a paragraph, which held no list line before `+` was a bullet.
                 let singleSplitItem = listLines.count == 1 && lines.first!.structure!.headingLevel == 0
-                    && listLines[0].structure!.opensWithSplitMarker && opening == listLines[0]
+                    && (listLines[0].structure!.opensWithSplitMarker || opensWithPlusBullet(listLines[0].text))
+                    && opening == listLines[0]
                 let captionOrList = (!listLines.isEmpty && !singleSplitItem) || lines.contains { $0.text.range(
                     of: "^(?:Figure|Table)\\s+[0-9]", options: .regularExpression) != nil }
                 let oversizedHeading = lines.first!.structure!.headingLevel > 0
@@ -5201,7 +5244,7 @@ enum LayoutReconstructor {
         switch block.content {
         case .image, .footnote: return true
         case .paragraph: break
-        case .heading, .preformatted, .table, .sourcePage: return false
+        case .heading, .preformatted, .listItem, .table, .sourcePage: return false
         }
         let text = block.text.trimmingCharacters(in: .whitespacesAndNewlines)
         if isCaption(text) { return true }
@@ -5613,9 +5656,37 @@ enum LayoutReconstructor {
 
     /// A numeric parenthesis marker set tight against a minus sign (`1)− 2`, as the algebra
     /// answer keys extract) is also a list item; the period form stays space-delimited so
-    /// dedented note continuations such as `5.This` keep their existing handling.
+    /// dedented note continuations such as `5.This` keep their existing handling. A plus sign is a
+    /// bullet too (#194) when words follow it: the dietary guidelines set their top-level items with
+    /// `+` and the items beneath them with `-`, so without it the parents were paragraphs and the
+    /// children list items. The item opens on a word (or a percentage, `+ 100% fruit or vegetable
+    /// juice`) and reads as words; a row of a derivation that opens with a plus (`+ 21 + 21 Add 21 to
+    /// both sides`, Wallace page 40) stays what it was.
     static func isList(_ text: String) -> Bool {
-        text.range(of: "^(?:(?:[•*−-]|[0-9]+[.)]|[A-Za-z][.)])\\s|[0-9]+\\)−)", options: .regularExpression) != nil
+        if text.hasPrefix("+"), text.dropFirst().first?.isWhitespace == true {
+            return text.range(of: "^\\+\\s+(?:\\p{L}{2}|[0-9]+%)", options: .regularExpression) != nil
+                && isWordy(String(text.dropFirst(2)))
+        }
+        return text.range(of: "^(?:(?:[•*−-]|[0-9]+[.)]|[A-Za-z][.)])\\s|[0-9]+\\)−)", options: .regularExpression) != nil
+    }
+
+    /// A line opening with the `+` bullet (#194), which a paragraph group holding it as its only
+    /// list line keeps as one item.
+    static func opensWithPlusBullet(_ text: String) -> Bool {
+        text.hasPrefix("+") && isList(text)
+    }
+
+    /// The tagged list item of pieces joined into one line (#194): the leftmost piece's, which
+    /// carries the label, when no piece names another item.
+    static func sharedListTag(_ pieces: [TextLine]) -> ListTag? {
+        let tags = pieces.compactMap(\.listTag)
+        guard let first = pieces.first?.listTag ?? tags.first, tags.allSatisfy({ $0.item == first.item }) else { return nil }
+        return first
+    }
+
+    /// The evidence a list-marker line leaves for `ListBuilder` (#194).
+    static func listEvidence(_ line: TextLine, recognized: Bool) -> ReflowBlock.ListEvidence {
+        ReflowBlock.ListEvidence(edge: line.rect.minX, fontSize: line.fontSize, recognized: recognized, tag: line.listTag)
     }
 
     /// A numbered or lettered marker opening a line (`12.`, `b)`, `P.`) before a space: its kind

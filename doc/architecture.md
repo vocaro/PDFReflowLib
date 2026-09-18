@@ -37,7 +37,8 @@ the evidence needed to infer reading order, paragraphs, image crops and word joi
 | Value | Content |
 | --- | --- |
 | Metadata | Title, language and optional author |
-| Ordered blocks | Paragraph, heading with logical identifier and level, preformatted text, page-bottom footnote, image, source-page boundary |
+| Ordered blocks | Paragraph, heading with logical identifier and level, preformatted text, list item, page-bottom footnote, image, source-page boundary |
+| List item | Text without its printed marker, the marker, the printed number of a numbered item, kind (bulleted or numbered), depth and whether it opens a list element |
 | Inline text | Text runs carrying bold/italic/maths-italic/superscript/subscript flags, interspersed with source-page boundaries |
 | Image block | Logical asset identifier, alternative text and caption |
 | Asset registry | Identifier, local file URL and image format |
@@ -50,8 +51,9 @@ reading order, styles and source boundaries without creating a publication.
 
 The logical document deliberately has no XHTML, CSS, EPUB namespaces, ZIP paths or chapter file
 boundaries. Raw `<`, `&` and other source characters stay raw until a writer escapes them for
-its format. Headings currently form flat navigation; list markers and code use preformatted
-blocks backed by the same `InlineText` runs as paragraphs. Preformatted reconstruction retains
+its format. Headings currently form flat navigation. Code, coded weather reports and list-shaped
+lines the list pass does not verify use preformatted blocks, and verified bulleted and numbered
+runs use list items (#194); both are backed by the same `InlineText` runs as paragraphs. Preformatted reconstruction retains
 native emphasis and scripts; inserted newlines/indentation are unstyled, and the EPUB writer
 escapes raw text before adding inline elements inside `<pre>`. Equations and most tables preserved as images are image references, not reconstructed
 math trees or semantic tables. A text table whose shaded rows and rules the layout can read is a
@@ -349,13 +351,22 @@ on its left edge (at most 90% of its size), which it introduces (DGA page 7's `S
 Considerations` over `Infancy & Early Childhood`, #111). A one-off title-page imprint stays a paragraph. Origin matching is conservative association evidence, not full
 font decoding or proof of the author's semantic correctness.
 
-Supported roles are P and H1–H6 through grouping containers and transparent inline spans.
+Supported roles are P and H1–H6 through grouping containers and transparent inline spans. List
+roles (`L`, `LI`, `Lbl`, `LBody`) form no group, so their content is still reconstructed spatially
+and still reported as a structure fallback, but they are read (#194): each marked-content item
+under an `LI` records its list, its item, the number of enclosing `L` elements and whether it sits in
+the `Lbl`. The associations are validated against the parent tree like group tags and dropped
+silently when they fail, and `MarkedTextReader` gives a line the item every one of its shows names.
+A line of the open item's `LI` continues that item wherever it stands, and a line of another item
+never does; the list pass takes depth and list identity from the tags.
 Complete groups can reorder only within uninterrupted tagged-text runs; unmatched lines and
 preserved images are barriers. Captions, list-like text and headings of 200 or more characters
 fall back as well, with one exception: a paragraph group whose only list line opens it and was
 rejoined from a marker piece PDFKit split off (the FAA handbook tags each bullet item as one `P`)
 is exactly one item. It keeps its tag order, loses the absorbed piece from its line count, and is
-emitted as the list item the same text is when untagged (#81). A validated heading tag is refused
+emitted as the list item the same text is when untagged (#81). A group whose only list line opens it
+with a `+` bullet is one item the same way (#194): the dietary guidelines tag each such item as a
+paragraph, which held no list line until `+` became a bullet. A validated heading tag is refused
 where the page's own tags and typography contradict it: a group set no larger than the page's body
 text, in a type the page's paragraph groups also use, that closes a sentence (past closing quotes,
 over 40 characters) or opens lowercase is a paragraph. The NASA Word paper tags eight of its
@@ -539,7 +550,10 @@ into a book word and are not both words (`communi-` + `cations.htm`; NOAA's `es-
 where `es` is a book word from DOI segments). Otherwise it stays and the
 page warns (`uncertainHyphen`). A period after a closing parenthesis, or before a capital, ends
 the sentence. The same test keeps a list item's first wrapped line after a marker line ending
-inside an address (`(AIM)—www.faa.` + `gov/…`). A hyphen inside an alphanumeric code before a
+inside an address (`(AIM)—www.faa.` + `gov/…`). A bulleted item's wrapped line continues it after
+a sentence too when the page's other items with that bullet on that edge wrap to the same indent
+(FAA page 211's `• Green arc—…of the aircraft.` over `Most flying occurs within this range.`, #194);
+a numbered or lettered marker has no such evidence. A hyphen inside an alphanumeric code before a
 digit or capital joins without a space and keeps the hyphen (#127: `265A-NY-` + `280350-HQ`,
 `CTC 2002-` + `30060CH`, `C-` + `130H`, `PA-` + `23`). The code is the run of ASCII letters,
 digits and hyphens ending the line (not after an address character) and the run opening the
@@ -1246,8 +1260,16 @@ before admitting a block. A standalone source-page marker travels with the follo
 inline markers retain their exact location. A short trailing run of headings (at most 6,000 bytes)
 moves with its navigation entries into the next document instead of ending the previous one, and
 stays with an oversized block that follows it. Other oversized individual paragraphs, headings, code
-blocks or figures occupy their own document without being split or losing styles. This is a soft body-size
-target, excluding document metadata, and is not a memory ceiling.
+blocks, lists or figures occupy their own document without being split or losing styles. This is a
+soft body-size target, excluding document metadata, and is not a memory ceiling.
+
+A list is packed as one unit, like a table (#194). The writer buffers consecutive list items and
+admits the list when a block that is not an item, a chapter opening or the end arrives, so a spine
+document never ends inside a list. A list may contain only items, so a source-page marker before an
+item is written as the item's first child, and a marker for an empty page between two items ends
+the open item. An item opens a `<ul>` or an `<ol>` (with `start` when its printed number is not 1)
+when it opens a list or is deeper than the open item, which then holds the nested list; a shallower
+item closes the deeper lists first.
 
 `ChapterBoundaryReader` separately admits a conservative bookmark scheme: at least two
 root-level English `Chapter 1 ...` through `Chapter N ...` entries, consecutive Arabic numbers
@@ -1274,7 +1296,30 @@ this page's there; and N claims none of them. 9/11 page 496, headed `NOTES TO CH
 chapter 3's notes 93–112, is the case. Numbers restarting at 1 never move a page, and each
 decision is recorded in the link summary (`rescopedPages`).
 
-`NoteLinker` runs last in reconstruction, after every join. A superscript run of one to three
+`ListBuilder` runs after `NoteLinker`, once the document is complete (#194). Reconstruction reads a
+line that opens with a list marker as a preformatted block and records its marker line's left edge,
+type size, tagged list item and whether the text is a scan's transcription (recognized, or an
+inherited invisible layer); every join keeps that evidence. The pass makes list items of two kinds:
+bulleted items (`•`, `-`, `+`, `*`, not `−`, which opens derivation rows) in a run of at least two
+with one bullet, and numbered items (one to three digits with one punctuation) in a run of at least
+two whose printed numbers ascend by one. A candidate's text past its marker must read as words
+(letters in words of three or more make up at least 35% of it), and it may not be a contents entry
+or a transcription. A run chains each candidate to the latest candidate of its family on the same
+page or the next, whatever blocks stand between; other families between are nested items; any
+other list-shaped block ends every run; a `1` opens a new run. A numbered run stays preformatted
+when it has a gap or a step back, when its items each stand alone between other blocks (numbered
+titles), when most of its items end on a folio or carry section numbers (a contents list), give
+quantities and ask for one (an exercise set), or cite a year and colon, a DOI or an address (a
+reference list), or when its pages hold more numbered entries that read as no item than it has
+items (an answer key). A lone bullet set deeper between two items of an accepted list is nested in
+it. Accepted items with only page boundaries and other items between them form one list element:
+a marker set deeper on the same page (0.8 to 5 ems), or on the next page left of which the parent
+list's next item stands, nests; a marker on an open level's edge, or like its marker where the edges
+say nothing, returns to that level; a change of run or kind at one depth opens a new list. Tags,
+where present, decide depth and list identity instead. The printed marker is removed from the
+item's text; a numbered list keeps its first printed number as `start`.
+
+`NoteLinker` runs after every join, just before `ListBuilder`. A superscript run of one to three
 digits in a body paragraph or a preserved list item (a `preformatted` block opening with a
 list marker; code is never scanned) is a reference marker; a linked list item stays
 preformatted, with only its marker changed; its page (the block's page, advanced by inline

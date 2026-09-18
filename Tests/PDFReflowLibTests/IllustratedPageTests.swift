@@ -406,7 +406,7 @@ private let bounds = CGRect(x: 0, y: 0, width: 600, height: 800)
 @Test func onlyAnIconBesideAHeadingReadsInItsRow() throws {
     // DGA page 4 with its icon crops moved: 30 pt further left (beyond two bodies of the titles) they
     // no longer read beside them, and stretched 20 pt past three title lines each way they again
-    // split `+ If preferred, flavor with salt, spices,` from `and herbs.`.
+    // cut the section apart.
     var page = try fixture(4).content()
     page.lines.removeAll { $0.rect.maxY < 60 }
     let crops = LayoutReconstructor.graphicsWithLabels(page)
@@ -424,9 +424,18 @@ private let bounds = CGRect(x: 0, y: 0, width: 600, height: 800)
     let far = texts(crops.map { icons.contains($0) ? $0.offsetBy(dx: -30, dy: 0) : $0 })
     let farFats = try #require(far.firstIndex(of: "Incorporate Healthy Fats"))
     #expect(farFats == 0 || far[farFats - 1] != "image")
+    // Stretched, they again cut the section apart. Before `+` was a bullet this split `+ If preferred,
+    // flavor with salt, spices,` from `and herbs.`; the item's wrapped line now stays with it (#194),
+    // and the cut shows in the order instead: the section's `+ 100% fruit or vegetable juice` item
+    // reads after the next section's title.
     let tall = texts(crops.map { icons.contains($0) ? $0.insetBy(dx: 0, dy: -20) : $0 })
-    #expect(tall.contains("and herbs."))
-    #expect(!beside.contains("and herbs."))
+    func juiceReadsAfterFats(_ texts: [String]) throws -> Bool {
+        let juice = try #require(texts.firstIndex { $0.hasPrefix("+ 100% fruit or vegetable juice") })
+        return juice > (try #require(texts.firstIndex(of: "Incorporate Healthy Fats")))
+    }
+    #expect(try juiceReadsAfterFats(tall))
+    #expect(try !juiceReadsAfterFats(beside))
+    #expect(!beside.contains("and herbs.") && beside.contains("+ If preferred, flavor with salt, spices, and herbs."))
 }
 
 // MARK: Cost on vector-dense pages

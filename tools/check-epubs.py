@@ -23,7 +23,7 @@ EXPECTED = {
     "prose": (3, 3, ["reliable conversion", "remains well-known", "losing the original sentence"]),
     "columns": (1, 1, ["LEFT FIRST", "LEFT LAST", "RIGHT FIRST", "RIGHT LAST"]),
     "graphics": (1, 1, ["Text before the illustrated region", "Text after the table"]),
-    "lists-code": (1, 1, ["1. Keep the first item.", "2. Keep the second item.", "print(value)"]),
+    "lists-code": (1, 1, ["Keep the first item.", "Keep the second item.", "print(value)"]),
     "rotated": (1, 0, []),
     "scanned": (1, 1, ["clear scanned paragraph", "reflowable text"]),
 }
@@ -84,7 +84,7 @@ def check_spine_document(data):
         assert len(content) == 1, "spine body exceeds target with multiple blocks"
         assert len(markers) <= 1, "oversized block includes unrelated page markers"
         assert content[0].tag in {'{http://www.w3.org/1999/xhtml}' + tag
-                                  for tag in ('p', 'h2', 'pre', 'figure', 'table')}, "unexpected oversized block"
+                                  for tag in ('p', 'h2', 'pre', 'figure', 'table', 'ul', 'ol')}, "unexpected oversized block"
         assert not (body.text or '').strip() and all(not (n.tail or '').strip() for n in body), "unwrapped body text"
     return {'bodyBytes': size, 'oversizedAtomicBlock': size > 60_000}
 
@@ -201,6 +201,13 @@ def main():
             assert text.index("LEFT LAST") < text.index("RIGHT FIRST")
         if source.stem == "graphics":
             assert report["imageCount"] == 3, report
+        if source.stem == "lists-code":
+            # The verified numbered run is a real list without its printed numbers; the Courier
+            # block stays preformatted with its breaks (#194).
+            with zipfile.ZipFile(output) as archive:
+                markup = archive.read("EPUB/chapter-1.xhtml").decode()
+            assert "<ol><li>Keep the first item.</li><li>Keep the second item.</li></ol>" in markup, markup
+            assert "<pre>if value &lt; 3:\n    print(value)\nreturn value</pre>" in markup, markup
         checker = None
         if args.epubcheck:
             validated = subprocess.run([str(args.epubcheck), str(output)], capture_output=True, text=True)

@@ -394,6 +394,73 @@ class CorpusContentTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 self.check(pages=pages, markers=markers)
 
+    def test_list_items_and_preformatted_blocks_read_their_own_elements(self):
+        # A list item is an <li>; a list-shaped line the converter keeps preformatted is a <pre>.
+        # Neither check is satisfied by the other element, nor by a paragraph (#194).
+        def book(body):
+            return self.epub('<span epub:type="pagebreak" id="page-1"/>' + body + '<span epub:type="pagebreak" id="page-2"/>', '<p>x</p>')
+        self.contract['pages'] = [{'page': 1, 'listItems': ['Alternator switch'],
+                                   'preformattedBlocks': ['1) 1− 3']}]
+        kept = book('<ul><li>Alternator switch</li></ul><pre>1) 1− 3</pre>')
+        swapped = book('<pre>• Alternator switch</pre><ol><li>1− 3</li></ol>')
+        prose = book('<p>Alternator switch</p><p>1) 1− 3</p>')
+        for path, passes in [(kept, True), (swapped, False), (prose, False)]:
+            pages, markers = read_pages(path)
+            self.assertEqual(self.check(pages=pages, markers=markers)['passed'], passes, str(path))
+        pages, markers = read_pages(kept)
+        for key in ('listItems', 'preformattedBlocks'):
+            for invalid in ['', 1]:
+                self.contract['pages'] = [{'page': 1, key: [invalid]}]
+                with self.assertRaises(ValueError):
+                    self.check(pages=pages, markers=markers)
+
+    def test_list_expectation_pins_kind_start_depth_and_consecutive_items(self):
+        self.contract['pages'] = [{'page': 1, 'lists': [
+            {'kind': 'ol', 'start': 3, 'items': ['Third step', 'Fourth step']},
+            {'kind': 'ul', 'level': 1, 'items': ['A detail', 'Another detail']}]}]
+        def book(body):
+            return self.epub('<span epub:type="pagebreak" id="page-1"/>' + body + '<span epub:type="pagebreak" id="page-2"/>', '<p>x</p>')
+        kept = book('<ol start="3"><li>Third step</li><li>Fourth step<ul><li>A detail</li><li>Another detail</li></ul></li></ol>')
+        renumbered = book('<ol><li>Third step</li><li>Fourth step<ul><li>A detail</li><li>Another detail</li></ul></li></ol>')
+        split = book('<ol start="3"><li>Third step</li></ol><ol start="4"><li>Fourth step<ul><li>A detail</li><li>Another detail</li></ul></li></ol>')
+        flattened = book('<ol start="3"><li>Third step</li><li>Fourth step</li></ol><ul><li>A detail</li><li>Another detail</li></ul>')
+        bulleted = book('<ul><li>Third step</li><li>Fourth step<ul><li>A detail</li><li>Another detail</li></ul></li></ul>')
+        reordered = book('<ol start="3"><li>Fourth step<ul><li>A detail</li><li>Another detail</li></ul></li><li>Third step</li></ol>')
+        for path, passes in [(kept, True), (renumbered, False), (split, False), (flattened, False),
+                             (bulleted, False), (reordered, False)]:
+            pages, markers = read_pages(path)
+            self.assertEqual(self.check(pages=pages, markers=markers)['passed'], passes, str(path))
+        pages, markers = read_pages(kept)
+        # A nested list's words stay apart from its item's own text.
+        self.assertIn('Fourth step A detail Another detail', pages[1]['text'])
+        self.assertEqual(pages[1]['listItems'], ['Third step', 'Fourth step', 'A detail', 'Another detail'])
+        for invalid in [{'kind': 'dl', 'items': ['x']}, {'kind': 'ol', 'items': []}, {'kind': 'ol', 'items': ['']},
+                        {'kind': 'ul', 'start': 2, 'items': ['x']}, {'kind': 'ol', 'start': '3', 'items': ['x']},
+                        {'kind': 'ol', 'items': ['x'], 'extra': 1}, ['x']]:
+            self.contract['pages'] = [{'page': 1, 'lists': [invalid]}]
+            with self.assertRaises(ValueError):
+                self.check(pages=pages, markers=markers)
+
+    def test_page_marker_opening_a_list_item_starts_the_page_and_a_list_holds_only_items(self):
+        # The converter puts a page marker inside the item it precedes (#194); the item, and the
+        # list's place in the page sequence, belong to the new page.
+        self.contract['pages'] = [{'page': 2, 'listItems': ['Fifth step'],
+                                   'lists': [{'kind': 'ol', 'start': 4, 'items': ['Fourth step', 'Fifth step']}]}]
+        path = self.epub('<span epub:type="pagebreak" id="page-1"/><ol start="4"><li>Fourth step</li>'
+                         '<li><span epub:type="pagebreak" id="page-2"/>Fifth step</li></ol>', '<p>x</p>')
+        pages, markers = read_pages(path)
+        self.assertEqual(markers, [1, 2])
+        self.assertEqual(pages[1]['listItems'], ['Fourth step'])
+        self.assertEqual(pages[2]['listItems'], ['Fifth step'])
+        self.assertEqual(pages[1]['blocks'], [('text', 'Fourth step')])
+        self.assertEqual(pages[2]['blocks'], [('text', 'Fifth step'), ('text', 'x')])
+        self.assertTrue(self.check(pages=pages, markers=markers)['passed'])
+        # Negative controls: a marker, or a block, directly inside the list is refused.
+        for body in ['<ol><li>Fourth step</li><span epub:type="pagebreak" id="page-2"/><li>Fifth step</li></ol>',
+                     '<ul><li>a</li><p>b</p></ul>', '<ol start="0"><li>a</li></ol>']:
+            with self.assertRaises(ValueError):
+                read_pages(self.epub('<span epub:type="pagebreak" id="page-1"/>' + body, '<p>x</p>'))
+
     def test_paragraph_parser_keeps_inline_styles_and_cross_page_ownership(self):
         path = self.epub('<span epub:type="pagebreak" id="page-1"/><h2>title</h2>'
                          '<p>al<strong>pha</strong> beta<span epub:type="pagebreak" id="page-2"/> gamma</p>',

@@ -12,6 +12,18 @@ struct TextStructure: Equatable, Codable {
     var opensWithSplitMarker = false
 }
 
+/// A tagged list's validated membership for one marked-content item (#194): the `L` element
+/// (`list`, document-wide), its `LI` (`item`), how many `L` elements enclose it (`depth`, 0 for a
+/// top-level list) and whether the content sits in the item's `Lbl`, its printed label. List tags
+/// never form paragraph groups; they annotate lines so the list pass can check item and list
+/// boundaries, nesting and the label/body split against the document's own structure.
+struct ListTag: Hashable, Codable, Sendable {
+    var list: Int
+    var item: Int
+    var depth: Int
+    var label: Bool
+}
+
 // All geometry is in unrotated PDF page space (bottom-left origin). OCR is mapped back here.
 struct TextLine: Equatable {
     private(set) var content: InlineText
@@ -33,6 +45,10 @@ struct TextLine: Equatable {
     /// carries (#180). A line PDFKit ended at a line break carries none, so a piece that does is
     /// one PDFKit cut inside a line, at a space it had already measured.
     var trailingSpace = false
+    /// The tagged list item this line's marked content belongs to (#194), when every tagged show on
+    /// the line names one item. `label` is the first show's: a line whose first show is an `Lbl`
+    /// opens its item.
+    var listTag: ListTag?
 
     init(text: String, rect: CGRect, fontSize: CGFloat, monospaced: Bool = false, wraps: Bool? = nil) {
         self.init(content: InlineText(text), rect: rect, fontSize: fontSize, monospaced: monospaced, wraps: wraps)
@@ -61,7 +77,7 @@ struct TextLine: Equatable {
 extension TextLine: Codable {
     private enum CodingKeys: String, CodingKey {
         case content, rect, fontSize, monospaced, wraps, readingRect, structure, readingDirection
-        case trailingSpace
+        case trailingSpace, listTag
     }
 
     init(from decoder: Decoder) throws {
@@ -75,6 +91,7 @@ extension TextLine: Codable {
         structure = try values.decodeIfPresent(TextStructure.self, forKey: .structure)
         readingDirection = try values.decodeIfPresent(CGVector.self, forKey: .readingDirection)
         trailingSpace = try values.decodeIfPresent(Bool.self, forKey: .trailingSpace) ?? false
+        listTag = try values.decodeIfPresent(ListTag.self, forKey: .listTag)
     }
 
     func encode(to encoder: Encoder) throws {
@@ -88,6 +105,7 @@ extension TextLine: Codable {
         try values.encodeIfPresent(structure, forKey: .structure)
         try values.encodeIfPresent(readingDirection, forKey: .readingDirection)
         if trailingSpace { try values.encode(true, forKey: .trailingSpace) }
+        try values.encodeIfPresent(listTag, forKey: .listTag)
     }
 }
 

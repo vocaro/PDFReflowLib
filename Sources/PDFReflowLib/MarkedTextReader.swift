@@ -217,9 +217,12 @@ enum MarkedTextReader {
     }
 
     /// Returns false if any supported group could not be used. Unmapped lines remain untouched.
-    static func apply(_ tags: [Int: TextStructure], page: CGPDFPage,
+    /// `listTags` annotate lines with their tagged list item (#194) and play no part in the
+    /// paragraph association or its result: a line whose shows name more than one item, or a
+    /// show no single line owns, carries none.
+    static func apply(_ tags: [Int: TextStructure], listTags: [Int: ListTag] = [:], page: CGPDFPage,
                       lines: inout [TextLine]) -> Bool {
-        guard !tags.isEmpty else { return true }
+        guard !tags.isEmpty || !listTags.isEmpty else { return true }
         guard let table = CGPDFOperatorTableCreate() else { return false }
         defer { CGPDFOperatorTableRelease(table) }
         CGPDFOperatorTableSetCallback(table, "q") { scanner, info in
@@ -395,6 +398,7 @@ enum MarkedTextReader {
         guard lines.count <= 10_000, s.anchors.count <= 10_000,
               lines.count * s.anchors.count <= 2_000_000 else { return false }
         var assignments: [Int: [TextStructure?]] = [:]
+        var listAssignments: [Int: [ListTag?]] = [:]
         var found: Set<Int> = []
         // A group that shows text from an unplaceable origin cannot be associated, so only that
         // group falls back. Identifiers outside the supported roles name no group and cost nothing.
@@ -412,10 +416,14 @@ enum MarkedTextReader {
             }
             guard candidates.count == 1, let index = candidates.first else {
                 if let tag { rejected.insert(tag.group) }
-                for index in candidates { assignments[index, default: []].append(nil) }
+                for index in candidates {
+                    assignments[index, default: []].append(nil)
+                    listAssignments[index, default: []].append(nil)
+                }
                 continue
             }
             assignments[index, default: []].append(tag)
+            if let id = anchor.id, let listTag = listTags[id] { listAssignments[index, default: []].append(listTag) }
         }
         found.formUnion(s.blankIdentifiers)
         for (id, tag) in tags where !found.contains(id) { rejected.insert(tag.group) }
@@ -427,6 +435,11 @@ enum MarkedTextReader {
             if let tag = values.compactMap({ $0 }).min(by: { $0.order < $1.order }), !rejected.contains(tag.group) {
                 lines[index].structure = tag
             }
+        }
+        for (index, values) in listAssignments {
+            guard let first = values.first ?? nil,
+                  values.allSatisfy({ $0?.item == first.item }) else { continue }
+            lines[index].listTag = first
         }
         let counts = Dictionary(grouping: lines.compactMap(\.structure), by: \.group).mapValues(\.count)
         for index in lines.indices {

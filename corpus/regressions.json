@@ -178,14 +178,25 @@
             "The ammeter shows if the alternator/generator is producing an adequate supply of electrical power."
           ],
           "listItems": [
-            "• Electric fuel pump",
-            "• Stall warning system",
-            "• Pitot heat",
-            "• Starting motor"
+            "Electric fuel pump",
+            "Stall warning system",
+            "Pitot heat",
+            "Starting motor"
           ],
           "minimumImages": 1,
           "headings": [
             "Hydraulic Systems"
+          ],
+          "lists": [
+            {
+              "kind": "ul",
+              "items": [
+                "Electric fuel pump",
+                "Stall warning system",
+                "Pitot heat",
+                "Starting motor"
+              ]
+            }
           ]
         },
         {
@@ -351,9 +362,9 @@
         {
           "page": 27,
           "listItems": [
-            "• Hazards, such as air shows, parachute jumps, kite flying, and rocket launches",
-            "• Flights by important people such as heads of state",
-            "• Software code risk announcements with associated patches to reduce specific vulnerabilities"
+            "Hazards, such as air shows, parachute jumps, kite flying, and rocket launches",
+            "Flights by important people such as heads of state",
+            "Software code risk announcements with associated patches to reduce specific vulnerabilities"
           ],
           "paragraphs": [
             "There are many different reasons that NOTAMs are issued. Following are some of those reasons:"
@@ -365,13 +376,22 @@
           ],
           "absentHeadings": [
             "Pilot and Aeronautical Information Notices to Airmen (NOTAMs)"
+          ],
+          "lists": [
+            {
+              "kind": "ul",
+              "items": [
+                "Hazards, such as air shows, parachute jumps, kite flying, and rocket launches",
+                "Flights by important people such as heads of state"
+              ]
+            }
           ]
         },
         {
           "page": 365,
           "listItems": [
-            "• Review NOTAM for information on runway/taxiway closures and construction areas.",
-            "• Read back all runway crossing and/or hold instructions."
+            "Review NOTAM for information on runway/taxiway closures and construction areas.",
+            "Read back all runway crossing and/or hold instructions."
           ],
           "absentText": [
             "runway/ taxiway"
@@ -504,9 +524,9 @@
         {
           "page": 372,
           "listItems": [
-            "• FAA National Aeronautical Navigation Services (AeroNav), formerly known as the National Aeronautical Charting Office (NACO)—www.faa.gov/air_traffic/flight_info/aeronav",
-            "• Aeronautical Information Manual (AIM)—www.faa.gov/air_traffic/publications/atpubs/aim/",
-            "• Chart Supplement U.S. (formerly Airport/Facility Directory)—www.faa.gov/air_traffic/flight_info/aeronav/digital_products/dafd/search/"
+            "FAA National Aeronautical Navigation Services (AeroNav), formerly known as the National Aeronautical Charting Office (NACO)—www.faa.gov/air_traffic/flight_info/aeronav",
+            "Aeronautical Information Manual (AIM)—www.faa.gov/air_traffic/publications/atpubs/aim/",
+            "Chart Supplement U.S. (formerly Airport/Facility Directory)—www.faa.gov/air_traffic/flight_info/aeronav/digital_products/dafd/search/"
           ],
           "absentText": [
             "www.faa. gov"
@@ -761,6 +781,24 @@
               "FM120400 1408KT P6SM SCT040 OVC080",
               "TEMPO 1204/1208 3SM TSRA OVC030CB"
             ]
+          ],
+          "lists": [
+            {
+              "kind": "ol",
+              "start": 1,
+              "items": [
+                "Type of report",
+                "ICAO station identifier",
+                "Date and time of origin",
+                "Valid period dates and times",
+                "Forecast wind",
+                "Forecast visibility",
+                "Forecast significant weather",
+                "Forecast sky condition",
+                "Forecast change group",
+                "PROB30"
+              ]
+            }
           ]
         },
         {
@@ -938,15 +976,12 @@
         {
           "page": 317,
           "orderedText": [
-            "8. Sky condition",
-            "11. Zulu time",
+            "Sky condition—always reported",
+            "Zulu time—a term used in aviation",
             "Figure 13-6. Reportable contractions for sky condition.",
-            "12. Remarks",
+            "Remarks—the remarks section always begins",
             "METAR KGGG 161753Z",
             "Figure 13-5. Descriptors and weather phenomena"
-          ],
-          "listItems": [
-            "METAR KGGG 161753Z AUTO 14021G26KT 3/4SM +TSRA BR BKN008 OVC012CB 18/17 A2970 RMK PRESFR"
           ],
           "captionedImages": [
             {
@@ -954,6 +989,28 @@
             },
             {
               "caption": "Figure 13-5. Descriptors and weather phenomena"
+            }
+          ],
+          "preformattedBlocks": [
+            "METAR KGGG 161753Z AUTO 14021G26KT 3/4SM +TSRA BR BKN008 OVC012CB 18/17 A2970 RMK PRESFR"
+          ],
+          "lists": [
+            {
+              "kind": "ol",
+              "start": 8,
+              "items": [
+                "Sky condition",
+                "Temperature and dew point",
+                "Altimeter setting",
+                "Zulu time"
+              ]
+            },
+            {
+              "kind": "ol",
+              "start": 12,
+              "items": [
+                "Remarks—the remarks section always begins with the letters “RMK.”"
+              ]
             }
           ]
         },
@@ -1120,10 +1177,22 @@
             }
           ],
           "listItems": [
-            "2. Enter the moment for each item listed. Remember “weight x arm = moment.”",
-            "3. Find the total weight and total moment."
+            "Enter the moment for each item listed. Remember “weight x arm = moment.”",
+            "Find the total weight and total moment."
           ],
-          "minimumImages": 2
+          "minimumImages": 2,
+          "lists": [
+            {
+              "kind": "ol",
+              "start": 1,
+              "items": [
+                "List the weight of the aircraft",
+                "Enter the moment for each item listed",
+                "Find the total weight and total moment.",
+                "To determine the CG"
+              ]
+            }
+          ]
         },
         {
           "page": 249,
@@ -1140,7 +1209,7 @@
             "25 NM out on the 090° radial, Gregg County VOR",
             "Explanation:"
           ],
-          "listItems": [
+          "preformattedBlocks": [
             "UA/OV GGG 090025/TM 1450/FL 060/TP C182/SK 080 OVC/WX FV04SM RA/TA 05/WV 270030KT/TB LGT/RM HVY RAIN"
           ]
         },
@@ -1489,11 +1558,11 @@
         },
         {
           "page": 316,
-          "listItems": [
-            "METAR KGGG 161753Z AUTO 14021G26KT 3/4SM +TSRA BR BKN008 OVC012CB 18/17 A2970 RMK PRESFR"
-          ],
           "paragraphs": [
             "A typical METAR report contains the following information in sequential order:"
+          ],
+          "preformattedBlocks": [
+            "METAR KGGG 161753Z AUTO 14021G26KT 3/4SM +TSRA BR BKN008 OVC012CB 18/17 A2970 RMK PRESFR"
           ]
         },
         {
@@ -1633,7 +1702,7 @@
             "Figure 16-16. Relationship between true, magnetic, and compass headings for a particular instance."
           ],
           "listItems": [
-            "• GS—rate of the aircraft’s inflight progress over the ground."
+            "GS—rate of the aircraft’s inflight progress over the ground."
           ],
           "captionedImages": [
             {
@@ -1750,6 +1819,62 @@
           "paragraphs": [
             "VYSE. Best rate-of-climb speed with one engine inoperative. This airspeed provides the most altitude gain in a given period of time"
           ]
+        },
+        {
+          "page": 28,
+          "lists": [
+            {
+              "kind": "ul",
+              "items": [
+                "Interim IFR flight procedures:",
+                "Temporary flight restrictions (discussed in Chapter 15):",
+                "Flight restrictions in the proximity of the President"
+              ]
+            },
+            {
+              "kind": "ol",
+              "start": 1,
+              "level": 1,
+              "items": [
+                "Airway structure changes",
+                "Instrument approach procedure changes",
+                "Airspace changes in general",
+                "Special instrument approach procedure changes"
+              ]
+            },
+            {
+              "kind": "ol",
+              "start": 1,
+              "level": 1,
+              "items": [
+                "Disaster areas",
+                "Special events generating a high degree of interest",
+                "Hijacking"
+              ]
+            }
+          ]
+        },
+        {
+          "page": 30,
+          "lists": [
+            {
+              "kind": "ul",
+              "items": [
+                "Category",
+                "Class",
+                "Type"
+              ]
+            },
+            {
+              "kind": "ol",
+              "start": 1,
+              "level": 1,
+              "items": [
+                "As used with respect to the certification, ratings, privileges, and limitations of airmen, means a broad classification",
+                "As used with respect to the certification of aircraft, means a grouping of aircraft based upon intended use"
+              ]
+            }
+          ]
         }
       ]
     },
@@ -1801,6 +1926,9 @@
           ],
           "headings": [
             "0.1 Practice - Integers"
+          ],
+          "preformattedBlocks": [
+            "3) ( − 6) − ( − 8)"
           ]
         },
         {
@@ -1915,11 +2043,13 @@
             "Creative Commons Attribution 3.0 Unported License"
           ],
           "listItems": [
+            "Attribution: You must attribute the work in the manner specified by the author or licensor (but not in any way",
+            "Waiver: Any of the above conditions can be waived if you get permission from the copyright holder.",
+            "Public Domain: Where the work or any of its elements is in the public domain under applicable law,"
+          ],
+          "preformattedBlocks": [
             "− Your fair dealing or fair use rights",
             "− The author’s moral rights;",
-            "• Attribution: You must attribute the work in the manner specified by the author or licensor (but not in any way",
-            "• Waiver: Any of the above conditions can be waived if you get permission from the copyright holder.",
-            "• Public Domain: Where the work or any of its elements is in the public domain under applicable law,",
             "− Your fair dealing or fair use rights, or other applicable copyright exceptions and limitations;",
             "− Rights other persons may have either in the work itself or in how the work is used such as publicity or privacy rights",
             "• Notice: For any reuse or distribution, you must make clear to others the license term of this work. The best way"
@@ -2034,15 +2164,15 @@
         {
           "page": 40,
           "listItems": [
-            "4. Solve the remaining 2-step equation (add or subtract then multiply or divide)"
+            "Solve the remaining 2-step equation (add or subtract then multiply or divide)"
           ],
           "orderedText": [
             "This leads to a 5-step process to solve any linear equation.",
-            "1. Distribute through any parentheses.",
-            "2. Combine like terms on each side of the equation.",
-            "3. Get the variables on one side by adding or subtracting",
-            "4. Solve the remaining 2-step equation (add or subtract then multiply or divide)",
-            "5. Check your answer by plugging it back in for x to find a true statement.",
+            "Distribute through any parentheses.",
+            "Combine like terms on each side of the equation.",
+            "Get the variables on one side by adding or subtracting",
+            "Solve the remaining 2-step equation (add or subtract then multiply or divide)",
+            "Check your answer by plugging it back in for x to find a true statement.",
             "The order of these steps is very important."
           ],
           "paragraphs": [
@@ -2050,6 +2180,19 @@
           ],
           "absentText": [
             "Plug 2in"
+          ],
+          "lists": [
+            {
+              "kind": "ol",
+              "start": 1,
+              "items": [
+                "Distribute through any parentheses.",
+                "Combine like terms on each side",
+                "Get the variables on one side",
+                "Solve the remaining 2-step equation",
+                "Check your answer by plugging it back in"
+              ]
+            }
           ]
         },
         {
@@ -2081,11 +2224,6 @@
         },
         {
           "page": 101,
-          "listItems": [
-            "17) ( − 16, − 14), (11, − 14)",
-            "28) ( − 18, − 5), (14, − 3)",
-            "18) (13, 15), (2, 10)"
-          ],
           "orderedText": [
             "9)",
             "10)",
@@ -2096,6 +2234,11 @@
               "first": "9)",
               "second": "10)"
             }
+          ],
+          "preformattedBlocks": [
+            "17) ( − 16, − 14), (11, − 14)",
+            "28) ( − 18, − 5), (14, − 3)",
+            "18) (13, 15), (2, 10)"
           ]
         },
         {
@@ -2198,11 +2341,11 @@
             "but if the signs match on multiplication, the answer is positive, ( − 3)( − 7) = 21.",
             "is subtraction because the subtraction separates the 3 from what comes after it."
           ],
-          "listItems": [
-            "− 24 Our Solution"
-          ],
           "absentText": [
             "sep-arates"
+          ],
+          "preformattedBlocks": [
+            "− 24 Our Solution"
           ]
         },
         {
@@ -2223,7 +2366,7 @@
           "paragraphs": [
             "Square bracket means less than or equal to"
           ],
-          "listItems": [
+          "preformattedBlocks": [
             "− 18 <− 12"
           ]
         },
@@ -2263,8 +2406,8 @@
         {
           "page": 64,
           "listItems": [
-            "• More than often represents addition and is usually built backwards, writing the second part plus the first",
-            "• Less than often represents subtraction and is usually built backwards as well, writing the second part minus the first"
+            "More than often represents addition and is usually built backwards, writing the second part plus the first",
+            "Less than often represents subtraction and is usually built backwards as well, writing the second part minus the first"
           ],
           "paragraphs": [
             "Three more than a number becomes x + 3",
@@ -3160,18 +3303,43 @@
         {
           "page": 365,
           "listItems": [
-            "4. Neither the intelligence community nor aviation security experts analyzed systemic defenses within an aircraft",
-            "3. The CTC did not propose, and the intelligence community collection management process did not set"
+            "Neither the intelligence community nor aviation security experts analyzed systemic defenses within an aircraft",
+            "The CTC did not propose, and the intelligence community collection management process did not set"
           ],
           "paragraphs": [
             "Richard Clarke told us that he was concerned about the danger posed by aircraft"
+          ],
+          "lists": [
+            {
+              "kind": "ol",
+              "start": 1,
+              "items": [
+                "The CTC did not analyze how an aircraft",
+                "The CTC did not develop a set of telltale indicators",
+                "The CTC did not propose",
+                "Neither the intelligence community nor aviation security experts"
+              ]
+            }
           ]
         },
         {
           "page": 374,
           "listItems": [
-            "10.August 2001: the CIA and FBI do not connect the presence of Mihdhar, Hazmi, and Moussaoui to the general threat reporting about imminent attacks.",
-            "9. August 2001: the CIA does not focus on information that Khalid Sheikh Mohammed is a key al Qaeda lieutenant"
+            "August 2001: the CIA and FBI do not connect the presence of Mihdhar, Hazmi, and Moussaoui to the general threat reporting about imminent attacks.",
+            "August 2001: the CIA does not focus on information that Khalid Sheikh Mohammed is a key al Qaeda lieutenant"
+          ],
+          "lists": [
+            {
+              "kind": "ol",
+              "start": 1,
+              "items": [
+                "June 2001: FBI and CIA officials do not ensure",
+                "August 2001: the FBI does not recognize the significance",
+                "August 2001: FBI headquarters does not recognize",
+                "August 2001: the CIA does not focus on information",
+                "August 2001: the CIA and FBI do not connect"
+              ]
+            }
           ]
         },
         {
@@ -3371,7 +3539,7 @@
         {
           "page": 205,
           "listItems": [
-            "• activating a special court to enable the use of classified evidence in immigration-related national security cases;96 and"
+            "activating a special court to enable the use of classified evidence in immigration-related national security cases;96 and"
           ],
           "noteLinks": [
             {
@@ -3379,6 +3547,23 @@
               "before": "classified evidence in immigration-related national security cases;",
               "note": "PDD-62, May 22, 1998, p. 9. Congress had authorized the Alien Terrorist Removal Court",
               "notePage": 523
+            }
+          ],
+          "lists": [
+            {
+              "kind": "ul",
+              "items": [
+                "activating a special court",
+                "both implementing new security measures for U.S. passports"
+              ]
+            },
+            {
+              "kind": "ul",
+              "items": [
+                "undertaking a Joint Perimeter Defense program with Canada",
+                "staffing land border crossings 24/7",
+                "addressing the problem of migrants"
+              ]
             }
           ]
         },
@@ -3669,7 +3854,33 @@
         {
           "page": 147,
           "listItems": [
-            "2. Some members of the Bin Ladin network have received hijack training, according to various sources"
+            "Some members of the Bin Ladin network have received hijack training, according to various sources"
+          ],
+          "lists": [
+            {
+              "kind": "ol",
+              "start": 1,
+              "items": [
+                "Reporting [—] suggests Bin Ladin",
+                "Some members of the Bin Ladin network",
+                "[—] indicate the Bin Ladin organization"
+              ]
+            },
+            {
+              "kind": "ul",
+              "level": 1,
+              "items": [
+                "IG leader Islambuli in late September",
+                "The same source late last month"
+              ]
+            },
+            {
+              "kind": "ul",
+              "level": 1,
+              "items": [
+                "A [—] in October told us"
+              ]
+            }
           ]
         },
         {
@@ -3798,7 +4009,7 @@
         {
           "page": 146,
           "listItems": [
-            "1. Reporting [—] suggests Bin Ladin and his allies are preparing for attacks in the US"
+            "Reporting [—] suggests Bin Ladin and his allies are preparing for attacks in the US"
           ]
         },
         {
@@ -3858,6 +4069,12 @@
           "paragraphs": [
             "9:24 NEADS scrambles Langley fighter jets in search of AA 11"
           ]
+        },
+        {
+          "page": 6,
+          "preformattedBlocks": [
+            "5. AL QAEDA AIMS AT THE AMERICAN HOMELAND 145 5.1 Terrorist Entrepreneurs 145"
+          ]
         }
       ]
     },
@@ -3897,6 +4114,18 @@
             "promotes the safety and soundness of individual financial institutions and monitors their impact on the financial system as a whole;",
             "fosters payment and settlement system safety and efficiency through services to the banking industry and the U.S. government that facilitate U.S.-dollar transactions and payments; and",
             "promotes consumer protection and community development through consumer-focused supervision and examination, research and analysis of emerging consumer issues and trends, community economic development activities, and the administration of consumer laws and regulations."
+          ],
+          "lists": [
+            {
+              "kind": "ul",
+              "items": [
+                "conducts the nation’s monetary policy",
+                "promotes the stability of the financial system",
+                "promotes the safety and soundness",
+                "fosters payment and settlement system safety",
+                "promotes consumer protection and community development"
+              ]
+            }
           ]
         },
         {
@@ -4106,6 +4335,16 @@
             "Paycheck Protection Program Lending Facility",
             "Term Asset-Backed Securities Loan Facility",
             "Secondary Market Corporate Credit Facility"
+          ],
+          "lists": [
+            {
+              "kind": "ul",
+              "items": [
+                "Primary Dealer Credit Facility",
+                "Commercial Paper Funding Facility",
+                "Money Market Mutual Fund Liquidity Facility"
+              ]
+            }
           ]
         },
         {
@@ -4767,6 +5006,24 @@
           ],
           "headings": [
             "More on Federal Reserve Advisory Councils"
+          ],
+          "lists": [
+            {
+              "kind": "ol",
+              "start": 1,
+              "items": [
+                "Community Depository Institutions Advisory Council (CDIAC)",
+                "Model Validation Council"
+              ]
+            },
+            {
+              "kind": "ol",
+              "start": 4,
+              "items": [
+                "Community Advisory Council (CAC)",
+                "Insurance Policy Advisory Committee (IPAC)"
+              ]
+            }
           ]
         },
         {
@@ -4907,11 +5164,6 @@
         {
           "page": 3,
           "minimumImages": 4,
-          "paragraphs": [
-            "+ Prioritize high-quality, nutrient-dense protein foods as part of a healthy dietary pattern.",
-            "+ Consume meat with no or limited added sugars, refined carbohydrates or starches, or chemical additives.",
-            "+ Your gut contains trillions of bacteria and other microorganisms called the microbiome."
-          ],
           "absentWarningCodes": [
             "pageImageFallback",
             "unsupportedGraphics",
@@ -4922,43 +5174,63 @@
             "Prioritize Protein Foods at Every Meal",
             "Consume Dairy",
             "Gut Health"
+          ],
+          "listItems": [
+            "Prioritize high-quality, nutrient-dense protein foods as part of a healthy dietary pattern.",
+            "Consume meat with no or limited added sugars, refined carbohydrates or starches, or chemical additives.",
+            "Your gut contains trillions of bacteria and other microorganisms called the microbiome."
+          ],
+          "lists": [
+            {
+              "kind": "ul",
+              "items": [
+                "Prioritize high-quality, nutrient-dense protein foods",
+                "Consume a variety of protein foods",
+                "Swap deep-fried cooking methods",
+                "Consume meat with no or limited added sugars",
+                "Protein serving goals"
+              ]
+            }
           ]
         },
         {
           "page": 4,
-          "distinctParagraphs": [
-            {
-              "first": "+ Prioritize fiber-rich whole grains.",
-              "second": "+ Significantly reduce the consumption of highly processed"
-            }
-          ],
           "orderedText": [
-            "+ 100% fruit or vegetable juice",
+            "100% fruit or vegetable juice",
             "Vegetables and fruits serving goals",
-            "- Vegetables: 3 servings per day",
-            "- Fruits: 2 servings per day",
+            "Vegetables: 3 servings per day",
+            "Fruits: 2 servings per day",
             "Incorporate Healthy Fats",
-            "+ Healthy fats are plentiful"
+            "Healthy fats are plentiful"
           ],
           "absentWarningCodes": [
             "unverifiedTextLayer"
           ],
           "minimumImages": 4,
-          "paragraphs": [
-            "+ If preferred, flavor with salt, spices, and herbs."
+          "listItems": [
+            "If preferred, flavor with salt, spices, and herbs."
+          ],
+          "lists": [
+            {
+              "kind": "ul",
+              "items": [
+                "Prioritize fiber-rich whole grains.",
+                "Significantly reduce the consumption of highly processed",
+                "Whole grains serving goals"
+              ]
+            },
+            {
+              "kind": "ul",
+              "level": 1,
+              "items": [
+                "Vegetables: 3 servings per day",
+                "Fruits: 2 servings per day"
+              ]
+            }
           ]
         },
         {
           "page": 5,
-          "distinctParagraphs": [
-            {
-              "first": "or end in “-ose.”",
-              "second": "+ Added sugars may appear on ingredient labels"
-            }
-          ],
-          "paragraphs": [
-            "+ Limit foods and beverages that include artificial flavors"
-          ],
           "absentWarningCodes": [
             "unverifiedTextLayer"
           ],
@@ -4966,33 +5238,54 @@
           "headings": [
             "Limit Highly Processed Foods, Added Sugars, & Refined Carbohydrates",
             "Added Sugars"
+          ],
+          "listItems": [
+            "Limit foods and beverages that include artificial flavors"
+          ],
+          "lists": [
+            {
+              "kind": "ul",
+              "items": [
+                "or end in “-ose.”",
+                "Added sugars may appear on ingredient labels"
+              ]
+            }
           ]
         },
         {
           "page": 8,
-          "paragraphs": [
-            "+ Focus on whole, nutrient-dense foods such as protein foods, dairy, vegetables, fruits, healthy fats, and whole grains.",
-            "+ Adolescents should eat nutrient-dense foods such as dairy, leafy greens, and iron-rich animal foods, while significantly limiting sugary drinks and energy drinks and avoiding highly processed foods.",
-            "+ Parents and caregivers can encourage healthy eating by offering new foods multiple times"
-          ],
           "headings": [
             "Middle Childhood (5–10 Years)",
             "Adolescence (11–18 Years)",
             "Introducing Food to Infants & Toddlers"
           ],
           "listItems": [
-            "- Swallows food instead of pushing it back out onto their chin"
+            "Swallows food instead of pushing it back out onto their chin",
+            "Focus on whole, nutrient-dense foods such as protein foods, dairy, vegetables, fruits, healthy fats, and whole grains.",
+            "Adolescents should eat nutrient-dense foods such as dairy, leafy greens, and iron-rich animal foods, while significantly limiting sugary drinks and energy drinks and avoiding highly processed foods.",
+            "Parents and caregivers can encourage healthy eating by offering new foods multiple times"
+          ],
+          "lists": [
+            {
+              "kind": "ul",
+              "level": 1,
+              "items": [
+                "Sits up alone or with support",
+                "Can control their head and neck",
+                "Tries to grasp small objects",
+                "Brings objects to their mouth",
+                "Opens their mouth when food is offered",
+                "Moves food from the front to the back of their tongue",
+                "Swallows food instead of pushing it back out"
+              ]
+            }
           ]
         },
         {
           "page": 9,
-          "paragraphs": [
-            "+ Pregnant women should consume diverse nutrient-dense foods, including iron-rich meats, folate-rich greens and legumes",
-            "nutrient-dense foods such as dairy, meats, seafood, eggs, legumes, and whole plant foods"
-          ],
           "orderedText": [
             "Older Adults",
-            "+ Some older adults need fewer calories",
+            "Some older adults need fewer calories",
             "nutrient-dense foods such as dairy, meats, seafood,",
             "eggs, legumes, and whole plant foods"
           ],
@@ -5001,6 +5294,10 @@
             "Pregnant Women",
             "Lactating Women",
             "Older Adults"
+          ],
+          "listItems": [
+            "Pregnant women should consume diverse nutrient-dense foods, including iron-rich meats, folate-rich greens and legumes",
+            "nutrient-dense foods such as dairy, meats, seafood, eggs, legumes, and whole plant foods"
           ]
         },
         {
@@ -5017,13 +5314,30 @@
             "Limit Alcoholic Beverages",
             "Sodium"
           ],
-          "paragraphs": [
-            "+ Consume less alcohol for better overall health.",
-            "+ Sodium and electrolytes are essential for hydration."
-          ],
           "listItems": [
-            "- Ages 1–3: less than 1,200 mg per day",
-            "- Ages 9–13: less than 1,800 mg per day"
+            "Ages 1–3: less than 1,200 mg per day",
+            "Ages 9–13: less than 1,800 mg per day",
+            "Consume less alcohol for better overall health.",
+            "Sodium and electrolytes are essential for hydration."
+          ],
+          "lists": [
+            {
+              "kind": "ul",
+              "items": [
+                "Sodium and electrolytes are essential for hydration.",
+                "For children, the recommendations vary by age:",
+                "Highly processed foods that are high in sodium should be avoided."
+              ]
+            },
+            {
+              "kind": "ul",
+              "level": 1,
+              "items": [
+                "Ages 1–3",
+                "Ages 4–8",
+                "Ages 9–13"
+              ]
+            }
           ]
         },
         {
@@ -5039,14 +5353,34 @@
           ],
           "listItems": [
             "peanut introduction as early as 4 to 6 months"
+          ],
+          "lists": [
+            {
+              "kind": "ul",
+              "items": [
+                "Some infants require iron supplementation. Talk with your health care professional about iron supplementation.",
+                "At about 6 months of age, infants may begin to have solid foods.",
+                "Introduce potentially allergenic foods",
+                "Infants should receive a diverse range of nutrient-dense foods",
+                "Examples of nutrient-dense foods to introduce",
+                "Avoid added sugars during infancy and early childhood."
+              ]
+            },
+            {
+              "kind": "ul",
+              "level": 1,
+              "items": [
+                "Meat, poultry, and seafood",
+                "Vegetables and fruits",
+                "Full-fat yogurt and cheese",
+                "Whole grains",
+                "Legumes and nut- or seed-containing foods"
+              ]
+            }
           ]
         },
         {
           "page": 10,
-          "paragraphs": [
-            "Individuals with certain chronic diseases may experience improved health outcomes when following a lower carbohydrate diet.",
-            "whereas vegan diets show broader shortfalls"
-          ],
           "minimumImages": 1,
           "absentWarningCodes": [
             "pageImageFallback",
@@ -5055,6 +5389,10 @@
           "headings": [
             "Individuals with Chronic Disease",
             "Vegetarians & Vegans"
+          ],
+          "listItems": [
+            "Individuals with certain chronic diseases may experience improved health outcomes when following a lower carbohydrate diet.",
+            "whereas vegan diets show broader shortfalls"
           ]
         }
       ]
@@ -6218,8 +6556,8 @@
         {
           "page": 86,
           "text": [
-            "• Under the Public Health Service Act, the Food and",
-            "• Under the Endangered Species Act, the Fish and Wildlife Service"
+            "Under the Public Health Service Act, the Food and",
+            "Under the Endangered Species Act, the Fish and Wildlife Service"
           ],
           "absentScripts": [
             {
@@ -6231,15 +6569,15 @@
             ""
           ],
           "listItems": [
-            "• Under the Public Health Service Act, the Food and Drug Administration (FDA) regulates “biological product[s],” including “protein[s].” 42 U. S. C. §262(i)(1)."
+            "Under the Public Health Service Act, the Food and Drug Administration (FDA) regulates “biological product[s],” including “protein[s].” 42 U. S. C. §262(i)(1)."
           ]
         },
         {
           "page": 87,
           "text": [
-            "• Under the Medicare program, reimbursements to hospitals",
-            "• Congress directed the Department of the Interior and",
-            "• Or take Chevron itself."
+            "Under the Medicare program, reimbursements to hospitals",
+            "Congress directed the Department of the Interior and",
+            "Or take Chevron itself."
           ],
           "absentScripts": [
             {
@@ -6251,8 +6589,18 @@
             ""
           ],
           "listItems": [
-            "• Congress directed the Department of the Interior and the Federal Aviation Administration to reduce noise from aircraft flying over Grand Canyon National Park",
-            "• Or take Chevron itself. In amendments to the Clean Air Act, Congress told States to require permits for modifying or constructing “stationary sources” of air pollution."
+            "Congress directed the Department of the Interior and the Federal Aviation Administration to reduce noise from aircraft flying over Grand Canyon National Park",
+            "Or take Chevron itself. In amendments to the Clean Air Act, Congress told States to require permits for modifying or constructing “stationary sources” of air pollution."
+          ],
+          "lists": [
+            {
+              "kind": "ul",
+              "items": [
+                "Under the Endangered Species Act",
+                "Under the Medicare program",
+                "Congress directed the Department of the Interior"
+              ]
+            }
           ]
         },
         {
@@ -6334,9 +6682,9 @@
             "Two data ﬁles were used.",
             "2.1 Domingo-Ferrer and Mateo-Sanz",
             "The Data Extraction System (http://www.census.gov/DES)",
-            "1. Total income",
-            "12. Aged exemption ﬂag",
-            "13. Schedule D ﬂag"
+            "Total income",
+            "Aged exemption ﬂag",
+            "Schedule D ﬂag"
           ],
           "absentText": [
             "5GdwdIlohv",
@@ -6351,6 +6699,28 @@
           "maximumImages": 0,
           "paragraphs": [
             "identiﬁers and data from the public-use CPS ﬁle."
+          ],
+          "lists": [
+            {
+              "kind": "ol",
+              "start": 1,
+              "items": [
+                "Total income",
+                "Adjusted gross income",
+                "Wage and salary income"
+              ]
+            },
+            {
+              "kind": "ol",
+              "start": 1,
+              "items": [
+                "Aged exemption ﬂag",
+                "Schedule D ﬂag",
+                "Schedule E ﬂag",
+                "Schedule C ﬂag",
+                "Schedule F ﬂag"
+              ]
+            }
           ]
         },
         {
@@ -7132,11 +7502,6 @@
             "The plaintiff, (name) ____, is incorporated under the laws of the State of (name) ____, and has its principal place of business in the State of (name) ____.",
             "The defendant, (name) ____, is a citizen of the State of (name) ____. Or is a citizen of (foreign nation) ____."
           ],
-          "listItems": [
-            "a. If the plaintiff is an individual",
-            "b. If the plaintiff is a corporation",
-            "a. If the defendant is an individual"
-          ],
           "distinctParagraphs": [
             {
               "first": "no defendant may be a citizen of the same State as any plaintiff.",
@@ -7192,6 +7557,11 @@
               "heading": "2. The Defendant(s)",
               "level": 6
             }
+          ],
+          "preformattedBlocks": [
+            "a. If the plaintiff is an individual",
+            "b. If the plaintiff is a corporation",
+            "a. If the defendant is an individual"
           ]
         },
         {
@@ -7221,9 +7591,6 @@
             "State briefly and precisely what damages or other relief the plaintiff asks the court to order. Do not make legal arguments. Include any basis for claiming that the wrongs alleged are continuing at the present time. Include the amounts of any actual damages claimed for the acts alleged and the basis for these amounts. Include any punitive or exemplary damages claimed, the amounts, and the reasons you claim you are entitled to actual or punitive money damages.",
             "The defendant, (name) ____, is incorporated under the laws of the State of (name) ____, and has its principal place of business in the State of (name) ____. Or is incorporated under the laws of (foreign nation) ____, and has its principal place of business in (name) ____.",
             "Write a short and plain statement of the claim. Do not make legal arguments. State as briefly as possible the facts showing that each plaintiff is entitled to the damages or other relief sought. State how each defendant was involved and what each defendant did that caused the plaintiff harm or violated the plaintiff's rights, including the dates and places of that involvement or conduct. If more than one claim is asserted, number each claim and write a short and plain statement of each claim in a separate paragraph. Attach additional pages if needed."
-          ],
-          "listItems": [
-            "b. If the defendant is a corporation"
           ],
           "distinctParagraphs": [
             {
@@ -7260,6 +7627,9 @@
               "heading": "IV. Relief",
               "level": 4
             }
+          ],
+          "preformattedBlocks": [
+            "b. If the defendant is a corporation"
           ]
         },
         {
@@ -7788,11 +8158,11 @@
             "plots of data acquired in 45-degree-increment azimuth regions."
           ],
           "listItems": [
-            "• Peak bending moment due to lift, research model",
-            "• Maximum resultant bending moment, research model",
-            "• Normalized mean bending moment due to drag, proprietary model",
-            "• Normalized peak bending moment due to lift, proprietary model",
-            "• Normalized maximum resultant bending moment, proprietary model"
+            "Peak bending moment due to lift, research model",
+            "Maximum resultant bending moment, research model",
+            "Normalized mean bending moment due to drag, proprietary model",
+            "Normalized peak bending moment due to lift, proprietary model",
+            "Normalized maximum resultant bending moment, proprietary model"
           ],
           "absentText": [
             "45degree",
@@ -7805,6 +8175,18 @@
             "unverifiedTextLayer",
             "damagedTextEncoding",
             "implausibleTextLayer"
+          ],
+          "lists": [
+            {
+              "kind": "ul",
+              "items": [
+                "Peak bending moment due to lift, research model",
+                "Maximum resultant bending moment, research model",
+                "Normalized mean bending moment due to drag",
+                "Normalized peak bending moment due to lift",
+                "Normalized maximum resultant bending moment"
+              ]
+            }
           ]
         },
         {
@@ -8244,10 +8626,10 @@
             "implausibleTextLayer"
           ],
           "listItems": [
-            "• Controllability: By leaving node k at time Tk, flight f cannot reach node k+ 1 at any available time.",
-            "• Reachability: There is no time instant Tk−1 available to flight f at k−1 from which the flight can reach node k at an available time instant at k.",
-            "• the totality of the intervals (7), (8), (9) as the unavailable time windows (shown red in Ref. [4, Fig. 2]),",
-            "• the travel time bounds specified in (5.a) as the travel times (e.g., Ref. [4, Equations (5), (6), (7)])."
+            "Controllability: By leaving node k at time Tk, flight f cannot reach node k+ 1 at any available time.",
+            "Reachability: There is no time instant Tk−1 available to flight f at k−1 from which the flight can reach node k at an available time instant at k.",
+            "the totality of the intervals (7), (8), (9) as the unavailable time windows (shown red in Ref. [4, Fig. 2]),",
+            "the travel time bounds specified in (5.a) as the travel times (e.g., Ref. [4, Equations (5), (6), (7)])."
           ]
         },
         {
@@ -8315,10 +8697,10 @@
             "A. Required supporting functionality",
             "The participants of a distributed system",
             "Each such participant, called here an Arrival Fix Schedule Assistant (AFSA)",
-            "1) The ability to determine",
-            "2) The ability to query the other AFSAs",
-            "3) The ability to determine whether all flights",
-            "4) The ability to share its most recently",
+            "The ability to determine",
+            "The ability to query the other AFSAs",
+            "The ability to determine whether all flights",
+            "The ability to share its most recently",
             "B. New capabilities"
           ],
           "paragraphs": [
@@ -8354,6 +8736,18 @@
             "unverifiedTextLayer",
             "damagedTextEncoding",
             "implausibleTextLayer"
+          ],
+          "lists": [
+            {
+              "kind": "ol",
+              "start": 1,
+              "items": [
+                "The ability to determine, for all other flights",
+                "The ability to query the other AFSAs",
+                "The ability to determine whether all flights",
+                "The ability to share its most recently"
+              ]
+            }
           ]
         },
         {
@@ -9351,18 +9745,16 @@
           ],
           "orderedText": [
             "Goals",
-            "1. Enable big compute next to big data",
-            "2. Encourage user adoption of cloud for analytics",
-            "3. Maximum analytics capability at minimum cost",
+            "Enable big compute next to big data",
+            "Encourage user adoption of cloud for analytics",
+            "Maximum analytics capability at minimum cost",
             "a. Use capabilities within NASA",
             "b. Leverage analytics capabilities"
           ],
           "listItems": [
-            "1. Enable big compute next to big data",
-            "2. Encourage user adoption of cloud for analytics",
-            "3. Maximum analytics capability at minimum cost",
-            "a. Use capabilities within NASA more effectively and efficiently",
-            "b. Leverage analytics capabilities of external partners"
+            "Enable big compute next to big data",
+            "Encourage user adoption of cloud for analytics",
+            "Maximum analytics capability at minimum cost"
           ],
           "absentWarningCodes": [
             "ocrUsed",
@@ -9371,7 +9763,22 @@
             "implausibleTextLayer",
             "unverifiedTextLayer"
           ],
-          "pageReference": false
+          "pageReference": false,
+          "preformattedBlocks": [
+            "a. Use capabilities within NASA more effectively and efficiently",
+            "b. Leverage analytics capabilities of external partners"
+          ],
+          "lists": [
+            {
+              "kind": "ol",
+              "start": 1,
+              "items": [
+                "Enable big compute next to big data",
+                "Encourage user adoption of cloud for analytics",
+                "Maximum analytics capability at minimum cost"
+              ]
+            }
+          ]
         },
         {
           "page": 8,
@@ -9385,20 +9792,20 @@
             }
           ],
           "orderedText": [
-            "1. Satisfy",
-            "2. Support analysis",
-            "3. Facilitate",
-            "4. Support batch",
-            "5. Support distributed",
-            "6. Support cost"
+            "Satisfy",
+            "Support analysis",
+            "Facilitate",
+            "Support batch",
+            "Support distributed",
+            "Support cost"
           ],
           "listItems": [
-            "1. Satisfy a diverse user community",
-            "2. Support analysis in the cloud without egressing data",
-            "3. Facilitate multi-dataset comparison and fusion",
-            "4. Support batch, interactive and streaming modes",
-            "5. Support distributed filesystems and databases",
-            "6. Support cost constraints and cost-sharing"
+            "Satisfy a diverse user community",
+            "Support analysis in the cloud without egressing data",
+            "Facilitate multi-dataset comparison and fusion",
+            "Support batch, interactive and streaming modes",
+            "Support distributed filesystems and databases",
+            "Support cost constraints and cost-sharing"
           ],
           "absentWarningCodes": [
             "ocrUsed",
@@ -9407,7 +9814,21 @@
             "implausibleTextLayer",
             "unverifiedTextLayer"
           ],
-          "pageReference": false
+          "pageReference": false,
+          "lists": [
+            {
+              "kind": "ol",
+              "start": 1,
+              "items": [
+                "Satisfy a diverse user community",
+                "Support analysis in the cloud",
+                "Facilitate multi-dataset comparison",
+                "Support batch, interactive and streaming modes",
+                "Support distributed filesystems",
+                "Support cost constraints"
+              ]
+            }
+          ]
         },
         {
           "page": 9,
@@ -9421,18 +9842,18 @@
             }
           ],
           "orderedText": [
-            "1. Infusion-",
-            "2. No monolithic",
-            "3. Open code",
-            "4. Interoperability",
-            "5. No unnecessary"
+            "Infusion-",
+            "No monolithic",
+            "Open code",
+            "Interoperability",
+            "No unnecessary"
           ],
           "listItems": [
-            "1. Infusion- and innovation-friendly framework and building blocks",
-            "2. No monolithic systems",
-            "3. Open code and services",
-            "4. Interoperability and reuse",
-            "5. No unnecessary duplication (“undifferentiated heavy lifting”)"
+            "Infusion- and innovation-friendly framework and building blocks",
+            "No monolithic systems",
+            "Open code and services",
+            "Interoperability and reuse",
+            "No unnecessary duplication (“undifferentiated heavy lifting”)"
           ],
           "absentWarningCodes": [
             "ocrUsed",
@@ -9442,7 +9863,20 @@
             "unverifiedTextLayer"
           ],
           "pageReference": false,
-          "minimumImages": 1
+          "minimumImages": 1,
+          "lists": [
+            {
+              "kind": "ol",
+              "start": 1,
+              "items": [
+                "Infusion- and innovation-friendly framework",
+                "No monolithic systems",
+                "Open code and services",
+                "Interoperability and reuse",
+                "No unnecessary duplication"
+              ]
+            }
+          ]
         },
         {
           "page": 10,

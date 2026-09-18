@@ -174,10 +174,37 @@ struct ReflowBlock: Sendable, Equatable {
         /// table has no caption of its own.
         var caption: [InlineText] = []
     }
+    /// One item of a real list (#194). Items are a flat sequence rather than a tree: the writer
+    /// streams blocks and packs spine documents freely, so each item carries its depth and whether
+    /// it opens a list element, and the writer opens and closes `<ul>`/`<ol>` as those change.
+    struct ListItem: Sendable, Equatable {
+        enum Kind: Sendable, Equatable {
+            /// A bulleted item: `<ul>`, whose own marker replaces the printed glyph.
+            case unordered
+            /// A numbered item in a run whose printed numbers ascend by one: `<ol>`, numbered from
+            /// the opening item's `ordinal`.
+            case ordered
+        }
+        /// The item's text with its printed marker removed; the list renders its own.
+        var text: InlineText
+        /// The printed marker (`•`, `3.`), kept for provenance.
+        var marker: String
+        /// The printed number of an ordered item.
+        var ordinal: Int?
+        var kind: Kind
+        /// Nesting depth, 0 for a top-level list.
+        var level = 0
+        /// The first item of its list element at this level. A following item that does not open
+        /// a list continues the one open at its level.
+        var opensList = true
+    }
     enum Content: Sendable, Equatable {
         case paragraph(InlineText)
         case heading(id: String, text: InlineText, level: Int = 2)
+        /// Text whose line breaks and marker are significant: monospaced code, a coded weather
+        /// report, and a list-shaped line the list pass did not verify as a list item (#194).
         case preformatted(InlineText)
+        case listItem(ListItem)
         /// A page-bottom note; its own raised marker, when present, opens the text. Body
         /// prose is never placed in one, and a note is not linked to its reference.
         case footnote(InlineText)
@@ -202,11 +229,26 @@ struct ReflowBlock: Sendable, Equatable {
     /// The tier of an outline section label a heading was read from (0 Roman, 1 lettered, 2
     /// numbered; `LayoutReconstructor.outlineSectionLabels`), ranked by tier beneath the size scale.
     var outlineDepth: Int?
+    /// Where reconstruction read a list item's marker line (#194). Set on every preformatted block
+    /// opened by a list marker; `ListBuilder` decides from it and the text whether the block is a
+    /// list item. Joins that grow the block keep it.
+    var listEvidence: ListEvidence?
+    struct ListEvidence: Sendable, Equatable {
+        /// The marker line's left edge and type size, in its page's space.
+        var edge: CGFloat
+        var fontSize: CGFloat
+        /// Whether the line's text is a transcription of a scan: recognized by OCR, or an inherited
+        /// invisible text layer over the page image.
+        var recognized = false
+        /// The tagged list item the marker line belongs to, when the PDF tags it.
+        var tag: ListTag?
+    }
 
     var text: String {
         switch content {
         case let .paragraph(text), let .heading(_, text, _): text.text
         case let .preformatted(text), let .footnote(text): text.text
+        case let .listItem(item): item.text.text
         case let .table(table): (table.caption.map(\.text) + table.rows.flatMap(\.cells).map(\.text.text)).joined(separator: " ")
         case .image, .sourcePage: ""
         }
@@ -216,13 +258,14 @@ struct ReflowBlock: Sendable, Equatable {
         case let .paragraph(text), let .heading(_, text, _): text.sourcePages
         case let .sourcePage(page): [page]
         case let .preformatted(text), let .footnote(text): text.sourcePages
+        case let .listItem(item): item.text.sourcePages
         case let .table(table): table.caption.flatMap(\.sourcePages) + table.rows.flatMap(\.cells).flatMap(\.text.sourcePages)
         case .image: []
         }
     }
     var hasReflowedText: Bool {
         switch content {
-        case .paragraph, .heading, .preformatted, .footnote, .table: true
+        case .paragraph, .heading, .preformatted, .listItem, .footnote, .table: true
         case .image, .sourcePage: false
         }
     }

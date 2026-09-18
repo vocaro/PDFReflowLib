@@ -18,6 +18,7 @@ OPF = '{http://www.idpf.org/2007/opf}'
 EPUB = '{http://www.idpf.org/2007/ops}'
 HEADINGS = {HTML + 'h' + str(n) for n in range(1, 7)}
 BLOCKS = HEADINGS | {HTML + tag for tag in ('p', 'pre', 'figure', 'li', 'table', 'caption', 'tr', 'th', 'td')}
+LISTS = {HTML + 'ul', HTML + 'ol'}
 # The outermost blocks a page's content reads as, in document order, beside its images: the
 # sequence a caption's placement beside its figure is judged in (`captionedImages`).
 SEQUENCE_BLOCKS = HEADINGS | {HTML + tag for tag in ('p', 'pre', 'li', 'table')}
@@ -35,6 +36,8 @@ CHECK_TYPES = (
     ('heading-level', ('headingLevels',), False),
     ('absent-heading', ('absentHeadings',), False),
     ('list-item', ('listItems',), False),
+    ('list', ('lists',), False),
+    ('preformatted-block', ('preformattedBlocks',), False),
     ('preformatted-lines', ('preformattedLines',), False),
     ('script', ('scripts',), False),
     ('absent-script', ('absentScripts',), False),
@@ -109,7 +112,12 @@ def read_pages(path, *, max_entries=DEFAULT_MAX_ENTRIES,
     heading_id = 0
     paragraph_id = 0
     item_id = 0
+    block_id = 0
     note_id = 0
+    # Every list element in document order: its kind, start, depth and items. An item's text
+    # accumulates across page markers; its page is the one its first text lands on.
+    lists = []
+    items = {}
     # Elements with ids, keyed 'EPUB/file#id', accumulate their text across page markers so a
     # note continued onto the next page is still one link target.
     open_anchors = []
@@ -126,7 +134,12 @@ def read_pages(path, *, max_entries=DEFAULT_MAX_ENTRIES,
             chapter = PurePosixPath('EPUB') / manifest[reference.get('idref')]
             tree = ET.fromstring(archive.read(str(chapter)))
 
-            def append(text, script=None, heading=None, paragraph=None, note=None, item=None):
+            def append(text, script=None, heading=None, paragraph=None, note=None, item=None, block=None):
+                if item is not None and text:
+                    record = items[item]
+                    record['text'] += text
+                    if record['page'] is None and text.strip():
+                        record['page'] = current
                 if current is not None and text:
                     page = pages[current]
                     start = len(page['text'])
@@ -141,6 +154,8 @@ def read_pages(path, *, max_entries=DEFAULT_MAX_ENTRIES,
                         page['notes'][note] = page['notes'].get(note, '') + text
                     if item is not None:
                         page['listItems'][item] = page['listItems'].get(item, '') + text
+                    if block is not None:
+                        page['preformatted'][block] = page['preformatted'].get(block, '') + text
                     if script:
                         spans = page['scripts']
                         if spans and spans[-1]['tag'] == script and spans[-1]['end'] == start:
@@ -148,8 +163,9 @@ def read_pages(path, *, max_entries=DEFAULT_MAX_ENTRIES,
                         else:
                             spans.append({'tag': script, 'start': start, 'end': start + len(text)})
 
-            def walk(element, script=None, heading=None, paragraph=None, note=None, item=None):
-                nonlocal current, heading_id, paragraph_id, note_id, item_id, sequence_depth
+            def walk(element, script=None, heading=None, paragraph=None, note=None, item=None, block=None,
+                     within=None, depth=0):
+                nonlocal current, heading_id, paragraph_id, note_id, item_id, block_id, sequence_depth
                 pagebreak = 'pagebreak' in element.get(EPUB + 'type', '').split()
                 if pagebreak:
                     marker_id = element.get('id', '')
@@ -160,7 +176,7 @@ def read_pages(path, *, max_entries=DEFAULT_MAX_ENTRIES,
                         raise ValueError('Duplicate page boundary')
                     markers.append(current)
                     pages[current] = {'text': '', 'images': [], 'scripts': [], 'headings': {}, 'paragraphs': {}, 'listItems': {}, 'notes': {}, 'tables': [],
-                                      'noterefs': [], 'anchors': {}, 'blocks': []}
+                                      'preformatted': {}, 'noterefs': [], 'anchors': {}, 'blocks': []}
                 if element.tag == HTML + 'img' and current is not None:
                     asset = str(chapter.parent / element.attrib['src'])
                     if asset not in names:
@@ -197,9 +213,28 @@ def read_pages(path, *, max_entries=DEFAULT_MAX_ENTRIES,
                 if element.tag == HTML + 'p':
                     paragraph_id += 1
                     paragraph = paragraph_id
-                if element.tag == HTML + 'pre':
+                # A list holds only items: a page marker or a block directly inside one is invalid.
+                if element.tag in LISTS:
+                    if any(child.tag != HTML + 'li' for child in element) or (element.text or '').strip():
+                        raise ValueError('List element holds something other than items')
+                    start = element.get('start', '1')
+                    if element.tag == HTML + 'ol' and not re.fullmatch(r'[1-9]\d*', start):
+                        raise ValueError('Invalid list start')
+                    # A list nested in an item follows the item's own text: keep the words apart.
+                    append(' ', script, heading, paragraph, note, item, block)
+                    within = {'kind': element.tag[len(HTML):], 'depth': depth,
+                              'start': int(start) if element.tag == HTML + 'ol' else None, 'items': []}
+                    lists.append(within)
+                    depth += 1
+                if element.tag == HTML + 'li' and within is not None:
                     item_id += 1
                     item = item_id
+                    items[item] = {'text': '', 'page': None}
+                    within['items'].append(item)
+                    within = None
+                if element.tag == HTML + 'pre':
+                    block_id += 1
+                    block = block_id
                 # A page-bottom footnote block; its inner paragraph is also an ordinary paragraph.
                 if element.get('role') == 'doc-footnote':
                     note_id += 1
@@ -207,16 +242,24 @@ def read_pages(path, *, max_entries=DEFAULT_MAX_ENTRIES,
                 # The page's own outermost blocks, in document order beside its images, so a
                 # caption's place next to its figure can be read (`captionedImages`). A block a
                 # page marker interrupts keeps only the text it holds on the page it opened.
+                # A page marker that opens a block (a list item's, #194) belongs to the page the block
+                # opens on, so it is read before the block's place in the sequence is taken.
+                children = list(element)
+                opening_break = (element.tag in SEQUENCE_BLOCKS and children and not (element.text or '').strip()
+                                 and 'pagebreak' in children[0].get(EPUB + 'type', '').split())
+                if opening_break:
+                    walk(children[0], script, heading, paragraph, note, item, block, within, depth)
                 sequence = None
                 if element.tag in SEQUENCE_BLOCKS:
                     if current is not None and sequence_depth == 0:
                         sequence = (current, {'kind': 'text', 'start': len(pages[current]['text'])})
                         pages[current]['blocks'].append(sequence[1])
                     sequence_depth += 1
-                append(element.text, script, heading, paragraph, note, item)
-                for child in element:
-                    walk(child, script, heading, paragraph, note, item)
-                    append(child.tail, script, heading, paragraph, note, item)
+                append(element.text, script, heading, paragraph, note, item, block)
+                for position, child in enumerate(children):
+                    if not (opening_break and position == 0):
+                        walk(child, script, heading, paragraph, note, item, block, within, depth)
+                    append(child.tail, script, heading, paragraph, note, item, block)
                 if element.tag in SEQUENCE_BLOCKS:
                     sequence_depth -= 1
                 if sequence is not None:
@@ -254,16 +297,25 @@ def read_pages(path, *, max_entries=DEFAULT_MAX_ENTRIES,
         page['headings'] = [normalized(text) for text in page['headings'].values()]
         # Paragraph IDs are document-wide, so one <p> crossing a page marker has the same ID on both pages.
         page['paragraphIDs'] = {paragraph: normalized(text) for paragraph, text in page['paragraphs'].items()}
-        # A <pre> list item carries its own identity, so a wrapped item continued across a page
-        # marker is one block there too (#50).
+        # A list item (`<li>`) carries its own identity, so a wrapped item continued across a page
+        # marker is one item there too (#50, #194). Its text excludes a list nested inside it.
         page['listItemIDs'] = {item: normalized(text) for item, text in page['listItems'].items()}
+        page['listItems'] = [normalized(text) for text in page['listItems'].values()]
         # A <pre> block's own line breaks, which normalization would erase: a coded report's
         # change groups are separate lines of one block (#96).
         page['preformattedLines'] = [[normalized(line) for line in text.split('\n') if normalized(line)]
-                                     for text in page['listItems'].values()]
-        page['listItems'] = [normalized(text) for text in page['listItems'].values()]
+                                     for text in page['preformatted'].values()]
+        page['preformatted'] = [normalized(text) for text in page['preformatted'].values()]
+        page['lists'] = []
         page['paragraphs'] = [normalized(text) for text in page['paragraphs'].values()]
         page['notes'] = [normalized(text) for text in page['notes'].values()]
+    # Each list element, on every page one of its items opens on, with its items' whole text.
+    for record in lists:
+        shape = {'kind': record['kind'], 'start': record['start'], 'level': record['depth'],
+                 'items': [normalized(items[item]['text']) for item in record['items']]}
+        for number in sorted({items[item]['page'] for item in record['items']} - {None}):
+            if number in pages:
+                pages[number]['lists'].append(shape)
     return pages, markers
 
 
@@ -427,10 +479,45 @@ def assess(case, contract, result, report, pages, markers, image_data=None, refe
             if not isinstance(phrase, str) or not normalized(phrase):
                 raise ValueError('Empty or invalid list item phrase')
             checks += 1
-            # One <pre> block must hold the whole phrase, so a marker line and the lines wrapped
-            # under its hanging indent are one item (#50, #64).
+            # One list item (`<li>`) must hold the whole phrase, so a marker line and the lines
+            # wrapped under its hanging indent are one item (#50, #64, #194).
             if not any(normalized(phrase) in block for block in page.get('listItems', [])):
                 errors.append(f'Page {number}: missing list item {phrase!r}')
+        for expected_list in item.get('lists', []):
+            if (not isinstance(expected_list, dict) or not {'kind', 'items'} <= set(expected_list)
+                    or set(expected_list) - {'kind', 'items', 'start', 'level'}
+                    or expected_list['kind'] not in ('ul', 'ol')
+                    or not isinstance(expected_list['items'], list) or not expected_list['items']
+                    or any(not isinstance(p, str) or not normalized(p) for p in expected_list['items'])
+                    or any(k in expected_list and (type(expected_list[k]) is not int or expected_list[k] < 0)
+                           for k in ('start', 'level'))
+                    or 'start' in expected_list and expected_list['kind'] != 'ol'):
+                raise ValueError('List expectation requires a kind, nonempty items and integer start/level')
+            checks += 1
+            wanted = [normalized(p) for p in expected_list['items']]
+
+            # One list element of this kind (and start and depth, where named) holds the phrases
+            # in consecutive items, in order: items that split into separate lists, lost their
+            # numbering or changed order fail (#194).
+            def matches(shape):
+                if shape['kind'] != expected_list['kind']:
+                    return False
+                if 'start' in expected_list and shape['start'] != expected_list['start']:
+                    return False
+                if 'level' in expected_list and shape['level'] != expected_list['level']:
+                    return False
+                return any(all(wanted[j] in shape['items'][k + j] for j in range(len(wanted)))
+                           for k in range(len(shape['items']) - len(wanted) + 1))
+            if not any(matches(shape) for shape in page.get('lists', [])):
+                errors.append(f'Page {number}: no {expected_list["kind"]} list with the items {expected_list["items"]!r}')
+        for phrase in item.get('preformattedBlocks', []):
+            if not isinstance(phrase, str) or not normalized(phrase):
+                raise ValueError('Empty or invalid preformatted block phrase')
+            checks += 1
+            # One <pre> block must hold the whole phrase: a list-shaped line the converter does not
+            # verify as a list item keeps its printed marker and its own block (#194).
+            if not any(normalized(phrase) in block for block in page.get('preformatted', [])):
+                errors.append(f'Page {number}: missing preformatted block {phrase!r}')
         for lines in item.get('preformattedLines', []):
             if (not isinstance(lines, list) or len(lines) < 2
                     or any(not isinstance(line, str) or not normalized(line) for line in lines)):
@@ -525,8 +612,8 @@ def assess(case, contract, result, report, pages, markers, image_data=None, refe
                 raise ValueError('List item continuation requires nonempty end and next phrases')
             checks += 1
             end, after = normalized(continuation['end']), normalized(continuation['next'])
-            # One <pre> list item must end this page with the first phrase and carry the second
-            # on the next, so a marker's wrapped text is not split at the page boundary (#50).
+            # One list item must end this page with the first phrase and carry the second on the
+            # next, so a marker's wrapped text is not split at the page boundary (#50, #194).
             if not any(end in text and block in following.get('listItemIDs', {})
                        and after in following['listItemIDs'][block]
                        for block, text in page.get('listItemIDs', {}).items()):

@@ -4,6 +4,8 @@ Survey for [#29](https://github.com/vocaro/PDFReflowLib/issues/29) part (b). Thi
 measurement, not a change: nothing under `Sources/` was touched and no conversion behaviour
 was altered. The owner approves the classes before anything is implemented.
 
+*Since implemented for the two safe classes (#194): see the [real-list record](../real-lists/record.md).*
+
 Today every list item is a `ReflowBlock.Content.preformatted` that keeps its printed marker
 (`1)`, `•`, `a.`) and is written as `<pre>…</pre>`
 (`EPUBWriter.swift:168`). The question is which of those blocks are really lists, what markup

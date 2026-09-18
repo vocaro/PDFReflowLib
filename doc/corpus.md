@@ -91,6 +91,7 @@ xcrun swiftc -parse-as-library -O \
   -module-cache-path .build/raster-environment/module-cache \
   Sources/PDFReflowLib/PageRasterizer.swift Sources/PDFReflowLib/ConversionTypes.swift \
   Sources/PDFReflowLib/DocumentModel.swift Sources/PDFReflowLib/ReflowDocument.swift \
+  Sources/PDFReflowLib/ImageContentClassifier.swift \
   tools/probe-raster-environment.swift -o .build/raster-environment/probe
 python3 tools/evaluate-real-document.py --case dga-2025-2030 \
   --pdf corpus/cache/DGA.pdf --converter .build/release/pdf-reflow \
@@ -103,7 +104,8 @@ python3 tools/compare_conversion_runs.py --baseline /tmp/dga-baseline \
 Capture `/tmp/dga-baseline` with the baseline converter and the same probe before comparing.
 `run_corpus_regressions.py` accepts both new flags and forwards them to every selected case.
 Keep resource measurements sequential. The probe requires the same macOS/Vision SDK as the
-library. Compiling it again changes its identity; recapture both runs if that identity changes.
+library. `scripts/check-all.sh` compiles this documented command as written, so a library source
+the rasterizer comes to need cannot go missing from it unnoticed (#204). Compiling it again changes its identity; recapture both runs if that identity changes.
 
 The evaluator records a fresh run ID, converter and probe executable SHA-256, source identity,
 system/build/architecture, probe result SHA-256, and EPUB SHA-256. The probe reports its own
@@ -862,24 +864,29 @@ python3 tools/run_corpus_regressions.py --converter .build/release/pdf-reflow \
 
 The run passes EPUBCheck, progress and the 128 MiB Mac RSS gate (61 MiB peak). The
 [review points](../corpus/ntrs-20210020887-techport-thm-2021-review.json) cover all five pages. The
-contract holds 64 checks, all on output that matches the source:
+contract holds 117 checks, all on output that matches the source:
 
-- the main-column headings;
+- the main-column headings, with "Closeout Documentation" and "Images" at the same level as the
+  other main-column titles;
 - the Project Introduction paragraphs, whole and separate;
-- every bullet item's text in order, including the nested items;
+- every bullet item's text in order, as the items of real lists, the nested items one level down;
 - the page-4 closeout and Figure 1 text, the caption standing directly beneath its diagram;
-- image presence, including all three page-5 gallery pictures;
+- the wrapped image URLs joined without a space;
+- image presence, including all three page-5 gallery pictures, and an image ceiling on every page
+  that no bullet crop and no footer logo fits under;
+- no print-footer line on any page;
 - every page warning that its links are not interactive, with no source-page image and no
   recognition, damaged-encoding, implausible-layer, unverified-layer or fallback warning.
 
-The known defects are:
+Chromium's print footer (`Printed on` with its date and time, the accessible-alternative notice,
+the page URL and `Page N`) stacks its rows closer than a line height, so no row of it was set apart
+from the next. It is now removed as one repeated block, with the TechPort logo printed beside it;
+the drawn square and circle bullets open their items as `•`
+([#167](https://github.com/vocaro/PDFReflowLib/issues/167),
+[record](../measurements/browser-print-furniture/record.md)).
 
-- The header band's title lines stay inside a crop with the insignia on every page. The sidebar
-  panels, the page-4 tables and the page-5 gallery captions exist only as crops
-  ([#166](https://github.com/vocaro/PDFReflowLib/issues/166)).
-- The print footer stays in the reading flow on every page.
-- Bullet markers become tiny image crops before paragraph items, and nesting is lost.
-- "Closeout Documentation" and "Images" are not headings
-  ([#167](https://github.com/vocaro/PDFReflowLib/issues/167)).
+The known defect: the header band's title lines stay inside a crop with the insignia on every
+page. The sidebar panels, the page-4 tables and the page-5 gallery captions exist only as crops
+([#166](https://github.com/vocaro/PDFReflowLib/issues/166)).
 The 27 borderless links draw nothing beyond the printed page, so no page takes a source-page image
 and each warns `annotationsNotConverted` ([#151](https://github.com/vocaro/PDFReflowLib/issues/151)).

@@ -144,6 +144,7 @@ enum LayoutReconstructor {
             line.readingRect = old.readingRect
             line.structure = old.structure
             line.listTag = old.listTag
+            line.markerTextEdge = old.markerTextEdge
             page.lines[index] = line
         }
     }
@@ -3780,8 +3781,18 @@ enum LayoutReconstructor {
 
     /// Small labels inside preserved images must not turn the surrounding prose into headings.
     /// Keep the page estimate when too little reflowable text remains to establish a body size.
-    static func headingBodySize(_ lines: [TextLine], pageBody: CGFloat) -> CGFloat {
-        establishedBodySize(lines).map { max(pageBody, $0) } ?? pageBody
+    ///
+    /// A page too bare to establish its body can still read its size from the document (#167):
+    /// where the reflowable lines are commonest in the document's body size (`documentBody`), set
+    /// under the page estimate, the page estimate is the type inside its crops and the reflowable
+    /// text is the document's body. TechPort page 4 sets its three tables at 9.7 points, which
+    /// their crops keep, over 190 characters of 9-point text; measured against 9.7 its 10.5-point
+    /// `Closeout Documentation` and `Images` were no titles, where the same titles over 9-point
+    /// text on pages 1-3 are.
+    static func headingBodySize(_ lines: [TextLine], pageBody: CGFloat, documentBody: CGFloat? = nil) -> CGFloat {
+        if let established = establishedBodySize(lines) { return max(pageBody, established) }
+        if let documentBody, documentBody < pageBody, !lines.isEmpty, bodySize(lines) == documentBody { return documentBody }
+        return pageBody
     }
 
     /// The body size the lines establish: at least three lines and 200 characters in their commonest size.
@@ -3869,7 +3880,7 @@ enum LayoutReconstructor {
         // page whose sidebar outweighs its prose keeps that prose as paragraphs (#54).
         let boxes = clusters(page.tints, distance: 4)
         let outside = free.filter { line in !boxes.contains { $0.contains(CGPoint(x: line.rect.midX, y: line.rect.midY)) } }
-        let reflowBody = headingBodySize(outside, pageBody: body)
+        let reflowBody = headingBodySize(outside, pageBody: body, documentBody: documentBody)
         let documentFloor = documentHeadingFloor(outside, documentBody: documentBody)
         let headingThreshold = max(body * 1.25, reflowBody * 1.1, documentFloor)
         // A heading line is wider than tall unless it is one or two characters; rotated text
@@ -6407,7 +6418,8 @@ enum LayoutReconstructor {
 
     /// The evidence a list-marker line leaves for `ListBuilder` (#194).
     static func listEvidence(_ line: TextLine, recognized: Bool) -> ReflowBlock.ListEvidence {
-        ReflowBlock.ListEvidence(edge: line.rect.minX, fontSize: line.fontSize, recognized: recognized, tag: line.listTag)
+        ReflowBlock.ListEvidence(edge: line.rect.minX, fontSize: line.fontSize, recognized: recognized, tag: line.listTag,
+                                 textEdge: line.markerTextEdge)
     }
 
     /// A numbered or lettered marker opening a line (`12.`, `b)`, `P.`) before a space: its kind
@@ -6519,6 +6531,28 @@ enum LayoutReconstructor {
         default:
             return isASCIIAlphanumeric(last) && "/._?#=&%~".contains(next) && isASCIIAlphanumeric(right.dropFirst().first)
         }
+    }
+
+    /// A browser breaks a long address wherever its column runs out, inside a word as readily as
+    /// after a slash (#167): TechPort's captions end `(https://techport.nasa.gov/imag` and go on
+    /// `e/41317)`. Nothing in the characters at such a break says the address goes on, but its
+    /// brackets do. The break is inside the address when the address ends in a letter or digit
+    /// and opens this line's bracket (`(`, `[` or `<`) without closing it, and the next line's
+    /// first word, before any sentence punctuation, is address characters closing that bracket
+    /// with at least one address separator (`/`, `.`, `=`, `?`, `&`, `#`, `%`, `_`, `~`) of its
+    /// own. A parenthesis the address leaves open over words (`(see https://…` + `for details)`)
+    /// keeps its space, and a hyphen at the break stays the hyphen policy's to decide.
+    private static func bracketedAddressContinues(_ left: String, _ right: String) -> Bool {
+        guard let address = trailingAddress(left), isASCIIAlphanumeric(address.last),
+              let opening = left[..<address.startIndex].last else { return false }
+        let pairs: [Character: Character] = ["(": ")", "[": "]", "<": ">"]
+        guard let closing = pairs[opening], !address.contains(closing) else { return false }
+        var word = Substring(right.prefix { !$0.isWhitespace })
+        while let last = word.last, ".,;:".contains(last) { word = word.dropLast() }
+        guard word.last == closing else { return false }
+        let inside = word.dropLast()
+        return !inside.isEmpty && !inside.contains(opening) && inside.allSatisfy(addressCharacters.contains)
+            && inside.contains { "/.=?&#%_~".contains($0) }
     }
 
     /// A line broken at a hyphen inside an alphanumeric code before a digit or capital continues
@@ -6668,7 +6702,7 @@ enum LayoutReconstructor {
         // does one after other punctuation, which in the corpus is only damaged OCR (#70).
         if left.hasSuffix("/"), let before = left.dropLast().last, before.isLetter || before.isNumber || before == "/",
            let next = right.first, next.isLetter || next.isNumber { return .concatenate }
-        if addressContinues(left, right) { return .concatenate }
+        if addressContinues(left, right) || bracketedAddressContinues(left, right) { return .concatenate }
         if codeContinues(left, right) { return .concatenate }
         if let operation = compoundOperation(left, right, vocabulary: vocabulary) { return operation }
         guard left.hasSuffix("-"), right.first?.isLowercase == true else { return .space }

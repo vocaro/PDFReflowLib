@@ -35,7 +35,8 @@ import image_regions
 
 ROOT = Path(__file__).resolve().parents[1]
 RUNTIME = [ROOT / 'Sources/PDFReflowLib' / name for name in
-           ['PageRasterizer.swift', 'ConversionTypes.swift', 'DocumentModel.swift', 'ReflowDocument.swift']]
+           ['PageRasterizer.swift', 'ConversionTypes.swift', 'DocumentModel.swift', 'ReflowDocument.swift',
+            'ImageContentClassifier.swift']]
 PROBE_SOURCE = ROOT / 'tools/probe-raster-sweep.swift'
 DEFAULT_DPIS = [96, 120, 150, 180, 240, 300]
 DEFAULT_QUALITIES = [0.60, 0.75, 0.85, 0.90, 0.95]

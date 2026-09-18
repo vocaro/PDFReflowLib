@@ -406,6 +406,51 @@ class CorpusContentTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 self.check(pages=pages, markers=markers)
 
+    def test_math_expression_pins_markup_alternative_text_and_label(self):
+        # A crop written as MathML (#190): the expression's own markup is the evidence, so a wrong
+        # token, a term moved across the bar, a lost exponent or a wrong label fails, and the
+        # expression's tokens never count as page text.
+        math = ('<p class="math">52) <math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{alt}" '
+                'altimg="picture.png">{body}</math></p>')
+        def book(body, alt='27/3', label=None):
+            markup = math.format(alt=alt, body=body)
+            if label is not None:
+                markup = markup.replace('52)', label)
+            return self.epub('<span epub:type="pagebreak" id="page-1"/>' + markup
+                             + '<span epub:type="pagebreak" id="page-2"/>', '<p>x</p>')
+        fraction = '<mfrac><mn>27</mn><mn>3</mn></mfrac>'
+        self.contract['pages'] = [{'page': 1, 'mathExpressions': [
+            {'mathml': fraction, 'alttext': '27/3', 'label': '52)'}]}]
+        cases = [
+            (book(fraction), True),
+            (book('<mfrac><mn>27</mn><mn>8</mn></mfrac>'), False),
+            (book('<mfrac><mn>3</mn><mn>27</mn></mfrac>'), False),
+            (book('<mn>27</mn><mn>3</mn>'), False),
+            (book(fraction, alt='27 3'), False),
+            (book(fraction, label='53)'), False),
+        ]
+        for path, passes in cases:
+            pages, markers = read_pages(path)
+            self.assertEqual(self.check(pages=pages, markers=markers)['passed'], passes, str(path))
+        pages, _ = read_pages(cases[0][0])
+        self.assertEqual(pages[1]['text'], '52)')
+        self.assertEqual(pages[1]['math'][0]['fallback'], 'EPUB/picture.png')
+        # A lost exponent changes the markup.
+        self.contract['pages'] = [{'page': 1, 'mathExpressions': [
+            {'mathml': '<msup><mi>x</mi><mn>2</mn></msup>'}]}]
+        pages, markers = read_pages(book('<msup><mi>x</mi><mn>2</mn></msup>', alt='x^2'))
+        self.assertTrue(self.check(pages=pages, markers=markers)['passed'])
+        pages, markers = read_pages(book('<mi>x</mi><mn>2</mn>', alt='x^2'))
+        self.assertFalse(self.check(pages=pages, markers=markers)['passed'])
+        for invalid in [{}, {'mathml': ''}, {'mathml': 'x', 'other': 'y'}, 'x']:
+            self.contract['pages'] = [{'page': 1, 'mathExpressions': [invalid]}]
+            with self.assertRaises(ValueError):
+                self.check(pages=pages, markers=markers)
+        # The fallback image must exist.
+        with self.assertRaises(ValueError):
+            read_pages(self.epub('<span epub:type="pagebreak" id="page-1"/>' + math.format(alt='x', body='<mi>x</mi>')
+                                 + '<span epub:type="pagebreak" id="page-2"/>', '<p>x</p>', missing_image=True))
+
     def test_list_items_and_preformatted_blocks_read_their_own_elements(self):
         # A list item is an <li>; a list-shaped line the converter keeps preformatted is a <pre>.
         # Neither check is satisfied by the other element, nor by a paragraph (#194).

@@ -16,6 +16,7 @@ ROOT = Path(__file__).resolve().parents[1]
 HTML = '{http://www.w3.org/1999/xhtml}'
 OPF = '{http://www.idpf.org/2007/opf}'
 EPUB = '{http://www.idpf.org/2007/ops}'
+MATHML = '{http://www.w3.org/1998/Math/MathML}'
 HEADINGS = {HTML + 'h' + str(n) for n in range(1, 7)}
 BLOCKS = HEADINGS | {HTML + tag for tag in ('p', 'pre', 'figure', 'li', 'table', 'caption', 'tr', 'th', 'td')}
 LISTS = {HTML + 'ul', HTML + 'ol'}
@@ -65,6 +66,7 @@ CHECK_TYPES = (
     ('glyph-structure', ('glyphRegions',), False),
     ('image-appearance', ('imageAppearance',), False),
     ('table-cell', ('tableCells',), False),
+    ('math-expression', ('mathExpressions',), False),
 )
 EXPECTATION_KEYS = tuple(key for _, keys, _ in CHECK_TYPES for key in keys)
 
@@ -104,6 +106,17 @@ def cli_inspection_limit(value):
 
 def normalized(text):
     return ' '.join(text.split())
+
+
+def math_markup(element):
+    """A `<math>` element's content as compact MathML without namespaces (#190): elements, token
+    text and `displaystyle`, the only attribute the converter sets inside an expression."""
+    tag = element.tag.split('}')[-1]
+    inner = normalized(element.text or '') + ''.join(math_markup(child) for child in element)
+    if tag == 'math':
+        return inner
+    attributes = ''.join(f' {key}="{value}"' for key, value in sorted(element.attrib.items()) if key == 'displaystyle')
+    return f'<{tag}{attributes}>{inner}</{tag}>'
 
 
 def is_page_reference(image, page):
@@ -191,8 +204,21 @@ def read_pages(path, *, max_entries=DEFAULT_MAX_ENTRIES,
                     if current in pages:
                         raise ValueError('Duplicate page boundary')
                     markers.append(current)
-                    pages[current] = {'text': '', 'images': [], 'scripts': [], 'headings': {}, 'paragraphs': {}, 'listItems': {}, 'notes': {}, 'tables': [],
+                    pages[current] = {'text': '', 'images': [], 'math': [], 'scripts': [], 'headings': {}, 'paragraphs': {}, 'listItems': {}, 'notes': {}, 'tables': [],
                                       'preformatted': {}, 'noterefs': [], 'anchors': {}, 'blocks': []}
+                # An expression written as MathML (#190): its markup, linear alternative text, the
+                # label its paragraph prints before it and its fallback image. Its tokens are not page
+                # text: `27/3` read token by token is `273`, which no phrase should match.
+                if element.tag == MATHML + 'math':
+                    if current is not None:
+                        fallback = element.get('altimg')
+                        asset = str(chapter.parent / fallback) if fallback else None
+                        if asset not in names:
+                            raise ValueError('Missing MathML fallback image: ' + str(asset))
+                        label = pages[current]['paragraphs'].get(paragraph, '') if paragraph is not None else ''
+                        pages[current]['math'].append({'label': normalized(label), 'alttext': element.get('alttext', ''),
+                                                       'mathml': math_markup(element), 'fallback': asset})
+                    return
                 if element.tag == HTML + 'img' and current is not None:
                     asset = str(chapter.parent / element.attrib['src'])
                     if asset not in names:
@@ -732,6 +758,20 @@ def assess(case, contract, result, report, pages, markers, image_data=None, refe
                 errors.append(f'Page {number}: no image keeps the appearance of {expectation["reference"]} '
                               f'(scale {metrics["scale"]:.3f}, contrast {metrics["contrast"]:.3f}, '
                               f'color agreement {metrics.get("colorAgreement", "n/a")})')
+        # An expression the converter wrote as MathML (#190): one `<math>` on the page with exactly
+        # this markup, and this alternative text and printed label where named. A wrong token, a
+        # term moved across the bar or a lost exponent changes the markup.
+        for expectation in item.get('mathExpressions', []):
+            if (not isinstance(expectation, dict) or 'mathml' not in expectation
+                    or set(expectation) - {'mathml', 'alttext', 'label'}
+                    or any(not isinstance(value, str) or not value for value in expectation.values())):
+                raise ValueError('Math expression needs nonempty mathml and optional alttext and label strings')
+            checks += 1
+            if not any(found['mathml'] == expectation['mathml']
+                       and expectation.get('alttext', found['alttext']) == found['alttext']
+                       and normalized(expectation.get('label', found['label'])) == found['label']
+                       for found in page.get('math', [])):
+                errors.append(f'Page {number}: missing math expression {expectation!r}')
         for expectation in item.get('tableCells', []):
             import table_cells
             table_cells.validate(expectation)
@@ -822,7 +862,7 @@ def assess(case, contract, result, report, pages, markers, image_data=None, refe
         raise ValueError('CHECK_TYPES no longer matches the checks assess counts')
     return {'case': case['id'], 'passed': not errors, 'reviewPages': numbers,
             'contentChecks': checks, 'errors': errors,
-            'scope': 'Reviewed text/order/script-context/image-presence, source-region, glyph-structure, appearance and table-cell checks; not full-book fidelity qualification.'}
+            'scope': 'Reviewed text/order/script-context/image-presence, source-region, glyph-structure, appearance, table-cell and math-expression checks; not full-book fidelity qualification.'}
 
 
 def check_evaluation(case, contract, directory, *, max_entries=DEFAULT_MAX_ENTRIES,

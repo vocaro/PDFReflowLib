@@ -1961,7 +1961,7 @@
     {
       "id": "wallace-algebra-2010",
       "sourceSHA256": "856bd81edc61c50496982ddc849138f4e0e56fd0ddf0edb53fee9bb0830d0678",
-      "basis": "Page 12 source raster reviewed; license and page-347 formula targets come from the existing corpus review. Does not bless flattened inline exponents or validate every equation image. Page 343 preserves the source's squared exponent in its actual introductory context; the source typo \"from\" is intentional. Page 26 visually reviewed: numbered exercise 80 has squared exponents on both 7a and 6a; retaining those scripts does not qualify other exercise layout. Pages 18-19 and 43-44 visually reviewed: each paragraph continues onto the next page and must remain one paragraph across the source-page marker (#27). Page 343 source raster reviewed for the \"Our Solution\" line x = (-b +/- sqrt(b^2 - 4ac)) / 2a: its exponent, radical sign and fraction bar are checked stroke by stroke at full resolution, as are both exponents of exercise 35 on page 347 (#27). Pages 10, 438, 289, 291 and 471 visually reviewed (#29): section 0.1 exercises and their answers keep every number within each column's order (column-major page order is not blessed, only within-column order), the 8.1 square-root exercises and the page-289 derivations are preserved as warned image regions, and the 7.8 dimensional-analysis answers keep thirty text entries. Does not bless the displaced chapter heading on page 438. Page 40 visually reviewed (#50): the five-step list keeps one block per step, and item 4's wrapped line (\"multiply or\" / \"divide)\"), set in the item's hanging indent, stays inside item 4 while item 5 opens a new block. The aligned derivation below it remains a warned image and is not blessed. Page 101 source raster reviewed (#69): exercises 17 and 28, whose numbers PDFKit splits from their point pairs, are single entries like exercise 18. Pages 288, 289 and 291 source rasters reviewed (#58, #49): sentences with inline radicals (page 288's square-root introduction and product-rule sentence, page 289's opening sentence) and the page-291 instruction reflow as text, while page 288's Example 377 table and displayed product rule, the page-289 derivations and every page-291 exercise stay preserved. PDFKit's separate radical pieces (`√ on`, `√ by spliting`, `√ . There are sev-`) rejoin their rows and paragraphs in reading order on pages 288, 289 and 299 (#95); the pieces keep PDFKit's own order inside a row (`36· 5 √` for √36·5), which is not blessed. Page 429 source raster reviewed (#71): `When we are solving a triangle` opens a paragraph set off by added space under the paragraph threshold. Pages 448 and 487 source rasters reviewed (#78): page 448's graphs, numbered along their rows three to a row, read 15-22 in number order; page 487's sub-answers a-i, set in three columns above answers 2-15, read before them. Exercise sets numbered two to a row (pages 10, 26) keep their column order. Pages 175 and 437 (#97) source-reviewed: blank pages whose only text is the folio carry no text once the folio run removes it. Pages 5 and 211 source-reviewed (#102): the contents entry 6.3 Trinomials where a = 1 with its leader is text, not a preserved region. Pages 2, 9, 90, 120, 180, 318, 321 and 401 source-reviewed (#109): a line holding an inline minus, times or radical sign, whose rectangle extends 8.5 points past its type, continues its paragraph into the next line; page 90's point descriptions and page 401's two paragraphs stay separate; page 321's radicand − 1 reads inside its sentence; the license's minus bullets on page 2 and the derivation lines on pages 9 and 120 stay list lines. Pages 34, 40 and 230 source rasters reviewed (#110): a digit set in CMR12 before prose in the EC text font keeps its word space (`Subtract 8 from`, `Plug 2 in`, `The numbers are− 3 and− 3`); PDFKit dropped it and NativeSpacingReader restores it from the fonts' WinAnsi encodings. The flattened minus spacing (`− 3`) is not blessed. Pages 50, 218 and 64 source rasters reviewed (#123): `dif-` + `ferent` joins as `different`, which the book prints with the U+FB00 ligature; the spaced example lines `Three more than a number becomes x + 3` and `Four less than a number becomes x− 4` are paragraphs of their own after their list items. The `Is` bullet inside page 64's formula crop is not blessed. A word broken across two paragraph blocks joins through the hyphen policy (#131: 92 `connect`). Page 101 (#14) reviewed against the source: exercises 9 and 10 each head their own graph on opposite sides of the measure, and PDFKit returns both markers as one line; each marker now reads before its own graph. Pages 16, 252, 340, 343, 424 and 471 source rasters reviewed (#46, #48): a crop takes the piece of a display row that its edge left just outside, because PDFKit breaks such a row at a raised exponent or a fraction. Page 343's \"Factor\" line keeps its leading x² inside the preserved equation instead of emitting a flattened \"x2 +\" paragraph after Example 465, and page 340's derivations leak no \"x2\"; each of page 16's thirty-six fraction exercises and page 252's four is one region with no marker-and-sign stub; page 471's answers 22 and 29 are single regions while the thirty 7.8 dimensional-analysis answers and answers 21, 23, 28, 32 and 33 stay text; page 424's eight triangles keep their side lengths and vertex labels while every exercise number stays a text entry. Page 252 then holds only its four exercise images, and its multiplication dots are no longer navigation headings. Column-major answer-key order, the order of page 424's remaining labels and the page-16 reading order are not blessed. #180: page 38's justified line, which PDFKit split at the stretched space after `4x or 2x,`, is read as one line of its paragraph. Pages 427, 463, 465, 482 and 486 source rasters reviewed (#178, #179): an answer key numbered down its columns reads down them, so page 465's first key reads 11-42 and its second 1-34, page 486's exponential answers 1-40, page 463's three keys 7-34, 1-40 and 1-4, and page 482's simultaneous-product and revenue keys in number order; column-major order is blessed for those keys, while page 486's first key, whose other columns are crops and carry no numbering, still reads across its rows and is not blessed. The key titles' placement inside their keys is not blessed. Each right triangle on pages 424 and 427 keeps its own vertex letters and side lengths inside its crop, as the 65-degree label and the right-angle mark already were, while every exercise number stays a text entry of its own. #187: the listed pages carry each named alternative text on some image — the caption the source prints beside the figure, or the kind the crop's own evidence names — and no image on them states its provenance or nothing in `alt`; source pages rendered and reviewed (measurements/preserved-image-alt-text/record.md).",
+      "basis": "Page 12 source raster reviewed; license and page-347 formula targets come from the existing corpus review. Does not bless flattened inline exponents or validate every equation image. Page 343 preserves the source's squared exponent in its actual introductory context; the source typo \"from\" is intentional. Page 26 visually reviewed: numbered exercise 80 has squared exponents on both 7a and 6a; retaining those scripts does not qualify other exercise layout. Pages 18-19 and 43-44 visually reviewed: each paragraph continues onto the next page and must remain one paragraph across the source-page marker (#27). Page 343 source raster reviewed for the \"Our Solution\" line x = (-b +/- sqrt(b^2 - 4ac)) / 2a: its exponent, radical sign and fraction bar are checked stroke by stroke at full resolution, as were both exponents of exercise 35 on page 347 (#27) until #190 wrote it as MathML. Pages 10, 438, 289, 291 and 471 visually reviewed (#29): section 0.1 exercises and their answers keep every number within each column's order (column-major page order is not blessed, only within-column order), the 8.1 square-root exercises and the page-289 derivations are preserved as warned image regions, and the 7.8 dimensional-analysis answers keep thirty text entries. Does not bless the displaced chapter heading on page 438. Page 40 visually reviewed (#50): the five-step list keeps one block per step, and item 4's wrapped line (\"multiply or\" / \"divide)\"), set in the item's hanging indent, stays inside item 4 while item 5 opens a new block. The aligned derivation below it remains a warned image and is not blessed. Page 101 source raster reviewed (#69): exercises 17 and 28, whose numbers PDFKit splits from their point pairs, are single entries like exercise 18. Pages 288, 289 and 291 source rasters reviewed (#58, #49): sentences with inline radicals (page 288's square-root introduction and product-rule sentence, page 289's opening sentence) and the page-291 instruction reflow as text, while page 288's Example 377 table and displayed product rule, the page-289 derivations and every page-291 exercise stay preserved. PDFKit's separate radical pieces (`√ on`, `√ by spliting`, `√ . There are sev-`) rejoin their rows and paragraphs in reading order on pages 288, 289 and 299 (#95); the pieces keep PDFKit's own order inside a row (`36· 5 √` for √36·5), which is not blessed. Page 429 source raster reviewed (#71): `When we are solving a triangle` opens a paragraph set off by added space under the paragraph threshold. Pages 448 and 487 source rasters reviewed (#78): page 448's graphs, numbered along their rows three to a row, read 15-22 in number order; page 487's sub-answers a-i, set in three columns above answers 2-15, read before them. Exercise sets numbered two to a row (pages 10, 26) keep their column order. Pages 175 and 437 (#97) source-reviewed: blank pages whose only text is the folio carry no text once the folio run removes it. Pages 5 and 211 source-reviewed (#102): the contents entry 6.3 Trinomials where a = 1 with its leader is text, not a preserved region. Pages 2, 9, 90, 120, 180, 318, 321 and 401 source-reviewed (#109): a line holding an inline minus, times or radical sign, whose rectangle extends 8.5 points past its type, continues its paragraph into the next line; page 90's point descriptions and page 401's two paragraphs stay separate; page 321's radicand − 1 reads inside its sentence; the license's minus bullets on page 2 and the derivation lines on pages 9 and 120 stay list lines. Pages 34, 40 and 230 source rasters reviewed (#110): a digit set in CMR12 before prose in the EC text font keeps its word space (`Subtract 8 from`, `Plug 2 in`, `The numbers are− 3 and− 3`); PDFKit dropped it and NativeSpacingReader restores it from the fonts' WinAnsi encodings. The flattened minus spacing (`− 3`) is not blessed. Pages 50, 218 and 64 source rasters reviewed (#123): `dif-` + `ferent` joins as `different`, which the book prints with the U+FB00 ligature; the spaced example lines `Three more than a number becomes x + 3` and `Four less than a number becomes x− 4` are paragraphs of their own after their list items. The `Is` bullet inside page 64's formula crop is not blessed. A word broken across two paragraph blocks joins through the hyphen policy (#131: 92 `connect`). Page 101 (#14) reviewed against the source: exercises 9 and 10 each head their own graph on opposite sides of the measure, and PDFKit returns both markers as one line; each marker now reads before its own graph. Pages 16, 252, 340, 343, 424 and 471 source rasters reviewed (#46, #48): a crop takes the piece of a display row that its edge left just outside, because PDFKit breaks such a row at a raised exponent or a fraction. Page 343's \"Factor\" line keeps its leading x² inside the preserved equation instead of emitting a flattened \"x2 +\" paragraph after Example 465, and page 340's derivations leak no \"x2\"; each of page 16's thirty-six fraction exercises and page 252's four is one region with no marker-and-sign stub; page 471's answers 22 and 29 are single regions while the thirty 7.8 dimensional-analysis answers and answers 21, 23, 28, 32 and 33 stay text; page 424's eight triangles keep their side lengths and vertex labels while every exercise number stays a text entry. Page 252 then holds only its four exercise images, and its multiplication dots are no longer navigation headings. Column-major answer-key order, the order of page 424's remaining labels and the page-16 reading order are not blessed. #180: page 38's justified line, which PDFKit split at the stretched space after `4x or 2x,`, is read as one line of its paragraph. Pages 427, 463, 465, 482 and 486 source rasters reviewed (#178, #179): an answer key numbered down its columns reads down them, so page 465's first key reads 11-42 and its second 1-34, page 486's exponential answers 1-40, page 463's three keys 7-34, 1-40 and 1-4, and page 482's simultaneous-product and revenue keys in number order; column-major order is blessed for those keys, while page 486's first key, whose other columns are crops and carry no numbering, still reads across its rows and is not blessed. The key titles' placement inside their keys is not blessed. Each right triangle on pages 424 and 427 keeps its own vertex letters and side lengths inside its crop, as the 65-degree label and the right-angle mark already were, while every exercise number stays a text entry of its own. #187: the listed pages carry each named alternative text on some image — the caption the source prints beside the figure, or the kind the crop's own evidence names — and no image on them states its provenance or nothing in `alt`; source pages rendered and reviewed (measurements/preserved-image-alt-text/record.md). #190: pages 12, 16, 252, 347 and 438 reviewed against their source crops rendered beside the emitted MathML in WebKit (measurements/mathml/record.md): Example 15's two displayed fractions, page 16's fraction exercises (35 of 36; exercise 33, printed without its bracket, stays an image), page 252's rational-expression exercises 41, 43 and 44 (42, whose source sets its `ab` in upright type, stays an image), page 347's quadratic-formula exercises with their exponents, and page 438's fraction answers are pinned as MathML markup, linear alternative text and printed label; the page-347 region and stroke checks are retired with the image they measured.",
       "pages": [
         {
           "page": 7,
@@ -2040,7 +2040,18 @@
           "headings": [
             "Answers - Chapter 0"
           ],
-          "minimumImages": 1
+          "mathExpressions": [
+            {
+              "mathml": "<mfrac><mn>7</mn><mn>2</mn></mfrac>",
+              "alttext": "7/2",
+              "label": "1)"
+            },
+            {
+              "mathml": "<mfrac><mn>8</mn><mn>3</mn></mfrac>",
+              "alttext": "8/3",
+              "label": "4)"
+            }
+          ]
         },
         {
           "page": 289,
@@ -2144,24 +2155,39 @@
             "Both numerator and denominator are divisible by 4",
             "Both numerator and denominator are still divisible by 3"
           ],
-          "minimumImages": 1
+          "mathExpressions": [
+            {
+              "mathml": "<mstyle displaystyle=\"true\"><mfrac><mn>36</mn><mn>84</mn></mfrac></mstyle>",
+              "alttext": "36/84"
+            },
+            {
+              "mathml": "<mstyle displaystyle=\"true\"><mfrac><mrow><mn>36</mn><mo>÷</mo><mn>4</mn></mrow><mrow><mn>84</mn><mo>÷</mo><mn>4</mn></mrow></mfrac></mstyle><mo>=</mo><mstyle displaystyle=\"true\"><mfrac><mn>9</mn><mn>21</mn></mfrac></mstyle>",
+              "alttext": "(36 ÷ 4)/(84 ÷ 4) = 9/21"
+            }
+          ]
         },
         {
           "page": 347,
-          "imageRegions": [
-            {
-              "reference": "corpus/references/wallace-algebra-2010/page-347-exercise-35.png"
-            }
-          ],
-          "glyphRegions": [
-            {
-              "reference": "corpus/references/wallace-algebra-2010/page-347-exercise-35-glyphs.png"
-            }
-          ],
           "text": [
             "Solve each equation with the quadratic formula."
           ],
-          "minimumImages": 1
+          "mathExpressions": [
+            {
+              "mathml": "<mn>4</mn><msup><mi>a</mi><mn>2</mn></msup><mo>+</mo><mn>6</mn><mo>=</mo><mn>0</mn>",
+              "alttext": "4a^2 + 6 = 0",
+              "label": "1)"
+            },
+            {
+              "mathml": "<mn>4</mn><msup><mi>p</mi><mn>2</mn></msup><mo>+</mo><mn>5</mn><mi>p</mi><mo>−</mo><mn>36</mn><mo>=</mo><mn>3</mn><msup><mi>p</mi><mn>2</mn></msup>",
+              "alttext": "4p^2 + 5p − 36 = 3p^2",
+              "label": "33)"
+            },
+            {
+              "mathml": "<mo>−</mo><mn>5</mn><msup><mi>n</mi><mn>2</mn></msup><mo>−</mo><mn>3</mn><mi>n</mi><mo>−</mo><mn>52</mn><mo>=</mo><mn>2</mn><mo>−</mo><mn>7</mn><msup><mi>n</mi><mn>2</mn></msup>",
+              "alttext": "−5n^2 − 3n − 52 = 2 − 7n^2",
+              "label": "35)"
+            }
+          ]
         },
         {
           "page": 343,
@@ -2602,8 +2628,30 @@
           "headings": [
             "0.2 Practice - Fractions"
           ],
-          "minimumImages": 36,
-          "maximumImages": 36
+          "minimumImages": 1,
+          "maximumImages": 1,
+          "mathExpressions": [
+            {
+              "mathml": "<mfrac><mn>42</mn><mn>12</mn></mfrac>",
+              "alttext": "42/12",
+              "label": "1)"
+            },
+            {
+              "mathml": "<mrow><mo>(</mo><mrow><mo>−</mo><mn>2</mn></mrow><mo>)</mo></mrow><mrow><mo>(</mo><mrow><mo>−</mo><mfrac><mn>5</mn><mn>6</mn></mfrac></mrow><mo>)</mo></mrow>",
+              "alttext": "(−2)(−5/6)",
+              "label": "22)"
+            },
+            {
+              "mathml": "<mrow><mo>(</mo><mrow><mo>−</mo><mfrac><mn>6</mn><mn>5</mn></mfrac></mrow><mo>)</mo></mrow><mrow><mo>(</mo><mrow><mo>−</mo><mfrac><mn>11</mn><mn>8</mn></mfrac></mrow><mo>)</mo></mrow>",
+              "alttext": "(−6/5)(−11/8)",
+              "label": "27)"
+            },
+            {
+              "mathml": "<mrow><mo>(</mo><mrow><mo>−</mo><mfrac><mn>17</mn><mn>9</mn></mfrac></mrow><mo>)</mo></mrow><mrow><mo>(</mo><mrow><mo>−</mo><mfrac><mn>3</mn><mn>5</mn></mfrac></mrow><mo>)</mo></mrow>",
+              "alttext": "(−17/9)(−3/5)",
+              "label": "32)"
+            }
+          ]
         },
         {
           "page": 252,
@@ -2613,10 +2661,22 @@
           "absentHeadings": [
             "·"
           ],
-          "minimumImages": 4,
-          "maximumImages": 4,
           "warningCodesAnyOf": [
             "imageRegion"
+          ],
+          "minimumImages": 1,
+          "maximumImages": 1,
+          "mathExpressions": [
+            {
+              "mathml": "<mstyle displaystyle=\"true\"><mfrac><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mn>1</mn></mrow><mrow><mn>2</mn><mi>x</mi><mo>−</mo><mn>4</mn></mrow></mfrac></mstyle><mo>⋅</mo><mstyle displaystyle=\"true\"><mfrac><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mn>4</mn></mrow><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mi>x</mi><mo>−</mo><mn>2</mn></mrow></mfrac></mstyle><mo>÷</mo><mstyle displaystyle=\"true\"><mfrac><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mi>x</mi><mo>−</mo><mn>2</mn></mrow><mrow><mn>3</mn><mi>x</mi><mo>−</mo><mn>6</mn></mrow></mfrac></mstyle>",
+              "alttext": "(x^2 − 1)/(2x − 4) ⋅ (x^2 − 4)/(x^2 − x − 2) ÷ (x^2 + x − 2)/(3x − 6)",
+              "label": "41)"
+            },
+            {
+              "mathml": "<mstyle displaystyle=\"true\"><mfrac><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>3</mn><mi>x</mi><mo>−</mo><mn>10</mn></mrow><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>6</mn><mi>x</mi><mo>+</mo><mn>5</mn></mrow></mfrac></mstyle><mo>⋅</mo><mstyle displaystyle=\"true\"><mfrac><mrow><mn>2</mn><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mi>x</mi><mo>−</mo><mn>3</mn></mrow><mrow><mn>2</mn><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mi>x</mi><mo>−</mo><mn>6</mn></mrow></mfrac></mstyle><mo>÷</mo><mstyle displaystyle=\"true\"><mfrac><mrow><mn>8</mn><mi>x</mi><mo>+</mo><mn>20</mn></mrow><mrow><mn>6</mn><mi>x</mi><mo>+</mo><mn>15</mn></mrow></mfrac></mstyle>",
+              "alttext": "(x^2 + 3x − 10)/(x^2 + 6x + 5) ⋅ (2x^2 − x − 3)/(2x^2 + x − 6) ÷ (8x + 20)/(6x + 15)",
+              "label": "44)"
+            }
           ]
         },
         {
@@ -11024,7 +11084,7 @@
     {
       "id": "ntrs-20210020887-techport-thm-2021",
       "sourceSHA256": "0fce4b68983ad8a216c8228ec44697c61ab41977ad41733c465ebebec3976ff0",
-      "basis": "All five source pages visually reviewed against 80 DPI Poppler renders (sidebar, gallery and header at 300 DPI) and the extracted text layer. Protects only output that matches the source: the main column's section titles as headings; the five Project Introduction paragraphs whole, separate and in order; every bullet item's text whole and in source order on pages 2-3, including the nested items; the See Image and See Figure lines; the closeout-document title and link text and the Figure 1 caption on page 4; and preserved images for the page-1 photo, the page-3 map, the page-4 figure and the page-5 gallery. Not pinned because wrong now: the header band's division, title and status lines kept inside a region crop with the insignia on every page; the right sidebar panels (photo caption, table of contents, organizational responsibility, project management, TRL chart, technology areas, destinations, mission type), the page-4 tables and the page-5 gallery captions kept only inside region crops; the Printed on, URL, page-number and accessible-alternative footer lines left in the reading flow; bullet markers as tiny image crops before paragraph items; Closeout Documentation merged into its paragraph and Images not a heading; a space inside the wrapped image URLs; and the source-page image forced by borderless links on every page (see the review file). No committed rasters: every page shows the NASA insignia (14 CFR 1221); see the manifest's rights note. All five pages reviewed again on their renders (#27): the 27 borderless link annotations draw nothing beyond the printed page, so no page takes an `Original page N` image and every page warns annotationsNotConverted (#151); the Chromium print's embedded Open Sans and Verdana give a genuine text layer, so no page may report fresh recognition, a damaged encoding, an implausible or unverified text layer, or a whole-page image fallback. The page-4 Figure 1 caption sits directly beneath its diagram and must stand next after an image. Page 5 keeps all three gallery pictures. Pages 1 and 5 reviewed again at 50 DPI with every crop outlined (#166): the header band's division, project title and state, the sidebar's caption and table of contents, and the gallery's three captions are text, while the insignia, the sidebar photograph and the three gallery pictures stay images. The gallery captions' order is not approved (#153).",
+      "basis": "All five source pages visually reviewed against 80 DPI Poppler renders (sidebar, gallery and header at 300 DPI) and the extracted text layer. Protects only output that matches the source: the main column's section titles as headings; the five Project Introduction paragraphs whole, separate and in order; every bullet item's text whole and in source order on pages 2-3, including the nested items; the See Image and See Figure lines; the closeout-document title and link text and the Figure 1 caption on page 4; and preserved images for the page-1 photo, the page-3 map, the page-4 figure and the page-5 gallery. Not pinned because wrong now: the header band's division, title and status lines kept inside a region crop with the insignia on every page; the right sidebar panels (photo caption, table of contents, organizational responsibility, project management, TRL chart, technology areas, destinations, mission type), the page-4 tables and the page-5 gallery captions kept only inside region crops; and the source-page image forced by borderless links on every page (see the review file). No committed rasters: every page shows the NASA insignia (14 CFR 1221); see the manifest's rights note. All five pages reviewed again on their renders (#27): the 27 borderless link annotations draw nothing beyond the printed page, so no page takes an `Original page N` image and every page warns annotationsNotConverted (#151); the Chromium print's embedded Open Sans and Verdana give a genuine text layer, so no page may report fresh recognition, a damaged encoding, an implausible or unverified text layer, or a whole-page image fallback. The page-4 Figure 1 caption sits directly beneath its diagram and must stand next after an image. Page 5 keeps all three gallery pictures. Pages 1 and 5 reviewed again at 50 DPI with every crop outlined (#166): the header band's division, project title and state, the sidebar's caption and table of contents, and the gallery's three captions are text, while the insignia, the sidebar photograph and the three gallery pictures stay images. The gallery captions' order is not approved (#153). Fixed in #167 and pinned from the reviewed output: Chromium's print footer (Printed on with its date and time, the accessible-alternative notice, the page URL and Page N) and the TechPort logo beside it leave every page as repeated furniture; the drawn square and circle bullets become the items of real lists, pages 2-3 holding no image but the insignia and the sidebar or map crops, with the nested items one level deeper under the item they follow in the source (Demostrated..., FPGA... and MPG technology is aimed:); Closeout Documentation and Images are h3 like the other main-column titles, the closeout link its own paragraph; and the wrapped image URLs join without a space.",
       "pages": [
         {
           "page": 1,
@@ -11079,7 +11139,15 @@
             "Advanced Exploration Systems Division",
             "Project Introduction 1",
             "Technology Maturity (TRL) 2"
-          ]
+          ],
+          "absentText": [
+            "Printed on 08/24/2021",
+            "03:51 PM CDT",
+            "please visit:",
+            "https://techport.nasa.gov/view/97058",
+            "Page 1"
+          ],
+          "maximumImages": 2
         },
         {
           "page": 2,
@@ -11112,6 +11180,58 @@
             "unverifiedTextLayer",
             "damagedTextEncoding",
             "implausibleTextLayer"
+          ],
+          "absentText": [
+            "Printed on 08/24/2021",
+            "03:51 PM CDT",
+            "please visit:",
+            "https://techport.nasa.gov/view/97058",
+            "Page 2"
+          ],
+          "maximumImages": 2,
+          "lists": [
+            {
+              "kind": "ul",
+              "level": 0,
+              "items": [
+                "High accuracy demonstrated on Orion Tank of ~0.25% average in settled state",
+                "Demostrated with Morpheus static engne frings under partial vacumn at GRC Plumbrook test facility",
+                "Zero-G accuracy is on the order of 1% as demonstrated in Flight",
+                "MPG Point Sensor readings provide another accurate method to establish fluid level",
+                "FPGA based avionics and algorithm design provide 1 HZ update on mass measurement"
+              ]
+            },
+            {
+              "kind": "ul",
+              "level": 1,
+              "items": [
+                "Can use one tank to develop FRF/mass reference table for all other tanks of the same part number and support system"
+              ]
+            },
+            {
+              "kind": "ul",
+              "level": 1,
+              "items": [
+                "Design provides Industrial and Rad Tolerant option for avionics for Deep Space Use"
+              ]
+            },
+            {
+              "kind": "ul",
+              "level": 0,
+              "items": [
+                "NASA requires accurate propellant mass gauging technology",
+                "MPG technology is aimed:",
+                "Mitigates typical estimation errors which can grow towards end of life ~ 10% or more"
+              ]
+            },
+            {
+              "kind": "ul",
+              "level": 1,
+              "items": [
+                "increasing human safety with accurate gauging",
+                "Monitoring propellant used for missions and ultimately limiting amount of propellant reserves/mass required"
+              ]
+            }
           ]
         },
         {
@@ -11139,6 +11259,28 @@
             "unverifiedTextLayer",
             "damagedTextEncoding",
             "implausibleTextLayer"
+          ],
+          "absentText": [
+            "Printed on 08/24/2021",
+            "03:51 PM CDT",
+            "please visit:",
+            "https://techport.nasa.gov/view/97058",
+            "Page 3"
+          ],
+          "maximumImages": 3,
+          "lists": [
+            {
+              "kind": "ul",
+              "level": 0,
+              "items": [
+                "Technology can be infused into future CLPS landers, Orion (EM- 3+), NASA HLS, Gateway MMH tanks, etc.",
+                "The technology has been highly successfully demonstrated to provide Tank health monitoring",
+                "Very low risk for forward plan for MPG CLIPS experiments",
+                "The capability is required for deep space missions manned and unmanned",
+                "To explore deep Space, the future is to develop very reliable much lighter spacecraft",
+                "Modal Propellant Gauge (MPG) allows a highly accurate, non-invasive, near real-time measurement"
+              ]
+            }
           ]
         },
         {
@@ -11166,6 +11308,31 @@
             "unverifiedTextLayer",
             "damagedTextEncoding",
             "implausibleTextLayer"
+          ],
+          "absentText": [
+            "Printed on 08/24/2021",
+            "03:51 PM CDT",
+            "please visit:",
+            "https://techport.nasa.gov/view/97058",
+            "Page 4",
+            "techport.nasa.gov/imag e/"
+          ],
+          "maximumImages": 5,
+          "headingLevels": [
+            {
+              "heading": "Closeout Documentation",
+              "level": 3
+            },
+            {
+              "heading": "Images",
+              "level": 3
+            }
+          ],
+          "paragraphs": [
+            "Tank Health Monitoring Close Out Report and Executive Summary (https://techport.nasa.gov/file/41595)"
+          ],
+          "text": [
+            "(https://techport.nasa.gov/image/41317)"
           ]
         },
         {
@@ -11185,8 +11352,20 @@
           "text": [
             "Existing propellant gauging",
             "The Basic Formula",
-            "Accurate measurement of cryogenic"
-          ]
+            "Accurate measurement of cryogenic",
+            "(https://techport.nasa.gov/image/41318)",
+            "(https://techport.nasa.gov/image/41316)",
+            "(https://techport.nasa.gov/image/41319)"
+          ],
+          "absentText": [
+            "Printed on 08/24/2021",
+            "03:51 PM CDT",
+            "please visit:",
+            "https://techport.nasa.gov/view/97058",
+            "Page 5",
+            "techport.nasa.gov/imag e/"
+          ],
+          "maximumImages": 4
         }
       ]
     }

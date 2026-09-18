@@ -205,6 +205,8 @@ enum EPUBTextEncoder {
         case let .listItem(item): return inline(item.text, referenceID: referenceID)
         case let .table(table): return Self.table(table)
         case let .sourcePage(page): return sourcePage(page)
+        case let .image(image) where !image.math.isEmpty:
+            return try image.math.map { try math($0, imagePaths: imagePaths) }.joined(separator: "\n")
         case let .image(image):
             guard let path = imagePaths[image.assetID] else {
                 throw ReflowDocument.ValidationError.missingAsset(image.assetID)
@@ -215,5 +217,55 @@ enum EPUBTextEncoder {
             let title = image.provenance.isEmpty ? "" : " title=\"\(xml(image.provenance))\""
             return "<figure><img src=\"\(xml(path))\" alt=\"\(xml(image.alternativeText))\"\(title)/></figure>"
         }
+    }
+
+    static let mathNamespace = "http://www.w3.org/1998/Math/MathML"
+
+    /// One row of a crop read as mathematics (#190): its printed label as text, then the
+    /// expression as MathML. `alttext` states it linearly for a reader that speaks neither MathML
+    /// nor images, and `altimg` names the row's crop, MathML's own fallback for a reading system
+    /// that does not render it; the picture is not also shown, so a reader that renders MathML
+    /// reads each expression once.
+    static func math(_ expression: MathExpression, imagePaths: [String: String]) throws -> String {
+        guard let path = imagePaths[expression.fallbackAssetID] else {
+            throw ReflowDocument.ValidationError.missingAsset(expression.fallbackAssetID)
+        }
+        let label = expression.label.map { xml($0) + " " } ?? ""
+        let body: String
+        if case let .row(nodes) = expression.node { body = mathML(nodes) } else { body = mathML(expression.node) }
+        return "<p class=\"math\">\(label)<math xmlns=\"\(mathNamespace)\" alttext=\"\(xml(expression.linearText))\" "
+            + "altimg=\"\(xml(path))\">\(body)</math></p>"
+    }
+
+    static func mathML(_ node: MathExpression.Node) -> String {
+        switch node {
+        case let .number(value): "<mn>\(xml(value))</mn>"
+        case let .identifier(value): "<mi>\(xml(value))</mi>"
+        case let .operator(value): "<mo>\(xml(value))</mo>"
+        case let .row(nodes): "<mrow>" + mathML(nodes) + "</mrow>"
+        // MathML 3, which EPUB validates against, allows `displaystyle` on `mstyle` and `math` only.
+        case let .fraction(numerator, denominator, display):
+            (display ? "<mstyle displaystyle=\"true\"><mfrac>" : "<mfrac>") + mathML(numerator) + mathML(denominator)
+                + (display ? "</mfrac></mstyle>" : "</mfrac>")
+        case let .superscript(base, script): "<msup>" + mathML(base) + mathML(script) + "</msup>"
+        }
+    }
+
+    /// A run of nodes. A sign that opens an operand after an operator (`= −12`, `× −3`) is written
+    /// with that operand in an `mrow` of its own: MathML takes an operator's form from its place
+    /// in its row, so only as the row's first child does it read, space and speak as a prefix.
+    static func mathML(_ nodes: [MathExpression.Node]) -> String {
+        var markup = "", index = 0
+        while index < nodes.count {
+            if index > 0, index + 1 < nodes.count, case let .operator(sign) = nodes[index], ["+", "\u{2212}", "\u{00B1}"].contains(sign),
+               case let .operator(before) = nodes[index - 1], before != ")" {
+                markup += "<mrow>" + mathML(nodes[index]) + mathML(nodes[index + 1]) + "</mrow>"
+                index += 2
+                continue
+            }
+            markup += mathML(nodes[index])
+            index += 1
+        }
+        return markup
     }
 }

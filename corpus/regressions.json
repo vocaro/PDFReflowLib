@@ -5,7 +5,7 @@
     {
       "id": "faa-phak-8083-25c",
       "sourceSHA256": "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
-      "basis": "Source pages 16 and 121 visually reviewed. Protects the introductory prose and figure preservation; does not approve page-121 column order. Pages 91/511 are source-reviewed narrow-gutter column-order regressions; the complete left column precedes the right. Reviewed chapter-page folios on pages 16/91 must remain absent from prose. Pages 211/212 visually reviewed: V-speed designators retain their source subscripts in bulleted definitions; source ASI figures remain preserved. Source pages 50/325 visually reviewed for tag-restored left-column-before-right-column order; page 81 caption remains beside the preceding image, before body prose. Page 191 reviewed: four separate left-column items precede the ammeter paragraph; since #98 the bus-bar and fuse paragraphs, the loadmeter, voltage-regulator and hydraulic paragraphs reflow and only the master-switch figure is preserved. Pages 35-36 and 116-117 visually reviewed: each two-column paragraph continues from the bottom of one page onto the next and must remain one paragraph across the source-page marker (#27). Figure 5-36 on page 121 reviewed in color (blue sky, yellow labels, aircraft): the preserved crop must keep its scale, ink contrast and hues (#27). Pages 22-25 and 52-53 visually reviewed (#45): the paragraph between page 22's figures, page 24's right column continued below the figure that opens page 25, and the tagged page 52 continued on the untagged page 53 must each remain one paragraph across the source-page marker. Pages 27, 191 and 365 source rasters reviewed (#69, #70): a bullet PDFKit splits from its text opens that item, not the tail of the block above, and a line broken after a slash inside a compound (`runway/` + `taxiway`, `alternator/` + `generator`) joins without a space. Pages 33, 43, 49, 201 and 370 source rasters reviewed (#63, #73): a section title that opens a paragraph continued on the next page follows the figure caption that closes its page and directly precedes that paragraph (pages 33, 49, 201); a two-line title set nearly the column's width is one heading (pages 43, 370). Pages 136, 159 and 340 source rasters reviewed, with pages 91, 156, 165, 199 and 262 checked against extracted geometry (#76, #82): a 10-point bold or 11-point bold-italic sub-heading on its own line is a heading followed by its paragraph, not the paragraph's opening words; page 159's `Figure 6-20.` caption ends at its own last line and the unpainted `Figure 5-16.` caption left outside the artwork's clip is not emitted (#85); page 340's two column titles on one row are two headings. Pages 25, 92 and 372 source rasters reviewed (#79): addresses broken after a dot or underscore rejoin without a space, including `(NACO)—www.faa.` + `gov/…` and the AIM bullet whose marker line ends inside its address; page 92’s `?n=wxcalc_densityaltitude` address no longer seeds a formula crop that split its paragraph. Pages 88, 98, 203, 231 and 335 (#84): chapter openers tagged P remain headings once their text-free Form XObjects no longer discard the page tags; page 203 source-reviewed, its tagged group spanning Introduction and the next section falls back. Page 89 (#75) source-reviewed: the applied tags read the viscosity and friction columns in order. Pages 105, 211 and 227 source-reviewed: paragraphs and a caption the source tags in pieces read as one element. Page 227 source raster reviewed (#77): the compass-rose figure's group box overhangs its rounded frame into the left column, but only its clipped part is figure ink, so the sentence ending `true course desired.` reflows whole; the word equations under `Step 1:`, `Step 2:` and `course is known:` are body text in the column's measure and reflow in order. Pages 96, 114, 127, 128, 179, 235, 263, 360, 366 and 412 (#89) source-reviewed: a paragraph the source tags in two pieces, one of them falling back beside a figure or in a justified column spaced only around a heading, reads as one paragraph; page 319's TAF change groups and page 416's NDB table rows stay separate. Pages 27, 45, 49, 54, 72, 152, 285, 311, 383, 409 and 429 (#90) source-reviewed: tagged titles in the book's bold, bold-italic and italic title styles are headings, stacked titles stay two headings, and titles on pages 54 and 152 follow their figure directly above the paragraph they open; contents labels (pages 6, 15) and a centred table title (416) are not headings. Lettered appendix folios A-5 to A-7 and C-2 to C-4 are furniture, not headings. Pages 340, 401, 317, 439 and 108 source rasters reviewed (#86): a figure set across both columns' full measure, within points of their first or last lines, reads before or after the complete columns; each column reads whole (page 340's left column before `Some taxiway stubs`, page 401's left column before `Suppose a flight`, page 317's items 8-11 before item 12 and the METAR example, page 439's two drug paragraphs before the right column, page 108's last left-column line before figure 5-16). Pages 47, 48, 228, 447, 460 and 512 (#97) source-reviewed: untagged 10-point italic titles in the book's recurring italic title style (pages 228, 447) and italic titles over bullet lists (48) are headings; the PAVE titles A = Aircraft and V = EnVironment are text, not formula crops; the blank pages 460 and 512 carry no folio. Page 410's italic table header Distance is not a heading. Pages 24, 55, 64, 207, 249, 251, 318, 392 and 416 (#91) source-reviewed: with space-only shows no longer rejecting their tag groups, tagged table rows, time-zone rows, address lines and checklist entries stay separate paragraphs. Pages 6, 21 and 404 source-reviewed (#102): the two-line bold sub-headings The Professional Air Traffic Controllers / Organization (PATCO) Strike and Use of Chart Supplement U.S. (formerly Airport/ / Facility Directory) are one heading each; page 6's contents entries A = Aircraft through Human Factors are text, not a preserved region. Pages 7, 12 and 15 (#105) source-reviewed: the bare Roman folios at the foot of the front matter (iii to xvi, pages 3 to 15) are furniture, not paragraphs. Pages 19, 96, 130, 146, 191, 351 and 361 (#98, #52) source-reviewed: a path or image drawn beyond the frame that clips it no longer claims the column beside the figure; page 19's left column reads whole before the right column, the prose and headings beside each figure reflow in column order, and every figure stays preserved. Pages 226, 286, 288 and 302 (#13) source-reviewed: dense vector illustrations of 101,594–183,417 operations no longer exceed the graphics reader's operation budget, so the columns, headings, bullets and captions beside each complete figure reflow instead of a whole-page image, and the sentences that cross from pages 225, 287 and 301 continue. Page 348 source-reviewed: both two-line titles and their paragraphs reflow beside the four preserved figures. Page 448's 1.95-million-operation illustration still exceeds the budget and the paint cap and keeps its page image. Page 131 source raster reviewed (#121): the borderless CATEGORY / LIMIT LOAD FACTOR table reads as a table, its header row th, the two-line Utility label one cell, the footnote marker on Normal kept, with no row headers (the tags mark those cells TD). Compounds broken at a line-end hyphen before a capital keep the hyphen with no space (#131: 6 `Single-Pilot`, 360 `Services-Broadcast`). #151: the 1,857 borderless links draw nothing (pages 6, 7, 12 and 15 carry no Original page image); page 362's reviewer highlight over Clearing Procedures is white, multiplied over the page, so it draws nothing either and the page warns annotationsNotConverted without an image. Figure captions on pages 81, 108, 165, 199, 226, 262, 286, 288, 302, 317, 341, 348, 391, 397, 401 and 439 reviewed again on their renders (#27): the book sets every `Figure N-M.` caption directly beneath the artwork it names, so each of these 23 captions must stand next after an image in the page's own block order, not merely appear on the page. Adjacency is all that is claimed; which figure a caption sits beside is not. #180: page 510's glossary entry `VYSE.` keeps its definition, as its neighbours already did. #187: the listed pages carry each named alternative text on some image — the caption the source prints beside the figure, or the kind the crop's own evidence names — and no image on them states its provenance or nothing in `alt`; source pages rendered and reviewed (measurements/preserved-image-alt-text/record.md).",
+      "basis": "Source pages 16 and 121 visually reviewed. Protects the introductory prose and figure preservation; does not approve page-121 column order. Pages 91/511 are source-reviewed narrow-gutter column-order regressions; the complete left column precedes the right. Reviewed chapter-page folios on pages 16/91 must remain absent from prose. Pages 211/212 visually reviewed: V-speed designators retain their source subscripts in bulleted definitions; source ASI figures remain preserved. Source pages 50/325 visually reviewed for tag-restored left-column-before-right-column order; page 81 caption remains beside the preceding image, before body prose. Page 191 reviewed: four separate left-column items precede the ammeter paragraph; since #98 the bus-bar and fuse paragraphs, the loadmeter, voltage-regulator and hydraulic paragraphs reflow and only the master-switch figure is preserved. Pages 35-36 and 116-117 visually reviewed: each two-column paragraph continues from the bottom of one page onto the next and must remain one paragraph across the source-page marker (#27). Figure 5-36 on page 121 reviewed in color (blue sky, yellow labels, aircraft): the preserved crop must keep its scale, ink contrast and hues (#27). Pages 22-25 and 52-53 visually reviewed (#45): the paragraph between page 22's figures, page 24's right column continued below the figure that opens page 25, and the tagged page 52 continued on the untagged page 53 must each remain one paragraph across the source-page marker. Pages 27, 191 and 365 source rasters reviewed (#69, #70): a bullet PDFKit splits from its text opens that item, not the tail of the block above, and a line broken after a slash inside a compound (`runway/` + `taxiway`, `alternator/` + `generator`) joins without a space. Pages 33, 43, 49, 201 and 370 source rasters reviewed (#63, #73): a section title that opens a paragraph continued on the next page follows the figure caption that closes its page and directly precedes that paragraph (pages 33, 49, 201); a two-line title set nearly the column's width is one heading (pages 43, 370). Pages 136, 159 and 340 source rasters reviewed, with pages 91, 156, 165, 199 and 262 checked against extracted geometry (#76, #82): a 10-point bold or 11-point bold-italic sub-heading on its own line is a heading followed by its paragraph, not the paragraph's opening words; page 159's `Figure 6-20.` caption ends at its own last line and the unpainted `Figure 5-16.` caption left outside the artwork's clip is not emitted (#85); page 340's two column titles on one row are two headings. Pages 25, 92 and 372 source rasters reviewed (#79): addresses broken after a dot or underscore rejoin without a space, including `(NACO)—www.faa.` + `gov/…` and the AIM bullet whose marker line ends inside its address; page 92’s `?n=wxcalc_densityaltitude` address no longer seeds a formula crop that split its paragraph. Pages 88, 98, 203, 231 and 335 (#84): chapter openers tagged P remain headings once their text-free Form XObjects no longer discard the page tags; page 203 source-reviewed, its tagged group spanning Introduction and the next section falls back. Page 89 (#75) source-reviewed: the applied tags read the viscosity and friction columns in order. Pages 105, 211 and 227 source-reviewed: paragraphs and a caption the source tags in pieces read as one element. Page 227 source raster reviewed (#77): the compass-rose figure's group box overhangs its rounded frame into the left column, but only its clipped part is figure ink, so the sentence ending `true course desired.` reflows whole; the word equations under `Step 1:`, `Step 2:` and `course is known:` are body text in the column's measure and reflow in order. Pages 96, 114, 127, 128, 179, 235, 263, 360, 366 and 412 (#89) source-reviewed: a paragraph the source tags in two pieces, one of them falling back beside a figure or in a justified column spaced only around a heading, reads as one paragraph; page 319's TAF change groups and page 416's NDB table rows stay separate. Pages 27, 45, 49, 54, 72, 152, 285, 311, 383, 409 and 429 (#90) source-reviewed: tagged titles in the book's bold, bold-italic and italic title styles are headings, stacked titles stay two headings, and titles on pages 54 and 152 follow their figure directly above the paragraph they open; contents labels (pages 6, 15) and a centred table title (416) are not headings. Lettered appendix folios A-5 to A-7 and C-2 to C-4 are furniture, not headings. Pages 340, 401, 317, 439 and 108 source rasters reviewed (#86): a figure set across both columns' full measure, within points of their first or last lines, reads before or after the complete columns; each column reads whole (page 340's left column before `Some taxiway stubs`, page 401's left column before `Suppose a flight`, page 317's items 8-11 before item 12 and the METAR example, page 439's two drug paragraphs before the right column, page 108's last left-column line before figure 5-16). Pages 47, 48, 228, 447, 460 and 512 (#97) source-reviewed: untagged 10-point italic titles in the book's recurring italic title style (pages 228, 447) and italic titles over bullet lists (48) are headings; the PAVE titles A = Aircraft and V = EnVironment are text, not formula crops; the blank pages 460 and 512 carry no folio. Page 410's italic table header Distance is not a heading. Pages 24, 55, 64, 207, 249, 251, 318, 392 and 416 (#91) source-reviewed: with space-only shows no longer rejecting their tag groups, tagged table rows, time-zone rows, address lines and checklist entries stay separate paragraphs. Pages 6, 21 and 404 source-reviewed (#102): the two-line bold sub-headings The Professional Air Traffic Controllers / Organization (PATCO) Strike and Use of Chart Supplement U.S. (formerly Airport/ / Facility Directory) are one heading each; page 6's contents entries A = Aircraft through Human Factors are text, not a preserved region. Pages 7, 12 and 15 (#105) source-reviewed: the bare Roman folios at the foot of the front matter (iii to xvi, pages 3 to 15) are furniture, not paragraphs. Pages 19, 96, 130, 146, 191, 351 and 361 (#98, #52) source-reviewed: a path or image drawn beyond the frame that clips it no longer claims the column beside the figure; page 19's left column reads whole before the right column, the prose and headings beside each figure reflow in column order, and every figure stays preserved. Pages 226, 286, 288 and 302 (#13) source-reviewed: dense vector illustrations of 101,594–183,417 operations no longer exceed the graphics reader's operation budget, so the columns, headings, bullets and captions beside each complete figure reflow instead of a whole-page image, and the sentences that cross from pages 225, 287 and 301 continue. Page 348 source-reviewed: both two-line titles and their paragraphs reflow beside the four preserved figures. Page 448's 1.95-million-operation illustration still exceeds the budget and the paint cap and keeps its page image. Page 131 source raster reviewed (#121): the borderless CATEGORY / LIMIT LOAD FACTOR table reads as a table, its header row th, the two-line Utility label one cell, the footnote marker on Normal kept, with no row headers (the tags mark those cells TD). Compounds broken at a line-end hyphen before a capital keep the hyphen with no space (#131: 6 `Single-Pilot`, 360 `Services-Broadcast`). #151: the 1,857 borderless links draw nothing (pages 6, 7, 12 and 15 carry no Original page image); page 362's reviewer highlight over Clearing Procedures is white, multiplied over the page, so it draws nothing either and the page warns annotationsNotConverted without an image. Figure captions on pages 81, 108, 165, 199, 226, 262, 286, 288, 302, 317, 341, 348, 391, 397, 401 and 439 reviewed again on their renders (#27): the book sets every `Figure N-M.` caption directly beneath the artwork it names, so each of these 23 captions must stand next after an image in the page's own block order, not merely appear on the page. Adjacency is all that is claimed; which figure a caption sits beside is not. #180: page 510's glossary entry `VYSE.` keeps its definition, as its neighbours already did. #187: the listed pages carry each named alternative text on some image — the caption the source prints beside the figure, or the kind the crop's own evidence names — and no image on them states its provenance or nothing in `alt`; source pages rendered and reviewed (measurements/preserved-image-alt-text/record.md). #198: page 410's letter-spaced distance heading `(Miles)` reads whole, so its table names the distance column `Distance (Miles)` over the six distances read from the render (measurements/table-follow-ups/record.md).",
       "pages": [
         {
           "page": 3,
@@ -1141,7 +1141,8 @@
               "title": "VOR/VORTAC NAVAIDS: Normal Usable Altitudes and Radius Distances",
               "columns": [
                 "Class",
-                "Altitudes"
+                "Altitudes",
+                "Distance (Miles)"
               ],
               "headerCells": true,
               "rowHeaders": false,
@@ -1150,42 +1151,48 @@
                   "label": "T",
                   "values": [
                     "T",
-                    "12,000' and below"
+                    "12,000' and below",
+                    "25"
                   ]
                 },
                 {
                   "label": "L",
                   "values": [
                     "L",
-                    "Below 18,000'"
+                    "Below 18,000'",
+                    "40"
                   ]
                 },
                 {
                   "label": "H",
                   "values": [
                     "H",
-                    "Below 14,500'"
+                    "Below 14,500'",
+                    "40"
                   ]
                 },
                 {
                   "label": "H",
                   "values": [
                     "H",
-                    "Within the conterminous 48 states only, between 14,500 and 17,999'"
+                    "Within the conterminous 48 states only, between 14,500 and 17,999'",
+                    "100"
                   ]
                 },
                 {
                   "label": "H",
                   "values": [
                     "H",
-                    "18,000'—FL 450"
+                    "18,000'—FL 450",
+                    "130"
                   ]
                 },
                 {
                   "label": "H",
                   "values": [
                     "H",
-                    "FL 450—60,000'"
+                    "FL 450—60,000'",
+                    "100"
                   ]
                 }
               ]
@@ -7252,7 +7259,7 @@
     {
       "id": "census-rrs2002-01",
       "sourceSHA256": "0f97380ae4308581bd70013b7317faafd7c217654236bd31d1448f26eae56905",
-      "basis": "Source page 1 (Word cover) visually reviewed as the clean in-document control for a report whose LaTeX body fonts name their glyphs by index with no Unicode mapping (#38). Since #143 the EC text fonts (dcr, dcbx, dcti) are decoded through the offset the document's own words establish: pages 3 and 17, drawn in those fonts alone and holding no numeric table, reflow from native text without damagedTextEncoding, OCR or a source-page image, and their reviewed phrases (page 3's heading, first sentence, subsection title and numbered fields 1, 12 and 13; page 17's body and references with ligatures, dashes and an italic journal title) were read from 200-dpi renders of the source pages. Pages 12 and 15 are tables no table path reconstructs; they keep damagedTextEncoding and their table images, and must never reflow the table rows run together as prose (Table 2's `0.9620 rnkswp10`, Table 7's `13.85 add01_sw`). Pages 2, 4-11, 13, 14, 16 and 18-20 draw undecodable math or typewriter fonts or lines PDFKit breaks, and must still report damagedTextEncoding and keep a source-page image. Does not bless OCR accuracy on those pages. Page 3's paragraph after the income list opens on an indented first line that runs onto `public-use CPS file`, and page 17's first reference hangs `Incomplete Data via the EM Algorithm` under a first line set apart by space; each reads as one paragraph (#147). #162: page 17’s hanging-indent references keep their wrapped lines. #187: the listed pages carry each named alternative text on some image — the caption the source prints beside the figure, or the kind the crop's own evidence names — and no image on them states its provenance or nothing in `alt`; source pages rendered and reviewed (measurements/preserved-image-alt-text/record.md).",
+      "basis": "Source page 1 (Word cover) visually reviewed as the clean in-document control for a report whose LaTeX body fonts name their glyphs by index with no Unicode mapping (#38). Since #143 the EC text fonts (dcr, dcbx, dcti) are decoded through the offset the document's own words establish: pages 3 and 17, drawn in those fonts alone and holding no numeric table, reflow from native text without damagedTextEncoding, OCR or a source-page image, and their reviewed phrases (page 3's heading, first sentence, subsection title and numbered fields 1, 12 and 13; page 17's body and references with ligatures, dashes and an italic journal title) were read from 200-dpi renders of the source pages. Pages 12 and 15 are tables no table path reconstructs; they keep damagedTextEncoding and their table images, and must never reflow the table rows run together as prose (Table 2's `0.9620 rnkswp10`, Table 7's `13.85 add01_sw`). Pages 2, 4-11, 13, 14, 16 and 18-20 draw undecodable math or typewriter fonts or lines PDFKit breaks, and must still report damagedTextEncoding and keep a source-page image. Does not bless OCR accuracy on those pages. Page 3's paragraph after the income list opens on an indented first line that runs onto `public-use CPS file`, and page 17's first reference hangs `Incomplete Data via the EM Algorithm` under a first line set apart by space; each reads as one paragraph (#147). #162: page 17’s hanging-indent references keep their wrapped lines. #187: the listed pages carry each named alternative text on some image — the caption the source prints beside the figure, or the kind the crop's own evidence names — and no image on them states its provenance or nothing in `alt`; source pages rendered and reviewed (measurements/preserved-image-alt-text/record.md). #198: on pages 12 and 15 each table's title, set in the cells' own size under its `Table N.` label, is that table's <caption> and no separate paragraph (read from the 150-dpi renders; measurements/table-follow-ups/record.md).",
       "pages": [
         {
           "page": 1,
@@ -7400,10 +7407,6 @@
             "ocrUsed"
           ],
           "maximumImages": 0,
-          "paragraphs": [
-            "Table 2. Domingo Data Reidentification Rates",
-            "Table 3. Domingo Data Scoring Metrics"
-          ],
           "absentText": [
             "Wdeoh 51",
             "uqnvzs38"
@@ -7411,6 +7414,9 @@
           "tableCells": [
             {
               "title": "Table 2. Domingo Data Reidentification Rates",
+              "caption": [
+                "Table 2. Domingo Data Reidentification Rates"
+              ],
               "columns": [
                 "d metric",
                 "l metric"
@@ -7450,6 +7456,9 @@
             },
             {
               "title": "Table 3. Domingo Data Scoring Metrics",
+              "caption": [
+                "Table 3. Domingo Data Scoring Metrics"
+              ],
               "columns": [
                 "d Metric Ascore",
                 "d Metric Dscore",
@@ -7530,10 +7539,6 @@
             "ocrUsed"
           ],
           "maximumImages": 0,
-          "paragraphs": [
-            "Table 7. Kim-Winker Data Scoring Metrics",
-            "Table 8. S4 Return Type Information Loss, 8 Variables, 5885 Records"
-          ],
           "absentText": [
             "Wdeoh ;1",
             "uqnvzs38"
@@ -7541,6 +7546,9 @@
           "tableCells": [
             {
               "title": "Table 7. Kim-Winker Data Scoring Metrics",
+              "caption": [
+                "Table 7. Kim-Winker Data Scoring Metrics"
+              ],
               "columns": [
                 "Full File Matches Ascore",
                 "Full File Matches Dscore",
@@ -7589,6 +7597,9 @@
             },
             {
               "title": "Table 8. S4 Return Type Information Loss, 8 Variables, 5885 Records",
+              "caption": [
+                "Table 8. S4 Return Type Information Loss, 8 Variables, 5885 Records"
+              ],
               "columns": [
                 "IL1",
                 "IL1s",

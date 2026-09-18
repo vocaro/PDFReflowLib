@@ -55,9 +55,15 @@ struct ReflowDocument: Sendable, Equatable {
 struct TextStyle: OptionSet, Sendable, Equatable, Codable {
     let rawValue: UInt8
     static let bold = TextStyle(rawValue: 1 << 0)
+    /// Emphasis italic: the slope the book sets to stress a word, name a title or mark a
+    /// foreign term. Written `<em>`.
     static let italic = TextStyle(rawValue: 1 << 1)
     static let superscript = TextStyle(rawValue: 1 << 2)
     static let `subscript` = TextStyle(rawValue: 1 << 3)
+    /// A mathematical variable's slope (#142): text set in a maths italic font (`CMMI12`,
+    /// `LibertineMathMI`). It is notation, not emphasis, so it is a style of its own and is
+    /// written `<i>`, never `<em>`. A run is never both italics: one font sets it.
+    static let mathItalic = TextStyle(rawValue: 1 << 4)
 }
 
 /// A note's identity for reference links: its printed number within the scope that makes

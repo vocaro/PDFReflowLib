@@ -26,19 +26,78 @@ enum EPUBTextEncoder {
     static func noteID(_ key: NoteKey) -> String { "note-\(key.identifier)" }
     static func referenceID(_ key: NoteKey) -> String { "noteref-\(key.identifier)" }
 
+    /// The elements a style writes, outermost first. `<strong>` is bold and `<em>` is emphasis
+    /// italic; `<i>` is a maths variable's slope (#142), which is a font's notation rather than
+    /// the stress `<em>` states, and which assistive reading therefore should not voice. `<var>`
+    /// was refused: it asserts a named variable of a program or an expression, which a maths
+    /// italic font alone does not evidence.
+    private static let tags: [(trait: TextStyle, tag: String)] = [
+        (.superscript, "sup"), (.subscript, "sub"), (.bold, "strong"), (.italic, "em"), (.mathItalic, "i"),
+    ]
+
+    /// A run raised and lowered at once is raised: `sub` precedes `sup` in `tags`, so without
+    /// this the two would nest instead.
+    private static func resolved(_ style: TextStyle) -> TextStyle {
+        style.contains(.superscript) ? style.subtracting(.subscript) : style
+    }
+
+    /// Runs as nested elements, each element spanning every adjacent run that carries its style
+    /// (#142). Adjacent bold and bold-italic runs are one `<strong>` holding an `<em>`
+    /// (`<strong><em>Demand</em> Shocks</strong>`, Fed page 30) rather than two `<strong>`s.
+    /// Styles nest in `tags` order, so one run's markup is unchanged.
+    private static func nested(_ runs: ArraySlice<(text: String, style: TextStyle)>, depth: Int = 0) -> String {
+        guard depth < tags.count else { return runs.map { xml($0.text) }.joined() }
+        let (trait, tag) = tags[depth]
+        var markup = "", index = runs.startIndex
+        while index < runs.endIndex {
+            let inside = runs[index].style.contains(trait)
+            var end = index
+            while end < runs.endIndex, runs[end].style.contains(trait) == inside { end += 1 }
+            let group = runs[index..<end].map { (text: $0.text, style: $0.style.subtracting(trait)) }
+            let body = nested(group[...], depth: depth + 1)
+            markup += inside ? "<\(tag)>\(body)</\(tag)>" : body
+            index = end
+        }
+        return markup
+    }
+
     private static func styled(_ text: String, _ style: TextStyle) -> String {
-        var run = xml(text)
-        if style.contains(.italic) { run = "<em>\(run)</em>" }
-        if style.contains(.bold) { run = "<strong>\(run)</strong>" }
-        if style.contains(.superscript) { run = "<sup>\(run)</sup>" }
-        else if style.contains(.subscript) { run = "<sub>\(run)</sub>" }
-        return run
+        nested([(text: text, style: resolved(style))][...])
+    }
+
+    /// Emphasis a joining space takes from the runs it separates. A space is invisible in each,
+    /// so adopting them only removes an element boundary; a raised or lowered space would move.
+    private static let joinable: TextStyle = [.bold, .italic, .mathItalic]
+
+    /// Whether `outer` holds a style that nests outside one `inner` holds. A space that gains
+    /// bold between two raised bold runs is still written apart, inside a `<strong>` of its own,
+    /// because `<sup>` encloses `<strong>`; there is nothing to join, so it gains nothing.
+    private static func encloses(_ outer: TextStyle, _ inner: TextStyle) -> Bool {
+        guard let first = tags.firstIndex(where: { outer.contains($0.trait) }),
+              let last = tags.lastIndex(where: { inner.contains($0.trait) }) else { return false }
+        return first < last
     }
 
     /// Adjacent text runs of one style as one run. PDFKit splits a line into runs wherever any
     /// attribute changes (kerning, a font resource), and lines join run by run, so equal styles
     /// would otherwise be emitted as separate elements (`<strong>F</strong><strong>AA</strong>`, #133).
+    ///
+    /// A line join contributes a space of its own, which carries no style and so split the runs
+    /// either side of it (arXiv page 4's `<strong>=15, and the</strong> <strong>shift…</strong>`,
+    /// #142). A run of whitespace between two text runs first takes the emphasis both of them
+    /// carry, so the text either side of it is one element.
     static func coalesced(_ elements: [InlineText.Element]) -> [InlineText.Element] {
+        var elements = elements
+        for index in elements.indices.dropFirst().dropLast() {
+            guard case let .text(value, style) = elements[index], !value.isEmpty,
+                  value.allSatisfy(\.isWhitespace),
+                  case let .text(_, before) = elements[index - 1],
+                  case let .text(_, after) = elements[index + 1] else { continue }
+            let shared = before.intersection(after).intersection(joinable)
+            let absent = before.union(after).subtracting(style.union(shared))
+            guard !shared.subtracting(style).isEmpty, !encloses(absent, shared.subtracting(style)) else { continue }
+            elements[index] = .text(value, style.union(shared))
+        }
         var result: [InlineText.Element] = []
         result.reserveCapacity(elements.count)
         for element in elements {
@@ -52,19 +111,31 @@ enum EPUBTextEncoder {
         return result
     }
 
-    /// `referenceID` names the id a linked marker receives (its first occurrence); nil emits
-    /// the link without an id, as later references to the same note do.
+    /// A run of adjacent text elements is written as one nest of elements, so a page boundary or
+    /// a note reference — each of which carries its own element — ends that run and starts
+    /// another. `referenceID` names the id a linked marker receives (its first occurrence); nil
+    /// emits the link without an id, as later references to the same note do.
     static func inline(_ text: InlineText, referenceID: (NoteKey) -> String? = { _ in nil }) -> String {
-        coalesced(text.elements).map { element in
+        var markup = "", runs: [(text: String, style: TextStyle)] = []
+        func flush() {
+            if !runs.isEmpty { markup += nested(runs[...]) }
+            runs.removeAll(keepingCapacity: true)
+        }
+        for element in coalesced(text.elements) {
             switch element {
-            case let .text(text, style): return styled(text, style)
-            case let .sourcePage(page): return sourcePage(page)
+            case let .text(text, style): runs.append((text: text, style: resolved(style)))
+            case let .sourcePage(page):
+                flush()
+                markup += sourcePage(page)
             case let .noteReference(marker, style, key):
+                flush()
                 let id = referenceID(key).map { " id=\"\(xml($0))\"" } ?? ""
-                return "<sup><a epub:type=\"noteref\" role=\"doc-noteref\"\(id) href=\"#\(noteID(key))\">"
+                markup += "<sup><a epub:type=\"noteref\" role=\"doc-noteref\"\(id) href=\"#\(noteID(key))\">"
                     + styled(marker, style.subtracting([.superscript, .subscript])) + "</a></sup>"
             }
-        }.joined()
+        }
+        flush()
+        return markup
     }
 
     /// A note's text with its printed number wrapped in a return link to `backlink`. The
@@ -83,7 +154,11 @@ enum EPUBTextEncoder {
         if !style.contains(.superscript), !style.contains(.subscript),
            let range = value.range(of: "^\\s*\(number)\\.", options: .regularExpression) {
             let prefix = String(value[range]), remainder = String(value[range.upperBound...])
-            return anchor + styled(prefix, style) + "</a>" + styled(remainder, style) + inline(rest)
+            // The text after the number is written with the rest of the note, so a style it
+            // shares with what follows is one element (#142).
+            var tail = rest
+            if !remainder.isEmpty { tail.elements.insert(.text(remainder, style), at: 0) }
+            return anchor + styled(prefix, style) + "</a>" + inline(tail)
         }
         return inline(text) + " \(anchor)\u{21A9}</a>"
     }

@@ -115,7 +115,7 @@ are, in the page markup). Evidence and negative controls on real output are in
 ## Current content coverage
 
 <!-- counts:coverage -->
-[corpus/regressions.json](../corpus/regressions.json) has 3269 targeted checks on 555 reviewed pages
+[corpus/regressions.json](../corpus/regressions.json) has 3274 targeted checks on 556 reviewed pages
 across 22 documents: *Pilot's Handbook of Aeronautical Knowledge*, *Beginning and Intermediate
 Algebra*, *The 9/11 Commission Report*, *The Fed Explained*, *Dietary Guidelines for Americans*,
 *Fifth National Climate Assessment*, *Our Flag*, *Preparedness 101*, *Project Blue Book Special
@@ -125,9 +125,9 @@ Report No. 14*, *Mineral Commodity Summaries 2025*, *Loper Bright Enterprises v.
 Clocks*, *Complaint for a Civil Case*, *Investigation of Atmospheric Boundary-Layer Effects on
 Launch-Vehicle Ground Wind Loads*, *A Scheduling Algorithm Compatible with a Distributed Management
 of Arrivals in the National Airspace System*, *Agricultural Research*, *Earthdata Cloud Analytics
-Project* and *Tank Health Monitoring*. They comprise 1131 ordered-text, 209 text, 397 paragraph,
+Project* and *Tank Health Monitoring*. They comprise 1131 ordered-text, 211 text, 397 paragraph,
 268 absent-text, 262 heading, 20 heading-level, 50 absent-heading, 89 list-item,
-1 preformatted-lines, 28 script, 6 absent-script, 11 footnote, 34 note-link,
+1 preformatted-lines, 29 script, 8 absent-script, 11 footnote, 34 note-link,
 61 paragraph-continuation, 1 list-item-continuation, 8 paragraph-separation, 92 distinct-paragraph,
 196 image-presence, 44 captioned-image, 102 page-reference, 113 warning, 111 absent-warning,
 17 source-region, 5 glyph-structure, 4 image-appearance and 9 table-cell checks, counted as
@@ -593,7 +593,8 @@ Since #125 an attributed run drawn in a bold font resource that PDFKit does not 
 `Dm`, `Demi` or `Semibold` face, or any embedded font PDFKit reports as `Helvetica`) records
 `"bold": true`; fixtures captured before carry no such field and replay PDFKit's runs alone.
 Since #133 a run drawn in an italic text font resource that PDFKit does not name italic records
-`"italic": true` the same way.
+`"italic": true` the same way, and since #142 a run drawn in a maths italic font records
+`"mathItalic": true`. A fixture captured before each carries no such field.
 
 Run from the repository root. The tool verifies the cached PDF against the manifest SHA-256.
 Paints wholly outside the crop box are not recorded (`GraphicsReader` drops them; FAA pages 474
@@ -603,7 +604,7 @@ the page's structure validates, each line also records the tag the pipeline appl
 since #89/#90); older fixtures and untagged lines have none, and `SourceLayoutFixture` restores it.
 Source review, baseline failures, cross-document safeguards and full-run evidence are retained
 in [the three-fix measurement](../measurements/three-fidelity-fixes/record.md). The suite contains
-<!-- counts:swift-tests -->870 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->242 Python tests<!-- counts:end -->.
+<!-- counts:swift-tests -->878 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->242 Python tests<!-- counts:end -->.
 The comparison tests include a real-Poppler image URL check through the safe HTTP handler
 (simple and positioned modes, paths with spaces); absent Poppler is an explicit skip.
 
@@ -1701,10 +1702,33 @@ not share gains no emphasis, and adjacent same-style runs are written as one ele
 boundaries, note references and other styles kept apart. `*-styles` source fixtures, each with a
 `fontWeights: false` negative control: the Supreme Court's italic case names (page 9), 9/11's ship
 names (171), the Fed's chapter summary (8), Replay Clocks' Libertine titles and italic venue beside
-unstyled math italic (1), Wallace's `World View Note:` opening its own paragraph (18) and its
-upright variables (23), DGA's unemphasised bullets (3), and Our Flag's script title without italic
+unstyled maths italic (1), Wallace's `World View Note:` opening its own paragraph (18) and its
+unemphasised variables (23), DGA's unemphasised bullets (3), and Our Flag's script title without italic
 beside its italic quotation (7). Disabling each of ten parts fails a test that covers it. See the
 [font style evidence](../measurements/font-style-detection/record.md).
+
+### Maths italic and nested styles
+
+The same file and `NestedStyleEncodingTests.swift` cover
+[#142](https://github.com/vocaro/PDFReflowLib/issues/142). A maths italic name is classified apart
+from a text italic, and a synthetic page reads a `CMMI12` variable as maths italic and a text
+italic beside it as `<em>`, through PDFKit's `Helvetica` names, with the substituted names
+asserted not italic. A show needs an element only where the font's map gives an ordinary letter:
+controls refuse Mathematical Alphanumeric Symbols (`RepCl`) and the Letterlike italic `h`, a show
+of relations or punctuation, an undecoded show and an upright font. A run the mark splits is
+measured whole and written apart, so a display line's `8x` is no subscript, with a genuine raised
+`2` beside it as the control; Wallace page 23's contract requires the exponent and refuses a
+lowered `8x` or `5x`. The `algebra-23-styles` fixture's variables carry the slope and no `<em>`,
+with a `fontWeights: false` control, and `arxiv-1-styles` carries none at all.
+
+Encoding: adjacent runs nest inside the style they share, three deep, with controls for styles
+sharing nothing, a run raised and lowered at once, a page boundary, a note reference and XML
+escaping; a joining space takes the emphasis both sides carry, with controls for runs sharing
+nothing, a space carrying text, an edge space and a raised pair; and maths italic is written
+`<i>`, never `<em>`. A note's number keeps its backlink while the text after it nests with the
+rest, and a table cell and a block payload nest the same way. Disabling each of six parts fails a
+test that covers it. See the
+[maths italic and nesting evidence](../measurements/math-italic-and-nesting/record.md).
 
 
 ## Concurrent native extraction

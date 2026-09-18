@@ -1949,6 +1949,31 @@
           ]
         },
         {
+          "page": 23,
+          "text": [
+            "5x− 2y− 8x +7y",
+            "Combine like terms 5x− 8x and− 2y + 7y"
+          ],
+          "scripts": [
+            {
+              "tag": "sup",
+              "text": "2",
+              "before": "Our Solution Example 33. 8x",
+              "after": "− 3x + 7− 2x"
+            }
+          ],
+          "absentScripts": [
+            {
+              "tag": "sub",
+              "text": "8x"
+            },
+            {
+              "tag": "sub",
+              "text": "5x"
+            }
+          ]
+        },
+        {
           "page": 26,
           "text": [
             "80) (7a2 +7a)− (6a2 + 4a)"

@@ -1,0 +1,51 @@
+{
+  "passed": true,
+  "provenanceErrors": [],
+  "case": "cia-blue-book-14-1955",
+  "executionContexts": {
+    "baseline": "host-terminal",
+    "candidate": "host-terminal"
+  },
+  "baselineConverterSHA256": "563c816d2da831b306b4bdf1669a1ff337efee1b9a0bee25d10564940eb5eb05",
+  "candidateConverterSHA256": "4623d3c3257a2a10a2431386f4431d2cdcceee5538a79085d88a842071dd864c",
+  "sameConverter": false,
+  "visionModelCaches": {
+    "baseline": {
+      "mode": "inherited",
+      "executableName": "base",
+      "programsSHA256": "1d83732cbc871b3f57e939929abdbb294e339af54e548e68954ebeea62579ac7"
+    },
+    "candidate": {
+      "mode": "inherited",
+      "executableName": "cand",
+      "programsSHA256": "22614cb0d67a8299f20da78a741db0b43f328b8fc7a2760ed28c0de40fec086d"
+    }
+  },
+  "sameVisionPrograms": false,
+  "changedOCRPages": [],
+  "ocrTextVolume": {
+    "pages": 0,
+    "baselineWords": 0,
+    "candidateWords": 0,
+    "pagesWithFewerWords": {
+      "baseline": [],
+      "candidate": []
+    }
+  },
+  "changedPages": [],
+  "changedPageFields": {},
+  "changedImages": [],
+  "navigationChanged": false,
+  "changedNavigationPages": [],
+  "pageMarkersEqual": true,
+  "changedReportFields": [],
+  "idOnlyShifts": {
+    "pageCount": 0,
+    "fields": {},
+    "navigationEntries": 0
+  },
+  "imageRenames": {
+    "count": 0
+  },
+  "scope": "Per page: text, block records, element markup, image bytes, link targets and warnings, with generated identifiers (block ordinals, element ids, spine file names, image asset names) normalized; page markers; image assets by bytes; navigation entries; conversion report. Not CSS, package metadata, decoded image equivalence or a fidelity qualification."
+}

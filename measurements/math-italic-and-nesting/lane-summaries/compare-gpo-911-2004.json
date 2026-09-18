@@ -1,0 +1,392 @@
+{
+  "passed": false,
+  "provenanceErrors": [],
+  "case": "gpo-911-2004",
+  "executionContexts": {
+    "baseline": "host-terminal",
+    "candidate": "host-terminal"
+  },
+  "baselineConverterSHA256": "563c816d2da831b306b4bdf1669a1ff337efee1b9a0bee25d10564940eb5eb05",
+  "candidateConverterSHA256": "4623d3c3257a2a10a2431386f4431d2cdcceee5538a79085d88a842071dd864c",
+  "sameConverter": false,
+  "visionModelCaches": {
+    "baseline": {
+      "mode": "inherited",
+      "executableName": "base",
+      "programsSHA256": "117fb2440ec075c382194cd363f92bd3b9c83846fede7e2d99ec7f3ca7a7331c"
+    },
+    "candidate": {
+      "mode": "inherited",
+      "executableName": "cand",
+      "programsSHA256": "4f5fad18c8f4a7fb55f30f969c43746a0d9b9d95bb1f6a823b7ef25cae64b9d4"
+    }
+  },
+  "sameVisionPrograms": false,
+  "changedOCRPages": [],
+  "ocrTextVolume": {
+    "pages": 0,
+    "baselineWords": 0,
+    "candidateWords": 0,
+    "pagesWithFewerWords": {
+      "baseline": [],
+      "candidate": []
+    }
+  },
+  "changedPages": [
+    5,
+    60,
+    65,
+    87,
+    146,
+    166,
+    171,
+    197,
+    230,
+    231,
+    256,
+    257,
+    279,
+    280,
+    297,
+    330,
+    335,
+    340,
+    362,
+    385,
+    387,
+    388,
+    392,
+    394,
+    395,
+    396,
+    397,
+    398,
+    399,
+    400,
+    403,
+    404,
+    405,
+    407,
+    408,
+    409,
+    411,
+    412,
+    413,
+    414,
+    415,
+    416,
+    421,
+    429,
+    433,
+    434,
+    435,
+    436,
+    437,
+    438,
+    439,
+    440,
+    443,
+    444,
+    446,
+    457,
+    458,
+    460,
+    463,
+    464,
+    480,
+    484,
+    485,
+    486,
+    487,
+    488,
+    489,
+    491,
+    493,
+    494,
+    495,
+    496,
+    499,
+    505,
+    507,
+    519,
+    523,
+    525,
+    527,
+    560,
+    571,
+    573,
+    580,
+    582
+  ],
+  "changedPageFields": {
+    "5": [
+      "markup"
+    ],
+    "60": [
+      "markup"
+    ],
+    "65": [
+      "markup"
+    ],
+    "87": [
+      "markup"
+    ],
+    "146": [
+      "markup"
+    ],
+    "166": [
+      "markup"
+    ],
+    "171": [
+      "markup"
+    ],
+    "197": [
+      "markup"
+    ],
+    "230": [
+      "markup"
+    ],
+    "231": [
+      "markup"
+    ],
+    "256": [
+      "markup"
+    ],
+    "257": [
+      "markup"
+    ],
+    "279": [
+      "markup"
+    ],
+    "280": [
+      "markup"
+    ],
+    "297": [
+      "markup"
+    ],
+    "330": [
+      "markup"
+    ],
+    "335": [
+      "markup"
+    ],
+    "340": [
+      "markup"
+    ],
+    "362": [
+      "markup"
+    ],
+    "385": [
+      "markup"
+    ],
+    "387": [
+      "markup"
+    ],
+    "388": [
+      "markup"
+    ],
+    "392": [
+      "markup"
+    ],
+    "394": [
+      "markup"
+    ],
+    "395": [
+      "markup"
+    ],
+    "396": [
+      "markup"
+    ],
+    "397": [
+      "markup"
+    ],
+    "398": [
+      "markup"
+    ],
+    "399": [
+      "markup"
+    ],
+    "400": [
+      "markup"
+    ],
+    "403": [
+      "markup"
+    ],
+    "404": [
+      "markup"
+    ],
+    "405": [
+      "markup"
+    ],
+    "407": [
+      "markup"
+    ],
+    "408": [
+      "markup"
+    ],
+    "409": [
+      "markup"
+    ],
+    "411": [
+      "markup"
+    ],
+    "412": [
+      "markup"
+    ],
+    "413": [
+      "markup"
+    ],
+    "414": [
+      "markup"
+    ],
+    "415": [
+      "markup"
+    ],
+    "416": [
+      "markup"
+    ],
+    "421": [
+      "markup"
+    ],
+    "429": [
+      "markup"
+    ],
+    "433": [
+      "markup"
+    ],
+    "434": [
+      "markup"
+    ],
+    "435": [
+      "markup"
+    ],
+    "436": [
+      "markup"
+    ],
+    "437": [
+      "markup"
+    ],
+    "438": [
+      "markup"
+    ],
+    "439": [
+      "markup"
+    ],
+    "440": [
+      "markup"
+    ],
+    "443": [
+      "markup"
+    ],
+    "444": [
+      "markup"
+    ],
+    "446": [
+      "markup"
+    ],
+    "457": [
+      "markup"
+    ],
+    "458": [
+      "markup"
+    ],
+    "460": [
+      "markup"
+    ],
+    "463": [
+      "markup"
+    ],
+    "464": [
+      "markup"
+    ],
+    "480": [
+      "markup"
+    ],
+    "484": [
+      "markup"
+    ],
+    "485": [
+      "markup"
+    ],
+    "486": [
+      "markup"
+    ],
+    "487": [
+      "markup"
+    ],
+    "488": [
+      "markup"
+    ],
+    "489": [
+      "markup"
+    ],
+    "491": [
+      "markup"
+    ],
+    "493": [
+      "markup"
+    ],
+    "494": [
+      "markup"
+    ],
+    "495": [
+      "markup"
+    ],
+    "496": [
+      "markup"
+    ],
+    "499": [
+      "markup"
+    ],
+    "505": [
+      "markup"
+    ],
+    "507": [
+      "markup"
+    ],
+    "519": [
+      "markup"
+    ],
+    "523": [
+      "markup"
+    ],
+    "525": [
+      "markup"
+    ],
+    "527": [
+      "markup"
+    ],
+    "560": [
+      "markup"
+    ],
+    "571": [
+      "markup"
+    ],
+    "573": [
+      "markup"
+    ],
+    "580": [
+      "markup"
+    ],
+    "582": [
+      "markup"
+    ]
+  },
+  "changedImages": [],
+  "navigationChanged": false,
+  "changedNavigationPages": [],
+  "pageMarkersEqual": true,
+  "changedReportFields": [],
+  "idOnlyShifts": {
+    "pageCount": 58,
+    "fields": {
+      "anchors": 25,
+      "noterefs": 37
+    },
+    "navigationEntries": 0
+  },
+  "imageRenames": {
+    "count": 0
+  },
+  "scope": "Per page: text, block records, element markup, image bytes, link targets and warnings, with generated identifiers (block ordinals, element ids, spine file names, image asset names) normalized; page markers; image assets by bytes; navigation entries; conversion report. Not CSS, package metadata, decoded image equivalence or a fidelity qualification."
+}

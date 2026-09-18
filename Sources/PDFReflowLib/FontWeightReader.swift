@@ -15,6 +15,8 @@ enum FontWeightReader {
     static let boldAttribute = NSAttributedString.Key("PDFReflowFontResourceBold")
     /// Set on the characters of an attributed line drawn in an italic text font resource (#133).
     static let italicAttribute = NSAttributedString.Key("PDFReflowFontResourceItalic")
+    /// Set on the characters of an attributed line drawn in a maths italic font resource (#142).
+    static let mathItalicAttribute = NSAttributedString.Key("PDFReflowFontResourceMathItalic")
 
     enum Weight: Equatable { case bold, regular }
 
@@ -181,6 +183,35 @@ enum FontWeightReader {
     /// or a script face (the `Script` flag, or `Script` in its name): Our Flag's
     /// `SnellRoundhand-BoldScript` titles lean at 40° with the Italic flag, as calligraphy, not emphasis.
     static let minimumItalicAngle: CGFloat = 5
+
+    /// Whether a font is a maths italic face (#142). Only a name states it: the descriptor cannot
+    /// tell a variable face from a text italic (Wallace's `CMMI12` reports angle 0, like its text
+    /// italic `ItalicRegular12pt`), so a font whose name states no slope is never maths italic.
+    /// Such a font sets variables, which slope as notation; `isItalic` refuses it, and the
+    /// encoder writes it `<i>` rather than `<em>`.
+    static func isMathItalic(baseFont: String?) -> Bool {
+        baseFont.map(nameSlope) == .mathItalic
+    }
+
+    /// Unicode's Mathematical Alphanumeric Symbols, whose characters state their own slope, and
+    /// Letterlike Symbols, which fill that block's holes: the italic `h` is U+210E (`PLANCK
+    /// CONSTANT`), not U+1D455, and newtx's map uses it (arXiv's `hlc.e`).
+    static let sloped: [ClosedRange<UInt32>] = [0x1D400...0x1D7FF, 0x2100...0x214F]
+
+    /// Whether a maths italic show needs an element to carry its slope (#142). A maths font sets
+    /// more than variables: newtx's `NewTXMI` maps `.`, `,`, `=` and `<`, and a relation or the
+    /// punctuation inside a compound name (`t.j.k`) is upright notation no reader should see
+    /// sloped, so a show without a letter is left alone. Where the font's map gives an already
+    /// sloped character, as newtx's does for arXiv's `RepCl` (𝑅𝑒𝑝𝐶𝑙) and `hlc` (ℎ𝑙𝑐), the
+    /// character states the slope and an element would only repeat it. What remains is a maths
+    /// italic that draws a variable as a plain letter: TeX's Computer Modern (Wallace's `x`, `y`).
+    static func slopeNeedsMarkup(_ show: Show) -> Bool {
+        guard show.mathItalic == true, let text = show.text else { return false }
+        return text.unicodeScalars.contains { scalar in
+            CharacterSet.letters.contains(scalar) && !sloped.contains { $0.contains(scalar.value) }
+        }
+    }
+
     static func isItalic(baseFont: String?, italicAngle: CGFloat?, flags: Int?) -> Bool {
         switch baseFont.map(nameSlope) ?? .unstated {
         case .italic: return true
@@ -205,6 +236,8 @@ enum FontWeightReader {
         var weight: Weight?
         /// Nil exactly where `weight` is.
         var italic: Bool?
+        /// A maths italic face (#142); nil exactly where `weight` is. Never true with `italic`.
+        var mathItalic: Bool?
         /// A simple font's one-byte map: its ToUnicode map, or a Type1 font's WinAnsi encoding.
         var unicode: [UInt8: String]?
         /// A composite `Identity-H` font's two-byte ToUnicode map (#133).
@@ -312,6 +345,7 @@ enum FontWeightReader {
         if subtype != "Type3" || hasDescriptor || baseFont != nil {
             info.weight = weight(baseFont: baseFont, fontWeight: fontWeight, flags: flags)
             info.italic = isItalic(baseFont: baseFont, italicAngle: italicAngle, flags: flags)
+            info.mathItalic = isMathItalic(baseFont: baseFont)
         }
         var format = CGPDFDataFormat.raw
         let data = hasMap ? stream.flatMap { CGPDFStreamCopyData($0, &format) }.flatMap { format == .raw ? $0 as Data : nil } : nil
@@ -435,12 +469,14 @@ enum FontWeightReader {
         var placed: Bool
         /// Drawn in an italic text font; nil where `weight` is.
         var italic: Bool? = false
+        /// Drawn in a maths italic font (#142); nil where `weight` is.
+        var mathItalic: Bool? = false
         /// The show's glyphs where its font names them by index (#143); nil in any other font.
         var glyphs: [IndexGlyph]? = nil
         /// Identifies the index-glyph font (`IndexGlyphFont.key`); nil in any other font.
         var indexFont: String? = nil
 
-        var styled: Bool { weight == .bold || italic == true }
+        var styled: Bool { weight == .bold || italic == true || mathItalic == true }
     }
 
     /// One code of an index-glyph show: its index where the font's `Differences` names it by one,
@@ -557,7 +593,7 @@ enum FontWeightReader {
         }
         s.shows.append(Show(origin: origin, size: s.size * transform.d, font: s.font ?? 0,
                             weight: info?.weight, text: text, placed: placed, italic: info?.italic,
-                            glyphs: glyphs, indexFont: info?.indexGlyphs?.key))
+                            mathItalic: info?.mathItalic, glyphs: glyphs, indexFont: info?.indexGlyphs?.key))
     }
 
     private static func scan(_ content: CGPDFContentStreamRef, _ s: State) {
@@ -744,8 +780,9 @@ enum FontWeightReader {
     // MARK: - Lines
 
     /// Marks the characters of `attributed` (a PDFKit line with `bounds`) drawn in bold font
-    /// resources with `boldAttribute`, and those drawn in italic text fonts with `italicAttribute`
-    /// (#133). The line's shows are those whose origin lies in its bounds and in no other line's.
+    /// resources with `boldAttribute`, those drawn in italic text fonts with `italicAttribute`
+    /// (#133) and those drawn in maths italic fonts with `mathItalicAttribute` (#142).
+    /// The line's shows are those whose origin lies in its bounds and in no other line's.
     /// They explain the line when the leftmost starts within half an em of the line's left edge
     /// (so no show begun on another line draws its first glyphs) and, where every show decodes,
     /// their text spells the line apart from whitespace. Then a line whose shows all share a style
@@ -768,10 +805,13 @@ enum FontWeightReader {
             guard sequence.map(\.0) == letters(attributed.string),
                   sequence.allSatisfy({ $0.1.weight != nil }) else { return attributed }
             styles = [(boldAttribute, sequence.map { $0.1.weight == .bold }),
-                      (italicAttribute, sequence.map { $0.1.italic == true })]
+                      (italicAttribute, sequence.map { $0.1.italic == true }),
+                      (mathItalicAttribute, sequence.map { slopeNeedsMarkup($0.1) })]
         } else {
             if matches.allSatisfy({ $0.weight == .bold }) { styles.append((boldAttribute, nil)) }
             if matches.allSatisfy({ $0.italic == true }) { styles.append((italicAttribute, nil)) }
+            // A maths italic line the shows do not spell cannot be told from the relations and
+            // punctuation the same font sets, so it is left unmarked.
             guard !styles.isEmpty else { return attributed }
         }
         var marks: [(key: NSAttributedString.Key, ranges: [NSRange])] = []

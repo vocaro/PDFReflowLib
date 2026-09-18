@@ -636,11 +636,22 @@ enum NativeTextReader {
         var resourceBold = false
         /// Drawn in an italic text font resource PDFKit does not name italic (#133).
         var resourceItalic = false
+        /// The run's pieces with their maths italic flag (#142). A maths italic resource marks
+        /// part of what PDFKit reports as one run (Wallace's `8x`: `8` in CMR, `x` in CMMI), and
+        /// `enumerateAttributes` splits a run wherever any attribute changes. A split run would
+        /// measure differently — every baseline and script rule reads a run's neighbours — so the
+        /// pieces are joined back into the run PDFKit reported, measured as one, and written apart
+        /// only at the end. `text` is their concatenation.
+        var parts: [(text: String, mathItalic: Bool)] = []
+        /// Drawn, in whole or in part, in a maths italic font resource.
+        var resourceMathItalic: Bool { parts.contains { $0.mathItalic } }
     }
 
     static func inlineText(from attributed: NSAttributedString) -> InlineText {
         let hasDropCap = dropCapBodySize(in: attributed) != nil
         var styled: [StyledRun] = []
+        // The previous attributed run's attributes without the maths italic mark.
+        var attributesWithoutSlope: NSDictionary?
         attributed.enumerateAttributes(in: NSRange(location: 0, length: attributed.length)) { attributes, range, _ in
             let font = attributes[.font] as? PlatformFont
             let name = font?.fontName.lowercased() ?? ""
@@ -653,10 +664,25 @@ enum NativeTextReader {
             // change. Preserve that evidence instead of guessing from character offsets.
             let offset = (attributes[NSAttributedString.Key(kCTBaselineOffsetAttributeName as String)] as? NSNumber
                 ?? attributes[.baselineOffset] as? NSNumber)?.doubleValue ?? 0
-            styled.append(StyledRun(text: run, style: style, offset: offset, size: Double(font?.pointSize ?? 12),
-                                    hasFont: font != nil, first: range.location == 0,
-                                    resourceBold: attributes[FontWeightReader.boldAttribute] != nil,
-                                    resourceItalic: attributes[FontWeightReader.italicAttribute] != nil))
+            let mathItalic = attributes[FontWeightReader.mathItalicAttribute] != nil
+            var piece = StyledRun(text: run, style: style, offset: offset, size: Double(font?.pointSize ?? 12),
+                                  hasFont: font != nil, first: range.location == 0,
+                                  resourceBold: attributes[FontWeightReader.boldAttribute] != nil,
+                                  resourceItalic: attributes[FontWeightReader.italicAttribute] != nil)
+            piece.parts = [(text: run, mathItalic: mathItalic)]
+            // Rejoin a run the maths italic mark alone split, so the line measures as PDFKit read
+            // it. `enumerateAttributes` returns maximal ranges, so two neighbours whose attributes
+            // are equal but for that mark are one run of PDFKit's.
+            var rest = attributes
+            rest[FontWeightReader.mathItalicAttribute] = nil
+            if var previous = styled.last, let last = attributesWithoutSlope, last.isEqual(to: rest) {
+                previous.text += run
+                previous.parts += piece.parts
+                styled[styled.count - 1] = previous
+            } else {
+                styled.append(piece)
+            }
+            attributesWithoutSlope = rest as NSDictionary
         }
         remeasureQuotedMarker(&styled)
         let baselines = shiftedBaselines(styled)
@@ -708,7 +734,14 @@ enum NativeTextReader {
             let marker = opening && !run.text.contains { $0.isLetter || $0.isNumber } && following != nil
             if run.resourceBold, !ornament, !(marker && following?.resourceBold == false) { style.insert(.bold) }
             if run.resourceItalic, !ornament, !(marker && following?.resourceItalic == false) { style.insert(.italic) }
-            runs.append(.text(run.text, style))
+            // Maths italic is a variable's slope, so it is neither ornament nor a list marker's
+            // emphasis; it follows the same exemptions as the emphasis styles beside it (#142).
+            // Only now, with the run measured whole, are its pieces written apart.
+            let slope = run.resourceMathItalic && !ornament && !(marker && following?.resourceMathItalic == false)
+            guard slope else { runs.append(.text(run.text, style)); continue }
+            for part in run.parts where !part.text.isEmpty {
+                runs.append(.text(part.text, part.mathItalic ? style.union(.mathItalic) : style))
+            }
         }
         return InlineText(elements: runs).trimmingCharacters(in: .whitespacesAndNewlines)
     }

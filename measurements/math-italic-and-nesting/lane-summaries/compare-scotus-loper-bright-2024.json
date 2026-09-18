@@ -1,0 +1,213 @@
+{
+  "passed": false,
+  "provenanceErrors": [],
+  "case": "scotus-loper-bright-2024",
+  "executionContexts": {
+    "baseline": "host-terminal",
+    "candidate": "host-terminal"
+  },
+  "baselineConverterSHA256": "563c816d2da831b306b4bdf1669a1ff337efee1b9a0bee25d10564940eb5eb05",
+  "candidateConverterSHA256": "4623d3c3257a2a10a2431386f4431d2cdcceee5538a79085d88a842071dd864c",
+  "sameConverter": false,
+  "visionModelCaches": {
+    "baseline": {
+      "mode": "inherited",
+      "executableName": "base",
+      "programsSHA256": "117fb2440ec075c382194cd363f92bd3b9c83846fede7e2d99ec7f3ca7a7331c"
+    },
+    "candidate": {
+      "mode": "inherited",
+      "executableName": "cand",
+      "programsSHA256": "4f5fad18c8f4a7fb55f30f969c43746a0d9b9d95bb1f6a823b7ef25cae64b9d4"
+    }
+  },
+  "sameVisionPrograms": false,
+  "changedOCRPages": [],
+  "ocrTextVolume": {
+    "pages": 0,
+    "baselineWords": 0,
+    "candidateWords": 0,
+    "pagesWithFewerWords": {
+      "baseline": [],
+      "candidate": []
+    }
+  },
+  "changedPages": [
+    1,
+    5,
+    17,
+    18,
+    19,
+    26,
+    28,
+    33,
+    35,
+    36,
+    37,
+    38,
+    39,
+    41,
+    43,
+    46,
+    48,
+    49,
+    55,
+    60,
+    62,
+    63,
+    66,
+    67,
+    70,
+    72,
+    74,
+    76,
+    78,
+    81,
+    82,
+    86,
+    87,
+    91,
+    100,
+    102,
+    104,
+    108,
+    111,
+    112
+  ],
+  "changedPageFields": {
+    "1": [
+      "markup"
+    ],
+    "5": [
+      "markup"
+    ],
+    "17": [
+      "markup"
+    ],
+    "18": [
+      "markup"
+    ],
+    "19": [
+      "markup"
+    ],
+    "26": [
+      "markup"
+    ],
+    "28": [
+      "markup"
+    ],
+    "33": [
+      "markup"
+    ],
+    "35": [
+      "markup"
+    ],
+    "36": [
+      "markup"
+    ],
+    "37": [
+      "markup"
+    ],
+    "38": [
+      "markup"
+    ],
+    "39": [
+      "markup"
+    ],
+    "41": [
+      "markup"
+    ],
+    "43": [
+      "markup"
+    ],
+    "46": [
+      "markup"
+    ],
+    "48": [
+      "markup"
+    ],
+    "49": [
+      "markup"
+    ],
+    "55": [
+      "markup"
+    ],
+    "60": [
+      "markup"
+    ],
+    "62": [
+      "markup"
+    ],
+    "63": [
+      "markup"
+    ],
+    "66": [
+      "markup"
+    ],
+    "67": [
+      "markup"
+    ],
+    "70": [
+      "markup"
+    ],
+    "72": [
+      "markup"
+    ],
+    "74": [
+      "markup"
+    ],
+    "76": [
+      "markup"
+    ],
+    "78": [
+      "markup"
+    ],
+    "81": [
+      "markup"
+    ],
+    "82": [
+      "markup"
+    ],
+    "86": [
+      "markup"
+    ],
+    "87": [
+      "markup"
+    ],
+    "91": [
+      "markup"
+    ],
+    "100": [
+      "markup"
+    ],
+    "102": [
+      "markup"
+    ],
+    "104": [
+      "markup"
+    ],
+    "108": [
+      "markup"
+    ],
+    "111": [
+      "markup"
+    ],
+    "112": [
+      "markup"
+    ]
+  },
+  "changedImages": [],
+  "navigationChanged": false,
+  "changedNavigationPages": [],
+  "pageMarkersEqual": true,
+  "changedReportFields": [],
+  "idOnlyShifts": {
+    "pageCount": 0,
+    "fields": {},
+    "navigationEntries": 0
+  },
+  "imageRenames": {
+    "count": 0
+  },
+  "scope": "Per page: text, block records, element markup, image bytes, link targets and warnings, with generated identifiers (block ordinals, element ids, spine file names, image asset names) normalized; page markers; image assets by bytes; navigation entries; conversion report. Not CSS, package metadata, decoded image equivalence or a fidelity qualification."
+}

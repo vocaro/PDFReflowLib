@@ -53,8 +53,9 @@ private typealias CaptureFont = UIFont
         }
         var attributedLines: [[String: Any]] = []
         // Runs drawn in a bold font resource PDFKit does not name bold carry `bold` (#125), and runs
-        // drawn in an italic text font resource carry `italic` (#133); fixtures captured before
-        // either carry no such field.
+        // drawn in an italic text font resource carry `italic` (#133); runs drawn in a maths
+        // italic font resource carry `mathItalic` (#142). Fixtures captured before each carry no
+        // such field.
         let selections = page.selection(for: page.bounds(for: .cropBox))?.selectionsByLine() ?? []
         let weights = FontWeightReader.read(reference)
         // Symbol fonts' private-use characters are decoded as the pipeline decodes them (#155).
@@ -74,6 +75,7 @@ private typealias CaptureFont = UIFont
                     "baselineOffset": baseline?.doubleValue ?? 0]
                 if attrs[FontWeightReader.boldAttribute] != nil { run["bold"] = true }
                 if attrs[FontWeightReader.italicAttribute] != nil { run["italic"] = true }
+                if attrs[FontWeightReader.mathItalicAttribute] != nil { run["mathItalic"] = true }
                 runs.append(run)
             }
             // A selection over figure text can report infinite bounds (FAA page 474), which JSON cannot hold.

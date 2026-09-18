@@ -1,0 +1,113 @@
+{
+  "passed": false,
+  "provenanceErrors": [],
+  "case": "gpo-our-flag-2003",
+  "executionContexts": {
+    "baseline": "host-terminal",
+    "candidate": "host-terminal"
+  },
+  "baselineConverterSHA256": "563c816d2da831b306b4bdf1669a1ff337efee1b9a0bee25d10564940eb5eb05",
+  "candidateConverterSHA256": "4623d3c3257a2a10a2431386f4431d2cdcceee5538a79085d88a842071dd864c",
+  "sameConverter": false,
+  "visionModelCaches": {
+    "baseline": {
+      "mode": "inherited",
+      "executableName": "base",
+      "programsSHA256": "117fb2440ec075c382194cd363f92bd3b9c83846fede7e2d99ec7f3ca7a7331c"
+    },
+    "candidate": {
+      "mode": "inherited",
+      "executableName": "cand",
+      "programsSHA256": "4f5fad18c8f4a7fb55f30f969c43746a0d9b9d95bb1f6a823b7ef25cae64b9d4"
+    }
+  },
+  "sameVisionPrograms": false,
+  "changedOCRPages": [],
+  "ocrTextVolume": {
+    "pages": 2,
+    "baselineWords": 1,
+    "candidateWords": 1,
+    "pagesWithFewerWords": {
+      "baseline": [],
+      "candidate": []
+    }
+  },
+  "changedPages": [
+    4,
+    5,
+    6,
+    7,
+    12,
+    14,
+    17,
+    29,
+    47,
+    50,
+    51,
+    52,
+    53,
+    54,
+    56
+  ],
+  "changedPageFields": {
+    "4": [
+      "markup"
+    ],
+    "5": [
+      "markup"
+    ],
+    "6": [
+      "markup"
+    ],
+    "7": [
+      "markup"
+    ],
+    "12": [
+      "markup"
+    ],
+    "14": [
+      "markup"
+    ],
+    "17": [
+      "markup"
+    ],
+    "29": [
+      "markup"
+    ],
+    "47": [
+      "markup"
+    ],
+    "50": [
+      "markup"
+    ],
+    "51": [
+      "markup"
+    ],
+    "52": [
+      "markup"
+    ],
+    "53": [
+      "markup"
+    ],
+    "54": [
+      "markup"
+    ],
+    "56": [
+      "markup"
+    ]
+  },
+  "changedImages": [],
+  "navigationChanged": false,
+  "changedNavigationPages": [],
+  "pageMarkersEqual": true,
+  "changedReportFields": [],
+  "idOnlyShifts": {
+    "pageCount": 0,
+    "fields": {},
+    "navigationEntries": 0
+  },
+  "imageRenames": {
+    "count": 0
+  },
+  "scope": "Per page: text, block records, element markup, image bytes, link targets and warnings, with generated identifiers (block ordinals, element ids, spine file names, image asset names) normalized; page markers; image assets by bytes; navigation entries; conversion report. Not CSS, package metadata, decoded image equivalence or a fidelity qualification."
+}

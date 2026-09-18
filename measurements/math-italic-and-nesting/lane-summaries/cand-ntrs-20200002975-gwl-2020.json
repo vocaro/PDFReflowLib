@@ -1,0 +1,65 @@
+{
+  "passed": true,
+  "converterSHA256": "4623d3c3257a2a10a2431386f4431d2cdcceee5538a79085d88a842071dd864c",
+  "results": [
+    {
+      "case": "ntrs-20200002975-gwl-2020",
+      "passed": true,
+      "reviewPages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "contentChecks": 286,
+      "errors": [],
+      "scope": "Reviewed text/order/script-context/image-presence, source-region, glyph-structure, appearance and table-cell checks; not full-book fidelity qualification."
+    }
+  ],
+  "notRun": [
+    "faa-phak-8083-25c",
+    "wallace-algebra-2010",
+    "gpo-911-2004",
+    "fed-explained-2021",
+    "dga-2025-2030",
+    "noaa-nca5-2023",
+    "gpo-our-flag-2003",
+    "cdc-zombie-pandemic-2011",
+    "cia-blue-book-14-1955",
+    "usgs-mcs2025-copper",
+    "scotus-loper-bright-2024",
+    "census-rrs2002-01",
+    "uscis-m618-arabic-2015",
+    "irs-p596-zhs-2025",
+    "nbs-jres-geltman-1977",
+    "arxiv-replay-clocks-2023",
+    "uscourts-pro-se-1-2016",
+    "ntrs-20190030725-dasc-2019",
+    "usda-ars-agresearch-2012-11",
+    "ntrs-20180003024-earthdata-slides-2018",
+    "ntrs-20210020887-techport-thm-2021"
+  ],
+  "knownUnsupportedFullConversions": [
+    {
+      "id": "gpo-warren-1964",
+      "reason": "Known default image-output ceiling failure: 920 full-page colour scans need 1,062.69 MiB of entry bytes as PNG and 512.33 MiB with the smaller of PNG and JPEG 0.90 per image, against the 512 MiB default. The nine-page excerpt regression is recorded separately.",
+      "issue": 5
+    }
+  ]
+}

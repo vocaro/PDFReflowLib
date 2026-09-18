@@ -1,0 +1,1083 @@
+{
+  "passed": false,
+  "provenanceErrors": [],
+  "case": "wallace-algebra-2010",
+  "executionContexts": {
+    "baseline": "host-terminal",
+    "candidate": "host-terminal"
+  },
+  "baselineConverterSHA256": "563c816d2da831b306b4bdf1669a1ff337efee1b9a0bee25d10564940eb5eb05",
+  "candidateConverterSHA256": "4623d3c3257a2a10a2431386f4431d2cdcceee5538a79085d88a842071dd864c",
+  "sameConverter": false,
+  "visionModelCaches": {
+    "baseline": {
+      "mode": "inherited",
+      "executableName": "base",
+      "programsSHA256": "117fb2440ec075c382194cd363f92bd3b9c83846fede7e2d99ec7f3ca7a7331c"
+    },
+    "candidate": {
+      "mode": "inherited",
+      "executableName": "cand",
+      "programsSHA256": "4f5fad18c8f4a7fb55f30f969c43746a0d9b9d95bb1f6a823b7ef25cae64b9d4"
+    }
+  },
+  "sameVisionPrograms": false,
+  "changedOCRPages": [],
+  "ocrTextVolume": {
+    "pages": 0,
+    "baselineWords": 0,
+    "candidateWords": 0,
+    "pagesWithFewerWords": {
+      "baseline": [],
+      "candidate": []
+    }
+  },
+  "changedPages": [
+    5,
+    7,
+    18,
+    22,
+    23,
+    24,
+    25,
+    26,
+    28,
+    29,
+    30,
+    31,
+    33,
+    34,
+    38,
+    40,
+    41,
+    47,
+    48,
+    49,
+    50,
+    54,
+    57,
+    58,
+    59,
+    61,
+    64,
+    65,
+    66,
+    67,
+    68,
+    72,
+    73,
+    74,
+    75,
+    79,
+    80,
+    81,
+    82,
+    83,
+    89,
+    90,
+    91,
+    92,
+    94,
+    95,
+    96,
+    97,
+    98,
+    101,
+    102,
+    103,
+    104,
+    105,
+    107,
+    108,
+    110,
+    111,
+    114,
+    118,
+    119,
+    120,
+    121,
+    122,
+    123,
+    124,
+    126,
+    127,
+    128,
+    129,
+    131,
+    132,
+    134,
+    135,
+    136,
+    137,
+    140,
+    141,
+    143,
+    146,
+    147,
+    148,
+    151,
+    152,
+    153,
+    154,
+    159,
+    160,
+    161,
+    162,
+    163,
+    167,
+    168,
+    169,
+    170,
+    171,
+    177,
+    178,
+    179,
+    180,
+    181,
+    182,
+    183,
+    184,
+    185,
+    187,
+    188,
+    189,
+    192,
+    193,
+    194,
+    195,
+    196,
+    197,
+    198,
+    199,
+    200,
+    201,
+    202,
+    203,
+    204,
+    205,
+    208,
+    209,
+    212,
+    213,
+    214,
+    215,
+    216,
+    217,
+    218,
+    219,
+    220,
+    221,
+    222,
+    223,
+    224,
+    225,
+    226,
+    227,
+    228,
+    229,
+    230,
+    231,
+    232,
+    233,
+    234,
+    235,
+    236,
+    237,
+    238,
+    239,
+    245,
+    249,
+    250,
+    253,
+    254,
+    255,
+    256,
+    257,
+    259,
+    260,
+    262,
+    263,
+    265,
+    269,
+    271,
+    272,
+    274,
+    275,
+    279,
+    285,
+    290,
+    292,
+    295,
+    298,
+    310,
+    312,
+    318,
+    319,
+    321,
+    322,
+    323,
+    324,
+    328,
+    329,
+    332,
+    337,
+    338,
+    342,
+    343,
+    346,
+    348,
+    349,
+    351,
+    352,
+    356,
+    357,
+    358,
+    359,
+    364,
+    365,
+    366,
+    367,
+    370,
+    373,
+    374,
+    375,
+    376,
+    377,
+    380,
+    381,
+    382,
+    383,
+    384,
+    386,
+    387,
+    388,
+    393,
+    394,
+    395,
+    396,
+    397,
+    401,
+    403,
+    404,
+    406,
+    408,
+    410,
+    411,
+    417,
+    422,
+    423,
+    428,
+    429,
+    430,
+    440,
+    441,
+    451,
+    452,
+    457,
+    458,
+    459,
+    460,
+    461,
+    462,
+    463,
+    464,
+    465,
+    466,
+    467,
+    468,
+    469,
+    477,
+    481,
+    484,
+    485
+  ],
+  "changedPageFields": {
+    "5": [
+      "markup"
+    ],
+    "7": [
+      "markup"
+    ],
+    "18": [
+      "markup"
+    ],
+    "22": [
+      "markup"
+    ],
+    "23": [
+      "markup"
+    ],
+    "24": [
+      "markup"
+    ],
+    "25": [
+      "markup"
+    ],
+    "26": [
+      "markup"
+    ],
+    "28": [
+      "markup"
+    ],
+    "29": [
+      "markup"
+    ],
+    "30": [
+      "markup"
+    ],
+    "31": [
+      "markup"
+    ],
+    "33": [
+      "markup"
+    ],
+    "34": [
+      "markup"
+    ],
+    "38": [
+      "markup"
+    ],
+    "40": [
+      "markup"
+    ],
+    "41": [
+      "markup"
+    ],
+    "47": [
+      "markup"
+    ],
+    "48": [
+      "markup"
+    ],
+    "49": [
+      "markup"
+    ],
+    "50": [
+      "markup"
+    ],
+    "54": [
+      "markup"
+    ],
+    "57": [
+      "markup"
+    ],
+    "58": [
+      "markup"
+    ],
+    "59": [
+      "markup"
+    ],
+    "61": [
+      "markup"
+    ],
+    "64": [
+      "markup"
+    ],
+    "65": [
+      "markup"
+    ],
+    "66": [
+      "markup"
+    ],
+    "67": [
+      "markup"
+    ],
+    "68": [
+      "markup"
+    ],
+    "72": [
+      "markup"
+    ],
+    "73": [
+      "markup"
+    ],
+    "74": [
+      "markup"
+    ],
+    "75": [
+      "markup"
+    ],
+    "79": [
+      "markup"
+    ],
+    "80": [
+      "markup"
+    ],
+    "81": [
+      "markup"
+    ],
+    "82": [
+      "markup"
+    ],
+    "83": [
+      "markup"
+    ],
+    "89": [
+      "markup"
+    ],
+    "90": [
+      "markup"
+    ],
+    "91": [
+      "markup"
+    ],
+    "92": [
+      "markup"
+    ],
+    "94": [
+      "markup"
+    ],
+    "95": [
+      "markup"
+    ],
+    "96": [
+      "markup"
+    ],
+    "97": [
+      "markup"
+    ],
+    "98": [
+      "markup"
+    ],
+    "101": [
+      "markup"
+    ],
+    "102": [
+      "markup"
+    ],
+    "103": [
+      "markup"
+    ],
+    "104": [
+      "markup"
+    ],
+    "105": [
+      "markup"
+    ],
+    "107": [
+      "markup"
+    ],
+    "108": [
+      "markup"
+    ],
+    "110": [
+      "markup"
+    ],
+    "111": [
+      "markup"
+    ],
+    "114": [
+      "markup"
+    ],
+    "118": [
+      "markup"
+    ],
+    "119": [
+      "markup"
+    ],
+    "120": [
+      "markup"
+    ],
+    "121": [
+      "markup"
+    ],
+    "122": [
+      "markup"
+    ],
+    "123": [
+      "markup"
+    ],
+    "124": [
+      "markup"
+    ],
+    "126": [
+      "markup"
+    ],
+    "127": [
+      "markup"
+    ],
+    "128": [
+      "markup"
+    ],
+    "129": [
+      "markup"
+    ],
+    "131": [
+      "markup"
+    ],
+    "132": [
+      "markup"
+    ],
+    "134": [
+      "markup"
+    ],
+    "135": [
+      "markup"
+    ],
+    "136": [
+      "markup"
+    ],
+    "137": [
+      "markup"
+    ],
+    "140": [
+      "markup"
+    ],
+    "141": [
+      "markup"
+    ],
+    "143": [
+      "markup"
+    ],
+    "146": [
+      "markup"
+    ],
+    "147": [
+      "markup"
+    ],
+    "148": [
+      "markup"
+    ],
+    "151": [
+      "markup"
+    ],
+    "152": [
+      "markup"
+    ],
+    "153": [
+      "markup"
+    ],
+    "154": [
+      "markup"
+    ],
+    "159": [
+      "markup"
+    ],
+    "160": [
+      "markup"
+    ],
+    "161": [
+      "markup"
+    ],
+    "162": [
+      "markup"
+    ],
+    "163": [
+      "markup"
+    ],
+    "167": [
+      "markup"
+    ],
+    "168": [
+      "markup"
+    ],
+    "169": [
+      "markup"
+    ],
+    "170": [
+      "markup"
+    ],
+    "171": [
+      "markup"
+    ],
+    "177": [
+      "markup"
+    ],
+    "178": [
+      "markup"
+    ],
+    "179": [
+      "markup"
+    ],
+    "180": [
+      "markup"
+    ],
+    "181": [
+      "markup"
+    ],
+    "182": [
+      "markup"
+    ],
+    "183": [
+      "markup"
+    ],
+    "184": [
+      "markup"
+    ],
+    "185": [
+      "markup"
+    ],
+    "187": [
+      "markup"
+    ],
+    "188": [
+      "markup"
+    ],
+    "189": [
+      "markup"
+    ],
+    "192": [
+      "markup"
+    ],
+    "193": [
+      "markup"
+    ],
+    "194": [
+      "markup"
+    ],
+    "195": [
+      "markup"
+    ],
+    "196": [
+      "markup"
+    ],
+    "197": [
+      "markup"
+    ],
+    "198": [
+      "markup"
+    ],
+    "199": [
+      "markup"
+    ],
+    "200": [
+      "markup"
+    ],
+    "201": [
+      "markup"
+    ],
+    "202": [
+      "markup"
+    ],
+    "203": [
+      "markup"
+    ],
+    "204": [
+      "markup"
+    ],
+    "205": [
+      "markup"
+    ],
+    "208": [
+      "markup"
+    ],
+    "209": [
+      "markup"
+    ],
+    "212": [
+      "markup"
+    ],
+    "213": [
+      "markup"
+    ],
+    "214": [
+      "markup"
+    ],
+    "215": [
+      "markup"
+    ],
+    "216": [
+      "markup"
+    ],
+    "217": [
+      "markup"
+    ],
+    "218": [
+      "markup"
+    ],
+    "219": [
+      "markup"
+    ],
+    "220": [
+      "markup"
+    ],
+    "221": [
+      "markup"
+    ],
+    "222": [
+      "markup"
+    ],
+    "223": [
+      "markup"
+    ],
+    "224": [
+      "markup"
+    ],
+    "225": [
+      "markup"
+    ],
+    "226": [
+      "markup"
+    ],
+    "227": [
+      "markup"
+    ],
+    "228": [
+      "markup"
+    ],
+    "229": [
+      "markup"
+    ],
+    "230": [
+      "markup"
+    ],
+    "231": [
+      "markup"
+    ],
+    "232": [
+      "markup"
+    ],
+    "233": [
+      "markup"
+    ],
+    "234": [
+      "markup"
+    ],
+    "235": [
+      "markup"
+    ],
+    "236": [
+      "markup"
+    ],
+    "237": [
+      "markup"
+    ],
+    "238": [
+      "markup"
+    ],
+    "239": [
+      "markup"
+    ],
+    "245": [
+      "markup"
+    ],
+    "249": [
+      "markup"
+    ],
+    "250": [
+      "markup"
+    ],
+    "253": [
+      "markup"
+    ],
+    "254": [
+      "markup"
+    ],
+    "255": [
+      "markup"
+    ],
+    "256": [
+      "markup"
+    ],
+    "257": [
+      "markup"
+    ],
+    "259": [
+      "markup"
+    ],
+    "260": [
+      "markup"
+    ],
+    "262": [
+      "markup"
+    ],
+    "263": [
+      "markup"
+    ],
+    "265": [
+      "markup"
+    ],
+    "269": [
+      "markup"
+    ],
+    "271": [
+      "markup"
+    ],
+    "272": [
+      "markup"
+    ],
+    "274": [
+      "markup"
+    ],
+    "275": [
+      "markup"
+    ],
+    "279": [
+      "markup"
+    ],
+    "285": [
+      "markup"
+    ],
+    "290": [
+      "markup"
+    ],
+    "292": [
+      "markup"
+    ],
+    "295": [
+      "markup"
+    ],
+    "298": [
+      "markup"
+    ],
+    "310": [
+      "markup"
+    ],
+    "312": [
+      "markup"
+    ],
+    "318": [
+      "markup"
+    ],
+    "319": [
+      "markup"
+    ],
+    "321": [
+      "markup"
+    ],
+    "322": [
+      "markup"
+    ],
+    "323": [
+      "markup"
+    ],
+    "324": [
+      "markup"
+    ],
+    "328": [
+      "markup"
+    ],
+    "329": [
+      "markup"
+    ],
+    "332": [
+      "markup"
+    ],
+    "337": [
+      "markup"
+    ],
+    "338": [
+      "markup"
+    ],
+    "342": [
+      "markup"
+    ],
+    "343": [
+      "markup"
+    ],
+    "346": [
+      "markup"
+    ],
+    "348": [
+      "markup"
+    ],
+    "349": [
+      "markup"
+    ],
+    "351": [
+      "markup"
+    ],
+    "352": [
+      "markup"
+    ],
+    "356": [
+      "markup"
+    ],
+    "357": [
+      "markup"
+    ],
+    "358": [
+      "markup"
+    ],
+    "359": [
+      "markup"
+    ],
+    "364": [
+      "markup"
+    ],
+    "365": [
+      "markup"
+    ],
+    "366": [
+      "markup"
+    ],
+    "367": [
+      "markup"
+    ],
+    "370": [
+      "markup"
+    ],
+    "373": [
+      "markup"
+    ],
+    "374": [
+      "markup"
+    ],
+    "375": [
+      "markup"
+    ],
+    "376": [
+      "markup"
+    ],
+    "377": [
+      "markup"
+    ],
+    "380": [
+      "markup"
+    ],
+    "381": [
+      "markup"
+    ],
+    "382": [
+      "markup"
+    ],
+    "383": [
+      "markup"
+    ],
+    "384": [
+      "markup"
+    ],
+    "386": [
+      "markup"
+    ],
+    "387": [
+      "markup"
+    ],
+    "388": [
+      "markup"
+    ],
+    "393": [
+      "markup"
+    ],
+    "394": [
+      "markup"
+    ],
+    "395": [
+      "markup"
+    ],
+    "396": [
+      "markup"
+    ],
+    "397": [
+      "markup"
+    ],
+    "401": [
+      "markup"
+    ],
+    "403": [
+      "markup"
+    ],
+    "404": [
+      "markup"
+    ],
+    "406": [
+      "markup"
+    ],
+    "408": [
+      "markup"
+    ],
+    "410": [
+      "markup"
+    ],
+    "411": [
+      "markup"
+    ],
+    "417": [
+      "markup"
+    ],
+    "422": [
+      "markup"
+    ],
+    "423": [
+      "markup"
+    ],
+    "428": [
+      "markup"
+    ],
+    "429": [
+      "markup"
+    ],
+    "430": [
+      "markup"
+    ],
+    "440": [
+      "markup"
+    ],
+    "441": [
+      "markup"
+    ],
+    "451": [
+      "markup"
+    ],
+    "452": [
+      "markup"
+    ],
+    "457": [
+      "markup"
+    ],
+    "458": [
+      "markup"
+    ],
+    "459": [
+      "markup"
+    ],
+    "460": [
+      "markup"
+    ],
+    "461": [
+      "markup"
+    ],
+    "462": [
+      "markup"
+    ],
+    "463": [
+      "markup"
+    ],
+    "464": [
+      "markup"
+    ],
+    "465": [
+      "markup"
+    ],
+    "466": [
+      "markup"
+    ],
+    "467": [
+      "markup"
+    ],
+    "468": [
+      "markup"
+    ],
+    "469": [
+      "markup"
+    ],
+    "477": [
+      "markup"
+    ],
+    "481": [
+      "markup"
+    ],
+    "484": [
+      "markup"
+    ],
+    "485": [
+      "markup"
+    ]
+  },
+  "changedImages": [],
+  "navigationChanged": false,
+  "changedNavigationPages": [],
+  "pageMarkersEqual": true,
+  "changedReportFields": [],
+  "idOnlyShifts": {
+    "pageCount": 15,
+    "fields": {
+      "anchors": 15
+    },
+    "navigationEntries": 0
+  },
+  "imageRenames": {
+    "count": 0
+  },
+  "scope": "Per page: text, block records, element markup, image bytes, link targets and warnings, with generated identifiers (block ordinals, element ids, spine file names, image asset names) normalized; page markers; image assets by bytes; navigation entries; conversion report. Not CSS, package metadata, decoded image equivalence or a fidelity qualification."
+}

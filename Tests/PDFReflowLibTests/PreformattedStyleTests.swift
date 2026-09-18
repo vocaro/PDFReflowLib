@@ -90,8 +90,9 @@ private func fixedBlocks(_ lines: [TextLine]) -> [ReflowBlock] {
 @Test func preformattedStylesCountTowardSpineBudgetWithoutLosingRuns() async throws {
     let dir = try testPDFDirectory(); defer { try? FileManager.default.removeItem(at: dir) }
     // Plain text fits the target, but the style wrappers take the combined body past it. Styles
-    // alternate: adjacent runs of one style are written as one element (#133).
-    let text = InlineText(elements: (0..<2_000).map { .text("x", $0.isMultiple(of: 2) ? .bold : [.bold, .italic]) })
+    // alternate and share nothing: adjacent runs of one style are written as one element (#133),
+    // and a run nested inside the style beside it joins that element too (#142).
+    let text = InlineText(elements: (0..<4_000).map { .text("x", $0.isMultiple(of: 2) ? .bold : .italic) })
     let book = ReflowDocument(metadata: .init(title: "Styled packing", language: "en"), blocks: [
         .init(content: .sourcePage(1), page: 1),
         .init(content: .preformatted(text), page: 1), .init(content: .preformatted(text), page: 1),
@@ -100,8 +101,8 @@ private func fixedBlocks(_ lines: [TextLine]) -> [ReflowBlock] {
     let first = try String(contentsOf: dir.appendingPathComponent("EPUB/chapter-1.xhtml"), encoding: .utf8)
     let second = try String(contentsOf: dir.appendingPathComponent("EPUB/chapter-2.xhtml"), encoding: .utf8)
     for chapter in [first, second] {
-        #expect(chapter.components(separatedBy: "<strong>x</strong>").count - 1 == 1_000)
-        #expect(chapter.components(separatedBy: "<strong><em>x</em></strong>").count - 1 == 1_000)
+        #expect(chapter.components(separatedBy: "<strong>x</strong>").count - 1 == 2_000)
+        #expect(chapter.components(separatedBy: "<em>x</em>").count - 1 == 2_000)
         #expect(chapter.contains("<pre>"))
     }
 }

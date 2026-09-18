@@ -28,7 +28,7 @@ object graph or a serialized interchange file.
 
 `PageContent` is the spatial extraction representation. Each physical page contains bounds,
 positioned `TextLine` values, font sizes, monospaced/wrap hints, optional validated structure associations, graphic rectangles and fallback
-flags. A text line contains `InlineText`: raw Unicode text runs with bold, italic, superscript and subscript style flags.
+flags. A text line contains `InlineText`: raw Unicode text runs with bold, italic, maths italic, superscript and subscript style flags.
 Geometry remains in unrotated PDF page coordinates with a bottom-left origin. This stage retains
 the evidence needed to infer reading order, paragraphs, image crops and word joins.
 
@@ -38,7 +38,7 @@ the evidence needed to infer reading order, paragraphs, image crops and word joi
 | --- | --- |
 | Metadata | Title, language and optional author |
 | Ordered blocks | Paragraph, heading with logical identifier and level, preformatted text, page-bottom footnote, image, source-page boundary |
-| Inline text | Text runs carrying bold/italic/superscript/subscript flags, interspersed with source-page boundaries |
+| Inline text | Text runs carrying bold/italic/maths-italic/superscript/subscript flags, interspersed with source-page boundaries |
 | Image block | Logical asset identifier, alternative text and caption |
 | Asset registry | Identifier, local file URL and image format |
 | Block provenance | Physical source page where the block begins |
@@ -106,15 +106,36 @@ A run is italic in the same way when its font resource sets italic text (#133): 
 `Italic`, `Oblique`, `Kursiv` or a style-suffix `It` (`BkIt`), a TeX, EC or cm-super italic or
 slanted shape (`cmti`, `cmsl`, `dcti`, `SFTI`) or Libertine's `TI`; for a name stating neither
 slope nor roman, the descriptor's `Italic` flag or an `ItalicAngle` of 5° or more, unless the font
-is symbolic or a script face. Math italic (`CMMI`, `LibertineMathMI`, `NewTXMI`, `txmi`) sets
-variables, not emphasis, and is never italic. The shows decode through a simple font's ToUnicode
+is symbolic or a script face. Maths italic (`CMMI`, `LibertineMathMI`, `NewTXMI`, `txmi`) sets
+variables, not emphasis, so it is never italic; it is a style of its own (#142, below). The shows decode through a simple font's ToUnicode
 map under any codespace, a Type1 font's WinAnsi encoding where it has no map (Wallace), an
 `Identity-H` composite font's two-byte map (DGA, NOAA), or the characters established for an
 index-glyph font (Census, #143), so a line mixing styles is marked character
 by character; a style every show on a line shares needs no decoding. A leading marker without a
 letter or digit in a style its item does not share (DGA's bold `+` bullets) gains no emphasis.
-`EPUBTextEncoder` writes adjacent runs of one style as one element (`<strong>FAA-H-8083-25C</strong>`).
-See [the font style evidence](../measurements/font-style-detection/record.md).
+A run set in a maths italic font carries a **maths italic** style of its own, which
+`EPUBTextEncoder` writes `<i>` (#142). That element was chosen over the two alternatives on the
+evidence available: `<em>` states spoken stress, which a variable is not and which assistive
+reading would voice, and `<var>` asserts a named variable of a program or an expression, which a
+maths italic font alone does not establish. `<i>` states the slope and nothing more, which is
+exactly what the font states. A character that already slopes needs no element, so the style is
+read only where the font's map gives an ordinary letter: TeX's Computer Modern draws Wallace's
+`x` and `y` as plain letters, while newtx gives arXiv's `RepCl` as Mathematical Alphanumeric
+Symbols (U+1D400–U+1D7FF, with Letterlike Symbols filling that block's holes). A maths font also
+sets relations and punctuation (`.`, `,`, `=`), which are upright notation, so a show without a
+letter is left alone, and a maths italic line whose shows do not spell it is left unmarked.
+Marking part of a run would split it, and every baseline and script rule reads a run's
+neighbours, so the pieces PDFKit reported as one run are measured as one and written apart only
+when the line's styles are known.
+
+`EPUBTextEncoder` writes adjacent runs of one style as one element
+(`<strong>FAA-H-8083-25C</strong>`), nesting where they share a style rather than repeating it
+(`<strong><em>Demand</em> Shocks</strong>`, #142); `<sup>`/`<sub>` enclose `<strong>`, which
+encloses `<em>`, which encloses `<i>`. A line join contributes a space of its own that carries
+no style; between two runs it takes the bold and italic they share, so the text either side of it
+is one element. A raised or lowered space would move, so it takes nothing where an outer element
+would still divide it. See [the font style evidence](../measurements/font-style-detection/record.md)
+and [the maths italic and nesting evidence](../measurements/math-italic-and-nesting/record.md).
 
 Explicit Core Text/Foundation baseline offsets preserve
 inline scripts; tiny positioning noise and full-line OCR offsets do not become script styles.

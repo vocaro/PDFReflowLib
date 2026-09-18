@@ -243,9 +243,10 @@ private func marked(_ attributed: NSAttributedString) -> String {
             == "[Figure 2-8. ]Caption text")
 }
 
-@Test func readerFindsNoEvidenceOnPagesWithoutABoldOrItalicFont() throws {
-    let document = try weightDocument([WeightFont(baseFont: "SyntheticSerif-Roman"), WeightFont(baseFont: "CMMI12", italicAngle: -14)],
-                                      shows: [(0, 72, 700, "Plain"), (1, 72, 650, "x")])
+@Test func readerFindsNoEvidenceOnPagesWithoutAStyledFont() throws {
+    // TeX's `CMSY10` symbols lean at -14° without stating a slope in the name.
+    let document = try weightDocument([WeightFont(baseFont: "SyntheticSerif-Roman"), WeightFont(baseFont: "CMSY10", italicAngle: -14)],
+                                      shows: [(0, 72, 700, "Plain"), (1, 72, 650, "+")])
     let page = try #require(document.page(at: 0)?.pageRef)
     #expect(FontWeightReader.read(page).isEmpty)
     #expect(FontWeightReader.read(page, fonts: nil).count == 2)
@@ -253,6 +254,11 @@ private func marked(_ attributed: NSAttributedString) -> String {
     let italic = try weightDocument([WeightFont(baseFont: "SyntheticSerif-Roman"), WeightFont(baseFont: "SyntheticSerif-Italic")],
                                     shows: [(0, 72, 700, "Plain"), (1, 72, 650, "Italic")])
     #expect(FontWeightReader.read(try #require(italic.page(at: 0)?.pageRef)).count == 2)
+    // Positive control: a maths italic font is evidence since #142, so a page whose only styled
+    // font sets variables is scanned (385 Wallace pages).
+    let maths = try weightDocument([WeightFont(baseFont: "SyntheticSerif-Roman"), WeightFont(baseFont: "CMMI12", italicAngle: 0)],
+                                   shows: [(0, 72, 700, "Plain"), (1, 72, 650, "x")])
+    #expect(FontWeightReader.read(try #require(maths.page(at: 0)?.pageRef)).count == 2)
 }
 
 // MARK: - Source fixtures
@@ -393,6 +399,13 @@ private func italicText(_ line: TextLine) -> String {
     }.joined()
 }
 
+/// The text of a line's runs set in a maths italic font (#142).
+func mathItalicText(_ line: TextLine) -> String {
+    line.content.elements.map {
+        if case let .text(value, style) = $0, style.contains(.mathItalic) { value } else { "" }
+    }.joined()
+}
+
 @Test func fontNamesStateItalicAndUprightSlopes() {
     let italic = ["KAFJDA+Bembo-Italic", "WODUNB+FranklinGothicLTPro-BkIt", "CSBZTP+FranklinGothicLTPro-DmIt", "OFKQWA+Lora-Italic",
                   "TimesNewRomanPS-ItalicMT", "TimesNewRoman,Italic", "Helvetica-Oblique", "Roboto-BoldItalic", "MyriadPro-SemiboldIt",
@@ -469,6 +482,77 @@ private func italicText(_ line: TextLine) -> String {
     #expect(try italicText(line(lines, "xyz")) == "")
     #expect(try italicText(line(lines, "The History")) == "")
     #expect(try italicText(line(lines, "Upright")) == "")
+}
+
+@Test func mathItalicFontsAreNamedApartFromTextItalic() {
+    // Only a name states maths italic: the descriptor cannot tell a variable face from a text
+    // italic (Wallace's `CMMI12` reports angle 0, Flags 34, like its `ItalicRegular12pt`).
+    for name in ["MXANZU+CMMI12", "cmmib10", "FCHMEI+cmmi10084", "RXIKPM+LibertineMathMI", "ICKJDT+LibertineMathMI7",
+                 "ZMKHJD+NewTXMI", "OYHSJR+NewTXMI5", "PPKSGE+txmiaX"] {
+        #expect(FontWeightReader.isMathItalic(baseFont: name), "\(name)")
+        #expect(!FontWeightReader.isItalic(baseFont: name, italicAngle: -14, flags: 68), "\(name)")
+    }
+    // Controls: text italic, upright, a symbol font, a script face, an unstated name under a
+    // leaning descriptor, and no name at all are never maths italic.
+    for name in ["KAFJDA+Bembo-Italic", "FGHYMC+EuropeanComputerModern-ItalicRegular12pt", "cmti10", "MWZXMA+LinLibertineTI",
+                 "CMR12", "CMSY10", "txsys", "SnellRoundhand-BoldScript", "SyntheticSans", "LinLibertineT"] {
+        #expect(!FontWeightReader.isMathItalic(baseFont: name), "\(name)")
+    }
+    #expect(!FontWeightReader.isMathItalic(baseFont: nil))
+}
+
+@Test func mathItalicVariablesReadTheirOwnSlopeNotEmphasis() throws {
+    // Wallace page 23's `5x− 2y`: CMMI12 sets the variables, a text italic sets `Check:`.
+    let fonts = [WeightFont(baseFont: "SyntheticSerif-Roman"), WeightFont(baseFont: "CMMI12", italicAngle: 0, flags: 34),
+                 WeightFont(baseFont: "SyntheticSerif-Italic", italicAngle: -12, flags: 98)]
+    let document = try weightDocument(fonts, shows: [(0, 72, 700, "5"), (1, 79, 700, "x"), (0, 87, 700, "- 2"),
+                                                     (1, 108, 700, "y"), (2, 72, 650, "Check:")])
+    // Negative control: PDFKit names none of the substituted fonts italic, so the slope comes
+    // only from the page's own font resources.
+    let page = try #require(document.page(at: 0))
+    let names = (page.selection(for: page.bounds(for: .cropBox))?.selectionsByLine() ?? []).compactMap {
+        ($0.attributedString?.attribute(.font, at: 0, effectiveRange: nil) as? WeightTestFont)?.fontName.lowercased()
+    }
+    #expect(!names.isEmpty && names.allSatisfy { !$0.contains("italic") && !$0.contains("oblique") })
+    let lines = try styledLines(document)
+    let equation = try line(lines, "5")
+    #expect(equation.text == "5x- 2y")
+    #expect(mathItalicText(equation) == "xy")
+    // A variable is notation, not stress: it never also reads `<em>`, and the text italic beside
+    // it never reads maths italic.
+    #expect(italicText(equation).isEmpty && boldText(equation).isEmpty)
+    let check = try line(lines, "Check:")
+    #expect(italicText(check) == "Check:" && mathItalicText(check).isEmpty)
+    // The encoder writes the slope `<i>`, never `<em>`.
+    #expect(EPUBTextEncoder.inline(equation.content) == "5<i>x</i>- 2<i>y</i>")
+    #expect(EPUBTextEncoder.inline(check.content) == "<em>Check:</em>")
+}
+
+@Test func mathsFontCharactersThatAlreadySlopeOrAreNotLettersGainNoElement() throws {
+    // newtx (arXiv) maps its variables to Mathematical Alphanumeric Symbols and its relations and
+    // punctuation to plain ones. A font with no map at all states nothing either.
+    func show(_ text: String?) -> FontWeightReader.Show {
+        FontWeightReader.Show(origin: .zero, size: 10, font: 0, weight: .regular, text: text, placed: true,
+                              italic: false, mathItalic: true)
+    }
+    #expect(FontWeightReader.slopeNeedsMarkup(show("x")))
+    #expect(FontWeightReader.slopeNeedsMarkup(show("xy")))
+    #expect(FontWeightReader.slopeNeedsMarkup(show("\u{03B1}")))            // Computer Modern's Greek is plain
+    #expect(!FontWeightReader.slopeNeedsMarkup(show("\u{1D445}\u{1D452}\u{1D45D}\u{1D436}\u{1D459}")))  // RepCl
+    #expect(!FontWeightReader.slopeNeedsMarkup(show(".\u{1D457}.\u{1D458}")))
+    // U+210E fills the block's hole for the italic `h` (arXiv's `hlc.e`, `vh`).
+    #expect(!FontWeightReader.slopeNeedsMarkup(show("\u{210E}\u{1D459}\u{1D450}")))
+    #expect(!FontWeightReader.slopeNeedsMarkup(show("\u{1D463}\u{210E}")))
+    #expect(!FontWeightReader.slopeNeedsMarkup(show("= ")))
+    #expect(!FontWeightReader.slopeNeedsMarkup(show(",")))
+    #expect(!FontWeightReader.slopeNeedsMarkup(show(nil)))
+    var upright = show("x"); upright.mathItalic = false
+    #expect(!FontWeightReader.slopeNeedsMarkup(upright))
+    // A line whose maths shows do not decode is left unmarked: the relations the same font sets
+    // cannot be told from its variables.
+    let fonts = [WeightFont(baseFont: "SyntheticSerif-Roman"), WeightFont(baseFont: "CMMI12", toUnicode: false, encoding: false)]
+    let lines = try styledLines(try weightDocument(fonts, shows: [(0, 72, 700, "Let"), (1, 96, 700, "x")]))
+    #expect(lines.allSatisfy { mathItalicText($0).isEmpty })
 }
 
 @Test func mixedSlopeLineMarksOnlyTheItalicShipName() throws {
@@ -599,6 +683,41 @@ private func styledRuns(_ text: InlineText) -> [String] {
     }
 }
 
+/// PDFKit-like runs sharing every attribute but the maths italic mark, as a page's own font
+/// resources leave them: `(text, mathItalic)` at one size and baseline.
+private func slopeRuns(_ pieces: [(String, Bool)], baselineOffset: Double = 0) -> NSAttributedString {
+    let value = NSMutableAttributedString()
+    for piece in pieces {
+        var attributes: [NSAttributedString.Key: Any] = [
+            .font: WeightTestFont(name: "Helvetica", size: 10)!,
+            NSAttributedString.Key(kCTBaselineOffsetAttributeName as String): baselineOffset,
+        ]
+        if piece.1 { attributes[FontWeightReader.mathItalicAttribute] = true }
+        value.append(NSAttributedString(string: piece.0, attributes: attributes))
+    }
+    return value
+}
+
+@Test func aRunTheSlopeMarkSplitsIsMeasuredWholeAndWrittenApart() {
+    // Wallace page 23's `8x`: `8` in CMR and `x` in CMMI are one PDFKit run. Marking the
+    // variable splits it, and a split run measures differently -- `8x` read as a subscript under
+    // the exponent beside it -- so the pieces are rejoined before the line is measured.
+    func markup(_ pieces: [(String, Bool)], baselineOffset: Double = 0) -> String {
+        EPUBTextEncoder.inline(NativeTextReader.inlineText(from: slopeRuns(pieces, baselineOffset: baselineOffset)))
+    }
+    #expect(markup([("8", false), ("x", true)]) == "8<i>x</i>")
+    // The whole run sits 2.4 points below the line's baseline, as a display line does. Measured
+    // whole it is no script; measured in pieces the plain `8` lowered on its own.
+    #expect(markup([("8", false), ("x", true), ("2", false)], baselineOffset: -2.4) == "8<i>x</i>2")
+    // Control: a genuine script is still read. `2` is raised, at 0.55 of the size beside it.
+    let raised = NSMutableAttributedString(attributedString: slopeRuns([("8", false), ("x", true)]))
+    raised.append(NSAttributedString(string: "2", attributes: [
+        .font: WeightTestFont(name: "Helvetica", size: 5.5)!,
+        NSAttributedString.Key(kCTBaselineOffsetAttributeName as String): 3.0,
+    ]))
+    #expect(EPUBTextEncoder.inline(NativeTextReader.inlineText(from: raised)) == "8<i>x</i><sup>2</sup>")
+}
+
 @Test func listMarkerInAStyleItsItemDoesNotShareCarriesNoEmphasis() {
     // DGA's bullets: a bold `+` before a regular item.
     #expect(styledRuns(NativeTextReader.inlineText(from: resourceRuns([("+ ", true, false), ("Prioritize protein foods", false, false)])))
@@ -622,10 +741,11 @@ private func styledRuns(_ text: InlineText) -> [String] {
                                         .text("Facility Directory).", .italic)])
     #expect(EPUBTextEncoder.inline(caption)
             == "<strong>Figure 14-59. </strong><em>EMAS information (formerly Airport/Facility Directory).</em>")
-    // Controls: different styles, a page boundary and a note reference stay apart.
+    // A nested style is one element inside the style it shares (Fed page 30, #142); a page
+    // boundary and a note reference still stay apart.
     let mixed = InlineText(elements: [.text("Demand", [.bold, .italic]), .text(" Shocks", .bold), .sourcePage(31), .text("next", .bold),
                                       .noteReference("3", .superscript, NoteKey(number: 3, scope: .page(31))), .text("4", .superscript)])
-    #expect(EPUBTextEncoder.inline(mixed).hasPrefix("<strong><em>Demand</em></strong><strong> Shocks</strong><span epub:type=\"pagebreak\""))
+    #expect(EPUBTextEncoder.inline(mixed).hasPrefix("<strong><em>Demand</em> Shocks</strong><span epub:type=\"pagebreak\""))
     #expect(EPUBTextEncoder.inline(mixed).contains("aria-label=\"31\"/><strong>next</strong><sup><a "))
     #expect(EPUBTextEncoder.inline(mixed).hasSuffix("</a></sup><sup>4</sup>"))
     // A note's opening number and its text are merged before the number is read.
@@ -673,7 +793,13 @@ private func sourceItalic(_ name: String, fontWeights: Bool = true) throws -> [S
     // Libertine math italic is already slanted Unicode (`𝑅𝑒𝑝𝐶𝑙`) and gains no emphasis.
     let math = try #require(lines.first { $0.text.hasPrefix("In this work, we focus on the problem of replay clocks") })
     #expect(italicText(math).isEmpty && boldText(math).isEmpty)
-    #expect(fixture.styledContent(fontWeights: false).lines.allSatisfy { boldText($0).isEmpty && italicText($0).isEmpty })
+    // Its newtx variables need no element either (#142): the font's map gives them as
+    // Mathematical Alphanumeric Symbols, which state the slope in the character, and the
+    // relations and punctuation it also sets are upright notation.
+    #expect(math.text.unicodeScalars.contains { (0x1D400...0x1D7FF).contains($0.value) })
+    #expect(lines.allSatisfy { mathItalicText($0).isEmpty })
+    #expect(fixture.styledContent(fontWeights: false).lines
+            .allSatisfy { boldText($0).isEmpty && italicText($0).isEmpty && mathItalicText($0).isEmpty })
 }
 
 @Test func sourceAlgebraWorldViewNoteLabelOpensItsParagraphAndVariablesStayUpright() throws {
@@ -688,11 +814,19 @@ private func sourceItalic(_ name: String, fontWeights: Bool = true) throws -> [S
     // Negative control: without resource styles the note runs on from the paragraph above.
     let fused = paragraphTexts(reflow(fixture.styledContent(fontWeights: false), labelStyles: []))
     #expect(fused.contains { $0.contains("start with. World View Note:") })
-    // Math italic control: page 23's CMMI variables gain no italic, while its bold labels are marked.
-    let algebra = try SourceLayoutFixture.load("algebra-23-styles").styledContent().lines
+    // Math italic control: page 23's CMMI variables gain no `<em>`, while its bold labels are
+    // marked. Since #142 the variables carry maths italic and are written `<i>`.
+    let algebraFixture = try SourceLayoutFixture.load("algebra-23-styles")
+    let algebra = algebraFixture.styledContent().lines
     #expect(algebra.contains { $0.text == "Example 32." && boldText($0) == "Example 32." })
-    #expect(algebra.contains { $0.text.contains("5x") })
     #expect(algebra.allSatisfy { italicText($0).isEmpty })
+    let equation = try #require(algebra.first { $0.text.hasPrefix("5x") })
+    #expect(equation.text.hasPrefix("5x− 2y"))
+    #expect(mathItalicText(equation).filter { !$0.isWhitespace } == "xyxy")
+    #expect(EPUBTextEncoder.inline(equation.content).hasPrefix("5<i>x</i>− 2<i>y</i>"))
+    #expect(!EPUBTextEncoder.inline(equation.content).contains("<em>"))
+    // Negative control: without resource styles no variable is marked at all.
+    #expect(algebraFixture.styledContent(fontWeights: false).lines.allSatisfy { mathItalicText($0).isEmpty })
 }
 
 @Test func sourceDGABulletsAndOurFlagScriptTitleGainNoEmphasis() throws {

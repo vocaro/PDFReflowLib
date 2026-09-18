@@ -93,7 +93,40 @@
           "baselineOffset" : 0,
           "fontName" : "Helvetica",
           "fontSize" : 11.955200000000001,
-          "text" : "included). Examples of like terms would be 3xy and− 7xy or 3a"
+          "text" : "included). Examples of like terms would be 3"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "mathItalic" : true,
+          "text" : "xy "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "and− 7"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "mathItalic" : true,
+          "text" : "xy "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "or 3"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "mathItalic" : true,
+          "text" : "a"
         },
         {
           "baselineOffset" : 4.3199200000000246,
@@ -105,7 +138,21 @@
           "baselineOffset" : 0,
           "fontName" : "Helvetica",
           "fontSize" : 11.955200000000001,
-          "text" : "b and 8a"
+          "mathItalic" : true,
+          "text" : "b "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "and 8"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "mathItalic" : true,
+          "text" : "a"
         },
         {
           "baselineOffset" : 4.3199200000000246,
@@ -117,7 +164,14 @@
           "baselineOffset" : 0,
           "fontName" : "Helvetica",
           "fontSize" : 11.955200000000001,
-          "text" : "b or−"
+          "mathItalic" : true,
+          "text" : "b "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "or−"
         }
       ],
       "text" : "included). Examples of like terms would be 3xy and− 7xy or 3a2b and 8a2b or−"
@@ -203,7 +257,53 @@
           "baselineOffset" : 0,
           "fontName" : "Helvetica",
           "fontSize" : 11.955200000000001,
-          "text" : "5x− 2y− 8x +7y "
+          "text" : "5"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "mathItalic" : true,
+          "text" : "x"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− 2"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "mathItalic" : true,
+          "text" : "y"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− 8"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "mathItalic" : true,
+          "text" : "x "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "+7"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "mathItalic" : true,
+          "text" : "y "
         }
       ],
       "text" : "5x− 2y− 8x +7y "
@@ -220,7 +320,33 @@
           "baselineOffset" : 0,
           "fontName" : "Helvetica",
           "fontSize" : 11.955200000000001,
-          "text" : "− 3x +5y Our Solution"
+          "text" : "− 3"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "mathItalic" : true,
+          "text" : "x "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "+5"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "mathItalic" : true,
+          "text" : "y "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Our Solution"
         }
       ],
       "text" : "− 3x +5y Our Solution"
@@ -237,7 +363,53 @@
           "baselineOffset" : 0,
           "fontName" : "Helvetica",
           "fontSize" : 11.955200000000001,
-          "text" : "Combine like terms 5x− 8x and− 2y + 7y"
+          "text" : "Combine like terms 5"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "mathItalic" : true,
+          "text" : "x"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− 8"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "mathItalic" : true,
+          "text" : "x "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "and− 2"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "mathItalic" : true,
+          "text" : "y "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "+ 7"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "mathItalic" : true,
+          "text" : "y"
         }
       ],
       "text" : "Combine like terms 5x− 8x and− 2y + 7y"
@@ -272,7 +444,14 @@
           "baselineOffset" : -2.1599599999999555,
           "fontName" : "Helvetica",
           "fontSize" : 11.955200000000001,
-          "text" : "8x"
+          "text" : "8"
+        },
+        {
+          "baselineOffset" : -2.1599599999999555,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "mathItalic" : true,
+          "text" : "x"
         },
         {
           "baselineOffset" : 2.1599600000000692,
@@ -295,7 +474,27 @@
           "baselineOffset" : 0,
           "fontName" : "Helvetica",
           "fontSize" : 11.955200000000001,
-          "text" : "− 3x + 7− 2x"
+          "text" : "− 3"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "mathItalic" : true,
+          "text" : "x "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "+ 7− 2"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "mathItalic" : true,
+          "text" : "x"
         },
         {
           "baselineOffset" : 4.3199200000000246,
@@ -307,7 +506,20 @@
           "baselineOffset" : 0,
           "fontName" : "Helvetica",
           "fontSize" : 11.955200000000001,
-          "text" : "+4x− 3 "
+          "text" : "+4"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "mathItalic" : true,
+          "text" : "x"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− 3 "
         }
       ],
       "text" : "− 3x + 7− 2x2 +4x− 3 "
@@ -324,7 +536,14 @@
           "baselineOffset" : 0,
           "fontName" : "Helvetica",
           "fontSize" : 11.955200000000001,
-          "text" : "6x"
+          "text" : "6"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "mathItalic" : true,
+          "text" : "x"
         },
         {
           "baselineOffset" : 4.3199200000000246,
@@ -336,7 +555,20 @@
           "baselineOffset" : 0,
           "fontName" : "Helvetica",
           "fontSize" : 11.955200000000001,
-          "text" : "+ x +4 "
+          "text" : "+ "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "mathItalic" : true,
+          "text" : "x "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "+4 "
         }
       ],
       "text" : "6x2 + x +4 "
@@ -353,7 +585,14 @@
           "baselineOffset" : 0,
           "fontName" : "Helvetica",
           "fontSize" : 11.955200000000001,
-          "text" : "Combine like terms 8x"
+          "text" : "Combine like terms 8"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "mathItalic" : true,
+          "text" : "x"
         },
         {
           "baselineOffset" : 4.3199200000000246,
@@ -393,7 +632,14 @@
           "baselineOffset" : 0,
           "fontName" : "Helvetica",
           "fontSize" : 11.955200000000001,
-          "text" : "− 2x"
+          "text" : "− 2"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "mathItalic" : true,
+          "text" : "x"
         },
         {
           "baselineOffset" : 4.3199200000000246,
@@ -405,7 +651,33 @@
           "baselineOffset" : 0,
           "fontName" : "Helvetica",
           "fontSize" : 11.955200000000001,
-          "text" : "and− 3x +4x and 7− 3"
+          "text" : "and− 3"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "mathItalic" : true,
+          "text" : "x "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "+4"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "mathItalic" : true,
+          "text" : "x "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "and 7− 3"
         }
       ],
       "text" : "− 2x2 and− 3x +4x and 7− 3"
@@ -559,7 +831,52 @@
           "bold" : true,
           "fontName" : "Helvetica",
           "fontSize" : 11.955200000000001,
-          "text" : "Distributive Property: a(b + c)= ab + ac"
+          "text" : "Distributive Property: "
+        },
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "mathItalic" : true,
+          "text" : "a"
+        },
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "("
+        },
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "mathItalic" : true,
+          "text" : "b "
+        },
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "+ "
+        },
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "mathItalic" : true,
+          "text" : "c"
+        },
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : ")= ab + ac"
         }
       ],
       "text" : "Distributive Property: a(b + c)= ab + ac"
@@ -611,7 +928,20 @@
           "baselineOffset" : 0,
           "fontName" : "Helvetica",
           "fontSize" : 11.955200000000001,
-          "text" : "4(2x− 7) "
+          "text" : "4(2"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "mathItalic" : true,
+          "text" : "x"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− 7) "
         }
       ],
       "text" : "4(2x− 7) "
@@ -645,7 +975,20 @@
           "baselineOffset" : 0,
           "fontName" : "Helvetica",
           "fontSize" : 11.955200000000001,
-          "text" : "8x− 28 Our Solution"
+          "text" : "8"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "mathItalic" : true,
+          "text" : "x"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− 28 Our Solution"
         }
       ],
       "text" : "8x− 28 Our Solution"
@@ -680,7 +1023,20 @@
           "baselineOffset" : 0,
           "fontName" : "Helvetica",
           "fontSize" : 11.955200000000001,
-          "text" : "− 7(5x− 6) "
+          "text" : "− 7(5"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "mathItalic" : true,
+          "text" : "x"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− 6) "
         }
       ],
       "text" : "− 7(5x− 6) "

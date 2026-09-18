@@ -1,0 +1,235 @@
+{
+  "passed": false,
+  "provenanceErrors": [],
+  "case": "fed-explained-2021",
+  "executionContexts": {
+    "baseline": "host-terminal",
+    "candidate": "host-terminal"
+  },
+  "baselineConverterSHA256": "563c816d2da831b306b4bdf1669a1ff337efee1b9a0bee25d10564940eb5eb05",
+  "candidateConverterSHA256": "4623d3c3257a2a10a2431386f4431d2cdcceee5538a79085d88a842071dd864c",
+  "sameConverter": false,
+  "visionModelCaches": {
+    "baseline": {
+      "mode": "inherited",
+      "executableName": "base",
+      "programsSHA256": "1d83732cbc871b3f57e939929abdbb294e339af54e548e68954ebeea62579ac7"
+    },
+    "candidate": {
+      "mode": "inherited",
+      "executableName": "cand",
+      "programsSHA256": "22614cb0d67a8299f20da78a741db0b43f328b8fc7a2760ed28c0de40fec086d"
+    }
+  },
+  "sameVisionPrograms": false,
+  "changedOCRPages": [],
+  "ocrTextVolume": {
+    "pages": 1,
+    "baselineWords": 1,
+    "candidateWords": 1,
+    "pagesWithFewerWords": {
+      "baseline": [],
+      "candidate": []
+    }
+  },
+  "changedPages": [
+    8,
+    12,
+    14,
+    20,
+    21,
+    24,
+    25,
+    26,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    39,
+    40,
+    44,
+    46,
+    47,
+    50,
+    53,
+    58,
+    59,
+    61,
+    66,
+    67,
+    72,
+    78,
+    80,
+    85,
+    88,
+    90,
+    91,
+    92,
+    98,
+    100,
+    116,
+    117,
+    118,
+    119,
+    123,
+    124,
+    126,
+    128,
+    132
+  ],
+  "changedPageFields": {
+    "8": [
+      "markup"
+    ],
+    "12": [
+      "markup"
+    ],
+    "14": [
+      "markup"
+    ],
+    "20": [
+      "markup"
+    ],
+    "21": [
+      "markup"
+    ],
+    "24": [
+      "markup"
+    ],
+    "25": [
+      "markup"
+    ],
+    "26": [
+      "markup"
+    ],
+    "32": [
+      "markup"
+    ],
+    "33": [
+      "markup"
+    ],
+    "34": [
+      "markup"
+    ],
+    "35": [
+      "markup"
+    ],
+    "36": [
+      "markup"
+    ],
+    "37": [
+      "markup"
+    ],
+    "39": [
+      "markup"
+    ],
+    "40": [
+      "markup"
+    ],
+    "44": [
+      "markup"
+    ],
+    "46": [
+      "markup"
+    ],
+    "47": [
+      "markup"
+    ],
+    "50": [
+      "markup"
+    ],
+    "53": [
+      "markup"
+    ],
+    "58": [
+      "markup"
+    ],
+    "59": [
+      "markup"
+    ],
+    "61": [
+      "markup"
+    ],
+    "66": [
+      "markup"
+    ],
+    "67": [
+      "markup"
+    ],
+    "72": [
+      "markup"
+    ],
+    "78": [
+      "markup"
+    ],
+    "80": [
+      "markup"
+    ],
+    "85": [
+      "markup"
+    ],
+    "88": [
+      "markup"
+    ],
+    "90": [
+      "markup"
+    ],
+    "91": [
+      "markup"
+    ],
+    "92": [
+      "markup"
+    ],
+    "98": [
+      "markup"
+    ],
+    "100": [
+      "markup"
+    ],
+    "116": [
+      "markup"
+    ],
+    "117": [
+      "markup"
+    ],
+    "118": [
+      "markup"
+    ],
+    "119": [
+      "markup"
+    ],
+    "123": [
+      "markup"
+    ],
+    "124": [
+      "markup"
+    ],
+    "126": [
+      "markup"
+    ],
+    "128": [
+      "markup"
+    ],
+    "132": [
+      "markup"
+    ]
+  },
+  "changedImages": [],
+  "navigationChanged": false,
+  "changedNavigationPages": [],
+  "pageMarkersEqual": true,
+  "changedReportFields": [],
+  "idOnlyShifts": {
+    "pageCount": 2,
+    "fields": {
+      "anchors": 2
+    },
+    "navigationEntries": 0
+  },
+  "imageRenames": {
+    "count": 0
+  },
+  "scope": "Per page: text, block records, element markup, image bytes, link targets and warnings, with generated identifiers (block ordinals, element ids, spine file names, image asset names) normalized; page markers; image assets by bytes; navigation entries; conversion report. Not CSS, package metadata, decoded image equivalence or a fidelity qualification."
+}

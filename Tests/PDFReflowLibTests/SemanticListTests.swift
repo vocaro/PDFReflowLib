@@ -67,6 +67,21 @@ private func preformatted(_ blocks: [ReflowBlock]) -> [String] {
     #expect(preformatted(built([titles[3], titles[4], titles[5]])).isEmpty)
 }
 
+@Test func aPieceOfAVerifiedRunHoldingOneItemIsAParagraph() {
+    // #195: `22.`–`24.` touch, `25.` stands between prose; the run verifies, but only two or more
+    // items make a list element. The lone piece keeps its printed number as a paragraph.
+    let result = built([item("22. Your full name:"), item("23. Your address:"), item("24. Your occupation:"),
+                        paragraph("Lines to write on."), item("25. Last school you attended:"), paragraph("More lines.")])
+    #expect(listItems(result).map(\.ordinal) == [22, 23, 24])
+    #expect(result[4].content == .paragraph(InlineText("25. Last school you attended:")))
+    #expect(result[4].listEvidence == nil)
+    // Negative control: a numbered item with nested bullets is a piece of three items and lists.
+    let nested = listItems(built([item("1. Reporting suggests attacks", edge: 72), item("• One source said so", edge: 90),
+                                  item("• Another source agreed", edge: 90), paragraph("Prose."),
+                                  item("2. Members received training", edge: 72), item("3. The network moves closer", edge: 72)]))
+    #expect(nested.map(\.level) == [0, 1, 1, 0, 0])
+}
+
 @Test func recognizedNumberedItemsListOnlyWhereTheirNumbersRunConsecutively() {
     // The CIA questionnaire's inherited text layer (#195): `22.` to `24.` ascend by one.
     let questions = listItems(built([item("22. Your full name:", recognized: true), item("23. Your address:", recognized: true),

@@ -105,10 +105,8 @@
           ],
           "minimumImages": 1,
           "paragraphs": [
-            "placards and in the AFM/POH. These airspeeds include:"
-          ],
-          "listItems": [
-            "its upper limit provides the maximum flap speed. Approaches and landings"
+            "placards and in the AFM/POH. These airspeeds include:",
+            "• White arc—commonly referred to as the flap operating range"
           ]
         },
         {
@@ -1018,14 +1016,10 @@
                 "Altimeter setting",
                 "Zulu time"
               ]
-            },
-            {
-              "kind": "ol",
-              "start": 12,
-              "items": [
-                "Remarks—the remarks section always begins with the letters “RMK.”"
-              ]
             }
+          ],
+          "paragraphs": [
+            "12. Remarks—the remarks section always begins with the letters “RMK.”"
           ]
         },
         {
@@ -2134,7 +2128,6 @@
             "Creative Commons Attribution 3.0 Unported License"
           ],
           "listItems": [
-            "Attribution: You must attribute the work in the manner specified by the author or licensor (but not in any way",
             "Waiver: Any of the above conditions can be waived if you get permission from the copyright holder.",
             "Public Domain: Where the work or any of its elements is in the public domain under applicable law,"
           ],
@@ -2144,6 +2137,9 @@
             "− Your fair dealing or fair use rights, or other applicable copyright exceptions and limitations;",
             "− Rights other persons may have either in the work itself or in how the work is used such as publicity or privacy rights",
             "• Notice: For any reuse or distribution, you must make clear to others the license term of this work. The best way"
+          ],
+          "paragraphs": [
+            "• Attribution: You must attribute the work in the manner specified by the author or licensor"
           ]
         },
         {
@@ -2514,13 +2510,11 @@
         },
         {
           "page": 64,
-          "listItems": [
-            "More than often represents addition and is usually built backwards, writing the second part plus the first",
-            "Less than often represents subtraction and is usually built backwards as well, writing the second part minus the first"
-          ],
           "paragraphs": [
             "Three more than a number becomes x + 3",
-            "Four less than a number becomes x − 4"
+            "Four less than a number becomes x − 4",
+            "• More than often represents addition and is usually built backwards",
+            "• Less than often represents subtraction and is usually built backwards as well"
           ]
         },
         {
@@ -2951,6 +2945,25 @@
           ]
         },
         {
+          "page": 46,
+          "paragraphs": [
+            "1. The shots which killed President Kennedy and wounded Governor Connally were fired from the sixth floor window"
+          ]
+        },
+        {
+          "page": 47,
+          "lists": [
+            {
+              "kind": "ol",
+              "start": 3,
+              "items": [
+                "Although it is not necessary to any essential findings of the Commission",
+                "The shots which killed President Kennedy and wounded"
+              ]
+            }
+          ]
+        },
+        {
           "page": 50,
           "pageReference": true,
           "warningCodesAnyOf": [
@@ -2971,6 +2984,40 @@
           ],
           "paragraphs": [
             "Because of the difficulty of proving negatives to a certainty the possibility of others being involved with either Oswald or Ruby cannot be established categorically"
+          ]
+        },
+        {
+          "page": 53,
+          "lists": [
+            {
+              "kind": "ol",
+              "start": 2,
+              "items": [
+                "Suggestions have been advanced to the Commission for the transfer",
+                "Meanwhile, in order to improve daily supervision of the Secret"
+              ]
+            }
+          ]
+        },
+        {
+          "page": 54,
+          "lists": [
+            {
+              "kind": "ol",
+              "start": 7,
+              "items": [
+                "The Commission believes that when the new criteria and procedures are established",
+                "Even with an increase in Secret Service personnel, the protection"
+              ]
+            },
+            {
+              "kind": "ol",
+              "start": 9,
+              "items": [
+                "The Commission recommends that the President's physician always accompany him",
+                "The Commission recommends to Congress that it adopt legislation"
+              ]
+            }
           ]
         },
         {
@@ -6118,8 +6165,7 @@
           ],
           "listItems": [
             "Prioritize high-quality, nutrient-dense protein foods as part of a healthy dietary pattern.",
-            "Consume meat with no or limited added sugars, refined carbohydrates or starches, or chemical additives.",
-            "Your gut contains trillions of bacteria and other microorganisms called the microbiome."
+            "Consume meat with no or limited added sugars, refined carbohydrates or starches, or chemical additives."
           ],
           "lists": [
             {
@@ -6132,6 +6178,9 @@
                 "Protein serving goals"
               ]
             }
+          ],
+          "paragraphs": [
+            "+ Your gut contains trillions of bacteria and other microorganisms called the microbiome."
           ]
         },
         {
@@ -6237,8 +6286,10 @@
             "Older Adults"
           ],
           "listItems": [
-            "Pregnant women should consume diverse nutrient-dense foods, including iron-rich meats, folate-rich greens and legumes",
-            "nutrient-dense foods such as dairy, meats, seafood, eggs, legumes, and whole plant foods"
+            "Pregnant women should consume diverse nutrient-dense foods, including iron-rich meats, folate-rich greens and legumes"
+          ],
+          "paragraphs": [
+            "+ Some older adults need fewer calories"
           ]
         },
         {

@@ -15,8 +15,9 @@ import Foundation
 ///   between other blocks (numbered section titles, not a list). A transcription of a scan offers
 ///   numbered items only, under the same rules (#195).
 ///
-/// A marker line with nothing list-shaped on its page or the pages beside it becomes a paragraph
-/// that keeps its printed marker (#195). Everything else keeps its preformatted form and printed
+/// A marker line with nothing list-shaped on its page or the pages beside it, and an accepted item
+/// that other blocks set apart from the rest of its run, become paragraphs that keep their printed
+/// markers: a list element holds two items or more (#195). Everything else keeps its preformatted form and printed
 /// marker: lettered items, a minus sign (which opens derivation rows), bullets in transcriptions of
 /// scans, contents entries, reference lists, exercise sets and answer keys.
 ///
@@ -237,6 +238,19 @@ enum ListBuilder {
                   setsDeeper(candidate.evidence, than: before.evidence) else { continue }
             accepted.insert(candidate.index)
         }
+        // A piece of a verified run that other blocks set apart on both sides is one item, not a list:
+        // it is a paragraph keeping its printed marker, as a lone marked line is (#195): the CIA
+        // questionnaire's `28.`, set apart from `22.`–`27.` by the lines left to write on.
+        let ordered = candidates.map(\.index).filter(accepted.contains)
+        for (position, index) in ordered.enumerated() {
+            let joinsBefore = position > 0 && contiguous(ordered[position - 1], index, among: accepted)
+            let joinsAfter = position + 1 < ordered.count && contiguous(index, ordered[position + 1], among: accepted)
+            guard !joinsBefore, !joinsAfter, case let .preformatted(text) = blocks[index].content else { continue }
+            blocks[index].content = .paragraph(text)
+            blocks[index].listEvidence = nil
+        }
+        accepted = accepted.filter { if case .preformatted = blocks[$0].content { true } else { false } }
+        guard !accepted.isEmpty else { return }
 
         // List elements, depth and openings. `stack` holds the list open at each depth.
         struct Level { var evidence: ReflowBlock.ListEvidence; var page: Int; var run: Int; var marker: Marker

@@ -612,7 +612,10 @@ by tier under the form's titles, the caption's column of `)` is dropped, the `Pa
 and the rule under the running header go with the furniture, and the Statement of Claim is one
 paragraph ([#152](https://github.com/vocaro/PDFReflowLib/issues/152); [evidence](../measurements/form-blanks-and-outlines/record.md)).
 The lettered items under the numbered parts (`a. If the plaintiff is an individual`) stay list
-lines, which the EPUB sets as `<pre>`.
+lines, which the EPUB sets as `<pre>`. The empty answer areas (the caption's two name boxes and the
+space under II.A, 3, III and IV) each read as a `____` paragraph where the area closes, so the
+reader knows space follows the prompt ([#197](https://github.com/vocaro/PDFReflowLib/issues/197);
+[evidence](../measurements/printed-form-blanks/record.md)).
 No region references are committed: the form has no images, only rules and boxes.
 
 
@@ -696,7 +699,8 @@ The run passes EPUBCheck, progress and the 512 MiB Mac RSS gate (276–314 MiB p
 contract holds 164 checks on all 24 pages, all on output that matches the source: the cover lines
 and headings, the masthead date lines, photo presence and printed credits, whole captions on pages
 6, 9 and 12, reflowed sentences in source order on pages 6, 9, 12, 13, 15, 18 and 19, the
-back-cover mailing instruction, and, on every page, no recognition, damaged-encoding or
+back-cover mailing instruction and its coupon's two labels, each on its ruled blank
+(`To stop mailing ____`, #197), and, on every page, no recognition, damaged-encoding or
 implausible-layer warning, with the whole-page fallback confined to pages 20–21 and the
 source-page image to pages 1 and 13. Pages 14, 22 and 23 hold their preserved regions and that
 disclosure only: #158 keeps all of their body text inside crops, so no reflowed text is pinned.

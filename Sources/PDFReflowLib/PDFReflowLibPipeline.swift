@@ -230,13 +230,18 @@ enum PDFReflowLibPipeline {
                 if !requiresPageImage && !syntheticStyle {
                     _ = HiddenTextFilter.removeHidden(&content.lines, graphics: graphics)
                 }
+                // A printed form's blanks carry no field (#197): its rules and rows of type say
+                // where they stand, once the lines are known.
+                if native {
+                    content.blanks += FormBlank.printed(paints: graphics.paints.map(\.rect), lines: content.lines, fields: blanks)
+                }
                 // Rectangles behind prose (sidebar frames, tint bands, cell shading) stop
                 // seeding crops once the text shows they are decoration; everything else
                 // clusters exactly as the reader's regions did. A page that paints nothing
                 // page-sized but its own backdrop composes the art beside that backdrop (#164),
                 // so a slide's placeholders and boxes do not take the text drawn on them.
                 if !requiresPageImage {
-                    let paints = graphics.paints.filter { paint in !blanks.contains { $0.rule.contains(paint.rect) } }
+                    let paints = graphics.paints.filter { paint in !content.blanks.contains { $0.rule.contains(paint.rect) } }
                     let art = artBesideBackdrops(paints, lines: content.lines, bounds: bounds)
                     let composed = TintDetector.compose(art ?? paints, lines: content.lines, bounds: bounds)
                     content.graphics = composed.graphics

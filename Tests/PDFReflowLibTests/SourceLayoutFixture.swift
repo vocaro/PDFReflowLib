@@ -94,8 +94,9 @@ struct SourceLayoutFixture: Decodable {
     /// pipeline; `tinted: false` keeps every painted footprint as a crop seed, as before #54.
     /// Extraction ends by spelling ligatures out (#189), which fixtures captured before it do not
     /// record, so each line is spelled out here as extraction would; `spelledOut: false` replays
-    /// the lines as captured.
-    func content(tinted: Bool = true, spelledOut: Bool = true) -> PageContent {
+    /// the lines as captured. A printed blank (#197) is read from the paints as the pipeline reads
+    /// it; `fields: false` drops the captured form fields' blanks, as if the form had none.
+    func content(tinted: Bool = true, spelledOut: Bool = true, fields: Bool = true) -> PageContent {
         func rect(_ values: [Double]) -> CGRect {
             precondition(values.count == 4)
             return CGRect(x: values[0], y: values[1], width: values[2], height: values[3])
@@ -109,7 +110,10 @@ struct SourceLayoutFixture: Decodable {
             return line
         }
         var page = PageContent(number: page, bounds: rect(bounds), lines: textLines, graphics: graphics.map(rect))
-        page.blanks = (blanks ?? []).map { FormBlank(rule: rect($0.rule), field: rect($0.field)) }
+        page.blanks = fields ? (blanks ?? []).map { FormBlank(rule: rect($0.rule), field: rect($0.field)) } : []
+        if let paints {
+            page.blanks += FormBlank.printed(paints: paints.map { rect($0.rect) }, lines: textLines, fields: page.blanks)
+        }
         if tinted, let paints {
             // A blank's rules seed no crops, as in the pipeline.
             let drawn = paints.filter { paint in !page.blanks.contains { $0.rule.contains(rect(paint.rect)) } }
@@ -126,8 +130,8 @@ struct SourceLayoutFixture: Decodable {
 
     /// The page with each line's native style runs (emphasis, superscripts), as the
     /// converter extracts them; lines without a matching attributed selection stay plain.
-    func styledContent(fontWeights: Bool = true, spelledOut: Bool = true) -> PageContent {
-        var result = content(spelledOut: spelledOut)
+    func styledContent(fontWeights: Bool = true, spelledOut: Bool = true, fields: Bool = true) -> PageContent {
+        var result = content(spelledOut: spelledOut, fields: fields)
         // Attributed lines hold PDFKit's characters, ligatures included; they are matched and
         // replayed spelled out as the line is.
         func spelled(_ text: String) -> String { spelledOut ? InlineText.spellingOutLigatures(text) : text }

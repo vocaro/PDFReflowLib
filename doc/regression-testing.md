@@ -115,7 +115,7 @@ are, in the page markup). Evidence and negative controls on real output are in
 ## Current content coverage
 
 <!-- counts:coverage -->
-[corpus/regressions.json](../corpus/regressions.json) has 3640 targeted checks on 585 reviewed pages
+[corpus/regressions.json](../corpus/regressions.json) has 3655 targeted checks on 585 reviewed pages
 across 20 documents: *Pilot's Handbook of Aeronautical Knowledge*, *Beginning and Intermediate
 Algebra*, *The 9/11 Commission Report*, *The Fed Explained*, *Dietary Guidelines for Americans*,
 *Fifth National Climate Assessment*, *Our Flag*, *Preparedness 101*, *Project Blue Book Special
@@ -125,7 +125,7 @@ Bremsstrahlung in Electron-Ion Collisions*, *Replay Clocks*, *Complaint for a Ci
 *Investigation of Atmospheric Boundary-Layer Effects on Launch-Vehicle Ground Wind Loads*, *A
 Scheduling Algorithm Compatible with a Distributed Management of Arrivals in the National Airspace
 System*, *Agricultural Research*, *Earthdata Cloud Analytics Project* and *Tank Health Monitoring*.
-They comprise 1137 ordered-text, 246 text, 451 paragraph, 341 absent-text, 278 heading,
+They comprise 1146 ordered-text, 246 text, 457 paragraph, 341 absent-text, 278 heading,
 38 heading-level, 64 absent-heading, 88 list-item, 46 list, 21 preformatted-block,
 1 preformatted-lines, 29 script, 10 absent-script, 11 footnote, 34 note-link,
 70 paragraph-continuation, 1 list-item-continuation, 8 paragraph-separation, 121 distinct-paragraph,
@@ -683,7 +683,7 @@ the page's structure validates, each line also records the tag the pipeline appl
 since #89/#90); older fixtures and untagged lines have none, and `SourceLayoutFixture` restores it.
 Source review, baseline failures, cross-document safeguards and full-run evidence are retained
 in [the three-fix measurement](../measurements/three-fidelity-fixes/record.md). The suite contains
-<!-- counts:swift-tests -->1015 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->249 Python tests<!-- counts:end -->.
+<!-- counts:swift-tests -->1018 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->249 Python tests<!-- counts:end -->.
 The comparison tests include a real-Poppler image URL check through the safe HTTP handler
 (simple and positioned modes, paths with spaces); absent Poppler is an explicit skip.
 
@@ -1488,6 +1488,27 @@ rule); all at once, 61. The corpus contract adds heading levels, list items, who
 sentences, one paragraph per label, no crop and the folio's absence on all five pages; it fails 55
 of its 219 checks against the previous converter's evaluation and passes against this one. See the
 [form evidence](../measurements/form-blanks-and-outlines/record.md).
+
+#197 adds three follow-ups to the same suite. `FormBlank.printed` reads a printed form's blanks with
+no field over them: a thin rule standing alone on the baseline of a row of type, beside the row's
+text and with nothing over it. Its controls are a rule meeting a grid's vertical rule or a box, a
+value printed on the rule, an underline, a radical's bar, a footnote separator, text too far
+before or after the rule, and a column's rule level with a line of the next column (a float rule
+as wide as its column's lines, a separator across a ragged list); a caption set under a blank short
+of its end leaves it one. `SourceLayoutFixture` reads printed blanks from a fixture's paints as the
+pipeline does, and `fields: false` drops a fixture's field blanks: Pro Se 1 read that way still sets
+every label and fill-in sentence with its blanks. The synthetic AcroForm page without its fields
+now reads `Name ____` and `Street Address ____`, while its row PDFKit reads across a rule and its
+rule under no field stay as they were. `answerAreas` sets an empty field taller than two lines as a
+`____` paragraph where it closes: the Pro Se pages carry six (the caption's two name boxes, II.A,
+3, III and IV's area at the top of page 5), each between its prompt and what follows; a one-line
+field, an area with type in it and one under a crop get none. An outline's tiers rank from the
+outermost the document sets, so one opening at capitals ranks `A.` where a Roman tier would stand.
+Negative controls: 14 failures with printed blanks disabled, 12 with answer areas, 1 with fixed
+depth, 27 together. The corpus contracts add the six answer areas' order on Pro Se pages 1 and 3–5
+(229 checks; the previous converter fails 39) and the magazine's mailing coupon on page 24
+(`To stop mailing ____`, `To change your address ____`, which the previous converter kept inside a
+crop). See the [printed-blank evidence](../measurements/printed-form-blanks/record.md).
 
 ## Blank pages
 

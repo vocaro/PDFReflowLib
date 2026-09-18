@@ -640,6 +640,29 @@ enum LayoutReconstructor {
         }
     }
 
+    /// A form's answer areas (#197): a field taller than two lines of type, closed by its rule,
+    /// where the reader writes a paragraph or a name. The US Courts form leaves one under each
+    /// section that asks for an account (II.A, 3, III and IV) and one above each party label of
+    /// its caption. Their rules join no row (`FormBlank.sharesRow`), so the text used to carry the
+    /// prompt and no mark that space follows it.
+    ///
+    /// Each empty area reads as one line of its own, `FormBlank.text`, set at its rule across
+    /// the area's width at the body's size: it takes its place in reading order where the area
+    /// closes, and it ends its row (`wraps` false), so neither the prompt above nor the label
+    /// below runs on into it. An area with any line of type inside it (a value printed in it, a
+    /// prompt set in the box) or under a crop is left as it was.
+    static func answerAreas(_ lines: [TextLine], blanks: [FormBlank], images: [CGRect], body: CGFloat) -> [TextLine] {
+        blanks.compactMap { blank in
+            let rule = blank.rule.insetBy(dx: 2, dy: 0)
+            let field = blank.field.union(rule)
+            guard rule.width > 0, blank.field.height > body * 2.5,
+                  !lines.contains(where: { $0.rect.insetBy(dx: 1, dy: 1).intersects(field.insetBy(dx: 2, dy: 2)) }),
+                  !images.contains(where: { $0.intersects(field) }) else { return nil }
+            return TextLine(text: FormBlank.text, rect: CGRect(x: rule.minX, y: rule.midY, width: rule.width, height: body),
+                            fontSize: body, wraps: false)
+        }
+    }
+
     /// PDFKit splits a prose row at an inline radical: `Not all numbers have a nice even square
     /// root. For example, if we found 8` and `√ on` (Wallace page 288), `process is being able to
     /// translate a problem like 180 √ into 36· 5` and `√ . There are sev-` (page 289). Each piece
@@ -2074,7 +2097,10 @@ enum LayoutReconstructor {
     /// tier, so their size says nothing of their rank. They take no part in the size tiers: the
     /// outermost tier ranks where the size scale places its size, and each inner tier one level
     /// deeper (to 6). The US Courts form's `I.` sections fall under its 20- and 13-point titles
-    /// at level 4, their `A.` parts at 5 and the numbered parts at 6.
+    /// at level 4, their `A.` parts at 5 and the numbered parts at 6. The tiers are the ones the
+    /// document sets, counted from its outermost (#197): an outline that opens at capital letters
+    /// ranks its `A.` sections where the size scale places them and its numbered parts one level
+    /// beneath, not a level lower each for the Roman tier it never uses.
     static func rankHeadingLevels(_ blocks: inout [ReflowBlock], slideDeck: Bool = false) {
         func ranker(_ sizes: [CGFloat]) -> (CGFloat) -> Int {
             let tiers = headingTiers(sizes)
@@ -2101,12 +2127,15 @@ enum LayoutReconstructor {
         func yields(_ validated: Int) -> Bool { firstYielding.map { validated >= $0 } ?? false }
         let byTier = ranker(headings.filter { $0.validated.map(yields) ?? true }.map(\.size))
         let ranked: (CGFloat) -> Int = slideDeck ? { _ in 2 } : byTier
+        let outlineTiers = Set(blocks.compactMap(\.outlineDepth)).sorted()
         for index in blocks.indices {
             guard let size = blocks[index].headingSize,
                   case let .heading(id, text, _) = blocks[index].content else { continue }
             var level = ranked(size)
             if let validated = blocks[index].taggedLevel, !yields(validated) { level = validated }
-            if let depth = blocks[index].outlineDepth { level = min(6, level + depth) }
+            if let depth = blocks[index].outlineDepth, let tier = outlineTiers.firstIndex(of: depth) {
+                level = min(6, level + tier)
+            }
             blocks[index].content = .heading(id: id, text: text, level: level)
         }
     }
@@ -3864,9 +3893,11 @@ enum LayoutReconstructor {
         let tableLines = tables.flatMap(\.ownedLines)
         // A marker PDFKit split from its item's text rejoins it before anything reads the lines.
         // So do the pieces of a prose row PDFKit split at an inline radical (#95), and the pieces
-        // of a form's row with the ruled blanks between them (#152).
-        let (free, mathMinusRows) = joinedRows(joiningMarkerPieces(joiningBlankRows(lines.filter { line in !tableLines.contains(line) },
-                                                                                    blanks: page.blanks)),
+        // of a form's row with the ruled blanks between them (#152). A form's empty answer areas
+        // read as blanks of their own (#197).
+        let formLines = lines.filter { line in !tableLines.contains(line) }
+        let areas = answerAreas(page.lines, blanks: page.blanks, images: images.map(\.0), body: body)
+        let (free, mathMinusRows) = joinedRows(joiningMarkerPieces(joiningBlankRows(formLines, blanks: page.blanks) + areas),
                                                images: images.map(\.0), body: body)
         // A list line, except a joined prose row whose apparent marker is a minus sign (#109).
         func listLine(_ line: TextLine) -> Bool { isList(line.text) && !mathMinusRows.contains(line) }

@@ -1,0 +1,5360 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        48.963999999999999,
+        730.93807839999999,
+        251.05751999999995,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "that an airspace may be too narrow to allow safe passing."
+        }
+      ],
+      "text" : "that an airspace may be too narrow to allow safe passing."
+    },
+    {
+      "rect" : [
+        48.963999999999999,
+        718.98207839999998,
+        251.05466619999999,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "Such an edge will be called a no-passing edge. Also, in"
+        }
+      ],
+      "text" : "Such an edge will be called a no-passing edge. Also, in"
+    },
+    {
+      "rect" : [
+        48.96399999999997,
+        707.02707839999994,
+        251.05751999999993,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "real operations, flights are not allowed to pass each other on"
+        }
+      ],
+      "text" : "real operations, flights are not allowed to pass each other on"
+    },
+    {
+      "rect" : [
+        48.96399999999997,
+        695.0720783999999,
+        209.77250560000002,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "Standard Arrival Routes and Departure Procedures."
+        }
+      ],
+      "text" : "Standard Arrival Routes and Departure Procedures."
+    },
+    {
+      "rect" : [
+        58.926999999999971,
+        680.78130279999993,
+        241.09721359999998,
+        8.9663399999999456
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "The STAs are subject to constraints that can be separated"
+        }
+      ],
+      "text" : "The STAs are subject to constraints that can be separated"
+    },
+    {
+      "rect" : [
+        48.963999999999977,
+        668.88607839999986,
+        251.05751999999998,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "into two categories, node constraints and edge constraints. We"
+        }
+      ],
+      "text" : "into two categories, node constraints and edge constraints. We"
+    },
+    {
+      "rect" : [
+        48.963999999999977,
+        656.93107839999982,
+        251.05751999999998,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "now list the constraints in each category. Every occurrence"
+        }
+      ],
+      "text" : "now list the constraints in each category. Every occurrence"
+    },
+    {
+      "rect" : [
+        48.963999999999977,
+        644.97607839999978,
+        251.06244719999998,
+        9.0659660000000031
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "of the letter c with superscripts and subscripts is a constant"
+        }
+      ],
+      "text" : "of the letter c with superscripts and subscripts is a constant"
+    },
+    {
+      "rect" : [
+        48.963999999999977,
+        633.02107839999974,
+        219.89450719999994,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "parameter, specified as part of the problem statement."
+        }
+      ],
+      "text" : "parameter, specified as part of the problem statement."
+    },
+    {
+      "rect" : [
+        48.963999999999977,
+        595.2272181999997,
+        82.21137520000002,
+        8.5877612000000454
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "italic" : true,
+          "text" : "B. Node constraints"
+        }
+      ],
+      "text" : "B. Node constraints"
+    },
+    {
+      "rect" : [
+        58.926999999999978,
+        571.88030279999975,
+        241.09286600000007,
+        8.9663399999999456
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "The constraints on the STAs of given flights at a given"
+        }
+      ],
+      "text" : "The constraints on the STAs of given flights at a given"
+    },
+    {
+      "rect" : [
+        48.963999999999984,
+        559.98507839999968,
+        251.05751999999995,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "node considered here are of three types. We list these types,"
+        }
+      ],
+      "text" : "node considered here are of three types. We list these types,"
+    },
+    {
+      "rect" : [
+        48.963999999999984,
+        548.03007839999964,
+        251.05751999999995,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "labeling each by the letter that matches the corresponding part"
+        }
+      ],
+      "text" : "labeling each by the letter that matches the corresponding part"
+    },
+    {
+      "rect" : [
+        48.963999999999984,
+        536.07407839999962,
+        61.200251800000004,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "of formula (4):"
+        }
+      ],
+      "text" : "of formula (4):"
+    },
+    {
+      "rect" : [
+        49.521999999999984,
+        517.32307839999964,
+        184.87557910000004,
+        10.606738800000016
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "(a) The flight cannot leave its first node, n"
+        },
+        {
+          "baselineOffset" : 3.6150000000000091,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "1"
+        }
+      ],
+      "text" : "(a) The flight cannot leave its first node, n1"
+    },
+    {
+      "rect" : [
+        230.42600000000002,
+        515.3000827999997,
+        69.59313419999998,
+        10.929559999999924
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -2.8220000000000027,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "f "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : ", earlier than at"
+        }
+      ],
+      "text" : "f , earlier than at"
+    },
+    {
+      "rect" : [
+        65.562000000000012,
+        505.30730279999966,
+        94.325649999999996,
+        8.9663400000000593
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "the corresponding ETA."
+        }
+      ],
+      "text" : "the corresponding ETA."
+    },
+    {
+      "rect" : [
+        48.964000000000013,
+        493.35230279999968,
+        11.6163916,
+        8.9663400000000024
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "(b) "
+        }
+      ],
+      "text" : "(b) "
+    },
+    {
+      "rect" : [
+        65.561691600000017,
+        493.35230279999968,
+        234.46075979999989,
+        8.9663400000000024
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "Two flights traversing a given node must traverse it at STAs"
+        }
+      ],
+      "text" : "Two flights traversing a given node must traverse it at STAs"
+    },
+    {
+      "rect" : [
+        65.561999999999983,
+        481.45707839999972,
+        234.45982839999991,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "that are no closer together than a required minimal time"
+        }
+      ],
+      "text" : "that are no closer together than a required minimal time"
+    },
+    {
+      "rect" : [
+        65.561999999999983,
+        469.50207839999973,
+        234.45982839999996,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "duration. In other words, the difference between the two"
+        }
+      ],
+      "text" : "duration. In other words, the difference between the two"
+    },
+    {
+      "rect" : [
+        65.561999999999983,
+        457.48730279999972,
+        234.45965060000006,
+        9.6836471999999958
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "STAs must be ≥the pre-specified minimal time separation."
+        }
+      ],
+      "text" : "STAs must be ≥the pre-specified minimal time separation."
+    },
+    {
+      "rect" : [
+        49.521999999999991,
+        445.59207839999976,
+        250.49961439999998,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "(c) For some nodes along the routes of some flights, the flight"
+        }
+      ],
+      "text" : "(c) For some nodes along the routes of some flights, the flight"
+    },
+    {
+      "rect" : [
+        65.561999999999983,
+        433.63607839999975,
+        234.45982839999991,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "(a schedule-frozen flight) must traverse the node at exactly"
+        }
+      ],
+      "text" : "(a schedule-frozen flight) must traverse the node at exactly"
+    },
+    {
+      "rect" : [
+        65.561999999999983,
+        421.62130279999974,
+        234.46386019999997,
+        8.9663400000000024
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "the ETA, which effectively requires the STA to equal the"
+        }
+      ],
+      "text" : "the ETA, which effectively requires the STA to equal the"
+    },
+    {
+      "rect" : [
+        65.561999999999983,
+        409.66630279999976,
+        18.181649999999991,
+        8.9663400000000024
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "ETA."
+        }
+      ],
+      "text" : "ETA."
+    },
+    {
+      "rect" : [
+        58.926999999999985,
+        390.97407839999977,
+        241.09491999999997,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "The formulas for these constraints are given in the corre-"
+        }
+      ],
+      "text" : "The formulas for these constraints are given in the corre-"
+    },
+    {
+      "rect" : [
+        48.963999999999984,
+        379.01907839999978,
+        88.766766000000032,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "sponding parts of (4)."
+        }
+      ],
+      "text" : "sponding parts of (4)."
+    },
+    {
+      "rect" : [
+        78.085999999999984,
+        362.88308279999978,
+        8.3152727799999866,
+        7.816939399999967
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -3.007000000000005,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "n"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 4.9813000000000001,
+          "text" : "1"
+        }
+      ],
+      "text" : "n1"
+    },
+    {
+      "rect" : [
+        116.97699999999999,
+        362.88308279999973,
+        8.3152727800000008,
+        7.816939399999967
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -3.007000000000005,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "n"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 4.9813000000000001,
+          "text" : "1"
+        }
+      ],
+      "text" : "n1"
+    },
+    {
+      "rect" : [
+        62.394999999999982,
+        355.63130279999979,
+        15.691095000000004,
+        8.298845799999981
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "STA"
+        }
+      ],
+      "text" : "STA"
+    },
+    {
+      "rect" : [
+        83.010999999999981,
+        361.27762779999972,
+        3.4072091999999969,
+        4.4233944000000065
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 4.9813000000000001,
+          "text" : "f"
+        }
+      ],
+      "text" : "f"
+    },
+    {
+      "rect" : [
+        78.085999999999984,
+        353.48508279999976,
+        38.891095000000007,
+        11.829867199999967
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -3.0049999999999955,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "f "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "≥ETA"
+        }
+      ],
+      "text" : "f ≥ETA"
+    },
+    {
+      "rect" : [
+        121.90199999999999,
+        361.27762779999966,
+        3.4072091999999969,
+        4.4233944000000065
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 4.9813000000000001,
+          "text" : "f"
+        }
+      ],
+      "text" : "f"
+    },
+    {
+      "rect" : [
+        116.97699999999999,
+        353.4850827999997,
+        3.8851039799999967,
+        6.1927344000000062
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "f"
+        }
+      ],
+      "text" : "f"
+    },
+    {
+      "rect" : [
+        174.63999999999999,
+        361.74525759999966,
+        58.227801600000021,
+        8.0159616000000256
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "at the first node"
+        }
+      ],
+      "text" : "at the first node"
+    },
+    {
+      "rect" : [
+        174.63999999999999,
+        351.29251839999972,
+        9.2119113599999878,
+        9.6969359999999938
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -3.8090000000000259,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "n"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 5.9776000000000007,
+          "text" : "1"
+        }
+      ],
+      "text" : "n1"
+    },
+    {
+      "rect" : [
+        180.19899999999998,
+        350.0153455999997,
+        86.558485999999988,
+        22.274158400000033
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -1.8570000000000277,
+          "fontName" : "Helvetica",
+          "fontSize" : 5.9776000000000007,
+          "text" : "f "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "of flight f "
+        },
+        {
+          "baselineOffset" : 4.8109999999999786,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "(a)"
+        }
+      ],
+      "text" : "f of flight f (a)"
+    },
+    {
+      "rect" : [
+        62.394999999999982,
+        310.79930279999974,
+        20.615897560000008,
+        10.677514400000007
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "STA"
+        },
+        {
+          "baselineOffset" : 3.6259999999999764,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "n"
+        }
+      ],
+      "text" : "STAn"
+    },
+    {
+      "rect" : [
+        78.085999999999984,
+        308.23662779999967,
+        7.2752727799999946,
+        6.8031894000000648
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0.9970000000000141,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "f"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 4.9813000000000001,
+          "text" : "2"
+        }
+      ],
+      "text" : "f2"
+    },
+    {
+      "rect" : [
+        88.570999999999984,
+        310.79930279999968,
+        30.578897560000016,
+        10.677514400000007
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "−STA"
+        },
+        {
+          "baselineOffset" : 3.6259999999999764,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "n"
+        }
+      ],
+      "text" : "−STAn"
+    },
+    {
+      "rect" : [
+        114.22499999999999,
+        308.23662779999961,
+        30.790897560000047,
+        13.230189400000029
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -2.8109999999999786,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "f"
+        },
+        {
+          "baselineOffset" : -3.8079999999999927,
+          "fontName" : "Helvetica",
+          "fontSize" : 4.9813000000000001,
+          "text" : "1 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "≥c"
+        },
+        {
+          "baselineOffset" : 3.6159999999999854,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "n"
+        }
+      ],
+      "text" : "f1 ≥cn"
+    },
+    {
+      "rect" : [
+        140.09100000000001,
+        308.22662779999956,
+        17.414272780000005,
+        6.8031894000000648
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0.49850000000003547,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "f"
+        },
+        {
+          "baselineOffset" : -0.49849999999997863,
+          "fontName" : "Helvetica",
+          "fontSize" : 4.9813000000000001,
+          "text" : "1"
+        },
+        {
+          "baselineOffset" : 0.49850000000003547,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : ",f"
+        },
+        {
+          "baselineOffset" : -0.49849999999997863,
+          "fontName" : "Helvetica",
+          "fontSize" : 4.9813000000000001,
+          "text" : "2"
+        }
+      ],
+      "text" : "f1,f2"
+    },
+    {
+      "rect" : [
+        174.64000000000001,
+        326.29734559999957,
+        55.024911360000004,
+        8.3783360000000471
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "if flights f"
+        },
+        {
+          "baselineOffset" : -0.9959999999999809,
+          "fontName" : "Helvetica",
+          "fontSize" : 5.9776000000000007,
+          "text" : "1"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : ", f"
+        },
+        {
+          "baselineOffset" : -0.9959999999999809,
+          "fontName" : "Helvetica",
+          "fontSize" : 5.9776000000000007,
+          "text" : "2"
+        }
+      ],
+      "text" : "if flights f1, f2"
+    },
+    {
+      "rect" : [
+        174.64000000000004,
+        316.55425759999957,
+        28.110167999999987,
+        8.1594240000000582
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "reach n"
+        }
+      ],
+      "text" : "reach n"
+    },
+    {
+      "rect" : [
+        174.64000000000004,
+        306.59125759999955,
+        50.606361600000014,
+        8.0159616000000256
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "consecutively,"
+        }
+      ],
+      "text" : "consecutively,"
+    },
+    {
+      "rect" : [
+        174.64000000000004,
+        296.62825759999953,
+        45.621043200000003,
+        8.0159616000000256
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "in that order"
+        }
+      ],
+      "text" : "in that order"
+    },
+    {
+      "rect" : [
+        235.14500000000004,
+        297.56943999999959,
+        8.8557551400000136,
+        39.253063999999938
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 20.922499999999957,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎫"
+        },
+        {
+          "baselineOffset" : 11.955499999999972,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : 8.9664999999999964,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎬"
+        },
+        {
+          "baselineOffset" : -8.9664999999999964,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : -11.954499999999996,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎭"
+        }
+      ],
+      "text" : "⎫⎪⎬⎪⎭"
+    },
+    {
+      "rect" : [
+        255.69900000000004,
+        310.85907839999959,
+        11.616391600000014,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "(b)"
+        }
+      ],
+      "text" : "(b)"
+    },
+    {
+      "rect" : [
+        174.64000000000004,
+        272.71825759999956,
+        57.193152000000026,
+        8.1594240000000582
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "for all f routed"
+        }
+      ],
+      "text" : "for all f routed"
+    },
+    {
+      "rect" : [
+        174.64000000000007,
+        262.75525759999954,
+        57.161168000000004,
+        8.1594240000000582
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "through node n"
+        }
+      ],
+      "text" : "through node n"
+    },
+    {
+      "rect" : [
+        174.64000000000007,
+        252.79225759999957,
+        49.333014399999996,
+        8.1594240000000013
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "if n has been"
+        }
+      ],
+      "text" : "if n has been"
+    },
+    {
+      "rect" : [
+        174.64000000000007,
+        242.83025759999958,
+        57.259430400000014,
+        8.0159615999999971
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "schedule-frozen"
+        }
+      ],
+      "text" : "schedule-frozen"
+    },
+    {
+      "rect" : [
+        236.88000000000008,
+        243.77043999999955,
+        8.8557551400000136,
+        39.253063999999995
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 20.92149999999998,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎫"
+        },
+        {
+          "baselineOffset" : 11.955499999999972,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : 8.9664999999999964,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎬"
+        },
+        {
+          "baselineOffset" : -8.9664999999999964,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : -11.955500000000001,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎭"
+        }
+      ],
+      "text" : "⎫⎪⎬⎪⎭"
+    },
+    {
+      "rect" : [
+        255.69900000000007,
+        257.06107839999959,
+        11.058486000000016,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "(c)"
+        }
+      ],
+      "text" : "(c)"
+    },
+    {
+      "rect" : [
+        272.29600000000005,
+        243.77044000000015,
+        8.8557551399999852,
+        128.91806399999942
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 65.754499999999666,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎫"
+        },
+        {
+          "baselineOffset" : 56.787499999999682,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : 53.798499999999706,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : 50.80949999999973,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : 47.82149999999973,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : 44.832499999999754,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : 41.843499999999779,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : 38.854499999999803,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : 35.865499999999827,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : 32.876499999999851,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : 29.888499999999851,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : 26.899499999999875,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : 23.9104999999999,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : 20.921499999999924,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : 17.932499999999948,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : 14.944499999999948,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : 11.955499999999972,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : 8.9664999999999964,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎬"
+        },
+        {
+          "baselineOffset" : -8.9664999999999964,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : -11.955499999999972,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : -14.944499999999948,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : -17.933499999999924,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : -20.921499999999924,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : -23.9104999999999,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : -26.899499999999875,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : -29.888499999999851,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : -32.877499999999827,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : -35.865499999999827,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : -38.854499999999803,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : -41.843499999999779,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : -44.832499999999754,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : -47.82149999999973,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : -50.810499999999735,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : -53.798499999999734,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : -56.787499999999739,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎭"
+        }
+      ],
+      "text" : "⎫⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎬⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎭"
+    },
+    {
+      "rect" : [
+        288.40600000000006,
+        301.89307840000021,
+        11.616391599999986,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "(4)"
+        }
+      ],
+      "text" : "(4)"
+    },
+    {
+      "rect" : [
+        62.395000000000039,
+        257.00130279999956,
+        20.615897560000008,
+        10.67651440000003
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "STA"
+        },
+        {
+          "baselineOffset" : 3.625,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "n"
+        }
+      ],
+      "text" : "STAn"
+    },
+    {
+      "rect" : [
+        78.086000000000041,
+        255.04808279999955,
+        39.321897560000025,
+        12.629734400000046
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -2.8120000000000118,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "f"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "= ETA"
+        },
+        {
+          "baselineOffset" : 3.625,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "n"
+        }
+      ],
+      "text" : "f= ETAn"
+    },
+    {
+      "rect" : [
+        112.48300000000005,
+        255.04808279999955,
+        3.8851039799999967,
+        6.1927343999999778
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "f"
+        }
+      ],
+      "text" : "f"
+    },
+    {
+      "rect" : [
+        48.964000000000055,
+        223.03921820000019,
+        82.11174920000002,
+        8.5877611999999885
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "italic" : true,
+          "text" : "C. Edge constraints"
+        }
+      ],
+      "text" : "C. Edge constraints"
+    },
+    {
+      "rect" : [
+        58.927000000000056,
+        199.69230280000019,
+        241.09286600000004,
+        8.9663400000000024
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "The constraints on the STAs of given flights at a given"
+        }
+      ],
+      "text" : "The constraints on the STAs of given flights at a given"
+    },
+    {
+      "rect" : [
+        48.96400000000007,
+        187.7960784000002,
+        251.0575199999999,
+        8.9065644000000077
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "node considered here are of two types. We list these types,"
+        }
+      ],
+      "text" : "node considered here are of two types. We list these types,"
+    },
+    {
+      "rect" : [
+        48.96400000000007,
+        175.84107840000019,
+        251.05751999999995,
+        8.9065644000000077
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "labeling each by the letter that matches the corresponding part"
+        }
+      ],
+      "text" : "labeling each by the letter that matches the corresponding part"
+    },
+    {
+      "rect" : [
+        48.96400000000007,
+        163.88607840000017,
+        61.200251800000004,
+        8.9065644000000077
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "of formula (5):"
+        }
+      ],
+      "text" : "of formula (5):"
+    },
+    {
+      "rect" : [
+        49.52200000000007,
+        145.13407840000016,
+        250.49961440000001,
+        8.9065644000000077
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "(a) A flight’s travel time between two consecutive nodes–"
+        }
+      ],
+      "text" : "(a) A flight’s travel time between two consecutive nodes–"
+    },
+    {
+      "rect" : [
+        65.562000000000069,
+        133.17907840000015,
+        234.45982839999999,
+        8.9065644000000077
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "which equals the difference between the corresponding"
+        }
+      ],
+      "text" : "which equals the difference between the corresponding"
+    },
+    {
+      "rect" : [
+        65.562000000000069,
+        121.16430280000016,
+        234.46330899999992,
+        8.9663400000000166
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "two STAs–must lie between the corresponding minimal"
+        }
+      ],
+      "text" : "two STAs–must lie between the corresponding minimal"
+    },
+    {
+      "rect" : [
+        65.562000000000069,
+        109.26907840000017,
+        121.23487940000001,
+        8.9065643999999935
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "and maximal travel times (2)."
+        }
+      ],
+      "text" : "and maximal travel times (2)."
+    },
+    {
+      "rect" : [
+        48.96400000000007,
+        97.314078400000156,
+        251.061801,
+        10.619425600000014
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "(b) If one flight passes another on an edge n"
+        },
+        {
+          "baselineOffset" : 3.6149999999999949,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "i"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : ",n"
+        },
+        {
+          "baselineOffset" : 3.6149999999999949,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "i+1 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : ", then"
+        }
+      ],
+      "text" : "(b) If one flight passes another on an edge ni,ni+1 , then"
+    },
+    {
+      "rect" : [
+        65.56200000000004,
+        85.358078400000153,
+        234.46251140000001,
+        10.607738799999993
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "these two flights traverse node n"
+        },
+        {
+          "baselineOffset" : 3.6159999999999997,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "i+1 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "in the order opposite"
+        }
+      ],
+      "text" : "these two flights traverse node ni+1 in the order opposite"
+    },
+    {
+      "rect" : [
+        65.56200000000004,
+        73.403078400000155,
+        234.46002300000001,
+        10.607738800000007
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "to that of traversing node n"
+        },
+        {
+          "baselineOffset" : 3.6159999999999997,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "i"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : ". Therefore, a no-passing"
+        }
+      ],
+      "text" : "to that of traversing node ni. Therefore, a no-passing"
+    },
+    {
+      "rect" : [
+        328.57600000000002,
+        730.93707840000013,
+        234.45982839999988,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "constraint would imply that the two flights must traverse"
+        }
+      ],
+      "text" : "constraint would imply that the two flights must traverse"
+    },
+    {
+      "rect" : [
+        328.57600000000002,
+        718.98207840000009,
+        153.22389999999996,
+        10.496158000000037
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "each of the nodes in the same order."
+        },
+        {
+          "baselineOffset" : 3.6159999999999854,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "2"
+        }
+      ],
+      "text" : "each of the nodes in the same order.2"
+    },
+    {
+      "rect" : [
+        330.32100000000003,
+        708.01707840000006,
+        90.918687599999998,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "Bounds on travel time"
+        }
+      ],
+      "text" : "Bounds on travel time"
+    },
+    {
+      "rect" : [
+        330.32100000000003,
+        692.97307840000008,
+        40.372809960000041,
+        13.609425600000009
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "along n"
+        },
+        {
+          "baselineOffset" : 3.6159999999999854,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "i"
+        }
+      ],
+      "text" : "along ni"
+    },
+    {
+      "rect" : [
+        367.87500000000006,
+        690.95108280000011,
+        28.478601700000013,
+        13.275734400000033
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -4.9519999999999982,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "f "
+        },
+        {
+          "baselineOffset" : -2.1309999999999718,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : ",n"
+        },
+        {
+          "baselineOffset" : 2.1310000000000855,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "i+1"
+        }
+      ],
+      "text" : "f ,ni+1"
+    },
+    {
+      "rect" : [
+        383.44700000000006,
+        690.76708280000014,
+        22.123602799999958,
+        15.815421199999946
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -1.5025000000000546,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "f "
+        },
+        {
+          "baselineOffset" : 1.5024999999999409,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : ":"
+        }
+      ],
+      "text" : "f :"
+    },
+    {
+      "rect" : [
+        337.51700000000005,
+        668.7880828000001,
+        7.5820216799999685,
+        7.8169393999999102
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -3.0069999999999482,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "n"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 4.9813000000000001,
+          "text" : "i"
+        }
+      ],
+      "text" : "ni"
+    },
+    {
+      "rect" : [
+        351.86000000000007,
+        672.40662779999991,
+        11.168052920000093,
+        4.4233944000000065
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 4.9813000000000001,
+          "text" : "i+1"
+        }
+      ],
+      "text" : "i+1"
+    },
+    {
+      "rect" : [
+        397.92300000000006,
+        672.40662779999991,
+        11.168052920000093,
+        4.4233944000000065
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 4.9813000000000001,
+          "text" : "i+1"
+        }
+      ],
+      "text" : "i+1"
+    },
+    {
+      "rect" : [
+        342.44100000000003,
+        667.18262779999998,
+        9.4188975600000049,
+        7.7981893999999556
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -0.9959999999999809,
+          "fontName" : "Helvetica",
+          "fontSize" : 4.9813000000000001,
+          "text" : "f "
+        },
+        {
+          "baselineOffset" : 0.9959999999999809,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "n"
+        }
+      ],
+      "text" : "f n"
+    },
+    {
+      "rect" : [
+        392.99800000000005,
+        668.78808279999998,
+        4.9248975599999767,
+        6.1927343999999493
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "n"
+        }
+      ],
+      "text" : "n"
+    },
+    {
+      "rect" : [
+        437.95500000000004,
+        668.3690828,
+        7.5830216800000017,
+        7.8159393999999338
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -3.0059999999999718,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "n"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 4.9813000000000001,
+          "text" : "i"
+        }
+      ],
+      "text" : "ni"
+    },
+    {
+      "rect" : [
+        330.32100000000003,
+        661.39625560000002,
+        7.1949897200000237,
+        8.846788800000013
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "tt"
+        }
+      ],
+      "text" : "tt"
+    },
+    {
+      "rect" : [
+        351.86000000000007,
+        666.7626277999999,
+        3.4072092000000112,
+        4.4233944000000065
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 4.9813000000000001,
+          "text" : "f"
+        }
+      ],
+      "text" : "f"
+    },
+    {
+      "rect" : [
+        337.51700000000005,
+        658.97108279999998,
+        55.481095000000096,
+        11.829867199999967
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -3.0049999999999955,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "f "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "≤STA"
+        }
+      ],
+      "text" : "f ≤STA"
+    },
+    {
+      "rect" : [
+        397.92300000000006,
+        666.7626277999999,
+        3.4072092000000112,
+        4.4233944000000065
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 4.9813000000000001,
+          "text" : "f"
+        }
+      ],
+      "text" : "f"
+    },
+    {
+      "rect" : [
+        392.99800000000005,
+        658.97108279999998,
+        44.957094999999981,
+        11.829867199999967
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -3.0049999999999955,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "f"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "−STA"
+        }
+      ],
+      "text" : "f−STA"
+    },
+    {
+      "rect" : [
+        442.88000000000005,
+        666.7626277999999,
+        3.4072092000000112,
+        4.4233944000000065
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 4.9813000000000001,
+          "text" : "f"
+        }
+      ],
+      "text" : "f"
+    },
+    {
+      "rect" : [
+        437.95500000000004,
+        658.97108279999998,
+        45.194021680000048,
+        17.633939399999917
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -3.0049999999999955,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "f "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "≤TT"
+        },
+        {
+          "baselineOffset" : 6.8120000000000118,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "n"
+        },
+        {
+          "baselineOffset" : 9.81899999999996,
+          "fontName" : "Helvetica",
+          "fontSize" : 4.9813000000000001,
+          "text" : "i"
+        }
+      ],
+      "text" : "f ≤TTni"
+    },
+    {
+      "rect" : [
+        489.90900000000011,
+        672.4066277999998,
+        11.168052920000036,
+        4.4233944000000065
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 4.9813000000000001,
+          "text" : "i+1"
+        }
+      ],
+      "text" : "i+1"
+    },
+    {
+      "rect" : [
+        480.4910000000001,
+        667.18262779999986,
+        9.4178975599999717,
+        7.7981893999999556
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -0.9959999999999809,
+          "fontName" : "Helvetica",
+          "fontSize" : 4.9813000000000001,
+          "text" : "f "
+        },
+        {
+          "baselineOffset" : 0.9959999999999809,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "n"
+        }
+      ],
+      "text" : "f n"
+    },
+    {
+      "rect" : [
+        489.90900000000011,
+        666.76262779999979,
+        3.4072092000000112,
+        4.4233944000000065
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 4.9813000000000001,
+          "text" : "f"
+        }
+      ],
+      "text" : "f"
+    },
+    {
+      "rect" : [
+        474.18200000000013,
+        658.97108279999986,
+        3.8851039799999967,
+        6.1927343999999493
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "f"
+        }
+      ],
+      "text" : "f"
+    },
+    {
+      "rect" : [
+        507.05500000000012,
+        661.85343999999952,
+        8.8557551399999852,
+        57.186064000000329
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 29.888500000000136,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎫"
+        },
+        {
+          "baselineOffset" : 20.921500000000151,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : 17.933500000000095,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : 14.944500000000062,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : 11.955500000000029,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : 8.9664999999999964,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎬"
+        },
+        {
+          "baselineOffset" : -8.9664999999999964,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : -11.955500000000029,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : -14.943500000000085,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : -17.932500000000118,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : -20.921500000000151,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎭"
+        }
+      ],
+      "text" : "⎫⎪⎪⎪⎪⎬⎪⎪⎪⎪⎭"
+    },
+    {
+      "rect" : [
+        517.57100000000014,
+        684.11007839999957,
+        11.058486000000016,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "(a)"
+        }
+      ],
+      "text" : "(a)"
+    },
+    {
+      "rect" : [
+        330.32100000000014,
+        624.33407839999961,
+        107.49660279999995,
+        10.62042560000009
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "No passing on n"
+        },
+        {
+          "baselineOffset" : 3.6150000000000091,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "i"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : ",n"
+        },
+        {
+          "baselineOffset" : 3.6150000000000091,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "i+1 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : ":"
+        }
+      ],
+      "text" : "No passing on ni,ni+1 :"
+    },
+    {
+      "rect" : [
+        330.32100000000014,
+        580.65743999999961,
+        36.973021679999988,
+        30.287063999999987
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 10.377999999999929,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎛"
+        },
+        {
+          "baselineOffset" : -7.1570000000000391,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎜"
+        },
+        {
+          "baselineOffset" : -13.533000000000015,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎝"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "STA"
+        },
+        {
+          "baselineOffset" : 3.625,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "n"
+        },
+        {
+          "baselineOffset" : 6.6319999999999482,
+          "fontName" : "Helvetica",
+          "fontSize" : 4.9813000000000001,
+          "text" : "i"
+        }
+      ],
+      "text" : "⎛⎜⎝STAni"
+    },
+    {
+      "rect" : [
+        359.71100000000013,
+        595.39362779999965,
+        45.136021679999999,
+        14.863394399999947
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -2.8120000000000118,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "f"
+        },
+        {
+          "baselineOffset" : -3.8079999999999927,
+          "fontName" : "Helvetica",
+          "fontSize" : 4.9813000000000001,
+          "text" : "2 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "≥STA"
+        },
+        {
+          "baselineOffset" : 3.625,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "n"
+        },
+        {
+          "baselineOffset" : 6.6319999999999482,
+          "fontName" : "Helvetica",
+          "fontSize" : 4.9813000000000001,
+          "text" : "i"
+        }
+      ],
+      "text" : "f2 ≥STAni"
+    },
+    {
+      "rect" : [
+        397.26400000000012,
+        595.39362779999965,
+        7.2752727799999093,
+        6.8021893999999747
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0.9959999999999809,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "f"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 4.9813000000000001,
+          "text" : "1"
+        }
+      ],
+      "text" : "f1"
+    },
+    {
+      "rect" : [
+        347.50700000000012,
+        585.48007839999968,
+        29.339856999999995,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "implies"
+        }
+      ],
+      "text" : "implies"
+    },
+    {
+      "rect" : [
+        344.0200000000001,
+        571.88130279999973,
+        31.784052920000022,
+        12.299719399999958
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -5.1280000000000427,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "STA"
+        },
+        {
+          "baselineOffset" : -1.5030000000000427,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "n"
+        },
+        {
+          "baselineOffset" : 1.5029999999999291,
+          "fontName" : "Helvetica",
+          "fontSize" : 4.9813000000000001,
+          "text" : "i+1"
+        }
+      ],
+      "text" : "STAni+1"
+    },
+    {
+      "rect" : [
+        359.71100000000007,
+        569.31862779999972,
+        62.156052920000036,
+        14.862394399999971
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -2.8120000000000118,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "f"
+        },
+        {
+          "baselineOffset" : -3.8079999999999927,
+          "fontName" : "Helvetica",
+          "fontSize" : 4.9813000000000001,
+          "text" : "2 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "≥STA"
+        },
+        {
+          "baselineOffset" : 3.625,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "n"
+        },
+        {
+          "baselineOffset" : 6.6309999999999718,
+          "fontName" : "Helvetica",
+          "fontSize" : 4.9813000000000001,
+          "text" : "i+1"
+        }
+      ],
+      "text" : "f2 ≥STAni+1"
+    },
+    {
+      "rect" : [
+        405.77400000000006,
+        569.31862779999972,
+        7.2752727799999661,
+        6.8021893999999747
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0.9959999999999809,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "f"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 4.9813000000000001,
+          "text" : "1"
+        }
+      ],
+      "text" : "f1"
+    },
+    {
+      "rect" : [
+        427.84500000000003,
+        580.65743999999972,
+        8.7172749999999724,
+        30.287063999999987
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 20.722999999999956,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎞"
+        },
+        {
+          "baselineOffset" : 3.1879999999999882,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎟"
+        },
+        {
+          "baselineOffset" : -3.1879999999999882,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎠"
+        }
+      ],
+      "text" : "⎞⎟⎠"
+    },
+    {
+      "rect" : [
+        443.20400000000001,
+        595.73325759999977,
+        67.911071039999968,
+        9.8941967999999179
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "if edge n"
+        },
+        {
+          "baselineOffset" : 3.8089999999999691,
+          "fontName" : "Helvetica",
+          "fontSize" : 5.9776000000000007,
+          "text" : "i"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : ", n"
+        },
+        {
+          "baselineOffset" : 3.8089999999999691,
+          "fontName" : "Helvetica",
+          "fontSize" : 5.9776000000000007,
+          "text" : "i+1"
+        }
+      ],
+      "text" : "if edge ni, ni+1"
+    },
+    {
+      "rect" : [
+        443.20399999999995,
+        585.62025759999972,
+        58.72095360000003,
+        8.0159615999999687
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "is shared by the"
+        }
+      ],
+      "text" : "is shared by the"
+    },
+    {
+      "rect" : [
+        443.20399999999995,
+        575.43934559999968,
+        56.503911360000018,
+        8.3783359999999902
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "routes of f"
+        },
+        {
+          "baselineOffset" : -0.9959999999999809,
+          "fontName" : "Helvetica",
+          "fontSize" : 5.9776000000000007,
+          "text" : "1"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : ", f"
+        },
+        {
+          "baselineOffset" : -0.9959999999999809,
+          "fontName" : "Helvetica",
+          "fontSize" : 5.9776000000000007,
+          "text" : "2"
+        }
+      ],
+      "text" : "routes of f1, f2"
+    },
+    {
+      "rect" : [
+        521.077,
+        560.1844399999992,
+        8.855755140000042,
+        75.119064000000549
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 38.855500000000234,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎫"
+        },
+        {
+          "baselineOffset" : 29.888500000000249,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : 26.899500000000216,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : 23.910500000000184,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : 20.922500000000127,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : 17.933500000000095,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : 14.944500000000062,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : 11.955500000000029,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : 8.9664999999999964,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎬"
+        },
+        {
+          "baselineOffset" : -8.9664999999999964,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : -11.954500000000053,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : -14.943500000000085,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : -17.932500000000118,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : -20.921500000000151,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : -23.910500000000184,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : -26.899500000000216,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : -29.887500000000273,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎭"
+        }
+      ],
+      "text" : "⎫⎪⎪⎪⎪⎪⎪⎪⎬⎪⎪⎪⎪⎪⎪⎪⎭"
+    },
+    {
+      "rect" : [
+        531.59299999999996,
+        591.40707839999925,
+        11.616391600000043,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "(b)"
+        }
+      ],
+      "text" : "(b)"
+    },
+    {
+      "rect" : [
+        548.19099999999992,
+        548.1990783999978,
+        14.845391600000085,
+        170.79042560000153
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 92.653000000000816,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎫"
+        },
+        {
+          "baselineOffset" : 83.687000000000808,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : 80.698000000000775,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : 77.709000000000742,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : 74.720000000000709,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : 71.732000000000653,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : 68.74300000000062,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : 65.754000000000588,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : 62.765000000000555,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : 59.776000000000522,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : 56.788000000000466,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : 53.799000000000433,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : 50.8100000000004,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : 47.821000000000367,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : 44.832000000000335,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : 41.843000000000302,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : 38.855000000000246,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : 35.866000000000213,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : 32.87700000000018,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : 29.888000000000147,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : 26.899000000000115,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : 23.910000000000082,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : 20.922000000000025,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎬"
+        },
+        {
+          "baselineOffset" : 2.9890000000000327,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : -2.9890000000000327,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : -5.9780000000000655,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : -8.9670000000000982,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : -11.955000000000155,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : -14.944000000000187,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : -17.93300000000022,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : -20.922000000000253,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : -23.911000000000286,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : -26.900000000000318,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : -29.888000000000375,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : -32.877000000000407,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : -35.86600000000044,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : -38.855000000000473,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : -41.844000000000506,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : -44.833000000000538,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : -47.821000000000595,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : -50.810000000000628,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : -53.79900000000066,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : -56.788000000000693,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎪"
+        },
+        {
+          "baselineOffset" : -59.777000000000726,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "⎭"
+        },
+        {
+          "baselineOffset" : -75.587000000000671,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "(5)"
+        }
+      ],
+      "text" : "⎫⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎬⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎭(5)"
+    },
+    {
+      "rect" : [
+        328.82099999999991,
+        527.96307839999781,
+        217.38243660000012,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "IV. T"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701000000000004,
+          "text" : "HE INTERDEPENDENCE OF THE CONSTRAINTS"
+        }
+      ],
+      "text" : "IV. THE INTERDEPENDENCE OF THE CONSTRAINTS"
+    },
+    {
+      "rect" : [
+        321.93999999999988,
+        511.77107839999786,
+        241.09491999999995,
+        8.9065644000000361
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "The given flights are scheduled one at a time. In the"
+        }
+      ],
+      "text" : "The given flights are scheduled one at a time. In the"
+    },
+    {
+      "rect" : [
+        311.97799999999989,
+        499.81607839999788,
+        251.05751999999978,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "computation of a schedule, the first step (assumed to have"
+        }
+      ],
+      "text" : "computation of a schedule, the first step (assumed to have"
+    },
+    {
+      "rect" : [
+        311.97799999999989,
+        487.86107839999789,
+        251.05752000000001,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "been carried out before the execution of the algorithm in"
+        }
+      ],
+      "text" : "been carried out before the execution of the algorithm in"
+    },
+    {
+      "rect" : [
+        311.97799999999989,
+        475.90607839999791,
+        251.05752000000001,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "section V) is to impose the order in which the flights are to be"
+        }
+      ],
+      "text" : "section V) is to impose the order in which the flights are to be"
+    },
+    {
+      "rect" : [
+        311.97799999999989,
+        463.8913027999979,
+        251.06018659999989,
+        8.9663400000000024
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "scheduled. The STAs computed for the flights scheduled so far"
+        }
+      ],
+      "text" : "scheduled. The STAs computed for the flights scheduled so far"
+    },
+    {
+      "rect" : [
+        311.97799999999984,
+        451.99607839999794,
+        251.05751999999995,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "will constrain the scheduling options for the next flight to be"
+        }
+      ],
+      "text" : "will constrain the scheduling options for the next flight to be"
+    },
+    {
+      "rect" : [
+        311.97799999999984,
+        440.04007839999792,
+        251.05751999999984,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "scheduled through constraints (4.b), (5.b). This section is an"
+        }
+      ],
+      "text" : "scheduled through constraints (4.b), (5.b). This section is an"
+    },
+    {
+      "rect" : [
+        311.97799999999984,
+        428.08507839999794,
+        251.05751999999995,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "explanation of how constraints arise at a node and propagate"
+        }
+      ],
+      "text" : "explanation of how constraints arise at a node and propagate"
+    },
+    {
+      "rect" : [
+        311.97799999999984,
+        416.13007839999796,
+        60.931261600000028,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "to other nodes."
+        }
+      ],
+      "text" : "to other nodes."
+    },
+    {
+      "rect" : [
+        321.93999999999983,
+        403.99207839999798,
+        241.09491999999989,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "Each node used by one or more of the flights is assigned"
+        }
+      ],
+      "text" : "Each node used by one or more of the flights is assigned"
+    },
+    {
+      "rect" : [
+        311.97799999999984,
+        392.03707839999799,
+        251.05751999999995,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "its own “copy” of the time axis. Following the presentation"
+        }
+      ],
+      "text" : "its own “copy” of the time axis. Following the presentation"
+    },
+    {
+      "rect" : [
+        311.97799999999984,
+        380.08207839999801,
+        251.05752000000007,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "in Ref. [4], this will be illustrated here (figures 1 and 2,"
+        }
+      ],
+      "text" : "in Ref. [4], this will be illustrated here (figures 1 and 2,"
+    },
+    {
+      "rect" : [
+        311.97799999999984,
+        368.12607839999799,
+        251.05751999999995,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "below) as a plot where the horizontal axis has only discrete"
+        }
+      ],
+      "text" : "below) as a plot where the horizontal axis has only discrete"
+    },
+    {
+      "rect" : [
+        311.97799999999984,
+        356.17107839999801,
+        251.05751999999995,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "points, corresponding to the nodes of the given flight, and"
+        }
+      ],
+      "text" : "points, corresponding to the nodes of the given flight, and"
+    },
+    {
+      "rect" : [
+        311.97799999999984,
+        344.21607839999803,
+        251.05751999999984,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "each node’s copy of the time axis is drawn as a vertical axis,"
+        }
+      ],
+      "text" : "each node’s copy of the time axis is drawn as a vertical axis,"
+    },
+    {
+      "rect" : [
+        311.97799999999984,
+        332.26107839999804,
+        251.05751999999995,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "with upward being the direction of increasing time. The time"
+        }
+      ],
+      "text" : "with upward being the direction of increasing time. The time"
+    },
+    {
+      "rect" : [
+        311.97799999999984,
+        320.30607839999806,
+        251.06078620000005,
+        9.0659660000000031
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "variable is denoted by t, and its specific values sometimes by"
+        }
+      ],
+      "text" : "variable is denoted by t, and its specific values sometimes by"
+    },
+    {
+      "rect" : [
+        311.97799999999989,
+        308.35007839999804,
+        251.05431359999994,
+        9.0659660000000031
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "T with suitable superscripts. These copies are aligned so that"
+        }
+      ],
+      "text" : "T with suitable superscripts. These copies are aligned so that"
+    },
+    {
+      "rect" : [
+        311.97799999999989,
+        296.39507839999806,
+        251.0575199999999,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "a horizontal line crossing two or more copies crosses them at"
+        }
+      ],
+      "text" : "a horizontal line crossing two or more copies crosses them at"
+    },
+    {
+      "rect" : [
+        311.97799999999989,
+        284.44007839999807,
+        89.882577200000014,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "the same time instant."
+        }
+      ],
+      "text" : "the same time instant."
+    },
+    {
+      "rect" : [
+        321.93999999999988,
+        272.30207839999809,
+        241.09168819999996,
+        9.0659660000000031
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "For example, suppose the route of flight f includes three"
+        }
+      ],
+      "text" : "For example, suppose the route of flight f includes three"
+    },
+    {
+      "rect" : [
+        311.97799999999984,
+        260.34707839999811,
+        73.364586400000007,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "consecutive nodes"
+        }
+      ],
+      "text" : "consecutive nodes"
+    },
+    {
+      "rect" : [
+        403.51999999999987,
+        241.88625559999809,
+        67.974610280000036,
+        9.404694400000011
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "k−1, k, k+ 1,"
+        }
+      ],
+      "text" : "k−1, k, k+ 1,"
+    },
+    {
+      "rect" : [
+        311.97799999999995,
+        222.98707839999807,
+        251.05751999999995,
+        8.9065644000000077
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "and suppose these three nodes are to be used by a previously"
+        }
+      ],
+      "text" : "and suppose these three nodes are to be used by a previously"
+    },
+    {
+      "rect" : [
+        311.97799999999995,
+        211.03207839999806,
+        251.05744900000002,
+        9.0659660000000315
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "scheduled flight m, and the two nodes k, k + 1 are to be"
+        }
+      ],
+      "text" : "scheduled flight m, and the two nodes k, k + 1 are to be"
+    },
+    {
+      "rect" : [
+        311.97799999999995,
+        199.07707839999804,
+        251.06336699999997,
+        9.0659660000000315
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "used by a previously scheduled flight n. Furthermore, suppose"
+        }
+      ],
+      "text" : "used by a previously scheduled flight n. Furthermore, suppose"
+    },
+    {
+      "rect" : [
+        311.97799999999989,
+        187.12107839999805,
+        251.06176180000006,
+        9.6238716000000295
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "node k−1 is the first node on the route of flight f. This"
+        }
+      ],
+      "text" : "node k−1 is the first node on the route of flight f. This"
+    },
+    {
+      "rect" : [
+        311.97799999999995,
+        175.16607839999804,
+        251.05751999999995,
+        8.9065644000000077
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "situation is illustrated notionally in figure 1(A). In general,"
+        }
+      ],
+      "text" : "situation is illustrated notionally in figure 1(A). In general,"
+    },
+    {
+      "rect" : [
+        311.97799999999995,
+        163.21107839999803,
+        251.05751999999995,
+        8.9065644000000077
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "there can be other previously scheduled flights, using any or"
+        }
+      ],
+      "text" : "there can be other previously scheduled flights, using any or"
+    },
+    {
+      "rect" : [
+        311.97799999999995,
+        151.25607839999802,
+        251.05751999999995,
+        8.9065644000000077
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "all of the three nodes. Following Ref. [4], the color red is"
+        }
+      ],
+      "text" : "all of the three nodes. Following Ref. [4], the color red is"
+    },
+    {
+      "rect" : [
+        311.97799999999995,
+        139.301078399998,
+        251.05793600000004,
+        9.0659660000000315
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "used to depict the time windows unavailable to f because of"
+        }
+      ],
+      "text" : "used to depict the time windows unavailable to f because of"
+    },
+    {
+      "rect" : [
+        319.94799999999992,
+        118.66545839999802,
+        243.09211629999999,
+        8.5873544000000095
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 2.8130000000000024,
+          "fontName" : "Helvetica",
+          "fontSize" : 5.9776000000000007,
+          "text" : "2"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701000000000004,
+          "text" : "This restriction on the order of the node traversal does not guarantee the"
+        }
+      ],
+      "text" : "2This restriction on the order of the node traversal does not guarantee the"
+    },
+    {
+      "rect" : [
+        311.97799999999995,
+        109.69945839999802,
+        251.05814999999984,
+        7.1252693999999934
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701000000000004,
+          "text" : "absence of passing. For example, if multiple passings along the edge are"
+        }
+      ],
+      "text" : "absence of passing. For example, if multiple passings along the edge are"
+    },
+    {
+      "rect" : [
+        311.97799999999995,
+        100.73245839999802,
+        251.05814999999984,
+        7.1252694000000076
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701000000000004,
+          "text" : "possible, then an even number of passings would end up meeting constraint"
+        }
+      ],
+      "text" : "possible, then an even number of passings would end up meeting constraint"
+    },
+    {
+      "rect" : [
+        311.97799999999995,
+        91.766458399998029,
+        251.05814999999996,
+        7.1252693999999934
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701000000000004,
+          "text" : "(5.b). But this is the strongest constraint we can impose toward preventing"
+        }
+      ],
+      "text" : "(5.b). But this is the strongest constraint we can impose toward preventing"
+    },
+    {
+      "rect" : [
+        311.97799999999995,
+        82.799458399998031,
+        251.05814999999996,
+        7.1252694000000076
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701000000000004,
+          "text" : "passing without involving the positions of the flights between the nodes and"
+        }
+      ],
+      "text" : "passing without involving the positions of the flights between the nodes and"
+    },
+    {
+      "rect" : [
+        311.97799999999995,
+        73.833458399998037,
+        80.450189399999999,
+        7.1252693999999934
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701000000000004,
+          "text" : "the speeds of the flights."
+        }
+      ],
+      "text" : "the speeds of the flights."
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    612,
+    792
+  ],
+  "caseID" : "ntrs-20190030725-dasc-2019",
+  "graphics" : [
+
+  ],
+  "lines" : [
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.963999999999999,
+        730.93807839999999,
+        251.05751999999995,
+        8.9065643999999793
+      ],
+      "text" : "that an airspace may be too narrow to allow safe passing."
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.963999999999999,
+        718.98207839999998,
+        251.05466619999999,
+        8.9065643999999793
+      ],
+      "text" : "Such an edge will be called a no-passing edge. Also, in"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.96399999999997,
+        707.02707839999994,
+        251.05751999999993,
+        8.9065643999999793
+      ],
+      "text" : "real operations, flights are not allowed to pass each other on"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.96399999999997,
+        695.0720783999999,
+        209.77250560000002,
+        8.9065643999999793
+      ],
+      "text" : "Standard Arrival Routes and Departure Procedures."
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        58.926999999999971,
+        680.78130279999993,
+        241.09721359999998,
+        8.9663399999999456
+      ],
+      "text" : "The STAs are subject to constraints that can be separated"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.963999999999977,
+        668.88607839999986,
+        251.05751999999998,
+        8.9065643999999793
+      ],
+      "text" : "into two categories, node constraints and edge constraints. We"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.963999999999977,
+        656.93107839999982,
+        251.05751999999998,
+        8.9065643999999793
+      ],
+      "text" : "now list the constraints in each category. Every occurrence"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.963999999999977,
+        644.97607839999978,
+        251.06244719999998,
+        9.0659660000000031
+      ],
+      "text" : "of the letter c with superscripts and subscripts is a constant"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.963999999999977,
+        633.02107839999974,
+        219.89450719999994,
+        8.9065643999999793
+      ],
+      "text" : "parameter, specified as part of the problem statement."
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.963999999999977,
+        595.2272181999997,
+        82.21137520000002,
+        8.5877612000000454
+      ],
+      "text" : "B. Node constraints"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        58.926999999999978,
+        571.88030279999975,
+        241.09286600000007,
+        8.9663399999999456
+      ],
+      "text" : "The constraints on the STAs of given flights at a given"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.963999999999984,
+        559.98507839999968,
+        251.05751999999995,
+        8.9065643999999793
+      ],
+      "text" : "node considered here are of three types. We list these types,"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.963999999999984,
+        548.03007839999964,
+        251.05751999999995,
+        8.9065643999999793
+      ],
+      "text" : "labeling each by the letter that matches the corresponding part"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.963999999999984,
+        536.07407839999962,
+        61.200251800000004,
+        8.9065643999999793
+      ],
+      "text" : "of formula (4):"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        49.521999999999984,
+        517.32307839999964,
+        184.87557910000004,
+        10.606738800000016
+      ],
+      "text" : "(a) The flight cannot leave its first node, n1"
+    },
+    {
+      "fontSize" : 6.9738000000000007,
+      "monospaced" : false,
+      "rect" : [
+        230.42600000000002,
+        515.3000827999997,
+        69.59313419999998,
+        10.929559999999924
+      ],
+      "text" : "f , earlier than at"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        65.562000000000012,
+        505.30730279999966,
+        94.325649999999996,
+        8.9663400000000593
+      ],
+      "text" : "the corresponding ETA."
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.964000000000013,
+        493.35230279999968,
+        11.6163916,
+        8.9663400000000024
+      ],
+      "text" : "(b)"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        65.561691600000017,
+        493.35230279999968,
+        234.46075979999989,
+        8.9663400000000024
+      ],
+      "text" : "Two flights traversing a given node must traverse it at STAs"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        65.561999999999983,
+        481.45707839999972,
+        234.45982839999991,
+        8.9065643999999793
+      ],
+      "text" : "that are no closer together than a required minimal time"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        65.561999999999983,
+        469.50207839999973,
+        234.45982839999996,
+        8.9065643999999793
+      ],
+      "text" : "duration. In other words, the difference between the two"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        65.561999999999983,
+        457.48730279999972,
+        234.45965060000006,
+        9.6836471999999958
+      ],
+      "text" : "STAs must be ≥the pre-specified minimal time separation."
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        49.521999999999991,
+        445.59207839999976,
+        250.49961439999998,
+        8.9065643999999793
+      ],
+      "text" : "(c) For some nodes along the routes of some flights, the flight"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        65.561999999999983,
+        433.63607839999975,
+        234.45982839999991,
+        8.9065643999999793
+      ],
+      "text" : "(a schedule-frozen flight) must traverse the node at exactly"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        65.561999999999983,
+        421.62130279999974,
+        234.46386019999997,
+        8.9663400000000024
+      ],
+      "text" : "the ETA, which effectively requires the STA to equal the"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        65.561999999999983,
+        409.66630279999976,
+        18.181649999999991,
+        8.9663400000000024
+      ],
+      "text" : "ETA."
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        58.926999999999985,
+        390.97407839999977,
+        241.09491999999997,
+        8.9065643999999793
+      ],
+      "text" : "The formulas for these constraints are given in the corre-"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.963999999999984,
+        379.01907839999978,
+        88.766766000000032,
+        8.9065643999999793
+      ],
+      "text" : "sponding parts of (4)."
+    },
+    {
+      "fontSize" : 6.9738000000000007,
+      "monospaced" : false,
+      "rect" : [
+        78.085999999999984,
+        362.88308279999978,
+        8.3152727799999866,
+        7.816939399999967
+      ],
+      "text" : "n1"
+    },
+    {
+      "fontSize" : 6.9738000000000007,
+      "monospaced" : false,
+      "rect" : [
+        116.97699999999999,
+        362.88308279999973,
+        8.3152727800000008,
+        7.816939399999967
+      ],
+      "text" : "n1"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        62.394999999999982,
+        355.63130279999979,
+        15.691095000000004,
+        8.298845799999981
+      ],
+      "text" : "STA"
+    },
+    {
+      "fontSize" : 4.9813000000000001,
+      "monospaced" : false,
+      "rect" : [
+        83.010999999999981,
+        361.27762779999972,
+        3.4072091999999969,
+        4.4233944000000065
+      ],
+      "text" : "f"
+    },
+    {
+      "fontSize" : 6.9738000000000007,
+      "monospaced" : false,
+      "rect" : [
+        78.085999999999984,
+        353.48508279999976,
+        38.891095000000007,
+        11.829867199999967
+      ],
+      "text" : "f ≥ETA"
+    },
+    {
+      "fontSize" : 4.9813000000000001,
+      "monospaced" : false,
+      "rect" : [
+        121.90199999999999,
+        361.27762779999966,
+        3.4072091999999969,
+        4.4233944000000065
+      ],
+      "text" : "f"
+    },
+    {
+      "fontSize" : 6.9738000000000007,
+      "monospaced" : false,
+      "rect" : [
+        116.97699999999999,
+        353.4850827999997,
+        3.8851039799999967,
+        6.1927344000000062
+      ],
+      "text" : "f"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        174.63999999999999,
+        361.74525759999966,
+        58.227801600000021,
+        8.0159616000000256
+      ],
+      "text" : "at the first node"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        174.63999999999999,
+        351.29251839999972,
+        9.2119113599999878,
+        9.6969359999999938
+      ],
+      "text" : "n1"
+    },
+    {
+      "fontSize" : 5.9776000000000007,
+      "monospaced" : false,
+      "rect" : [
+        180.19899999999998,
+        350.0153455999997,
+        86.558485999999988,
+        22.274158400000033
+      ],
+      "text" : "f of flight f (a)"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        62.394999999999982,
+        310.79930279999974,
+        20.615897560000008,
+        10.677514400000007
+      ],
+      "text" : "STAn"
+    },
+    {
+      "fontSize" : 6.9738000000000007,
+      "monospaced" : false,
+      "rect" : [
+        78.085999999999984,
+        308.23662779999967,
+        7.2752727799999946,
+        6.8031894000000648
+      ],
+      "text" : "f2"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        88.570999999999984,
+        310.79930279999968,
+        30.578897560000016,
+        10.677514400000007
+      ],
+      "text" : "−STAn"
+    },
+    {
+      "fontSize" : 6.9738000000000007,
+      "monospaced" : false,
+      "rect" : [
+        114.22499999999999,
+        308.23662779999961,
+        30.790897560000047,
+        13.230189400000029
+      ],
+      "text" : "f1 ≥cn"
+    },
+    {
+      "fontSize" : 6.9738000000000007,
+      "monospaced" : false,
+      "rect" : [
+        140.09100000000001,
+        308.22662779999956,
+        17.414272780000005,
+        6.8031894000000648
+      ],
+      "text" : "f1,f2"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        174.64000000000001,
+        326.29734559999957,
+        55.024911360000004,
+        8.3783360000000471
+      ],
+      "text" : "if flights f1, f2"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        174.64000000000004,
+        316.55425759999957,
+        28.110167999999987,
+        8.1594240000000582
+      ],
+      "text" : "reach n"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        174.64000000000004,
+        306.59125759999955,
+        50.606361600000014,
+        8.0159616000000256
+      ],
+      "text" : "consecutively,"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        174.64000000000004,
+        296.62825759999953,
+        45.621043200000003,
+        8.0159616000000256
+      ],
+      "text" : "in that order"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        235.14500000000004,
+        297.56943999999959,
+        8.8557551400000136,
+        39.253063999999938
+      ],
+      "text" : "⎫ ⎪⎬ ⎪⎭"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        255.69900000000004,
+        310.85907839999959,
+        11.616391600000014,
+        8.9065643999999793
+      ],
+      "text" : "(b)"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        174.64000000000004,
+        272.71825759999956,
+        57.193152000000026,
+        8.1594240000000582
+      ],
+      "text" : "for all f routed"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        174.64000000000007,
+        262.75525759999954,
+        57.161168000000004,
+        8.1594240000000582
+      ],
+      "text" : "through node n"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        174.64000000000007,
+        252.79225759999957,
+        49.333014399999996,
+        8.1594240000000013
+      ],
+      "text" : "if n has been"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        174.64000000000007,
+        242.83025759999958,
+        57.259430400000014,
+        8.0159615999999971
+      ],
+      "text" : "schedule-frozen"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        236.88000000000008,
+        243.77043999999955,
+        8.8557551400000136,
+        39.253063999999995
+      ],
+      "text" : "⎫ ⎪⎬ ⎪⎭"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        255.69900000000007,
+        257.06107839999959,
+        11.058486000000016,
+        8.9065643999999793
+      ],
+      "text" : "(c)"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        272.29600000000005,
+        243.77044000000015,
+        8.8557551399999852,
+        128.91806399999942
+      ],
+      "text" : "⎫ ⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎬ ⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎭"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        288.40600000000006,
+        301.89307840000021,
+        11.616391599999986,
+        8.9065643999999793
+      ],
+      "text" : "(4)"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        62.395000000000039,
+        257.00130279999956,
+        20.615897560000008,
+        10.67651440000003
+      ],
+      "text" : "STAn"
+    },
+    {
+      "fontSize" : 6.9738000000000007,
+      "monospaced" : false,
+      "rect" : [
+        78.086000000000041,
+        255.04808279999955,
+        39.321897560000025,
+        12.629734400000046
+      ],
+      "text" : "f= ETAn"
+    },
+    {
+      "fontSize" : 6.9738000000000007,
+      "monospaced" : false,
+      "rect" : [
+        112.48300000000005,
+        255.04808279999955,
+        3.8851039799999967,
+        6.1927343999999778
+      ],
+      "text" : "f"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.964000000000055,
+        223.03921820000019,
+        82.11174920000002,
+        8.5877611999999885
+      ],
+      "text" : "C. Edge constraints"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        58.927000000000056,
+        199.69230280000019,
+        241.09286600000004,
+        8.9663400000000024
+      ],
+      "text" : "The constraints on the STAs of given flights at a given"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.96400000000007,
+        187.7960784000002,
+        251.0575199999999,
+        8.9065644000000077
+      ],
+      "text" : "node considered here are of two types. We list these types,"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.96400000000007,
+        175.84107840000019,
+        251.05751999999995,
+        8.9065644000000077
+      ],
+      "text" : "labeling each by the letter that matches the corresponding part"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.96400000000007,
+        163.88607840000017,
+        61.200251800000004,
+        8.9065644000000077
+      ],
+      "text" : "of formula (5):"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        49.52200000000007,
+        145.13407840000016,
+        250.49961440000001,
+        8.9065644000000077
+      ],
+      "text" : "(a) A flight’s travel time between two consecutive nodes–"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        65.562000000000069,
+        133.17907840000015,
+        234.45982839999999,
+        8.9065644000000077
+      ],
+      "text" : "which equals the difference between the corresponding"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        65.562000000000069,
+        121.16430280000016,
+        234.46330899999992,
+        8.9663400000000166
+      ],
+      "text" : "two STAs–must lie between the corresponding minimal"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        65.562000000000069,
+        109.26907840000017,
+        121.23487940000001,
+        8.9065643999999935
+      ],
+      "text" : "and maximal travel times (2)."
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.96400000000007,
+        97.314078400000156,
+        251.061801,
+        10.619425600000014
+      ],
+      "text" : "(b) If one flight passes another on an edge ni,ni+1 , then"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        65.56200000000004,
+        85.358078400000153,
+        234.46251140000001,
+        10.607738799999993
+      ],
+      "text" : "these two flights traverse node ni+1 in the order opposite"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        65.56200000000004,
+        73.403078400000155,
+        234.46002300000001,
+        10.607738800000007
+      ],
+      "text" : "to that of traversing node ni. Therefore, a no-passing"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        328.57600000000002,
+        730.93707840000013,
+        234.45982839999988,
+        8.9065643999999793
+      ],
+      "text" : "constraint would imply that the two flights must traverse"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        328.57600000000002,
+        718.98207840000009,
+        153.22389999999996,
+        10.496158000000037
+      ],
+      "text" : "each of the nodes in the same order.2"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        330.32100000000003,
+        708.01707840000006,
+        90.918687599999998,
+        8.9065643999999793
+      ],
+      "text" : "Bounds on travel time"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        330.32100000000003,
+        692.97307840000008,
+        40.372809960000041,
+        13.609425600000009
+      ],
+      "text" : "along ni"
+    },
+    {
+      "fontSize" : 6.9738000000000007,
+      "monospaced" : false,
+      "rect" : [
+        367.87500000000006,
+        690.95108280000011,
+        28.478601700000013,
+        13.275734400000033
+      ],
+      "text" : "f ,ni+1"
+    },
+    {
+      "fontSize" : 6.9738000000000007,
+      "monospaced" : false,
+      "rect" : [
+        383.44700000000006,
+        690.76708280000014,
+        22.123602799999958,
+        15.815421199999946
+      ],
+      "text" : "f :"
+    },
+    {
+      "fontSize" : 6.9738000000000007,
+      "monospaced" : false,
+      "rect" : [
+        337.51700000000005,
+        668.7880828000001,
+        7.5820216799999685,
+        7.8169393999999102
+      ],
+      "text" : "ni"
+    },
+    {
+      "fontSize" : 4.9813000000000001,
+      "monospaced" : false,
+      "rect" : [
+        351.86000000000007,
+        672.40662779999991,
+        11.168052920000093,
+        4.4233944000000065
+      ],
+      "text" : "i+1"
+    },
+    {
+      "fontSize" : 4.9813000000000001,
+      "monospaced" : false,
+      "rect" : [
+        397.92300000000006,
+        672.40662779999991,
+        11.168052920000093,
+        4.4233944000000065
+      ],
+      "text" : "i+1"
+    },
+    {
+      "fontSize" : 4.9813000000000001,
+      "monospaced" : false,
+      "rect" : [
+        342.44100000000003,
+        667.18262779999998,
+        9.4188975600000049,
+        7.7981893999999556
+      ],
+      "text" : "f n"
+    },
+    {
+      "fontSize" : 6.9738000000000007,
+      "monospaced" : false,
+      "rect" : [
+        392.99800000000005,
+        668.78808279999998,
+        4.9248975599999767,
+        6.1927343999999493
+      ],
+      "text" : "n"
+    },
+    {
+      "fontSize" : 6.9738000000000007,
+      "monospaced" : false,
+      "rect" : [
+        437.95500000000004,
+        668.3690828,
+        7.5830216800000017,
+        7.8159393999999338
+      ],
+      "text" : "ni"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        330.32100000000003,
+        661.39625560000002,
+        7.1949897200000237,
+        8.846788800000013
+      ],
+      "text" : "tt"
+    },
+    {
+      "fontSize" : 4.9813000000000001,
+      "monospaced" : false,
+      "rect" : [
+        351.86000000000007,
+        666.7626277999999,
+        3.4072092000000112,
+        4.4233944000000065
+      ],
+      "text" : "f"
+    },
+    {
+      "fontSize" : 6.9738000000000007,
+      "monospaced" : false,
+      "rect" : [
+        337.51700000000005,
+        658.97108279999998,
+        55.481095000000096,
+        11.829867199999967
+      ],
+      "text" : "f ≤STA"
+    },
+    {
+      "fontSize" : 4.9813000000000001,
+      "monospaced" : false,
+      "rect" : [
+        397.92300000000006,
+        666.7626277999999,
+        3.4072092000000112,
+        4.4233944000000065
+      ],
+      "text" : "f"
+    },
+    {
+      "fontSize" : 6.9738000000000007,
+      "monospaced" : false,
+      "rect" : [
+        392.99800000000005,
+        658.97108279999998,
+        44.957094999999981,
+        11.829867199999967
+      ],
+      "text" : "f−STA"
+    },
+    {
+      "fontSize" : 4.9813000000000001,
+      "monospaced" : false,
+      "rect" : [
+        442.88000000000005,
+        666.7626277999999,
+        3.4072092000000112,
+        4.4233944000000065
+      ],
+      "text" : "f"
+    },
+    {
+      "fontSize" : 6.9738000000000007,
+      "monospaced" : false,
+      "rect" : [
+        437.95500000000004,
+        658.97108279999998,
+        45.194021680000048,
+        17.633939399999917
+      ],
+      "text" : "f ≤TTni"
+    },
+    {
+      "fontSize" : 4.9813000000000001,
+      "monospaced" : false,
+      "rect" : [
+        489.90900000000011,
+        672.4066277999998,
+        11.168052920000036,
+        4.4233944000000065
+      ],
+      "text" : "i+1"
+    },
+    {
+      "fontSize" : 4.9813000000000001,
+      "monospaced" : false,
+      "rect" : [
+        480.4910000000001,
+        667.18262779999986,
+        9.4178975599999717,
+        7.7981893999999556
+      ],
+      "text" : "f n"
+    },
+    {
+      "fontSize" : 4.9813000000000001,
+      "monospaced" : false,
+      "rect" : [
+        489.90900000000011,
+        666.76262779999979,
+        3.4072092000000112,
+        4.4233944000000065
+      ],
+      "text" : "f"
+    },
+    {
+      "fontSize" : 6.9738000000000007,
+      "monospaced" : false,
+      "rect" : [
+        474.18200000000013,
+        658.97108279999986,
+        3.8851039799999967,
+        6.1927343999999493
+      ],
+      "text" : "f"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        507.05500000000012,
+        661.85343999999952,
+        8.8557551399999852,
+        57.186064000000329
+      ],
+      "text" : "⎫ ⎪⎪⎪⎪⎬ ⎪⎪⎪⎪⎭"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        517.57100000000014,
+        684.11007839999957,
+        11.058486000000016,
+        8.9065643999999793
+      ],
+      "text" : "(a)"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        330.32100000000014,
+        624.33407839999961,
+        107.49660279999995,
+        10.62042560000009
+      ],
+      "text" : "No passing on ni,ni+1 :"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        330.32100000000014,
+        580.65743999999961,
+        36.973021679999988,
+        30.287063999999987
+      ],
+      "text" : "⎛ ⎜⎝ STAni"
+    },
+    {
+      "fontSize" : 6.9738000000000007,
+      "monospaced" : false,
+      "rect" : [
+        359.71100000000013,
+        595.39362779999965,
+        45.136021679999999,
+        14.863394399999947
+      ],
+      "text" : "f2 ≥STAni"
+    },
+    {
+      "fontSize" : 6.9738000000000007,
+      "monospaced" : false,
+      "rect" : [
+        397.26400000000012,
+        595.39362779999965,
+        7.2752727799999093,
+        6.8021893999999747
+      ],
+      "text" : "f1"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        347.50700000000012,
+        585.48007839999968,
+        29.339856999999995,
+        8.9065643999999793
+      ],
+      "text" : "implies"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        344.0200000000001,
+        571.88130279999973,
+        31.784052920000022,
+        12.299719399999958
+      ],
+      "text" : "STAni+1"
+    },
+    {
+      "fontSize" : 6.9738000000000007,
+      "monospaced" : false,
+      "rect" : [
+        359.71100000000007,
+        569.31862779999972,
+        62.156052920000036,
+        14.862394399999971
+      ],
+      "text" : "f2 ≥STAni+1"
+    },
+    {
+      "fontSize" : 6.9738000000000007,
+      "monospaced" : false,
+      "rect" : [
+        405.77400000000006,
+        569.31862779999972,
+        7.2752727799999661,
+        6.8021893999999747
+      ],
+      "text" : "f1"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        427.84500000000003,
+        580.65743999999972,
+        8.7172749999999724,
+        30.287063999999987
+      ],
+      "text" : "⎞ ⎟⎠"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        443.20400000000001,
+        595.73325759999977,
+        67.911071039999968,
+        9.8941967999999179
+      ],
+      "text" : "if edge ni, ni+1"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        443.20399999999995,
+        585.62025759999972,
+        58.72095360000003,
+        8.0159615999999687
+      ],
+      "text" : "is shared by the"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        443.20399999999995,
+        575.43934559999968,
+        56.503911360000018,
+        8.3783359999999902
+      ],
+      "text" : "routes of f1, f2"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        521.077,
+        560.1844399999992,
+        8.855755140000042,
+        75.119064000000549
+      ],
+      "text" : "⎫ ⎪⎪⎪⎪⎪⎪⎪⎬ ⎪⎪⎪⎪⎪⎪⎪⎭"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        531.59299999999996,
+        591.40707839999925,
+        11.616391600000043,
+        8.9065643999999793
+      ],
+      "text" : "(b)"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        548.19099999999992,
+        548.1990783999978,
+        14.845391600000085,
+        170.79042560000153
+      ],
+      "text" : "⎫ ⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎬ ⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎭ (5)"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        328.82099999999991,
+        527.96307839999781,
+        217.38243660000012,
+        8.9065643999999793
+      ],
+      "text" : "IV. THE INTERDEPENDENCE OF THE CONSTRAINTS"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        321.93999999999988,
+        511.77107839999786,
+        241.09491999999995,
+        8.9065644000000361
+      ],
+      "text" : "The given flights are scheduled one at a time. In the"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97799999999989,
+        499.81607839999788,
+        251.05751999999978,
+        8.9065643999999793
+      ],
+      "text" : "computation of a schedule, the first step (assumed to have"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97799999999989,
+        487.86107839999789,
+        251.05752000000001,
+        8.9065643999999793
+      ],
+      "text" : "been carried out before the execution of the algorithm in"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97799999999989,
+        475.90607839999791,
+        251.05752000000001,
+        8.9065643999999793
+      ],
+      "text" : "section V) is to impose the order in which the flights are to be"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97799999999989,
+        463.8913027999979,
+        251.06018659999989,
+        8.9663400000000024
+      ],
+      "text" : "scheduled. The STAs computed for the flights scheduled so far"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97799999999984,
+        451.99607839999794,
+        251.05751999999995,
+        8.9065643999999793
+      ],
+      "text" : "will constrain the scheduling options for the next flight to be"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97799999999984,
+        440.04007839999792,
+        251.05751999999984,
+        8.9065643999999793
+      ],
+      "text" : "scheduled through constraints (4.b), (5.b). This section is an"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97799999999984,
+        428.08507839999794,
+        251.05751999999995,
+        8.9065643999999793
+      ],
+      "text" : "explanation of how constraints arise at a node and propagate"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97799999999984,
+        416.13007839999796,
+        60.931261600000028,
+        8.9065643999999793
+      ],
+      "text" : "to other nodes."
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        321.93999999999983,
+        403.99207839999798,
+        241.09491999999989,
+        8.9065643999999793
+      ],
+      "text" : "Each node used by one or more of the flights is assigned"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97799999999984,
+        392.03707839999799,
+        251.05751999999995,
+        8.9065643999999793
+      ],
+      "text" : "its own “copy” of the time axis. Following the presentation"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97799999999984,
+        380.08207839999801,
+        251.05752000000007,
+        8.9065643999999793
+      ],
+      "text" : "in Ref. [4], this will be illustrated here (figures 1 and 2,"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97799999999984,
+        368.12607839999799,
+        251.05751999999995,
+        8.9065643999999793
+      ],
+      "text" : "below) as a plot where the horizontal axis has only discrete"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97799999999984,
+        356.17107839999801,
+        251.05751999999995,
+        8.9065643999999793
+      ],
+      "text" : "points, corresponding to the nodes of the given flight, and"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97799999999984,
+        344.21607839999803,
+        251.05751999999984,
+        8.9065643999999793
+      ],
+      "text" : "each node’s copy of the time axis is drawn as a vertical axis,"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97799999999984,
+        332.26107839999804,
+        251.05751999999995,
+        8.9065643999999793
+      ],
+      "text" : "with upward being the direction of increasing time. The time"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97799999999984,
+        320.30607839999806,
+        251.06078620000005,
+        9.0659660000000031
+      ],
+      "text" : "variable is denoted by t, and its specific values sometimes by"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97799999999989,
+        308.35007839999804,
+        251.05431359999994,
+        9.0659660000000031
+      ],
+      "text" : "T with suitable superscripts. These copies are aligned so that"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97799999999989,
+        296.39507839999806,
+        251.0575199999999,
+        8.9065643999999793
+      ],
+      "text" : "a horizontal line crossing two or more copies crosses them at"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97799999999989,
+        284.44007839999807,
+        89.882577200000014,
+        8.9065643999999793
+      ],
+      "text" : "the same time instant."
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        321.93999999999988,
+        272.30207839999809,
+        241.09168819999996,
+        9.0659660000000031
+      ],
+      "text" : "For example, suppose the route of flight f includes three"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97799999999984,
+        260.34707839999811,
+        73.364586400000007,
+        8.9065643999999793
+      ],
+      "text" : "consecutive nodes"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        403.51999999999987,
+        241.88625559999809,
+        67.974610280000036,
+        9.404694400000011
+      ],
+      "text" : "k−1, k, k+ 1,"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97799999999995,
+        222.98707839999807,
+        251.05751999999995,
+        8.9065644000000077
+      ],
+      "text" : "and suppose these three nodes are to be used by a previously"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97799999999995,
+        211.03207839999806,
+        251.05744900000002,
+        9.0659660000000315
+      ],
+      "text" : "scheduled flight m, and the two nodes k, k + 1 are to be"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97799999999995,
+        199.07707839999804,
+        251.06336699999997,
+        9.0659660000000315
+      ],
+      "text" : "used by a previously scheduled flight n. Furthermore, suppose"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97799999999989,
+        187.12107839999805,
+        251.06176180000006,
+        9.6238716000000295
+      ],
+      "text" : "node k−1 is the first node on the route of flight f. This"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97799999999995,
+        175.16607839999804,
+        251.05751999999995,
+        8.9065644000000077
+      ],
+      "text" : "situation is illustrated notionally in figure 1(A). In general,"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97799999999995,
+        163.21107839999803,
+        251.05751999999995,
+        8.9065644000000077
+      ],
+      "text" : "there can be other previously scheduled flights, using any or"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97799999999995,
+        151.25607839999802,
+        251.05751999999995,
+        8.9065644000000077
+      ],
+      "text" : "all of the three nodes. Following Ref. [4], the color red is"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97799999999995,
+        139.301078399998,
+        251.05793600000004,
+        9.0659660000000315
+      ],
+      "text" : "used to depict the time windows unavailable to f because of"
+    },
+    {
+      "fontSize" : 5.9776000000000007,
+      "monospaced" : false,
+      "rect" : [
+        319.94799999999992,
+        118.66545839999802,
+        243.09211629999999,
+        8.5873544000000095
+      ],
+      "text" : "2This restriction on the order of the node traversal does not guarantee the"
+    },
+    {
+      "fontSize" : 7.9701000000000004,
+      "monospaced" : false,
+      "rect" : [
+        311.97799999999995,
+        109.69945839999802,
+        251.05814999999984,
+        7.1252693999999934
+      ],
+      "text" : "absence of passing. For example, if multiple passings along the edge are"
+    },
+    {
+      "fontSize" : 7.9701000000000004,
+      "monospaced" : false,
+      "rect" : [
+        311.97799999999995,
+        100.73245839999802,
+        251.05814999999984,
+        7.1252694000000076
+      ],
+      "text" : "possible, then an even number of passings would end up meeting constraint"
+    },
+    {
+      "fontSize" : 7.9701000000000004,
+      "monospaced" : false,
+      "rect" : [
+        311.97799999999995,
+        91.766458399998029,
+        251.05814999999996,
+        7.1252693999999934
+      ],
+      "text" : "(5.b). But this is the strongest constraint we can impose toward preventing"
+    },
+    {
+      "fontSize" : 7.9701000000000004,
+      "monospaced" : false,
+      "rect" : [
+        311.97799999999995,
+        82.799458399998031,
+        251.05814999999996,
+        7.1252694000000076
+      ],
+      "text" : "passing without involving the positions of the flights between the nodes and"
+    },
+    {
+      "fontSize" : 7.9701000000000004,
+      "monospaced" : false,
+      "rect" : [
+        311.97799999999995,
+        73.833458399998037,
+        80.450189399999999,
+        7.1252693999999934
+      ],
+      "text" : "the speeds of the flights."
+    }
+  ],
+  "page" : 3,
+  "paints" : [
+
+  ],
+  "rightsBasis" : "The paper's byline places both authors, A. Sadovsky and R. Windhorst, in the Aviation Systems Division, NASA Ames Research Center, with nasa.gov addresses, and the NTRS record lists both at NASA Ames Research Center (center ARC): a work of the United States Government under 17 U.S.C. 105. The PDF carries no copyright notice or government-work statement. The NTRS API copyright record (checked 2026-09-17) gives determinationType GOV_PUBLIC_USE_PERMITTED, containsThirdPartyMaterial false, belongsToPublisher false and belongsToAuthors false; distribution PUBLIC, no export control. No figure or table carries a credit, and none is third-party: Figures 1-2 are the authors' time-window plots, the Table I and II route networks are generated with networkx (Ref. [3]) from the paper's own sample problems, and Table III is the authors' outline. No NASA insignia or photographs appear. Owner approved on 2026-09-17. Not relicensed under MIT.",
+  "sourceSHA256" : "7c2137098ffb75153e0049b970272db97bc91e13168028dc7b53fbe2deb92caa",
+  "sourceTitle" : "A Scheduling Algorithm Compatible with a Distributed Management of Arrivals in the National Airspace System",
+  "sourceURL" : "https://ntrs.nasa.gov/api/citations/20190030725/downloads/20190030725.pdf"
+}

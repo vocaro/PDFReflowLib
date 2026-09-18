@@ -11,12 +11,12 @@
     {
       "page": 2,
       "target": "Problem input and output: definitions (1)-(3), section III start and footnote 1",
-      "acceptance": "Correct now: prose paragraphs whole and in column order; display (3), the S(f) table, is one crop; the footnote text is present. Wrong now: II. and III. are paragraphs and the italic subsection titles are <pre>, B. Output data and A. ETAs swallowing their first line (#162); definitions (1) and (2) and the inline n_f^i, ETA and tt/TT symbols shatter into one-token paragraphs (#163); Gthat, Gwill lose spaces; section III's last paragraph does not join page 3 across footnote 1 (#162)."
+      "acceptance": "Correct now: prose paragraphs whole and in column order; displays (1) and (2) and (3), the S(f) table, are each one crop; the inline n_f^i, ETA and n^{i+1}_f symbols keep their sentences, sup and sub on their base (#163); the footnote text is present. Wrong now: II. and III. are paragraphs and the italic subsection titles are <pre>, B. Output data and A. ETAs swallowing their first line (#162); Gthat, Gwill lose spaces; section III's last paragraph does not join page 3 across footnote 1 (#162)."
     },
     {
       "page": 3,
       "target": "Node and edge constraints with displays (4) and (5), section IV start, footnote 2",
-      "acceptance": "Correct now: the constraint descriptions (a)-(c), section IV's paragraphs and the footnote text are whole and in order; crops exist for the formulas of (4) and (5). Wrong now: the condition text, case labels and equation numbers of (4) and (5) are loose paragraphs around the crops, with 121 private-use CMEX brace pieces (#163); B./C. subsection titles <pre> and IV. runs into its paragraph (#162); ≥the loses a space."
+      "acceptance": "Correct now: the constraint descriptions (a)-(c), section IV's paragraphs and the footnote text are whole and in order; displays (4) and (5) are each one crop holding their braces, conditions, case labels and equation numbers, and no brace piece is text (#163). Wrong now: B./C. subsection titles <pre> and IV. runs into its paragraph (#162); ≥the loses a space."
     },
     {
       "page": 4,
@@ -26,12 +26,12 @@
     {
       "page": 5,
       "target": "Controllability and reachability bullets, section V, invariants (6), Steps 1-6 with displays (7)-(10)",
-      "acceptance": "Correct now: section V's prose, the interval-notation paragraph and invariant (6) are whole; Steps 1-6 in order; displays (7) and (9) are crops. Wrong now: bullets are <pre> holding only their first line; V. is <pre>; Steps split after their first line; Controllability: and Reachability: run-in paragraphs merge with the one above; a lone . paragraph follows T^k twice (#162); display (8) and inline STA/A-window symbols shatter into one-token paragraphs (#163)."
+      "acceptance": "Correct now: section V's prose, the interval-notation paragraph and invariant (6) are whole; Steps 1-6 in order; displays (7)-(10) are crops, and Step 2's STA^{n^i_h}_h and the A-window symbols keep their sentences (#163). Wrong now: bullets are <pre> holding only their first line; V. is <pre>; Steps split after their first line; Controllability: and Reachability: run-in paragraphs merge with the one above (#162); a nested index reads as one script level, STA<sup>nih</sup><sub>h</sub> (#163)."
     },
     {
       "page": 6,
       "target": "Steps 7-10, section VI bullets with the separation matrix and the ETA formula",
-      "acceptance": "Correct now: Steps 7-10 and section VI openings in order; the dash sub-bullets are separate, whole paragraphs, as is the distinctions paragraph; the separation matrix and ETA formula are crops. Wrong now: the separation-matrix crop swallows the prose lines leading one: and – Constraints of the types (4.c) and (5.a) are not (#163); displays (10) and (11) and Step 9 symbols shatter (#163); VI. is a paragraph and the top-level bullets are <pre> (#162)."
+      "acceptance": "Correct now: Steps 7-10 and section VI openings in order; the dash sub-bullets are separate, whole paragraphs, as is the distinctions paragraph; the separation matrix and ETA formula are crops, the matrix crop leaving leading one: and – Constraints of the types (4.c) and (5.a) are not as text; display (11) is a crop and Steps 7-10 keep their symbols (#163). Wrong now: VI. is a paragraph and the top-level bullets are <pre> (#162)."
     },
     {
       "page": 7,
@@ -46,7 +46,7 @@
     {
       "page": 9,
       "target": "Summary, appendices A and B, the quadratic program and matrices, cvxopt code",
-      "acceptance": "Correct now: the summary, appendix and cvxopt prose paragraphs whole; the left column's openings in order; display crops present. Wrong now: the right column's quadratic objective comes before APPENDIX A (#153); VIII., APPENDIX A/B and their titles are split paragraphs (#162); the objective and the P, q, G, h matrices are partly crops and partly text, with eighteen . paragraphs and 25 private-use pieces (#163); the two-line code listing is a paragraph and a crop."
+      "acceptance": "Correct now: the summary, appendix and cvxopt prose paragraphs whole; the left column's openings in order; display crops present; display (12), the objective and the P, q, G, h matrices are whole crops with no dot or bracket piece as text (#163). Wrong now: the right column's quadratic objective comes before APPENDIX A (#153); VIII., APPENDIX A/B and their titles are split paragraphs (#162); −→x min, stands beside its crop, which takes the form, and the (a_k, ā_k) line is cropped as text for its overbars (#163); the two-line code listing is a paragraph and a crop."
     },
     {
       "page": 10,

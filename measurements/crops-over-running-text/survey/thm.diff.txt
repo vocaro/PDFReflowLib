@@ -1,0 +1,97 @@
+changed pages: 5 [1, 2, 3, 4, 5]  words taken on them 311 -> 150
+--- base 1
+1	pageSized=false apart=true	crops=3	taken=68/403	tints=0
+  [36.0 669.3 576.0 756.0] 13w "Advanced Exploration Systems Division" "Tank Health Monitoring" "Com
+  [408.2 86.5 576.0 658.3] 55w "Accurate measurement of" "cryogenic liquid propellant" "quantity in 
+  [40.6 60.0 127.9 78.8] 0w 
++++ cand 1
+1	pageSized=false apart=true	crops=3	taken=6/403	tints=3
+  [40.6 60.0 127.9 78.8] 0w 
+  [487.3 682.6 564.9 746.9] 0w 
+  [408.2 510.0 576.0 658.3] 6w "Accurate measurement of" "cryogenic liquid propellant"
+--- base 2
+2	pageSized=false apart=true	crops=15	taken=71/278	tints=0
+  [75.2 637.8 82.2 644.8] 0w 
+  [75.2 613.8 82.2 620.8] 0w 
+  [127.7 565.8 134.7 572.8] 0w 
+  [75.2 529.8 82.2 536.8] 0w 
+  [75.2 517.8 82.2 524.8] 0w 
+  [75.2 493.8 82.2 500.8] 0w 
+  [127.7 469.8 134.7 476.8] 0w 
+  [75.2 407.5 82.2 414.5] 0w 
+  [75.2 371.5 82.2 378.5] 0w 
+  [127.7 359.5 134.7 366.5] 0w 
+  [127.7 347.5 134.7 354.5] 0w 
+  [75.2 323.5 82.2 330.5] 0w 
+  [36.0 669.3 576.0 756.0] 13w "Advanced Exploration Systems Division" "Tank Health Monitoring" "Com
+  [40.6 60.0 127.9 78.8] 0w 
+  [408.2 86.5 576.0 658.3] 58w "Organizational" "Responsibility" "Responsible Mission" "Directorate:
++++ cand 2
+2	pageSized=false apart=true	crops=15	taken=58/278	tints=1
+  [75.2 637.8 82.2 644.8] 0w 
+  [75.2 613.8 82.2 620.8] 0w 
+  [127.7 565.8 134.7 572.8] 0w 
+  [75.2 529.8 82.2 536.8] 0w 
+  [75.2 517.8 82.2 524.8] 0w 
+  [75.2 493.8 82.2 500.8] 0w 
+  [127.7 469.8 134.7 476.8] 0w 
+  [75.2 407.5 82.2 414.5] 0w 
+  [75.2 371.5 82.2 378.5] 0w 
+  [127.7 359.5 134.7 366.5] 0w 
+  [127.7 347.5 134.7 354.5] 0w 
+  [75.2 323.5 82.2 330.5] 0w 
+  [40.6 60.0 127.9 78.8] 0w 
+  [408.2 86.5 576.0 658.3] 58w "Organizational" "Responsibility" "Responsible Mission" "Directorate:
+  [487.3 682.6 564.9 746.9] 0w 
+--- base 3
+3	pageSized=false apart=true	crops=10	taken=37/192	tints=0
+  [75.2 637.8 82.2 644.8] 0w 
+  [75.2 613.8 82.2 620.8] 0w 
+  [75.2 577.8 82.2 584.8] 0w 
+  [75.2 553.8 82.2 560.8] 0w 
+  [75.2 529.8 82.2 536.8] 0w 
+  [75.2 481.8 82.2 488.8] 0w 
+  [408.2 86.5 576.0 658.3] 24w "Technology Areas" "Primary:" "TX12 Materials, Structures," "Mechanic
+  [36.0 669.3 576.0 756.0] 13w "Advanced Exploration Systems Division" "Tank Health Monitoring" "Com
+  [57.7 224.9 372.3 416.4] 0w 
+  [40.6 60.0 127.9 78.8] 0w 
++++ cand 3
+3	pageSized=false apart=true	crops=10	taken=24/192	tints=1
+  [75.2 637.8 82.2 644.8] 0w 
+  [75.2 613.8 82.2 620.8] 0w 
+  [75.2 577.8 82.2 584.8] 0w 
+  [75.2 553.8 82.2 560.8] 0w 
+  [75.2 529.8 82.2 536.8] 0w 
+  [75.2 481.8 82.2 488.8] 0w 
+  [408.2 86.5 576.0 658.3] 24w "Technology Areas" "Primary:" "TX12 Materials, Structures," "Mechanic
+  [57.7 224.9 372.3 416.4] 0w 
+  [40.6 60.0 127.9 78.8] 0w 
+  [487.3 682.6 564.9 746.9] 0w 
+--- base 4
+4	pageSized=false apart=true	crops=6	taken=75/125	tints=0
+  [36.0 432.3 576.0 483.5] 13w "Co-Funding Partners" "Type Location" "Human Exploration and Operatio
+  [36.0 494.5 576.0 656.3] 42w "Organizations Performing Work" "Role" "Type" "Location" "Carthage Co
+  [36.0 345.3 576.0 421.3] 7w "Primary U.S. Work Locations" "Alabama California" "Texas"
+  [36.0 187.4 189.1 248.4] 0w 
+  [36.0 669.3 576.0 756.0] 13w "Advanced Exploration Systems Division" "Tank Health Monitoring" "Com
+  [40.6 60.0 127.9 78.8] 0w 
++++ cand 4
+4	pageSized=false apart=true	crops=6	taken=62/125	tints=1
+  [36.0 432.3 576.0 483.5] 13w "Co-Funding Partners" "Type Location" "Human Exploration and Operatio
+  [36.0 494.5 576.0 656.3] 42w "Organizations Performing Work" "Role" "Type" "Location" "Carthage Co
+  [36.0 345.3 576.0 421.3] 7w "Primary U.S. Work Locations" "Alabama California" "Texas"
+  [36.0 187.4 189.1 248.4] 0w 
+  [40.6 60.0 127.9 78.8] 0w 
+  [487.3 682.6 564.9 746.9] 0w 
+--- base 5
+5	pageSized=false apart=true	crops=3	taken=60/79	tints=0
+  [34.0 486.0 504.1 656.3] 47w "Tank Health Monitoring - In-" "Space Propellant Gauging" "Accurate m
+  [36.0 669.3 576.0 756.0] 13w "Advanced Exploration Systems Division" "Tank Health Monitoring" "Com
+  [40.6 60.0 127.9 78.8] 0w 
++++ cand 5
+5	pageSized=false apart=true	crops=5	taken=0/79	tints=1
+  [36.0 584.1 189.1 656.3] 0w 
+  [191.9 556.4 346.6 656.3] 0w 
+  [349.4 605.9 504.1 656.3] 0w 
+  [40.6 60.0 127.9 78.8] 0w 
+  [487.3 682.6 564.9 746.9] 0w 

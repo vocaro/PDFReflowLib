@@ -73,7 +73,12 @@ private func inspectShading(_ data: Data) throws -> GraphicsReader.Result {
 
 @Test func shadingRejectsMissingResourcesAndUnboundedRegions() throws {
     #expect(try inspectShading(shadingPDF("/Missing sh")).unsupported)
-    #expect(try inspectShading(shadingPDF("/S sh")).unsupported)
+    // A gradient under the whole page is its background, not a reason to keep the page as an
+    // image: it is recorded like any other paint, and the page-sized-graphic signal takes it
+    // from there (#158, the magazine's boxed-title articles).
+    let background = try inspectShading(shadingPDF("/S sh"))
+    #expect(!background.unsupported)
+    #expect(background.regions == [CGRect(x: 0, y: 0, width: 612, height: 792)])
     #expect(try inspectShading(shadingPDF("50 400 100 50 re W n /S sh", shading: "<< /ShadingType 99 >>")).unsupported)
     #expect(try inspectShading(shadingPDF("/S sh", shading: "<< /ShadingType 2 /BBox [0 0 100] >>")).unsupported)
     let empty = try inspectShading(shadingPDF("0 0 0 0 re W n /S sh"))

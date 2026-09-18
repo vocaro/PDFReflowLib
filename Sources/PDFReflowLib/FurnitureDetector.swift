@@ -245,7 +245,9 @@ enum FurnitureDetector {
         guard low < high else { return false }
         let thickest: CGFloat = min(line.rect.height, page.bounds.height * 0.02)
         let narrowest: CGFloat = page.bounds.width * 0.6
-        return page.graphics.contains { rule in
+        // A page that keeps a source-page reference instead of its crops holds its boundary rules
+        // as separators rather than graphics (#164), and either is the page's own drawn rule.
+        return (page.graphics + page.separators).contains { rule in
             guard rule.isFinite, rule.height <= thickest, rule.width >= narrowest else { return false }
             return rule.minY >= low && rule.maxY <= high
         }

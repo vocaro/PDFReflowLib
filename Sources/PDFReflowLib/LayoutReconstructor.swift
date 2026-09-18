@@ -443,7 +443,11 @@ enum LayoutReconstructor {
     /// so a thin rule touches the rectangles of the lines above and below without crossing
     /// their glyphs; it captures only text it actually strikes through.
     private static func captures(_ seed: CGRect, _ line: TextLine) -> Bool {
-        guard seed.intersects(line.rect) else { return false }
+        // A corner that grazes a line by a fraction of a point holds none of its glyphs: the
+        // magazine's index rules end a tenth of a point inside the first entry of a column, and
+        // its holly ornament a half point inside the title beside it (#158).
+        let overlap = seed.intersection(line.rect)
+        guard !overlap.isNull, overlap.width >= 1, overlap.height >= 1 else { return false }
         guard isThinRule(seed) else { return true }
         let core = line.rect.insetBy(dx: 0, dy: line.rect.height * 0.25)
         return seed.midY >= core.minY && seed.midY <= core.maxY
@@ -836,8 +840,20 @@ enum LayoutReconstructor {
         }
     }
 
-    /// `clusters` for regions: merged bounds carry the union of their seeds.
-    private static func merged(_ regions: [Region]) -> [Region] {
+    /// A rule drawn across the page's whole measure is a boundary, not art: *Agricultural
+    /// Research* rules its running foot off under every column, and furniture detection reads
+    /// that rule to admit the foot (`FurnitureDetector.ruledOff`, #159). A page that keeps a
+    /// source-page reference instead of its crops (#164) drops its graphics, so such a rule is
+    /// kept as a separator rather than lost with them.
+    static func isPageWideRule(_ rect: CGRect, bounds: CGRect) -> Bool {
+        isThinRule(rect) && bounds.width > 0 && rect.width >= bounds.width * 0.6
+    }
+
+    /// `clusters` for regions: merged bounds carry the union of their seeds. Two regions that do
+    /// not overlap stay apart when the box around them would take a line of the page's block text
+    /// that neither of them takes (#158): the magazine's signature box and the rule under its
+    /// columns come within a point and a half of each other across the foot of three columns.
+    private static func merged(_ regions: [Region], text: [TextLine]) -> [Region] {
         var result: [Region] = []
         for region in regions {
             var merged = region
@@ -846,8 +862,14 @@ enum LayoutReconstructor {
                 previousCount = result.count
                 result.removeAll { existing in
                     if existing.bounds.insetBy(dx: -3, dy: -3).intersects(merged.bounds) {
+                        let union = merged.bounds.union(existing.bounds)
+                        if !existing.bounds.intersects(merged.bounds),
+                           text.contains(where: { line in
+                               line.rect.intersects(union) && !line.rect.intersects(merged.bounds)
+                                   && !line.rect.intersects(existing.bounds)
+                           }) { return false }
                         merged.seed = merged.seed.union(existing.seed)
-                        merged.bounds = merged.bounds.union(existing.bounds)
+                        merged.bounds = union
                         return true
                     }
                     return false
@@ -927,14 +949,16 @@ enum LayoutReconstructor {
     /// A crop never keeps half a row: a piece its edge left just outside joins it (`adjoinsRow`).
     /// A drawing takes its own vertex and side labels with it (`isDiagramLabel`, #179).
     /// Returns nil for a thin rule that lies inside text it does not strike through.
-    private static func expanded(_ region: Region, page: PageContent, body: CGFloat) -> CGRect? {
+    private static func expanded(_ region: Region, page: PageContent, body: CGFloat,
+                                 text: [TextLine] = []) -> CGRect? {
         var admitted: [CGRect] = []
         while true {
             var bounds = admitted.reduce(region.seed) { $0.union($1.insetBy(dx: -2, dy: -2)) }
                 .intersection(page.bounds)
             var changed = false
             for line in page.lines where !admitted.contains(line.rect) && bounds.intersects(line.rect) {
-                guard captures(region.seed, line) || admitted.contains(where: { sameRow($0, line.rect) }) else { continue }
+                guard captures(region.seed, line)
+                    || admitted.contains(where: { sameRow($0, line.rect) }) else { continue }
                 admitted.append(line.rect)
                 changed = true
             }
@@ -968,6 +992,12 @@ enum LayoutReconstructor {
                     bounds = cut
                 } else if admitted.isEmpty && isThinRule(region.seed) {
                     return nil
+                } else if text.contains(where: { $0.rect == rect }),
+                          let cut = textCut(bounds, beyond: rect, admitted: admitted, core: region.core) {
+                    // A line of the page's running text is not this figure's label: rather than
+                    // swallow the column it opens, the crop gives up the part of its art on that
+                    // line's side, as long as it keeps most of it (#158).
+                    bounds = cut
                 } else {
                     admitted.append(rect)
                     changed = true
@@ -977,6 +1007,26 @@ enum LayoutReconstructor {
             if changed { continue }
             return bounds
         }
+    }
+
+    /// The largest part of `bounds` beyond `rect` that still holds every admitted line and all of
+    /// `core` but its outermost point, or nil when no side does. A crop whose art ends a fraction
+    /// of a point inside a column's first line (the magazine's index rules) gives up that point
+    /// rather than the column; a crop that would have to cut into its figure keeps the line.
+    private static func textCut(_ bounds: CGRect, beyond rect: CGRect, admitted: [CGRect], core: CGRect) -> CGRect? {
+        func area(_ r: CGRect) -> CGFloat { r.isNull ? 0 : r.width * r.height }
+        let ink = core.insetBy(dx: min(1, core.width / 4), dy: min(1, core.height / 4))
+        guard !ink.isNull else { return nil }
+        return [
+            CGRect(x: bounds.minX, y: rect.maxY, width: bounds.width, height: bounds.maxY - rect.maxY),
+            CGRect(x: bounds.minX, y: bounds.minY, width: bounds.width, height: rect.minY - bounds.minY),
+            CGRect(x: rect.maxX, y: bounds.minY, width: bounds.maxX - rect.maxX, height: bounds.height),
+            CGRect(x: bounds.minX, y: bounds.minY, width: rect.minX - bounds.minX, height: bounds.height),
+        ].filter { cut in
+            cut.width > 0 && cut.height > 0
+                && admitted.allSatisfy { cut.insetBy(dx: -0.01, dy: -0.01).contains($0) }
+                && cut.insetBy(dx: -0.01, dy: -0.01).contains(ink)
+        }.max { area($0) < area($1) }
     }
 
     /// An algorithm float set between rules (LaTeX `algorithm`/`algorithmic`): a caption line
@@ -1971,17 +2021,21 @@ enum LayoutReconstructor {
             return mathematical ? rect.union(owner.rect) : nil
         }
         let seeds = graphics + otherSeeds
-        var regions = clusters(seeds, distance: 3).map { Region(seed: $0, bounds: $0) }
+        // Running text keeps crops apart and stops them growing over it (#158).
+        let text = TintDetector.blockText(page.lines)
+        var regions = TintDetector.clustersKeepingText(clusters(seeds, distance: 3), seeds: seeds, lines: page.lines)
+            .map { Region(seed: $0, bounds: $0) }
         var previous: [CGRect] = []
         while regions.map(\.bounds) != previous {
             previous = regions.map(\.bounds)
             regions = regions.compactMap { region in
-                expanded(region, page: page, body: body).map { Region(seed: region.seed, bounds: $0) }
+                expanded(region, page: page, body: body, text: text)
+                    .map { Region(seed: region.seed, bounds: $0) }
             }
             // A merged bounding rectangle can newly intersect a label that neither component
             // touched. Expand again before rasterizing, or its text is removed from prose while
             // the image clips part of it (for example, a raised exponent beside a fraction).
-            regions = merged(regions)
+            regions = merged(regions, text: text)
         }
         return regions.map(\.bounds)
     }

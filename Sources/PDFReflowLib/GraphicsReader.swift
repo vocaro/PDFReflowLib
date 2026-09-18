@@ -48,9 +48,13 @@ enum GraphicsReader {
 
     /// `image` marks an image XObject's footprint, as a scan is; paths, form boxes and shadings
     /// are not. `filled` marks a path painted by a fill operator (alone or with a stroke), as a
-    /// callout box is and a stroked streamline is not (#117). `frame` is described above
-    /// `columnJoints`.
-    struct Paint: Equatable, Sendable { var rect: CGRect; var frame: Bool; var image = false; var filled = false }
+    /// callout box is and a stroked streamline is not (#117). `grouped` marks a paint that fills
+    /// the box of the transparency-group form drawing it, so the box itself records no footprint
+    /// of its own: a drop shadow, a tint or an opacity effect makes InDesign wrap one object in
+    /// such a form (#158). `frame` is described above `columnJoints`.
+    struct Paint: Equatable, Sendable {
+        var rect: CGRect; var frame: Bool; var image = false; var filled = false; var grouped = false
+    }
     /// Where one text-showing operator placed its text, for deciding whether it can be seen
     /// (#74, #85). In horizontal writing every glyph of a show sits on `baseline`; `left` is a
     /// lower bound on its first glyph's x (glyph advances are never negative, but kerning and
@@ -543,7 +547,17 @@ enum GraphicsReader {
                             .applying(transform.concatenating(s.matrix))
                         let visible = rect.intersection(s.clip)
                         if !visible.isNull, !visible.isEmpty { rect = visible }
-                        if rect.isFinite, rect.width * rect.height < s.pageBounds.width * s.pageBounds.height * 0.7 {
+                        // A box that the form's own paints already cover adds no extent, only an
+                        // unclassified footprint: InDesign wraps a sidebar's `re f`, a caption's
+                        // shaded box or a drop shadow in a transparency group whose box is what
+                        // they paint, and the box read as solid ink over the text on them (#158).
+                        let own = s.paints[startCount...]
+                        let covered = own.reduce(CGRect.null) { $0.union($1.rect) }.insetBy(dx: -2, dy: -2).contains(rect)
+                        if covered, let widest = own.indices.max(by: { own[$0].rect.width * own[$0].rect.height < own[$1].rect.width * own[$1].rect.height }) {
+                            s.paints[widest].grouped = true
+                        }
+                        if rect.isFinite, !covered,
+                           rect.width * rect.height < s.pageBounds.width * s.pageBounds.height * 0.7 {
                             s.add(rect)
                         }
                     }
@@ -568,7 +582,8 @@ enum GraphicsReader {
         // both, #99) shows nothing; its intersection is the infinite null rectangle, not a paint.
         let paints = s.paints.compactMap { paint -> Paint? in
             let visible = paint.rect.intersection(bounds)
-            return visible.isNull ? nil : Paint(rect: visible, frame: paint.frame, image: paint.image, filled: paint.filled)
+            return visible.isNull ? nil : Paint(rect: visible, frame: paint.frame, image: paint.image,
+                                                filled: paint.filled, grouped: paint.grouped)
         }
         return Result(regions: clusters(paints.map(\.rect), distance: 4), paints: paints,
                       unsupported: s.unsupported, hasOnlyInvisibleText: !s.unsupported && s.invisibleText && !s.visibleText,
@@ -925,10 +940,10 @@ enum GraphicsReader {
         }
         if region.isNull || region.isEmpty { return }
         guard region.isFinite, s.paints.count < 10_000 else { s.unsupported = true; return }
-        // Without a tighter bound, preserve the page rather than inventing a small crop.
-        guard region.width * region.height < s.pageBounds.width * s.pageBounds.height * 0.75 else {
-            s.unsupported = true; return
-        }
+        // A gradient across the whole page is its background, recorded like any other paint: the
+        // page-sized-graphic signal keeps a source-page reference for it, and its text reflows
+        // (#158, the magazine's boxed-title articles). Before, the page fell back to an image and
+        // lost its article title and text entirely.
         s.add(region.insetBy(dx: -2, dy: -2).intersection(s.pageBounds))
     }
 

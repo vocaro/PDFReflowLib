@@ -115,7 +115,7 @@ are, in the page markup). Evidence and negative controls on real output are in
 ## Current content coverage
 
 <!-- counts:coverage -->
-[corpus/regressions.json](../corpus/regressions.json) has 3274 targeted checks on 556 reviewed pages
+[corpus/regressions.json](../corpus/regressions.json) has 3311 targeted checks on 556 reviewed pages
 across 22 documents: *Pilot's Handbook of Aeronautical Knowledge*, *Beginning and Intermediate
 Algebra*, *The 9/11 Commission Report*, *The Fed Explained*, *Dietary Guidelines for Americans*,
 *Fifth National Climate Assessment*, *Our Flag*, *Preparedness 101*, *Project Blue Book Special
@@ -125,8 +125,8 @@ Report No. 14*, *Mineral Commodity Summaries 2025*, *Loper Bright Enterprises v.
 Clocks*, *Complaint for a Civil Case*, *Investigation of Atmospheric Boundary-Layer Effects on
 Launch-Vehicle Ground Wind Loads*, *A Scheduling Algorithm Compatible with a Distributed Management
 of Arrivals in the National Airspace System*, *Agricultural Research*, *Earthdata Cloud Analytics
-Project* and *Tank Health Monitoring*. They comprise 1131 ordered-text, 211 text, 397 paragraph,
-268 absent-text, 262 heading, 20 heading-level, 50 absent-heading, 89 list-item,
+Project* and *Tank Health Monitoring*. They comprise 1135 ordered-text, 237 text, 397 paragraph,
+269 absent-text, 268 heading, 20 heading-level, 50 absent-heading, 89 list-item,
 1 preformatted-lines, 29 script, 8 absent-script, 11 footnote, 34 note-link,
 61 paragraph-continuation, 1 list-item-continuation, 8 paragraph-separation, 92 distinct-paragraph,
 196 image-presence, 44 captioned-image, 102 page-reference, 113 warning, 111 absent-warning,
@@ -604,7 +604,7 @@ the page's structure validates, each line also records the tag the pipeline appl
 since #89/#90); older fixtures and untagged lines have none, and `SourceLayoutFixture` restores it.
 Source review, baseline failures, cross-document safeguards and full-run evidence are retained
 in [the three-fix measurement](../measurements/three-fidelity-fixes/record.md). The suite contains
-<!-- counts:swift-tests -->878 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->242 Python tests<!-- counts:end -->.
+<!-- counts:swift-tests -->895 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->242 Python tests<!-- counts:end -->.
 The comparison tests include a real-Poppler image URL check through the safe HTTP handler
 (simple and positioned modes, paths with spaces); absent Poppler is an explicit skip.
 
@@ -1164,6 +1164,50 @@ scanned table's halves of figures and for lines that merge a margin rule into th
 and refuse the moved cut where notes stand beside formula crops. The Word paper's contract checks
 pages 1, 2, 5, 7, 9 and 11, the IEEEtran contract pages 4, 9 and 10, and the magazine's pages 9, 11,
 15 and 18. See the [column margin order evidence](../measurements/column-margin-order/record.md).
+
+## Crops over running text
+
+`CropsOverRunningTextTests.swift` covers [#158](https://github.com/vocaro/PDFReflowLib/issues/158)
+and [#166](https://github.com/vocaro/PDFReflowLib/issues/166): a magazine kept its columns, pull
+quotes, captions and index entries inside preserved-region images, and a web print kept its header
+band, sidebar and gallery captions. Source-derived `usda-{2,3,14,16,22}` and `thm-{1,5}` fixtures
+(text and geometry, no rasters) require the FORUM columns outside every crop with only the flag
+banner and the signature box preserved, the masthead box read as a tint with its staff list and the
+contents entries reflowed, the faded flag reduced to its strip below the columns with the pull
+quote's photograph gone and its box a tint, the peach-orchard title and its photograph's caption
+band left out of the picture that keeps the part beyond them, the index entries free with each
+ornament keeping at most its letter head, the TechPort header band read as a tint beside the
+insignia's own crop with the sidebar's caption and contents list reflowed, and the gallery's three
+pictures separated from the captions under the shorter two. Each source test carries the defect as
+a control: clustered as the reader's regions were (or with the transparency group's box recorded as
+a paint of its own), one crop still holds the columns, the staff list, the title, the caption or
+the entries.
+
+Synthetic controls isolate each rule. `blockText` reads a column, an index's hanging entries and a
+caption of short wrapped lines as running text, and refuses a derivation's annotations beside its
+steps, two lines alone, a column of variables and lines a line apart. Clustering splits two
+pictures around the caption between them but keeps them together for labels, for no text at all,
+and when they overlap. A background under two columns seeds nothing, a picture whose column runs on
+past it keeps the part beyond that column, a caption block inside a photograph leaves it whole, a
+picture over another gives up nothing of its own, an overhanging title trims the side it crosses
+while a one-word label and a title that would cost more than half the picture do not, a caption on
+its own band takes its strip, and a legend box holding a swatch is part of the picture. A banner
+band reflows beside its insignia's own crop, while a band in the middle of the page, a band of
+codes and a narrow band keep their crop; a sidebar panel of headings, labelled fields and a
+contents list reflows, while a ratings grid in three columns and a panel with rules between its
+rows keep their images. An original in-memory PDF checks that a form's box records no footprint
+where its own paint covers it and marks that paint `grouped`, with a form whose paint covers only a
+corner as the control, and another checks that a page-wide gradient keeps its article's text and a
+source-page reference instead of a page image (a control page without the gradient warns nothing).
+`ShadingTests` records the page-wide gradient as a paint rather than an unsupported drawing.
+
+The contracts add 39 checks: the magazine's FORUM columns in order with the signature box still
+preserved, its masthead and contents, page 13 without the review warning, the camouflage-netting
+page, the peach-orchard heading and caption, both boxed-title articles as headings with their text
+and without `pageImageFallback` or `unsupportedGraphics`, and the 2012 index's entries; TechPort's
+header band, contents list and gallery captions. The baseline fails exactly those 39. Column order
+on the interleaved pages is not approved (#153), so those pages are checked by phrase. See the
+[crops-over-running-text evidence](../measurements/crops-over-running-text/record.md).
 
 ## Sentences split around figures at column and page breaks
 

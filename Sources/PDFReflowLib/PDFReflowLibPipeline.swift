@@ -362,9 +362,20 @@ enum PDFReflowLibPipeline {
                 if invisibleText {
                     for index in content.lines.indices { content.lines[index].structure = nil }
                 }
+                // A rule the page draws across its whole measure is furniture evidence, not art:
+                // *Agricultural Research* rules its running foot off under every column, and that
+                // rule is what admits the foot where a photo credit stands closer than a line
+                // height (`FurnitureDetector.ruledOff`, #159). Clearing it with the page's
+                // graphics left the foot unrecognized on the two pages whose columns stand over a
+                // page-wide gradient, which broke the document's run of feet and printed the foot
+                // on those pages and on the index pages after them. Keeping it as a separator
+                // preserves the evidence while the page still keeps no crop of its own.
+                let boundaryRules = content.graphics.filter {
+                    LayoutReconstructor.isPageWideRule($0, bounds: content.bounds)
+                }
                 content.graphics = retainedGraphics
                 content.tints = []
-                content.separators = []
+                content.separators = boundaryRules
                 warnings.append(.init(code: .unverifiedTextLayer, page: i + 1,
                     message: "Text overlapping a page-sized graphic has not been verified against the source. "
                         + "Transcription, tables, numbers and reading order may be inaccurate. "

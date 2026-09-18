@@ -346,15 +346,18 @@ private let bounds = CGRect(x: 0, y: 0, width: 600, height: 800)
     #expect(clusters([top, bottom, rule], distance: 4).count == 1)
     #expect(TintDetector.seedClusters([top, bottom, rule], lines: proseLines).count == 2)
     // Controls: a rule within two bodies of a line (a grid's rule), no prose in the hull, and a
-    // single escaped line keep the cluster.
+    // single escaped line keep the rule as a seed of its own. Since #158 a hull that bridges
+    // running text is split whatever bridges it, so the parts are counted rather than the hull:
+    // only a dropped rule leaves no seed of its own.
     let near = CGRect(x: 100, y: 210, width: 4, height: 390)
     let nearTop = CGRect(x: 72, y: 600, width: 60, height: 60)
-    #expect(TintDetector.seedClusters([nearTop, bottom, near], lines: proseLines).count == 1)
+    #expect(TintDetector.seedClusters([nearTop, bottom, near], lines: proseLines).contains { $0.contains(near) })
     #expect(TintDetector.seedClusters([top, bottom, rule], lines: []).count == 1)
     #expect(TintDetector.seedClusters([top, bottom, rule], lines: Array(proseLines.prefix(1))).count == 1)
+    #expect(!TintDetector.seedClusters([top, bottom, rule], lines: proseLines).contains { $0.contains(rule) })
     // A thick bar is not a rule.
     let bar = CGRect(x: 40, y: 210, width: 20, height: 390)
-    #expect(TintDetector.seedClusters([top, bottom, bar], lines: proseLines).count == 1)
+    #expect(TintDetector.seedClusters([top, bottom, bar], lines: proseLines).contains { $0.contains(bar) })
 }
 
 @Test func anUnderlineBridgesOnlyWhenItUnderlinesOneLine() {

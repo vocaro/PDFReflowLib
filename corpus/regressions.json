@@ -8299,7 +8299,7 @@
     {
       "id": "usda-ars-agresearch-2012-11",
       "sourceSHA256": "2673d1fded74ad89c8b5c59dc325c7884601e1aca5b5755b15a105c1f5b0d761",
-      "basis": "Source pages 1-24 visually reviewed against 60 DPI Poppler renders and the extracted text layer. Protects only output that matches the source now: the cover lines in order with Keeping Our Troops Safe and From Insects as headings; the masthead date, volume and ISSN lines; photo presence on photo pages; printed photo credits with their gallery numbers; whole captions on pages 6, 9 and 12; sentences inside the reflowed feature and short-article prose on pages 6, 9, 12, 13, 15, 18 and 19 in source order; the back-cover mailing instruction; and running-foot removal warnings. Not pinned because wrong now: body text, sidebars, pull quotes, the contents, the Forum column and the two-page index held inside preserved-region crops (pages 2-5, 7, 8, 10, 14, 16, 22, 23) or whole-page images (pages 20, 21); side-by-side column prose split into one paragraph per line and interleaved on page 6, where a column runs on into a wider measure below (#153); the cover’s tagline and contents line and the back cover’s mailing panel as h4/h5/h6 headings that enter the contents; the back cover’s dingbat as a superscript l; the small-cap credit read as `BRAD FRITz`; and line-end hyphens kept inside joined paragraphs (`com-panies`, `infec-tions`, `compli-ance`) (see the review file). Pages 4, 6-13, 15, 17-19 and 22 reviewed again on their renders (#159): the magazine rules its running foot off under every column, so the foot is absent and furnitureRemoved reported wherever a page carried one; the nine-point bold subheads on pages 12, 13, 17, 18 and 19 are headings, `How Much Pressure Can a` / `Leaf Take?` one heading over two lines; each column’s ten-point first-line indent opens a paragraph, so the source paragraphs on pages 9, 12, 13, 15, 18 and 19 stay separate; and each six-point photo credit stands next to the picture it names, before it where the magazine sets the credit above the photograph (pages 4, 15, 17) and after it where it sets it below (pages 6, 9, 12, 17, 19). Page 6’s two subheads and page 9’s `Fighting Filth Flies` are not pinned as headings: #153 still interleaves page 6’s columns, and the sidebar title on page 9 stands over its photograph, not over its own paragraph. No committed rasters: page 24 carries only agency logos and the mailing panel, and the index holly ornaments are uncredited. The 55 borderless link annotations draw nothing: no reviewed page carries an Original page image, and link pages warn annotationsNotConverted (#151). Pages 8, 9, 11, 12, 13, 15, 18 and 19 were reviewed again on their renders and read column by column, the running foot beyond the columns; their order is pinned (#153). All 24 pages reviewed again for what the conversion must not do (#27): the InDesign magazine's text layer is genuine, so no page may report fresh recognition, a damaged encoding or an implausible text layer, and only pages 20-21 (known #158 fallbacks) may report a whole-page image fallback and only pages 1 and 13 may take an `Original page N` image. Pages 14, 22 and 23 are new review pages: the feature page and both index pages keep their preserved regions and disclose them, with no reflowed text pinned, because #158 holds all of their body text inside crops.",
+      "basis": "Source pages 1-24 visually reviewed against 60 DPI Poppler renders and the extracted text layer. Protects only output that matches the source now: the cover lines in order with Keeping Our Troops Safe and From Insects as headings; the masthead date, volume and ISSN lines; photo presence on photo pages; printed photo credits with their gallery numbers; whole captions on pages 6, 9 and 12; sentences inside the reflowed feature and short-article prose on pages 6, 9, 12, 13, 15, 18 and 19 in source order; the back-cover mailing instruction; and running-foot removal warnings. Not pinned because wrong now: side-by-side column prose split into one paragraph per line and interleaved on page 6, where a column runs on into a wider measure below (#153); the cover’s tagline and contents line and the back cover’s mailing panel as h4/h5/h6 headings that enter the contents; the back cover’s dingbat as a superscript l; the small-cap credit read as `BRAD FRITz`; and line-end hyphens kept inside joined paragraphs (`com-panies`, `infec-tions`, `compli-ance`) (see the review file). Pages 4, 6-13, 15, 17-19 and 22 reviewed again on their renders (#159): the magazine rules its running foot off under every column, so the foot is absent and furnitureRemoved reported wherever a page carried one; the nine-point bold subheads on pages 12, 13, 17, 18 and 19 are headings, `How Much Pressure Can a` / `Leaf Take?` one heading over two lines; each column’s ten-point first-line indent opens a paragraph, so the source paragraphs on pages 9, 12, 13, 15, 18 and 19 stay separate; and each six-point photo credit stands next to the picture it names, before it where the magazine sets the credit above the photograph (pages 4, 15, 17) and after it where it sets it below (pages 6, 9, 12, 17, 19). Page 6’s two subheads and page 9’s `Fighting Filth Flies` are not pinned as headings: #153 still interleaves page 6’s columns, and the sidebar title on page 9 stands over its photograph, not over its own paragraph. No committed rasters: page 24 carries only agency logos and the mailing panel, and the index holly ornaments are uncredited. The 55 borderless link annotations draw nothing: no reviewed page carries an Original page image, and link pages warn annotationsNotConverted (#151). Pages 8, 9, 11, 12, 13, 15, 18 and 19 were reviewed again on their renders and read column by column, the running foot beyond the columns; their order is pinned (#153). All 24 pages reviewed again for what the conversion must not do (#27): the InDesign magazine's text layer is genuine, so no page may report fresh recognition, a damaged encoding or an implausible text layer, and only pages 20-21 (known #158 fallbacks) may report a whole-page image fallback and only pages 1 and 13 may take an `Original page N` image. Pages 14, 22 and 23 are new review pages: the feature page and both index pages keep their preserved regions and disclose them, with no reflowed text pinned, because #158 holds all of their body text inside crops. Pages 2, 3, 13, 14, 16 and 20-23 reviewed again at 50 DPI with every crop outlined (#158): the FORUM columns and the signature box, the masthead staff list, the contents entries, the breadfruit caption, the columns over the faded flag, the peach-orchard title and its photograph caption, both boxed-title articles over their page-wide gradient, and the 2012 index entries are text; only the photographs, ornaments and the flag's own strip stay images. Page 13's photograph no longer covers the page, so its text carries no review warning. Column order on pages 14 and 20-23 is not approved (#153), so those pages are checked by phrase rather than in order.",
       "pages": [
         {
           "page": 1,
@@ -8337,6 +8337,20 @@
             "unverifiedTextLayer",
             "damagedTextEncoding",
             "implausibleTextLayer"
+          ],
+          "text": [
+            "Agriculture is about producing food,",
+            "The U.S. Department of Agriculture has been extremely active for more than 100",
+            "war-fighters often find themselves in places"
+          ],
+          "absentText": [
+            "Daniel Strickman"
+          ],
+          "orderedText": [
+            "Agriculture is about producing food,",
+            "In 1941, the U.S. military asked USDA",
+            "Discovering new insecticides for use",
+            "Scientific evaluation of insecticide application performed by ARS"
           ]
         },
         {
@@ -8357,6 +8371,12 @@
             "unverifiedTextLayer",
             "damagedTextEncoding",
             "implausibleTextLayer"
+          ],
+          "text": [
+            "Agricultural Research is published 10 times a year by",
+            "Editor: Robert Sowers",
+            "20 Livestock Waste Management 2.0:",
+            "The dried inflorescence of the breadfruit tree is burned in some"
           ]
         },
         {
@@ -8656,7 +8676,8 @@
             "ocrUsed",
             "pageImageFallback",
             "damagedTextEncoding",
-            "implausibleTextLayer"
+            "implausibleTextLayer",
+            "unverifiedTextLayer"
           ],
           "headings": [
             "Taking It to the Field"
@@ -8718,7 +8739,8 @@
         {
           "page": 16,
           "text": [
-            "PEGGY GREB (D2683-1)"
+            "PEGGY GREB (D2683-1)",
+            "Agricultural engineer Huihui Zhang measures peach tree leaf"
           ],
           "minimumImages": 1,
           "pageReference": false,
@@ -8728,6 +8750,9 @@
             "unverifiedTextLayer",
             "damagedTextEncoding",
             "implausibleTextLayer"
+          ],
+          "headings": [
+            "Finding Ways To Save Water in Peach Orchards"
           ]
         },
         {
@@ -8861,7 +8886,16 @@
           "absentWarningCodes": [
             "ocrUsed",
             "damagedTextEncoding",
-            "implausibleTextLayer"
+            "implausibleTextLayer",
+            "pageImageFallback",
+            "unsupportedGraphics"
+          ],
+          "headings": [
+            "Livestock Waste Management 2.0 Recycling Ammonia Emissions as Fertilizer"
+          ],
+          "text": [
+            "One of the costs of running a farm",
+            "recorded an average removal rate of 45 to"
           ]
         },
         {
@@ -8870,7 +8904,16 @@
           "absentWarningCodes": [
             "ocrUsed",
             "damagedTextEncoding",
-            "implausibleTextLayer"
+            "implausibleTextLayer",
+            "pageImageFallback",
+            "unsupportedGraphics"
+          ],
+          "headings": [
+            "Eco-Based Fire Logs An Environmentally Friendly Invention From ARS"
+          ],
+          "text": [
+            "from a perhaps surprising source: grass clippings.",
+            "the eco-logs burn cleaner, emitting fewer potentially"
           ]
         },
         {
@@ -8903,6 +8946,11 @@
             "unverifiedTextLayer",
             "damagedTextEncoding",
             "implausibleTextLayer"
+          ],
+          "text": [
+            "Studies have shown that insecticide",
+            "Getting Products to Troops",
+            "and sand flies in a hot, arid environment."
           ]
         },
         {
@@ -8922,6 +8970,14 @@
           ],
           "absentText": [
             "Agricultural Research l November/December 2012"
+          ],
+          "headings": [
+            "2012 INDEX"
+          ],
+          "text": [
+            "Air quality, no-till spring cereal rotations and, Jul-19",
+            "compounds in hulls may benefit health, Feb-22",
+            "ARS Scientists: All-Purpose Agronomists, Aug-2"
           ]
         },
         {
@@ -8937,6 +8993,10 @@
             "unverifiedTextLayer",
             "damagedTextEncoding",
             "implausibleTextLayer"
+          ],
+          "text": [
+            "Zoonotic diseases, leptospirosis, Jan-10",
+            "Wheat, statistical approach used in breeding, Apr-13"
           ]
         }
       ]
@@ -9590,12 +9650,14 @@
     {
       "id": "ntrs-20210020887-techport-thm-2021",
       "sourceSHA256": "0fce4b68983ad8a216c8228ec44697c61ab41977ad41733c465ebebec3976ff0",
-      "basis": "All five source pages visually reviewed against 80 DPI Poppler renders (sidebar, gallery and header at 300 DPI) and the extracted text layer. Protects only output that matches the source: the main column's section titles as headings; the five Project Introduction paragraphs whole, separate and in order; every bullet item's text whole and in source order on pages 2-3, including the nested items; the See Image and See Figure lines; the closeout-document title and link text and the Figure 1 caption on page 4; and preserved images for the page-1 photo, the page-3 map, the page-4 figure and the page-5 gallery. Not pinned because wrong now: the header band's division, title and status lines kept inside a region crop with the insignia on every page; the right sidebar panels (photo caption, table of contents, organizational responsibility, project management, TRL chart, technology areas, destinations, mission type), the page-4 tables and the page-5 gallery captions kept only inside region crops; the Printed on, URL, page-number and accessible-alternative footer lines left in the reading flow; bullet markers as tiny image crops before paragraph items; Closeout Documentation merged into its paragraph and Images not a heading; a space inside the wrapped image URLs; and the source-page image forced by borderless links on every page (see the review file). No committed rasters: every page shows the NASA insignia (14 CFR 1221); see the manifest's rights note. All five pages reviewed again on their renders (#27): the 27 borderless link annotations draw nothing beyond the printed page, so no page takes an `Original page N` image and every page warns annotationsNotConverted (#151); the Chromium print's embedded Open Sans and Verdana give a genuine text layer, so no page may report fresh recognition, a damaged encoding, an implausible or unverified text layer, or a whole-page image fallback. The page-4 Figure 1 caption sits directly beneath its diagram and must stand next after an image. Page 5 keeps all three gallery pictures.",
+      "basis": "All five source pages visually reviewed against 80 DPI Poppler renders (sidebar, gallery and header at 300 DPI) and the extracted text layer. Protects only output that matches the source: the main column's section titles as headings; the five Project Introduction paragraphs whole, separate and in order; every bullet item's text whole and in source order on pages 2-3, including the nested items; the See Image and See Figure lines; the closeout-document title and link text and the Figure 1 caption on page 4; and preserved images for the page-1 photo, the page-3 map, the page-4 figure and the page-5 gallery. Not pinned because wrong now: the header band's division, title and status lines kept inside a region crop with the insignia on every page; the right sidebar panels (photo caption, table of contents, organizational responsibility, project management, TRL chart, technology areas, destinations, mission type), the page-4 tables and the page-5 gallery captions kept only inside region crops; the Printed on, URL, page-number and accessible-alternative footer lines left in the reading flow; bullet markers as tiny image crops before paragraph items; Closeout Documentation merged into its paragraph and Images not a heading; a space inside the wrapped image URLs; and the source-page image forced by borderless links on every page (see the review file). No committed rasters: every page shows the NASA insignia (14 CFR 1221); see the manifest's rights note. All five pages reviewed again on their renders (#27): the 27 borderless link annotations draw nothing beyond the printed page, so no page takes an `Original page N` image and every page warns annotationsNotConverted (#151); the Chromium print's embedded Open Sans and Verdana give a genuine text layer, so no page may report fresh recognition, a damaged encoding, an implausible or unverified text layer, or a whole-page image fallback. The page-4 Figure 1 caption sits directly beneath its diagram and must stand next after an image. Page 5 keeps all three gallery pictures. Pages 1 and 5 reviewed again at 50 DPI with every crop outlined (#166): the header band's division, project title and state, the sidebar's caption and table of contents, and the gallery's three captions are text, while the insignia, the sidebar photograph and the three gallery pictures stay images. The gallery captions' order is not approved (#153).",
       "pages": [
         {
           "page": 1,
           "headings": [
-            "Project Introduction"
+            "Project Introduction",
+            "Tank Health Monitoring",
+            "Table of Contents"
           ],
           "paragraphs": [
             "Sustained human presence in cislunar space relies on propellant management technologies that either do not exist or exist only at low-TRL. One such low-TRL technology is propellant mass gauging in microgravity. NASA technology roadmaps and Artemis architectures call for the ability to measure propellant in both settled and unsettled states during propellant transfer operations and during quiescent periods of microgravity. Target gauging resolutions are typically one percent of full tank volume. As a variety of propellant systems may be at play in an Artemis mission involving lunar landers, Orion, and the Gateway Power and Propulsion Element, the ability to gauge both cryogenic and earth-storable propellant with the same technology is also necessary.",
@@ -9638,6 +9700,11 @@
             "unverifiedTextLayer",
             "damagedTextEncoding",
             "implausibleTextLayer"
+          ],
+          "text": [
+            "Advanced Exploration Systems Division",
+            "Project Introduction 1",
+            "Technology Maturity (TRL) 2"
           ]
         },
         {
@@ -9740,6 +9807,11 @@
             "unverifiedTextLayer",
             "damagedTextEncoding",
             "implausibleTextLayer"
+          ],
+          "text": [
+            "Existing propellant gauging",
+            "The Basic Formula",
+            "Accurate measurement of cryogenic"
           ]
         }
       ]

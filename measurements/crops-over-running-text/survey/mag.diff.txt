@@ -1,0 +1,159 @@
+changed pages: 19 [2, 3, 4, 5, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 18, 20, 21, 22, 23]  words taken on them 7326 -> 1246
+--- base 2
+2	pageSized=false apart=true	crops=2	taken=784/790	tints=0
+  [34.0 39.0 583.6 647.2] 784w "Agriculture is about producing food," "fiber, fuel, wood, and other 
+  [0.0 656.4 612.0 792.0] 0w 
++++ cand 2
+2	pageSized=false apart=true	crops=2	taken=19/790	tints=0
+  [403.3 46.0 581.8 163.4] 19w "Daniel Strickman" "Colonel, U.S. Army Medical" "Service Corps (retir
+  [0.0 656.4 612.0 792.0] 0w 
+--- base 3
+3	pageSized=false apart=true	crops=2	taken=567/581	tints=0
+  [29.3 39.4 579.4 679.5] 556w "PEGGY GREB (D2696-1)" "Agricultural Research is published 10 ti" "th
+  [261.5 706.5 590.1 792.0] 11w "Solving Problems for the Growing WorldSo"
++++ cand 3
+3	pageSized=false apart=true	crops=6	taken=11/581	tints=1
+  [266.8 452.0 576.4 658.4] 0w 
+  [246.9 50.2 250.9 662.6] 0w 
+  [29.3 675.5 577.8 679.5] 0w 
+  [261.3 122.2 574.9 126.2] 0w 
+  [260.7 375.2 579.4 379.2] 0w 
+  [261.5 706.5 590.1 792.0] 11w "Solving Problems for the Growing WorldSo"
+--- base 4
+4	pageSized=false apart=true	crops=3	taken=60/69	tints=0
+  [36.4 688.4 578.4 695.4] 0w 
+  [36.0 52.5 576.0 671.7] 60w "At the Center for Medical, Agricultural," "Entomology in Gainesville,
+  [56.3 700.4 576.9 757.3] 0w 
++++ cand 4
+4	pageSized=false apart=true	crops=2	taken=0/69	tints=5
+  [36.0 143.7 576.0 671.7] 0w 
+  [56.3 700.4 576.9 757.3] 0w 
+--- base 5
+5	pageSized=false apart=true	crops=2	taken=684/690	tints=0
+  [34.7 684.4 577.0 742.9] 0w 
+  [34.0 53.3 578.9 677.3] 684w "During World War II, U.S. Army" "General Douglas MacArthur was quote
++++ cand 5
+5	pageSized=false apart=true	crops=3	taken=24/690	tints=0
+  [34.7 685.9 577.0 742.9] 0w 
+  [187.4 396.2 435.7 569.7] 21w "The mosquito Aedes aegypti can spread se" "travels from person to p
+  [189.0 164.9 435.3 324.0] 3w "STEPHEN AUSMUS (D2623-8)"
+--- base 7
+7	pageSized=false apart=true	crops=2	taken=502/511	tints=0
+  [34.5 39.4 578.5 43.4] 0w 
+  [34.0 52.9 578.9 761.3] 502w "“Fatty acids are well known to have" "insect repellency,” Cantrell s
++++ cand 7
+7	pageSized=false apart=true	crops=2	taken=0/511	tints=0
+  [34.5 39.4 578.5 43.4] 0w 
+  [36.0 53.9 392.0 496.2] 0w 
+--- base 8
+8	pageSized=false apart=true	crops=2	taken=448/540	tints=0
+  [34.5 39.0 578.5 43.0] 0w 
+  [34.0 53.3 580.3 695.4] 448w "“You put this bait or trap out in the en" "ronment, and the mosquito
++++ cand 8
+8	pageSized=false apart=true	crops=3	taken=26/540	tints=3
+  [34.5 39.0 578.5 43.0] 0w 
+  [36.0 119.2 391.9 486.0] 0w 
+  [403.0 485.9 580.3 690.0] 26w "STEPHEN AUSMUS (D2642-4)" "A sand fly, Phlebotomus papatasi, can tr
+--- base 9
+9	pageSized=false apart=true	crops=3	taken=14/292	tints=0
+  [34.5 39.4 578.5 43.4] 0w 
+  [36.0 55.5 576.0 487.5] 0w 
+  [218.0 580.8 400.1 740.0] 14w "(D2620-1)" "The adult stable fly, Stomoxys calcitran" "one of many 
++++ cand 9
+9	pageSized=false apart=true	crops=3	taken=14/292	tints=0
+  [34.5 39.4 578.5 43.4] 0w 
+  [36.0 55.5 576.0 487.5] 0w 
+  [218.0 580.8 398.1 739.0] 14w "(D2620-1)" "The adult stable fly, Stomoxys calcitran" "one of many 
+--- base 10
+10	pageSized=false apart=true	crops=1	taken=485/494	tints=0
+  [34.0 53.3 579.2 756.0] 485w "Entomologist Jerry Hogsette sets out sta" "breed in manure, wet stra
++++ cand 10
+10	pageSized=false apart=true	crops=1	taken=0/494	tints=0
+  [36.0 420.0 576.0 756.0] 0w 
+--- base 11
+11	pageSized=false apart=true	crops=3	taken=47/435	tints=0
+  [34.5 39.4 578.5 43.4] 0w 
+  [36.0 54.3 576.0 415.0] 0w 
+  [220.0 563.7 397.9 757.7] 47w "“I was one of those guys" "deployed to Iraq in 2003." "I’m an entom
++++ cand 11
+11	pageSized=false apart=true	crops=2	taken=0/435	tints=4
+  [34.5 39.4 578.5 43.4] 0w 
+  [36.0 54.3 576.0 415.0] 0w 
+--- base 12
+12	pageSized=false apart=true	crops=3	taken=31/338	tints=0
+  [34.5 39.0 578.5 43.0] 0w 
+  [36.0 53.9 576.0 459.0] 0w 
+  [220.2 563.3 398.1 755.6] 31w "“Whenever you get a new" "compound that works" "well in the laborat
++++ cand 12
+12	pageSized=false apart=true	crops=2	taken=0/338	tints=4
+  [34.5 39.0 578.5 43.0] 0w 
+  [36.0 53.9 576.0 459.0] 0w 
+--- base 13
+13	pageSized=true apart=false	crops=1	taken=397/406	tints=0
+  [35.7 52.9 577.7 756.3] 397w "In Marigat, Kenya, Kenneth Linthicum, th" "calibrates a thermal fogg
++++ cand 13
+13	pageSized=true apart=true	crops=1	taken=0/406	tints=0
+  [36.7 334.4 576.7 756.3] 0w 
+--- base 14
+14	pageSized=false apart=true	crops=1	taken=637/643	tints=0
+  [34.6 53.0 576.6 761.7] 637w "Studies have shown that insecticide" "treatment of woodland-pattern 
++++ cand 14
+14	pageSized=false apart=true	crops=1	taken=0/643	tints=3
+  [35.6 54.0 575.6 217.4] 0w 
+--- base 15
+15	pageSized=false apart=true	crops=2	taken=49/664	tints=0
+  [34.5 39.4 578.5 43.4] 0w 
+  [34.0 349.9 395.1 757.8] 49w "There’s" "an App" "for That!" "Two new apps developed by ARS scienti
++++ cand 15
+15	pageSized=false apart=true	crops=3	taken=5/664	tints=2
+  [34.5 39.4 578.5 43.4] 0w 
+  [34.0 350.4 394.0 354.4] 0w 
+  [36.0 409.5 395.1 757.8] 5w "There’s" "an App" "for That!"
+--- base 16
+16	pageSized=false apart=true	crops=2	taken=687/696	tints=0
+  [34.5 39.0 578.5 43.0] 0w 
+  [26.8 49.8 578.0 755.9] 687w "Finding Ways To Save" "Water in Peach Orchards" "team of Agricultura
++++ cand 16
+16	pageSized=false apart=true	crops=4	taken=35/696	tints=4
+  [34.5 39.0 578.5 43.0] 0w 
+  [342.5 377.7 576.0 755.9] 0w 
+  [34.0 582.3 272.0 648.9] 35w "team of Agricultural Research Service sc" "Parlier, California, is f
+  [26.8 656.6 272.0 660.6] 0w 
+--- base 18
+18	pageSized=false apart=true	crops=2	taken=49/543	tints=0
+  [34.5 39.0 578.5 43.0] 0w 
+  [36.0 225.9 391.9 755.8] 49w "A section of the Prado Wetland, part of " "the Santa Ana River Water
++++ cand 18
+18	pageSized=false apart=true	crops=2	taken=0/543	tints=1
+  [34.5 39.0 578.5 43.0] 0w 
+  [36.0 290.9 391.9 755.8] 0w 
+--- base 20
+20	unsupported
++++ cand 20
+20	pageSized=true apart=false	crops=1	taken=562/568	tints=0
+  [30.8 39.0 585.6 757.3] 562w "Livestock Waste Management 2.0" "Recycling Ammonia Emissions as Fert
+--- base 21
+21	unsupported
++++ cand 21
+21	pageSized=true apart=false	crops=1	taken=545/551	tints=0
+  [29.3 39.4 584.1 757.3] 545w "Eco-Based Fire Logs" "An Environmentally Friendly Invention Fr" "rti
+--- base 22
+22	pageSized=false apart=true	crops=2	taken=933/939	tints=0
+  [34.5 39.0 578.5 43.0] 0w 
+  [34.0 48.8 577.3 764.9] 933w "2012 INDEX" "A-C" "Air quality, no-till spring cereal rotat" "ALEXI 
++++ cand 22
+22	pageSized=false apart=true	crops=5	taken=3/939	tints=0
+  [34.5 39.0 578.5 43.0] 0w 
+  [34.0 707.3 55.0 730.7] 1w "A-C"
+  [218.0 313.3 254.1 335.5] 2w "Dairy cows"
+  [402.0 508.2 426.1 520.6] 0w 
+  [155.3 723.2 201.9 760.7] 0w 
+--- base 23
+23	pageSized=false apart=true	crops=1	taken=952/952	tints=0
+  [34.0 22.0 587.6 757.5] 952w "“Kiddio: Food Fight” video game for pare" "“Lets Move!” Initiative, 
++++ cand 23
+23	pageSized=false apart=true	crops=4	taken=2/952	tints=0
+  [34.0 128.5 51.4 140.8] 0w 
+  [402.0 438.9 420.9 451.0] 0w 
+  [528.5 22.0 582.3 79.0] 2w "23" "23"
+  [35.0 726.4 586.4 756.3] 0w 

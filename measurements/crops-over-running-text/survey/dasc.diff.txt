@@ -1,0 +1,17 @@
+changed pages: 2 [6, 10]  words taken on them 545 -> 530
+--- base 6
+6	pageSized=false apart=true	crops=3	taken=61/862	tints=0
+  [337.5 449.8 565.0 535.4] 36w "leading one:" "s m L H" "s 3.0 3.0 3.0 3.0" "m 4.0 4.0 4.0 4.0" "L 
+  [98.1 313.9 302.0 355.3] 13w "quantities in []’s):" "STArf (k+1)" "f= STArf (k)" "f + ETAr(k+1)" "
+  [351.4 315.8 575.4 351.4] 12w "ETAnext node" "= ETAcurrent node + 3600.0distance betw." "150.0 KTS
++++ cand 6
+6	pageSized=false apart=true	crops=3	taken=46/862	tints=0
+  [396.1 460.8 517.4 524.5] 24w "s m L H" "s 3.0 3.0 3.0 3.0" "m 4.0 4.0 4.0 4.0" "L 4.0 4.0 5.0 5.0
+  [98.1 313.9 302.0 344.4] 10w "STArf (k+1)" "f= STArf (k)" "f + ETAr(k+1)" "f−ETAr(k)" "f."
+  [351.4 315.8 575.4 351.4] 12w "ETAnext node" "= ETAcurrent node + 3600.0distance betw." "150.0 KTS
+--- base 10
+10	pageSized=false apart=true	crops=1	taken=484/745	tints=0
+  [47.0 53.8 298.1 717.0] 484w "What is being done" "In which" "steps in" "section V" "For each node
++++ cand 10
+10	pageSized=false apart=true	crops=1	taken=484/745	tints=0
+  [47.0 53.8 298.1 716.8] 484w "What is being done" "In which" "steps in" "section V" "For each node

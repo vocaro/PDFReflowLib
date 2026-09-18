@@ -1,0 +1,311 @@
+changed pages: 28 [4, 26, 31, 32, 34, 36, 42, 53, 65, 67, 71, 79, 285, 351, 405, 411, 687, 863, 981, 982, 1000, 1019, 1049, 1273, 1402, 1485, 1531, 1549]  words taken on them 3659 -> 2724
+--- base 4
+4	pageSized=false apart=true	crops=3	taken=204/206	tints=0
+  [65.5 529.3 726.5 575.1] 38w "The Fifth National Climate Assessment is" "a congressionally mandate
+  [65.5 501.3 726.5 519.1] 6w "Full report available online at: nca2023"
+  [0.0 0.0 792.0 281.1] 160w "Fifth National Climate Assessment iii" "This report is in the public d
++++ cand 4
+4	pageSized=false apart=true	crops=2	taken=166/206	tints=1
+  [65.5 501.3 726.5 519.1] 6w "Full report available online at: nca2023"
+  [0.0 0.0 792.0 281.1] 160w "Fifth National Climate Assessment iii" "This report is in the public d
+--- base 26
+26	pageSized=true apart=false	crops=1	taken=273/486	tints=7
+  [0.0 0.0 792.0 391.3] 273w "Fifth National Climate Assessment xxv" "Additional information on Key 
++++ cand 26
+26	pageSized=true apart=false	crops=5	taken=209/486	tints=7
+  [65.5 352.3 380.0 384.1] 17w "Additional information on Key Messages a" "can be found in the Front
+  [416.5 298.1 722.0 370.9] 22w "Share a chapter, chapter section, figure" "content element" "Access
+  [0.0 0.0 792.0 264.7] 170w "Fifth National Climate Assessment xxv" "takeaway message of the figure
+  [416.5 288.7 722.0 292.5] 0w 
+  [427.5 266.9 445.5 284.8] 0w 
+--- base 31
+31	pageSized=false apart=true	crops=5	taken=381/557	tints=1
+  [65.5 503.0 726.5 533.5] 20w "1. Global Change Research Act of 1990. 1" "https://www.congress.gov/
+  [65.5 452.0 726.5 496.5] 44w "2. USGCRP, 2018: Impacts, Risks, and Ada" "D.R. Easterling, K.E. Kun
+  [65.5 415.0 726.5 445.5] 26w "3. National Academies of Sciences, Engin" "Press, Washington, DC, 34
+  [65.5 364.0 726.5 408.5] 42w "4. Mastrandrea, M.D., K.J. Mach, G.-K. P" "guidance note on consiste
+  [0.0 0.0 792.0 259.1] 249w "Fifth National Climate Assessment xxx" "von Schuckmann, S. Zaehle, X. 
++++ cand 31
+31	pageSized=false apart=true	crops=3	taken=295/557	tints=3
+  [65.5 503.0 726.5 533.5] 20w "1. Global Change Research Act of 1990. 1" "https://www.congress.gov/
+  [65.5 415.0 726.5 445.5] 26w "3. National Academies of Sciences, Engin" "Press, Washington, DC, 34
+  [0.0 0.0 792.0 259.1] 249w "Fifth National Climate Assessment xxx" "von Schuckmann, S. Zaehle, X. 
+--- base 32
+32	pageSized=false apart=true	crops=3	taken=72/333	tints=3
+  [0.0 0.0 792.0 256.7] 5w "Fifth National Climate Assessment xxxi"
+  [65.5 390.5 726.5 435.0] 46w "10. van Vuuren, D.P., J. Edmonds, M. Kai" "Meinshausen, N. Nakicenov
+  [65.5 274.5 726.5 305.0] 21w "12. BEA. 2023: Table 1.1.9. Implicit Pri" "Analysis. https://apps.be
++++ cand 32
+32	pageSized=false apart=true	crops=2	taken=26/333	tints=4
+  [0.0 0.0 792.0 256.7] 5w "Fifth National Climate Assessment xxxi"
+  [65.5 274.5 726.5 305.0] 21w "12. BEA. 2023: Table 1.1.9. Implicit Pri" "Analysis. https://apps.be
+--- base 34
+34	pageSized=true apart=false	crops=1	taken=263/271	tints=0
+  [0.0 0.0 792.0 536.4] 263w "Overview | 1-2" "Fifth National Climate Assessment" "Tammy West" "Auth
++++ cand 34
+34	pageSized=true apart=false	crops=1	taken=263/271	tints=0
+  [0.0 0.0 792.0 536.2] 263w "Overview | 1-2" "Fifth National Climate Assessment" "Tammy West" "Auth
+--- base 36
+36	pageSized=false apart=true	crops=2	taken=110/110	tints=0
+  [70.0 394.0 792.0 612.0] 101w "The Choices That Will Determine the Futu" "Societal choices drive g
+  [0.0 0.0 792.0 341.2] 9w "Overview | 1-4" "Fifth National Climate Assessment" "Margaret Plumley"
++++ cand 36
+36	pageSized=false apart=true	crops=2	taken=100/110	tints=0
+  [70.0 409.3 792.0 612.0] 91w "The Choices That Will Determine the Futu" "Societal choices drive gr
+  [0.0 0.0 792.0 341.2] 9w "Overview | 1-4" "Fifth National Climate Assessment" "Margaret Plumley"
+--- base 42
+42	pageSized=false apart=true	crops=2	taken=132/332	tints=2
+  [65.5 310.3 792.0 612.0] 114w "Accelerating advances in adaptation can " "reduce rising climate ri
+  [412.0 235.3 726.5 281.1] 18w "prepare for future impacts (see “Mitigat" "actions can result in sy
++++ cand 42
+42	pageSized=false apart=true	crops=1	taken=114/332	tints=3
+  [65.5 310.3 792.0 612.0] 114w "Accelerating advances in adaptation can " "reduce rising climate ri
+--- base 53
+53	pageSized=false apart=true	crops=36	taken=73/297	tints=0
+  [0.0 561.4 758.0 587.9] 20w "Table 1.2. Climate Change Is Already Aff"
+  [70.0 335.3 380.0 339.3] 0w 
+  [70.0 420.1 380.0 424.1] 0w 
+  [70.0 384.1 380.0 388.1] 0w 
+  [416.5 335.3 726.5 339.3] 0w 
+  [416.5 383.6 726.5 387.6] 0w 
+  [70.0 184.8 380.0 188.8] 0w 
+  [415.5 184.8 726.5 188.8] 0w 
+  [415.5 270.0 726.5 274.0] 0w 
+  [415.5 232.5 726.5 236.5] 0w 
+  [70.0 34.2 380.0 38.2] 0w 
+  [70.0 119.5 380.0 123.5] 0w 
+  [70.0 82.5 380.0 86.5] 0w 
+  [415.5 34.2 722.0 38.2] 0w 
+  [415.5 119.5 722.0 123.5] 0w 
+  [415.5 82.5 722.0 86.5] 0w 
+  [418.4 393.0 442.7 414.4] 0w 
+  [70.5 355.7 94.8 377.1] 0w 
+  [418.4 242.6 442.7 264.0] 0w 
+  [70.5 91.5 94.8 112.9] 0w 
+  [418.4 91.5 442.7 112.9] 0w 
+  [72.6 434.6 92.7 454.9] 0w 
+  [49.2 204.6 92.7 226.4] 0w 
+  [420.5 206.1 440.5 226.4] 0w 
+  [399.5 420.6 726.5 456.5] 11w "Sea level rise and coastal flooding harm" "communities. {22.1}"
+  [72.5 53.8 92.8 76.4] 0w 
+  [420.4 281.3 440.7 303.9] 0w 
+  [72.9 394.3 92.4 415.4] 0w 
+  [381.7 130.0 417.7 155.1] 0w 
+  [74.9 130.0 90.4 151.4] 0w 
+  [422.8 132.0 438.3 153.4] 0w 
+  [422.8 353.7 438.3 375.2] 0w 
+  [53.3 230.0 380.0 306.0] 27w "Agricultural losses, especially from tro" "security. {23.1}" "Severe
+  [403.1 283.1 415.8 303.9] 0w 
+  [385.1 53.7 442.7 76.4] 0w 
+  [70.0 461.4 758.0 532.6] 15w "Northeast" "Southeast" "Infrastructure Water Supply Health and W"
++++ cand 53
+53	pageSized=false apart=true	crops=36	taken=71/297	tints=0
+  [0.0 561.4 758.0 587.9] 20w "Table 1.2. Climate Change Is Already Aff"
+  [70.0 335.3 380.0 339.3] 0w 
+  [70.0 420.1 380.0 424.1] 0w 
+  [70.0 384.1 380.0 388.1] 0w 
+  [416.5 335.3 726.5 339.3] 0w 
+  [416.5 383.6 726.5 387.6] 0w 
+  [70.0 184.8 380.0 188.8] 0w 
+  [415.5 184.8 726.5 188.8] 0w 
+  [415.5 270.0 726.5 274.0] 0w 
+  [415.5 232.5 726.5 236.5] 0w 
+  [70.0 34.2 380.0 38.2] 0w 
+  [70.0 119.5 380.0 123.5] 0w 
+  [70.0 82.5 380.0 86.5] 0w 
+  [415.5 34.2 722.0 38.2] 0w 
+  [415.5 119.5 722.0 123.5] 0w 
+  [415.5 82.5 722.0 86.5] 0w 
+  [418.4 393.0 442.7 414.4] 0w 
+  [70.5 355.7 94.8 377.1] 0w 
+  [418.4 242.6 442.7 264.0] 0w 
+  [70.5 91.5 94.8 112.9] 0w 
+  [418.4 91.5 442.7 112.9] 0w 
+  [72.6 434.6 92.7 454.9] 0w 
+  [49.2 204.6 92.7 226.4] 0w 
+  [420.5 206.1 440.5 226.4] 0w 
+  [399.5 420.6 726.5 456.5] 11w "Sea level rise and coastal flooding harm" "communities. {22.1}"
+  [72.5 53.8 92.8 76.4] 0w 
+  [420.4 281.3 440.7 303.9] 0w 
+  [72.9 394.3 92.4 415.4] 0w 
+  [381.7 130.0 417.7 155.1] 0w 
+  [74.9 130.0 90.4 151.4] 0w 
+  [422.8 132.0 438.3 153.4] 0w 
+  [422.8 353.7 438.3 375.2] 0w 
+  [53.3 230.0 380.0 306.0] 27w "Agricultural losses, especially from tro" "security. {23.1}" "Severe
+  [403.1 283.1 415.8 303.9] 0w 
+  [385.1 53.7 442.7 76.4] 0w 
+  [70.0 480.8 758.0 532.6] 13w "Infrastructure Water Supply Health and W"
+--- base 65
+65	pageSized=false apart=true	crops=1	taken=305/305	tints=1
+  [0.0 0.0 792.0 579.1] 305w "Overview | 1-33" "Fifth National Climate Assessment" "Southern Great P
++++ cand 65
+65	pageSized=false apart=true	crops=2	taken=175/305	tints=1
+  [418.5 321.8 755.2 576.0] 0w 
+  [0.0 0.0 792.0 320.2] 175w "Overview | 1-33" "Fifth National Climate Assessment" "(top left; Fort 
+--- base 67
+67	pageSized=false apart=true	crops=1	taken=238/274	tints=1
+  [33.0 116.1 792.0 612.0] 238w "(top; Golden, Colorado) Solar panels are" "Laboratory. (bottom left
++++ cand 67
+67	pageSized=false apart=true	crops=1	taken=238/274	tints=2
+  [33.0 116.1 792.0 612.0] 238w "(top; Golden, Colorado) Solar panels are" "Laboratory. (bottom left
+--- base 71
+71	pageSized=false apart=true	crops=1	taken=170/177	tints=0
+  [53.8 130.2 726.5 577.8] 170w "Potential Warming Pathways in the" "United States" "When or if the 
++++ cand 71
+71	pageSized=false apart=true	crops=1	taken=0/177	tints=3
+  [73.9 149.9 519.5 556.3] 0w 
+--- base 79
+79	pageSized=false apart=true	crops=2	taken=180/322	tints=2
+  [0.0 0.0 792.0 321.3] 180w "Overview | 1-47" "Fifth National Climate Assessment" "A just transitio
+  [32.0 479.2 760.0 579.4] 0w 
++++ cand 79
+79	pageSized=false apart=true	crops=2	taken=171/322	tints=2
+  [0.0 0.0 792.0 307.3] 171w "Overview | 1-47" "Fifth National Climate Assessment" "A just transitio
+  [32.0 479.2 760.0 579.4] 0w 
+--- base 285
+285	pageSized=false apart=true	crops=2	taken=89/588	tints=0
+  [74.5 186.3 553.7 224.4] 32w "Brettschneider, S. and I. Fofana, 2021: " "the past four decades and
+  [72.5 341.1 543.0 420.6] 57w "EIA, 2021: Today in Energy: U.S. Electri" "2020. U.S. Energy Informa
++++ cand 285
+285	pageSized=false apart=true	crops=2	taken=56/588	tints=0
+  [74.5 186.3 553.7 224.4] 32w "Brettschneider, S. and I. Fofana, 2021: " "the past four decades and
+  [72.5 377.2 528.8 420.6] 24w "EIA, 2021: Today in Energy: U.S. Electri" "2020. U.S. Energy Informa
+--- base 351
+351	pageSized=false apart=true	crops=1	taken=10/425	tints=0
+  [52.0 432.9 522.0 722.7] 10w "Conditions conducive to very large fires"
++++ cand 351
+351	pageSized=false apart=true	crops=1	taken=0/425	tints=0
+  [54.0 448.6 522.0 722.7] 0w 
+--- base 405
+405	pageSized=false apart=true	crops=5	taken=74/244	tints=0
+  [0.0 722.5 560.0 749.0] 9w "Table 8.1. Climate-Impacted Disease Risk"
+  [52.0 545.9 560.0 687.4] 30w "Pathogen: Virus" "Disease" "Affected Organisms" "West Nile virus" "B
+  [52.0 392.4 560.0 509.2] 20w "Pathogen: Bacteria" "Disease" "Affected Organisms" "Furunculosis" "T
+  [52.0 203.8 560.0 282.0] 10w "Chytridiomycosis" "Amphibians" "Rapid ‘Ōhi‘a death" "Plants" "Armill
+  [52.0 302.8 560.0 345.3] 5w "Pathogen: Fungus" "Disease" "Affected Organisms"
++++ cand 405
+405	pageSized=false apart=true	crops=5	taken=72/244	tints=0
+  [0.0 722.5 560.0 749.0] 9w "Table 8.1. Climate-Impacted Disease Risk"
+  [52.0 545.9 560.0 673.5] 28w "Disease" "Affected Organisms" "West Nile virus" "Birds and mammals" 
+  [52.0 392.4 560.0 509.2] 20w "Pathogen: Bacteria" "Disease" "Affected Organisms" "Furunculosis" "T
+  [52.0 203.8 560.0 282.0] 10w "Chytridiomycosis" "Amphibians" "Rapid ‘Ōhi‘a death" "Plants" "Armill
+  [52.0 302.8 560.0 345.3] 5w "Pathogen: Fungus" "Disease" "Affected Organisms"
+--- base 411
+411	pageSized=false apart=true	crops=5	taken=152/339	tints=0
+  [0.0 533.2 560.0 611.7] 40w "Table 8.2. Examples of Climate Impacts o" "Climate change affects the
+  [52.0 83.5 560.0 87.5] 0w 
+  [67.0 478.0 113.8 524.8] 0w 
+  [52.0 172.8 560.0 448.0] 112w "Physical and" "Psychological Experiences" "Cold-weather recreationa
+  [67.0 113.2 111.6 160.0] 0w 
++++ cand 411
+411	pageSized=false apart=true	crops=6	taken=128/339	tints=0
+  [0.0 585.2 560.0 611.7] 9w "Table 8.2. Examples of Climate Impacts o"
+  [52.0 533.2 560.0 561.8] 7w "Ecosystem Service" "Potential Climate Impacts" "Equity Implications"
+  [52.0 83.5 560.0 87.5] 0w 
+  [67.0 478.0 113.8 524.8] 0w 
+  [52.0 172.8 560.0 448.0] 112w "Physical and" "Psychological Experiences" "Cold-weather recreationa
+  [67.0 113.2 111.6 160.0] 0w 
+--- base 687
+687	pageSized=false apart=true	crops=3	taken=74/527	tints=0
+  [74.5 537.3 539.5 575.4] 27w "Williams, A.P., B.I. Cook, and J.E. Smer" "American megadrought in 2
+  [72.5 656.7 539.3 699.6] 23w "EPA, 2019: Integrated Science Assessment" "19/188. U.S. Environmenta
+  [72.5 195.3 513.9 253.2] 24w "City of Ashland Oregon, 2019: Smokewise " "asp?sectionid=534" "Colvi
++++ cand 687
+687	pageSized=false apart=true	crops=3	taken=60/527	tints=0
+  [74.5 537.3 539.5 575.4] 27w "Williams, A.P., B.I. Cook, and J.E. Smer" "American megadrought in 2
+  [72.5 656.7 539.3 699.6] 23w "EPA, 2019: Integrated Science Assessment" "19/188. U.S. Environmenta
+  [72.5 220.6 506.6 253.2] 10w "City of Ashland Oregon, 2019: Smokewise " "asp?sectionid=534"
+--- base 863
+863	pageSized=false apart=true	crops=6	taken=151/184	tints=0
+  [52.0 711.4 560.0 739.8] 7w "Sector" "Impact Type" "Climate Hazard" "Economic Estimate"
+  [52.0 271.3 560.0 275.3] 0w 
+  [90.2 679.6 111.4 700.8] 0w 
+  [90.2 285.9 111.4 307.1] 0w 
+  [52.0 77.1 560.0 257.0] 31w "c) Sample Impacts That Are Difficult to " "Sector" "Impact type" "Cli
+  [52.0 317.7 560.0 669.0] 113w "Flooding costs" "Flooding" "+61% annual losses (2050)*70" "Railroad
++++ cand 863
+863	pageSized=false apart=true	crops=6	taken=151/184	tints=0
+  [52.0 711.4 560.0 739.8] 7w "Sector" "Impact Type" "Climate Hazard" "Economic Estimate"
+  [52.0 271.3 560.0 275.3] 0w 
+  [90.2 679.6 111.4 700.8] 0w 
+  [91.5 285.9 109.9 307.1] 0w 
+  [52.0 77.1 560.0 257.0] 31w "c) Sample Impacts That Are Difficult to " "Sector" "Impact type" "Cli
+  [52.0 317.7 560.0 669.0] 113w "Flooding costs" "Flooding" "+61% annual losses (2050)*70" "Railroad
+--- base 981
+981	pageSized=false apart=true	crops=1	taken=48/463	tints=0
+  [72.5 260.1 550.9 339.6] 48w "An Act Concerning Sea Level Rise Inundat" "HB1350 - CH0628, State of
++++ cand 981
+981	pageSized=false apart=true	crops=1	taken=24/463	tints=0
+  [72.5 296.2 550.9 339.6] 24w "An Act Concerning Sea Level Rise Inundat" "HB1350 - CH0628, State of
+--- base 982
+982	pageSized=false apart=true	crops=1	taken=32/407	tints=0
+  [72.5 249.3 533.6 318.0] 32w "City of Pittsburgh, 2022: Pittsburgh Zon" "Management Ordinance. Pit
++++ cand 982
+982	pageSized=false apart=true	crops=1	taken=19/407	tints=0
+  [72.5 274.6 516.8 318.0] 19w "City of Pittsburgh, 2022: Pittsburgh Zon" "Management Ordinance. Pit
+--- base 1000
+1000	pageSized=false apart=true	crops=2	taken=16/439	tints=2
+  [7.0 698.7 560.0 753.5] 16w "Box 22.2. Reshaping FEMA Policy to Aid D" "in the Gullah Geechee Cult
+  [54.0 177.9 448.0 439.3] 0w 
++++ cand 1000
+1000	pageSized=false apart=true	crops=1	taken=0/439	tints=4
+  [54.0 177.9 448.0 439.3] 0w 
+--- base 1019
+1019	pageSized=false apart=true	crops=2	taken=48/464	tints=8
+  [7.0 721.7 560.0 753.5] 8w "Box 22.3. Indigenous Stewardship of Sout"
+  [52.0 157.9 560.0 432.6] 40w "affected by climate change, loss of habi" "to our Tribal members, an
++++ cand 1019
+1019	pageSized=false apart=true	crops=2	taken=31/464	tints=8
+  [7.0 721.7 560.0 753.5] 8w "Box 22.3. Indigenous Stewardship of Sout"
+  [52.0 157.9 560.0 420.6] 23w "to our Tribal members, and other Tribes " "Indians406" "Rivercane in
+--- base 1049
+1049	pageSized=false apart=true	crops=3	taken=210/385	tints=0
+  [74.5 515.7 546.3 553.8] 32w "Schoonover, J.E., K.W.J. Williard, J.J. " "by giant cane and forest 
+  [74.5 432.9 540.7 481.8] 46w "Schramm, P.J., C.L. Brown, S. Saha, K.C." "of the effects of tempera
+  [72.5 618.3 556.6 741.0] 132w "McKenzie, E.R., 2021: Indigenous Approac" "pp. https://www.spa.usac
++++ cand 1049
+1049	pageSized=false apart=true	crops=3	taken=96/385	tints=0
+  [74.5 515.7 546.3 553.8] 32w "Schoonover, J.E., K.W.J. Williard, J.J. " "by giant cane and forest 
+  [74.5 432.9 540.7 481.8] 46w "Schramm, P.J., C.L. Brown, S. Saha, K.C." "of the effects of tempera
+  [72.5 697.6 556.6 741.0] 18w "McKenzie, E.R., 2021: Indigenous Approac" "pp. https://www.spa.usace
+--- base 1273
+1273	pageSized=false apart=true	crops=1	taken=65/544	tints=0
+  [72.5 476.1 558.7 555.6] 65w "BLS, 2023: Quarterly Census of Employmen" "All Industry Levels, One 
++++ cand 1273
+1273	pageSized=false apart=true	crops=1	taken=32/544	tints=0
+  [72.5 512.2 558.7 555.6] 32w "BLS, 2023: Quarterly Census of Employmen" "All Industry Levels, One 
+--- base 1402
+1402	pageSized=false apart=true	crops=1	taken=44/538	tints=0
+  [72.5 528.3 556.2 597.0] 44w "An Act to Amend Section 65302 of the Gov" "608, State of California,
++++ cand 1402
+1402	pageSized=false apart=true	crops=1	taken=28/538	tints=0
+  [72.5 553.6 527.2 597.0] 28w "An Act to Amend Section 65302 of the Gov" "608, State of California,
+--- base 1485
+1485	pageSized=true apart=false	crops=2	taken=11/11	tints=0
+  [52.0 640.6 596.9 790.5] 11w "Fifth National Climate Assessment: Chapt" "Hawaiʻi and" "US-Affiliat
+  [0.0 0.0 612.0 631.0] 0w 
++++ cand 1485
+1485	pageSized=true apart=false	crops=2	taken=0/11	tints=0
+  [380.9 690.9 596.9 790.5] 0w 
+  [0.0 0.0 612.0 631.0] 0w 
+--- base 1531
+1531	pageSized=false apart=true	crops=3	taken=143/583	tints=0
+  [74.5 146.7 547.7 195.6] 44w "Dyer, J., 2018: Ch. 20. Predicting true " "are Pacific maritime supp
+  [74.5 94.5 556.0 143.4] 55w "Johnson, J.E., V. Allain, B. Basel, J.D." "Nicol, 2020: Ch. 10. Impac
+  [72.5 508.5 559.4 577.2] 44w "The World Bank. 2022: Agriculture, fores" "Micronesia, Fed. Sts., Gu
++++ cand 1531
+1531	pageSized=false apart=true	crops=3	taken=127/583	tints=0
+  [74.5 146.7 547.7 195.6] 44w "Dyer, J., 2018: Ch. 20. Predicting true " "are Pacific maritime supp
+  [74.5 94.5 556.0 143.4] 55w "Johnson, J.E., V. Allain, B. Basel, J.D." "Nicol, 2020: Ch. 10. Impac
+  [72.5 533.8 559.4 577.2] 28w "The World Bank. 2022: Agriculture, fores" "Micronesia, Fed. Sts., Gu
+--- base 1549
+1549	pageSized=false apart=true	crops=3	taken=91/518	tints=0
+  [74.5 569.7 559.3 597.8] 19w "Zhang, D. and S. Lawson, 2017: China in " "0.1080/00358533.2017.1296
+  [74.5 414.9 549.4 453.0] 33w "Coffman, M., P. Bernstein, M. Schjervhei" "US state-level carbon tax
+  [72.5 85.5 551.9 154.2] 39w "Kauaʻi Island Utility Cooperative, 2022:" "Report. Hawaii Public Util
++++ cand 1549
+1549	pageSized=false apart=true	crops=3	taken=72/518	tints=0
+  [74.5 569.7 559.3 597.8] 19w "Zhang, D. and S. Lawson, 2017: China in " "0.1080/00358533.2017.1296
+  [74.5 414.9 549.4 453.0] 33w "Coffman, M., P. Bernstein, M. Schjervhei" "US state-level carbon tax
+  [72.5 110.8 462.9 154.2] 20w "Kauaʻi Island Utility Cooperative, 2022:" "Report. Hawaii Public Uti

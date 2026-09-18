@@ -1,0 +1,29 @@
+0: blockText: two lines make a block: killed by ruledTableWithoutShadedRowsStaysOneImage
+1: blockText: one prose line is enough: killed by blockTextIsAColumnOfRunningText
+2: blockText: one wrapped line is enough: killed by blockTextIsAColumnOfRunningText
+3: blockText: a wrapped line needs no words: killed by blockTextIsAColumnOfRunningText
+4: blockText: any left edge joins a block: killed by blockTextIsAColumnOfRunningText
+5: blockText: any leading joins a block: killed by blockTextIsAColumnOfRunningText, ruledTableWithoutShadedRowsStaysOneImage
+6: clustering: text does not keep parts apart: killed by clusteringKeepsRunningTextOutOfHulls, techPortGalleryPicturesLeaveTheirCaptions
+7: clustering: a part holding the line does not keep it: killed by clusteringKeepsRunningTextOutOfHulls
+8: backdrops: one prose line makes a background: killed by picturesUnderTextGiveUpWhatTheirColumnsCover
+9: backdrops: a covered picture is kept: killed by magazineFlagBackgroundKeepsOnlyItsStripBelowTheColumns, picturesUnderTextGiveUpWhatTheirColumnsCover
+10: backdrops: a picture under another is kept: killed by picturesUnderTextGiveUpWhatTheirColumnsCover
+11: backdrops: text inside a picture is treated as running on: killed by picturesUnderTextGiveUpWhatTheirColumnsCover
+12: backdrops: any line trims a picture: killed by overhangingTitlesAndCaptionBandsTrimAPicture
+13: backdrops: a picture may give up most of itself: killed by overhangingTitlesAndCaptionBandsTrimAPicture
+14: bands: one line makes a caption band: killed by anEdgeBandOverAPhotographLeavesItsTitleAndProse, dgaPage2HeaderTitleAndWelcomeLineLeaveThePhotographsCrop, edgeBandControlsKeepTextInItsArt
+15: bands: a band holding art is still a band: killed by overhangingTitlesAndCaptionBandsTrimAPicture
+16: banner: a narrow band is a banner: killed by bannerBandsReflowWhileTheirArtStaysBesideThem
+17: banner: a band anywhere on the page: killed by bannerBandsReflowWhileTheirArtStaysBesideThem
+18: banner: any row reads: killed by bannerBandsReflowWhileTheirArtStaysBesideThem
+19: banner: no title needed: killed by bannerBandsReflowWhileTheirArtStaysBesideThem
+20: panels: one block line makes a panel: killed by panelsOfRunningTextReflowAndGridsDoNot
+21: panels: columns of fragments are one column: killed by figureBackgroundsBarChartsFlowchartsAndGridsKeepTheirImages, panelsOfRunningTextReflowAndGridsDoNot
+22: panels: a ruled grid is a panel: killed by panelsOfRunningTextReflowAndGridsDoNot
+23: crops: a grazing corner captures a line: killed by aGrazingCornerTakesNoLineOfRunningText
+24: crops: a text cut may eat the art: killed by aGrazingCornerTakesNoLineOfRunningText
+25: crops: regions merge across running text: killed by techPortGalleryPicturesLeaveTheirCaptions
+26: reader: a covered group box is still recorded: killed by readerSkipsAGroupBoxItsPaintsCoverAndMarksThem
+27: reader: a page-wide gradient keeps the page image: killed by pageSizedGradientsKeepTheirTextAndASourceReference, shadingRejectsMissingResourcesAndUnboundedRegions
+survivors: []

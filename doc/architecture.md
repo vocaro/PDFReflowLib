@@ -227,7 +227,15 @@ mark is lost), and a path or image wholly outside its clip paints nothing: illus
 draw streamlines, arrows, photographs and maps far beyond the frame that clips them, and their raw
 extents claimed the column beside the figure (#77, #98, #52). The same clipped footprints feed the
 page-sized-graphic signal, so an image merely placed larger than the page no longer marks a page
-image-backed. The reader also records every painted footprint
+image-backed. A form's box records no footprint of its own where the form's own paints already
+cover it, which marks the widest of them `grouped` instead (#158): a drop shadow, a tint or an
+opacity effect makes InDesign wrap one object in a transparency group whose box is exactly what it
+paints, and that box read as solid ink over the prose on it, so a magazine's masthead box, caption
+band and pull quote could not be read as decoration. A shading painted across the whole page is
+recorded like any other paint rather than forcing the page image: it is the page's background, and
+the page-sized-graphic signal takes it from there, so the magazine's boxed-title articles reflow
+with a source-page reference instead of losing their title and text to an image. The reader also
+records every painted footprint
 with whether it was a rectangle-only path (`re`, filled or stroked) painted outside `/Figure`
 marked content. `TintDetector` then lets the page's text decide what those rectangles are (#54):
 a cluster of them holding at least three wide prose lines that no solid ink touches, making up
@@ -281,7 +289,33 @@ images cover 90% of a remainder at least a third of the crop's height, the crop 
 images' part of that remainder. Labels set on the art itself or on boxes narrower than it (chart
 and map labels, callouts) keep their crops, as does a figure whose tinted box runs beneath its
 title past both edges; a page whose crops times its images, lines and filled paints exceed the
-same work limit keeps its crops. The page-sized-graphic review signal still reads the painted regions
+same work limit keeps its crops.
+
+Crops no longer hold a page's running text (#158, #166). `TintDetector.blockText` reads the page's
+blocks of it first: a run of at least three lines of one size, each within nine tenths of a line of
+the one above, overlapping its measure and standing on the block's left edge give or take three
+sizes, of which at least two read as prose (four words of two letters) or open in the middle of a
+sentence. A column, a caption, a sidebar's paragraphs and an index's hanging entries qualify; a
+derivation's annotations beside its steps, a column of variables, a chart's tick labels and an
+illustration's callouts do not, and a page of more than 2,000 lines has none. Four rules follow.
+Before anything clusters, an image the page's text is set over gives up what the text covers: one
+holding at least three prose lines of body size that make up a third of the lines inside it is a
+background and seeds nothing when less than half of it lies beyond that text or another picture
+covers what does (a faded flag, a decorative line drawing), keeps only the part beyond the text
+when that text's block runs on past it, and is otherwise left with the text inside it (a caption
+set inside a photograph). An image a title or a prose line crosses but lies mostly beyond gives up
+that side, as does one under a caption on its own filled band, while it keeps at least half of
+itself. Clustering then joins art by its bounding box only where the box takes no block text that
+neither part takes, so an index's ornament no longer bridges the rule under its title across three
+columns of entries, a signature box no longer bridges the running-foot rule across the feet of
+three columns, and a gallery's pictures no longer bridge the captions beneath the shorter ones. A
+filled rectangle that holds text and no grid of rules is a tint on two more kinds of evidence: a
+band at least four fifths of the page wide standing against its top or bottom edge whose rows all
+read as prose or a title and whose art stands clear of them (a web print's header band with its
+insignia), and a panel holding at least three lines of block text that all stand on one edge with
+the panel's other lines (a web print's sidebar of headings, labelled fields and a contents list).
+Art inside such a block that stands beside its text rather than between its lines keeps its own
+extent instead of a full-width band. The page-sized-graphic review signal still reads the painted regions
 before tint removal. `OCRReader` uses Vision when policy requests it.
 `StructureTreeReader` parses a separate Core Graphics document into value-only page/MCID
 associations and exact owner paths. It checks structural parent links, page identity, RoleMap
@@ -917,7 +951,12 @@ captures and the other pieces of their rows, then trims the crop away from lines
 touches. It does not chain from text line to text line through overlapping leading, so a
 label underline, a column rule or an inline equation beside tightly leaded prose does not
 absorb the paragraph or column (#36); a line whose rectangle genuinely overlaps admitted text
-is still admitted whole rather than clipped. A drawing also takes its own labels, set a word space
+is still admitted whole rather than clipped. A crop captures a line against the painted parts it
+was clustered from, not the box around them, and only where a part overlaps the line by more than
+a point in both directions, so a cluster's empty corner and an ornament's edge take nothing
+(#158). Where trimming cannot cut the crop away from a line of the page's running text, the crop
+gives up the outermost point of its own art rather than the column that line opens. A drawing
+also takes its own labels, set a word space
 from its ink (#179): Wallace's trigonometry answers letter each right triangle's vertices 1 to 11 pt
 clear of the crop, too far for the piece-of-a-row rule's three quarters of a point, so they reflowed
 as one-character paragraphs around the image. A line of one or two letters or digits joins the crop
@@ -926,9 +965,10 @@ other, the crop is bounded by a painted region at least one body wide and one bo
 crop holds nothing but labels itself (at most eight lines, none over eight characters and none
 carrying a word). A fraction bar is painted a body wide and four points tall, so a worked example is
 no drawing and its terms' digits keep their text; an exercise number carries its parenthesis, which
-is what tells page 483's `5)` half a point from its graph from a vertex letter. Graphic-region
-merging and expansion repeat until
-the bounds stabilize, so a merged crop cannot cut through a newly intersecting text line.
+is what tells page 483's `5)` half a point from its graph from a vertex letter. Graphic-region merging and expansion repeat until
+the bounds stabilize, so a merged crop cannot cut through a newly intersecting text line; two
+crops that do not overlap stay apart when the box around them would take running text that
+neither of them takes.
 Only text outside those regions reflows. `FractionRegionDetector` groups short horizontal bars with nearby compact
 mathematical terms above and below, optionally including a nearby equation prefix. It leaves
 long rules, prose, code and connected table grids to existing handling. Whole-line expansion

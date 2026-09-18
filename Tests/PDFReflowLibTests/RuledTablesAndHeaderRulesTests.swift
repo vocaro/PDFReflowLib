@@ -172,17 +172,22 @@ private func fed46(mergedHeader: Bool, paints edit: ([GraphicsReader.Paint]) -> 
         paints.filter { !($0.frame && abs($0.rect.minY - 359.952) < 1) }
     }
     #expect(table(in: reflowed(unbanded).blocks) == nil)
-    #expect(unbanded.graphics.contains { $0.height > 300 })
+    // The grid's crop holds it whole. Since #158 its parts seed separate regions, because the
+    // cells' text runs through the hull between them; whole-line expansion joins them again.
+    #expect(reflowed(unbanded).regions.contains { $0.height > 300 })
     // A chart painted inside the frame keeps the grid an image.
     let charted = try fed46(mergedHeader: false) { $0 + [GraphicsReader.Paint(rect: CGRect(x: 380, y: 200, width: 60, height: 40), frame: false)] }
     #expect(table(in: reflowed(charted).blocks) == nil)
-    #expect(charted.graphics.contains { $0.height > 300 })
+    #expect(reflowed(charted).regions.contains { $0.height > 300 })
     // A line crossing the columns inside the grid means the grid was misread; it stays an image.
     var noted = try fed46(mergedHeader: false)
     noted.lines.append(TextLine(text: "Source: Federal Reserve Board of Governors staff calculations from the discount window", rect: CGRect(x: 94.5, y: 176, width: 380, height: 9), fontSize: 8))
     let recomposed = TintDetector.compose(try #require(SourceLayoutFixture.load("fed-46").paints).map {
         GraphicsReader.Paint(rect: rect($0.rect), frame: $0.frame) }, lines: noted.lines, bounds: noted.bounds)
-    #expect(recomposed.graphics.contains { $0.height > 300 })
+    noted.graphics = recomposed.graphics
+    noted.tints = recomposed.tints
+    noted.separators = recomposed.separators
+    #expect(reflowed(noted).regions.contains { $0.height > 300 })
 }
 
 // MARK: Decoration rules (#66)

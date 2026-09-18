@@ -1,0 +1,47 @@
+changed pages: 9 [4, 8, 14, 24, 50, 66, 86, 88, 116]  words taken on them 825 -> 257
+--- base 4
+4	pageSized=true apart=false	crops=1	taken=115/115	tints=0
+  [0.0 0.0 612.0 792.0] 115w "First Edition, May 1939" "Second Edition, November 1947" "Third Editio
++++ cand 4
+4	pageSized=true apart=false	crops=0	taken=0/115	tints=2
+--- base 8
+8	pageSized=true apart=false	crops=1	taken=60/60	tints=0
+  [0.0 0.5 611.5 792.0] 60w "1 Overview of the Federal" "Reserve System" "The Federal Reserve perfor
++++ cand 8
+8	pageSized=true apart=false	crops=0	taken=0/60	tints=0
+--- base 14
+14	pageSized=true apart=false	crops=1	taken=72/72	tints=0
+  [0.0 0.0 612.0 792.0] 72w "2 The Three Key System" "Entities" "The Board of Governors, the Federal
++++ cand 14
+14	pageSized=true apart=false	crops=0	taken=0/72	tints=1
+--- base 24
+24	pageSized=true apart=false	crops=1	taken=60/60	tints=0
+  [0.0 0.0 612.0 792.0] 60w "16" "The Fed Explained: What the Central Bank" "3 Conducting Monetary P
++++ cand 24
+24	pageSized=true apart=false	crops=0	taken=0/60	tints=0
+--- base 50
+50	pageSized=true apart=false	crops=1	taken=67/67	tints=0
+  [0.0 0.0 612.0 792.0] 67w "46 Promoting Financial System Stability" "4 Promoting Financial System"
++++ cand 50
+50	pageSized=true apart=false	crops=0	taken=0/67	tints=0
+--- base 66
+66	pageSized=true apart=false	crops=1	taken=56/56	tints=0
+  [0.0 0.0 612.0 792.0] 56w "5 Supervising and Regulating" "Financial Institutions and" "Activities"
++++ cand 66
+66	pageSized=true apart=false	crops=0	taken=0/56	tints=0
+--- base 86
+86	pageSized=false apart=true	crops=1	taken=265/529	tints=0
+  [88.0 46.3 524.0 337.4] 265w "Figure 5.8. International evolutions: Th" "With other federal bankin
++++ cand 86
+86	pageSized=false apart=true	crops=1	taken=257/529	tints=0
+  [88.0 46.3 524.0 318.6] 257w "With other federal banking agencies, the" "capital adequacy standard
+--- base 88
+88	pageSized=true apart=false	crops=1	taken=72/72	tints=0
+  [0.0 0.0 612.0 792.0] 72w "6 Fostering Payment and" "Settlement System Safety" "and Efficiency" "T
++++ cand 88
+88	pageSized=true apart=false	crops=0	taken=0/72	tints=1
+--- base 116
+116	pageSized=true apart=false	crops=1	taken=58/58	tints=0
+  [0.0 0.0 612.0 792.0] 58w "7 Promoting Consumer" "Protection and Community" "Development" "The Fed
++++ cand 116
+116	pageSized=true apart=false	crops=0	taken=0/58	tints=1

@@ -1,0 +1,4275 @@
+{
+  "passed": false,
+  "provenanceErrors": [],
+  "case": "wallace-algebra-2010",
+  "executionContexts": {
+    "baseline": "host-terminal",
+    "candidate": "host-terminal"
+  },
+  "baselineConverterSHA256": "f49e260167d7ee185e816313af10f818f5f35ebbaaefc4bd5b951c14d83eb896",
+  "candidateConverterSHA256": "4d6c6b7a9ea168e2c4afa148de442affcbb41c78462467569b5f1a11809811e5",
+  "sameConverter": false,
+  "visionModelCaches": {
+    "baseline": {
+      "mode": "inherited",
+      "executableName": "pdf-reflow",
+      "programsSHA256": "22614cb0d67a8299f20da78a741db0b43f328b8fc7a2760ed28c0de40fec086d"
+    },
+    "candidate": {
+      "mode": "inherited",
+      "executableName": "pdf-reflow",
+      "programsSHA256": "22614cb0d67a8299f20da78a741db0b43f328b8fc7a2760ed28c0de40fec086d"
+    }
+  },
+  "sameVisionPrograms": true,
+  "changedOCRPages": [],
+  "ocrTextVolume": {
+    "pages": 0,
+    "baselineWords": 0,
+    "candidateWords": 0,
+    "pagesWithFewerWords": {
+      "baseline": [],
+      "candidate": []
+    }
+  },
+  "changedPages": [
+    49,
+    310,
+    318,
+    370,
+    373,
+    374,
+    376,
+    377,
+    476
+  ],
+  "changedPageFields": {
+    "49": [
+      "images",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "310": [
+      "images",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "318": [
+      "images",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "370": [
+      "images",
+      "markup"
+    ],
+    "373": [
+      "images",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "scripts",
+      "text"
+    ],
+    "374": [
+      "images",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "scripts",
+      "text"
+    ],
+    "376": [
+      "images",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "377": [
+      "images",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "476": [
+      "images",
+      "markup"
+    ]
+  },
+  "changedImages": [
+    "EPUB/images/image-196.png",
+    "EPUB/images/image-1067.png",
+    "EPUB/images/image-1121.png",
+    "EPUB/images/image-1286.png",
+    "EPUB/images/image-1292.png",
+    "EPUB/images/image-1293.png",
+    "EPUB/images/image-1295.png",
+    "EPUB/images/image-1297.png",
+    "EPUB/images/image-1299.png",
+    "EPUB/images/image-1301.png",
+    "EPUB/images/image-1302.png",
+    "EPUB/images/image-1304.png",
+    "EPUB/images/image-1306.png",
+    "EPUB/images/image-1876.png",
+    "EPUB/images/image-1880.png"
+  ],
+  "navigationChanged": false,
+  "changedNavigationPages": [],
+  "pageMarkersEqual": true,
+  "changedReportFields": [
+    "imageCount"
+  ],
+  "idOnlyShifts": {
+    "pageCount": 406,
+    "fields": {
+      "anchors": 1,
+      "images": 99,
+      "markup": 99,
+      "paragraphIDs": 400
+    },
+    "navigationEntries": 0,
+    "pages": {
+      "50": [
+        "paragraphIDs"
+      ],
+      "51": [
+        "paragraphIDs"
+      ],
+      "52": [
+        "paragraphIDs"
+      ],
+      "53": [
+        "paragraphIDs"
+      ],
+      "54": [
+        "paragraphIDs"
+      ],
+      "55": [
+        "paragraphIDs"
+      ],
+      "56": [
+        "paragraphIDs"
+      ],
+      "57": [
+        "paragraphIDs"
+      ],
+      "58": [
+        "paragraphIDs"
+      ],
+      "59": [
+        "paragraphIDs"
+      ],
+      "60": [
+        "paragraphIDs"
+      ],
+      "61": [
+        "paragraphIDs"
+      ],
+      "62": [
+        "paragraphIDs"
+      ],
+      "63": [
+        "paragraphIDs"
+      ],
+      "64": [
+        "paragraphIDs"
+      ],
+      "65": [
+        "paragraphIDs"
+      ],
+      "66": [
+        "paragraphIDs"
+      ],
+      "67": [
+        "paragraphIDs"
+      ],
+      "68": [
+        "paragraphIDs"
+      ],
+      "69": [
+        "paragraphIDs"
+      ],
+      "71": [
+        "paragraphIDs"
+      ],
+      "72": [
+        "paragraphIDs"
+      ],
+      "73": [
+        "paragraphIDs"
+      ],
+      "74": [
+        "paragraphIDs"
+      ],
+      "75": [
+        "paragraphIDs"
+      ],
+      "76": [
+        "paragraphIDs"
+      ],
+      "78": [
+        "paragraphIDs"
+      ],
+      "79": [
+        "paragraphIDs"
+      ],
+      "80": [
+        "paragraphIDs"
+      ],
+      "81": [
+        "paragraphIDs"
+      ],
+      "82": [
+        "paragraphIDs"
+      ],
+      "83": [
+        "paragraphIDs"
+      ],
+      "84": [
+        "paragraphIDs"
+      ],
+      "85": [
+        "paragraphIDs"
+      ],
+      "87": [
+        "paragraphIDs"
+      ],
+      "88": [
+        "paragraphIDs"
+      ],
+      "89": [
+        "paragraphIDs"
+      ],
+      "90": [
+        "paragraphIDs"
+      ],
+      "91": [
+        "paragraphIDs"
+      ],
+      "92": [
+        "paragraphIDs"
+      ],
+      "93": [
+        "paragraphIDs"
+      ],
+      "94": [
+        "paragraphIDs"
+      ],
+      "95": [
+        "paragraphIDs"
+      ],
+      "96": [
+        "paragraphIDs"
+      ],
+      "97": [
+        "paragraphIDs"
+      ],
+      "98": [
+        "paragraphIDs"
+      ],
+      "99": [
+        "paragraphIDs"
+      ],
+      "100": [
+        "paragraphIDs"
+      ],
+      "101": [
+        "paragraphIDs"
+      ],
+      "102": [
+        "paragraphIDs"
+      ],
+      "103": [
+        "paragraphIDs"
+      ],
+      "104": [
+        "paragraphIDs"
+      ],
+      "105": [
+        "paragraphIDs"
+      ],
+      "106": [
+        "paragraphIDs"
+      ],
+      "107": [
+        "paragraphIDs"
+      ],
+      "108": [
+        "paragraphIDs"
+      ],
+      "109": [
+        "paragraphIDs"
+      ],
+      "110": [
+        "paragraphIDs"
+      ],
+      "111": [
+        "paragraphIDs"
+      ],
+      "112": [
+        "paragraphIDs"
+      ],
+      "113": [
+        "paragraphIDs"
+      ],
+      "114": [
+        "paragraphIDs"
+      ],
+      "115": [
+        "paragraphIDs"
+      ],
+      "116": [
+        "paragraphIDs"
+      ],
+      "117": [
+        "paragraphIDs"
+      ],
+      "118": [
+        "paragraphIDs"
+      ],
+      "119": [
+        "paragraphIDs"
+      ],
+      "120": [
+        "paragraphIDs"
+      ],
+      "121": [
+        "paragraphIDs"
+      ],
+      "122": [
+        "paragraphIDs"
+      ],
+      "123": [
+        "paragraphIDs"
+      ],
+      "124": [
+        "paragraphIDs"
+      ],
+      "125": [
+        "paragraphIDs"
+      ],
+      "126": [
+        "paragraphIDs"
+      ],
+      "127": [
+        "paragraphIDs"
+      ],
+      "128": [
+        "paragraphIDs"
+      ],
+      "129": [
+        "paragraphIDs"
+      ],
+      "130": [
+        "paragraphIDs"
+      ],
+      "131": [
+        "paragraphIDs"
+      ],
+      "132": [
+        "paragraphIDs"
+      ],
+      "133": [
+        "paragraphIDs"
+      ],
+      "134": [
+        "paragraphIDs"
+      ],
+      "135": [
+        "paragraphIDs"
+      ],
+      "136": [
+        "paragraphIDs"
+      ],
+      "137": [
+        "paragraphIDs"
+      ],
+      "138": [
+        "paragraphIDs"
+      ],
+      "139": [
+        "paragraphIDs"
+      ],
+      "140": [
+        "paragraphIDs"
+      ],
+      "141": [
+        "paragraphIDs"
+      ],
+      "142": [
+        "paragraphIDs"
+      ],
+      "143": [
+        "paragraphIDs"
+      ],
+      "144": [
+        "paragraphIDs"
+      ],
+      "146": [
+        "paragraphIDs"
+      ],
+      "147": [
+        "paragraphIDs"
+      ],
+      "148": [
+        "paragraphIDs"
+      ],
+      "149": [
+        "paragraphIDs"
+      ],
+      "150": [
+        "paragraphIDs"
+      ],
+      "151": [
+        "paragraphIDs"
+      ],
+      "152": [
+        "paragraphIDs"
+      ],
+      "153": [
+        "paragraphIDs"
+      ],
+      "154": [
+        "paragraphIDs"
+      ],
+      "155": [
+        "paragraphIDs"
+      ],
+      "156": [
+        "paragraphIDs"
+      ],
+      "158": [
+        "paragraphIDs"
+      ],
+      "159": [
+        "paragraphIDs"
+      ],
+      "160": [
+        "paragraphIDs"
+      ],
+      "161": [
+        "paragraphIDs"
+      ],
+      "162": [
+        "paragraphIDs"
+      ],
+      "163": [
+        "paragraphIDs"
+      ],
+      "164": [
+        "paragraphIDs"
+      ],
+      "167": [
+        "paragraphIDs"
+      ],
+      "168": [
+        "paragraphIDs"
+      ],
+      "169": [
+        "paragraphIDs"
+      ],
+      "170": [
+        "paragraphIDs"
+      ],
+      "171": [
+        "paragraphIDs"
+      ],
+      "172": [
+        "paragraphIDs"
+      ],
+      "176": [
+        "paragraphIDs"
+      ],
+      "177": [
+        "paragraphIDs"
+      ],
+      "178": [
+        "paragraphIDs"
+      ],
+      "179": [
+        "paragraphIDs"
+      ],
+      "180": [
+        "paragraphIDs"
+      ],
+      "181": [
+        "paragraphIDs"
+      ],
+      "182": [
+        "paragraphIDs"
+      ],
+      "183": [
+        "paragraphIDs"
+      ],
+      "184": [
+        "paragraphIDs"
+      ],
+      "185": [
+        "paragraphIDs"
+      ],
+      "186": [
+        "paragraphIDs"
+      ],
+      "187": [
+        "paragraphIDs"
+      ],
+      "188": [
+        "paragraphIDs"
+      ],
+      "189": [
+        "paragraphIDs"
+      ],
+      "190": [
+        "paragraphIDs"
+      ],
+      "191": [
+        "paragraphIDs"
+      ],
+      "192": [
+        "paragraphIDs"
+      ],
+      "193": [
+        "paragraphIDs"
+      ],
+      "194": [
+        "paragraphIDs"
+      ],
+      "196": [
+        "paragraphIDs"
+      ],
+      "197": [
+        "paragraphIDs"
+      ],
+      "198": [
+        "paragraphIDs"
+      ],
+      "199": [
+        "paragraphIDs"
+      ],
+      "200": [
+        "paragraphIDs"
+      ],
+      "201": [
+        "paragraphIDs"
+      ],
+      "202": [
+        "paragraphIDs"
+      ],
+      "203": [
+        "paragraphIDs"
+      ],
+      "204": [
+        "paragraphIDs"
+      ],
+      "205": [
+        "paragraphIDs"
+      ],
+      "206": [
+        "paragraphIDs"
+      ],
+      "207": [
+        "paragraphIDs"
+      ],
+      "208": [
+        "paragraphIDs"
+      ],
+      "209": [
+        "paragraphIDs"
+      ],
+      "211": [
+        "paragraphIDs"
+      ],
+      "212": [
+        "paragraphIDs"
+      ],
+      "213": [
+        "paragraphIDs"
+      ],
+      "214": [
+        "paragraphIDs"
+      ],
+      "215": [
+        "paragraphIDs"
+      ],
+      "216": [
+        "paragraphIDs"
+      ],
+      "217": [
+        "paragraphIDs"
+      ],
+      "218": [
+        "paragraphIDs"
+      ],
+      "219": [
+        "paragraphIDs"
+      ],
+      "220": [
+        "paragraphIDs"
+      ],
+      "221": [
+        "paragraphIDs"
+      ],
+      "222": [
+        "paragraphIDs"
+      ],
+      "223": [
+        "paragraphIDs"
+      ],
+      "224": [
+        "paragraphIDs"
+      ],
+      "225": [
+        "paragraphIDs"
+      ],
+      "226": [
+        "paragraphIDs"
+      ],
+      "227": [
+        "paragraphIDs"
+      ],
+      "228": [
+        "paragraphIDs"
+      ],
+      "229": [
+        "paragraphIDs"
+      ],
+      "230": [
+        "paragraphIDs"
+      ],
+      "231": [
+        "paragraphIDs"
+      ],
+      "232": [
+        "paragraphIDs"
+      ],
+      "233": [
+        "paragraphIDs"
+      ],
+      "234": [
+        "paragraphIDs"
+      ],
+      "235": [
+        "paragraphIDs"
+      ],
+      "236": [
+        "paragraphIDs"
+      ],
+      "237": [
+        "paragraphIDs"
+      ],
+      "238": [
+        "paragraphIDs"
+      ],
+      "239": [
+        "paragraphIDs"
+      ],
+      "240": [
+        "paragraphIDs"
+      ],
+      "241": [
+        "paragraphIDs"
+      ],
+      "242": [
+        "paragraphIDs"
+      ],
+      "243": [
+        "paragraphIDs"
+      ],
+      "244": [
+        "paragraphIDs"
+      ],
+      "245": [
+        "paragraphIDs"
+      ],
+      "246": [
+        "paragraphIDs"
+      ],
+      "248": [
+        "paragraphIDs"
+      ],
+      "249": [
+        "paragraphIDs"
+      ],
+      "250": [
+        "paragraphIDs"
+      ],
+      "253": [
+        "paragraphIDs"
+      ],
+      "254": [
+        "paragraphIDs"
+      ],
+      "255": [
+        "paragraphIDs"
+      ],
+      "256": [
+        "paragraphIDs"
+      ],
+      "257": [
+        "paragraphIDs"
+      ],
+      "258": [
+        "paragraphIDs"
+      ],
+      "259": [
+        "paragraphIDs"
+      ],
+      "260": [
+        "paragraphIDs"
+      ],
+      "262": [
+        "paragraphIDs"
+      ],
+      "263": [
+        "paragraphIDs"
+      ],
+      "264": [
+        "paragraphIDs"
+      ],
+      "265": [
+        "paragraphIDs"
+      ],
+      "267": [
+        "paragraphIDs"
+      ],
+      "268": [
+        "paragraphIDs"
+      ],
+      "269": [
+        "paragraphIDs"
+      ],
+      "270": [
+        "paragraphIDs"
+      ],
+      "271": [
+        "paragraphIDs"
+      ],
+      "272": [
+        "paragraphIDs"
+      ],
+      "274": [
+        "paragraphIDs"
+      ],
+      "275": [
+        "paragraphIDs"
+      ],
+      "276": [
+        "paragraphIDs"
+      ],
+      "277": [
+        "paragraphIDs"
+      ],
+      "279": [
+        "paragraphIDs"
+      ],
+      "280": [
+        "paragraphIDs"
+      ],
+      "281": [
+        "paragraphIDs"
+      ],
+      "282": [
+        "paragraphIDs"
+      ],
+      "283": [
+        "paragraphIDs"
+      ],
+      "285": [
+        "paragraphIDs"
+      ],
+      "286": [
+        "paragraphIDs"
+      ],
+      "287": [
+        "paragraphIDs"
+      ],
+      "288": [
+        "paragraphIDs"
+      ],
+      "289": [
+        "paragraphIDs"
+      ],
+      "290": [
+        "paragraphIDs"
+      ],
+      "291": [
+        "paragraphIDs"
+      ],
+      "292": [
+        "paragraphIDs"
+      ],
+      "293": [
+        "paragraphIDs"
+      ],
+      "294": [
+        "paragraphIDs"
+      ],
+      "295": [
+        "paragraphIDs"
+      ],
+      "296": [
+        "paragraphIDs"
+      ],
+      "297": [
+        "paragraphIDs"
+      ],
+      "298": [
+        "paragraphIDs"
+      ],
+      "299": [
+        "paragraphIDs"
+      ],
+      "300": [
+        "paragraphIDs"
+      ],
+      "301": [
+        "paragraphIDs"
+      ],
+      "302": [
+        "paragraphIDs"
+      ],
+      "303": [
+        "paragraphIDs"
+      ],
+      "304": [
+        "paragraphIDs"
+      ],
+      "305": [
+        "paragraphIDs"
+      ],
+      "306": [
+        "paragraphIDs"
+      ],
+      "307": [
+        "paragraphIDs"
+      ],
+      "311": [
+        "paragraphIDs"
+      ],
+      "312": [
+        "paragraphIDs"
+      ],
+      "313": [
+        "paragraphIDs"
+      ],
+      "314": [
+        "paragraphIDs"
+      ],
+      "315": [
+        "paragraphIDs"
+      ],
+      "316": [
+        "paragraphIDs"
+      ],
+      "317": [
+        "paragraphIDs"
+      ],
+      "319": [
+        "paragraphIDs"
+      ],
+      "320": [
+        "paragraphIDs"
+      ],
+      "321": [
+        "paragraphIDs"
+      ],
+      "322": [
+        "paragraphIDs"
+      ],
+      "323": [
+        "paragraphIDs"
+      ],
+      "325": [
+        "paragraphIDs"
+      ],
+      "326": [
+        "paragraphIDs"
+      ],
+      "327": [
+        "paragraphIDs"
+      ],
+      "328": [
+        "paragraphIDs"
+      ],
+      "329": [
+        "paragraphIDs"
+      ],
+      "331": [
+        "paragraphIDs"
+      ],
+      "332": [
+        "paragraphIDs"
+      ],
+      "333": [
+        "paragraphIDs"
+      ],
+      "334": [
+        "paragraphIDs"
+      ],
+      "335": [
+        "paragraphIDs"
+      ],
+      "336": [
+        "paragraphIDs"
+      ],
+      "337": [
+        "paragraphIDs"
+      ],
+      "338": [
+        "paragraphIDs"
+      ],
+      "339": [
+        "paragraphIDs"
+      ],
+      "340": [
+        "paragraphIDs"
+      ],
+      "341": [
+        "paragraphIDs"
+      ],
+      "342": [
+        "paragraphIDs"
+      ],
+      "343": [
+        "paragraphIDs"
+      ],
+      "344": [
+        "paragraphIDs"
+      ],
+      "345": [
+        "paragraphIDs"
+      ],
+      "346": [
+        "paragraphIDs"
+      ],
+      "347": [
+        "paragraphIDs"
+      ],
+      "348": [
+        "paragraphIDs"
+      ],
+      "349": [
+        "paragraphIDs"
+      ],
+      "350": [
+        "paragraphIDs"
+      ],
+      "351": [
+        "paragraphIDs"
+      ],
+      "352": [
+        "paragraphIDs"
+      ],
+      "353": [
+        "paragraphIDs"
+      ],
+      "354": [
+        "paragraphIDs"
+      ],
+      "355": [
+        "paragraphIDs"
+      ],
+      "356": [
+        "paragraphIDs"
+      ],
+      "357": [
+        "paragraphIDs"
+      ],
+      "358": [
+        "paragraphIDs"
+      ],
+      "359": [
+        "paragraphIDs"
+      ],
+      "360": [
+        "paragraphIDs"
+      ],
+      "361": [
+        "paragraphIDs"
+      ],
+      "363": [
+        "paragraphIDs"
+      ],
+      "364": [
+        "paragraphIDs"
+      ],
+      "365": [
+        "paragraphIDs"
+      ],
+      "366": [
+        "paragraphIDs"
+      ],
+      "367": [
+        "paragraphIDs"
+      ],
+      "368": [
+        "paragraphIDs"
+      ],
+      "369": [
+        "paragraphIDs"
+      ],
+      "371": [
+        "paragraphIDs"
+      ],
+      "372": [
+        "paragraphIDs"
+      ],
+      "375": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "378": [
+        "images",
+        "markup"
+      ],
+      "379": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "380": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "381": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "382": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "383": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "384": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "385": [
+        "paragraphIDs"
+      ],
+      "386": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "387": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "388": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "389": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "390": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "391": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "392": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "393": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "394": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "395": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "396": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "397": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "398": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "399": [
+        "images",
+        "markup"
+      ],
+      "400": [
+        "images",
+        "markup"
+      ],
+      "401": [
+        "paragraphIDs"
+      ],
+      "402": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "403": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "404": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "405": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "406": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "407": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "408": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "409": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "410": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "411": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "412": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "413": [
+        "anchors",
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "414": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "415": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "416": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "417": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "418": [
+        "paragraphIDs"
+      ],
+      "419": [
+        "paragraphIDs"
+      ],
+      "420": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "421": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "422": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "423": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "424": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "425": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "426": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "427": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "428": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "429": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "430": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "431": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "432": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "433": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "434": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "435": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "436": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "438": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "439": [
+        "images",
+        "markup"
+      ],
+      "440": [
+        "paragraphIDs"
+      ],
+      "441": [
+        "paragraphIDs"
+      ],
+      "442": [
+        "paragraphIDs"
+      ],
+      "443": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "444": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "445": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "446": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "447": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "448": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "449": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "450": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "451": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "452": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "453": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "454": [
+        "paragraphIDs"
+      ],
+      "455": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "456": [
+        "paragraphIDs"
+      ],
+      "457": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "458": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "459": [
+        "paragraphIDs"
+      ],
+      "460": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "461": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "462": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "463": [
+        "paragraphIDs"
+      ],
+      "464": [
+        "paragraphIDs"
+      ],
+      "465": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "466": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "467": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "468": [
+        "images",
+        "markup"
+      ],
+      "469": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "470": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "471": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "472": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "473": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "474": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "475": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "477": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "478": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "479": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "480": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "481": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "482": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "483": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "484": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "485": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "486": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "487": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "488": [
+        "images",
+        "markup",
+        "paragraphIDs"
+      ],
+      "489": [
+        "images",
+        "markup"
+      ]
+    }
+  },
+  "imageRenames": {
+    "count": 679,
+    "pairs": [
+      [
+        "EPUB/images/image-1293.png",
+        "EPUB/images/image-1294.png"
+      ],
+      [
+        "EPUB/images/image-1294.png",
+        "EPUB/images/image-1296.png"
+      ],
+      [
+        "EPUB/images/image-1296.png",
+        "EPUB/images/image-1298.png"
+      ],
+      [
+        "EPUB/images/image-1297.png",
+        "EPUB/images/image-1299.png"
+      ],
+      [
+        "EPUB/images/image-1298.png",
+        "EPUB/images/image-1300.png"
+      ],
+      [
+        "EPUB/images/image-1300.png",
+        "EPUB/images/image-1303.png"
+      ],
+      [
+        "EPUB/images/image-1301.png",
+        "EPUB/images/image-1305.png"
+      ],
+      [
+        "EPUB/images/image-1303.png",
+        "EPUB/images/image-1307.png"
+      ],
+      [
+        "EPUB/images/image-1304.png",
+        "EPUB/images/image-1308.png"
+      ],
+      [
+        "EPUB/images/image-1305.png",
+        "EPUB/images/image-1309.png"
+      ],
+      [
+        "EPUB/images/image-1306.png",
+        "EPUB/images/image-1310.png"
+      ],
+      [
+        "EPUB/images/image-1307.png",
+        "EPUB/images/image-1311.png"
+      ],
+      [
+        "EPUB/images/image-1308.png",
+        "EPUB/images/image-1312.png"
+      ],
+      [
+        "EPUB/images/image-1309.png",
+        "EPUB/images/image-1313.png"
+      ],
+      [
+        "EPUB/images/image-1310.png",
+        "EPUB/images/image-1314.png"
+      ],
+      [
+        "EPUB/images/image-1311.png",
+        "EPUB/images/image-1315.png"
+      ],
+      [
+        "EPUB/images/image-1312.png",
+        "EPUB/images/image-1316.png"
+      ],
+      [
+        "EPUB/images/image-1313.png",
+        "EPUB/images/image-1317.png"
+      ],
+      [
+        "EPUB/images/image-1314.png",
+        "EPUB/images/image-1318.png"
+      ],
+      [
+        "EPUB/images/image-1315.png",
+        "EPUB/images/image-1319.png"
+      ],
+      [
+        "EPUB/images/image-1316.png",
+        "EPUB/images/image-1320.png"
+      ],
+      [
+        "EPUB/images/image-1317.png",
+        "EPUB/images/image-1321.png"
+      ],
+      [
+        "EPUB/images/image-1318.png",
+        "EPUB/images/image-1322.png"
+      ],
+      [
+        "EPUB/images/image-1319.png",
+        "EPUB/images/image-1323.png"
+      ],
+      [
+        "EPUB/images/image-1320.png",
+        "EPUB/images/image-1324.png"
+      ],
+      [
+        "EPUB/images/image-1321.png",
+        "EPUB/images/image-1325.png"
+      ],
+      [
+        "EPUB/images/image-1322.png",
+        "EPUB/images/image-1326.png"
+      ],
+      [
+        "EPUB/images/image-1323.png",
+        "EPUB/images/image-1327.png"
+      ],
+      [
+        "EPUB/images/image-1324.png",
+        "EPUB/images/image-1328.png"
+      ],
+      [
+        "EPUB/images/image-1325.png",
+        "EPUB/images/image-1329.png"
+      ],
+      [
+        "EPUB/images/image-1326.png",
+        "EPUB/images/image-1330.png"
+      ],
+      [
+        "EPUB/images/image-1327.png",
+        "EPUB/images/image-1331.png"
+      ],
+      [
+        "EPUB/images/image-1328.png",
+        "EPUB/images/image-1332.png"
+      ],
+      [
+        "EPUB/images/image-1329.png",
+        "EPUB/images/image-1333.png"
+      ],
+      [
+        "EPUB/images/image-1330.png",
+        "EPUB/images/image-1334.png"
+      ],
+      [
+        "EPUB/images/image-1331.png",
+        "EPUB/images/image-1335.png"
+      ],
+      [
+        "EPUB/images/image-1332.png",
+        "EPUB/images/image-1336.png"
+      ],
+      [
+        "EPUB/images/image-1333.png",
+        "EPUB/images/image-1337.png"
+      ],
+      [
+        "EPUB/images/image-1334.png",
+        "EPUB/images/image-1338.png"
+      ],
+      [
+        "EPUB/images/image-1335.png",
+        "EPUB/images/image-1339.png"
+      ],
+      [
+        "EPUB/images/image-1336.png",
+        "EPUB/images/image-1340.png"
+      ],
+      [
+        "EPUB/images/image-1337.png",
+        "EPUB/images/image-1341.png"
+      ],
+      [
+        "EPUB/images/image-1338.png",
+        "EPUB/images/image-1342.png"
+      ],
+      [
+        "EPUB/images/image-1339.png",
+        "EPUB/images/image-1343.png"
+      ],
+      [
+        "EPUB/images/image-1340.png",
+        "EPUB/images/image-1344.png"
+      ],
+      [
+        "EPUB/images/image-1341.png",
+        "EPUB/images/image-1345.png"
+      ],
+      [
+        "EPUB/images/image-1342.png",
+        "EPUB/images/image-1346.png"
+      ],
+      [
+        "EPUB/images/image-1343.png",
+        "EPUB/images/image-1347.png"
+      ],
+      [
+        "EPUB/images/image-1344.png",
+        "EPUB/images/image-1348.png"
+      ],
+      [
+        "EPUB/images/image-1345.png",
+        "EPUB/images/image-1349.png"
+      ],
+      [
+        "EPUB/images/image-1346.png",
+        "EPUB/images/image-1350.png"
+      ],
+      [
+        "EPUB/images/image-1347.png",
+        "EPUB/images/image-1351.png"
+      ],
+      [
+        "EPUB/images/image-1348.png",
+        "EPUB/images/image-1352.png"
+      ],
+      [
+        "EPUB/images/image-1349.png",
+        "EPUB/images/image-1353.png"
+      ],
+      [
+        "EPUB/images/image-1350.png",
+        "EPUB/images/image-1354.png"
+      ],
+      [
+        "EPUB/images/image-1351.png",
+        "EPUB/images/image-1355.png"
+      ],
+      [
+        "EPUB/images/image-1352.png",
+        "EPUB/images/image-1356.png"
+      ],
+      [
+        "EPUB/images/image-1353.png",
+        "EPUB/images/image-1357.png"
+      ],
+      [
+        "EPUB/images/image-1354.png",
+        "EPUB/images/image-1358.png"
+      ],
+      [
+        "EPUB/images/image-1355.png",
+        "EPUB/images/image-1359.png"
+      ],
+      [
+        "EPUB/images/image-1356.png",
+        "EPUB/images/image-1360.png"
+      ],
+      [
+        "EPUB/images/image-1357.png",
+        "EPUB/images/image-1361.png"
+      ],
+      [
+        "EPUB/images/image-1358.png",
+        "EPUB/images/image-1362.png"
+      ],
+      [
+        "EPUB/images/image-1359.png",
+        "EPUB/images/image-1363.png"
+      ],
+      [
+        "EPUB/images/image-1360.png",
+        "EPUB/images/image-1364.png"
+      ],
+      [
+        "EPUB/images/image-1361.png",
+        "EPUB/images/image-1365.png"
+      ],
+      [
+        "EPUB/images/image-1362.png",
+        "EPUB/images/image-1366.png"
+      ],
+      [
+        "EPUB/images/image-1363.png",
+        "EPUB/images/image-1367.png"
+      ],
+      [
+        "EPUB/images/image-1364.png",
+        "EPUB/images/image-1368.png"
+      ],
+      [
+        "EPUB/images/image-1365.png",
+        "EPUB/images/image-1369.png"
+      ],
+      [
+        "EPUB/images/image-1366.png",
+        "EPUB/images/image-1370.png"
+      ],
+      [
+        "EPUB/images/image-1367.png",
+        "EPUB/images/image-1371.png"
+      ],
+      [
+        "EPUB/images/image-1368.png",
+        "EPUB/images/image-1372.png"
+      ],
+      [
+        "EPUB/images/image-1369.png",
+        "EPUB/images/image-1373.png"
+      ],
+      [
+        "EPUB/images/image-1370.png",
+        "EPUB/images/image-1374.png"
+      ],
+      [
+        "EPUB/images/image-1371.png",
+        "EPUB/images/image-1375.png"
+      ],
+      [
+        "EPUB/images/image-1372.png",
+        "EPUB/images/image-1376.png"
+      ],
+      [
+        "EPUB/images/image-1373.png",
+        "EPUB/images/image-1377.png"
+      ],
+      [
+        "EPUB/images/image-1374.png",
+        "EPUB/images/image-1378.png"
+      ],
+      [
+        "EPUB/images/image-1375.png",
+        "EPUB/images/image-1379.png"
+      ],
+      [
+        "EPUB/images/image-1376.png",
+        "EPUB/images/image-1380.png"
+      ],
+      [
+        "EPUB/images/image-1377.png",
+        "EPUB/images/image-1381.png"
+      ],
+      [
+        "EPUB/images/image-1378.png",
+        "EPUB/images/image-1382.png"
+      ],
+      [
+        "EPUB/images/image-1379.png",
+        "EPUB/images/image-1383.png"
+      ],
+      [
+        "EPUB/images/image-1380.png",
+        "EPUB/images/image-1384.png"
+      ],
+      [
+        "EPUB/images/image-1381.png",
+        "EPUB/images/image-1385.png"
+      ],
+      [
+        "EPUB/images/image-1382.png",
+        "EPUB/images/image-1386.png"
+      ],
+      [
+        "EPUB/images/image-1383.png",
+        "EPUB/images/image-1387.png"
+      ],
+      [
+        "EPUB/images/image-1384.png",
+        "EPUB/images/image-1388.png"
+      ],
+      [
+        "EPUB/images/image-1385.png",
+        "EPUB/images/image-1389.png"
+      ],
+      [
+        "EPUB/images/image-1386.png",
+        "EPUB/images/image-1390.png"
+      ],
+      [
+        "EPUB/images/image-1387.png",
+        "EPUB/images/image-1391.png"
+      ],
+      [
+        "EPUB/images/image-1388.png",
+        "EPUB/images/image-1392.png"
+      ],
+      [
+        "EPUB/images/image-1389.png",
+        "EPUB/images/image-1393.png"
+      ],
+      [
+        "EPUB/images/image-1390.png",
+        "EPUB/images/image-1394.png"
+      ],
+      [
+        "EPUB/images/image-1391.png",
+        "EPUB/images/image-1395.png"
+      ],
+      [
+        "EPUB/images/image-1392.png",
+        "EPUB/images/image-1396.png"
+      ],
+      [
+        "EPUB/images/image-1393.png",
+        "EPUB/images/image-1397.png"
+      ],
+      [
+        "EPUB/images/image-1394.png",
+        "EPUB/images/image-1398.png"
+      ],
+      [
+        "EPUB/images/image-1395.png",
+        "EPUB/images/image-1399.png"
+      ],
+      [
+        "EPUB/images/image-1396.png",
+        "EPUB/images/image-1400.png"
+      ],
+      [
+        "EPUB/images/image-1397.png",
+        "EPUB/images/image-1401.png"
+      ],
+      [
+        "EPUB/images/image-1398.png",
+        "EPUB/images/image-1402.png"
+      ],
+      [
+        "EPUB/images/image-1399.png",
+        "EPUB/images/image-1403.png"
+      ],
+      [
+        "EPUB/images/image-1400.png",
+        "EPUB/images/image-1404.png"
+      ],
+      [
+        "EPUB/images/image-1401.png",
+        "EPUB/images/image-1405.png"
+      ],
+      [
+        "EPUB/images/image-1402.png",
+        "EPUB/images/image-1406.png"
+      ],
+      [
+        "EPUB/images/image-1403.png",
+        "EPUB/images/image-1407.png"
+      ],
+      [
+        "EPUB/images/image-1404.png",
+        "EPUB/images/image-1408.png"
+      ],
+      [
+        "EPUB/images/image-1405.png",
+        "EPUB/images/image-1409.png"
+      ],
+      [
+        "EPUB/images/image-1406.png",
+        "EPUB/images/image-1410.png"
+      ],
+      [
+        "EPUB/images/image-1407.png",
+        "EPUB/images/image-1411.png"
+      ],
+      [
+        "EPUB/images/image-1408.png",
+        "EPUB/images/image-1412.png"
+      ],
+      [
+        "EPUB/images/image-1409.png",
+        "EPUB/images/image-1413.png"
+      ],
+      [
+        "EPUB/images/image-1410.png",
+        "EPUB/images/image-1414.png"
+      ],
+      [
+        "EPUB/images/image-1411.png",
+        "EPUB/images/image-1415.png"
+      ],
+      [
+        "EPUB/images/image-1412.png",
+        "EPUB/images/image-1416.png"
+      ],
+      [
+        "EPUB/images/image-1413.png",
+        "EPUB/images/image-1417.png"
+      ],
+      [
+        "EPUB/images/image-1414.png",
+        "EPUB/images/image-1418.png"
+      ],
+      [
+        "EPUB/images/image-1415.png",
+        "EPUB/images/image-1419.png"
+      ],
+      [
+        "EPUB/images/image-1416.png",
+        "EPUB/images/image-1420.png"
+      ],
+      [
+        "EPUB/images/image-1417.png",
+        "EPUB/images/image-1421.png"
+      ],
+      [
+        "EPUB/images/image-1418.png",
+        "EPUB/images/image-1422.png"
+      ],
+      [
+        "EPUB/images/image-1419.png",
+        "EPUB/images/image-1423.png"
+      ],
+      [
+        "EPUB/images/image-1420.png",
+        "EPUB/images/image-1424.png"
+      ],
+      [
+        "EPUB/images/image-1421.png",
+        "EPUB/images/image-1425.png"
+      ],
+      [
+        "EPUB/images/image-1422.png",
+        "EPUB/images/image-1426.png"
+      ],
+      [
+        "EPUB/images/image-1423.png",
+        "EPUB/images/image-1427.png"
+      ],
+      [
+        "EPUB/images/image-1424.png",
+        "EPUB/images/image-1428.png"
+      ],
+      [
+        "EPUB/images/image-1425.png",
+        "EPUB/images/image-1429.png"
+      ],
+      [
+        "EPUB/images/image-1426.png",
+        "EPUB/images/image-1430.png"
+      ],
+      [
+        "EPUB/images/image-1427.png",
+        "EPUB/images/image-1431.png"
+      ],
+      [
+        "EPUB/images/image-1428.png",
+        "EPUB/images/image-1432.png"
+      ],
+      [
+        "EPUB/images/image-1429.png",
+        "EPUB/images/image-1433.png"
+      ],
+      [
+        "EPUB/images/image-1430.png",
+        "EPUB/images/image-1434.png"
+      ],
+      [
+        "EPUB/images/image-1431.png",
+        "EPUB/images/image-1435.png"
+      ],
+      [
+        "EPUB/images/image-1432.png",
+        "EPUB/images/image-1436.png"
+      ],
+      [
+        "EPUB/images/image-1433.png",
+        "EPUB/images/image-1437.png"
+      ],
+      [
+        "EPUB/images/image-1434.png",
+        "EPUB/images/image-1438.png"
+      ],
+      [
+        "EPUB/images/image-1435.png",
+        "EPUB/images/image-1439.png"
+      ],
+      [
+        "EPUB/images/image-1436.png",
+        "EPUB/images/image-1440.png"
+      ],
+      [
+        "EPUB/images/image-1437.png",
+        "EPUB/images/image-1441.png"
+      ],
+      [
+        "EPUB/images/image-1438.png",
+        "EPUB/images/image-1442.png"
+      ],
+      [
+        "EPUB/images/image-1439.png",
+        "EPUB/images/image-1443.png"
+      ],
+      [
+        "EPUB/images/image-1440.png",
+        "EPUB/images/image-1444.png"
+      ],
+      [
+        "EPUB/images/image-1441.png",
+        "EPUB/images/image-1445.png"
+      ],
+      [
+        "EPUB/images/image-1442.png",
+        "EPUB/images/image-1446.png"
+      ],
+      [
+        "EPUB/images/image-1443.png",
+        "EPUB/images/image-1447.png"
+      ],
+      [
+        "EPUB/images/image-1444.png",
+        "EPUB/images/image-1448.png"
+      ],
+      [
+        "EPUB/images/image-1445.png",
+        "EPUB/images/image-1449.png"
+      ],
+      [
+        "EPUB/images/image-1446.png",
+        "EPUB/images/image-1450.png"
+      ],
+      [
+        "EPUB/images/image-1447.png",
+        "EPUB/images/image-1451.png"
+      ],
+      [
+        "EPUB/images/image-1448.png",
+        "EPUB/images/image-1452.png"
+      ],
+      [
+        "EPUB/images/image-1449.png",
+        "EPUB/images/image-1453.png"
+      ],
+      [
+        "EPUB/images/image-1450.png",
+        "EPUB/images/image-1454.png"
+      ],
+      [
+        "EPUB/images/image-1451.png",
+        "EPUB/images/image-1455.png"
+      ],
+      [
+        "EPUB/images/image-1452.png",
+        "EPUB/images/image-1456.png"
+      ],
+      [
+        "EPUB/images/image-1453.png",
+        "EPUB/images/image-1457.png"
+      ],
+      [
+        "EPUB/images/image-1454.png",
+        "EPUB/images/image-1458.png"
+      ],
+      [
+        "EPUB/images/image-1455.png",
+        "EPUB/images/image-1459.png"
+      ],
+      [
+        "EPUB/images/image-1456.png",
+        "EPUB/images/image-1460.png"
+      ],
+      [
+        "EPUB/images/image-1457.png",
+        "EPUB/images/image-1461.png"
+      ],
+      [
+        "EPUB/images/image-1458.png",
+        "EPUB/images/image-1462.png"
+      ],
+      [
+        "EPUB/images/image-1459.png",
+        "EPUB/images/image-1463.png"
+      ],
+      [
+        "EPUB/images/image-1460.png",
+        "EPUB/images/image-1464.png"
+      ],
+      [
+        "EPUB/images/image-1461.png",
+        "EPUB/images/image-1465.png"
+      ],
+      [
+        "EPUB/images/image-1462.png",
+        "EPUB/images/image-1466.png"
+      ],
+      [
+        "EPUB/images/image-1463.png",
+        "EPUB/images/image-1467.png"
+      ],
+      [
+        "EPUB/images/image-1464.png",
+        "EPUB/images/image-1468.png"
+      ],
+      [
+        "EPUB/images/image-1465.png",
+        "EPUB/images/image-1469.png"
+      ],
+      [
+        "EPUB/images/image-1466.png",
+        "EPUB/images/image-1470.png"
+      ],
+      [
+        "EPUB/images/image-1467.png",
+        "EPUB/images/image-1471.png"
+      ],
+      [
+        "EPUB/images/image-1468.png",
+        "EPUB/images/image-1472.png"
+      ],
+      [
+        "EPUB/images/image-1469.png",
+        "EPUB/images/image-1473.png"
+      ],
+      [
+        "EPUB/images/image-1470.png",
+        "EPUB/images/image-1474.png"
+      ],
+      [
+        "EPUB/images/image-1471.png",
+        "EPUB/images/image-1475.png"
+      ],
+      [
+        "EPUB/images/image-1472.png",
+        "EPUB/images/image-1476.png"
+      ],
+      [
+        "EPUB/images/image-1473.png",
+        "EPUB/images/image-1477.png"
+      ],
+      [
+        "EPUB/images/image-1474.png",
+        "EPUB/images/image-1478.png"
+      ],
+      [
+        "EPUB/images/image-1475.png",
+        "EPUB/images/image-1479.png"
+      ],
+      [
+        "EPUB/images/image-1476.png",
+        "EPUB/images/image-1480.png"
+      ],
+      [
+        "EPUB/images/image-1477.png",
+        "EPUB/images/image-1481.png"
+      ],
+      [
+        "EPUB/images/image-1478.png",
+        "EPUB/images/image-1482.png"
+      ],
+      [
+        "EPUB/images/image-1479.png",
+        "EPUB/images/image-1483.png"
+      ],
+      [
+        "EPUB/images/image-1480.png",
+        "EPUB/images/image-1484.png"
+      ],
+      [
+        "EPUB/images/image-1481.png",
+        "EPUB/images/image-1485.png"
+      ],
+      [
+        "EPUB/images/image-1482.png",
+        "EPUB/images/image-1486.png"
+      ],
+      [
+        "EPUB/images/image-1483.png",
+        "EPUB/images/image-1487.png"
+      ],
+      [
+        "EPUB/images/image-1484.png",
+        "EPUB/images/image-1488.png"
+      ],
+      [
+        "EPUB/images/image-1485.png",
+        "EPUB/images/image-1489.png"
+      ],
+      [
+        "EPUB/images/image-1486.png",
+        "EPUB/images/image-1490.png"
+      ],
+      [
+        "EPUB/images/image-1487.png",
+        "EPUB/images/image-1491.png"
+      ],
+      [
+        "EPUB/images/image-1488.png",
+        "EPUB/images/image-1492.png"
+      ],
+      [
+        "EPUB/images/image-1489.png",
+        "EPUB/images/image-1493.png"
+      ],
+      [
+        "EPUB/images/image-1490.png",
+        "EPUB/images/image-1494.png"
+      ],
+      [
+        "EPUB/images/image-1491.png",
+        "EPUB/images/image-1495.png"
+      ],
+      [
+        "EPUB/images/image-1492.png",
+        "EPUB/images/image-1496.png"
+      ],
+      [
+        "EPUB/images/image-1493.png",
+        "EPUB/images/image-1497.png"
+      ],
+      [
+        "EPUB/images/image-1494.png",
+        "EPUB/images/image-1498.png"
+      ],
+      [
+        "EPUB/images/image-1495.png",
+        "EPUB/images/image-1499.png"
+      ],
+      [
+        "EPUB/images/image-1496.png",
+        "EPUB/images/image-1500.png"
+      ],
+      [
+        "EPUB/images/image-1497.png",
+        "EPUB/images/image-1501.png"
+      ],
+      [
+        "EPUB/images/image-1498.png",
+        "EPUB/images/image-1502.png"
+      ],
+      [
+        "EPUB/images/image-1499.png",
+        "EPUB/images/image-1503.png"
+      ],
+      [
+        "EPUB/images/image-1500.png",
+        "EPUB/images/image-1504.png"
+      ],
+      [
+        "EPUB/images/image-1501.png",
+        "EPUB/images/image-1505.png"
+      ],
+      [
+        "EPUB/images/image-1502.png",
+        "EPUB/images/image-1506.png"
+      ],
+      [
+        "EPUB/images/image-1503.png",
+        "EPUB/images/image-1507.png"
+      ],
+      [
+        "EPUB/images/image-1504.png",
+        "EPUB/images/image-1508.png"
+      ],
+      [
+        "EPUB/images/image-1505.png",
+        "EPUB/images/image-1509.png"
+      ],
+      [
+        "EPUB/images/image-1506.png",
+        "EPUB/images/image-1510.png"
+      ],
+      [
+        "EPUB/images/image-1507.png",
+        "EPUB/images/image-1511.png"
+      ],
+      [
+        "EPUB/images/image-1508.png",
+        "EPUB/images/image-1512.png"
+      ],
+      [
+        "EPUB/images/image-1509.png",
+        "EPUB/images/image-1513.png"
+      ],
+      [
+        "EPUB/images/image-1510.png",
+        "EPUB/images/image-1514.png"
+      ],
+      [
+        "EPUB/images/image-1511.png",
+        "EPUB/images/image-1515.png"
+      ],
+      [
+        "EPUB/images/image-1512.png",
+        "EPUB/images/image-1516.png"
+      ],
+      [
+        "EPUB/images/image-1513.png",
+        "EPUB/images/image-1517.png"
+      ],
+      [
+        "EPUB/images/image-1514.png",
+        "EPUB/images/image-1518.png"
+      ],
+      [
+        "EPUB/images/image-1515.png",
+        "EPUB/images/image-1519.png"
+      ],
+      [
+        "EPUB/images/image-1516.png",
+        "EPUB/images/image-1520.png"
+      ],
+      [
+        "EPUB/images/image-1517.png",
+        "EPUB/images/image-1521.png"
+      ],
+      [
+        "EPUB/images/image-1518.png",
+        "EPUB/images/image-1522.png"
+      ],
+      [
+        "EPUB/images/image-1519.png",
+        "EPUB/images/image-1523.png"
+      ],
+      [
+        "EPUB/images/image-1520.png",
+        "EPUB/images/image-1524.png"
+      ],
+      [
+        "EPUB/images/image-1521.png",
+        "EPUB/images/image-1525.png"
+      ],
+      [
+        "EPUB/images/image-1522.png",
+        "EPUB/images/image-1526.png"
+      ],
+      [
+        "EPUB/images/image-1523.png",
+        "EPUB/images/image-1527.png"
+      ],
+      [
+        "EPUB/images/image-1524.png",
+        "EPUB/images/image-1528.png"
+      ],
+      [
+        "EPUB/images/image-1525.png",
+        "EPUB/images/image-1529.png"
+      ],
+      [
+        "EPUB/images/image-1526.png",
+        "EPUB/images/image-1530.png"
+      ],
+      [
+        "EPUB/images/image-1527.png",
+        "EPUB/images/image-1531.png"
+      ],
+      [
+        "EPUB/images/image-1528.png",
+        "EPUB/images/image-1532.png"
+      ],
+      [
+        "EPUB/images/image-1529.png",
+        "EPUB/images/image-1533.png"
+      ],
+      [
+        "EPUB/images/image-1530.png",
+        "EPUB/images/image-1534.png"
+      ],
+      [
+        "EPUB/images/image-1531.png",
+        "EPUB/images/image-1535.png"
+      ],
+      [
+        "EPUB/images/image-1532.png",
+        "EPUB/images/image-1536.png"
+      ],
+      [
+        "EPUB/images/image-1533.png",
+        "EPUB/images/image-1537.png"
+      ],
+      [
+        "EPUB/images/image-1534.png",
+        "EPUB/images/image-1538.png"
+      ],
+      [
+        "EPUB/images/image-1535.png",
+        "EPUB/images/image-1539.png"
+      ],
+      [
+        "EPUB/images/image-1536.png",
+        "EPUB/images/image-1540.png"
+      ],
+      [
+        "EPUB/images/image-1537.png",
+        "EPUB/images/image-1541.png"
+      ],
+      [
+        "EPUB/images/image-1538.png",
+        "EPUB/images/image-1542.png"
+      ],
+      [
+        "EPUB/images/image-1539.png",
+        "EPUB/images/image-1543.png"
+      ],
+      [
+        "EPUB/images/image-1540.png",
+        "EPUB/images/image-1544.png"
+      ],
+      [
+        "EPUB/images/image-1541.png",
+        "EPUB/images/image-1545.png"
+      ],
+      [
+        "EPUB/images/image-1542.png",
+        "EPUB/images/image-1546.png"
+      ],
+      [
+        "EPUB/images/image-1543.png",
+        "EPUB/images/image-1547.png"
+      ],
+      [
+        "EPUB/images/image-1544.png",
+        "EPUB/images/image-1548.png"
+      ],
+      [
+        "EPUB/images/image-1545.png",
+        "EPUB/images/image-1549.png"
+      ],
+      [
+        "EPUB/images/image-1546.png",
+        "EPUB/images/image-1550.png"
+      ],
+      [
+        "EPUB/images/image-1547.png",
+        "EPUB/images/image-1551.png"
+      ],
+      [
+        "EPUB/images/image-1548.png",
+        "EPUB/images/image-1552.png"
+      ],
+      [
+        "EPUB/images/image-1549.png",
+        "EPUB/images/image-1553.png"
+      ],
+      [
+        "EPUB/images/image-1550.png",
+        "EPUB/images/image-1554.png"
+      ],
+      [
+        "EPUB/images/image-1551.png",
+        "EPUB/images/image-1555.png"
+      ],
+      [
+        "EPUB/images/image-1552.png",
+        "EPUB/images/image-1556.png"
+      ],
+      [
+        "EPUB/images/image-1553.png",
+        "EPUB/images/image-1557.png"
+      ],
+      [
+        "EPUB/images/image-1554.png",
+        "EPUB/images/image-1558.png"
+      ],
+      [
+        "EPUB/images/image-1555.png",
+        "EPUB/images/image-1559.png"
+      ],
+      [
+        "EPUB/images/image-1556.png",
+        "EPUB/images/image-1560.png"
+      ],
+      [
+        "EPUB/images/image-1557.png",
+        "EPUB/images/image-1561.png"
+      ],
+      [
+        "EPUB/images/image-1558.png",
+        "EPUB/images/image-1562.png"
+      ],
+      [
+        "EPUB/images/image-1559.png",
+        "EPUB/images/image-1563.png"
+      ],
+      [
+        "EPUB/images/image-1560.png",
+        "EPUB/images/image-1564.png"
+      ],
+      [
+        "EPUB/images/image-1561.png",
+        "EPUB/images/image-1565.png"
+      ],
+      [
+        "EPUB/images/image-1562.png",
+        "EPUB/images/image-1566.png"
+      ],
+      [
+        "EPUB/images/image-1563.png",
+        "EPUB/images/image-1567.png"
+      ],
+      [
+        "EPUB/images/image-1564.png",
+        "EPUB/images/image-1568.png"
+      ],
+      [
+        "EPUB/images/image-1565.png",
+        "EPUB/images/image-1569.png"
+      ],
+      [
+        "EPUB/images/image-1566.png",
+        "EPUB/images/image-1570.png"
+      ],
+      [
+        "EPUB/images/image-1567.png",
+        "EPUB/images/image-1571.png"
+      ],
+      [
+        "EPUB/images/image-1568.png",
+        "EPUB/images/image-1572.png"
+      ],
+      [
+        "EPUB/images/image-1569.png",
+        "EPUB/images/image-1573.png"
+      ],
+      [
+        "EPUB/images/image-1570.png",
+        "EPUB/images/image-1574.png"
+      ],
+      [
+        "EPUB/images/image-1571.png",
+        "EPUB/images/image-1575.png"
+      ],
+      [
+        "EPUB/images/image-1572.png",
+        "EPUB/images/image-1576.png"
+      ],
+      [
+        "EPUB/images/image-1573.png",
+        "EPUB/images/image-1577.png"
+      ],
+      [
+        "EPUB/images/image-1574.png",
+        "EPUB/images/image-1578.png"
+      ],
+      [
+        "EPUB/images/image-1575.png",
+        "EPUB/images/image-1579.png"
+      ],
+      [
+        "EPUB/images/image-1576.png",
+        "EPUB/images/image-1580.png"
+      ],
+      [
+        "EPUB/images/image-1577.png",
+        "EPUB/images/image-1581.png"
+      ],
+      [
+        "EPUB/images/image-1578.png",
+        "EPUB/images/image-1582.png"
+      ],
+      [
+        "EPUB/images/image-1579.png",
+        "EPUB/images/image-1583.png"
+      ],
+      [
+        "EPUB/images/image-1580.png",
+        "EPUB/images/image-1584.png"
+      ],
+      [
+        "EPUB/images/image-1581.png",
+        "EPUB/images/image-1585.png"
+      ],
+      [
+        "EPUB/images/image-1582.png",
+        "EPUB/images/image-1586.png"
+      ],
+      [
+        "EPUB/images/image-1583.png",
+        "EPUB/images/image-1587.png"
+      ],
+      [
+        "EPUB/images/image-1584.png",
+        "EPUB/images/image-1588.png"
+      ],
+      [
+        "EPUB/images/image-1585.png",
+        "EPUB/images/image-1589.png"
+      ],
+      [
+        "EPUB/images/image-1586.png",
+        "EPUB/images/image-1590.png"
+      ],
+      [
+        "EPUB/images/image-1587.png",
+        "EPUB/images/image-1591.png"
+      ],
+      [
+        "EPUB/images/image-1588.png",
+        "EPUB/images/image-1592.png"
+      ],
+      [
+        "EPUB/images/image-1589.png",
+        "EPUB/images/image-1593.png"
+      ],
+      [
+        "EPUB/images/image-1590.png",
+        "EPUB/images/image-1594.png"
+      ],
+      [
+        "EPUB/images/image-1591.png",
+        "EPUB/images/image-1595.png"
+      ],
+      [
+        "EPUB/images/image-1592.png",
+        "EPUB/images/image-1596.png"
+      ],
+      [
+        "EPUB/images/image-1593.png",
+        "EPUB/images/image-1597.png"
+      ],
+      [
+        "EPUB/images/image-1594.png",
+        "EPUB/images/image-1598.png"
+      ],
+      [
+        "EPUB/images/image-1595.png",
+        "EPUB/images/image-1599.png"
+      ],
+      [
+        "EPUB/images/image-1596.png",
+        "EPUB/images/image-1600.png"
+      ],
+      [
+        "EPUB/images/image-1597.png",
+        "EPUB/images/image-1601.png"
+      ],
+      [
+        "EPUB/images/image-1598.png",
+        "EPUB/images/image-1602.png"
+      ],
+      [
+        "EPUB/images/image-1599.png",
+        "EPUB/images/image-1603.png"
+      ],
+      [
+        "EPUB/images/image-1600.png",
+        "EPUB/images/image-1604.png"
+      ],
+      [
+        "EPUB/images/image-1601.png",
+        "EPUB/images/image-1605.png"
+      ],
+      [
+        "EPUB/images/image-1602.png",
+        "EPUB/images/image-1606.png"
+      ],
+      [
+        "EPUB/images/image-1603.png",
+        "EPUB/images/image-1607.png"
+      ],
+      [
+        "EPUB/images/image-1604.png",
+        "EPUB/images/image-1608.png"
+      ],
+      [
+        "EPUB/images/image-1605.png",
+        "EPUB/images/image-1609.png"
+      ],
+      [
+        "EPUB/images/image-1606.png",
+        "EPUB/images/image-1610.png"
+      ],
+      [
+        "EPUB/images/image-1607.png",
+        "EPUB/images/image-1611.png"
+      ],
+      [
+        "EPUB/images/image-1608.png",
+        "EPUB/images/image-1612.png"
+      ],
+      [
+        "EPUB/images/image-1609.png",
+        "EPUB/images/image-1613.png"
+      ],
+      [
+        "EPUB/images/image-1610.png",
+        "EPUB/images/image-1614.png"
+      ],
+      [
+        "EPUB/images/image-1611.png",
+        "EPUB/images/image-1615.png"
+      ],
+      [
+        "EPUB/images/image-1612.png",
+        "EPUB/images/image-1616.png"
+      ],
+      [
+        "EPUB/images/image-1613.png",
+        "EPUB/images/image-1617.png"
+      ],
+      [
+        "EPUB/images/image-1614.png",
+        "EPUB/images/image-1618.png"
+      ],
+      [
+        "EPUB/images/image-1615.png",
+        "EPUB/images/image-1619.png"
+      ],
+      [
+        "EPUB/images/image-1616.png",
+        "EPUB/images/image-1620.png"
+      ],
+      [
+        "EPUB/images/image-1617.png",
+        "EPUB/images/image-1621.png"
+      ],
+      [
+        "EPUB/images/image-1618.png",
+        "EPUB/images/image-1622.png"
+      ],
+      [
+        "EPUB/images/image-1619.png",
+        "EPUB/images/image-1623.png"
+      ],
+      [
+        "EPUB/images/image-1620.png",
+        "EPUB/images/image-1624.png"
+      ],
+      [
+        "EPUB/images/image-1621.png",
+        "EPUB/images/image-1625.png"
+      ],
+      [
+        "EPUB/images/image-1622.png",
+        "EPUB/images/image-1626.png"
+      ],
+      [
+        "EPUB/images/image-1623.png",
+        "EPUB/images/image-1627.png"
+      ],
+      [
+        "EPUB/images/image-1624.png",
+        "EPUB/images/image-1628.png"
+      ],
+      [
+        "EPUB/images/image-1625.png",
+        "EPUB/images/image-1629.png"
+      ],
+      [
+        "EPUB/images/image-1626.png",
+        "EPUB/images/image-1630.png"
+      ],
+      [
+        "EPUB/images/image-1627.png",
+        "EPUB/images/image-1631.png"
+      ],
+      [
+        "EPUB/images/image-1628.png",
+        "EPUB/images/image-1632.png"
+      ],
+      [
+        "EPUB/images/image-1629.png",
+        "EPUB/images/image-1633.png"
+      ],
+      [
+        "EPUB/images/image-1630.png",
+        "EPUB/images/image-1634.png"
+      ],
+      [
+        "EPUB/images/image-1631.png",
+        "EPUB/images/image-1635.png"
+      ],
+      [
+        "EPUB/images/image-1632.png",
+        "EPUB/images/image-1636.png"
+      ],
+      [
+        "EPUB/images/image-1633.png",
+        "EPUB/images/image-1637.png"
+      ],
+      [
+        "EPUB/images/image-1634.png",
+        "EPUB/images/image-1638.png"
+      ],
+      [
+        "EPUB/images/image-1635.png",
+        "EPUB/images/image-1639.png"
+      ],
+      [
+        "EPUB/images/image-1636.png",
+        "EPUB/images/image-1640.png"
+      ],
+      [
+        "EPUB/images/image-1637.png",
+        "EPUB/images/image-1641.png"
+      ],
+      [
+        "EPUB/images/image-1638.png",
+        "EPUB/images/image-1642.png"
+      ],
+      [
+        "EPUB/images/image-1639.png",
+        "EPUB/images/image-1643.png"
+      ],
+      [
+        "EPUB/images/image-1640.png",
+        "EPUB/images/image-1644.png"
+      ],
+      [
+        "EPUB/images/image-1641.png",
+        "EPUB/images/image-1645.png"
+      ],
+      [
+        "EPUB/images/image-1642.png",
+        "EPUB/images/image-1646.png"
+      ],
+      [
+        "EPUB/images/image-1643.png",
+        "EPUB/images/image-1647.png"
+      ],
+      [
+        "EPUB/images/image-1644.png",
+        "EPUB/images/image-1648.png"
+      ],
+      [
+        "EPUB/images/image-1645.png",
+        "EPUB/images/image-1649.png"
+      ],
+      [
+        "EPUB/images/image-1646.png",
+        "EPUB/images/image-1650.png"
+      ],
+      [
+        "EPUB/images/image-1647.png",
+        "EPUB/images/image-1651.png"
+      ],
+      [
+        "EPUB/images/image-1648.png",
+        "EPUB/images/image-1652.png"
+      ],
+      [
+        "EPUB/images/image-1649.png",
+        "EPUB/images/image-1653.png"
+      ],
+      [
+        "EPUB/images/image-1650.png",
+        "EPUB/images/image-1654.png"
+      ],
+      [
+        "EPUB/images/image-1651.png",
+        "EPUB/images/image-1655.png"
+      ],
+      [
+        "EPUB/images/image-1652.png",
+        "EPUB/images/image-1656.png"
+      ],
+      [
+        "EPUB/images/image-1653.png",
+        "EPUB/images/image-1657.png"
+      ],
+      [
+        "EPUB/images/image-1654.png",
+        "EPUB/images/image-1658.png"
+      ],
+      [
+        "EPUB/images/image-1655.png",
+        "EPUB/images/image-1659.png"
+      ],
+      [
+        "EPUB/images/image-1656.png",
+        "EPUB/images/image-1660.png"
+      ],
+      [
+        "EPUB/images/image-1657.png",
+        "EPUB/images/image-1661.png"
+      ],
+      [
+        "EPUB/images/image-1658.png",
+        "EPUB/images/image-1662.png"
+      ],
+      [
+        "EPUB/images/image-1659.png",
+        "EPUB/images/image-1663.png"
+      ],
+      [
+        "EPUB/images/image-1660.png",
+        "EPUB/images/image-1664.png"
+      ],
+      [
+        "EPUB/images/image-1661.png",
+        "EPUB/images/image-1665.png"
+      ],
+      [
+        "EPUB/images/image-1662.png",
+        "EPUB/images/image-1666.png"
+      ],
+      [
+        "EPUB/images/image-1663.png",
+        "EPUB/images/image-1667.png"
+      ],
+      [
+        "EPUB/images/image-1664.png",
+        "EPUB/images/image-1668.png"
+      ],
+      [
+        "EPUB/images/image-1665.png",
+        "EPUB/images/image-1669.png"
+      ],
+      [
+        "EPUB/images/image-1666.png",
+        "EPUB/images/image-1670.png"
+      ],
+      [
+        "EPUB/images/image-1667.png",
+        "EPUB/images/image-1671.png"
+      ],
+      [
+        "EPUB/images/image-1668.png",
+        "EPUB/images/image-1672.png"
+      ],
+      [
+        "EPUB/images/image-1669.png",
+        "EPUB/images/image-1673.png"
+      ],
+      [
+        "EPUB/images/image-1670.png",
+        "EPUB/images/image-1674.png"
+      ],
+      [
+        "EPUB/images/image-1671.png",
+        "EPUB/images/image-1675.png"
+      ],
+      [
+        "EPUB/images/image-1672.png",
+        "EPUB/images/image-1676.png"
+      ],
+      [
+        "EPUB/images/image-1673.png",
+        "EPUB/images/image-1677.png"
+      ],
+      [
+        "EPUB/images/image-1674.png",
+        "EPUB/images/image-1678.png"
+      ],
+      [
+        "EPUB/images/image-1675.png",
+        "EPUB/images/image-1679.png"
+      ],
+      [
+        "EPUB/images/image-1676.png",
+        "EPUB/images/image-1680.png"
+      ],
+      [
+        "EPUB/images/image-1677.png",
+        "EPUB/images/image-1681.png"
+      ],
+      [
+        "EPUB/images/image-1678.png",
+        "EPUB/images/image-1682.png"
+      ],
+      [
+        "EPUB/images/image-1679.png",
+        "EPUB/images/image-1683.png"
+      ],
+      [
+        "EPUB/images/image-1680.png",
+        "EPUB/images/image-1684.png"
+      ],
+      [
+        "EPUB/images/image-1681.png",
+        "EPUB/images/image-1685.png"
+      ],
+      [
+        "EPUB/images/image-1682.png",
+        "EPUB/images/image-1686.png"
+      ],
+      [
+        "EPUB/images/image-1683.png",
+        "EPUB/images/image-1687.png"
+      ],
+      [
+        "EPUB/images/image-1684.png",
+        "EPUB/images/image-1688.png"
+      ],
+      [
+        "EPUB/images/image-1685.png",
+        "EPUB/images/image-1689.png"
+      ],
+      [
+        "EPUB/images/image-1686.png",
+        "EPUB/images/image-1690.png"
+      ],
+      [
+        "EPUB/images/image-1687.png",
+        "EPUB/images/image-1691.png"
+      ],
+      [
+        "EPUB/images/image-1688.png",
+        "EPUB/images/image-1692.png"
+      ],
+      [
+        "EPUB/images/image-1689.png",
+        "EPUB/images/image-1693.png"
+      ],
+      [
+        "EPUB/images/image-1690.png",
+        "EPUB/images/image-1694.png"
+      ],
+      [
+        "EPUB/images/image-1691.png",
+        "EPUB/images/image-1695.png"
+      ],
+      [
+        "EPUB/images/image-1692.png",
+        "EPUB/images/image-1696.png"
+      ],
+      [
+        "EPUB/images/image-1693.png",
+        "EPUB/images/image-1697.png"
+      ],
+      [
+        "EPUB/images/image-1694.png",
+        "EPUB/images/image-1698.png"
+      ],
+      [
+        "EPUB/images/image-1695.png",
+        "EPUB/images/image-1699.png"
+      ],
+      [
+        "EPUB/images/image-1696.png",
+        "EPUB/images/image-1700.png"
+      ],
+      [
+        "EPUB/images/image-1697.png",
+        "EPUB/images/image-1701.png"
+      ],
+      [
+        "EPUB/images/image-1698.png",
+        "EPUB/images/image-1702.png"
+      ],
+      [
+        "EPUB/images/image-1699.png",
+        "EPUB/images/image-1703.png"
+      ],
+      [
+        "EPUB/images/image-1700.png",
+        "EPUB/images/image-1704.png"
+      ],
+      [
+        "EPUB/images/image-1701.png",
+        "EPUB/images/image-1705.png"
+      ],
+      [
+        "EPUB/images/image-1702.png",
+        "EPUB/images/image-1706.png"
+      ],
+      [
+        "EPUB/images/image-1703.png",
+        "EPUB/images/image-1707.png"
+      ],
+      [
+        "EPUB/images/image-1704.png",
+        "EPUB/images/image-1708.png"
+      ],
+      [
+        "EPUB/images/image-1705.png",
+        "EPUB/images/image-1709.png"
+      ],
+      [
+        "EPUB/images/image-1706.png",
+        "EPUB/images/image-1710.png"
+      ],
+      [
+        "EPUB/images/image-1707.png",
+        "EPUB/images/image-1711.png"
+      ],
+      [
+        "EPUB/images/image-1708.png",
+        "EPUB/images/image-1712.png"
+      ],
+      [
+        "EPUB/images/image-1709.png",
+        "EPUB/images/image-1713.png"
+      ],
+      [
+        "EPUB/images/image-1710.png",
+        "EPUB/images/image-1714.png"
+      ],
+      [
+        "EPUB/images/image-1711.png",
+        "EPUB/images/image-1715.png"
+      ],
+      [
+        "EPUB/images/image-1712.png",
+        "EPUB/images/image-1716.png"
+      ],
+      [
+        "EPUB/images/image-1713.png",
+        "EPUB/images/image-1717.png"
+      ],
+      [
+        "EPUB/images/image-1714.png",
+        "EPUB/images/image-1718.png"
+      ],
+      [
+        "EPUB/images/image-1715.png",
+        "EPUB/images/image-1719.png"
+      ],
+      [
+        "EPUB/images/image-1716.png",
+        "EPUB/images/image-1720.png"
+      ],
+      [
+        "EPUB/images/image-1717.png",
+        "EPUB/images/image-1721.png"
+      ],
+      [
+        "EPUB/images/image-1718.png",
+        "EPUB/images/image-1722.png"
+      ],
+      [
+        "EPUB/images/image-1719.png",
+        "EPUB/images/image-1723.png"
+      ],
+      [
+        "EPUB/images/image-1720.png",
+        "EPUB/images/image-1724.png"
+      ],
+      [
+        "EPUB/images/image-1721.png",
+        "EPUB/images/image-1725.png"
+      ],
+      [
+        "EPUB/images/image-1722.png",
+        "EPUB/images/image-1726.png"
+      ],
+      [
+        "EPUB/images/image-1723.png",
+        "EPUB/images/image-1727.png"
+      ],
+      [
+        "EPUB/images/image-1724.png",
+        "EPUB/images/image-1728.png"
+      ],
+      [
+        "EPUB/images/image-1725.png",
+        "EPUB/images/image-1729.png"
+      ],
+      [
+        "EPUB/images/image-1726.png",
+        "EPUB/images/image-1730.png"
+      ],
+      [
+        "EPUB/images/image-1727.png",
+        "EPUB/images/image-1731.png"
+      ],
+      [
+        "EPUB/images/image-1728.png",
+        "EPUB/images/image-1732.png"
+      ],
+      [
+        "EPUB/images/image-1729.png",
+        "EPUB/images/image-1733.png"
+      ],
+      [
+        "EPUB/images/image-1730.png",
+        "EPUB/images/image-1734.png"
+      ],
+      [
+        "EPUB/images/image-1731.png",
+        "EPUB/images/image-1735.png"
+      ],
+      [
+        "EPUB/images/image-1732.png",
+        "EPUB/images/image-1736.png"
+      ],
+      [
+        "EPUB/images/image-1733.png",
+        "EPUB/images/image-1737.png"
+      ],
+      [
+        "EPUB/images/image-1734.png",
+        "EPUB/images/image-1738.png"
+      ],
+      [
+        "EPUB/images/image-1735.png",
+        "EPUB/images/image-1739.png"
+      ],
+      [
+        "EPUB/images/image-1736.png",
+        "EPUB/images/image-1740.png"
+      ],
+      [
+        "EPUB/images/image-1737.png",
+        "EPUB/images/image-1741.png"
+      ],
+      [
+        "EPUB/images/image-1738.png",
+        "EPUB/images/image-1742.png"
+      ],
+      [
+        "EPUB/images/image-1739.png",
+        "EPUB/images/image-1743.png"
+      ],
+      [
+        "EPUB/images/image-1740.png",
+        "EPUB/images/image-1744.png"
+      ],
+      [
+        "EPUB/images/image-1741.png",
+        "EPUB/images/image-1745.png"
+      ],
+      [
+        "EPUB/images/image-1742.png",
+        "EPUB/images/image-1746.png"
+      ],
+      [
+        "EPUB/images/image-1743.png",
+        "EPUB/images/image-1747.png"
+      ],
+      [
+        "EPUB/images/image-1744.png",
+        "EPUB/images/image-1748.png"
+      ],
+      [
+        "EPUB/images/image-1745.png",
+        "EPUB/images/image-1749.png"
+      ],
+      [
+        "EPUB/images/image-1746.png",
+        "EPUB/images/image-1750.png"
+      ],
+      [
+        "EPUB/images/image-1747.png",
+        "EPUB/images/image-1751.png"
+      ],
+      [
+        "EPUB/images/image-1748.png",
+        "EPUB/images/image-1752.png"
+      ],
+      [
+        "EPUB/images/image-1749.png",
+        "EPUB/images/image-1753.png"
+      ],
+      [
+        "EPUB/images/image-1750.png",
+        "EPUB/images/image-1754.png"
+      ],
+      [
+        "EPUB/images/image-1751.png",
+        "EPUB/images/image-1755.png"
+      ],
+      [
+        "EPUB/images/image-1752.png",
+        "EPUB/images/image-1756.png"
+      ],
+      [
+        "EPUB/images/image-1753.png",
+        "EPUB/images/image-1757.png"
+      ],
+      [
+        "EPUB/images/image-1754.png",
+        "EPUB/images/image-1758.png"
+      ],
+      [
+        "EPUB/images/image-1755.png",
+        "EPUB/images/image-1759.png"
+      ],
+      [
+        "EPUB/images/image-1756.png",
+        "EPUB/images/image-1760.png"
+      ],
+      [
+        "EPUB/images/image-1757.png",
+        "EPUB/images/image-1761.png"
+      ],
+      [
+        "EPUB/images/image-1758.png",
+        "EPUB/images/image-1762.png"
+      ],
+      [
+        "EPUB/images/image-1759.png",
+        "EPUB/images/image-1763.png"
+      ],
+      [
+        "EPUB/images/image-1760.png",
+        "EPUB/images/image-1764.png"
+      ],
+      [
+        "EPUB/images/image-1761.png",
+        "EPUB/images/image-1765.png"
+      ],
+      [
+        "EPUB/images/image-1762.png",
+        "EPUB/images/image-1766.png"
+      ],
+      [
+        "EPUB/images/image-1763.png",
+        "EPUB/images/image-1767.png"
+      ],
+      [
+        "EPUB/images/image-1764.png",
+        "EPUB/images/image-1768.png"
+      ],
+      [
+        "EPUB/images/image-1765.png",
+        "EPUB/images/image-1769.png"
+      ],
+      [
+        "EPUB/images/image-1766.png",
+        "EPUB/images/image-1770.png"
+      ],
+      [
+        "EPUB/images/image-1767.png",
+        "EPUB/images/image-1771.png"
+      ],
+      [
+        "EPUB/images/image-1768.png",
+        "EPUB/images/image-1772.png"
+      ],
+      [
+        "EPUB/images/image-1769.png",
+        "EPUB/images/image-1773.png"
+      ],
+      [
+        "EPUB/images/image-1770.png",
+        "EPUB/images/image-1774.png"
+      ],
+      [
+        "EPUB/images/image-1771.png",
+        "EPUB/images/image-1775.png"
+      ],
+      [
+        "EPUB/images/image-1772.png",
+        "EPUB/images/image-1776.png"
+      ],
+      [
+        "EPUB/images/image-1773.png",
+        "EPUB/images/image-1777.png"
+      ],
+      [
+        "EPUB/images/image-1774.png",
+        "EPUB/images/image-1778.png"
+      ],
+      [
+        "EPUB/images/image-1775.png",
+        "EPUB/images/image-1779.png"
+      ],
+      [
+        "EPUB/images/image-1776.png",
+        "EPUB/images/image-1780.png"
+      ],
+      [
+        "EPUB/images/image-1777.png",
+        "EPUB/images/image-1781.png"
+      ],
+      [
+        "EPUB/images/image-1778.png",
+        "EPUB/images/image-1782.png"
+      ],
+      [
+        "EPUB/images/image-1779.png",
+        "EPUB/images/image-1783.png"
+      ],
+      [
+        "EPUB/images/image-1780.png",
+        "EPUB/images/image-1784.png"
+      ],
+      [
+        "EPUB/images/image-1781.png",
+        "EPUB/images/image-1785.png"
+      ],
+      [
+        "EPUB/images/image-1782.png",
+        "EPUB/images/image-1786.png"
+      ],
+      [
+        "EPUB/images/image-1783.png",
+        "EPUB/images/image-1787.png"
+      ],
+      [
+        "EPUB/images/image-1784.png",
+        "EPUB/images/image-1788.png"
+      ],
+      [
+        "EPUB/images/image-1785.png",
+        "EPUB/images/image-1789.png"
+      ],
+      [
+        "EPUB/images/image-1786.png",
+        "EPUB/images/image-1790.png"
+      ],
+      [
+        "EPUB/images/image-1787.png",
+        "EPUB/images/image-1791.png"
+      ],
+      [
+        "EPUB/images/image-1788.png",
+        "EPUB/images/image-1792.png"
+      ],
+      [
+        "EPUB/images/image-1789.png",
+        "EPUB/images/image-1793.png"
+      ],
+      [
+        "EPUB/images/image-1790.png",
+        "EPUB/images/image-1794.png"
+      ],
+      [
+        "EPUB/images/image-1791.png",
+        "EPUB/images/image-1795.png"
+      ],
+      [
+        "EPUB/images/image-1792.png",
+        "EPUB/images/image-1796.png"
+      ],
+      [
+        "EPUB/images/image-1793.png",
+        "EPUB/images/image-1797.png"
+      ],
+      [
+        "EPUB/images/image-1794.png",
+        "EPUB/images/image-1798.png"
+      ],
+      [
+        "EPUB/images/image-1795.png",
+        "EPUB/images/image-1799.png"
+      ],
+      [
+        "EPUB/images/image-1796.png",
+        "EPUB/images/image-1800.png"
+      ],
+      [
+        "EPUB/images/image-1797.png",
+        "EPUB/images/image-1801.png"
+      ],
+      [
+        "EPUB/images/image-1798.png",
+        "EPUB/images/image-1802.png"
+      ],
+      [
+        "EPUB/images/image-1799.png",
+        "EPUB/images/image-1803.png"
+      ],
+      [
+        "EPUB/images/image-1800.png",
+        "EPUB/images/image-1804.png"
+      ],
+      [
+        "EPUB/images/image-1801.png",
+        "EPUB/images/image-1805.png"
+      ],
+      [
+        "EPUB/images/image-1802.png",
+        "EPUB/images/image-1806.png"
+      ],
+      [
+        "EPUB/images/image-1803.png",
+        "EPUB/images/image-1807.png"
+      ],
+      [
+        "EPUB/images/image-1804.png",
+        "EPUB/images/image-1808.png"
+      ],
+      [
+        "EPUB/images/image-1805.png",
+        "EPUB/images/image-1809.png"
+      ],
+      [
+        "EPUB/images/image-1806.png",
+        "EPUB/images/image-1810.png"
+      ],
+      [
+        "EPUB/images/image-1807.png",
+        "EPUB/images/image-1811.png"
+      ],
+      [
+        "EPUB/images/image-1808.png",
+        "EPUB/images/image-1812.png"
+      ],
+      [
+        "EPUB/images/image-1809.png",
+        "EPUB/images/image-1813.png"
+      ],
+      [
+        "EPUB/images/image-1810.png",
+        "EPUB/images/image-1814.png"
+      ],
+      [
+        "EPUB/images/image-1811.png",
+        "EPUB/images/image-1815.png"
+      ],
+      [
+        "EPUB/images/image-1812.png",
+        "EPUB/images/image-1816.png"
+      ],
+      [
+        "EPUB/images/image-1813.png",
+        "EPUB/images/image-1817.png"
+      ],
+      [
+        "EPUB/images/image-1814.png",
+        "EPUB/images/image-1818.png"
+      ],
+      [
+        "EPUB/images/image-1815.png",
+        "EPUB/images/image-1819.png"
+      ],
+      [
+        "EPUB/images/image-1816.png",
+        "EPUB/images/image-1820.png"
+      ],
+      [
+        "EPUB/images/image-1817.png",
+        "EPUB/images/image-1821.png"
+      ],
+      [
+        "EPUB/images/image-1818.png",
+        "EPUB/images/image-1822.png"
+      ],
+      [
+        "EPUB/images/image-1819.png",
+        "EPUB/images/image-1823.png"
+      ],
+      [
+        "EPUB/images/image-1820.png",
+        "EPUB/images/image-1824.png"
+      ],
+      [
+        "EPUB/images/image-1821.png",
+        "EPUB/images/image-1825.png"
+      ],
+      [
+        "EPUB/images/image-1822.png",
+        "EPUB/images/image-1826.png"
+      ],
+      [
+        "EPUB/images/image-1823.png",
+        "EPUB/images/image-1827.png"
+      ],
+      [
+        "EPUB/images/image-1824.png",
+        "EPUB/images/image-1828.png"
+      ],
+      [
+        "EPUB/images/image-1825.png",
+        "EPUB/images/image-1829.png"
+      ],
+      [
+        "EPUB/images/image-1826.png",
+        "EPUB/images/image-1830.png"
+      ],
+      [
+        "EPUB/images/image-1827.png",
+        "EPUB/images/image-1831.png"
+      ],
+      [
+        "EPUB/images/image-1828.png",
+        "EPUB/images/image-1832.png"
+      ],
+      [
+        "EPUB/images/image-1829.png",
+        "EPUB/images/image-1833.png"
+      ],
+      [
+        "EPUB/images/image-1830.png",
+        "EPUB/images/image-1834.png"
+      ],
+      [
+        "EPUB/images/image-1831.png",
+        "EPUB/images/image-1835.png"
+      ],
+      [
+        "EPUB/images/image-1832.png",
+        "EPUB/images/image-1836.png"
+      ],
+      [
+        "EPUB/images/image-1833.png",
+        "EPUB/images/image-1837.png"
+      ],
+      [
+        "EPUB/images/image-1834.png",
+        "EPUB/images/image-1838.png"
+      ],
+      [
+        "EPUB/images/image-1835.png",
+        "EPUB/images/image-1839.png"
+      ],
+      [
+        "EPUB/images/image-1836.png",
+        "EPUB/images/image-1840.png"
+      ],
+      [
+        "EPUB/images/image-1837.png",
+        "EPUB/images/image-1841.png"
+      ],
+      [
+        "EPUB/images/image-1838.png",
+        "EPUB/images/image-1842.png"
+      ],
+      [
+        "EPUB/images/image-1839.png",
+        "EPUB/images/image-1843.png"
+      ],
+      [
+        "EPUB/images/image-1840.png",
+        "EPUB/images/image-1844.png"
+      ],
+      [
+        "EPUB/images/image-1841.png",
+        "EPUB/images/image-1845.png"
+      ],
+      [
+        "EPUB/images/image-1842.png",
+        "EPUB/images/image-1846.png"
+      ],
+      [
+        "EPUB/images/image-1843.png",
+        "EPUB/images/image-1847.png"
+      ],
+      [
+        "EPUB/images/image-1844.png",
+        "EPUB/images/image-1848.png"
+      ],
+      [
+        "EPUB/images/image-1845.png",
+        "EPUB/images/image-1849.png"
+      ],
+      [
+        "EPUB/images/image-1846.png",
+        "EPUB/images/image-1850.png"
+      ],
+      [
+        "EPUB/images/image-1847.png",
+        "EPUB/images/image-1851.png"
+      ],
+      [
+        "EPUB/images/image-1848.png",
+        "EPUB/images/image-1852.png"
+      ],
+      [
+        "EPUB/images/image-1849.png",
+        "EPUB/images/image-1853.png"
+      ],
+      [
+        "EPUB/images/image-1850.png",
+        "EPUB/images/image-1854.png"
+      ],
+      [
+        "EPUB/images/image-1851.png",
+        "EPUB/images/image-1855.png"
+      ],
+      [
+        "EPUB/images/image-1852.png",
+        "EPUB/images/image-1856.png"
+      ],
+      [
+        "EPUB/images/image-1853.png",
+        "EPUB/images/image-1857.png"
+      ],
+      [
+        "EPUB/images/image-1854.png",
+        "EPUB/images/image-1858.png"
+      ],
+      [
+        "EPUB/images/image-1855.png",
+        "EPUB/images/image-1859.png"
+      ],
+      [
+        "EPUB/images/image-1856.png",
+        "EPUB/images/image-1860.png"
+      ],
+      [
+        "EPUB/images/image-1857.png",
+        "EPUB/images/image-1861.png"
+      ],
+      [
+        "EPUB/images/image-1858.png",
+        "EPUB/images/image-1862.png"
+      ],
+      [
+        "EPUB/images/image-1859.png",
+        "EPUB/images/image-1863.png"
+      ],
+      [
+        "EPUB/images/image-1860.png",
+        "EPUB/images/image-1864.png"
+      ],
+      [
+        "EPUB/images/image-1861.png",
+        "EPUB/images/image-1865.png"
+      ],
+      [
+        "EPUB/images/image-1862.png",
+        "EPUB/images/image-1866.png"
+      ],
+      [
+        "EPUB/images/image-1863.png",
+        "EPUB/images/image-1867.png"
+      ],
+      [
+        "EPUB/images/image-1864.png",
+        "EPUB/images/image-1868.png"
+      ],
+      [
+        "EPUB/images/image-1865.png",
+        "EPUB/images/image-1869.png"
+      ],
+      [
+        "EPUB/images/image-1866.png",
+        "EPUB/images/image-1870.png"
+      ],
+      [
+        "EPUB/images/image-1867.png",
+        "EPUB/images/image-1871.png"
+      ],
+      [
+        "EPUB/images/image-1868.png",
+        "EPUB/images/image-1872.png"
+      ],
+      [
+        "EPUB/images/image-1869.png",
+        "EPUB/images/image-1873.png"
+      ],
+      [
+        "EPUB/images/image-1870.png",
+        "EPUB/images/image-1874.png"
+      ],
+      [
+        "EPUB/images/image-1871.png",
+        "EPUB/images/image-1875.png"
+      ],
+      [
+        "EPUB/images/image-1872.png",
+        "EPUB/images/image-1876.png"
+      ],
+      [
+        "EPUB/images/image-1873.png",
+        "EPUB/images/image-1877.png"
+      ],
+      [
+        "EPUB/images/image-1874.png",
+        "EPUB/images/image-1878.png"
+      ],
+      [
+        "EPUB/images/image-1875.png",
+        "EPUB/images/image-1879.png"
+      ],
+      [
+        "EPUB/images/image-1877.png",
+        "EPUB/images/image-1881.png"
+      ],
+      [
+        "EPUB/images/image-1878.png",
+        "EPUB/images/image-1882.png"
+      ],
+      [
+        "EPUB/images/image-1879.png",
+        "EPUB/images/image-1883.png"
+      ],
+      [
+        "EPUB/images/image-1880.png",
+        "EPUB/images/image-1884.png"
+      ],
+      [
+        "EPUB/images/image-1881.png",
+        "EPUB/images/image-1885.png"
+      ],
+      [
+        "EPUB/images/image-1882.png",
+        "EPUB/images/image-1886.png"
+      ],
+      [
+        "EPUB/images/image-1883.png",
+        "EPUB/images/image-1887.png"
+      ],
+      [
+        "EPUB/images/image-1884.png",
+        "EPUB/images/image-1888.png"
+      ],
+      [
+        "EPUB/images/image-1885.png",
+        "EPUB/images/image-1889.png"
+      ],
+      [
+        "EPUB/images/image-1886.png",
+        "EPUB/images/image-1890.png"
+      ],
+      [
+        "EPUB/images/image-1887.png",
+        "EPUB/images/image-1891.png"
+      ],
+      [
+        "EPUB/images/image-1888.png",
+        "EPUB/images/image-1892.png"
+      ],
+      [
+        "EPUB/images/image-1889.png",
+        "EPUB/images/image-1893.png"
+      ],
+      [
+        "EPUB/images/image-1890.png",
+        "EPUB/images/image-1894.png"
+      ],
+      [
+        "EPUB/images/image-1891.png",
+        "EPUB/images/image-1895.png"
+      ],
+      [
+        "EPUB/images/image-1892.png",
+        "EPUB/images/image-1896.png"
+      ],
+      [
+        "EPUB/images/image-1893.png",
+        "EPUB/images/image-1897.png"
+      ],
+      [
+        "EPUB/images/image-1894.png",
+        "EPUB/images/image-1898.png"
+      ],
+      [
+        "EPUB/images/image-1895.png",
+        "EPUB/images/image-1899.png"
+      ],
+      [
+        "EPUB/images/image-1896.png",
+        "EPUB/images/image-1900.png"
+      ],
+      [
+        "EPUB/images/image-1897.png",
+        "EPUB/images/image-1901.png"
+      ],
+      [
+        "EPUB/images/image-1898.png",
+        "EPUB/images/image-1902.png"
+      ],
+      [
+        "EPUB/images/image-1899.png",
+        "EPUB/images/image-1903.png"
+      ],
+      [
+        "EPUB/images/image-1900.png",
+        "EPUB/images/image-1904.png"
+      ],
+      [
+        "EPUB/images/image-1901.png",
+        "EPUB/images/image-1905.png"
+      ],
+      [
+        "EPUB/images/image-1902.png",
+        "EPUB/images/image-1906.png"
+      ],
+      [
+        "EPUB/images/image-1903.png",
+        "EPUB/images/image-1907.png"
+      ],
+      [
+        "EPUB/images/image-1904.png",
+        "EPUB/images/image-1908.png"
+      ],
+      [
+        "EPUB/images/image-1905.png",
+        "EPUB/images/image-1909.png"
+      ],
+      [
+        "EPUB/images/image-1906.png",
+        "EPUB/images/image-1910.png"
+      ],
+      [
+        "EPUB/images/image-1907.png",
+        "EPUB/images/image-1911.png"
+      ],
+      [
+        "EPUB/images/image-1908.png",
+        "EPUB/images/image-1912.png"
+      ],
+      [
+        "EPUB/images/image-1909.png",
+        "EPUB/images/image-1913.png"
+      ],
+      [
+        "EPUB/images/image-1910.png",
+        "EPUB/images/image-1914.png"
+      ],
+      [
+        "EPUB/images/image-1911.png",
+        "EPUB/images/image-1915.png"
+      ],
+      [
+        "EPUB/images/image-1912.png",
+        "EPUB/images/image-1916.png"
+      ],
+      [
+        "EPUB/images/image-1913.png",
+        "EPUB/images/image-1917.png"
+      ],
+      [
+        "EPUB/images/image-1914.png",
+        "EPUB/images/image-1918.png"
+      ],
+      [
+        "EPUB/images/image-1915.png",
+        "EPUB/images/image-1919.png"
+      ],
+      [
+        "EPUB/images/image-1916.png",
+        "EPUB/images/image-1920.png"
+      ],
+      [
+        "EPUB/images/image-1917.png",
+        "EPUB/images/image-1921.png"
+      ],
+      [
+        "EPUB/images/image-1918.png",
+        "EPUB/images/image-1922.png"
+      ],
+      [
+        "EPUB/images/image-1919.png",
+        "EPUB/images/image-1923.png"
+      ],
+      [
+        "EPUB/images/image-1920.png",
+        "EPUB/images/image-1924.png"
+      ],
+      [
+        "EPUB/images/image-1921.png",
+        "EPUB/images/image-1925.png"
+      ],
+      [
+        "EPUB/images/image-1922.png",
+        "EPUB/images/image-1926.png"
+      ],
+      [
+        "EPUB/images/image-1923.png",
+        "EPUB/images/image-1927.png"
+      ],
+      [
+        "EPUB/images/image-1924.png",
+        "EPUB/images/image-1928.png"
+      ],
+      [
+        "EPUB/images/image-1925.png",
+        "EPUB/images/image-1929.png"
+      ],
+      [
+        "EPUB/images/image-1926.png",
+        "EPUB/images/image-1930.png"
+      ],
+      [
+        "EPUB/images/image-1927.png",
+        "EPUB/images/image-1931.png"
+      ],
+      [
+        "EPUB/images/image-1928.png",
+        "EPUB/images/image-1932.png"
+      ],
+      [
+        "EPUB/images/image-1929.png",
+        "EPUB/images/image-1933.png"
+      ],
+      [
+        "EPUB/images/image-1930.png",
+        "EPUB/images/image-1934.png"
+      ],
+      [
+        "EPUB/images/image-1931.png",
+        "EPUB/images/image-1935.png"
+      ],
+      [
+        "EPUB/images/image-1932.png",
+        "EPUB/images/image-1936.png"
+      ],
+      [
+        "EPUB/images/image-1933.png",
+        "EPUB/images/image-1937.png"
+      ],
+      [
+        "EPUB/images/image-1934.png",
+        "EPUB/images/image-1938.png"
+      ],
+      [
+        "EPUB/images/image-1935.png",
+        "EPUB/images/image-1939.png"
+      ],
+      [
+        "EPUB/images/image-1936.png",
+        "EPUB/images/image-1940.png"
+      ],
+      [
+        "EPUB/images/image-1937.png",
+        "EPUB/images/image-1941.png"
+      ],
+      [
+        "EPUB/images/image-1938.png",
+        "EPUB/images/image-1942.png"
+      ],
+      [
+        "EPUB/images/image-1939.png",
+        "EPUB/images/image-1943.png"
+      ],
+      [
+        "EPUB/images/image-1940.png",
+        "EPUB/images/image-1944.png"
+      ],
+      [
+        "EPUB/images/image-1941.png",
+        "EPUB/images/image-1945.png"
+      ],
+      [
+        "EPUB/images/image-1942.png",
+        "EPUB/images/image-1946.png"
+      ],
+      [
+        "EPUB/images/image-1943.png",
+        "EPUB/images/image-1947.png"
+      ],
+      [
+        "EPUB/images/image-1944.png",
+        "EPUB/images/image-1948.png"
+      ],
+      [
+        "EPUB/images/image-1945.png",
+        "EPUB/images/image-1949.png"
+      ],
+      [
+        "EPUB/images/image-1946.png",
+        "EPUB/images/image-1950.png"
+      ],
+      [
+        "EPUB/images/image-1947.png",
+        "EPUB/images/image-1951.png"
+      ],
+      [
+        "EPUB/images/image-1948.png",
+        "EPUB/images/image-1952.png"
+      ],
+      [
+        "EPUB/images/image-1949.png",
+        "EPUB/images/image-1953.png"
+      ],
+      [
+        "EPUB/images/image-1950.png",
+        "EPUB/images/image-1954.png"
+      ],
+      [
+        "EPUB/images/image-1951.png",
+        "EPUB/images/image-1955.png"
+      ],
+      [
+        "EPUB/images/image-1952.png",
+        "EPUB/images/image-1956.png"
+      ],
+      [
+        "EPUB/images/image-1953.png",
+        "EPUB/images/image-1957.png"
+      ],
+      [
+        "EPUB/images/image-1954.png",
+        "EPUB/images/image-1958.png"
+      ],
+      [
+        "EPUB/images/image-1955.png",
+        "EPUB/images/image-1959.png"
+      ],
+      [
+        "EPUB/images/image-1956.png",
+        "EPUB/images/image-1960.png"
+      ],
+      [
+        "EPUB/images/image-1957.png",
+        "EPUB/images/image-1961.png"
+      ],
+      [
+        "EPUB/images/image-1958.png",
+        "EPUB/images/image-1962.png"
+      ],
+      [
+        "EPUB/images/image-1959.png",
+        "EPUB/images/image-1963.png"
+      ],
+      [
+        "EPUB/images/image-1960.png",
+        "EPUB/images/image-1964.png"
+      ],
+      [
+        "EPUB/images/image-1961.png",
+        "EPUB/images/image-1965.png"
+      ],
+      [
+        "EPUB/images/image-1962.png",
+        "EPUB/images/image-1966.png"
+      ],
+      [
+        "EPUB/images/image-1963.png",
+        "EPUB/images/image-1967.png"
+      ],
+      [
+        "EPUB/images/image-1964.png",
+        "EPUB/images/image-1968.png"
+      ],
+      [
+        "EPUB/images/image-1965.png",
+        "EPUB/images/image-1969.png"
+      ],
+      [
+        "EPUB/images/image-1966.png",
+        "EPUB/images/image-1970.png"
+      ],
+      [
+        "EPUB/images/image-1967.png",
+        "EPUB/images/image-1971.png"
+      ],
+      [
+        "EPUB/images/image-1968.png",
+        "EPUB/images/image-1972.png"
+      ],
+      [
+        "EPUB/images/image-1969.png",
+        "EPUB/images/image-1973.png"
+      ],
+      [
+        "EPUB/images/image-1970.png",
+        "EPUB/images/image-1974.png"
+      ],
+      [
+        "EPUB/images/image-1971.png",
+        "EPUB/images/image-1975.png"
+      ],
+      [
+        "EPUB/images/image-1972.png",
+        "EPUB/images/image-1976.png"
+      ],
+      [
+        "EPUB/images/image-1973.png",
+        "EPUB/images/image-1977.png"
+      ],
+      [
+        "EPUB/images/image-1974.png",
+        "EPUB/images/image-1978.png"
+      ],
+      [
+        "EPUB/images/image-1975.png",
+        "EPUB/images/image-1979.png"
+      ]
+    ]
+  },
+  "scope": "Per page: text, block records, element markup, image bytes, link targets and warnings, with generated identifiers (block ordinals, element ids, spine file names, image asset names) normalized; page markers; image assets by bytes; navigation entries; conversion report. Not CSS, package metadata, decoded image equivalence or a fidelity qualification."
+}

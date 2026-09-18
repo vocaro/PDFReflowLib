@@ -1,0 +1,50 @@
+case, side, passed, checks, errors, seconds, peak RSS MB
+cdc-zombie-pandemic-2011, base, True, 60, 0, 12.9, 444
+census-rrs2002-01, base, True, 74, 0, 5.9, 267
+dga-2025-2030, base, True, 96, 0, 0.8, 108
+faa-phak-8083-25c, base, True, 560, 0, 48.4, 920
+fed-explained-2021, base, True, 201, 0, 5.4, 284
+gpo-911-2004, base, True, 306, 0, 13.6, 87
+gpo-our-flag-2003, base, True, 134, 0, 2.4, 103
+nbs-jres-geltman-1977, base, True, 64, 0, 2.1, 282
+noaa-nca5-2023, base, True, 28, 0, 127.9, 1042
+ntrs-20180003024-earthdata-slides-2018, base, True, 224, 0, 0.7, 42
+ntrs-20190030725-dasc-2019, base, True, 246, 0, 0.7, 51
+ntrs-20200002975-gwl-2020, base, True, 286, 0, 1.0, 132
+ntrs-20210020887-techport-thm-2021, base, False, 72, 8, 0.4, 45
+usda-ars-agresearch-2012-11, base, False, 242, 31, 5.2, 310
+usgs-mcs2025-copper, base, True, 51, 0, 0.2, 35
+wallace-algebra-2010, base, True, 283, 0, 28.8, 90
+cdc-zombie-pandemic-2011, cand, True, 60, 0, 12.8, 439
+census-rrs2002-01, cand, True, 74, 0, 6.0, 264
+dga-2025-2030, cand, True, 96, 0, 0.9, 108
+faa-phak-8083-25c, cand, True, 560, 0, 47.9, 839
+fed-explained-2021, cand, True, 201, 0, 5.4, 284
+gpo-911-2004, cand, True, 306, 0, 15.4, 92
+gpo-our-flag-2003, cand, True, 134, 0, 2.4, 104
+nbs-jres-geltman-1977, cand, True, 64, 0, 2.1, 282
+noaa-nca5-2023, cand, True, 28, 0, 127.7, 1030
+ntrs-20180003024-earthdata-slides-2018, cand, True, 224, 0, 0.7, 42
+ntrs-20190030725-dasc-2019, cand, True, 246, 0, 0.8, 51
+ntrs-20200002975-gwl-2020, cand, True, 286, 0, 1.0, 131
+ntrs-20210020887-techport-thm-2021, cand, True, 72, 0, 0.3, 42
+usda-ars-agresearch-2012-11, cand, True, 242, 0, 4.9, 301
+usgs-mcs2025-copper, cand, True, 51, 0, 0.2, 34
+wallace-algebra-2010, cand, True, 283, 0, 26.4, 88
+
+cmp-cdc-zombie-pandemic-2011.json passed True changedPages [] changedImages 0
+cmp-census-rrs2002-01.json passed True changedPages [] changedImages 0
+cmp-dga-2025-2030.json passed True changedPages [] changedImages 0
+cmp-faa-phak-8083-25c.json passed False changedPages [138, 151, 165, 374, 408] changedImages 5
+cmp-fed-explained-2021.json passed True changedPages [] changedImages 0
+cmp-gpo-911-2004.json passed True changedPages [] changedImages 0
+cmp-gpo-our-flag-2003.json passed True changedPages [] changedImages 0
+cmp-nbs-jres-geltman-1977.json passed True changedPages [] changedImages 0
+cmp-noaa-nca5-2023.json passed False changedPages [4, 31, 32, 36, 42, 53, 54, 55, 56, 57, 62, 65, 71, 74] changedImages 46
+cmp-ntrs-20180003024-earthdata-slides-2018.json passed True changedPages [] changedImages 0
+cmp-ntrs-20190030725-dasc-2019.json passed False changedPages [6, 10] changedImages 3
+cmp-ntrs-20200002975-gwl-2020.json passed True changedPages [] changedImages 0
+cmp-ntrs-20210020887-techport-thm-2021.json passed False changedPages [1, 2, 3, 4, 5] changedImages 13
+cmp-usda-ars-agresearch-2012-11.json passed False changedPages [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14] changedImages 41
+cmp-usgs-mcs2025-copper.json passed True changedPages [] changedImages 0
+cmp-wallace-algebra-2010.json passed False changedPages [49, 310, 318, 370, 373, 374, 376, 377, 476] changedImages 15

@@ -40,6 +40,62 @@ enum TintDetector {
     /// A rule after the reader's two-point padding, horizontal or vertical.
     static func isThin(_ rect: CGRect) -> Bool { min(rect.width, rect.height) <= 6 }
 
+    /// A line of at least four words of two or more letters: the measure of body prose, a
+    /// caption or a table cell's sentence, never a chart's tick label or an illustration's
+    /// one- or two-word callout.
+    static func readsAsProse(_ line: TextLine) -> Bool {
+        !line.monospaced && line.text.split(whereSeparator: { !$0.isLetter }).filter { $0.count >= 2 }.count >= 4
+    }
+
+    /// The page's blocks of running text (#158): a run of at least three lines of one type size,
+    /// each within nine tenths of a line of the one above, overlapping its measure and set on the
+    /// block's left edge give or take three sizes (a hanging index entry, a paragraph opening),
+    /// of which at least two read as prose or open in the middle of a sentence. A column of body
+    /// text, a caption, a sidebar's paragraphs and an index's entries qualify; a derivation's
+    /// annotations beside its steps (Wallace page 198's `Distribute 2x and− 5` / `Multiply out
+    /// each term` / `Combine like terms` / `Our Solution`), a chart's tick labels and an
+    /// illustration's callouts carry too little prose, stand alone or stand too far apart.
+    ///
+    /// A crop may take a figure's label, but not a line of running text: crops neither grow over
+    /// one nor bridge art across one.
+    ///
+    /// Cost: one pass down the page's lines against the blocks open beside them, and a page with
+    /// more than `blockTextLineLimit` lines has no block text.
+    static let blockTextLineLimit = 2_000
+    static func blockText(_ lines: [TextLine]) -> [TextLine] {
+        guard lines.count >= 3, lines.count <= blockTextLineLimit else { return [] }
+        let sorted = lines.filter { !$0.monospaced && !$0.rect.isNull && $0.rect.isFinite && $0.rect.width > 0 }
+            .sorted { $0.rect.minY > $1.rect.minY }
+        var blocks: [(edge: CGFloat, lines: [TextLine])] = []
+        for line in sorted {
+            let index = blocks.lastIndex { block in
+                guard let last = block.lines.last else { return false }
+                let size = max(last.fontSize, line.fontSize)
+                let overlap = min(last.rect.maxX, line.rect.maxX) - max(last.rect.minX, line.rect.minX)
+                return abs(last.fontSize - line.fontSize) <= size * 0.1
+                    && last.rect.minY - line.rect.maxY <= size * 0.9 && last.rect.minY > line.rect.minY
+                    && overlap > 0 && abs(line.rect.minX - block.edge) <= size * 3
+            }
+            if let index {
+                blocks[index].edge = min(blocks[index].edge, line.rect.minX)
+                blocks[index].lines.append(line)
+            } else {
+                blocks.append((line.rect.minX, [line]))
+            }
+        }
+        // Wrapped lines: running text carries lines of words that open in the middle of a
+        // sentence, which a stack of labels, a column of variables or a derivation's annotations
+        // (each opening with a capital) does not.
+        func wraps(_ line: TextLine) -> Bool {
+            let text = line.text.trimmingCharacters(in: CharacterSet(charactersIn: " \t\"'“‘(["))
+            return text.first?.isLowercase == true
+                && text.split(whereSeparator: { !$0.isLetter }).filter { $0.count >= 2 }.count >= 2
+        }
+        return blocks.filter {
+            $0.lines.count >= 3 && ($0.lines.filter(readsAsProse).count >= 2 || $0.lines.filter(wraps).count >= 2)
+        }.flatMap(\.lines)
+    }
+
     /// Prose evidence: a line of at least four words spanning at least 40% of the block.
     private static func isProse(_ line: TextLine, in hull: CGRect) -> Bool {
         !line.monospaced && line.rect.width >= hull.width * 0.4
@@ -158,7 +214,9 @@ enum TintDetector {
         func usable(_ paint: GraphicsReader.Paint) -> Bool {
             !paint.image && !paint.rect.isNull && paint.rect.isFinite && paint.rect.width > 0 && paint.rect.height > 0
         }
-        let candidates = paints.indices.filter { usable(paints[$0]) && !paints[$0].frame && !isThin(paints[$0].rect) }
+        let candidates = paints.indices.filter {
+            usable(paints[$0]) && (!paints[$0].frame || paints[$0].grouped) && !isThin(paints[$0].rect)
+        }
         guard candidates.count <= titleBackdropCandidateLimit else { return paints }
         // `titleArt` needs a line of title type touching the row, which lies within the paint's height.
         let titles = lines.filter { line in
@@ -215,26 +273,39 @@ enum TintDetector {
         let prose = lines.filter { line in
             !line.monospaced && line.text.split(whereSeparator: { !$0.isLetter }).filter { $0.count >= 2 }.count >= 4
         }
-        guard prose.count >= 2 else { return clusters(seeds, distance: 4) }
+        guard prose.count >= 2 else { return clustersKeepingText(clusters(seeds, distance: 4), seeds: seeds, lines: lines) }
         let body = max(4, LayoutReconstructor.bodySize(lines))
         // A rule standing more than two bodies clear of every line (a grid's rules sit against
         // their cells), or a horizontal rule touching only the one line it underlines.
+        let text = union(lines.map(\.rect))
         let rules = Set(seeds.indices.filter { index in
             let rule = seeds[index]
             guard isThin(rule) else { return false }
             if !lines.contains(where: { rule.insetBy(dx: -body * 2, dy: -body * 2).intersects($0.rect) }) { return true }
             let touched = lines.filter { rule.intersects($0.rect) }
+            // A rule across the page that strikes no line at all is a divider, not a figure's own
+            // stroke: the magazine's index pages rule off their title above three columns of
+            // entries (#158).
+            let struck = touched.filter { line in
+                let overlap = rule.intersection(line.rect)
+                return !overlap.isNull && overlap.height >= 1
+            }
+            if struck.isEmpty, rule.width > rule.height, rule.width >= text.width * 0.5 { return true }
             return rule.width > rule.height && touched.count == 1 && rule.midY <= touched[0].rect.minY + 3
                 && rule.minX >= touched[0].rect.minX - 4 && rule.maxX <= touched[0].rect.maxX + 4
                 && !lines.contains { $0 != touched[0] && rule.insetBy(dx: 0, dy: -3).intersects($0.rect) }
         })
         let hulls = clusters(seeds, distance: 4)
-        guard !rules.isEmpty, rules.count * hulls.count <= seedClusterWorkLimit else { return hulls }
+        guard !rules.isEmpty, rules.count * hulls.count <= seedClusterWorkLimit else {
+            return clustersKeepingText(hulls, seeds: seeds, lines: lines)
+        }
         var ruled: [Int: [Int]] = [:]
         for rule in rules {
             if let hull = hulls.firstIndex(where: { $0.contains(seeds[rule]) }) { ruled[hull, default: []].append(rule) }
         }
-        guard ruled.count * seeds.count <= seedClusterWorkLimit else { return hulls }
+        guard ruled.count * seeds.count <= seedClusterWorkLimit else {
+            return clustersKeepingText(hulls, seeds: seeds, lines: lines)
+        }
         var dropped = Set<Int>()
         for (hullIndex, hullRules) in ruled {
             let hull = hulls[hullIndex]
@@ -245,7 +316,54 @@ enum TintDetector {
             let escaped = prose.filter { line in line.rect.intersects(hull) && !parts.contains { $0.intersects(line.rect) } }
             if escaped.count >= 2 { dropped.formUnion(own) }
         }
-        return dropped.isEmpty ? hulls : clusters(seeds.indices.filter { !dropped.contains($0) }.map { seeds[$0] }, distance: 4)
+        let kept = dropped.isEmpty ? seeds : seeds.indices.filter { !dropped.contains($0) }.map { seeds[$0] }
+        return clustersKeepingText(dropped.isEmpty ? hulls : clusters(kept, distance: 4), seeds: kept, lines: lines)
+    }
+
+    /// Clustering joins art by the bounding box it grows, so a hull can span text that none of its
+    /// parts touches: the magazine's index pages bridge a holly ornament to the rule under the
+    /// title across three columns of entries, its FORUM page bridges the running-foot rule to the
+    /// signature box across the foot of every column, and the TechPort gallery bridges three
+    /// pictures across the captions beneath the shorter ones (#158, #166). Where a hull takes
+    /// block text (`blockText`) that no part of it takes, its parts are clustered again, joining
+    /// two groups only where the box around them takes none of that text. Art that holds or
+    /// touches the text keeps it, so a chart's labels, a map's names and an illustration's
+    /// callouts cluster exactly as before.
+    ///
+    /// Cost: a hull whose parts times the escaped lines exceed `seedClusterWorkLimit` is left
+    /// whole, and the parts of one hull are joined in at most as many passes as it has parts.
+    static func clustersKeepingText(_ hulls: [CGRect], seeds: [CGRect], lines: [TextLine]) -> [CGRect] {
+        let text = blockText(lines)
+        guard !text.isEmpty else { return hulls }
+        var result: [CGRect] = []
+        var changed = false
+        for hull in hulls {
+            let members = seeds.filter { hull.contains($0) }
+            let escaped = text.filter { line in
+                line.rect.intersects(hull) && !members.contains { $0.intersects(line.rect) }
+            }
+            guard escaped.count >= 2, members.count >= 2,
+                  members.count * escaped.count <= seedClusterWorkLimit else { result.append(hull); continue }
+            var groups = members
+            var joined = true
+            while joined {
+                joined = false
+                outer: for i in groups.indices {
+                    for j in groups.indices where j > i {
+                        guard groups[i].insetBy(dx: -4, dy: -4).intersects(groups[j]) else { continue }
+                        let union = groups[i].union(groups[j])
+                        guard !escaped.contains(where: { $0.rect.intersects(union) }) else { continue }
+                        groups[i] = union
+                        groups.remove(at: j)
+                        joined = true
+                        break outer
+                    }
+                }
+            }
+            if groups.count > 1 { changed = true }
+            result += groups
+        }
+        return changed ? result : hulls
     }
 
     /// Vector shapes behind prose that are not rectangles (#117): a rounded callout box (DGA
@@ -336,11 +454,167 @@ enum TintDetector {
         }
     }
 
+    /// Images that text is set over or against (#158, #166).
+    ///
+    /// - A background: an image holding at least three prose lines (four words, at least 0.9 body)
+    ///   that make up a third of the lines inside it, where the text block covers so much of it
+    ///   that less than half of the image lies beyond the block, or what lies beyond is under
+    ///   another image. The Agricultural Research magazine sets its columns over a faded flag
+    ///   (pages 5, 7, 8, 10, 13, 14) and a pull quote over a photograph (pages 11, 12, 14); the
+    ///   image seeded a crop that took every column line over it. It seeds nothing now. A picture
+    ///   that keeps most of itself beyond the text (a caption box set over a photograph) is left
+    ///   as it was, with its text.
+    /// - An overhanging line: a title (1.25 body, a word of three letters) or a prose line that
+    ///   meets an image but lies mostly beyond it. Magazine page 16 sets its title box across the
+    ///   photograph's edge; the crop took the title, widened to the column beside the photograph
+    ///   and took the column. The image gives up the side the line is on, keeping the largest
+    ///   part, when that part is at least half of it.
+    /// - A caption on its own band: a filled paint mostly inside the image that holds at least two
+    ///   lines, one of them prose, and no other paint. Text set on a band over a picture is an
+    ///   overlay, not the picture's own label (magazine pages 4, 8 and 16), so the image gives up
+    ///   that strip, again keeping at least half of itself. A legend box holding art of its own is
+    ///   part of the picture.
+    ///
+    /// Cost: a page whose images times lines exceed `seedClusterWorkLimit` keeps its paints.
+    static func withoutTextBackdrops(_ paints: [GraphicsReader.Paint], lines: [TextLine]) -> [GraphicsReader.Paint] {
+        let images = paints.indices.filter { index in
+            let rect = paints[index].rect
+            return paints[index].image && !rect.isNull && rect.isFinite && rect.width > 0 && rect.height > 0
+        }
+        guard !images.isEmpty, !lines.isEmpty, images.count * lines.count <= seedClusterWorkLimit else { return paints }
+        let body = max(4, LayoutReconstructor.bodySize(lines))
+        func prose(_ line: TextLine) -> Bool {
+            !line.monospaced && line.fontSize >= body * 0.9
+                && line.text.split(whereSeparator: { !$0.isLetter }).filter { $0.count >= 2 }.count >= 4
+        }
+        func title(_ line: TextLine) -> Bool {
+            !line.monospaced && line.fontSize >= body * 1.25 && line.text.range(of: #"\p{L}{3,}"#, options: .regularExpression) != nil
+        }
+        func area(_ rect: CGRect) -> CGFloat { rect.isNull ? 0 : rect.width * rect.height }
+        /// The largest part of `rect` beyond `zone` on one side.
+        func beyond(_ zone: CGRect, in rect: CGRect) -> CGRect {
+            let gap: CGFloat = 0.5
+            let sides = [
+                CGRect(x: rect.minX, y: zone.maxY + gap, width: rect.width, height: rect.maxY - zone.maxY - gap),
+                CGRect(x: rect.minX, y: rect.minY, width: rect.width, height: zone.minY - gap - rect.minY),
+                CGRect(x: zone.maxX + gap, y: rect.minY, width: rect.maxX - zone.maxX - gap, height: rect.height),
+                CGRect(x: rect.minX, y: rect.minY, width: zone.minX - gap - rect.minX, height: rect.height),
+            ].filter { $0.width > 0 && $0.height > 0 }
+            return sides.max { area($0) < area($1) } ?? .null
+        }
+        /// Whether a block of text over a picture runs on past it: one of `held`'s lines stacks
+        /// with a line of its size and measure that lies beyond the picture. A caption set inside
+        /// a photograph stands alone there; a column that a background is painted under does not.
+        func continues(_ held: [TextLine], beyond rect: CGRect, lines: [TextLine]) -> Bool {
+            lines.contains { other in
+                guard !mostlyInside(other.rect, rect) else { return false }
+                return held.contains { line in
+                    abs(other.fontSize - line.fontSize) <= max(other.fontSize, line.fontSize) * 0.1
+                        && min(other.rect.maxX, line.rect.maxX) - max(other.rect.minX, line.rect.minX) > 0
+                        && max(other.rect.minY - line.rect.maxY, line.rect.minY - other.rect.maxY) <= line.fontSize * 0.9
+                }
+            }
+        }
+        var result = paints
+        var removed = Set<Int>()
+        for index in images {
+            let rect = paints[index].rect
+            let meeting = lines.filter { $0.rect.intersects(rect) }
+            guard !meeting.isEmpty else { continue }
+            let inside = meeting.filter { mostlyInside($0.rect, rect) }
+            let text = inside.filter(prose)
+            if text.count >= 3, text.count * 3 >= inside.count {
+                let rest = beyond(union(inside.map(\.rect)).intersection(rect), in: rect)
+                let others = images.filter { $0 != index && !removed.contains($0) }.map { paints[$0].rect }
+                if area(rest) < area(rect) / 2 || coverage(of: rest, by: others) >= 0.9 {
+                    removed.insert(index)
+                    continue
+                }
+                if continues(text, beyond: rect, lines: lines) {
+                    // The picture is not the text's own: its block runs on past the picture, which
+                    // keeps what lies beyond the block (magazine page 14's columns over the flag).
+                    result[index].rect = rest
+                    continue
+                }
+                // Otherwise the text stands inside the picture, which keeps it unless it is set
+                // on a band of its own (below).
+            }
+            var kept = rect
+            for line in meeting where !mostlyInside(line.rect, rect) && (prose(line) || title(line)) && kept.intersects(line.rect) {
+                kept = beyond(line.rect.intersection(kept), in: kept)
+                guard !kept.isNull else { break }
+            }
+            // A caption set on its own band over a picture is an overlay, not the picture's own
+            // label: the picture gives up the band's strip so the caption can reflow (#158,
+            // magazine page 16). The band must hold only text of its own, as a tint does.
+            let bands = paints.filter { paint in
+                guard !paint.image, !isThin(paint.rect), mostlyInside(paint.rect, rect) else { return false }
+                let held = lines.filter { paint.rect.contains(CGPoint(x: $0.rect.midX, y: $0.rect.midY)) }
+                return held.count >= 2 && held.contains(where: readsAsProse)
+                    && !paints.contains { $0.rect != paint.rect && !$0.image && paint.rect.contains($0.rect) }
+            }
+            if !bands.isEmpty {
+                let strip = union(bands.map(\.rect) + lines.filter { line in
+                    bands.contains { $0.rect.contains(CGPoint(x: line.rect.midX, y: line.rect.midY)) }
+                }.map(\.rect))
+                let beyondBand = beyond(strip.intersection(kept), in: kept)
+                if area(beyondBand) >= area(rect) / 2 { kept = beyondBand }
+            }
+            if kept != rect, area(kept) >= area(rect) / 2 { result[index].rect = kept }
+        }
+        return result.indices.filter { !removed.contains($0) }.map { result[$0] }
+    }
+
     static func compose(_ paints: [GraphicsReader.Paint], lines: [TextLine], bounds: CGRect) -> Result {
+        let paints = withoutTextBackdrops(paints, lines: lines)
         let result = composeTints(paints, lines: lines, bounds: bounds)
         let graphics = withoutEdgeBands(result.graphics, paints: paints, lines: lines)
         guard graphics != result.graphics else { return result }
         return Result(graphics: graphics, tints: result.tints, separators: result.separators)
+    }
+
+    /// Whether a panel's lines make one column of text (#166): every line it holds stands on the
+    /// edge of its running text, give or take three body sizes. A sidebar's headings, labelled
+    /// fields and contents entries do; a ratings grid's fragments, set in three columns beside
+    /// three lines of prose, and a table's cells do not, so those keep their image.
+    static func oneColumnOfText(_ inside: [TextLine], block: [TextLine], body: CGFloat) -> Bool {
+        guard let edge = block.map(\.rect.minX).min() else { return false }
+        return inside.allSatisfy { abs($0.rect.minX - edge) <= body * 3 }
+    }
+
+    /// A band across the page carrying its title (#166): a filled rectangle at least four fifths
+    /// of the page wide, standing against the page's top or bottom edge, holding a title and only
+    /// rows of three words or a title, with every line it holds clear of the art inside it. The TechPort
+    /// print sets the division, the project title and its state on a dark band beside the NASA
+    /// insignia on every page, and that band took the document's own title into a crop.
+    ///
+    /// Rows, not lines: a print's band breaks a date range into `Completed Technology Project
+    /// (2015`, `-` and `2020)`, which read as one row. Art inside the band (the insignia) is kept
+    /// by the block's own carving, which leaves a graphic standing beside the text its own extent.
+    static func bannerBand(hull: CGRect, inside: [TextLine], lines: [TextLine], bounds: CGRect, body: CGFloat) -> Bool {
+        guard hull.width >= bounds.width * 0.8, inside.count >= 2,
+              hull.minY <= bounds.minY + hull.height || hull.maxY >= bounds.maxY - hull.height,
+              lines.allSatisfy({ line in !mostlyInside(line.rect, hull) || inside.contains { $0.rect == line.rect && $0.text == line.text } })
+        else { return false }
+        var rows: [[TextLine]] = []
+        for line in inside.sorted(by: { $0.rect.minY > $1.rect.minY }) {
+            if let index = rows.firstIndex(where: { row in
+                row.contains { other in
+                    min(other.rect.maxY, line.rect.maxY) - max(other.rect.minY, line.rect.minY)
+                        >= min(other.rect.height, line.rect.height) * 0.5
+                }
+            }) { rows[index].append(line) } else { rows.append([line]) }
+        }
+        var holdsTitle = false
+        for row in rows {
+            let text = row.sorted { $0.rect.minX < $1.rect.minX }.map(\.text).joined(separator: " ")
+            let words = text.split(whereSeparator: { !$0.isLetter }).filter { $0.count >= 2 }.count
+            let title = (row.map(\.fontSize).max() ?? 0) >= body * 1.25
+                && text.range(of: #"\p{L}{3,}"#, options: .regularExpression) != nil
+            guard words >= 3 || title else { return false }
+            holdsTitle = holdsTitle || title
+        }
+        return holdsTitle
     }
 
     private static func composeTints(_ paints: [GraphicsReader.Paint], lines: [TextLine], bounds: CGRect) -> Result {
@@ -358,12 +632,17 @@ enum TintDetector {
         var tints: [CGRect] = []
         var blocks: [(hull: CGRect, prose: [TextLine], ruled: Bool)] = []
         let body = max(4, LayoutReconstructor.bodySize(lines))
+        let running = blockText(lines)
         for members in groups(candidates, distance: 4) {
             let hull = union(members)
             let inside = lines.filter { line in
                 mostlyInside(line.rect, hull) && !solidInk.contains { $0.intersects(line.rect) }
             }
             let prose = inside.filter { isProse($0, in: hull) }
+            // A panel of a page laid out for the web holds headings, labelled fields and a
+            // contents list rather than a third of its lines in prose, but its paragraphs still
+            // stack as running text (#166: TechPort's header band and sidebars).
+            let block = inside.filter { line in running.contains { $0.rect == line.rect && $0.text == line.text } }
             let tinted = members.filter { member in
                 lines.contains { member.contains(CGPoint(x: $0.rect.midX, y: $0.rect.midY)) }
             }
@@ -377,6 +656,13 @@ enum TintDetector {
                                                       rules: ink.filter(isThin), solidInk: solidInk, bounds: bounds, body: body) {
                 tints += tinted
                 blocks.append((union(tinted), prose, true))
+            } else if !tinted.isEmpty, block.count >= 3, oneColumnOfText(inside, block: block, body: body),
+                      ink.filter({ isThin($0) && $0.width > $0.height && hull.insetBy(dx: -body, dy: -body).contains($0) }).count < 2 {
+                tints += tinted
+                blocks.append((union(tinted), prose.isEmpty ? block : prose, false))
+            } else if !tinted.isEmpty, bannerBand(hull: hull, inside: inside, lines: lines, bounds: bounds, body: body) {
+                tints += tinted
+                blocks.append((union(tinted), inside, false))
             }
         }
         guard !tints.isEmpty else {
@@ -425,6 +711,14 @@ enum TintDetector {
                     : member.midX > edges.minX && member.midX < edges.maxX)
             })
             guard !core.isNull else { continue }
+            // Art that stands beside the block's text rather than between its lines (the insignia
+            // on a header band) keeps its own extent; anything the text runs across keeps the
+            // block's full-width band between the lines above and below it.
+            if !block.prose.contains(where: { min($0.rect.maxX, core.maxX) - max($0.rect.minX, core.minX) > 0 }) {
+                carved.append(core)
+                consumed += members
+                continue
+            }
             let above = block.prose.filter { $0.rect.minY >= core.maxY - 1 }.map(\.rect.minY).min() ?? block.hull.maxY
             let below = block.prose.filter { $0.rect.maxY <= core.minY + 1 }.map(\.rect.maxY).max() ?? block.hull.minY
             carved.append(CGRect(x: block.hull.minX, y: below, width: block.hull.width, height: max(0, above - below)).union(core))

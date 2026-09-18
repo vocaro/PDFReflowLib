@@ -1,0 +1,109 @@
+changed pages: 18 [16, 40, 72, 88, 98, 149, 161, 203, 231, 245, 257, 285, 311, 335, 374, 376, 388, 423]  words taken on them 2232 -> 2188
+--- base 16
+16	pageSized=true apart=false	crops=1	taken=122/122	tints=0
+  [0.0 0.0 594.0 774.0] 122w "1-1" "Introduction" "The Pilot’s Handbook of Aeronautical Kno" "basic 
++++ cand 16
+16	pageSized=true apart=false	crops=1	taken=116/122	tints=0
+  [55.9 370.3 325.2 606.5] 116w "Introduction" "The Pilot’s Handbook of Aeronautical Kno" "basic kno
+--- base 40
+40	pageSized=true apart=false	crops=1	taken=60/60	tints=0
+  [0.0 0.0 594.0 774.0] 60w "2-1" "Introduction" "Aeronautical decision-making (ADM) is de" "in a un
++++ cand 40
+40	pageSized=true apart=false	crops=1	taken=55/60	tints=0
+  [58.7 432.0 324.0 546.2] 55w "Introduction" "Aeronautical decision-making (ADM) is de" "in a uniqu
+--- base 72
+72	pageSized=true apart=false	crops=1	taken=173/173	tints=0
+  [0.0 0.0 594.0 774.0] 173w "3-1" "Introduction" "An aircraft is a device that is used, or" "flight
++++ cand 72
+72	pageSized=true apart=false	crops=1	taken=173/173	tints=0
+  [0.0 0.0 573.5 774.0] 173w "3-1" "Introduction" "An aircraft is a device that is used, or" "flight
+--- base 88
+88	pageSized=true apart=false	crops=1	taken=188/188	tints=0
+  [0.0 0.0 594.0 774.0] 188w "4-1" "Introduction" "This chapter examines the fundamental ph" "govern
++++ cand 88
+88	pageSized=true apart=false	crops=1	taken=187/188	tints=0
+  [179.6 314.0 594.0 734.5] 187w "Introduction" "This chapter examines the fundamental ph" "governin
+--- base 98
+98	pageSized=true apart=false	crops=1	taken=210/210	tints=0
+  [0.0 0.0 594.0 774.0] 210w "5-1" "Forces Acting on the Aircraft" "Thrust, drag, lift, and weight a
++++ cand 98
+98	pageSized=true apart=false	crops=1	taken=204/210	tints=0
+  [54.0 241.0 329.0 601.8] 204w "Forces Acting on the Aircraft" "Thrust, drag, lift, and weight are 
+--- base 149
+149	pageSized=true apart=false	crops=1	taken=116/116	tints=0
+  [0.0 0.0 594.0 774.0] 116w "6-1" "Introduction" "This chapter focuses on the flight contr" "to con
++++ cand 149
+149	pageSized=true apart=false	crops=1	taken=115/116	tints=0
+  [8.3 476.7 330.0 734.5] 115w "Introduction" "This chapter focuses on the flight contr" "to control
+--- base 161
+161	pageSized=true apart=false	crops=1	taken=94/94	tints=0
+  [0.0 0.0 594.0 774.0] 94w "7-1" "Aircraft SystemsChapter 7" "Introduction" "This chapter covers th
++++ cand 161
+161	pageSized=true apart=false	crops=1	taken=93/94	tints=0
+  [0.0 458.6 324.6 734.5] 93w "Aircraft SystemsChapter 7" "Introduction" "This chapter covers the pr
+--- base 203
+203	pageSized=true apart=false	crops=1	taken=139/139	tints=0
+  [0.0 0.0 594.0 774.0] 139w "8-1" "Introduction" "In order to safely fly any aircraft, a p" "how to
++++ cand 203
+203	pageSized=true apart=false	crops=1	taken=135/139	tints=0
+  [57.0 356.1 326.3 611.0] 135w "Introduction" "In order to safely fly any aircraft, a p" "how to in
+--- base 231
+231	pageSized=true apart=false	crops=1	taken=127/127	tints=0
+  [0.0 0.0 594.0 774.0] 127w "9-1" "Introduction" "Each aircraft comes with documentation a" "with w
++++ cand 231
+231	pageSized=true apart=false	crops=1	taken=126/127	tints=0
+  [0.0 387.5 464.1 734.5] 126w "Introduction" "Each aircraft comes with documentation a" "with which
+--- base 245
+245	pageSized=true apart=false	crops=1	taken=203/203	tints=0
+  [0.0 0.0 594.0 774.0] 203w "10-1" "Introduction" "Compliance with the weight and balance l" "is cr
++++ cand 245
+245	pageSized=true apart=false	crops=1	taken=202/203	tints=0
+  [8.9 237.0 344.3 657.5] 202w "Introduction" "Compliance with the weight and balance l" "is critica
+--- base 257
+257	pageSized=true apart=false	crops=1	taken=104/104	tints=0
+  [0.0 0.0 594.0 774.0] 104w "11-1" "Introduction" "This chapter discusses the factors that " "perfo
++++ cand 257
+257	pageSized=true apart=false	crops=1	taken=103/104	tints=0
+  [57.6 383.9 326.4 721.7] 103w "Introduction" "This chapter discusses the factors that " "performan
+--- base 285
+285	pageSized=true apart=false	crops=1	taken=160/160	tints=0
+  [0.0 0.0 594.0 774.0] 160w "12-1" "Weather TheoryChapter 12" "Introduction" "Weather is an importa
++++ cand 285
+285	pageSized=true apart=false	crops=1	taken=159/160	tints=0
+  [21.5 377.2 325.8 734.5] 159w "Weather TheoryChapter 12" "Introduction" "Weather is an important f
+--- base 311
+311	pageSized=true apart=false	crops=1	taken=134/134	tints=0
+  [0.0 0.0 594.0 774.0] 134w "13-1" "Introduction" "In aviation, weather service is a combin" "Natio
++++ cand 311
+311	pageSized=true apart=false	crops=1	taken=133/134	tints=0
+  [38.0 408.9 445.6 734.5] 133w "Introduction" "In aviation, weather service is a combin" "National 
+--- base 335
+335	pageSized=true apart=false	crops=1	taken=134/134	tints=0
+  [0.0 0.0 594.0 774.0] 134w "14-1" "Introduction" "Each time a pilot operates an aircraft, " "begin
++++ cand 335
+335	pageSized=true apart=false	crops=1	taken=129/134	tints=0
+  [54.7 370.2 328.0 612.1] 129w "Introduction" "Each time a pilot operates an aircraft, " "begins an
+--- base 374
+374	pageSized=false apart=true	crops=1	taken=8/9	tints=0
+  [70.1 233.7 558.0 730.0] 8w "Figure 14-60. An airport diagram with EM"
++++ cand 374
+374	pageSized=false apart=true	crops=1	taken=0/9	tints=0
+  [73.2 247.0 558.0 730.0] 0w 
+--- base 376
+376	pageSized=true apart=false	crops=1	taken=99/99	tints=0
+  [0.0 0.0 594.0 774.0] 99w "15-1" "Introduction" "The two categories of airspace are: regu" "nonreg
++++ cand 376
+376	pageSized=true apart=false	crops=1	taken=98/99	tints=0
+  [47.6 306.8 324.0 569.7] 98w "Introduction" "The two categories of airspace are: regu" "nonregulat
+--- base 388
+388	pageSized=true apart=false	crops=1	taken=115/115	tints=0
+  [0.0 0.0 594.0 774.0] 115w "16-1" "NavigationChapter 16" "Introduction" "This chapter provides an 
++++ cand 388
+388	pageSized=true apart=false	crops=1	taken=114/115	tints=0
+  [41.6 358.4 325.3 662.5] 114w "NavigationChapter 16" "Introduction" "This chapter provides an intr
+--- base 423
+423	pageSized=true apart=false	crops=1	taken=46/46	tints=0
+  [0.0 0.0 594.0 774.0] 46w "17-1" "Introduction" "It is important for a pilot to be aware " "physic
++++ cand 423
+423	pageSized=true apart=false	crops=1	taken=46/46	tints=0
+  [0.0 0.0 594.0 734.5] 46w "17-1" "Introduction" "It is important for a pilot to be aware " "physic

@@ -46,7 +46,7 @@ the evidence needed to infer reading order, paragraphs, image crops and word joi
 | Ordered blocks | Paragraph, heading with logical identifier and level, preformatted text, list item, page-bottom footnote, image, source-page boundary |
 | List item | Text without its printed marker, the marker, the printed number of a numbered item, kind (bulleted or numbered), depth and whether it opens a list element |
 | Inline text | Text runs carrying bold/italic/maths-italic/superscript/subscript flags, interspersed with source-page boundaries |
-| Image block | Logical asset identifier, alternative text and provenance |
+| Image block | Logical asset identifier, alternative text, provenance and, for a crop read as mathematics, its MathML expressions (#190) |
 | Asset registry | Identifier, local file URL and image format |
 | Block provenance | Physical source page where the block begins |
 
@@ -1103,7 +1103,31 @@ Only text outside those regions reflows. `FractionRegionDetector` groups short h
 mathematical terms above and below, optionally including a nearby equation prefix. It leaves
 long rules, prose, code and connected table grids to existing handling. Whole-line expansion
 supplies the crop margin once; fraction detection does not repeatedly enlarge already complete
-regions. Arbitrary mathematical structures remain outside this bounded detector. Attachment placeholders become word boundaries at native extraction,
+regions. Arbitrary mathematical structures remain outside this bounded detector.
+
+An `equation` crop on a born-digital page is then offered to `MathRecognizer` (#190), which reads
+it from the content stream glyph by glyph (`NativeSpacingReader.read(recordingGlyphs:)`: each
+glyph's character, advance, baseline and size; a `CMSY` symbol its ToUnicode map leaves out reads
+through its `Differences` glyph name) rather than from PDFKit's lines, which join a label, a
+numerator and an operator into one. It proves three structures and nothing else: a bar fraction
+(a thin painted rule with one row just above and one just below, each centred on it, the wider
+spanning it, the bar on its row's maths axis, nothing else touching the stack), a superscript (a
+smaller glyph raised a fifth to three quarters of the row's size straight after a number, a
+variable or a bracketed group) and a row of numbers, maths italic variables, operators and
+brackets on one baseline with no gap over three quarters of an em, balanced brackets, operators
+between operands and operands side by side only when set close. A crop may hold several rows and
+a row several exercises, each opened by its printed label (`52)`). Every glyph, rule and text line
+in the crop must be accounted for; a word, an upright letter, a bold glyph, a subscript, a
+radical, an undecodable show or any other mark leaves the whole crop an image. A read crop becomes
+an image block carrying `math` expressions: the writer emits each row as `<p class="math">label
+<math alttext="…" altimg="…">…</math></p>`, where `altimg` is the row's own crop (MathML's fallback
+for a reading system without it) and `alttext` a linear form (`(−1)/9 ÷ (−1)/2`); a sign after an
+operator is grouped with its operand so it renders and speaks as a prefix, and a fraction whose
+terms are body size is wrapped in `<mstyle displaystyle="true">`. Spine documents holding MathML
+carry the manifest property `mathml`. The page's `imageRegion` warning names only crops that stay
+images. Evidence and coverage are in the [MathML record](../measurements/mathml/record.md).
+
+Attachment placeholders become word boundaries at native extraction,
 with empty selections discarded before layout, vocabulary, OCR selection and coverage counting.
 
 Existing text over a graphic covering more than 75% of the page gets `unverifiedTextLayer` and

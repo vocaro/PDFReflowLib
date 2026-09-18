@@ -238,7 +238,12 @@ image-backed. A form's box records no footprint of its own where the form's own 
 cover it, which marks the widest of them `grouped` instead (#158): a drop shadow, a tint or an
 opacity effect makes InDesign wrap one object in a transparency group whose box is exactly what it
 paints, and that box read as solid ink over the prose on it, so a magazine's masthead box, caption
-band and pull quote could not be read as decoration. A shading painted across the whole page is
+band and pull quote could not be read as decoration. The box is the object grown by its effect's
+spread, so "cover" means within two points or over nine tenths of the box's area (#181): NOAA's
+overview pages wrap their 30%-opacity corner art in a group whose feathered box stands eight points
+above the art, and that border read as ink over the left column, a sub-heading and a figure's
+captions (page 48). A box that keeps more than a tenth of itself beyond its paints is still recorded.
+A shading painted across the whole page is
 recorded like any other paint rather than forcing the page image: it is the page's background, and
 the page-sized-graphic signal takes it from there, so the magazine's boxed-title articles reflow
 with a source-page reference instead of losing their title and text to an image. The reader also
@@ -502,7 +507,23 @@ full stop or a semicolon. On that evidence the indent may reach four bodies (the
 under `Step 10.`), and the entry's first line need only carry three real words rather than read as
 words, since a reference opens on a list of initials (`[7] J. L. Rios, I. S. Smith, …`). A paragraph group whose only
 line is such an indented opening continues into a group or untagged line beneath it that opens
-lowercase or follows a hyphen (Our Flag's quotations, tagged one line per group). A line that an inline expression makes taller than the page's ordinary line at its size
+lowercase or follows a hyphen (Our Flag's quotations, tagged one line per group).
+On an edge whose entries wrap into a hanging indent (#134's `hangingEntryEdges`), an entry's first
+line also runs on into a line in that indent wider than a paragraph's drift (NOAA's front matter wraps
+its staff entries 1.8 ems in, #181), when the wrapped line opens with a letter, digit or bracket,
+neither line sets arithmetic, and the first line was full: three of the edge's lines with a line
+hanging beneath them end within a size of the widest, and the wrapped line's first word would not
+have fitted before it. A lone entry unspaced from the line above keeps #147's answer, and a poem's
+couplets broken short keep their lines. One-line entries that never wrap show no hanging indent at all; they
+show added space instead (#181, NOAA's author and contributor blocks, `Robert G. Byron, …` / `Amy E.
+East, …`). `spacedEntryEdges` reads an edge's wrap — the least gap under a line reaching the measure
+three lines share, to the line beneath it, or where the edge has no such measure the book's wrap at
+that body size, the median of its pages' collected during extraction (`bookWraps`) — and qualifies the
+edge when at least three lines on it stand at one even gap (within a tenth of a size) at least a fifth
+of a size over that wrap, none of them reaching the measure. Lists, code, leader entries, wholly bold
+labels and lines out of the body's size are no evidence. On such an edge a line opens the next entry
+by #134's ends-early test, and only where it stands that far below the line above, so an entry's own
+wrapped line at the wrap continues it. A line that an inline expression makes taller than the page's ordinary line at its size
 (Wallace's minus, times and radical glyphs extend a rectangle 8.5 points past the type), at most
 twice that height and set as prose on its paragraph's measure, may overlap by its extra height
 as well, and its gap is not taken as the paragraph's leading for the added-space rule (#71, #109).

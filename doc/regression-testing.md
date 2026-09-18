@@ -115,7 +115,7 @@ are, in the page markup). Evidence and negative controls on real output are in
 ## Current content coverage
 
 <!-- counts:coverage -->
-[corpus/regressions.json](../corpus/regressions.json) has 3467 targeted checks on 566 reviewed pages
+[corpus/regressions.json](../corpus/regressions.json) has 3481 targeted checks on 569 reviewed pages
 across 22 documents: *Pilot's Handbook of Aeronautical Knowledge*, *Beginning and Intermediate
 Algebra*, *The 9/11 Commission Report*, *The Fed Explained*, *Dietary Guidelines for Americans*,
 *Fifth National Climate Assessment*, *Our Flag*, *Preparedness 101*, *Project Blue Book Special
@@ -125,10 +125,10 @@ Report No. 14*, *Mineral Commodity Summaries 2025*, *Loper Bright Enterprises v.
 Clocks*, *Complaint for a Civil Case*, *Investigation of Atmospheric Boundary-Layer Effects on
 Launch-Vehicle Ground Wind Loads*, *A Scheduling Algorithm Compatible with a Distributed Management
 of Arrivals in the National Airspace System*, *Agricultural Research*, *Earthdata Cloud Analytics
-Project* and *Tank Health Monitoring*. They comprise 1149 ordered-text, 242 text, 434 paragraph,
-289 absent-text, 275 heading, 36 heading-level, 50 absent-heading, 93 list-item,
+Project* and *Tank Health Monitoring*. They comprise 1149 ordered-text, 242 text, 440 paragraph,
+289 absent-text, 276 heading, 36 heading-level, 50 absent-heading, 93 list-item,
 1 preformatted-lines, 29 script, 8 absent-script, 11 footnote, 34 note-link,
-61 paragraph-continuation, 1 list-item-continuation, 8 paragraph-separation, 115 distinct-paragraph,
+61 paragraph-continuation, 1 list-item-continuation, 8 paragraph-separation, 122 distinct-paragraph,
 201 image-presence, 44 captioned-image, 20 image-alternative, 102 page-reference, 111 warning,
 113 absent-warning, 17 source-region, 5 glyph-structure, 4 image-appearance and 14 table-cell
 checks, counted as `tools/check_corpus_content.py` counts them.
@@ -650,7 +650,7 @@ the page's structure validates, each line also records the tag the pipeline appl
 since #89/#90); older fixtures and untagged lines have none, and `SourceLayoutFixture` restores it.
 Source review, baseline failures, cross-document safeguards and full-run evidence are retained
 in [the three-fix measurement](../measurements/three-fidelity-fixes/record.md). The suite contains
-<!-- counts:swift-tests -->951 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->245 Python tests<!-- counts:end -->.
+<!-- counts:swift-tests -->959 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->245 Python tests<!-- counts:end -->.
 The comparison tests include a real-Poppler image URL check through the safe HTTP handler
 (simple and positioned modes, paths with spaces); absent Poppler is an explicit skip.
 
@@ -1005,6 +1005,16 @@ lowercase run-on, and read neither two prose columns nor a stray line as names. 
 checks pages 450, 451, 454 and 456–457, 461 and 463–464, and the USDA magazine's index pages 22–23
 keep adjacent one-line entries apart. See the
 [hearing-list and Table of Names evidence](../measurements/hearing-lists-and-names/record.md).
+`FeatheredGroupsAndSpacedEntriesTests.swift` covers [#181](https://github.com/vocaro/PDFReflowLib/issues/181).
+NOAA's author and contributor blocks set one entry to a line at an even open leading, and never wrap
+one, so no hanging indent shows; source fixtures of pages 81, 343 and 1700 check one paragraph per
+entry with the book's wrap, and the fused block without it. Synthetic controls refuse entries at the
+citation's own leading, two entries, uneven leading, a paragraph filling its measure at open leading,
+lines out of the body's size and bold labels, and keep an entry's wrapped line at the wrap with its
+entry. Page 7's fixture checks staff entries wrapped 1.8 ems into their hanging indent as one
+paragraph each; controls keep an indented line under a sentence, a line three ems in, a checkbox and a
+worked step apart. The same file covers page 48's corner art (below, under crops over running text).
+See the [feathered groups and spaced entries evidence](../measurements/feathered-groups-and-spaced-entries/record.md).
 
 ## Headings beside trailing figures and wide section titles
 
@@ -1260,7 +1270,9 @@ codes and a narrow band keep their crop; a sidebar panel of headings, labelled f
 contents list reflows, while a ratings grid in three columns and a panel with rules between its
 rows keep their images. An original in-memory PDF checks that a form's box records no footprint
 where its own paint covers it and marks that paint `grouped`, with a form whose paint covers only a
-corner as the control, and another checks that a page-wide gradient keeps its article's text and a
+corner as the control (#181 adds a feathered box standing eight points over its art, which its paint
+fills to nine tenths, and NOAA page 48's fixture, whose left column, sub-heading and Figure 1.5
+captions leave the figure's crop, with the group's box as a paint of its own as the control), and another checks that a page-wide gradient keeps its article's text and a
 source-page reference instead of a page image (a control page without the gradient warns nothing).
 `ShadingTests` records the page-wide gradient as a paint rather than an unsupported drawing.
 

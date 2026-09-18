@@ -447,6 +447,8 @@ enum PDFReflowLibPipeline {
         var labelEvidence: [LayoutReconstructor.LabelStyle: Int] = [:]
         /// Pages whose heading-size lines are set in each style (#84).
         var headingEvidence: [LayoutReconstructor.LabelStyle: Int] = [:]
+        /// The gaps each page's text wraps at, by body size (#181).
+        var wrapEvidence: [Int: [CGFloat]] = [:]
         var furniture = FurnitureDetector.Ledger()
         /// Each page's numbered and lettered line markers, by page number (#146).
         var listMarkers: [Int: [LayoutReconstructor.PageMarker]] = [:]
@@ -550,6 +552,7 @@ enum PDFReflowLibPipeline {
                 equalsHyphens.add(content)
                 for style in LayoutReconstructor.labelEvidence(on: content) { labelEvidence[style, default: 0] += 1 }
                 for style in LayoutReconstructor.headingEvidence(on: content) { headingEvidence[style, default: 0] += 1 }
+                if let wrap = LayoutReconstructor.wrapEvidence(on: content) { wrapEvidence[wrap.size, default: []].append(wrap.gap) }
             } else {
                 // An unread page carries no word across its far edge either.
                 previousLine = nil
@@ -579,6 +582,8 @@ enum PDFReflowLibPipeline {
         let labelStyles = LayoutReconstructor.labelStyles(from: labelEvidence)
         let equalsMarksHyphens = equalsHyphens.marksHyphens
         let headingStyles = LayoutReconstructor.labelStyles(from: headingEvidence)
+        let bookWraps = LayoutReconstructor.bookWraps(from: wrapEvidence)
+        wrapEvidence = [:]
         // A deck: at least three pages, every one the same landscape size, and two thirds of the
         // pages carrying text read as slides. A landscape book (NOAA's, 1,834 letter pages on
         // their side) sets thousands of characters to a slide's few hundred and heads its pages
@@ -668,7 +673,8 @@ enum PDFReflowLibPipeline {
                         continuesNote: previousPage != nil && blocks.last?.isFootnote == true,
                         labelStyles: labelStyles, headingStyles: headingStyles,
                         neighbouringMarkers: (listMarkers[content.number - 1] ?? []) + (listMarkers[content.number + 1] ?? []),
-                        slideDeck: slideDeck, imageKinds: imageKinds, imageCaptions: imageCaptions)
+                        slideDeck: slideDeck, imageKinds: imageKinds, imageCaptions: imageCaptions,
+                        bookWraps: bookWraps)
                     if pageBlocks.contains(where: \.hasReflowedText) {
                         reflowed += 1
                     }

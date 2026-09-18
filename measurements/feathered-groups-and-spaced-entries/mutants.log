@@ -1,0 +1,26 @@
+reader: a feathered box is recorded -> killed by readerSkipsAFeatheredGroupBoxItsPaintsAllButFill
+reader: paints filling half a box are enough -> killed by groupBoxesAreTheGroupsOwnBoundsOnlyWhenTheirPaintsAllButFillThem, readerSkipsAFeatheredGroupBoxItsPaintsAllButFill
+reader: only an exact fill counts -> killed by groupBoxesAreTheGroupsOwnBoundsOnlyWhenTheirPaintsAllButFillThem, readerSkipsAFeatheredGroupBoxItsPaintsAllButFill
+entries: spaced edges unused -> killed by anEntryOpensOnlyAtItsSpacingAndWhereItsLineEndedEarly, noaaContributorEntriesAreParagraphsOfTheirOwn, spacedEntryEdgesNeedARunAtEvenAddedLeadingOverTheWrap
+entries: no book wrap -> killed by noaaContributorEntriesAreParagraphsOfTheirOwn
+entries: one line is a measure -> killed by noaaContributorEntriesAreParagraphsOfTheirOwn
+entries: any added space -> killed by anEntryOpensOnlyAtItsSpacingAndWhereItsLineEndedEarly, spacedEntryEdgesNeedARunAtEvenAddedLeadingOverTheWrap
+entries: two lines make a run -> killed by spacedEntryEdgesNeedARunAtEvenAddedLeadingOverTheWrap
+entries: uneven leading makes a run -> killed by spacedEntryEdgesNeedARunAtEvenAddedLeadingOverTheWrap
+entries: a filled line may open a run -> killed by spacedEntryEdgesNeedARunAtEvenAddedLeadingOverTheWrap
+entries: bold labels are evidence -> killed by spacedEntryEdgesNeedARunAtEvenAddedLeadingOverTheWrap
+entries: any size is evidence -> killed by spacedEntryEdgesNeedARunAtEvenAddedLeadingOverTheWrap
+entries: an entry opens at the wrap -> killed by anEntryOpensOnlyAtItsSpacingAndWhereItsLineEndedEarly
+hanging: no continuation into a wide indent -> killed by aHangingEntryRunsIntoAWideIndentOnlyOnItsPagesHangingEdge, noaaStaffEntriesWrapIntoTheirHangingIndent
+hanging: any edge admits a wide indent -> SURVIVED
+hanging: an indent past the edge evidence -> SURVIVED
+hanging: a symbol may open the wrapped line -> killed by aHangingEntryRunsIntoAWideIndentOnlyOnItsPagesHangingEdge
+hanging: arithmetic may wrap -> killed by aHangingEntryRunsIntoAWideIndentOnlyOnItsPagesHangingEdge
+hanging: an entry line broken short wraps -> killed by aHangingEntryRunsIntoAWideIndentOnlyOnItsPagesHangingEdge
+hanging: no shared measure is needed -> killed by aHangingEntryRunsIntoAWideIndentOnlyOnItsPagesHangingEdge, hangingLineNeedsSpaceAboveItsEntry
+18 of 20 killed
+
+# Rerun of the two survivors after the controls were strengthened (a closed control whose entries share a measure, a fifth wrapped entry)
+hanging: any edge admits a wide indent -> killed by aHangingEntryRunsIntoAWideIndentOnlyOnItsPagesHangingEdge
+hanging: an indent past the edge evidence -> killed by aHangingEntryRunsIntoAWideIndentOnlyOnItsPagesHangingEdge
+20 of 20 killed

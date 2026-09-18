@@ -1,0 +1,964 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        54,
+        767.47000000000003,
+        155.60000000000005,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Fifth National Climate Assessment"
+        }
+      ],
+      "text" : "Fifth National Climate Assessment"
+    },
+    {
+      "rect" : [
+        51.279998779000003,
+        16.990000000000002,
+        55.666000000000004,
+        13.27
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "7-2 | Forests"
+        }
+      ],
+      "text" : "7-2 | Forests"
+    },
+    {
+      "rect" : [
+        54,
+        713.49599999999998,
+        198.81600000916808,
+        31.847999999999956
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 24,
+          "text" : "Chapter 7. Forests"
+        }
+      ],
+      "text" : "Chapter 7. Forests"
+    },
+    {
+      "rect" : [
+        54,
+        676.906012207,
+        159.60280000534794,
+        18.577999999999975
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 14,
+          "text" : "Authors and Contributors"
+        }
+      ],
+      "text" : "Authors and Contributors"
+    },
+    {
+      "rect" : [
+        54,
+        648.49001220699995,
+        151.17000000764,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Federal Coordinating Lead Author"
+        }
+      ],
+      "text" : "Federal Coordinating Lead Author"
+    },
+    {
+      "rect" : [
+        54,
+        631.99001220699995,
+        349.63830359182009,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Christopher J. Fettig"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", USDA Forest Service, Pacific Southwest Research Station"
+        }
+      ],
+      "text" : "Christopher J. Fettig, USDA Forest Service, Pacific Southwest Research Station"
+    },
+    {
+      "rect" : [
+        54,
+        606.99001220699995,
+        92.913000001910007,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Chapter Lead Author"
+        }
+      ],
+      "text" : "Chapter Lead Author"
+    },
+    {
+      "rect" : [
+        54,
+        590.49001220699995,
+        289.95579669099999,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Grant M. Domke"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", USDA Forest Service, Northern Research Station"
+        }
+      ],
+      "text" : "Grant M. Domke, USDA Forest Service, Northern Research Station"
+    },
+    {
+      "rect" : [
+        54,
+        565.49001220699995,
+        129.08000000000001,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Agency Chapter Lead Author"
+        }
+      ],
+      "text" : "Agency Chapter Lead Author"
+    },
+    {
+      "rect" : [
+        54,
+        548.99001220699995,
+        246.69560266099995,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Anne S. Marsh"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", USDA Forest Service, Washington Office"
+        }
+      ],
+      "text" : "Anne S. Marsh, USDA Forest Service, Washington Office"
+    },
+    {
+      "rect" : [
+        54,
+        523.99001220699995,
+        73.747000000000014,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Chapter Authors"
+        }
+      ],
+      "text" : "Chapter Authors"
+    },
+    {
+      "rect" : [
+        54,
+        507.49001220700001,
+        301.58230432100004,
+        13.270000000000039
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Michelle Baumflek"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", USDA Forest Service, Southern Research Station"
+        }
+      ],
+      "text" : "Michelle Baumflek, USDA Forest Service, Southern Research Station"
+    },
+    {
+      "rect" : [
+        54,
+        490.99001220700001,
+        357.50310000573006,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "William A. Gould"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", USDA Forest Service, International Institute of Tropical Forestry"
+        }
+      ],
+      "text" : "William A. Gould, USDA Forest Service, International Institute of Tropical Forestry"
+    },
+    {
+      "rect" : [
+        54,
+        474.49001220700001,
+        344.66799999237003,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Jessica E. Halofsky"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", USDA Forest Service, Pacific Northwest Research Station"
+        }
+      ],
+      "text" : "Jessica E. Halofsky, USDA Forest Service, Pacific Northwest Research Station"
+    },
+    {
+      "rect" : [
+        54,
+        457.99001220700001,
+        315.26850000382001,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Linda A. Joyce"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", USDA Forest Service, Rocky Mountain Research Station"
+        }
+      ],
+      "text" : "Linda A. Joyce, USDA Forest Service, Rocky Mountain Research Station"
+    },
+    {
+      "rect" : [
+        54,
+        441.49001220700001,
+        411.35800001908001,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Stephen D. LeDuc"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", US Environmental Protection Agency, Office of Research and Development"
+        }
+      ],
+      "text" : "Stephen D. LeDuc, US Environmental Protection Agency, Office of Research and Development"
+    },
+    {
+      "rect" : [
+        54,
+        424.99001220700001,
+        377.08309412173003,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "David H. Levinson"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", USDA Forest Service, National Stream and Aquatic Ecology Center"
+        }
+      ],
+      "text" : "David H. Levinson, USDA Forest Service, National Stream and Aquatic Ecology Center"
+    },
+    {
+      "rect" : [
+        54,
+        408.49001220700001,
+        362.84039753244014,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Jeremy S. Littell"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", US Geological Survey, Alaska Climate Adaptation Science Center"
+        }
+      ],
+      "text" : "Jeremy S. Littell, US Geological Survey, Alaska Climate Adaptation Science Center"
+    },
+    {
+      "rect" : [
+        54,
+        391.99001220700001,
+        320.10739789181997,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Chelcy F. Miniat"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", USDA Forest Service, Rocky Mountain Research Station"
+        }
+      ],
+      "text" : "Chelcy F. Miniat, USDA Forest Service, Rocky Mountain Research Station"
+    },
+    {
+      "rect" : [
+        54,
+        375.49001220700001,
+        305.88840625,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Miranda H. Mockrin"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", USDA Forest Service, Northern Research Station"
+        }
+      ],
+      "text" : "Miranda H. Mockrin, USDA Forest Service, Northern Research Station"
+    },
+    {
+      "rect" : [
+        54,
+        358.99001220700001,
+        335.88389733037002,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "David L. Peterson"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", USDA Forest Service, Pacific Northwest Research Station"
+        }
+      ],
+      "text" : "David L. Peterson, USDA Forest Service, Pacific Northwest Research Station"
+    },
+    {
+      "rect" : [
+        54,
+        342.49001220700001,
+        301.69950707999999,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Jeffrey Prestemon"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", USDA Forest Service, Southern Research Station"
+        }
+      ],
+      "text" : "Jeffrey Prestemon, USDA Forest Service, Southern Research Station"
+    },
+    {
+      "rect" : [
+        54,
+        325.99001220700001,
+        352.53539808625999,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Benjamin M. Sleeter"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", US Geological Survey, Western Geographic Science Center"
+        }
+      ],
+      "text" : "Benjamin M. Sleeter, US Geological Survey, Western Geographic Science Center"
+    },
+    {
+      "rect" : [
+        54,
+        309.49001220700001,
+        251.212303405,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Chris Swanston"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", USDA Forest Service, Washington Office"
+        }
+      ],
+      "text" : "Chris Swanston, USDA Forest Service, Washington Office"
+    },
+    {
+      "rect" : [
+        54,
+        284.49001220700001,
+        102.31100000762999,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Technical Contributors"
+        }
+      ],
+      "text" : "Technical Contributors"
+    },
+    {
+      "rect" : [
+        54,
+        267.99001220700001,
+        255.05889733800001,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Ning Liu"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", USDA Forest Service, Southern Research Station"
+        }
+      ],
+      "text" : "Ning Liu, USDA Forest Service, Southern Research Station"
+    },
+    {
+      "rect" : [
+        54,
+        251.489996948,
+        308.67670331182001,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "D. Max Smith"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", USDA Forest Service, Rocky Mountain Research Station"
+        }
+      ],
+      "text" : "D. Max Smith, USDA Forest Service, Rocky Mountain Research Station"
+    },
+    {
+      "rect" : [
+        54,
+        234.989996948,
+        287.03589770500002,
+        13.27000000000001
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Brian F. Walters"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", USDA Forest Service, Northern Research Station"
+        }
+      ],
+      "text" : "Brian F. Walters, USDA Forest Service, Northern Research Station"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    612,
+    792
+  ],
+  "caseID" : "noaa-nca5-2023",
+  "graphics" : [
+    [
+      0,
+      670.70001220699999,
+      229.11799621500001,
+      27
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        767.47000000000003,
+        155.60000000000005,
+        13.269999999999982
+      ],
+      "text" : "Fifth National Climate Assessment"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        51.279998779000003,
+        16.990000000000002,
+        55.666000000000004,
+        13.27
+      ],
+      "text" : "7-2 | Forests"
+    },
+    {
+      "fontSize" : 24,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        713.49599999999998,
+        198.81600000916808,
+        31.847999999999956
+      ],
+      "text" : "Chapter 7. Forests"
+    },
+    {
+      "fontSize" : 14,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        676.906012207,
+        159.60280000534794,
+        18.577999999999975
+      ],
+      "text" : "Authors and Contributors"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        648.49001220699995,
+        151.17000000764,
+        13.269999999999982
+      ],
+      "text" : "Federal Coordinating Lead Author"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        631.99001220699995,
+        349.63830359182009,
+        13.269999999999982
+      ],
+      "text" : "Christopher J. Fettig, USDA Forest Service, Pacific Southwest Research Station"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        606.99001220699995,
+        92.913000001910007,
+        13.269999999999982
+      ],
+      "text" : "Chapter Lead Author"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        590.49001220699995,
+        289.95579669099999,
+        13.269999999999982
+      ],
+      "text" : "Grant M. Domke, USDA Forest Service, Northern Research Station"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        565.49001220699995,
+        129.08000000000001,
+        13.269999999999982
+      ],
+      "text" : "Agency Chapter Lead Author"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        548.99001220699995,
+        246.69560266099995,
+        13.269999999999982
+      ],
+      "text" : "Anne S. Marsh, USDA Forest Service, Washington Office"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        523.99001220699995,
+        73.747000000000014,
+        13.269999999999982
+      ],
+      "text" : "Chapter Authors"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        507.49001220700001,
+        301.58230432100004,
+        13.270000000000039
+      ],
+      "text" : "Michelle Baumflek, USDA Forest Service, Southern Research Station"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        490.99001220700001,
+        357.50310000573006,
+        13.269999999999982
+      ],
+      "text" : "William A. Gould, USDA Forest Service, International Institute of Tropical Forestry"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        474.49001220700001,
+        344.66799999237003,
+        13.269999999999982
+      ],
+      "text" : "Jessica E. Halofsky, USDA Forest Service, Pacific Northwest Research Station"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        457.99001220700001,
+        315.26850000382001,
+        13.269999999999982
+      ],
+      "text" : "Linda A. Joyce, USDA Forest Service, Rocky Mountain Research Station"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        441.49001220700001,
+        411.35800001908001,
+        13.269999999999982
+      ],
+      "text" : "Stephen D. LeDuc, US Environmental Protection Agency, Office of Research and Development"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        424.99001220700001,
+        377.08309412173003,
+        13.269999999999982
+      ],
+      "text" : "David H. Levinson, USDA Forest Service, National Stream and Aquatic Ecology Center"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        408.49001220700001,
+        362.84039753244014,
+        13.269999999999982
+      ],
+      "text" : "Jeremy S. Littell, US Geological Survey, Alaska Climate Adaptation Science Center"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        391.99001220700001,
+        320.10739789181997,
+        13.269999999999982
+      ],
+      "text" : "Chelcy F. Miniat, USDA Forest Service, Rocky Mountain Research Station"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        375.49001220700001,
+        305.88840625,
+        13.269999999999982
+      ],
+      "text" : "Miranda H. Mockrin, USDA Forest Service, Northern Research Station"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        358.99001220700001,
+        335.88389733037002,
+        13.269999999999982
+      ],
+      "text" : "David L. Peterson, USDA Forest Service, Pacific Northwest Research Station"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        342.49001220700001,
+        301.69950707999999,
+        13.269999999999982
+      ],
+      "text" : "Jeffrey Prestemon, USDA Forest Service, Southern Research Station"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        325.99001220700001,
+        352.53539808625999,
+        13.269999999999982
+      ],
+      "text" : "Benjamin M. Sleeter, US Geological Survey, Western Geographic Science Center"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        309.49001220700001,
+        251.212303405,
+        13.269999999999982
+      ],
+      "text" : "Chris Swanston, USDA Forest Service, Washington Office"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        284.49001220700001,
+        102.31100000762999,
+        13.269999999999982
+      ],
+      "text" : "Technical Contributors"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        267.99001220700001,
+        255.05889733800001,
+        13.269999999999982
+      ],
+      "text" : "Ning Liu, USDA Forest Service, Southern Research Station"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        251.489996948,
+        308.67670331182001,
+        13.269999999999982
+      ],
+      "text" : "D. Max Smith, USDA Forest Service, Rocky Mountain Research Station"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        234.989996948,
+        287.03589770500002,
+        13.27000000000001
+      ],
+      "text" : "Brian F. Walters, USDA Forest Service, Northern Research Station"
+    }
+  ],
+  "page" : 343,
+  "paints" : [
+    {
+      "filled" : true,
+      "frame" : true,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        0,
+        670.70001220699999,
+        229.11799621500001,
+        27
+      ]
+    }
+  ],
+  "rightsBasis" : "NOAA repository explicitly identifies CC0 Public Domain. This records the publisher declaration, not a new owner-confirmed rights determination or shipped-catalog admission.",
+  "sourceSHA256" : "1942cbf346dc2c711fea413d6d6543edb8bc1e3a88d4c3a85e733c6b6d3577bf",
+  "sourceTitle" : "Fifth National Climate Assessment",
+  "sourceURL" : "https://repository.library.noaa.gov/view/noaa/61592/noaa_61592_DS1.pdf"
+}

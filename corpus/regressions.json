@@ -5265,7 +5265,7 @@
     {
       "id": "noaa-nca5-2023",
       "sourceSHA256": "1942cbf346dc2c711fea413d6d6543edb8bc1e3a88d4c3a85e733c6b6d3577bf",
-      "basis": "Source pages 1, 33, 48, 80, 139, 900, 1700 and 1834 reviewed against 70 DPI Poppler renders while adding the case to the lane (#5). The full report completes under library defaults since the written page rasters stopped carrying their constant alpha plane; before that it failed the 512 MiB entry budget. Protects the four properties that decide whether the book is usable: every one of the 1,834 source pages is anchored and the book reports no recognized page, because the text layer is native throughout; the chapter covers on pages 80 and 139 reflow their chapter line and title and keep the full-bleed artwork as a source-page image, which is the only place that artwork survives; the ordinary illustrated pages 48, 900 and 1700 carry their figures as region crops and must not fall back to a whole-page image; and page 1834's agency seals and addresses, which the graphics reader refuses, stay as an image under pageImageFallback. Page 48's callout, page 900's Figure 20.2 caption and page 1700's author block are the reflowed text checked on those pages. This does not approve the pages where text is still trapped inside a region crop (page 48's left column and Figure 1.5 caption) or page 1700's ten Technical Contributors lines run into one paragraph, both tracked as #181, and it does not qualify whole-book fidelity.",
+      "basis": "Source pages 1, 33, 48, 80, 139, 900, 1700 and 1834 reviewed against 70 DPI Poppler renders while adding the case to the lane (#5). The full report completes under library defaults since the written page rasters stopped carrying their constant alpha plane; before that it failed the 512 MiB entry budget. Protects the four properties that decide whether the book is usable: every one of the 1,834 source pages is anchored and the book reports no recognized page, because the text layer is native throughout; the chapter covers on pages 80 and 139 reflow their chapter line and title and keep the full-bleed artwork as a source-page image, which is the only place that artwork survives; the ordinary illustrated pages 48, 900 and 1700 carry their figures as region crops and must not fall back to a whole-page image; and page 1834's agency seals and addresses, which the graphics reader refuses, stay as an image under pageImageFallback. Page 48's callout, page 900's Figure 20.2 caption and page 1700's author block are the reflowed text checked on those pages. Since #181, page 48's left column, its sub-heading and both Figure 1.5 captions reflow beside the figure's crop (the corner art's feathered transparency-group box no longer reads as ink), and the book's one-line author and contributor entries are a paragraph each (pages 81, 343 and 1700; page 7's staff entries also keep their wrapped lines, 1.8 ems in, with the entry); reviewed against 80 DPI renders of pages 7, 48, 81, 343 and 1700. This does not qualify whole-book fidelity.",
       "pages": [
         {
           "page": 1,
@@ -5273,6 +5273,18 @@
             "Fifth National Climate Assessment"
           ],
           "pageReference": true
+        },
+        {
+          "page": 7,
+          "paragraphs": [
+            "Brooke C. Stewart, Managing Editor and Lead Science Editor, North Carolina State University (through July 2023)"
+          ],
+          "distinctParagraphs": [
+            {
+              "first": "Brooke C. Stewart, Managing Editor",
+              "second": "Thomas K. Maycock, Senior Science Editor"
+            }
+          ]
         },
         {
           "page": 33,
@@ -5284,10 +5296,15 @@
         {
           "page": 48,
           "headings": [
-            "How the United States Is Experiencing Climate Change"
+            "How the United States Is Experiencing Climate Change",
+            "Current climate changes are unprecedented over thousands of years"
           ],
           "paragraphs": [
-            "As extreme events and other climate hazards intensify, harmful impacts on people across the United States are increasing."
+            "As extreme events and other climate hazards intensify, harmful impacts on people across the United States are increasing.",
+            "Global greenhouse gas emissions from human activities continue to increase, resulting in rapid warming (Figure 1.5)",
+            "As the world’s climate has shifted toward warmer conditions",
+            "The US has warmed rapidly since the 1970s.",
+            "Figure 1.5. The graph shows the change in US annual average surface temperature during 1895–2022"
           ],
           "minimumImages": 1,
           "pageReference": false
@@ -5303,6 +5320,19 @@
           "pageReference": true
         },
         {
+          "page": 81,
+          "distinctParagraphs": [
+            {
+              "first": "Alexander Robel, Georgia Institute of Technology",
+              "second": "Deepti Singh, Washington State University Vancouver"
+            },
+            {
+              "first": "Deepti Singh, Washington State University Vancouver",
+              "second": "Aradhna Tripati, University of California, Los Angeles"
+            }
+          ]
+        },
+        {
           "page": 139,
           "headings": [
             "Earth Systems Processes"
@@ -5311,6 +5341,19 @@
             "Fifth National Climate Assessment: Chapter 3"
           ],
           "pageReference": true
+        },
+        {
+          "page": 343,
+          "distinctParagraphs": [
+            {
+              "first": "Michelle Baumflek, USDA Forest Service",
+              "second": "William A. Gould, USDA Forest Service"
+            },
+            {
+              "first": "Ning Liu, USDA Forest Service",
+              "second": "D. Max Smith, USDA Forest Service"
+            }
+          ]
         },
         {
           "page": 900,
@@ -5334,9 +5377,20 @@
           "paragraphs": [
             "Allison R. Crimmins, US Global Change Research Program",
             "Steven M. Ostoja, USDA Agricultural Research Service, California Climate Hub",
-            "Ellen M. Considine, Harvard T.H. Chan School of Public Health, Department of Biostatistics"
+            "Ellen M. Considine, Harvard T.H. Chan School of Public Health, Department of Biostatistics",
+            "Amy E. East, US Geological Survey"
           ],
-          "pageReference": false
+          "pageReference": false,
+          "distinctParagraphs": [
+            {
+              "first": "Robert G. Byron, Montana Health Professionals for a Healthy Climate",
+              "second": "Amy E. East, US Geological Survey"
+            },
+            {
+              "first": "Jeffrey R. Pierce, Colorado State University",
+              "second": "Crystal Raymond, University of Washington"
+            }
+          ]
         },
         {
           "page": 1834,

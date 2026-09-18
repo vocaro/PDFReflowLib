@@ -1,0 +1,1073 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        54,
+        767.47000000000003,
+        155.60000000000005,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Fifth National Climate Assessment"
+        }
+      ],
+      "text" : "Fifth National Climate Assessment"
+    },
+    {
+      "rect" : [
+        53.769998779000005,
+        16.990000000000002,
+        89.679000007629995,
+        13.27
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "2-2 | Climate Trends"
+        }
+      ],
+      "text" : "2-2 | Climate Trends"
+    },
+    {
+      "rect" : [
+        54,
+        713.49599999999998,
+        281.36160003662405,
+        31.847999999999956
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 24,
+          "text" : "Chapter 2. Climate Trends"
+        }
+      ],
+      "text" : "Chapter 2. Climate Trends"
+    },
+    {
+      "rect" : [
+        54,
+        676.906012207,
+        159.60280000534794,
+        18.577999999999975
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 14,
+          "text" : "Authors and Contributors"
+        }
+      ],
+      "text" : "Authors and Contributors"
+    },
+    {
+      "rect" : [
+        54,
+        648.49001220699995,
+        151.17000000764,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Federal Coordinating Lead Author"
+        }
+      ],
+      "text" : "Federal Coordinating Lead Author"
+    },
+    {
+      "rect" : [
+        54,
+        631.99001220699995,
+        195.87850000381994,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Wenying Su"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", NASA Langley Research Center"
+        }
+      ],
+      "text" : "Wenying Su, NASA Langley Research Center"
+    },
+    {
+      "rect" : [
+        54,
+        606.99001220699995,
+        92.913000001910007,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Chapter Lead Author"
+        }
+      ],
+      "text" : "Chapter Lead Author"
+    },
+    {
+      "rect" : [
+        54,
+        590.49001220699995,
+        139.35170350054,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Kate Marvel"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", Project Drawdown"
+        }
+      ],
+      "text" : "Kate Marvel, Project Drawdown"
+    },
+    {
+      "rect" : [
+        54,
+        565.49001220699995,
+        129.08000000000001,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Agency Chapter Lead Author"
+        }
+      ],
+      "text" : "Agency Chapter Lead Author"
+    },
+    {
+      "rect" : [
+        54,
+        548.99001220699995,
+        207.08790625000006,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Roberto Delgado"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", National Science Foundation"
+        }
+      ],
+      "text" : "Roberto Delgado, National Science Foundation"
+    },
+    {
+      "rect" : [
+        54,
+        523.99001220699995,
+        35.695000000000007,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Authors"
+        }
+      ],
+      "text" : "Authors"
+    },
+    {
+      "rect" : [
+        54,
+        507.49001220700001,
+        375.96300000382001,
+        13.270000000000039
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Sarah Aarons"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", University of California San Diego, Scripps Institution of Oceanography"
+        }
+      ],
+      "text" : "Sarah Aarons, University of California San Diego, Scripps Institution of Oceanography"
+    },
+    {
+      "rect" : [
+        54,
+        490.99001220700001,
+        389.64079762034999,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Abhishek Chatterjee"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", NASA Jet Propulsion Laboratory, California Institute of Technology"
+        }
+      ],
+      "text" : "Abhishek Chatterjee, NASA Jet Propulsion Laboratory, California Institute of Technology"
+    },
+    {
+      "rect" : [
+        54,
+        474.49001220700001,
+        193.49380468700002,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Margaret E. Garcia"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", Arizona State University"
+        }
+      ],
+      "text" : "Margaret E. Garcia, Arizona State University"
+    },
+    {
+      "rect" : [
+        54,
+        457.99001220700001,
+        123.578702392,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Zeke Hausfather"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", Stripe Inc."
+        }
+      ],
+      "text" : "Zeke Hausfather, Stripe Inc."
+    },
+    {
+      "rect" : [
+        54,
+        441.49001220700001,
+        180.20219461052,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Katharine Hayhoe"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", Texas Tech University"
+        }
+      ],
+      "text" : "Katharine Hayhoe, Texas Tech University"
+    },
+    {
+      "rect" : [
+        54,
+        424.99001220700001,
+        270.93080432100004,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Deanna A. Hence"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", University of Illinois at Urbana–Champaign"
+        }
+      ],
+      "text" : "Deanna A. Hence, University of Illinois at Urbana–Champaign"
+    },
+    {
+      "rect" : [
+        54,
+        408.49001220700001,
+        312.53119604782,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Elizabeth B. Jewett"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", National Oceanic and Atmospheric Administration"
+        }
+      ],
+      "text" : "Elizabeth B. Jewett, National Oceanic and Atmospheric Administration"
+    },
+    {
+      "rect" : [
+        54,
+        391.99001220700001,
+        216.80439735326001,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Alexander Robel"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", Georgia Institute of Technology"
+        }
+      ],
+      "text" : "Alexander Robel, Georgia Institute of Technology"
+    },
+    {
+      "rect" : [
+        54,
+        375.49001220700001,
+        235.46710120173003,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Deepti Singh"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", Washington State University Vancouver"
+        }
+      ],
+      "text" : "Deepti Singh, Washington State University Vancouver"
+    },
+    {
+      "rect" : [
+        54,
+        358.99001220700001,
+        232.96689898599999,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Aradhna Tripati"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", University of California, Los Angeles"
+        }
+      ],
+      "text" : "Aradhna Tripati, University of California, Los Angeles"
+    },
+    {
+      "rect" : [
+        54,
+        342.49001220700001,
+        313.22960156391002,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Russell S. Vose"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", NOAA National Centers for Environmental Information"
+        }
+      ],
+      "text" : "Russell S. Vose, NOAA National Centers for Environmental Information"
+    },
+    {
+      "rect" : [
+        54,
+        317.49001220700001,
+        61.024000003819992,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Review Editor"
+        }
+      ],
+      "text" : "Review Editor"
+    },
+    {
+      "rect" : [
+        54,
+        300.99001220700001,
+        196.00570275417996,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Caroline P. Normile"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", Bipartisan Policy Center"
+        }
+      ],
+      "text" : "Caroline P. Normile, Bipartisan Policy Center"
+    },
+    {
+      "rect" : [
+        54,
+        275.99001220700001,
+        42.656999992370004,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Cover Art"
+        }
+      ],
+      "text" : "Cover Art"
+    },
+    {
+      "rect" : [
+        54,
+        259.49001220700001,
+        71.089999999999989,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Dodd Holsapple"
+        }
+      ],
+      "text" : "Dodd Holsapple"
+    },
+    {
+      "rect" : [
+        54,
+        111.79000000000001,
+        105.34999999999997,
+        13.269999999999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Recommended Citation"
+        }
+      ],
+      "text" : "Recommended Citation"
+    },
+    {
+      "rect" : [
+        54,
+        93.290000000000006,
+        482.60200000763007,
+        13.850000000000009
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Marvel, K., W. Su, R. Delgado, S. Aarons, A. Chatterjee, M.E. Garcia, Z. Hausfather, K. Hayhoe, D.A. Hence,"
+        }
+      ],
+      "text" : "Marvel, K., W. Su, R. Delgado, S. Aarons, A. Chatterjee, M.E. Garcia, Z. Hausfather, K. Hayhoe, D.A. Hence,"
+    },
+    {
+      "rect" : [
+        54,
+        79.159999999999997,
+        501.71211303699999,
+        13.980000000000018
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "E.B. Jewett, A. Robel, D. Singh, A. Tripati, and R.S. Vose, 2023: Ch. 2. Climate trends. In: "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "italic" : true,
+          "text" : "Fifth National Climate"
+        }
+      ],
+      "text" : "E.B. Jewett, A. Robel, D. Singh, A. Tripati, and R.S. Vose, 2023: Ch. 2. Climate trends. In: Fifth National Climate"
+    },
+    {
+      "rect" : [
+        54,
+        65.159999999999997,
+        502.95239975333993,
+        13.980000000000018
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "italic" : true,
+          "text" : "Assessment"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ". Crimmins, A.R., C.W. Avery, D.R. Easterling, K.E. Kunkel, B.C. Stewart, and T.K. Maycock, Eds. U.S."
+        }
+      ],
+      "text" : "Assessment. Crimmins, A.R., C.W. Avery, D.R. Easterling, K.E. Kunkel, B.C. Stewart, and T.K. Maycock, Eds. U.S."
+    },
+    {
+      "rect" : [
+        54,
+        51.289999999999999,
+        455.64438549800002,
+        13.850000000000001
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Global Change Research Program, Washington, DC, USA. https://doi.org/10.7930/NCA5.2023.CH2"
+        }
+      ],
+      "text" : "Global Change Research Program, Washington, DC, USA. https://doi.org/10.7930/NCA5.2023.CH2"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    612,
+    792
+  ],
+  "caseID" : "noaa-nca5-2023",
+  "graphics" : [
+    [
+      0,
+      670.70001220699999,
+      229.11799621500001,
+      27
+    ],
+    [
+      52,
+      258.20001220699999,
+      75.103996276000004,
+      4
+    ],
+    [
+      317.32638549799998,
+      50,
+      194.31799316400003,
+      4
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        767.47000000000003,
+        155.60000000000005,
+        13.269999999999982
+      ],
+      "text" : "Fifth National Climate Assessment"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        53.769998779000005,
+        16.990000000000002,
+        89.679000007629995,
+        13.27
+      ],
+      "text" : "2-2 | Climate Trends"
+    },
+    {
+      "fontSize" : 24,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        713.49599999999998,
+        281.36160003662405,
+        31.847999999999956
+      ],
+      "text" : "Chapter 2. Climate Trends"
+    },
+    {
+      "fontSize" : 14,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        676.906012207,
+        159.60280000534794,
+        18.577999999999975
+      ],
+      "text" : "Authors and Contributors"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        648.49001220699995,
+        151.17000000764,
+        13.269999999999982
+      ],
+      "text" : "Federal Coordinating Lead Author"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        631.99001220699995,
+        195.87850000381994,
+        13.269999999999982
+      ],
+      "text" : "Wenying Su, NASA Langley Research Center"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        606.99001220699995,
+        92.913000001910007,
+        13.269999999999982
+      ],
+      "text" : "Chapter Lead Author"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        590.49001220699995,
+        139.35170350054,
+        13.269999999999982
+      ],
+      "text" : "Kate Marvel, Project Drawdown"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        565.49001220699995,
+        129.08000000000001,
+        13.269999999999982
+      ],
+      "text" : "Agency Chapter Lead Author"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        548.99001220699995,
+        207.08790625000006,
+        13.269999999999982
+      ],
+      "text" : "Roberto Delgado, National Science Foundation"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        523.99001220699995,
+        35.695000000000007,
+        13.269999999999982
+      ],
+      "text" : "Authors"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        507.49001220700001,
+        375.96300000382001,
+        13.270000000000039
+      ],
+      "text" : "Sarah Aarons, University of California San Diego, Scripps Institution of Oceanography"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        490.99001220700001,
+        389.64079762034999,
+        13.269999999999982
+      ],
+      "text" : "Abhishek Chatterjee, NASA Jet Propulsion Laboratory, California Institute of Technology"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        474.49001220700001,
+        193.49380468700002,
+        13.269999999999982
+      ],
+      "text" : "Margaret E. Garcia, Arizona State University"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        457.99001220700001,
+        123.578702392,
+        13.269999999999982
+      ],
+      "text" : "Zeke Hausfather, Stripe Inc."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        441.49001220700001,
+        180.20219461052,
+        13.269999999999982
+      ],
+      "text" : "Katharine Hayhoe, Texas Tech University"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        424.99001220700001,
+        270.93080432100004,
+        13.269999999999982
+      ],
+      "text" : "Deanna A. Hence, University of Illinois at Urbana–Champaign"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        408.49001220700001,
+        312.53119604782,
+        13.269999999999982
+      ],
+      "text" : "Elizabeth B. Jewett, National Oceanic and Atmospheric Administration"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        391.99001220700001,
+        216.80439735326001,
+        13.269999999999982
+      ],
+      "text" : "Alexander Robel, Georgia Institute of Technology"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        375.49001220700001,
+        235.46710120173003,
+        13.269999999999982
+      ],
+      "text" : "Deepti Singh, Washington State University Vancouver"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        358.99001220700001,
+        232.96689898599999,
+        13.269999999999982
+      ],
+      "text" : "Aradhna Tripati, University of California, Los Angeles"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        342.49001220700001,
+        313.22960156391002,
+        13.269999999999982
+      ],
+      "text" : "Russell S. Vose, NOAA National Centers for Environmental Information"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        317.49001220700001,
+        61.024000003819992,
+        13.269999999999982
+      ],
+      "text" : "Review Editor"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        300.99001220700001,
+        196.00570275417996,
+        13.269999999999982
+      ],
+      "text" : "Caroline P. Normile, Bipartisan Policy Center"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        275.99001220700001,
+        42.656999992370004,
+        13.269999999999982
+      ],
+      "text" : "Cover Art"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        259.49001220700001,
+        71.089999999999989,
+        13.269999999999982
+      ],
+      "text" : "Dodd Holsapple"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        111.79000000000001,
+        105.34999999999997,
+        13.269999999999996
+      ],
+      "text" : "Recommended Citation"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        93.290000000000006,
+        482.60200000763007,
+        13.850000000000009
+      ],
+      "text" : "Marvel, K., W. Su, R. Delgado, S. Aarons, A. Chatterjee, M.E. Garcia, Z. Hausfather, K. Hayhoe, D.A. Hence,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        79.159999999999997,
+        501.71211303699999,
+        13.980000000000018
+      ],
+      "text" : "E.B. Jewett, A. Robel, D. Singh, A. Tripati, and R.S. Vose, 2023: Ch. 2. Climate trends. In: Fifth National Climate"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        65.159999999999997,
+        502.95239975333993,
+        13.980000000000018
+      ],
+      "text" : "Assessment. Crimmins, A.R., C.W. Avery, D.R. Easterling, K.E. Kunkel, B.C. Stewart, and T.K. Maycock, Eds. U.S."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        51.289999999999999,
+        455.64438549800002,
+        13.850000000000001
+      ],
+      "text" : "Global Change Research Program, Washington, DC, USA. https://doi.org/10.7930/NCA5.2023.CH2"
+    }
+  ],
+  "page" : 81,
+  "paints" : [
+    {
+      "filled" : true,
+      "frame" : true,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        0,
+        670.70001220699999,
+        229.11799621500001,
+        27
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        52,
+        258.20001220699999,
+        75.103996276000004,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        317.32638549799998,
+        50,
+        194.31799316400003,
+        4
+      ]
+    }
+  ],
+  "rightsBasis" : "NOAA repository explicitly identifies CC0 Public Domain. This records the publisher declaration, not a new owner-confirmed rights determination or shipped-catalog admission.",
+  "sourceSHA256" : "1942cbf346dc2c711fea413d6d6543edb8bc1e3a88d4c3a85e733c6b6d3577bf",
+  "sourceTitle" : "Fifth National Climate Assessment",
+  "sourceURL" : "https://repository.library.noaa.gov/view/noaa/61592/noaa_61592_DS1.pdf"
+}

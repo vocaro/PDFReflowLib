@@ -34,6 +34,17 @@ enum NativeSpacingReader {
         /// Gaps in em at the show's adjusted glyph boundaries beside a mathematical operator, by UTF-16
         /// offset in `unicode`, read whatever the show's spacing state (#188); `operatorSpace` decides them.
         var operatorGaps: [Int: CGFloat] = [:]
+        /// Each glyph's character and its advance along the baseline in page space, recorded only when
+        /// `read` is asked for them (`MathRecognizer`, #190) and every glyph decodes and measures; nil
+        /// otherwise. A code the font's map leaves out reads through its `Differences` glyph name when
+        /// that names a maths symbol (`mathGlyphNames`).
+        var glyphs: [Glyph]?
+
+        struct Glyph: Equatable {
+            var text: String
+            var minX: CGFloat
+            var maxX: CGFloat
+        }
 
         /// The characters of the show's last word (after its last space character, word space or
         /// sentence space), and whether that word begins the show.
@@ -541,6 +552,38 @@ enum NativeSpacingReader {
         return winAnsiUnicodeMap(differences: differences)
     }
 
+    /// Adobe Glyph List names of the maths symbols TeX's `CMSY` fonts encode, with the characters
+    /// they draw (#190). Wallace's `CMSY10` carries a ToUnicode map that leaves `periodcentered`
+    /// and `divide` out, so `4 · 4⁴` and `−2 ÷ 7/4` did not decode; the glyph name is the font's own
+    /// statement of what it draws. Only recorded glyphs read these names, so no line matching or
+    /// spacing decision changes.
+    static let mathGlyphNames: [String: String] = [
+        "minus": "\u{2212}", "periodcentered": "\u{22C5}", "multiply": "\u{00D7}", "divide": "\u{00F7}",
+        "plusminus": "\u{00B1}", "lessequal": "\u{2264}", "greaterequal": "\u{2265}", "notequal": "\u{2260}",
+    ]
+
+    /// The codes a simple font's `Differences` array assigns a maths symbol (`mathGlyphNames`).
+    static func mathSymbols(_ dict: CGPDFDictionaryRef) -> [UInt8: String] {
+        var encoding: CGPDFDictionaryRef?, array: CGPDFArrayRef?
+        guard CGPDFDictionaryGetDictionary(dict, "Encoding", &encoding), let encoding,
+              CGPDFDictionaryGetArray(encoding, "Differences", &array), let array,
+              CGPDFArrayGetCount(array) <= 256 else { return [:] }
+        var result: [UInt8: String] = [:]
+        var next: Int?
+        for index in 0..<CGPDFArrayGetCount(array) {
+            var code: CGPDFInteger = 0, glyph: UnsafePointer<CChar>?
+            if CGPDFArrayGetInteger(array, index, &code) {
+                guard (0...255).contains(code) else { return [:] }
+                next = code
+            } else if CGPDFArrayGetName(array, index, &glyph), let glyph, let code = next {
+                guard code <= 255 else { return [:] }
+                if let symbol = mathGlyphNames[String(cString: glyph)] { result[UInt8(code)] = symbol }
+                next = code + 1
+            } else { return [:] }
+        }
+        return result
+    }
+
     private struct Font {
         var id: Int
         /// The Type3 identity-matrix bfchar map that authorizes space removal.
@@ -550,6 +593,8 @@ enum NativeSpacingReader {
         var unicode: [UInt8: String]?
         /// Simple-font glyph advances in text space per unit of font size.
         var widths: [UInt8: CGFloat]?
+        /// The maths symbols a Type1 font's `Differences` names (`mathGlyphNames`), for recorded glyphs only.
+        var mathNames: [UInt8: String] = [:]
     }
     private final class State {
         var matrix = CGAffineTransform.identity
@@ -572,6 +617,7 @@ enum NativeSpacingReader {
         var fonts: [Int: Font?] = [:]
         var evidence: [Evidence] = []
         var decodings: [String: [UInt8: String]] = [:]
+        var recordsGlyphs = false
 
         func accept(_ scanner: CGPDFScannerRef) -> Bool {
             operations += 1
@@ -602,15 +648,23 @@ enum NativeSpacingReader {
             var value = "", gaps: Set<Int> = [], valid = font?.map != nil && size > 0 && characterSpacing == 0 && wordSpacing == 0
             var unicode = "", advance: CGFloat = 0, trailingSpacing: CGFloat = 0, glyphStarts: Set<Int> = []
             var decodable = font?.unicode != nil && size > 0, measurable = font?.widths != nil && size > 0
+            // Recorded glyphs read a code the map leaves out through its maths glyph name.
+            var glyphs: [Evidence.Glyph]? = recordsGlyphs && size > 0 && font?.widths != nil ? [] : nil
             let spacing = (characterSpacing, wordSpacing)
             func append(_ string: CGPDFStringRef) {
                 let count = CGPDFStringGetLength(string)
                 guard count <= 4096, value.utf16.count + count <= 4096,
                       let bytes = CGPDFStringGetBytePtr(string), let font else {
-                    valid = false; decodable = false; measurable = false; return
+                    valid = false; decodable = false; measurable = false; glyphs = nil; return
                 }
                 for index in 0..<count {
                     let code = bytes[index]
+                    if glyphs != nil {
+                        if let character = font.unicode?[code] ?? font.mathNames[code], let width = font.widths?[code] {
+                            let start = transform.tx + advance * transform.a
+                            glyphs?.append(.init(text: character, minX: start, maxX: start + width * size * transform.a))
+                        } else { glyphs = nil }
+                    }
                     if valid, let decoded = font.map?[code] { value += decoded } else { valid = false }
                     if decodable, let decoded = font.unicode?[code], unicode.utf16.count + decoded.utf16.count <= 4096 {
                         glyphStarts.insert(unicode.utf16.count)
@@ -676,7 +730,7 @@ enum NativeSpacingReader {
                         if number < 0 && number >= -10 { gaps.insert(value.utf16.count) }
                         previousWasString = false
                         pending += number / 1000 * size
-                    } else { valid = false; decodable = false; measurable = false }
+                    } else { valid = false; decodable = false; measurable = false; glyphs = nil }
                 }
             } else if let single {
                 append(single)
@@ -768,6 +822,7 @@ enum NativeSpacingReader {
             }
             // A glyph's ink ends at its width; the spacing after the last one moves no glyph.
             if measurable, advance.isFinite, advance >= 0 { item.end = transform.tx + (advance - trailingSpacing) * transform.a }
+            if let glyphs, !glyphs.isEmpty, glyphs.allSatisfy({ $0.minX.isFinite && $0.maxX.isFinite }) { item.glyphs = glyphs }
             evidence.append(item)
             // The next show may continue from this one's full advance, spacing and adjustments
             // included (Replay Clocks page 10's reference list, `[([8])]TJ 0 g 0 G [-571(D)…]TJ`, #120).
@@ -822,6 +877,7 @@ enum NativeSpacingReader {
         } else if kind != "TrueType" {
             result.unicode = encodingUnicodeMap(dict)
         }
+        if kind != "TrueType" { result.mathNames = mathSymbols(dict) }
         var first: CGPDFInteger = 0, widths: CGPDFArrayRef?
         if CGPDFDictionaryGetInteger(dict, "FirstChar", &first), first >= 0, first <= 255,
            CGPDFDictionaryGetArray(dict, "Widths", &widths), let widths, CGPDFArrayGetCount(widths) <= 256 {
@@ -876,7 +932,9 @@ enum NativeSpacingReader {
     }
 
     /// `decodings` are the characters the document established for index-glyph fonts (#143).
-    static func read(_ page: CGPDFPage, decodings: [String: [UInt8: String]] = [:]) -> [Evidence] {
+    /// `recordingGlyphs` also records each show's glyphs (`Evidence.glyphs`) for `MathRecognizer`.
+    static func read(_ page: CGPDFPage, decodings: [String: [UInt8: String]] = [:],
+                     recordingGlyphs: Bool = false) -> [Evidence] {
         guard page.rotationAngle == 0, hasSupportedFont(page, decoded: Set(decodings.keys)),
               let table = CGPDFOperatorTableCreate() else { return [] }
         defer { CGPDFOperatorTableRelease(table) }
@@ -1005,6 +1063,7 @@ enum NativeSpacingReader {
         CGPDFOperatorTableSetCallback(table, "Tj") { scanner, info in Self.state(info).show(scanner, array: false) }
         let s = State(), stream = CGPDFContentStreamCreateWithPage(page)
         s.decodings = decodings
+        s.recordsGlyphs = recordingGlyphs
         defer { CGPDFContentStreamRelease(stream) }
         let scanner = CGPDFScannerCreate(stream, table, Unmanaged.passUnretained(s).toOpaque())
         defer { CGPDFScannerRelease(scanner) }

@@ -1,0 +1,8 @@
+stroke band: KILLED aWideStraightStrokeIsTheBandItPaints
+band only for straight strokes: KILLED aWideStraightStrokeIsTheBandItPaints
+stacked strips: SURVIVED (page 1000 is handled by bands as tint candidates; the rule was removed)
+edging: KILLED noaaBoxTitleOnAStrokeBandReadsAsTextAndItsBulletsAsAList
+bands as tint candidates: KILLED aBandsEdgingGoesWithItAndABandInsideABoxIsItsTint
+marker column: KILLED aShadedTableWhoseFirstColumnHoldsOnlyMarkersIsAList, noaaBoxTitleOnAStrokeBandReadsAsTextAndItsBulletsAsAList
+titles bound the carved band: SURVIVED (first pass; page 62 fixture added)
+titles bound the carved band: KILLED aBandsEdgingGoesWithItAndABandInsideABoxIsItsTint (second pass)

@@ -80,6 +80,17 @@ enum TableRegionDetector {
             while top > 0, baseline(rows[top - 1]) - baseline(rows[top]) <= leading { top -= 1 }
             while bottom + 1 < rows.count, baseline(rows[bottom]) - baseline(rows[bottom + 1]) <= leading { bottom += 1 }
             let below = rows[(index + 1)..<(bottom + 1)]
+            // A sub-header heads the column its rows carry on beneath it, so its column's next row
+            // stands within the block's leading of it (USGS copper's `12–31–24` over its tariff
+            // rows, Wallace page 148's `+ 15 + 15` over `2x = 2`). A photo credit underlined as a
+            // link at a picture's corner stands over the other column's prose, which runs on at
+            // the same leading, and its own column resumes only 38 points down (NOAA page 69's
+            // `Tami Phelps`, #200).
+            if subheader {
+                let piece = row[0].rect
+                guard let next = below.first(where: { $0.contains { $0.rect.minX < piece.maxX && $0.rect.maxX > piece.minX } }),
+                      baseline(row) - baseline(next) <= leading else { continue }
+            }
             guard below.count >= 3,
                   below.filter({ $0.contains { $0.text.contains { $0.isNumber } } }).count * 2 >= below.count else { continue }
             covered.formUnion(top...bottom)

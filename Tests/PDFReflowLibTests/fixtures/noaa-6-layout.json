@@ -1,0 +1,2745 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        36,
+        13.9001,
+        720.00002929599998,
+        14.19
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "ProximaNova-Medium",
+          "fontSize" : 10,
+          "text" : "Fifth National Climate Assessment v"
+        }
+      ],
+      "text" : "Fifth National Climate Assessment v"
+    },
+    {
+      "rect" : [
+        36,
+        559.78812451099998,
+        45.555999999999997,
+        20.258000000000038
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "ProximaNova-Bold",
+          "fontSize" : 14,
+          "text" : "Credits"
+        }
+      ],
+      "text" : "Credits"
+    },
+    {
+      "rect" : [
+        36,
+        536.45912451100003,
+        284.6602000084041,
+        14.59699999999998
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11,
+          "text" : "Federal Steering Committee for the Fifth National Climate"
+        }
+      ],
+      "text" : "Federal Steering Committee for the Fifth National Climate"
+    },
+    {
+      "rect" : [
+        36,
+        524.45912451100003,
+        61.325000000000003,
+        14.59699999999998
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11,
+          "text" : "Assessment"
+        }
+      ],
+      "text" : "Assessment"
+    },
+    {
+      "rect" : [
+        36,
+        508.23009400000001,
+        332.3174996578,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Allison R. Crimmins"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", Chair, US Global Change Research Program (USGCRP)"
+        }
+      ],
+      "text" : "Allison R. Crimmins, Chair, US Global Change Research Program (USGCRP)"
+    },
+    {
+      "rect" : [
+        36,
+        496.23009400000001,
+        205.50020312308996,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Margaret Walsh"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", US Department of Agriculture"
+        }
+      ],
+      "text" : "Margaret Walsh, US Department of Agriculture"
+    },
+    {
+      "rect" : [
+        36,
+        484.23009400000001,
+        192.71789861617995,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Daniel Barrie"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", US Department of Commerce"
+        }
+      ],
+      "text" : "Daniel Barrie, US Department of Commerce"
+    },
+    {
+      "rect" : [
+        36,
+        472.23009400000001,
+        179.22489751717995,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Kurt Preston"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", US Department of Defense"
+        }
+      ],
+      "text" : "Kurt Preston, US Department of Defense"
+    },
+    {
+      "rect" : [
+        36,
+        460.23009400000001,
+        191.15589788417998,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Tristram O. West"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", US Department of Energy"
+        }
+      ],
+      "text" : "Tristram O. West, US Department of Energy"
+    },
+    {
+      "rect" : [
+        36,
+        448.23009400000001,
+        274.38110229017997,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Daniel Dodgen"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", US Department of Health and Human Services"
+        }
+      ],
+      "text" : "Daniel Dodgen, US Department of Health and Human Services"
+    },
+    {
+      "rect" : [
+        36,
+        436.23009400000001,
+        329.87200000000007,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Merissa Zuzulock"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", US Department of Homeland Security (from June 2023)"
+        }
+      ],
+      "text" : "Merissa Zuzulock, US Department of Homeland Security (from June 2023)"
+    },
+    {
+      "rect" : [
+        36,
+        424.23009400000001,
+        191.17580358417996,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Paul Wagner"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", US Department of the Interior"
+        }
+      ],
+      "text" : "Paul Wagner, US Department of the Interior"
+    },
+    {
+      "rect" : [
+        36,
+        412.23009400000001,
+        180.47629796918,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Sierra Woodruff"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", US Department of State"
+        }
+      ],
+      "text" : "Sierra Woodruff, US Department of State"
+    },
+    {
+      "rect" : [
+        36,
+        400.23009400000001,
+        305.59729649275005,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Rebecca Beavers"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", US Department of Transportation (from May 2023)"
+        }
+      ],
+      "text" : "Rebecca Beavers, US Department of Transportation (from May 2023)"
+    },
+    {
+      "rect" : [
+        36,
+        388.23009400000001,
+        309.40489915092996,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "April Marchese"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", US Department of Transportation (through May 2023)"
+        }
+      ],
+      "text" : "April Marchese, US Department of Transportation (through May 2023)"
+    },
+    {
+      "rect" : [
+        36,
+        376.23009400000001,
+        242.93820202599994,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Darrell A. Winner"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", US Environmental Protection Agency"
+        }
+      ],
+      "text" : "Darrell A. Winner, US Environmental Protection Agency"
+    },
+    {
+      "rect" : [
+        36,
+        364.23009400000001,
+        290.27970367400002,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Kathy A. Hibbard"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", National Aeronautics and Space Administration"
+        }
+      ],
+      "text" : "Kathy A. Hibbard, National Aeronautics and Space Administration"
+    },
+    {
+      "rect" : [
+        36,
+        352.23009400000001,
+        256.55789752291003,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Maria Uhle"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", National Science Foundation (from July 2022)"
+        }
+      ],
+      "text" : "Maria Uhle, National Science Foundation (from July 2022)"
+    },
+    {
+      "rect" : [
+        36,
+        340.23009400000001,
+        291.05899963682003,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Jennifer Carroll"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", National Science Foundation (through July 2022)"
+        }
+      ],
+      "text" : "Jennifer Carroll, National Science Foundation (through July 2022)"
+    },
+    {
+      "rect" : [
+        36,
+        328.23009400000001,
+        199.78259338300001,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Rebecca N. Johnson"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", Smithsonian Institution"
+        }
+      ],
+      "text" : "Rebecca N. Johnson, Smithsonian Institution"
+    },
+    {
+      "rect" : [
+        36,
+        316.23009400000001,
+        243.59939898982009,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Emily Weeks"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", US Agency for International Development"
+        }
+      ],
+      "text" : "Emily Weeks, US Agency for International Development"
+    },
+    {
+      "rect" : [
+        36,
+        285.95909399999999,
+        211.22860000420206,
+        14.59699999999998
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 11,
+          "text" : "Subcommittee on Global Change Research"
+        }
+      ],
+      "text" : "Subcommittee on Global Change Research"
+    },
+    {
+      "rect" : [
+        36,
+        269.73009400000001,
+        228.98210001525996,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Wayne Higgins"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", Chair, US Department of Commerce"
+        }
+      ],
+      "text" : "Wayne Higgins, Chair, US Department of Commerce"
+    },
+    {
+      "rect" : [
+        36,
+        257.73009400000001,
+        307.61989733229996,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "J. Michael Kuperberg"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", Executive Director, US Global Change Research"
+        }
+      ],
+      "text" : "J. Michael Kuperberg, Executive Director, US Global Change Research"
+    },
+    {
+      "rect" : [
+        54,
+        245.73009399999998,
+        38.297000007630004,
+        13.27000000000001
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Program"
+        }
+      ],
+      "text" : "Program"
+    },
+    {
+      "rect" : [
+        36,
+        233.73009399999998,
+        221.95039843508994,
+        13.27000000000001
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "William Hohenstein"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", US Department of Agriculture"
+        }
+      ],
+      "text" : "William Hohenstein, US Department of Agriculture"
+    },
+    {
+      "rect" : [
+        36,
+        221.73009399999998,
+        198.25989843317996,
+        13.27000000000001
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Ben DeAngelo"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", US Department of Commerce"
+        }
+      ],
+      "text" : "Ben DeAngelo, US Department of Commerce"
+    },
+    {
+      "rect" : [
+        36,
+        209.73009399999998,
+        166.76879705417997,
+        13.27000000000001
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Ben Petro"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", US Department of Defense"
+        }
+      ],
+      "text" : "Ben Petro, US Department of Defense"
+    },
+    {
+      "rect" : [
+        36,
+        197.73009399999998,
+        184.55920293717998,
+        13.27000000000001
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Gary Geernaert"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", US Department of Energy"
+        }
+      ],
+      "text" : "Gary Geernaert, US Department of Energy"
+    },
+    {
+      "rect" : [
+        36,
+        185.73009399999998,
+        264.90849944617992,
+        13.27000000000001
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "John Balbus"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", US Department of Health and Human Services"
+        }
+      ],
+      "text" : "John Balbus, US Department of Health and Human Services"
+    },
+    {
+      "rect" : [
+        36,
+        173.73009399999998,
+        234.32229742017995,
+        13.27000000000001
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "David Bascom"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", US Department of Homeland Security"
+        }
+      ],
+      "text" : "David Bascom, US Department of Homeland Security"
+    },
+    {
+      "rect" : [
+        36,
+        161.73009399999998,
+        198.71970312117998,
+        13.27000000000001
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Geoff Plumlee"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", US Department of the Interior"
+        }
+      ],
+      "text" : "Geoff Plumlee, US Department of the Interior"
+    },
+    {
+      "rect" : [
+        36,
+        149.73009399999998,
+        161.49689733418001,
+        13.27000000000001
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Trigg Talley"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", US Department of State"
+        }
+      ],
+      "text" : "Trigg Talley, US Department of State"
+    },
+    {
+      "rect" : [
+        36,
+        137.73009399999998,
+        312.06210209575005,
+        13.27000000000001
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Gretchen Goldman"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", US Department of Transportation (from May 2023)"
+        }
+      ],
+      "text" : "Gretchen Goldman, US Department of Transportation (from May 2023)"
+    },
+    {
+      "rect" : [
+        36,
+        125.73009399999999,
+        309.40489915092996,
+        13.269999999999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "April Marchese"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", US Department of Transportation (through May 2023)"
+        }
+      ],
+      "text" : "April Marchese, US Department of Transportation (through May 2023)"
+    },
+    {
+      "rect" : [
+        36,
+        113.73010162300001,
+        317.24509999999998,
+        13.269999999999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Rebecca S. Dodder"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", US Environmental Protection Agency (from January"
+        }
+      ],
+      "text" : "Rebecca S. Dodder, US Environmental Protection Agency (from January"
+    },
+    {
+      "rect" : [
+        54,
+        101.73010162300001,
+        25.960000000000008,
+        13.269999999999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "2023)"
+        }
+      ],
+      "text" : "2023)"
+    },
+    {
+      "rect" : [
+        36,
+        89.73010162300001,
+        324.736897521,
+        13.269999999999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Andy Miller"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", US Environmental Protection Agency (through January 2023)"
+        }
+      ],
+      "text" : "Andy Miller, US Environmental Protection Agency (through January 2023)"
+    },
+    {
+      "rect" : [
+        36,
+        77.73010162300001,
+        260.42620330800003,
+        13.269999999999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Jack Kaye"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", National Aeronautics and Space Administration"
+        }
+      ],
+      "text" : "Jack Kaye, National Aeronautics and Space Administration"
+    },
+    {
+      "rect" : [
+        36,
+        65.73010162300001,
+        180.33989752100001,
+        13.269999999999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Maria Uhle"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", National Science Foundation"
+        }
+      ],
+      "text" : "Maria Uhle, National Science Foundation"
+    },
+    {
+      "rect" : [
+        36,
+        53.730101622999996,
+        166.70150000000004,
+        13.269999999999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Kirk Johnson"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", Smithsonian Institution"
+        }
+      ],
+      "text" : "Kirk Johnson, Smithsonian Institution"
+    },
+    {
+      "rect" : [
+        36,
+        41.730101622999996,
+        256.44610156582007,
+        13.269999999999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Noel P. Gurwick"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", US Agency for International Development"
+        }
+      ],
+      "text" : "Noel P. Gurwick, US Agency for International Development"
+    },
+    {
+      "rect" : [
+        418.5,
+        536.45912451100003,
+        324.05119999999999,
+        14.59699999999998
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 11,
+          "text" : "USGCRP National Climate Assessment (NCA) Coordination Office"
+        }
+      ],
+      "text" : "USGCRP National Climate Assessment (NCA) Coordination Office"
+    },
+    {
+      "rect" : [
+        418.5,
+        515.73012451099999,
+        71.79000000000002,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "NCA Leadership"
+        }
+      ],
+      "text" : "NCA Leadership"
+    },
+    {
+      "rect" : [
+        418.5,
+        502.29009155200004,
+        151.02851489964007,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Allison R. Crimmins"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", NCA Director"
+        }
+      ],
+      "text" : "Allison R. Crimmins, NCA Director"
+    },
+    {
+      "rect" : [
+        418.5,
+        490.29009155200004,
+        180.321523437,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Christopher W. Avery"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", NCA Chief of Staff"
+        }
+      ],
+      "text" : "Christopher W. Avery, NCA Chief of Staff"
+    },
+    {
+      "rect" : [
+        418.5,
+        478.29009155200004,
+        282.17091260082009,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "J. Michael Kuperberg"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", Acting NCA Director (through June 2021)"
+        }
+      ],
+      "text" : "J. Michael Kuperberg, Acting NCA Director (through June 2021)"
+    },
+    {
+      "rect" : [
+        418.5,
+        452.79009155200004,
+        114.88499999999999,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Chapter Points of Contact"
+        }
+      ],
+      "text" : "Chapter Points of Contact"
+    },
+    {
+      "rect" : [
+        418.5,
+        439.35008911100005,
+        208.70390551700007,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Samantha Basile"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", Lead Carbon Cycle Specialist"
+        }
+      ],
+      "text" : "Samantha Basile, Lead Carbon Cycle Specialist"
+    },
+    {
+      "rect" : [
+        418.5,
+        427.35008911100005,
+        245.49368896400006,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "David J. Dokken"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", Senior International Assessment Lead"
+        }
+      ],
+      "text" : "David J. Dokken, Senior International Assessment Lead"
+    },
+    {
+      "rect" : [
+        418.5,
+        415.35008911100005,
+        200.07160156200007,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Leo Goldsmith"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", Climate and Health Specialist"
+        }
+      ],
+      "text" : "Leo Goldsmith, Climate and Health Specialist"
+    },
+    {
+      "rect" : [
+        418.5,
+        403.35008911100005,
+        159.85581176700009,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Aaron M. Grade"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", NCA Staff Scientist"
+        }
+      ],
+      "text" : "Aaron M. Grade, NCA Staff Scientist"
+    },
+    {
+      "rect" : [
+        418.5,
+        391.35008911100005,
+        178.60339843700001,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Joshua Hernandez"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", NCA Staff Specialist"
+        }
+      ],
+      "text" : "Joshua Hernandez, NCA Staff Specialist"
+    },
+    {
+      "rect" : [
+        418.5,
+        379.35008911100005,
+        244.75918823200004,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Katia Kontar"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", International Global Change Science Lead"
+        }
+      ],
+      "text" : "Katia Kontar, International Global Change Science Lead"
+    },
+    {
+      "rect" : [
+        418.5,
+        367.35008911100005,
+        190.65281250381997,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Yishen Li"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", Water Cycle Science Coordinator"
+        }
+      ],
+      "text" : "Yishen Li, Water Cycle Science Coordinator"
+    },
+    {
+      "rect" : [
+        418.5,
+        355.35008911100005,
+        178.09249999999997,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Fredric Lipschultz"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", Senior Staff Scientist"
+        }
+      ],
+      "text" : "Fredric Lipschultz, Senior Staff Scientist"
+    },
+    {
+      "rect" : [
+        418.5,
+        343.35008911100005,
+        190.88981323199994,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Allyza R. Lustig"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", Senior NCA Staff Manager"
+        }
+      ],
+      "text" : "Allyza R. Lustig, Senior NCA Staff Manager"
+    },
+    {
+      "rect" : [
+        418.5,
+        331.35008911100005,
+        199.78260864200001,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Austin A. Scheetz"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", Social Sciences Specialist"
+        }
+      ],
+      "text" : "Austin A. Scheetz, Social Sciences Specialist"
+    },
+    {
+      "rect" : [
+        418.5,
+        319.35008911100005,
+        189.24250854399997,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Reid A. Sherman"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", Climate Adaptation Lead"
+        }
+      ],
+      "text" : "Reid A. Sherman, Climate Adaptation Lead"
+    },
+    {
+      "rect" : [
+        418.5,
+        307.35008911100005,
+        308.75621875382001,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Susan C. Aragon-Long "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", Senior Science Coordinator / USGS Liaison to"
+        }
+      ],
+      "text" : "Susan C. Aragon-Long , Senior Science Coordinator / USGS Liaison to"
+    },
+    {
+      "rect" : [
+        436.5,
+        295.35008911100005,
+        145.03499999999997,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "USGCRP (through January 2022)"
+        }
+      ],
+      "text" : "USGCRP (through January 2022)"
+    },
+    {
+      "rect" : [
+        418.5,
+        283.35008911100005,
+        269.34491406390998,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Drew Story"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", Global Change Science Lead (through July 2022)"
+        }
+      ],
+      "text" : "Drew Story, Global Change Science Lead (through July 2022)"
+    },
+    {
+      "rect" : [
+        418.5,
+        257.85008911100005,
+        75.939999999999998,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Communications"
+        }
+      ],
+      "text" : "Communications"
+    },
+    {
+      "rect" : [
+        418.5,
+        244.41010192799999,
+        220.63789916999997,
+        13.27000000000001
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Bradley Akamine"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", Chief Digital Information Officer"
+        }
+      ],
+      "text" : "Bradley Akamine, Chief Digital Information Officer"
+    },
+    {
+      "rect" : [
+        418.5,
+        232.41010192799999,
+        243.53280395499996,
+        13.27000000000001
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Laurie Howell"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", Engagement and Communications Lead"
+        }
+      ],
+      "text" : "Laurie Howell, Engagement and Communications Lead"
+    },
+    {
+      "rect" : [
+        418.5,
+        220.41010192799999,
+        154.48329760699994,
+        13.27000000000001
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Alexa K. Jay"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", Senior Science Writer"
+        }
+      ],
+      "text" : "Alexa K. Jay, Senior Science Writer"
+    },
+    {
+      "rect" : [
+        418.5,
+        208.41010192799999,
+        200.94839843700004,
+        13.27000000000001
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Stephanie Lopez"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", Communications Specialist"
+        }
+      ],
+      "text" : "Stephanie Lopez, Communications Specialist"
+    },
+    {
+      "rect" : [
+        418.5,
+        196.41010192799999,
+        332.0428117670001,
+        13.27000000000001
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Katie Reeves"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", Engagement and Communications Lead (through April 2023)"
+        }
+      ],
+      "text" : "Katie Reeves, Engagement and Communications Lead (through April 2023)"
+    },
+    {
+      "rect" : [
+        418.5,
+        184.41010192799999,
+        327.67179614199995,
+        13.27000000000001
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Charles A. Brodine"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", Engagement and Communications Specialist (through"
+        }
+      ],
+      "text" : "Charles A. Brodine, Engagement and Communications Specialist (through"
+    },
+    {
+      "rect" : [
+        436.5,
+        172.41010192799999,
+        59.970000000000027,
+        13.27000000000001
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "August 2022)"
+        }
+      ],
+      "text" : "August 2022)"
+    },
+    {
+      "rect" : [
+        418.5,
+        146.91010192799999,
+        141.51800001145,
+        13.27000000000001
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Operations and Special Projects"
+        }
+      ],
+      "text" : "Operations and Special Projects"
+    },
+    {
+      "rect" : [
+        418.5,
+        133.470099487,
+        292.56621167000003,
+        13.27000000000001
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Ciara R. Lemery"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", Senior Editorial Specialist and Figure Coordinator"
+        }
+      ],
+      "text" : "Ciara R. Lemery, Senior Editorial Specialist and Figure Coordinator"
+    },
+    {
+      "rect" : [
+        418.5,
+        121.47009948700001,
+        293.31040698964,
+        13.269999999999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Sarah Abdelrahim"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", USGCRP Deputy Director (through March 2023)"
+        }
+      ],
+      "text" : "Sarah Abdelrahim, USGCRP Deputy Director (through March 2023)"
+    },
+    {
+      "rect" : [
+        418.5,
+        109.47009948700001,
+        140.05680542381992,
+        13.269999999999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Julie Morris"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", Associate Director"
+        }
+      ],
+      "text" : "Julie Morris, Associate Director"
+    },
+    {
+      "rect" : [
+        418.5,
+        97.470099487000013,
+        144.86369604399999,
+        13.269999999999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Nico Adams"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", Chief of Operations"
+        }
+      ],
+      "text" : "Nico Adams, Chief of Operations"
+    },
+    {
+      "rect" : [
+        418.5,
+        85.470099487000013,
+        191.30351415999996,
+        13.269999999999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Mathia Biggs"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", Operations Coordinator Lead"
+        }
+      ],
+      "text" : "Mathia Biggs, Operations Coordinator Lead"
+    },
+    {
+      "rect" : [
+        418.5,
+        73.470099487000013,
+        269.36588989200004,
+        13.269999999999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Alex Da Silva"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", Climate Change and Sustainability Analyst, ICF"
+        }
+      ],
+      "text" : "Alex Da Silva, Climate Change and Sustainability Analyst, ICF"
+    },
+    {
+      "rect" : [
+        418.5,
+        61.470099487000006,
+        276.67539916999999,
+        13.270000000000003
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "D’Arcy Carlson"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", Climate Change and Sustainability Analyst, ICF"
+        }
+      ],
+      "text" : "D’Arcy Carlson, Climate Change and Sustainability Analyst, ICF"
+    },
+    {
+      "rect" : [
+        418.5,
+        49.470099486999999,
+        272.62269531200002,
+        13.269999999999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Alida Monaco"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", Climate Change and Sustainability Analyst, ICF"
+        }
+      ],
+      "text" : "Alida Monaco, Climate Change and Sustainability Analyst, ICF"
+    },
+    {
+      "rect" : [
+        418.5,
+        37.470099486999999,
+        222.33117334281997,
+        13.269999999999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Emma Conrad-Rooney"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", Intern (through April 2023)"
+        }
+      ],
+      "text" : "Emma Conrad-Rooney, Intern (through April 2023)"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    792,
+    612
+  ],
+  "caseID" : "noaa-nca5-2023",
+  "graphics" : [
+    [
+      0,
+      0,
+      792,
+      248.7166138
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        13.9001,
+        720.00002929599998,
+        14.19
+      ],
+      "text" : "Fifth National Climate Assessment v"
+    },
+    {
+      "fontSize" : 14,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        559.78812451099998,
+        45.555999999999997,
+        20.258000000000038
+      ],
+      "text" : "Credits"
+    },
+    {
+      "fontSize" : 11,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        536.45912451100003,
+        284.6602000084041,
+        14.59699999999998
+      ],
+      "text" : "Federal Steering Committee for the Fifth National Climate"
+    },
+    {
+      "fontSize" : 11,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        524.45912451100003,
+        61.325000000000003,
+        14.59699999999998
+      ],
+      "text" : "Assessment"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        508.23009400000001,
+        332.3174996578,
+        13.269999999999982
+      ],
+      "text" : "Allison R. Crimmins, Chair, US Global Change Research Program (USGCRP)"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        496.23009400000001,
+        205.50020312308996,
+        13.269999999999982
+      ],
+      "text" : "Margaret Walsh, US Department of Agriculture"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        484.23009400000001,
+        192.71789861617995,
+        13.269999999999982
+      ],
+      "text" : "Daniel Barrie, US Department of Commerce"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        472.23009400000001,
+        179.22489751717995,
+        13.269999999999982
+      ],
+      "text" : "Kurt Preston, US Department of Defense"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        460.23009400000001,
+        191.15589788417998,
+        13.269999999999982
+      ],
+      "text" : "Tristram O. West, US Department of Energy"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        448.23009400000001,
+        274.38110229017997,
+        13.269999999999982
+      ],
+      "text" : "Daniel Dodgen, US Department of Health and Human Services"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        436.23009400000001,
+        329.87200000000007,
+        13.269999999999982
+      ],
+      "text" : "Merissa Zuzulock, US Department of Homeland Security (from June 2023)"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        424.23009400000001,
+        191.17580358417996,
+        13.269999999999982
+      ],
+      "text" : "Paul Wagner, US Department of the Interior"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        412.23009400000001,
+        180.47629796918,
+        13.269999999999982
+      ],
+      "text" : "Sierra Woodruff, US Department of State"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        400.23009400000001,
+        305.59729649275005,
+        13.269999999999982
+      ],
+      "text" : "Rebecca Beavers, US Department of Transportation (from May 2023)"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        388.23009400000001,
+        309.40489915092996,
+        13.269999999999982
+      ],
+      "text" : "April Marchese, US Department of Transportation (through May 2023)"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        376.23009400000001,
+        242.93820202599994,
+        13.269999999999982
+      ],
+      "text" : "Darrell A. Winner, US Environmental Protection Agency"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        364.23009400000001,
+        290.27970367400002,
+        13.269999999999982
+      ],
+      "text" : "Kathy A. Hibbard, National Aeronautics and Space Administration"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        352.23009400000001,
+        256.55789752291003,
+        13.269999999999982
+      ],
+      "text" : "Maria Uhle, National Science Foundation (from July 2022)"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        340.23009400000001,
+        291.05899963682003,
+        13.269999999999982
+      ],
+      "text" : "Jennifer Carroll, National Science Foundation (through July 2022)"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        328.23009400000001,
+        199.78259338300001,
+        13.269999999999982
+      ],
+      "text" : "Rebecca N. Johnson, Smithsonian Institution"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        316.23009400000001,
+        243.59939898982009,
+        13.269999999999982
+      ],
+      "text" : "Emily Weeks, US Agency for International Development"
+    },
+    {
+      "fontSize" : 11,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        285.95909399999999,
+        211.22860000420206,
+        14.59699999999998
+      ],
+      "text" : "Subcommittee on Global Change Research"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        269.73009400000001,
+        228.98210001525996,
+        13.269999999999982
+      ],
+      "text" : "Wayne Higgins, Chair, US Department of Commerce"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        257.73009400000001,
+        307.61989733229996,
+        13.269999999999982
+      ],
+      "text" : "J. Michael Kuperberg, Executive Director, US Global Change Research"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        245.73009399999998,
+        38.297000007630004,
+        13.27000000000001
+      ],
+      "text" : "Program"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        233.73009399999998,
+        221.95039843508994,
+        13.27000000000001
+      ],
+      "text" : "William Hohenstein, US Department of Agriculture"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        221.73009399999998,
+        198.25989843317996,
+        13.27000000000001
+      ],
+      "text" : "Ben DeAngelo, US Department of Commerce"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        209.73009399999998,
+        166.76879705417997,
+        13.27000000000001
+      ],
+      "text" : "Ben Petro, US Department of Defense"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        197.73009399999998,
+        184.55920293717998,
+        13.27000000000001
+      ],
+      "text" : "Gary Geernaert, US Department of Energy"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        185.73009399999998,
+        264.90849944617992,
+        13.27000000000001
+      ],
+      "text" : "John Balbus, US Department of Health and Human Services"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        173.73009399999998,
+        234.32229742017995,
+        13.27000000000001
+      ],
+      "text" : "David Bascom, US Department of Homeland Security"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        161.73009399999998,
+        198.71970312117998,
+        13.27000000000001
+      ],
+      "text" : "Geoff Plumlee, US Department of the Interior"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        149.73009399999998,
+        161.49689733418001,
+        13.27000000000001
+      ],
+      "text" : "Trigg Talley, US Department of State"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        137.73009399999998,
+        312.06210209575005,
+        13.27000000000001
+      ],
+      "text" : "Gretchen Goldman, US Department of Transportation (from May 2023)"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        125.73009399999999,
+        309.40489915092996,
+        13.269999999999996
+      ],
+      "text" : "April Marchese, US Department of Transportation (through May 2023)"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        113.73010162300001,
+        317.24509999999998,
+        13.269999999999996
+      ],
+      "text" : "Rebecca S. Dodder, US Environmental Protection Agency (from January"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        101.73010162300001,
+        25.960000000000008,
+        13.269999999999996
+      ],
+      "text" : "2023)"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        89.73010162300001,
+        324.736897521,
+        13.269999999999996
+      ],
+      "text" : "Andy Miller, US Environmental Protection Agency (through January 2023)"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        77.73010162300001,
+        260.42620330800003,
+        13.269999999999996
+      ],
+      "text" : "Jack Kaye, National Aeronautics and Space Administration"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        65.73010162300001,
+        180.33989752100001,
+        13.269999999999996
+      ],
+      "text" : "Maria Uhle, National Science Foundation"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        53.730101622999996,
+        166.70150000000004,
+        13.269999999999996
+      ],
+      "text" : "Kirk Johnson, Smithsonian Institution"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        41.730101622999996,
+        256.44610156582007,
+        13.269999999999996
+      ],
+      "text" : "Noel P. Gurwick, US Agency for International Development"
+    },
+    {
+      "fontSize" : 11,
+      "monospaced" : false,
+      "rect" : [
+        418.5,
+        536.45912451100003,
+        324.05119999999999,
+        14.59699999999998
+      ],
+      "text" : "USGCRP National Climate Assessment (NCA) Coordination Office"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        418.5,
+        515.73012451099999,
+        71.79000000000002,
+        13.269999999999982
+      ],
+      "text" : "NCA Leadership"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        418.5,
+        502.29009155200004,
+        151.02851489964007,
+        13.269999999999982
+      ],
+      "text" : "Allison R. Crimmins, NCA Director"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        418.5,
+        490.29009155200004,
+        180.321523437,
+        13.269999999999982
+      ],
+      "text" : "Christopher W. Avery, NCA Chief of Staff"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        418.5,
+        478.29009155200004,
+        282.17091260082009,
+        13.269999999999982
+      ],
+      "text" : "J. Michael Kuperberg, Acting NCA Director (through June 2021)"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        418.5,
+        452.79009155200004,
+        114.88499999999999,
+        13.269999999999982
+      ],
+      "text" : "Chapter Points of Contact"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        418.5,
+        439.35008911100005,
+        208.70390551700007,
+        13.269999999999982
+      ],
+      "text" : "Samantha Basile, Lead Carbon Cycle Specialist"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        418.5,
+        427.35008911100005,
+        245.49368896400006,
+        13.269999999999982
+      ],
+      "text" : "David J. Dokken, Senior International Assessment Lead"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        418.5,
+        415.35008911100005,
+        200.07160156200007,
+        13.269999999999982
+      ],
+      "text" : "Leo Goldsmith, Climate and Health Specialist"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        418.5,
+        403.35008911100005,
+        159.85581176700009,
+        13.269999999999982
+      ],
+      "text" : "Aaron M. Grade, NCA Staff Scientist"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        418.5,
+        391.35008911100005,
+        178.60339843700001,
+        13.269999999999982
+      ],
+      "text" : "Joshua Hernandez, NCA Staff Specialist"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        418.5,
+        379.35008911100005,
+        244.75918823200004,
+        13.269999999999982
+      ],
+      "text" : "Katia Kontar, International Global Change Science Lead"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        418.5,
+        367.35008911100005,
+        190.65281250381997,
+        13.269999999999982
+      ],
+      "text" : "Yishen Li, Water Cycle Science Coordinator"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        418.5,
+        355.35008911100005,
+        178.09249999999997,
+        13.269999999999982
+      ],
+      "text" : "Fredric Lipschultz, Senior Staff Scientist"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        418.5,
+        343.35008911100005,
+        190.88981323199994,
+        13.269999999999982
+      ],
+      "text" : "Allyza R. Lustig, Senior NCA Staff Manager"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        418.5,
+        331.35008911100005,
+        199.78260864200001,
+        13.269999999999982
+      ],
+      "text" : "Austin A. Scheetz, Social Sciences Specialist"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        418.5,
+        319.35008911100005,
+        189.24250854399997,
+        13.269999999999982
+      ],
+      "text" : "Reid A. Sherman, Climate Adaptation Lead"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        418.5,
+        307.35008911100005,
+        308.75621875382001,
+        13.269999999999982
+      ],
+      "text" : "Susan C. Aragon-Long , Senior Science Coordinator / USGS Liaison to"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        436.5,
+        295.35008911100005,
+        145.03499999999997,
+        13.269999999999982
+      ],
+      "text" : "USGCRP (through January 2022)"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        418.5,
+        283.35008911100005,
+        269.34491406390998,
+        13.269999999999982
+      ],
+      "text" : "Drew Story, Global Change Science Lead (through July 2022)"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        418.5,
+        257.85008911100005,
+        75.939999999999998,
+        13.269999999999982
+      ],
+      "text" : "Communications"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        418.5,
+        244.41010192799999,
+        220.63789916999997,
+        13.27000000000001
+      ],
+      "text" : "Bradley Akamine, Chief Digital Information Officer"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        418.5,
+        232.41010192799999,
+        243.53280395499996,
+        13.27000000000001
+      ],
+      "text" : "Laurie Howell, Engagement and Communications Lead"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        418.5,
+        220.41010192799999,
+        154.48329760699994,
+        13.27000000000001
+      ],
+      "text" : "Alexa K. Jay, Senior Science Writer"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        418.5,
+        208.41010192799999,
+        200.94839843700004,
+        13.27000000000001
+      ],
+      "text" : "Stephanie Lopez, Communications Specialist"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        418.5,
+        196.41010192799999,
+        332.0428117670001,
+        13.27000000000001
+      ],
+      "text" : "Katie Reeves, Engagement and Communications Lead (through April 2023)"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        418.5,
+        184.41010192799999,
+        327.67179614199995,
+        13.27000000000001
+      ],
+      "text" : "Charles A. Brodine, Engagement and Communications Specialist (through"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        436.5,
+        172.41010192799999,
+        59.970000000000027,
+        13.27000000000001
+      ],
+      "text" : "August 2022)"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        418.5,
+        146.91010192799999,
+        141.51800001145,
+        13.27000000000001
+      ],
+      "text" : "Operations and Special Projects"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        418.5,
+        133.470099487,
+        292.56621167000003,
+        13.27000000000001
+      ],
+      "text" : "Ciara R. Lemery, Senior Editorial Specialist and Figure Coordinator"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        418.5,
+        121.47009948700001,
+        293.31040698964,
+        13.269999999999996
+      ],
+      "text" : "Sarah Abdelrahim, USGCRP Deputy Director (through March 2023)"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        418.5,
+        109.47009948700001,
+        140.05680542381992,
+        13.269999999999996
+      ],
+      "text" : "Julie Morris, Associate Director"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        418.5,
+        97.470099487000013,
+        144.86369604399999,
+        13.269999999999996
+      ],
+      "text" : "Nico Adams, Chief of Operations"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        418.5,
+        85.470099487000013,
+        191.30351415999996,
+        13.269999999999996
+      ],
+      "text" : "Mathia Biggs, Operations Coordinator Lead"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        418.5,
+        73.470099487000013,
+        269.36588989200004,
+        13.269999999999996
+      ],
+      "text" : "Alex Da Silva, Climate Change and Sustainability Analyst, ICF"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        418.5,
+        61.470099487000006,
+        276.67539916999999,
+        13.270000000000003
+      ],
+      "text" : "D’Arcy Carlson, Climate Change and Sustainability Analyst, ICF"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        418.5,
+        49.470099486999999,
+        272.62269531200002,
+        13.269999999999996
+      ],
+      "text" : "Alida Monaco, Climate Change and Sustainability Analyst, ICF"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        418.5,
+        37.470099486999999,
+        222.33117334281997,
+        13.269999999999996
+      ],
+      "text" : "Emma Conrad-Rooney, Intern (through April 2023)"
+    }
+  ],
+  "page" : 6,
+  "paints" : [
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : true,
+      "image" : true,
+      "rect" : [
+        0,
+        0,
+        792,
+        248.7166138
+      ]
+    }
+  ],
+  "rightsBasis" : "NOAA repository explicitly identifies CC0 Public Domain. This records the publisher declaration, not a new owner-confirmed rights determination or shipped-catalog admission.",
+  "sourceSHA256" : "1942cbf346dc2c711fea413d6d6543edb8bc1e3a88d4c3a85e733c6b6d3577bf",
+  "sourceTitle" : "Fifth National Climate Assessment",
+  "sourceURL" : "https://repository.library.noaa.gov/view/noaa/61592/noaa_61592_DS1.pdf"
+}

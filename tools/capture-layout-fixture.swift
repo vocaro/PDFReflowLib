@@ -99,7 +99,7 @@ private typealias CaptureFont = UIFont
             "rightsBasis": item["rightsBasis"] ?? "See corpus manifest and third-party notices.",
             "bounds": rect(page.bounds(for: .cropBox)), "graphics": graphics.regions.map(rect),
             "paints": graphics.paints.map { ["rect": rect($0.rect), "frame": $0.frame, "image": $0.image, "filled": $0.filled,
-                                             "grouped": $0.grouped] as [String: Any] },
+                                             "grouped": $0.grouped, "band": $0.band] as [String: Any] },
             "lines": lines.map { line -> [String: Any] in
                 var entry: [String: Any] = ["text": line.text, "rect": rect(line.rect), "fontSize": line.fontSize,
                                             "monospaced": line.monospaced]

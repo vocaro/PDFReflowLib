@@ -68,6 +68,8 @@ struct SourceLayoutFixture: Decodable {
         /// The paint fills the box of the transparency-group form drawing it (#158); absent in
         /// fixtures captured before it, read as false.
         var grouped: Bool?
+        /// One wide straight stroke's band (#200); absent in fixtures captured before it, read as false.
+        var band: Bool?
     }
     var sourceSHA256: String
     var page: Int
@@ -119,7 +121,7 @@ struct SourceLayoutFixture: Decodable {
             let drawn = paints.filter { paint in !page.blanks.contains { $0.rule.contains(rect(paint.rect)) } }
             let composed = TintDetector.compose(drawn.map {
                 GraphicsReader.Paint(rect: rect($0.rect), frame: $0.frame, image: $0.image ?? false,
-                                     filled: $0.filled ?? false, grouped: $0.grouped ?? false) },
+                                     filled: $0.filled ?? false, grouped: $0.grouped ?? false, band: $0.band ?? false) },
                                                 lines: textLines, bounds: page.bounds)
             page.graphics = composed.graphics
             page.tints = composed.tints

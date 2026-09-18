@@ -251,6 +251,18 @@ enum TintDetector {
             guard !paints.indices.contains(where: { !members.contains($0) && paints[$0].rect.insetBy(dx: -2, dy: -2).contains(hull) }),
                   let art = LayoutReconstructor.titleArt(hull, in: lines, body: body, stacked: true) else { continue }
             removed.formUnion(row)
+            // A dropped bar's edging goes with it: a textless strip laid along its top or bottom,
+            // within its width and no taller than it (NOAA page 40's pale tab along its title
+            // band, whose padding reached the title and took it into a crop, #200).
+            if art == nil {
+                for other in paints.indices where !removed.contains(other) && usable(paints[other]) {
+                    let strip = paints[other].rect
+                    guard strip.intersects(hull), strip.height <= hull.height, strip.minX >= hull.minX - 2,
+                          strip.maxX <= hull.maxX + 2, strip.minY >= hull.maxY - 4 || strip.maxY <= hull.minY + 4,
+                          !lines.contains(where: { strip.contains(CGPoint(x: $0.rect.midX, y: $0.rect.midY)) }) else { continue }
+                    removed.insert(other)
+                }
+            }
             if let kept = art { trimmed.append(GraphicsReader.Paint(rect: kept, frame: false)) }
         }
         guard !removed.isEmpty else { return paints }
@@ -533,7 +545,13 @@ enum TintDetector {
                 if continues(text, beyond: rect, lines: lines) {
                     // The picture is not the text's own: its block runs on past the picture, which
                     // keeps what lies beyond the block (magazine page 14's columns over the flag).
-                    result[index].rect = rest
+                    // Where at least half of that lies under another picture it is the page's
+                    // backdrop and keeps nothing: NOAA page 47's corner art lies under the left
+                    // column and, below it, behind the painting (55% of what it keeps), and that
+                    // piece, merged with the painting's crop, took the right column's last two
+                    // lines (#200). Page 57's corner art keeps a piece above its column that a
+                    // photograph covers a fifth of, and keeps it.
+                    if coverage(of: rest, by: others) >= 0.5 { removed.insert(index) } else { result[index].rect = rest }
                     continue
                 }
                 // Otherwise the text stands inside the picture, which keeps it unless it is set
@@ -622,12 +640,18 @@ enum TintDetector {
         let finite = paints.filter { !$0.rect.isNull && $0.rect.isFinite }
         let stroked = strokedRectangles(finite.filter { isThin($0.rect) }.map(\.rect))
         let shapes = lines.isEmpty ? [] : shapeBackdrops(finite, lines: lines)
-        let candidates = finite.filter { $0.frame && !isThin($0.rect) }.map(\.rect) + stroked.map(\.rect) + shapes
+        // A wide stroke's band behind text is a tint's candidate as a filled rectangle is (#200):
+        // NOAA page 1490's two-line box title sits on one 20-point stroke inside the box's tint.
+        let bands = finite.filter { paint in
+            paint.band && lines.contains { paint.rect.contains(CGPoint(x: $0.rect.midX, y: $0.rect.midY)) }
+        }.map(\.rect)
+        let candidates = finite.filter { $0.frame && !isThin($0.rect) }.map(\.rect) + stroked.map(\.rect) + shapes + bands
         guard !candidates.isEmpty, !lines.isEmpty else {
             return Result(graphics: seedClusters(paints.map(\.rect), lines: lines), tints: [])
         }
         let strokes = stroked.flatMap(\.strokes)
-        let ink = finite.filter { (!$0.frame || isThin($0.rect)) && !strokes.contains($0.rect) && !shapes.contains($0.rect) }.map(\.rect)
+        let ink = finite.filter { (!$0.frame || isThin($0.rect)) && !strokes.contains($0.rect) && !shapes.contains($0.rect)
+            && !bands.contains($0.rect) }.map(\.rect)
         let solidInk = ink.filter { !isThin($0) }
         var tints: [CGRect] = []
         var blocks: [(hull: CGRect, prose: [TextLine], ruled: Bool)] = []
@@ -719,8 +743,17 @@ enum TintDetector {
                 consumed += members
                 continue
             }
-            let above = block.prose.filter { $0.rect.minY >= core.maxY - 1 }.map(\.rect.minY).min() ?? block.hull.maxY
-            let below = block.prose.filter { $0.rect.maxY <= core.minY + 1 }.map(\.rect.maxY).max() ?? block.hull.minY
+            // A title set larger than the block's prose bounds the band as prose does: NOAA page
+            // 62's box sub-heading `Exemplifying Indigenous Resilience` stands clear above the
+            // photograph it introduces, and the band took it into the photograph's crop (#200).
+            let proseSize = block.prose.map(\.fontSize).sorted()[block.prose.count / 2]
+            let titles = lines.filter { line in
+                line.fontSize >= proseSize * 1.15 && line.text.range(of: #"\p{L}{3,}"#, options: .regularExpression) != nil
+                    && mostlyInside(line.rect, block.hull) && !line.rect.intersects(core)
+            }
+            let bounds = block.prose + titles
+            let above = bounds.filter { $0.rect.minY >= core.maxY - 1 }.map(\.rect.minY).min() ?? block.hull.maxY
+            let below = bounds.filter { $0.rect.maxY <= core.minY + 1 }.map(\.rect.maxY).max() ?? block.hull.minY
             carved.append(CGRect(x: block.hull.minX, y: below, width: block.hull.width, height: max(0, above - below)).union(core))
             consumed += members
         }

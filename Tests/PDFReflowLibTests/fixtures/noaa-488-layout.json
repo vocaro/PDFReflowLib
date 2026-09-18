@@ -1,0 +1,960 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        54,
+        767.47000000000003,
+        155.60000000000005,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Fifth National Climate Assessment"
+        }
+      ],
+      "text" : "Fifth National Climate Assessment"
+    },
+    {
+      "rect" : [
+        51.279998779000003,
+        16.990000000000002,
+        215.47200000382006,
+        13.27
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "10-2 | Ocean Ecosystems and Marine Resources"
+        }
+      ],
+      "text" : "10-2 | Ocean Ecosystems and Marine Resources"
+    },
+    {
+      "rect" : [
+        54,
+        713.49599999999998,
+        382.22640000916806,
+        31.847999999999956
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 24,
+          "text" : "Chapter 10. Ocean Ecosystems and"
+        }
+      ],
+      "text" : "Chapter 10. Ocean Ecosystems and"
+    },
+    {
+      "rect" : [
+        54,
+        684.69601220699997,
+        195.38159999999999,
+        31.847999999999956
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 24,
+          "text" : "Marine Resources"
+        }
+      ],
+      "text" : "Marine Resources"
+    },
+    {
+      "rect" : [
+        54,
+        648.10602441399999,
+        159.60280000534794,
+        18.577999999999975
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 14,
+          "text" : "Authors and Contributors"
+        }
+      ],
+      "text" : "Authors and Contributors"
+    },
+    {
+      "rect" : [
+        54,
+        619.69002441399994,
+        151.17000000764,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Federal Coordinating Lead Author"
+        }
+      ],
+      "text" : "Federal Coordinating Lead Author"
+    },
+    {
+      "rect" : [
+        54,
+        603.19002441399994,
+        376.95949927081995,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Emily B. Osborne"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", NOAA Oceanic and Atmospheric Research, Atlantic Oceanographic"
+        }
+      ],
+      "text" : "Emily B. Osborne, NOAA Oceanic and Atmospheric Research, Atlantic Oceanographic"
+    },
+    {
+      "rect" : [
+        54,
+        591.19002441399994,
+        135.93600000190997,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "and Meteorological Laboratory"
+        }
+      ],
+      "text" : "and Meteorological Laboratory"
+    },
+    {
+      "rect" : [
+        54,
+        566.19002441399994,
+        92.913000001910007,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Chapter Lead Author"
+        }
+      ],
+      "text" : "Chapter Lead Author"
+    },
+    {
+      "rect" : [
+        54,
+        549.69002441399994,
+        225.74479614199998,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Katherine E. Mills"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", Gulf of Maine Research Institute"
+        }
+      ],
+      "text" : "Katherine E. Mills, Gulf of Maine Research Institute"
+    },
+    {
+      "rect" : [
+        54,
+        524.69002441399994,
+        73.747000000000014,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Chapter Authors"
+        }
+      ],
+      "text" : "Chapter Authors"
+    },
+    {
+      "rect" : [
+        54,
+        508.18999389600003,
+        178.20510000000002,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Richard J. Bell"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", The Nature Conservancy"
+        }
+      ],
+      "text" : "Richard J. Bell, The Nature Conservancy"
+    },
+    {
+      "rect" : [
+        54,
+        491.68999389600003,
+        464.3315067263502,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Charles S. Colgan"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", Middlebury Institute of International Studies at Monterey, Center for the Blue Economy"
+        }
+      ],
+      "text" : "Charles S. Colgan, Middlebury Institute of International Studies at Monterey, Center for the Blue Economy"
+    },
+    {
+      "rect" : [
+        54,
+        475.18999389600003,
+        163.72260229400001,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Sarah R. Cooley"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", Ocean Conservancy"
+        }
+      ],
+      "text" : "Sarah R. Cooley, Ocean Conservancy"
+    },
+    {
+      "rect" : [
+        54,
+        458.68999389600003,
+        335.25489880300006,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Miriam C. Goldstein"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", Center for American Progress (through February 2023)"
+        }
+      ],
+      "text" : "Miriam C. Goldstein, Center for American Progress (through February 2023)"
+    },
+    {
+      "rect" : [
+        54,
+        442.18999389600003,
+        142.65860229400002,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Roger B. Griffis"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", NOAA Fisheries"
+        }
+      ],
+      "text" : "Roger B. Griffis, NOAA Fisheries"
+    },
+    {
+      "rect" : [
+        54,
+        425.68999389600003,
+        247.82100000000003,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Kirstin Holsman"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", NOAA Alaska Fisheries Science Center"
+        }
+      ],
+      "text" : "Kirstin Holsman, NOAA Alaska Fisheries Science Center"
+    },
+    {
+      "rect" : [
+        54,
+        409.18999389600003,
+        438.86060248373002,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Michael Jacox"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", NOAA Southwest Fisheries Science Center and NOAA Physical Sciences Laboratory"
+        }
+      ],
+      "text" : "Michael Jacox, NOAA Southwest Fisheries Science Center and NOAA Physical Sciences Laboratory"
+    },
+    {
+      "rect" : [
+        54,
+        392.68999389600003,
+        162.86889770499999,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Fiorenza Micheli"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", Stanford University"
+        }
+      ],
+      "text" : "Fiorenza Micheli, Stanford University"
+    },
+    {
+      "rect" : [
+        54,
+        367.68999389600003,
+        61.024000003819992,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Review Editor"
+        }
+      ],
+      "text" : "Review Editor"
+    },
+    {
+      "rect" : [
+        54,
+        351.18999389600003,
+        230.21180432482004,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Andrew A. Rosenberg"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : ", University of New Hampshire"
+        }
+      ],
+      "text" : "Andrew A. Rosenberg, University of New Hampshire"
+    },
+    {
+      "rect" : [
+        54,
+        326.18999389600003,
+        42.656999992370004,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Cover Art"
+        }
+      ],
+      "text" : "Cover Art"
+    },
+    {
+      "rect" : [
+        54,
+        309.68999389600003,
+        36.577000007630005,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Olivia D."
+        }
+      ],
+      "text" : "Olivia D."
+    },
+    {
+      "rect" : [
+        54,
+        111.79000000000001,
+        105.34999999999997,
+        13.269999999999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Recommended Citation"
+        }
+      ],
+      "text" : "Recommended Citation"
+    },
+    {
+      "rect" : [
+        54,
+        93.290000000000006,
+        496.86000000762988,
+        13.850000000000009
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Mills, K.E., E.B. Osborne, R.J. Bell, C.S. Colgan, S.R. Cooley, M.C. Goldstein, R.B. Griffis, K. Holsman, M. Jacox,"
+        }
+      ],
+      "text" : "Mills, K.E., E.B. Osborne, R.J. Bell, C.S. Colgan, S.R. Cooley, M.C. Goldstein, R.B. Griffis, K. Holsman, M. Jacox,"
+    },
+    {
+      "rect" : [
+        54,
+        79.159999999999997,
+        497.33261962799997,
+        13.980000000000018
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "and F. Micheli, 2023: Ch. 10. Ocean ecosystems and marine resources. In: "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "italic" : true,
+          "text" : "Fifth National Climate Assessment"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "."
+        }
+      ],
+      "text" : "and F. Micheli, 2023: Ch. 10. Ocean ecosystems and marine resources. In: Fifth National Climate Assessment."
+    },
+    {
+      "rect" : [
+        54,
+        65.290000000000006,
+        478.93300003053002,
+        13.850000000000009
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Crimmins, A.R., C.W. Avery, D.R. Easterling, K.E. Kunkel, B.C. Stewart, and T.K. Maycock, Eds. U.S. Global"
+        }
+      ],
+      "text" : "Crimmins, A.R., C.W. Avery, D.R. Easterling, K.E. Kunkel, B.C. Stewart, and T.K. Maycock, Eds. U.S. Global"
+    },
+    {
+      "rect" : [
+        54,
+        51.289999999999999,
+        427.61519970700004,
+        13.850000000000001
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Change Research Program, Washington, DC, USA. https://doi.org/10.7930/NCA5.2023.CH10"
+        }
+      ],
+      "text" : "Change Research Program, Washington, DC, USA. https://doi.org/10.7930/NCA5.2023.CH10"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    612,
+    792
+  ],
+  "caseID" : "noaa-nca5-2023",
+  "graphics" : [
+    [
+      0,
+      641.90002441399997,
+      229.11799621500001,
+      27
+    ],
+    [
+      52,
+      308.39999389600001,
+      40.571998596,
+      4
+    ],
+    [
+      284.81719970699999,
+      50,
+      198.79800415,
+      4
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        767.47000000000003,
+        155.60000000000005,
+        13.269999999999982
+      ],
+      "text" : "Fifth National Climate Assessment"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        51.279998779000003,
+        16.990000000000002,
+        215.47200000382006,
+        13.27
+      ],
+      "text" : "10-2 | Ocean Ecosystems and Marine Resources"
+    },
+    {
+      "fontSize" : 24,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        713.49599999999998,
+        382.22640000916806,
+        31.847999999999956
+      ],
+      "text" : "Chapter 10. Ocean Ecosystems and"
+    },
+    {
+      "fontSize" : 24,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        684.69601220699997,
+        195.38159999999999,
+        31.847999999999956
+      ],
+      "text" : "Marine Resources"
+    },
+    {
+      "fontSize" : 14,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        648.10602441399999,
+        159.60280000534794,
+        18.577999999999975
+      ],
+      "text" : "Authors and Contributors"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        619.69002441399994,
+        151.17000000764,
+        13.269999999999982
+      ],
+      "text" : "Federal Coordinating Lead Author"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        603.19002441399994,
+        376.95949927081995,
+        13.269999999999982
+      ],
+      "text" : "Emily B. Osborne, NOAA Oceanic and Atmospheric Research, Atlantic Oceanographic"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        591.19002441399994,
+        135.93600000190997,
+        13.269999999999982
+      ],
+      "text" : "and Meteorological Laboratory"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        566.19002441399994,
+        92.913000001910007,
+        13.269999999999982
+      ],
+      "text" : "Chapter Lead Author"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        549.69002441399994,
+        225.74479614199998,
+        13.269999999999982
+      ],
+      "text" : "Katherine E. Mills, Gulf of Maine Research Institute"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        524.69002441399994,
+        73.747000000000014,
+        13.269999999999982
+      ],
+      "text" : "Chapter Authors"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        508.18999389600003,
+        178.20510000000002,
+        13.269999999999982
+      ],
+      "text" : "Richard J. Bell, The Nature Conservancy"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        491.68999389600003,
+        464.3315067263502,
+        13.269999999999982
+      ],
+      "text" : "Charles S. Colgan, Middlebury Institute of International Studies at Monterey, Center for the Blue Economy"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        475.18999389600003,
+        163.72260229400001,
+        13.269999999999982
+      ],
+      "text" : "Sarah R. Cooley, Ocean Conservancy"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        458.68999389600003,
+        335.25489880300006,
+        13.269999999999982
+      ],
+      "text" : "Miriam C. Goldstein, Center for American Progress (through February 2023)"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        442.18999389600003,
+        142.65860229400002,
+        13.269999999999982
+      ],
+      "text" : "Roger B. Griffis, NOAA Fisheries"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        425.68999389600003,
+        247.82100000000003,
+        13.269999999999982
+      ],
+      "text" : "Kirstin Holsman, NOAA Alaska Fisheries Science Center"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        409.18999389600003,
+        438.86060248373002,
+        13.269999999999982
+      ],
+      "text" : "Michael Jacox, NOAA Southwest Fisheries Science Center and NOAA Physical Sciences Laboratory"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        392.68999389600003,
+        162.86889770499999,
+        13.269999999999982
+      ],
+      "text" : "Fiorenza Micheli, Stanford University"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        367.68999389600003,
+        61.024000003819992,
+        13.269999999999982
+      ],
+      "text" : "Review Editor"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        351.18999389600003,
+        230.21180432482004,
+        13.269999999999982
+      ],
+      "text" : "Andrew A. Rosenberg, University of New Hampshire"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        326.18999389600003,
+        42.656999992370004,
+        13.269999999999982
+      ],
+      "text" : "Cover Art"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        309.68999389600003,
+        36.577000007630005,
+        13.269999999999982
+      ],
+      "text" : "Olivia D."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        111.79000000000001,
+        105.34999999999997,
+        13.269999999999996
+      ],
+      "text" : "Recommended Citation"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        93.290000000000006,
+        496.86000000762988,
+        13.850000000000009
+      ],
+      "text" : "Mills, K.E., E.B. Osborne, R.J. Bell, C.S. Colgan, S.R. Cooley, M.C. Goldstein, R.B. Griffis, K. Holsman, M. Jacox,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        79.159999999999997,
+        497.33261962799997,
+        13.980000000000018
+      ],
+      "text" : "and F. Micheli, 2023: Ch. 10. Ocean ecosystems and marine resources. In: Fifth National Climate Assessment."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        65.290000000000006,
+        478.93300003053002,
+        13.850000000000009
+      ],
+      "text" : "Crimmins, A.R., C.W. Avery, D.R. Easterling, K.E. Kunkel, B.C. Stewart, and T.K. Maycock, Eds. U.S. Global"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        51.289999999999999,
+        427.61519970700004,
+        13.850000000000001
+      ],
+      "text" : "Change Research Program, Washington, DC, USA. https://doi.org/10.7930/NCA5.2023.CH10"
+    }
+  ],
+  "page" : 488,
+  "paints" : [
+    {
+      "filled" : true,
+      "frame" : true,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        0,
+        641.90002441399997,
+        229.11799621500001,
+        27
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        52,
+        308.39999389600001,
+        40.571998596,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "grouped" : false,
+      "image" : false,
+      "rect" : [
+        284.81719970699999,
+        50,
+        198.79800415,
+        4
+      ]
+    }
+  ],
+  "rightsBasis" : "NOAA repository explicitly identifies CC0 Public Domain. This records the publisher declaration, not a new owner-confirmed rights determination or shipped-catalog admission.",
+  "sourceSHA256" : "1942cbf346dc2c711fea413d6d6543edb8bc1e3a88d4c3a85e733c6b6d3577bf",
+  "sourceTitle" : "Fifth National Climate Assessment",
+  "sourceURL" : "https://repository.library.noaa.gov/view/noaa/61592/noaa_61592_DS1.pdf"
+}

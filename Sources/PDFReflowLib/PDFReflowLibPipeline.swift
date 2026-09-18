@@ -475,6 +475,7 @@ enum PDFReflowLibPipeline {
         var headingEvidence: [LayoutReconstructor.LabelStyle: Int] = [:]
         /// The gaps each page's text wraps at, by body size (#181).
         var wrapEvidence: [Int: [CGFloat]] = [:]
+        var spacingEvidence: [Int: [[CGFloat]]] = [:]
         /// Characters per type size over the native pages: the document's body (#186).
         var bodyWeights: [Int: Int] = [:]
         var furniture = FurnitureDetector.Ledger()
@@ -581,6 +582,9 @@ enum PDFReflowLibPipeline {
                 for style in LayoutReconstructor.labelEvidence(on: content) { labelEvidence[style, default: 0] += 1 }
                 for style in LayoutReconstructor.headingEvidence(on: content) { headingEvidence[style, default: 0] += 1 }
                 if let wrap = LayoutReconstructor.wrapEvidence(on: content) { wrapEvidence[wrap.size, default: []].append(wrap.gap) }
+                if let spacing = LayoutReconstructor.spacingEvidence(on: content) {
+                    spacingEvidence[spacing.size, default: []].append(spacing.gaps)
+                }
                 if !content.recognized, !content.hasSyntheticTextStyle, !content.requiresPageImage {
                     LayoutReconstructor.addBodyWeights(of: content.lines, to: &bodyWeights)
                 }
@@ -614,7 +618,9 @@ enum PDFReflowLibPipeline {
         let equalsMarksHyphens = equalsHyphens.marksHyphens
         let headingStyles = LayoutReconstructor.labelStyles(from: headingEvidence)
         let bookWraps = LayoutReconstructor.bookWraps(from: wrapEvidence)
+        let bookSpacings = LayoutReconstructor.bookSpacings(from: spacingEvidence, wraps: bookWraps)
         wrapEvidence = [:]
+        spacingEvidence = [:]
         let documentBody = LayoutReconstructor.bodySize(weights: bodyWeights)
         // An English document's word breaks may consult the system lexicon where its own words are silent (#186).
         if TextEncodingCheck.supports(language: options.language) { vocabulary.insert(LayoutReconstructor.englishLexiconKey) }
@@ -741,7 +747,7 @@ enum PDFReflowLibPipeline {
                         labelStyles: labelStyles, headingStyles: headingStyles,
                         neighbouringMarkers: (listMarkers[content.number - 1] ?? []) + (listMarkers[content.number + 1] ?? []),
                         slideDeck: slideDeck, imageKinds: imageKinds, imageCaptions: imageCaptions, imageMath: imageMath,
-                        bookWraps: bookWraps, documentBody: documentBody)
+                        bookWraps: bookWraps, bookSpacings: bookSpacings, documentBody: documentBody)
                     if pageBlocks.contains(where: \.hasReflowedText) {
                         reflowed += 1
                     }

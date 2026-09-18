@@ -115,7 +115,7 @@ are, in the page markup). Evidence and negative controls on real output are in
 ## Current content coverage
 
 <!-- counts:coverage -->
-[corpus/regressions.json](../corpus/regressions.json) has 4043 targeted checks on 620 reviewed pages
+[corpus/regressions.json](../corpus/regressions.json) has 4062 targeted checks on 629 reviewed pages
 across 21 documents: *Pilot's Handbook of Aeronautical Knowledge*, *Beginning and Intermediate
 Algebra*, *Report of the President’s Commission on the Assassination of President John F. Kennedy*,
 *The 9/11 Commission Report*, *The Fed Explained*, *Dietary Guidelines for Americans*, *Fifth
@@ -126,8 +126,8 @@ Electron-Ion Collisions*, *Replay Clocks*, *Complaint for a Civil Case*, *Invest
 Atmospheric Boundary-Layer Effects on Launch-Vehicle Ground Wind Loads*, *A Scheduling Algorithm
 Compatible with a Distributed Management of Arrivals in the National Airspace System*, *Agricultural
 Research*, *Earthdata Cloud Analytics Project* and *Tank Health Monitoring*. They comprise
-1336 ordered-text, 250 text, 491 paragraph, 405 absent-text, 278 heading, 38 heading-level,
-71 absent-heading, 88 list-item, 46 list, 21 preformatted-block, 1 preformatted-lines, 34 script,
+1336 ordered-text, 250 text, 501 paragraph, 405 absent-text, 278 heading, 38 heading-level,
+71 absent-heading, 82 list-item, 51 list, 31 preformatted-block, 1 preformatted-lines, 34 script,
 10 absent-script, 11 footnote, 3 pull-quote, 34 note-link, 72 paragraph-continuation,
 1 list-item-continuation, 8 paragraph-separation, 132 distinct-paragraph, 212 image-presence,
 46 captioned-image, 20 image-alternative, 120 page-reference, 131 warning, 132 absent-warning,
@@ -698,7 +698,7 @@ the page's structure validates, each line also records the tag the pipeline appl
 since #89/#90); older fixtures and untagged lines have none, and `SourceLayoutFixture` restores it.
 Source review, baseline failures, cross-document safeguards and full-run evidence are retained
 in [the three-fix measurement](../measurements/three-fidelity-fixes/record.md). The suite contains
-<!-- counts:swift-tests -->1049 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->255 Python tests<!-- counts:end -->.
+<!-- counts:swift-tests -->1052 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->255 Python tests<!-- counts:end -->.
 The comparison tests include a real-Poppler image URL check through the safe HTTP handler
 (simple and positioned modes, paths with spaces); absent Poppler is an explicit skip.
 

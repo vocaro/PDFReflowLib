@@ -37,10 +37,83 @@ private func preformatted(_ blocks: [ReflowBlock]) -> [String] {
     #expect(items.map(\.marker) == ["•", "•"])
     #expect(items.allSatisfy { $0.kind == .unordered && $0.level == 0 })
     #expect(items.map(\.opensList) == [true, false])
-    // Negative control: one bullet with no sibling stays preformatted, marker and all.
+    // Negative control: one bullet with no sibling is no list.
     let lone = built([item("• Temporary flight restrictions"), paragraph("Prose follows.")])
     #expect(listItems(lone).isEmpty)
-    #expect(preformatted(lone) == ["• Temporary flight restrictions"])
+}
+
+@Test func aLoneMarkedLineIsAParagraphKeepingItsMarker() {
+    // #195: nothing list-shaped on its page or the pages beside it, so an ordinary paragraph.
+    let lone = built([paragraph("Prose before.", page: 5), item("1) Get a Kit", page: 6), paragraph("Prose after.", page: 6),
+                      item("• Another lone line of text", page: 8)])
+    #expect(lone.map(\.content) == [.paragraph(InlineText("Prose before.")), .paragraph(InlineText("1) Get a Kit")),
+                                    .paragraph(InlineText("Prose after.")), .paragraph(InlineText("• Another lone line of text"))])
+    #expect(lone.allSatisfy { $0.listEvidence == nil })
+    // Negative controls: a list-shaped block on the next page (here a lettered item, which forms no
+    // list), a note's asterisk, recognition debris and a multi-line block stay preformatted.
+    let near = [item("• Temporary flight restrictions", page: 6), paragraph("Prose.", page: 6),
+                item("a. Airship with its own engine", page: 7)]
+    #expect(preformatted(built(near)) == ["• Temporary flight restrictions", "a. Airship with its own engine"])
+    #expect(preformatted(built([item("* Estimated for the year")])) == ["* Estimated for the year"])
+    #expect(preformatted(built([item("- 26%", recognized: true)])) == ["- 26%"])
+    #expect(preformatted(built([item("• First line\nsecond line")])) == ["• First line\nsecond line"])
+    // Numbered section titles spread over the paper: `3.` has no list-shaped neighbour within a
+    // page, but `2.` and `4.` are its siblings, so it stays as printed like them.
+    let titles = [item("1. Introduction", page: 1), paragraph("Body.", page: 1), item("2. Classical Picture", page: 1),
+                  paragraph("Body.", page: 2), item("3. Quantum Description", page: 3), paragraph("Body.", page: 4),
+                  item("4. Plasma Averages", page: 6), paragraph("Body.", page: 6), item("5. Conclusions", page: 6)]
+    #expect(preformatted(built(titles)).count == 5)
+    // Negative control: without its siblings, the same line is a lone paragraph.
+    #expect(preformatted(built([titles[3], titles[4], titles[5]])).isEmpty)
+}
+
+@Test func aPieceOfAVerifiedRunHoldingOneItemIsAParagraph() {
+    // #195: `22.`–`24.` touch, `25.` stands between prose; the run verifies, but only two or more
+    // items make a list element. The lone piece keeps its printed number as a paragraph.
+    let result = built([item("22. Your full name:"), item("23. Your address:"), item("24. Your occupation:"),
+                        paragraph("Lines to write on."), item("25. Last school you attended:"), paragraph("More lines.")])
+    #expect(listItems(result).map(\.ordinal) == [22, 23, 24])
+    #expect(result[4].content == .paragraph(InlineText("25. Last school you attended:")))
+    #expect(result[4].listEvidence == nil)
+    // Negative control: a numbered item with nested bullets is a piece of three items and lists.
+    let nested = listItems(built([item("1. Reporting suggests attacks", edge: 72), item("• One source said so", edge: 90),
+                                  item("• Another source agreed", edge: 90), paragraph("Prose."),
+                                  item("2. Members received training", edge: 72), item("3. The network moves closer", edge: 72)]))
+    #expect(nested.map(\.level) == [0, 1, 1, 0, 0])
+}
+
+@Test func recognizedNumberedItemsListOnlyWhereTheirNumbersRunConsecutively() {
+    // The CIA questionnaire's inherited text layer (#195): `22.` to `24.` ascend by one.
+    let questions = listItems(built([item("22. Your full name:", recognized: true), item("23. Your address:", recognized: true),
+                                     item("24. Your occupation:", recognized: true)]))
+    #expect(questions.map(\.ordinal) == [22, 23, 24])
+    #expect(questions.map(\.text.text) == ["Your full name:", "Your address:", "Your occupation:"])
+    // Negative controls: a gap, and recognized bullets (table headers read as dashes).
+    let gap = [item("39. Do you think you can estimate the speed of the object?", recognized: true),
+               item("41. Please give the following information about yourself:", recognized: true)]
+    #expect(listItems(built(gap)).isEmpty)
+    #expect(preformatted(built(gap)) == gap.map(\.text))
+    #expect(listItems(built([item("- Per Cent Number", recognized: true), item("- Per Cent", recognized: true)])).isEmpty)
+    // A transcribed notes page: recognition garbles `4.` and `5.` into no item, and the readable
+    // notes beside them form runs their numbering continues.
+    let notes = [item("1. Martin Isaacs DE 1, but see footnote nine.", recognized: true),
+                 item("2. Ibid., 1 H 318 (Robert Oswald).", recognized: true),
+                 item("3. 1 H 132 (Marguerite Oswald).", recognized: true),
+                 item("4. Isaacs DE 1 : CE 1159.", recognized: true),
+                 item("5. Isaacs DE 1 ; CE 1159.", recognized: true),
+                 item("6. CE 1159: 1 H 3 (Marina Oswald).", recognized: true),
+                 item("7. Isaacs DE 1 (Martin Isaacs).", recognized: true),
+                 item("8. 8 H 336 (Pauline Bates).", recognized: true)]
+    #expect(listItems(built(notes)).isEmpty)
+    // Negative controls: the same run typeset is held to #194's rules alone, and a transcribed run
+    // set off by lettered options, as the questionnaire's are, still lists.
+    #expect(listItems(built(notes.map { var block = $0; block.listEvidence?.recognized = false; return block })).count == 6)
+    let options = listItems(built([item("18. The edges of the object were:", recognized: true),
+                                   item("c. Sharply outlined", recognized: true),
+                                   item("19. IF there was MORE THAN ONE object, then how many were there?", recognized: true),
+                                   item("20. Draw a picture that will show the motion of the object.", recognized: true),
+                                   item("d. Nickel", recognized: true)]))
+    #expect(options.map(\.ordinal) == [19, 20])
 }
 
 @Test func numberedRunAscendingByOneKeepsItsPrintedStart() {
@@ -70,7 +143,7 @@ func numberedRunThatDoesNotAscendByOneStaysPreformatted(_ lines: [String]) {
 }
 
 @Test func unverifiableListShapesStayPreformatted() {
-    // Answer-key values, recognized text, a contents list and code are not list items.
+    // Answer-key values, recognized bullets, a contents list and code are not list items.
     #expect(listItems(built([item("1) 5"), item("2) 7")])).isEmpty)
     #expect(listItems(built([item("- Per Cent Number", recognized: true), item("- Per Cent", recognized: true)])).isEmpty)
     let contents = [item("4. RESPONSES TO AL QAEDA’S INITIAL ASSAULTS 108 4.1 Before the Bombings 108"),

@@ -105,10 +105,8 @@
           ],
           "minimumImages": 1,
           "paragraphs": [
-            "placards and in the AFM/POH. These airspeeds include:"
-          ],
-          "listItems": [
-            "its upper limit provides the maximum flap speed. Approaches and landings"
+            "placards and in the AFM/POH. These airspeeds include:",
+            "• White arc—commonly referred to as the flap operating range"
           ]
         },
         {
@@ -1018,14 +1016,10 @@
                 "Altimeter setting",
                 "Zulu time"
               ]
-            },
-            {
-              "kind": "ol",
-              "start": 12,
-              "items": [
-                "Remarks—the remarks section always begins with the letters “RMK.”"
-              ]
             }
+          ],
+          "paragraphs": [
+            "12. Remarks—the remarks section always begins with the letters “RMK.”"
           ]
         },
         {
@@ -2137,7 +2131,6 @@
             "Creative Commons Attribution 3.0 Unported License"
           ],
           "listItems": [
-            "Attribution: You must attribute the work in the manner specified by the author or licensor (but not in any way",
             "Waiver: Any of the above conditions can be waived if you get permission from the copyright holder.",
             "Public Domain: Where the work or any of its elements is in the public domain under applicable law,"
           ],
@@ -2147,6 +2140,9 @@
             "− Your fair dealing or fair use rights, or other applicable copyright exceptions and limitations;",
             "− Rights other persons may have either in the work itself or in how the work is used such as publicity or privacy rights",
             "• Notice: For any reuse or distribution, you must make clear to others the license term of this work. The best way"
+          ],
+          "paragraphs": [
+            "• Attribution: You must attribute the work in the manner specified by the author or licensor"
           ]
         },
         {
@@ -2517,13 +2513,11 @@
         },
         {
           "page": 64,
-          "listItems": [
-            "More than often represents addition and is usually built backwards, writing the second part plus the first",
-            "Less than often represents subtraction and is usually built backwards as well, writing the second part minus the first"
-          ],
           "paragraphs": [
             "Three more than a number becomes x + 3",
-            "Four less than a number becomes x − 4"
+            "Four less than a number becomes x − 4",
+            "• More than often represents addition and is usually built backwards",
+            "• Less than often represents subtraction and is usually built backwards as well"
           ]
         },
         {
@@ -3127,6 +3121,25 @@
           ]
         },
         {
+          "page": 46,
+          "paragraphs": [
+            "1. The shots which killed President Kennedy and wounded Governor Connally were fired from the sixth floor window"
+          ]
+        },
+        {
+          "page": 47,
+          "lists": [
+            {
+              "kind": "ol",
+              "start": 3,
+              "items": [
+                "Although it is not necessary to any essential findings of the Commission",
+                "The shots which killed President Kennedy and wounded"
+              ]
+            }
+          ]
+        },
+        {
           "page": 50,
           "pageReference": true,
           "warningCodesAnyOf": [
@@ -3147,6 +3160,40 @@
           ],
           "paragraphs": [
             "Because of the difficulty of proving negatives to a certainty the possibility of others being involved with either Oswald or Ruby cannot be established categorically"
+          ]
+        },
+        {
+          "page": 53,
+          "lists": [
+            {
+              "kind": "ol",
+              "start": 2,
+              "items": [
+                "Suggestions have been advanced to the Commission for the transfer",
+                "Meanwhile, in order to improve daily supervision of the Secret"
+              ]
+            }
+          ]
+        },
+        {
+          "page": 54,
+          "lists": [
+            {
+              "kind": "ol",
+              "start": 7,
+              "items": [
+                "The Commission believes that when the new criteria and procedures are established",
+                "Even with an increase in Secret Service personnel, the protection"
+              ]
+            },
+            {
+              "kind": "ol",
+              "start": 9,
+              "items": [
+                "The Commission recommends that the President's physician always accompany him",
+                "The Commission recommends to Congress that it adopt legislation"
+              ]
+            }
           ]
         },
         {
@@ -3371,6 +3418,14 @@
           ],
           "paragraphs": [
             "NOTES TO PAGES 687-694"
+          ]
+        },
+        {
+          "page": 897,
+          "preformattedBlocks": [
+            "1. Martin Isaacs DE 1, but see footnote 9.",
+            "2. Ibid., 1 H 318 (Robert Oswald).",
+            "6. CE 1159: 1 H 3 (Marina Oswald)."
           ]
         },
         {
@@ -6153,6 +6208,9 @@
               "end": "the Dodd-Frank Act stress tests for large banking",
               "next": "institutions and the Financial Stability Report"
             }
+          ],
+          "preformattedBlocks": [
+            "* Leverage ratio is the ratio of tier 1 capital to total assets."
           ]
         },
         {
@@ -6303,8 +6361,7 @@
           ],
           "listItems": [
             "Prioritize high-quality, nutrient-dense protein foods as part of a healthy dietary pattern.",
-            "Consume meat with no or limited added sugars, refined carbohydrates or starches, or chemical additives.",
-            "Your gut contains trillions of bacteria and other microorganisms called the microbiome."
+            "Consume meat with no or limited added sugars, refined carbohydrates or starches, or chemical additives."
           ],
           "lists": [
             {
@@ -6317,6 +6374,9 @@
                 "Protein serving goals"
               ]
             }
+          ],
+          "paragraphs": [
+            "+ Your gut contains trillions of bacteria and other microorganisms called the microbiome."
           ]
         },
         {
@@ -6422,8 +6482,10 @@
             "Older Adults"
           ],
           "listItems": [
-            "Pregnant women should consume diverse nutrient-dense foods, including iron-rich meats, folate-rich greens and legumes",
-            "nutrient-dense foods such as dairy, meats, seafood, eggs, legumes, and whole plant foods"
+            "Pregnant women should consume diverse nutrient-dense foods, including iron-rich meats, folate-rich greens and legumes"
+          ],
+          "paragraphs": [
+            "+ Some older adults need fewer calories"
           ]
         },
         {
@@ -7113,6 +7175,12 @@
           ]
         },
         {
+          "page": 6,
+          "paragraphs": [
+            "1) Get a Kit"
+          ]
+        },
+        {
           "page": 7,
           "minimumImages": 1,
           "warningCodesAnyOf": [
@@ -7256,7 +7324,7 @@
     {
       "id": "cia-blue-book-14-1955",
       "sourceSHA256": "90e05e77fc088c29758c2ddda514c0c12f317e5686ee213d348db2f9da152ee3",
-      "basis": "Reviewed negative quality case: require a source image and explicit review/fallback signal. No correct table-transcription claim. Page 12 preserves the existing margin-artifact suppression, body transcription and source reference; source-derived margin fixtures distinguish that cleanup from speculative OCR correction. #180: page 109's index entry `Table Al06.` keeps the title beside it, as its neighbours already did.",
+      "basis": "Reviewed negative quality case: require a source image and explicit review/fallback signal. No correct table-transcription claim. Page 12 preserves the existing margin-artifact suppression, body transcription and source reference; source-derived margin fixtures distinguish that cleanup from speculative OCR correction. #180: page 109's index entry `Table Al06.` keeps the title beside it, as its neighbours already did. #195: questionnaire items whose printed numbers run consecutively are ordered lists keeping their numbers (pages 270, 283); numbers with gaps stay preformatted (page 288).",
       "pages": [
         {
           "page": 12,
@@ -7294,6 +7362,46 @@
           "page": 109,
           "paragraphs": [
             "Table Al06. Evaluation of All Sightings for All Years by Duration of Sighting for Months"
+          ]
+        },
+        {
+          "page": 270,
+          "lists": [
+            {
+              "kind": "ol",
+              "start": 22,
+              "items": [
+                "Your fuJ.1 name:",
+                "Your address:",
+                "Your occupation:",
+                "Last school you attended:"
+              ]
+            }
+          ]
+        },
+        {
+          "page": 283,
+          "lists": [
+            {
+              "kind": "ol",
+              "start": 17,
+              "items": [
+                "Draw a picture that will show the shape of the object",
+                "The edges of the object were:"
+              ]
+            }
+          ],
+          "preformattedBlocks": [
+            "b. Like a bright star",
+            "c. Sharply outlined"
+          ]
+        },
+        {
+          "page": 288,
+          "preformattedBlocks": [
+            "39. Do you think you can estimate the speed of the object?",
+            "40. Do you think you can estimate how far away from you the object was?",
+            "41. Please give the following information about yourself:"
           ]
         }
       ]
@@ -7977,6 +8085,9 @@
           "minimumImages": 1,
           "warningCodesAnyOf": [
             "damagedTextEncoding"
+          ],
+          "paragraphs": [
+            "3. If R < Tx, then designate pair as a nonlink."
           ]
         },
         {
@@ -8449,7 +8560,10 @@
               "caption": "FIGURE 2. Cycle-averaged rate of classical energy"
             }
           ],
-          "pageReference": true
+          "pageReference": true,
+          "preformattedBlocks": [
+            "3. Quantum Description"
+          ]
         },
         {
           "page": 4,

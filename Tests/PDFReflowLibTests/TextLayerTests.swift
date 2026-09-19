@@ -81,9 +81,7 @@ func textLayerPDF(_ text: String, imageSize: Int = 300, invisible: Bool = true) 
             #expect(decoded == warning)
         }
         let archive = try Archive(url: epub, accessMode: .read)
-        let entry = try #require(archive["EPUB/chapter-1.xhtml"])
-        var bytes = Data(); _ = try archive.extract(entry) { bytes += $0 }
-        let html = String(decoding: bytes, as: UTF8.self)
+        let html = try archive.chapter()
         #expect(html.contains("Existing transcription."))
         #expect(!html.contains("\u{FFFC}"))
         #expect(html.contains("<img "))

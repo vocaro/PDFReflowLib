@@ -76,11 +76,7 @@ private func fixedBlocks(_ lines: [TextLine]) -> [ReflowBlock] {
     let original = book
     let url = try await EPUBWriter.write(book, maximumOutputBytes: 1_000_000, directory: dir, progress: { _ in })
     let archive = try Archive(url: url, accessMode: .read)
-    func read(_ path: String) throws -> String {
-        let entry = try #require(archive[path]); var data = Data()
-        _ = try archive.extract(entry) { data += $0 }
-        return String(decoding: data, as: UTF8.self)
-    }
+    func read(_ path: String) throws -> String { try archive.entryText(path) }
     #expect(try read("EPUB/chapter-1.xhtml").contains("<pre>" + EPUBTextEncoder.inline(text) + "</pre>"))
     #expect(try read("EPUB/nav.xhtml").contains("chapter-1.xhtml#page-2"))
     #expect(book.blocks.flatMap(\.sourcePages) == [1, 2])

@@ -4,7 +4,7 @@ import Testing
 @testable import PDFReflowLib
 
 private func fixture(_ name: String) -> URL {
-    Bundle.module.resourceURL!.appendingPathComponent("fixtures/" + name + ".pdf")
+    fixtureURL(name + ".pdf")
 }
 
 /// Full-page artwork, a small illustration and plain text: under the image-backed policy the

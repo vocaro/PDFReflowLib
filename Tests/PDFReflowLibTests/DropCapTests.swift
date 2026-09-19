@@ -1,12 +1,5 @@
 import Foundation
 import Testing
-#if os(macOS)
-import AppKit
-private typealias DropCapFont = NSFont
-#else
-import UIKit
-private typealias DropCapFont = UIFont
-#endif
 @testable import PDFReflowLib
 
 private func dropCapPage(_ name: String) throws -> PageContent {
@@ -67,10 +60,10 @@ private func opening(_ initial: String = "T ", capSize: Double = 44, offset: Dou
                      continuation: String = "he opening of this paragraph uses a large initial.",
                      bodySize: Double = 9) -> NSAttributedString {
     let result = NSMutableAttributedString(string: initial, attributes: [
-        .font: pdfKitGated { DropCapFont(name: "Helvetica", size: capSize) }!, .baselineOffset: offset,
+        .font: pdfKitGated { PlatformFont(name: "Helvetica", size: capSize) }!, .baselineOffset: offset,
     ])
     result.append(NSAttributedString(string: continuation, attributes: [
-        .font: pdfKitGated { DropCapFont(name: "Helvetica", size: bodySize) }!, .baselineOffset: 0,
+        .font: pdfKitGated { PlatformFont(name: "Helvetica", size: bodySize) }!, .baselineOffset: 0,
     ]))
     return result
 }
@@ -80,7 +73,7 @@ private func opening(_ initial: String = "T ", capSize: Double = 44, offset: Dou
                        opening(offset: 24), opening(continuation: "he"), opening(continuation: "UPPERCASE LABEL") ] {
         let line = NativeTextReader.textLine(semantic: attributed.string,
             bounds: CGRect(x: 40, y: 400, width: 300, height: 45), attributed: attributed)
-        #expect(line.fontSize == (attributed.attribute(.font, at: 0, effectiveRange: nil) as! DropCapFont).pointSize)
+        #expect(line.fontSize == (attributed.attribute(.font, at: 0, effectiveRange: nil) as! PlatformFont).pointSize)
     }
     let script = NativeTextReader.inlineText(from: opening(capSize: 9, offset: -3))
     #expect(EPUBTextEncoder.inline(script).contains("<sub>T </sub>"))
@@ -92,7 +85,7 @@ private func opening(_ initial: String = "T ", capSize: Double = 44, offset: Dou
     for mode in 0..<4 {
         let value = NSMutableAttributedString(attributedString: opening())
         if mode == 0 { value.addAttribute(.baselineOffset, value: 3, range: NSRange(location: 2, length: 1)) }
-        if mode == 1 { value.addAttribute(.font, value: pdfKitGated { DropCapFont(name: "Helvetica", size: 14) }!, range: NSRange(location: 2, length: 1)) }
+        if mode == 1 { value.addAttribute(.font, value: pdfKitGated { PlatformFont(name: "Helvetica", size: 14) }!, range: NSRange(location: 2, length: 1)) }
         if mode == 2 { value.removeAttribute(.font, range: NSRange(location: 0, length: value.length)) }
         let line = NativeTextReader.textLine(semantic: value.string, bounds: bounds, attributed: mode == 3 ? nil : value)
         #expect(line.readingRect == nil)
@@ -117,7 +110,7 @@ private func opening(_ initial: String = "T ", capSize: Double = 44, offset: Dou
 
 @Test func monospacedAndInsufficientGeometryRetainTheirLayout() {
     let code = NSMutableAttributedString(attributedString: opening())
-    code.addAttribute(.font, value: pdfKitGated { DropCapFont(name: "Courier", size: 44) }!, range: NSRange(location: 0, length: 2))
+    code.addAttribute(.font, value: pdfKitGated { PlatformFont(name: "Courier", size: 44) }!, range: NSRange(location: 0, length: 2))
     let line = NativeTextReader.textLine(semantic: code.string,
         bounds: CGRect(x: 40, y: 400, width: 300, height: 45), attributed: code)
     #expect(line.monospaced)

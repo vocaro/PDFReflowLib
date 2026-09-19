@@ -139,11 +139,7 @@ private func line(_ text: String, x: Double, y: Double, width: Double = 200,
     let output = try await EPUBWriter.write(book, maximumOutputBytes: 1_000_000, directory: directory,
                                             progress: { _ in })
     let archive = try Archive(url: output, accessMode: .read)
-    func data(_ name: String) throws -> Data {
-        let entry = try #require(archive[name]); var bytes = Data()
-        _ = try archive.extract(entry) { bytes += $0 }
-        return bytes
-    }
+    func data(_ name: String) throws -> Data { try archive.entryData(name) }
     #expect(try data("EPUB/images/image-1.png") == bytes)
     #expect(try Data(contentsOf: source) == bytes)
     #expect(!FileManager.default.fileExists(atPath: directory.appendingPathComponent("EPUB/images").path))
@@ -161,7 +157,7 @@ private func line(_ text: String, x: Double, y: Double, width: Double = 200,
 @Test func realPDFCanBeReconstructedWithoutAnEPUBWriter() async throws {
     let directory = FileManager.default.temporaryDirectory.appendingPathComponent("pdfreflow-pipeline-" + UUID().uuidString)
     defer { try? FileManager.default.removeItem(at: directory) }
-    let source = Bundle.module.resourceURL!.appendingPathComponent("fixtures/prose.pdf")
+    let source = fixtureURL("prose.pdf")
     let result = try await PDFReflowLibPipeline.reconstruct(from: source, options: .init(), workspace: directory,
                                                         progress: { _ in })
     #expect(result.pageCount == 3)

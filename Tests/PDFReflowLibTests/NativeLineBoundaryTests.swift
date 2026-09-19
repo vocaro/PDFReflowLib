@@ -1,20 +1,13 @@
 import Foundation
 import CoreText
 import Testing
-#if os(macOS)
-import AppKit
-private typealias BoundaryFont = NSFont
-#else
-import UIKit
-private typealias BoundaryFont = UIFont
-#endif
 @testable import PDFReflowLib
 
 private func boundaryText(_ values: [(String, Double, Double)], foundationKey: Bool = false) -> InlineText {
     let input = NSMutableAttributedString(string: "")
     for (text, offset, size) in values {
         input.append(NSAttributedString(string: text, attributes: [
-            .font: pdfKitGated { BoundaryFont(name: "Helvetica", size: size) }!,
+            .font: pdfKitGated { PlatformFont(name: "Helvetica", size: size) }!,
             (foundationKey ? .baselineOffset : NSAttributedString.Key(kCTBaselineOffsetAttributeName as String)): offset,
         ]))
     }

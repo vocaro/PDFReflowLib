@@ -25,13 +25,7 @@ private func blocks(_ page: PageContent, vocabulary: Set<String> = [], documentB
         warnings: &warnings, documentBody: documentBody)
 }
 
-private func headings(_ blocks: [ReflowBlock]) -> [String] {
-    blocks.compactMap { if case .heading = $0.content { $0.text } else { nil } }
-}
 
-private func paragraphs(_ blocks: [ReflowBlock]) -> [String] {
-    blocks.compactMap { if case .paragraph = $0.content { $0.text } else { nil } }
-}
 
 // MARK: - A document body floor for pages too bare to state their own
 
@@ -57,8 +51,8 @@ private func backCoverLike() -> PageContent {
 @Test func aBareBackCoverSetsNoHeadingUnderTheDocumentsBody() {
     let page = backCoverLike()
     let found = blocks(page, documentBody: 10.5)
-    #expect(headings(found).isEmpty, "\(headings(found))")
-    let texts = paragraphs(found)
+    #expect(headingTexts(found).isEmpty, "\(headingTexts(found))")
+    let texts = paragraphTexts(found)
     for phrase in ["5601 Sunnyside Ave.", "Official Business", "Visit us at ars.usda.gov/ar"] {
         #expect(texts.contains { $0.contains(phrase) }, "\(phrase) in \(texts)")
     }
@@ -67,7 +61,7 @@ private func backCoverLike() -> PageContent {
 @Test func withoutADocumentBodyTheSamePageReadsItsLinesAsHeadings() {
     // Control: measured only against the page's own bare estimate, as before this fix, several of
     // these lines cross the page-local threshold and read as headings.
-    let found = headings(blocks(backCoverLike()))
+    let found = headingTexts(blocks(backCoverLike()))
     #expect(found.contains("Official Business") && found.contains("5601 Sunnyside Ave."), "\(found)")
 }
 
@@ -81,7 +75,7 @@ private func backCoverLike() -> PageContent {
                               rect: CGRect(x: 72, y: 680 - CGFloat(row) * 11, width: 400, height: 11), fontSize: 9))
     }
     let page = PageContent(number: 1, bounds: CGRect(x: 0, y: 0, width: 612, height: 792), lines: lines, graphics: [])
-    #expect(headings(blocks(page, documentBody: 12)) == ["Methods of Evaluation"])
+    #expect(headingTexts(blocks(page, documentBody: 12)) == ["Methods of Evaluation"])
     #expect(LayoutReconstructor.documentHeadingFloor(lines, documentBody: 12) == 0)
     // Control: the same page's first two lines alone establish no body, so the floor applies.
     #expect(LayoutReconstructor.documentHeadingFloor(Array(lines.prefix(2)), documentBody: 12) == 12 * 1.1)
@@ -105,10 +99,10 @@ private func backCoverLike() -> PageContent {
     lines.append(TextLine(text: "pages 2, 4-14", rect: CGRect(x: 60, y: 420, width: 160, height: 24), fontSize: 24))
     let page = PageContent(number: 1, bounds: CGRect(x: 0, y: 0, width: 612, height: 792), lines: lines, graphics: [])
     let found = blocks(page)
-    let headingTexts = headings(found)
+    let headingTexts = headingTexts(found)
     #expect(headingTexts == ["Keeping Our", "Troops Safe", "From Insects"], "\(headingTexts)")
     #expect(!headingTexts.contains { $0.contains("pages 2, 4-14") }, "\(headingTexts)")
-    #expect(paragraphs(found).contains { $0.contains("pages 2, 4-14") })
+    #expect(paragraphTexts(found).contains { $0.contains("pages 2, 4-14") })
 }
 
 @Test func aLowercaseLineStackedInATitleKeepsItsReading() {
@@ -126,7 +120,7 @@ private func backCoverLike() -> PageContent {
                  rect: CGRect(x: 72, y: 640 - CGFloat(row) * 13, width: 400, height: 13), fontSize: 10)
     }
     let page = PageContent(number: 1, bounds: CGRect(x: 0, y: 0, width: 612, height: 792), lines: lines, graphics: [])
-    let found = headings(blocks(page))
+    let found = headingTexts(blocks(page))
     #expect(found == ["The Role of", "the Federal Reserve", "Monetary Policy"], "\(found)")
     // Control: verified directly, since this is the specific relation the exclusion rule tests.
     #expect(LayoutReconstructor.stacksUnderHeading(lines[1], after: lines[0]))
@@ -177,9 +171,9 @@ private func backCoverLike() -> PageContent {
         return PageContent(number: 1, bounds: CGRect(x: 0, y: 0, width: 612, height: 792), lines: lines, graphics: [])
     }
     #expect(LayoutReconstructor.documentHeadingFloor(page(candidateSize: 11).lines, documentBody: 10) == 11)
-    #expect(headings(blocks(page(candidateSize: 11), documentBody: 10)) == ["Boundary Heading Line"])
-    #expect(headings(blocks(page(candidateSize: 10.9), documentBody: 10)).isEmpty)
-    #expect(paragraphs(blocks(page(candidateSize: 10.9), documentBody: 10)).contains { $0.contains("Boundary Heading Line") })
+    #expect(headingTexts(blocks(page(candidateSize: 11), documentBody: 10)) == ["Boundary Heading Line"])
+    #expect(headingTexts(blocks(page(candidateSize: 10.9), documentBody: 10)).isEmpty)
+    #expect(paragraphTexts(blocks(page(candidateSize: 10.9), documentBody: 10)).contains { $0.contains("Boundary Heading Line") })
 }
 
 // MARK: - The document-body floor beside #7's recognized-heading gate
@@ -200,11 +194,11 @@ private func backCoverLike() -> PageContent {
     // Control: cleared floor (11 >= 11), reads as words, unrecognized page — a real heading.
     var wordyLines = lines; wordyLines[2] = TextLine(text: "Boundary Heading Line", rect: noise.rect, fontSize: 11)
     let wordyPage = PageContent(number: 1, bounds: page.bounds, lines: wordyLines, graphics: [])
-    #expect(headings(blocks(wordyPage, documentBody: 10)) == ["Boundary Heading Line"])
+    #expect(headingTexts(blocks(wordyPage, documentBody: 10)) == ["Boundary Heading Line"])
     // The recognized noise line clears the same floor in size alone, but reads as no words.
     #expect(!EnglishText.readsAsWords(noise.text))
-    #expect(headings(blocks(page, documentBody: 10)).isEmpty)
-    #expect(paragraphs(blocks(page, documentBody: 10)).contains { $0.contains("48213") })
+    #expect(headingTexts(blocks(page, documentBody: 10)).isEmpty)
+    #expect(paragraphTexts(blocks(page, documentBody: 10)).contains { $0.contains("48213") })
 }
 
 @Test func aVocabularyFragmentFromTheOtherHalfOfTheSameBreakDoesNotBlockTheVouch() throws {

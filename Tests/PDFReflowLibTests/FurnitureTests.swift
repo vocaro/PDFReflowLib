@@ -136,16 +136,13 @@ func reportMapLabelsRemainInsidePreservedGraphics(number: Int) throws {
 @Test func clientCanRetainHeadersThroughThePublicConversionOption() async throws {
     let directory = try testPDFDirectory()
     defer { try? FileManager.default.removeItem(at: directory) }
-    let source = Bundle.module.resourceURL!.appendingPathComponent("fixtures/prose.pdf")
+    let source = fixtureURL("prose.pdf")
     let output = directory.appendingPathComponent("headers.epub")
     var options = ConversionOptions()
     options.removeRepeatedHeadersAndFooters = false
     let report = try await PDFConverter().convert(from: source, to: output, options: options)
     let archive = try Archive(url: output, accessMode: .read)
-    let chapter = try #require(archive["EPUB/chapter-1.xhtml"])
-    var data = Data()
-    _ = try archive.extract(chapter) { data += $0 }
-    let html = String(decoding: data, as: UTF8.self)
+    let html = try archive.chapter()
     #expect(html.components(separatedBy: "PDF REFLOW TEST BOOK").count - 1 == 3)
     #expect(!report.warnings.contains { $0.code == .furnitureRemoved })
     #expect(report.pageCount == 3 && report.reflowedPageCount == 3)

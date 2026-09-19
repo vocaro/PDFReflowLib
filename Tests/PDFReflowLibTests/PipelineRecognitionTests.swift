@@ -6,7 +6,7 @@ import Testing
 /// The pipeline takes its recognizer as a parameter, so its recognition branches run on the
 /// bundled fixtures with canned readings instead of Vision.
 private func fixture(_ name: String) -> URL {
-    Bundle.module.resourceURL!.appendingPathComponent("fixtures/\(name).pdf")
+    fixtureURL("\(name).pdf")
 }
 
 private func workspace() throws -> URL {

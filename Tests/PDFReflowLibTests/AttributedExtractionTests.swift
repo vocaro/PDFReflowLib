@@ -2,13 +2,6 @@ import Foundation
 import PDFKit
 import Testing
 @testable import PDFReflowLib
-#if canImport(AppKit)
-import AppKit
-private typealias PlatformFont = NSFont
-#else
-import UIKit
-private typealias PlatformFont = UIFont
-#endif
 
 /// #4: PDFKit leaks every attributed string it returns (FB24783799), so a page's styled lines are
 /// read with one request for their union and sliced, instead of one request per line. Each slice

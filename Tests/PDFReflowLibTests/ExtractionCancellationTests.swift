@@ -48,7 +48,7 @@ struct ExtractionCancellationTests {
         let directory = try testPDFDirectory()
         defer { try? FileManager.default.removeItem(at: directory) }
         let output = directory.appendingPathComponent("cancelled.epub")
-        let source = Bundle.module.resourceURL!.appendingPathComponent("fixtures/prose.pdf")
+        let source = fixtureURL("prose.pdf")
         let hold = ExtractionHold()
         defer { hold.release.signal() }
         try await hold.waitUntilEntered()
@@ -91,7 +91,7 @@ struct ExtractionCancellationTests {
         let cancelled = DispatchSemaphore(value: 0)
         let task = Task.detached {
             defer { started.continuation.finish() }
-            let url = Bundle.module.resourceURL!.appendingPathComponent("fixtures/lists-code.pdf")
+            let url = fixtureURL("lists-code.pdf")
             let document = try #require(PDFDocument(url: url))
             let page = try #require(document.page(at: 0))
             started.continuation.yield()

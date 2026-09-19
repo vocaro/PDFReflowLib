@@ -93,7 +93,7 @@ private actor AwaitedProgressAudit {
 
 @Suite struct OrderedProgressContractTests {
     private var source: URL {
-        Bundle.module.resourceURL!.appendingPathComponent("fixtures/prose.pdf")
+        fixtureURL("prose.pdf")
     }
 
     @Test func slowCallbacksAreAwaitedThroughPublicationAndReturn() async throws {

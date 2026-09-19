@@ -9,14 +9,11 @@ private func headingBlocks(_ page: PageContent) -> [ReflowBlock] {
         vocabulary: LayoutReconstructor.vocabulary(in: [page]), warnings: &warnings)
 }
 
-private func headings(_ blocks: [ReflowBlock]) -> [String] {
-    blocks.compactMap { if case .heading = $0.content { $0.text } else { nil } }
-}
 
 @Test func fedTableTypographyDoesNotPromoteSurroundingProse() throws {
     let page = try SourceLayoutFixture.load("fed-46").content()
     let blocks = headingBlocks(page)
-    #expect(headings(blocks).isEmpty)
+    #expect(headingTexts(blocks).isEmpty)
     let paragraphs = blocks.compactMap { block -> String? in
         if case .paragraph = block.content { return block.text }; return nil
     }
@@ -27,10 +24,10 @@ private func headings(_ blocks: [ReflowBlock]) -> [String] {
 
 @Test func neighboringFedProseAndSourceChapterTitlesKeepTheirSemantics() throws {
     let page = try SourceLayoutFixture.load("fed-45").content()
-    #expect(headings(headingBlocks(page)).isEmpty)
+    #expect(headingTexts(headingBlocks(page)).isEmpty)
     for (name, title) in [("911-19", "WE HAVE"), ("911-65", "THE FOUNDATION")] {
         let blocks = headingBlocks(try SourceLayoutFixture.load(name).content())
-        #expect(headings(blocks).contains { $0.contains(title) })
+        #expect(headingTexts(blocks).contains { $0.contains(title) })
     }
 }
 
@@ -50,19 +47,19 @@ private func mixedTypographyPage(bodyLines: Int = 6) -> PageContent {
 
 @Test func imageTextCannotSetHeadingThresholdButRealHeadingSurvives() {
     let blocks = headingBlocks(mixedTypographyPage())
-    #expect(headings(blocks) == ["A legitimate heading"])
+    #expect(headingTexts(blocks) == ["A legitimate heading"])
     #expect(blocks.contains { if case .paragraph = $0.content { $0.text.contains("Ordinary body prose") } else { false } })
 }
 
 @Test func imageBesideShortTitleDoesNotEraseTitleEvidence() {
-    #expect(headings(headingBlocks(mixedTypographyPage(bodyLines: 0))) == ["A legitimate heading"])
+    #expect(headingTexts(headingBlocks(mixedTypographyPage(bodyLines: 0))) == ["A legitimate heading"])
 }
 
 @Test func noPreservedRegionsKeepExistingHeadingEvidence() {
     var page = mixedTypographyPage()
     page.graphics = []
     // Without preservation the 8-point material remains reflowable body text.
-    #expect(headings(headingBlocks(page)).contains("A legitimate heading"))
+    #expect(headingTexts(headingBlocks(page)).contains("A legitimate heading"))
 }
 
 @Test func modestSourceSectionHeadingsSurviveSmallTableText() throws {
@@ -72,7 +69,7 @@ private func mixedTypographyPage(bodyLines: Int = 6) -> PageContent {
                   (109, "Expedited Funds Availability Act"), (123, "Interagency Initiatives")]
     for (number, title) in titles {
         let blocks = headingBlocks(try SourceLayoutFixture.load("fed-\(number)").content())
-        #expect(headings(blocks).contains(title))
+        #expect(headingTexts(blocks).contains(title))
     }
 }
 
@@ -86,6 +83,6 @@ private func mixedTypographyPage(bodyLines: Int = 6) -> PageContent {
     for (number, phrase) in phrases {
         let blocks = headingBlocks(try SourceLayoutFixture.load("fed-\(number)").content())
         #expect(blocks.contains { if case .paragraph = $0.content { $0.text.contains(phrase) } else { false } })
-        #expect(!headings(blocks).contains { $0.contains(phrase) })
+        #expect(!headingTexts(blocks).contains { $0.contains(phrase) })
     }
 }

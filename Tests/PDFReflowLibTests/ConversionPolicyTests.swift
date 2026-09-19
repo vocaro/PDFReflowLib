@@ -7,11 +7,7 @@ import ZIPFoundation
 @testable import PDFReflowLib
 
 private func policyFixture(_ name: String) -> URL {
-    Bundle.module.resourceURL!.appendingPathComponent("fixtures/\(name).pdf")
-}
-private func policyEntry(_ name: String, _ archive: Archive) throws -> Data {
-    let entry = try #require(archive[name])
-    var bytes = Data(); _ = try archive.extract(entry) { bytes += $0 }; return bytes
+    fixtureURL("\(name).pdf")
 }
 private actor PolicyProgress {
     var events: [ConversionProgress] = []
@@ -26,7 +22,7 @@ private actor PolicyProgress {
         var options = ConversionOptions(); options.referenceImages = policy
         let report = try await PDFConverter().convert(from: input, to: output, options: options)
         let archive = try Archive(url: output, accessMode: .read)
-        let text = String(decoding: try policyEntry("EPUB/chapter-1.xhtml", archive), as: UTF8.self)
+        let text = String(decoding: try archive.entryData("EPUB/chapter-1.xhtml"), as: UTF8.self)
         #expect(text.contains("Existing transcription."))
         #expect(report.reflowedPageCount == 1)
         #expect(report.imageCount == (policy == .never ? 0 : 1))
@@ -55,7 +51,7 @@ private actor PolicyProgress {
             #expect(report.warnings.contains { $0.code == .pageImageFallback })
             #expect(!report.warnings.contains { $0.code == .referenceImageOmitted })
             let archive = try Archive(url: output, accessMode: .read)
-            #expect(try policyEntry("EPUB/images/image-1.jpg", archive).starts(with: [0xff, 0xd8]))
+            #expect(try archive.entryData("EPUB/images/image-1.jpg").starts(with: [0xff, 0xd8]))
         }
     }
 }
@@ -85,14 +81,14 @@ private actor PolicyProgress {
             let report = try await PDFConverter().convert(from: policyFixture("graphics"), to: output, options: options)
             #expect(report.imageCount == 4)
             let archive = try Archive(url: output, accessMode: .read)
-            let opf = String(decoding: try policyEntry("EPUB/package.opf", archive), as: UTF8.self)
-            let html = String(decoding: try policyEntry("EPUB/chapter-1.xhtml", archive), as: UTF8.self)
+            let opf = String(decoding: try archive.entryData("EPUB/package.opf"), as: UTF8.self)
+            let html = String(decoding: try archive.entryData("EPUB/chapter-1.xhtml"), as: UTF8.self)
             #expect(html.contains("Text before the illustrated region"))
             #expect(html.contains("Text after the table"))
             for index in 1...4 {
                 let jpeg = index == 4 ? pageJPEG : regionJPEG
                 let path = "images/image-\(index).\(jpeg ? "jpg" : "png")"
-                let bytes = try policyEntry("EPUB/" + path, archive)
+                let bytes = try archive.entryData("EPUB/" + path)
                 #expect(bytes.starts(with: jpeg ? [0xff, 0xd8] : [137, 80, 78, 71]))
                 let source = try #require(CGImageSourceCreateWithData(bytes as CFData, nil))
                 let image = try #require(CGImageSourceCreateImageAtIndex(source, 0, nil))

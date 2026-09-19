@@ -192,7 +192,7 @@ func fontEvidenceReadsFontsInheritedFromThePageTree() throws {
 
 @Test func bundledFixturesAndControlsCarryNoDamagedEncodingEvidence() throws {
     for name in ["prose", "scanned", "columns", "graphics", "lists-code", "rotated"] {
-        let url = Bundle.module.resourceURL!.appendingPathComponent("fixtures/\(name).pdf")
+        let url = fixtureURL("\(name).pdf")
         let document = try #require(PDFDocument(url: url))
         for index in 0..<document.pageCount {
             let page = try #require(document.page(at: index))

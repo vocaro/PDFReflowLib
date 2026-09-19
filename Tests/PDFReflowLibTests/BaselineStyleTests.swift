@@ -3,13 +3,6 @@ import CoreText
 import PDFKit
 import Testing
 import ZIPFoundation
-#if os(macOS)
-import AppKit
-private typealias BaselineFont = NSFont
-#else
-import UIKit
-private typealias BaselineFont = UIFont
-#endif
 @testable import PDFReflowLib
 
 @Test(arguments: [false, true])
@@ -18,7 +11,7 @@ func explicitBaselineOffsetsPreserveScriptWithoutGuessingFromSmallFonts(useFound
     for (text, offset, size) in [("base", 0.0, 12.0), ("small", 0, 8), ("raised", 4, 12),
                                 ("lowered", -3, 8), ("noise", 0.1, 12)] {
         value.append(NSAttributedString(string: text, attributes: [
-            .font: pdfKitGated { BaselineFont(name: "Helvetica-BoldOblique", size: size) }!,
+            .font: pdfKitGated { PlatformFont(name: "Helvetica-BoldOblique", size: size) }!,
             (useFoundationKey ? .baselineOffset : NSAttributedString.Key(kCTBaselineOffsetAttributeName as String)): offset,
         ]))
     }
@@ -42,10 +35,7 @@ func explicitBaselineOffsetsPreserveScriptWithoutGuessingFromSmallFonts(useFound
     ]).write(to: pdf)
     let report = try await PDFConverter().convert(from: pdf, to: epub)
     #expect(report.imageCount == 0 && report.reflowedPageCount == 1)
-    let archive = try Archive(url: epub, accessMode: .read)
-    let item = try #require(archive["EPUB/chapter-1.xhtml"])
-    var bytes = Data(); _ = try archive.extract(item) { bytes += $0 }
-    let html = String(decoding: bytes, as: UTF8.self)
+    let html = try Archive(url: epub, accessMode: .read).chapter()
     #expect(html.contains("ax<sup>2</sup>"))
     #expect(html.contains("H<sub>2</sub>O"))
     #expect(html.contains("carefully."))

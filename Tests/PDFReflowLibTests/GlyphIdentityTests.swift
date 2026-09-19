@@ -2,13 +2,6 @@ import Foundation
 import CoreGraphics
 import CoreText
 import Testing
-#if os(macOS)
-import AppKit
-private typealias GlyphTestFont = NSFont
-#else
-import UIKit
-private typealias GlyphTestFont = UIFont
-#endif
 @testable import PDFReflowLib
 
 /// A dingbat font's `ToUnicode` reports code `<004F>` (the bullet's position in Zapf Dingbats,
@@ -191,12 +184,12 @@ private func caseFontObjects(flags: Int = 32, charSet: String? = "(/F/R/I/T/Z/sp
 @Test func anIsolatedRedrawnGlyphIsNeverReadAsAnInlineSuperscript() throws {
     let value = NSMutableAttributedString(string: "")
     let key = NSAttributedString.Key(kCTBaselineOffsetAttributeName as String)
-    value.append(NSAttributedString(string: "ar ", attributes: [.font: pdfKitGated { GlyphTestFont(name: "Helvetica", size: 11) }!, key: 0]))
+    value.append(NSAttributedString(string: "ar ", attributes: [.font: pdfKitGated { PlatformFont(name: "Helvetica", size: 11) }!, key: 0]))
     let bulletRange = NSRange(location: value.length, length: 1)
-    value.append(NSAttributedString(string: "\u{25CF}", attributes: [.font: pdfKitGated { GlyphTestFont(name: "Helvetica", size: 6) }!, key: 4]))
+    value.append(NSAttributedString(string: "\u{25CF}", attributes: [.font: pdfKitGated { PlatformFont(name: "Helvetica", size: 6) }!, key: 4]))
     value.addAttribute(GlyphIdentityReader.isolatedAttribute, value: true, range: bulletRange)
-    value.append(NSAttributedString(string: " Follow", attributes: [.font: pdfKitGated { GlyphTestFont(name: "Helvetica", size: 11) }!, key: 0]))
-    value.append(NSAttributedString(string: "2", attributes: [.font: pdfKitGated { GlyphTestFont(name: "Helvetica", size: 8) }!, key: 4]))
+    value.append(NSAttributedString(string: " Follow", attributes: [.font: pdfKitGated { PlatformFont(name: "Helvetica", size: 11) }!, key: 0]))
+    value.append(NSAttributedString(string: "2", attributes: [.font: pdfKitGated { PlatformFont(name: "Helvetica", size: 8) }!, key: 4]))
     let model = NativeTextReader.inlineText(from: value)
     let html = EPUBTextEncoder.inline(model)
     #expect(!html.contains("<sup>\u{25CF}</sup>"))

@@ -26,9 +26,7 @@ private func imageBackedTextPDF(invisible: Bool) -> Data {
     var options = ConversionOptions(); options.ocr = .never
     let report = try await PDFConverter().convert(from: input, to: output, options: options)
     let archive = try Archive(url: output, accessMode: .read)
-    let entry = try #require(archive["EPUB/chapter-1.xhtml"])
-    var data = Data(); _ = try archive.extract(entry) { data += $0 }
-    let html = String(decoding: data, as: UTF8.self)
+    let html = try archive.chapter()
     #expect(!html.contains("<pre>"))
     #expect(!html.contains("<h2"))
     #expect(html.contains("Ordinary prose should reflow across the source line break"))
@@ -43,9 +41,7 @@ private func imageBackedTextPDF(invisible: Bool) -> Data {
     var options = ConversionOptions(); options.ocr = .never
     _ = try await PDFConverter().convert(from: input, to: output, options: options)
     let archive = try Archive(url: output, accessMode: .read)
-    let entry = try #require(archive["EPUB/chapter-1.xhtml"])
-    var data = Data(); _ = try archive.extract(entry) { data += $0 }
-    let html = String(decoding: data, as: UTF8.self)
+    let html = try archive.chapter()
     #expect(html.contains("<pre>"))
     #expect(html.contains("<h2"))
 }

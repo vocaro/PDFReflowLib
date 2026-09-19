@@ -1,12 +1,5 @@
 import Foundation
 import CoreText
-#if os(macOS)
-import AppKit
-private typealias FixtureFont = NSFont
-#else
-import UIKit
-private typealias FixtureFont = UIFont
-#endif
 @testable import PDFReflowLib
 
 struct SourceLayoutFixture: Decodable {
@@ -31,22 +24,39 @@ struct SourceLayoutFixture: Decodable {
                 var attributes: [NSAttributedString.Key: Any] = [
                     NSAttributedString.Key(kCTBaselineOffsetAttributeName as String): run.baselineOffset,
                 ]
-                attributes[.font] = pdfKitGated { FixtureFont(name: run.fontName, size: run.fontSize) }
+                attributes[.font] = pdfKitGated { PlatformFont(name: run.fontName, size: run.fontSize) }
                 value.append(NSAttributedString(string: run.text, attributes: attributes))
             }
             return value
         }
     }
+    /// Captures before the version key was introduced decode as version 1.
+    var schemaVersion: Int
     var sourceSHA256: String
     var page: Int
     var bounds: [Double]
     var lines: [Line]
     var graphics: [[Double]]
+    /// Styled runs, absent from the earliest captures; those fixtures serve geometry tests only.
     var attributedLines: [AttributedLine]
 
+    private enum CodingKeys: String, CodingKey {
+        case schemaVersion, sourceSHA256, page, bounds, lines, graphics, attributedLines
+    }
+
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        schemaVersion = try values.decodeIfPresent(Int.self, forKey: .schemaVersion) ?? 1
+        sourceSHA256 = try values.decode(String.self, forKey: .sourceSHA256)
+        page = try values.decode(Int.self, forKey: .page)
+        bounds = try values.decode([Double].self, forKey: .bounds)
+        lines = try values.decode([Line].self, forKey: .lines)
+        graphics = try values.decode([[Double]].self, forKey: .graphics)
+        attributedLines = try values.decodeIfPresent([AttributedLine].self, forKey: .attributedLines) ?? []
+    }
+
     static func load(_ name: String) throws -> Self {
-        let url = Bundle.module.resourceURL!.appendingPathComponent("fixtures/\(name)-layout.json")
-        return try JSONDecoder().decode(Self.self, from: Data(contentsOf: url))
+        try JSONDecoder().decode(Self.self, from: Data(contentsOf: fixtureURL("\(name)-layout.json")))
     }
     func content() -> PageContent {
         func rect(_ values: [Double]) -> CGRect {

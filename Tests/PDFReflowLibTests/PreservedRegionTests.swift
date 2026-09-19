@@ -89,11 +89,7 @@ private func convertRegion(table: Bool, directory: URL, dpi: Double, separatedFr
     var options = ConversionOptions(); options.ocr = .never; options.rasterDPI = dpi
     let report = try await PDFConverter().convert(from: source, to: output, options: options)
     let archive = try Archive(url: output, accessMode: .read)
-    func read(_ path: String) throws -> Data {
-        let entry = try #require(archive[path]); var data = Data()
-        _ = try archive.extract(entry) { data += $0 }
-        return data
-    }
+    func read(_ path: String) throws -> Data { try archive.entryData(path) }
     let html = String(decoding: try read("EPUB/chapter-1.xhtml"), as: UTF8.self)
     let images = try archive.filter { $0.path.hasSuffix(".png") }.map { try read($0.path) }
     return (report, html, images)
@@ -254,30 +250,10 @@ func detachedFractionKeepsNumeratorExponentAndDenominatorTogether() async throws
 }
 
 @Test func algebraExerciseLayoutPreservesWholeNumberedExpressions() throws {
-    struct Fixture: Decodable {
-        struct Line: Decodable {
-            var text: String
-            var rect: [Double]
-            var fontSize: Double
-            var monospaced: Bool
-        }
-        var sourceSHA256: String
-        var page: Int
-        var bounds: [Double]
-        var lines: [Line]
-        var graphics: [[Double]]
-    }
-    let url = Bundle.module.resourceURL!.appendingPathComponent("fixtures/algebra-17-layout.json")
-    let fixture = try JSONDecoder().decode(Fixture.self, from: Data(contentsOf: url))
+    let fixture = try SourceLayoutFixture.load("algebra-17")
     #expect(fixture.sourceSHA256 == "856bd81edc61c50496982ddc849138f4e0e56fd0ddf0edb53fee9bb0830d0678")
     #expect(fixture.page == 17)
-    func rect(_ values: [Double]) throws -> CGRect {
-        try #require(values.count == 4)
-        return CGRect(x: values[0], y: values[1], width: values[2], height: values[3])
-    }
-    let page = PageContent(number: fixture.page, bounds: try rect(fixture.bounds), lines: try fixture.lines.map {
-        TextLine(text: $0.text, rect: try rect($0.rect), fontSize: $0.fontSize, monospaced: $0.monospaced)
-    }, graphics: try fixture.graphics.map(rect))
+    let page = fixture.content()
     let regions = LayoutReconstructor.graphicsWithLabels(page)
     try #require(!regions.isEmpty)
     for line in page.lines {

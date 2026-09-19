@@ -29,10 +29,7 @@ private func chapterPDF(secondTitle: String = "Chapter 2 Beta", firstDestination
         #expect(report.pageCount == 2)
         let archive = try Archive(url: output, accessMode: .read)
         #expect(archive.filter { $0.path.hasPrefix("EPUB/chapter-") }.count == (valid ? 2 : 1))
-        let entry = try #require(archive[valid ? "EPUB/chapter-2.xhtml" : "EPUB/chapter-1.xhtml"])
-        var data = Data()
-        _ = try archive.extract(entry) { data.append($0) }
-        let text = String(decoding: data, as: UTF8.self)
+        let text = try archive.chapter(valid ? 2 : 1)
         #expect(text.contains("Chapter 2 Beta"))
         #expect(text.contains("id=\"page-2\""))
     }

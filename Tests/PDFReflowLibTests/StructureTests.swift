@@ -157,7 +157,7 @@ func ambiguousMarkedContentKeepsNativeText(_ failure: String) throws {
 @Test func ourFlagTwoLineTitleUsesSingleSourceH3() throws {
     let native = try SourceLayoutFixture.load("our-flag-page-29")
     struct Evidence: Decodable { var sourceSHA256: String; var contentStream: String; var headingRole: String; var headingMCID: Int }
-    let file = Bundle.module.resourceURL!.appendingPathComponent("fixtures/our-flag-page-29-tags.json")
+    let file = fixtureURL("our-flag-page-29-tags.json")
     let evidence = try JSONDecoder().decode(Evidence.self, from: Data(contentsOf: file))
     #expect(evidence.sourceSHA256 == native.sourceSHA256)
     #expect(evidence.headingRole == "H3" && evidence.headingMCID == 0)

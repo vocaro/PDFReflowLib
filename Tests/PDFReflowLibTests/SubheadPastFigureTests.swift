@@ -69,9 +69,6 @@ private func blocks(_ page: PageContent, labelStyles: Set<LayoutReconstructor.La
                                       labelStyles: labelStyles)
 }
 
-private func headings(_ blocks: [ReflowBlock]) -> [String] {
-    blocks.compactMap { if case .heading = $0.content { $0.text } else { nil } }
-}
 
 // MARK: - The real page's geometry
 
@@ -118,7 +115,7 @@ private func headings(_ blocks: [ReflowBlock]) -> [String] {
     let title = try #require(page.lines.first { $0.text == "Fighting Filth Flies" })
     let styles: Set<LayoutReconstructor.LabelStyle> = [LayoutReconstructor.LabelStyle(title, body: body)]
     let found = blocks(page, labelStyles: styles)
-    #expect(headings(found) == ["Fighting Filth Flies"], "\(headings(found))")
+    #expect(headingTexts(found) == ["Fighting Filth Flies"], "\(headingTexts(found))")
     // The paragraph it opens is still present in the output, not lost or merged away.
     #expect(found.contains { $0.text.hasPrefix("Nonbiting flies that shuttle between filth") })
 }
@@ -129,7 +126,7 @@ private func headings(_ blocks: [ReflowBlock]) -> [String] {
     // its own paragraph's opening line runs into it instead.
     let page = try usdaPage9()
     let found = blocks(page, labelStyles: [])
-    #expect(!headings(found).contains("Fighting Filth Flies"), "\(headings(found))")
+    #expect(!headingTexts(found).contains("Fighting Filth Flies"), "\(headingTexts(found))")
 }
 
 // MARK: - opens(beneath:)/pastFigure edge cases (synthetic)

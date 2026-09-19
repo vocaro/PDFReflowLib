@@ -4,10 +4,6 @@ import Testing
 import ZIPFoundation
 @testable import PDFReflowLib
 
-private actor SelectiveOCRProgress {
-    var events: [ConversionProgress] = []
-    func append(_ event: ConversionProgress) { events.append(event) }
-}
 
 @Test func selectiveOCRRetriesOnlyPageSizedImageTextAndKeepsNativeStyles() async throws {
     let dir = try testPDFDirectory(); defer { try? FileManager.default.removeItem(at: dir) }
@@ -27,7 +23,7 @@ private actor SelectiveOCRProgress {
     ] {
         var options = ConversionOptions(); options.ocr = policy
         options.removeRepeatedHeadersAndFooters = false
-        let log = SelectiveOCRProgress()
+        let log = ProgressLog()
         let output = dir.appendingPathComponent(name + ".epub")
         let report = try await PDFConverter().convert(from: source, to: output, options: options) {
             await log.append($0)
@@ -41,9 +37,7 @@ private actor SelectiveOCRProgress {
         #expect(events.last?.stage == .completed && events.last?.fractionCompleted == 1)
         #expect(report.warnings.filter { $0.code == .unverifiedTextLayer }.count == (count == 0 ? 1 : 0))
         let archive = try Archive(url: output, accessMode: .read)
-        var bytes = Data()
-        _ = try archive.extract(try #require(archive["EPUB/chapter-1.xhtml"])) { bytes += $0 }
-        let html = String(decoding: bytes, as: UTF8.self)
+        let html = try archive.chapter()
         #expect(html.components(separatedBy: "Readable source text.").count - 1 == 3)
         if policy == .automaticIncludingImageBackedText {
             #expect(html.components(separatedBy: "<strong>Readable source text.</strong>").count - 1 == 2)

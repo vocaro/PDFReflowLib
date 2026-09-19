@@ -6,7 +6,7 @@ import CryptoKit
 @testable import PDFReflowLib
 
 private func fixture(_ name: String) -> URL {
-    Bundle.module.resourceURL!.appendingPathComponent("fixtures/" + name + ".pdf")
+    fixtureURL(name + ".pdf")
 }
 
 private func scratch() throws -> URL {
@@ -16,11 +16,7 @@ private func scratch() throws -> URL {
 }
 
 private func entry(_ path: String, in url: URL) throws -> Data {
-    let archive = try Archive(url: url, accessMode: .read)
-    let item = try #require(archive[path])
-    var result = Data()
-    _ = try archive.extract(item) { result += $0 }
-    return result
+    try Archive(url: url, accessMode: .read).entryData(path)
 }
 
 private func chapter(_ url: URL) throws -> String {
@@ -106,10 +102,6 @@ private func chapter(_ url: URL) throws -> String {
     #expect(nav.contains("#page-3"))
 }
 
-private actor ProgressLog {
-    var events: [ConversionProgress] = []
-    func append(_ event: ConversionProgress) { events.append(event) }
-}
 
 @Test func progressIsMonotonicAndEndsAfterPublication() async throws {
     let dir = try scratch(); defer { try? FileManager.default.removeItem(at: dir) }

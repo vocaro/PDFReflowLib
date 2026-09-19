@@ -209,9 +209,7 @@ private func notePage() -> PageContent {
         let output = dir.appendingPathComponent("notes-\(remove).epub")
         let report = try await PDFConverter().convert(from: source, to: output, options: options)
         let archive = try Archive(url: output, accessMode: .read)
-        var data = Data()
-        _ = try archive.extract(try #require(archive["EPUB/chapter-1.xhtml"])) { data += $0 }
-        let html = String(decoding: data, as: UTF8.self)
+        let html = try archive.chapter()
         #expect(html.components(separatedBy: "<p>39.Second citation begins with sufficient text to wrap and continues on the following line.</p>").count - 1 == 3)
         #expect(html.contains("NOTES TO CHAPTER 1") == !remove)
         #expect(report.pageCount == 3)

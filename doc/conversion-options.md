@@ -43,101 +43,53 @@ apply independently, and cancellation remains cooperative during platform recogn
 ### Implausible inherited text
 
 Text inherited over a page-sized graphic (the pages that would report `unverifiedTextLayer`) is
-tested before any recognition (#93). The layer fails when either holds:
+tested before any recognition (#93): too few English words, too many words misread in place (#7),
+or too little text for the page's own text-shaped ink fails the layer, and every failing page
+reports `implausibleTextLayer` under every policy, with a message that says what failed and what
+was done. The word classes, thresholds and message texts are specified in
+[behaviour](behaviour.md#inherited-text-over-a-page-sized-image-93-7). Pages that require a page
+image and books not declared English are not judged; without a system lexicon only the ink test
+runs.
 
-- **Too few English words, or too many misread in place.** Whitespace-separated words are sorted
-  into English words (in the system English lexicon, `NLEmbedding.wordEmbedding(for: .english)`,
-  or `a`/`I`), damaged words (a lower-case word the lexicon does not know, irregular capitals such
-  as `sreANee`, a stray lower-case letter from letter-spaced text such as `n e x t`, or letters of
-  another script) and neutral words (capitalized or upper-case words it does not know, which are
-  names and abbreviations, and words broken by symbols). With at least 20 English and damaged
-  words, fewer than half English fails; so does a tenth or more of all words being damaged words
-  of three or more letters, or irregular capitals, that no neighbour joins into an English word
-  (#7). A layer where a fifth or more of the tokens hold digits (statistical tables, notes pages)
-  is not judged.
-- **Too little text for the ink.** When the layer holds fewer than 32 English words, the page is
-  rendered at 180 DPI (the client's pixel ceiling applies) and rows of glyph-sized ink outside its
-  lines are found (connected components the shape of printed or typed text). The layer fails when
-  its lines leave at least 75% of that ink, in at least seven rows, uncovered, and it holds fewer
-  English words than those rows.
+| Policy | A failing layer |
+| --- | --- |
+| `.automatic` | Replaced by OCR of the page image (the page also reports `ocrUsed`); a layer that fails only by misreading words in place is recognized again and compared, and kept when recognition reads no better |
+| `.automaticIncludingImageBackedText`, `.always` | Replaced outright |
+| `.automaticKeepingImageBackedText`, `.never` | Kept, with `unverifiedTextLayer` and its reference |
 
-Every page that fails reports `implausibleTextLayer`, whatever the policy, and the conversion
-report's `warnings` list each such page. The message says what failed and what was done, for
-example "Existing text over a page-sized image does not read as English: only 23 of 77 words are
-English words (misspelled, wrongly capitalized or letter-spaced text). The existing text was
-discarded and replaced by OCR of the page image; review this page against the original page
-image." `.automatic`, `.automaticIncludingImageBackedText` and `.always` replace the layer with
-OCR (the page then also reports `ocrUsed`). The warning is written once recognition has run, so
-when recognition fails or finds no text its message ends instead "The existing text was
-discarded, but OCR of the page image failed or found no text, so the page is preserved as an
-image." (with `ocrFailed` or `pageImageFallback`). A layer that misreads its words in place is
-recognized again and compared: when the fresh recognition itself reads worse, the existing layer
-is kept instead, reported `implausibleTextLayer` with a message ending "…so the existing text is
-retained; read the accompanying original page image instead." `.automaticKeepingImageBackedText`
-and `.never` keep the layer outright, and the message ends "The existing text is retained because
-the OCR policy keeps it; read the accompanying original page image instead." (the page keeps
-`unverifiedTextLayer` and its reference). A client that wants the pre-#93 automatic behavior,
-recognition only of absent or damaged text, selects `.automaticKeepingImageBackedText`. Pages
-that require a page image and books not declared English are not judged; without a system
-lexicon only the ink test runs.
+A client that wants the pre-#93 automatic behaviour, recognition only of absent or damaged text,
+selects `.automaticKeepingImageBackedText`. When recognition fails or finds no text the page is
+preserved as an image (`ocrFailed` or `pageImageFallback`). Because recognition replaces the whole
+layer, native reading order, styles and headings on a replaced page come from the recognized text.
 
-Fresh recognition of an implausible layer is itself judged against the same English-word test
-(#7): a reading that still does not read as English — handwriting, or print recognition cannot
-read — is noise, not a transcription, and a reader is better served by the page image. Such a
-page discards the recognized text, reports `implausibleRecognition` and is preserved as an image
-that does not reflow. This check runs on every page recognition attempts, under every policy, not
-only on pages that started with an implausible inherited layer. A recognized line that does not
-read as English words is also excluded from heading detection, so OCR noise set at heading size
-does not become a navigation entry.
-
-Because recognition replaces the whole layer, native reading order, styles and headings on a
-replaced page come from the recognized text instead.
+Fresh recognition is itself judged against the same English test under every policy (#7): a
+reading that still does not read as English (handwriting, or print recognition cannot read) is
+discarded as noise, reported `implausibleRecognition`, and the page is preserved as an image; a
+recognized line that does not read as English words is also excluded from heading detection
+([behaviour](behaviour.md#every-recognition-is-judged-7)).
 
 ### Pages whose writing is drawn
 
-A page can have the opposite problem: no text layer worth reflowing, and its sentence drawn as
-artwork (#176). A page with no text layer at all is already recognized under every automatic
-policy; a folio does not make a page any less text-less, so the same holds for a page whose text
-layer holds no letter. Such a page is rendered at 180 DPI and its text-shaped ink measured as
-above, ignoring everything inside its placed images: when at least two rows of it stand outside
-the layer's lines, its writing is drawn and the page is recognized. A page whose art forms no
-such row — a chart, an answer key of bare fractions and surds — is never recognized on this
-evidence and keeps its crops, and neither is a page whose only rows are inside a picture. Writing
-the page draws is content its producer typeset; writing a photograph shows (a blackboard of
-arithmetic, a mountain's strata) belongs to the picture, which the page's own crop preserves.
-English books only, and a page holding a word of its own is never rendered. Recognition attaches
-its source-page reference, which carries the artwork, in place of the page's crops; when it reads
-nothing the page is left exactly as it was extracted, and reports `ocrFailed` with "This page
-reflows no text of its own and its artwork holds writing, but recognition of the page failed or
-found no text; the artwork is preserved as images and its writing does not reflow."
-
-This check runs alongside the implausible-layer check above, not instead of it, and the two do
-not need to be mutually exclusive: a page whose text layer holds no letter never has enough
-judged words to fail the word test, and its ink rarely reaches the word test's own seven-row
-threshold at only two or three rows, so in practice a page triggers at most one of them.
-
-Ink is measured against the page's own background. A slide printed white on dark blue puts almost
-all of its pixels below any ink threshold, so counting components darker than that threshold finds
-one page-sized blob and no writing. When a measurement finds no text row and the darker side of the
-threshold covers more than half the page, that side is the background and the page is measured
-again inverted; a page whose dark ink already forms rows is never inverted.
+A page whose text layer holds no letter at all, but whose own drawing (not its photographs)
+carries rows of text-shaped ink, is recognized under every automatic policy like a page with no
+text layer (#176); ink is measured against the page's own background, so a slide printed white
+on dark is not mistaken for a blank one. Decorative art, charts and answer keys of bare surds keep
+their crops. Recognition attaches the source-page reference in place of the crops; when it reads
+nothing the page is left as extracted and reports `ocrFailed`. English books only. The row count,
+resolution and exclusions are in [behaviour](behaviour.md#pages-whose-writing-is-drawn-176).
 
 ### Damaged text encoding
 
-A born-digital page can also lose its text without any scan: fonts with a custom `Differences`
-encoding of index-style glyph names (`G108`, `c63`) and no `ToUnicode` map render correctly
-but extract as the wrong characters (the Census report's LaTeX pages come out shifted by three
-letters: "Two data files were used." extracts as "Wzr gdwd ohv zhuh xvhg1"). When the page has
-such a font and its extracted words fail the embedded English statistics (at least 20 words,
-under 5% function words, at least 30% uncommon letter pairs), the page reports
-`damagedTextEncoding`. `.automatic`, `.automaticIncludingImageBackedText`,
+A born-digital page whose fonts carry a custom `Differences` encoding of index-style glyph names
+with no `ToUnicode` map extracts as the wrong characters although it renders correctly (#38).
+When such a font is present and the extracted words also fail the embedded English statistics,
+the page reports `damagedTextEncoding`: `.automatic`, `.automaticIncludingImageBackedText`,
 `.automaticKeepingImageBackedText` and `.always` recognize the page image instead and report
-`ocrUsed` as usual; `.never` keeps the unreadable native text and recommends a source-page
-reference, which `referenceImages` controls like any other supplementary image. Only English
-(`en`, `en-*`) is judged; other declared languages, short pages, composite fonts and
-incorrect-but-present `ToUnicode` maps are outside this signal. A page this check explains is
-excluded from the implausible-layer (#93) and drawn-text (#176) checks above, which diagnose
-different problems.
+`ocrUsed`; `.never` keeps the unreadable native text and recommends a source-page reference,
+which `referenceImages` controls like any other supplementary image. Only English is judged;
+other declared languages, short pages, composite fonts and incorrect-but-present `ToUnicode` maps
+are outside this signal, and a page this check explains is excluded from the two checks above.
+The font and statistics rules are in [behaviour](behaviour.md#textencodingcheck-damaged-born-digital-encodings-38).
 
 The developer client exposes these policies as `--ocr automatic|image-backed|keep-image-backed|always|never`.
 `--no-ocr` remains an alias for `--ocr never`; when repeated, the last OCR option takes effect.

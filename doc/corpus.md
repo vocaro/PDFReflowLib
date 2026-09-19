@@ -22,26 +22,34 @@ location. A changed publisher file fails verification instead of silently replac
 The manifest separates source/attribution URLs from direct `downloadURL` values. Cached files
 work offline. Tests and conversion never fetch sources automatically.
 
-| Case | Pages | Coverage | Initial Mac peak-RSS ceiling |
-| --- | ---: | --- | ---: |
-| `faa-phak-8083-25c` | 522 | Columns, illustrations, diagrams, tables, glossary | 1,280 MiB |
-| `wallace-algebra-2010` | 489 | Fractions, radicals, powers, examples, exercises, answer keys | 256 MiB |
-| `gpo-warren-1964` | 920 | Scans, noisy existing OCR, notes, index, large image output | Unset: default conversion fails |
-| `gpo-911-2004` | 585 | Untagged digital text, alternating headers, tracked lettering, endnotes | 256 MiB |
-| `fed-explained-2021` | 135 | Tagged text, recurring tables, organization charts and flow diagrams | 768 MiB |
-| `dga-2025-2030` | 10 | Illustrated section bands, gradients, bullet columns and callouts | 192 MiB |
-| `noaa-nca5-2023` | 1,834 | Large tagged report, mixed orientations, 32 chapter starts, uneven graphics | Unset: default conversion fails |
-| `gpo-our-flag-2003` | 56 | Structure-tree inconsistencies, flag illustrations, drop capitals, one visible table | 192 MiB |
-| `cdc-zombie-pandemic-2011` | 42 | Comic artwork, noisy inherited text, image-only dialogue, panel order | 512 MiB |
-| `cia-blue-book-14-1955` | 312 | Scanned statistical tables, inherited OCR, negative warning/refusal contract | 512 MiB |
-| `nbs-jres-geltman-1977` | 7 | Scanned two-column academic paper, footnotes, OCR-damaged equations | 512 MiB |
-| `arxiv-replay-clocks-2023` | 12 | Born-digital ACM two-column paper, pseudocode, figures, math | 256 MiB |
-| `usgs-mcs2025-copper` | 2 | Borderless tables, indentation-only row groups, spanning headers | 128 MiB |
-| `scotus-loper-bright-2024` | 114 | Page-bottom footnotes continuing across pages, dash separators | 128 MiB |
-| `census-rrs2002-01` | 20 | Born-digital text layer with no Unicode mapping (shifted letters) | 512 MiB |
-| `uscis-m618-arabic-2015` | 116 | Right-to-left Arabic with embedded Latin and numbers | 256 MiB |
-| `irs-p596-zhs-2025` | 36 | Simplified Chinese mixed with Latin identifiers and amounts | 256 MiB |
-| `usda-ars-agresearch-2012-11` | 24 | Magazine layout, dingbat/case glyph misreads, thin-page headings, lexicon-decided hyphens | 512 MiB |
+## Index
+
+Every registered case, what it exercises, where its review points live and its initial Mac
+peak-RSS ceiling (a regression limit for release CLI processes on macOS arm64, not a device
+budget). The case column links to the narrative section below; the seven #30 cases share one.
+
+| Case | Document | Pages | Exercises | Review points | Mac ceiling |
+| --- | --- | ---: | --- | --- | ---: |
+| `faa-phak-8083-25c` | Pilot's Handbook of Aeronautical Knowledge, FAA-H-8083-25C | 522 | Columns, illustrations, diagrams, tables, glossary, tagged PDF | manifest `reviewPages` | 1,280 MiB |
+| [`wallace-algebra-2010`](#wallace-algebra) | Beginning and Intermediate Algebra | 489 | Fractions, radicals, powers, examples, exercises, answer keys | [review](../corpus/wallace-algebra-2010-review.json) | 256 MiB |
+| [`gpo-warren-1964`](#warren-commission-report) | Warren Commission report | 920 | Scans, noisy existing OCR, notes, index, large image output | [review](../corpus/gpo-warren-1964-review.json) | Unset: default conversion fails |
+| [`gpo-warren-1964-suspect-text-excerpt`](#suspect-text-layer-excerpt) | Warren pages 549, 553, 556, 636, 664 (derived) | 5 | Handwritten notes whose inherited layer is noise; typewritten pages misread in place | manifest `reviewPages` | 1,024 MiB |
+| [`gpo-911-2004`](#911-commission-report) | The 9/11 Commission Report | 585 | Untagged digital text, alternating headers, tracked lettering, endnotes | [review](../corpus/gpo-911-2004-review.json) | 256 MiB |
+| [`fed-explained-2021`](#the-fed-explained) | The Fed Explained | 135 | Tagged text, recurring tables, organization charts and flow diagrams | [review](../corpus/fed-explained-2021-review.json) | 768 MiB |
+| [`dga-2025-2030`](#dietary-guidelines-for-americans-20252030) | Dietary Guidelines for Americans, 2025–2030 | 10 | Illustrated section bands, gradients, bullet columns and callouts | [review](../corpus/dga-2025-2030-review.json) | 192 MiB |
+| [`noaa-nca5-2023`](#fifth-national-climate-assessment) | Fifth National Climate Assessment | 1,834 | Large tagged report, mixed orientations, 32 chapter starts, uneven graphics | [review](../corpus/noaa-nca5-2023-review.json), [chapters](../corpus/noaa-nca5-2023-chapters.json) | Unset: default conversion fails |
+| [`gpo-our-flag-2003`](#our-flag) | Our Flag | 56 | Structure-tree inconsistencies, flag illustrations, drop capitals, one visible table | [review](../corpus/gpo-our-flag-2003-review.json) | 192 MiB |
+| [`cdc-zombie-pandemic-2011`](#preparedness-101-zombie-pandemic) | Preparedness 101: Zombie Pandemic | 42 | Comic artwork, noisy inherited text, image-only dialogue, panel order | [review](../corpus/cdc-zombie-pandemic-2011-review.json) | 512 MiB |
+| [`cia-blue-book-14-1955`](#project-blue-book-special-report-no-14) | Project Blue Book Special Report No. 14 | 312 | Scanned statistical tables, inherited OCR, negative warning/refusal contract | [review](../corpus/cia-blue-book-14-1955-review.json) | 512 MiB |
+| [`nbs-jres-geltman-1977`](#issue-30-coverage-expansion) | Stimulated Multiphoton Bremsstrahlung in Electron-Ion Collisions | 7 | Scanned two-column academic paper, footnotes, OCR-damaged equations | [review](../corpus/nbs-jres-geltman-1977-review.json) | 512 MiB |
+| [`arxiv-replay-clocks-2023`](#issue-30-coverage-expansion) | Replay Clocks | 12 | Born-digital ACM two-column paper, pseudocode, figures, math | [review](../corpus/arxiv-replay-clocks-2023-review.json) | 256 MiB |
+| [`usgs-mcs2025-copper`](#issue-30-coverage-expansion) | Mineral Commodity Summaries 2025: Copper | 2 | Borderless tables, indentation-only row groups, spanning headers | [review](../corpus/usgs-mcs2025-copper-review.json) | 128 MiB |
+| [`scotus-loper-bright-2024`](#issue-30-coverage-expansion) | Loper Bright Enterprises v. Raimondo (slip opinion) | 114 | Page-bottom footnotes continuing across pages, dash separators | [review](../corpus/scotus-loper-bright-2024-review.json) | 128 MiB |
+| [`census-rrs2002-01`](#issue-30-coverage-expansion) | Disclosure Risk Assessment in Perturbative Microdata Protection | 20 | Born-digital text layer with no Unicode mapping (shifted letters) | [review](../corpus/census-rrs2002-01-review.json) | 512 MiB |
+| [`uscis-m618-arabic-2015`](#issue-30-coverage-expansion) | Welcome to the United States (M-618-A, Arabic) | 116 | Right-to-left Arabic with embedded Latin and numbers | [review](../corpus/uscis-m618-arabic-2015-review.json) | 256 MiB |
+| [`irs-p596-zhs-2025`](#issue-30-coverage-expansion) | Publication 596 (ZH-S), Earned Income Credit | 36 | Simplified Chinese mixed with Latin identifiers and amounts | [review](../corpus/irs-p596-zhs-2025-review.json) | 256 MiB |
+| [`ntrs-20180003024-earthdata-slides-2018`](#earthdata-cloud-analytics-project) | Earthdata Cloud Analytics Project | 21 | Google Slides export with a full-bleed fill under real text; one slide whose only writing is drawn | manifest `reviewPages` | 128 MiB |
+| [`usda-ars-agresearch-2012-11`](#agricultural-research-magazine) | Agricultural Research, Vol. 60 No. 10 | 24 | Magazine layout, dingbat/case glyph misreads, thin-page headings, lexicon-decided hyphens | manifest `reviewPages` | 512 MiB |
 
 These are regression limits for release CLI processes on macOS arm64, not physical-device
 budgets or guarantees about Apple service memory. Each evaluation verifies exact input identity
@@ -131,7 +139,7 @@ scripts/compare-pdf-reflow.sh --pdf corpus/cache/Beginning_and_Intermediate_Alge
 ```
 
 Output directories must be new. `--epubcheck` is optional. The memory runner enforces the
-case's ceiling automatically. `scripts/check-all.sh --corpus` includes algebra in the eight-document gate.
+case's ceiling automatically. `scripts/check-all.sh --corpus` includes algebra in the corpus gate.
 
 [Review points](../corpus/wallace-algebra-2010-review.json) list physical PDF pages and
 acceptance questions. Page 343's inline squared exponent has superscript semantics, while
@@ -191,6 +199,30 @@ headings. True heading recovery and index grouping remain unqualified. The [exce
 excludes placeholders and counts seven reflowed pages, preserving the two textless pages as
 images. The excerpt passes EPUBCheck but is not fidelity-qualified. This case exercises trust in an existing OCR layer as well as
 new recognition: the default full run attempts fresh OCR on only one page.
+
+### Suspect-text-layer excerpt
+
+`gpo-warren-1964-suspect-text-excerpt` gates physical pages 549, 553, 556, 636 and 664 of the
+pinned source against the inherited-layer plausibility rules (#93, #7): issue #7's own
+reproduction path, which sidesteps the full book's image-output ceiling failure (#5) rather than
+resolving it. `measurements/gpo-warren-1964-suspect-text-excerpt/prepare-excerpt.py` (pypdf)
+verifies the pinned source identity before extracting; the excerpt is registered in
+`corpus/manifest.json` as its own document (`identity.suppliedBy: "derived"`, no `downloadURL`),
+so `tools/fetch_corpus.py --case gpo-warren-1964-suspect-text-excerpt` only ever reports a cache
+hit against a locally regenerated file, never a download. Each page was converted and its source
+raster read directly (`tools/compare_pdf.py --serve`). Pages 1–3 (549, 553, 556) are cursive
+Parkland Memorial Hospital admission notes and a death-declaration statement, confirmed illegible
+from the rasters: both the inherited layer and fresh recognition fail the English test and the
+pages fall back to page images, which is the correct outcome, not a defect. Page 4 (636) is a
+faint carbon typescript whose misread layer (`tcld`/`ftboot`-style damage) is replaced by
+recognition that reads better; two phrases read off its raster, "and he told me about the things
+at" and "At 6:00 PM I instructed the officers to bring", are pinned verbatim, and the discarded
+layer's `ftboot` is confirmed absent from the replacement. Page 5 (664) is a clean typewritten
+exhibit whose misread layer is nonetheless kept, because recognition read no better; its kept,
+still garbled text was confirmed to be a corrupted rendering of the same clearly legible source
+content, not something else. Peak converter RSS measured about 724 MiB against a 1,024 MiB
+ceiling. The page-by-page review is recorded in the case's `basis` in
+[corpus/regressions.json](../corpus/regressions.json); there is no separate measurement record.
 
 Tracked defects: [full-book resource limit](https://github.com/vocaro/PDFReflowLib/issues/5),
 [OCR font/layout inference](https://github.com/vocaro/PDFReflowLib/issues/6),
@@ -470,7 +502,8 @@ text was checked word-for-word against its rendered slide and matches exactly; i
 and byline, and slide 9's title and five guiding principles, were also checked in source order.
 
 Every other slide reports `unverifiedTextLayer`: this pipeline has no equivalent of the
-abandoned integration branch's `layoutComesApart` (#117, not ported), which there exempts a
+abandoned integration branch's `layoutComesApart` (#117, not ported; see
+[decision 0005](decisions/0005-abandoned-coordination-branch.md)), which there exempts a
 born-digital page whose art is only a full-bleed background paint from counting as image-backed;
 without it, an ordinary slide export already reads as image-backed here. That branch's own record
 left the identical defect open for this exact deck, tracked as #164, so this is not a regression
@@ -480,8 +513,8 @@ and found imperfect, and diagram box order beyond what is listed above was not i
 verified; none of that is pinned. [Tracking: #164](https://github.com/vocaro/PDFReflowLib/issues/164),
 [#165](https://github.com/vocaro/PDFReflowLib/issues/165).
 
-`ImageOnlyPageTests.swift` covers the #176 mechanism itself end to end with synthetic slides; see
-[regression testing](regression-testing.md#pages-whose-writing-is-drawn).
+`TextLayerPlausibilityTests.swift` covers the #176 mechanism itself end to end with synthetic
+slides; the rule is specified in [behaviour](behaviour.md#pages-whose-writing-is-drawn-176).
 
 ## Agricultural Research magazine
 
@@ -504,14 +537,13 @@ python3 tools/compare_pdf.py --pdf corpus/cache/November-December2012.pdf \
 ```
 
 [#186](https://github.com/vocaro/PDFReflowLib/issues/186) bundles five magazine-layout fixes;
-this document is the motivating case. Three are now ported to main: a heading-size threshold on
-thin-text pages (a document-wide body floor, plus excluding an isolated lowercase-opening
-heading-size line), system-lexicon-decided line-end hyphens, and (#218) a bold sub-heading whose
-paragraph opens past an intervening picture and its caption. See
-[regression testing](regression-testing.md#thin-page-headings-and-lexicon-decided-hyphens) and
-[regression testing](regression-testing.md#a-sub-heading-past-a-photograph) for what those fixes
-do and the adaptations each port required. The remaining two (dingbat font reading, and a
-letter-case glyph-versus-cmap disagreement) are tracked separately as #217's scope.
+this document is the motivating case. All five are now ported to main: a heading-size threshold
+on thin-text pages (a document-wide body floor, plus excluding an isolated lowercase-opening
+heading-size line), system-lexicon-decided line-end hyphens, (#218) a bold sub-heading whose
+paragraph opens past an intervening picture and its caption, and (#217) dingbat fonts read
+through their own encoding and a font's drawn letter case trusted over its `ToUnicode` map. The
+rules are specified in [behaviour](behaviour.md); the adaptations each port required are in
+[decision 0005](decisions/0005-abandoned-coordination-branch.md).
 
 Pages 1, 6, 9, 19 and 24 were converted and read against the actual output — pages 1 and 24
 against source rasters (`tools/compare_pdf.py`), pages 6, 9 and 19 by reading the converted text
@@ -530,12 +562,14 @@ each confirm an ordinary English compound the magazine never prints whole (`com-
 and not pinned, because its two halves land in separate paragraph blocks from unrelated
 column-interleaving behavior (#153) before the hyphen logic ever sees them as adjacent lines.
 
-The other three upstream #186 fixes are confirmed still present (not fixed) on this document, and
-are recorded as known fidelity issues rather than pinned: the back cover's dingbat bullet between
-the two web addresses still misreads as a superscript lowercase `l` (needs `FontWeightReader`'s
-content-stream font/glyph scanning, absent from main), page 15's photo credit "BRAD FRITz" still
-misreads its final letter's case (same dependency), and a sidebar subhead's paragraph opening past
-its photograph is not specifically handled (needs the sub-heading label system, also absent from
-main). Most page text on this document sits in preserved-region crops (#158) or interleaves
-across columns (#153), both pre-existing and outside this port's scope; those pages are not
-reviewed here. Peak converter RSS measured about 279 MiB against a 512 MiB ceiling.
+The #217 pair were at first confirmed still present on this document and recorded as known
+fidelity issues: the back cover's dingbat bullet between the two web addresses misread as a
+superscript lowercase `l`, and page 15's photo credit "BRAD FRITz" misread its final letter's
+case, both needing content-stream font reading main did not have. `GlyphIdentityReader` now
+fixes both, and the contract pins them: the bullet (a Monotype Sorts glyph at code 79, embedded
+as `WVUHWN+MonotypeSorts`) reads as U+25CF, not raised and not `l`, and the credit reads
+"BRAD FRITZ" (its Helvetica-Condensed glyph's `WinAnsiEncoding`, Nonsymbolic flags and CharSet,
+which lists `Z` but not `z`, agree the glyph drawn is a capital). Most page text on this document
+sits in preserved-region crops (#158) or interleaves across columns (#153), both pre-existing and
+outside these ports' scope; those pages are not reviewed here. Peak converter RSS measured about
+279 MiB against a 512 MiB ceiling.

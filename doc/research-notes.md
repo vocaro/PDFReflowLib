@@ -49,6 +49,17 @@ lost six genuine headings. The retained heuristic and its evidence are recorded 
 includes the original failing case for [#12](https://github.com/vocaro/PDFReflowLib/issues/12)
 (closed).
 
+## Numbered-notes ownership prototype
+
+The [original investigation](../measurements/numbered-notes/record.md) into the 9/11 report's
+endnotes retains a rejected prototype for note ownership. Its raster/OCR drift was subsequently
+traced to mixed execution environments under [#26](https://github.com/vocaro/PDFReflowLib/issues/26)
+(see [comparing conversion runs](corpus.md#comparing-conversion-runs)), and the
+[compatible-environment recheck](../measurements/numbered-notes/recheck/record.md) supports only
+the bounded native paragraph repair now in `NumberedNoteDetector`. Multi-paragraph and cross-page
+ownership, chapter-scoped reference links, multiple-reference relationships and return navigation
+remain open under [#11](https://github.com/vocaro/PDFReflowLib/issues/11).
+
 ## Structure-tag consumption
 
 A caption-order/oversized-heading approach considered while validating structure-tag consumption

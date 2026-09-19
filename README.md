@@ -6,9 +6,9 @@ their appearance as images. Conversion uses PDFKit, Core Graphics, Vision and Im
 device. It makes no network requests, calls no language model, and requires no account or
 shipped model weights.
 
-The only package dependency is ZIPFoundation
-0.9.20 (MIT), pinned in the manifest and resolution file. The macOS `pdf-reflow` executable is a
-small developer client of the same public API.
+The only package dependency is ZIPFoundation 0.9.20 (MIT), pinned in the manifest and
+resolution file. The macOS `pdf-reflow` executable is a small developer client of the same
+public API.
 
 SwiftPM directories use `Sources/` and `Tests/` with target-matching subdirectories.
 Supporting directories (`corpus/`, `tools/`, `scripts/`, `doc/`, `measurements/`) use lowercase names.
@@ -76,101 +76,47 @@ settings, provisional recommended ranges, and each control's tradeoffs.
 
 Other options select automatic/disabled/always OCR, opt-in retries of image-backed existing
 text (`.automaticIncludingImageBackedText`), or an opt-out that keeps image-backed existing text
-even when it fails the plausibility test below (`.automaticKeepingImageBackedText`), plus
+even when it fails the plausibility test (`.automaticKeepingImageBackedText`), plus
 language, title, author, recurring header/footer removal, raster resolution, and ceilings for
 input bytes, pages, characters, raster pixels and uncompressed output bytes. Default ceilings are 256 MiB input, 2,000 pages, 20 million characters,
 12 million pixels per raster, 180 DPI and 512 MiB output content. These are input/work bounds,
 not a process-memory or wall-clock guarantee: positioned pages are written to the workspace
 between extraction and reconstruction, the logical text of the book is retained until writing
-finishes, and images are written individually to disk. PDF documents are
-reopened in eight-page windows, synchronous page work drains autoreleased objects, and pages
-that fall back to images skip unused attributed-text decoding. Failures use
+finishes, and images are written individually to disk. Failures use
 `ConversionError`, `CancellationError`, or the underlying filesystem error.
 
 ## Conversion behavior
 
-- PDFKit line selections pair text with geometry; font runs preserve bold and italic emphasis.
-  Image attachment placeholders are excluded from semantic text and reflow counts; their
-  visible content remains in images. Placeholder-only pages follow the selected OCR policy.
-  Whitespace cuts recover ordinary columns and spanning headings. Paragraph reconstruction
-  joins hard wraps and narrowly supported cross-page continuations.
-  A bounded Type3 source-text check removes an extra native space only at a tiny kerning
-  adjustment with matching character-map, text and placement evidence; ambiguous spacing remains.
-- Validated PDF paragraph and H1–H6 tags supply grouping and heading levels. Complete tagged
-  text groups can follow logical order inside spatial barriers. Unsupported or ambiguous tags
-  report `structureFallback`; figures, lists, captions and OCR retain spatial reconstruction.
-  This is bounded tag support, not full tagged-PDF or accessibility reconstruction.
-- Soft hyphens are removed at wraps. A hard hyphen is removed only when the unbroken word occurs
-  elsewhere in the book and there is no evidence of the corresponding compound. When the book's
-  own vocabulary is silent, an English document's system word list can still decide the join,
-  again only when neither half also stands as its own word. Ambiguous
-  joins retain the hyphen and produce a warning.
-- Short recurring headers and footers can be removed when at least three pages support the
-  decision. Monospaced code retains line breaks and indentation; list markers retain their
-  source breaks. Visible typography supplies flat heading navigation. Exclusively invisible
-  text over scan images does not supply reliable code or heading typography. A heading-size line
-  must also clear the document's own body size on a page too sparse to state one of its own, and
-  a lone heading-size line opening in lowercase heads nothing unless it stacks with another
-  display-size line.
-- Core Graphics scans placed images, nested forms and painted paths. The original page renderer
-  supplies crops containing figures, ruled tables, labels and recognizable displayed formulas,
-  including bounded detached fractions.
-  Numeric dot-leader tables with supported geometry and OCR table regions also become images. Images preserve compositing and appearance rather than
-  exposing raw image resources with missing masks or detached labels.
-- Vision recognizes pages with missing/damaged text by default. OCR text is explicitly reported
-  as transcription, with an accompanying original-page image by default.
-  Existing text over a page-sized graphic retains a source reference image by default and reports
-  `unverifiedTextLayer`: transcription, tables, numbers and reading order need human review.
-  This conservative signal is not an OCR confidence score; it can also flag illustrated pages
-  with valid text. Smaller graphics and undetected scans can still contain transcription errors.
-  Under the default policy such a layer is also tested for plausibility: too few English words,
-  too many words misread in place, or too little text for the page's own text-shaped ink fails
-  it, reports `implausibleTextLayer`, and replaces the layer with fresh OCR by default (kept
-  instead under `.automaticKeepingImageBackedText` and `.never`). Fresh recognition that itself
-  does not read as English is discarded as noise (`implausibleRecognition`) rather than kept as
-  the reflowed text, and never becomes a heading. A page whose text layer holds no letter at all
-  reflows nothing of its own; if its own drawing (not its photographs) carries at least two rows
-  of text-shaped ink outside that layer, it is recognized like a page with no text layer, so its
-  words reach the reading order. Ink is read against the page's own background, so a slide
-  printed white on dark is not mistaken for a blank one. Decorative art, charts and answer keys
-  of bare surds are left with their crops.
-- Born-digital text whose fonts carry a custom `Differences` encoding of index-style glyph
-  names (`G108`, `c63`) with no `ToUnicode` map extracts as the wrong characters even though
-  the page renders correctly. When such a font is present and the page's extracted words also
-  fail English function-word and letter-pair statistics, the page reports `damagedTextEncoding`.
-  Automatic and `.always` OCR policies recognize the page image instead; `.never` keeps the
-  unreadable text with a source-page reference. The English statistics are embedded (no
-  dictionary download or model); pages declared in another language, pages with fewer than 20
-  words, composite (CID) fonts and wrong-but-present `ToUnicode` maps are not judged. Either
-  signal alone never flags a page.
-- Rotated pages, unsupported drawing operations and pages without recoverable text use an
-  explicitly warned whole-page image fallback. Visible annotations get a source reference
-  image by default; link/form interactions are not reconstructed.
-- EPUB output includes XHTML chapters, styles, metadata, heading navigation, a source page-list,
-  an OPF 3.0 package, and the required first/uncompressed `mimetype` ZIP entry. Chapter files
-  split near 60 KB at block boundaries and start at [validated numbered chapter bookmarks](doc/architecture.md).
-  XML escapes source markup; source scripts, attachments,
-  actions and remote resources are not copied into the EPUB.
+PDFKit line selections pair text with geometry and preserve bold, italic, superscript and
+subscript runs; whitespace cuts recover columns and spanning headings; paragraphs are rebuilt
+across hard wraps and page breaks; validated PDF paragraph and heading tags supply grouping and
+levels where they are trustworthy; hyphens, recurring headers and footers, code, lists and
+headings are decided by bounded, evidence-based rules. Core Graphics scans painted regions so
+figures, ruled tables, labels, displayed formulas and fractions are cropped from the original
+rendering. Vision recognizes pages with missing or damaged text, existing text that does not read
+as a plausible transcription of its page image, born-digital text without a usable Unicode
+mapping, and pages whose only writing is drawn; every such page is warned. Output is EPUB 3 with
+XHTML chapters split near 60 KB, styles, metadata, flat heading navigation, a source page-list
+and an OPF 3.0 package.
 
-PDF structure is ambiguous. The synthetic regression suite and initial FAA handbook evaluation
-do not establish general textbook fidelity. Untagged borderless tables, arbitrary equations, complex
-magazine layouts, footnote relationships, vertical/RTL reading order, and damaged font encodings
-still need broader qualification. The detector cannot identify every difficult region. Fonts,
-original colors, full tagged-PDF semantics, links and interactive elements are not reproduced.
-Cropped text is neither reflowable nor accessible as text; generic image descriptions identify
-its source page rather than inventing a description of the picture. Review warnings and compare
-the source before distributing a derived book. [Architecture](doc/architecture.md) describes
-the internal seams and extension points.
+Every rule, threshold and warning code is specified in the
+[behaviour specification](doc/behaviour.md); the modules and seams are described in
+[architecture](doc/architecture.md). PDF structure is ambiguous: untagged borderless tables,
+arbitrary equations, complex magazine layouts, footnote relationships, vertical/RTL reading order
+and damaged font encodings still need broader qualification, and fonts, original colors, full
+tagged-PDF semantics, links and interactive elements are not reproduced. Cropped text is neither
+reflowable nor accessible as text. Review warnings and compare the source before distributing a
+derived book.
 
 ## Development and regression tests
 
 For changes to extraction, layout or rendering, run `scripts/check-all.sh --corpus` before
-pushing. This opt-in lane converts 15 complete cached documents and checks reviewed content,
+pushing. This opt-in lane converts 18 complete cached documents and checks reviewed content,
 EPUB conformance, progress and resource budgets. Missing sources fail with acquisition instructions;
 there are no automatic downloads. `scripts/check-all.sh --fast` remains the offline synthetic lane.
 Python tool tests and source-region image checks require numpy and Pillow. Poppler is needed only
-to render new region references. See [regression testing](doc/regression-testing.md) for coverage,
-limitations and adding a case.
+to render new region references. See [regression testing](doc/regression-testing.md) for each
+gate, adding a case and capturing fixtures.
 
 ```sh
 swift test
@@ -194,68 +140,33 @@ Six original, redistributable-with-the-project PDFs (eight pages) are bundled wi
 | `rotated.pdf` | Explicit appearance-preserving whole-page fallback |
 | `scanned.pdf` | Real Vision OCR plus original page containing a figure |
 
-Tests also cover monotonic progress, cancellation before/during packaging, invalid input,
-resource limits, output protection, fixture identities and chapter navigation. They use the real
-Apple PDF/OCR stack, not mocks. No external test documents are downloaded. The fixture manifest
-records byte counts and SHA-256 identities.
+Tests use the real Apple PDF/OCR stack, not mocks, and download no external documents; the
+fixture manifest records byte counts and SHA-256 identities. `tools/generate_fixtures.py`
+regenerates the fixtures and manifest (ReportLab, Pillow, Poppler; development-only), and
+`tools/check_epubs.py` runs independent content/ZIP/XML/link checks and official EPUB 3.3
+validation with EPUBCheck; both are described in the regression-testing guide.
 
-For independent content/ZIP/XML/link checks and official EPUB 3.3 validation, install the optional
-development tool EPUBCheck and run:
-
-```sh
-swift build
-python3 tools/check_epubs.py --converter .build/debug/pdf-reflow \
-    --output /tmp/pdfreflow-validation --epubcheck /opt/homebrew/bin/epubcheck
-```
-
-The output directory must be new. Omitting `--epubcheck` runs only the independent structural and
-content checks. The command retains EPUBs, per-book validator logs and JSON reports. Recorded
-elapsed time includes the validator and is not a conversion benchmark.
-
-`tools/generate_fixtures.py` regenerates the corpus and manifest using ReportLab, Pillow and
-Poppler's `pdftoppm`, available only for development. It uses original text/drawings and references
-standard PDF fonts without embedding font programs. These tools are not runtime dependencies.
-Pass `--renderer /absolute/path/to/pdftoppm` when needed. Regenerate PDFs and their manifest
-together, then inspect every rendered page and rerun both suites.
-
-## Intermediate document model
-
-Reconstruction uses two custom in-memory Swift representations. `PageContent` holds positioned
-text, font/style evidence and graphic regions. `PDFReflowLibPipeline` turns these into a
-`ReflowDocument`: metadata, ordered paragraphs/headings/preformatted blocks, styled text runs,
-source-page markers and image references. Images remain in temporary files; the model holds
-small asset records pointing to them. The spatial representation is released before writing.
-
-The logical model contains no HTML or EPUB paths. Word repair and page continuation operate on
-text runs and source markers. The EPUB writer handles escaping, markup, chapter boundaries,
-navigation and ZIP layout. Tests can inspect reconstruction directly or construct a logical
-document to test serialization independently. The model is internal rather than a public
-interchange format; the supported public output remains EPUB 3. See
-[architecture](doc/architecture.md) for its structure and resource lifetime.
+Reconstruction uses two custom in-memory Swift representations, positioned `PageContent` and the
+output-independent `ReflowDocument`; the EPUB writer alone knows XHTML, chapter boundaries,
+navigation and ZIP layout. The model is internal, not a public interchange format; see
+[architecture](doc/architecture.md).
 
 ## Real-document corpus and memory gates
 
-`corpus/manifest.json` registers the 522-page FAA Pilot's Handbook of Aeronautical Knowledge
-(FAA-H-8083-25C), Tyler Wallace's 489-page Beginning and Intermediate Algebra, and the
-920-page scanned Warren Commission report, the 585-page digital 9/11 Commission report, and
-135-page The Fed Explained, plus the 10-page illustrated Dietary Guidelines for Americans
-(2025–2030), the 1,834-page Fifth National Climate Assessment, the 56-page Our Flag booklet, the 42-page CDC Zombie Pandemic comic, the 312-page
-Blue Book scanned-table report, and seven smaller sources for borderless tables, page-bottom
-footnotes, damaged text encodings, Arabic and Simplified Chinese layouts, and scanned and
-born-digital two-column academic papers,
-by exact byte identity.
-Fetch originals with
-`python3 tools/fetch_corpus.py --all`; verified copies live in gitignored `corpus/cache/`.
-Tests do not download documents. Some publisher endpoints require a manually supplied cache
-copy; the corpus guide records current fetch limitations.
-[Corpus guide](doc/corpus.md) lists their coverage, attribution and review commands. The manifest lists review points and known reading-order/raster defects, so a
-successful conversion is not mistaken for a fidelity qualification.
+`corpus/manifest.json` registers 20 real documents by exact byte identity, from the 522-page
+FAA Pilot's Handbook and the 1,834-page Fifth National Climate Assessment to two-page borderless
+tables, scanned and born-digital academic papers, Arabic and Simplified Chinese layouts, a comic,
+a slide deck and a magazine. Fetch originals with `python3 tools/fetch_corpus.py --all`; verified
+copies live in gitignored `corpus/cache/`, tests never download, and some publisher endpoints
+require a manually supplied cache copy. The [corpus guide](doc/corpus.md) indexes every case
+with its coverage, review points, attribution and commands; the manifest lists known
+reading-order and raster defects so a successful conversion is not mistaken for a fidelity
+qualification.
 
-`tools/evaluate_real_document.py` checks source identity, runs a fresh converter process,
-checks EPUB structure and progress, and enforces a configurable peak-memory ceiling. It retains
-reports and memory traces. [Memory testing](doc/memory-testing.md) explains the initial Mac
-budget, commands, physical-device limitations and standalone PDFKit leak investigation tool.
-The small allocation-control tests run without the FAA PDF.
+`tools/evaluate_real_document.py` checks source identity, runs a fresh converter process, checks
+EPUB structure and progress, and enforces a configurable peak-memory ceiling, retaining reports
+and memory traces. [Memory testing](doc/memory-testing.md) explains the Mac budgets, the
+commands, physical-device limitations and the standalone PDFKit leak investigation tools.
 
 ## Side-by-side quality review
 

@@ -91,7 +91,7 @@ private func hasImage(_ block: ReflowBlock) -> Bool {
     if case .image = block.content { return true } else { return false }
 }
 
-@Test func shiftedGlyphNamesWithoutToUnicodeReproduceTheCensusMechanism() throws {
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/38")) func shiftedGlyphNamesWithoutToUnicodeReproduceTheCensusMechanism() throws {
     let damaged = try #require(PDFDocument(data: shiftedGlyphNamePDF(sampleLines, mapped: false)))
     let page = try #require(damaged.page(at: 0))
     let text = try #require(pdfKitGated { page.string })
@@ -123,7 +123,7 @@ func fontEvidenceReadsFontsInheritedFromThePageTree() throws {
     #expect(TextEncodingCheck.hasUnmappedFont(try #require(page.pageRef)))
 }
 
-@Test func fontEvidenceRequiresIndexStyleDifferencesWithoutToUnicode() throws {
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/38")) func fontEvidenceRequiresIndexStyleDifferencesWithoutToUnicode() throws {
     func evidence(_ data: Data) throws -> Bool {
         let page = try #require(PDFDocument(data: data)?.page(at: 0))
         return TextEncodingCheck.hasUnmappedFont(try #require(page.pageRef))
@@ -154,7 +154,7 @@ func fontEvidenceReadsFontsInheritedFromThePageTree() throws {
     }
 }
 
-@Test func englishPlausibilitySeparatesShiftedTextFromProseTablesIndexesAndOCR() throws {
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/38")) func englishPlausibilitySeparatesShiftedTextFromProseTablesIndexesAndOCR() throws {
     let census3 = try SourceLayoutFixture.load("census-3").lines.map(\.text).joined(separator: "\n")
     let census3Statistics = TextEncodingCheck.statistics(of: census3)
     #expect(census3Statistics.words >= 200 && census3Statistics.stopwordRate < 0.01 && census3Statistics.rareBigramRate > 0.5)
@@ -190,7 +190,7 @@ func fontEvidenceReadsFontsInheritedFromThePageTree() throws {
     #expect(TextEncodingCheck.statistics(of: "12 34 ... ; x").words == 0)
 }
 
-@Test func bundledFixturesAndControlsCarryNoDamagedEncodingEvidence() throws {
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/38")) func bundledFixturesAndControlsCarryNoDamagedEncodingEvidence() throws {
     for name in ["prose", "scanned", "columns", "graphics", "lists-code", "rotated"] {
         let url = fixtureURL("\(name).pdf")
         let document = try #require(PDFDocument(url: url))
@@ -202,7 +202,7 @@ func fontEvidenceReadsFontsInheritedFromThePageTree() throws {
     }
 }
 
-@Test func damagedEncodingIsFlaggedRetainedOrRecognizedByPolicy() async throws {
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/38")) func damagedEncodingIsFlaggedRetainedOrRecognizedByPolicy() async throws {
     let dir = try testPDFDirectory(); defer { try? FileManager.default.removeItem(at: dir) }
     let source = dir.appendingPathComponent("shifted.pdf")
     try shiftedGlyphNamePDF(sampleLines, mapped: false).write(to: source)
@@ -236,7 +236,7 @@ func fontEvidenceReadsFontsInheritedFromThePageTree() throws {
     }
 }
 
-@Test func damagedEncodingWithoutReferencesReportsTheOmittedImage() async throws {
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/38")) func damagedEncodingWithoutReferencesReportsTheOmittedImage() async throws {
     let dir = try testPDFDirectory(); defer { try? FileManager.default.removeItem(at: dir) }
     let source = dir.appendingPathComponent("shifted.pdf")
     try shiftedGlyphNamePDF(sampleLines, mapped: false).write(to: source)
@@ -252,7 +252,7 @@ func fontEvidenceReadsFontsInheritedFromThePageTree() throws {
     #expect(decoded == warning)
 }
 
-@Test func mappedEncodingControlKeepsNativeTextUnderEveryPolicy() async throws {
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/38")) func mappedEncodingControlKeepsNativeTextUnderEveryPolicy() async throws {
     let dir = try testPDFDirectory(); defer { try? FileManager.default.removeItem(at: dir) }
     let source = dir.appendingPathComponent("mapped.pdf")
     try shiftedGlyphNamePDF(sampleLines, mapped: true).write(to: source)
@@ -268,7 +268,7 @@ func fontEvidenceReadsFontsInheritedFromThePageTree() throws {
     }
 }
 
-@Test func onlyTheDamagedPageOfAMixedBookIsFlaggedAndReferenced() async throws {
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/38")) func onlyTheDamagedPageOfAMixedBookIsFlaggedAndReferenced() async throws {
     // A clean page followed by a damaged page: only the damaged page is flagged, retained and referenced.
     let dir = try testPDFDirectory(); defer { try? FileManager.default.removeItem(at: dir) }
     let source = dir.appendingPathComponent("mixed.pdf")
@@ -335,7 +335,7 @@ private func shiftedGlyphNameOverImagePDF(_ lines: [String]) -> Data {
     return testPDF(objects: objects)
 }
 
-@Test func theImplausibleLayerGateDoesNotFireOnAPageAlreadyExplainedByDamagedEncoding() async throws {
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/38")) func theImplausibleLayerGateDoesNotFireOnAPageAlreadyExplainedByDamagedEncoding() async throws {
     // A page that independently qualifies for both #38 (damagedEncoding) and #93's imageBackedText
     // precondition: the correctly-drawn text (shifted glyph names, no ToUnicode) sits over a
     // page-filling image, exactly like a scanned page with an existing corrupted layer would. Only

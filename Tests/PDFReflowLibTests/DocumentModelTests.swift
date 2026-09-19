@@ -4,6 +4,7 @@ import ZIPFoundation
 @testable import PDFReflowLib
 
 private let pageBounds = CGRect(x: 0, y: 0, width: 600, height: 800)
+
 private func line(_ text: String, x: Double, y: Double, width: Double = 200,
                   size: Double = 12, mono: Bool = false) -> TextLine {
     TextLine(text: text, rect: CGRect(x: x, y: y, width: width, height: size), fontSize: size, monospaced: mono)
@@ -39,30 +40,6 @@ private func line(_ text: String, x: Double, y: Double, width: Double = 200,
     }
     #expect(text.text == "if value < 3:\n    print(value)")
     #expect(try EPUBTextEncoder.payload(blocks[0], imagePaths: [:]) == "if value &lt; 3:\n    print(value)")
-}
-
-@Test func wordRepairPreservesStyleAndAnInteriorSourceBoundary() {
-    var warnings: [ConversionWarning] = []
-    let repaired = LayoutReconstructor.join(InlineText("conver-", style: [.bold, .italic]),
-        InlineText("sion", style: .italic), vocabulary: ["conversion"], page: 2,
-        sourceBoundary: 2, warnings: &warnings)
-    #expect(repaired == InlineText(elements: [
-        .text("conver", [.bold, .italic]), .sourcePage(2), .text("sion", .italic),
-    ]))
-    #expect(repaired.text == "conversion")
-    #expect(repaired.sourcePages == [2])
-    #expect(warnings.isEmpty)
-    let ambiguous = LayoutReconstructor.join(InlineText("unknown-", style: .bold),
-        InlineText("word"), vocabulary: [], page: 3, warnings: &warnings)
-    #expect(ambiguous.text == "unknown-word")
-    #expect(warnings.map(\.code) == [.uncertainHyphen])
-}
-
-@Test func softHyphenRepairHandlesASeparateStyleRun() {
-    var warnings: [ConversionWarning] = []
-    let left = InlineText(elements: [.text("soft", .bold), .text("\u{00ad}", .italic)])
-    let joined = LayoutReconstructor.join(left, InlineText("ware"), vocabulary: [], page: 1, warnings: &warnings)
-    #expect(joined == InlineText(elements: [.text("soft", .bold), .text("ware", [])]))
 }
 
 @Test func trimmingStyledTextKeepsInteriorWhitespace() {

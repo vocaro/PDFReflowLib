@@ -68,7 +68,7 @@ private func caseFontObjects(flags: Int = 32, charSet: String? = "(/F/R/I/T/Z/sp
     ]
 }
 
-@Test func dingbatBulletIsReadThroughItsOwnEncoding() throws {
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/217")) func dingbatBulletIsReadThroughItsOwnEncoding() throws {
     let document = try glyphPDF(
         objects: [], contents: "BT /C0 6 Tf 6 0 0 6 275.0787 46.4281 Tm <004F>Tj ET",
         fontObjects: dingbatFontObjects(), fontNames: ["C0"])
@@ -82,7 +82,7 @@ private func caseFontObjects(flags: Int = 32, charSet: String? = "(/F/R/I/T/Z/sp
     #expect(repaired.string == "\u{25CF}")
 }
 
-@Test func caseDisagreementTrustsTheEncodedCapital() throws {
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/217")) func caseDisagreementTrustsTheEncodedCapital() throws {
     let document = try glyphPDF(
         objects: [], contents: "BT /T0 6 Tf 6 0 0 6 62.582 761.1871 Tm (Z \\(D2697-1\\))Tj ET",
         fontObjects: caseFontObjects(), fontNames: ["T0"])
@@ -99,7 +99,7 @@ private func caseFontObjects(flags: Int = 32, charSet: String? = "(/F/R/I/T/Z/sp
     #expect(repaired.attribute(GlyphIdentityReader.isolatedAttribute, at: 9, effectiveRange: nil) == nil)
 }
 
-@Test func caseDisagreementRequiresNonsymbolicFlagsAndUnlistedReportedGlyph() throws {
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/217")) func caseDisagreementRequiresNonsymbolicFlagsAndUnlistedReportedGlyph() throws {
     // Symbolic (flags without bit 32, or with bit 4) never vouches for the encoded letter.
     for flags in [0, 4, 36] {
         let document = try glyphPDF(
@@ -114,7 +114,7 @@ private func caseFontObjects(flags: Int = 32, charSet: String? = "(/F/R/I/T/Z/sp
     #expect(GlyphIdentityReader.read(try #require(bothListed.page(at: 1))).isEmpty)
 }
 
-@Test func nonDingbatFontsWithMatchingCaseSupplyNoEvidence() throws {
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/217")) func nonDingbatFontsWithMatchingCaseSupplyNoEvidence() throws {
     // A plain (non-dingbat, non-case-mismatched) font is never a candidate; the page yields none.
     let map = simpleFontUnicodeCMap(["A": "A"])
     let document = try glyphPDF(
@@ -126,14 +126,14 @@ private func caseFontObjects(flags: Int = 32, charSet: String? = "(/F/R/I/T/Z/sp
     #expect(GlyphIdentityReader.read(try #require(document.page(at: 1))).isEmpty)
 }
 
-@Test func rotatedPagesAndUnsupportedGeometrySupplyNoEvidence() throws {
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/217")) func rotatedPagesAndUnsupportedGeometrySupplyNoEvidence() throws {
     let rotated = try glyphPDF(
         objects: [], contents: "BT /C0 6 Tf 6 0 0 6 0 0 Tm <004F>Tj ET",
         fontObjects: dingbatFontObjects(), fontNames: ["C0"], rotate: 90)
     #expect(GlyphIdentityReader.read(try #require(rotated.page(at: 1))).isEmpty)
 }
 
-@Test func applyLeavesTextUnchangedOnAmbiguousOrMissingMatches() throws {
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/217")) func applyLeavesTextUnchangedOnAmbiguousOrMissingMatches() throws {
     let document = try glyphPDF(
         objects: [], contents: "BT /C0 6 Tf 6 0 0 6 275.0787 46.4281 Tm <004F>Tj ET",
         fontObjects: dingbatFontObjects(), fontNames: ["C0"])
@@ -157,7 +157,7 @@ private func caseFontObjects(flags: Int = 32, charSet: String? = "(/F/R/I/T/Z/sp
 /// letters inside "Follow" (#217). A raw substring count sees three occurrences and would stay
 /// ambiguous; the one occurrence that stands alone between word spaces disambiguates it, matching
 /// how the misread bullet actually prints (a word space on each side).
-@Test func applyResolvesARepeatedReportedLetterByWordSpaceIsolation() throws {
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/217")) func applyResolvesARepeatedReportedLetterByWordSpaceIsolation() throws {
     let document = try glyphPDF(
         objects: [], contents: "BT /C0 6 Tf 6 0 0 6 275.0787 46.4281 Tm <004F>Tj ET",
         fontObjects: dingbatFontObjects(), fontNames: ["C0"])
@@ -181,7 +181,7 @@ private func caseFontObjects(flags: Int = 32, charSet: String? = "(/F/R/I/T/Z/sp
 /// tolerance. A bullet GlyphIdentityReader redrew and found standing alone between word spaces is
 /// never read as an inline superscript, however that offset falls; an ordinary raised character
 /// elsewhere on the same line is unaffected (#217).
-@Test func anIsolatedRedrawnGlyphIsNeverReadAsAnInlineSuperscript() throws {
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/217")) func anIsolatedRedrawnGlyphIsNeverReadAsAnInlineSuperscript() throws {
     let value = NSMutableAttributedString(string: "")
     let key = NSAttributedString.Key(kCTBaselineOffsetAttributeName as String)
     value.append(NSAttributedString(string: "ar ", attributes: [.font: pdfKitGated { PlatformFont(name: "Helvetica", size: 11) }!, key: 0]))

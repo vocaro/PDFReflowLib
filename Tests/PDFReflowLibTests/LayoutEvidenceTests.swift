@@ -147,19 +147,3 @@ private let prose: [TextLine] = (0..<5).map {
     #expect(blocks[4].structureGroup == 7)
     if case .image(let image) = blocks[3].content { #expect(image.assetID == "image-4") } else { Issue.record("image block") }
 }
-
-@Test func hyphenContextDecidesJoins() {
-    var warnings: [ConversionWarning] = []
-    let known = HyphenContext(vocabulary: ["software", "hard-ware"])
-    #expect(LayoutReconstructor.join("soft-", "ware", hyphens: known, page: 1, warnings: &warnings) == "software")
-    #expect(LayoutReconstructor.join("hard-", "ware", hyphens: known, page: 1, warnings: &warnings) == "hard-ware")
-    #expect(LayoutReconstructor.join("a soft\u{00ad}", "hyphen", hyphens: known, page: 1, warnings: &warnings) == "a softhyphen")
-    #expect(LayoutReconstructor.join("plain", "words", hyphens: known, page: 1, warnings: &warnings) == "plain words")
-    #expect(warnings.isEmpty)
-    // An undecided break keeps the hyphen and warns once per page.
-    #expect(LayoutReconstructor.join("un-", "known", hyphens: known, page: 2, warnings: &warnings) == "un-known")
-    #expect(LayoutReconstructor.join("an-", "other", hyphens: known, page: 2, warnings: &warnings) == "an-other")
-    #expect(warnings.map(\.page) == [2] && warnings[0].code == .uncertainHyphen)
-    // The lexicon is consulted only when the context allows it.
-    #expect(!LayoutReconstructor.lexiconVouches(prefix: "com", suffix: "panies", usesEnglishLexicon: false))
-}

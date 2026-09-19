@@ -102,7 +102,6 @@ private func chapter(_ url: URL) throws -> String {
     #expect(nav.contains("#page-3"))
 }
 
-
 @Test func progressIsMonotonicAndEndsAfterPublication() async throws {
     let dir = try scratch(); defer { try? FileManager.default.removeItem(at: dir) }
     let output = dir.appendingPathComponent("book.epub")
@@ -301,13 +300,6 @@ private func zipEntryDateFields(_ data: Data) throws -> [(time: UInt16, date: UI
     let nav = String(decoding: try entry("EPUB/nav.xhtml", in: output), as: UTF8.self)
     #expect(nav.contains("chapter-2.xhtml#later"))
     #expect(try entry("EPUB/chapter-2.xhtml", in: output).count > 0)
-}
-
-@Test func ambiguousHyphensArePreservedAndWarned() {
-    var warnings: [ConversionWarning] = []
-    #expect(LayoutReconstructor.join("an unknown-", "word", vocabulary: [], page: 1, warnings: &warnings) == "an unknown-word")
-    #expect(warnings.map(\.code) == [.uncertainHyphen])
-    #expect(LayoutReconstructor.join("a soft\u{00ad}", "hyphen", vocabulary: [], page: 1, warnings: &warnings) == "a softhyphen")
 }
 
 @Test func encryptedInputReportsTheUnlockRequirement() async throws {

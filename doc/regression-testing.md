@@ -185,11 +185,11 @@ fixture and [third-party notices](third-party-notices.md).
 
 ## Source-derived fidelity controls
 
-`FidelityIssueTests.swift` checks the FAA page-91/511 columns, all ten Our Flag page-27 table
+`ReadingOrderTests.swift` checks the FAA page-91/511 columns, all ten Our Flag page-27 table
 pairs and both headers, and algebra page-343's inline exponent. Positive controls cover spanning
 headings/figures, ordinary prose, dot-leader contents entries, code, ellipses and sparse numeric
 rows. The 9/11 page-451 name/description fixture protects row associations from narrow-column
-cuts. `BaselineStyleTests.swift` checks both native baseline-attribute keys, unchanged small
+cuts. `NativeTextReaderTests.swift` checks both native baseline-attribute keys, unchanged small
 fonts and noisy positioning, a real PDF-to-EPUB superscript/subscript path, and CDC page-5 OCR
 line spacing that must not become inline scripts.
 
@@ -214,7 +214,7 @@ in [the three-fix measurement](../measurements/three-fidelity-fixes/record.md). 
 The comparison tests include a real-Poppler image URL check through the safe HTTP handler
 (simple and positioned modes, paths with spaces); absent Poppler is an explicit skip.
 
-`InvisibleTextTests.swift` covers exclusively hidden OCR text, visible Courier and genuine
+`PipelineRecognitionTests.swift` covers exclusively hidden OCR text, visible Courier and genuine
 font-size headings, mixed text modes, saved graphics state, nested forms and malformed modes.
 Warren pages 50/910 supply pinned source geometry; ordinary prose/index entries must not become
 code/headings, while source points 10/11 retain list formatting. The nine-page real Warren excerpt
@@ -300,7 +300,7 @@ against a 1024 MiB ceiling.
 
 ### Pages whose writing is drawn
 
-`ImageOnlyPageTests.swift` covers [#176](https://github.com/vocaro/PDFReflowLib/issues/176) on
+`TextLayerPlausibilityTests.swift` covers [#176](https://github.com/vocaro/PDFReflowLib/issues/176) on
 synthetic slides built from real glyph outlines: a 720×405 page with a dark full-bleed fill, a
 folio drawn as text and a sentence drawn as filled glyph paths is recognized under `.automatic`
 and `.automaticKeepingImageBackedText` and not under `.never`; the same page printed dark on
@@ -371,7 +371,7 @@ what remains unverified beyond the warning/recognition pattern.
 
 ## Thin-page headings and lexicon-decided hyphens
 
-`ThinPageHeadingsAndLexiconHyphensTests.swift` covers two of five leftover magazine fixes bundled
+`HeadingClassificationTests.swift (heading rules) and HyphenRepairTests.swift (lexicon joins)` covers two of five leftover magazine fixes bundled
 in [#186](https://github.com/vocaro/PDFReflowLib/issues/186): a heading-size threshold on
 thin-text pages, and system-lexicon-decided line-end hyphens. Synthetic fixtures exercise
 `LayoutReconstructor.documentHeadingFloor`, `stacksUnderHeading`, `lexiconVouches` and the public
@@ -425,7 +425,7 @@ that page.
 
 ## A sub-heading past a photograph
 
-`SubheadPastFigureTests.swift` ports #186's fifth and last leftover, tracked as
+`HeadingClassificationTests.swift` ports #186's fifth and last leftover, tracked as
 [#218](https://github.com/vocaro/PDFReflowLib/issues/218): a sidebar title set well above its own
 body text, with a photograph between the title and the paragraph it introduces, stayed a plain
 paragraph because the title-adjacency test that decides whether a styled line is a heading did not
@@ -515,7 +515,7 @@ rejects reintroduced margin noise while retaining body text, its source image an
 
 ## Heading and paragraph semantics
 
-`HeadingTests.swift` uses ten native Fed pages, including 45/46 to protect prose beside preserved tables and
+`HeadingClassificationTests.swift` uses ten native Fed pages, including 45/46 to protect prose beside preserved tables and
 sidebars. Small-font text inside an image must not promote the surrounding ordinary prose to
 headings. Synthetic controls preserve real headings and short titles beside images; 9/11 chapter
 openings provide independent source-derived heading controls. Six modest-size Fed section titles
@@ -549,7 +549,7 @@ memory, or a promise that spine boundaries correspond to actual book chapters. S
 
 ## Endnote reference typography and bounded paragraphs
 
-`EndnoteMarkerTests.swift` protects the native superscript 4 after `7:45.` on 9/11 page 20.
+`NativeTextReaderTests.swift` protects the native superscript 4 after `7:45.` on 9/11 page 20.
 The full-corpus script assertion also checks its preceding and following source context.
 This is coverage for the existing baseline-offset repair, not a new link or note-ownership feature.
 The [original investigation](../measurements/numbered-notes/record.md) retains the previously
@@ -570,7 +570,7 @@ relationships and return navigation remain open under #11.
 
 ## Native combined-line word boundaries
 
-`NativeLineBoundaryTests.swift` uses the checksum-pinned DGA cover's attributed title runs to
+`NativeTextReaderTests.swift` uses the checksum-pinned DGA cover's attributed title runs to
 require the missing space between “Guidelines” and “For Americans”. It tests both native baseline
 attribute keys, existing spaces/newlines, line-end hyphens, opposite inline scripts, unequal-size
 drop caps and ordinary same-baseline style runs. Ambiguous spaces inside a single run remain
@@ -640,7 +640,7 @@ round must produce the first round's EPUB, and the leaked objects added per conv
 within 30 per page (`--maximum-leaked-objects-per-page`). One attributed request per page leaves
 about 1,760 objects per Fed conversion; one per line, as before #4, left about 22,900 and fails.
 Leaked bytes are reported, not gated, and the Mac count does not qualify a device.
-`AttributedExtractionTests.swift` checks that a page's union request returns every styled line,
+`NativeTextReaderTests.swift` checks that a page's union request returns every styled line,
 each equal to the line's own request, and that union text aligns with its lines only in order.
 See the [repeated-conversion record](../measurements/pdfkit-repeated-conversions/record.md).
 

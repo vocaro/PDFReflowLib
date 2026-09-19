@@ -107,6 +107,22 @@ private func hasImage(_ block: ReflowBlock) -> Bool {
     #expect(!TextEncodingCheck.isImplausible(controlText, language: "en"))
 }
 
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/223"))
+func fontEvidenceReadsFontsInheritedFromThePageTree() throws {
+    // Resources are inheritable (PDF 32000-1 section 7.7.3.4): a font declared on the Pages node
+    // is the page's font exactly as one declared on the page is, and the other font readers
+    // already walk the tree for it.
+    let data = testPDF(objects: [
+        "<< /Type /Catalog /Pages 2 0 R >>",
+        "<< /Type /Pages /Kids [3 0 R] /Count 1 /Resources << /Font << /F1 5 0 R >> >> >>",
+        "<< /Type /Page /Parent 2 0 R /MediaBox [0 0 200 100] /Contents 4 0 R >>",
+        testPDFStream("BT /F1 12 Tf 10 50 Td (Hello) Tj ET"),
+        "<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding << /Differences [65 /G68 /G69 /G70] >> >>",
+    ])
+    let page = try #require(PDFDocument(data: data)?.page(at: 0))
+    #expect(TextEncodingCheck.hasUnmappedFont(try #require(page.pageRef)))
+}
+
 @Test func fontEvidenceRequiresIndexStyleDifferencesWithoutToUnicode() throws {
     func evidence(_ data: Data) throws -> Bool {
         let page = try #require(PDFDocument(data: data)?.page(at: 0))

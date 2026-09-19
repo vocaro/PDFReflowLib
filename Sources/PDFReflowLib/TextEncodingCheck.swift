@@ -18,13 +18,12 @@ enum TextEncodingCheck {
     private static let maximumFonts = 256
     private static let maximumFormDepth = 4
 
-    /// True when a Type1, TrueType, MMType1 or Type3 font in the page resources (including
-    /// nested Form XObjects) lacks `ToUnicode` and encodes at least half of its `Differences`
-    /// names as index-style names. Composite (Type0) fonts use CMaps and are not examined.
+    /// True when a Type1, TrueType, MMType1 or Type3 font in the page resources (the page's own
+    /// or those inherited from the page tree, including nested Form XObjects) lacks `ToUnicode`
+    /// and encodes at least half of its `Differences` names as index-style names. Composite
+    /// (Type0) fonts use CMaps and are not examined.
     static func hasUnmappedFont(_ page: CGPDFPage) -> Bool {
-        guard let dictionary = page.dictionary else { return false }
-        var resources: CGPDFDictionaryRef?
-        guard CGPDFDictionaryGetDictionary(dictionary, "Resources", &resources), let resources else { return false }
+        guard let resources = CGPDFObjects.inheritedResources(of: page) else { return false }
         var examined = 0
         return hasUnmappedFont(in: resources, depth: 0, examined: &examined)
     }

@@ -191,6 +191,13 @@ Evidence: [structure-tags](../measurements/structure-tags/record.md),
   original page image. Graphic-region merging and whole-line expansion repeat until the bounds
   stabilize, so a merged crop cannot cut through a newly intersecting text line; only text outside
   preserved regions reflows.
+- A page that paints no region, shows no visible text and carries no annotation, and from which
+  no text extracts, draws nothing at all; `PageReader` reports it as `emptyPage` (#224). A white
+  ground is not a painted region, and a visible text-showing operator counts even when nothing
+  extracts from it, so glyphs PDFKit cannot map are not mistaken for an empty page. The judgment
+  is made on the extracted page, before recognition, which cannot read writing the page never
+  drew; it is therefore the same under every OCR policy. Such a page is still preserved as an
+  image, so `pageImageFallback` accompanies the warning.
 
 Evidence: [shading-support](../measurements/shading-support/record.md),
 [fractions-and-invisible-text](../measurements/fractions-and-invisible-text/record.md).
@@ -438,6 +445,13 @@ chapter start or a differing tagged paragraph identity blocks a cross-page join.
 page-size estimate governs whitespace cuts and paragraph geometry. Known cross-page splits and
 folio joins are tracked in #45.
 
+The cuts recurse 32 levels. A page whose separating gaps never narrow is cut one block at a
+time, so its depth is its block count: uniform leading wider than 110% of the page body, as a
+double-spaced typescript sets, reaches the limit at 33 blocks. Ordinary pages do not come near
+it: the deepest of the captured source layouts cuts eleven levels. A group the limit leaves
+uncut keeps the order it was extracted in, and the page reports `complexLayout` rather than
+leaving that silent, as the tag phase reports its own give-up (#224).
+
 ### Type sizes and headings
 
 - The page **body** is the character-weighted commonest size over every line, at least 4 pt. The
@@ -615,8 +629,8 @@ Evidence: [spine-packing](../measurements/spine-packing/record.md),
 | `imageRegion` | Figures, tables or equations on the page are carried as crops ("Graphical regions retain source appearance as images; their internal text does not reflow."), or a source-page reference accompanies reflowed text ("A source-page reference image accompanies reflowed text to preserve all visual content."). |
 | `pageImageFallback` | The page is preserved as one image and does not reflow (rotated, unsupported, unrecoverable or empty-recognition pages). |
 | `unsupportedGraphics` | Unsupported or excessive drawing operations require the original page image. |
-| `emptyPage` | Declared but never emitted (tracked as issue 224). |
-| `complexLayout` | Declared but never emitted (tracked as issue 224). |
+| `emptyPage` | The page's content stream draws nothing at all: no extracted text, no visible text-showing operator, no painted region (a white ground is not one) and no annotation. A blank page is still carried as an image, so `pageImageFallback` accompanies it. |
+| `complexLayout` | The recursive whitespace cuts reached their depth limit before they had separated the page's content; what remained keeps the order it was extracted in (`LayoutReconstructor.ordered`). |
 | `annotationsNotConverted` | Visible annotations exist: a page image preserves them (or references are disabled); link and form interactions are not reconstructed. |
 | `referenceImageOmitted` | Analysis recommended a supplementary source-page image and client policy omitted it. |
 | `unverifiedTextLayer` | Existing text over a page-sized graphic stands unverified ("Transcription, tables, numbers and reading order may be inaccurate."); a review signal, not an OCR confidence score. |

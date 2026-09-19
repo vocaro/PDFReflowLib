@@ -1,4 +1,5 @@
 import Foundation
+import PDFKit
 import Testing
 @testable import PDFReflowLib
 
@@ -127,4 +128,45 @@ func faaSourceColumnsCompleteBeforeTheNextColumn(name: String) throws {
         #expect(range.lowerBound >= previous)
         previous = range.upperBound
     }
+}
+
+// A page whose separating gaps never narrow is cut one block at a time, so its recursion depth
+// is its block count. Ordinary pages cut nowhere near as deep (the deepest of the captured
+// source layouts cuts eleven levels), so the limit is reached only by a page set with exactly
+// uniform leading, such as a double-spaced typescript (#224). Page 1 is that page; page 2 sets
+// the same lines solid, where no gap is wide enough to cut at all.
+private func uniformlyLeadedPDF(lines: Int, leading: Double, size: Double) -> Data {
+    func page(contents: Int) -> String {
+        "<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] "
+            + "/Resources << /Font << /F1 5 0 R >> >> /Contents \(contents) 0 R >>"
+    }
+    var solid = "", spaced = ""
+    for index in 0..<lines {
+        // Every line carries the same ascenders and descenders, so the extracted line boxes,
+        // and with them the gaps between them, are exactly equal.
+        let text = "Deposition line \(100 + index) of prose, with page, dog and query in it."
+        spaced += "BT /F1 \(size) Tf 1 0 0 1 72 \(760 - Double(index) * leading) Tm (\(text)) Tj ET\n"
+        solid += "BT /F1 \(size) Tf 1 0 0 1 72 \(760 - Double(index) * size) Tm (\(text)) Tj ET\n"
+    }
+    return testPDF(objects: [
+        "<< /Type /Catalog /Pages 2 0 R >>",
+        "<< /Type /Pages /Kids [3 0 R 4 0 R] /Count 2 >>",
+        page(contents: 6), page(contents: 7),
+        "<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>",
+        testPDFStream(spaced), testPDFStream(solid),
+    ])
+}
+
+@Test func abandonedWhitespaceCutsAreReportedAsAComplexLayout() async throws {
+    let directory = try testPDFDirectory()
+    defer { try? FileManager.default.removeItem(at: directory) }
+    let input = directory.appendingPathComponent("deposition.pdf")
+    try uniformlyLeadedPDF(lines: 40, leading: 18, size: 6).write(to: input)
+    let report = try await PDFConverter().convert(from: input, to: directory.appendingPathComponent("book.epub"))
+    #expect(report.warnings.filter { $0.code == .complexLayout }.map(\.page) == [1])
+    let warning = try #require(report.warnings.first { $0.code == .complexLayout })
+    #expect(warning.message.contains("keeps the order it was extracted in"))
+    // The page still reflows: the warning reports an order that was not established, not content
+    // that was lost.
+    #expect(report.reflowedPageCount == 2)
 }

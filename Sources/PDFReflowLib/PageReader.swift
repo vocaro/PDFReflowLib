@@ -55,9 +55,21 @@ enum PageReader {
             if graphics.unsupported {
                 warnings.append(.unsupportedGraphics)
             }
-            if !page.annotations.isEmpty {
+            let annotated = !page.annotations.isEmpty
+            if annotated {
                 content.preservePageReference = true
                 warnings.append(.annotationsNotConverted)
+            }
+            // A page whose content stream paints nothing: no extracted text, no visible text
+            // operator, no painted region (a white ground is not one) and no annotation. The
+            // judgment belongs here, on the extracted page, rather than after recognition:
+            // recognition cannot read writing the page never drew, so this reading of "empty"
+            // is both the earlier and the stable one, and it stays the same under every OCR
+            // policy. A blank page still becomes a page image, so `pageImageFallback`
+            // accompanies this warning; `emptyPage` says why that image is blank (#224).
+            if content.lines.isEmpty, !annotated, !graphics.unsupported,
+               graphics.regions.isEmpty, !graphics.visibleText {
+                warnings.append(.emptyPage)
             }
             // Structural font evidence is read here; the text judgment follows outside the pool.
             let unmappedFont = !content.lines.isEmpty && !requiresPageImage && TextEncodingCheck.hasUnmappedFont(reference)

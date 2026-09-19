@@ -119,8 +119,16 @@ public struct ConversionWarning: Sendable, Codable, Equatable {
         /// Structure tags cannot safely describe some content; spatial reconstruction remains in use.
         case structureFallback
         case ocrUsed, ocrFailed, uncertainHyphen, furnitureRemoved
-        case imageRegion, pageImageFallback, unsupportedGraphics, emptyPage
-        case complexLayout, annotationsNotConverted
+        case imageRegion, pageImageFallback, unsupportedGraphics
+        /// The page's content stream draws nothing: no extracted text, no visible text
+        /// operator, no painted region and no annotation. Judged on the extracted page, before
+        /// any recognition, which cannot read writing the page never drew.
+        case emptyPage
+        /// The recursive whitespace cuts reached their depth limit before they had separated
+        /// the page's content; what they had not separated keeps the order it was extracted in
+        /// rather than a reconstructed reading order.
+        case complexLayout
+        case annotationsNotConverted
         /// A supplementary reference recommended by analysis was omitted by client policy.
         case referenceImageOmitted
         /// Existing text over a page-sized graphic has not been checked against its image.

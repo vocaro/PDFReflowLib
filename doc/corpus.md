@@ -77,7 +77,9 @@ python3 tools/compare_conversion_runs.py --baseline /tmp/dga-baseline \
 
 Capture `/tmp/dga-baseline` with the baseline converter and the same probe before comparing.
 `run_corpus_regressions.py` accepts both new flags and forwards them to every selected case.
-Keep resource measurements sequential. The probe requires the same macOS/Vision SDK as the
+Resource measurements may run concurrently (`--jobs`); see
+[parallel gates](regression-testing.md#parallel-gates) for the parity evidence and the host
+memory-pressure guard. The probe requires the same macOS/Vision SDK as the
 library. Compiling it again changes its identity; recapture both runs if that identity changes.
 
 The evaluator records a fresh run ID, converter and probe executable SHA-256, source identity,

@@ -3,6 +3,7 @@ import io
 import json
 from pathlib import Path
 import tempfile
+import threading
 from types import SimpleNamespace
 import unittest
 from unittest.mock import patch
@@ -66,3 +67,35 @@ class CorpusRunnerTests(unittest.TestCase):
         self.assertEqual(visited, ['first', 'second'])
         self.assertFalse(summary['passed'])
         self.assertEqual([r['passed'] for r in summary['results']], [False, True])
+
+    def test_jobs_run_cases_at_once_largest_first_and_summarize_in_selection_order(self):
+        for case, size in zip(self.cases, [1, 100]):
+            (self.root / 'corpus/cache' / case['filename']).write_bytes(b'x' * size)
+        both_running = threading.Barrier(2, timeout=10)
+        scheduled = []
+
+        class RecordingPool(runner.ThreadPoolExecutor):
+            def map(self, function, names):
+                scheduled.extend(names)
+                return super().map(function, scheduled)
+
+        def launch(command, **kwargs):
+            self.assertEqual(command[command.index('--concurrent-evaluations') + 1], '2')
+            both_running.wait()  # a sequential runner never releases this
+            Path(command[command.index('--output') + 1]).mkdir()
+            return SimpleNamespace(returncode=0)
+
+        with patch.object(runner.subprocess, 'run', side_effect=launch), \
+                patch.object(runner, 'ThreadPoolExecutor', RecordingPool), \
+                patch.object(runner, 'check_evaluation', side_effect=lambda case, contract, directory:
+                             {'case': case['id'], 'passed': case['id'] == 'second'}):
+            self.assertEqual(self.run_main(['--jobs', '2']), 1)
+        summary = json.loads((self.root / 'output/summary.json').read_text())
+        self.assertEqual(scheduled, ['second', 'first'])
+        self.assertEqual([r['case'] for r in summary['results']], ['first', 'second'])
+        self.assertEqual([r['passed'] for r in summary['results']], [False, True])
+
+    def test_nonpositive_jobs_are_rejected(self):
+        with self.assertRaises(SystemExit) as error:
+            self.run_main(['--jobs', '0'])
+        self.assertEqual(error.exception.code, 2)

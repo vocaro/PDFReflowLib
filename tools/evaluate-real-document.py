@@ -47,6 +47,25 @@ def memory_reader():
     return read
 
 
+def pressure_reader():
+    """Host memory pressure: 1 normal, 2 warning, 4 critical (kern.memorystatus_vm_pressure_level)."""
+    if sys.platform != "darwin":
+        return lambda: None
+    library = ctypes.CDLL("/usr/lib/libSystem.B.dylib")
+    library.sysctlbyname.argtypes = [ctypes.c_char_p, ctypes.c_void_p, ctypes.POINTER(ctypes.c_size_t),
+                                     ctypes.c_void_p, ctypes.c_size_t]
+    library.sysctlbyname.restype = ctypes.c_int
+
+    def read():
+        value = ctypes.c_int(0)
+        size = ctypes.c_size_t(ctypes.sizeof(value))
+        if library.sysctlbyname(b"kern.memorystatus_vm_pressure_level", ctypes.byref(value),
+                                ctypes.byref(size), None, 0) != 0:
+            return None
+        return value.value
+    return read
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--case", required=True)
@@ -59,6 +78,8 @@ def main():
                         help="compiled probe-raster-environment; executes in this launch context before conversion")
     parser.add_argument("--timeout", type=float, default=1800)
     parser.add_argument("--max-peak-rss-mib", type=float, help="override the case memory ceiling; fails after conversion when exceeded")
+    parser.add_argument("--concurrent-evaluations", type=int, default=1,
+                        help="evaluations the caller runs at once on this host; recorded, not enforced")
     args = parser.parse_args()
     cases = json.loads((ROOT / "corpus/manifest.json").read_text())["documents"]
     case = next((item for item in cases if item["id"] == args.case), None)
@@ -71,6 +92,8 @@ def main():
         memory_limit = case.get("memoryBudget", {}).get("maxPeakRSSMiB")
     if memory_limit is not None and (not math.isfinite(memory_limit) or memory_limit <= 0):
         parser.error("memory ceiling must be finite and positive")
+    if args.concurrent_evaluations < 1:
+        parser.error("concurrent evaluations must be positive")
     if args.pdf.stat().st_size != case["bytes"] or digest(args.pdf) != case["sha256"]:
         parser.error("PDF identity differs from the pinned corpus case")
     converter = args.converter.resolve(strict=True)
@@ -86,6 +109,7 @@ def main():
         "systemBuild": platform.version(),
         "machine": platform.machine(),
         "executionContext": args.execution_context,
+        "concurrentEvaluations": args.concurrent_evaluations,
         "options": "library defaults",
         "qualifiedForFidelity": False,
     }
@@ -114,6 +138,8 @@ def main():
     start = time.monotonic()
     with report_path.open("w") as report, (args.output / "progress.log").open("w") as log:
         read_memory = memory_reader()
+        read_pressure = pressure_reader()
+        pressures = [read_pressure()]
         samples = []
         process = subprocess.Popen([str(converter), str(args.pdf.resolve()), str(output.resolve())],
                                    stdout=report, stderr=log)
@@ -132,8 +158,10 @@ def main():
                     if re.match(r"^\d+% ", line):
                         stage = line
                 sample = read_memory(process.pid)
+                pressures.append(read_pressure())
                 if sample is not None:
-                    samples.append({"seconds": time.monotonic() - start, "progress": stage, **sample})
+                    samples.append({"seconds": time.monotonic() - start, "progress": stage,
+                                    "memoryPressureLevel": pressures[-1], **sample})
                 if time.monotonic() - start > args.timeout:
                     os.kill(process.pid, signal.SIGKILL)
                     receipt["timedOut"] = True
@@ -145,10 +173,12 @@ def main():
         (args.output / "memory-samples.json").write_text(json.dumps(samples, indent=2) + "\n")
         if samples:
             receipt["sampledPeakPhysicalFootprintBytes"] = max(s["physicalFootprintBytes"] for s in samples)
+        pressures = [level for level in pressures if level is not None]
+        receipt["peakMemoryPressureLevel"] = max(pressures) if pressures else None
     receipt["conversionSeconds"] = time.monotonic() - start
     receipt["converterPeakRSSBytes"] = usage.ru_maxrss * (1 if sys.platform == "darwin" else 1024)
     receipt["converterCPUSeconds"] = usage.ru_utime + usage.ru_stime
-    receipt["measurementScope"] = "One process run; RSS excludes separate Apple services. Timing excludes validation. Not a latency distribution or physical mobile-device measurement."
+    receipt["measurementScope"] = "One process run; RSS excludes separate Apple services. Timing excludes validation and includes contention from concurrentEvaluations - 1 other evaluations. Not a latency distribution or physical mobile-device measurement."
     success = receipt["conversionExitCode"] == 0
     if probe:
         success = success and receipt['environmentProbeCheck']['passed']
@@ -191,9 +221,14 @@ def main():
     if memory_limit is not None:
         limit_bytes = int(memory_limit * 1024 * 1024)
         within_limit = receipt["converterPeakRSSBytes"] <= limit_bytes
-        receipt["memoryGate"] = {"limitBytes": limit_bytes, "passed": within_limit,
+        # Under pressure macOS compresses and pages out resident memory, so peak RSS can pass a
+        # ceiling the same conversion would exceed on an unloaded host.
+        normal_pressure = receipt["peakMemoryPressureLevel"] in (None, 1)
+        receipt["memoryGate"] = {"limitBytes": limit_bytes, "passed": within_limit and normal_pressure,
                                  "metric": "converter process peak RSS from wait/rusage"}
-        success = success and within_limit
+        if not normal_pressure:
+            receipt["memoryGate"]["error"] = "host memory pressure above normal during conversion; peak RSS is not trustworthy"
+        success = success and receipt["memoryGate"]["passed"]
     else:
         receipt["memoryGate"] = {"status": "not configured"}
     receipt["runPassed"] = success

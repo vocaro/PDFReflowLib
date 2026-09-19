@@ -88,6 +88,21 @@ print(json.dumps({{"pageCount": 1, "reflowedPageCount": 1, "recognizedPageCount"
         self.assertTrue(result["runPassed"])
         self.assertEqual(code, 0)
 
+    def test_host_memory_pressure_fails_a_peak_below_limit(self):
+        with patch.object(runner, "pressure_reader", return_value=lambda: 2):
+            code, result = self.invoke(512)
+        self.assertEqual(result["peakMemoryPressureLevel"], 2)
+        self.assertFalse(result["memoryGate"]["passed"])
+        self.assertIn("pressure", result["memoryGate"]["error"])
+        self.assertFalse(result["runPassed"])
+        self.assertEqual(code, 1)
+
+    def test_concurrent_evaluations_are_recorded(self):
+        code, result = self.invoke(512, ["--concurrent-evaluations", "6"])
+        self.assertEqual(code, 0)
+        self.assertEqual(result["concurrentEvaluations"], 6)
+        self.assertIn(result["peakMemoryPressureLevel"], (1, None))
+
     def test_previous_child_peak_does_not_contaminate_this_run(self):
         subprocess.run([sys.executable, "-c", "allocation = b'x' * (200 * 1024 * 1024)"], check=True)
         code, result = self.invoke(160)

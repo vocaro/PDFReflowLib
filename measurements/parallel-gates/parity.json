@@ -1,0 +1,524 @@
+[
+  {
+    "case": "arxiv-replay-clocks-2023",
+    "comparisonPassed": true,
+    "changedPages": [],
+    "changedImages": [],
+    "changedReportFields": [],
+    "pageMarkersEqual": true,
+    "contentAssessmentsEqual": true,
+    "contentPassed": [
+      true,
+      true
+    ],
+    "serial": {
+      "conversionSeconds": 1.041895000002114,
+      "converterCPUSeconds": 1.1182409999999998,
+      "converterPeakRSSBytes": 173834240,
+      "peakMemoryPressureLevel": 1,
+      "concurrentEvaluations": 1
+    },
+    "parallel": {
+      "conversionSeconds": 1.2492310000016005,
+      "converterCPUSeconds": 1.315195,
+      "converterPeakRSSBytes": 178683904,
+      "peakMemoryPressureLevel": 1,
+      "concurrentEvaluations": 6
+    },
+    "memoryLimitBytes": 268435456,
+    "converterSHA256": "c5c35c9b27d31effa0d10b38144c103e9999ffdcf80449ddce9214b225127674"
+  },
+  {
+    "case": "cdc-zombie-pandemic-2011",
+    "comparisonPassed": true,
+    "changedPages": [],
+    "changedImages": [],
+    "changedReportFields": [],
+    "pageMarkersEqual": true,
+    "contentAssessmentsEqual": true,
+    "contentPassed": [
+      true,
+      true
+    ],
+    "serial": {
+      "conversionSeconds": 12.186071332998836,
+      "converterCPUSeconds": 10.566148,
+      "converterPeakRSSBytes": 446578688,
+      "peakMemoryPressureLevel": 1,
+      "concurrentEvaluations": 1
+    },
+    "parallel": {
+      "conversionSeconds": 13.239825082997413,
+      "converterCPUSeconds": 11.782727000000001,
+      "converterPeakRSSBytes": 456409088,
+      "peakMemoryPressureLevel": 1,
+      "concurrentEvaluations": 6
+    },
+    "memoryLimitBytes": 536870912,
+    "converterSHA256": "c5c35c9b27d31effa0d10b38144c103e9999ffdcf80449ddce9214b225127674"
+  },
+  {
+    "case": "census-rrs2002-01",
+    "comparisonPassed": true,
+    "changedPages": [],
+    "changedImages": [],
+    "changedReportFields": [],
+    "pageMarkersEqual": true,
+    "contentAssessmentsEqual": true,
+    "contentPassed": [
+      true,
+      true
+    ],
+    "serial": {
+      "conversionSeconds": 6.455859625002631,
+      "converterCPUSeconds": 4.563522,
+      "converterPeakRSSBytes": 261652480,
+      "peakMemoryPressureLevel": 1,
+      "concurrentEvaluations": 1
+    },
+    "parallel": {
+      "conversionSeconds": 6.1438613750033255,
+      "converterCPUSeconds": 5.149782,
+      "converterPeakRSSBytes": 274841600,
+      "peakMemoryPressureLevel": 1,
+      "concurrentEvaluations": 6
+    },
+    "memoryLimitBytes": 536870912,
+    "converterSHA256": "c5c35c9b27d31effa0d10b38144c103e9999ffdcf80449ddce9214b225127674"
+  },
+  {
+    "case": "cia-blue-book-14-1955",
+    "comparisonPassed": true,
+    "changedPages": [],
+    "changedImages": [],
+    "changedReportFields": [],
+    "pageMarkersEqual": true,
+    "contentAssessmentsEqual": true,
+    "contentPassed": [
+      true,
+      true
+    ],
+    "serial": {
+      "conversionSeconds": 32.742450000001554,
+      "converterCPUSeconds": 32.568759,
+      "converterPeakRSSBytes": 264306688,
+      "peakMemoryPressureLevel": 1,
+      "concurrentEvaluations": 1
+    },
+    "parallel": {
+      "conversionSeconds": 37.304990999997244,
+      "converterCPUSeconds": 36.941172,
+      "converterPeakRSSBytes": 298647552,
+      "peakMemoryPressureLevel": 1,
+      "concurrentEvaluations": 6
+    },
+    "memoryLimitBytes": 536870912,
+    "converterSHA256": "c5c35c9b27d31effa0d10b38144c103e9999ffdcf80449ddce9214b225127674"
+  },
+  {
+    "case": "dga-2025-2030",
+    "comparisonPassed": true,
+    "changedPages": [],
+    "changedImages": [],
+    "changedReportFields": [],
+    "pageMarkersEqual": true,
+    "contentAssessmentsEqual": true,
+    "contentPassed": [
+      true,
+      true
+    ],
+    "serial": {
+      "conversionSeconds": 0.8326112089998787,
+      "converterCPUSeconds": 0.75403,
+      "converterPeakRSSBytes": 112148480,
+      "peakMemoryPressureLevel": 1,
+      "concurrentEvaluations": 1
+    },
+    "parallel": {
+      "conversionSeconds": 0.9416054579996853,
+      "converterCPUSeconds": 0.838768,
+      "converterPeakRSSBytes": 113180672,
+      "peakMemoryPressureLevel": 1,
+      "concurrentEvaluations": 6
+    },
+    "memoryLimitBytes": 201326592,
+    "converterSHA256": "c5c35c9b27d31effa0d10b38144c103e9999ffdcf80449ddce9214b225127674"
+  },
+  {
+    "case": "faa-phak-8083-25c",
+    "comparisonPassed": true,
+    "changedPages": [],
+    "changedImages": [],
+    "changedReportFields": [],
+    "pageMarkersEqual": true,
+    "contentAssessmentsEqual": true,
+    "contentPassed": [
+      true,
+      true
+    ],
+    "serial": {
+      "conversionSeconds": 39.213759749996825,
+      "converterCPUSeconds": 39.831236000000004,
+      "converterPeakRSSBytes": 891731968,
+      "peakMemoryPressureLevel": 1,
+      "concurrentEvaluations": 1
+    },
+    "parallel": {
+      "conversionSeconds": 44.179923042000155,
+      "converterCPUSeconds": 44.577025,
+      "converterPeakRSSBytes": 980025344,
+      "peakMemoryPressureLevel": 1,
+      "concurrentEvaluations": 6
+    },
+    "memoryLimitBytes": 1342177280,
+    "converterSHA256": "c5c35c9b27d31effa0d10b38144c103e9999ffdcf80449ddce9214b225127674"
+  },
+  {
+    "case": "fed-explained-2021",
+    "comparisonPassed": true,
+    "changedPages": [],
+    "changedImages": [],
+    "changedReportFields": [],
+    "pageMarkersEqual": true,
+    "contentAssessmentsEqual": true,
+    "contentPassed": [
+      true,
+      true
+    ],
+    "serial": {
+      "conversionSeconds": 7.1753922080024495,
+      "converterCPUSeconds": 7.440046000000001,
+      "converterPeakRSSBytes": 314671104,
+      "peakMemoryPressureLevel": 1,
+      "concurrentEvaluations": 1
+    },
+    "parallel": {
+      "conversionSeconds": 8.113213667002128,
+      "converterCPUSeconds": 8.190716,
+      "converterPeakRSSBytes": 319979520,
+      "peakMemoryPressureLevel": 1,
+      "concurrentEvaluations": 6
+    },
+    "memoryLimitBytes": 805306368,
+    "converterSHA256": "c5c35c9b27d31effa0d10b38144c103e9999ffdcf80449ddce9214b225127674"
+  },
+  {
+    "case": "gpo-911-2004",
+    "comparisonPassed": true,
+    "changedPages": [],
+    "changedImages": [],
+    "changedReportFields": [],
+    "pageMarkersEqual": true,
+    "contentAssessmentsEqual": true,
+    "contentPassed": [
+      true,
+      true
+    ],
+    "serial": {
+      "conversionSeconds": 12.430579291998583,
+      "converterCPUSeconds": 12.672991,
+      "converterPeakRSSBytes": 111247360,
+      "peakMemoryPressureLevel": 1,
+      "concurrentEvaluations": 1
+    },
+    "parallel": {
+      "conversionSeconds": 12.631439958000556,
+      "converterCPUSeconds": 12.832087000000001,
+      "converterPeakRSSBytes": 114786304,
+      "peakMemoryPressureLevel": 1,
+      "concurrentEvaluations": 6
+    },
+    "memoryLimitBytes": 268435456,
+    "converterSHA256": "c5c35c9b27d31effa0d10b38144c103e9999ffdcf80449ddce9214b225127674"
+  },
+  {
+    "case": "gpo-our-flag-2003",
+    "comparisonPassed": true,
+    "changedPages": [],
+    "changedImages": [],
+    "changedReportFields": [],
+    "pageMarkersEqual": true,
+    "contentAssessmentsEqual": true,
+    "contentPassed": [
+      true,
+      true
+    ],
+    "serial": {
+      "conversionSeconds": 1.364119457997731,
+      "converterCPUSeconds": 1.181628,
+      "converterPeakRSSBytes": 103923712,
+      "peakMemoryPressureLevel": 1,
+      "concurrentEvaluations": 1
+    },
+    "parallel": {
+      "conversionSeconds": 1.4656020410002384,
+      "converterCPUSeconds": 1.295011,
+      "converterPeakRSSBytes": 106790912,
+      "peakMemoryPressureLevel": 1,
+      "concurrentEvaluations": 6
+    },
+    "memoryLimitBytes": 201326592,
+    "converterSHA256": "c5c35c9b27d31effa0d10b38144c103e9999ffdcf80449ddce9214b225127674"
+  },
+  {
+    "case": "gpo-warren-1964-suspect-text-excerpt",
+    "comparisonPassed": true,
+    "changedPages": [],
+    "changedImages": [],
+    "changedReportFields": [],
+    "pageMarkersEqual": true,
+    "contentAssessmentsEqual": true,
+    "contentPassed": [
+      true,
+      true
+    ],
+    "serial": {
+      "conversionSeconds": 4.810867042000609,
+      "converterCPUSeconds": 4.294446,
+      "converterPeakRSSBytes": 759545856,
+      "peakMemoryPressureLevel": 1,
+      "concurrentEvaluations": 1
+    },
+    "parallel": {
+      "conversionSeconds": 5.619019334000768,
+      "converterCPUSeconds": 5.2245680000000005,
+      "converterPeakRSSBytes": 777912320,
+      "peakMemoryPressureLevel": 1,
+      "concurrentEvaluations": 6
+    },
+    "memoryLimitBytes": 1073741824,
+    "converterSHA256": "c5c35c9b27d31effa0d10b38144c103e9999ffdcf80449ddce9214b225127674"
+  },
+  {
+    "case": "irs-p596-zhs-2025",
+    "comparisonPassed": true,
+    "changedPages": [],
+    "changedImages": [],
+    "changedReportFields": [],
+    "pageMarkersEqual": true,
+    "contentAssessmentsEqual": true,
+    "contentPassed": [
+      true,
+      true
+    ],
+    "serial": {
+      "conversionSeconds": 4.0531247910003,
+      "converterCPUSeconds": 4.0826080000000005,
+      "converterPeakRSSBytes": 177192960,
+      "peakMemoryPressureLevel": 1,
+      "concurrentEvaluations": 1
+    },
+    "parallel": {
+      "conversionSeconds": 5.00481608300106,
+      "converterCPUSeconds": 4.994851,
+      "converterPeakRSSBytes": 182075392,
+      "peakMemoryPressureLevel": 1,
+      "concurrentEvaluations": 6
+    },
+    "memoryLimitBytes": 268435456,
+    "converterSHA256": "c5c35c9b27d31effa0d10b38144c103e9999ffdcf80449ddce9214b225127674"
+  },
+  {
+    "case": "nbs-jres-geltman-1977",
+    "comparisonPassed": true,
+    "changedPages": [],
+    "changedImages": [],
+    "changedReportFields": [],
+    "pageMarkersEqual": true,
+    "contentAssessmentsEqual": true,
+    "contentPassed": [
+      true,
+      true
+    ],
+    "serial": {
+      "conversionSeconds": 0.7343365000015183,
+      "converterCPUSeconds": 0.634839,
+      "converterPeakRSSBytes": 270139392,
+      "peakMemoryPressureLevel": 1,
+      "concurrentEvaluations": 1
+    },
+    "parallel": {
+      "conversionSeconds": 0.7386697500005539,
+      "converterCPUSeconds": 0.664183,
+      "converterPeakRSSBytes": 273940480,
+      "peakMemoryPressureLevel": 1,
+      "concurrentEvaluations": 6
+    },
+    "memoryLimitBytes": 536870912,
+    "converterSHA256": "c5c35c9b27d31effa0d10b38144c103e9999ffdcf80449ddce9214b225127674"
+  },
+  {
+    "case": "ntrs-20180003024-earthdata-slides-2018",
+    "comparisonPassed": true,
+    "changedPages": [],
+    "changedImages": [],
+    "changedReportFields": [],
+    "pageMarkersEqual": true,
+    "contentAssessmentsEqual": true,
+    "contentPassed": [
+      true,
+      true
+    ],
+    "serial": {
+      "conversionSeconds": 0.8348324590006087,
+      "converterCPUSeconds": 0.725558,
+      "converterPeakRSSBytes": 95043584,
+      "peakMemoryPressureLevel": 1,
+      "concurrentEvaluations": 1
+    },
+    "parallel": {
+      "conversionSeconds": 0.948946958000306,
+      "converterCPUSeconds": 0.8316359999999999,
+      "converterPeakRSSBytes": 96714752,
+      "peakMemoryPressureLevel": 1,
+      "concurrentEvaluations": 6
+    },
+    "memoryLimitBytes": 134217728,
+    "converterSHA256": "c5c35c9b27d31effa0d10b38144c103e9999ffdcf80449ddce9214b225127674"
+  },
+  {
+    "case": "scotus-loper-bright-2024",
+    "comparisonPassed": true,
+    "changedPages": [],
+    "changedImages": [],
+    "changedReportFields": [],
+    "pageMarkersEqual": true,
+    "contentAssessmentsEqual": true,
+    "contentPassed": [
+      true,
+      true
+    ],
+    "serial": {
+      "conversionSeconds": 1.0467832920003275,
+      "converterCPUSeconds": 0.9531569999999999,
+      "converterPeakRSSBytes": 41811968,
+      "peakMemoryPressureLevel": 1,
+      "concurrentEvaluations": 1
+    },
+    "parallel": {
+      "conversionSeconds": 1.2595445410006505,
+      "converterCPUSeconds": 1.1371989999999998,
+      "converterPeakRSSBytes": 42647552,
+      "peakMemoryPressureLevel": 1,
+      "concurrentEvaluations": 6
+    },
+    "memoryLimitBytes": 134217728,
+    "converterSHA256": "c5c35c9b27d31effa0d10b38144c103e9999ffdcf80449ddce9214b225127674"
+  },
+  {
+    "case": "uscis-m618-arabic-2015",
+    "comparisonPassed": true,
+    "changedPages": [],
+    "changedImages": [],
+    "changedReportFields": [],
+    "pageMarkersEqual": true,
+    "contentAssessmentsEqual": true,
+    "contentPassed": [
+      true,
+      true
+    ],
+    "serial": {
+      "conversionSeconds": 8.33932058299979,
+      "converterCPUSeconds": 8.404703,
+      "converterPeakRSSBytes": 173965312,
+      "peakMemoryPressureLevel": 1,
+      "concurrentEvaluations": 1
+    },
+    "parallel": {
+      "conversionSeconds": 9.453702457998588,
+      "converterCPUSeconds": 9.440230999999999,
+      "converterPeakRSSBytes": 180748288,
+      "peakMemoryPressureLevel": 1,
+      "concurrentEvaluations": 6
+    },
+    "memoryLimitBytes": 268435456,
+    "converterSHA256": "c5c35c9b27d31effa0d10b38144c103e9999ffdcf80449ddce9214b225127674"
+  },
+  {
+    "case": "usda-ars-agresearch-2012-11",
+    "comparisonPassed": true,
+    "changedPages": [],
+    "changedImages": [],
+    "changedReportFields": [],
+    "pageMarkersEqual": true,
+    "contentAssessmentsEqual": true,
+    "contentPassed": [
+      true,
+      true
+    ],
+    "serial": {
+      "conversionSeconds": 5.556314124998607,
+      "converterCPUSeconds": 5.610843,
+      "converterPeakRSSBytes": 293404672,
+      "peakMemoryPressureLevel": 1,
+      "concurrentEvaluations": 1
+    },
+    "parallel": {
+      "conversionSeconds": 6.24332066700299,
+      "converterCPUSeconds": 6.247504,
+      "converterPeakRSSBytes": 303529984,
+      "peakMemoryPressureLevel": 1,
+      "concurrentEvaluations": 6
+    },
+    "memoryLimitBytes": 536870912,
+    "converterSHA256": "c5c35c9b27d31effa0d10b38144c103e9999ffdcf80449ddce9214b225127674"
+  },
+  {
+    "case": "usgs-mcs2025-copper",
+    "comparisonPassed": true,
+    "changedPages": [],
+    "changedImages": [],
+    "changedReportFields": [],
+    "pageMarkersEqual": true,
+    "contentAssessmentsEqual": true,
+    "contentPassed": [
+      true,
+      true
+    ],
+    "serial": {
+      "conversionSeconds": 0.21314412499850732,
+      "converterCPUSeconds": 0.133877,
+      "converterPeakRSSBytes": 32833536,
+      "peakMemoryPressureLevel": 1,
+      "concurrentEvaluations": 1
+    },
+    "parallel": {
+      "conversionSeconds": 0.2135505420010304,
+      "converterCPUSeconds": 0.160123,
+      "converterPeakRSSBytes": 33669120,
+      "peakMemoryPressureLevel": 1,
+      "concurrentEvaluations": 6
+    },
+    "memoryLimitBytes": 134217728,
+    "converterSHA256": "c5c35c9b27d31effa0d10b38144c103e9999ffdcf80449ddce9214b225127674"
+  },
+  {
+    "case": "wallace-algebra-2010",
+    "comparisonPassed": true,
+    "changedPages": [],
+    "changedImages": [],
+    "changedReportFields": [],
+    "pageMarkersEqual": true,
+    "contentAssessmentsEqual": true,
+    "contentPassed": [
+      true,
+      true
+    ],
+    "serial": {
+      "conversionSeconds": 10.733935042000667,
+      "converterCPUSeconds": 11.598293,
+      "converterPeakRSSBytes": 83869696,
+      "peakMemoryPressureLevel": 1,
+      "concurrentEvaluations": 1
+    },
+    "parallel": {
+      "conversionSeconds": 12.30560237499958,
+      "converterCPUSeconds": 12.986249,
+      "converterPeakRSSBytes": 87064576,
+      "peakMemoryPressureLevel": 1,
+      "concurrentEvaluations": 6
+    },
+    "memoryLimitBytes": 268435456,
+    "converterSHA256": "c5c35c9b27d31effa0d10b38144c103e9999ffdcf80449ddce9214b225127674"
+  }
+]

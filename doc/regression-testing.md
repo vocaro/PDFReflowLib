@@ -11,20 +11,49 @@ A valid EPUB can still contain incorrect text, wrong reading order or unreadable
   pixels, including crop origins, rotations, annotations and resource ceilings. Preserved-region
   tests also inspect fraction bars, raised exponents and all six cells of a ruled table in actual
   EPUB images at 72/144 DPI, with surrounding-prose and code controls.
-- `scripts/check-all.sh --corpus`: the same checks plus 15 complete PDF conversions,
-  sequentially, with EPUBCheck, monotonic progress, pinned source identities, memory budgets
-  and reviewed page-specific content contracts. All selected cached sources and EPUBCheck
-  are required; missing data fails explicitly. The evaluator does not download anything.
+- `scripts/check-all.sh --corpus`: the same checks plus 15 complete PDF conversions, six at a
+  time ([parallel gates](#parallel-gates)), with EPUBCheck, monotonic progress, pinned source
+  identities, memory budgets and reviewed page-specific content contracts. All selected cached
+  sources and EPUBCheck are required; missing data fails explicitly. The evaluator does not
+  download anything.
 - `tools/check_corpus_content.py --case <id> --evaluation <directory>`: run the content contract
   against an existing complete evaluation without reconverting. This is an additional content
   check, not a replacement for the evaluator's EPUB/resource checks.
 - `tools/run_corpus_regressions.py --converter <CLI> --epubcheck <executable> --output <new-directory>`:
   run the corpus lane directly. Repeat `--case <id>` to narrow a debugging run; the summary
-  lists omitted cases explicitly. A failing case does not hide subsequent results.
+  lists omitted cases explicitly. A failing case does not hide subsequent results. `--jobs N`
+  evaluates N cases at once (default 1).
 
 Fetch originals explicitly with `tools/fetch_corpus.py --case <id>`. Downloads are cached and
 checksum-verified. Publisher-blocked downloads require an owner-supplied matching original;
 see [corpus instructions](corpus.md). Large originals and output EPUBs remain gitignored.
+
+### Parallel gates
+
+`check-all.sh` runs its gates in three steps. The Swift suite and the release build run one after
+the other, because they share `.build`'s lock, alongside the Python tool tests. The PDFKit
+concurrency stress then runs alone, since contention from other gates would change the thread
+interleavings it samples. Every remaining gate then starts at once, each in its own processes
+with its own log under the printed results directory; the corpus lane converts
+`PDFREFLOW_CORPUS_JOBS` (default 6) cases at a time, largest source first. A failed gate prints
+its log's tail; the others still finish, and the script ends with a table of every gate's
+seconds. A failure in the first step stops the run, since later gates need its build.
+
+`PDFREFLOW_CHECKS_SERIAL=1` runs every gate and corpus case one at a time, with output on the
+terminal: the reference to check a failure seen only in the parallel run against.
+
+The converter is single-threaded (CPU seconds match wall seconds on every corpus case), so cases
+in separate processes scale with cores. Peak RSS is measured per process, so concurrent cases do
+not share a reading. Under host memory pressure, though, macOS compresses and pages out resident
+memory, and a conversion could come in under a ceiling it would exceed on an unloaded host. The
+evaluator therefore samples `kern.memorystatus_vm_pressure_level` throughout each conversion,
+records `peakMemoryPressureLevel` and `concurrentEvaluations` in `result.json`, and fails the
+memory gate when pressure rises above normal. Every current ceiling together totals 7.5 GiB.
+
+Serial and six-job corpus runs on one commit agree on every case under
+`tools/compare_conversion_runs.py` and in their content assessments; in parallel, peak RSS reads
+1–13% higher, not lower, and conversion times include contention
+([record](../measurements/parallel-gates/record.md)).
 
 ### Inspecting large outputs
 

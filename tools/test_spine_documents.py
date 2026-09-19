@@ -1,10 +1,7 @@
-import importlib.util
 from pathlib import Path
 import unittest
 
-spec = importlib.util.spec_from_file_location('epub_contracts', Path(__file__).with_name('check-epubs.py'))
-contracts = importlib.util.module_from_spec(spec)
-spec.loader.exec_module(contracts)
+import check_epubs as contracts
 
 
 def document(body):

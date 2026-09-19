@@ -5,7 +5,6 @@ Uses only the Python standard library. Pass --epubcheck for full EPUB 3.3 confor
 Output directories must be new, so evidence cannot be silently overwritten.
 """
 import argparse
-import hashlib
 import json
 from pathlib import Path
 import re
@@ -16,9 +15,11 @@ import urllib.parse
 import zipfile
 import xml.etree.ElementTree as ET
 
-ROOT = Path(__file__).resolve().parents[1]
-FIXTURES = ROOT / "Tests/PDFReflowLibTests/fixtures"
-NS = {"opf": "http://www.idpf.org/2007/opf", "html": "http://www.w3.org/1999/xhtml"}
+from pdfreflow_tools import epub
+from pdfreflow_tools.converter import convert, run_epubcheck
+from pdfreflow_tools.corpus import FIXTURES, matches_identity
+
+NS = epub.NS
 EXPECTED = {
     "prose": (3, 3, ["reliable conversion", "remains well-known", "losing the original sentence"]),
     "columns": (1, 1, ["LEFT FIRST", "LEFT LAST", "RIGHT FIRST", "RIGHT LAST"]),
@@ -29,15 +30,14 @@ EXPECTED = {
 }
 
 
-XHTML = '{http://www.w3.org/1999/xhtml}'
+XHTML = epub.XHTML
 HEADINGS = {XHTML + 'h' + str(level) for level in range(1, 7)}
 # The writer keeps a heading run of at most a tenth of the body target with its following content.
 KEPT_HEADING_BYTES = 6_000
 
 
 def is_page_boundary(node):
-    return (node.tag == XHTML + 'span'
-            and 'pagebreak' in node.get('{http://www.idpf.org/2007/ops}type', '').split())
+    return node.tag == XHTML + 'span' and epub.is_page_boundary(node)
 
 
 _MARKER = rb'<span epub:type="pagebreak"[^>]*/>'
@@ -95,19 +95,17 @@ def check(path):
         assert len(set(names)) == len(names), "duplicate archive entries"
         first = archive.infolist()[0]
         assert first.filename == "mimetype" and first.compress_type == zipfile.ZIP_STORED
-        assert archive.read("mimetype") == b"application/epub+zip"
+        assert archive.read("mimetype") == epub.MIMETYPE
         documents = {name: ET.fromstring(archive.read(name)) for name in names
                      if name.endswith((".xhtml", ".xml", ".opf"))}
-        opf = documents["EPUB/package.opf"]
-        assert opf.attrib["version"] == "3.0"
-        manifest = {item.attrib["id"]: item.attrib for item in opf.findall("opf:manifest/opf:item", NS)}
-        for item in manifest.values():
+        package = epub.parse_package(documents[epub.PACKAGE])
+        assert package.version == "3.0"
+        for item in package.items.values():
             assert "EPUB/" + item["href"] in names
-        assert any(item.get("properties") == "nav" for item in manifest.values())
+        assert any(item.get("properties") == "nav" for item in package.items.values())
         chapters = []
         names_by_tree = {}
-        for ref in opf.findall("opf:spine/opf:itemref", NS):
-            name = "EPUB/" + manifest[ref.attrib["idref"]]["href"]
+        for name in package.spine:
             check_spine_document(archive.read(name))
             chapters.append(documents[name])
             names_by_tree[id(documents[name])] = name
@@ -147,13 +145,10 @@ def main():
     records = []
     for fixture in manifest["fixtures"]:
         source = FIXTURES / fixture["file"]
-        assert hashlib.sha256(source.read_bytes()).hexdigest() == fixture["sha256"]
-        assert source.stat().st_size == fixture["bytes"]
+        assert matches_identity(source, fixture)
         output = args.output / (source.stem + ".epub")
         start = time.monotonic()
-        result = subprocess.run([str(args.converter.resolve()), str(source), str(output)],
-                                capture_output=True, text=True, check=True)
-        report = json.loads(result.stdout)
+        report = convert(args.converter.resolve(), source, output).report
         text = check(output)
         pages, reflowed, phrases = EXPECTED[source.stem]
         assert report["pageCount"] == pages
@@ -164,16 +159,13 @@ def main():
             assert text.index("LEFT LAST") < text.index("RIGHT FIRST")
         if source.stem == "graphics":
             assert report["imageCount"] == 3, report
-        checker = None
         if args.epubcheck:
-            validated = subprocess.run([str(args.epubcheck), str(output)], capture_output=True, text=True)
-            checker = validated.stdout + validated.stderr
-            (args.output / (source.stem + "-epubcheck.txt")).write_text(checker)
-            assert validated.returncode == 0, checker
+            log = args.output / (source.stem + "-epubcheck.txt")
+            assert run_epubcheck(args.epubcheck, output, log) == 0, log.read_text()
         records.append({"fixture": fixture, "report": report,
                         "elapsedSeconds": time.monotonic() - start,
                         "outputBytes": output.stat().st_size,
-                        "epubcheck": "passed" if checker is not None else "not run"})
+                        "epubcheck": "passed" if args.epubcheck else "not run"})
         print(f"PASS {source.name}", flush=True)
     (args.output / "results.json").write_text(json.dumps({"cases": records}, indent=2) + "\n")
     print(f"PASS {len(records)} fixture conversions; XML, spine, assets, anchors, source text and order")

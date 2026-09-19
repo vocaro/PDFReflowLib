@@ -12,11 +12,12 @@ import re
 import sys
 import zipfile
 
+from pdfreflow_tools.epub import PACKAGE
+
 VOLATILE = [
     (re.compile(rb'<dc:identifier id="book-id">[^<]*</dc:identifier>'), b'<dc:identifier id="book-id">IDENTIFIER</dc:identifier>'),
     (re.compile(rb'<meta property="dcterms:modified">[^<]*</meta>'), b'<meta property="dcterms:modified">MODIFIED</meta>'),
 ]
-PACKAGE = 'EPUB/package.opf'
 REPORT_VOLATILE = {'outputURL'}
 
 

@@ -12,16 +12,13 @@ import tempfile
 from urllib.parse import urlsplit
 from urllib.request import Request, urlopen
 
-ROOT = Path(__file__).resolve().parents[1]
+from pdfreflow_tools.corpus import ROOT, manifest_cases, matches_identity
 
 
 def valid_identity(path, case):
     if path.is_symlink():
         raise ValueError(f"Cache entry is a symlink: {path}")
-    if not path.is_file() or path.stat().st_size != case['bytes']:
-        return False
-    with path.open('rb') as stream:
-        return hashlib.file_digest(stream, 'sha256').hexdigest() == case['sha256']
+    return path.is_file() and matches_identity(path, case)
 
 
 def validate_case(case):
@@ -97,7 +94,7 @@ def main(argv=None):
     args = parser.parse_args(argv)
     if not math.isfinite(args.timeout) or args.timeout <= 0:
         parser.error('timeout must be finite and positive')
-    cases = json.loads((ROOT / 'corpus/manifest.json').read_text())['documents']
+    cases = manifest_cases(ROOT)
     if len({c['id'] for c in cases}) != len(cases) or len({c['filename'] for c in cases}) != len(cases):
         parser.error('duplicate corpus case ID or filename')
     selected = cases if args.all else [c for c in cases if c['id'] in args.cases]

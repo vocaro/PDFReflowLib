@@ -439,6 +439,11 @@ unchanged. Recorded measurement outputs retain historical paths and hashes from 
 (logs, archives, renders, converted books) are not committed, and `tools/check_measurements.py`
 fails a change that adds one or more than two megabytes there. Tooling a gate runs lives under
 `tools/` (`repeated_conversions/`, `vision_titles/`, `epub_identity.py`), never under a record.
+The gate scripts share their plumbing through the `tools/pdfreflow_tools/` package: `corpus.py`
+(the repository root, manifest and contract loading, byte-count and SHA-256 identities),
+`converter.py` (fresh converter and EPUBCheck processes), `epub.py` (archive admission and
+package parsing) and `swift_sources.py` (the library files each standalone probe under
+`tools/probes/` compiles against). Measurement records cite the paths as measured.
 
 Opt-in corpus quality signaling is checked separately from EPUB validity and resource limits.
 `tools/check_corpus_quality.py` applies manifest expectations to a real-document evaluation:

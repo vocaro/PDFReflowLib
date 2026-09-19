@@ -165,15 +165,12 @@ table grids and nearby prose supply negative controls; algebra page 479 supplies
 answer-key fraction checks. See [fraction and OCR-typography evidence](../measurements/fractions-and-invisible-text/record.md).
 Future unresolved cases must stay explicit rather than becoming passing golden output.
 
-To recapture the algebra geometry with full Xcode selected:
+To recapture the algebra geometry with full Xcode selected, from the repository root
+(`tools/pdfreflow_tools/swift_sources.py` lists the library files each probe under
+`tools/probes/` compiles against):
 
 ```sh
-swiftc Sources/PDFReflowLib/NativeTextReader.swift Sources/PDFReflowLib/NativeSpacingReader.swift \
-  Sources/PDFReflowLib/GlyphIdentityReader.swift Sources/PDFReflowLib/ContentStreamWalk.swift \
-  Sources/PDFReflowLib/CGPDFObjects.swift Sources/PDFReflowLib/AnchorMatcher.swift \
-  Sources/PDFReflowLib/ConversionTypes.swift \
-  Sources/PDFReflowLib/DocumentModel.swift Sources/PDFReflowLib/ReflowDocument.swift \
-  Sources/PDFReflowLib/GraphicsReader.swift tools/capture-algebra-layout.swift \
+swiftc $(python3 tools/pdfreflow_tools/swift_sources.py capture-algebra-layout.swift) \
   -o /tmp/capture-algebra-layout
 /tmp/capture-algebra-layout corpus/cache/Beginning_and_Intermediate_Algebra.pdf /tmp/algebra-17-layout.json
 ```
@@ -197,12 +194,7 @@ These small JSONs capture native extraction from checksum-pinned sources, not co
 They run offline on macOS and iOS. Capture another page with full Xcode selected:
 
 ```sh
-swiftc Sources/PDFReflowLib/NativeTextReader.swift Sources/PDFReflowLib/NativeSpacingReader.swift \
-  Sources/PDFReflowLib/GlyphIdentityReader.swift Sources/PDFReflowLib/ContentStreamWalk.swift \
-  Sources/PDFReflowLib/CGPDFObjects.swift Sources/PDFReflowLib/AnchorMatcher.swift \
-  Sources/PDFReflowLib/ConversionTypes.swift \
-  Sources/PDFReflowLib/DocumentModel.swift Sources/PDFReflowLib/ReflowDocument.swift \
-  Sources/PDFReflowLib/GraphicsReader.swift tools/capture-layout-fixture.swift \
+swiftc $(python3 tools/pdfreflow_tools/swift_sources.py capture-layout-fixture.swift) \
   -o /tmp/capture-layout-fixture
 /tmp/capture-layout-fixture faa-phak-8083-25c 91 /tmp/faa-91-layout.json
 ```
@@ -228,7 +220,7 @@ prose, graphical crops and required page fallbacks. It verifies independent page
 and PNG bytes with matching EPUB media types, clean/noisy smallest-encoding choices, unchanged
 raster dimensions, invalid qualities, and size-failure cleanup without false completion.
 
-`check-conversion-policies.py` runs actual CLI policy combinations through independent
+`check_conversion_policies.py` runs actual CLI policy combinations through independent
 EPUB structure checks, optional EPUBCheck and the internal reader. Invalid and over-budget
 requests must fail without output or completion. Header/footer cases require `prose.pdf`'s
 running header to be absent by default and with `remove`, present on all three pages with `keep`,
@@ -263,7 +255,7 @@ with `ocrUsed`, `.automaticKeepingImageBackedText` and `.never` keep the garbled
 `unverifiedTextLayer`; over a blank image recognition finds nothing and the message says the page
 is preserved as an image; the same image under a faithful layer is neither reported nor
 recognized. A layer holding only the last line fails the ink test and is recognized by default and
-kept by the opt-out policy; the complete layer is not reported. `check-conversion-policies.py`
+kept by the opt-out policy; the complete layer is not reported. `check_conversion_policies.py`
 adds `--ocr keep-image-backed`, which still recognizes the scanned fixture's absent text (a page
 with no native text at all is not exempted by the opt-out, which only covers existing text over
 a page-sized graphic).

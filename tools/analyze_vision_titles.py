@@ -6,8 +6,7 @@ import math
 from pathlib import Path
 import re
 
-
-ROOT = Path(__file__).resolve().parents[1]
+from pdfreflow_tools.corpus import ROOT, manifest_cases
 
 
 def normalize(text):
@@ -69,7 +68,7 @@ def assess(capture, review):
 
 def analyze(captures, review_path):
     reviews = json.loads(review_path.read_text())["pages"]
-    manifest = {d["id"]: d["sha256"] for d in json.loads((ROOT / "corpus/manifest.json").read_text())["documents"]}
+    manifest = {d["id"]: d["sha256"] for d in manifest_cases(ROOT)}
     results = []
     for review in reviews:
         capture = json.loads((captures / review["capture"]).read_text())

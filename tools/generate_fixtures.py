@@ -5,7 +5,6 @@ The built-in PDF fonts are referenced, not redistributed as embedded font progra
 Regeneration updates the fixture identity manifest in the same operation.
 """
 import argparse
-import hashlib
 import json
 from pathlib import Path
 import subprocess
@@ -15,8 +14,7 @@ from PIL import Image, ImageDraw
 from reportlab.pdfgen import canvas
 from reportlab.lib.utils import ImageReader
 
-
-DESTINATION = Path(__file__).resolve().parents[1] / "Tests/PDFReflowLibTests/fixtures"
+from pdfreflow_tools.corpus import FIXTURES as DESTINATION, identity
 
 
 def page(c, lines, x=54, y=690, size=12, step=18, font="Helvetica"):
@@ -133,9 +131,7 @@ def generate(renderer):
 
     manifest = {
         "provenance": "Original synthetic text and drawings; no external documents or embedded font programs.",
-        "fixtures": [{"file": p.name, "bytes": p.stat().st_size,
-                      "sha256": hashlib.sha256(p.read_bytes()).hexdigest()}
-                     for p in sorted(DESTINATION.glob("*.pdf"))],
+        "fixtures": [{"file": p.name, **identity(p)} for p in sorted(DESTINATION.glob("*.pdf"))],
     }
     (DESTINATION / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
 

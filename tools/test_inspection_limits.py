@@ -126,8 +126,12 @@ class InspectionLimitTests(unittest.TestCase):
         corpus.mkdir()
         (corpus / 'manifest.json').write_text(json.dumps(dict(documents=[case])))
         (corpus / 'regressions.json').write_text(json.dumps(dict(cases=[contract])))
+        # The copied script resolves its repository root from its own location, so the fake
+        # corpus above is what its command line reads; its package comes along for the same reason.
         tools = self.directory / 'tools'
         tools.mkdir()
+        shutil.copytree(ROOT / 'tools/pdfreflow_tools', tools / 'pdfreflow_tools',
+                        ignore=shutil.ignore_patterns('__pycache__', 'test_*'))
         self.script = tools / 'check_corpus_content.py'
         shutil.copyfile(ROOT / 'tools/check_corpus_content.py', self.script)
         return case, contract

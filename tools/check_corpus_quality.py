@@ -9,7 +9,7 @@ import json
 import re
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]
+from pdfreflow_tools.corpus import ROOT, find_case, manifest_cases
 
 
 def assess(case, result, report, log, *, output_exists, staging_exists):
@@ -50,8 +50,7 @@ def main():
     parser.add_argument('--case', required=True)
     parser.add_argument('--evaluation', type=Path, required=True)
     args = parser.parse_args()
-    cases = json.loads((ROOT / 'corpus/manifest.json').read_text())['documents']
-    case = next((c for c in cases if c['id'] == args.case), None)
+    case = find_case(manifest_cases(ROOT), args.case)
     if case is None or 'qualityExpectation' not in case:
         parser.error('case has no warning/refusal expectation')
     directory = args.evaluation

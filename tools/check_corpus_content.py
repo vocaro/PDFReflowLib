@@ -7,25 +7,16 @@ Phrase checks are page-specific; whitespace and inline styling do not affect mat
 import argparse
 import json
 from pathlib import Path, PurePosixPath
-import re
-import sys
 import xml.etree.ElementTree as ET
 import zipfile
 
-ROOT = Path(__file__).resolve().parents[1]
-HTML = '{http://www.w3.org/1999/xhtml}'
-OPF = '{http://www.idpf.org/2007/opf}'
-EPUB = '{http://www.idpf.org/2007/ops}'
+from pdfreflow_tools import epub
+from pdfreflow_tools.corpus import ROOT, find_case, manifest_cases, regression_contracts
+from pdfreflow_tools.epub import DEFAULT_MAX_ENTRIES, DEFAULT_MAX_UNCOMPRESSED_BYTES, inspection_limit
+
+HTML = epub.XHTML
 HEADINGS = {HTML + 'h' + str(n) for n in range(1, 7)}
 BLOCKS = HEADINGS | {HTML + tag for tag in ('p', 'pre', 'figure', 'li')}
-DEFAULT_MAX_ENTRIES = 10_000
-DEFAULT_MAX_UNCOMPRESSED_BYTES = 512 * 1024 * 1024
-
-
-def inspection_limit(value, name):
-    if type(value) is not int or not 1 <= value <= sys.maxsize:
-        raise ValueError(f'{name} must be an integer from 1 to {sys.maxsize}')
-    return value
 
 
 def cli_inspection_limit(value):
@@ -46,24 +37,15 @@ def read_pages(path, *, max_entries=DEFAULT_MAX_ENTRIES,
     These admission limits are not process-memory budgets. Images are not expanded;
     chapter XML and accumulated page text still consume memory after admission.
     """
-    inspection_limit(max_entries, 'max_entries')
-    inspection_limit(max_uncompressed_bytes, 'max_uncompressed_bytes')
     pages, markers = {}, []
     current = None
     heading_id = 0
     paragraph_id = 0
-    with zipfile.ZipFile(path) as archive:
-        if (len(archive.infolist()) > max_entries
-                or sum(e.file_size for e in archive.infolist()) > max_uncompressed_bytes):
-            raise ValueError('EPUB exceeds inspection bounds')
+    with epub.open_archive(path, max_entries=max_entries, max_uncompressed_bytes=max_uncompressed_bytes) as archive:
         names = set(archive.namelist())
-        if len(names) != len(archive.infolist()):
-            raise ValueError('Duplicate archive entries')
-        package = ET.fromstring(archive.read('EPUB/package.opf'))
-        manifest = {e.get('id'): e.get('href') for e in package.find(OPF + 'manifest')}
-        for reference in package.find(OPF + 'spine'):
-            chapter = PurePosixPath('EPUB') / manifest[reference.get('idref')]
-            tree = ET.fromstring(archive.read(str(chapter)))
+        for name in epub.read_package(archive).spine:
+            chapter = PurePosixPath(name)
+            tree = ET.fromstring(archive.read(name))
 
             def append(text, script=None, heading=None, paragraph=None):
                 if current is not None and text:
@@ -83,13 +65,11 @@ def read_pages(path, *, max_entries=DEFAULT_MAX_ENTRIES,
 
             def walk(element, script=None, heading=None, paragraph=None):
                 nonlocal current, heading_id, paragraph_id
-                if 'pagebreak' in element.get(EPUB + 'type', '').split():
-                    anchor = element.get('id', '')
-                    if not re.fullmatch(r'page-[1-9]\d*', anchor):
-                        raise ValueError('Invalid page boundary')
-                    current = int(anchor[5:])
-                    if current in pages:
+                page = epub.page_boundary(element)
+                if page is not None:
+                    if page in pages:
                         raise ValueError('Duplicate page boundary')
+                    current = page
                     markers.append(current)
                     pages[current] = {'text': '', 'images': [], 'scripts': [], 'headings': {}, 'paragraphs': {}}
                 if element.tag == HTML + 'img' and current is not None:
@@ -293,10 +273,8 @@ def main():
                         default=DEFAULT_MAX_UNCOMPRESSED_BYTES,
                         help=f'maximum total expanded ZIP bytes (default: {DEFAULT_MAX_UNCOMPRESSED_BYTES})')
     args = parser.parse_args()
-    cases = json.loads((ROOT / 'corpus/manifest.json').read_text())['documents']
-    contracts = json.loads((ROOT / 'corpus/regressions.json').read_text())['cases']
-    case = next((c for c in cases if c['id'] == args.case), None)
-    contract = next((c for c in contracts if c['id'] == args.case), None)
+    case = find_case(manifest_cases(ROOT), args.case)
+    contract = find_case(regression_contracts(ROOT)['cases'], args.case)
     if case is None or contract is None:
         parser.error('case has no reviewed content contract')
     try:

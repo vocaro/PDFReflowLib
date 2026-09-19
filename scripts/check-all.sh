@@ -107,9 +107,9 @@ finish_gates || FAILED=1
 
 EPUBCHECK=()
 if command -v epubcheck >/dev/null; then EPUBCHECK=(--epubcheck "$(command -v epubcheck)"); fi
-background fixture-epubs python3 tools/check-epubs.py --converter "$BINARY_DIR/pdf-reflow" \
+background fixture-epubs python3 tools/check_epubs.py --converter "$BINARY_DIR/pdf-reflow" \
     --output "$WORK/epubs" ${EPUBCHECK[@]+"${EPUBCHECK[@]}"}
-background conversion-policies python3 tools/check-conversion-policies.py --converter "$BINARY_DIR/pdf-reflow" \
+background conversion-policies python3 tools/check_conversion_policies.py --converter "$BINARY_DIR/pdf-reflow" \
     --output "$WORK/policies" ${EPUBCHECK[@]+"${EPUBCHECK[@]}"}
 if [[ $CORPUS == 1 ]]; then
     background structure-memory python3 tools/check_structure_memory.py

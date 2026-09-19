@@ -12,7 +12,8 @@ from pathlib import Path
 import zipfile
 
 from check_corpus_content import read_pages
-from conversion_provenance import digest, is_digest, probe_errors
+from conversion_provenance import is_digest, probe_errors
+from pdfreflow_tools.corpus import digest
 
 
 def compatible_receipts(left, right):

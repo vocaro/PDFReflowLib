@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """Build a local, page-aligned PDFReflowLib/Poppler review bundle (Python standard library only)."""
 import argparse
-import hashlib
 import json
 import math
 from pathlib import Path, PurePosixPath
@@ -15,8 +14,10 @@ import time
 import xml.etree.ElementTree as ET
 import zipfile
 
+from pdfreflow_tools import epub
+from pdfreflow_tools.corpus import identity
+
 TOOLS = Path(__file__).resolve().parent
-EPUB = "{http://www.idpf.org/2007/ops}"
 
 
 def html_preview(root):
@@ -27,7 +28,7 @@ def html_preview(root):
     """
     for element in root.iter():
         element.tag = element.tag.removeprefix("{http://www.w3.org/1999/xhtml}")
-        element.attrib = {name.replace(EPUB, "epub:").replace(
+        element.attrib = {name.replace(epub.OPS, "epub:").replace(
             "{http://www.w3.org/XML/1998/namespace}", "xml:"): value
             for name, value in element.attrib.items()}
     head = root.find("head")
@@ -35,12 +36,6 @@ def html_preview(root):
         raise ValueError("XHTML chapter has no head")
     head.insert(0, ET.Element("meta", {"charset": "utf-8"}))
     return "<!doctype html>\n" + ET.tostring(root, encoding="unicode", method="html")
-
-
-def identity(path):
-    with path.open("rb") as stream:
-        return {"bytes": path.stat().st_size,
-                "sha256": hashlib.file_digest(stream, "sha256").hexdigest()}
 
 
 def select_pages(spec, count):
@@ -60,10 +55,8 @@ def select_pages(spec, count):
 
 def unpack_epub(path, output, maximum_bytes=512 * 1024 * 1024):
     """Extract our converter's EPUB, rejecting unsafe/ambiguous or oversized archives first."""
-    with zipfile.ZipFile(path) as archive:
+    with epub.open_archive(path, max_entries=10_000, max_uncompressed_bytes=maximum_bytes) as archive:
         entries = archive.infolist()
-        if len(entries) > 10_000 or sum(e.file_size for e in entries) > maximum_bytes:
-            raise ValueError("EPUB exceeds comparison extraction limits")
         seen = set()
         for entry in entries:
             name = entry.filename
@@ -89,15 +82,12 @@ def unpack_epub(path, output, maximum_bytes=512 * 1024 * 1024):
     for chapter in sorted(output.rglob("*.xhtml")):
         root = ET.parse(chapter).getroot()
         for element in root.iter():
-            if "pagebreak" not in element.get(EPUB + "type", "").split():
+            page = epub.page_boundary(element)
+            if page is None:
                 continue
-            anchor = element.get("id", "")
-            if not re.fullmatch(r"page-[1-9]\d*", anchor):
-                raise ValueError("Unexpected EPUB source-page anchor")
-            page = int(anchor[5:])
             if page in pages:
                 raise ValueError(f"Duplicate EPUB source page {page}")
-            pages[page] = "epub/" + chapter.with_suffix(".html").relative_to(output).as_posix() + "#" + anchor
+            pages[page] = "epub/" + chapter.with_suffix(".html").relative_to(output).as_posix() + f"#page-{page}"
         preview = chapter.with_suffix(".html")
         with preview.open("x") as stream:
             stream.write(html_preview(root))

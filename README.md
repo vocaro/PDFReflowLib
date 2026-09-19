@@ -204,7 +204,7 @@ development tool EPUBCheck and run:
 
 ```sh
 swift build
-python3 tools/check-epubs.py --converter .build/debug/pdf-reflow \
+python3 tools/check_epubs.py --converter .build/debug/pdf-reflow \
     --output /tmp/pdfreflow-validation --epubcheck /opt/homebrew/bin/epubcheck
 ```
 
@@ -212,7 +212,7 @@ The output directory must be new. Omitting `--epubcheck` runs only the independe
 content checks. The command retains EPUBs, per-book validator logs and JSON reports. Recorded
 elapsed time includes the validator and is not a conversion benchmark.
 
-`tools/generate-fixtures.py` regenerates the corpus and manifest using ReportLab, Pillow and
+`tools/generate_fixtures.py` regenerates the corpus and manifest using ReportLab, Pillow and
 Poppler's `pdftoppm`, available only for development. It uses original text/drawings and references
 standard PDF fonts without embedding font programs. These tools are not runtime dependencies.
 Pass `--renderer /absolute/path/to/pdftoppm` when needed. Regenerate PDFs and their manifest
@@ -251,7 +251,7 @@ copy; the corpus guide records current fetch limitations.
 [Corpus guide](doc/corpus.md) lists their coverage, attribution and review commands. The manifest lists review points and known reading-order/raster defects, so a
 successful conversion is not mistaken for a fidelity qualification.
 
-`tools/evaluate-real-document.py` checks source identity, runs a fresh converter process,
+`tools/evaluate_real_document.py` checks source identity, runs a fresh converter process,
 checks EPUB structure and progress, and enforces a configurable peak-memory ceiling. It retains
 reports and memory traces. [Memory testing](doc/memory-testing.md) explains the initial Mac
 budget, commands, physical-device limitations and standalone PDFKit leak investigation tool.

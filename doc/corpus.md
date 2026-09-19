@@ -64,10 +64,9 @@ conversion, against physical page 1 of the same verified PDF, in the same launch
 mkdir -p .build/raster-environment
 xcrun swiftc -parse-as-library -O \
   -module-cache-path .build/raster-environment/module-cache \
-  Sources/PDFReflowLib/PageRasterizer.swift Sources/PDFReflowLib/ConversionTypes.swift \
-  Sources/PDFReflowLib/DocumentModel.swift Sources/PDFReflowLib/ReflowDocument.swift \
-  tools/probe-raster-environment.swift -o .build/raster-environment/probe
-python3 tools/evaluate-real-document.py --case dga-2025-2030 \
+  $(python3 tools/pdfreflow_tools/swift_sources.py probe-raster-environment.swift) \
+  -o .build/raster-environment/probe
+python3 tools/evaluate_real_document.py --case dga-2025-2030 \
   --pdf corpus/cache/DGA.pdf --converter .build/release/pdf-reflow \
   --output /tmp/dga-candidate --epubcheck /opt/homebrew/bin/epubcheck \
   --environment-probe .build/raster-environment/probe --execution-context host-terminal
@@ -124,7 +123,7 @@ repository root, with full Xcode selected and Python 3.11+ available:
 
 ```sh
 swift build -c release
-python3 tools/evaluate-real-document.py --case wallace-algebra-2010 \
+python3 tools/evaluate_real_document.py --case wallace-algebra-2010 \
   --pdf corpus/cache/Beginning_and_Intermediate_Algebra.pdf --converter .build/release/pdf-reflow \
   --output /tmp/wallace-baseline --epubcheck /opt/homebrew/bin/epubcheck
 scripts/compare-pdf-reflow.sh --pdf corpus/cache/Beginning_and_Intermediate_Algebra.pdf \
@@ -154,7 +153,7 @@ under MIT; the owner confirms commercial use and redistribution.
 
 ```sh
 swift build -c release --scratch-path .build/corpus-cli
-python3 tools/evaluate-real-document.py --case gpo-warren-1964 \
+python3 tools/evaluate_real_document.py --case gpo-warren-1964 \
   --pdf corpus/cache/GPO-WARRENCOMMISSIONREPORT.pdf --converter .build/corpus-cli/release/pdf-reflow \
   --output /tmp/warren-baseline --epubcheck /opt/homebrew/bin/epubcheck
 ```
@@ -212,7 +211,7 @@ the library MIT license does not relicense the document.
 
 ```sh
 swift build -c release --scratch-path .build/corpus-cli
-python3 tools/evaluate-real-document.py --case gpo-911-2004 \
+python3 tools/evaluate_real_document.py --case gpo-911-2004 \
   --pdf corpus/cache/GPO-911REPORT.pdf --converter .build/corpus-cli/release/pdf-reflow \
   --output /tmp/911-baseline --epubcheck /opt/homebrew/bin/epubcheck
 scripts/compare-pdf-reflow.sh --pdf corpus/cache/GPO-911REPORT.pdf \
@@ -247,7 +246,7 @@ regions remain raster images with warnings; diagrams are not rebuilt as editable
 ```sh
 python3 tools/fetch_corpus.py --case fed-explained-2021
 swift build -c release --scratch-path .build/corpus-cli
-python3 tools/evaluate-real-document.py --case fed-explained-2021 \
+python3 tools/evaluate_real_document.py --case fed-explained-2021 \
   --pdf corpus/cache/the-fed-explained.pdf --converter .build/corpus-cli/release/pdf-reflow \
   --output /tmp/fed-baseline --epubcheck /opt/homebrew/bin/epubcheck
 scripts/compare-pdf-reflow.sh --pdf corpus/cache/the-fed-explained.pdf \
@@ -269,7 +268,7 @@ accessibility revision. Its direct CDN download matches the original bytes.
 ```sh
 python3 tools/fetch_corpus.py --case dga-2025-2030
 swift build -c release --scratch-path .build/corpus-cli
-python3 tools/evaluate-real-document.py --case dga-2025-2030 \
+python3 tools/evaluate_real_document.py --case dga-2025-2030 \
   --pdf corpus/cache/DGA.pdf --converter .build/corpus-cli/release/pdf-reflow \
   --output /tmp/dga-baseline --epubcheck /opt/homebrew/bin/epubcheck
 scripts/compare-pdf-reflow.sh --pdf corpus/cache/DGA.pdf \
@@ -295,7 +294,7 @@ span chapter boundaries, charts, the landscape/portrait transition and late-book
 ```sh
 python3 tools/fetch_corpus.py --case noaa-nca5-2023
 swift build -c release --scratch-path .build/corpus-cli
-python3 tools/evaluate-real-document.py --case noaa-nca5-2023 \
+python3 tools/evaluate_real_document.py --case noaa-nca5-2023 \
   --pdf corpus/cache/noaa_61592_DS1.pdf --converter .build/corpus-cli/release/pdf-reflow \
   --output /tmp/noaa-baseline --timeout 900 --epubcheck /opt/homebrew/bin/epubcheck
 ```
@@ -329,7 +328,7 @@ alone cannot prove tag use, and this source is not a fully validated semantic re
 ```sh
 python3 tools/fetch_corpus.py --case gpo-our-flag-2003
 swift build -c release --scratch-path .build/corpus-cli
-python3 tools/evaluate-real-document.py --case gpo-our-flag-2003 \
+python3 tools/evaluate_real_document.py --case gpo-our-flag-2003 \
   --pdf corpus/cache/CDOC-108hdoc97.pdf --converter .build/corpus-cli/release/pdf-reflow \
   --output /tmp/our-flag-baseline --epubcheck /opt/homebrew/bin/epubcheck
 scripts/compare-pdf-reflow.sh --pdf corpus/cache/CDOC-108hdoc97.pdf \
@@ -355,7 +354,7 @@ owner's PDF. The automated endpoint returns HTTP 403; manually place the origina
 ```sh
 python3 tools/fetch_corpus.py --case cdc-zombie-pandemic-2011
 swift build -c release --scratch-path .build/corpus-cli
-python3 tools/evaluate-real-document.py --case cdc-zombie-pandemic-2011 \
+python3 tools/evaluate_real_document.py --case cdc-zombie-pandemic-2011 \
   --pdf corpus/cache/cdc_6023_DS1.pdf --converter .build/corpus-cli/release/pdf-reflow \
   --output /tmp/cdc-comic-baseline --epubcheck /opt/homebrew/bin/epubcheck
 scripts/compare-pdf-reflow.sh --pdf corpus/cache/cdc_6023_DS1.pdf \
@@ -386,7 +385,7 @@ verifies the exact supplied identity when the cache is manually seeded.
 ```sh
 python3 tools/fetch_corpus.py --case cia-blue-book-14-1955
 swift build -c release --scratch-path .build/corpus-cli
-python3 tools/evaluate-real-document.py --case cia-blue-book-14-1955 \
+python3 tools/evaluate_real_document.py --case cia-blue-book-14-1955 \
   --pdf corpus/cache/CIA-UAP-015-Project_Blue_Book_Special_Report_No_14.pdf \
   --converter .build/corpus-cli/release/pdf-reflow \
   --output /tmp/blue-book-baseline --epubcheck /opt/homebrew/bin/epubcheck
@@ -454,7 +453,7 @@ image references. Retain the attribution recorded in the manifest.
 ```sh
 python3 tools/fetch_corpus.py --case ntrs-20180003024-earthdata-slides-2018
 swift build -c release --scratch-path .build/corpus-cli
-python3 tools/evaluate-real-document.py --case ntrs-20180003024-earthdata-slides-2018 \
+python3 tools/evaluate_real_document.py --case ntrs-20180003024-earthdata-slides-2018 \
   --pdf corpus/cache/20180003024.pdf --converter .build/corpus-cli/release/pdf-reflow \
   --output /tmp/earthdata-baseline --epubcheck /opt/homebrew/bin/epubcheck
 python3 tools/compare_pdf.py --pdf corpus/cache/20180003024.pdf \
@@ -497,7 +496,7 @@ raster of that page is ever committed. This corpus case, and the review contract
 ```sh
 python3 tools/fetch_corpus.py --case usda-ars-agresearch-2012-11
 swift build -c release --scratch-path .build/corpus-cli
-python3 tools/evaluate-real-document.py --case usda-ars-agresearch-2012-11 \
+python3 tools/evaluate_real_document.py --case usda-ars-agresearch-2012-11 \
   --pdf corpus/cache/November-December2012.pdf --converter .build/corpus-cli/release/pdf-reflow \
   --output /tmp/agresearch-baseline --epubcheck /opt/homebrew/bin/epubcheck
 python3 tools/compare_pdf.py --pdf corpus/cache/November-December2012.pdf \

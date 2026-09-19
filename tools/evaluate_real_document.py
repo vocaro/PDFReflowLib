@@ -6,7 +6,6 @@ A successful run measures conversion and package conformance, not content fideli
 """
 import argparse
 import ctypes
-import importlib.util
 import json
 import math
 import os
@@ -19,9 +18,10 @@ import sys
 import time
 import uuid
 
-from conversion_provenance import digest, probe_errors
-
-ROOT = Path(__file__).resolve().parents[1]
+import check_epubs
+from conversion_provenance import probe_errors
+from pdfreflow_tools.converter import run_epubcheck
+from pdfreflow_tools.corpus import ROOT, digest, find_case, manifest_cases, matches_identity
 
 
 class MemorySample(ctypes.Structure):
@@ -81,8 +81,7 @@ def main():
     parser.add_argument("--concurrent-evaluations", type=int, default=1,
                         help="evaluations the caller runs at once on this host; recorded, not enforced")
     args = parser.parse_args()
-    cases = json.loads((ROOT / "corpus/manifest.json").read_text())["documents"]
-    case = next((item for item in cases if item["id"] == args.case), None)
+    case = find_case(manifest_cases(ROOT), args.case)
     if case is None:
         parser.error("unknown corpus case")
     if not math.isfinite(args.timeout) or args.timeout <= 0:
@@ -94,7 +93,7 @@ def main():
         parser.error("memory ceiling must be finite and positive")
     if args.concurrent_evaluations < 1:
         parser.error("concurrent evaluations must be positive")
-    if args.pdf.stat().st_size != case["bytes"] or digest(args.pdf) != case["sha256"]:
+    if not matches_identity(args.pdf, case):
         parser.error("PDF identity differs from the pinned corpus case")
     converter = args.converter.resolve(strict=True)
     probe = args.environment_probe.resolve(strict=True) if args.environment_probe else None
@@ -203,21 +202,16 @@ def main():
                 raise ValueError("source page count mismatch")
             receipt["outputBytes"] = output.stat().st_size
             receipt["outputSHA256"] = digest(output)
-            spec = importlib.util.spec_from_file_location("epub_contracts", ROOT / "tools/check-epubs.py")
-            module = importlib.util.module_from_spec(spec)
-            spec.loader.exec_module(module)
-            text = module.check(output)
+            text = check_epubs.check(output)
             receipt["structuralCheck"] = "passed"
             receipt["outputTextCharacters"] = len(text)
         except Exception as error:
             receipt["structuralCheck"] = str(error)
             success = False
         if args.epubcheck:
-            with (args.output / "epubcheck.log").open("w") as log:
-                result = subprocess.run([str(args.epubcheck.resolve()), str(output.resolve())],
-                                        stdout=log, stderr=subprocess.STDOUT)
-            receipt["epubcheckExitCode"] = result.returncode
-            success = success and result.returncode == 0
+            receipt["epubcheckExitCode"] = run_epubcheck(args.epubcheck.resolve(), output.resolve(),
+                                                         args.output / "epubcheck.log")
+            success = success and receipt["epubcheckExitCode"] == 0
     if memory_limit is not None:
         limit_bytes = int(memory_limit * 1024 * 1024)
         within_limit = receipt["converterPeakRSSBytes"] <= limit_bytes

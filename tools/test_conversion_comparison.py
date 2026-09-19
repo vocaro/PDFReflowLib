@@ -6,7 +6,7 @@ import unittest
 import zipfile
 
 from compare_conversion_runs import compare, compatible_receipts
-from conversion_provenance import digest
+from pdfreflow_tools.corpus import digest
 
 
 class ConversionComparisonTests(unittest.TestCase):

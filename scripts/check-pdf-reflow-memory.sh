@@ -13,6 +13,6 @@ BINARY_DIR="$(swift build --package-path "$ROOT" -c release --show-bin-path)"
 WORK="$(mktemp -d "${TMPDIR:-/tmp}/pdfreflow-memory.XXXXXX")"
 # Preserve failures, reports and output for diagnosis; caller can remove this printed directory.
 echo "PDFReflowLib memory results: $WORK/result"
-exec python3 "$ROOT/tools/evaluate-real-document.py" \
+exec python3 "$ROOT/tools/evaluate_real_document.py" \
     --case faa-phak-8083-25c --pdf "$PDF" --converter "$BINARY_DIR/pdf-reflow" \
     --output "$WORK/result" "$@"

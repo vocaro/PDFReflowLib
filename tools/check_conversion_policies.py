@@ -1,22 +1,17 @@
 #!/usr/bin/env python3
 """Exercise the public CLI's policy controls with real small PDFs and optional EPUBCheck."""
 import argparse
-import hashlib
-import importlib.util
 import json
 from pathlib import Path
-import subprocess
 import zipfile
 
+import check_epubs as checks
+from pdfreflow_tools.converter import convert, pinned_packaging, run_epubcheck
+from pdfreflow_tools.corpus import FIXTURES, digest
 import view_epub
 
-ROOT = Path(__file__).resolve().parents[1]
-spec = importlib.util.spec_from_file_location('epub_checks', ROOT / 'tools/check-epubs.py')
-checks = importlib.util.module_from_spec(spec)
-spec.loader.exec_module(checks)
-
 HEADER = 'PDF REFLOW TEST BOOK'  # Repeated at the top of all three prose.pdf pages.
-PINNED = ['--package-identifier', 'urn:pdfreflow:headers-keep', '--modification-date', '2026-01-01T00:00:00Z']
+PINNED = pinned_packaging('urn:pdfreflow:headers-keep')
 
 
 def spine_markup(path):
@@ -32,7 +27,7 @@ def main():
     args = parser.parse_args()
     args.output.mkdir(parents=True, exist_ok=False)
     converter = str(args.converter.resolve(strict=True))
-    fixtures = ROOT / 'Tests/PDFReflowLibTests/fixtures'
+    fixtures = FIXTURES
     cases = [
         ('page-jpeg', 'graphics', ['--reference-images', 'always', '--full-page-image-encoding', 'jpeg:0.9',
                                   '--maximum-output-bytes', 'unlimited', '--maximum-epub-bytes', '1048576'], 4),
@@ -54,9 +49,8 @@ def main():
     results = []
     for name, fixture, flags, image_count in cases:
         output = args.output / (name + '.epub')
-        command = [converter, str(fixtures / (fixture + '.pdf')), str(output), *flags]
-        run = subprocess.run(command, capture_output=True, text=True, timeout=120, check=True)
-        report = json.loads(run.stdout)
+        run = convert(converter, fixtures / (fixture + '.pdf'), output, *flags, timeout=120)
+        report = run.report
         (args.output / (name + '-report.json')).write_text(run.stdout)
         (args.output / (name + '-progress.log')).write_text(run.stderr)
         assert report['imageCount'] == image_count
@@ -82,10 +76,9 @@ def main():
             if name == 'region-jpeg': assert all(n.endswith('.jpg') for n in images)
         view_epub.prepare(output, args.output / (name + '-reader'))
         if args.epubcheck:
-            with (args.output / (name + '-epubcheck.log')).open('w') as log:
-                subprocess.run([str(args.epubcheck.resolve()), str(output)], stdout=log, stderr=subprocess.STDOUT,
-                               check=True, timeout=120)
-        results.append({'name': name, 'command': command, 'imageCount': image_count, 'passed': True})
+            run_epubcheck(args.epubcheck.resolve(), output, args.output / (name + '-epubcheck.log'),
+                          check=True, timeout=120)
+        results.append({'name': name, 'command': run.command, 'imageCount': image_count, 'passed': True})
         print('PASS ' + name, flush=True)
     failures = [
         ['--reference-images', 'invalid'], ['--region-image-encoding', 'jpeg:nan'],
@@ -98,8 +91,7 @@ def main():
     ]
     for flags in failures:
         output = args.output / 'must-not-exist.epub'
-        run = subprocess.run([converter, str(fixtures / 'prose.pdf'), str(output), *flags],
-                             capture_output=True, text=True, timeout=60)
+        run = convert(converter, fixtures / 'prose.pdf', output, *flags, timeout=60, check=False)
         assert run.returncode != 0 and not output.exists(), flags
         assert '100% completed' not in run.stderr, flags
         if flags[0] == '--repeated-headers-and-footers' and len(flags) == 2:
@@ -108,8 +100,7 @@ def main():
                                           f'{flags[1]} (expected remove or keep)'), run.stderr
         assert not list(args.output.glob('.pdfreflow-*')), flags
         results.append({'flags': flags, 'exitCode': run.returncode, 'diagnostic': run.stderr, 'passed': True})
-    digests = [hashlib.sha256((args.output / f'headers-keep-pinned-{run}.epub').read_bytes()).hexdigest()
-               for run in 'ab']
+    digests = [digest(args.output / f'headers-keep-pinned-{run}.epub') for run in 'ab']
     assert digests[0] == digests[1], digests
     results.append({'name': 'headers-keep-reproducible', 'sha256': digests[0], 'passed': True})
     (args.output / 'results.json').write_text(json.dumps(results, indent=2) + '\n')

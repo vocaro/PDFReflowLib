@@ -16,11 +16,11 @@ but every call the repository makes today is written in one of the forms it read
 
 usage: check_pdfkit_gate.py   (prints each violation; exit 1 when there is one)
 """
-from pathlib import Path
 import re
 import sys
 
-ROOT = Path(__file__).resolve().parents[1]
+from pdfreflow_tools.corpus import ROOT
+
 SCANNED = ['Sources', 'Tests']
 GATES = ('withExtractionLock', 'pdfKitGated')
 

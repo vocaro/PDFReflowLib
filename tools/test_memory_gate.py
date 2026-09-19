@@ -5,7 +5,6 @@ that workload separately, without bundling its large source into ordinary tests.
 """
 import contextlib
 import hashlib
-import importlib.util
 import io
 import json
 from pathlib import Path
@@ -17,10 +16,7 @@ import unittest
 from unittest.mock import patch
 import zipfile
 
-TOOLS = Path(__file__).resolve().parent
-spec = importlib.util.spec_from_file_location("real_document_runner", TOOLS / "evaluate-real-document.py")
-runner = importlib.util.module_from_spec(spec)
-spec.loader.exec_module(runner)
+import evaluate_real_document as runner
 
 
 class MemoryGateTests(unittest.TestCase):
@@ -28,8 +24,6 @@ class MemoryGateTests(unittest.TestCase):
         self.temp = tempfile.TemporaryDirectory()
         self.root = Path(self.temp.name)
         (self.root / "corpus").mkdir()
-        (self.root / "tools").mkdir()
-        shutil.copyfile(TOOLS / "check-epubs.py", self.root / "tools/check-epubs.py")
         self.pdf = self.root / "control.pdf"
         self.pdf.write_bytes(b"instrumentation control input")
         case = {"id": "control", "bytes": self.pdf.stat().st_size,

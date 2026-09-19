@@ -10,14 +10,13 @@ not lines. Byte totals are reported, not gated: they are the page text itself an
 percent from run to run. macOS only; the Simulator has no `leaks`.
 """
 import argparse
-import hashlib
 import json
 import os
-from pathlib import Path
 import re
 import subprocess
 
-ROOT = Path(__file__).resolve().parents[1]
+from pdfreflow_tools.corpus import ROOT, cached_source, find_case, manifest_cases, verify_source
+
 MEASURE = ROOT / 'tools/repeated_conversions/measure.sh'
 
 
@@ -56,16 +55,10 @@ def main():
     args = parser.parse_args()
     if args.rounds < 2:
         parser.error('at least two rounds are needed to measure growth')
-    case = next((c for c in json.loads((ROOT / 'corpus/manifest.json').read_text())['documents']
-                 if c['id'] == args.case), None)
+    case = find_case(manifest_cases(ROOT), args.case)
     if case is None:
         parser.error(f'unknown case {args.case}')
-    source = ROOT / 'corpus/cache' / case['filename']
-    if source.stat().st_size != case['bytes']:
-        raise ValueError(f'{args.case} source byte count mismatch')
-    with source.open('rb') as stream:
-        if hashlib.file_digest(stream, 'sha256').hexdigest() != case['sha256']:
-            raise ValueError(f'{args.case} source checksum mismatch')
+    source = verify_source(cached_source(case, ROOT), case, args.case)
     environment = dict(os.environ, LEAKS='1')
     environment.pop('SIMULATOR', None)
     result = subprocess.run(['sh', str(MEASURE), str(args.rounds), str(source)],

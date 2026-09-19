@@ -5,7 +5,6 @@ Each fixture is original synthetic PDF content, with text/font assertions indepe
 extracted output. A passing campaign is bounded evidence, not proof of thread safety.
 """
 import argparse
-import hashlib
 import json
 import os
 from pathlib import Path
@@ -15,19 +14,10 @@ import subprocess
 import sys
 import time
 
-ROOT = Path(__file__).resolve().parents[1]
-SOURCES = [
-    'tools/probe-pdfkit-concurrency.swift',
-    'Sources/PDFReflowLib/NativeTextReader.swift',
-    'Sources/PDFReflowLib/NativeSpacingReader.swift',
-    'Sources/PDFReflowLib/GlyphIdentityReader.swift',
-    'Sources/PDFReflowLib/ContentStreamWalk.swift',
-    'Sources/PDFReflowLib/CGPDFObjects.swift',
-    'Sources/PDFReflowLib/AnchorMatcher.swift',
-    'Sources/PDFReflowLib/DocumentModel.swift',
-    'Sources/PDFReflowLib/ReflowDocument.swift',
-    'Sources/PDFReflowLib/ConversionTypes.swift',
-]
+from pdfreflow_tools import swift_sources
+from pdfreflow_tools.corpus import ROOT, identity
+
+PROBE = 'probe-pdfkit-concurrency.swift'
 
 
 def fixture(tagged):
@@ -61,10 +51,6 @@ def fixture(tagged):
     data += b''.join(f'{offset:010d} 00000 n \n'.encode() for offset in offsets[1:])
     data += f'trailer\n<< /Size {len(offsets)} /Root 1 0 R >>\nstartxref\n{xref}\n%%EOF\n'.encode()
     return data
-
-
-def identity(path):
-    return {'bytes': path.stat().st_size, 'sha256': hashlib.sha256(path.read_bytes()).hexdigest()}
 
 
 def classify(returncode, timed_out, stdout, mode, workers, iterations):
@@ -148,7 +134,7 @@ def main():
     environment = dict(os.environ)
     environment.setdefault('DEVELOPER_DIR', subprocess.check_output(['xcode-select', '-p'], text=True).strip())
     binary = output / 'probe'
-    sources = SOURCES[:1] if args.sdk_only else SOURCES
+    sources = [swift_sources.probe_path(PROBE)] if args.sdk_only else swift_sources.sources(PROBE)
     flags = [] if args.sdk_only else ['-D', 'PDFREFLOW_NATIVE']
     command = ['xcrun', 'swiftc', '-swift-version', '6', '-parse-as-library', *flags,
                '-O' if args.optimization == 'release' else '-Onone', *sources, '-o', str(binary)]
@@ -158,7 +144,8 @@ def main():
         'xcode': subprocess.check_output(['xcodebuild', '-version'], env=environment, text=True).strip(),
         'swift': subprocess.check_output(['xcrun', 'swiftc', '--version'], env=environment, text=True).strip(),
         'gitHead': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip(),
-        'sources': {p: identity(ROOT / p) for p in [*sources, 'tools/check_pdfkit_concurrency.py']},
+        'sources': {p: identity(ROOT / p) for p in [*sources, 'tools/check_pdfkit_concurrency.py',
+                                                     'tools/pdfreflow_tools/swift_sources.py']},
         'settings': {k: v for k, v in vars(args).items() if k != 'output'},
         'compileCommand': command,
     }

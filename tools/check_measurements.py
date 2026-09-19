@@ -13,7 +13,8 @@ from pathlib import Path
 import subprocess
 import sys
 
-ROOT = Path(__file__).resolve().parents[1]
+from pdfreflow_tools.corpus import ROOT
+
 RAW_SUFFIXES = {'.gz', '.tgz', '.zip', '.tar', '.png', '.jpg', '.jpeg', '.log', '.epub', '.pdf', '.plist'}
 MAXIMUM_ADDED_BYTES = 2 * 1024 * 1024
 

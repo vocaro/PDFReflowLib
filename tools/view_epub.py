@@ -11,7 +11,8 @@ import tempfile
 from urllib.parse import unquote, urlsplit
 import xml.etree.ElementTree as ET
 
-from compare_pdf import identity, unpack_epub
+from compare_pdf import unpack_epub
+from pdfreflow_tools.corpus import identity
 from serve_comparison import ReviewHandler
 
 ASSETS = Path(__file__).resolve().parent / "epub-reader"

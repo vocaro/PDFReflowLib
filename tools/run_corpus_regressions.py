@@ -13,7 +13,8 @@ import subprocess
 import sys
 import threading
 
-from check_corpus_content import ROOT, check_evaluation
+from check_corpus_content import check_evaluation
+from pdfreflow_tools.corpus import ROOT, cached_source, manifest_cases, regression_contracts
 
 
 def main():
@@ -28,15 +29,14 @@ def main():
     args = parser.parse_args()
     if args.jobs < 1:
         parser.error('jobs must be positive')
-    manifest = json.loads((ROOT / 'corpus/manifest.json').read_text())['documents']
-    definitions = json.loads((ROOT / 'corpus/regressions.json').read_text())
+    definitions = regression_contracts(ROOT)
     contracts = {c['id']: c for c in definitions['cases']}
     selected = args.selected if args.selected is not None else list(contracts)
     if not selected or len(selected) != len(set(selected)) or any(name not in contracts for name in selected):
         parser.error('choose distinct cases with reviewed regression contracts')
-    cases = {c['id']: c for c in manifest}
-    missing = [str(ROOT / 'corpus/cache' / cases[name]['filename']) for name in selected
-               if not (ROOT / 'corpus/cache' / cases[name]['filename']).is_file()]
+    cases = {c['id']: c for c in manifest_cases(ROOT)}
+    sources = {name: cached_source(cases[name], ROOT) for name in selected}
+    missing = [str(source) for source in sources.values() if not source.is_file()]
     if missing:
         parser.error('Missing cached PDFs; fetch explicitly with tools/fetch_corpus.py or supply verified originals: ' + ', '.join(missing))
     converter = args.converter.resolve(strict=True)
@@ -53,8 +53,8 @@ def main():
         report('CHECK ' + name)
         directory = args.output / name
         with (args.output / (name + '.log')).open('w') as log:
-            run = subprocess.run([sys.executable, str(ROOT / 'tools/evaluate-real-document.py'),
-                '--case', name, '--pdf', str(ROOT / 'corpus/cache' / cases[name]['filename']),
+            run = subprocess.run([sys.executable, str(ROOT / 'tools/evaluate_real_document.py'),
+                '--case', name, '--pdf', str(sources[name]),
                 '--converter', str(converter), '--output', str(directory), '--epubcheck', str(epubcheck),
                 '--concurrent-evaluations', str(min(args.jobs, len(selected)))]
                 + (['--execution-context', args.execution_context] if args.execution_context else [])
@@ -77,7 +77,7 @@ def main():
     else:
         # Source size is a rough proxy for conversion time; starting the largest first keeps the
         # longest case from being the last one scheduled.
-        schedule = sorted(selected, key=lambda name: -(ROOT / 'corpus/cache' / cases[name]['filename']).stat().st_size)
+        schedule = sorted(selected, key=lambda name: -sources[name].stat().st_size)
         with ThreadPoolExecutor(max_workers=args.jobs) as pool:
             assessments = dict(zip(schedule, pool.map(evaluate, schedule)))
         results = [assessments[name] for name in selected]

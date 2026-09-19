@@ -1,11 +1,5 @@
 """Versioned, per-run evidence used by the evaluator and strict drift comparison."""
-import hashlib
 import re
-
-
-def digest(path):
-    with path.open('rb') as stream:
-        return hashlib.file_digest(stream, 'sha256').hexdigest()
 
 
 def is_digest(value):

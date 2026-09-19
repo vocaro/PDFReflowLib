@@ -19,8 +19,7 @@ import tempfile
 from PIL import Image
 
 import image_regions
-
-ROOT = Path(__file__).resolve().parents[1]
+from pdfreflow_tools.corpus import ROOT, manifest_cases, matches_identity
 
 
 def main():
@@ -37,13 +36,12 @@ def main():
     region = [float(value) for value in args.region.split(',')]
     if len(region) != 4 or not (0 <= region[0] < region[2] and 0 <= region[1] < region[3]):
         parser.error('region must be x0,y0,x1,y1 with positive width and height')
-    cases = {c['id']: c for c in json.loads((ROOT / 'corpus/manifest.json').read_text())['documents']}
+    cases = {c['id']: c for c in manifest_cases(ROOT)}
     case = cases.get(args.case) or parser.error('unknown corpus case')
     if not 1 <= args.page <= case['pages']:
         parser.error('page is outside the source')
     source = args.cache_dir / case['filename']
-    data = source.read_bytes()
-    if len(data) != case['bytes'] or hashlib.sha256(data).hexdigest() != case['sha256']:
+    if not matches_identity(source, case):
         parser.error('cached source differs from the pinned corpus identity')
     scale = image_regions.RENDER_DPI / 72
     version = subprocess.run(['pdftoppm', '-v'], capture_output=True, text=True).stderr.split('\n')[0].strip()

@@ -19,7 +19,7 @@ From the package directory, with a full Xcode selected:
 ```sh
 python3 tools/fetch_corpus.py --case faa-phak-8083-25c
 swift build -c release
-python3 tools/evaluate-real-document.py --case faa-phak-8083-25c \
+python3 tools/evaluate_real_document.py --case faa-phak-8083-25c \
     --pdf corpus/cache/faa-h-8083-25c.pdf --converter .build/release/pdf-reflow \
     --output /tmp/phak-memory-run --epubcheck /opt/homebrew/bin/epubcheck
 ```
@@ -51,7 +51,7 @@ python3 -m unittest discover -s tools -p 'test_*.py' -v
 
 ## Isolating PDFKit growth
 
-`tools/probe-pdfkit-memory.swift` imports only Apple SDKs. It repeatedly opens each source page
+`tools/probes/probe-pdfkit-memory.swift` imports only Apple SDKs. It repeatedly opens each source page
 in an autorelease pool and discards every extracted object. `plain` reads selection strings,
 `line` reads each line's attributed string, and `page` reads the page's attributed string. `text-line`
 reads only lines with text other than attachments, as the library does, and `union` reads those
@@ -59,7 +59,7 @@ lines in one request per page (#4).
 Run modes in separate processes. Output records peak RSS and physical footprint after each pass.
 
 ```sh
-xcrun swiftc -O tools/probe-pdfkit-memory.swift -o /tmp/pdfkit-memory-probe
+xcrun swiftc -O tools/probes/probe-pdfkit-memory.swift -o /tmp/pdfkit-memory-probe
 /tmp/pdfkit-memory-probe /path/to/faa-h-8083-25c.pdf plain 3
 /tmp/pdfkit-memory-probe /path/to/faa-h-8083-25c.pdf page 3
 MallocStackLogging=1 leaks --atExit -- \

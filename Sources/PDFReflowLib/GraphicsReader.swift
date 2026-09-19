@@ -31,7 +31,7 @@ enum GraphicsReader {
 
         func accept() -> Bool {
             operations += 1
-            if operations > 100_000 { unsupported = true; return false }
+            if operations > 100_000 || Task.isCancelled { unsupported = true; return false }
             return true
         }
         func finishPath() {
@@ -52,16 +52,6 @@ enum GraphicsReader {
 
     private static func state(_ info: UnsafeMutableRawPointer?) -> State {
         Unmanaged<State>.fromOpaque(info!).takeUnretainedValue()
-    }
-
-    private static func numbers(_ scanner: CGPDFScannerRef, _ count: Int) -> [CGFloat]? {
-        var values = [CGFloat](repeating: 0, count: count)
-        for i in (0..<count).reversed() {
-            var value: CGPDFReal = 0
-            guard CGPDFScannerPopNumber(scanner, &value), value.isFinite else { return nil }
-            values[i] = value
-        }
-        return values
     }
 
     static func read(_ page: CGPDFPage) -> Result {
@@ -97,16 +87,16 @@ enum GraphicsReader {
         }
         CGPDFOperatorTableSetCallback(table, "cm") { scanner, info in
             let s = Self.state(info)
-            guard s.accept(), let n = Self.numbers(scanner, 6) else { s.unsupported = true; return }
+            guard s.accept(), let n = ContentStreamWalk.numbers(scanner, 6) else { s.unsupported = true; return }
             s.matrix = CGAffineTransform(a: n[0], b: n[1], c: n[2], d: n[3], tx: n[4], ty: n[5])
                 .concatenating(s.matrix)
         }
         CGPDFOperatorTableSetCallback(table, "rg") { scanner, info in
             let s = Self.state(info)
-            s.white = Self.numbers(scanner, 3)?.allSatisfy { $0 >= 0.999 } ?? false
+            s.white = ContentStreamWalk.numbers(scanner, 3)?.allSatisfy { $0 >= 0.999 } ?? false
         }
         CGPDFOperatorTableSetCallback(table, "g") { scanner, info in
-            Self.state(info).white = (Self.numbers(scanner, 1)?.first ?? 0) >= 0.999
+            Self.state(info).white = (ContentStreamWalk.numbers(scanner, 1)?.first ?? 0) >= 0.999
         }
         for op in ["k", "sc", "scn"] {
             CGPDFOperatorTableSetCallback(table, op) { _, info in Self.state(info).white = false }
@@ -114,14 +104,14 @@ enum GraphicsReader {
         for op in ["m", "l"] {
             CGPDFOperatorTableSetCallback(table, op) { scanner, info in
                 let s = Self.state(info)
-                guard s.accept(), let n = Self.numbers(scanner, 2) else { s.unsupported = true; return }
+                guard s.accept(), let n = ContentStreamWalk.numbers(scanner, 2) else { s.unsupported = true; return }
                 let point = CGPoint(x: n[0], y: n[1]).applying(s.matrix)
                 s.path = s.path.union(CGRect(origin: point, size: .zero))
             }
         }
         CGPDFOperatorTableSetCallback(table, "c") { scanner, info in
             let s = Self.state(info)
-            guard s.accept(), let n = Self.numbers(scanner, 6) else { s.unsupported = true; return }
+            guard s.accept(), let n = ContentStreamWalk.numbers(scanner, 6) else { s.unsupported = true; return }
             for i in stride(from: 0, to: 6, by: 2) {
                 s.path = s.path.union(CGRect(origin: CGPoint(x: n[i], y: n[i + 1])
                     .applying(s.matrix), size: .zero))
@@ -130,7 +120,7 @@ enum GraphicsReader {
         for op in ["v", "y"] {
             CGPDFOperatorTableSetCallback(table, op) { scanner, info in
                 let s = Self.state(info)
-                guard s.accept(), let n = Self.numbers(scanner, 4) else { s.unsupported = true; return }
+                guard s.accept(), let n = ContentStreamWalk.numbers(scanner, 4) else { s.unsupported = true; return }
                 for i in stride(from: 0, to: 4, by: 2) {
                     s.path = s.path.union(CGRect(origin: CGPoint(x: n[i], y: n[i + 1])
                         .applying(s.matrix), size: .zero))
@@ -139,7 +129,7 @@ enum GraphicsReader {
         }
         CGPDFOperatorTableSetCallback(table, "re") { scanner, info in
             let s = Self.state(info)
-            guard s.accept(), let n = Self.numbers(scanner, 4) else { s.unsupported = true; return }
+            guard s.accept(), let n = ContentStreamWalk.numbers(scanner, 4) else { s.unsupported = true; return }
             s.path = s.path.union(CGRect(x: n[0], y: n[1], width: n[2], height: n[3])
                 .applying(s.matrix))
         }
@@ -235,17 +225,6 @@ enum GraphicsReader {
                       images: clusters(s.images.map { $0.intersection(bounds) }, distance: 4))
     }
 
-    private static func rectangle(_ dictionary: CGPDFDictionaryRef, key: String) -> CGRect? {
-        var array: CGPDFArrayRef?
-        guard CGPDFDictionaryGetArray(dictionary, key, &array), let array,
-              CGPDFArrayGetCount(array) == 4 else { return nil }
-        var n = [CGPDFReal](repeating: 0, count: 4)
-        guard (0..<4).allSatisfy({ CGPDFArrayGetNumber(array, $0, &n[$0]) && n[$0].isFinite }) else { return nil }
-        // PDF rectangles can name either pair of opposite corners (InDesign uses both orders).
-        let rect = CGRect(x: n[0], y: n[1], width: n[2] - n[0], height: n[3] - n[1]).standardized
-        return rect.isFinite ? rect : nil
-    }
-
     // The sh operator paints within the active clip and optional shading BBox. Do not infer
     // extents from axial/radial Coords: extension and mesh/function shadings can paint beyond
     // them. Core Graphics renders the original region, including masks, colors and labels.
@@ -269,7 +248,7 @@ enum GraphicsReader {
         var region = s.clip
         var boxObject: CGPDFObjectRef?
         if CGPDFDictionaryGetObject(dictionary, "BBox", &boxObject) {
-            guard let box = rectangle(dictionary, key: "BBox") else { s.unsupported = true; return }
+            guard let box = CGPDFObjects.rectangle(dictionary, "BBox") else { s.unsupported = true; return }
             let transformed = box.applying(s.matrix)
             guard transformed.isFinite else { s.unsupported = true; return }
             region = region.intersection(transformed)
@@ -305,21 +284,11 @@ enum GraphicsReader {
         s.saved = []
         s.path = .null
         s.pendingClip = false
-        var array: CGPDFArrayRef?
-        if CGPDFDictionaryGetArray(dictionary, "Matrix", &array), let array {
-            guard CGPDFArrayGetCount(array) == 6 else { s.unsupported = true; return }
-            var n = [CGFloat](repeating: 0, count: 6)
-            for i in 0..<6 {
-                var value: CGPDFReal = 0
-                guard CGPDFArrayGetNumber(array, i, &value), value.isFinite else {
-                    s.unsupported = true; return
-                }
-                n[i] = value
-            }
-            s.matrix = CGAffineTransform(a: n[0], b: n[1], c: n[2], d: n[3], tx: n[4], ty: n[5])
-                .concatenating(s.matrix)
+        if CGPDFObjects.array(dictionary, "Matrix") != nil {
+            guard let matrix = CGPDFObjects.matrix(dictionary, "Matrix") else { s.unsupported = true; return }
+            s.matrix = matrix.concatenating(s.matrix)
         }
-        guard let box = rectangle(dictionary, key: "BBox") else { s.unsupported = true; return }
+        guard let box = CGPDFObjects.rectangle(dictionary, "BBox") else { s.unsupported = true; return }
         let transformed = box.applying(s.matrix)
         guard transformed.isFinite else { s.unsupported = true; return }
         s.clip = s.clip.intersection(transformed)

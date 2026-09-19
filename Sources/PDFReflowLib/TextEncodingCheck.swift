@@ -54,7 +54,7 @@ enum TextEncodingCheck {
             guard nested.count < maximumFonts else { return false }
             var stream: CGPDFStreamRef?
             guard CGPDFObjectGetValue(value, .stream, &stream), let stream,
-                  let dictionary = CGPDFStreamGetDictionary(stream), name(dictionary, "Subtype") == "Form" else { return true }
+                  let dictionary = CGPDFStreamGetDictionary(stream), CGPDFObjects.name(dictionary, "Subtype") == "Form" else { return true }
             var resources: CGPDFDictionaryRef?
             if CGPDFDictionaryGetDictionary(dictionary, "Resources", &resources), let resources {
                 nested.append(resources)
@@ -68,7 +68,7 @@ enum TextEncodingCheck {
     }
 
     private static func isUnmapped(_ font: CGPDFDictionaryRef) -> Bool {
-        guard let subtype = name(font, "Subtype"),
+        guard let subtype = CGPDFObjects.name(font, "Subtype"),
               ["Type1", "TrueType", "MMType1", "Type3"].contains(subtype) else { return false }
         var stream: CGPDFStreamRef?
         guard !CGPDFDictionaryGetStream(font, "ToUnicode", &stream) else { return false }
@@ -95,12 +95,6 @@ enum TextEncodingCheck {
         let lowered = prefix.lowercased()
         if lowered == "u" || lowered == "uni" { return false }
         return prefix.count <= 2 || ["glyph", "index", "cid", "gid"].contains(lowered)
-    }
-
-    private static func name(_ dictionary: CGPDFDictionaryRef, _ key: String) -> String? {
-        var pointer: UnsafePointer<CChar>?
-        guard CGPDFDictionaryGetName(dictionary, key, &pointer), let pointer else { return nil }
-        return String(cString: pointer)
     }
 
     // MARK: English plausibility

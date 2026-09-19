@@ -31,7 +31,8 @@ def main():
     with tempfile.TemporaryDirectory(prefix='pdfreflow-structure-') as directory:
         binary = Path(directory) / 'inspect-structure'
         subprocess.run(['swiftc', '-O', '-swift-version', '6',
-            'Sources/PDFReflowLib/StructureTreeReader.swift', 'Sources/PDFReflowLib/DocumentModel.swift',
+            'Sources/PDFReflowLib/StructureTreeReader.swift', 'Sources/PDFReflowLib/CGPDFObjects.swift',
+            'Sources/PDFReflowLib/DocumentModel.swift',
             'Sources/PDFReflowLib/ReflowDocument.swift', 'tools/inspect-structure.swift', '-o', str(binary)],
             cwd=ROOT, env=environment, check=True, capture_output=True, text=True)
         result = subprocess.run(['/usr/bin/time', '-l', str(binary), str(source)],

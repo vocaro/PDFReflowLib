@@ -130,8 +130,17 @@ is not grounds to discard a populated tree. No Core Graphics object survives the
 ParentTree ownership is checked against those exact paths only when extracting the relevant
 page, using `PDFPageSource`'s eight-page document window. Sparse ParentTree arrays can contain
 many null slots; loading them all into one Core Graphics document causes avoidable peak memory.
-`MarkedTextReader` matches explicitly positioned text-show origins to unique native line
-rectangles. Unknown glyph-cursor advancement, Form XObjects, missing/duplicate MCIDs, ambiguous
+The content-stream readers (`NativeSpacingReader`, `GlyphIdentityReader`, `MarkedTextReader`)
+are visitors on one driver, `ContentStreamWalk`, which owns the scanner lifecycle, the graphics
+state stack, the transformation and text matrices, text-object state, the show operators, the
+operation budget and the cancellation check; a reader keeps only the state its evidence needs and
+differs from the others only in `ContentStreamWalk.Options` (its budget, whether state changes
+inside a text object or stray positioning operators disqualify the page, how `'` and `"` are
+treated). `CGPDFObjects` holds the typed dictionary accessors, the inherited-resources walk and the
+font-list enumeration every reader shares, and `AnchorMatcher` the tolerance and caps for matching
+a show origin to the one native line it lies in. `GraphicsReader` keeps its own paint-oriented scan
+loop over the same helpers. `MarkedTextReader` matches explicitly positioned text-show origins to
+unique native line rectangles. Unknown glyph-cursor advancement, Form XObjects, missing/duplicate MCIDs, ambiguous
 geometry and incomplete groups retain spatial reconstruction. OCR and unverified image-backed
 text do not inherit native tags. Origin matching is conservative association evidence, not full
 font decoding or proof of the author's semantic correctness.

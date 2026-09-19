@@ -60,32 +60,57 @@ enum NativeSpacingReader {
     }
 
     private struct Font { var map: [UInt8: String] }
-    private final class State {
-        var matrix = CGAffineTransform.identity
-        var line = CGAffineTransform.identity
+
+    /// A Type3 font with the identity font matrix and an uncompressed one-byte `ToUnicode` map.
+    private static func font(_ object: CGPDFObjectRef) -> Font? {
+        var dict: CGPDFDictionaryRef?
+        guard CGPDFObjectGetValue(object, .dictionary, &dict), let dict,
+              CGPDFObjects.name(dict, "Subtype") == "Type3",
+              CGPDFObjects.matrix(dict, "FontMatrix") == .identity,
+              let data = CGPDFObjects.rawData(dict, "ToUnicode"),
+              let map = characterMap(data) else { return nil }
+        return Font(map: map)
+    }
+
+    private static func hasType3Font(_ page: CGPDFPage) -> Bool {
+        guard let resources = CGPDFObjects.inheritedResources(of: page) else { return false }
+        return CGPDFObjects.fonts(in: resources).contains { CGPDFObjects.name($0, "Subtype") == "Type3" }
+    }
+
+    /// Text state and placement this reader does not model disqualifies the whole page.
+    private static let scanOptions: ContentStreamWalk.Options = {
+        var options = ContentStreamWalk.Options()
+        options.operators = ["Tc", "Tw", "Ts", "Tr", "Tz", "gs", "BI", "Do"]
+        options.refusesStateChangesInText = true
+        options.beginTextPositions = false
+        options.selectsFonts = true
+        options.maximumShowElements = 4096
+        options.moveAndShow = .invalidate
+        return options
+    }()
+
+    private final class Visitor: ContentStreamVisitor {
         var font: Font?
         var size: CGFloat = 0
-        var leading: CGFloat = 0
-        var saved: [(CGAffineTransform, Font?, CGFloat, CGFloat)] = []
-        var inText = false
-        var positioned = false
-        var invalid = false
-        var operations = 0
+        var saved: [(Font?, CGFloat)] = []
         var fontSelections = 0
         var evidence: [Evidence] = []
 
-        func accept(_ scanner: CGPDFScannerRef) -> Bool {
-            operations += 1
-            if operations > 100_000 || Task.isCancelled { invalid = true }
-            if invalid { CGPDFScannerStop(scanner) }
-            return !invalid
+        func saveState() { saved.append((font, size)) }
+        func restoreState() { (font, size) = saved.removeLast() }
+
+        func selectFont(name: String, size: CGFloat, resource: CGPDFObjectRef?, walk: ContentStreamWalk) {
+            fontSelections += 1
+            guard fontSelections <= 256, let resource else { walk.invalid = true; return }
+            self.size = size
+            font = NativeSpacingReader.font(resource)
         }
-        func show(_ scanner: CGPDFScannerRef, array: Bool) {
-            guard accept(scanner), inText, positioned, evidence.count < 10_000 else { invalid = true; return }
-            positioned = false
-            let transform = line.concatenating(matrix)
+
+        func show(_ arguments: [ContentStreamWalk.ShowArgument], walk: ContentStreamWalk) {
+            guard walk.inText, walk.positioned, evidence.count < 10_000 else { walk.invalid = true; return }
+            let transform = walk.textTransform
             guard transform.b == 0, transform.c == 0, transform.a > 0, transform.d > 0,
-                  transform.tx.isFinite, transform.ty.isFinite else { invalid = true; return }
+                  transform.tx.isFinite, transform.ty.isFinite else { walk.invalid = true; return }
             var item = Evidence(origin: CGPoint(x: transform.tx, y: transform.ty))
             var value = "", gaps: Set<Int> = [], valid = font != nil && size > 0
             func append(_ string: CGPDFStringRef) {
@@ -97,27 +122,19 @@ enum NativeSpacingReader {
                     value += decoded
                 }
             }
-            if array {
-                var values: CGPDFArrayRef?
-                guard CGPDFScannerPopArray(scanner, &values), let values,
-                      CGPDFArrayGetCount(values) <= 4096 else { invalid = true; return }
-                var previousWasString = false
-                for i in 0..<CGPDFArrayGetCount(values) {
-                    var string: CGPDFStringRef?
-                    var number: CGPDFReal = 0
-                    if CGPDFArrayGetString(values, i, &string), let string {
-                        append(string); previousWasString = true
-                    } else if CGPDFArrayGetNumber(values, i, &number), number.isFinite {
-                        // Consecutive/initial adjustments and actual word-size gaps are ambiguous.
-                        if !previousWasString || number < -10 { valid = false }
-                        if number < 0 && number >= -10 { gaps.insert(value.utf16.count) }
-                        previousWasString = false
-                    } else { valid = false }
+            var previousWasString = false
+            for argument in arguments {
+                switch argument {
+                case .string(let string):
+                    append(string); previousWasString = true
+                case .adjustment(let number) where number.isFinite:
+                    // Consecutive/initial adjustments and actual word-size gaps are ambiguous.
+                    if !previousWasString || number < -10 { valid = false }
+                    if number < 0 && number >= -10 { gaps.insert(value.utf16.count) }
+                    previousWasString = false
+                case .adjustment, .other:
+                    valid = false
                 }
-            } else {
-                var string: CGPDFStringRef?
-                guard CGPDFScannerPopString(scanner, &string), let string else { invalid = true; return }
-                append(string)
             }
             if value.hasSuffix("\n") { value.removeLast() }
             if valid, !value.isEmpty, value.utf16.allSatisfy({ (32...126).contains($0) }) {
@@ -125,166 +142,35 @@ enum NativeSpacingReader {
             }
             evidence.append(item)
         }
-    }
-    private static func state(_ info: UnsafeMutableRawPointer?) -> State {
-        Unmanaged<State>.fromOpaque(info!).takeUnretainedValue()
-    }
-    private static func numbers(_ scanner: CGPDFScannerRef, _ count: Int) -> [CGFloat]? {
-        var values = [CGFloat](repeating: 0, count: count)
-        for i in values.indices.reversed() {
-            var value: CGPDFReal = 0
-            guard CGPDFScannerPopNumber(scanner, &value), value.isFinite else { return nil }
-            values[i] = value
-        }
-        return values
-    }
-    private static func font(_ object: CGPDFObjectRef) -> Font? {
-        var dict: CGPDFDictionaryRef?, subtype: UnsafePointer<CChar>?, matrix: CGPDFArrayRef?, stream: CGPDFStreamRef?
-        guard CGPDFObjectGetValue(object, .dictionary, &dict), let dict,
-              CGPDFDictionaryGetName(dict, "Subtype", &subtype), let subtype, String(cString: subtype) == "Type3",
-              CGPDFDictionaryGetArray(dict, "FontMatrix", &matrix), let matrix, CGPDFArrayGetCount(matrix) == 6,
-              CGPDFDictionaryGetStream(dict, "ToUnicode", &stream), let stream else { return nil }
-        for (i, expected) in [1.0, 0, 0, 1, 0, 0].enumerated() {
-            var number: CGPDFReal = 0
-            guard CGPDFArrayGetNumber(matrix, i, &number), number == expected else { return nil }
-        }
-        var format = CGPDFDataFormat.raw
-        guard let data = CGPDFStreamCopyData(stream, &format), format == .raw,
-              let map = characterMap(data as Data) else { return nil }
-        return Font(map: map)
-    }
 
-    private final class FontPresence { var found = false }
-    private static func hasType3Font(_ page: CGPDFPage) -> Bool {
-        var node: CGPDFDictionaryRef? = page.dictionary
-        for _ in 0..<64 {
-            guard let current = node else { return false }
-            var resources: CGPDFDictionaryRef?, fonts: CGPDFDictionaryRef?
-            if CGPDFDictionaryGetDictionary(current, "Resources", &resources), let resources {
-                guard CGPDFDictionaryGetDictionary(resources, "Font", &fonts), let fonts else { return false }
-                let presence = FontPresence()
-                CGPDFDictionaryApplyFunction(fonts, { _, object, info in
-                    var dict: CGPDFDictionaryRef?, subtype: UnsafePointer<CChar>?
-                    if CGPDFObjectGetValue(object, .dictionary, &dict), let dict,
-                       CGPDFDictionaryGetName(dict, "Subtype", &subtype), let subtype,
-                       String(cString: subtype) == "Type3" {
-                        Unmanaged<FontPresence>.fromOpaque(info!).takeUnretainedValue().found = true
-                    }
-                }, Unmanaged.passUnretained(presence).toOpaque())
-                return presence.found
+        func handle(_ op: String, scanner: CGPDFScannerRef, walk: ContentStreamWalk) {
+            switch op {
+            case "Tc", "Tw", "Ts", "Tr":
+                if ContentStreamWalk.numbers(scanner, 1) != [0] { walk.invalid = true }
+            case "Tz":
+                if ContentStreamWalk.numbers(scanner, 1) != [100] { walk.invalid = true }
+            case "Do":
+                // Only placed images are tolerated; a Form could draw text this reader never sees.
+                guard let name = ContentStreamWalk.popName(scanner),
+                      let object = CGPDFContentStreamGetResource(CGPDFScannerGetContentStream(scanner), "XObject", name),
+                      let stream = CGPDFObjects.stream(of: object), let dict = CGPDFStreamGetDictionary(stream),
+                      CGPDFObjects.name(dict, "Subtype") == "Image" else { walk.invalid = true; return }
+            default:
+                walk.invalid = true
             }
-            var parent: CGPDFDictionaryRef?
-            _ = CGPDFDictionaryGetDictionary(current, "Parent", &parent)
-            node = parent
         }
-        return false
     }
 
     static func read(_ page: CGPDFPage) -> [Evidence] {
-        guard page.rotationAngle == 0, hasType3Font(page), let table = CGPDFOperatorTableCreate() else { return [] }
-        defer { CGPDFOperatorTableRelease(table) }
-        CGPDFOperatorTableSetCallback(table, "q") { scanner, info in
-            let s = Self.state(info)
-            guard s.accept(scanner), !s.inText, s.saved.count < 128 else { s.invalid = true; return }
-            s.saved.append((s.matrix, s.font, s.size, s.leading))
-        }
-        CGPDFOperatorTableSetCallback(table, "Q") { scanner, info in
-            let s = Self.state(info)
-            guard s.accept(scanner), !s.inText, let saved = s.saved.popLast() else { s.invalid = true; return }
-            (s.matrix, s.font, s.size, s.leading) = saved
-        }
-        CGPDFOperatorTableSetCallback(table, "cm") { scanner, info in
-            let s = Self.state(info)
-            guard s.accept(scanner), !s.inText, let n = Self.numbers(scanner, 6) else { s.invalid = true; return }
-            s.matrix = CGAffineTransform(a: n[0], b: n[1], c: n[2], d: n[3], tx: n[4], ty: n[5]).concatenating(s.matrix)
-        }
-        CGPDFOperatorTableSetCallback(table, "Tf") { scanner, info in
-            let s = Self.state(info)
-            s.fontSelections += 1
-            var name: UnsafePointer<CChar>?
-            guard s.accept(scanner), s.fontSelections <= 256,
-                  let n = Self.numbers(scanner, 1), CGPDFScannerPopName(scanner, &name), let name,
-                  let object = CGPDFContentStreamGetResource(CGPDFScannerGetContentStream(scanner), "Font", name) else {
-                s.invalid = true; return
-            }
-            s.size = n[0]; s.font = Self.font(object)
-        }
-        CGPDFOperatorTableSetCallback(table, "BT") { scanner, info in
-            let s = Self.state(info)
-            guard s.accept(scanner), !s.inText else { s.invalid = true; return }
-            s.inText = true; s.line = .identity; s.positioned = false
-        }
-        CGPDFOperatorTableSetCallback(table, "ET") { scanner, info in
-            let s = Self.state(info)
-            guard s.accept(scanner), s.inText else { s.invalid = true; return }
-            s.inText = false; s.positioned = false
-        }
-        CGPDFOperatorTableSetCallback(table, "Tm") { scanner, info in
-            let s = Self.state(info)
-            guard s.accept(scanner), s.inText, let n = Self.numbers(scanner, 6) else { s.invalid = true; return }
-            s.line = CGAffineTransform(a: n[0], b: n[1], c: n[2], d: n[3], tx: n[4], ty: n[5]); s.positioned = true
-        }
-        CGPDFOperatorTableSetCallback(table, "Td") { scanner, info in
-            let s = Self.state(info)
-            guard s.accept(scanner), s.inText, let n = Self.numbers(scanner, 2) else { s.invalid = true; return }
-            s.line = s.line.translatedBy(x: n[0], y: n[1]); s.positioned = true
-        }
-        CGPDFOperatorTableSetCallback(table, "TD") { scanner, info in
-            let s = Self.state(info)
-            guard s.accept(scanner), s.inText, let n = Self.numbers(scanner, 2) else { s.invalid = true; return }
-            s.leading = -n[1]; s.line = s.line.translatedBy(x: n[0], y: n[1]); s.positioned = true
-        }
-        CGPDFOperatorTableSetCallback(table, "T*") { scanner, info in
-            let s = Self.state(info)
-            guard s.accept(scanner), s.inText else { s.invalid = true; return }
-            s.line = s.line.translatedBy(x: 0, y: -s.leading); s.positioned = true
-        }
-        CGPDFOperatorTableSetCallback(table, "TL") { scanner, info in
-            let s = Self.state(info)
-            guard s.accept(scanner), let n = Self.numbers(scanner, 1) else { s.invalid = true; return }
-            s.leading = n[0]
-        }
-        // State or placement that this reader does not model disqualifies the whole page.
-        for op in ["Tc", "Tw", "Ts", "Tr"] {
-            CGPDFOperatorTableSetCallback(table, op) { scanner, info in
-                let s = Self.state(info)
-                if !s.accept(scanner) || Self.numbers(scanner, 1) != [0] { s.invalid = true }
-            }
-        }
-        CGPDFOperatorTableSetCallback(table, "Tz") { scanner, info in
-            let s = Self.state(info)
-            if !s.accept(scanner) || Self.numbers(scanner, 1) != [100] { s.invalid = true }
-        }
-        for op in ["'", "\"", "gs", "BI"] {
-            CGPDFOperatorTableSetCallback(table, op) { _, info in Self.state(info).invalid = true }
-        }
-        CGPDFOperatorTableSetCallback(table, "Do") { scanner, info in
-            let s = Self.state(info)
-            var name: UnsafePointer<CChar>?, stream: CGPDFStreamRef?, subtype: UnsafePointer<CChar>?
-            guard s.accept(scanner), CGPDFScannerPopName(scanner, &name), let name,
-                  let object = CGPDFContentStreamGetResource(CGPDFScannerGetContentStream(scanner), "XObject", name),
-                  CGPDFObjectGetValue(object, .stream, &stream), let stream, let dict = CGPDFStreamGetDictionary(stream),
-                  CGPDFDictionaryGetName(dict, "Subtype", &subtype), let subtype, String(cString: subtype) == "Image" else {
-                s.invalid = true; return
-            }
-        }
-        CGPDFOperatorTableSetCallback(table, "TJ") { scanner, info in Self.state(info).show(scanner, array: true) }
-        CGPDFOperatorTableSetCallback(table, "Tj") { scanner, info in Self.state(info).show(scanner, array: false) }
-        let s = State(), stream = CGPDFContentStreamCreateWithPage(page)
-        defer { CGPDFContentStreamRelease(stream) }
-        let scanner = CGPDFScannerCreate(stream, table, Unmanaged.passUnretained(s).toOpaque())
-        defer { CGPDFScannerRelease(scanner) }
-        guard CGPDFScannerScan(scanner), !s.invalid, s.saved.isEmpty, !s.inText else { return [] }
-        return s.evidence
+        guard page.rotationAngle == 0, hasType3Font(page) else { return [] }
+        let visitor = Visitor()
+        guard ContentStreamWalk.scan(page, options: scanOptions, visitor: visitor) else { return [] }
+        return visitor.evidence
     }
 
     static func apply(_ evidence: [Evidence], to attributed: NSAttributedString, bounds: CGRect,
                       allBounds: [CGRect]) -> NSAttributedString {
-        guard evidence.count <= 10_000, allBounds.count <= 10_000,
-              evidence.count * allBounds.count <= 2_000_000 else { return attributed }
-        let matches = evidence.filter { bounds.insetBy(dx: -0.75, dy: -0.75).contains($0.origin) }
-        guard matches.count == 1, let match = matches.first,
-              allBounds.filter({ $0.insetBy(dx: -0.75, dy: -0.75).contains(match.origin) }).count == 1,
+        guard let match = AnchorMatcher.uniqueAnchor(evidence, at: \.origin, in: bounds, among: allBounds),
               let offsets = match.extraSpaces(in: attributed.string) else { return attributed }
         let repaired = NSMutableAttributedString(attributedString: attributed)
         for offset in offsets.reversed() { repaired.deleteCharacters(in: NSRange(location: offset, length: 1)) }

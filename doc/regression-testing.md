@@ -169,7 +169,9 @@ To recapture the algebra geometry with full Xcode selected:
 
 ```sh
 swiftc Sources/PDFReflowLib/NativeTextReader.swift Sources/PDFReflowLib/NativeSpacingReader.swift \
-  Sources/PDFReflowLib/GlyphIdentityReader.swift Sources/PDFReflowLib/ConversionTypes.swift \
+  Sources/PDFReflowLib/GlyphIdentityReader.swift Sources/PDFReflowLib/ContentStreamWalk.swift \
+  Sources/PDFReflowLib/CGPDFObjects.swift Sources/PDFReflowLib/AnchorMatcher.swift \
+  Sources/PDFReflowLib/ConversionTypes.swift \
   Sources/PDFReflowLib/DocumentModel.swift Sources/PDFReflowLib/ReflowDocument.swift \
   Sources/PDFReflowLib/GraphicsReader.swift tools/capture-algebra-layout.swift \
   -o /tmp/capture-algebra-layout
@@ -196,7 +198,9 @@ They run offline on macOS and iOS. Capture another page with full Xcode selected
 
 ```sh
 swiftc Sources/PDFReflowLib/NativeTextReader.swift Sources/PDFReflowLib/NativeSpacingReader.swift \
-  Sources/PDFReflowLib/GlyphIdentityReader.swift Sources/PDFReflowLib/ConversionTypes.swift \
+  Sources/PDFReflowLib/GlyphIdentityReader.swift Sources/PDFReflowLib/ContentStreamWalk.swift \
+  Sources/PDFReflowLib/CGPDFObjects.swift Sources/PDFReflowLib/AnchorMatcher.swift \
+  Sources/PDFReflowLib/ConversionTypes.swift \
   Sources/PDFReflowLib/DocumentModel.swift Sources/PDFReflowLib/ReflowDocument.swift \
   Sources/PDFReflowLib/GraphicsReader.swift tools/capture-layout-fixture.swift \
   -o /tmp/capture-layout-fixture

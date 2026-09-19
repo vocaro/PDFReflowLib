@@ -14,7 +14,7 @@ enum StructureTreeReader {
     static func read(_ url: URL) throws -> Index {
         try autoreleasepool {
             guard let document = CGPDFDocument(url as CFURL), let catalog = document.catalog,
-                  let root = dictionary(catalog, "StructTreeRoot") else { return Index() }
+                  let root = CGPDFObjects.dictionary(catalog, "StructTreeRoot") else { return Index() }
             let reader = Reader(document: document, root: root)
             do { return try reader.read() }
             catch is CancellationError { throw CancellationError() }
@@ -53,12 +53,12 @@ enum StructureTreeReader {
                 guard let page = document.page(at: i) else { throw Invalid.tree }
                 guard let dict = page.dictionary else { throw Invalid.tree }
                 pages[UInt(bitPattern: dict.rawValue)] = i
-                if let key = integer(dict, "StructParents") {
+                if let key = CGPDFObjects.integer(dict, "StructParents") {
                     guard key >= 0, neededParentKeys.insert(key).inserted else { throw Invalid.tree }
                     parentKeys[i] = key
                 }
             }
-            if let kids = object(root, "K") {
+            if let kids = CGPDFObjects.object(root, "K") {
                 try walk(kids, parent: root, page: nil, group: nil, allowed: true, depth: 0, path: [], parentPath: [])
             }
             for page in result.pages.keys {
@@ -68,10 +68,10 @@ enum StructureTreeReader {
             return result
         }
         func role(_ dict: CGPDFDictionaryRef) throws -> String {
-            guard var role = name(dict, "S") else { throw Invalid.tree }
+            guard var role = CGPDFObjects.name(dict, "S") else { throw Invalid.tree }
             let standard: Set<String> = ["Document", "Part", "Art", "Sect", "Div", "P", "H", "H1", "H2", "H3", "H4", "H5", "H6", "Span", "Link", "BlockQuote", "Caption", "TOC", "TOCI", "Index", "NonStruct", "Private", "L", "LI", "Lbl", "LBody", "Table", "TR", "TH", "TD", "THead", "TBody", "TFoot", "Quote", "Note", "Reference", "BibEntry", "Code", "Annot", "Ruby", "RB", "RT", "RP", "Warichu", "WT", "WP", "Figure", "Formula", "Form"]
             var visited: Set<String> = []
-            while !standard.contains(role), let map = dictionary(root, "RoleMap"), let next = name(map, role) {
+            while !standard.contains(role), let map = CGPDFObjects.dictionary(root, "RoleMap"), let next = CGPDFObjects.name(map, role) {
                 guard visited.insert(role).inserted, visited.count <= 16 else { throw Invalid.tree }
                 role = next
             }
@@ -99,20 +99,20 @@ enum StructureTreeReader {
                 guard CGPDFObjectGetValue(value, .dictionary, &dict), let dict,
                       seen.insert(UInt(bitPattern: dict.rawValue)).inserted else { throw Invalid.tree }
                 let localPage: Int?
-                if let pg = dictionary(dict, "Pg") {
+                if let pg = CGPDFObjects.dictionary(dict, "Pg") {
                     guard let number = pages[UInt(bitPattern: pg.rawValue)] else { throw Invalid.tree }
                     localPage = number
                 } else { localPage = page }
-                if name(dict, "Type") == "MCR" {
+                if CGPDFObjects.name(dict, "Type") == "MCR" {
                     // Form streams have their own MCID namespace. Do not confuse it with a page.
-                    guard object(dict, "Stm") == nil, let id = integer(dict, "MCID") else {
+                    guard CGPDFObjects.object(dict, "Stm") == nil, let id = CGPDFObjects.integer(dict, "MCID") else {
                         reject(group); return
                     }
                     try reference(id, page: localPage, group: group, ownerPath: parentPath)
                     return
                 }
-                if name(dict, "Type") == "OBJR" { reject(group); return }
-                guard dictionary(dict, "P") == parent else { throw Invalid.tree }
+                if CGPDFObjects.name(dict, "Type") == "OBJR" { reject(group); return }
+                guard CGPDFObjects.dictionary(dict, "P") == parent else { throw Invalid.tree }
                 let role = try role(dict)
                 var next = group
                 let containers: Set<String> = ["Document", "Part", "Art", "Sect", "Div"]
@@ -126,7 +126,7 @@ enum StructureTreeReader {
                 } else if !(group == nil ? containers.contains(role) : inline.contains(role)) {
                     reject(group); next = nil; childAllowed = false
                 }
-                if let kids = object(dict, "K") {
+                if let kids = CGPDFObjects.object(dict, "K") {
                     try walk(kids, parent: dict, page: localPage, group: next, allowed: childAllowed, depth: depth + 1, path: path + [-1], parentPath: path)
                 }
             case .null: break
@@ -153,21 +153,21 @@ enum StructureTreeReader {
     /// Validate only this page's sparse ParentTree array in the caller's bounded page window.
     /// Resolving all such arrays in one CGPDFDocument can retain a quadratic number of null slots.
     static func validates(_ tags: [Int: TextStructure], owners: [Int: [Int]], page: CGPDFPage) -> Bool {
-        guard let pageDictionary = page.dictionary, let key = integer(pageDictionary, "StructParents"),
-              let catalog = page.document?.catalog, let root = dictionary(catalog, "StructTreeRoot"),
-              let parentTree = dictionary(root, "ParentTree"), let rootKids = object(root, "K") else { return false }
+        guard let pageDictionary = page.dictionary, let key = CGPDFObjects.integer(pageDictionary, "StructParents"),
+              let catalog = page.document?.catalog, let root = CGPDFObjects.dictionary(catalog, "StructTreeRoot"),
+              let parentTree = CGPDFObjects.dictionary(root, "ParentTree"), let rootKids = CGPDFObjects.object(root, "K") else { return false }
         var visited: Set<UInt> = []
         var operations = 0
         func entries(_ node: CGPDFDictionaryRef, depth: Int) -> CGPDFArrayRef? {
             operations += 1
             guard depth < 64, operations < 100_000, !Task.isCancelled,
                   visited.insert(UInt(bitPattern: node.rawValue)).inserted else { return nil }
-            if let limits = array(node, "Limits"), CGPDFArrayGetCount(limits) == 2 {
+            if let limits = CGPDFObjects.array(node, "Limits"), CGPDFArrayGetCount(limits) == 2 {
                 var low: CGPDFInteger = 0, high: CGPDFInteger = 0
                 guard CGPDFArrayGetInteger(limits, 0, &low), CGPDFArrayGetInteger(limits, 1, &high),
                       low <= key, key <= high else { return nil }
             }
-            if let nums = array(node, "Nums") {
+            if let nums = CGPDFObjects.array(node, "Nums") {
                 let count = CGPDFArrayGetCount(nums)
                 guard count % 2 == 0, count <= 200_000 else { return nil }
                 for i in stride(from: 0, to: count, by: 2) {
@@ -179,7 +179,7 @@ enum StructureTreeReader {
                     }
                 }
             }
-            if let kids = array(node, "Kids"), CGPDFArrayGetCount(kids) <= 100_000 {
+            if let kids = CGPDFObjects.array(node, "Kids"), CGPDFArrayGetCount(kids) <= 100_000 {
                 for i in 0..<CGPDFArrayGetCount(kids) {
                     var child: CGPDFDictionaryRef?
                     guard CGPDFArrayGetDictionary(kids, i, &child), let child else { return nil }
@@ -196,7 +196,7 @@ enum StructureTreeReader {
                 if component == -1 {
                     var dict: CGPDFDictionaryRef?
                     guard CGPDFObjectGetValue(expected, .dictionary, &dict), let dict,
-                          let next = object(dict, "K") else { return false }
+                          let next = CGPDFObjects.object(dict, "K") else { return false }
                     expected = next
                 } else {
                     var array: CGPDFArrayRef?, next: CGPDFObjectRef?
@@ -210,27 +210,5 @@ enum StructureTreeReader {
                   CGPDFArrayGetDictionary(entries, id, &actualOwner), expectedOwner == actualOwner else { return false }
         }
         return true
-    }
-
-    static func object(_ dict: CGPDFDictionaryRef, _ key: String) -> CGPDFObjectRef? {
-        var value: CGPDFObjectRef?
-        return CGPDFDictionaryGetObject(dict, key, &value) ? value : nil
-    }
-    static func dictionary(_ dict: CGPDFDictionaryRef, _ key: String) -> CGPDFDictionaryRef? {
-        var value: CGPDFDictionaryRef?
-        return CGPDFDictionaryGetDictionary(dict, key, &value) ? value : nil
-    }
-    static func array(_ dict: CGPDFDictionaryRef, _ key: String) -> CGPDFArrayRef? {
-        var value: CGPDFArrayRef?
-        return CGPDFDictionaryGetArray(dict, key, &value) ? value : nil
-    }
-    static func integer(_ dict: CGPDFDictionaryRef, _ key: String) -> Int? {
-        var value: CGPDFInteger = 0
-        return CGPDFDictionaryGetInteger(dict, key, &value) ? value : nil
-    }
-    static func name(_ dict: CGPDFDictionaryRef, _ key: String) -> String? {
-        var value: UnsafePointer<CChar>?
-        guard CGPDFDictionaryGetName(dict, key, &value), let value else { return nil }
-        return String(cString: value)
     }
 }

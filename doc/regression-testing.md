@@ -582,6 +582,17 @@ receipt is a failure. Python negative tests enforce these properties. A finite p
 is bounded evidence, not proof that all concurrent PDFKit use is safe. The smoke gate runs
 only the mitigated native path; raw attributed controls belong to explicit diagnostic runs.
 
+A gated extraction could still abort when another thread of the process released what an earlier
+extraction had autoreleased (PDFKit's selections and attributed strings, with their fonts) after
+the gate unlocked; the gate now drains an autorelease pool before releasing the lock
+([gate-drain evidence](../measurements/pdfkit-gate-drain/record.md)). Making a font, laying out
+text with CoreText, or reading PDFKit text on another thread while a gated extraction runs can
+still abort it the same way, so tests do that work through `pdfKitGated`
+(`Tests/PDFReflowLibTests/PDFKitGate.swift`) rather than calling PDFKit/CoreText/font APIs
+directly. `tools/check_pdfkit_gate.py` (run by its own `tools/test_pdfkit_gate.py`, picked up by
+the `unittest discover` step above) fails on any such call in `Sources/` or `Tests/` made outside
+`NativeTextReader.withExtractionLock` or `pdfKitGated`.
+
 See [measured failures, mitigation and limits](../measurements/pdfkit-concurrency/record.md).
 
 ## Page retention between passes

@@ -70,11 +70,21 @@ between 50 ms timed waits while the lock is contended, and after acquisition. A 
 waiter can return while another extraction still holds the lock; a PDFKit call already
 executing cannot be interrupted. The wait interval is not a hard cancellation-latency guarantee,
 and each timed wait still blocks its worker thread. Concurrent imports trade extraction
-throughput for serialization. The lock is released before
+throughput for serialization. Objects the step autoreleases (PDFKit's selections and attributed
+strings, with their fonts) are drained inside the lock before it is released: released later on
+another thread, they aborted the next extraction with the same exception even though the two
+never overlapped under the lock itself. The lock is released before
 progress callbacks, OCR, graphics work and writing. It preserves attributed styles and does not
 marshal work to the main actor. Host PDFKit calls outside `NativeTextReader` do not participate
-in the lock, so this is a bounded mitigation rather than a framework-wide thread-safety guarantee.
-See [the concurrency evidence](../measurements/pdfkit-concurrency/record.md) and
+in the lock, so this is a bounded mitigation rather than a framework-wide thread-safety guarantee:
+a host application making a font, laying out text with CoreText, or reading PDFKit text on its
+own thread during a conversion can still abort a gated extraction, and that gap is not closed by
+this library. Tests make their fonts, CoreText drawings and PDFKit reads under the same lock
+(`pdfKitGated`, `Tests/PDFReflowLibTests/PDFKitGate.swift`), and `tools/check_pdfkit_gate.py`
+fails the build on such a call left outside it, so future test code cannot reintroduce the gap
+silently.
+See [the gate-drain evidence](../measurements/pdfkit-gate-drain/record.md),
+[the concurrency evidence](../measurements/pdfkit-concurrency/record.md) and
 [contention cancellation evidence](../measurements/extraction-cancellation/record.md).
 
 Explicit Core Text/Foundation baseline offsets preserve

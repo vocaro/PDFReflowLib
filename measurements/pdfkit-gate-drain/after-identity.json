@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "platform": "macOS-27.0-arm64-arm-64bit-Mach-O",
+  "osBuild": "ProductName:\t\tmacOS\nProductVersion:\t\t27.0\nBuildVersion:\t\t26A428",
+  "xcode": "Xcode 27.0\nBuild version 27A266a",
+  "swift": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+  "gitHead": "3c7d08e57875105d566fd048ab543f810377c281",
+  "sources": {
+    "tools/probe-pdfkit-concurrency.swift": {
+      "bytes": 5737,
+      "sha256": "64d20e9299949c38a409282887ac7f3dab6dc50f97286c784bd40aca3b5ec514"
+    },
+    "Sources/PDFReflowLib/NativeTextReader.swift": {
+      "bytes": 11023,
+      "sha256": "0de4dcd69805bbaf6dca76cb4f41ff1d59699020b726840fd9cf9acf4bf81d49"
+    },
+    "Sources/PDFReflowLib/NativeSpacingReader.swift": {
+      "bytes": 16919,
+      "sha256": "b9e716736adabc72432ba12355e2189d578454ba6224637ef4ad84e3685c8c73"
+    },
+    "Sources/PDFReflowLib/DocumentModel.swift": {
+      "bytes": 4098,
+      "sha256": "99f4f65325c48db6d2c4494f314884c01e5013400d5a14c7fe5a7aefe04c6641"
+    },
+    "Sources/PDFReflowLib/ReflowDocument.swift": {
+      "bytes": 5788,
+      "sha256": "f0133824b77a0c9a8f525603c5bebfcec3549a22ee2d4451cb5c9f4fc3af086d"
+    },
+    "Sources/PDFReflowLib/ConversionTypes.swift": {
+      "bytes": 7855,
+      "sha256": "741b26c24438376d2b718e093339fdb794d5e99cca810cf4e0fde067eb955fb8"
+    },
+    "tools/check_pdfkit_concurrency.py": {
+      "bytes": 9817,
+      "sha256": "1a8b2bef4d6eade5ec1975eea4961f04f6c917632eb22515d6b34509c46e59c2"
+    }
+  },
+  "settings": {
+    "trials": 35,
+    "iterations": 1000,
+    "workers": [
+      8
+    ],
+    "modes": [
+      "native"
+    ],
+    "sdk_only": false,
+    "timeout": 60,
+    "optimization": "release"
+  },
+  "compileCommand": [
+    "xcrun",
+    "swiftc",
+    "-swift-version",
+    "6",
+    "-parse-as-library",
+    "-D",
+    "PDFREFLOW_NATIVE",
+    "-O",
+    "tools/probe-pdfkit-concurrency.swift",
+    "Sources/PDFReflowLib/NativeTextReader.swift",
+    "Sources/PDFReflowLib/NativeSpacingReader.swift",
+    "Sources/PDFReflowLib/DocumentModel.swift",
+    "Sources/PDFReflowLib/ReflowDocument.swift",
+    "Sources/PDFReflowLib/ConversionTypes.swift",
+    "-o",
+    "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/probe"
+  ],
+  "binary": {
+    "bytes": 422216,
+    "sha256": "b688935168d3e3b13bcaa01de688021c1c2c671f1b8a5885b4e0234d90a7391c"
+  },
+  "fixtures": {
+    "rolemap": {
+      "bytes": 1362,
+      "sha256": "41038f0874078ed71a059dfadfdd68bba101ab4bfec3cc731795c04f50708b61"
+    },
+    "untagged": {
+      "bytes": 797,
+      "sha256": "38cc97a620d3dd1b172e1a8e62bf89cf597b8837edb4fd44901337ba673adf3d"
+    }
+  }
+}

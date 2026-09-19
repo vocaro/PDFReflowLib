@@ -1,0 +1,2592 @@
+[
+  {
+    "status": "passed",
+    "returncode": 0,
+    "timedOut": false,
+    "seconds": 6.510836541998287,
+    "mode": "native",
+    "workers": 8,
+    "iterations": 1000,
+    "command": [
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/probe",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/rolemap.pdf",
+      "native",
+      "8",
+      "1000"
+    ],
+    "result": {
+      "completed": 8000,
+      "event": "completed",
+      "failures": [],
+      "iterations": 1000,
+      "mode": "native",
+      "peakRSSBytes": 28934144,
+      "workers": 8
+    },
+    "logs": {
+      "stdout.log": {
+        "bytes": 189,
+        "sha256": "9a764ed449cbe9a4554324654476bbb7f9ab22ed101a5f9091010f72fab21528"
+      },
+      "stderr.log": {
+        "bytes": 3600000,
+        "sha256": "2de83908cc500bc696ce8100edef6606cb3892fc485fee238b901ea1e73f92dd"
+      }
+    },
+    "case": "rolemap-native-w8-trial1",
+    "fixture": "rolemap"
+  },
+  {
+    "status": "passed",
+    "returncode": 0,
+    "timedOut": false,
+    "seconds": 7.163495875000081,
+    "mode": "native",
+    "workers": 8,
+    "iterations": 1000,
+    "command": [
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/probe",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/untagged.pdf",
+      "native",
+      "8",
+      "1000"
+    ],
+    "result": {
+      "completed": 8000,
+      "event": "completed",
+      "failures": [],
+      "iterations": 1000,
+      "mode": "native",
+      "peakRSSBytes": 28950528,
+      "workers": 8
+    },
+    "logs": {
+      "stdout.log": {
+        "bytes": 189,
+        "sha256": "e66955a3a8af9be03301b70611fbad672e07fb121c4880a0cbcba49a6a8605d4"
+      },
+      "stderr.log": {
+        "bytes": 3600000,
+        "sha256": "254e9df875b405fa59c89e93f798bb202e558314c2ed8398df4334984c14210a"
+      }
+    },
+    "case": "untagged-native-w8-trial1",
+    "fixture": "untagged"
+  },
+  {
+    "status": "passed",
+    "returncode": 0,
+    "timedOut": false,
+    "seconds": 6.724833791999117,
+    "mode": "native",
+    "workers": 8,
+    "iterations": 1000,
+    "command": [
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/probe",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/rolemap.pdf",
+      "native",
+      "8",
+      "1000"
+    ],
+    "result": {
+      "completed": 8000,
+      "event": "completed",
+      "failures": [],
+      "iterations": 1000,
+      "mode": "native",
+      "peakRSSBytes": 28590080,
+      "workers": 8
+    },
+    "logs": {
+      "stdout.log": {
+        "bytes": 189,
+        "sha256": "1e7288b820b13e4665a7ddab780158ff0f69860564da3fcad8c32b218d3be0e4"
+      },
+      "stderr.log": {
+        "bytes": 3600000,
+        "sha256": "ba33f1b158dcae8c0de6dcd1529805ca092ffe0f88805429adf58c0dfaadedc5"
+      }
+    },
+    "case": "rolemap-native-w8-trial2",
+    "fixture": "rolemap"
+  },
+  {
+    "status": "passed",
+    "returncode": 0,
+    "timedOut": false,
+    "seconds": 6.690202375000808,
+    "mode": "native",
+    "workers": 8,
+    "iterations": 1000,
+    "command": [
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/probe",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/untagged.pdf",
+      "native",
+      "8",
+      "1000"
+    ],
+    "result": {
+      "completed": 8000,
+      "event": "completed",
+      "failures": [],
+      "iterations": 1000,
+      "mode": "native",
+      "peakRSSBytes": 28868608,
+      "workers": 8
+    },
+    "logs": {
+      "stdout.log": {
+        "bytes": 189,
+        "sha256": "7f8a3c2821e5b126a4f4030619a3c694e8d90033920466c7fd393c390159892d"
+      },
+      "stderr.log": {
+        "bytes": 3600000,
+        "sha256": "d344edb5102f5dc6b138c228832bdcd66a05086c1bbc35b6d13df7c061c04936"
+      }
+    },
+    "case": "untagged-native-w8-trial2",
+    "fixture": "untagged"
+  },
+  {
+    "status": "passed",
+    "returncode": 0,
+    "timedOut": false,
+    "seconds": 6.845975667001767,
+    "mode": "native",
+    "workers": 8,
+    "iterations": 1000,
+    "command": [
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/probe",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/rolemap.pdf",
+      "native",
+      "8",
+      "1000"
+    ],
+    "result": {
+      "completed": 8000,
+      "event": "completed",
+      "failures": [],
+      "iterations": 1000,
+      "mode": "native",
+      "peakRSSBytes": 28950528,
+      "workers": 8
+    },
+    "logs": {
+      "stdout.log": {
+        "bytes": 189,
+        "sha256": "e66955a3a8af9be03301b70611fbad672e07fb121c4880a0cbcba49a6a8605d4"
+      },
+      "stderr.log": {
+        "bytes": 3600000,
+        "sha256": "1cff50a21e26eb692811bf4b409315750869d6f32678985b510a6cec9e37f9e2"
+      }
+    },
+    "case": "rolemap-native-w8-trial3",
+    "fixture": "rolemap"
+  },
+  {
+    "status": "passed",
+    "returncode": 0,
+    "timedOut": false,
+    "seconds": 6.077921125001012,
+    "mode": "native",
+    "workers": 8,
+    "iterations": 1000,
+    "command": [
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/probe",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/untagged.pdf",
+      "native",
+      "8",
+      "1000"
+    ],
+    "result": {
+      "completed": 8000,
+      "event": "completed",
+      "failures": [],
+      "iterations": 1000,
+      "mode": "native",
+      "peakRSSBytes": 28835840,
+      "workers": 8
+    },
+    "logs": {
+      "stdout.log": {
+        "bytes": 189,
+        "sha256": "6f0170e8d322135a8a561f88da0a1d812db795e81d01a1ead6bf8547add917b4"
+      },
+      "stderr.log": {
+        "bytes": 3600000,
+        "sha256": "ec943cdda010a47384b6f6d6754444268abf3084153734def9808fc785efcd58"
+      }
+    },
+    "case": "untagged-native-w8-trial3",
+    "fixture": "untagged"
+  },
+  {
+    "status": "passed",
+    "returncode": 0,
+    "timedOut": false,
+    "seconds": 6.529801792003127,
+    "mode": "native",
+    "workers": 8,
+    "iterations": 1000,
+    "command": [
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/probe",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/rolemap.pdf",
+      "native",
+      "8",
+      "1000"
+    ],
+    "result": {
+      "completed": 8000,
+      "event": "completed",
+      "failures": [],
+      "iterations": 1000,
+      "mode": "native",
+      "peakRSSBytes": 28983296,
+      "workers": 8
+    },
+    "logs": {
+      "stdout.log": {
+        "bytes": 189,
+        "sha256": "3e36aff7ff05ba6efd016b7dbb8753bf04a1a73bd40fc07270e778d714d7e313"
+      },
+      "stderr.log": {
+        "bytes": 3600000,
+        "sha256": "5071e857e545f0aaca1ec9a1632000b665764c74036bc9648f0ab51e19ab8a18"
+      }
+    },
+    "case": "rolemap-native-w8-trial4",
+    "fixture": "rolemap"
+  },
+  {
+    "status": "passed",
+    "returncode": 0,
+    "timedOut": false,
+    "seconds": 10.62264425000103,
+    "mode": "native",
+    "workers": 8,
+    "iterations": 1000,
+    "command": [
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/probe",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/untagged.pdf",
+      "native",
+      "8",
+      "1000"
+    ],
+    "result": {
+      "completed": 8000,
+      "event": "completed",
+      "failures": [],
+      "iterations": 1000,
+      "mode": "native",
+      "peakRSSBytes": 28852224,
+      "workers": 8
+    },
+    "logs": {
+      "stdout.log": {
+        "bytes": 189,
+        "sha256": "1190896ddfcd6a46be0a942073e8f3b02edf7331c173ea7501d5d9811ee6cfe3"
+      },
+      "stderr.log": {
+        "bytes": 3600000,
+        "sha256": "a4575c9c087ec9aef3ff4260966b375077f4d95b85f2da1790227f5bc5a6933b"
+      }
+    },
+    "case": "untagged-native-w8-trial4",
+    "fixture": "untagged"
+  },
+  {
+    "status": "passed",
+    "returncode": 0,
+    "timedOut": false,
+    "seconds": 8.15811712499999,
+    "mode": "native",
+    "workers": 8,
+    "iterations": 1000,
+    "command": [
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/probe",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/rolemap.pdf",
+      "native",
+      "8",
+      "1000"
+    ],
+    "result": {
+      "completed": 8000,
+      "event": "completed",
+      "failures": [],
+      "iterations": 1000,
+      "mode": "native",
+      "peakRSSBytes": 28983296,
+      "workers": 8
+    },
+    "logs": {
+      "stdout.log": {
+        "bytes": 189,
+        "sha256": "3e36aff7ff05ba6efd016b7dbb8753bf04a1a73bd40fc07270e778d714d7e313"
+      },
+      "stderr.log": {
+        "bytes": 3600000,
+        "sha256": "7cb69e6a910b0e45f25a65d5fc6c40cc9a14a25726b5fb7200a209ba1933d8d0"
+      }
+    },
+    "case": "rolemap-native-w8-trial5",
+    "fixture": "rolemap"
+  },
+  {
+    "status": "passed",
+    "returncode": 0,
+    "timedOut": false,
+    "seconds": 6.186045250000461,
+    "mode": "native",
+    "workers": 8,
+    "iterations": 1000,
+    "command": [
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/probe",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/untagged.pdf",
+      "native",
+      "8",
+      "1000"
+    ],
+    "result": {
+      "completed": 8000,
+      "event": "completed",
+      "failures": [],
+      "iterations": 1000,
+      "mode": "native",
+      "peakRSSBytes": 28622848,
+      "workers": 8
+    },
+    "logs": {
+      "stdout.log": {
+        "bytes": 189,
+        "sha256": "3fc63ed0d06b49eed421620a41a52ccf52b1c7373a26774e22ceea58fa2b1a6a"
+      },
+      "stderr.log": {
+        "bytes": 3600000,
+        "sha256": "4ccf9b97fa9dcf8276a059f517786251dcbb32121b24bb7a4acc39648b71d222"
+      }
+    },
+    "case": "untagged-native-w8-trial5",
+    "fixture": "untagged"
+  },
+  {
+    "status": "passed",
+    "returncode": 0,
+    "timedOut": false,
+    "seconds": 6.0925490420013375,
+    "mode": "native",
+    "workers": 8,
+    "iterations": 1000,
+    "command": [
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/probe",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/rolemap.pdf",
+      "native",
+      "8",
+      "1000"
+    ],
+    "result": {
+      "completed": 8000,
+      "event": "completed",
+      "failures": [],
+      "iterations": 1000,
+      "mode": "native",
+      "peakRSSBytes": 28819456,
+      "workers": 8
+    },
+    "logs": {
+      "stdout.log": {
+        "bytes": 189,
+        "sha256": "83e307dd1e08ef22fd149917ede9fbb659a278c6bd7e1514d4cfaee38f347c33"
+      },
+      "stderr.log": {
+        "bytes": 3600000,
+        "sha256": "b41366b43e82790f742043c4a1c13300e21b0c7e20cd4a3146bdd25ab0b28e22"
+      }
+    },
+    "case": "rolemap-native-w8-trial6",
+    "fixture": "rolemap"
+  },
+  {
+    "status": "passed",
+    "returncode": 0,
+    "timedOut": false,
+    "seconds": 5.717170874999283,
+    "mode": "native",
+    "workers": 8,
+    "iterations": 1000,
+    "command": [
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/probe",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/untagged.pdf",
+      "native",
+      "8",
+      "1000"
+    ],
+    "result": {
+      "completed": 8000,
+      "event": "completed",
+      "failures": [],
+      "iterations": 1000,
+      "mode": "native",
+      "peakRSSBytes": 28868608,
+      "workers": 8
+    },
+    "logs": {
+      "stdout.log": {
+        "bytes": 189,
+        "sha256": "7f8a3c2821e5b126a4f4030619a3c694e8d90033920466c7fd393c390159892d"
+      },
+      "stderr.log": {
+        "bytes": 3600000,
+        "sha256": "4d90fa96f69f439649e1dae2ceae6b85862d277a522be5c85f613791946e7cff"
+      }
+    },
+    "case": "untagged-native-w8-trial6",
+    "fixture": "untagged"
+  },
+  {
+    "status": "passed",
+    "returncode": 0,
+    "timedOut": false,
+    "seconds": 6.235679083998548,
+    "mode": "native",
+    "workers": 8,
+    "iterations": 1000,
+    "command": [
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/probe",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/rolemap.pdf",
+      "native",
+      "8",
+      "1000"
+    ],
+    "result": {
+      "completed": 8000,
+      "event": "completed",
+      "failures": [],
+      "iterations": 1000,
+      "mode": "native",
+      "peakRSSBytes": 28852224,
+      "workers": 8
+    },
+    "logs": {
+      "stdout.log": {
+        "bytes": 189,
+        "sha256": "1190896ddfcd6a46be0a942073e8f3b02edf7331c173ea7501d5d9811ee6cfe3"
+      },
+      "stderr.log": {
+        "bytes": 3600000,
+        "sha256": "96f7762dcf49a56db73c8eff418b16c15461e6c38a65d9d3f72e87eaa21836b6"
+      }
+    },
+    "case": "rolemap-native-w8-trial7",
+    "fixture": "rolemap"
+  },
+  {
+    "status": "passed",
+    "returncode": 0,
+    "timedOut": false,
+    "seconds": 6.382018500000413,
+    "mode": "native",
+    "workers": 8,
+    "iterations": 1000,
+    "command": [
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/probe",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/untagged.pdf",
+      "native",
+      "8",
+      "1000"
+    ],
+    "result": {
+      "completed": 8000,
+      "event": "completed",
+      "failures": [],
+      "iterations": 1000,
+      "mode": "native",
+      "peakRSSBytes": 28835840,
+      "workers": 8
+    },
+    "logs": {
+      "stdout.log": {
+        "bytes": 189,
+        "sha256": "6f0170e8d322135a8a561f88da0a1d812db795e81d01a1ead6bf8547add917b4"
+      },
+      "stderr.log": {
+        "bytes": 3600000,
+        "sha256": "2c1ea55020b4c747b28e513ea3c8939112db239e1f9c0aa5f0340862b6c8a664"
+      }
+    },
+    "case": "untagged-native-w8-trial7",
+    "fixture": "untagged"
+  },
+  {
+    "status": "passed",
+    "returncode": 0,
+    "timedOut": false,
+    "seconds": 6.703955499997392,
+    "mode": "native",
+    "workers": 8,
+    "iterations": 1000,
+    "command": [
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/probe",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/rolemap.pdf",
+      "native",
+      "8",
+      "1000"
+    ],
+    "result": {
+      "completed": 8000,
+      "event": "completed",
+      "failures": [],
+      "iterations": 1000,
+      "mode": "native",
+      "peakRSSBytes": 28983296,
+      "workers": 8
+    },
+    "logs": {
+      "stdout.log": {
+        "bytes": 189,
+        "sha256": "3e36aff7ff05ba6efd016b7dbb8753bf04a1a73bd40fc07270e778d714d7e313"
+      },
+      "stderr.log": {
+        "bytes": 3600000,
+        "sha256": "4e2ca3a8e5c8fa9ae2ca8842ac31a49767f2d2a09a70e1ea75465f2ae8a27a77"
+      }
+    },
+    "case": "rolemap-native-w8-trial8",
+    "fixture": "rolemap"
+  },
+  {
+    "status": "passed",
+    "returncode": 0,
+    "timedOut": false,
+    "seconds": 10.547004249998281,
+    "mode": "native",
+    "workers": 8,
+    "iterations": 1000,
+    "command": [
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/probe",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/untagged.pdf",
+      "native",
+      "8",
+      "1000"
+    ],
+    "result": {
+      "completed": 8000,
+      "event": "completed",
+      "failures": [],
+      "iterations": 1000,
+      "mode": "native",
+      "peakRSSBytes": 28950528,
+      "workers": 8
+    },
+    "logs": {
+      "stdout.log": {
+        "bytes": 189,
+        "sha256": "e66955a3a8af9be03301b70611fbad672e07fb121c4880a0cbcba49a6a8605d4"
+      },
+      "stderr.log": {
+        "bytes": 3600000,
+        "sha256": "b06f465b39520617fc9d5c398291d87aa40c379bf406d4e9501c3dc1e5db2a96"
+      }
+    },
+    "case": "untagged-native-w8-trial8",
+    "fixture": "untagged"
+  },
+  {
+    "status": "passed",
+    "returncode": 0,
+    "timedOut": false,
+    "seconds": 6.858121499997651,
+    "mode": "native",
+    "workers": 8,
+    "iterations": 1000,
+    "command": [
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/probe",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/rolemap.pdf",
+      "native",
+      "8",
+      "1000"
+    ],
+    "result": {
+      "completed": 8000,
+      "event": "completed",
+      "failures": [],
+      "iterations": 1000,
+      "mode": "native",
+      "peakRSSBytes": 28753920,
+      "workers": 8
+    },
+    "logs": {
+      "stdout.log": {
+        "bytes": 189,
+        "sha256": "e838d01fe298ac37c62e65db492bb5d9ea4660380f045fe378d84e6926391bfa"
+      },
+      "stderr.log": {
+        "bytes": 3600000,
+        "sha256": "bbcb7e445754b6f9dd4acbfaf9ec7d013931b4025e7e9040408fe8faa3a04e1d"
+      }
+    },
+    "case": "rolemap-native-w8-trial9",
+    "fixture": "rolemap"
+  },
+  {
+    "status": "passed",
+    "returncode": 0,
+    "timedOut": false,
+    "seconds": 5.18069983299938,
+    "mode": "native",
+    "workers": 8,
+    "iterations": 1000,
+    "command": [
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/probe",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/untagged.pdf",
+      "native",
+      "8",
+      "1000"
+    ],
+    "result": {
+      "completed": 8000,
+      "event": "completed",
+      "failures": [],
+      "iterations": 1000,
+      "mode": "native",
+      "peakRSSBytes": 28803072,
+      "workers": 8
+    },
+    "logs": {
+      "stdout.log": {
+        "bytes": 189,
+        "sha256": "7f3bd51f2e41754660e390fb6778233170d1dc9817efb879dd6ac5143f3a1221"
+      },
+      "stderr.log": {
+        "bytes": 3600000,
+        "sha256": "50ca95f022d164c54b792f8b7eab952d0e49cea8b3c8bcb3002172b927cf201b"
+      }
+    },
+    "case": "untagged-native-w8-trial9",
+    "fixture": "untagged"
+  },
+  {
+    "status": "passed",
+    "returncode": 0,
+    "timedOut": false,
+    "seconds": 5.035205542000767,
+    "mode": "native",
+    "workers": 8,
+    "iterations": 1000,
+    "command": [
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/probe",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/rolemap.pdf",
+      "native",
+      "8",
+      "1000"
+    ],
+    "result": {
+      "completed": 8000,
+      "event": "completed",
+      "failures": [],
+      "iterations": 1000,
+      "mode": "native",
+      "peakRSSBytes": 28934144,
+      "workers": 8
+    },
+    "logs": {
+      "stdout.log": {
+        "bytes": 189,
+        "sha256": "9a764ed449cbe9a4554324654476bbb7f9ab22ed101a5f9091010f72fab21528"
+      },
+      "stderr.log": {
+        "bytes": 3600000,
+        "sha256": "e35cdb4ac9f25307e4412f377f2d6d03a791764dae7d33aa56af7908670d0cc1"
+      }
+    },
+    "case": "rolemap-native-w8-trial10",
+    "fixture": "rolemap"
+  },
+  {
+    "status": "passed",
+    "returncode": 0,
+    "timedOut": false,
+    "seconds": 5.341917000001558,
+    "mode": "native",
+    "workers": 8,
+    "iterations": 1000,
+    "command": [
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/probe",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/untagged.pdf",
+      "native",
+      "8",
+      "1000"
+    ],
+    "result": {
+      "completed": 8000,
+      "event": "completed",
+      "failures": [],
+      "iterations": 1000,
+      "mode": "native",
+      "peakRSSBytes": 28803072,
+      "workers": 8
+    },
+    "logs": {
+      "stdout.log": {
+        "bytes": 189,
+        "sha256": "7f3bd51f2e41754660e390fb6778233170d1dc9817efb879dd6ac5143f3a1221"
+      },
+      "stderr.log": {
+        "bytes": 3600000,
+        "sha256": "f0879ace9eacf8f1f9e758116d3d4bdd476c48b1e760608067e7b85ad35c8f6f"
+      }
+    },
+    "case": "untagged-native-w8-trial10",
+    "fixture": "untagged"
+  },
+  {
+    "status": "passed",
+    "returncode": 0,
+    "timedOut": false,
+    "seconds": 6.521980124998663,
+    "mode": "native",
+    "workers": 8,
+    "iterations": 1000,
+    "command": [
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/probe",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/rolemap.pdf",
+      "native",
+      "8",
+      "1000"
+    ],
+    "result": {
+      "completed": 8000,
+      "event": "completed",
+      "failures": [],
+      "iterations": 1000,
+      "mode": "native",
+      "peakRSSBytes": 28868608,
+      "workers": 8
+    },
+    "logs": {
+      "stdout.log": {
+        "bytes": 189,
+        "sha256": "7f8a3c2821e5b126a4f4030619a3c694e8d90033920466c7fd393c390159892d"
+      },
+      "stderr.log": {
+        "bytes": 3600000,
+        "sha256": "e0545f6e4de8e9876cbe658433f7ba9a5e4703893c8203201bfe80421b17fd2e"
+      }
+    },
+    "case": "rolemap-native-w8-trial11",
+    "fixture": "rolemap"
+  },
+  {
+    "status": "passed",
+    "returncode": 0,
+    "timedOut": false,
+    "seconds": 7.036502999999357,
+    "mode": "native",
+    "workers": 8,
+    "iterations": 1000,
+    "command": [
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/probe",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/untagged.pdf",
+      "native",
+      "8",
+      "1000"
+    ],
+    "result": {
+      "completed": 8000,
+      "event": "completed",
+      "failures": [],
+      "iterations": 1000,
+      "mode": "native",
+      "peakRSSBytes": 28884992,
+      "workers": 8
+    },
+    "logs": {
+      "stdout.log": {
+        "bytes": 189,
+        "sha256": "e63f9cc608fc851d9c763fdbe784906de6e5cdacaa35989e99e0d5a6a5ca460c"
+      },
+      "stderr.log": {
+        "bytes": 3600000,
+        "sha256": "c218eaa617f0d8dc03b957c21cef35d176d29502f1dc22835132c5cc0a56244f"
+      }
+    },
+    "case": "untagged-native-w8-trial11",
+    "fixture": "untagged"
+  },
+  {
+    "status": "passed",
+    "returncode": 0,
+    "timedOut": false,
+    "seconds": 11.877505458000087,
+    "mode": "native",
+    "workers": 8,
+    "iterations": 1000,
+    "command": [
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/probe",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/rolemap.pdf",
+      "native",
+      "8",
+      "1000"
+    ],
+    "result": {
+      "completed": 8000,
+      "event": "completed",
+      "failures": [],
+      "iterations": 1000,
+      "mode": "native",
+      "peakRSSBytes": 29016064,
+      "workers": 8
+    },
+    "logs": {
+      "stdout.log": {
+        "bytes": 189,
+        "sha256": "af7e690e39f0185030734d95ba549a8d5437f5e67e62f0e4b18687a5e7e5bbc4"
+      },
+      "stderr.log": {
+        "bytes": 3600000,
+        "sha256": "df4115419f0b1438b76ce6ab5c44bb5a39d419427e4e613621a939d9689defa7"
+      }
+    },
+    "case": "rolemap-native-w8-trial12",
+    "fixture": "rolemap"
+  },
+  {
+    "status": "passed",
+    "returncode": 0,
+    "timedOut": false,
+    "seconds": 2.827249458998267,
+    "mode": "native",
+    "workers": 8,
+    "iterations": 1000,
+    "command": [
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/probe",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/untagged.pdf",
+      "native",
+      "8",
+      "1000"
+    ],
+    "result": {
+      "completed": 8000,
+      "event": "completed",
+      "failures": [],
+      "iterations": 1000,
+      "mode": "native",
+      "peakRSSBytes": 28999680,
+      "workers": 8
+    },
+    "logs": {
+      "stdout.log": {
+        "bytes": 189,
+        "sha256": "632664b7b672eee3995470e16cd0b0dc96b5654155212b15f55e03e2656e7fdb"
+      },
+      "stderr.log": {
+        "bytes": 3600000,
+        "sha256": "89220d5fbe81303a046963843630e02c23de954b1a003b9c758f2ac67de907a7"
+      }
+    },
+    "case": "untagged-native-w8-trial12",
+    "fixture": "untagged"
+  },
+  {
+    "status": "passed",
+    "returncode": 0,
+    "timedOut": false,
+    "seconds": 2.6658830839987786,
+    "mode": "native",
+    "workers": 8,
+    "iterations": 1000,
+    "command": [
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/probe",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/rolemap.pdf",
+      "native",
+      "8",
+      "1000"
+    ],
+    "result": {
+      "completed": 8000,
+      "event": "completed",
+      "failures": [],
+      "iterations": 1000,
+      "mode": "native",
+      "peakRSSBytes": 28884992,
+      "workers": 8
+    },
+    "logs": {
+      "stdout.log": {
+        "bytes": 189,
+        "sha256": "e63f9cc608fc851d9c763fdbe784906de6e5cdacaa35989e99e0d5a6a5ca460c"
+      },
+      "stderr.log": {
+        "bytes": 3600000,
+        "sha256": "486a94314b4d36370879213f428c252f49e00f461b702901cf8a946277d15b08"
+      }
+    },
+    "case": "rolemap-native-w8-trial13",
+    "fixture": "rolemap"
+  },
+  {
+    "status": "passed",
+    "returncode": 0,
+    "timedOut": false,
+    "seconds": 2.5922554999997374,
+    "mode": "native",
+    "workers": 8,
+    "iterations": 1000,
+    "command": [
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/probe",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/untagged.pdf",
+      "native",
+      "8",
+      "1000"
+    ],
+    "result": {
+      "completed": 8000,
+      "event": "completed",
+      "failures": [],
+      "iterations": 1000,
+      "mode": "native",
+      "peakRSSBytes": 28835840,
+      "workers": 8
+    },
+    "logs": {
+      "stdout.log": {
+        "bytes": 189,
+        "sha256": "6f0170e8d322135a8a561f88da0a1d812db795e81d01a1ead6bf8547add917b4"
+      },
+      "stderr.log": {
+        "bytes": 3600000,
+        "sha256": "9389875a28be0edc54a564597f8f14a17554c9501897608370a7f3be427b4bf7"
+      }
+    },
+    "case": "untagged-native-w8-trial13",
+    "fixture": "untagged"
+  },
+  {
+    "status": "passed",
+    "returncode": 0,
+    "timedOut": false,
+    "seconds": 2.6166018750009243,
+    "mode": "native",
+    "workers": 8,
+    "iterations": 1000,
+    "command": [
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/probe",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/rolemap.pdf",
+      "native",
+      "8",
+      "1000"
+    ],
+    "result": {
+      "completed": 8000,
+      "event": "completed",
+      "failures": [],
+      "iterations": 1000,
+      "mode": "native",
+      "peakRSSBytes": 28868608,
+      "workers": 8
+    },
+    "logs": {
+      "stdout.log": {
+        "bytes": 189,
+        "sha256": "7f8a3c2821e5b126a4f4030619a3c694e8d90033920466c7fd393c390159892d"
+      },
+      "stderr.log": {
+        "bytes": 3600000,
+        "sha256": "3fdd8d164aadb27b7dde67f5f54969b61482c973d61cf0fa496c60428b65bbbe"
+      }
+    },
+    "case": "rolemap-native-w8-trial14",
+    "fixture": "rolemap"
+  },
+  {
+    "status": "passed",
+    "returncode": 0,
+    "timedOut": false,
+    "seconds": 2.72320016699814,
+    "mode": "native",
+    "workers": 8,
+    "iterations": 1000,
+    "command": [
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/probe",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/untagged.pdf",
+      "native",
+      "8",
+      "1000"
+    ],
+    "result": {
+      "completed": 8000,
+      "event": "completed",
+      "failures": [],
+      "iterations": 1000,
+      "mode": "native",
+      "peakRSSBytes": 29114368,
+      "workers": 8
+    },
+    "logs": {
+      "stdout.log": {
+        "bytes": 189,
+        "sha256": "b4da9739cecbc697224a2051eef50fc568cbb8aace55346eecb3c7b8fd850719"
+      },
+      "stderr.log": {
+        "bytes": 3600000,
+        "sha256": "77ab1bd8aa2d50581df90c544109bdb8cea7958901922138b8a24c97db5265f3"
+      }
+    },
+    "case": "untagged-native-w8-trial14",
+    "fixture": "untagged"
+  },
+  {
+    "status": "passed",
+    "returncode": 0,
+    "timedOut": false,
+    "seconds": 5.220119458001136,
+    "mode": "native",
+    "workers": 8,
+    "iterations": 1000,
+    "command": [
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/probe",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/rolemap.pdf",
+      "native",
+      "8",
+      "1000"
+    ],
+    "result": {
+      "completed": 8000,
+      "event": "completed",
+      "failures": [],
+      "iterations": 1000,
+      "mode": "native",
+      "peakRSSBytes": 28901376,
+      "workers": 8
+    },
+    "logs": {
+      "stdout.log": {
+        "bytes": 189,
+        "sha256": "7bc6f5ee3c20a2699c37f36cbe20ad0e4869ab6e8b9fee54e6608487b36f64f9"
+      },
+      "stderr.log": {
+        "bytes": 3600000,
+        "sha256": "35cce2d83917bf11e7ecf12697b78fe83eac9938806cb9f0529305fb9ea7f599"
+      }
+    },
+    "case": "rolemap-native-w8-trial15",
+    "fixture": "rolemap"
+  },
+  {
+    "status": "passed",
+    "returncode": 0,
+    "timedOut": false,
+    "seconds": 6.920373249999102,
+    "mode": "native",
+    "workers": 8,
+    "iterations": 1000,
+    "command": [
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/probe",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/untagged.pdf",
+      "native",
+      "8",
+      "1000"
+    ],
+    "result": {
+      "completed": 8000,
+      "event": "completed",
+      "failures": [],
+      "iterations": 1000,
+      "mode": "native",
+      "peakRSSBytes": 28884992,
+      "workers": 8
+    },
+    "logs": {
+      "stdout.log": {
+        "bytes": 189,
+        "sha256": "e63f9cc608fc851d9c763fdbe784906de6e5cdacaa35989e99e0d5a6a5ca460c"
+      },
+      "stderr.log": {
+        "bytes": 3600000,
+        "sha256": "4c987933678c0b2b2050f09f3d280f4a9c6d2fb139846abc88ec3cf75edd4bcc"
+      }
+    },
+    "case": "untagged-native-w8-trial15",
+    "fixture": "untagged"
+  },
+  {
+    "status": "passed",
+    "returncode": 0,
+    "timedOut": false,
+    "seconds": 7.216579333999107,
+    "mode": "native",
+    "workers": 8,
+    "iterations": 1000,
+    "command": [
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/probe",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/rolemap.pdf",
+      "native",
+      "8",
+      "1000"
+    ],
+    "result": {
+      "completed": 8000,
+      "event": "completed",
+      "failures": [],
+      "iterations": 1000,
+      "mode": "native",
+      "peakRSSBytes": 28803072,
+      "workers": 8
+    },
+    "logs": {
+      "stdout.log": {
+        "bytes": 189,
+        "sha256": "7f3bd51f2e41754660e390fb6778233170d1dc9817efb879dd6ac5143f3a1221"
+      },
+      "stderr.log": {
+        "bytes": 3600000,
+        "sha256": "56ddbecd86bdceb8e2436b3c07a17f5a15c24c882877b9aef45683908c333015"
+      }
+    },
+    "case": "rolemap-native-w8-trial16",
+    "fixture": "rolemap"
+  },
+  {
+    "status": "passed",
+    "returncode": 0,
+    "timedOut": false,
+    "seconds": 6.231916790999094,
+    "mode": "native",
+    "workers": 8,
+    "iterations": 1000,
+    "command": [
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/probe",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/untagged.pdf",
+      "native",
+      "8",
+      "1000"
+    ],
+    "result": {
+      "completed": 8000,
+      "event": "completed",
+      "failures": [],
+      "iterations": 1000,
+      "mode": "native",
+      "peakRSSBytes": 28753920,
+      "workers": 8
+    },
+    "logs": {
+      "stdout.log": {
+        "bytes": 189,
+        "sha256": "e838d01fe298ac37c62e65db492bb5d9ea4660380f045fe378d84e6926391bfa"
+      },
+      "stderr.log": {
+        "bytes": 3600000,
+        "sha256": "1bdc4889530aaa611fdcb38bd884a4eb25c939a03779e58a523467f8114b38f9"
+      }
+    },
+    "case": "untagged-native-w8-trial16",
+    "fixture": "untagged"
+  },
+  {
+    "status": "passed",
+    "returncode": 0,
+    "timedOut": false,
+    "seconds": 6.638159000001906,
+    "mode": "native",
+    "workers": 8,
+    "iterations": 1000,
+    "command": [
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/probe",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/rolemap.pdf",
+      "native",
+      "8",
+      "1000"
+    ],
+    "result": {
+      "completed": 8000,
+      "event": "completed",
+      "failures": [],
+      "iterations": 1000,
+      "mode": "native",
+      "peakRSSBytes": 28917760,
+      "workers": 8
+    },
+    "logs": {
+      "stdout.log": {
+        "bytes": 189,
+        "sha256": "f358e0dcd5cdf9ef47e33aaf1ba55b605ef2209ebc82681df89278eacf8b5d51"
+      },
+      "stderr.log": {
+        "bytes": 3600000,
+        "sha256": "206e842f026d03891d88fd1738495918969e8f1fecec1ab76b16030a520c1838"
+      }
+    },
+    "case": "rolemap-native-w8-trial17",
+    "fixture": "rolemap"
+  },
+  {
+    "status": "passed",
+    "returncode": 0,
+    "timedOut": false,
+    "seconds": 6.525784792000195,
+    "mode": "native",
+    "workers": 8,
+    "iterations": 1000,
+    "command": [
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/probe",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/untagged.pdf",
+      "native",
+      "8",
+      "1000"
+    ],
+    "result": {
+      "completed": 8000,
+      "event": "completed",
+      "failures": [],
+      "iterations": 1000,
+      "mode": "native",
+      "peakRSSBytes": 28753920,
+      "workers": 8
+    },
+    "logs": {
+      "stdout.log": {
+        "bytes": 189,
+        "sha256": "e838d01fe298ac37c62e65db492bb5d9ea4660380f045fe378d84e6926391bfa"
+      },
+      "stderr.log": {
+        "bytes": 3600000,
+        "sha256": "decc30d428a775c423d6be2d480b853ab3b4c80cc1227114fa1ae4781aacf4ba"
+      }
+    },
+    "case": "untagged-native-w8-trial17",
+    "fixture": "untagged"
+  },
+  {
+    "status": "passed",
+    "returncode": 0,
+    "timedOut": false,
+    "seconds": 6.415053249998891,
+    "mode": "native",
+    "workers": 8,
+    "iterations": 1000,
+    "command": [
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/probe",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/rolemap.pdf",
+      "native",
+      "8",
+      "1000"
+    ],
+    "result": {
+      "completed": 8000,
+      "event": "completed",
+      "failures": [],
+      "iterations": 1000,
+      "mode": "native",
+      "peakRSSBytes": 28884992,
+      "workers": 8
+    },
+    "logs": {
+      "stdout.log": {
+        "bytes": 189,
+        "sha256": "e63f9cc608fc851d9c763fdbe784906de6e5cdacaa35989e99e0d5a6a5ca460c"
+      },
+      "stderr.log": {
+        "bytes": 3600000,
+        "sha256": "1d982aeb1dccf51ef29f6fc581c6c7d02ced5930aedca113bfb9a80272d7022b"
+      }
+    },
+    "case": "rolemap-native-w8-trial18",
+    "fixture": "rolemap"
+  },
+  {
+    "status": "passed",
+    "returncode": 0,
+    "timedOut": false,
+    "seconds": 6.366152249996958,
+    "mode": "native",
+    "workers": 8,
+    "iterations": 1000,
+    "command": [
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/probe",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/untagged.pdf",
+      "native",
+      "8",
+      "1000"
+    ],
+    "result": {
+      "completed": 8000,
+      "event": "completed",
+      "failures": [],
+      "iterations": 1000,
+      "mode": "native",
+      "peakRSSBytes": 28950528,
+      "workers": 8
+    },
+    "logs": {
+      "stdout.log": {
+        "bytes": 189,
+        "sha256": "e66955a3a8af9be03301b70611fbad672e07fb121c4880a0cbcba49a6a8605d4"
+      },
+      "stderr.log": {
+        "bytes": 3600000,
+        "sha256": "f5912afdaf456ad0fc84fd5bf950f72a8ab1d4c7ad01e3759df367403d6eed31"
+      }
+    },
+    "case": "untagged-native-w8-trial18",
+    "fixture": "untagged"
+  },
+  {
+    "status": "passed",
+    "returncode": 0,
+    "timedOut": false,
+    "seconds": 7.2676490410012775,
+    "mode": "native",
+    "workers": 8,
+    "iterations": 1000,
+    "command": [
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/probe",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/rolemap.pdf",
+      "native",
+      "8",
+      "1000"
+    ],
+    "result": {
+      "completed": 8000,
+      "event": "completed",
+      "failures": [],
+      "iterations": 1000,
+      "mode": "native",
+      "peakRSSBytes": 28966912,
+      "workers": 8
+    },
+    "logs": {
+      "stdout.log": {
+        "bytes": 189,
+        "sha256": "9645a95b3591a8e54435971d75683a68dc423a6688929b7cad1539535ce5b575"
+      },
+      "stderr.log": {
+        "bytes": 3600000,
+        "sha256": "18740095ba4cef601ab18a3d94ceed1692181dbf0de00ac07c3decee0bcb797a"
+      }
+    },
+    "case": "rolemap-native-w8-trial19",
+    "fixture": "rolemap"
+  },
+  {
+    "status": "passed",
+    "returncode": 0,
+    "timedOut": false,
+    "seconds": 7.078510166997148,
+    "mode": "native",
+    "workers": 8,
+    "iterations": 1000,
+    "command": [
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/probe",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/untagged.pdf",
+      "native",
+      "8",
+      "1000"
+    ],
+    "result": {
+      "completed": 8000,
+      "event": "completed",
+      "failures": [],
+      "iterations": 1000,
+      "mode": "native",
+      "peakRSSBytes": 28753920,
+      "workers": 8
+    },
+    "logs": {
+      "stdout.log": {
+        "bytes": 189,
+        "sha256": "e838d01fe298ac37c62e65db492bb5d9ea4660380f045fe378d84e6926391bfa"
+      },
+      "stderr.log": {
+        "bytes": 3600000,
+        "sha256": "171d84138e0ad2a6ca8bf8a8ebfe92ba94c5341221a0e7054728a9f1ee223a32"
+      }
+    },
+    "case": "untagged-native-w8-trial19",
+    "fixture": "untagged"
+  },
+  {
+    "status": "passed",
+    "returncode": 0,
+    "timedOut": false,
+    "seconds": 7.214697957999306,
+    "mode": "native",
+    "workers": 8,
+    "iterations": 1000,
+    "command": [
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/probe",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/rolemap.pdf",
+      "native",
+      "8",
+      "1000"
+    ],
+    "result": {
+      "completed": 8000,
+      "event": "completed",
+      "failures": [],
+      "iterations": 1000,
+      "mode": "native",
+      "peakRSSBytes": 28786688,
+      "workers": 8
+    },
+    "logs": {
+      "stdout.log": {
+        "bytes": 189,
+        "sha256": "c4a3f87b14260cdb3bbc573479278b1698f4d9fba538d2c8ac26cbf3880d2af0"
+      },
+      "stderr.log": {
+        "bytes": 3600000,
+        "sha256": "aed7591df22dfba72b665545167172dd3a64bc663971efc0598487a3a492443f"
+      }
+    },
+    "case": "rolemap-native-w8-trial20",
+    "fixture": "rolemap"
+  },
+  {
+    "status": "passed",
+    "returncode": 0,
+    "timedOut": false,
+    "seconds": 7.311453875001462,
+    "mode": "native",
+    "workers": 8,
+    "iterations": 1000,
+    "command": [
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/probe",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/untagged.pdf",
+      "native",
+      "8",
+      "1000"
+    ],
+    "result": {
+      "completed": 8000,
+      "event": "completed",
+      "failures": [],
+      "iterations": 1000,
+      "mode": "native",
+      "peakRSSBytes": 28819456,
+      "workers": 8
+    },
+    "logs": {
+      "stdout.log": {
+        "bytes": 189,
+        "sha256": "83e307dd1e08ef22fd149917ede9fbb659a278c6bd7e1514d4cfaee38f347c33"
+      },
+      "stderr.log": {
+        "bytes": 3600000,
+        "sha256": "ec92d07013e7df7a91aea2a870db7162cef6ec9afe251f1aaf3fae0499e164f9"
+      }
+    },
+    "case": "untagged-native-w8-trial20",
+    "fixture": "untagged"
+  },
+  {
+    "status": "passed",
+    "returncode": 0,
+    "timedOut": false,
+    "seconds": 7.414116916999774,
+    "mode": "native",
+    "workers": 8,
+    "iterations": 1000,
+    "command": [
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/probe",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/rolemap.pdf",
+      "native",
+      "8",
+      "1000"
+    ],
+    "result": {
+      "completed": 8000,
+      "event": "completed",
+      "failures": [],
+      "iterations": 1000,
+      "mode": "native",
+      "peakRSSBytes": 28655616,
+      "workers": 8
+    },
+    "logs": {
+      "stdout.log": {
+        "bytes": 189,
+        "sha256": "ea08c8868c29706befa4f5e70399096070fd81ce4983d6e78f209f73a4a36e76"
+      },
+      "stderr.log": {
+        "bytes": 3600000,
+        "sha256": "19745c758e20150349b57f942e8d1bc2d587b16e197b832eed71755ebb547611"
+      }
+    },
+    "case": "rolemap-native-w8-trial21",
+    "fixture": "rolemap"
+  },
+  {
+    "status": "passed",
+    "returncode": 0,
+    "timedOut": false,
+    "seconds": 8.196797207998316,
+    "mode": "native",
+    "workers": 8,
+    "iterations": 1000,
+    "command": [
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/probe",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/untagged.pdf",
+      "native",
+      "8",
+      "1000"
+    ],
+    "result": {
+      "completed": 8000,
+      "event": "completed",
+      "failures": [],
+      "iterations": 1000,
+      "mode": "native",
+      "peakRSSBytes": 28737536,
+      "workers": 8
+    },
+    "logs": {
+      "stdout.log": {
+        "bytes": 189,
+        "sha256": "3d81beba6acc72bd223ab69c5f52c17581a8b50389225def66551de03bf4340c"
+      },
+      "stderr.log": {
+        "bytes": 3600000,
+        "sha256": "7fce2ed8c7288c6cdbab4597e49b5890ed8c81585bbe56ae64774988e007cde1"
+      }
+    },
+    "case": "untagged-native-w8-trial21",
+    "fixture": "untagged"
+  },
+  {
+    "status": "passed",
+    "returncode": 0,
+    "timedOut": false,
+    "seconds": 6.467459167000925,
+    "mode": "native",
+    "workers": 8,
+    "iterations": 1000,
+    "command": [
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/probe",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/rolemap.pdf",
+      "native",
+      "8",
+      "1000"
+    ],
+    "result": {
+      "completed": 8000,
+      "event": "completed",
+      "failures": [],
+      "iterations": 1000,
+      "mode": "native",
+      "peakRSSBytes": 28950528,
+      "workers": 8
+    },
+    "logs": {
+      "stdout.log": {
+        "bytes": 189,
+        "sha256": "e66955a3a8af9be03301b70611fbad672e07fb121c4880a0cbcba49a6a8605d4"
+      },
+      "stderr.log": {
+        "bytes": 3600000,
+        "sha256": "85b454211c34905e744f1340b1a8ded8a8387b06b68b573a95d5adeb1f2ed7fc"
+      }
+    },
+    "case": "rolemap-native-w8-trial22",
+    "fixture": "rolemap"
+  },
+  {
+    "status": "passed",
+    "returncode": 0,
+    "timedOut": false,
+    "seconds": 6.239418499997555,
+    "mode": "native",
+    "workers": 8,
+    "iterations": 1000,
+    "command": [
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/probe",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/untagged.pdf",
+      "native",
+      "8",
+      "1000"
+    ],
+    "result": {
+      "completed": 8000,
+      "event": "completed",
+      "failures": [],
+      "iterations": 1000,
+      "mode": "native",
+      "peakRSSBytes": 28639232,
+      "workers": 8
+    },
+    "logs": {
+      "stdout.log": {
+        "bytes": 189,
+        "sha256": "fe9afe2bb40ed3080b8595ce5a52b303a3c4b4ff5bc1be93b54c7973babfb1ae"
+      },
+      "stderr.log": {
+        "bytes": 3600000,
+        "sha256": "a17a3eec671fe3a8ec0fab47e1cec9bbe11348c7750b222bd68cec89f3ccc1d8"
+      }
+    },
+    "case": "untagged-native-w8-trial22",
+    "fixture": "untagged"
+  },
+  {
+    "status": "passed",
+    "returncode": 0,
+    "timedOut": false,
+    "seconds": 8.019962000002124,
+    "mode": "native",
+    "workers": 8,
+    "iterations": 1000,
+    "command": [
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/probe",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/rolemap.pdf",
+      "native",
+      "8",
+      "1000"
+    ],
+    "result": {
+      "completed": 8000,
+      "event": "completed",
+      "failures": [],
+      "iterations": 1000,
+      "mode": "native",
+      "peakRSSBytes": 28884992,
+      "workers": 8
+    },
+    "logs": {
+      "stdout.log": {
+        "bytes": 189,
+        "sha256": "e63f9cc608fc851d9c763fdbe784906de6e5cdacaa35989e99e0d5a6a5ca460c"
+      },
+      "stderr.log": {
+        "bytes": 3600000,
+        "sha256": "d75865df93e89971d030c4bdc147e29e2c37d9679fbff5437db85c29153d7860"
+      }
+    },
+    "case": "rolemap-native-w8-trial23",
+    "fixture": "rolemap"
+  },
+  {
+    "status": "passed",
+    "returncode": 0,
+    "timedOut": false,
+    "seconds": 6.87972341600107,
+    "mode": "native",
+    "workers": 8,
+    "iterations": 1000,
+    "command": [
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/probe",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/untagged.pdf",
+      "native",
+      "8",
+      "1000"
+    ],
+    "result": {
+      "completed": 8000,
+      "event": "completed",
+      "failures": [],
+      "iterations": 1000,
+      "mode": "native",
+      "peakRSSBytes": 28737536,
+      "workers": 8
+    },
+    "logs": {
+      "stdout.log": {
+        "bytes": 189,
+        "sha256": "3d81beba6acc72bd223ab69c5f52c17581a8b50389225def66551de03bf4340c"
+      },
+      "stderr.log": {
+        "bytes": 3600000,
+        "sha256": "6811c25aa1d326632a2605475a4eb3daf28e80d5a732f0cae3dd7fda572be3dd"
+      }
+    },
+    "case": "untagged-native-w8-trial23",
+    "fixture": "untagged"
+  },
+  {
+    "status": "passed",
+    "returncode": 0,
+    "timedOut": false,
+    "seconds": 6.982052125000337,
+    "mode": "native",
+    "workers": 8,
+    "iterations": 1000,
+    "command": [
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/probe",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/rolemap.pdf",
+      "native",
+      "8",
+      "1000"
+    ],
+    "result": {
+      "completed": 8000,
+      "event": "completed",
+      "failures": [],
+      "iterations": 1000,
+      "mode": "native",
+      "peakRSSBytes": 28721152,
+      "workers": 8
+    },
+    "logs": {
+      "stdout.log": {
+        "bytes": 189,
+        "sha256": "ea240b277e113a17eafaee1de6b92b4ba3856468b7d045dee6e0a2227b0a557f"
+      },
+      "stderr.log": {
+        "bytes": 3600000,
+        "sha256": "fe07717ce54ee2a72ab8fb5a246321d3ecd3ea70eca0e554be57e71fd5a11843"
+      }
+    },
+    "case": "rolemap-native-w8-trial24",
+    "fixture": "rolemap"
+  },
+  {
+    "status": "passed",
+    "returncode": 0,
+    "timedOut": false,
+    "seconds": 6.722279625002557,
+    "mode": "native",
+    "workers": 8,
+    "iterations": 1000,
+    "command": [
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/probe",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/untagged.pdf",
+      "native",
+      "8",
+      "1000"
+    ],
+    "result": {
+      "completed": 8000,
+      "event": "completed",
+      "failures": [],
+      "iterations": 1000,
+      "mode": "native",
+      "peakRSSBytes": 28803072,
+      "workers": 8
+    },
+    "logs": {
+      "stdout.log": {
+        "bytes": 189,
+        "sha256": "7f3bd51f2e41754660e390fb6778233170d1dc9817efb879dd6ac5143f3a1221"
+      },
+      "stderr.log": {
+        "bytes": 3600000,
+        "sha256": "f643e8f6f5ef094e837285878b5dd4dfbdd969329e5058e8032b846766869b01"
+      }
+    },
+    "case": "untagged-native-w8-trial24",
+    "fixture": "untagged"
+  },
+  {
+    "status": "passed",
+    "returncode": 0,
+    "timedOut": false,
+    "seconds": 7.285357834000024,
+    "mode": "native",
+    "workers": 8,
+    "iterations": 1000,
+    "command": [
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/probe",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/rolemap.pdf",
+      "native",
+      "8",
+      "1000"
+    ],
+    "result": {
+      "completed": 8000,
+      "event": "completed",
+      "failures": [],
+      "iterations": 1000,
+      "mode": "native",
+      "peakRSSBytes": 28852224,
+      "workers": 8
+    },
+    "logs": {
+      "stdout.log": {
+        "bytes": 189,
+        "sha256": "1190896ddfcd6a46be0a942073e8f3b02edf7331c173ea7501d5d9811ee6cfe3"
+      },
+      "stderr.log": {
+        "bytes": 3600000,
+        "sha256": "068905eec8da039c961904caecf22596334b354e8b2bdd1beef0c728601c2515"
+      }
+    },
+    "case": "rolemap-native-w8-trial25",
+    "fixture": "rolemap"
+  },
+  {
+    "status": "passed",
+    "returncode": 0,
+    "timedOut": false,
+    "seconds": 3.992848292000417,
+    "mode": "native",
+    "workers": 8,
+    "iterations": 1000,
+    "command": [
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/probe",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/untagged.pdf",
+      "native",
+      "8",
+      "1000"
+    ],
+    "result": {
+      "completed": 8000,
+      "event": "completed",
+      "failures": [],
+      "iterations": 1000,
+      "mode": "native",
+      "peakRSSBytes": 28934144,
+      "workers": 8
+    },
+    "logs": {
+      "stdout.log": {
+        "bytes": 189,
+        "sha256": "9a764ed449cbe9a4554324654476bbb7f9ab22ed101a5f9091010f72fab21528"
+      },
+      "stderr.log": {
+        "bytes": 3600000,
+        "sha256": "41d04261852eaad545b04ee07800183fbc2f13f57eaa1d1607fc843dce7aecc8"
+      }
+    },
+    "case": "untagged-native-w8-trial25",
+    "fixture": "untagged"
+  },
+  {
+    "status": "passed",
+    "returncode": 0,
+    "timedOut": false,
+    "seconds": 3.090302958000393,
+    "mode": "native",
+    "workers": 8,
+    "iterations": 1000,
+    "command": [
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/probe",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/rolemap.pdf",
+      "native",
+      "8",
+      "1000"
+    ],
+    "result": {
+      "completed": 8000,
+      "event": "completed",
+      "failures": [],
+      "iterations": 1000,
+      "mode": "native",
+      "peakRSSBytes": 28999680,
+      "workers": 8
+    },
+    "logs": {
+      "stdout.log": {
+        "bytes": 189,
+        "sha256": "632664b7b672eee3995470e16cd0b0dc96b5654155212b15f55e03e2656e7fdb"
+      },
+      "stderr.log": {
+        "bytes": 3600000,
+        "sha256": "27d9ba606e7b22d6aa8cf4398e5451e1da88685cdb1606425e6f7043619575c7"
+      }
+    },
+    "case": "rolemap-native-w8-trial26",
+    "fixture": "rolemap"
+  },
+  {
+    "status": "passed",
+    "returncode": 0,
+    "timedOut": false,
+    "seconds": 2.7706921249991865,
+    "mode": "native",
+    "workers": 8,
+    "iterations": 1000,
+    "command": [
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/probe",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/untagged.pdf",
+      "native",
+      "8",
+      "1000"
+    ],
+    "result": {
+      "completed": 8000,
+      "event": "completed",
+      "failures": [],
+      "iterations": 1000,
+      "mode": "native",
+      "peakRSSBytes": 29081600,
+      "workers": 8
+    },
+    "logs": {
+      "stdout.log": {
+        "bytes": 189,
+        "sha256": "6299f23dd37b2d12956a48d4fa74cf78b835c36778852251b686701a3384fa8d"
+      },
+      "stderr.log": {
+        "bytes": 3600000,
+        "sha256": "71ec045db4a622916ae47f9aa385f621a4f757185cf6d30539b50c0e2914ef62"
+      }
+    },
+    "case": "untagged-native-w8-trial26",
+    "fixture": "untagged"
+  },
+  {
+    "status": "passed",
+    "returncode": 0,
+    "timedOut": false,
+    "seconds": 2.928452083000593,
+    "mode": "native",
+    "workers": 8,
+    "iterations": 1000,
+    "command": [
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/probe",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/rolemap.pdf",
+      "native",
+      "8",
+      "1000"
+    ],
+    "result": {
+      "completed": 8000,
+      "event": "completed",
+      "failures": [],
+      "iterations": 1000,
+      "mode": "native",
+      "peakRSSBytes": 28901376,
+      "workers": 8
+    },
+    "logs": {
+      "stdout.log": {
+        "bytes": 189,
+        "sha256": "7bc6f5ee3c20a2699c37f36cbe20ad0e4869ab6e8b9fee54e6608487b36f64f9"
+      },
+      "stderr.log": {
+        "bytes": 3600000,
+        "sha256": "f8682a2f2ca35b3c68a3074b17914e15bc6376dcd1301aa49d99ed8657aad2dc"
+      }
+    },
+    "case": "rolemap-native-w8-trial27",
+    "fixture": "rolemap"
+  },
+  {
+    "status": "passed",
+    "returncode": 0,
+    "timedOut": false,
+    "seconds": 2.945737124999141,
+    "mode": "native",
+    "workers": 8,
+    "iterations": 1000,
+    "command": [
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/probe",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/untagged.pdf",
+      "native",
+      "8",
+      "1000"
+    ],
+    "result": {
+      "completed": 8000,
+      "event": "completed",
+      "failures": [],
+      "iterations": 1000,
+      "mode": "native",
+      "peakRSSBytes": 28901376,
+      "workers": 8
+    },
+    "logs": {
+      "stdout.log": {
+        "bytes": 189,
+        "sha256": "7bc6f5ee3c20a2699c37f36cbe20ad0e4869ab6e8b9fee54e6608487b36f64f9"
+      },
+      "stderr.log": {
+        "bytes": 3600000,
+        "sha256": "ace8bd2bf3e5ad4c141a88ab630fe6b788c5e0ff0324cf44a39116f22a15bde2"
+      }
+    },
+    "case": "untagged-native-w8-trial27",
+    "fixture": "untagged"
+  },
+  {
+    "status": "passed",
+    "returncode": 0,
+    "timedOut": false,
+    "seconds": 6.751045332999638,
+    "mode": "native",
+    "workers": 8,
+    "iterations": 1000,
+    "command": [
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/probe",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/rolemap.pdf",
+      "native",
+      "8",
+      "1000"
+    ],
+    "result": {
+      "completed": 8000,
+      "event": "completed",
+      "failures": [],
+      "iterations": 1000,
+      "mode": "native",
+      "peakRSSBytes": 29048832,
+      "workers": 8
+    },
+    "logs": {
+      "stdout.log": {
+        "bytes": 189,
+        "sha256": "1d17e9278e52fa7c7a9dc464cf017b318012aef653712fcc01a7cd05b55df73d"
+      },
+      "stderr.log": {
+        "bytes": 3600000,
+        "sha256": "3161a36c8e5d1e7fab6a5dd7b0635f44774d41ce9c629dc248b2fc111242c56e"
+      }
+    },
+    "case": "rolemap-native-w8-trial28",
+    "fixture": "rolemap"
+  },
+  {
+    "status": "passed",
+    "returncode": 0,
+    "timedOut": false,
+    "seconds": 7.29801183300151,
+    "mode": "native",
+    "workers": 8,
+    "iterations": 1000,
+    "command": [
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/probe",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/untagged.pdf",
+      "native",
+      "8",
+      "1000"
+    ],
+    "result": {
+      "completed": 8000,
+      "event": "completed",
+      "failures": [],
+      "iterations": 1000,
+      "mode": "native",
+      "peakRSSBytes": 28999680,
+      "workers": 8
+    },
+    "logs": {
+      "stdout.log": {
+        "bytes": 189,
+        "sha256": "632664b7b672eee3995470e16cd0b0dc96b5654155212b15f55e03e2656e7fdb"
+      },
+      "stderr.log": {
+        "bytes": 3600000,
+        "sha256": "17f91c3033e222e5ff28eb99a7c501dfd35902b5e03275003c72908f5cd30437"
+      }
+    },
+    "case": "untagged-native-w8-trial28",
+    "fixture": "untagged"
+  },
+  {
+    "status": "passed",
+    "returncode": 0,
+    "timedOut": false,
+    "seconds": 6.9657210420009505,
+    "mode": "native",
+    "workers": 8,
+    "iterations": 1000,
+    "command": [
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/probe",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/rolemap.pdf",
+      "native",
+      "8",
+      "1000"
+    ],
+    "result": {
+      "completed": 8000,
+      "event": "completed",
+      "failures": [],
+      "iterations": 1000,
+      "mode": "native",
+      "peakRSSBytes": 28917760,
+      "workers": 8
+    },
+    "logs": {
+      "stdout.log": {
+        "bytes": 189,
+        "sha256": "f358e0dcd5cdf9ef47e33aaf1ba55b605ef2209ebc82681df89278eacf8b5d51"
+      },
+      "stderr.log": {
+        "bytes": 3600000,
+        "sha256": "7ea8c1b7af14dd5f7580c4681a05e71bdbcdd265eac91a6aa7b16d9929a1e789"
+      }
+    },
+    "case": "rolemap-native-w8-trial29",
+    "fixture": "rolemap"
+  },
+  {
+    "status": "passed",
+    "returncode": 0,
+    "timedOut": false,
+    "seconds": 6.592407124997408,
+    "mode": "native",
+    "workers": 8,
+    "iterations": 1000,
+    "command": [
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/probe",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/untagged.pdf",
+      "native",
+      "8",
+      "1000"
+    ],
+    "result": {
+      "completed": 8000,
+      "event": "completed",
+      "failures": [],
+      "iterations": 1000,
+      "mode": "native",
+      "peakRSSBytes": 28901376,
+      "workers": 8
+    },
+    "logs": {
+      "stdout.log": {
+        "bytes": 189,
+        "sha256": "7bc6f5ee3c20a2699c37f36cbe20ad0e4869ab6e8b9fee54e6608487b36f64f9"
+      },
+      "stderr.log": {
+        "bytes": 3600000,
+        "sha256": "5ec6ca70fabc3a5e2b355d3e0aa032aa4f5ebc8721117af25fc3cbf43eb4c3fe"
+      }
+    },
+    "case": "untagged-native-w8-trial29",
+    "fixture": "untagged"
+  },
+  {
+    "status": "passed",
+    "returncode": 0,
+    "timedOut": false,
+    "seconds": 6.983509500001674,
+    "mode": "native",
+    "workers": 8,
+    "iterations": 1000,
+    "command": [
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/probe",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/rolemap.pdf",
+      "native",
+      "8",
+      "1000"
+    ],
+    "result": {
+      "completed": 8000,
+      "event": "completed",
+      "failures": [],
+      "iterations": 1000,
+      "mode": "native",
+      "peakRSSBytes": 28884992,
+      "workers": 8
+    },
+    "logs": {
+      "stdout.log": {
+        "bytes": 189,
+        "sha256": "e63f9cc608fc851d9c763fdbe784906de6e5cdacaa35989e99e0d5a6a5ca460c"
+      },
+      "stderr.log": {
+        "bytes": 3600000,
+        "sha256": "75983d7b38994c2e6b6ae9667f4fed7514a6646113e7d79a925627137a526f9e"
+      }
+    },
+    "case": "rolemap-native-w8-trial30",
+    "fixture": "rolemap"
+  },
+  {
+    "status": "passed",
+    "returncode": 0,
+    "timedOut": false,
+    "seconds": 7.043473165998876,
+    "mode": "native",
+    "workers": 8,
+    "iterations": 1000,
+    "command": [
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/probe",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/untagged.pdf",
+      "native",
+      "8",
+      "1000"
+    ],
+    "result": {
+      "completed": 8000,
+      "event": "completed",
+      "failures": [],
+      "iterations": 1000,
+      "mode": "native",
+      "peakRSSBytes": 28786688,
+      "workers": 8
+    },
+    "logs": {
+      "stdout.log": {
+        "bytes": 189,
+        "sha256": "c4a3f87b14260cdb3bbc573479278b1698f4d9fba538d2c8ac26cbf3880d2af0"
+      },
+      "stderr.log": {
+        "bytes": 3600000,
+        "sha256": "c538d032979da25b969706f02ed1dbdaa0b865fd8b68f9646001130284af3528"
+      }
+    },
+    "case": "untagged-native-w8-trial30",
+    "fixture": "untagged"
+  },
+  {
+    "status": "passed",
+    "returncode": 0,
+    "timedOut": false,
+    "seconds": 7.350397875001363,
+    "mode": "native",
+    "workers": 8,
+    "iterations": 1000,
+    "command": [
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/probe",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/rolemap.pdf",
+      "native",
+      "8",
+      "1000"
+    ],
+    "result": {
+      "completed": 8000,
+      "event": "completed",
+      "failures": [],
+      "iterations": 1000,
+      "mode": "native",
+      "peakRSSBytes": 28835840,
+      "workers": 8
+    },
+    "logs": {
+      "stdout.log": {
+        "bytes": 189,
+        "sha256": "6f0170e8d322135a8a561f88da0a1d812db795e81d01a1ead6bf8547add917b4"
+      },
+      "stderr.log": {
+        "bytes": 3600000,
+        "sha256": "2872cd1b7a62764f3d101c36c280477f72d4a6321608a649f95e832c32d2907f"
+      }
+    },
+    "case": "rolemap-native-w8-trial31",
+    "fixture": "rolemap"
+  },
+  {
+    "status": "passed",
+    "returncode": 0,
+    "timedOut": false,
+    "seconds": 7.187035750001087,
+    "mode": "native",
+    "workers": 8,
+    "iterations": 1000,
+    "command": [
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/probe",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/untagged.pdf",
+      "native",
+      "8",
+      "1000"
+    ],
+    "result": {
+      "completed": 8000,
+      "event": "completed",
+      "failures": [],
+      "iterations": 1000,
+      "mode": "native",
+      "peakRSSBytes": 28803072,
+      "workers": 8
+    },
+    "logs": {
+      "stdout.log": {
+        "bytes": 189,
+        "sha256": "7f3bd51f2e41754660e390fb6778233170d1dc9817efb879dd6ac5143f3a1221"
+      },
+      "stderr.log": {
+        "bytes": 3600000,
+        "sha256": "6b5ea7dfdb3641909e5df63e32fdd612cfc208fc18aaf75af33e3d47921b8a61"
+      }
+    },
+    "case": "untagged-native-w8-trial31",
+    "fixture": "untagged"
+  },
+  {
+    "status": "passed",
+    "returncode": 0,
+    "timedOut": false,
+    "seconds": 6.915597334002086,
+    "mode": "native",
+    "workers": 8,
+    "iterations": 1000,
+    "command": [
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/probe",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/rolemap.pdf",
+      "native",
+      "8",
+      "1000"
+    ],
+    "result": {
+      "completed": 8000,
+      "event": "completed",
+      "failures": [],
+      "iterations": 1000,
+      "mode": "native",
+      "peakRSSBytes": 28901376,
+      "workers": 8
+    },
+    "logs": {
+      "stdout.log": {
+        "bytes": 189,
+        "sha256": "7bc6f5ee3c20a2699c37f36cbe20ad0e4869ab6e8b9fee54e6608487b36f64f9"
+      },
+      "stderr.log": {
+        "bytes": 3600000,
+        "sha256": "51cd8a7955230aa831e62e8e5bc39853babc0e2930274ec12533aba7843ee429"
+      }
+    },
+    "case": "rolemap-native-w8-trial32",
+    "fixture": "rolemap"
+  },
+  {
+    "status": "passed",
+    "returncode": 0,
+    "timedOut": false,
+    "seconds": 7.074792332998186,
+    "mode": "native",
+    "workers": 8,
+    "iterations": 1000,
+    "command": [
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/probe",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/untagged.pdf",
+      "native",
+      "8",
+      "1000"
+    ],
+    "result": {
+      "completed": 8000,
+      "event": "completed",
+      "failures": [],
+      "iterations": 1000,
+      "mode": "native",
+      "peakRSSBytes": 28835840,
+      "workers": 8
+    },
+    "logs": {
+      "stdout.log": {
+        "bytes": 189,
+        "sha256": "6f0170e8d322135a8a561f88da0a1d812db795e81d01a1ead6bf8547add917b4"
+      },
+      "stderr.log": {
+        "bytes": 3600000,
+        "sha256": "c073487624ea2721b9d01304cb37a27162aa65a98fc9433d64ae99118d8d56f5"
+      }
+    },
+    "case": "untagged-native-w8-trial32",
+    "fixture": "untagged"
+  },
+  {
+    "status": "passed",
+    "returncode": 0,
+    "timedOut": false,
+    "seconds": 6.820277582999552,
+    "mode": "native",
+    "workers": 8,
+    "iterations": 1000,
+    "command": [
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/probe",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/rolemap.pdf",
+      "native",
+      "8",
+      "1000"
+    ],
+    "result": {
+      "completed": 8000,
+      "event": "completed",
+      "failures": [],
+      "iterations": 1000,
+      "mode": "native",
+      "peakRSSBytes": 28786688,
+      "workers": 8
+    },
+    "logs": {
+      "stdout.log": {
+        "bytes": 189,
+        "sha256": "c4a3f87b14260cdb3bbc573479278b1698f4d9fba538d2c8ac26cbf3880d2af0"
+      },
+      "stderr.log": {
+        "bytes": 3600000,
+        "sha256": "cf21b176068ab782100f1b380f93f26a9d905a6a09977cc2c57fc41045445148"
+      }
+    },
+    "case": "rolemap-native-w8-trial33",
+    "fixture": "rolemap"
+  },
+  {
+    "status": "passed",
+    "returncode": 0,
+    "timedOut": false,
+    "seconds": 7.180976332998398,
+    "mode": "native",
+    "workers": 8,
+    "iterations": 1000,
+    "command": [
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/probe",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/untagged.pdf",
+      "native",
+      "8",
+      "1000"
+    ],
+    "result": {
+      "completed": 8000,
+      "event": "completed",
+      "failures": [],
+      "iterations": 1000,
+      "mode": "native",
+      "peakRSSBytes": 28901376,
+      "workers": 8
+    },
+    "logs": {
+      "stdout.log": {
+        "bytes": 189,
+        "sha256": "7bc6f5ee3c20a2699c37f36cbe20ad0e4869ab6e8b9fee54e6608487b36f64f9"
+      },
+      "stderr.log": {
+        "bytes": 3600000,
+        "sha256": "319d0dcb8401d6e59dd92143c9d5df565ddf1e5e1811880ea5fe54324ead6b16"
+      }
+    },
+    "case": "untagged-native-w8-trial33",
+    "fixture": "untagged"
+  },
+  {
+    "status": "passed",
+    "returncode": 0,
+    "timedOut": false,
+    "seconds": 7.777356750000763,
+    "mode": "native",
+    "workers": 8,
+    "iterations": 1000,
+    "command": [
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/probe",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/rolemap.pdf",
+      "native",
+      "8",
+      "1000"
+    ],
+    "result": {
+      "completed": 8000,
+      "event": "completed",
+      "failures": [],
+      "iterations": 1000,
+      "mode": "native",
+      "peakRSSBytes": 28934144,
+      "workers": 8
+    },
+    "logs": {
+      "stdout.log": {
+        "bytes": 189,
+        "sha256": "9a764ed449cbe9a4554324654476bbb7f9ab22ed101a5f9091010f72fab21528"
+      },
+      "stderr.log": {
+        "bytes": 3600000,
+        "sha256": "c5c2a67adc5736be14d53307b0782585ff0495a04a0eeba242a5d0e91966d529"
+      }
+    },
+    "case": "rolemap-native-w8-trial34",
+    "fixture": "rolemap"
+  },
+  {
+    "status": "passed",
+    "returncode": 0,
+    "timedOut": false,
+    "seconds": 8.481600125000114,
+    "mode": "native",
+    "workers": 8,
+    "iterations": 1000,
+    "command": [
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/probe",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/untagged.pdf",
+      "native",
+      "8",
+      "1000"
+    ],
+    "result": {
+      "completed": 8000,
+      "event": "completed",
+      "failures": [],
+      "iterations": 1000,
+      "mode": "native",
+      "peakRSSBytes": 28966912,
+      "workers": 8
+    },
+    "logs": {
+      "stdout.log": {
+        "bytes": 189,
+        "sha256": "9645a95b3591a8e54435971d75683a68dc423a6688929b7cad1539535ce5b575"
+      },
+      "stderr.log": {
+        "bytes": 3600000,
+        "sha256": "b8e484640a675b13145d0737f5862b180b32251bc76f2755cadfa6d06550152c"
+      }
+    },
+    "case": "untagged-native-w8-trial34",
+    "fixture": "untagged"
+  },
+  {
+    "status": "passed",
+    "returncode": 0,
+    "timedOut": false,
+    "seconds": 2.856734500001039,
+    "mode": "native",
+    "workers": 8,
+    "iterations": 1000,
+    "command": [
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/probe",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/rolemap.pdf",
+      "native",
+      "8",
+      "1000"
+    ],
+    "result": {
+      "completed": 8000,
+      "event": "completed",
+      "failures": [],
+      "iterations": 1000,
+      "mode": "native",
+      "peakRSSBytes": 28983296,
+      "workers": 8
+    },
+    "logs": {
+      "stdout.log": {
+        "bytes": 189,
+        "sha256": "3e36aff7ff05ba6efd016b7dbb8753bf04a1a73bd40fc07270e778d714d7e313"
+      },
+      "stderr.log": {
+        "bytes": 3600000,
+        "sha256": "c0b13001c202120ad9d1b6675942031091316de2927d14aef22562b279809571"
+      }
+    },
+    "case": "rolemap-native-w8-trial35",
+    "fixture": "rolemap"
+  },
+  {
+    "status": "passed",
+    "returncode": 0,
+    "timedOut": false,
+    "seconds": 2.8678952910013322,
+    "mode": "native",
+    "workers": 8,
+    "iterations": 1000,
+    "command": [
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/probe",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib/97a35590-a957-460e-9f64-61d93bd9aac1/scratchpad/pdfkit-gate/after-fix/untagged.pdf",
+      "native",
+      "8",
+      "1000"
+    ],
+    "result": {
+      "completed": 8000,
+      "event": "completed",
+      "failures": [],
+      "iterations": 1000,
+      "mode": "native",
+      "peakRSSBytes": 28983296,
+      "workers": 8
+    },
+    "logs": {
+      "stdout.log": {
+        "bytes": 189,
+        "sha256": "3e36aff7ff05ba6efd016b7dbb8753bf04a1a73bd40fc07270e778d714d7e313"
+      },
+      "stderr.log": {
+        "bytes": 3600000,
+        "sha256": "7697c103df8f24e417947ea8d4c043fdd175ca07f26003d120020efe46a307b5"
+      }
+    },
+    "case": "untagged-native-w8-trial35",
+    "fixture": "untagged"
+  }
+]

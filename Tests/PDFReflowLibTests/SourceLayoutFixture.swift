@@ -31,7 +31,7 @@ struct SourceLayoutFixture: Decodable {
                 var attributes: [NSAttributedString.Key: Any] = [
                     NSAttributedString.Key(kCTBaselineOffsetAttributeName as String): run.baselineOffset,
                 ]
-                attributes[.font] = FixtureFont(name: run.fontName, size: run.fontSize)
+                attributes[.font] = pdfKitGated { FixtureFont(name: run.fontName, size: run.fontSize) }
                 value.append(NSAttributedString(string: run.text, attributes: attributes))
             }
             return value

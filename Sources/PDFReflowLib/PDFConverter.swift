@@ -2,6 +2,12 @@ import Foundation
 
 /// Independent Apple-only PDF-to-EPUB 3 converter. Work runs on this actor, not the main actor.
 /// Each call owns its PDFDocument and staging directory. Cancellation uses Swift Task cancellation.
+/// This library serializes its own PDFKit text extraction to mitigate a PDFKit crash under
+/// concurrent attributed-text extraction (`NSInvalidArgumentException`, nil `NSFont`; Apple
+/// FB24796210, see `doc/architecture.md`'s "Reconstruction boundary"). That mitigation only
+/// covers this library's own PDFKit calls: a host application making a font, laying out text
+/// with CoreText, or reading PDFKit text on its own thread while a conversion runs can still
+/// trigger the same underlying SDK bug. This is a real, currently open limitation.
 public actor PDFConverter {
     public init() {}
 

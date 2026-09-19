@@ -28,7 +28,13 @@ enum NativeTextReader {
         }
         defer { extractionLock.unlock() }
         try Task.checkCancellation()
-        return try operation()
+        // Drain what the operation autoreleased before unlocking. PDFKit returns its selections
+        // and attributed strings, with the fonts they carry, autoreleased; drained by the
+        // caller's pool while another thread holds the gate, they abort that thread's
+        // `attributedString` with the same NSFont exception (#21: 2 of 80 eight-worker processes
+        // aborted with the drain removed, 0 of 70 with it present; see
+        // measurements/pdfkit-gate-drain/record.md).
+        return try autoreleasepool { try operation() }
     }
 
     static func lines(on page: PDFPage, limit: Int, includeStyle: Bool = true) throws -> [TextLine] {

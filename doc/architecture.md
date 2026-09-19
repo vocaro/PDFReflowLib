@@ -185,6 +185,34 @@ language is noise, reported as `implausibleRecognition`, and the page becomes a 
 `readsAsWords` holds, so table cells and handwriting read at heading size stay out of the
 navigation. See [conversion options](conversion-options.md#implausible-inherited-text).
 
+The same ink evidence answers the opposite question (#176). A page whose text layer holds no
+letter at all — nothing, or only a folio — reflows no word of its own, and its writing, if it has
+any, is in its art. `TextLayerPlausibility.judgeImageOnly` renders such a page at 180 DPI and,
+when at least `minimumImageOnlyRows` (two) rows of text-shaped ink stand outside the layer's
+lines and outside `GraphicsReader.Result.images` (placed raster XObjects, a field added for this
+check; main had no way to tell a placed photograph apart from a vector fill before it), treats it
+as a page with no text layer at all: every automatic policy recognizes it. A page whose art forms
+no such row — a chart, an answer key of bare surds — keeps its crops, and so does a page whose
+only rows are inside a photograph. When recognition of such a page reads nothing, the page is
+left exactly as it was extracted, with its crops, rather than becoming one page-sized image, and
+says so with `ocrFailed`.
+
+Candidacy for this check does not require `!imageBackedText`, unlike #93's own trigger: main has
+no equivalent of the branch's `layoutComesApart` (#117, not ported), which there distinguishes a
+born-digital page whose art merely shares one full-bleed background paint from an actual scan.
+Without it, a page with a solid full-page background fill — an ordinary slide export — already
+reads as image-backed on the signal `imageBackedText` uses. `reflowsNoWords` is what actually
+keeps this check out of #93's territory: a page with real judged words never passes it, and #93's
+own ink test (seven-row threshold) does not fire on the two- or three-row slides this check
+targets, so the two coexist safely on the same page without a `!imageBackedText` gate.
+
+`OCRTextCoverage` reads ink against the page's own background. A slide printed white on dark blue
+puts almost every pixel below any ink threshold, so the darker side is one page-sized component
+and no text row is found at all; when a measurement finds no row and the darker side covers more
+than half the page, that side is the background and the page is measured again inverted. A page
+whose dark ink already forms rows is never inverted, so no reading that already worked changes.
+See [conversion options](conversion-options.md#pages-whose-writing-is-drawn).
+
 `GraphicsReader` tracks text rendering mode across saved graphics state and nested forms. When
 all observed text uses invisible mode 3 and a graphic covers most of the page, extraction skips
 attributed text and marks the page's typography as synthetic. Layout then uses ordinary prose

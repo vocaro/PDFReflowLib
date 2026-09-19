@@ -4,7 +4,11 @@ import Foundation
 /// Finds painted regions, not just raw image resources. Cropping the original rendering preserves
 /// masks, clipping, vector paths and labels without reimplementing their PDF compositing semantics.
 enum GraphicsReader {
-    struct Result { var regions: [CGRect]; var unsupported: Bool; var hasOnlyInvisibleText = false }
+    struct Result { var regions: [CGRect]; var unsupported: Bool; var hasOnlyInvisibleText = false
+                    /// Placed raster image XObjects specifically, a subset of `regions` (#176):
+                    /// a photograph's internal texture is not writing the page drew, even where it
+                    /// forms rows the ink test would otherwise count.
+                    var images: [CGRect] = [] }
     private final class State {
         var matrix = CGAffineTransform.identity
         var saved: [(CGAffineTransform, Bool, CGRect, Int)] = []
@@ -17,6 +21,7 @@ enum GraphicsReader {
         var white = false
         var path = CGRect.null
         var regions: [CGRect] = []
+        var images: [CGRect] = []
         var unsupported = false
         var depth = 0
         var operations = 0
@@ -179,7 +184,9 @@ enum GraphicsReader {
             switch String(cString: subtype) {
             case "Image":
                 if s.regions.count < 10_000 {
-                    s.regions.append(CGRect(x: 0, y: 0, width: 1, height: 1).applying(s.matrix))
+                    let rect = CGRect(x: 0, y: 0, width: 1, height: 1).applying(s.matrix)
+                    s.regions.append(rect)
+                    s.images.append(rect)
                 } else { s.unsupported = true }
             case "Form":
                 let startCount = s.regions.count
@@ -224,7 +231,8 @@ enum GraphicsReader {
         scan(stream, state: s)
         let bounds = page.getBoxRect(.cropBox)
         return Result(regions: clusters(s.regions.map { $0.intersection(bounds) }, distance: 4),
-                      unsupported: s.unsupported, hasOnlyInvisibleText: !s.unsupported && s.invisibleText && !s.visibleText)
+                      unsupported: s.unsupported, hasOnlyInvisibleText: !s.unsupported && s.invisibleText && !s.visibleText,
+                      images: clusters(s.images.map { $0.intersection(bounds) }, distance: 4))
     }
 
     private static func rectangle(_ dictionary: CGPDFDictionaryRef, key: String) -> CGRect? {

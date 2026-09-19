@@ -123,7 +123,12 @@ that fall back to images skip unused attributed-text decoding. Failures use
   it, reports `implausibleTextLayer`, and replaces the layer with fresh OCR by default (kept
   instead under `.automaticKeepingImageBackedText` and `.never`). Fresh recognition that itself
   does not read as English is discarded as noise (`implausibleRecognition`) rather than kept as
-  the reflowed text, and never becomes a heading.
+  the reflowed text, and never becomes a heading. A page whose text layer holds no letter at all
+  reflows nothing of its own; if its own drawing (not its photographs) carries at least two rows
+  of text-shaped ink outside that layer, it is recognized like a page with no text layer, so its
+  words reach the reading order. Ink is read against the page's own background, so a slide
+  printed white on dark is not mistaken for a blank one. Decorative art, charts and answer keys
+  of bare surds are left with their crops.
 - Rotated pages, unsupported drawing operations and pages without recoverable text use an
   explicitly warned whole-page image fallback. Visible annotations get a source reference
   image by default; link/form interactions are not reconstructed.

@@ -437,3 +437,13 @@ two-column scanned format. Replay Clocks is CC BY 4.0: retain the attribution re
 manifest. USCIS states some guide images are licensed, so that case commits no page rasters.
 Vertical CJK, Hebrew and Devanagari layouts remain uncovered for lack of clearly licensed sources
 ([#44](https://github.com/vocaro/PDFReflowLib/issues/44)).
+
+## Pages whose writing is drawn
+
+[#176](https://github.com/vocaro/PDFReflowLib/issues/176) recognizes a page whose text layer
+holds no letter at all but whose own drawing carries writing (a slide question set as vector
+glyph outlines, with only a folio in its text layer). The corpus document that motivated it, a
+slide deck exported from Google Slides, is not in this corpus's manifest: it is not fetched,
+reviewed or gated here, so no `corpus/regressions.json` case exercises this mechanism against a
+real document. `ImageOnlyPageTests.swift` covers it end to end with synthetic slides instead;
+see [regression testing](regression-testing.md#pages-whose-writing-is-drawn).

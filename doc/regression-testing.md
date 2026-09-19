@@ -237,6 +237,37 @@ contracts for the CDC comic and Warren transcript that the original work reviewe
 not re-verified here: see [corpus.md](corpus.md#preparedness-101-zombie-pandemic) for what
 remains open.
 
+### Pages whose writing is drawn
+
+`ImageOnlyPageTests.swift` covers [#176](https://github.com/vocaro/PDFReflowLib/issues/176) on
+synthetic slides built from real glyph outlines: a 720×405 page with a dark full-bleed fill, a
+folio drawn as text and a sentence drawn as filled glyph paths is recognized under `.automatic`
+and `.automaticKeepingImageBackedText` and not under `.never`; the same page printed dark on
+light is recognized too. Three negative controls are left alone: the same slide with discs
+instead of writing, the same slide with its sentence inside a placed raster (the photograph
+case), and a slide whose sentence is ordinary visible text. Unit tests pin the letter-less
+predicate (`reflowsNoWords`: a folio, a section folio and an answer key of surds reflow no words;
+`5 Goals` does), the two-row threshold (`carriesDrawnText`), the English gate and the one render
+it allows (`judgeImageOnly`), and the ink polarity: white writing on a dark ground reads three
+rows only once the page is measured against its own background, the same writing dark on light
+reads three without inversion, and a mostly dark page whose printed text already forms rows is
+never inverted.
+
+Porting this onto main required one adaptation `TextLayerPlausibilityTests.swift` did not:
+`GraphicsReader.Result` gained an `images` field (placed raster XObjects specifically, alongside
+the existing undifferentiated `regions`) so the pipeline can exclude a page's photographs from
+the ink test, the same way the branch's richer graphics model already could. The pipeline's
+`drawsTextCandidate` gate also does not require `!imageBackedText` the way the branch's did:
+main has no equivalent of `layoutComesApart` (#117, not ported), so an ordinary slide with a
+full-bleed background paint already reads as image-backed here, and gating this check out on
+that signal would leave it unable to fire on the exact case it exists for. `reflowsNoWords`
+(no letters at all) is what actually keeps it out of the implausible-layer check's territory
+instead; see [architecture.md](architecture.md) for why that is safe.
+
+No corpus case exercises this end to end: the Earthdata slide deck that motivated #176 upstream
+is not in this corpus's manifest, so `corpus/regressions.json` has nothing to gate here — see
+[corpus.md](corpus.md#pages-whose-writing-is-drawn).
+
 ## Running headers and page numbers
 
 `FurnitureTests.swift` uses 21 checksum-pinned 9/11 source-layout pages to distinguish running

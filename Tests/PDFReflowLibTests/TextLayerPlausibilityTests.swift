@@ -43,6 +43,26 @@ import Testing
     #expect(TextLayerPlausibility.inkFinding(measurement(rows: 7, uncovered: 90), englishWords: 7) == nil)
 }
 
+// #7's `comparesLayer` (misread-in-place) and #176's `drawnText` candidacy (`reflowsNoWords`) are
+// gated on opposite ends of the same word count, so a page can never trigger both at once: a
+// `.misreadWords` finding needs `judged >= minimumJudgedWords` (20), while `reflowsNoWords` holds
+// only when literally no line has a single letter, which leaves the layer's `words`/`judged`
+// counts at zero (`wordCounts` drops any token with no letter before it ever reaches a word
+// bucket). This is a structural proof, not a sampled negative control: the two thresholds cannot
+// both be satisfied by the same `lines`.
+@Test func misreadInPlaceAndReflowsNoWordsCannotBothHoldForTheSameLines() {
+    let noLetters = [TextLine(text: "5", rect: .zero, fontSize: 10), TextLine(text: "10-12", rect: .zero, fontSize: 10),
+                     TextLine(text: "37) 5 2 3", rect: .zero, fontSize: 10)]
+    #expect(TextLayerPlausibility.reflowsNoWords(noLetters))
+    let counts = TextLayerPlausibility.wordCounts(noLetters.map(\.text).joined(separator: "\n")) { _ in true }
+    #expect(counts.judged == 0 && counts.words == 0)
+    #expect(TextLayerPlausibility.wordFinding(counts) == nil)
+    // Any lines that satisfy reflowsNoWords contain no letters at all, so no `isWord` closure
+    // (real lexicon or this permissive stub) can ever find a judged word among them.
+    typealias Counts = TextLayerPlausibility.WordCounts
+    #expect(TextLayerPlausibility.wordFinding(Counts(english: 0, damaged: 0, tokens: noLetters.count)) == nil)
+}
+
 @Test func judgeRendersOnlySparseEnglishLayers() throws {
     try #require(TextLayerPlausibility.englishWordCounts("the") != nil, "no system English lexicon")
     func lines(_ text: String) -> [TextLine] { [TextLine(text: text, rect: CGRect(x: 0, y: 0, width: 100, height: 10), fontSize: 10)] }
@@ -225,6 +245,47 @@ private let dialogue = [
     "they are told to evacuate. You can get more information",
     "at the emergency web site. Stay tuned for more news.",
 ]
+
+/// The same dialogue with light single-letter damage (`h` to `b`, an OCR-style confusion) in about
+/// 15% of words, unlike `garbledDialogue`'s heavier leetspeak: enough to misread in place
+/// (`.misreadWords`, #7's `comparesLayer` path) without also failing the English-share test
+/// (`.fewEnglishWords`), which `garbledDialogue` exercises instead. `comparesLayer` and its
+/// downstream branches in `PDFReflowLibPipeline.swift` (kept-over-recognition, replaced-with-
+/// warning-removal) have no other end-to-end coverage; `TextLayerPlausibilityTests` otherwise only
+/// calls `wordFinding`/`readsBetter` directly, never through the real pipeline.
+private let misreadInPlaceDialogue = [
+    "In otber news, several people bave been bospitalized",
+    "after a strange virus began spreading rapidly through",
+    "tbe southeast. Scientists bave not identified tbe virus",
+    "yet, but symptoms include slow movement, slurred speecb",
+    "and violent tendencies. Tbe Centers for Disease Control",
+    "recommend tbat people stay away from anyone showing",
+    "tbese symptoms and gatber emergency supplies at bome.",
+    "Tbey are also asking families to make plans in case",
+    "tbey are told to evacuate. You can get more information",
+    "at tbe emergency web site. Stay tuned for more news.",
+]
+
+@Test func misreadInPlaceLayerComparesAgainstRecognitionEndToEnd() async throws {
+    try #require(TextLayerPlausibility.englishWordCounts("the") != nil, "no system English lexicon")
+    let counts = try #require(TextLayerPlausibility.englishWordCounts(misreadInPlaceDialogue.joined(separator: "\n")))
+    guard case .misreadWords? = TextLayerPlausibility.wordFinding(counts) else {
+        Issue.record("fixture no longer misreads in place: \(counts)"); return
+    }
+    let garbled = try imageBackedPDF(imageLines: dialogue, layerLines: misreadInPlaceDialogue)
+    let (result, text) = try await convert(garbled, policy: .automatic)
+    let warning = try #require(result.warnings.first { $0.code == .implausibleTextLayer })
+    #expect(warning.message.contains("is a damaged transcription:"), "\(warning.message)")
+    // The underlying image is clean, so recognition reads better than the damaged layer: replaced,
+    // exactly like the plain fewEnglishWords case, but reached through comparesLayer this time.
+    #expect(warning.message.contains("replaced by OCR"), "\(warning.message)")
+    #expect(result.recognizedPageCount == 1)
+    #expect(result.warnings.contains { $0.code == .ocrUsed })
+    #expect(text.contains("strange virus"), "\(text)")
+    #expect(!text.contains("otber") && !text.contains("bave"))
+    // The comparison layer's own unverifiedTextLayer review warning does not linger once it loses.
+    #expect(!result.warnings.contains { $0.code == .unverifiedTextLayer })
+}
 
 private let garbledDialogue = [
     "in otHee News, seveeAL people HAve eeeN Hosp/rAL/zed",

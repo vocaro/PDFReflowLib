@@ -161,6 +161,52 @@ private func backCoverLike() -> PageContent {
     }
 }
 
+// MARK: - The document-body floor's own boundary
+
+@Test func theDocumentFloorTakesEffectAtExactlyOneTenthOverNotBeforeIt() {
+    // Two lines of small filler (too few to establish a body of their own) keep the page's own
+    // threshold at max(8 * 1.25, 8 * 1.1) = 10; with documentBody 10, the floor is exactly 11.
+    // The `>=` at the threshold comparison means a candidate AT 11 must become a heading and one
+    // fractionally under must not, not just "comfortably above/below" cases.
+    func page(candidateSize: CGFloat) -> PageContent {
+        let lines = [
+            TextLine(text: "Filler text line one for the page here.", rect: CGRect(x: 40, y: 700, width: 300, height: 10), fontSize: 8),
+            TextLine(text: "Filler text line two for the page here.", rect: CGRect(x: 40, y: 688, width: 300, height: 10), fontSize: 8),
+            TextLine(text: "Boundary Heading Line", rect: CGRect(x: 40, y: 600, width: 200, height: 14), fontSize: candidateSize),
+        ]
+        return PageContent(number: 1, bounds: CGRect(x: 0, y: 0, width: 612, height: 792), lines: lines, graphics: [])
+    }
+    #expect(LayoutReconstructor.documentHeadingFloor(page(candidateSize: 11).lines, documentBody: 10) == 11)
+    #expect(headings(blocks(page(candidateSize: 11), documentBody: 10)) == ["Boundary Heading Line"])
+    #expect(headings(blocks(page(candidateSize: 10.9), documentBody: 10)).isEmpty)
+    #expect(paragraphs(blocks(page(candidateSize: 10.9), documentBody: 10)).contains { $0.contains("Boundary Heading Line") })
+}
+
+// MARK: - The document-body floor beside #7's recognized-heading gate
+
+@Test func aRecognizedLineThatClearsTheDocumentFloorButFailsTheWordTestIsStillNoHeading() {
+    // A page too bare to state its own body (two lines of small filler, as above), recognized by
+    // OCR (#7's `judgesTitleWords` gate applies), whose one heading-size line is not real words —
+    // digits and symbols large enough to clear the document floor. Both gates independently
+    // exclude it; this pins that the combination still does, not just either alone.
+    var lines = [
+        TextLine(text: "Filler text line one for the page here.", rect: CGRect(x: 40, y: 700, width: 300, height: 10), fontSize: 8),
+        TextLine(text: "Filler text line two for the page here.", rect: CGRect(x: 40, y: 688, width: 300, height: 10), fontSize: 8),
+    ]
+    let noise = TextLine(text: "48213 // 00921 ::: 5", rect: CGRect(x: 40, y: 600, width: 200, height: 14), fontSize: 11)
+    lines.append(noise)
+    var page = PageContent(number: 1, bounds: CGRect(x: 0, y: 0, width: 612, height: 792), lines: lines, graphics: [])
+    page.recognized = true
+    // Control: cleared floor (11 >= 11), reads as words, unrecognized page — a real heading.
+    var wordyLines = lines; wordyLines[2] = TextLine(text: "Boundary Heading Line", rect: noise.rect, fontSize: 11)
+    let wordyPage = PageContent(number: 1, bounds: page.bounds, lines: wordyLines, graphics: [])
+    #expect(headings(blocks(wordyPage, documentBody: 10)) == ["Boundary Heading Line"])
+    // The recognized noise line clears the same floor in size alone, but reads as no words.
+    #expect(!TextLayerPlausibility.readsAsWords(noise.text))
+    #expect(headings(blocks(page, documentBody: 10)).isEmpty)
+    #expect(paragraphs(blocks(page, documentBody: 10)).contains { $0.contains("48213") })
+}
+
 @Test func aVocabularyFragmentFromTheOtherHalfOfTheSameBreakDoesNotBlockTheVouch() throws {
     // main's addVocabulary is page-local and has no notion of a line that opens with the second
     // half of a hyphen-broken word: reading "panies interested in..." on its own adds "panies" to

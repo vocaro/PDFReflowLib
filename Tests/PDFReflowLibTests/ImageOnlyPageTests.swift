@@ -228,6 +228,79 @@ private func photographPDF(sentence: [String], folio: String) throws -> Data {
     return data as Data
 }
 
+/// The drawn-text slide, but its background is an actual placed raster image spanning the page
+/// (not a solid content-stream fill, which `GraphicsReader` does not track as a region) so
+/// `imageBackedText` (#93's own precondition) is true here, unlike `drawnTextPDF`'s pages. Its
+/// only real text-layer line is the folio, so it also satisfies #176's `reflowsNoWords`
+/// candidacy — the two features' preconditions overlap on this one page, where #7's
+/// `comparesLayer` cannot reach (see `misreadInPlaceAndReflowsNoWordsCannotBothHoldForTheSameLines`).
+/// The sentence is drawn on top of, and spatially within, that same full-page placed image.
+private func drawnTextOverPlacedImagePDF(sentence: [String], folio: String) throws -> Data {
+    let page = CGRect(x: 0, y: 0, width: 720, height: 405)
+    let bitmap = try #require(CGContext(data: nil, width: 4, height: 4, bitsPerComponent: 8, bytesPerRow: 0,
+        space: CGColorSpaceCreateDeviceRGB(), bitmapInfo: CGImageAlphaInfo.noneSkipLast.rawValue))
+    bitmap.setFillColor(gray: 0.25, alpha: 1)
+    bitmap.fill(CGRect(x: 0, y: 0, width: 4, height: 4))
+    let image = try #require(bitmap.makeImage())
+    let font = CTFontCreateWithName("Helvetica" as CFString, 40, nil)
+    let data = NSMutableData()
+    var box = page
+    let consumer = try #require(CGDataConsumer(data: data as CFMutableData))
+    let pdf = try #require(CGContext(consumer: consumer, mediaBox: &box, nil))
+    pdf.beginPDFPage(nil)
+    pdf.draw(image, in: page)
+    pdf.setFillColor(gray: 1, alpha: 1)
+    for (index, text) in sentence.enumerated() {
+        let line = CTLineCreateWithAttributedString(NSAttributedString(string: text, attributes: [
+            NSAttributedString.Key(kCTFontAttributeName as String): font]))
+        let origin = CGPoint(x: 90, y: 240 - CGFloat(index) * 60)
+        for run in CTLineGetGlyphRuns(line) as? [CTRun] ?? [] {
+            let count = CTRunGetGlyphCount(run)
+            var glyphs = [CGGlyph](repeating: 0, count: count)
+            var positions = [CGPoint](repeating: .zero, count: count)
+            CTRunGetGlyphs(run, CFRange(), &glyphs)
+            CTRunGetPositions(run, CFRange(), &positions)
+            for (glyph, position) in zip(glyphs, positions) {
+                guard let path = CTFontCreatePathForGlyph(font, glyph, nil) else { continue }
+                var transform = CGAffineTransform(translationX: origin.x + position.x, y: origin.y + position.y)
+                if let moved = path.copy(using: &transform) { pdf.addPath(moved) }
+            }
+        }
+        pdf.fillPath()
+    }
+    let small = CTFontCreateWithName("Helvetica" as CFString, 12, nil)
+    pdf.textPosition = CGPoint(x: 680, y: 24)
+    CTLineDraw(CTLineCreateWithAttributedString(NSAttributedString(string: folio, attributes: [
+        NSAttributedString.Key(kCTFontAttributeName as String): small,
+        NSAttributedString.Key(kCTForegroundColorFromContextAttributeName as String): true])), pdf)
+    pdf.endPDFPage()
+    pdf.closePDF()
+    return data as Data
+}
+
+@Test func aPageWhoseOnlyRowsSitInsideAFullPagePlacedImageIsNotRecognizedEitherWay() async throws {
+    // Verifies, rather than assumes, how #93's ink-test path and #176's drawnText candidacy
+    // interact when their preconditions overlap (imageBackedText true, and the layer's only line
+    // a folio). They do not double-fire and neither wrongly recognizes the page: #93's ink test
+    // needs 7 uncovered rows (`minimumUncoveredRows`) and this two-line sentence supplies only 2,
+    // so it stays nil regardless; #176's own, lower threshold (2 rows, `minimumImageOnlyRows`)
+    // would otherwise be cleared by the same two rows, but `measureInk`'s `excluding: placedImages`
+    // (the same exclusion `writingInsideAPhotographIsNotThePageWriting` relies on) removes ink
+    // inside the placed image's bounds from the count. Because the background image spans the
+    // whole page, that exclusion also removes the sentence drawn on top of it, so drawnText's own
+    // ink test finds no rows either. The page is correctly left exactly as extracted (folio only,
+    // preserved crops), not silently recognized by one path when the other's precondition holds,
+    // and not double-warned.
+    let slide = try drawnTextOverPlacedImagePDF(sentence: question, folio: "5")
+    let (result, text) = try await reflow(slide)
+    #expect(result.recognizedPageCount == 0)
+    #expect(!result.warnings.contains { $0.code == .ocrUsed })
+    #expect(!result.warnings.contains { $0.code == .implausibleTextLayer })
+    #expect(result.warnings.contains { $0.code == .unverifiedTextLayer })
+    #expect(!text.lowercased().contains("large data volumes"), "\(text)")
+    #expect(text.contains("5"))
+}
+
 @Test func decorativeArtWithoutWritingIsNotRecognized() async throws {
     // Negative control: the same dark slide, the same folio, art that is not writing.
     let decorated = try drawnTextPDF(sentence: [], folio: "5", background: 0.25, ink: 1, decoration: true)

@@ -268,3 +268,67 @@ private func hasImage(_ block: ReflowBlock) -> Bool {
     #expect(pageOne.contains("Two data files were used.") && !pageOne.contains("Wzr"))
     #expect(pageTwo.contains("Wzr gdwd ilohv zhuh xvhg1") && !pageTwo.contains("Two data"))
 }
+
+/// The Census mechanism's shifted-glyph-name Type3 font, drawn visibly over a page-filling image
+/// XObject (the 1x1 white raster `InvisibleTextTests.swift` scales full-page). A page shaped like
+/// this qualifies for both #38's damagedEncoding evidence and #93's imageBackedText precondition
+/// at once (interaction between #38 and #93, gate at `PDFReflowLibPipeline.swift`'s
+/// `implausibleLayer = imageBackedText && ... && !damagedEncoding`).
+private func shiftedGlyphNameOverImagePDF(_ lines: [String]) -> Data {
+    let helvetica = CTFontCreateWithName("Helvetica" as CFString, 1000, nil)
+    func width(_ code: Int) -> Int {
+        var character = UniChar(code), glyph = CGGlyph()
+        CTFontGetGlyphsForCharacters(helvetica, &character, &glyph, 1)
+        return Int(CTFontGetAdvancesForGlyphs(helvetica, .horizontal, &glyph, nil, 1).rounded())
+    }
+    func escaped(_ text: String) -> String {
+        text.replacingOccurrences(of: "\\", with: "\\\\").replacingOccurrences(of: "(", with: "\\(").replacingOccurrences(of: ")", with: "\\)")
+    }
+    let codes = Set(lines.joined().unicodeScalars.map(\.value).filter { $0 != 32 }).sorted().map(Int.init)
+    // Objects: 1 catalog, 2 pages, 3 Helvetica (the glyph procedures' own font, as in
+    // shiftedGlyphNamePDF), 4 page, 5 content, 6 font, 7 encoding, 8 CharProcs, 9 image, then one
+    // glyph procedure per code and a space procedure.
+    let font = 6, encoding = 7, charProcs = 8, image = 9
+    let procedure = { (code: Int) in 10 + codes.firstIndex(of: code)! }
+    let space = 10 + codes.count
+    let first = 32, last = codes.max() ?? 32
+    let widths = (first...last).map { $0 == 32 ? 278 : codes.contains($0) ? width($0) : 0 }
+    var objects = [
+        "<< /Type /Catalog /Pages 2 0 R >>", "<< /Type /Pages /Kids [4 0 R] /Count 1 >>",
+        "<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>",
+        "<< /Type /Page /Parent 2 0 R /MediaBox [0 0 400 300] /Resources << /Font << /T \(font) 0 R >> "
+            + "/XObject << /Im \(image) 0 R >> >> /Contents 5 0 R >>",
+        testPDFStream("q 400 0 0 300 0 0 cm /Im Do Q BT /T 12 Tf 14 TL 20 260 Td "
+            + lines.map { "(\(escaped($0))) '" }.joined(separator: " ") + " ET"),
+        "<< /Type /Font /Subtype /Type3 /FontBBox [0 0 1000 800] /FontMatrix [0.001 0 0 0.001 0 0] /CharProcs \(charProcs) 0 R "
+            + "/Encoding \(encoding) 0 R /FirstChar \(first) /LastChar \(last) /Widths [\(widths.map(String.init).joined(separator: " "))] "
+            + "/Resources << /Font << /F1 3 0 R >> >> >>",
+        "<< /Type /Encoding /Differences [32 /space " + codes.map { "\($0) /G\($0 + 3)" }.joined(separator: " ") + "] >>",
+        "<< " + codes.map { "/G\($0 + 3) \(procedure($0)) 0 R" }.joined(separator: " ") + " /space \(space) 0 R >>",
+        "<< /Type /XObject /Subtype /Image /Width 1 /Height 1 /ColorSpace /DeviceRGB /BitsPerComponent 8 "
+            + "/Filter /ASCIIHexDecode /Length 7 >>\nstream\nFFFFFF>\nendstream",
+    ]
+    for code in codes {
+        objects.append(testPDFStream("\(width(code)) 0 d0 BT /F1 1000 Tf 0 0 Td (\(escaped(String(UnicodeScalar(code)!)))) Tj ET"))
+    }
+    objects.append(testPDFStream("278 0 d0"))
+    return testPDF(objects: objects)
+}
+
+@Test func theImplausibleLayerGateDoesNotFireOnAPageAlreadyExplainedByDamagedEncoding() async throws {
+    // A page that independently qualifies for both #38 (damagedEncoding) and #93's imageBackedText
+    // precondition: the correctly-drawn text (shifted glyph names, no ToUnicode) sits over a
+    // page-filling image, exactly like a scanned page with an existing corrupted layer would. Only
+    // damagedTextEncoding must fire; #93's gate (`!damagedEncoding`) must keep implausibleTextLayer
+    // off a page this check already explains, per architecture.md's "defence in depth" claim.
+    let dir = try testPDFDirectory(); defer { try? FileManager.default.removeItem(at: dir) }
+    let source = dir.appendingPathComponent("shifted-over-image.pdf")
+    try shiftedGlyphNameOverImagePDF(sampleLines).write(to: source)
+    var options = ConversionOptions(); options.ocr = .never
+    let result = try await PDFReflowLibPipeline.reconstruct(from: source, options: options,
+        workspace: dir.appendingPathComponent("work"), progress: { _ in })
+    #expect(result.warnings.contains { $0.code == .damagedTextEncoding })
+    #expect(!result.warnings.contains { $0.code == .implausibleTextLayer })
+    let text = result.document.blocks.map(\.text).joined(separator: "\n")
+    #expect(text.contains("Wzr gdwd ilohv zhuh xvhg1"))
+}

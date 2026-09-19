@@ -7,10 +7,10 @@ Done: the per-page union request in `NativeTextReader` (tested by
 `measure.sh`), the leak gate `tools/check_repeated_conversions.py` (unit tests in
 `tools/test_repeated_conversions.py`; wired into `scripts/check-all.sh --corpus`), `text-line` and
 `union` modes in `tools/probe-pdfkit-memory.swift`, and docs. Verified: `swift test`, Python tests,
-doc counts, all 21 corpus lanes PASS, byte identity on 21 cached sources (all but NOAA and Warren).
+doc counts, all 21 corpus lanes PASS, byte identity on all 23 cached sources including NOAA and
+Warren (2026-09-19; see `record.md`).
 
 Remaining:
-- Byte identity on NOAA and Warren (lanes already pass).
 - Peak RSS: the harness saw FAA peaks of 0.8–1.06 GB for the candidate against 0.68–0.95 GB for
   the baseline, but under load average 25. Compare fresh-process peaks on a quiet machine, e.g.
   `tools/evaluate-real-document.py` for FAA with both binaries, before merging.

@@ -49,11 +49,27 @@ So about a quarter to a third fewer leaked bytes and 90–97% fewer leaked objec
 the page text itself (about 3 bytes per character), which only Apple can release (FB24783799).
 
 Output is byte-identical (pinned identifier and date) between baseline and candidate CLIs on
-21 cached sources: the 19 lane documents other than NOAA and Warren (FAA, Fed, Wallace, 9/11,
+23 cached sources: the 19 lane documents other than NOAA and Warren (FAA, Fed, Wallace, 9/11,
 Blue Book, Our Flag, CDC, DGA, the magazine, TechPort, SCOTUS, Census, JRES, arXiv, Pro Se, the
-three other NTRS papers, USGS) plus M-618 and IRS p596. NOAA and Warren were not compared byte
-for byte; their lanes pass. All 21
+three other NTRS papers, USGS) plus M-618 and IRS p596, and now NOAA and Warren (below). All 21
 corpus lanes pass with the candidate; `swift test` (1,042) and the Python tests (258) pass.
+
+## NOAA and Warren byte identity (2026-09-19)
+
+Completed the one comparison left open above, using the same baseline (`23b65c5`) and candidate
+(`e3d5eb6`, this branch) release CLIs, `--package-identifier`/`--modification-date` pinned as in
+`tools/check_reproducibility.py`, one conversion per binary per source (macOS 27.0 26A428, load
+average 7–11 from other work on the Mac, so seconds are not meaningful — only the resulting EPUB
+digests are compared).
+
+| Input | Baseline seconds | Candidate seconds | OCR pages | EPUB SHA-256 | Result |
+| --- | ---: | ---: | ---: | --- | --- |
+| NOAA (`noaa-nca5-2023`, 1,834 pages) | 190 | 417 | none | `2e82713…ba7de9` (both) | byte-identical |
+| Warren (`gpo-warren-1964`, 920 pages) | 1,010 | 822 | 17 (pages 1, 2, 4, 10, 12, 20, 103, 498, 549, 552–556, 917, 918, 920) | `094db6f…20d4d1e5` (both) | byte-identical |
+
+Both are fully byte-identical, not merely equal outside OCR pages: Warren's 17 Vision-OCR'd pages
+produced the same bytes under both binaries too. This closes the last cached-source gap; all 23
+cached sources now confirm the change does not alter output.
 
 ## In-process determinism
 

@@ -363,7 +363,13 @@ The [baseline](../measurements/cdc-zombie-pandemic-2011/record.md) passes EPUB v
 progress and the 512 MiB Mac RSS gate, retaining 42 page images. The
 [review targets](../corpus/cdc-zombie-pandemic-2011-review.json) expose damaged existing dialogue
 on page 5 and fresh-OCR panel-order failure on page 13. [Suspect text #7](https://github.com/vocaro/PDFReflowLib/issues/7)
-and [comic grouping #18](https://github.com/vocaro/PDFReflowLib/issues/18) track those gaps.
+and [comic grouping #18](https://github.com/vocaro/PDFReflowLib/issues/18) track those gaps. Page
+5's damaged dialogue is exactly the layer `TextLayerPlausibility` (#93, #7) now tests before any
+recognition: under the default policy such a page reports `implausibleTextLayer`, and its layer is
+replaced by fresh OCR when the layer fails the word or ink test, or kept and reported
+`implausibleTextLayer` when fresh recognition itself fails the same English test. The gated
+[regression contract](../corpus/regressions.json) for this document has not yet been re-reviewed
+page by page against this behavior; that review is separate from porting the mechanism itself.
 The measured 3,341 extracted whitespace tokens include OCR noise; they are not dialogue coverage.
 
 

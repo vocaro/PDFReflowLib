@@ -123,12 +123,17 @@ enum LayoutReconstructor {
     }
 
     static func blocks(page: PageContent, images: [(CGRect, String)], vocabulary: Set<String>,
-                       warnings: inout [ConversionWarning], numberedNotePage: Bool = false) -> [ReflowBlock] {
+                       warnings: inout [ConversionWarning], numberedNotePage: Bool = false,
+                       language: String = "en") -> [ReflowBlock] {
         let body = max(4, bodySize(page.lines))
         let lines = page.lines.filter { line in !images.contains { $0.0.intersects(line.rect) } }
         // Preserve existing modest-size headings, but reject candidates within 10% of the
         // supported reflowable body size. This only narrows the original page-size heuristic.
         let headingThreshold = max(body * 1.25, headingBodySize(lines, pageBody: body) * 1.1)
+        // A recognized line in an English book is a heading only if it reads as words: a table
+        // cell or a reading of handwriting set large is not a title, and every heading is a
+        // navigation entry (#7).
+        let judgesTitleWords = page.recognized && TextLayerPlausibility.supports(language: language)
         let spatial = ordered(lines.map { Element(rect: $0.readingRect ?? $0.rect, line: $0) }
             + images.map { Element(rect: $0.0, image: $0.1) }, bodySize: body)
         let elements = structuredOrder(spatial, page: page.number, warnings: &warnings)
@@ -190,7 +195,8 @@ enum LayoutReconstructor {
             }
             flushTagged()
             if !line.monospaced { codeOrigin = nil }
-            if !page.hasSyntheticTextStyle && line.fontSize >= headingThreshold && line.text.count < 200 {
+            if !page.hasSyntheticTextStyle && line.fontSize >= headingThreshold && line.text.count < 200
+                && (!judgesTitleWords || TextLayerPlausibility.readsAsWords(line.text)) {
                 flush()
                 result.append(ReflowBlock(content: .heading(id: "heading-\(page.number)-\(result.count)", text: line.content),
                     page: page.number))

@@ -74,10 +74,11 @@ required image-only fallbacks and figure crops, with warnings when recommended r
 omitted. [Conversion options](doc/conversion-options.md#recommended-starting-settings) gives measured starting
 settings, provisional recommended ranges, and each control's tradeoffs.
 
-Other options select automatic/disabled/always OCR or opt-in retries of image-backed existing
-text (`.automaticIncludingImageBackedText`), language, title, author, recurring header/footer
-removal, raster resolution, and ceilings for input bytes, pages, characters, raster pixels and
-uncompressed output bytes. Default ceilings are 256 MiB input, 2,000 pages, 20 million characters,
+Other options select automatic/disabled/always OCR, opt-in retries of image-backed existing
+text (`.automaticIncludingImageBackedText`), or an opt-out that keeps image-backed existing text
+even when it fails the plausibility test below (`.automaticKeepingImageBackedText`), plus
+language, title, author, recurring header/footer removal, raster resolution, and ceilings for
+input bytes, pages, characters, raster pixels and uncompressed output bytes. Default ceilings are 256 MiB input, 2,000 pages, 20 million characters,
 12 million pixels per raster, 180 DPI and 512 MiB output content. These are input/work bounds,
 not a process-memory or wall-clock guarantee: positioned pages are written to the workspace
 between extraction and reconstruction, the logical text of the book is retained until writing
@@ -117,6 +118,12 @@ that fall back to images skip unused attributed-text decoding. Failures use
   `unverifiedTextLayer`: transcription, tables, numbers and reading order need human review.
   This conservative signal is not an OCR confidence score; it can also flag illustrated pages
   with valid text. Smaller graphics and undetected scans can still contain transcription errors.
+  Under the default policy such a layer is also tested for plausibility: too few English words,
+  too many words misread in place, or too little text for the page's own text-shaped ink fails
+  it, reports `implausibleTextLayer`, and replaces the layer with fresh OCR by default (kept
+  instead under `.automaticKeepingImageBackedText` and `.never`). Fresh recognition that itself
+  does not read as English is discarded as noise (`implausibleRecognition`) rather than kept as
+  the reflowed text, and never becomes a heading.
 - Rotated pages, unsupported drawing operations and pages without recoverable text use an
   explicitly warned whole-page image fallback. Visible annotations get a source reference
   image by default; link/form interactions are not reconstructed.

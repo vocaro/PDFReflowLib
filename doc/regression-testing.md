@@ -200,6 +200,43 @@ must name the accepted `remove` and `keep` values. It runs in `check-all.sh` alo
 default fixture conversions. Reader tests check JPEG MIME admission and both ZIP/expanded
 byte limits while preserving existing active-content and traversal rejection controls.
 
+## Implausible inherited text layers
+
+`TextLayerPlausibilityTests.swift` covers [#93](https://github.com/vocaro/PDFReflowLib/issues/93)
+and [#7](https://github.com/vocaro/PDFReflowLib/issues/7). Unit tests sort words with an injected
+lexicon (English, irregular capitals, stray letters, unknown lower-case words, names, symbols,
+clitics, digits, letters of another script), hold each word-test boundary (20 judged words,
+exactly half English, a fifth of the tokens with digits, a tenth of all words misread in place)
+and each ink-test boundary (seven rows, 75% uncovered, as many English words as rows), and count
+renders: a caption layer is rendered, a 32-word layer, another language and a word failure are
+not. With the system lexicon, the checksum-pinned CDC comic page 5 fails the word test while
+Warren pages 50 (prose), 910 (index) and Blue Book pages 5 and 12 pass; Warren page 636's carbon
+typescript and CDC page 4 both misread their words in place. Both warning messages are pinned,
+with the page-image and kept-over-recognition outcomes. `otherScriptsAreDamageAndRecognizedTitlesMustReadAsWords`
+pins the heading rule (`readsAsWords`) on table titles and month names (kept) and on cells, digit
+strings and mixed-script readings (refused).
+`recognitionIsJudgedByItsEnglishShareUnlessItIsAnotherLanguage` pins `judgeRecognized` on
+handwriting (discarded), a French passage in an English book (kept) and a comic reading that
+misreads a tenth of its words (kept), and `readsBetter`.
+
+End to end, an original PDF whose page-sized image shows ten lines of dialogue under an invisible
+garbled layer reports `implausibleTextLayer` under all five policies; `.automatic`,
+`.automaticIncludingImageBackedText` and `.always` recognize `strange virus` and drop `sreANee`
+with `ocrUsed`, `.automaticKeepingImageBackedText` and `.never` keep the garbled text with
+`unverifiedTextLayer`; over a blank image recognition finds nothing and the message says the page
+is preserved as an image; the same image under a faithful layer is neither reported nor
+recognized. A layer holding only the last line fails the ink test and is recognized by default and
+kept by the opt-out policy; the complete layer is not reported. `check-conversion-policies.py`
+adds `--ocr keep-image-backed`, which still recognizes the scanned fixture's absent text (a page
+with no native text at all is not exempted by the opt-out, which only covers existing text over
+a page-sized graphic).
+
+This ports the `TextLayerPlausibility` mechanism and its unit/end-to-end coverage from an
+abandoned integration branch onto current `main`'s simpler pipeline. The corpus-level content
+contracts for the CDC comic and Warren transcript that the original work reviewed page by page are
+not re-verified here: see [corpus.md](corpus.md#preparedness-101-zombie-pandemic) for what
+remains open.
+
 ## Running headers and page numbers
 
 `FurnitureTests.swift` uses 21 checksum-pinned 9/11 source-layout pages to distinguish running

@@ -39,7 +39,9 @@ enum PDFReflowLibPipeline {
 
         /// Every extraction step except recognition. `limit` only guards the character budget;
         /// it never truncates a page.
-        func extractPage(_ i: Int, limit: Int, warnings: inout [ConversionWarning]) throws -> (content: PageContent, attemptsOCR: Bool) {
+        func extractPage(_ i: Int, limit: Int, warnings: inout [ConversionWarning]) throws
+            -> (content: PageContent, attemptsOCR: Bool, implausibleLayer: TextLayerPlausibility.Finding?,
+                comparesLayer: Bool) {
             // The pool includes every PDFKit accessor, not only string extraction. Page
             // references and annotation arrays also carry autoreleased rendering resources.
             var content = try autoreleasepool {
@@ -93,11 +95,33 @@ enum PDFReflowLibPipeline {
             let imageBackedText = !content.lines.isEmpty && content.graphics.contains {
                 $0.width * $0.height > bounds.width * bounds.height * 0.75
             }
+            // Inherited text over the image that does not read as English, misreads its words in
+            // place, or leaves most of the page's text-shaped ink uncovered, is not a plausible
+            // transcription of it (#93). Judged under every policy, so the page is reported whether
+            // or not its text is replaced.
+            let implausibleLayer = imageBackedText && !content.requiresPageImage
+                ? try TextLayerPlausibility.judge(lines: content.lines, language: options.language) {
+                    try autoreleasepool {
+                        try TextLayerPlausibility.measureInk(page: try document.page(at: i), bounds: bounds,
+                                                             lines: content.lines, options: options)
+                    }
+                } : nil
             let automaticOCR = options.ocr == .automatic || options.ocr == .automaticIncludingImageBackedText
+                || options.ocr == .automaticKeepingImageBackedText
             let needsOCR = options.ocr == .always || (automaticOCR &&
                 (raw.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty || damaged > max(2, raw.count / 50)))
                 || (options.ocr == .automaticIncludingImageBackedText && imageBackedText)
-            if needsOCR && !content.requiresPageImage { return (content, true) }
+                || (options.ocr == .automatic && implausibleLayer != nil)
+            let attemptsOCR = needsOCR && !content.requiresPageImage
+            // A layer that reads as English but misreads its words in place (#7) is recognized
+            // again, and the better reading kept: recognition of a faint carbon typescript misreads
+            // as much as the layer does, of a photographed document far less. The layer is
+            // extracted as an unverified page would be below, so it can stand if it wins.
+            var comparesLayer = false
+            if attemptsOCR, options.ocr == .automatic, case .misreadWords? = implausibleLayer {
+                comparesLayer = true
+            }
+            if attemptsOCR, !comparesLayer { return (content, true, implausibleLayer, false) }
             if !content.requiresPageImage, imageBackedText {
                 // A scan with an existing OCR layer must still reflow. Keep its visual page as a
                 // reference rather than treating the full-page scan as one figure covering all text.
@@ -114,7 +138,7 @@ enum PDFReflowLibPipeline {
             if content.lines.isEmpty && !content.requiresPageImage {
                 content.requiresPageImage = true
             }
-            return (content, false)
+            return (content, attemptsOCR, implausibleLayer, comparesLayer)
         }
 
         let store = PageStore(directory: workspace.appendingPathComponent("pages"))
@@ -128,27 +152,67 @@ enum PDFReflowLibPipeline {
             try Task.checkCancellation()
             let extracted = try extractPage(i, limit: options.maximumCharacters - characters, warnings: &warnings)
             var content = extracted.content
+            // The implausible-layer warning states what became of the layer, known only after
+            // recognition is attempted (or, for a retained layer, never attempted at all).
+            func reportImplausibleLayer(_ outcome: TextLayerPlausibility.Outcome) {
+                guard let finding = extracted.implausibleLayer else { return }
+                warnings.append(.init(code: .implausibleTextLayer, page: i + 1,
+                    message: TextLayerPlausibility.message(finding, outcome: outcome,
+                                                           referencesDisabled: options.referenceImages == .never)))
+            }
+            if !extracted.attemptsOCR { reportImplausibleLayer(.retained) }
             if extracted.attemptsOCR {
                 await progress(.init(stage: .recognizing, fractionCompleted: 0.6875 * Double(i) / Double(total),
                     page: i + 1, totalPages: total))
                 do {
                     let recognized = try await OCRReader.read(page: try document.page(at: i), options: options)
-                    content.lines = recognized.lines
-                    content.recognized = true
-                    content.hasSyntheticTextStyle = false
-                    content.preservePageReference = content.preservePageReference || !recognized.lines.isEmpty
-                    content.graphics = recognized.tables
-                    content.requiresPageImage = recognized.lines.isEmpty
-                    warnings.append(.init(code: .ocrUsed, page: i + 1,
-                        message: "Text is OCR transcription. " + (options.referenceImages == .never && !recognized.lines.isEmpty
-                            ? "Supplementary references are disabled; compare unrecognized visual content with the source PDF."
-                            : "The original page image preserves unrecognized visual content.")))
+                    // Recognition that does not read as English is noise, not a transcription (#7):
+                    // a reader is better served by the page image than by text made of it.
+                    let implausibleRecognition = TextLayerPlausibility.judgeRecognized(lines: recognized.lines,
+                                                                                       language: options.language)
+                    if let finding = implausibleRecognition, !extracted.comparesLayer {
+                        warnings.append(.init(code: .implausibleRecognition, page: i + 1,
+                            message: TextLayerPlausibility.recognitionMessage(finding)))
+                    }
+                    if extracted.comparesLayer, case .misreadWords(let misread, let words, _)? = extracted.implausibleLayer,
+                       !TextLayerPlausibility.readsBetter(recognized.lines, than: misread, of: words, language: options.language) {
+                        // The damaged layer stands: recognition read no better. `content` is already
+                        // the unverified-layer version extracted above.
+                        reportImplausibleLayer(.keptOverRecognition)
+                    } else if implausibleRecognition != nil {
+                        reportImplausibleLayer(.implausibleRecognition)
+                        content.lines = []
+                        content.requiresPageImage = true
+                    } else {
+                        reportImplausibleLayer(recognized.lines.isEmpty ? .pageImage : .replaced)
+                        // The layer extracted for comparison lost: so does its review warning.
+                        if extracted.comparesLayer {
+                            warnings.removeAll { $0.code == .unverifiedTextLayer && $0.page == i + 1 }
+                        }
+                        content.lines = recognized.lines
+                        content.recognized = true
+                        content.hasSyntheticTextStyle = false
+                        content.preservePageReference = content.preservePageReference || !recognized.lines.isEmpty
+                        content.graphics = recognized.tables
+                        content.requiresPageImage = recognized.lines.isEmpty
+                        warnings.append(.init(code: .ocrUsed, page: i + 1,
+                            message: "Text is OCR transcription. " + (options.referenceImages == .never && !recognized.lines.isEmpty
+                                ? "Supplementary references are disabled; compare unrecognized visual content with the source PDF."
+                                : "The original page image preserves unrecognized visual content.")))
+                    }
                 } catch is CancellationError { throw CancellationError() }
                 catch {
                     try Task.checkCancellation()
-                    content.requiresPageImage = true
-                    warnings.append(.init(code: .ocrFailed, page: i + 1,
-                        message: "OCR failed; the source page is preserved as an image."))
+                    if extracted.comparesLayer {
+                        reportImplausibleLayer(.keptOverRecognition)
+                        warnings.append(.init(code: .ocrFailed, page: i + 1,
+                            message: "OCR failed; the existing text layer is retained."))
+                    } else {
+                        content.requiresPageImage = true
+                        reportImplausibleLayer(.pageImage)
+                        warnings.append(.init(code: .ocrFailed, page: i + 1,
+                            message: "OCR failed; the source page is preserved as an image."))
+                    }
                 }
                 if content.lines.isEmpty && !content.requiresPageImage {
                     content.requiresPageImage = true
@@ -219,7 +283,7 @@ enum PDFReflowLibPipeline {
                     }
                     pageBlocks = LayoutReconstructor.blocks(page: content, images: images,
                         vocabulary: vocabulary, warnings: &warnings,
-                        numberedNotePage: numberedNotePages.contains(content.number))
+                        numberedNotePage: numberedNotePages.contains(content.number), language: options.language)
                     if pageBlocks.contains(where: \.hasReflowedText) {
                         reflowed += 1
                     }

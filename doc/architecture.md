@@ -156,6 +156,35 @@ an accompanying source-page image under the default reference policy. This conse
 text is OCR, detect every corrupted layer, or assess individual table cells. Fresh OCR keeps
 its separate `ocrUsed` notice; image-only fallbacks keep `pageImageFallback`.
 
+`TextLayerPlausibility` then judges such a layer before any recognition (#93), in English books
+only. Its word test sorts whitespace words against the system English lexicon
+(`NLEmbedding.wordEmbedding(for: .english)`, a vocabulary lookup serialized behind a mutex; no
+network or download) into English, damaged (unknown lower-case words, irregular capitals, stray
+lower-case letters, letters of another script) and neutral (unknown capitalized names and
+abbreviations, words broken by symbols) words, and fails fewer than half English among at least
+20 judged words unless a fifth of the tokens hold digits. The same word counts fail a layer that
+reads as English but misreads a tenth of its words in place: damaged words of three or more
+letters, or irregular capitals, that no neighbouring word completes (#7,
+`WordCounts.misread`). When the layer holds fewer than 32 English words, its ink test renders
+the page at 180 DPI and measures the layer's line boxes with `OCRTextCoverage`; it fails when at
+least 75% of the text-shaped ink, in at least seven rows, lies outside them and the layer holds
+fewer English words than those rows.
+
+A failing page reports `implausibleTextLayer` under every policy (written after recognition, so
+the message says whether OCR replaced the layer, left a page image or the policy kept it) and
+becomes an OCR candidate under `.automatic` (as under `.automaticIncludingImageBackedText` and
+`.always`); `.automaticKeepingImageBackedText` and `.never` keep the layer with its
+`unverifiedTextLayer` warning and reference. A page that misreads its words in place is instead
+extracted as an unverified page *and* recognized (`comparesLayer`); recognition replaces the
+layer only if it reads as English and misreads a smaller share (`readsBetter`), otherwise the
+extracted layer stands and the recognition is dropped. Every recognition in an English book,
+whatever brought it about, is then judged by the same English-share test (`judgeRecognized`): a
+reading under half English that the language recognizer does not confidently name as another
+language is noise, reported as `implausibleRecognition`, and the page becomes a page image.
+`LayoutReconstructor` admits a recognized line in an English book as a heading only when
+`readsAsWords` holds, so table cells and handwriting read at heading size stay out of the
+navigation. See [conversion options](conversion-options.md#implausible-inherited-text).
+
 `GraphicsReader` tracks text rendering mode across saved graphics state and nested forms. When
 all observed text uses invisible mode 3 and a graphic covers most of the page, extraction skips
 attributed text and marks the page's typography as synthetic. Layout then uses ordinary prose

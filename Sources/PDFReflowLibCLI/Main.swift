@@ -7,7 +7,7 @@ struct PDFReflowLibCommand {
         let args = Array(CommandLine.arguments.dropFirst())
         let usage = """
         Usage: pdf-reflow input.pdf output.epub [options]
-          --ocr automatic|image-backed|always|never
+          --ocr automatic|image-backed|keep-image-backed|always|never
           --no-ocr  (alias for --ocr never)
           --reference-images automatic|always|never
           --repeated-headers-and-footers remove|keep
@@ -58,6 +58,7 @@ struct PDFReflowLibCommand {
                     switch value {
                     case "automatic": options.ocr = .automatic
                     case "image-backed": options.ocr = .automaticIncludingImageBackedText
+                    case "keep-image-backed": options.ocr = .automaticKeepingImageBackedText
                     case "always": options.ocr = .always
                     case "never": options.ocr = .never
                     default: throw ConversionError.invalidOptions("unknown OCR policy: \(value)")

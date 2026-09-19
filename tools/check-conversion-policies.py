@@ -42,6 +42,7 @@ def main():
         ('text-only', 'prose', ['--reference-images', 'never', '--maximum-epub-bytes', 'unlimited'], 0),
         ('ocr-selective-native', 'prose', ['--ocr', 'image-backed'], 0),
         ('ocr-never', 'scanned', ['--ocr', 'never'], 1),
+        ('ocr-keep-image-backed', 'scanned', ['--ocr', 'keep-image-backed'], 1),
         ('ocr-always', 'columns', ['--ocr', 'always'], 1),
         ('ocr-automatic', 'scanned', ['--ocr', 'automatic'], 1),
         ('headers-default', 'prose', [], 0),
@@ -61,7 +62,7 @@ def main():
         assert report['imageCount'] == image_count
         if name == 'ocr-selective-native' or name == 'ocr-never':
             assert report['recognizedPageCount'] == 0
-        if name == 'ocr-always' or name == 'ocr-automatic':
+        if name in ('ocr-always', 'ocr-automatic', 'ocr-keep-image-backed'):
             assert report['recognizedPageCount'] == 1
         assert run.stderr.splitlines()[-1] == '100% completed'
         text = checks.check(output)

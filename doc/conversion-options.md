@@ -6,7 +6,7 @@ No policy changes dynamically to squeeze a book under a limit, and no network se
 
 | Control | Default | Choices / meaning |
 | --- | --- | --- |
-| `ocr` | `.automatic` | `.automatic`, `.automaticIncludingImageBackedText`, `.always`, `.never` |
+| `ocr` | `.automatic` | `.automatic`, `.automaticIncludingImageBackedText`, `.automaticKeepingImageBackedText`, `.always`, `.never` |
 | `referenceImages` | `.automatic` | `.automatic`, `.always`, `.never` |
 | `removeRepeatedHeadersAndFooters` | `true` | `true` omits detected running headers, footers and folios (`furnitureRemoved`); `false` keeps them in the text |
 | `fullPageImageEncoding` | `.png` | `.png`, `.jpeg(quality:)`, `.smallest(jpegQuality:)` |
@@ -23,8 +23,9 @@ Neither output-size control is a RAM limit, device qualification or estimate of 
 
 ## Existing text and selective OCR
 
-`.automatic` recognizes absent or visibly damaged text. Plausible inherited OCR errors can
-pass that test. `.automaticIncludingImageBackedText` additionally retries existing text when
+`.automatic` recognizes absent or visibly damaged text, and existing text over a page-sized
+graphic that fails the plausibility test below. Plausible inherited OCR errors can pass that
+test. `.automaticIncludingImageBackedText` additionally retries existing text when
 a detected graphic covers more than 75% of page area, using the same conservative signal as
 `unverifiedTextLayer`. This opt-in policy replaces the entire selected page's native text with
 fresh Vision transcription; it does not compare spellings or choose the more accurate version.
@@ -39,7 +40,60 @@ and include source references by default; empty or failed recognition retains a 
 image. Compare with the source before relying on transcription. Reference and resource options
 apply independently, and cancellation remains cooperative during platform recognition.
 
-The developer client exposes these policies as `--ocr automatic|image-backed|always|never`.
+### Implausible inherited text
+
+Text inherited over a page-sized graphic (the pages that would report `unverifiedTextLayer`) is
+tested before any recognition (#93). The layer fails when either holds:
+
+- **Too few English words, or too many misread in place.** Whitespace-separated words are sorted
+  into English words (in the system English lexicon, `NLEmbedding.wordEmbedding(for: .english)`,
+  or `a`/`I`), damaged words (a lower-case word the lexicon does not know, irregular capitals such
+  as `sreANee`, a stray lower-case letter from letter-spaced text such as `n e x t`, or letters of
+  another script) and neutral words (capitalized or upper-case words it does not know, which are
+  names and abbreviations, and words broken by symbols). With at least 20 English and damaged
+  words, fewer than half English fails; so does a tenth or more of all words being damaged words
+  of three or more letters, or irregular capitals, that no neighbour joins into an English word
+  (#7). A layer where a fifth or more of the tokens hold digits (statistical tables, notes pages)
+  is not judged.
+- **Too little text for the ink.** When the layer holds fewer than 32 English words, the page is
+  rendered at 180 DPI (the client's pixel ceiling applies) and rows of glyph-sized ink outside its
+  lines are found (connected components the shape of printed or typed text). The layer fails when
+  its lines leave at least 75% of that ink, in at least seven rows, uncovered, and it holds fewer
+  English words than those rows.
+
+Every page that fails reports `implausibleTextLayer`, whatever the policy, and the conversion
+report's `warnings` list each such page. The message says what failed and what was done, for
+example "Existing text over a page-sized image does not read as English: only 23 of 77 words are
+English words (misspelled, wrongly capitalized or letter-spaced text). The existing text was
+discarded and replaced by OCR of the page image; review this page against the original page
+image." `.automatic`, `.automaticIncludingImageBackedText` and `.always` replace the layer with
+OCR (the page then also reports `ocrUsed`). The warning is written once recognition has run, so
+when recognition fails or finds no text its message ends instead "The existing text was
+discarded, but OCR of the page image failed or found no text, so the page is preserved as an
+image." (with `ocrFailed` or `pageImageFallback`). A layer that misreads its words in place is
+recognized again and compared: when the fresh recognition itself reads worse, the existing layer
+is kept instead, reported `implausibleTextLayer` with a message ending "…so the existing text is
+retained; read the accompanying original page image instead." `.automaticKeepingImageBackedText`
+and `.never` keep the layer outright, and the message ends "The existing text is retained because
+the OCR policy keeps it; read the accompanying original page image instead." (the page keeps
+`unverifiedTextLayer` and its reference). A client that wants the pre-#93 automatic behavior,
+recognition only of absent or damaged text, selects `.automaticKeepingImageBackedText`. Pages
+that require a page image and books not declared English are not judged; without a system
+lexicon only the ink test runs.
+
+Fresh recognition of an implausible layer is itself judged against the same English-word test
+(#7): a reading that still does not read as English — handwriting, or print recognition cannot
+read — is noise, not a transcription, and a reader is better served by the page image. Such a
+page discards the recognized text, reports `implausibleRecognition` and is preserved as an image
+that does not reflow. This check runs on every page recognition attempts, under every policy, not
+only on pages that started with an implausible inherited layer. A recognized line that does not
+read as English words is also excluded from heading detection, so OCR noise set at heading size
+does not become a navigation entry.
+
+Because recognition replaces the whole layer, native reading order, styles and headings on a
+replaced page come from the recognized text instead.
+
+The developer client exposes these policies as `--ocr automatic|image-backed|keep-image-backed|always|never`.
 `--no-ocr` remains an alias for `--ocr never`; when repeated, the last OCR option takes effect.
 See [selective OCR measurements](../measurements/selective-ocr/record.md) for the pinned Warren
 excerpt, native controls, timings and limitations. These measurements do not qualify whole-book

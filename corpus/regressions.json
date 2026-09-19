@@ -746,14 +746,15 @@
     {
       "id": "cdc-zombie-pandemic-2011",
       "sourceSHA256": "d95e9ec2d8cf52cb8c218a6195e132ec140725018358fd2122928bab8a13efc3",
-      "basis": "Page 39 checklist source raster reviewed. Page 5/13 only protect artwork and transcription warnings; damaged dialogue and comic narrative order remain unqualified.",
+      "basis": "Page 39 checklist source raster reviewed. Page 5/13 only protect artwork and transcription warnings; damaged dialogue and comic narrative order remain unqualified. Since #93/#7 page 5's damaged inherited layer is tested for plausibility before any recognition and reports implausibleTextLayer under every outcome (kept, or replaced by OCR); the specific outcome and recognized text are not re-reviewed here, so only the always-present code is pinned.",
       "pages": [
         {
           "page": 5,
           "minimumImages": 1,
           "warningCodesAnyOf": [
             "unverifiedTextLayer",
-            "pageImageFallback"
+            "pageImageFallback",
+            "implausibleTextLayer"
           ]
         },
         {

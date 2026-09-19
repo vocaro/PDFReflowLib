@@ -43,7 +43,7 @@ import Testing
     #expect(TextLayerPlausibility.inkFinding(measurement(rows: 7, uncovered: 90), englishWords: 7) == nil)
 }
 
-// #7's `comparesLayer` (misread-in-place) and #176's `drawnText` candidacy (`reflowsNoWords`) are
+// #7's `RecognitionPlan.Mode.compare` (misread-in-place) and #176's `drawnText` candidacy (`reflowsNoWords`) are
 // gated on opposite ends of the same word count, so a page can never trigger both at once: a
 // `.misreadWords` finding needs `judged >= minimumJudgedWords` (20), while `reflowsNoWords` holds
 // only when literally no line has a single letter, which leaves the layer's `words`/`judged`
@@ -252,8 +252,8 @@ private let dialogue = [
 
 /// The same dialogue with light single-letter damage (`h` to `b`, an OCR-style confusion) in about
 /// 15% of words, unlike `garbledDialogue`'s heavier leetspeak: enough to misread in place
-/// (`.misreadWords`, #7's `comparesLayer` path) without also failing the English-share test
-/// (`.fewEnglishWords`), which `garbledDialogue` exercises instead. `comparesLayer` and its
+/// (`.misreadWords`, #7's `RecognitionPlan.Mode.compare` path) without also failing the English-share test
+/// (`.fewEnglishWords`), which `garbledDialogue` exercises instead. `RecognitionPlan.Mode.compare` and its
 /// downstream branches in `PDFReflowLibPipeline.swift` (kept-over-recognition, replaced-with-
 /// warning-removal) have no other end-to-end coverage; `TextLayerPlausibilityTests` otherwise only
 /// calls `wordFinding`/`readsBetter` directly, never through the real pipeline.
@@ -281,7 +281,7 @@ private let misreadInPlaceDialogue = [
     let warning = try #require(result.warnings.first { $0.code == .implausibleTextLayer })
     #expect(warning.message.contains("is a damaged transcription:"), "\(warning.message)")
     // The underlying image is clean, so recognition reads better than the damaged layer: replaced,
-    // exactly like the plain fewEnglishWords case, but reached through comparesLayer this time.
+    // exactly like the plain fewEnglishWords case, but reached through the comparison plan this time.
     #expect(warning.message.contains("replaced by OCR"), "\(warning.message)")
     #expect(result.recognizedPageCount == 1)
     #expect(result.warnings.contains { $0.code == .ocrUsed })

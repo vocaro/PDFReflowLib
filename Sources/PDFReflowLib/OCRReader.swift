@@ -2,7 +2,7 @@ import PDFKit
 import Vision
 
 enum OCRReader {
-    struct Result { var lines: [TextLine]; var tables: [CGRect] }
+    struct Result: Equatable { var lines: [TextLine]; var tables: [CGRect] }
 
     static func read(page: PDFPage, options: ConversionOptions) async throws -> Result {
         let bounds = page.bounds(for: .cropBox)

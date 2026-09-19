@@ -239,7 +239,7 @@ private func photographPDF(sentence: [String], folio: String) throws -> Data {
 /// `imageBackedText` (#93's own precondition) is true here, unlike `drawnTextPDF`'s pages. Its
 /// only real text-layer line is the folio, so it also satisfies #176's `reflowsNoWords`
 /// candidacy — the two features' preconditions overlap on this one page, where #7's
-/// `comparesLayer` cannot reach (see `misreadInPlaceAndReflowsNoWordsCannotBothHoldForTheSameLines`).
+/// `RecognitionPlan.Mode.compare` cannot reach (see `misreadInPlaceAndReflowsNoWordsCannotBothHoldForTheSameLines`).
 /// The sentence is drawn on top of, and spatially within, that same full-page placed image.
 private func drawnTextOverPlacedImagePDF(sentence: [String], folio: String) throws -> Data {
     let page = CGRect(x: 0, y: 0, width: 720, height: 405)

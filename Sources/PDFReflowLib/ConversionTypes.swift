@@ -15,6 +15,32 @@ public struct ConversionOptions: Sendable {
         case automaticKeepingImageBackedText
         case never
         case always
+
+        /// How existing text over a page-sized graphic is treated.
+        enum ImageBackedLayerRule: Sendable {
+            /// Judge it for plausibility; replace it when it fails, compare when it misreads.
+            case judge
+            /// Recognize the page again regardless.
+            case alwaysRetry
+            /// Keep it, reporting only.
+            case keep
+        }
+
+        /// The three automatic policies recognize pages with absent or damaged text.
+        var isAutomatic: Bool {
+            switch self {
+            case .automatic, .automaticIncludingImageBackedText, .automaticKeepingImageBackedText: true
+            case .never, .always: false
+            }
+        }
+
+        var imageBackedLayerRule: ImageBackedLayerRule {
+            switch self {
+            case .automatic: .judge
+            case .automaticIncludingImageBackedText, .always: .alwaysRetry
+            case .automaticKeepingImageBackedText, .never: .keep
+            }
+        }
     }
 
     public enum ReferenceImagePolicy: Sendable {

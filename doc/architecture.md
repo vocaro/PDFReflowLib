@@ -60,7 +60,24 @@ tables or math trees. Output independence does not imply richer PDF understandin
 
 `PDFReflowLibPipeline.reconstruct` returns the logical document plus conversion counts and warnings.
 The caller supplies a workspace and keeps it alive until serialization finishes. The pipeline
-can run without calling `EPUBWriter`, as the direct PDF-to-model test demonstrates.
+can run without calling `EPUBWriter`, as the direct PDF-to-model test demonstrates. It also takes
+its page recognizer as a parameter (Vision by default), so tests drive every recognition branch
+with canned readings.
+
+Each page passes through four named stages with value types between them. `PageReader.read`
+makes every PDFKit and Core Graphics call for the page inside one autorelease pool and returns an
+`ExtractedPage`: the `PageContent`, the placed raster images, whether an unmapped font is present,
+and the reader warnings. `PageDiagnosis.assess` turns that into a `PageEvidence` value (image-backed
+text, damaged encoding, the plausibility finding, drawn text, replacement-character counts) without
+knowing whether recognition will run; both of its ink tests share one rendering through
+`PageInkMeasurer`. `RecognitionPolicy.plan` is a pure function from evidence and OCR policy to a
+`RecognitionPlan` (keep the extracted page, or recognize it replacing or comparing), and
+`RecognitionPolicy.resolve` is a pure function from plan and recognition outcome to a
+`PageDisposition` plus the page's warnings in report order, so the whole decision table is
+unit-tested without a PDF (`RecognitionPolicyTests`). Warning prose is composed in one place,
+`ConversionWarnings`, from a `PageWarning` kind. `DocumentEvidence` folds each finished page into
+the document-wide evidence, and `PageAssetWriter` owns the asset registry and image-byte budget
+in the second pass.
 
 `NativeTextReader` obtains PDFKit line selections, geometry and attributed runs; it immediately
 copies text and style flags into values. A process-wide library lock serializes this synchronous
@@ -227,7 +244,7 @@ the message says whether OCR replaced the layer, left a page image or the policy
 becomes an OCR candidate under `.automatic` (as under `.automaticIncludingImageBackedText` and
 `.always`); `.automaticKeepingImageBackedText` and `.never` keep the layer with its
 `unverifiedTextLayer` warning and reference. A page that misreads its words in place is instead
-extracted as an unverified page *and* recognized (`comparesLayer`); recognition replaces the
+extracted as an unverified page *and* recognized (`RecognitionPlan.Mode.compare`); recognition replaces the
 layer only if it reads as English and misreads a smaller share (`readsBetter`), otherwise the
 extracted layer stands and the recognition is dropped. Every recognition in an English book,
 whatever brought it about, is then judged by the same English-share test (`judgeRecognized`): a

@@ -320,12 +320,16 @@ enum TextLayerPlausibility {
             + "the page is preserved as an image and does not reflow."
     }
 
-    /// Text-shaped ink outside `lines` on the rendered page, ignoring anything inside `excluding`.
-    static func measureInk(page: PDFPage, bounds: CGRect, lines: [TextLine], excluding: [CGRect] = [],
-                           options: ConversionOptions) throws -> OCRTextCoverage.Measurement? {
+    /// The page rendered at the ink test's resolution; the client's pixel ceiling still applies.
+    static func inkImage(page: PDFPage, bounds: CGRect, options: ConversionOptions) throws -> CGImage {
         var rasterOptions = options
         rasterOptions.rasterDPI = inkTestDPI
-        let image = try PageRasterizer.image(page: page, rect: bounds, options: rasterOptions)
+        return try PageRasterizer.image(page: page, rect: bounds, options: rasterOptions)
+    }
+
+    /// Text-shaped ink outside `lines` on the rendered page, ignoring anything inside `excluding`.
+    static func measureInk(image: CGImage, bounds: CGRect, lines: [TextLine],
+                           excluding: [CGRect] = []) -> OCRTextCoverage.Measurement? {
         func normalize(_ rect: CGRect) -> CGRect {
             CGRect(x: (rect.minX - bounds.minX) / bounds.width, y: (rect.minY - bounds.minY) / bounds.height,
                    width: rect.width / bounds.width, height: rect.height / bounds.height)

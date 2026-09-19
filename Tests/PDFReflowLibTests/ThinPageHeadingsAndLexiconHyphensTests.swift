@@ -135,7 +135,7 @@ private func backCoverLike() -> PageContent {
 // MARK: - Word breaks the lexicon decides
 
 @Test func anEnglishLexiconDecidesABreakTheBookCannot() throws {
-    guard TextLayerPlausibility.lexiconContains("companies") != nil else { return }
+    guard EnglishText.lexiconContains("companies") != nil else { return }
     let english = HyphenContext(usesEnglishLexicon: true)
     for (left, right, joined) in [("commercial com-", "panies interested", "commercial companies interested"),
                                   ("a range of infec-", "tions in humans", "a range of infections in humans")] {
@@ -150,7 +150,7 @@ private func backCoverLike() -> PageContent {
 }
 
 @Test func theLexiconLeavesGenuineCompoundsAndShortHalves() throws {
-    guard TextLayerPlausibility.lexiconContains("companies") != nil else { return }
+    guard EnglishText.lexiconContains("companies") != nil else { return }
     let english = HyphenContext(usesEnglishLexicon: true)
     // A compound whose halves are both words on their own (camera-man), a one-letter half
     // (e-mail), and a joined word the lexicon does not hold all keep the hyphen.
@@ -202,7 +202,7 @@ private func backCoverLike() -> PageContent {
     let wordyPage = PageContent(number: 1, bounds: page.bounds, lines: wordyLines, graphics: [])
     #expect(headings(blocks(wordyPage, documentBody: 10)) == ["Boundary Heading Line"])
     // The recognized noise line clears the same floor in size alone, but reads as no words.
-    #expect(!TextLayerPlausibility.readsAsWords(noise.text))
+    #expect(!EnglishText.readsAsWords(noise.text))
     #expect(headings(blocks(page, documentBody: 10)).isEmpty)
     #expect(paragraphs(blocks(page, documentBody: 10)).contains { $0.contains("48213") })
 }
@@ -214,6 +214,6 @@ private func backCoverLike() -> PageContent {
     // let that fragment count as evidence that "panies" is a real standalone word, or it would
     // wrongly treat "com-panies" as two genuine words and keep the hyphen. The lexicon, not the
     // vocabulary, is what decides a half's standing.
-    guard TextLayerPlausibility.lexiconContains("companies") != nil else { return }
+    guard EnglishText.lexiconContains("companies") != nil else { return }
     #expect(LayoutReconstructor.lexiconVouches(prefix: "com", suffix: "panies", usesEnglishLexicon: true))
 }

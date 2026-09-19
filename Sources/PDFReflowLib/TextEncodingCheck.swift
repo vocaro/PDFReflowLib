@@ -112,14 +112,11 @@ enum TextEncodingCheck {
     static let maximumStopwordRate = 0.05
     static let minimumRareBigramRate = 0.30
 
-    /// Only English statistics are embedded; other declared languages are not judged.
-    static func supports(language: String) -> Bool {
-        let primary = language.split(whereSeparator: { $0 == "-" || $0 == "_" }).first?.lowercased()
-        return primary == "en" || primary == "eng"
-    }
-
+    /// Only English statistics are embedded; other declared languages are not judged. The
+    /// stopword and bigram statistics do not consult the lexicon: the text they judge is made of
+    /// glyph indexes, not words.
     static func isImplausible(_ text: String, language: String) -> Bool {
-        guard supports(language: language) else { return false }
+        guard EnglishText.isDeclared(language) else { return false }
         let statistics = statistics(of: text)
         return statistics.words >= minimumWords
             && statistics.stopwordRate < maximumStopwordRate
@@ -152,7 +149,8 @@ enum TextEncodingCheck {
     }
 
     /// 148 English function words and report vocabulary. Ordinary prose scores 0.3–0.5; the
-    /// shifted Census pages score at most 0.004 (measurements/damaged-text-encoding/record.md).
+    /// shifted Census pages score at most 0.004 (measured while landing #38; the record was not
+    /// retained, so `DamagedEncodingTests` is the surviving evidence).
     private static let stopwordList: Set<String> = Set("""
     the of and to in a is that for it as was with be by on not he this are or his from at which but
     have an had they you were their one all we can her has there been if more when will would who so no
@@ -164,9 +162,9 @@ enum TextEncodingCheck {
     """.split(whereSeparator: \.isWhitespace).map(String.init))
 
     /// The 300 most frequent within-word letter pairs by type frequency over the ASCII entries of
-    /// macOS `/usr/share/dict/words` (web2; 235,974 words; 97.7% of pair occurrences). Derived by
-    /// `measurements/damaged-text-encoding/bigrams.py`. Prose pages score 0.02–0.07 rare pairs;
-    /// the shifted Census pages score 0.54–0.70.
+    /// macOS `/usr/share/dict/words` (web2; 235,974 words; 97.7% of pair occurrences); the
+    /// derivation script was not retained. Prose pages score 0.02–0.07 rare pairs; the shifted
+    /// Census pages score 0.54–0.70.
     private static let commonBigrams: Set<UInt16> = {
         let pairs = "erintionteanalaticenisreralerirostnearliesntorunitlacoiotoianicaedustasstrlydemachphngloouelnaacolhe"
             + "omdimenothsietsellmioppeosidvecehihoileaasulprndhaaburotblpomoncpaecemocgeogamshciapctpisuschynsdary"

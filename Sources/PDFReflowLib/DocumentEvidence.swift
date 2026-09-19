@@ -32,7 +32,7 @@ struct DocumentEvidence {
         self.language = language
         // An English document's word breaks may consult the system lexicon where its own words
         // are silent (#186).
-        hyphens = HyphenContext(usesEnglishLexicon: TextEncodingCheck.supports(language: language))
+        hyphens = HyphenContext(usesEnglishLexicon: EnglishText.isDeclared(language))
     }
 
     /// Folds one finished page in. `suppliesVocabulary` is false for retained unreadable text,

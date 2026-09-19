@@ -22,7 +22,7 @@ extension LayoutReconstructor {
                              judgesTitleWords: Bool) -> Bool {
         line.fontSize >= typography.headingThreshold && line.text.count < 200
             && (line.text.first?.isLowercase != true || stacksWithDisplay(line, in: lines, typography: typography))
-            && (!judgesTitleWords || TextLayerPlausibility.readsAsWords(line.text))
+            && (!judgesTitleWords || EnglishText.readsAsWords(line.text))
     }
 
     /// A heading-size line standing alone that opens in lowercase is display text that heads

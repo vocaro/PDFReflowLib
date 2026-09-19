@@ -11,7 +11,7 @@ import Testing
 
 @Test func wordCountsSortEnglishDamagedAndNeutralWords() {
     let lexicon: Set<String> = ["the", "movie", "strange"]
-    let counts = TextLayerPlausibility.wordCounts("a sreANee v/eus n e x t The NASA Kennedy movie's 42 strange vrius") {
+    let counts = EnglishText.wordCounts("a sreANee v/eus n e x t The NASA Kennedy movie's 42 strange vrius") {
         lexicon.contains($0)
     }
     // English: a, The, movie('s), strange. Damaged: sreANee (capitalization), n e x t (stray
@@ -54,7 +54,7 @@ import Testing
     let noLetters = [TextLine(text: "5", rect: .zero, fontSize: 10), TextLine(text: "10-12", rect: .zero, fontSize: 10),
                      TextLine(text: "37) 5 2 3", rect: .zero, fontSize: 10)]
     #expect(TextLayerPlausibility.reflowsNoWords(noLetters))
-    let counts = TextLayerPlausibility.wordCounts(noLetters.map(\.text).joined(separator: "\n")) { _ in true }
+    let counts = EnglishText.wordCounts(noLetters.map(\.text).joined(separator: "\n")) { _ in true }
     #expect(counts.judged == 0 && counts.words == 0)
     #expect(TextLayerPlausibility.wordFinding(counts) == nil)
     // Any lines that satisfy reflowsNoWords contain no letters at all, so no `isWord` closure
@@ -64,7 +64,7 @@ import Testing
 }
 
 @Test func judgeRendersOnlySparseEnglishLayers() throws {
-    try #require(TextLayerPlausibility.englishWordCounts("the") != nil, "no system English lexicon")
+    try #require(EnglishText.wordCounts("the") != nil, "no system English lexicon")
     func lines(_ text: String) -> [TextLine] { [TextLine(text: text, rect: CGRect(x: 0, y: 0, width: 100, height: 10), fontSize: 10)] }
     let missing = OCRTextCoverage.Measurement(textRows: 12, uncoveredRows: 12, textInk: 100, uncoveredInk: 95)
     var renders = 0
@@ -85,10 +85,10 @@ import Testing
 }
 
 @Test func realInheritedLayersFailOrPassTheWordTest() throws {
-    try #require(TextLayerPlausibility.englishWordCounts("the") != nil, "no system English lexicon")
+    try #require(EnglishText.wordCounts("the") != nil, "no system English lexicon")
     func counts(_ name: String) throws -> TextLayerPlausibility.WordCounts {
         let fixture = try SourceLayoutFixture.load(name)
-        return try #require(TextLayerPlausibility.englishWordCounts(fixture.lines.map(\.text).joined(separator: "\n")))
+        return try #require(EnglishText.wordCounts(fixture.lines.map(\.text).joined(separator: "\n")))
     }
     // The CDC comic's damaged dialogue fails the word test.
     let damaged = try counts("cdc-5")
@@ -104,14 +104,14 @@ import Testing
         Issue.record("warren-636: \(typescript)"); return
     }
     #expect(Double(misread) >= Double(words) * TextLayerPlausibility.minimumMisreadShare)
-    #expect(Double(typescript.english) >= Double(typescript.judged) * TextLayerPlausibility.maximumEnglishShare)
+    #expect(Double(typescript.english) >= Double(typescript.judged) * TextLayerPlausibility.minimumEnglishShare)
     // So is the comic's page 4 (#168), 0.6 English.
     if case .misreadWords? = TextLayerPlausibility.wordFinding(try counts("cdc-4")) {} else { Issue.record("cdc-4 passed") }
 }
 
 @Test func misreadWordsAreDamagedWordsNoNeighbourCompletes() {
     let lexicon: Set<String> = ["the", "field", "strength", "with", "when"]
-    let counts = TextLayerPlausibility.wordCounts("tbe fi e ld stre ngth witb vhen McDonald sreANee th e") { lexicon.contains($0) }
+    let counts = EnglishText.wordCounts("tbe fi e ld stre ngth witb vhen McDonald sreANee th e") { lexicon.contains($0) }
     // Misread: tbe, witb, vhen, sreANee. Split, not misread: fi e ld, stre ngth, th e (joined with a
     // neighbour they make field, strength, the). A compound name's capitals are not damage.
     #expect(counts.misread == 4)
@@ -125,25 +125,25 @@ import Testing
 }
 
 @Test func otherScriptsAreDamageAndRecognizedTitlesMustReadAsWords() throws {
-    try #require(TextLayerPlausibility.englishWordCounts("the") != nil, "no system English lexicon")
+    try #require(EnglishText.wordCounts("the") != nil, "no system English lexicon")
     // Recognition of handwriting and of the comic's all-caps exclamations.
-    let mixed = TextLayerPlausibility.wordCounts("DeالasTaxaع НИН the") { $0 == "the" }
+    let mixed = EnglishText.wordCounts("DeالasTaxaع НИН the") { $0 == "the" }
     #expect(mixed.damaged == 2 && mixed.english == 1)
-    #expect(TextLayerPlausibility.foreignLetters("НИН?!") == 3)
-    #expect(TextLayerPlausibility.foreignLetters("Besançon, Việt, ﬁeld") == 0)
+    #expect(EnglishText.foreignLetters("НИН?!") == 3)
+    #expect(EnglishText.foreignLetters("Besançon, Việt, ﬁeld") == 0)
     for title in ["INDEX OF TABLES", "Table A59. Evaluation of All Sightings for 1952", "SEPTEMBER", "SECTION D",
                   "PARKLAND MEMORIAL HOSPITAL"] {
-        #expect(TextLayerPlausibility.readsAsWords(title), "\(title)")
+        #expect(EnglishText.readsAsWords(title), "\(title)")
     }
     // Table cells and handwriting read at heading size under `--ocr always`.
     for noise in ["139", "1952 1950", "a0 0.0", "• a0", "0 00 a0 a0 a o e 00.00 a0", "Pags", "Certaia Doubtlul Total Cotai",
                   "Tag De Praciy Glii tant ami She", "стрлда ві. 1)", "Crมn C Tม Cour oi Ica"] {
-        #expect(!TextLayerPlausibility.readsAsWords(noise), "\(noise)")
+        #expect(!EnglishText.readsAsWords(noise), "\(noise)")
     }
 }
 
 @Test func recognitionIsJudgedByItsEnglishShareUnlessItIsAnotherLanguage() throws {
-    try #require(TextLayerPlausibility.englishWordCounts("the") != nil, "no system English lexicon")
+    try #require(EnglishText.wordCounts("the") != nil, "no system English lexicon")
     func lines(_ text: String) -> [TextLine] { [TextLine(text: text, rect: CGRect(x: 0, y: 0, width: 100, height: 10), fontSize: 10)] }
     // Handwriting recognition, abridged: read as noise.
     let noise = "PARKLAND MEMORIAL HOSPITAL ADMISSION NOTE iar mhele aandeuzen tro gret ancr fuom lhe sae intr ond deta "
@@ -153,7 +153,7 @@ import Testing
     // A page in French is text, not noise, in a book declared English.
     let french = "Le général a été élevé à Besançon, où l'été est très chaud. Après la rentrée, les élèves répètent leurs "
         + "leçons à côté du théâtre. La société française préfère les fenêtres ouvertes même en hiver."
-    #expect(TextLayerPlausibility.readsAsAnotherLanguage(french))
+    #expect(EnglishText.readsAsAnotherLanguage(french))
     #expect(TextLayerPlausibility.judgeRecognized(lines: lines(french), language: "en") == nil)
     // Misreading a tenth of its words does not discard a recognition that reads as English.
     let comic = Array(repeating: "MAN I FORGOT I HAD THIS. IT USED TO BE MY DAD'S powtred radic", count: 3).joined(separator: " ")
@@ -271,8 +271,8 @@ private let misreadInPlaceDialogue = [
 ]
 
 @Test func misreadInPlaceLayerComparesAgainstRecognitionEndToEnd() async throws {
-    try #require(TextLayerPlausibility.englishWordCounts("the") != nil, "no system English lexicon")
-    let counts = try #require(TextLayerPlausibility.englishWordCounts(misreadInPlaceDialogue.joined(separator: "\n")))
+    try #require(EnglishText.wordCounts("the") != nil, "no system English lexicon")
+    let counts = try #require(EnglishText.wordCounts(misreadInPlaceDialogue.joined(separator: "\n")))
     guard case .misreadWords? = TextLayerPlausibility.wordFinding(counts) else {
         Issue.record("fixture no longer misreads in place: \(counts)"); return
     }
@@ -316,7 +316,7 @@ private func convert(_ data: Data, policy: ConversionOptions.OCRPolicy) async th
 }
 
 @Test func implausibleInheritedWordsAreReplacedByDefaultAndReportedUnderEveryPolicy() async throws {
-    try #require(TextLayerPlausibility.englishWordCounts("the") != nil, "no system English lexicon")
+    try #require(EnglishText.wordCounts("the") != nil, "no system English lexicon")
     let garbled = try imageBackedPDF(imageLines: dialogue, layerLines: garbledDialogue)
     for policy in [ConversionOptions.OCRPolicy.automatic, .automaticKeepingImageBackedText, .never,
                    .automaticIncludingImageBackedText, .always] {

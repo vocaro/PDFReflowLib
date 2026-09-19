@@ -42,7 +42,7 @@ extension LayoutReconstructor {
     /// A line-end hyphen the book's own words cannot decide, in an English document (#186). A
     /// magazine can print `com-` + `panies` and `infec-` + `tions` and never the words whole or in
     /// another inflection, so the book's own vocabulary is silent although the words are ordinary.
-    /// The system's English lexicon (`TextLayerPlausibility.lexiconContains`, the list the text-layer
+    /// The system's English lexicon (`EnglishText.lexiconContains`, the list the text-layer
     /// judgement reads) vouches for the join when it holds the joined word and neither half is
     /// independently a lexicon word, with short-fragment guards: two letters a side and six in all.
     /// A compound whose halves are both words (`camera-` + `man`) keeps its hyphen and warns, as
@@ -56,8 +56,8 @@ extension LayoutReconstructor {
     /// The lexicon has no such fragment, so it alone decides whether a half stands on its own.
     static func lexiconVouches(prefix: String, suffix: String, usesEnglishLexicon: Bool) -> Bool {
         guard usesEnglishLexicon, prefix.count >= 2, suffix.count >= 2, prefix.count + suffix.count >= 6,
-              TextLayerPlausibility.lexiconContains(prefix + suffix) == true else { return false }
-        return !(TextLayerPlausibility.lexiconContains(prefix) == true && TextLayerPlausibility.lexiconContains(suffix) == true)
+              EnglishText.lexiconContains(prefix + suffix) == true else { return false }
+        return !(EnglishText.lexiconContains(prefix) == true && EnglishText.lexiconContains(suffix) == true)
     }
 
     static func join(_ left: String, _ right: String, hyphens: HyphenContext, page: Int,

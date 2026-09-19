@@ -45,6 +45,19 @@ enum OCRTextCoverage {
     /// dark ink the measurement can already read changes its reading.
     static let maximumBackgroundInk = 0.5
 
+    /// Glyph-sized components: 2.5–40 pt tall (a lowercase letter of 5 pt text to a large title),
+    /// no wider than twelve times their height (not a long rule), and neither a hairline frame
+    /// nor a filled block by ink density.
+    static let minimumGlyphPoints = 2.5
+    static let maximumGlyphPoints = 40.0
+    static let maximumGlyphAspect = 12
+    static let minimumGlyphDensity = 0.08
+    static let maximumGlyphDensity = 0.9
+    /// Otsu's threshold is kept between these so a page that is almost all paper, or almost all
+    /// dark fill, still separates ink from paper sensibly.
+    static let minimumInkThreshold = 96
+    static let maximumInkThreshold = 170
+
     static func measure(_ raster: GrayRaster, lines: [CGRect], excluded: [CGRect],
                         pixelsPerPoint: Double, collectBoxes: Bool = false,
                         minimumGlyphs: Int = 5) -> Measurement {
@@ -63,10 +76,8 @@ enum OCRTextCoverage {
         let threshold = raster.inkThreshold()
         let components = raster.components(darkerThan: threshold)
 
-        // Glyph-sized: 2.5–40 pt tall (a lowercase letter of 5 pt text to a large title), not a
-        // long rule or a filled block, and not a hairline frame.
-        let minimumHeight = max(4, Int((2.5 * pixelsPerPoint).rounded()))
-        let maximumHeight = Int((40 * pixelsPerPoint).rounded())
+        let minimumHeight = max(4, Int((minimumGlyphPoints * pixelsPerPoint).rounded()))
+        let maximumHeight = Int((maximumGlyphPoints * pixelsPerPoint).rounded())
         func pixelRect(_ normalized: CGRect) -> (minX: Int, minY: Int, maxX: Int, maxY: Int) {
             (Int((normalized.minX * Double(width)).rounded(.down)),
              Int(((1 - normalized.maxY) * Double(height)).rounded(.down)),
@@ -76,9 +87,9 @@ enum OCRTextCoverage {
         let excludedRects = excluded.map(pixelRect)
         let glyphs = components.filter { c in
             let w = c.maxX - c.minX + 1, h = c.maxY - c.minY + 1
-            guard h >= minimumHeight, h <= maximumHeight, w <= h * 12 else { return false }
+            guard h >= minimumHeight, h <= maximumHeight, w <= h * maximumGlyphAspect else { return false }
             let density = Double(c.pixels) / Double(w * h)
-            guard density >= 0.08, density <= 0.9 else { return false }
+            guard density >= minimumGlyphDensity, density <= maximumGlyphDensity else { return false }
             let cx = (c.minX + c.maxX) / 2, cy = (c.minY + c.maxY) / 2
             return !excludedRects.contains { cx >= $0.minX && cx <= $0.maxX && cy >= $0.minY && cy <= $0.maxY }
         }
@@ -245,8 +256,7 @@ enum OCRTextCoverage {
             pixels = buffer
         }
 
-        /// Otsu's threshold over the luminance histogram, kept between 96 and 170 so a page that
-        /// is almost all paper, or almost all dark fill, still separates ink from paper sensibly.
+        /// Otsu's threshold over the luminance histogram, kept within `OCRTextCoverage`'s bounds.
         func inkThreshold() -> UInt8 {
             var histogram = [Int](repeating: 0, count: 256)
             for value in pixels { histogram[Int(value)] += 1 }
@@ -265,7 +275,7 @@ enum OCRTextCoverage {
                 let between = background * foreground * (meanBackground - meanForeground) * (meanBackground - meanForeground)
                 if between > best { best = between; threshold = value }
             }
-            return UInt8(min(170, max(96, threshold)))
+            return UInt8(min(OCRTextCoverage.maximumInkThreshold, max(OCRTextCoverage.minimumInkThreshold, threshold)))
         }
 
         /// Whether the darker side of the ink threshold covers more of the page than the lighter

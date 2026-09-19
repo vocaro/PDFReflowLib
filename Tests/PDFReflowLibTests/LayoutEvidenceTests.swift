@@ -81,7 +81,7 @@ private let prose: [TextLine] = (0..<5).map {
 }
 
 @Test func recognizedTitlesMustReadAsWords() throws {
-    guard TextLayerPlausibility.lexiconContains("chapter") == true else { return }
+    guard EnglishText.lexiconContains("chapter") == true else { return }
     let recognized = page(prose, recognized: true)
     func role(_ text: String) -> LineRole {
         LayoutReconstructor.role(of: line(text, y: 560, size: 13), on: recognized, in: recognized.lines,

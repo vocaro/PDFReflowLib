@@ -395,7 +395,7 @@ enum LayoutReconstructor {
         // A recognized line in an English book is a heading only if it reads as words: a table
         // cell or a reading of handwriting set large is not a title, and every heading is a
         // navigation entry (#7).
-        let judgesTitleWords = page.recognized && TextLayerPlausibility.supports(language: context.language)
+        let judgesTitleWords = page.recognized && EnglishText.isDeclared(context.language)
         let spatial = ordered(lines.map { Element(rect: $0.readingRect ?? $0.rect, line: $0) }
             + images.map { Element(rect: $0.0, image: $0.1) }, bodySize: typography.body)
         let elements = structuredOrder(spatial, page: page.number, warnings: &warnings)

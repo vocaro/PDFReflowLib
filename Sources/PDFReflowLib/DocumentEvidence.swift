@@ -7,17 +7,17 @@ import Foundation
 /// `collect` folds one extracted page in; `resolved` decides what reconstruction needs.
 struct DocumentEvidence {
     struct Resolved {
-        /// The size most of the document's native text is set in, for a page too bare to state
-        /// its own (#186).
-        var documentBody: CGFloat?
-        /// The bold sub-heading styles the book repeats often enough to trust (#218).
-        var labelStyles: Set<LayoutReconstructor.LabelStyle>
+        /// What every page's reconstruction shares: the hyphen context, the size most of the
+        /// document's native text is set in (#186), the bold sub-heading styles the book repeats
+        /// often enough to trust (#218), and the numbered-note pages.
+        var context: LayoutReconstructor.DocumentContext
         var furniturePlan: FurnitureDetector.Plan?
     }
 
     let chapterCandidates: [ChapterBoundaryReader.Candidate]
+    let language: String
     private(set) var chapterStartPages: Set<Int> = []
-    private(set) var vocabulary: Set<String> = []
+    private(set) var hyphens: HyphenContext
     private var furniture = FurnitureDetector.Ledger()
     private(set) var numberedNotePages: Set<Int> = []
     /// Characters per type size over the native pages: the document's body (#186).
@@ -29,11 +29,10 @@ struct DocumentEvidence {
 
     init(chapterCandidates: [ChapterBoundaryReader.Candidate], language: String) {
         self.chapterCandidates = chapterCandidates
+        self.language = language
         // An English document's word breaks may consult the system lexicon where its own words
         // are silent (#186).
-        if TextEncodingCheck.supports(language: language) {
-            vocabulary.insert(LayoutReconstructor.englishLexiconKey)
-        }
+        hyphens = HyphenContext(usesEnglishLexicon: TextEncodingCheck.supports(language: language))
     }
 
     /// Folds one finished page in. `suppliesVocabulary` is false for retained unreadable text,
@@ -48,7 +47,7 @@ struct DocumentEvidence {
         }
         // Retain heading evidence before removing furniture, after all extraction/OCR work.
         if suppliesVocabulary {
-            LayoutReconstructor.addVocabulary(of: content, to: &vocabulary)
+            LayoutReconstructor.addVocabulary(of: content, to: &hyphens.vocabulary)
         }
         if !content.recognized, !content.hasSyntheticTextStyle, !content.requiresPageImage {
             LayoutReconstructor.addBodyWeights(of: content.lines, to: &bodyWeights)
@@ -67,8 +66,11 @@ struct DocumentEvidence {
     mutating func resolved(options: ConversionOptions) -> Resolved {
         let plan = options.removeRepeatedHeadersAndFooters ? FurnitureDetector.resolve(furniture) : nil
         furniture = FurnitureDetector.Ledger()
-        return Resolved(documentBody: LayoutReconstructor.bodySize(weights: bodyWeights),
-                        labelStyles: LayoutReconstructor.labelStyles(from: labelStylePages),
-                        furniturePlan: plan)
+        let context = LayoutReconstructor.DocumentContext(
+            hyphens: hyphens, language: language,
+            documentBody: LayoutReconstructor.bodySize(weights: bodyWeights),
+            labelStyles: LayoutReconstructor.labelStyles(from: labelStylePages),
+            numberedNotePages: numberedNotePages)
+        return Resolved(context: context, furniturePlan: plan)
     }
 }

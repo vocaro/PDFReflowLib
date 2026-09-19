@@ -117,10 +117,8 @@ enum PDFReflowLibPipeline {
                     if !images.isEmpty {
                         warnings.append(ConversionWarnings.warning(.imageRegion(.regionCrops), page: i + 1, options: options))
                     }
-                    pageBlocks = LayoutReconstructor.blocks(page: content, images: images,
-                        vocabulary: evidence.vocabulary, warnings: &warnings,
-                        numberedNotePage: evidence.numberedNotePages.contains(content.number), language: options.language,
-                        documentBody: resolved.documentBody, labelStyles: resolved.labelStyles)
+                    pageBlocks = LayoutReconstructor.blocks(page: content, images: images, context: resolved.context,
+                                                            warnings: &warnings)
                     if pageBlocks.contains(where: \.hasReflowedText) {
                         reflowed += 1
                     }
@@ -136,7 +134,7 @@ enum PDFReflowLibPipeline {
                     }
                 }
                 LayoutReconstructor.appendPage(pageBlocks, page: content, previousPage: previousPage,
-                    to: &blocks, vocabulary: evidence.vocabulary, warnings: &warnings)
+                    to: &blocks, hyphens: resolved.context.hyphens, warnings: &warnings)
             }
             previous = content
             await progress(.init(stage: .reconstructing, fractionCompleted: 0.6875 + 0.3125 * Double(i + 1) / Double(total),

@@ -40,7 +40,7 @@ enum NumberedNoteDetector {
         var previous: TextLine?
         for index in first..<elements.count {
             guard let line = elements[index].line, !line.monospaced, line.structure == nil,
-                  abs(line.fontSize - size) <= size * 0.1 else { return [:] }
+                  line.hasSize(size) else { return [:] }
             if let previous {
                 let gap = previous.rect.minY - line.rect.maxY
                 guard gap >= -size * 0.2, gap <= size * 0.8 else { return [:] }

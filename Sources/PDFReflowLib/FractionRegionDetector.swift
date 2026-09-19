@@ -2,8 +2,8 @@ import Foundation
 
 /// Preserve spatial fractions around short painted bars. This does not transcribe mathematics.
 enum FractionRegionDetector {
-    static func regions(in page: PageContent) -> [CGRect] {
-        let body = max(4, LayoutReconstructor.bodySize(page.lines))
+    static func regions(in page: PageContent, body: CGFloat? = nil) -> [CGRect] {
+        let body = body ?? max(4, LayoutReconstructor.bodySize(page.lines))
         func term(_ line: TextLine) -> Bool {
             guard !line.monospaced, line.text.count <= 60,
                   line.text.range(of: #"[A-Za-z]{3,}"#, options: .regularExpression) == nil else { return false }

@@ -159,7 +159,16 @@ Traversal is bounded to 200,000 visits and depth 64; association caps text ancho
 not partial ordering. Cancellation is checked during traversal and text scanning.
 
 `LayoutReconstructor` handles whitespace cuts, paragraphs, styled word joins and
-cross-page continuation. Heading-size evidence excludes text already preserved inside images
+cross-page continuation. Its per-page entry point, `blocks`, reads the page's typography once into
+a `PageTypography` value (page body, established body, heading body, document floor, heading
+threshold), classifies every line outside a tagged or numbered-note group with one function,
+`role(of:)`, into a `LineRole` (heading, code, list item, prose), and hands the ordered elements to
+a `BlockAssembler` that owns the paragraph in progress, the code block's origin and the tagged and
+note groups. What every page shares arrives as one `DocumentContext` (the `HyphenContext` of
+vocabulary plus lexicon permission, the language, the document body, the recurring label styles
+and the numbered-note pages), so a new document-wide signal is a field, not a parameter. Hyphen
+repair lives in `HyphenRepair.swift`; the line-geometry predicates the rules share (`hasSize`,
+`overlapsHorizontally`, `sharesColumn`, `sharesRow`) are on `TextLine`. Heading-size evidence excludes text already preserved inside images
 when at least three remaining lines and 200 characters support the dominant reflowable font size.
 Candidates within 10% of that supported body size are suppressed, while the original 25%
 page-size threshold still applies. This retains existing modestly larger section headings. Short titles

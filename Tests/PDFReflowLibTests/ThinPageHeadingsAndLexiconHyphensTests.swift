@@ -136,11 +136,11 @@ private func backCoverLike() -> PageContent {
 
 @Test func anEnglishLexiconDecidesABreakTheBookCannot() throws {
     guard TextLayerPlausibility.lexiconContains("companies") != nil else { return }
-    let english: Set<String> = [LayoutReconstructor.englishLexiconKey]
+    let english = HyphenContext(usesEnglishLexicon: true)
     for (left, right, joined) in [("commercial com-", "panies interested", "commercial companies interested"),
                                   ("a range of infec-", "tions in humans", "a range of infections in humans")] {
         var warnings: [ConversionWarning] = []
-        #expect(LayoutReconstructor.join(left, right, vocabulary: english, page: 6, warnings: &warnings) == joined)
+        #expect(LayoutReconstructor.join(left, right, hyphens: english, page: 6, warnings: &warnings) == joined)
         #expect(warnings.isEmpty)
         // Control: without the declared language the break stays undecided, hyphen kept and warned.
         var undecided: [ConversionWarning] = []
@@ -151,12 +151,12 @@ private func backCoverLike() -> PageContent {
 
 @Test func theLexiconLeavesGenuineCompoundsAndShortHalves() throws {
     guard TextLayerPlausibility.lexiconContains("companies") != nil else { return }
-    let english: Set<String> = [LayoutReconstructor.englishLexiconKey]
+    let english = HyphenContext(usesEnglishLexicon: true)
     // A compound whose halves are both words on their own (camera-man), a one-letter half
     // (e-mail), and a joined word the lexicon does not hold all keep the hyphen.
     for (left, right) in [("camera-", "man arrived"), ("e-", "mail it"), ("zorbu-", "latinex tonight")] {
         var warnings: [ConversionWarning] = []
-        #expect(LayoutReconstructor.join(left, right, vocabulary: english, page: 1, warnings: &warnings) == left + right,
+        #expect(LayoutReconstructor.join(left, right, hyphens: english, page: 1, warnings: &warnings) == left + right,
                 "\(left)\(right)")
     }
 }
@@ -215,6 +215,5 @@ private func backCoverLike() -> PageContent {
     // wrongly treat "com-panies" as two genuine words and keep the hyphen. The lexicon, not the
     // vocabulary, is what decides a half's standing.
     guard TextLayerPlausibility.lexiconContains("companies") != nil else { return }
-    #expect(LayoutReconstructor.lexiconVouches(prefix: "com", suffix: "panies",
-        vocabulary: [LayoutReconstructor.englishLexiconKey, "panies"]))
+    #expect(LayoutReconstructor.lexiconVouches(prefix: "com", suffix: "panies", usesEnglishLexicon: true))
 }

@@ -32,8 +32,9 @@ enum LayoutReconstructor {
             let equation = line.text.contains("=") && line.text.split(whereSeparator: \.isWhitespace).count <= 12
             return mathSymbols || equation
         }.map { $0.rect.insetBy(dx: -4, dy: -8) }
+        let body = max(4, bodySize(page.lines))
         var regions = clusters(page.graphics + formulas + TableRegionDetector.regions(in: page)
-            + FractionRegionDetector.regions(in: page), distance: 3)
+            + FractionRegionDetector.regions(in: page, body: body), distance: 3)
         var previous: [CGRect] = []
         while regions != previous {
             previous = regions
@@ -149,17 +150,12 @@ enum LayoutReconstructor {
         return documentBody * 1.1
     }
 
-    /// Pieces of one visual row (PDFKit splits rows at wide gaps; superscripts are separate lines).
-    private static func sameRow(_ a: CGRect, _ b: CGRect) -> Bool {
-        min(a.maxY, b.maxY) - max(a.minY, b.minY) >= min(a.height, b.height) * 0.5
-    }
-
     /// Whether `line` is the next line of the heading `previous` opens: the same size, set
     /// directly beneath it at ordinary heading leading (the rectangles include PDFKit's leading,
     /// so they touch or overlap), sharing the left edge, the centre or the right edge (#186).
     static func stacksUnderHeading(_ line: TextLine, after previous: TextLine) -> Bool {
         let size = max(previous.fontSize, line.fontSize)
-        guard abs(previous.fontSize - line.fontSize) <= size * 0.1, !sameRow(previous.rect, line.rect),
+        guard abs(previous.fontSize - line.fontSize) <= size * 0.1, !previous.sharesRow(with: line),
               line.rect.minY < previous.rect.minY, line.rect.maxY >= previous.rect.minY - size,
               previous.rect.minY - line.rect.minY <= size * 2.2 else { return false }
         return abs(previous.rect.minX - line.rect.minX) <= size * 0.6
@@ -183,7 +179,7 @@ enum LayoutReconstructor {
     /// The page's ordinary line height at a size: the median height of its lines of that size
     /// (#218, ported unchanged from the coordination branch).
     private static func ordinaryLineHeight(_ size: CGFloat, in lines: [TextLine]) -> CGFloat? {
-        let heights = lines.filter { abs($0.fontSize - size) <= size * 0.1 }.map(\.rect.height).sorted()
+        let heights = lines.filter { $0.hasSize(size) }.map(\.rect.height).sorted()
         return heights.isEmpty ? nil : heights[heights.count / 2]
     }
 
@@ -193,7 +189,7 @@ enum LayoutReconstructor {
     /// coordination branch's `ordinaryLineGap`, #159).
     private static func ordinaryLineGap(_ size: CGFloat, in lines: [TextLine], body: CGFloat) -> CGFloat? {
         guard let height = ordinaryLineHeight(size, in: lines) else { return nil }
-        let ordinary = lines.filter { abs($0.fontSize - size) <= size * 0.1 && $0.rect.height <= height + body * 0.25 }
+        let ordinary = lines.filter { $0.hasSize(size) && $0.rect.height <= height + body * 0.25 }
         let gaps = ordinary.compactMap { upper -> CGFloat? in
             ordinary.compactMap { lower -> CGFloat? in
                 let gap = upper.rect.minY - lower.rect.maxY
@@ -213,13 +209,12 @@ enum LayoutReconstructor {
     /// steps) before it may separate a sub-heading from its paragraph.
     static func firstLineIndentRun(in lines: [TextLine], step: CGFloat, size: CGFloat) -> Bool {
         func sized(_ line: TextLine) -> Bool {
-            !line.monospaced && abs(line.fontSize - size) <= size * 0.1
+            !line.monospaced && line.hasSize(size)
         }
         let column = lines.filter(sized)
         func neighbour(of line: TextLine, above: Bool) -> TextLine? {
             let sharing = column.filter { other in
-                other != line && !sameRow(other.rect, line.rect)
-                    && other.rect.minX < line.rect.maxX && other.rect.maxX > line.rect.minX
+                line.sharesColumn(with: other) && !line.sharesRow(with: other)
                     && (above ? other.rect.minY >= line.rect.maxY - size * 0.4
                               : other.rect.maxY <= line.rect.minY + size * 0.4)
             }
@@ -298,9 +293,7 @@ enum LayoutReconstructor {
                   first.isUppercase || first.isNumber,
                   let last = line.text.last, !".,;:".contains(last),
                   line.text.contains(where: \.isLetter) else { continue }
-            let column = lines.filter { other in
-                other != line && other.rect.minX < line.rect.maxX && other.rect.maxX > line.rect.minX
-            }
+            let column = lines.filter { line.sharesColumn(with: $0) }
             let above = column.filter { $0.rect.minY >= line.rect.maxY - body * 0.25 }
                 .min { $0.rect.minY < $1.rect.minY }
             let clearance = smaller ? min(body * 0.8, (bodyGap ?? 0) + body * 0.5) : body * 0.8
@@ -310,10 +303,8 @@ enum LayoutReconstructor {
             let prose = column.filter { $0.fontSize < body * 1.1 }.map(\.rect.width).max() ?? 0
             guard prose > 0, line.rect.width <= prose * 0.9 else { continue }
             func nearestBelow(_ title: TextLine) -> TextLine? {
-                lines.filter { other in
-                    other != title && other.rect.minX < title.rect.maxX && other.rect.maxX > title.rect.minX
-                        && other.rect.maxY <= title.rect.minY + body * 0.4
-                }.max(by: { $0.rect.maxY < $1.rect.maxY })
+                lines.filter { title.sharesColumn(with: $0) && $0.rect.maxY <= title.rect.minY + body * 0.4 }
+                    .max(by: { $0.rect.maxY < $1.rect.maxY })
             }
             // The line opening the text a title heads past a picture set directly beneath it
             // (#186, #218): *Agricultural Research*'s `Fighting Filth Flies` heads a sidebar over
@@ -329,16 +320,14 @@ enum LayoutReconstructor {
                               && graphic.maxX >= title.rect.maxX && graphic.maxY <= title.rect.minY + body * 0.4
                               && title.rect.minY - graphic.maxY < body * 0.8
                       }).max(by: { $0.maxY < $1.maxY }) else { return nil }
-                let beneath = lines.filter { other in
-                    other != title && other.rect.minX < title.rect.maxX && other.rect.maxX > title.rect.minX
-                        && other.rect.maxY <= figure.minY + body * 0.4
-                }.sorted { $0.rect.maxY > $1.rect.maxY }
+                let beneath = lines.filter { title.sharesColumn(with: $0) && $0.rect.maxY <= figure.minY + body * 0.4 }
+                    .sorted { $0.rect.maxY > $1.rect.maxY }
                 guard let opening = beneath.firstIndex(where: { $0.fontSize >= body * 0.9 }) else { return nil }
                 let foot = beneath[..<opening].map(\.rect.minY).min() ?? figure.minY
                 return foot - beneath[opening].rect.maxY < body * 4 ? beneath[opening] : nil
             }
             func opens(_ title: TextLine, with below: TextLine) -> Bool {
-                guard abs(below.fontSize - body) <= body * 0.1, !LabelStyle(below, body: body).bold else { return false }
+                guard below.hasSize(body), !LabelStyle(below, body: body).bold else { return false }
                 // The paragraph can open on the column's own first-line indent instead of on the
                 // title's edge. The page's indent pattern is the evidence, as it is for the
                 // paragraph break itself; a wider step is another block, not this title's text.
@@ -370,10 +359,9 @@ enum LayoutReconstructor {
     /// single bold run near body size elsewhere in the book cannot promote itself into a heading.
     static func labelEvidence(on page: PageContent) -> Set<LabelStyle> {
         guard !page.hasSyntheticTextStyle, !page.recognized else { return [] }
-        let body = max(4, bodySize(page.lines))
-        let threshold = max(body * 1.25, headingBodySize(page.lines, pageBody: body) * 1.1)
-        return Set(sectionLabels(in: page.lines, body: body, headingThreshold: threshold, page: page,
-                                 recordingSubheadings: true).map { LabelStyle($0, body: body) })
+        let typography = PageTypography(page: page)
+        return Set(sectionLabels(in: page.lines, body: typography.body, headingThreshold: typography.headingThreshold,
+                                 page: page, recordingSubheadings: true).map { LabelStyle($0, body: typography.body) })
     }
 
     /// A style is the book's recurring sub-heading typography once its narrow bold labels appear on
@@ -383,143 +371,65 @@ enum LayoutReconstructor {
         Set(pages.filter { $0.value >= 3 }.keys)
     }
 
+    /// What every page's reconstruction shares: how line-end hyphens are decided, the declared
+    /// language, the document's body size and recurring sub-heading styles (#186, #218), and the
+    /// pages whose numbered-note heading extraction recognized.
+    struct DocumentContext: Sendable {
+        var hyphens = HyphenContext()
+        var language = "en"
+        var documentBody: CGFloat?
+        var labelStyles: Set<LabelStyle> = []
+        var numberedNotePages: Set<Int> = []
+    }
+
+    /// One page's logical blocks: its typography is read once, every line outside a tagged or
+    /// numbered-note group is classified by `role(of:)`, and `BlockAssembler` builds the blocks.
+    static func blocks(page: PageContent, images: [(CGRect, String)], context: DocumentContext,
+                       warnings: inout [ConversionWarning]) -> [ReflowBlock] {
+        let lines = page.lines.filter { line in !images.contains { $0.0.intersects(line.rect) } }
+        let typography = PageTypography(pageLines: page.lines, reflowableLines: lines, documentBody: context.documentBody)
+        // A bold sub-heading set at or near body size, whose paragraph opens beneath it directly or
+        // past an intervening picture and caption (#218).
+        let labels = sectionLabels(in: lines, body: typography.body, headingThreshold: typography.headingThreshold,
+                                   page: page, styles: context.labelStyles)
+        // A recognized line in an English book is a heading only if it reads as words: a table
+        // cell or a reading of handwriting set large is not a title, and every heading is a
+        // navigation entry (#7).
+        let judgesTitleWords = page.recognized && TextLayerPlausibility.supports(language: context.language)
+        let spatial = ordered(lines.map { Element(rect: $0.readingRect ?? $0.rect, line: $0) }
+            + images.map { Element(rect: $0.0, image: $0.1) }, bodySize: typography.body)
+        let elements = structuredOrder(spatial, page: page.number, warnings: &warnings)
+        let noteGroups = NumberedNoteDetector.groups(in: elements, page: page,
+                                                     headingEvidence: context.numberedNotePages.contains(page.number))
+        var assembler = BlockAssembler(page: page.number, body: typography.body, hyphens: context.hyphens)
+        for (index, element) in elements.enumerated() {
+            if let group = noteGroups[index], let line = element.line {
+                assembler.appendNote(group: group, line)
+            } else if let path = element.image {
+                assembler.appendImage(path)
+            } else if let line = element.line {
+                if let tag = line.structure {
+                    assembler.appendTagged(tag, line)
+                } else {
+                    assembler.append(line, as: role(of: line, on: page, in: lines, typography: typography,
+                                                    labels: labels, judgesTitleWords: judgesTitleWords))
+                }
+            }
+        }
+        let result = assembler.finish()
+        warnings += assembler.warnings
+        return result
+    }
+
+    /// Convenience for tests that supply the document context piecemeal.
     static func blocks(page: PageContent, images: [(CGRect, String)], vocabulary: Set<String>,
                        warnings: inout [ConversionWarning], numberedNotePage: Bool = false,
                        language: String = "en", documentBody: CGFloat? = nil,
                        labelStyles: Set<LabelStyle> = []) -> [ReflowBlock] {
-        let body = max(4, bodySize(page.lines))
-        let lines = page.lines.filter { line in !images.contains { $0.0.intersects(line.rect) } }
-        // Preserve existing modest-size headings, but reject candidates within 10% of the
-        // supported reflowable body size. This only narrows the original page-size heuristic.
-        // On a page too bare to state its own body, a heading must also clear the document's (#186).
-        let documentFloor = documentHeadingFloor(lines, documentBody: documentBody)
-        let headingThreshold = max(body * 1.25, headingBodySize(lines, pageBody: body) * 1.1, documentFloor)
-        // A bold sub-heading set at or near body size, whose paragraph opens beneath it directly or
-        // past an intervening picture and caption (#218).
-        let labels = sectionLabels(in: lines, body: body, headingThreshold: headingThreshold, page: page,
-                                   styles: labelStyles)
-        // A title opens with a capital, a digit or a mark. A heading-size line standing alone that
-        // opens in lowercase is display text that heads nothing: a magazine cover's title line
-        // "From Insects" can be followed by a lowercase cross-reference line "pages 2, 4-14" set at
-        // the same size, which is not itself a title (#186). A line stacked with another of its
-        // size, above or below, is part of a title or a pull quote and keeps its size's reading.
-        func stacksWithDisplay(_ line: TextLine) -> Bool {
-            lines.contains { other in
-                other != line && other.fontSize >= headingThreshold
-                    && (stacksUnderHeading(line, after: other) || stacksUnderHeading(other, after: line))
-            }
-        }
-        // A recognized line in an English book is a heading only if it reads as words: a table
-        // cell or a reading of handwriting set large is not a title, and every heading is a
-        // navigation entry (#7).
-        let judgesTitleWords = page.recognized && TextLayerPlausibility.supports(language: language)
-        let spatial = ordered(lines.map { Element(rect: $0.readingRect ?? $0.rect, line: $0) }
-            + images.map { Element(rect: $0.0, image: $0.1) }, bodySize: body)
-        let elements = structuredOrder(spatial, page: page.number, warnings: &warnings)
-        let noteGroups = NumberedNoteDetector.groups(in: elements, page: page, headingEvidence: numberedNotePage)
-        var result: [ReflowBlock] = []
-        var note: (Int, InlineText)?
-        func flushNote() {
-            if let (_, text) = note { result.append(ReflowBlock(content: .paragraph(text), page: page.number)) }
-            note = nil
-        }
-        var tagged: (TextStructure, InlineText)?
-        func flushTagged() {
-            guard let (tag, text) = tagged else { return }
-            let content: ReflowBlock.Content = tag.headingLevel == 0 ? .paragraph(text)
-                : .heading(id: "heading-\(page.number)-\(result.count)", text: text, level: tag.headingLevel)
-            result.append(ReflowBlock(content: content, structureGroup: tag.group, page: page.number))
-            tagged = nil
-        }
-        var paragraph = InlineText()
-        var previous: TextLine?
-        var codeOrigin: CGFloat?
-        func flush() {
-            if !paragraph.elements.isEmpty {
-                result.append(ReflowBlock(content: .paragraph(paragraph), page: page.number))
-            }
-            paragraph = InlineText()
-            previous = nil
-        }
-        for (index, element) in elements.enumerated() {
-            if let group = noteGroups[index], let line = element.line {
-                flushTagged()
-                flush()
-                codeOrigin = nil
-                if note?.0 != group { flushNote() }
-                if let current = note {
-                    note = (group, join(current.1, line.content, vocabulary: vocabulary,
-                        page: page.number, warnings: &warnings))
-                } else { note = (group, line.content) }
-                continue
-            }
-            flushNote()
-            if let path = element.image {
-                flushTagged()
-                flush()
-                codeOrigin = nil
-                result.append(imageBlock(assetID: path, page: page.number))
-                continue
-            }
-            guard let line = element.line else { continue }
-            if let tag = line.structure {
-                flush()
-                codeOrigin = nil
-                if tagged?.0.group != tag.group { flushTagged() }
-                if let current = tagged {
-                    tagged = (current.0, join(current.1, line.content, vocabulary: vocabulary,
-                        page: page.number, warnings: &warnings))
-                } else { tagged = (tag, line.content) }
-                continue
-            }
-            flushTagged()
-            if !line.monospaced { codeOrigin = nil }
-            // A bold sub-heading label is a heading too, whatever its size (#218): `sectionLabels`
-            // already refuses recognized and synthetic-style pages entirely, so `labels` carries no
-            // OCR-noise or synthetic-style risk of its own; `labels` is simply empty there.
-            if !page.hasSyntheticTextStyle && ((line.fontSize >= headingThreshold && line.text.count < 200
-                && (line.text.first?.isLowercase != true || stacksWithDisplay(line))
-                && (!judgesTitleWords || TextLayerPlausibility.readsAsWords(line.text))) || labels.contains(line)) {
-                flush()
-                result.append(ReflowBlock(content: .heading(id: "heading-\(page.number)-\(result.count)", text: line.content),
-                    page: page.number))
-            } else if !page.hasSyntheticTextStyle && line.monospaced {
-                flush()
-                if let origin = codeOrigin, let last = result.last, case let .preformatted(previousText) = last.content {
-                    let indent = min(80, max(0, Int(((line.rect.minX - origin) / (line.fontSize * 0.6)).rounded())))
-                    var combined = previousText
-                    combined.append(InlineText("\n" + String(repeating: " ", count: indent)))
-                    combined.append(line.content)
-                    result[result.count - 1].content = .preformatted(combined)
-                } else {
-                    codeOrigin = line.rect.minX
-                    result.append(ReflowBlock(content: .preformatted(line.content), page: page.number))
-                }
-            } else if isList(line.text) {
-                flush()
-                // Preserve significant breaks and native styles; do not rewrite list markers or code.
-                result.append(ReflowBlock(content: .preformatted(line.content), page: page.number))
-            } else {
-                if let prev = previous {
-                    let verticalGap = prev.rect.minY - line.rect.maxY
-                    let sameColumn = abs(prev.rect.minX - line.rect.minX) < body * 1.5
-                        && verticalGap >= -body * 0.4 && verticalGap < body * 0.9
-                    let shortEnding = prev.rect.width < line.rect.width * 0.65
-                        && prev.text.last.map { ".!?".contains($0) } == true
-                    if prev.wraps == false || !sameColumn || shortEnding { flush() }
-                }
-                if paragraph.elements.isEmpty { paragraph = line.content }
-                else {
-                    paragraph = join(paragraph, line.content, vocabulary: vocabulary,
-                        page: page.number, warnings: &warnings)
-                }
-                previous = line
-            }
-        }
-        flushNote()
-        flushTagged()
-        flush()
-        return result
+        let context = DocumentContext(hyphens: HyphenContext(vocabulary: vocabulary), language: language,
+                                      documentBody: documentBody, labelStyles: labelStyles,
+                                      numberedNotePages: numberedNotePage ? [page.number] : [])
+        return blocks(page: page, images: images, context: context, warnings: &warnings)
     }
 
     /// Tags may reorder only complete groups inside an uninterrupted run of tagged text.
@@ -601,6 +511,13 @@ enum LayoutReconstructor {
     static func appendPage(_ pageBlocks: [ReflowBlock], page: PageContent, previousPage: PageContent?,
                            to blocks: inout [ReflowBlock], vocabulary: Set<String>,
                            warnings: inout [ConversionWarning]) {
+        appendPage(pageBlocks, page: page, previousPage: previousPage, to: &blocks,
+                   hyphens: HyphenContext(vocabulary: vocabulary), warnings: &warnings)
+    }
+
+    static func appendPage(_ pageBlocks: [ReflowBlock], page: PageContent, previousPage: PageContent?,
+                           to blocks: inout [ReflowBlock], hyphens: HyphenContext,
+                           warnings: inout [ConversionWarning]) {
         var remaining = pageBlocks
         if let last = blocks.last, let first = remaining.first, let previousPage,
            case let .paragraph(left) = last.content, case let .paragraph(right) = first.content,
@@ -608,86 +525,12 @@ enum LayoutReconstructor {
            first.text.first?.isLowercase == true, last.text.last.map({ !".!?:".contains($0) }) == true,
            previousPage.lines.last.map({ $0.rect.minY < previousPage.bounds.minY + previousPage.bounds.height * 0.2 }) == true,
            page.lines.first.map({ $0.rect.maxY > page.bounds.minY + page.bounds.height * 0.8 }) == true {
-            blocks[blocks.count - 1].content = .paragraph(join(left, right, vocabulary: vocabulary,
+            blocks[blocks.count - 1].content = .paragraph(join(left, right, hyphens: hyphens,
                 page: page.number, sourceBoundary: page.number, warnings: &warnings))
             remaining.removeFirst()
         } else {
             blocks.append(ReflowBlock(content: .sourcePage(page.number), page: page.number))
         }
         blocks += remaining
-    }
-
-    private static func isList(_ text: String) -> Bool {
-        text.range(of: "^(?:[•*−-]|[0-9]+[.)]|[A-Za-z][.)])\\s", options: .regularExpression) != nil
-    }
-
-    private enum JoinOperation { case space, concatenate, removeHyphen }
-
-    private static func joinOperation(_ left: String, _ right: String, vocabulary: Set<String>, page: Int,
-                                      warnings: inout [ConversionWarning]) -> JoinOperation {
-        if left.hasSuffix("\u{00ad}") { return .removeHyphen }
-        guard left.hasSuffix("-"), right.first?.isLowercase == true else { return .space }
-        let prefix = left.dropLast().reversed().prefix(while: { $0.isLetter }).reversed()
-        let suffix = right.prefix(while: { $0.isLetter })
-        let joined = (String(prefix) + suffix).lowercased()
-        let compound = (String(prefix) + "-" + suffix).lowercased()
-        if vocabulary.contains(joined), !vocabulary.contains(compound) { return .removeHyphen }
-        if !vocabulary.contains(compound) {
-            if lexiconVouches(prefix: String(prefix).lowercased(), suffix: String(suffix).lowercased(), vocabulary: vocabulary) {
-                return .removeHyphen
-            }
-            if !warnings.contains(where: { $0.code == .uncertainHyphen && $0.page == page }) {
-                warnings.append(.init(code: .uncertainHyphen, page: page,
-                    message: "An ambiguous line-ending hyphen is retained. Review source word joins."))
-            }
-        }
-        return .concatenate
-    }
-
-    /// Marks the vocabulary of a document declared English, whose word breaks the system's English
-    /// lexicon may decide (`lexiconVouches`, #186).
-    static let englishLexiconKey = "\u{1}lexicon:en"
-
-    /// A line-end hyphen the book's own words cannot decide, in an English document (#186). A
-    /// magazine can print `com-` + `panies` and `infec-` + `tions` and never the words whole or in
-    /// another inflection, so the book's own vocabulary is silent although the words are ordinary.
-    /// The system's English lexicon (`TextLayerPlausibility.lexiconContains`, the list the text-layer
-    /// judgement reads) vouches for the join when it holds the joined word and neither half is
-    /// independently a lexicon word, with short-fragment guards: two letters a side and six in all.
-    /// A compound whose halves are both words (`camera-` + `man`) keeps its hyphen and warns, as
-    /// before.
-    ///
-    /// Only the lexicon, not `vocabulary`, judges the halves. `vocabulary` here is every word any
-    /// page's lines split on, including a line that opens with the second half of a hyphenated
-    /// break (`addVocabulary` does not carry a broken word's halves the way the reference design's
-    /// `opensBrokenWord` does): `panies` from `com-panies` becomes an apparent vocabulary "word" by
-    /// that route, which would wrongly read the compound as two real words and keep the hyphen.
-    /// The lexicon has no such fragment, so it alone decides whether a half stands on its own.
-    static func lexiconVouches(prefix: String, suffix: String, vocabulary: Set<String>) -> Bool {
-        guard vocabulary.contains(englishLexiconKey), prefix.count >= 2, suffix.count >= 2, prefix.count + suffix.count >= 6,
-              TextLayerPlausibility.lexiconContains(prefix + suffix) == true else { return false }
-        return !(TextLayerPlausibility.lexiconContains(prefix) == true && TextLayerPlausibility.lexiconContains(suffix) == true)
-    }
-
-    static func join(_ left: String, _ right: String, vocabulary: Set<String>, page: Int,
-                     warnings: inout [ConversionWarning]) -> String {
-        switch joinOperation(left, right, vocabulary: vocabulary, page: page, warnings: &warnings) {
-        case .space: left + " " + right
-        case .concatenate: left + right
-        case .removeHyphen: String(left.dropLast()) + right
-        }
-    }
-
-    static func join(_ left: InlineText, _ right: InlineText, vocabulary: Set<String>, page: Int,
-                     sourceBoundary: Int? = nil, warnings: inout [ConversionWarning]) -> InlineText {
-        var result = left
-        switch joinOperation(left.text, right.text, vocabulary: vocabulary, page: page, warnings: &warnings) {
-        case .space: result.append(InlineText(" "))
-        case .concatenate: break
-        case .removeHyphen: result.removeLastCharacter()
-        }
-        if let sourceBoundary { result.elements.append(.sourcePage(sourceBoundary)) }
-        result.append(right)
-        return result
     }
 }

@@ -37,3 +37,11 @@ Review pages were compared against rendered source pages; `selected-page-xhtml.j
 - The word-coverage figure is not meaningful for this case: both the source extraction and the EPUB carry the same wrong letters.
 
 The corpus review JSON holds manual acceptance targets for the known failures. The regression contract checks only source-verified output and does not bless the defects above.
+
+Update (2026-09-19): the findings above are the retained failing baseline from before `TextEncodingCheck`
+was ported onto main (#38). Pages 2-20 now report `damagedTextEncoding`, keep a source-page image
+and are recognized by default (`recognizedPageCount` 19); the RSS ceiling is 512 MiB (measured peak
+about 270 MiB). Pages 1-3 were re-reviewed against Poppler rasters after the port; the contract now
+covers those three pages, including page 3's exact sentence "Two data files were used." and its 16
+numbered fields, read directly off the source raster. Pages 4-20 are not individually re-verified,
+only confirmed to share the same warning/recognition pattern.

@@ -50,7 +50,7 @@ conversion policies, routine corpus exclusions, or fidelity qualification.
 
 ## Current content coverage
 
-[corpus/regressions.json](../corpus/regressions.json) has 391 targeted checks on 93 reviewed pages
+[corpus/regressions.json](../corpus/regressions.json) has 404 targeted checks on 95 reviewed pages
 across 17 documents: FAA, algebra, 9/11, The Fed Explained, Dietary Guidelines, Our Flag, the CDC
 comic, Blue Book, the seven #30 cases (USGS copper tables, Loper Bright footnotes, the Census
 unmapped-encoding report, the USCIS Arabic guide, IRS Publication 596 in Simplified Chinese, and
@@ -293,6 +293,45 @@ instead; see [architecture.md](architecture.md) for why that is safe.
 motivated #176 upstream is now fetched, converted and reviewed against Poppler rasters of its 21
 slides, with slide 5's recognized question checked word-for-word against its source raster; see
 [corpus.md](corpus.md#earthdata-cloud-analytics-project) for what is and is not pinned there.
+
+## Damaged text encodings
+
+`DamagedEncodingTests.swift` covers [#38](https://github.com/vocaro/PDFReflowLib/issues/38): the
+Census report's LaTeX pages render correctly but extract with every letter shifted by three,
+because their Type 1C fonts use `Differences` names such as `G108` with no `ToUnicode` map. An
+original in-memory fixture reproduces the mechanism with a Type3 font whose glyph procedures draw
+the right letters through Helvetica while its encoding names each code `G<code + 3>`; PDFKit
+extracts `Wzr gdwd ilohv zhuh xvhg1` from it, and the same fixture with a correct `ToUnicode`
+CMap extracts `Two data files were used.` The tests require both signals: the font evidence
+accepts index-style names (`G108`, `g3`, `c63`, `glyph12`) forming at least half of a simple font's
+`Differences`, also inside nested Forms, and rejects standard names, `uniXXXX`, named base
+encodings, `ToUnicode` maps and composite fonts; the English statistics flag the checksum-pinned
+Census page 3 fixture and a Caesar-shifted paragraph but not the page 1 cover, ordinary prose,
+short pages, non-English declarations, or the Blue Book, 9/11 and FAA source fixtures already on
+main (the original branch's controls also included Wallace algebra answer-key and USGS
+numeric-table fixtures; those corpus documents are not fetched in this port). End to end, `.never`
+retains the unreadable text with `damagedTextEncoding` and a source-page image (or
+`referenceImageOmitted`), every automatic policy recognizes the page instead and reports
+`ocrUsed` with the readable text, the mapped control is never flagged, and in a two-page book
+only the damaged page is flagged and referenced. The bundled prose, scanned, columns, graphics,
+lists-code and rotated fixtures carry no evidence.
+
+Porting this onto main needed no pipeline adaptation beyond fitting it alongside the #93/#7/#176
+logic already there: the structural/text-statistics check itself (`TextEncodingCheck.swift`) is
+unchanged from the abandoned branch, since it has no dependency on anything else that evolved.
+`implausibleLayer` (#93) and `drawsTextCandidate` (#176) are each additionally gated on
+`!damagedEncoding`, so a page this check explains is never also judged by those; `reflowsNoWords`
+already excludes real letter content from #176's territory, so this gate is defence in depth
+rather than load-bearing, matching how the abandoned branch kept it too even after #93/#176 were
+layered on.
+
+The `census-rrs2002-01` corpus contract requires `damagedTextEncoding` on pages 2-20 (verified
+present on exactly those 19 pages, not the cover), the reviewed page-3 phrases through OCR
+(`Data Files`, `Two data files were used.`, all 16 numbered fields), page 2's title/byline/heading,
+and no `damagedTextEncoding` on the cover page through the new `absentWarningCodes` expectation,
+which `check_corpus_content.py`'s own unit tests exercise with a same-page negative control. See
+[corpus.md](corpus.md#issue-30-coverage-expansion) for what was reviewed on the real document and
+what remains unverified beyond the warning/recognition pattern.
 
 ## Running headers and page numbers
 

@@ -41,10 +41,10 @@ enum PDFReflowLibPipeline {
         /// it never truncates a page.
         func extractPage(_ i: Int, limit: Int, warnings: inout [ConversionWarning]) throws
             -> (content: PageContent, attemptsOCR: Bool, implausibleLayer: TextLayerPlausibility.Finding?,
-                comparesLayer: Bool, drawnText: Bool) {
+                comparesLayer: Bool, drawnText: Bool, damagedEncoding: Bool) {
             // The pool includes every PDFKit accessor, not only string extraction. Page
             // references and annotation arrays also carry autoreleased rendering resources.
-            var (content, placedImages) = try autoreleasepool {
+            var (content, placedImages, unmappedFont) = try autoreleasepool {
                 let page = try document.page(at: i)
                 guard let reference = page.pageRef else {
                     throw ConversionError.unreadablePDF
@@ -85,11 +85,17 @@ enum PDFReflowLibPipeline {
                             ? "Visible annotations and link/form interactions are not reconstructed; supplementary references are disabled."
                             : "A page image preserves visible annotations. Link and form interactions are not reconstructed."))
                 }
-                return (content, graphics.images)
+                // Structural font evidence is read here; the text judgment follows outside the pool.
+                return (content, graphics.images,
+                        !content.lines.isEmpty && !requiresPageImage && TextEncodingCheck.hasUnmappedFont(reference))
             }
             let bounds = content.bounds
             let raw = content.lines.map(\.text).joined()
             let damaged = raw.unicodeScalars.filter { $0.value == 0xFFFD || $0.value == 0xFFFC }.count
+            // Index-style glyph names without ToUnicode make PDFKit report indexes as characters.
+            // Flag only when the extracted words also fail the declared language's statistics (#38).
+            let damagedEncoding = unmappedFont
+                && TextEncodingCheck.isImplausible(content.lines.map(\.text).joined(separator: "\n"), language: options.language)
             // Share the same conservative page-sized-graphic signal with the review warning.
             // It identifies a candidate for re-recognition, not an erroneous transcription.
             let imageBackedText = !content.lines.isEmpty && content.graphics.contains {
@@ -98,8 +104,9 @@ enum PDFReflowLibPipeline {
             // Inherited text over the image that does not read as English, misreads its words in
             // place, or leaves most of the page's text-shaped ink uncovered, is not a plausible
             // transcription of it (#93). Judged under every policy, so the page is reported whether
-            // or not its text is replaced.
-            let implausibleLayer = imageBackedText && !content.requiresPageImage
+            // or not its text is replaced. Excluded when the layer itself is a damaged encoding
+            // (#38): that is a different diagnosis of the same page, not a second one.
+            let implausibleLayer = imageBackedText && !content.requiresPageImage && !damagedEncoding
                 ? try TextLayerPlausibility.judge(lines: content.lines, language: options.language) {
                     try autoreleasepool {
                         try TextLayerPlausibility.measureInk(page: try document.page(at: i), bounds: bounds,
@@ -117,11 +124,12 @@ enum PDFReflowLibPipeline {
             // untouched, and so does a page whose only rows are inside a photograph, which is a
             // picture of the world rather than writing the page set. Pages with no text at all are
             // already recognized below. `judgeImageOnly` gates on `reflowsNoWords`, which only a
-            // page with no letters at all passes, so it never fires on #93's territory (a layer
-            // with real judged words); candidacy here does not exclude `imageBackedText`, since a
-            // born-digital page with a full-bleed background paint reads as image-backed on this
-            // signal exactly like a scan does, with no distinction between them to gate on.
-            let drawsTextCandidate = !noText && !content.requiresPageImage && automaticOCR
+            // page with no letters at all passes, so it never fires on #93's or #38's territory (a
+            // layer with real judged words, or one damagedEncoding already explains); candidacy
+            // here does not exclude `imageBackedText`, since a born-digital page with a full-bleed
+            // background paint reads as image-backed on this signal exactly like a scan does, with
+            // no distinction between them to gate on.
+            let drawsTextCandidate = !noText && !damagedEncoding && !content.requiresPageImage && automaticOCR
             let drawnText = try drawsTextCandidate
                 && TextLayerPlausibility.judgeImageOnly(lines: content.lines, language: options.language) {
                     try autoreleasepool {
@@ -131,7 +139,7 @@ enum PDFReflowLibPipeline {
                     }
                 }
             let needsOCR = options.ocr == .always || (automaticOCR &&
-                (noText || damaged > max(2, raw.count / 50) || drawnText))
+                (noText || damaged > max(2, raw.count / 50) || drawnText || damagedEncoding))
                 || (options.ocr == .automaticIncludingImageBackedText && imageBackedText)
                 || (options.ocr == .automatic && implausibleLayer != nil)
             let attemptsOCR = needsOCR && !content.requiresPageImage
@@ -143,7 +151,21 @@ enum PDFReflowLibPipeline {
             if attemptsOCR, options.ocr == .automatic, case .misreadWords? = implausibleLayer {
                 comparesLayer = true
             }
-            if attemptsOCR, !comparesLayer { return (content, true, implausibleLayer, false, drawnText) }
+            if damagedEncoding {
+                warnings.append(.init(code: .damagedTextEncoding, page: i + 1,
+                    message: "Native text has no usable Unicode mapping (custom font encoding without ToUnicode) "
+                        + "and does not read as the declared language. "
+                        + (attemptsOCR ? "Recognition of the page image replaces it."
+                            : "The unreadable native text is retained; "
+                            + (options.referenceImages == .never
+                                ? "supplementary references are disabled, so read the source PDF instead."
+                                : "read the accompanying source-page image instead."))))
+            }
+            if attemptsOCR, !comparesLayer { return (content, true, implausibleLayer, false, drawnText, damagedEncoding) }
+            if damagedEncoding {
+                content.preservePageReference = true
+                for index in content.lines.indices { content.lines[index].structure = nil }
+            }
             if !content.requiresPageImage, imageBackedText {
                 // A scan with an existing OCR layer must still reflow. Keep its visual page as a
                 // reference rather than treating the full-page scan as one figure covering all text.
@@ -160,7 +182,7 @@ enum PDFReflowLibPipeline {
             if content.lines.isEmpty && !content.requiresPageImage {
                 content.requiresPageImage = true
             }
-            return (content, attemptsOCR, implausibleLayer, comparesLayer, drawnText)
+            return (content, attemptsOCR, implausibleLayer, comparesLayer, drawnText, damagedEncoding)
         }
 
         let store = PageStore(directory: workspace.appendingPathComponent("pages"))
@@ -269,7 +291,10 @@ enum PDFReflowLibPipeline {
                 chapterStartPages.insert(content.number)
             }
             // Retain heading evidence before removing furniture, after all extraction/OCR work.
-            LayoutReconstructor.addVocabulary(of: content, to: &vocabulary)
+            // Retained unreadable text supplies no hyphen-repair vocabulary (#38).
+            if !extracted.damagedEncoding || content.recognized {
+                LayoutReconstructor.addVocabulary(of: content, to: &vocabulary)
+            }
             if NumberedNoteDetector.hasHeading(on: content) { numberedNotePages.insert(content.number) }
             if options.removeRepeatedHeadersAndFooters { FurnitureDetector.collect(content, pageIndex: i, into: &furniture) }
             if content.recognized { recognizedPages += 1 }

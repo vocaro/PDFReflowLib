@@ -213,6 +213,17 @@ than half the page, that side is the background and the page is measured again i
 whose dark ink already forms rows is never inverted, so no reading that already worked changes.
 See [conversion options](conversion-options.md#pages-whose-writing-is-drawn).
 
+`TextEncodingCheck` covers the born-digital counterpart (#38): a simple font in the page
+resources (or a nested Form, to depth 4) with a `Differences` encoding of index-style glyph
+names and no `ToUnicode` map is structural evidence read from the Core Graphics page
+dictionary, and an embedded English function-word list plus a 300-pair common-bigram table
+judge the extracted words. Both must agree before extraction reports `damagedTextEncoding`,
+makes the page an OCR candidate under automatic and `.always` policies, recommends a
+source-page reference and withholds the page's words from the hyphen-repair vocabulary. No
+glyph programs are decoded and no network or model is involved. A page already explained by
+this check is excluded from the #93 implausible-layer and #176 drawn-text judgments, which
+diagnose different failures on an image-backed or textless page respectively.
+
 `GraphicsReader` tracks text rendering mode across saved graphics state and nested forms. When
 all observed text uses invisible mode 3 and a graphic covers most of the page, extraction skips
 attributed text and marks the page's typography as synthetic. Layout then uses ordinary prose

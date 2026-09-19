@@ -38,7 +38,7 @@ work offline. Tests and conversion never fetch sources automatically.
 | `arxiv-replay-clocks-2023` | 12 | Born-digital ACM two-column paper, pseudocode, figures, math | 256 MiB |
 | `usgs-mcs2025-copper` | 2 | Borderless tables, indentation-only row groups, spanning headers | 128 MiB |
 | `scotus-loper-bright-2024` | 114 | Page-bottom footnotes continuing across pages, dash separators | 128 MiB |
-| `census-rrs2002-01` | 20 | Born-digital text layer with no Unicode mapping (shifted letters) | 128 MiB |
+| `census-rrs2002-01` | 20 | Born-digital text layer with no Unicode mapping (shifted letters) | 512 MiB |
 | `uscis-m618-arabic-2015` | 116 | Right-to-left Arabic with embedded Latin and numbers | 256 MiB |
 | `irs-p596-zhs-2025` | 36 | Simplified Chinese mixed with Latin identifiers and amounts | 256 MiB |
 
@@ -426,7 +426,7 @@ python3 tools/run_corpus_regressions.py --converter .build/corpus-cli/out/Produc
 | --- | --- | --- | --- |
 | [`usgs-mcs2025-copper`](../measurements/usgs-mcs2025-copper/record.md) | Borderless tables | Tables preserved as readable crops, but adjacent prose is absorbed into them | [#36](https://github.com/vocaro/PDFReflowLib/issues/36) |
 | [`scotus-loper-bright-2024`](../measurements/scotus-loper-bright-2024/record.md) | Page-bottom footnotes | Text complete; footnotes merge into body paragraphs; 75 citation-leading lines become preformatted | [#40](https://github.com/vocaro/PDFReflowLib/issues/40), [#39](https://github.com/vocaro/PDFReflowLib/issues/39) |
-| [`census-rrs2002-01`](../measurements/census-rrs2002-01/record.md) | Damaged encoding | Shifted-letter body text ships as prose with no quality warning | [#38](https://github.com/vocaro/PDFReflowLib/issues/38) |
+| [`census-rrs2002-01`](../measurements/census-rrs2002-01/record.md) | Damaged encoding | Fixed (#38): `TextEncodingCheck` flags the shifted-letter body (pages 2-20) as `damagedTextEncoding` and recognizes it by default; minor OCR misreadings remain on individual words | [#38](https://github.com/vocaro/PDFReflowLib/issues/38) |
 | [`uscis-m618-arabic-2015`](../measurements/uscis-m618-arabic-2015/record.md) | Right-to-left script | Arabic words correct; mixed-direction runs fragment and reverse | [#41](https://github.com/vocaro/PDFReflowLib/issues/41) |
 | [`irs-p596-zhs-2025`](../measurements/irs-p596-zhs-2025/record.md) | CJK script | Order and amounts correct; spaces inserted inside CJK; some columns rasterized | [#42](https://github.com/vocaro/PDFReflowLib/issues/42), [#36](https://github.com/vocaro/PDFReflowLib/issues/36) |
 | [`nbs-jres-geltman-1977`](../measurements/nbs-jres-geltman-1977/record.md) | Scanned two-column paper | Inline images force page fallback on pages 1–6 | [#37](https://github.com/vocaro/PDFReflowLib/issues/37) |

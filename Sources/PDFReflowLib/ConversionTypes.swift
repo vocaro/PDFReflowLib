@@ -113,6 +113,11 @@ public struct ConversionWarning: Sendable, Codable, Equatable {
         /// discarded and the page is preserved as an image. Reported on every such page, under
         /// every policy.
         case implausibleRecognition
+        /// Born-digital text whose fonts have a custom encoding without a usable Unicode
+        /// mapping and whose extracted words do not read as the declared language. Automatic
+        /// OCR policies recognize the page image instead; `.never` keeps the unreadable text.
+        /// A source-page reference is recommended either way.
+        case damagedTextEncoding
     }
     public let code: Code
     public let page: Int

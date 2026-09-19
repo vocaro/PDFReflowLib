@@ -129,6 +129,15 @@ that fall back to images skip unused attributed-text decoding. Failures use
   words reach the reading order. Ink is read against the page's own background, so a slide
   printed white on dark is not mistaken for a blank one. Decorative art, charts and answer keys
   of bare surds are left with their crops.
+- Born-digital text whose fonts carry a custom `Differences` encoding of index-style glyph
+  names (`G108`, `c63`) with no `ToUnicode` map extracts as the wrong characters even though
+  the page renders correctly. When such a font is present and the page's extracted words also
+  fail English function-word and letter-pair statistics, the page reports `damagedTextEncoding`.
+  Automatic and `.always` OCR policies recognize the page image instead; `.never` keeps the
+  unreadable text with a source-page reference. The English statistics are embedded (no
+  dictionary download or model); pages declared in another language, pages with fewer than 20
+  words, composite (CID) fonts and wrong-but-present `ToUnicode` maps are not judged. Either
+  signal alone never flags a page.
 - Rotated pages, unsupported drawing operations and pages without recoverable text use an
   explicitly warned whole-page image fallback. Visible annotations get a source reference
   image by default; link/form interactions are not reconstructed.

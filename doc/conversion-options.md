@@ -122,6 +122,23 @@ one page-sized blob and no writing. When a measurement finds no text row and the
 threshold covers more than half the page, that side is the background and the page is measured
 again inverted; a page whose dark ink already forms rows is never inverted.
 
+### Damaged text encoding
+
+A born-digital page can also lose its text without any scan: fonts with a custom `Differences`
+encoding of index-style glyph names (`G108`, `c63`) and no `ToUnicode` map render correctly
+but extract as the wrong characters (the Census report's LaTeX pages come out shifted by three
+letters: "Two data files were used." extracts as "Wzr gdwd ohv zhuh xvhg1"). When the page has
+such a font and its extracted words fail the embedded English statistics (at least 20 words,
+under 5% function words, at least 30% uncommon letter pairs), the page reports
+`damagedTextEncoding`. `.automatic`, `.automaticIncludingImageBackedText`,
+`.automaticKeepingImageBackedText` and `.always` recognize the page image instead and report
+`ocrUsed` as usual; `.never` keeps the unreadable native text and recommends a source-page
+reference, which `referenceImages` controls like any other supplementary image. Only English
+(`en`, `en-*`) is judged; other declared languages, short pages, composite fonts and
+incorrect-but-present `ToUnicode` maps are outside this signal. A page this check explains is
+excluded from the implausible-layer (#93) and drawn-text (#176) checks above, which diagnose
+different problems.
+
 The developer client exposes these policies as `--ocr automatic|image-backed|keep-image-backed|always|never`.
 `--no-ocr` remains an alias for `--ocr never`; when repeated, the last OCR option takes effect.
 See [selective OCR measurements](../measurements/selective-ocr/record.md) for the pinned Warren

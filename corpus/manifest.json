@@ -961,18 +961,18 @@
         3
       ],
       "downloadVerification": "Fresh download through tools/fetch_corpus.py into an empty temporary cache matched this identity on 2026-09-16; see measurements/corpus-candidates-30/verification.json.",
-      "reviewStatus": "Converted with EPUBCheck, progress and 128 MiB Mac RSS gate. Contract protects only the clean Word cover; the unmapped LaTeX body text ships unflagged (#38).",
+      "reviewStatus": "Converted with EPUBCheck and progress passing; peak converter RSS 283,148,288 bytes (about 270 MiB) against a 512 MiB ceiling, since 19 pages now run Vision recognition. Pages 1, 2 and 3 reviewed against Poppler rasters of the source pages. The Word cover (page 1) extracts cleanly and reports no damagedTextEncoding; pages 2-20's LaTeX body text (Type 1C fonts with custom encodings and no ToUnicode) each report damagedTextEncoding and are recognized (#38). Page 3's recognized 'Two data files were used.' and its 16 numbered fields, and page 2's title/byline/Introduction heading, match their source rasters closely.",
       "knownFidelityIssues": [
         {
           "page": 3,
-          "issue": "Text layer without ToUnicode extracts as shifted letters (Two data files were used. becomes Wzr gdwd ohv zhuh xvhg1) and ships as prose with no quality warning; pages 2-20 are affected.",
+          "issue": "Recognition of the LaTeX body is imperfect (a dropped bracket, 'Ilag' for 'flag', 'Buresu' for 'Bureau' elsewhere on the page); only source-verified phrases are pinned, not the whole page.",
           "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/38"
         }
       ],
-      "baselineStatus": "Baseline and reviewed contract recorded in measurements/census-rrs2002-01/record.md; included in the corpus gate.",
+      "baselineStatus": "Baseline and reviewed contract recorded in measurements/census-rrs2002-01/record.md; re-converted and re-reviewed on main's ported TextEncodingCheck pipeline 2026-09-19. Included in the corpus gate.",
       "memoryBudget": {
-        "maxPeakRSSMiB": 128,
-        "scope": "macOS 27 arm64 isolated release CLI, defaults; initial RSS regression ceiling, not a mobile device budget"
+        "maxPeakRSSMiB": 512,
+        "scope": "macOS 27 arm64 isolated release CLI, defaults; initial RSS regression ceiling measured at about 270 MiB peak (19 of 20 pages recognized), not a mobile device budget"
       }
     },
     {

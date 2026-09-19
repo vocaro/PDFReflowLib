@@ -964,7 +964,7 @@
     {
       "id": "census-rrs2002-01",
       "sourceSHA256": "0f97380ae4308581bd70013b7317faafd7c217654236bd31d1448f26eae56905",
-      "basis": "Source page 1 (Word cover) visually reviewed as the clean in-document control for a report whose LaTeX body text layer has no usable Unicode mapping. Does not bless pages 2-20: their shifted-letter text currently ships as prose without a quality warning (#38).",
+      "basis": "Source pages 1, 2 and 3 converted and each read against its Poppler raster (tools/compare_pdf.py). The Word cover (page 1) extracts cleanly and reports no damagedTextEncoding. Pages 2-20 (LaTeX body, Type 1C fonts with custom encodings and no ToUnicode) each report damagedTextEncoding and are recognized (#38); recognition is reviewed on pages 2 and 3 against their source rasters and matches closely, including page 3's heading 'Data Files', its exact sentence 'Two data files were used.' and all 16 of its numbered income/flag fields in order, and page 2's title, byline and 'Introduction' heading. Minor OCR misreadings elsewhere on those pages (a dropped bracket, 'Ilag' for 'flag', 'Buresu' for 'Bureau') are not pinned. Pages 4-20 are not individually re-verified here beyond the warning/recognition pattern confirmed uniform across all of them (recognizedPageCount 19, damagedTextEncoding on exactly pages 2-20).",
       "pages": [
         {
           "page": 1,
@@ -975,7 +975,30 @@
             "William E. Yancey, William E. Winkler, Robert H. Creecy",
             "Report Issued: January 31, 2002",
             "This paper reports the results of research and analysis undertaken by Census Bureau staff."
-          ]
+          ],
+          "absentWarningCodes": ["damagedTextEncoding"]
+        },
+        {
+          "page": 2,
+          "orderedText": [
+            "Disclosure risk assessment in perturbative",
+            "microdata protection",
+            "William E. Yancey, William E. Winkler, and Robert H. Creecy",
+            "Introduction"
+          ],
+          "warningCodesAnyOf": ["damagedTextEncoding"],
+          "minimumImages": 1
+        },
+        {
+          "page": 3,
+          "text": [
+            "Data Files",
+            "Two data files were used.",
+            "1. Total income",
+            "16. Schedule F flag"
+          ],
+          "warningCodesAnyOf": ["damagedTextEncoding"],
+          "minimumImages": 1
         }
       ]
     },

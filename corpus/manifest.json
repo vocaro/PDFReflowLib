@@ -1266,7 +1266,7 @@
       ],
       "attribution": "Agricultural Research, Vol. 60, No. 10, November/December 2012, U.S. Department of Agriculture, Agricultural Research Service. Photos by Peggy Greb, Stephen Ausmus, Seth Britch, Brad Fritz, Regis Lefebure, Neil Sanscrainte and Dong Wang, USDA Agricultural Research Service. Source: https://agresearchmag.ars.usda.gov/2012/nov/?t=tableofcontent. The PDF is unmodified.",
       "downloadVerification": "Fresh download through tools/fetch_corpus.py matched this identity on 2026-09-19, as did an independent curl HEAD request (HTTP 200, application/pdf, Content-Length 9,329,928).",
-      "reviewStatus": "Converted with EPUBCheck and progress passing; peak converter RSS 291,766,272 bytes (about 278 MiB) against a 512 MiB ceiling. Pages 1, 6, 9, 19 and 24 reviewed against source rasters or the converted text itself. Contract protects page 1's cover title (unaffected by the new document-body heading floor) and its previously-misread cross-reference line 'pages 2, 4-14' (now a paragraph), page 24's mailing panel (five lines, previously headings, now paragraphs), pages 6 and 19's lexicon-decided hyphens ('com-panies' to 'companies', 'infec-tions' to 'infections'), and page 9's 'Fighting Filth Flies' sidebar title (now a heading; its own paragraph, opening past an intervening photograph and caption, is confirmed still present as a paragraph, #218). 3 of the 5 upstream #186 fixes are now ported (heading threshold, hyphen lexicon, subhead-past-a-picture); the dingbat bullet misread as a superscript 'l' (page 24) and the 'BRAD FRITz' letter-case misread (page 15) are not, and are confirmed still present/unfixed (tracked separately as #217's scope: both need FontWeightReader's content-stream font/glyph scanning, absent from main). Most page text remains held in preserved-region crops or interleaves across columns (pre-existing, unrelated to this port); those pages are not reviewed here.",
+      "reviewStatus": "Converted with EPUBCheck and progress passing; peak converter RSS 301,760,512 bytes (about 288 MiB) against a 512 MiB ceiling. Pages 1, 6, 9, 15, 19 and 24 reviewed against source rasters or the converted text itself. Contract protects page 1's cover title (unaffected by the document-body heading floor) and its previously-misread cross-reference line 'pages 2, 4-14' (now a paragraph), page 24's mailing panel (five lines, previously headings, now paragraphs, its 'Visit us at ars.usda.gov/ar' line now also reading the correct dingbat bullet), page 15's photo credit ('BRAD FRITZ', correct case), page 9's 'Fighting Filth Flies' sidebar title (now a heading; its own paragraph, opening past an intervening photograph and caption, is confirmed still present as a paragraph, #218), and pages 6 and 19's lexicon-decided hyphens ('com-panies' to 'companies', 'infec-tions' to 'infections'). All 5 of the upstream #186 fixes are now ported (heading threshold, hyphen lexicon, subhead-past-a-picture, dingbat-table glyph reading and letter-case glyph disagreement, the last two via #217's GlyphIdentityReader). Most page text remains held in preserved-region crops or interleaves across columns (pre-existing, unrelated to this port); those pages are not reviewed here.",
       "knownFidelityIssues": [
         {
           "page": 2,
@@ -1277,19 +1277,9 @@
           "page": 6,
           "issue": "Side-by-side column prose interleaves across columns and merges into one paragraph per line on several pages, which also stops a hyphen at a column break (page 15's compli-ance) from ever reaching the lexicon-decided join.",
           "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/153"
-        },
-        {
-          "page": 24,
-          "issue": "The dingbat bullet between the two back-cover web addresses still misreads as a superscript lowercase l; not ported (requires FontWeightReader's content-stream font scanning, absent from main; #217's scope).",
-          "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/217"
-        },
-        {
-          "page": 15,
-          "issue": "The photo credit 'BRAD FRITz' still misreads its final letter's case; not ported (same FontWeightReader dependency; #217's scope).",
-          "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/217"
         }
       ],
-      "baselineStatus": "Converted and reviewed on main's ported heading-threshold/hyphen-lexicon/subhead-past-figure pipeline 2026-09-19; corpus/usda-ars-agresearch-2012-11 case in corpus/regressions.json extended to page 9's #218 fix. Included in the corpus gate. No image references in the contract; page 24 is never rendered to a committed file, matching the rights clearance.",
+      "baselineStatus": "Converted and reviewed on main's ported heading-threshold/hyphen-lexicon/subhead-past-figure/dingbat-table/letter-case pipeline 2026-09-19; corpus/usda-ars-agresearch-2012-11 case in corpus/regressions.json extended to page 9's #218 fix and now also covers #217's two glyph-identity fixes (page 15's photo-credit case, page 24's back-cover dingbat bullet). Included in the corpus gate. No image references in the contract; page 24 is never rendered to a committed file, matching the rights clearance.",
       "memoryBudget": {
         "maxPeakRSSMiB": 512,
         "scope": "macOS 27 arm64 isolated release CLI, defaults; initial RSS regression ceiling measured at about 279 MiB peak, not a mobile device budget"

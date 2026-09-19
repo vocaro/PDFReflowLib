@@ -188,8 +188,15 @@ enum PDFReflowLibPipeline {
         let store = PageStore(directory: workspace.appendingPathComponent("pages"))
 
         var vocabulary: Set<String> = []
+        // An English document's word breaks may consult the system lexicon where its own words
+        // are silent (#186).
+        if TextEncodingCheck.supports(language: options.language) {
+            vocabulary.insert(LayoutReconstructor.englishLexiconKey)
+        }
         var furniture = FurnitureDetector.Ledger()
         var numberedNotePages: Set<Int> = []
+        // Characters per type size over the native pages: the document's body (#186).
+        var bodyWeights: [Int: Int] = [:]
         var recognizedPages = 0
         var characters = 0
         for i in 0..<total {
@@ -295,6 +302,9 @@ enum PDFReflowLibPipeline {
             if !extracted.damagedEncoding || content.recognized {
                 LayoutReconstructor.addVocabulary(of: content, to: &vocabulary)
             }
+            if !content.recognized, !content.hasSyntheticTextStyle, !content.requiresPageImage {
+                LayoutReconstructor.addBodyWeights(of: content.lines, to: &bodyWeights)
+            }
             if NumberedNoteDetector.hasHeading(on: content) { numberedNotePages.insert(content.number) }
             if options.removeRepeatedHeadersAndFooters { FurnitureDetector.collect(content, pageIndex: i, into: &furniture) }
             if content.recognized { recognizedPages += 1 }
@@ -304,6 +314,9 @@ enum PDFReflowLibPipeline {
         }
         document.releaseCachedPages()
         structure = nil
+        // The size most of the document's native text is set in, for a page too bare to state
+        // its own (#186).
+        let documentBody = LayoutReconstructor.bodySize(weights: bodyWeights)
         let furniturePlan = options.removeRepeatedHeadersAndFooters ? FurnitureDetector.resolve(furniture) : nil
         furniture = FurnitureDetector.Ledger()
         // Furniture warnings keep their place between extraction and reconstruction warnings.
@@ -352,7 +365,8 @@ enum PDFReflowLibPipeline {
                     }
                     pageBlocks = LayoutReconstructor.blocks(page: content, images: images,
                         vocabulary: vocabulary, warnings: &warnings,
-                        numberedNotePage: numberedNotePages.contains(content.number), language: options.language)
+                        numberedNotePage: numberedNotePages.contains(content.number), language: options.language,
+                        documentBody: documentBody)
                     if pageBlocks.contains(where: \.hasReflowedText) {
                         reflowed += 1
                     }

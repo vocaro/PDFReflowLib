@@ -41,6 +41,7 @@ work offline. Tests and conversion never fetch sources automatically.
 | `census-rrs2002-01` | 20 | Born-digital text layer with no Unicode mapping (shifted letters) | 512 MiB |
 | `uscis-m618-arabic-2015` | 116 | Right-to-left Arabic with embedded Latin and numbers | 256 MiB |
 | `irs-p596-zhs-2025` | 36 | Simplified Chinese mixed with Latin identifiers and amounts | 256 MiB |
+| `usda-ars-agresearch-2012-11` | 24 | Magazine layout, dingbat/case glyph misreads, thin-page headings, lexicon-decided hyphens | 512 MiB |
 
 These are regression limits for release CLI processes on macOS arm64, not physical-device
 budgets or guarantees about Apple service memory. Each evaluation verifies exact input identity
@@ -480,3 +481,51 @@ verified; none of that is pinned. [Tracking: #164](https://github.com/vocaro/PDF
 
 `ImageOnlyPageTests.swift` covers the #176 mechanism itself end to end with synthetic slides; see
 [regression testing](regression-testing.md#pages-whose-writing-is-drawn).
+
+## Agricultural Research magazine
+
+*Agricultural Research*, Vol. 60 No. 10, November/December 2012, USDA Agricultural Research
+Service. Local bytes are pinned at 9,329,928, SHA-256
+`2673d1fded74ad89c8b5c59dc325c7884601e1aca5b5755b15a105c1f5b0d761`. As a work of the U.S.
+government it is public domain (17 U.S.C. 105); rights are cleared for the full 24-page issue,
+with one standing exception: page 24 carries agency logos and a mailing panel, and no crop or
+raster of that page is ever committed. This corpus case, and the review contract below, add no
+`imageRegions` or `minimumImages` check anywhere, matching that constraint, not only on page 24.
+
+```sh
+python3 tools/fetch_corpus.py --case usda-ars-agresearch-2012-11
+swift build -c release --scratch-path .build/corpus-cli
+python3 tools/evaluate-real-document.py --case usda-ars-agresearch-2012-11 \
+  --pdf corpus/cache/November-December2012.pdf --converter .build/corpus-cli/release/pdf-reflow \
+  --output /tmp/agresearch-baseline --epubcheck /opt/homebrew/bin/epubcheck
+python3 tools/compare_pdf.py --pdf corpus/cache/November-December2012.pdf \
+  --converter .build/corpus-cli/release/pdf-reflow --output /tmp/agresearch-review --serve
+```
+
+[#186](https://github.com/vocaro/PDFReflowLib/issues/186) bundles five magazine-layout fixes;
+this document is the motivating case. Only two are ported to main: a heading-size threshold on
+thin-text pages (a document-wide body floor, plus excluding an isolated lowercase-opening
+heading-size line) and system-lexicon-decided line-end hyphens. See
+[regression testing](regression-testing.md#thin-page-headings-and-lexicon-decided-hyphens) for
+what those fixes do and the vocabulary-fragment-pollution adaptation the port required.
+
+Pages 1, 6, 19 and 24 were converted and read against the actual output — pages 1 and 24 against
+source rasters (`tools/compare_pdf.py`), pages 6 and 19 by reading the converted text itself,
+which is unambiguous. Page 1's cover title ("Keeping Our" / "Troops Safe" / "From Insects") is
+confirmed unaffected by the new document-body floor, and its lowercase cross-reference line
+"pages 2, 4-14" is confirmed now a paragraph instead of a fourth heading. Page 24's mailing panel
+(return address, "Official Business", the web line) is confirmed now paragraphs. Pages 6 and 19
+each confirm an ordinary English compound the magazine never prints whole (`com-panies`,
+`infec-tions`) joined without its hyphen; a third instance on page 15 (`compli-ance`) is not fixed
+and not pinned, because its two halves land in separate paragraph blocks from unrelated
+column-interleaving behavior (#153) before the hyphen logic ever sees them as adjacent lines.
+
+The other three upstream #186 fixes are confirmed still present (not fixed) on this document, and
+are recorded as known fidelity issues rather than pinned: the back cover's dingbat bullet between
+the two web addresses still misreads as a superscript lowercase `l` (needs `FontWeightReader`'s
+content-stream font/glyph scanning, absent from main), page 15's photo credit "BRAD FRITz" still
+misreads its final letter's case (same dependency), and a sidebar subhead's paragraph opening past
+its photograph is not specifically handled (needs the sub-heading label system, also absent from
+main). Most page text on this document sits in preserved-region crops (#158) or interleaves
+across columns (#153), both pre-existing and outside this port's scope; those pages are not
+reviewed here. Peak converter RSS measured about 279 MiB against a 512 MiB ceiling.

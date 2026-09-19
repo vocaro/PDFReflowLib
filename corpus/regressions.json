@@ -976,7 +976,9 @@
             "Report Issued: January 31, 2002",
             "This paper reports the results of research and analysis undertaken by Census Bureau staff."
           ],
-          "absentWarningCodes": ["damagedTextEncoding"]
+          "absentWarningCodes": [
+            "damagedTextEncoding"
+          ]
         },
         {
           "page": 2,
@@ -986,7 +988,9 @@
             "William E. Yancey, William E. Winkler, and Robert H. Creecy",
             "Introduction"
           ],
-          "warningCodesAnyOf": ["damagedTextEncoding"],
+          "warningCodesAnyOf": [
+            "damagedTextEncoding"
+          ],
           "minimumImages": 1
         },
         {
@@ -997,7 +1001,9 @@
             "1. Total income",
             "16. Schedule F flag"
           ],
-          "warningCodesAnyOf": ["damagedTextEncoding"],
+          "warningCodesAnyOf": [
+            "damagedTextEncoding"
+          ],
           "minimumImages": 1
         }
       ]
@@ -1239,6 +1245,51 @@
             "implausibleTextLayer"
           ],
           "minimumImages": 1
+        }
+      ]
+    },
+    {
+      "id": "usda-ars-agresearch-2012-11",
+      "sourceSHA256": "2673d1fded74ad89c8b5c59dc325c7884601e1aca5b5755b15a105c1f5b0d761",
+      "basis": "Pages 1, 6, 19 and 24 converted and read against the actual output (source rasters for pages 1 and 24 via tools/compare_pdf.py; pages 6 and 19 are prose already reviewed by reading the converted text itself, which is unambiguous). This corpus case, and the port it gates, cover only two of #186's five upstream fixes: the heading-size threshold on thin-text pages (documentBody floor and the lowercase-standalone-heading exclusion) and lexicon-decided line-end hyphens. The other three (dingbat font reading, letter-case glyph disagreement and a subhead's text starting past a picture) are not ported: they depend on FontWeightReader.swift's content-stream font/glyph scanning and LayoutReconstructor's sectionLabels sub-heading system, neither of which exists on main at all (main has no per-run font-resource identification and only one heading tier). Page 1's cover title ('Keeping Our'/'Troops Safe'/'From Insects', three headings) is confirmed unaffected by the new document-body floor; the lowercase cross-reference line 'pages 2, 4-14' beneath it, previously a fourth heading, is confirmed now a paragraph. Page 24's mailing panel (five short lines, previously headings on a page with almost no running text) is confirmed now paragraphs; its 'Visit us at ars.usda.gov/ar' line is also confirmed a paragraph, though the dingbat bullet immediately after it still misreads as a lowercase 'l' (not fixed, not pinned; see basis above). Pages 6 and 19 each print an ordinary English compound broken across a line end that the book itself never prints whole ('com-panies', 'infec-tions'); both are confirmed joined without a hyphen. A third instance on page 15 ('compli-ance') is not fixed and not pinned: its two halves land in separate paragraph blocks (unrelated column-interleaving behavior, not a hyphen-join question at all) before the hyphen logic ever sees them. Porting the hyphen fix required one adaptation beyond the upstream design: main's simpler addVocabulary (unlike the reference design's opensBrokenWord-aware version) counts a line-initial hyphen-broken fragment (bare 'panies') as if it were an independent vocabulary word, which would otherwise block the lexicon vouch by making both halves look like real standalone words; the ported lexiconVouches consults only the system lexicon for that half-word check, never the book's own vocabulary, avoiding the false positive while still protecting a genuine compound like camera-man (both halves are common lexicon words either way). Not pinned: anything on pages 2-5, 7-18, 20-23 (most page text is held in preserved-region crops per #158, and column interleaving per #153, both pre-existing and outside this port's scope), and page 24's images (owner rights clearance requires no committed raster or crop from that page; this contract adds no imageRegions or minimumImages check anywhere, matching that constraint).",
+      "pages": [
+        {
+          "page": 1,
+          "headings": [
+            "Keeping Our",
+            "Troops Safe",
+            "From Insects"
+          ],
+          "paragraphs": [
+            "pages 2, 4-14"
+          ]
+        },
+        {
+          "page": 6,
+          "text": [
+            "commercial companies interested"
+          ],
+          "absentText": [
+            "com-panies"
+          ]
+        },
+        {
+          "page": 19,
+          "text": [
+            "treat a range of infections in humans"
+          ],
+          "absentText": [
+            "infec-tions"
+          ]
+        },
+        {
+          "page": 24,
+          "paragraphs": [
+            "U.S. Department of Agriculture",
+            "5601 Sunnyside Ave.",
+            "Official Business",
+            "Visit us at ars.usda.gov/ar"
+          ]
         }
       ]
     }

@@ -1205,6 +1205,95 @@
         "maxPeakRSSMiB": 1024,
         "scope": "macOS 27 arm64 isolated release CLI, defaults; initial RSS regression ceiling measured at about 724 MiB peak (five scanned pages, two recognized), not a mobile device budget"
       }
+    },
+    {
+      "role": "development",
+      "identity": {
+        "suppliedBy": "publisher-download"
+      },
+      "id": "usda-ars-agresearch-2012-11",
+      "title": "Agricultural Research, Vol. 60, No. 10 (November/December 2012)",
+      "author": "Agricultural Research Service, U.S. Department of Agriculture",
+      "publicationYear": 2012,
+      "url": "https://agresearchmag.ars.usda.gov/2012/nov/?t=tableofcontent",
+      "publisherPageURL": "https://agresearchmag.ars.usda.gov/2012/nov/?t=tableofcontent",
+      "downloadURL": "https://agresearchmag.ars.usda.gov/AR/archive/2012/Nov/November-December2012.pdf",
+      "filename": "November-December2012.pdf",
+      "bytes": 9329928,
+      "sha256": "2673d1fded74ad89c8b5c59dc325c7884601e1aca5b5755b15a105c1f5b0d761",
+      "pages": 24,
+      "provenance": "USDA Agricultural Research Service magazine issue (ISSN 0002-161X), linked from the issue's table of contents in the agresearchmag.ars.usda.gov archive. Unversioned legacy URL, so bytes are pinned. Adobe InDesign CS5 (7.0.4) with Adobe PDF Library 9.9; PDF 1.4, optimized, untagged; no forms or JavaScript; stale Title metadata (AR Magazine, January 2011). 26 fonts, all with ToUnicode, 12 not embedded (Arial, Arial Narrow, Times New Roman, Helvetica-Bold, Times-Roman); 150 image XObjects including many small grayscale shadow tiles; 55 link annotations.",
+      "rightsBasis": "Published by the Agricultural Research Service, U.S. Department of Agriculture: a work of the United States Government under 17 U.S.C. 105. The page-3 masthead states: Most information in this magazine is public property and may be reprinted without permission (except where copyright is noted); no copyright, courtesy or permission notice appears anywhere in the issue. The masthead staff are the ARS Information Staff, every article byline is ARS (Ann Perry, Dennis O'Brien, Marcia Wood, Sandra Avant), and the page-2 Forum is by Daniel Strickman, ARS National Program Leader. All 24 printed photo numbers (D2619-4 through D2700-2 and K5657-3; photographers Peggy Greb, Stephen Ausmus, Seth Britch, Brad Fritz, Regis Lefebure, Neil Sanscrainte and Dong Wang) were resolved on 2026-09-17 in the ARS Image Gallery (https://www.ars.usda.gov/oc/images/photos/nov12/<id>/), with photographers matching the printed credits. The gallery rights page (https://www.ars.usda.gov/oc/images/copyright/, checked 2026-09-17) says its photos are copyright-free, public domain unless otherwise indicated, may not be used to infer or imply ARS endorsement of any product, company, or position, and asks for credit to the Agricultural Research Service. The masthead also states no endorsement by USDA is implied. Uncredited elements are the flag treatments on pages 1, 2 and 14 (the cover photo is D2700-2), small holly ornaments on the index pages 22-23, and the USDA, ARS and 150 Years marks and mailing panel on page 24. Owner approved on 2026-09-17. Not relicensed under MIT.",
+      "rightsClearance": {
+        "status": "owner-confirmed",
+        "scope": "Owner approved on 2026-09-17 for the development corpus with committed text derivatives (contract snippets). No crops or rasters are committed: page 24 (agency logos and mailing panel only) must never be committed as a raster or crop, and the contract needs no image references elsewhere. Reuse must not imply USDA or ARS endorsement. Attribution: Agricultural Research magazine, USDA Agricultural Research Service; photos by the credited photographers, USDA Agricultural Research Service."
+      },
+      "coverage": [
+        "Adobe InDesign CS5 magazine layout, untagged",
+        "two- and three-column justified articles with photos wrapped into the columns",
+        "boxed sidebars, colored pull quotes and a full-page background image",
+        "display titles, drop caps, rotated photo credits and captions over photos",
+        "masthead box with contents and See story on page N cross-references",
+        "dense three-column hanging-indent index across two pages",
+        "non-embedded Arial and Times fonts, dingbat separators and end-of-story marks",
+        "back-cover mailing panel and URI link annotations on credits and e-mail addresses"
+      ],
+      "reviewPages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      "attribution": "Agricultural Research, Vol. 60, No. 10, November/December 2012, U.S. Department of Agriculture, Agricultural Research Service. Photos by Peggy Greb, Stephen Ausmus, Seth Britch, Brad Fritz, Regis Lefebure, Neil Sanscrainte and Dong Wang, USDA Agricultural Research Service. Source: https://agresearchmag.ars.usda.gov/2012/nov/?t=tableofcontent. The PDF is unmodified.",
+      "downloadVerification": "Fresh download through tools/fetch_corpus.py matched this identity on 2026-09-19, as did an independent curl HEAD request (HTTP 200, application/pdf, Content-Length 9,329,928).",
+      "reviewStatus": "Converted with EPUBCheck and progress passing; peak converter RSS 292,618,240 bytes (about 279 MiB) against a 512 MiB ceiling. Pages 1, 6, 19 and 24 reviewed against source rasters or the converted text itself. Contract protects page 1's cover title (unaffected by the new document-body heading floor) and its previously-misread cross-reference line 'pages 2, 4-14' (now a paragraph), page 24's mailing panel (five lines, previously headings, now paragraphs), and pages 6 and 19's lexicon-decided hyphens ('com-panies' to 'companies', 'infec-tions' to 'infections'). Only 2 of the 5 upstream #186 fixes are ported (heading threshold, hyphen lexicon); the dingbat bullet misread as a superscript 'l' (page 24), the 'BRAD FRITz' letter-case misread (page 15) and the subhead-past-a-picture paragraph join are not, and are confirmed still present/unfixed. Most page text remains held in preserved-region crops or interleaves across columns (pre-existing, unrelated to this port); those pages are not reviewed here.",
+      "knownFidelityIssues": [
+        {
+          "page": 2,
+          "issue": "Body text, sidebars, pull quotes and the two-page index are held inside preserved-region crops on most pages; pages 20-21 fall back to whole-page images.",
+          "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/158"
+        },
+        {
+          "page": 6,
+          "issue": "Side-by-side column prose interleaves across columns and merges into one paragraph per line on several pages, which also stops a hyphen at a column break (page 15's compli-ance) from ever reaching the lexicon-decided join.",
+          "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/153"
+        },
+        {
+          "page": 24,
+          "issue": "The dingbat bullet between the two back-cover web addresses still misreads as a superscript lowercase l; not ported (requires FontWeightReader's content-stream font scanning, absent from main).",
+          "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/186"
+        },
+        {
+          "page": 15,
+          "issue": "The photo credit 'BRAD FRITz' still misreads its final letter's case; not ported (same FontWeightReader dependency).",
+          "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/186"
+        }
+      ],
+      "baselineStatus": "Converted and reviewed on main's ported heading-threshold/hyphen-lexicon pipeline 2026-09-19; corpus/usda-ars-agresearch-2012-11 case added to corpus/regressions.json, scoped to the two ported fixes only. Included in the corpus gate. No image references in the contract; page 24 is never rendered to a committed file, matching the rights clearance.",
+      "memoryBudget": {
+        "maxPeakRSSMiB": 512,
+        "scope": "macOS 27 arm64 isolated release CLI, defaults; initial RSS regression ceiling measured at about 279 MiB peak, not a mobile device budget"
+      }
     }
   ]
 }

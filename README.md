@@ -101,12 +101,17 @@ that fall back to images skip unused attributed-text decoding. Failures use
   report `structureFallback`; figures, lists, captions and OCR retain spatial reconstruction.
   This is bounded tag support, not full tagged-PDF or accessibility reconstruction.
 - Soft hyphens are removed at wraps. A hard hyphen is removed only when the unbroken word occurs
-  elsewhere in the book and there is no evidence of the corresponding compound. Ambiguous
+  elsewhere in the book and there is no evidence of the corresponding compound. When the book's
+  own vocabulary is silent, an English document's system word list can still decide the join,
+  again only when neither half also stands as its own word. Ambiguous
   joins retain the hyphen and produce a warning.
 - Short recurring headers and footers can be removed when at least three pages support the
   decision. Monospaced code retains line breaks and indentation; list markers retain their
   source breaks. Visible typography supplies flat heading navigation. Exclusively invisible
-  text over scan images does not supply reliable code or heading typography.
+  text over scan images does not supply reliable code or heading typography. A heading-size line
+  must also clear the document's own body size on a page too sparse to state one of its own, and
+  a lone heading-size line opening in lowercase heads nothing unless it stacks with another
+  display-size line.
 - Core Graphics scans placed images, nested forms and painted paths. The original page renderer
   supplies crops containing figures, ruled tables, labels and recognizable displayed formulas,
   including bounded detached fractions.

@@ -128,7 +128,16 @@ when at least three remaining lines and 200 characters support the dominant refl
 Candidates within 10% of that supported body size are suppressed, while the original 25%
 page-size threshold still applies. This retains existing modestly larger section headings. Short titles
 beside images retain the existing page evidence. The separate page-size estimate still governs
-whitespace cuts and paragraph geometry. This spatial fallback does not guarantee heading precision in arbitrary mixed layouts. `FurnitureDetector` removes short outermost margin rows supported by
+whitespace cuts and paragraph geometry. This spatial fallback does not guarantee heading precision in arbitrary mixed layouts.
+
+On a page too sparse to establish a body size of its own — a magazine's back cover, a cover with a
+short cross-reference line — a heading-size candidate must also clear 110% of the *document's*
+body size, tracked across every native page during extraction (`documentBody`, #186). A heading
+must also open with a capital, a digit or a mark; a lone heading-size line that opens lowercase and
+does not stack (adjacent, same size, sharing an edge) with another display-size line is display
+text that heads nothing, not a title — this catches a lowercase cross-reference line set at title
+size beneath an actual cover title, while a two-line title whose second line happens to open
+lowercase still reads as one heading because it stacks with the first. `FurnitureDetector` removes short outermost margin rows supported by
 at least three neighboring or alternating physical pages, stable vertical position and typography.
 The top candidate band is 10% of page height; the footer band remains 7% to retain existing
 whitespace-cut behavior around illustrated rows. Textual headers require separation from inward
@@ -150,6 +159,23 @@ long rules, prose, code and connected table grids to existing handling. Whole-li
 supplies the crop margin once; fraction detection does not repeatedly enlarge already complete
 regions. Arbitrary mathematical structures remain outside this bounded detector. Attachment placeholders become word boundaries at native extraction,
 with empty selections discarded before layout, vocabulary, OCR selection and coverage counting.
+
+A line-end hyphen joins without a warning when the book's own vocabulary holds the joined word and
+not the hyphenated compound; otherwise, in a document declared English, the system's English
+lexicon may decide it instead (#186): the join goes ahead, still silently, only when the lexicon
+holds the joined word and neither half is independently a lexicon word on its own (two letters a
+side, six overall, minimum), so a genuine compound like `camera-man` keeps its hyphen and still
+warns. Only the lexicon judges a half's standing, never the page-local `vocabulary` set: extraction's
+vocabulary has no notion of a line that opens with the second half of a hyphen-broken word, so a
+line beginning "panies interested in..." adds the bare fragment "panies" to the vocabulary as if it
+were whole, which would otherwise make `com-panies` look like two real words and block the join.
+
+Three further upstream #186 fixes are not ported and remain open: reading fonts named Zapf
+Dingbats/Dingbats/Monotype Sorts through their own encoding table (needs a font/glyph
+content-stream scanner main does not have, only PDFKit's higher-level text selection), trusting a
+non-symbolic Type 1 font's embedded glyph list over PDFKit's cmap when they disagree only in
+letter case (same dependency), and a subhead's paragraph legitimately opening past a photo and its
+caption (needs a sub-heading label system layered on top of the heading logic above, also absent).
 
 Existing text over a graphic covering more than 75% of the page gets `unverifiedTextLayer` and
 an accompanying source-page image under the default reference policy. This conservative review signal does not establish that

@@ -50,13 +50,14 @@ conversion policies, routine corpus exclusions, or fidelity qualification.
 
 ## Current content coverage
 
-[corpus/regressions.json](../corpus/regressions.json) has 404 targeted checks on 95 reviewed pages
-across 17 documents: FAA, algebra, 9/11, The Fed Explained, Dietary Guidelines, Our Flag, the CDC
+[corpus/regressions.json](../corpus/regressions.json) has 416 targeted checks on 99 reviewed pages
+across 18 documents: FAA, algebra, 9/11, The Fed Explained, Dietary Guidelines, Our Flag, the CDC
 comic, Blue Book, the seven #30 cases (USGS copper tables, Loper Bright footnotes, the Census
 unmapped-encoding report, the USCIS Arabic guide, IRS Publication 596 in Simplified Chinese, and
 the NBS and Replay Clocks academic papers), a five-page suspect-text-layer excerpt of the Warren
-report, and the Earthdata Cloud Analytics Project slide deck. All source-page anchors must also
-remain complete and ordered, and semantic text must contain no image attachment placeholders.
+report, the Earthdata Cloud Analytics Project slide deck, and the USDA ARS Agricultural Research
+magazine. All source-page anchors must also remain complete and ordered, and semantic text must
+contain no image attachment placeholders.
 
 The checks preserve selected correct words, paragraph semantics and cross-page continuity, paragraph/list order, license attribution, image
 presence and explicit transcription/fallback warnings. They read the actual EPUB spine, track
@@ -332,6 +333,59 @@ and no `damagedTextEncoding` on the cover page through the new `absentWarningCod
 which `check_corpus_content.py`'s own unit tests exercise with a same-page negative control. See
 [corpus.md](corpus.md#issue-30-coverage-expansion) for what was reviewed on the real document and
 what remains unverified beyond the warning/recognition pattern.
+
+## Thin-page headings and lexicon-decided hyphens
+
+`ThinPageHeadingsAndLexiconHyphensTests.swift` covers two of five leftover magazine fixes bundled
+in [#186](https://github.com/vocaro/PDFReflowLib/issues/186): a heading-size threshold on
+thin-text pages, and system-lexicon-decided line-end hyphens. Synthetic fixtures exercise
+`LayoutReconstructor.documentHeadingFloor`, `stacksUnderHeading`, `lexiconVouches` and the public
+`join`/`blocks` entry points directly: a sparse back-cover-shaped page whose own naive body
+estimate is set by a couple of short lines of small print reads its mailing-panel lines as
+headings when judged only against its own page, but not once a document-wide body size (passed
+through the pipeline's new `documentBody` parameter) raises the floor past them; a page that
+establishes its own body is unaffected by the document floor either way; an isolated heading-size
+line that opens lowercase and stands apart from any other display line heads nothing, while the
+second line of an actual two-line title (stacked directly beneath the first at the same size)
+keeps its heading reading even though it opens lowercase; and the lexicon tests cover a real join
+decided by the system word list, the undecided control without a declared language, a genuine
+compound (`camera-man`) and a too-short half kept hyphenated, and the vocabulary-fragment-pollution
+case described below.
+
+Three of the five upstream fixes are **not** ported: dingbat font reading (an encoding table
+read for fonts named Zapf Dingbats/Dingbats/Monotype Sorts) and the letter-case glyph-versus-cmap
+disagreement both depend on `FontWeightReader.swift`'s content-stream font/glyph scanning, which
+does not exist on main at all — main's `NativeTextReader.swift` only reads text through PDFKit's
+higher-level selection API, never per-run font resources; a subhead's paragraph legitimately
+opening past a photo and its caption depends on `LayoutReconstructor`'s sub-heading label system
+(`sectionLabels`/`LabelStyle`), also absent from main. Reconstructing either dependency chain from
+scratch was judged out of scope for this port; both remain open under #186 and are confirmed still
+present (unfixed) on the gated `usda-ars-agresearch-2012-11` document below.
+
+Porting the hyphen fix surfaced a genuine bug beyond a literal port of the upstream design.
+Upstream's `lexiconVouches` treats a half as an independent real word if either the document's own
+`vocabulary` or the system lexicon says so; ported unchanged, that let `com-panies` stay hyphenated
+on the real magazine, because main's simpler, page-local `addVocabulary` (unlike the abandoned
+branch's `opensBrokenWord`-aware version) has no notion of a line that opens with the second half
+of a hyphen-broken word — reading "panies interested in..." on its own line adds the bare fragment
+"panies" to the document's vocabulary as if it were a whole word, which then wrongly reads
+"com-panies" as two genuine words and keeps the hyphen. The ported `lexiconVouches` consults only
+`TextLayerPlausibility.lexiconContains` for a half's standing, never `vocabulary`, closing that
+false positive while still protecting a genuine compound like `camera-man` (both halves are common
+lexicon words regardless of vocabulary). `vocabulary` still gates the whole-joined-word check and
+the `englishLexiconKey` marker itself.
+
+`usda-ars-agresearch-2012-11` gates both ported fixes on four physical pages of the real magazine,
+each read against the actual conversion: page 1's cover title survives the new document-body floor
+and its lowercase cross-reference line "pages 2, 4-14" becomes a paragraph instead of a fourth
+heading; page 24's mailing panel (return address, "Official Business", the web line) becomes
+paragraphs instead of headings; and pages 6 and 19 each confirm an ordinary English compound the
+magazine never prints whole (`com-panies`, `infec-tions`) joined without its hyphen. A third
+instance, page 15's `compli-ance`, is deliberately not pinned: its two halves land in separate
+paragraph blocks from unrelated column-interleaving behavior (#153) before the hyphen-join logic
+ever sees them as adjacent lines. See [corpus.md](corpus.md#agricultural-research-magazine) for
+the rest of what was and was not reviewed, and the page-24 rights constraint against any committed
+raster or crop from that page.
 
 ## Running headers and page numbers
 

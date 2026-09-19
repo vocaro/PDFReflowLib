@@ -244,9 +244,12 @@ text is OCR, detect every corrupted layer, or assess individual table cells. Fre
 its separate `ocrUsed` notice; image-only fallbacks keep `pageImageFallback`.
 
 `TextLayerPlausibility` then judges such a layer before any recognition (#93), in English books
-only. Its word test sorts whitespace words against the system English lexicon
-(`NLEmbedding.wordEmbedding(for: .english)`, a vocabulary lookup serialized behind a mutex; no
-network or download) into English, damaged (unknown lower-case words, irregular capitals, stray
+only. Every English-language judgment reads `EnglishText`: which declared languages are judged at
+all (`isDeclared`), the system lexicon (`NLEmbedding.wordEmbedding(for: .english)`, a vocabulary
+lookup serialized behind a mutex; no network or download), the word classification over it, and
+the line rule `readsAsWords`; `TextEncodingCheck`'s stopword and bigram statistics are the one
+rule that does not consult the lexicon, because glyph indexes are not words. The word test sorts
+whitespace words into English, damaged (unknown lower-case words, irregular capitals, stray
 lower-case letters, letters of another script) and neutral (unknown capitalized names and
 abbreviations, words broken by symbols) words, and fails fewer than half English among at least
 20 judged words unless a fifth of the tokens hold digits. The same word counts fail a layer that
@@ -367,9 +370,12 @@ paths from counters and streams those files directly into ZIP entries; it does n
 whole image collection into another staging tree. Asset identifiers are opaque and cannot
 choose archive paths. Model validation rejects missing/duplicate assets and empty documents.
 
-`EPUBTextEncoder` owns XML escaping, style tags, page markers and figure markup. `EPUBWriter`
-owns spine splitting, heading/page navigation, OPF metadata, CSS, resource naming and
-ZIPFoundation packaging. It accepts a `ReflowDocument` and an output-size ceiling, with no PDF
+`EPUBTextEncoder` owns XML escaping, block and inline tags, page markers and figure markup;
+it is the only place that knows XHTML. `SpinePacker` owns spine splitting and the navigation
+entries as structured values, tested without files or ZIP. `EPUBWriter` owns OPF metadata, CSS,
+resource naming and ZIPFoundation packaging, and writes each spine document as the packer closes
+it. `ProgressBudget` holds every stage's share of the progress fraction, which the pipeline, the
+writer and `PDFConverter` used to keep as separate constants. It accepts a `ReflowDocument` and an output-size ceiling, with no PDF
 or OCR dependency. EPUB progress is combined with pipeline progress by `PDFConverter`; only
 publication emits completion. Each stage checks cancellation at its available boundaries.
 The writer serializes each block once and writes completed spine documents as it goes. It keeps
@@ -401,8 +407,8 @@ the chapter. Existing heading/page navigation resolves to the resulting files. B
 not manufacture headings or new link semantics. Vocabulary and furniture evidence remain
 document-wide; whether positioned pages stay resident is the retention strategy described above.
 Progress reports serialization work by input blocks, then metadata completion and archive entries.
-The reconstruction endpoint is clamped to its allocated fraction so floating-point rounding cannot
-make the first writing update step backward.
+The reconstruction endpoint is clamped to its allocated fraction (`ProgressBudget.overall`) so
+floating-point rounding cannot make the first writing update step backward.
 
 The entry-byte budget remains independent of an optional final ZIP-file cap. `PDFConverter`
 checks final archive size before publication and uses the same cleanup path on failure.

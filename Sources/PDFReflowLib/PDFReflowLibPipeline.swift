@@ -64,7 +64,7 @@ enum PDFReflowLibPipeline {
             }
             var outcome: RecognitionOutcome?
             if plan.recognizes {
-                await progress(.init(stage: .recognizing, fractionCompleted: 0.6875 * Double(i) / Double(total),
+                await progress(.init(stage: .recognizing, fractionCompleted: ProgressBudget.pipeline(extractedPages: i, of: total),
                     page: i + 1, totalPages: total))
                 do {
                     outcome = .read(try await recognize(try document.page(at: i), options))
@@ -81,7 +81,7 @@ enum PDFReflowLibPipeline {
             try evidence.collect(content, pageIndex: i, suppliesVocabulary: !pageEvidence.damagedEncoding || content.recognized,
                                  options: options)
             try store.store(content, at: i)
-            await progress(.init(stage: .extracting, fractionCompleted: 0.6875 * Double(i + 1) / Double(total),
+            await progress(.init(stage: .extracting, fractionCompleted: ProgressBudget.pipeline(extractedPages: i + 1, of: total),
                 page: i + 1, totalPages: total))
         }
         document.releaseCachedPages()
@@ -137,7 +137,7 @@ enum PDFReflowLibPipeline {
                     to: &blocks, hyphens: resolved.context.hyphens, warnings: &warnings)
             }
             previous = content
-            await progress(.init(stage: .reconstructing, fractionCompleted: 0.6875 + 0.3125 * Double(i + 1) / Double(total),
+            await progress(.init(stage: .reconstructing, fractionCompleted: ProgressBudget.pipeline(reconstructedPages: i + 1, of: total),
                 page: i + 1, totalPages: total))
         }
         document.releaseCachedPages()

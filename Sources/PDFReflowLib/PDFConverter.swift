@@ -30,14 +30,14 @@ public actor PDFConverter {
         try fm.createDirectory(at: staging, withIntermediateDirectories: true)
         defer { try? fm.removeItem(at: staging) }
         let result = try await PDFReflowLibPipeline.reconstruct(from: source, options: options, workspace: staging) { event in
-            await progress(.init(stage: event.stage, fractionCompleted: min(0.82, 0.02 + 0.80 * event.fractionCompleted),
+            await progress(.init(stage: event.stage, fractionCompleted: ProgressBudget.overall(pipeline: event.fractionCompleted),
                 page: event.page, totalPages: event.totalPages))
         }
         let total = result.pageCount
         let archive = try await EPUBWriter.write(result.document, maximumOutputBytes: options.maximumOutputBytes,
             directory: staging, packageIdentifier: options.packageIdentifier,
             modificationDate: options.modificationDate) { fraction in
-                await progress(.init(stage: .writing, fractionCompleted: 0.82 + 0.17 * fraction, page: nil, totalPages: total))
+                await progress(.init(stage: .writing, fractionCompleted: ProgressBudget.overall(writing: fraction), page: nil, totalPages: total))
             }
         try Task.checkCancellation()
         if let limit = options.maximumEPUBBytes {
@@ -56,15 +56,28 @@ public actor PDFConverter {
         guard source.isFileURL, destination.isFileURL else {
             throw ConversionError.invalidOptions("input and output must be local file URLs")
         }
-        guard options.language.range(of: "^[A-Za-z]{2,8}(-[A-Za-z0-9]{1,8})*$", options: .regularExpression) != nil,
-              options.rasterDPI.isFinite, (72...600).contains(options.rasterDPI),
-              (1...100_000).contains(options.maximumPages),
-              (1...100_000_000).contains(options.maximumCharacters),
-              (1...48_000_000).contains(options.maximumRasterPixels),
-              options.maximumInputBytes > 0, options.maximumOutputBytes > 0,
-              options.maximumEPUBBytes.map({ $0 > 0 }) ?? true,
-              options.fullPageImageEncoding.isValid, options.regionImageEncoding.isValid else {
-            throw ConversionError.invalidOptions("language, resource bounds or image encoding are invalid")
+        // Each bound is reported by name, so a client learns which option to fix.
+        guard options.language.range(of: "^[A-Za-z]{2,8}(-[A-Za-z0-9]{1,8})*$", options: .regularExpression) != nil else {
+            throw ConversionError.invalidOptions("language must be a BCP 47 tag such as en or en-US")
+        }
+        guard options.rasterDPI.isFinite, (72...600).contains(options.rasterDPI) else {
+            throw ConversionError.invalidOptions("rasterDPI must be between 72 and 600")
+        }
+        guard (1...100_000).contains(options.maximumPages) else {
+            throw ConversionError.invalidOptions("maximumPages must be between 1 and 100,000")
+        }
+        guard (1...100_000_000).contains(options.maximumCharacters) else {
+            throw ConversionError.invalidOptions("maximumCharacters must be between 1 and 100,000,000")
+        }
+        guard (1...48_000_000).contains(options.maximumRasterPixels) else {
+            throw ConversionError.invalidOptions("maximumRasterPixels must be between 1 and 48,000,000")
+        }
+        guard options.maximumInputBytes > 0, options.maximumOutputBytes > 0,
+              options.maximumEPUBBytes.map({ $0 > 0 }) ?? true else {
+            throw ConversionError.invalidOptions("byte limits must be positive")
+        }
+        guard options.fullPageImageEncoding.isValid, options.regionImageEncoding.isValid else {
+            throw ConversionError.invalidOptions("JPEG quality must be between 0 and 1")
         }
         if let identifier = options.packageIdentifier {
             guard !identifier.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty,

@@ -1,6 +1,9 @@
 import Foundation
 import ZIPFoundation
 
+/// Serializes a `ReflowDocument` as an EPUB 3 archive: spine documents packed by `SpinePacker`,
+/// navigation, stylesheet, package metadata, container and the OCF ZIP layout. It has no PDF or
+/// OCR dependency, and `EPUBTextEncoder` is the only place that knows XHTML markup.
 enum EPUBWriter {
     // A serialized body target, not a limit on an indivisible paragraph, heading or figure.
     private static let bodyTargetBytes = 60_000
@@ -26,7 +29,6 @@ enum EPUBWriter {
             <head><title>\(xml(name))</title><link rel="stylesheet" type="text/css" href="style.css"/></head><body>\(body)</body></html>
             """
         }
-        var toc: [String] = [], pages: [String] = []
         var consumed: Int64 = 0
         func writeText(_ string: String, _ url: URL) throws {
             try Task.checkCancellation()
@@ -34,113 +36,40 @@ enum EPUBWriter {
             guard consumed <= maximumOutputBytes else { throw ConversionError.resourceLimit("EPUB text size") }
             try string.write(to: url, atomically: true, encoding: .utf8)
         }
-        var chapters: [String] = []
-        var body = ""
-        var bodyBytes = 0
-        var pendingPage: (number: Int, markup: String)?
-        // Headings at the end of the body, with any standalone page markers between them, and the
-        // navigation entries they added. A size split carries them into the next document so a
-        // heading never ends one spine document while its content begins the next.
-        var trailingHeadings: (bodyBytes: Int, toc: Int, pages: Int)?
-        // Only a short heading run is kept with its content; a long run of headings packs normally.
-        func keepsTrailingHeadings() -> Bool {
-            guard let trailing = trailingHeadings else { return false }
-            return bodyBytes - trailing.bodyBytes <= bodyTargetBytes / 10
-        }
-        func nextChapterName() -> String { "chapter-\(chapters.count + 1).xhtml" }
-        func finishChapter(carryingTrailingHeadings: Bool = false) throws {
-            guard !body.isEmpty else { return }
-            let name = nextChapterName()
-            var carried = ""
-            var carriedEntries: (toc: [String], pages: [String]) = ([], [])
-            if carryingTrailingHeadings, keepsTrailingHeadings(), let trailing = trailingHeadings, trailing.bodyBytes > 0 {
-                let utf8 = Array(body.utf8)
-                carried = String(decoding: utf8[trailing.bodyBytes...], as: UTF8.self)
-                body = String(decoding: utf8[..<trailing.bodyBytes], as: UTF8.self)
-                carriedEntries = (Array(toc[trailing.toc...]), Array(pages[trailing.pages...]))
-                toc.removeSubrange(trailing.toc...)
-                pages.removeSubrange(trailing.pages...)
+        // Each block is serialized once and completed spine documents are written as they close;
+        // only the current body and the navigation entries stay in memory.
+        var packer = SpinePacker(bodyTargetBytes: bodyTargetBytes, chapterStartPages: book.chapterStartPages)
+        func write(_ documents: [SpinePacker.Document]) throws {
+            for spineDocument in documents {
+                try writeText(document(spineDocument.body, name: title), publication.appendingPathComponent(spineDocument.name))
             }
-            try writeText(document(body, name: title), publication.appendingPathComponent(name))
-            chapters.append(name)
-            body = carried; bodyBytes = carried.utf8.count
-            trailingHeadings = carried.isEmpty ? nil : (0, toc.count, pages.count)
-            let next = nextChapterName()
-            toc += carriedEntries.toc.map { $0.replacingOccurrences(of: "href=\"\(name)#", with: "href=\"\(next)#") }
-            pages += carriedEntries.pages.map { $0.replacingOccurrences(of: "href=\"\(name)#", with: "href=\"\(next)#") }
-        }
-        func append(_ markup: String, sourcePages: [Int], heading: (id: String, text: String)? = nil,
-                    standaloneMarker: Bool = false) throws {
-            try Task.checkCancellation()
-            let size = markup.utf8.count
-            guard Int64(size) <= maximumOutputBytes - consumed else {
-                throw ConversionError.resourceLimit("EPUB text size")
-            }
-            // A body holding only headings stays open for the content they introduce.
-            if bodyBytes > 0, bodyBytes + size > bodyTargetBytes,
-               !(keepsTrailingHeadings() && trailingHeadings?.bodyBytes == 0) {
-                try finishChapter(carryingTrailingHeadings: true)
-            }
-            if heading != nil, trailingHeadings == nil {
-                trailingHeadings = (bodyBytes, toc.count, pages.count)
-            } else if heading == nil, !standaloneMarker {
-                trailingHeadings = nil
-            }
-            let name = nextChapterName()
-            for number in sourcePages {
-                pages.append("<li><a href=\"\(name)#page-\(number)\">\(number)</a></li>")
-            }
-            if let heading {
-                toc.append("<li><a href=\"\(name)#\(xml(heading.id))\">\(xml(heading.text))</a></li>")
-            }
-            body += markup; bodyBytes += size
-            // Never split an atomic block merely to satisfy the target. Oversized blocks
-            // are isolated, retain their styles and anchors, and still obey the total budget.
-            // A heading waits for its following content before the document is closed.
-            if bodyBytes >= bodyTargetBytes, !keepsTrailingHeadings() { try finishChapter() }
         }
         await progress(0)
         for (i, block) in book.blocks.enumerated() {
             try Task.checkCancellation()
-            let completedChapters = chapters.count
+            let completedChapters = packer.documentNames.count
+            let finished: [SpinePacker.Document]
             if case let .sourcePage(number) = block.content {
-                // Consecutive boundaries describe empty source pages. Only the last boundary
-                // needs to travel with the following content; earlier ones can be packed normally.
-                if let pendingPage {
-                    try append(pendingPage.markup, sourcePages: [pendingPage.number], standaloneMarker: true)
-                }
-                if book.chapterStartPages.contains(number) { trailingHeadings = nil; try finishChapter() }
-                pendingPage = (number, EPUBTextEncoder.sourcePage(number))
+                finished = try packer.add(sourcePage: number, markup: EPUBTextEncoder.sourcePage(number),
+                                          budgetRemaining: maximumOutputBytes - consumed)
             } else {
-                let payload = try EPUBTextEncoder.payload(block, imagePaths: imagePathByID)
-                let markup: String
-                var heading: (id: String, text: String)?
-                switch block.content {
-                case .paragraph: markup = "<p>\(payload)</p>\n"
-                case let .heading(id, _, level):
-                    markup = "<h\(level) id=\"\(xml(id))\">\(payload)</h\(level)>\n"
-                    heading = (id, block.text)
-                case .preformatted: markup = "<pre>\(payload)</pre>\n"
-                case .image: markup = payload + "\n"
-                case .sourcePage: preconditionFailure("Source boundaries are handled above")
-                }
-                try append((pendingPage?.markup ?? "") + markup,
-                           sourcePages: pendingPage.map { [$0.number] + block.sourcePages } ?? block.sourcePages,
-                           heading: heading)
-                pendingPage = nil
+                finished = try packer.add(EPUBTextEncoder.piece(for: block, imagePaths: imagePathByID),
+                                          budgetRemaining: maximumOutputBytes - consumed)
             }
+            try write(finished)
             // Report input-block work without requiring a second serialization pass to count
             // chapters. Bound callback frequency for documents with many tiny blocks.
-            if chapters.count != completedChapters || (i + 1).isMultiple(of: 128) || i + 1 == book.blocks.count {
-                await progress(0.45 * Double(i + 1) / Double(book.blocks.count))
+            if packer.documentNames.count != completedChapters || (i + 1).isMultiple(of: 128) || i + 1 == book.blocks.count {
+                await progress(ProgressBudget.writer(serializedBlocks: i + 1, of: book.blocks.count))
             }
         }
-        if let pendingPage { try append(pendingPage.markup, sourcePages: [pendingPage.number], standaloneMarker: true) }
-        try finishChapter()
+        try write(try packer.finish(budgetRemaining: maximumOutputBytes - consumed))
+        let chapters = packer.documentNames
+        var toc = packer.toc.map(\.markup)
         if toc.isEmpty { toc = ["<li><a href=\"\(chapters[0])\">\(xml(title))</a></li>"] }
         let nav = """
         <nav epub:type="toc" id="toc"><h1>Contents</h1><ol>\(toc.joined())</ol></nav>
-        <nav epub:type="page-list" hidden="hidden"><h2>Source pages</h2><ol>\(pages.joined())</ol></nav>
+        <nav epub:type="page-list" hidden="hidden"><h2>Source pages</h2><ol>\(packer.pages.map(\.markup).joined())</ol></nav>
         """
         try writeText(document(nav, name: "Contents"), publication.appendingPathComponent("nav.xhtml"))
         try writeText("""
@@ -175,7 +104,7 @@ enum EPUBWriter {
             + chapters.map { "EPUB/" + $0 }
         let entries = paths.map { (path: $0, url: directory.appendingPathComponent($0)) }
             + zip(imagePaths, book.assets).map { (path: "EPUB/" + $0.0, url: $0.1.fileURL) }
-        await progress(0.5)
+        await progress(ProgressBudget.packagingStart)
         try Task.checkCancellation()
         let archiveURL = directory.appendingPathComponent("publication.epub")
         let archive = try Archive(url: archiveURL, accessMode: .create)
@@ -199,7 +128,7 @@ enum EPUBWriter {
                     return try handle.read(upToCount: count) ?? Data()
                 }
             }
-            await progress(0.5 + 0.5 * Double(i + 1) / Double(entries.count))
+            await progress(ProgressBudget.writer(archivedEntries: i + 1, of: entries.count))
         }
         return archiveURL
     }

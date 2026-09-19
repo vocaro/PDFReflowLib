@@ -36,6 +36,25 @@ enum EPUBTextEncoder {
         }.joined()
     }
 
+    /// A block's XHTML markup, the source pages it carries for the page list, and its heading
+    /// entry when it is a heading. Source-page boundaries are separate markers (`sourcePage`).
+    static func piece(for block: ReflowBlock, imagePaths: [String: String]) throws -> SpinePacker.Piece {
+        let payload = try payload(block, imagePaths: imagePaths)
+        switch block.content {
+        case .paragraph:
+            return SpinePacker.Piece(markup: "<p>\(payload)</p>\n", sourcePages: block.sourcePages, heading: nil)
+        case let .heading(id, _, level):
+            return SpinePacker.Piece(markup: "<h\(level) id=\"\(xml(id))\">\(payload)</h\(level)>\n",
+                                     sourcePages: block.sourcePages, heading: (id, block.text))
+        case .preformatted:
+            return SpinePacker.Piece(markup: "<pre>\(payload)</pre>\n", sourcePages: block.sourcePages, heading: nil)
+        case .image:
+            return SpinePacker.Piece(markup: payload + "\n", sourcePages: block.sourcePages, heading: nil)
+        case .sourcePage:
+            preconditionFailure("Source boundaries are separate markers")
+        }
+    }
+
     static func payload(_ block: ReflowBlock, imagePaths: [String: String]) throws -> String {
         switch block.content {
         case let .paragraph(text), let .heading(_, text, _): return inline(text)

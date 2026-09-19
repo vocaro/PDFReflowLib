@@ -65,13 +65,13 @@
               "tag": "sub",
               "text": "S0",
               "before": "Lower limit of white arc (V",
-              "after": ")—the stalling speed"
+              "after": ")\u2014the stalling speed"
             },
             {
               "tag": "sub",
               "text": "FE",
               "before": "Upper limit of the white arc (V",
-              "after": ")—the maximum"
+              "after": ")\u2014the maximum"
             }
           ],
           "minimumImages": 1
@@ -83,13 +83,13 @@
               "tag": "sub",
               "text": "YSE",
               "before": "Single-engine best rate-of-climb (V",
-              "after": ")—the best"
+              "after": ")\u2014the best"
             },
             {
               "tag": "sub",
               "text": "MC",
               "before": "Minimum control speed (V",
-              "after": ")—the minimum flight"
+              "after": ")\u2014the minimum flight"
             }
           ],
           "minimumImages": 1
@@ -140,10 +140,10 @@
             "An ammeter is used to monitor"
           ],
           "paragraphs": [
-            "• Electric fuel pump",
-            "• Stall warning system",
-            "• Pitot heat",
-            "• Starting motor",
+            "\u2022 Electric fuel pump",
+            "\u2022 Stall warning system",
+            "\u2022 Pitot heat",
+            "\u2022 Starting motor",
             "The ammeter shows if the alternator/ generator is producing an adequate supply of electrical power."
           ],
           "minimumImages": 1
@@ -153,7 +153,7 @@
           "continuedParagraphs": [
             {
               "end": "To find an AME near",
-              "next": "go to the FAA’s AME locator"
+              "next": "go to the FAA\u2019s AME locator"
             }
           ]
         },
@@ -222,19 +222,19 @@
         {
           "page": 26,
           "text": [
-            "80) (7a2 +7a)− (6a2 + 4a)"
+            "80) (7a2 +7a)\u2212 (6a2 + 4a)"
           ],
           "scripts": [
             {
               "tag": "sup",
               "text": "2",
               "before": "80) (7a",
-              "after": "+7a)− (6a"
+              "after": "+7a)\u2212 (6a"
             },
             {
               "tag": "sup",
               "text": "2",
-              "before": "+7a)− (6a",
+              "before": "+7a)\u2212 (6a",
               "after": "+ 4a)"
             }
           ]
@@ -346,7 +346,7 @@
             "Sayf al Adl",
             "Egyptian; high-ranking member",
             "Mahmud Ahmed",
-            "Director General of Pakistan’s Inter-Services"
+            "Director General of Pakistan\u2019s Inter-Services"
           ]
         },
         {
@@ -361,8 +361,8 @@
           ],
           "paragraphs": [
             "38. Ibid.; Michael Woodward interview (Jan. 25, 2004).",
-            "39. NTSB report,“Flight Path Study—American Airlines Flight 11,” Feb. 19, 2002.",
-            "40.The 56 passengers represented a load factor of 33.33 percent of the airplane’s seating capacity of 168, below the 49.22 percent"
+            "39. NTSB report,\u201cFlight Path Study\u2014American Airlines Flight 11,\u201d Feb. 19, 2002.",
+            "40.The 56 passengers represented a load factor of 33.33 percent of the airplane\u2019s seating capacity of 168, below the 49.22 percent"
           ]
         },
         {
@@ -380,44 +380,72 @@
           "page": 532,
           "paragraphs": [
             "5. Notably, as discussed in chapter 5",
-            "9. For the FBI source’s claims",
+            "9. For the FBI source\u2019s claims",
             "in chapter 5.This speculation was based on reporting that Khallad was in the United States"
           ]
         },
         {
           "page": 581,
-          "absentText": ["NOTES TO CHAPTER 12"],
+          "absentText": [
+            "NOTES TO CHAPTER 12"
+          ],
           "minimumImages": 2
         },
         {
           "page": 486,
-          "absentText": ["NOTES TO CHAPTER 2"],
-          "text": ["Intelligence report", "Wali Khan’s relationship with Bin Ladin"]
+          "absentText": [
+            "NOTES TO CHAPTER 2"
+          ],
+          "text": [
+            "Intelligence report",
+            "Wali Khan\u2019s relationship with Bin Ladin"
+          ]
         },
         {
           "page": 488,
-          "absentText": ["NOTES TO CHAPTER 2"],
-          "text": ["KSM, Bin Ladin moved to Kandahar", "Intelligence report"]
+          "absentText": [
+            "NOTES TO CHAPTER 2"
+          ],
+          "text": [
+            "KSM, Bin Ladin moved to Kandahar",
+            "Intelligence report"
+          ]
         },
         {
           "page": 574,
-          "absentText": ["NOTES TO CHAPTER 10"],
-          "text": ["chaired by former senators Gary Hart and Warren Rudman", "Ashcroft told us"]
+          "absentText": [
+            "NOTES TO CHAPTER 10"
+          ],
+          "text": [
+            "chaired by former senators Gary Hart and Warren Rudman",
+            "Ashcroft told us"
+          ]
         },
         {
           "page": 576,
-          "absentText": ["NOTES TO CHAPTER 10"],
-          "text": ["Jack S. interview", "The FBI checked"]
+          "absentText": [
+            "NOTES TO CHAPTER 10"
+          ],
+          "text": [
+            "Jack S. interview",
+            "The FBI checked"
+          ]
         },
         {
           "page": 582,
-          "absentText": ["NOTES TO CHAPTER 12"],
+          "absentText": [
+            "NOTES TO CHAPTER 12"
+          ],
           "minimumImages": 2
         },
         {
           "page": 583,
-          "absentText": ["NOTES TO CHAPTER 12"],
-          "headings": ["How to Do It? A Different Way of Organizing the Government"],
+          "absentText": [
+            "NOTES TO CHAPTER 12"
+          ],
+          "headings": [
+            "How to Do It? A Different Way of Organizing the Government"
+          ],
           "minimumImages": 2
         },
         {
@@ -438,16 +466,24 @@
       "pages": [
         {
           "page": 50,
-          "absentText": ["46 Promoting Financial System Stability"],
-          "headings": ["Promoting Financial System", "Stability"],
-          "text": ["What Is Financial Stability?", "Monitoring Risk across the Financial System"],
+          "absentText": [
+            "46 Promoting Financial System Stability"
+          ],
+          "headings": [
+            "Promoting Financial System",
+            "Stability"
+          ],
+          "text": [
+            "What Is Financial Stability?",
+            "Monitoring Risk across the Financial System"
+          ],
           "minimumImages": 1
         },
         {
           "page": 9,
           "orderedText": [
             "The Federal Reserve System is the central bank of the United States.",
-            "conducts the nation’s monetary policy",
+            "conducts the nation\u2019s monetary policy",
             "promotes the stability of the financial system",
             "promotes the safety and soundness",
             "fosters payment and settlement system safety",
@@ -570,7 +606,9 @@
             "Ve getables"
           ],
           "minimumImages": 1,
-          "warningCodesAnyOf": ["unverifiedTextLayer"]
+          "warningCodesAnyOf": [
+            "unverifiedTextLayer"
+          ]
         },
         {
           "page": 2,
@@ -724,13 +762,13 @@
               "tag": "sup",
               "text": "1",
               "before": "These figures are 2",
-              "after": "⁄2 inches in blue."
+              "after": "\u20442 inches in blue."
             },
             {
               "tag": "sup",
               "text": "1",
               "before": "These figures are 2",
-              "after": "⁄2 inches high in gold."
+              "after": "\u20442 inches high in gold."
             }
           ]
         },
@@ -854,9 +892,9 @@
             "The COMEX copper price reached a record high in May 2024 and was projected to average $4.20 per pound in full year 2024"
           ],
           "orderedText": [
-            "Estimated. — Zero.",
+            "Estimated. \u2014 Zero.",
             "Copper converted to refined metal, alloys, and other forms",
-            "Less than ½ unit.",
+            "Less than \u00bd unit.",
             "See Appendix C for resource and reserve definitions",
             "For Australia, Joint Ore Reserves Committee-compliant"
           ],
@@ -881,8 +919,8 @@
           "page": 60,
           "orderedText": [
             "Brand X Internet Services, 545",
-            "U. S. 967, 982–983 (2005). And those officials may even dis",
-            "The hard fact is Chevron “did not even bother to cite” the APA",
+            "U. S. 967, 982\u2013983 (2005). And those officials may even dis",
+            "The hard fact is Chevron \u201cdid not even bother to cite\u201d the APA",
             "that controls.",
             "See also A. Scalia, Judicial Deference to Administrative Interpretations of Law"
           ],
@@ -890,7 +928,7 @@
             {
               "tag": "sup",
               "text": "2",
-              "before": "make[s] for good government.” Ibid.",
+              "before": "make[s] for good government.\u201d Ibid.",
               "after": "But in our democracy unelected judges"
             }
           ]
@@ -898,25 +936,25 @@
         {
           "page": 97,
           "orderedText": [
-            "That text, contra the majority, “does not resolve the Chevron question.”",
-            "we respect it”).",
-            "The majority tries to buttress its argument with a stray sentence or two from the APA’s legislative history"
+            "That text, contra the majority, \u201cdoes not resolve the Chevron question.\u201d",
+            "we respect it\u201d).",
+            "The majority tries to buttress its argument with a stray sentence or two from the APA\u2019s legislative history"
           ],
           "scripts": [
             {
               "tag": "sup",
               "text": "2",
-              "before": "we respect it”).",
-              "after": "——————"
+              "before": "we respect it\u201d).",
+              "after": "\u2014\u2014\u2014\u2014\u2014\u2014"
             }
           ]
         },
         {
           "page": 98,
           "orderedText": [
-            "Section 706’s references to standards of review in other contexts only further undercut the majority’s argument.",
+            "Section 706\u2019s references to standards of review in other contexts only further undercut the majority\u2019s argument.",
             "Vermeule 207.",
-            "rather than agencies to decide in the last analysis.”",
+            "rather than agencies to decide in the last analysis.\u201d",
             "using a deferential standard.",
             "In a footnote responding to the last two paragraphs, the majority raises the white flag"
           ]
@@ -949,12 +987,12 @@
         {
           "page": 5,
           "headings": [
-            "جدول المحتويات"
+            "\u062c\u062f\u0648\u0644 \u0627\u0644\u0645\u062d\u062a\u0648\u064a\u0627\u062a"
           ],
           "orderedText": [
-            "مرحبا بكم في الولايات المتحدة دليل المهاجرين الجدد",
-            "الأقسام والوكالات الفدرالية",
-            "حقوقك ومسؤولياتك كمقيم دائم"
+            "\u0645\u0631\u062d\u0628\u0627 \u0628\u0643\u0645 \u0641\u064a \u0627\u0644\u0648\u0644\u0627\u064a\u0627\u062a \u0627\u0644\u0645\u062a\u062d\u062f\u0629 \u062f\u0644\u064a\u0644 \u0627\u0644\u0645\u0647\u0627\u062c\u0631\u064a\u0646 \u0627\u0644\u062c\u062f\u062f",
+            "\u0627\u0644\u0623\u0642\u0633\u0627\u0645 \u0648\u0627\u0644\u0648\u0643\u0627\u0644\u0627\u062a \u0627\u0644\u0641\u062f\u0631\u0627\u0644\u064a\u0629",
+            "\u062d\u0642\u0648\u0642\u0643 \u0648\u0645\u0633\u0624\u0648\u0644\u064a\u0627\u062a\u0643 \u0643\u0645\u0642\u064a\u0645 \u062f\u0627\u0626\u0645"
           ]
         },
         {
@@ -963,7 +1001,7 @@
             "[Permanent Resident Card]",
             "www.uscis.gov/uscis-elis",
             "[USCIS Forms Line]",
-            "بطاقة الإقامة الدائمة"
+            "\u0628\u0637\u0627\u0642\u0629 \u0627\u0644\u0625\u0642\u0627\u0645\u0629 \u0627\u0644\u062f\u0627\u0626\u0645\u0629"
           ],
           "minimumImages": 1
         }
@@ -984,18 +1022,18 @@
         {
           "page": 16,
           "orderedText": [
-            "即使您父母不能申请或不申报 EIC",
-            "示例 1——不需要提交报税表。",
-            "示例 3——提交报税表是为了享受 EIC。",
-            "驻扎在美国境外的军人。",
-            "您必须再满足一条规则才能申报 EIC。",
-            "61,555 美元（已婚联合报税为 68,675 美元）",
-            "57,310 美元（已婚联合报税为 64,430 美元）",
-            "50,434 美元（已婚联合报税为 57,554 美元）",
-            "19,104 美元（已婚联合报税为 26,214 美元）"
+            "\u5373\u4f7f\u60a8\u7236\u6bcd\u4e0d\u80fd\u7533\u8bf7\u6216\u4e0d\u7533\u62a5 EIC",
+            "\u793a\u4f8b 1\u2014\u2014\u4e0d\u9700\u8981\u63d0\u4ea4\u62a5\u7a0e\u8868\u3002",
+            "\u793a\u4f8b 3\u2014\u2014\u63d0\u4ea4\u62a5\u7a0e\u8868\u662f\u4e3a\u4e86\u4eab\u53d7 EIC\u3002",
+            "\u9a7b\u624e\u5728\u7f8e\u56fd\u5883\u5916\u7684\u519b\u4eba\u3002",
+            "\u60a8\u5fc5\u987b\u518d\u6ee1\u8db3\u4e00\u6761\u89c4\u5219\u624d\u80fd\u7533\u62a5 EIC\u3002",
+            "61,555 \u7f8e\u5143\uff08\u5df2\u5a5a\u8054\u5408\u62a5\u7a0e\u4e3a 68,675 \u7f8e\u5143\uff09",
+            "57,310 \u7f8e\u5143\uff08\u5df2\u5a5a\u8054\u5408\u62a5\u7a0e\u4e3a 64,430 \u7f8e\u5143\uff09",
+            "50,434 \u7f8e\u5143\uff08\u5df2\u5a5a\u8054\u5408\u62a5\u7a0e\u4e3a 57,554 \u7f8e\u5143\uff09",
+            "19,104 \u7f8e\u5143\uff08\u5df2\u5a5a\u8054\u5408\u62a5\u7a0e\u4e3a 26,214 \u7f8e\u5143\uff09"
           ],
           "text": [
-            "请在 （表格 1040 或 1040-SR）第 27b 行勾选“Clergy filing Schedule SE”"
+            "\u8bf7\u5728 \uff08\u8868\u683c 1040 \u6216 1040-SR\uff09\u7b2c 27b \u884c\u52fe\u9009\u201cClergy filing Schedule SE\u201d"
           ]
         }
       ]
@@ -1078,12 +1116,114 @@
           "minimumImages": 1
         }
       ]
+    },
+    {
+      "id": "ntrs-20180003024-earthdata-slides-2018",
+      "sourceSHA256": "f0a1ea3f5711228a9de2544fd1a94b05cfb8d9323fe3a4c253542f5a6ead5c94",
+      "basis": "21 slides converted and reviewed against Poppler rasters of the source pages (tools/compare_pdf.py, source page = slide). Slide 1's two-line title reflows as two separate headings, in source order, followed by the byline, NASA and civil-servant lines in order; every slide except 5 reports unverifiedTextLayer, since its full-bleed background paints as one page-sized graphic on this pipeline (main has no equivalent of the branch's layoutComesApart/#117, which there also left this exact defect open per the branch's own manifest). Slide 5's question has no text layer at all (only the drawn glyph outlines); it is recognized by #176 and its recognized text, read from the converted EPUB and checked word-for-word against the rendered source raster, matches exactly: reports ocrUsed, not unverifiedTextLayer. Slide 9's title and five guiding principles are reviewed in source order. Not pinned because reviewed and found wrong: numbered/lettered list items split their marker from their text inconsistently across slides 7 and 9 (items keep their words but not always their marker in the same block) and slide 7's lettered sub-items lose nesting onto the prior item's line; slide 2's Research/Applications/Education diagram boxes have no text layer at all (confirmed absent from the reflowed text, matching the manifest's provenance note) and diagram box order elsewhere is not independently verified. No committed rasters: every slide shows the NASA insignia (14 CFR 1221); see the manifest's rights note.",
+      "pages": [
+        {
+          "page": 1,
+          "headings": [
+            "Earthdata Cloud",
+            "Analytics Project"
+          ],
+          "orderedText": [
+            "Earthdata Cloud",
+            "Analytics Project",
+            "Chris Lynnes* and Rahul Ramachandran*",
+            "NASA",
+            "*U.S. Civil Servant"
+          ],
+          "warningCodesAnyOf": [
+            "unverifiedTextLayer"
+          ],
+          "minimumImages": 1
+        },
+        {
+          "page": 5,
+          "text": [
+            "How do we support user analysis of very large data volumes?"
+          ],
+          "warningCodesAnyOf": [
+            "ocrUsed"
+          ],
+          "minimumImages": 1
+        },
+        {
+          "page": 9,
+          "headings": [
+            "Earthdata Cloud Analytics Guiding Principles"
+          ],
+          "orderedText": [
+            "Earthdata Cloud Analytics Guiding Principles",
+            "Infusion- and innovation-friendly",
+            "No monolithic systems",
+            "Open code and services",
+            "Interoperability and reuse",
+            "No unnecessary duplication"
+          ],
+          "warningCodesAnyOf": [
+            "unverifiedTextLayer"
+          ],
+          "minimumImages": 1
+        }
+      ]
+    },
+    {
+      "id": "gpo-warren-1964-suspect-text-excerpt",
+      "sourceSHA256": "bfe984ba3327be017dd38bc4a100251292489efa6faa643b80682dae49b53348",
+      "basis": "Five physical pages (549, 553, 556, 636, 664) of the pinned gpo-warren-1964 source, mapped to excerpt pages 1-5 by measurements/gpo-warren-1964-suspect-text-excerpt/prepare-excerpt.py, converted and each source raster read against the converted output (tools/compare_pdf.py). This is issue #7's own reproduction path, sidestepping the full 920-page book's separate image-output ceiling failure (#5), not a fix for it. Excerpt pages 1-3 (source 549, 553, 556) are cursive Parkland Memorial Hospital admission notes and a death-declaration statement, confirmed illegible by reading their source rasters directly; both the inherited layer and fresh recognition report implausibleTextLayer/implausibleRecognition and the pages become page-image fallbacks with no reflowed text, which is the correct outcome for genuinely unreadable handwriting, not a defect. Excerpt page 4 (source 636) is a faint carbon typescript whose inherited layer misreads a share of its words in place (implausibleTextLayer, misreadWords); recognition read again and replaced it (ocrUsed). Two phrases legible on the source raster and present in the recognized text word-for-word were pinned directly from that comparison: 'and he told me about the things at' and 'At 6:00 PM I instructed the officers to bring'; the specific misread token 'ftboot' from the discarded layer is confirmed absent from the replacement. Excerpt page 5 (source 664) is a clean typewritten exhibit whose inherited layer is nonetheless heavily misread (implausibleTextLayer, misreadWords); recognition ran but did not read better (readsBetter false), so the layer was kept instead of replaced (no ocrUsed) -- confirmed by reading the kept, still-garbled text as a corrupted rendering of the same clearly-legible source content, not something else. Not pinned: exact text on pages 1, 2, 3 and 5 (illegible handwriting or an intentionally garbled kept layer, not stable prose to assert), and any claim about the excluded full 920-page book.",
+      "pages": [
+        {
+          "page": 1,
+          "warningCodesAnyOf": [
+            "implausibleTextLayer"
+          ],
+          "minimumImages": 1
+        },
+        {
+          "page": 2,
+          "warningCodesAnyOf": [
+            "implausibleTextLayer"
+          ],
+          "minimumImages": 1
+        },
+        {
+          "page": 3,
+          "warningCodesAnyOf": [
+            "implausibleTextLayer"
+          ],
+          "minimumImages": 1
+        },
+        {
+          "page": 4,
+          "text": [
+            "and he told me about the things at",
+            "At 6:00 PM I instructed the officers to bring"
+          ],
+          "absentText": [
+            "ftboot"
+          ],
+          "warningCodesAnyOf": [
+            "ocrUsed"
+          ],
+          "minimumImages": 1
+        },
+        {
+          "page": 5,
+          "warningCodesAnyOf": [
+            "implausibleTextLayer"
+          ],
+          "minimumImages": 1
+        }
+      ]
     }
   ],
   "excludedFullConversions": [
     {
       "id": "gpo-warren-1964",
-      "reason": "Known default image-output ceiling failure; the nine-page excerpt regression is recorded separately.",
+      "reason": "Known default image-output ceiling failure; the five-page suspect-text-layer excerpt (gpo-warren-1964-suspect-text-excerpt) is gated separately, and the nine-page general excerpt (measurements/gpo-warren-1964/prepare-excerpt.py) remains a manual review aid, not a regression case.",
       "issue": 5
     },
     {

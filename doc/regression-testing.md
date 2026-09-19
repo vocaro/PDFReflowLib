@@ -50,12 +50,13 @@ conversion policies, routine corpus exclusions, or fidelity qualification.
 
 ## Current content coverage
 
-[corpus/regressions.json](../corpus/regressions.json) has 357 targeted checks on 85 reviewed pages
-across 15 documents: FAA, algebra, 9/11, The Fed Explained, Dietary Guidelines, Our Flag, the CDC
-comic, Blue Book, and the seven #30 cases (USGS copper tables, Loper Bright footnotes, the Census
+[corpus/regressions.json](../corpus/regressions.json) has 391 targeted checks on 93 reviewed pages
+across 17 documents: FAA, algebra, 9/11, The Fed Explained, Dietary Guidelines, Our Flag, the CDC
+comic, Blue Book, the seven #30 cases (USGS copper tables, Loper Bright footnotes, the Census
 unmapped-encoding report, the USCIS Arabic guide, IRS Publication 596 in Simplified Chinese, and
-the NBS and Replay Clocks academic papers). All source-page anchors must also remain complete and
-ordered, and semantic text must contain no image attachment placeholders.
+the NBS and Replay Clocks academic papers), a five-page suspect-text-layer excerpt of the Warren
+report, and the Earthdata Cloud Analytics Project slide deck. All source-page anchors must also
+remain complete and ordered, and semantic text must contain no image attachment placeholders.
 
 The checks preserve selected correct words, paragraph semantics and cross-page continuity, paragraph/list order, license attribution, image
 presence and explicit transcription/fallback warnings. They read the actual EPUB spine, track
@@ -232,10 +233,34 @@ with no native text at all is not exempted by the opt-out, which only covers exi
 a page-sized graphic).
 
 This ports the `TextLayerPlausibility` mechanism and its unit/end-to-end coverage from an
-abandoned integration branch onto current `main`'s simpler pipeline. The corpus-level content
-contracts for the CDC comic and Warren transcript that the original work reviewed page by page are
-not re-verified here: see [corpus.md](corpus.md#preparedness-101-zombie-pandemic) for what
-remains open.
+abandoned integration branch onto current `main`'s simpler pipeline. `gpo-warren-1964-suspect-text-excerpt`
+(below) gates five real Warren pages against this mechanism, each reviewed against its source
+raster. The CDC comic's own corpus-level content contract, which the original work reviewed page
+by page, is not re-verified here: see [corpus.md](corpus.md#preparedness-101-zombie-pandemic) for
+what remains open there.
+
+### Warren suspect-text excerpt
+
+`gpo-warren-1964-suspect-text-excerpt` gates physical pages 549, 553, 556, 636 and 664 of the
+pinned `gpo-warren-1964` source — issue #7's own reproduction path, which sidesteps the full
+920-page book's separate image-output ceiling failure (#5) rather than resolving it. The excerpt
+is prepared by `measurements/gpo-warren-1964-suspect-text-excerpt/prepare-excerpt.py` (pypdf),
+which verifies the pinned source identity before extracting; it is registered in
+`corpus/manifest.json` as its own document (`identity.suppliedBy: "derived"`, no `downloadURL`),
+so `tools/fetch_corpus.py --case gpo-warren-1964-suspect-text-excerpt` only ever reports a cache
+hit against a locally-regenerated file, never a download. Each of the five pages was converted and
+its source raster read directly (`tools/compare_pdf.py --serve`). Pages 1-3 (549, 553, 556) are
+cursive Parkland Memorial Hospital admission notes and a death-declaration statement, confirmed
+illegible by reading the rasters: both the inherited layer and fresh recognition fail the English
+test and the pages fall back to page images, which is the correct outcome, not a defect. Page 4
+(636) is a faint carbon typescript whose misread layer (`tcld`/`ftboot`-style damage) is replaced
+by recognition that reads better; two phrases read directly off its source raster, "and he told me
+about the things at" and "At 6:00 PM I instructed the officers to bring", are pinned verbatim, and
+the discarded layer's `ftboot` is confirmed absent from the replacement. Page 5 (664) is a clean
+typewritten exhibit whose misread layer is nonetheless kept, because recognition read no better;
+its kept (still garbled) text was read and confirmed to be a corrupted rendering of the same
+clearly legible source content, not something else. Peak converter RSS measured about 724 MiB
+against a 1024 MiB ceiling.
 
 ### Pages whose writing is drawn
 
@@ -264,9 +289,10 @@ that signal would leave it unable to fire on the exact case it exists for. `refl
 (no letters at all) is what actually keeps it out of the implausible-layer check's territory
 instead; see [architecture.md](architecture.md) for why that is safe.
 
-No corpus case exercises this end to end: the Earthdata slide deck that motivated #176 upstream
-is not in this corpus's manifest, so `corpus/regressions.json` has nothing to gate here — see
-[corpus.md](corpus.md#pages-whose-writing-is-drawn).
+`ntrs-20180003024-earthdata-slides-2018` gates this end to end: the Earthdata slide deck that
+motivated #176 upstream is now fetched, converted and reviewed against Poppler rasters of its 21
+slides, with slide 5's recognized question checked word-for-word against its source raster; see
+[corpus.md](corpus.md#earthdata-cloud-analytics-project) for what is and is not pinned there.
 
 ## Running headers and page numbers
 

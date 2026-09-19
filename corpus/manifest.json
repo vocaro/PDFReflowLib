@@ -135,8 +135,8 @@
     },
     {
       "id": "gpo-warren-1964",
-      "title": "Report of the President’s Commission on the Assassination of President John F. Kennedy",
-      "author": "President’s Commission on the Assassination of President Kennedy",
+      "title": "Report of the President\u2019s Commission on the Assassination of President John F. Kennedy",
+      "author": "President\u2019s Commission on the Assassination of President Kennedy",
       "publicationYear": 1964,
       "url": "https://www.govinfo.gov/content/pkg/GPO-WARRENCOMMISSIONREPORT/pdf/GPO-WARRENCOMMISSIONREPORT.pdf",
       "publisherPageURL": "https://www.govinfo.gov/features/warren-commission-report-and-hearings",
@@ -382,7 +382,7 @@
     },
     {
       "id": "dga-2025-2030",
-      "title": "Dietary Guidelines for Americans, 2025–2030",
+      "title": "Dietary Guidelines for Americans, 2025\u20132030",
       "author": "U.S. Department of Health and Human Services; U.S. Department of Agriculture",
       "publicationYear": 2026,
       "url": "https://realfood.gov/",
@@ -1076,6 +1076,134 @@
       "memoryBudget": {
         "maxPeakRSSMiB": 256,
         "scope": "macOS 27 arm64 isolated release CLI, defaults; initial RSS regression ceiling, not a mobile device budget"
+      }
+    },
+    {
+      "role": "development",
+      "identity": {
+        "suppliedBy": "publisher-download"
+      },
+      "id": "ntrs-20180003024-earthdata-slides-2018",
+      "title": "Earthdata Cloud Analytics Project",
+      "author": "Chris Lynnes (NASA Goddard Space Flight Center) and Rahul Ramachandran (NASA Marshall Space Flight Center)",
+      "publicationYear": 2018,
+      "url": "https://ntrs.nasa.gov/citations/20180003024",
+      "publisherPageURL": "https://ntrs.nasa.gov/citations/20180003024",
+      "downloadURL": "https://ntrs.nasa.gov/api/citations/20180003024/downloads/20180003024.pdf",
+      "filename": "20180003024.pdf",
+      "bytes": 510231,
+      "sha256": "f0a1ea3f5711228a9de2544fd1a94b05cfb8d9323fe3a4c253542f5a6ead5c94",
+      "pages": 21,
+      "provenance": "NASA Technical Reports Server record 20180003024 (report GSFC-E-DAA-TN54544), a presentation given at the CEOS WGISS (Working Group on Information Systems & Services) meeting, Sao Jose dos Campos, Brazil, April 9-13, 2018. Google Slides PDF export: Creator Google, no Producer, created 2018-03-28; untagged; 21 slides at 720x405 pt; 4 embedded CID TrueType fonts (Arial, Verdana) with ToUnicode; 100 JPEG image placements with soft masks (the NASA insignia on every slide, photos and renders on slide 2, chart rasters on slides 3-4, icons on slides 12-21); diagrams drawn from shapes and text boxes on a full-bleed background fill; slide 5's question and slide 2's Research, Applications and Education boxes have no text layer. No speaker notes.",
+      "rightsBasis": "Slide 1 marks both presenters with *U.S. Civil Servant, and the NTRS record places Chris Lynnes at NASA Goddard Space Flight Center and Rahul Ramachandran at NASA Marshall Space Flight Center (17 U.S.C. 105). The NTRS API copyright record (checked 2026-09-17) gives determinationType GOV_PUBLIC_USE_PERMITTED, containsThirdPartyMaterial false, belongsToPublisher false and thirdPartyContentCondition NOT_SET; distribution PUBLIC, no export control. Every slide was checked: no AWS, Google, partner or vendor logo and no screenshot of a commercial product appears. Every slide shows the NASA insignia, whose use is restricted by 14 CFR 1221. Slide 2 carries uncredited satellite renders and a ground-station photo, slides 3-4 uncredited EOSDIS metrics chart rasters, and slides 12-21 uncredited pictogram icons. Owner approved on 2026-09-17. Not relicensed under MIT.",
+      "rightsClearance": {
+        "status": "owner-confirmed",
+        "scope": "Owner approved on 2026-09-17 for the development corpus with committed text derivatives (contract snippets of agency-authored slide text). No crops or rasters of any slide may be committed: all 21 slides show the NASA insignia (14 CFR 1221). Even with the insignia masked, slides 2 (uncredited photo and renders), 3-4 (uncredited chart rasters) and 12-21 (uncredited icons) stay excluded. The contract has no image references. Attribution: Chris Lynnes and Rahul Ramachandran, NASA, NTRS 20180003024."
+      },
+      "coverage": [
+        "Google Slides PDF export without a Producer entry",
+        "16:9 slides with a full-bleed background fill under a real text layer",
+        "slide titles, numbered lists and lettered sub-items",
+        "diagrams built from shapes and text boxes, with a superscript note marker and a repeated slide footnote",
+        "build slides that repeat a diagram with added boxes",
+        "a slide whose only text has no text layer",
+        "slide numbers on some slides only"
+      ],
+      "reviewPages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "attribution": "Chris Lynnes (NASA Goddard Space Flight Center) and Rahul Ramachandran (NASA Marshall Space Flight Center), Earthdata Cloud Analytics Project, CEOS WGISS meeting, April 2018. Source: https://ntrs.nasa.gov/citations/20180003024. The PDF is unmodified.",
+      "downloadVerification": "Fresh download through tools/fetch_corpus.py matched this identity on 2026-09-19, as did an independent curl download.",
+      "reviewStatus": "Converted with EPUBCheck and progress passing; peak converter RSS 95,158,272 bytes (about 91 MiB) against a 128 MiB ceiling. 21 slides reviewed against Poppler rasters of the source pages. Contract protects slide 1's two-line title and byline order, slide 5's recognized question (#176, checked against the rendered source raster) and slide 9's title and five guiding principles in order. Every slide except 5 reports unverifiedTextLayer: main has no equivalent of the branch's layoutComesApart (#117, not ported), so a full-bleed slide background reads as a page-sized graphic here, the same open defect the branch's own record left unresolved for this deck. Numbered/lettered list item grouping on slides 7 and 9, lettered sub-item nesting on slide 7, and diagram box order beyond what is listed above are reviewed and found imperfect or not independently verified, and are not pinned.",
+      "knownFidelityIssues": [
+        {
+          "page": 1,
+          "issue": "The full-bleed slide background counts as a page-sized graphic: unverifiedTextLayer and a source-page reference image on every slide but 5.",
+          "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/164"
+        },
+        {
+          "page": 2,
+          "issue": "The Research, Applications and Education diagram boxes have no text layer at all and are lost from the reflowed text; only their crop carries them.",
+          "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/165"
+        },
+        {
+          "page": 7,
+          "issue": "Numbered list item markers split from their text inconsistently, and lettered sub-items a./b. lose their nesting and run onto the prior item's line.",
+          "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/165"
+        }
+      ],
+      "baselineStatus": "Converted and reviewed on main's ported TextLayerPlausibility pipeline 2026-09-19; corpus/ntrs-20180003024-earthdata-slides-2018 case added to corpus/regressions.json. Included in the corpus gate.",
+      "memoryBudget": {
+        "maxPeakRSSMiB": 128,
+        "scope": "macOS 27 arm64 isolated release CLI, defaults; initial RSS regression ceiling measured at about 91 MiB peak, not a mobile device budget"
+      }
+    },
+    {
+      "role": "development",
+      "identity": {
+        "suppliedBy": "derived"
+      },
+      "id": "gpo-warren-1964-suspect-text-excerpt",
+      "title": "Report of the President\u2019s Commission on the Assassination of President John F. Kennedy \u2014 suspect-text-layer excerpt (pages 549, 553, 556, 636, 664)",
+      "author": "President\u2019s Commission on the Assassination of President Kennedy",
+      "publicationYear": 1964,
+      "url": "https://www.govinfo.gov/features/warren-commission-report-and-hearings",
+      "publisherPageURL": "https://www.govinfo.gov/features/warren-commission-report-and-hearings",
+      "filename": "warren-suspect-text-excerpt.pdf",
+      "sha256": "bfe984ba3327be017dd38bc4a100251292489efa6faa643b80682dae49b53348",
+      "bytes": 513402,
+      "pages": 5,
+      "provenance": "A five-page local derivative of the pinned gpo-warren-1964 source (SHA-256 341cc3471750c9c3be68b95a34b52f6cbdc86c4392427a8483ee1c6bc53cfc19), extracted unmodified page-for-page with measurements/gpo-warren-1964-suspect-text-excerpt/prepare-excerpt.py (pypdf), which verifies the source identity before extracting. Physical source pages 549, 553, 556, 636 and 664 map to excerpt pages 1-5 in that order. Not independently downloadable: regenerate from the pinned full source rather than fetching over HTTP.",
+      "rightsBasis": "The same U.S. Government commission report as gpo-warren-1964, published by GPO in 1964; this is an unmodified page subset of that same owner-supplied original, retained as an external development corpus source under the same terms. The PDF is not bundled or relicensed under MIT.",
+      "coverage": [
+        "handwritten hospital notes whose inherited OCR layer is noise (pages 549, 553, 556)",
+        "typewritten exhibit pages whose inherited layer misreads a share of its words in place (pages 636, 664)"
+      ],
+      "reviewPages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "attribution": "U.S. Government Printing Office, Report of the President's Commission on the Assassination of President John F. Kennedy, 1964. Source: https://www.govinfo.gov/features/warren-commission-report-and-hearings. Pages 549, 553, 556, 636 and 664 only.",
+      "downloadVerification": "Not fetched over HTTP; regenerated locally from the pinned gpo-warren-1964 source and verified against this entry's own byte count and SHA-256 by prepare-excerpt.py's assertion after writing.",
+      "reviewStatus": "Converted with EPUBCheck passing; peak converter RSS 758,792,192 bytes (about 724 MiB) against a 1024 MiB ceiling. All five pages reviewed against Poppler rasters of the source pages. Pages 1-3 (source 549, 553, 556) are confirmed illegible cursive handwriting; both the inherited layer and fresh recognition report implausibleTextLayer/implausibleRecognition and the pages fall back to page images, which is correct for genuinely unreadable handwriting. Page 4 (source 636)'s misread carbon-typescript layer is replaced by recognition that reads better; two phrases read directly off the source raster are pinned verbatim. Page 5 (source 664)'s misread layer is kept because recognition read no better, confirmed by reading the kept (still garbled) text as a corrupted rendering of the clearly legible source content.",
+      "knownFidelityIssues": [
+        {
+          "page": 4,
+          "issue": "Recognition of a faint carbon typescript is itself imperfect (many words remain misspelled or wrongly cased); only two source-verified phrases are pinned, not the whole page.",
+          "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/7"
+        }
+      ],
+      "baselineStatus": "Converted and reviewed on main's ported TextLayerPlausibility pipeline 2026-09-19; corpus/gpo-warren-1964-suspect-text-excerpt case added to corpus/regressions.json. Included in the corpus gate. Sidesteps the full 920-page book's separate image-output ceiling failure (#5); does not resolve or reopen it.",
+      "rightsClearance": {
+        "status": "owner-confirmed",
+        "scope": "Same as gpo-warren-1964: commercial use and redistribution of the development corpus; retain applicable license attribution."
+      },
+      "memoryBudget": {
+        "maxPeakRSSMiB": 1024,
+        "scope": "macOS 27 arm64 isolated release CLI, defaults; initial RSS regression ceiling measured at about 724 MiB peak (five scanned pages, two recognized), not a mobile device budget"
       }
     }
   ]

@@ -438,12 +438,45 @@ manifest. USCIS states some guide images are licensed, so that case commits no p
 Vertical CJK, Hebrew and Devanagari layouts remain uncovered for lack of clearly licensed sources
 ([#44](https://github.com/vocaro/PDFReflowLib/issues/44)).
 
-## Pages whose writing is drawn
+## Earthdata Cloud Analytics Project
+
+A 21-slide Google Slides export, NASA Technical Reports Server record 20180003024 (report
+GSFC-E-DAA-TN54544), presented at the CEOS WGISS meeting, April 2018. Local bytes are pinned at
+510,231, SHA-256 `f0a1ea3f5711228a9de2544fd1a94b05cfb8d9323fe3a4c253542f5a6ead5c94`. Both
+presenters are marked `*U.S. Civil Servant`; the NTRS copyright record gives
+`determinationType GOV_PUBLIC_USE_PERMITTED`. Every slide shows the NASA insignia (use restricted
+by 14 CFR 1221); no crops or rasters of any slide are committed, and the review contract has no
+image references. Retain the attribution recorded in the manifest.
+
+```sh
+python3 tools/fetch_corpus.py --case ntrs-20180003024-earthdata-slides-2018
+swift build -c release --scratch-path .build/corpus-cli
+python3 tools/evaluate-real-document.py --case ntrs-20180003024-earthdata-slides-2018 \
+  --pdf corpus/cache/20180003024.pdf --converter .build/corpus-cli/release/pdf-reflow \
+  --output /tmp/earthdata-baseline --epubcheck /opt/homebrew/bin/epubcheck
+python3 tools/compare_pdf.py --pdf corpus/cache/20180003024.pdf \
+  --converter .build/corpus-cli/release/pdf-reflow --output /tmp/earthdata-review --serve
+```
 
 [#176](https://github.com/vocaro/PDFReflowLib/issues/176) recognizes a page whose text layer
-holds no letter at all but whose own drawing carries writing (a slide question set as vector
-glyph outlines, with only a folio in its text layer). The corpus document that motivated it, a
-slide deck exported from Google Slides, is not in this corpus's manifest: it is not fetched,
-reviewed or gated here, so no `corpus/regressions.json` case exercises this mechanism against a
-real document. `ImageOnlyPageTests.swift` covers it end to end with synthetic slides instead;
-see [regression testing](regression-testing.md#pages-whose-writing-is-drawn).
+holds no letter at all but whose own drawing carries writing. Slide 5's question ("How do we
+support user analysis of very large data volumes?") is drawn as vector glyph outlines with no
+text layer at all; it is this deck's motivating case, and it is now gated here. All 21 slides
+were converted and reviewed against Poppler rasters of the source pages. Slide 5's recognized
+text was checked word-for-word against its rendered slide and matches exactly; it reports
+`ocrUsed`, and only it among the 21 slides is not `unverifiedTextLayer`. Slide 1's two-line title
+and byline, and slide 9's title and five guiding principles, were also checked in source order.
+
+Every other slide reports `unverifiedTextLayer`: this pipeline has no equivalent of the
+abandoned integration branch's `layoutComesApart` (#117, not ported), which there exempts a
+born-digital page whose art is only a full-bleed background paint from counting as image-backed;
+without it, an ordinary slide export already reads as image-backed here. That branch's own record
+left the identical defect open for this exact deck, tracked as #164, so this is not a regression
+from porting the feature — it is a pre-existing gap this port does not close either. Numbered and
+lettered list item grouping (slides 7 and 9) and lettered sub-item nesting (slide 7) were reviewed
+and found imperfect, and diagram box order beyond what is listed above was not independently
+verified; none of that is pinned. [Tracking: #164](https://github.com/vocaro/PDFReflowLib/issues/164),
+[#165](https://github.com/vocaro/PDFReflowLib/issues/165).
+
+`ImageOnlyPageTests.swift` covers the #176 mechanism itself end to end with synthetic slides; see
+[regression testing](regression-testing.md#pages-whose-writing-is-drawn).

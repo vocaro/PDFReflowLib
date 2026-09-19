@@ -180,12 +180,28 @@ vocabulary has no notion of a line that opens with the second half of a hyphen-b
 line beginning "panies interested in..." adds the bare fragment "panies" to the vocabulary as if it
 were whole, which would otherwise make `com-panies` look like two real words and block the join.
 
-Three further upstream #186 fixes are not ported and remain open: reading fonts named Zapf
-Dingbats/Dingbats/Monotype Sorts through their own encoding table (needs a font/glyph
-content-stream scanner main does not have, only PDFKit's higher-level text selection), trusting a
-non-symbolic Type 1 font's embedded glyph list over PDFKit's cmap when they disagree only in
-letter case (same dependency), and a subhead's paragraph legitimately opening past a photo and its
-caption (needs a sub-heading label system layered on top of the heading logic above, also absent).
+A bold sub-heading set at or near the reflowable body's own size — below the heading-size evidence
+above, so it carries no size evidence of its own — is recognized separately (`sectionLabels`,
+#218; adapted from the coordination branch's much larger sub-heading system, itself built up
+across a dozen further issues main does not port: no heading tiers, no tinted sidebar-box
+detection). A candidate must read wholly bold, open with a capital, a digit or a mark, end no
+sentence, and its style must recur on at least three pages of the same document
+(`labelEvidence(on:)`/`labelStyles(from:)`, gathered in a first pass alongside the document body
+size) so a single bold run near body size elsewhere in the book cannot promote itself. It must also
+open a paragraph: directly beneath it on the page's own paragraph geometry, or past an intervening
+picture — no thin rule — and everything smaller than the body between the picture and the opening
+(a caption, a credit), within four body heights of the last such line. Below 95% of the body the
+label carries no size evidence at all, so only a paragraph that opens on the page's own established
+first-line indent counts as its text. Only the bold, body-adjacent path is ported: italic labels,
+two-line stacked titles, hanging-entry titles, outline labels and tinted-box titles are not, since
+no main-corpus document exercises them yet and each would add untested false-positive surface to a
+function that runs on every page of every conversion.
+
+Two further upstream #186 fixes are not ported and remain open (tracked as #217): reading fonts
+named Zapf Dingbats/Dingbats/Monotype Sorts through their own encoding table (needs a font/glyph
+content-stream scanner main does not have, only PDFKit's higher-level text selection), and trusting
+a non-symbolic Type 1 font's embedded glyph list over PDFKit's cmap when they disagree only in
+letter case (same dependency).
 
 Existing text over a graphic covering more than 75% of the page gets `unverifiedTextLayer` and
 an accompanying source-page image under the default reference policy. This conservative review signal does not establish that

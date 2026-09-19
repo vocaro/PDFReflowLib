@@ -167,9 +167,226 @@ enum LayoutReconstructor {
             || abs(previous.rect.maxX - line.rect.maxX) <= size * 0.6
     }
 
+    /// A painted 1-pt rule after graphics padding: an underline or a separator, never a figure on
+    /// its own (#218, ported unchanged from the coordination branch's `isThinRule`, #100).
+    static func isThinRule(_ rect: CGRect) -> Bool {
+        rect.height <= 6 && rect.width >= max(12, rect.height * 3)
+    }
+
+    /// A figure or table caption's opening label (#218, ported unchanged from the coordination
+    /// branch's `isCaption`, #97): a caption is never the title of the text beneath it, and a
+    /// sub-heading is never a caption's own label.
+    private static func isCaption(_ text: String) -> Bool {
+        text.range(of: "^(?:Figure|Table)\\s+[0-9]", options: .regularExpression) != nil
+    }
+
+    /// The page's ordinary line height at a size: the median height of its lines of that size
+    /// (#218, ported unchanged from the coordination branch).
+    private static func ordinaryLineHeight(_ size: CGFloat, in lines: [TextLine]) -> CGFloat? {
+        let heights = lines.filter { abs($0.fontSize - size) <= size * 0.1 }.map(\.rect.height).sorted()
+        return heights.isEmpty ? nil : heights[heights.count / 2]
+    }
+
+    /// The page's ordinary gap between wrapped lines at a size: the lower quartile, over lines of
+    /// that size and ordinary height, of the gap to the nearest such line directly beneath on the
+    /// same left edge (within half a body) inside the prose window (#218, ported unchanged from the
+    /// coordination branch's `ordinaryLineGap`, #159).
+    private static func ordinaryLineGap(_ size: CGFloat, in lines: [TextLine], body: CGFloat) -> CGFloat? {
+        guard let height = ordinaryLineHeight(size, in: lines) else { return nil }
+        let ordinary = lines.filter { abs($0.fontSize - size) <= size * 0.1 && $0.rect.height <= height + body * 0.25 }
+        let gaps = ordinary.compactMap { upper -> CGFloat? in
+            ordinary.compactMap { lower -> CGFloat? in
+                let gap = upper.rect.minY - lower.rect.maxY
+                guard lower != upper, abs(upper.rect.minX - lower.rect.minX) <= body * 0.5,
+                      gap >= -body * 0.4, gap < body * 0.9, lower.rect.midY < upper.rect.midY else { return nil }
+                return gap
+            }.min()
+        }.sorted()
+        return gaps.isEmpty ? nil : gaps[gaps.count / 4]
+    }
+
+    /// Whether the page opens its paragraphs on a first-line indent of `step`, in `size` (#218,
+    /// ported unchanged from the coordination branch's `firstLineIndentRun`, #159). *Agricultural
+    /// Research* indents each paragraph's first line ten points in a ten-and-a-half-point column and
+    /// adds two points of space, so neither the leading nor the width of the line above says where a
+    /// paragraph ends: only the indent does, and it needs the page's own evidence (at least two such
+    /// steps) before it may separate a sub-heading from its paragraph.
+    static func firstLineIndentRun(in lines: [TextLine], step: CGFloat, size: CGFloat) -> Bool {
+        func sized(_ line: TextLine) -> Bool {
+            !line.monospaced && abs(line.fontSize - size) <= size * 0.1
+        }
+        let column = lines.filter(sized)
+        func neighbour(of line: TextLine, above: Bool) -> TextLine? {
+            let sharing = column.filter { other in
+                other != line && !sameRow(other.rect, line.rect)
+                    && other.rect.minX < line.rect.maxX && other.rect.maxX > line.rect.minX
+                    && (above ? other.rect.minY >= line.rect.maxY - size * 0.4
+                              : other.rect.maxY <= line.rect.minY + size * 0.4)
+            }
+            return above ? sharing.min { $0.rect.minY < $1.rect.minY }
+                         : sharing.max { $0.rect.maxY < $1.rect.maxY }
+        }
+        var openings = 0
+        for line in column {
+            guard let above = neighbour(of: line, above: true),
+                  above.rect.minY - line.rect.maxY < size * 0.9,
+                  abs(line.rect.minX - above.rect.minX - step) <= size * 0.5,
+                  let below = neighbour(of: line, above: false),
+                  line.rect.minY - below.rect.maxY < size * 0.9 else { continue }
+            if abs(below.rect.minX - line.rect.minX) <= size * 0.5 { return false }
+            if abs(line.rect.minX - below.rect.minX - step) <= size * 0.5 { openings += 1 }
+        }
+        return openings >= 2
+    }
+
+    /// A section label's typography relative to its page: its size and the body's (to the half
+    /// point), and whether every word is bold (#218, adapted from the coordination branch's
+    /// `LabelStyle`, #63/#73/#97). `TextStyle` already carries the bold flag this reads from
+    /// main's own font-resource reading, so unlike the branch's `boxTitles` (which reasons about
+    /// tinted background regions main does not extract), this needs no prerequisite beyond main's
+    /// existing text styling. The branch's `italic` field is not ported: #218's own motivating case
+    /// (a bold sidebar title) never needs it, and every italic-specific guard it fed is left out
+    /// with it, narrowing this port's risk of promoting an italic run inside ordinary prose.
+    struct LabelStyle: Hashable {
+        var size: Int
+        var body: Int
+        var bold: Bool
+
+        init(_ line: TextLine, body: CGFloat) {
+            size = Int((line.fontSize * 2).rounded())
+            self.body = Int((body * 2).rounded())
+            bold = line.content.elements.allSatisfy { element in
+                guard case let .text(value, style) = element else { return true }
+                return style.contains(.bold) || value.allSatisfy(\.isWhitespace)
+            }
+        }
+    }
+
+    /// A bold sub-heading the book sets at or near its body size, whose paragraph opens directly
+    /// beneath it or past an intervening picture and its caption (#218; adapted from the
+    /// coordination branch's `sectionLabels` and its `opens(beneath:)`/`pastFigure(_:)`, themselves
+    /// built up across #43, #63, #73, #76, #90, #97, #100, #102, #159 and #186). Main has no heading
+    /// tiers and no tinted-box detection (`page.tints`, #100's `boxTitles`), so only the bold,
+    /// body-adjacent path is ported: *Agricultural Research*'s "Fighting Filth Flies" (#186's fifth
+    /// and last #218 leftover) needs no italic label (#97), no two-line stacked title (#102), no
+    /// hanging-entry title (#134) and no tinted box, and porting any of those without a corpus
+    /// document to validate them against would only add untested false-positive surface to a
+    /// function that runs on every page of every conversion.
+    ///
+    /// A candidate line stands under the heading threshold, at least 80% of the body's size, opens
+    /// with a capital, a digit or a mark, ends no sentence, holds at least two letters and reads no
+    /// list marker. Below 95% of the body (*Agricultural Research* heads its columns with
+    /// nine-point bold lines over a ten-and-a-half-point body, #159) the label carries no size
+    /// evidence of its own, so only a paragraph that opens on the page's own first-line indent
+    /// counts as its text (`firstLineIndentRun`); at or above 95% the paragraph's own left edge is
+    /// enough. The label must read wholly bold and, unless `recordingSubheadings` admits every bold
+    /// candidate for `labelEvidence(on:)` to survey, its style must already recur elsewhere in the
+    /// book (`styles`, from `labelStyles(from:)`), so a single bold run near body size cannot
+    /// promote itself.
+    static func sectionLabels(in lines: [TextLine], body: CGFloat, headingThreshold: CGFloat,
+                              page: PageContent, styles: Set<LabelStyle> = [],
+                              recordingSubheadings: Bool = false) -> [TextLine] {
+        guard !page.hasSyntheticTextStyle, !page.recognized else { return [] }
+        var labels: [TextLine] = []
+        let bodyGap = ordinaryLineGap(body, in: lines, body: body)
+        for line in lines.sorted(by: { $0.rect.maxY > $1.rect.maxY }) {
+            guard line.fontSize < body * 1.15 else { continue }
+            let smaller = line.fontSize < body * 0.95
+            guard !line.monospaced, line.fontSize >= body * 0.8, line.fontSize < headingThreshold,
+                  line.text.count >= 2, line.text.count < 200, !isList(line.text),
+                  let first = line.text.first(where: { !"([\u{201C}\"'".contains($0) }),
+                  first.isUppercase || first.isNumber,
+                  let last = line.text.last, !".,;:".contains(last),
+                  line.text.contains(where: \.isLetter) else { continue }
+            let column = lines.filter { other in
+                other != line && other.rect.minX < line.rect.maxX && other.rect.maxX > line.rect.minX
+            }
+            let above = column.filter { $0.rect.minY >= line.rect.maxY - body * 0.25 }
+                .min { $0.rect.minY < $1.rect.minY }
+            let clearance = smaller ? min(body * 0.8, (bodyGap ?? 0) + body * 0.5) : body * 0.8
+            if let above, above.rect.minY - line.rect.maxY < clearance { continue }
+            let style = LabelStyle(line, body: body)
+            guard style.bold, recordingSubheadings || styles.contains(style) else { continue }
+            let prose = column.filter { $0.fontSize < body * 1.1 }.map(\.rect.width).max() ?? 0
+            guard prose > 0, line.rect.width <= prose * 0.9 else { continue }
+            func nearestBelow(_ title: TextLine) -> TextLine? {
+                lines.filter { other in
+                    other != title && other.rect.minX < title.rect.maxX && other.rect.maxX > title.rect.minX
+                        && other.rect.maxY <= title.rect.minY + body * 0.4
+                }.max(by: { $0.rect.maxY < $1.rect.maxY })
+            }
+            // The line opening the text a title heads past a picture set directly beneath it
+            // (#186, #218): *Agricultural Research*'s `Fighting Filth Flies` heads a sidebar over
+            // the sidebar's photograph and its caption, well above the sidebar's first line. The
+            // picture (no thin rule) stands within four fifths of a body of the title's foot and
+            // spans the title's left edge; everything in the title's measure between the picture
+            // and the opening is set smaller than the body (its caption and credit); and the
+            // opening stands within four bodies of the last of them, since a caption the picture's
+            // crop takes is no line here. A caption's own label is no title of the text beneath.
+            func pastFigure(_ title: TextLine) -> TextLine? {
+                guard !isCaption(title.text), let figure = page.graphics.filter({ graphic in
+                          !isThinRule(graphic) && graphic.minX <= title.rect.minX + body * 0.5
+                              && graphic.maxX >= title.rect.maxX && graphic.maxY <= title.rect.minY + body * 0.4
+                              && title.rect.minY - graphic.maxY < body * 0.8
+                      }).max(by: { $0.maxY < $1.maxY }) else { return nil }
+                let beneath = lines.filter { other in
+                    other != title && other.rect.minX < title.rect.maxX && other.rect.maxX > title.rect.minX
+                        && other.rect.maxY <= figure.minY + body * 0.4
+                }.sorted { $0.rect.maxY > $1.rect.maxY }
+                guard let opening = beneath.firstIndex(where: { $0.fontSize >= body * 0.9 }) else { return nil }
+                let foot = beneath[..<opening].map(\.rect.minY).min() ?? figure.minY
+                return foot - beneath[opening].rect.maxY < body * 4 ? beneath[opening] : nil
+            }
+            func opens(_ title: TextLine, with below: TextLine) -> Bool {
+                guard abs(below.fontSize - body) <= body * 0.1, !LabelStyle(below, body: body).bold else { return false }
+                // The paragraph can open on the column's own first-line indent instead of on the
+                // title's edge. The page's indent pattern is the evidence, as it is for the
+                // paragraph break itself; a wider step is another block, not this title's text.
+                let indent = below.rect.minX - title.rect.minX
+                let onIndent = indent >= body * 0.5 && indent < body * 1.5
+                    && firstLineIndentRun(in: lines, step: indent, size: below.fontSize)
+                let paragraph = (smaller ? onIndent : abs(indent) <= body * 0.5 || onIndent)
+                    && below.rect.width > title.rect.width
+                return paragraph
+            }
+            // Whether `line`'s paragraph opens directly beneath it, or past the picture set
+            // beneath it (#186, #218).
+            func opens(beneath title: TextLine) -> Bool {
+                if let direct = nearestBelow(title), title.rect.minY - direct.rect.maxY < body * 0.8,
+                   opens(title, with: direct) { return true }
+                return pastFigure(title).map { opens(title, with: $0) } ?? false
+            }
+            if opens(beneath: line) { labels.append(line) }
+        }
+        // Three or more labels ending in folios are a table of contents, not section labels.
+        let folio = #"\s(?:\d{1,4}|[ivxlc]+(?:[–-][ivxlc]+)?)$"#
+        let entries = labels.filter { $0.text.range(of: folio, options: .regularExpression) != nil }
+        return entries.count >= 3 ? labels.filter { !entries.contains($0) } : labels
+    }
+
+    /// The label styles one page's sub-body-sized bold lines establish, in `sectionLabels`'s own
+    /// evidence-recording mode (#218, adapted from the coordination branch's `labelEvidence(on:)`,
+    /// #97). `labelStyles(from:)` keeps the styles that recur across the whole document, so a
+    /// single bold run near body size elsewhere in the book cannot promote itself into a heading.
+    static func labelEvidence(on page: PageContent) -> Set<LabelStyle> {
+        guard !page.hasSyntheticTextStyle, !page.recognized else { return [] }
+        let body = max(4, bodySize(page.lines))
+        let threshold = max(body * 1.25, headingBodySize(page.lines, pageBody: body) * 1.1)
+        return Set(sectionLabels(in: page.lines, body: body, headingThreshold: threshold, page: page,
+                                 recordingSubheadings: true).map { LabelStyle($0, body: body) })
+    }
+
+    /// A style is the book's recurring sub-heading typography once its narrow bold labels appear on
+    /// at least three pages (#218, adapted from the coordination branch's `labelStyles(from:)`,
+    /// #97/#100).
+    static func labelStyles(from pages: [LabelStyle: Int]) -> Set<LabelStyle> {
+        Set(pages.filter { $0.value >= 3 }.keys)
+    }
+
     static func blocks(page: PageContent, images: [(CGRect, String)], vocabulary: Set<String>,
                        warnings: inout [ConversionWarning], numberedNotePage: Bool = false,
-                       language: String = "en", documentBody: CGFloat? = nil) -> [ReflowBlock] {
+                       language: String = "en", documentBody: CGFloat? = nil,
+                       labelStyles: Set<LabelStyle> = []) -> [ReflowBlock] {
         let body = max(4, bodySize(page.lines))
         let lines = page.lines.filter { line in !images.contains { $0.0.intersects(line.rect) } }
         // Preserve existing modest-size headings, but reject candidates within 10% of the
@@ -177,6 +394,10 @@ enum LayoutReconstructor {
         // On a page too bare to state its own body, a heading must also clear the document's (#186).
         let documentFloor = documentHeadingFloor(lines, documentBody: documentBody)
         let headingThreshold = max(body * 1.25, headingBodySize(lines, pageBody: body) * 1.1, documentFloor)
+        // A bold sub-heading set at or near body size, whose paragraph opens beneath it directly or
+        // past an intervening picture and caption (#218).
+        let labels = sectionLabels(in: lines, body: body, headingThreshold: headingThreshold, page: page,
+                                   styles: labelStyles)
         // A title opens with a capital, a digit or a mark. A heading-size line standing alone that
         // opens in lowercase is display text that heads nothing: a magazine cover's title line
         // "From Insects" can be followed by a lowercase cross-reference line "pages 2, 4-14" set at
@@ -253,9 +474,12 @@ enum LayoutReconstructor {
             }
             flushTagged()
             if !line.monospaced { codeOrigin = nil }
-            if !page.hasSyntheticTextStyle && line.fontSize >= headingThreshold && line.text.count < 200
+            // A bold sub-heading label is a heading too, whatever its size (#218): `sectionLabels`
+            // already refuses recognized and synthetic-style pages entirely, so `labels` carries no
+            // OCR-noise or synthetic-style risk of its own; `labels` is simply empty there.
+            if !page.hasSyntheticTextStyle && ((line.fontSize >= headingThreshold && line.text.count < 200
                 && (line.text.first?.isLowercase != true || stacksWithDisplay(line))
-                && (!judgesTitleWords || TextLayerPlausibility.readsAsWords(line.text)) {
+                && (!judgesTitleWords || TextLayerPlausibility.readsAsWords(line.text))) || labels.contains(line)) {
                 flush()
                 result.append(ReflowBlock(content: .heading(id: "heading-\(page.number)-\(result.count)", text: line.content),
                     page: page.number))

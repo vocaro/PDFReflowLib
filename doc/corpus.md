@@ -503,17 +503,26 @@ python3 tools/compare_pdf.py --pdf corpus/cache/November-December2012.pdf \
 ```
 
 [#186](https://github.com/vocaro/PDFReflowLib/issues/186) bundles five magazine-layout fixes;
-this document is the motivating case. Only two are ported to main: a heading-size threshold on
+this document is the motivating case. Three are now ported to main: a heading-size threshold on
 thin-text pages (a document-wide body floor, plus excluding an isolated lowercase-opening
-heading-size line) and system-lexicon-decided line-end hyphens. See
-[regression testing](regression-testing.md#thin-page-headings-and-lexicon-decided-hyphens) for
-what those fixes do and the vocabulary-fragment-pollution adaptation the port required.
+heading-size line), system-lexicon-decided line-end hyphens, and (#218) a bold sub-heading whose
+paragraph opens past an intervening picture and its caption. See
+[regression testing](regression-testing.md#thin-page-headings-and-lexicon-decided-hyphens) and
+[regression testing](regression-testing.md#a-sub-heading-past-a-photograph) for what those fixes
+do and the adaptations each port required. The remaining two (dingbat font reading, and a
+letter-case glyph-versus-cmap disagreement) are tracked separately as #217's scope.
 
-Pages 1, 6, 19 and 24 were converted and read against the actual output — pages 1 and 24 against
-source rasters (`tools/compare_pdf.py`), pages 6 and 19 by reading the converted text itself,
-which is unambiguous. Page 1's cover title ("Keeping Our" / "Troops Safe" / "From Insects") is
-confirmed unaffected by the new document-body floor, and its lowercase cross-reference line
-"pages 2, 4-14" is confirmed now a paragraph instead of a fourth heading. Page 24's mailing panel
+Pages 1, 6, 9, 19 and 24 were converted and read against the actual output — pages 1 and 24
+against source rasters (`tools/compare_pdf.py`), pages 6, 9 and 19 by reading the converted text
+itself, which is unambiguous. Page 1's cover title ("Keeping Our" / "Troops Safe" / "From Insects")
+is confirmed unaffected by the new document-body floor, and its lowercase cross-reference line
+"pages 2, 4-14" is confirmed now a paragraph instead of a fourth heading. Page 9's "Fighting Filth
+Flies" sidebar title (nine-point Helvetica-Bold over a ten-and-a-half-point body) is confirmed now
+a heading, and its own paragraph ("Nonbiting flies that shuttle between filth...", opening past an
+intervening photograph and caption) is confirmed still present in the output; pre-existing column
+interleaving on this three-column page (#153) means the two are not adjacent in reading order, so
+this is checked as heading-presence and paragraph-presence separately, with the direct adjacency
+covered by Swift fixture tests against this same real page in isolation. Page 24's mailing panel
 (return address, "Official Business", the web line) is confirmed now paragraphs. Pages 6 and 19
 each confirm an ordinary English compound the magazine never prints whole (`com-panies`,
 `infec-tions`) joined without its hyphen; a third instance on page 15 (`compli-ance`) is not fixed

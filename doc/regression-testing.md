@@ -352,15 +352,15 @@ decided by the system word list, the undecided control without a declared langua
 compound (`camera-man`) and a too-short half kept hyphenated, and the vocabulary-fragment-pollution
 case described below.
 
-Three of the five upstream fixes are **not** ported: dingbat font reading (an encoding table
+Two of the five upstream fixes are **not** ported: dingbat font reading (an encoding table
 read for fonts named Zapf Dingbats/Dingbats/Monotype Sorts) and the letter-case glyph-versus-cmap
 disagreement both depend on `FontWeightReader.swift`'s content-stream font/glyph scanning, which
 does not exist on main at all — main's `NativeTextReader.swift` only reads text through PDFKit's
-higher-level selection API, never per-run font resources; a subhead's paragraph legitimately
-opening past a photo and its caption depends on `LayoutReconstructor`'s sub-heading label system
-(`sectionLabels`/`LabelStyle`), also absent from main. Reconstructing either dependency chain from
-scratch was judged out of scope for this port; both remain open under #186 and are confirmed still
-present (unfixed) on the gated `usda-ars-agresearch-2012-11` document below.
+higher-level selection API, never per-run font resources. Reconstructing that dependency chain
+from scratch was judged out of scope for this port; it remains open, tracked separately as #217,
+and confirmed still present (unfixed) on the gated `usda-ars-agresearch-2012-11` document below.
+The fifth fix — a subhead's paragraph legitimately opening past a photo and its caption — is now
+ported; see [below](#a-sub-heading-past-a-photograph).
 
 Porting the hyphen fix surfaced a genuine bug beyond a literal port of the upstream design.
 Upstream's `lexiconVouches` treats a half as an independent real word if either the document's own
@@ -375,17 +375,69 @@ false positive while still protecting a genuine compound like `camera-man` (both
 lexicon words regardless of vocabulary). `vocabulary` still gates the whole-joined-word check and
 the `englishLexiconKey` marker itself.
 
-`usda-ars-agresearch-2012-11` gates both ported fixes on four physical pages of the real magazine,
-each read against the actual conversion: page 1's cover title survives the new document-body floor
-and its lowercase cross-reference line "pages 2, 4-14" becomes a paragraph instead of a fourth
-heading; page 24's mailing panel (return address, "Official Business", the web line) becomes
-paragraphs instead of headings; and pages 6 and 19 each confirm an ordinary English compound the
-magazine never prints whole (`com-panies`, `infec-tions`) joined without its hyphen. A third
-instance, page 15's `compli-ance`, is deliberately not pinned: its two halves land in separate
-paragraph blocks from unrelated column-interleaving behavior (#153) before the hyphen-join logic
-ever sees them as adjacent lines. See [corpus.md](corpus.md#agricultural-research-magazine) for
-the rest of what was and was not reviewed, and the page-24 rights constraint against any committed
-raster or crop from that page.
+`usda-ars-agresearch-2012-11` gates the two thin-page/hyphen fixes above (and, on page 9, the
+sub-heading fix below) on five physical pages of the real magazine, each read against the actual
+conversion: page 1's cover title survives the new document-body floor and its lowercase
+cross-reference line "pages 2, 4-14" becomes a paragraph instead of a fourth heading; page 24's
+mailing panel (return address, "Official Business", the web line) becomes paragraphs instead of
+headings; and pages 6 and 19 each confirm an ordinary English compound the magazine never prints
+whole (`com-panies`, `infec-tions`) joined without its hyphen. A third instance, page 15's
+`compli-ance`, is deliberately not pinned: its two halves land in separate paragraph blocks from
+unrelated column-interleaving behavior (#153) before the hyphen-join logic ever sees them as
+adjacent lines. See [corpus.md](corpus.md#agricultural-research-magazine) for the rest of what was
+and was not reviewed, and the page-24 rights constraint against any committed raster or crop from
+that page.
+
+## A sub-heading past a photograph
+
+`SubheadPastFigureTests.swift` ports #186's fifth and last leftover, tracked as
+[#218](https://github.com/vocaro/PDFReflowLib/issues/218): a sidebar title set well above its own
+body text, with a photograph between the title and the paragraph it introduces, stayed a plain
+paragraph because the title-adjacency test that decides whether a styled line is a heading did not
+read past a figure to find the paragraph it opens. Tracing the coordination branch's fix
+(`opens(beneath:)`'s `pastFigure(_:)` extension) surfaced a much larger dependency chain than the
+issue's own four-commit estimate — at least eight prerequisite commits across #43, #55, #63, #73,
+#76, #90, #97, #100, #102 and #159, building an entire sub-heading classification subsystem
+(`sectionLabels`, `LabelStyle`, `boxTitles`, document-wide heading ranking) that does not exist on
+main at all, since main classifies a line as a heading purely by size. This port adds only the
+bold, body-adjacent path #218's own motivating page needs, adapted to main's simpler model:
+
+- `LabelStyle` reads main's existing `TextStyle` bold flag directly (`.bold`) — no #217
+  font-resource dependency, unlike `boxTitles`'s tinted-region reasoning (not ported: main has no
+  `page.tints` background-region extraction at all).
+- `sectionLabels` recognizes a bold candidate line at or near body size whose style recurs on at
+  least three pages of the document (`labelStyles`, aggregated from `labelEvidence(on:)` across
+  every page during the pipeline's existing document-body pass), so a single bold run near body
+  size elsewhere in the book cannot promote itself into a heading.
+- `opens(beneath:)`/`pastFigure(_:)` decide whether the paragraph beneath the candidate — directly,
+  or past an intervening picture and caption — is the label's own text, exactly as the branch's
+  own comments describe (a figure no thin rule, everything smaller than the body between the
+  figure and the opening line, the opening within four bodies of the last such line).
+- Below 95% of the body (*Agricultural Research* heads its columns with nine-point bold lines over
+  a ten-and-a-half-point body, upstream #159) the label carries no size evidence of its own, so
+  only a paragraph that opens on the page's own established first-line indent counts as its text
+  (`firstLineIndentRun`, also ported from #159, since #218's own motivating page needs it: its
+  title is nine points against a ten-and-a-half-point body).
+
+Not ported: italic labels (#97), two-line stacked titles (#102), hanging-entry titles (#134),
+outline labels (#152) and tinted-box titles (#100/`boxTitles`) — #218's own case needs none of
+them, and porting any without a corpus document to validate it against would only add untested
+false-positive surface to a function that runs on every page of every conversion.
+
+Tests cover: the real page's geometry (the title is bold and below body size, with a real
+photograph — not a thin rule — between it and its paragraph, read from a checksum-pinned capture of
+the real magazine page, `usda-9-layout.json`); `labelEvidence`/`labelStyles`'s own evidence and
+threshold logic; the end-to-end promotion through `blocks(page:...)` on the real page, both with
+and without document-wide style evidence (demonstrating the consistency gate is load-bearing, not
+a no-op); `pastFigure`'s edge cases on synthetic single-column pages (a figure present versus
+absent, a thin rule never mistaken for a figure, a caption line never promoted over its own
+figure, an opening line too far below the caption); `firstLineIndentRun`'s two-instance evidence
+threshold; and a one-off bold run inside ordinary prose, guarded by both the style-consistency gate
+and the "above" clearance rejection, staying a paragraph. `corpus/regressions.json`'s
+`usda-ars-agresearch-2012-11` case extends its existing page set with page 9: the heading and its
+paragraph are each confirmed present, not their adjacency, because this page's pre-existing column
+interleaving (#153) does not keep them next to each other in reading order — that direct adjacency
+is what the synthetic `pastFigure` tests, and the real page read in isolation, check instead.
 
 ## Running headers and page numbers
 

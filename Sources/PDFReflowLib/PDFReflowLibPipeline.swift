@@ -197,6 +197,8 @@ enum PDFReflowLibPipeline {
         var numberedNotePages: Set<Int> = []
         // Characters per type size over the native pages: the document's body (#186).
         var bodyWeights: [Int: Int] = [:]
+        // The pages each recurring bold sub-heading style appears on (#218).
+        var labelStylePages: [LayoutReconstructor.LabelStyle: Int] = [:]
         var recognizedPages = 0
         var characters = 0
         for i in 0..<total {
@@ -304,6 +306,11 @@ enum PDFReflowLibPipeline {
             }
             if !content.recognized, !content.hasSyntheticTextStyle, !content.requiresPageImage {
                 LayoutReconstructor.addBodyWeights(of: content.lines, to: &bodyWeights)
+                // A bold sub-heading style counts once per page it appears on; `labelStyles(from:)`
+                // keeps only the styles the book repeats (#218).
+                for style in LayoutReconstructor.labelEvidence(on: content) {
+                    labelStylePages[style, default: 0] += 1
+                }
             }
             if NumberedNoteDetector.hasHeading(on: content) { numberedNotePages.insert(content.number) }
             if options.removeRepeatedHeadersAndFooters { FurnitureDetector.collect(content, pageIndex: i, into: &furniture) }
@@ -317,6 +324,8 @@ enum PDFReflowLibPipeline {
         // The size most of the document's native text is set in, for a page too bare to state
         // its own (#186).
         let documentBody = LayoutReconstructor.bodySize(weights: bodyWeights)
+        // The bold sub-heading styles the book repeats often enough to trust (#218).
+        let documentLabelStyles = LayoutReconstructor.labelStyles(from: labelStylePages)
         let furniturePlan = options.removeRepeatedHeadersAndFooters ? FurnitureDetector.resolve(furniture) : nil
         furniture = FurnitureDetector.Ledger()
         // Furniture warnings keep their place between extraction and reconstruction warnings.
@@ -366,7 +375,7 @@ enum PDFReflowLibPipeline {
                     pageBlocks = LayoutReconstructor.blocks(page: content, images: images,
                         vocabulary: vocabulary, warnings: &warnings,
                         numberedNotePage: numberedNotePages.contains(content.number), language: options.language,
-                        documentBody: documentBody)
+                        documentBody: documentBody, labelStyles: documentLabelStyles)
                     if pageBlocks.contains(where: \.hasReflowedText) {
                         reflowed += 1
                     }

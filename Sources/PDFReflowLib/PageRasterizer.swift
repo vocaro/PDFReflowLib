@@ -3,6 +3,22 @@ import ImageIO
 import PDFKit
 import UniformTypeIdentifiers
 
+private extension PDFAnnotation {
+    /// Whether a reader of the source page would see this annotation, and so whether a page image
+    /// standing in for that page should draw it (#170).
+    ///
+    /// PDFKit's `shouldDisplay` is its own display switch and does not reflect the annotation's
+    /// `/F` flags, so a Hidden or NoView annotation — a field a producer filled and chose not to
+    /// show, a review layer left in the file — is drawn into the image although no reader of the
+    /// PDF ever sees it. Bit 2 is Hidden and bit 6 NoView (PDF 32000-1 table 165); NoView means
+    /// "do not draw on screen but do print", and a page image is the screen.
+    var isDrawnForReading: Bool {
+        guard shouldDisplay else { return false }
+        guard let flags = value(forAnnotationKey: .flags) as? NSNumber else { return true }
+        return flags.intValue & ((1 << 1) | (1 << 5)) == 0
+    }
+}
+
 enum PageRasterizer {
     static func image(page: PDFPage, rect: CGRect, options: ConversionOptions,
                       applyRotation: Bool = false) throws -> CGImage {
@@ -38,7 +54,7 @@ enum PageRasterizer {
         context.saveGState()
         context.drawPDFPage(reference)
         context.restoreGState()
-        for annotation in page.annotations where annotation.shouldDisplay {
+        for annotation in page.annotations where annotation.isDrawnForReading {
             // PDFKit annotation drawing applies the page's crop/rotation itself, unlike
             // drawPDFPage. Undo that extra mapping so both use the same source coordinates.
             context.saveGState()

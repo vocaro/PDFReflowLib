@@ -550,6 +550,10 @@ Evidence: [chapter-boundaries](../measurements/chapter-boundaries/record.md).
   reduces an FAA page to about 106 DPI while a small crop still reaches about 239 DPI).
   Whole-page crop and rotation are computed in page units and scaled to pixels explicitly;
   annotation drawing compensates for PDFKit's own crop/rotation transform.
+- Only annotations a reader of the source page would see are drawn: an annotation whose `/F`
+  flags set Hidden (bit 2) or NoView (bit 6) is skipped (#170). PDFKit's `shouldDisplay` is its
+  own display switch; on macOS 27 it reports false for NoView but true for Hidden, so a hidden
+  field or review layer would otherwise be painted into an image that stands in for the page.
 - `fullPageImageEncoding` (references and required fallbacks) and `regionImageEncoding` (crops)
   each choose PNG, JPEG at a quality, or `.smallest`, which encodes both and keeps the smaller
   file (PNG on ties) at the cost of a second encoding pass; selection retains at most one raster

@@ -93,6 +93,7 @@ report_timings() {
 }
 
 background python-tool-tests python3 -m unittest discover -s tools -p 'test_*.py' -v
+background measurements-policy python3 tools/check_measurements.py
 foreground swift-tests swift test
 foreground release-build swift build -c release
 if ! finish_gates; then report_timings; exit 1; fi

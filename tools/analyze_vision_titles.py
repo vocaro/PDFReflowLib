@@ -93,8 +93,8 @@ def analyze(captures, review_path):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--captures", type=Path, default=ROOT / "measurements/vision-titles/captures")
-    parser.add_argument("--review", type=Path, default=ROOT / "measurements/vision-titles/review.json")
+    parser.add_argument("--captures", type=Path, default=ROOT / "tools/vision_titles/captures")
+    parser.add_argument("--review", type=Path, default=ROOT / "tools/vision_titles/review.json")
     args = parser.parse_args()
     print(json.dumps(analyze(args.captures, args.review), indent=2, sort_keys=True))
 

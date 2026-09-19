@@ -1,5 +1,7 @@
 # Vision container titles: do not adopt as heading semantics
 
+> The captures and `review.json` now live in `tools/vision_titles/`, where `tools/test_vision_titles.py` reads them; the paths below are as measured.
+
 Investigation of [#24](https://github.com/vocaro/PDFReflowLib/issues/24), baseline
 `b7a5bbe5c1115e343b91294be1e308dd3b563876`, 2026-09-15, macOS 27.0 (26A428),
 Xcode 27.0 (27A266a), arm64. **Issue #24's validation is complete; closure is recommended

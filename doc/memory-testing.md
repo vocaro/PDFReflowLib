@@ -80,14 +80,14 @@ unresolved; a submitted report is not an Apple-confirmed diagnosis.
 ## Repeated conversions in one process
 
 An app that converts several PDFs in one process keeps every attributed string PDFKit leaked
-while doing so. `measurements/pdfkit-repeated-conversions/measure.sh` builds a small harness that
+while doing so. `tools/repeated_conversions/measure.sh` builds a small harness that
 converts the given PDFs through the public API a number of times in one process, with pinned
 packaging, and prints the physical footprint, peak RSS and default malloc zone after every
 conversion. `LEAKS=1` adds a `leaks` count after every round on the Mac; `SIMULATOR=<udid>` runs
 it in a booted iOS Simulator instead.
 
 ```sh
-LEAKS=1 measurements/pdfkit-repeated-conversions/measure.sh 10 \
+LEAKS=1 tools/repeated_conversions/measure.sh 10 \
     corpus/cache/THM-Close-Out-Report-and-Exec-Summ-for-STI-Review.pdf \
     corpus/cache/the-fed-explained.pdf corpus/cache/November-December2012.pdf
 ```
@@ -111,7 +111,7 @@ on complete corpus books; during the measurement the candidate also ran under ea
 strategy through `PDFREFLOW_PAGE_RETENTION`, which no longer exists, so a current build always
 measures the spill store and `--strategy` labels only the run. Every candidate output must be
 byte-identical to the baseline output apart from the package identifier and timestamp, and
-its conversion report must match apart from the output path; `identity.py` performs that
+its conversion report must match apart from the output path; `tools/epub_identity.py` performs that
 check and has negative controls. Each run records the evaluator's peak RSS, sampled physical
 footprint, CPU and wall time, plus the peak size of the run's own directory, which includes
 staged images and spilled pages. Explicit image policies keep both binaries on the same
@@ -130,7 +130,7 @@ python3 measurements/page-retention/run.py \
 The output directory must be new. Output EPUBs are deleted after comparison unless
 `--keep-epubs` is given, because four NOAA-sized archives do not fit comfortably beside the
 build directories. Repeat `--case` or `--strategy` to narrow a run. To re-measure the retired
-strategies, apply `measurements/page-retention/measured-strategies.patch` to the sources it
+strategies, apply `measurements/page-retention/measured-strategies.patch` as of commit a28fb09 (the patch was removed from the tree afterwards) to the sources it
 names and rebuild.
 
 Package tests cannot run on a physical device because they have no host application, so

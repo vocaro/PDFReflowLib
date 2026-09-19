@@ -6,7 +6,7 @@ import unittest
 import zipfile
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-import identity  # noqa: E402
+import epub_identity as identity  # noqa: E402
 
 PACKAGE = (b'<?xml version="1.0"?><package><metadata><dc:identifier id="book-id">urn:uuid:%s</dc:identifier>'
            b'<meta property="dcterms:modified">%s</meta></metadata></package>')

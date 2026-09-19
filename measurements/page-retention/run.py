@@ -21,7 +21,8 @@ import time
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-import identity  # noqa: E402
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "tools"))
+import epub_identity as identity  # noqa: E402
 
 STRATEGIES = ['resident', 'spill', 'reextract']
 ENVIRONMENT_VARIABLE = 'PDFREFLOW_PAGE_RETENTION'

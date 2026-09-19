@@ -435,6 +435,10 @@ Repository source and test directories follow SwiftPM conventions: `Sources/PDFR
 `Sources/PDFReflowLibCLI/` and `Tests/PDFReflowLibTests/`. Supporting directories and the
 `fixtures/` test-resource directory use lowercase names. Public module and product names remain
 unchanged. Recorded measurement outputs retain historical paths and hashes from their measured builds.
+`measurements/` holds each experiment's record and the small summaries it quotes; raw captures
+(logs, archives, renders, converted books) are not committed, and `tools/check_measurements.py`
+fails a change that adds one or more than two megabytes there. Tooling a gate runs lives under
+`tools/` (`repeated_conversions/`, `vision_titles/`, `epub_identity.py`), never under a record.
 
 Opt-in corpus quality signaling is checked separately from EPUB validity and resource limits.
 `tools/check_corpus_quality.py` applies manifest expectations to a real-document evaluation:

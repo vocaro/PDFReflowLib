@@ -8,7 +8,7 @@ from analyze_vision_titles import ROOT, analyze, assess, owned_line_indices
 
 class VisionTitleEvidenceTests(unittest.TestCase):
     def test_changed_title_selection_requires_new_source_review(self):
-        base = ROOT / "measurements/vision-titles"
+        base = ROOT / "tools/vision_titles"
         review = json.loads((base / "review.json").read_text())["pages"][0]
         capture = json.loads((base / "captures" / review["capture"]).read_text())
         capture["containers"][0]["title"]["text"] = "A different selection"
@@ -16,8 +16,8 @@ class VisionTitleEvidenceTests(unittest.TestCase):
             assess(capture, review)
 
     def test_source_controls_reject_metadata_only_mapping(self):
-        report = analyze(ROOT / "measurements/vision-titles/captures",
-                         ROOT / "measurements/vision-titles/review.json")
+        report = analyze(ROOT / "tools/vision_titles/captures",
+                         ROOT / "tools/vision_titles/review.json")
         pages = {p["capture"]: p for p in report["pages"]}
         # A unique owner plus agreement with isTitle still promotes source prose/dialogue.
         for name in ["cdc-13.json", "cdc-16.json", "warren-30.json", "warren-50.json",
@@ -35,8 +35,8 @@ class VisionTitleEvidenceTests(unittest.TestCase):
         self.assertEqual(pages["warren-920.json"]["lineCount"], 0)
 
     def test_empty_title_lines_do_not_mean_absent_title(self):
-        report = analyze(ROOT / "measurements/vision-titles/captures",
-                         ROOT / "measurements/vision-titles/review.json")
+        report = analyze(ROOT / "tools/vision_titles/captures",
+                         ROOT / "tools/vision_titles/review.json")
         for page in report["pages"]:
             if page["titleText"] is not None:
                 self.assertEqual(page["titleLineCount"], 0)

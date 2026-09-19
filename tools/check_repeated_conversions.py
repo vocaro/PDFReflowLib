@@ -2,7 +2,7 @@
 """Bound PDFKit's attributed-text leak across repeated conversions in one process (#4).
 
 Converts one checksum-verified corpus source several times in one process through the public
-API (`measurements/pdfkit-repeated-conversions/measure.sh`), with pinned packaging, and counts
+API (`tools/repeated_conversions/measure.sh`), with pinned packaging, and counts
 `leaks` after every round. Fails when a round's EPUB differs from the first round's, or when the
 leaked objects added per conversion exceed the per-page ceiling. PDFKit leaks every attributed
 string it returns (FB24783799); the library requests one per page, so the count grows with pages,
@@ -18,7 +18,7 @@ import re
 import subprocess
 
 ROOT = Path(__file__).resolve().parents[1]
-MEASURE = ROOT / 'measurements/pdfkit-repeated-conversions/measure.sh'
+MEASURE = ROOT / 'tools/repeated_conversions/measure.sh'
 
 
 def evaluate(lines, pages, maximum_objects_per_page):

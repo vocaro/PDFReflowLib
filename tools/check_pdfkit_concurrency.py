@@ -20,6 +20,7 @@ SOURCES = [
     'tools/probe-pdfkit-concurrency.swift',
     'Sources/PDFReflowLib/NativeTextReader.swift',
     'Sources/PDFReflowLib/NativeSpacingReader.swift',
+    'Sources/PDFReflowLib/GlyphIdentityReader.swift',
     'Sources/PDFReflowLib/DocumentModel.swift',
     'Sources/PDFReflowLib/ReflowDocument.swift',
     'Sources/PDFReflowLib/ConversionTypes.swift',

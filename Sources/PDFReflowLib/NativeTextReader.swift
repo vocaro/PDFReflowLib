@@ -49,6 +49,7 @@ enum NativeTextReader {
         let selections = selection.selectionsByLine()
         let boundsByLine = selections.map { $0.bounds(for: page) }
         let spacing = includeStyle ? page.pageRef.map(NativeSpacingReader.read) ?? [] : []
+        let glyphs = includeStyle ? page.pageRef.map(GlyphIdentityReader.read) ?? [] : []
         var result: [TextLine] = []
         for line in selections {
             try Task.checkCancellation()
@@ -62,9 +63,12 @@ enum NativeTextReader {
             // Object-only selections were discarded before requesting attributed text,
             // which can make PDFKit decode large image attachments.
             let attributed = includeStyle ? line.attributedString : nil
-            let repaired = attributed.map {
+            let spacingFixed = attributed.map {
                 $0.string == raw ? NativeSpacingReader.apply(spacing, to: $0, bounds: bounds, allBounds: boundsByLine) : $0
             }
+            // Glyphs a font's own map misreports are redrawn last: spacing evidence compares
+            // PDFKit's characters with the shows' own maps, which must still agree (#217).
+            let repaired = spacingFixed.map { GlyphIdentityReader.apply(glyphs, to: $0, bounds: bounds, allBounds: boundsByLine) }
             let corrected = repaired?.string != attributed?.string
                 ? repaired?.string.replacingOccurrences(of: "\u{FFFC}", with: " ") : nil
             result.append(textLine(semantic: corrected ?? semantic,
@@ -174,7 +178,11 @@ enum NativeTextReader {
             let tolerance = max(0.5, (font?.pointSize ?? 12) * 0.12)
             // Some PDFKit selections combine several OCR lines, represented as baseline
             // shifts of a full line height. Those are layout offsets, not inline scripts.
+            // A glyph GlyphIdentityReader redrew from a font's own table and found standing
+            // alone between word spaces (a dingbat bullet substituted with a mismatched font,
+            // #217) is never an inline superscript or subscript, however its metrics place it.
             if !(hasDropCap && range.location == 0),
+               attributes[GlyphIdentityReader.isolatedAttribute] == nil,
                offset.isFinite, abs(offset) <= (font?.pointSize ?? 12) * 0.75 {
                 if offset > tolerance { style.insert(.superscript) }
                 else if offset < -tolerance { style.insert(.subscript) }

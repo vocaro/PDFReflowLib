@@ -50,7 +50,7 @@ conversion policies, routine corpus exclusions, or fidelity qualification.
 
 ## Current content coverage
 
-[corpus/regressions.json](../corpus/regressions.json) has 416 targeted checks on 99 reviewed pages
+[corpus/regressions.json](../corpus/regressions.json) has 422 targeted checks on 101 reviewed pages
 across 18 documents: FAA, algebra, 9/11, The Fed Explained, Dietary Guidelines, Our Flag, the CDC
 comic, Blue Book, the seven #30 cases (USGS copper tables, Loper Bright footnotes, the Census
 unmapped-encoding report, the USCIS Arabic guide, IRS Publication 596 in Simplified Chinese, and
@@ -139,7 +139,8 @@ Future unresolved cases must stay explicit rather than becoming passing golden o
 To recapture the algebra geometry with full Xcode selected:
 
 ```sh
-swiftc Sources/PDFReflowLib/NativeTextReader.swift Sources/PDFReflowLib/ConversionTypes.swift \
+swiftc Sources/PDFReflowLib/NativeTextReader.swift Sources/PDFReflowLib/NativeSpacingReader.swift \
+  Sources/PDFReflowLib/GlyphIdentityReader.swift Sources/PDFReflowLib/ConversionTypes.swift \
   Sources/PDFReflowLib/DocumentModel.swift Sources/PDFReflowLib/ReflowDocument.swift \
   Sources/PDFReflowLib/GraphicsReader.swift tools/capture-algebra-layout.swift \
   -o /tmp/capture-algebra-layout
@@ -165,7 +166,8 @@ These small JSONs capture native extraction from checksum-pinned sources, not co
 They run offline on macOS and iOS. Capture another page with full Xcode selected:
 
 ```sh
-swiftc Sources/PDFReflowLib/NativeTextReader.swift Sources/PDFReflowLib/ConversionTypes.swift \
+swiftc Sources/PDFReflowLib/NativeTextReader.swift Sources/PDFReflowLib/NativeSpacingReader.swift \
+  Sources/PDFReflowLib/GlyphIdentityReader.swift Sources/PDFReflowLib/ConversionTypes.swift \
   Sources/PDFReflowLib/DocumentModel.swift Sources/PDFReflowLib/ReflowDocument.swift \
   Sources/PDFReflowLib/GraphicsReader.swift tools/capture-layout-fixture.swift \
   -o /tmp/capture-layout-fixture

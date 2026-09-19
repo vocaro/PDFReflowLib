@@ -194,6 +194,9 @@ enum TextLayerPlausibility {
         /// A misread layer was compared with recognition of the page image, which failed or read no
         /// better (`readsBetter`), so it was kept.
         case keptOverRecognition
+        /// A page whose only writing is drawn was recognized, which failed or read nothing, so the
+        /// page kept the text and crops it was extracted with (#176, #220).
+        case keptAsExtracted
         /// The OCR policy kept it.
         case retained
     }
@@ -227,6 +230,11 @@ enum TextLayerPlausibility {
         case .keptOverRecognition:
             return problem + " The page image was recognized again, but OCR failed or read it no better, so the existing text "
                 + "is retained; read " + (referencesDisabled ? "the source PDF instead." : "the accompanying original page image instead.")
+        case .keptAsExtracted:
+            // The page keeps whatever extraction gave it, which need not include a page reference,
+            // so this outcome promises the reader no accompanying image.
+            return problem + " The page was recognized because its artwork holds writing, but OCR failed or found no text, "
+                + "so the page keeps the text and image crops it was extracted with; the writing in its artwork does not reflow."
         case .retained:
             return problem + " The existing text is retained because the OCR policy keeps it; read "
                 + (referencesDisabled ? "the source PDF instead." : "the accompanying original page image instead.")

@@ -290,6 +290,7 @@ The outcome clause is one of:
 | Recognition read no better as English | "The existing text was discarded, but OCR of the page image does not read as English either, so the page is preserved as an image and does not reflow." | `implausibleRecognition` |
 | Kept over a comparison | "The page image was recognized again, but OCR failed or read it no better, so the existing text is retained; read the accompanying original page image instead." | `unverifiedTextLayer`, `ocrFailed` on failure |
 | Kept by policy | "The existing text is retained because the OCR policy keeps it; read the accompanying original page image instead." | `unverifiedTextLayer` |
+| Kept as extracted (#220) | "The page was recognized because its artwork holds writing, but OCR failed or found no text, so the page keeps the text and image crops it was extracted with; the writing in its artwork does not reflow." | `ocrFailed` |
 
 `.automatic` replaces a failing layer; a layer that fails only by misreading words in place is
 recognized and *compared* (`RecognitionPlan.Mode.compare`), and the recognition wins only when it
@@ -330,7 +331,9 @@ photograph shows belongs to the picture, which the crop preserves. Recognition a
 source-page reference in place of the crops. When recognition reads nothing, the page is left
 exactly as extracted, with its crops, and reports `ocrFailed` ("This page reflows no text of its
 own and its artwork holds writing, but recognition of the page failed or found no text; the
-artwork is preserved as images and its writing does not reflow."). This check coexists with the
+artwork is preserved as images and its writing does not reflow."). A layer finding the page also
+carries is reported beside it, with the kept-as-extracted outcome, so the page can still be
+reviewed (#220). This check coexists with the
 inherited-layer check: a letterless page never has enough judged words to fail the word test,
 and its two or three rows do not reach the ink test's seven.
 
@@ -366,10 +369,13 @@ below, is tested without a PDF in `RecognitionPolicyTests`.
 `resolve` reconciles the plan with the recognition outcome into a `PageDisposition` (kept layer,
 kept as extracted, replaced, or page image) and the page's warnings in report order: the
 encoding diagnosis first, then `unverifiedTextLayer` for a layer that stands (or wins a
-comparison) on an image-backed page, then what became of the layer and the recognition. Empty
-successful recognition leaves a page image (`ocrUsed` with no text, and `pageImageFallback`);
-failed recognition reports `ocrFailed` ("OCR failed; the source page is preserved as an image."
-or, after a comparison, "OCR failed; the existing text layer is retained."). Recognized tables
+comparison) on an image-backed page, then what became of the layer and the recognition. Recognition
+that succeeds and reads nothing is not a transcription (#222): the page is preserved as an image
+(`pageImageFallback`), is not counted in `recognizedPageCount`, and reports `ocrFailed` ("OCR of the
+page image found no text; the source page is preserved as an image and does not reflow.") rather
+than `ocrUsed`. A compared layer still wins over such a recognition. Failed recognition reports
+`ocrFailed` ("OCR failed; the source page is preserved as an image." or, after a comparison, "OCR
+failed; the existing text layer is retained."). Recognized tables
 become preserved regions; recognition marks the page for a source-page reference. Fresh OCR may
 improve some errors and introduce others, lose native formatting or change reading order.
 
@@ -378,8 +384,9 @@ improve some errors and introduce others, lose native formatting or change readi
 Vision recognizes the page image, with the declared language when the recognizer supports it.
 Uncertain words are preserved rather than dropped silently. OCR text is always reported as
 transcription (`ocrUsed`: "Text is OCR transcription. The original page image preserves
-unrecognized visual content."; with references disabled and text recognized, "Supplementary
-references are disabled; compare unrecognized visual content with the source PDF.").
+unrecognized visual content."; with references disabled, "Supplementary references are disabled;
+compare unrecognized visual content with the source PDF."). A recognition with no lines never
+reports `ocrUsed`; see `RecognitionPolicy` above.
 
 ## DocumentEvidence and PageStore: what survives extraction
 
@@ -597,8 +604,8 @@ Evidence: [spine-packing](../measurements/spine-packing/record.md),
 | Code | Emitted when |
 | --- | --- |
 | `structureFallback` | Tagged text on the page could not be matched unambiguously to native lines; or, attached to page 1, the document's structure tree was rejected (invalid, over budget or outside supported roles). |
-| `ocrUsed` | Recognition replaced the page's text (or ran and found nothing). |
-| `ocrFailed` | Recognition threw or read nothing: the page became an image, the compared layer was retained, or a drawn-text page kept its crops. |
+| `ocrUsed` | Recognition replaced the page's text with at least one recognized line. |
+| `ocrFailed` | Recognition threw, or succeeded and read nothing: the page became an image, the compared layer was retained, or a drawn-text page kept its crops. |
 | `uncertainHyphen` | A line-end hyphen neither the vocabulary nor the lexicon could decide is retained; once per page (`HyphenRepair`). |
 | `furnitureRemoved` | A repeated header, footer or folio was omitted from this page (`FurnitureDetector`). |
 | `imageRegion` | Figures, tables or equations on the page are carried as crops ("Graphical regions retain source appearance as images; their internal text does not reflow."), or a source-page reference accompanies reflowed text ("A source-page reference image accompanies reflowed text to preserve all visual content."). |
@@ -611,7 +618,7 @@ Evidence: [spine-packing](../measurements/spine-packing/record.md),
 | `unverifiedTextLayer` | Existing text over a page-sized graphic stands unverified ("Transcription, tables, numbers and reading order may be inaccurate."); a review signal, not an OCR confidence score. |
 | `implausibleTextLayer` | An inherited image-backed layer failed the word, misread or ink test, under every policy (`TextLayerPlausibility.message`). |
 | `implausibleRecognition` | Recognition of a page did not read as English and was discarded (`TextLayerPlausibility.recognitionMessage`). |
-| `damagedTextEncoding` | A font without a usable Unicode mapping is present and the words fail the English statistics; the message says whether recognition replaces the text or it is retained. |
+| `damagedTextEncoding` | A font without a usable Unicode mapping is present and the words fail the English statistics; the message is emitted after the recognition outcome is known and says whether recognition replaced the text, the text is retained, or it was discarded and the page became an image (#221). |
 
 Messages whose tail depends on `referenceImages == .never` say "read the source PDF instead" in
 place of the accompanying page image.

@@ -11,7 +11,20 @@ enum PageWarning: Equatable, Sendable {
         case unreadDrawnText
         /// A misread layer was kept because recognition failed.
         case layerRetained
-        /// The page became a page image.
+        /// Recognition failed and the page became a page image.
+        case pageImage
+        /// Recognition succeeded but read nothing, so the page became a page image (#222).
+        case noText
+    }
+
+    /// What became of native text that has no usable Unicode mapping. Known only once the
+    /// recognition the policy asked for has run, or has been declined (#221).
+    enum EncodingOutcome: Equatable, Sendable {
+        /// Recognition of the page image replaced it.
+        case replaced
+        /// It stands, and reaches the reader as it was extracted.
+        case retained
+        /// It was discarded, but recognition left no text either, so the page is an image.
         case pageImage
     }
 
@@ -27,13 +40,11 @@ enum PageWarning: Equatable, Sendable {
     case structureFallback
     case unsupportedGraphics
     case annotationsNotConverted
-    /// `recognized` says whether recognition of the page image replaces the unreadable text.
-    case damagedTextEncoding(recognized: Bool)
+    case damagedTextEncoding(EncodingOutcome)
     case unverifiedTextLayer
     case implausibleTextLayer(TextLayerPlausibility.Finding, TextLayerPlausibility.Outcome)
     case implausibleRecognition(TextLayerPlausibility.Finding)
-    /// `recognizedText` is false when recognition succeeded but found no text.
-    case ocrUsed(recognizedText: Bool)
+    case ocrUsed
     case ocrFailed(RecognitionFailure)
     case pageImageFallback
     case imageRegion(ImageRole)
@@ -58,14 +69,10 @@ enum ConversionWarnings {
             (.annotationsNotConverted, referencesDisabled
                 ? "Visible annotations and link/form interactions are not reconstructed; supplementary references are disabled."
                 : "A page image preserves visible annotations. Link and form interactions are not reconstructed.")
-        case .damagedTextEncoding(let recognized):
+        case .damagedTextEncoding(let outcome):
             (.damagedTextEncoding, "Native text has no usable Unicode mapping (custom font encoding without ToUnicode) "
                 + "and does not read as the declared language. "
-                + (recognized ? "Recognition of the page image replaces it."
-                    : "The unreadable native text is retained; "
-                    + (referencesDisabled
-                        ? "supplementary references are disabled, so read the source PDF instead."
-                        : "read the accompanying source-page image instead.")))
+                + damagedEncodingOutcome(outcome, referencesDisabled: referencesDisabled))
         case .unverifiedTextLayer:
             (.unverifiedTextLayer, "Text overlapping a page-sized graphic has not been verified against the source. "
                 + "Transcription, tables, numbers and reading order may be inaccurate. "
@@ -76,8 +83,8 @@ enum ConversionWarnings {
             (.implausibleTextLayer, TextLayerPlausibility.message(finding, outcome: outcome, referencesDisabled: referencesDisabled))
         case .implausibleRecognition(let finding):
             (.implausibleRecognition, TextLayerPlausibility.recognitionMessage(finding))
-        case .ocrUsed(let recognizedText):
-            (.ocrUsed, "Text is OCR transcription. " + (referencesDisabled && recognizedText
+        case .ocrUsed:
+            (.ocrUsed, "Text is OCR transcription. " + (referencesDisabled
                 ? "Supplementary references are disabled; compare unrecognized visual content with the source PDF."
                 : "The original page image preserves unrecognized visual content."))
         case .ocrFailed(.unreadDrawnText):
@@ -88,6 +95,9 @@ enum ConversionWarnings {
             (.ocrFailed, "OCR failed; the existing text layer is retained.")
         case .ocrFailed(.pageImage):
             (.ocrFailed, "OCR failed; the source page is preserved as an image.")
+        case .ocrFailed(.noText):
+            (.ocrFailed, "OCR of the page image found no text; the source page is preserved as an image "
+                + "and does not reflow.")
         case .pageImageFallback:
             (.pageImageFallback, "This page is preserved as an image and does not reflow.")
         case .imageRegion(.regionCrops):
@@ -99,5 +109,23 @@ enum ConversionWarnings {
                 + "Compare the source PDF for visual content and transcription accuracy.")
         }
         return ConversionWarning(code: code, page: page, message: message)
+    }
+
+    /// The tail of the `damagedTextEncoding` message: what became of the unreadable text, which
+    /// the conversion knows only after the recognition its policy asked for has run (#221).
+    private static func damagedEncodingOutcome(_ outcome: PageWarning.EncodingOutcome,
+                                               referencesDisabled: Bool) -> String {
+        switch outcome {
+        case .replaced:
+            "Recognition of the page image replaced it."
+        case .retained:
+            "The unreadable native text is retained; "
+                + (referencesDisabled
+                    ? "supplementary references are disabled, so read the source PDF instead."
+                    : "read the accompanying source-page image instead.")
+        case .pageImage:
+            "The unreadable native text was discarded, but recognition of the page image failed or found "
+                + "no text, so the page is preserved as an image and does not reflow."
+        }
     }
 }

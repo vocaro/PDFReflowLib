@@ -144,11 +144,15 @@ private func reading(_ text: String) -> OCRReader.Result {
     options.referenceImages = .never
     let result = try await PDFReflowLibPipeline.reconstruct(from: source, options: options,
         workspace: dir.appendingPathComponent("work"), progress: { _ in })
-    #expect(result.recognizedPageCount == 1)
+    // Recognition of the blank page succeeds and reads nothing, which is not a transcription:
+    // the page is preserved as an image and is not counted as recognized (#222).
+    #expect(result.recognizedPageCount == 0)
     #expect(result.reflowedPageCount == 0)
     #expect(result.document.blocks.allSatisfy { $0.text.isEmpty })
     #expect(result.document.assets.count == 1)
     #expect(result.warnings.contains { $0.code == .pageImageFallback })
+    #expect(result.warnings.contains { $0.code == .ocrFailed && $0.message.contains("found no text") })
+    #expect(!result.warnings.contains { $0.code == .ocrUsed })
     #expect(!result.warnings.contains { $0.code == .unverifiedTextLayer })
 }
 
@@ -236,12 +240,11 @@ func textLayerPDF(_ text: String, imageSize: Int = 300, invisible: Bool = true) 
         #expect(result.document.assets.count == 1)
         #expect(result.warnings.contains { $0.code == .pageImageFallback && $0.page == 1 })
         #expect(!result.warnings.contains { $0.code == .unverifiedTextLayer })
-        if policy != .never {
-            #expect(result.recognizedPageCount == 1)
-            #expect(result.warnings.contains { $0.code == .ocrUsed })
-        } else {
-            #expect(result.recognizedPageCount == 0)
-        }
+        // Recognition reads nothing from the scan whichever policy asked for it, so no page is
+        // counted as recognized and none claims a transcription (#222); only the attempt differs.
+        #expect(result.recognizedPageCount == 0)
+        #expect(!result.warnings.contains { $0.code == .ocrUsed })
+        #expect(result.warnings.contains { $0.code == .ocrFailed && $0.message.contains("found no text") } == (policy != .never))
     }
 }
 

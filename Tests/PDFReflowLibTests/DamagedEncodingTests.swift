@@ -228,7 +228,7 @@ func fontEvidenceReadsFontsInheritedFromThePageTree() throws {
         } else {
             #expect(await log.pages == [1])
             #expect(result.recognizedPageCount == 1)
-            #expect(warning.message.contains("Recognition of the page image replaces it"))
+            #expect(warning.message.contains("Recognition of the page image replaced it"))
             #expect(result.warnings.contains { $0.code == .ocrUsed && $0.page == 1 })
             #expect(text.contains("Two data files were used"), "\(policy): \(text)")
             #expect(!text.contains("Wzr"))

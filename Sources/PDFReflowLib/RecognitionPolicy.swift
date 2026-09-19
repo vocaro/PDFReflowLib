@@ -34,10 +34,22 @@ enum PageDisposition: Equatable {
     case keptLayer
     /// A drawn-text page whose recognition read nothing keeps its extracted crops untouched.
     case keptAsExtracted
-    /// Recognition replaces the page's text; empty recognition leaves a page image.
+    /// Recognition replaces the page's text. `resolve` never makes one of a reading with no
+    /// lines: a page whose recognition read nothing keeps its crops or becomes an image (#222).
     case replaced(OCRReader.Result)
     /// The page is preserved as an image and reflows nothing.
     case pageImage
+
+    /// What became of native text the page could not map to Unicode, for the `damagedTextEncoding`
+    /// message. Only a disposition knows it: the plan alone cannot say whether recognition ran,
+    /// read anything, or was believed (#221).
+    var encodingOutcome: PageWarning.EncodingOutcome {
+        switch self {
+        case .keptLayer, .keptAsExtracted: .retained
+        case .replaced: .replaced
+        case .pageImage: .pageImage
+        }
+    }
 
     func apply(to content: inout PageContent) {
         switch self {
@@ -47,9 +59,8 @@ enum PageDisposition: Equatable {
             content.lines = recognized.lines
             content.recognized = true
             content.hasSyntheticTextStyle = false
-            content.preservePageReference = content.preservePageReference || !recognized.lines.isEmpty
+            content.preservePageReference = true
             content.graphics = recognized.tables
-            content.requiresPageImage = recognized.lines.isEmpty
         case .pageImage:
             content.lines = []
             content.requiresPageImage = true
@@ -112,7 +123,7 @@ enum RecognitionPolicy {
         let (disposition, outcomeWarnings) = reconcile(plan, finding: evidence.implausibleLayer, outcome: outcome, judge: judge)
         var warnings: [PageWarning] = []
         if evidence.damagedEncoding {
-            warnings.append(.damagedTextEncoding(recognized: plan.recognizes))
+            warnings.append(.damagedTextEncoding(disposition.encodingOutcome))
         }
         // The layer stands as unverified text only while the plan keeps it (or compares it and
         // it wins); a replaced layer takes its review notice with it.
@@ -138,8 +149,9 @@ enum RecognitionPolicy {
         case .read(let recognized):
             if recognized.lines.isEmpty, keepCropsIfUnread {
                 // Recognition read nothing from a page whose art is its only writing: say so, and
-                // leave the extracted page (its crops and its folio) exactly as it was.
-                return (.keptAsExtracted, [.ocrFailed(.unreadDrawnText)])
+                // leave the extracted page (its crops and its folio) exactly as it was. The layer's
+                // own finding is still reported, so the page can be reviewed (#220).
+                return (.keptAsExtracted, layer(.keptAsExtracted) + [.ocrFailed(.unreadDrawnText)])
             }
             // Recognition that does not read as English is noise, not a transcription (#7): a
             // reader is better served by the page image than by text made of it.
@@ -156,15 +168,21 @@ enum RecognitionPolicy {
             if recognitionFinding != nil {
                 return (.pageImage, warnings + layer(.implausibleRecognition))
             }
-            warnings += layer(recognized.lines.isEmpty ? .pageImage : .replaced)
-            warnings.append(.ocrUsed(recognizedText: !recognized.lines.isEmpty))
+            if recognized.lines.isEmpty {
+                // Recognition succeeded and read nothing. There is no transcription to announce and
+                // nothing for the page to reflow, so it is preserved as an image and is not counted
+                // as a recognized page (#222).
+                return (.pageImage, warnings + layer(.pageImage) + [.ocrFailed(.noText)])
+            }
+            warnings += layer(.replaced)
+            warnings.append(.ocrUsed)
             return (.replaced(recognized), warnings)
         case .failed:
             if mode.compares {
                 return (.keptLayer, layer(.keptOverRecognition) + [.ocrFailed(.layerRetained)])
             }
             if keepCropsIfUnread {
-                return (.keptAsExtracted, [.ocrFailed(.unreadDrawnText)])
+                return (.keptAsExtracted, layer(.keptAsExtracted) + [.ocrFailed(.unreadDrawnText)])
             }
             return (.pageImage, layer(.pageImage) + [.ocrFailed(.pageImage)])
         }

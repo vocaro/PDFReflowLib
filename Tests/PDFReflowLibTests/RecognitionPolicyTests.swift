@@ -97,7 +97,7 @@ private let noise = RecognitionJudge(finding: { _ in fewEnglish }, readsBetter: 
     #expect(retained.warnings == [.unverifiedTextLayer, .implausibleTextLayer(fewEnglish, .retained)])
 
     let unreadable = RecognitionPolicy.resolve(.keepExtracted, evidence: evidence(damagedEncoding: true), outcome: nil, judge: trusting)
-    #expect(unreadable.warnings == [.damagedTextEncoding(recognized: false)])
+    #expect(unreadable.warnings == [.damagedTextEncoding(.retained)])
 
     // A page image never carries the unverified-layer notice, whatever it is drawn over.
     let image = RecognitionPolicy.resolve(.keepExtracted, evidence: evidence(requiresPageImage: true, imageBacked: true),
@@ -108,22 +108,42 @@ private let noise = RecognitionJudge(finding: { _ in fewEnglish }, readsBetter: 
 @Test func replacementReportsWhatRecognitionDid() {
     let replace = RecognitionPlan.recognize(.replace, keepCropsIfUnread: false)
     let plain = RecognitionPolicy.resolve(replace, evidence: evidence(hasText: false), outcome: .read(reading), judge: trusting)
-    #expect(plain == .init(disposition: .replaced(reading), warnings: [.ocrUsed(recognizedText: true)]))
+    #expect(plain == .init(disposition: .replaced(reading), warnings: [.ocrUsed]))
 
     // A replaced layer takes its unverified-text notice with it; the finding says it was replaced.
     let failing = RecognitionPolicy.resolve(replace, evidence: evidence(imageBacked: true, finding: fewEnglish),
                                             outcome: .read(reading), judge: trusting)
     #expect(failing.disposition == .replaced(reading))
-    #expect(failing.warnings == [.implausibleTextLayer(fewEnglish, .replaced), .ocrUsed(recognizedText: true)])
+    #expect(failing.warnings == [.implausibleTextLayer(fewEnglish, .replaced), .ocrUsed])
 
     let unreadable = RecognitionPolicy.resolve(replace, evidence: evidence(damagedEncoding: true), outcome: .read(reading), judge: trusting)
-    #expect(unreadable.warnings == [.damagedTextEncoding(recognized: true), .ocrUsed(recognizedText: true)])
+    #expect(unreadable.warnings == [.damagedTextEncoding(.replaced), .ocrUsed])
+}
 
-    // Empty recognition leaves a page image (#222 tracks the `ocrUsed` notice it still carries).
-    let empty = RecognitionPolicy.resolve(replace, evidence: evidence(imageBacked: true, finding: fewEnglish),
-                                          outcome: .read(nothing), judge: trusting)
-    #expect(empty.disposition == .replaced(nothing))
-    #expect(empty.warnings == [.implausibleTextLayer(fewEnglish, .pageImage), .ocrUsed(recognizedText: false)])
+/// Recognition that succeeds and reads nothing is not a transcription: the page carries no
+/// `ocrUsed` notice, is not counted as recognized, and is preserved as an image (#222).
+@Test func emptyRecognitionLeavesAPageImageAndIsNotCalledATranscription() {
+    let replace = RecognitionPlan.recognize(.replace, keepCropsIfUnread: false)
+    let plain = RecognitionPolicy.resolve(replace, evidence: evidence(hasText: false), outcome: .read(nothing), judge: trusting)
+    #expect(plain == .init(disposition: .pageImage, warnings: [.ocrFailed(.noText)]))
+
+    let failing = RecognitionPolicy.resolve(replace, evidence: evidence(imageBacked: true, finding: fewEnglish),
+                                            outcome: .read(nothing), judge: trusting)
+    #expect(failing.disposition == .pageImage)
+    #expect(failing.warnings == [.implausibleTextLayer(fewEnglish, .pageImage), .ocrFailed(.noText)])
+
+    // The unreadable text was discarded and nothing replaced it, which the encoding notice says.
+    let unreadable = RecognitionPolicy.resolve(replace, evidence: evidence(damagedEncoding: true),
+                                               outcome: .read(nothing), judge: trusting)
+    #expect(unreadable.disposition == .pageImage)
+    #expect(unreadable.warnings == [.damagedTextEncoding(.pageImage), .ocrFailed(.noText)])
+
+    // A compared layer still wins over a recognition that read nothing (#7).
+    let compare = RecognitionPlan.recognize(.compare(misread: 12, words: 100), keepCropsIfUnread: false)
+    let kept = RecognitionPolicy.resolve(compare, evidence: evidence(imageBacked: true, finding: misread),
+                                         outcome: .read(nothing), judge: noise)
+    #expect(kept.disposition == .keptLayer)
+    #expect(kept.warnings == [.unverifiedTextLayer, .implausibleTextLayer(misread, .keptOverRecognition)])
 }
 
 @Test func noisyRecognitionLeavesAPageImage() {
@@ -142,10 +162,17 @@ private let noise = RecognitionJudge(finding: { _ in fewEnglish }, readsBetter: 
     for outcome in [RecognitionOutcome.read(nothing), .failed] {
         let kept = RecognitionPolicy.resolve(drawn, evidence: evidence(drawnText: true), outcome: outcome, judge: trusting)
         #expect(kept == .init(disposition: .keptAsExtracted, warnings: [.ocrFailed(.unreadDrawnText)]))
+
+        // A drawn-text page can also carry a layer finding: a folio over a page-sized graphic
+        // leaves the page's ink uncovered. The finding must survive the unread page (#220).
+        let failing = RecognitionPolicy.resolve(drawn, evidence: evidence(finding: missing, drawnText: true),
+                                                outcome: outcome, judge: trusting)
+        #expect(failing.disposition == .keptAsExtracted)
+        #expect(failing.warnings == [.implausibleTextLayer(missing, .keptAsExtracted), .ocrFailed(.unreadDrawnText)])
     }
     // Recognition that reads the drawn writing replaces the page like any other.
     let read = RecognitionPolicy.resolve(drawn, evidence: evidence(drawnText: true), outcome: .read(reading), judge: trusting)
-    #expect(read == .init(disposition: .replaced(reading), warnings: [.ocrUsed(recognizedText: true)]))
+    #expect(read == .init(disposition: .replaced(reading), warnings: [.ocrUsed]))
 }
 
 @Test func comparedLayersStandUnlessRecognitionReadsBetter() {
@@ -154,7 +181,7 @@ private let noise = RecognitionJudge(finding: { _ in fewEnglish }, readsBetter: 
 
     let better = RecognitionPolicy.resolve(compare, evidence: page, outcome: .read(reading), judge: trusting)
     #expect(better.disposition == .replaced(reading))
-    #expect(better.warnings == [.implausibleTextLayer(misread, .replaced), .ocrUsed(recognizedText: true)])
+    #expect(better.warnings == [.implausibleTextLayer(misread, .replaced), .ocrUsed])
 
     let worse = RecognitionPolicy.resolve(compare, evidence: page, outcome: .read(reading),
                                           judge: .init(finding: { _ in nil }, readsBetter: { _, _, _ in false }))
@@ -181,8 +208,9 @@ private let noise = RecognitionJudge(finding: { _ in fewEnglish }, readsBetter: 
     #expect(layer.disposition == .pageImage)
     #expect(layer.warnings == [.implausibleTextLayer(fewEnglish, .pageImage), .ocrFailed(.pageImage)])
 
+    // Recognition was asked for and failed, so the unreadable text was discarded for nothing (#221).
     let unreadable = RecognitionPolicy.resolve(replace, evidence: evidence(damagedEncoding: true), outcome: .failed, judge: trusting)
-    #expect(unreadable.warnings == [.damagedTextEncoding(recognized: true), .ocrFailed(.pageImage)])
+    #expect(unreadable.warnings == [.damagedTextEncoding(.pageImage), .ocrFailed(.pageImage)])
 }
 
 @Test func dispositionsEditThePage() {
@@ -197,10 +225,6 @@ private let noise = RecognitionJudge(finding: { _ in fewEnglish }, readsBetter: 
     #expect(replaced.lines.map(\.text) == ["Recognized"])
     #expect(replaced.recognized && replaced.preservePageReference && !replaced.hasSyntheticTextStyle && !replaced.requiresPageImage)
     #expect(replaced.graphics == [table])
-
-    var emptied = original
-    PageDisposition.replaced(nothing).apply(to: &emptied)
-    #expect(emptied.lines.isEmpty && emptied.recognized && emptied.requiresPageImage && !emptied.preservePageReference)
 
     var image = original
     PageDisposition.pageImage.apply(to: &image)
@@ -243,13 +267,15 @@ private let noise = RecognitionJudge(finding: { _ in fewEnglish }, readsBetter: 
     func text(_ kind: PageWarning, _ options: ConversionOptions) -> String {
         ConversionWarnings.warning(kind, page: 7, options: options).message
     }
-    #expect(ConversionWarnings.warning(.ocrUsed(recognizedText: true), page: 7, options: references).page == 7)
-    #expect(text(.ocrUsed(recognizedText: true), references).contains("original page image"))
-    #expect(text(.ocrUsed(recognizedText: true), none).contains("references are disabled"))
-    #expect(text(.ocrUsed(recognizedText: false), none).contains("original page image"))
-    #expect(text(.damagedTextEncoding(recognized: true), none).contains("Recognition of the page image replaces it"))
-    #expect(text(.damagedTextEncoding(recognized: false), references).contains("read the accompanying source-page image"))
-    #expect(text(.damagedTextEncoding(recognized: false), none).contains("read the source PDF instead"))
+    #expect(ConversionWarnings.warning(.ocrUsed, page: 7, options: references).page == 7)
+    #expect(text(.ocrUsed, references).contains("original page image"))
+    #expect(text(.ocrUsed, none).contains("references are disabled"))
+    #expect(text(.damagedTextEncoding(.replaced), none).contains("Recognition of the page image replaced it"))
+    #expect(text(.damagedTextEncoding(.retained), references).contains("read the accompanying source-page image"))
+    #expect(text(.damagedTextEncoding(.retained), none).contains("read the source PDF instead"))
+    #expect(text(.damagedTextEncoding(.pageImage), references).contains("was discarded"))
+    #expect(text(.ocrFailed(.noText), references).contains("found no text"))
+    #expect(text(.implausibleTextLayer(missing, .keptAsExtracted), references).contains("keeps the text and image crops"))
     #expect(text(.unverifiedTextLayer, references).contains("Check the accompanying source-page image"))
     #expect(text(.unverifiedTextLayer, none).contains("Check the source PDF"))
     #expect(text(.annotationsNotConverted, none).contains("supplementary references are disabled"))

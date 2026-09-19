@@ -62,10 +62,26 @@ enum LayoutReconstructor {
         var image: String?
     }
 
+    /// Convenience for callers that do not report an abandoned cut.
+    static func ordered(_ elements: [Element], bodySize: CGFloat) -> [Element] {
+        var exhausted = false
+        return ordered(elements, bodySize: bodySize, exhausted: &exhausted)
+    }
+
     // Recursive whitespace cuts: columns first; a spanning heading is separated by a horizontal
     // cut before retrying columns. No page-wide y/x sort of interleaved column text.
-    static func ordered(_ elements: [Element], bodySize: CGFloat, depth: Int = 0) -> [Element] {
-        guard elements.count > 1, depth < 32 else { return elements }
+    //
+    // `exhausted` is set when the depth limit stops the cuts while a group still holds several
+    // elements: that group is returned in the order it arrived in, which is extraction order,
+    // not a reconstructed reading order. Reaching the limit needs 32 nested cuts, so it takes a
+    // page of many blocks whose separating gaps do not decrease (an exactly leaded manuscript
+    // or transcript); the deepest of the captured corpus pages cuts eleven levels. The page
+    // reports it as `complexLayout` rather than leaving the fallback silent, as the tag phase
+    // reports its own give-up (#224).
+    static func ordered(_ elements: [Element], bodySize: CGFloat, depth: Int = 0,
+                        exhausted: inout Bool) -> [Element] {
+        guard elements.count > 1 else { return elements }
+        guard depth < 32 else { exhausted = true; return elements }
         func gap(horizontal: Bool) -> CGFloat? {
             let intervals = elements.map { horizontal ? ($0.rect.minX, $0.rect.maxX) : ($0.rect.minY, $0.rect.maxY) }
                 .sorted { $0.0 < $1.0 }
@@ -93,12 +109,12 @@ enum LayoutReconstructor {
             return best?.1
         }
         if let x = gap(horizontal: true) {
-            return ordered(elements.filter { $0.rect.maxX < x }, bodySize: bodySize, depth: depth + 1)
-                + ordered(elements.filter { $0.rect.minX > x }, bodySize: bodySize, depth: depth + 1)
+            return ordered(elements.filter { $0.rect.maxX < x }, bodySize: bodySize, depth: depth + 1, exhausted: &exhausted)
+                + ordered(elements.filter { $0.rect.minX > x }, bodySize: bodySize, depth: depth + 1, exhausted: &exhausted)
         }
         if let y = gap(horizontal: false) {
-            return ordered(elements.filter { $0.rect.minY > y }, bodySize: bodySize, depth: depth + 1)
-                + ordered(elements.filter { $0.rect.maxY < y }, bodySize: bodySize, depth: depth + 1)
+            return ordered(elements.filter { $0.rect.minY > y }, bodySize: bodySize, depth: depth + 1, exhausted: &exhausted)
+                + ordered(elements.filter { $0.rect.maxY < y }, bodySize: bodySize, depth: depth + 1, exhausted: &exhausted)
         }
         return elements.sorted {
             abs($0.rect.midY - $1.rect.midY) > bodySize * 0.4
@@ -396,8 +412,14 @@ enum LayoutReconstructor {
         // cell or a reading of handwriting set large is not a title, and every heading is a
         // navigation entry (#7).
         let judgesTitleWords = page.recognized && EnglishText.isDeclared(context.language)
+        var exhausted = false
         let spatial = ordered(lines.map { Element(rect: $0.readingRect ?? $0.rect, line: $0) }
-            + images.map { Element(rect: $0.0, image: $0.1) }, bodySize: typography.body)
+            + images.map { Element(rect: $0.0, image: $0.1) }, bodySize: typography.body, exhausted: &exhausted)
+        if exhausted {
+            warnings.append(.init(code: .complexLayout, page: page.number,
+                message: "Whitespace cuts reached their depth limit before separating this page's content; "
+                    + "what remained keeps the order it was extracted in, which may not be its reading order."))
+        }
         let elements = structuredOrder(spatial, page: page.number, warnings: &warnings)
         let noteGroups = NumberedNoteDetector.groups(in: elements, page: page,
                                                      headingEvidence: context.numberedNotePages.contains(page.number))

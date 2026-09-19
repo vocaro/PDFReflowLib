@@ -8,7 +8,7 @@ class CorpusQualityTests(unittest.TestCase):
               timed_out=False, identity='source', completed=False, allowed_errors=()):
         case = {'id': 'scan', 'sha256': 'source', 'bytes': 10, 'pages': 200,
                 'qualityExpectation': {'warningPages': [74, 150],
-                                       'warningCodes': ['complexLayout'],
+                                       'warningCodes': ['unverifiedTextLayer'],
                                        'qualityRejectionDiagnostics': list(allowed_errors)}}
         result = {'case': dict(case, sha256=identity), 'conversionExitCode': exit_code,
                   'runPassed': exit_code == 0, 'timedOut': timed_out}
@@ -20,7 +20,7 @@ class CorpusQualityTests(unittest.TestCase):
         self.assertFalse(self.check(warnings=[{'page': p, 'code': 'imageRegion'} for p in [74, 150]]))
 
     def test_specific_warnings_required_on_every_reference_page(self):
-        warnings = [{'page': p, 'code': 'complexLayout'} for p in [74, 150]]
+        warnings = [{'page': p, 'code': 'unverifiedTextLayer'} for p in [74, 150]]
         self.assertTrue(self.check(warnings=warnings))
         self.assertFalse(self.check(warnings=warnings[:1]))
         self.assertFalse(self.check(warnings=warnings, identity='different-source'))

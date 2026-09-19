@@ -8,7 +8,12 @@ enum GraphicsReader {
                     /// Placed raster image XObjects specifically, a subset of `regions` (#176):
                     /// a photograph's internal texture is not writing the page drew, even where it
                     /// forms rows the ink test would otherwise count.
-                    var images: [CGRect] = [] }
+                    var images: [CGRect] = []
+                    /// A text-showing operator painted visibly. A page with none of these, no
+                    /// painted region and no annotation draws nothing at all (#224); extracted
+                    /// text alone cannot say so, since glyphs PDFKit cannot map extract as
+                    /// nothing.
+                    var visibleText = false }
     private final class State {
         var matrix = CGAffineTransform.identity
         var saved: [(CGAffineTransform, Bool, CGRect, Int)] = []
@@ -222,7 +227,8 @@ enum GraphicsReader {
         let bounds = page.getBoxRect(.cropBox)
         return Result(regions: clusters(s.regions.map { $0.intersection(bounds) }, distance: 4),
                       unsupported: s.unsupported, hasOnlyInvisibleText: !s.unsupported && s.invisibleText && !s.visibleText,
-                      images: clusters(s.images.map { $0.intersection(bounds) }, distance: 4))
+                      images: clusters(s.images.map { $0.intersection(bounds) }, distance: 4),
+                      visibleText: s.visibleText)
     }
 
     // The sh operator paints within the active clip and optional shading BBox. Do not infer

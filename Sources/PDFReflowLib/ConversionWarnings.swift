@@ -36,6 +36,8 @@ enum PageWarning: Equatable, Sendable {
     case ocrUsed(recognizedText: Bool)
     case ocrFailed(RecognitionFailure)
     case pageImageFallback
+    /// The page's content stream draws nothing at all (#224).
+    case emptyPage
     case imageRegion(ImageRole)
     case referenceImageOmitted
 }
@@ -90,6 +92,8 @@ enum ConversionWarnings {
             (.ocrFailed, "OCR failed; the source page is preserved as an image.")
         case .pageImageFallback:
             (.pageImageFallback, "This page is preserved as an image and does not reflow.")
+        case .emptyPage:
+            (.emptyPage, "This page draws no text and no graphics; nothing is extracted from it.")
         case .imageRegion(.regionCrops):
             (.imageRegion, "Graphical regions retain source appearance as images; their internal text does not reflow.")
         case .imageRegion(.pageReference):

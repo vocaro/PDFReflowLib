@@ -5,9 +5,9 @@ import Foundation
 import PDFKit
 
 let arguments = Array(CommandLine.arguments.dropFirst())
-guard arguments.count == 3, ["plain", "line", "page"].contains(arguments[1]),
+guard arguments.count == 3, ["plain", "line", "text-line", "union", "page"].contains(arguments[1]),
       let passes = Int(arguments[2]), (1...10).contains(passes) else {
-    fputs("Usage: probe-pdfkit-memory input.pdf plain|line|page passes(1...10)\n", stderr)
+    fputs("Usage: probe-pdfkit-memory input.pdf plain|line|text-line|union|page passes(1...10)\n", stderr)
     exit(2)
 }
 let url = URL(fileURLWithPath: arguments[0])
@@ -22,8 +22,23 @@ for pass in 1...passes {
             if mode == "page" {
                 characters += page.attributedString?.length ?? 0
             } else if let selection = page.selection(for: page.bounds(for: .cropBox)) {
-                for line in selection.selectionsByLine() {
-                    characters += mode == "line" ? (line.attributedString?.length ?? 0) : (line.string?.count ?? 0)
+                var lines = selection.selectionsByLine()
+                // `text-line` and `union` read the lines the library styles: those with text other
+                // than attachments. `union` reads them in one request, as the library does (#4).
+                if mode == "text-line" || mode == "union" {
+                    lines = lines.filter { line in
+                        !(line.string ?? "").replacingOccurrences(of: "\u{FFFC}", with: " ")
+                            .trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+                    }
+                }
+                if mode == "union", !lines.isEmpty {
+                    let union = PDFSelection(document: document)
+                    union.add(lines)
+                    characters += union.attributedString?.length ?? 0
+                } else if mode != "union" {
+                    for line in lines {
+                        characters += mode == "plain" ? (line.string?.count ?? 0) : (line.attributedString?.length ?? 0)
+                    }
                 }
             }
         }

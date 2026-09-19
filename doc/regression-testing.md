@@ -599,6 +599,17 @@ from eager loading of sparse ParentTree arrays; `--maximum-rss-mib` overrides th
 limit. Full conversion retains its separate per-book memory gates. Neither budget qualifies
 physical iPhone/iPad performance.
 
+`tools/check_repeated_conversions.py` (in `check-all.sh --corpus`) bounds what PDFKit's
+attributed-text leak (FB24783799, [#4](https://github.com/vocaro/PDFReflowLib/issues/4)) adds per
+conversion when an app converts several PDFs in one process. It converts the Fed three times in
+one process through the public API with pinned packaging and runs `leaks` after each round. Every
+round must produce the first round's EPUB, and the leaked objects added per conversion must stay
+within 30 per page (`--maximum-leaked-objects-per-page`). One attributed request per page leaves
+about 1,760 objects per Fed conversion; one per line, as before #4, left about 22,900 and fails.
+Leaked bytes are reported, not gated, and the Mac count does not qualify a device.
+`AttributedExtractionTests.swift` checks that a page's union request returns every styled line,
+each equal to the line's own request, and that union text aligns with its lines only in order.
+See the [repeated-conversion record](../measurements/pdfkit-repeated-conversions/record.md).
 
 ## Concurrent native extraction
 

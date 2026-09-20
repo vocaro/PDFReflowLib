@@ -103,6 +103,12 @@ extension LayoutReconstructor {
 /// preformatted blocks from code and list lines, headings, images, and the tagged and numbered
 /// note groups that arrive already grouped. It owns the paragraph in progress and the code
 /// block's origin; every `append` decides what the previous block was and flushes it.
+///
+/// There is one paragraph in progress, whether the structure tree named it or the page's
+/// geometry did. A page whose tags apply only in part (#67) hands the assembler tagged and
+/// untagged lines of one printed paragraph in turn, so a second, parallel slot for tagged text
+/// would break that paragraph at every crossing — and strand `previous` and the open paragraph
+/// that `continuesWrapped` reads (#238).
 struct BlockAssembler {
     let page: Int
     let body: CGFloat
@@ -111,8 +117,12 @@ struct BlockAssembler {
     /// Uncertain-hyphen warnings the joins raised, one per page.
     private(set) var warnings: [ConversionWarning] = []
     private var note: (group: Int, text: InlineText)?
-    private var tagged: (tag: TextStructure, text: InlineText)?
     private var paragraph = InlineText()
+    /// The structure group the open paragraph belongs to, when the tags named one. A tagged and
+    /// an untagged line of the same printed paragraph arrive at one assembler — a page whose
+    /// tags partly apply interleaves them (#67) — so the open paragraph is one slot, and the tag
+    /// travels with it rather than holding a second, parallel one (#238).
+    private var paragraphTag: TextStructure?
     private var previous: TextLine?
     private var codeOrigin: CGFloat?
 
@@ -133,25 +143,24 @@ struct BlockAssembler {
         note = nil
     }
 
-    private mutating func flushTagged() {
-        guard let tagged else { return }
-        let content: ReflowBlock.Content = tagged.tag.headingLevel == 0 ? .paragraph(tagged.text)
-            : .heading(id: headingID(), text: tagged.text, level: tagged.tag.headingLevel)
-        blocks.append(ReflowBlock(content: content, structureGroup: tagged.tag.group, page: page))
-        self.tagged = nil
-    }
+    /// The heading level the tags gave the open paragraph; zero for an untagged one and for a
+    /// tagged paragraph, which is what `TextStructure` already means by zero.
+    private var paragraphHeadingLevel: Int { paragraphTag?.headingLevel ?? 0 }
 
     private mutating func flushParagraph() {
         if !paragraph.elements.isEmpty {
-            blocks.append(ReflowBlock(content: .paragraph(paragraph), page: page))
+            let level = paragraphHeadingLevel
+            let content: ReflowBlock.Content = level == 0 ? .paragraph(paragraph)
+                : .heading(id: headingID(), text: paragraph, level: level)
+            blocks.append(ReflowBlock(content: content, structureGroup: paragraphTag?.group, page: page))
         }
         paragraph = InlineText()
+        paragraphTag = nil
         previous = nil
     }
 
     /// A line of a numbered note; consecutive lines of one `group` join into one paragraph.
     mutating func appendNote(group: Int, _ line: TextLine) {
-        flushTagged()
         flushParagraph()
         codeOrigin = nil
         if note?.group != group { flushNote() }
@@ -164,28 +173,33 @@ struct BlockAssembler {
 
     mutating func appendImage(_ assetID: String) {
         flushNote()
-        flushTagged()
         flushParagraph()
         codeOrigin = nil
         blocks.append(LayoutReconstructor.imageBlock(assetID: assetID, page: page))
     }
 
-    /// A line the structure tree tagged; consecutive lines of one group join into one block.
+    /// A line the structure tree tagged; consecutive lines of one group join into one block. A
+    /// group the tags name is a paragraph boundary the source states, so it always opens its own
+    /// block: an untagged paragraph left open before it is flushed, whatever the geometry says.
     mutating func appendTagged(_ tag: TextStructure, _ line: TextLine) {
         flushNote()
-        flushParagraph()
         codeOrigin = nil
-        if tagged?.tag.group != tag.group { flushTagged() }
-        if let current = tagged {
-            tagged = (current.tag, join(current.text, line.content))
+        if paragraphTag?.group != tag.group { flushParagraph() }
+        if paragraph.elements.isEmpty {
+            paragraph = line.content
+            paragraphTag = tag
         } else {
-            tagged = (tag, line.content)
+            paragraph = join(paragraph, line.content)
         }
+        previous = line
     }
 
     mutating func append(_ line: TextLine, as role: LineRole) {
         flushNote()
-        flushTagged()
+        // An untagged line never extends a tagged heading: the tags said where that heading ends,
+        // and prose set beneath it at the column's leading is the text it heads, not more of the
+        // heading. The roles below that open a block of their own flush the paragraph themselves.
+        if paragraphHeadingLevel > 0 { flushParagraph() }
         if !line.monospaced { codeOrigin = nil }
         switch role {
         case .heading:
@@ -276,7 +290,6 @@ struct BlockAssembler {
 
     mutating func finish() -> [ReflowBlock] {
         flushNote()
-        flushTagged()
         flushParagraph()
         return blocks
     }

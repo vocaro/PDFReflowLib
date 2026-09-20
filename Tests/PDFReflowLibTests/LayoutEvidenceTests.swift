@@ -418,3 +418,79 @@ func theNineElevenReportKeepsAPresidentsInitialInItsParagraph() throws {
         #expect(items.allSatisfy { blocks.contains($0) }, Comment(rawValue: name))
     }
 }
+
+// MARK: - A paragraph the page tags in part (#67, #238)
+
+/// Loper Bright page 13, with the page's own tags applied. The slip opinion's tags apply only in
+/// part on every one of its pages, and here exactly one line of a nine-line paragraph — its
+/// first — carries a `P` group; the other eight fall back to the spatial rules. The assembler
+/// therefore receives one printed paragraph as a tagged line followed by untagged ones, and the
+/// second of those untagged lines opens `F. 4th`, which reads as a list marker.
+///
+/// Every byte here is the source's: `loper-13-tags.json` replays page 13's content stream, fonts
+/// and structure subtree, and `loper-13-layout.json` carries PDFKit's own lines for the page.
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/67"),
+      .bug("https://github.com/vocaro/PDFReflowLib/issues/238"))
+func aParagraphTaggedOnlyOnItsFirstLineStaysOneParagraph() throws {
+    let fixture = try SourceTagFixture.load("loper-13")
+    let native = try SourceLayoutFixture.load("loper-13")
+    #expect(fixture.sourceSHA256 == loperBrightSHA256)
+    #expect(native.sourceSHA256 == loperBrightSHA256)
+    let opening = "A divided panel of the D. C. Circuit affirmed. See 45"
+    let wrapped = "F. 4th 359 (2022). The majority addressed various provi-"
+    var content = native.content()
+    try fixture.withPage { url, page in
+        let tree = try StructureTreeReader.read(url)
+        let tags = try #require(tree.pages[1])
+        // The page's tags apply in part: a show this reader cannot place costs its own group and
+        // no more, which is what #67 opened and what leaves the page's lines interleaved.
+        #expect(!MarkedTextReader.apply(tags, page: page, lines: &content.lines))
+    }
+    let tagged = content.lines.filter { $0.structure != nil }
+    #expect(tagged.map(\.text) == [opening])
+    #expect(tagged.first?.structure?.headingLevel == 0)
+    let group = try #require(tagged.first?.structure?.group)
+    #expect(content.lines.contains { $0.text == wrapped && $0.structure == nil })
+
+    let blocks = reconstruct(content)
+    // The wrapped line is not cut out of its paragraph, and no other line of the page is either.
+    #expect(preformatted(blocks).isEmpty)
+    #expect(paragraphs(blocks).contains { $0.contains(opening + " " + wrapped + "sions of the MSA") })
+    // The source paragraph identity the tags stated travels with the block that carries it.
+    #expect(blocks.filter { $0.structureGroup == group }.count == 1)
+    // No page may lose words: every source character still stands in some block.
+    let produced = blocks.map(\.text).joined(separator: " ").filter { !$0.isWhitespace }.sorted()
+    #expect(produced == content.lines.flatMap { $0.text.filter { !$0.isWhitespace } }.sorted())
+}
+
+/// The assembler's half of the rule above, stated directly: one open paragraph, whether the tags
+/// named it or the page's geometry did. A tagged paragraph takes the untagged lines that continue
+/// it, including a marker-leading wrap; a tagged heading takes none of them.
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/238"))
+func anUntaggedLineContinuesATaggedParagraphButNeverATaggedHeading() {
+    let lines = column([
+        "The committee reviewed the position paper prepared during the previous session by",
+        "A. Smith and B. Jones, who summarised the field work completed at the end of",
+        "1998. The final report was accepted without amendment by all of the delegates.",
+    ])
+    let marked = LineRole.markedLine(MarkerColumn(onMajorityEdge: true, justifiedRight: 520))
+    var assembler = BlockAssembler(page: 3, body: 12, hyphens: HyphenContext())
+    assembler.appendTagged(TextStructure(group: 4, order: 1, headingLevel: 0, lineCount: 1), lines[0])
+    assembler.append(lines[1], as: marked)
+    assembler.append(lines[2], as: marked)
+    let joined = assembler.finish()
+    #expect(joined.count == 1)
+    #expect(joined.first?.text == lines.map(\.text).joined(separator: " "))
+    #expect(joined.first?.structureGroup == 4)
+
+    var heading = BlockAssembler(page: 3, body: 12, hyphens: HyphenContext())
+    heading.appendTagged(TextStructure(group: 5, order: 1, headingLevel: 2, lineCount: 1), lines[0])
+    heading.append(lines[1], as: .prose)
+    heading.append(lines[2], as: .prose)
+    let split = heading.finish()
+    #expect(split.count == 2)
+    #expect(split.first?.content == .heading(id: "heading-3-0", text: lines[0].content, level: 2))
+    #expect(split.first?.structureGroup == 5)
+    #expect(split.last?.text == lines[1].text + " " + lines[2].text)
+    #expect(split.last?.structureGroup == nil)
+}

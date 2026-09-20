@@ -29,8 +29,7 @@ enum LayoutReconstructor {
         let formulas = page.lines.filter { line in
             guard !line.monospaced, line.text.count < 160 else { return false }
             let mathSymbols = line.text.rangeOfCharacter(from: CharacterSet(charactersIn: "∫∑∏√∂∇≈≠≤≥∞")) != nil
-            let equation = line.text.contains("=") && line.text.split(whereSeparator: \.isWhitespace).count <= 12
-            return mathSymbols || equation
+            return mathSymbols || statesAnEquation(line.text)
         }.map { $0.rect.insetBy(dx: -4, dy: -8) }
         let body = max(4, bodySize(page.lines))
         var regions = clusters(page.graphics + formulas + TableRegionDetector.regions(in: page)
@@ -54,6 +53,23 @@ enum LayoutReconstructor {
             regions = clusters(regions, distance: 3)
         }
         return regions
+    }
+
+    /// Whether a line states an equation: an `=` with a term after it, over a line short enough
+    /// that the page set the relation apart rather than running it into prose (#57).
+    ///
+    /// The term after the sign is what keeps a broken word out. `gpo-911-2004`'s text font maps
+    /// the hyphen it prints at a line end to `=`, so every line that breaks a word ends in one,
+    /// and the word count cannot tell such a line from a relation: PDFKit reports no space after
+    /// a full stop in that book, so an eighty-two-character line of ordinary prose counts twelve
+    /// words. On page 306 one such line seeded a crop that grew, line by line, over the whole
+    /// paragraph below the stairwell figure, and the paragraph left the reflowed text entirely.
+    /// An equation prefix that genuinely ends in `=` still reaches its fraction, through
+    /// `FractionRegionDetector`'s own prefix rule, which has the painted bar as its evidence.
+    static func statesAnEquation(_ text: String) -> Bool {
+        guard let sign = text.lastIndex(of: "="),
+              text[text.index(after: sign)...].contains(where: { !$0.isWhitespace }) else { return false }
+        return text.split(whereSeparator: \.isWhitespace).count <= 12
     }
 
     struct Element {

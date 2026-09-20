@@ -169,4 +169,52 @@ private func uniformlyLeadedPDF(lines: Int, leading: Double, size: Double) -> Da
     // The page still reflows: the warning reports an order that was not established, not content
     // that was lost.
     #expect(report.reflowedPageCount == 2)
+
+/// The 9/11 report's page 254 ends `…arrived.Hawsawi told`, and PDFKit reports `told` as a line
+/// of its own, level with the line it ends. The word belongs to the paragraph, and the paragraph
+/// continues onto page 255 (#57).
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/57"))
+func aPagesLastWordStaysInItsParagraphAndTheParagraphContinues() throws {
+    let first = try SourceLayoutFixture.load("911-254"), second = try SourceLayoutFixture.load("911-255")
+    #expect(first.sourceSHA256 == "657d41475eb3a9a5e3e87a6c7c51ac1dfbe1af7566d1abff7bf7286e7e1c0e1b")
+    #expect(second.sourceSHA256 == first.sourceSHA256)
+    var start = first.content(), next = second.content()
+    // Exclude the running headers, which the full-document furniture pass removes.
+    start.lines.removeAll { $0.text.contains("THE 9/11 COMMISSION REPORT") }
+    next.lines.removeAll { $0.text.contains("THE ATTACK LOOMS") }
+    let word = try #require(start.lines.last)
+    #expect(word.text == "told" && word.sharesRow(with: start.lines[start.lines.count - 2]))
+
+    var warnings: [ConversionWarning] = []
+    var blocks: [ReflowBlock] = []
+    for (page, previous) in [(start, nil), (next, start)] as [(PageContent, PageContent?)] {
+        let pageBlocks = LayoutReconstructor.blocks(page: page, images: [], vocabulary: [], warnings: &warnings)
+        if previous == nil {
+            #expect(try #require(paragraphTexts(pageBlocks).last).hasSuffix("each had arrived.Hawsawi told"))
+        }
+        LayoutReconstructor.appendPage(pageBlocks, page: page, previousPage: previous, to: &blocks,
+                                       vocabulary: [], warnings: &warnings)
+    }
+    let continued = try #require(blocks.first { $0.text.contains("each had arrived.Hawsawi told") })
+    #expect(continued.text.contains("arrived.Hawsawi told the muscle hijackers that they would be met by Atta"))
+    if case let .paragraph(text) = continued.content { #expect(text.sourcePages == [255]) }
+    else { Issue.record("the continued paragraph") }
+}
+
+/// The control for a short line that genuinely ends a page: the printed folio below the last line
+/// of prose is its own block, and the paragraph above it does not take it (#45, #57).
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/57"))
+func aPrintedFolioBelowThePagesProseIsStillItsOwnBlock() throws {
+    let fixture = try SourceLayoutFixture.load("911-126")
+    #expect(fixture.sourceSHA256 == "657d41475eb3a9a5e3e87a6c7c51ac1dfbe1af7566d1abff7bf7286e7e1c0e1b")
+    let page = fixture.content()
+    #expect(page.lines.last?.text == "108")
+    var warnings: [ConversionWarning] = []
+    let blocks = LayoutReconstructor.blocks(page: page, images: [], vocabulary: [], warnings: &warnings)
+    let paragraphs = paragraphTexts(blocks)
+    #expect(paragraphs.last == "108")
+    let closing = try #require(paragraphs.dropLast().last)
+    #expect(closing.contains("Until 1996,hardly anyone in the U.S.government") && !closing.contains("108"))
+    // The chapter number, its title and the sub-heading above the prose remain headings.
+    #expect(headingTexts(blocks).contains("RESPONSES TO AL QAEDA’S"))
 }

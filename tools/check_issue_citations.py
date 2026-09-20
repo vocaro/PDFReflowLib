@@ -64,6 +64,8 @@ ALLOWED = {
     # Fixed, and cited for what it established or where the behavior came from.
     7: ('historical', 'the text-layer quality rules #93/#7 introduced, which this library implements'),
     21: ('historical', 'the extraction gate, named by the issue that established it'),
+    233: ('historical', 'the line-end hyphen a book encodes as another character, on main and named by its issue'),
+    246: ('historical', "the page-furniture rule for a footer band, on main and named by its issue"),
     24: ('historical', 'a research note recording that #24 was closed with no production change'),
     26: ('historical', 'the reproducibility finding a pinning client is told to record'),
     30: ('historical', 'the coverage expansion that added seven corpus cases, used as its name'),

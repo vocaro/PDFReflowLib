@@ -19,6 +19,11 @@ enum OCRReader {
         struct Line: Equatable { var text: String; var box: CGRect; var wraps: Bool? }
         var lines: [Line] = []
         var tables: [CGRect] = []
+
+        /// The words the reading came back with, which a band retry may not reduce (#240).
+        var words: Int {
+            lines.reduce(0) { $0 + $1.text.split(whereSeparator: \.isWhitespace).count }
+        }
     }
 
     /// The retry's bands, as normalized page height measured from the bottom: each covers 60% of
@@ -82,7 +87,10 @@ enum OCRReader {
             return CompletedReading(recognition: first, retried: false)
         }
         func coverage(_ recognition: Recognition, excludingTables: Bool = true) -> OCRTextCoverage.Measurement {
-            OCRTextCoverage.measure(raster, lines: recognition.lines.map(\.box),
+            OCRTextCoverage.measure(raster, lines: recognition.lines.map {
+                                        OCRTextCoverage.Line(box: $0.box,
+                                                             advances: OCRTextCoverage.advances(of: $0.text))
+                                    },
                                     excluded: excludingTables ? recognition.tables : [],
                                     pixelsPerPoint: pixelsPerPoint)
         }
@@ -90,16 +98,28 @@ enum OCRReader {
         var measurement = coverage(first)
         var retried = false
         if measurement.indicatesLoss, let banded = try await readInBands(image, request: request),
-           // The retry is kept only for covering more of the page's writing, and that comparison
-           // ignores both readings' tables: a retry that merely found a larger table region would
-           // move ink out of the measurement, and text into an image, without reading a word more.
-           coverage(banded, excludingTables: false).uncoveredInk < coverage(first, excludingTables: false).uncoveredInk {
+           // The comparison ignores both readings' tables: a retry that merely found a larger
+           // table region would move ink out of the measurement, and text into an image, without
+           // reading a word more.
+           bandsAreKept(uncoveredInk: coverage(banded, excludingTables: false).uncoveredInk,
+                        words: banded.words,
+                        overUncoveredInk: coverage(first, excludingTables: false).uncoveredInk,
+                        words: first.words) {
             recognition = banded
             measurement = coverage(banded)
             retried = true
         }
         return CompletedReading(recognition: recognition, retried: retried,
                                 uncoveredTextFraction: measurement.indicatesLoss ? measurement.uncoveredFraction : nil)
+    }
+
+    /// Whether the banded reading replaces the first one: it is kept for covering more of the
+    /// page's writing, and only when it does not cost the page words (#240). Covering more ink
+    /// with fewer words is a reading spread wider and read thinner, which is not what the retry
+    /// is for; the page is no better off, and a reader would be worse off.
+    static func bandsAreKept(uncoveredInk banded: Int, words bandedWords: Int,
+                             overUncoveredInk first: Int, words firstWords: Int) -> Bool {
+        banded < first && bandedWords >= firstWords
     }
 
     /// One recognition of an image, in that image's normalized coordinates.

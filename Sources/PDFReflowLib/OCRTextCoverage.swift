@@ -48,12 +48,70 @@ enum OCRTextCoverage {
     static let minimumUncoveredRows = 8
     static let minimumUncoveredFraction = 0.2
 
+    /// One line of a reading, as the loss rule sees it: where the reading says it looked, and how
+    /// much writing it came back with.
+    ///
+    /// `advances` is the line's transcription measured in Latin character widths (#240). A line
+    /// that carries one covers only as much of the page as its own text can fill: Vision returns
+    /// a box for the whole line it found and a transcription of part of it, and a box believed on
+    /// its own hides exactly the loss this rule exists to find. A line with no `advances` — the
+    /// page's own text layer, measured before any recognition (#93, #176) — covers its whole box.
+    struct Line: Equatable, Sendable {
+        var box: CGRect
+        var advances: Double?
+
+        init(box: CGRect, advances: Double? = nil) {
+            self.box = box
+            self.advances = advances
+        }
+    }
+
+    /// The width one Latin character of writing occupies, in heights of the page's own rows of
+    /// writing (#240). Measured over 18,442 lines of readings their pages' own text layers confirm
+    /// are complete: the median is 0.555 row heights per character and three quarters are under
+    /// 0.597, so a line clipped at 0.6 keeps the writing it actually transcribed. On the Warren
+    /// Commission report's endnote pages the same ratio is 0.868 — half again as wide as the
+    /// transcription can fill, which is the measure of what those readings left out.
+    static let characterWidthInRows = 0.6
+
+    /// A line's transcription in Latin character widths. A fullwidth or ideographic character is
+    /// drawn about twice as wide as a Latin one at the same size, so it counts twice: without
+    /// that, a sound reading of a Chinese page looks like a reading that dropped half of it.
+    static func advances(of text: String) -> Double {
+        var total = 0.0
+        for scalar in text.unicodeScalars where !scalar.properties.isWhitespace {
+            total += isFullWidth(scalar) ? 2 : 1
+        }
+        return total
+    }
+
+    /// Whether a scalar is drawn about one em wide: the East Asian Wide and Fullwidth blocks.
+    static func isFullWidth(_ scalar: Unicode.Scalar) -> Bool {
+        switch scalar.value {
+        case 0x1100...0x115F, 0x2E80...0x303E, 0x3041...0x33FF, 0x3400...0x4DBF, 0x4E00...0x9FFF,
+             0xA000...0xA4CF, 0xAC00...0xD7A3, 0xF900...0xFAFF, 0xFE30...0xFE6F, 0xFF00...0xFF60,
+             0xFFE0...0xFFE6, 0x20000...0x3FFFD:
+            true
+        default:
+            false
+        }
+    }
+
+    /// Measures against boxes alone, each believed for its whole width: the page's own text
+    /// layer, whose lines are not a reading that may have come back with part of what it found.
+    static func measure(image: CGImage, boxes: [CGRect], excluded: [CGRect] = [],
+                        pixelsPerPoint: Double) -> Measurement {
+        measure(image: image, lines: boxes.map { Line(box: $0) }, excluded: excluded,
+                pixelsPerPoint: pixelsPerPoint)
+    }
+
     /// - Parameters:
     ///   - image: the raster to measure.
-    ///   - lines: line boxes, normalized with a lower-left origin (Vision's convention).
+    ///   - lines: recognized lines, normalized with a lower-left origin (Vision's convention),
+    ///     each with the writing it transcribed.
     ///   - excluded: normalized regions whose ink is not counted (placed images, table regions).
     ///   - pixelsPerPoint: raster pixels per PDF point.
-    static func measure(image: CGImage, lines: [CGRect], excluded: [CGRect] = [],
+    static func measure(image: CGImage, lines: [Line], excluded: [CGRect] = [],
                         pixelsPerPoint: Double) -> Measurement {
         guard let gray = GrayRaster(image) else { return Measurement() }
         return measure(gray, lines: lines, excluded: excluded, pixelsPerPoint: pixelsPerPoint)
@@ -81,7 +139,14 @@ enum OCRTextCoverage {
     static let minimumInkThreshold = 96
     static let maximumInkThreshold = 170
 
-    static func measure(_ raster: GrayRaster, lines: [CGRect], excluded: [CGRect],
+    static func measure(_ raster: GrayRaster, boxes: [CGRect], excluded: [CGRect],
+                        pixelsPerPoint: Double, collectBoxes: Bool = false,
+                        minimumGlyphs: Int = 5) -> Measurement {
+        measure(raster, lines: boxes.map { Line(box: $0) }, excluded: excluded,
+                pixelsPerPoint: pixelsPerPoint, collectBoxes: collectBoxes, minimumGlyphs: minimumGlyphs)
+    }
+
+    static func measure(_ raster: GrayRaster, lines: [Line], excluded: [CGRect],
                         pixelsPerPoint: Double, collectBoxes: Bool = false,
                         minimumGlyphs: Int = 5) -> Measurement {
         let measurement = measureInk(raster, lines: lines, excluded: excluded, pixelsPerPoint: pixelsPerPoint,
@@ -91,7 +156,7 @@ enum OCRTextCoverage {
                           collectBoxes: collectBoxes, minimumGlyphs: minimumGlyphs)
     }
 
-    private static func measureInk(_ raster: GrayRaster, lines: [CGRect], excluded: [CGRect],
+    private static func measureInk(_ raster: GrayRaster, lines: [Line], excluded: [CGRect],
                                    pixelsPerPoint: Double, collectBoxes: Bool,
                                    minimumGlyphs: Int) -> Measurement {
         let width = raster.width, height = raster.height
@@ -153,11 +218,38 @@ enum OCRTextCoverage {
             }
         }
 
+        struct Row { var count = 0, ink = 0, uncoveredInk = 0
+                     var minX = Int.max, minY = Int.max, maxX = Int.min, maxY = Int.min }
+        var rows: [Int: Row] = [:]
+        for (index, g) in glyphs.enumerated() {
+            let root = find(index)
+            var row = rows[root] ?? Row()
+            row.count += 1
+            row.minX = min(row.minX, g.minX); row.maxX = max(row.maxX, g.maxX)
+            row.minY = min(row.minY, g.minY); row.maxY = max(row.maxY, g.maxY)
+            row.ink += g.pixels
+            rows[root] = row
+        }
+
+        // How tall one row of this page's writing stands, which is what a line's transcription is
+        // measured against (#240). Taken from the rows themselves, so it needs nothing of the
+        // reading: a page sets its own scale, and a reading that misjudged the page cannot widen
+        // the allowance it is held to.
+        let rowHeights = rows.values.filter { $0.count >= minimumGlyphs }
+            .map { $0.maxY - $0.minY + 1 }.sorted()
+        let rowHeight = rowHeights.isEmpty ? 0 : rowHeights[rowHeights.count / 2]
+
         // Recognized line boxes, grown slightly: Vision's boxes can clip ascenders and descenders.
         var covered = [Bool](repeating: false, count: width * height / 16 + width / 4 + height / 4 + 2)
         let coverWidth = width / 4 + 1
         for line in lines {
-            let r = pixelRect(line)
+            var r = pixelRect(line.box)
+            // A line covers only as much of its row as its own transcription can fill. The kept
+            // part runs from the box's leading edge, where a line of left-to-right writing starts.
+            if let advances = line.advances, rowHeight > 0 {
+                let written = Int((advances * characterWidthInRows * Double(rowHeight)).rounded())
+                r.maxX = min(r.maxX, r.minX + max(0, written))
+            }
             let lineHeight = max(1, r.maxY - r.minY)
             let dx = lineHeight / 2, dy = lineHeight / 3
             let x0 = max(0, r.minX - dx) / 4, x1 = min(width - 1, r.maxX + dx) / 4
@@ -166,20 +258,10 @@ enum OCRTextCoverage {
             for y in y0...y1 { for x in x0...x1 { covered[y * coverWidth + x] = true } }
         }
 
-        struct Row { var count = 0, ink = 0, uncoveredInk = 0
-                     var minX = Int.max, minY = Int.max, maxX = Int.min, maxY = Int.min }
-        var rows: [Int: Row] = [:]
         for (index, g) in glyphs.enumerated() {
             let cx = (g.minX + g.maxX) / 2, cy = (g.minY + g.maxY) / 2
-            let isCovered = covered[(cy / 4) * coverWidth + cx / 4]
-            let root = find(index)
-            var row = rows[root] ?? Row()
-            row.count += 1
-            row.minX = min(row.minX, g.minX); row.maxX = max(row.maxX, g.maxX)
-            row.minY = min(row.minY, g.minY); row.maxY = max(row.maxY, g.maxY)
-            row.ink += g.pixels
-            if !isCovered { row.uncoveredInk += g.pixels }
-            rows[root] = row
+            guard !covered[(cy / 4) * coverWidth + cx / 4] else { continue }
+            rows[find(index)]?.uncoveredInk += g.pixels
         }
         var result = Measurement()
         // A row is at least three glyph-sized pieces; a lone blob is not evidence of text. Printed

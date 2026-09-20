@@ -36,6 +36,8 @@ PROBE_SOURCES = {
     # `OCRReader` checks its own reading against the page's ink (#116), so it needs the measurement.
     'capture-ocr-layout-fixture.swift': RASTER + ['OCRReader.swift', 'OCRTextCoverage.swift'],
     'probe-ocr-text-loss.swift': RASTER + ['OCRReader.swift', 'OCRTextCoverage.swift'],
+    # #240 weighs a second signal against the same measurement, so it needs the same sources.
+    'probe-ocr-coverage-signals.swift': RASTER + ['OCRReader.swift', 'OCRTextCoverage.swift'],
     'audit-report-margins.swift': EXTRACTION + ['FurnitureDetector.swift'],
 }
 

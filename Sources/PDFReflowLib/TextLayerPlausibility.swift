@@ -178,7 +178,7 @@ enum TextLayerPlausibility {
             CGRect(x: (rect.minX - bounds.minX) / bounds.width, y: (rect.minY - bounds.minY) / bounds.height,
                    width: rect.width / bounds.width, height: rect.height / bounds.height)
         }
-        return OCRTextCoverage.measure(image: image, lines: lines.map { normalize($0.rect) },
+        return OCRTextCoverage.measure(image: image, boxes: lines.map { normalize($0.rect) },
                                        excluded: excluding.map(normalize),
                                        pixelsPerPoint: Double(image.width) / bounds.width)
     }

@@ -1,0 +1,66 @@
+{
+ "blueBookRecallGainByRule": {
+  "flaggedByNeither": {
+   "bandedRecallMedian": 0.765,
+   "firstRecallMedian": 0.706,
+   "pages": 160,
+   "pagesGainingOver5Points": 56,
+   "recallGainMedian": 0.012
+  },
+  "flaggedByTheShippedRuleOf116": {
+   "bandedRecallMedian": 0.332,
+   "firstRecallMedian": 0.124,
+   "pages": 61,
+   "pagesGainingOver5Points": 60,
+   "recallGainMedian": 0.206
+  },
+  "flaggedByWrittenWidthOnly": {
+   "bandedRecallMedian": 0.355,
+   "firstRecallMedian": 0.143,
+   "pages": 59,
+   "pagesGainingOver5Points": 57,
+   "recallGainMedian": 0.199
+  }
+ },
+ "perCharacterWidthInRowHeights": {
+  "readingsTheirLayersConfirmComplete": {
+   "lines": 18442,
+   "median": 0.555,
+   "p05": 0.42,
+   "p25": 0.511,
+   "p75": 0.597,
+   "p95": 0.875
+  },
+  "shipped": 0.6,
+  "warrenEndnoteReadings": {
+   "lines": 1796,
+   "median": 0.868,
+   "p05": 0.725,
+   "p25": 0.805,
+   "p75": 0.958,
+   "p95": 1.171
+  }
+ },
+ "thresholdSweep": {
+  "0.4": {
+   "controlPagesFlagged": 26,
+   "maximumControlShare": 0.738,
+   "warrenEndnotePagesFlagged": 31
+  },
+  "0.5": {
+   "controlPagesFlagged": 2,
+   "maximumControlShare": 0.241,
+   "warrenEndnotePagesFlagged": 31
+  },
+  "0.6": {
+   "controlPagesFlagged": 0,
+   "maximumControlShare": 0.15,
+   "warrenEndnotePagesFlagged": 30
+  },
+  "0.7": {
+   "controlPagesFlagged": 0,
+   "maximumControlShare": 0.105,
+   "warrenEndnotePagesFlagged": 24
+  }
+ }
+}

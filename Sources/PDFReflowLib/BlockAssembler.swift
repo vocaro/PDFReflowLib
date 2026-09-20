@@ -15,6 +15,11 @@ enum LineRole: Equatable, Sendable {
     /// assembler knows what the previous line did, and only the page knows the column this line
     /// sits in, so the page's half of the evidence travels with the role.
     case markedLine(MarkerColumn)
+    /// One printed row of a table the page set without rules, which keeps its break. The pieces
+    /// the extractor left standing side by side on that row rejoin into it, and so does a cell
+    /// that wrapped onto the next line, which the block's own left edge tells apart from the row
+    /// beneath it (#137, #210).
+    case tableRow(continuation: Bool)
     /// Ordinary prose, joined into paragraphs.
     case prose
 }
@@ -125,6 +130,9 @@ struct BlockAssembler {
     private var paragraphTag: TextStructure?
     private var previous: TextLine?
     private var codeOrigin: CGFloat?
+    /// The table row the last block holds, while more pieces of that printed row can still join
+    /// it (#137, #210). Anything else the page hands over closes the row.
+    private var rowInProgress: TextLine?
 
     init(page: Int, body: CGFloat, hyphens: HyphenContext) {
         self.page = page
@@ -163,6 +171,7 @@ struct BlockAssembler {
     mutating func appendNote(group: Int, _ line: TextLine) {
         flushParagraph()
         codeOrigin = nil
+        rowInProgress = nil
         if note?.group != group { flushNote() }
         if let current = note {
             note = (group, join(current.text, line.content))
@@ -175,6 +184,7 @@ struct BlockAssembler {
         flushNote()
         flushParagraph()
         codeOrigin = nil
+        rowInProgress = nil
         blocks.append(LayoutReconstructor.imageBlock(assetID: assetID, page: page))
     }
 
@@ -184,6 +194,7 @@ struct BlockAssembler {
     mutating func appendTagged(_ tag: TextStructure, _ line: TextLine) {
         flushNote()
         codeOrigin = nil
+        rowInProgress = nil
         if paragraphTag?.group != tag.group { flushParagraph() }
         if paragraph.elements.isEmpty {
             paragraph = line.content
@@ -201,6 +212,7 @@ struct BlockAssembler {
         // heading. The roles below that open a block of their own flush the paragraph themselves.
         if paragraphHeadingLevel > 0 { flushParagraph() }
         if !line.monospaced { codeOrigin = nil }
+        if case .tableRow = role {} else { rowInProgress = nil }
         switch role {
         case .heading:
             flushParagraph()
@@ -231,6 +243,27 @@ struct BlockAssembler {
                 flushParagraph()
                 blocks.append(ReflowBlock(content: .preformatted(line.content), page: page))
             }
+        case let .tableRow(continuation):
+            // One block per printed row. A row the extractor split at its column gap arrives as
+            // two lines on one baseline, and the second joins the first rather than opening a row
+            // of its own: `H 50–1999` and its note-marked `*50` are one row of the FAA's beacon
+            // table, not two. A cell that wrapped joins its row the way any wrapped line joins
+            // its paragraph, so the 9/11 report's `10:03:11 Flight 93 crashes in field in` keeps
+            // `Shanksville, PA` and the FAA's conterminous-states row keeps its altitudes.
+            let piece = rowInProgress.map { $0.sharesRow(with: line) && line.rect.minX >= $0.rect.maxX } ?? false
+            if rowInProgress != nil, piece || continuation,
+               let last = blocks.last, case let .preformatted(text) = last.content {
+                blocks[blocks.count - 1].content = .preformatted(piece ? {
+                    var combined = text
+                    combined.append(InlineText(" "))
+                    combined.append(line.content)
+                    return combined
+                }() : join(text, line.content))
+            } else {
+                flushParagraph()
+                blocks.append(ReflowBlock(content: .preformatted(line.content), page: page))
+            }
+            rowInProgress = line
         case .prose:
             if let prev = previous, !continuesParagraph(prev, line) { flushParagraph() }
             if paragraph.elements.isEmpty { paragraph = line.content }

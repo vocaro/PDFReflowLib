@@ -277,6 +277,32 @@ enum LayoutReconstructor {
             }
             return best?.1
         }
+        // A picture spanning the whole block separates what is printed above it from what is
+        // printed below it (#137). The 9/11 report sets two flights' timelines side by side under
+        // one map that runs across both of them: no vertical whitespace crosses the map, so no
+        // column cut can be made while it is in the group, and the strip of white beneath it is
+        // narrower than a line of leading, so no horizontal cut is made either — and the two
+        // timelines interleave, row by row, in the order the page painted them. Cutting at the
+        // picture puts each column back in its own group. Only a picture divides this way: every
+        // line of a one-column page spans its block, and cutting at each of them would reach the
+        // depth limit and report the page unread.
+        let span = union(elements.map(\.rect))
+        if let divider = elements.indices.first(where: { index in
+            let rect = elements[index].rect
+            guard elements[index].image != nil, rect.width >= span.width * 0.9 else { return false }
+            let above = elements.indices.filter { $0 != index && elements[$0].rect.minY >= rect.maxY }
+            let below = elements.indices.filter { $0 != index && elements[$0].rect.maxY <= rect.minY }
+            // Everything else stands wholly above or wholly below: a picture with a line beside
+            // it divides nothing, and its own label is already inside its crop.
+            return !above.isEmpty && !below.isEmpty && above.count + below.count == elements.count - 1
+        }) {
+            let rect = elements[divider].rect
+            return ordered(elements.filter { $0.rect.minY >= rect.maxY },
+                           bodySize: bodySize, depth: depth + 1, exhausted: &exhausted)
+                + [elements[divider]]
+                + ordered(elements.filter { $0.rect.maxY <= rect.minY },
+                          bodySize: bodySize, depth: depth + 1, exhausted: &exhausted)
+        }
         if let x = gap(horizontal: true) {
             return ordered(elements.filter { $0.rect.maxX < x }, bodySize: bodySize, depth: depth + 1, exhausted: &exhausted)
                 + ordered(elements.filter { $0.rect.minX > x }, bodySize: bodySize, depth: depth + 1, exhausted: &exhausted)
@@ -666,9 +692,23 @@ enum LayoutReconstructor {
         // page its navigation for nothing. Where the page's tags do name a heading, every role
         // they give is believed over visible typography, as before (#67).
         let tagsNameHeading = elements.contains { ($0.line?.structure?.headingLevel ?? 0) > 0 }
+        // Rows of a table the page set without rules keep their breaks rather than joining into
+        // one paragraph (#137, #210). The evidence is the page's own stated column boundary, so
+        // it is read from the lines that still reflow, after the crops have taken theirs.
+        let rows = TableRegionDetector.rowBlocks(in: lines, body: typography.body)
         let roles = elements.map { element in
-            element.line.map { role(of: $0, on: page, in: lines, typography: typography,
-                                    labels: labels, judgesTitleWords: judgesTitleWords) }
+            element.line.map { line -> LineRole in
+                let role = role(of: line, on: page, in: lines, typography: typography,
+                                labels: labels, judgesTitleWords: judgesTitleWords)
+                // A heading standing in the block, and monospaced text that keeps its own
+                // breaks already, are left as they read.
+                guard role != .heading, role != .code,
+                      let block = rows.first(where: { $0.insetBy(dx: -1, dy: -1).contains(line.rect) })
+                else { return role }
+                // A line set in from the block's own left edge is a cell that wrapped, not the
+                // next row.
+                return .tableRow(continuation: line.rect.minX > block.minX + typography.body * 0.6)
+            }
         }
         let contradicted = contradictedHeadingGroups(elements, roles: roles)
         for (index, element) in elements.enumerated() {
@@ -679,7 +719,14 @@ enum LayoutReconstructor {
             } else if let line = element.line, let spatial = roles[index] {
                 if var tag = line.structure {
                     if let level = contradicted[tag.group] { tag.headingLevel = level }
-                    if tag.headingLevel > 0 || tagsNameHeading || spatial != .heading {
+                    // A row of a table the page's own geometry states keeps its break even where
+                    // the tags name the cell a paragraph: the FAA handbook tags one wrapped cell
+                    // of its service-volume table and leaves the other six rows untagged, and
+                    // believing that one tag would strand it as prose beside its own table
+                    // (#137). What the tags name a heading is still a heading.
+                    if tag.headingLevel == 0, case .tableRow = spatial {
+                        assembler.append(line, as: spatial)
+                    } else if tag.headingLevel > 0 || tagsNameHeading || spatial != .heading {
                         assembler.appendTagged(tag, line)
                     } else {
                         assembler.append(line, as: spatial)

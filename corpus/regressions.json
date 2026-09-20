@@ -5,7 +5,7 @@
     {
       "id": "faa-phak-8083-25c",
       "sourceSHA256": "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
-      "basis": "Source pages 16 and 121 visually reviewed. Protects the introductory prose and figure preservation; does not approve page-121 column order. Pages 91/511 are source-reviewed narrow-gutter column-order regressions; the complete left column precedes the right. Reviewed chapter-page folios on pages 16/91 must remain absent from prose. Pages 211/212 visually reviewed: V-speed designators retain their source subscripts in bulleted definitions; source ASI figures remain preserved. Source pages 50/325 visually reviewed for tag-restored left-column-before-right-column order; page 81 caption remains beside the preceding image, before body prose. Page 191 reviewed: four separate left-column items precede the ammeter paragraph; the remaining page is still preserved as an image. Pages 35-36 and 116-117 visually reviewed: each two-column paragraph continues from the bottom of one page onto the next and must remain one paragraph across the source-page marker (#27). Source pages 19 and 96 visually reviewed: the whole left column of page 19 precedes the right, and page 96's two sentences beside the tip-vortex figure reflow as prose; the page-19 map reference is the figure's own source region, so its crop must still cover the whole map (#52, #98). Source pages 226 and 302 visually reviewed: dense isogonic and air-mass drawings no longer cost the page its prose, which reads left column before right; page 448's 1.95 million drawing operations must still preserve the page whole (#13).",
+      "basis": "Source pages 16 and 121 visually reviewed. Protects the introductory prose and figure preservation; does not approve page-121 column order. Pages 91/511 are source-reviewed narrow-gutter column-order regressions; the complete left column precedes the right. Reviewed chapter-page folios on pages 16/91 must remain absent from prose. Pages 211/212 visually reviewed: V-speed designators retain their source subscripts in bulleted definitions; source ASI figures remain preserved. Source pages 50/325 visually reviewed for tag-restored left-column-before-right-column order; page 81 caption remains beside the preceding image, before body prose. Page 191 reviewed: four separate left-column items precede the ammeter paragraph; the remaining page is still preserved as an image. Pages 35-36 and 116-117 visually reviewed: each two-column paragraph continues from the bottom of one page onto the next and must remain one paragraph across the source-page marker (#27). Source pages 19 and 96 visually reviewed: the whole left column of page 19 precedes the right, and page 96's two sentences beside the tip-vortex figure reflow as prose; the page-19 map reference is the figure's own source region, so its crop must still cover the whole map (#52, #98). Source pages 226 and 302 visually reviewed: dense isogonic and air-mass drawings no longer cost the page its prose, which reads left column before right; page 448's 1.95 million drawing operations must still preserve the page whole (#13). Source page 461 visually reviewed: the appendix folio standing in the book's own footer slot must remain absent from prose, as the reviewed chapter-page folios already do (#10).",
       "pages": [
         {
           "page": 19,
@@ -230,6 +230,15 @@
               "next": "If they had to mount the wings too far forward"
             }
           ]
+        },
+        {
+          "page": 461,
+          "absentText": [
+            "B-1"
+          ],
+          "text": [
+            "see FAA Order JO 7340.2"
+          ]
         }
       ]
     },
@@ -357,7 +366,11 @@
     {
       "id": "gpo-911-2004",
       "sourceSHA256": "657d41475eb3a9a5e3e87a6c7c51ac1dfbe1af7566d1abff7bf7286e7e1c0e1b",
+<<<<<<< HEAD
       "basis": "Existing reviewed positiveTextChecks in gpo-911-2004-review.json; native word boundaries must survive. Header/source-body checks cover visually reviewed physical pages 20/21, 65/67 and 472; chapter 1 title is reviewed on page 19. Captured source geometry protects remaining lines on 21 pages; no external prototype heading statistics are reproduced. Page 20 protects the already-supported raised reference 4 after 7:45. Reviewed pages 472/473/532 protect selected numbered paragraphs, a second paragraph within note 66, and the dedented chapter-number continuation inside note 9. General multi-paragraph/cross-page ownership and chapter-scoped reference links remain unqualified. Pages 20-21 and 24-25 visually reviewed: each paragraph continues onto the next page and must remain one paragraph across the source-page marker (#27). Pages 161, 526 and 581-583 visually reviewed against their Poppler rasters for #229 and #227: 161 and 526 print an underlined word (`gain` and `risk`; `not`) as a painted rule and must reflow their prose with no crop at all, and 581-583 are notes pages that paint nothing, cite web addresses with query strings, and keep only their source-page reference image. Their earlier minimumImages 2 counted the runaway crop, not a figure the page prints. Notes 39, 40 and 9 on pages 472 and 532 carry the word spaces the source draws without a space glyph, which the spacing reader restores (#119, #128, #225): the boundaries were reviewed against the rendered source pages, and the expectations do not bless any other line of those notes. Page 117 visually reviewed: the page's last printed line opens with the second half of a president's name (\"W. Bush\"), which the restored word spaces made visible, and must stay inside the paragraph it wraps from (#39).",
+=======
+      "basis": "Existing reviewed positiveTextChecks in gpo-911-2004-review.json; native word boundaries must survive. Header/source-body checks cover visually reviewed physical pages 20/21, 65/67 and 472; chapter 1 title is reviewed on page 19. Captured source geometry protects remaining lines on 21 pages; no external prototype heading statistics are reproduced. Page 20 protects the already-supported raised reference 4 after 7:45. Reviewed pages 472/473/532 protect selected numbered paragraphs, a second paragraph within note 66, and the dedented chapter-number continuation inside note 9. General multi-paragraph/cross-page ownership and chapter-scoped reference links remain unqualified. Pages 20-21 and 24-25 visually reviewed: each paragraph continues onto the next page and must remain one paragraph across the source-page marker (#27). Pages 161, 526 and 581-583 visually reviewed against their Poppler rasters for #229 and #227: 161 and 526 print an underlined word (`gain` and `risk`; `not`) as a painted rule and must reflow their prose with no crop at all, and 581-583 are notes pages that paint nothing, cite web addresses with query strings, and keep only their source-page reference image. Their earlier minimumImages 2 counted the runaway crop, not a figure the page prints. Notes 39, 40 and 9 on pages 472 and 532 carry the word spaces the source draws without a space glyph, which the spacing reader restores (#119, #128, #225): the boundaries were reviewed against the rendered source pages, and the expectations do not bless any other line of those notes. Pages 257, 572, 579, 580, 584 and 585 are source-reviewed running heads standing in the margin slot the book keeps on 538 of its 585 pages; their words repeat on too few neighbouring pages for a run. Each page keeps every other line, and pages 572 and 580 keep their genuine notes-chapter titles (#10).",
+>>>>>>> worktree-agent-adaafb66f384dc4ac
       "pages": [
         {
           "page": 15,
@@ -588,6 +601,7 @@
           ]
         },
         {
+<<<<<<< HEAD
           "page": 117,
           "orderedText": [
             "For President Clinton, they were to be Presidential Decision Directives;",
@@ -596,13 +610,74 @@
           "paragraphs": [
             "For President Clinton, they were to be Presidential Decision Directives; for President George W. Bush, National Security Policy Directives."
           ]
+=======
+          "page": 572,
+          "absentText": [
+            "554 NOTES TO CHAPTERS 9-10"
+          ],
+          "text": [
+            "all on-duty members of 19 companies are likely to have known to evacuate"
+          ],
+          "headings": [
+            "10 Wartime"
+          ]
+        },
+        {
+          "page": 579,
+          "absentText": [
+            "NOTES TO CHAPTER 11 561"
+          ],
+          "text": [
+            "An FAA civil aviation security official believed the plan was improbable"
+          ]
+        },
+        {
+          "page": 580,
+          "absentText": [
+            "562 NOTES TO CHAPTER 11"
+          ],
+          "text": [
+            "Maureen Baginski interview"
+          ],
+          "headings": [
+            "12 What to Do? A Global Strategy"
+          ]
+        },
+        {
+          "page": 584,
+          "absentText": [
+            "566 NOTES TO CHAPTER 13"
+          ],
+          "text": [
+            "The proposed National Counterterrorism Center should offer one-stop shopping"
+          ]
+        },
+        {
+          "page": 585,
+          "absentText": [
+            "NOTES TO CHAPTER 13 567"
+          ],
+          "text": [
+            "The intelligence community currently makes information shareable"
+          ]
+        },
+        {
+          "page": 257,
+          "absentText": [
+            "AL QAEDA AIMS AT THE AMERICAN HOMELAND"
+          ],
+          "text": [
+            "American Airlines Flight 77 Left to right, Hani Hanjour, pilot"
+          ],
+          "minimumImages": 5
+>>>>>>> worktree-agent-adaafb66f384dc4ac
         }
       ]
     },
     {
       "id": "fed-explained-2021",
       "sourceSHA256": "8db8fd9e1de63ac25a6f9585d78ded12f45ab56f0c14c52c199b36b368f84d60",
-      "basis": "Page 9 source raster reviewed: five functions in source order alongside Figure 1.1. Page 45 retains a graphic, without claiming its labels or arrows are semantically reconstructed. Physical page 46 source raster and native typography reviewed: prose beside the sidebar and above Table 3.1 must remain paragraphs, with both graphic regions retained. Source pages 13, 32, 54, 75, 77, 103, 109 and 123 visually reviewed; preserve ordinary prose and six genuine modest-size section headings beside graphics. Cover source and structure element 4417 reviewed: the title/subtitle spans form one H1, while Public Education & Outreach remains paragraph text. Source pages 33 and 122-123 visually reviewed for the two spine-document boundaries the packer writes there: the press-conference paragraph ends one document and the Communicating Policy Regularly and Clearly section opens the next with nothing between, and the consumer-compliance paragraph ends page 122 before Interagency Initiatives opens page 123 in the following document (#27). Does not bless the 12-point sub-headings this book sets in blue italic, which stay ordinary paragraphs on pages 33, 94 and 122 while the same style becomes a heading on page 123; on page 94 that leaves Electronic Check Processing at the end of a spine document with its paragraph opening the next (#228).",
+      "basis": "Page 9 source raster reviewed: five functions in source order alongside Figure 1.1. Page 45 retains a graphic, without claiming its labels or arrows are semantically reconstructed. Physical page 46 source raster and native typography reviewed: prose beside the sidebar and above Table 3.1 must remain paragraphs, with both graphic regions retained. Source pages 13, 32, 54, 75, 77, 103, 109 and 123 visually reviewed; preserve ordinary prose and six genuine modest-size section headings beside graphics. Cover source and structure element 4417 reviewed: the title/subtitle spans form one H1, while Public Education & Outreach remains paragraph text. Source pages 33 and 122-123 visually reviewed for the two spine-document boundaries the packer writes there: the press-conference paragraph ends one document and the Communicating Policy Regularly and Clearly section opens the next with nothing between, and the consumer-compliance paragraph ends page 122 before Interagency Initiatives opens page 123 in the following document (#27). Does not bless the 12-point sub-headings this book sets in blue italic, which stay ordinary paragraphs on pages 33, 94 and 122 while the same style becomes a heading on page 123; on page 94 that leaves Electronic Check Processing at the end of a spine document with its paragraph opening the next (#228). Source pages 19 and 21 visually reviewed: the 8 pt running head standing where the book keeps it on 119 of its 135 pages must be absent, while the 14 pt section headings lower on the page remain headings (#10).",
       "spineContinuity": [
         {
           "sourcePages": [
@@ -755,6 +830,26 @@
             "PUBLIC EDUCATION & OUTREACH"
           ],
           "minimumImages": 1
+        },
+        {
+          "page": 19,
+          "absentText": [
+            "The Three Key System Entities"
+          ],
+          "text": [
+            "In its role providing key financial services, the Reserve Bank acts"
+          ]
+        },
+        {
+          "page": 21,
+          "absentText": [
+            "The Three Key System Entities"
+          ],
+          "headings": [
+            "FOMC Responsibilities",
+            "Depository Institutions",
+            "Advisory Councils"
+          ]
         }
       ]
     },
@@ -1282,7 +1377,7 @@
     {
       "id": "irs-p596-zhs-2025",
       "sourceSHA256": "7d1cff45bc567f1257ea1aa1e2ce67945aafb12708b2e22901ce6392436590c2",
-      "basis": "Source pages 1 and 16 visually reviewed. Protects the English catalog footer and cover image on page 1, and page-16 left-column examples before the right-column military and chapter-4 prose, the four earned-income limits in source order, and CJK text with embedded Latin identifiers and amounts. Does not bless page 1/3 prose and contents captured inside preserved-region images, the split cover title, or spaces inserted inside justified CJK lines (#36, #42).",
+      "basis": "Source pages 1 and 16 visually reviewed. Protects the English catalog footer and cover image on page 1, and page-16 left-column examples before the right-column military and chapter-4 prose, the four earned-income limits in source order, and CJK text with embedded Latin identifiers and amounts. Does not bless page 1/3 prose and contents captured inside preserved-region images, the split cover title, or spaces inserted inside justified CJK lines (#36, #42). Source page 5 visually reviewed: the running foot in the slot the publication keeps must be absent while the rule prose and its heading remain (#10).",
       "pages": [
         {
           "page": 1,
@@ -1306,6 +1401,15 @@
           ],
           "text": [
             "\u8bf7\u5728 \uff08\u8868\u683c 1040 \u6216 1040-SR\uff09\u7b2c 27b \u884c\u52fe\u9009\u201cClergy filing Schedule SE\u201d"
+          ]
+        },
+        {
+          "page": 5,
+          "absentText": [
+            "596 \u53f7\u520a\u7269 (2025) \u7b2c 1 \u7ae0 \u9002\u7528\u4e8e\u6240\u6709\u4eba\u7684\u89c4\u5219 5"
+          ],
+          "text": [
+            "\u5982\u679c\u60a8\u5df2\u5a5a\uff0c\u60a8\u901a\u5e38\u5fc5\u987b\u63d0\u4ea4\u8054\u5408\u62a5\u7a0e\u8868\u624d\u80fd\u7533\u62a5 EIC"
           ]
         }
       ]

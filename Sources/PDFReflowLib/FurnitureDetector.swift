@@ -12,12 +12,31 @@ enum FurnitureDetector {
         var pageIndex: Int
         var lineIndex: Int
         var number: Int
+        var isTop: Bool
         var position: CGFloat
         var fontSize: CGFloat
+        /// The line's own type size, whatever `fontSize` was measured from. A bare folio weighs
+        /// its glyph height against other folios, but the margin slot it stands in is a place and
+        /// a type size the whole document keeps, so slots are compared in one unit.
+        var typeSize: CGFloat
         var isFolio: Bool
         /// The other lines of the stacked band this line belongs to, if any; it is removed
         /// only when all of them are.
         var dependsOn: [Int] = []
+    }
+
+    /// One margin place a document keeps: an edge, a position in the page, and a type size.
+    /// Running heads and feet hold theirs for the length of a book.
+    fileprivate struct Slot {
+        var isTop: Bool
+        var position: CGFloat
+        var fontSize: CGFloat
+        var pages: Set<Int> = []
+
+        func admits(_ candidate: Candidate) -> Bool {
+            candidate.isTop == isTop && abs(candidate.position - position) <= 0.004
+                && abs(candidate.typeSize - fontSize) <= max(0.5, fontSize * 0.1)
+        }
     }
 
     /// Document-wide evidence without the pages themselves.
@@ -25,7 +44,15 @@ enum FurnitureDetector {
         fileprivate var groups: [String: [Candidate]] = [:]
         fileprivate var syntheticOccurrences: [String: Int] = [:]
         fileprivate var pageCount = 0
+        /// The margin lines each page offered, whether or not they are removed in the end. A
+        /// caller that must set the margins apart from the body before the plan exists — the
+        /// reference vocabulary does (#184) — reads them back here while it still has the page.
+        private(set) var marginLines: [Int: Set<Int>] = [:]
         init() {}
+
+        fileprivate mutating func note(_ lineIndex: Int, onPageAt pageIndex: Int) {
+            marginLines[pageIndex, default: []].insert(lineIndex)
+        }
     }
 
     /// Resolved removals. Applying them to a page consults only that page.
@@ -36,6 +63,25 @@ enum FurnitureDetector {
         fileprivate var syntheticOccurrences: [String: Int] = [:]
         fileprivate var syntheticThreshold = Int.max
         fileprivate var pageCount = 0
+
+        /// The native lines this plan takes off one page, needing only the page's index. What
+        /// extraction has already released can still be asked what its margins lost (#184).
+        /// A synthetic OCR layer is decided against the page itself and answers nothing here.
+        func removals(onPageAt pageIndex: Int) -> Set<Int> {
+            guard pageCount >= 3, var removed = native[pageIndex] else { return [] }
+            // The lines of a stacked band go only all together: drop a dependent line until
+            // every line left has the whole band it stands with.
+            var settled = false
+            while !settled {
+                settled = true
+                for (lineIndex, band) in dependencies[pageIndex] ?? [:]
+                where removed.contains(lineIndex) && !band.allSatisfy(removed.contains) {
+                    removed.remove(lineIndex)
+                    settled = false
+                }
+            }
+            return removed
+        }
     }
 
     static func strip(_ pages: inout [PageContent]) -> [ConversionWarning] {
@@ -107,12 +153,14 @@ enum FurnitureDetector {
             let line = page.lines[lineIndex]
             let words = words(line)
             recorded.insert(lineIndex)
+            ledger.note(lineIndex, onPageAt: pageIndex)
             // Bare folios use measured glyph height: fallback extraction estimates
             // fontSize from that height, whereas native extraction reads font attributes.
             let folio = isFolio(words)
             let candidate = Candidate(pageIndex: pageIndex, lineIndex: lineIndex, number: page.number,
-                                      position: position(line.rect.midY),
+                                      isTop: top, position: position(line.rect.midY),
                                       fontSize: folio ? line.rect.height : line.fontSize,
+                                      typeSize: line.fontSize,
                                       isFolio: folio, dependsOn: dependsOn)
             let edge = top ? "top:" : "bottom:"
             ledger.groups[edge + words.joined(separator: " "), default: []].append(candidate)
@@ -122,6 +170,20 @@ enum FurnitureDetector {
                 if !overflow {
                     ledger.groups[edge + String(folioParts[0]) + "-#(offset=\(offset))", default: []].append(candidate)
                 }
+            }
+            // A running foot may lead or close with a `chapter-page` number beside its words:
+            // NOAA sets `2-14 | Climate Trends` at the body size in ordinary capitalization, so
+            // nothing on one page separates it from prose and every page words it differently
+            // (#184). Normalize the page half against the same consistent physical-page offset a
+            // bare folio uses, and keep the chapter half and the words as they are.
+            for index in Set([0, words.count - 1]) where words.count > 1 {
+                let parts = words[index].split(separator: "-", omittingEmptySubsequences: false)
+                guard parts.count == 2, !parts[0].isEmpty, let value = Int(parts[1]), value >= 0 else { continue }
+                let (offset, overflow) = value.subtractingReportingOverflow(page.number)
+                guard !overflow else { continue }
+                var normalized = words
+                normalized[index] = String(parts[0]) + "-#(offset=\(offset))"
+                ledger.groups[edge + normalized.joined(separator: " "), default: []].append(candidate)
             }
             // Normalize only a boundary page number, with a consistent physical-page
             // offset. Keep internal digits (9/11, chapter numbers, dates) meaningful.
@@ -202,6 +264,13 @@ enum FurnitureDetector {
         guard ledger.pageCount >= 3 else { return plan }
         plan.syntheticOccurrences = ledger.syntheticOccurrences
         plan.syntheticThreshold = max(3, (ledger.pageCount + 1) / 2)
+        /// Every candidate once, whichever signatures filed it.
+        var unique: [Int: [Int: Candidate]] = [:]
+        for group in ledger.groups.values {
+            for candidate in group {
+                unique[candidate.pageIndex, default: [:]][candidate.lineIndex] = candidate
+            }
+        }
         for group in ledger.groups.values {
             let ordered = group.sorted { $0.number < $1.number }
             var run: [Candidate] = []
@@ -231,7 +300,49 @@ enum FurnitureDetector {
             }
             finish()
         }
+        admitSlotEvidence(&plan, unique: unique)
         return plan
+    }
+
+    /// A running head keeps one place and one type size for the length of a book. Where the words
+    /// change too often for a three-page run — a transition head over two chapters' notes, a
+    /// chapter whose notes fill two pages, front matter naming its own part — the slot the
+    /// document has already established supplies the evidence the words withhold (#10).
+    ///
+    /// Only a slot the book keeps on a quarter of its pages, and at least six, counts as
+    /// established, and a line is admitted only where it stands in that same place at that same
+    /// size, within the tolerances the run rule uses. The line must already be a candidate: an
+    /// outermost margin row, set apart from the body, short and measurable. Page-local type size
+    /// does not overrule the document here, and that is the point: a notes page sets its body
+    /// smaller than the running head above it, so the head reads as a heading on that page alone.
+    ///
+    /// A stacked band is not admitted. Its rows are held together by their own separation rather
+    /// than by a place the document keeps, and removing one band on slot evidence alone would
+    /// reach further into the page than this evidence reaches.
+    private static func admitSlotEvidence(_ plan: inout Plan, unique: [Int: [Int: Candidate]]) {
+        // Slots accumulate in page-and-line order, so which candidate opens a slot — and therefore
+        // where its tolerance is centred — does not depend on dictionary order.
+        let ordered = unique.keys.sorted().flatMap { pageIndex in
+            unique[pageIndex]!.keys.sorted().map { (pageIndex, $0, unique[pageIndex]![$0]!) }
+        }
+        var slots: [Slot] = []
+        for (pageIndex, lineIndex, candidate) in ordered
+        where plan.native[pageIndex]?.contains(lineIndex) == true {
+            if let index = slots.firstIndex(where: { $0.admits(candidate) }) {
+                slots[index].pages.insert(pageIndex)
+            } else {
+                slots.append(Slot(isTop: candidate.isTop, position: candidate.position,
+                                  fontSize: candidate.typeSize, pages: [pageIndex]))
+            }
+        }
+        let floor = max(6, (plan.pageCount + 3) / 4)
+        let established = slots.filter { $0.pages.count >= floor }
+        guard !established.isEmpty else { return }
+        for (pageIndex, lineIndex, candidate) in ordered
+        where candidate.dependsOn.isEmpty && plan.native[pageIndex]?.contains(lineIndex) != true
+            && established.contains(where: { $0.admits(candidate) }) {
+            plan.native[pageIndex, default: []].insert(lineIndex)
+        }
     }
 
     static func apply(_ plan: Plan, to page: inout PageContent, pageIndex: Int) -> ConversionWarning? {
@@ -245,18 +356,7 @@ enum FurnitureDetector {
             }
             guard !kept.isEmpty, kept.count != page.lines.count else { return nil }
         } else {
-            guard var removed = plan.native[pageIndex], !removed.isEmpty else { return nil }
-            // The lines of a stacked band go only all together: drop a dependent line until
-            // every line left has the whole band it stands with.
-            var settled = false
-            while !settled {
-                settled = true
-                for (lineIndex, band) in plan.dependencies[pageIndex] ?? [:]
-                where removed.contains(lineIndex) && !band.allSatisfy(removed.contains) {
-                    removed.remove(lineIndex)
-                    settled = false
-                }
-            }
+            let removed = plan.removals(onPageAt: pageIndex)
             guard !removed.isEmpty else { return nil }
             kept = page.lines.enumerated().filter { !removed.contains($0.offset) }.map(\.element)
             guard !kept.isEmpty else { return nil }

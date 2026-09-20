@@ -1,0 +1,122 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        54,
+        735.508009765,
+        253.34399999999994,
+        15.923999999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 12,
+          "text" : "Fifth National Climate Assessment: Chapter 23"
+        }
+      ],
+      "text" : "Fifth National Climate Assessment: Chapter 23"
+    },
+    {
+      "rect" : [
+        54,
+        685.80399755799999,
+        219.78000000000003,
+        47.772000000000048
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 36,
+          "text" : "US Caribbean"
+        }
+      ],
+      "text" : "US Caribbean"
+    },
+    {
+      "rect" : [
+        -19.011594899999999,
+        -37.023161799999997,
+        714.97699820000003,
+        643.53342229999998
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 36,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    },
+    {
+      "rect" : [
+        394.07998659999998,
+        699.83999960000006,
+        180.16524789999994,
+        38.159999999999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 36,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    612,
+    792
+  ],
+  "caseID" : "noaa-nca5-2023",
+  "graphics" : [
+    [
+      0,
+      0,
+      612,
+      630.96101953100003
+    ],
+    [
+      394.07998659999998,
+      699.83999960000006,
+      180.16524789999994,
+      38.159999999999968
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 12,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        735.508009765,
+        253.34399999999994,
+        15.923999999999978
+      ],
+      "text" : "Fifth National Climate Assessment: Chapter 23"
+    },
+    {
+      "fontSize" : 36,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        685.80399755799999,
+        219.78000000000003,
+        47.772000000000048
+      ],
+      "text" : "US Caribbean"
+    }
+  ],
+  "page" : 1050,
+  "rightsBasis" : "NOAA repository explicitly identifies CC0 Public Domain. This records the publisher declaration, not a new owner-confirmed rights determination or shipped-catalog admission.",
+  "sourceSHA256" : "1942cbf346dc2c711fea413d6d6543edb8bc1e3a88d4c3a85e733c6b6d3577bf",
+  "sourceTitle" : "Fifth National Climate Assessment",
+  "sourceURL" : "https://repository.library.noaa.gov/view/noaa/61592/noaa_61592_DS1.pdf"
+}

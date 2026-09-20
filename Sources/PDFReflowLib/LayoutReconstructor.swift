@@ -9,13 +9,18 @@ enum LayoutReconstructor {
     }
 
     /// Hyphen repair consults every page's words; accumulating them per page lets extraction
-    /// release the page itself.
-    static func addVocabulary(of page: PageContent, to vocabulary: inout Set<String>) {
-        for line in page.lines {
-            for word in line.text.lowercased().split(whereSeparator: { !$0.isLetter && $0 != "-" }) {
-                vocabulary.insert(String(word))
-            }
+    /// release the page itself. `skippingLines` withholds the page's margin candidates, whose
+    /// words count only once the furniture plan says the reader keeps them (#184).
+    static func addVocabulary(of page: PageContent, skippingLines skipped: Set<Int> = [],
+                              to vocabulary: inout Set<String>) {
+        for (index, line) in page.lines.enumerated() where !skipped.contains(index) {
+            vocabulary.formUnion(words(of: line))
         }
+    }
+
+    /// One line's vocabulary words.
+    static func words(of line: TextLine) -> [String] {
+        line.text.lowercased().split(whereSeparator: { !$0.isLetter && $0 != "-" }).map(String.init)
     }
 
     static func stripFurniture(_ pages: inout [PageContent]) -> [ConversionWarning] {

@@ -171,7 +171,37 @@
     {
       "id": "wallace-algebra-2010",
       "sourceSHA256": "856bd81edc61c50496982ddc849138f4e0e56fd0ddf0edb53fee9bb0830d0678",
-      "basis": "Page 12 source raster reviewed; license and page-347 formula targets come from the existing corpus review. Does not bless flattened inline exponents or validate every equation image. Page 343 preserves the source's squared exponent in its actual introductory context; the source typo \"from\" is intentional. Page 26 visually reviewed: numbered exercise 80 has squared exponents on both 7a and 6a; retaining those scripts does not qualify other exercise layout. Pages 18-19 and 43-44 visually reviewed: each paragraph continues onto the next page and must remain one paragraph across the source-page marker (#27).",
+      "basis": "Page 12 source raster reviewed; license and page-347 formula targets come from the existing corpus review. Does not bless flattened inline exponents or validate every equation image. Page 343 preserves the source's squared exponent in its actual introductory context; the source typo \"from\" is intentional. Page 26 visually reviewed: numbered exercise 80 has squared exponents on both 7a and 6a; retaining those scripts does not qualify other exercise layout. Pages 18-19 and 43-44 visually reviewed: each paragraph continues onto the next page and must remain one paragraph across the source-page marker (#27). Source pages 155-156 and 290 visually reviewed for the spine-document boundaries written there: the three-variable summary ends one document and the 4.4 Practice - Three Variables heading with its instruction opens the next, and the page-290 sentence runs on mid-sentence from \"perfect square is more\" into \"than it would take to simplify in several steps\" in the following document, with nothing dropped, repeated or inserted at the join (#27). Does not bless that sentence being split into two paragraphs in the first place (#230).",
+      "spineContinuity": [
+        {
+          "sourcePages": [
+            155,
+            156
+          ],
+          "beforeBoundary": [
+            "Equations with three (or more) variables are not any more",
+            "we will arrive at the same final solution."
+          ],
+          "afterBoundary": [
+            "4.4 Practice - Three Variables",
+            "Solve each of the following systems of equation."
+          ],
+          "contiguous": true
+        },
+        {
+          "sourcePages": [
+            290,
+            290
+          ],
+          "beforeBoundary": [
+            "but often the time it takes to discover the larger perfect square is more"
+          ],
+          "afterBoundary": [
+            "than it would take to simplify in several steps."
+          ],
+          "contiguous": true
+        }
+      ],
       "pages": [
         {
           "page": 2,
@@ -462,7 +492,37 @@
     {
       "id": "fed-explained-2021",
       "sourceSHA256": "8db8fd9e1de63ac25a6f9585d78ded12f45ab56f0c14c52c199b36b368f84d60",
-      "basis": "Page 9 source raster reviewed: five functions in source order alongside Figure 1.1. Page 45 retains a graphic, without claiming its labels or arrows are semantically reconstructed. Physical page 46 source raster and native typography reviewed: prose beside the sidebar and above Table 3.1 must remain paragraphs, with both graphic regions retained. Source pages 13, 32, 54, 75, 77, 103, 109 and 123 visually reviewed; preserve ordinary prose and six genuine modest-size section headings beside graphics. Cover source and structure element 4417 reviewed: the title/subtitle spans form one H1, while Public Education & Outreach remains paragraph text.",
+      "basis": "Page 9 source raster reviewed: five functions in source order alongside Figure 1.1. Page 45 retains a graphic, without claiming its labels or arrows are semantically reconstructed. Physical page 46 source raster and native typography reviewed: prose beside the sidebar and above Table 3.1 must remain paragraphs, with both graphic regions retained. Source pages 13, 32, 54, 75, 77, 103, 109 and 123 visually reviewed; preserve ordinary prose and six genuine modest-size section headings beside graphics. Cover source and structure element 4417 reviewed: the title/subtitle spans form one H1, while Public Education & Outreach remains paragraph text. Source pages 33 and 122-123 visually reviewed for the two spine-document boundaries the packer writes there: the press-conference paragraph ends one document and the Communicating Policy Regularly and Clearly section opens the next with nothing between, and the consumer-compliance paragraph ends page 122 before Interagency Initiatives opens page 123 in the following document (#27). Does not bless the 12-point sub-headings this book sets in blue italic, which stay ordinary paragraphs on pages 33, 94 and 122 while the same style becomes a heading on page 123; on page 94 that leaves Electronic Check Processing at the end of a spine document with its paragraph opening the next (#228).",
+      "spineContinuity": [
+        {
+          "sourcePages": [
+            33,
+            33
+          ],
+          "beforeBoundary": [
+            "These press conferences allow the Chair to explain the rationale behind the policy decision and how it relates to the Committee\u2019s dual mandate."
+          ],
+          "afterBoundary": [
+            "Communicating Policy Regularly and Clearly",
+            "The Federal Reserve has a long-standing commitment to communicate regularly with the public and Congress"
+          ],
+          "contiguous": true
+        },
+        {
+          "sourcePages": [
+            122,
+            123
+          ],
+          "beforeBoundary": [
+            "examination procedures for various consumer protection laws and regulations and the CRA."
+          ],
+          "afterBoundary": [
+            "Interagency Initiatives",
+            "Through its participation on the Federal Financial Institutions Examination Council (FFIEC), the Federal Reserve collaborates with other federal and state banking agencies"
+          ],
+          "contiguous": true
+        }
+      ],
       "pages": [
         {
           "page": 50,
@@ -629,13 +689,22 @@
     {
       "id": "gpo-our-flag-2003",
       "sourceSHA256": "a47a3153b649022a52b53e7b0c40b55bfea24e7980bbe32fe6fee0cf1936bbd8",
-      "basis": "Page 27 source raster reviewed; page-33 four-flag target retained from existing review. Does not accept the broken drop-cap, table, or state-description order. Page 27 includes a third region for its table, alongside the two source heading rules. Whole-table containment and ten row associations have source-derived Swift regressions. Source pages 34/42/43 visually reviewed: four illustrated entries follow alphabetical row order, with all four images retained. Protects ordering from changes to margin removal; not general tag/figure ownership qualification. Page 31 visually reviewed: preserve the heading boundary between Flag and for, plus the source photograph. Drop-cap ordering remains unqualified. Physical pages 7/31 visually reviewed: a decorative drop cap must not promote the opening body line to a heading or put its continuation first. Paragraph checks use intact source phrases and do not accept the separate initial-word spacing defect. Page 9 source review confirms the line-ending some-/times join after corrected order; page 30 retains genuine fraction superscripts beside its drop cap. Page 29 source title and logical tree (H3 /K 0) reviewed: both printed lines form one heading, with the Capitol image retained. Page 30 source flag-/pole line break is a joined word.",
+      "basis": "Page 27 source raster reviewed; page-33 four-flag target retained from existing review. Does not accept the broken drop-cap, table, or state-description order. Page 27 includes a third region for its table, alongside the two source heading rules. Whole-table containment and ten row associations have source-derived Swift regressions. Source pages 34/42/43 visually reviewed: four illustrated entries follow alphabetical row order, with all four images retained. Protects ordering from changes to margin removal; not general tag/figure ownership qualification. Page 31 visually reviewed: preserve the heading boundary between Flag and for, plus the source photograph. Drop-cap ordering remains unqualified. Physical pages 7/31 visually reviewed: a decorative drop cap must not promote the opening body line to a heading or put its continuation first. Paragraph checks use intact source phrases and do not accept the separate initial-word spacing defect. Page 9 source review confirms the line-ending some-/times join after corrected order; page 30 retains genuine fraction superscripts beside its drop cap. Page 29 source title and logical tree (H3 /K 0) reviewed: both printed lines form one heading, with the Capitol image retained. Page 30 source flag-/pole line break is a joined word. Source page 27 flag-size table reread cell by cell: a 125-foot pole takes a 20 x 30 flag and a 250-foot pole a 40 x 50 flag, and the left column lists 20, 25, 40, 50, 60, 70, 90, 125, 200 and 250 feet in that order. The column reference catches a height moved to another row and the row references catch a cell lost from their row, neither of which the whole-table reference catches; a size cell exchanged with another row\u2019s remains undetected (#27).",
       "pages": [
         {
           "page": 27,
           "imageRegions": [
             {
               "reference": "corpus/references/gpo-our-flag-2003/page-27-flag-size-table.png"
+            },
+            {
+              "reference": "corpus/references/gpo-our-flag-2003/page-27-row-125-foot-pole.png"
+            },
+            {
+              "reference": "corpus/references/gpo-our-flag-2003/page-27-row-250-foot-pole.png"
+            },
+            {
+              "reference": "corpus/references/gpo-our-flag-2003/page-27-column-flagpole-heights.png"
             }
           ],
           "orderedText": [
@@ -863,7 +932,7 @@
     {
       "id": "usgs-mcs2025-copper",
       "sourceSHA256": "348b1e224d830a51e6d35cf81343eead26a0cb2a4e74c474d699b7faed1b10e6",
-      "basis": "Source pages 1 and 2 visually reviewed. Protects the unit note, author line, preserved statistics and world-production tables, the COMEX paragraph and the ordered superscript table-note markers. Does not bless rasterized prose: the Domestic Production, Recycling, Import Sources, Events and Substitutes paragraphs are currently inside preserved-region images (#36).",
+      "basis": "Source pages 1 and 2 visually reviewed. Protects the unit note, author line, preserved statistics and world-production tables, the COMEX paragraph and the ordered superscript table-note markers. Does not bless rasterized prose: the Domestic Production, Recycling, Import Sources, Events and Substitutes paragraphs are currently inside preserved-region images (#36). Source page 1 reread cell by cell for two rows and one column of the Salient Statistics table: Mine, recoverable reads 1,200 / 1,230 / 1,230 / 1,130 / 1,100 and London Metal Exchange, grade A, cash reads 279.8 / 422.5 / 399.8 / 384.8 / 420 across the 2020-2024 columns, and the 2022 column runs from its header down to the net-import-reliance 41. A row or column reference catches a row or a cell lost from the preserved table, which the whole-table reference does not; neither catches two cells of similar shape exchanged within a row or column (#27).",
       "pages": [
         {
           "page": 1,
@@ -873,6 +942,15 @@
             },
             {
               "reference": "corpus/references/usgs-mcs2025-copper/page-1-tariff.png"
+            },
+            {
+              "reference": "corpus/references/usgs-mcs2025-copper/page-1-row-mine-recoverable.png"
+            },
+            {
+              "reference": "corpus/references/usgs-mcs2025-copper/page-1-row-london-metal-exchange.png"
+            },
+            {
+              "reference": "corpus/references/usgs-mcs2025-copper/page-1-column-2022.png"
             }
           ],
           "orderedText": [
@@ -1106,7 +1184,7 @@
     {
       "id": "arxiv-replay-clocks-2023",
       "sourceSHA256": "1e8172e4a347bdf6722dacc38755f6fb3299866336b8153f51b2c13f3ac6109a",
-      "basis": "Source pages 1, 3 and 4 visually reviewed. Protects abstract, ACM reference and introduction order in the left column before the right-column drone illustration; section 3.1-3.2 order around Figure 1; and algorithm captions with surrounding prose in two-column order. Does not bless the rotated arXiv stamp or author names as headings, merged section labels, Unicode mathematical-italic variables or pseudocode split between text and crops (#36, #43).",
+      "basis": "Source pages 1, 3 and 4 visually reviewed. Protects abstract, ACM reference and introduction order in the left column before the right-column drone illustration; section 3.1-3.2 order around Figure 1; and algorithm captions with surrounding prose in two-column order. Does not bless the rotated arXiv stamp or author names as headings, merged section labels, Unicode mathematical-italic variables or pseudocode split between text and crops (#36, #43). Source pages 3 and 6 reread for notation: the two clock-skew bounds in \"we have chosen \u21121 and \u21122 instead of \u2112 itself\" keep separate subscripts on their own bases and in source order, and the offset bound on page 6 keeps its raised exponent on 10 with the sentence period left outside the script. Displayed equations remain preserved images, so this pins script level, base and order in running prose, not the structure of a display (#206, #213). Neither expectation blesses the missing space in \"Eitself\" or \"E= 1ms\", nor the script capital read as a plain E (#120).",
       "pages": [
         {
           "page": 1,
@@ -1130,7 +1208,21 @@
             "Requirements of Replay Clock RepCl",
             "4 ALGORITHM FOR REPLAY CLOCK (REPCL)"
           ],
-          "minimumImages": 1
+          "minimumImages": 1,
+          "scripts": [
+            {
+              "tag": "sub",
+              "text": "1",
+              "before": "we have chosen E",
+              "after": "and E"
+            },
+            {
+              "tag": "sub",
+              "text": "2",
+              "before": "we have chosen E1 and E",
+              "after": "instead of"
+            }
+          ]
         },
         {
           "page": 4,
@@ -1143,6 +1235,20 @@
             "5 PROPERTIES OF REPCL"
           ],
           "minimumImages": 1
+        },
+        {
+          "page": 6,
+          "text": [
+            "we will need to rely on just the physical clocks which have a granularity of under 1 nanosecond."
+          ],
+          "scripts": [
+            {
+              "tag": "sup",
+              "text": "6",
+              "before": "the value of the offset could be as large as 10",
+              "after": ". By discretizing the clock"
+            }
+          ]
         }
       ]
     },

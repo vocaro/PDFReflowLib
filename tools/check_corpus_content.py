@@ -2,7 +2,8 @@
 """Check reviewed positive content contracts separately from EPUB/resource validation.
 
 No conversion or downloads. Uses a complete evaluator output and the pinned corpus manifest.
-Phrase checks are page-specific; whitespace and inline styling do not affect matching.
+Phrase checks are page-specific, apart from spine-boundary continuity, which is checked over
+the written spine; whitespace and inline styling do not affect matching.
 """
 import argparse
 import json
@@ -30,14 +31,18 @@ def normalized(text):
     return ' '.join(text.split())
 
 
-def read_pages(path, *, max_entries=DEFAULT_MAX_ENTRIES,
+def read_spine(path, *, max_entries=DEFAULT_MAX_ENTRIES,
                max_uncompressed_bytes=DEFAULT_MAX_UNCOMPRESSED_BYTES):
     """Read spine content with explicit ZIP entry-count and total expanded-byte ceilings.
+
+    Returns the pages, the source-page markers in written order, and one record per spine
+    document (its archive name, its text and the source pages it carries), so that a contract
+    can assert what crosses a spine-document boundary as well as what sits on a source page.
 
     These admission limits are not process-memory budgets. Images are not expanded;
     chapter XML and accumulated page text still consume memory after admission.
     """
-    pages, markers = {}, []
+    pages, markers, documents = {}, [], []
     current = None
     heading_id = 0
     paragraph_id = 0
@@ -46,9 +51,15 @@ def read_pages(path, *, max_entries=DEFAULT_MAX_ENTRIES,
         for name in epub.read_package(archive).spine:
             chapter = PurePosixPath(name)
             tree = ET.fromstring(archive.read(name))
+            # A document carries the page still open when it starts, then every page it opens.
+            document = {'name': name, 'text': '', 'pages': [] if current is None else [current]}
+            documents.append(document)
 
             def append(text, script=None, heading=None, paragraph=None):
-                if current is not None and text:
+                if not text:
+                    return
+                document['text'] += text
+                if current is not None:
                     page = pages[current]
                     start = len(page['text'])
                     page['text'] += text
@@ -71,6 +82,7 @@ def read_pages(path, *, max_entries=DEFAULT_MAX_ENTRIES,
                         raise ValueError('Duplicate page boundary')
                     current = page
                     markers.append(current)
+                    document['pages'].append(current)
                     pages[current] = {'text': '', 'images': [], 'scripts': [], 'headings': {}, 'paragraphs': {}}
                 if element.tag == HTML + 'img' and current is not None:
                     asset = str(chapter.parent / element.attrib['src'])
@@ -107,6 +119,14 @@ def read_pages(path, *, max_entries=DEFAULT_MAX_ENTRIES,
         # Paragraph IDs are document-wide, so one <p> crossing a page marker has the same ID on both pages.
         page['paragraphIDs'] = {paragraph: normalized(text) for paragraph, text in page['paragraphs'].items()}
         page['paragraphs'] = [normalized(text) for text in page['paragraphs'].values()]
+    for document in documents:
+        document['text'] = normalized(document['text'])
+    return pages, markers, documents
+
+
+def read_pages(path, **limits):
+    """The pages and their markers alone, for callers that do not inspect spine documents."""
+    pages, markers, _ = read_spine(path, **limits)
     return pages, markers
 
 
@@ -132,7 +152,70 @@ def reference_image(case, contract, number, expectation, reference_root=ROOT):
     return path.read_bytes(), minimum
 
 
-def assess(case, contract, result, report, pages, markers, image_data=None, reference_root=ROOT):
+def ordered_in(text, phrases):
+    """Whether every phrase occurs in text, each after the previous one."""
+    cursor = 0
+    for phrase in phrases:
+        index = text.find(phrase, cursor)
+        if index < 0:
+            return False
+        cursor = index + len(phrase)
+    return True
+
+
+def spine_continuity(case, contract, documents):
+    """Check that reviewed text continuing past a spine-document boundary arrives intact.
+
+    Each expectation names phrases the source sets before and after one boundary. They must
+    occur once in the whole book (nothing duplicated), in order, with the earlier ones inside
+    one spine document and the later ones inside the very next one, and both documents must
+    carry the reviewed source pages. `contiguous` additionally forbids any word between the
+    last phrase and the first one after it, so nothing may be dropped or inserted at the join.
+    """
+    checks, errors = 0, []
+    book = ' '.join(document['text'] for document in documents)
+    for entry in contract.get('spineContinuity', []):
+        if (not isinstance(entry, dict) or not {'sourcePages', 'beforeBoundary', 'afterBoundary'} <= set(entry)
+                or not set(entry) <= {'sourcePages', 'beforeBoundary', 'afterBoundary', 'contiguous'}
+                or type(entry.get('contiguous', False)) is not bool):
+            raise ValueError('Spine continuity requires source pages and phrases on both sides of one boundary')
+        numbers = entry['sourcePages']
+        if (not isinstance(numbers, list) or not numbers
+                or any(type(number) is not int or not 1 <= number <= case['pages'] for number in numbers)
+                or numbers != sorted(numbers)):
+            raise ValueError('Spine continuity needs ordered in-range source pages')
+        sides = []
+        for key in ('beforeBoundary', 'afterBoundary'):
+            phrases = entry[key]
+            if (not isinstance(phrases, list) or not phrases
+                    or any(not isinstance(phrase, str) or not normalized(phrase) for phrase in phrases)):
+                raise ValueError('Spine continuity needs nonempty phrases on both sides')
+            sides.append([normalized(phrase) for phrase in phrases])
+        before, after = sides
+        checks += 1
+        repeated = [phrase for phrase in before + after if book.count(phrase) != 1]
+        if repeated:
+            errors.append(f'Spine boundary: text missing or duplicated elsewhere in the book {repeated!r}')
+            continue
+        index = next((i for i in range(len(documents) - 1)
+                      if ordered_in(documents[i]['text'], before)
+                      and ordered_in(documents[i + 1]['text'], after)), None)
+        if index is None:
+            errors.append(f'Spine boundary: reviewed text does not continue in order across one boundary {entry!r}')
+            continue
+        if numbers[0] not in documents[index]['pages'] or numbers[-1] not in documents[index + 1]['pages']:
+            errors.append(f'Spine boundary: documents around the boundary do not carry source pages {numbers}')
+        if entry.get('contiguous'):
+            joined = documents[index]['text'] + ' ' + documents[index + 1]['text']
+            start = joined.index(before[-1]) + len(before[-1])
+            between = joined[start:joined.index(after[0], start)]
+            if any(character.isalnum() for character in between):
+                errors.append(f'Spine boundary: text inserted or dropped at the join {between[:96]!r}')
+    return checks, errors
+
+
+def assess(case, contract, result, report, pages, markers, *, documents=(),
+           image_data=None, reference_root=ROOT):
     """Assess a contract. image_data(asset) returns converted image bytes for imageRegions checks."""
     errors = []
     if (contract['sourceSHA256'] != case['sha256'] or any(
@@ -149,7 +232,8 @@ def assess(case, contract, result, report, pages, markers, image_data=None, refe
     if (not expected or len(numbers) != len(set(numbers))
             or any(type(p) is not int or not 1 <= p <= case['pages'] for p in numbers)):
         raise ValueError('Contract needs distinct in-range review pages')
-    checks = 0
+    checks, continuity = spine_continuity(case, contract, documents)
+    errors += continuity
     for item in expected:
         number = item['page']
         page = pages.get(number, {'text': '', 'images': []})
@@ -250,7 +334,7 @@ def assess(case, contract, result, report, pages, markers, image_data=None, refe
         raise ValueError('Contract has no content checks')
     return {'case': case['id'], 'passed': not errors, 'reviewPages': numbers,
             'contentChecks': checks, 'errors': errors,
-            'scope': 'Reviewed text/order/script-context/image-presence and source-region image checks; not full-book fidelity or image legibility qualification.'}
+            'scope': 'Reviewed text/order/script-context/image-presence, spine-boundary continuity and source-region image checks; not full-book fidelity or image legibility qualification.'}
 
 
 def check_evaluation(case, contract, directory, *, max_entries=DEFAULT_MAX_ENTRIES,
@@ -258,9 +342,11 @@ def check_evaluation(case, contract, directory, *, max_entries=DEFAULT_MAX_ENTRI
     result = json.loads((directory / 'result.json').read_text())
     report = json.loads((directory / 'conversion-report.json').read_text())
     path = directory / (case['id'] + '.epub')
-    pages, markers = read_pages(path, max_entries=max_entries, max_uncompressed_bytes=max_uncompressed_bytes)
+    pages, markers, documents = read_spine(path, max_entries=max_entries,
+                                           max_uncompressed_bytes=max_uncompressed_bytes)
     with zipfile.ZipFile(path) as archive:
-        return assess(case, contract, result, report, pages, markers, image_data=archive.read)
+        return assess(case, contract, result, report, pages, markers,
+                      documents=documents, image_data=archive.read)
 
 
 def main():

@@ -1,0 +1,333 @@
+{
+  "threshold": 0.95,
+  "colourMutation": {
+    "case": "cdc-zombie-pandemic-2011",
+    "page": 13,
+    "pixelsChangedOver20Levels": 0.2316,
+    "pixelsChangedOver60Levels": 0.0188
+  },
+  "controls": [
+    {
+      "case": "usgs-mcs2025-copper",
+      "page": 1,
+      "reference": "page-1-salient-statistics",
+      "control": "correct output",
+      "score": 0.989
+    },
+    {
+      "case": "usgs-mcs2025-copper",
+      "page": 1,
+      "reference": "page-1-row-mine-recoverable",
+      "control": "correct output",
+      "score": 0.995
+    },
+    {
+      "case": "usgs-mcs2025-copper",
+      "page": 1,
+      "reference": "page-1-row-london-metal-exchange",
+      "control": "correct output",
+      "score": 0.997
+    },
+    {
+      "case": "usgs-mcs2025-copper",
+      "page": 1,
+      "reference": "page-1-column-2022",
+      "control": "correct output",
+      "score": 0.991
+    },
+    {
+      "case": "usgs-mcs2025-copper",
+      "page": 1,
+      "reference": "page-1-salient-statistics",
+      "control": "Mine, recoverable row: 2022 and 2023 cells exchanged",
+      "score": 0.988
+    },
+    {
+      "case": "usgs-mcs2025-copper",
+      "page": 1,
+      "reference": "page-1-row-mine-recoverable",
+      "control": "Mine, recoverable row: 2022 and 2023 cells exchanged",
+      "score": 0.975
+    },
+    {
+      "case": "usgs-mcs2025-copper",
+      "page": 1,
+      "reference": "page-1-row-london-metal-exchange",
+      "control": "Mine, recoverable row: 2022 and 2023 cells exchanged",
+      "score": 0.997
+    },
+    {
+      "case": "usgs-mcs2025-copper",
+      "page": 1,
+      "reference": "page-1-column-2022",
+      "control": "Mine, recoverable row: 2022 and 2023 cells exchanged",
+      "score": 0.986
+    },
+    {
+      "case": "usgs-mcs2025-copper",
+      "page": 1,
+      "reference": "page-1-salient-statistics",
+      "control": "Mine, recoverable row: 2022 cell erased",
+      "score": 0.986
+    },
+    {
+      "case": "usgs-mcs2025-copper",
+      "page": 1,
+      "reference": "page-1-row-mine-recoverable",
+      "control": "Mine, recoverable row: 2022 cell erased",
+      "score": 0.919
+    },
+    {
+      "case": "usgs-mcs2025-copper",
+      "page": 1,
+      "reference": "page-1-row-london-metal-exchange",
+      "control": "Mine, recoverable row: 2022 cell erased",
+      "score": 0.997
+    },
+    {
+      "case": "usgs-mcs2025-copper",
+      "page": 1,
+      "reference": "page-1-column-2022",
+      "control": "Mine, recoverable row: 2022 cell erased",
+      "score": 0.951
+    },
+    {
+      "case": "usgs-mcs2025-copper",
+      "page": 1,
+      "reference": "page-1-salient-statistics",
+      "control": "London Metal Exchange row: 2020 and 2021 cells exchanged",
+      "score": 0.987
+    },
+    {
+      "case": "usgs-mcs2025-copper",
+      "page": 1,
+      "reference": "page-1-row-mine-recoverable",
+      "control": "London Metal Exchange row: 2020 and 2021 cells exchanged",
+      "score": 0.995
+    },
+    {
+      "case": "usgs-mcs2025-copper",
+      "page": 1,
+      "reference": "page-1-row-london-metal-exchange",
+      "control": "London Metal Exchange row: 2020 and 2021 cells exchanged",
+      "score": 0.958
+    },
+    {
+      "case": "usgs-mcs2025-copper",
+      "page": 1,
+      "reference": "page-1-column-2022",
+      "control": "London Metal Exchange row: 2020 and 2021 cells exchanged",
+      "score": 0.991
+    },
+    {
+      "case": "usgs-mcs2025-copper",
+      "page": 1,
+      "reference": "page-1-salient-statistics",
+      "control": "2022 column: London and U.S. producer values exchanged",
+      "score": 0.987
+    },
+    {
+      "case": "usgs-mcs2025-copper",
+      "page": 1,
+      "reference": "page-1-row-mine-recoverable",
+      "control": "2022 column: London and U.S. producer values exchanged",
+      "score": 0.995
+    },
+    {
+      "case": "usgs-mcs2025-copper",
+      "page": 1,
+      "reference": "page-1-row-london-metal-exchange",
+      "control": "2022 column: London and U.S. producer values exchanged",
+      "score": 0.975
+    },
+    {
+      "case": "usgs-mcs2025-copper",
+      "page": 1,
+      "reference": "page-1-column-2022",
+      "control": "2022 column: London and U.S. producer values exchanged",
+      "score": 0.957
+    },
+    {
+      "case": "usgs-mcs2025-copper",
+      "page": 1,
+      "reference": "page-1-salient-statistics",
+      "control": "London Metal Exchange row erased",
+      "score": 0.954
+    },
+    {
+      "case": "usgs-mcs2025-copper",
+      "page": 1,
+      "reference": "page-1-row-mine-recoverable",
+      "control": "London Metal Exchange row erased",
+      "score": 0.995
+    },
+    {
+      "case": "usgs-mcs2025-copper",
+      "page": 1,
+      "reference": "page-1-row-london-metal-exchange",
+      "control": "London Metal Exchange row erased",
+      "score": 0.676
+    },
+    {
+      "case": "usgs-mcs2025-copper",
+      "page": 1,
+      "reference": "page-1-column-2022",
+      "control": "London Metal Exchange row erased",
+      "score": 0.94
+    },
+    {
+      "case": "gpo-our-flag-2003",
+      "page": 27,
+      "reference": "page-27-flag-size-table",
+      "control": "correct output",
+      "score": 0.983
+    },
+    {
+      "case": "gpo-our-flag-2003",
+      "page": 27,
+      "reference": "page-27-row-125-foot-pole",
+      "control": "correct output",
+      "score": 0.992
+    },
+    {
+      "case": "gpo-our-flag-2003",
+      "page": 27,
+      "reference": "page-27-row-250-foot-pole",
+      "control": "correct output",
+      "score": 0.993
+    },
+    {
+      "case": "gpo-our-flag-2003",
+      "page": 27,
+      "reference": "page-27-column-flagpole-heights",
+      "control": "correct output",
+      "score": 0.983
+    },
+    {
+      "case": "gpo-our-flag-2003",
+      "page": 27,
+      "reference": "page-27-flag-size-table",
+      "control": "flag sizes of the 125- and 250-foot rows exchanged",
+      "score": 0.975
+    },
+    {
+      "case": "gpo-our-flag-2003",
+      "page": 27,
+      "reference": "page-27-row-125-foot-pole",
+      "control": "flag sizes of the 125- and 250-foot rows exchanged",
+      "score": 0.963
+    },
+    {
+      "case": "gpo-our-flag-2003",
+      "page": 27,
+      "reference": "page-27-row-250-foot-pole",
+      "control": "flag sizes of the 125- and 250-foot rows exchanged",
+      "score": 0.972
+    },
+    {
+      "case": "gpo-our-flag-2003",
+      "page": 27,
+      "reference": "page-27-column-flagpole-heights",
+      "control": "flag sizes of the 125- and 250-foot rows exchanged",
+      "score": 0.983
+    },
+    {
+      "case": "gpo-our-flag-2003",
+      "page": 27,
+      "reference": "page-27-flag-size-table",
+      "control": "pole heights of the 125- and 250-foot rows exchanged",
+      "score": 0.962
+    },
+    {
+      "case": "gpo-our-flag-2003",
+      "page": 27,
+      "reference": "page-27-row-125-foot-pole",
+      "control": "pole heights of the 125- and 250-foot rows exchanged",
+      "score": 0.963
+    },
+    {
+      "case": "gpo-our-flag-2003",
+      "page": 27,
+      "reference": "page-27-row-250-foot-pole",
+      "control": "pole heights of the 125- and 250-foot rows exchanged",
+      "score": 0.972
+    },
+    {
+      "case": "gpo-our-flag-2003",
+      "page": 27,
+      "reference": "page-27-column-flagpole-heights",
+      "control": "pole heights of the 125- and 250-foot rows exchanged",
+      "score": 0.89
+    },
+    {
+      "case": "gpo-our-flag-2003",
+      "page": 27,
+      "reference": "page-27-flag-size-table",
+      "control": "125-foot row erased",
+      "score": 0.927
+    },
+    {
+      "case": "gpo-our-flag-2003",
+      "page": 27,
+      "reference": "page-27-row-125-foot-pole",
+      "control": "125-foot row erased",
+      "score": 0.87
+    },
+    {
+      "case": "gpo-our-flag-2003",
+      "page": 27,
+      "reference": "page-27-row-250-foot-pole",
+      "control": "125-foot row erased",
+      "score": 0.993
+    },
+    {
+      "case": "gpo-our-flag-2003",
+      "page": 27,
+      "reference": "page-27-column-flagpole-heights",
+      "control": "125-foot row erased",
+      "score": 0.903
+    },
+    {
+      "case": "gpo-our-flag-2003",
+      "page": 27,
+      "reference": "page-27-flag-size-table",
+      "control": "125-foot flag size erased",
+      "score": 0.951
+    },
+    {
+      "case": "gpo-our-flag-2003",
+      "page": 27,
+      "reference": "page-27-row-125-foot-pole",
+      "control": "125-foot flag size erased",
+      "score": 0.87
+    },
+    {
+      "case": "gpo-our-flag-2003",
+      "page": 27,
+      "reference": "page-27-row-250-foot-pole",
+      "control": "125-foot flag size erased",
+      "score": 0.993
+    },
+    {
+      "case": "gpo-our-flag-2003",
+      "page": 27,
+      "reference": "page-27-column-flagpole-heights",
+      "control": "125-foot flag size erased",
+      "score": 0.983
+    },
+    {
+      "case": "cdc-zombie-pandemic-2011",
+      "page": 13,
+      "reference": "page-13-page",
+      "control": "correct output",
+      "score": 0.997
+    },
+    {
+      "case": "cdc-zombie-pandemic-2011",
+      "page": 13,
+      "reference": "page-13-page",
+      "control": "complementary chroma at unchanged lightness",
+      "score": 0.997
+    }
+  ]
+}

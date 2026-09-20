@@ -1,0 +1,21 @@
+{
+  "case": "gpo-our-flag-2003",
+  "sourceSHA256": "a47a3153b649022a52b53e7b0c40b55bfea24e7980bbe32fe6fee0cf1936bbd8",
+  "page": 27,
+  "regionPoints": [
+    80.0,
+    562.5,
+    246.0,
+    572.5
+  ],
+  "target": "Flag-size table row: a 250-foot flagpole takes a 40 x 50 flag",
+  "renderer": "pdftoppm version 26.04.0",
+  "renderDPI": 180,
+  "referenceDPI": 36,
+  "inkThreshold": 200,
+  "pixels": [
+    83,
+    5
+  ],
+  "sha256": "dba2b39f6ddd303199a11f8dc195085300e7fe043eba15c913649a8291be71bc"
+}

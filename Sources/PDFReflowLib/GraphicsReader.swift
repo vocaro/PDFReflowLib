@@ -16,12 +16,15 @@ enum GraphicsReader {
                     var visibleText = false }
     private final class State {
         var matrix = CGAffineTransform.identity
-        var saved: [(CGAffineTransform, Bool, CGRect, Int)] = []
+        var saved: [(CGAffineTransform, Bool, CGRect?, Int)] = []
         var textRenderingMode = 0
         var invisibleText = false
         var visibleText = false
-        // Conservative page-space bounds, not a replacement for Core Graphics clipping.
-        var clip = CGRect.zero
+        /// Conservative page-space bounds of the clipping region in force, or nil when nothing
+        /// clips. A clip path contributes its bounding box, so this over-approximates the real
+        /// region and no visible mark is ever outside it. It is not a replacement for Core
+        /// Graphics clipping.
+        var clip: CGRect?
         var pendingClip = false
         var white = false
         var path = CGRect.null
@@ -34,23 +37,51 @@ enum GraphicsReader {
         var resources: CGPDFDictionaryRef?
         var pageBounds = CGRect.zero
 
+        /// Charged once per operator that moves the reader's state. The budget bounds the work
+        /// one page can ask for; a page that exhausts it is preserved whole rather than half
+        /// read. 250,000 operations cost about 60 ms and leave the paint, saved-state and form
+        /// depth caps to bound everything else (#13).
+        static let operationBudget = 250_000
+
         func accept() -> Bool {
             operations += 1
-            if operations > 100_000 || Task.isCancelled { unsupported = true; return false }
+            if operations > Self.operationBudget || Task.isCancelled { unsupported = true; return false }
             return true
         }
         func finishPath() {
-            if pendingClip {
-                if !path.isNull && !path.isFinite { unsupported = true }
-                else { clip = clip.intersection(path) }
+            if pendingClip, !path.isNull {
+                // A clip path that never reached a coordinate (`W n` with nothing constructed)
+                // leaves the clip alone rather than emptying it: over-approximating costs a
+                // crop that is too wide, under-approximating erases the artwork below.
+                if !path.isFinite { unsupported = true }
+                else { clip = clip.map { $0.intersection(path) } ?? path }
             }
             pendingClip = false
             path = .null
         }
+        /// The part of a footprint the clip in force lets show, or nil when none of it can.
+        ///
+        /// A path's or image's extent is not its ink: illustrations draw streamlines, arrows and
+        /// photographs far past the frame that clips them, into the neighbouring column, and a
+        /// bleed rectangle can lie wholly outside its clip (#52, #98). The tracked clip
+        /// over-approximates the real clipping region, so nothing visible is dropped here.
+        ///
+        /// `tolerance` widens the clip by the same padding the footprint carries. A painted
+        /// footprint is padded for stroke width and antialiasing, and a frame drawn exactly on
+        /// the clip that bounds it would otherwise lose that padding on the clipped edges —
+        /// moving a crop the clip does not really cut.
+        func visible(_ rect: CGRect, tolerance: CGFloat = 0) -> CGRect? {
+            guard let clip else { return rect }
+            let shown = rect.intersection(clip.insetBy(dx: -tolerance, dy: -tolerance))
+            return shown.isNull || shown.isEmpty ? nil : shown
+        }
         func paint() {
             defer { finishPath() }
-            guard accept(), !path.isNull else { return }
-            if regions.count < 10_000 { regions.append(path.insetBy(dx: -2, dy: -2)) }
+            // The footprint is padded before it is clipped: a horizontal rule is a path of no
+            // height, and an unpadded rectangle of no area intersects nothing at all.
+            guard accept(), !path.isNull,
+                  let shown = visible(path.insetBy(dx: -2, dy: -2), tolerance: 2) else { return }
+            if regions.count < 10_000 { regions.append(shown) }
             else { unsupported = true }
         }
     }
@@ -179,9 +210,13 @@ enum GraphicsReader {
             switch String(cString: subtype) {
             case "Image":
                 if s.regions.count < 10_000 {
-                    let rect = CGRect(x: 0, y: 0, width: 1, height: 1).applying(s.matrix)
-                    s.regions.append(rect)
-                    s.images.append(rect)
+                    // Only the part the clip lets show: FAA page 19 places a 338 by 400 pt map
+                    // under a 207 by 129 pt clip, and the rest of it reached into the left
+                    // column (#52).
+                    if let rect = s.visible(CGRect(x: 0, y: 0, width: 1, height: 1).applying(s.matrix)) {
+                        s.regions.append(rect)
+                        s.images.append(rect)
+                    }
                 } else { s.unsupported = true }
             case "Form":
                 let startCount = s.regions.count
@@ -204,9 +239,12 @@ enum GraphicsReader {
                                 transform = CGAffineTransform(a: m[0], b: m[1], c: m[2], d: m[3], tx: m[4], ty: m[5])
                             }
                         }
-                        let rect = CGRect(x: n[0], y: n[1], width: n[2] - n[0], height: n[3] - n[1])
+                        let box = CGRect(x: n[0], y: n[1], width: n[2] - n[0], height: n[3] - n[1])
                             .applying(transform.concatenating(s.matrix))
-                        if rect.isFinite, rect.width * rect.height < s.pageBounds.width * s.pageBounds.height * 0.7 {
+                        // The form paints nothing the clip in force hides, so its declared box
+                        // is not its footprint either (#52).
+                        if box.isFinite, let rect = s.visible(box),
+                           rect.width * rect.height < s.pageBounds.width * s.pageBounds.height * 0.7 {
                             s.regions.append(rect)
                         }
                     }
@@ -217,7 +255,9 @@ enum GraphicsReader {
         let s = State()
         s.table = table
         s.pageBounds = page.getBoxRect(.cropBox)
-        s.clip = s.pageBounds
+        // Nothing paints outside the crop box, so it is the opening clip — unless the page
+        // reports no usable box, where an unclipped start keeps every mark.
+        s.clip = s.pageBounds.isFinite && !s.pageBounds.isEmpty ? s.pageBounds : nil
         if let dictionary = page.dictionary {
             CGPDFDictionaryGetDictionary(dictionary, "Resources", &s.resources)
         }
@@ -251,7 +291,7 @@ enum GraphicsReader {
         var type: CGPDFInteger = 0
         guard let dictionary, CGPDFDictionaryGetInteger(dictionary, "ShadingType", &type),
               (1...7).contains(type) else { s.unsupported = true; return }
-        var region = s.clip
+        var region = s.clip ?? s.pageBounds
         var boxObject: CGPDFObjectRef?
         if CGPDFDictionaryGetObject(dictionary, "BBox", &boxObject) {
             guard let box = CGPDFObjects.rectangle(dictionary, "BBox") else { s.unsupported = true; return }
@@ -297,7 +337,10 @@ enum GraphicsReader {
         guard let box = CGPDFObjects.rectangle(dictionary, "BBox") else { s.unsupported = true; return }
         let transformed = box.applying(s.matrix)
         guard transformed.isFinite else { s.unsupported = true; return }
-        s.clip = s.clip.intersection(transformed)
+        // The form's own box clips its content, under whatever clip was already in force. A box
+        // that transforms to no area at all is left out of the clip rather than emptying it:
+        // producers do emit degenerate boxes, and a form's artwork must not vanish for one.
+        if !transformed.isEmpty { s.clip = s.clip.map { $0.intersection(transformed) } ?? transformed }
         var resources: CGPDFDictionaryRef?
         CGPDFDictionaryGetDictionary(dictionary, "Resources", &resources)
         guard let resources = resources ?? s.resources else { s.unsupported = true; return }

@@ -70,8 +70,11 @@ to the one native line it lies in. `GlyphIndexDecoder` is the one reader whose e
 whole document rather than one page: a font that names its glyphs by index states no character
 anywhere in the file, so the characters are established from the document's own words and read
 back once per document, and `GlyphIdentityReader` rewrites an affected line from them. A page
-whose fonts it cannot establish keeps the damaged-encoding diagnosis and its recognition; `GraphicsReader` keeps its own paint-oriented scan over the
-same helpers. `StructureTreeReader` parses tagged-PDF structure into value-only page/MCID
+whose fonts it cannot establish keeps the damaged-encoding diagnosis and its recognition.
+`GraphicsReader` keeps its own paint-oriented scan over the same helpers, tracking the clip in
+force so that what it records for a figure is what the page lets show rather than how far the
+artwork was drawn, and spending its own budget so a page cannot ask for unbounded work.
+`StructureTreeReader` parses tagged-PDF structure into value-only page/MCID
 associations, and no Core Graphics object survives its parsing pool. `ConversionWarnings`
 composes every warning's prose from a `PageWarning` kind in one place.
 

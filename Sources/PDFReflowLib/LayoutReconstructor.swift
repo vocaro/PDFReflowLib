@@ -59,12 +59,35 @@ enum LayoutReconstructor {
         }.min { $0.rect.width < $1.rect.width }
     }
 
+    /// A band across the page's full measure, flush against its top or bottom edge: the page's own
+    /// furniture — a footer or header background — rather than a figure that owns the text near it.
+    ///
+    /// Dietary Guidelines page 2 paints such a band from the foot of the page up to y=80.12 and
+    /// prints its four notes from y=77.49 to y=85.45. A figure would have a claim on text that
+    /// overlaps it; this band has none, and growing to swallow the lines it grazed took two of the
+    /// four notes out of the book (#246). Every other kind of region keeps the whole-line growth
+    /// of #36, including a fraction bar's terms, whose middles lie outside their seed by
+    /// construction.
+    static func isEdgeBand(_ seed: CGRect, bounds: CGRect) -> Bool {
+        seed.width >= bounds.width * 0.9
+            && (seed.minY <= bounds.minY + 1 || seed.maxY >= bounds.maxY - 1)
+    }
+
+    /// Whether a finished crop takes a line out of the reflowed text. A crop's edge grazes the
+    /// rectangle of the line beyond it without covering its glyphs, so a crop takes the lines whose
+    /// middle it holds (#169, #246).
+    static func takes(_ crop: CGRect, _ line: TextLine) -> Bool {
+        crop.intersects(line.rect) && crop.minY <= line.rect.midY && line.rect.midY <= crop.maxY
+    }
+
     /// Whether a seed region captures a text line. Tall PDFKit line rectangles include leading,
     /// so a thin rule touches the rectangles of the lines above and below without crossing
     /// their glyphs; it captures only text it actually strikes through (#36).
     private static func captures(_ seed: CGRect, _ line: TextLine) -> Bool {
         guard seed.intersects(line.rect) else { return false }
-        guard isThinRule(seed) else { return true }
+        guard isThinRule(seed) else {
+            return takes(seed, line)
+        }
         let core = line.rect.insetBy(dx: 0, dy: line.rect.height * 0.25)
         return seed.midY >= core.minY && seed.midY <= core.maxY
     }
@@ -136,11 +159,14 @@ enum LayoutReconstructor {
                     bounds = cut
                 } else if admitted.isEmpty && isThinRule(region.seed) {
                     return nil
-                } else {
+                } else if !isEdgeBand(region.seed, bounds: page.bounds) || takes(bounds, line) {
                     admitted.append(rect)
                     changed = true
                     break
                 }
+                // An edge band that cannot be cut around this line keeps its own extent instead of
+                // growing into it. `takes` then leaves the line in the prose, so nothing is lost
+                // either way, where growing would have buried it in the crop (#246).
             }
             if changed { continue }
             return bounds
@@ -662,7 +688,7 @@ enum LayoutReconstructor {
                                                           crops: images.map(\.0), bounds: page.bounds,
                                                           language: context.language)
         let lines = page.lines.enumerated().filter { index, line in
-            overPicture.contains(index) || !images.contains { $0.0.intersects(line.rect) }
+            overPicture.contains(index) || !images.contains { takes($0.0, line) }
         }.map(\.element)
         let typography = PageTypography(pageLines: page.lines, reflowableLines: lines, documentBody: context.documentBody)
         // A bold sub-heading set at or near body size, whose paragraph opens beneath it directly or

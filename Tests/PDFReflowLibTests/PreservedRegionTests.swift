@@ -343,3 +343,37 @@ func aPhotographStillLeavesItsCaptionAndTheProseBelowItReflowable() throws {
     // The page's folio and the picture credit stand apart from the prose, as they did before.
     #expect(paragraphs.contains("49") && paragraphs.contains("©Reuters 2004"))
 }
+
+// A page's own footer band is furniture, not a figure that owns the text beside it (#246).
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/246")) func aFooterBandDoesNotTakeTheNotesItGrazes() {
+    let bounds = CGRect(x: 0, y: 0, width: 612, height: 792)
+    // Dietary Guidelines page 2 to the tenth of a point: a full-measure band up to y=80.12, and
+    // four notes in two columns, the lower pair running from y=77.49 to y=85.45.
+    let band = CGRect(x: 0, y: 0, width: 612, height: 80.12)
+    func note(_ x: Double, _ y: Double, _ text: String) -> TextLine {
+        TextLine(text: text, rect: CGRect(x: x, y: y, width: 180, height: 7.96), fontSize: 7)
+    }
+    let lines = [note(54, 87.99, "1 https://www.cdc.gov/chronic-disease/facts.html"),
+                 note(54, 77.49, "2 https://www.cdc.gov/nchs/fastats/obesity.htm"),
+                 note(315, 87.99, "3 https://gis.cdc.gov/grasp/diabetes/atlas.html"),
+                 note(315, 77.49, "4 https://www.cdc.gov/physical-activity/unfit.html")]
+    let page = PageContent(number: 2, bounds: bounds, lines: lines, graphics: [band])
+    #expect(LayoutReconstructor.isEdgeBand(band, bounds: bounds))
+    var warnings: [ConversionWarning] = []
+    let blocks = LayoutReconstructor.blocks(page: page, images: [(band, "footer")], vocabulary: [], warnings: &warnings)
+    let reflowed = blocks.filter(\.hasReflowedText).map(\.text).joined(separator: " ")
+    for note in ["chronic-disease", "nchs/fastats", "grasp/diabetes", "physical-activity"] {
+        #expect(reflowed.contains(note), "note lost to the footer band: \(note)")
+    }
+}
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/246")) func onlyAFullMeasureBandAtAPageEdgeIsFurniture() {
+    let bounds = CGRect(x: 0, y: 0, width: 612, height: 792)
+    #expect(LayoutReconstructor.isEdgeBand(CGRect(x: 0, y: 0, width: 612, height: 80), bounds: bounds))
+    #expect(LayoutReconstructor.isEdgeBand(CGRect(x: 0, y: 712, width: 612, height: 80), bounds: bounds))
+    // A figure the width of the measure but away from either edge is not furniture, and neither
+    // is a band that leaves a column of the measure free.
+    #expect(!LayoutReconstructor.isEdgeBand(CGRect(x: 0, y: 300, width: 612, height: 80), bounds: bounds))
+    #expect(!LayoutReconstructor.isEdgeBand(CGRect(x: 0, y: 0, width: 300, height: 80), bounds: bounds))
+}

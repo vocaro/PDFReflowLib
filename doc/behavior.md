@@ -876,6 +876,14 @@ Evidence: [spine-continuity](../measurements/spine-continuity/record.md),
   removed before it is measured, because a query string is not a relation: a word holding `://`,
   opening `www.`, or joining a `name=value` pair after a `?` or `&` is an address, and a note that
   cites one no longer seeds a crop (#227).
+- **Page furniture.** A region spanning at least 90% of the page's measure and flush against its
+  top or bottom edge is the page's own furniture — a footer or header background — not a figure
+  with a claim on the text near it. It keeps its own extent rather than growing to a line it only
+  grazes, and a crop takes the lines whose middle it holds. Dietary Guidelines page 2 paints such
+  a band to y=80.12 and prints its notes from y=77.49 to y=85.45; growing into the 2.63 points of
+  overlap took two of the page's four notes out of the book (#246). Every other region keeps the
+  whole-line growth of #36, including a fraction bar, whose terms lie outside its seed by
+  construction. Evidence: [footer-band-notes](../measurements/footer-band-notes/record.md).
 - **Thin rules.** A painted rule at most 6 pt high and at least 12 pt (and three times its height)
   wide, measured after `GraphicsReader`'s two-point padding, is a typographic separator rather than
   a figure. Such a rule seeds no region when it underlines one text line — it lies within that

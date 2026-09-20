@@ -87,7 +87,9 @@ Capture `/tmp/dga-baseline` with the baseline converter and the same probe befor
 Resource measurements may run concurrently (`--jobs`); see
 [parallel gates](regression-testing.md#parallel-gates) for the parity evidence and the host
 memory-pressure guard. The probe requires the same macOS/Vision SDK as the
-library. Compiling it again changes its identity; recapture both runs if that identity changes.
+library. `tools/check_documented_builds.py` compiles this command as written, so a library source
+the rasterizer comes to need cannot go missing from it unnoticed (#204).
+Compiling it again changes its identity; recapture both runs if that identity changes.
 
 The evaluator records a fresh run ID, converter and probe executable SHA-256, source identity,
 system/build/architecture, probe result SHA-256, and EPUB SHA-256. The probe reports its own

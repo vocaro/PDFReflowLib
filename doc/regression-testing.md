@@ -37,7 +37,7 @@ What the individual gates check:
   concurrency test overlaps four conversions and one cancelled conversion, checking ownership,
   styles, images, monotonic progress and staging cleanup. For iOS:
   `xcodebuild test -scheme PDFReflowLib-Package -destination 'platform=iOS Simulator,name=iPhone 18 Pro' CODE_SIGNING_ALLOWED=NO`.
-- `python3 -m unittest discover -s tools -p 'test_*.py' -v`: 162 Python tests over the tools,
+- `python3 -m unittest discover -s tools -p 'test_*.py' -v`: 166 Python tests over the tools,
   including the checker's negative controls, the identity tool, the memory-gate instrumentation
   (real child allocations above and below a ceiling, source verification, isolation from an
   earlier child's high-water mark), the comparison and reader servers (no Poppler or socket
@@ -48,6 +48,12 @@ What the individual gates check:
   `NativeTextReader.withExtractionLock` or `pdfKitGated` (`Tests/PDFReflowLibTests/PDFKitGate.swift`).
 - `tools/check_measurements.py`: no raw capture and at most two megabytes added under
   `measurements/` relative to the base branch ([decision 0006](decisions/0006-measurements-are-records.md)).
+- `tools/check_documented_builds.py`: compiles every probe under `tools/probes/` from the source
+  list in `tools/pdfreflow_tools/swift_sources.py`, and then runs each `swiftc` command the
+  runbooks print — `doc/corpus.md`'s capability probe, `doc/memory-testing.md`'s PDFKit memory
+  probe and the two capture commands below — exactly as written, with only the `-o` target moved
+  into a scratch directory. A probe the library has outgrown, and a documented build renamed,
+  deleted or repointed, fail here instead of the next time somebody follows the runbook (#204).
 - `tools/check_pdfkit_concurrency.py --modes native --workers 1 8 --trials 2 --iterations 50`:
   fresh-process native extraction on original RoleMap/MCR and structure-tree-absent fixtures,
   asserting exact line text and 12/24-point fonts. It runs alone because contention from other

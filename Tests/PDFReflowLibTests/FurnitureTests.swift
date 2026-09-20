@@ -185,6 +185,41 @@ func reportMapLabelsRemainInsidePreservedGraphics(number: Int) throws {
     #expect(zip(pages, original).allSatisfy { $0.lines.map(\.text) == $1.lines.map(\.text) })
 }
 
+@Test func stackedMarginRowsGoAsOneBlockOrNotAtAll() throws {
+    var pages = try (24...27).map { try SourceLayoutFixture.load("p596-\($0)").content() }
+    let original = pages
+    let warnings = LayoutReconstructor.stripFurniture(&pages)
+    // The running foot and the table's "(continued)" marker stand closer together than a line
+    // height, so neither row is set apart on its own and the old single-row rule kept both.
+    #expect(warnings.map(\.page) == [25, 26, 27])
+    for (before, after) in zip(original, pages) {
+        let block = before.lines.filter { $0.text == "(继续)" || $0.text.contains("596 号刊物") }
+        #expect(block.count == 2)
+        // Page 24's block is worded differently: a table footnote printed only there stands
+        // with those two rows, so nothing of that page's foot goes.
+        let expected = before.number == 24 ? before.lines
+            : before.lines.filter { line in !block.contains { $0.rect == line.rect } }
+        #expect(after.lines.map(\.text) == expected.map(\.text))
+        // The repeated EIC table head is nine rows deep, past the block's line ceiling, and its
+        // column titles are content: the head band keeps every page's table intact.
+        #expect(after.lines.contains { $0.text.contains("低收入家庭福利优惠") })
+        #expect(after.lines.contains { $0.text.contains("已婚联合报税") })
+    }
+}
+
+@Test func repeatedSlideTitlesAreNotAStackedRunningHead() throws {
+    // Three consecutive slides print the same two-line title. The lines stand closer than a line
+    // height, so they form one block, but it reaches to 0.82 of the page: a title set that deep
+    // is the slide's heading, not a running head, and must survive its own repetition.
+    var pages = try (16...18).map { try SourceLayoutFixture.load("earthdata-\($0)").content() }
+    let original = pages
+    #expect(pages.allSatisfy { page in
+        page.lines.filter { $0.rect.midY > page.bounds.height * 0.84 }.count == 2
+    })
+    #expect(LayoutReconstructor.stripFurniture(&pages).isEmpty)
+    #expect(zip(pages, original).allSatisfy { $0.lines.map(\.text) == $1.lines.map(\.text) })
+}
+
 @Test(arguments: ["blue-5", "blue-12"])
 func syntheticScanMarginsKeepExistingRepeatedArtifactCleanup(name: String) throws {
     let source = try SourceLayoutFixture.load(name).content()

@@ -423,6 +423,16 @@ Evidence: [page-retention](../measurements/page-retention/record.md);
   layers use the outer 7% on both edges, because their typography supplies no native font
   evidence. Font-size drift tolerance is the larger of 0.5 pt and 10% of the size (25% for folios,
   whose size comes from glyph height so fallback font estimates do not break matching).
+- Where the outermost row is no candidate on its own — its lines run into the row inward of them
+  rather than standing clear — the rows stacked on it form one block. Each further row joins while
+  it stands nearer the block than its own separation, so the block ends at the first row that is
+  set apart and is separated from the body as one outermost row is. A block may hold at most eight
+  lines, and its inward boundary must stay within the outer eighth of the page, at either edge.
+  Every line of a block is weighed for repetition on its own, and goes only when every other line
+  of its block goes, so a block one page words differently stays whole on that page. The ceiling
+  and the outer eighth are what keep genuine content out: the IRS EIC table's repeated head is
+  nine rows deep, and the Earthdata deck's title, repeated unchanged on three consecutive slides,
+  reaches to 0.82 of the page.
 - Textual headers must be separated from inward content. Boundary page numbers share repetition
   evidence only with the same physical-page offset; numeric chapter-page folios keep their chapter
   prefix; internal chapter and date digits stay significant. Matching body titles, nearby captions
@@ -432,7 +442,8 @@ Evidence: [page-retention](../measurements/page-retention/record.md);
   evidence, not tag consumption or a universal header classifier.
 
 Evidence: [local-header-regressions](../measurements/local-header-regressions/record.md),
-[report-header-qualification](../measurements/report-header-qualification/record.md).
+[report-header-qualification](../measurements/report-header-qualification/record.md),
+[stacked-margin-blocks](../measurements/stacked-margin-blocks/record.md).
 
 ## LayoutReconstructor, PageTypography, LineRole, BlockAssembler
 

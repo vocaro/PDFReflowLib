@@ -84,8 +84,10 @@ under MIT and are not resources of the shipped library target.
 
 ## Government-document development fixtures
 
-The `faa-{91,363…365,437…439,511}`, `fed-{13,32,45,46,54,75,77,103,109,123}`, `flag-{27,31}`, `911-{19…26,33,50,51,65…71,126,254,255,306,451,471…476,579…585}`, `cdc-5`, `dga-1`, `warren-50`, `warren-910`, `blue-5`, `blue-12`, `usda-9` and `noaa-{33,80,139,1619}` layout JSONs under the test fixtures
+The `faa-{91,363…365,437…439,511}`, `fed-{13,32,45,46,54,75,77,103,109,123}`, `flag-{27,31}`, `911-{19…26,33,50,51,65…71,126,254,255,306,451,471…476,579…585}`, `cdc-5`, `dga-1`, `warren-50`, `warren-910`, `blue-5`, `blue-12`, `usda-9`, `p596-{24…27}`, `earthdata-{16…18}` and `noaa-{33,80,139,1619}` layout JSONs under the test fixtures
 contain extracted text and geometry from the corresponding U.S. government corpus documents.
+The `earthdata` captures are text derivatives of agency-authored slide text, within the owner's
+2026-09-17 clearance for that case; like every layout JSON they hold no crop, raster or insignia.
 Each records its publisher URL, title and pinned source checksum. The source and output renders
 in `measurements/three-fidelity-fixes/`, `measurements/fractions-and-invisible-text/`,
 `measurements/warren-image-encoding/`, `measurements/poppler-relative-images/` and

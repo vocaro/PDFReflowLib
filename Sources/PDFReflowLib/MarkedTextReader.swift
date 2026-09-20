@@ -25,13 +25,24 @@ enum MarkedTextReader {
         var artifactUnknownOrigins = 0
         var invisibleArtifactShows = 0
         var blankShows = 0
+        /// Measurement only: shows drawn from inside a Form XObject, which drawing the form once
+        /// refused the page for whether or not it made any (#241).
+        var formShows = 0
+        /// Measurement only: Form XObjects this scan followed, at every depth.
+        var formsRead = 0
     }
+
+    /// How many forms deep a `Do` is followed. A page's figure artwork nests a handful of forms;
+    /// past this the reader stops reading and refuses the page rather than trusting tags it has
+    /// stopped checking. `GraphicsReader` follows the same depth.
+    static let maximumFormDepth = 12
 
     private static let scanOptions: ContentStreamWalk.Options = {
         var options = ContentStreamWalk.Options()
         options.operators = ["Ts", "Tr", "BDC", "BMC", "EMC", "Do"]
         options.moveAndShow = .show
         options.selectsFonts = true
+        options.maximumFormDepth = maximumFormDepth
         return options
     }()
 
@@ -43,11 +54,15 @@ enum MarkedTextReader {
         var renderMode: CGFloat = 0
         var saved: [(CGFloat, Set<UInt8>, CGFloat)] = []
         var marks: [Mark] = []
+        /// The mark stack depth the current stream opened at. A form's `EMC` may not close a
+        /// section the page opened: marked content begins and ends in one content stream.
+        var markFloor = 0
         var identifiers: Set<Int> = []
         var scan = Scan()
         /// Space codes per font dictionary on this page, by identity.
         var fontSpaces: [UInt: Set<UInt8>] = [:]
-        let resources: CGPDFDictionaryRef?
+        /// The resources of the stream being read: the page's, or the form's while inside one.
+        var resources: CGPDFDictionaryRef?
 
         init(resources: CGPDFDictionaryRef?) { self.resources = resources }
 
@@ -98,6 +113,7 @@ enum MarkedTextReader {
 
         func show(_ arguments: [ContentStreamWalk.ShowArgument], walk: ContentStreamWalk) {
             guard walk.inText else { walk.invalid = true; return }
+            if walk.formDepth > 0 { scan.formShows += 1 }
             // The origin is known only when a positioning operator precedes the show, and an
             // initial TJ adjustment moves the first glyph away from it.
             var known = walk.positioned
@@ -122,6 +138,37 @@ enum MarkedTextReader {
             let point = CGPoint(x: 0, y: rise).applying(walk.lineMatrix).applying(walk.matrix)
             guard point.x.isFinite, point.y.isFinite, scan.anchors.count < 100_000 else { walk.invalid = true; return }
             scan.anchors.append(Anchor(point: point, id: marks.last?.id))
+        }
+
+        /// Follows one Form XObject and charges the page what the form actually shows.
+        ///
+        /// A form that shows nothing costs nothing, which is what a page's figure artwork is.
+        /// A form that does show text shows text no tag on this page describes: the structure
+        /// tree reaches a form's marked content only through an `/MCR` with a `/Stm`, and
+        /// `StructureTreeReader` rejects every group that holds one. So the form's text is page
+        /// text that no group accounts for, and it costs exactly what the page's own unmarked
+        /// text costs — nothing inside an `/Artifact`, the group of any line it lands in, and
+        /// the whole page when it cannot be placed at all.
+        private func draw(_ form: CGPDFStreamRef, dictionary: CGPDFDictionaryRef,
+                          scanner: CGPDFScannerRef, walk: ContentStreamWalk) {
+            // A form should carry its own resources; one that does not draws with its caller's.
+            guard let own = CGPDFObjects.dictionary(dictionary, "Resources") ?? resources else {
+                walk.invalid = true; return
+            }
+            let outerResources = resources, outerFloor = markFloor, outerDepth = marks.count
+            let outerRise = rise, outerSpaces = spaces, outerMode = renderMode, outerSaved = saved
+            // The form is drawn where the `Do` stands: an artifact's form is still furniture.
+            marks.append(Mark(id: nil, artifact: marks.last?.artifact ?? false))
+            markFloor = marks.count
+            resources = own
+            scan.formsRead += 1
+            _ = walk.descend(into: form, dictionary: dictionary, resources: own, scanner: scanner)
+            if marks.count != markFloor { walk.invalid = true }
+            marks.removeLast(marks.count - outerDepth)
+            markFloor = outerFloor
+            resources = outerResources
+            // `Do` restores the graphics state, so the text state a form set does not outlive it.
+            rise = outerRise; spaces = outerSpaces; renderMode = outerMode; saved = outerSaved
         }
 
         func handle(_ op: String, scanner: CGPDFScannerRef, walk: ContentStreamWalk) {
@@ -154,8 +201,17 @@ enum MarkedTextReader {
                 let artifact = label.map { String(cString: $0) == "Artifact" } ?? false
                 let id = CGPDFObjects.integer(dict, "MCID")
                 if CGPDFObjects.object(dict, "MCID") != nil && id == nil { walk.invalid = true; return }
-                if let id, id < 0 || !identifiers.insert(id).inserted { walk.invalid = true; return }
                 let inherited = marks.last ?? Mark(id: nil, artifact: false)
+                // A form's marked content is numbered in the form's own namespace, which the
+                // structure tree reaches only through an `/MCR` with a `/Stm` — and those
+                // `StructureTreeReader` rejects, so no tag that arrives here names one. Inside a
+                // form an MCID therefore identifies nothing, and `/Artifact` is all a mark can
+                // still say (#241).
+                guard walk.formDepth == 0 else {
+                    marks.append(Mark(id: nil, artifact: artifact || inherited.artifact))
+                    return
+                }
+                if let id, id < 0 || !identifiers.insert(id).inserted { walk.invalid = true; return }
                 marks.append(artifact ? Mark(id: nil, artifact: true)
                     : (id.map { Mark(id: $0, artifact: false) } ?? inherited))
             case "BMC":
@@ -163,14 +219,19 @@ enum MarkedTextReader {
                 let inherited = marks.last ?? Mark(id: nil, artifact: false)
                 marks.append(label == "Artifact" ? Mark(id: nil, artifact: true) : inherited)
             case "EMC":
-                guard !marks.isEmpty else { walk.invalid = true; return }
+                // A form may not close a section its caller opened, nor leave one of its own open.
+                guard marks.count > markFloor else { walk.invalid = true; return }
                 marks.removeLast()
             case "Do":
                 guard let key = ContentStreamWalk.popName(scanner),
                       let resources, let objects = CGPDFObjects.dictionary(resources, "XObject"),
                       let stream = CGPDFObjects.stream(objects, key),
                       let dictionary = CGPDFStreamGetDictionary(stream),
-                      CGPDFObjects.name(dictionary, "Subtype") == "Image" else { walk.invalid = true; return }
+                      let subtype = CGPDFObjects.name(dictionary, "Subtype") else { walk.invalid = true; return }
+                // An image shows no text, so it places no line and describes no group.
+                if subtype == "Image" { return }
+                guard subtype == "Form" else { walk.invalid = true; return }
+                draw(stream, dictionary: dictionary, scanner: scanner, walk: walk)
             default:
                 walk.invalid = true
             }

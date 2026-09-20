@@ -185,10 +185,22 @@ spatial reconstruction rather than partial results.
   glyphs found isolated are flagged so a dingbat font's metrics never read as a superscript. It
   never invents a character.
 - **`MarkedTextReader`.** Matches explicitly positioned text-show origins to unique native line
-  rectangles for tagged-PDF association. Unknown glyph-cursor advancement, Form XObjects,
-  missing or duplicate MCIDs, ambiguous geometry and incomplete groups keep spatial
-  reconstruction. Origin matching is association evidence, not font decoding or proof of the
-  author's semantics.
+  rectangles for tagged-PDF association. Unknown glyph-cursor advancement, missing or duplicate
+  MCIDs, ambiguous geometry and incomplete groups keep spatial reconstruction. Origin matching is
+  association evidence, not font decoding or proof of the author's semantics.
+- A `Do` is followed into a Form XObject, under the form's own `Matrix` and resources and inside
+  the implicit `q`/`Q` the operator carries, and the page is charged what the form actually
+  shows: a form that shows no text places no line and costs nothing (#241). The structure tree
+  reaches a form's marked content only through an `/MCR` with a `/Stm`, and every group holding
+  one is rejected before this reader runs, so a form's text describes no group that arrives here:
+  inside the form an MCID names nothing, only `/Artifact` still says the content is furniture,
+  and a show the form places costs the group of any line it lands in. The page is still refused
+  outright when a form cannot be followed — a `Do` inside a text object, a `Matrix` that is not
+  six finite numbers, an XObject that is neither `Image` nor `Form` or has no subtype at all,
+  nesting past 12 forms, a stream the scanner cannot read or that spends the page's operation
+  budget, a form whose own `q`/`Q` or `BT`/`ET` do not balance, and a form that would close
+  marked content its caller opened or leave a section of its own open — and when a form shows
+  text this reader cannot place outside an `/Artifact`, which could have drawn on any line.
 - A show whose origin this reader cannot derive (no positioning operator, or a leading non-zero
   `TJ` adjustment) costs exactly what it could have described: nothing inside an `/Artifact`,
   which carries no structure; the enclosing MCID's group inside a marked section; and the whole
@@ -205,7 +217,9 @@ spatial reconstruction rather than partial results.
   transcription, not what the tags describe. Clipping modes (4–7) still refuse the page (#91).
 
 Evidence: [native-label-spacing](../measurements/native-label-spacing/record.md),
-[structure-tags](../measurements/structure-tags/record.md).
+[structure-tags](../measurements/structure-tags/record.md),
+[tag-gate-scoping](../measurements/tag-gate-scoping/record.md),
+[form-xobject-tag-gate](../measurements/form-xobject-tag-gate/record.md).
 
 ## StructureTreeReader: tagged PDF
 

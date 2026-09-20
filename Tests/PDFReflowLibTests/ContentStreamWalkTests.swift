@@ -118,6 +118,89 @@ private func walk(_ operators: String, _ configure: (inout ContentStreamWalk.Opt
     #expect(try !walk("q Q q Q q Q") { $0.maximumOperations = 5 }.0)
 }
 
+/// A page drawing one Form XObject named `/Fm`, and a visitor that follows it with `descend`.
+private func formWalk(_ page: String, form: String, formDictionary: String = "/BBox [0 0 200 200]",
+                      _ configure: (inout ContentStreamWalk.Options) -> Void = { _ in }) throws -> (Bool, [String]) {
+    let data = testPDF(objects: [
+        "<< /Type /Catalog /Pages 2 0 R >>",
+        "<< /Type /Pages /Kids [3 0 R] /Count 1 >>",
+        "<< /Type /Page /Parent 2 0 R /MediaBox [0 0 200 200] /Contents 4 0 R"
+            + " /Resources << /Font << /F1 5 0 R >> /XObject << /Fm 6 0 R >> >> >>",
+        testPDFStream(page),
+        "<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>",
+        testPDFStream(form, extra: "/Type /XObject /Subtype /Form \(formDictionary)"
+            + " /Resources << /Font << /F1 5 0 R >> /XObject << /Fm 6 0 R >> >>"),
+    ])
+    let provider = try #require(CGDataProvider(data: data as CFData))
+    let document = try #require(CGPDFDocument(provider))
+    let pageReference = try #require(document.page(at: 1))
+    var options = ContentStreamWalk.Options()
+    options.selectsFonts = true
+    options.operators = ["Do"]
+    options.maximumFormDepth = 4
+    configure(&options)
+    let visitor = Descender(resources: CGPDFObjects.inheritedResources(of: pageReference))
+    let scanned = ContentStreamWalk.scan(pageReference, options: options, visitor: visitor)
+    return (scanned, visitor.events)
+}
+
+private final class Descender: ContentStreamVisitor {
+    var events: [String] = []
+    let resources: CGPDFDictionaryRef?
+    init(resources: CGPDFDictionaryRef?) { self.resources = resources }
+    func show(_ arguments: [ContentStreamWalk.ShowArgument], walk: ContentStreamWalk) {
+        let origin = walk.textTransform
+        events.append("show at=\(Int(origin.tx)),\(Int(origin.ty)) depth=\(walk.formDepth)")
+    }
+    func handle(_ op: String, scanner: CGPDFScannerRef, walk: ContentStreamWalk) {
+        guard op == "Do", ContentStreamWalk.popName(scanner) != nil, let resources,
+              let objects = CGPDFObjects.dictionary(resources, "XObject"),
+              let stream = CGPDFObjects.stream(objects, "Fm"),
+              let dictionary = CGPDFStreamGetDictionary(stream),
+              let own = CGPDFObjects.dictionary(dictionary, "Resources") else {
+            walk.invalid = true; return
+        }
+        let followed = walk.descend(into: stream, dictionary: dictionary, resources: own, scanner: scanner)
+        events.append("form followed=\(followed) depth=\(walk.formDepth)")
+    }
+}
+
+@Test func aFormsOwnMatrixComposesWithTheCallerAndIsRestored() throws {
+    // No `q`/`Q` around the `Do`: the caller's transform after the form is whatever `descend`
+    // put back, and the form's own `Matrix` must not survive it.
+    let (scanned, events) = try formWalk(
+        "1 0 0 1 100 100 cm /Fm Do BT 1 0 0 1 5 6 Tm (page) Tj ET",
+        form: "1 0 0 1 3 4 cm BT 1 0 0 1 1 2 Tm (form) Tj ET",
+        formDictionary: "/BBox [0 0 200 200] /Matrix [1 0 0 1 10 20]")
+    #expect(scanned)
+    #expect(events == ["show at=114,126 depth=1", "form followed=true depth=0", "show at=105,106 depth=0"])
+}
+
+@Test func aFormMustBalanceItsOwnStateAndTextObjects() throws {
+    // The form's own `q`/`Q` and `BT`/`ET` are its own to close; its caller's are not.
+    #expect(try formWalk("/Fm Do", form: "q").0 == false)
+    #expect(try formWalk("/Fm Do", form: "Q").0 == false)
+    #expect(try formWalk("/Fm Do", form: "q Q").0 == true)
+    #expect(try formWalk("/Fm Do", form: "BT 1 0 0 1 1 2 Tm (x) Tj").0 == false)
+    // A `Do` inside a text object is not a placement this walk can follow.
+    #expect(try formWalk("BT /Fm Do ET", form: "q Q").0 == false)
+    // A `Matrix` that is not six finite numbers is not a placement either.
+    #expect(try formWalk("/Fm Do", form: "q Q", formDictionary: "/BBox [0 0 1 1] /Matrix [1 0 0 1]").0 == false)
+}
+
+@Test func formDepthIsCappedAndTheBudgetIsShared() throws {
+    // The form draws itself; the cap, not the recursion, ends the walk.
+    let (scanned, events) = try formWalk("/Fm Do", form: "/Fm Do")
+    #expect(!scanned)
+    // Four descents are followed and the fifth is refused, which unwinds through all of them.
+    #expect(events == (0...4).reversed().map { "form followed=false depth=\($0)" })
+    // A reader that follows no form at all refuses the `Do` outright.
+    #expect(try formWalk("/Fm Do", form: "q Q") { $0.maximumFormDepth = 0 }.0 == false)
+    // The form's operators are charged to the page's budget.
+    #expect(try formWalk("/Fm Do", form: "q Q") { $0.maximumOperations = 3 }.0 == true)
+    #expect(try formWalk("/Fm Do", form: "q Q") { $0.maximumOperations = 2 }.0 == false)
+}
+
 @Test func visitorOperatorsAreForwardedAndCounted() throws {
     let (scanned, events) = try walk("0 Tc 0 Tw BT ET") { $0.operators = ["Tc", "Tw"] }
     #expect(scanned && events == ["Tc", "Tw", "BT positioned=true", "ET"])

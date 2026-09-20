@@ -67,6 +67,8 @@ final class ContentStreamWalk {
         /// A `TJ` array with more elements than this disqualifies the scan; nil for no cap.
         var maximumShowElements: Int? = nil
         var moveAndShow: MoveAndShow = .ignore
+        /// How many Form XObjects deep `descend` will follow a `Do`. Zero follows none.
+        var maximumFormDepth = 0
     }
 
     enum ShowArgument {
@@ -86,6 +88,11 @@ final class ContentStreamWalk {
     private(set) var positioned = false
     private(set) var operations = 0
     private(set) var saved: [(CGAffineTransform, CGFloat)] = []
+    /// How many Form XObjects deep this walk currently is; zero in the page's own stream.
+    private(set) var formDepth = 0
+    /// The operator table driving this walk, kept so a form's stream is scanned with the same
+    /// callbacks, the same budget and the same visitor.
+    private var table: CGPDFOperatorTableRef?
     /// Set by the driver or the visitor; stops the scan at the next operator.
     var invalid = false
 
@@ -112,11 +119,47 @@ final class ContentStreamWalk {
             CGPDFOperatorTableSetCallback(table, op, callback)
         }
         let walk = ContentStreamWalk(options: options, visitor: visitor)
+        walk.table = table
+        defer { walk.table = nil }
         let stream = CGPDFContentStreamCreateWithPage(page)
         defer { CGPDFContentStreamRelease(stream) }
         let scanner = CGPDFScannerCreate(stream, table, Unmanaged.passUnretained(walk).toOpaque())
         defer { CGPDFScannerRelease(scanner) }
         return CGPDFScannerScan(scanner) && !walk.invalid && walk.saved.isEmpty && !walk.inText
+    }
+
+    /// Scans a Form XObject's content as part of this walk, driving the same visitor from inside
+    /// `Do`. The form runs under its own `Matrix` and `resources`, and inside the implicit
+    /// `q`/`Q` the operator carries, so the transformation, leading and saved-state stack the
+    /// form changes do not outlive it; state the visitor keeps is the visitor's to restore.
+    ///
+    /// False, with the walk disqualified, when the form cannot be followed at all: nesting past
+    /// `Options.maximumFormDepth`, a `Do` inside a text object, a `Matrix` that is not six finite
+    /// numbers, a stream the scanner cannot read or that spends the shared operation budget, and
+    /// a stream whose own `q`/`Q` or `BT`/`ET` do not balance — a form that ends inside a text
+    /// object has shown text from a state this walk cannot account for.
+    func descend(into form: CGPDFStreamRef, dictionary: CGPDFDictionaryRef,
+                 resources: CGPDFDictionaryRef, scanner: CGPDFScannerRef) -> Bool {
+        guard let table, formDepth < options.maximumFormDepth, !inText else { invalid = true; return false }
+        let outerMatrix = matrix, outerSaved = saved, outerLeading = leading
+        if CGPDFObjects.object(dictionary, "Matrix") != nil {
+            guard let own = CGPDFObjects.matrix(dictionary, "Matrix") else { invalid = true; return false }
+            matrix = own.concatenating(matrix)
+        }
+        saved = []
+        formDepth += 1
+        let content = CGPDFContentStreamCreateWithStream(form, resources, CGPDFScannerGetContentStream(scanner))
+        let nested = CGPDFScannerCreate(content, table, Unmanaged.passUnretained(self).toOpaque())
+        if !CGPDFScannerScan(nested) || !saved.isEmpty || inText { invalid = true }
+        CGPDFScannerRelease(nested)
+        CGPDFContentStreamRelease(content)
+        formDepth -= 1
+        matrix = outerMatrix
+        saved = outerSaved
+        leading = outerLeading
+        inText = false
+        positioned = false
+        return !invalid
     }
 
     /// `count` finite numbers popped from the operand stack, in operand order.

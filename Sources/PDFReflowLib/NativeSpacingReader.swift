@@ -231,7 +231,11 @@ enum NativeSpacingReader {
         let leftWord = letters.contains(left) || digits.contains(left) || closing
         let overhang = "ATVWY\u{201C}\u{2018}".unicodeScalars.contains(right)
         let rightWord = overhang || letters.contains(right) || digits.contains(right) || right == "("
-        guard leftWord, rightWord, !mathematical(left), !mathematical(right), gap.isFinite, gap <= 1 else { return false }
+        guard leftWord, rightWord, !mathematical(left), !mathematical(right), gap.isFinite, gap <= 1,
+              // East Asian writing sets no space between characters, and justification stretches
+              // the gaps between them, so a wide gap here is the line being set, not a word
+              // boundary the extraction lost (#42).
+              !CJKText.setsNoSpace(between: left, and: right) else { return false }
         if ".:".unicodeScalars.contains(left), let before, digits.contains(before), digits.contains(right) { return false }
         let chained = left == "." && before.map(CharacterSet.uppercaseLetters.contains) == true && after == "."
         let narrow = overhang && (closing || CharacterSet.lowercaseLetters.contains(left)) && !chained

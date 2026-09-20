@@ -86,16 +86,9 @@ enum OCRTextCoverage {
     }
 
     /// Whether a scalar is drawn about one em wide: the East Asian Wide and Fullwidth blocks.
-    static func isFullWidth(_ scalar: Unicode.Scalar) -> Bool {
-        switch scalar.value {
-        case 0x1100...0x115F, 0x2E80...0x303E, 0x3041...0x33FF, 0x3400...0x4DBF, 0x4E00...0x9FFF,
-             0xA000...0xA4CF, 0xAC00...0xD7A3, 0xF900...0xFAFF, 0xFE30...0xFE6F, 0xFF00...0xFF60,
-             0xFFE0...0xFFE6, 0x20000...0x3FFFD:
-            true
-        default:
-            false
-        }
-    }
+    /// One definition serves this measure and the spacing rules that must not split such text
+    /// (`CJKText`, #42).
+    static func isFullWidth(_ scalar: Unicode.Scalar) -> Bool { CJKText.isFullWidth(scalar) }
 
     /// Measures against boxes alone, each believed for its whole width: the page's own text
     /// layer, whose lines are not a reading that may have come back with part of what it found.

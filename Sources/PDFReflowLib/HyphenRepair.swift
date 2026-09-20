@@ -96,6 +96,9 @@ extension LayoutReconstructor {
     private static func joinOperation(_ left: String, _ right: String, hyphens: HyphenContext, page: Int,
                                       warnings: inout [ConversionWarning]) -> JoinOperation {
         if left.hasSuffix("\u{00ad}") { return .removeHyphen }
+        // A line break inside East Asian writing is not a word break: the characters run on with
+        // no space, and inserting one splits a word the page never split (#42).
+        if CJKText.setsNoSpace(between: left, and: right) { return .concatenate }
         guard left.hasSuffix("-"), right.first?.isLowercase == true else { return .space }
         let prefix = left.dropLast().reversed().prefix(while: { $0.isLetter }).reversed()
         let suffix = right.prefix(while: { $0.isLetter })

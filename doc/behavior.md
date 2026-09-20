@@ -116,6 +116,17 @@ Evidence: [pdfkit-concurrency](../measurements/pdfkit-concurrency/record.md),
 [native-line-boundaries](../measurements/native-line-boundaries/record.md),
 [drop-cap-order](../measurements/drop-cap-order/record.md).
 
+- **East Asian text (#42).** Chinese, Japanese and Korean set no space between the characters of
+  a word, and a justified line stretches the gaps between characters rather than between words.
+  Two spacing rules were measured on Latin text and do not hold here. A gap between two
+  characters drawn one em wide is never read as a missing word space, however wide it is, so a
+  justified line is not broken into words. A space the extracted text layer already carries
+  between two Han ideographs (`CJKText.isIdeograph`: the Unified blocks, Extension A and the
+  compatibility ideographs) is removed with the attributes either side of it kept, which restores
+  a heading the page letter-spaces one character at a time. The narrower ideograph test, not the
+  one-em test, decides the removal: a source may legitimately set a space after `。` or `，`
+  where a run-in heading ends, and every boundary with Latin text keeps the source's own spacing.
+
 ## Content-stream readers
 
 `ContentStreamWalk` gives every reader a budget of 100,000 operations and 128 saved graphics
@@ -840,6 +851,11 @@ Evidence: [heading-body-regressions](../measurements/heading-body-regressions/re
   genuine one inside a line, such as a URL's `name=value`, is left as read, and the join itself
   is then decided by the vocabulary and lexicon above, warning where it would warn for a printed
   hyphen. A join the evidence cannot decide keeps a real hyphen, never the encoded character.
+
+- East Asian writing sets no space between the characters of a word, so a line break between two
+  characters drawn one em wide (`CJKText.isFullWidth`: the Wide and Fullwidth blocks, including
+  the CJK punctuation a line may end on) joins them with none (#42). A boundary with Latin text
+  keeps the source's own spacing in both directions, so `提交表格` + `1040` still takes a space.
 
 Evidence: [spine-continuity](../measurements/spine-continuity/record.md),
 [line-end-hyphen-substitutes](../measurements/line-end-hyphen-substitutes/record.md).

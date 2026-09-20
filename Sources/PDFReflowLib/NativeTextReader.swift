@@ -92,6 +92,9 @@ enum NativeTextReader {
                 repaired = GlyphIdentityReader.apply(glyphs, to: spacingFixed, bounds: bounds,
                                                      allBounds: boundsByLine, carry: &carry)
             }
+            // Chinese sets no space between the characters of a word, so a space the text layer
+            // carries between two ideographs was never in the writing (#42).
+            repaired = repaired.map(CJKText.joinIdeographs)
             let corrected = repaired?.string != attributed?.string
                 ? repaired?.string.replacingOccurrences(of: "\u{FFFC}", with: " ") : nil
             result.append(textLine(semantic: corrected ?? semantic,

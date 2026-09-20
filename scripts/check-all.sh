@@ -107,6 +107,9 @@ finish_gates || FAILED=1
 
 EPUBCHECK=()
 if command -v epubcheck >/dev/null; then EPUBCHECK=(--epubcheck "$(command -v epubcheck)"); fi
+# The probes are compiled by hand, so only compiling them proves their source lists and the
+# runbooks' build commands still match the library (#204).
+background documented-builds python3 tools/check_documented_builds.py
 background fixture-epubs python3 tools/check_epubs.py --converter "$BINARY_DIR/pdf-reflow" \
     --output "$WORK/epubs" ${EPUBCHECK[@]+"${EPUBCHECK[@]}"}
 background conversion-policies python3 tools/check_conversion_policies.py --converter "$BINARY_DIR/pdf-reflow" \

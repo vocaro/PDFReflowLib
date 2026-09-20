@@ -1,0 +1,598 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        121.72748864527951,
+        365.49000194568009,
+        542.72399798416757,
+        26.263999902447949
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 27.999999895999967,
+          "text" : "Open Pipeline Provides Outputs at Different"
+        }
+      ],
+      "text" : "Open Pipeline Provides Outputs at Different"
+    },
+    {
+      "rect" : [
+        120.96879087100118,
+        331.73999786567998,
+        544.31999797823926,
+        26.263999902447949
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 27.999999895999967,
+          "text" : "Stages Appropriate for a Diverse User Base"
+        }
+      ],
+      "text" : "Stages Appropriate for a Diverse User Base"
+    },
+    {
+      "rect" : [
+        156.06754024416114,
+        204.64812119374008,
+        97.173999639067915,
+        13.131999951223975
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 13.999999947999983,
+          "text" : "Preprocessing"
+        }
+      ],
+      "text" : "Preprocessing"
+    },
+    {
+      "rect" : [
+        166.57193033030163,
+        188.14812066574007,
+        76.229999716859908,
+        13.131999951223975
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 13.999999947999983,
+          "text" : "as-a-service"
+        }
+      ],
+      "text" : "as-a-service"
+    },
+    {
+      "rect" : [
+        315.29860758955516,
+        204.64812119374008,
+        45.615002367146701,
+        14.984667138242656
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 13.999999947999983,
+          "text" : "AODS"
+        },
+        {
+          "baselineOffset" : 5.2500001679999855,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.3333337653333199,
+          "text" : "1"
+        }
+      ],
+      "text" : "AODS1"
+    },
+    {
+      "rect" : [
+        300.00599835019165,
+        188.14812066574007,
+        76.229999716859936,
+        13.131999951223975
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 13.999999947999983,
+          "text" : "as-a-service"
+        }
+      ],
+      "text" : "as-a-service"
+    },
+    {
+      "rect" : [
+        432.35793858545361,
+        204.64812119374008,
+        57.539999786279907,
+        13.131999951223975
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 13.999999947999983,
+          "text" : "Analysis"
+        }
+      ],
+      "text" : "Analysis"
+    },
+    {
+      "rect" : [
+        423.03550728713577,
+        188.14812066574007,
+        76.229999716859936,
+        13.131999951223975
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 13.999999947999983,
+          "text" : "as-a-service"
+        }
+      ],
+      "text" : "as-a-service"
+    },
+    {
+      "rect" : [
+        550.4463228642818,
+        204.85812099046009,
+        79.365005592180182,
+        12.194000859208018
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 13.000000916000017,
+          "text" : "Visualization"
+        }
+      ],
+      "text" : "Visualization"
+    },
+    {
+      "rect" : [
+        552.06506141608145,
+        188.14812066574007,
+        76.229999716859879,
+        13.131999951223975
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 13.999999947999983,
+          "text" : "as-a-service"
+        }
+      ],
+      "text" : "as-a-service"
+    },
+    {
+      "rect" : [
+        62.119132987812186,
+        181.80305446269799,
+        59.83599977775193,
+        13.131999951223975
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 13.999999947999983,
+          "text" : "Cumulus"
+        }
+      ],
+      "text" : "Cumulus"
+    },
+    {
+      "rect" : [
+        62.119132987812186,
+        181.80305446269799,
+        59.83599977775193,
+        13.131999951223975
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 13.999999947999983,
+          "text" : "Cumulus"
+        }
+      ],
+      "text" : "Cumulus"
+    },
+    {
+      "rect" : [
+        76.883351460267164,
+        165.30305243469792,
+        30.337999887315959,
+        13.131999951223975
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 13.999999947999983,
+          "text" : "Data"
+        }
+      ],
+      "text" : "Data"
+    },
+    {
+      "rect" : [
+        66.382377624236014,
+        148.80305190669793,
+        51.323999809367947,
+        13.131999951223975
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 13.999999947999983,
+          "text" : "Archive"
+        }
+      ],
+      "text" : "Archive"
+    },
+    {
+      "rect" : [
+        164.39646076068658,
+        110.50862287877622,
+        80.540000563779955,
+        9.3800000656599849
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.000000069999992,
+          "text" : "End-User-Specific"
+        }
+      ],
+      "text" : "End-User-Specific"
+    },
+    {
+      "rect" : [
+        186.06037345393176,
+        98.508620244776139,
+        37.220000260539962,
+        9.3800000656599849
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.000000069999992,
+          "text" : "Analysis"
+        }
+      ],
+      "text" : "Analysis"
+    },
+    {
+      "rect" : [
+        316.99638264388398,
+        122.50863226277652,
+        42.22000029553999,
+        9.3800000656599849
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.000000069999992,
+          "text" : "End-User"
+        }
+      ],
+      "text" : "End-User"
+    },
+    {
+      "rect" : [
+        309.21620189491819,
+        110.50863187877651,
+        57.78000040445994,
+        9.3800000656599849
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.000000069999992,
+          "text" : "Cloud-Native"
+        }
+      ],
+      "text" : "Cloud-Native"
+    },
+    {
+      "rect" : [
+        319.49540522385269,
+        98.508627744776391,
+        37.220000260539962,
+        9.3800000656599991
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.000000069999992,
+          "text" : "Analysis"
+        }
+      ],
+      "text" : "Analysis"
+    },
+    {
+      "rect" : [
+        523.32481674639359,
+        14.724752511192492,
+        172.60136502324349,
+        12.844000702208003
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 4.5000001439999977,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.0000006560000116,
+          "text" : "1 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 12.000000384,
+          "text" : "Analytics Optimized Data Store"
+        }
+      ],
+      "text" : "1 Analytics Optimized Data Store"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    720,
+    405
+  ],
+  "caseID" : "ntrs-20180003024-earthdata-slides-2018",
+  "graphics" : [
+    [
+      0,
+      0,
+      720,
+      405
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 27.999999895999967,
+      "monospaced" : false,
+      "rect" : [
+        121.72748864527951,
+        365.49000194568009,
+        542.72399798416757,
+        26.263999902447949
+      ],
+      "text" : "Open Pipeline Provides Outputs at Different"
+    },
+    {
+      "fontSize" : 27.999999895999967,
+      "monospaced" : false,
+      "rect" : [
+        120.96879087100118,
+        331.73999786567998,
+        544.31999797823926,
+        26.263999902447949
+      ],
+      "text" : "Stages Appropriate for a Diverse User Base"
+    },
+    {
+      "fontSize" : 13.999999947999983,
+      "monospaced" : false,
+      "rect" : [
+        156.06754024416114,
+        204.64812119374008,
+        97.173999639067915,
+        13.131999951223975
+      ],
+      "text" : "Preprocessing"
+    },
+    {
+      "fontSize" : 13.999999947999983,
+      "monospaced" : false,
+      "rect" : [
+        166.57193033030163,
+        188.14812066574007,
+        76.229999716859908,
+        13.131999951223975
+      ],
+      "text" : "as-a-service"
+    },
+    {
+      "fontSize" : 13.999999947999983,
+      "monospaced" : false,
+      "rect" : [
+        315.29860758955516,
+        204.64812119374008,
+        45.615002367146701,
+        14.984667138242656
+      ],
+      "text" : "AODS1"
+    },
+    {
+      "fontSize" : 13.999999947999983,
+      "monospaced" : false,
+      "rect" : [
+        300.00599835019165,
+        188.14812066574007,
+        76.229999716859936,
+        13.131999951223975
+      ],
+      "text" : "as-a-service"
+    },
+    {
+      "fontSize" : 13.999999947999983,
+      "monospaced" : false,
+      "rect" : [
+        432.35793858545361,
+        204.64812119374008,
+        57.539999786279907,
+        13.131999951223975
+      ],
+      "text" : "Analysis"
+    },
+    {
+      "fontSize" : 13.999999947999983,
+      "monospaced" : false,
+      "rect" : [
+        423.03550728713577,
+        188.14812066574007,
+        76.229999716859936,
+        13.131999951223975
+      ],
+      "text" : "as-a-service"
+    },
+    {
+      "fontSize" : 13.000000916000017,
+      "monospaced" : false,
+      "rect" : [
+        550.4463228642818,
+        204.85812099046009,
+        79.365005592180182,
+        12.194000859208018
+      ],
+      "text" : "Visualization"
+    },
+    {
+      "fontSize" : 13.999999947999983,
+      "monospaced" : false,
+      "rect" : [
+        552.06506141608145,
+        188.14812066574007,
+        76.229999716859879,
+        13.131999951223975
+      ],
+      "text" : "as-a-service"
+    },
+    {
+      "fontSize" : 13.999999947999983,
+      "monospaced" : false,
+      "rect" : [
+        62.119132987812186,
+        181.80305446269799,
+        59.83599977775193,
+        13.131999951223975
+      ],
+      "text" : "Cumulus"
+    },
+    {
+      "fontSize" : 13.999999947999983,
+      "monospaced" : false,
+      "rect" : [
+        62.119132987812186,
+        181.80305446269799,
+        59.83599977775193,
+        13.131999951223975
+      ],
+      "text" : "Cumulus"
+    },
+    {
+      "fontSize" : 13.999999947999983,
+      "monospaced" : false,
+      "rect" : [
+        76.883351460267164,
+        165.30305243469792,
+        30.337999887315959,
+        13.131999951223975
+      ],
+      "text" : "Data"
+    },
+    {
+      "fontSize" : 13.999999947999983,
+      "monospaced" : false,
+      "rect" : [
+        66.382377624236014,
+        148.80305190669793,
+        51.323999809367947,
+        13.131999951223975
+      ],
+      "text" : "Archive"
+    },
+    {
+      "fontSize" : 10.000000069999992,
+      "monospaced" : false,
+      "rect" : [
+        164.39646076068658,
+        110.50862287877622,
+        80.540000563779955,
+        9.3800000656599849
+      ],
+      "text" : "End-User-Specific"
+    },
+    {
+      "fontSize" : 10.000000069999992,
+      "monospaced" : false,
+      "rect" : [
+        186.06037345393176,
+        98.508620244776139,
+        37.220000260539962,
+        9.3800000656599849
+      ],
+      "text" : "Analysis"
+    },
+    {
+      "fontSize" : 10.000000069999992,
+      "monospaced" : false,
+      "rect" : [
+        316.99638264388398,
+        122.50863226277652,
+        42.22000029553999,
+        9.3800000656599849
+      ],
+      "text" : "End-User"
+    },
+    {
+      "fontSize" : 10.000000069999992,
+      "monospaced" : false,
+      "rect" : [
+        309.21620189491819,
+        110.50863187877651,
+        57.78000040445994,
+        9.3800000656599849
+      ],
+      "text" : "Cloud-Native"
+    },
+    {
+      "fontSize" : 10.000000069999992,
+      "monospaced" : false,
+      "rect" : [
+        319.49540522385269,
+        98.508627744776391,
+        37.220000260539962,
+        9.3800000656599991
+      ],
+      "text" : "Analysis"
+    },
+    {
+      "fontSize" : 8.0000006560000116,
+      "monospaced" : false,
+      "rect" : [
+        523.32481674639359,
+        14.724752511192492,
+        172.60136502324349,
+        12.844000702208003
+      ],
+      "text" : "1 Analytics Optimized Data Store"
+    }
+  ],
+  "page" : 17,
+  "rightsBasis" : "Slide 1 marks both presenters with *U.S. Civil Servant, and the NTRS record places Chris Lynnes at NASA Goddard Space Flight Center and Rahul Ramachandran at NASA Marshall Space Flight Center (17 U.S.C. 105). The NTRS API copyright record (checked 2026-09-17) gives determinationType GOV_PUBLIC_USE_PERMITTED, containsThirdPartyMaterial false, belongsToPublisher false and thirdPartyContentCondition NOT_SET; distribution PUBLIC, no export control. Every slide was checked: no AWS, Google, partner or vendor logo and no screenshot of a commercial product appears. Every slide shows the NASA insignia, whose use is restricted by 14 CFR 1221. Slide 2 carries uncredited satellite renders and a ground-station photo, slides 3-4 uncredited EOSDIS metrics chart rasters, and slides 12-21 uncredited pictogram icons. Owner approved on 2026-09-17. Not relicensed under MIT.",
+  "sourceSHA256" : "f0a1ea3f5711228a9de2544fd1a94b05cfb8d9323fe3a4c253542f5a6ead5c94",
+  "sourceTitle" : "Earthdata Cloud Analytics Project",
+  "sourceURL" : "https://ntrs.nasa.gov/api/citations/20180003024/downloads/20180003024.pdf"
+}

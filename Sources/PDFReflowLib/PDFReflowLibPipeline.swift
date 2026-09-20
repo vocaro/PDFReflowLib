@@ -50,6 +50,10 @@ enum PDFReflowLibPipeline {
         var evidence = DocumentEvidence(chapterCandidates: try ChapterBoundaryReader.read(source), language: options.language)
         let store = PageStore(directory: workspace.appendingPathComponent("pages"))
         let judge = RecognitionJudge.english(language: options.language)
+        /// Pages whose type, if any, arrives inside an image: no text layer, or text over a
+        /// page-sized graphic. The encoding classifier reads a typeset full-page raster of such a
+        /// page as a scan rather than born-digital text (#193).
+        var pagesDrawnFromImage: Set<Int> = []
 
         for i in 0..<total {
             try Task.checkCancellation()
@@ -65,6 +69,7 @@ enum PDFReflowLibPipeline {
                 }
             }
             let pageEvidence = try PageDiagnosis.assess(extracted, options: options, measureInk: ink.measure)
+            if !pageEvidence.hasText || pageEvidence.imageBackedText { pagesDrawnFromImage.insert(i) }
             let plan = RecognitionPolicy.plan(pageEvidence, policy: options.ocr)
             var content = extracted.content
             // A page whose text stands, or is compared with recognition, is prepared as a kept
@@ -127,13 +132,15 @@ enum PDFReflowLibPipeline {
                 let page = try document.page(at: i)
                 var pageBlocks: [ReflowBlock]
                 if content.requiresPageImage {
-                    let path = try assets.save(page: page, rect: content.bounds, fullPage: true, rotate: true)
+                    let path = try assets.save(page: page, rect: content.bounds, fullPage: true, rotate: true,
+                                               drawnFromImage: pagesDrawnFromImage.contains(i))
                     pageBlocks = [LayoutReconstructor.imageBlock(assetID: path, page: i + 1)]
                     warnings.append(ConversionWarnings.warning(.pageImageFallback, page: i + 1, options: options))
                 } else {
                     var images: [(CGRect, String)] = []
                     for rect in LayoutReconstructor.graphicsWithLabels(content) {
-                        images.append((rect, try assets.save(page: page, rect: rect)))
+                        images.append((rect, try assets.save(page: page, rect: rect,
+                                                            drawnFromImage: pagesDrawnFromImage.contains(i))))
                     }
                     if !images.isEmpty {
                         warnings.append(ConversionWarnings.warning(.imageRegion(.regionCrops), page: i + 1, options: options))
@@ -147,7 +154,8 @@ enum PDFReflowLibPipeline {
                         || (options.referenceImages == .automatic && content.preservePageReference)
                     if includeReference {
                         pageBlocks.append(LayoutReconstructor.imageBlock(
-                            assetID: try assets.save(page: page, rect: content.bounds, fullPage: true),
+                            assetID: try assets.save(page: page, rect: content.bounds, fullPage: true,
+                                                     drawnFromImage: pagesDrawnFromImage.contains(i)),
                             page: i + 1, reference: true))
                         warnings.append(ConversionWarnings.warning(.imageRegion(.pageReference), page: i + 1, options: options))
                     } else if content.preservePageReference {

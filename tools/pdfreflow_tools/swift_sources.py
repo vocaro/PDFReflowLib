@@ -20,7 +20,8 @@ EXTRACTION = ['NativeTextReader.swift', 'NativeSpacingReader.swift', 'NativeSpac
               'EnglishText.swift', 'ContentStreamWalk.swift', 'CGPDFObjects.swift', 'AnchorMatcher.swift',
               'DocumentModel.swift', 'ReflowDocument.swift', 'ConversionTypes.swift']
 # Page rasterization with the options and model types it takes.
-RASTER = ['PageRasterizer.swift', 'ConversionTypes.swift', 'DocumentModel.swift', 'ReflowDocument.swift']
+RASTER = ['PageRasterizer.swift', 'ImageContentClassifier.swift', 'ConversionTypes.swift',
+          'DocumentModel.swift', 'ReflowDocument.swift']
 
 PROBE_SOURCES = {
     'probe-pdfkit-concurrency.swift': EXTRACTION,       # native mode; -D PDFREFLOW_NATIVE

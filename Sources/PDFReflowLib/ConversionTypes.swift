@@ -58,20 +58,37 @@ public struct ConversionOptions: Sendable {
         case jpeg(quality: Double)
         /// Encode both and keep the smaller file (PNG on ties). Uses extra encoding work.
         case smallest(jpegQuality: Double)
+        /// The default (#193): classify each image and permit lossy only where it is safe, then
+        /// behave as `.smallest(jpegQuality:)` there and as `.png` everywhere else. Lossy is
+        /// permitted for photographs, continuous-tone art, tonal text scans, full-page mixed
+        /// references and anything effectively neutral (under 2% of pixels coloured against the
+        /// image's own ground); refused for coloured line art and charts, mixed region crops, and
+        /// coloured bilevel or born-digital text pages. A permitted image may still end up PNG.
+        case automatic(jpegQuality: Double)
+
+        /// The default JPEG quality for `.automatic`. Below 1.00 ImageIO subsamples chroma, which
+        /// is the damage that shows; 0.95 and 0.90 subsample identically.
+        public static let automaticJPEGQuality = 0.90
+
+        var isAutomatic: Bool {
+            if case .automatic = self { return true }
+            return false
+        }
 
         var isValid: Bool {
             switch self {
             case .png: true
-            case .jpeg(let quality), .smallest(let quality): quality.isFinite && (0...1).contains(quality)
+            case .jpeg(let quality), .smallest(let quality), .automatic(let quality):
+                quality.isFinite && (0...1).contains(quality)
             }
         }
     }
 
     public var referenceImages: ReferenceImagePolicy = .automatic
     /// Encoding for supplementary references and required full-page fallbacks.
-    public var fullPageImageEncoding: ImageEncoding = .png
+    public var fullPageImageEncoding: ImageEncoding = .automatic(jpegQuality: ImageEncoding.automaticJPEGQuality)
     /// Encoding for figures, tables, equations and other preserved regions.
-    public var regionImageEncoding: ImageEncoding = .png
+    public var regionImageEncoding: ImageEncoding = .automatic(jpegQuality: ImageEncoding.automaticJPEGQuality)
     public var title: String?
     public var author: String?
     /// BCP 47 language tag for EPUB metadata and OCR (when the recognizer supports it).

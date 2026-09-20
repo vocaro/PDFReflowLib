@@ -9,8 +9,8 @@ No policy changes dynamically to squeeze a book under a limit, and no network se
 | `ocr` | `.automatic` | `.automatic`, `.automaticIncludingImageBackedText`, `.automaticKeepingImageBackedText`, `.always`, `.never` |
 | `referenceImages` | `.automatic` | `.automatic`, `.always`, `.never` |
 | `removeRepeatedHeadersAndFooters` | `true` | `true` omits detected running headers, footers and folios (`furnitureRemoved`); `false` keeps them in the text |
-| `fullPageImageEncoding` | `.png` | `.png`, `.jpeg(quality:)`, `.smallest(jpegQuality:)` |
-| `regionImageEncoding` | `.png` | Same encodings, independently applied to cropped figures/tables/equations |
+| `fullPageImageEncoding` | `.automatic(jpegQuality: 0.90)` | `.automatic(jpegQuality:)` (per-image choice, [below](#automatic-encoding)), `.png`, `.jpeg(quality:)`, `.smallest(jpegQuality:)` |
+| `regionImageEncoding` | `.automatic(jpegQuality: 0.90)` | Same encodings, independently applied to cropped figures/tables/equations |
 | `maximumOutputBytes` | 512 MiB | Positive entry-byte budget; `.max` effectively disables it |
 | `maximumEPUBBytes` | `nil` | Optional positive cap on the actual final EPUB file, including ZIP overhead |
 | `rasterDPI` | 180 | 72–600, subject to the pixel ceiling |
@@ -113,9 +113,10 @@ The current recommendations are provisional where evidence covers only selected 
 
 | Dial | Recommended starting point | Evidence and qualification |
 | --- | --- | --- |
+| Image encoding in general | The default, `.automatic(jpegQuality: 0.90)` | Classifies every image and permits lossy only where the ported rule's survey found it invisible at reading size. Over the 18 gated cases it writes 36.1% fewer image bytes with every image count and pixel size unchanged, 3,956 of 3,956 images kept as PNG identical pixel for pixel, and 36 of 442 JPEGs at a worst 8×8 edge-block error of 30 levels or more ([evidence](../measurements/image-encoding-default/record.md)). The rows below are for clients that want a fixed encoding instead. |
 | Full-page scans | `.jpeg(quality: 0.90)` for tinted/noisy scans when lossy encoding is acceptable; compare PNG for clean black-and-white scans | Both 0.90 and 0.95 have whole-Warren size measurements and sampled visual comparisons. Use 0.90–0.95 as an initial tuning range; only the endpoints are measured. At 180 DPI, JPEG saves about 57% on two Warren pages but less than 1% on the checked Blue Book table page. |
 | Equations, tables, cropped diagrams | `.png` | The clean table and colored fraction controls are smaller as PNG, with no encoding loss. Start lossless for these regions; other figure types may benefit from separate measurements. |
-| Mixed full-page artwork | `.png` until reviewed, or explicitly trial `.smallest(jpegQuality: 0.90)` | Smallest avoids choosing a larger encoded file, but chooses by bytes, not legibility. Its clean/noisy controls pass; broad real-book visual qualification remains outstanding. |
+| Mixed full-page artwork | The automatic default; `.png` when no encoding loss is acceptable | Bare `.smallest(jpegQuality: 0.90)` avoids choosing a larger encoded file, but chooses by bytes, not legibility: on NOAA it sends 490 images to JPEG where the classifier sends 126, landing 117 MiB smaller by giving up chart and line-art crops (and still 1.29× over the default budget). Broad real-book visual qualification beyond the strips in the record remains outstanding. |
 | Supplementary references | `.automatic` for a publication intended to carry its own source-page references | `.never` is a compact-reading choice when the client retains the PDF for review and accepts omitted visual context. Whole-book Warren runs quantify both choices; neither validates inherited OCR. Reserve `.always` for deliberate page-by-page reference use. |
 | Resolution | Start at 180 DPI; compare 240 DPI for dense small print or fine diagram labels | A seven-page, six-document raster sweep shows sharper fine detail at 240, with about 47–49% more full-page image bytes than 180 at fixed encoding. At 120 DPI, small notes and labels have visibly coarser edges. This supports a targeted 240-DPI trial, not a universal range or device budget. Actual resolution can be reduced by the pixel ceiling. |
 | Raster pixel ceiling | Keep the 12-million-pixel starting bound while profiling the target device | There is no qualified physical iPhone/iPad memory range. The supported 1–48 million range is not a safe-device recommendation. |
@@ -207,6 +208,42 @@ The [Warren experiment](../measurements/warren-image-encoding/record.md) demonst
 are independent choices: JPEG reduces scanned-page storage, while the clean numeric table and
 fraction controls encode more compactly as PNG. No source-specific preference is hardcoded.
 
+Every raster is drawn over an opaque white fill, so its alpha channel is a constant 255 plane.
+It is relabelled opaque at write time, over the raster's own pixel buffer, so a PNG records three
+channels instead of four; the raster handed to recognition keeps the format Vision is measured
+against. This changes only the written file, never a pixel: across the corpus, 6,240 of 6,240
+images that stayed PNG decode identically before and after, while PNG-only books lose 13% of
+their image bytes.
+
+### Automatic encoding
+
+`.automatic(jpegQuality:)` is the default for both full pages and regions, at 0.90
+(`ImageEncoding.automaticJPEGQuality`). Each image is classified from its own pixels before it is
+encoded. Where lossy is permitted the image is encoded as `.smallest` would be, so it may still be
+written as PNG; everywhere else it is written as PNG. Naming `.png`, `.jpeg(quality:)` or
+`.smallest(jpegQuality:)` bypasses the classifier entirely, for pages and for regions.
+
+Below quality 1.00 ImageIO halves both chroma planes, identically at 0.95 and 0.90; that, not
+quantisation, is the damage that shows, and it shows only where there are sharp edges *in colour*.
+So lossy is permitted for:
+
+- any image whose pixels are under 2% coloured, measured against the image's own ground (a
+  yellowed scan is neutral, and so is a mostly white chart with small coloured labels);
+- photographs and continuous-tone art, except a crop that is at least 30% perfectly flat, which is
+  drawn illustration — saturated fills meeting labels at hard coloured edges — and stays PNG;
+- tonal text scans: a full-page reference of a page whose text is absent or lies over a page-sized
+  image, made of type on a ground with tones in between;
+- a full-page reference that is none of those (`mixed`), because its text is reflowed beside it.
+
+It is refused for coloured line art and charts, `mixed` crops, required page fallbacks that are
+neither neutral nor tonal (a fallback is its page's only copy, so it is judged as a crop), and
+coloured bilevel scans and born-digital text pages. The thresholds were fitted to this corpus.
+
+The classifier reads the raster from the drawing buffer before the `CGImage` is made, because
+reading a finished image's pixels copies them. It costs a few milliseconds per crop and about
+20 ms per page-sized raster; measured wall-clock cost over the gated cases was +28% on one run
+each ([record](../measurements/image-encoding-default/record.md)).
+
 ## Size limits and publication
 
 `maximumOutputBytes` checks cumulative image bytes during reconstruction and all entry bytes
@@ -249,8 +286,8 @@ swift run pdf-reflow input.pdf output.epub \
   --maximum-epub-bytes 536870912
 ```
 
-Byte limits accept a positive integer or `unlimited`. Image encodings accept `png`,
-`jpeg:QUALITY` or `smallest:QUALITY`. `--repeated-headers-and-footers remove|keep` sets
+Byte limits accept a positive integer or `unlimited`. Image encodings accept `automatic`,
+`automatic:QUALITY`, `png`, `jpeg:QUALITY` or `smallest:QUALITY`. `--repeated-headers-and-footers remove|keep` sets
 `removeRepeatedHeadersAndFooters`; without it, repeated headers and footers are removed.
 `--package-identifier ID` and `--modification-date ISO8601`
 (for example `2026-01-01T00:00:00Z`) set the reproducible-package options. The internal reader

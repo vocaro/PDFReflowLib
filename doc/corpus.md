@@ -183,9 +183,15 @@ python3 tools/evaluate_real_document.py --case gpo-warren-1964 \
   --output /tmp/warren-baseline --epubcheck /opt/homebrew/bin/epubcheck
 ```
 
-The recorded default-budget baseline exits unsuccessfully after reconstruction page 390
-when page-image output exceeds 512 MiB. The measurement runner retains that failure and
-memory/progress evidence. A [full-book encoding experiment](../measurements/warren-image-encoding/record.md)
+The recorded default-budget baseline exited unsuccessfully after reconstruction page 390 when
+page-image output exceeded 512 MiB. **Since the automatic encoding default the whole book
+converts at library defaults**: 920 pages, 931 images, every one written as JPEG because its scans
+are tonal and its line art is neutral, 536,242,227 entry bytes — 628,685 bytes, 0.117%, inside the
+512 MiB budget. That margin is worth about 0.002 of JPEG quality, far below what an ImageIO
+revision could move, so the case stays out of the corpus lane rather than gating on it; the
+exclusion now records the measured position
+([record](../measurements/image-encoding-default/record.md)). The measurement runner retains the
+older failure and memory/progress evidence. A [full-book encoding experiment](../measurements/warren-image-encoding/record.md)
 completes with an explicit 2 GiB experimental override; the default-budget gate remains unresolved.
 The [production client-policy runs](../measurements/client-options/record.md) also complete all
 920 pages, with JPEG references or with supplementary references omitted, under explicit final
@@ -398,9 +404,13 @@ that branch with the `ours` strategy, so none of its content is on `main`
 ([decision 0005](decisions/0005-abandoned-coordination-branch.md)). A default run measured on
 `da544ad` exits after reconstruction page 784 of 1,834, and with the budget lifted writes
 1,158,808,212 entry bytes over 2,410 images — 1,105.13 MiB, 2.16 times the 512 MiB default.
-Unlike the Warren report this book does not come inside the default even when the branch's
-encoding is asked for explicitly: at `smallest:0.9` for full pages and crops it still writes
-757,886,168 bytes, because only 509 of its 2,410 images are ones JPEG encodes smaller.
+Unlike the Warren report this book does not come inside the default under the automatic image
+encoding: with the budget lifted it writes 817,716,220 bytes (1.52×), because only 126 of its 2,410
+images are ones the classifier permits and JPEG encodes smaller — the rest are chart and line-art
+crops it is right to keep lossless. Nor does any encoding this library offers rescue it: forced to
+`smallest:0.9` everywhere, which chooses by bytes alone, it writes 694,592,660 bytes and is still
+1.29× over ([record](../measurements/image-encoding-default/record.md)). What remains for this
+book is how many crops it emits and at what resolution, not how they are encoded.
 [Chapter-aware splitting #15](https://github.com/vocaro/PDFReflowLib/issues/15) is open. The
 current writer's approximate 60,000-byte file splitting does not follow PDF chapters or bound
 the memory of whole-document reconstruction.

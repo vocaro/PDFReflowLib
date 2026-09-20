@@ -1735,13 +1735,13 @@
   "excludedFullConversions": [
     {
       "id": "gpo-warren-1964",
-      "reason": "Known default image-output ceiling failure; the five-page suspect-text-layer excerpt (gpo-warren-1964-suspect-text-excerpt) is gated separately, and the nine-page general excerpt (measurements/gpo-warren-1964/prepare-excerpt.py) remains a manual review aid, not a regression case.",
-      "issue": 5
+      "reason": "Converts at library defaults since the automatic image-encoding default (#242): 931 images, 536,242,227 entry bytes, 628,685 bytes (0.117%) inside the 512 MiB budget. Excluded because that margin is worth about 0.002 of JPEG quality and comes from ImageIO on this OS build, so gating on it would fail the lane on an encoder revision rather than on a change in this repository; admitting it is an owner decision (measurements/image-encoding-default/record.md). The five-page suspect-text-layer excerpt (gpo-warren-1964-suspect-text-excerpt) is gated separately, and the nine-page general excerpt (measurements/gpo-warren-1964/prepare-excerpt.py) remains a manual review aid, not a regression case.",
+      "issue": 242
     },
     {
       "id": "noaa-nca5-2023",
-      "reason": "Known default image-output ceiling failure. Full conversions with explicit larger storage caps are measured separately in measurements/noaa-output-policies/record.md; this gate retains library defaults.",
-      "issue": 5
+      "reason": "Default image-output ceiling failure that no encoding choice fixes: at the automatic default (#242) the full book writes 817,716,220 entry bytes over 2,410 images (1.52x the 512 MiB budget), and forced to smallest:0.9 everywhere it still writes 694,592,660 (1.29x), because its crops are charts and line art rather than photographs. Full conversions with explicit larger storage caps are measured separately in measurements/noaa-output-policies/record.md; this gate retains library defaults.",
+      "issue": 242
     }
   ]
 }

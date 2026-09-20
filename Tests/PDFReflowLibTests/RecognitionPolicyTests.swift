@@ -300,3 +300,88 @@ private let noise = RecognitionJudge(finding: { _ in fewEnglish }, readsBetter: 
     _ = try measurer.measure(excluding: [CGRect(x: 0, y: 0, width: 10, height: 10)])
     #expect(measurer.renders == 1)
 }
+
+// MARK: - Recognition that left the page's writing out (#116)
+
+/// A reading that covers the page, and the same reading after the coverage check found writing
+/// it never read. Nothing here runs Vision: the reading is canned, and so is what the check made
+/// of it, so the outcome cannot depend on which Vision models this machine compiled (#173).
+private let incomplete = OCRReader.Result(lines: [line("Recognized words")], tables: [],
+                                          uncoveredTextFraction: 0.42)
+private let incompleteAfterRetry = OCRReader.Result(lines: [line("Recognized words")], tables: [],
+                                                    retriedInBands: true, uncoveredTextFraction: 0.42)
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/116"))
+func recognitionThatLeftTextUncoveredIsReportedWithTheTranscriptionItGave() {
+    let replace = RecognitionPlan.recognize(.replace, keepCropsIfUnread: false)
+    let page = evidence(hasText: false)
+
+    // The reader is given the transcription, and told that it does not account for the page.
+    let reported = RecognitionPolicy.resolve(replace, evidence: page, outcome: .read(incomplete), judge: trusting)
+    #expect(reported.disposition == .replaced(incomplete))
+    #expect(reported.warnings == [.ocrUsed, .incompleteRecognition(uncoveredFraction: 0.42, retriedInBands: false)])
+
+    // The warning says what the reading finally left out, so it records whether the page had
+    // already been recognized again in bands without recovering it.
+    let retried = RecognitionPolicy.resolve(replace, evidence: page, outcome: .read(incompleteAfterRetry), judge: trusting)
+    #expect(retried.warnings == [.ocrUsed, .incompleteRecognition(uncoveredFraction: 0.42, retriedInBands: true)])
+
+    // Control: a reading that covers the page's writing gains no such warning, whether or not a
+    // retry was what made it complete.
+    let complete = OCRReader.Result(lines: [line("Recognized words")], tables: [], retriedInBands: true)
+    let clean = RecognitionPolicy.resolve(replace, evidence: page, outcome: .read(complete), judge: trusting)
+    #expect(clean.warnings == [.ocrUsed])
+}
+
+/// The warning belongs to the transcription the reader is given. A reading the conversion threw
+/// away is not what the reader gets, and the outcome that threw it away already says so.
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/116"))
+func anIncompleteReadingThatIsDiscardedIsNotReportedAsIncomplete() {
+    let replace = RecognitionPlan.recognize(.replace, keepCropsIfUnread: false)
+    // Discarded as noise: the page becomes an image and reflows none of this text.
+    let noisy = RecognitionPolicy.resolve(replace, evidence: evidence(hasText: false),
+                                          outcome: .read(incomplete), judge: noise)
+    #expect(noisy.disposition == .pageImage)
+    #expect(noisy.warnings == [.implausibleRecognition(fewEnglish)])
+
+    // Lost a comparison with the layer (#7): the layer stands and the reading is gone.
+    let compare = RecognitionPlan.recognize(.compare(misread: 12, words: 100), keepCropsIfUnread: false)
+    let kept = RecognitionPolicy.resolve(compare, evidence: evidence(imageBacked: true, finding: misread),
+                                         outcome: .read(incomplete),
+                                         judge: .init(finding: { _ in nil }, readsBetter: { _, _, _ in false }))
+    #expect(kept.disposition == .keptLayer)
+    #expect(!kept.warnings.contains { if case .incompleteRecognition = $0 { true } else { false } })
+
+    // A compared reading that wins is the transcription, so it is reported like any other.
+    let won = RecognitionPolicy.resolve(compare, evidence: evidence(imageBacked: true, finding: misread),
+                                        outcome: .read(incomplete), judge: trusting)
+    #expect(won.warnings == [.implausibleTextLayer(misread, .replaced), .ocrUsed,
+                             .incompleteRecognition(uncoveredFraction: 0.42, retriedInBands: false)])
+}
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/116"))
+func theIncompleteRecognitionMessageStatesTheShareTheRetryAndWhereToCompare() {
+    var references = ConversionOptions()
+    var none = ConversionOptions()
+    none.referenceImages = .never
+    func text(_ kind: PageWarning, _ options: ConversionOptions) -> String {
+        ConversionWarnings.warning(kind, page: 7, options: options).message
+    }
+    let first = text(.incompleteRecognition(uncoveredFraction: 0.42, retriedInBands: false), references)
+    #expect(first.contains("about 42% of the page's text-shaped ink lies outside every recognized line"))
+    #expect(first.contains("Whole paragraphs, table cells or captions may be missing"))
+    #expect(first.contains("compare the accompanying source-page image"))
+    #expect(!first.contains("overlapping bands"))
+
+    let retried = text(.incompleteRecognition(uncoveredFraction: 0.42, retriedInBands: true), references)
+    #expect(retried.contains("recognizing the page again in overlapping bands did not recover it"))
+    #expect(text(.incompleteRecognition(uncoveredFraction: 0.42, retriedInBands: false), none)
+        .contains("supplementary references are disabled, so compare the source PDF"))
+
+    // A share that rounds to nothing is still a share: the message never claims 0%.
+    #expect(text(.incompleteRecognition(uncoveredFraction: 0.002, retriedInBands: false), references).contains("about 1%"))
+    #expect(ConversionWarnings.warning(.incompleteRecognition(uncoveredFraction: 0.42, retriedInBands: true),
+                                       page: 3, options: references).code == .incompleteRecognition)
+    references.referenceImages = .always
+    #expect(text(.incompleteRecognition(uncoveredFraction: 0.9, retriedInBands: false), references).contains("about 90%"))
+}

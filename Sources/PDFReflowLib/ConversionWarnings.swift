@@ -45,6 +45,10 @@ enum PageWarning: Equatable, Sendable {
     case implausibleTextLayer(TextLayerPlausibility.Finding, TextLayerPlausibility.Outcome)
     case implausibleRecognition(TextLayerPlausibility.Finding)
     case ocrUsed
+    /// Recognition replaced the page's text and still left `uncoveredFraction` of the page's
+    /// text-shaped ink outside every recognized line, after a band retry when `retriedInBands`
+    /// (#116).
+    case incompleteRecognition(uncoveredFraction: Double, retriedInBands: Bool)
     case ocrFailed(RecognitionFailure)
     case pageImageFallback
     /// The page's content stream draws nothing at all (#224).
@@ -89,6 +93,15 @@ enum ConversionWarnings {
             (.ocrUsed, "Text is OCR transcription. " + (referencesDisabled
                 ? "Supplementary references are disabled; compare unrecognized visual content with the source PDF."
                 : "The original page image preserves unrecognized visual content."))
+        case .incompleteRecognition(let fraction, let retried):
+            (.incompleteRecognition, "OCR of this page did not read all of its writing: about "
+                + "\(max(1, Int((fraction * 100).rounded())))% of the page's text-shaped ink lies outside every "
+                + "recognized line"
+                + (retried ? ", and recognizing the page again in overlapping bands did not recover it" : "")
+                + ". Whole paragraphs, table cells or captions may be missing from the reflowed text; "
+                + (referencesDisabled
+                    ? "supplementary references are disabled, so compare the source PDF."
+                    : "compare the accompanying source-page image."))
         case .ocrFailed(.unreadDrawnText):
             (.ocrFailed, "This page reflows no text of its own and its artwork holds writing, but recognition "
                 + "of the page failed or found no text; the artwork is preserved as images and its "

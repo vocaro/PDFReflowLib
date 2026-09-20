@@ -119,6 +119,13 @@ public struct ConversionWarning: Sendable, Codable, Equatable {
         /// Structure tags cannot safely describe some content; spatial reconstruction remains in use.
         case structureFallback
         case ocrUsed, ocrFailed, uncertainHyphen, furnitureRemoved
+        /// Recognition replaced the page's text but did not read all of the page's writing: rows
+        /// of the page's own text-shaped ink lie outside every recognized line, which is how a
+        /// compiled Vision model set dropping whole paragraphs shows itself (#116). Emitted after
+        /// the page has been recognized a second time in overlapping bands and that retry has
+        /// either been rejected or failed to recover the text, so it reports what the reader is
+        /// actually given, not what the conversion attempted.
+        case incompleteRecognition
         case imageRegion, pageImageFallback, unsupportedGraphics
         /// The page's content stream draws nothing: no extracted text, no visible text
         /// operator, no painted region and no annotation. Judged on the extracted page, before

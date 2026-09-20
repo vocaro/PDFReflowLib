@@ -33,7 +33,9 @@ PROBE_SOURCES = {
     'capture-layout-fixture.swift': EXTRACTION + ['GraphicsReader.swift'],
     'capture-spacing-source.swift': [],                 # Apple SDKs only
     'capture-algebra-layout.swift': EXTRACTION + ['GraphicsReader.swift'],
-    'capture-ocr-layout-fixture.swift': RASTER + ['OCRReader.swift'],
+    # `OCRReader` checks its own reading against the page's ink (#116), so it needs the measurement.
+    'capture-ocr-layout-fixture.swift': RASTER + ['OCRReader.swift', 'OCRTextCoverage.swift'],
+    'probe-ocr-text-loss.swift': RASTER + ['OCRReader.swift', 'OCRTextCoverage.swift'],
     'audit-report-margins.swift': EXTRACTION + ['FurnitureDetector.swift'],
 }
 

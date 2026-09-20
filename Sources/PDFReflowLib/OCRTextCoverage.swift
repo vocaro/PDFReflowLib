@@ -1,7 +1,8 @@
 import Accelerate
 import CoreGraphics
 
-/// Measures how much of a page's text-shaped ink lies outside a set of line boxes.
+/// Measures how much of a page's text-shaped ink lies outside a set of line boxes, and judges
+/// from that whether a recognition of the page left text out (#116).
 ///
 /// Finds rows of glyph-sized ink (connected components of similar height side by side, the shape
 /// of printed or typed text) and measures how much of that ink lies outside every given line box.
@@ -23,7 +24,29 @@ enum OCRTextCoverage {
         var uncoveredRowBoxes: [CGRect] = []
 
         var uncoveredFraction: Double { textInk == 0 ? 0 : Double(uncoveredInk) / Double(textInk) }
+
+        /// Whether a recognition of this page left out enough of its writing to be incomplete
+        /// (#116). Vision can return success with whole paragraphs or table columns missing, so
+        /// the only evidence the conversion has is the page's own text-shaped ink: rows of it
+        /// that no recognized line covers. A row or two is a caption Vision folded into a
+        /// neighbour or a stamp it read as art; `minimumUncoveredRows` rows holding
+        /// `minimumUncoveredFraction` of the page's text ink is a dropped paragraph.
+        ///
+        /// Both conditions are needed. The share alone flags a sparse page whose three uncovered
+        /// rows are most of its little ink; the row count alone flags a dense page whose
+        /// recognition missed a running head and a folio.
+        var indicatesLoss: Bool {
+            uncoveredRows >= OCRTextCoverage.minimumUncoveredRows
+                && uncoveredFraction >= OCRTextCoverage.minimumUncoveredFraction
+        }
     }
+
+    /// The loss rule's thresholds (#116). They are deliberately stricter in rows, and far weaker
+    /// in share, than `TextLayerPlausibility`'s ink test: that test asks whether a layer is a
+    /// transcription of the page at all, this one asks whether a transcription the conversion
+    /// believes is missing part of the page.
+    static let minimumUncoveredRows = 8
+    static let minimumUncoveredFraction = 0.2
 
     /// - Parameters:
     ///   - image: the raster to measure.

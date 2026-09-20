@@ -87,6 +87,7 @@ ALLOWED = {
          'section-label half is unported and the corpus guide says so with its commit'),
     119: ('historical', 'the same-font word spaces, ported onto main for #225 and named as the rule came from it'),
     128: ('historical', 'the kern-absorbed sentence spaces, ported onto main for #225 and named the same way'),
+    116: ('historical', 'the recognition-coverage rule and its band retry, ported onto main and named by its issue'),
 
     # Closed, but the defect is still in `main`; the prose says so and names the commit.
     14: ('branch-only', '2e18b3149'),

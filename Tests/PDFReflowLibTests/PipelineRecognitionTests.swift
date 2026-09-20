@@ -365,3 +365,43 @@ func warrenSyntheticFontsCannotDeclareCodeOrHeadings(name: String) throws {
     #expect(try !inspect("BT 9 Tr (Invalid) Tj ET").hasOnlyInvisibleText)
     #expect(try !inspect("BT 7 Tr (Clipping text) Tj ET").hasOnlyInvisibleText)
 }
+
+/// A whole conversion reports a page whose recognition did not read all of its writing (#116).
+/// The recognizer is canned, so the report does not depend on which Vision models this machine
+/// compiled (#173): what is under test is that an incomplete reading reaches the reader as text
+/// accompanied by a warning, not that any particular page reads incompletely.
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/116"))
+func aRecognitionThatLeftWritingUnreadIsReportedToTheReader() async throws {
+    let directory = try workspace()
+    defer { try? FileManager.default.removeItem(at: directory) }
+    let incomplete = OCRReader.Result(lines: reading("Half of the scanned page").lines, tables: [],
+                                      uncoveredTextFraction: 0.37)
+    let result = try await PDFReflowLibPipeline.reconstruct(from: fixture("scanned"), options: .init(),
+        workspace: directory, recognize: { _, _ in incomplete }) { _ in }
+
+    // The transcription is still the page's text: the warning reports it, it does not withhold it.
+    #expect(result.recognizedPageCount == result.pageCount)
+    #expect(result.book.blocks.contains { $0.text.contains("Half of the scanned page") })
+    let warnings = result.warnings.filter { $0.code == .incompleteRecognition }
+    #expect(warnings.map(\.page) == (1...result.pageCount).map { $0 })
+    #expect(warnings.allSatisfy { $0.message.contains("about 37%") })
+    #expect(result.warnings.contains { $0.code == .ocrUsed })
+    // A page whose recognition is incomplete keeps its source-page reference to compare against.
+    #expect(result.warnings.contains { $0.code == .imageRegion && $0.message.contains("source-page reference") })
+}
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/116"))
+func aRecognitionThatReadThePageIsNotReportedAsIncomplete() async throws {
+    let directory = try workspace()
+    defer { try? FileManager.default.removeItem(at: directory) }
+    // The same page, read completely — including one read completely only because the retry
+    // recovered it: a recovered page is a complete page and says nothing more.
+    for retried in [false, true] {
+        let complete = OCRReader.Result(lines: reading("All of the scanned page").lines, tables: [],
+                                        retriedInBands: retried)
+        let result = try await PDFReflowLibPipeline.reconstruct(from: fixture("scanned"), options: .init(),
+            workspace: directory, recognize: { _, _ in complete }) { _ in }
+        #expect(!result.warnings.contains { $0.code == .incompleteRecognition }, "retried: \(retried)")
+        #expect(result.warnings.contains { $0.code == .ocrUsed })
+    }
+}

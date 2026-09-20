@@ -176,6 +176,15 @@ enum RecognitionPolicy {
             }
             warnings += layer(.replaced)
             warnings.append(.ocrUsed)
+            // The transcription the reader is being given does not account for all of the page's
+            // writing (#116). Only this disposition reports it: a reading that was discarded for
+            // the page image or for the layer is not what the reader gets, and those outcomes say
+            // so themselves. The warning states what the reading finally left out, after any band
+            // retry, not what the retry set out to recover.
+            if let fraction = recognized.uncoveredTextFraction {
+                warnings.append(.incompleteRecognition(uncoveredFraction: fraction,
+                                                       retriedInBands: recognized.retriedInBands))
+            }
             return (.replaced(recognized), warnings)
         case .failed:
             if mode.compares {

@@ -90,7 +90,9 @@ private func indexGlyphPDF(fonts: [IndexFont], lines: [Line]) -> Data {
 /// A page PDFKit can actually read: `DamagedEncodingTests`'s Type 3 font, whose glyph procedures
 /// draw the real letters through Helvetica while its `Differences` names each code `G<code + 3>`,
 /// but shown through `TJ` arrays with the Census report's own word-gap adjustments rather than
-/// through `'`. `overrides` breaks the constant offset for a permuted control.
+/// through `'`. `overrides` breaks the constant offset for a permuted control. A tab in a line
+/// draws the gap between two printed columns of one row (#237): the row stays one show, and
+/// PDFKit reads it as a line per column.
 private func drawnIndexGlyphPDF(_ lines: [String], overrides: [Character: Int] = [:]) -> Data {
     let helvetica = pdfKitGated { CTFontCreateWithName("Helvetica" as CFString, 1000, nil) }
     func width(_ code: Int) -> Int {
@@ -105,7 +107,7 @@ private func drawnIndexGlyphPDF(_ lines: [String], overrides: [Character: Int] =
             .replacingOccurrences(of: ")", with: "\\)")
     }
     func name(_ code: Int) -> Int { overrides[Character(UnicodeScalar(UInt8(code)))] ?? code + 3 }
-    let codes = Set(lines.joined().unicodeScalars.map(\.value).filter { $0 != 32 }).sorted().map(Int.init)
+    let codes = Set(lines.joined().unicodeScalars.map(\.value).filter { $0 != 32 && $0 != 9 }).sorted().map(Int.init)
     // 1 catalog, 2 pages, 3 Helvetica, 4 page, 5 content, 6 font, 7 encoding, 8 CharProcs, then
     // one glyph procedure per code.
     let font = 6, encoding = 7, charProcs = 8
@@ -119,6 +121,11 @@ private func drawnIndexGlyphPDF(_ lines: [String], overrides: [Character: Int] =
             if character == " " {
                 if !run.isEmpty { elements += "<\(run)>"; run = "" }
                 elements += "-430"
+                continue
+            }
+            if character == "\t" {
+                if !run.isEmpty { elements += "<\(run)>"; run = "" }
+                elements += "-4000"
                 continue
             }
             run += String(format: "%02X", Int(character.unicodeScalars.first!.value))
@@ -309,6 +316,80 @@ func textTheLinesDidNotTakeIsCountedAgainstThePage() throws {
     #expect(GlyphIndexDecoder.unreadGlyphs(on: mixed.page, in: decoded) == 0)
 }
 
+/// One glyph of a row drawn in an index-glyph font, with the +3 shift the Census report's `dc`
+/// fonts carry: PDFKit reports the character three on from the one that is drawn.
+private func shifted(_ drawn: Character, startsWord: Bool = false) -> GlyphIdentityReader.IndexGlyph {
+    let reported = UnicodeScalar(drawn.unicodeScalars.first!.value + 3)!
+    return GlyphIdentityReader.IndexGlyph(reported: String(reported), drawn: String(drawn), startsWord: startsWord)
+}
+
+/// The glyphs of one printed row, with a word gap before each word after the first.
+private func rowGlyphs(_ text: String) -> [GlyphIdentityReader.IndexGlyph] {
+    var glyphs: [GlyphIdentityReader.IndexGlyph] = []
+    var opensWord = false
+    for character in text {
+        if character == " " { opensWord = true; continue }
+        glyphs.append(shifted(character, startsWord: opensWord && !glyphs.isEmpty))
+        opensWord = false
+    }
+    return glyphs
+}
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/237"))
+func glyphsAShowDrewPastItsLineCarryToTheNextLineOfTheRow() throws {
+    // Page 17's sixth reference: TeX sets the whole row as one show, and PDFKit reads the number
+    // as a line of its own. The show's origin lies in the number's rectangle, so every glyph of
+    // the row is offered to it.
+    let row = rowGlyphs("[6] Fellegi, I. P.")
+    let number = NSAttributedString(string: "^9`")
+    // Taking them all is impossible, and refusing them all is what left page 17 shifted.
+    #expect(GlyphIdentityReader.rebuildIndexGlyphs(row, in: number, carryingSurplus: false) == nil)
+    let repair = try #require(GlyphIdentityReader.rebuildIndexGlyphs(row, in: number, carryingSurplus: true))
+    #expect(repair.text.string == "[6]")
+    #expect(repair.consumed == 3)
+    // The cut falls at the gap between two printed columns, which is a word gap. A line the
+    // glyphs outrun in the middle of a word was never a row split across lines, so it declines
+    // exactly as it did before, rather than cutting a word in two.
+    let word = rowGlyphs("Fellegi")
+    #expect(GlyphIdentityReader.rebuildIndexGlyphs(word, in: NSAttributedString(string: "Ihoo"),
+                                                   carryingSurplus: true) == nil)
+}
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/237"))
+func aCarriedGlyphLandsOnlyOnALineThatContinuesTheRowToTheRight() throws {
+    let number = CGRect(x: 134, y: 379, width: 13, height: 10)
+    // Page 17's own geometry: the body of the reference begins to the right of the number and
+    // shares its baseline.
+    #expect(GlyphIdentityReader.continuesRow(number, CGRect(x: 156, y: 379, width: 324, height: 10)))
+    // The line below is the row's next line, not its continuation: its glyphs are its own.
+    #expect(!GlyphIdentityReader.continuesRow(number, CGRect(x: 156, y: 368, width: 324, height: 10)))
+    // Nor is a line that begins left of where the row has already reached.
+    #expect(!GlyphIdentityReader.continuesRow(number, CGRect(x: 134, y: 379, width: 324, height: 10)))
+
+    // Carried across `apply`, the number and the body of the reference each read as drawn.
+    let show = GlyphIdentityReader.Show(origin: CGPoint(x: 135, y: 381), reported: "^9`Ihoohjl",
+                                        drawn: "[6]Fellegi", indexGlyphs: rowGlyphs("[6] Fellegi"))
+    let body = CGRect(x: 156, y: 379, width: 324, height: 10)
+    var carry: GlyphIdentityReader.IndexGlyphCarry?
+    let first = GlyphIdentityReader.apply([show], to: NSAttributedString(string: "^9`"), bounds: number,
+                                          allBounds: [number, body], carry: &carry)
+    #expect(first.string == "[6]")
+    #expect(carry?.glyphs.count == 7)
+    let second = GlyphIdentityReader.apply([show], to: NSAttributedString(string: "Ihoohjl"), bounds: body,
+                                           allBounds: [number, body], carry: &carry)
+    #expect(second.string == "Fellegi")
+    #expect(carry == nil)
+
+    // A line that does not continue the row drops them and keeps PDFKit's reading, and
+    // `unreadGlyphs` is what tells the page so.
+    carry = GlyphIdentityReader.IndexGlyphCarry(glyphs: rowGlyphs("Fellegi"), row: number)
+    let elsewhere = CGRect(x: 134, y: 300, width: 324, height: 10)
+    let unrelated = GlyphIdentityReader.apply([], to: NSAttributedString(string: "Ihoohjl"), bounds: elsewhere,
+                                              allBounds: [number, elsewhere], carry: &carry)
+    #expect(unrelated.string == "Ihoohjl")
+    #expect(carry == nil)
+}
+
 @Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/226"))
 func aDecodedPageReflowsItsOwnWordsInsteadOfBeingRecognized() async throws {
     let dir = try testPDFDirectory(); defer { try? FileManager.default.removeItem(at: dir) }
@@ -322,6 +403,35 @@ func aDecodedPageReflowsItsOwnWordsInsteadOfBeingRecognized() async throws {
     let text = result.book.blocks.map(\.text).joined(separator: "\n")
     #expect(text.contains("This paper describes methods for masking microdata"))
     #expect(!text.contains("Wklv sdshu"))
+}
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/237"))
+func aRowPDFKitReadsAsSeveralLinesReflowsItsOwnWords() async throws {
+    let dir = try testPDFDirectory(); defer { try? FileManager.default.removeItem(at: dir) }
+    let source = dir.appendingPathComponent("split-row.pdf")
+    // The shape of page 17's references: one show, two printed columns, and PDFKit reads the
+    // number as a line of its own with the whole row's glyphs anchored to it.
+    let row = "[6]\tFellegi and Sunter describe record linkage for the masked data."
+    // A blank line between the prose and the row, so PDFKit does not read the whole page as one
+    // selection the way it does for this fixture's tightly set body.
+    try drawnIndexGlyphPDF(corpusLines + ["", row]).write(to: source)
+    let document = try #require(PDFDocument(url: source))
+    let page = try #require(document.page(at: 0))
+    // PDFKit really does split it; without that this test would prove nothing.
+    let split: [String] = pdfKitGated {
+        guard let selection = page.selection(for: page.bounds(for: .cropBox)) else { return [] }
+        return selection.selectionsByLine().compactMap(\.string)
+    }
+    #expect(split.contains { $0.trimmingCharacters(in: .whitespaces) == "^9`" })
+
+    var options = ConversionOptions(); options.ocr = .automatic
+    let result = try await PDFReflowLibPipeline.reconstruct(from: source, options: options,
+        workspace: dir.appendingPathComponent("work"), progress: { _ in })
+    #expect(result.recognizedPageCount == 0)
+    let text = result.book.blocks.map(\.text).joined(separator: "\n")
+    #expect(text.contains("[6]"))
+    #expect(text.contains("Fellegi and Sunter describe record linkage for the masked data."))
+    #expect(!text.contains("Ihoohjl"))
 }
 
 @Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/226"))

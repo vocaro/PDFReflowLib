@@ -63,15 +63,22 @@ enum NativeTextReader {
         } : []
         let attributedByLine = attributedTexts(of: styledLines, in: selections, texts: textsByLine, on: page)
         var result: [TextLine] = []
+        // Glyphs a show drew past the end of the line its origin fell in, waiting for the next
+        // line of the same printed row (#237). A row TeX sets as one show and PDFKit reports as
+        // several lines is read here, in PDFKit's own reading order, because only this loop sees
+        // every line's text: `GlyphIdentityReader` is handed one line at a time. A line this loop
+        // does not read at all cannot continue a row, so held glyphs are dropped rather than
+        // reaching across it.
+        var carry: GlyphIdentityReader.IndexGlyphCarry?
         for (index, line) in selections.enumerated() {
             try Task.checkCancellation()
-            guard let raw = line.string else { continue }
+            guard let raw = line.string else { carry = nil; continue }
             // U+FFFC names an attachment, not a word. Retain a boundary between adjacent
             // words; the graphics reader preserves the object's visible content separately.
             let semantic = raw.replacingOccurrences(of: "\u{FFFC}", with: " ")
-            guard !semantic.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else { continue }
+            guard !semantic.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else { carry = nil; continue }
             let bounds = line.bounds(for: page)
-            guard bounds.isFinite, !bounds.isNull, bounds.width > 0, bounds.height > 0 else { continue }
+            guard bounds.isFinite, !bounds.isNull, bounds.width > 0, bounds.height > 0 else { carry = nil; continue }
             // Object-only selections were discarded before requesting attributed text,
             // which can make PDFKit decode large image attachments.
             let attributed = includeStyle ? attributedByLine[index] ?? line.attributedString : nil
@@ -80,7 +87,11 @@ enum NativeTextReader {
             }
             // Glyphs a font's own map misreports are redrawn last: spacing evidence compares
             // PDFKit's characters with the shows' own maps, which must still agree (#217).
-            let repaired = spacingFixed.map { GlyphIdentityReader.apply(glyphs, to: $0, bounds: bounds, allBounds: boundsByLine) }
+            var repaired: NSAttributedString?
+            if let spacingFixed {
+                repaired = GlyphIdentityReader.apply(glyphs, to: spacingFixed, bounds: bounds,
+                                                     allBounds: boundsByLine, carry: &carry)
+            }
             let corrected = repaired?.string != attributed?.string
                 ? repaired?.string.replacingOccurrences(of: "\u{FFFC}", with: " ") : nil
             result.append(textLine(semantic: corrected ?? semantic,

@@ -167,7 +167,7 @@ failing case does not hide later results. `--jobs N` evaluates N cases at once (
 Each case verifies the pinned source identity, converts in a fresh release process, checks EPUB
 structure, EPUBCheck, monotonic progress, the manifest memory ceiling and the reviewed content
 contract in [corpus/regressions.json](../corpus/regressions.json):
-<!-- counts:contract-coverage -->530 checks on 124 reviewed pages across 18 documents<!-- counts:end -->.
+<!-- counts:contract-coverage -->558 checks on 126 reviewed pages across 18 documents<!-- counts:end -->.
 All source-page anchors must remain complete and ordered, and semantic text must
 contain no image-attachment placeholders. The manifest consistency test requires every corpus
 document to be covered or explicitly excluded; full Warren and NOAA conversions are excluded for
@@ -180,9 +180,9 @@ closed it on the abandoned coordination branch, whose `ours` merge left `main`'s
 book is in [corpus.md](corpus.md#warren-commission-report).
 
 <!-- counts:contract-breakdown -->
-Those 530 checks are 4 `spineContinuity`, 81 `text`, 193 `orderedText`, 42 `absentText`,
+Those 558 checks are 4 `spineContinuity`, 81 `text`, 209 `orderedText`, 52 `absentText`,
 34 `headings`, 42 `paragraphs`, 6 `continuedParagraphs`, 16 `scripts`, 17 `imageRegions`,
-70 `minimumImages`, 20 `warningCodesAnyOf` and 5 `absentWarningCodes`, counted as
+70 `minimumImages`, 20 `warningCodesAnyOf` and 7 `absentWarningCodes`, counted as
 `tools/check_corpus_content.py` counts them.
 <!-- counts:end -->
 

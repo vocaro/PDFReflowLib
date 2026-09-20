@@ -431,6 +431,31 @@ enum GlyphIdentityReader {
     /// explains, a glyph left over, a line the shows do not cover — leaves the line as PDFKit
     /// read it, as #143's rule did.
     static func repairIndexGlyphs(_ glyphs: [IndexGlyph], in attributed: NSAttributedString) -> NSAttributedString? {
+        guard let repair = rebuildIndexGlyphs(glyphs, in: attributed, carryingSurplus: false),
+              repair.rewritten else { return nil }
+        return repair.text
+    }
+
+    /// A line rebuilt from the glyphs offered to it: its text, how many of them it took in
+    /// drawing order, and whether any character actually changed (a line the decoder reads
+    /// exactly as PDFKit did is left alone, attributes and all).
+    struct IndexGlyphRepair {
+        var text: NSAttributedString
+        var consumed: Int
+        var rewritten: Bool
+    }
+
+    /// `repairIndexGlyphs`'s alignment, with the option of leaving a tail of the glyphs for the
+    /// next line of the same printed row (#237).
+    ///
+    /// `carryingSurplus` lets the alignment stop at the end of the line with glyphs left over —
+    /// **but only where the next of them opens a word.** TeX sets a whole printed row as one
+    /// `TJ` show and PDFKit splits it into a line per printed column, so the cut always falls at
+    /// the horizontal gap between two columns, which is a word gap by construction. A glyph that
+    /// continues the word the line ends with was never the next line's to take, so the repair
+    /// declines instead, exactly as it does for a glyph the line has no room for.
+    static func rebuildIndexGlyphs(_ glyphs: [IndexGlyph], in attributed: NSAttributedString,
+                                   carryingSurplus: Bool) -> IndexGlyphRepair? {
         guard !glyphs.isEmpty, attributed.length <= 4_096, glyphs.count <= 4_096 else { return nil }
         let line = attributed.string as NSString
 
@@ -455,8 +480,15 @@ enum GlyphIdentityReader {
         var steps: [Step] = []
         var failed = Set<Int>()
         var budget = 20_000
+        var consumed = glyphs.count
         func align(_ cursor: Int, _ position: Int) -> Bool {
-            if cursor == line.length && position == glyphs.count { return true }
+            if cursor == line.length {
+                if position == glyphs.count { consumed = position; return true }
+                // The rest of the row is the next line's, and the cut falls at the gap between
+                // two printed columns. Checked before the options below so that a ligature
+                // opening a word joins the word it opens rather than the line that ends here.
+                if carryingSurplus, glyphs[position].startsWord { consumed = position; return true }
+            }
             let state = cursor * (glyphs.count + 1) + position
             if failed.contains(state) { return false }
             budget -= 1
@@ -510,7 +542,27 @@ enum GlyphIdentityReader {
                 replaced = replaced || glyph.drawn != glyph.reported
             }
         }
-        return replaced ? result : nil
+        return IndexGlyphRepair(text: result, consumed: consumed, rewritten: replaced)
+    }
+
+    /// Glyphs a show drew past the last character of the line its origin fell in, held for the
+    /// next line of the same printed row (#237).
+    struct IndexGlyphCarry {
+        var glyphs: [IndexGlyph]
+        /// The rectangles of the lines the row has covered so far, unioned: what the next line
+        /// must continue.
+        var row: CGRect
+    }
+
+    /// Whether `bounds` is the next printed column of the row `row` covers: a line begun at or
+    /// after the row's right edge whose own middle lies inside the row's band of baselines.
+    /// Both halves matter. Without the first, a carried glyph could land on the line below,
+    /// which is a gap in the row's reading, not its continuation; without the second, it could
+    /// land on a line of another row further down the page.
+    static func continuesRow(_ row: CGRect, _ bounds: CGRect) -> Bool {
+        guard row.isFinite, !row.isNull, bounds.isFinite, !bounds.isNull else { return false }
+        return bounds.minX >= row.maxX - AnchorMatcher.tolerance
+            && bounds.midY > row.minY && bounds.midY < row.maxY
     }
 
     // MARK: - Lines
@@ -560,13 +612,35 @@ enum GlyphIdentityReader {
     /// unambiguous occurrence in the line (`candidateRange`). Anything else (no unique show, an
     /// ambiguous or missing occurrence) leaves the line as PDFKit read it: this reader would
     /// rather miss a fix than risk rewriting the wrong text.
+    ///
+    /// `carry` holds the glyphs an earlier line of the same printed row could not take (#237).
+    /// They are offered to this line before its own, and whatever this line leaves is held for
+    /// the next; a line that does not continue the row drops them, and
+    /// `GlyphIndexDecoder.unreadGlyphs` then counts them against the page exactly as it counts a
+    /// row no line could be found for at all.
     static func apply(_ shows: [Show], to attributed: NSAttributedString, bounds: CGRect,
-                      allBounds: [CGRect]) -> NSAttributedString {
+                      allBounds: [CGRect], carry: inout IndexGlyphCarry?) -> NSAttributedString {
         // A line drawn in index-glyph fonts is rebuilt whole: every one of its characters is
         // wrong, so there is no single unambiguous occurrence to substitute.
-        let indexGlyphs = indexGlyphs(of: shows, in: bounds, among: allBounds)
+        var indexGlyphs = indexGlyphs(of: shows, in: bounds, among: allBounds)
+        var row = bounds
+        if let pending = carry {
+            carry = nil
+            if continuesRow(pending.row, bounds) {
+                indexGlyphs = pending.glyphs + indexGlyphs
+                row = pending.row.union(bounds)
+            }
+        }
         if !indexGlyphs.isEmpty {
-            return repairIndexGlyphs(indexGlyphs, in: attributed) ?? attributed
+            // A line the glyphs spell on their own is rebuilt exactly as before; only one that
+            // they cannot is allowed to leave a tail for the line beside it.
+            guard let repair = rebuildIndexGlyphs(indexGlyphs, in: attributed, carryingSurplus: false)
+                ?? rebuildIndexGlyphs(indexGlyphs, in: attributed, carryingSurplus: true)
+            else { return attributed }
+            if repair.consumed < indexGlyphs.count {
+                carry = IndexGlyphCarry(glyphs: Array(indexGlyphs[repair.consumed...]), row: row)
+            }
+            return repair.rewritten ? repair.text : attributed
         }
         guard let match = AnchorMatcher.uniqueAnchor(shows.filter { $0.indexGlyphs == nil },
                                                      at: \.origin, in: bounds, among: allBounds),
@@ -579,5 +653,13 @@ enum GlyphIdentityReader {
             result.addAttribute(isolatedAttribute, value: true, range: drawnRange)
         }
         return result
+    }
+
+    /// `apply` for a line read on its own, with no row running through it: nothing is carried in,
+    /// and glyphs this line cannot take are dropped rather than offered on.
+    static func apply(_ shows: [Show], to attributed: NSAttributedString, bounds: CGRect,
+                      allBounds: [CGRect]) -> NSAttributedString {
+        var carry: IndexGlyphCarry?
+        return apply(shows, to: attributed, bounds: bounds, allBounds: allBounds, carry: &carry)
     }
 }

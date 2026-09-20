@@ -1,0 +1,14 @@
+{
+  "feedbackID": null,
+  "submissionConfirmation": "Not filed: the reported behavior does not reproduce on macOS 27.0 (26A428). See record.md.",
+  "trackingIssue": "https://github.com/vocaro/PDFReflowLib/issues/173",
+  "relatedIssues": [
+    "https://github.com/vocaro/PDFReflowLib/issues/94",
+    "https://github.com/vocaro/PDFReflowLib/issues/116"
+  ],
+  "attachment": {
+    "filename": "probe.swift",
+    "note": "Standalone, Apple SDKs only."
+  },
+  "resolution": "Not filed; no defect reproduced."
+}

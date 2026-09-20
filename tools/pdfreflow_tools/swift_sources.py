@@ -17,7 +17,8 @@ PROBES = 'tools/probes'
 # Native text extraction: NativeTextReader, the readers it consults, and the value types it returns.
 EXTRACTION = ['NativeTextReader.swift', 'NativeSpacingReader.swift', 'NativeSpacingOwnership.swift',
               'GlyphIdentityReader.swift', 'GlyphIndexDecoder.swift', 'TextEncodingCheck.swift',
-              'EnglishText.swift', 'ContentStreamWalk.swift', 'CGPDFObjects.swift', 'AnchorMatcher.swift',
+              'EnglishText.swift', 'CJKText.swift', 'ContentStreamWalk.swift', 'CGPDFObjects.swift',
+              'AnchorMatcher.swift',
               'DocumentModel.swift', 'ReflowDocument.swift', 'ConversionTypes.swift']
 # Page rasterization with the options and model types it takes.
 RASTER = ['PageRasterizer.swift', 'ImageContentClassifier.swift', 'ConversionTypes.swift',
@@ -35,10 +36,10 @@ PROBE_SOURCES = {
     'capture-spacing-source.swift': [],                 # Apple SDKs only
     'capture-algebra-layout.swift': EXTRACTION + ['GraphicsReader.swift'],
     # `OCRReader` checks its own reading against the page's ink (#116), so it needs the measurement.
-    'capture-ocr-layout-fixture.swift': RASTER + ['OCRReader.swift', 'OCRTextCoverage.swift'],
-    'probe-ocr-text-loss.swift': RASTER + ['OCRReader.swift', 'OCRTextCoverage.swift'],
+    'capture-ocr-layout-fixture.swift': RASTER + ['OCRReader.swift', 'OCRTextCoverage.swift', 'CJKText.swift'],
+    'probe-ocr-text-loss.swift': RASTER + ['OCRReader.swift', 'OCRTextCoverage.swift', 'CJKText.swift'],
     # #240 weighs a second signal against the same measurement, so it needs the same sources.
-    'probe-ocr-coverage-signals.swift': RASTER + ['OCRReader.swift', 'OCRTextCoverage.swift'],
+    'probe-ocr-coverage-signals.swift': RASTER + ['OCRReader.swift', 'OCRTextCoverage.swift', 'CJKText.swift'],
     'audit-report-margins.swift': EXTRACTION + ['FurnitureDetector.swift'],
 }
 

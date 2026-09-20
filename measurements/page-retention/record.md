@@ -1,6 +1,6 @@
 # Page retention between extraction and reconstruction
 
-> `identity.py` now lives at `tools/epub_identity.py`; the retired strategy tests and `measured-strategies.patch` were removed from the tree and remain at commit a28fb09; the paths below are as measured.
+> `identity.py` now lives at `tools/epub_identity.py`; the retired strategy tests and `measured-strategies.patch` were removed from the tree and remain at commit a28fb09; `tools/evaluate-real-document.py` is now `tools/evaluate_real_document.py` (`6e6ba6c`); the paths below are as measured.
 
 Bounded memory work under [#15](https://github.com/vocaro/PDFReflowLib/issues/15), on top of
 `15f1985`, 2026-09-15, macOS 27 / Xcode 27, arm64. This implements the two retention

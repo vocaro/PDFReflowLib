@@ -1,5 +1,7 @@
 # Report header follow-up (#10)
 
+> The Swift probes moved to `tools/probes/`, and `tools/pdfreflow_tools/swift_sources.py` now owns the library source list each one compiles with (`6e6ba6c`); the paths and hand-copied source lists below are as measured.
+
 Boundary folios now share header evidence when the page number switches sides. Seven additional
 9/11 notes headers disappear; no body text, images or genuine headings are lost. This is a bounded
 repair and qualification of [issue #10](https://github.com/vocaro/PDFReflowLib/issues/10), which

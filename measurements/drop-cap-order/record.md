@@ -1,5 +1,7 @@
 # Drop-cap opening order and semantics
 
+> The Swift probes moved to `tools/probes/`, and `tools/pdfreflow_tools/swift_sources.py` now owns the library source list each one compiles with (`6e6ba6c`); the paths and hand-copied source lists below are as measured.
+
 Native decorative initials no longer turn their body line into a heading, move that line after
 its continuation, or acquire a spurious subscript. This is a bounded spatial/typographic fix
 under #17; it does not implement PDF logical structure tags.

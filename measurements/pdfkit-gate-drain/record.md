@@ -1,5 +1,7 @@
 # Draining autoreleased fonts before releasing the extraction gate
 
+> The Swift probes moved to `tools/probes/`, and `tools/pdfreflow_tools/swift_sources.py` now owns the library source list each one compiles with (`6e6ba6c`); the paths and hand-copied source lists below are as measured.
+
 This closes the residual crash reported against the serialization lock in
 [#21](https://github.com/vocaro/PDFReflowLib/issues/21): even with `NativeTextReader`'s
 process-wide extraction lock in place (`58da4de`), an eight-worker native stress campaign still

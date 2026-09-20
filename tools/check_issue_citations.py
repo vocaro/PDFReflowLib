@@ -102,8 +102,21 @@ ALLOWED = {
     227: ('historical', 'the web-address exclusion from the equation seed, on main and named by its issue'),
     229: ('historical', 'the thin-rule seed and bounded expansion, on main and named by the issue that scoped the port'),
     234: ('historical', 'the closed-issue citation gate, named by the issue that asked for it'),
+    6: ('historical', "the invisible-OCR font and geometry inference, fixed on main by `7fcb80f` "
+        'and named for where the behaviour came from'),
+    8: ('historical', 'the object-placeholder exclusion from semantic text and reflow counts, '
+        'fixed on main by `305cb14` and named by its issue'),
+    9: ('historical', "the comparison harness's relative Poppler image URLs, fixed on main by "
+        '`b5f1937` and named by its issue'),
+    19: ('historical', 'the `unverifiedTextLayer` warning, implemented on main by `305cb14` and '
+         'named by the issue that asked for it'),
+    12: ('historical', "the Fed report's prose-as-headings defect, fixed on main by `294d0cd` and "
+         'named by the research note that keeps its failing case'),
 
-    # Closed, but the defect is still in `main`; the prose says so and names the commit.
+    # Closed, but the defect is still in `main`; the prose says so and names the commit. #5 and
+    # #11 join this group from #236's audit: both were read against `main` — Warren and NOAA
+    # measured at 2.32 and 2.16 times the default output budget, and no note linker exists — and
+    # both turned out to have been closed by the abandoned branch after all, not by `main`.
     14: ('branch-only', '2e18b3149'),
     37: ('branch-only', '277cbde39'),
     40: ('branch-only', '20c78f352'),
@@ -112,20 +125,13 @@ ALLOWED = {
     158: ('branch-only', 'bff0a046c'),
     164: ('branch-only', '88803aca7'),
     165: ('branch-only', '3a65be6c1'),
-
-    # Cited in the present tense as the tracker for a gap, and closed — the same fault #234
-    # describes, but on issues `main` itself closed rather than the abandoned branch, so each
-    # needs its own reading of whether the gap survived. Listed here so the gate is honest about
-    # what it is letting through rather than silent about it.
-    5: ('unaudited', 'corpus guide and regression runbook name #5 as the live output-budget gap'),
-    6: ('unaudited', 'corpus guide lists #6 as a tracked OCR font/layout defect'),
-    8: ('unaudited', 'corpus guide lists #8 as a tracked placeholder-text defect'),
-    9: ('unaudited', 'corpus guide lists #9 as a tracked Poppler image-URL defect'),
-    11: ('unaudited', 'corpus guide says #11 "tracks note-marker semantics"'),
-    12: ('unaudited', 'corpus guide leaves drop-cap ordering "unqualified under" #12'),
-    19: ('unaudited', 'corpus guide says #19 "tracks the warning/refusal behavior"'),
+    5: ('branch-only', 'fbe3464'),
+    11: ('branch-only', '9803329'),
 }
-UNAUDITED_TRACKER = 236  # The issue that asks for the 'unaudited' entries above to be settled.
+# Where a citation parked as 'unaudited' is reported. The kind is empty today: #236 settled the
+# seven it was introduced for, four to 'historical' and two to 'branch-only', and #12's citation
+# left the prose. It stays so the next batch has somewhere to sit while it is read against `main`.
+UNAUDITED_TRACKER = 236
 
 
 def documents(root=ROOT):

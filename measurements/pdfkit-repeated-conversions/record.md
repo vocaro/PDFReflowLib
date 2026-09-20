@@ -1,6 +1,6 @@
 # PDFKit attributed-text growth across repeated conversions (#4)
 
-> The harness (`measure.sh`, `harness.swift`) now lives in `tools/repeated_conversions/`; the paths below are as measured.
+> The harness (`measure.sh`, `harness.swift`) now lives in `tools/repeated_conversions/`, and `tools/probe-pdfkit-memory.swift` is now `tools/probes/probe-pdfkit-memory.swift` (`6e6ba6c`); the paths below are as measured.
 
 2026-09-19, macOS 27.0 (26A428), Xcode 27, Apple silicon, release builds. Baseline is main at
 `dd160b4`; candidate is `dd160b4` plus this change.

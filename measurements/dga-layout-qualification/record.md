@@ -1,5 +1,7 @@
 # DGA selective-preservation investigation and layout audit (#13)
 
+> The Swift probes moved to `tools/probes/` and `tools/evaluate-real-document.py` is now `tools/evaluate_real_document.py` (`6e6ba6c`), which also gave each probe's library source list one home in `tools/pdfreflow_tools/swift_sources.py`; the paths and hand-copied source lists below are as measured.
+
 **Keep #13 open. No production implementation change is retained.** This investigation starts
 from clean main `2233d5f` and narrows the remaining work with fresh conversion evidence, all
 ten source pages, source geometry, and explicit failing desired-layout checks. It does not

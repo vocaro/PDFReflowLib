@@ -1,5 +1,7 @@
 # Bounded paragraph and heading tags
 
+> The Swift probes moved to `tools/probes/`, and `tools/pdfreflow_tools/swift_sources.py` now owns the library source list each one compiles with (`6e6ba6c`); the paths and hand-copied source lists below are as measured.
+
 PDFReflowLib consumes validated P and H1–H6 structure groups, retains heading levels in the
 neutral model, and applies logical order inside uninterrupted runs of fully associated text.
 This is the first phase of [#17](https://github.com/vocaro/PDFReflowLib/issues/17), not full

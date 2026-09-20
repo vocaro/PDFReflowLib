@@ -116,10 +116,13 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn('README.md', names)
 
     def test_the_twelve_of_234_are_all_branch_only_and_named_in_the_prose(self):
-        # #36 was one of the twelve when #234 was written and is no longer: its rules were
-        # ported onto main for #229, so it is cited as history now. The other eleven stand.
+        # Two of the twelve #234 named are no longer branch-only: #36's rules were ported for
+        # #229 and #43's missing-space half for #225, so both are cited as history now. #43's
+        # other half is still unported, and the corpus guide names its commit for that.
         self.assertEqual(gate.ALLOWED[36][0], 'historical')
-        twelve = [13, 14, 37, 39, 40, 43, 45, 153, 158, 164, 165]
+        self.assertEqual(gate.ALLOWED[43][0], 'historical')
+        self.assertIn('417edc705', (ROOT / 'doc/corpus.md').read_text())
+        twelve = [13, 14, 37, 39, 40, 45, 153, 158, 164, 165]
         for issue in twelve:
             self.assertEqual(gate.ALLOWED[issue][0], 'branch-only', issue)
         cited = {}

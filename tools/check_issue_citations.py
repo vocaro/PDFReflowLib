@@ -79,6 +79,10 @@ ALLOWED = {
     92: ('historical', "the comparator's identifier normalization, ported onto main and named by its issue"),
     36: ('historical', 'the rule-adjacent-prose rules, ported onto main for #229 and named by their issue'),
     143: ('historical', 'the index-glyph decoding, ported onto main for #226 and named by its issue'),
+    43: ('historical', "the font-change word spaces, ported onto main for #225; the paper's heading and "
+         'section-label half is unported and the corpus guide says so with its commit'),
+    119: ('historical', 'the same-font word spaces, ported onto main for #225 and named as the rule came from it'),
+    128: ('historical', 'the kern-absorbed sentence spaces, ported onto main for #225 and named the same way'),
 
     # Closed, but the defect is still in `main`; the prose says so and names the commit.
     13: ('branch-only', '183c2c4b6'),
@@ -86,7 +90,6 @@ ALLOWED = {
     37: ('branch-only', '277cbde39'),
     39: ('branch-only', '3f7c23ddc'),
     40: ('branch-only', '20c78f352'),
-    43: ('branch-only', '417edc705'),
     45: ('branch-only', 'e1cbc0d0e'),
     153: ('branch-only', '58a2ddda6'),
     158: ('branch-only', 'bff0a046c'),

@@ -166,13 +166,21 @@ def ordered_in(text, phrases):
 def spine_continuity(case, contract, documents):
     """Check that reviewed text continuing past a spine-document boundary arrives intact.
 
-    Each expectation names phrases the source sets before and after one boundary. They must
-    occur once in the whole book (nothing duplicated), in order, with the earlier ones inside
-    one spine document and the later ones inside the very next one, and both documents must
-    carry the reviewed source pages. `contiguous` additionally forbids any word between the
-    last phrase and the first one after it, so nothing may be dropped or inserted at the join.
+    Each expectation names phrases the source sets on either side of a join. They must occur
+    once in the whole book (nothing duplicated) and in order, either inside one spine document
+    or with the earlier ones in one document and the later ones in the very next; the documents
+    at both ends must carry the reviewed source pages. `contiguous` additionally forbids any
+    word between the last phrase and the first one after it, so nothing may be dropped or
+    inserted at the join.
+
+    Where the packer ends a document is not a reviewed property: it follows from the serialized
+    byte target, so any change to the block stream moves it, and a contract that demanded a
+    boundary at a named place would fail for a book whose text is perfectly intact. What is
+    reviewed is the text, so a join the packer keeps inside one document passes. The returned
+    `crossed` count says how many of the expectations did straddle a boundary, so a lane that
+    has stopped exercising one is visible rather than silently green.
     """
-    checks, errors = 0, []
+    checks, crossed, errors = 0, 0, []
     book = ' '.join(document['text'] for document in documents)
     for entry in contract.get('spineContinuity', []):
         if (not isinstance(entry, dict) or not {'sourcePages', 'beforeBoundary', 'afterBoundary'} <= set(entry)
@@ -197,21 +205,28 @@ def spine_continuity(case, contract, documents):
         if repeated:
             errors.append(f'Spine boundary: text missing or duplicated elsewhere in the book {repeated!r}')
             continue
-        index = next((i for i in range(len(documents) - 1)
-                      if ordered_in(documents[i]['text'], before)
-                      and ordered_in(documents[i + 1]['text'], after)), None)
-        if index is None:
-            errors.append(f'Spine boundary: reviewed text does not continue in order across one boundary {entry!r}')
+        pair = next(((i, i) for i in range(len(documents))
+                     if ordered_in(documents[i]['text'], before + after)), None)
+        if pair is None:
+            pair = next(((i, i + 1) for i in range(len(documents) - 1)
+                         if ordered_in(documents[i]['text'], before)
+                         and ordered_in(documents[i + 1]['text'], after)), None)
+        if pair is None:
+            errors.append('Spine boundary: reviewed text does not run in order within one document '
+                          f'or across one boundary {entry!r}')
             continue
-        if numbers[0] not in documents[index]['pages'] or numbers[-1] not in documents[index + 1]['pages']:
-            errors.append(f'Spine boundary: documents around the boundary do not carry source pages {numbers}')
+        first, second = pair
+        crossed += first != second
+        if numbers[0] not in documents[first]['pages'] or numbers[-1] not in documents[second]['pages']:
+            errors.append(f'Spine boundary: documents holding the join do not carry source pages {numbers}')
         if entry.get('contiguous'):
-            joined = documents[index]['text'] + ' ' + documents[index + 1]['text']
+            joined = documents[first]['text'] if first == second \
+                else documents[first]['text'] + ' ' + documents[second]['text']
             start = joined.index(before[-1]) + len(before[-1])
             between = joined[start:joined.index(after[0], start)]
             if any(character.isalnum() for character in between):
                 errors.append(f'Spine boundary: text inserted or dropped at the join {between[:96]!r}')
-    return checks, errors
+    return checks, crossed, errors
 
 
 def assess(case, contract, result, report, pages, markers, *, documents=(),
@@ -232,7 +247,7 @@ def assess(case, contract, result, report, pages, markers, *, documents=(),
     if (not expected or len(numbers) != len(set(numbers))
             or any(type(p) is not int or not 1 <= p <= case['pages'] for p in numbers)):
         raise ValueError('Contract needs distinct in-range review pages')
-    checks, continuity = spine_continuity(case, contract, documents)
+    checks, crossedBoundaries, continuity = spine_continuity(case, contract, documents)
     errors += continuity
     for item in expected:
         number = item['page']
@@ -333,7 +348,7 @@ def assess(case, contract, result, report, pages, markers, *, documents=(),
     if checks == 0:
         raise ValueError('Contract has no content checks')
     return {'case': case['id'], 'passed': not errors, 'reviewPages': numbers,
-            'contentChecks': checks, 'errors': errors,
+            'contentChecks': checks, 'spineBoundariesCrossed': crossedBoundaries, 'errors': errors,
             'scope': 'Reviewed text/order/script-context/image-presence, spine-boundary continuity and source-region image checks; not full-book fidelity or image legibility qualification.'}
 
 

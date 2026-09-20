@@ -212,11 +212,19 @@ class CorpusContentTests(unittest.TestCase):
         opens = '<span epub:type="pagebreak" id="page-2"/><p>opens the next document</p>'
         ends = '<span epub:type="pagebreak" id="page-1"/><p>alpha ends one document</p>'
         self.assertTrue(self.continuity(ends, opens)['passed'])
-        # Both sides inside one document prove nothing about a boundary, and neither does the
-        # reverse order; text between the two sides, or repeated anywhere, breaks the join.
-        for bodies in [(ends + opens.replace('<span epub:type="pagebreak" id="page-2"/>', '')
-                        + '<span epub:type="pagebreak" id="page-2"/><p>tail</p>', '<p>later</p>'),
-                       (opens.replace('page-2', 'page-1'), ends.replace('page-1', 'page-2')),
+        self.assertEqual(self.continuity(ends, opens)['spineBoundariesCrossed'], 1)
+        # Where the packer ends a document follows from its byte target, so a join it keeps
+        # inside one document is intact text, not a failure; it just crosses no boundary.
+        inside = (ends + opens.replace('<span epub:type="pagebreak" id="page-2"/>', '')
+                  + '<span epub:type="pagebreak" id="page-2"/><p>tail</p>', '<p>later</p>')
+        self.assertTrue(self.continuity(*inside)['passed'])
+        self.assertEqual(self.continuity(*inside)['spineBoundariesCrossed'], 0)
+        # A join inside one document is still held to the same text: an inserted sentence breaks it.
+        self.assertFalse(self.continuity(
+            ends + '<p>an inserted sentence</p>' + opens.replace('<span epub:type="pagebreak" id="page-2"/>', '')
+            + '<span epub:type="pagebreak" id="page-2"/><p>tail</p>', '<p>later</p>')['passed'])
+        # The reverse order, text between the two sides, or text repeated anywhere breaks the join.
+        for bodies in [(opens.replace('page-2', 'page-1'), ends.replace('page-1', 'page-2')),
                        (ends, '<span epub:type="pagebreak" id="page-2"/><p>an inserted sentence</p>'
                         '<p>opens the next document</p>'),
                        (ends, opens + '<p>alpha ends one document again</p>'),

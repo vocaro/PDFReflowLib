@@ -161,16 +161,24 @@ empty expectations and captions masquerading as source text.
 
 One expectation belongs to the book rather than to a page. A case may carry `spineContinuity`, a
 list of reviewed spine-document boundaries. Each entry names the source pages on both sides and
-the phrases the source sets before and after one boundary: every phrase must occur exactly once
-in the whole book, the earlier ones in order inside one spine document and the later ones in
-order inside the very next one, and both documents must carry the reviewed source pages.
-`contiguous` additionally forbids any word between the last phrase before the boundary and the
-first one after it, so text may be neither dropped nor inserted at the join. Blocks are atomic,
-so a paragraph never straddles two spine documents; what this protects is that the reading order
-runs on across the seam the packer writes. Negative controls cover both sides landing in one
-document, the reverse order, a boundary two documents away, a repeated tail, a dropped opening,
-an inserted sentence, wrong source pages and malformed expectations, over built archives and over
-a real converted EPUB whose seam was edited
+the phrases the source sets on either side of a join: every phrase must occur exactly once in the
+whole book and the phrases must run in order, either inside one spine document or with the
+earlier ones in one document and the later ones in the very next, and the documents at both ends
+must carry the reviewed source pages. `contiguous` additionally forbids any word between the last
+phrase before the join and the first one after it, so text may be neither dropped nor inserted
+there. Blocks are atomic, so a paragraph never straddles two spine documents; what this protects
+is that the reading order runs on across the seam.
+
+Where the packer ends a document is deliberately not pinned. It follows from the serialized byte
+target, so any change to the block stream moves it, and a contract that demanded a boundary at a
+named place would fail for a book whose text is perfectly intact — as the Wallace entries did the
+first time the layout changed under them. A join the packer keeps inside one document therefore
+passes, held to the same text. The assessment reports `spineBoundariesCrossed`, the number of
+entries that did straddle a boundary, so a lane that has stopped exercising one is visible instead
+of silently green; today the Fed entries cross and the Wallace entries do not. Negative controls
+cover the reverse order, a boundary two documents away, a repeated tail, a dropped opening, an
+inserted sentence on either side of a seam, wrong source pages and malformed expectations, over
+built archives and over a real converted EPUB whose seam was edited
 ([record](../measurements/spine-continuity/record.md)).
 
 `tools/check_corpus_content.py --case <id> --evaluation <directory>` reruns the contract on an

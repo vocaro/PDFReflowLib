@@ -1,0 +1,302 @@
+[
+ {
+  "book": "bluebook",
+  "boxesBelievedWhole": {
+   "flagged": 61,
+   "retried": 61,
+   "words": 106992
+  },
+  "firstReadingWords": 90803,
+  "pages": 312,
+  "writtenWidth": {
+   "flagged": 121,
+   "retried": 120,
+   "words": 120461
+  }
+ },
+ {
+  "book": "warren-endnotes",
+  "boxesBelievedWhole": {
+   "flagged": 16,
+   "retried": 16,
+   "words": 21547
+  },
+  "firstReadingWords": 13307,
+  "pages": 31,
+  "writtenWidth": {
+   "flagged": 30,
+   "retried": 30,
+   "words": 26330
+  }
+ },
+ {
+  "book": "warren-mid",
+  "boxesBelievedWhole": {
+   "flagged": 2,
+   "retried": 2,
+   "words": 6091
+  },
+  "firstReadingWords": 5238,
+  "pages": 21,
+  "writtenWidth": {
+   "flagged": 2,
+   "retried": 2,
+   "words": 6091
+  }
+ },
+ {
+  "book": "cdc",
+  "boxesBelievedWhole": {
+   "flagged": 0,
+   "retried": 0,
+   "words": 2686
+  },
+  "firstReadingWords": 2686,
+  "pages": 42,
+  "writtenWidth": {
+   "flagged": 0,
+   "retried": 0,
+   "words": 2686
+  }
+ },
+ {
+  "book": "census",
+  "boxesBelievedWhole": {
+   "flagged": 0,
+   "retried": 0,
+   "words": 6883
+  },
+  "firstReadingWords": 6883,
+  "pages": 20,
+  "writtenWidth": {
+   "flagged": 0,
+   "retried": 0,
+   "words": 6883
+  }
+ },
+ {
+  "book": "slides",
+  "boxesBelievedWhole": {
+   "flagged": 0,
+   "retried": 0,
+   "words": 545
+  },
+  "firstReadingWords": 545,
+  "pages": 21,
+  "writtenWidth": {
+   "flagged": 0,
+   "retried": 0,
+   "words": 545
+  }
+ },
+ {
+  "book": "nbs",
+  "boxesBelievedWhole": {
+   "flagged": 0,
+   "retried": 0,
+   "words": 4214
+  },
+  "firstReadingWords": 4214,
+  "pages": 7,
+  "writtenWidth": {
+   "flagged": 0,
+   "retried": 0,
+   "words": 4214
+  }
+ },
+ {
+  "book": "ourflag",
+  "boxesBelievedWhole": {
+   "flagged": 0,
+   "retried": 0,
+   "words": 13132
+  },
+  "firstReadingWords": 13132,
+  "pages": 56,
+  "writtenWidth": {
+   "flagged": 0,
+   "retried": 0,
+   "words": 13132
+  }
+ },
+ {
+  "book": "algebra",
+  "boxesBelievedWhole": {
+   "flagged": 0,
+   "retried": 0,
+   "words": 24148
+  },
+  "firstReadingWords": 24148,
+  "pages": 100,
+  "writtenWidth": {
+   "flagged": 0,
+   "retried": 0,
+   "words": 24148
+  }
+ },
+ {
+  "book": "arxiv",
+  "boxesBelievedWhole": {
+   "flagged": 1,
+   "retried": 1,
+   "words": 9557
+  },
+  "firstReadingWords": 9496,
+  "pages": 12,
+  "writtenWidth": {
+   "flagged": 1,
+   "retried": 1,
+   "words": 9557
+  }
+ },
+ {
+  "book": "dga",
+  "boxesBelievedWhole": {
+   "flagged": 0,
+   "retried": 0,
+   "words": 2715
+  },
+  "firstReadingWords": 2715,
+  "pages": 10,
+  "writtenWidth": {
+   "flagged": 0,
+   "retried": 0,
+   "words": 2715
+  }
+ },
+ {
+  "book": "faa",
+  "boxesBelievedWhole": {
+   "flagged": 0,
+   "retried": 0,
+   "words": 51919
+  },
+  "firstReadingWords": 51919,
+  "pages": 100,
+  "writtenWidth": {
+   "flagged": 1,
+   "retried": 1,
+   "words": 51959
+  }
+ },
+ {
+  "book": "fed",
+  "boxesBelievedWhole": {
+   "flagged": 0,
+   "retried": 0,
+   "words": 44645
+  },
+  "firstReadingWords": 44645,
+  "pages": 135,
+  "writtenWidth": {
+   "flagged": 3,
+   "retried": 3,
+   "words": 44832
+  }
+ },
+ {
+  "book": "gpo911",
+  "boxesBelievedWhole": {
+   "flagged": 0,
+   "retried": 0,
+   "words": 39028
+  },
+  "firstReadingWords": 39028,
+  "pages": 100,
+  "writtenWidth": {
+   "flagged": 0,
+   "retried": 0,
+   "words": 39028
+  }
+ },
+ {
+  "book": "irs",
+  "boxesBelievedWhole": {
+   "flagged": 2,
+   "retried": 2,
+   "words": 10207
+  },
+  "firstReadingWords": 8725,
+  "pages": 36,
+  "writtenWidth": {
+   "flagged": 2,
+   "retried": 2,
+   "words": 10207
+  }
+ },
+ {
+  "book": "noaa",
+  "boxesBelievedWhole": {
+   "flagged": 0,
+   "retried": 0,
+   "words": 18311
+  },
+  "firstReadingWords": 18311,
+  "pages": 60,
+  "writtenWidth": {
+   "flagged": 1,
+   "retried": 0,
+   "words": 18311
+  }
+ },
+ {
+  "book": "scotus",
+  "boxesBelievedWhole": {
+   "flagged": 0,
+   "retried": 0,
+   "words": 38555
+  },
+  "firstReadingWords": 38555,
+  "pages": 114,
+  "writtenWidth": {
+   "flagged": 0,
+   "retried": 0,
+   "words": 38555
+  }
+ },
+ {
+  "book": "uscis",
+  "boxesBelievedWhole": {
+   "flagged": 0,
+   "retried": 0,
+   "words": 23746
+  },
+  "firstReadingWords": 23746,
+  "pages": 116,
+  "writtenWidth": {
+   "flagged": 0,
+   "retried": 0,
+   "words": 23746
+  }
+ },
+ {
+  "book": "usda",
+  "boxesBelievedWhole": {
+   "flagged": 0,
+   "retried": 0,
+   "words": 12446
+  },
+  "firstReadingWords": 12446,
+  "pages": 24,
+  "writtenWidth": {
+   "flagged": 0,
+   "retried": 0,
+   "words": 12446
+  }
+ },
+ {
+  "book": "usgs",
+  "boxesBelievedWhole": {
+   "flagged": 0,
+   "retried": 0,
+   "words": 1227
+  },
+  "firstReadingWords": 1227,
+  "pages": 2,
+  "writtenWidth": {
+   "flagged": 0,
+   "retried": 0,
+   "words": 1227
+  }
+ }
+]

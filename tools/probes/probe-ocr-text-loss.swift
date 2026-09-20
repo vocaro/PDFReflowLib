@@ -57,7 +57,7 @@ import Vision
             let firstSeconds = Date().timeIntervalSince(startFirst)
 
             let startMeasure = Date()
-            let before = OCRTextCoverage.measure(image: image, lines: reading.lines.map(\.box),
+            let before = OCRTextCoverage.measure(image: image, lines: coverageLines(reading),
                                                  excluded: reading.tables, pixelsPerPoint: pixelsPerPoint)
             let measureSeconds = Date().timeIntervalSince(startMeasure)
 
@@ -67,7 +67,7 @@ import Vision
             let completeSeconds = Date().timeIntervalSince(startComplete)
             // The reading the conversion ends up with, measured again in full, so the record shows
             // what remains uncovered and not only whether that still counts as loss.
-            let after = OCRTextCoverage.measure(image: image, lines: completed.recognition.lines.map(\.box),
+            let after = OCRTextCoverage.measure(image: image, lines: coverageLines(completed.recognition),
                                                 excluded: completed.recognition.tables,
                                                 pixelsPerPoint: pixelsPerPoint)
 
@@ -94,6 +94,14 @@ import Vision
                 try completed.recognition.lines.map(\.text).joined(separator: "\n")
                     .write(to: base.appendingPathComponent("p\(number)-final.txt"), atomically: true, encoding: .utf8)
             }
+        }
+    }
+
+    /// The reading's lines as the loss rule measures them: each carries what it transcribed, so
+    /// a box covers only the writing its own text can fill (#240).
+    static func coverageLines(_ recognition: OCRReader.Recognition) -> [OCRTextCoverage.Line] {
+        recognition.lines.map {
+            OCRTextCoverage.Line(box: $0.box, advances: OCRTextCoverage.advances(of: $0.text))
         }
     }
 

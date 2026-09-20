@@ -137,3 +137,10 @@ coordinates alone.
   differ by four thousandths and only one is caught. Filed as #240 with the page-by-page evidence;
   20% is kept here because it is the value the original 505-page survey chose and this port's
   false-positive control is 146 pages.
+
+  #240 settled it without moving either threshold. All thirty-one pages 850–880 are losing text,
+  not eight of them, and the uncovered share failed to show it because a recognized line's box
+  says where Vision looked rather than what it wrote. A line is now measured against the width
+  its own transcription can fill; 8 rows and 20% stand unchanged. See
+  [measurements/ocr-coverage-written-width](../ocr-coverage-written-width/record.md), whose
+  before-and-after tables restate the numbers above under the rule now shipping.

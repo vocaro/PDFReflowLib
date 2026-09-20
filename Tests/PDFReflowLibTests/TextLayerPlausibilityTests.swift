@@ -393,14 +393,14 @@ private func raster(width: Int = 400, height: Int = 200, background: UInt8, ink:
     // the darker side is one page-sized component and no row is found until the page is inverted.
     let light = raster(background: 40, ink: 255, rows: 3)
     #expect(light.inkIsBackground())
-    #expect(OCRTextCoverage.measure(light, lines: [], excluded: [], pixelsPerPoint: 1).textRows == 3)
+    #expect(OCRTextCoverage.measure(light, boxes: [], excluded: [], pixelsPerPoint: 1).textRows == 3)
     // Control: the same writing dark on white needs no inversion and reads the same rows.
     let dark = raster(background: 255, ink: 0, rows: 3)
     #expect(!dark.inkIsBackground())
-    #expect(OCRTextCoverage.measure(dark, lines: [], excluded: [], pixelsPerPoint: 1).textRows == 3)
+    #expect(OCRTextCoverage.measure(dark, boxes: [], excluded: [], pixelsPerPoint: 1).textRows == 3)
     // Control: a dark page with no writing on it stays empty both ways.
     let blank = raster(background: 40, ink: 255, rows: 0)
-    #expect(OCRTextCoverage.measure(blank, lines: [], excluded: [], pixelsPerPoint: 1).textRows == 0)
+    #expect(OCRTextCoverage.measure(blank, boxes: [], excluded: [], pixelsPerPoint: 1).textRows == 0)
 }
 
 @Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/176")) func aPageWhoseDarkInkAlreadyFormsRowsIsNeverInverted() {
@@ -411,7 +411,7 @@ private func raster(width: Int = 400, height: Int = 200, background: UInt8, ink:
     let writing = raster(background: 250, ink: 0, rows: 2)
     for y in 0..<80 { for x in 0..<400 { page.pixels[y * 400 + x] = writing.pixels[y * 400 + x] } }
     #expect(page.inkIsBackground())  // more than half the page is darker than the threshold
-    let measured = OCRTextCoverage.measure(page, lines: [], excluded: [], pixelsPerPoint: 1)
+    let measured = OCRTextCoverage.measure(page, boxes: [], excluded: [], pixelsPerPoint: 1)
     #expect(measured.textRows == 2)  // read as printed, not inverted
 }
 
@@ -719,7 +719,7 @@ private func rowBox(_ row: Int, height: Int, top: Int = 20) -> CGRect {
 /// A page of `rows` rows of printed writing, of which the first `covered` are read.
 private func reading(rows: Int, covered: Int, height: Int = 2400) -> OCRTextCoverage.Measurement {
     let page = raster(height: height, background: 255, ink: 0, rows: rows)
-    return OCRTextCoverage.measure(page, lines: (0..<covered).map { rowBox($0, height: height) },
+    return OCRTextCoverage.measure(page, boxes: (0..<covered).map { rowBox($0, height: height) },
                                    excluded: [], pixelsPerPoint: 1)
 }
 
@@ -800,4 +800,72 @@ func aTableTheBandsCutInTwoIsJoinedRatherThanReportedTwice() throws {
     let table = try #require(merged.tables.first)
     #expect(abs(table.minY - 0.4) < 1e-9)
     #expect(abs(table.maxY - 0.7) < 1e-9)
+}
+
+// MARK: - A reading measured by what it wrote, not by where it looked (#240)
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/240"))
+func aLineCoversOnlyAsMuchOfItsRowAsItsTranscriptionCanFill() {
+    let page = raster(height: 2400, background: 255, ink: 0, rows: 16)
+    let boxes = (0..<16).map { rowBox($0, height: 2400) }
+
+    // A box over every row of the page, believed on its own, accounts for all of its writing.
+    // This is what the page's own text layer is measured as, before any recognition (#93, #176).
+    let believed = OCRTextCoverage.measure(page, boxes: boxes, excluded: [], pixelsPerPoint: 1)
+    #expect(believed.textRows == 16)
+    #expect(believed.uncoveredRows == 0)
+    #expect(!believed.indicatesLoss)
+
+    // The same boxes from a reading that came back with four characters where each row holds
+    // fifteen: most of every row is writing the reading did not transcribe, and a box cannot
+    // vouch for writing its own text cannot fill. This is the Warren endnote failure — Vision
+    // returns the line it found and part of what it says, and the box hides the rest.
+    let truncated = OCRTextCoverage.measure(page, lines: boxes.map {
+        OCRTextCoverage.Line(box: $0, advances: 4)
+    }, excluded: [], pixelsPerPoint: 1)
+    #expect(truncated.textRows == 16)
+    #expect(truncated.uncoveredRows == 16)
+    #expect(truncated.indicatesLoss)
+
+    // A transcription that fills its box covers it, so a complete reading is unchanged.
+    let complete = OCRTextCoverage.measure(page, lines: boxes.map {
+        OCRTextCoverage.Line(box: $0, advances: 16)
+    }, excluded: [], pixelsPerPoint: 1)
+    #expect(complete.uncoveredRows == 0)
+    #expect(!complete.indicatesLoss)
+}
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/240"))
+func aWidelyDrawnScriptIsNotMistakenForAReadingThatDroppedHalfThePage() {
+    // A fullwidth or ideographic character is drawn about twice as wide as a Latin one, so it
+    // counts twice: without that, a sound reading of a Chinese page measures as one that came
+    // back with half the writing.
+    #expect(OCRTextCoverage.advances(of: "abcd") == 4)
+    #expect(OCRTextCoverage.advances(of: "a b\tc\nd") == 4)
+    #expect(OCRTextCoverage.advances(of: "報稅") == 4)
+    #expect(OCRTextCoverage.advances(of: "第 1 頁") == 5)   // two ideographs and a digit
+    #expect(OCRTextCoverage.advances(of: "") == 0)
+
+    // The same eight-character row, read in each script, covers the same width of writing.
+    let page = raster(height: 2400, background: 255, ink: 0, rows: 16)
+    let boxes = (0..<16).map { rowBox($0, height: 2400) }
+    func measure(_ text: String) -> OCRTextCoverage.Measurement {
+        OCRTextCoverage.measure(page, lines: boxes.map {
+            OCRTextCoverage.Line(box: $0, advances: OCRTextCoverage.advances(of: text))
+        }, excluded: [], pixelsPerPoint: 1)
+    }
+    #expect(measure("abcdefghijklmnop").uncoveredRows == measure("報稅表格的第一頁").uncoveredRows)
+}
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/240"))
+func aRetryThatCostsThePageWordsIsNotKept() {
+    // The retry is kept for covering more of the page's writing.
+    #expect(OCRReader.bandsAreKept(uncoveredInk: 100, words: 500, overUncoveredInk: 400, words: 300))
+    // Covering no more of it is no reason to prefer it.
+    #expect(!OCRReader.bandsAreKept(uncoveredInk: 400, words: 900, overUncoveredInk: 400, words: 300))
+    // Covering more of it while saying less is a reading spread wider and read thinner: the page
+    // keeps the reading it had, so no page loses words to the retry.
+    #expect(!OCRReader.bandsAreKept(uncoveredInk: 100, words: 299, overUncoveredInk: 400, words: 300))
+    // Equal words and more cover is still a gain: the same words over more of the page.
+    #expect(OCRReader.bandsAreKept(uncoveredInk: 100, words: 300, overUncoveredInk: 400, words: 300))
 }

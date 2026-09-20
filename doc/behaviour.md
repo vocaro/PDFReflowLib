@@ -431,6 +431,13 @@ chapter start or a differing tagged paragraph identity blocks a cross-page join.
 page-size estimate governs whitespace cuts and paragraph geometry. Known cross-page splits and
 folio joins are tracked in #45.
 
+- Two lines are one paragraph when they **share a column** (left edges within 1.5 bodies, the gap
+  between them from −0.4 to 0.9 of a body) or are **two pieces of one printed row**: they overlap
+  vertically by at least half the shorter one's height, the second stands to the right of the
+  first, and less than 0.75 of a body separates them — the width a whitespace cut needs for a
+  column, so a table's cells and the two ends of a running header remain separate blocks (#57).
+  A short previous line ending a sentence closes its paragraph either way.
+
 ### Type sizes and headings
 
 - The page **body** is the character-weighted commonest size over every line, at least 4 pt. The
@@ -501,6 +508,14 @@ Evidence: [spine-continuity](../measurements/spine-continuity/record.md).
   textual header are preserved as one region image with an `imageRegion` warning; a contents
   entry or a prose ellipsis is not a table, and an intervening paragraph breaks a row sequence.
   No table semantics are inferred.
+- **Displayed formulas.** A non-monospaced line under 160 characters seeds a preserved region when
+  it carries one of `∫∑∏√∂∇≈≠≤≥∞`, or when it states a relation: an `=` with a term after it, over
+  at most twelve whitespace-separated words. The term after the sign is required because a font
+  that prints its line-end hyphen as `=` (gpo-911-2004) ends every broken word's line in one, and
+  because PDFKit reports no space after a full stop in that book a full measure of prose counts
+  twelve words (#57). An equation prefix that genuinely ends in `=` is preserved by
+  `FractionRegionDetector`, which has its painted bar as evidence. A URL query string is still
+  read as a relation (#227).
 - **`FractionRegionDetector`.** Short horizontal painted bars with compact mathematical terms
   above and below, optionally with a nearby equation prefix, are preserved together in one image.
   Long rules, prose, code and connected table grids are left to existing handling; whole-line

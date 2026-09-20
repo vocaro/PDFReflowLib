@@ -173,15 +173,29 @@ struct BlockAssembler {
     }
 
     /// Whether `line` continues the paragraph `previous` is part of: the previous line wraps,
-    /// the two share a column at ordinary leading, and the previous line is not a short line
-    /// ending a sentence.
+    /// the two share a column at ordinary leading or are two pieces of one printed row, and the
+    /// previous line is not a short line ending a sentence.
     private func continuesParagraph(_ prev: TextLine, _ line: TextLine) -> Bool {
         let verticalGap = prev.rect.minY - line.rect.maxY
         let sameColumn = abs(prev.rect.minX - line.rect.minX) < body * 1.5
             && verticalGap >= -body * 0.4 && verticalGap < body * 0.9
         let shortEnding = prev.rect.width < line.rect.width * 0.65
             && prev.text.last.map { ".!?".contains($0) } == true
-        return prev.wraps != false && sameColumn && !shortEnding
+        return prev.wraps != false && (sameColumn || continuesRow(prev, line)) && !shortEnding
+    }
+
+    /// Whether `line` is the rest of the printed line `prev` begins. PDFKit splits a row at a
+    /// wide gap, and on the 9/11 report's page 254 it splits the page's last line a word from
+    /// its end, leaving `told` a line, a paragraph and — as the page's last block — the anchor a
+    /// cross-page join would have to read (#57). Two pieces of one row are one paragraph.
+    ///
+    /// The pieces must stand side by side, `line` to the right of `prev`, closer than the gutter
+    /// a column needs (`LayoutReconstructor.ordered`'s three quarters of a body). A table's cells,
+    /// and a running header and the folio at the other end of its row, stand further apart than
+    /// that and stay separate blocks, as does anything on another row.
+    private func continuesRow(_ prev: TextLine, _ line: TextLine) -> Bool {
+        prev.sharesRow(with: line) && line.rect.minX >= prev.rect.maxX
+            && line.rect.minX - prev.rect.maxX < body * 0.75
     }
 
     mutating func finish() -> [ReflowBlock] {

@@ -274,3 +274,72 @@ func detachedFractionKeepsNumeratorExponentAndDenominatorTogether() async throws
         #expect(blocks.contains { $0.hasReflowedText && $0.text == instruction })
     }
 }
+
+/// A line-end hyphen the book's font prints as "=" is not a relation, and neither is a full
+/// measure of prose that holds one (#57).
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/57"))
+func equationRecognitionReadsARelationRatherThanAnEqualsSign() {
+    for equation in ["a = b + c", "x =− c", "ax2 + bx=− c", "=± b2"] {
+        #expect(LayoutReconstructor.statesAnEquation(equation))
+    }
+    // A broken word's own line, and a sign standing alone, state nothing.
+    for text in ["Tower’s collapse. Clearly, however, the prospect of another plane hitting the sec=",
+                 "the full details of the planned planes operation.Abu Turab taught the opera=",
+                 "dominant, with the most important n values given by nhw ==", "=", "ordinary prose"] {
+        #expect(!LayoutReconstructor.statesAnEquation(text))
+    }
+    // Twelve words remains the measure of a relation the page set apart from its prose.
+    #expect(!LayoutReconstructor.statesAnEquation("x = " + String(repeating: "term ", count: 12)))
+}
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/57"))
+func proseBelowAFigureStaysOutOfTheFiguresCrop() throws {
+    let fixture = try SourceLayoutFixture.load("911-306")
+    #expect(fixture.sourceSHA256 == "657d41475eb3a9a5e3e87a6c7c51ac1dfbe1af7566d1abff7bf7286e7e1c0e1b")
+    var page = fixture.content()
+    // Exclude the running header, which the full-document furniture pass removes.
+    page.lines.removeAll { $0.text.contains("THE 9/11 COMMISSION REPORT") }
+    // The book's text font prints its line-end hyphen as "=", and PDFKit reports no space after
+    // a full stop, so this eighty-two-character line of prose read as a twelve-word equation and
+    // seeded a crop that grew over the whole paragraph beneath the figure.
+    let broken = try #require(page.lines.first { $0.text.hasSuffix("=") })
+    #expect(broken.text.hasSuffix("hitting the sec=") && broken.text.count == 82)
+    let figure = try #require(page.graphics.first)
+    let caption = try #require(page.lines.first { $0.text.hasPrefix("Rendering by") })
+    let paragraph = page.lines.filter { $0.rect.maxY < caption.rect.minY }
+    #expect(paragraph.count == 11 && paragraph.contains(broken))
+
+    let regions = LayoutReconstructor.graphicsWithLabels(page)
+    let region = try #require(regions.first)
+    // The stairwell rendering is still preserved, and no crop reaches the paragraph below it.
+    #expect(regions.count == 1 && region.contains(figure))
+    #expect(paragraph.allSatisfy { !region.intersects($0.rect) })
+    var warnings: [ConversionWarning] = []
+    let blocks = LayoutReconstructor.blocks(page: page, images: [(region, "figure")], vocabulary: [], warnings: &warnings)
+    let text = paragraphTexts(blocks).joined(separator: "\n")
+    #expect(text.contains("the South Tower stated that the incident had occurred in the other building"))
+    #expect(text.contains("beyond the contemplation of anyone giving advice"))
+    // The rendering's caption is the picture's, not the paragraph's opening.
+    #expect(paragraphTexts(blocks).first
+        == "The World Trade Center North Tower Stairwell with Deviation Rendering by Marco Crupi")
+}
+
+/// The control for the same shape of page: a photograph with a caption and ordinary prose below
+/// it keeps the picture in one crop, and its caption and the prose reflow.
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/57"))
+func aPhotographStillLeavesItsCaptionAndTheProseBelowItReflowable() throws {
+    let fixture = try SourceLayoutFixture.load("911-67")
+    var page = fixture.content()
+    page.lines.removeAll { $0.text.contains("THE FOUNDATION OF THE NEW TERRORISM") }
+    let photograph = try #require(page.graphics.first)
+    let regions = LayoutReconstructor.graphicsWithLabels(page)
+    let region = try #require(regions.first)
+    #expect(regions.count == 1 && region.contains(photograph))
+    var warnings: [ConversionWarning] = []
+    let blocks = LayoutReconstructor.blocks(page: page, images: [(region, "photograph")], vocabulary: [], warnings: &warnings)
+    let paragraphs = paragraphTexts(blocks)
+    #expect(paragraphs.contains("Usama Bin Ladin at a news conference in Afghanistan in 1998"))
+    #expect(paragraphs.contains { $0.contains("Islam is divided into two main branches") })
+    // The page's folio and the picture credit stand apart from the prose, as they did before.
+    #expect(paragraphs.contains("49") && paragraphs.contains("©Reuters 2004"))
+}

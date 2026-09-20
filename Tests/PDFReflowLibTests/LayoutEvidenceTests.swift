@@ -112,6 +112,28 @@ private let prose: [TextLine] = (0..<5).map {
     #expect(paragraphs([line("The end.", y: 500, width: 250), second]) == ["The end. paragraph continues"])
 }
 
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/57"))
+func assemblerJoinsTwoPiecesOfOnePrintedRow() {
+    func paragraphs(_ lines: [TextLine]) -> [String] {
+        var assembler = BlockAssembler(page: 3, body: 10, hyphens: HyphenContext())
+        for line in lines { assembler.append(line, as: .prose) }
+        return assembler.finish().map(\.text)
+    }
+    // PDFKit can report the end of a printed line as a line of its own, a word's width from the
+    // line it ends. The two pieces are one paragraph.
+    let opening = line("the line ends with the word", y: 500, width: 292)
+    #expect(paragraphs([opening, line("told", x: 336, y: 500, width: 16)])
+        == ["the line ends with the word told"])
+    // A column gutter's width apart they are separate blocks: a table's two cells, or a running
+    // header and the folio at the other end of its row.
+    #expect(paragraphs([opening, line("told", x: 340, y: 500, width: 16)]).count == 2)
+    #expect(paragraphs([opening, line("49", x: 347, y: 500, width: 10)]).count == 2)
+    // A short line on its own row still opens its own block, whatever stands above it.
+    #expect(paragraphs([opening, line("108", x: 40, y: 470, width: 14)]).count == 2)
+    // Only what follows the line joins it; a piece to its left is another block.
+    #expect(paragraphs([line("told", x: 336, y: 500, width: 16), opening]).count == 2)
+}
+
 @Test func assemblerKeepsCodeIndentationAndListBreaks() {
     var assembler = BlockAssembler(page: 3, body: 10, hyphens: HyphenContext())
     assembler.append(line("func run() {", x: 40, y: 300, monospaced: true), as: .code)

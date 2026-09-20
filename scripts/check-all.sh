@@ -110,6 +110,12 @@ if command -v epubcheck >/dev/null; then EPUBCHECK=(--epubcheck "$(command -v ep
 # The probes are compiled by hand, so only compiling them proves their source lists and the
 # runbooks' build commands still match the library (#204).
 background documented-builds python3 tools/check_documented_builds.py
+# The counts in README.md and doc/regression-testing.md are generated from the suites and the
+# corpus manifest, never typed (#156). --swift-list also holds the static @Test count to what
+# `swift test list` reports, which is listable because `swift test` has already built above.
+background doc-counts python3 tools/update_doc_counts.py --check --swift-list
+# No network: the issue states are the checked-in snapshot doc/issue-states.json (#234).
+background issue-citations python3 tools/check_issue_citations.py
 background fixture-epubs python3 tools/check_epubs.py --converter "$BINARY_DIR/pdf-reflow" \
     --output "$WORK/epubs" ${EPUBCHECK[@]+"${EPUBCHECK[@]}"}
 background conversion-policies python3 tools/check_conversion_policies.py --converter "$BINARY_DIR/pdf-reflow" \

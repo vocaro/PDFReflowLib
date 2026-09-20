@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xml:lang="en" lang="en">
+<head><title>Disclosure Risk Assessment in Perturbative Microdata Protection</title><link rel="stylesheet" type="text/css" href="style.css"/></head><body><span epub:type="pagebreak" role="doc-pagebreak" id="page-1" aria-label="1"/><p>RESEARCH REPORT SERIES</p>
+<p>(<em>Statistics #2002-01)</em></p>
+<p><strong>Disclosure Risk Assessment in Perturbative</strong></p>
+<p><strong>Microdata Protection</strong></p>
+<p>William E. Yancey, William E. Winkler, Robert H. Creecy</p>
+<p>Statistical Research Division U.S. Bureau of the Census Washington D.C. 20233</p>
+<p><em>Report Issued</em>: January 31, 2002</p>
+<p><em>Disclaimer:</em> This paper reports the results of research and analysis undertaken by Census Bureau staff. It has undergone a Census Bureau review more limited in scope than that given to official Census Bureau publications. This paper is released to inform interested parties of ongoing research and to encourage discussion of work in progress.</p>
+<span epub:type="pagebreak" role="doc-pagebreak" id="page-2" aria-label="2"/><h2 id="heading-2-0">Disclosure risk assessment in perturbative</h2>
+<h2 id="heading-2-1">microdata protection*</h2>
+<p>William E. Yancey, William E. Winkler, and Robert H. Creecy</p>
+<p>U.S. Buresu of the Census</p>
+<p>{villiam.e.yancey,william.e.vinkler,robert.h.creecy}@census.gov</p>
+<p>Abatract. This paper describes methods for data perturbation that include rank swapping and additive noise. It also describes enhanced methods of re-identification using probabilistic record linkage. The empirical comparisons use variants of the framework for measuring information loss and re-identification risk that were introduced by Domingo-Ferrer</p>
+<p>Keywords: adlitive noise, mixtures, rank swapping, EM Algorithm, rocord</p>
+<p>1 Introduction</p>
+<p>National Statistical Institutes (NSIs) have the need to provide public-use microdata that can be used for analyses that approximately reproduce analyses that could be performed on the non-public, original microdata. If microdata are analytically valid or have utility (see [ 18]), then re-identification of confidential information such as the names associated with some of the records may become</p>
+<p>This paper describes methods for masking microdata so that it is better protected against re-identification. The masking methods are rank swapping (</p>
+<p>13], also [ 5]), additive noise ([ 8]), mixtures of additive noise ([ 14]). The re-identification methods are based on record linkage ([ 6], also [ 16]) with variants that are specially developed for re-identification experiments (] 10], [ 18]). The overall framework is based on variants of methods that score both information loss and re-identification risk that were introduced by [5].</p>
+<p>The outline of this paper is as follows. Section 2 covers the data files that were used in the experiments. In section 3, we describe the masking methods, the re-identification methods, and the variants of scoring metrics based on different types of information loss and re-identification risk. Section 4 provides results. In Section 5, we give discussion. The final section 6 consists of concluding remarks.</p>
+<h2 id="heading-2-12">* This paper reports the resulta of research and analysis undertaken by Census Bureau</h2>
+<p>staff. It has undergone a Census Bureau review more limited in scope than that given to official Census Bureau publications. This report is released to inform interested parties of research and to encourage discussion.</p>
+<figure><img src="images/image-1.png" alt="Original page 2"/><figcaption>Original page 2</figcaption></figure>
+<span epub:type="pagebreak" role="doc-pagebreak" id="page-3" aria-label="3"/><p>2 Data Files</p>
+<p>Two data files were used.</p>
+<p>2.1 Domingo-Ferrer and Mateo-Sanz</p>
+<p>We used the same subset of American Housing Survey 1993 public-used data that was used by5. The Data Extraction System (http://www.census.gov/DES) was used to select 13 variables and 1080 records. No records having missing values or zeros were used.</p>
+<p>2.2 Kim-Winkler</p>
+<p>The original unmasked file of 59,315 records is obtained by matching IRS income data to a file of the 1991 March CPS data. The fields from the matched file originating in the IRS file are as follows:</p>
+<pre>1. Total income</pre>
+<pre>2. Adjusted gross income</pre>
+<pre>3. Wage and salary income</pre>
+<pre>4. Taxable interest income</pre>
+<pre>5. Dividend income</pre>
+<pre>6. Rental income</pre>
+<pre>7. Nontaxable interest income</pre>
+<pre>8. Social security income</pre>
+<pre>9. Return type</pre>
+<pre>10. Number of child exemptions</pre>
+<pre>11. Number of total exemptions</pre>
+<pre>12. Aged exemption Ilag</pre>
+<h2 id="heading-3-18">13. Schedule D flag</h2>
+<pre>14. Schedule E flag</pre>
+<h2 id="heading-3-20">15. Schedule C flag</h2>
+<h2 id="heading-3-21">16. Schedule F flag</h2>
+<p>The file also has match code and a variety of identifiers and data from the</p>
+<h2 id="heading-3-23">public-use CPS file. Because CPS quantitative data are already masked, we do</h2>
+<h2 id="heading-3-24">not need to mask them. We do need to assure that the IRS quantitative data are</h2>
+<p>sufficiently well masked so that they cannot easily be used in re-identifications either by themselves or when used with identifiers such as age, race, and sex that. are not masked in the CPS file. Becaase the CPS file consists of a 1/1600 sample of the population, it is straightforward to minimize the chance of re-identification except in situations where a record may be a type of outlier in the population. For re-identification, we primarily need be concerned with higher income individuals or those with distinct characteristics that might be easily identified even when sampling rates are low.</p>
+<figure><img src="images/image-2.png" alt="Original page 3"/><figcaption>Original page 3</figcaption></figure>
+<span epub:type="pagebreak" role="doc-pagebreak" id="page-4" aria-label="4"/><p>3 Methods</p>
+<p>The basic masking methods considered are (1) rank swapping, (2) univariate additive noise, and (3) mixtures of additive noise. Record linkage is the method of re-identification. The methods of information loss are those described by Domingo-Ferrer et al. [ 5. and some variants.</p>
+<p>3.1 Rank Swapping</p>
+<figure><img src="images/image-3.png" alt="Preserved region from page 4"/><figcaption>Preserved region from page 4</figcaption></figure>
+<p>3.2 Additive Noise</p>
+<p>Kim 8 introduced independent additive noise e with covariance proportional</p>
+<p>to the original data X so that Y = X + e is the resultant masked data. The term</p>
+<p>e has expected value 0. He showed that the covariance of Y is a multiple of the covariance of X and gave a transformation to another variable Z that is masked and has the same covariance as X. He also showed how regression coefficients could be computed and how estimates could be obtained on subdomains. His work has been extended by Fuller [ 7]. In this paper, we will consider the basic</p>
+<p>additive noise Y = X + &amp; as was also considered by Fuller. Masking via additive</p>
+<p>noise has the key advantage that it can preserve means and covariances. Additive noise has the disadvantage that files may not be as confidential as with some of the other masking procedures. Kim [ 9] has shown that means and covariances from the original data can be reconstructed on all subdomains using the observed means and covariances from the masked data and a few additional parameters that the data provider must produce. Fuller [ 7] has shown that higher order moments such as the regression coefficients of interaction terms can be recovered provided that additional covariance information is available. In most situations, specialized software is needed for recovering estimates from the masked file that are very close to the estimates from the original, unmasked file.</p>
+<p>3.3 Mixtures of Additive Noise</p>
+<p>Roque [ 14] introduced a method of masking of the form Y = X + e where</p>
+<p>s is a random vector with zero mean, covariance proportional to that of X. and whose probability distribution is a mixture of &amp; normal distributions. The number k must exceed the dimension (number of variables) in the data X. The</p>
+<p>total covariance of e is such that the Cov(Y) = (1 + d) Cov(X) where d.0 &lt;</p>
+<p>d &lt; 1, is pre-specified. The mean parameters of the component distributions are</p>
+<figure><img src="images/image-4.png" alt="Original page 4"/><figcaption>Original page 4</figcaption></figure>
+<span epub:type="pagebreak" role="doc-pagebreak" id="page-5" aria-label="5"/><p>solved by a nonlinear optimization method. With the empirical data used by Roque, the bias in the individual component means have the effect of making re-identification more difficult in contrast to re-identification when the simple normal noise method of Kim is used.</p>
+<p>In this paper, we provide a simpler computational approach using factorization of Cov(X). The advantage is that no nonlinear optimization solver needs to be applied. In fact the basic computational methods are a straightforward variant of the methods used in ( 10]. The appendix gives more details.</p>
+<p>Note that since additive noise preserves means &amp; and produces a scalar inflation of the covariance matrix, we can rescale the masked data records y from the masked data set Y by</p>
+<figure><img src="images/image-5.png" alt="Preserved region from page 5"/><figcaption>Preserved region from page 5</figcaption></figure>
+<p>3.4 Re-identification</p>
+<figure><img src="images/image-6.png" alt="Preserved region from page 5"/><figcaption>Preserved region from page 5</figcaption></figure>
+<p>where y is an arbitrary agreement pattern in a comparison space Г. For instance, I might consist of eight patterns representing simple agreement or not on surname, first name, and age. Alternatively, cach y € I&apos; might additionally account for the relative frequency with which specific surnames, such as Scheuren or Winkler, occur or deal with different types of comparisons of quantitative data.</p>
+<p>The fields compared (surname, first name, age) are called matching variables.</p>
+<p>The numerator in (2) agrees with the probability given by equation (2.11) in [ 7]</p>
+<p>The decision rule is given by:</p>
+<figure><img src="images/image-7.png" alt="Preserved region from page 5"/><figcaption>Preserved region from page 5</figcaption></figure>
+<pre>3. If R &lt; Tx, then designate pair as a nonlink.</pre>
+<p>Fellegi and Sunter 6 showed that this decision rule is optimal in the sense that for any pair of fixed bounds on R, the middle region is minimized over all decision rules on the same comparison space F. The cutoff thresholds, Iồạạand Tx, are determined by the error bounds. We call the ratio R or any monotonically increasing transformation of it (typically a logarithm) a matching weight or</p>
+<figure><img src="images/image-8.png" alt="Original page 5"/><figcaption>Original page 5</figcaption></figure>
+<span epub:type="pagebreak" role="doc-pagebreak" id="page-6" aria-label="6"/><p>total agreement weight. Likely re-identifications, called matches, are given higher weights, and other pairs, called nonmatches, are given lower weights.</p>
+<h2 id="heading-6-1">In practice, the numerator and denominator in (1) are not always easily esti-</h2>
+<h2 id="heading-6-2">mated. The deviations of the estimated probabilities from the true probabilties</h2>
+<h2 id="heading-6-3">can make applications of the decision rule suboptimal. Fellegi and Sunter 6</h2>
+<p>were the hrst to observe that</p>
+<figure><img src="images/image-9.png" alt="Preserved region from page 6"/><figcaption>Preserved region from page 6</figcaption></figure>
+<p>(3)</p>
+<p>could be used in determinine the numerator and denominator in (2) when the</p>
+<h2 id="heading-6-8">agreement pattern y consists of simple agreements and disasreements of three</h2>
+<h2 id="heading-6-9">variables and a conditional independence assumption is made. Ine len nand side</h2>
+<p>is observed and the solution involves seven equations with seven unknowns. In general, we use the Expectation-Maximization (EM) algorithm 1 to estimate the probabilties on the right hand side of (3). Io best separate the pairs into matches and nonmatches, our version of the biv algoritbm tor latent classes 16</p>
+<h2 id="heading-6-11">determines the best set of matching parameters under certain model assumpuions</h2>
+<h2 id="heading-6-12">which are valid with the generated data and not seriously violated with the real</h2>
+<p>data. In computing partial agreement probabilities for quantitative data, we maxe simpie univariate acustments to tne matcnine weignts such as are done in commercial record lnkage soitware. When two quantitative items a and d do not agree exactly, we use a hnear dowmward adjustment from the asreement matchine weight to the disagreement weicht according to a tolerance. For this analysis, we experimented with two methods of weight adjustment. For the raw data value a and the maskei data value o. the d method adiustment is</p>
+<figure><img src="images/image-10.png" alt="Preserved region from page 6"/><figcaption>Preserved region from page 6</figcaption></figure>
+<h2 id="heading-6-15">where Wady, Wagr, Wis are the adjusted weight, full agreement weight, and full</h2>
+<h2 id="heading-6-16">disagreement weights, respectively and t is the proportional tolerance for the</h2>
+<p>deviation (U S t S I). Lhe hull agreement weights waer and disagreement weights wais are the natural logarithms of (2) that are obtained via the EM algorithm.</p>
+<p>The approximation will not cenerally vield accurate match probabilities but</p>
+<h2 id="heading-6-19">works wen in the matching decision rules as we show later in this paper. Because</h2>
+<h2 id="heading-6-20">we do not accurately account for the probability distribution with the generated</h2>
+<p>multivarate normal data, our probabintes will not necessarly periorm as wel. as the true probabihties used by ruller when we consider single paurs. We note that the d method is basically a natural linear interpolation formula based on the distance between the raw and masked values. The i metho was orignally devised by Kim and Winkler 11 for multiplicative noise masking, but it has proven generally more effective than the d method for the additive noise case.</p>
+<p>This is probably because the most identihable records are the ones containing</p>
+<figure><img src="images/image-11.png" alt="Original page 6"/><figcaption>Original page 6</figcaption></figure>
+<span epub:type="pagebreak" role="doc-pagebreak" id="page-7" aria-label="7"/><p>large outlier values, and the I method tends to downweight less than the d method when both the input values are large.</p>
+<p>To force 1-1 matching as an efficient global approach to matching the entire original data sets with the entire masked data sets, we apply an assignment algorithm due to [ 16]. Specifically, we use pairs (i,j) € Io where Io is given by</p>
+<figure><img src="images/image-12.png" alt="Preserved region from page 7"/><figcaption>Preserved region from page 7</figcaption></figure>
+<p>ICJ</p>
+<p>where wi, is the comparison weight for record pair (i,j), and J is the set of index sets I in which at most one column and at most one row are present.</p>
+<p>That is, if (i,j) E I and (k,l) € I, then either i * k or j · l. The algorithm of Winkler is similar to the classic algorithm of Burkard and Derigs (see e.g., [ 16]) in that it uses Dijkstra&apos;s shortest augmenting path for many computations and has equivalent computational speed. It differs because it contains compression/decompression routines that can reduce storage requirements for the array of weights wy by a factor of 500 in some matching situations. When a few matching pairs in a set can be reasonably identified, many other pairs can be easily identified via the assignment algorithm. The assignment algorithm has the effect of drastically improving matching efficacy, particularly in re-identification experiments of the type given in this paper. For instance, if a moderate number of pairs associated with true re-identifications have probability greater than 0.5 when looked at in isolation, the assignment algorithm effectively sets their match</p>
+<h2 id="heading-7-6">probabilities to 1.0 because there are no other suitable records with which the</h2>
+<h2 id="heading-7-7">truly matching record should be combined.</h2>
+<p>The proportion re-identified is the re-identification risk (PLD),computed us-</p>
+<h2 id="heading-7-9">ing an updated version of the probabilistic re-identification software that has</h2>
+<p>been used in [ 10], [ 14], and [ 5]. Domingo-Ferrer et al [ 5] also used distance-based record linkage (DLD) for situations in which Euclidean distance is used.</p>
+<p>DLD can be considered a variant of nearest-neighbor matching. Because this DLD is highly correlated with record linkage [ 5], we only use PLD. Domingo- Ferrer et al also used interval disclosure (ID) that we do not believe is appropriate because it is far too weak a disclosure-risk. See [ 5] for a definition of</p>
+<p>For the two data sets examined below, we counted the number of re-identified matches used to compute the re-identification risk somewhat differently. For the Domingo-Ferrer data, since the data set is small, we counted all of the correct matches in the set of linked pairs reported by the record linkage software.</p>
+<p>For the larger Kim-Winkler data set, a more realistic count of correctly re-identified matches is given by counting matches with agreement weights above a cutoff value Tp, where the rest of the correct matches in the file are scattered sparsely among a large number of incorrect match pairs. In practice, these sporadic matches would not be detectable and their inclusion would produce an intolerably high false match rate.</p>
+<figure><img src="images/image-13.png" alt="Original page 7"/><figcaption>Original page 7</figcaption></figure>
+<span epub:type="pagebreak" role="doc-pagebreak" id="page-8" aria-label="8"/><p>3.5 Information-Loss and Scoring Metric</p>
+<p>In [ 5] a number of formulas are suggested for measuring the &quot;information loss&quot; or amount which the masked data set has been statistically altered from the original raw data set.</p>
+<p>The idea is to compute some kind of penalty score to</p>
+<p>indicate how much the masked data set statistically differs from the original.</p>
+<p>The problem becomes one of identifying what one considers to be significant statistical properties and then to define a way to compute their difference for two data sets.</p>
+<h2 id="heading-8-5">For original data set X and masked data set Z, both n x m arrays, one might</h2>
+<h2 id="heading-8-6">want to consider a measure of the change in data, i.e. a measurement. for Z - X.</h2>
+<p>The original suggestion was for something like</p>
+<figure><img src="images/image-14.png" alt="Preserved region from page 8"/><figcaption>Preserved region from page 8</figcaption></figure>
+<p>but this is undefined whenever we have an original data element xg = O. One</p>
+<p>can replace the denominator by a specified constant when Fij = 0, but then the</p>
+<p>value of this score can vary greatly with the choice of constant, especially when the data set has a lot of zero elements, as in the Kim-Winkler data. Furthermore, the size of this data perturbation score tends to be several orders of magnitude larger than the other information loss scores described below, so that it totally dominates all of the other scores when they are combined. Initially we tried to improve this situation by modifying the above formula to</p>
+<figure><img src="images/image-15.png" alt="Preserved region from page 8"/><figcaption>Preserved region from page 8</figcaption></figure>
+<p>In our case, we can estimate that standard deviation with the sample standard deviation S. This motivates the proposed modification for the data perturbation information loss statistic given by</p>
+<p>1L1s =</p>
+<p>V2S;</p>
+<figure><img src="images/image-16.png" alt="Preserved region from page 8"/><figcaption>Preserved region from page 8</figcaption></figure>
+<figure><img src="images/image-17.png" alt="Original page 8"/><figcaption>Original page 8</figcaption></figure>
+<span epub:type="pagebreak" role="doc-pagebreak" id="page-9" aria-label="9"/><p>This uses a common scale for all values of the same variable in the data set, the denominator is not zero unless the values of the variable are constant throughout the data set, and while the statistic does not have an a priori upper bound. the values in our empirical studies tend to be closer in magnitude to the other information loss statistics.</p>
+<p>In summary we would suggest one of two approaches for a data perturbation score in the context of information loss measures for masked data sets. One approach would be to leave it out entirely. If the ideal of data masking is to try to preserve statistical properties of a data set while making individual records difficult to identify, when we are trying to assess the degree to which the statistical properties are preserved, perhaps we should not include a measure of how much individual records have been perturbed. The other approach, if one does want to include such a measure, then it would be better to use a more uniform and intrinsic scaling method, such as in IL1s.</p>
+<p>The other information loss statistics that we compute are the same as some of those suggested by Domingo-Ferrer. To measure the variation in the sample means, we compute</p>
+<figure><img src="images/image-18.png" alt="Preserved region from page 9"/><figcaption>Preserved region from page 9</figcaption></figure>
+<p>In theory, this score could also have the problem of zero or relatively small denominators, but since the sample means for our data sets are summary statistics for nonnegative whole real numbers, this did not seem to be a problem.</p>
+<p>For variations in the sample covariance matrix, we compute</p>
+<figure><img src="images/image-19.png" alt="Preserved region from page 9"/><figcaption>Preserved region from page 9</figcaption></figure>
+<p>for variations in the sample variances, we compute</p>
+<p>Cov (X)„; - Cov (Y)jj</p>
+<p>and for variations in the sample correlation matrix, we compute</p>
+<p>І5 =</p>
+<p>mim-1E|or(N)- Con()ol</p>
+<p>We wish to combine these information loss statistics into a summary infor-</p>
+<p>mation loss score.</p>
+<h2 id="heading-9-14">While it&apos;s not clear what sense it really makes to combine</h2>
+<h2 id="heading-9-15">these numbers, and even if we do, its not clear what appropriate weighting we</h2>
+<p>should give to them, in the absence of deeper insight, we just compute a straight</p>
+<p>However, we may choose which statistics we wish to include. As we</p>
+<p>have noted, the data perturbation measure IL is somewhat numerically problematic. Moreover, for the purposes of data masking, it is not clear if one cares</p>
+<figure><img src="images/image-20.png" alt="Original page 9"/><figcaption>Original page 9</figcaption></figure>
+<span epub:type="pagebreak" role="doc-pagebreak" id="page-10" aria-label="10"/><figure><img src="images/image-21.png" alt="Preserved region from page 10"/><figcaption>Preserved region from page 10</figcaption></figure>
+<figure><img src="images/image-22.png" alt="Preserved region from page 10"/><figcaption>Preserved region from page 10</figcaption></figure>
+<p>For comparison purposes, for the empirical results, we combine each of these information loss scores with the re-identification score reid, as discussed in Section 3.4 to obtain an overall data masking score. Specifically; the resulting scores are given by</p>
+<figure><img src="images/image-23.png" alt="Preserved region from page 10"/><figcaption>Preserved region from page 10</figcaption></figure>
+<p>4 Results</p>
+<p>1.1 Domingo Data Statistics</p>
+<p>The Domingo data set consists of 1080 records from which we have masked 13 real variables. We can observe in Table 1 how the information loss scores increase with increasing noise level d. Rescaling the masked data has no mathematical effect on the mean and correlation. Since the rescaling somewhat contracts the data, there tends to be some decrease in the data perturbation scores. The effects of rescaling are most significant in the covariance and especially the variance scores.</p>
+<figure><img src="images/image-24.png" alt="Original page 10"/><figcaption>Original page 10</figcaption></figure>
+<span epub:type="pagebreak" role="doc-pagebreak" id="page-11" aria-label="11"/><p>Table 1. Domingo Data Information Loss Statistics</p>
+<p>TI.1 IL1a I.2 IL3 II4 IL.5 80 81</p>
+<p>rukswp05</p>
+<p>0.129 0.091 0.000 0.130 0.000 0.016 0.036 0.055 0.027</p>
+<p>rnkswp10</p>
+<p>0.219 0.155 0.000 0.195 0.000 0.036 0.058 0.090 0.048</p>
+<p>rukswp15</p>
+<p>0.294 0.208 0.000 0.224 0.000 0.070 0.073 0.118 0.069</p>
+<p>add01</p>
+<p>0.194 0.137 0.001 0.036 0.014 0.002 0.013 0.038 0.039</p>
+<p>add10</p>
+<p>0.371 0.263 0.004 0.168 0.115 0.007 0.073 0.114 0.097</p>
+<p>mixandOl</p>
+<p>0.204 0.063 0.002 0.028 0.012 0.002 0.011 0.050 0.020</p>
+<p>mixadd05</p>
+<p>0.326 0.140 0.004 0.088 0.053 0.004 0.037 0.095 0.050</p>
+<p>mixadd 10</p>
+<p>0.398 0.199 0.006 0.152 0.105 0.005 0.067 0.133 0.079</p>
+<p>mixadd20</p>
+<p>0.489 0.281 0.008 0.273 0.207 0.007 0.124 0.189 0.126</p>
+<p>scalmixadd01 0.202 0.063 0.002 0.021 0.003 0.002 0.007 0.046 0.017 scalmixadd05 0.316 0.137 0.004 0.048 0.007 0.004 0.016 0.076 0.038 scalmixadd10 0.379 0.190 0.006 0.067 0.010 0.005 0.022 0.093 0.053</p>
+<p>scalmixadd20 0.449 0.258 0.008 0.095 0.014 0.007 0.031 0.114 0.072</p>
+<p>The matching software has two methods, the d method and the ( method as discussed in Section 3.4 for measuring agreement between two real values. In either case, it interpolates between the agreement weight and the disagreement weight. In Table 2, we see that when the perturbations are small, the d method does a little better than the I method. However, when the perturbations get large, the &amp; method is better able to see past moderate perturbations to large</p>
+<p>The re-identification software produces a list of linked pairs in decreasing matching weight. For this small data set, the re-identification rate is computed as the total number of correctly linked pairs out of the total number of records in the data file. This is a rather optimistic re-identification score since most of the true matches are mixed among many false matches, and an analyst would probably have difficulty picking many of them out. In any event, we can see that for this data set with so few records and so many matching variables, a 1% noise level does not provide adequate masking; but the re-identification rate drops off rapidly with increasing noise level.</p>
+<h2 id="heading-11-24">For an overall data masking score, we combine the information loss score</h2>
+<p>with the re-identification score.</p>
+<p>Since we computed three data loss scores, we</p>
+<p>compute three overall scores in Table 3.</p>
+<p>4.2 Kim-Winkler Data Statistics</p>
+<p>The Kim-Winkler data consists of 59,315 records each containing 11 real variables for income data.</p>
+<p>In Table 4 we show the information loss statistics for</p>
+<p>our additive mixed noise masking for the whole data set. We note that the IL1 date perturbation statistic tends to higher than that for the Domingo data, possibly due to the large number of zero entries in the Kim-Winkler data, whereas the IL1s data perturbation metric is about the same as for the Domingo data.</p>
+<figure><img src="images/image-25.png" alt="Original page 11"/><figcaption>Original page 11</figcaption></figure>
+<span epub:type="pagebreak" role="doc-pagebreak" id="page-12" aria-label="12"/><h2 id="heading-12-0">Table 2. Domingo Data Reidentification Rates</h2>
+<figure><img src="images/image-26.png" alt="Preserved region from page 12"/><figcaption>Preserved region from page 12</figcaption></figure>
+<h2 id="heading-12-2">Table 3. Domingo Data Scoring Metrics</h2>
+<figure><img src="images/image-27.png" alt="Preserved region from page 12"/><figcaption>Preserved region from page 12</figcaption></figure>
+<figure><img src="images/image-28.png" alt="Original page 12"/><figcaption>Original page 12</figcaption></figure>
+<span epub:type="pagebreak" role="doc-pagebreak" id="page-13" aria-label="13"/><p>Table 4. Kim-Winkler Data Information Loss Statistica, 11 Variables</p>
+<figure><img src="images/image-29.png" alt="Preserved region from page 13"/><figcaption>Preserved region from page 13</figcaption></figure>
+<p>Table 5. Kim-Winkler Data Information Loss Statiatica, 8 Variables</p>
+<figure><img src="images/image-30.png" alt="Preserved region from page 13"/><figcaption>Preserved region from page 13</figcaption></figure>
+<p>In general the scaled data tends to get better results reducing the covariance measures 1L3, TLA than in the Domingo data case.</p>
+<p>For our re-identification, we only used eight of the income variables, so we computed the information loss scores based on just these eight variables. In Table 5, they show a generally slight increase over the eleven variable scores. For the re-identification scores, we computed the proportion of correctly linked pairs out of the total number of records, as in the case of the Domingo data. In this case, we only compute the results using the l interpalation metric in Table 6, since it is much more effective on this data. However, reporting the total number of correct matches in the full link file is probably even more misleadingly optimistic than in the Domingo data case. For the Domingo data, the true matches tend to be distributed throughout the link file. As the noise level of the masking increases, this distribution becomes more sparse and random. In the case of this data set, there are twenty or so records that are extreme outliers with one or more income categories much higher than the values for the mass of the records. Many of</p>
+<figure><img src="images/image-31.png" alt="Original page 13"/><figcaption>Original page 13</figcaption></figure>
+<span epub:type="pagebreak" role="doc-pagebreak" id="page-14" aria-label="14"/><p>Table 6. Kim-Winkler Data Reidentification Rates, / Metric</p>
+<figure><img src="images/image-32.png" alt="Preserved region from page 14"/><figcaption>Preserved region from page 14</figcaption></figure>
+<p>these records fail to be successfully masked from the re-identification through most noise levels, especially using the I metric.</p>
+<p>Thus there are always several</p>
+<p>clearly true matches at the top of the match-weight sorted link file. However, as the matching weights decrease, the proportion of true matches rapidly drops oll as we include more and more false links in with a decreasing number of true matches. Thus is seems reasonable to cut off the count of true matches at some</p>
+<h2 id="heading-14-5">point, since beyond this point, any true matches will only appear sporadically</h2>
+<p>among the preponderance of false matches and are unlikely to be discerned by the analyst.</p>
+<h2 id="heading-14-7">Here we choose a rather low cutoff point of 20%. This means</h2>
+<p>that at this point, the number of linked pairs at this matching weight or higher contain 20% true matches and 80% false links. Below this point, the true matches become much rarer. In Table 7 are the overall data masking scores for the Kim- Winkler data. The data masking tends to be more effective here, especially at lower additive noise levels. Again inclusion of the IL1 data perturbation score tends to dominate and obscure the rest of the results.</p>
+<p>Subpopulation Information Loss Statistics The additive noise procedures are supposed to preserve means and covariances on arbitrary subpopulations. at least when these statistics are properly corrected, according to the method of Kim [ 9]. In Tables 8 and 9 we compute the informtion loss scores for two subpopulations. We see that even for the corrected means and covariances, there are still generally somewhat higher scores than for the full data set. We especially note that the scaled data sets fail to recover the original data covariance and variance values as well.</p>
+<h2 id="heading-14-10">In Table 9 we see slightly better information loss scores for a slightly larger</h2>
+<p>subpopulation.</p>
+<figure><img src="images/image-33.png" alt="Original page 14"/><figcaption>Original page 14</figcaption></figure>
+<span epub:type="pagebreak" role="doc-pagebreak" id="page-15" aria-label="15"/><p>Table 7. Kim-Winker Data Scoring Metrics</p>
+<figure><img src="images/image-34.png" alt="Preserved region from page 15"/><figcaption>Preserved region from page 15</figcaption></figure>
+<p>Table 8. S4 Returu Type Information Loss, 8 Variables, 5885 Records</p>
+<figure><img src="images/image-35.png" alt="Preserved region from page 15"/><figcaption>Preserved region from page 15</figcaption></figure>
+<figure><img src="images/image-36.png" alt="Original page 15"/><figcaption>Original page 15</figcaption></figure>
+<span epub:type="pagebreak" role="doc-pagebreak" id="page-16" aria-label="16"/><p>Table 9. Schedule C Subset Information Loss, 8 Variables, 7819 Records</p>
+<p>TI.1 IL1a I.2 IL3 ПIA 1L.5 80</p>
+<p>rukswp05</p>
+<p>0.207 0.146 0.082 0.711 0.523 0.250 0.391 0.355 0.250</p>
+<p>rnkswp10</p>
+<p>0.322 0.228 0.125 0.796 0.573 0.261 0.438 0.415 0.297</p>
+<p>rukswp15</p>
+<p>0.410 0.290 0.126 0.765 0.473 0.266 0.408 0.408 0.299</p>
+<p>add01</p>
+<p>1.221 0.863 0.013 0.021 0.017 0.003 0.013 0.255 0.224</p>
+<p>add0l sw</p>
+<p>1.250 0.884 0.057 0.431 0.296 0.084 0.217 0.124 0.330</p>
+<p>mixadd01</p>
+<p>1.410 0.220 0.012 0.065 0.009 0.005 0.023 0.288 0.062</p>
+<p>mixadd05</p>
+<p>1.560 0.492 0.027 0.175 0.026 0.012 0.060 0.360 0.139</p>
+<p>mixadd 10</p>
+<p>1.627 0.696 0.038 0.299 0.043 0.019 0.100 0.405 0.199</p>
+<p>mixadd20</p>
+<p>1.688 0.984 0.054 0.531 0.075 0.030 0.172 0.476 0.286</p>
+<p>scalmixadd01 1.408 0.219 0.012 0.084 0.009 0.005 0.028 0.304 0.061</p>
+<p>Scalmnixacid05 1.583 0.480 0.027 0.225 0.026 0.012 0.073 0.369 0.136</p>
+<p>scalmixadd10 1.617 0.664 0.038 0.385 0.043 0.019 0.121 0.420 0.191 scalmixadd20 1.674 0.899 0.054 0.682 0.075 0.030 0.210 0.503 0.265</p>
+<p>5 Discussion</p>
+<p>For the research community, there are two general difficulties with comparing masking methods. The first is that the suitable test files are needed. The test files should have variables in which the distributions are representative of actual databases. Some of the test files should have quite skewed distributions. Others should have a large number of zeros for several of the variables The second is that the information-loss metrics should be reasonably robust across different types of databases. We observed that some of the metrics that we have used in this paper are sensitive to the skewness of distributions and the proportions of zeros associated with a variable.</p>
+<p>Much of prior research (e.g.: [8], [ 7]; [ 10]) dealt with situations where only a few specific analyses were demonstrated to be approximately reproduced with a masked data file. In most of the situations, special software was needed to do many of the analyses, particularly on subdomains. If masked files are required to reproduce more than one or two sets of analyses from original, unmasked data, then we suspect the special methods and software will be typically needed.</p>
+<h2 id="heading-16-26">6 Concluding Remarks</h2>
+<p>This paper provides a comparison of rank swapping with various methods of additive noise. In the comparison of [ 5], rank swapping provided the best trade-off between information-loss and disclosure risk with measures used in the earlier work. With the same data and the same metrics, rank swapping provides better results than the types of mixtures of additive noise that we provide in this paper.</p>
+<p>With other, much larger data [ 10] that represents actual public-use situations, scaled mixtures of additive noise perform best with the same scoring metrics.</p>
+<figure><img src="images/image-37.png" alt="Original page 16"/><figcaption>Original page 16</figcaption></figure>
+<span epub:type="pagebreak" role="doc-pagebreak" id="page-17" aria-label="17"/><p>For the scoring methods used here, using scaled masked data produces improved scores since the information loss scores are improved by better covariance agreement while the re-identification risk is only slightly worse. This suggests that additional scoring metrics and more applications to different data situations are needed. The scoring metrics, particularly the components of information loss. need to be better connected to additional analyses and specific characteristics of</p>
+<p>7 References</p>
+<p>References</p>
+<p>[ 1] Dempster, A. P., Laird, N. M. and Rubin, D. B.: Maximum Likelihood from</p>
+<p>Incomplete Data via the EM Algorithm, Journal of the Royal Statistical Society,</p>
+<p>B, 39 （1977） 1-38.</p>
+<h2 id="heading-17-6">Dalenius, T. and Reiss, S. P. Data-swapping: A Technique for Disclosure Control</h2>
+<p>of Microdata, Journal of Statistical Planning and Inference, 6 (1982) 73-85.</p>
+<p>De Waal, A.G. and Willenborg, L.C.R. J.: A View on Statistical Disclosure Control of Microdata, Survey Methodology, 22, (1996) 95-103.</p>
+<p>De Waal, A.G. and Willenborg, L.C.R. J.: Optimal Local Suppression in Microdata, Journal of Official Statistics, 14, (1998) 421-435.</p>
+<p>Domingo-Ferrer, J., Mateo-Sanz, J. and Torra, Vincenc: Comparing SDC Methods for Microdata on the Basis of Information Loas and Disclosure Risk, Proceedings of ETK-NTTS &apos;2001, (2001) to appear.</p>
+<p>Fellegi, I. P., and Sunter, A. B.: A Theory for Record Linkage, Journal of the American Statistical Associatson, 64, (1969) 1183-1210.</p>
+<p>[ 7] Fuller, W. A.: Masking Procedures for Microdata Disclosure Limitation, Jourxal</p>
+<p>of Oficual Stalistics, 9, (1993) 383-406.</p>
+<p>Kim, J. J.: A Method for Limiting Disclosure in Microdata Based on Random Noise and Transformation, American Statistical Association, Proceedings of the Section on Survey Research Methods, (1986) 303-308.</p>
+<p>Kim, J. J.: Subdomain Estimation for the Masked Data, Americon Statistical Association, Procecdings of the Section on Survey Rescarch Methods, (1990) 456-</p>
+<p>[10 Kim, J. J. and Winkler, W. E.: Masking Microdata Files, American Statistical</p>
+<p>Association, Proceedings of the Section on Survey Research Methods, (1995) 114-</p>
+<p>[11] Kim, J. J. and Winkler, W. E.: Multiplicative Noise for Masking Continuous</p>
+<p>Data, Americon Statistical Association Proceedings of Secure Survey Research Melhods. (to appear).</p>
+<p>[ 12 Lambert, D.: Measures of Disclosure Risk and Harm, Journal of Official Statistics,</p>
+<p>9，（1993］313-331.</p>
+<p>[ 13] Moore, R.: Controlled Data Swapping Techniques for Masking Public Use Mi-</p>
+<p>crodata, U.S. Bureau of Whe Census, Statistical Rescarch Division Report 96/04</p>
+<p>[ 14] Roque, G. M. , Masking Microdato Fües with Mirtures of Multivariate Normal</p>
+<p>Distributions, Unpublished Ph.D. dissertation, Department of Statistics, University of California-Riverside (2000).</p>
+<figure><img src="images/image-38.png" alt="Original page 17"/><figcaption>Original page 17</figcaption></figure>
+<span epub:type="pagebreak" role="doc-pagebreak" id="page-18" aria-label="18"/><p>[15 Tendick, P. and N. Matloff, N.: A Modified Random Perturbation Method for</p>
+<p>Database Security, ACM Transactions on Database Systems, 19, (1994) 47-63.</p>
+<p>[ 16] Winkler, W. E.: Advanced Methods for Record Linkage, American Stotistical</p>
+<p>Association, Proceedings of the Section on Survey Research Methods, (1994) 467-</p>
+<p>[ 17] Wiukler, W. E.: Matching and Record Liukage, in B. G. Cox (od.) Business</p>
+<p>Surney Methods, New York: J. Wiley, (1995) 355-384.</p>
+<p>[ 18] Winkler, W. E.: Re-identification Methods for Evaluating the Confidentiality of</p>
+<p>Analytically Valid Microdata, Research in Official Statistics, 1, (1998) 87-104</p>
+<p>8 Appendix: Additive Mixture Noise Methodology</p>
+<figure><img src="images/image-39.png" alt="Preserved region from page 18"/><figcaption>Preserved region from page 18</figcaption></figure>
+<p>has mean O and covariance I. To produce w, we need m independent components wy of mean 0 and variance 1. For standard normal additive noise, we can choose each w to be distributed as wy ~ N (0.1): for mixture distribution noise, we may choose each w, to be distributed as</p>
+<p>w;r</p>
+<p>wкV(Øк.о)</p>
+<p>for some choice weights and common variance d? &lt; 1. Such a mixture distribution has mean [K-, wy9r and variance o? + LF, w292. To obtain component</p>
+<figure><img src="images/image-40.png" alt="Original page 18"/><figcaption>Original page 18</figcaption></figure>
+<span epub:type="pagebreak" role="doc-pagebreak" id="page-19" aria-label="19"/><p>means 8; so that the mixture distribution has mean 0 and variance 1, we can start out with arbitrary numbers t1, 12,...,K-1 and let</p>
+<p>and compute</p>
+<figure><img src="images/image-41.png" alt="Preserved region from page 19"/><figcaption>Preserved region from page 19</figcaption></figure>
+<p>S =</p>
+<p>and let</p>
+<figure><img src="images/image-42.png" alt="Preserved region from page 19"/><figcaption>Preserved region from page 19</figcaption></figure>
+<p>IN (VI-03,0%) +}N (-V1-03,0%)</p>
+<figure><img src="images/image-43.png" alt="Preserved region from page 19"/><figcaption>Preserved region from page 19</figcaption></figure>
+<p>W =</p>
+<p>where each vector w; is drawn from the above zero mean, identity covariance mixture distribution.</p>
+<p>Using a square root E: of the sample covariance matrix</p>
+<p>of X, we compute a colored noise data set</p>
+<p>(Ei0)</p>
+<figure><img src="images/image-44.png" alt="Original page 19"/><figcaption>Original page 19</figcaption></figure>
+<span epub:type="pagebreak" role="doc-pagebreak" id="page-20" aria-label="20"/><p>and for different noise proportion parameters d, we compute a masked data set</p>
+<figure><img src="images/image-45.png" alt="Preserved region from page 20"/><figcaption>Preserved region from page 20</figcaption></figure>
+<p>Since the resulting data set Z theoretically has covariance (1 + d) E, for each d we also compute a scaled masked data set Z, related by</p>
+<figure><img src="images/image-46.png" alt="Preserved region from page 20"/><figcaption>Preserved region from page 20</figcaption></figure>
+<p>where u is the (sample) mean vector of the masked data.</p>
+<figure><img src="images/image-47.png" alt="Original page 20"/><figcaption>Original page 20</figcaption></figure>
+</body></html>

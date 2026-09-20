@@ -91,6 +91,21 @@ library. `tools/check_documented_builds.py` compiles this command as written, so
 the rasterizer comes to need cannot go missing from it unnoticed (#204).
 Compiling it again changes its identity; recapture both runs if that identity changes.
 
+A page is compared by its content, not by the identifiers the converter generates for it (#92).
+Two of those identifiers renumber book-wide — the parser's paragraph ordinals and the writer's
+`images/image-N` asset names — so comparing them verbatim reported every page after an edit as
+changed: removing one paragraph from page 8 of the Fed report reported 117 changed pages, and
+dropping one image asset reported 132 changed pages and 311 changed images, out of 315. Each page
+now records, per paragraph, only whether it continues onto the previous or next page, so a
+paragraph split or joined at a page break is still a difference; and it holds its images by their
+SHA-256, so a moved, swapped or re-encoded image still changes the page it sits on. Assets are
+matched book-wide by bytes: bytes with no match are `changedImages`, and an asset whose bytes are
+unchanged and whose name moved is counted in `imageRenames`. Pages that agree once normalized but
+differ in raw identifiers are summarized in `idOnlyShifts`. Neither summary fails a run, and
+`--detail` lists them. Both edits above now report exactly the one page they changed; the
+before-and-after numbers are in
+[measurements/comparison-generated-ids](../measurements/comparison-generated-ids/record.md).
+
 The evaluator records a fresh run ID, converter and probe executable SHA-256, source identity,
 system/build/architecture, probe result SHA-256, and EPUB SHA-256. The probe reports its own
 executable/source/run identities, packed raster pixels without alignment padding, dimensions,
@@ -314,8 +329,18 @@ and the [baseline](../measurements/dga-2025-2030/record.md) distinguish valid EP
 usable reflow. The [shading-support measurement](../measurements/shading-support/record.md)
 records nine pages with reflowed text before placeholder filtering; column-order defects remain
 open. The source has tags, but custom heading and bullet roles map to paragraphs, so tag names alone are not a reliable semantic reference.
-[Graphics fallback #13](https://github.com/vocaro/PDFReflowLib/issues/13) and
-[native text/label defects #14](https://github.com/vocaro/PDFReflowLib/issues/14) track the gaps.
+
+Both gaps stand, and neither issue tracks them any more.
+[Graphics fallback #13](https://github.com/vocaro/PDFReflowLib/issues/13) was closed by
+`183c2c4b6` and [native text/label defects #14](https://github.com/vocaro/PDFReflowLib/issues/14)
+by `2e18b3149`, both on the
+abandoned coordination branch; `dd160b4` merged that branch with the `ours` strategy, so the
+commits are ancestors of `main` and none of their content is
+([decision 0005](decisions/0005-abandoned-coordination-branch.md)). Here `GraphicsReader.accept()`
+still gives up past 100,000 operations, where `183c2c4b6` raised the budget to 250,000, and
+nothing splits a line PDFKit joined across a page. The reconciliation in
+[#231](https://github.com/vocaro/PDFReflowLib/issues/231) holds the list of issues in this position; the fixes are readable with `git show`, but per decision 0005
+they are hand-ported onto `main`'s pipeline rather than cherry-picked.
 
 
 ## Fifth National Climate Assessment
@@ -461,12 +486,20 @@ python3 tools/run_corpus_regressions.py --converter .build/corpus-cli/out/Produc
 | Case | Gap | Baseline finding | Tracking |
 | --- | --- | --- | --- |
 | [`usgs-mcs2025-copper`](../measurements/usgs-mcs2025-copper/record.md) | Borderless tables | Fixed (#36, ported for [#229](https://github.com/vocaro/PDFReflowLib/issues/229)): the tables keep their crops and the section prose around them reflows (page 1, 355 words instead of 20; page 2, 578 instead of 251) | [#36](https://github.com/vocaro/PDFReflowLib/issues/36) |
-| [`scotus-loper-bright-2024`](../measurements/scotus-loper-bright-2024/record.md) | Page-bottom footnotes | Text complete; footnotes merge into body paragraphs; 75 citation-leading lines become preformatted | [#40](https://github.com/vocaro/PDFReflowLib/issues/40), [#39](https://github.com/vocaro/PDFReflowLib/issues/39) |
+| [`scotus-loper-bright-2024`](../measurements/scotus-loper-bright-2024/record.md) | Page-bottom footnotes | Text complete; footnotes merge into body paragraphs; 75 citation-leading lines become preformatted | [#40](https://github.com/vocaro/PDFReflowLib/issues/40) closed, fix only in `20c78f352`; [#39](https://github.com/vocaro/PDFReflowLib/issues/39) closed, fix only in `3f7c23ddc`; no open tracker, see [#231](https://github.com/vocaro/PDFReflowLib/issues/231) |
 | [`census-rrs2002-01`](../measurements/census-rrs2002-01/record.md) | Damaged encoding | Fixed (#38): `TextEncodingCheck` flags the shifted-letter body (pages 2-20) as `damagedTextEncoding` and recognizes it by default; minor OCR misreadings remain on individual words | [#38](https://github.com/vocaro/PDFReflowLib/issues/38) |
 | [`uscis-m618-arabic-2015`](../measurements/uscis-m618-arabic-2015/record.md) | Right-to-left script | Arabic words correct; mixed-direction runs fragment and reverse | [#41](https://github.com/vocaro/PDFReflowLib/issues/41) |
-| [`irs-p596-zhs-2025`](../measurements/irs-p596-zhs-2025/record.md) | CJK script | Order and amounts correct; spaces inserted inside CJK; some columns rasterized | [#42](https://github.com/vocaro/PDFReflowLib/issues/42), [#36](https://github.com/vocaro/PDFReflowLib/issues/36) |
-| [`nbs-jres-geltman-1977`](../measurements/nbs-jres-geltman-1977/record.md) | Scanned two-column paper | Inline images force page fallback on pages 1–6 | [#37](https://github.com/vocaro/PDFReflowLib/issues/37) |
-| [`arxiv-replay-clocks-2023`](../measurements/arxiv-replay-clocks-2023/record.md) | Born-digital ACM paper | Prose order correct; front-matter headings, section labels and math spacing wrong | [#43](https://github.com/vocaro/PDFReflowLib/issues/43) |
+| [`irs-p596-zhs-2025`](../measurements/irs-p596-zhs-2025/record.md) | CJK script | Order and amounts correct; spaces inserted inside CJK; some columns rasterized | [#42](https://github.com/vocaro/PDFReflowLib/issues/42) open; [#36](https://github.com/vocaro/PDFReflowLib/issues/36) closed, fix only in `3507d7d01`, live tracker [#229](https://github.com/vocaro/PDFReflowLib/issues/229) |
+| [`nbs-jres-geltman-1977`](../measurements/nbs-jres-geltman-1977/record.md) | Scanned two-column paper | Inline images force page fallback on pages 1–6 | [#37](https://github.com/vocaro/PDFReflowLib/issues/37) closed, fix only in `277cbde39`; no open tracker, see [#231](https://github.com/vocaro/PDFReflowLib/issues/231) |
+| [`arxiv-replay-clocks-2023`](../measurements/arxiv-replay-clocks-2023/record.md) | Born-digital ACM paper | Prose order correct; front-matter headings, section labels and math spacing wrong | [#43](https://github.com/vocaro/PDFReflowLib/issues/43) closed, fix only in `417edc705`; the missing-space part is in scope for [#225](https://github.com/vocaro/PDFReflowLib/issues/225), the rest has no open tracker, see [#231](https://github.com/vocaro/PDFReflowLib/issues/231) |
+
+Five of the issues in that last column are closed although the defect beside them is still in
+`main`. Each was closed by a commit on the abandoned coordination branch, which `dd160b4` merged
+with the `ours` strategy: the commit is an ancestor of `main` and its content is not
+([decision 0005](decisions/0005-abandoned-coordination-branch.md)). The named commit is where the
+work is — `git show 3507d7d01` and so on — and per decision 0005 it is hand-ported onto `main`'s
+current pipeline with its own tests and corpus review, not cherry-picked. [#231](https://github.com/vocaro/PDFReflowLib/issues/231) reconciles
+the 124 issues that branch closed against what `main` actually holds.
 
 The NBS paper stands in for an owner-supplied, ACM-copyrighted Lamport CACM article in the same
 two-column scanned format. Replay Clocks is CC BY 4.0: retain the attribution recorded in the
@@ -508,12 +541,15 @@ abandoned integration branch's `layoutComesApart` (#117, not ported; see
 [decision 0005](decisions/0005-abandoned-coordination-branch.md)), which there exempts a
 born-digital page whose art is only a full-bleed background paint from counting as image-backed;
 without it, an ordinary slide export already reads as image-backed here. That branch's own record
-left the identical defect open for this exact deck, tracked as #164, so this is not a regression
-from porting the feature — it is a pre-existing gap this port does not close either. Numbered and
+left the identical defect open for this exact deck under #164, so this is not a regression
+from porting the feature — it is a pre-existing gap this port does not close either. #164 has
+since been closed, by `88803aca7` on that branch, so it no longer tracks anything: the defect
+stands here exactly as described. Numbered and
 lettered list item grouping (slides 7 and 9) and lettered sub-item nesting (slide 7) were reviewed
 and found imperfect, and diagram box order beyond what is listed above was not independently
-verified; none of that is pinned. [Tracking: #164](https://github.com/vocaro/PDFReflowLib/issues/164),
-[#165](https://github.com/vocaro/PDFReflowLib/issues/165).
+verified; none of that is pinned. [#164](https://github.com/vocaro/PDFReflowLib/issues/164) and [#165](https://github.com/vocaro/PDFReflowLib/issues/165) described these gaps and are both
+closed, by `88803aca7` and `3a65be6c1` on the abandoned coordination branch, whose content never
+reached `main`; nothing open tracks either. The reconciliation is [#231](https://github.com/vocaro/PDFReflowLib/issues/231).
 
 `TextLayerPlausibilityTests.swift` covers the #176 mechanism itself end to end with synthetic
 slides; the rule is specified in [behaviour](behaviour.md#pages-whose-writing-is-drawn-176).
@@ -555,7 +591,8 @@ is confirmed unaffected by the new document-body floor, and its lowercase cross-
 Flies" sidebar title (nine-point Helvetica-Bold over a ten-and-a-half-point body) is confirmed now
 a heading, and its own paragraph ("Nonbiting flies that shuttle between filth...", opening past an
 intervening photograph and caption) is confirmed still present in the output; pre-existing column
-interleaving on this three-column page (#153) means the two are not adjacent in reading order, so
+interleaving on this three-column page (#153, closed by `58a2ddda6` on the abandoned branch and
+unfixed here — see below) means the two are not adjacent in reading order, so
 this is checked as heading-presence and paragraph-presence separately, with the direct adjacency
 covered by Swift fixture tests against this same real page in isolation. Page 24's mailing panel
 (return address, "Official Business", the web line) is confirmed now paragraphs. Pages 6 and 19
@@ -573,5 +610,9 @@ as `WVUHWN+MonotypeSorts`) reads as U+25CF, not raised and not `l`, and the cred
 "BRAD FRITZ" (its Helvetica-Condensed glyph's `WinAnsiEncoding`, Nonsymbolic flags and CharSet,
 which lists `Z` but not `z`, agree the glyph drawn is a capital). Most page text on this document
 sits in preserved-region crops (#158) or interleaves across columns (#153), both pre-existing and
-outside these ports' scope; those pages are not reviewed here. Peak converter RSS measured about
+outside these ports' scope; those pages are not reviewed here. Neither issue tracks its defect any
+more: #158 was closed by `bff0a046c` and #153 by `58a2ddda6`, both on the abandoned coordination
+branch, whose `ours` merge left `main`'s tree unchanged
+([decision 0005](decisions/0005-abandoned-coordination-branch.md)); the crops and the interleaving
+are still what this document gets. [#231](https://github.com/vocaro/PDFReflowLib/issues/231) holds the reconciliation. Peak converter RSS measured about
 279 MiB against a 512 MiB ceiling.

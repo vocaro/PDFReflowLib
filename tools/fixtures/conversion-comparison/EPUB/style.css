@@ -1,0 +1,4 @@
+body { margin: 1em; line-height: 1.5; overflow-wrap: break-word; }
+p { margin: 0 0 0.8em; } h1, h2 { break-after: avoid; }
+img { max-width: 100%; height: auto; } figure { margin: 1em 0; }
+figcaption { font-size: 0.85em; } pre { white-space: pre-wrap; overflow-wrap: anywhere; }

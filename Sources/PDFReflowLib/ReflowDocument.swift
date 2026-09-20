@@ -140,6 +140,17 @@ struct InlineText: Sendable, Equatable, Codable {
 
     mutating func append(_ other: InlineText) { elements += other.elements }
 
+    /// Replaces the last character in place, keeping the run's style. The line-end hyphen repair
+    /// uses it to put back the hyphen a book's font drew but encoded as another character (#233).
+    mutating func replaceLastCharacter(with character: Character) {
+        for index in elements.indices.reversed() {
+            if case let .text(value, style) = elements[index], !value.isEmpty {
+                elements[index] = .text(String(value.dropLast()) + String(character), style)
+                return
+            }
+        }
+    }
+
     mutating func removeLastCharacter() {
         for index in elements.indices.reversed() {
             if case let .text(value, style) = elements[index], !value.isEmpty {

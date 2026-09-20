@@ -828,8 +828,21 @@ Evidence: [heading-body-regressions](../measurements/heading-body-regressions/re
   if whole, which would otherwise make `com-panies` look like two real words and block the join.
 - Otherwise the hyphen is retained and the page reports `uncertainHyphen` once ("An ambiguous
   line-ending hyphen is retained. Review source word joins.").
+- A book whose text font encodes the hyphen it draws at a line end as some other character has
+  that character read as the hyphen it is (#233). The substitute is decided once for the whole
+  document and only from the text the reader will keep: a candidate qualifies when it occurs at
+  least eight times, at least 95% of those occurrences end a line directly after a letter, and at
+  least 90% of those lines are carried on by a lowercase letter. Sentence punctuation, quotes,
+  brackets and dashes are never candidates, because a book could legitimately end every line with
+  one; two qualifying candidates disqualify each other. A book that means the character spends
+  most of its occurrences inside lines and never qualifies — the 9/11 report's `=` scores 994 of
+  1,004 while its `/` scores 4 of 878. Only a line-final occurrence is ever rewritten, so a
+  genuine one inside a line, such as a URL's `name=value`, is left as read, and the join itself
+  is then decided by the vocabulary and lexicon above, warning where it would warn for a printed
+  hyphen. A join the evidence cannot decide keeps a real hyphen, never the encoded character.
 
-Evidence: [spine-continuity](../measurements/spine-continuity/record.md).
+Evidence: [spine-continuity](../measurements/spine-continuity/record.md),
+[line-end-hyphen-substitutes](../measurements/line-end-hyphen-substitutes/record.md).
 
 ## Region detectors
 

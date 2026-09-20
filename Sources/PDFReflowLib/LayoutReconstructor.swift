@@ -59,6 +59,18 @@ enum LayoutReconstructor {
         }.min { $0.rect.width < $1.rect.width }
     }
 
+    /// Whether `below` finishes a word `above` broke at its line end: the next line of the same
+    /// column, close beneath it, opening in lowercase where the line above ended in a hyphen or a
+    /// soft hyphen. It is the evidence `HyphenRepair` joins on, read before reconstruction (#59).
+    static func continuesBrokenWord(from above: TextLine, to below: TextLine) -> Bool {
+        guard above.text.hasSuffix("-") || above.text.hasSuffix("\u{00ad}"),
+              below.text.first?.isLowercase == true,
+              abs(below.rect.minX - above.rect.minX) <= max(above.fontSize, 4) * 0.25 else { return false }
+        let gap = above.rect.minY - below.rect.maxY
+        let size = max(above.fontSize, 4)
+        return gap >= -size * 0.2 && gap <= size * 0.8
+    }
+
     /// A band across the page's full measure, flush against its top or bottom edge: the page's own
     /// furniture — a footer or header background — rather than a figure that owns the text near it.
     ///
@@ -744,8 +756,20 @@ enum LayoutReconstructor {
         let overPicture = PageDiagnosis.proseOverPictures(lines: page.lines, pictures: page.pictures,
                                                           crops: images.map(\.0), bounds: page.bounds,
                                                           language: context.language)
-        let reflowable = page.lines.enumerated().filter { index, line in
-            overPicture.contains(index) || !images.contains { takes($0.0, line) }
+        // A crop must not take one half of a word whose other half falls outside it. Replay Clocks
+        // page 8 breaks a figure caption `…𝛼 = 40 mes-` / `sages/second.` and the crop's edge fell
+        // 0.49 pt above the second line, so the first half went into the picture and the second
+        // reflowed alone between two figures. Releasing the half the crop took lets the two rejoin
+        // as the caption they are (#59).
+        let taken = Set(page.lines.indices.filter { index in
+            !overPicture.contains(index) && images.contains { takes($0.0, page.lines[index]) }
+        })
+        let released = Set(taken.filter { index in
+            guard index + 1 < page.lines.count, !taken.contains(index + 1) else { return false }
+            return continuesBrokenWord(from: page.lines[index], to: page.lines[index + 1])
+        })
+        let reflowable = page.lines.enumerated().filter { index, _ in
+            !taken.contains(index) || released.contains(index)
         }.map(\.element)
         // An inline fraction's denominator joins the line its numerator ends (#53).
         let lines = joinedInlineFractions(reflowable, rules: page.graphics.filter(isThinRule),

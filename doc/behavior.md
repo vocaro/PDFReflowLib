@@ -910,6 +910,14 @@ Evidence: [spine-continuity](../measurements/spine-continuity/record.md),
   removed before it is measured, because a query string is not a relation: a word holding `://`,
   opening `www.`, or joining a `name=value` pair after a `?` or `&` is an address, and a note that
   cites one no longer seeds a crop (#227).
+- **A word a crop cuts in half.** A crop does not take one half of a word whose other half falls
+  outside it: where a line the crop takes ends in a hyphen or a soft hyphen and the line directly
+  beneath it, in the same column, opens in lowercase outside the crop, the taken line is released
+  and both halves reflow. Replay Clocks page 8 breaks a figure caption `…𝛼 = 40 mes-` /
+  `sages/second.` and the crop's edge fell 0.49 pt above the second line, so the first half went
+  into the picture and the second reflowed alone between two figures; the caption now reads whole
+  (#59). Evidence: [painted-underlines](../measurements/painted-underlines/record.md) records the
+  neighbouring rule; this one is measured in the commit.
 - **Page furniture.** A region spanning at least 90% of the page's measure and flush against its
   top or bottom edge is the page's own furniture — a footer or header background — not a figure
   with a claim on the text near it. It keeps its own extent rather than growing to a line it only

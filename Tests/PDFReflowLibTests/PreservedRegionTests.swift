@@ -377,3 +377,33 @@ func aPhotographStillLeavesItsCaptionAndTheProseBelowItReflowable() throws {
     #expect(!LayoutReconstructor.isEdgeBand(CGRect(x: 0, y: 300, width: 612, height: 80), bounds: bounds))
     #expect(!LayoutReconstructor.isEdgeBand(CGRect(x: 0, y: 0, width: 300, height: 80), bounds: bounds))
 }
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/59")) func aCropReleasesTheHalfOfAWordItTook() {
+    // Replay Clocks page 8 to the point: a figure caption hyphenated over two lines, with the
+    // crop's lower edge 0.49 pt above the second line, so the first half was taken and the second
+    // reflowed alone between two figures.
+    let bounds = CGRect(x: 0, y: 0, width: 612, height: 792)
+    let first = TextLine(text: "Figure 7: tau vs E when varying delta, alpha = 40 mes-",
+                         rect: CGRect(x: 53.8, y: 469.99, width: 241.9, height: 8.47), fontSize: 8)
+    let second = TextLine(text: "sages/second.",
+                          rect: CGRect(x: 53.8, y: 459.03, width: 54.1, height: 8.47), fontSize: 8)
+    var body: [TextLine] = []
+    for i in 0..<6 {
+        body.append(TextLine(text: "Ordinary prose establishing this page's body size and measure.",
+                             rect: CGRect(x: 53.8, y: 400 - Double(i) * 12, width: 300, height: 9), fontSize: 8))
+    }
+    let page = PageContent(number: 8, bounds: bounds, lines: [first, second] + body, graphics: [])
+    let crop = CGRect(x: 51.8, y: 467.99, width: 245.9, height: 118.4)
+    #expect(LayoutReconstructor.takes(crop, first))
+    #expect(!LayoutReconstructor.takes(crop, second))
+    var warnings: [ConversionWarning] = []
+    let blocks = LayoutReconstructor.blocks(page: page, images: [(crop, "figure")], vocabulary: [], warnings: &warnings)
+    let texts = blocks.filter(\.hasReflowedText).map(\.text)
+    // Both halves reflow, in one block: no fragment of the caption becomes body prose of its own.
+    // Whether the hyphen itself goes is `HyphenRepair`'s decision and needs the book's vocabulary,
+    // which this page does not carry.
+    #expect(!texts.contains { $0.trimmingCharacters(in: .whitespaces) == "sages/second." },
+            Comment(rawValue: texts.joined(separator: " | ")))
+    #expect(texts.contains { $0.contains("mes") && $0.contains("sages/second.") },
+            Comment(rawValue: texts.joined(separator: " | ")))
+}

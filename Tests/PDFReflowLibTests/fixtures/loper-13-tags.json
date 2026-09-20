@@ -1,0 +1,286 @@
+{
+  "sourceSHA256": "12f5ea075004886774c25e7831ea1608fd0f831f0113e83bb0e85811c0a4bb6e",
+  "page": 13,
+  "contentObjects": [
+    "27 0 R"
+  ],
+  "mediaBox": [
+    0.0,
+    0.0,
+    612.0,
+    792.0
+  ],
+  "structParents": 133,
+  "structureRoot": 360,
+  "roleMap": {
+    "HyphenSpan": "Span",
+    "ParagraphSpan": "Span",
+    "StyleSpan": "Span"
+  },
+  "rootKids": [
+    5032
+  ],
+  "parentTree": {
+    "1": 5055,
+    "2": 5081,
+    "3": 5055,
+    "4": 5082,
+    "5": 5055,
+    "6": 5056,
+    "7": 5057,
+    "8": 5057,
+    "9": 5075,
+    "10": 5057,
+    "11": 5076,
+    "12": 5057,
+    "13": 5077,
+    "14": 5057,
+    "15": 5078,
+    "16": 5057,
+    "17": 5079,
+    "18": 5057,
+    "19": 5058,
+    "20": 5073,
+    "21": 5058,
+    "22": 5074,
+    "23": 5058,
+    "24": 5059,
+    "25": 5070,
+    "26": 5059,
+    "27": 5071,
+    "28": 5059
+  },
+  "elements": [
+    {
+      "object": 5032,
+      "role": "Part",
+      "parent": null,
+      "page": false,
+      "kids": [
+        {
+          "element": 5055
+        },
+        {
+          "element": 5056
+        },
+        {
+          "element": 5057
+        },
+        {
+          "element": 5058
+        },
+        {
+          "element": 5059
+        }
+      ]
+    },
+    {
+      "object": 5055,
+      "role": "P",
+      "parent": 5032,
+      "page": true,
+      "kids": [
+        1,
+        {
+          "element": 5081
+        },
+        3,
+        {
+          "element": 5082
+        },
+        5
+      ]
+    },
+    {
+      "object": 5056,
+      "role": "P",
+      "parent": 5032,
+      "page": true,
+      "kids": [
+        6
+      ]
+    },
+    {
+      "object": 5057,
+      "role": "P",
+      "parent": 5032,
+      "page": true,
+      "kids": [
+        7,
+        8,
+        {
+          "element": 5075
+        },
+        10,
+        {
+          "element": 5076
+        },
+        12,
+        {
+          "element": 5077
+        },
+        14,
+        {
+          "element": 5078
+        },
+        16,
+        {
+          "element": 5079
+        },
+        18
+      ]
+    },
+    {
+      "object": 5058,
+      "role": "P",
+      "parent": 5032,
+      "page": true,
+      "kids": [
+        19,
+        {
+          "element": 5073
+        },
+        21,
+        {
+          "element": 5074
+        },
+        23
+      ]
+    },
+    {
+      "object": 5059,
+      "role": "P",
+      "parent": 5032,
+      "page": true,
+      "kids": [
+        24,
+        {
+          "element": 5070
+        },
+        26,
+        {
+          "element": 5071
+        },
+        28
+      ]
+    },
+    {
+      "object": 5070,
+      "role": "StyleSpan",
+      "parent": 5059,
+      "page": true,
+      "kids": [
+        25
+      ]
+    },
+    {
+      "object": 5071,
+      "role": "HyphenSpan",
+      "parent": 5059,
+      "page": true,
+      "kids": [
+        27
+      ]
+    },
+    {
+      "object": 5073,
+      "role": "HyphenSpan",
+      "parent": 5058,
+      "page": true,
+      "kids": [
+        20
+      ]
+    },
+    {
+      "object": 5074,
+      "role": "StyleSpan",
+      "parent": 5058,
+      "page": true,
+      "kids": [
+        22
+      ]
+    },
+    {
+      "object": 5075,
+      "role": "HyphenSpan",
+      "parent": 5057,
+      "page": true,
+      "kids": [
+        9
+      ]
+    },
+    {
+      "object": 5076,
+      "role": "HyphenSpan",
+      "parent": 5057,
+      "page": true,
+      "kids": [
+        11
+      ]
+    },
+    {
+      "object": 5077,
+      "role": "HyphenSpan",
+      "parent": 5057,
+      "page": true,
+      "kids": [
+        13
+      ]
+    },
+    {
+      "object": 5078,
+      "role": "HyphenSpan",
+      "parent": 5057,
+      "page": true,
+      "kids": [
+        15
+      ]
+    },
+    {
+      "object": 5079,
+      "role": "HyphenSpan",
+      "parent": 5057,
+      "page": true,
+      "kids": [
+        17
+      ]
+    },
+    {
+      "object": 5081,
+      "role": "HyphenSpan",
+      "parent": 5055,
+      "page": true,
+      "kids": [
+        2
+      ]
+    },
+    {
+      "object": 5082,
+      "role": "HyphenSpan",
+      "parent": 5055,
+      "page": true,
+      "kids": [
+        4
+      ]
+    }
+  ],
+  "fonts": [
+    {
+      "name": "TT0",
+      "object": "334 0 R",
+      "subtype": "TrueType",
+      "encoding": "WinAnsiEncoding",
+      "toUnicode": "/CIDInit /ProcSet findresource begin\r\n12 dict begin\r\nbegincmap\r\n/CIDSystemInfo <<\r\n/Registry (Adobe)\r\n/Ordering (SI-HCGAAA+CenturySchoolbook)\r\n/Supplement 0\r\n>> def\r\n/CMapName /Adobe-SI-HCGAAA+CenturySchoolbook-0 def\r\n/CMapType 2 def\r\n2 begincodespacerange\r\n<00> <EF>\r\n<F000> <FFFF>\r\nendcodespacerange\r\n100 beginbfchar\r\n<00> <FFFD>\r\n<20> <0020>\r\n<21> <0021>\r\n<22> <0022>\r\n<23> <0023>\r\n<24> <0024>\r\n<25> <0025>\r\n<26> <0026>\r\n<27> <0027>\r\n<28> <0028>\r\n<29> <0029>\r\n<2A> <002A>\r\n<2B> <002B>\r\n<2C> <002C>\r\n<2D> <002D>\r\n<2E> <002E>\r\n<2F> <002F>\r\n<30> <0030>\r\n<31> <0031>\r\n<32> <0032>\r\n<33> <0033>\r\n<34> <0034>\r\n<35> <0035>\r\n<36> <0036>\r\n<37> <0037>\r\n<38> <0038>\r\n<39> <0039>\r\n<3A> <003A>\r\n<3B> <003B>\r\n<3C> <003C>\r\n<3D> <003D>\r\n<3E> <003E>\r\n<3F> <003F>\r\n<40> <0040>\r\n<41> <0041>\r\n<42> <0042>\r\n<43> <0043>\r\n<44> <0044>\r\n<45> <0045>\r\n<46> <0046>\r\n<47> <0047>\r\n<48> <0048>\r\n<49> <0049>\r\n<4A> <004A>\r\n<4B> <004B>\r\n<4C> <004C>\r\n<4D> <004D>\r\n<4E> <004E>\r\n<4F> <004F>\r\n<50> <0050>\r\n<51> <0051>\r\n<52> <0052>\r\n<53> <0053>\r\n<54> <0054>\r\n<55> <0055>\r\n<56> <0056>\r\n<57> <0057>\r\n<58> <0058>\r\n<59> <0059>\r\n<5A> <005A>\r\n<5B> <005B>\r\n<5C> <005C>\r\n<5D> <005D>\r\n<5E> <005E>\r\n<5F> <005F>\r\n<60> <0060>\r\n<61> <0061>\r\n<62> <0062>\r\n<63> <0063>\r\n<64> <0064>\r\n<65> <0065>\r\n<66> <0066>\r\n<67> <0067>\r\n<68> <0068>\r\n<69> <0069>\r\n<6A> <006A>\r\n<6B> <006B>\r\n<6C> <006C>\r\n<6D> <006D>\r\n<6E> <006E>\r\n<6F> <006F>\r\n<70> <0070>\r\n<71> <0071>\r\n<72> <0072>\r\n<73> <0073>\r\n<74> <0074>\r\n<75> <0075>\r\n<76> <0076>\r\n<77> <0077>\r\n<78> <0078>\r\n<79> <0079>\r\n<7A> <007A>\r\n<7B> <007B>\r\n<7C> <007C>\r\n<7D> <007D>\r\n<7E> <007E>\r\n<7F> <007F>\r\n<80> <20AC>\r\n<81> <0081>\r\n<82> <201A>\r\nendbfchar\r\n37 beginbfchar\r\n<83> <0192>\r\n<84> <201E>\r\n<85> <2026>\r\n<86> <2020>\r\n<87> <2021>\r\n<88> <02C6>\r\n<89> <2030>\r\n<8A> <0160>\r\n<8B> <2039>\r\n<8C> <0152>\r\n<8D> <008D>\r\n<8E> <017D>\r\n<8F> <008F>\r\n<90> <0090>\r\n<91> <2018>\r\n<92> <2019>\r\n<93> <201C>\r\n<94> <201D>\r\n<95> <2022>\r\n<96> <2013>\r\n<97> <2014>\r\n<98> <02DC>\r\n<99> <2122>\r\n<9A> <0161>\r\n<9B> <203A>\r\n<9C> <0153>\r\n<9D> <009D>\r\n<9E> <017E>\r\n<9F> <0178>\r\n<A0> <00A0>\r\n<A1> <00A1>\r\n<A2> <00A2>\r\n<A3> <00A3>\r\n<A4> <00A4>\r\n<A5> <00A5>\r\n<A6> <00A6>\r\n<A7> <00A7>\r\nendbfchar\r\nendcmap\r\nCMapName currentdict /CMap defineresource pop\r\nend\r\nend"
+    },
+    {
+      "name": "TT1",
+      "object": "336 0 R",
+      "subtype": "TrueType",
+      "encoding": "WinAnsiEncoding",
+      "toUnicode": "/CIDInit /ProcSet findresource begin\r\n12 dict begin\r\nbegincmap\r\n/CIDSystemInfo <<\r\n/Registry (Adobe)\r\n/Ordering (SI-JCGAAA+CenturySchoolbook-Italic)\r\n/Supplement 0\r\n>> def\r\n/CMapName /Adobe-SI-JCGAAA+CenturySchoolbook-Italic-0 def\r\n/CMapType 2 def\r\n2 begincodespacerange\r\n<00> <EF>\r\n<F000> <FFFF>\r\nendcodespacerange\r\n100 beginbfchar\r\n<00> <FFFD>\r\n<20> <0020>\r\n<21> <0021>\r\n<22> <0022>\r\n<23> <0023>\r\n<24> <0024>\r\n<25> <0025>\r\n<26> <0026>\r\n<27> <0027>\r\n<28> <0028>\r\n<29> <0029>\r\n<2A> <002A>\r\n<2B> <002B>\r\n<2C> <002C>\r\n<2D> <002D>\r\n<2E> <002E>\r\n<2F> <002F>\r\n<30> <0030>\r\n<31> <0031>\r\n<32> <0032>\r\n<33> <0033>\r\n<34> <0034>\r\n<35> <0035>\r\n<36> <0036>\r\n<37> <0037>\r\n<38> <0038>\r\n<39> <0039>\r\n<3A> <003A>\r\n<3B> <003B>\r\n<3C> <003C>\r\n<3D> <003D>\r\n<3E> <003E>\r\n<3F> <003F>\r\n<40> <0040>\r\n<41> <0041>\r\n<42> <0042>\r\n<43> <0043>\r\n<44> <0044>\r\n<45> <0045>\r\n<46> <0046>\r\n<47> <0047>\r\n<48> <0048>\r\n<49> <0049>\r\n<4A> <004A>\r\n<4B> <004B>\r\n<4C> <004C>\r\n<4D> <004D>\r\n<4E> <004E>\r\n<4F> <004F>\r\n<50> <0050>\r\n<51> <0051>\r\n<52> <0052>\r\n<53> <0053>\r\n<54> <0054>\r\n<55> <0055>\r\n<56> <0056>\r\n<57> <0057>\r\n<58> <0058>\r\n<59> <0059>\r\n<5A> <005A>\r\n<5B> <005B>\r\n<5C> <005C>\r\n<5D> <005D>\r\n<5E> <005E>\r\n<5F> <005F>\r\n<60> <0060>\r\n<61> <0061>\r\n<62> <0062>\r\n<63> <0063>\r\n<64> <0064>\r\n<65> <0065>\r\n<66> <0066>\r\n<67> <0067>\r\n<68> <0068>\r\n<69> <0069>\r\n<6A> <006A>\r\n<6B> <006B>\r\n<6C> <006C>\r\n<6D> <006D>\r\n<6E> <006E>\r\n<6F> <006F>\r\n<70> <0070>\r\n<71> <0071>\r\n<72> <0072>\r\n<73> <0073>\r\n<74> <0074>\r\n<75> <0075>\r\n<76> <0076>\r\n<77> <0077>\r\n<78> <0078>\r\n<79> <0079>\r\n<7A> <007A>\r\n<7B> <007B>\r\n<7C> <007C>\r\n<7D> <007D>\r\n<7E> <007E>\r\n<7F> <007F>\r\n<80> <20AC>\r\n<81> <0081>\r\n<82> <201A>\r\nendbfchar\r\n100 beginbfchar\r\n<83> <0192>\r\n<84> <201E>\r\n<85> <2026>\r\n<86> <2020>\r\n<87> <2021>\r\n<88> <02C6>\r\n<89> <2030>\r\n<8A> <0160>\r\n<8B> <2039>\r\n<8C> <0152>\r\n<8D> <008D>\r\n<8E> <017D>\r\n<8F> <008F>\r\n<90> <0090>\r\n<91> <2018>\r\n<92> <2019>\r\n<93> <201C>\r\n<94> <201D>\r\n<95> <2022>\r\n<96> <2013>\r\n<97> <2014>\r\n<98> <02DC>\r\n<99> <2122>\r\n<9A> <0161>\r\n<9B> <203A>\r\n<9C> <0153>\r\n<9D> <009D>\r\n<9E> <017E>\r\n<9F> <0178>\r\n<A0> <00A0>\r\n<A1> <00A1>\r\n<A2> <00A2>\r\n<A3> <00A3>\r\n<A4> <00A4>\r\n<A5> <00A5>\r\n<A6> <00A6>\r\n<A7> <00A7>\r\n<A8> <00A8>\r\n<A9> <00A9>\r\n<AA> <00AA>\r\n<AB> <00AB>\r\n<AC> <00AC>\r\n<AD> <00AD>\r\n<AE> <00AE>\r\n<AF> <00AF>\r\n<B0> <00B0>\r\n<B1> <00B1>\r\n<B2> <00B2>\r\n<B3> <00B3>\r\n<B4> <00B4>\r\n<B5> <00B5>\r\n<B6> <00B6>\r\n<B7> <00B7>\r\n<B8> <00B8>\r\n<B9> <00B9>\r\n<BA> <00BA>\r\n<BB> <00BB>\r\n<BC> <00BC>\r\n<BD> <00BD>\r\n<BE> <00BE>\r\n<BF> <00BF>\r\n<C0> <00C0>\r\n<C1> <00C1>\r\n<C2> <00C2>\r\n<C3> <00C3>\r\n<C4> <00C4>\r\n<C5> <00C5>\r\n<C6> <00C6>\r\n<C7> <00C7>\r\n<C8> <00C8>\r\n<C9> <00C9>\r\n<CA> <00CA>\r\n<CB> <00CB>\r\n<CC> <00CC>\r\n<CD> <00CD>\r\n<CE> <00CE>\r\n<CF> <00CF>\r\n<D0> <00D0>\r\n<D1> <00D1>\r\n<D2> <00D2>\r\n<D3> <00D3>\r\n<D4> <00D4>\r\n<D5> <00D5>\r\n<D6> <00D6>\r\n<D7> <00D7>\r\n<D8> <00D8>\r\n<D9> <00D9>\r\n<DA> <00DA>\r\n<DB> <00DB>\r\n<DC> <00DC>\r\n<DD> <00DD>\r\n<DE> <00DE>\r\n<DF> <00DF>\r\n<E0> <00E0>\r\n<E1> <00E1>\r\n<E2> <00E2>\r\n<E3> <00E3>\r\n<E4> <00E4>\r\n<E5> <00E5>\r\n<E6> <00E6>\r\nendbfchar\r\n3 beginbfchar\r\n<E7> <00E7>\r\n<E8> <00E8>\r\n<E9> <00E9>\r\nendbfchar\r\nendcmap\r\nCMapName currentdict /CMap defineresource pop\r\nend\r\nend"
+    }
+  ],
+  "xobjects": [],
+  "contentStream": "BT /Artifact <</BBox [156.2336 37.9507 463.1812 675.0048 ]/Type /Layout >>BDC  /GS0 gs /TT0 1 Tf -0.0012 Tc 0.0034 Tw 3 Tr 9 0 0 9 156.24 669.36 Tm ( )Tj 13.285 0 Td ( )Tj 0 Tc 0 Tw 3.355 -1.2 Td ( )Tj -16.64 -68.96 Td ( )Tj 0.0009 Tc 0.1695 Tw 10.98 0 0 10.98 455.84 624.96 Tm ( )Tj 0.0006 Tc -0.0271 Tw -0.008 -1.208 Td ( )Tj 0.1095 Tw 0.003 -4.814 Td ( )Tj 0.0011 Tc 0.0489 Tw 0.004 -1.208 Td ( )Tj 0.0007 Tc 0.3936 Tw -0.001 -1.202 Td ( )Tj 0.0009 Tc 0.1912 Tw -27.284 -3.612 Td ( )Tj 27.279 0 Td ( )Tj 0.0006 Tc 0.1149 Tw -0.011 -3.617 Td ( )Tj 0.0011 Tc 0.0271 Tw 0.014 -1.202 Td ( )Tj 0.0006 Tc 0.0603 Tw -0.008 -4.82 Td ( )Tj 0.0005 Tc 0.126 Tw 0.008 -6.022 Td ( )Tj -0.0042 Tc -0.0168 Tw -0.004 -1.202 Td ( )Tj 0.001 Tc 0.0217 Tw -27.279 -3.229 Td ( )Tj 0.0007 Tc 0.0275 Tw 27.281 0 Td ( )Tj 0.0009 Tc 0 Tw -0.003 -2.41 Td (  )Tj -0.0219 Tw 0.007 -2.41 Td ( )Tj 0.0008 Tc -0.0273 Tw -0.005 -1.202 Td ( )Tj 0 Tc 0 Tw 4.02 0 0 4.02 168.6 169.02 Tm ( )Tj -0.0015 Tc 9 0 0 9 170.2235 158.1597 Tm ( )Tj EMC  /Artifact <</Attached [/Top /Right ]/BBox [450.8217 669.365 455.8615 677.7646 ]/Subtype /Header /Type /Pagination >>BDC  -0.0012 Tc 0.0034 Tw 0 Tr 31.179 56.8 Td (5 )Tj EMC  /Artifact <</Attached [/Top ]/BBox [202 638 409 677 ]/Subtype /Header /Type /Pagination >>BDC  -22.952 0 Td [(Cite as: )-283.3 (60)-5 (3 U)-6.3 (.)-3.4 ( S. ____ \\(2024\\) )]TJ 0.0003 Tc 0.0019 Tw 2.087 -2.627 Td [(Opinion of the)7 ( Court )]TJ EMC  /P <</MCID 1 >>BDC  0.0008 Tc 0.1695 Tw 10.98 0 0 10.98 156.24 624.96 Tm (the Administrative Procedure Ac)Tj 0.0009 Tc 15.732 0 Td [(t \\(APA\\), 5 )-5.4 (U. )169.4 (S. )169.4 (C. \\2475)-5.8 (51 )]TJ /TT1 1 Tf 0 Tc 0.0009 Tw -15.732 -1.208 Td [(et s)-4.2 (e)1.2 (q.)]TJ /TT0 1 Tf 0.0006 Tc -0.0271 Tw 2.798 0 Td [(  In )-5.5 (relevant part,)-5.7 ( they a)-6.1 (r)1.8 (gue)-7.6 (d)1.1 ( that)-3.7 ( the )-5.5 (MSA )-5.5 (does not)]TJ -0.0325 Tw -2.798 -1.202 Td (authorize NMFS to mandate that they pay for observers re)Tj EMC  /HyphenSpan <</MCID 2 >>BDC  (-)Tj EMC  /P <</MCID 3 >>BDC  0.0604 Tw 0 -1.202 TD [(quired by a)4.8 ( fishery ma)4.8 (nagement plan.  The District Court )]TJ 0.0009 Tc 0.1857 Tw 0 -1.208 TD [(granted su)-5.7 (mmary judgment to the Government.  It con)]TJ EMC  /HyphenSpan <</MCID 4 >>BDC  (-)Tj EMC  /P <</MCID 5 >>BDC  0.0006 Tc 0.1095 Tw 0 -1.202 TD [(cluded that)-3.7 ( the MSA a)-6.1 (u)-0.6 (thorized t)-3.7 (h)-0.6 (e Rule, but noted tha)-6.1 (t )]TJ 0.0011 Tc 0.0489 Tw 0 -1.208 TD [(even if thes)5 (e petitioner)7.8 (s\\222 \\223arguments were enough to raise)]TJ 0.0007 Tc 0.3936 Tw 0 -1.202 TD [(an ambiguity in the)-7.5 ( statutory text,\\224 )-5.5 (deference to the )]TJ 0.0005 Tc -0.0652 Tw T* [(agency\\222s int)-3.8 (e)-2.2 (rpretation )-5.4 (would be warranted un)-6.1 (der )]TJ /TT1 1 Tf -0.0001 Tc 0 Tw 23.137 0 Td [(Chev)-5.6 (ron)]TJ /TT0 1 Tf 0 Tc -0.0054 Tw 3.858 0 Td (. )Tj 0.0009 Tc 0 Tw -26.995 -1.208 Td [(544 F. Supp. 3d 82, 107 \\(DC 2021\\); )-5.4 (see )]TJ /TT1 1 Tf 0.0008 Tc (id.)Tj /TT0 1 Tf 0.0009 Tc [(, at 1)5.1 (03\\226107. )]TJ EMC  /P <</MCID 6 >>BDC  0.1912 Tw 1 -1.202 Td [(A divided )-5.5 (panel of the D. )191.2 (C. Circuit affirmed.  See 45 )]TJ EMC  /Span <</MCID 7 >>BDC  0.0006 Tc 0.115 Tw -1 -1.208 Td (F. )Tj EMC  /Span <</MCID 8 >>BDC  1.225 0 Td [(4th 359 \\(2022\\). )-393.6 (The majority addressed various provi)]TJ EMC  /HyphenSpan <</MCID 9 >>BDC  (-)Tj EMC  /Span <</MCID 10 >>BDC  -0.0053 Tw -1.225 -1.202 Td [(sions of)5.8 ( the )5.5 (MSA and co)-7.5 (ncluded that it was not \\223wholly un)]TJ EMC  /HyphenSpan <</MCID 11 >>BDC  (-)Tj EMC  /Span <</MCID 12 >>BDC  0.1149 Tw 0 -1.208 TD [(ambiguous\\224 whether NMFS may )-5.5 (require Atlantic herrin)-5.9 (g)]TJ 0.0008 Tc 0.0274 Tw 0 -1.202 TD [(fishermen t)7.4 (o)-1.9 ( pay for ob)5 (servers.  )]TJ /TT1 1 Tf 0.0019 Tc 0 Tw 15.033 0 Td (Id.)Tj /TT0 1 Tf 0.0011 Tc 0.0271 Tw 1.295 0 Td [(, at 366. )-306.2 (B)7.4 (e)-1.6 (cause ther)7.8 (e )]TJ 0.1473 Tw -16.328 -1.202 Td [(remained \\223some quest)7.7 (ion\\224 as to Congress\\222s )-5.5 (intent, )]TJ /TT1 1 Tf 0.0008 Tc 0 Tw 24.399 0 Td (id.)Tj /TT0 1 Tf 0.0018 Tc 0.1466 Tw (, at )Tj 0.0008 Tc 0.0766 Tw -24.399 -1.208 Td [(369, the co)-7.4 (urt proceeded to )]TJ /TT1 1 Tf 0.0028 Tc 0 Tw 13.137 0 Td [(C)3.7 (h)1.6 (evron)]TJ /TT0 1 Tf 0.0006 Tc 0.0768 Tw 3.863 0 Td (\\222s second step and de)Tj EMC  /HyphenSpan <</MCID 13 >>BDC  9.939 0 Td (-)Tj EMC  /Span <</MCID 14 >>BDC  0.0002 Tc 0.0225 Tw -26.939 -1.202 Td [(ferred to th)-6.4 (e agency\\222s i)-7.3 (n)-1 (terpre)]TJ 0.0006 Tc 0.0221 Tw 14.038 0 Td [(tati)-6.9 (on as a \\223rea)-6.1 (s)-1 (onable\\224 con)]TJ EMC  /HyphenSpan <</MCID 15 >>BDC  (-)Tj EMC  /Span <</MCID 16 >>BDC  0.0603 Tw -14.038 -1.208 Td [(struction of the MSA, 45 F. )60.1 (4th, at 370.  In d)6.6 (i)-1.3 (ssent, Jud)6.6 (ge)]TJ 0.0008 Tc 0.4263 Tw T* [(Walker concluded that Congress\\222s silence on indust)7.4 (ry )]TJ 0.0007 Tc 0.0439 Tw 0 -1.208 TD [(funded obse)3.4 (rvers for the Atl)]TJ 0.001 Tc 0.0436 Tw 13.115 0 Td (antic herring fishery\\227coupled )Tj 0.0161 Tw -13.115 -1.202 Td (with the express provision for )Tj 0.0009 Tc 0.0163 Tw 14.115 0 Td (such observers in other fish)Tj EMC  /HyphenSpan <</MCID 17 >>BDC  (-)Tj EMC  /Span <</MCID 18 >>BDC  -0.0547 Tw -14.115 -1.202 Td [(eries and on)5.2 ( foreign vessels\\227unam)4.8 (biguously indicated th)-5.7 (at )]TJ 0.0005 Tc 0.126 Tw T* [(NMFS lac)-3.7 (k)-2.4 (ed the authority to \\223re)-7.7 (quire [Atlantic herring])]TJ 0.0008 Tc -0.0218 Tw 0 -1.202 TD [(fishermen t)7.4 (o)-1.9 ( pay the wages of at-s)4.7 (ea monitors)4.7 (.\\224  )]TJ /TT1 1 Tf 0.0019 Tc 0 Tw 22.295 0 Td (Id.)Tj /TT0 1 Tf -0.0042 Tc -0.0168 Tw 1.3 0 Td [(,)-5.1 ( a)-5.4 (t)-3 ( 375)-5.4 (. )]TJ EMC  /P <</MCID 19 >>BDC  0 Tc 0 Tw -10.317 -1.754 Td (C )Tj 0.001 Tc 0.0217 Tw -12.279 -1.475 Td (Petitioners Relentless Inc., )Tj 0.0007 Tc 0.0275 Tw 12.82 0 Td [(Huntre)-7.5 (ss Inc., and)6.6 ( Seafreeze )]TJ -0.0216 Tw -13.82 -1.202 Td [(Fleet LLC own two vessels that )7.8 (operate in the )5.5 (Atlantic her)]TJ EMC  /HyphenSpan <</MCID 20 >>BDC  (-)Tj EMC  /P <</MCID 21 >>BDC  0.0005 Tc 0.1588 Tw 0 -1.208 TD (ring fishery: the F/V )Tj /TT1 1 Tf -0.0011 Tc 0 Tw 10.312 0 Td [(Relentl)-6.9 (ess)]TJ /TT0 1 Tf 0.0005 Tc 0.1588 Tw 4.585 0 Td [( an)-6.1 (d the F/V )]TJ /TT1 1 Tf -0.0005 Tc 0 Tw 6.667 0 Td [(Persi)-6.3 (stence)]TJ /TT0 1 Tf 0 Tc 5.071 0 Td (.)Tj EMC  /StyleSpan <</MCID 22 >>BDC  7.02 0 0 7.02 451.86 248.64 Tm (1 )Tj EMC  /P <</MCID 23 >>BDC  0.0011 Tc 0.1364 Tw 10.98 0 0 10.98 156.2399 232.4398 Tm [(These vessels use sm)5 (all-mesh bottom-tra)-5.6 (wl )-5.4 (gear and can )]TJ 0.0009 Tc -0.0219 Tw T* [(freeze fish a)5.1 (t)2.1 ( sea, so they can catch )-5.5 (more species of fish and)]TJ 0.0008 Tc -0.0273 Tw 0 -1.202 TD [(take longer trips than other vessels)4.7 ( \\(about 10 to 14 days, a)-5.9 (s )]TJ EMC  /P <</MCID 24 >>BDC  0 Tc 0 Tw 9 0 0 9 156.24 179.82 Tm (\\227\\227\\227\\227\\227\\227 )Tj EMC  /StyleSpan <</MCID 25 >>BDC  6 0 0 6 165.24 171.54 Tm (1)Tj EMC  /P <</MCID 26 >>BDC  -0.0001 Tc -0.0377 Tw 9 0 0 9 169.74 169.02 Tm [(For any landlubbers, \\223F/V\\224 i)-5.2 (s)2.8 ( si)-5.2 (mply the d)-5.9 (esignation for a fishing ves)]TJ EMC  /HyphenSpan <</MCID 27 >>BDC  (-)Tj EMC  /P <</MCID 28 >>BDC  -0.0015 Tc 0 Tw -1.5 -1.207 Td (sel. )Tj EMC  ET ",
+  "provenance": "Loper Bright page 13 (printed 5): the page tags one line of a nine-line paragraph, so the tagged and untagged halves of one paragraph reach BlockAssembler in turn (#67, #238)."
+}

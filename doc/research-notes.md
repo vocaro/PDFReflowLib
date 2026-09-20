@@ -17,7 +17,13 @@ evidence. Open follow-up work belongs in GitHub issues, not here.
   substantially reduces file size but both tested quality variants still exceed the default
   entry-byte budget, so this was not adopted as a general fix for the image-output ceiling. See
   [warren-image-encoding evidence](../measurements/warren-image-encoding/record.md). The
-  underlying ceiling is tracked in [#5](https://github.com/vocaro/PDFReflowLib/issues/5).
+  underlying ceiling is still there and nothing open tracks it:
+  [#5](https://github.com/vocaro/PDFReflowLib/issues/5) was closed by `fbe3464` on the abandoned
+  coordination branch, whose `ours` merge left `main`'s tree unchanged
+  ([decision 0005](decisions/0005-abandoned-coordination-branch.md)). What that commit did — let
+  each image choose its own encoding rather than defaulting every one to PNG — is the difference
+  between the book fitting and not; see [corpus.md](corpus.md#warren-commission-report) for the
+  measurement on `main`.
 
 ## Raster DPI and encoding defaults
 
@@ -46,8 +52,9 @@ settings](conversion-options.md#recommended-starting-settings). See
 A threshold change intended to sharpen the heading/body-text boundary was rejected because it
 lost six genuine headings. The retained heuristic and its evidence are recorded in
 [heading-body-regressions](../measurements/heading-body-regressions/record.md), which also
-includes the original failing case for [#12](https://github.com/vocaro/PDFReflowLib/issues/12)
-(closed).
+includes the original failing case for [#12](https://github.com/vocaro/PDFReflowLib/issues/12),
+which `294d0cd` fixed on `main` by keeping preserved table, sidebar and figure text out of the
+heading classifier's body-size evidence.
 
 ## Numbered-notes ownership prototype
 
@@ -58,7 +65,10 @@ traced to mixed execution environments under [#26](https://github.com/vocaro/PDF
 [compatible-environment recheck](../measurements/numbered-notes/recheck/record.md) supports only
 the bounded native paragraph repair now in `NumberedNoteDetector`. Multi-paragraph and cross-page
 ownership, chapter-scoped reference links, multiple-reference relationships and return navigation
-remain open under [#11](https://github.com/vocaro/PDFReflowLib/issues/11).
+are all still missing here, and nothing open tracks them:
+[#11](https://github.com/vocaro/PDFReflowLib/issues/11) was closed by `9803329` on the abandoned
+coordination branch, whose content never reached `main`
+([decision 0005](decisions/0005-abandoned-coordination-branch.md)).
 
 ## Structure-tag consumption
 

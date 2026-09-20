@@ -1,5 +1,7 @@
 # Heading evidence beside preserved graphics
 
+> The Swift probes moved to `tools/probes/`, and `tools/pdfreflow_tools/swift_sources.py` now owns the library source list each one compiles with (`6e6ba6c`); the paths and hand-copied source lists below are as measured.
+
 Issue #12 is resolved for its source case and the related measured Fed pages: ordinary 10-point
 prose beside small-font tables, sidebars and figures stays prose instead of entering navigation
 as individual headings. Ten native source-layout fixtures and seven Swift tests protect this

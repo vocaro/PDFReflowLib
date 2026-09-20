@@ -1,5 +1,7 @@
 # Native styles in preformatted lists and code
 
+> The Swift probes moved to `tools/probes/`, and `tools/pdfreflow_tools/swift_sources.py` now owns the library source list each one compiles with (`6e6ba6c`); the paths and hand-copied source lists below are as measured.
+
 The release converter retains native superscripts, subscripts and emphasis in preformatted
 blocks. Previously, reconstruction copied `line.text` into a plain `String`, losing the styles
 already present in `line.content`. The internal model now stores `InlineText` for these blocks,

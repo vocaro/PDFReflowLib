@@ -1,5 +1,7 @@
 # Rejected OCR-heading repair for the CDC comic
 
+> The Swift probes moved to `tools/probes/`, and `tools/pdfreflow_tools/swift_sources.py` now owns the library source list each one compiles with (`6e6ba6c`); the paths and hand-copied source lists below are as measured.
+
 Investigation of [#18](https://github.com/vocaro/PDFReflowLib/issues/18) on 2026-09-15,
 baseline `6992fb3`, macOS 27.0 (26A428), Xcode 27.0 (27A266a), arm64.
 **No runtime repair is retained.** Issue #18 remains open for speech/panel order,

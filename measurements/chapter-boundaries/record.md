@@ -1,5 +1,7 @@
 # Validated numbered chapters start EPUB spine documents
 
+> The Swift probes moved to `tools/probes/` and `tools/evaluate-real-document.py` is now `tools/evaluate_real_document.py` (`6e6ba6c`), which also gave each probe's library source list one home in `tools/pdfreflow_tools/swift_sources.py`; the paths and hand-copied source lists below are as measured.
+
 Bounded implementation under [#15](https://github.com/vocaro/PDFReflowLib/issues/15), baseline
 `2ea9065`, 2026-09-15, macOS 27 / Xcode 27, arm64. **Issue #15 remains open.** This adds chapter
 file boundaries; whole-document extraction/reconstruction memory and oversized atomic blocks

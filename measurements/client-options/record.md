@@ -1,5 +1,7 @@
 # Client-controlled output policies
 
+> `tools/evaluate-real-document.py` is now `tools/evaluate_real_document.py` (`6e6ba6c`); the paths below are as measured.
+
 The public API and developer CLI independently select supplementary references, page/region
 encoding, JPEG quality, entry-byte budget and final EPUB cap. Defaults remain automatic
 references, PNG assets and a 512 MiB entry budget, with no separate final-file cap.

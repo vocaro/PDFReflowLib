@@ -1,5 +1,7 @@
 # Endnote investigation: marker coverage retained, paragraph prototype rejected
 
+> The Swift probes moved to `tools/probes/`, and `tools/pdfreflow_tools/swift_sources.py` now owns the library source list each one compiles with (`6e6ba6c`); the paths and hand-copied source lists below are as measured.
+
 Historical record: the runtime rejection below predates the resolution of #26.
 The [compatible-environment recheck](recheck/record.md) now supports a bounded paragraph repair.
 The original evidence and rejected files remain intact; #11 still has unresolved note semantics.

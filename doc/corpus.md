@@ -241,12 +241,27 @@ content, not something else. Peak converter RSS measured about 724 MiB against a
 ceiling. The page-by-page review is recorded in the case's `basis` in
 [corpus/regressions.json](../corpus/regressions.json); there is no separate measurement record.
 
-Tracked defects: [full-book resource limit](https://github.com/vocaro/PDFReflowLib/issues/5),
-[OCR font/layout inference](https://github.com/vocaro/PDFReflowLib/issues/6),
-[text-layer quality](https://github.com/vocaro/PDFReflowLib/issues/7),
-[placeholder text/counts](https://github.com/vocaro/PDFReflowLib/issues/8), and
-[Poppler image URLs](https://github.com/vocaro/PDFReflowLib/issues/9). Additional source-derived
-examples are linked from the existing reading-order and memory investigations.
+Of the five defects this book was filed for, four are fixed on `main` and are named here for
+where the behaviour came from, not as work in progress: the OCR font and geometry inference
+([#6](https://github.com/vocaro/PDFReflowLib/issues/6), `7fcb80f`), the placeholder text and
+counts ([#8](https://github.com/vocaro/PDFReflowLib/issues/8), `305cb14`), the inherited
+text-layer quality rules ([#7](https://github.com/vocaro/PDFReflowLib/issues/7), ported by
+`1b0308b`) and the comparison harness's absolute Poppler image URLs
+([#9](https://github.com/vocaro/PDFReflowLib/issues/9), `b5f1937`).
+
+The full-book image-output ceiling is not fixed, and nothing open tracks it.
+[#5](https://github.com/vocaro/PDFReflowLib/issues/5) was closed by `fbe3464`, which made the
+default image encoding a per-image choice, on the abandoned coordination branch, and `dd160b4`
+merged that branch with the `ours` strategy, so the commit is an ancestor of `main` and none of
+its content is ([decision 0005](decisions/0005-abandoned-coordination-branch.md)). `main`'s default
+encoding is still PNG for both full pages and region crops, and a default run measured on
+`da544ad` still exits after reconstruction page 390 of 920. With the budget lifted the same
+build writes 1,246,503,758 entry bytes over 931 images — 1,188.76 MiB, 2.32 times the 512 MiB
+default. Asking for the branch's encoding explicitly,
+`--full-page-image-encoding smallest:0.9 --region-image-encoding smallest:0.9`, brings the book
+to 536,242,252 bytes, 628,660 bytes (0.12%) inside the default, which is what the closure
+measured; the gap is that `main` does not choose that encoding by itself. Additional
+source-derived examples are linked from the existing reading-order and memory investigations.
 
 
 ## 9/11 Commission report
@@ -281,8 +296,14 @@ The owner's 46/54 figure comes from a separate Claude ALL-CAPS prototype, not PD
 uses a Chapter 1 granule with a different identity. Those reported counts are preserved with
 provenance, not promoted to independently reproduced library measurements.
 
-[Issue #11](https://github.com/vocaro/PDFReflowLib/issues/11) tracks note-marker semantics,
-number/text associations and future endnote linking; full note coverage remains unqualified.
+Note-marker semantics, number/text associations and endnote linking are unresolved here, and
+nothing open tracks them. [#11](https://github.com/vocaro/PDFReflowLib/issues/11) was closed by
+`9803329` on the abandoned coordination branch, which merged with the `ours` strategy, so none
+of its content reached `main` ([decision 0005](decisions/0005-abandoned-coordination-branch.md)).
+`main` reconstructs bounded numbered note paragraphs (`NumberedNoteDetector`, `49b964b`) and
+carries a marker continuation across a page break (#39, ported for #238), but it has no note
+linker: no `NoteKey`, no `epub:type="noteref"` and no backlinks, so a body marker never resolves
+to its note. Full note coverage remains unqualified.
 
 
 ## The Fed Explained
@@ -370,10 +391,19 @@ after reconstruction page 598; the latest default run fails after page 599. The
 source anchors and crop bytes, with selected source-image review and late cancellation checks.
 Peak converter RSS is about 1.04 billion bytes in these single Mac runs; no case RSS ceiling
 or physical-device budget is established. Default-budget failure remains outside the passing
-corpus lane. [Output-budget issue #5](https://github.com/vocaro/PDFReflowLib/issues/5)
-and [chapter-aware splitting issue #15](https://github.com/vocaro/PDFReflowLib/issues/15) track
-separate gaps. The current writer's approximate 60,000-byte file splitting does not follow PDF
-chapters or bound the memory of whole-document reconstruction.
+corpus lane, and the output budget and chapter-aware splitting are separate gaps.
+[#5](https://github.com/vocaro/PDFReflowLib/issues/5), the output budget, is closed and nothing
+open tracks it: `fbe3464` closed it on the abandoned coordination branch and `dd160b4` merged
+that branch with the `ours` strategy, so none of its content is on `main`
+([decision 0005](decisions/0005-abandoned-coordination-branch.md)). A default run measured on
+`da544ad` exits after reconstruction page 784 of 1,834, and with the budget lifted writes
+1,158,808,212 entry bytes over 2,410 images — 1,105.13 MiB, 2.16 times the 512 MiB default.
+Unlike the Warren report this book does not come inside the default even when the branch's
+encoding is asked for explicitly: at `smallest:0.9` for full pages and crops it still writes
+757,886,168 bytes, because only 509 of its 2,410 images are ones JPEG encodes smaller.
+[Chapter-aware splitting #15](https://github.com/vocaro/PDFReflowLib/issues/15) is open. The
+current writer's approximate 60,000-byte file splitting does not follow PDF chapters or bound
+the memory of whole-document reconstruction.
 
 
 ## Our Flag
@@ -397,8 +427,10 @@ The [baseline](../measurements/gpo-our-flag-2003/record.md) passes full conversi
 progress and the 192 MiB Mac RSS gate. [Review references](../corpus/gpo-our-flag-2003-review.json)
 include all ten table rows and meaning-bearing flag groups. The page-27 table retains both
 headers and all rows in a warned region image; see [current evidence](../measurements/three-fidelity-fixes/record.md).
-Drop-cap ordering and general figure/name/description association remain unqualified under
-[heading classification #12](https://github.com/vocaro/PDFReflowLib/issues/12) and
+Drop-cap ordering is fixed: `a9d8fd5` attaches a native decorative initial to its own body line,
+so pages 7, 9, 27 and 31 emit the opening before its continuation and neither initial becomes a
+heading ([record](../measurements/drop-cap-order/record.md)). General figure/name/description
+association remains unqualified under
 [validated structure #17](https://github.com/vocaro/PDFReflowLib/issues/17).
 
 
@@ -461,8 +493,10 @@ asks the client to review transcription, tables, numbers and order against the p
 it does not assert that an individual cell is wrong.
 
 [Review references](../corpus/cia-blue-book-14-1955-review.json) include the typewritten table's
-printed rows and handwritten-sheet review targets. [Issue #19](https://github.com/vocaro/PDFReflowLib/issues/19)
-tracks the warning/refusal behavior; passing the signal contract will not establish correct cells.
+printed rows and handwritten-sheet review targets. The warning this book asked for is on `main`:
+[#19](https://github.com/vocaro/PDFReflowLib/issues/19) is named for where `unverifiedTextLayer`
+came from, and `305cb14` implemented it and closed the issue. Passing the signal contract will
+not establish correct cells, and no quality refusal exists.
 
 Page 19 carries the one known false join of the marker-continuation rule
 ([citation-continuations](../measurements/citation-continuations/record.md)): on this inherited-OCR

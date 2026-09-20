@@ -78,6 +78,12 @@ What the individual gates check:
   probe and the two capture commands below — exactly as written, with only the `-o` target moved
   into a scratch directory. A probe the library has outgrown, and a documented build renamed,
   deleted or repointed, fail here instead of the next time somebody follows the runbook (#204).
+  Its reach stops at `doc/`. A record under `measurements/` also prints builds, but it prints the
+  build it measured, at the commit it names, and
+  [decision 0007](decisions/0007-records-cite-commits-in-prose.md) keeps that prose frozen; a gate
+  reading records would have to be satisfied either by rewriting history or by pinning the gate to
+  paths that no longer exist. A record whose paths move gains its one pointer line instead
+  ([#232](https://github.com/vocaro/PDFReflowLib/issues/232)).
 - `tools/check_pdfkit_concurrency.py --modes native --workers 1 8 --trials 2 --iterations 50`:
   fresh-process native extraction on original RoleMap/MCR and structure-tree-absent fixtures,
   asserting exact line text and 12/24-point fonts. It runs alone because contention from other
@@ -165,7 +171,13 @@ contract in [corpus/regressions.json](../corpus/regressions.json):
 All source-page anchors must remain complete and ordered, and semantic text must
 contain no image-attachment placeholders. The manifest consistency test requires every corpus
 document to be covered or explicitly excluded; full Warren and NOAA conversions are excluded for
-the known image-output ceiling failure (#5), listed in output and never counted as passes.
+the known image-output ceiling failure, listed in output and never counted as passes. That
+failure is real on `main` — measured on `da544ad`, Warren exits after reconstruction page 390 of
+920 and NOAA after page 784 of 1,834 — but the issue named in the exclusions,
+[#5](https://github.com/vocaro/PDFReflowLib/issues/5), is closed and tracks nothing: `fbe3464`
+closed it on the abandoned coordination branch, whose `ours` merge left `main`'s tree unchanged
+([decision 0005](decisions/0005-abandoned-coordination-branch.md)). The measured cost of each
+book is in [corpus.md](corpus.md#warren-commission-report).
 
 <!-- counts:contract-breakdown -->
 Those 530 checks are 4 `spineContinuity`, 81 `text`, 193 `orderedText`, 42 `absentText`,

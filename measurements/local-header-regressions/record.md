@@ -1,5 +1,7 @@
 # Local running-header regressions
 
+> The Swift probes moved to `tools/probes/`, and `tools/pdfreflow_tools/swift_sources.py` now owns the library source list each one compiles with (`6e6ba6c`); the paths and hand-copied source lists below are as measured.
+
 The converter removes chapter-local and alternating running headers without requiring repetition
 on half the book. The inspected 9/11 running headers on physical pages 20, 21, 67 and 472 disappear;
 chapter-title lines on pages 19 and 65 remain headings. This addresses the reproduced margin-text

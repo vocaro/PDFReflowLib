@@ -1,5 +1,7 @@
 # Full NOAA conversion with explicit output policies
 
+> `tools/evaluate-real-document.py` is now `tools/evaluate_real_document.py` (`6e6ba6c`); the paths below are as measured.
+
 Bounded qualification under [#5](https://github.com/vocaro/PDFReflowLib/issues/5), baseline
 `193f807be95937cb1ddbfc1783d8d4f4aac0108c`, 2026-09-15. All **1,834 pages** of the Fifth
 National Climate Assessment complete using the existing production CLI with explicit larger

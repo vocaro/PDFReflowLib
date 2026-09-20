@@ -918,6 +918,14 @@ Evidence: [spine-continuity](../measurements/spine-continuity/record.md),
   overlap took two of the page's four notes out of the book (#246). Every other region keeps the
   whole-line growth of #36, including a fraction bar, whose terms lie outside its seed by
   construction. Evidence: [footer-band-notes](../measurements/footer-band-notes/record.md).
+- **Inline fractions.** A bar at the right edge of a line that reads as a sentence, with a line of
+  at most two words beneath it inside the bar's own measure, is an inline fraction whose numerator
+  PDFKit merged into the sentence. The denominator joins that line as `numerator/denominator` and
+  stops being a block of its own: Wallace page 137 reads `use the slope rise/run to get the next
+  point`, where it had set `run` adrift on its own line (#53). `isFractionBar` cannot decide these,
+  because a display fraction's test requires the term above the bar to carry no word of three
+  letters, which a numerator merged into prose never satisfies. A numerator that is a line of its
+  own keeps its crop.
 - **Thin rules.** A painted rule at most 6 pt high and at least 12 pt (and three times its height)
   wide, measured after `GraphicsReader`'s two-point padding, is a typographic separator rather than
   a figure. Such a rule seeds no region when it underlines one text line — it lies within that

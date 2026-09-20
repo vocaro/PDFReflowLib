@@ -80,6 +80,63 @@ enum LayoutReconstructor {
         crop.intersects(line.rect) && crop.minY <= line.rect.midY && line.rect.midY <= crop.maxY
     }
 
+    /// Joins an inline fraction's denominator to the line its numerator ends, as `rise/run` (#53).
+    ///
+    /// Wallace page 137 sets `rise` over `run` inside a sentence. PDFKit merges the numerator into
+    /// the prose line, so the bar is a rule at the end of a worded line — decoration by #36's
+    /// reading — and the denominator reflows on its own as a stray line. Neither preserving the
+    /// whole sentence in a crop nor leaving `run` adrift says what the page says.
+    ///
+    /// The evidence is the bar's own geometry: a fraction bar (`isFractionBar`) lying at the end
+    /// of a line that reads as a sentence, with a short line beneath it inside the bar's own
+    /// measure. A display fraction, whose numerator is a line of its own rather than the tail of a
+    /// sentence, is not touched and keeps its crop.
+    static func joinedInlineFractions(_ lines: [TextLine], rules: [CGRect], body: CGFloat) -> [TextLine] {
+        // `isFractionBar` is a display fraction's test: it requires the term above the bar to
+        // carry no word of three letters, so a numerator PDFKit has merged into a sentence never
+        // satisfies it. That is exactly the case here, and the geometry below stands in for it.
+        let bars = rules.map { $0.insetBy(dx: 2, dy: 0) }
+        guard !bars.isEmpty else { return lines }
+        var denominators: [Int: Int] = [:]   // denominator line -> numerator line
+        for bar in bars {
+            let above = lines.indices.filter { index in
+                let rect = lines[index].rect
+                return bar.midY >= rect.minY && bar.midY <= rect.maxY
+                    && abs(rect.maxX - bar.maxX) <= max(body, 4)
+                    && readsAsSentence(lines[index])
+            }
+            let below = lines.indices.filter { index in
+                let rect = lines[index].rect
+                // The denominator's PDFKit box reaches over the bar by a fraction of a point, so
+                // it is its middle that must sit beneath it.
+                return rect.midY < bar.minY && rect.midY >= bar.minY - body * 1.6
+                    && rect.minX >= bar.minX - 2 && rect.maxX <= bar.maxX + 2
+                    && lines[index].text.split(whereSeparator: \.isWhitespace).count <= 2
+            }
+            if let numerator = above.first, let denominator = below.first, above.count == 1, below.count == 1 {
+                denominators[denominator] = numerator
+            }
+        }
+        guard !denominators.isEmpty else { return lines }
+        var result = lines
+        for (denominator, numerator) in denominators.sorted(by: { $0.key > $1.key }) {
+            var joined = result[numerator].content
+            joined.append(InlineText("/"))
+            joined.append(result[denominator].content)
+            result[numerator] = TextLine(content: joined, rect: result[numerator].rect,
+                                         fontSize: result[numerator].fontSize,
+                                         monospaced: result[numerator].monospaced,
+                                         wraps: result[numerator].wraps)
+        }
+        for index in denominators.keys.sorted(by: >) { result.remove(at: index) }
+        return result
+    }
+
+    /// Whether a line is running prose rather than a term.
+    static func readsAsSentence(_ line: TextLine) -> Bool {
+        line.text.split(whereSeparator: { !$0.isLetter }).filter { $0.count >= 2 }.count >= 4
+    }
+
     /// Whether a seed region captures a text line. Tall PDFKit line rectangles include leading,
     /// so a thin rule touches the rectangles of the lines above and below without crossing
     /// their glyphs; it captures only text it actually strikes through (#36).
@@ -687,9 +744,12 @@ enum LayoutReconstructor {
         let overPicture = PageDiagnosis.proseOverPictures(lines: page.lines, pictures: page.pictures,
                                                           crops: images.map(\.0), bounds: page.bounds,
                                                           language: context.language)
-        let lines = page.lines.enumerated().filter { index, line in
+        let reflowable = page.lines.enumerated().filter { index, line in
             overPicture.contains(index) || !images.contains { takes($0.0, line) }
         }.map(\.element)
+        // An inline fraction's denominator joins the line its numerator ends (#53).
+        let lines = joinedInlineFractions(reflowable, rules: page.graphics.filter(isThinRule),
+                                          body: max(4, bodySize(page.lines)))
         let typography = PageTypography(pageLines: page.lines, reflowableLines: lines, documentBody: context.documentBody)
         // A bold sub-heading set at or near body size, whose paragraph opens beneath it directly or
         // past an intervening picture and caption (#218).

@@ -526,3 +526,35 @@ private func emphasisUnderlinePDF() -> Data {
     // Every word of the sentence still reflows; the rule takes nothing into an image.
     for word in ["Sending", "outweighs", "committee"] { #expect(html.contains(word)) }
 }
+
+// An inline fraction's denominator belongs to the sentence its numerator ends (#53).
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/53")) func anInlineFractionJoinsTheSentenceItEnds() {
+    // Wallace page 137 to the point: `rise` ends a prose line, the bar sits at that line's right
+    // edge, and `run` is a short line beneath it inside the bar's own measure.
+    let bounds = CGRect(x: 0, y: 0, width: 612, height: 792)
+    let prose = TextLine(text: "the y-intercept and use the slope rise",
+                         rect: CGRect(x: 307.6, y: 421.1, width: 199.6, height: 15), fontSize: 10)
+    let run = TextLine(text: "run", rect: CGRect(x: 494.2, y: 417.6, width: 13.1, height: 7.5), fontSize: 7)
+    let bar = CGRect(x: 491.6, y: 424.8, width: 18, height: 4)
+    let joined = LayoutReconstructor.joinedInlineFractions([prose, run], rules: [bar], body: 10)
+    #expect(joined.count == 1)
+    #expect(joined.first?.text == "the y-intercept and use the slope rise/run")
+}
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/53")) func aDisplayFractionKeepsItsOwnLines() {
+    let bar = CGRect(x: 100, y: 424.8, width: 40, height: 4)
+    // A numerator that is a line of its own rather than the tail of a sentence is a display
+    // fraction and keeps its crop.
+    let numerator = TextLine(text: "x + 2", rect: CGRect(x: 100, y: 428, width: 40, height: 12), fontSize: 10)
+    let denominator = TextLine(text: "y", rect: CGRect(x: 110, y: 412, width: 12, height: 10), fontSize: 10)
+    #expect(LayoutReconstructor.joinedInlineFractions([numerator, denominator], rules: [bar], body: 10).count == 2)
+    // A rule that is not at a sentence's right edge takes nothing either: an underline under a
+    // word in the middle of a line, with the next line of the paragraph beneath it.
+    let sentence = TextLine(text: "a sentence whose middle word is underlined here",
+                            rect: CGRect(x: 100, y: 421, width: 300, height: 15), fontSize: 10)
+    let next = TextLine(text: "and the paragraph carries on below it",
+                        rect: CGRect(x: 100, y: 405, width: 300, height: 12), fontSize: 10)
+    #expect(LayoutReconstructor.joinedInlineFractions([sentence, next], rules: [CGRect(x: 180, y: 424.8, width: 30, height: 4)],
+                                                      body: 10).count == 2)
+}

@@ -462,7 +462,15 @@ text on both sides so short name/description cells do not become independent col
 reconstruction joins hard wraps and narrowly supported cross-page continuations; a validated
 chapter start or a differing tagged paragraph identity blocks a cross-page join. The separate
 page-size estimate governs whitespace cuts and paragraph geometry. Known cross-page splits and
-folio joins are tracked in #45.
+folio joins were raised in #45, which is closed and does not track them: it was closed by
+`e1cbc0d0e` ("Join cross-page paragraphs on reading-order body anchors; never join folios") on the
+abandoned coordination branch, and `dd160b4` merged that branch with the `ours` strategy, so the
+commit is an ancestor of `main` and its content is not
+([decision 0005](decisions/0005-abandoned-coordination-branch.md)). `appendPage` here is still the
+original bottom-20%/top-20% band test, so the splits and the folio joins are still what this
+library does. The fix is readable with `git show e1cbc0d0e` and, per decision 0005, is hand-ported
+onto this pipeline rather than cherry-picked; nothing open tracks that port, and
+[#231](https://github.com/vocaro/PDFReflowLib/issues/231) holds the reconciliation.
 
 The cuts recurse 32 levels. A page whose separating gaps never narrow is cut one block at a
 time, so its depth is its block count: uniform leading wider than 110% of the page body, as a

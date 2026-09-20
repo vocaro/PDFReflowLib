@@ -11,9 +11,9 @@ carry their issue linkage as `.bug()` traits.
 
 | Lane | Command | Runs |
 | --- | --- | --- |
-| Fast | `scripts/check-all.sh --fast` | Swift suite, release build, Python tool tests, measurements policy, PDFKit concurrency smoke gate, six fixture conversions with structural checks, conversion-policy cases |
+| Fast | `scripts/check-all.sh --fast` | Swift suite, release build, Python tool tests, measurements policy, documented builds, documentation counts, issue citations, PDFKit concurrency smoke gate, six fixture conversions with structural checks, conversion-policy cases |
 | Full | `scripts/check-all.sh` | Fast, plus the FAA memory gate when `corpus/cache/faa-h-8083-25c.pdf` (or `PDFREFLOW_REAL_PDF`) exists; absence is printed as a skip |
-| Corpus | `scripts/check-all.sh --corpus` | Fast, plus the structure-memory gate, the repeated-conversions gate and 18 complete cached conversions with EPUBCheck. Requires `epubcheck` on `PATH` and every cached source; missing data fails explicitly, and nothing is downloaded |
+| Corpus | `scripts/check-all.sh --corpus` | Fast, plus the structure-memory gate, the repeated-conversions gate and <!-- counts:corpus-documents -->18<!-- counts:end --> complete cached conversions with EPUBCheck. Requires `epubcheck` on `PATH` and every cached source; missing data fails explicitly, and nothing is downloaded |
 
 The gate scripts share their plumbing through the `tools/pdfreflow_tools/` package: `corpus.py`
 (the repository root, manifest and contract loading, byte-count and SHA-256 identities),
@@ -28,7 +28,7 @@ Fetch sources with `tools/fetch_corpus.py --case <id>` (checksum-verified, cache
 
 What the individual gates check:
 
-- `swift test`: 314 Swift Testing tests with no known-issue wrappers, using the real Apple
+- `swift test`: <!-- counts:swift-tests -->314 Swift Testing tests<!-- counts:end --> with no known-issue wrappers, using the real Apple
   PDF/OCR stack. They cover extraction, the document model, layout, raster pixels (crop origins,
   rotations, annotations, resource ceilings), preserved regions (fraction bars, raised exponents
   and all six cells of a ruled table in actual EPUB images at 72/144 DPI, with prose and code
@@ -37,7 +37,7 @@ What the individual gates check:
   concurrency test overlaps four conversions and one cancelled conversion, checking ownership,
   styles, images, monotonic progress and staging cleanup. For iOS:
   `xcodebuild test -scheme PDFReflowLib-Package -destination 'platform=iOS Simulator,name=iPhone 18 Pro' CODE_SIGNING_ALLOWED=NO`.
-- `python3 -m unittest discover -s tools -p 'test_*.py' -v`: 169 Python tests over the tools,
+- `python3 -m unittest discover -s tools -p 'test_*.py' -v`: <!-- counts:python-tests -->210 Python tests<!-- counts:end --> over the tools,
   including the checker's negative controls, the identity tool, the memory-gate instrumentation
   (real child allocations above and below a ceiling, source verification, isolation from an
   earlier child's high-water mark), the comparison and reader servers (no Poppler or socket
@@ -46,6 +46,30 @@ What the individual gates check:
   `tools/test_pdfkit_gate.py`, which runs `tools/check_pdfkit_gate.py` over `Sources/` and
   `Tests/` and fails on any font, CoreText or PDFKit call made outside
   `NativeTextReader.withExtractionLock` or `pdfKitGated` (`Tests/PDFReflowLibTests/PDFKitGate.swift`).
+- `tools/update_doc_counts.py --check --swift-list`: the suite counts in `README.md` and this
+  document are generated, not typed. Each lives between `<!-- counts:NAME -->` markers and is
+  computed from the suites themselves — the contract counts from the check-type table in
+  `tools/check_corpus_content.py` that `assess` verifies its own running total against, the
+  Python count from the same `unittest` discovery this file runs, the Swift count from the
+  `@Test` declarations, which `--swift-list` requires to equal what `swift test list` reports.
+  A stale number fails here with the diff and the command that fixes it, and a merge conflict
+  confined to a generated region is resolved by rerunning `python3 tools/update_doc_counts.py`
+  (a conflict that also touches prose is reported, not guessed at). Counts were hand-typed until
+  #156: they collided on nearly every parallel merge and drifted between them.
+- `tools/check_issue_citations.py`: no `README.md` or `doc/**` file may cite a closed issue as the
+  live tracker for a gap. Twelve did, for defects this library still has, because the branch that
+  closed them was merged with the `ours` strategy and its content never arrived (#234, #231). A
+  citation of a closed issue must appear in the gate's `ALLOWED` table with the reason it is
+  historical, and an entry marked `branch-only` must name, in every document that cites the issue,
+  the branch commit that holds the unported fix. An entry no document cites fails too, so the
+  table cannot outlive the prose. `doc/decisions/**` is exempt by directory: a decision record is
+  a dated record of what was weighed, not a tracker, and editing its citations to stay current
+  would falsify it. The issue states are the checked-in snapshot `doc/issue-states.json`, so the
+  gate needs no network and never passes merely because GitHub was unreachable; refresh it with
+  `python3 tools/check_issue_citations.py --refresh` and commit the result. The snapshot's one
+  blind spot — an issue closed after its capture date — is printed on every run with the
+  snapshot's age, and the first citation of an issue newer than the snapshot fails until it is
+  refreshed.
 - `tools/check_measurements.py`: no raw capture and at most two megabytes added under
   `measurements/` relative to the base branch ([decision 0006](decisions/0006-measurements-are-records.md)).
 - `tools/check_documented_builds.py`: compiles every probe under `tools/probes/` from the source
@@ -136,11 +160,19 @@ Repeat `--case <id>` to narrow a debugging run; the summary lists omitted cases 
 failing case does not hide later results. `--jobs N` evaluates N cases at once (default 1).
 Each case verifies the pinned source identity, converts in a fresh release process, checks EPUB
 structure, EPUBCheck, monotonic progress, the manifest memory ceiling and the reviewed content
-contract in [corpus/regressions.json](../corpus/regressions.json): 102 reviewed pages across 18
-documents. All source-page anchors must remain complete and ordered, and semantic text must
+contract in [corpus/regressions.json](../corpus/regressions.json):
+<!-- counts:contract-coverage -->436 checks on 102 reviewed pages across 18 documents<!-- counts:end -->.
+All source-page anchors must remain complete and ordered, and semantic text must
 contain no image-attachment placeholders. The manifest consistency test requires every corpus
 document to be covered or explicitly excluded; full Warren and NOAA conversions are excluded for
 the known image-output ceiling failure (#5), listed in output and never counted as passes.
+
+<!-- counts:contract-breakdown -->
+Those 436 checks are 4 `spineContinuity`, 63 `text`, 158 `orderedText`, 25 `absentText`,
+29 `headings`, 34 `paragraphs`, 6 `continuedParagraphs`, 16 `scripts`, 16 `imageRegions`,
+64 `minimumImages`, 20 `warningCodesAnyOf` and 1 `absentWarningCodes`, counted as
+`tools/check_corpus_content.py` counts them.
+<!-- counts:end -->
 
 Contract expectations per page: `orderedText` and `text` (selected correct words in order),
 `paragraphs` (a phrase inside one spine paragraph on that source page; a phrase spread over

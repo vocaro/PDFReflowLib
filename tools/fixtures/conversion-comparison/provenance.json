@@ -1,0 +1,12 @@
+{
+  "purpose": "A real conversion's EPUB structure, for tools/test_conversion_comparison.py to edit and compare (#92). The defect it pins is about generated identifiers, which only a real book-wide numbering exhibits; a hand-written EPUB would number its paragraphs however the test chose to.",
+  "case": "census-rrs2002-01",
+  "sourceSHA256": "0f97380ae4308581bd70013b7317faafd7c217654236bd31d1448f26eae56905",
+  "sourcePages": 20,
+  "converterSHA256": "c9fe35afcd3077974d529a23cd9674dde62d79c9c88085673ae54218acb0b235",
+  "converterCommit": "6ad52fb",
+  "capturedOn": "2026-09-19",
+  "command": "pdf-reflow corpus/cache/rrs2002-01.pdf out.epub --package-identifier urn:uuid:00000000-0000-4000-8000-000000000001 --modification-date 2026-01-01T00:00:00Z",
+  "contents": "Every non-image entry of that EPUB byte for byte. The 47 image payloads are 7.7 MB of PNG that say nothing about identifier normalization, so images.json carries each asset's name and its payload's SHA-256 instead, and the test writes that hex as the entry's bytes. Image identity within the fixture is therefore still distinct per asset and still stable, which is all the comparison reads.",
+  "staleness": "This fixture pins the comparison tool's behaviour, not the converter's output. A later converter that lays this document out differently does not make the fixture wrong; regenerate it only if the EPUB's shape (page markers, paragraphs, image references) stops resembling what the converter emits. Regenerate by running the command above and re-extracting with the recipe in doc/regression-testing.md."
+}

@@ -19,6 +19,35 @@ HTML = epub.XHTML
 HEADINGS = {HTML + 'h' + str(n) for n in range(1, 7)}
 BLOCKS = HEADINGS | {HTML + tag for tag in ('p', 'pre', 'figure', 'li')}
 
+# Every kind of check `assess` counts, and where its expectations sit in a contract. `sequence`
+# keys hold one expectation per check; `presence` keys are one check when the key is present.
+# `assess` compares its own running total against this table, so a new kind of check that is not
+# recorded here fails the corpus lane rather than quietly making the documented counts wrong
+# (#156; tools/update_doc_counts.py reads the table and nothing else).
+CONTRACT_CHECK_TYPES = {'spineContinuity': 'sequence'}
+PAGE_CHECK_TYPES = {
+    'text': 'sequence', 'orderedText': 'sequence', 'absentText': 'sequence',
+    'headings': 'sequence', 'paragraphs': 'sequence', 'continuedParagraphs': 'sequence',
+    'scripts': 'sequence', 'imageRegions': 'sequence',
+    'minimumImages': 'presence', 'warningCodesAnyOf': 'presence', 'absentWarningCodes': 'presence',
+}
+
+
+def count_checks(contracts):
+    """How many checks the reviewed contracts hold, by kind, without running a conversion."""
+    by_type = dict.fromkeys(list(CONTRACT_CHECK_TYPES) + list(PAGE_CHECK_TYPES), 0)
+    pages = 0
+    for contract in contracts:
+        for name, kind in CONTRACT_CHECK_TYPES.items():
+            by_type[name] += len(contract.get(name, ()))
+        for item in contract.get('pages', ()):
+            pages += 1
+            for name, kind in PAGE_CHECK_TYPES.items():
+                by_type[name] += len(item.get(name, ())) if kind == 'sequence' else int(name in item)
+    return {'checks': sum(by_type.values()), 'pages': pages,
+            'documents': sum(1 for contract in contracts if contract.get('pages')),
+            'byType': by_type}
+
 
 def cli_inspection_limit(value):
     try:
@@ -347,6 +376,9 @@ def assess(case, contract, result, report, pages, markers, *, documents=(),
                 errors.append(f'Page {number}: unexpected quality warning ' + ', '.join(unexpected))
     if checks == 0:
         raise ValueError('Contract has no content checks')
+    if checks != count_checks([contract])['checks']:
+        raise ValueError('Contract check count disagrees with CONTRACT_CHECK_TYPES/PAGE_CHECK_TYPES; '
+                         'a kind of check was added without recording it (#156)')
     return {'case': case['id'], 'passed': not errors, 'reviewPages': numbers,
             'contentChecks': checks, 'spineBoundariesCrossed': crossedBoundaries, 'errors': errors,
             'scope': 'Reviewed text/order/script-context/image-presence, spine-boundary continuity and source-region image checks; not full-book fidelity or image legibility qualification.'}

@@ -63,3 +63,44 @@ each page edge were compared against the source).
 
 The #30 case baselines under `measurements/<case>/` are historical receipts from `29ca743`; the
 USCIS guide's EPUB identity changes here because of the moved heading, with identical text.
+
+## Contracts over the written spine
+
+The work above changed where boundaries fall and added `continuedParagraphs` for source-page
+boundaries. Neither asserts what a reader sees at a spine-document seam, so on top of `e00432b`
+`tools/check_corpus_content.py` gained `spineContinuity`, a case-level expectation checked over
+the written spine rather than over one page. `read_spine` now returns one record per spine
+document — its archive name, its text with captions excluded, and the source pages it carries,
+including the page still open when the document starts. An expectation names the source pages on
+both sides of one boundary and the phrases the source sets before and after it; every phrase must
+occur exactly once in the whole book, the earlier ones in order inside one document and the later
+ones in order inside the very next one, both documents must carry the reviewed pages, and
+`contiguous` forbids any word between the two sides.
+
+Four boundaries are pinned, read from the source pages rendered at 100–110 DPI:
+
+| Case | Boundary | What crosses it |
+| --- | --- | --- |
+| `fed-explained-2021` | page 33, documents 1→2 | the press-conference paragraph, then the "Communicating Policy Regularly and Clearly" heading and its opening paragraph |
+| `fed-explained-2021` | pages 122→123, documents 4→5 | the consumer-compliance paragraph ending page 122, then "Interagency Initiatives" and its FFIEC paragraph |
+| `wallace-algebra-2010` | pages 155→156, documents 4→5 | the three-variable summary, then the "4.4 Practice - Three Variables" heading and its instruction |
+| `wallace-algebra-2010` | page 290, documents 8→9 | one sentence, mid-sentence: "…the larger perfect square is more" / "than it would take to simplify in several steps." |
+
+The page-290 pair is the strongest of the four because the join falls inside a sentence, so any
+repetition or loss at the seam is visible in the text itself. It exists only because that sentence
+is already split into two paragraphs before the writer runs ([#230](https://github.com/vocaro/PDFReflowLib/issues/230));
+the expectation pins the reading order across the seam and the basis records that it does not
+bless the split.
+
+Controls, all failing as they should: over built archives, both sides in one document, the reverse
+order, a boundary two documents away, a repeated tail, a dropped opening, an inserted sentence,
+source pages the surrounding documents do not carry, and nine malformed expectations. Over the
+real Fed EPUB, moving the heading and its paragraph back into the previous document scores as no
+boundary; repeating the previous document's closing sentence at the head of the next is caught as
+duplication; inserting a sentence into the join is caught by `contiguous`; and deleting the
+opening paragraph is caught as missing text.
+
+Reviewing the Fed boundaries also found a new instance of the writer class this record describes,
+which the carried-heading rule cannot reach: page 94's "Electronic Check Processing" is a genuine
+12-point sub-heading that the converter leaves as a paragraph, so it ends one spine document while
+its content opens the next ([#228](https://github.com/vocaro/PDFReflowLib/issues/228)).

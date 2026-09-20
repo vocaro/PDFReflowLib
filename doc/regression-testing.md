@@ -37,7 +37,7 @@ What the individual gates check:
   concurrency test overlaps four conversions and one cancelled conversion, checking ownership,
   styles, images, monotonic progress and staging cleanup. For iOS:
   `xcodebuild test -scheme PDFReflowLib-Package -destination 'platform=iOS Simulator,name=iPhone 18 Pro' CODE_SIGNING_ALLOWED=NO`.
-- `python3 -m unittest discover -s tools -p 'test_*.py' -v`: 162 Python tests over the tools,
+- `python3 -m unittest discover -s tools -p 'test_*.py' -v`: 165 Python tests over the tools,
   including the checker's negative controls, the identity tool, the memory-gate instrumentation
   (real child allocations above and below a ceiling, source verification, isolation from an
   earlier child's high-water mark), the comparison and reader servers (no Poppler or socket
@@ -130,7 +130,7 @@ Repeat `--case <id>` to narrow a debugging run; the summary lists omitted cases 
 failing case does not hide later results. `--jobs N` evaluates N cases at once (default 1).
 Each case verifies the pinned source identity, converts in a fresh release process, checks EPUB
 structure, EPUBCheck, monotonic progress, the manifest memory ceiling and the reviewed content
-contract in [corpus/regressions.json](../corpus/regressions.json): 101 reviewed pages across 18
+contract in [corpus/regressions.json](../corpus/regressions.json): 102 reviewed pages across 18
 documents. All source-page anchors must remain complete and ordered, and semantic text must
 contain no image-attachment placeholders. The manifest consistency test requires every corpus
 document to be covered or explicitly excluded; full Warren and NOAA conversions are excluded for
@@ -152,6 +152,20 @@ deleted text, text moved to the wrong page, reversed order, missing images, flat
 misplaced scripts, missing or wrong-page warnings, changed source identity, failed conversion,
 missing or duplicate page markers, headers reintroduced into prose, headings flattened or moved,
 empty expectations and captions masquerading as source text.
+
+One expectation belongs to the book rather than to a page. A case may carry `spineContinuity`, a
+list of reviewed spine-document boundaries. Each entry names the source pages on both sides and
+the phrases the source sets before and after one boundary: every phrase must occur exactly once
+in the whole book, the earlier ones in order inside one spine document and the later ones in
+order inside the very next one, and both documents must carry the reviewed source pages.
+`contiguous` additionally forbids any word between the last phrase before the boundary and the
+first one after it, so text may be neither dropped nor inserted at the join. Blocks are atomic,
+so a paragraph never straddles two spine documents; what this protects is that the reading order
+runs on across the seam the packer writes. Negative controls cover both sides landing in one
+document, the reverse order, a boundary two documents away, a repeated tail, a dropped opening,
+an inserted sentence, wrong source pages and malformed expectations, over built archives and over
+a real converted EPUB whose seam was edited
+([record](../measurements/spine-continuity/record.md)).
 
 `tools/check_corpus_content.py --case <id> --evaluation <directory>` reruns the contract on an
 existing evaluation without reconverting; `tools/check_corpus_quality.py --case <id> --evaluation <directory>`
@@ -177,13 +191,51 @@ highest normalized correlation (`tools/image_regions.py`); a page passes when so
 `minimumCorrelation`, 0.95 by default. References assume the library's default 180 DPI; a changed
 raster policy must regenerate them.
 
-Ten references cover the Our Flag flag-size table, three USGS copper tables, three FAA page-121
-figures, a Wallace quadratic exercise, the Geltman page-image fallback and CDC's image-only
-page 13. Correct crops score 0.982–0.997; wrong images on the same pages score at most 0.62, a
-table crop with its lower half blanked 0.64, erasing the Wallace exercise from its crop 0.44, and
-a 1.5-pixel blur still scores 0.96. The check proves a region is present, complete and aligned,
-not every glyph: erasing one exponent from the Wallace exercise still scores 0.97
-([record](../measurements/image-regions/record.md)).
+Sixteen references cover the Our Flag flag-size table, three USGS copper tables, three FAA
+page-121 figures, a Wallace quadratic exercise, the Geltman page-image fallback, CDC's image-only
+page 13, and six rows and columns inside the two table crops. Correct crops score 0.982–0.997;
+wrong images on the same pages score at most 0.62, a table crop with its lower half blanked 0.64,
+erasing the Wallace exercise from its crop 0.44, and a 1.5-pixel blur still scores 0.96. The check
+proves a region is present, complete and aligned, not every glyph: erasing one exponent from the
+Wallace exercise still scores 0.97 ([record](../measurements/image-regions/record.md)).
+
+A whole-table reference is insensitive to one row or one cell, so tables are also pinned row by
+row and column by column: a row reference holds one row's label and all its cells, a column
+reference the column's header and every value under it. Erasing a row scores 0.676 (USGS) and
+0.870 (Our Flag) against its row reference, while the whole-table reference scores 0.954 and
+0.927 and so misses the USGS row; erasing one cell scores 0.870–0.919 against its row reference
+and 0.951–0.986 against the whole table, which misses it. A value moved to another row scores
+0.890 against the column reference and 0.962 against the whole table. Two cells of similar shape
+exchanged inside a row or a column are not caught at 0.95 (0.957–0.983 measured), so row and
+column references qualify completeness and grouping, not the identity of an individual cell.
+
+#### Why there is no colour or pixel appearance gate
+
+A region reference is rendered `-gray` and every converted image is converted to `L` before
+comparison, so colour never reaches the statistic. Recolouring CDC's page-13 comic to its
+complementary hues in CIE Lab, which keeps lightness and changes 23% of the pixels by more than
+20 levels in some channel, moves the score from 0.9972 to 0.9970. The check therefore cannot
+speak for a flag's colours or a diagram's colour coding, and the contracts do not claim to.
+
+Tightening it is not simply a matter of comparing colours or raising the floor. The reference
+comes from Poppler and the converted image from Core Graphics, so the two never agree exactly:
+correct crops sit at 0.982–0.997 against a 0.95 floor, and about 0.03 of that margin is renderer
+disagreement rather than fidelity. The same converter binary on one Mac already produces images
+that differ between execution environments — 36 of CDC's images differ in decoded RGB between the
+host and a sandbox, with mean absolute channel differences near 0.4–0.6 out of 255
+([record](../measurements/raster-environment/record.md)) — so any exact-pixel or exact-colour
+comparison is drift, not a defect. Scale is pinned too: references assume the default 180 DPI, and
+a device that trips a pixel ceiling rescales every image and fails every reference.
+
+What would make an appearance gate possible, in the order it would have to be built: render the
+reference through the library's rasterizer as well as Poppler and measure how far the two
+disagree per page, so the floor can be set from measured renderer drift instead of a single
+hand-chosen constant; add a colour statistic robust to that drift, such as the mean hue and
+chroma of the few largest flat regions of a crop, which would catch a flag's canton turning the
+wrong colour without asserting any pixel; and record the raster policy (DPI and any binding
+ceiling) in the sidecar so a run under another policy skips the reference explicitly instead of
+failing it. Until those are measured, the lane keeps presence, completeness and alignment, and
+image legibility and colour stay unqualified.
 
 ## Adding or changing a regression
 

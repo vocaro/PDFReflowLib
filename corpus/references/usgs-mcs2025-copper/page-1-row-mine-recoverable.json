@@ -1,0 +1,21 @@
+{
+  "case": "usgs-mcs2025-copper",
+  "sourceSHA256": "348b1e224d830a51e6d35cf81343eead26a0cb2a4e74c474d699b7faed1b10e6",
+  "page": 1,
+  "regionPoints": [
+    40.0,
+    234.0,
+    565.0,
+    245.0
+  ],
+  "target": "Salient Statistics row: Mine, recoverable with 1,200 / 1,230 / 1,230 / 1,130 / 1,100 across the five year columns",
+  "renderer": "pdftoppm version 26.04.0",
+  "renderDPI": 180,
+  "referenceDPI": 36,
+  "inkThreshold": 200,
+  "pixels": [
+    254,
+    5
+  ],
+  "sha256": "6c3427c2d2b36fd9a9bc540528bf379f80773cc67cdeb4b89c27bd1ba1b5137f"
+}

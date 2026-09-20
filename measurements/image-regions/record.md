@@ -62,3 +62,43 @@ Poppler and Core Graphics rasterize differently, so references are not pixel-exa
 leaves about 0.03 of margin below correct crops. A different raster DPI or a binding pixel ceiling
 changes image scale and fails every reference until they are regenerated. Scanned-table cell
 transcription (#31) and structured table output remain separate work.
+
+## Rows, columns and colour
+
+A second pass on top of `e00432b` asked what a whole-table reference is actually sensitive to, and
+added six references inside the two table crops: the Salient Statistics rows "Mine, recoverable"
+and "London Metal Exchange, grade A, cash" and its 2022 column, and the flag-size table's
+125-foot and 250-foot rows and its column of pole heights. Each region was chosen by reading the
+source page cell by cell at 180 and 300 DPI; the renders were inspected before the references were
+written. `cell-controls.py` recomputes `cell-controls.json` from converted output, mutating the
+converted crop rather than the reference, so every control describes a defect a reader would see.
+
+| Control | Whole table | Its row reference | Its column reference |
+| --- | --- | --- | --- |
+| USGS correct output | 0.989 | 0.995 / 0.997 | 0.991 |
+| USGS London row erased | 0.954 | 0.676 | 0.940 |
+| USGS Mine 2022 cell erased | 0.986 | 0.919 | 0.951 |
+| USGS Mine 2022/2023 cells exchanged | 0.988 | 0.975 | 0.986 |
+| USGS London 2020/2021 cells exchanged | 0.987 | 0.958 | 0.991 |
+| USGS 2022 column, two rows' values exchanged | 0.987 | 0.975 | 0.957 |
+| Our Flag correct output | 0.983 | 0.992 / 0.993 | 0.983 |
+| Our Flag 125-foot row erased | 0.927 | 0.870 | 0.903 |
+| Our Flag 125-foot size cell erased | 0.951 | 0.870 | 0.983 |
+| Our Flag two rows' sizes exchanged | 0.975 | 0.963 | 0.983 |
+| Our Flag two rows' pole heights exchanged | 0.962 | 0.963 | 0.890 |
+
+At the 0.95 default the whole-table reference misses a lost cell (0.951, 0.986) and, on USGS, a
+lost row (0.954); the row reference catches both (0.676–0.919), and the column reference catches a
+value moved to another row (0.890) that nothing else catches. No reference catches two cells of
+similar shape exchanged inside one row or column: the lowest such score is 0.957, and the closest
+pair (1,230 against 1,130) scores 0.975 even in a crop holding only those two cells. Raising the
+floor to about 0.98 would catch them, but correct crops sit at 0.982–0.997, so the margin would be
+smaller than the renderer disagreement the 0.95 floor exists to absorb. The references were left at
+the default and the limit recorded instead.
+
+Colour is not compared at all: the reference is rendered `-gray` and every converted image is
+reduced to `L`. Recolouring CDC's page-13 comic to its complementary chroma in CIE Lab, which
+preserves lightness while changing 23.2% of the pixels by more than 20 levels in some channel and
+1.9% by more than 60, leaves the score at 0.997 against 0.997 for the correct output. What an
+appearance gate would need before it could be added is in
+[regression-testing](../../doc/regression-testing.md#why-there-is-no-colour-or-pixel-appearance-gate).

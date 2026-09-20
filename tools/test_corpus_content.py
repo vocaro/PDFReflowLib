@@ -4,7 +4,7 @@ import tempfile
 import unittest
 import zipfile
 
-from check_corpus_content import ROOT, assess, read_pages
+from check_corpus_content import ROOT, assess, read_pages, read_spine
 
 
 class CorpusContentTests(unittest.TestCase):
@@ -184,6 +184,77 @@ class CorpusContentTests(unittest.TestCase):
             if not missing_image:
                 archive.writestr('EPUB/picture.png', b'test asset; this test checks presence only')
         return path
+
+    def spine(self, *bodies):
+        """An EPUB whose spine holds these bodies in order, for boundary checks."""
+        directory = tempfile.TemporaryDirectory(); self.addCleanup(directory.cleanup)
+        path = Path(directory.name) / 'book.epub'
+        names = [f'part-{index}.xhtml' for index in range(len(bodies))]
+        opf = '<package xmlns="http://www.idpf.org/2007/opf"><manifest>'
+        opf += ''.join(f'<item id="i{index}" href="{name}"/>' for index, name in enumerate(names))
+        opf += '</manifest><spine>' + ''.join(f'<itemref idref="i{index}"/>' for index in range(len(bodies)))
+        opf += '</spine></package>'
+        with zipfile.ZipFile(path, 'w') as archive:
+            archive.writestr('EPUB/package.opf', opf)
+            for name, body in zip(names, bodies):
+                archive.writestr('EPUB/' + name, '<html xmlns="http://www.w3.org/1999/xhtml" '
+                                 'xmlns:epub="http://www.idpf.org/2007/ops"><body>' + body + '</body></html>')
+        return path
+
+    def continuity(self, *bodies, **changes):
+        pages, markers, documents = read_spine(self.spine(*bodies))
+        return self.check(pages=pages, markers=markers, documents=documents, **changes)
+
+    def test_spine_boundary_continuity_requires_adjacency_order_and_no_duplication(self):
+        self.contract = {'sourceSHA256': 'source', 'pages': [{'page': 1, 'text': ['alpha']}], 'spineContinuity': [
+            {'sourcePages': [1, 2], 'beforeBoundary': ['alpha', 'ends one document'],
+             'afterBoundary': ['opens the next'], 'contiguous': True}]}
+        opens = '<span epub:type="pagebreak" id="page-2"/><p>opens the next document</p>'
+        ends = '<span epub:type="pagebreak" id="page-1"/><p>alpha ends one document</p>'
+        self.assertTrue(self.continuity(ends, opens)['passed'])
+        # Both sides inside one document prove nothing about a boundary, and neither does the
+        # reverse order; text between the two sides, or repeated anywhere, breaks the join.
+        for bodies in [(ends + opens.replace('<span epub:type="pagebreak" id="page-2"/>', '')
+                        + '<span epub:type="pagebreak" id="page-2"/><p>tail</p>', '<p>later</p>'),
+                       (opens.replace('page-2', 'page-1'), ends.replace('page-1', 'page-2')),
+                       (ends, '<span epub:type="pagebreak" id="page-2"/><p>an inserted sentence</p>'
+                        '<p>opens the next document</p>'),
+                       (ends, opens + '<p>alpha ends one document again</p>'),
+                       (ends, '<span epub:type="pagebreak" id="page-2"/><p>only a fragment</p>')]:
+            self.assertFalse(self.continuity(*bodies)['passed'], bodies)
+        # The documents on both sides must carry the reviewed source pages.
+        self.contract['spineContinuity'][0]['sourcePages'] = [2, 2]
+        self.assertFalse(self.continuity(ends, opens)['passed'])
+        # A boundary two documents away is not the boundary the contract reviewed.
+        self.contract['spineContinuity'][0]['sourcePages'] = [1, 2]
+        self.assertFalse(self.continuity(ends, '<p>a whole document in between</p>', opens)['passed'])
+
+    def test_spine_boundary_continuity_tolerates_a_gap_only_when_unreviewed(self):
+        self.contract = {'sourceSHA256': 'source', 'pages': [{'page': 1, 'text': ['alpha']}], 'spineContinuity': [
+            {'sourcePages': [1, 2], 'beforeBoundary': ['alpha'], 'afterBoundary': ['opens the next']}]}
+        bodies = ('<span epub:type="pagebreak" id="page-1"/><p>alpha ends one document</p>',
+                  '<span epub:type="pagebreak" id="page-2"/><p>a caption first</p><p>opens the next</p>')
+        self.assertTrue(self.continuity(*bodies)['passed'])
+        self.contract['spineContinuity'][0]['contiguous'] = True
+        self.assertFalse(self.continuity(*bodies)['passed'])
+
+    def test_invalid_spine_boundary_contracts_are_not_ignored(self):
+        bodies = ('<span epub:type="pagebreak" id="page-1"/><p>alpha ends one document</p>',
+                  '<span epub:type="pagebreak" id="page-2"/><p>opens the next</p>')
+        for entry in [{'sourcePages': [1, 2], 'beforeBoundary': ['alpha']},
+                      {'sourcePages': [1, 2], 'beforeBoundary': ['alpha'], 'afterBoundary': []},
+                      {'sourcePages': [1, 2], 'beforeBoundary': ['alpha'], 'afterBoundary': ['  ']},
+                      {'sourcePages': [1, 2], 'beforeBoundary': 'alpha', 'afterBoundary': ['x']},
+                      {'sourcePages': [], 'beforeBoundary': ['alpha'], 'afterBoundary': ['x']},
+                      {'sourcePages': [2, 1], 'beforeBoundary': ['alpha'], 'afterBoundary': ['x']},
+                      {'sourcePages': [1, 3], 'beforeBoundary': ['alpha'], 'afterBoundary': ['x']},
+                      {'sourcePages': [1, 2], 'beforeBoundary': ['alpha'], 'afterBoundary': ['x'], 'extra': 1},
+                      {'sourcePages': [1, 2], 'beforeBoundary': ['alpha'], 'afterBoundary': ['x'], 'contiguous': 'yes'},
+                      ['alpha', 'x']]:
+            self.contract = {'sourceSHA256': 'source', 'pages': [{'page': 1, 'text': ['alpha']}],
+                             'spineContinuity': [entry]}
+            with self.assertRaises(ValueError, msg=entry):
+                self.continuity(*bodies)
 
     def test_spine_order_inline_styling_and_continuation_across_files(self):
         path = self.epub('<span epub:type="pagebreak" id="page-1"/><p>al<strong>pha</strong> beta</p>',

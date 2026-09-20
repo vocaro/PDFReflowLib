@@ -96,9 +96,16 @@ private func spacingEvidence(_ show: String, prefix: String = "", suffix: String
 
 @Test func unsupportedSourceSpacingStateFallsBack() throws {
     let show = "[(Dair)-5(y)] TJ"
-    for prefix in ["1 Tc", "1 Tw", "1 Ts", "3 Tr", "90 Tz", "/G gs", "Q", "q", "/Missing Do", "/Nested Do"] {
+    for prefix in ["1 Ts", "3 Tr", "90 Tz", "/G gs", "Q", "q", "/Missing Do"] {
         #expect(try spacingEvidence(show, prefix: prefix).isEmpty)
     }
+    // Character and word spacing are measured, not refused (#119), but Type3 space removal models
+    // neither, so a spaced show supplies no removal evidence. A Form XObject is tolerated: its
+    // text is not scanned, so it can neither supply nor contradict a boundary.
+    for prefix in ["1 Tc", "1 Tw"] {
+        #expect(try spacingEvidence(show, prefix: prefix).first?.text == nil)
+    }
+    #expect(try spacingEvidence(show, prefix: "/Nested Do").first?.extraSpaces(in: "Dair y") == [4])
     #expect(try spacingEvidence(show + " (again) Tj").isEmpty)
     #expect(try spacingEvidence(show, subtype: "Type1").isEmpty)
     #expect(try spacingEvidence(show, matrix: "0.001 0 0 0.001 0 0").first?.text == nil)
@@ -109,7 +116,11 @@ private func spacingEvidence(_ show: String, prefix: String = "", suffix: String
 
 @Test func sourceSpacingBoundsWorkAndRestoresSavedFontPlacement() throws {
     let show = "[(Dair)-5(y)] TJ"
-    #expect(try spacingEvidence(show, prefix: String(repeating: "/T3_0 1 Tf ", count: 256)).isEmpty)
+    // TeX output reselects a font at every mathematical symbol, so the cap is on distinct fonts
+    // parsed, not on selections (#120); ten thousand selections of one font still read.
+    #expect(try spacingEvidence(show, prefix: String(repeating: "/T3_0 1 Tf ", count: 256))
+        .first?.extraSpaces(in: "Dair y") == [4])
+    #expect(try spacingEvidence(show, prefix: String(repeating: "/T3_0 1 Tf ", count: 10_001)).isEmpty)
     #expect(try spacingEvidence("[(" + String(repeating: "a", count: 4097) + ")] TJ").first?.text == nil)
     #expect(try spacingEvidence("[" + String(repeating: "(a) ", count: 4097) + "] TJ").isEmpty)
     let evidence = try spacingEvidence(show, prefix: "q 2 0 0 2 100 100 cm /T3_0 9 Tf Q 1 0 0 1 10 20 cm")
@@ -130,4 +141,170 @@ private func spacingEvidence(_ show: String, prefix: String = "", suffix: String
                 good + String(repeating: " ", count: 65_536)] {
         #expect(NativeSpacingReader.characterMap(Data(bad.utf8)) == nil)
     }
+}
+
+// MARK: - The ported reader (#225: #43/#110, #119, #128, #120)
+
+/// Every line of a source page, repaired, beside the text PDFKit read: the rebuilt source page
+/// supplies the evidence and the layout capture supplies PDFKit's own lines and rectangles.
+private func repairedLines(spacing: String, layout: String) throws -> [(pdfkit: String, repaired: String)] {
+    let source = try SpacingSourceFixture.load(spacing), capture = try SourceLayoutFixture.load(layout)
+    #expect(source.sourceSHA256 == capture.sourceSHA256)
+    #expect(source.page == capture.page)
+    let document = try source.document()
+    let evidence = NativeSpacingReader.read(try #require(document.page(at: 1)))
+    func rect(_ values: [Double]) -> CGRect { CGRect(x: values[0], y: values[1], width: values[2], height: values[3]) }
+    let bounds = try capture.attributedLines.map { rect(try #require($0.rect)) }
+    return capture.attributedLines.enumerated().map { index, line in
+        (line.text, NativeSpacingReader.apply(evidence, to: line.attributedString(), bounds: bounds[index],
+                                              allBounds: bounds).string)
+    }
+}
+
+/// Only the lines the repair changes, as `PDFKit's text` → `repaired text`; every other line must
+/// come back exactly as PDFKit read it.
+private func changedLines(spacing: String, layout: String) throws -> [String: String] {
+    var changed: [String: String] = [:]
+    for line in try repairedLines(spacing: spacing, layout: layout) where line.pdfkit != line.repaired {
+        changed[line.pdfkit] = line.repaired
+    }
+    return changed
+}
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/119"),
+      .bug("https://github.com/vocaro/PDFReflowLib/issues/128"))
+func sourceReportPageRestoresItsDroppedWordAndSentenceSpaces() throws {
+    // 9/11 report page 19, the first page of chapter 1: Distiller justified it with character and
+    // word spacing and folded each word space into a TJ adjustment, so PDFKit reads none of them.
+    #expect(try changedLines(spacing: "911-19", layout: "911-19") == [
+        "work.Some made their way to the Twin Towers,the signature structures of the":
+            "work. Some made their way to the Twin Towers, the signature structures of the",
+        "WorldTrade Center complex in NewYork City.Others went to Arlington,Vir-":
+            "World Trade Center complex in New York City. Others went to Arlington, Vir-",
+        "ginia, to the Pentagon.Across the Potomac River, the United States Congress":
+            "ginia, to the Pentagon. Across the Potomac River, the United States Congress",
+        "better for a safe and pleasant journey.Among the travelers were Mohamed Atta":
+            "better for a safe and pleasant journey. Among the travelers were Mohamed Atta",
+        "Boston:American 11 and United 175. Atta and Omari boarded a 6:00 A.M.":
+            "Boston: American 11 and United 175. Atta and Omari boarded a 6:00 A.M.",
+        "When he checked in for his flight to Boston,Atta was selected by a com-":
+            "When he checked in for his flight to Boston, Atta was selected by a com-",
+        "Atta and Omari arrived in Boston at 6:45. Seven minutes later,Atta appar-":
+            "Atta and Omari arrived in Boston at 6:45. Seven minutes later, Atta appar-",
+        "another terminal at Logan Airport.They spoke for three minutes.3 It would be":
+            "another terminal at Logan Airport. They spoke for three minutes.3 It would be",
+    ])
+}
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/119"))
+func sourceAlgebraPageKeepsEveryGapItsFormulasSet() throws {
+    // Wallace page 343 (the quadratic formula and its derivation): Ghostscript's TeX output kerns
+    // and italic-corrects inside every formula at word-space widths. #119's hard constraint is
+    // that none of those gaps becomes a space.
+    #expect(try changedLines(spacing: "algebra-343", layout: "algebra-343").isEmpty)
+}
+
+// MARK: - Partial-line ownership (#139 item 1)
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/139"))
+func sourceRowSplitBetweenTwoPdfkitLinesRepairsTheHalfEachLineHolds() throws {
+    // The 9/11 appendix's page 452 sets each entry as one show across two columns, which PDFKit
+    // splits into two lines: the name, then the alias and the description. The whole-line walk
+    // owns neither half, because each line accounts for only part of the show.
+    let changed = try changedLines(spacing: "911-452", layout: "911-452")
+    #expect(changed["(a.k.a.Ammar al Baluchi) Pakistani; KSM’s nephew;"]
+        == "(a.k.a. Ammar al Baluchi) Pakistani; KSM’s nephew;")
+    #expect(changed["(a.k.a.Abu Hafs al Masri) Egyptian; al Qaeda mili-"]
+        == "(a.k.a. Abu Hafs al Masri) Egyptian; al Qaeda mili-")
+    #expect(changed["Barakat)Yemeni; potential suicide bomber in"] == "Barakat) Yemeni; potential suicide bomber in")
+    // The name half of each row keeps its own text: the boundary belongs to the other line.
+    #expect(changed["Ali Abdul Aziz Ali "] == nil)
+}
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/139"))
+func aBoundaryBesideTextTheShowsCannotAccountForIsDropped() {
+    let source = Array("the Twin Towers,the signature".utf16)
+    let boundaries: Set<Int> = [16]
+    // PDFKit read the line whole: the boundary is strictly inside the one agreeing segment.
+    #expect(NativeSpacingReader.segmentedInsertions(in: Array("the Twin Towers,the signature".utf16),
+                                                    source: source, boundaries: boundaries) == [16])
+    // A line PDFKit read only the tail of: the walk resynchronizes and still applies it, where the
+    // whole-line walk discards it.
+    #expect(NativeSpacingReader.segmentedInsertions(in: Array("Towers,the signature".utf16),
+                                                    source: source, boundaries: boundaries) == [7])
+    #expect(NativeSpacingReader.wholeLineInsertions(in: Array("Towers,the signature".utf16),
+                                                    source: source, boundaries: boundaries) == nil)
+    // A character the shows cannot account for at the boundary itself: the character after it
+    // never matched, so the boundary is against a disagreeing region and is dropped.
+    #expect(NativeSpacingReader.segmentedInsertions(in: Array("the Twin Towers,\u{FFFD}he signature".utf16),
+                                                    source: source, boundaries: boundaries) == nil)
+    // One character earlier, the boundary is again strictly inside a segment that matched on both
+    // sides, so it applies although the rest of the line did not.
+    #expect(NativeSpacingReader.segmentedInsertions(in: Array("the Twin Tower\u{FFFD},the signature".utf16),
+                                                    source: source, boundaries: boundaries) == [16])
+    #expect(NativeSpacingReader.segmentedInsertions(in: Array("th\u{FFFD} Twin Towers,the signature".utf16),
+                                                    source: source, boundaries: boundaries) == [16])
+    // A space PDFKit already sets at the boundary inserts nothing.
+    #expect(NativeSpacingReader.segmentedInsertions(in: Array("the Twin Towers, the signature".utf16),
+                                                    source: source, boundaries: boundaries) == nil)
+    // Nothing resynchronizes on fewer than eight matching characters.
+    #expect(NativeSpacingReader.resynchronize(source: Array("abcdefgh".utf16), at: 0,
+                                              extracted: Array("Xabcdefgh".utf16), at: 0) != nil)
+    #expect(NativeSpacingReader.resynchronize(source: Array("abcdefg".utf16), at: 0,
+                                              extracted: Array("Xabcdefg".utf16), at: 0) == nil)
+}
+
+// MARK: - The rules (#119, #128)
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/119"))
+func sameFontWordSpaceTakesTheMeasuredThresholds() {
+    func space(_ before: Unicode.Scalar?, _ left: Unicode.Scalar, _ right: Unicode.Scalar,
+               _ gap: CGFloat, _ after: Unicode.Scalar? = nil) -> Bool {
+        NativeSpacingReader.sameFontWordSpace(before: before, left: left, right: right, gap: gap, after: after)
+    }
+    // Before a letter, kerns end at 0.059 em and word spaces begin at 0.075 em.
+    #expect(!space(nil, "r", "s", 0.059))
+    #expect(space(nil, "r", "s", 0.075))
+    // Before an overhanging capital after a lowercase letter or punctuation, the space's own kern
+    // is inside the gap: abbreviations and initials lie at or below 0.001 em.
+    #expect(!space(nil, "s", "T", 0.001))
+    #expect(space(nil, "s", "T", 0.005))
+    // A chained initial (`C.|A.`) takes the letter threshold, as two capitals do.
+    #expect(!space("C", ".", "A", 0.03, "."))
+    #expect(space("C", ".", "A", 0.03, "n"))
+    // Never inside a number or a time, and never beside a mathematical letter.
+    #expect(!space("3", ".", "5", 1))
+    #expect(!space("8", ":", "4", 1))
+    #expect(!space(nil, "\u{1D452}", "m", 1))
+    #expect(!space(nil, ".", "\u{1D453}", 1))
+    // A gap wider than one em is a column, not a word space; character spacing decides those.
+    #expect(!space(nil, "r", "s", 1.01))
+}
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/128"))
+func sentenceSpaceReadsTheWordsAroundTheBoundaryNotTheGap() {
+    func sentence(_ word: String, _ following: String, gap: CGFloat = -0.1, startsShow: Bool = false) -> Bool {
+        NativeSpacingReader.sentenceSpace(word: Array(word.unicodeScalars), startsShow: startsShow,
+                                          following: Array(following.unicodeScalars), gap: gap)
+    }
+    #expect(sentence("casualties.", "The "))
+    #expect(sentence("Jews.\u{201D}", "The "))
+    #expect(sentence("(OMB).", "They "))
+    #expect(sentence("FAA:", "Yes. "))
+    // A capital continuing an abbreviation is set closed: `U.|S.`, `D.|C.`, `N.|Y.`.
+    #expect(!sentence("U.", "S. "))
+    #expect(!sentence("H.", "Doc. "))
+    #expect(sentence("H.", "Kean "))
+    // An apostrophe, an ellipsis and an address are not sentence ends.
+    #expect(!sentence("O\u{2019}", "Neill "))
+    #expect(!sentence("threat...", "Is "))
+    #expect(!sentence("www.usdoj.gov/print.php3?", "ReportID "))
+    #expect(!sentence("www.foxnews.com.", "The "))
+    // A list or note number that opens the show keeps its period closed.
+    #expect(!sentence("10.", "August ", startsShow: true))
+    #expect(sentence("10.", "August ", startsShow: false))
+    // Mathematics is never a sentence boundary, and a gap of a whole em is not one either.
+    #expect(!sentence("\u{1D452}.", "The "))
+    #expect(!sentence("casualties.", "The ", gap: 1.01))
+    #expect(!sentence("casualties.", "The ", gap: -0.16))
 }

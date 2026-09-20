@@ -126,11 +126,51 @@ matches a show origin to a native line with a 0.75 pt tolerance and caps anchors
 10,000 each and rectangle comparisons at two million per page; exhausting a cap falls back to
 spatial reconstruction rather than partial results.
 
-- **`NativeSpacingReader`.** Removes a PDFKit-inserted space only when a supported Type3
-  text-show operation contradicts it: a tiny negative `TJ` adjustment at the removed space, with
-  the font's one-byte `ToUnicode` map, text and placement matching. Explicit spaces, genuine
-  word-size gaps, style attributes and ambiguous geometry are kept; unsupported fonts,
-  transforms, Forms, character maps, text state and excessive work reject the page's evidence.
+- **`NativeSpacingReader`.** Repairs a PDFKit word boundary only where a supported text-show
+  operation contradicts it. It *removes* a space when a Type3 `TJ` array places a tiny negative
+  adjustment there, with the font's one-byte `ToUnicode` map, text and placement matching. It
+  *inserts* the space the source draws without a space glyph (#43/#110, #119, #128, #120), on
+  pages it can model completely: `Tc`, `Tw` and the text matrix are tracked (a show that draws
+  straight after another continues the cursor by the previous show's own advance, spacing and
+  adjustments included); `Ts` and `Tr` must be 0 and `Tz` 100; a `gs` that selects a font, a
+  missing resource, `'`, `"`, an inline image, rotated pages and work beyond the caps (10,000
+  font selections, 256 distinct fonts parsed, 10,000 shows, 4,096 codes or `TJ` elements per
+  show, 8,192 code units per line) reject the page's evidence. Rotated or mirrored text supplies
+  no evidence but does not disqualify the page's upright text. Simple fonts are read through a
+  one-byte `ToUnicode` map (bfchar and bfrange, any number of UTF-16 code units, a two-byte
+  `<0000> <FFFF>` codespace read as one byte) or, without one and outside TrueType, through
+  `WinAnsiEncoding` and its `Differences`; glyph advances come from `FirstChar`/`Widths`.
+  A boundary is restored when:
+  - **a font change** separates two shows on one baseline (within 0.1 em) by at least 0.15 em,
+    with a letter or digit on either side, or a closing `) ] , ; :` that ends a word or formula
+    before a letter;
+  - **a note reference**, a show of one to four digits at most 0.8 of the next show's size and
+    raised 0.15 to 0.6 of it, precedes a capital or opening quote at a word gap;
+  - **`sameFontWordSpace`** reads a `TJ` adjustment between two glyphs of one show, in a producer
+    that justifies with character or word spacing, as min(adjustment, adjustment + `Tc`) in em:
+    0.066 em before a letter, digit or `(`, and 0.005 em before an overhanging `A T V W Y` or an
+    opening quote that follows a lowercase letter or punctuation; never above 1 em, never inside
+    a number or time (`3.5`, `8:46`), never beside a mathematical letter (U+1D400–U+1D7FF,
+    U+2100–U+214F), never where a chained initial (`C.|A.`) explains the gap, and never on a
+    boundary beside a one-glyph string whose other side is also a word gap (letter-spaced type);
+  - **a character-spaced column gap** of at least 0.5 em set by `Tc` splits a two-glyph show;
+  - **`sentenceSpace`** finds sentence punctuation (`. , ; : ? !`, optionally behind closing
+    quotes or brackets) after a letter, digit or closing bracket, before a capital not followed by
+    a period or an opening quote before an alphanumeric, at a gap between -0.15 and 1 em: the
+    kerned boundaries where no gap remains. An apostrophe, an ellipsis, an address (`/ @ = \`,
+    `www`), a mathematical letter, a number that opens the show, and an initial before a
+    capitalized abbreviation ending in a period are not sentence boundaries.
+
+  The boundaries are applied only where the shows and PDFKit agree. `NativeSpacingOwnership`
+  splits the line into its maximal agreeing segments — resynchronizing on eight matching
+  characters, skipping at most 64 either way and at most 64 times per line — and applies a
+  boundary only where the characters on both sides of it matched inside one segment, so a
+  boundary inside a disagreeing region or against its edge is dropped (#139 item 1). A show whose
+  origin another line's rectangle holds still reaches this line when its baseline lies inside the
+  line and its glyph advances cross the line's span, which is how one printed row PDFKit split at
+  a wide gap is repaired in the half that holds each boundary. Explicit spaces, genuine word-size
+  gaps and style attributes are kept, a boundary PDFKit already spaces inserts nothing, and a show
+  whose origin lies in more than one line's rectangle rewrites nothing.
 - **`GlyphIdentityReader` (#217, two of #186's five fixes).** PDFKit reads every glyph through
   its font's `ToUnicode` map; two kinds of font disagree with what they draw. A dingbat font
   (Zapf Dingbats and its clones ITC Zapf Dingbats, `Dingbats`, Monotype Sorts, subset tags

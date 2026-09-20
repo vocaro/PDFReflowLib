@@ -60,7 +60,11 @@ into values at once. The content-stream readers (`NativeSpacingReader`, `GlyphId
 `MarkedTextReader`) are visitors on one driver, `ContentStreamWalk`, which owns the scanner
 lifecycle, graphics-state stack, matrices, text-object state, show operators, operation budget
 and cancellation check; a reader keeps only the state its evidence needs and differs from the
-others only in `ContentStreamWalk.Options`. `CGPDFObjects` holds the typed dictionary accessors,
+others only in `ContentStreamWalk.Options`. `NativeSpacingReader` keeps the text matrix itself,
+apart from the walk's line matrix, because only a reader that measures glyph advances knows where
+a show that draws straight after another begins; `NativeSpacingOwnership` holds how much of a
+PDFKit line the shows must account for before their boundaries apply, so the rule layer and the
+ownership rule can be read, reviewed and reverted apart. `CGPDFObjects` holds the typed dictionary accessors,
 inherited-resources walk and font enumeration they share; `AnchorMatcher` matches a show origin
 to the one native line it lies in; `GraphicsReader` keeps its own paint-oriented scan over the
 same helpers. `StructureTreeReader` parses tagged-PDF structure into value-only page/MCID

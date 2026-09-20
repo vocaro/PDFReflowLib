@@ -28,7 +28,7 @@ Fetch sources with `tools/fetch_corpus.py --case <id>` (checksum-verified, cache
 
 What the individual gates check:
 
-- `swift test`: 313 Swift Testing tests with no known-issue wrappers, using the real Apple
+- `swift test`: 319 Swift Testing tests with no known-issue wrappers, using the real Apple
   PDF/OCR stack. They cover extraction, the document model, layout, raster pixels (crop origins,
   rotations, annotations, resource ceilings), preserved regions (fraction bars, raised exponents
   and all six cells of a ruled table in actual EPUB images at 72/144 DPI, with prose and code
@@ -312,6 +312,23 @@ and `capture-ocr-layout-fixture.swift` captures Vision extraction:
 swiftc $(python3 tools/pdfreflow_tools/swift_sources.py capture-algebra-layout.swift) \
   -o /tmp/capture-algebra-layout
 /tmp/capture-algebra-layout corpus/cache/Beginning_and_Intermediate_Algebra.pdf /tmp/algebra-17-layout.json
+```
+
+A layout capture records PDFKit's own reading, which the spacing reader then repairs; capture one
+with the reader in the state whose defect the test pins, and never recapture a fixture to make a
+repaired line agree with itself.
+
+`capture-spacing-source.swift` captures the other half of a spacing test: one page's own content
+stream and the font metadata the reader reads from it (subtype, font matrix, first code, widths,
+encoding, `ToUnicode`), plus the names of the other resources the stream mentions. No font program
+is captured, so the rebuilt page places text exactly as the source does and draws nothing, which
+is all the reader measures. `SpacingSourceFixture.document()` rebuilds it through a byte-exact
+Latin-1 writer, because the captured stream and CMaps hold bytes outside ASCII.
+
+```sh
+swiftc $(python3 tools/pdfreflow_tools/swift_sources.py capture-spacing-source.swift) \
+  -o /tmp/capture-spacing-source
+/tmp/capture-spacing-source gpo-911-2004 19 /tmp/911-19-spacing.json
 ```
 
 Review source and geometry changes before replacing a bundled fixture; never regenerate one

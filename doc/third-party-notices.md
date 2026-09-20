@@ -84,8 +84,9 @@ under MIT and are not resources of the shipped library target.
 
 ## Government-document development fixtures
 
-The `faa-{81,91,363…365,437…439,511}`, `fed-{13,32,45,46,54,75,77,103,109,123}`, `flag-{27,31}`, `911-{19…26,33,50,51,65…71,126,161,254,255,306,451,471…476,526,571,579…585}`, `cdc-5`, `dga-1`, `warren-50`, `warren-910`, `blue-5`, `blue-12`, `usda-9`, `usgs-{1,2}`, `nbs-7`, `p596-{24…27}`, `earthdata-{16…18}` and `noaa-{33,80,139,1619}` layout JSONs under the test fixtures
+The `faa-{81,91,363…365,437…439,511}`, `fed-{13,32,45,46,54,75,77,103,109,123}`, `flag-{27,31}`, `911-{19…26,33,50,51,65…71,117,126,161,254,255,306,451,471…476,526,571,579…585}`, `cdc-5`, `dga-1`, `warren-50`, `warren-910`, `blue-5`, `blue-12`, `usda-9`, `usgs-{1,2}`, `nbs-7`, `p596-{24…27}`, `loper-{2,7,13,60}`, `earthdata-{16…18}` and `noaa-{33,80,139,1619}` layout JSONs under the test fixtures
 contain extracted text and geometry from the corresponding U.S. government corpus documents.
+The `loper` captures are text derivatives of a Supreme Court slip opinion, a U.S. government work.
 The `earthdata` captures are text derivatives of agency-authored slide text, within the owner's
 2026-09-17 clearance for that case; like every layout JSON they hold no crop, raster or insignia.
 Each records its publisher URL, title and pinned source checksum. The `faa-{81,91,365}`,

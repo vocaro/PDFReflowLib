@@ -1,0 +1,225 @@
+{
+  "cases": {
+    "arxiv-replay-clocks-2023": {
+      "after": {
+        "endingInBrokenWord": 0,
+        "interruptingSentence": 1,
+        "pre": 2
+      },
+      "before": {
+        "endingInBrokenWord": 0,
+        "interruptingSentence": 2,
+        "pre": 5
+      }
+    },
+    "cdc-zombie-pandemic-2011": {
+      "after": {
+        "endingInBrokenWord": 0,
+        "interruptingSentence": 0,
+        "pre": 1
+      },
+      "before": {
+        "endingInBrokenWord": 0,
+        "interruptingSentence": 0,
+        "pre": 1
+      }
+    },
+    "census-rrs2002-01": {
+      "after": {
+        "endingInBrokenWord": 0,
+        "interruptingSentence": 0,
+        "pre": 17
+      },
+      "before": {
+        "endingInBrokenWord": 0,
+        "interruptingSentence": 0,
+        "pre": 17
+      }
+    },
+    "cia-blue-book-14-1955": {
+      "after": {
+        "endingInBrokenWord": 16,
+        "interruptingSentence": 35,
+        "pre": 666
+      },
+      "before": {
+        "endingInBrokenWord": 16,
+        "interruptingSentence": 35,
+        "pre": 667
+      }
+    },
+    "dga-2025-2030": {
+      "after": {
+        "endingInBrokenWord": 0,
+        "interruptingSentence": 4,
+        "pre": 8
+      },
+      "before": {
+        "endingInBrokenWord": 0,
+        "interruptingSentence": 4,
+        "pre": 8
+      }
+    },
+    "faa-phak-8083-25c": {
+      "after": {
+        "endingInBrokenWord": 1,
+        "interruptingSentence": 106,
+        "pre": 505
+      },
+      "before": {
+        "endingInBrokenWord": 1,
+        "interruptingSentence": 107,
+        "pre": 508
+      }
+    },
+    "fed-explained-2021": {
+      "after": {
+        "endingInBrokenWord": 14,
+        "interruptingSentence": 25,
+        "pre": 81
+      },
+      "before": {
+        "endingInBrokenWord": 14,
+        "interruptingSentence": 25,
+        "pre": 81
+      }
+    },
+    "gpo-911-2004": {
+      "after": {
+        "endingInBrokenWord": 190,
+        "interruptingSentence": 57,
+        "pre": 1291
+      },
+      "before": {
+        "endingInBrokenWord": 198,
+        "interruptingSentence": 79,
+        "pre": 1321
+      }
+    },
+    "gpo-our-flag-2003": {
+      "after": {
+        "endingInBrokenWord": 1,
+        "interruptingSentence": 0,
+        "pre": 7
+      },
+      "before": {
+        "endingInBrokenWord": 1,
+        "interruptingSentence": 9,
+        "pre": 19
+      }
+    },
+    "gpo-warren-1964-suspect-text-excerpt": {
+      "after": {
+        "endingInBrokenWord": 0,
+        "interruptingSentence": 0,
+        "pre": 2
+      },
+      "before": {
+        "endingInBrokenWord": 0,
+        "interruptingSentence": 0,
+        "pre": 2
+      }
+    },
+    "irs-p596-zhs-2025": {
+      "after": {
+        "endingInBrokenWord": 0,
+        "interruptingSentence": 1,
+        "pre": 60
+      },
+      "before": {
+        "endingInBrokenWord": 0,
+        "interruptingSentence": 1,
+        "pre": 60
+      }
+    },
+    "nbs-jres-geltman-1977": {
+      "after": {
+        "endingInBrokenWord": 0,
+        "interruptingSentence": 0,
+        "pre": 1
+      },
+      "before": {
+        "endingInBrokenWord": 0,
+        "interruptingSentence": 0,
+        "pre": 1
+      }
+    },
+    "ntrs-20180003024-earthdata-slides-2018": {
+      "after": {
+        "endingInBrokenWord": 0,
+        "interruptingSentence": 0,
+        "pre": 3
+      },
+      "before": {
+        "endingInBrokenWord": 0,
+        "interruptingSentence": 0,
+        "pre": 3
+      }
+    },
+    "scotus-loper-bright-2024": {
+      "after": {
+        "endingInBrokenWord": 0,
+        "interruptingSentence": 1,
+        "pre": 7
+      },
+      "before": {
+        "endingInBrokenWord": 20,
+        "interruptingSentence": 37,
+        "pre": 75
+      }
+    },
+    "uscis-m618-arabic-2015": {
+      "after": {
+        "endingInBrokenWord": 0,
+        "interruptingSentence": 0,
+        "pre": 6
+      },
+      "before": {
+        "endingInBrokenWord": 0,
+        "interruptingSentence": 0,
+        "pre": 6
+      }
+    },
+    "usda-ars-agresearch-2012-11": {
+      "after": {
+        "endingInBrokenWord": 0,
+        "interruptingSentence": 1,
+        "pre": 2
+      },
+      "before": {
+        "endingInBrokenWord": 0,
+        "interruptingSentence": 1,
+        "pre": 2
+      }
+    },
+    "usgs-mcs2025-copper": {
+      "after": {
+        "endingInBrokenWord": 0,
+        "interruptingSentence": 0,
+        "pre": 0
+      },
+      "before": {
+        "endingInBrokenWord": 0,
+        "interruptingSentence": 0,
+        "pre": 0
+      }
+    },
+    "wallace-algebra-2010": {
+      "after": {
+        "endingInBrokenWord": 4,
+        "interruptingSentence": 14,
+        "pre": 2909
+      },
+      "before": {
+        "endingInBrokenWord": 4,
+        "interruptingSentence": 15,
+        "pre": 2911
+      }
+    }
+  },
+  "measure": {
+    "endingInBrokenWord": "<pre> blocks whose text ends in a hyphen",
+    "interruptingSentence": "<pre> blocks between a <p> that does not end a sentence and a <p> opening lower-case",
+    "pre": "<pre> blocks in the spine documents"
+  }
+}

@@ -90,7 +90,12 @@ itself and its stripped predecessor for cross-page continuation. `FurnitureDetec
 match (`collect`, `resolve`, `apply`; `strip` runs the phases over an array so the two paths
 cannot diverge). `LayoutReconstructor.blocks` reads a page's typography once into
 `PageTypography`, classifies each line with `role(of:)` into a `LineRole`, and hands the ordered
-elements to a `BlockAssembler`. Everything the pages share arrives as one `DocumentContext`
+elements to a `BlockAssembler`. A role can carry the page-level evidence a decision needs that the
+assembler, reading one line at a time in reading order, cannot see for itself: a line opening with
+a number or a letter and a point is either a list item or a wrapped line whose first word is an
+initial, a citation or a year, and telling them apart takes both the column the whole page
+establishes and what the line before this one did. The page measures the column when it
+classifies; the assembler supplies the rest. Everything the pages share arrives as one `DocumentContext`
 (the `HyphenContext`, language, document body size, recurring label styles, numbered-note pages),
 so a new document-wide signal is a field, not a parameter. `HyphenRepair` edits text runs only;
 the geometric predicates the rules share (`hasSize`, `overlapsHorizontally`, `sharesColumn`,

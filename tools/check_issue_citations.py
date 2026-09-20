@@ -90,11 +90,11 @@ ALLOWED = {
     116: ('historical', 'the recognition-coverage rule and its band retry, ported onto main and named by its issue'),
     67: ('historical', 'the artifact and marked-content scoping of an unplaceable show, ported onto main and named by its issue'),
     91: ('historical', 'the space-only-show and invisible-artifact rules, ported onto main and named by their issue'),
+    39: ('historical', 'the marker-continuation rule, ported onto main for #238 and named by its issue'),
 
     # Closed, but the defect is still in `main`; the prose says so and names the commit.
     14: ('branch-only', '2e18b3149'),
     37: ('branch-only', '277cbde39'),
-    39: ('branch-only', '3f7c23ddc'),
     40: ('branch-only', '20c78f352'),
     45: ('branch-only', 'e1cbc0d0e'),
     153: ('branch-only', '58a2ddda6'),

@@ -464,6 +464,12 @@ it does not assert that an individual cell is wrong.
 printed rows and handwritten-sheet review targets. [Issue #19](https://github.com/vocaro/PDFReflowLib/issues/19)
 tracks the warning/refusal behavior; passing the signal contract will not establish correct cells.
 
+Page 19 carries the one known false join of the marker-continuation rule
+([citation-continuations](../measurements/citation-continuations/record.md)): on this inherited-OCR
+page a serial-number code list fills equal-width lines, so `1132. 02 representing an additional
+observer` reads as a wrapped continuation of the `1132.01` entry above it and is appended to it.
+The rule consults neither `unverifiedTextLayer` nor the shape of an enumerated code list.
+
 
 ## Issue #30 coverage expansion
 
@@ -485,7 +491,7 @@ python3 tools/run_corpus_regressions.py --converter .build/corpus-cli/out/Produc
 | Case | Gap | Baseline finding | Tracking |
 | --- | --- | --- | --- |
 | [`usgs-mcs2025-copper`](../measurements/usgs-mcs2025-copper/record.md) | Borderless tables | Fixed (#36, ported for [#229](https://github.com/vocaro/PDFReflowLib/issues/229)): the tables keep their crops and the section prose around them reflows (page 1, 355 words instead of 20; page 2, 578 instead of 251) | [#36](https://github.com/vocaro/PDFReflowLib/issues/36) |
-| [`scotus-loper-bright-2024`](../measurements/scotus-loper-bright-2024/record.md) | Page-bottom footnotes | Text complete; footnotes merge into body paragraphs; 75 citation-leading lines become preformatted | [#40](https://github.com/vocaro/PDFReflowLib/issues/40) closed, fix only in `20c78f352`; [#39](https://github.com/vocaro/PDFReflowLib/issues/39) closed, fix only in `3f7c23ddc`; no open tracker, see [#231](https://github.com/vocaro/PDFReflowLib/issues/231) |
+| [`scotus-loper-bright-2024`](../measurements/scotus-loper-bright-2024/record.md) | Page-bottom footnotes | Text complete; footnotes merge into body paragraphs. The 75 citation-leading lines that became preformatted are fixed (#39): 7 remain, four after an abbreviation or a sentence end, two opening a page after a running header and one `* * *` separator | [#40](https://github.com/vocaro/PDFReflowLib/issues/40) closed, fix only in `20c78f352`; no open tracker, see [#231](https://github.com/vocaro/PDFReflowLib/issues/231) |
 | [`census-rrs2002-01`](../measurements/census-rrs2002-01/record.md) | Damaged encoding | Fixed (#38): `TextEncodingCheck` flags the shifted-letter body (pages 2-20) as `damagedTextEncoding` and recognizes it by default; minor OCR misreadings remain on individual words | [#38](https://github.com/vocaro/PDFReflowLib/issues/38) |
 | [`uscis-m618-arabic-2015`](../measurements/uscis-m618-arabic-2015/record.md) | Right-to-left script | Arabic words correct; mixed-direction runs fragment and reverse | [#41](https://github.com/vocaro/PDFReflowLib/issues/41) |
 | [`irs-p596-zhs-2025`](../measurements/irs-p596-zhs-2025/record.md) | CJK script | Order and amounts correct; spaces inserted inside CJK; some columns rasterized | [#42](https://github.com/vocaro/PDFReflowLib/issues/42) open; [#36](https://github.com/vocaro/PDFReflowLib/issues/36) closed, fix only in `3507d7d01`, live tracker [#229](https://github.com/vocaro/PDFReflowLib/issues/229) |

@@ -116,15 +116,19 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn('README.md', names)
 
     def test_the_twelve_of_234_are_all_branch_only_and_named_in_the_prose(self):
-        # Two of the twelve #234 named are no longer branch-only: #36's rules were ported for
-        # #229 and #43's missing-space half for #225, so both are cited as history now. #43's
-        # other half is still unported, and the corpus guide names its commit for that.
+        # Three of the twelve #234 named are no longer branch-only: #36's rules were ported for
+        # #229, #43's missing-space half for #225 and #39's marker-continuation rule for #238, so
+        # all three are cited as history now. #43's other half is still unported, and the corpus
+        # guide names its commit for that.
         self.assertEqual(gate.ALLOWED[36][0], 'historical')
         self.assertEqual(gate.ALLOWED[43][0], 'historical')
+        self.assertEqual(gate.ALLOWED[39][0], 'historical')
         self.assertIn('417edc705', (ROOT / 'doc/corpus.md').read_text())
-        # #13's budget was ported too, so three of the twelve are now history.
+        # #13's budget and #39's wrapped-line rule were ported too, so four of the twelve
+        # #234 named are now history.
         self.assertEqual(gate.ALLOWED[13][0], 'historical')
-        twelve = [14, 37, 39, 40, 45, 153, 158, 164, 165]
+        self.assertEqual(gate.ALLOWED[39][0], 'historical')
+        twelve = [14, 37, 40, 45, 153, 158, 164, 165]
         for issue in twelve:
             self.assertEqual(gate.ALLOWED[issue][0], 'branch-only', issue)
         cited = {}

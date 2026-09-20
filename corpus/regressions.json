@@ -357,7 +357,7 @@
     {
       "id": "gpo-911-2004",
       "sourceSHA256": "657d41475eb3a9a5e3e87a6c7c51ac1dfbe1af7566d1abff7bf7286e7e1c0e1b",
-      "basis": "Existing reviewed positiveTextChecks in gpo-911-2004-review.json; native word boundaries must survive. Header/source-body checks cover visually reviewed physical pages 20/21, 65/67 and 472; chapter 1 title is reviewed on page 19. Captured source geometry protects remaining lines on 21 pages; no external prototype heading statistics are reproduced. Page 20 protects the already-supported raised reference 4 after 7:45. Reviewed pages 472/473/532 protect selected numbered paragraphs, a second paragraph within note 66, and the dedented chapter-number continuation inside note 9. General multi-paragraph/cross-page ownership and chapter-scoped reference links remain unqualified. Pages 20-21 and 24-25 visually reviewed: each paragraph continues onto the next page and must remain one paragraph across the source-page marker (#27). Pages 161, 526 and 581-583 visually reviewed against their Poppler rasters for #229 and #227: 161 and 526 print an underlined word (`gain` and `risk`; `not`) as a painted rule and must reflow their prose with no crop at all, and 581-583 are notes pages that paint nothing, cite web addresses with query strings, and keep only their source-page reference image. Their earlier minimumImages 2 counted the runaway crop, not a figure the page prints. Notes 39, 40 and 9 on pages 472 and 532 carry the word spaces the source draws without a space glyph, which the spacing reader restores (#119, #128, #225): the boundaries were reviewed against the rendered source pages, and the expectations do not bless any other line of those notes.",
+      "basis": "Existing reviewed positiveTextChecks in gpo-911-2004-review.json; native word boundaries must survive. Header/source-body checks cover visually reviewed physical pages 20/21, 65/67 and 472; chapter 1 title is reviewed on page 19. Captured source geometry protects remaining lines on 21 pages; no external prototype heading statistics are reproduced. Page 20 protects the already-supported raised reference 4 after 7:45. Reviewed pages 472/473/532 protect selected numbered paragraphs, a second paragraph within note 66, and the dedented chapter-number continuation inside note 9. General multi-paragraph/cross-page ownership and chapter-scoped reference links remain unqualified. Pages 20-21 and 24-25 visually reviewed: each paragraph continues onto the next page and must remain one paragraph across the source-page marker (#27). Pages 161, 526 and 581-583 visually reviewed against their Poppler rasters for #229 and #227: 161 and 526 print an underlined word (`gain` and `risk`; `not`) as a painted rule and must reflow their prose with no crop at all, and 581-583 are notes pages that paint nothing, cite web addresses with query strings, and keep only their source-page reference image. Their earlier minimumImages 2 counted the runaway crop, not a figure the page prints. Notes 39, 40 and 9 on pages 472 and 532 carry the word spaces the source draws without a space glyph, which the spacing reader restores (#119, #128, #225): the boundaries were reviewed against the rendered source pages, and the expectations do not bless any other line of those notes. Page 117 visually reviewed: the page's last printed line opens with the second half of a president's name (\"W. Bush\"), which the restored word spaces made visible, and must stay inside the paragraph it wraps from (#39).",
       "pages": [
         {
           "page": 15,
@@ -585,6 +585,16 @@
               "end": "We are flying very, very low.",
               "next": "Seconds later she said"
             }
+          ]
+        },
+        {
+          "page": 117,
+          "orderedText": [
+            "For President Clinton, they were to be Presidential Decision Directives;",
+            "W. Bush, National Security Policy Directives."
+          ],
+          "paragraphs": [
+            "For President Clinton, they were to be Presidential Decision Directives; for President George W. Bush, National Security Policy Directives."
           ]
         }
       ]
@@ -1091,7 +1101,7 @@
     {
       "id": "scotus-loper-bright-2024",
       "sourceSHA256": "12f5ea075004886774c25e7831ea1608fd0f831f0113e83bb0e85811c0a4bb6e",
-      "basis": "Source pages 60, 97 and 98 visually reviewed. Protects footnote reference markers and text, the footnote continued from page 97 onto page 98 in source order before footnote 3, and body text around citation-leading lines. Does not bless footnotes merged into body paragraphs with dash separators, retained running headers, or citation-leading lines split into preformatted blocks (#39, #40).",
+      "basis": "Source pages 60, 97 and 98 visually reviewed. Protects footnote reference markers and text, the footnote continued from page 97 onto page 98 in source order before footnote 3, and body text around citation-leading lines. Source pages 2, 7 and 13 visually reviewed for the same shape: a wrapped line opening with an initial, a citation abbreviation or a year stays inside its paragraph (#39). Does not bless footnotes merged into body paragraphs with dash separators or retained running headers (#40).",
       "pages": [
         {
           "page": 60,
@@ -1109,6 +1119,9 @@
               "before": "make[s] for good government.\u201d Ibid.",
               "after": "But in our democracy unelected judges"
             }
+          ],
+          "paragraphs": [
+            "Brand X Internet Services, 545 U. S. 967, 982\u2013983 (2005). And those officials may even disagree with and effectively overrule not only their own past interpretations of a law"
           ]
         },
         {
@@ -1135,6 +1148,38 @@
             "rather than agencies to decide in the last analysis.\u201d",
             "using a deferential standard.",
             "In a footnote responding to the last two paragraphs, the majority raises the white flag"
+          ]
+        },
+        {
+          "page": 2,
+          "orderedText": [
+            "who may well have drafted the laws at issue. United States",
+            "v. Moore, 95 U. S. 760, 763.",
+            "United States v. Dickson,"
+          ],
+          "paragraphs": [
+            "who may well have drafted the laws at issue. United States v. Moore, 95 U. S. 760, 763. \u201cRespect,\u201d though, was just that.",
+            "United States v. Morton Salt Co., 338 U. S. 632, 644, the Court often treated agency determinations of fact"
+          ]
+        },
+        {
+          "page": 7,
+          "orderedText": [
+            "has not deferred to an agency interpretation under Chevron since",
+            "2016. But because Chevron remains on the books"
+          ],
+          "paragraphs": [
+            "has not deferred to an agency interpretation under Chevron since 2016. But because Chevron remains on the books, litigants must continue to wrestle with it"
+          ]
+        },
+        {
+          "page": 13,
+          "orderedText": [
+            "A divided panel of the D. C. Circuit affirmed. See 45",
+            "F. 4th 359 (2022). The majority addressed various provi"
+          ],
+          "paragraphs": [
+            "A divided panel of the D. C. Circuit affirmed. See 45 F. 4th 359 (2022). The majority addressed various provisions of the MSA"
           ]
         }
       ]

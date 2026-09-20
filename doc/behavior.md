@@ -884,6 +884,13 @@ Evidence: [heading-body-regressions](../measurements/heading-body-regressions/re
   the CJK punctuation a line may end on) joins them with none (#42). A boundary with Latin text
   keeps the source's own spacing in both directions, so `提交表格` + `1040` still takes a space.
 
+- An item the page broke mid-word keeps the rest of its word (#245). Where a preformatted list
+  item ends in a hyphen, a soft hyphen or the book's line-end substitute, and the line beneath it
+  opens in lowercase at the same size on the page's own leading, that line joins the item and the
+  break character goes with the join. The 9/11 report sets its recommendations as items and breaks
+  one over the block boundary, so `• …supervise the planning and direc-` was followed by
+  `tion of the operation;` as a paragraph of its own.
+
 Evidence: [spine-continuity](../measurements/spine-continuity/record.md),
 [line-end-hyphen-substitutes](../measurements/line-end-hyphen-substitutes/record.md).
 

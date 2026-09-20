@@ -409,13 +409,18 @@ func theNineElevenReportKeepsAPresidentsInitialInItsParagraph() throws {
     let points = preformatted(reconstruct(warren))
     #expect(markers(warren.lines.map(\.text)).allSatisfy { points.contains($0) })
 
-    // Bulleted lists are never candidates at all.
+    // Bulleted lists are never candidates at all: every item opens a block of its own. An item
+    // the page broke mid-word keeps the rest of its word, so its block opens with the item's text
+    // less the hyphen rather than matching the line exactly — `fed-77`'s
+    // `• the CAMELS rating of the affiliated Deposi-` carries on `tory institutions` (#245).
     for name in ["fed-77", "fed-123"] {
         let bulleted = try SourceLayoutFixture.load(name)
         let items = bulleted.lines.map(\.text).filter { $0.hasPrefix("• ") }
         let blocks = preformatted(reconstruct(bulleted.content()))
         #expect(!items.isEmpty)
-        #expect(items.allSatisfy { blocks.contains($0) }, Comment(rawValue: name))
+        #expect(items.allSatisfy { item in
+            blocks.contains(item) || blocks.contains { $0.hasPrefix(String(item.dropLast())) }
+        }, Comment(rawValue: name))
     }
 }
 

@@ -132,6 +132,9 @@ struct BlockAssembler {
     /// The line of the heading block last appended, for a heading the page breaks over two lines
     /// with no space at the break (#42).
     private var headingLine: TextLine?
+    /// The line of the last preformatted block appended, for an item whose last word the page
+    /// broke over the block boundary (#245).
+    private var itemLine: TextLine?
     private var codeOrigin: CGFloat?
     /// The table row the last block holds, while more pieces of that printed row can still join
     /// it (#137, #210). Anything else the page hands over closes the row.
@@ -222,9 +225,25 @@ struct BlockAssembler {
         return gap >= -line.fontSize && gap <= line.fontSize * 0.8
     }
 
+    /// Whether a prose line finishes a word the item above it broke: the item ends in a hyphen or
+    /// a soft hyphen, the line opens in lowercase, and it sits directly beneath the item on the
+    /// page's own leading. The hyphen goes with the join, as `HyphenRepair` removes one it can
+    /// decide; here the page's own break is the evidence and the item's own words are the rest of
+    /// it (#245).
+    private func continuesBrokenItem(_ above: TextLine, _ line: TextLine, text: InlineText) -> Bool {
+        let broken = text.text.hasSuffix("-") || text.text.hasSuffix("\u{00ad}")
+            || hyphens.lineEndSubstitute.map { text.text.last == $0 } == true
+        guard broken,
+              line.text.first?.isLowercase == true, above.hasSize(line.fontSize) else { return false }
+        let gap = above.rect.minY - line.rect.maxY
+        let size = max(line.fontSize, 4)
+        return gap >= -size * 0.6 && gap <= size * 0.8
+    }
+
     mutating func append(_ line: TextLine, as role: LineRole) {
         flushNote()
         if case .heading = role {} else { headingLine = nil }
+        if case .listItem = role {} else if case .prose = role {} else { itemLine = nil }
         // An untagged line never extends a tagged heading: the tags said where that heading ends,
         // and prose set beneath it at the column's leading is the text it heads, not more of the
         // heading. The roles below that open a block of their own flush the paragraph themselves.
@@ -264,6 +283,8 @@ struct BlockAssembler {
             flushParagraph()
             // Preserve significant breaks and native styles; do not rewrite list markers or code.
             blocks.append(ReflowBlock(content: .preformatted(line.content), page: page))
+            itemLine = line
+            return
         case .markedLine(let column):
             // A wrapped line whose first word is an initial, a citation or a year belongs to the
             // paragraph above it; anything else opens an item and keeps its own block (#39).
@@ -296,6 +317,20 @@ struct BlockAssembler {
             }
             rowInProgress = line
         case .prose:
+            // An item the page broke mid-word keeps the rest of its word. The 9/11 report sets
+            // its recommendations as items and breaks one over the block boundary, so
+            // `• …supervise the planning and direc-` was followed by `tion of the operation;` as
+            // a paragraph of its own, with the word split between them (#245).
+            if let above = itemLine, let last = blocks.last, last.page == page,
+               case let .preformatted(text) = last.content, paragraph.elements.isEmpty,
+               continuesBrokenItem(above, line, text: text) {
+                var combined = text
+                combined.removeLastCharacter()
+                combined.append(line.content)
+                blocks[blocks.count - 1].content = .preformatted(combined)
+                itemLine = line
+                return
+            }
             if let prev = previous, !continuesParagraph(prev, line) { flushParagraph() }
             if paragraph.elements.isEmpty { paragraph = line.content }
             else { paragraph = join(paragraph, line.content) }

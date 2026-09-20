@@ -11,6 +11,10 @@ struct ExtractedPage: Equatable, Sendable {
     /// A simple font with an index-style `Differences` encoding and no `ToUnicode` map is
     /// present (#38). Structural evidence only; `PageDiagnosis` adds the word statistics.
     var hasUnmappedFont: Bool
+    /// Glyphs of such a font whose decoded characters the extracted text does not carry, because
+    /// their line was left as PDFKit read it (`GlyphIndexDecoder.unreadGlyphs`). Zero on every
+    /// page without an index-glyph font.
+    var unreadGlyphs: Int
     /// Warnings the readers raised, in emission order.
     var warnings: [PageWarning]
 }
@@ -73,8 +77,14 @@ enum PageReader {
             }
             // Structural font evidence is read here; the text judgment follows outside the pool.
             let unmappedFont = !content.lines.isEmpty && !requiresPageImage && TextEncodingCheck.hasUnmappedFont(reference)
+            // What the decoder read but the page's lines did not take. Read here, beside the
+            // font evidence, because it compares the document's own reading with the extracted
+            // text and needs neither PDFKit's line geometry nor its extraction gate.
+            let unread = unmappedFont
+                ? GlyphIndexDecoder.unreadGlyphs(on: reference, in: content.lines.map(\.text).joined(separator: "\n"))
+                : 0
             return ExtractedPage(content: content, placedImages: graphics.images,
-                                 hasUnmappedFont: unmappedFont, warnings: warnings)
+                                 hasUnmappedFont: unmappedFont, unreadGlyphs: unread, warnings: warnings)
         }
     }
 }

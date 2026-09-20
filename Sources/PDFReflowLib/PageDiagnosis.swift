@@ -46,9 +46,18 @@ enum PageDiagnosis {
         let raw = content.lines.map(\.text).joined()
         let replacements = raw.unicodeScalars.filter { $0.value == 0xFFFD || $0.value == 0xFFFC }.count
         // Index-style glyph names without ToUnicode make PDFKit report indexes as characters.
-        // Flag only when the extracted words also fail the declared language's statistics (#38).
+        // Flag only when the extracted words also fail the declared language's statistics (#38),
+        // or when the page carries more characters the conversion could not state than an
+        // ordinary page's stray replacements. `GlyphIndexDecoder` reads what a document's own
+        // words establish and writes U+FFFD where they establish nothing (#143, #226), so a page
+        // whose prose it recovered reads as English and keeps its text, while one whose
+        // mathematics is drawn in fonts nothing in the document explains still reports the
+        // damaged encoding and goes to recognition exactly as it did before the decoder existed.
+        let unstated = replacements + extracted.unreadGlyphs > max(2, raw.count / 50)
         let damagedEncoding = extracted.hasUnmappedFont
-            && TextEncodingCheck.isImplausible(content.lines.map(\.text).joined(separator: "\n"), language: options.language)
+            && (unstated
+                || TextEncodingCheck.isImplausible(content.lines.map(\.text).joined(separator: "\n"),
+                                                   language: options.language))
         let imageBackedText = !content.lines.isEmpty && content.graphics.contains {
             coversPage($0, bounds: content.bounds)
         }

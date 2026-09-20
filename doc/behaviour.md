@@ -239,7 +239,10 @@ Two signals must agree before a page reports `damagedTextEncoding`:
 - **Statistical.** With at least 20 words, the extracted words show a function-word rate under
   5% against an embedded English function-word list and a rare-bigram rate of at least 30%
   against an embedded 300-pair common-bigram table. Only documents declared English (`en`,
-  `en-*`) are judged. No dictionary download, network or model is involved.
+  `en-*`) are judged. No dictionary download, network or model is involved. This signal is also
+  met, whatever the words say, when the page's replacement characters plus the glyphs
+  `GlyphIndexDecoder` read but the page's lines did not take exceed `max(2, characters / 50)` —
+  the same share `PageEvidence.lacksReadableText` already allows.
 
 Example: the Census report's LaTeX pages render correctly but extract with every letter shifted
 by three ("Two data files were used." extracts as "Wzr gdwd ohv zhuh xvhg1", its dropped
@@ -252,6 +255,74 @@ source-page reference, and contributes no words to the hyphen-repair vocabulary.
 the unreadable text.
 
 Evidence: [census-rrs2002-01](../measurements/census-rrs2002-01/record.md).
+
+## GlyphIndexDecoder: reading an index-named font from the document's own words (#143, #226)
+
+Nothing in such a file states a character. The embedded CFF program names its own glyphs `G<n>`
+exactly as the `Differences` array does, its built-in encoding places `G<n>` at code `n`, and the
+descriptor's `CharSet` repeats the names, so the index is a slot in the font program Distiller
+read, not a letter. The offset from slot to character is therefore read from the document's own
+words, per font, and never assumed.
+
+**Fonts.** A Type1, TrueType, MMType1 or Type3 font with no `ToUnicode` whose `Differences` names
+at least half its codes by index (`TextEncodingCheck.isIndexStyleGlyphName`), with at most 1024
+`Differences` entries and 64-character names. A font is keyed by its subtype, `BaseFont` and its
+whole `Differences` array, so one font shared across pages or reopened in another document is one
+font. At most 256 such fonts and 4096 pages per document; at most 500,000 glyphs and 50,000
+distinct words per font.
+
+**Words.** Every show of such a font across the document is split into words wherever a gap of at
+least 0.15 em stands before a glyph. A gap is the character spacing (`Tc`, in ems of the selected
+size) that the `TJ` adjustments do not cancel; a show begins a word. Census's body kerns measure
+0.00 em and its word gaps 0.43 em, and its letter-spaced headings set 1.10 em of character
+spacing between two glyphs of one string while cancelling it with a +1120 adjustment between the
+others, which is how `1Introduction` recovers its space. A page drawn with `'` or `"`, whose own
+word spacing this does not model, supplies no evidence at all.
+
+**Offset.** Every offset in −255…255 under which at least half the font's glyph occurrences read
+as ASCII letters is judged with #38's embedded English tables, reading index `n` as code
+`n − offset`: at least 20 words of two letters or more, 10 of them four letters or longer, a
+function-word rate of at least 10%, a rare-bigram rate of at most 10%, at least 50% lower-case
+letters, at least one capitalized word, and at most 2% of words with a capital after a lower-case
+letter. A font is decoded only when exactly one offset passes. The lower-case and capital rules
+are what separate an offset from its case-swapped twin 32 slots away; the long-word rule is what
+keeps a math font's two-letter variable runs off function words.
+
+**Characters.** A decoded font's codes read through TeX's Cork (T1) table when its `BaseFont`,
+subset tag aside, matches `^(dc|ec)[a-z]+[0-9]+$` — the name that states the encoding — and
+otherwise through the letters, digits and `!#$%&()*+,-./:;=?@[]` that TeX's OT1 and T1 and Adobe's
+Standard and WinAnsi all place at the same code. Cork's accents (0–12) and its compound-word mark
+and per-mille zero (23, 24) state no character and stay undecoded. A `Differences` entry with an
+ordinary glyph name (`space`, `quoteright`, `fi`) states its own character whatever the offset is.
+
+**Family corroboration.** A Cork-named font whose own words are too few for any statistics takes
+the offset that at least two other independently decoded Cork-named fonts of the same document
+agree on, provided that offset states a character for every one of its codes. That is the whole of
+the relaxation: `dctt10075` draws one e-mail address in 24 glyphs while `dcr`, `dcti` and `dcbx`
+establish +3 from thousands. Nothing else inherits an offset, and the `cm` math fonts in
+particular do not — the document disagrees inside that family, `cmmib` sitting three slots on from
+`cmmi`.
+
+**Line repair.** A PDFKit line is rebuilt from the index-glyph shows whose origin lies in its
+rectangle and in no other line's, in drawing order, and only when those glyphs spell what PDFKit
+read: every non-blank character of the line must be the character PDFKit reports for the next
+glyph in order (its index as a code point, for an index in 33–126 or 161–255 under a one-letter
+glyph-name prefix), and every glyph must be placed. A glyph PDFKit reports as nothing — a ligature
+— is inserted where it is drawn, after an adjoining space when its own gap opens the word. A word
+gap the page's character spacing hid opens a word even where PDFKit set none. A glyph whose font
+the document does not establish is written U+FFFD and may stand for one character of the line or
+for none, whichever completes the alignment. Anything else — a character no glyph explains, a
+glyph left over, a line no show can be attributed to — leaves the line exactly as PDFKit read it.
+Lines at most 4096 characters and 4096 glyphs, with an alignment budget of 20,000 steps.
+
+**Reach.** Nothing happens at all unless the document established at least one font's characters,
+so a book whose index-glyph fonts stay undecoded keeps #38's path untouched. Text the decoder read
+that the page's lines did not take (`unreadGlyphs`) is counted against the page above, but only
+for runs of at least four stated characters that hold one of #38's function words: a table row or
+a column heading holds none, and rows a detector lifts into a preserved image never reach a reader
+as text.
+
+Evidence: [glyph-index-decoding](../measurements/glyph-index-decoding/record.md).
 
 ## EnglishText and TextLayerPlausibility: inherited layers, recognition, drawn text
 

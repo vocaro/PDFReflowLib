@@ -48,7 +48,7 @@ Extraction is one pass over the pages, each through named stages with value type
 
 | Stage | Module | Produces |
 | --- | --- | --- |
-| Read | `PageReader` over `PDFPageSource`, `NativeTextReader`, `GraphicsReader`, `StructureTreeReader` | `ExtractedPage`: the `PageContent`, placed raster images, unmapped-font flag, reader warnings |
+| Read | `PageReader` over `PDFPageSource`, `NativeTextReader`, `GraphicsReader`, `StructureTreeReader` | `ExtractedPage`: the `PageContent`, placed raster images, unmapped-font flag, the glyphs the decoder read that the lines did not take, reader warnings |
 | Diagnose | `PageDiagnosis` with `PageInkMeasurer`, `TextEncodingCheck`, `TextLayerPlausibility`, `OCRTextCoverage`, `EnglishText` | `PageEvidence`: image-backed, damaged encoding, plausibility finding, drawn text, replacement-character counts |
 | Plan | `RecognitionPolicy.plan` (pure) | `RecognitionPlan`: keep the extracted page, or recognize it replacing or comparing |
 | Recognize | `OCRReader` (Vision) when the plan asks | `RecognitionOutcome` |
@@ -57,12 +57,16 @@ Extraction is one pass over the pages, each through named stages with value type
 
 `NativeTextReader` obtains PDFKit line selections, geometry and attributed runs and copies them
 into values at once. The content-stream readers (`NativeSpacingReader`, `GlyphIdentityReader`,
-`MarkedTextReader`) are visitors on one driver, `ContentStreamWalk`, which owns the scanner
+`GlyphIndexDecoder`, `MarkedTextReader`) are visitors on one driver, `ContentStreamWalk`, which owns the scanner
 lifecycle, graphics-state stack, matrices, text-object state, show operators, operation budget
 and cancellation check; a reader keeps only the state its evidence needs and differs from the
 others only in `ContentStreamWalk.Options`. `CGPDFObjects` holds the typed dictionary accessors,
 inherited-resources walk and font enumeration they share; `AnchorMatcher` matches a show origin
-to the one native line it lies in; `GraphicsReader` keeps its own paint-oriented scan over the
+to the one native line it lies in. `GlyphIndexDecoder` is the one reader whose evidence is the
+whole document rather than one page: a font that names its glyphs by index states no character
+anywhere in the file, so the characters are established from the document's own words and read
+back once per document, and `GlyphIdentityReader` rewrites an affected line from them. A page
+whose fonts it cannot establish keeps the damaged-encoding diagnosis and its recognition; `GraphicsReader` keeps its own paint-oriented scan over the
 same helpers. `StructureTreeReader` parses tagged-PDF structure into value-only page/MCID
 associations, and no Core Graphics object survives its parsing pool. `ConversionWarnings`
 composes every warning's prose from a `PageWarning` kind in one place.

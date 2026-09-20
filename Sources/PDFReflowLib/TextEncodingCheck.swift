@@ -151,7 +151,7 @@ enum TextEncodingCheck {
     /// 148 English function words and report vocabulary. Ordinary prose scores 0.3–0.5; the
     /// shifted Census pages score at most 0.004 (measured while landing #38; the record was not
     /// retained, so `DamagedEncodingTests` is the surviving evidence).
-    private static let stopwordList: Set<String> = Set("""
+    static let stopwordList: Set<String> = Set("""
     the of and to in a is that for it as was with be by on not he this are or his from at which but
     have an had they you were their one all we can her has there been if more when will would who so no
     than into them its two out then up also only new some could time these first any may other such
@@ -165,7 +165,7 @@ enum TextEncodingCheck {
     /// macOS `/usr/share/dict/words` (web2; 235,974 words; 97.7% of pair occurrences); the
     /// derivation script was not retained. Prose pages score 0.02–0.07 rare pairs; the shifted
     /// Census pages score 0.54–0.70.
-    private static let commonBigrams: Set<UInt16> = {
+    static let commonBigrams: Set<UInt16> = {
         let pairs = "erintionteanalaticenisreralerirostnearliesntorunitlacoiotoianicaedustasstrlydemachphngloouelnaacolhe"
             + "omdimenothsietsellmioppeosidvecehihoileaasulprndhaaburotblpomoncpaecemocgeogamshciapctpisuschynsdary"
             + "soumadsaepsprtsmdobiodtyagcrbeutgibaivimcuipgaplkermaegrtuooiziriglumpifvieobooiglfibrieeeruaircovqu"

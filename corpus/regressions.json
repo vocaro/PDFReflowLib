@@ -1042,7 +1042,7 @@
     {
       "id": "census-rrs2002-01",
       "sourceSHA256": "0f97380ae4308581bd70013b7317faafd7c217654236bd31d1448f26eae56905",
-      "basis": "Source pages 1, 2 and 3 converted and each read against its Poppler raster (tools/compare_pdf.py). The Word cover (page 1) extracts cleanly and reports no damagedTextEncoding. Pages 2-20 (LaTeX body, Type 1C fonts with custom encodings and no ToUnicode) each report damagedTextEncoding and are recognized (#38); recognition is reviewed on pages 2 and 3 against their source rasters and matches closely, including page 3's heading 'Data Files', its exact sentence 'Two data files were used.' and all 16 of its numbered income/flag fields in order, and page 2's title, byline and 'Introduction' heading. Minor OCR misreadings elsewhere on those pages (a dropped bracket, 'Ilag' for 'flag', 'Buresu' for 'Bureau') are not pinned. Pages 4-20 are not individually re-verified here beyond the warning/recognition pattern confirmed uniform across all of them (recognizedPageCount 19, damagedTextEncoding on exactly pages 2-20).",
+      "basis": "Source pages 1, 2, 3 and 20 converted and each read against its Poppler raster (pdftoppm -r 110). The Word cover (page 1) extracts cleanly and reports no damagedTextEncoding. Pages 2-20 are LaTeX body pages whose Type 1C fonts name every glyph G<index> with no ToUnicode, so PDFKit reported each letter three on; GlyphIndexDecoder now establishes each font's offset from the document's own words (#143, #226) and pages 2, 3, 10, 12, 13, 14 and 15 reflow their own text, while pages 4-9, 11 and 16-20 keep damagedTextEncoding and recognition (recognizedPageCount 12). Pages 2 and 3 were read character for character against their rasters: page 2's title, byline, the typewriter e-mail address that #149 item 2 asks for and the letter-spaced '1 Introduction' heading whose word gap the source's own character spacing hides; page 3's '2 Data Files' heading, its exact sentence 'Two data files were used.' with the fi ligature PDFKit drops, and all 16 numbered income/flag fields in order with the fl ligature recognition read as 'Ilag'. The title's footnote mark is drawn in cmmib10084, a one-glyph font no words can establish, and is written U+FFFD rather than guessed at. Page 20's prose decodes in the reader to 'and for different noise proportion parameters d, we compute a masked data set', but its italic d, its Sigma and its radicals are drawn in cmmi, cmsy and cmex, whose offsets nothing in the document states, so the page keeps its damaged encoding and its recognition (#149 item 1 is unreachable from the document's own evidence). Pages 11 and 16 keep it for a different reason: PDFKit reports one drawn row there as several overlapping lines (#149 item 3), so the shows cannot be attributed and those rows would otherwise ship index-shifted.",
       "pages": [
         {
           "page": 1,
@@ -1064,21 +1064,41 @@
             "Disclosure risk assessment in perturbative",
             "microdata protection",
             "William E. Yancey, William E. Winkler, and Robert H. Creecy",
-            "Introduction"
+            "U.S. Bureau of the Census",
+            "{william.e.yancey,william.e.winkler,robert.h.creecy}@census.gov",
+            "Keywords: additive noise, mixtures, rank swapping, EM Algorithm, record linkage",
+            "1 Introduction"
           ],
-          "warningCodesAnyOf": [
+          "absentText": [
+            "Wklv sdshu",
+            "plfurgdwd surwhfwlrq",
+            "Fhqvxv"
+          ],
+          "absentWarningCodes": [
             "damagedTextEncoding"
           ],
           "minimumImages": 1
         },
         {
           "page": 3,
-          "text": [
-            "Data Files",
-            "Two data files were used.",
+          "orderedText": [
+            "2 Data Files",
+            "Two data \ufb01les were used.",
             "1. Total income",
-            "16. Schedule F flag"
+            "12. Aged exemption \ufb02ag",
+            "16. Schedule F \ufb02ag",
+            "public-use CPS \ufb01le."
           ],
+          "absentText": [
+            "Wzr gdwd",
+            "Vfkhgxoh I dj"
+          ],
+          "absentWarningCodes": [
+            "damagedTextEncoding"
+          ]
+        },
+        {
+          "page": 20,
           "warningCodesAnyOf": [
             "damagedTextEncoding"
           ],

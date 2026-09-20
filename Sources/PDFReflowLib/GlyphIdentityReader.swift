@@ -32,6 +32,19 @@ enum GlyphIdentityReader {
         /// Never equal to `reported`: a show whose evidence agrees with `ToUnicode` throughout is
         /// not recorded at all.
         var drawn: String
+        /// Set only on a show drawn in an index-glyph font (#143, #226), glyph by glyph: this
+        /// show's line is rebuilt from these rather than through `candidateRange`'s single
+        /// substitution, since such a font's every character is wrong, not one of them.
+        var indexGlyphs: [IndexGlyph]?
+    }
+
+    /// One glyph of an index-glyph font: what PDFKit reports for its name, what the document's
+    /// own words establish it draws, and whether a word-sized gap stands before it inside its
+    /// show. `drawn` is U+FFFD where nothing in the document states the character.
+    struct IndexGlyph: Equatable {
+        var reported: String
+        var drawn: String
+        var startsWord: Bool
     }
 
     // MARK: - Font classification
@@ -316,7 +329,7 @@ enum GlyphIdentityReader {
             }
             for case .string(let string) in arguments { append(string) }
             guard ok, !reported.isEmpty, drawn != reported else { return }
-            shows.append(Show(origin: origin, reported: reported, drawn: drawn))
+            shows.append(Show(origin: origin, reported: reported, drawn: drawn, indexGlyphs: nil))
         }
     }
 
@@ -335,10 +348,169 @@ enum GlyphIdentityReader {
     /// magazine's back-cover bullet and its page-15 photo credit) draw directly on their own
     /// page's content stream.
     static func read(_ page: CGPDFPage) -> [Show] {
-        guard page.rotationAngle == 0, hasCandidateFont(page) else { return [] }
-        let visitor = Visitor()
-        guard ContentStreamWalk.scan(page, options: scanOptions, visitor: visitor) else { return [] }
-        return visitor.shows
+        guard page.rotationAngle == 0 else { return [] }
+        var shows: [Show] = []
+        if hasCandidateFont(page) {
+            let visitor = Visitor()
+            if ContentStreamWalk.scan(page, options: scanOptions, visitor: visitor) { shows = visitor.shows }
+        }
+        return shows + indexGlyphShows(page)
+    }
+
+    // MARK: - Index-glyph fonts (#143, #226)
+
+    /// The character PDFKit reports for a glyph named by index. Measured with a synthetic Type 1
+    /// font over the whole range while landing #143: a one-letter prefix (`G`, `g`, `C`, `c`,
+    /// `a`) reads as the character whose code point is the index, for an index in 33–126 or
+    /// 161–255, and as nothing anywhere else; a longer prefix (`glyph12`, `cid7`) reads as
+    /// nothing. Where this prediction is wrong the line simply fails to align and is left exactly
+    /// as PDFKit read it, so a future PDFKit loses the repair rather than corrupting a line.
+    static func reportedCharacter(index: Int, shortPrefix: Bool) -> String {
+        guard shortPrefix, (33...126).contains(index) || (161...255).contains(index),
+              let scalar = UnicodeScalar(UInt32(index)) else { return "" }
+        return String(scalar)
+    }
+
+    /// One show per index-glyph run on `page`, with each glyph's reported and drawn characters.
+    /// Nothing at all when the page holds no index-glyph font or when the document established no
+    /// font's characters: a book whose index-glyph fonts stay undecoded (the Warren Commission's
+    /// synthetic fonts, the CDC comic) keeps #38's path untouched.
+    private static func indexGlyphShows(_ page: CGPDFPage) -> [Show] {
+        guard TextEncodingCheck.hasUnmappedFont(page) else { return [] }
+        let table = GlyphIndexDecoder.table(for: page)
+        guard !table.isEmpty, let scanned = GlyphIndexDecoder.scan(page) else { return [] }
+        return scanned.shows.compactMap { show in
+            guard let font = scanned.fonts[show.fontKey] else { return nil }
+            let characters = table[show.fontKey]
+            var glyphs: [IndexGlyph] = []
+            var reported = "", drawn = ""
+            for (position, glyph) in show.glyphs.enumerated() {
+                // An ordinary glyph name states its own character and PDFKit reads it; an
+                // index name reads as its index, or as nothing where PDFKit maps none.
+                let read = glyph.index.map {
+                    reportedCharacter(index: $0, shortPrefix: font.shortPrefixedCodes.contains(glyph.code))
+                } ?? font.names[glyph.code] ?? ""
+                let stated = characters?[glyph.code] ?? GlyphIndexDecoder.unknownCharacter
+                // A show's first glyph never opens a word here: PDFKit knows the advance between
+                // two shows and sets that space itself. Only a gap inside one show, which its
+                // character spacing hides, is this reader's to restore.
+                glyphs.append(IndexGlyph(reported: read, drawn: stated,
+                                         startsWord: position > 0 && glyph.startsWord))
+                reported += read
+                drawn += stated
+            }
+            guard !glyphs.isEmpty else { return nil }
+            return Show(origin: show.origin, reported: reported, drawn: drawn, indexGlyphs: glyphs)
+        }
+    }
+
+    /// The index-glyph shows of one PDFKit line: those whose origin lies in its rectangle and in
+    /// no other line's, in the order they are drawn across the line.
+    static func indexGlyphs(of shows: [Show], in bounds: CGRect, among allBounds: [CGRect]) -> [IndexGlyph] {
+        let candidates = shows.filter { $0.indexGlyphs != nil }
+        guard !candidates.isEmpty, candidates.count <= AnchorMatcher.maximumAnchors,
+              allBounds.count <= AnchorMatcher.maximumAnchors else { return [] }
+        // An origin inside more than one line's rectangle is ambiguous evidence and rewrites
+        // nothing, as everywhere else in this reader. Where PDFKit reports one drawn row as
+        // several overlapping lines (#149 item 3) that leaves the row as PDFKit read it, and
+        // `GlyphIndexDecoder.unreadGlyphs` is what tells the page so.
+        return candidates
+            .filter { show in
+                AnchorMatcher.contains(bounds, show.origin)
+                    && allBounds.filter({ AnchorMatcher.contains($0, show.origin) }).count == 1
+            }
+            .sorted { $0.origin.x < $1.origin.x }
+            .flatMap { $0.indexGlyphs ?? [] }
+    }
+
+    /// Rewrites a line drawn in index-glyph fonts from its own glyphs, or nil when the glyphs do
+    /// not spell what PDFKit read. Every non-blank character of the line must be the reported
+    /// character of the next glyph in drawing order, and every glyph must be placed: a glyph
+    /// PDFKit reports as nothing (a ligature) is inserted where it is drawn, and a word-sized gap
+    /// inside a show that PDFKit's spacing hid opens a word. Anything else — a character no glyph
+    /// explains, a glyph left over, a line the shows do not cover — leaves the line as PDFKit
+    /// read it, as #143's rule did.
+    static func repairIndexGlyphs(_ glyphs: [IndexGlyph], in attributed: NSAttributedString) -> NSAttributedString? {
+        guard !glyphs.isEmpty, attributed.length <= 4_096, glyphs.count <= 4_096 else { return nil }
+        let line = attributed.string as NSString
+
+        /// One step of the alignment: a glyph placed, or a character of the line kept.
+        enum Step { case glyph(Int), keep(Int) }
+
+        func isBlank(_ index: Int) -> Bool {
+            guard let scalar = UnicodeScalar(UInt32(line.character(at: index))) else { return false }
+            return CharacterSet.whitespacesAndNewlines.contains(scalar) || line.character(at: index) == 0xFFFC
+        }
+        func matches(_ text: String, at index: Int) -> Bool {
+            let expected = text as NSString
+            guard !text.isEmpty, index + expected.length <= line.length else { return false }
+            return line.substring(with: NSRange(location: index, length: expected.length)) == text
+        }
+
+        // The alignment is deterministic except at a glyph the document states no character for:
+        // PDFKit may report it as one character or as nothing, and which of the two it did is not
+        // knowable in advance, so both are tried and only an alignment that consumes the whole
+        // line and every glyph stands. A ligature the line does not spell is likewise placed
+        // before or after an adjoining space, whichever its own word gap says.
+        var steps: [Step] = []
+        var failed = Set<Int>()
+        var budget = 20_000
+        func align(_ cursor: Int, _ position: Int) -> Bool {
+            if cursor == line.length && position == glyphs.count { return true }
+            let state = cursor * (glyphs.count + 1) + position
+            if failed.contains(state) { return false }
+            budget -= 1
+            guard budget > 0 else { return false }
+            var options: [(Step, Int, Int)] = []
+            if position < glyphs.count {
+                let glyph = glyphs[position]
+                let blankHere = cursor < line.length && isBlank(cursor)
+                if glyph.reported.isEmpty || glyph.drawn == GlyphIndexDecoder.unknownCharacter {
+                    // Placed where it is drawn, after an adjoining space when it opens a word.
+                    let zeroWidth = (Step.glyph(position), cursor, position + 1)
+                    if blankHere, glyph.startsWord { options.append((.keep(cursor), cursor + 1, position)) }
+                    options.append(zeroWidth)
+                }
+                if matches(glyph.reported, at: cursor) {
+                    options.append((.glyph(position), cursor + (glyph.reported as NSString).length, position + 1))
+                }
+                if glyph.drawn == GlyphIndexDecoder.unknownCharacter, cursor < line.length, !blankHere {
+                    options.append((.glyph(position), cursor + 1, position + 1))
+                }
+            }
+            if cursor < line.length, isBlank(cursor) { options.append((.keep(cursor), cursor + 1, position)) }
+            for (step, nextCursor, nextPosition) in options {
+                steps.append(step)
+                if align(nextCursor, nextPosition) { return true }
+                steps.removeLast()
+            }
+            failed.insert(state)
+            return false
+        }
+        guard align(0, 0) else { return nil }
+
+        func attributes(at index: Int) -> [NSAttributedString.Key: Any] {
+            guard attributed.length > 0 else { return [:] }
+            return attributed.attributes(at: min(index, attributed.length - 1), effectiveRange: nil)
+        }
+        let result = NSMutableAttributedString()
+        var replaced = false
+        var cursor = 0
+        for step in steps {
+            switch step {
+            case .keep(let index):
+                result.append(attributed.attributedSubstring(from: NSRange(location: index, length: 1)))
+                cursor = index + 1
+            case .glyph(let index):
+                let glyph = glyphs[index]
+                if glyph.startsWord, let last = result.string.last, !last.isWhitespace {
+                    result.append(NSAttributedString(string: " ", attributes: attributes(at: cursor)))
+                }
+                result.append(NSAttributedString(string: glyph.drawn, attributes: attributes(at: cursor)))
+                replaced = replaced || glyph.drawn != glyph.reported
+            }
+        }
+        return replaced ? result : nil
     }
 
     // MARK: - Lines
@@ -390,7 +562,14 @@ enum GlyphIdentityReader {
     /// rather miss a fix than risk rewriting the wrong text.
     static func apply(_ shows: [Show], to attributed: NSAttributedString, bounds: CGRect,
                       allBounds: [CGRect]) -> NSAttributedString {
-        guard let match = AnchorMatcher.uniqueAnchor(shows, at: \.origin, in: bounds, among: allBounds),
+        // A line drawn in index-glyph fonts is rebuilt whole: every one of its characters is
+        // wrong, so there is no single unambiguous occurrence to substitute.
+        let indexGlyphs = indexGlyphs(of: shows, in: bounds, among: allBounds)
+        if !indexGlyphs.isEmpty {
+            return repairIndexGlyphs(indexGlyphs, in: attributed) ?? attributed
+        }
+        guard let match = AnchorMatcher.uniqueAnchor(shows.filter { $0.indexGlyphs == nil },
+                                                     at: \.origin, in: bounds, among: allBounds),
               let (range, isolated) = candidateRange(match.reported, in: attributed)
         else { return attributed }
         let result = NSMutableAttributedString(attributedString: attributed)

@@ -105,7 +105,8 @@ func malformedStructureFallsBack(_ failure: String) throws {
     }
 }
 
-@Test(arguments: ["unknownCursor", "unbalanced", "unmarkedOverlap", "missingMCID", "form", "initialAdjustment"])
+@Test(arguments: ["unknownCursor", "unbalanced", "unmarkedOverlap", "missingMCID", "form", "initialAdjustment",
+                  "unknownCursorInGroup", "invisibleOutsideArtifact", "clippingMode"])
 func ambiguousMarkedContentKeepsNativeText(_ failure: String) throws {
     var objects = taggedObjects()
     switch failure {
@@ -114,6 +115,15 @@ func ambiguousMarkedContentKeepsNativeText(_ failure: String) throws {
     case "unmarkedOverlap": objects[4] = testPDFStream("/P <</MCID 0>> BDC BT /F1 12 Tf 40 700 Td (First) Tj ET EMC BT /F1 12 Tf 50 700 Td (Other) Tj ET")
     case "missingMCID": objects[4] = testPDFStream("BT /F1 12 Tf 40 700 Td (Untagged) Tj ET")
     case "form": objects[4] = testPDFStream("/Unknown Do")
+    // The origin of a show in a marked section costs that section's group, not the page; the
+    // three groups here each lose one, so nothing is tagged either way (#67).
+    case "unknownCursorInGroup":
+        objects[4] = testPDFStream("/P <</MCID 0>> BDC BT /F1 12 Tf 40 700 Td (First) Tj ( second) Tj ET EMC")
+    // Invisible text is inherited transcription unless an artifact owns it (#91).
+    case "invisibleOutsideArtifact":
+        objects[4] = testPDFStream("/P <</MCID 0>> BDC BT /F1 12 Tf 3 Tr 40 700 Td (First) Tj ET EMC")
+    case "clippingMode":
+        objects[4] = testPDFStream("/P <</MCID 0>> BDC BT /F1 12 Tf 7 Tr 40 700 Td (First) Tj ET EMC")
     default: objects[4] = testPDFStream("/P <</MCID 0>> BDC BT /F1 12 Tf 40 700 Td [120 (First)] TJ ET EMC")
     }
     try withTaggedPDF(objects) { url, page in
@@ -197,6 +207,12 @@ func ambiguousMarkedContentKeepsNativeText(_ failure: String) throws {
     LayoutReconstructor.appendPage([.init(content: .paragraph(InlineText("lowercase")), structureGroup: 2, page: 2)],
         page: page, previousPage: previous, to: &blocks, vocabulary: [], warnings: &warnings)
     #expect(blocks.map(\.text) == ["continues", "", "lowercase"])
+    // A page whose tags were not applied states no paragraph identity, so one identity against
+    // none leaves the join to the geometric rule, as it was before either page carried a tag.
+    var mixed = [ReflowBlock(content: .paragraph(InlineText("continues")), page: 1)]
+    LayoutReconstructor.appendPage([.init(content: .paragraph(InlineText("lowercase")), structureGroup: 2, page: 2)],
+        page: page, previousPage: previous, to: &mixed, vocabulary: [], warnings: &warnings)
+    #expect(mixed.map(\.text) == ["continues lowercase"])
 }
 
 @Test func parentNumberTreeKidsAndNamedPropertiesAreSupported() throws {
@@ -287,4 +303,154 @@ func captionsListsAndOversizedHeadingsKeepSpatialBoundaries(_ text: String) {
         _ = try StructureTreeReader.read(url)
     }
     await #expect(throws: CancellationError.self) { try await task.value }
+}
+
+@Test func artifactRunningHeadAndSpaceOnlyShowsKeepTheFedPageTags() throws {
+    let fixture = try SourceTagFixture.load("fed-109")
+    let native = try SourceLayoutFixture.load("fed-109")
+    #expect(fixture.sourceSHA256 == native.sourceSHA256)
+    try fixture.withPage { url, page in
+        // The running head ends `( )Tj EMC /Artifact <<>> BDC (105)Tj`: a show with no
+        // positioning operator inside an artifact, after two space-only shows (#67, #91).
+        let scan = try #require(MarkedTextReader.scan(page))
+        #expect(scan.artifactUnknownOrigins == 1)
+        #expect(scan.blankShows == 2)
+        // The Link and Note identifiers whose runs continue the cursor cost their own groups;
+        // none carries a supported role, so the page's paragraphs and heading keep theirs.
+        #expect(scan.unknownOrigins == [25, 26, 29, 34, 35, 37])
+        let tree = try StructureTreeReader.read(url)
+        let tags = try #require(tree.pages[1])
+        #expect(Set(tags.values.map(\.group)).count == 3)
+        #expect(StructureTreeReader.validates(tags, owners: try #require(tree.owners[1]), page: page))
+        var content = native.content()
+        #expect(MarkedTextReader.apply(tags, page: page, lines: &content.lines))
+        let tagged = content.lines.filter { $0.structure != nil }
+        #expect(tagged.count == 11)
+        #expect(tagged.filter { $0.structure?.headingLevel == 4 }.map(\.text) == ["Expedited Funds Availability Act"])
+    }
+}
+
+@Test func spaceOnlyShowsPastALineEndKeepTheirGroups() throws {
+    let fixture = try SourceTagFixture.load("faa-81")
+    let native = try SourceLayoutFixture.load("faa-81")
+    #expect(fixture.sourceSHA256 == native.sourceSHA256)
+    try fixture.withPage { url, page in
+        let scan = try #require(MarkedTextReader.scan(page))
+        // One show draws nothing but spaces, past the end of a line PDFKit trims (#91).
+        #expect(scan.blankShows == 1)
+        #expect(scan.blankIdentifiers == [7101])
+        #expect(scan.unknownOrigins.isEmpty)
+        let tree = try StructureTreeReader.read(url)
+        let tags = try #require(tree.pages[1])
+        #expect(Set(tags.values.map(\.group)).count == 13)
+        #expect(StructureTreeReader.validates(tags, owners: try #require(tree.owners[1]), page: page))
+        var content = native.content()
+        // That show owns no line, so it neither places nor costs its group: the whole page's
+        // tags apply, where main rejected the group and with it the page.
+        #expect(MarkedTextReader.apply(tags, page: page, lines: &content.lines))
+        #expect(content.lines.filter { $0.structure != nil }.count == 81)
+        // The blank identifier counts as shown, and tags no line of its own.
+        let blank = try #require(tags[7101]?.group)
+        #expect(!content.lines.contains { $0.structure?.group == blank })
+        #expect(Set(content.lines.compactMap { $0.structure?.group }).count == 12)
+    }
+}
+
+@Test func anUnplaceableShowCostsOnlyItsOwnGroup() throws {
+    let fixture = try SourceTagFixture.load("faa-91")
+    let native = try SourceLayoutFixture.load("faa-91")
+    #expect(fixture.sourceSHA256 == native.sourceSHA256)
+    try fixture.withPage { url, page in
+        let scan = try #require(MarkedTextReader.scan(page))
+        // Two marked sections continue the cursor after a font change, so this reader cannot
+        // derive their origin. Five more shows draw only spaces (#67, #91).
+        #expect(scan.unknownOrigins == [7571, 7594])
+        #expect(scan.blankIdentifiers == [7578, 7580, 7592, 7593, 7594])
+        let tree = try StructureTreeReader.read(url)
+        let tags = try #require(tree.pages[1])
+        #expect(Set(tags.values.map(\.group)).count == 20)
+        var content = native.content()
+        // The two groups those shows belong to fall back; the other eighteen apply, where main
+        // refused the page at the first of them.
+        #expect(!MarkedTextReader.apply(tags, page: page, lines: &content.lines))
+        #expect(Set(content.lines.compactMap { $0.structure?.group }).count == 18)
+        #expect(content.lines.filter { $0.structure != nil }.count == 80)
+        for id in scan.unknownOrigins {
+            let group = try #require(tags[id]?.group)
+            #expect(!content.lines.contains { $0.structure?.group == group })
+        }
+    }
+}
+
+@Test func invisibleTextInsideAnArtifactDoesNotRefuseThePage() throws {
+    let fixture = try SourceTagFixture.load("loper-1")
+    try fixture.withPage { url, page in
+        // The opinion's page furniture is drawn in render mode 3 inside an artifact (#91).
+        let scan = try #require(MarkedTextReader.scan(page))
+        #expect(scan.invisibleArtifactShows == 37)
+        #expect(scan.anchors.count == 93)
+        let tree = try StructureTreeReader.read(url)
+        let tags = try #require(tree.pages[1])
+        #expect(Set(tags.values.map(\.group)).count == 12)
+        #expect(StructureTreeReader.validates(tags, owners: try #require(tree.owners[1]), page: page))
+    }
+}
+
+@Test func unmarkedTextFromAnUnknownOriginStillRefusesThePage() throws {
+    let fixture = try SourceTagFixture.load("faa-365")
+    try fixture.withPage { url, page in
+        // Text shown from an origin this reader cannot derive, outside any marked content,
+        // could belong to any line: the page's whole tag set stays unused, as before (#67).
+        #expect(MarkedTextReader.scan(page) == nil)
+        let tree = try StructureTreeReader.read(url)
+        var lines: [TextLine] = []
+        #expect(!MarkedTextReader.apply(try #require(tree.pages[1]), page: page, lines: &lines))
+    }
+}
+
+@Test func aPageWhoseTagsNameNoHeadingKeepsTheHeadingsItDraws() throws {
+    let fixture = try SourceTagFixture.load("faa-81")
+    let native = try SourceLayoutFixture.load("faa-81")
+    #expect(fixture.sourceSHA256 == native.sourceSHA256)
+    // The handbook's RoleMap sends every `AC_heading_N` style to `P`, so nothing this page's
+    // tags say names a heading, although the page draws two in its recurring bold label style.
+    #expect(fixture.identifiers(role: "AC_heading_3") == [7117, 7165])
+    // The page's own bold runs, which `LabelStyle` needs, as `HeadingClassificationTests` does.
+    var content = native.content()
+    for i in content.lines.indices {
+        if let source = native.attributedLines.first(where: {
+            $0.text.trimmingCharacters(in: .whitespaces) == content.lines[i].text.trimmingCharacters(in: .whitespaces)
+        }) {
+            let line = content.lines[i]
+            content.lines[i] = TextLine(content: NativeTextReader.inlineText(from: source.attributedString()),
+                                        rect: line.rect, fontSize: line.fontSize, monospaced: line.monospaced)
+        }
+    }
+    let body = LayoutReconstructor.bodySize(content.lines)
+    let labels = Set(["Advantages of Composites", "Disadvantages of Composites"].compactMap { text in
+        content.lines.first { $0.text == text }.map { LayoutReconstructor.LabelStyle($0, body: body) }
+    })
+    #expect(labels.count == 1 && labels.first?.bold == true)
+    func headings(_ blocks: [ReflowBlock]) -> [String] {
+        blocks.compactMap { if case .heading = $0.content { $0.text } else { nil } }
+    }
+    var warnings: [ConversionWarning] = []
+    let spatial = LayoutReconstructor.blocks(page: content, images: [], vocabulary: [], warnings: &warnings,
+                                             labelStyles: labels)
+    #expect(headings(spatial) == ["Advantages of Composites", "Disadvantages of Composites"])
+    try fixture.withPage { url, page in
+        let tree = try StructureTreeReader.read(url)
+        let tags = try #require(tree.pages[1])
+        #expect(tags.values.allSatisfy { $0.headingLevel == 0 })
+        #expect(MarkedTextReader.apply(tags, page: page, lines: &content.lines))
+        warnings = []
+        let tagged = LayoutReconstructor.blocks(page: content, images: [], vocabulary: [], warnings: &warnings,
+                                                labelStyles: labels)
+        // Both heading lines carry a paragraph tag, and the page keeps its headings anyway:
+        // believing that role is what would take them away (#67).
+        #expect(content.lines.filter { $0.structure != nil }.count == 81)
+        #expect(["Advantages of Composites", "Disadvantages of Composites"].allSatisfy { text in
+            content.lines.first { $0.text == text }?.structure?.headingLevel == 0 })
+        #expect(headings(tagged) == headings(spatial))
+    }
 }

@@ -1,0 +1,482 @@
+{
+  "sourceSHA256": "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
+  "page": 81,
+  "contentObjects": [
+    "1485 0 R"
+  ],
+  "mediaBox": [
+    0.0,
+    0.0,
+    594.0,
+    774.0
+  ],
+  "structParents": 992,
+  "structureRoot": 40511,
+  "roleMap": {
+    "AC_body_text": "P",
+    "AC_bullet_text": "P",
+    "AC_bullet_text_2nd_l": "P",
+    "AC_bullet_text_with_": "P",
+    "AC_captions": "P",
+    "AC_chapter_number": "P",
+    "AC_chapter_title": "P",
+    "AC_heading_1": "P",
+    "AC_heading_2": "P",
+    "AC_heading_3": "P",
+    "AC_heading_4": "P",
+    "AC_heading_5": "P",
+    "Annotation": "Span",
+    "Article": "Art",
+    "Artifact": "P",
+    "Bibliography": "BibEntry",
+    "Chart": "Figure",
+    "Diagram": "Figure",
+    "DropCap": "Figure",
+    "Endnote": "Note",
+    "Footnote": "Note",
+    "Index_Lvl_1": "P",
+    "Index_Lvl_2": "P",
+    "Index_Lvl_3": "P",
+    "InlineShape": "Figure",
+    "Outline": "Span",
+    "Story": "Sect",
+    "Strikeout": "Span",
+    "Subscript": "Span",
+    "Superscript": "Span",
+    "TextBox": "Art",
+    "ToC_Chapter_Number": "P",
+    "ToC_Chapter_Title_1": "P",
+    "ToC_Section_Title_1": "P",
+    "ToC_Section_Title_2": "P",
+    "ToC_Section_Title_3": "P",
+    "Underline": "Span",
+    "_No_paragraph_style_": "P"
+  },
+  "rootKids": [
+    40513
+  ],
+  "parentTree": {
+    "7093": 54730,
+    "7094": 54774,
+    "7095": 54773,
+    "7096": 54915,
+    "7097": 54915,
+    "7098": 54915,
+    "7099": 54915,
+    "7100": 54915,
+    "7101": 54916,
+    "7102": 54917,
+    "7103": 54917,
+    "7104": 54917,
+    "7105": 54917,
+    "7106": 54917,
+    "7107": 54917,
+    "7108": 54917,
+    "7109": 54917,
+    "7110": 54918,
+    "7111": 54918,
+    "7112": 54918,
+    "7113": 54918,
+    "7114": 54918,
+    "7115": 54918,
+    "7116": 54918,
+    "7117": 54919,
+    "7118": 54920,
+    "7119": 54920,
+    "7120": 54920,
+    "7121": 54920,
+    "7122": 54920,
+    "7123": 54920,
+    "7124": 54920,
+    "7125": 54920,
+    "7126": 54921,
+    "7127": 54921,
+    "7128": 54921,
+    "7129": 54921,
+    "7130": 54921,
+    "7131": 54921,
+    "7132": 54921,
+    "7133": 54921,
+    "7134": 54921,
+    "7135": 54921,
+    "7136": 54921,
+    "7137": 54921,
+    "7138": 54922,
+    "7139": 54922,
+    "7140": 54922,
+    "7141": 54922,
+    "7142": 54922,
+    "7143": 54922,
+    "7144": 54911,
+    "7145": 54911,
+    "7146": 54911,
+    "7147": 54911,
+    "7148": 54911,
+    "7149": 54911,
+    "7150": 54911,
+    "7151": 54911,
+    "7152": 54912,
+    "7153": 54912,
+    "7154": 54912,
+    "7155": 54912,
+    "7156": 54912,
+    "7157": 54912,
+    "7158": 54912,
+    "7159": 54912,
+    "7160": 54912,
+    "7161": 54912,
+    "7162": 54912,
+    "7163": 54912,
+    "7164": 54912,
+    "7165": 54913,
+    "7166": 54914,
+    "7167": 54914,
+    "7168": 54914,
+    "7169": 54914,
+    "7170": 54914,
+    "7171": 54914,
+    "7172": 54915,
+    "7173": 54915,
+    "7174": 54915,
+    "7175": 54915,
+    "7176": 54915
+  },
+  "elements": [
+    {
+      "object": 40513,
+      "role": "Document",
+      "parent": null,
+      "page": false,
+      "kids": [
+        {
+          "element": 54691
+        }
+      ]
+    },
+    {
+      "object": 54691,
+      "role": "Article",
+      "parent": 40513,
+      "page": false,
+      "kids": [
+        {
+          "element": 54698
+        },
+        {
+          "element": 54730
+        },
+        {
+          "element": 54731
+        }
+      ]
+    },
+    {
+      "object": 54698,
+      "role": "Story",
+      "parent": 54691,
+      "page": false,
+      "kids": [
+        {
+          "element": 54911
+        },
+        {
+          "element": 54912
+        },
+        {
+          "element": 54913
+        },
+        {
+          "element": 54914
+        },
+        {
+          "element": 54915
+        },
+        {
+          "element": 54916
+        },
+        {
+          "element": 54917
+        },
+        {
+          "element": 54918
+        },
+        {
+          "element": 54919
+        },
+        {
+          "element": 54920
+        },
+        {
+          "element": 54921
+        },
+        {
+          "element": 54922
+        }
+      ]
+    },
+    {
+      "object": 54730,
+      "role": "Figure",
+      "parent": 54691,
+      "page": true,
+      "kids": [
+        7093
+      ]
+    },
+    {
+      "object": 54731,
+      "role": "Story",
+      "parent": 54691,
+      "page": false,
+      "kids": [
+        {
+          "element": 54773
+        }
+      ]
+    },
+    {
+      "object": 54773,
+      "role": "AC_captions",
+      "parent": 54731,
+      "page": true,
+      "kids": [
+        {
+          "element": 54774
+        },
+        7095
+      ]
+    },
+    {
+      "object": 54774,
+      "role": "Span",
+      "parent": 54773,
+      "page": true,
+      "kids": [
+        7094
+      ]
+    },
+    {
+      "object": 54911,
+      "role": "AC_body_text",
+      "parent": 54698,
+      "page": true,
+      "kids": [
+        7144,
+        7145,
+        7146,
+        7147,
+        7148,
+        7149,
+        7150,
+        7151
+      ]
+    },
+    {
+      "object": 54912,
+      "role": "AC_body_text",
+      "parent": 54698,
+      "page": true,
+      "kids": [
+        7152,
+        7153,
+        7154,
+        7155,
+        7156,
+        7157,
+        7158,
+        7159,
+        7160,
+        7161,
+        7162,
+        7163,
+        7164
+      ]
+    },
+    {
+      "object": 54913,
+      "role": "AC_heading_3",
+      "parent": 54698,
+      "page": true,
+      "kids": [
+        7165
+      ]
+    },
+    {
+      "object": 54914,
+      "role": "AC_body_text",
+      "parent": 54698,
+      "page": true,
+      "kids": [
+        7166,
+        7167,
+        7168,
+        7169,
+        7170,
+        7171
+      ]
+    },
+    {
+      "object": 54915,
+      "role": "AC_body_text",
+      "parent": 54698,
+      "page": true,
+      "kids": [
+        7172,
+        7173,
+        7174,
+        7175,
+        7176,
+        7096,
+        7097,
+        7098,
+        7099,
+        7100
+      ]
+    },
+    {
+      "object": 54916,
+      "role": "AC_body_text",
+      "parent": 54698,
+      "page": true,
+      "kids": [
+        7101
+      ]
+    },
+    {
+      "object": 54917,
+      "role": "AC_body_text",
+      "parent": 54698,
+      "page": true,
+      "kids": [
+        7102,
+        7103,
+        7104,
+        7105,
+        7106,
+        7107,
+        7108,
+        7109
+      ]
+    },
+    {
+      "object": 54918,
+      "role": "AC_body_text",
+      "parent": 54698,
+      "page": true,
+      "kids": [
+        7110,
+        7111,
+        7112,
+        7113,
+        7114,
+        7115,
+        7116
+      ]
+    },
+    {
+      "object": 54919,
+      "role": "AC_heading_3",
+      "parent": 54698,
+      "page": true,
+      "kids": [
+        7117
+      ]
+    },
+    {
+      "object": 54920,
+      "role": "AC_body_text",
+      "parent": 54698,
+      "page": true,
+      "kids": [
+        7118,
+        7119,
+        7120,
+        7121,
+        7122,
+        7123,
+        7124,
+        7125
+      ]
+    },
+    {
+      "object": 54921,
+      "role": "AC_body_text",
+      "parent": 54698,
+      "page": true,
+      "kids": [
+        7126,
+        7127,
+        7128,
+        7129,
+        7130,
+        7131,
+        7132,
+        7133,
+        7134,
+        7135,
+        7136,
+        7137
+      ]
+    },
+    {
+      "object": 54922,
+      "role": "AC_body_text",
+      "parent": 54698,
+      "page": true,
+      "kids": [
+        7138,
+        7139,
+        7140,
+        7141,
+        7142,
+        7143
+      ]
+    }
+  ],
+  "fonts": [
+    {
+      "name": "TT0",
+      "object": "30567 0 R",
+      "subtype": "TrueType",
+      "encoding": "WinAnsiEncoding",
+      "toUnicode": "/CIDInit /ProcSet findresource begin\n12 dict begin\nbegincmap\n/CIDSystemInfo\n<< /Registry (Adobe)\n/Ordering (UCS) /Supplement 0 >> def\n/CMapName /Adobe-Identity-UCS def\n/CMapType 2 def\n1 begincodespacerange\n<0000> <FFFF>\nendcodespacerange\n12 beginbfchar\n<2D> <002D>\n<30> <0030>\n<31> <0031>\n<32> <0032>\n<33> <0033>\n<34> <0034>\n<35> <0035>\n<36> <0036>\n<37> <0037>\n<38> <0038>\n<39> <0039>\n<0020> <0020>\nendbfchar\nendcmap CMapName currentdict /CMap defineresource pop end end\n"
+    },
+    {
+      "name": "TT1",
+      "object": "30569 0 R",
+      "subtype": "TrueType",
+      "encoding": "WinAnsiEncoding",
+      "toUnicode": "/CIDInit /ProcSet findresource begin\n12 dict begin\nbegincmap\n/CIDSystemInfo\n<< /Registry (Adobe)\n/Ordering (UCS) /Supplement 0 >> def\n/CMapName /Adobe-Identity-UCS def\n/CMapType 2 def\n1 begincodespacerange\n<0000> <FFFF>\nendcodespacerange\n55 beginbfchar\n<20> <0020>\n<28> <0028>\n<29> <0029>\n<2C> <002C>\n<2D> <002D>\n<2E> <002E>\n<30> <0030>\n<31> <0031>\n<32> <0032>\n<33> <0033>\n<34> <0034>\n<35> <0035>\n<36> <0036>\n<37> <0037>\n<38> <0038>\n<39> <0039>\n<3A> <003A>\n<41> <0041>\n<42> <0042>\n<43> <0043>\n<44> <0044>\n<45> <0045>\n<46> <0046>\n<47> <0047>\n<49> <0049>\n<4C> <004C>\n<4D> <004D>\n<4E> <004E>\n<50> <0050>\n<53> <0053>\n<54> <0054>\n<57> <0057>\n<61> <0061>\n<62> <0062>\n<63> <0063>\n<64> <0064>\n<65> <0065>\n<66> <0066>\n<67> <0067>\n<68> <0068>\n<69> <0069>\n<6A> <006A>\n<6C> <006C>\n<6D> <006D>\n<6E> <006E>\n<6F> <006F>\n<70> <0070>\n<71> <0071>\n<72> <0072>\n<73> <0073>\n<74> <0074>\n<75> <0075>\n<76> <0076>\n<77> <0077>\n<79> <0079>\nendbfchar\nendcmap CMapName currentdict /CMap defineresource pop end end\n"
+    },
+    {
+      "name": "TT2",
+      "object": "30571 0 R",
+      "subtype": "TrueType",
+      "encoding": "WinAnsiEncoding",
+      "toUnicode": "/CIDInit /ProcSet findresource begin\n12 dict begin\nbegincmap\n/CIDSystemInfo\n<< /Registry (Adobe)\n/Ordering (UCS) /Supplement 0 >> def\n/CMapName /Adobe-Identity-UCS def\n/CMapType 2 def\n1 begincodespacerange\n<0000> <FFFF>\nendcodespacerange\n57 beginbfchar\n<20> <0020>\n<28> <0028>\n<29> <0029>\n<2C> <002C>\n<2D> <002D>\n<2E> <002E>\n<30> <0030>\n<31> <0031>\n<32> <0032>\n<33> <0033>\n<34> <0034>\n<35> <0035>\n<36> <0036>\n<37> <0037>\n<38> <0038>\n<39> <0039>\n<3A> <003A>\n<41> <0041>\n<42> <0042>\n<43> <0043>\n<45> <0045>\n<46> <0046>\n<47> <0047>\n<48> <0048>\n<49> <0049>\n<4C> <004C>\n<4D> <004D>\n<50> <0050>\n<53> <0053>\n<54> <0054>\n<57> <0057>\n<5B> <005B>\n<5D> <005D>\n<61> <0061>\n<62> <0062>\n<63> <0063>\n<64> <0064>\n<65> <0065>\n<66> <0066>\n<67> <0067>\n<68> <0068>\n<69> <0069>\n<6B> <006B>\n<6C> <006C>\n<6D> <006D>\n<6E> <006E>\n<6F> <006F>\n<70> <0070>\n<71> <0071>\n<72> <0072>\n<73> <0073>\n<74> <0074>\n<75> <0075>\n<76> <0076>\n<77> <0077>\n<78> <0078>\n<79> <0079>\nendbfchar\nendcmap CMapName currentdict /CMap defineresource pop end end\n"
+    },
+    {
+      "name": "TT3",
+      "object": "30568 0 R",
+      "subtype": "TrueType",
+      "encoding": "WinAnsiEncoding",
+      "toUnicode": "/CIDInit /ProcSet findresource begin\n12 dict begin\nbegincmap\n/CIDSystemInfo\n<< /Registry (Adobe)\n/Ordering (UCS) /Supplement 0 >> def\n/CMapName /Adobe-Identity-UCS def\n/CMapType 2 def\n1 begincodespacerange\n<0000> <FFFF>\nendcodespacerange\n74 beginbfchar\n<20> <0020>\n<28> <0028>\n<29> <0029>\n<2C> <002C>\n<2D> <002D>\n<2E> <002E>\n<2F> <002F>\n<30> <0030>\n<31> <0031>\n<32> <0032>\n<33> <0033>\n<34> <0034>\n<35> <0035>\n<36> <0036>\n<37> <0037>\n<38> <0038>\n<39> <0039>\n<3A> <003A>\n<3B> <003B>\n<41> <0041>\n<42> <0042>\n<43> <0043>\n<44> <0044>\n<45> <0045>\n<46> <0046>\n<47> <0047>\n<48> <0048>\n<49> <0049>\n<4A> <004A>\n<4B> <004B>\n<4C> <004C>\n<4D> <004D>\n<4E> <004E>\n<4F> <004F>\n<50> <0050>\n<52> <0052>\n<53> <0053>\n<54> <0054>\n<55> <0055>\n<56> <0056>\n<57> <0057>\n<61> <0061>\n<62> <0062>\n<63> <0063>\n<64> <0064>\n<65> <0065>\n<66> <0066>\n<67> <0067>\n<68> <0068>\n<69> <0069>\n<6A> <006A>\n<6B> <006B>\n<6C> <006C>\n<6D> <006D>\n<6E> <006E>\n<6F> <006F>\n<70> <0070>\n<71> <0071>\n<72> <0072>\n<73> <0073>\n<74> <0074>\n<75> <0075>\n<76> <0076>\n<77> <0077>\n<78> <0078>\n<79> <0079>\n<7A> <007A>\n<92> <2019>\n<93> <201C>\n<94> <201D>\n<95> <2022>\n<97> <2014>\n<99> <2122>\n<B0> <00B0>\nendbfchar\nendcmap CMapName currentdict /CMap defineresource pop end end\n"
+    },
+    {
+      "name": "TT4",
+      "object": "30694 0 R",
+      "subtype": "TrueType",
+      "encoding": "WinAnsiEncoding",
+      "toUnicode": "/CIDInit /ProcSet findresource begin\n12 dict begin\nbegincmap\n/CIDSystemInfo\n<< /Registry (Adobe)\n/Ordering (UCS) /Supplement 0 >> def\n/CMapName /Adobe-Identity-UCS def\n/CMapType 2 def\n1 begincodespacerange\n<0000> <FFFF>\nendcodespacerange\n32 beginbfchar\n<20> <0020>\n<41> <0041>\n<43> <0043>\n<44> <0044>\n<46> <0046>\n<48> <0048>\n<4C> <004C>\n<4D> <004D>\n<50> <0050>\n<53> <0053>\n<54> <0054>\n<57> <0057>\n<61> <0061>\n<63> <0063>\n<64> <0064>\n<65> <0065>\n<66> <0066>\n<67> <0067>\n<68> <0068>\n<69> <0069>\n<6B> <006B>\n<6C> <006C>\n<6D> <006D>\n<6E> <006E>\n<6F> <006F>\n<70> <0070>\n<72> <0072>\n<73> <0073>\n<74> <0074>\n<75> <0075>\n<76> <0076>\n<79> <0079>\nendbfchar\nendcmap CMapName currentdict /CMap defineresource pop end end\n"
+    }
+  ],
+  "xobjects": [
+    {
+      "name": "Im0",
+      "object": "1486 0 R",
+      "subtype": "Image"
+    }
+  ],
+  "contentStream": "BT /Artifact <</O /Layout >>BDC  /CS0 cs 0 0 0  scn /GS0 gs /TT0 1 Tf 10 0 0 10 36 36.7197 Tm (3-10)Tj EMC  ET /Figure <</MCID 7093 >>BDC  q 40.75 728.75 m 36.25 728.75 36.25 724.25 v 36.25 724.25 l 36.25 560.773 l 36.25 556.273 40.75 556.273 v 40.75 556.273 l 269.204 556.273 l 273.704 556.273 273.704 560.773 v 273.704 560.773 l 273.704 724.25 l 273.704 728.75 269.204 728.75 v 269.204 728.75 l h W n q /GS1 gs 239.0063924 0 0 174.7199961 35.0579823 555.0500039 cm /Im0 Do Q EMC  Q q 0 0 594 774 re W n /CS0 CS 0 0 0  SCN 0.5 w 4 M  q 1 0 0 1 40.75 728.75 cm 0 0 m -4.5 0 -4.5 -4.5 v -4.5 -167.977 l -4.5 -172.477 0 -172.477 v 228.455 -172.477 l 232.955 -172.477 232.955 -167.977 v 232.955 -4.5 l 232.955 0 228.455 0 v 0 0 l h S Q /Span <</MCID 7094 >>BDC  Q BT /TT1 1 Tf 8 0 0 8 36 540.7825 Tm (Figure 3-15.)Tj ET EMC  BT /Span <</MCID 7095 >>BDC  /TT2 1 Tf 9 0 0 9 80.9023 540.7825 Tm ( Composite aircraft.)Tj EMC  /Span <</MCID 7096 >>BDC  /TT3 1 Tf -0.008 Tc -0.063 Tw 10 0 0 10 285 722.0664 Tm [(and Columbia line of production aircraft, leading to their high)-8 ( )]TJ EMC  /Span <</MCID 7097 >>BDC  -0.011 Tc 0 -1.25 TD [(p)0.5 (e)0.6 (rf)0.5 (o)0.5 (rm)0.7 (a)0.6 (n)0.5 (c)0.6 (e)0.6 ( de)0.7 (spi)0.7 (t)0.6 (e)0.6 ( t)0.6 (h)0.5 (e)0.6 (i)0.7 (r fi)0.7 (xe)0.7 (d l)0.6 (a)0.6 (n)0.5 (d)0.5 (i)0.6 (n)0.5 (g)0.5 ( g)0.5 (e)0.6 (a)0.6 (r)0.5 (.)0.5 ( C)0.5 (o)0.5 (m)0.6 (p)0.5 (osi)0.6 (t)0.6 (e)0.6 (s a)0.6 (l)0.7 (so)-11 ( )]TJ EMC  /Span <</MCID 7098 >>BDC  0 Tc 0.057 Tw T* [(help mask the radar signature of \\223stealth\\224 )0.6 (aircraft designs, )]TJ EMC  /Span <</MCID 7099 >>BDC  0.002 Tc 0.125 Tw T* [(such as the B-2 and the F-22. Today, composites can be)2.1 ( )]TJ EMC  /Span <</MCID 7100 >>BDC  -0.001 Tc -0.063 Tw T* [(found i)0.5 (n a)0.5 (i)0.5 (rc)0.5 (ra)0.5 (ft)0.5 ( a)0.5 (s va)0.5 (ri)0.5 (e)0.5 (d a)0.5 (s gl)0.5 (i)0.5 (de)0.5 (rs t)0.5 (o m)0.5 (ost)0.5 ( ne)0.5 (w he)0.5 (l)0.6 (i)0.5 (c)0.5 (opt)0.5 (e)0.5 (rs.)]TJ EMC  /Span <</MCID 7101 >>BDC  0 Tc 0 Tw T* ( )Tj EMC  /Span <</MCID 7102 >>BDC  -0.002 Tc -0.062 Tw T* [(Lack )0.5 (of )0.5 (corrosion )0.5 (is )0.5 (a )0.5 (third )0.5 (advantage )0.5 (of )0.5 (composites. )0.5 (Boeing)-2 ( )]TJ EMC  /Span <</MCID 7103 >>BDC  0 Tc -0.054 Tw T* [(is designing )0.6 (the )0.8 (787, with )0.6 (its )0.6 (all-c)0.7 (omposite )0.9 (fuselage, )0.9 (to )0.6 (have )]TJ EMC  /Span <</MCID 7104 >>BDC  0.095 Tw T* [(both a higher pressure differential )0.9 (and higher humidity in )]TJ EMC  /Span <</MCID 7105 >>BDC  -0.026 Tw T* [(the )0.6 (cabin )0.6 (than )0.5 (previous airliners. )0.8 (Engineers )0.7 (are )0.5 (no longer )0.5 (as )]TJ EMC  /Span <</MCID 7106 >>BDC  -0.011 Tc -0.063 Tw T* [(c)0.5 (onc)0.6 (e)0.5 (rne)0.5 (d a)0.6 (bout)0.6 ( c)0.5 (orrosi)0.6 (on from)0.6 ( m)0.5 (oi)0.6 (st)0.6 (ure)0.5 ( c)0.5 (onde)0.5 (nsa)0.5 (t)0.6 (i)0.5 (on on t)0.5 (he)-10.8 ( )]TJ EMC  /Span <</MCID 7107 >>BDC  0 Tc -0.039 Tw T* (hidden areas of the fuselage skins, such as behind insulation )Tj EMC  /Span <</MCID 7108 >>BDC  0.03 Tw T* [(blankets. )1 (This )0.7 (should )0.7 (lead )1 (to )0.7 (lower )0.7 (long-term )1.1 (maintenance )]TJ EMC  /Span <</MCID 7109 >>BDC  0 Tw T* (costs for the airlines.)Tj EMC  /Span <</MCID 7110 >>BDC  -0.038 Tw 0 -2.5 TD [(Another advanta)0.6 (ge of composites is their good performance )]TJ EMC  /Span <</MCID 7111 >>BDC  -0.011 Tw 0 -1.25 TD [(in a flexing environment, such as in helicopter )0.9 (rotor blades. )]TJ EMC  /Span <</MCID 7112 >>BDC  -0.012 Tc -0.062 Tw T* [(Composites )0.5 (do not )0.5 (suffer )0.5 (from metal )0.5 (fatigue and )0.5 (crack growth)-12 ( )]TJ EMC  /Span <</MCID 7113 >>BDC  0 Tc 0.012 Tw T* [(as do metals. )0.6 (While )0.5 (it takes careful engineering, )0.7 (composite )]TJ EMC  /Span <</MCID 7114 >>BDC  0.005 Tw T* [(rotor blades can have considerably )0.5 (higher design lives than )]TJ EMC  /Span <</MCID 7115 >>BDC  -0.057 Tw T* [(metal )1 (blades, and most new large )0.6 (helicopter )1.1 (designs have )0.5 (all )]TJ EMC  /Span <</MCID 7116 >>BDC  -0.026 Tw T* [(composite )1.1 (blades, )0.8 (and )0.6 (in )0.6 (many )0.8 (cases, )0.5 (composite )1.2 (rotor )0.6 (hubs.)]TJ EMC  /Span <</MCID 7117 >>BDC  /TT4 1 Tf 0 Tw 11 0 0 11 285 434.0664 Tm (Disadvantages of Composites)Tj EMC  /Span <</MCID 7118 >>BDC  /TT3 1 Tf 0.061 Tc 0.125 Tw 10 0 0 10 285 419.5664 Tm [(Com)0.5 (posit)0.5 (e construction come)0.5 (s wi)0.5 (th it)0.5 (s own set of)61 ( )]TJ EMC  /Span <</MCID 7119 >>BDC  0 Tc 0.097 Tw T* [(disadvantages, )0.8 (the most important )0.9 (of which is the lack )0.6 (of )]TJ EMC  /Span <</MCID 7120 >>BDC  -0.007 Tc -0.063 Tw T* [(visual proof of damage. Composites respond differently from)-6.9 ( )]TJ EMC  /Span <</MCID 7121 >>BDC  0 Tc 0.116 Tw T* [(other )0.7 (structural )0.9 (materials )1.4 (to )0.5 (impact, )1.1 (and )0.5 (there )0.8 (is often )0.7 (no )]TJ EMC  /Span <</MCID 7122 >>BDC  -0.014 Tw T* [(obvious sign of damage. )0.7 (For example, )0.8 (if a car backs into an )]TJ EMC  /Span <</MCID 7123 >>BDC  -0.004 Tc -0.063 Tw T* [(aluminum fuselage, it might dent the fuselage. If the fuselage)-3.8 ( )]TJ EMC  /Span <</MCID 7124 >>BDC  0 Tc 0.024 Tw T* [(is not dented, )0.5 (there )0.6 (is no damage. )0.7 (If the fuselage )0.6 (is dented, )]TJ EMC  /Span <</MCID 7125 >>BDC  0 Tw T* (the damage is visible and repairs are made.)Tj EMC  /Span <</MCID 7126 >>BDC  0.001 Tc 0.125 Tw 0 -2.5 TD [(In a composite structure, a low energy impact, such as a)1.2 ( )]TJ EMC  /Span <</MCID 7127 >>BDC  0 Tc 0.047 Tw 0 -1.25 TD [(bump or a tool drop, may not leave )0.5 (any visible sign of the )]TJ EMC  /Span <</MCID 7128 >>BDC  -0.038 Tw T* [(impact )1.2 (on )0.5 (the )0.8 (surface. )0.9 (Underneath )0.9 (the )0.7 (impact )1.3 (site )0.7 (there )0.9 (may )]TJ EMC  /Span <</MCID 7129 >>BDC  -0.057 Tw T* [(be )0.5 (extensive )0.5 (dela)0.5 (minations, )1 (spreading )0.7 (in )0.5 (a )0.5 (cone-shaped )0.8 (area )]TJ EMC  /Span <</MCID 7130 >>BDC  0.097 Tw T* [(from the impact)0.8 ( location. )0.6 (The damage on the backside of )]TJ EMC  /Span <</MCID 7131 >>BDC  -0.004 Tw T* [(the )0.5 (structure )0.8 (can )0.6 (be significant )1 (and extensive, )0.9 (but it )0.5 (may )0.6 (be )]TJ EMC  /Span <</MCID 7132 >>BDC  0.097 Tw T* [(hidden from view. Anytime )0.6 (one has reason to think there )]TJ EMC  /Span <</MCID 7133 >>BDC  0.105 Tw T* [(may have been an impact, )0.6 (even a minor one, it is best to )]TJ EMC  /Span <</MCID 7134 >>BDC  0.001 Tc 0.125 Tw T* [(get)0.5 ( an inspec)0.5 (tor fa)0.5 (mi)0.5 (li)0.5 (ar wit)0.5 (h c)0.5 (om)0.5 (posi)0.5 (tes t)0.5 (o e)0.5 (xam)0.5 (ine t)0.5 (he)1.2 ( )]TJ EMC  /Span <</MCID 7135 >>BDC  0 Tc 0.031 Tw T* [(structure )1 (to )0.7 (determine )1.1 (underlying )0.9 (damage. )1.2 (The )0.8 (appearance )]TJ EMC  /Span <</MCID 7136 >>BDC  0.021 Tw T* [(of \\223whitish\\224 )0.8 (areas )0.6 (in a fiberglass )0.6 (structure )0.7 (is a good tip-off )]TJ EMC  /Span <</MCID 7137 >>BDC  0 Tw T* (that delaminations of fiber fracture has occurred. )Tj EMC  /Span <</MCID 7138 >>BDC  0.02 Tw 0 -2.5 TD [(A medium energy impact )0.8 (\\(perhaps the car backing into the )]TJ EMC  /Span <</MCID 7139 >>BDC  0.008 Tc 0.125 Tw 0 -1.25 TD [(structure\\) results in local crushing of the surface, which)8 ( )]TJ EMC  /Span <</MCID 7140 >>BDC  0 Tc -0.047 Tw T* [(should be visible)0.5 ( to the eye. The damaged area is larger than )]TJ EMC  /Span <</MCID 7141 >>BDC  -0.031 Tw T* [(the )0.8 (visible )0.9 (crushed )0.6 (area )1 (and )0.7 (will )0.8 (need )0.9 (to )0.7 (be )0.7 (repaired. )1.1 (A high )]TJ EMC  /Span <</MCID 7142 >>BDC  0.052 Tw T* [(energy )0.7 (impact, )1.3 (such as )0.5 (a )0.5 (bird )0.6 (strike )0.8 (or hail )1 (while )0.7 (in )0.6 (flight, )]TJ EMC  /Span <</MCID 7143 >>BDC  0.079 Tw T* [(results in a puncture )0.5 (and a severely )0.6 (damaged )0.9 (structure. )0.7 (In )]TJ EMC  /Span <</MCID 7144 >>BDC  0.037 Tc 0.125 Tw -24.9 43.179 Td [(The most common reinforcing fibers used in aircraft)37.1 ( )]TJ EMC  /Span <</MCID 7145 >>BDC  0.018 Tc T* [(construction are fiberglass and carbon fiber. Fiberglass)17.8 ( )]TJ EMC  /Span <</MCID 7146 >>BDC  0.009 Tc T* [(has good tensile and compres)-0.6 (sive strength, good impact)9.2 ( )]TJ EMC  /Span <</MCID 7147 >>BDC  -0.002 Tc -0.063 Tw T* [(re)0.5 (si)0.6 (st)0.6 (a)0.5 (nc)0.5 (e)0.5 (, i)0.6 (s e)0.5 (a)0.5 (sy t)0.6 (o work wi)0.5 (t)0.6 (h, a)0.6 (nd i)0.5 (s re)0.6 (l)0.5 (a)0.5 (t)0.6 (i)0.5 (ve)0.6 (l)0.5 (y i)0.5 (ne)0.6 (xpe)0.5 (nsi)0.6 (ve)-1.9 ( )]TJ EMC  /Span <</MCID 7148 >>BDC  0.011 Tc 0.125 Tw T* [(and readily available. Its main disadvantage is that it is)10.8 ( )]TJ EMC  /Span <</MCID 7149 >>BDC  -0.001 Tc -0.063 Tw T* [(som)0.6 (e)0.5 (wha)0.5 (t)0.6 ( he)0.5 (a)0.6 (vy, a)0.5 (nd i)0.5 (t)0.6 ( i)0.5 (s di)0.5 (ffi)0.5 (c)0.6 (ul)0.6 (t)0.5 ( t)0.6 (o m)0.6 (a)0.5 (ke)0.5 ( a)0.5 ( fi)0.5 (be)0.5 (rgl)0.5 (a)0.6 (ss l)0.5 (oa)0.6 (d-)]TJ EMC  /Span <</MCID 7150 >>BDC  0.001 Tc 0.124 Tw T* [(c)0.7 (a)0.6 (r)0.6 (r)0.5 (y)0.5 (i)0.7 (n)0.5 (g)0.5 ( st)0.7 (r)0.5 (u)0.5 (c)0.7 (t)0.7 (u)0.5 (r)0.5 (e)0.7 ( l)0.7 (i)0.7 (g)0.5 (h)0.6 (t)0.7 (e)0.6 (r)0.5 ( t)0.6 (h)0.6 (a)0.6 (n)0.6 ( a)0.7 ( we)0.7 (l)0.7 (l)0.7 ( d)0.5 (e)0.7 (si)0.7 (g)0.6 (n)0.5 (e)0.7 (d)0.5 ( e)0.7 (q)0.5 (u)0.5 (i)0.7 (v)0.5 (a)0.7 (l)0.7 (e)0.7 (n)0.5 (t)1.2 ( )]TJ EMC  /Span <</MCID 7151 >>BDC  0 Tc 0 Tw T* (aluminum structure. )Tj EMC  /Span <</MCID 7152 >>BDC  -0.002 Tc -0.063 Tw 0 -2.5 TD [(Carbon fiber is generally stronger in tensile and compressive)-1.9 ( )]TJ EMC  /Span <</MCID 7153 >>BDC  0.029 Tc 0.125 Tw 0 -1.25 TD [(strength than fiberglass and has much higher bending)29 ( )]TJ EMC  /Span <</MCID 7154 >>BDC  0.018 Tc T* [(st)0.5 (i)0.5 (ffne)0.5 (ss. It)0.6 ( i)0.5 (s al)0.6 (so c)0.5 (onsi)0.5 (de)0.5 (ra)0.5 (bl)0.5 (y l)0.5 (i)0.5 (ght)0.5 (e)0.5 (r t)0.5 (ha)0.5 (n fi)0.5 (be)0.5 (rgl)0.6 (ass.)18 ( )]TJ EMC  /Span <</MCID 7155 >>BDC  0 Tc -0.057 Tw T* [(However, it )0.5 (is relatively )1.1 (poor in impact )0.8 (resistance; )0.9 (the )0.5 (fibers )]TJ EMC  /Span <</MCID 7156 >>BDC  0.04 Tw T* [(are brittle )0.6 (and tend to shatter under sharp impact. )0.5 (This can )]TJ EMC  /Span <</MCID 7157 >>BDC  -0.001 Tc -0.062 Tw T* [(be greatly improved with a \\223toughened\\224 epoxy resin system,)-1 ( )]TJ EMC  /Span <</MCID 7158 >>BDC  0 Tc -0.045 Tw T* [(as used in the Boeing 787 horizontal and vertical )0.9 (stabilizers. )]TJ EMC  /Span <</MCID 7159 >>BDC  -0.051 Tw T* [(Carbon fiber is more expensive )0.5 (than fiberglass, but the price )]TJ EMC  /Span <</MCID 7160 >>BDC  0.032 Tw T* [(has dropped due to innovations )0.5 (driven by the B-2 program )]TJ EMC  /Span <</MCID 7161 >>BDC  -0.002 Tw T* (in the 1980s and Boeing 777 work in the 1990s. Very well-)Tj EMC  /Span <</MCID 7162 >>BDC  -0.006 Tw T* [(designed carbon fiber structures can be significantly )1 (lighter )]TJ EMC  /Span <</MCID 7163 >>BDC  0.003 Tc 0.125 Tw T* [(than an equivalent aluminum structure, sometimes by 30)3 ( )]TJ EMC  /Span <</MCID 7164 >>BDC  0 Tc 0 Tw T* (percent or so.)Tj EMC  /Span <</MCID 7165 >>BDC  /TT4 1 Tf 11 0 0 11 36 223.9564 Tm (Advantages of Composites)Tj EMC  /Span <</MCID 7166 >>BDC  /TT3 1 Tf 0.022 Tc 0.125 Tw 10 0 0 10 36 209.4564 Tm [(Composite cons)-0.6 (truction offers)-0.6 ( s)-0.6 (everal advantages)-0.6 ( over)22 ( )]TJ EMC  /Span <</MCID 7167 >>BDC  0 Tc -0.06 Tw T* [(metal, )0.9 (wood, or fabric, )0.5 (with its lighter )0.8 (weight being the most )]TJ EMC  /Span <</MCID 7168 >>BDC  0.026 Tw T* [(frequently )0.8 (cited. )0.8 (Lighter )0.7 (weight )0.5 (is not always automatic. )1.2 (It )]TJ EMC  /Span <</MCID 7169 >>BDC  -0.002 Tc -0.063 Tw T* [(m)0.6 (ust)0.6 ( be)0.6 ( re)0.6 (m)0.6 (e)0.5 (m)0.6 (b)0.5 (e)0.5 (r)0.5 (e)0.6 (d t)0.6 (ha)0.6 (t)0.6 ( b)0.5 (ui)0.6 (l)0.6 (di)0.6 (ng)0.5 ( a)0.6 (n a)0.6 (i)0.6 (rc)0.6 (ra)0.6 (f)0.5 (t)0.6 ( st)0.5 (r)0.5 (uc)0.6 (t)0.6 (ure)0.6 ( o)0.5 (ut)0.6 ( of)-2 ( )]TJ EMC  /Span <</MCID 7170 >>BDC  0 Tc 0.02 Tw T* [(composites )0.8 (does not )0.5 (guarantee )1 (it )0.6 (will )0.7 (be lighter; )1.1 (it )0.6 (depends )]TJ EMC  /Span <</MCID 7171 >>BDC  -0.054 Tw T* [(on )0.5 (the )0.6 (structure, )0.9 (as )0.5 (well )0.8 (as )0.5 (the )0.8 (type )0.6 (of )0.5 (composite )1.1 (being )0.8 (used. )]TJ EMC  /Span <</MCID 7172 >>BDC  -0.009 Tc -0.062 Tw 0 -2.5 TD [(A more important )0.5 (advantage is that a very smooth, compound)-9 ( )]TJ EMC  /Span <</MCID 7173 >>BDC  0.032 Tc 0.125 Tw 0 -1.25 TD [(curved, aerodynamic structure made from composites)31.8 ( )]TJ EMC  /Span <</MCID 7174 >>BDC  0 Tc T* (reduces drag. This is the main reason sailplane designers )Tj EMC  /Span <</MCID 7175 >>BDC  0.017 Tw T* [(switched )0.8 (from )0.7 (metal )1.1 (and )0.7 (wood to )0.5 (composites )1 (in )0.7 (the )0.8 (1960s. )]TJ EMC  /Span <</MCID 7176 >>BDC  -0.037 Tw T* [(In )0.5 (aircraft, )0.9 (the )0.8 (use of )0.5 (composites )1 (reduces )0.7 (drag )0.6 (for )0.5 (the )0.8 (Cirrus )]TJ EMC  ET ",
+  "provenance": "Captured with qpdf from corpus/cache/faa-h-8083-25c.pdf (faa-phak-8083-25c). Page 81 shows trailing space-only runs past the end of lines PDFKit trims; each rejected the tag group that owned it (#91). Native line evidence in faa-81-layout.json."
+}

@@ -194,3 +194,62 @@ private struct Point { var origin: CGPoint }
                                          tags: [1: tags[1]!, 3: tags[3]!], lines: &shared))
     #expect(shared[0].structure == nil)
 }
+
+/// Shape taken from the Adobe PDF Library maps the FAA, DGA and Fed carry: a two-byte codespace
+/// declared over one-byte entries. Only `bfchar` entries naming one byte and exactly U+0020 are
+/// spaces, so a range, a two-byte code and a destination that merely begins with `0020` are not.
+private let adobeStyleUnicodeMap = """
+/CIDInit /ProcSet findresource begin
+12 dict begin
+begincmap
+/CMapName /Adobe-Identity-UCS def
+/CMapType 2 def
+1 begincodespacerange
+<0000> <FFFF>
+endcodespacerange
+3 beginbfchar
+<20> <0020>
+<2E> <0020002E>
+<0041> <0020>
+endbfchar
+1 beginbfrange
+<30> <39> <0020>
+endbfrange
+endcmap
+end
+end
+"""
+
+/// The space codes of a one-font page built from `entries`, read inside the document's lifetime.
+private func spaceCodes(_ entries: String, map: String? = nil) throws -> Set<UInt8> {
+    var objects = [
+        "<< /Type /Catalog /Pages 2 0 R >>",
+        "<< /Type /Pages /Kids [3 0 R] /Count 1 >>",
+        "<< /Type /Page /Parent 2 0 R /MediaBox [0 0 200 200] /Resources << /Font << /F1 5 0 R >> >> /Contents 4 0 R >>",
+        testPDFStream(""),
+        "<< /Type /Font \(entries)\(map == nil ? "" : " /ToUnicode 6 0 R") >>",
+    ]
+    if let map { objects.append(testPDFStream(map)) }
+    let provider = try #require(CGDataProvider(data: testPDF(objects: objects) as CFData))
+    let document = try #require(CGPDFDocument(provider))
+    let page = try #require(document.page(at: 1))
+    let resources = try #require(CGPDFObjects.inheritedResources(of: page))
+    let fonts = try #require(CGPDFObjects.dictionary(resources, "Font"))
+    let font = try #require(CGPDFObjects.dictionary(fonts, "F1"))
+    return withExtendedLifetime(document) { MarkedTextReader.spaceCodes(font) }
+}
+
+@Test func spaceCodesComeOnlyFromOneByteMapEntriesForU0020() throws {
+    // A simple font's map decides, and only its one-byte entries for exactly U+0020 count (#91).
+    #expect(try spaceCodes("/Subtype /Type1 /BaseFont /Test", map: adobeStyleUnicodeMap) == [0x20])
+    // An encoding entry cannot override the map the font ships.
+    #expect(try spaceCodes("/Subtype /TrueType /Encoding /WinAnsiEncoding",
+        map: "1 begincodespacerange\n<00> <FF>\nendcodespacerange\n1 beginbfchar\n<41> <0041>\nendbfchar").isEmpty)
+    // Without a map, the standard named encodings put the space at 32; an unnamed one says nothing.
+    #expect(try spaceCodes("/Subtype /Type1 /Encoding /MacRomanEncoding") == [0x20])
+    #expect(try spaceCodes("/Subtype /Type1 /BaseFont /Test").isEmpty)
+    // Type3 glyphs are procedures and composite fonts use multi-byte codes: neither says.
+    #expect(try spaceCodes("/Subtype /Type3", map: adobeStyleUnicodeMap).isEmpty)
+    // An inherited map could name codes this reader never sees.
+    #expect(try spaceCodes("/Subtype /Type1", map: adobeStyleUnicodeMap + "\nusecmap").isEmpty)
+}

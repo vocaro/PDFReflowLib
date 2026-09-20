@@ -78,6 +78,8 @@ ALLOWED = {
     156: ('historical', 'the generated-counts gate, named by the issue that asked for it'),
     92: ('historical', "the comparator's identifier normalization, ported onto main and named by its issue"),
     36: ('historical', 'the rule-adjacent-prose rules, ported onto main for #229 and named by their issue'),
+    67: ('historical', 'the artifact and marked-content scoping of an unplaceable show, ported onto main and named by its issue'),
+    91: ('historical', 'the space-only-show and invisible-artifact rules, ported onto main and named by their issue'),
 
     # Closed, but the defect is still in `main`; the prose says so and names the commit.
     13: ('branch-only', '183c2c4b6'),

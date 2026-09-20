@@ -11,15 +11,19 @@ struct PDFReflowLibCommand {
           --no-ocr  (alias for --ocr never)
           --reference-images automatic|always|never
           --repeated-headers-and-footers remove|keep
-          --full-page-image-encoding png|jpeg:QUALITY|smallest:QUALITY
-          --region-image-encoding png|jpeg:QUALITY|smallest:QUALITY
+          --full-page-image-encoding automatic[:QUALITY]|png|jpeg:QUALITY|smallest:QUALITY
+          --region-image-encoding automatic[:QUALITY]|png|jpeg:QUALITY|smallest:QUALITY
           --maximum-output-bytes BYTES|unlimited  (uncompressed entry budget)
           --maximum-epub-bytes BYTES|unlimited    (final ZIP file cap)
           --package-identifier ID                 (dc:identifier; default random urn:uuid)
           --modification-date ISO8601             (e.g. 2026-01-01T00:00:00Z; default now)
         JPEG QUALITY must be in 0...1. Defaults: automatic references, repeated headers and
-        footers removed, PNG, 512 MiB entry budget, no separate final ZIP cap. Required
-        image-only fallback pages are retained.
+        footers removed, automatic:0.9 image encoding, 512 MiB entry budget, no separate final
+        ZIP cap. Required image-only fallback pages are retained. automatic classifies each
+        image: photographs, painted art, tonal scans, mixed full pages and uncoloured images
+        keep the smaller of PNG and JPEG; coloured line art, charts, drawn illustration and
+        mixed crops, and coloured text pages stay PNG. png, jpeg:QUALITY and smallest:QUALITY
+        apply exactly as named.
         Set both --package-identifier and --modification-date for byte-reproducible packaging.
         """
         if args == ["--help"] {
@@ -32,13 +36,15 @@ struct PDFReflowLibCommand {
         do {
             func encoding(_ value: String) throws -> ConversionOptions.ImageEncoding {
                 if value == "png" { return .png }
+                if value == "automatic" { return .automatic(jpegQuality: ConversionOptions.ImageEncoding.automaticJPEGQuality) }
                 let parts = value.split(separator: ":", omittingEmptySubsequences: false)
                 if parts.count == 2, let quality = Double(parts[1]), quality.isFinite,
                    (0...1).contains(quality) {
                     if parts[0] == "jpeg" { return .jpeg(quality: quality) }
                     if parts[0] == "smallest" { return .smallest(jpegQuality: quality) }
+                    if parts[0] == "automatic" { return .automatic(jpegQuality: quality) }
                 }
-                throw ConversionError.invalidOptions("expected png, jpeg:QUALITY or smallest:QUALITY")
+                throw ConversionError.invalidOptions("expected automatic, automatic:QUALITY, png, jpeg:QUALITY or smallest:QUALITY")
             }
             func byteLimit(_ value: String) throws -> Int64? {
                 if value == "unlimited" { return nil }

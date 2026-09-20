@@ -20,8 +20,12 @@ private extension PDFAnnotation {
 }
 
 enum PageRasterizer {
+    /// `inspect` sees the finished pixels in the context's own buffer (RGBA8 rows, top row first:
+    /// bytes, width, height, bytes per row) before the image is made; reading a `CGImage`'s
+    /// pixels later would copy them.
     static func image(page: PDFPage, rect: CGRect, options: ConversionOptions,
-                      applyRotation: Bool = false) throws -> CGImage {
+                      applyRotation: Bool = false,
+                      inspect: ((UnsafeBufferPointer<UInt8>, Int, Int, Int) -> Void)? = nil) throws -> CGImage {
         guard let reference = page.pageRef, rect.isFinite, rect.width > 0, rect.height > 0 else {
             throw ConversionError.resourceLimit("invalid page geometry")
         }
@@ -62,6 +66,10 @@ enum PageRasterizer {
             annotation.draw(with: .cropBox, in: context)
             context.restoreGState()
         }
+        if let inspect, let data = context.data {
+            inspect(UnsafeBufferPointer(start: data.assumingMemoryBound(to: UInt8.self),
+                                        count: context.bytesPerRow * height), width, height, context.bytesPerRow)
+        }
         guard let image = context.makeImage() else {
             throw ConversionError.resourceLimit("raster creation failed")
         }
@@ -80,6 +88,11 @@ enum PageRasterizer {
         case .jpeg(let quality):
             try write(image, to: jpeg, jpegQuality: quality)
             return (jpeg, .jpeg)
+        case .automatic:
+            // Callers that know the image's role and page resolve this themselves; without that
+            // evidence, judge it as a region crop, the stricter role.
+            return try encode(image, at: baseURL, encoding: ImageContentClassifier.resolve(encoding,
+                image: image, role: .region, pageDrawnFromImage: false))
         case .smallest(let quality):
             try write(image, to: png)
             try Task.checkCancellation()
@@ -95,13 +108,34 @@ enum PageRasterizer {
         }
     }
 
+    /// The same pixels, described as opaque, so PNG writes three channels instead of four.
+    ///
+    /// `image(page:rect:options:)` fills the raster opaque white before anything is drawn on
+    /// it, so every alpha byte is 255 and `premultipliedLast` and `noneSkipLast` describe the
+    /// identical bytes: premultiplying by 1 changes nothing. Relabelling reuses the raster's
+    /// own data provider, so no pixel is touched, nothing is copied, and a reader is not asked
+    /// to carry a constant alpha plane. Only the written file changes; the raster handed to
+    /// recognition and to the layer tests keeps the format Vision has been measured against.
+    static func opaque(_ image: CGImage) -> CGImage {
+        guard image.alphaInfo == .premultipliedLast, image.bitsPerPixel == 32,
+              let space = image.colorSpace, let provider = image.dataProvider,
+              let relabelled = CGImage(width: image.width, height: image.height,
+                  bitsPerComponent: image.bitsPerComponent, bitsPerPixel: image.bitsPerPixel,
+                  bytesPerRow: image.bytesPerRow, space: space,
+                  bitmapInfo: CGBitmapInfo(rawValue: CGImageAlphaInfo.noneSkipLast.rawValue),
+                  provider: provider, decode: nil, shouldInterpolate: image.shouldInterpolate,
+                  intent: image.renderingIntent)
+        else { return image }
+        return relabelled
+    }
+
     static func write(_ image: CGImage, to url: URL, jpegQuality: Double? = nil) throws {
         guard let destination = CGImageDestinationCreateWithURL(url as CFURL,
             (jpegQuality == nil ? UTType.png : UTType.jpeg).identifier as CFString, 1, nil) else {
             throw CocoaError(.fileWriteUnknown)
         }
         let properties = jpegQuality.map { [kCGImageDestinationLossyCompressionQuality: $0] as CFDictionary }
-        CGImageDestinationAddImage(destination, image, properties)
+        CGImageDestinationAddImage(destination, opaque(image), properties)
         guard CGImageDestinationFinalize(destination) else { throw CocoaError(.fileWriteUnknown) }
     }
 }

@@ -1,0 +1,1388 @@
+{
+ "books": {
+  "arxiv-replay-clocks-2023": {
+   "baseline": {
+    "entryBytes": 8556218,
+    "imageBytes": 8484417,
+    "imageCount": 70,
+    "seconds": 1.19
+   },
+   "candidate": {
+    "entryBytes": 7463046,
+    "imageBytes": 7391245,
+    "imageCount": 70,
+    "jpegCount": 0,
+    "seconds": 1.91
+   },
+   "fidelity": {
+    "jpegCount": 0,
+    "measured": 0,
+    "worstEdgeBlockMAE": null,
+    "over30Levels": 0,
+    "medianEdgeBlockMAE": null,
+    "minPSNR": null,
+    "keptPNGIdentical": 70,
+    "keptPNGDiffering": 0
+   },
+   "worstImages": []
+  },
+  "cdc-zombie-pandemic-2011": {
+   "baseline": {
+    "entryBytes": 150099013,
+    "imageBytes": 150056060,
+    "imageCount": 42,
+    "seconds": 13.97
+   },
+   "candidate": {
+    "entryBytes": 33073758,
+    "imageBytes": 33030769,
+    "imageCount": 42,
+    "jpegCount": 36,
+    "seconds": 15.66
+   },
+   "fidelity": {
+    "jpegCount": 36,
+    "measured": 36,
+    "worstEdgeBlockMAE": 41.47,
+    "over30Levels": 1,
+    "medianEdgeBlockMAE": 6.15,
+    "minPSNR": 34.72,
+    "keptPNGIdentical": 6,
+    "keptPNGDiffering": 0
+   },
+   "worstImages": [
+    {
+     "asset": "image-39",
+     "pixels": [
+      1530,
+      1980
+     ],
+     "psnr": 34.72,
+     "worstEdgeBlockMAE": 41.47,
+     "baselineBytes": 2519281,
+     "bytes": 795476
+    },
+    {
+     "asset": "image-1",
+     "pixels": [
+      1530,
+      1980
+     ],
+     "psnr": 41.83,
+     "worstEdgeBlockMAE": 23.86,
+     "baselineBytes": 4085051,
+     "bytes": 863597
+    },
+    {
+     "asset": "image-27",
+     "pixels": [
+      1530,
+      1980
+     ],
+     "psnr": 44.13,
+     "worstEdgeBlockMAE": 21.69,
+     "baselineBytes": 5169268,
+     "bytes": 1147984
+    }
+   ]
+  },
+  "census-rrs2002-01": {
+   "baseline": {
+    "entryBytes": 4698953,
+    "imageBytes": 4641226,
+    "imageCount": 37,
+    "seconds": 3.65
+   },
+   "candidate": {
+    "entryBytes": 4096645,
+    "imageBytes": 4038918,
+    "imageCount": 37,
+    "jpegCount": 0,
+    "seconds": 4.3
+   },
+   "fidelity": {
+    "jpegCount": 0,
+    "measured": 0,
+    "worstEdgeBlockMAE": null,
+    "over30Levels": 0,
+    "medianEdgeBlockMAE": null,
+    "minPSNR": null,
+    "keptPNGIdentical": 37,
+    "keptPNGDiffering": 0
+   },
+   "worstImages": []
+  },
+  "cia-blue-book-14-1955": {
+   "baseline": {
+    "entryBytes": 216290653,
+    "imageBytes": 215148746,
+    "imageCount": 421,
+    "seconds": 37.56
+   },
+   "candidate": {
+    "entryBytes": 195711207,
+    "imageBytes": 194569205,
+    "imageCount": 421,
+    "jpegCount": 95,
+    "seconds": 52.19
+   },
+   "fidelity": {
+    "jpegCount": 95,
+    "measured": 95,
+    "worstEdgeBlockMAE": 1.81,
+    "over30Levels": 0,
+    "medianEdgeBlockMAE": 1.55,
+    "minPSNR": 45.73,
+    "keptPNGIdentical": 326,
+    "keptPNGDiffering": 0
+   },
+   "worstImages": [
+    {
+     "asset": "image-116",
+     "pixels": [
+      1526,
+      1967
+     ],
+     "psnr": 53.84,
+     "worstEdgeBlockMAE": 1.81,
+     "baselineBytes": 487290,
+     "bytes": 315338
+    },
+    {
+     "asset": "image-112",
+     "pixels": [
+      1526,
+      1972
+     ],
+     "psnr": 50.83,
+     "worstEdgeBlockMAE": 1.78,
+     "baselineBytes": 896375,
+     "bytes": 608297
+    },
+    {
+     "asset": "image-275",
+     "pixels": [
+      1526,
+      1975
+     ],
+     "psnr": 48.98,
+     "worstEdgeBlockMAE": 1.78,
+     "baselineBytes": 1094679,
+     "bytes": 1026176
+    }
+   ]
+  },
+  "dga-2025-2030": {
+   "baseline": {
+    "entryBytes": 7988274,
+    "imageBytes": 7960458,
+    "imageCount": 28,
+    "seconds": 0.71
+   },
+   "candidate": {
+    "entryBytes": 5011150,
+    "imageBytes": 4983328,
+    "imageCount": 28,
+    "jpegCount": 6,
+    "seconds": 0.99
+   },
+   "fidelity": {
+    "jpegCount": 6,
+    "measured": 6,
+    "worstEdgeBlockMAE": 24.44,
+    "over30Levels": 0,
+    "medianEdgeBlockMAE": 22.09,
+    "minPSNR": 32.42,
+    "keptPNGIdentical": 22,
+    "keptPNGDiffering": 0
+   },
+   "worstImages": [
+    {
+     "asset": "image-6",
+     "pixels": [
+      1530,
+      1980
+     ],
+     "psnr": 40.93,
+     "worstEdgeBlockMAE": 24.44,
+     "baselineBytes": 1111096,
+     "bytes": 672332
+    },
+    {
+     "asset": "image-15",
+     "pixels": [
+      1530,
+      92
+     ],
+     "psnr": 32.42,
+     "worstEdgeBlockMAE": 22.95,
+     "baselineBytes": 383596,
+     "bytes": 104627
+    },
+    {
+     "asset": "image-1",
+     "pixels": [
+      1530,
+      1980
+     ],
+     "psnr": 42.68,
+     "worstEdgeBlockMAE": 22.61,
+     "baselineBytes": 1408816,
+     "bytes": 426816
+    }
+   ]
+  },
+  "faa-phak-8083-25c": {
+   "baseline": {
+    "entryBytes": 261773544,
+    "imageBytes": 259681432,
+    "imageCount": 619,
+    "seconds": 43.0
+   },
+   "candidate": {
+    "entryBytes": 142360229,
+    "imageBytes": 140267973,
+    "imageCount": 619,
+    "jpegCount": 144,
+    "seconds": 47.73
+   },
+   "fidelity": {
+    "jpegCount": 144,
+    "measured": 144,
+    "worstEdgeBlockMAE": 52.83,
+    "over30Levels": 27,
+    "medianEdgeBlockMAE": 13.96,
+    "minPSNR": 27.94,
+    "keptPNGIdentical": 475,
+    "keptPNGDiffering": 0
+   },
+   "worstImages": [
+    {
+     "asset": "image-299",
+     "pixels": [
+      1218,
+      649
+     ],
+     "psnr": 27.94,
+     "worstEdgeBlockMAE": 52.83,
+     "baselineBytes": 1319229,
+     "bytes": 441309
+    },
+    {
+     "asset": "image-116",
+     "pixels": [
+      596,
+      590
+     ],
+     "psnr": 29.31,
+     "worstEdgeBlockMAE": 52.47,
+     "baselineBytes": 385401,
+     "bytes": 179307
+    },
+    {
+     "asset": "image-279",
+     "pixels": [
+      1194,
+      543
+     ],
+     "psnr": 40.11,
+     "worstEdgeBlockMAE": 49.09,
+     "baselineBytes": 964303,
+     "bytes": 197270
+    }
+   ]
+  },
+  "fed-explained-2021": {
+   "baseline": {
+    "entryBytes": 77879534,
+    "imageBytes": 77565138,
+    "imageCount": 317,
+    "seconds": 7.29
+   },
+   "candidate": {
+    "entryBytes": 55032746,
+    "imageBytes": 54718338,
+    "imageCount": 317,
+    "jpegCount": 12,
+    "seconds": 13.6
+   },
+   "fidelity": {
+    "jpegCount": 12,
+    "measured": 12,
+    "worstEdgeBlockMAE": 25.95,
+    "over30Levels": 0,
+    "medianEdgeBlockMAE": 11.79,
+    "minPSNR": 39.52,
+    "keptPNGIdentical": 305,
+    "keptPNGDiffering": 0
+   },
+   "worstImages": [
+    {
+     "asset": "image-212",
+     "pixels": [
+      1530,
+      1980
+     ],
+     "psnr": 39.81,
+     "worstEdgeBlockMAE": 25.95,
+     "baselineBytes": 3148903,
+     "bytes": 732341
+    },
+    {
+     "asset": "image-275",
+     "pixels": [
+      1530,
+      1980
+     ],
+     "psnr": 39.52,
+     "worstEdgeBlockMAE": 25.53,
+     "baselineBytes": 2666525,
+     "bytes": 681139
+    },
+    {
+     "asset": "image-115",
+     "pixels": [
+      1530,
+      1980
+     ],
+     "psnr": 41.98,
+     "worstEdgeBlockMAE": 19.47,
+     "baselineBytes": 2072512,
+     "bytes": 413930
+    }
+   ]
+  },
+  "gpo-911-2004": {
+   "baseline": {
+    "entryBytes": 20673701,
+    "imageBytes": 18595658,
+    "imageCount": 101,
+    "seconds": 9.09
+   },
+   "candidate": {
+    "entryBytes": 16092910,
+    "imageBytes": 14014833,
+    "imageCount": 101,
+    "jpegCount": 34,
+    "seconds": 10.29
+   },
+   "fidelity": {
+    "jpegCount": 34,
+    "measured": 34,
+    "worstEdgeBlockMAE": 1.66,
+    "over30Levels": 0,
+    "medianEdgeBlockMAE": 1.27,
+    "minPSNR": 46.3,
+    "keptPNGIdentical": 67,
+    "keptPNGDiffering": 0
+   },
+   "worstImages": [
+    {
+     "asset": "image-23",
+     "pixels": [
+      789,
+      569
+     ],
+     "psnr": 50.84,
+     "worstEdgeBlockMAE": 1.66,
+     "baselineBytes": 207958,
+     "bytes": 98642
+    },
+    {
+     "asset": "image-22",
+     "pixels": [
+      789,
+      600
+     ],
+     "psnr": 50.21,
+     "worstEdgeBlockMAE": 1.64,
+     "baselineBytes": 232995,
+     "bytes": 105928
+    },
+    {
+     "asset": "image-25",
+     "pixels": [
+      387,
+      279
+     ],
+     "psnr": 50.73,
+     "worstEdgeBlockMAE": 1.56,
+     "baselineBytes": 56484,
+     "bytes": 23188
+    }
+   ]
+  },
+  "gpo-our-flag-2003": {
+   "baseline": {
+    "entryBytes": 13457583,
+    "imageBytes": 13331627,
+    "imageCount": 147,
+    "seconds": 1.42
+   },
+   "candidate": {
+    "entryBytes": 7232724,
+    "imageBytes": 7106749,
+    "imageCount": 147,
+    "jpegCount": 19,
+    "seconds": 1.63
+   },
+   "fidelity": {
+    "jpegCount": 19,
+    "measured": 19,
+    "worstEdgeBlockMAE": 28.47,
+    "over30Levels": 0,
+    "medianEdgeBlockMAE": 13.72,
+    "minPSNR": 35.37,
+    "keptPNGIdentical": 128,
+    "keptPNGDiffering": 0
+   },
+   "worstImages": [
+    {
+     "asset": "image-2",
+     "pixels": [
+      1057,
+      1630
+     ],
+     "psnr": 38.71,
+     "worstEdgeBlockMAE": 28.47,
+     "baselineBytes": 2024190,
+     "bytes": 454036
+    },
+    {
+     "asset": "image-1",
+     "pixels": [
+      1057,
+      1630
+     ],
+     "psnr": 42.29,
+     "worstEdgeBlockMAE": 25.72,
+     "baselineBytes": 1897463,
+     "bytes": 377417
+    },
+    {
+     "asset": "image-88",
+     "pixels": [
+      368,
+      233
+     ],
+     "psnr": 35.37,
+     "worstEdgeBlockMAE": 25.34,
+     "baselineBytes": 113122,
+     "bytes": 31105
+    }
+   ]
+  },
+  "gpo-warren-1964-suspect-text-excerpt": {
+   "baseline": {
+    "entryBytes": 6335701,
+    "imageBytes": 6326160,
+    "imageCount": 5,
+    "seconds": 6.68
+   },
+   "candidate": {
+    "entryBytes": 1989783,
+    "imageBytes": 1980237,
+    "imageCount": 5,
+    "jpegCount": 5,
+    "seconds": 7.16
+   },
+   "fidelity": {
+    "jpegCount": 5,
+    "measured": 5,
+    "worstEdgeBlockMAE": 7.84,
+    "over30Levels": 0,
+    "medianEdgeBlockMAE": 5.69,
+    "minPSNR": 43.83,
+    "keptPNGIdentical": 0,
+    "keptPNGDiffering": 0
+   },
+   "worstImages": [
+    {
+     "asset": "image-5",
+     "pixels": [
+      977,
+      1587
+     ],
+     "psnr": 43.83,
+     "worstEdgeBlockMAE": 7.84,
+     "baselineBytes": 1277127,
+     "bytes": 564377
+    },
+    {
+     "asset": "image-1",
+     "pixels": [
+      955,
+      1585
+     ],
+     "psnr": 44.72,
+     "worstEdgeBlockMAE": 6.47,
+     "baselineBytes": 1320796,
+     "bytes": 469504
+    },
+    {
+     "asset": "image-3",
+     "pixels": [
+      955,
+      1585
+     ],
+     "psnr": 48.07,
+     "worstEdgeBlockMAE": 5.69,
+     "baselineBytes": 956794,
+     "bytes": 224648
+    }
+   ]
+  },
+  "irs-p596-zhs-2025": {
+   "baseline": {
+    "entryBytes": 37156483,
+    "imageBytes": 37015137,
+    "imageCount": 140,
+    "seconds": 5.8
+   },
+   "candidate": {
+    "entryBytes": 34559276,
+    "imageBytes": 34417926,
+    "imageCount": 140,
+    "jpegCount": 4,
+    "seconds": 8.06
+   },
+   "fidelity": {
+    "jpegCount": 4,
+    "measured": 4,
+    "worstEdgeBlockMAE": 24.64,
+    "over30Levels": 0,
+    "medianEdgeBlockMAE": 12.53,
+    "minPSNR": 43.62,
+    "keptPNGIdentical": 136,
+    "keptPNGDiffering": 0
+   },
+   "worstImages": [
+    {
+     "asset": "image-140",
+     "pixels": [
+      1530,
+      1980
+     ],
+     "psnr": 57.97,
+     "worstEdgeBlockMAE": 24.64,
+     "baselineBytes": 84811,
+     "bytes": 69438
+    },
+    {
+     "asset": "image-8",
+     "pixels": [
+      1530,
+      1980
+     ],
+     "psnr": 45.73,
+     "worstEdgeBlockMAE": 22.92,
+     "baselineBytes": 1299538,
+     "bytes": 889001
+    },
+    {
+     "asset": "image-40",
+     "pixels": [
+      1325,
+      73
+     ],
+     "psnr": 52.81,
+     "worstEdgeBlockMAE": 2.14,
+     "baselineBytes": 16945,
+     "bytes": 15698
+    }
+   ]
+  },
+  "nbs-jres-geltman-1977": {
+   "baseline": {
+    "entryBytes": 6452087,
+    "imageBytes": 6443302,
+    "imageCount": 8,
+    "seconds": 0.63
+   },
+   "candidate": {
+    "entryBytes": 4419826,
+    "imageBytes": 4411033,
+    "imageCount": 8,
+    "jpegCount": 8,
+    "seconds": 0.95
+   },
+   "fidelity": {
+    "jpegCount": 8,
+    "measured": 8,
+    "worstEdgeBlockMAE": 1.86,
+    "over30Levels": 0,
+    "medianEdgeBlockMAE": 1.81,
+    "minPSNR": 45.03,
+    "keptPNGIdentical": 0,
+    "keptPNGDiffering": 0
+   },
+   "worstImages": [
+    {
+     "asset": "image-6",
+     "pixels": [
+      1338,
+      1818
+     ],
+     "psnr": 48.03,
+     "worstEdgeBlockMAE": 1.86,
+     "baselineBytes": 1013646,
+     "bytes": 726263
+    },
+    {
+     "asset": "image-3",
+     "pixels": [
+      1338,
+      1818
+     ],
+     "psnr": 48.63,
+     "worstEdgeBlockMAE": 1.84,
+     "baselineBytes": 930439,
+     "bytes": 617017
+    },
+    {
+     "asset": "image-5",
+     "pixels": [
+      1338,
+      1818
+     ],
+     "psnr": 48.3,
+     "worstEdgeBlockMAE": 1.84,
+     "baselineBytes": 1010916,
+     "bytes": 629919
+    }
+   ]
+  },
+  "ntrs-20180003024-earthdata-slides-2018": {
+   "baseline": {
+    "entryBytes": 4442700,
+    "imageBytes": 4426823,
+    "imageCount": 21,
+    "seconds": 0.79
+   },
+   "candidate": {
+    "entryBytes": 3691298,
+    "imageBytes": 3675416,
+    "imageCount": 21,
+    "jpegCount": 5,
+    "seconds": 1.44
+   },
+   "fidelity": {
+    "jpegCount": 5,
+    "measured": 5,
+    "worstEdgeBlockMAE": 30.86,
+    "over30Levels": 5,
+    "medianEdgeBlockMAE": 30.09,
+    "minPSNR": 44.18,
+    "keptPNGIdentical": 16,
+    "keptPNGDiffering": 0
+   },
+   "worstImages": [
+    {
+     "asset": "image-3",
+     "pixels": [
+      1800,
+      1012
+     ],
+     "psnr": 47.86,
+     "worstEdgeBlockMAE": 30.86,
+     "baselineBytes": 242849,
+     "bytes": 188345
+    },
+    {
+     "asset": "image-4",
+     "pixels": [
+      1800,
+      1012
+     ],
+     "psnr": 45.76,
+     "worstEdgeBlockMAE": 30.86,
+     "baselineBytes": 477463,
+     "bytes": 226447
+    },
+    {
+     "asset": "image-11",
+     "pixels": [
+      1800,
+      1012
+     ],
+     "psnr": 47.99,
+     "worstEdgeBlockMAE": 30.09,
+     "baselineBytes": 140065,
+     "bytes": 119695
+    }
+   ]
+  },
+  "scotus-loper-bright-2024": {
+   "baseline": {
+    "entryBytes": 266578,
+    "imageBytes": 0,
+    "imageCount": 0,
+    "seconds": 1.09
+   },
+   "candidate": {
+    "entryBytes": 266578,
+    "imageBytes": 0,
+    "imageCount": 0,
+    "jpegCount": 0,
+    "seconds": 1.09
+   },
+   "fidelity": {
+    "jpegCount": 0,
+    "measured": 0,
+    "worstEdgeBlockMAE": null,
+    "over30Levels": 0,
+    "medianEdgeBlockMAE": null,
+    "minPSNR": null,
+    "keptPNGIdentical": 0,
+    "keptPNGDiffering": 0
+   },
+   "worstImages": []
+  },
+  "uscis-m618-arabic-2015": {
+   "baseline": {
+    "entryBytes": 107306355,
+    "imageBytes": 107031631,
+    "imageCount": 213,
+    "seconds": 8.83
+   },
+   "candidate": {
+    "entryBytes": 77526208,
+    "imageBytes": 77251444,
+    "imageCount": 213,
+    "jpegCount": 40,
+    "seconds": 15.63
+   },
+   "fidelity": {
+    "jpegCount": 40,
+    "measured": 40,
+    "worstEdgeBlockMAE": 28.75,
+    "over30Levels": 0,
+    "medianEdgeBlockMAE": 15.47,
+    "minPSNR": 35.33,
+    "keptPNGIdentical": 173,
+    "keptPNGDiffering": 0
+   },
+   "worstImages": [
+    {
+     "asset": "image-152",
+     "pixels": [
+      606,
+      322
+     ],
+     "psnr": 37.36,
+     "worstEdgeBlockMAE": 28.75,
+     "baselineBytes": 256147,
+     "bytes": 54681
+    },
+    {
+     "asset": "image-123",
+     "pixels": [
+      603,
+      401
+     ],
+     "psnr": 35.33,
+     "worstEdgeBlockMAE": 27.34,
+     "baselineBytes": 468918,
+     "bytes": 107243
+    },
+    {
+     "asset": "image-73",
+     "pixels": [
+      1530,
+      1980
+     ],
+     "psnr": 42.34,
+     "worstEdgeBlockMAE": 24.59,
+     "baselineBytes": 406655,
+     "bytes": 329256
+    }
+   ]
+  },
+  "usgs-mcs2025-copper": {
+   "baseline": {
+    "entryBytes": 405960,
+    "imageBytes": 396291,
+    "imageCount": 3,
+    "seconds": 0.15
+   },
+   "candidate": {
+    "entryBytes": 352194,
+    "imageBytes": 342525,
+    "imageCount": 3,
+    "jpegCount": 0,
+    "seconds": 0.18
+   },
+   "fidelity": {
+    "jpegCount": 0,
+    "measured": 0,
+    "worstEdgeBlockMAE": null,
+    "over30Levels": 0,
+    "medianEdgeBlockMAE": null,
+    "minPSNR": null,
+    "keptPNGIdentical": 3,
+    "keptPNGDiffering": 0
+   },
+   "worstImages": []
+  },
+  "usda-ars-agresearch-2012-11": {
+   "baseline": {
+    "entryBytes": 82510260,
+    "imageBytes": 82450598,
+    "imageCount": 75,
+    "seconds": 5.86
+   },
+   "candidate": {
+    "entryBytes": 45731888,
+    "imageBytes": 45672201,
+    "imageCount": 75,
+    "jpegCount": 25,
+    "seconds": 7.3
+   },
+   "fidelity": {
+    "jpegCount": 25,
+    "measured": 25,
+    "worstEdgeBlockMAE": 51.75,
+    "over30Levels": 3,
+    "medianEdgeBlockMAE": 9.61,
+    "minPSNR": 36.36,
+    "keptPNGIdentical": 50,
+    "keptPNGDiffering": 0
+   },
+   "worstImages": [
+    {
+     "asset": "image-42",
+     "pixels": [
+      1530,
+      1980
+     ],
+     "psnr": 42.09,
+     "worstEdgeBlockMAE": 51.75,
+     "baselineBytes": 3304364,
+     "bytes": 1026319
+    },
+    {
+     "asset": "image-20",
+     "pixels": [
+      1530,
+      1980
+     ],
+     "psnr": 41.58,
+     "worstEdgeBlockMAE": 38.62,
+     "baselineBytes": 2673697,
+     "bytes": 1124909
+    },
+    {
+     "asset": "image-47",
+     "pixels": [
+      907,
+      1019
+     ],
+     "psnr": 36.36,
+     "worstEdgeBlockMAE": 34.66,
+     "baselineBytes": 1121405,
+     "bytes": 290872
+    }
+   ]
+  },
+  "wallace-algebra-2010": {
+   "baseline": {
+    "entryBytes": 48207721,
+    "imageBytes": 47191343,
+    "imageCount": 2151,
+    "seconds": 22.53
+   },
+   "candidate": {
+    "entryBytes": 42529494,
+    "imageBytes": 41513107,
+    "imageCount": 2151,
+    "jpegCount": 9,
+    "seconds": 28.1
+   },
+   "fidelity": {
+    "jpegCount": 9,
+    "measured": 9,
+    "worstEdgeBlockMAE": 1.73,
+    "over30Levels": 0,
+    "medianEdgeBlockMAE": 1.11,
+    "minPSNR": 45.81,
+    "keptPNGIdentical": 2142,
+    "keptPNGDiffering": 0
+   },
+   "worstImages": [
+    {
+     "asset": "image-1",
+     "pixels": [
+      131,
+      46
+     ],
+     "psnr": 45.81,
+     "worstEdgeBlockMAE": 1.73,
+     "baselineBytes": 6937,
+     "bytes": 4104
+    },
+    {
+     "asset": "image-1658",
+     "pixels": [
+      348,
+      227
+     ],
+     "psnr": 55.37,
+     "worstEdgeBlockMAE": 1.33,
+     "baselineBytes": 9857,
+     "bytes": 8955
+    },
+    {
+     "asset": "image-1618",
+     "pixels": [
+      318,
+      175
+     ],
+     "psnr": 54.46,
+     "worstEdgeBlockMAE": 1.25,
+     "baselineBytes": 8360,
+     "bytes": 7383
+    }
+   ]
+  },
+  "noaa-nca5-2023": {
+   "baseline": {
+    "entryBytes": 1158819926,
+    "imageBytes": 1152312625,
+    "imageCount": 2410,
+    "seconds": 163.8
+   },
+   "candidate": {
+    "entryBytes": 817716220,
+    "imageBytes": 811208793,
+    "imageCount": 2410,
+    "jpegCount": 126,
+    "seconds": 194.97
+   },
+   "fidelity": {
+    "jpegCount": 126,
+    "measured": 126,
+    "worstEdgeBlockMAE": 51.34,
+    "over30Levels": 14,
+    "medianEdgeBlockMAE": 18.48,
+    "minPSNR": 30.86,
+    "keptPNGIdentical": 2284,
+    "keptPNGDiffering": 0
+   },
+   "worstImages": [
+    {
+     "asset": "image-1805",
+     "pixels": [
+      1530,
+      1980
+     ],
+     "psnr": 39.52,
+     "worstEdgeBlockMAE": 51.34,
+     "baselineBytes": 3888785,
+     "bytes": 809050
+    },
+    {
+     "asset": "image-149",
+     "pixels": [
+      1805,
+      1121
+     ],
+     "psnr": 40.0,
+     "worstEdgeBlockMAE": 46.11,
+     "baselineBytes": 519954,
+     "bytes": 271468
+    },
+    {
+     "asset": "image-1592",
+     "pixels": [
+      1530,
+      1980
+     ],
+     "psnr": 40.97,
+     "worstEdgeBlockMAE": 45.73,
+     "baselineBytes": 4713109,
+     "bytes": 1371406
+    }
+   ],
+   "alphaPlaneRemovalOnly": {
+    "entryBytes": 1011966197,
+    "imageBytes": 1005458896,
+    "imageCount": 2410
+   }
+  },
+  "gpo-warren-1964": {
+   "baseline": {
+    "entryBytes": 1246503733,
+    "imageBytes": 1243572581,
+    "imageCount": 931,
+    "seconds": 389.53
+   },
+   "candidate": {
+    "entryBytes": 536242227,
+    "imageBytes": 533310144,
+    "imageCount": 931,
+    "jpegCount": 931,
+    "seconds": 460.02
+   },
+   "note": "the baseline needs the budget lifted; the candidate ran with library defaults"
+  }
+ },
+ "warrenSixtyTwoPageExcerptFidelity": {
+  "case": "warren-62-page-excerpt",
+  "jpegCount": 63,
+  "measured": 63,
+  "sampled": false,
+  "mismatchedPixelSizes": [],
+  "missingBaseline": [],
+  "worstEdgeBlockMAE": 9.42,
+  "over30Levels": 0,
+  "medianEdgeBlockMAE": 6.58,
+  "minPSNR": 42.65,
+  "keptPNGIdentical": 0,
+  "keptPNGDiffering": 0,
+  "keptPNGAbsent": 0,
+  "worstTen": [
+   {
+    "asset": "image-40",
+    "pixels": [
+     977,
+     1587
+    ],
+    "baselineBytes": 1271449,
+    "bytes": 591111,
+    "psnr": 44.0,
+    "worstBlockMAE": 9.42,
+    "worstEdgeBlockMAE": 9.42,
+    "worstEdgeBlockAt": [
+     56,
+     112
+    ],
+    "edgeMax": 23,
+    "maxError": 23
+   },
+   {
+    "asset": "image-58",
+    "pixels": [
+     960,
+     1582
+    ],
+    "baselineBytes": 1250182,
+    "bytes": 487069,
+    "psnr": 44.15,
+    "worstBlockMAE": 9.31,
+    "worstEdgeBlockMAE": 9.31,
+    "worstEdgeBlockAt": [
+     80,
+     72
+    ],
+    "edgeMax": 23,
+    "maxError": 23
+   },
+   {
+    "asset": "image-11",
+    "pixels": [
+     967,
+     1590
+    ],
+    "baselineBytes": 1414890,
+    "bytes": 712956,
+    "psnr": 42.75,
+    "worstBlockMAE": 8.28,
+    "worstEdgeBlockMAE": 8.28,
+    "worstEdgeBlockAt": [
+     232,
+     104
+    ],
+    "edgeMax": 26,
+    "maxError": 26
+   },
+   {
+    "asset": "image-62",
+    "pixels": [
+     960,
+     1582
+    ],
+    "baselineBytes": 1440974,
+    "bytes": 674647,
+    "psnr": 43.47,
+    "worstBlockMAE": 8.23,
+    "worstEdgeBlockMAE": 8.23,
+    "worstEdgeBlockAt": [
+     528,
+     112
+    ],
+    "edgeMax": 28,
+    "maxError": 28
+   },
+   {
+    "asset": "image-50",
+    "pixels": [
+     960,
+     1582
+    ],
+    "baselineBytes": 1331894,
+    "bytes": 660275,
+    "psnr": 43.24,
+    "worstBlockMAE": 8.03,
+    "worstEdgeBlockMAE": 8.03,
+    "worstEdgeBlockAt": [
+     72,
+     88
+    ],
+    "edgeMax": 25,
+    "maxError": 25
+   },
+   {
+    "asset": "image-42",
+    "pixels": [
+     977,
+     1587
+    ],
+    "baselineBytes": 1420919,
+    "bytes": 694620,
+    "psnr": 42.65,
+    "worstBlockMAE": 7.95,
+    "worstEdgeBlockMAE": 7.95,
+    "worstEdgeBlockAt": [
+     40,
+     104
+    ],
+    "edgeMax": 26,
+    "maxError": 26
+   },
+   {
+    "asset": "image-16",
+    "pixels": [
+     967,
+     1590
+    ],
+    "baselineBytes": 1356476,
+    "bytes": 629077,
+    "psnr": 43.31,
+    "worstBlockMAE": 7.77,
+    "worstEdgeBlockMAE": 7.77,
+    "worstEdgeBlockAt": [
+     336,
+     104
+    ],
+    "edgeMax": 23,
+    "maxError": 23
+   },
+   {
+    "asset": "image-49",
+    "pixels": [
+     977,
+     1587
+    ],
+    "baselineBytes": 1404883,
+    "bytes": 660521,
+    "psnr": 43.49,
+    "worstBlockMAE": 7.61,
+    "worstEdgeBlockMAE": 7.61,
+    "worstEdgeBlockAt": [
+     384,
+     104
+    ],
+    "edgeMax": 28,
+    "maxError": 28
+   },
+   {
+    "asset": "image-9",
+    "pixels": [
+     970,
+     1595
+    ],
+    "baselineBytes": 1413781,
+    "bytes": 696249,
+    "psnr": 42.72,
+    "worstBlockMAE": 7.52,
+    "worstEdgeBlockMAE": 7.52,
+    "worstEdgeBlockAt": [
+     48,
+     1152
+    ],
+    "edgeMax": 30,
+    "maxError": 30
+   },
+   {
+    "asset": "image-30",
+    "pixels": [
+     967,
+     1590
+    ],
+    "baselineBytes": 1378277,
+    "bytes": 634938,
+    "psnr": 43.48,
+    "worstBlockMAE": 7.5,
+    "worstEdgeBlockMAE": 7.5,
+    "worstEdgeBlockAt": [
+     744,
+     104
+    ],
+    "edgeMax": 27,
+    "maxError": 27
+   }
+  ]
+ },
+ "warrenExcerptQualitySweepImageBytes": {
+  "0.88": 35100237,
+  "0.89": 35274725,
+  "0.90": 35490662,
+  "0.91": 35490662,
+  "0.92": 36305862
+ },
+ "regionReferences": [
+  {
+   "case": "usgs-mcs2025-copper",
+   "reference": "page-1-salient-statistics",
+   "page": 1,
+   "minimum": 0.95,
+   "before": 0.9894,
+   "after": 0.9894,
+   "assetChangedFormat": false
+  },
+  {
+   "case": "usgs-mcs2025-copper",
+   "reference": "page-1-tariff",
+   "page": 1,
+   "minimum": 0.95,
+   "before": 0.9881,
+   "after": 0.9881,
+   "assetChangedFormat": false
+  },
+  {
+   "case": "usgs-mcs2025-copper",
+   "reference": "page-1-row-mine-recoverable",
+   "page": 1,
+   "minimum": 0.95,
+   "before": 0.9966,
+   "after": 0.9966,
+   "assetChangedFormat": false
+  },
+  {
+   "case": "usgs-mcs2025-copper",
+   "reference": "page-1-row-london-metal-exchange",
+   "page": 1,
+   "minimum": 0.95,
+   "before": 0.9969,
+   "after": 0.9969,
+   "assetChangedFormat": false
+  },
+  {
+   "case": "usgs-mcs2025-copper",
+   "reference": "page-1-column-2022",
+   "page": 1,
+   "minimum": 0.95,
+   "before": 0.9921,
+   "after": 0.9921,
+   "assetChangedFormat": false
+  },
+  {
+   "case": "usgs-mcs2025-copper",
+   "reference": "page-2-world-production",
+   "page": 2,
+   "minimum": 0.95,
+   "before": 0.9853,
+   "after": 0.9853,
+   "assetChangedFormat": false
+  },
+  {
+   "case": "gpo-our-flag-2003",
+   "reference": "page-27-flag-size-table",
+   "page": 27,
+   "minimum": 0.95,
+   "before": 0.9828,
+   "after": 0.9828,
+   "assetChangedFormat": false
+  },
+  {
+   "case": "gpo-our-flag-2003",
+   "reference": "page-27-row-125-foot-pole",
+   "page": 27,
+   "minimum": 0.95,
+   "before": 0.9923,
+   "after": 0.9923,
+   "assetChangedFormat": false
+  },
+  {
+   "case": "gpo-our-flag-2003",
+   "reference": "page-27-row-250-foot-pole",
+   "page": 27,
+   "minimum": 0.95,
+   "before": 0.9926,
+   "after": 0.9926,
+   "assetChangedFormat": false
+  },
+  {
+   "case": "gpo-our-flag-2003",
+   "reference": "page-27-column-flagpole-heights",
+   "page": 27,
+   "minimum": 0.95,
+   "before": 0.9833,
+   "after": 0.9833,
+   "assetChangedFormat": false
+  },
+  {
+   "case": "nbs-jres-geltman-1977",
+   "reference": "page-1-page",
+   "page": 1,
+   "minimum": 0.95,
+   "before": 0.9835,
+   "after": 0.9835,
+   "assetChangedFormat": true
+  },
+  {
+   "case": "cdc-zombie-pandemic-2011",
+   "reference": "page-13-page",
+   "page": 13,
+   "minimum": 0.95,
+   "before": 0.9972,
+   "after": 0.9972,
+   "assetChangedFormat": true
+  },
+  {
+   "case": "wallace-algebra-2010",
+   "reference": "page-347-exercise-35",
+   "page": 347,
+   "minimum": 0.95,
+   "before": 0.9843,
+   "after": 0.9843,
+   "assetChangedFormat": false
+  },
+  {
+   "case": "faa-phak-8083-25c",
+   "reference": "page-19-figure-1-6-map",
+   "page": 19,
+   "minimum": 0.95,
+   "before": 0.9735,
+   "after": 0.9735,
+   "assetChangedFormat": true
+  },
+  {
+   "case": "faa-phak-8083-25c",
+   "reference": "page-121-figure-5-35",
+   "page": 121,
+   "minimum": 0.95,
+   "before": 0.9823,
+   "after": 0.9823,
+   "assetChangedFormat": false
+  },
+  {
+   "case": "faa-phak-8083-25c",
+   "reference": "page-121-figure-5-36",
+   "page": 121,
+   "minimum": 0.95,
+   "before": 0.9926,
+   "after": 0.9926,
+   "assetChangedFormat": false
+  },
+  {
+   "case": "faa-phak-8083-25c",
+   "reference": "page-121-figure-5-37",
+   "page": 121,
+   "minimum": 0.95,
+   "before": 0.9894,
+   "after": 0.9894,
+   "assetChangedFormat": false
+  }
+ ]
+}

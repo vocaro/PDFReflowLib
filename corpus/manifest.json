@@ -174,7 +174,7 @@
         910,
         920
       ],
-      "reviewStatus": "Full default conversion fails the image-output ceiling; nine-page excerpt spot checks expose text-layer, reflow and column-order defects. Full-book fidelity is unqualified.",
+      "reviewStatus": "Full default conversion completes since the automatic image-encoding default (#242), with 0.117% of the 512 MiB entry budget to spare, so the case is held out of the corpus lane on that margin rather than on a failure; nine-page excerpt spot checks expose text-layer, reflow and column-order defects. Full-book fidelity is unqualified.",
       "knownFidelityIssues": [
         {
           "page": 50,
@@ -210,8 +210,8 @@
           "resolution": "Source pages 1 and 920 retain image-only fallback; the pinned nine-page excerpt has seven reflowed pages. See measurements/quality-and-raster-fixes/record.md."
         }
       ],
-      "baselineStatus": "Fails maximumOutputBytes (image output) after the last completed reconstruction page 390/920; no EPUB is published. See measurements/gpo-warren-1964/record.md.",
-      "baselineTrackingURL": "https://github.com/vocaro/PDFReflowLib/issues/5",
+      "baselineStatus": "Converts at library defaults: 920 pages, 931 images all written as JPEG, 536,242,227 entry bytes, 628,685 bytes (0.117%) inside the 512 MiB budget. The historical baseline failed maximumOutputBytes after the last completed reconstruction page 390/920 (measurements/gpo-warren-1964/record.md); the current numbers and why the margin does not admit the case to the lane are in measurements/image-encoding-default/record.md.",
+      "baselineTrackingURL": "https://github.com/vocaro/PDFReflowLib/issues/242",
       "rightsClearance": {
         "status": "owner-confirmed",
         "scope": "Commercial use and redistribution of the development corpus; retain applicable license attribution."
@@ -493,12 +493,12 @@
         1700,
         1834
       ],
-      "reviewStatus": "Default image-output budget still fails (latest last completed reconstruction page 599/1834). Explicit 4 GiB entry/final caps complete all 1834 pages with PNG or JPEG full pages; full-book structure, exact policy comparison, selected source images and Mac resource measurements are retained in measurements/noaa-output-policies/record.md. Broad fidelity and physical-device budgets remain unqualified.",
+      "reviewStatus": "Default image-output budget still fails. At the automatic image-encoding default (#242) the whole book writes 817,716,220 entry bytes over 2,410 images with the budget lifted, 1.52x the 512 MiB default, and forced to smallest:0.9 everywhere it is still 1.29x over: its crops are charts and line art, not photographs. Explicit 4 GiB entry/final caps complete all 1834 pages with PNG or JPEG full pages; full-book structure, exact policy comparison, selected source images and Mac resource measurements are retained in measurements/noaa-output-policies/record.md. Broad fidelity and physical-device budgets remain unqualified.",
       "knownFidelityIssues": [],
       "downloadStatus": "Automated fetch returns HTTP 403; supplied cache matches pinned identity and publisher SHA-512. See measurements/noaa-nca5-2023/download-status.json.",
       "chapterReference": "corpus/noaa-nca5-2023-chapters.json",
-      "baselineStatus": "Default-budget failure remains excluded from the passing corpus gate. Explicit-policy full conversions measured on Mac; no configured case RSS ceiling or physical-device budget.",
-      "baselineTrackingURL": "https://github.com/vocaro/PDFReflowLib/issues/5",
+      "baselineStatus": "Default-budget failure remains excluded from the passing corpus gate, and no encoding choice closes it (measurements/image-encoding-default/record.md). Explicit-policy full conversions measured on Mac; no configured case RSS ceiling or physical-device budget.",
+      "baselineTrackingURL": "https://github.com/vocaro/PDFReflowLib/issues/242",
       "chapterTrackingURL": "https://github.com/vocaro/PDFReflowLib/issues/15"
     },
     {

@@ -135,6 +135,22 @@ and identifiers, never decoded images or large byte buffers. `PageAssetWriter` o
 registry and the image-byte budget; `PageRasterizer` renders source-composited regions to
 bounded rasters and encodes them under client policy.
 
+Client policy independently selects PNG, a JPEG quality or the smaller encoding for full-page
+images and for cropped regions, or leaves the default, `.automatic(jpegQuality: 0.90)`, which is
+decided per image. `PageAssetWriter.save` resolves it, because it is the one place that
+knows the two things `PageRasterizer` does not: the image's role (a supplementary page reference,
+or a crop — a required fallback is its page's only copy and is judged as a crop) and whether the
+page draws its type from an image, which the pipeline records during extraction from
+`PageEvidence`. `ImageContentClassifier` reads the raster through `PageRasterizer.image`'s
+`inspect` hook, from the bitmap context's own buffer before the `CGImage` is made, because
+reading a finished image's pixels copies them. It permits lossy for neutral images, photographs,
+tonal scans, continuous-tone art (except crops that are drawn illustration) and full-page `mixed`
+references, and hands `PageRasterizer.encode` `.smallest` there and `.png` elsewhere, so `encode`
+keeps its contract and a named encoding never reaches the classifier. Rasters are written without
+their constant alpha plane, relabelled opaque over their own pixel buffer at write time, so a PNG
+records three channels; the raster recognition sees keeps the format Vision is measured against.
+See [conversion options](conversion-options.md#automatic-encoding).
+
 `EPUBTextEncoder` owns XML escaping, block and inline tags, page markers and figure markup; it
 is the only place that knows XHTML. `SpinePacker` owns spine splitting and navigation entries as
 structured values, tested without files or ZIP. `EPUBWriter` owns OPF metadata, CSS, resource

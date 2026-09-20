@@ -4,7 +4,8 @@ import PDFKit
 import Vision
 
 // Investigation-only, single-request capture. No reflow output or inferred heading labels.
-// Compile with PageRasterizer.swift, ConversionTypes.swift, DocumentModel.swift and ReflowDocument.swift.
+// Compile with PageRasterizer.swift, ImageContentClassifier.swift, ConversionTypes.swift,
+// DocumentModel.swift and ReflowDocument.swift.
 @main struct ProbeVisionTitles {
     static func main() async throws {
         guard CommandLine.arguments.count == 4,

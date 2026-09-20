@@ -116,7 +116,10 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn('README.md', names)
 
     def test_the_twelve_of_234_are_all_branch_only_and_named_in_the_prose(self):
-        twelve = [13, 14, 36, 37, 39, 40, 43, 45, 153, 158, 164, 165]
+        # #36 was one of the twelve when #234 was written and is no longer: its rules were
+        # ported onto main for #229, so it is cited as history now. The other eleven stand.
+        self.assertEqual(gate.ALLOWED[36][0], 'historical')
+        twelve = [13, 14, 37, 39, 40, 43, 45, 153, 158, 164, 165]
         for issue in twelve:
             self.assertEqual(gate.ALLOWED[issue][0], 'branch-only', issue)
         cited = {}

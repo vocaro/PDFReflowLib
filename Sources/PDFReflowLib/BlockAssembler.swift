@@ -129,6 +129,9 @@ struct BlockAssembler {
     /// travels with it rather than holding a second, parallel one (#238).
     private var paragraphTag: TextStructure?
     private var previous: TextLine?
+    /// The line of the heading block last appended, for a heading the page breaks over two lines
+    /// with no space at the break (#42).
+    private var headingLine: TextLine?
     private var codeOrigin: CGFloat?
     /// The table row the last block holds, while more pieces of that printed row can still join
     /// it (#137, #210). Anything else the page hands over closes the row.
@@ -205,8 +208,23 @@ struct BlockAssembler {
         previous = line
     }
 
+    /// Whether a heading line carries on from the one above it: East Asian writing that sets no
+    /// space at the break, at the same size, on the page's own leading (#42). Latin headings are
+    /// untouched, because a break between two Latin words is a space and says nothing about
+    /// whether the lines are one title or two.
+    private func continuesHeading(_ above: TextLine, _ line: TextLine) -> Bool {
+        guard CJKText.setsNoSpace(between: above.text, and: line.text),
+              above.hasSize(line.fontSize), line.rect.maxY < above.rect.maxY else { return false }
+        // A display line's PDFKit box carries enough leading that two stacked lines of a title
+        // overlap: the cover's two 31-point lines overlap by 12.9 points. The bound is the size
+        // itself, which still separates a stack from a heading a measure further down the page.
+        let gap = above.rect.minY - line.rect.maxY
+        return gap >= -line.fontSize && gap <= line.fontSize * 0.8
+    }
+
     mutating func append(_ line: TextLine, as role: LineRole) {
         flushNote()
+        if case .heading = role {} else { headingLine = nil }
         // An untagged line never extends a tagged heading: the tags said where that heading ends,
         // and prose set beneath it at the column's leading is the text it heads, not more of the
         // heading. The roles below that open a block of their own flush the paragraph themselves.
@@ -216,7 +234,20 @@ struct BlockAssembler {
         switch role {
         case .heading:
             flushParagraph()
-            blocks.append(ReflowBlock(content: .heading(id: headingID(), text: line.content), page: page))
+            // East Asian writing breaks a heading between two characters of one word, so the
+            // second line is the rest of the first: IRS Publication 596's cover sets
+            // `低收入家庭福利优` and `惠 (EIC)` as two lines of one title. The page's own leading
+            // and the absence of a space at the break are the evidence (#42).
+            if let above = headingLine, let last = blocks.last, last.page == page,
+               case let .heading(id, text, level) = last.content, continuesHeading(above, line) {
+                var combined = text
+                combined.append(line.content)
+                blocks[blocks.count - 1].content = .heading(id: id, text: combined, level: level)
+            } else {
+                blocks.append(ReflowBlock(content: .heading(id: headingID(), text: line.content), page: page))
+            }
+            headingLine = line
+            return
         case .code:
             flushParagraph()
             if let origin = codeOrigin, let last = blocks.last, case let .preformatted(previousText) = last.content {

@@ -57,3 +57,39 @@ import Testing
     #expect(joined.attribute(marker, at: 0, effectiveRange: nil) as? String == "left")
     #expect(joined.attribute(marker, at: 1, effectiveRange: nil) as? String == "right")
 }
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/42")) func aHeadingBrokenBetweenTwoCharactersIsOneHeading() {
+    let bounds = CGRect(x: 0, y: 0, width: 612, height: 792)
+    // IRS Publication 596's cover, to the point: two 31-point title lines whose PDFKit boxes
+    // overlap by 12.9 points, over enough body text to establish a body size.
+    func line(_ text: String, _ y: Double, _ size: Double) -> TextLine {
+        TextLine(text: text, rect: CGRect(x: 54, y: y, width: 300, height: size * 1.4), fontSize: size)
+    }
+    var lines = [line("低收入家庭福利优", 700, 31), line("惠 (EIC)", 674, 31)]
+    for i in 0..<6 { lines.append(line("这是一段普通的正文用来确立本页的正文字号大小", 600 - Double(i) * 14, 10)) }
+    let page = PageContent(number: 1, bounds: bounds, lines: lines, graphics: [])
+    var warnings: [ConversionWarning] = []
+    let blocks = LayoutReconstructor.blocks(page: page, images: [], vocabulary: [], warnings: &warnings)
+    let headings = blocks.compactMap { block -> String? in
+        if case let .heading(_, text, _) = block.content { return text.text } else { return nil }
+    }
+    #expect(headings == ["低收入家庭福利优惠 (EIC)"], "\(headings)")
+}
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/42")) func twoLatinHeadingsStayTwoHeadings() {
+    let bounds = CGRect(x: 0, y: 0, width: 612, height: 792)
+    func line(_ text: String, _ y: Double, _ size: Double) -> TextLine {
+        TextLine(text: text, rect: CGRect(x: 54, y: y, width: 300, height: size * 1.4), fontSize: size)
+    }
+    // A break between two Latin words is a space and says nothing about whether the lines are one
+    // title or two, so neither is joined to the other.
+    var lines = [line("First Section", 700, 20), line("Second Section", 676, 20)]
+    for i in 0..<6 { lines.append(line("This is ordinary body prose establishing the page body size.", 600 - Double(i) * 14, 10)) }
+    let page = PageContent(number: 1, bounds: bounds, lines: lines, graphics: [])
+    var warnings: [ConversionWarning] = []
+    let blocks = LayoutReconstructor.blocks(page: page, images: [], vocabulary: [], warnings: &warnings)
+    let headings = blocks.compactMap { block -> String? in
+        if case let .heading(_, text, _) = block.content { return text.text } else { return nil }
+    }
+    #expect(headings == ["First Section", "Second Section"], "\(headings)")
+}

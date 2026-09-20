@@ -862,6 +862,13 @@ Evidence: [heading-body-regressions](../measurements/heading-body-regressions/re
   is then decided by the vocabulary and lexicon above, warning where it would warn for a printed
   hyphen. A join the evidence cannot decide keeps a real hyphen, never the encoded character.
 
+- A heading East Asian writing breaks between two characters of one word is one heading: a
+  heading line whose break sets no space, at the same size, on the page's own leading, continues
+  the heading above it rather than opening another (#42). A display line's PDFKit box carries
+  enough leading that two stacked lines of a title overlap — IRS Publication 596's cover overlaps
+  by 12.9 points at 31-point type — so the bound is the type size itself. A break between two
+  Latin words is a space and says nothing about whether two lines are one title, so Latin
+  headings are untouched.
 - East Asian writing sets no space between the characters of a word, so a line break between two
   characters drawn one em wide (`CJKText.isFullWidth`: the Wide and Fullwidth blocks, including
   the CJK punctuation a line may end on) joins them with none (#42). A boundary with Latin text

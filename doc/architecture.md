@@ -76,8 +76,12 @@ inherited-resources walk and font enumeration they share; `AnchorMatcher` matche
 to the one native line it lies in. `GlyphIndexDecoder` is the one reader whose evidence is the
 whole document rather than one page: a font that names its glyphs by index states no character
 anywhere in the file, so the characters are established from the document's own words and read
-back once per document, and `GlyphIdentityReader` rewrites an affected line from them. A page
-whose fonts it cannot establish keeps the damaged-encoding diagnosis and its recognition.
+back once per document, and `GlyphIdentityReader` rewrites an affected line from them. Where one
+show draws a whole printed row that PDFKit splits into a line per column, the glyphs the leftmost
+line cannot take are carried along `NativeTextReader`'s own line loop to the next line of that row
+(#237): the loop is the only place that sees every line's text in reading order, since the readers
+are handed one line at a time. A page whose fonts it cannot establish keeps the damaged-encoding
+diagnosis and its recognition.
 `GraphicsReader` keeps its own paint-oriented scan over the same helpers, tracking the clip in
 force so that what it records for a figure is what the page lets show rather than how far the
 artwork was drawn, and spending its own budget so a page cannot ask for unbounded work.

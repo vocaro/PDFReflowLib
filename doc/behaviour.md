@@ -338,7 +338,7 @@ the unreadable text.
 
 Evidence: [census-rrs2002-01](../measurements/census-rrs2002-01/record.md).
 
-## GlyphIndexDecoder: reading an index-named font from the document's own words (#143, #226)
+## GlyphIndexDecoder: reading an index-named font from the document's own words (#143, #226, #237)
 
 Nothing in such a file states a character. The embedded CFF program names its own glyphs `G<n>`
 exactly as the `Differences` array does, its built-in encoding places `G<n>` at code `n`, and the
@@ -396,6 +396,22 @@ the document does not establish is written U+FFFD and may stand for one characte
 for none, whichever completes the alignment. Anything else — a character no glyph explains, a
 glyph left over, a line no show can be attributed to — leaves the line exactly as PDFKit read it.
 Lines at most 4096 characters and 4096 glyphs, with an alignment budget of 20,000 steps.
+
+**Rows split across lines (#237).** TeX sets a whole printed row as one show, and PDFKit splits
+several of the Census report's rows into a line per printed column: a reference's number is one
+line and its body another, a table row is one line per cell. The show anchors to the leftmost of
+them, which is then offered far more glyphs than it has characters. A line whose own glyphs spell
+it is still rebuilt exactly as above, and only a line they cannot is allowed to stop at its last
+character and hold the rest for the **next line of the same row** — one begun at or after the
+row's right edge (the rows covered so far, unioned) whose middle lies inside the row's band of
+baselines. The cut may fall only where the next glyph opens a word, which is what the gap between
+two printed columns always is; a glyph that continues the word the line ends with was never the
+next line's to take, so the repair declines instead of cutting a word in two. Carried glyphs are
+offered to that line before its own, and the line must spell all of them and its own together or
+it too is left as PDFKit read it. A line that does not continue the row drops what it was handed,
+and `unreadGlyphs` then counts those glyphs against the page exactly as it counts a row no line
+could be found for at all. So a wrong carry costs the two lines their repair; it cannot put one
+row's words on another row's line.
 
 **Reach.** Nothing happens at all unless the document established at least one font's characters,
 so a book whose index-glyph fonts stay undecoded keeps #38's path untouched. Text the decoder read

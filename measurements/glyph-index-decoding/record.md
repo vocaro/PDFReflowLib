@@ -127,8 +127,119 @@ Their shows cannot be attributed to a single line, the repair declines, and the 
 otherwise ship as `Wkh uvw lv wkdw wkh vxlwdeoh whvw ohv duh qhhghg1 Wkh whvw`. `unreadGlyphs`
 counts them, so the page keeps #38's path instead. Page 11 loses two lines the same way
 (`However, when the perturbations get`, `does a little better than the`). Fixing #149 item 3 would
-move both pages off recognition; so would porting #143's carry of surplus glyphs to the next line
-of a row, which page 17's references need (`[2] Dalenius, T. and Reiss, S. P. …` and eleven more).
+move both pages off recognition; so would carrying surplus glyphs to the next line of a row, which
+page 17's references need (`[2] Dalenius, T. and Reiss, S. P. …` and eleven more). The second of
+those is #237, measured below; page 16 is still #149 item 3's and is unchanged by it.
+
+# A row PDFKit splits into a line per column (#237)
+
+Date 2026-09-19, on `da544ad`, same tier as above. Every string below was read against
+`pdftoppm -r 150 -f N -l N -png` of the source page.
+
+## What the file draws and what PDFKit reports
+
+TeX sets each of page 17's fourteen references as **one** `TJ` show. PDFKit reads eight of them as
+two lines — the number and the body — and the whole show's glyphs anchor to the number, whose
+rectangle holds the show's origin:
+
+```
+L12 rect=(134.8,477.9,9.7,10.3)    text="^5` "     71 glyphs offered
+L13 rect=(156.2,477.9,324.4,10.3)  text="Gdohqlxv/ W1 dqg Uhlvv/ …"   0 glyphs offered
+```
+
+The number cannot spell 71 glyphs and the body is offered none, so both declined and the row
+shipped PDFKit's index-shifted reading. Page 11's table rows have the same shape (a 53-glyph row
+offered to the 9-character cell line `uqnvzs38 `), as do pages 12, 13 and 15's.
+
+## The rule
+
+A line whose own glyphs spell it is rebuilt exactly as before — the alignment is run first with no
+surplus allowed, so nothing that already repaired can change. Only a line they cannot spell may
+stop at its last character and hold the rest for the next line of the row, and only where the next
+held glyph **opens a word**. The gap between two printed columns is always a word gap, so that is
+where the cut falls; a glyph continuing the word the line ends with is refused, and the line stays
+as PDFKit read it. The next line must begin at or after the row's right edge (every rectangle the
+row has covered, unioned) with its own middle inside the row's band of baselines. Page 17's
+`[ 6]` line ends at x=147.5 and its body begins at x=156.2 on the same baseline; the line *below*
+begins at x=156.2 too but its middle is 11 points down, and it is refused.
+
+**Getting it wrong costs the repair, not the words.** The next line still has to spell the carried
+glyphs *and* its own exactly, so a carry that does not belong fails there, both lines keep PDFKit's
+reading, and `GlyphIndexDecoder.unreadGlyphs` counts the glyphs against the page — the same state
+the row was in before. Across pages 11, 12, 13, 15 and 17 no carried glyph was dropped: every one
+landed on the line that continued its row.
+
+## Result at library defaults
+
+| | Before (`da544ad`) | After |
+| --- | --- | --- |
+| Recognized pages | 12 (4–9, 11, 16–20) | 10 (4–9, 16, 18–20) |
+| Pages reflowing their own text | 8 (2, 3, 10, 12–15) | 10 (2, 3, 10–15, 17) |
+| Images | 37 | 35 |
+
+Pages 12, 13 and 15 already reflowed but shipped their table rows index-shifted
+(`uqnvzs38` / `79144 7:139 79199 …`); they now read `rnkswp05` / `46.11 47.06 46.66 …`, every
+figure matching the render. No page's text lost a word: pages 1–10, 14, 16 and 18–20 are
+character-for-character unchanged.
+
+## Page 17 against the render
+
+The whole page is native text now. Read against the raster, reference by reference:
+
+- The first paragraph ends `… speciﬁc characteristics of data.` — recognition dropped the closing
+  `data.` entirely.
+- `[ 1] Dempster, A. P., Laird, N. M. and Rubin, D. B.: Maximum Likelihood from Incomplete Data
+  via the EM Algorithm, Journal of the Royal Statistical Society, B, 39 (1977) 1–38.`
+- `[2] Dalenius, T. and Reiss, S. P. Data-swapping: A Technique for Disclosure Control of
+  Microdata, Journal of Statistical Planning and Inference, 6 (1982) 73–85.`
+- `[ 6] Fellegi, I. P., and Sunter, A. B.: A Theory for Record Linkage, Journal of the American
+  Statistical Association, 64, (1969) 1183–1210.` — the line #237 quotes, which shipped as
+  `^ 9` / Ihoohjl/ L1 S1/ dqg Vxqwhu/ …`.
+- `[ 7] Fuller, W. A.: Masking Procedures for Microdata Disclosure Limitation, Journal of Oﬃcial
+  Statistics, 9, (1993) 383–406.` — recognition read `Jourxal of Oficual Stalistics`.
+- `[ 13] Moore, R.: Controlled Data Swapping Techniques for Masking Public Use Microdata, U.S.
+  Bureau of the Census, Statistical Research Division Report 96/04 (1996).` — recognition read
+  `U.S. Bureau of Whe Census`.
+- `[ 14] Roque, G. M. , Masking Microdata Files with Mixtures of Multivariate Normal
+  Distributions, Unpublished Ph.D. dissertation, Department of Statistics, University of
+  California–Riverside (2000).` — recognition read `Masking Microdato Fües with Mirtures`.
+
+Every en dash the references print (`1–38`, `73–85`, `95–103`, `421–435`, `1183–1210`, `383–406`,
+`303–308`, `456–461`, `114–119`, `313–331`, `California–Riverside`) is a Cork slot the decoder
+reads; recognition rendered several of them as hyphens or as `1-38`. The ﬃ of `Oﬃcial` and the
+`’` of `’2001` come from the font's own `Differences` names. The page carries **no** U+FFFD:
+all 2368 of its glyphs are stated.
+
+Each reference's number still stands in a paragraph of its own where PDFKit reported it as a
+separate line; joining them is `BlockAssembler`'s business, not this reader's, and no word is
+lost by it.
+
+## Page 11 against the render
+
+Table 1 now reads `rnkswp05 0.129 0.091 0.000 0.130 0.000 0.016 0.036 0.055 0.027` and its twelve
+sibling rows exactly as printed, against recognition's `rukswp05` and `TI.1 IL1a I.2 IL3 II4 IL.5
+80 81` for the column heads (`IL1 IL1s IL2 IL3 IL4 IL5 s0 s1 s2`). The two lines #149 names come
+back: `does a little better than the ` and `However, when the perturbations get`, and the
+paragraph ends `… to large values.`, which recognition dropped.
+
+Page 11 carries 14 U+FFFD, and every one of them is a `cmmi` or `cmr` glyph nothing in the
+document states — the italic `d` and `l` of `the d method` / `the l method` (five occurrences),
+the `1%` of `a 1% noise level`, and the `IL1` and `IL1s` of the closing paragraph. Recognition had
+read those seven runs, so they are the one thing page 11 gives up by leaving recognition; that is
+#226's rule (`a plausible-looking wrong letter is worse than an admitted gap`), not a new one, and
+14 replacements against 2738 characters sit well inside the `max(2, characters/50)` the diagnosis
+allows. Pages 2, 10, 13 and 14 already ship 1, 25, 8 and 4 of them.
+
+## Page 16 after this change: unchanged, and why
+
+Page 16 still decodes completely and is still recognized. PDFKit reports its two affected rows as
+**four overlapping lines sharing one rectangle** `(134.8, 399.3, 345.9, 23.6)`, two of which read
+only `"w"` and one of which holds a newline. The shows' origins lie in all four, so
+`indexGlyphs` attributes none of them to any line — this fix changes which line a glyph reaches
+*after* attribution, and page 16 has no attribution to work from. Nothing is carried into those
+lines either: the line above them (`For the research community, …`) consumes all 65 of its own
+glyphs, so there is no surplus to offer. `unreadGlyphs` counts the two rows, page 16 keeps
+`damagedTextEncoding`, and its extracted text is byte-identical to before. It remains #149 item 3.
 
 ## Controls
 
@@ -140,3 +251,16 @@ index-glyph font at all (9/11, FAA, Fed, Wallace, Supreme Court, Our Flag, DGA, 
 Blue Book, the Arabic and Chinese cases and the slide deck). `scripts/check-all.sh --fast` passes,
 322 Swift tests and 169 Python tests pass, and `DamagedEncodingTests`'s own `'`-drawn Type 3
 fixture — which this decoder deliberately does not read — keeps every one of #38's assertions.
+
+### Controls, re-measured for #237
+
+Every source in `corpus/cache` was converted with the `da544ad` CLI and the changed one, both with
+`--package-identifier urn:uuid:fixed --modification-date 2026-01-01T00:00:00Z`, and the EPUBs
+compared by SHA-256. **Only the Census report differs.** Byte-identical: the two deliberate
+recognition controls (`warren-suspect-text-excerpt`, `cdc_6023_DS1`), the #217 magazine
+(`November-December2012`), and 9/11, FAA, Fed, Wallace, Supreme Court, Our Flag, DGA, NBS, arXiv,
+USGS, Blue Book, the Arabic and Chinese cases, the slide deck, the civil-case form and the three
+NTRS documents. (`GPO-WARRENCOMMISSIONREPORT` and `noaa_61592_DS1` stop at the default
+image-output ceiling at the same page either way, as they do on `main`; their gated excerpts are
+in the list above.) `DamagedEncodingTests`'s `'`-drawn Type 3 fixture is untouched, because
+`GlyphIndexDecoder` still refuses a page that uses `'`.

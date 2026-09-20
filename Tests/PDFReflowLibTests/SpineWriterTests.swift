@@ -79,6 +79,37 @@ private func body(_ chapter: String) -> String {
     }
 }
 
+/// The handoff itself: a document the writer consumed part by part, as the converter now feeds
+/// it, must package to the same bytes as the same document collected whole and written after.
+@Test func streamedReconstructionPackagesTheSameArchiveAsACollectedDocument() async throws {
+    var options = ConversionOptions()
+    options.packageIdentifier = "urn:uuid:identity"
+    options.modificationDate = Date(timeIntervalSince1970: 1_767_225_600)
+    options.referenceImages = .always
+    func archive(streamed: Bool) async throws -> Data {
+        let workspace = try testPDFDirectory(); defer { try? FileManager.default.removeItem(at: workspace) }
+        let source = fixtureURL("graphics.pdf")
+        let url: URL
+        if streamed {
+            let writer = EPUBWriter(maximumOutputBytes: options.maximumOutputBytes, directory: workspace,
+                packageIdentifier: options.packageIdentifier, modificationDate: options.modificationDate)
+            _ = try await PDFReflowLibPipeline.reconstruct(from: source, options: options, workspace: workspace,
+                emit: { try await writer.receive($0) }, progress: { _ in })
+            url = try await writer.finish(progress: { _ in })
+        } else {
+            let result = try await PDFReflowLibPipeline.reconstruct(from: source, options: options,
+                workspace: workspace, progress: { _ in })
+            url = try await EPUBWriter.write(result.book, maximumOutputBytes: options.maximumOutputBytes,
+                directory: workspace, packageIdentifier: options.packageIdentifier,
+                modificationDate: options.modificationDate, progress: { _ in })
+        }
+        return try Data(contentsOf: url)
+    }
+    let streamed = try await archive(streamed: true)
+    #expect(streamed.count > 0)
+    #expect(streamed == (try await archive(streamed: false)))
+}
+
 private actor SpineProgress {
     var values: [Double] = []
     func add(_ value: Double) { values.append(value) }
@@ -90,6 +121,8 @@ private actor SpineProgress {
     let log = SpineProgress()
     _ = try await EPUBWriter.write(book, maximumOutputBytes: 10_000_000, directory: dir, progress: { await log.add($0) })
     let values = await log.values
+    // The writer's own fraction is the archive; the blocks were serialized as they arrived, and
+    // the producer reports that work.
     #expect(values.first == 0)
     #expect(values.last == 1)
     #expect(values == values.sorted())
@@ -97,11 +130,28 @@ private actor SpineProgress {
     let cancelled = try testPDFDirectory(); defer { try? FileManager.default.removeItem(at: cancelled) }
     let task = Task {
         try await EPUBWriter.write(book, maximumOutputBytes: 10_000_000, directory: cancelled) { fraction in
-            if fraction > 0 && fraction < 0.5 { withUnsafeCurrentTask { $0?.cancel() } }
+            if fraction == 0 { withUnsafeCurrentTask { $0?.cancel() } }
         }
     }
     await #expect(throws: CancellationError.self) { try await task.value }
     #expect(!FileManager.default.fileExists(atPath: cancelled.appendingPathComponent("publication.epub").path))
+}
+
+@Test func streamedBlocksStopAtCancellationBeforeAnythingIsPackaged() async throws {
+    let dir = try testPDFDirectory(); defer { try? FileManager.default.removeItem(at: dir) }
+    let book = spineBook((1...20).map { paragraph(String(repeating: "body \($0) ", count: 4_000)) })
+    let task = Task {
+        let writer = EPUBWriter(maximumOutputBytes: 10_000_000, directory: dir)
+        try await writer.receive(.start(book.metadata, chapterStartPages: []))
+        for (index, block) in book.blocks.enumerated() {
+            if index == 5 { withUnsafeCurrentTask { $0?.cancel() } }
+            try await writer.receive(.block(block))
+        }
+        return try await writer.finish(progress: { _ in })
+    }
+    await #expect(throws: CancellationError.self) { try await task.value }
+    #expect(!FileManager.default.fileExists(atPath: dir.appendingPathComponent("publication.epub").path))
+    #expect(!FileManager.default.fileExists(atPath: dir.appendingPathComponent("EPUB/nav.xhtml").path))
 }
 
 @Test func headingLevelsSurviveSerializationAndInvalidLevelsAreRejected() async throws {

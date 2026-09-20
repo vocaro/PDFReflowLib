@@ -39,9 +39,12 @@ qualified the rule, where one exists. Records are frozen: they describe the buil
   estimate, not a time estimate, and reaches 1 only after the EPUB exists at the destination.
   `ProgressBudget` fixes the shares: opening ends at 0.02; the pipeline takes 0.80 (ending at
   0.82; extraction 0.6875 of it, reconstruction 0.3125; recognition of a page is reported at that
-  page's start); writing takes 0.17 (serialization 0.45 of it, packaging from 0.5); publication
-  completes the remainder. The pipeline's end is clamped to 0.82 so binary rounding cannot make
-  the first writing event step backward.
+  page's start); writing takes 0.17, reported over the archive entries; publication completes the
+  remainder. The pipeline's end is clamped to 0.82 so binary rounding cannot make the first
+  writing event step backward. Reconstruction hands each page's blocks to the writer as it makes
+  them, so serializing them is counted as reconstruction; the writing stage is navigation,
+  package metadata and the archive alone, and no event is reported between the last block and
+  the first archive entry.
 - Cancellation is Swift `Task` cancellation, checked at page, line and archive-chunk
   boundaries and between timed waits for the extraction gate. A platform rendering or
   recognition call already executing returns in its own time.
@@ -405,10 +408,15 @@ three pages (#218). Each extracted page is encoded as a binary property list in 
 (finite, infinite and NaN doubles round-trip; equal values share a slot, so a negative zero can
 reload as positive zero, and no reconstruction step reads the sign of zero), reloaded once in
 order, and deleted on reload; the page directory goes when reconstruction finishes, leaving only
-assets. Logical blocks still accumulate until writing finishes.
+assets. Reconstruction emits each page's assets and blocks to the writer as it finishes them,
+holding back only the trailing block, which a continued paragraph on the next page can still
+join; the whole block list is never resident. Model validation follows: each block is checked as
+it arrives, and the checks that need the whole document — that it has blocks at all, and that
+every chapter boundary reached a standalone page marker — run when the stream ends.
 
 Evidence: [page-retention](../measurements/page-retention/record.md);
-[decision 0001](decisions/0001-two-pass-page-retention.md).
+[decision 0001](decisions/0001-two-pass-page-retention.md),
+[decision 0008](decisions/0008-streamed-blocks-to-the-writer.md).
 
 ## FurnitureDetector: running headers, footers and folios
 
@@ -606,9 +614,10 @@ Evidence: [raster-dpi](../measurements/raster-dpi/record.md),
   their own document unsplit. A validated chapter start always begins a new document, and the
   same subdivision applies within the chapter. This is a soft body target excluding metadata, an
   EPUB packing policy, not a memory ceiling or a promise that spine files are book chapters.
-- Each block is serialized once; a document is written as it closes; only the current body and
-  the navigation lists stay in memory. Progress reports serialization by input blocks, then
-  metadata completion and archive entries.
+- Each block is serialized once, as it arrives from the pass that made it; a document is written
+  as it closes; only the current body, the navigation lists and the asset registry stay in
+  memory. Navigation, package metadata and the archive are built when the stream ends, and
+  progress reports the archive entries.
 
 Evidence: [spine-packing](../measurements/spine-packing/record.md),
 [spine-continuity](../measurements/spine-continuity/record.md),

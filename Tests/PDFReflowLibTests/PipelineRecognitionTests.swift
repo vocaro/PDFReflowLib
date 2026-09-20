@@ -37,7 +37,7 @@ private func reading(_ text: String) -> OCRReader.Result {
         }) { _ in }
     #expect(calls.withLock { $0 } == result.pageCount)
     #expect(result.recognizedPageCount == result.pageCount)
-    #expect(result.document.blocks.contains { $0.text.contains("Canned recognition of the scanned page") })
+    #expect(result.book.blocks.contains { $0.text.contains("Canned recognition of the scanned page") })
     #expect(result.warnings.contains { $0.code == .ocrUsed })
     #expect(!result.warnings.contains { $0.code == .ocrFailed || $0.code == .pageImageFallback })
 }
@@ -91,7 +91,7 @@ private func reading(_ text: String) -> OCRReader.Result {
         }) { _ in }
     #expect(calls.withLock { $0 } == result.pageCount)
     #expect(result.recognizedPageCount == result.pageCount)
-    #expect(result.document.blocks.filter(\.hasReflowedText).allSatisfy { $0.text.contains("Recognized instead of extracted") })
+    #expect(result.book.blocks.filter(\.hasReflowedText).allSatisfy { $0.text.contains("Recognized instead of extracted") })
 }
 
 @Test func selectiveOCRRetriesOnlyPageSizedImageTextAndKeepsNativeStyles() async throws {
@@ -148,8 +148,8 @@ private func reading(_ text: String) -> OCRReader.Result {
     // the page is preserved as an image and is not counted as recognized (#222).
     #expect(result.recognizedPageCount == 0)
     #expect(result.reflowedPageCount == 0)
-    #expect(result.document.blocks.allSatisfy { $0.text.isEmpty })
-    #expect(result.document.assets.count == 1)
+    #expect(result.book.blocks.allSatisfy { $0.text.isEmpty })
+    #expect(result.book.assets.count == 1)
     #expect(result.warnings.contains { $0.code == .pageImageFallback })
     #expect(result.warnings.contains { $0.code == .ocrFailed && $0.message.contains("found no text") })
     #expect(!result.warnings.contains { $0.code == .ocrUsed })
@@ -167,7 +167,7 @@ private func reading(_ text: String) -> OCRReader.Result {
     let result = try await PDFReflowLibPipeline.reconstruct(from: source, options: options,
         workspace: dir.appendingPathComponent("work"), progress: { _ in })
     #expect(result.recognizedPageCount == 0 && result.reflowedPageCount == 0)
-    #expect(result.document.assets.count == 1)
+    #expect(result.book.assets.count == 1)
     #expect(result.warnings.contains { $0.code == .pageImageFallback })
 }
 
@@ -236,8 +236,8 @@ func textLayerPDF(_ text: String, imageSize: Int = 300, invisible: Bool = true) 
         let result = try await PDFReflowLibPipeline.reconstruct(from: pdf, options: options,
             workspace: dir.appendingPathComponent("work"), progress: { _ in })
         #expect(result.reflowedPageCount == 0)
-        #expect(result.document.blocks.allSatisfy { $0.text.isEmpty })
-        #expect(result.document.assets.count == 1)
+        #expect(result.book.blocks.allSatisfy { $0.text.isEmpty })
+        #expect(result.book.assets.count == 1)
         #expect(result.warnings.contains { $0.code == .pageImageFallback && $0.page == 1 })
         #expect(!result.warnings.contains { $0.code == .unverifiedTextLayer })
         // Recognition reads nothing from the scan whichever policy asked for it, so no page is

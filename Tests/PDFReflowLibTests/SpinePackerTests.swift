@@ -95,8 +95,6 @@ private let unlimited = Int64.max
         values.append(ProgressBudget.overall(pipeline: ProgressBudget.pipeline(reconstructedPages: page, of: 4)))
     }
     values.append(ProgressBudget.overall(writing: 0))
-    for block in 1...3 { values.append(ProgressBudget.overall(writing: ProgressBudget.writer(serializedBlocks: block, of: 3))) }
-    values.append(ProgressBudget.overall(writing: ProgressBudget.packagingStart))
     for entry in 1...2 { values.append(ProgressBudget.overall(writing: ProgressBudget.writer(archivedEntries: entry, of: 2))) }
     for value in values {
         #expect(value >= last, "\(value) after \(last)")

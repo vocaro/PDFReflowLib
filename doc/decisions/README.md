@@ -13,6 +13,7 @@ it. Records under `measurements/` are frozen evidence and are linked, not restat
 | [0005 The coordination branch is abandoned; features are hand-ported onto main](0005-abandoned-coordination-branch.md) | commit `dd160b4` and the porting commits it lists |
 | [0006 Measurements are records, not captures](0006-measurements-are-records.md) | `tools/check_measurements.py` |
 | [0007 Records cite commits and paths in prose; nothing pins them by machine](0007-records-cite-commits-in-prose.md) | the pointer lines atop moved records |
+| [0008 Reconstruction streams its blocks to the writer](0008-streamed-blocks-to-the-writer.md) | [streamed-blocks](../../measurements/streamed-blocks/record.md) |
 
 Approaches that were tried and rejected without becoming an architectural rule are in
 [research notes](../research-notes.md). Open work belongs in GitHub issues, not here.

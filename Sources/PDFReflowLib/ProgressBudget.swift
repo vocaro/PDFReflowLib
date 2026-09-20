@@ -2,10 +2,13 @@ import Foundation
 
 /// Where each stage's work falls in a conversion's progress fraction. The fractions are a
 /// monotonic work estimate, not a time estimate; they reach 1 only when the finished EPUB has
-/// been published. Every constant the three stages used to hold separately lives here, and the
-/// arithmetic is unchanged so reported values are the same doubles as before.
+/// been published. Every constant the three stages used to hold separately lives here. The
+/// opening, pipeline and publication arithmetic is the same as when each stage held its own;
+/// writing lost its serialization share when the writer began consuming blocks as they are made.
 enum ProgressBudget {
-    /// The pipeline's own fraction: extraction, then reconstruction.
+    /// The pipeline's own fraction: extraction, then reconstruction. Reconstruction hands each
+    /// page's blocks straight to the writer, so its share now covers their serialization too;
+    /// the shares themselves are unchanged, because they estimate work, not time.
     static let extractionShare = 0.6875
     static let reconstructionShare = 0.3125
 
@@ -36,15 +39,9 @@ enum ProgressBudget {
         pipelineEnd + writingShare * fraction
     }
 
-    /// The writer's own fraction: serialization of the blocks, then metadata, then archive entries.
-    static let serializationShare = 0.45
-    static let packagingStart = 0.5
-
-    static func writer(serializedBlocks: Int, of total: Int) -> Double {
-        serializationShare * Double(serializedBlocks) / Double(total)
-    }
-
+    /// The writer's own fraction: the archive entries. Serializing a block is now the work of
+    /// the pass that produces it, so it is reported as reconstruction, not as writing.
     static func writer(archivedEntries: Int, of total: Int) -> Double {
-        packagingStart + (1 - packagingStart) * Double(archivedEntries) / Double(total)
+        Double(archivedEntries) / Double(total)
     }
 }

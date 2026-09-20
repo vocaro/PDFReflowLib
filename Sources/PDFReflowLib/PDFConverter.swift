@@ -29,16 +29,20 @@ public actor PDFConverter {
         let staging = destination.deletingLastPathComponent().appendingPathComponent(".pdfreflow-" + UUID().uuidString)
         try fm.createDirectory(at: staging, withIntermediateDirectories: true)
         defer { try? fm.removeItem(at: staging) }
-        let result = try await PDFReflowLibPipeline.reconstruct(from: source, options: options, workspace: staging) { event in
+        // The writer consumes the document as reconstruction produces it, so neither pass ever
+        // holds the whole block list. Only navigation, package metadata and the archive wait
+        // for the end, and those are the writing stage the progress reports.
+        let writer = EPUBWriter(maximumOutputBytes: options.maximumOutputBytes, directory: staging,
+            packageIdentifier: options.packageIdentifier, modificationDate: options.modificationDate)
+        let result = try await PDFReflowLibPipeline.reconstruct(from: source, options: options, workspace: staging,
+            emit: { try await writer.receive($0) }) { event in
             await progress(.init(stage: event.stage, fractionCompleted: ProgressBudget.overall(pipeline: event.fractionCompleted),
                 page: event.page, totalPages: event.totalPages))
         }
         let total = result.pageCount
-        let archive = try await EPUBWriter.write(result.document, maximumOutputBytes: options.maximumOutputBytes,
-            directory: staging, packageIdentifier: options.packageIdentifier,
-            modificationDate: options.modificationDate) { fraction in
-                await progress(.init(stage: .writing, fractionCompleted: ProgressBudget.overall(writing: fraction), page: nil, totalPages: total))
-            }
+        let archive = try await writer.finish { fraction in
+            await progress(.init(stage: .writing, fractionCompleted: ProgressBudget.overall(writing: fraction), page: nil, totalPages: total))
+        }
         try Task.checkCancellation()
         if let limit = options.maximumEPUBBytes {
             let bytes = try archive.resourceValues(forKeys: [.fileSizeKey]).fileSize ?? 0
@@ -47,7 +51,7 @@ public actor PDFConverter {
         // Same-parent rename publishes an entire EPUB, never a half-written destination.
         try fm.moveItem(at: archive, to: destination)
         let report = ConversionReport(outputURL: destination, pageCount: total, reflowedPageCount: result.reflowedPageCount,
-            recognizedPageCount: result.recognizedPageCount, imageCount: result.document.assets.count, warnings: result.warnings)
+            recognizedPageCount: result.recognizedPageCount, imageCount: result.imageCount, warnings: result.warnings)
         await progress(.init(stage: .completed, fractionCompleted: 1, page: nil, totalPages: total))
         return report
     }

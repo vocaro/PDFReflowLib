@@ -139,9 +139,9 @@ private func line(_ text: String, x: Double, y: Double, width: Double = 200,
                                                         progress: { _ in })
     #expect(result.pageCount == 3)
     #expect(result.reflowedPageCount == 3)
-    #expect(result.document.blocks.map(\.text).joined(separator: " ").contains("reliable conversion without"))
-    #expect(result.document.blocks.flatMap(\.sourcePages) == [1, 2, 3])
-    #expect(result.document.assets.isEmpty)
+    #expect(result.book.blocks.map(\.text).joined(separator: " ").contains("reliable conversion without"))
+    #expect(result.book.blocks.flatMap(\.sourcePages) == [1, 2, 3])
+    #expect(result.book.assets.isEmpty)
     #expect(try FileManager.default.contentsOfDirectory(atPath: directory.path) == ["assets"])
-    try result.document.validate()
+    try result.book.validate()
 }

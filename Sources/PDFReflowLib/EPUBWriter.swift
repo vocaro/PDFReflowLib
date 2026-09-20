@@ -1,68 +1,93 @@
 import Foundation
 import ZIPFoundation
 
-/// Serializes a `ReflowDocument` as an EPUB 3 archive: spine documents packed by `SpinePacker`,
+/// Serializes a logical document as an EPUB 3 archive: spine documents packed by `SpinePacker`,
 /// navigation, stylesheet, package metadata, container and the OCF ZIP layout. It has no PDF or
 /// OCR dependency, and `EPUBTextEncoder` is the only place that knows XHTML markup.
-enum EPUBWriter {
+///
+/// The document arrives as a stream of `ReflowPart`s, so a producer never has to hold it whole:
+/// each block is serialized once as it arrives and completed spine documents are written as they
+/// close, leaving only the open body, the navigation entries and the asset registry in memory.
+/// Navigation, package metadata and the archive are built in `finish`.
+actor EPUBWriter {
     // A serialized body target, not a limit on an indivisible paragraph, heading or figure.
     private static let bodyTargetBytes = 60_000
 
+    private let maximumOutputBytes: Int64
+    private let directory: URL
+    private let publication: URL
+    private let packageIdentifier: String?
+    private let modificationDate: Date?
+
+    private var title = ""
+    private var language = ""
+    private var author: String?
+    private var packer = SpinePacker(bodyTargetBytes: EPUBWriter.bodyTargetBytes, chapterStartPages: [])
+    private var validation = ReflowDocument.Validation()
+    /// Assets in arrival order: the archive names them by that order and packages their bytes.
+    private var assets: [ReflowDocument.Asset] = []
+    private var imagePaths: [String] = []
+    private var imagePathByID: [String: String] = [:]
+    private var consumed: Int64 = 0
+    private var started = false
+
+    init(maximumOutputBytes: Int64, directory: URL, packageIdentifier: String? = nil, modificationDate: Date? = nil) {
+        self.maximumOutputBytes = maximumOutputBytes
+        self.directory = directory
+        self.publication = directory.appendingPathComponent("EPUB")
+        self.packageIdentifier = packageIdentifier
+        self.modificationDate = modificationDate
+    }
+
+    /// Writes a whole document by streaming its parts, for callers that already hold one.
     static func write(_ book: ReflowDocument, maximumOutputBytes: Int64, directory: URL,
                       packageIdentifier: String? = nil, modificationDate: Date? = nil,
                       progress: @Sendable (Double) async -> Void) async throws -> URL {
-        try book.validate()
-        let title = book.metadata.title
-        // Logical asset identifiers never become paths. The EPUB writer owns archive naming;
-        // resource bytes stream directly from neutral staging files into ZIP entries.
-        let imagePaths = book.assets.enumerated().map { "images/image-\($0.offset + 1).\($0.element.format.fileExtension)" }
-        let imagePathByID = Dictionary(uniqueKeysWithValues: zip(book.assets.map(\.id), imagePaths))
-        let publication = directory.appendingPathComponent("EPUB")
-        try FileManager.default.createDirectory(at: directory.appendingPathComponent("META-INF"),
-                                                withIntermediateDirectories: true)
-        try FileManager.default.createDirectory(at: publication, withIntermediateDirectories: true)
-        let language = xml(book.metadata.language)
-        func document(_ body: String, name: String) -> String {
-            """
-            <?xml version="1.0" encoding="UTF-8"?>
-            <html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xml:lang="\(language)" lang="\(language)">
-            <head><title>\(xml(name))</title><link rel="stylesheet" type="text/css" href="style.css"/></head><body>\(body)</body></html>
-            """
-        }
-        var consumed: Int64 = 0
-        func writeText(_ string: String, _ url: URL) throws {
-            try Task.checkCancellation()
-            consumed += Int64(string.utf8.count)
-            guard consumed <= maximumOutputBytes else { throw ConversionError.resourceLimit("EPUB text size") }
-            try string.write(to: url, atomically: true, encoding: .utf8)
-        }
-        // Each block is serialized once and completed spine documents are written as they close;
-        // only the current body and the navigation entries stay in memory.
-        var packer = SpinePacker(bodyTargetBytes: bodyTargetBytes, chapterStartPages: book.chapterStartPages)
-        func write(_ documents: [SpinePacker.Document]) throws {
-            for spineDocument in documents {
-                try writeText(document(spineDocument.body, name: title), publication.appendingPathComponent(spineDocument.name))
-            }
-        }
-        await progress(0)
-        for (i, block) in book.blocks.enumerated() {
-            try Task.checkCancellation()
-            let completedChapters = packer.documentNames.count
-            let finished: [SpinePacker.Document]
+        let writer = EPUBWriter(maximumOutputBytes: maximumOutputBytes, directory: directory,
+                                packageIdentifier: packageIdentifier, modificationDate: modificationDate)
+        for part in book.parts { try await writer.receive(part) }
+        return try await writer.finish(progress: progress)
+    }
+
+    /// Accepts the next part of the document. Blocks are validated and serialized here, so a
+    /// rejected model or an exhausted byte budget stops the producer where the fault is.
+    func receive(_ part: ReflowPart) throws {
+        try validation.accept(part)
+        switch part {
+        case let .start(metadata, chapterStartPages):
+            precondition(!started, "a document starts once")
+            started = true
+            title = metadata.title
+            language = xml(metadata.language)
+            author = metadata.author
+            packer = SpinePacker(bodyTargetBytes: Self.bodyTargetBytes, chapterStartPages: chapterStartPages)
+            try FileManager.default.createDirectory(at: directory.appendingPathComponent("META-INF"),
+                                                    withIntermediateDirectories: true)
+            try FileManager.default.createDirectory(at: publication, withIntermediateDirectories: true)
+        case let .asset(asset):
+            // Logical asset identifiers never become paths. The EPUB writer owns archive naming;
+            // resource bytes stream directly from neutral staging files into ZIP entries.
+            let path = "images/image-\(assets.count + 1).\(asset.format.fileExtension)"
+            assets.append(asset)
+            imagePaths.append(path)
+            imagePathByID[asset.id] = path
+        case let .block(block):
+            precondition(started, "blocks follow the document's start")
             if case let .sourcePage(number) = block.content {
-                finished = try packer.add(sourcePage: number, markup: EPUBTextEncoder.sourcePage(number),
-                                          budgetRemaining: maximumOutputBytes - consumed)
+                try write(try packer.add(sourcePage: number, markup: EPUBTextEncoder.sourcePage(number),
+                                         budgetRemaining: maximumOutputBytes - consumed))
             } else {
-                finished = try packer.add(EPUBTextEncoder.piece(for: block, imagePaths: imagePathByID),
-                                          budgetRemaining: maximumOutputBytes - consumed)
-            }
-            try write(finished)
-            // Report input-block work without requiring a second serialization pass to count
-            // chapters. Bound callback frequency for documents with many tiny blocks.
-            if packer.documentNames.count != completedChapters || (i + 1).isMultiple(of: 128) || i + 1 == book.blocks.count {
-                await progress(ProgressBudget.writer(serializedBlocks: i + 1, of: book.blocks.count))
+                try write(try packer.add(EPUBTextEncoder.piece(for: block, imagePaths: imagePathByID),
+                                         budgetRemaining: maximumOutputBytes - consumed))
             }
         }
+    }
+
+    /// Finishes navigation, package metadata and the archive, and returns the archive's URL.
+    /// The reported fraction covers the archive entries; serializing the blocks is the
+    /// producer's own work and is reported there.
+    func finish(progress: @Sendable (Double) async -> Void) async throws -> URL {
+        try validation.finish()
         try write(try packer.finish(budgetRemaining: maximumOutputBytes - consumed))
         let chapters = packer.documentNames
         var toc = packer.toc.map(\.markup)
@@ -80,13 +105,13 @@ enum EPUBWriter {
         """, publication.appendingPathComponent("style.css"))
         // Caller-supplied values make the archive byte-reproducible; defaults vary per run.
         let identifier = xml(packageIdentifier ?? "urn:uuid:" + UUID().uuidString)
-        let modificationDate = modificationDate ?? Date()
+        let modificationDate = self.modificationDate ?? Date()
         let modified = ISO8601DateFormatter().string(from: modificationDate)
-        let author = book.metadata.author.map { "<dc:creator>\(xml($0))</dc:creator>" } ?? ""
+        let author = self.author.map { "<dc:creator>\(xml($0))</dc:creator>" } ?? ""
         let manifest = chapters.enumerated().map {
             "<item id=\"c\($0.offset)\" href=\"\($0.element)\" media-type=\"application/xhtml+xml\"/>"
         }.joined() + imagePaths.enumerated().map {
-            "<item id=\"img\($0.offset)\" href=\"\($0.element)\" media-type=\"\(book.assets[$0.offset].format.mediaType)\"/>"
+            "<item id=\"img\($0.offset)\" href=\"\($0.element)\" media-type=\"\(assets[$0.offset].format.mediaType)\"/>"
         }.joined()
         let spine = chapters.indices.map { "<itemref idref=\"c\($0)\"/>" }.joined()
         try writeText("""
@@ -103,8 +128,8 @@ enum EPUBWriter {
         let paths = ["mimetype", "META-INF/container.xml", "EPUB/package.opf", "EPUB/nav.xhtml", "EPUB/style.css"]
             + chapters.map { "EPUB/" + $0 }
         let entries = paths.map { (path: $0, url: directory.appendingPathComponent($0)) }
-            + zip(imagePaths, book.assets).map { (path: "EPUB/" + $0.0, url: $0.1.fileURL) }
-        await progress(ProgressBudget.packagingStart)
+            + zip(imagePaths, assets).map { (path: "EPUB/" + $0.0, url: $0.1.fileURL) }
+        await progress(0)
         try Task.checkCancellation()
         let archiveURL = directory.appendingPathComponent("publication.epub")
         let archive = try Archive(url: archiveURL, accessMode: .create)
@@ -131,5 +156,26 @@ enum EPUBWriter {
             await progress(ProgressBudget.writer(archivedEntries: i + 1, of: entries.count))
         }
         return archiveURL
+    }
+
+    private func document(_ body: String, name: String) -> String {
+        """
+        <?xml version="1.0" encoding="UTF-8"?>
+        <html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xml:lang="\(language)" lang="\(language)">
+        <head><title>\(xml(name))</title><link rel="stylesheet" type="text/css" href="style.css"/></head><body>\(body)</body></html>
+        """
+    }
+
+    private func writeText(_ string: String, _ url: URL) throws {
+        try Task.checkCancellation()
+        consumed += Int64(string.utf8.count)
+        guard consumed <= maximumOutputBytes else { throw ConversionError.resourceLimit("EPUB text size") }
+        try string.write(to: url, atomically: true, encoding: .utf8)
+    }
+
+    private func write(_ documents: [SpinePacker.Document]) throws {
+        for spineDocument in documents {
+            try writeText(document(spineDocument.body, name: title), publication.appendingPathComponent(spineDocument.name))
+        }
     }
 }

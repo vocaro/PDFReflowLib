@@ -5,10 +5,13 @@ import PDFKit
 /// workspace and must keep its assets alive until the chosen writer finishes.
 enum PDFReflowLibPipeline {
     struct Result: Sendable {
-        var document: ReflowDocument
+        /// The collected document, when no consumer took the stream. A streaming caller gets
+        /// nil, having already seen every part.
+        var document: ReflowDocument?
         var pageCount: Int
         var reflowedPageCount: Int
         var recognizedPageCount: Int
+        var imageCount: Int
         var warnings: [ConversionWarning]
     }
 
@@ -22,8 +25,15 @@ enum PDFReflowLibPipeline {
     /// outcome, and `DocumentEvidence` keeps only document-wide evidence before the page is
     /// spilled to a `PageStore`. Reconstruction is a second pass that needs one page and its
     /// predecessor, so retained page memory is bounded.
+    ///
+    /// Reconstruction emits its parts to `emit` as it makes them, so a writer can consume the
+    /// document without anyone holding it whole. Only the trailing block is held back, because
+    /// the next page can still join its paragraph to it. A caller that passes no consumer gets
+    /// the whole document in `Result.document` instead, collected from the same stream, so the
+    /// streamed and collected forms cannot diverge.
     static func reconstruct(from source: URL, options: ConversionOptions, workspace: URL,
                             recognize: Recognizer = { try await OCRReader.read(page: $0, options: $1) },
+                            emit: (@Sendable (ReflowPart) async throws -> Void)? = nil,
                             progress: @Sendable (ConversionProgress) async -> Void) async throws -> Result {
         let document = try PDFPageSource(url: source)
         let total = document.pageCount
@@ -90,8 +100,19 @@ enum PDFReflowLibPipeline {
         // Furniture warnings keep their place between extraction and reconstruction warnings.
         let furnitureWarningIndex = warnings.count
         var furnitureWarnings: [ConversionWarning] = []
-        var blocks: [ReflowBlock] = []
+        // The blocks a later page can still amend: `appendPage` joins a continued paragraph to
+        // the one block at the tail, so everything before it is final and can be handed on.
+        var pending: [ReflowBlock] = []
+        var collector = ReflowDocument.Collector()
+        let send: (ReflowPart) async throws -> Void = { part in
+            if let emit { try await emit(part) } else { collector.accept(part) }
+        }
+        let title = options.title ?? document.title
+            ?? source.deletingPathExtension().lastPathComponent
+        try await send(.start(.init(title: title.isEmpty ? "Untitled" : title, language: options.language,
+                                    author: options.author), chapterStartPages: evidence.chapterStartPages))
         let assets = PageAssetWriter(workspace: workspace, options: options)
+        var sentAssets = 0
         var reflowed = 0
         var previous: PageContent?
         for i in 0..<total {
@@ -134,21 +155,24 @@ enum PDFReflowLibPipeline {
                     }
                 }
                 LayoutReconstructor.appendPage(pageBlocks, page: content, previousPage: previousPage,
-                    to: &blocks, hyphens: resolved.context.hyphens, warnings: &warnings)
+                    to: &pending, hyphens: resolved.context.hyphens, warnings: &warnings)
             }
             previous = content
+            // An asset is always sent before the block that names it: this page's images were
+            // saved above, and its blocks are still behind the tail.
+            while sentAssets < assets.assets.count {
+                try await send(.asset(assets.assets[sentAssets]))
+                sentAssets += 1
+            }
+            while pending.count > 1 { try await send(.block(pending.removeFirst())) }
             await progress(.init(stage: .reconstructing, fractionCompleted: ProgressBudget.pipeline(reconstructedPages: i + 1, of: total),
                 page: i + 1, totalPages: total))
         }
+        for block in pending { try await send(.block(block)) }
         document.releaseCachedPages()
         store.finish()
         warnings.insert(contentsOf: furnitureWarnings.sorted { $0.page < $1.page }, at: furnitureWarningIndex)
-        let title = options.title ?? document.title
-            ?? source.deletingPathExtension().lastPathComponent
-        let reflowedDocument = ReflowDocument(metadata: .init(title: title.isEmpty ? "Untitled" : title,
-            language: options.language, author: options.author), blocks: blocks, assets: assets.assets,
-            chapterStartPages: evidence.chapterStartPages)
-        return Result(document: reflowedDocument, pageCount: total, reflowedPageCount: reflowed,
-            recognizedPageCount: evidence.recognizedPages, warnings: warnings)
+        return Result(document: emit == nil ? collector.document : nil, pageCount: total, reflowedPageCount: reflowed,
+            recognizedPageCount: evidence.recognizedPages, imageCount: assets.assets.count, warnings: warnings)
     }
 }

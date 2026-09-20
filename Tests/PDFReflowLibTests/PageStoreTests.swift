@@ -29,7 +29,7 @@ private func reconstruct(_ source: URL, options: ConversionOptions) async throws
     let workspace = try testPDFDirectory()
     defer { try? FileManager.default.removeItem(at: workspace) }
     let result = try await PDFReflowLibPipeline.reconstruct(from: source, options: options, workspace: workspace) { _ in }
-    let bytes = try result.document.assets.map { try Data(contentsOf: $0.fileURL) }
+    let bytes = try result.book.assets.map { try Data(contentsOf: $0.fileURL) }
     // No spilled page or page directory may survive: the workspace holds only assets afterwards.
     #expect(try FileManager.default.contentsOfDirectory(atPath: workspace.path) == ["assets"])
     return Reconstruction(result: result, assetBytes: bytes)
@@ -47,10 +47,10 @@ private func reconstruct(_ source: URL, options: ConversionOptions) async throws
         let first = try await reconstruct(source, options: options)
         let second = try await reconstruct(source, options: options)
         let name = Comment(rawValue: source.lastPathComponent)
-        #expect(second.result.document.blocks == first.result.document.blocks, name)
-        #expect(second.result.document.metadata == first.result.document.metadata, name)
-        #expect(second.result.document.chapterStartPages == first.result.document.chapterStartPages, name)
-        #expect(second.result.document.assets.map(\.id) == first.result.document.assets.map(\.id), name)
+        #expect(second.result.book.blocks == first.result.book.blocks, name)
+        #expect(second.result.book.metadata == first.result.book.metadata, name)
+        #expect(second.result.book.chapterStartPages == first.result.book.chapterStartPages, name)
+        #expect(second.result.book.assets.map(\.id) == first.result.book.assets.map(\.id), name)
         #expect(second.assetBytes == first.assetBytes, name)
         #expect(second.result.warnings == first.result.warnings, name)
         #expect(second.result.recognizedPageCount == first.result.recognizedPageCount, name)

@@ -37,8 +37,9 @@ tests were kept as a patch beside the record, then removed from the tree (they r
 - Equal values share one slot in the property-list encoding, so a negative zero can reload as
   positive zero; no reconstruction step reads the sign of zero, and the tests pin exact reload
   of styles, inline markers, structure, drop-cap geometry, null rectangles and every flag.
-- The logical block list still accumulates until writing finishes; streaming blocks to the
-  writer is separate work, and #15 remains open for that and for physical-device measurement.
+- The logical block list still accumulated until writing finished; streaming blocks to the
+  writer was separate work, taken up in [decision 0008](0008-streamed-blocks-to-the-writer.md).
+  #15 remains open for physical-device measurement.
 - Furniture warnings keep their position between extraction and reconstruction warnings;
   reconstruction reads only structure-fallback and hyphen warnings.
 

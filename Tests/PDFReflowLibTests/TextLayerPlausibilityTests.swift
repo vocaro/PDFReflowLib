@@ -311,7 +311,7 @@ private func convert(_ data: Data, policy: ConversionOptions.OCRPolicy) async th
     var options = ConversionOptions(); options.ocr = policy
     let result = try await PDFReflowLibPipeline.reconstruct(from: source, options: options,
         workspace: dir.appendingPathComponent("work"), progress: { _ in })
-    return (result, result.document.blocks.map(\.text).joined(separator: " "))
+    return (result, result.book.blocks.map(\.text).joined(separator: " "))
 }
 
 @Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/93")) func implausibleInheritedWordsAreReplacedByDefaultAndReportedUnderEveryPolicy() async throws {
@@ -514,7 +514,7 @@ private func reflow(_ data: Data, policy: ConversionOptions.OCRPolicy = .automat
     var options = ConversionOptions(); options.ocr = policy
     let result = try await PDFReflowLibPipeline.reconstruct(from: source, options: options,
         workspace: dir.appendingPathComponent("work"), progress: { _ in })
-    return (result, result.document.blocks.map(\.text).joined(separator: " "))
+    return (result, result.book.blocks.map(\.text).joined(separator: " "))
 }
 
 @Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/176")) func aSlideWhoseOnlyWritingIsDrawnWhiteOnDarkIsRecognized() async throws {

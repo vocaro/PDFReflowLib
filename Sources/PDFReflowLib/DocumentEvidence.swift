@@ -19,6 +19,11 @@ struct DocumentEvidence {
     private(set) var chapterStartPages: Set<Int> = []
     private(set) var hyphens: HyphenContext
     private var furniture = FurnitureDetector.Ledger()
+    /// The words each page's margin lines hold, kept aside until the furniture plan says which
+    /// of those lines the reader will see. A running head set at the body size in ordinary
+    /// capitalization is a page's furniture but an ordinary-looking word to the vocabulary, so
+    /// the vocabulary is the text stream the reader gets, not the one extraction read (#184).
+    private var marginWords: [Int: [Int: [String]]] = [:]
     private(set) var numberedNotePages: Set<Int> = []
     /// Characters per type size over the native pages: the document's body (#186).
     private var bodyWeights: [Int: Int] = [:]
@@ -45,9 +50,14 @@ struct DocumentEvidence {
            ChapterBoundaryReader.matches(chapter, page: content) {
             chapterStartPages.insert(content.number)
         }
+        if options.removeRepeatedHeadersAndFooters { FurnitureDetector.collect(content, pageIndex: i, into: &furniture) }
         // Retain heading evidence before removing furniture, after all extraction/OCR work.
         if suppliesVocabulary {
-            LayoutReconstructor.addVocabulary(of: content, to: &hyphens.vocabulary)
+            let margins = furniture.marginLines[i] ?? []
+            LayoutReconstructor.addVocabulary(of: content, skippingLines: margins, to: &hyphens.vocabulary)
+            for lineIndex in margins.sorted() {
+                marginWords[i, default: [:]][lineIndex] = LayoutReconstructor.words(of: content.lines[lineIndex])
+            }
         }
         if !content.recognized, !content.hasSyntheticTextStyle, !content.requiresPageImage {
             LayoutReconstructor.addBodyWeights(of: content.lines, to: &bodyWeights)
@@ -58,7 +68,6 @@ struct DocumentEvidence {
             }
         }
         if NumberedNoteDetector.hasHeading(on: content) { numberedNotePages.insert(content.number) }
-        if options.removeRepeatedHeadersAndFooters { FurnitureDetector.collect(content, pageIndex: i, into: &furniture) }
         if content.recognized { recognizedPages += 1 }
     }
 
@@ -66,6 +75,15 @@ struct DocumentEvidence {
     mutating func resolved(options: ConversionOptions) -> Resolved {
         let plan = options.removeRepeatedHeadersAndFooters ? FurnitureDetector.resolve(furniture) : nil
         furniture = FurnitureDetector.Ledger()
+        // A margin line the plan leaves on the page is text the reader keeps, so it supplies
+        // vocabulary after all; one the plan takes never reaches the reader and supplies none.
+        for (pageIndex, lines) in marginWords {
+            let removed = plan?.removals(onPageAt: pageIndex) ?? []
+            for (lineIndex, words) in lines where !removed.contains(lineIndex) {
+                hyphens.vocabulary.formUnion(words)
+            }
+        }
+        marginWords = [:]
         let context = LayoutReconstructor.DocumentContext(
             hyphens: hyphens, language: language,
             documentBody: LayoutReconstructor.bodySize(weights: bodyWeights),

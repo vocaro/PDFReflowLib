@@ -503,3 +503,25 @@ private func backCoverLike() -> PageContent {
     #expect(headingTexts(floorBlocks(page, documentBody: 10)).isEmpty)
     #expect(paragraphTexts(floorBlocks(page, documentBody: 10)).contains { $0.contains("48213") })
 }
+
+@Test(arguments: [579, 580, 584, 585])
+func notesRunningHeadsReadAsHeadingsOnTheirOwnPage(number: Int) throws {
+    // #10. A notes page sets its body at 7 pt under a 9.5 pt running head, so the head clears
+    // the page's own heading threshold and reaches the reader as an `h2` — navigation, not just
+    // stray text. Page-local typography cannot tell it from a title; only the margin slot the
+    // whole book keeps can, which is why the repair belongs in furniture detection.
+    let page = try SourceLayoutFixture.load("911-\(number)").content()
+    let head = try #require(page.lines.max { $0.rect.midY < $1.rect.midY })
+    #expect(head.text.uppercased().contains("NOTES TO CHAPTER"))
+    let typography = PageTypography(page: page)
+    #expect(typography.body < head.fontSize)
+    #expect(head.fontSize >= typography.headingThreshold)
+    #expect(headingTexts(headingBlocks(page)).contains { $0.contains("NOTES TO CHAPTER") })
+    // With the rest of the book present, the line never reaches classification at all.
+    var pages = try ([19] + Array(20...26) + Array(65...71) + Array(471...476) + Array(579...585))
+        .map { try SourceLayoutFixture.load("911-\($0)").content() }
+    _ = LayoutReconstructor.stripFurniture(&pages)
+    let stripped = try #require(pages.first { $0.number == number })
+    #expect(!stripped.lines.contains { $0.text == head.text })
+    #expect(!headingTexts(headingBlocks(stripped)).contains { $0.contains("NOTES TO CHAPTER") })
+}

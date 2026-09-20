@@ -237,3 +237,99 @@ func syntheticScanMarginsKeepExistingRepeatedArtifactCleanup(name: String) throw
     var native = (1...6).map { n in furniturePage(n * 10, header: "I") }
     #expect(LayoutReconstructor.stripFurniture(&native).isEmpty)
 }
+
+@Test func documentWideMarginSlotCarriesTheShortestNotesRuns() throws {
+    // #10. The report's notes reach chapters whose notes fill two pages, and transition heads
+    // name two chapters at once, so no three consecutive pages word their head alike. Every one
+    // of them stands in the same margin slot the book keeps for 538 of its 585 pages, which is
+    // the evidence the words withhold. Pages 19 and 65 are source-reviewed chapter openings:
+    // they vacate the slot, and their titles stand lower and larger.
+    let numbers = [19] + Array(20...26) + Array(65...71) + Array(471...476) + Array(579...585)
+    var pages = try numbers.map { try SourceLayoutFixture.load("911-\($0)").content() }
+    let original = pages
+    let warnings = LayoutReconstructor.stripFurniture(&pages)
+    for short in [579, 580, 584, 585] {
+        #expect(warnings.contains { $0.page == short && $0.code == .furnitureRemoved })
+    }
+    for (before, after) in zip(original, pages) {
+        if [19, 65].contains(before.number) {
+            #expect(after.lines.map(\.text) == before.lines.map(\.text))
+        } else {
+            // Exactly the outermost margin row goes; every other line of the page survives.
+            #expect(after.lines.map(\.text) == before.lines.filter { $0.rect.midY < 550 }.map(\.text))
+        }
+    }
+}
+
+@Test func marginSlotEvidenceNeedsTheWholeBookNotAnExcerpt() throws {
+    // The same seven notes pages on their own establish no slot: three removals out of seven
+    // pages are a run, not a place the document keeps. Over-removal is the worse failure, so
+    // short runs are admitted only where the book itself has stated the slot.
+    var pages = try (579...585).map { try SourceLayoutFixture.load("911-\($0)").content() }
+    let original = pages
+    #expect(LayoutReconstructor.stripFurniture(&pages).map(\.page) == [581, 582, 583])
+    for (before, after) in zip(original, pages) where ![581, 582, 583].contains(before.number) {
+        #expect(after.lines.map(\.text) == before.lines.map(\.text))
+    }
+}
+
+@Test func genuineTopOfPageSectionHeadingsAreNeverMarginSlotCandidates() throws {
+    // Positive controls on the keep side. Our Flag sets its section titles at the very top of
+    // the page at 22 pt and has no running head at all; the Fed's running head is 8 pt at 0.951
+    // of the page while its section titles are 14 pt and larger, lower down. Neither book may
+    // lose a line to margin evidence.
+    for (prefix, numbers) in [("flag", [7, 9, 27, 30, 31]), ("fed", [13, 32, 45, 46, 54, 75, 77, 103, 109, 123])] {
+        var pages = try numbers.map { try SourceLayoutFixture.load("\(prefix)-\($0)").content() }
+        let original = pages
+        _ = LayoutReconstructor.stripFurniture(&pages)
+        for (before, after) in zip(original, pages) {
+            let titles = before.lines.filter { $0.fontSize >= 14 && $0.rect.midY > before.bounds.height * 0.85 }
+            #expect(titles.allSatisfy { title in after.lines.contains { $0.text == title.text } })
+        }
+    }
+}
+
+@Test func noaaChapterPageRunningFootGoesWhileItsChapterOpeningStays() throws {
+    // #184. NOAA sets `23-2 | US Caribbean` at the body size in ordinary capitalization, so
+    // nothing on one page separates it from prose, and every page words it differently. The
+    // leading `chapter-page` number normalizes against a consistent physical-page offset, the
+    // way a bare folio does, leaving the chapter and the words meaningful.
+    var pages = try (1050...1056).map { try SourceLayoutFixture.load("noaa-\($0)").content() }
+    let original = pages
+    let warnings = LayoutReconstructor.stripFurniture(&pages)
+    #expect(warnings.map(\.page) == Array(1051...1056))
+    for (before, after) in zip(original, pages) {
+        let furniture = ["Fifth National Climate Assessment", "23-\(before.number - 1049) | US Caribbean"]
+        let expected = before.number == 1050 ? before.lines.map(\.text)
+            : before.lines.map(\.text).filter { !furniture.contains($0) }
+        #expect(after.lines.map(\.text) == expected)
+    }
+    // The chapter opening keeps both its lines, including the head naming the chapter.
+    #expect(pages[0].lines.map(\.text) == ["Fifth National Climate Assessment: Chapter 23", "US Caribbean"])
+    // Genuine headings inside the chapter survive with the foot gone.
+    for title in ["Chapter 23. US Caribbean", "Table of Contents", "Introduction"] {
+        #expect(pages.contains { $0.lines.contains { $0.text == title } })
+    }
+}
+
+@Test func marginWordsReachTheVocabularyOnlyWhenTheReaderKeepsTheLine() throws {
+    // #184's second half: the reference vocabulary is the text stream the reader gets, not the
+    // one extraction read. A running head set at the body size is an ordinary-looking word to
+    // the vocabulary, and a broken word's carry must not be able to end there.
+    func vocabulary(removingFurniture: Bool, header: (Int) -> String) throws -> Set<String> {
+        var options = ConversionOptions()
+        options.removeRepeatedHeadersAndFooters = removingFurniture
+        var evidence = DocumentEvidence(chapterCandidates: [], language: "en")
+        for number in 1...6 {
+            try evidence.collect(furniturePage(number, header: header(number)), pageIndex: number - 1,
+                                 suppliesVocabulary: true, options: options)
+        }
+        return evidence.resolved(options: options).context.hyphens.vocabulary
+    }
+    let removed = try vocabulary(removingFurniture: true) { _ in "Marginalia" }
+    #expect(!removed.contains("marginalia"))
+    #expect(removed.contains("paragraph"))
+    // The same words stay when the client keeps its headers, and when the line is not furniture.
+    #expect(try vocabulary(removingFurniture: false) { _ in "Marginalia" }.contains("marginalia"))
+    #expect(try vocabulary(removingFurniture: true) { "Marginalia \($0 * 17)" }.contains("marginalia"))
+}

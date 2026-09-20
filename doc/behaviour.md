@@ -573,7 +573,9 @@ pages, which lose about half their words at an uncovered share just under 20% (#
 ## DocumentEvidence and PageStore: what survives extraction
 
 Extraction keeps only document-wide evidence: the hyphen-repair vocabulary (pages with a damaged
-encoding contribute none), margin-furniture candidates, numbered-note heading pages, chapter
+encoding contribute none; a page's margin-furniture candidates contribute their words only once the
+furniture plan says the reader keeps the line, so a running head set at the body size cannot enter
+the reference vocabulary a broken word's carry is judged against, #184), margin-furniture candidates, numbered-note heading pages, chapter
 matches, the running character budget, the document's body size (the character-weighted
 commonest size over every native page, #186) and the bold label styles that recur on at least
 three pages (#218). Each extracted page is encoded as a binary property list in the workspace
@@ -617,6 +619,20 @@ Evidence: [page-retention](../measurements/page-retention/record.md);
   evidence only with the same physical-page offset; numeric chapter-page folios keep their chapter
   prefix; internal chapter and date digits stay significant. Matching body titles, nearby captions
   and a page's only text are retained.
+- A leading or trailing `chapter-page` number beside a row's words normalizes the same way a bare
+  folio does: the page half becomes a consistent physical-page offset and the chapter half and the
+  words stay literal, so NOAA's `23-2 | US Caribbean` running foot, set at the body size in
+  ordinary capitalization and worded differently on every page, forms one run (#184).
+- Beyond the runs, a document may establish a **margin slot**: an edge, a position within 0.004 of
+  the page height, and a type size within the same drift tolerance, at which removals already
+  stand on at least six pages and at least a quarter of the document's pages. A candidate row in
+  an established slot is removed although its own words never repeat on three neighbouring pages —
+  a transition head naming two chapters, a chapter whose notes fill two pages, front matter naming
+  its own part. Slot size is the line's own type size for folios as well as prose, so one unit
+  compares them. Stacked bands are never admitted on slot evidence alone. A page's own type size
+  cannot overrule the slot, which is the point: a notes page sets its body at 7 pt under a 9.5 pt
+  running head, so that head clears the page's heading threshold and would otherwise reach the
+  reader as an `h2` (#10).
 - Each affected page reports `furnitureRemoved` ("Repeated header or footer omitted from the
   reflowed text."); `removeRepeatedHeadersAndFooters = false` keeps everything. This is spatial
   evidence, not tag consumption or a universal header classifier.

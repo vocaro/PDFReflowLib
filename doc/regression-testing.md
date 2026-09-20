@@ -28,11 +28,7 @@ Fetch sources with `tools/fetch_corpus.py --case <id>` (checksum-verified, cache
 
 What the individual gates check:
 
-<<<<<<< HEAD
-- `swift test`: <!-- counts:swift-tests -->375 Swift Testing tests<!-- counts:end --> with no known-issue wrappers, using the real Apple
-=======
-- `swift test`: <!-- counts:swift-tests -->353 Swift Testing tests<!-- counts:end --> with no known-issue wrappers, using the real Apple
->>>>>>> worktree-agent-af5ebd86ccea80024
+- `swift test`: <!-- counts:swift-tests -->384 Swift Testing tests<!-- counts:end --> with no known-issue wrappers, using the real Apple
   PDF/OCR stack. They cover extraction, the document model, layout, raster pixels (crop origins,
   rotations, annotations, resource ceilings), preserved regions (fraction bars, raised exponents
   and all six cells of a ruled table in actual EPUB images at 72/144 DPI, with prose and code
@@ -165,26 +161,16 @@ failing case does not hide later results. `--jobs N` evaluates N cases at once (
 Each case verifies the pinned source identity, converts in a fresh release process, checks EPUB
 structure, EPUBCheck, monotonic progress, the manifest memory ceiling and the reviewed content
 contract in [corpus/regressions.json](../corpus/regressions.json):
-<<<<<<< HEAD
-<!-- counts:contract-coverage -->490 checks on 110 reviewed pages across 18 documents<!-- counts:end -->.
-=======
-<!-- counts:contract-coverage -->477 checks on 109 reviewed pages across 18 documents<!-- counts:end -->.
->>>>>>> worktree-agent-af5ebd86ccea80024
+<!-- counts:contract-coverage -->505 checks on 114 reviewed pages across 18 documents<!-- counts:end -->.
 All source-page anchors must remain complete and ordered, and semantic text must
 contain no image-attachment placeholders. The manifest consistency test requires every corpus
 document to be covered or explicitly excluded; full Warren and NOAA conversions are excluded for
 the known image-output ceiling failure (#5), listed in output and never counted as passes.
 
 <!-- counts:contract-breakdown -->
-<<<<<<< HEAD
-Those 490 checks are 4 `spineContinuity`, 72 `text`, 184 `orderedText`, 32 `absentText`,
-29 `headings`, 36 `paragraphs`, 6 `continuedParagraphs`, 16 `scripts`, 17 `imageRegions`,
+Those 505 checks are 4 `spineContinuity`, 72 `text`, 193 `orderedText`, 32 `absentText`,
+29 `headings`, 42 `paragraphs`, 6 `continuedParagraphs`, 16 `scripts`, 17 `imageRegions`,
 69 `minimumImages`, 20 `warningCodesAnyOf` and 5 `absentWarningCodes`, counted as
-=======
-Those 477 checks are 4 `spineContinuity`, 72 `text`, 176 `orderedText`, 32 `absentText`,
-29 `headings`, 40 `paragraphs`, 6 `continuedParagraphs`, 16 `scripts`, 16 `imageRegions`,
-64 `minimumImages`, 19 `warningCodesAnyOf` and 3 `absentWarningCodes`, counted as
->>>>>>> worktree-agent-af5ebd86ccea80024
 `tools/check_corpus_content.py` counts them.
 <!-- counts:end -->
 

@@ -91,6 +91,17 @@ ALLOWED = {
     67: ('historical', 'the artifact and marked-content scoping of an unplaceable show, ported onto main and named by its issue'),
     91: ('historical', 'the space-only-show and invisible-artifact rules, ported onto main and named by their issue'),
     39: ('historical', 'the marker-continuation rule, ported onto main for #238 and named by its issue'),
+    57: ('historical', 'the figure-seed and row-continuation rules, on main and named by the issue they came from'),
+    220: ('historical', 'the kept-as-extracted layer outcome, on main and named by its issue'),
+    221: ('historical', 'the encoding outcome the damaged-text warning reports, on main and named by its issue'),
+    222: ('historical', 'the empty-recognition rule, on main and named by its issue'),
+    223: ('historical', 'the inherited-resources font walk, on main and named by its issue'),
+    224: ('historical', 'the emptyPage and complexLayout triggers, on main and named by the issue that asked for them'),
+    225: ('historical', 'the ported missing-space reader, on main and named by the issue that scoped the port'),
+    226: ('historical', 'the ported glyph-index decoder, on main and named by the issue that scoped the port'),
+    227: ('historical', 'the web-address exclusion from the equation seed, on main and named by its issue'),
+    229: ('historical', 'the thin-rule seed and bounded expansion, on main and named by the issue that scoped the port'),
+    234: ('historical', 'the closed-issue citation gate, named by the issue that asked for it'),
 
     # Closed, but the defect is still in `main`; the prose says so and names the commit.
     14: ('branch-only', '2e18b3149'),

@@ -28,7 +28,7 @@ Fetch sources with `tools/fetch_corpus.py --case <id>` (checksum-verified, cache
 
 What the individual gates check:
 
-- `swift test`: 313 Swift Testing tests with no known-issue wrappers, using the real Apple
+- `swift test`: 314 Swift Testing tests with no known-issue wrappers, using the real Apple
   PDF/OCR stack. They cover extraction, the document model, layout, raster pixels (crop origins,
   rotations, annotations, resource ceilings), preserved regions (fraction bars, raised exponents
   and all six cells of a ruled table in actual EPUB images at 72/144 DPI, with prose and code

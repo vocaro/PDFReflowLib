@@ -151,7 +151,11 @@ enum LayoutReconstructor {
     }
 
     static func bodySize(weights: [Int: Int]) -> CGFloat? {
-        weights.max { $0.value < $1.value }.map { CGFloat($0.key) }
+        // Two sizes can carry the same number of characters, and `max` over a Dictionary would
+        // then decide by iteration order, which Swift seeds per process: the same book would
+        // reflow differently from one run to the next, under an invariant that says it must not
+        // (#140). A tie goes to the smaller size, which is the body rather than its display type.
+        weights.max { ($0.value, -$0.key) < ($1.value, -$1.key) }.map { CGFloat($0.key) }
     }
 
     /// Small labels inside preserved images must not turn the surrounding prose into headings.

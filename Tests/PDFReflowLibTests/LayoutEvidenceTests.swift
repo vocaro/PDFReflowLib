@@ -169,3 +169,20 @@ func assemblerJoinsTwoPiecesOfOnePrintedRow() {
     #expect(blocks[4].structureGroup == 7)
     if case .image(let image) = blocks[3].content { #expect(image.assetID == "image-4") } else { Issue.record("image block") }
 }
+
+/// Two type sizes carrying the same weight must not let Dictionary iteration order, which Swift
+/// seeds per process, decide a page's body size (#140).
+@Test func bodySizeBreaksATieOnTheSmallerTypeDeterministically() {
+    #expect(LayoutReconstructor.bodySize(weights: [10: 500, 12: 500]) == 10)
+    #expect(LayoutReconstructor.bodySize(weights: [12: 500, 10: 500]) == 10)
+    #expect(LayoutReconstructor.bodySize(weights: [9: 300, 11: 300, 24: 299]) == 9)
+    // A clear winner still wins, whatever its size.
+    #expect(LayoutReconstructor.bodySize(weights: [10: 499, 12: 500]) == 12)
+    #expect(LayoutReconstructor.bodySize(weights: [:]) == nil)
+    // Insertion order must never change the answer.
+    for _ in 0..<64 {
+        var weights: [Int: Int] = [:]
+        for size in [8, 10, 12, 14, 18].shuffled() { weights[size] = 400 }
+        #expect(LayoutReconstructor.bodySize(weights: weights) == 8)
+    }
+}

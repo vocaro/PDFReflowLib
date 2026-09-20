@@ -17,6 +17,8 @@ struct SourceLayoutFixture: Decodable {
             var baselineOffset: Double
         }
         var text: String
+        /// The PDFKit line's own rectangle, absent from captures taken before it was recorded.
+        var rect: [Double]?
         var runs: [Run]
         func attributedString() -> NSAttributedString {
             let value = NSMutableAttributedString(string: "")

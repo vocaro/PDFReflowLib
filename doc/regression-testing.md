@@ -346,6 +346,23 @@ swiftc $(python3 tools/pdfreflow_tools/swift_sources.py capture-algebra-layout.s
 /tmp/capture-algebra-layout corpus/cache/Beginning_and_Intermediate_Algebra.pdf /tmp/algebra-17-layout.json
 ```
 
+A layout capture records PDFKit's own reading, which the spacing reader then repairs; capture one
+with the reader in the state whose defect the test pins, and never recapture a fixture to make a
+repaired line agree with itself.
+
+`capture-spacing-source.swift` captures the other half of a spacing test: one page's own content
+stream and the font metadata the reader reads from it (subtype, font matrix, first code, widths,
+encoding, `ToUnicode`), plus the names of the other resources the stream mentions. No font program
+is captured, so the rebuilt page places text exactly as the source does and draws nothing, which
+is all the reader measures. `SpacingSourceFixture.document()` rebuilds it through a byte-exact
+Latin-1 writer, because the captured stream and CMaps hold bytes outside ASCII.
+
+```sh
+swiftc $(python3 tools/pdfreflow_tools/swift_sources.py capture-spacing-source.swift) \
+  -o /tmp/capture-spacing-source
+/tmp/capture-spacing-source gpo-911-2004 19 /tmp/911-19-spacing.json
+```
+
 Review source and geometry changes before replacing a bundled fixture; never regenerate one
 merely to make a test pass. The algebra fixtures remain Tyler Wallace's CC BY 3.0 material and
 the government-document fixtures keep their publisher provenance; both are listed in

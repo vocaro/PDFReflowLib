@@ -15,9 +15,9 @@ LIBRARY = 'Sources/PDFReflowLib'
 PROBES = 'tools/probes'
 
 # Native text extraction: NativeTextReader, the readers it consults, and the value types it returns.
-EXTRACTION = ['NativeTextReader.swift', 'NativeSpacingReader.swift', 'GlyphIdentityReader.swift',
-              'GlyphIndexDecoder.swift', 'TextEncodingCheck.swift', 'EnglishText.swift',
-              'ContentStreamWalk.swift', 'CGPDFObjects.swift', 'AnchorMatcher.swift',
+EXTRACTION = ['NativeTextReader.swift', 'NativeSpacingReader.swift', 'NativeSpacingOwnership.swift',
+              'GlyphIdentityReader.swift', 'GlyphIndexDecoder.swift', 'TextEncodingCheck.swift',
+              'EnglishText.swift', 'ContentStreamWalk.swift', 'CGPDFObjects.swift', 'AnchorMatcher.swift',
               'DocumentModel.swift', 'ReflowDocument.swift', 'ConversionTypes.swift']
 # Page rasterization with the options and model types it takes.
 RASTER = ['PageRasterizer.swift', 'ConversionTypes.swift', 'DocumentModel.swift', 'ReflowDocument.swift']
@@ -31,6 +31,7 @@ PROBE_SOURCES = {
                                 'DocumentModel.swift', 'ReflowDocument.swift'],
     'inspect-chapter-boundaries.swift': EXTRACTION + ['ChapterBoundaryReader.swift', 'PDFPageSource.swift'],
     'capture-layout-fixture.swift': EXTRACTION + ['GraphicsReader.swift'],
+    'capture-spacing-source.swift': [],                 # Apple SDKs only
     'capture-algebra-layout.swift': EXTRACTION + ['GraphicsReader.swift'],
     'capture-ocr-layout-fixture.swift': RASTER + ['OCRReader.swift'],
     'audit-report-margins.swift': EXTRACTION + ['FurnitureDetector.swift'],

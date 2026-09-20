@@ -116,6 +116,16 @@ Evidence: [pdfkit-concurrency](../measurements/pdfkit-concurrency/record.md),
 [native-line-boundaries](../measurements/native-line-boundaries/record.md),
 [drop-cap-order](../measurements/drop-cap-order/record.md).
 
+- **List markers and line size (#183).** A line's size is its first character's, and a list
+  marker is drawn at whatever size the page likes, so a marker larger than its item states the
+  marker's size for the whole line: the Fed's page 58 sets a 10-point bullet over 8-point text on
+  14 lines, and IRS Publication 596 sets one large enough that five bulleted sentences were read
+  as headings. Where a line opens with a marker glyph and a space, and that marker is drawn larger
+  than the text after it, the size comes from the text instead. Nothing else at the start of a
+  line is a marker: a drop cap, an opening quotation mark and a contents line's leaders keep the
+  size they had. A marker *smaller* than its text understates the line the same way, but
+  correcting that promotes the same book's starred footnotes into headings, so it is left to
+  #254. Evidence: [list-marker-size](../measurements/list-marker-size/record.md).
 - **East Asian text (#42).** Chinese, Japanese and Korean set no space between the characters of
   a word, and a justified line stretches the gaps between characters rather than between words.
   Two spacing rules were measured on Latin text and do not hold here. A gap between two

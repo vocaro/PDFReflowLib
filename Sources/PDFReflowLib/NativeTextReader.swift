@@ -215,12 +215,43 @@ enum NativeTextReader {
         return marked
     }
 
+    /// The size a line's own text is set in, where a list marker opens it at a size of its own.
+    ///
+    /// A marker is drawn at whatever size the page likes: the Fed's page 58 sets a 10-point bullet
+    /// over 8-point text on 14 lines, and IRS Publication 596 sets one large enough that seven of
+    /// its bulleted sentences were read as headings. The line's size comes from its first
+    /// character, so the marker states it for the whole line (#183, #180).
+    ///
+    /// Only a line opening with a marker glyph and a space is concerned, and only the run holding
+    /// that marker is skipped. A contents line's dot leaders, a drop cap and an opening quotation
+    /// mark are not markers and are left exactly as they were: weighting every character instead
+    /// cost the Fed its seven chapter entries and Our Flag its Pledge of Allegiance display lines,
+    /// which is the survey this rule replaced.
+    private static func sizeAfterListMarker(_ attributed: NSAttributedString) -> CGFloat? {
+        let string = attributed.string as NSString
+        guard string.length >= 2, let opening = string.substring(to: 1).first,
+              !opening.isLetter, !opening.isNumber, !opening.isWhitespace,
+              string.substring(with: NSRange(location: 1, length: 1)).first?.isWhitespace == true
+        else { return nil }
+        var markerRange = NSRange()
+        guard let marker = attributed.attribute(.font, at: 0, effectiveRange: &markerRange) as? PlatformFont,
+              markerRange.upperBound < attributed.length else { return nil }
+        let size = (attributed.attribute(.font, at: markerRange.upperBound, effectiveRange: nil)
+            as? PlatformFont)?.pointSize
+        // Only a marker drawn larger than its text overstates the line. A marker smaller than its
+        // text understates it in the same way, but correcting that here promotes IRS Publication
+        // 596's starred footnotes into headings, so it is left to #180's own survey.
+        guard let size, size.isFinite, size > 0, marker.pointSize > size else { return nil }
+        return size
+    }
+
     static func textLine(semantic: String, bounds: CGRect, attributed: NSAttributedString?) -> TextLine {
         let font = (attributed?.length ?? 0) > 0
             ? attributed?.attribute(.font, at: 0, effectiveRange: nil) as? PlatformFont : nil
         let name = font?.fontName.lowercased() ?? ""
         let mono = name.contains("courier") || name.contains("mono")
-        let proposedSize = font?.pointSize ?? bounds.height
+        // A list marker is drawn at its own size and must not state the line's (#183).
+        let proposedSize = attributed.flatMap(sizeAfterListMarker) ?? font?.pointSize ?? bounds.height
         let size = proposedSize.isFinite && proposedSize > 0 && proposedSize <= 100_000
             ? proposedSize : min(100_000, bounds.height)
         let text = semantic.trimmingCharacters(in: mono ? .newlines : .whitespacesAndNewlines)

@@ -6,8 +6,10 @@ import PDFKit
 /// the reader's autorelease pool.
 struct ExtractedPage: Equatable, Sendable {
     var content: PageContent
-    /// Placed raster image XObjects, which the drawn-text ink test sets aside (#176).
-    var placedImages: [CGRect]
+    /// Placed raster image XObjects, which the drawn-text ink test sets aside (#176) and over
+    /// which a page can print prose of its own (#239). Carried on the page, so reconstruction
+    /// still has them after the extraction pass.
+    var placedImages: [CGRect] { content.pictures }
     /// A simple font with an index-style `Differences` encoding and no `ToUnicode` map is
     /// present (#38). Structural evidence only; `PageDiagnosis` adds the word statistics.
     var hasUnmappedFont: Bool
@@ -47,7 +49,8 @@ enum PageReader {
             // formatting is never emitted. Avoid decoding attributed image attachments.
             var content = PageContent(number: i + 1, bounds: bounds,
                 lines: try NativeTextReader.lines(on: page, limit: limit,
-                    includeStyle: !requiresPageImage && !syntheticStyle), graphics: graphics.regions)
+                    includeStyle: !requiresPageImage && !syntheticStyle), graphics: graphics.regions,
+                pictures: graphics.images)
             if !requiresPageImage && !syntheticStyle && options.ocr != .always, let structure,
                let tags = structure.pages[i + 1], !tags.isEmpty,
                !(StructureTreeReader.validates(tags, owners: structure.owners[i + 1] ?? [:], page: reference)
@@ -83,8 +86,8 @@ enum PageReader {
             let unread = unmappedFont
                 ? GlyphIndexDecoder.unreadGlyphs(on: reference, in: content.lines.map(\.text).joined(separator: "\n"))
                 : 0
-            return ExtractedPage(content: content, placedImages: graphics.images,
-                                 hasUnmappedFont: unmappedFont, unreadGlyphs: unread, warnings: warnings)
+            return ExtractedPage(content: content, hasUnmappedFont: unmappedFont,
+                                 unreadGlyphs: unread, warnings: warnings)
         }
     }
 }

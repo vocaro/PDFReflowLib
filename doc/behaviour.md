@@ -634,12 +634,41 @@ leaving that silent, as the tag phase reports its own give-up (#224).
 ### Code and lists
 
 Monospaced text is code and keeps line breaks and indentation; a line opening with a list marker
-keeps its break. Both are preformatted blocks that retain native emphasis and scripts; inserted
-newlines and indentation are unstyled.
+(`•`, `*`, `−`, `-`, a run of digits or one letter, each followed by a point or a bracket and a
+space) keeps its break. Both are preformatted blocks that retain native emphasis and scripts;
+inserted newlines and indentation are unstyled. There is no list model: every such line is its own
+preformatted block, and nothing groups items or renders `ol`/`ul`.
+
+A wrapped line of prose can begin with the same token — an initial (`W. Bush`, `U. S. 760`), a
+citation abbreviation (`v. Moore`, `p. 785`, `F. 4th`) or a year or day carried over from the line
+above (`2016.`, `on January` / `13.`). Such a line **continues the open paragraph** instead of
+opening an item when all of the following hold (#39); a bullet, minus, asterisk or hyphen
+marker never qualifies:
+
+- the previous line already joined the open paragraph, so the ordinary column and leading test
+  above holds and the previous line is not one the reader marked as not wrapping;
+- the marker is no more than half a body to the right of the previous line's text start. A marker
+  set in from the text above it hangs a new item; a marker to the *left* of it is the ordinary
+  outdent of a wrap beneath an indented opening line, and is allowed up to the 1.5 bodies the
+  column test already permits;
+- the line stands on the left edge shared by more than half of the column — the proportional lines
+  of its own size within 1.5 bodies of it — so a hanging marker beside dedented continuations does
+  not qualify;
+- that column is justified: at least three of its lines reach its right edge within a quarter of a
+  body, and the previous line reaches it too. A line that stops short of the measure ended its own
+  thought, and a list's ragged item lengths establish no measure to fill;
+- the previous line does not end in `.`, `!`, `?`, `:` or `;`, ignoring closing quotes and
+  brackets, and reads as prose: at least three runs of two or more letters, which an exercise or a
+  formula above a numbered answer does not supply.
+
+A page's own words are unchanged either way; the join only moves a line from its own block into
+the paragraph above it, where an ordinary hyphen repair may then close a word the split had
+broken.
 
 Evidence: [heading-body-regressions](../measurements/heading-body-regressions/record.md),
 [three-fidelity-fixes](../measurements/three-fidelity-fixes/record.md),
 [preformatted-styles](../measurements/preformatted-styles/record.md),
+[citation-continuations](../measurements/citation-continuations/record.md),
 [dga-layout-qualification](../measurements/dga-layout-qualification/record.md).
 
 ## HyphenRepair

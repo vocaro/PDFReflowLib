@@ -66,7 +66,7 @@ private let prose: [TextLine] = (0..<5).map {
     let title = line("From Insects", y: 556, size: 14)
     #expect(role(lowercase, lines: prose + [title, lowercase]) == .heading)
     #expect(role(line("let x = 1", y: 300, monospaced: true)) == .code)
-    #expect(role(line("1. First item", y: 300)) == .listItem)
+    #expect(role(line("1. First item", y: 300)) == .markedLine(MarkerColumn(onMajorityEdge: true, justifiedRight: 340)))
     #expect(role(line("• Bullet", y: 300)) == .listItem)
     #expect(role(line("Plain prose", y: 300)) == .prose)
     // A recurring bold label is a heading whatever its size.
@@ -76,7 +76,8 @@ private let prose: [TextLine] = (0..<5).map {
     let synthetic = page(prose, synthetic: true)
     #expect(role(line("Chapter One", y: 560, size: 13), on: synthetic) == .prose)
     #expect(role(line("let x = 1", y: 300, monospaced: true), on: synthetic) == .prose)
-    #expect(role(line("1. First item", y: 300), on: synthetic) == .listItem)
+    #expect(role(line("1. First item", y: 300), on: synthetic)
+        == .markedLine(MarkerColumn(onMajorityEdge: true, justifiedRight: 340)))
     _ = typography
 }
 
@@ -184,5 +185,236 @@ func assemblerJoinsTwoPiecesOfOnePrintedRow() {
         var weights: [Int: Int] = [:]
         for size in [8, 10, 12, 14, 18].shuffled() { weights[size] = 400 }
         #expect(LayoutReconstructor.bodySize(weights: weights) == 8)
+    }
+}
+
+// MARK: - Marker-leading wrapped lines (#39, #238)
+
+/// A wrapped body line can begin with an initial, a citation abbreviation or a year followed by a
+/// point, which the list marker pattern also matches. Those lines belong to the paragraph above
+/// them; a line that genuinely opens a list item still gets its own block. Every source page here
+/// is a checksum-pinned extraction fixture, read against the printed page, never converter output.
+private let loperBrightSHA256 = "12f5ea075004886774c25e7831ea1608fd0f831f0113e83bb0e85811c0a4bb6e"
+
+private func reconstruct(_ page: PageContent) -> [ReflowBlock] {
+    var warnings: [ConversionWarning] = []
+    return LayoutReconstructor.blocks(page: page, images: [], vocabulary: [], warnings: &warnings)
+}
+
+private func reconstruct(_ lines: [TextLine]) -> [ReflowBlock] {
+    reconstruct(PageContent(number: 1, bounds: CGRect(x: 0, y: 0, width: 612, height: 792),
+                            lines: lines, graphics: []))
+}
+
+private func paragraphs(_ blocks: [ReflowBlock]) -> [String] {
+    blocks.compactMap { if case .paragraph = $0.content { return $0.text } else { return nil } }
+}
+
+private func preformatted(_ blocks: [ReflowBlock]) -> [String] {
+    blocks.compactMap { if case .preformatted = $0.content { return $0.text } else { return nil } }
+}
+
+private func markers(_ texts: [String]) -> [String] {
+    texts.filter { $0.range(of: "^(?:[0-9]+|[A-Za-z])[.)]\\s", options: .regularExpression) != nil }
+}
+
+/// Justified synthetic prose: a 460-point measure whose lines reach one right edge.
+private func column(_ texts: [String], x: Double = 60, top: Double = 700, pitch: Double = 14,
+                    widths: [Double]? = nil, indents: [Double]? = nil) -> [TextLine] {
+    texts.enumerated().map { index, text in
+        let width = widths?[index] ?? 460
+        let indent = indents?[index] ?? 0
+        return TextLine(text: text, rect: CGRect(x: x + indent, y: top - Double(index) * pitch,
+                                                 width: width - indent, height: 12), fontSize: 12)
+    }
+}
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/238"), arguments: [
+    ("loper-60", "U. S. 967, 982–983 (2005). And those officials may even dis-",
+     ["Telecommunications Assn. v. Brand X Internet Services, 545 U. S. 967, 982–983 (2005). And those officials may even dis-agree with",
+      "a court’s past interpretation as well. Ibid. None of that is consistent with the APA’s clear mandate."]),
+    ("loper-7", "2016. But because Chevron remains on the books, litigants must con-",
+     ["has not deferred to an agency interpretation under Chevron since 2016. But because Chevron remains on the books, litigants must con-tinue to wrestle"]),
+    ("loper-13", "F. 4th 359 (2022). The majority addressed various provi-",
+     ["A divided panel of the D. C. Circuit affirmed. See 45 F. 4th 359 (2022). The majority addressed various provi-sions of the MSA"]),
+    ("loper-2", "v. Moore, 95 U. S. 760, 763. “Respect,” though, was just that. The",
+     ["who may well have drafted the laws at issue. United States v. Moore, 95 U. S. 760, 763. “Respect,” though, was just that. The views of the Executive Branch",
+      "United States v. Morton Salt Co., 338 U. S. 632, 644, the Court often treated agency determinations of fact",
+      "Skidmore v. Swift & Co., 323 U. S. 134, 140."]),
+])
+func citationLeadingWrappedLinesStayInTheirParagraph(name: String, wrapped: String, joined: [String]) throws {
+    let fixture = try SourceLayoutFixture.load(name)
+    #expect(fixture.sourceSHA256 == loperBrightSHA256)
+    let page = fixture.content()
+    #expect(page.lines.contains { $0.text == wrapped })
+    let blocks = reconstruct(page)
+    #expect(preformatted(blocks).isEmpty)
+    for phrase in joined {
+        #expect(paragraphs(blocks).contains { $0.contains(phrase) }, "missing \(phrase)")
+    }
+    // No page may lose words: every source character still stands in some block.
+    let produced = blocks.map(\.text).joined(separator: " ").filter { !$0.isWhitespace }.sorted()
+    #expect(produced == page.lines.flatMap { $0.text.filter { !$0.isWhitespace } }.sorted())
+}
+
+/// The 9/11 report page #238 measures: restoring the word spaces the source draws turned
+/// `W.Bush` into `W. Bush`, which then read as a list marker and cut the page's last printed
+/// line — and the hyphenated word it ends on — out of the paragraph it belongs to.
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/238"))
+func theNineElevenReportKeepsAPresidentsInitialInItsParagraph() throws {
+    let fixture = try SourceLayoutFixture.load("911-117")
+    #expect(fixture.sourceSHA256 == "657d41475eb3a9a5e3e87a6c7c51ac1dfbe1af7566d1abff7bf7286e7e1c0e1b")
+    let page = fixture.content()
+    let wrapped = "W. Bush, National Security Policy Directives. These documents and many oth-"
+    #expect(page.lines.contains { $0.text == wrapped })
+    let blocks = reconstruct(page)
+    #expect(preformatted(blocks).isEmpty)
+    #expect(paragraphs(blocks).contains {
+        $0.contains("For President Clinton, they were to be Presidential Decision Directives; "
+            + "for President George W. Bush, National Security Policy Directives.")
+    })
+    // The page's words all survive the join.
+    let produced = blocks.map(\.text).joined(separator: " ").filter { !$0.isWhitespace }.sorted()
+    #expect(produced == page.lines.flatMap { $0.text.filter { !$0.isWhitespace } }.sorted())
+}
+
+@Test func loperBrightPageTwoKeepsItsFourSourceParagraphs() throws {
+    let fixture = try SourceLayoutFixture.load("loper-2")
+    var page = fixture.content()
+    page.lines.removeAll { $0.text == "2 LOPER BRIGHT ENTERPRISES v. RAIMONDO" || $0.text == "Syllabus" }
+    let body = paragraphs(reconstruct(page))
+    let openings = ["that the final “interpretation of the laws”", "The Court recognized from the outset",
+                    "During the “rapid expansion", "Occasionally during this period"]
+    let endings = ["Decatur v. Paulding, 14 Pet. 497, 515.", "United States v. Dickson, 15 Pet. 141, 162.",
+                   "Skidmore v. Swift & Co., 323 U. S. 134, 140.", "specific facts found by"]
+    #expect(body.count == 4)
+    for (index, paragraph) in body.enumerated() where index < 4 {
+        #expect(paragraph.hasPrefix(openings[index]))
+        #expect(paragraph.hasSuffix(endings[index]))
+    }
+}
+
+@Test func authorInitialsAndYearsContinueJustifiedProse() {
+    let lines = column([
+        "The committee reviewed the position paper prepared during the previous session by",
+        "A. Smith and B. Jones, who summarised the field work completed at the end of",
+        "1998. The final report was accepted without amendment by all of the delegates",
+        "v. the objections raised earlier, and the chair closed the meeting.",
+    ], widths: [460, 460, 460, 300])
+    let blocks = reconstruct(lines)
+    #expect(preformatted(blocks).isEmpty)
+    #expect(paragraphs(blocks).count == 1)
+    #expect(paragraphs(blocks).first?.contains(
+        "session by A. Smith and B. Jones, who summarised the field work completed at the end of 1998. The final") == true)
+}
+
+@Test func markersOpeningAnItemKeepTheirOwnBlock() {
+    // A short introduction does not fill the measure, so what follows it opens items.
+    let introduced = column(["The three factors are", "1. cost of the material", "2. delivery time", "3. warranty"],
+                            widths: [180, 200, 150, 120])
+    #expect(paragraphs(reconstruct(introduced)) == ["The three factors are"])
+    #expect(preformatted(reconstruct(introduced)) == ["1. cost of the material", "2. delivery time", "3. warranty"])
+    // A full line that ends a sentence — including one closed by a quote or a bracket — ends it.
+    for ending in ["as follows:", "the steps.", "the steps.”", "the steps.)", "steps?", "steps!"] {
+        let lines = column([
+            "Justified prose that fills the whole measure of the column and then introduces",
+            "another full line that also reaches the right margin before listing " + ending,
+            "1. First step in the procedure that follows the introduction",
+            "2. Second step in the procedure",
+            "a. A lettered sub-step",
+        ], widths: [460, 460, 300, 200, 150])
+        #expect(paragraphs(reconstruct(lines)).count == 1, Comment(rawValue: ending))
+        #expect(preformatted(reconstruct(lines)).map { String($0.prefix(2)) } == ["1.", "2.", "a."],
+                Comment(rawValue: ending))
+    }
+    let base = [
+        "Justified prose that fills the whole measure of the column and then continues",
+        "with another full line that also reaches the right margin without any period",
+        "1. First item that is not a wrapped continuation of the prose above it",
+    ]
+    // A paragraph gap before the marker.
+    var gapped = column(base)
+    gapped[2].rect.origin.y -= 12
+    #expect(preformatted(reconstruct(gapped)).count == 1)
+    // A marker indented past the text above it hangs a new item.
+    #expect(preformatted(reconstruct(column(base, indents: [0, 0, 8]))).count == 1)
+    // A line the reader says does not wrap.
+    var unwrapped = column(base)
+    unwrapped[1].wraps = false
+    #expect(preformatted(reconstruct(unwrapped)).count == 1)
+    // A marker beside a column whose lines do not share a right edge.
+    #expect(preformatted(reconstruct(column(base, widths: [460, 300, 240]))).count == 1)
+    // The same geometry without any of those signals joins.
+    #expect(preformatted(reconstruct(column(base))).isEmpty)
+    #expect(paragraphs(reconstruct(column(base))).count == 1)
+}
+
+@Test func aRightEdgeNeedsThreeSupportingLines() {
+    // Two lines alone do not establish a justified measure; the marker opens an item.
+    let pair = column(["A single line of prose that happens to reach the right margin without",
+                       "1. a period at the end"], widths: [460, 200])
+    #expect(preformatted(reconstruct(pair)) == ["1. a period at the end"])
+    // With a third full line on the page the same pair joins.
+    let supported = column(["A single line of prose that happens to reach the right margin without",
+                            "1. a period at the end, and then more prose that fills the measure again",
+                            "and again with a third line that reaches the same right margin before",
+                            "ending here with a period."], widths: [460, 460, 460, 200])
+    #expect(preformatted(reconstruct(supported)).isEmpty)
+    #expect(paragraphs(reconstruct(supported)).count == 1)
+}
+
+@Test func bulletsNeverContinueProse() {
+    let lines = column([
+        "Justified prose that fills the whole measure of the column and then continues",
+        "• a bullet at the same left edge without a gap is still a list item, not prose",
+        "− a minus-prefixed line is treated the same way as a bullet marker here",
+        "- and so is a hyphen marker at the start of a line",
+    ])
+    #expect(preformatted(reconstruct(lines)).count == 3)
+    #expect(paragraphs(reconstruct(lines)).count == 1)
+}
+
+@Test func anOutdentedMarkerJoinsOnlyBeneathAnIndentedOpeningLine() {
+    // The Loper Bright page 13 geometry: an indented opening line, then a marker at the edge.
+    let opening = column([
+        "A divided panel of the circuit affirmed the judgment below. See 45",
+        "F. 4th 359 (2022). The majority addressed various provisions of the",
+        "statute and concluded that the text was not wholly unambiguous, and",
+        "the dissent disagreed.",
+    ], widths: [460, 460, 460, 180], indents: [12, 0, 0, 0])
+    #expect(preformatted(reconstruct(opening)).isEmpty)
+    #expect(paragraphs(reconstruct(opening)).count == 1)
+    // A hanging indent reverses it: a dedented continuation line followed by an indented marker
+    // is the next entry, not a wrap (#219 item 1 describes the same shape for bibliographies).
+    let notes = column([
+        "5. See the earlier discussion of the evidence, which fills the whole line and",
+        "continues here at the dedented margin without ending in a period, pp. 40",
+        "6. The next note begins at the indented margin like every other note start",
+    ], indents: [12, 0, 12])
+    #expect(preformatted(reconstruct(notes)).map { String($0.prefix(2)) } == ["5.", "6."])
+}
+
+/// Source pages whose marker-leading lines genuinely open items: Wallace's numbered exercises,
+/// the Warren Commission's numbered points under a synthetic text style, and the Fed book's
+/// numbered objectives and bulleted lists. Every one of them must keep its own block.
+@Test func corpusListOpeningsKeepTheirOwnBlocks() throws {
+    let algebra = try SourceLayoutFixture.load("algebra-26")
+    let exercises = preformatted(reconstruct(algebra.content()))
+    let numbered = markers(algebra.lines.map(\.text))
+    #expect(numbered.count >= 20)
+    #expect(numbered.allSatisfy { exercises.contains($0) })
+
+    var warren = try SourceLayoutFixture.load("warren-50").content()
+    warren.hasSyntheticTextStyle = true
+    let points = preformatted(reconstruct(warren))
+    #expect(markers(warren.lines.map(\.text)).allSatisfy { points.contains($0) })
+
+    // Bulleted lists are never candidates at all.
+    for name in ["fed-77", "fed-123"] {
+        let bulleted = try SourceLayoutFixture.load(name)
+        let items = bulleted.lines.map(\.text).filter { $0.hasPrefix("• ") }
+        let blocks = preformatted(reconstruct(bulleted.content()))
+        #expect(!items.isEmpty)
+        #expect(items.allSatisfy { blocks.contains($0) }, Comment(rawValue: name))
     }
 }

@@ -216,9 +216,9 @@ func fontEvidenceReadsFontsInheritedFromThePageTree() throws {
         #expect(warning.message.contains("no usable Unicode mapping"))
         #expect(result.warnings.filter { $0.code == .damagedTextEncoding }.count == 1)
         #expect(result.reflowedPageCount == 1)
-        #expect(result.document.assets.count == 1)
-        #expect(result.document.blocks.contains(where: hasImage))
-        let text = result.document.blocks.map(\.text).joined(separator: "\n")
+        #expect(result.book.assets.count == 1)
+        #expect(result.book.blocks.contains(where: hasImage))
+        let text = result.book.blocks.map(\.text).joined(separator: "\n")
         if policy == .never {
             #expect(await log.pages.isEmpty)
             #expect(result.recognizedPageCount == 0)
@@ -246,7 +246,7 @@ func fontEvidenceReadsFontsInheritedFromThePageTree() throws {
     let warning = try #require(result.warnings.first { $0.code == .damagedTextEncoding })
     #expect(warning.message.contains("supplementary references are disabled"))
     #expect(result.warnings.contains { $0.code == .referenceImageOmitted && $0.page == 1 })
-    #expect(result.document.assets.isEmpty)
+    #expect(result.book.assets.isEmpty)
     #expect(result.reflowedPageCount == 1)
     let decoded = try JSONDecoder().decode(ConversionWarning.self, from: JSONEncoder().encode(warning))
     #expect(decoded == warning)
@@ -263,8 +263,8 @@ func fontEvidenceReadsFontsInheritedFromThePageTree() throws {
         #expect(!result.warnings.contains { $0.code == .damagedTextEncoding || $0.code == .ocrUsed || $0.code == .referenceImageOmitted })
         #expect(result.recognizedPageCount == 0)
         #expect(result.reflowedPageCount == 1)
-        #expect(result.document.assets.isEmpty)
-        #expect(result.document.blocks.map(\.text).joined(separator: "\n").contains("Two data files were used."))
+        #expect(result.book.assets.isEmpty)
+        #expect(result.book.blocks.map(\.text).joined(separator: "\n").contains("Two data files were used."))
     }
 }
 
@@ -279,10 +279,10 @@ func fontEvidenceReadsFontsInheritedFromThePageTree() throws {
         workspace: dir.appendingPathComponent("work"), progress: { _ in })
     #expect(result.warnings.filter { $0.code == .damagedTextEncoding }.map(\.page) == [2])
     #expect(result.reflowedPageCount == 2)
-    #expect(result.document.assets.count == 1)
-    #expect(result.document.blocks.filter(hasImage).map(\.page) == [2])
-    let pageOne = result.document.blocks.filter { $0.page == 1 }.map(\.text).joined(separator: "\n")
-    let pageTwo = result.document.blocks.filter { $0.page == 2 }.map(\.text).joined(separator: "\n")
+    #expect(result.book.assets.count == 1)
+    #expect(result.book.blocks.filter(hasImage).map(\.page) == [2])
+    let pageOne = result.book.blocks.filter { $0.page == 1 }.map(\.text).joined(separator: "\n")
+    let pageTwo = result.book.blocks.filter { $0.page == 2 }.map(\.text).joined(separator: "\n")
     #expect(pageOne.contains("Two data files were used.") && !pageOne.contains("Wzr"))
     #expect(pageTwo.contains("Wzr gdwd ilohv zhuh xvhg1") && !pageTwo.contains("Two data"))
 }
@@ -349,6 +349,6 @@ private func shiftedGlyphNameOverImagePDF(_ lines: [String]) -> Data {
         workspace: dir.appendingPathComponent("work"), progress: { _ in })
     #expect(result.warnings.contains { $0.code == .damagedTextEncoding })
     #expect(!result.warnings.contains { $0.code == .implausibleTextLayer })
-    let text = result.document.blocks.map(\.text).joined(separator: "\n")
+    let text = result.book.blocks.map(\.text).joined(separator: "\n")
     #expect(text.contains("Wzr gdwd ilohv zhuh xvhg1"))
 }

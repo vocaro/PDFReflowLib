@@ -10,6 +10,15 @@ func paragraphTexts(_ blocks: [ReflowBlock]) -> [String] {
     blocks.compactMap { if case .paragraph = $0.content { $0.text } else { nil } }
 }
 
+extension PDFReflowLibPipeline.Result {
+    /// The collected document. Only a caller that takes the part stream gets none, and a test
+    /// that reads a whole document never does.
+    var book: ReflowDocument {
+        guard let document else { preconditionFailure("a collected reconstruction has its document") }
+        return document
+    }
+}
+
 /// Collects a conversion's progress events in order.
 actor ProgressLog {
     var events: [ConversionProgress] = []

@@ -36,10 +36,13 @@ paragraphs; tables and equations preserved as images are image references, not s
 
 ## The pipeline
 
-`PDFReflowLibPipeline.reconstruct` returns the logical document plus page counts and warnings.
-The caller supplies a workspace and keeps it alive until serialization finishes. The pipeline runs
-without the writer and takes its recognizer as a parameter (Vision by default), so tests drive
-every recognition branch with canned readings.
+`PDFReflowLibPipeline.reconstruct` emits the logical document as a stream of parts — the
+document-wide facts, then assets and blocks in the order it makes them — and returns page counts
+and warnings. A consumer that takes the stream never holds the document; a caller that passes
+none gets it collected from the same stream instead, so the two forms cannot diverge. The caller
+supplies a workspace and keeps it alive until serialization finishes. The pipeline runs without
+the writer and takes its recognizer as a parameter (Vision by default), so tests drive every
+recognition branch with canned readings.
 
 Extraction is one pass over the pages, each through named stages with value types between them:
 
@@ -107,8 +110,11 @@ structured values, tested without files or ZIP. `EPUBWriter` owns OPF metadata, 
 naming and ZIPFoundation packaging, assigns archive paths from counters (asset identifiers are
 opaque and cannot choose paths), streams asset files straight into ZIP entries, and writes each
 spine document as the packer closes it, keeping one current body string plus navigation lists.
-`ProgressBudget` holds every stage's share of the progress fraction; only publication emits
-completion. Validation rejects missing or duplicate assets and empty documents. Another writer
+It consumes the document part by part as reconstruction produces it, and finishes navigation,
+package metadata and the archive when the stream ends, so neither side holds the block list.
+`ProgressBudget` holds every stage's share of the progress fraction; serializing a block counts
+as the work of the pass that made it, and only publication emits completion. Validation rejects
+missing or duplicate assets and empty documents, block by block as they arrive. Another writer
 could consume the model without touching extraction or reconstruction; a public non-EPUB API or
 a persistent model would need an explicit resource-lifetime contract. There is no writer registry.
 

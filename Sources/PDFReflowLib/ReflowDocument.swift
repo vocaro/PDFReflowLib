@@ -30,26 +30,84 @@ struct ReflowDocument: Sendable, Equatable {
         case emptyDocument, duplicateAsset(String), missingAsset(String), invalidHeadingLevel(Int), invalidChapterBoundary(Int)
     }
 
+    /// The document as the stream a producer emits, in production order.
+    var parts: [ReflowPart] {
+        [.start(metadata, chapterStartPages: chapterStartPages)]
+            + assets.map { .asset($0) } + blocks.map { .block($0) }
+    }
+
+    /// Model validation over a whole document. A streamed document is validated part by part by
+    /// `Validation`, which this runs over the same stream so the two cannot disagree.
     func validate() throws {
-        guard !blocks.isEmpty else { throw ValidationError.emptyDocument }
-        var identifiers: Set<String> = []
-        for asset in assets {
-            guard identifiers.insert(asset.id).inserted else { throw ValidationError.duplicateAsset(asset.id) }
-        }
-        for block in blocks {
-            if case let .heading(_, _, level) = block.content, !(1...6).contains(level) {
-                throw ValidationError.invalidHeadingLevel(level)
+        var validation = Validation()
+        for part in parts { try validation.accept(part) }
+        try validation.finish()
+    }
+
+    /// Model validation of one part at a time, for a consumer that never holds the document.
+    /// Per-part checks reject a block as it arrives; the checks that need the whole document —
+    /// that it has blocks at all, and that every chapter boundary reached a standalone page
+    /// marker — run in `finish`.
+    struct Validation {
+        private var identifiers: Set<String> = []
+        private var unmatchedChapterStarts: Set<Int> = []
+        private var blocks = 0
+
+        init() {}
+
+        mutating func accept(_ part: ReflowPart) throws {
+            switch part {
+            case let .start(_, chapterStartPages):
+                unmatchedChapterStarts = chapterStartPages
+            case let .asset(asset):
+                guard identifiers.insert(asset.id).inserted else { throw ValidationError.duplicateAsset(asset.id) }
+            case let .block(block):
+                blocks += 1
+                switch block.content {
+                case let .heading(_, _, level):
+                    guard (1...6).contains(level) else { throw ValidationError.invalidHeadingLevel(level) }
+                case let .image(image):
+                    guard identifiers.contains(image.assetID) else { throw ValidationError.missingAsset(image.assetID) }
+                case let .sourcePage(number):
+                    unmatchedChapterStarts.remove(number)
+                case .paragraph, .preformatted:
+                    break
+                }
             }
-            if case let .image(image) = block.content, !identifiers.contains(image.assetID) {
-                throw ValidationError.missingAsset(image.assetID)
-            }
         }
-        for page in chapterStartPages {
-            guard blocks.contains(where: { $0.content == .sourcePage(page) }) else {
-                throw ValidationError.invalidChapterBoundary(page)
+
+        func finish() throws {
+            guard blocks > 0 else { throw ValidationError.emptyDocument }
+            // Lowest page first, so the reported boundary does not depend on set iteration order.
+            if let page = unmatchedChapterStarts.min() { throw ValidationError.invalidChapterBoundary(page) }
+        }
+    }
+
+    /// Rebuilds a whole document from its parts, for a caller that can hold the model.
+    struct Collector {
+        private(set) var document = ReflowDocument(metadata: .init(title: "", language: ""), blocks: [], assets: [])
+
+        init() {}
+
+        mutating func accept(_ part: ReflowPart) {
+            switch part {
+            case let .start(metadata, chapterStartPages):
+                document.metadata = metadata
+                document.chapterStartPages = chapterStartPages
+            case let .asset(asset): document.assets.append(asset)
+            case let .block(block): document.blocks.append(block)
             }
         }
     }
+}
+
+/// One piece of a logical document as its producer finishes it: the document-wide facts first,
+/// then assets and blocks in production order. An asset always precedes the block that
+/// references it, and a block is final when it is emitted — nothing later amends it.
+enum ReflowPart: Sendable {
+    case start(ReflowDocument.Metadata, chapterStartPages: Set<Int>)
+    case asset(ReflowDocument.Asset)
+    case block(ReflowBlock)
 }
 
 struct TextStyle: OptionSet, Sendable, Equatable, Codable {

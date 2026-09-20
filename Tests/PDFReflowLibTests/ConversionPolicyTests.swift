@@ -62,10 +62,10 @@ private actor PolicyProgress {
         var options = ConversionOptions(); options.referenceImages = .always
         let result = try await PDFReflowLibPipeline.reconstruct(from: policyFixture(name), options: options,
             workspace: dir, progress: { _ in })
-        #expect(result.document.assets.count == (name == "prose" ? 3 : name == "graphics" ? 4 : 1))
+        #expect(result.book.assets.count == (name == "prose" ? 3 : name == "graphics" ? 4 : 1))
         if name == "rotated" { #expect(result.warnings.filter { $0.code == .pageImageFallback }.count == 1) }
         if name == "graphics" {
-            #expect(result.document.blocks.contains { $0.text.contains("Text after the table") })
+            #expect(result.book.blocks.contains { $0.text.contains("Text after the table") })
         }
     }
 }

@@ -1,0 +1,635 @@
+{
+  "sourceSHA256": "8db8fd9e1de63ac25a6f9585d78ded12f45ab56f0c14c52c199b36b368f84d60",
+  "page": 109,
+  "contentObjects": [
+    "337 0 R"
+  ],
+  "mediaBox": [
+    0.0,
+    0.0,
+    612.0,
+    792.0
+  ],
+  "structParents": 1459,
+  "structureRoot": 975,
+  "roleMap": {
+    "Article": "Art",
+    "FRB_Publication": "P",
+    "HyphenSpan": "Span",
+    "NormalParagraphStyle": "P",
+    "Story": "Sect",
+    "Sub_Title": "P",
+    "Table_Sub_Head": "P",
+    "Text_Banner": "P",
+    "Title": "P",
+    "_No_paragraph_style_": "P",
+    "P": "toc_",
+    "H1": "h1"
+  },
+  "rootKids": [
+    978
+  ],
+  "parentTree": {
+    "0": 1845,
+    "1": 1846,
+    "2": 1841,
+    "3": 1842,
+    "4": 1835,
+    "5": 1836,
+    "6": 1837,
+    "7": 1829,
+    "8": 1830,
+    "9": 1831,
+    "10": 1823,
+    "11": 1824,
+    "12": 1825,
+    "13": 1817,
+    "14": 1818,
+    "15": 1819,
+    "16": 1811,
+    "17": 1812,
+    "18": 1813,
+    "19": 1805,
+    "20": 1806,
+    "21": 1807,
+    "25": 1793,
+    "26": 1788,
+    "29": 1780,
+    "30": 1671,
+    "31": 1672,
+    "32": 1673,
+    "33": 1669,
+    "34": 1669,
+    "35": 1669,
+    "36": 1670,
+    "37": 1670
+  },
+  "elements": [
+    {
+      "object": 978,
+      "role": "Document",
+      "parent": null,
+      "page": false,
+      "kids": [
+        {
+          "element": 1506
+        }
+      ]
+    },
+    {
+      "object": 1506,
+      "role": "Sect",
+      "parent": 978,
+      "page": false,
+      "kids": [
+        {
+          "element": 1667
+        },
+        {
+          "element": 1668
+        },
+        {
+          "element": 1669
+        },
+        {
+          "element": 1670
+        },
+        {
+          "element": 1671
+        },
+        {
+          "element": 1672
+        },
+        {
+          "element": 1673
+        }
+      ]
+    },
+    {
+      "object": 1667,
+      "role": "Caption",
+      "parent": 1506,
+      "page": false,
+      "kids": [
+        {
+          "element": 1845
+        },
+        {
+          "element": 1846
+        }
+      ]
+    },
+    {
+      "object": 1668,
+      "role": "Table",
+      "parent": 1506,
+      "page": false,
+      "kids": [
+        {
+          "element": 1798
+        },
+        {
+          "element": 1799
+        },
+        {
+          "element": 1800
+        },
+        {
+          "element": 1801
+        },
+        {
+          "element": 1802
+        },
+        {
+          "element": 1803
+        },
+        {
+          "element": 1804
+        }
+      ]
+    },
+    {
+      "object": 1669,
+      "role": "Note",
+      "parent": 1506,
+      "page": true,
+      "kids": [
+        33,
+        {
+          "element": 1785
+        },
+        34,
+        {
+          "element": 1786
+        },
+        35
+      ]
+    },
+    {
+      "object": 1670,
+      "role": "P",
+      "parent": 1506,
+      "page": true,
+      "kids": [
+        36,
+        {
+          "element": 1778
+        },
+        37
+      ]
+    },
+    {
+      "object": 1671,
+      "role": "P",
+      "parent": 1506,
+      "page": true,
+      "kids": [
+        30
+      ]
+    },
+    {
+      "object": 1672,
+      "role": "H4",
+      "parent": 1506,
+      "page": true,
+      "kids": [
+        31
+      ]
+    },
+    {
+      "object": 1673,
+      "role": "P",
+      "parent": 1506,
+      "page": true,
+      "kids": [
+        32
+      ]
+    },
+    {
+      "object": 1778,
+      "role": "Reference",
+      "parent": 1670,
+      "page": false,
+      "kids": [
+        {
+          "element": 1780
+        }
+      ]
+    },
+    {
+      "object": 1780,
+      "role": "Link",
+      "parent": 1778,
+      "page": true,
+      "kids": [
+        29
+      ]
+    },
+    {
+      "object": 1785,
+      "role": "Reference",
+      "parent": 1669,
+      "page": false,
+      "kids": [
+        {
+          "element": 1793
+        }
+      ]
+    },
+    {
+      "object": 1786,
+      "role": "Reference",
+      "parent": 1669,
+      "page": false,
+      "kids": [
+        {
+          "element": 1788
+        }
+      ]
+    },
+    {
+      "object": 1788,
+      "role": "Link",
+      "parent": 1786,
+      "page": true,
+      "kids": [
+        26
+      ]
+    },
+    {
+      "object": 1793,
+      "role": "Link",
+      "parent": 1785,
+      "page": true,
+      "kids": [
+        25
+      ]
+    },
+    {
+      "object": 1798,
+      "role": "TR",
+      "parent": 1668,
+      "page": false,
+      "kids": [
+        {
+          "element": 1841
+        },
+        {
+          "element": 1842
+        }
+      ]
+    },
+    {
+      "object": 1799,
+      "role": "TR",
+      "parent": 1668,
+      "page": false,
+      "kids": [
+        {
+          "element": 1835
+        },
+        {
+          "element": 1836
+        },
+        {
+          "element": 1837
+        }
+      ]
+    },
+    {
+      "object": 1800,
+      "role": "TR",
+      "parent": 1668,
+      "page": false,
+      "kids": [
+        {
+          "element": 1829
+        },
+        {
+          "element": 1830
+        },
+        {
+          "element": 1831
+        }
+      ]
+    },
+    {
+      "object": 1801,
+      "role": "TR",
+      "parent": 1668,
+      "page": false,
+      "kids": [
+        {
+          "element": 1823
+        },
+        {
+          "element": 1824
+        },
+        {
+          "element": 1825
+        }
+      ]
+    },
+    {
+      "object": 1802,
+      "role": "TR",
+      "parent": 1668,
+      "page": false,
+      "kids": [
+        {
+          "element": 1817
+        },
+        {
+          "element": 1818
+        },
+        {
+          "element": 1819
+        }
+      ]
+    },
+    {
+      "object": 1803,
+      "role": "TR",
+      "parent": 1668,
+      "page": false,
+      "kids": [
+        {
+          "element": 1811
+        },
+        {
+          "element": 1812
+        },
+        {
+          "element": 1813
+        }
+      ]
+    },
+    {
+      "object": 1804,
+      "role": "TR",
+      "parent": 1668,
+      "page": false,
+      "kids": [
+        {
+          "element": 1805
+        },
+        {
+          "element": 1806
+        },
+        {
+          "element": 1807
+        }
+      ]
+    },
+    {
+      "object": 1805,
+      "role": "TH",
+      "parent": 1804,
+      "page": true,
+      "kids": [
+        19
+      ]
+    },
+    {
+      "object": 1806,
+      "role": "TH",
+      "parent": 1804,
+      "page": true,
+      "kids": [
+        20
+      ]
+    },
+    {
+      "object": 1807,
+      "role": "TD",
+      "parent": 1804,
+      "page": true,
+      "kids": [
+        21
+      ]
+    },
+    {
+      "object": 1811,
+      "role": "TH",
+      "parent": 1803,
+      "page": true,
+      "kids": [
+        16
+      ]
+    },
+    {
+      "object": 1812,
+      "role": "TH",
+      "parent": 1803,
+      "page": true,
+      "kids": [
+        17
+      ]
+    },
+    {
+      "object": 1813,
+      "role": "TD",
+      "parent": 1803,
+      "page": true,
+      "kids": [
+        18
+      ]
+    },
+    {
+      "object": 1817,
+      "role": "TH",
+      "parent": 1802,
+      "page": true,
+      "kids": [
+        13
+      ]
+    },
+    {
+      "object": 1818,
+      "role": "TH",
+      "parent": 1802,
+      "page": true,
+      "kids": [
+        14
+      ]
+    },
+    {
+      "object": 1819,
+      "role": "TD",
+      "parent": 1802,
+      "page": true,
+      "kids": [
+        15
+      ]
+    },
+    {
+      "object": 1823,
+      "role": "TH",
+      "parent": 1801,
+      "page": true,
+      "kids": [
+        10
+      ]
+    },
+    {
+      "object": 1824,
+      "role": "TH",
+      "parent": 1801,
+      "page": true,
+      "kids": [
+        11
+      ]
+    },
+    {
+      "object": 1825,
+      "role": "TD",
+      "parent": 1801,
+      "page": true,
+      "kids": [
+        12
+      ]
+    },
+    {
+      "object": 1829,
+      "role": "TH",
+      "parent": 1800,
+      "page": true,
+      "kids": [
+        7
+      ]
+    },
+    {
+      "object": 1830,
+      "role": "TH",
+      "parent": 1800,
+      "page": true,
+      "kids": [
+        8
+      ]
+    },
+    {
+      "object": 1831,
+      "role": "TD",
+      "parent": 1800,
+      "page": true,
+      "kids": [
+        9
+      ]
+    },
+    {
+      "object": 1835,
+      "role": "TH",
+      "parent": 1799,
+      "page": true,
+      "kids": [
+        4
+      ]
+    },
+    {
+      "object": 1836,
+      "role": "TH",
+      "parent": 1799,
+      "page": true,
+      "kids": [
+        5
+      ]
+    },
+    {
+      "object": 1837,
+      "role": "TD",
+      "parent": 1799,
+      "page": true,
+      "kids": [
+        6
+      ]
+    },
+    {
+      "object": 1841,
+      "role": "TH",
+      "parent": 1798,
+      "page": true,
+      "kids": [
+        2
+      ]
+    },
+    {
+      "object": 1842,
+      "role": "TH",
+      "parent": 1798,
+      "page": true,
+      "kids": [
+        3
+      ]
+    },
+    {
+      "object": 1845,
+      "role": "P",
+      "parent": 1667,
+      "page": true,
+      "kids": [
+        0
+      ]
+    },
+    {
+      "object": 1846,
+      "role": "P",
+      "parent": 1667,
+      "page": true,
+      "kids": [
+        1
+      ]
+    }
+  ],
+  "fonts": [
+    {
+      "name": "T1_0",
+      "object": "758 0 R",
+      "subtype": "Type1",
+      "encoding": "WinAnsiEncoding",
+      "encodingFromDictionary": true,
+      "toUnicode": "/CIDInit /ProcSet findresource begin\n12 dict begin\nbegincmap\n/CIDSystemInfo\n<< /Registry (Adobe)\n/Ordering (UCS) /Supplement 0 >> def\n/CMapName /Adobe-Identity-UCS def\n/CMapType 2 def\n1 begincodespacerange\n<0000> <FFFF>\nendcodespacerange\n90 beginbfchar\n<1D> <00A0>\n<1E> <0066006C>\n<1F> <00660069>\n<20> <0020>\n<24> <0024>\n<25> <0025>\n<26> <0026>\n<27> <0027>\n<28> <0028>\n<29> <0029>\n<2A> <002A>\n<2C> <002C>\n<2D> <002D>\n<2E> <002E>\n<2F> <002F>\n<30> <0030>\n<31> <0031>\n<32> <0032>\n<33> <0033>\n<34> <0034>\n<35> <0035>\n<36> <0036>\n<37> <0037>\n<38> <0038>\n<39> <0039>\n<3A> <003A>\n<3B> <003B>\n<3D> <003D>\n<3F> <003F>\n<40> <0040>\n<41> <0041>\n<42> <0042>\n<43> <0043>\n<44> <0044>\n<45> <0045>\n<46> <0046>\n<47> <0047>\n<48> <0048>\n<49> <0049>\n<4A> <004A>\n<4B> <004B>\n<4C> <004C>\n<4D> <004D>\n<4E> <004E>\n<4F> <004F>\n<50> <0050>\n<51> <0051>\n<52> <0052>\n<53> <0053>\n<54> <0054>\n<55> <0055>\n<56> <0056>\n<57> <0057>\n<59> <0059>\n<5A> <005A>\n<5F> <005F>\n<61> <0061>\n<62> <0062>\n<63> <0063>\n<64> <0064>\n<65> <0065>\n<66> <0066>\n<67> <0067>\n<68> <0068>\n<69> <0069>\n<6A> <006A>\n<6B> <006B>\n<6C> <006C>\n<6D> <006D>\n<6E> <006E>\n<6F> <006F>\n<70> <0070>\n<71> <0071>\n<72> <0072>\n<73> <0073>\n<74> <0074>\n<75> <0075>\n<76> <0076>\n<77> <0077>\n<78> <0078>\n<79> <0079>\n<7A> <007A>\n<85> <2026>\n<92> <2019>\n<93> <201C>\n<94> <201D>\n<96> <2013>\n<97> <2014>\n<BC> <00BC>\n<BD> <00BD>\nendbfchar\nendcmap CMapName currentdict /CMap defineresource pop end end\n"
+    },
+    {
+      "name": "T1_1",
+      "object": "4836 0 R",
+      "subtype": "Type1",
+      "encoding": "WinAnsiEncoding",
+      "encodingFromDictionary": true,
+      "toUnicode": "/CIDInit /ProcSet findresource begin\n12 dict begin\nbegincmap\n/CIDSystemInfo\n<< /Registry (Adobe)\n/Ordering (UCS) /Supplement 0 >> def\n/CMapName /Adobe-Identity-UCS def\n/CMapType 2 def\n1 begincodespacerange\n<0000> <FFFF>\nendcodespacerange\n65 beginbfchar\n<1F> <00660069>\n<20> <0020>\n<26> <0026>\n<2C> <002C>\n<2E> <0020002E>\n<30> <0030>\n<31> <0031>\n<32> <0032>\n<33> <0033>\n<34> <0034>\n<35> <0035>\n<36> <0036>\n<37> <0037>\n<38> <0038>\n<39> <0039>\n<3A> <003A>\n<3F> <003F>\n<41> <0041>\n<42> <0042>\n<43> <0043>\n<44> <0044>\n<45> <0045>\n<46> <0046>\n<47> <0047>\n<48> <0048>\n<49> <0049>\n<4B> <004B>\n<4C> <004C>\n<4D> <004D>\n<4E> <004E>\n<4F> <004F>\n<50> <0050>\n<52> <0052>\n<53> <0053>\n<54> <0054>\n<55> <0055>\n<56> <0056>\n<57> <0057>\n<59> <0059>\n<61> <0061>\n<62> <0062>\n<63> <0063>\n<64> <0064>\n<65> <0065>\n<66> <0066>\n<67> <0067>\n<68> <0068>\n<69> <0069>\n<6B> <006B>\n<6C> <006C>\n<6D> <006D>\n<6E> <006E>\n<6F> <006F>\n<70> <0070>\n<71> <0071>\n<72> <0072>\n<73> <0073>\n<74> <0074>\n<75> <0075>\n<76> <0076>\n<77> <0077>\n<78> <0078>\n<79> <0079>\n<7A> <007A>\n<92> <2019>\nendbfchar\nendcmap CMapName currentdict /CMap defineresource pop end end\n"
+    },
+    {
+      "name": "T1_2",
+      "object": "807 0 R",
+      "subtype": "Type1",
+      "encoding": "WinAnsiEncoding",
+      "toUnicode": "/CIDInit /ProcSet findresource begin\n12 dict begin\nbegincmap\n/CIDSystemInfo\n<< /Registry (Adobe)\n/Ordering (UCS) /Supplement 0 >> def\n/CMapName /Adobe-Identity-UCS def\n/CMapType 2 def\n1 begincodespacerange\n<0000> <FFFF>\nendcodespacerange\n60 beginbfchar\n<20> <0020>\n<28> <0028>\n<29> <0029>\n<2C> <002C>\n<2D> <002D>\n<2E> <002E>\n<30> <0030>\n<31> <0031>\n<32> <0032>\n<35> <0035>\n<37> <0037>\n<39> <0039>\n<3A> <003A>\n<41> <0041>\n<42> <0042>\n<43> <0043>\n<44> <0044>\n<45> <0045>\n<46> <0046>\n<47> <0047>\n<48> <0048>\n<49> <0049>\n<4C> <004C>\n<4D> <004D>\n<4E> <004E>\n<4F> <004F>\n<50> <0050>\n<52> <0052>\n<53> <0053>\n<54> <0054>\n<55> <0055>\n<56> <0056>\n<57> <0057>\n<61> <0061>\n<62> <0062>\n<63> <0063>\n<64> <0064>\n<65> <0065>\n<66> <0066>\n<67> <0067>\n<68> <0068>\n<69> <0069>\n<6B> <006B>\n<6C> <006C>\n<6D> <006D>\n<6E> <006E>\n<6F> <006F>\n<70> <0070>\n<71> <0071>\n<72> <0072>\n<73> <0073>\n<74> <0074>\n<75> <0075>\n<76> <0076>\n<77> <0077>\n<78> <0078>\n<79> <0079>\n<7A> <007A>\n<92> <2019>\n<96> <2013>\nendbfchar\nendcmap CMapName currentdict /CMap defineresource pop end end\n"
+    },
+    {
+      "name": "T1_3",
+      "object": "761 0 R",
+      "subtype": "Type1",
+      "encoding": "WinAnsiEncoding",
+      "encodingFromDictionary": true,
+      "toUnicode": "/CIDInit /ProcSet findresource begin\n12 dict begin\nbegincmap\n/CIDSystemInfo\n<< /Registry (Adobe)\n/Ordering (UCS) /Supplement 0 >> def\n/CMapName /Adobe-Identity-UCS def\n/CMapType 2 def\n1 begincodespacerange\n<0000> <FFFF>\nendcodespacerange\n79 beginbfchar\n<1F> <00660069>\n<20> <0020>\n<22> <0022>\n<24> <0024>\n<28> <0028>\n<29> <0029>\n<2A> <002A>\n<2C> <002C>\n<2D> <002D>\n<2E> <002E>\n<30> <0030>\n<31> <0031>\n<32> <0032>\n<33> <0033>\n<34> <0034>\n<35> <0035>\n<36> <0036>\n<37> <0037>\n<38> <0038>\n<39> <0039>\n<3A> <003A>\n<3B> <003B>\n<3F> <003F>\n<41> <0041>\n<42> <0042>\n<43> <0043>\n<44> <0044>\n<45> <0045>\n<46> <0046>\n<47> <0047>\n<48> <0048>\n<49> <0049>\n<4A> <004A>\n<4B> <004B>\n<4C> <004C>\n<4D> <004D>\n<4E> <004E>\n<4F> <004F>\n<50> <0050>\n<51> <0051>\n<52> <0052>\n<53> <0053>\n<54> <0054>\n<55> <0055>\n<56> <0056>\n<57> <0057>\n<58> <0058>\n<59> <0059>\n<61> <0061>\n<62> <0062>\n<63> <0063>\n<64> <0064>\n<65> <0065>\n<66> <0066>\n<67> <0067>\n<68> <0068>\n<69> <0069>\n<6A> <006A>\n<6B> <006B>\n<6C> <006C>\n<6D> <006D>\n<6E> <006E>\n<6F> <006F>\n<70> <0070>\n<71> <0071>\n<72> <0072>\n<73> <0073>\n<74> <0074>\n<75> <0075>\n<76> <0076>\n<77> <0077>\n<78> <0078>\n<79> <0079>\n<7A> <007A>\n<92> <2019>\n<93> <201C>\n<94> <201D>\n<95> <2022>\n<96> <2013>\nendbfchar\nendcmap CMapName currentdict /CMap defineresource pop end end\n"
+    },
+    {
+      "name": "T1_4",
+      "object": "844 0 R",
+      "subtype": "Type1",
+      "encoding": "WinAnsiEncoding",
+      "encodingFromDictionary": true,
+      "toUnicode": "/CIDInit /ProcSet findresource begin\n12 dict begin\nbegincmap\n/CIDSystemInfo\n<< /Registry (Adobe)\n/Ordering (UCS) /Supplement 0 >> def\n/CMapName /Adobe-Identity-UCS def\n/CMapType 2 def\n1 begincodespacerange\n<0000> <FFFF>\nendcodespacerange\n50 beginbfchar\n<1F> <00660069>\n<20> <0020>\n<28> <0028>\n<29> <0029>\n<2F> <002F>\n<30> <0030>\n<31> <0031>\n<32> <0032>\n<33> <0033>\n<34> <0034>\n<38> <0038>\n<39> <0039>\n<3A> <003A>\n<41> <0041>\n<42> <0042>\n<43> <0043>\n<44> <0044>\n<45> <0045>\n<46> <0046>\n<47> <0047>\n<49> <0049>\n<4C> <004C>\n<4D> <004D>\n<4F> <004F>\n<50> <0050>\n<52> <0052>\n<53> <0053>\n<61> <0061>\n<62> <0062>\n<63> <0063>\n<64> <0064>\n<65> <0065>\n<66> <0066>\n<67> <0067>\n<68> <0068>\n<69> <0069>\n<6B> <006B>\n<6C> <006C>\n<6D> <006D>\n<6E> <006E>\n<6F> <006F>\n<70> <0070>\n<72> <0072>\n<73> <0073>\n<74> <0074>\n<75> <0075>\n<76> <0076>\n<77> <0077>\n<79> <0079>\n<96> <2013>\nendbfchar\nendcmap CMapName currentdict /CMap defineresource pop end end\n"
+    },
+    {
+      "name": "T1_5",
+      "object": "845 0 R",
+      "subtype": "Type1",
+      "encoding": "WinAnsiEncoding",
+      "encodingFromDictionary": true,
+      "toUnicode": "/CIDInit /ProcSet findresource begin\n12 dict begin\nbegincmap\n/CIDSystemInfo\n<< /Registry (Adobe)\n/Ordering (UCS) /Supplement 0 >> def\n/CMapName /Adobe-Identity-UCS def\n/CMapType 2 def\n1 begincodespacerange\n<0000> <FFFF>\nendcodespacerange\n81 beginbfchar\n<1D> <0066006C>\n<1E> <00A0>\n<1F> <00660069>\n<20> <0020>\n<24> <0024>\n<26> <0026>\n<28> <0028>\n<29> <0029>\n<2A> <002A>\n<2C> <002C>\n<2D> <002D>\n<2E> <002E>\n<2F> <002F>\n<30> <0030>\n<31> <0031>\n<32> <0032>\n<33> <0033>\n<34> <0034>\n<35> <0035>\n<36> <0036>\n<37> <0037>\n<38> <0038>\n<39> <0039>\n<3A> <003A>\n<3B> <003B>\n<41> <0041>\n<42> <0042>\n<43> <0043>\n<44> <0044>\n<45> <0045>\n<46> <0046>\n<47> <0047>\n<48> <0048>\n<49> <0049>\n<4A> <004A>\n<4B> <004B>\n<4C> <004C>\n<4D> <004D>\n<4E> <004E>\n<4F> <004F>\n<50> <0050>\n<52> <0052>\n<53> <0053>\n<54> <0054>\n<55> <0055>\n<56> <0056>\n<57> <0057>\n<58> <0058>\n<59> <0059>\n<5A> <005A>\n<5F> <005F>\n<61> <0061>\n<62> <0062>\n<63> <0063>\n<64> <0064>\n<65> <0065>\n<66> <0066>\n<67> <0067>\n<68> <0068>\n<69> <0069>\n<6A> <006A>\n<6B> <006B>\n<6C> <006C>\n<6D> <006D>\n<6E> <006E>\n<6F> <006F>\n<70> <0070>\n<71> <0071>\n<72> <0072>\n<73> <0073>\n<74> <0074>\n<75> <0075>\n<76> <0076>\n<77> <0077>\n<78> <0078>\n<79> <0079>\n<7A> <007A>\n<92> <2019>\n<93> <201C>\n<94> <201D>\n<96> <2013>\nendbfchar\nendcmap CMapName currentdict /CMap defineresource pop end end\n"
+    }
+  ],
+  "xobjects": [],
+  "contentStream": "/Artifact <<>>BDC \n/CS0 CS 1  SCN\n/GS0 gs\nq\n1 0 0 1 60 744.0121 cm\n0 0 m\n492 0 l\nS\nQ\nEMC \nBT\n/Artifact <<>>BDC \n0 0 0 1 k\n/GS1 gs\n/T1_0 1 Tf\n8 0 0 8 60 750.5121 Tm\n( )Tj\nEMC \n/Artifact <</O /Layout >>BDC \n29.86 0 Td\n[(F)20 (ostering P)25.1 (a)25 (yment and Settlement System Safety and Efficiency)]TJ\nEMC \n/Artifact <<>>BDC \n/T1_1 1 Tf\n1.525 Tw ( )Tj\nEMC \n/Artifact <<>>BDC \n(105)Tj\nEMC \n/P <</MCID 36 >>BDC \n/T1_0 1 Tf\n0 Tw 10 0 0 10 91.2 361.5401 Tm\n[(During the last two decades,)50.2 ( Congress has directed the Board to prescribe regulations implement)0.8 (-)]TJ\n0 -1.6 TD\n[(ing a variety of other pa)25.2 (yments-related statutes \\()]TJ\nEMC \n/Link <</MCID 29 >>BDC \n/CS0 cs 1  scn\n/GS0 gs\n(figure 6.11)Tj\nEMC \n/P <</MCID 37 >>BDC \n0 0 0 1 k\n/GS1 gs\n[(\\). F)20 (or example,)50.1 ( the Board and the )]TJ\nT*\n[(T)100 (reasur)-49.9 (y jointly promulgated regulations implementing the Unla)25.4 (wful Inter)-14.9 (net Gambling Enforce-)]TJ\nT*\n[(ment Act of 2006,)50.1 ( which requires designated pa)25.3 (yment system par)-49.9 (ticipants to establish policies )]TJ\nT*\n[(and procedures to identify and block,)50.3 ( or otherwise pre)10.1 (vent or prohibit,)50.1 ( unla)25.1 (wful inter)-14.9 (net gambling )]TJ\nT*\n(transactions.)Tj\nEMC \n/P <</MCID 30 >>BDC \n0 -3.2 TD\n[(In 2010,)50.1 ( the Dodd-F)30.1 (rank Act pro)15 (vided the Board additional authority to regulate and super)-49.5 (vise )]TJ\n0 -1.6 TD\n[(cer)-50 (tain pa)25.1 (yment,)50 ( clearing)-24.9 (,)50 ( and settlement systems and activities that ha)25.4 (ve been designated as )]TJ\nT*\n[(systemically impor)-49.8 (tant,)50 ( as w)20 (ell as prescribe r)-19.8 (ules related to debit card interchange fees. In 2011,)50.4 ( )]TJ\nT*\n[(in accordance with the Dodd-F)30.2 (rank Act,)50.1 ( the Board adopted r)-19.9 (ules limiting debit card interchange )]TJ\nT*\n[(fees of cer)-49.9 (tain issuer)-14.9 (s and prohibiting networ)-19.8 (k exclusivity ar)-14.8 (rangements and routing restrictions. )]TJ\nT*\n[(In 2012,)50.1 ( pur)-15 (suant to the Dodd-F)30.2 (rank Act,)50 ( the Board adopted r)-19.8 (ules setting for)-49.9 (th risk-management )]TJ\nT*\n[(standards for cer)-49.8 (tain financial mar)-19.9 (k)20 (et utilities \\(FMUs\\) and requirements regarding advanced notice )]TJ\nT*\n[(to the Board from cer)-49.8 (tain FMUs of material changes to their r)-19.7 (ules,)50.1 ( procedures,)50 ( or operations.)]TJ\nEMC \n/H5 <</MCID 31 >>BDC \n/CS0 cs 1  scn\n/GS0 gs\n/T1_2 1 Tf\n-0.05 Tw 12 0 0 12 91.2 107.5401 Tm\n[(Expedited )-49.9 (Funds Av)35 (ailability Act)]TJ\nEMC \n/P <</MCID 32 >>BDC \n0 0 0 1 k\n/GS1 gs\n/T1_0 1 Tf\n0 Tw 10 0 0 10 91.2 84.3401 Tm\n[(The EF)70 (AA broadened the F)20.1 (ederal Reser)-49.8 (ve Board\\222)120 (s authority to regulate interbank pa)25.3 (yments,)50 ( includ-)]TJ\nT*\n[(ing pa)25 (yments not handled b)20.2 (y the Reser)-49.9 (ve\\035Banks.)]TJ\nEMC \nET\n/Artifact <<>>BDC \n/CS0 cs 1  scn\n/GS0 gs\n90.51 700.3 431.98 -18.86 re\nf\nEMC \n/Artifact <<>>BDC \n0 0 0 0 k\n90.51 681.44 431.98 -245.84 re\n90.51 435.6 431.98 -43.802 re\nf\nEMC \n/Artifact <<>>BDC \n/GS2 gs\nq\n1 0 0 1 90.01 700.3 cm\n0 0 m\n432.98 0 l\nS\nQ\nEMC \n/Artifact <<>>BDC \nq\n1 0 0 1 90.51 681.4402 cm\n0 0 m\n0 18.36 l\nS\nQ\nq\n1 0 0 1 522.49 681.4402 cm\n0 0 m\n0 18.36 l\nS\nQ\nq\n1 0 0 1 90.51 392.2981 cm\n0 0 m\n0 43.302 l\nS\nQ\nEMC \n/Artifact <<>>BDC \nq\n1 0 0 1 522.49 392.2981 cm\n0 0 m\n0 43.302 l\nS\nQ\nEMC \n/Artifact <<>>BDC \nq\n1 0 0 1 90.01 391.7981 cm\n0 0 m\n432.98 0 l\nS\nQ\nEMC \n/Artifact <<>>BDC \nq\n1 0 0 1 90.51 435.6 cm\n0 0 m\n0 245.84 l\nS\nQ\nq\n1 0 0 1 522.49 435.6 cm\n0 0 m\n0 245.84 l\nS\nQ\nEMC \nBT\n/P <</MCID 0 >>BDC \n/GS0 gs\n/T1_3 1 Tf\n10 0 0 10 102.51 687.4402 Tm\n[(F)-25 (igure 6.11. F)20.1 (ederal Reser)-49.9 (ve regulations go)15.1 (ver)-15 (ning the pa)25.1 (yment system)]TJ\nEMC \n/P <</MCID 1 >>BDC \n0 0 0 1 k\n/GS1 gs\n/T1_0 1 Tf\n8 0 0 8 102.51 669.9523 Tm\n[(The F)20 (ederal Reser)-49.9 (ve has adopted the following set of regulations,)50.4 ( which implement cer)-49.8 (tain federal la)25.1 (ws go)15.1 (ver)-15 (ning )]TJ\n0 -1.25 TD\n[(the U.S. pa)25.1 (yment system and the operations of par)-49.7 (ticipating institutions.)]TJ\nEMC \nET\n/Artifact <<>>BDC \n/CS1 cs 0.8  scn\n/GS0 gs\n102.51 650.809 178.78 -17.008 re\n281.29 650.809 225.62 -17.008 re\nf\n0.4  scn\n102.51 633.801 35.5 -27.008 re\n102.51 606.793 35.5 -27.008 re\n102.51 579.785 35.5 -37.008 re\n102.51 542.777 35.5 -37.008 re\n102.51 505.769 35.5 -27.008 re\n102.51 478.761 35.5 -27.008 re\nf\n0.2  scn\n138.01 633.801 143.28 -27.008 re\n138.01 606.793 143.28 -27.008 re\n138.01 579.785 143.28 -37.008 re\n138.01 542.777 143.28 -37.008 re\n138.01 505.769 143.28 -27.008 re\n138.01 478.761 143.28 -27.008 re\nf\n/CS2 cs 0.3  scn\n281.29 633.801 225.62 -27.008 re\n281.29 606.793 225.62 -27.008 re\n281.29 579.785 225.62 -37.008 re\n281.29 542.777 225.62 -37.008 re\n281.29 505.769 225.62 -27.008 re\n281.29 478.761 225.62 -27.008 re\nf\n0 0 0 0 K\n2 w \n/GS2 gs\nq\n1 0 0 1 281.29 650.8088 cm\n0 0 m\n225.62 0 l\nS\nQ\nEMC \n/Artifact <<>>BDC \nq\n1 0 0 1 281.29 633.8009 cm\n0 0 m\n225.62 0 l\nS\nQ\nEMC \n/Artifact <<>>BDC \nq\n1 0 0 1 102.51 606.793 cm\n0 0 m\n35.5 0 l\nS\nQ\nEMC \n/Artifact <<>>BDC \nq\n1 0 0 1 138.01 606.793 cm\n0 0 m\n143.28 0 l\nS\nQ\nEMC \n/Artifact <<>>BDC \nq\n1 0 0 1 281.29 606.793 cm\n0 0 m\n225.62 0 l\nS\nQ\nq\n1 0 0 1 102.51 579.7851 cm\n0 0 m\n35.5 0 l\nS\nQ\nEMC \n/Artifact <<>>BDC \nq\n1 0 0 1 138.01 579.7851 cm\n0 0 m\n143.28 0 l\nS\nQ\nEMC \n/Artifact <<>>BDC \nq\n1 0 0 1 281.29 579.7851 cm\n0 0 m\n225.62 0 l\nS\nQ\nEMC \n/Artifact <<>>BDC \nq\n1 0 0 1 102.51 542.7772 cm\n0 0 m\n35.5 0 l\nS\nQ\nq\n1 0 0 1 138.01 542.7772 cm\n0 0 m\n143.28 0 l\nS\nQ\nEMC \n/Artifact <<>>BDC \nq\n1 0 0 1 281.29 542.7772 cm\n0 0 m\n225.62 0 l\nS\nQ\nEMC \n/Artifact <<>>BDC \nq\n1 0 0 1 102.51 505.7693 cm\n0 0 m\n35.5 0 l\nS\nQ\nq\n1 0 0 1 138.01 505.7693 cm\n0 0 m\n143.28 0 l\nS\nQ\nEMC \n/Artifact <<>>BDC \nq\n1 0 0 1 281.29 505.7693 cm\n0 0 m\n225.62 0 l\nS\nQ\nEMC \n/Artifact <<>>BDC \nq\n1 0 0 1 102.51 650.8088 cm\n0 0 m\n35.5 0 l\nS\nQ\nq\n1 0 0 1 138.01 650.8088 cm\n0 0 m\n143.28 0 l\nS\nQ\nEMC \n/Artifact <<>>BDC \nq\n1 0 0 1 102.51 633.8009 cm\n0 0 m\n35.5 0 l\nS\nQ\nEMC \n/Artifact <<>>BDC \nq\n1 0 0 1 138.01 633.8009 cm\n0 0 m\n143.28 0 l\nS\nQ\nEMC \n/Artifact <<>>BDC \nq\n1 0 0 1 102.51 478.7614 cm\n0 0 m\n35.5 0 l\nS\nQ\nEMC \n/Artifact <<>>BDC \nq\n1 0 0 1 138.01 478.7614 cm\n0 0 m\n143.28 0 l\nS\nQ\nEMC \n/Artifact <<>>BDC \nq\n1 0 0 1 281.29 478.7614 cm\n0 0 m\n225.62 0 l\nS\nQ\n/CS1 CS 1  SCN\n1 w \nq\n1 0 0 1 102.51 451.7534 cm\n0 0 m\n35.5 0 l\nS\nQ\nq\n1 0 0 1 138.01 451.7534 cm\n0 0 m\n143.28 0 l\nS\nQ\nq\n1 0 0 1 281.29 451.7534 cm\n0 0 m\n225.62 0 l\nS\nQ\nEMC \nBT\n/TH <</MCID 2 >>BDC \n0 0 0 0 k\n/GS0 gs\n/T1_4 1 Tf\n8 0 0 8 108.27 639.5609 Tm\n(Regulation \\(by letter and name\\))Tj\nEMC \n/TH <</MCID 3 >>BDC \n22.347 0 Td\n(Description)Tj\nEMC \n/TH <</MCID 4 >>BDC \n0 0 0 1 k\n/GS1 gs\n/T1_3 1 Tf\n-21.049 -2.126 Td\n(J)Tj\nEMC \n/TH <</MCID 5 >>BDC \n/T1_5 1 Tf\n3.139 0 Td\n(Collection of Checks and Other Items by Federal )Tj\nT*\n[(Reserve Banks and Funds )50.1 (T)35 (ransfers )50 (Through Fedwire)]TJ\nEMC \n/TD <</MCID 6 >>BDC \n17.91 1.25 Td\n(Governs the collection and return of checks through the Reserve Banks an\\\rd Fedwire )Tj\nT*\n(funds transfers)Tj\nEMC \n/TH <</MCID 7 >>BDC \n/T1_3 1 Tf\n-21.509 -2.126 Td\n(CC)Tj\nEMC \n/TH <</MCID 8 >>BDC \n/T1_5 1 Tf\n3.599 0 Td\n(Availability of Funds and Collection of Checks)Tj\nEMC \n/TD <</MCID 9 >>BDC \n17.91 0 Td\n(Governs the availability of funds deposited in transaction accounts and \\\rthe collec-)Tj\nT*\n(tion and return of checks)Tj\nEMC \n/TH <</MCID 10 >>BDC \n/T1_3 1 Tf\n-21.429 -2.126 Td\n(EE)Tj\nEMC \n/TH <</MCID 11 >>BDC \n/T1_5 1 Tf\n3.519 0 Td\n[(Netting Eligibility for F)-24.9 (inancial Institutions)]TJ\nEMC \n/TD <</MCID 12 >>BDC \n17.91 0 Td\n(De\\037nes \\037nancial institutions to be covered by statutory provisions\\\r that validate )Tj\nT*\n[(netting contracts,)50.1 ( thereby permitting one institution to pay or receive the net,)50.3 ( rather )]TJ\nT*\n[(than the gross,)50.1 ( amount due,)50 ( e)-25 (ven if the other institution is insolvent)]TJ\nEMC \n/TH <</MCID 13 >>BDC \n/T1_3 1 Tf\n-21.509 -2.126 Td\n(GG)Tj\nEMC \n/TH <</MCID 14 >>BDC \n/T1_5 1 Tf\n3.599 0 Td\n(Prohibition on Funding of Unlawful Internet )Tj\nT*\n(Gambling)Tj\nEMC \n/TD <</MCID 15 >>BDC \n17.91 1.25 Td\n[(Requires U.S.)50 ( \\037nancial \\037rms that par)-19.8 (ticipate in designated payment systems to )]TJ\nT*\n[(establish and implement policies and procedures reasonably designed to p\\\rre)-24.7 (vent )]TJ\nT*\n(payments connected to unlawful internet gambling)Tj\nEMC \n/TH <</MCID 16 >>BDC \n/T1_3 1 Tf\n-21.509 -2.126 Td\n(HH)Tj\nEMC \n/TH <</MCID 17 >>BDC \n/T1_5 1 Tf\n3.599 0 Td\n[(Designated F)-24.9 (inancial Market Utilities)]TJ\nEMC \n/TD <</MCID 18 >>BDC \n17.91 0 Td\n[(Establishes standards and procedures related to the supervision of cer)-19.7 (tain \\037nancial )]TJ\nT*\n[(market utilities designated as systemically impor)-19.7 (tant)]TJ\nEMC \n/TH <</MCID 19 >>BDC \n/T1_3 1 Tf\n-21.149 -2.126 Td\n(II)Tj\nEMC \n/TH <</MCID 20 >>BDC \n/T1_5 1 Tf\n3.239 0 Td\n(Debit Card Interchange Fees and Routing)Tj\nEMC \n/TD <</MCID 21 >>BDC \n17.91 0 Td\n(Establishes standards for debit card interchange fees and prohibits paym\\\rent card )Tj\n0.001 -1.25 Td\n[(network exclusivity arrangements and routing restrictions for debit card\\\r trans )213 (actions)]TJ\nEMC \n/Note <</MCID 33 >>BDC \n/T1_0 1 Tf\n7 0 0 7 102.51 424.7981 Tm\n[(Note: F)20.1 (or a list of regulations go)15.2 (ver)-15 (ning banks and banking)-24.8 (,)50 ( holding companies and nonbank \\037nancial companies,)50 ( and securities )]TJ\n0 -1.286 TD\n[(credit transactions,)50.2 ( see )]TJ\nEMC \n/Link <</MCID 25 >>BDC \n/CS3 cs 1  scn\n/GS0 gs\n(section 5)Tj\nEMC \n/Note <</MCID 34 >>BDC \n0 0 0 1 k\n/GS1 gs\n[(,)50 ( \\223Super)-49.9 (vising and Regulating F)-24.9 (inancial Institutions and Activities,)100 (\\224 on page 62. F)20.1 (or a list of )]TJ\nT*\n[(consumer and community affair)-14.8 (s-related regulations,)50.2 ( see )]TJ\nEMC \n/Link <</MCID 26 >>BDC \n/CS3 cs 1  scn\n/GS0 gs\n(section 7)Tj\nEMC \n/Note <</MCID 35 >>BDC \n0 0 0 1 k\n/GS1 gs\n[(,)50 ( \\223Promoting Consumer Protection and Community De)9.9 (velopment,)100 (\\224 )]TJ\nT*\n(on page 112.)Tj\nEMC \nET\n",
+  "provenance": "Captured with qpdf from corpus/cache/the-fed-explained.pdf (fed-explained-2021). Page 109 emits its running head as an Artifact whose last show carries no positioning operator, which refused the page's whole tag set (#67), and space-only shows past a line's end (#91). Native line evidence in fed-109-layout.json."
+}

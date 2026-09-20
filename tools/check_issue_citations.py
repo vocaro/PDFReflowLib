@@ -88,6 +88,8 @@ ALLOWED = {
     119: ('historical', 'the same-font word spaces, ported onto main for #225 and named as the rule came from it'),
     128: ('historical', 'the kern-absorbed sentence spaces, ported onto main for #225 and named the same way'),
     116: ('historical', 'the recognition-coverage rule and its band retry, ported onto main and named by its issue'),
+    67: ('historical', 'the artifact and marked-content scoping of an unplaceable show, ported onto main and named by its issue'),
+    91: ('historical', 'the space-only-show and invisible-artifact rules, ported onto main and named by their issue'),
 
     # Closed, but the defect is still in `main`; the prose says so and names the commit.
     14: ('branch-only', '2e18b3149'),

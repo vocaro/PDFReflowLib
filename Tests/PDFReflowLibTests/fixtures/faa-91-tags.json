@@ -1,0 +1,533 @@
+{
+  "sourceSHA256": "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
+  "page": 91,
+  "contentObjects": [
+    "1912 0 R"
+  ],
+  "mediaBox": [
+    0.0,
+    0.0,
+    594.0,
+    774.0
+  ],
+  "structParents": 1002,
+  "structureRoot": 40511,
+  "roleMap": {
+    "AC_body_text": "P",
+    "AC_bullet_text": "P",
+    "AC_bullet_text_2nd_l": "P",
+    "AC_bullet_text_with_": "P",
+    "AC_captions": "P",
+    "AC_chapter_number": "P",
+    "AC_chapter_title": "P",
+    "AC_heading_1": "P",
+    "AC_heading_2": "P",
+    "AC_heading_3": "P",
+    "AC_heading_4": "P",
+    "AC_heading_5": "P",
+    "Annotation": "Span",
+    "Article": "Art",
+    "Artifact": "P",
+    "Bibliography": "BibEntry",
+    "Chart": "Figure",
+    "Diagram": "Figure",
+    "DropCap": "Figure",
+    "Endnote": "Note",
+    "Footnote": "Note",
+    "Index_Lvl_1": "P",
+    "Index_Lvl_2": "P",
+    "Index_Lvl_3": "P",
+    "InlineShape": "Figure",
+    "Outline": "Span",
+    "Story": "Sect",
+    "Strikeout": "Span",
+    "Subscript": "Span",
+    "Superscript": "Span",
+    "TextBox": "Art",
+    "ToC_Chapter_Number": "P",
+    "ToC_Chapter_Title_1": "P",
+    "ToC_Section_Title_1": "P",
+    "ToC_Section_Title_2": "P",
+    "ToC_Section_Title_3": "P",
+    "Underline": "Span",
+    "_No_paragraph_style_": "P"
+  },
+  "rootKids": [
+    40513
+  ],
+  "parentTree": {
+    "7558": 54622,
+    "7559": 54622,
+    "7560": 54622,
+    "7561": 54622,
+    "7562": 54622,
+    "7563": 54623,
+    "7564": 54624,
+    "7565": 54624,
+    "7566": 54624,
+    "7567": 54624,
+    "7568": 54624,
+    "7569": 54624,
+    "7570": 54624,
+    "7571": 54624,
+    "7572": 54624,
+    "7573": 54624,
+    "7574": 54624,
+    "7575": 54624,
+    "7576": 54625,
+    "7577": 54625,
+    "7578": 54626,
+    "7579": 54626,
+    "7580": 54627,
+    "7581": 54627,
+    "7582": 54628,
+    "7583": 54629,
+    "7584": 54629,
+    "7585": 54629,
+    "7586": 54629,
+    "7587": 54629,
+    "7588": 54629,
+    "7589": 54629,
+    "7590": 54629,
+    "7591": 54629,
+    "7592": 54630,
+    "7593": 54631,
+    "7594": 54632,
+    "7595": 54633,
+    "7596": 54633,
+    "7597": 54633,
+    "7598": 54633,
+    "7599": 54633,
+    "7600": 54633,
+    "7601": 54633,
+    "7602": 54633,
+    "7603": 54633,
+    "7604": 54633,
+    "7605": 54633,
+    "7606": 54634,
+    "7607": 54634,
+    "7608": 54634,
+    "7609": 54634,
+    "7610": 54634,
+    "7611": 54634,
+    "7612": 54634,
+    "7613": 54635,
+    "7614": 54635,
+    "7615": 54635,
+    "7616": 54635,
+    "7617": 54635,
+    "7618": 54635,
+    "7619": 54635,
+    "7620": 54635,
+    "7621": 54635,
+    "7622": 54635,
+    "7623": 54635,
+    "7624": 54636,
+    "7625": 54636,
+    "7626": 54636,
+    "7627": 54636,
+    "7628": 54636,
+    "7629": 54636,
+    "7630": 54636,
+    "7631": 54636,
+    "7632": 54637,
+    "7633": 54638,
+    "7634": 54638,
+    "7635": 54638,
+    "7636": 54638,
+    "7637": 54638,
+    "7638": 54638,
+    "7639": 54638,
+    "7640": 54638,
+    "7641": 54638,
+    "7642": 54639,
+    "7643": 54640,
+    "7644": 54640,
+    "7645": 54640,
+    "7646": 54640,
+    "7647": 54641,
+    "7648": 54641,
+    "7649": 54641,
+    "7650": 54641,
+    "7651": 54641
+  },
+  "elements": [
+    {
+      "object": 40513,
+      "role": "Document",
+      "parent": null,
+      "page": false,
+      "kids": [
+        {
+          "element": 54539
+        }
+      ]
+    },
+    {
+      "object": 54538,
+      "role": "Story",
+      "parent": 54539,
+      "page": false,
+      "kids": [
+        {
+          "element": 54622
+        },
+        {
+          "element": 54623
+        },
+        {
+          "element": 54624
+        },
+        {
+          "element": 54625
+        },
+        {
+          "element": 54626
+        },
+        {
+          "element": 54627
+        },
+        {
+          "element": 54628
+        },
+        {
+          "element": 54629
+        },
+        {
+          "element": 54630
+        },
+        {
+          "element": 54631
+        },
+        {
+          "element": 54632
+        },
+        {
+          "element": 54633
+        },
+        {
+          "element": 54634
+        },
+        {
+          "element": 54635
+        },
+        {
+          "element": 54636
+        },
+        {
+          "element": 54637
+        },
+        {
+          "element": 54638
+        },
+        {
+          "element": 54639
+        },
+        {
+          "element": 54640
+        },
+        {
+          "element": 54641
+        }
+      ]
+    },
+    {
+      "object": 54539,
+      "role": "Article",
+      "parent": 40513,
+      "page": false,
+      "kids": [
+        {
+          "element": 54538
+        }
+      ]
+    },
+    {
+      "object": 54622,
+      "role": "AC_body_text",
+      "parent": 54538,
+      "page": true,
+      "kids": [
+        7558,
+        7559,
+        7560,
+        7561,
+        7562
+      ]
+    },
+    {
+      "object": 54623,
+      "role": "AC_heading_2",
+      "parent": 54538,
+      "page": true,
+      "kids": [
+        7563
+      ]
+    },
+    {
+      "object": 54624,
+      "role": "AC_body_text",
+      "parent": 54538,
+      "page": true,
+      "kids": [
+        7564,
+        7565,
+        7566,
+        7567,
+        7568,
+        7569,
+        7570,
+        7571,
+        7572,
+        7573,
+        7574,
+        7575
+      ]
+    },
+    {
+      "object": 54625,
+      "role": "AC_body_text",
+      "parent": 54538,
+      "page": true,
+      "kids": [
+        7576,
+        7577
+      ]
+    },
+    {
+      "object": 54626,
+      "role": "AC_bullet_text",
+      "parent": 54538,
+      "page": true,
+      "kids": [
+        7578,
+        7579
+      ]
+    },
+    {
+      "object": 54627,
+      "role": "AC_bullet_text",
+      "parent": 54538,
+      "page": true,
+      "kids": [
+        7580,
+        7581
+      ]
+    },
+    {
+      "object": 54628,
+      "role": "AC_heading_2",
+      "parent": 54538,
+      "page": true,
+      "kids": [
+        7582
+      ]
+    },
+    {
+      "object": 54629,
+      "role": "AC_body_text",
+      "parent": 54538,
+      "page": true,
+      "kids": [
+        7583,
+        7584,
+        7585,
+        7586,
+        7587,
+        7588,
+        7589,
+        7590,
+        7591
+      ]
+    },
+    {
+      "object": 54630,
+      "role": "AC_bullet_text",
+      "parent": 54538,
+      "page": true,
+      "kids": [
+        7592
+      ]
+    },
+    {
+      "object": 54631,
+      "role": "AC_bullet_text",
+      "parent": 54538,
+      "page": true,
+      "kids": [
+        7593
+      ]
+    },
+    {
+      "object": 54632,
+      "role": "AC_bullet_text",
+      "parent": 54538,
+      "page": true,
+      "kids": [
+        7594
+      ]
+    },
+    {
+      "object": 54633,
+      "role": "AC_body_text",
+      "parent": 54538,
+      "page": true,
+      "kids": [
+        7595,
+        7596,
+        7597,
+        7598,
+        7599,
+        7600,
+        7601,
+        7602,
+        7603,
+        7604,
+        7605
+      ]
+    },
+    {
+      "object": 54634,
+      "role": "AC_body_text",
+      "parent": 54538,
+      "page": true,
+      "kids": [
+        7606,
+        7607,
+        7608,
+        7609,
+        7610,
+        7611,
+        7612
+      ]
+    },
+    {
+      "object": 54635,
+      "role": "AC_body_text",
+      "parent": 54538,
+      "page": true,
+      "kids": [
+        7613,
+        7614,
+        7615,
+        7616,
+        7617,
+        7618,
+        7619,
+        7620,
+        7621,
+        7622,
+        7623
+      ]
+    },
+    {
+      "object": 54636,
+      "role": "AC_body_text",
+      "parent": 54538,
+      "page": true,
+      "kids": [
+        7624,
+        7625,
+        7626,
+        7627,
+        7628,
+        7629,
+        7630,
+        7631
+      ]
+    },
+    {
+      "object": 54637,
+      "role": "AC_heading_3",
+      "parent": 54538,
+      "page": true,
+      "kids": [
+        7632
+      ]
+    },
+    {
+      "object": 54638,
+      "role": "AC_body_text",
+      "parent": 54538,
+      "page": true,
+      "kids": [
+        7633,
+        7634,
+        7635,
+        7636,
+        7637,
+        7638,
+        7639,
+        7640,
+        7641
+      ]
+    },
+    {
+      "object": 54639,
+      "role": "AC_heading_3",
+      "parent": 54538,
+      "page": true,
+      "kids": [
+        7642
+      ]
+    },
+    {
+      "object": 54640,
+      "role": "AC_body_text",
+      "parent": 54538,
+      "page": true,
+      "kids": [
+        7643,
+        7644,
+        7645,
+        7646
+      ]
+    },
+    {
+      "object": 54641,
+      "role": "AC_body_text",
+      "parent": 54538,
+      "page": true,
+      "kids": [
+        7647,
+        7648,
+        7649,
+        7650,
+        7651
+      ]
+    }
+  ],
+  "fonts": [
+    {
+      "name": "TT0",
+      "object": "30798 0 R",
+      "subtype": "TrueType",
+      "encoding": "WinAnsiEncoding",
+      "toUnicode": "/CIDInit /ProcSet findresource begin\n12 dict begin\nbegincmap\n/CIDSystemInfo\n<< /Registry (Adobe)\n/Ordering (UCS) /Supplement 0 >> def\n/CMapName /Adobe-Identity-UCS def\n/CMapType 2 def\n1 begincodespacerange\n<0000> <FFFF>\nendcodespacerange\n12 beginbfchar\n<2D> <002D>\n<30> <0030>\n<31> <0031>\n<32> <0032>\n<33> <0033>\n<34> <0034>\n<35> <0035>\n<36> <0036>\n<37> <0037>\n<38> <0038>\n<39> <0039>\n<0020> <0020>\nendbfchar\nendcmap CMapName currentdict /CMap defineresource pop end end\n"
+    },
+    {
+      "name": "TT1",
+      "object": "30800 0 R",
+      "subtype": "TrueType",
+      "encoding": "WinAnsiEncoding",
+      "toUnicode": "/CIDInit /ProcSet findresource begin\n12 dict begin\nbegincmap\n/CIDSystemInfo\n<< /Registry (Adobe)\n/Ordering (UCS) /Supplement 0 >> def\n/CMapName /Adobe-Identity-UCS def\n/CMapType 2 def\n1 begincodespacerange\n<0000> <FFFF>\nendcodespacerange\n80 beginbfchar\n<20> <0020>\n<22> <0022>\n<27> <0027>\n<28> <0028>\n<29> <0029>\n<2C> <002C>\n<2D> <002D>\n<2E> <002E>\n<2F> <002F>\n<30> <0030>\n<31> <0031>\n<32> <0032>\n<33> <0033>\n<34> <0034>\n<35> <0035>\n<36> <0036>\n<37> <0037>\n<38> <0038>\n<39> <0039>\n<3A> <003A>\n<3B> <003B>\n<3D> <003D>\n<3F> <003F>\n<41> <0041>\n<42> <0042>\n<43> <0043>\n<44> <0044>\n<45> <0045>\n<46> <0046>\n<47> <0047>\n<48> <0048>\n<49> <0049>\n<4A> <004A>\n<4B> <004B>\n<4C> <004C>\n<4D> <004D>\n<4E> <004E>\n<4F> <004F>\n<50> <0050>\n<52> <0052>\n<53> <0053>\n<54> <0054>\n<55> <0055>\n<56> <0056>\n<57> <0057>\n<59> <0059>\n<5F> <005F>\n<61> <0061>\n<62> <0062>\n<63> <0063>\n<64> <0064>\n<65> <0065>\n<66> <0066>\n<67> <0067>\n<68> <0068>\n<69> <0069>\n<6A> <006A>\n<6B> <006B>\n<6C> <006C>\n<6D> <006D>\n<6E> <006E>\n<6F> <006F>\n<70> <0070>\n<71> <0071>\n<72> <0072>\n<73> <0073>\n<74> <0074>\n<75> <0075>\n<76> <0076>\n<77> <0077>\n<78> <0078>\n<79> <0079>\n<7A> <007A>\n<92> <2019>\n<93> <201C>\n<94> <201D>\n<95> <2022>\n<96> <2013>\n<97> <2014>\n<B0> <00B0>\nendbfchar\nendcmap CMapName currentdict /CMap defineresource pop end end\n"
+    },
+    {
+      "name": "TT2",
+      "object": "30799 0 R",
+      "subtype": "TrueType",
+      "encoding": "WinAnsiEncoding",
+      "toUnicode": "/CIDInit /ProcSet findresource begin\n12 dict begin\nbegincmap\n/CIDSystemInfo\n<< /Registry (Adobe)\n/Ordering (UCS) /Supplement 0 >> def\n/CMapName /Adobe-Identity-UCS def\n/CMapType 2 def\n1 begincodespacerange\n<0000> <FFFF>\nendcodespacerange\n46 beginbfchar\n<20> <0020>\n<2D> <002D>\n<2E> <002E>\n<31> <0031>\n<32> <0032>\n<33> <0033>\n<34> <0034>\n<35> <0035>\n<36> <0036>\n<37> <0037>\n<38> <0038>\n<41> <0041>\n<42> <0042>\n<43> <0043>\n<44> <0044>\n<46> <0046>\n<48> <0048>\n<49> <0049>\n<4C> <004C>\n<4D> <004D>\n<4E> <004E>\n<50> <0050>\n<53> <0053>\n<54> <0054>\n<61> <0061>\n<62> <0062>\n<63> <0063>\n<64> <0064>\n<65> <0065>\n<66> <0066>\n<67> <0067>\n<68> <0068>\n<69> <0069>\n<6C> <006C>\n<6D> <006D>\n<6E> <006E>\n<6F> <006F>\n<70> <0070>\n<72> <0072>\n<73> <0073>\n<74> <0074>\n<75> <0075>\n<76> <0076>\n<77> <0077>\n<79> <0079>\n<92> <2019>\nendbfchar\nendcmap CMapName currentdict /CMap defineresource pop end end\n"
+    },
+    {
+      "name": "TT3",
+      "object": "30804 0 R",
+      "subtype": "TrueType",
+      "encoding": "WinAnsiEncoding",
+      "toUnicode": "/CIDInit /ProcSet findresource begin\n12 dict begin\nbegincmap\n/CIDSystemInfo\n<< /Registry (Adobe)\n/Ordering (UCS) /Supplement 0 >> def\n/CMapName /Adobe-Identity-UCS def\n/CMapType 2 def\n1 begincodespacerange\n<0000> <FFFF>\nendcodespacerange\n26 beginbfchar\n<20> <0020>\n<28> <0028>\n<29> <0029>\n<44> <0044>\n<45> <0045>\n<46> <0046>\n<48> <0048>\n<4D> <004D>\n<50> <0050>\n<54> <0054>\n<56> <0056>\n<61> <0061>\n<63> <0063>\n<64> <0064>\n<65> <0065>\n<66> <0066>\n<69> <0069>\n<6D> <006D>\n<6E> <006E>\n<6F> <006F>\n<70> <0070>\n<72> <0072>\n<73> <0073>\n<74> <0074>\n<75> <0075>\n<79> <0079>\nendbfchar\nendcmap CMapName currentdict /CMap defineresource pop end end\n"
+    }
+  ],
+  "xobjects": [],
+  "contentStream": "BT /Artifact <</O /Layout >>BDC  /CS0 cs 0 0 0  scn /GS0 gs /TT0 1 Tf 10 0 0 10 36 36.7197 Tm (4-4)Tj EMC  /Span <</MCID 7558 >>BDC  /TT1 1 Tf 0.018 Tw 0 68.535 TD [(Since aircraft performance is compared and evaluated )0.7 (with )]TJ EMC  /Span <</MCID 7559 >>BDC  -0.01 Tc -0.063 Tw 0 -1.25 TD [(re)0.5 (spe)0.5 (c)0.5 (t)0.5 ( t)0.5 (o t)0.5 (he)0.5 ( st)0.5 (a)0.5 (nda)0.5 (rd a)0.5 (t)0.5 (m)0.5 (osphe)0.5 (re)0.5 (, a)0.5 (l)0.5 (l)0.5 ( a)0.5 (i)0.5 (rc)0.5 (ra)0.5 (ft)0.5 ( i)0.5 (nst)0.5 (rum)0.5 (e)0.5 (nt)0.5 (s a)0.5 (re)-9.9 ( )]TJ EMC  /Span <</MCID 7560 >>BDC  0 Tc 0.002 Tw T* [(calibrated )1.2 (for the )0.5 (standard atmosphere. )0.8 (In order to properly )]TJ EMC  /Span <</MCID 7561 >>BDC  -0.009 Tc -0.062 Tw T* [(account for the nonstandard atmosphere, certain related terms)-9.1 ( )]TJ EMC  /Span <</MCID 7562 >>BDC  0 Tc 0 Tw T* (must be defined.)Tj EMC  /Span <</MCID 7563 >>BDC  /TT2 1 Tf 0 -2.45 TD (Pressure Altitude)Tj EMC  /Span <</MCID 7564 >>BDC  /TT1 1 Tf -0.023 Tw 0 -1.35 TD [(Pressure altitude )1.3 (is the )0.6 (height )0.8 (above )0.6 (a )0.5 (standard )0.6 (datum )0.8 (plane )]TJ EMC  /Span <</MCID 7565 >>BDC  0.029 Tw 0 -1.25 TD [(\\(SDP\\), )-0.6 (which is a theoretical )1.2 (level )0.6 (where the weight of the )]TJ EMC  /Span <</MCID 7566 >>BDC  0.002 Tc 0.125 Tw T* [(atmosphere is 29.92 \"Hg \\(1,013.2 mb\\) as measured by a)2.1 ( )]TJ EMC  /Span <</MCID 7567 >>BDC  0 Tc -0.002 Tw T* [(barometer. )0.8 (An altimeter )1.2 (is essentially )0.8 (a sensitive barometer )]TJ EMC  /Span <</MCID 7568 >>BDC  -0.012 Tw T* [(calibrated )1.2 (to indicate )1 (altitude )1 (in the standard atmosphere. )0.7 (If )]TJ EMC  /Span <</MCID 7569 >>BDC  -0.037 Tw T* [(the altimeter )1.1 (is set for 29.92 \"Hg SDP, the altitude )0.9 (indicated )]TJ EMC  /Span <</MCID 7570 >>BDC  -0.005 Tc -0.062 Tw T* (is the )Tj EMC  /Span <</MCID 7571 >>BDC  [(pressure altitude. As atmospheric pressure changes, the)-4.9 ( )]TJ EMC  /Span <</MCID 7572 >>BDC  0 Tc -0.004 Tw T* [(SDP may )0.7 (be )0.5 (below, )0.5 (at, )0.7 (or above )0.7 (sea )0.5 (level. )1 (Pressure altitude )]TJ EMC  /Span <</MCID 7573 >>BDC  -0.002 Tc -0.063 Tw T* [(i)0.7 (s i)0.8 (m)0.7 (p)0.5 (o)0.5 (r)0.6 (t)0.7 (a)0.7 (n)0.5 (t)0.7 ( a)0.7 (s a)0.7 ( b)0.6 (a)0.7 (si)0.7 (s f)0.5 (o)0.6 (r)0.5 ( d)0.6 (e)0.7 (t)0.7 (e)0.7 (r)0.5 (m)0.8 (i)0.7 (n)0.5 (i)0.7 (n)0.5 (g)0.6 ( a)0.7 (i)0.7 (r)0.6 (p)0.5 (l)0.7 (a)0.7 (n)0.6 (e)0.7 ( p)0.6 (e)0.7 (r)0.5 (f)0.5 (o)0.6 (r)0.5 (m)0.7 (a)0.7 (n)0.6 (c)0.7 (e)0.6 (,)-2 ( )]TJ EMC  /Span <</MCID 7574 >>BDC  0 Tc -0.052 Tw T* [(as well as )-0.6 (for assigning flight levels to airplanes operating at )]TJ EMC  /Span <</MCID 7575 >>BDC  0 Tw T* (or above 18,000 feet.)Tj EMC  /Span <</MCID 7576 >>BDC  0.021 Tc 0.125 Tw 0 -2.5 TD [(The pressure altitude can be determined by one of the)21.2 ( )]TJ EMC  /Span <</MCID 7577 >>BDC  0 Tc 0 Tw 0 -1.25 TD (following methods:)Tj EMC  ET /Span <</MCID 7578 >>BDC  BT -0.003 Tw 10 0 0 10 45 454.5664 Tm (1.)Tj ET BT /Span <</ActualText (\u00fe\u00ff\u0000\t)>>BDC  10 0 0 10 52.5 454.5664 Tm ( )Tj EMC  ET BT 10 0 0 10 63 454.5664 Tm (Setting the barometric )Tj 10 0 0 10 45 454.5664 Tm 10.928 0 Td [(scale of the altimeter )0.9 (to 29.92 )]TJ ET EMC  BT /Span <</MCID 7579 >>BDC  0 Tw 10 0 0 10 63 442.0664 Tm (and reading the indicated altitude)Tj EMC  ET /Span <</MCID 7580 >>BDC  BT -0.003 Tw 10 0 0 10 45 425.0664 Tm (2.)Tj ET BT /Span <</ActualText (\u00fe\u00ff\u0000\t)>>BDC  10 0 0 10 52.5 425.0664 Tm ( )Tj EMC  ET BT 10 0 0 10 63 425.0664 Tm (Applying a correction )Tj 10 0 0 10 45 425.0664 Tm 10.816 0 Td [(factor to the indicated )0.8 (altitude )]TJ ET EMC  BT /Span <</MCID 7581 >>BDC  0 Tw 10 0 0 10 63 412.5664 Tm (according to the reported altimeter setting)Tj EMC  /Span <</MCID 7582 >>BDC  /TT2 1 Tf -2.7 -2.45 Td (Density Altitude)Tj EMC  /Span <</MCID 7583 >>BDC  /TT1 1 Tf -0.004 Tc -0.062 Tw 0 -1.35 TD [(SDP is a theoretical pressure altitude, but aircraft operate in a)-3.8 ( )]TJ EMC  /Span <</MCID 7584 >>BDC  -0.003 Tc -0.063 Tw 0 -1.25 TD (nonstandard atmosphere and the term )Tj EMC  /Span <</MCID 7585 >>BDC  14.821 0 Td [(density altitude is used)-3 ( )]TJ EMC  /Span <</MCID 7586 >>BDC  0 Tc -14.821 -1.25 Td [(fo)0.5 (r c)0.6 (or)0.5 (re)0.6 (l)0.6 (a)0.6 (t)0.7 (i)0.6 (ng)0.5 ( a)0.6 (e)0.6 (ro)0.5 (dy)0.5 (na)0.6 (m)0.7 (i)0.6 (c)0.6 ( p)0.5 (e)0.6 (rf)0.5 (or)0.5 (m)0.6 (a)0.6 (nc)0.6 (e)0.6 ( i)0.6 (n t)0.6 (he)0.6 ( no)0.5 (nst)0.6 (a)0.6 (n)0.5 (da)0.6 (r)0.5 (d )]TJ EMC  /Span <</MCID 7587 >>BDC  -0.01 Tc -0.062 Tw T* [(atmosphere. Density altitude is the vertical dis)-0.6 (tance above s)-0.6 (ea)-9.8 ( )]TJ EMC  /Span <</MCID 7588 >>BDC  0 Tc -0.013 Tw T* (level in the standard atmosphere at which a given density is )Tj EMC  /Span <</MCID 7589 >>BDC  -0.011 Tw T* [(to )0.6 (be )0.5 (found. )0.5 (The )0.5 (density )0.8 (of )0.5 (air )0.7 (has )0.5 (significant )1.3 (effects )0.9 (on )0.5 (the )]TJ EMC  /Span <</MCID 7590 >>BDC  0.102 Tw T* [(aircraft\\222s )0.9 (performance )0.9 (because )0.8 (as air )0.7 (becomes )0.8 (less dense, )]TJ EMC  /Span <</MCID 7591 >>BDC  0 Tw T* (it reduces:)Tj EMC  ET /Span <</MCID 7592 >>BDC  BT 10 0 0 10 45 270.0664 Tm (\\225 )Tj ET BT /Span <</ActualText (\u00fe\u00ff\u0000\t)>>BDC  10 0 0 10 51 270.0664 Tm ( )Tj EMC  ET BT 10 0 0 10 63 270.0664 Tm (Power because the engine takes in less air )Tj ET EMC  /Span <</MCID 7593 >>BDC  BT 10 0 0 10 45 253.0664 Tm (\\225 )Tj ET BT /Span <</ActualText (\u00fe\u00ff\u0000\t)>>BDC  10 0 0 10 51 253.0664 Tm ( )Tj EMC  ET BT 10 0 0 10 63 253.0664 Tm (Thrust because a propeller is less efficient in thin air)Tj ET EMC  /Span <</MCID 7594 >>BDC  BT -0.006 Tc -0.063 Tw 10 0 0 10 45 236.0664 Tm [(\\225)-6.1 ( )]TJ ET BT /Span <</ActualText (\u00fe\u00ff\u0000\t)>>BDC  10 0 0 10 51 236.0664 Tm ( )Tj EMC  ET BT 10 0 0 10 63 236.0664 Tm (L)Tj 10 0 0 10 45 236.0664 Tm [-2404.5 (i)0.5 (ft)0.5 ( be)0.5 (c)0.5 (a)0.5 (use t)0.5 (he)0.5 ( t)0.5 (hi)0.5 (n ai)0.5 (r exert)0.5 (s l)0.5 (e)0.5 (ss forc)0.5 (e)0.5 ( on t)0.5 (he)0.5 ( a)0.5 (i)0.5 (rfoi)0.5 (l)0.5 (s)]TJ ET EMC  BT /Span <</MCID 7595 >>BDC  -0.008 Tc -0.062 Tw 10 0 0 10 36 211.0664 Tm [(Density )0.5 (altitude )0.5 (is )0.5 (pressure )0.5 (altitude )0.5 (corrected for )0.5 (nonstandard)-8 ( )]TJ EMC  /Span <</MCID 7596 >>BDC  0.02 Tc 0.125 Tw T* [(temperature. As the density of the air increases \\(lower)20 ( )]TJ EMC  /Span <</MCID 7597 >>BDC  0 Tc -0.047 Tw T* (density altitude\\), aircraft performance increases; conversely )Tj EMC  /Span <</MCID 7598 >>BDC  0.004 Tc 0.125 Tw T* [(as air density decreases \\(higher density altitude\\), aircraft)4.2 ( )]TJ EMC  /Span <</MCID 7599 >>BDC  0.01 Tc T* [(p)0.5 (e)0.7 (r)0.5 (f)0.5 (o)0.5 (r)0.5 (m)0.7 (a)0.6 (n)0.5 (c)0.7 (e)0.7 ( )0.5 (d)0.5 (e)0.6 (c)0.7 (r)0.5 (e)0.7 (a)0.6 (se)0.6 (s.)0.5 ( )0.5 (A )0.5 (d)0.5 (e)0.7 (c)0.7 (r)0.5 (e)0.6 (a)0.7 (se)0.7 ( )0.5 (i)0.7 (n)0.5 ( )0.5 (a)0.7 (i)0.7 (r)0.5 ( )0.5 (d)0.5 (e)0.6 (n)0.5 (si)0.7 (t)0.6 (y)0.6 ( )0.5 (m)0.6 (e)0.7 (a)0.7 (n)0.5 (s)9.8 ( )]TJ EMC  /Span <</MCID 7600 >>BDC  0 Tc 0.087 Tw T* [(a high density altitude; )0.8 (an increase in air density means a )]TJ EMC  /Span <</MCID 7601 >>BDC  -0.061 Tw T* [(lower density altitude. )1.1 (Density altitude )1.1 (is used in calculating )]TJ EMC  /Span <</MCID 7602 >>BDC  0.003 Tc 0.125 Tw T* [(aircraft performance because under standard atmospheric)3.1 ( )]TJ EMC  /Span <</MCID 7603 >>BDC  0 Tc 0.024 Tw T* [(conditions, )1 (air )0.9 (at )0.8 (each )1 (level )1.2 (in )0.7 (the )0.9 (atmosphere )1.1 (not )0.7 (only )0.7 (has )]TJ EMC  /Span <</MCID 7604 >>BDC  0.05 Tw T* [(a specific )0.5 (density, its pressure altitude )0.9 (and density altitude )]TJ EMC  /Span <</MCID 7605 >>BDC  0 Tw T* (identify the same level.)Tj EMC  /Span <</MCID 7606 >>BDC  0.025 Tw 24.9 63.6 Td [(The computation )1 (of density altitude )1 (involves consideration )]TJ EMC  /Span <</MCID 7607 >>BDC  -0.006 Tc -0.062 Tw T* [(of pressure \\(pressure altitude\\) and temperature. Since aircraft)-5.9 ( )]TJ EMC  /Span <</MCID 7608 >>BDC  -0.003 Tc T* [(performance data at any level is based upon air density under)-3 ( )]TJ EMC  /Span <</MCID 7609 >>BDC  0.005 Tc 0.125 Tw T* [(standard day conditions, such performance data apply to)5 ( )]TJ EMC  /Span <</MCID 7610 >>BDC  0 Tc 0.106 Tw T* [(air density level)0.7 (s that may not be identical )0.8 (with altimeter )]TJ EMC  /Span <</MCID 7611 >>BDC  -0.054 Tw T* [(indications. )0.8 (Under conditions higher or lower than standard, )]TJ EMC  /Span <</MCID 7612 >>BDC  -0.005 Tc -0.063 Tw T* (these levels cannot be determined directly from the altimeter.)Tj EMC  /Span <</MCID 7613 >>BDC  0.018 Tc 0.125 Tw 0 -2.5 TD [(De)0.6 (nsi)0.6 (t)0.5 (y a)0.6 (l)0.5 (t)0.6 (i)0.5 (t)0.6 (ude)0.6 ( i)0.5 (s de)0.6 (t)0.6 (e)0.5 (rm)0.6 (i)0.5 (ne)0.6 (d by fi)0.6 (rst)0.6 ( fi)0.5 (ndi)0.6 (ng pre)0.6 (ssure)18.2 ( )]TJ EMC  /Span <</MCID 7614 >>BDC  0.002 Tc 0 -1.25 TD [(altitude, and then correcting this altitude for nonstandard)2 ( )]TJ EMC  /Span <</MCID 7615 >>BDC  0.003 Tc T* [(t)0.5 (e)0.5 (m)0.5 (pe)0.5 (ra)0.5 (t)0.5 (ure)0.5 ( va)0.5 (ri)0.5 (a)0.5 (t)0.5 (i)0.6 (ons. Si)0.5 (nc)0.5 (e)0.5 ( de)0.5 (nsi)0.5 (t)0.5 (y va)0.5 (ri)0.5 (e)0.5 (s di)0.5 (re)0.5 (c)0.5 (t)0.5 (l)0.6 (y wi)0.5 (t)0.5 (h)3.1 ( )]TJ EMC  /Span <</MCID 7616 >>BDC  0 Tc 0.101 Tw T* [(pressure and inversely with tem)0.5 (perature, a given pressure )]TJ EMC  /Span <</MCID 7617 >>BDC  0.018 Tc 0.125 Tw T* [(altitude may exist for a wide range of temperatures by)18 ( )]TJ EMC  /Span <</MCID 7618 >>BDC  0.006 Tc T* [(allowing the density to vary. However, a known density)6 ( )]TJ EMC  /Span <</MCID 7619 >>BDC  0 Tc 0.085 Tw T* [(occurs for any one temperature )0.8 (and pressure altitude. )0.7 (The )]TJ EMC  /Span <</MCID 7620 >>BDC  0.11 Tw T* [(density of the )0.5 (air has a pronounced )0.5 (effect )0.7 (on aircraft )0.9 (and )]TJ EMC  /Span <</MCID 7621 >>BDC  -0.019 Tw T* [(engine performance. )0.6 (Regardless of the actual )0.7 (altitude )0.8 (of the )]TJ EMC  /Span <</MCID 7622 >>BDC  0.118 Tw T* [(aircraft, )0.7 (it will perform as though it were operating )0.6 (at an )]TJ EMC  /Span <</MCID 7623 >>BDC  0 Tw T* (altitude equal to the existing density altitude.)Tj EMC  /Span <</MCID 7624 >>BDC  0.04 Tw 0 -2.5 TD [(Air density is affected )0.8 (by changes in altitude, )1 (temperature, )]TJ EMC  /Span <</MCID 7625 >>BDC  0.014 Tw 0 -1.25 TD [(and )0.7 (humidity. )1.1 (High )0.7 (density )0.8 (altit)0.9 (ude )0.6 (refers )0.7 (to )0.7 (thin )0.8 (air, )0.8 (while )]TJ EMC  /Span <</MCID 7626 >>BDC  0.023 Tw T* [(low density altitude )1 (refers to dense air. The conditions )0.6 (that )]TJ EMC  /Span <</MCID 7627 >>BDC  0.007 Tc 0.125 Tw T* [(result in a high density altitude are high elevations, low)6.8 ( )]TJ EMC  /Span <</MCID 7628 >>BDC  0 Tc -0.054 Tw T* [(atmospheric )0.5 (pressures, high temperatures, )0.7 (high humidity, or )]TJ EMC  /Span <</MCID 7629 >>BDC  0.041 Tw T* [(some combination )0.5 (of these factors. Lower elevations, high )]TJ EMC  /Span <</MCID 7630 >>BDC  0.044 Tw T* [(atmospheric )1.2 (pressure, low temperatures, )1.4 (and )0.5 (low )0.5 (humidity )]TJ EMC  /Span <</MCID 7631 >>BDC  0 Tw T* (are more indicative of low density altitude. )Tj EMC  /Span <</MCID 7632 >>BDC  /TT3 1 Tf 11 0 0 11 285 359.0664 Tm (Effect of Pressure on Density)Tj EMC  /Span <</MCID 7633 >>BDC  /TT1 1 Tf 0.006 Tw 10 0 0 10 285 344.5664 Tm (Since air is a gas, it can be compressed or expanded. When )Tj EMC  /Span <</MCID 7634 >>BDC  -0.002 Tc -0.062 Tw T* [(air is compressed, a greater amount of air can occupy a given)-2 ( )]TJ EMC  /Span <</MCID 7635 >>BDC  T* [(volume. Convers)-0.6 (ely, w)-0.6 (hen press)-0.6 (ure on a given volume of air)-2 ( )]TJ EMC  /Span <</MCID 7636 >>BDC  0 Tc 0.045 Tw T* [(is decreased, )0.5 (the air expands and occupies a greater )0.5 (space. )]TJ EMC  /Span <</MCID 7637 >>BDC  0.09 Tw T* [(At a lower pressure, the original )0.5 (column of air contains a )]TJ EMC  /Span <</MCID 7638 >>BDC  -0.003 Tc -0.062 Tw T* [(smaller mass of air. The density is decreased because density)-3 ( )]TJ EMC  /Span <</MCID 7639 >>BDC  -0.006 Tc T* [(is directly proportional to pressure. If the pressure is doubled,)-5.9 ( )]TJ EMC  /Span <</MCID 7640 >>BDC  -0.011 Tc -0.063 Tw T* [(the density is doubled; if the pressure is lowered, the density is)-11.1 ( )]TJ EMC  /Span <</MCID 7641 >>BDC  -0.009 Tc T* [(l)0.7 (o)0.5 (we)0.6 (r)0.6 (e)0.6 (d)0.6 (.)0.5 ( T)0.7 (h)0.5 (i)0.7 (s st)0.7 (a)0.7 (t)0.7 (e)0.7 (m)0.7 (e)0.6 (n)0.5 (t)0.7 ( i)0.7 (s t)0.7 (r)0.5 (u)0.5 (e)0.7 ( o)0.6 (n)0.5 (l)0.7 (y)0.5 ( a)0.7 (t)0.7 ( a)0.7 ( c)0.7 (o)0.5 (n)0.5 (st)0.7 (a)0.6 (n)0.6 (t)0.7 ( t)0.7 (e)0.6 (m)0.7 (p)0.5 (e)0.7 (r)0.5 (a)0.7 (t)0.7 (u)0.5 (r)0.5 (e)0.7 (.)]TJ EMC  /Span <</MCID 7642 >>BDC  /TT3 1 Tf 0 Tc 0 Tw 11 0 0 11 285 219.0664 Tm (Effect of Temperature on Density)Tj EMC  /Span <</MCID 7643 >>BDC  /TT1 1 Tf 0.018 Tc 0.125 Tw 10 0 0 10 285 204.5664 Tm [(Increasing the temperature of a substance decreases its)17.8 ( )]TJ EMC  /Span <</MCID 7644 >>BDC  0 Tc 0.114 Tw T* [(density. Conversely, decreasing )0.6 (the temperature )1 (increases )]TJ EMC  /Span <</MCID 7645 >>BDC  0.112 Tw T* (the density. Thus, the density of air varies inversely with )Tj EMC  /Span <</MCID 7646 >>BDC  -0.011 Tc -0.063 Tw T* [(temperature. This statement is true only at a constant pressure.)-11 ( )]TJ EMC  /Span <</MCID 7647 >>BDC  0 Tc 0.038 Tw 0 -2.5 TD [(In the atmosphere, )0.6 (both temperature )1.1 (and pressure decrease )]TJ EMC  /Span <</MCID 7648 >>BDC  0.015 Tc 0.125 Tw 0 -1.25 TD [(with altitude and have conflicting effects upon density.)15 ( )]TJ EMC  /Span <</MCID 7649 >>BDC  0 Tc -0.063 Tw T* (However, a fairly rapid drop in pressure as altitude increases )Tj EMC  /Span <</MCID 7650 >>BDC  -0.06 Tw T* [(usually )0.5 (has a dominating )0.8 (effect. )0.7 (Hence, pilots )0.5 (can expect )0.8 (the )]TJ EMC  /Span <</MCID 7651 >>BDC  0 Tw T* (density to decrease with altitude.)Tj EMC  ET ",
+  "provenance": "Captured with qpdf from corpus/cache/faa-h-8083-25c.pdf (faa-phak-8083-25c). Page 91 shows trailing space-only runs past the end of the lines PDFKit trims, which rejected the tag groups that owned them (#91). Native line evidence in faa-91-layout.json."
+}

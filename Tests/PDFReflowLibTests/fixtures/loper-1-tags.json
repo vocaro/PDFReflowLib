@@ -1,0 +1,329 @@
+{
+  "sourceSHA256": "12f5ea075004886774c25e7831ea1608fd0f831f0113e83bb0e85811c0a4bb6e",
+  "page": 1,
+  "contentObjects": [
+    "7865 0 R",
+    "7866 0 R",
+    "7867 0 R",
+    "7868 0 R",
+    "7869 0 R",
+    "7870 0 R",
+    "7871 0 R",
+    "7872 0 R"
+  ],
+  "mediaBox": [
+    0.0,
+    0.0,
+    612.0,
+    792.0
+  ],
+  "structParents": 120,
+  "structureRoot": 360,
+  "roleMap": {
+    "HyphenSpan": "Span",
+    "ParagraphSpan": "Span",
+    "StyleSpan": "Span"
+  },
+  "rootKids": [
+    5610,
+    5752,
+    5753
+  ],
+  "parentTree": {
+    "1": 5752,
+    "2": 5753,
+    "3": 5611,
+    "4": 5612,
+    "5": 5613,
+    "6": 5614,
+    "7": 5615,
+    "8": 5616,
+    "9": 5747,
+    "10": 5616,
+    "11": 5748,
+    "12": 5616,
+    "13": 5749,
+    "14": 5616,
+    "15": 5617,
+    "16": 5617,
+    "17": 5745,
+    "18": 5617,
+    "19": 5746,
+    "20": 5617,
+    "21": 5618,
+    "22": 5744,
+    "23": 5618,
+    "24": 5619,
+    "25": 5619,
+    "26": 5743,
+    "27": 5619,
+    "28": 5620
+  },
+  "elements": [
+    {
+      "object": 5610,
+      "role": "Part",
+      "parent": null,
+      "page": false,
+      "kids": [
+        {
+          "element": 5611
+        },
+        {
+          "element": 5612
+        },
+        {
+          "element": 5613
+        },
+        {
+          "element": 5614
+        },
+        {
+          "element": 5615
+        },
+        {
+          "element": 5616
+        },
+        {
+          "element": 5617
+        },
+        {
+          "element": 5618
+        },
+        {
+          "element": 5619
+        },
+        {
+          "element": 5620
+        }
+      ]
+    },
+    {
+      "object": 5611,
+      "role": "H3",
+      "parent": 5610,
+      "page": true,
+      "kids": [
+        3
+      ]
+    },
+    {
+      "object": 5612,
+      "role": "P",
+      "parent": 5610,
+      "page": true,
+      "kids": [
+        4
+      ]
+    },
+    {
+      "object": 5613,
+      "role": "P",
+      "parent": 5610,
+      "page": true,
+      "kids": [
+        5
+      ]
+    },
+    {
+      "object": 5614,
+      "role": "P",
+      "parent": 5610,
+      "page": true,
+      "kids": [
+        6
+      ]
+    },
+    {
+      "object": 5615,
+      "role": "P",
+      "parent": 5610,
+      "page": true,
+      "kids": [
+        7
+      ]
+    },
+    {
+      "object": 5616,
+      "role": "P",
+      "parent": 5610,
+      "page": true,
+      "kids": [
+        8,
+        {
+          "element": 5747
+        },
+        10,
+        {
+          "element": 5748
+        },
+        12,
+        {
+          "element": 5749
+        },
+        14
+      ]
+    },
+    {
+      "object": 5617,
+      "role": "P",
+      "parent": 5610,
+      "page": true,
+      "kids": [
+        15,
+        16,
+        {
+          "element": 5745
+        },
+        18,
+        {
+          "element": 5746
+        },
+        20
+      ]
+    },
+    {
+      "object": 5618,
+      "role": "P",
+      "parent": 5610,
+      "page": true,
+      "kids": [
+        21,
+        {
+          "element": 5744
+        },
+        23
+      ]
+    },
+    {
+      "object": 5619,
+      "role": "P",
+      "parent": 5610,
+      "page": true,
+      "kids": [
+        24,
+        25,
+        {
+          "element": 5743
+        },
+        27
+      ]
+    },
+    {
+      "object": 5620,
+      "role": "P",
+      "parent": 5610,
+      "page": true,
+      "kids": [
+        28
+      ]
+    },
+    {
+      "object": 5743,
+      "role": "HyphenSpan",
+      "parent": 5619,
+      "page": true,
+      "kids": [
+        26
+      ]
+    },
+    {
+      "object": 5744,
+      "role": "HyphenSpan",
+      "parent": 5618,
+      "page": true,
+      "kids": [
+        22
+      ]
+    },
+    {
+      "object": 5745,
+      "role": "HyphenSpan",
+      "parent": 5617,
+      "page": true,
+      "kids": [
+        17
+      ]
+    },
+    {
+      "object": 5746,
+      "role": "HyphenSpan",
+      "parent": 5617,
+      "page": true,
+      "kids": [
+        19
+      ]
+    },
+    {
+      "object": 5747,
+      "role": "HyphenSpan",
+      "parent": 5616,
+      "page": true,
+      "kids": [
+        9
+      ]
+    },
+    {
+      "object": 5748,
+      "role": "HyphenSpan",
+      "parent": 5616,
+      "page": true,
+      "kids": [
+        11
+      ]
+    },
+    {
+      "object": 5749,
+      "role": "HyphenSpan",
+      "parent": 5616,
+      "page": true,
+      "kids": [
+        13
+      ]
+    },
+    {
+      "object": 5752,
+      "role": "P",
+      "parent": null,
+      "page": true,
+      "kids": [
+        1
+      ]
+    },
+    {
+      "object": 5753,
+      "role": "P",
+      "parent": null,
+      "page": true,
+      "kids": [
+        2
+      ]
+    }
+  ],
+  "fonts": [
+    {
+      "name": "TT0",
+      "object": "7880 0 R",
+      "subtype": "TrueType",
+      "encoding": "WinAnsiEncoding",
+      "toUnicode": "/CIDInit /ProcSet findresource begin\r\n12 dict begin\r\nbegincmap\r\n/CIDSystemInfo <<\r\n/Registry (Adobe)\r\n/Ordering (SI-HCGAAA+CenturySchoolbook)\r\n/Supplement 0\r\n>> def\r\n/CMapName /Adobe-SI-HCGAAA+CenturySchoolbook-0 def\r\n/CMapType 2 def\r\n2 begincodespacerange\r\n<00> <EF>\r\n<F000> <FFFF>\r\nendcodespacerange\r\n100 beginbfchar\r\n<00> <FFFD>\r\n<20> <0020>\r\n<21> <0021>\r\n<22> <0022>\r\n<23> <0023>\r\n<24> <0024>\r\n<25> <0025>\r\n<26> <0026>\r\n<27> <0027>\r\n<28> <0028>\r\n<29> <0029>\r\n<2A> <002A>\r\n<2B> <002B>\r\n<2C> <002C>\r\n<2D> <002D>\r\n<2E> <002E>\r\n<2F> <002F>\r\n<30> <0030>\r\n<31> <0031>\r\n<32> <0032>\r\n<33> <0033>\r\n<34> <0034>\r\n<35> <0035>\r\n<36> <0036>\r\n<37> <0037>\r\n<38> <0038>\r\n<39> <0039>\r\n<3A> <003A>\r\n<3B> <003B>\r\n<3C> <003C>\r\n<3D> <003D>\r\n<3E> <003E>\r\n<3F> <003F>\r\n<40> <0040>\r\n<41> <0041>\r\n<42> <0042>\r\n<43> <0043>\r\n<44> <0044>\r\n<45> <0045>\r\n<46> <0046>\r\n<47> <0047>\r\n<48> <0048>\r\n<49> <0049>\r\n<4A> <004A>\r\n<4B> <004B>\r\n<4C> <004C>\r\n<4D> <004D>\r\n<4E> <004E>\r\n<4F> <004F>\r\n<50> <0050>\r\n<51> <0051>\r\n<52> <0052>\r\n<53> <0053>\r\n<54> <0054>\r\n<55> <0055>\r\n<56> <0056>\r\n<57> <0057>\r\n<58> <0058>\r\n<59> <0059>\r\n<5A> <005A>\r\n<5B> <005B>\r\n<5C> <005C>\r\n<5D> <005D>\r\n<5E> <005E>\r\n<5F> <005F>\r\n<60> <0060>\r\n<61> <0061>\r\n<62> <0062>\r\n<63> <0063>\r\n<64> <0064>\r\n<65> <0065>\r\n<66> <0066>\r\n<67> <0067>\r\n<68> <0068>\r\n<69> <0069>\r\n<6A> <006A>\r\n<6B> <006B>\r\n<6C> <006C>\r\n<6D> <006D>\r\n<6E> <006E>\r\n<6F> <006F>\r\n<70> <0070>\r\n<71> <0071>\r\n<72> <0072>\r\n<73> <0073>\r\n<74> <0074>\r\n<75> <0075>\r\n<76> <0076>\r\n<77> <0077>\r\n<78> <0078>\r\n<79> <0079>\r\n<7A> <007A>\r\n<7B> <007B>\r\n<7C> <007C>\r\n<7D> <007D>\r\n<7E> <007E>\r\n<7F> <007F>\r\n<80> <20AC>\r\n<81> <0081>\r\n<82> <201A>\r\nendbfchar\r\n37 beginbfchar\r\n<83> <0192>\r\n<84> <201E>\r\n<85> <2026>\r\n<86> <2020>\r\n<87> <2021>\r\n<88> <02C6>\r\n<89> <2030>\r\n<8A> <0160>\r\n<8B> <2039>\r\n<8C> <0152>\r\n<8D> <008D>\r\n<8E> <017D>\r\n<8F> <008F>\r\n<90> <0090>\r\n<91> <2018>\r\n<92> <2019>\r\n<93> <201C>\r\n<94> <201D>\r\n<95> <2022>\r\n<96> <2013>\r\n<97> <2014>\r\n<98> <02DC>\r\n<99> <2122>\r\n<9A> <0161>\r\n<9B> <203A>\r\n<9C> <0153>\r\n<9D> <009D>\r\n<9E> <017E>\r\n<9F> <0178>\r\n<A0> <00A0>\r\n<A1> <00A1>\r\n<A2> <00A2>\r\n<A3> <00A3>\r\n<A4> <00A4>\r\n<A5> <00A5>\r\n<A6> <00A6>\r\n<A7> <00A7>\r\nendbfchar\r\nendcmap\r\nCMapName currentdict /CMap defineresource pop\r\nend\r\nend"
+    },
+    {
+      "name": "TT1",
+      "object": "7882 0 R",
+      "subtype": "TrueType",
+      "encoding": "WinAnsiEncoding",
+      "toUnicode": "/CIDInit /ProcSet findresource begin\r\n12 dict begin\r\nbegincmap\r\n/CIDSystemInfo <<\r\n/Registry (Adobe)\r\n/Ordering (SI-JCGAAA+CenturySchoolbook-Italic)\r\n/Supplement 0\r\n>> def\r\n/CMapName /Adobe-SI-JCGAAA+CenturySchoolbook-Italic-0 def\r\n/CMapType 2 def\r\n2 begincodespacerange\r\n<00> <EF>\r\n<F000> <FFFF>\r\nendcodespacerange\r\n92 beginbfchar\r\n<00> <FFFD>\r\n<20> <0020>\r\n<21> <0021>\r\n<22> <0022>\r\n<23> <0023>\r\n<24> <0024>\r\n<25> <0025>\r\n<26> <0026>\r\n<27> <0027>\r\n<28> <0028>\r\n<29> <0029>\r\n<2A> <002A>\r\n<2B> <002B>\r\n<2C> <002C>\r\n<2D> <002D>\r\n<2E> <002E>\r\n<2F> <002F>\r\n<30> <0030>\r\n<31> <0031>\r\n<32> <0032>\r\n<33> <0033>\r\n<34> <0034>\r\n<35> <0035>\r\n<36> <0036>\r\n<37> <0037>\r\n<38> <0038>\r\n<39> <0039>\r\n<3A> <003A>\r\n<3B> <003B>\r\n<3C> <003C>\r\n<3D> <003D>\r\n<3E> <003E>\r\n<3F> <003F>\r\n<40> <0040>\r\n<41> <0041>\r\n<42> <0042>\r\n<43> <0043>\r\n<44> <0044>\r\n<45> <0045>\r\n<46> <0046>\r\n<47> <0047>\r\n<48> <0048>\r\n<49> <0049>\r\n<4A> <004A>\r\n<4B> <004B>\r\n<4C> <004C>\r\n<4D> <004D>\r\n<4E> <004E>\r\n<4F> <004F>\r\n<50> <0050>\r\n<51> <0051>\r\n<52> <0052>\r\n<53> <0053>\r\n<54> <0054>\r\n<55> <0055>\r\n<56> <0056>\r\n<57> <0057>\r\n<58> <0058>\r\n<59> <0059>\r\n<5A> <005A>\r\n<5B> <005B>\r\n<5C> <005C>\r\n<5D> <005D>\r\n<5E> <005E>\r\n<5F> <005F>\r\n<60> <0060>\r\n<61> <0061>\r\n<62> <0062>\r\n<63> <0063>\r\n<64> <0064>\r\n<65> <0065>\r\n<66> <0066>\r\n<67> <0067>\r\n<68> <0068>\r\n<69> <0069>\r\n<6A> <006A>\r\n<6B> <006B>\r\n<6C> <006C>\r\n<6D> <006D>\r\n<6E> <006E>\r\n<6F> <006F>\r\n<70> <0070>\r\n<71> <0071>\r\n<72> <0072>\r\n<73> <0073>\r\n<74> <0074>\r\n<75> <0075>\r\n<76> <0076>\r\n<77> <0077>\r\n<78> <0078>\r\n<79> <0079>\r\n<7A> <007A>\r\nendbfchar\r\nendcmap\r\nCMapName currentdict /CMap defineresource pop\r\nend\r\nend"
+    },
+    {
+      "name": "TT2",
+      "object": "7884 0 R",
+      "subtype": "TrueType",
+      "encoding": "WinAnsiEncoding",
+      "toUnicode": "/CIDInit /ProcSet findresource begin\r\n12 dict begin\r\nbegincmap\r\n/CIDSystemInfo <<\r\n/Registry (Adobe)\r\n/Ordering (SI-TimesNewRomanPS-BoldMT)\r\n/Supplement 0\r\n>> def\r\n/CMapName /Adobe-SI-TimesNewRomanPS-BoldMT-0 def\r\n/CMapType 2 def\r\n2 begincodespacerange\r\n<00> <EF>\r\n<F000> <FFFF>\r\nendcodespacerange\r\n55 beginbfchar\r\n<00> <FFFD>\r\n<20> <0020>\r\n<21> <0021>\r\n<22> <0022>\r\n<23> <0023>\r\n<24> <0024>\r\n<25> <0025>\r\n<26> <0026>\r\n<27> <0027>\r\n<28> <0028>\r\n<29> <0029>\r\n<2A> <002A>\r\n<2B> <002B>\r\n<2C> <002C>\r\n<2D> <002D>\r\n<2E> <002E>\r\n<2F> <002F>\r\n<30> <0030>\r\n<31> <0031>\r\n<32> <0032>\r\n<33> <0033>\r\n<34> <0034>\r\n<35> <0035>\r\n<36> <0036>\r\n<37> <0037>\r\n<38> <0038>\r\n<39> <0039>\r\n<3A> <003A>\r\n<3B> <003B>\r\n<3C> <003C>\r\n<3D> <003D>\r\n<3E> <003E>\r\n<3F> <003F>\r\n<40> <0040>\r\n<41> <0041>\r\n<42> <0042>\r\n<43> <0043>\r\n<44> <0044>\r\n<45> <0045>\r\n<46> <0046>\r\n<47> <0047>\r\n<48> <0048>\r\n<49> <0049>\r\n<4A> <004A>\r\n<4B> <004B>\r\n<4C> <004C>\r\n<4D> <004D>\r\n<4E> <004E>\r\n<4F> <004F>\r\n<50> <0050>\r\n<51> <0051>\r\n<52> <0052>\r\n<53> <0053>\r\n<54> <0054>\r\n<55> <0055>\r\nendbfchar\r\nendcmap\r\nCMapName currentdict /CMap defineresource pop\r\nend\r\nend"
+    }
+  ],
+  "xobjects": [],
+  "contentStream": "BT /Artifact <</BBox [156.2336 1.9521 462.1012 674.7648 ]/Type /Layout >>BDC  /GS0 gs /TT0 1 Tf -0.0011 Tc 0.2766 Tw 3 Tr 9 0 0 9 201.6 669.12 Tm ( )Tj 17.488 0 Td ( )Tj 0 Tc 0 Tw -5.888 -1.2 Td ( )Tj -0.0026 Tc 1.986 -1.427 Td ( )Tj 0 Tc -18.626 -71.507 Td ( )Tj 0.0017 Tc 0.1222 Tw 7.02 0 0 7.02 430.7789 627.24 Tm ( )Tj 0.0026 Tc 0.1384 Tw -30.42 -1.026 Td ( )Tj 25.609 0 Td [( )-779.2 ( )-3196.5 ( )]TJ 0.0023 Tc 0.1643 Tw -28.961 -1.026 Td ( )Tj 9.762 0 Td [( )-1102.8 ( )]TJ 14.232 0 Td [( )-2658.3 ( )-1549.9 ( )-4232.1 ( )]TJ -0.0037 Tc 0.2301 Tw -12.104 -1.026 Td ( )Tj 0.0014 Tc -0.0057 Tw -4.414 -1.026 Td ( )Tj /TT1 1 Tf -0.0001 Tc -0.0042 Tw 12.094 0 Td ( )Tj /TT0 1 Tf -0.0026 Tc 0 Tw 9 0 0 9 323.8732 546.9 Tm ( )Tj 0 Tc 10.98 0 0 10.98 348.96 521.1 Tm ( )Tj -0.0004 Tc 0.0013 Tw 9.283 0 Td ( )Tj 0 Tc 0 Tw -5.879 -1.208 Td ( )Tj 0.885 -3.027 Td ( )Tj -0.0013 Tc 0.0035 Tw 9 0 0 9 399.4972 455.58 Tm [( )-4390.2 ( )]TJ /TT1 1 Tf 0.0013 Tc 0.0876 Tw -16.517 -3.067 Td ( )Tj 0.0014 Tc 0.0874 Tw 22.776 0 Td ( )Tj /TT0 1 Tf -0.0018 Tc 0.0373 Tw -12.698 -1.207 Td ( )Tj -0.0037 Tc -0.0141 Tw 12.691 -3.607 Td ( )Tj -0.0012 Tc -0.05 Tw -26.529 -1.2 Td ( )Tj 11.811 0 Td ( )Tj -0.0013 Tc 0.1035 Tw 8.134 -3.607 Td ( )Tj 0.0301 Tw 6.58 -1.207 Td ( )Tj -0.0016 Tc -0.0296 Tw 0.006 -2.733 Td ( )Tj -0.0019 Tc -0.0493 Tw -0.006 -1.207 Td ( )Tj 0.0021 Tc 0.0801 Tw -16.169 -1.2 Td ( )Tj -0.0013 Tc 0.0035 Tw -6.544 -2.407 Td ( )Tj -0.0003 Tc 0.1158 Tw -9.563 -1.2 Td [( )353.3 ( )]TJ 0.0013 Tc    0.1409 Tw 32.564 -2.407 Td ( )Tj -0.0001 Tc -0.0444 Tw -0.285 -1.2 Td ( )Tj /TT1 1 Tf 0 Tc 0 Tw -25.379 -6.067 Td ( )Tj /TT0 1 Tf -0.0001 Tc 0.0156 Tw 25.385 0 Td ( )Tj EMC  /Artifact <</Attached [/Top /Right ]/BBox [450.7017 669.125 455.7415 677.5247 ]/Subtype /Header /Type /Pagination >>BDC  0 Tc 0.2766 Tw 0 Tr -0.564 56.04 Td (1 )Tj EMC  /Artifact <</Attached [/Top ]/BBox [156 657 409 677 ]/Subtype /Header /Type /Pagination >>BDC  0.0012 Tc 0.003 Tw 7.02 0 0 7.02 156.24 669.12 Tm [(\\(Slip)11.3 ( Opin)5.2 (i)8.4 (o)-3.1 (n)5.2 (\\) )]TJ -0.0011 Tc 0.2766 Tw 9 0 0 9 253.0215 669.12 Tm [(OCTOBER T)-7.4 (ERM, 20)-4.9 (23 )]TJ EMC  /P <</MCID 1 >>BDC  -0.0026 Tc 0 Tw 3.893 -2.627 Td [(Sy)-5.5 (llabu)-5.1 (s )]TJ EMC  /P <</MCID 2 >>BDC  0.0017 Tc 0.1222 Tw 7.02 0 0 7.02 189.24 627.24 Tm [(N)4.7 (O)1.8 (TE)5.9 (: )-153.8 (Wh)14.3 (er)9.6 (e )8.6 (it)6.2 ( i)9 (s)3.1 ( f)9.9 (e)-2.6 (as)3.1 (ibl)8.9 (e)6 (, a)10.8 ( s)3.1 (y)8.9 (llab)10.8 (u)5.7 (s)3.1 ( \\(h)5.7 (ead)3.3 (n)14.2 (ot)6.2 (e\\))9.9 ( wil)9 (l)8.9 ( be)6 ( r)9.6 (e)-2.6 (l)8.9 (e)-2.6 (as)11.6 (ed)3.3 (,)6 ( as)11.6 ( is )]TJ 0.0026 Tc 0.1384 Tw -1.137 -1.026 Td [(bein)6.6 (g )-8.5 (d)12.7 (o)-1.7 (n)15.2 (e )-10.2 (in)6.6 ( con)15.2 (n)6.6 (ecti)9.8 (on)6.6 ( with)6.6 ( th)6.6 (is)3.9 ( cas)4 (e)6.9 (, )-8.5 (a)11.7 (t)-1.4 ( th)6.6 (e ti)9.8 (me)6.9 ( th)6.6 (e op)4.2 (in)6.6 (i)9.9 (o)-1.7 (n )-1.9 (is )4 (is)3.9 (s)12.5 (u)6.6 (ed)4.2 (. )]TJ 0.0023 Tc 0.1643 Tw 0 -1.026 TD [(Th)6.3 (e )-2 (s)3.7 (y)0.9 (ll)9.5 (abu)6.3 (s)3.7 ( con)6.3 (s)12.2 (titu)14.9 (tes )3.6 (n)14.8 (o )-2 (p)3.9 (a)2.9 (r)10.2 (t)6.8 ( of)10.5 ( th)6.3 (e)6.6 ( op)3.9 (in)6.3 (i)9.5 (o)-2 (n)6.3 ( of)10.5 ( th)6.3 (e )-2 (C)6.5 (o)-2 (u)6.3 (r)10.2 (t )-1.8 (bu)14.8 (t )-1.8 (h)6.3 (a)2.9 (s)3.7 ( be)6.6 (en )]   TJ -0.0037 Tc 0.2301 Tw T* [(pre)-8 (p)-2.1 (are)-8 (d)-2.1 ( by)-5.1 ( t)-7.7 (he Re)-8 (po)-8 (rte)-8 (r)-4.3 ( o)-8 (f )-4.1 (De)-8 (ci)-5 (sio)-8 (ns )-8.6 (fo)-8 (r t)-7.7 (he )-8.6 (co)-8 (nveni)-5 (e)-8 (nce )-8.6 (of t)-7.7 (he )-8.6 (reade)-8 (r)-4.3 (. )]TJ 0.0035 Tc 0 Tw T* [(Se)7.8 (e )]TJ /TT1 1 Tf -0.0011 Tc 0.0053 Tw [(United)11.5 ( States)]TJ /TT0 1 Tf 0.0014 Tc -0.0057 Tw 8.162 0 Td ( v. )Tj /TT1 1 Tf -0.0001 Tc -0.0042 Tw 1.367 0 Td [(Detr)7.8 (oit Timbe)7.8 (r)-0.7 ( & )-8.5 (Lumb)9 (er )-0.6 (Co.,)]TJ /TT0 1 Tf -0.0002 Tc 0.0044 Tw 13.863 0 Td [( 200)8.9 ( U. S)5.8 (.)-4.4 ( 3)8.9 (21, 337)8.9 (. )]TJ EMC  /P <</MCID 3 >>BDC  /TT2 1 Tf 0.0027 Tc -0.0034 Tw 14.2001 0 0 15 156.54 577.02 Tm [(SUPREME CO)3.1 (URT O)3.1 (F)-3.4 ( THE UNI)3.1 (TED STATES )]TJ EMC  /P <</MCID 4 >>BDC  /TT0 1 Tf -0.0026 Tc 0 Tw 9 0 0 9 288.06 546.9 Tm [(Sy)-5.5 (llabu)-5.1 (s )]TJ EMC  /P <</MCID 5 >>BDC  -0.001 Tc 0.0019 Tw 10.98 0 0 10.98 161.1 521.1 Tm [(LOP)-6.1 (ER B)-5.6 (R)-5.6 (I)-3.6 (GHT )-5.4 (ENT)-6.1 (ERPRI)-9.1 (SES )]TJ -0.0022 Tc 0 Tw 9 0 0 9 336.48 521.1 Tm [(ET )-66.3 (AL)]TJ 0 Tc 10.98 0 0 10.98 364.5 521.1 Tm (. )Tj /TT1 1 Tf 0.557 0 Td (v)Tj /TT0 1 Tf -0.0004 Tc 0.0013 Tw [(. R)-5 (A)0.5 (IMON)-5.1 (DO, )]TJ -0.0002 Tc 0.0011 Tw -14.902 -1.208 Td [(SEC)-4.8 (RET)-5.3 (A)-4.8 (R)0.7 (Y OF )-5.4 (COMMERC)-4.8 (E, )]TJ -0.0022 Tc 0 Tw 9 0 0 9 373.86 507.84 Tm [(ET )-66.3 (AL)]TJ 0 Tc 10.98 0 0 10.98 401.88 507.84 Tm (. )Tj EMC  /P <</MCID 6 >>BDC  -0.0008 Tc    0.003 Tw 9 0 0 9 158.22 485.64 Tm [(CERTIORA)-5.3 (RI)-6.9 ( TO THE UNITED STATES )-6.6 (COURT OF APPEALS FOR )]TJ -0.0006 Tc 0.0028 Tw 6.407 -1.227 Td [(THE DISTRI)-6.7 (CT OF COLUMBIA CIRCU)-5.7 (IT )]TJ EMC  /P <</MCID 7 >>BDC  -0.0013 Tc 0.0035 Tw -5.04 -2.113 Td [(No. 22\\2264)-5.1 (51. )-726.6 (Ar)-4.1 (g)-4.2 (u)-3.8 (ed Jan)-3.8 (u)-3.8 (a)8.2 (r)-4.1 (y)-4.2 ( 17, 2024\\227)-8 (Dec)-4.1 (ided Ju)-3.8 (n)-3.8 (e )5.4 (28, 202)-5.1 (4* )]TJ EMC  /P <</MCID 8 >>BDC  0.0008 Tc 0.268 Tw -1.587 -1.867 Td [(The Court)10 ( g)4.6 (r)4.6 (a)3.6 (nt)3.3 (ed cert)3.3 (iora)3.6 (ri in)5 ( t)3.3 (h)]TJ -0.0008 Tc 0.2696 Tw 17.047 0 Td [(ese ca)8.7 (ses limi)-5.9 (t)1.7 (ed to)-7.5 ( the question)]TJ 0.0013 Tc 0 Tw -16.047 -1.2 Td (whether )Tj /TT1 1 Tf 0.0876 Tw 4.207 0 Td [(Ch)5.4 (ev)6.9 (ron U. )92.3 (S. )93.3 (A. I)8.4 (n)-1.3 (c.)]TJ /TT0 1 Tf 0.0026 Tc 0.0796 Tw 9.893 0 Td ( v. )Tj /TT1 1 Tf 0.0014 Tc 0.0874 Tw 1.547 0 Td [(Nat)6.8 (u)-1.1 (ral)7.7 ( Resou)5.6 (r)-1.4 (c)5.2 (es )6.6 (Def)7.7 (e)-1.4 (ns)5.2 (e Coun)5.6 (cil, )]TJ 0.0019 Tc 0 Tw -15.647 -1.207 Td (Inc.)Tj /TT0 1 Tf -0.0015 Tc 0.037 Tw 1.747 0 Td [(, 467 U. )33.3 (S. 837, sh)-4 (ou)-4 (ld be ov)-4.4 (err)-4.3 (u)]TJ -0.0018 Tc 0.0373 Tw 15.2 0 Td [(led or )2.1 (c)-4.6 (lar)-4.6 (ified.  Un)-4.3 (der)-4.6 ( th)-4.3 (e )]TJ /TT1 1 Tf -0.0007 Tc 0 Tw 12.713 0 Td (Chev)Tj EMC  /HyphenSpan <</MCID 9 >>BDC  (-)Tj EMC  /P <</MCID 10 >>BDC  0.0014 Tc -29.66 -1.2 Td (ron)Tj /TT0 1 Tf -0.0014 Tc -0.0164 Tw 1.56 0 Td    [( doc)-4.2 (t)1.1 (r)-4.2 (ine, cour)-4.2 (ts hav)-4.3 (e)5.3 ( sometime)-8.1 (s been r)-4.2 (e)-1.4 (quir)-4.2 (ed to defer)-4.2 ( to \\223per)-4.2 (mis)]TJ EMC  /HyphenSpan <</MCID 11 >>BDC  (-)Tj EMC  /P <</MCID 12 >>BDC  0.1035 Tw -1.56 -1.207 Td [(sible)-8 (\\224)1.2 ( ag)-4.2 (enc)-4.1 (y)-4.2 ( i)7 (n)-3.8 (ter)-4.1 (pr)-4.1 (e)-1.3 (tations)-5.1 ( of th)]TJ -0.0007 Tc 0.1029 Tw 16.073 0 Td [(e statutes those agenci)7.6 (es adminis)]TJ EMC  /HyphenSpan <</MCID 13 >>BDC  (-)Tj EMC  /P <</MCID 14 >>BDC  0.0004 Tc -0.0182 Tw -16.073 -1.2 Td [(ter\\227even )6.7 (whe)7.1 (n)-2.1 ( a re)7.1 (viewing )6.7 (court )]TJ -0.0005 Tc -0.0173 Tw 15.747 0 Td [(reads the statute differ)-10 (ently.  )]TJ /TT1 1 Tf -0.0072 Tc 0 Tw [(Id)-9.7 (.)]TJ /TT0 1 Tf -0.0037 Tc -0.0141 Tw 15.053 0 Td (, at )Tj EMC  /Span <</MCID 15 >>BDC  -0.0012 Tc -0.05 Tw -30.8 -1.2 Td (843. )Tj EMC  /Span <</MCID 16 >>BDC  2.395 0 Td [(In)-3.7 ( each )2.9 (case below, th)-3.7 (e )6.6 (r)-4 (e)-1.2 (v)-4.1 (iewing )2.5 (c)-4 (o)-1.2 (u)-3.7 (r)2.6 (ts applied )]TJ /TT1 1 Tf 0.0012 Tc 0 Tw 22.085 0 Td (Chevron)Tj /TT0 1 Tf 0.0014 Tc -0.0526 Tw 3.86 0 Td [(\\222s)11 ( fra)4.2 (m)3.9 (e)]TJ EMC  /HyphenSpan <</MCID 17 >>BDC  (-)Tj EMC  /Span <</MCID 18 >>BDC  -0.0003 Tc 0.0758 Tw -28.34 -1.207 Td [(work)5.8 ( to resolve in favor of)6 ( the Go)]TJ -0.0009 Tc 0.0764 Tw 15.813 0 Td [(v)-3.8 (e)-0.9 (rnment challeng)-3.8 (es )6.7 (by)-3.8 ( petitioner)-3.7 (s )]TJ -0.0012 Tc 0.07 Tw -15.813 -1.2 Td [(to a r)-4 (u)-3.7 (le pr)-4 (om)8 (ulg)-4.1 (a)1.6 (ted by)-4.1 ( the Nati)]   TJ 0.0009 Tc 0.0679 Tw 15.933 0 Td [(ona)3.7 (l)2.5 ( Ma)3.7 (rine Fis)3.8 (h)-1.6 (eries)3.8 ( S)4.1 (e)0.9 (rvice pu)5.1 (r)]TJ EMC  /HyphenSpan <</MCID 19 >>BDC  (-)Tj EMC  /Span <</MCID 20 >>BDC  -0.0013 Tc 0.1035 Tw -15.933 -1.2 Td [(su)-3.8 (an)-3.8 (t to th)-3.8 (e M)-4.1 (a)1.5 (g)-4.2 (n)-3.8 (u)-3.8 (s)1.6 (on)-3.8 (-Stev)-4.2 (e)-1.3 (n)-3.8 (s)1.6 ( Ac)-4.1 (t, 16 U. )100 (S. )100 (C. \\2471801 )]TJ /TT1 1 Tf 0.0025 Tc -0.007 Tw 26.073 0 Td [(et seq)5.3 (.)]TJ /TT0 1 Tf -0.0038 Tc 0.106 Tw 2.8 0 Td [(, w)-6 (h)-6.3 (ich )]TJ -0.0001 Tc 0.0289 Tw -28.873 -1.207 Td (incorporates the Administrative Proc)Tj -0.0013 Tc 0.0301 Tw 17.233 0 Td [(edu)-3.8 (r)-4.1 (e Ac)-4.1 (t \\(APA\\), 5 U. )26.6 (S. )26.6 (C. \\247551 )]TJ /TT1 1 Tf 0.0021 Tc 0.0001 Tw -17.233 -1.2 Td [(et s)5.9 (e)-0.7 (q)]TJ /TT0 1 Tf 0 Tc 0 Tw 2.52 0 Td (. )Tj EMC  /P <</MCID 21 >>BDC  /TT1 1 Tf 0.0009 Tc -3.52 -1.533 Td (Held)Tj /TT0 1 Tf -0.0018 Tc -0.0294 Tw 2.227 0 Td [(: )-33.4 (The Administr)-4.6 (a)-5.6 (tiv)-4.7 (e)-1.8 ( Pr)-4.6 (oc)]TJ -0.0007 Tc -0.0305 Tw 11.893 0 Td [(edure Act)8.5 ( requires cour)]TJ -0.0016 Tc -0.0296 Tw 10.74 0 Td [(ts )6.6 (to ex)-4.5 (erc)-4.4 (ise their)]TJ -0.0003 Tc -0.0509 Tw -23.86 -1.207 Td [(independent judgment in de)6.4 (ciding wh)]TJ -0.0019 Tc -0.0493 Tw 17.253 0 Td [(eth)-4.4 (e)4.8 (r)-4.7 ( an)-4.4 ( ag)-4.8 (enc)-4.7 (y)1.9 ( h)-4.4 (a)7.6 (s ac)-4.7 (ted with)-4.4 (in)]TJ 0.0021 Tc 0.0801 Tw -17.253 -1.2 Td [(i)3.7 (t)4.6 (s)5 ( st)4.6 (a)4.9 (t)4.6 (ut)4.6 (ory aut)4.6 (hori)3.7 (t)4.6 (y, a)4.9 (nd )6.7 (court)4.6 (s )]   TJ -0.0013 Tc 0.0835 Tw 16.467 0 Td [(may)-4.2 ( not defer)-4.1 ( to an ag)-4.2 (ency)-4.2 ( inter)]TJ EMC  /HyphenSpan <</MCID 22 >>BDC  15.481 0 Td (-)Tj EMC  /P <</MCID 23 >>BDC  -0.0003 Tc -0.0309 Tw -31.948 -1.2 Td [(pretation of th)-9.5 (e law si)-5.4 (mply be)]TJ -0.0007 Tc -0.0305 Tw 13.647 0 Td [(cause a statu)-9.9 (t)1.8 (e is )-6.7 (ambiguous; )]TJ /TT1 1 Tf 0.0015 Tc 0 Tw 13.753 0 Td (Chevron )Tj /TT0 1 Tf -0.0023 Tc 4.107 0 Td (is )Tj -0.0013 Tc 0.0035 Tw -31.507 -1.207 Td [(ov)-4.2 (er)-4.1 (ru)-3.8 (led.  Pp. 7\\22635.)]TJ EMC  /Span <</MCID 24 >>BDC  -0.0003 Tc 0.1158 Tw 1.08 -1.2 Td (\\(a\\) )Tj EMC  /Span <</MCID 25 >>BDC  1.501 0 Td [(Article III )6.7 (of the)6.4 ( Constitution)]TJ -0.0008 Tc 0.1163 Tw 14.052 0 Td [( assigns to the Federal)7.5 ( Judiciary )]TJ -0.0003 Tc 0.1825 Tw -16.633 -1.2 Td [(the responsibility and powe)6.4 (r to ad)]TJ -0.0013 Tc 0.1835 Tw 16.633 0 Td [(judicate \\223Cases)-5.1 (\\224 )]TJ 0.0001 Tc 0.1821 Tw (and \\223Controver)Tj EMC  /HyphenSpan <</MCID 26 >>BDC  (-)Tj EMC  /Span <</MCID 27 >>BDC  0.0013 Tc 0.1409 Tw -16.633 -1.207 Td [(s)4.2 (i)2.9 (es)4.2 (\\224)3.8 (\\227)1.3 (concret)3.8 (e)1.3 ( dis)4.2 (p)2.2 (ut)3.8 (es with cons)4.2 (eq)4.1 (uence)8 (s)4.2 ( for t)3.8 (h)-1.2 (e pa)4.1 (rt)3.8 (ies)4.2 ( involved. )]TJ -0.0005 Tc -0.044 Tw 0 -1.2 TD (The Framers appreciated )Tj -0.0001 Tc -0.0444 Tw 11.86 0 Td [(that the laws judges would neces)9.5 (s)2.8 (arily appl)-5.2 (y)]TJ -0.0003 Tc 0.0491 Tw -11.86 -1.2 Td (in resolving those disputes would no)Tj    -0.0007 Tc 0.0495 Tw 17.007 0 Td [(t alwa)8.8 (ys be clear, but envisioned )]TJ EMC  /P <</MCID 28 >>BDC  0 Tc 0 Tw -18.007 -2.247 Td (\\227\\227\\227\\227\\227\\227 )Tj -0.0008 Tc 0.103 Tw 1 -1.42 Td [(*Tog)-3.7 (eth)-3.3 (e)-0.8 (r)-3.6 ( wit)8.4 (h)-3.3 ( No. 22\\2261)-4.6 (21)-4.6 (9, )]TJ /TT1 1 Tf 0.0001 Tc 0 Tw 14.02 0 Td [(Relentl)6.4 (e)-2.7 (ss)]TJ /TT0 1 Tf 0 Tc 4.593 0 Td (, )Tj /TT1 1 Tf 0.0019 Tc 0.653 0 Td (Inc.)Tj /TT0 1 Tf 0 Tc 1.747 0 Td (, )Tj /TT1 1 Tf 0.0009 Tc 0.1013 Tw 0.653 0 Td (et al.)Tj /TT0 1 Tf 0.0026 Tc 0.0929 Tw 2.367 0 Td ( v. )Tj /TT1 1 Tf 0.0007 Tc 0.1015 Tw [(Departme)4.6 (n)-1.8 (t of )]TJ 0.0015 Tc 0 Tw -25.033 -1.2 Td [(Com)4 (m)4 (erce)]TJ /TT0 1 Tf 0 Tc (, )Tj /TT1 1 Tf 0.0009 Tc 0.0079 Tw 5.347 0 Td (et al.)Tj /TT0 1 Tf 0 Tc 0 Tw 2.273 0 Td (, )Tj -0.0001 Tc 0.0156 Tw 0.573 0 Td [(on )6.7 (certiora)9.4 (ri to the United States Court of Appeals for)]TJ 0.0006 Tc 0.0016 Tw -8.193 -1.2 Td [(t)3.1 (h)-1.9 (e Firs)3.5 (t)3.1 ( Circuit)3.1 (. )]TJ EMC  ET   ",
+  "provenance": "Captured with qpdf from corpus/cache/22-451_7m58.pdf (scotus-loper-bright-2024). Page 1 sets invisible render mode inside an Artifact, which refused the page's whole tag set (#91)."
+}

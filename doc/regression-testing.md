@@ -362,6 +362,16 @@ Latin-1 writer, because the captured stream and CMaps hold bytes outside ASCII.
 swiftc $(python3 tools/pdfreflow_tools/swift_sources.py capture-spacing-source.swift) \
   -o /tmp/capture-spacing-source
 /tmp/capture-spacing-source gpo-911-2004 19 /tmp/911-19-spacing.json
+A tag reader's evidence is the page's content stream rather than its extracted lines, so the
+`*-tags.json` fixtures beside the layout captures hold that instead: the decoded content stream,
+each font resource's subtype, encoding and decoded `ToUnicode` map, the page's XObject subtypes,
+and the structure elements its `ParentTree` entry names with every ancestor, role and child.
+`tools/capture_tag_fixture.py` writes one with `qpdf` alone, and `SourceTagFixture` in the test
+target replays it as a one-page document, so a reader test reads the source's own bytes:
+
+```sh
+python3 tools/capture_tag_fixture.py corpus/cache/the-fed-explained.pdf 109 \
+  Tests/PDFReflowLibTests/fixtures/fed-109-tags.json "why this page was captured"
 ```
 
 Review source and geometry changes before replacing a bundled fixture; never regenerate one

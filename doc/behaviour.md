@@ -189,6 +189,20 @@ spatial reconstruction rather than partial results.
   missing or duplicate MCIDs, ambiguous geometry and incomplete groups keep spatial
   reconstruction. Origin matching is association evidence, not font decoding or proof of the
   author's semantics.
+- A show whose origin this reader cannot derive (no positioning operator, or a leading non-zero
+  `TJ` adjustment) costs exactly what it could have described: nothing inside an `/Artifact`,
+  which carries no structure; the enclosing MCID's group inside a marked section; and the whole
+  page outside marked content, where the text could belong to any line (#67). `/Artifact` is
+  inherited by nested spans; an explicit MCID always names its own content.
+- A show drawing only spaces places no line and costs no group, while its MCID still counts as
+  shown. A code is a space only where the font's `ToUnicode` map gives a one-byte `bfchar` entry
+  for exactly U+0020, or, with no map, where a simple font names `WinAnsiEncoding`,
+  `MacRomanEncoding` or `StandardEncoding` and the code is 32. Ranges, multi-character
+  destinations, `usecmap`, maps over 65,536 bytes, Type3 and composite fonts give no space codes
+  (#91). Space codes are read once per font dictionary, for at most 256 fonts per page.
+- Invisible render mode (`3 Tr`) is judged where text is shown: inside an `/Artifact` it costs
+  nothing; anywhere else it refuses the page, since invisible text over a scan is inherited
+  transcription, not what the tags describe. Clipping modes (4–7) still refuse the page (#91).
 
 Evidence: [native-label-spacing](../measurements/native-label-spacing/record.md),
 [structure-tags](../measurements/structure-tags/record.md).
@@ -207,8 +221,14 @@ Evidence: [native-label-spacing](../measurements/native-label-spacing/record.md)
 - Complete tagged groups may reorder only within an uninterrupted run of tagged text; unmatched
   lines and preserved images are barriers. Captions, list-like text and headings of 200 or more
   characters fall back to spatial order. Furniture removal or an image crop that takes a line
-  invalidates an incomplete group. Validated paragraph identities prevent heuristic cross-page
-  joins into a different paragraph. OCR text and unverified image-backed text never inherit tags.
+  invalidates an incomplete group. Two validated paragraph identities that differ prevent a
+  heuristic cross-page join; one identity against a page that applied no tags does not, since that
+  page states nothing about where its last paragraph ends, and the geometric rule decides (#67).
+  OCR text and unverified image-backed text never inherit tags.
+- A page whose tags never name a heading has not stated that its display lines are not headings:
+  there, a line the page's own typography reads as a heading keeps that reading and its tag is
+  not applied to it. Where the page's tags do name a heading, every role they give is believed
+  over visible typography, as before (#67).
 - A page whose tagged text cannot be matched unambiguously reports `structureFallback`; a
   rejected tree adds one document-wide `structureFallback` warning attached to page 1.
 

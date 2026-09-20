@@ -592,17 +592,25 @@ enum LayoutReconstructor {
         let noteGroups = NumberedNoteDetector.groups(in: elements, page: page,
                                                      headingEvidence: context.numberedNotePages.contains(page.number))
         var assembler = BlockAssembler(page: page.number, body: typography.body, hyphens: context.hyphens)
+        // A page whose tags never name a heading has not said that its display lines are not
+        // headings; it has said only what they contain and in what order. Producers routinely
+        // give every heading style a paragraph role — the FAA handbook's RoleMap sends
+        // `AC_heading_1`...`AC_heading_5` to `P` — so believing a paragraph role there costs the
+        // page its navigation for nothing. Where the page's tags do name a heading, every role
+        // they give is believed over visible typography, as before (#67).
+        let tagsNameHeading = elements.contains { ($0.line?.structure?.headingLevel ?? 0) > 0 }
         for (index, element) in elements.enumerated() {
             if let group = noteGroups[index], let line = element.line {
                 assembler.appendNote(group: group, line)
             } else if let path = element.image {
                 assembler.appendImage(path)
             } else if let line = element.line {
-                if let tag = line.structure {
+                let spatial = role(of: line, on: page, in: lines, typography: typography,
+                                   labels: labels, judgesTitleWords: judgesTitleWords)
+                if let tag = line.structure, tagsNameHeading || spatial != .heading {
                     assembler.appendTagged(tag, line)
                 } else {
-                    assembler.append(line, as: role(of: line, on: page, in: lines, typography: typography,
-                                                    labels: labels, judgesTitleWords: judgesTitleWords))
+                    assembler.append(line, as: spatial)
                 }
             }
         }
@@ -711,7 +719,11 @@ enum LayoutReconstructor {
         var remaining = pageBlocks
         if let last = blocks.last, let first = remaining.first, let previousPage,
            case let .paragraph(left) = last.content, case let .paragraph(right) = first.content,
-           last.structureGroup == first.structureGroup,
+           // Two validated paragraph identities that differ are two paragraphs, and never join.
+           // One identity and no identity is not that: a page whose tags were not applied says
+           // nothing about where its last paragraph ends, so the geometric rule decides, as it
+           // did when neither page carried a tag (#67).
+           last.structureGroup == first.structureGroup || last.structureGroup == nil || first.structureGroup == nil,
            first.text.first?.isLowercase == true, last.text.last.map({ !".!?:".contains($0) }) == true,
            previousPage.lines.last.map({ $0.rect.minY < previousPage.bounds.minY + previousPage.bounds.height * 0.2 }) == true,
            page.lines.first.map({ $0.rect.maxY > page.bounds.minY + page.bounds.height * 0.8 }) == true {

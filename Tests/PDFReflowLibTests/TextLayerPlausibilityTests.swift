@@ -705,3 +705,99 @@ private func nativeSlidePDF() throws -> Data {
     pdf.closePDF()
     return data as Data
 }
+
+// MARK: - Recognition that left the page's writing out (#116)
+
+/// The normalized, lower-left-origin box of one of `raster`'s rows, as a recognized line covering
+/// it would be. Rows stand 12 px tall at `top + row * 40` from the top of a `height` px page.
+private func rowBox(_ row: Int, height: Int, top: Int = 20) -> CGRect {
+    let y0 = top + row * 40
+    return CGRect(x: 20.0 / 400, y: 1 - Double(y0 + 12) / Double(height),
+                  width: 5 * 24.0 / 400, height: 12.0 / Double(height))
+}
+
+/// A page of `rows` rows of printed writing, of which the first `covered` are read.
+private func reading(rows: Int, covered: Int, height: Int = 2400) -> OCRTextCoverage.Measurement {
+    let page = raster(height: height, background: 255, ink: 0, rows: rows)
+    return OCRTextCoverage.measure(page, lines: (0..<covered).map { rowBox($0, height: height) },
+                                   excluded: [], pixelsPerPoint: 1)
+}
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/116"))
+func aRecognitionMissingWholeRowsOfThePagesWritingIndicatesLoss() {
+    // Every row read: the page's writing is accounted for.
+    let complete = reading(rows: 16, covered: 16)
+    #expect(complete.textRows == 16)
+    #expect(complete.uncoveredRows == 0)
+    #expect(!complete.indicatesLoss)
+
+    // Half the page's rows never read: a dropped paragraph, not a clipped ascender.
+    let lossy = reading(rows: 16, covered: 8)
+    #expect(lossy.uncoveredRows == 8)
+    #expect(lossy.uncoveredFraction == 0.5)
+    #expect(lossy.indicatesLoss)
+}
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/116"))
+func bothTheRowCountAndTheShareAreNeededToCallARecognitionIncomplete() {
+    // Six uncovered rows are more than a fifth of this page's ink and still not loss: a caption
+    // Vision folded into its neighbour, a stamp it read as art, a running head it skipped.
+    let few = reading(rows: 16, covered: 10)
+    #expect(few.uncoveredRows == 6)
+    #expect(few.uncoveredFraction > OCRTextCoverage.minimumUncoveredFraction)
+    #expect(!few.indicatesLoss)
+
+    // Eight uncovered rows on a dense page are a small share of it, and not loss either.
+    let sparse = reading(rows: 50, covered: 42)
+    #expect(sparse.uncoveredRows == 8)
+    #expect(sparse.uncoveredFraction < OCRTextCoverage.minimumUncoveredFraction)
+    #expect(!sparse.indicatesLoss)
+
+    // Both together: the same eight rows on a page whose writing is only forty rows.
+    let loss = reading(rows: 40, covered: 32)
+    #expect(loss.uncoveredRows == 8)
+    #expect(loss.uncoveredFraction >= OCRTextCoverage.minimumUncoveredFraction)
+    #expect(loss.indicatesLoss)
+}
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/116"))
+func theRetrysBandsCoverThePageWithoutTranscribingTheirSharedStripTwice() throws {
+    // The bands' geometry: two 60% bands sharing the middle fifth of the page.
+    #expect(OCRReader.retryBands == [0.4...1.0, 0.0...0.6])
+    #expect(OCRReader.retryBands.allSatisfy { $0.contains(OCRReader.retryBandSplit) })
+
+    func band(_ lines: [(String, Double)]) -> OCRReader.Recognition {
+        OCRReader.Recognition(lines: lines.map {
+            OCRReader.Recognition.Line(text: $0.0, box: CGRect(x: 0.1, y: $0.1, width: 0.8, height: 0.02),
+                                       wraps: nil)
+        })
+    }
+    // Each band reads the strip it shares with the other, so "shared" is read twice in band
+    // coordinates: once near the bottom of the top band, once near the top of the bottom band.
+    // Whichever band holds its centre keeps it, so the page is transcribed once.
+    let top = band([("heading", 0.9), ("shared", 0.18)])
+    let bottom = band([("shared", 0.83), ("footnote", 0.05)])
+    let merged = OCRReader.mergeBands([(top, 0.4, 0.6), (bottom, 0.0, 0.6)])
+    #expect(merged.lines.map(\.text) == ["heading", "shared", "footnote"])
+
+    // Every line is back in page coordinates, inside the band's own share of the page.
+    let heading = try #require(merged.lines.first)
+    #expect(abs(heading.box.minY - (0.4 + 0.9 * 0.6)) < 1e-9)
+    #expect(abs(heading.box.height - 0.02 * 0.6) < 1e-9)
+    #expect(merged.lines.allSatisfy { (0.0...1.0).contains($0.box.minY) })
+}
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/116"))
+func aTableTheBandsCutInTwoIsJoinedRatherThanReportedTwice() throws {
+    func band(_ tables: [CGRect]) -> OCRReader.Recognition {
+        OCRReader.Recognition(lines: [], tables: tables)
+    }
+    // One table across the middle of the page: each band sees the part that falls inside it.
+    let top = band([CGRect(x: 0.1, y: 0.0, width: 0.8, height: 0.5)])       // 0.40-0.70 of the page
+    let bottom = band([CGRect(x: 0.1, y: 0.7, width: 0.8, height: 0.3)])    // 0.42-0.60 of the page
+    let merged = OCRReader.mergeBands([(top, 0.4, 0.6), (bottom, 0.0, 0.6)])
+    #expect(merged.tables.count == 1)
+    let table = try #require(merged.tables.first)
+    #expect(abs(table.minY - 0.4) < 1e-9)
+    #expect(abs(table.maxY - 0.7) < 1e-9)
+}

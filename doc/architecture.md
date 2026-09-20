@@ -51,9 +51,16 @@ Extraction is one pass over the pages, each through named stages with value type
 | Read | `PageReader` over `PDFPageSource`, `NativeTextReader`, `GraphicsReader`, `StructureTreeReader` | `ExtractedPage`: the `PageContent`, placed raster images, unmapped-font flag, the glyphs the decoder read that the lines did not take, reader warnings |
 | Diagnose | `PageDiagnosis` with `PageInkMeasurer`, `TextEncodingCheck`, `TextLayerPlausibility`, `OCRTextCoverage`, `EnglishText` | `PageEvidence`: image-backed, damaged encoding, plausibility finding, drawn text, replacement-character counts |
 | Plan | `RecognitionPolicy.plan` (pure) | `RecognitionPlan`: keep the extracted page, or recognize it replacing or comparing |
-| Recognize | `OCRReader` (Vision) when the plan asks | `RecognitionOutcome` |
+| Recognize | `OCRReader` (Vision) when the plan asks, checking its own reading against the page with `OCRTextCoverage` | `RecognitionOutcome` |
 | Resolve | `RecognitionPolicy.resolve` (pure) with `RecognitionJudge` | `PageDisposition` plus the page's `PageWarning`s in report order |
 | Fold | `DocumentEvidence`, `PageAssetWriter`, `PageStore` | Document-wide evidence, written assets, the spilled page |
+
+Recognition is the one stage that judges its own product. Vision can return success while leaving
+part of the page unread, so `OCRReader` measures the writing on the raster it handed over against
+the lines it got back, recognizes the page again in overlapping bands when the reading does not
+account for the page, and keeps whichever reading covers more. What the reading finally left out
+travels with it as evidence; deciding whether that is worth reporting stays with
+`RecognitionPolicy`, and saying it stays with `ConversionWarnings`.
 
 `NativeTextReader` obtains PDFKit line selections, geometry and attributed runs and copies them
 into values at once. The content-stream readers (`NativeSpacingReader`, `GlyphIdentityReader`,

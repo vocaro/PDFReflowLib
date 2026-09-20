@@ -40,6 +40,14 @@ and include source references by default; empty or failed recognition retains a 
 image. Compare with the source before relying on transcription. Reference and resource options
 apply independently, and cancellation remains cooperative during platform recognition.
 
+Recognition can also return success with whole paragraphs or table columns missing (#116). Every
+recognized page is measured against its own text-shaped ink; a page the reading left writing on is
+recognized once more in two overlapping bands, and the better-covering reading is kept. This costs
+about 2% of a page's recognition time to check, and one extra recognition on each page that needs
+it — on a scanned book of statistical tables that is a little over half again as long. A page
+whose final reading still leaves the page's writing unread reports `incompleteRecognition` with
+the share it left out.
+
 ### Implausible inherited text
 
 Text inherited over a page-sized graphic (the pages that would report `unverifiedTextLayer`) is

@@ -95,7 +95,10 @@ headings are decided by bounded, evidence-based rules. Core Graphics scans paint
 figures, ruled tables, labels, displayed formulas and fractions are cropped from the original
 rendering. Vision recognizes pages with missing or damaged text, existing text that does not read
 as a plausible transcription of its page image, born-digital text without a usable Unicode
-mapping, and pages whose only writing is drawn; every such page is warned. Output is EPUB 3 with
+mapping, and pages whose only writing is drawn; every such page is warned. Recognition can return
+success while leaving whole paragraphs or table columns unread, so each recognized page is
+measured against its own text-shaped ink, recognized again in overlapping bands when the reading
+does not account for the page, and warned when the writing it left out remains. Output is EPUB 3 with
 XHTML chapters split near 60 KB, styles, metadata, flat heading navigation, a source page-list
 and an OPF 3.0 package.
 

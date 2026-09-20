@@ -79,6 +79,7 @@ ALLOWED = {
     92: ('historical', "the comparator's identifier normalization, ported onto main and named by its issue"),
     36: ('historical', 'the rule-adjacent-prose rules, ported onto main for #229 and named by their issue'),
     143: ('historical', 'the index-glyph decoding, ported onto main for #226 and named by its issue'),
+    116: ('historical', 'the recognition-coverage rule and its band retry, ported onto main and named by its issue'),
 
     # Closed, but the defect is still in `main`; the prose says so and names the commit.
     13: ('branch-only', '183c2c4b6'),

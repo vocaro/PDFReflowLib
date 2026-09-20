@@ -428,10 +428,16 @@ than half the page (`maximumBackgroundInk`), that side is the background and the
 again inverted, so a slide printed white on dark blue is not one page-sized blob. A page whose
 dark ink already forms rows is never inverted.
 
+The same measurement answers three different questions, with three different thresholds: whether
+an inherited layer transcribes the page at all (at least 7 rows and 75% of the ink uncovered,
+above), whether a page's art carries writing (at least 2 rows, #176), and whether a recognition
+the conversion believes left part of the page unread (at least 8 rows and 20% of the ink, below).
+
 Evidence: the [Warren suspect-text excerpt](corpus.md#suspect-text-layer-excerpt) and its
 contract `basis` in [corpus/regressions.json](../corpus/regressions.json),
 [selective-ocr](../measurements/selective-ocr/record.md),
-[ocr-headings](../measurements/ocr-headings/record.md).
+[ocr-headings](../measurements/ocr-headings/record.md),
+[ocr-text-loss](../measurements/ocr-text-loss/record.md).
 
 ## RecognitionPolicy: the decision table
 
@@ -468,6 +474,39 @@ transcription (`ocrUsed`: "Text is OCR transcription. The original page image pr
 unrecognized visual content."; with references disabled, "Supplementary references are disabled;
 compare unrecognized visual content with the source PDF."). A recognition with no lines never
 reports `ocrUsed`; see `RecognitionPolicy` above.
+
+### Recognition that left the page's writing unread (#116)
+
+Vision can return success with whole paragraphs or table columns missing, and nothing in the
+result says so. Every recognition is therefore measured against the page it read: the raster
+Vision was given is measured with `OCRTextCoverage` against the recognized line boxes, ignoring
+Vision's own table regions (a recognized table becomes a cropped image whose cells never reflow).
+The reading is **incomplete** when at least `minimumUncoveredRows` (8) rows of the page's
+text-shaped ink lie outside every recognized line and those rows hold at least
+`minimumUncoveredFraction` (20%) of that ink. Both conditions are required: a cover whose single
+uncovered row is all its ink does not reach eight rows, and a dense page's eight stray rows are
+not a fifth of its ink. The check costs about 10 ms a page, roughly 2% of the page's recognition.
+
+An incomplete reading is recognized once more in two bands, the top and bottom 60% of the page
+(`retryBands`), sharing the middle fifth so that a line one band's edge cuts is whole in the
+other. Lines and tables are kept from the band holding their centre (`retryBandSplit`), so the
+shared strip is not transcribed twice, and a table crossing the split is joined from both parts.
+The banded reading replaces the first only when it leaves less text ink uncovered, with both
+readings' tables ignored in that comparison, so a retry cannot win by finding a larger table
+region. There is exactly one retry per page and it never recurses; nothing caps how many pages of
+a document may retry, because a cap would spend itself on whichever lossy pages came first.
+
+Whatever the retry recovers, the reading the reader is given is reported: a page whose final
+reading is still incomplete raises `incompleteRecognition`, stating the share of the page's
+text-shaped ink still outside every recognized line and whether the band retry had already been
+tried. Only a page whose recognition became its text reports it — a reading discarded as noise or
+lost to a layer comparison is not what the reader gets, and those outcomes say so themselves.
+
+Evidence: [ocr-text-loss](../measurements/ocr-text-loss/record.md). Which pages a given Vision
+build drops is not stable across compiled model sets or even across runs (#173), so the library's
+tests for this behaviour use canned readings rather than Vision. The rule is one-sided: it misses
+dense pages whose missing text is a small share of their ink, notably the Warren report's endnote
+pages, which lose about half their words at an uncovered share just under 20% (#240).
 
 ## DocumentEvidence and PageStore: what survives extraction
 
@@ -760,6 +799,7 @@ Evidence: [spine-packing](../measurements/spine-packing/record.md),
 | `structureFallback` | Tagged text on the page could not be matched unambiguously to native lines; or, attached to page 1, the document's structure tree was rejected (invalid, over budget or outside supported roles). |
 | `ocrUsed` | Recognition replaced the page's text with at least one recognized line. |
 | `ocrFailed` | Recognition threw, or succeeded and read nothing: the page became an image, the compared layer was retained, or a drawn-text page kept its crops. |
+| `incompleteRecognition` | Recognition replaced the page's text and its final reading still leaves at least 8 rows holding at least 20% of the page's text-shaped ink outside every recognized line (#116). The message gives the share and says whether the band retry had already run. Not emitted for a reading the conversion discarded. |
 | `uncertainHyphen` | A line-end hyphen neither the vocabulary nor the lexicon could decide is retained; once per page (`HyphenRepair`). |
 | `furnitureRemoved` | A repeated header, footer or folio was omitted from this page (`FurnitureDetector`). |
 | `imageRegion` | Figures, tables or equations on the page are carried as crops ("Graphical regions retain source appearance as images; their internal text does not reflow."), or a source-page reference accompanies reflowed text ("A source-page reference image accompanies reflowed text to preserve all visual content."). |

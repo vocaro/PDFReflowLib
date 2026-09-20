@@ -626,9 +626,13 @@ lost to a layer comparison is not what the reader gets, and those outcomes say s
 
 Evidence: [ocr-text-loss](../measurements/ocr-text-loss/record.md). Which pages a given Vision
 build drops is not stable across compiled model sets or even across runs (#173), so the library's
-tests for this behaviour use canned readings rather than Vision. The rule is one-sided: it misses
-dense pages whose missing text is a small share of their ink, notably the Warren report's endnote
-pages, which lose about half their words at an uncovered share just under 20% (#240).
+tests for this behaviour use canned readings rather than Vision. Coverage is measured from what a
+line wrote, not from the box Vision returned: over 18,442 lines of readings their pages' layers
+confirm complete, a line is 0.555 row-heights wide per character, while the Warren endnote
+readings run to 0.868, so a box-derived measure reported their untranscribed remainder as
+accounted for and those pages went unretried (#240). A line therefore covers `advances` times 0.6
+times the page's own median row height, with a fullwidth or ideographic character counting as two,
+without which 24 of the 25 sound Chinese IRS pages false-fire.
 
 ## DocumentEvidence and PageStore: what survives extraction
 

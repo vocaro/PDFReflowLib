@@ -1,11 +1,10 @@
 {
-  "capturedOn": "2026-09-19",
+  "capturedOn": "2026-09-20",
   "repository": "vocaro/PDFReflowLib",
   "source": "gh issue list --repo vocaro/PDFReflowLib --state all --limit 1000 --json number,state",
   "purpose": "What tools/check_issue_citations.py reads instead of the network. Refresh with `python3 tools/check_issue_citations.py --refresh` and commit the result.",
   "open": [
     4,
-    10,
     15,
     17,
     18,
@@ -23,7 +22,6 @@
     123,
     130,
     136,
-    137,
     139,
     149,
     157,
@@ -38,7 +36,6 @@
     175,
     182,
     183,
-    184,
     191,
     192,
     195,
@@ -57,15 +54,10 @@
     228,
     230,
     231,
-    232,
     233,
     235,
-    236,
-    237,
-    238,
-    239,
-    240,
-    241
+    242,
+    243
   ],
   "closed": [
     1,
@@ -76,6 +68,7 @@
     7,
     8,
     9,
+    10,
     11,
     12,
     13,
@@ -185,6 +178,7 @@
     133,
     134,
     135,
+    137,
     138,
     140,
     141,
@@ -217,6 +211,7 @@
     179,
     180,
     181,
+    184,
     185,
     186,
     187,
@@ -246,6 +241,13 @@
     226,
     227,
     229,
-    234
+    232,
+    234,
+    236,
+    237,
+    238,
+    239,
+    240,
+    241
   ]
 }

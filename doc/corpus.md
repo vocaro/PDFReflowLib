@@ -296,7 +296,9 @@ title. [Review points](../corpus/gpo-911-2004-review.json) and
 [baseline evidence](../measurements/gpo-911-2004/record.md) distinguish successful word-spacing
 examples from retained headers, false notes headings and flattened note markers.
 
-[Issue #10](https://github.com/vocaro/PDFReflowLib/issues/10) parks the heading investigation.
+[Issue #10](https://github.com/vocaro/PDFReflowLib/issues/10)'s heading investigation is done: the
+running heads it describes are removed on document-wide margin-slot evidence, and the report's
+heading elements that are running heads went from six to none.
 The owner's 46/54 figure comes from a separate Claude ALL-CAPS prototype, not PDFReflowLib:
 46 candidates were headers, 50 were non-headings overall, and four were genuine. Its sample
 uses a Chapter 1 granule with a different identity. Those reported counts are preserved with

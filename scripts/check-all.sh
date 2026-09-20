@@ -67,15 +67,22 @@ background() {
 }
 
 # Waits for every started gate and reports each; a failed gate's log tail is printed unless its
-# output already went to the terminal. Returns nonzero when any gate in this step failed.
+# output already went to the terminal. Exit 3 from a memory gate means host memory pressure left
+# a ceiling unmeasured: still not a pass, but reported apart from a failure so that a loaded
+# machine is not investigated as a library regression. Returns nonzero when any gate in this
+# step did not pass.
 finish_gates() {
-    local pid name status seconds step_failed=0
+    local pid name status seconds label step_failed=0 step_unmeasured=0
     for pid in ${PIDS[@]+"${PIDS[@]}"}; do wait "$pid" || true; done
     for name in ${GATES[@]+"${GATES[@]}"}; do
         read -r status seconds < "$LOGS/$name.status"
-        TIMINGS+=("$(printf '%-28s %5ss  %s' "$name" "$seconds" "$([[ $status == 0 ]] && echo PASS || echo FAIL)")")
+        case $status in 0) label=PASS ;; 3) label=UNMEASURED ;; *) label=FAIL ;; esac
+        TIMINGS+=("$(printf '%-28s %5ss  %s' "$name" "$seconds" "$label")")
         if [[ $status == 0 ]]; then
             echo "PASS $name (${seconds}s)"
+        elif [[ $status == 3 ]]; then
+            step_unmeasured=1
+            echo "UNMEASURED $name (${seconds}s; log $LOGS/$name.log): host memory pressure left a memory ceiling unmeasured. Every other gate passed; re-run on an unloaded host."
         else
             step_failed=1
             echo "FAIL $name (${seconds}s, exit $status; log $LOGS/$name.log)"
@@ -84,7 +91,14 @@ finish_gates() {
     done
     GATES=()
     PIDS=()
-    return $step_failed
+    if [[ $step_failed == 1 ]]; then return 1; fi
+    return $((step_unmeasured * 3))
+}
+
+# Keeps the worst outcome seen so far: a failure outranks an unmeasured gate.
+record_step() {
+    local status=$1
+    if [[ $status == 1 || $FAILED == 0 ]]; then FAILED=$status; fi
 }
 
 report_timings() {
@@ -103,7 +117,7 @@ BINARY_DIR="$(swift build -c release --show-bin-path)"
 # explicit diagnostic campaign because they can reproduce the upstream exception.
 foreground pdfkit-concurrency python3 tools/check_pdfkit_concurrency.py --output "$WORK/concurrency" \
     --modes native --workers 1 8 --trials 2 --iterations 50
-finish_gates || FAILED=1
+finish_gates || record_step $?
 
 EPUBCHECK=()
 if command -v epubcheck >/dev/null; then EPUBCHECK=(--epubcheck "$(command -v epubcheck)"); fi
@@ -132,6 +146,6 @@ elif [[ $FAST == 0 && -f "${PDFREFLOW_REAL_PDF:-corpus/cache/faa-h-8083-25c.pdf}
 else
     echo "Skipped real-document memory gate (--fast or source absent; set PDFREFLOW_REAL_PDF)."
 fi
-finish_gates || FAILED=1
+finish_gates || record_step $?
 report_timings
 exit $FAILED

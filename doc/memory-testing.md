@@ -5,7 +5,27 @@ launches the release converter in a fresh process and obtains that child's peak 
 size (RSS) from `wait4`. The measurement excludes the parent, build, structural checks and
 EPUBCheck; unrelated earlier children cannot contaminate it. This kernel high-water mark
 captures transient spikes between samples. Separately, 100 ms samples record the converter's
-physical footprint and progress stage; the sampled peak can miss short spikes.
+physical footprint and progress stage; the sampled peak can miss short spikes. Each sample also
+carries `ri_lifetime_max_phys_footprint`, the kernel's own high-water mark of the footprint
+ledger, recorded as `converterLifetimeMaxPhysicalFootprintBytes`. Unlike the sampled footprint it
+cannot miss a spike, and the ledger counts compressed pages that a resident size does not — but it
+counts them at their compressed size, so it bounds nothing. It is corroborating evidence; the
+ceilings are peak RSS ceilings and nothing gates on it
+([decision 0009](decisions/0009-an-unmeasured-ceiling-is-not-a-failure.md)).
+
+Memory is measured on the whole machine, so the machine is part of the measurement. Under
+pressure macOS compresses and pages out resident memory, which can only lower a peak RSS. The
+evaluator samples `kern.memorystatus_vm_pressure_level` while the converter runs and reports one
+of three outcomes: `exceeded` when the peak is above the ceiling, which pressure cannot explain
+away; `passed` when the peak is inside it and pressure stayed normal; and `notMeasured` when the
+peak is inside it but pressure rose, which neither passes the ceiling nor fails it. An
+unmeasured ceiling exits 3, apart from a failure's 1, so that a loaded host is not investigated
+as a regression. Before settling for that the evaluator waits up to `--settle-seconds` (default
+60) for the host to go quiet ahead of each conversion, and spends a second of `--memory-attempts`
+(default 2) conversions on a spoiled measurement — but only once the host has settled, so a
+machine that stays loaded costs one conversion, not several. Every attempt is kept, in
+`conversionAttempts` and in `memory-samples-N.json`. None of this makes a busy machine a fit
+place to measure memory: build other projects elsewhere, or afterwards.
 
 `corpus/manifest.json` supplies each document's default ceiling. The FAA handbook's initial
 macOS arm64 ceiling is **1,280 MiB peak RSS**. This prevents a return to the measured multi-GB
@@ -25,11 +45,12 @@ python3 tools/evaluate_real_document.py --case faa-phak-8083-25c \
 ```
 
 The output directory must be new. Override the ceiling with `--max-peak-rss-mib 1024`, or change
-the checked-in manifest to set the team's agreed budget. An exceeded ceiling returns nonzero
-while retaining the EPUB, result, conversion report and memory trace for diagnosis. Progress
-checks enforce monotonic work percentages, valid page bounds and a final completion event.
-Progress measures completed work, not elapsed time or an ETA. `--timeout` bounds the child run;
-forced termination can leave a staging directory, unlike cooperative library cancellation.
+the checked-in manifest to set the team's agreed budget. An exceeded ceiling returns 1, and a
+ceiling host pressure left unmeasured returns 3; both retain the EPUB, result, conversion report
+and memory trace for diagnosis. Progress checks enforce monotonic work percentages, valid page
+bounds and a final completion event. Progress measures completed work, not elapsed time or an
+ETA. `--timeout` bounds the child run; forced termination can leave a staging directory, unlike
+cooperative library cancellation.
 
 The memory ceiling is a regression gate, not a runtime allocation limiter. A successful package
 and memory result does not mean the book has passed fidelity review. The FAA case explicitly
@@ -43,7 +64,8 @@ printed as a skip. Invoking the dedicated script with a missing source fails. Se
 `PDFREFLOW_REAL_PDF` to use another location for the same pinned bytes.
 
 The fast instrumentation controls exercise real child allocations above/below the ceiling,
-source verification and isolation from an earlier child's high-water mark:
+source verification, isolation from an earlier child's high-water mark, and each pressure
+outcome with its settle-and-retry:
 
 ```sh
 python3 -m unittest discover -s tools -p 'test_*.py' -v

@@ -55,6 +55,12 @@ class CorpusContentTests(unittest.TestCase):
             self.assertFalse(self.check(result=result)['passed'])
         self.assertFalse(self.check(result=dict(self.result, runPassed=False))['passed'])
         self.assertFalse(self.check(result=dict(self.result, conversionExitCode=1))['passed'])
+        # A ceiling host memory pressure left unmeasured is not a verdict on the content, but it
+        # excuses nothing else: every other gate still has to have passed (decision 0009).
+        unmeasured = dict(self.result, runPassed=False, memoryGate={'status': 'notMeasured'})
+        self.assertFalse(self.check(result=unmeasured)['passed'])
+        self.assertTrue(self.check(result=dict(unmeasured, gatesPassedApartFromMemory=True))['passed'])
+        self.assertFalse(self.check(result=dict(unmeasured, gatesPassedApartFromMemory=False))['passed'])
         for markers in [[1], [2, 1], [1, 1, 2]]:
             self.assertFalse(self.check(markers=markers)['passed'])
         self.pages[2]['text'] += '\ufffc'

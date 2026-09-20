@@ -60,7 +60,8 @@ print(json.dumps({{"pageCount": 1, "reflowedPageCount": 1, "recognizedPageCount"
         output = self.root / "result"
         arguments = ["runner", "--case", "control", "--pdf", str(self.pdf),
                      "--converter", str(self.converter), "--output", str(output),
-                     "--max-peak-rss-mib", str(limit), '--execution-context', 'test-child'] + list(extra)
+                     "--max-peak-rss-mib", str(limit), '--execution-context', 'test-child',
+                     '--settle-seconds', '0'] + list(extra)
         with patch.object(sys, "argv", arguments), contextlib.redirect_stdout(io.StringIO()):
             code = runner.main()
         return code, json.loads((output / "result.json").read_text())
@@ -82,14 +83,80 @@ print(json.dumps({{"pageCount": 1, "reflowedPageCount": 1, "recognizedPageCount"
         self.assertTrue(result["runPassed"])
         self.assertEqual(code, 0)
 
-    def test_host_memory_pressure_fails_a_peak_below_limit(self):
+    def test_host_memory_pressure_leaves_the_ceiling_unmeasured_rather_than_failed(self):
         with patch.object(runner, "pressure_reader", return_value=lambda: 2):
             code, result = self.invoke(512)
         self.assertEqual(result["peakMemoryPressureLevel"], 2)
+        self.assertEqual(result["structuralCheck"], "passed")
+        self.assertEqual(result["memoryGate"]["status"], "notMeasured")
         self.assertFalse(result["memoryGate"]["passed"])
         self.assertIn("pressure", result["memoryGate"]["error"])
         self.assertFalse(result["runPassed"])
+        self.assertEqual(code, runner.UNMEASURED_MEMORY_EXIT)
+
+    def test_a_peak_over_the_ceiling_fails_even_under_host_memory_pressure(self):
+        # Pressure only ever lowers a resident size, so an exceedance measured under it is real.
+        with patch.object(runner, "pressure_reader", return_value=lambda: 2):
+            code, result = self.invoke(16)
+        self.assertEqual(result["memoryGate"]["status"], "exceeded")
+        self.assertEqual(result["memoryGate"]["attempts"], 1)
         self.assertEqual(code, 1)
+
+    def test_a_second_attempt_measures_the_ceiling_once_the_host_settles(self):
+        level = [2]
+        waits = []
+
+        def quieting_settle(read_pressure, seconds):
+            waits.append(seconds)
+            if len(waits) > 1:  # the unrelated load ends while this run waits for it
+                level[0] = 1
+            return 0.0
+
+        with patch.object(runner, "pressure_reader", return_value=lambda: level[0]), \
+                patch.object(runner, "settle", quieting_settle):
+            code, result = self.invoke(512)
+        self.assertEqual(code, 0)
+        self.assertEqual(len(waits), 2)
+        self.assertEqual(result["memoryGate"]["status"], "passed")
+        self.assertEqual(result["memoryGate"]["attempts"], 2)
+        self.assertEqual([a["peakMemoryPressureLevel"] for a in result["conversionAttempts"]], [2, 1])
+        self.assertTrue((self.root / "result/memory-samples-1.json").is_file())
+        self.assertTrue((self.root / "result/memory-samples.json").is_file())
+
+    def test_a_host_that_never_settles_is_not_given_another_conversion(self):
+        with patch.object(runner, "pressure_reader", return_value=lambda: 2):
+            code, result = self.invoke(512, ["--memory-attempts", "4"])
+        self.assertEqual(code, runner.UNMEASURED_MEMORY_EXIT)
+        self.assertEqual(result["memoryGate"]["attempts"], 1)
+        self.assertNotIn("conversionAttempts", result)
+        self.assertFalse((self.root / "result/memory-samples-1.json").exists())
+
+    def test_pressure_before_the_converter_starts_does_not_spoil_its_measurement(self):
+        levels = [2]  # a spike the converter's own pages cannot have been compressed by
+
+        def read():
+            return levels.pop(0) if levels else 1
+
+        with patch.object(runner, "pressure_reader", return_value=read):
+            code, result = self.invoke(512)
+        self.assertEqual(code, 0)
+        self.assertEqual(result["peakMemoryPressureLevel"], 1)
+        self.assertEqual(result["memoryGate"]["status"], "passed")
+
+    def test_the_kernels_footprint_high_water_mark_is_recorded(self):
+        # Corroborating evidence for a peak RSS: a high-water mark cannot miss a spike between
+        # two samples, and the footprint ledger counts compressed pages. Not gated on.
+        code, result = self.invoke(512)
+        self.assertEqual(code, 0)
+        self.assertGreater(result["converterLifetimeMaxPhysicalFootprintBytes"],
+                           result["sampledPeakPhysicalFootprintBytes"] / 2)
+
+    def test_settle_waits_for_normal_pressure_and_gives_up(self):
+        levels = [4, 2, 1]
+        self.assertIsNotNone(runner.settle(lambda: levels.pop(0), 10))
+        self.assertEqual(levels, [])
+        self.assertIsNone(runner.settle(lambda: 2, 0))
+        self.assertLess(runner.settle(lambda: 1, 0), 1)
 
     def test_concurrent_evaluations_are_recorded(self):
         code, result = self.invoke(512, ["--concurrent-evaluations", "6"])
@@ -171,7 +238,8 @@ pathlib.Path(sys.argv[5]).write_text(json.dumps(payload))
         data["documents"][0]["memoryBudget"] = {"maxPeakRSSMiB": 16}
         manifest.write_text(json.dumps(data))
         arguments = ["runner", "--case", "control", "--pdf", str(self.pdf),
-                     "--converter", str(self.converter), "--output", str(self.root / "result")]
+                     "--converter", str(self.converter), "--output", str(self.root / "result"),
+                     "--settle-seconds", "0"]
         with patch.object(sys, "argv", arguments), contextlib.redirect_stdout(io.StringIO()):
             self.assertEqual(runner.main(), 1)
         result = json.loads((self.root / "result/result.json").read_text())
@@ -191,7 +259,8 @@ pathlib.Path(sys.argv[5]).write_text(json.dumps(payload))
         self.converter.write_text(f"#!{sys.executable}\nimport time\ntime.sleep(30)\n")
         output = self.root / "result"
         arguments = ["runner", "--case", "control", "--pdf", str(self.pdf),
-                     "--converter", str(self.converter), "--output", str(output), "--timeout", "0.1"]
+                     "--converter", str(self.converter), "--output", str(output), "--timeout", "0.1",
+                     "--settle-seconds", "0"]
         with patch.object(sys, "argv", arguments), contextlib.redirect_stdout(io.StringIO()):
             self.assertEqual(runner.main(), 1)
         result = json.loads((output / "result.json").read_text())
@@ -211,6 +280,15 @@ pathlib.Path(sys.argv[5]).write_text(json.dumps(payload))
             self.invoke(float("nan"))
         self.assertEqual(error.exception.code, 2)
         self.assertFalse((self.root / "result").exists())
+
+    def test_invalid_attempt_and_settle_values_are_rejected(self):
+        for extra in [["--memory-attempts", "0"], ["--settle-seconds", "-1"],
+                      ["--settle-seconds", "nan"]]:
+            with self.subTest(extra=extra):
+                with contextlib.redirect_stderr(io.StringIO()), self.assertRaises(SystemExit) as error:
+                    self.invoke(512, extra)
+                self.assertEqual(error.exception.code, 2)
+                self.assertFalse((self.root / "result").exists())
 
 
 if __name__ == "__main__":

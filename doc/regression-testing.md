@@ -37,12 +37,13 @@ What the individual gates check:
   concurrency test overlaps four conversions and one canceled conversion, checking ownership,
   styles, images, monotonic progress and staging cleanup. For iOS:
   `xcodebuild test -scheme PDFReflowLib-Package -destination 'platform=iOS Simulator,name=iPhone 18 Pro' CODE_SIGNING_ALLOWED=NO`.
-- `python3 -m unittest discover -s tools -p 'test_*.py' -v`: <!-- counts:python-tests -->210 Python tests<!-- counts:end --> over the tools,
+- `python3 -m unittest discover -s tools -p 'test_*.py' -v`: <!-- counts:python-tests -->219 Python tests<!-- counts:end --> over the tools,
   including the checker's negative controls, the identity tool, the memory-gate instrumentation
   (real child allocations above and below a ceiling, source verification, isolation from an
-  earlier child's high-water mark), the comparison and reader servers (no Poppler or socket
-  needed; a real-Poppler image-URL check through the safe HTTP handler in simple and positioned
-  modes, with paths containing spaces, skips explicitly when Poppler is absent), and
+  earlier child's high-water mark, and each host-pressure outcome with its settle-and-retry),
+  the comparison and reader servers (no Poppler or socket needed; a real-Poppler image-URL check
+  through the safe HTTP handler in simple and positioned modes, with paths containing spaces,
+  skips explicitly when Poppler is absent), and
   `tools/test_pdfkit_gate.py`, which runs `tools/check_pdfkit_gate.py` over `Sources/` and
   `Tests/` and fails on any font, CoreText or PDFKit call made outside
   `NativeTextReader.withExtractionLock` or `pdfKitGated` (`Tests/PDFReflowLibTests/PDFKitGate.swift`).
@@ -110,7 +111,8 @@ What the individual gates check:
   within 30 per page (`--maximum-leaked-objects-per-page`); leaked bytes are reported, not gated.
   See [memory testing](memory-testing.md#repeated-conversions-in-one-process).
 - `scripts/check-pdf-reflow-memory.sh` (full lane): the FAA conversion under its manifest
-  ceiling; see [memory testing](memory-testing.md).
+  ceiling; see [memory testing](memory-testing.md). Exit 3, reported as `UNMEASURED`, means host
+  memory pressure left the ceiling unmeasured rather than the library exceeding it.
 - `tools/run_corpus_regressions.py` (corpus lane): the [corpus lane](#the-corpus-lane) below.
 
 ### Parallel gates
@@ -131,12 +133,17 @@ The converter is single-threaded (CPU seconds match wall seconds on every corpus
 in separate processes scale with cores. Peak RSS is measured per process, so concurrent cases do
 not share a reading. Under host memory pressure macOS compresses and pages out resident memory,
 and a conversion could come in under a ceiling it would exceed on an unloaded host, so the
-evaluator samples `kern.memorystatus_vm_pressure_level` throughout each conversion, records
-`peakMemoryPressureLevel` and `concurrentEvaluations` in `result.json`, and fails the memory gate
-when pressure rises above normal. Every current ceiling together totals 7.5 GiB. Serial and
-six-job runs on one commit agree on every case under `tools/compare_conversion_runs.py` and in
-their content assessments; in parallel, peak RSS reads 1–13% higher, not lower, and conversion
-times include contention ([record](../measurements/parallel-gates/record.md)).
+evaluator samples `kern.memorystatus_vm_pressure_level` while each converter runs and records
+`peakMemoryPressureLevel` and `concurrentEvaluations` in `result.json`. A peak taken under
+pressure that is inside its ceiling neither fails the gate nor passes it: the gate reports
+`notMeasured`, after waiting for the host to settle and spending a second conversion on it, and
+the case is reported as `UNMEASURED` with exit 3 rather than as a failure
+([decision 0009](decisions/0009-an-unmeasured-ceiling-is-not-a-failure.md),
+[memory testing](memory-testing.md)). A peak above its ceiling fails whatever the host was doing.
+Every current ceiling together totals 7.5 GiB. Serial and six-job runs on one commit agree on
+every case under `tools/compare_conversion_runs.py` and in their content assessments; in
+parallel, peak RSS reads 1–13% higher, not lower, and conversion times include contention
+([record](../measurements/parallel-gates/record.md)).
 
 ### Inspecting large outputs
 
@@ -163,10 +170,12 @@ tools/run_corpus_regressions.py --converter <CLI> --epubcheck <executable> --out
 ```
 
 Repeat `--case <id>` to narrow a debugging run; the summary lists omitted cases explicitly, and a
-failing case does not hide later results. `--jobs N` evaluates N cases at once (default 1).
-Each case verifies the pinned source identity, converts in a fresh release process, checks EPUB
-structure, EPUBCheck, monotonic progress, the manifest memory ceiling and the reviewed content
-contract in [corpus/regressions.json](../corpus/regressions.json):
+failing case does not hide later results. `--jobs N` evaluates N cases at once (default 1). The
+lane exits 1 for a failed case and 3 when unmeasured memory ceilings are all that stand between
+it and a pass; `--memory-attempts` and `--settle-seconds` reach the evaluator's handling of a
+loaded host. Each case verifies the pinned source identity, converts in a fresh release process,
+checks EPUB structure, EPUBCheck, monotonic progress, the manifest memory ceiling and the
+reviewed content contract in [corpus/regressions.json](../corpus/regressions.json):
 <!-- counts:contract-coverage -->558 checks on 126 reviewed pages across 18 documents<!-- counts:end -->.
 All source-page anchors must remain complete and ordered, and semantic text must
 contain no image-attachment placeholders. The manifest consistency test requires every corpus

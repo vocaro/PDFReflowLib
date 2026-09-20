@@ -95,6 +95,42 @@ class CorpusRunnerTests(unittest.TestCase):
         self.assertEqual([r['case'] for r in summary['results']], ['first', 'second'])
         self.assertEqual([r['passed'] for r in summary['results']], [False, True])
 
+    def test_an_unmeasured_memory_ceiling_is_reported_apart_from_a_failure(self):
+        for case in self.cases:
+            (self.root / 'corpus/cache' / case['filename']).touch()
+
+        def launch(command, **kwargs):
+            name = command[command.index('--case') + 1]
+            self.assertEqual(float(command[command.index('--settle-seconds') + 1]), 0)
+            Path(command[command.index('--output') + 1]).mkdir()
+            return SimpleNamespace(returncode=runner.UNMEASURED_MEMORY_EXIT if name == 'first' else 0)
+
+        with patch.object(runner.subprocess, 'run', side_effect=launch), \
+                patch.object(runner, 'check_evaluation', side_effect=lambda case, contract, directory:
+                             {'case': case['id'], 'passed': True}):
+            # Not a pass, and its own exit status: every other gate passed and the host, not this
+            # library, is what the run measured.
+            self.assertEqual(self.run_main(['--settle-seconds', '0']), runner.UNMEASURED_MEMORY_EXIT)
+        summary = json.loads((self.root / 'output/summary.json').read_text())
+        self.assertFalse(summary['passed'])
+        self.assertEqual(summary['memoryUnmeasured'], ['first'])
+        self.assertEqual([r['passed'] for r in summary['results']], [False, True])
+        self.assertTrue(summary['results'][0]['memoryUnmeasured'])
+
+    def test_a_real_failure_outranks_an_unmeasured_ceiling(self):
+        for case in self.cases:
+            (self.root / 'corpus/cache' / case['filename']).touch()
+
+        def launch(command, **kwargs):
+            name = command[command.index('--case') + 1]
+            Path(command[command.index('--output') + 1]).mkdir()
+            return SimpleNamespace(returncode=runner.UNMEASURED_MEMORY_EXIT if name == 'first' else 1)
+
+        with patch.object(runner.subprocess, 'run', side_effect=launch), \
+                patch.object(runner, 'check_evaluation', side_effect=lambda case, contract, directory:
+                             {'case': case['id'], 'passed': True}):
+            self.assertEqual(self.run_main(), 1)
+
     def test_nonpositive_jobs_are_rejected(self):
         with self.assertRaises(SystemExit) as error:
             self.run_main(['--jobs', '0'])

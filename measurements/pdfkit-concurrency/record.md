@@ -69,7 +69,7 @@ work. At that revision, `NativeTextReader` held one static NSLock for its synchr
 extraction. The lock covered plain selections, attributed reads and copying results into value
 types. It was released before returning to progress, OCR, graphics or packaging work.
 Cancellation was checked before waiting and after acquisition; the lock wait itself was not
-cancellable. Concurrent imports traded extraction throughput for serialization. A single
+cancelable. Concurrent imports traded extraction throughput for serialization. A single
 converter retained its page-by-page flow and all attributed formatting.
 
 This cannot coordinate PDFKit calls outside this copy of the library, nor establish safety for
@@ -79,7 +79,7 @@ host's own PDFKit reader. #21 remains open for the upstream exception and limits
 cancellation. The public API and conversion/image/resource defaults are unchanged.
 
 Since `ea7ddfd`, acquisition tries the lock immediately and checks cancellation between 50 ms
-timed waits when contended, as well as before and after acquisition. A cancelled waiter can
+timed waits when contended, as well as before and after acquisition. A canceled waiter can
 return while another extraction still holds the lock. Each timed wait still blocks its worker
 thread, the interval is not a hard latency guarantee, and a PDFKit call already executing cannot
 be interrupted. See the [later cancellation evidence](../extraction-cancellation/record.md)
@@ -92,7 +92,7 @@ explicit diagnostic, because it can reproduce the upstream abort.
 Seven Python tests enforce incomplete/malformed receipt rejection, nonzero exit/signal handling,
 retained failure logs, timeout termination/reaping, output-directory protection and independent
 fixture offsets/stream lengths. A public Swift API test overlaps four different fixture
-conversions and one cancelled conversion, checking separate content/metadata, bold/italic
+conversions and one canceled conversion, checking separate content/metadata, bold/italic
 styles, images, ordered progress, completed-file visibility and staging cleanup.
 
 ## Complete corpus and platform checks

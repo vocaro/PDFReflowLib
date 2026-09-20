@@ -30,7 +30,7 @@ def tokens(text):
 
 def main():
     signals, texts, source, out = (Path(a) for a in sys.argv[1:5])
-    labelled = []
+    labeled = []
     for line in signals.open():
         record = json.loads(line)
         page = record['page']
@@ -45,9 +45,9 @@ def main():
             shared = sum((read & layer).values())
             record[f'{reading}Recall'] = shared / max(1, sum(layer.values()))
             record[f'{reading}Precision'] = shared / max(1, sum(read.values()))
-        labelled.append(record)
-    out.write_text(json.dumps(labelled))
-    print(f'{len(labelled)} pages labelled from {signals.name}')
+        labeled.append(record)
+    out.write_text(json.dumps(labeled))
+    print(f'{len(labeled)} pages labeled from {signals.name}')
 
 
 if __name__ == '__main__':

@@ -17,7 +17,7 @@ not have. Nothing below was copied from the branch's record; every number was re
 [`tools/probes/probe-ocr-text-loss.swift`](../../tools/probes/probe-ocr-text-loss.swift) verifies
 the corpus source's SHA-256, rasterizes each page as the conversion does, and calls the shipped
 `OCRReader.recognize`, `OCRReader.completeReading` and `OCRTextCoverage` — so what it reports is
-the library's behaviour, not a reimplementation. [`run-probe.sh`](run-probe.sh) builds it from the
+the library's behavior, not a reimplementation. [`run-probe.sh`](run-probe.sh) builds it from the
 one source list the gates read and runs it over a list of corpus cases;
 [`summarize.py`](summarize.py) reduces its per-page JSON to [results.json](results.json).
 [`recognized_pages.py`](recognized_pages.py) converts a book and reports which pages recognition
@@ -72,7 +72,7 @@ artwork, and their ink is a drawing rather than writing.
 
 A flagged page is recognized once more in two bands, the top and bottom 60% of the page, sharing
 the middle fifth so that a line one band's edge cuts is whole in the other. Lines are kept from
-the band holding their centre, so the shared strip is not transcribed twice. The banded reading is
+the band holding their center, so the shared strip is not transcribed twice. The banded reading is
 kept only when it leaves less of the page's text ink uncovered, compared with both readings'
 tables ignored, so a retry cannot win by finding a larger table region — which would move ink out
 of the measurement and text into an image without reading a word more.
@@ -87,7 +87,7 @@ of the measurement and text into an image without reading a word more.
 On this machine's models the retry recovered every flagged page: **no page in the corpus remains
 incomplete after it**, so `incompleteRecognition` does not fire on any corpus book. The warning is
 the contract for the case the retry cannot fix — #108's lossy compile lost about 40% of Census
-lines, and nothing establishes that bands recover that particular loss — and its behaviour is
+lines, and nothing establishes that bands recover that particular loss — and its behavior is
 covered by tests with canned readings rather than by a corpus page.
 
 ## Cost
@@ -116,7 +116,7 @@ compiled set. Nothing here should be read as "page N reads incompletely"; the st
 shape of the distribution — dense tables and handwritten endnote pages lose text, clean prose and
 comic artwork do not.
 
-The library's own tests therefore never run Vision for this behaviour. `RecognitionPolicy.resolve`
+The library's own tests therefore never run Vision for this behavior. `RecognitionPolicy.resolve`
 is given canned `OCRReader.Result` values with `uncoveredTextFraction` already set;
 `PDFReflowLibPipeline.reconstruct` is given a canned recognizer; the loss rule is exercised on
 synthetic rasters with known rows; and `OCRReader.mergeBands` is a pure function tested on band
@@ -128,7 +128,7 @@ coordinates alone.
   here and cannot be summoned on demand.
 - That a retried page's transcription is *correct*. It covers more of the page's writing, which is
   the only thing measured. Blue Book table cells are handwritten and read poorly either way.
-- The rule's behaviour on books not declared English, on right-to-left scripts, or on pages whose
+- The rule's behavior on books not declared English, on right-to-left scripts, or on pages whose
   writing is not printed rows.
 - **That the rule catches every lossy page.** It does not. Warren's endnote pages 856–877 are one
   uniform run whose inherited layers each hold 950–1,200 words; Vision's first reading of each

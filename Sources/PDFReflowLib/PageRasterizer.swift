@@ -112,21 +112,21 @@ enum PageRasterizer {
     ///
     /// `image(page:rect:options:)` fills the raster opaque white before anything is drawn on
     /// it, so every alpha byte is 255 and `premultipliedLast` and `noneSkipLast` describe the
-    /// identical bytes: premultiplying by 1 changes nothing. Relabelling reuses the raster's
+    /// identical bytes: premultiplying by 1 changes nothing. Relabeling reuses the raster's
     /// own data provider, so no pixel is touched, nothing is copied, and a reader is not asked
     /// to carry a constant alpha plane. Only the written file changes; the raster handed to
     /// recognition and to the layer tests keeps the format Vision has been measured against.
     static func opaque(_ image: CGImage) -> CGImage {
         guard image.alphaInfo == .premultipliedLast, image.bitsPerPixel == 32,
               let space = image.colorSpace, let provider = image.dataProvider,
-              let relabelled = CGImage(width: image.width, height: image.height,
+              let relabeled = CGImage(width: image.width, height: image.height,
                   bitsPerComponent: image.bitsPerComponent, bitsPerPixel: image.bitsPerPixel,
                   bytesPerRow: image.bytesPerRow, space: space,
                   bitmapInfo: CGBitmapInfo(rawValue: CGImageAlphaInfo.noneSkipLast.rawValue),
                   provider: provider, decode: nil, shouldInterpolate: image.shouldInterpolate,
                   intent: image.renderingIntent)
         else { return image }
-        return relabelled
+        return relabeled
     }
 
     static func write(_ image: CGImage, to url: URL, jpegQuality: Double? = nil) throws {

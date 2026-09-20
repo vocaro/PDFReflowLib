@@ -7,7 +7,7 @@ import Vision
 // measurement, the geometry of the reading's line boxes against the page's own rows of writing,
 // and what the band retry would recover whether or not the shipped rule asks for it. It drives
 // the shipped code — `OCRReader.recognize`, `OCRReader.mergeBands` and `OCRTextCoverage` — so what
-// it reports is the conversion's behaviour. Vision's compiled models decide what any one page
+// it reports is the conversion's behavior. Vision's compiled models decide what any one page
 // reads (#173), so a run is evidence about this machine's models.
 // Run from the repository root; one JSON object per page on stdout.
 //
@@ -193,7 +193,7 @@ import Vision
     }
 
     /// The reading's line boxes with any box taller than `clip` rows of the page's own writing cut
-    /// back to that height about its own centre: one way of not believing a block-shaped region.
+    /// back to that height about its own center: one way of not believing a block-shaped region.
     static func clipped(_ recognition: OCRReader.Recognition, to clip: Double, rowHeight: Double,
                         imageHeight: Double) -> [CGRect] {
         guard rowHeight > 0 else { return recognition.lines.map(\.box) }

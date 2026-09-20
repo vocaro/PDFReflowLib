@@ -340,7 +340,7 @@ private func shiftedGlyphNameOverImagePDF(_ lines: [String]) -> Data {
     // precondition: the correctly-drawn text (shifted glyph names, no ToUnicode) sits over a
     // page-filling image, exactly like a scanned page with an existing corrupted layer would. Only
     // damagedTextEncoding must fire; #93's gate (`!damagedEncoding`) must keep implausibleTextLayer
-    // off a page this check already explains, per architecture.md's "defence in depth" claim.
+    // off a page this check already explains, per architecture.md's "defense in depth" claim.
     let dir = try testPDFDirectory(); defer { try? FileManager.default.removeItem(at: dir) }
     let source = dir.appendingPathComponent("shifted-over-image.pdf")
     try shiftedGlyphNameOverImagePDF(sampleLines).write(to: source)

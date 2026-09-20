@@ -105,7 +105,7 @@ the complete checksum-pinned PDF with the explicit JPEG policy. It cancels once 
 page 900 and separately at the writing handoff after all 1,834 pages have reconstructed.
 Both throw `CancellationError`, emit no completed/1.0 event and leave empty output directories.
 `cancellation-checks.json` independently checks the trigger, page coverage, progress and cleanup.
-The 69.44/99.88-second observations are total time until each cancelled call returns, not
+The 69.44/99.88-second observations are total time until each canceled call returns, not
 cancellation latency or performance comparisons. In-progress platform calls remain cooperative.
 
 Four measurement test functions pass, including negative controls for missing pages, wrong-page

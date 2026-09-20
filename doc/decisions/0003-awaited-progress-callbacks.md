@@ -12,7 +12,7 @@ references). The roadmap asked whether `PDFConverter.convert`'s awaited `Convers
 callback should be replaced by, or supplemented with, such a tree.
 
 The local SDK declarations and executable probes were the evidence for availability and
-behaviour on the installed build; earlier proposal spellings were not what was evaluated. The
+behavior on the installed build; earlier proposal spellings were not what was evaluated. The
 public count-mutation methods are synchronous and provide no awaited client-callback parameter,
 and conforming to `Observable` does not itself implement the library's event-delivery contract.
 
@@ -31,7 +31,7 @@ second block of work. The probes retain successful children until their fraction
 so deinitialization cannot disguise incomplete work. The Swift Foundation project's
 [manager implementation](https://github.com/swiftlang/swift-foundation/blob/main/Sources/FoundationEssentials/ProgressManager/ProgressManager.swift)
 also describes parent completion on child deinitialization; that moving source is explanatory,
-and the retained tests establish the installed SDK's behaviour. The first exploratory run
+and the retained tests establish the installed SDK's behavior. The first exploratory run
 incorrectly expected retaining a reporter to let its manager deinitialize; the final probe checks
 that retention explicitly. No claim is made about future Foundation releases, observation
 scheduling, physical-device latency or relative performance.
@@ -65,7 +65,7 @@ responsibilities. This is a design choice, not a finding that native composition
   use the returned report or thrown error to determine success. Task cancellation remains the
   cancellation mechanism. A future requirement for public composition can justify a separate API
   design.
-- The stage shares now live in `ProgressBudget` (see [behaviour](../behaviour.md#pdfconverter-entry-limits-progress-cancellation)).
+- The stage shares now live in `ProgressBudget` (see [behavior](../behavior.md#pdfconverter-entry-limits-progress-cancellation)).
   No runtime code, output format, conversion option, deployment target, resource budget or
   corpus expectation changed with this evaluation.
 

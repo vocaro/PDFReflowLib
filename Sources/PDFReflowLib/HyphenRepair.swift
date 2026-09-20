@@ -43,7 +43,7 @@ extension LayoutReconstructor {
     /// magazine can print `com-` + `panies` and `infec-` + `tions` and never the words whole or in
     /// another inflection, so the book's own vocabulary is silent although the words are ordinary.
     /// The system's English lexicon (`EnglishText.lexiconContains`, the list the text-layer
-    /// judgement reads) vouches for the join when it holds the joined word and neither half is
+    /// judgment reads) vouches for the join when it holds the joined word and neither half is
     /// independently a lexicon word, with short-fragment guards: two letters a side and six in all.
     /// A compound whose halves are both words (`camera-` + `man`) keeps its hyphen and warns, as
     /// before.

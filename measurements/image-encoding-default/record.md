@@ -15,7 +15,7 @@ branch's records:
 - **`73cbdfe`, the constant alpha plane.** Every raster is drawn into a `premultipliedLast` RGBA
   context over an opaque white fill, so its alpha channel is a constant 255 plane that ImageIO
   wrote into every PNG. `PageRasterizer.write` now relabels the raster opaque over its own pixel
-  buffer — no copy, no pixel read — so PNG records colour type 2.
+  buffer — no copy, no pixel read — so PNG records color type 2.
 - **`fbe3464`, the per-image encoding classifier.** `ImageContentClassifier` decides per image
   whether lossy is safe; `ImageEncoding.automatic(jpegQuality: 0.90)` is the new default for both
   full pages and regions.
@@ -89,21 +89,21 @@ Three things in that table matter more than the byte column:
 
 ### The 36, looked at
 
-The three worst FAA crops were re-rendered as PNG | JPEG strips at 1× and 4×, centred on the
+The three worst FAA crops were re-rendered as PNG | JPEG strips at 1× and 4×, centered on the
 worst 8×8 block (strips are raw captures and stay out of the tree; `strips.py`'s recipe is in the
 Files table):
 
 | Asset | What it is | Class, flat share | Worst edge block | PSNR | At 1× | At 4× |
 | --- | --- | --- | ---: | ---: | --- | --- |
-| `image-299` | isogonic chart: thin red and blue meridians over a pale green map | continuous-tone art, 0.152 | 52.8 | 27.9 | indistinguishable | the thin red meridians desaturate and pick up grey fringes |
+| `image-299` | isogonic chart: thin red and blue meridians over a pale green map | continuous-tone art, 0.152 | 52.8 | 27.9 | indistinguishable | the thin red meridians desaturate and pick up gray fringes |
 | `image-116` | "SPHERE WITH A FAIRING": yellow lettering on saturated blue | continuous-tone art, 0.213 | 52.5 | 29.3 | indistinguishable, fully legible | the yellow letters pick up a green fringe |
-| `image-279` | dark photographic panel with coloured callouts | continuous-tone art, 0.129 | 49.1 | 40.1 | indistinguishable | soft colour edges on the callout text |
+| `image-279` | dark photographic panel with colored callouts | continuous-tone art, 0.129 | 49.1 | 40.1 | indistinguishable | soft color edges on the callout text |
 
-All three are the family the rule documents as its own limit: **coloured continuous-tone crops
+All three are the family the rule documents as its own limit: **colored continuous-tone crops
 below the 0.30 flat share**, which the classifier calls captured tone rather than drawn
 illustration. The branch's worst crop was the same kind and the same size (FAA page 103, yellow
 lettering on blue, 53.6 levels); nothing here is worse than what the rule was adopted knowing.
-What the rule does refuse — coloured line art, charts, mixed crops, coloured text pages — stays
+What the rule does refuse — colored line art, charts, mixed crops, colored text pages — stays
 PNG and is byte-identical in pixels, which is why Wallace's 2,142 equation crops and the CIA
 book's 326 line-art scans do not move.
 
@@ -199,11 +199,11 @@ reference policy for them) or a lane that runs Warren under an explicit larger b
 
 The classifier reads the raster's own buffer through `PageRasterizer.image`'s `inspect` hook
 before the `CGImage` is made — `CGDataProvider.data` on a finished image copies the pixels — and
-its transient memory is a 2 MiB bitset, three rows of grey and 512 KiB of counts whatever the
+its transient memory is a 2 MiB bitset, three rows of gray and 512 KiB of counts whatever the
 raster's size. Measured directly on FAA crops, `features` runs in 2–8 ms each. The wall-clock
 figures above are larger in proportion than the branch's (+9.2%), and they are single observations
 on a machine running five other agents' work; the split between classification, the second encode
-`.smallest` performs, and the neighbours was not measured further. Peak RSS was not measured here;
+`.smallest` performs, and the neighbors was not measured further. Peak RSS was not measured here;
 the memory gate is not part of `--fast`.
 
 ## What this does not establish
@@ -215,7 +215,7 @@ the memory gate is not part of `--fast`.
   this encoder.
 * **Not a device budget.** Every number is from a Mac release CLI.
 * **Thresholds are corpus-fitted.** They were fitted on the branch, on a survey this repository
-  does not hold; this record measures the fitted rule's behaviour, and cannot re-derive it.
+  does not hold; this record measures the fitted rule's behavior, and cannot re-derive it.
 * **Warren is sampled.** Its fidelity figures are 63 images from a 62-page spread plus the gated
   five-page excerpt, not all 931.
 * **The neutral share is a share.** A mostly white chart with small saturated labels passes the

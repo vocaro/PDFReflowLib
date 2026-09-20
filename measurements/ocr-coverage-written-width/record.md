@@ -243,7 +243,7 @@ reported the same six pages incomplete, and returned identical word counts. The 
 once through the shipped rule and once through the always-retry probe. The calibration rests on
 one probe run of 1,111 pages; the Blue Book recall table on one run of its 312.
 
-The library's tests never run Vision for this behaviour, as #116 established.
+The library's tests never run Vision for this behavior, as #116 established.
 `OCRTextCoverage.measure` is exercised on synthetic rasters with known rows and canned line
 boxes, `advances(of:)` on strings, and `OCRReader.bandsAreKept` on numbers alone.
 

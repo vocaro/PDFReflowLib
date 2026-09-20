@@ -4,7 +4,7 @@ Work on [#33](https://github.com/vocaro/PDFReflowLib/issues/33), on top of `b080
 2026-09-19, macOS 27 / Xcode 27, arm64. The change makes reconstruction hand each page's assets
 and blocks to `EPUBWriter` as it finishes them instead of returning one whole `ReflowDocument`,
 so the logical block list is never resident. This records the identity gate that holds the
-refactor to no behaviour change, and what the change does and does not do to measured memory.
+refactor to no behavior change, and what the change does and does not do to measured memory.
 
 ## What changed
 

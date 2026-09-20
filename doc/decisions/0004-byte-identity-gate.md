@@ -5,12 +5,12 @@
 The corpus lane checks reviewed content contracts, EPUB conformance, progress and resource
 budgets; `tools/compare_conversion_runs.py` compares parsed page records, markers, image assets
 and report fields between two evaluations. Neither detects a change in serialization that keeps
-the checked content intact, and a refactor that claims "behaviour unchanged" needs a check that
+the checked content intact, and a refactor that claims "behavior unchanged" needs a check that
 is stricter than either.
 
 ## Decision
 
-A change that claims to preserve behaviour must produce byte-identical output against the
+A change that claims to preserve behavior must produce byte-identical output against the
 previous converter on every corpus, policy-variant and bundled-fixture conversion that completes
 under default budgets, and the books that stop at a budget must stop at the same page.
 `tools/epub_identity.py` performs the check: every archive entry must match exactly, in the same

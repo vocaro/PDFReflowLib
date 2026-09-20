@@ -81,7 +81,7 @@ enum EnglishText {
                 words.append(word)
             }
         }
-        // A damaged piece a neighbour joins into a word was split, not misread (`fi e ld stre ngth`).
+        // A damaged piece a neighbor joins into a word was split, not misread (`fi e ld stre ngth`).
         func joinsNeighbour(_ index: Int) -> Bool {
             [index - 1, index].contains { start in
                 guard start >= 0, start + 1 < words.count else { return false }
@@ -110,7 +110,7 @@ enum EnglishText {
             if !lower && (upper || capitalized || isCompoundName(word)) { counts.neutral += 1; continue }
             counts.damaged += 1
             // Misread in place: a lower-case word of three or more letters, or irregular capitals,
-            // that no neighbour completes.
+            // that no neighbor completes.
             guard !lower || word.count >= minimumMisreadWordLength, !joinsNeighbour(index) else { continue }
             counts.misread += 1
             if counts.misreadExamples.count < misreadExampleLimit { counts.misreadExamples.append(word) }

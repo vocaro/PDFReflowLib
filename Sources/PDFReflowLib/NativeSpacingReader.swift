@@ -37,7 +37,7 @@ enum NativeSpacingReader {
         /// quote with no measurable gap (`sentenceSpace`), #128.
         var sentenceSpaces: Set<Int> = []
         /// Sentence-space candidates whose word before or after reaches the edge of the show, with
-        /// their gaps in em; `missingSpaces` decides them with the neighbouring shows on the line.
+        /// their gaps in em; `missingSpaces` decides them with the neighboring shows on the line.
         var sentenceCandidates: [Int: CGFloat] = [:]
         /// Whether the show sets nonzero character or word spacing, the producer condition of #119.
         var spaced = false

@@ -90,7 +90,7 @@ starting `2ea9065` commit; the intervening NOAA-policy/large-inspector changes w
 and tooling work. The standard corpus comparison uses that same retained runtime baseline.
 
 The existing public-API cancellation probe, linked against the new release library, extracts
-and reconstructs every NOAA page before cancelling at the writing handoff. It throws
+and reconstructs every NOAA page before canceling at the writing handoff. It throws
 `CancellationError`, publishes no EPUB and leaves its output/staging directory empty.
 Its JPEG 0.90 full-page policy and 4 GiB entry/final caps match the earlier cancellation
 measurement; this verifies cleanup/completion semantics, not a device-latency guarantee.

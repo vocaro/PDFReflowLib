@@ -18,7 +18,7 @@ import PDFKit
 ///   and a fresh recognition of their handwritten cells reads no better.
 /// - **Words misread in place (#7).** Under the same conditions, a layer fails when a tenth or more
 ///   of all its words are damaged words of three or more letters (or irregular capitals) that no
-///   neighbour joins into an English word: `tcld t» ftboot` for "told me about" on a carbon
+///   neighbor joins into an English word: `tcld t» ftboot` for "told me about" on a carbon
 ///   typescript, which reads half to three quarters English. Text split inside words
 ///   (`fi e ld stre ngth`) joins up and is not counted.
 /// - **Too little text for the ink.** The page is rendered and its text-shaped ink found as in

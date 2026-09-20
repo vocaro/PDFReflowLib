@@ -22,7 +22,7 @@ class MeasurementTests(unittest.TestCase):
                 (directory / f'cancel-{stage}').mkdir()
                 (directory / f'cancel-{stage}.json').write_text(json.dumps({
                     'sourceSHA256': measure.SOURCE_SHA256, 'sourcePages': 1834,
-                    'cancelled': True, 'outputAbsent': True, 'stagingRemoved': True}))
+                    'canceled': True, 'outputAbsent': True, 'stagingRemoved': True}))
                 log = ''.join(f'0.2 extracting page {p}/1834 cancel=false\n' for p in range(1, 1835))
                 count = 900 if stage == 'reconstructing' else 1834
                 log += ''.join(f'0.5 reconstructing page {p}/1834 cancel=' +

@@ -9,7 +9,7 @@ the only package dependency. The `pdf-reflow` executable is a small client of th
 temporary workspace, composes progress, checks the final archive size, cleans up on failure or
 cancellation and publishes the EPUB atomically. Beneath it, a reconstruction pipeline produces an
 output-independent document and a writer serializes it. The numeric rules every stage applies are
-in [behaviour.md](behaviour.md); why the seams are where they are is under [decisions/](decisions/README.md).
+in [behavior.md](behavior.md); why the seams are where they are is under [decisions/](decisions/README.md).
 
 ## Two intermediate representations
 
@@ -151,7 +151,7 @@ reading a finished image's pixels copies them. It permits lossy for neutral imag
 tonal scans, continuous-tone art (except crops that are drawn illustration) and full-page `mixed`
 references, and hands `PageRasterizer.encode` `.smallest` there and `.png` elsewhere, so `encode`
 keeps its contract and a named encoding never reaches the classifier. Rasters are written without
-their constant alpha plane, relabelled opaque over their own pixel buffer at write time, so a PNG
+their constant alpha plane, relabeled opaque over their own pixel buffer at write time, so a PNG
 records three channels; the raster recognition sees keeps the format Vision is measured against.
 See [conversion options](conversion-options.md#automatic-encoding).
 
@@ -178,7 +178,7 @@ a persistent model would need an explicit resource-lifetime contract. There is n
   directory it is given and never publishes; `PDFConverter` stages beside the destination,
   publishes atomically, never overwrites an existing output, and removes staging on every failure
   and cancellation path.
-- **Byte identity is the refactoring gate.** A change that claims to preserve behaviour must
+- **Byte identity is the refactoring gate.** A change that claims to preserve behavior must
   produce byte-identical EPUB entries and CLI reports, with packaging pinned, on every corpus,
   policy-variant and fixture conversion that completes under default budgets
   (`tools/epub_identity.py`; [decision 0004](decisions/0004-byte-identity-gate.md)).
@@ -199,7 +199,7 @@ ignored `corpus/cache/`), `tools/` (gates, probes, the shared `pdfreflow_tools` 
 standard-library Python fetcher verifies pinned identities into the cache, and conversion and
 tests stay offline unless a developer runs it.
 
-[Behaviour specification](behaviour.md): every rule, threshold and warning code, by module.
+[Behavior specification](behavior.md): every rule, threshold and warning code, by module.
 [Decisions](decisions/README.md): why the seams and conventions are what they are.
 [Regression testing](regression-testing.md): running the gates, adding a case, capturing fixtures.
 Also [conversion options](conversion-options.md), [corpus](corpus.md), [memory testing](memory-testing.md),

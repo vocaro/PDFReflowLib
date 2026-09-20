@@ -340,7 +340,7 @@
   },
   "cancellation": {
     "cancellationStage": "writing",
-    "cancelled": true,
+    "canceled": true,
     "elapsedSeconds": 183.10490500926971,
     "outputAbsent": true,
     "reconstructionTriggerPage": 900,

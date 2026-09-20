@@ -61,7 +61,7 @@ HASH = re.compile(r'(?<![\w/#-])#(\d+)\b')
 # prose has to say so, and the gate requires that commit to appear in every document that cites
 # the issue, so the citation cannot quietly revert to reading like a live tracker (#234).
 ALLOWED = {
-    # Fixed, and cited for what it established or where the behaviour came from.
+    # Fixed, and cited for what it established or where the behavior came from.
     7: ('historical', 'the text-layer quality rules #93/#7 introduced, which this library implements'),
     21: ('historical', 'the extraction gate, named by the issue that established it'),
     24: ('historical', 'a research note recording that #24 was closed with no production change'),
@@ -111,7 +111,7 @@ ALLOWED = {
     229: ('historical', 'the thin-rule seed and bounded expansion, on main and named by the issue that scoped the port'),
     234: ('historical', 'the closed-issue citation gate, named by the issue that asked for it'),
     6: ('historical', "the invisible-OCR font and geometry inference, fixed on main by `7fcb80f` "
-        'and named for where the behaviour came from'),
+        'and named for where the behavior came from'),
     8: ('historical', 'the object-placeholder exclusion from semantic text and reflow counts, '
         'fixed on main by `305cb14` and named by its issue'),
     9: ('historical', "the comparison harness's relative Poppler image URLs, fixed on main by "

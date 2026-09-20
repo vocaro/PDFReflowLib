@@ -176,7 +176,7 @@ private func caseFontObjects(flags: Int = 32, charSet: String? = "(/F/R/I/T/Z/sp
     #expect(repaired.string.contains("Follow"))
 }
 
-/// The magazine's substituted dingbat font sits at a different point size than its neighbours, so
+/// The magazine's substituted dingbat font sits at a different point size than its neighbors, so
 /// PDFKit can report a baseline offset for it large enough to cross NativeTextReader's superscript
 /// tolerance. A bullet GlyphIdentityReader redrew and found standing alone between word spaces is
 /// never read as an inline superscript, however that offset falls; an ordinary raised character

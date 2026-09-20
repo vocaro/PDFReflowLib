@@ -248,7 +248,7 @@ ceiling. The page-by-page review is recorded in the case's `basis` in
 [corpus/regressions.json](../corpus/regressions.json); there is no separate measurement record.
 
 Of the five defects this book was filed for, four are fixed on `main` and are named here for
-where the behaviour came from, not as work in progress: the OCR font and geometry inference
+where the behavior came from, not as work in progress: the OCR font and geometry inference
 ([#6](https://github.com/vocaro/PDFReflowLib/issues/6), `7fcb80f`), the placeholder text and
 counts ([#8](https://github.com/vocaro/PDFReflowLib/issues/8), `305cb14`), the inherited
 text-layer quality rules ([#7](https://github.com/vocaro/PDFReflowLib/issues/7), ported by
@@ -603,7 +603,7 @@ closed, by `88803aca7` and `3a65be6c1` on the abandoned coordination branch, who
 reached `main`; nothing open tracks either. The reconciliation is [#231](https://github.com/vocaro/PDFReflowLib/issues/231).
 
 `TextLayerPlausibilityTests.swift` covers the #176 mechanism itself end to end with synthetic
-slides; the rule is specified in [behaviour](behaviour.md#pages-whose-writing-is-drawn-176).
+slides; the rule is specified in [behavior](behavior.md#pages-whose-writing-is-drawn-176).
 
 ## Agricultural Research magazine
 
@@ -631,7 +631,7 @@ on thin-text pages (a document-wide body floor, plus excluding an isolated lower
 heading-size line), system-lexicon-decided line-end hyphens, (#218) a bold sub-heading whose
 paragraph opens past an intervening picture and its caption, and (#217) dingbat fonts read
 through their own encoding and a font's drawn letter case trusted over its `ToUnicode` map. The
-rules are specified in [behaviour](behaviour.md); the adaptations each port required are in
+rules are specified in [behavior](behavior.md); the adaptations each port required are in
 [decision 0005](decisions/0005-abandoned-coordination-branch.md).
 
 Pages 1, 6, 9, 19 and 24 were converted and read against the actual output — pages 1 and 24

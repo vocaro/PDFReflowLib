@@ -63,7 +63,7 @@ leaves about 0.03 of margin below correct crops. A different raster DPI or a bin
 changes image scale and fails every reference until they are regenerated. Scanned-table cell
 transcription (#31) and structured table output remain separate work.
 
-## Rows, columns and colour
+## Rows, columns and color
 
 A second pass on top of `e00432b` asked what a whole-table reference is actually sensitive to, and
 added six references inside the two table crops: the Salient Statistics rows "Mine, recoverable"
@@ -96,9 +96,9 @@ floor to about 0.98 would catch them, but correct crops sit at 0.982–0.997, so
 smaller than the renderer disagreement the 0.95 floor exists to absorb. The references were left at
 the default and the limit recorded instead.
 
-Colour is not compared at all: the reference is rendered `-gray` and every converted image is
-reduced to `L`. Recolouring CDC's page-13 comic to its complementary chroma in CIE Lab, which
+Color is not compared at all: the reference is rendered `-gray` and every converted image is
+reduced to `L`. Recoloring CDC's page-13 comic to its complementary chroma in CIE Lab, which
 preserves lightness while changing 23.2% of the pixels by more than 20 levels in some channel and
 1.9% by more than 60, leaves the score at 0.997 against 0.997 for the correct output. What an
 appearance gate would need before it could be added is in
-[regression-testing](../../doc/regression-testing.md#why-there-is-no-colour-or-pixel-appearance-gate).
+[regression-testing](../../doc/regression-testing.md#why-there-is-no-color-or-pixel-appearance-gate).

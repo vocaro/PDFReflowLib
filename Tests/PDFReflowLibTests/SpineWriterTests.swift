@@ -127,14 +127,14 @@ private actor SpineProgress {
     #expect(values.last == 1)
     #expect(values == values.sorted())
     #expect(values.allSatisfy { (0...1).contains($0) })
-    let cancelled = try testPDFDirectory(); defer { try? FileManager.default.removeItem(at: cancelled) }
+    let canceled = try testPDFDirectory(); defer { try? FileManager.default.removeItem(at: canceled) }
     let task = Task {
-        try await EPUBWriter.write(book, maximumOutputBytes: 10_000_000, directory: cancelled) { fraction in
+        try await EPUBWriter.write(book, maximumOutputBytes: 10_000_000, directory: canceled) { fraction in
             if fraction == 0 { withUnsafeCurrentTask { $0?.cancel() } }
         }
     }
     await #expect(throws: CancellationError.self) { try await task.value }
-    #expect(!FileManager.default.fileExists(atPath: cancelled.appendingPathComponent("publication.epub").path))
+    #expect(!FileManager.default.fileExists(atPath: canceled.appendingPathComponent("publication.epub").path))
 }
 
 @Test func streamedBlocksStopAtCancellationBeforeAnythingIsPackaged() async throws {

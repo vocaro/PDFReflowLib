@@ -59,7 +59,7 @@ private func clamp(_ value: Int) -> UInt8 { UInt8(max(0, min(255, value))) }
     #expect(f.flatShare == 6.0 / 16)        // the top row and the two outer bottom corners
     #expect(f.hardEdgeShare == 10.0 / 16)
     #expect(f.softEdgeShare == 0)
-    // The modal colour is exact, not a coarse bin: all three colours here share one 4-bit bin, and
+    // The modal color is exact, not a coarse bin: all three colors here share one 4-bit bin, and
     // only exact counts inside it find the ground (13, 14, 15) rather than (0, 0, 0).
     let ground = try raster(width: 10, height: 1) { x, _ in x < 4 ? (13, 14, 15) : x < 7 ? (0, 0, 0) : (1, 1, 1) }
     #expect(ImageContentClassifier.features(of: ground).background == (13, 14, 15))
@@ -89,19 +89,19 @@ private func clamp(_ value: Int) -> UInt8 { UInt8(max(0, min(255, value))) }
 
 /// Positive and negative controls for every verdict the default can reach.
 @Test func lossyIsPermittedForToneAndNeutralImagesAndRefusedForColouredDrawnMatter() throws {
-    // A photograph: colour ramps under sensor noise, nothing flat.
+    // A photograph: color ramps under sensor noise, nothing flat.
     var noise = Noise(seed: 11)
     let photograph = try raster(width: 200, height: 150) { x, y in
         let grain = noise.next(40)
         return (clamp(30 + x + grain), clamp(60 + y + grain), clamp(20 + (x + y) / 2 + grain))
     }
-    // A neutral scan: grey paper and grey ink with noise, no hue at all.
+    // A neutral scan: gray paper and gray ink with noise, no hue at all.
     let scan = try raster(width: 200, height: 150) { x, y in
         let v = (x / 6 + y / 9) % 5 == 0 ? 40 : 225
         let g = clamp(v + noise.next(14))
         return (g, g, g)
     }
-    // A coloured chart: white ground, flat red and blue bars, a green rule.
+    // A colored chart: white ground, flat red and blue bars, a green rule.
     let chart = try raster(width: 200, height: 150) { x, y in
         if y == 140 { return (0, 160, 0) }
         if x > 20 && x < 60 && y > 40 && y < 140 { return (220, 30, 30) }
@@ -141,7 +141,7 @@ private func clamp(_ value: Int) -> UInt8 { UInt8(max(0, min(255, value))) }
 }
 
 @Test func textPagesSplitByPageEvidenceAndOnlyTonalScansPermitColour() {
-    // Typeset: mostly ground, little colour, step edges and no ramps.
+    // Typeset: mostly ground, little color, step edges and no ramps.
     var f = ImageContentClassifier.Features()
     f.backgroundShare = 0.8; f.chromaShare = 0.05; f.softEdgeShare = 0.05; f.hardEdgeShare = 0.1
     f.flatShare = 0.7; f.distinctColours = 20_000; f.bilevelShare = 0.9
@@ -182,9 +182,9 @@ private func clamp(_ value: Int) -> UInt8 { UInt8(max(0, min(255, value))) }
                                            pageDrawnFromImage: false) == .smallest(jpegQuality: 0.8))
 }
 
-/// One born-digital page holding a paragraph over three figures, top to bottom: a noisy colour
+/// One born-digital page holding a paragraph over three figures, top to bottom: a noisy color
 /// photograph, a drawn illustration (a flat saturated sky over shading, the attitude indicator's
-/// make-up) and a flat coloured chart.
+/// make-up) and a flat colored chart.
 private func figuresPDF() throws -> Data {
     let page = CGRect(x: 0, y: 0, width: 612, height: 792)
     let data = NSMutableData()
@@ -193,7 +193,7 @@ private func figuresPDF() throws -> Data {
     let pdf = try #require(CGContext(consumer: consumer, mediaBox: &box, nil))
     pdf.beginPDFPage(nil)
     let lines = ["The photograph below is captured tone and may be stored as JPEG.",
-                 "The illustration and the chart beneath it are drawn in colour and stay lossless.",
+                 "The illustration and the chart beneath it are drawn in color and stay lossless.",
                  "All three are preserved as images; this paragraph reflows as text."]
     pdfKitGated {
         let font = CTFontCreateWithName("Helvetica" as CFString, 11, nil)
@@ -219,8 +219,8 @@ private func figuresPDF() throws -> Data {
     let bars: [(CGFloat, CGColor)] = [(120, CGColor(red: 0.85, green: 0.1, blue: 0.1, alpha: 1)),
                                       (80, CGColor(red: 0.1, green: 0.25, blue: 0.8, alpha: 1)),
                                       (150, CGColor(red: 0.1, green: 0.6, blue: 0.2, alpha: 1))]
-    for (index, (height, colour)) in bars.enumerated() {
-        pdf.setFillColor(colour)
+    for (index, (height, color)) in bars.enumerated() {
+        pdf.setFillColor(color)
         pdf.fill(CGRect(x: 200 + CGFloat(index) * 80, y: 70, width: 50, height: height))
     }
     pdf.setStrokeColor(CGColor(red: 0.9, green: 0.5, blue: 0, alpha: 1))

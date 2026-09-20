@@ -1,4 +1,4 @@
-# Behaviour specification
+# Behavior specification
 
 This document states every rule the conversion applies, with its thresholds and the warning it
 raises, organized by module in pipeline order. [architecture.md](architecture.md) describes the
@@ -81,7 +81,7 @@ Evidence: [pdfkit-structure-tree](../measurements/pdfkit-structure-tree/record.m
   because objects released later on another thread aborted the next extraction with the same
   `NSFont` exception although the two never overlapped under the lock (2 of 80 eight-worker
   processes aborted without the drain, 0 of 70 with it). The lock is released before progress
-  callbacks, OCR, graphics work and writing. A cancelled waiter can return while another
+  callbacks, OCR, graphics work and writing. A canceled waiter can return while another
   extraction still holds the lock; a PDFKit call already executing cannot be interrupted; each
   timed wait blocks its worker thread; concurrent imports trade throughput for serialization.
   Host PDFKit, CoreText or font work outside the library is not covered (Apple FB24796210).
@@ -381,7 +381,7 @@ distinct words per font.
 least 0.15 em stands before a glyph. A gap is the character spacing (`Tc`, in ems of the selected
 size) that the `TJ` adjustments do not cancel; a show begins a word. Census's body kerns measure
 0.00 em and its word gaps 0.43 em, and its letter-spaced headings set 1.10 em of character
-spacing between two glyphs of one string while cancelling it with a +1120 adjustment between the
+spacing between two glyphs of one string while canceling it with a +1120 adjustment between the
 others, which is how `1Introduction` recovers its space. A page drawn with `'` or `"`, whose own
 word spacing this does not model, supplies no evidence at all.
 
@@ -468,7 +468,7 @@ A layer fails, and reports `implausibleTextLayer` under every policy, when any t
   fifth or more of the tokens hold digits (statistical tables and forms are not judged), fewer
   than half English fails.
 - **Words misread in place (#7).** Under the same conditions, a tenth or more of all words are
-  damaged words of three or more letters, or irregular capitals, that no neighbouring word
+  damaged words of three or more letters, or irregular capitals, that no neighboring word
   completes (`tcld t» ftboot` for "told me about" on a carbon typescript).
 - **Too little text for the ink.** Only when the layer holds fewer than 32 English words (no
   surveyed image-backed page leaves 75% of its text ink uncovered in more than 27 rows, and a
@@ -500,7 +500,7 @@ recognized and *compared* (`RecognitionPlan.Mode.compare`), and the recognition 
 reads as English and misreads a smaller share of its own words (`readsBetter`).
 `.automaticIncludingImageBackedText` and `.always` replace outright;
 `.automaticKeepingImageBackedText` and `.never` keep the layer with `unverifiedTextLayer` and its
-reference. A client wanting the pre-#93 automatic behaviour, recognition only of absent or
+reference. A client wanting the pre-#93 automatic behavior, recognition only of absent or
 damaged text, selects `.automaticKeepingImageBackedText`. Recognition replaces the whole layer,
 so a replaced page's reading order, styles and headings come from the recognized text.
 
@@ -611,7 +611,7 @@ not a fifth of its ink. The check costs about 10 ms a page, roughly 2% of the pa
 
 An incomplete reading is recognized once more in two bands, the top and bottom 60% of the page
 (`retryBands`), sharing the middle fifth so that a line one band's edge cuts is whole in the
-other. Lines and tables are kept from the band holding their centre (`retryBandSplit`), so the
+other. Lines and tables are kept from the band holding their center (`retryBandSplit`), so the
 shared strip is not transcribed twice, and a table crossing the split is joined from both parts.
 The banded reading replaces the first only when it leaves less text ink uncovered, with both
 readings' tables ignored in that comparison, so a retry cannot win by finding a larger table
@@ -626,7 +626,7 @@ lost to a layer comparison is not what the reader gets, and those outcomes say s
 
 Evidence: [ocr-text-loss](../measurements/ocr-text-loss/record.md). Which pages a given Vision
 build drops is not stable across compiled model sets or even across runs (#173), so the library's
-tests for this behaviour use canned readings rather than Vision. Coverage is measured from what a
+tests for this behavior use canned readings rather than Vision. Coverage is measured from what a
 line wrote, not from the box Vision returned: over 18,442 lines of readings their pages' layers
 confirm complete, a line is 0.555 row-heights wide per character, while the Warren endnote
 readings run to 0.868, so a box-derived measure reported their untranscribed remainder as
@@ -658,12 +658,12 @@ Evidence: [page-retention](../measurements/page-retention/record.md);
 
 ## FurnitureDetector: running headers, footers and folios
 
-- Short outermost margin rows are removed when at least three neighbouring or alternating
+- Short outermost margin rows are removed when at least three neighboring or alternating
   physical pages support the decision with stable vertical position and typography (a run of at
   least three, in a ledger of at least three pages). Evidence is local to a chapter; document
   length does not set the frequency threshold.
 - The header candidate band is the top 10% of the page (extended for the 9/11 report's
-  headers); the footer band is the bottom 7%, kept narrower to retain whitespace-cut behaviour
+  headers); the footer band is the bottom 7%, kept narrower to retain whitespace-cut behavior
   around illustrated rows: wider footer removal would disturb the alphabetical row order of the
   illustrated entries on Our Flag pages 34/42/43 without independent layout work. Synthetic invisible-text
   layers use the outer 7% on both edges, because their typography supplies no native font
@@ -690,7 +690,7 @@ Evidence: [page-retention](../measurements/page-retention/record.md);
 - Beyond the runs, a document may establish a **margin slot**: an edge, a position within 0.004 of
   the page height, and a type size within the same drift tolerance, at which removals already
   stand on at least six pages and at least a quarter of the document's pages. A candidate row in
-  an established slot is removed although its own words never repeat on three neighbouring pages —
+  an established slot is removed although its own words never repeat on three neighboring pages —
   a transition head naming two chapters, a chapter whose notes fill two pages, front matter naming
   its own part. Slot size is the line's own type size for folios as well as prose, so one unit
   compares them. Stacked bands are never admitted on slot evidence alone. A page's own type size
@@ -752,7 +752,7 @@ leaving that silent, as the tag phase reports its own give-up (#224).
   the document floor. A line is heading-sized when it reaches the threshold, is under 200
   characters, opens with a capital, a digit or a mark unless it **stacks** with another
   display-size line (same size, directly beneath or above at ordinary leading, sharing the left
-  edge, centre or right edge), and, on a recognized page in an English book, `readsAsWords`
+  edge, center or right edge), and, on a recognized page in an English book, `readsAsWords`
   holds. A lone heading-size line opening in lowercase is display text that heads nothing
   ("pages 2, 4-14" beneath a cover title), while the second line of a two-line title keeps its
   reading because it stacks. Candidates within 10% of a supported body size are suppressed while
@@ -1012,6 +1012,6 @@ PDF structure is ambiguous. The synthetic suite and the corpus do not establish 
 textbook fidelity: untagged borderless tables, arbitrary equations, complex magazine layouts,
 footnote relationships, vertical and right-to-left reading order and damaged font encodings
 still need broader qualification. The detectors cannot identify every difficult region. Fonts,
-original colours, full tagged-PDF semantics, links and interactive elements are not reproduced.
+original colors, full tagged-PDF semantics, links and interactive elements are not reproduced.
 Smaller graphics and undetected scans can still carry transcription errors. Review warnings and
 compare the source before distributing a derived book.

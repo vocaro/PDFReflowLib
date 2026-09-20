@@ -29,7 +29,7 @@ enum OCRTextCoverage {
         /// (#116). Vision can return success with whole paragraphs or table columns missing, so
         /// the only evidence the conversion has is the page's own text-shaped ink: rows of it
         /// that no recognized line covers. A row or two is a caption Vision folded into a
-        /// neighbour or a stamp it read as art; `minimumUncoveredRows` rows holding
+        /// neighbor or a stamp it read as art; `minimumUncoveredRows` rows holding
         /// `minimumUncoveredFraction` of the page's text ink is a dropped paragraph.
         ///
         /// Both conditions are needed. The share alone flags a sparse page whose three uncovered

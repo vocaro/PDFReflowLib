@@ -55,7 +55,7 @@ tested before any recognition (#93): too few English words, too many words misre
 or too little text for the page's own text-shaped ink fails the layer, and every failing page
 reports `implausibleTextLayer` under every policy, with a message that says what failed and what
 was done. The word classes, thresholds and message texts are specified in
-[behaviour](behaviour.md#inherited-text-over-a-page-sized-image-93-7). Pages that require a page
+[behavior](behavior.md#inherited-text-over-a-page-sized-image-93-7). Pages that require a page
 image and books not declared English are not judged; without a system lexicon only the ink test
 runs.
 
@@ -65,7 +65,7 @@ runs.
 | `.automaticIncludingImageBackedText`, `.always` | Replaced outright |
 | `.automaticKeepingImageBackedText`, `.never` | Kept, with `unverifiedTextLayer` and its reference |
 
-A client that wants the pre-#93 automatic behaviour, recognition only of absent or damaged text,
+A client that wants the pre-#93 automatic behavior, recognition only of absent or damaged text,
 selects `.automaticKeepingImageBackedText`. When recognition fails or finds no text the page is
 preserved as an image (`ocrFailed` or `pageImageFallback`). Because recognition replaces the whole
 layer, native reading order, styles and headings on a replaced page come from the recognized text.
@@ -74,7 +74,7 @@ Fresh recognition is itself judged against the same English test under every pol
 reading that still does not read as English (handwriting, or print recognition cannot read) is
 discarded as noise, reported `implausibleRecognition`, and the page is preserved as an image; a
 recognized line that does not read as English words is also excluded from heading detection
-([behaviour](behaviour.md#every-recognition-is-judged-7)).
+([behavior](behavior.md#every-recognition-is-judged-7)).
 
 ### Pages whose writing is drawn
 
@@ -84,7 +84,7 @@ text layer (#176); ink is measured against the page's own background, so a slide
 on dark is not mistaken for a blank one. Decorative art, charts and answer keys of bare surds keep
 their crops. Recognition attaches the source-page reference in place of the crops; when it reads
 nothing the page is left as extracted and reports `ocrFailed`. English books only. The row count,
-resolution and exclusions are in [behaviour](behaviour.md#pages-whose-writing-is-drawn-176).
+resolution and exclusions are in [behavior](behavior.md#pages-whose-writing-is-drawn-176).
 
 ### Damaged text encoding
 
@@ -97,7 +97,7 @@ the page reports `damagedTextEncoding`: `.automatic`, `.automaticIncludingImageB
 which `referenceImages` controls like any other supplementary image. Only English is judged;
 other declared languages, short pages, composite fonts and incorrect-but-present `ToUnicode` maps
 are outside this signal, and a page this check explains is excluded from the two checks above.
-The font and statistics rules are in [behaviour](behaviour.md#textencodingcheck-damaged-born-digital-encodings-38).
+The font and statistics rules are in [behavior](behavior.md#textencodingcheck-damaged-born-digital-encodings-38).
 
 The developer client exposes these policies as `--ocr automatic|image-backed|keep-image-backed|always|never`.
 `--no-ocr` remains an alias for `--ocr never`; when repeated, the last OCR option takes effect.
@@ -209,7 +209,7 @@ are independent choices: JPEG reduces scanned-page storage, while the clean nume
 fraction controls encode more compactly as PNG. No source-specific preference is hardcoded.
 
 Every raster is drawn over an opaque white fill, so its alpha channel is a constant 255 plane.
-It is relabelled opaque at write time, over the raster's own pixel buffer, so a PNG records three
+It is relabeled opaque at write time, over the raster's own pixel buffer, so a PNG records three
 channels instead of four; the raster handed to recognition keeps the format Vision is measured
 against. This changes only the written file, never a pixel: across the corpus, 6,240 of 6,240
 images that stayed PNG decode identically before and after, while PNG-only books lose 13% of
@@ -224,20 +224,20 @@ written as PNG; everywhere else it is written as PNG. Naming `.png`, `.jpeg(qual
 `.smallest(jpegQuality:)` bypasses the classifier entirely, for pages and for regions.
 
 Below quality 1.00 ImageIO halves both chroma planes, identically at 0.95 and 0.90; that, not
-quantisation, is the damage that shows, and it shows only where there are sharp edges *in colour*.
+quantisation, is the damage that shows, and it shows only where there are sharp edges *in color*.
 So lossy is permitted for:
 
-- any image whose pixels are under 2% coloured, measured against the image's own ground (a
-  yellowed scan is neutral, and so is a mostly white chart with small coloured labels);
+- any image whose pixels are under 2% colored, measured against the image's own ground (a
+  yellowed scan is neutral, and so is a mostly white chart with small colored labels);
 - photographs and continuous-tone art, except a crop that is at least 30% perfectly flat, which is
-  drawn illustration — saturated fills meeting labels at hard coloured edges — and stays PNG;
+  drawn illustration — saturated fills meeting labels at hard colored edges — and stays PNG;
 - tonal text scans: a full-page reference of a page whose text is absent or lies over a page-sized
   image, made of type on a ground with tones in between;
 - a full-page reference that is none of those (`mixed`), because its text is reflowed beside it.
 
-It is refused for coloured line art and charts, `mixed` crops, required page fallbacks that are
+It is refused for colored line art and charts, `mixed` crops, required page fallbacks that are
 neither neutral nor tonal (a fallback is its page's only copy, so it is judged as a crop), and
-coloured bilevel scans and born-digital text pages. The thresholds were fitted to this corpus.
+colored bilevel scans and born-digital text pages. The thresholds were fitted to this corpus.
 
 The classifier reads the raster from the drawing buffer before the `CGImage` is made, because
 reading a finished image's pixels copies them. It costs a few milliseconds per crop and about

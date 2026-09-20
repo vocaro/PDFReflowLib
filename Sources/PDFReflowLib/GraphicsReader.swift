@@ -62,7 +62,7 @@ enum GraphicsReader {
         /// The part of a footprint the clip in force lets show, or nil when none of it can.
         ///
         /// A path's or image's extent is not its ink: illustrations draw streamlines, arrows and
-        /// photographs far past the frame that clips them, into the neighbouring column, and a
+        /// photographs far past the frame that clips them, into the neighboring column, and a
         /// bleed rectangle can lie wholly outside its clip (#52, #98). The tracked clip
         /// over-approximates the real clipping region, so nothing visible is dropped here.
         ///

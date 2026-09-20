@@ -70,7 +70,7 @@ def check_cancellation(directory):
     for stage in ['reconstructing', 'writing']:
         result = json.loads((directory / f'cancel-{stage}.json').read_text())
         assert result['sourceSHA256'] == SOURCE_SHA256 and result['sourcePages'] == 1834
-        assert result['cancelled'] and result['outputAbsent'] and result['stagingRemoved']
+        assert result['canceled'] and result['outputAbsent'] and result['stagingRemoved']
         log = (directory / f'cancel-{stage}.log').read_text()
         events = [(float(fraction), value, int(page), cancel == 'true')
                   for fraction, value, page, cancel in re.findall(

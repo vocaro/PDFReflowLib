@@ -61,9 +61,9 @@ public struct ConversionOptions: Sendable {
         /// The default (#193): classify each image and permit lossy only where it is safe, then
         /// behave as `.smallest(jpegQuality:)` there and as `.png` everywhere else. Lossy is
         /// permitted for photographs, continuous-tone art, tonal text scans, full-page mixed
-        /// references and anything effectively neutral (under 2% of pixels coloured against the
-        /// image's own ground); refused for coloured line art and charts, mixed region crops, and
-        /// coloured bilevel or born-digital text pages. A permitted image may still end up PNG.
+        /// references and anything effectively neutral (under 2% of pixels colored against the
+        /// image's own ground); refused for colored line art and charts, mixed region crops, and
+        /// colored bilevel or born-digital text pages. A permitted image may still end up PNG.
         case automatic(jpegQuality: Double)
 
         /// The default JPEG quality for `.automatic`. Below 1.00 ImageIO subsamples chroma, which

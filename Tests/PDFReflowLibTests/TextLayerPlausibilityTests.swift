@@ -112,7 +112,7 @@ import Testing
     let lexicon: Set<String> = ["the", "field", "strength", "with", "when"]
     let counts = EnglishText.wordCounts("tbe fi e ld stre ngth witb vhen McDonald sreANee th e") { lexicon.contains($0) }
     // Misread: tbe, witb, vhen, sreANee. Split, not misread: fi e ld, stre ngth, th e (joined with a
-    // neighbour they make field, strength, the). A compound name's capitals are not damage.
+    // neighbor they make field, strength, the). A compound name's capitals are not damage.
     #expect(counts.misread == 4)
     #expect(counts.misreadExamples == ["tbe", "witb", "vhen"])
     #expect(counts.neutral == 1)
@@ -741,7 +741,7 @@ func aRecognitionMissingWholeRowsOfThePagesWritingIndicatesLoss() {
 @Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/116"))
 func bothTheRowCountAndTheShareAreNeededToCallARecognitionIncomplete() {
     // Six uncovered rows are more than a fifth of this page's ink and still not loss: a caption
-    // Vision folded into its neighbour, a stamp it read as art, a running head it skipped.
+    // Vision folded into its neighbor, a stamp it read as art, a running head it skipped.
     let few = reading(rows: 16, covered: 10)
     #expect(few.uncoveredRows == 6)
     #expect(few.uncoveredFraction > OCRTextCoverage.minimumUncoveredFraction)
@@ -774,7 +774,7 @@ func theRetrysBandsCoverThePageWithoutTranscribingTheirSharedStripTwice() throws
     }
     // Each band reads the strip it shares with the other, so "shared" is read twice in band
     // coordinates: once near the bottom of the top band, once near the top of the bottom band.
-    // Whichever band holds its centre keeps it, so the page is transcribed once.
+    // Whichever band holds its center keeps it, so the page is transcribed once.
     let top = band([("heading", 0.9), ("shared", 0.18)])
     let bottom = band([("shared", 0.83), ("footnote", 0.05)])
     let merged = OCRReader.mergeBands([(top, 0.4, 0.6), (bottom, 0.0, 0.6)])

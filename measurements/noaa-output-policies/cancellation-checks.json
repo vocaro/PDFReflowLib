@@ -1,7 +1,7 @@
 {
   "reconstructing": {
     "cancellationStage": "reconstructing",
-    "cancelled": true,
+    "canceled": true,
     "elapsedSeconds": 69.43621098995209,
     "outputAbsent": true,
     "reconstructionTriggerPage": 900,
@@ -14,7 +14,7 @@
   },
   "writing": {
     "cancellationStage": "writing",
-    "cancelled": true,
+    "canceled": true,
     "elapsedSeconds": 99.88234305381775,
     "outputAbsent": true,
     "reconstructionTriggerPage": 900,

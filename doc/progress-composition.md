@@ -7,4 +7,4 @@ findings and the decision to retain `PDFConverter.convert`'s ordered, awaited
 [NativeProgressEvaluationTests.swift](../Tests/PDFReflowLibTests/NativeProgressEvaluationTests.swift);
 the commands, platform results, rejected lifetime hypothesis and retained logs are in
 [the validation record](../measurements/progress-composition/record.md). The stage shares the
-converter reports are specified in [behaviour](behaviour.md#pdfconverter-entry-limits-progress-cancellation).
+converter reports are specified in [behavior](behavior.md#pdfconverter-entry-limits-progress-cancellation).

@@ -1,7 +1,7 @@
 # Cancellation while native extraction is contended
 
 This addresses the queued-cancellation portion of [#21](https://github.com/vocaro/PDFReflowLib/issues/21).
-The library still serializes native PDFKit extraction. A cancelled waiter can now return before
+The library still serializes native PDFKit extraction. A canceled waiter can now return before
 the active extraction finishes. Apple's underlying NSFont exception, independent host PDFKit
 calls and physical-device concurrency remain open; this work does not close #21.
 
@@ -32,7 +32,7 @@ blocks its worker thread during each timed wait. No PDFKit work is forcibly inte
 - A public conversion must throw cancellation and remove its staging directory before the
   holder releases the gate. It must not publish an EPUB or report extraction/completion.
 - A throwing operation must release the gate for its next caller.
-- A task already cancelled before acquisition must not execute the protected operation.
+- A task already canceled before acquisition must not execute the protected operation.
 
 The holder has a ten-second fail-safe so the contention tests cannot leave the gate locked
 indefinitely. Tests use original bundled prose/list fixtures, independent PDFDocument instances,

@@ -41,7 +41,7 @@ annotated, to become eligible for strict comparison.
 - Nothing fails automatically when a record's citations rot; the regression steps say to
   preserve historical measurement receipts, and a reviewer changing a measured path adds the
   pointer.
-- Documentation that needs the current truth (this directory, [behaviour](../behaviour.md),
+- Documentation that needs the current truth (this directory, [behavior](../behavior.md),
   the runbooks) states it itself and links to the record for how it was established, rather than
   relying on the record staying current.
 

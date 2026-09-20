@@ -245,7 +245,7 @@ glyphs, so there is no surplus to offer. `unreadGlyphs` counts the two rows, pag
 
 All eighteen corpus cases pass `tools/run_corpus_regressions.py` with EPUBCheck, including the
 books deliberately left on recognition (`gpo-warren-1964-suspect-text-excerpt`,
-`cdc-zombie-pandemic-2011`), the book whose glyph evidence the neighbouring reader supplies
+`cdc-zombie-pandemic-2011`), the book whose glyph evidence the neighboring reader supplies
 (`usda-ars-agresearch-2012-11`, #217), and the twelve English and non-English books with no
 index-glyph font at all (9/11, FAA, Fed, Wallace, Supreme Court, Our Flag, DGA, NBS, arXiv, USGS,
 Blue Book, the Arabic and Chinese cases and the slide deck). `scripts/check-all.sh --fast` passes,

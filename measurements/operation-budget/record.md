@@ -10,7 +10,7 @@ content begins. This record measures that instead of asserting it.
 The reader itself was compiled with its budget raised to 100,000,000 and its operation count
 returned on `Result`, and run over every page of all 24 cached corpus PDFs — 5,302 pages —
 recording the operations each page charges, the wall time of a complete scan and the change in
-the process's physical footprint across it (`tools/survey-budget.swift`, `tools/analyse-budget.py`;
+the process's physical footprint across it (`tools/survey-budget.swift`, `tools/analyze-budget.py`;
 the patched reader is `Sources/PDFReflowLib/GraphicsReader.swift` with those two lines changed,
 kept out of the repository because a second copy of a source file rots). macOS 27 arm64, `swiftc
 -O`, one process, serial.

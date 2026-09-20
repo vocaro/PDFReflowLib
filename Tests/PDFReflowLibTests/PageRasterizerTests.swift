@@ -97,9 +97,9 @@ private func coloredBounds(_ image: CGImage, green: Bool = false) throws -> CGRe
     #expect(stride(from: 3, to: raster.count, by: 4).allSatisfy { raster[$0] == 255 })
 
     // `opaque` relabels those identical bytes, so the file loses only the constant plane.
-    let relabelled = PageRasterizer.opaque(image)
-    #expect(relabelled.alphaInfo == .noneSkipLast)
-    #expect(relabelled.dataProvider?.data as Data? == raster)
+    let relabeled = PageRasterizer.opaque(image)
+    #expect(relabeled.alphaInfo == .noneSkipLast)
+    #expect(relabeled.dataProvider?.data as Data? == raster)
 
     let directory = FileManager.default.temporaryDirectory
         .appendingPathComponent("opaque-raster-" + UUID().uuidString)
@@ -108,9 +108,9 @@ private func coloredBounds(_ image: CGImage, green: Bool = false) throws -> CGRe
     let (url, format) = try PageRasterizer.encode(image, at: directory.appendingPathComponent("page"),
                                                   encoding: .png)
     #expect(format == .png)
-    // PNG colour type is the IHDR data's tenth byte: 2 is truecolour, 6 truecolour with alpha.
+    // PNG color type is the IHDR data's tenth byte: 2 is truecolor, 6 truecolor with alpha.
     let colorType = try Data(contentsOf: url)[25]
-    #expect(colorType == 2, "expected a three-channel PNG, found colour type \(colorType)")
+    #expect(colorType == 2, "expected a three-channel PNG, found color type \(colorType)")
 
     // The decoded file still carries the drawn rectangle at the same pixels.
     let decoded = try #require(CGImageSourceCreateWithURL(url as CFURL, nil)

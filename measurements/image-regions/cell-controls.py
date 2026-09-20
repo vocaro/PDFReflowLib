@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Recompute the table row/column and colour controls for the region references.
+"""Recompute the table row/column and color controls for the region references.
 
 Usage: python3 measurements/image-regions/cell-controls.py <corpus-evaluation-directory>
 Reads converted EPUBs from a complete corpus run; writes cell-controls.json beside this script.
@@ -27,14 +27,14 @@ def png(pixels, mode='L'):
     return data.getvalue()
 
 
-def grey(data):
+def gray(data):
     with Image.open(io.BytesIO(data)) as image:
         return np.asarray(image.convert('L'), dtype='uint8').copy()
 
 
 def swapped(data, first, second):
     """Exchange two equally sized (left, top, width, height) boxes inside a converted image."""
-    pixels = grey(data)
+    pixels = gray(data)
     box = lambda b: (slice(b[1], b[1] + b[3]), slice(b[0], b[0] + b[2]))
     a, b = pixels[box(first)].copy(), pixels[box(second)].copy()
     pixels[box(first)], pixels[box(second)] = b, a
@@ -42,13 +42,13 @@ def swapped(data, first, second):
 
 
 def blanked(data, region):
-    pixels = grey(data)
+    pixels = gray(data)
     pixels[region[1]:region[1] + region[3], region[0]:region[0] + region[2]] = 255
     return png(pixels)
 
 
 def complemented(data):
-    """Keep CIE lightness and invert the chroma axes: same greys, different colours."""
+    """Keep CIE lightness and invert the chroma axes: same grays, different colors."""
     with Image.open(io.BytesIO(data)) as image:
         lab = np.asarray(image.convert('RGB').convert('LAB'), dtype='int16').copy()
     lab[:, :, 1] = 255 - lab[:, :, 1]
@@ -114,8 +114,8 @@ def main():
     record(flag, 27, flag_names, '125-foot flag size erased',
            lambda data: blanked(data, size_125), 2)
 
-    # Colour: the reference is grayscale and converted images are reduced to grayscale, so a
-    # lightness-preserving recolouring of a full-colour page is invisible to the check.
+    # Color: the reference is grayscale and converted images are reduced to grayscale, so a
+    # lightness-preserving recoloring of a full-color page is invisible to the check.
     original = images(cdc, 13)[0]
     mutated = complemented(original)
     before = np.asarray(Image.open(io.BytesIO(original)).convert('RGB'), dtype='int16')
@@ -127,7 +127,7 @@ def main():
 
     payload = {
         'threshold': image_regions.DEFAULT_MINIMUM_CORRELATION,
-        'colourMutation': {
+        'colorMutation': {
             'case': cdc, 'page': 13,
             'pixelsChangedOver20Levels': round(float((difference > 20).mean()), 4),
             'pixelsChangedOver60Levels': round(float((difference > 60).mean()), 4),

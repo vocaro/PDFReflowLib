@@ -163,16 +163,16 @@ private func statisticsTable(baseline: CGFloat) -> (lines: [TextLine], rules: [C
     // the compact denominator beneath it makes it a fraction: both terms stay in one crop.
     let numerator = TextLine(text: "1) 42", rect: CGRect(x: 85, y: 666, width: 26, height: 12), fontSize: 12)
     let denominator = TextLine(text: "12", rect: CGRect(x: 100, y: 653, width: 11, height: 12), fontSize: 12)
-    let neighbour = TextLine(text: "2) 25", rect: CGRect(x: 308, y: 668, width: 26, height: 12), fontSize: 12)
+    let neighbor = TextLine(text: "2) 25", rect: CGRect(x: 308, y: 668, width: 26, height: 12), fontSize: 12)
     let instructions = TextLine(text: "Simplify each. Leave your answer as an improper fraction.",
         rect: CGRect(x: 85, y: 690, width: 300, height: 12), fontSize: 12)
-    let page = PageContent(number: 1, bounds: pageBounds, lines: [instructions, numerator, denominator, neighbour],
+    let page = PageContent(number: 1, bounds: pageBounds, lines: [instructions, numerator, denominator, neighbor],
         graphics: [CGRect(x: 98, y: 664, width: 14, height: 4)])
     let regions = LayoutReconstructor.graphicsWithLabels(page)
     #expect(regions.count == 1)
     let region = try #require(regions.first)
     #expect(region.contains(numerator.rect) && region.contains(denominator.rect))
-    #expect(!region.intersects(neighbour.rect) && !region.intersects(instructions.rect))
+    #expect(!region.intersects(neighbor.rect) && !region.intersects(instructions.rect))
 }
 
 @Test func algebraPracticeFractionsKeepEveryBarWithItsTerms() throws {
@@ -296,7 +296,7 @@ func geltmanClosingProseReflowsAroundItsInlineEquation() throws {
         #expect(!regions.contains { $0.intersects(line.rect) }, "reference entry inside a crop: \(line.text)")
     }
     // The inline equation line still matches the formula heuristic; its crop stays bounded to
-    // that line and its immediate neighbours instead of the column.
+    // that line and its immediate neighbors instead of the column.
     #expect(regions.count == 1)
     let crop = try #require(regions.first)
     #expect(crop.height < 40)

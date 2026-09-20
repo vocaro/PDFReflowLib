@@ -122,7 +122,7 @@ split had broken. Concatenating every block of every book and dropping whitespac
 gives a byte-identical digest before and after for all 18 cases (4,688,529 characters). Every
 other page's word, heading and image counts are unchanged, and each book's converter report and
 its complete warning stream — code, page and message, `structureFallback` included — are identical
-before and after, so #67's gate behaviour is untouched.
+before and after, so #67's gate behavior is untouched.
 
 Positive controls, all unchanged: Wallace keeps its 2,909 preformatted exercise lines, the Fed
 book its 81 bulleted and numbered blocks, Our Flag its 54 headings, and the IRS and DGA books

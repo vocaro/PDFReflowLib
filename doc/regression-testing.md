@@ -4,7 +4,7 @@ Regression coverage across PDF types is the first development priority. A fix to
 layout or rendering needs a reproducer and positive controls from other layouts, because a valid
 EPUB can still contain wrong text, wrong reading order or unreadable images. This is the runbook:
 how to run each gate, what it checks, and how to add a case or a fixture. What each rule is and
-why is in [behaviour](behaviour.md) and [decisions](decisions/README.md); the tests themselves
+why is in [behavior](behavior.md) and [decisions](decisions/README.md); the tests themselves
 carry their issue linkage as `.bug()` traits.
 
 ## Gates
@@ -34,7 +34,7 @@ What the individual gates check:
   and all six cells of a ruled table in actual EPUB images at 72/144 DPI, with prose and code
   controls), the writer, progress, cancellation before and during packaging, invalid input,
   resource limits, output protection, fixture identities and chapter navigation. The public-API
-  concurrency test overlaps four conversions and one cancelled conversion, checking ownership,
+  concurrency test overlaps four conversions and one canceled conversion, checking ownership,
   styles, images, monotonic progress and staging cleanup. For iOS:
   `xcodebuild test -scheme PDFReflowLib-Package -destination 'platform=iOS Simulator,name=iPhone 18 Pro' CODE_SIGNING_ALLOWED=NO`.
 - `python3 -m unittest discover -s tools -p 'test_*.py' -v`: <!-- counts:python-tests -->210 Python tests<!-- counts:end --> over the tools,
@@ -229,7 +229,7 @@ built archives and over a real converted EPUB whose seam was edited
 existing evaluation without reconverting; `tools/check_corpus_quality.py --case <id> --evaluation <directory>`
 applies a manifest's opt-in quality expectation (page-specific warnings on a valid conversion, or
 an explicitly approved quality-refusal diagnostic with no output and no false completion; no
-refusal API exists yet, so this contract exposes gaps without changing runtime behaviour).
+refusal API exists yet, so this contract exposes gaps without changing runtime behavior).
 Image-presence checks are weaker than visual fidelity checks, and the lane supplies no
 whole-book quality score or device qualification.
 
@@ -268,33 +268,33 @@ and 0.951–0.986 against the whole table, which misses it. A value moved to ano
 exchanged inside a row or a column are not caught at 0.95 (0.957–0.983 measured), so row and
 column references qualify completeness and grouping, not the identity of an individual cell.
 
-#### Why there is no colour or pixel appearance gate
+#### Why there is no color or pixel appearance gate
 
 A region reference is rendered `-gray` and every converted image is converted to `L` before
-comparison, so colour never reaches the statistic. Recolouring CDC's page-13 comic to its
+comparison, so color never reaches the statistic. Recoloring CDC's page-13 comic to its
 complementary hues in CIE Lab, which keeps lightness and changes 23% of the pixels by more than
 20 levels in some channel, moves the score from 0.9972 to 0.9970. The check therefore cannot
-speak for a flag's colours or a diagram's colour coding, and the contracts do not claim to.
+speak for a flag's colors or a diagram's color coding, and the contracts do not claim to.
 
-Tightening it is not simply a matter of comparing colours or raising the floor. The reference
+Tightening it is not simply a matter of comparing colors or raising the floor. The reference
 comes from Poppler and the converted image from Core Graphics, so the two never agree exactly:
 correct crops sit at 0.982–0.997 against a 0.95 floor, and about 0.03 of that margin is renderer
 disagreement rather than fidelity. The same converter binary on one Mac already produces images
 that differ between execution environments — 36 of CDC's images differ in decoded RGB between the
 host and a sandbox, with mean absolute channel differences near 0.4–0.6 out of 255
-([record](../measurements/raster-environment/record.md)) — so any exact-pixel or exact-colour
+([record](../measurements/raster-environment/record.md)) — so any exact-pixel or exact-color
 comparison is drift, not a defect. Scale is pinned too: references assume the default 180 DPI, and
 a device that trips a pixel ceiling rescales every image and fails every reference.
 
 What would make an appearance gate possible, in the order it would have to be built: render the
 reference through the library's rasterizer as well as Poppler and measure how far the two
 disagree per page, so the floor can be set from measured renderer drift instead of a single
-hand-chosen constant; add a colour statistic robust to that drift, such as the mean hue and
+hand-chosen constant; add a color statistic robust to that drift, such as the mean hue and
 chroma of the few largest flat regions of a crop, which would catch a flag's canton turning the
-wrong colour without asserting any pixel; and record the raster policy (DPI and any binding
+wrong color without asserting any pixel; and record the raster policy (DPI and any binding
 ceiling) in the sidecar so a run under another policy skips the reference explicitly instead of
 failing it. Until those are measured, the lane keeps presence, completeness and alignment, and
-image legibility and colour stay unqualified.
+image legibility and color stay unqualified.
 
 ## Adding or changing a regression
 
@@ -302,9 +302,9 @@ image legibility and colour stay unqualified.
    fixture when that isolates the mechanism, and retain a source-derived real-document target.
 2. Read the source visually before writing expected text, order, cell values or image
    properties. Never derive expected correctness from the converter being tested.
-3. Prove the test fails on the old behaviour. Keep unresolved defects as GitHub issues rather
+3. Prove the test fails on the old behavior. Keep unresolved defects as GitHub issues rather
    than blessing them as golden output or disguising them as passing tests.
-4. Add positive controls for neighbouring behaviours and another document type (attachment
+4. Add positive controls for neighboring behaviors and another document type (attachment
    filtering, for example, must retain mixed styled text, blank scans, recoverable OCR and images).
 5. Run the fast and corpus lanes. Review changed content and image counts; increases and
    decreases can both be suspicious. Update expectations only after reviewing the source and

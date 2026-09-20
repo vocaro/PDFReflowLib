@@ -321,7 +321,7 @@ enum FurnitureDetector {
     /// reach further into the page than this evidence reaches.
     private static func admitSlotEvidence(_ plan: inout Plan, unique: [Int: [Int: Candidate]]) {
         // Slots accumulate in page-and-line order, so which candidate opens a slot — and therefore
-        // where its tolerance is centred — does not depend on dictionary order.
+        // where its tolerance is centered — does not depend on dictionary order.
         let ordered = unique.keys.sorted().flatMap { pageIndex in
             unique[pageIndex]!.keys.sorted().map { (pageIndex, $0, unique[pageIndex]![$0]!) }
         }

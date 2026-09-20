@@ -387,7 +387,7 @@ private final class WeakDocument {
         group.addTask {
             let log = ProgressLog()
             await #expect(throws: CancellationError.self) {
-                try await PDFConverter().convert(from: fixture("prose"), to: dir.appendingPathComponent("cancelled.epub")) { event in
+                try await PDFConverter().convert(from: fixture("prose"), to: dir.appendingPathComponent("canceled.epub")) { event in
                     await log.append(event)
                     if event.stage == .extracting { withUnsafeCurrentTask { $0?.cancel() } }
                 }

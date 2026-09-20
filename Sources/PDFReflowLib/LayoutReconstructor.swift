@@ -367,7 +367,7 @@ enum LayoutReconstructor {
 
     /// Whether `line` is the next line of the heading `previous` opens: the same size, set
     /// directly beneath it at ordinary heading leading (the rectangles include PDFKit's leading,
-    /// so they touch or overlap), sharing the left edge, the centre or the right edge (#186).
+    /// so they touch or overlap), sharing the left edge, the center or the right edge (#186).
     static func stacksUnderHeading(_ line: TextLine, after previous: TextLine) -> Bool {
         let size = max(previous.fontSize, line.fontSize)
         guard abs(previous.fontSize - line.fontSize) <= size * 0.1, !previous.sharesRow(with: line),
@@ -427,7 +427,7 @@ enum LayoutReconstructor {
             !line.monospaced && line.hasSize(size)
         }
         let column = lines.filter(sized)
-        func neighbour(of line: TextLine, above: Bool) -> TextLine? {
+        func neighbor(of line: TextLine, above: Bool) -> TextLine? {
             let sharing = column.filter { other in
                 line.sharesColumn(with: other) && !line.sharesRow(with: other)
                     && (above ? other.rect.minY >= line.rect.maxY - size * 0.4
@@ -438,10 +438,10 @@ enum LayoutReconstructor {
         }
         var openings = 0
         for line in column {
-            guard let above = neighbour(of: line, above: true),
+            guard let above = neighbor(of: line, above: true),
                   above.rect.minY - line.rect.maxY < size * 0.9,
                   abs(line.rect.minX - above.rect.minX - step) <= size * 0.5,
-                  let below = neighbour(of: line, above: false),
+                  let below = neighbor(of: line, above: false),
                   line.rect.minY - below.rect.maxY < size * 0.9 else { continue }
             if abs(below.rect.minX - line.rect.minX) <= size * 0.5 { return false }
             if abs(line.rect.minX - below.rect.minX - step) <= size * 0.5 { openings += 1 }

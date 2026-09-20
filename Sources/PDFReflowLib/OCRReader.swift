@@ -30,7 +30,7 @@ enum OCRReader {
     /// the page and they share the middle 20%, so a line one band's edge cuts is whole in the
     /// other (#116).
     static let retryBands: [ClosedRange<Double>] = [0.4...1.0, 0.0...0.6]
-    /// Where the bands hand over: a line belongs to the band holding its centre.
+    /// Where the bands hand over: a line belongs to the band holding its center.
     static let retryBandSplit = 0.5
 
     static func read(page: PDFPage, options: ConversionOptions) async throws -> Result {
@@ -156,7 +156,7 @@ enum OCRReader {
 
     /// Maps each band's recognition back into page-normalized coordinates, given the band's bottom
     /// edge and height as fractions of the page. A line is kept from the band on the same side of
-    /// `retryBandSplit` as its centre, so the strip the bands share is not transcribed twice; a
+    /// `retryBandSplit` as its center, so the strip the bands share is not transcribed twice; a
     /// table crossing the split is kept from both bands and the parts joined.
     static func mergeBands(_ bands: [(recognition: Recognition, bottom: Double, height: Double)]) -> Recognition {
         var merged = Recognition()

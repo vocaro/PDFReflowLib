@@ -44,16 +44,16 @@ private final class ExtractionHold: Sendable {
 
 @Suite(.serialized)
 struct ExtractionCancellationTests {
-    @Test func cancelledConversionCleansStagingWhileGateRemainsHeld() async throws {
+    @Test func canceledConversionCleansStagingWhileGateRemainsHeld() async throws {
         let directory = try testPDFDirectory()
         defer { try? FileManager.default.removeItem(at: directory) }
-        let output = directory.appendingPathComponent("cancelled.epub")
+        let output = directory.appendingPathComponent("canceled.epub")
         let source = fixtureURL("prose.pdf")
         let hold = ExtractionHold()
         defer { hold.release.signal() }
         try await hold.waitUntilEntered()
         let opened = AsyncStream<Void>.makeStream()
-        let cancelled = DispatchSemaphore(value: 0)
+        let canceled = DispatchSemaphore(value: 0)
         let task = Task {
             defer { opened.continuation.finish() }
             do {
@@ -61,8 +61,8 @@ struct ExtractionCancellationTests {
                     #expect(event.stage == .opening)
                     opened.continuation.yield()
                 }
-                Issue.record("Cancelled conversion unexpectedly succeeded")
-            } catch is CancellationError { cancelled.signal() }
+                Issue.record("Canceled conversion unexpectedly succeeded")
+            } catch is CancellationError { canceled.signal() }
         }
         for await _ in opened.stream { break }
         // Wait for the conversion to create its workspace before testing queued cancellation.
@@ -73,7 +73,7 @@ struct ExtractionCancellationTests {
         try await Task.sleep(for: .milliseconds(100))
         #expect(try !FileManager.default.contentsOfDirectory(atPath: directory.path).isEmpty)
         task.cancel()
-        let status = await waitForSignal(cancelled, seconds: 1)
+        let status = await waitForSignal(canceled, seconds: 1)
         #expect(status == .success, "Conversion cancellation must not wait for another page")
         if status == .success {
             #expect(try FileManager.default.contentsOfDirectory(atPath: directory.path).isEmpty)
@@ -83,12 +83,12 @@ struct ExtractionCancellationTests {
         #expect(try FileManager.default.contentsOfDirectory(atPath: directory.path).isEmpty)
     }
 
-    @Test func cancelledNativeReaderReturnsWhileAnotherExtractionStillHoldsGate() async throws {
+    @Test func canceledNativeReaderReturnsWhileAnotherExtractionStillHoldsGate() async throws {
         let hold = ExtractionHold()
         defer { hold.release.signal() }
         try await hold.waitUntilEntered()
         let started = AsyncStream<Void>.makeStream()
-        let cancelled = DispatchSemaphore(value: 0)
+        let canceled = DispatchSemaphore(value: 0)
         let task = Task.detached {
             defer { started.continuation.finish() }
             let url = fixtureURL("lists-code.pdf")
@@ -97,27 +97,27 @@ struct ExtractionCancellationTests {
             started.continuation.yield()
             do {
                 _ = try NativeTextReader.lines(on: page, limit: 100_000)
-                Issue.record("Cancelled extraction unexpectedly succeeded")
-            } catch is CancellationError { cancelled.signal() }
+                Issue.record("Canceled extraction unexpectedly succeeded")
+            } catch is CancellationError { canceled.signal() }
         }
         for await _ in started.stream { break }
-        // Give the synchronous reader time to enter the contended wait before cancelling.
+        // Give the synchronous reader time to enter the contended wait before canceling.
         try await Task.sleep(for: .milliseconds(100))
         task.cancel()
-        let status = await waitForSignal(cancelled, seconds: 1)
+        let status = await waitForSignal(canceled, seconds: 1)
         #expect(status == .success, "Cancellation must finish before the holder releases the gate")
         let survivorFinished = DispatchSemaphore(value: 0)
         let survivor = Task.detached {
             try NativeTextReader.withExtractionLock { survivorFinished.signal() }
         }
         #expect(await waitForSignal(survivorFinished, seconds: 0.1) == .timedOut,
-                "A cancelled waiter must not release another extraction's lock")
+                "A canceled waiter must not release another extraction's lock")
         await hold.stop()
         try await task.value
         _ = try await survivor.value
         #expect(await waitForSignal(survivorFinished, seconds: 1) == .success)
 
-        // A cancelled waiter must neither unlock the holder nor poison later extraction.
+        // A canceled waiter must neither unlock the holder nor poison later extraction.
         let document = try #require(PDFDocument(url: Bundle.module.resourceURL!
             .appendingPathComponent("fixtures/lists-code.pdf")))
         let lines = try NativeTextReader.lines(on: #require(document.page(at: 0)), limit: 100_000)
@@ -140,7 +140,7 @@ struct ExtractionCancellationTests {
         let task = Task.detached {
             withUnsafeCurrentTask { $0?.cancel() }
             #expect(throws: CancellationError.self) {
-                try NativeTextReader.withExtractionLock { Issue.record("Cancelled task entered PDFKit gate") }
+                try NativeTextReader.withExtractionLock { Issue.record("Canceled task entered PDFKit gate") }
             }
         }
         await task.value

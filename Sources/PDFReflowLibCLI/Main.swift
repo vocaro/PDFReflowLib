@@ -20,9 +20,9 @@ struct PDFReflowLibCommand {
         JPEG QUALITY must be in 0...1. Defaults: automatic references, repeated headers and
         footers removed, automatic:0.9 image encoding, 512 MiB entry budget, no separate final
         ZIP cap. Required image-only fallback pages are retained. automatic classifies each
-        image: photographs, painted art, tonal scans, mixed full pages and uncoloured images
-        keep the smaller of PNG and JPEG; coloured line art, charts, drawn illustration and
-        mixed crops, and coloured text pages stay PNG. png, jpeg:QUALITY and smallest:QUALITY
+        image: photographs, painted art, tonal scans, mixed full pages and uncolored images
+        keep the smaller of PNG and JPEG; colored line art, charts, drawn illustration and
+        mixed crops, and colored text pages stay PNG. png, jpeg:QUALITY and smallest:QUALITY
         apply exactly as named.
         Set both --package-identifier and --modification-date for byte-reproducible packaging.
         """

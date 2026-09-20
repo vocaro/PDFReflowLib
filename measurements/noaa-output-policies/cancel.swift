@@ -23,7 +23,7 @@ struct NOAACancellationProbe {
             fatalError("Output directory must be new")
         }
         try FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true)
-        let output = directory.appendingPathComponent("cancelled.epub")
+        let output = directory.appendingPathComponent("canceled.epub")
         var options = ConversionOptions()
         options.fullPageImageEncoding = .jpeg(quality: 0.90)
         options.maximumOutputBytes = 4 * 1_024 * 1_024 * 1_024
@@ -37,14 +37,14 @@ struct NOAACancellationProbe {
                 FileHandle.standardError.write(Data(line.utf8))
                 if cancel { withUnsafeCurrentTask { $0?.cancel() } }
             }
-            fatalError("Cancelled conversion unexpectedly succeeded")
+            fatalError("Canceled conversion unexpectedly succeeded")
         } catch is CancellationError {
             let remaining = try FileManager.default.contentsOfDirectory(atPath: directory.path)
             guard remaining.isEmpty else { fatalError("Cancellation left staged/output files: \(remaining)") }
             let result: [String: Any] = ["sourceSHA256": hash, "sourcePages": 1834,
                 "cancellationStage": requestedStage, "reconstructionTriggerPage": 900,
                 "elapsedSeconds": Date().timeIntervalSince(started),
-                "cancelled": true, "outputAbsent": true, "stagingRemoved": true]
+                "canceled": true, "outputAbsent": true, "stagingRemoved": true]
             let encoded = try JSONSerialization.data(withJSONObject: result, options: [.prettyPrinted, .sortedKeys])
             FileHandle.standardOutput.write(encoded)
             FileHandle.standardOutput.write(Data("\n".utf8))

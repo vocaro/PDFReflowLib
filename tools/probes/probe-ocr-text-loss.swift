@@ -6,7 +6,7 @@ import Vision
 // Measures, page by page, how much of a corpus page's own writing a recognition of it leaves
 // unread, and what the band retry recovers (#116). It drives the shipped code — `OCRReader`'s
 // request, `OCRReader.recognize`, `OCRReader.completeReading` and `OCRTextCoverage` — so what it
-// reports is the conversion's behaviour, not a reimplementation of it. Vision's compiled models
+// reports is the conversion's behavior, not a reimplementation of it. Vision's compiled models
 // decide what any one page reads (#173), so a run is evidence about this machine's models; the
 // library's own tests use canned readings instead. Run from the repository root; one JSON object
 // per page on stdout.

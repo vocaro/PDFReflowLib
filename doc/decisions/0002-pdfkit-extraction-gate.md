@@ -13,7 +13,7 @@ Serializing the synchronous page-extraction step behind a library-local `NSLock`
 aborts, but an eight-worker stress campaign still aborted occasionally. The cause was not
 overlapping extraction: `PDFSelection.attributedString` and the fonts its runs carry are
 autoreleased, and one thread freeing a just-finished extraction's objects raced another thread's
-PDFKit call already inside the gate. A queued conversion also could not be cancelled while
+PDFKit call already inside the gate. A queued conversion also could not be canceled while
 `NSLock.lock()` waited indefinitely for the active extraction.
 
 ## Decision
@@ -36,7 +36,7 @@ fails the build on any such call in `Sources/` or `Tests/` outside `withExtracti
   with it present. Every `check-all.sh` lane runs a fresh-process smoke gate (two trials, one and
   eight workers, 50 document opens per worker); longer campaigns and the unmitigated SDK control
   are explicit diagnostic runs (see [regression testing](../regression-testing.md#concurrency-campaigns)).
-- Concurrent imports trade extraction throughput for serialization. A cancelled waiter can
+- Concurrent imports trade extraction throughput for serialization. A canceled waiter can
   return while another extraction still holds the lock; a PDFKit call already executing cannot be
   interrupted; each timed wait blocks its worker thread. The interval is a cancellation-check
   policy, not a latency guarantee.

@@ -14,8 +14,8 @@ class CitationReadingTests(unittest.TestCase):
         self.assertEqual(sorted(found), [45, 164])
 
     def test_a_heading_anchor_is_not_a_citation(self):
-        # `doc/behaviour.md#911-report-…` and `(#issue-30-coverage-expansion)` are link targets.
-        self.assertEqual(gate.citations('See [the report](behaviour.md#911-commission) and '
+        # `doc/behavior.md#911-report-…` and `(#issue-30-coverage-expansion)` are link targets.
+        self.assertEqual(gate.citations('See [the report](behavior.md#911-commission) and '
                                         '[the seven](#issue-30-coverage-expansion).'), {})
 
     def test_code_is_not_a_citation(self):
@@ -58,7 +58,7 @@ class AuditTests(unittest.TestCase):
         root = Path(temp.name)
         (root / 'doc').mkdir()
         (root / gate.SNAPSHOT).write_text(json.dumps(snapshot or self.snapshot))
-        (root / 'doc/behaviour.md').write_text(document)
+        (root / 'doc/behavior.md').write_text(document)
         (root / 'README.md').write_text('# Title\n')
         return root
 
@@ -73,7 +73,7 @@ class AuditTests(unittest.TestCase):
     def test_a_closed_issue_with_no_entry_fails(self):
         failures, _ = self.audit('Folio joins are tracked in #45.\n', {})
         self.assertEqual(len(failures), 1)
-        self.assertIn('#45 is closed but cited at doc/behaviour.md:1', failures[0])
+        self.assertIn('#45 is closed but cited at doc/behavior.md:1', failures[0])
 
     def test_a_historical_entry_passes_with_its_reason(self):
         failures, notes = self.audit('The gate (#204) exists.\n', {204: ('historical', 'named by its issue')})

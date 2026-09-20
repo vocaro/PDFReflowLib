@@ -297,7 +297,7 @@ func theNineElevenReportKeepsAPresidentsInitialInItsParagraph() throws {
 @Test func authorInitialsAndYearsContinueJustifiedProse() {
     let lines = column([
         "The committee reviewed the position paper prepared during the previous session by",
-        "A. Smith and B. Jones, who summarised the field work completed at the end of",
+        "A. Smith and B. Jones, who summarized the field work completed at the end of",
         "1998. The final report was accepted without amendment by all of the delegates",
         "v. the objections raised earlier, and the chair closed the meeting.",
     ], widths: [460, 460, 460, 300])
@@ -305,7 +305,7 @@ func theNineElevenReportKeepsAPresidentsInitialInItsParagraph() throws {
     #expect(preformatted(blocks).isEmpty)
     #expect(paragraphs(blocks).count == 1)
     #expect(paragraphs(blocks).first?.contains(
-        "session by A. Smith and B. Jones, who summarised the field work completed at the end of 1998. The final") == true)
+        "session by A. Smith and B. Jones, who summarized the field work completed at the end of 1998. The final") == true)
 }
 
 @Test func markersOpeningAnItemKeepTheirOwnBlock() {
@@ -470,7 +470,7 @@ func aParagraphTaggedOnlyOnItsFirstLineStaysOneParagraph() throws {
 func anUntaggedLineContinuesATaggedParagraphButNeverATaggedHeading() {
     let lines = column([
         "The committee reviewed the position paper prepared during the previous session by",
-        "A. Smith and B. Jones, who summarised the field work completed at the end of",
+        "A. Smith and B. Jones, who summarized the field work completed at the end of",
         "1998. The final report was accepted without amendment by all of the delegates.",
     ])
     let marked = LineRole.markedLine(MarkerColumn(onMajorityEdge: true, justifiedRight: 520))

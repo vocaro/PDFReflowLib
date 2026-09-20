@@ -60,9 +60,9 @@ security-scoped access alive until conversion returns and owns the destination's
 Clients independently control reference inclusion, full-page and cropped-region encoding,
 JPEG quality, and output size. The defaults are automatic references and automatic image
 encoding, `.automatic(jpegQuality: 0.90)`: each image is classified from its own pixels, and
-photographs, painted art, tonal scans, full-page mixed references and uncoloured images keep the
-smaller of PNG and JPEG 0.90 while coloured line art, charts, drawn illustration crops and
-coloured text pages stay PNG. Naming `.png`, `.jpeg(quality:)` or `.smallest(jpegQuality:)`
+photographs, painted art, tonal scans, full-page mixed references and uncolored images keep the
+smaller of PNG and JPEG 0.90 while colored line art, charts, drawn illustration crops and
+colored text pages stay PNG. Naming `.png`, `.jpeg(quality:)` or `.smallest(jpegQuality:)`
 applies exactly that.
 
 ```swift
@@ -108,7 +108,7 @@ XHTML chapters split near 60 KB, styles, metadata, flat heading navigation, a so
 and an OPF 3.0 package.
 
 Every rule, threshold and warning code is specified in the
-[behaviour specification](doc/behaviour.md); the modules and seams are described in
+[behavior specification](doc/behavior.md); the modules and seams are described in
 [architecture](doc/architecture.md). PDF structure is ambiguous: untagged borderless tables,
 arbitrary equations, complex magazine layouts, footnote relationships, vertical/RTL reading order
 and damaged font encodings still need broader qualification, and fonts, original colors, full

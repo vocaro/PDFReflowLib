@@ -180,7 +180,7 @@ final class ContentStreamWalk {
     }
 
     /// Counts one operator against the budget; false (and the scan stopped) when the budget is
-    /// spent, the task is cancelled, or something already disqualified the scan.
+    /// spent, the task is canceled, or something already disqualified the scan.
     func accept(_ scanner: CGPDFScannerRef) -> Bool {
         operations += 1
         if operations > options.maximumOperations || Task.isCancelled { invalid = true }

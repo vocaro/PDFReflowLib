@@ -111,7 +111,7 @@ Every page of every book was compared, not only the totals. **One page in the co
     fed-explained-2021 p21: words 339 -> 339, headings 3 -> 4, images 2 -> 2
         + Advisory Councils
 
-**No page loses a word**, anywhere, and no page's image count moves. #67's gate behaviour does not
+**No page loses a word**, anywhere, and no page's image count moves. #67's gate behavior does not
 move: every document's `structureFallback` count is identical, including the FAA's 541 and the
 Fed's 68.
 

@@ -36,7 +36,7 @@ import Testing
         var child: ProgressManager? = overall.subprogress(assigningCount: 100).start(totalCount: 10)
         child!.complete(count: 2)
         #expect(abs(overall.fractionCompleted - 0.2) < 1e-12)
-        child = nil // Also happens when a throwing/cancelled operation unwinds.
+        child = nil // Also happens when a throwing/canceled operation unwinds.
         #expect(overall.fractionCompleted == 1)
         #expect(overall.isFinished)
     }

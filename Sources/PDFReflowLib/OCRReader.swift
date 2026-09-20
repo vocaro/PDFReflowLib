@@ -33,6 +33,43 @@ enum OCRReader {
     /// Where the bands hand over: a line belongs to the band holding its center.
     static let retryBandSplit = 0.5
 
+    /// Cyrillic capitals and lowercase drawn the same as a Latin letter.
+    private static let latinLookAlikes: [Character: Character] = [
+        "А": "A", "В": "B", "Е": "E", "К": "K", "М": "M", "Н": "H", "О": "O", "Р": "P", "С": "C",
+        "Т": "T", "У": "Y", "Х": "X", "І": "I", "Ј": "J", "Ѕ": "S", "а": "a", "е": "e", "о": "o",
+        "р": "p", "с": "c", "у": "y", "х": "x", "і": "i", "ј": "j", "ѕ": "s",
+    ]
+
+    /// Rewrites a reading's Cyrillic look-alikes as the Latin the page draws (#168).
+    ///
+    /// Vision returns Cyrillic from a page this library has told it is English:
+    /// `RecognizeDocumentsRequest` with `recognitionLanguages = [en-US]` reads the CDC graphic
+    /// novel's hand-lettered `MAYBE` as `МАУВЕ`, and neither restricting the language nor enabling
+    /// language correction changes it (`measurements/apple-feedback-vision-script`).
+    ///
+    /// Only a token whose every Cyrillic character is a Latin look-alike is rewritten, and only
+    /// when nothing of another script survives the rewrite. `МАУВЕ` becomes `MAYBE`; `НИН?!` and
+    /// `ОКДУ` keep every character they were read with, because their `И` and `Д` stand where the
+    /// page draws `U` and `A` and no substitution can know that. A guess there would replace a
+    /// reading the page can be checked against with one it cannot.
+    ///
+    /// A document that is not declared English is never touched, so a page of actual Russian
+    /// keeps its script. Real Cyrillic prose reaches this rule as words holding the letters with
+    /// no Latin look-alike, and keeps them.
+    static func repairedScript(_ text: String, language: String) -> String {
+        guard EnglishText.isDeclared(language),
+              text.contains(where: { latinLookAlikes.keys.contains($0) || isCyrillic($0) }) else { return text }
+        return text.split(separator: " ", omittingEmptySubsequences: false).map { token -> Substring in
+            guard token.contains(where: isCyrillic) else { return token }
+            let mapped = String(token.map { latinLookAlikes[$0] ?? $0 })
+            return mapped.contains(where: isCyrillic) ? token : Substring(mapped)
+        }.joined(separator: " ")
+    }
+
+    private static func isCyrillic(_ character: Character) -> Bool {
+        character.unicodeScalars.contains { (0x0400...0x04FF).contains($0.value) }
+    }
+
     static func read(page: PDFPage, options: ConversionOptions) async throws -> Result {
         let bounds = page.bounds(for: .cropBox)
         let image = try PageRasterizer.image(page: page, rect: bounds, options: options)
@@ -55,7 +92,8 @@ enum OCRReader {
         }
         let lines: [TextLine] = recognition.lines.map { line in
             let rect = pageRect(line.box)
-            return TextLine(text: line.text, rect: rect, fontSize: rect.height, wraps: line.wraps)
+            return TextLine(text: repairedScript(line.text, language: options.language),
+                            rect: rect, fontSize: rect.height, wraps: line.wraps)
         }
         return Result(lines: lines,
                       tables: recognition.tables.map { pageRect($0).insetBy(dx: -3, dy: -3).intersection(bounds) },

@@ -36,10 +36,10 @@ PROBE_SOURCES = {
     'capture-spacing-source.swift': [],                 # Apple SDKs only
     'capture-algebra-layout.swift': EXTRACTION + ['GraphicsReader.swift'],
     # `OCRReader` checks its own reading against the page's ink (#116), so it needs the measurement.
-    'capture-ocr-layout-fixture.swift': RASTER + ['OCRReader.swift', 'OCRTextCoverage.swift', 'CJKText.swift'],
-    'probe-ocr-text-loss.swift': RASTER + ['OCRReader.swift', 'OCRTextCoverage.swift', 'CJKText.swift'],
+    'capture-ocr-layout-fixture.swift': RASTER + ['OCRReader.swift', 'OCRTextCoverage.swift', 'CJKText.swift', 'EnglishText.swift'],
+    'probe-ocr-text-loss.swift': RASTER + ['OCRReader.swift', 'OCRTextCoverage.swift', 'CJKText.swift', 'EnglishText.swift'],
     # #240 weighs a second signal against the same measurement, so it needs the same sources.
-    'probe-ocr-coverage-signals.swift': RASTER + ['OCRReader.swift', 'OCRTextCoverage.swift', 'CJKText.swift'],
+    'probe-ocr-coverage-signals.swift': RASTER + ['OCRReader.swift', 'OCRTextCoverage.swift', 'CJKText.swift', 'EnglishText.swift'],
     'audit-report-margins.swift': EXTRACTION + ['FurnitureDetector.swift'],
 }
 

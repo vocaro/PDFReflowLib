@@ -601,6 +601,16 @@ improve some errors and introduce others, lose native formatting or change readi
 
 ## OCRReader
 
+- **Cyrillic look-alikes (#168).** Vision returns Cyrillic from a page this library has told it is
+  English, and neither restricting `recognitionLanguages` to `en-US` nor enabling language
+  correction changes it (`measurements/apple-feedback-vision-script`). A recognized token whose
+  every Cyrillic character is a Latin look-alike is rewritten to the Latin the page draws, and
+  only when nothing of another script survives the rewrite: `МАУВЕ` becomes `MAYBE`, and the CDC
+  graphic novel's `НИН?!` and `ОКДУ` keep every character they were read with, because their `И`
+  and `Д` stand where the page draws `U` and `A` and no substitution can know that. A document not
+  declared English is never touched, and Russian prose reaches the rule as words holding the
+  letters that have no Latin look-alike and keeps them.
+
 Vision recognizes the page image, with the declared language when the recognizer supports it.
 Uncertain words are preserved rather than dropped silently. OCR text is always reported as
 transcription (`ocrUsed`: "Text is OCR transcription. The original page image preserves

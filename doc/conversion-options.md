@@ -293,3 +293,19 @@ Byte limits accept a positive integer or `unlimited`. Image encodings accept `au
 (for example `2026-01-01T00:00:00Z`) set the reproducible-package options. The internal reader
 accepts PNG/JPEG publications; its independent admission budget can be set with
 `tools/view_epub.py --maximum-bytes BYTES`.
+
+## Language
+
+`--language TAG` sets the BCP 47 tag the conversion declares. It becomes the package's
+`dc:language`, the recognizer's language where Vision supports it, and the gate on every rule
+that only holds for a declared language: English line-end word breaks and the lexicon vote, the
+Cyrillic look-alike repair on recognized text, and East Asian spacing and heading joins. The
+default is `en`.
+
+A malformed tag is rejected rather than converted as something else: the value must be ASCII
+letters, digits and single hyphens, start with a letter, not end with one and be at most 35
+characters. `en_US`, `zh--Hans` and an empty value all fail without writing output (#108).
+
+Until this option existed every book converted as English, so `uscis-m618-arabic-2015` and
+`irs-p596-zhs-2025` declared `dc:language` `en`. The corpus lane still converts at library
+defaults and does not pass a tag, so nothing in it exercises a non-English recognition language.

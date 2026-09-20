@@ -92,6 +92,14 @@ def main():
                           check=True, timeout=120)
         results.append({'name': name, 'command': run.command, 'imageCount': image_count, 'passed': True})
         print('PASS ' + name, flush=True)
+    # A declared language reaches the package document (#108).
+    tagged = args.output / 'language.epub'
+    convert(converter, fixtures / 'prose.pdf', tagged, '--language', 'zh-Hans', timeout=60)
+    with zipfile.ZipFile(tagged) as archive:
+        package = next(n for n in archive.namelist() if n.endswith('.opf'))
+        text = archive.read(package).decode('utf-8')
+    assert '<dc:language>zh-Hans</dc:language>' in text, 'declared language missing from the package'
+    print('PASS language-tag', flush=True)
     failures = [
         ['--reference-images', 'invalid'], ['--region-image-encoding', 'jpeg:nan'],
         ['--full-page-image-encoding', 'smallest:1.1'], ['--full-page-image-encoding', 'jpeg:-0.1'],
@@ -102,6 +110,10 @@ def main():
         ['--ocr', 'invalid'], ['--ocr'],
         ['--repeated-headers-and-footers', 'drop'], ['--repeated-headers-and-footers', 'KEEP'],
         ['--repeated-headers-and-footers'],
+        # A language tag decides dc:language and the rules that only hold for a declared
+        # language, so a malformed one fails rather than converting as something else (#108).
+        ['--language', ''], ['--language', 'en_US'], ['--language', 'zh--Hans'],
+        ['--language', 'en-'], ['--language', '1en'], ['--language'],
     ]
     for flags in failures:
         output = args.output / 'must-not-exist.epub'

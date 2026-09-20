@@ -15,6 +15,7 @@ struct PDFReflowLibCommand {
           --region-image-encoding automatic[:QUALITY]|png|jpeg:QUALITY|smallest:QUALITY
           --maximum-output-bytes BYTES|unlimited  (uncompressed entry budget)
           --maximum-epub-bytes BYTES|unlimited    (final ZIP file cap)
+          --language TAG                          (BCP 47; dc:language and OCR; default en)
           --package-identifier ID                 (dc:identifier; default random urn:uuid)
           --modification-date ISO8601             (e.g. 2026-01-01T00:00:00Z; default now)
         JPEG QUALITY must be in 0...1. Defaults: automatic references, repeated headers and
@@ -87,6 +88,17 @@ struct PDFReflowLibCommand {
                 case "--region-image-encoding": options.regionImageEncoding = try encoding(value)
                 case "--maximum-output-bytes": options.maximumOutputBytes = try byteLimit(value) ?? .max
                 case "--maximum-epub-bytes": options.maximumEPUBBytes = try byteLimit(value)
+                case "--language":
+                    // The tag decides dc:language, the recognizer's language where it supports
+                    // one, and the rules that only hold for a declared language — English word
+                    // breaks, the Cyrillic look-alike repair, East Asian spacing (#108).
+                    let tag = value.trimmingCharacters(in: .whitespaces)
+                    guard !tag.isEmpty, tag.count <= 35,
+                          tag.allSatisfy({ $0.isASCII && ($0.isLetter || $0.isNumber || $0 == "-") }),
+                          tag.first?.isLetter == true, !tag.hasSuffix("-"), !tag.contains("--") else {
+                        throw ConversionError.invalidOptions("language must be a BCP 47 tag, e.g. en, zh-Hans or ar")
+                    }
+                    options.language = tag
                 case "--package-identifier": options.packageIdentifier = value
                 case "--modification-date":
                     guard let date = ISO8601DateFormatter().date(from: value) else {

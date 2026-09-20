@@ -49,7 +49,8 @@ enum PageReader {
             // formatting is never emitted. Avoid decoding attributed image attachments.
             var content = PageContent(number: i + 1, bounds: bounds,
                 lines: try NativeTextReader.lines(on: page, limit: limit,
-                    includeStyle: !requiresPageImage && !syntheticStyle), graphics: graphics.regions,
+                    includeStyle: !requiresPageImage && !syntheticStyle,
+                    rules: graphics.regions.filter(LayoutReconstructor.isThinRule)), graphics: graphics.regions,
                 pictures: graphics.images)
             if !requiresPageImage && !syntheticStyle && options.ocr != .always, let structure,
                let tags = structure.pages[i + 1], !tags.isEmpty,

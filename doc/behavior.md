@@ -1002,6 +1002,20 @@ Evidence: [raster-dpi](../measurements/raster-dpi/record.md),
 
 ## EPUBWriter, SpinePacker, EPUBTextEncoder
 
+- **Painted underlines (#235).** A page can emphasize a word by painting a rule under it rather
+  than by setting an underlined font, which leaves no trace in the text layer. Such a run is
+  marked and written `<u>`, which states the appearance the page draws without claiming a link.
+  PDFKit's own hit-testing supplies the range — the selection over the rule's horizontal extent
+  is the underlined text and the one before it gives the offset — so the 9/11 report's page 161
+  marks `gain` and not the `gains` later on the same line. Four guards keep it off what is not
+  emphasis: the rule sits inside the line's box rather than above it (a radical's vinculum
+  belongs to the line above), starts inside the measure rather than at its left edge (an
+  underlined section label is the line's own decoration), spans under 90% of the measure (a
+  table's rule), and covers at least two letters on a line that reads as a sentence. Inline
+  mathematics inside a prose line is a known exception: four vincula in Wallace are marked, cost
+  no text, and would need glyph extents to separate.
+  Evidence: [painted-underlines](../measurements/painted-underlines/record.md).
+
 - Output is EPUB 3: XHTML spine documents, a stylesheet, metadata, flat heading navigation, a
   source page-list, an OPF 3.0 package and the required first, uncompressed `mimetype` entry.
   `EPUBTextEncoder` escapes source markup (raw text is escaped before inline elements are added

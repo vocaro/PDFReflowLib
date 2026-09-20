@@ -116,6 +116,9 @@ struct TextStyle: OptionSet, Sendable, Equatable, Codable {
     static let italic = TextStyle(rawValue: 1 << 1)
     static let superscript = TextStyle(rawValue: 1 << 2)
     static let `subscript` = TextStyle(rawValue: 1 << 3)
+    /// A rule the page paints under a run of words, which is emphasis the font does not carry
+    /// (#235). Not a link: the writer emits `<u>`, which states appearance without claiming one.
+    static let underline = TextStyle(rawValue: 1 << 4)
 }
 
 struct InlineText: Sendable, Equatable, Codable {

@@ -37,11 +37,15 @@ enum NativeTextReader {
         return try autoreleasepool { try operation() }
     }
 
-    static func lines(on page: PDFPage, limit: Int, includeStyle: Bool = true) throws -> [TextLine] {
-        try withExtractionLock { try extractLines(on: page, limit: limit, includeStyle: includeStyle) }
+    /// `rules` are the page's painted thin rules, which supply the underline evidence the text
+    /// layer does not carry (#235).
+    static func lines(on page: PDFPage, limit: Int, includeStyle: Bool = true,
+                      rules: [CGRect] = []) throws -> [TextLine] {
+        try withExtractionLock { try extractLines(on: page, limit: limit, includeStyle: includeStyle, rules: rules) }
     }
 
-    private static func extractLines(on page: PDFPage, limit: Int, includeStyle: Bool) throws -> [TextLine] {
+    private static func extractLines(on page: PDFPage, limit: Int, includeStyle: Bool,
+                                     rules: [CGRect]) throws -> [TextLine] {
         guard page.numberOfCharacters <= limit else {
             throw ConversionError.resourceLimit("too many characters")
         }
@@ -81,7 +85,10 @@ enum NativeTextReader {
             guard bounds.isFinite, !bounds.isNull, bounds.width > 0, bounds.height > 0 else { carry = nil; continue }
             // Object-only selections were discarded before requesting attributed text,
             // which can make PDFKit decode large image attachments.
-            let attributed = includeStyle ? attributedByLine[index] ?? line.attributedString : nil
+            var attributed = includeStyle ? attributedByLine[index] ?? line.attributedString : nil
+            if includeStyle, !rules.isEmpty, let text = attributed {
+                attributed = markUnderlines(text, box: bounds, rules: rules, on: page)
+            }
             let spacingFixed = attributed.map {
                 $0.string == raw ? NativeSpacingReader.apply(spacing, to: $0, bounds: bounds, allBounds: boundsByLine) : $0
             }
@@ -154,6 +161,58 @@ enum NativeTextReader {
             cursor += length
         }
         return cursor == text.length ? ranges : nil
+    }
+
+    /// Marks the runs a page paints a rule under, so emphasis the font does not carry survives
+    /// reflow (#235).
+    ///
+    /// The 9/11 report underlines single words by painting a filled path, not by setting an
+    /// underlined font, so nothing in the text layer records it. PDFKit's own hit-testing supplies
+    /// the range: the selection over the rule's horizontal extent within the line's box is the
+    /// underlined text, and the selection from the line's left edge to the rule's start is what
+    /// precedes it, whose length is the offset. Position is what resolves a word the line holds
+    /// twice — page 161 underlines `gain` on a line that also reads `gains`.
+    ///
+    /// `GraphicsReader` pads a region by two points on each side, which is removed before asking,
+    /// or the selection takes the character beyond the rule's ink. A rule reaching most of the
+    /// line's measure is its decoration or a table's rule rather than emphasis of a word, and a
+    /// run of no letters is not a word, so neither is marked. A computed range whose text is not
+    /// the text PDFKit selected is dropped rather than guessed at.
+    private static func markUnderlines(_ attributed: NSAttributedString, box: CGRect, rules: [CGRect],
+                                       on page: PDFPage) -> NSAttributedString {
+        let underlining = rules.map { $0.insetBy(dx: 2, dy: 0) }.filter { rule in
+            rule.width > 0 && rule.width <= box.width * 0.9
+                // Inside the line's own box, in its lower half: a rule above the box belongs to
+                // the line above it — Wallace's radical vincula sit a point or two over the line
+                // beneath them and would otherwise read as its underline.
+                && rule.midY >= box.minY && rule.midY <= box.minY + box.height * 0.5
+                // A rule under the start of a line is that line's own decoration — an underlined
+                // section label, a heading's rule — and the words it carries are not emphasized
+                // against the rest of the line. Emphasis of a word sits inside the measure.
+                && rule.minX > box.minX + 1 && rule.maxX <= box.maxX + 3
+        }
+        // Emphasis is a thing running prose does. A line of mathematics is full of rules that are
+        // its terms' — vincula, fraction bars — and none of them emphasizes anything, so a line
+        // that does not read as a sentence is left alone.
+        let words = attributed.string.split(whereSeparator: { !$0.isLetter }).filter { $0.count >= 2 }
+        guard !underlining.isEmpty, attributed.length > 0, words.count >= 4 else { return attributed }
+        let marked = NSMutableAttributedString(attributedString: attributed)
+        for rule in underlining {
+            let over = CGRect(x: rule.minX, y: box.minY, width: rule.width, height: box.height)
+            let before = CGRect(x: box.minX, y: box.minY, width: max(0, rule.minX - box.minX),
+                                height: box.height)
+            // Emphasis marks words. A rule over a single letter or a digit is a mathematical
+            // term's — a radical's vinculum, a fraction's bar — and Wallace's `y`, `2` and `− y`
+            // are what marking those produces.
+            guard let text = page.selection(for: over)?.string, text.utf16.count <= 60,
+                  text.filter(\.isLetter).count >= 2 else { continue }
+            let offset = page.selection(for: before)?.string?.utf16.count ?? 0
+            let range = NSRange(location: offset, length: text.utf16.count)
+            guard range.location >= 0, range.upperBound <= marked.length,
+                  (marked.string as NSString).substring(with: range) == text else { continue }
+            marked.addAttribute(.underlineStyle, value: NSUnderlineStyle.single.rawValue, range: range)
+        }
+        return marked
     }
 
     static func textLine(semantic: String, bounds: CGRect, attributed: NSAttributedString?) -> TextLine {
@@ -236,6 +295,8 @@ enum NativeTextReader {
             var style: TextStyle = []
             if name.contains("italic") || name.contains("oblique") { style.insert(.italic) }
             if name.contains("bold") { style.insert(.bold) }
+            // Set by `markUnderlines` from the page's own painted rules, not by the font (#235).
+            if attributes[.underlineStyle] != nil { style.insert(.underline) }
             // PDFKit supplies Core Text baseline offsets even when font size/name do not
             // change. Preserve that evidence instead of guessing from character offsets.
             let offset = (attributes[NSAttributedString.Key(kCTBaselineOffsetAttributeName as String)] as? NSNumber
@@ -268,6 +329,18 @@ enum NativeTextReader {
             }
             runs.append(.text(run, style))
         }
-        return InlineText(elements: runs).trimmingCharacters(in: .whitespacesAndNewlines)
+        // `enumerateAttributes` splits at every attribute change, including ones no style reads, so
+        // one underlined word can arrive as several runs of one style. Adjacent runs that read the
+        // same are one run, which keeps `<u>more</u>` from being written `<u>mor</u><u>e</u>`.
+        var merged: [InlineText.Element] = []
+        for element in runs {
+            if case let .text(value, style) = element, case let .text(previous, previousStyle)? = merged.last,
+               style == previousStyle {
+                merged[merged.count - 1] = .text(previous + value, style)
+            } else {
+                merged.append(element)
+            }
+        }
+        return InlineText(elements: merged).trimmingCharacters(in: .whitespacesAndNewlines)
     }
 }

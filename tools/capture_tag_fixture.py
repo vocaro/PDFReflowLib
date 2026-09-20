@@ -10,7 +10,12 @@ Reads with qpdf only; nothing is modified. What is captured is the page's own by
     ancestor up to the tree root, each with its role, parent, and children in source order
     (an MCID integer, or another captured element). Elements outside this page are pruned.
   * `parentTree` - the page's ParentTree entry: the element that owns each MCID.
-  * `roleMap`, `xobjects`, `mediaBox` - the rest of what a tag reader resolves on the page.
+  * `xobjects` - each XObject the page draws, by name and subtype; a Form also carries its own
+    decoded content stream, `BBox`, `Matrix`, fonts and nested XObjects, because what a Form
+    draws is part of what a tag reader must account for (#241).
+  * `properties` - the `/MCID` of each `/Properties` entry a `BDC` can name, on the page and
+    in each Form.
+  * `roleMap`, `mediaBox` - the rest of what a tag reader resolves on the page.
 
 The result is read by `SourceTagFixture` in the test target, which replays it as a one-page
 document. Nothing here is reconstruction output: every field is the source PDF's own.
@@ -142,15 +147,47 @@ def fonts(pdf, page):
     return result
 
 
-def xobjects(pdf, page):
-    entry = re.search(r'/XObject << (.*?) >>', page)
+def properties(pdf, owner):
+    """The `/Properties` a stream's `BDC` operands name. A tag reader reads one key from such a
+    dictionary, `/MCID`, so that is what is captured; a dictionary without one is captured as
+    the empty dictionary it is to this reader."""
+    entry = re.search(r'/Properties << (.*?) >>', owner)
     if not entry:
+        return {}
+    result = {}
+    for name, ref in re.findall(r'/(\S+) (\d+) 0 R', entry.group(1)):
+        mcid = re.search(r'/MCID (\d+)', show(pdf, ref))
+        result[name] = {'mcid': int(mcid.group(1))} if mcid else {}
+    return result
+
+
+def numbers(text, key):
+    """A numeric array entry (`/BBox`, `/Matrix`), or None when it is absent."""
+    m = re.search(r'/%s \[ ([-0-9.eE ]+) \]' % key, text)
+    return [float(v) for v in m.group(1).split()] if m else None
+
+
+def xobjects(pdf, owner, depth=0):
+    """Every XObject `owner`'s resources name. A Form carries its own content, box, matrix and
+    resources, recursively: what a Form draws is what a tag reader must account for, so a
+    stand-in for it would be a reconstruction of the evidence rather than the evidence."""
+    entry = re.search(r'/XObject << (.*?) >>', owner)
+    if not entry or depth > 8:
         return []
     result = []
     for name, ref in re.findall(r'/(\S+) (\d+) 0 R', entry.group(1)):
-        subtype = re.search(r'/Subtype /(\w+)', show(pdf, ref))
-        result.append({'name': name, 'object': '%s 0 R' % ref,
-                       'subtype': subtype.group(1) if subtype else None})
+        dictionary = show(pdf, ref)
+        subtype = re.search(r'/Subtype /(\w+)', dictionary)
+        item = {'name': name, 'object': '%s 0 R' % ref,
+                'subtype': subtype.group(1) if subtype else None}
+        if item['subtype'] == 'Form':
+            item['bbox'] = numbers(dictionary, 'BBox')
+            item['matrix'] = numbers(dictionary, 'Matrix')
+            item['contentStream'] = show(pdf, ref, filtered=True)
+            item['fonts'] = fonts(pdf, dictionary)
+            item['properties'] = properties(pdf, dictionary)
+            item['xobjects'] = xobjects(pdf, dictionary, depth + 1)
+        result.append(item)
     return result
 
 
@@ -219,6 +256,7 @@ def main():
         'elements': [elements[n] for n in sorted(elements)],
         'fonts': fonts(pdf, page),
         'xobjects': xobjects(pdf, page),
+        'properties': properties(pdf, page),
         'contentStream': stream,
         'provenance': note,
     }, open(out, 'w'), indent=2)

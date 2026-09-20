@@ -1,0 +1,261 @@
+{
+  "sourceSHA256": "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
+  "page": 373,
+  "contentObjects": [
+    "10556 0 R"
+  ],
+  "mediaBox": [
+    0.0,
+    0.0,
+    594.0,
+    774.0
+  ],
+  "structParents": 1305,
+  "structureRoot": 40511,
+  "roleMap": {
+    "AC_body_text": "P",
+    "AC_bullet_text": "P",
+    "AC_bullet_text_2nd_l": "P",
+    "AC_bullet_text_with_": "P",
+    "AC_captions": "P",
+    "AC_chapter_number": "P",
+    "AC_chapter_title": "P",
+    "AC_heading_1": "P",
+    "AC_heading_2": "P",
+    "AC_heading_3": "P",
+    "AC_heading_4": "P",
+    "AC_heading_5": "P",
+    "Annotation": "Span",
+    "Article": "Art",
+    "Artifact": "P",
+    "Bibliography": "BibEntry",
+    "Chart": "Figure",
+    "Diagram": "Figure",
+    "DropCap": "Figure",
+    "Endnote": "Note",
+    "Footnote": "Note",
+    "Index_Lvl_1": "P",
+    "Index_Lvl_2": "P",
+    "Index_Lvl_3": "P",
+    "InlineShape": "Figure",
+    "Outline": "Span",
+    "Story": "Sect",
+    "Strikeout": "Span",
+    "Subscript": "Span",
+    "Superscript": "Span",
+    "TextBox": "Art",
+    "ToC_Chapter_Number": "P",
+    "ToC_Chapter_Title_1": "P",
+    "ToC_Section_Title_1": "P",
+    "ToC_Section_Title_2": "P",
+    "ToC_Section_Title_3": "P",
+    "Underline": "Span",
+    "_No_paragraph_style_": "P"
+  },
+  "rootKids": [
+    40513
+  ],
+  "parentTree": {
+    "25944": 49583,
+    "25945": 49586,
+    "25946": 49585,
+    "25947": 49585,
+    "25948": 49585,
+    "25949": 49585
+  },
+  "elements": [
+    {
+      "object": 40513,
+      "role": "Document",
+      "parent": null,
+      "page": false,
+      "kids": [
+        {
+          "element": 49562
+        }
+      ]
+    },
+    {
+      "object": 49562,
+      "role": "Article",
+      "parent": 40513,
+      "page": false,
+      "kids": [
+        {
+          "element": 49583
+        },
+        {
+          "element": 49584
+        }
+      ]
+    },
+    {
+      "object": 49583,
+      "role": "Figure",
+      "parent": 49562,
+      "page": true,
+      "kids": [
+        25944
+      ]
+    },
+    {
+      "object": 49584,
+      "role": "Story",
+      "parent": 49562,
+      "page": false,
+      "kids": [
+        {
+          "element": 49585
+        }
+      ]
+    },
+    {
+      "object": 49585,
+      "role": "AC_captions",
+      "parent": 49584,
+      "page": true,
+      "kids": [
+        {
+          "element": 49586
+        },
+        25946,
+        25947,
+        25948,
+        25949
+      ]
+    },
+    {
+      "object": 49586,
+      "role": "Span",
+      "parent": 49585,
+      "page": true,
+      "kids": [
+        25945
+      ]
+    }
+  ],
+  "fonts": [
+    {
+      "name": "C2_0",
+      "object": "32420 0 R",
+      "subtype": "Type0",
+      "encoding": "Identity",
+      "toUnicode": "/CIDInit /ProcSet findresource begin\n12 dict begin\nbegincmap\n/CIDSystemInfo\n<< /Registry (Adobe)\n/Ordering (UCS) /Supplement 0 >> def\n/CMapName /Adobe-Identity-UCS def\n/CMapType 2 def\n1 begincodespacerange\n<0000> <FFFF>\nendcodespacerange\n1 beginbfchar\n<001C> <0039>\nendbfchar\nendcmap CMapName currentdict /CMap defineresource pop end end\n"
+    },
+    {
+      "name": "TT0",
+      "object": "32280 0 R",
+      "subtype": "TrueType",
+      "encoding": "WinAnsiEncoding",
+      "toUnicode": "/CIDInit /ProcSet findresource begin\n12 dict begin\nbegincmap\n/CIDSystemInfo\n<< /Registry (Adobe)\n/Ordering (UCS) /Supplement 0 >> def\n/CMapName /Adobe-Identity-UCS def\n/CMapType 2 def\n1 begincodespacerange\n<0000> <FFFF>\nendcodespacerange\n12 beginbfchar\n<2D> <002D>\n<30> <0030>\n<31> <0031>\n<32> <0032>\n<33> <0033>\n<34> <0034>\n<35> <0035>\n<36> <0036>\n<37> <0037>\n<38> <0038>\n<39> <0039>\n<0020> <0020>\nendbfchar\nendcmap CMapName currentdict /CMap defineresource pop end end\n"
+    },
+    {
+      "name": "TT1",
+      "object": "32278 0 R",
+      "subtype": "TrueType",
+      "encoding": "WinAnsiEncoding",
+      "toUnicode": "/CIDInit /ProcSet findresource begin\n12 dict begin\nbegincmap\n/CIDSystemInfo\n<< /Registry (Adobe)\n/Ordering (UCS) /Supplement 0 >> def\n/CMapName /Adobe-Identity-UCS def\n/CMapType 2 def\n1 begincodespacerange\n<0000> <FFFF>\nendcodespacerange\n64 beginbfchar\n<20> <0020>\n<28> <0028>\n<29> <0029>\n<2C> <002C>\n<2D> <002D>\n<2E> <002E>\n<2F> <002F>\n<30> <0030>\n<31> <0031>\n<32> <0032>\n<33> <0033>\n<34> <0034>\n<35> <0035>\n<36> <0036>\n<37> <0037>\n<38> <0038>\n<39> <0039>\n<3A> <003A>\n<41> <0041>\n<42> <0042>\n<43> <0043>\n<44> <0044>\n<45> <0045>\n<46> <0046>\n<47> <0047>\n<49> <0049>\n<4B> <004B>\n<4C> <004C>\n<4D> <004D>\n<4E> <004E>\n<4F> <004F>\n<50> <0050>\n<52> <0052>\n<53> <0053>\n<54> <0054>\n<55> <0055>\n<56> <0056>\n<57> <0057>\n<61> <0061>\n<62> <0062>\n<63> <0063>\n<64> <0064>\n<65> <0065>\n<66> <0066>\n<67> <0067>\n<68> <0068>\n<69> <0069>\n<6B> <006B>\n<6C> <006C>\n<6D> <006D>\n<6E> <006E>\n<6F> <006F>\n<70> <0070>\n<71> <0071>\n<72> <0072>\n<73> <0073>\n<74> <0074>\n<75> <0075>\n<76> <0076>\n<77> <0077>\n<78> <0078>\n<79> <0079>\n<96> <2013>\n<97> <2014>\nendbfchar\nendcmap CMapName currentdict /CMap defineresource pop end end\n"
+    },
+    {
+      "name": "TT2",
+      "object": "32283 0 R",
+      "subtype": "TrueType",
+      "encoding": "WinAnsiEncoding",
+      "toUnicode": "/CIDInit /ProcSet findresource begin\n12 dict begin\nbegincmap\n/CIDSystemInfo\n<< /Registry (Adobe)\n/Ordering (UCS) /Supplement 0 >> def\n/CMapName /Adobe-Identity-UCS def\n/CMapType 2 def\n1 begincodespacerange\n<0000> <FFFF>\nendcodespacerange\n73 beginbfchar\n<20> <0020>\n<28> <0028>\n<29> <0029>\n<2C> <002C>\n<2D> <002D>\n<2E> <002E>\n<2F> <002F>\n<30> <0030>\n<31> <0031>\n<32> <0032>\n<33> <0033>\n<34> <0034>\n<35> <0035>\n<36> <0036>\n<37> <0037>\n<38> <0038>\n<39> <0039>\n<41> <0041>\n<42> <0042>\n<43> <0043>\n<44> <0044>\n<45> <0045>\n<46> <0046>\n<47> <0047>\n<48> <0048>\n<49> <0049>\n<4A> <004A>\n<4B> <004B>\n<4C> <004C>\n<4D> <004D>\n<4E> <004E>\n<4F> <004F>\n<50> <0050>\n<51> <0051>\n<52> <0052>\n<53> <0053>\n<54> <0054>\n<55> <0055>\n<56> <0056>\n<57> <0057>\n<58> <0058>\n<59> <0059>\n<5B> <005B>\n<5D> <005D>\n<61> <0061>\n<62> <0062>\n<63> <0063>\n<64> <0064>\n<65> <0065>\n<66> <0066>\n<67> <0067>\n<68> <0068>\n<69> <0069>\n<6A> <006A>\n<6B> <006B>\n<6C> <006C>\n<6D> <006D>\n<6E> <006E>\n<6F> <006F>\n<70> <0070>\n<71> <0071>\n<72> <0072>\n<73> <0073>\n<74> <0074>\n<75> <0075>\n<76> <0076>\n<77> <0077>\n<78> <0078>\n<79> <0079>\n<93> <201C>\n<94> <201D>\n<97> <2014>\n<B0> <00B0>\nendbfchar\nendcmap CMapName currentdict /CMap defineresource pop end end\n"
+    }
+  ],
+  "xobjects": [
+    {
+      "name": "Fm0",
+      "object": "10563 0 R",
+      "subtype": "Form",
+      "bbox": [
+        35.4874,
+        732.567,
+        522.977,
+        186.66
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "contentStream": "0 TL\nq\nq\n35.487 186.66 487.49 545.907 re\nW n\nq\n/GS0 gs\n487.4896274 0 0 545.9078354 35.4873832 186.6592551 cm\n/Im0 Do\nQ\nQ\nQ\n",
+      "fonts": [],
+      "properties": {},
+      "xobjects": [
+        {
+          "name": "Im0",
+          "object": "10562 0 R",
+          "subtype": "Image"
+        }
+      ]
+    },
+    {
+      "name": "Fm1",
+      "object": "10564 0 R",
+      "subtype": "Form",
+      "bbox": [
+        89.8246,
+        245.901,
+        168.043,
+        217.507
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "contentStream": "0 TL\nq\n/CS0 cs 1 0.949 0  scn\n/GS0 gs\n89.825 217.507 78.219 28.394 re\nf\nQ\n",
+      "fonts": [],
+      "properties": {},
+      "xobjects": []
+    },
+    {
+      "name": "Fm2",
+      "object": "10565 0 R",
+      "subtype": "Form",
+      "bbox": [
+        48.8634,
+        726.238,
+        496.062,
+        213.691
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "contentStream": "0 TL\nq\nq\n48.863 213.691 447.199 512.547 re\nW n\nBT\n/CS0 cs 0.733 0.741 0.749  scn\n/GS0 gs\n/TT0 1 Tf\n0 Tc 0 Tw 0 Ts 100 Tz 0 Tr 29.7072 34.8638 -34.8638 29.7072 78.8289 220.6975 Tm\n(Not to be used for navigation)Tj\nET\nQ\nQ\n",
+      "fonts": [
+        {
+          "name": "TT0",
+          "object": "26965 0 R",
+          "subtype": "TrueType",
+          "encoding": "WinAnsiEncoding"
+        }
+      ],
+      "properties": {},
+      "xobjects": []
+    },
+    {
+      "name": "Im0",
+      "object": "10566 0 R",
+      "subtype": "Image"
+    }
+  ],
+  "properties": {
+    "MC0": {}
+  },
+  "contentStream": "BT /Artifact <</O /Layout >>BDC  /CS0 cs 0 0 0  scn /GS0 gs /TT0 10 Tf 496.442 36.72 Td (14-3)Tj /C2_0 10 Tf <001C>Tj EMC  ET /Figure <</MCID 25944 >>BDC  /PlacedPDF /MC0 BDC  q 36.977 189 484.772 540 re W n q 0 g /GS1 gs /TT0 1 Tf /Fm0 Do Q 1 1 1  scn /GS2 gs q 1 0 0 1 511.9248 199.2695 cm 0 0 m 0 -1.603 -1.299 -2.902 -2.901 -2.902 c -469.812 -2.902 l -471.414 -2.902 -472.713 -1.603 -472.713 0 c -472.713 525.092 l -472.713 526.695 -471.414 527.994 -469.812 527.994 c -2.901 527.994 l -1.299 527.994 0 526.695 0 525.092 c h f Q /CS0 CS 0.313 0.448 0.511  SCN 1.007 w 4 M  q 1 0 0 1 511.9248 199.2695 cm 0 0 m 0 -1.603 -1.299 -2.902 -2.901 -2.902 c -469.812 -2.902 l -471.414 -2.902 -472.713 -1.603 -472.713 0 c -472.713 525.092 l -472.713 526.695 -471.414 527.994 -469.812 527.994 c -2.901 527.994 l -1.299 527.994 0 526.695 0 525.092 c 0 0 l h S Q Q q 41.569 198.598 466.863 527.875 re W n q /GS2 gs 466.8647416 0 0 527.8754627 41.5680203 198.5972203 cm /Im0 Do Q Q q 36.977 189 484.772 540 re W n q 0 g /GS3 gs /TT0 1 Tf /Fm1 Do Q q 0 g /GS3 gs /TT0 1 Tf /Fm2 Do Q EMC  EMC  /Span <</MCID 25945 >>BDC  Q BT /TT1 1 Tf 0.012 Tc 0.07 Tw 8 0 0 8 36.25 173.7598 Tm [(Figure )0.6 (14-59. )]TJ ET EMC  BT /Span <</MCID 25946 >>BDC  /TT2 1 Tf 0.063 Tw 9 0 0 9 90.3011 173.7598 Tm [(EMAS )0.5 (information )0.5 (for )0.5 (Boston )0.5 (Logan )0.5 (International )0.6 (Airport )0.5 (located )0.5 (in )0.5 (the )]TJ EMC  /Span <</MCID 25947 >>BDC  0.002 Tc 30.918 0 Td [(Chart )0.6 (Supplement )0.5 (U.S. )0.5 (\\(formerly )0.5 (Airport/)]TJ EMC  /Span <</MCID 25948 >>BDC  0 Tc 0 Tw -36.924 -1.389 Td (Facility Directory\\))Tj EMC  /Span <</MCID 25949 >>BDC  7.581 0 Td (. )Tj EMC  ET ",
+  "provenance": "FAA-H-8083-25C physical page 373: a Form XObject that does show text, the rotated 'Not to be used for navigation' watermark over a chart (#241)."
+}

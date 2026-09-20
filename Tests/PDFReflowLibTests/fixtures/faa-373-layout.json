@@ -1,0 +1,139 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        496.44200000000001,
+        33.469999999999999,
+        25.569999999999936,
+        13.649999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "14-3"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "ArialMT",
+          "fontSize" : 10,
+          "text" : "9"
+        }
+      ],
+      "text" : "14-39"
+    },
+    {
+      "rect" : [
+        38.711799999999982,
+        195.86750000000004,
+        473.71300000000002,
+        531.89599999999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "ArialMT",
+          "fontSize" : 10,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    },
+    {
+      "rect" : [
+        36.25,
+        170.90380000000002,
+        485.76219999999989,
+        10.811999999999983
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 8,
+          "text" : "Figure 14-59. "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "text" : "EMAS information for Boston Logan International Airport located in the Chart Supplement U.S. (formerly Airport/"
+        }
+      ],
+      "text" : "Figure 14-59. EMAS information for Boston Logan International Airport located in the Chart Supplement U.S. (formerly Airport/"
+    },
+    {
+      "rect" : [
+        36.247100000000046,
+        159.00880000000001,
+        70.478999999999985,
+        10.205999999999989
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "text" : "Facility Directory)."
+        }
+      ],
+      "text" : "Facility Directory)."
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    594,
+    774
+  ],
+  "caseID" : "faa-phak-8083-25c",
+  "graphics" : [
+    [
+      36.977000000000004,
+      189,
+      484.77200000000005,
+      540.26350000000002
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        496.44200000000001,
+        33.469999999999999,
+        25.569999999999936,
+        13.649999999999999
+      ],
+      "text" : "14-39"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        36.25,
+        170.90380000000002,
+        485.76219999999989,
+        10.811999999999983
+      ],
+      "text" : "Figure 14-59. EMAS information for Boston Logan International Airport located in the Chart Supplement U.S. (formerly Airport/"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        36.247100000000046,
+        159.00880000000001,
+        70.478999999999985,
+        10.205999999999989
+      ],
+      "text" : "Facility Directory)."
+    }
+  ],
+  "page" : 373,
+  "rightsBasis" : "U.S. Government publication, retained as an external development corpus source. The PDF is not bundled or relicensed under the library license.",
+  "sourceSHA256" : "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
+  "sourceTitle" : "Pilot's Handbook of Aeronautical Knowledge, FAA-H-8083-25C",
+  "sourceURL" : "https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/faa-h-8083-25c.pdf"
+}

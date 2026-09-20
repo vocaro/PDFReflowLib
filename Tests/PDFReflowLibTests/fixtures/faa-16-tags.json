@@ -1,0 +1,384 @@
+{
+  "sourceSHA256": "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
+  "page": 16,
+  "contentObjects": [
+    "83 0 R"
+  ],
+  "mediaBox": [
+    0.0,
+    0.0,
+    594.0,
+    774.0
+  ],
+  "structParents": 927,
+  "structureRoot": 40511,
+  "roleMap": {
+    "AC_body_text": "P",
+    "AC_bullet_text": "P",
+    "AC_bullet_text_2nd_l": "P",
+    "AC_bullet_text_with_": "P",
+    "AC_captions": "P",
+    "AC_chapter_number": "P",
+    "AC_chapter_title": "P",
+    "AC_heading_1": "P",
+    "AC_heading_2": "P",
+    "AC_heading_3": "P",
+    "AC_heading_4": "P",
+    "AC_heading_5": "P",
+    "Annotation": "Span",
+    "Article": "Art",
+    "Artifact": "P",
+    "Bibliography": "BibEntry",
+    "Chart": "Figure",
+    "Diagram": "Figure",
+    "DropCap": "Figure",
+    "Endnote": "Note",
+    "Footnote": "Note",
+    "Index_Lvl_1": "P",
+    "Index_Lvl_2": "P",
+    "Index_Lvl_3": "P",
+    "InlineShape": "Figure",
+    "Outline": "Span",
+    "Story": "Sect",
+    "Strikeout": "Span",
+    "Subscript": "Span",
+    "Superscript": "Span",
+    "TextBox": "Art",
+    "ToC_Chapter_Number": "P",
+    "ToC_Chapter_Title_1": "P",
+    "ToC_Section_Title_1": "P",
+    "ToC_Section_Title_2": "P",
+    "ToC_Section_Title_3": "P",
+    "Underline": "Span",
+    "_No_paragraph_style_": "P"
+  },
+  "rootKids": [
+    40513
+  ],
+  "parentTree": {
+    "2739": 55723,
+    "2740": 55546,
+    "2741": 55726,
+    "2742": 55727,
+    "2743": 55727,
+    "2744": 55727,
+    "2745": 55727,
+    "2746": 55727,
+    "2747": 55727,
+    "2748": 55728,
+    "2749": 55728,
+    "2750": 55728,
+    "2751": 55728,
+    "2752": 55728,
+    "2753": 55728,
+    "2754": 55728,
+    "2755": 55728,
+    "2756": 55728,
+    "2757": 55713,
+    "2758": 55713,
+    "2759": 55716
+  },
+  "elements": [
+    {
+      "object": 40513,
+      "role": "Document",
+      "parent": null,
+      "page": false,
+      "kids": [
+        {
+          "element": 55542
+        }
+      ]
+    },
+    {
+      "object": 55541,
+      "role": "Story",
+      "parent": 55542,
+      "page": false,
+      "kids": [
+        {
+          "element": 55726
+        },
+        {
+          "element": 55727
+        },
+        {
+          "element": 55728
+        }
+      ]
+    },
+    {
+      "object": 55542,
+      "role": "Article",
+      "parent": 40513,
+      "page": false,
+      "kids": [
+        {
+          "element": 55544
+        },
+        {
+          "element": 55546
+        },
+        {
+          "element": 55547
+        },
+        {
+          "element": 55548
+        },
+        {
+          "element": 55541
+        }
+      ]
+    },
+    {
+      "object": 55544,
+      "role": "Story",
+      "parent": 55542,
+      "page": false,
+      "kids": [
+        {
+          "element": 55721
+        }
+      ]
+    },
+    {
+      "object": 55546,
+      "role": "Figure",
+      "parent": 55542,
+      "page": true,
+      "kids": [
+        2740
+      ]
+    },
+    {
+      "object": 55547,
+      "role": "Story",
+      "parent": 55542,
+      "page": false,
+      "kids": [
+        {
+          "element": 55714
+        }
+      ]
+    },
+    {
+      "object": 55548,
+      "role": "Story",
+      "parent": 55542,
+      "page": false,
+      "kids": [
+        {
+          "element": 55713
+        }
+      ]
+    },
+    {
+      "object": 55713,
+      "role": "AC_chapter_title",
+      "parent": 55548,
+      "page": true,
+      "kids": [
+        2757,
+        2758
+      ]
+    },
+    {
+      "object": 55714,
+      "role": "AC_chapter_number",
+      "parent": 55547,
+      "page": false,
+      "kids": [
+        {
+          "element": 55716
+        }
+      ]
+    },
+    {
+      "object": 55716,
+      "role": "Span",
+      "parent": 55714,
+      "page": true,
+      "kids": [
+        2759
+      ]
+    },
+    {
+      "object": 55721,
+      "role": "_No_paragraph_style_",
+      "parent": 55544,
+      "page": false,
+      "kids": [
+        {
+          "element": 55723
+        }
+      ]
+    },
+    {
+      "object": 55723,
+      "role": "Span",
+      "parent": 55721,
+      "page": true,
+      "kids": [
+        2739
+      ]
+    },
+    {
+      "object": 55726,
+      "role": "AC_heading_1",
+      "parent": 55541,
+      "page": true,
+      "kids": [
+        2741
+      ]
+    },
+    {
+      "object": 55727,
+      "role": "AC_body_text",
+      "parent": 55541,
+      "page": true,
+      "kids": [
+        2742,
+        2743,
+        2744,
+        2745,
+        2746,
+        2747
+      ]
+    },
+    {
+      "object": 55728,
+      "role": "AC_body_text",
+      "parent": 55541,
+      "page": true,
+      "kids": [
+        2748,
+        2749,
+        2750,
+        2751,
+        2752,
+        2753,
+        2754,
+        2755,
+        2756
+      ]
+    }
+  ],
+  "fonts": [
+    {
+      "name": "TT0",
+      "object": "30223 0 R",
+      "subtype": "TrueType",
+      "encoding": "WinAnsiEncoding",
+      "toUnicode": "/CIDInit /ProcSet findresource begin\n12 dict begin\nbegincmap\n/CIDSystemInfo\n<< /Registry (Adobe)\n/Ordering (UCS) /Supplement 0 >> def\n/CMapName /Adobe-Identity-UCS def\n/CMapType 2 def\n1 begincodespacerange\n<0000> <FFFF>\nendcodespacerange\n12 beginbfchar\n<2D> <002D>\n<30> <0030>\n<31> <0031>\n<32> <0032>\n<33> <0033>\n<34> <0034>\n<35> <0035>\n<36> <0036>\n<37> <0037>\n<38> <0038>\n<39> <0039>\n<0020> <0020>\nendbfchar\nendcmap CMapName currentdict /CMap defineresource pop end end\n"
+    },
+    {
+      "name": "TT1",
+      "object": "30225 0 R",
+      "subtype": "TrueType",
+      "encoding": "WinAnsiEncoding",
+      "toUnicode": "/CIDInit /ProcSet findresource begin\n12 dict begin\nbegincmap\n/CIDSystemInfo\n<< /Registry (Adobe)\n/Ordering (UCS) /Supplement 0 >> def\n/CMapName /Adobe-Identity-UCS def\n/CMapType 2 def\n1 begincodespacerange\n<0000> <FFFF>\nendcodespacerange\n58 beginbfchar\n<20> <0020>\n<28> <0028>\n<29> <0029>\n<2D> <002D>\n<2E> <002E>\n<30> <0030>\n<31> <0031>\n<32> <0032>\n<33> <0033>\n<34> <0034>\n<35> <0035>\n<36> <0036>\n<37> <0037>\n<38> <0038>\n<39> <0039>\n<41> <0041>\n<42> <0042>\n<43> <0043>\n<44> <0044>\n<45> <0045>\n<46> <0046>\n<48> <0048>\n<49> <0049>\n<4B> <004B>\n<4C> <004C>\n<4D> <004D>\n<4F> <004F>\n<50> <0050>\n<52> <0052>\n<53> <0053>\n<54> <0054>\n<55> <0055>\n<56> <0056>\n<61> <0061>\n<62> <0062>\n<63> <0063>\n<64> <0064>\n<65> <0065>\n<66> <0066>\n<67> <0067>\n<68> <0068>\n<69> <0069>\n<6B> <006B>\n<6C> <006C>\n<6D> <006D>\n<6E> <006E>\n<6F> <006F>\n<70> <0070>\n<71> <0071>\n<72> <0072>\n<73> <0073>\n<74> <0074>\n<75> <0075>\n<76> <0076>\n<77> <0077>\n<78> <0078>\n<79> <0079>\n<7A> <007A>\nendbfchar\nendcmap CMapName currentdict /CMap defineresource pop end end\n"
+    },
+    {
+      "name": "TT2",
+      "object": "30227 0 R",
+      "subtype": "TrueType",
+      "encoding": "WinAnsiEncoding",
+      "toUnicode": "/CIDInit /ProcSet findresource begin\n12 dict begin\nbegincmap\n/CIDSystemInfo\n<< /Registry (Adobe)\n/Ordering (UCS) /Supplement 0 >> def\n/CMapName /Adobe-Identity-UCS def\n/CMapType 2 def\n1 begincodespacerange\n<0000> <FFFF>\nendcodespacerange\n82 beginbfchar\n<20> <0020>\n<21> <0021>\n<24> <0024>\n<27> <0027>\n<28> <0028>\n<29> <0029>\n<2C> <002C>\n<2D> <002D>\n<2E> <002E>\n<2F> <002F>\n<30> <0030>\n<31> <0031>\n<32> <0032>\n<33> <0033>\n<34> <0034>\n<35> <0035>\n<36> <0036>\n<37> <0037>\n<38> <0038>\n<39> <0039>\n<3A> <003A>\n<3B> <003B>\n<3F> <003F>\n<41> <0041>\n<42> <0042>\n<43> <0043>\n<44> <0044>\n<45> <0045>\n<46> <0046>\n<47> <0047>\n<48> <0048>\n<49> <0049>\n<4A> <004A>\n<4B> <004B>\n<4C> <004C>\n<4D> <004D>\n<4E> <004E>\n<4F> <004F>\n<50> <0050>\n<51> <0051>\n<52> <0052>\n<53> <0053>\n<54> <0054>\n<55> <0055>\n<56> <0056>\n<57> <0057>\n<58> <0058>\n<59> <0059>\n<5D> <005D>\n<5F> <005F>\n<61> <0061>\n<62> <0062>\n<63> <0063>\n<64> <0064>\n<65> <0065>\n<66> <0066>\n<67> <0067>\n<68> <0068>\n<69> <0069>\n<6A> <006A>\n<6B> <006B>\n<6C> <006C>\n<6D> <006D>\n<6E> <006E>\n<6F> <006F>\n<70> <0070>\n<71> <0071>\n<72> <0072>\n<73> <0073>\n<74> <0074>\n<75> <0075>\n<76> <0076>\n<77> <0077>\n<78> <0078>\n<79> <0079>\n<7A> <007A>\n<92> <2019>\n<93> <201C>\n<94> <201D>\n<95> <2022>\n<96> <2013>\n<97> <2014>\nendbfchar\nendcmap CMapName currentdict /CMap defineresource pop end end\n"
+    },
+    {
+      "name": "TT3",
+      "object": "30228 0 R",
+      "subtype": "TrueType",
+      "encoding": "WinAnsiEncoding",
+      "toUnicode": "/CIDInit /ProcSet findresource begin\n12 dict begin\nbegincmap\n/CIDSystemInfo\n<< /Registry (Adobe)\n/Ordering (UCS) /Supplement 0 >> def\n/CMapName /Adobe-Identity-UCS def\n/CMapType 2 def\n1 begincodespacerange\n<0000> <FFFF>\nendcodespacerange\n21 beginbfchar\n<20> <0020>\n<31> <0031>\n<43> <0043>\n<46> <0046>\n<49> <0049>\n<54> <0054>\n<61> <0061>\n<63> <0063>\n<64> <0064>\n<65> <0065>\n<67> <0067>\n<68> <0068>\n<69> <0069>\n<6C> <006C>\n<6E> <006E>\n<6F> <006F>\n<70> <0070>\n<72> <0072>\n<74> <0074>\n<75> <0075>\n<79> <0079>\nendbfchar\nendcmap CMapName currentdict /CMap defineresource pop end end\n"
+    }
+  ],
+  "xobjects": [
+    {
+      "name": "Fm0",
+      "object": "90 0 R",
+      "subtype": "Form",
+      "bbox": [
+        55.9286,
+        606.462,
+        325.286,
+        370.0
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "contentStream": "0 TL\nq\nq\n0 Tc 0 Tw 0 Ts 100 Tz 0 Tr /GS0 gs\n/TT0 1 Tf\n/Fm0 Do\nQ\nQ\n",
+      "fonts": [
+        {
+          "name": "TT0",
+          "object": "30223 0 R",
+          "subtype": "TrueType",
+          "encoding": "WinAnsiEncoding",
+          "toUnicode": "/CIDInit /ProcSet findresource begin\n12 dict begin\nbegincmap\n/CIDSystemInfo\n<< /Registry (Adobe)\n/Ordering (UCS) /Supplement 0 >> def\n/CMapName /Adobe-Identity-UCS def\n/CMapType 2 def\n1 begincodespacerange\n<0000> <FFFF>\nendcodespacerange\n12 beginbfchar\n<2D> <002D>\n<30> <0030>\n<31> <0031>\n<32> <0032>\n<33> <0033>\n<34> <0034>\n<35> <0035>\n<36> <0036>\n<37> <0037>\n<38> <0038>\n<39> <0039>\n<0020> <0020>\nendbfchar\nendcmap CMapName currentdict /CMap defineresource pop end end\n"
+        }
+      ],
+      "properties": {},
+      "xobjects": [
+        {
+          "name": "Fm0",
+          "object": "89 0 R",
+          "subtype": "Form",
+          "bbox": [
+            55.9286,
+            606.462,
+            325.209,
+            370.302
+          ],
+          "matrix": [
+            1.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          "contentStream": "0 TL\nq\n/CS0 cs 1 1 1  scn\n/GS0 gs\n64.929 371 251.357 228.462 re\nf*\nQ\n",
+          "fonts": [],
+          "properties": {},
+          "xobjects": []
+        }
+      ]
+    },
+    {
+      "name": "Fm1",
+      "object": "91 0 R",
+      "subtype": "Form",
+      "bbox": [
+        56.86,
+        707.247,
+        245.86,
+        609.327
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "contentStream": "0 TL\nq\n/CS0 cs 0 0 0  scn\n/GS0 gs\n56.86 707.247 189 -97.92 re\nf\nQ\n",
+      "fonts": [],
+      "properties": {},
+      "xobjects": []
+    },
+    {
+      "name": "Im0",
+      "object": "94 0 R",
+      "subtype": "Image"
+    }
+  ],
+  "properties": {},
+  "contentStream": "BT /Span <</MCID 2739 >>BDC  /CS0 cs 0 0 0  scn /GS0 gs /TT0 1 Tf 10 0 0 10 543.5469 36.7197 Tm (1-1)Tj EMC  ET /Figure <</MCID 2740 >>BDC  q 0 0 594 774 re W n q /GS1 gs 596.1599867 0 0 776.1599827 -1.0800002 -1.0799825 cm /Im0 Do Q EMC  Q q 0 0 594 774 re W n q 0 g /GS2 gs /TT0 1 Tf /Fm0 Do Q /Span <</MCID 2741 >>BDC  Q BT 0.938 0.253 0.266  scn /GS1 gs /TT1 1 Tf -0.003 Tc 0.003 Tw 12 0 0 12 72 585.2637 Tm (Introduction)Tj ET EMC  BT /Span <</MCID 2742 >>BDC  0 0 0  scn /GS0 gs /TT2 1 Tf 0 Tc -0.031 Tw 10 0 0 10 72 568.7137 Tm (The Pilot\\222s Handbook of Aeronautical Knowledge provides )Tj EMC  /Span <</MCID 2743 >>BDC  -0.032 Tw 0 -1.25 TD [(basic )0.5 (knowledge for the )0.5 (student )0.6 (pilot )0.7 (learning )0.8 (to fly, as well )]TJ EMC  /Span <</MCID 2744 >>BDC  0.085 Tw T* [(as pilots seeking advanced )0.5 (pilot)0.5 ( certification. )1.3 (For detailed )]TJ EMC  /Span <</MCID 2745 >>BDC  0.007 Tc 0.125 Tw T* [(information on a variety of specialized flight topics, see)7.1 ( )]TJ EMC  /Span <</MCID 2746 >>BDC  0 Tc -0.042 Tw T* [(specific )1 (Federal )0.9 (Aviation )0.9 (Administration )1.3 (\\(FAA\\) handbooks )]TJ EMC  /Span <</MCID 2747 >>BDC  0 Tw T* (and Advisory Circulars \\(ACs\\).)Tj EMC  /Span <</MCID 2748 >>BDC  0.072 Tw 0 -2.5 TD (This chapter offers a brief history of flight, introduces the )Tj EMC  /Span <</MCID 2749 >>BDC  -0.008 Tc -0.062 Tw 0 -1.25 TD [(history and role of the FAA in civil aviation, FAA regulations)-8.2 ( )]TJ EMC  /Span <</MCID 2750 >>BDC  0.017 Tc 0.125 Tw T* [(and standards, government references and publications,)17 ( )]TJ EMC  /Span <</MCID 2751 >>BDC  0.009 Tc T* [(eligibility for pilot certificates, available routes to flight)9.2 ( )]TJ EMC  /Span <</MCID 2752 >>BDC  -0.006 Tc -0.062 Tw T* [(instruction, the role of the Certificated Flight Instructor \\(CFI\\))-6 ( )]TJ EMC  /Span <</MCID 2753 >>BDC  0.009 Tc 0.125 Tw T* [(and Designated Pilot Examiner \\(DPE\\) in flight training,)9 ( )]TJ EMC  /Span <</MCID 2754 >>BDC  -0.005 Tc -0.063 Tw T* [(Pra)0.5 (c)0.5 (ti)0.5 (ca)0.5 (l)0.5 ( Te)0.5 (st)0.5 ( St)0.5 (a)0.5 (ndards \\(PT)0.5 (S\\), a)0.5 (nd new, indust)0.5 (ry-deve)0.5 (lope)0.5 (d)-5 ( )]TJ EMC  /Span <</MCID 2755 >>BDC  0 Tc 0.016 Tw T* [(Airman )0.6 (Certifica)0.9 (tion )0.6 (Standards \\(ACS\\) framework )0.6 (that )0.7 (will )]TJ EMC  /Span <</MCID 2756 >>BDC  0 Tw T* (eventually replace the PTS. )Tj EMC  ET q 0 0 594 774 re W n q 0 g /GS3 gs /TT2 1 Tf /Fm1 Do Q /Span <</MCID 2757 >>BDC  Q BT 1 1 1  scn /GS1 gs /TT3 1 Tf -0.006 Tc 0.006 Tw 48 0 0 48 54 672.3203 Tm [(Introduction)-5.9 ( )]TJ ET EMC  BT /Span <</MCID 2758 >>BDC  0 Tw 48 0 0 48 54 630.3203 Tm (To Flying)Tj EMC  ET /CS0 CS 1 1 1  SCN 0.797 w  q 1 0 0 1 54 714.7422 cm 0 0 m 47.615 0 l S Q BT /Span <</MCID 2759 >>BDC  0.008 Tc 16 0 0 16 54 716.7734 Tm (Chapter 1)Tj EMC  ET ",
+  "provenance": "FAA-H-8083-25C physical page 16: prose in the page's own stream beside two Form XObjects that show no text (#241)."
+}

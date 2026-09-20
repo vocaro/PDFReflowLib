@@ -34,13 +34,21 @@ struct SourceTagFixture: Decodable {
         var encoding: String?
         var toUnicode: String?
     }
-    /// An XObject the page draws, by name and subtype. Only the subtype matters to a tag
-    /// reader, which refuses anything that is not a placed image, so the replay carries a
-    /// one-pixel stand-in rather than the source's artwork.
+    /// An XObject the page draws. An image places no text, so the replay carries a one-pixel
+    /// stand-in for its artwork; a Form can show text, so it carries the source's own content
+    /// stream, box, matrix, fonts and nested XObjects instead (#241).
     struct XObject: Decodable {
         var name: String
         var subtype: String?
+        var bbox: [Double]?
+        var matrix: [Double]?
+        var contentStream: String?
+        var fonts: [Font]?
+        var properties: [String: Property]?
+        var xobjects: [XObject]?
     }
+    /// A `/Properties` entry a `BDC` names. A tag reader reads one key from it, `/MCID`.
+    struct Property: Decodable { var mcid: Int? }
     var sourceSHA256: String
     var page: Int
     var mediaBox: [Double]
@@ -51,6 +59,7 @@ struct SourceTagFixture: Decodable {
     var elements: [Element]
     var fonts: [Font]
     var xobjects: [XObject]
+    var properties: [String: Property]?
     var contentStream: String
     var provenance: String
 
@@ -66,6 +75,15 @@ struct SourceTagFixture: Decodable {
         }.sorted()
     }
 
+    /// A resource dictionary's `/Properties` entry, or nil when the stream names none.
+    private static func propertyEntries(_ properties: [String: Property]?) -> String? {
+        guard let properties, !properties.isEmpty else { return nil }
+        let entries = properties.sorted { $0.key < $1.key }.map { name, property in
+            "/\(name) << \(property.mcid.map { "/MCID \($0)" } ?? "") >>"
+        }
+        return "/Properties << \(entries.joined(separator: " ")) >>"
+    }
+
     /// The captured page as a one-page PDF: the same content stream, the same fonts, the same
     /// structure graph, renumbered. Nothing here is invented; a `nil` role or absent `Pg` is
     /// reproduced as the source has it.
@@ -75,8 +93,8 @@ struct SourceTagFixture: Decodable {
         var numbers: [Int: Int] = [:]
         // Fonts first, each followed by its `ToUnicode` stream, then the structure elements.
         var next = objects.count + 1
-        var resources: [String] = []
-        for font in fonts {
+        /// Writes one font and its `ToUnicode` stream, answering the resource entry for it.
+        func emit(_ font: Font) -> String {
             var entries = ["/Type /Font"]
             if let subtype = font.subtype { entries.append("/Subtype /\(subtype)") }
             if let encoding = font.encoding { entries.append("/Encoding /\(encoding)") }
@@ -84,21 +102,42 @@ struct SourceTagFixture: Decodable {
                 entries.append("/ToUnicode \(next + 1) 0 R")
                 objects.append("<< \(entries.joined(separator: " ")) >>")
                 objects.append(testPDFStream(map))
-                resources.append("/\(font.name) \(next) 0 R")
-                next += 2
-            } else {
-                objects.append("<< \(entries.joined(separator: " ")) >>")
-                resources.append("/\(font.name) \(next) 0 R")
-                next += 1
+                defer { next += 2 }
+                return "/\(font.name) \(next) 0 R"
             }
+            objects.append("<< \(entries.joined(separator: " ")) >>")
+            defer { next += 1 }
+            return "/\(font.name) \(next) 0 R"
         }
-        var drawn: [String] = []
-        for object in xobjects {
-            objects.append(testPDFStream("x", extra: "/Type /XObject /Subtype /\(object.subtype ?? "Form")"
-                + (object.subtype == "Image" ? " /Width 1 /Height 1 /ColorSpace /DeviceGray /BitsPerComponent 8" : " /BBox [0 0 1 1]")))
-            drawn.append("/\(object.name) \(next) 0 R")
-            next += 1
+        /// Writes one XObject and everything it names, answering its resource entry. An image is
+        /// a one-pixel stand-in; a captured Form is replayed with the source's own bytes, and a
+        /// Form captured before #241 (no content) keeps the empty stand-in it always had.
+        func emit(_ object: XObject) -> String {
+            guard object.subtype != "Image" else {
+                objects.append(testPDFStream("x", extra: "/Type /XObject /Subtype /Image"
+                    + " /Width 1 /Height 1 /ColorSpace /DeviceGray /BitsPerComponent 8"))
+                defer { next += 1 }
+                return "/\(object.name) \(next) 0 R"
+            }
+            let inner = (object.fonts ?? []).map { emit($0) }
+            let nested = (object.xobjects ?? []).map { emit($0) }
+            var resources: [String] = []
+            if !inner.isEmpty { resources.append("/Font << \(inner.joined(separator: " ")) >>") }
+            if !nested.isEmpty { resources.append("/XObject << \(nested.joined(separator: " ")) >>") }
+            if let entries = Self.propertyEntries(object.properties) { resources.append(entries) }
+            func array(_ values: [Double]) -> String {
+                "[" + values.map { String($0) }.joined(separator: " ") + "]"
+            }
+            var extra = "/Type /XObject /Subtype /\(object.subtype ?? "Form")"
+                + " /BBox \(object.bbox.map(array) ?? "[0 0 1 1]")"
+            if let matrix = object.matrix { extra += " /Matrix \(array(matrix))" }
+            extra += " /Resources << \(resources.joined(separator: " ")) >>"
+            objects.append(testPDFStream(object.contentStream ?? "x", extra: extra))
+            defer { next += 1 }
+            return "/\(object.name) \(next) 0 R"
         }
+        let resources = fonts.map { emit($0) }
+        let drawn = xobjects.map { emit($0) }
         for element in elements {
             numbers[element.object] = next
             next += 1
@@ -127,6 +166,7 @@ struct SourceTagFixture: Decodable {
         objects[page - 1] = "<< /Type /Page /Parent \(pages) 0 R /MediaBox [\(mediaBox.map { "\($0)" }.joined(separator: " "))]"
             + " /Resources << /Font << \(resources.joined(separator: " ")) >>"
             + (drawn.isEmpty ? "" : " /XObject << \(drawn.joined(separator: " ")) >>")
+            + (Self.propertyEntries(properties).map { " " + $0 } ?? "")
             + " >> /Contents \(contents) 0 R /StructParents 0 >>"
         objects[parentTreeObject - 1] = "<< /Nums [0 [\(owners.joined(separator: " "))]] >>"
         objects[contents - 1] = testPDFStream(contentStream)

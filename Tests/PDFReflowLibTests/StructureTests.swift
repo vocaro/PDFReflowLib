@@ -3,17 +3,19 @@ import Foundation
 import Testing
 @testable import PDFReflowLib
 
+private let taggedPageContent = """
+/P << /MCID 0 >> BDC BT /F1 12 Tf 1 0 0 1 40 700 Tm (Small heading) Tj ET EMC
+/Span << /MCID 1 >> BDC BT /F1 24 Tf 1 0 0 1 40 580 Tm (First paragraph line) Tj ET EMC
+/P << /MCID 2 >> BDC BT /F1 24 Tf 1 0 0 1 80 510 Tm (second paragraph line.) Tj ET EMC
+"""
+
 private func taggedObjects() -> [String] {
     [
         "<< /Type /Catalog /Pages 2 0 R /StructTreeRoot 6 0 R /MarkInfo << /Marked false >> >>",
         "<< /Type /Pages /Kids [3 0 R] /Count 1 >>",
         "<< /Type /Page /Parent 2 0 R /MediaBox [0 0 600 800] /Resources << /Font << /F1 4 0 R >> >> /Contents 5 0 R /StructParents 0 >>",
         "<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>",
-        testPDFStream("""
-        /P << /MCID 0 >> BDC BT /F1 12 Tf 1 0 0 1 40 700 Tm (Small heading) Tj ET EMC
-        /Span << /MCID 1 >> BDC BT /F1 24 Tf 1 0 0 1 40 580 Tm (First paragraph line) Tj ET EMC
-        /P << /MCID 2 >> BDC BT /F1 24 Tf 1 0 0 1 80 510 Tm (second paragraph line.) Tj ET EMC
-        """),
+        testPDFStream(taggedPageContent),
         "<< /Type /StructTreeRoot /K [8 0 R 9 0 R] /ParentTree 7 0 R >>",
         "<< /Nums [0 [8 0 R 10 0 R 9 0 R]] >>",
         "<< /Type /StructElem /S /H3 /P 6 0 R /Pg 3 0 R /K 0 >>",
@@ -284,6 +286,127 @@ func captionsListsAndOversizedHeadingsKeepSpatialBoundaries(_ text: String) {
     }
 }
 
+/// `taggedObjects()`, with a Form XObject named `/Fm` that draws `content` and a page that
+/// draws it with `draws` after its own three tagged paragraphs.
+private func formObjects(_ content: String, draws: String = "/Fm Do") -> [String] {
+    var objects = taggedObjects()
+    objects[2] = objects[2].replacingOccurrences(of: "/Font <<", with: "/XObject << /Fm 11 0 R >> /Font <<")
+    objects[4] = testPDFStream(taggedPageContent + "\n" + draws)
+    objects.append(testPDFStream(content, extra: "/Type /XObject /Subtype /Form /BBox [0 0 600 800]"
+        + " /Resources << /Font << /F1 4 0 R >> >>"))
+    return objects
+}
+
+@Test func aFormThatShowsNoTextCostsThePageNothing() throws {
+    // The form draws a rectangle, which places no line, so the page's own three groups apply
+    // exactly as they would if the page drew nothing at all (#241).
+    try withTaggedPDF(formObjects("q 10 10 100 100 re f Q")) { url, page in
+        let scan = try #require(MarkedTextReader.scan(page))
+        #expect(scan.formsRead == 1)
+        #expect(scan.formShows == 0)
+        let tree = try StructureTreeReader.read(url)
+        var lines = taggedLines()
+        #expect(MarkedTextReader.apply(try #require(tree.pages[1]), page: page, lines: &lines))
+        #expect(lines.allSatisfy { $0.structure != nil })
+    }
+}
+
+@Test func formTextRejectsTheLineItLandsInAndNoOther() throws {
+    // A form's marked content is numbered in the form's own namespace, which the structure tree
+    // reaches only through an `/MCR` with a `/Stm` — and those are rejected before this reader
+    // sees them. So this show describes nothing: the line it lands in cannot take a tag, and
+    // the page's other two groups are untouched (#241).
+    try withTaggedPDF(formObjects("BT /F1 12 Tf 1 0 0 1 60 700 Tm (drawn by the form) Tj ET")) { url, page in
+        let scan = try #require(MarkedTextReader.scan(page))
+        #expect(scan.formShows == 1)
+        #expect(scan.anchors.contains { $0.id == nil && $0.point == CGPoint(x: 60, y: 700) })
+        let tree = try StructureTreeReader.read(url)
+        var lines = taggedLines()
+        #expect(!MarkedTextReader.apply(try #require(tree.pages[1]), page: page, lines: &lines))
+        #expect(lines.map { $0.structure != nil } == [false, true, true])
+    }
+}
+
+@Test func anUnplaceableShowInsideAFormStillRefusesThePage() throws {
+    // The second show continues the cursor, so its origin is unknown, and nothing in the form
+    // says which line it drew: outside an artifact that still costs the whole page (#67, #241).
+    let content = "BT /F1 12 Tf 1 0 0 1 60 700 Tm (placed) Tj (continued) Tj ET"
+    try withTaggedPDF(formObjects(content)) { url, page in
+        #expect(MarkedTextReader.scan(page) == nil)
+        let tree = try StructureTreeReader.read(url)
+        var lines = taggedLines()
+        #expect(!MarkedTextReader.apply(try #require(tree.pages[1]), page: page, lines: &lines))
+        #expect(lines.allSatisfy { $0.structure == nil })
+    }
+}
+
+@Test func aFormDrawnInsideAnArtifactCostsNothing() throws {
+    // The same unplaceable show, drawn in the page's margin where the page has said the content
+    // is furniture. An artifact carries no structure, in the page's own stream or in a form it
+    // draws, so neither show costs a group (#67, #241).
+    try withTaggedPDF(formObjects("BT /F1 12 Tf 1 0 0 1 500 60 Tm (placed) Tj (continued) Tj ET",
+                                  draws: "/Artifact BMC /Fm Do EMC")) { url, page in
+        let scan = try #require(MarkedTextReader.scan(page))
+        #expect(scan.artifactUnknownOrigins == 1)
+        #expect(scan.formShows == 2)
+        let tree = try StructureTreeReader.read(url)
+        var lines = taggedLines()
+        #expect(MarkedTextReader.apply(try #require(tree.pages[1]), page: page, lines: &lines))
+        #expect(lines.allSatisfy { $0.structure != nil })
+    }
+}
+
+@Test func aFormMayNotCloseMarkedContentItsCallerOpened() throws {
+    // Marked content begins and ends in one content stream. A form whose `EMC` would close the
+    // page's open section, or whose own `BDC` it leaves open, is not a stream this reader can
+    // account for, and the page keeps spatial reconstruction.
+    // A stray `EMC`, a section the form leaves open, and the pair that would balance out while
+    // silently closing the caller's section and opening one of the form's own in its place.
+    for content in ["EMC", "/P << /MCID 9 >> BDC", "EMC /Span << /MCID 9 >> BDC"] {
+        try withTaggedPDF(formObjects(content, draws: "/P << /MCID 3 >> BDC /Fm Do EMC")) { _, page in
+            #expect(MarkedTextReader.scan(page) == nil)
+        }
+    }
+}
+
+/// `taggedObjects()` whose page draws a chain of `levels` forms, the innermost drawing a path.
+private func nestedFormObjects(levels: Int) -> [String] {
+    var objects = formObjects("q 10 10 10 10 re f Q")
+    for level in 0..<levels where level + 1 < levels {
+        // Form `11 + level` draws form `12 + level`; the last one, already in place, draws a path.
+        objects[10 + level] = testPDFStream("/Fm Do", extra: "/Type /XObject /Subtype /Form"
+            + " /BBox [0 0 600 800] /Resources << /XObject << /Fm \(12 + level) 0 R >> >>")
+        objects.append(testPDFStream("q 10 10 10 10 re f Q",
+            extra: "/Type /XObject /Subtype /Form /BBox [0 0 600 800]"))
+    }
+    return objects
+}
+
+@Test func formNestingPastTheDepthCapRefusesThePage() throws {
+    // At the cap the whole chain is read; one level deeper the reader stops rather than trust
+    // tags it has stopped checking, and the page's whole tag set falls back (#241).
+    try withTaggedPDF(nestedFormObjects(levels: MarkedTextReader.maximumFormDepth)) { _, page in
+        let scan = try #require(MarkedTextReader.scan(page))
+        #expect(scan.formsRead == MarkedTextReader.maximumFormDepth)
+    }
+    try withTaggedPDF(nestedFormObjects(levels: MarkedTextReader.maximumFormDepth + 1)) { _, page in
+        #expect(MarkedTextReader.scan(page) == nil)
+    }
+}
+
+@Test func anXObjectThatIsNeitherImageNorFormStillRefusesThePage() throws {
+    var objects = formObjects("")
+    objects[10] = testPDFStream("", extra: "/Type /XObject /Subtype /PS")
+    try withTaggedPDF(objects) { _, page in
+        #expect(MarkedTextReader.scan(page) == nil)
+    }
+    // An XObject with no subtype at all says nothing about what it draws.
+    objects[10] = testPDFStream("", extra: "/Type /XObject")
+    try withTaggedPDF(objects) { _, page in
+        #expect(MarkedTextReader.scan(page) == nil)
+    }
+}
+
 @Test func emptyPageTreeCannotTrapStructureTraversal() throws {
     let directory = try testPDFDirectory(); defer { try? FileManager.default.removeItem(at: directory) }
     let url = directory.appendingPathComponent("empty.pdf")
@@ -405,6 +528,54 @@ func captionsListsAndOversizedHeadingsKeepSpatialBoundaries(_ text: String) {
         let tree = try StructureTreeReader.read(url)
         var lines: [TextLine] = []
         #expect(!MarkedTextReader.apply(try #require(tree.pages[1]), page: page, lines: &lines))
+    }
+}
+
+@Test func textFreeFormArtworkNoLongerRefusesTheFAAPage() throws {
+    let fixture = try SourceTagFixture.load("faa-16")
+    let native = try SourceLayoutFixture.load("faa-16")
+    #expect(fixture.sourceSHA256 == native.sourceSHA256)
+    // Two forms, one of them nesting a third and selecting a font, and not one show between
+    // them: the page's prose is entirely in its own stream (#241).
+    #expect(fixture.xobjects.map(\.name) == ["Fm0", "Fm1", "Im0"])
+    try fixture.withPage { url, page in
+        let scan = try #require(MarkedTextReader.scan(page))
+        #expect(scan.formsRead == 3)
+        #expect(scan.formShows == 0)
+        let tree = try StructureTreeReader.read(url)
+        let tags = try #require(tree.pages[1])
+        #expect(Set(tags.values.map(\.group)).count == 6)
+        #expect(StructureTreeReader.validates(tags, owners: try #require(tree.owners[1]), page: page))
+        var content = native.content()
+        // Four of the six groups apply, where main refused the page at the first `Do`.
+        #expect(!MarkedTextReader.apply(tags, page: page, lines: &content.lines))
+        #expect(Set(content.lines.compactMap { $0.structure?.group }).count == 4)
+        #expect(content.lines.filter { $0.structure != nil }.count == 17)
+    }
+}
+
+@Test func aFormsWatermarkIsReadAndDescribesNothing() throws {
+    let fixture = try SourceTagFixture.load("faa-373")
+    let native = try SourceLayoutFixture.load("faa-373")
+    #expect(fixture.sourceSHA256 == native.sourceSHA256)
+    try fixture.withPage { url, page in
+        // `Fm2` shows "Not to be used for navigation" across the chart, rotated: real text in a
+        // form, which no tag on this page describes. The reader reads it and gives it no
+        // identifier; its origin falls in none of PDFKit's lines, so it costs nothing (#241).
+        let scan = try #require(MarkedTextReader.scan(page))
+        #expect(scan.formsRead == 3)
+        #expect(scan.formShows == 1)
+        let watermark = try #require(scan.anchors.last { $0.id == nil })
+        #expect(abs(watermark.point.x - 78.8289) < 0.001 && abs(watermark.point.y - 220.6975) < 0.001)
+        #expect(!native.lines.contains { line in
+            AnchorMatcher.contains(CGRect(x: line.rect[0], y: line.rect[1], width: line.rect[2],
+                                          height: line.rect[3]), watermark.point)
+        })
+        let tree = try StructureTreeReader.read(url)
+        let tags = try #require(tree.pages[1])
+        var content = native.content()
+        #expect(MarkedTextReader.apply(tags, page: page, lines: &content.lines))
+        #expect(content.lines.filter { $0.structure != nil }.count == 2)
     }
 }
 

@@ -1,0 +1,290 @@
+{
+  "sourceSHA256": "8db8fd9e1de63ac25a6f9585d78ded12f45ab56f0c14c52c199b36b368f84d60",
+  "page": 21,
+  "contentObjects": [
+    "69 0 R"
+  ],
+  "mediaBox": [
+    0.0,
+    0.0,
+    612.0,
+    792.0
+  ],
+  "structParents": 1659,
+  "structureRoot": 975,
+  "roleMap": {
+    "Article": "Art",
+    "FRB_Publication": "P",
+    "HyphenSpan": "Span",
+    "NormalParagraphStyle": "P",
+    "Story": "Sect",
+    "Sub_Title": "P",
+    "Table_Sub_Head": "P",
+    "Text_Banner": "P",
+    "Title": "P",
+    "_No_paragraph_style_": "P",
+    "P": "toc_",
+    "H1": "h1"
+  },
+  "rootKids": [
+    978
+  ],
+  "parentTree": {
+    "0": 2767,
+    "1": 2768,
+    "2": 2769,
+    "3": 2770,
+    "4": 2771,
+    "5": 2772,
+    "8": 2814,
+    "9": 2774,
+    "10": 2775,
+    "11": 2810,
+    "13": 2773,
+    "14": 2773,
+    "15": 2811
+  },
+  "elements": [
+    {
+      "object": 978,
+      "role": "Document",
+      "parent": null,
+      "page": false,
+      "kids": [
+        {
+          "element": 2727
+        }
+      ]
+    },
+    {
+      "object": 2727,
+      "role": "Sect",
+      "parent": 978,
+      "page": false,
+      "kids": [
+        {
+          "element": 2767
+        },
+        {
+          "element": 2768
+        },
+        {
+          "element": 2769
+        },
+        {
+          "element": 2770
+        },
+        {
+          "element": 2771
+        },
+        {
+          "element": 2772
+        },
+        {
+          "element": 2773
+        },
+        {
+          "element": 2774
+        },
+        {
+          "element": 2775
+        },
+        {
+          "element": 2776
+        }
+      ]
+    },
+    {
+      "object": 2767,
+      "role": "P",
+      "parent": 2727,
+      "page": true,
+      "kids": [
+        0
+      ]
+    },
+    {
+      "object": 2768,
+      "role": "P",
+      "parent": 2727,
+      "page": true,
+      "kids": [
+        1
+      ]
+    },
+    {
+      "object": 2769,
+      "role": "H4",
+      "parent": 2727,
+      "page": true,
+      "kids": [
+        2
+      ]
+    },
+    {
+      "object": 2770,
+      "role": "H3",
+      "parent": 2727,
+      "page": true,
+      "kids": [
+        3
+      ]
+    },
+    {
+      "object": 2771,
+      "role": "P",
+      "parent": 2727,
+      "page": true,
+      "kids": [
+        4
+      ]
+    },
+    {
+      "object": 2772,
+      "role": "H4",
+      "parent": 2727,
+      "page": true,
+      "kids": [
+        5
+      ]
+    },
+    {
+      "object": 2773,
+      "role": "P",
+      "parent": 2727,
+      "page": true,
+      "kids": [
+        13,
+        {
+          "element": 2812
+        },
+        14
+      ]
+    },
+    {
+      "object": 2774,
+      "role": "P",
+      "parent": 2727,
+      "page": true,
+      "kids": [
+        9
+      ]
+    },
+    {
+      "object": 2775,
+      "role": "P",
+      "parent": 2727,
+      "page": true,
+      "kids": [
+        10
+      ]
+    },
+    {
+      "object": 2776,
+      "role": "L",
+      "parent": 2727,
+      "page": false,
+      "kids": [
+        {
+          "element": 2797
+        }
+      ]
+    },
+    {
+      "object": 2797,
+      "role": "LI",
+      "parent": 2776,
+      "page": false,
+      "kids": [
+        {
+          "element": 2810
+        },
+        {
+          "element": 2811
+        }
+      ]
+    },
+    {
+      "object": 2810,
+      "role": "Lbl",
+      "parent": 2797,
+      "page": true,
+      "kids": [
+        11
+      ]
+    },
+    {
+      "object": 2811,
+      "role": "LBody",
+      "parent": 2797,
+      "page": true,
+      "kids": [
+        15
+      ]
+    },
+    {
+      "object": 2812,
+      "role": "Reference",
+      "parent": 2773,
+      "page": false,
+      "kids": [
+        {
+          "element": 2814
+        }
+      ]
+    },
+    {
+      "object": 2814,
+      "role": "Link",
+      "parent": 2812,
+      "page": true,
+      "kids": [
+        8
+      ]
+    }
+  ],
+  "fonts": [
+    {
+      "name": "T1_0",
+      "object": "794 0 R",
+      "subtype": "Type1",
+      "encoding": "WinAnsiEncoding",
+      "toUnicode": "/CIDInit /ProcSet findresource begin\n12 dict begin\nbegincmap\n/CIDSystemInfo\n<< /Registry (Adobe)\n/Ordering (UCS) /Supplement 0 >> def\n/CMapName /Adobe-Identity-UCS def\n/CMapType 2 def\n1 begincodespacerange\n<0000> <FFFF>\nendcodespacerange\n1 beginbfchar\n<20> <0020>\nendbfchar\nendcmap CMapName currentdict /CMap defineresource pop end end\n"
+    },
+    {
+      "name": "T1_1",
+      "object": "4836 0 R",
+      "subtype": "Type1",
+      "encoding": "WinAnsiEncoding",
+      "encodingFromDictionary": true,
+      "toUnicode": "/CIDInit /ProcSet findresource begin\n12 dict begin\nbegincmap\n/CIDSystemInfo\n<< /Registry (Adobe)\n/Ordering (UCS) /Supplement 0 >> def\n/CMapName /Adobe-Identity-UCS def\n/CMapType 2 def\n1 begincodespacerange\n<0000> <FFFF>\nendcodespacerange\n65 beginbfchar\n<1F> <00660069>\n<20> <0020>\n<26> <0026>\n<2C> <002C>\n<2E> <0020002E>\n<30> <0030>\n<31> <0031>\n<32> <0032>\n<33> <0033>\n<34> <0034>\n<35> <0035>\n<36> <0036>\n<37> <0037>\n<38> <0038>\n<39> <0039>\n<3A> <003A>\n<3F> <003F>\n<41> <0041>\n<42> <0042>\n<43> <0043>\n<44> <0044>\n<45> <0045>\n<46> <0046>\n<47> <0047>\n<48> <0048>\n<49> <0049>\n<4B> <004B>\n<4C> <004C>\n<4D> <004D>\n<4E> <004E>\n<4F> <004F>\n<50> <0050>\n<52> <0052>\n<53> <0053>\n<54> <0054>\n<55> <0055>\n<56> <0056>\n<57> <0057>\n<59> <0059>\n<61> <0061>\n<62> <0062>\n<63> <0063>\n<64> <0064>\n<65> <0065>\n<66> <0066>\n<67> <0067>\n<68> <0068>\n<69> <0069>\n<6B> <006B>\n<6C> <006C>\n<6D> <006D>\n<6E> <006E>\n<6F> <006F>\n<70> <0070>\n<71> <0071>\n<72> <0072>\n<73> <0073>\n<74> <0074>\n<75> <0075>\n<76> <0076>\n<77> <0077>\n<78> <0078>\n<79> <0079>\n<7A> <007A>\n<92> <2019>\nendbfchar\nendcmap CMapName currentdict /CMap defineresource pop end end\n"
+    },
+    {
+      "name": "T1_2",
+      "object": "758 0 R",
+      "subtype": "Type1",
+      "encoding": "WinAnsiEncoding",
+      "encodingFromDictionary": true,
+      "toUnicode": "/CIDInit /ProcSet findresource begin\n12 dict begin\nbegincmap\n/CIDSystemInfo\n<< /Registry (Adobe)\n/Ordering (UCS) /Supplement 0 >> def\n/CMapName /Adobe-Identity-UCS def\n/CMapType 2 def\n1 begincodespacerange\n<0000> <FFFF>\nendcodespacerange\n90 beginbfchar\n<1D> <00A0>\n<1E> <0066006C>\n<1F> <00660069>\n<20> <0020>\n<24> <0024>\n<25> <0025>\n<26> <0026>\n<27> <0027>\n<28> <0028>\n<29> <0029>\n<2A> <002A>\n<2C> <002C>\n<2D> <002D>\n<2E> <002E>\n<2F> <002F>\n<30> <0030>\n<31> <0031>\n<32> <0032>\n<33> <0033>\n<34> <0034>\n<35> <0035>\n<36> <0036>\n<37> <0037>\n<38> <0038>\n<39> <0039>\n<3A> <003A>\n<3B> <003B>\n<3D> <003D>\n<3F> <003F>\n<40> <0040>\n<41> <0041>\n<42> <0042>\n<43> <0043>\n<44> <0044>\n<45> <0045>\n<46> <0046>\n<47> <0047>\n<48> <0048>\n<49> <0049>\n<4A> <004A>\n<4B> <004B>\n<4C> <004C>\n<4D> <004D>\n<4E> <004E>\n<4F> <004F>\n<50> <0050>\n<51> <0051>\n<52> <0052>\n<53> <0053>\n<54> <0054>\n<55> <0055>\n<56> <0056>\n<57> <0057>\n<59> <0059>\n<5A> <005A>\n<5F> <005F>\n<61> <0061>\n<62> <0062>\n<63> <0063>\n<64> <0064>\n<65> <0065>\n<66> <0066>\n<67> <0067>\n<68> <0068>\n<69> <0069>\n<6A> <006A>\n<6B> <006B>\n<6C> <006C>\n<6D> <006D>\n<6E> <006E>\n<6F> <006F>\n<70> <0070>\n<71> <0071>\n<72> <0072>\n<73> <0073>\n<74> <0074>\n<75> <0075>\n<76> <0076>\n<77> <0077>\n<78> <0078>\n<79> <0079>\n<7A> <007A>\n<85> <2026>\n<92> <2019>\n<93> <201C>\n<94> <201D>\n<96> <2013>\n<97> <2014>\n<BC> <00BC>\n<BD> <00BD>\nendbfchar\nendcmap CMapName currentdict /CMap defineresource pop end end\n"
+    },
+    {
+      "name": "T1_3",
+      "object": "761 0 R",
+      "subtype": "Type1",
+      "encoding": "WinAnsiEncoding",
+      "encodingFromDictionary": true,
+      "toUnicode": "/CIDInit /ProcSet findresource begin\n12 dict begin\nbegincmap\n/CIDSystemInfo\n<< /Registry (Adobe)\n/Ordering (UCS) /Supplement 0 >> def\n/CMapName /Adobe-Identity-UCS def\n/CMapType 2 def\n1 begincodespacerange\n<0000> <FFFF>\nendcodespacerange\n79 beginbfchar\n<1F> <00660069>\n<20> <0020>\n<22> <0022>\n<24> <0024>\n<28> <0028>\n<29> <0029>\n<2A> <002A>\n<2C> <002C>\n<2D> <002D>\n<2E> <002E>\n<30> <0030>\n<31> <0031>\n<32> <0032>\n<33> <0033>\n<34> <0034>\n<35> <0035>\n<36> <0036>\n<37> <0037>\n<38> <0038>\n<39> <0039>\n<3A> <003A>\n<3B> <003B>\n<3F> <003F>\n<41> <0041>\n<42> <0042>\n<43> <0043>\n<44> <0044>\n<45> <0045>\n<46> <0046>\n<47> <0047>\n<48> <0048>\n<49> <0049>\n<4A> <004A>\n<4B> <004B>\n<4C> <004C>\n<4D> <004D>\n<4E> <004E>\n<4F> <004F>\n<50> <0050>\n<51> <0051>\n<52> <0052>\n<53> <0053>\n<54> <0054>\n<55> <0055>\n<56> <0056>\n<57> <0057>\n<58> <0058>\n<59> <0059>\n<61> <0061>\n<62> <0062>\n<63> <0063>\n<64> <0064>\n<65> <0065>\n<66> <0066>\n<67> <0067>\n<68> <0068>\n<69> <0069>\n<6A> <006A>\n<6B> <006B>\n<6C> <006C>\n<6D> <006D>\n<6E> <006E>\n<6F> <006F>\n<70> <0070>\n<71> <0071>\n<72> <0072>\n<73> <0073>\n<74> <0074>\n<75> <0075>\n<76> <0076>\n<77> <0077>\n<78> <0078>\n<79> <0079>\n<7A> <007A>\n<92> <2019>\n<93> <201C>\n<94> <201D>\n<95> <2022>\n<96> <2013>\nendbfchar\nendcmap CMapName currentdict /CMap defineresource pop end end\n"
+    },
+    {
+      "name": "T1_4",
+      "object": "759 0 R",
+      "subtype": "Type1",
+      "encoding": "WinAnsiEncoding",
+      "encodingFromDictionary": true,
+      "toUnicode": "/CIDInit /ProcSet findresource begin\n12 dict begin\nbegincmap\n/CIDSystemInfo\n<< /Registry (Adobe)\n/Ordering (UCS) /Supplement 0 >> def\n/CMapName /Adobe-Identity-UCS def\n/CMapType 2 def\n1 begincodespacerange\n<0000> <FFFF>\nendcodespacerange\n60 beginbfchar\n<1F> <00660069>\n<20> <0020>\n<28> <0028>\n<29> <0029>\n<2C> <002C>\n<2E> <002E>\n<30> <0030>\n<31> <0031>\n<32> <0032>\n<33> <0033>\n<39> <0039>\n<3A> <003A>\n<3F> <003F>\n<41> <0041>\n<42> <0042>\n<43> <0043>\n<44> <0044>\n<45> <0045>\n<46> <0046>\n<47> <0047>\n<48> <0048>\n<49> <0049>\n<4B> <004B>\n<4C> <004C>\n<4D> <004D>\n<4F> <004F>\n<50> <0050>\n<52> <0052>\n<53> <0053>\n<54> <0054>\n<55> <0055>\n<56> <0056>\n<57> <0057>\n<61> <0061>\n<62> <0062>\n<63> <0063>\n<64> <0064>\n<65> <0065>\n<66> <0066>\n<67> <0067>\n<68> <0068>\n<69> <0069>\n<6B> <006B>\n<6C> <006C>\n<6D> <006D>\n<6E> <006E>\n<6F> <006F>\n<70> <0070>\n<71> <0071>\n<72> <0072>\n<73> <0073>\n<74> <0074>\n<75> <0075>\n<76> <0076>\n<77> <0077>\n<78> <0078>\n<79> <0079>\n<7A> <007A>\n<92> <2019>\n<95> <2022>\nendbfchar\nendcmap CMapName currentdict /CMap defineresource pop end end\n"
+    }
+  ],
+  "xobjects": [],
+  "contentStream": "/Artifact <<>>BDC \n/CS0 CS 1  SCN\n/GS0 gs\nq\n1 0 0 1 60 743.7881 cm\n0 0 m\n492 0 l\nS\nQ\nEMC \nBT\n/Artifact <<>>BDC \n0 0 0 1 k\n/GS1 gs\n/T1_0 1 Tf\n8 0 0 8 60 750.2881 Tm\n( )Tj\nEMC \n/Artifact <</O /Layout >>BDC \n/T1_1 1 Tf\n44.47 0 Td\n[(The Three K)20.1 (e)20 (y System Entities)]TJ\nEMC \n/Artifact <<>>BDC \n( )Tj\nEMC \n/Artifact <<>>BDC \n15.705 0 Td\n(13)Tj\nEMC \n/P <</MCID 0 >>BDC \n/T1_2 1 Tf\n10 0 0 10 90 695.1401 Tm\n[(All 12 of the Reser)-49.8 (ve Bank presidents attend FOMC meetings and par)-49.6 (ticipate in FOMC discus-)]TJ\n0 -1.6 TD\n[(sions,)50.1 ( but only the presidents who are Committee member)-14.6 (s at the time ma)25.1 (y vote on policy deci-)]TJ\nT*\n(sions.)Tj\nEMC \n/P <</MCID 1 >>BDC \n0 -3.2 TD\n[(By la)25 (w)60 (,)50 ( the FOMC deter)-14.8 (mines its own inter)-14.9 (nal organization and,)50.2 ( b)20 (y tradition,)50.1 ( the FOMC elects the )]TJ\n0 -1.6 TD\n[(Chair of the Board of Go)15.2 (ver)-15 (nor)-14.9 (s as its chair and the president of the F)20.3 (ederal Reser)-49.9 (ve Bank of Ne)10.1 (w )]TJ\nT*\n[(Y)100 (or)-20 (k as its vice chair)100.2 (. FOMC meetings are typically held eight times each year in W)55.5 (ashington,)50 ( D)40 (.C.,)50.1 ( )]TJ\nT*\n(and at other times as needed.)Tj\nEMC \n/H4 <</MCID 2 >>BDC \n/T1_3 1 Tf\n14 0 0 14 90 551.1401 Tm\n(FOMC Responsibilities)Tj\nEMC \n/Artifact <<>>BDC \n/T1_2 1 Tf\n10 0 0 10 90 527.9401 Tm\n[(Once the FOMC deter)-14.9 (mines the appropriate stance of policy)85.4 (,)49.9 ( it must then mak)20.2 (e sure this stance )]TJ\nT*\n[(is effectively transmitted to financial mar)-19.6 (k)20 (ets. The Board and FOMC ha)25.2 (ve man)25 (y monetar)-49.9 (y policy )]TJ\nT*\n[(implementation tools at their disposal. K)20.3 (e)20 (y tools include the F)20.2 (ederal Reser)-49.9 (ve\\222)120 (s administered inter)]TJ\nEMC \n/Artifact <<>>BDC \n(-)Tj\nEMC \n/Artifact <<>>BDC \nT*\n[(est rates and open mar)-19.8 (k)20 (et purchases and sales of securities \\(see )]TJ\nEMC \n/Artifact <<>>BDC \n/CS0 cs 1  scn\n/GS0 gs\n(section 3)Tj\nEMC \n/Artifact <<>>BDC \n0 0 0 1 k\n/GS1 gs\n[(,)50 ( \\223Conducting Mon)]TJ\nEMC \n/Artifact <<>>BDC \n(-)Tj\nEMC \n/Artifact <<>>BDC \nT*\n[(etar)-50 (y P)25 (olicy)85.1 (,)100 (\\224 on page 16\\). The FOMC also directs operations under)-49.6 (tak)20 (en b)20 (y the F)20.1 (ederal Reser)-49.9 (ve in )]TJ\nT*\n[(foreign exchange mar)-19.8 (k)20 (ets and authorizes cur)-14.9 (rency sw)20.1 (ap programs with foreign central banks.)]TJ\nEMC \n/H3 <</MCID 3 >>BDC \n/CS0 cs 1  scn\n/GS0 gs\n/T1_4 1 Tf\n16 0 0 16 90 397.9361 Tm\n[(Other Significant Entities Contributing to F)20.3 (ederal Reser)-49.9 (ve )]TJ\n0 -1.125 TD\n(Functions)Tj\nEMC \n/P <</MCID 4 >>BDC \n0 0 0 1 k\n/GS1 gs\n/T1_2 1 Tf\n10 0 0 10 90 356.7361 Tm\n[(T)100 (wo other groups pla)25.1 (y impor)-49.9 (tant roles in the F)20.2 (ederal Reser)-49.9 (ve System\\222)120 (s core functions:  )]TJ\n0 -1.6 TD\n[(\\(1\\) depositor)-49.9 (y institutions\\227banks,)50.2 ( thrifts,)50.1 ( and credit unions; and \\(2\\) F)20.2 (ederal Reser)-49.9 (ve System )]TJ\nT*\n[(advisor)-49.9 (y committees,)50.1 ( which mak)20 (e recommendations to the Board of Go)15.3 (ver)-14.9 (nor)-15 (s and to the Reser)-49.9 (ve )]TJ\nT*\n[(Banks regarding the System\\222)120.2 (s responsibilities. )]TJ\nEMC \n/H4 <</MCID 5 >>BDC \n/T1_3 1 Tf\n14 0 0 14 90 276.7361 Tm\n[(Depositor)-49.9 (y Institutions)]TJ\nEMC \n/P <</MCID 13 >>BDC \n/T1_2 1 Tf\n10 0 0 10 90 253.5361 Tm\n[(Depositor)-49.9 (y institutions offer transaction,)50.3 ( or checking)-25 (,)50 ( accounts to the public and ma)25.3 (y maintain )]TJ\nT*\n[(accounts of their own at their local Reser)-49.6 (ve Banks. Depositor)-49.9 (y institutions receive interest on )]TJ\nT*\n[(the reser)-49.9 (ve balances the)20.1 (y hold in their Reser)-49.8 (ve Bank accounts. Interest on reser)-49.7 (ves is a k)20.1 (e)20 (y tool )]TJ\nT*\n[(for monetar)-49.9 (y policy implementation \\(see )]TJ\nEMC \n/Link <</MCID 8 >>BDC \n/CS0 cs 1  scn\n/GS0 gs\n(section 3)Tj\nEMC \n/P <</MCID 14 >>BDC \n0 0 0 1 k\n/GS1 gs\n[(,)50 ( \\223Conducting Monetar)-49.8 (y P)25 (olicy)85 (,)100 (\\224 on page 16 for )]TJ\nT*\n[(more infor)-14.9 (mation about the conduct of monetar)-49.7 (y policy\\).)]TJ\nEMC \n/P <</MCID 9 >>BDC \n/T1_3 1 Tf\n14 0 0 14 90 157.5361 Tm\n[(Advisor)-50 (y Councils)]TJ\nEMC \n/P <</MCID 10 >>BDC \n/T1_2 1 Tf\n10 0 0 10 90 134.3361 Tm\n[(F)-25 (ive advisor)-49.9 (y committees assist and advise the Board on matter)-14.5 (s of public policy)85.1 (.)]TJ\nEMC \n/Lbl <</MCID 11 >>BDC \n-0.005 Tc 0.005 Tw 0 -1.96 TD\n(1. )Tj\nEMC \n/LBody <</MCID 15 >>BDC \n/T1_4 1 Tf\n0 Tw 1.3 0 Td\n[(F)20 (ederal Advisor)-50 (y Council \\(F)70 (A)15 (C\\). )]TJ\n/T1_2 1 Tf\n[(This council,)50 ( established b)20 (y the F)20 (ederal Reser)-50 (ve Act,)50 ( comprises)-5 ( )]TJ\n0 -1.6 TD\n[(12 representatives of the banking industr)-49.9 (y)84.9 (. The F)70 (A)14.9 (C ordinarily meets with the Board four times)-5 ( )]TJ\nEMC \nET\n",
+  "provenance": "The Fed's own tags call two of this page's three fourteen-point sub-headings H4 and the third, 'Advisory Councils', P (#67)"
+}

@@ -197,11 +197,14 @@ def main():
 
     for node in set(owners.values()):
         capture(node)
-    # Prune children that are neither this page's MCIDs nor captured elements.
+    # Prune children that are neither this page's MCIDs nor captured elements. An integer kid is
+    # this element's only where the page's ParentTree names this element as that MCID's owner:
+    # a list or a paragraph that continues onto the next page carries that page's MCIDs too, and
+    # they collide with this page's own numbering, which a reader then reads as duplicates.
     known = set(elements)
-    for item in elements.values():
+    for node, item in elements.items():
         item['kids'] = [k for k in item['kids']
-                        if (isinstance(k, int) and k in owners) or
+                        if (isinstance(k, int) and owners.get(k) == node) or
                         (isinstance(k, dict) and k['element'] in known)]
     rootKids = [n for n, item in elements.items() if item['parent'] is None or item['parent'] == root]
     for n in rootKids:

@@ -460,7 +460,7 @@ python3 tools/run_corpus_regressions.py --converter .build/corpus-cli/out/Produc
 
 | Case | Gap | Baseline finding | Tracking |
 | --- | --- | --- | --- |
-| [`usgs-mcs2025-copper`](../measurements/usgs-mcs2025-copper/record.md) | Borderless tables | Tables preserved as readable crops, but adjacent prose is absorbed into them | [#36](https://github.com/vocaro/PDFReflowLib/issues/36) |
+| [`usgs-mcs2025-copper`](../measurements/usgs-mcs2025-copper/record.md) | Borderless tables | Fixed (#36, ported for [#229](https://github.com/vocaro/PDFReflowLib/issues/229)): the tables keep their crops and the section prose around them reflows (page 1, 355 words instead of 20; page 2, 578 instead of 251) | [#36](https://github.com/vocaro/PDFReflowLib/issues/36) |
 | [`scotus-loper-bright-2024`](../measurements/scotus-loper-bright-2024/record.md) | Page-bottom footnotes | Text complete; footnotes merge into body paragraphs; 75 citation-leading lines become preformatted | [#40](https://github.com/vocaro/PDFReflowLib/issues/40), [#39](https://github.com/vocaro/PDFReflowLib/issues/39) |
 | [`census-rrs2002-01`](../measurements/census-rrs2002-01/record.md) | Damaged encoding | Fixed (#38): `TextEncodingCheck` flags the shifted-letter body (pages 2-20) as `damagedTextEncoding` and recognizes it by default; minor OCR misreadings remain on individual words | [#38](https://github.com/vocaro/PDFReflowLib/issues/38) |
 | [`uscis-m618-arabic-2015`](../measurements/uscis-m618-arabic-2015/record.md) | Right-to-left script | Arabic words correct; mixed-direction runs fragment and reverse | [#41](https://github.com/vocaro/PDFReflowLib/issues/41) |

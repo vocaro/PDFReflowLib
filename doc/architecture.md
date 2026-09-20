@@ -79,6 +79,14 @@ the geometric predicates the rules share (`hasSize`, `overlapsHorizontally`, `sh
 `sharesRow`) live on `TextLine` in `TextLineGeometry`. `TableRegionDetector`,
 `FractionRegionDetector` and `NumberedNoteDetector` are bounded detectors that hand regions or
 groups to the assembler; `ChapterBoundaryReader` supplies validated chapter-start pages.
+What seeds a crop is separate from how far the crop grows. A thin painted rule that underlines
+prose is that text's decoration and seeds nothing, while a rule carrying a fraction, a rule
+inside a short word-free mathematical line, a rule clear of every line and a row of header
+underlines over numeric rows each remain evidence of something to preserve. A crop then admits
+only the lines its seed captures and the other pieces of those lines' rows, and is trimmed away
+from the lines it merely touches, because line rectangles include leading and overlap: chaining
+from line to line through that overlap let one underline or one mistaken relation rasterize a
+whole column of prose.
 
 ## Reconstruction boundary
 

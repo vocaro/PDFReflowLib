@@ -554,8 +554,29 @@ Evidence: [spine-continuity](../measurements/spine-continuity/record.md).
   that prints its line-end hyphen as `=` (gpo-911-2004) ends every broken word's line in one, and
   because PDFKit reports no space after a full stop in that book a full measure of prose counts
   twelve words (#57). An equation prefix that genuinely ends in `=` is preserved by
-  `FractionRegionDetector`, which has its painted bar as evidence. A URL query string is still
-  read as a relation (#227).
+  `FractionRegionDetector`, which has its painted bar as evidence. The line's web addresses are
+  removed before it is measured, because a query string is not a relation: a word holding `://`,
+  opening `www.`, or joining a `name=value` pair after a `?` or `&` is an address, and a note that
+  cites one no longer seeds a crop (#227).
+- **Thin rules.** A painted rule at most 6 pt high and at least 12 pt (and three times its height)
+  wide, measured after `GraphicsReader`'s two-point padding, is a typographic separator rather than
+  a figure. Such a rule seeds no region when it underlines one text line — it lies within that
+  line's horizontal extent and between its foot and half its height — and the underlined line keeps
+  reflowing; an underlined word inside a paragraph is decoration (#229). A rule that carries a
+  fraction (compact, word-free terms directly above and below) keeps the terms it touches; a rule
+  inside a short word-free line, such as a vinculum or an exercise bar, keeps that line; a rule
+  clear of every line, such as a running-head rule or a box, stays an isolated graphic; and a row of
+  at least three header underlines, or one short piece underlined whole away from the left margin,
+  over at least three tightly leaded rows carrying numbers, is a borderless table
+  (`TableRegionDetector.underlinedColumnRegions`) preserved as one region (#36).
+- **Region expansion.** A seed's crop admits only the text lines it captures and the other pieces
+  of those lines' rows, never a chain from line to line: PDFKit's line rectangles include leading
+  and so overlap on tight leading, and chaining absorbed whole columns. A thin rule captures only
+  text it strikes through — its midline inside the middle half of the line's rectangle — not the
+  rectangles above and below it. The crop is then trimmed away from any line it merely touches,
+  keeping the seed's ink (for a thin rule, its one-point stroke), because layout removes every
+  intersecting line from the reflowed prose; a line the crop cannot be trimmed away from is
+  admitted instead, and a thin rule left with nothing admitted yields no crop at all (#36, #229).
 - **`FractionRegionDetector`.** Short horizontal painted bars with compact mathematical terms
   above and below, optionally with a nearby equation prefix, are preserved together in one image.
   Long rules, prose, code and connected table grids are left to existing handling; whole-line
@@ -569,7 +590,8 @@ Evidence: [spine-continuity](../measurements/spine-continuity/record.md).
   reflowable nor accessible as text, and the generic image description names the source page
   rather than inventing a description of the picture.
 
-Evidence: [preserved-region-regressions](../measurements/preserved-region-regressions/record.md),
+Evidence: [rule-and-url-seeds](../measurements/rule-and-url-seeds/record.md),
+[preserved-region-regressions](../measurements/preserved-region-regressions/record.md),
 [fractions-and-invisible-text](../measurements/fractions-and-invisible-text/record.md),
 [numbered-notes](../measurements/numbered-notes/record.md) and its
 [recheck](../measurements/numbered-notes/recheck/record.md),

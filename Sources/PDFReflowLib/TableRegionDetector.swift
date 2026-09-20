@@ -1,3 +1,4 @@
+import CoreGraphics
 import Foundation
 
 /// Conservative preservation for numeric lookup tables separated by dot leaders. This is not
@@ -42,5 +43,54 @@ enum TableRegionDetector {
             }) else { return nil }
             return rowBounds.union(header.rect).insetBy(dx: -2, dy: -2).intersection(page.bounds)
         }
+    }
+
+    /// Borderless statistical tables underline their column headers instead of ruling cells.
+    /// A row of at least three underlines, or one short piece underlined whole away from the
+    /// left margin, marks a header; the table is the tightly leaded block around it whose rows
+    /// carry numbers. A single label underline followed by prose is not a table (#36, ported
+    /// from the coordination branch, #229).
+    static func underlinedColumnRegions(in page: PageContent) -> [CGRect] {
+        let rules = page.graphics.filter(LayoutReconstructor.isThinRule)
+        guard !rules.isEmpty else { return [] }
+        var rows: [[TextLine]] = []
+        for line in page.lines.sorted(by: { $0.rect.minY > $1.rect.minY }) {
+            if let last = rows.last?.first, abs(last.rect.minY - line.rect.minY) <= 1.5 {
+                rows[rows.count - 1].append(line)
+            } else { rows.append([line]) }
+        }
+        func baseline(_ row: [TextLine]) -> CGFloat { row.map(\.rect.minY).min()! }
+        var regions: [CGRect] = []
+        var covered = Set<Int>()
+        for (index, row) in rows.enumerated() where !covered.contains(index) {
+            // Equations are never column headers: a row of divisor bars beneath "8x = -24" is
+            // a worked example, not a table.
+            let underlines = rules.filter { rule in
+                guard let line = LayoutReconstructor.underlinedLine(rule, in: page.lines),
+                      !line.text.contains("=") else { return false }
+                return row.contains { $0.rect == line.rect && $0.text == line.text }
+            }
+            let columnHeaders = underlines.count >= 3
+            let subheader = underlines.count == 1 && row.count == 1 && {
+                let piece = row[0].rect, rule = underlines[0]
+                return rule.width >= piece.width * 0.85 && piece.width <= page.bounds.width * 0.3
+                    && piece.minX >= page.bounds.minX + page.bounds.width * 0.3
+            }()
+            guard columnHeaders || subheader else { continue }
+            let leading = row.map(\.fontSize).max()! * 1.6
+            var top = index, bottom = index
+            while top > 0, baseline(rows[top - 1]) - baseline(rows[top]) <= leading { top -= 1 }
+            while bottom + 1 < rows.count, baseline(rows[bottom]) - baseline(rows[bottom + 1]) <= leading { bottom += 1 }
+            let below = rows[(index + 1)..<(bottom + 1)]
+            guard below.count >= 3,
+                  below.filter({ $0.contains { $0.text.contains { $0.isNumber } } }).count * 2 >= below.count
+            else { continue }
+            covered.formUnion(top...bottom)
+            let block = rows[top...bottom].flatMap { $0.map(\.rect) }
+                + rules.filter { rule in rows[top...bottom].contains { row in
+                    row.contains { LayoutReconstructor.underlinedLine(rule, in: page.lines)?.rect == $0.rect } } }
+            regions.append(union(block).insetBy(dx: -2, dy: -2).intersection(page.bounds))
+        }
+        return regions
     }
 }

@@ -182,6 +182,17 @@ Evidence: [structure-tags](../measurements/structure-tags/record.md),
   and optional shading bounds, and rasterized by Core Graphics; the model stores an image asset,
   not a gradient. Unsafe or page-spanning bounds keep the page fallback. Cropping the original
   rendering preserves masks, clipping, paths and labels instead of exposing raw image resources.
+- A footprint covers only the part the clip in force lets show, and a path or image wholly outside
+  its clip is not recorded at all (#52, #98). An extent is not ink: FAA page 19 places a 338 by
+  400 pt map under a 207 by 129 pt frame, and the rest of it reached 43 pt into the left column.
+  The tracked clip is the bounding box of every clip path in force, intersected with the crop box
+  and with each enclosing Form XObject's own box under that form's matrix, saved and restored by
+  `q`/`Q` and around every form; it over-approximates the true clipping region, so no visible mark
+  is ever dropped. Two rules keep the approximation safe: a clip path that reached no coordinate
+  (`W n` with nothing constructed) and a form box that transforms to no area leave the clip
+  unchanged rather than emptying it, and a painted footprint is padded by its two points before it
+  is clipped, against a clip widened by the same two points — so a rule of no height survives, and
+  a frame drawn exactly on the clip that bounds it keeps its tolerance and does not move.
 - Placed raster XObjects are also reported separately from the undifferentiated region list, so
   the drawn-text test below can ignore a photograph's texture (#176).
 - Text rendering mode is tracked across saved graphics state and nested forms. When every
@@ -190,6 +201,17 @@ Evidence: [structure-tags](../measurements/structure-tags/record.md),
   no code or font-size heading inference (numbered lists keep their representation). Mixed
   visible/invisible text, text clipping and unsupported streams do not enter this path. This does
   not recover headings from a scan or correct inherited transcription.
+- The reader's own budget is 250,000 charged operations per page, counted across nested Form
+  XObjects, alongside 10,000 painted regions, 128 saved graphics states and 12 nested forms
+  (#13). It is not `ContentStreamWalk`'s budget above. Over about 5,300 cached corpus pages only
+  five sit between 100,000 and 250,000 operations and none between 200,000 and 1.9 million, so
+  the number is set just above the heaviest real page rather than at the edge of a cliff: it
+  admits FAA pages 226, 286, 288 and 302, whose prose the old 100,000 budget cost, and still
+  refuses FAA page 448 at 1.95 million. It bounds what the reader accumulates and claims to have
+  understood, not what the page costs: Core Graphics parses the content stream to its end whether
+  or not the budget is exhausted, so FAA page 448 takes about a quarter of a second under either
+  number. A charged operation costs about 0.25 µs and the reader's own state stays well under a
+  megabyte.
 - Unsupported or excessive drawing operations report `unsupportedGraphics` and require the
   original page image. Graphic-region merging and whole-line expansion repeat until the bounds
   stabilize, so a merged crop cannot cut through a newly intersecting text line; only text outside

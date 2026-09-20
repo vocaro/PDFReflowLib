@@ -28,7 +28,7 @@ Fetch sources with `tools/fetch_corpus.py --case <id>` (checksum-verified, cache
 
 What the individual gates check:
 
-- `swift test`: 329 Swift Testing tests with no known-issue wrappers, using the real Apple
+- `swift test`: 344 Swift Testing tests with no known-issue wrappers, using the real Apple
   PDF/OCR stack. They cover extraction, the document model, layout, raster pixels (crop origins,
   rotations, annotations, resource ceilings), preserved regions (fraction bars, raised exponents
   and all six cells of a ruled table in actual EPUB images at 72/144 DPI, with prose and code
@@ -136,7 +136,7 @@ Repeat `--case <id>` to narrow a debugging run; the summary lists omitted cases 
 failing case does not hide later results. `--jobs N` evaluates N cases at once (default 1).
 Each case verifies the pinned source identity, converts in a fresh release process, checks EPUB
 structure, EPUBCheck, monotonic progress, the manifest memory ceiling and the reviewed content
-contract in [corpus/regressions.json](../corpus/regressions.json): 102 reviewed pages across 18
+contract in [corpus/regressions.json](../corpus/regressions.json): 109 reviewed pages across 18
 documents. All source-page anchors must remain complete and ordered, and semantic text must
 contain no image-attachment placeholders. The manifest consistency test requires every corpus
 document to be covered or explicitly excluded; full Warren and NOAA conversions are excluded for
@@ -205,10 +205,11 @@ highest normalized correlation (`tools/image_regions.py`); a page passes when so
 `minimumCorrelation`, 0.95 by default. References assume the library's default 180 DPI; a changed
 raster policy must regenerate them.
 
-Sixteen references cover the Our Flag flag-size table, three USGS copper tables, three FAA
-page-121 figures, a Wallace quadratic exercise, the Geltman page-image fallback, CDC's image-only
-page 13, and six rows and columns inside the two table crops. Correct crops score 0.982–0.997;
-wrong images on the same pages score at most 0.62, a table crop with its lower half blanked 0.64,
+Seventeen references cover the Our Flag flag-size table, three USGS copper tables, three FAA
+page-121 figures, the FAA page-19 airmail map beside recovered column prose, a Wallace quadratic
+exercise, the Geltman page-image fallback, CDC's image-only page 13, and six rows and columns
+inside the two table crops. Correct crops score 0.982–0.997; wrong images on the same pages score
+at most 0.62, a table crop with its lower half blanked 0.64,
 erasing the Wallace exercise from its crop 0.44, and a 1.5-pixel blur still scores 0.96. The check
 proves a region is present, complete and aligned, not every glyph: erasing one exponent from the
 Wallace exercise still scores 0.97 ([record](../measurements/image-regions/record.md)).

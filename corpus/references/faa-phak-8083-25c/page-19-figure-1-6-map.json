@@ -1,0 +1,21 @@
+{
+  "case": "faa-phak-8083-25c",
+  "sourceSHA256": "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
+  "page": 19,
+  "regionPoints": [
+    287.0,
+    46.0,
+    519.0,
+    222.0
+  ],
+  "target": "Figure 1-6, the transcontinental airmail route map in the right column",
+  "renderer": "pdftoppm version 26.04.0",
+  "renderDPI": 180,
+  "referenceDPI": 36,
+  "inkThreshold": 200,
+  "pixels": [
+    108,
+    86
+  ],
+  "sha256": "b68588295ce60632c1d716fc792bc8e040499ea19e51044d321a58f56b9b1eda"
+}

@@ -63,7 +63,9 @@ and cancellation check; a reader keeps only the state its evidence needs and dif
 others only in `ContentStreamWalk.Options`. `CGPDFObjects` holds the typed dictionary accessors,
 inherited-resources walk and font enumeration they share; `AnchorMatcher` matches a show origin
 to the one native line it lies in; `GraphicsReader` keeps its own paint-oriented scan over the
-same helpers. `StructureTreeReader` parses tagged-PDF structure into value-only page/MCID
+same helpers, tracking the clip in force so that what it records for a figure is what the page
+lets show rather than how far the artwork was drawn, and spending its own budget so a page cannot
+ask for unbounded work. `StructureTreeReader` parses tagged-PDF structure into value-only page/MCID
 associations, and no Core Graphics object survives its parsing pool. `ConversionWarnings`
 composes every warning's prose from a `PageWarning` kind in one place.
 

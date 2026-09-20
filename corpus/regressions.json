@@ -5,8 +5,73 @@
     {
       "id": "faa-phak-8083-25c",
       "sourceSHA256": "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
-      "basis": "Source pages 16 and 121 visually reviewed. Protects the introductory prose and figure preservation; does not approve page-121 column order. Pages 91/511 are source-reviewed narrow-gutter column-order regressions; the complete left column precedes the right. Reviewed chapter-page folios on pages 16/91 must remain absent from prose. Pages 211/212 visually reviewed: V-speed designators retain their source subscripts in bulleted definitions; source ASI figures remain preserved. Source pages 50/325 visually reviewed for tag-restored left-column-before-right-column order; page 81 caption remains beside the preceding image, before body prose. Page 191 reviewed: four separate left-column items precede the ammeter paragraph; the remaining page is still preserved as an image. Pages 35-36 and 116-117 visually reviewed: each two-column paragraph continues from the bottom of one page onto the next and must remain one paragraph across the source-page marker (#27).",
+      "basis": "Source pages 16 and 121 visually reviewed. Protects the introductory prose and figure preservation; does not approve page-121 column order. Pages 91/511 are source-reviewed narrow-gutter column-order regressions; the complete left column precedes the right. Reviewed chapter-page folios on pages 16/91 must remain absent from prose. Pages 211/212 visually reviewed: V-speed designators retain their source subscripts in bulleted definitions; source ASI figures remain preserved. Source pages 50/325 visually reviewed for tag-restored left-column-before-right-column order; page 81 caption remains beside the preceding image, before body prose. Page 191 reviewed: four separate left-column items precede the ammeter paragraph; the remaining page is still preserved as an image. Pages 35-36 and 116-117 visually reviewed: each two-column paragraph continues from the bottom of one page onto the next and must remain one paragraph across the source-page marker (#27). Source pages 19 and 96 visually reviewed: the whole left column of page 19 precedes the right, and page 96's two sentences beside the tip-vortex figure reflow as prose; the page-19 map reference is the figure's own source region, so its crop must still cover the whole map (#52, #98). Source pages 226 and 302 visually reviewed: dense isogonic and air-mass drawings no longer cost the page its prose, which reads left column before right; page 448's 1.95 million drawing operations must still preserve the page whole (#13).",
       "pages": [
+        {
+          "page": 19,
+          "orderedText": [
+            "mass produced to serve as fighters, bombers, trainers, as well",
+            "Transcontinental Air Mail Route",
+            "The Air Commerce Act charged the Secretary of Commerce",
+            "Department of Commerce made significant advances in",
+            "Federal Certification of Pilots and Mechanics",
+            "the Aeronautics Branch was renamed the Bureau of Air"
+          ],
+          "paragraphs": [
+            "Built at intervals of approximately 10 miles apart, the standard beacon tower was 51 feet high"
+          ],
+          "imageRegions": [
+            {
+              "reference": "corpus/references/faa-phak-8083-25c/page-19-figure-1-6-map.png"
+            }
+          ],
+          "minimumImages": 2
+        },
+        {
+          "page": 226,
+          "orderedText": [
+            "card from its backside. When the pilot is flying north",
+            "Magnetic Compass Induced Errors",
+            "Variation",
+            "the two poles are aligned, and there is no variation",
+            "Deviation"
+          ],
+          "absentWarningCodes": [
+            "pageImageFallback"
+          ],
+          "minimumImages": 1
+        },
+        {
+          "page": 302,
+          "orderedText": [
+            "over warm tropical waters like the Caribbean Sea",
+            "An air mass passing over a warmer surface is warmed from below"
+          ],
+          "absentWarningCodes": [
+            "pageImageFallback"
+          ],
+          "minimumImages": 1
+        },
+        {
+          "page": 448,
+          "warningCodesAnyOf": [
+            "pageImageFallback"
+          ],
+          "minimumImages": 1
+        },
+        {
+          "page": 96,
+          "orderedText": [
+            "are identical. In both examples, the only difference is",
+            "As an airfoil moves through air, the airfoil is inclined against",
+            "A Third Dimension",
+            "Chapter Summary"
+          ],
+          "paragraphs": [
+            "As an airfoil moves through air, the airfoil is inclined against the airflow"
+          ],
+          "minimumImages": 1
+        },
         {
           "page": 16,
           "orderedText": [

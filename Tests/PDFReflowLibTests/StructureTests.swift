@@ -454,3 +454,65 @@ func captionsListsAndOversizedHeadingsKeepSpatialBoundaries(_ text: String) {
         #expect(headings(tagged) == headings(spatial))
     }
 }
+
+@Test func aPageThatTagsOneOfItsOwnSubHeadingsAParagraphKeepsIt() throws {
+    let fixture = try SourceTagFixture.load("fed-21")
+    let native = try SourceLayoutFixture.load("fed-21")
+    #expect(fixture.sourceSHA256 == native.sourceSHA256)
+    // The page draws three fourteen-point sub-headings over a ten-point body and tags two of
+    // them `H4`; "Advisory Councils" is MCID 9, whose element carries the plain paragraph role.
+    #expect(fixture.identifiers(role: "H4") == [2, 5])
+    #expect(fixture.identifiers(role: "H3") == [3])
+    #expect(fixture.identifiers(role: "P").contains(9))
+    func headings(_ blocks: [ReflowBlock]) -> [(String, Int)] {
+        blocks.compactMap { if case let .heading(_, _, level) = $0.content { ($0.text, level) } else { nil } }
+    }
+    func words(_ blocks: [ReflowBlock]) -> Int {
+        blocks.reduce(0) { $0 + $1.text.split(whereSeparator: \.isWhitespace).count }
+    }
+    var content = native.content()
+    var warnings: [ConversionWarning] = []
+    let spatial = LayoutReconstructor.blocks(page: content, images: [], vocabulary: [], warnings: &warnings)
+    // Read by typography alone the page has four sub-headings and splits the sixteen-point one.
+    #expect(headings(spatial).map(\.0) == ["FOMC Responsibilities",
+                                           "Other Significant Entities Contributing to Federal Reserve",
+                                           "Functions", "Depository Institutions", "Advisory Councils"])
+    try fixture.withPage { url, page in
+        let tree = try StructureTreeReader.read(url)
+        let tags = try #require(tree.pages[1])
+        #expect(StructureTreeReader.validates(tags, owners: try #require(tree.owners[1]), page: page))
+        #expect(MarkedTextReader.apply(tags, page: page, lines: &content.lines))
+        let advisory = try #require(content.lines.first { $0.text == "Advisory Councils" })
+        #expect(advisory.structure?.headingLevel == 0 && advisory.fontSize == 14)
+        // The tags do name headings here, so the rule that keeps the FAA's display lines does
+        // not reach this page; the page's own `H4` at fourteen points is what keeps the heading,
+        // and it keeps the level the page gives that size rather than the spatial default.
+        warnings = []
+        let tagged = LayoutReconstructor.blocks(page: content, images: [], vocabulary: [], warnings: &warnings)
+        #expect(headings(tagged).map(\.0) == ["FOMC Responsibilities",
+                                              "Other Significant Entities Contributing to Federal Reserve Functions",
+                                              "Depository Institutions", "Advisory Councils"])
+        #expect(headings(tagged).map(\.1) == [4, 3, 4, 4])
+        #expect(words(tagged) == words(spatial))
+    }
+}
+
+@Test func aDisplayLineNoTagOnThePageCallsAHeadingStaysAParagraph() {
+    // Size alone is not the evidence: Our Flag's title page sets its imprint in display type
+    // over a seven-point body, and no tag on that page calls that size a heading (#67).
+    func element(_ text: String, size: CGFloat, y: CGFloat, group: Int, level: Int) -> LayoutReconstructor.Element {
+        var line = TextLine(text: text, rect: CGRect(x: 40, y: y, width: 300, height: size * 1.2), fontSize: size)
+        line.structure = .init(group: group, order: group, headingLevel: level, lineCount: 1)
+        return .init(rect: line.rect, line: line)
+    }
+    let elements = [element("Section Title", size: 16, y: 700, group: 1, level: 2),
+                    element("Joint Committee On Printing", size: 12, y: 660, group: 2, level: 0),
+                    element("Another Section Title", size: 16, y: 620, group: 3, level: 0)]
+    // Sixteen points is a size this page's own tags call a heading; twelve points is not.
+    #expect(LayoutReconstructor.contradictedHeadingGroups(elements, roles: [.heading, .heading, .heading]) == [3: 2])
+    // A group one of whose lines reads as prose is refused whole, so no paragraph is swallowed.
+    #expect(LayoutReconstructor.contradictedHeadingGroups(elements, roles: [.heading, .heading, .prose]).isEmpty)
+    // A page whose tags name no heading at all states no size, and the rule above decides there.
+    let untagged = [element("Section Title", size: 16, y: 700, group: 1, level: 0)]
+    #expect(LayoutReconstructor.contradictedHeadingGroups(untagged, roles: [.heading]).isEmpty)
+}

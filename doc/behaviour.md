@@ -229,11 +229,19 @@ Evidence: [native-label-spacing](../measurements/native-label-spacing/record.md)
   there, a line the page's own typography reads as a heading keeps that reading and its tag is
   not applied to it. Where the page's tags do name a heading, every role they give is believed
   over visible typography, as before (#67).
+- One exception, where a page's tags contradict themselves: a paragraph-tagged group is read as a
+  heading where the same page's tags call a line of that exact type size (to the half point) a
+  heading, every line of the group also reads as a heading by the page's typography, and the
+  group holds fewer than 200 characters. It takes the shallowest level the page gives that size,
+  so it nests as the sibling of the headings it is set like. One line of the group set as prose
+  refuses the whole group, and a display size no tag on the page calls a heading stays a
+  paragraph: size alone is not the evidence (#67).
 - A page whose tagged text cannot be matched unambiguously reports `structureFallback`; a
   rejected tree adds one document-wide `structureFallback` warning attached to page 1.
 
 Evidence: [structure-tags](../measurements/structure-tags/record.md),
-[pdfkit-structure-tree](../measurements/pdfkit-structure-tree/record.md).
+[pdfkit-structure-tree](../measurements/pdfkit-structure-tree/record.md),
+[contradicted-heading-tags](../measurements/contradicted-heading-tags/record.md).
 
 ## GraphicsReader: painted regions
 

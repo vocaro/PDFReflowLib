@@ -571,6 +571,61 @@ enum LayoutReconstructor {
         var numberedNotePages: Set<Int> = []
     }
 
+    /// One type size, to the half point: the grain at which two lines of a page are set in the
+    /// same display type. `LabelStyle` already reads a page's typography at this grain.
+    private static func sizeKey(_ size: CGFloat) -> Int { Int((size * 2).rounded()) }
+
+    /// The paragraph-tagged groups a page's own tags contradict, each with the heading level to
+    /// read it at.
+    ///
+    /// The rule above believes a paragraph role over visible typography wherever the page's tags
+    /// name a heading at all, because a page that uses `H` roles is a page whose producer knew
+    /// how to state one. That reading fails where a producer states one only part of the time.
+    /// The Fed's book loses headings both ways — its `RoleMap` sends `Sub_Title`, `Title` and
+    /// `Table_Sub_Head` to `P` — and page 21 (printed 13) shows the loss at its sharpest: the
+    /// page draws three fourteen-point sub-headings over a ten-point body and tags two of them
+    /// `H4` and the third, "Advisory Councils", `P`. One page, one type size, two roles. The
+    /// page has not chosen between them; it has contradicted itself, and its own `H4` at that
+    /// size is the evidence of which reading the producer meant.
+    ///
+    /// So a paragraph-tagged group is read as a heading only where the page's tags call that
+    /// exact size a heading elsewhere on the page, and only where every line of the group also
+    /// reads as a heading by the page's typography. One line of the group set in ordinary prose
+    /// refuses the whole group, so the rule can never swallow a paragraph, and the level is the
+    /// shallowest the page's own tags give that size, so the promoted heading nests as the
+    /// sibling of the headings it is set like rather than at the spatial path's fixed level 2.
+    ///
+    /// Size alone, without the page's own tagged heading at that size, is not enough: it would
+    /// promote Our Flag page 3's imprint ("JOINT COMMITTEE ON PRINTING", "WASHINGTON : 2003")
+    /// and the Fed cover's "PUBLIC EDUCATION & OUTREACH", which no page tags as a heading and
+    /// which head nothing. Across the corpus's seven documents with tagged pages this rule
+    /// promotes exactly one group, and the FAA handbook — whose 171 headings the rule above
+    /// protects — cannot reach it at all, because no FAA page's tags name a heading (#67, #91).
+    static func contradictedHeadingGroups(_ elements: [Element], roles: [LineRole?]) -> [Int: Int] {
+        var tagged: [Int: Int] = [:]
+        for element in elements {
+            guard let line = element.line, let tag = line.structure, tag.headingLevel > 0 else { continue }
+            let key = sizeKey(line.fontSize)
+            tagged[key] = min(tagged[key] ?? tag.headingLevel, tag.headingLevel)
+        }
+        guard !tagged.isEmpty else { return [:] }
+        var promoted: [Int: Int] = [:]
+        var lengths: [Int: Int] = [:]
+        var refused: Set<Int> = []
+        for (index, element) in elements.enumerated() {
+            guard let line = element.line, let tag = line.structure, tag.headingLevel == 0 else { continue }
+            guard roles[index] == .heading, let level = tagged[sizeKey(line.fontSize)] else {
+                refused.insert(tag.group)
+                continue
+            }
+            promoted[tag.group] = min(promoted[tag.group] ?? level, level)
+            lengths[tag.group, default: 0] += line.text.count + 1
+        }
+        // `structuredOrder` already refuses a tagged heading of 200 characters or more as too
+        // long to be one; a promotion must not reach past that ceiling either.
+        return promoted.filter { !refused.contains($0.key) && lengths[$0.key, default: 0] < 200 }
+    }
+
     /// One page's logical blocks: its typography is read once, every line outside a tagged or
     /// numbered-note group is classified by `role(of:)`, and `BlockAssembler` builds the blocks.
     static func blocks(page: PageContent, images: [(CGRect, String)], context: DocumentContext,
@@ -604,16 +659,24 @@ enum LayoutReconstructor {
         // page its navigation for nothing. Where the page's tags do name a heading, every role
         // they give is believed over visible typography, as before (#67).
         let tagsNameHeading = elements.contains { ($0.line?.structure?.headingLevel ?? 0) > 0 }
+        let roles = elements.map { element in
+            element.line.map { role(of: $0, on: page, in: lines, typography: typography,
+                                    labels: labels, judgesTitleWords: judgesTitleWords) }
+        }
+        let contradicted = contradictedHeadingGroups(elements, roles: roles)
         for (index, element) in elements.enumerated() {
             if let group = noteGroups[index], let line = element.line {
                 assembler.appendNote(group: group, line)
             } else if let path = element.image {
                 assembler.appendImage(path)
-            } else if let line = element.line {
-                let spatial = role(of: line, on: page, in: lines, typography: typography,
-                                   labels: labels, judgesTitleWords: judgesTitleWords)
-                if let tag = line.structure, tagsNameHeading || spatial != .heading {
-                    assembler.appendTagged(tag, line)
+            } else if let line = element.line, let spatial = roles[index] {
+                if var tag = line.structure {
+                    if let level = contradicted[tag.group] { tag.headingLevel = level }
+                    if tag.headingLevel > 0 || tagsNameHeading || spatial != .heading {
+                        assembler.appendTagged(tag, line)
+                    } else {
+                        assembler.append(line, as: spatial)
+                    }
                 } else {
                     assembler.append(line, as: spatial)
                 }

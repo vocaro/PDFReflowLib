@@ -122,7 +122,9 @@ class RepositoryTests(unittest.TestCase):
         self.assertEqual(gate.ALLOWED[36][0], 'historical')
         self.assertEqual(gate.ALLOWED[43][0], 'historical')
         self.assertIn('417edc705', (ROOT / 'doc/corpus.md').read_text())
-        twelve = [13, 14, 37, 39, 40, 45, 153, 158, 164, 165]
+        # #13's budget was ported too, so three of the twelve are now history.
+        self.assertEqual(gate.ALLOWED[13][0], 'historical')
+        twelve = [14, 37, 39, 40, 45, 153, 158, 164, 165]
         for issue in twelve:
             self.assertEqual(gate.ALLOWED[issue][0], 'branch-only', issue)
         cited = {}

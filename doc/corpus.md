@@ -330,15 +330,14 @@ usable reflow. The [shading-support measurement](../measurements/shading-support
 records nine pages with reflowed text before placeholder filtering; column-order defects remain
 open. The source has tags, but custom heading and bullet roles map to paragraphs, so tag names alone are not a reliable semantic reference.
 
-Both gaps stand, and neither issue tracks them any more.
-[Graphics fallback #13](https://github.com/vocaro/PDFReflowLib/issues/13) was closed by
-`183c2c4b6` and [native text/label defects #14](https://github.com/vocaro/PDFReflowLib/issues/14)
-by `2e18b3149`, both on the
-abandoned coordination branch; `dd160b4` merged that branch with the `ours` strategy, so the
-commits are ancestors of `main` and none of their content is
-([decision 0005](decisions/0005-abandoned-coordination-branch.md)). Here `GraphicsReader.accept()`
-still gives up past 100,000 operations, where `183c2c4b6` raised the budget to 250,000, and
-nothing splits a line PDFKit joined across a page. The reconciliation in
+[Graphics fallback #13](https://github.com/vocaro/PDFReflowLib/issues/13)'s budget is now on
+`main`, raised to 250,000 operations on its own measurement, and no DGA page falls back on it
+today — every one is under 10,000 operations, so #13's own claim about this book is stale.
+The second gap stands: [native text/label defects #14](https://github.com/vocaro/PDFReflowLib/issues/14)
+was closed by `2e18b3149` on the abandoned coordination branch, and `dd160b4` merged that branch
+with the `ours` strategy, so the commit is an ancestor of `main` and none of its content is
+([decision 0005](decisions/0005-abandoned-coordination-branch.md)). Nothing splits a line PDFKit
+joined across a page. The reconciliation in
 [#231](https://github.com/vocaro/PDFReflowLib/issues/231) holds the list of issues in this position; the fixes are readable with `git show`, but per decision 0005
 they are hand-ported onto `main`'s pipeline rather than cherry-picked.
 

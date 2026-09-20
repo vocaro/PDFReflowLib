@@ -72,6 +72,8 @@ struct PageContent: Equatable, Codable {
     var bounds: CGRect
     var lines: [TextLine]
     var graphics: [CGRect]
+    /// The placed raster image XObjects among `graphics`: the page's pictures (#176, #239).
+    var pictures: [CGRect] = []
     var requiresPageImage = false
     var recognized = false
     var hasSyntheticTextStyle = false

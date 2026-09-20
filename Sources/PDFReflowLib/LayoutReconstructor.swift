@@ -575,7 +575,14 @@ enum LayoutReconstructor {
     /// numbered-note group is classified by `role(of:)`, and `BlockAssembler` builds the blocks.
     static func blocks(page: PageContent, images: [(CGRect, String)], context: DocumentContext,
                        warnings: inout [ConversionWarning]) -> [ReflowBlock] {
-        let lines = page.lines.filter { line in !images.contains { $0.0.intersects(line.rect) } }
+        // A crop takes every line it intersects, except a wrapped paragraph the page prints over
+        // one of its own pictures, which is the book's prose and no cut can free (#239).
+        let overPicture = PageDiagnosis.proseOverPictures(lines: page.lines, pictures: page.pictures,
+                                                          crops: images.map(\.0), bounds: page.bounds,
+                                                          language: context.language)
+        let lines = page.lines.enumerated().filter { index, line in
+            overPicture.contains(index) || !images.contains { $0.0.intersects(line.rect) }
+        }.map(\.element)
         let typography = PageTypography(pageLines: page.lines, reflowableLines: lines, documentBody: context.documentBody)
         // A bold sub-heading set at or near body size, whose paragraph opens beneath it directly or
         // past an intervening picture and caption (#218).

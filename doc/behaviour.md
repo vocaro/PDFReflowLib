@@ -254,7 +254,9 @@ Evidence: [structure-tags](../measurements/structure-tags/record.md),
   is clipped, against a clip widened by the same two points — so a rule of no height survives, and
   a frame drawn exactly on the clip that bounds it keeps its tolerance and does not move.
 - Placed raster XObjects are also reported separately from the undifferentiated region list, so
-  the drawn-text test below can ignore a photograph's texture (#176).
+  the drawn-text test below can ignore a photograph's texture (#176) and reconstruction can tell
+  the artwork a crop cannot be trimmed away from (#239). They are carried on the page, so both
+  passes see them.
 - Text rendering mode is tracked across saved graphics state and nested forms. When every
   observed text uses invisible mode 3 and a graphic covers most of the page, attributed text is
   skipped and the page's typography is marked synthetic: layout treats it as ordinary prose, with
@@ -822,6 +824,22 @@ Evidence: [spine-continuity](../measurements/spine-continuity/record.md).
   keeping the seed's ink (for a thin rule, its one-point stroke), because layout removes every
   intersecting line from the reflowed prose; a line the crop cannot be trimmed away from is
   admitted instead, and a thin rule left with nothing admitted yields no crop at all (#36, #229).
+- **Prose printed over a picture** (`PageDiagnosis.proseOverPictures`, #239). A crop a page's own
+  prose sits inside cannot be trimmed away from it, so the words would leave the book. A run of
+  lines a crop takes still reflows, while the crop is preserved and shown unchanged, when every
+  line of it lies wholly inside one placed raster XObject that covers no more than
+  `pageSizedGraphicFraction` of the page, and the run reads as a wrapped paragraph: at least 3
+  rows on one left edge (within a quarter of the type size), at one size (within a tenth) and at
+  one leading (between 0.8 and 2.2 type sizes, and within a quarter of the run's own first gap);
+  every row but the last at least 0.8 of the run's widest row; at least 20 words; fewer than
+  `maximumNumericShare` of the tokens carrying digits; and at least `minimumEnglishShare` of the
+  words the lexicon judges being English words. A page paints a row twice for a knockout, so that
+  it reads over the picture beneath it; an identical rectangle is one row of the paragraph rather
+  than a break in its leading, and it reflows once, the repeated copy staying inside the crop.
+  Only books declared English are judged. A picture covering the page is the page — a scan, whose inherited
+  layer #93 and #176 already decide — and is never read this way. A figure's own lettering fails
+  the paragraph test and stays in its crop: a legend runs a whole entry between rows, an axis sets
+  each label at its own width, and a scanned table's cells carry digits.
 - **`FractionRegionDetector`.** Short horizontal painted bars with compact mathematical terms
   above and below, optionally with a nearby equation prefix, are preserved together in one image.
   Long rules, prose, code and connected table grids are left to existing handling; whole-line
@@ -833,14 +851,16 @@ Evidence: [spine-continuity](../measurements/spine-continuity/record.md).
   reference-to-note ownership.
 - Preserved regions, page fallbacks and cropped figures are images: cropped text is neither
   reflowable nor accessible as text, and the generic image description names the source page
-  rather than inventing a description of the picture.
+  rather than inventing a description of the picture. The one exception is a wrapped paragraph
+  printed over a picture, which reflows as well as being shown inside the crop (#239).
 
 Evidence: [rule-and-url-seeds](../measurements/rule-and-url-seeds/record.md),
 [preserved-region-regressions](../measurements/preserved-region-regressions/record.md),
 [fractions-and-invisible-text](../measurements/fractions-and-invisible-text/record.md),
 [numbered-notes](../measurements/numbered-notes/record.md) and its
 [recheck](../measurements/numbered-notes/recheck/record.md),
-[image-regions](../measurements/image-regions/record.md).
+[image-regions](../measurements/image-regions/record.md),
+[prose-over-pictures](../measurements/prose-over-pictures/record.md).
 
 ## ChapterBoundaryReader
 

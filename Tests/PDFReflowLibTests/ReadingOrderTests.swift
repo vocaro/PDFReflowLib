@@ -169,6 +169,7 @@ private func uniformlyLeadedPDF(lines: Int, leading: Double, size: Double) -> Da
     // The page still reflows: the warning reports an order that was not established, not content
     // that was lost.
     #expect(report.reflowedPageCount == 2)
+}
 
 /// The 9/11 report's page 254 ends `…arrived.Hawsawi told`, and PDFKit reports `told` as a line
 /// of its own, level with the line it ends. The word belongs to the paragraph, and the paragraph

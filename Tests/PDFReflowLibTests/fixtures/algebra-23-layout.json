@@ -1,0 +1,1269 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        84.9602,
+        745.53924480000001,
+        425.25584811133444,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "It will be more common in our study of algebra that we do not know the value of"
+        }
+      ],
+      "text" : "It will be more common in our study of algebra that we do not know the value of"
+    },
+    {
+      "rect" : [
+        84.960199999999986,
+        731.13924480000003,
+        425.20202312524805,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "the variables. In this case, we will have to simplify what we can and leave the"
+        }
+      ],
+      "text" : "the variables. In this case, we will have to simplify what we can and leave the"
+    },
+    {
+      "rect" : [
+        84.960199999999986,
+        716.73924480000005,
+        425.20387108835848,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "variables in our final solution. One way we can simplify expressions is to combine"
+        }
+      ],
+      "text" : "variables in our final solution. One way we can simplify expressions is to combine"
+    },
+    {
+      "rect" : [
+        84.960199999999986,
+        702.33924480000007,
+        425.21723714938867,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "like terms. Like terms are terms where the variables match exactly (exponents"
+        }
+      ],
+      "text" : "like terms. Like terms are terms where the variables match exactly (exponents"
+    },
+    {
+      "rect" : [
+        84.960199999999958,
+        678.98330800000008,
+        425.22129560000008,
+        21.774494499999946
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "included). Examples of like terms would be 3xy and− 7xy or 3a"
+        },
+        {
+          "baselineOffset" : 4.3199200000000246,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "b and 8a"
+        },
+        {
+          "baselineOffset" : 4.3199200000000246,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "b or−"
+        }
+      ],
+      "text" : "included). Examples of like terms would be 3xy and− 7xy or 3a2b and 8a2b or−"
+    },
+    {
+      "rect" : [
+        84.960350000000005,
+        673.05954480000014,
+        425.18547850160644,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "3 and 5. If we have like terms we are allowed to add (or subtract) the numbers in"
+        }
+      ],
+      "text" : "3 and 5. If we have like terms we are allowed to add (or subtract) the numbers in"
+    },
+    {
+      "rect" : [
+        84.960010000000011,
+        658.65954480000016,
+        425.21908195148808,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "front of the variables, then keep the variables the same. This is shown in the fol-"
+        }
+      ],
+      "text" : "front of the variables, then keep the variables the same. This is shown in the fol-"
+    },
+    {
+      "rect" : [
+        84.960010000000011,
+        644.25954480000019,
+        83.574302306303991,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "lowing examples"
+        }
+      ],
+      "text" : "lowing examples"
+    },
+    {
+      "rect" : [
+        84.960010000000011,
+        616.31130000000019,
+        72.970066662041631,
+        11.955199999999991
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Example 32."
+        }
+      ],
+      "text" : "Example 32."
+    },
+    {
+      "rect" : [
+        140.63971000000001,
+        581.06290800000011,
+        89.942880400000007,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "5x− 2y− 8x +7y "
+        }
+      ],
+      "text" : "5x− 2y− 8x +7y "
+    },
+    {
+      "rect" : [
+        181.55995000000001,
+        563.66290800000013,
+        129.26348552655361,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− 3x +5y Our Solution"
+        }
+      ],
+      "text" : "− 3x +5y Our Solution"
+    },
+    {
+      "rect" : [
+        246.23976000000002,
+        581.06290800000011,
+        208.26282039999992,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Combine like terms 5x− 8x and− 2y + 7y"
+        }
+      ],
+      "text" : "Combine like terms 5x− 8x and− 2y + 7y"
+    },
+    {
+      "rect" : [
+        84.959660000000014,
+        541.19130000000018,
+        72.97006668595202,
+        11.955199999999991
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Example 33."
+        }
+      ],
+      "text" : "Example 33."
+    },
+    {
+      "rect" : [
+        89.159660000000017,
+        514.29924480000022,
+        16.83212841000001,
+        13.298257699999908
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -2.1599599999999555,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "8x"
+        },
+        {
+          "baselineOffset" : 2.1599600000000692,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2"
+        }
+      ],
+      "text" : "8x2"
+    },
+    {
+      "rect" : [
+        107.87958,
+        505.82300800000019,
+        117.81787799999998,
+        21.774494499999946
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− 3x + 7− 2x"
+        },
+        {
+          "baselineOffset" : 4.3199200000000246,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "+4x− 3 "
+        }
+      ],
+      "text" : "− 3x + 7− 2x2 +4x− 3 "
+    },
+    {
+      "rect" : [
+        170.27981999999997,
+        496.89924480000019,
+        55.423106444799998,
+        13.298257700000022
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "6x"
+        },
+        {
+          "baselineOffset" : 4.3199200000000246,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "+ x +4 "
+        }
+      ],
+      "text" : "6x2 + x +4 "
+    },
+    {
+      "rect" : [
+        241.43940999999998,
+        505.82300800000019,
+        114.39232840999998,
+        21.774494499999946
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Combine like terms 8x"
+        },
+        {
+          "baselineOffset" : 4.3199200000000246,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2"
+        }
+      ],
+      "text" : "Combine like terms 8x2"
+    },
+    {
+      "rect" : [
+        241.43957999999998,
+        496.89924480000019,
+        64.584223834598447,
+        13.298257700000022
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Our Solution"
+        }
+      ],
+      "text" : "Our Solution"
+    },
+    {
+      "rect" : [
+        357.71952999999996,
+        505.82300800000019,
+        148.298338,
+        21.774494499999946
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− 2x"
+        },
+        {
+          "baselineOffset" : 4.3199200000000246,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "and− 3x +4x and 7− 3"
+        }
+      ],
+      "text" : "− 2x2 and− 3x +4x and 7− 3"
+    },
+    {
+      "rect" : [
+        84.959579999999988,
+        465.9390448000002,
+        425.21922713187848,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "As we combine like terms we need to interpret subtraction signs as part of the fol-"
+        }
+      ],
+      "text" : "As we combine like terms we need to interpret subtraction signs as part of the fol-"
+    },
+    {
+      "rect" : [
+        84.95957999999996,
+        451.53904480000023,
+        425.19767335572487,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "lowing term. This means if we see a subtraction sign, we treat the following term"
+        }
+      ],
+      "text" : "lowing term. This means if we see a subtraction sign, we treat the following term"
+    },
+    {
+      "rect" : [
+        84.95957999999996,
+        437.13904480000025,
+        294.97382088417294,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "like a negative term, the sign always stays with the term."
+        }
+      ],
+      "text" : "like a negative term, the sign always stays with the term."
+    },
+    {
+      "rect" : [
+        84.95957999999996,
+        417.33904480000024,
+        425.2186688347648,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "A final method to simplify is known as distributing. Often as we work with prob-"
+        }
+      ],
+      "text" : "A final method to simplify is known as distributing. Often as we work with prob-"
+    },
+    {
+      "rect" : [
+        84.95957999999996,
+        402.93904480000026,
+        425.15640497431048,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "lems there will be a set of parenthesis that make solving a problem diﬃcult, if not"
+        }
+      ],
+      "text" : "lems there will be a set of parenthesis that make solving a problem diﬃcult, if not"
+    },
+    {
+      "rect" : [
+        84.95957999999996,
+        388.53904480000028,
+        425.20090845301763,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "impossible. To get rid of these unwanted parenthesis we have the distributive"
+        }
+      ],
+      "text" : "impossible. To get rid of these unwanted parenthesis we have the distributive"
+    },
+    {
+      "rect" : [
+        84.95957999999996,
+        374.13904480000031,
+        425.21520041029117,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "property. Using this property we multiply the number in front of the parenthesis"
+        }
+      ],
+      "text" : "property. Using this property we multiply the number in front of the parenthesis"
+    },
+    {
+      "rect" : [
+        84.95957999999996,
+        359.73904480000033,
+        198.25391155389445,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "by each term inside of the parenthesis."
+        }
+      ],
+      "text" : "by each term inside of the parenthesis."
+    },
+    {
+      "rect" : [
+        172.67947999999996,
+        332.85934480000031,
+        234.09748486924792,
+        11.967155199999979
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Distributive Property: a(b + c)= ab + ac"
+        }
+      ],
+      "text" : "Distributive Property: a(b + c)= ab + ac"
+    },
+    {
+      "rect" : [
+        84.95926999999989,
+        305.97924480000029,
+        348.97262870553601,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Several examples of using the distributive property are given below."
+        }
+      ],
+      "text" : "Several examples of using the distributive property are given below."
+    },
+    {
+      "rect" : [
+        84.95926999999989,
+        278.03100000000029,
+        72.970066709862408,
+        11.955199999999991
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Example 34."
+        }
+      ],
+      "text" : "Example 34."
+    },
+    {
+      "rect" : [
+        207.71926999999988,
+        242.78300800000031,
+        46.920183277311992,
+        20.455347200000034
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "4(2x− 7) "
+        }
+      ],
+      "text" : "4(2x− 7) "
+    },
+    {
+      "rect" : [
+        270.35954999999984,
+        242.78300800000031,
+        117.09804800000001,
+        20.455347200000034
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Multiply each term by 4"
+        }
+      ],
+      "text" : "Multiply each term by 4"
+    },
+    {
+      "rect" : [
+        216.83954999999986,
+        225.3830080000003,
+        118.1046430724864,
+        20.455347199999977
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "8x− 28 Our Solution"
+        }
+      ],
+      "text" : "8x− 28 Our Solution"
+    },
+    {
+      "rect" : [
+        84.959809999999834,
+        202.91100000000031,
+        72.970066709862408,
+        11.955199999999991
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Example 35."
+        }
+      ],
+      "text" : "Example 35."
+    },
+    {
+      "rect" : [
+        196.43980999999985,
+        167.54270800000032,
+        58.200283277311996,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− 7(5x− 6) "
+        }
+      ],
+      "text" : "− 7(5x− 6) "
+    },
+    {
+      "rect" : [
+        270.36018999999982,
+        167.54270800000032,
+        128.37814800000001,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Multiply each term by− 7"
+        }
+      ],
+      "text" : "Multiply each term by− 7"
+    },
+    {
+      "rect" : [
+        206.76028999999983,
+        150.14270800000031,
+        128.18428307248644,
+        20.455347199999977
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− 35 +42 Our Solution"
+        }
+      ],
+      "text" : "− 35 +42 Our Solution"
+    },
+    {
+      "rect" : [
+        84.960189999999812,
+        127.65914480000031,
+        425.17227319646724,
+        11.97911040000001
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "In the previous example we again use the fact that the sign goes with the number,"
+        }
+      ],
+      "text" : "In the previous example we again use the fact that the sign goes with the number,"
+    },
+    {
+      "rect" : [
+        84.960189999999784,
+        104.7829080000003,
+        425.12647689855999,
+        20.455347199999991
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "this means we treat the− 6 as a negative number, this gives (− 7)(− 6) = 42, a"
+        }
+      ],
+      "text" : "this means we treat the− 6 as a negative number, this gives (− 7)(− 6) = 42, a"
+    },
+    {
+      "rect" : [
+        84.960249999999746,
+        98.859144800000294,
+        425.22294929410566,
+        11.979110399999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "positive number. The most common error in distributing is a sign error, be very"
+        }
+      ],
+      "text" : "positive number. The most common error in distributing is a sign error, be very"
+    },
+    {
+      "rect" : [
+        84.960249999999746,
+        84.459144800000288,
+        119.89272971558404,
+        11.979110399999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "careful with your signs!"
+        }
+      ],
+      "text" : "careful with your signs!"
+    },
+    {
+      "rect" : [
+        299.64024999999975,
+        52.378853200000286,
+        10.021160547360012,
+        9.8729762399999998
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626400000000004,
+          "text" : "23"
+        }
+      ],
+      "text" : "23"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    595,
+    842
+  ],
+  "caseID" : "wallace-algebra-2010",
+  "graphics" : [
+
+  ],
+  "lines" : [
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.9602,
+        745.53924480000001,
+        425.25584811133444,
+        11.979110399999968
+      ],
+      "text" : "It will be more common in our study of algebra that we do not know the value of"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960199999999986,
+        731.13924480000003,
+        425.20202312524805,
+        11.979110399999968
+      ],
+      "text" : "the variables. In this case, we will have to simplify what we can and leave the"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960199999999986,
+        716.73924480000005,
+        425.20387108835848,
+        11.979110399999968
+      ],
+      "text" : "variables in our final solution. One way we can simplify expressions is to combine"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960199999999986,
+        702.33924480000007,
+        425.21723714938867,
+        11.979110399999968
+      ],
+      "text" : "like terms. Like terms are terms where the variables match exactly (exponents"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960199999999958,
+        678.98330800000008,
+        425.22129560000008,
+        21.774494499999946
+      ],
+      "text" : "included). Examples of like terms would be 3xy and− 7xy or 3a2b and 8a2b or−"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960350000000005,
+        673.05954480000014,
+        425.18547850160644,
+        11.979110399999968
+      ],
+      "text" : "3 and 5. If we have like terms we are allowed to add (or subtract) the numbers in"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960010000000011,
+        658.65954480000016,
+        425.21908195148808,
+        11.979110399999968
+      ],
+      "text" : "front of the variables, then keep the variables the same. This is shown in the fol-"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960010000000011,
+        644.25954480000019,
+        83.574302306303991,
+        11.979110399999968
+      ],
+      "text" : "lowing examples"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960010000000011,
+        616.31130000000019,
+        72.970066662041631,
+        11.955199999999991
+      ],
+      "text" : "Example 32."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        140.63971000000001,
+        581.06290800000011,
+        89.942880400000007,
+        20.455347200000006
+      ],
+      "text" : "5x− 2y− 8x +7y"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        181.55995000000001,
+        563.66290800000013,
+        129.26348552655361,
+        20.455347200000006
+      ],
+      "text" : "− 3x +5y Our Solution"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        246.23976000000002,
+        581.06290800000011,
+        208.26282039999992,
+        20.455347200000006
+      ],
+      "text" : "Combine like terms 5x− 8x and− 2y + 7y"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959660000000014,
+        541.19130000000018,
+        72.97006668595202,
+        11.955199999999991
+      ],
+      "text" : "Example 33."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        89.159660000000017,
+        514.29924480000022,
+        16.83212841000001,
+        13.298257699999908
+      ],
+      "text" : "8x2"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        107.87958,
+        505.82300800000019,
+        117.81787799999998,
+        21.774494499999946
+      ],
+      "text" : "− 3x + 7− 2x2 +4x− 3"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        170.27981999999997,
+        496.89924480000019,
+        55.423106444799998,
+        13.298257700000022
+      ],
+      "text" : "6x2 + x +4"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        241.43940999999998,
+        505.82300800000019,
+        114.39232840999998,
+        21.774494499999946
+      ],
+      "text" : "Combine like terms 8x2"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        241.43957999999998,
+        496.89924480000019,
+        64.584223834598447,
+        13.298257700000022
+      ],
+      "text" : "Our Solution"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        357.71952999999996,
+        505.82300800000019,
+        148.298338,
+        21.774494499999946
+      ],
+      "text" : "− 2x2 and− 3x +4x and 7− 3"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959579999999988,
+        465.9390448000002,
+        425.21922713187848,
+        11.979110400000025
+      ],
+      "text" : "As we combine like terms we need to interpret subtraction signs as part of the fol-"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.95957999999996,
+        451.53904480000023,
+        425.19767335572487,
+        11.979110400000025
+      ],
+      "text" : "lowing term. This means if we see a subtraction sign, we treat the following term"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.95957999999996,
+        437.13904480000025,
+        294.97382088417294,
+        11.979110400000025
+      ],
+      "text" : "like a negative term, the sign always stays with the term."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.95957999999996,
+        417.33904480000024,
+        425.2186688347648,
+        11.979110400000025
+      ],
+      "text" : "A final method to simplify is known as distributing. Often as we work with prob-"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.95957999999996,
+        402.93904480000026,
+        425.15640497431048,
+        11.979110400000025
+      ],
+      "text" : "lems there will be a set of parenthesis that make solving a problem diﬃcult, if not"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.95957999999996,
+        388.53904480000028,
+        425.20090845301763,
+        11.979110400000025
+      ],
+      "text" : "impossible. To get rid of these unwanted parenthesis we have the distributive"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.95957999999996,
+        374.13904480000031,
+        425.21520041029117,
+        11.979110400000025
+      ],
+      "text" : "property. Using this property we multiply the number in front of the parenthesis"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.95957999999996,
+        359.73904480000033,
+        198.25391155389445,
+        11.979110400000025
+      ],
+      "text" : "by each term inside of the parenthesis."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        172.67947999999996,
+        332.85934480000031,
+        234.09748486924792,
+        11.967155199999979
+      ],
+      "text" : "Distributive Property: a(b + c)= ab + ac"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.95926999999989,
+        305.97924480000029,
+        348.97262870553601,
+        11.979110400000025
+      ],
+      "text" : "Several examples of using the distributive property are given below."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.95926999999989,
+        278.03100000000029,
+        72.970066709862408,
+        11.955199999999991
+      ],
+      "text" : "Example 34."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        207.71926999999988,
+        242.78300800000031,
+        46.920183277311992,
+        20.455347200000034
+      ],
+      "text" : "4(2x− 7)"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        270.35954999999984,
+        242.78300800000031,
+        117.09804800000001,
+        20.455347200000034
+      ],
+      "text" : "Multiply each term by 4"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        216.83954999999986,
+        225.3830080000003,
+        118.1046430724864,
+        20.455347199999977
+      ],
+      "text" : "8x− 28 Our Solution"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959809999999834,
+        202.91100000000031,
+        72.970066709862408,
+        11.955199999999991
+      ],
+      "text" : "Example 35."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        196.43980999999985,
+        167.54270800000032,
+        58.200283277311996,
+        20.455347200000006
+      ],
+      "text" : "− 7(5x− 6)"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        270.36018999999982,
+        167.54270800000032,
+        128.37814800000001,
+        20.455347200000006
+      ],
+      "text" : "Multiply each term by− 7"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        206.76028999999983,
+        150.14270800000031,
+        128.18428307248644,
+        20.455347199999977
+      ],
+      "text" : "− 35 +42 Our Solution"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960189999999812,
+        127.65914480000031,
+        425.17227319646724,
+        11.97911040000001
+      ],
+      "text" : "In the previous example we again use the fact that the sign goes with the number,"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960189999999784,
+        104.7829080000003,
+        425.12647689855999,
+        20.455347199999991
+      ],
+      "text" : "this means we treat the− 6 as a negative number, this gives (− 7)(− 6) = 42, a"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960249999999746,
+        98.859144800000294,
+        425.22294929410566,
+        11.979110399999996
+      ],
+      "text" : "positive number. The most common error in distributing is a sign error, be very"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960249999999746,
+        84.459144800000288,
+        119.89272971558404,
+        11.979110399999996
+      ],
+      "text" : "careful with your signs!"
+    },
+    {
+      "fontSize" : 9.9626400000000004,
+      "monospaced" : false,
+      "rect" : [
+        299.64024999999975,
+        52.378853200000286,
+        10.021160547360012,
+        9.8729762399999998
+      ],
+      "text" : "23"
+    }
+  ],
+  "page" : 23,
+  "rightsBasis" : "Page 2 states Copyright 2010 Tyler Wallace and Creative Commons Attribution 3.0 Unported. The PDF remains an external local corpus source; it is not bundled or relicensed under MIT.",
+  "sourceSHA256" : "856bd81edc61c50496982ddc849138f4e0e56fd0ddf0edb53fee9bb0830d0678",
+  "sourceTitle" : "Beginning and Intermediate Algebra",
+  "sourceURL" : "https://s3.amazonaws.com/myopenmath/cfiles/19515/Beginning_and_Intermediate_Algebra.pdf"
+}

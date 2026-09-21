@@ -1,0 +1,172 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        58.800000000000004,
+        748.51210000000003,
+        9.6000000000000014,
+        9.3120000000000118
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "44"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : " "
+        }
+      ],
+      "text" : "44 "
+    },
+    {
+      "rect" : [
+        88.800000000000011,
+        748.51210000000003,
+        167.19999999999999,
+        9.3120000000000118
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "The Fed Explained: What the Central Bank Does"
+        }
+      ],
+      "text" : "The Fed Explained: What the Central Bank Does"
+    },
+    {
+      "rect" : [
+        90,
+        692.64010000000007,
+        426.49199999999962,
+        11.639999999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "ity of the Federal Reserve’s assets are securities holdings. During times of severe stress, the Fed"
+        }
+      ],
+      "text" : "ity of the Federal Reserve’s assets are securities holdings. During times of severe stress, the Fed"
+    },
+    {
+      "rect" : [
+        90,
+        676.64010000000007,
+        429.44199999999989,
+        11.639999999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "may introduce liquidity and credit market facilities and usage of these facilities increases the level"
+        }
+      ],
+      "text" : "may introduce liquidity and credit market facilities and usage of these facilities increases the level"
+    },
+    {
+      "rect" : [
+        90,
+        660.64010000000007,
+        52.299000000000007,
+        11.639999999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "of reserves."
+        }
+      ],
+      "text" : "of reserves."
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    612,
+    792
+  ],
+  "caseID" : "fed-explained-2021",
+  "graphics" : [
+    [
+      56.800000000000004,
+      742.01210000000003,
+      498.40000000000003,
+      4
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        58.800000000000004,
+        748.51210000000003,
+        9.6000000000000014,
+        9.3120000000000118
+      ],
+      "text" : "44"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        88.800000000000011,
+        748.51210000000003,
+        167.19999999999999,
+        9.3120000000000118
+      ],
+      "text" : "The Fed Explained: What the Central Bank Does"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        90,
+        692.64010000000007,
+        426.49199999999962,
+        11.639999999999986
+      ],
+      "text" : "ity of the Federal Reserve’s assets are securities holdings. During times of severe stress, the Fed"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        90,
+        676.64010000000007,
+        429.44199999999989,
+        11.639999999999986
+      ],
+      "text" : "may introduce liquidity and credit market facilities and usage of these facilities increases the level"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        90,
+        660.64010000000007,
+        52.299000000000007,
+        11.639999999999986
+      ],
+      "text" : "of reserves."
+    }
+  ],
+  "page" : 48,
+  "rightsBasis" : "Federal Reserve Board educational publication, retained as external development material. PDF is not bundled or relicensed under MIT.",
+  "sourceSHA256" : "8db8fd9e1de63ac25a6f9585d78ded12f45ab56f0c14c52c199b36b368f84d60",
+  "sourceTitle" : "The Fed Explained: What the Central Bank Does",
+  "sourceURL" : "https://www.federalreserve.gov/aboutthefed/files/the-fed-explained.pdf"
+}

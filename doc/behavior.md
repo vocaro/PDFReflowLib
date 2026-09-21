@@ -725,8 +725,11 @@ three pages (#218). Each extracted page is encoded as a binary property list in 
 reload as positive zero, and no reconstruction step reads the sign of zero), reloaded once in
 order, and deleted on reload; the page directory goes when reconstruction finishes, leaving only
 assets. Reconstruction emits each page's assets and blocks to the writer as it finishes them,
-holding back only the trailing block, which a continued paragraph on the next page can still
-join; the whole block list is never resident. Model validation follows: each block is checked as
+holding back only what a later page can still amend (`amendableTail`): the trailing block, or,
+where images stand at the tail, the paragraph beneath them that a continued paragraph can still
+join together with the images that join would step over (#203). The whole block list is never
+resident, and the held tail cannot grow past one page's pictures, because a page that opens no
+paragraph puts its own marker at the tail and a marker is not a paragraph. Model validation follows: each block is checked as
 it arrives, and the checks that need the whole document — that it has blocks at all, and that
 every chapter boundary reached a standalone page marker — run when the stream ends.
 
@@ -802,6 +805,29 @@ library does. The fix is readable with `git show e1cbc0d0e` and, per decision 00
 onto this pipeline rather than cherry-picked; nothing open tracks that port, and
 [#231](https://github.com/vocaro/PDFReflowLib/issues/231) holds the reconciliation.
 
+Where no cut separates a group, it is ordered by **column runs** rather than by lines, but only
+where the page states that its columns are blocks. A magazine column that runs on into a wider
+measure below — around an L-shaped picture frame — bridges the gutter beside it, so no straight
+cut exists; and its columns are leaded so tightly that consecutive rows overlap, so no whitespace
+band exists either. The elements are chained into runs (each joins the run standing directly
+above it, sharing at least half of the narrower measure and separated by at most a body) and the
+runs are placed by the same row-major comparator, read off each run's own rectangle. A
+single-column group chains into one run and is unchanged. Four conditions gate it: some run must
+widen, part way down, by more than a body into a measure another run holds, where the widening is
+a text line of at least twelve bodies, all but a body of it is kept by at least two of that run's
+elements below and by neither of the two above; no run may hold a single element; every run must
+hold a picture or two lines of twelve bodies; and no element of one run may touch an element of
+another. Together they separate a column running on from rows the page means to be read across.
+One row set across a table's columns widens a run in the same way but is not kept, and a
+paragraph's short last line before the next paragraph's full first line widens it without the
+narrower measure ever having been kept. A timeline, an index of names against descriptions or a
+worksheet's exercise numbers strands a run of one; a list of illustrations against their page
+numbers is two stacks of short cells. And a run standing inside another run's rows — an
+annotation beside its own working, a figure's labels inside the paragraph that introduces them, a
+column the chaining split in two — is that row, however the chaining divided it, which a run-on
+measure never is, because it widens across a gutter only where the column beside it has ended
+(#137, #174, [column-run-order](../measurements/column-run-order/record.md)).
+
 The cuts recurse 32 levels. A page whose separating gaps never narrow is cut one block at a
 time, so its depth is its block count: uniform leading wider than 110% of the page body, as a
 double-spaced typescript sets, reaches the limit at 33 blocks. Ordinary pages do not come near
@@ -822,6 +848,28 @@ so a one-column page, whose every line spans its block, gives up at most the lin
 line below. Only a picture seeds a band: cutting at every line of a one-column page would reach the
 depth limit and report the page unread.
 
+- A **picture between the two halves of a paragraph interrupts it; it does not end it** (#203).
+  A cross-page join steps over the image blocks standing between the paragraph the page left open
+  and the paragraph the next page opens with, on either side of the boundary, and each image it
+  steps over keeps the side of that boundary its own page is on: the earlier page's images are
+  placed before the joined paragraph, the later page's after it. The marker the join sets stands
+  *inside* the paragraph, so placing the earlier page's images after it would carry that page's
+  content past the next page's marker. The Fed sets Box 3.5 at the foot of page 47 and the
+  paragraph that names it runs on to page 48, so `…(See box 3.5 for more details…) The vast
+  major-` was a block of its own and `ity of the Federal Reserve's assets…` another; the box now
+  reads before the sentence that refers to it and the word is whole. Boxes and figures are one
+  block kind and take one rule. The join's own conditions are unchanged — a paragraph on each
+  side, the band test, the tagged-identity test — so an image only stops being a barrier where two
+  paragraphs already ask to be joined, and one is added: a block reached *past* a picture is being
+  called a paragraph the page interrupted, so it must read as the page's prose (`readsAsSentence`,
+  four or more words of two letters or more). A folio, a figure number or a stray mark is not one:
+  the 9/11 report prints `145` under page 163's column and page 164 opens with a crop, and that
+  folio would otherwise take page 164's opening words. The block directly before a boundary is
+  still reached whatever it holds, so #45's own defect — a join anchored on a folio that is simply
+  the last block — is exactly as it was. This is what reconstruction must hold back:
+  `amendableTail` is the trailing block, or, where images stand at the tail, the paragraph
+  beneath them and those images ([decision 0008](decisions/0008-streamed-blocks-to-the-writer.md),
+  [decision 0011](decisions/0011-a-picture-keeps-its-side-of-the-page-marker.md)).
 - Two lines are one paragraph when they **share a column** (left edges within 1.5 bodies, the gap
   between them from −0.4 to 0.9 of a body, and no further down the page than the leading it
   states) or are **two pieces of one printed row**: they overlap vertically by at least half the
@@ -917,7 +965,15 @@ depth limit and report the page unread.
 
 Monospaced text is code and keeps line breaks and indentation; a line opening with a list marker
 (`•`, `*`, `−`, `-`, a run of digits or one letter, each followed by a point or a bracket and a
-space) keeps its break. Both are preformatted blocks that retain native emphasis and scripts;
+space) keeps its break. A marker is a marker because the page set it at the *start of a printed
+line*, so a piece the extractor cut out of the middle of a row is never one: where another line
+stands on the same row, ends at or before this line's left edge and is nearer than the 0.75 of a
+body a column's gutter needs, the line reads as prose and rejoins the piece before it. Wallace
+breaks a row after a raised exponent, so `8x²` is one line and `− 3x + 7− 2x² +4x− 3` the next,
+1.89 points to its right, and the minus the page printed between two terms opened an item of a
+list in a `<pre>` block of its own, in the middle of the derivation (#203). A page's columns and a
+table's cells stand further apart than that, and a piece that opens its row has nothing to its
+left, so a genuine marker still opens an item. Both are preformatted blocks that retain native emphasis and scripts;
 inserted newlines and indentation are unstyled. There is no list model: every such line is its own
 preformatted block, and nothing groups items or renders `ol`/`ul`.
 
@@ -1318,6 +1374,9 @@ Evidence: [raster-dpi](../measurements/raster-dpi/record.md),
   — roman, arabic, prefixed, restarting — so nothing here parses it. Four corpus documents state
   labels: the Fed report (`a`, `b`, `i`…`vi`, then `1`), the USCIS guide (`front-1`, `cover-i`,
   then `1`), NCA5 and the dietary guidelines.
+  A marker inside a continued paragraph shows the same label as a standalone one: it is the same
+  marker, and a reader jumping to it is looking for the same printed page. The Fed printed twelve
+  of these as physical numbers until #203's cross-page joins made them visible.
   The fragment stays the physical page, because it is an XML id, because internal links aim at it,
   and because two physical pages may print the same number — the dietary guidelines print `1`
   twice, NCA5 prints `i` twice. `ConversionReport` counts and every `ConversionWarning.page` stay

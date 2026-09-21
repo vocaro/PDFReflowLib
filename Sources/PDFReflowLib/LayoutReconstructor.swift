@@ -164,8 +164,10 @@ enum LayoutReconstructor {
     /// Whether a line is running prose rather than a term: four or more words of two letters or
     /// more. A figure's label, an axis title, a formula's terms and a legend are shorter than
     /// that, which is what lets a crop tell the book's own prose from a picture's writing (#255).
-    static func readsAsSentence(_ line: TextLine) -> Bool {
-        line.text.split(whereSeparator: { !$0.isLetter }).filter { $0.count >= 2 }.count >= 4
+    static func readsAsSentence(_ line: TextLine) -> Bool { readsAsSentence(line.text) }
+
+    static func readsAsSentence(_ text: String) -> Bool {
+        text.split(whereSeparator: { !$0.isLetter }).filter { $0.count >= 2 }.count >= 4
     }
 
     /// Whether a seed region captures a text line. Tall PDFKit line rectangles include leading,
@@ -486,10 +488,143 @@ enum LayoutReconstructor {
             return ordered(elements.filter { $0.rect.minY > y }, bodySize: bodySize, depth: depth + 1, exhausted: &exhausted)
                 + ordered(elements.filter { $0.rect.maxY < y }, bodySize: bodySize, depth: depth + 1, exhausted: &exhausted)
         }
+        // Every straight cut has failed. A magazine page can still state its own blocks: a column
+        // that runs on into a wider measure below, around an L-shaped picture frame, leaves no
+        // straight gutter to cut at, and its columns are leaded so tightly that consecutive rows
+        // overlap, so there is no whitespace band either. Sorting that page's lines interleaves
+        // its columns row by row. Where the page states the run-on, its columns are ordered as
+        // runs instead of as lines (#174).
+        if let runs = columnRuns(elements, bodySize: bodySize) { return runs.flatMap { $0 } }
         return elements.sorted {
             abs($0.rect.midY - $1.rect.midY) > bodySize * 0.4
                 ? $0.rect.midY > $1.rect.midY : $0.rect.minX < $1.rect.minX
         }
+    }
+
+    /// The column runs a group's elements form, in reading order, or nil when the group states no
+    /// run-on measure and the line-by-line order stands (#174).
+    ///
+    /// A run is one column read from its top to its bottom: each element joins the run standing
+    /// directly above it, sharing at least half of the narrower measure and separated by at most
+    /// a body — the same adjacency a reader follows down a column, and the same one a line of the
+    /// next column fails, because that line stands beside the run rather than beneath it.
+    ///
+    /// The runs are then placed by the row-major order this fallback already places lines by,
+    /// read off each run's own rectangle. That is what "block-level" means here: the run, not the
+    /// line, is what carries a position, so a column that reaches the foot of the page is read
+    /// out before the column beside it rather than woven into it.
+    static func columnRuns(_ elements: [Element], bodySize: CGFloat) -> [[Element]]? {
+        let top = elements.enumerated().sorted {
+            $0.element.rect.maxY != $1.element.rect.maxY
+                ? $0.element.rect.maxY > $1.element.rect.maxY
+                : ($0.element.rect.minX != $1.element.rect.minX
+                    ? $0.element.rect.minX < $1.element.rect.minX : $0.offset < $1.offset)
+        }
+        var runs: [[Element]] = []
+        var arrival: [Int] = []
+        for (offset, element) in top {
+            let rect = element.rect
+            var best: (run: Int, gap: CGFloat, overlap: CGFloat)?
+            for (index, run) in runs.enumerated() {
+                let last = run[run.count - 1].rect
+                let overlap = min(last.maxX, rect.maxX) - max(last.minX, rect.minX)
+                let gap = last.minY - rect.maxY
+                guard overlap >= min(last.width, rect.width) * 0.5,
+                      gap <= bodySize, gap >= -bodySize else { continue }
+                if best == nil || gap < best!.gap || (gap == best!.gap && overlap > best!.overlap) {
+                    best = (index, gap, overlap)
+                }
+            }
+            if let best {
+                runs[best.run].append(element)
+            } else {
+                runs.append([element])
+                arrival.append(offset)
+            }
+        }
+        // Every run must hold at least two elements. A run of one is not a column; it is an
+        // element this chaining failed to place, and a decomposition that strands one is not a
+        // description of the page. Every group whose rows the page means to be read across —
+        // the report's two flight timelines, its index of names against descriptions, a
+        // worksheet's exercise numbers, a table's footnote marker — leaves such a run behind,
+        // and is left to the row-major order those rows need (#137, #174).
+        // And every run must be a column of substantial text, or a picture with what belongs to
+        // it. Two bodies-wide lines are the substance a narrow gutter already demands before it
+        // may be cut at, for the same reason: a stack of short cells is a table's column, whose
+        // rows the page means to be read across. The report's list of illustrations sets its
+        // page numbers in one such stack against their titles in another, and the census report
+        // its experiment names against their results.
+        let substantial = runs.allSatisfy { run in
+            run.contains { $0.image != nil }
+                || run.filter { $0.line != nil && $0.rect.width >= bodySize * 12 }.count >= 2
+        }
+        guard runs.count > 1, runs.allSatisfy({ $0.count > 1 }), substantial,
+              statesRunOnMeasure(runs, bodySize: bodySize), standApart(runs) else { return nil }
+        let placed = runs.indices.sorted { first, second in
+            let a = union(runs[first].map(\.rect)), b = union(runs[second].map(\.rect))
+            if abs(a.midY - b.midY) > bodySize * 0.4 { return a.midY > b.midY }
+            if a.minX != b.minX { return a.minX < b.minX }
+            return arrival[first] < arrival[second]
+        }
+        return placed.map { runs[$0] }
+    }
+
+    /// Whether the runs stand apart: no element of one may touch an element of another. Runs that
+    /// never touch are columns, and reading one out whole before the next is what a reader does
+    /// with them. Runs whose elements share a row are that row, however the chaining divided
+    /// them — a worked example's annotation beside its own working, a figure's labels inside the
+    /// paragraph that introduces them, a column the chaining split in two — and reading those out
+    /// as columns would take each row apart. This is what a run-on measure, which widens across a
+    /// gutter only where the column beside it has ended, never does (#174).
+    private static func standApart(_ runs: [[Element]]) -> Bool {
+        for (index, run) in runs.enumerated() {
+            for other in runs.indices where other > index {
+                let touches = run.contains { element in
+                    runs[other].contains { $0.rect.intersects(element.rect) }
+                }
+                if touches { return false }
+            }
+        }
+        return true
+    }
+
+    /// Whether some run widens, part way down, into the measure another run holds: the evidence
+    /// that the group is blocks rather than rows. The widening must be substantial text — more
+    /// than a body past the line above it, at least twelve bodies wide, the same substance a
+    /// narrow gutter demands — and must be held by at least two of the run's elements, so that a
+    /// single row spanning a table's columns is not read as a column running on (#174).
+    private static func statesRunOnMeasure(_ runs: [[Element]], bodySize: CGFloat) -> Bool {
+        for (index, run) in runs.enumerated() {
+            for position in 1..<max(run.count, 1) {
+                let above = run[position - 1].rect, below = run[position].rect
+                guard run[position].line != nil, below.width >= bodySize * 12 else { continue }
+                let sides = [(below.minX, min(above.minX, below.maxX)), (max(above.maxX, below.minX), below.maxX)]
+                for (start, end) in sides where end - start > bodySize {
+                    // The measure above must be one the run kept as well. A paragraph's last line
+                    // is short and the next paragraph's first line is full, which widens a run
+                    // exactly as a run-on does; the difference is that the run touched the
+                    // narrower measure once and holds the wider one, where a column holds the
+                    // narrower measure all the way down to where it runs on.
+                    guard position >= 2, run[(position - 2)..<position].allSatisfy({
+                        min($0.rect.maxX, end) - max($0.rect.minX, start) <= bodySize
+                    }) else { continue }
+                    // And the wider measure must be one the run keeps, not one line's overhang.
+                    // A justified column's lines reach its edge within a fraction of a point, so
+                    // "keeps" is all but a body of the widening, not the widening exactly.
+                    guard run[position...].filter({
+                        min($0.rect.maxX, end) - max($0.rect.minX, start) >= end - start - bodySize
+                    }).count >= 2 else { continue }
+                    // And it must be a measure another run holds: that is what no gutter can cut.
+                    let crowded = runs.indices.contains { other in
+                        other != index && runs[other].contains {
+                            min($0.rect.maxX, end) - max($0.rect.minX, start) > bodySize
+                        }
+                    }
+                    if crowded { return true }
+                }
+            }
+        }
+        return false
     }
 
     static func bodySize(_ lines: [TextLine]) -> CGFloat {
@@ -1150,23 +1285,69 @@ enum LayoutReconstructor {
                    hyphens: HyphenContext(vocabulary: vocabulary), warnings: &warnings)
     }
 
+    /// How many blocks at the tail a later page can still amend, which is what reconstruction must
+    /// hold back (#203, [decision 0008](../../doc/decisions/0008-streamed-blocks-to-the-writer.md)).
+    ///
+    /// Ordinarily that is the trailing block alone, which is the paragraph a continued paragraph
+    /// joins. Where images stand at the tail, the join steps over them to the paragraph beneath,
+    /// so that paragraph and every image the join would move are still open.
+    ///
+    /// The count cannot grow without bound: a page that opens no paragraph puts its own marker at
+    /// the tail, and a marker is not a paragraph, so the walk stops there and the tail is one
+    /// block again.
+    static func amendableTail(of blocks: [ReflowBlock]) -> Int {
+        var anchor = blocks.count - 1
+        while anchor >= 0, blocks[anchor].isImage { anchor -= 1 }
+        guard anchor >= 0, anchor < blocks.count - 1,
+              case .paragraph = blocks[anchor].content else { return 1 }
+        return blocks.count - anchor
+    }
+
     static func appendPage(_ pageBlocks: [ReflowBlock], page: PageContent, previousPage: PageContent?,
                            to blocks: inout [ReflowBlock], hyphens: HyphenContext,
                            warnings: inout [ConversionWarning]) {
         var remaining = pageBlocks
-        if let last = blocks.last, let first = remaining.first, let previousPage,
-           case let .paragraph(left) = last.content, case let .paragraph(right) = first.content,
+        // A picture between two halves of a paragraph interrupts it; it does not end it. The Fed
+        // sets Box 3.5 at the foot of page 47, so `…(See box 3.5 for more details…) The vast
+        // major-` was the page's second-to-last block and `ity of the Federal Reserve's assets…`
+        // opened page 48 as a paragraph of its own, with the word broken between them. The join
+        // steps over the images on either side of the boundary, and each keeps the side of that
+        // boundary its own page is on, because the marker the join sets stands inside the
+        // paragraph: page 47's box is placed before the paragraph, where it also reads before the
+        // sentence that refers to it, and page 48's rule after it. Placing page 47's box after the
+        // paragraph would carry it past the page-48 marker (#203).
+        var anchor = blocks.count - 1
+        while anchor >= 0, blocks[anchor].isImage { anchor -= 1 }
+        var opening = 0
+        while opening < remaining.count, remaining[opening].isImage { opening += 1 }
+        if anchor >= 0, opening < remaining.count, let previousPage,
+           case let .paragraph(left) = blocks[anchor].content,
+           case let .paragraph(right) = remaining[opening].content,
+           // Reaching past a picture asks more of the paragraph than standing beside the boundary
+           // did. A block the join steps over pictures to reach is being called a paragraph the
+           // page interrupted, so it must read as the page's prose; a folio, a figure number or a
+           // stray mark is not one. The 9/11 report prints `145` under the column on page 163 and
+           // a crop after it, and that folio would otherwise take page 164's opening words. The
+           // block directly before a boundary is still reached whatever it holds: #45's wider
+           // defect, a join anchored on a folio that is simply the last block, is untouched here.
+           (anchor == blocks.count - 1 && opening == 0) || readsAsSentence(blocks[anchor].text),
            // Two validated paragraph identities that differ are two paragraphs, and never join.
            // One identity and no identity is not that: a page whose tags were not applied says
            // nothing about where its last paragraph ends, so the geometric rule decides, as it
            // did when neither page carried a tag (#67).
-           last.structureGroup == first.structureGroup || last.structureGroup == nil || first.structureGroup == nil,
-           first.text.first?.isLowercase == true, last.text.last.map({ !".!?:".contains($0) }) == true,
+           blocks[anchor].structureGroup == remaining[opening].structureGroup
+               || blocks[anchor].structureGroup == nil || remaining[opening].structureGroup == nil,
+           remaining[opening].text.first?.isLowercase == true,
+           blocks[anchor].text.last.map({ !".!?:".contains($0) }) == true,
            previousPage.lines.last.map({ $0.rect.minY < previousPage.bounds.minY + previousPage.bounds.height * 0.2 }) == true,
            page.lines.first.map({ $0.rect.maxY > page.bounds.minY + page.bounds.height * 0.8 }) == true {
-            blocks[blocks.count - 1].content = .paragraph(join(left, right, hyphens: hyphens,
+            let stepped = Array(blocks[(anchor + 1)...])
+            blocks.removeLast(stepped.count)
+            blocks[anchor].content = .paragraph(join(left, right, hyphens: hyphens,
                 page: page.number, sourceBoundary: page.number, warnings: &warnings))
-            remaining.removeFirst()
+            blocks.insert(contentsOf: stepped, at: anchor)
+            blocks += remaining.prefix(opening)
+            remaining.removeFirst(opening + 1)
         } else {
             blocks.append(ReflowBlock(content: .sourcePage(page.number), page: page.number))
         }

@@ -370,3 +370,161 @@ func aWrapInsideTheColumnWindowIsNotAHungEntry() throws {
     #expect(paragraphTexts(blocks).contains("Distribution of Object Sightings by Evaluation for All "
         + "Years With Comparisons of Each Year for Each Evaluation Group •"))
 }
+
+// MARK: - Columns read as runs (#174)
+
+/// The magazine sets three columns above an L-shaped picture frame, and its third column runs on
+/// into a measure twice as wide beside that frame. No straight gutter crosses the page, because
+/// the wide measure bridges the gutter between the second column and the third; and no whitespace
+/// band crosses it either, because the columns are leaded so tightly that consecutive rows
+/// overlap. The page-wide row-major sort those two failures fall back to wove the three columns
+/// together line by line. The columns are read as runs now, so each completes before the next
+/// begins and the wide measure is read as the third column continuing (#174).
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/174"))
+func aColumnRunningOnIntoAWiderMeasureContinuesThatColumn() throws {
+    let fixture = try SourceLayoutFixture.load("usda-6")
+    #expect(fixture.sourceSHA256 == "2673d1fded74ad89c8b5c59dc325c7884601e1aca5b5755b15a105c1f5b0d761")
+    let page = fixture.content()
+    // The page's own geometry: the run-on measure starts 90 points left of the column it
+    // continues, in the gutter that column shares with the second, and stands directly beneath
+    // it; and the columns' rows overlap rather than leaving a band to cut at.
+    let column = try #require(page.lines.first { $0.text.hasPrefix("deterrent effects of callicarpenal") })
+    let runOn = try #require(page.lines.first { $0.text.hasPrefix("looked at an efficient synthetic") })
+    #expect(abs(column.rect.minX - runOn.rect.minX - 90) < 1 && abs(column.rect.maxX - runOn.rect.maxX) < 1)
+    #expect(column.rect.minY < runOn.rect.maxY && runOn.rect.maxY - column.rect.minY < 0.5)
+    let rows = [try #require(page.lines.first { $0.text.hasPrefix("and ticks. (See") }),
+                try #require(page.lines.first { $0.text.hasPrefix("Folk Remedy Yields") })]
+    #expect(rows[0].rect.minY - rows[1].rect.maxY < -1.2)
+
+    try expectInOrder(reconstructedText(of: page), [
+        "we’ve got,” Burkett says.", "have developed entirely new classes of",      // the first column
+        "insecticides out of the DWFP program,", "significant repellency against",  // the second
+        "and ticks. (See", "deterrent effects of callicarpenal and",                // the third
+        "looked at an efficient synthetic approach", "mosquitoes from biting.",      // its run-on measure
+        "Left: Technician Solomon Green III",                                        // and then the captions
+    ])
+}
+
+/// The same defect the other way up: the second column runs on into a measure spanning the
+/// picture beside it and returns to its own measure below that picture. The wide band hid the
+/// gutter between the column and the pictures, so the pictures and their captions were woven
+/// into the column's prose line by line (#174).
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/174"))
+func aColumnThatWidensAndNarrowsAgainKeepsThePicturesBesideItOutOfItsProse() throws {
+    let fixture = try SourceLayoutFixture.load("usda-17")
+    #expect(fixture.sourceSHA256 == "2673d1fded74ad89c8b5c59dc325c7884601e1aca5b5755b15a105c1f5b0d761")
+    let text = reconstructedText(of: fixture.content())
+    try expectInOrder(text, [
+        "as possible and keeping crops viable",                   // the first column, complete
+        "postharvest were in the 10",
+        "Infrared thermometer mounted on a pole",                 // the upper picture's caption
+        "consistently higher than the 3",                         // the second column, complete
+        "potential were consistent with",
+        "data collected by the infrared sensors",                 // its run-on measure
+        "use year after year.",
+        "viable approach to managing",                            // and its own measure again
+        "Soil scientist Dong Wang examines",                      // the lower picture's caption
+    ])
+    // That caption is one block of its own, not four lines woven into the column beside it.
+    #expect(text.contains("Infrared thermometer mounted on a pole for measuring peach tree canopy temperature"))
+}
+
+/// The controls. A page whose straight cut already separates its columns states no run-on
+/// measure, so its reading order is the cut's, unchanged: the FAA handbook's two columns, the
+/// Fed's column beside its boxed sidebar, and the climate assessment's column around its
+/// figure (#174).
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/174"),
+      arguments: [("faa-511", ["Wind direction indicators.", "Wind shear.", "World Aeronautical Charts",
+                                      "restricted areas, obstructions and other pertinent data.", "Zone of confusion."]),
+                  ("fed-54", ["These vulnerability assessments inform", "Asset Valuations and Risk Appetite",
+                              "Elevated asset valuations constitute", "However, it is very difficult to judge"]),
+                  ("noaa-1056", ["The sociodemographic profiles of Puerto Rico",
+                                 "These islands are particularly vulnerable", "23-7 | US Caribbean"])])
+func straightCutColumnsAreUnchangedByTheRunOnRule(name: String, phrases: [String]) throws {
+    try expectInOrder(reconstructedText(of: try SourceLayoutFixture.load(name).content()), phrases)
+}
+
+/// A row the page sets across its columns is not a column running on. One spanning row — a
+/// table's total, a note beneath its cells — widens the run above it exactly as a run-on measure
+/// does, and reading that page as columns would take every cell out of its row. The measure must
+/// be one the run keeps, over at least two of its elements (#137, #174).
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/174"))
+func oneRowSpanningTheColumnsIsNotAColumnRunningOn() throws {
+    func cell(_ text: String, x: Double, y: Double, width: Double) -> LayoutReconstructor.Element {
+        let rect = CGRect(x: x, y: y, width: width, height: 13)
+        return .init(rect: rect, line: TextLine(text: text, rect: rect, fontSize: 11), image: nil)
+    }
+    // Two columns of prose leaded so tightly that consecutive rows overlap by a point, so no
+    // whitespace band cuts them.
+    var elements: [LayoutReconstructor.Element] = []
+    for row in 0..<5 {
+        let y = 700 - Double(row) * 12
+        elements.append(cell("The left column of this page, set to its own measure", x: 40, y: y, width: 140))
+        elements.append(cell("and the right column beside it, set to the same", x: 186, y: y, width: 140))
+    }
+    #expect(LayoutReconstructor.ordered(elements, bodySize: 11).map { $0.rect.minX } == elements.map { $0.rect.minX })
+    #expect(LayoutReconstructor.columnRuns(elements, bodySize: 11) == nil)
+    // One row set across both columns widens the left run, but the run does not keep that
+    // measure, so the page is still read row by row.
+    let spanning = cell("A total of every row above it, set across both columns", x: 40, y: 628, width: 286)
+    #expect(LayoutReconstructor.columnRuns(elements + [spanning], bodySize: 11) == nil)
+    // Two such rows are a measure the run keeps, and the page is read as columns.
+    let second = cell("and a second line of that same spanning note beneath it", x: 40, y: 616, width: 286)
+    let runs = try #require(LayoutReconstructor.columnRuns(elements + [spanning, second], bodySize: 11))
+    #expect(runs.map(\.count).sorted() == [5, 7])
+    #expect(runs.contains { $0.last?.line?.text == "and a second line of that same spanning note beneath it" })
+    // The same shape in short cells is a table, whose rows the page means to be read across: the
+    // report's list of illustrations sets its page numbers against their titles this way.
+    var cells: [LayoutReconstructor.Element] = []
+    for row in 0..<5 {
+        let y = 700 - Double(row) * 12
+        cells.append(cell("p. \(row * 17 + 15)", x: 40, y: y, width: 30))
+        cells.append(cell("The title of the illustration on that page", x: 90, y: y, width: 236))
+    }
+    #expect(LayoutReconstructor.columnRuns(cells + [spanning, second], bodySize: 11) == nil)
+}
+
+/// A run standing inside another run's rows is that row, not a column. A worked example sets an
+/// annotation beside the step it explains, on the step's own rows; the chaining gives it a run of
+/// its own because it is too far below the step above it to join, and reading the two runs out
+/// one after the other would take every step away from its annotation. The runs must stand apart
+/// — no element of one touching an element of another — which is what a column running on never
+/// violates, because it widens across a gutter only where the column beside it has ended (#174).
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/174"))
+func aRunStandingInsideAnotherRunsRowsIsNotAColumn() {
+    func line(_ text: String, x: Double, y: Double, width: Double) -> LayoutReconstructor.Element {
+        let rect = CGRect(x: x, y: y, width: width, height: 13)
+        return .init(rect: rect, line: TextLine(text: text, rect: rect, fontSize: 11), image: nil)
+    }
+    // The working: two narrow steps, then two set to the full measure, which is a run-on.
+    let working = [line("Distribute 3 through the parenthesis", x: 84, y: 520, width: 216),
+                   line("and then subtract seven", x: 84, y: 508, width: 216),
+                   line("Take the whole of the remaining expression and divide it through", x: 84, y: 496, width: 426),
+                   line("by the coefficient standing in front of the variable to solve", x: 84, y: 484, width: 426)]
+    // The annotation stands on the last two rows of that working, inside them.
+    let annotation = [line("Subtract seven", x: 276, y: 496, width: 162),
+                      line("from both sides", x: 276, y: 484, width: 162)]
+    #expect(LayoutReconstructor.columnRuns(working + annotation, bodySize: 11) == nil)
+    // Without it, the same working is one run, and one run is not a decomposition either.
+    #expect(LayoutReconstructor.columnRuns(working, bodySize: 11) == nil)
+}
+
+/// One page's blocks as text, crops taken as the pipeline takes them.
+private func reconstructedText(of page: PageContent) -> String {
+    var warnings: [ConversionWarning] = []
+    let images = LayoutReconstructor.graphicsWithLabels(page).enumerated().map { ($0.element, "image-\($0.offset)") }
+    return LayoutReconstructor.blocks(page: page, images: images, vocabulary: [], warnings: &warnings)
+        .map(\.text).joined(separator: " ")
+}
+
+/// Reading order phrase by phrase, reported with the phrase that is out of place.
+private func expectInOrder(_ text: String, _ phrases: [String]) throws {
+    var previous = text.startIndex
+    for phrase in phrases {
+        guard let range = text.range(of: phrase, range: previous..<text.endIndex) else {
+            Issue.record("\(phrase) is missing, or stands before \(text[..<previous].suffix(80))")
+            return
+        }
+        previous = range.upperBound
+    }
+}

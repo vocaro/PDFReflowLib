@@ -1,0 +1,453 @@
+{
+ "basis": "Native extraction only: NativeTextReader lines per page, FurnitureDetector collect/resolve over the whole document, removed line indices diffed between a build of f939bec and this change.",
+ "books": {
+  "20180003024": {
+   "alreadyRemoved": 9,
+   "bareFoliosInOuterTenthAtFoot": 5,
+   "establishedOffsets": [],
+   "newlyRemoved": 0,
+   "newlyRemovedLines": [],
+   "noLongerRemoved": 0,
+   "offsetFloor": 6,
+   "pages": 21
+  },
+  "20190030725": {
+   "alreadyRemoved": 0,
+   "bareFoliosInOuterTenthAtFoot": 0,
+   "establishedOffsets": [],
+   "newlyRemoved": 0,
+   "newlyRemovedLines": [],
+   "noLongerRemoved": 0,
+   "offsetFloor": 6,
+   "pages": 10
+  },
+  "20200002975": {
+   "alreadyRemoved": 0,
+   "bareFoliosInOuterTenthAtFoot": 20,
+   "establishedOffsets": [],
+   "newlyRemoved": 0,
+   "newlyRemovedLines": [],
+   "noLongerRemoved": 0,
+   "offsetFloor": 6,
+   "pages": 20
+  },
+  "22-451_7m58": {
+   "alreadyRemoved": 0,
+   "bareFoliosInOuterTenthAtFoot": 0,
+   "establishedOffsets": [],
+   "newlyRemoved": 0,
+   "newlyRemovedLines": [],
+   "noLongerRemoved": 0,
+   "offsetFloor": 29,
+   "pages": 114
+  },
+  "2311.07842v1": {
+   "alreadyRemoved": 22,
+   "bareFoliosInOuterTenthAtFoot": 0,
+   "establishedOffsets": [],
+   "newlyRemoved": 0,
+   "newlyRemovedLines": [],
+   "noLongerRemoved": 0,
+   "offsetFloor": 6,
+   "pages": 12
+  },
+  "Beginning_and_Intermediate_Algebra": {
+   "alreadyRemoved": 487,
+   "bareFoliosInOuterTenthAtFoot": 489,
+   "establishedOffsets": [
+    {
+     "offset": 0,
+     "pagesStatingIt": 487
+    }
+   ],
+   "newlyRemoved": 0,
+   "newlyRemovedLines": [],
+   "noLongerRemoved": 0,
+   "offsetFloor": 123,
+   "pages": 489
+  },
+  "CDOC-108hdoc97": {
+   "alreadyRemoved": 0,
+   "bareFoliosInOuterTenthAtFoot": 48,
+   "establishedOffsets": [],
+   "newlyRemoved": 0,
+   "newlyRemovedLines": [],
+   "noLongerRemoved": 0,
+   "offsetFloor": 14,
+   "pages": 56
+  },
+  "CIA-UAP-015-Project_Blue_Book_Special_Report_No_14": {
+   "alreadyRemoved": 0,
+   "bareFoliosInOuterTenthAtFoot": 230,
+   "establishedOffsets": [],
+   "newlyRemoved": 0,
+   "newlyRemovedLines": [],
+   "noLongerRemoved": 0,
+   "offsetFloor": 78,
+   "pages": 312
+  },
+  "DGA": {
+   "alreadyRemoved": 9,
+   "bareFoliosInOuterTenthAtFoot": 0,
+   "establishedOffsets": [
+    {
+     "offset": -1,
+     "pagesStatingIt": 9
+    }
+   ],
+   "newlyRemoved": 0,
+   "newlyRemovedLines": [],
+   "noLongerRemoved": 0,
+   "offsetFloor": 6,
+   "pages": 10
+  },
+  "GPO-911REPORT": {
+   "alreadyRemoved": 624,
+   "bareFoliosInOuterTenthAtFoot": 17,
+   "establishedOffsets": [
+    {
+     "offset": -18,
+     "pagesStatingIt": 546
+    }
+   ],
+   "newlyRemoved": 15,
+   "newlyRemovedLines": [
+    {
+     "page": 65,
+     "text": "47"
+    },
+    {
+     "page": 89,
+     "text": "71"
+    },
+    {
+     "page": 126,
+     "text": "108"
+    },
+    {
+     "page": 163,
+     "text": "145"
+    },
+    {
+     "page": 192,
+     "text": "174"
+    },
+    {
+     "page": 233,
+     "text": "215"
+    },
+    {
+     "page": 272,
+     "text": "254"
+    },
+    {
+     "page": 296,
+     "text": "278"
+    },
+    {
+     "page": 343,
+     "text": "325"
+    },
+    {
+     "page": 357,
+     "text": "339"
+    },
+    {
+     "page": 379,
+     "text": "361"
+    },
+    {
+     "page": 417,
+     "text": "399"
+    },
+    {
+     "page": 447,
+     "text": "429"
+    },
+    {
+     "page": 449,
+     "text": "431"
+    },
+    {
+     "page": 457,
+     "text": "439"
+    }
+   ],
+   "noLongerRemoved": 0,
+   "offsetFloor": 147,
+   "pages": 585
+  },
+  "GPO-WARRENCOMMISSIONREPORT": {
+   "alreadyRemoved": 762,
+   "bareFoliosInOuterTenthAtFoot": 840,
+   "establishedOffsets": [
+    {
+     "offset": -28,
+     "pagesStatingIt": 743
+    }
+   ],
+   "newlyRemoved": 24,
+   "newlyRemovedLines": [
+    {
+     "page": 31,
+     "text": "3"
+    },
+    {
+     "page": 34,
+     "text": "6"
+    },
+    {
+     "page": 195,
+     "text": "167"
+    },
+    {
+     "page": 262,
+     "text": "234"
+    },
+    {
+     "page": 264,
+     "text": "236"
+    },
+    {
+     "page": 266,
+     "text": "238"
+    },
+    {
+     "page": 271,
+     "text": "243"
+    },
+    {
+     "page": 274,
+     "text": "246"
+    },
+    {
+     "page": 280,
+     "text": "252"
+    },
+    {
+     "page": 286,
+     "text": "258"
+    },
+    {
+     "page": 290,
+     "text": "262"
+    },
+    {
+     "page": 450,
+     "text": "422"
+    },
+    {
+     "page": 819,
+     "text": "791"
+    },
+    {
+     "page": 833,
+     "text": "805"
+    },
+    {
+     "page": 847,
+     "text": "819"
+    },
+    {
+     "page": 849,
+     "text": "821"
+    },
+    {
+     "page": 895,
+     "text": "867"
+    },
+    {
+     "page": 899,
+     "text": "871"
+    },
+    {
+     "page": 905,
+     "text": "877"
+    },
+    {
+     "page": 909,
+     "text": "881"
+    },
+    {
+     "page": 911,
+     "text": "883"
+    },
+    {
+     "page": 913,
+     "text": "885"
+    },
+    {
+     "page": 915,
+     "text": "887"
+    },
+    {
+     "page": 916,
+     "text": "888"
+    }
+   ],
+   "noLongerRemoved": 0,
+   "offsetFloor": 230,
+   "pages": 920
+  },
+  "M-618_a": {
+   "alreadyRemoved": 99,
+   "bareFoliosInOuterTenthAtFoot": 107,
+   "establishedOffsets": [
+    {
+     "offset": -6,
+     "pagesStatingIt": 99
+    }
+   ],
+   "newlyRemoved": 0,
+   "newlyRemovedLines": [],
+   "noLongerRemoved": 0,
+   "offsetFloor": 29,
+   "pages": 116
+  },
+  "November-December2012": {
+   "alreadyRemoved": 34,
+   "bareFoliosInOuterTenthAtFoot": 23,
+   "establishedOffsets": [
+    {
+     "offset": 0,
+     "pagesStatingIt": 22
+    }
+   ],
+   "newlyRemoved": 0,
+   "newlyRemovedLines": [],
+   "noLongerRemoved": 0,
+   "offsetFloor": 6,
+   "pages": 24
+  },
+  "THM-Close-Out-Report-and-Exec-Summ-for-STI-Review": {
+   "alreadyRemoved": 35,
+   "bareFoliosInOuterTenthAtFoot": 0,
+   "establishedOffsets": [],
+   "newlyRemoved": 0,
+   "newlyRemovedLines": [],
+   "noLongerRemoved": 0,
+   "offsetFloor": 6,
+   "pages": 5
+  },
+  "cdc_6023_DS1": {
+   "alreadyRemoved": 0,
+   "bareFoliosInOuterTenthAtFoot": 0,
+   "establishedOffsets": [],
+   "newlyRemoved": 0,
+   "newlyRemovedLines": [],
+   "noLongerRemoved": 0,
+   "offsetFloor": 11,
+   "pages": 42
+  },
+  "complaint_for_a_civil_case": {
+   "alreadyRemoved": 5,
+   "bareFoliosInOuterTenthAtFoot": 0,
+   "establishedOffsets": [],
+   "newlyRemoved": 0,
+   "newlyRemovedLines": [],
+   "noLongerRemoved": 0,
+   "offsetFloor": 6,
+   "pages": 5
+  },
+  "faa-h-8083-25c": {
+   "alreadyRemoved": 508,
+   "bareFoliosInOuterTenthAtFoot": 437,
+   "establishedOffsets": [],
+   "newlyRemoved": 0,
+   "newlyRemovedLines": [],
+   "noLongerRemoved": 0,
+   "offsetFloor": 131,
+   "pages": 522
+  },
+  "jresv82n3p173_A1b": {
+   "alreadyRemoved": 7,
+   "bareFoliosInOuterTenthAtFoot": 7,
+   "establishedOffsets": [
+    {
+     "offset": 172,
+     "pagesStatingIt": 7
+    }
+   ],
+   "newlyRemoved": 0,
+   "newlyRemovedLines": [],
+   "noLongerRemoved": 0,
+   "offsetFloor": 6,
+   "pages": 7
+  },
+  "mcs2025-copper": {
+   "alreadyRemoved": 0,
+   "bareFoliosInOuterTenthAtFoot": 0,
+   "establishedOffsets": [],
+   "newlyRemoved": 0,
+   "newlyRemovedLines": [],
+   "noLongerRemoved": 0,
+   "offsetFloor": 6,
+   "pages": 2
+  },
+  "noaa_61592_DS1": {
+   "alreadyRemoved": 3489,
+   "bareFoliosInOuterTenthAtFoot": 0,
+   "establishedOffsets": [],
+   "newlyRemoved": 0,
+   "newlyRemovedLines": [],
+   "noLongerRemoved": 0,
+   "offsetFloor": 459,
+   "pages": 1834
+  },
+  "p596zhs--2025": {
+   "alreadyRemoved": 32,
+   "bareFoliosInOuterTenthAtFoot": 2,
+   "establishedOffsets": [
+    {
+     "offset": 0,
+     "pagesStatingIt": 21
+    }
+   ],
+   "newlyRemoved": 0,
+   "newlyRemovedLines": [],
+   "noLongerRemoved": 0,
+   "offsetFloor": 9,
+   "pages": 36
+  },
+  "rrs2002-01": {
+   "alreadyRemoved": 0,
+   "bareFoliosInOuterTenthAtFoot": 0,
+   "establishedOffsets": [],
+   "newlyRemoved": 0,
+   "newlyRemovedLines": [],
+   "noLongerRemoved": 0,
+   "offsetFloor": 6,
+   "pages": 20
+  },
+  "the-fed-explained": {
+   "alreadyRemoved": 215,
+   "bareFoliosInOuterTenthAtFoot": 1,
+   "establishedOffsets": [
+    {
+     "offset": -4,
+     "pagesStatingIt": 106
+    }
+   ],
+   "newlyRemoved": 0,
+   "newlyRemovedLines": [],
+   "noLongerRemoved": 0,
+   "offsetFloor": 34,
+   "pages": 135
+  },
+  "warren-suspect-text-excerpt": {
+   "alreadyRemoved": 0,
+   "bareFoliosInOuterTenthAtFoot": 4,
+   "establishedOffsets": [],
+   "newlyRemoved": 0,
+   "newlyRemovedLines": [],
+   "noLongerRemoved": 0,
+   "offsetFloor": 6,
+   "pages": 5
+  }
+ },
+ "totals": {
+  "bareFoliosInOuterTenthAtFoot": 2230,
+  "newlyRemoved": 39,
+  "noLongerRemoved": 0
+ }
+}

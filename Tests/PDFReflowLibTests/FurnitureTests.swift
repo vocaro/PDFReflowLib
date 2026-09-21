@@ -18,9 +18,15 @@ private func furniturePage(_ number: Int, header: String, y: Double = 752,
     let original = pages
     let warnings = LayoutReconstructor.stripFurniture(&pages)
     for (before, after) in zip(original, pages) {
-        // Source-reviewed chapter titles lie well below the running-header band.
-        if [19, 65].contains(before.number) {
+        // Source-reviewed chapter titles lie well below the running-header band. Page 65 opens
+        // chapter 2 and drops its folio to the foot, which goes with the heads it stands in for
+        // (#271); page 19 sets its own only 6.5 pt under the last body line, too near to be set
+        // apart, and keeps it.
+        if before.number == 19 {
             #expect(after.lines.map(\.text) == before.lines.map(\.text))
+        } else if before.number == 65 {
+            #expect(after.lines.map(\.text) == before.lines.dropLast().map(\.text))
+            #expect(before.lines.last?.text == "47")
         } else {
             let header = try #require(before.lines.max { $0.rect.midY < $1.rect.midY })
             #expect(!after.lines.contains { $0.text == header.text })
@@ -243,7 +249,8 @@ func syntheticScanMarginsKeepExistingRepeatedArtifactCleanup(name: String) throw
     // name two chapters at once, so no three consecutive pages word their head alike. Every one
     // of them stands in the same margin slot the book keeps for 538 of its 585 pages, which is
     // the evidence the words withhold. Pages 19 and 65 are source-reviewed chapter openings:
-    // they vacate the slot, and their titles stand lower and larger.
+    // they vacate the slot, and their titles stand lower and larger. Page 65's dropped folio
+    // goes on the book's own numbering instead (#271); page 19's stands too near its body.
     let numbers = [19] + Array(20...26) + Array(65...71) + Array(471...476) + Array(579...585)
     var pages = try numbers.map { try SourceLayoutFixture.load("911-\($0)").content() }
     let original = pages
@@ -252,8 +259,10 @@ func syntheticScanMarginsKeepExistingRepeatedArtifactCleanup(name: String) throw
         #expect(warnings.contains { $0.page == short && $0.code == .furnitureRemoved })
     }
     for (before, after) in zip(original, pages) {
-        if [19, 65].contains(before.number) {
+        if before.number == 19 {
             #expect(after.lines.map(\.text) == before.lines.map(\.text))
+        } else if before.number == 65 {
+            #expect(after.lines.map(\.text) == before.lines.dropLast().map(\.text))
         } else {
             // Exactly the outermost margin row goes; every other line of the page survives.
             #expect(after.lines.map(\.text) == before.lines.filter { $0.rect.midY < 550 }.map(\.text))
@@ -332,4 +341,99 @@ func syntheticScanMarginsKeepExistingRepeatedArtifactCleanup(name: String) throw
     // The same words stay when the client keeps its headers, and when the line is not furniture.
     #expect(try vocabulary(removingFurniture: false) { _ in "Marginalia" }.contains("marginalia"))
     #expect(try vocabulary(removingFurniture: true) { "Marginalia \($0 * 17)" }.contains("marginalia"))
+}
+
+/// A book that prints its folio in a running head, with a ten-page offset between the printed
+/// number and the physical page. `foot` replaces the head with a line at the foot, which is
+/// where such a book drops the folio on a page whose head is suppressed.
+private func foliedPage(_ number: Int, head: String? = nil, foot: String? = nil,
+                        footY: Double = 60, bodyY: Double = 90) -> PageContent {
+    var lines = [TextLine(text: "Body paragraph \(number) stays available.",
+                          rect: CGRect(x: 40, y: bodyY, width: 400, height: 12), fontSize: 12)]
+    if let head {
+        lines.insert(TextLine(text: head, rect: CGRect(x: 40, y: 752, width: 250, height: 10),
+                              fontSize: 10), at: 0)
+    }
+    if let foot {
+        lines.append(TextLine(text: foot, rect: CGRect(x: 300, y: footY, width: 14, height: 10),
+                              fontSize: 10))
+    }
+    return PageContent(number: number, bounds: CGRect(x: 0, y: 0, width: 600, height: 800),
+                       lines: lines, graphics: [])
+}
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/271"))
+func chapterOpeningDropFolioGoesWithTheRunningHeadItStandsInFor() throws {
+    // The 9/11 report prints `48 THE 9/11 COMMISSION REPORT` at the head of page 66 and of every
+    // page after it, and on chapter- and appendix-opening pages suppresses that head and drops
+    // the bare folio to the foot instead. No two opening pages are neighbors, so the run rule
+    // never sees it, and it stands at 0.081 of the page, below the 7% footer band, so no slot
+    // reaches it either: it arrived as a paragraph holding nothing but a number.
+    var pages = try (65...71).map { try SourceLayoutFixture.load("911-\($0)").content() }
+    let original = pages
+    let warnings = LayoutReconstructor.stripFurniture(&pages)
+    #expect(original[0].lines.last?.text == "47")
+    #expect(warnings.contains { $0.page == 65 && $0.code == .furnitureRemoved })
+    // Exactly the folio goes from the opening page; its title, its note and its body all stay.
+    #expect(pages[0].lines.map(\.text) == original[0].lines.dropLast().map(\.text))
+    #expect(pages[0].lines.contains { $0.text.contains("THE FOUNDATION OF") })
+    for (before, after) in zip(original.dropFirst(), pages.dropFirst()) {
+        #expect(after.lines.map(\.text) == before.lines.filter { $0.rect.midY < 550 }.map(\.text))
+    }
+}
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/271"))
+func aDropFolioNeedsTheBookToHaveStatedItsOwnNumberingOftenEnough() throws {
+    // The evidence is the offset the removed furniture establishes, on at least six pages and a
+    // quarter of the document's, the same floor a margin slot asks of a place. Six head pages
+    // carry page 65's folio away; five do not, and over-removal is the worse failure.
+    for last in [70, 71] {
+        var pages = try (65...last).map { try SourceLayoutFixture.load("911-\($0)").content() }
+        let original = pages
+        _ = LayoutReconstructor.stripFurniture(&pages)
+        #expect(pages[0].lines.count == original[0].lines.count - (last == 71 ? 1 : 0))
+    }
+}
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/271"))
+func aFootNumberThatIsNotThisPagesOwnFolioStays() {
+    // Positive controls on the keep side. A book whose head states an offset of -10 carries away
+    // only the number its own numbering predicts: a numbered answer, a table cell or a figure
+    // number that happens to end the page is not this page's folio, and neither is a folio the
+    // page sets too near its last body line to be set apart from it.
+    func book(_ foot: (Int) -> String?, footY: Double = 60) -> [PageContent] {
+        (1...12).map { foliedPage($0, head: $0.isMultiple(of: 3) ? nil : "\($0 + 10) THE BOOK",
+                                  foot: $0.isMultiple(of: 3) ? foot($0) : nil, footY: footY) }
+    }
+    var dropped = book { "\($0 + 10)" }
+    #expect(LayoutReconstructor.stripFurniture(&dropped).map(\.page) == Array(1...12))
+    #expect(dropped.allSatisfy { $0.lines.count == 1 })
+
+    for controls in [book { "\($0 + 11)" }, book { "\($0)" }, book { _ in "42" },
+                     book({ "\($0 + 10)" }, footY: 76)] {
+        var pages = controls
+        let original = pages
+        _ = LayoutReconstructor.stripFurniture(&pages)
+        for (before, after) in zip(original, pages) where before.number.isMultiple(of: 3) {
+            #expect(after.lines.map(\.text) == before.lines.map(\.text))
+        }
+    }
+}
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/271"))
+func aBookThatStatesNoOffsetKeepsEveryNumberItPrints() throws {
+    // Our Flag prints a bare folio at the foot of every page, at 0.081 — the same depth as the
+    // 9/11 report's drop folio — and has no running head at all, so nothing it loses states an
+    // offset and nothing is admitted on one. The narrow 7% footer band is unchanged, so the
+    // illustrated rows on its pages keep the whitespace cuts that order them.
+    var pages = try [7, 9, 27, 30, 31].map { try SourceLayoutFixture.load("flag-\($0)").content() }
+    let original = pages
+    #expect(LayoutReconstructor.stripFurniture(&pages).isEmpty)
+    for (before, after) in zip(original, pages) {
+        #expect(after.lines.map(\.text) == before.lines.map(\.text))
+    }
+    // Synthetically: the same drop folios with no head anywhere to state the offset.
+    var headless = (1...12).map { foliedPage($0, foot: "\($0 + 10)") }
+    #expect(LayoutReconstructor.stripFurniture(&headless).isEmpty)
+    #expect(headless.allSatisfy { $0.lines.count == 2 })
 }

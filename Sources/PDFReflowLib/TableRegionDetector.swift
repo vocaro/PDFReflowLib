@@ -191,6 +191,129 @@ enum TableRegionDetector {
         return regions
     }
 
+    /// The column headers of the tables a page draws: the lines the crop release rule leaves to
+    /// their table rather than to the page's prose (#257).
+    ///
+    /// #255 stopped a crop from burying a line that reads as the book's own prose. The CIA Blue
+    /// Book's crops preserve its statistical tables as pictures, and the lines that rule let out
+    /// of them include those tables' column headers — `Number Per Cent Number Per Cent Nuntler
+    /// Per Cent`, `Certain Doubtful Total Certain Doubtful Total` — which are every one of them
+    /// an English word, so the word test admits them, and which beside the picture of their own
+    /// table say nothing a reader can use.
+    ///
+    /// A header is read from two things together, because neither alone is enough.
+    ///
+    /// **The page set the line in a table's columns.** `rowBlocks` reads a table that still
+    /// reflows, from a run of rows sharing one left edge, one type size and one leading. This
+    /// book's tables offer none of that: its inherited text layer gives every printed row a size
+    /// of its own — one table's rows come back at 5.6, 16.0, 9.0, 10.2 and 19.4 points — and the
+    /// crop has taken the rows beneath in any case, leaving only the header band to judge. The
+    /// evidence here is one row's own: the page kept its pieces apart as cells, each beginning at
+    /// or after the one before it ends, and at least two other rows of the page begin a piece on
+    /// the same column edge. `Evaluation | Certain Doubtful Total … | ertain Doubtful Total …`
+    /// has that shape, on the edges every row of the table below stands on. A line of prose is
+    /// one piece, so it states no edge; and where the extractor merges two printed lines into one
+    /// row — this book paints a rule down its margin, and the tall rectangle that gives the line
+    /// swallows the line below it — the second piece begins inside the first rather than after it.
+    ///
+    /// **The line prints one column label once per column.** Geometry alone is not enough, and
+    /// the measurement says so: the magazine's three-column pages hand back their columns on
+    /// shared baselines, so every row of running prose there holds pieces the page kept apart on
+    /// an edge every other row states, and on geometry alone this rule buries 17,340 characters
+    /// of that book's articles — two thirds of what #255 recovered from it. What a header row
+    /// has and a row of prose has not is its own words: the table repeats one short label across
+    /// its columns, which `printsOneColumnLabel` reads.
+    static func columnHeaders(in page: PageContent, body: CGFloat) -> [CGRect] {
+        let rows = printedRows(page.lines)
+        guard rows.count >= 3 else { return [] }
+        let starts = rows.map { $0.map(\.rect.minX) }
+        var result: [CGRect] = []
+        for (index, row) in rows.enumerated() {
+            let cells = cells(of: row)
+            guard cells.count >= 2 else { continue }
+            let statesAnEdge = cells.dropFirst().contains { cell in
+                starts.indices.count(where: { other in
+                    other != index && starts[other].contains { abs($0 - cell.rect.minX) <= body }
+                }) >= 2
+            }
+            guard statesAnEdge else { continue }
+            result.append(contentsOf: row.filter { printsOneColumnLabel($0.text) }.map(\.rect))
+        }
+        return result
+    }
+
+    /// Whether a line prints one group of words over and over, which is what a table's column
+    /// header is: the same label set once under each column (#257).
+    ///
+    /// `Number Per Cent Number Per Cent Nuntler Per Cent Number Per Celt` is `Number Per Cent`
+    /// four times, and `Certain Doubtful Total Certain Doubtful Total ertain Ooubtfut Total` is
+    /// `Certain Doubtful Total` three times. The repetition is read against the first group and
+    /// against the group before, because the recognizer spoils words one group at a time, and
+    /// words are compared within an edit distance of half the shorter one, because it spoils
+    /// letters within a word: `Nuntler` for `Number`, `Ooubtfut` for `Doubtful`. Four repeated
+    /// words in five must agree, which no line of prose in the corpus manages — `10 lbs of nuts
+    /// and 20 lbs of chocolate`, a worked exercise in Wallace's algebra, comes closest at three
+    /// in four.
+    static func printsOneColumnLabel(_ text: String) -> Bool {
+        let words = text.lowercased().split { !$0.isLetter && !$0.isNumber }.map(String.init)
+        guard words.count >= 4 else { return false }
+        for period in 1...(words.count - 2) {
+            let repeated = words.count - period
+            guard repeated >= 2 else { break }
+            let agreeing = (period..<words.count).count { index in
+                nearlyEqual(words[index], words[index % period])
+                    || nearlyEqual(words[index], words[index - period])
+            }
+            if agreeing * 5 >= repeated * 4 { return true }
+        }
+        return false
+    }
+
+    /// Whether two words are the same word, allowing for what a recognizer does to letters: an
+    /// edit distance of at most half the shorter word, and a length difference no larger (#257).
+    private static func nearlyEqual(_ a: String, _ b: String) -> Bool {
+        if a == b { return true }
+        let shortest = min(a.count, b.count)
+        let allowed = max(1, shortest / 2)
+        guard abs(a.count - b.count) <= allowed else { return false }
+        return editDistance(Array(a), Array(b)) <= allowed
+    }
+
+    private static func editDistance(_ a: [Character], _ b: [Character]) -> Int {
+        var previous = Array(0...b.count)
+        for (i, left) in a.enumerated() {
+            var current = [i + 1]
+            for (j, right) in b.enumerated() {
+                current.append(min(previous[j + 1] + 1, current[j] + 1, previous[j] + (left == right ? 0 : 1)))
+            }
+            previous = current
+        }
+        return previous[b.count]
+    }
+
+    /// One printed row per baseline, top down, each row's pieces left to right.
+    private static func printedRows(_ lines: [TextLine]) -> [[TextLine]] {
+        var rows: [[TextLine]] = []
+        for line in lines.sorted(by: { $0.rect.minY > $1.rect.minY }) {
+            if let last = rows.last?.first, last.sharesRow(with: line) {
+                rows[rows.count - 1].append(line)
+            } else { rows.append([line]) }
+        }
+        for row in rows.indices { rows[row].sort { $0.rect.minX < $1.rect.minX } }
+        return rows
+    }
+
+    /// The pieces of a row the page set apart as cells: the leftmost, then each that begins at
+    /// or after the cell before it ends. A piece beginning inside the one before it is another
+    /// printed line the extractor put on this row, not a cell beside it.
+    private static func cells(of row: [TextLine]) -> [TextLine] {
+        var cells = [row[0]]
+        for line in row.dropFirst() where line.rect.minX >= cells[cells.count - 1].rect.maxX {
+            cells.append(line)
+        }
+        return cells
+    }
+
     /// Whether the page states a column boundary inside a run of rows: a cell the extractor kept
     /// apart on two rows that merged rows reach across, or a column of numbers on one right edge.
     private static func statesAColumn(_ rows: [[Int]], in lines: [TextLine], body: CGFloat) -> Bool {

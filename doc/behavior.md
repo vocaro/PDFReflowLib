@@ -966,10 +966,33 @@ Evidence: [spine-continuity](../measurements/spine-continuity/record.md),
   test runs only on Latin-alphabet lines, because an English lexicon reads a Chinese or Arabic
   line as no words at all and the corpus lane converts those books as English.
   This recovers 45,754 characters across eight of the eighteen corpus books, three quarters of the
-  magazine's text among them. Two costs are known and recorded: the magazine's recovered lines
+  magazine's text among them. One cost is known and recorded: the magazine's recovered lines
   read in its columns' interleaved order (#174's defect, on text that used to be hidden inside
-  the pictures), and some of the CIA report's table headers come out with its prose.
-  Evidence: [prose-inside-crops](../measurements/prose-inside-crops/record.md).
+  the pictures). Evidence: [prose-inside-crops](../measurements/prose-inside-crops/record.md).
+- **A table's column header (#257).** The rule above never releases a line the page set as the
+  label of a table's columns. The CIA report's crops preserve its statistical tables as pictures,
+  and the lines that rule let out of them included those tables' headers — `Number Per Cent
+  Number Per Cent Nuntler Per Cent`, `Certain Doubtful Total Certain Doubtful Total` — every
+  token of which is an English word, so the word test admits them, and which beside the picture
+  of their own table say nothing a reader can use.
+  A header is read from two things at once, because neither alone is enough.
+  *The page set the line in a table's columns:* its printed row holds pieces the page kept apart
+  as cells, each beginning at or after the one before it ends, and at least two other rows of the
+  page begin a piece on the same column edge. `rowBlocks` cannot read these tables, because this
+  book's inherited text layer gives every printed row a size of its own and the crop has taken
+  the rows beneath.
+  *The line prints one column label once per column:* the same short group of words over and
+  over, read against the first group and the group before it, with words compared within an edit
+  distance of half the shorter one, because the recognizer spoils words a group at a time and
+  letters within a word (`Nuntler` for `Number`, `Ooubtfut` for `Doubtful`). Four repeated words
+  in five must agree.
+  Geometry alone would not do: the magazine's three-column pages hand back their columns on
+  shared baselines, so every row of running prose there has a table's shape, and on geometry
+  alone this rule buries 17,340 characters of its articles. With both halves it moves the CIA
+  report alone, by 1,457 characters, and every other book is unchanged.
+  The report's handwriting is not this rule's to fix: that book's inherited OCR layer is
+  unverified, and #216 catalogues what it produces.
+  Evidence: [table-headers-inside-crops](../measurements/table-headers-inside-crops/record.md).
 - **Page furniture.** A region spanning at least 90% of the page's measure and flush against its
   top or bottom edge is the page's own furniture — a footer or header background — not a figure
   with a claim on the text near it. It keeps its own extent rather than growing to a line it only

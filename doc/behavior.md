@@ -799,12 +799,38 @@ it: the deepest of the captured source layouts cuts eleven levels. A group the l
 uncut keeps the order it was extracted in, and the page reports `complexLayout` rather than
 leaving that silent, as the tag phase reports its own give-up (#224).
 
+A **picture across the block's measure** — at least 90% of it — separates what is printed above it
+from what is printed below it, and is cut at before any gutter is looked for (#137). Everything
+else must stand wholly above it or wholly below it, and either side may be empty: a picture at the
+head of the block carries the whole measure with it, so while it is in the group no gutter can be
+found beneath it either, which is how the FAA handbook's pages 341 and 391 — a figure across both
+columns with nothing printed above it — came to be read row by row (#160). A **line** set across
+the same measure within a body of the picture's own top or bottom edge is that picture's label and
+crosses the cut with it, because it bridges the columns exactly as the picture does: page 341 sets
+`Figure 14-6…` 7.7 points beneath such a figure. The band grows only from the picture's two edges,
+so a one-column page, whose every line spans its block, gives up at most the line above and the
+line below. Only a picture seeds a band: cutting at every line of a one-column page would reach the
+depth limit and report the page unread.
+
 - Two lines are one paragraph when they **share a column** (left edges within 1.5 bodies, the gap
   between them from −0.4 to 0.9 of a body) or are **two pieces of one printed row**: they overlap
   vertically by at least half the shorter one's height, the second stands to the right of the
   first, and less than 0.75 of a body separates them — the width a whitespace cut needs for a
   column, so a table's cells and the two ends of a running header remain separate blocks (#57).
   A short previous line ending a sentence closes its paragraph either way.
+- A line is also one paragraph with the line above it when the page **hangs** it there as the wrap
+  of an entry (#160). Project Blue Book sets its list of illustrations from one margin and hangs
+  each wrap 48.5 points in at 7.8-point type, six times the size, so the column test above was
+  silent and thirty entries reflowed as sixty paragraphs. The indent alone proves nothing — a book
+  that opens its paragraphs on a first-line indent sets the same two edges in the same alternation,
+  and `firstLineIndentRun` reads the Blue Book's list as one of its own — so the page must state
+  all of: the wrap stands directly beneath the entry, at its size, on the page's own leading, set
+  in further than 1.5 bodies, so the rule speaks only where the column test is silent; the entry
+  reads as a sentence, fills its measure (twelve of its own sizes) and ends none (past closing
+  quotes and brackets), which a paragraph's short last line above an indented opening does not; the
+  wrap carries at least two letters and stops a whole body short of the entry's right edge, as an
+  entry's tail does and a justified opening line does not; and the page hangs at least three
+  entries on one and the same continuation edge.
 
 ### Type sizes and headings
 
@@ -878,6 +904,7 @@ Evidence: [heading-body-regressions](../measurements/heading-body-regressions/re
 [three-fidelity-fixes](../measurements/three-fidelity-fixes/record.md),
 [preformatted-styles](../measurements/preformatted-styles/record.md),
 [citation-continuations](../measurements/citation-continuations/record.md),
+[column-cuts-and-hung-entries](../measurements/column-cuts-and-hung-entries/record.md),
 [dga-layout-qualification](../measurements/dga-layout-qualification/record.md).
 
 ## HyphenRepair

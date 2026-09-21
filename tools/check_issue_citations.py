@@ -107,6 +107,8 @@ ALLOWED = {
     240: ('historical', 'coverage measured from what a line wrote, on main and named by its issue'),
     241: ('historical', 'the form-XObject tag rule, on main and named by its issue'),
     57: ('historical', 'the figure-seed and row-continuation rules, on main and named by the issue they came from'),
+    137: ('historical', 'the cut at a picture across the block, on main and named by the issue it came from; '
+          '#160 widened it to a picture with an empty side and to that picture\'s spanning label'),
     220: ('historical', 'the kept-as-extracted layer outcome, on main and named by its issue'),
     221: ('historical', 'the encoding outcome the damaged-text warning reports, on main and named by its issue'),
     222: ('historical', 'the empty-recognition rule, on main and named by its issue'),

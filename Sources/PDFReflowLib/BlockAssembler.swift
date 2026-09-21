@@ -183,12 +183,16 @@ struct BlockAssembler {
 
     /// Assets the page's own links cover, by asset path (#247).
     private let imageLinks: [String: LinkTarget]
+    /// The wrapped second line of each entry the page hangs, by the entry it carries on (#160).
+    private let hangingEntries: [CGRect: CGRect]
 
-    init(page: Int, body: CGFloat, hyphens: HyphenContext, imageLinks: [String: LinkTarget] = [:]) {
+    init(page: Int, body: CGFloat, hyphens: HyphenContext, imageLinks: [String: LinkTarget] = [:],
+         hangingEntries: [CGRect: CGRect] = [:]) {
         self.page = page
         self.body = body
         self.hyphens = hyphens
         self.imageLinks = imageLinks
+        self.hangingEntries = hangingEntries
     }
 
     private func headingID() -> String { "heading-\(page)-\(blocks.count)" }
@@ -385,15 +389,19 @@ struct BlockAssembler {
     }
 
     /// Whether `line` continues the paragraph `previous` is part of: the previous line wraps,
-    /// the two share a column at ordinary leading or are two pieces of one printed row, and the
-    /// previous line is not a short line ending a sentence.
+    /// the two share a column at ordinary leading, are two pieces of one printed row, or are an
+    /// entry and the wrap the page hangs under it, and the previous line is not a short line
+    /// ending a sentence.
     private func continuesParagraph(_ prev: TextLine, _ line: TextLine) -> Bool {
         let verticalGap = prev.rect.minY - line.rect.maxY
         let sameColumn = abs(prev.rect.minX - line.rect.minX) < body * 1.5
             && verticalGap >= -body * 0.4 && verticalGap < body * 0.9
+        // A list the page hangs sets its wraps further in than one column's lines ever stand
+        // apart; `LayoutReconstructor.hangingEntries` reads which ones the page hung (#160).
+        let hangs = hangingEntries[line.rect] == prev.rect
         let shortEnding = prev.rect.width < line.rect.width * 0.65
             && prev.text.last.map { ".!?".contains($0) } == true
-        return prev.wraps != false && (sameColumn || continuesRow(prev, line)) && !shortEnding
+        return prev.wraps != false && (sameColumn || hangs || continuesRow(prev, line)) && !shortEnding
     }
 
     /// Whether a line opening with a number or a single letter and a point is a wrapped

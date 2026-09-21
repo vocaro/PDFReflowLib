@@ -1,0 +1,213 @@
+# A picture across the measure, and the wrapped entries of a hung list
+
+Measured under [#160](https://github.com/vocaro/PDFReflowLib/issues/160), baseline `4074668`,
+2026-09-20, macOS 27 (26A428) / Xcode 27 (27A266a), arm64, Swift 6.4, release CLI at library
+defaults with a fixed package identifier and modification date. Block counts are every `<p>`,
+`<pre>` and `<h*>` of the converted book outside its navigation document; character counts are the
+non-whitespace characters inside those blocks.
+
+The issue names three defects. Two are fixed here and one is not; what follows is what each page
+actually does, measured rather than assumed, because the record the issue cites
+(`measurements/caption-wraps-and-open-sentences/record.md`) was written on the abandoned
+coordination branch and is not in this repository
+([decision 0005](../../doc/decisions/0005-abandoned-coordination-branch.md)).
+
+## 1. FAA pages 341, 391 and 397 — read row by row
+
+The issue says the column test does not count a preserved image as column content. **It does not
+hold.** `LayoutReconstructor.ordered`'s narrow-gutter guard asks each side for two text lines at
+least twelve bodies wide, and on both of the pages that are actually wrong the right column has
+three: on page 341 `Figure 14-8…` (237 pt), `Figure 14-9…` (237 pt) and `14 with collocated…`
+(174 pt); on page 391 the left column has `Figure 16-3. World aeronautical chart.` (142 pt) and
+`Figure 16-4. Meridians and parallels…` (237 pt). The guard passes on both. It is never reached.
+
+The pages were traced with a probe that runs `PageReader`, `graphicsWithLabels` and
+`LayoutReconstructor.blocks` over one page and prints the extracted geometry, the crops and the
+blocks. Three separate findings:
+
+**Page 391** opens with a figure crop at `x[34.0..524.3] y[363.6..730.0]` — 490.3 pt of a 490 pt
+measure — and nothing printed above it. The `#137` picture cut demanded content on *both* sides
+(`!above.isEmpty && !below.isEmpty`), so it declined. With the picture still in the group its own
+x-interval spans both columns, so `gap(horizontal:)` finds no gutter; the widest band of
+whitespace across the page is the 24.5 pt above the folio, and after that cut no band reaches the
+1.1 bodies a horizontal cut needs (the largest is 8.0 pt). The group fell through to the row sort,
+and the left column's captions interleaved with the right column's prose:
+
+```
+Figure 16-4. Meridians and parallels—the basis of measuring time,
+be completed before dark. Remember, an hour is lost when
+distance, and direction.
+```
+
+**Page 341** does the same with a figure at `y[462.3..729.8]`, and cutting at the picture alone
+does not help: the page sets that figure's caption, `Figure 14-6. (A) Displaced runway threshold
+drawing. (B) Displaced threshold for Runway 17 at Albuquerque International Airport (ABQ).`, at
+`x[72.0..557.7]` — 485.7 pt of the same measure — 7.7 pt beneath it. The caption bridges the
+columns exactly as the picture does.
+
+**Page 397 is already in column order** and was before this change. Its spanning figure at
+`y[375.0..541.1]` has the page's other spanning figure and its caption above it, so the `#137`
+rule already fired. Its blocks are the top figure and caption, the left column's two figures and
+captions, the folio, and then the right column's `To summarize:` and its seven bullets, in that
+order. The folio sits in the middle because column order puts it at the foot of the left column,
+which is where the page prints it.
+
+### The rule
+
+A picture across at least 90% of the block's measure divides it, and **either side may be empty**.
+A **line** across the same measure, within one body of the picture's own top or bottom edge, joins
+the band and crosses the cut with the picture, because it is that picture's label and bridges the
+columns the same way. The band grows only from the picture's two edges and only while the
+partition still holds, so:
+
+- on page 341 the caption joins (`y[443.8..729.8]`, everything else at `maxY ≤ 435.8`), and
+- on the same page's right-hand group the picture at `y[277.0..435.8]` keeps its band to itself:
+  adding `Figure 14-8…` would grow it to `y[260.7..435.8]`, and `on Taxiway Kilo` at
+  `y[251.3..261.5]` then lies on neither side, so the extension is refused and the picture cuts
+  alone.
+
+A one-column page, whose every line spans its block, therefore gives up at most the line above and
+the line below the picture, never a chain of them, and the cut it makes is the order the row sort
+would have produced anyway. Only a picture seeds a band: cutting at every line of a one-column
+page would reach the 32-level depth limit and report the page unread.
+
+## 2. Blue Book pages 5–7 — the list of illustrations
+
+Page 6 sets `Figure 14 Distribution of Object Sightings by Months Among the Eight Duration` from
+`x = 80.8` and hangs its wrap, `Groups for All Years`, at `x = 129.3`: 48.5 pt at 7.8-point type,
+six times the size. `BlockAssembler.continuesParagraph` allows two lines of one column 1.5 bodies
+(10.5 pt here), so every wrapped entry closed its paragraph at the wrap. Eighteen of page 6's
+twenty-four entries wrap, so twenty-four illustrations reflowed as forty-two paragraphs, with the
+page numbers read afterwards in their own column and nothing at all between the halves.
+
+The other two pages are a different defect and this rule does not reach them:
+
+- **Page 5** sets the `Figure N` label in a column of its own and the titles from `x ≈ 124.8`,
+  with wraps at `x ≈ 130.3` — 5.5 pt, inside the column window. Its titles were already whole.
+- **Page 7** mixes both, and most of its lines are unusable: the book paints a rule down its
+  margin and the inherited OCR layer merges that `I` into the line beside it, which gives a
+  7.8-point line a 31.5-point box. `I South Farwest Region . 54` (`y[645.9..677.4]`) therefore
+  sorts *above* the entry it continues, `Figure 38 …of the` (`y[656.8..663.8]`), and no join rule
+  can reach it. The two entries the page hangs cleanly — `Figure 40 …Intervals` / `of 10 Degrees
+  of Angle.` and `Table XI …on the Basis of` / `Duration of Ob~ervation 73` — are the only two on
+  their edge, below the three this rule requires, and stay split. Filed as
+  [#264](https://github.com/vocaro/PDFReflowLib/issues/264).
+
+### The rule, and why the indent alone proves nothing
+
+*Agricultural Research* opens every paragraph on a ten-point first-line indent in a 10.5-point
+column, which sets the same two left edges in the same alternation as a hung list.
+`firstLineIndentRun`, which exists to read exactly that, **returns true for Blue Book page 6**, so
+it cannot be used as the control. What separates the two is what the line above does: a paragraph
+ends on a short line that has run out of words, and an entry that wrapped ran out of room.
+
+`LayoutReconstructor.hangingEntries` therefore requires all of: the wrap stands directly beneath
+its entry, at the entry's size, on the page's own leading, set in further than 1.5 bodies (so the
+rule speaks only where the column test is silent); the entry reads as a sentence, fills its
+measure at twelve of its own sizes, and ends none past closing quotes and brackets; the wrap
+carries at least two letters and stops a whole body short of the entry's right edge; and the page
+hangs at least three entries on one and the same continuation edge.
+
+The last three were added from measurement. A probe ran the detector over every page of all
+twenty-four cached sources and printed each pair it offered. Without them it offered 465 pairs and
+three of the Blue Book's own pages were wrong:
+
+| Page | Entry offered | Wrap offered |
+| ---: | --- | --- |
+| 14 | `stimulated by the popular press. I` | `I` |
+| 14 | `data. I` | `I` |
+| 22 | `preceding identifications. An explanation of their use follows: I` | `was assigned to a report when, upon final con­ I` |
+| 22 | `PSYCHOLOGICAL MANIFESTATIONS - This identification I` | `although it was well established that the ob­ I` |
+
+All four are the merged margin rule again: it leaves both lines ending at the same right margin
+and gives them boxes a type size too tall, so page 22's hanging *definitions* looked like entries
+and their wraps, skipping the term between them. Requiring the wrap to stop a whole body short of
+the entry's right edge refuses every one, because both lines end on the same `I`. With the three
+guards the detector offers 313 pairs, and what remains is bibliographies (*Our Flag*'s, the NBS
+paper's, the Census paper's), lists of tables (the Blue Book's appendix), a poem and a contributor
+list (NOAA), memorandum headings and an autopsy report (Warren), and hanging list items (the FAA
+handbook's and Wallace's).
+
+## What moved
+
+Every covered corpus book was converted with a release binary built from `4074668` and with this
+change, and each book's blocks and characters compared. Three books move on the cut and two on the
+hung entry; they are disjoint, and thirteen of the eighteen do not move at all.
+
+| case | blocks `4074668` | blocks, cut only | blocks, both | characters `4074668` | characters, both |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| `arxiv-replay-clocks-2023` | 194 | — | 194 | 39,855 | 39,855 |
+| `cdc-zombie-pandemic-2011` | 516 | — | 516 | 12,639 | 12,639 |
+| `census-rrs2002-01` | 373 | — | 373 | 33,612 | 33,612 |
+| `cia-blue-book-14-1955` | 22,523 | 22,523 | **22,448** | 608,818 | 608,818 |
+| `dga-2025-2030` | 133 | — | 133 | 13,485 | 13,485 |
+| `faa-phak-8083-25c` | 8,538 | **8,518** | 8,518 | 1,414,314 | 1,414,314 |
+| `fed-explained-2021` | 858 | — | 858 | 170,293 | 170,293 |
+| `gpo-911-2004` | 4,574 | — | 4,574 | 1,585,155 | 1,585,155 |
+| `gpo-our-flag-2003` | 546 | 546 | **540** | 63,281 | 63,281 |
+| `gpo-warren-1964-suspect-text-excerpt` | 18 | — | 18 | 4,331 | 4,331 |
+| `irs-p596-zhs-2025` | 951 | **929** | 929 | 36,346 | 36,346 |
+| `nbs-jres-geltman-1977` | 38 | — | 38 | 3,017 | 3,017 |
+| `ntrs-20180003024-earthdata-slides-2018` | 170 | — | 170 | 3,510 | 3,510 |
+| `scotus-loper-bright-2024` | 717 | — | 717 | 198,473 | 198,473 |
+| `uscis-m618-arabic-2015` | 1,239 | — | 1,239 | 90,736 | 90,736 |
+| `usda-ars-agresearch-2012-11` | 1,099 | **981** | 981 | 52,158 | **52,149** |
+| `usgs-mcs2025-copper` | 17 | — | 17 | 5,260 | 5,260 |
+| `wallace-algebra-2010` | 7,682 | — | 7,682 | 312,563 | 312,563 |
+
+**The cut.** *Agricultural Research* gains most: its three-column feature pages opened under a
+full-bleed photograph and were being read row by row, one printed line per paragraph, and 118
+blocks become 7 whole paragraphs. Its nine lost characters are nine line-end hyphens
+`HyphenRepair` could resolve once the halves rejoined — `Ento-`+`mology`, `Pro-`+`tecting`,
+`Pro-`+`tection”`, `Re-`+`search`, `ap-`+`plication`, `develop-`+`ing`, `indi-`+`viduals`,
+`pres-`+`sure`, `prod-`+`ucts` — while `insect-transmitted`, `nonagri-cultural` and
+`stored-product` keep theirs and the page warns, as the hyphen rule says it should. IRS
+Publication 596's Chinese two-column pages join the same way, 22 blocks fewer. The FAA handbook
+loses 20 blocks over pages 341, 391 and three others; no text is added or lost in any of the
+three books but those nine hyphens.
+
+**The hung entry.** The Blue Book loses exactly the 75 blocks the detector offered in that book,
+and *Our Flag* 6 of its 12, the other 6 being bibliography entries whose opening line the page
+marks, so they open a preformatted block and never reach `continuesParagraph`. That is also why
+the FAA handbook does not move on this rule at all: all 55 pairs it offers are bulleted or
+numbered items. No book's characters change.
+
+## 3. Proper nouns — not fixed, and not what the issue describes
+
+The issue's example is FAA `The FAA` / `Safety Team`, and it says the join fails "when there's no
+tag". Traced, the page says the opposite. Page 24's left column ends
+`…through training, outreach, and education. The FAA` and its right column opens
+`Safety Team (FAASTeam) exemplifies this commitment.`; the structure tree gives them
+`TextStructure(group: 1004, order: 3227)` and `(group: 1004, order: 3228)` — consecutive lines of
+one paragraph the source itself states, 12 lines long. **The tag is there and the paragraph splits
+anyway**, because the page's figure crop `x[70.1..310.9] y[89.1..244.2]` stands at the foot of the
+left column and its caption `Figure 1-13. Atlanta Flight Standards District Office (FSDO).` beside
+it, so in reading order both fall between the paragraph's two halves, and `appendImage` and a
+caption line of another group each close the open paragraph:
+
+```
+FAA Safety Team (FAASTeam) The FAA is dedicated to … and education. The FAA
+[image]
+Figure 1-13. Atlanta Flight Standards District Office (FSDO).
+Safety Team (FAASTeam) exemplifies this commitment. The FAASTeam has replaced …
+```
+
+So the remedy the issue proposes — a vocabulary of multi-word names — is not what is missing
+either: the paragraph's identity is already stated, and no lexicon would be consulted. Closing
+this means carrying an open paragraph across an interposed picture and caption, or moving such a
+picture out of a stated paragraph's run in reading order; either is a change to the reading-order
+path, which #174 is holding, and neither is what the issue asks for. Nothing is changed for it
+here and #160 stays open on this item alone.
+
+No untagged instance was located. The record that would have named one does not exist.
+
+## Gates
+
+`scripts/check-all.sh --fast`, exit 0: python-tool-tests, measurements-policy, swift-tests (505,
+six new), release-build, pdfkit-concurrency, documented-builds, doc-counts, issue-citations,
+fixture-epubs, conversion-policies. The corpus lane
+(`tools/run_corpus_regressions.py --jobs 4`) passes 18 of 18 covered cases, every case's
+`runPassed` read from its own `result.json` and true, with no content-contract and no structural
+failures. Warning counts are unchanged book for book except `uncertainHyphen`, which rises by one
+in the FAA handbook and one in *Agricultural Research* — one page each where a rejoined word's
+hyphen is now visible and undecidable.

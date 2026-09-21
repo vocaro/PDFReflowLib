@@ -108,8 +108,9 @@ ALLOWED = {
     241: ('historical', 'the form-XObject tag rule, on main and named by its issue'),
     57: ('historical', 'the figure-seed and row-continuation rules, on main and named by the issue they came from'),
     137: ('historical', 'the rows a page means to be read across — the spanning-picture divider and the '
-          'borderless-table row blocks, on main — cited beside #174 as the cases the run-on rule must refuse, '
-          "and widened by #160 to a picture with an empty side and to that picture's spanning label"),
+          'borderless-table row blocks, on main — cited beside #174 and #210 as the cases the run-on '
+          "rule must refuse, and widened by #160 to a picture with an empty side and to that picture's "
+          'spanning label'),
     220: ('historical', 'the kept-as-extracted layer outcome, on main and named by its issue'),
     221: ('historical', 'the encoding outcome the damaged-text warning reports, on main and named by its issue'),
     222: ('historical', 'the empty-recognition rule, on main and named by its issue'),

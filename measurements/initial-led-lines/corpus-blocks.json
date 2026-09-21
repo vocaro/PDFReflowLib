@@ -1,0 +1,168 @@
+{
+  "baselineCommit": "49e4586",
+  "cases": {
+    "arxiv-replay-clocks-2023": {
+      "blocksAfter": 260,
+      "blocksBefore": 261,
+      "preformattedAfter": 5,
+      "preformattedBefore": 6,
+      "wordsAfter": 8568,
+      "wordsBefore": 8568,
+      "wordsIdentical": true
+    },
+    "cdc-zombie-pandemic-2011": {
+      "blocksAfter": 523,
+      "blocksBefore": 523,
+      "preformattedAfter": 1,
+      "preformattedBefore": 1,
+      "wordsAfter": 2840,
+      "wordsBefore": 2840,
+      "wordsIdentical": true
+    },
+    "census-rrs2002-01": {
+      "blocksAfter": 407,
+      "blocksBefore": 407,
+      "preformattedAfter": 138,
+      "preformattedBefore": 139,
+      "wordsAfter": 6759,
+      "wordsBefore": 6759,
+      "wordsIdentical": true
+    },
+    "cia-blue-book-14-1955": {
+      "blocksAfter": 25422,
+      "blocksBefore": 25422,
+      "preformattedAfter": 711,
+      "preformattedBefore": 780,
+      "wordsAfter": 170394,
+      "wordsBefore": 170394,
+      "wordsIdentical": true
+    },
+    "dga-2025-2030": {
+      "blocksAfter": 161,
+      "blocksBefore": 161,
+      "preformattedAfter": 8,
+      "preformattedBefore": 8,
+      "wordsAfter": 2512,
+      "wordsBefore": 2512,
+      "wordsIdentical": true
+    },
+    "faa-phak-8083-25c": {
+      "blocksAfter": 9007,
+      "blocksBefore": 9009,
+      "preformattedAfter": 1316,
+      "preformattedBefore": 1342,
+      "wordsAfter": 249940,
+      "wordsBefore": 249940,
+      "wordsIdentical": true
+    },
+    "fed-explained-2021": {
+      "blocksAfter": 1082,
+      "blocksBefore": 1083,
+      "preformattedAfter": 116,
+      "preformattedBefore": 120,
+      "wordsAfter": 31027,
+      "wordsBefore": 31027,
+      "wordsIdentical": true
+    },
+    "gpo-911-2004": {
+      "blocksAfter": 5118,
+      "blocksBefore": 5139,
+      "preformattedAfter": 1397,
+      "preformattedBefore": 1427,
+      "wordsAfter": 298722,
+      "wordsBefore": 298724,
+      "wordsIdentical": false
+    },
+    "gpo-our-flag-2003": {
+      "blocksAfter": 693,
+      "blocksBefore": 693,
+      "preformattedAfter": 13,
+      "preformattedBefore": 13,
+      "wordsAfter": 14006,
+      "wordsBefore": 14006,
+      "wordsIdentical": true
+    },
+    "gpo-warren-1964-suspect-text-excerpt": {
+      "blocksAfter": 22,
+      "blocksBefore": 23,
+      "preformattedAfter": 1,
+      "preformattedBefore": 2,
+      "wordsAfter": 978,
+      "wordsBefore": 978,
+      "wordsIdentical": true
+    },
+    "irs-p596-zhs-2025": {
+      "blocksAfter": 1094,
+      "blocksBefore": 1094,
+      "preformattedAfter": 65,
+      "preformattedBefore": 65,
+      "wordsAfter": 4745,
+      "wordsBefore": 4745,
+      "wordsIdentical": true
+    },
+    "nbs-jres-geltman-1977": {
+      "blocksAfter": 46,
+      "blocksBefore": 46,
+      "preformattedAfter": 1,
+      "preformattedBefore": 1,
+      "wordsAfter": 873,
+      "wordsBefore": 873,
+      "wordsIdentical": true
+    },
+    "ntrs-20180003024-earthdata-slides-2018": {
+      "blocksAfter": 191,
+      "blocksBefore": 191,
+      "preformattedAfter": 14,
+      "preformattedBefore": 14,
+      "wordsAfter": 540,
+      "wordsBefore": 540,
+      "wordsIdentical": true
+    },
+    "scotus-loper-bright-2024": {
+      "blocksAfter": 731,
+      "blocksBefore": 734,
+      "preformattedAfter": 3,
+      "preformattedBefore": 7,
+      "wordsAfter": 38307,
+      "wordsBefore": 38307,
+      "wordsIdentical": true
+    },
+    "uscis-m618-arabic-2015": {
+      "blocksAfter": 1408,
+      "blocksBefore": 1408,
+      "preformattedAfter": 53,
+      "preformattedBefore": 53,
+      "wordsAfter": 20036,
+      "wordsBefore": 20036,
+      "wordsIdentical": true
+    },
+    "usda-ars-agresearch-2012-11": {
+      "blocksAfter": 1143,
+      "blocksBefore": 1112,
+      "preformattedAfter": 7,
+      "preformattedBefore": 39,
+      "wordsAfter": 9475,
+      "wordsBefore": 9475,
+      "wordsIdentical": true
+    },
+    "usgs-mcs2025-copper": {
+      "blocksAfter": 24,
+      "blocksBefore": 24,
+      "preformattedAfter": 0,
+      "preformattedBefore": 0,
+      "wordsAfter": 937,
+      "wordsBefore": 937,
+      "wordsIdentical": true
+    },
+    "wallace-algebra-2010": {
+      "blocksAfter": 9748,
+      "blocksBefore": 9749,
+      "preformattedAfter": 2627,
+      "preformattedBefore": 2633,
+      "wordsAfter": 83137,
+      "wordsBefore": 83138,
+      "wordsIdentical": false
+    }
+  },
+  "note": "Block and word counts per corpus case, both lanes, library defaults, on the tree merged with 49e4586."
+}

@@ -337,6 +337,14 @@ enum TableRegionDetector {
         let numeric = rows.filter(endsInDigit)
         guard numeric.count * 3 >= rows.count * 2 else { return false }
         let right = numeric.map { lines[$0.last!].rect.maxX }
-        return right.contains { edge in right.count(where: { abs($0 - edge) <= body * 0.5 }) >= 3 }
+        // A column of numbers is a column: the rows that end on the edge must be most of the run,
+        // not three of them out of twenty. The FAA handbook's acknowledgments name a chapter at
+        // the end of every credit and set each on its own line, so every row ends in a digit and
+        // three of the twenty happen to end within half a body of one another; nothing about that
+        // page is a table (#171).
+        return right.contains { edge in
+            let onEdge = right.count { abs($0 - edge) <= body * 0.5 }
+            return onEdge >= 3 && onEdge * 2 >= rows.count
+        }
     }
 }

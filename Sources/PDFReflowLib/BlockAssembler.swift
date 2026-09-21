@@ -42,6 +42,17 @@ struct MarkerColumn: Equatable, Sendable {
     /// The right edge at least three same-size lines of the column reach, when the column is
     /// justified; nil when ragged item lengths establish no margin to fill.
     let justifiedRight: CGFloat?
+    /// Whether the page may be setting a list on this line's own edge. A list marks its items, so
+    /// a page that stands a run of lines on one edge and marks fewer than a quarter of them has
+    /// set no list there, and the point after the first token is a name's initial, a page
+    /// reference or a citation instead (#171). Below the run the reading stays as it was: a list
+    /// of one item, or a marker among three lines, states too little to be read either way.
+    let setsAList: Bool
+
+    /// How many lines a page must stand on one edge before the share of them it marks says
+    /// anything. Eight is a column of prose or a stack of entries; fewer is a list of one item,
+    /// an introduced pair, or a page too bare to read either way.
+    static let shortestUnmarkedRun = 8
 }
 
 extension LayoutReconstructor {
@@ -233,22 +244,49 @@ extension LayoutReconstructor {
         text.range(of: "^(?:[0-9]+|[A-Za-z])[.)]\\s", options: .regularExpression) != nil
     }
 
+    /// The value a line's opening marker would carry in a list: the number it prints, or the
+    /// place of its letter in the alphabet, with the kind kept apart so that a lettered list and
+    /// a numbered one are never read as one sequence (#171). Nil for a bullet and for a line that
+    /// opens no marker at all.
+    static func markerValue(_ text: String) -> (digits: Bool, value: Int)? {
+        guard let range = text.range(of: "^(?:[0-9]+|[A-Za-z])[.)]\\s", options: .regularExpression)
+        else { return nil }
+        let token = text[range].dropLast(2)
+        if let number = Int(token) { return (true, number) }
+        guard let letter = token.first?.lowercased().unicodeScalars.first else { return nil }
+        return (false, Int(letter.value))
+    }
+
     /// Where `line` sits among the same-size, proportional lines within one and a half body sizes
-    /// of its left edge: whether it is on that column's majority left edge, and the right edge at
-    /// least three of those lines reach. Two lines agreeing on a right edge are not a justified
-    /// margin, and ragged item lengths establish none at all.
+    /// of its left edge: whether it is on that column's majority left edge, the right edge at
+    /// least three of those lines reach, and whether the page sets a list on its own edge. Two
+    /// lines agreeing on a right edge are not a justified margin, and ragged item lengths
+    /// establish none at all.
     static func markerColumn(of line: TextLine, in lines: [TextLine], body: CGFloat) -> MarkerColumn {
         let size = Int(line.fontSize.rounded())
         let column = lines.filter {
             !$0.monospaced && Int($0.fontSize.rounded()) == size && abs($0.rect.minX - line.rect.minX) < body * 1.5
         }
-        let onEdge = column.count { abs($0.rect.minX - line.rect.minX) < body * 0.5 }
+        let edge = column.filter { abs($0.rect.minX - line.rect.minX) < body * 0.5 }
+        // A list marks its items and its markers advance, so a run of lines on one edge with
+        // fewer than a quarter of them marked, whose markers do not run on down the page, is no
+        // list. Eight is the shortest run that says anything: the 9/11 report's staff pages stand
+        // twenty-five names on one edge and open four of them with the initials `T.`, `L.`, `C.`
+        // and `R.`, which run in no order at all, while the Fed book sets four numbered duties
+        // among twenty lines of prose on one edge and numbers them 1, 2, 3, 4 (#171).
+        let marked = edge.count { isList($0.text) }
+        let digits = markerValue(line.text)?.digits
+        let sequence = edge.sorted { $0.rect.minY > $1.rect.minY }
+            .compactMap(\.text).compactMap(markerValue).filter { $0.digits == digits }.map(\.value)
+        let advancing = zip(sequence, sequence.dropFirst()).count { $1 > $0 }
+        let setsAList = edge.count < MarkerColumn.shortestUnmarkedRun || marked * 4 > edge.count
+            || (sequence.count >= 2 && advancing * 2 > sequence.count - 1)
         guard let right = column.map(\.rect.maxX).max() else {
-            return MarkerColumn(onMajorityEdge: false, justifiedRight: nil)
+            return MarkerColumn(onMajorityEdge: false, justifiedRight: nil, setsAList: setsAList)
         }
         let justified = column.count { $0.rect.maxX >= right - body * 0.25 }
-        return MarkerColumn(onMajorityEdge: onEdge * 2 > column.count,
-                            justifiedRight: justified >= 3 ? right : nil)
+        return MarkerColumn(onMajorityEdge: edge.count * 2 > column.count,
+                            justifiedRight: justified >= 3 ? right : nil, setsAList: setsAList)
     }
 }
 
@@ -293,6 +331,9 @@ struct BlockAssembler {
     /// still join it (#172). PDFKit ends a line at the gap a page leaves after a hanging marker,
     /// so an item can arrive as its marker and then its text.
     private var itemRowInProgress: TextLine?
+    /// The left edge of a paragraph a marker-leading line opened because the page set no list at
+    /// that edge, while that line is still the whole of it (#171).
+    private var initialOpening: CGFloat?
 
     /// Assets the page's own links cover, by asset path (#247).
     private let imageLinks: [String: LinkTarget]
@@ -335,6 +376,7 @@ struct BlockAssembler {
 
     /// A line of a numbered note; consecutive lines of one `group` join into one paragraph.
     mutating func appendNote(group: Int, _ line: TextLine) {
+        initialOpening = nil
         flushParagraph()
         codeOrigin = nil
         rowInProgress = nil
@@ -348,6 +390,7 @@ struct BlockAssembler {
     }
 
     mutating func appendImage(_ assetID: String) {
+        initialOpening = nil
         flushNote()
         flushParagraph()
         codeOrigin = nil
@@ -361,6 +404,7 @@ struct BlockAssembler {
     /// group the tags name is a paragraph boundary the source states, so it always opens its own
     /// block: an untagged paragraph left open before it is flushed, whatever the geometry says.
     mutating func appendTagged(_ tag: TextStructure, _ line: TextLine) {
+        initialOpening = nil
         flushNote()
         codeOrigin = nil
         rowInProgress = nil
@@ -405,6 +449,8 @@ struct BlockAssembler {
     }
 
     mutating func append(_ line: TextLine, as role: LineRole) {
+        let openedByInitial = initialOpening
+        initialOpening = nil
         flushNote()
         if case .heading = role {} else { headingLine = nil }
         if case .listItem = role {} else if case .prose = role {} else { itemLine = nil }
@@ -460,10 +506,21 @@ struct BlockAssembler {
             if let prev = previous, !paragraph.elements.isEmpty, continuesWrapped(prev, line, column) {
                 paragraph = join(paragraph, line.content)
                 previous = line
-            } else {
+            } else if column.setsAList {
                 flushParagraph()
                 blocks.append(ReflowBlock(content: .preformatted(line.content), page: page))
                 itemRowInProgress = line
+            } else {
+                // The page set no list on this edge, so the opening token is an initial, a page
+                // reference or a citation — `T. Graham Giusti`, `P. E. Fansler, a Florida
+                // businessman…`, `R. Singh, M. van Aalst,…` — and the line opens a paragraph
+                // rather than an item. It opens one of its own rather than joining the one above,
+                // because whether it belongs there is what `continuesWrapped` has just refused;
+                // the lines the page wraps under it are prose and join it as any wrap does (#171).
+                flushParagraph()
+                paragraph = line.content
+                previous = line
+                initialOpening = line.rect.minX
             }
         case let .tableRow(continuation):
             // One block per printed row. A row the extractor split at its column gap arrives as
@@ -517,7 +574,14 @@ struct BlockAssembler {
                 itemLine = line
                 return
             }
-            if let prev = previous, !continuesParagraph(prev, line) { flushParagraph() }
+            // Such a paragraph takes only the wraps the page sets on its opening line's own
+            // edge: a line the page steps in from it opens the next paragraph, which a first-line
+            // indent of one body is. Loper Bright's page 64 opens `U. S. 134 (1944), the Court
+            // returned to its time-worn path.` on the measure and then indents `Echoing themes`,
+            // two paragraphs the ordinary column test, which allows one and a half bodies, would
+            // run together (#171).
+            let stepped = openedByInitial.map { abs($0 - line.rect.minX) >= body * 0.5 } ?? false
+            if stepped || previous.map({ !continuesParagraph($0, line) }) == true { flushParagraph() }
             if paragraph.elements.isEmpty { paragraph = line.content }
             else { paragraph = join(paragraph, line.content) }
             previous = line

@@ -805,6 +805,29 @@ library does. The fix is readable with `git show e1cbc0d0e` and, per decision 00
 onto this pipeline rather than cherry-picked; nothing open tracks that port, and
 [#231](https://github.com/vocaro/PDFReflowLib/issues/231) holds the reconciliation.
 
+Where no cut separates a group, it is ordered by **column runs** rather than by lines, but only
+where the page states that its columns are blocks. A magazine column that runs on into a wider
+measure below — around an L-shaped picture frame — bridges the gutter beside it, so no straight
+cut exists; and its columns are leaded so tightly that consecutive rows overlap, so no whitespace
+band exists either. The elements are chained into runs (each joins the run standing directly
+above it, sharing at least half of the narrower measure and separated by at most a body) and the
+runs are placed by the same row-major comparator, read off each run's own rectangle. A
+single-column group chains into one run and is unchanged. Four conditions gate it: some run must
+widen, part way down, by more than a body into a measure another run holds, where the widening is
+a text line of at least twelve bodies, all but a body of it is kept by at least two of that run's
+elements below and by neither of the two above; no run may hold a single element; every run must
+hold a picture or two lines of twelve bodies; and no element of one run may touch an element of
+another. Together they separate a column running on from rows the page means to be read across.
+One row set across a table's columns widens a run in the same way but is not kept, and a
+paragraph's short last line before the next paragraph's full first line widens it without the
+narrower measure ever having been kept. A timeline, an index of names against descriptions or a
+worksheet's exercise numbers strands a run of one; a list of illustrations against their page
+numbers is two stacks of short cells. And a run standing inside another run's rows — an
+annotation beside its own working, a figure's labels inside the paragraph that introduces them, a
+column the chaining split in two — is that row, however the chaining divided it, which a run-on
+measure never is, because it widens across a gutter only where the column beside it has ended
+(#137, #174, [column-run-order](../measurements/column-run-order/record.md)).
+
 The cuts recurse 32 levels. A page whose separating gaps never narrow is cut one block at a
 time, so its depth is its block count: uniform leading wider than 110% of the page body, as a
 double-spaced typescript sets, reaches the limit at 33 blocks. Ordinary pages do not come near
@@ -841,6 +864,14 @@ leaving that silent, as the tag phase reports its own give-up (#224).
   separates them — the width a whitespace cut needs for a column, so a table's cells and the two
   ends of a running header remain separate blocks (#57). A short previous line ending a sentence
   closes its paragraph either way.
+- **Rows of a table the page set without rules** keep their breaks rather than joining into one
+  paragraph (#137, #210): a run of at least three rows on one left edge, in one type size,
+  stepping down at one leading, where the page also states a column boundary — a cell the
+  extractor kept apart on at least two rows that merged rows reach across, or a column of numbers
+  on one right edge. The numeric evidence must hold for most of the run, not for three rows of it:
+  the FAA handbook's acknowledgments name a chapter at the end of every credit and set each credit
+  on its own line, so every row ends in a digit and three of the twenty end within half a body of
+  one another, and nothing about that page is a table (#171).
 - The **leading a page states** is the commonest distance between the tops of two vertically
   adjacent lines, set at one size, in one column, to the nearest half point, over the lines its
   crops leave in the prose. At least four such pairs must agree, so a page too bare to say
@@ -985,7 +1016,21 @@ A page's own words are unchanged either way; the join only moves a line from its
 the paragraph above it, where an ordinary hyphen repair may then close a word the split had
 broken.
 
-Evidence: [page-leading-and-ligature-vocabulary](../measurements/page-leading-and-ligature-vocabulary/record.md),
+A line the rule above does not join — the line with nothing running on it — is read against the
+page's own edge before it opens an item at all (#171). **A list marks its items**, so where the
+page stands at least eight lines of the line's own size on its left edge, within half a body, and
+opens fewer than a quarter of them with a marker, it has set no list there: the point belongs to a
+name's initial (`T. Graham Giusti` among twenty-five staff names, `P. E. Fansler,` alone among
+thirty lines of the FAA handbook's page 18), a page reference or a citation (`U. S. 134 (1944),`
+opening Loper Bright's page 64). Such a line opens a paragraph rather than a preformatted item.
+Below eight lines the edge states too little either way — a list of one item and a marker
+introduced by two lines of prose look alike — and the marker keeps its reading. The paragraph a
+line like this opens takes only the wraps the page sets on that line's own edge, within half a
+body, because the 1.5 bodies the ordinary column test allows would swallow the next paragraph's
+first-line indent.
+
+Evidence: [initial-led-lines](../measurements/initial-led-lines/record.md),
+[page-leading-and-ligature-vocabulary](../measurements/page-leading-and-ligature-vocabulary/record.md),
 [heading-body-regressions](../measurements/heading-body-regressions/record.md),
 [three-fidelity-fixes](../measurements/three-fidelity-fixes/record.md),
 [preformatted-styles](../measurements/preformatted-styles/record.md),

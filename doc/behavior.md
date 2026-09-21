@@ -218,12 +218,17 @@ spatial reconstruction rather than partial results.
   resumed in the wrong one (#120). A show whose text the reader cannot decode is a hole in the
   source's reading rather than a reason to discard the line, and nothing is read across the hole:
   one radical on Wallace page 120 used to discard every boundary of
-  `5− 2x 11 Subtract 5from both sides`. A show whose
-  origin another line's rectangle holds still reaches this line when its baseline lies inside the
-  line and its glyph advances cross the line's span, which is how one printed row PDFKit split at
-  a wide gap is repaired in the half that holds each boundary. Explicit spaces, genuine word-size
-  gaps and style attributes are kept, a boundary PDFKit already spaces inserts nothing, and a show
-  whose origin lies in more than one line's rectangle rewrites nothing.
+  `5− 2x 11 Subtract 5from both sides`. A show whose origin lies in more than one line's rectangle
+  is a hole of the same kind, in every line that holds it, rather than a reason to discard those
+  lines (#258): a line carrying a superscript, an exponent or a stacked fraction gets a PDFKit
+  rectangle as tall as what it carries, so it overlaps its neighbors' rectangles and holds their
+  origins, and Wallace's `Convert 8cubic feet to yd3` — one rectangle 69 points tall over eight
+  shows of the fraction rows inside it — refused the twelve shows that spell it exactly. A show
+  whose origin another line's rectangle alone holds still reaches this line when its baseline lies
+  inside the line and its glyph advances cross the line's span, which is how one printed row
+  PDFKit split at a wide gap is repaired in the half that holds each boundary. Explicit spaces,
+  genuine word-size gaps and style attributes are kept, a boundary PDFKit already spaces inserts
+  nothing, and a line whose every show is held by another rectangle too rewrites nothing.
 - **`GlyphIdentityReader` (#217, two of #186's five fixes).** PDFKit reads every glyph through
   its font's `ToUnicode` map; two kinds of font disagree with what they draw. A dingbat font
   (Zapf Dingbats and its clones ITC Zapf Dingbats, `Dingbats`, Monotype Sorts, subset tags

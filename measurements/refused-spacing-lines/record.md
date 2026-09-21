@@ -57,3 +57,104 @@ Five Wallace lines, all digit-then-word, where `owningShows` refuses the line ou
 superscripts put some shows' origins on other baselines — `Convert 8cubic feet`, `Move 3and b`,
 `6and− 1`, `1· 6and 2· 3`, `scored 6for every 7`. That is a fourth mechanism, filed as
 [#258](https://github.com/vocaro/PDFReflowLib/issues/258).
+
+# The fourth mechanism: a line that holds another row's shows
+
+Measured under [#258](https://github.com/vocaro/PDFReflowLib/issues/258), baseline `ec7e943`,
+2026-09-20, macOS 27 / Xcode 27, arm64, release CLI at library defaults.
+
+## What the refusal actually was
+
+`anchoredShows` refuses a line when any show whose origin its rectangle holds lies in a second
+line's rectangle too. The filed issue read that as a superscript's origin falling into a
+*neighbouring* line's rectangle. A probe of `owningShows` against the book's own pages shows it is
+the reverse: the rectangle that grows is the line's own. PDFKit's rectangle for a line carrying an
+exponent, a raised index or a stacked fraction spans everything the line carries, so it swallows
+the rectangles of the rows drawn inside it, and those rows' shows are then held by two rectangles.
+
+Wallace page 281 sets `Convert 8cubic feet to yd3 Write 8ft3 as fraction, put it over 1` as one
+PDFKit line whose rectangle is x[88.20, 393.72] y[77.87, 147.08] — 69 points tall over a 12-point
+baseline, because the fraction rows `8ft3 / 1` and `To clear ft3, put them in denominator` are
+drawn inside it. Twelve shows on the line's own baseline at y 136.78 spell its text exactly,
+including the `8|cubic` font change at a gap of 1.94 points over an 11.96-point size, 0.16 em,
+which the font-change rule already admits at 0.15. Eight further shows, at y 88.90 to 113.26,
+belong to the rows inside and are held by lines 46 and 47 as well. All twenty were discarded.
+
+Page 186 shows the adjacent-line form the issue described: the exponent of `b0` sits at y 711.10,
+inside both its own line's rectangle (y[703.78, 717.08]) and the rectangle of the prose line above
+it, so that one show refused both lines.
+
+## The rule, and why it is the conservative one
+
+A show two rectangles hold is now a hole in each line's reading rather than the end of it — the
+same hole [#120](https://github.com/vocaro/PDFReflowLib/issues/120) already makes of a show the
+reader cannot decode. The segmented walk resynchronizes across it and the show after it has no
+predecessor, so no boundary is computed against a character the line may not have drawn. A line
+every rectangle shares holds only holes and supplies nothing, exactly as before.
+
+Nothing else moved. No threshold changed, no rule was added, and a boundary is still applied only
+where both of its characters matched PDFKit's own reading inside one agreeing segment.
+
+## What changed, measured over every cached source
+
+Every line of all 24 cached sources was read with the baseline reader and with this one, and the
+two sets of repaired lines compared line by line.
+
+| Book | Lines the reader repairs | Spaces gained |
+| --- | ---: | ---: |
+| wallace-algebra-2010 | 295 → **324** | 31 |
+| faa-phak-8083-25c | 8 → **9** | 1 |
+| every other cached source | unchanged | 0 |
+
+No line the baseline repaired is repaired differently or left alone. The FAA gain is the chart row
+`Spc Range 0.165 0.1780.199`, whose rectangle the row beneath reaches into; its page is preserved
+as an image, so that row's text does not reach the EPUB and the gain is in extraction alone.
+
+End to end, the whole corpus was converted twice with the same CLI built from the two readers, and
+the XHTML of all 150 documents compared character for character. Four lines differ, all in Wallace:
+
+```
+chapter-6.xhtml   Move 3and b to denominator…        → Move 3 and b to denominator…
+chapter-8.xhtml   Home team scored 6for every 7…     → Home team scored 6 for every 7…
+chapter-9.xhtml   Convert 8cubic feet to yd3…        → Convert 8 cubic feet to yd3…
+chapter-12.xhtml  , put over 1so we have proportion  → , put over 1 so we have proportion
+```
+
+The book gains four characters, the spaces themselves. Every other book's text is identical to the
+baseline's, which is the check that matters against #119's constraint that a threshold must not
+invent spaces in mathematics — and the book that constraint is about gains only spaces its own
+prose asked for. The other twenty-five newly repaired Wallace lines reach the EPUB in neither
+reading: each sits inside a worked example the converter preserves as an image.
+
+## The gates
+
+492 Swift tests on macOS, 227 Python tests, eight fixture conversions, 16 policy conversions and
+24 rejection/cleanup cases. The corpus lane passes all 18 of its cases with 558 content checks over
+126 reviewed pages, EPUBCheck and no structural failures.
+
+Four Swift tests carry `#258`: the hole rule over synthetic geometry, beside the predecessor's
+refusal of the same geometry; Wallace page 281's tall rectangle; Wallace page 186's shared
+exponent, where the two lines that share it keep PDFKit's own reading; and, as a positive control
+from the other producer, the FAA page 459 chart, which gains its one column gap and no other line.
+The fixtures are `algebra-{186,281}` and `faa-459`, captured with the baseline reader.
+
+## What is left after this
+
+Two of the five lines #258 listed were never this defect. `owningShows` returns evidence for both
+on the baseline; each fails later, in `segmentedInsertions`, and for a different reason.
+
+`6and− 1, split the middle term` on page 223 is the tail of a row PDFKit split at a wide gap: line
+17 holds the first digit of the show `66` and line 18 holds the second. The source therefore reads
+`66and−1,…` against PDFKit's `6and− 1,…`, and the walk, which takes offset 0 on faith where every
+later alignment must match twelve characters, pairs the show's first digit with the line's second.
+It disagrees at the next character, resynchronizes to source offset 2 — the boundary itself — and
+drops it as a boundary against a disagreeing region's edge. Aligned one character over, the same
+line yields the boundary.
+
+`1· 6and 2· 3` on page 224 holds two undecodable `·` shows. Its source reads `16and23`: seven
+characters against an anchor of twelve, so nothing can resynchronize across the first hole and the
+walk ends having applied nothing.
+
+Both are filed as [#260](https://github.com/vocaro/PDFReflowLib/issues/260). Both reach the EPUB,
+and they are what the segmented walk still refuses on lines it does own; every line #258's
+ownership refusal held back now reads with the space its own evidence held.

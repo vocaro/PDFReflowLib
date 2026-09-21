@@ -164,3 +164,12 @@ pins the behaviour so a change in that area cannot take it back silently.
 - Every layout fixture under `Tests/PDFReflowLibTests/fixtures` reconstructed with both binaries:
   four of the 114 change their blocks (`algebra-64`, `census-3`, `usgs-1`, `usgs-2`), all by
   splitting a block the source prints as two.
+
+## After the merge
+
+`main` moved to `97df92a` while this was measured, bringing
+[#258](https://github.com/vocaro/PDFReflowLib/issues/258)'s native-spacing change. Merged at
+`af4565e`, the fast lane passes every gate again and the corpus lane passes the same 18 covered
+cases, each `result.json` read individually. The one number that moves is Wallace's text, 454,819
+→ 454,823 characters, which is that merge's four word spaces and not this change; the tables above
+are measured against `7d6b0cd` as they say.

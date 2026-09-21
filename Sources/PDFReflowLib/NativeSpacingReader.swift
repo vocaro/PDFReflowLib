@@ -883,14 +883,14 @@ enum NativeSpacingReader {
     // MARK: - The line
 
     /// Which of the page's shows a PDFKit line's evidence is. `NativeSpacingOwnership` replaces
-    /// this with the spanning rule of #139 item 1.
-    static func owningShows(_ evidence: [Evidence], bounds: CGRect, allBounds: [CGRect]) -> [Evidence]? {
+    /// this with the spanning rule of #139 item 1 over the held shows of #258.
+    static func owningShows(_ evidence: [Evidence], bounds: CGRect, allBounds: [CGRect]) -> [Evidence] {
         spanningShows(evidence, bounds: bounds, allBounds: allBounds)
     }
 
     /// The shows whose origin lies in `bounds`; nil when any of them lies in another line's bounds
     /// too, because every show must belong to one line alone and overlapping rectangles are
-    /// ambiguous.
+    /// ambiguous. `NativeSpacingOwnership.heldShows` keeps the unambiguous ones instead (#258).
     static func anchoredShows(_ evidence: [Evidence], bounds: CGRect, allBounds: [CGRect]) -> [Evidence]? {
         let matches = evidence.filter { AnchorMatcher.contains(bounds, $0.origin) }
         guard matches.allSatisfy({ match in
@@ -903,8 +903,8 @@ enum NativeSpacingReader {
                       allBounds: [CGRect]) -> NSAttributedString {
         guard evidence.count <= AnchorMatcher.maximumAnchors, allBounds.count <= AnchorMatcher.maximumAnchors,
               evidence.count * allBounds.count <= AnchorMatcher.maximumComparisons else { return attributed }
-        guard let matches = owningShows(evidence, bounds: bounds, allBounds: allBounds), !matches.isEmpty
-        else { return attributed }
+        let matches = owningShows(evidence, bounds: bounds, allBounds: allBounds)
+        guard !matches.isEmpty else { return attributed }
         let repaired = NSMutableAttributedString(attributedString: attributed)
         if matches.count == 1, let offsets = matches[0].extraSpaces(in: attributed.string) {
             for offset in offsets.reversed() { repaired.deleteCharacters(in: NSRange(location: offset, length: 1)) }

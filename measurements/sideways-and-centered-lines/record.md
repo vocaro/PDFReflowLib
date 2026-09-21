@@ -1,4 +1,4 @@
-# A sideways line's size, a stub's block boundary, and a centred stack
+# A sideways line's size, a stub's block boundary, and a centered stack
 
 Measured under [#130](https://github.com/vocaro/PDFReflowLib/issues/130), baseline `97df92a`,
 2026-09-20, macOS 27.0 (26A428), Xcode 27.0 (27A266a), Apple M5 Max, 36 GB, release CLI at library
@@ -53,15 +53,15 @@ points in — `Frequency of Object Sightings and Unknown Object Evaluations by` 
 paragraph. At two thirds, the ratio the sentence rule uses, that entry and three more like it in
 the Blue Book broke; at half they do not.
 
-**A centred stack shares no left edge.** The paragraph join asks for left edges within one and a
-half bodies. CDC letters every balloon centred, so page 34's five lines stand on five left edges
-spread over 18 points and on one centre, within 1.7 points of each other on a ten-point page. Two
+**A centered stack shares no left edge.** The paragraph join asks for left edges within one and a
+half bodies. CDC letters every balloon centered, so page 34's five lines stand on five left edges
+spread over 18 points and on one center, within 1.7 points of each other on a ten-point page. Two
 lines whose mid points agree within 0.6 of a body now join at the same leading — but only where
-the reading also says the first line wraps. A shared centre is weaker evidence than a shared left
+the reading also says the first line wraps. A shared center is weaker evidence than a shared left
 edge: Blue Book page 272 heads its questionnaire with `TENTATIVE` / `OBSERVERS QUESTIONNAIRE` /
-`SECTION A`, whose centres agree to a hundredth of a point and which are three separate lines.
+`SECTION A`, whose centers agree to a hundredth of a point and which are three separate lines.
 Vision states `shouldWrapToNextLine` for every line it recognizes and PDFKit's native reading
-states nothing, so the centre joins nothing on a natively extracted page — page 272 included.
+states nothing, so the center joins nothing on a natively extracted page — page 272 included.
 
 ## What each change costs, across the whole corpus
 
@@ -88,14 +88,14 @@ out in a different order. Neither order is the page; the page is a logo.
 | Book | Blocks | What moved |
 | --- | ---: | --- |
 | gpo-911-2004 | 4,574 → 5,045 | paragraphs that ran together now break at the first-line indent |
-| cdc-zombie-pandemic-2011 | 516 → 481 | centred balloons join; page 16 reorders |
+| cdc-zombie-pandemic-2011 | 516 → 481 | centered balloons join; page 16 reorders |
 | irs-p596-zhs-2025 | 951 → 969 | `示例 1——…` examples and bulleted lines leave the paragraph above |
 | scotus-loper-bright-2024 | 717 → 734 | a page's carried-over tail leaves the paragraph that opens beneath it |
 | cia-blue-book-14-1955 | 22,564 → 22,573 | page 273's answer row; eight table cells and rule marks unglue |
 | usda-ars-agresearch-2012-11 | 1,099 → 1,102 | `What To Wear` leaves its text; one index head splits |
 | faa-phak-8083-25c | 8,538 → 8,539 | one table row's two cells separate |
 | arxiv-replay-clocks-2023 | 194 → 195 | `Local/Send event.` opens its own paragraph |
-| census-rrs2002-01 | 373 → 372 | reference [18]'s two recognized lines join on their centre |
+| census-rrs2002-01 | 373 → 372 | reference [18]'s two recognized lines join on their center |
 | the other 9 | unchanged | identical |
 
 The 9/11 report carries the change: it sets a first-line indent and its paragraphs ran together
@@ -119,8 +119,8 @@ reads worse than what it replaced.
 CDC page 23's broadcast balloon still reads as four paragraphs. Vision reports
 `shouldWrapToNextLine == false` at each of its sentence ends (`...CONTINUES TO SPREAD.`,
 `TO PRACTICE ISOLATION.`, `STAY IN YOUR HOMES.`), and that flag already governs every other
-paragraph join in the library; overriding it for centred lines alone would give the weaker
-geometry the stronger licence. What the centre recovers on that page is
+paragraph join in the library; overriding it for centered lines alone would give the weaker
+geometry the stronger licence. What the center recovers on that page is
 `ALMOST A WEEK, TODD, AND WE HAVEN'T LEFT THE` + `HOUSE!` and
 `STAY TUNED FOR A LIST OF SAFE` + `ZONES IN YOUR AREA...`.
 

@@ -4,7 +4,7 @@ import Testing
 
 // Three readings a page states and the library did not take (#130): the thickness of a line the
 // page turned on its side, the block boundary a stub of prose marks by the step beneath it, and
-// the stack a centred balloon sets on one centre instead of one left edge. Every geometry here is
+// the stack a centered balloon sets on one center instead of one left edge. Every geometry here is
 // measured from a checksum-pinned corpus page and named where it came from; none of it is
 // converter output.
 
@@ -154,10 +154,10 @@ func aHangingContentsEntryIsStillOneParagraph() {
 }
 
 @Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/130"))
-func aCentredStackJoinsWhereTheReadingSaysTheLineWraps() {
-    // CDC page 34: the balloon is lettered centred, so its five lines stand on five left edges
+func aCenteredStackJoinsWhereTheReadingSaysTheLineWraps() {
+    // CDC page 34: the balloon is lettered centered, so its five lines stand on five left edges
     // spread over eighteen points — more than the one and a half bodies a column allows — and on
-    // one centre, within 1.7 points of each other.
+    // one center, within 1.7 points of each other.
     let makeAn = placed("MAKE AN", x: 359.6, width: 47.9, y: 544.3, height: 10.3, wraps: true)
     let kit = placed("EMERGENCY KIT", x: 341.5, width: 87.4, y: 533.0, height: 11.5, wraps: true)
     let inCase = placed("IN CASE", x: 362.8, width: 43.1, y: 522.6, height: 10.8, wraps: false)
@@ -168,18 +168,18 @@ func aCentredStackJoinsWhereTheReadingSaysTheLineWraps() {
     // stack breaks there, as a column would.
     let stopped = placed("MAKE AN", x: 359.6, width: 47.9, y: 544.3, height: 10.3, wraps: false)
     #expect(assembled([stopped, kit], body: 10) == ["MAKE AN", "EMERGENCY KIT"])
-    // Two lines sharing neither a left edge nor a centre are two blocks however the reading
-    // reads: the centre is evidence, not a licence to join anything at the page's leading.
-    let offCentre = placed("EMERGENCY KIT", x: 375.0, width: 87.4, y: 533.0, height: 11.5, wraps: true)
-    #expect(abs(makeAn.rect.midX - offCentre.rect.midX) > 10 * 0.6)
-    #expect(assembled([makeAn, offCentre], body: 10) == ["MAKE AN", "EMERGENCY KIT"])
+    // Two lines sharing neither a left edge nor a center are two blocks however the reading
+    // reads: the center is evidence, not a licence to join anything at the page's leading.
+    let offCenter = placed("EMERGENCY KIT", x: 375.0, width: 87.4, y: 533.0, height: 11.5, wraps: true)
+    #expect(abs(makeAn.rect.midX - offCenter.rect.midX) > 10 * 0.6)
+    #expect(assembled([makeAn, offCenter], body: 10) == ["MAKE AN", "EMERGENCY KIT"])
 }
 
 @Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/130"))
-func aCentredLineOfItsOwnIsNotJoinedToTheOneBeneathIt() {
-    // Project Blue Book's questionnaire, physical page 272, heads itself with three centred lines
-    // whose centres agree to a hundredth of a point and which are three separate lines. PDFKit's
-    // native reading states no wrap, so the centre alone never joins them: every natively
+func aCenteredLineOfItsOwnIsNotJoinedToTheOneBeneathIt() {
+    // Project Blue Book's questionnaire, physical page 272, heads itself with three centered lines
+    // whose centers agree to a hundredth of a point and which are three separate lines. PDFKit's
+    // native reading states no wrap, so the center alone never joins them: every natively
     // extracted page reads exactly as it did.
     let tentative = placed("TENTATIVE", x: 277.83, width: 54.70, y: 736.97, height: 11.80)
     let questionnaire = placed("OBSERVERS QUESTIONNAIRE", x: 235.82, width: 138.75, y: 721.88, height: 13.60)

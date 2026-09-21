@@ -20,7 +20,24 @@ enum LayoutReconstructor {
 
     /// One line's vocabulary words.
     static func words(of line: TextLine) -> [String] {
-        line.text.lowercased().split(whereSeparator: { !$0.isLetter && $0 != "-" }).map(String.init)
+        line.text.split(whereSeparator: { !$0.isLetter && $0 != "-" }).map { vocabularyWord(String($0)) }
+    }
+
+    /// A word as the hyphen vocabulary holds it and is asked about it: lowercased, with the
+    /// typographic ligatures and other compatibility glyphs a font draws resolved to the letters
+    /// they stand for (#123).
+    ///
+    /// Wallace's text font prints `different` with a U+FB00 `ﬀ`, so the book's own words held
+    /// `diﬀerent` — 56 times — and never `different`, and the vocabulary had nothing to say about
+    /// `dif-` + `ferent` on pages 50 and 218. A ligature is one glyph for letters the page means,
+    /// and `precomposedStringWithCompatibilityMapping` is Unicode's own statement of which
+    /// characters are typographic variants of which letters, so the book's words are counted as
+    /// letters and the joins are looked up as letters.
+    ///
+    /// This normalizes the evidence, not the book: the ligature the page prints stays in the text
+    /// the reader gets, exactly as extraction read it.
+    static func vocabularyWord(_ word: String) -> String {
+        word.precomposedStringWithCompatibilityMapping.lowercased()
     }
 
     static func stripFurniture(_ pages: inout [PageContent]) -> [ConversionWarning] {
@@ -468,6 +485,49 @@ enum LayoutReconstructor {
         weights.max { ($0.value, -$0.key) < ($1.value, -$1.key) }.map { CGFloat($0.key) }
     }
 
+    /// The leading a page's own text states: the commonest distance between the tops of two
+    /// vertically adjacent lines set at one size in one column, to the nearest half point, or nil
+    /// where the page prints too few such pairs to state one (#123).
+    ///
+    /// Tops, not baselines and not the gap between the rectangles: PDFKit's line rectangle grows
+    /// downwards by the descenders the line happens to carry, so on Wallace's page 64 the item
+    /// `• More than often represents addition and is usually built backwards,` has a rectangle
+    /// 20.46 points tall where the line beneath it has 11.98, and the gap between the two is
+    /// negative although the page set them one line apart. The tops of two lines of one size are
+    /// one ascent above their baselines, so their distance is the leading.
+    ///
+    /// The page's own leading is the measure of extra space, and pages differ: the same ten points
+    /// of white is nothing under 24-point display type and a paragraph break under six-point
+    /// footnotes.
+    static func statedLeading(_ lines: [TextLine]) -> CGFloat? {
+        let candidates = lines.filter { !$0.monospaced && !$0.text.isEmpty }
+        let body = max(4, bodySize(lines))
+        var counts: [Int: Int] = [:]
+        for line in candidates {
+            // The nearest line below this one in its own column, at its own size: the line the
+            // page would have set on its leading. A second column's lines stand elsewhere and
+            // are never this line's neighbour.
+            let below = candidates.filter {
+                $0.rect.maxY < line.rect.maxY && $0.hasSize(line.fontSize)
+                    && abs($0.rect.minX - line.rect.minX) < body * 1.5
+            }.max { $0.rect.maxY < $1.rect.maxY }
+            guard let below else { continue }
+            let step = line.rect.maxY - below.rect.maxY
+            guard step > 0, step <= body * 3 else { continue }
+            counts[Int((step * 2).rounded()), default: 0] += 1
+        }
+        // A tie goes to the closer spacing, so one page cannot reflow two ways from one run to the
+        // next on Swift's per-process dictionary seed (#140), as `bodySize` is careful about too.
+        guard let stated = counts.max(by: { ($0.value, -$0.key) < ($1.value, -$1.key) }),
+              stated.value >= minimumStatedLeadingEvidence else { return nil }
+        return CGFloat(stated.key) / 2
+    }
+
+    /// How many pairs of lines must agree before a page has stated its leading. Four is the
+    /// shortest run of prose that says anything: three wrapped lines of one paragraph and one
+    /// more pair anywhere else on the page.
+    static let minimumStatedLeadingEvidence = 4
+
     /// Small labels inside preserved images must not turn the surrounding prose into headings.
     /// Keep the page estimate when too little reflowable text remains to establish a body size.
     static func headingBodySize(_ lines: [TextLine], pageBody: CGFloat) -> CGFloat {
@@ -835,8 +895,8 @@ enum LayoutReconstructor {
         for (rect, path) in images where !page.links.isEmpty {
             if let target = linkCovering(rect, links: page.links) { imageLinks[path] = target }
         }
-        var assembler = BlockAssembler(page: page.number, body: typography.body, hyphens: context.hyphens,
-                                       imageLinks: imageLinks)
+        var assembler = BlockAssembler(page: page.number, body: typography.body, leading: typography.leading,
+                                       hyphens: context.hyphens, imageLinks: imageLinks)
         // A page whose tags never name a heading has not said that its display lines are not
         // headings; it has said only what they contain and in what order. Producers routinely
         // give every heading style a paragraph role — the FAA handbook's RoleMap sends

@@ -3,7 +3,8 @@ import Foundation
 /// What decides a line-end hyphen: the book's own words, and, in a document declared English,
 /// the system's English lexicon (#186).
 struct HyphenContext: Sendable, Equatable {
-    /// Every word any page's lines split on, lowercased.
+    /// Every word any page's lines split on, as `LayoutReconstructor.vocabularyWord` reads it:
+    /// lowercased, with a font's ligatures resolved to their letters (#123).
     var vocabulary: Set<String>
     /// Whether `lexiconVouches` may consult the system's English lexicon.
     var usesEnglishLexicon: Bool
@@ -100,13 +101,15 @@ extension LayoutReconstructor {
         // no space, and inserting one splits a word the page never split (#42).
         if CJKText.setsNoSpace(between: left, and: right) { return .concatenate }
         guard left.hasSuffix("-"), right.first?.isLowercase == true else { return .space }
-        let prefix = left.dropLast().reversed().prefix(while: { $0.isLetter }).reversed()
-        let suffix = right.prefix(while: { $0.isLetter })
-        let joined = (String(prefix) + suffix).lowercased()
-        let compound = (String(prefix) + "-" + suffix).lowercased()
+        // Both halves are read as the vocabulary holds them, so a ligature the font draws is the
+        // letters it stands for on both sides of the lookup (#123).
+        let prefix = vocabularyWord(String(left.dropLast().reversed().prefix(while: { $0.isLetter }).reversed()))
+        let suffix = vocabularyWord(String(right.prefix(while: { $0.isLetter })))
+        let joined = prefix + suffix
+        let compound = prefix + "-" + suffix
         if hyphens.vocabulary.contains(joined), !hyphens.vocabulary.contains(compound) { return .removeHyphen }
         if !hyphens.vocabulary.contains(compound) {
-            if lexiconVouches(prefix: String(prefix).lowercased(), suffix: String(suffix).lowercased(),
+            if lexiconVouches(prefix: prefix, suffix: suffix,
                               usesEnglishLexicon: hyphens.usesEnglishLexicon) {
                 return .removeHyphen
             }
@@ -126,6 +129,9 @@ extension LayoutReconstructor {
     /// independently a lexicon word, with short-fragment guards: two letters a side and six in all.
     /// A compound whose halves are both words (`camera-` + `man`) keeps its hyphen and warns, as
     /// before.
+    ///
+    /// Both halves arrive as `vocabularyWord` reads them, so a font's ligature is asked about as
+    /// the letters it draws (#123).
     ///
     /// Only the lexicon, not the vocabulary, judges the halves. The vocabulary is every word any
     /// page's lines split on, including a line that opens with the second half of a hyphenated

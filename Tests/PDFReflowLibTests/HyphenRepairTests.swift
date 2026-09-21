@@ -176,3 +176,59 @@ private let brokenBook = (1...9).map { _ in ["a word that broke as hijack=", "er
         if case let .text(value, style) = element { return value == "-" && style == .italic } else { return false }
     })
 }
+
+// MARK: - A font's ligatures are letters to the vocabulary (#123)
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/123"))
+func aLigatureIsHeldAndLookedUpAsTheLettersItDraws() {
+    // Wallace's text font prints `different` with a U+FB00 `ﬀ`, 56 times, so the book's own words
+    // held `diﬀerent` and never `different` and could not decide `dif-` + `ferent` on pages 50
+    // and 218. The vocabulary now holds the letters the glyph stands for.
+    let printed = TextLine(text: "This is very common with diﬀerent formulas, there may be more",
+                           rect: CGRect(x: 85, y: 200, width: 425, height: 12), fontSize: 12)
+    #expect(printed.text.contains("\u{FB00}"))
+    #expect(LayoutReconstructor.words(of: printed).contains("different"))
+    #expect(!LayoutReconstructor.words(of: printed).contains { $0.contains("\u{FB00}") })
+
+    var warnings: [ConversionWarning] = []
+    let book = HyphenContext(vocabulary: LayoutReconstructor.vocabulary(in: [
+        PageContent(number: 50, bounds: CGRect(x: 0, y: 0, width: 595, height: 842),
+                    lines: [printed], graphics: []),
+    ]))
+    #expect(LayoutReconstructor.join("they are just written in a dif-", "ferent form because we solved",
+                                     hyphens: book, page: 50, warnings: &warnings)
+            == "they are just written in a different form because we solved")
+    #expect(warnings.isEmpty)
+
+    // The other half of the lookup: a break whose second half opens with the ligature is asked
+    // about as letters too, against a vocabulary that never saw the glyph. The repair joins the
+    // halves the page printed, so the glyph the reader gets is untouched.
+    let plain = HyphenContext(vocabulary: ["coefficient"])
+    #expect(LayoutReconstructor.join("the leading coe-", "ﬃcient of x", hyphens: plain, page: 1, warnings: &warnings)
+            == "the leading coeﬃcient of x")
+    #expect(warnings.isEmpty)
+}
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/123"))
+func normalizingTheVocabularyLeavesAGenuineCompoundAndTheBooksOwnText() {
+    // A compound the book prints whole keeps its hyphen, whichever glyphs the font draws it
+    // with: normalization decides how a word is spelled for the lookup, not whether a break is a
+    // word break. Both halves of the evidence fold, so the compound is still recognized.
+    let printed = TextLine(text: "the coﬀee-maker in the staﬀ room was replaced last week",
+                           rect: CGRect(x: 85, y: 200, width: 425, height: 12), fontSize: 12)
+    let book = HyphenContext(vocabulary: LayoutReconstructor.vocabulary(in: [
+        PageContent(number: 1, bounds: CGRect(x: 0, y: 0, width: 595, height: 842),
+                    lines: [printed], graphics: []),
+    ]))
+    #expect(book.vocabulary.contains("coffee-maker") && !book.vocabulary.contains("coffeemaker"))
+    var warnings: [ConversionWarning] = []
+    #expect(LayoutReconstructor.join("the coﬀee-", "maker in the room", hyphens: book, page: 1, warnings: &warnings)
+            == "the coﬀee-maker in the room")
+    #expect(warnings.isEmpty)
+    // Only the evidence folds. The ligature the page printed stays in the text the reader gets,
+    // on both sides of a join the vocabulary does decide.
+    #expect(LayoutReconstructor.vocabularyWord("Diﬀerence") == "difference")
+    #expect(LayoutReconstructor.vocabularyWord("plain") == "plain")
+    #expect(LayoutReconstructor.join("a staﬀ-", "room notice", hyphens: HyphenContext(vocabulary: ["staffroom"]),
+                                     page: 1, warnings: &warnings) == "a staﬀroom notice")
+}

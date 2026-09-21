@@ -810,20 +810,37 @@ uncut keeps the order it was extracted in, and the page reports `complexLayout` 
 leaving that silent, as the tag phase reports its own give-up (#224).
 
 - Two lines are one paragraph when they **share a column** (left edges within 1.5 bodies, the gap
-  between them from −0.4 to 0.9 of a body) or are **two pieces of one printed row**: they overlap
-  vertically by at least half the shorter one's height, the second stands to the right of the
-  first, and less than 0.75 of a body separates them — the width a whitespace cut needs for a
-  column, so a table's cells and the two ends of a running header remain separate blocks (#57).
-  A short previous line ending a sentence closes its paragraph either way.
-- Two lines at that leading are also one paragraph when they are **centred on one axis** (mid
+  between them from −0.4 to 0.9 of a body, and no further down the page than the leading it
+  states) or are **two pieces of one printed row**: they overlap vertically by at least half the
+  shorter one's height, the second stands to the right of the first, and less than 0.75 of a body
+  separates them — the width a whitespace cut needs for a column, so a table's cells and the two
+  ends of a running header remain separate blocks (#57). A short previous line ending a sentence
+  closes its paragraph either way.
+- The **leading a page states** is the commonest distance between the tops of two vertically
+  adjacent lines, set at one size, in one column, to the nearest half point, over the lines its
+  crops leave in the prose. At least four such pairs must agree, so a page too bare to say
+  anything states none. Tops, not baselines and not the white between the rectangles: PDFKit's
+  line rectangle grows downwards by whatever descenders the line carries, so on Wallace page 64
+  the rectangle of `• More than often represents addition and is usually built backwards,` is
+  20.46 points tall where the line beneath it has 11.98 and the white between the two is
+  negative, although the page set them one line apart (#123).
+- A line the page set **more than 1.4 times that leading** below the previous one is not the same
+  paragraph, whatever the white between the rectangles says. Wallace page 64 sets an item's
+  example 21.72 points below the item's own second line, where the page's leading is 14.40; the
+  white between them is 9.74 points, inside the 10.76 the column test allows, so the example used
+  to be appended to the item's sentence. The bound is the page's own measure because the same ten
+  points of white is nothing under display type and a paragraph break under footnotes. A page
+  that states no leading is judged by the gap alone, and so is a pair of lines set at different
+  sizes, whose tops are not one ascent above their baselines.
+- Two lines at that leading are also one paragraph when they are **centered on one axis** (mid
   points within 0.6 of a body) **and the reading says the first one wraps** (#130). A shared left
-  edge is a column the page sets and stands on its own; a shared centre does not, since a title,
-  its author and its date are centred on one axis and are three separate lines. So the centre
+  edge is a column the page sets and stands on its own; a shared center does not, since a title,
+  its author and its date are centered on one axis and are three separate lines. So the center
   joins only where the reading states the wrap: Vision states it for every line it recognizes and
   PDFKit's native reading states nothing, which leaves every natively extracted page as it was.
-  The CDC graphic novel letters each speech balloon centred, so page 34's `I'VE BEEN` /
+  The CDC graphic novel letters each speech balloon centered, so page 34's `I'VE BEEN` /
   `THINKING... WE` / `SHOULD REALLY` / `MAKE AN` / `EMERGENCY KIT` stand on five left edges spread
-  over eighteen points and on one centre within 1.7 points.
+  over eighteen points and on one center within 1.7 points.
 - A **stub of prose is closed by the step the next line takes** (#130): a previous line under half
   the width of the line beneath it, with that line set at least half a body further in, opens a
   new block even where no sentence ended. Prose fills its measure, so a line that used under half
@@ -903,7 +920,8 @@ A page's own words are unchanged either way; the join only moves a line from its
 the paragraph above it, where an ordinary hyphen repair may then close a word the split had
 broken.
 
-Evidence: [heading-body-regressions](../measurements/heading-body-regressions/record.md),
+Evidence: [page-leading-and-ligature-vocabulary](../measurements/page-leading-and-ligature-vocabulary/record.md),
+[heading-body-regressions](../measurements/heading-body-regressions/record.md),
 [three-fidelity-fixes](../measurements/three-fidelity-fixes/record.md),
 [preformatted-styles](../measurements/preformatted-styles/record.md),
 [citation-continuations](../measurements/citation-continuations/record.md),
@@ -915,6 +933,12 @@ Evidence: [heading-body-regressions](../measurements/heading-body-regressions/re
   the next line opens in lowercase; the join is decided on the letters either side.
 - The hyphen is removed silently when the book's own vocabulary holds the joined word and not the
   hyphenated compound. When the vocabulary holds the compound, the hyphen stays silently.
+- The vocabulary holds every word lowercased and with the typographic ligatures and other
+  compatibility glyphs a font draws resolved to the letters they stand for, and the two halves of
+  a break are looked up the same way (#123). Wallace's text font prints `different` with a U+FB00
+  `ﬀ`, so the book's own words held `diﬀerent` — 56 times — and never `different`, and had
+  nothing to say about `dif-` + `ferent` on pages 50 and 218. Only the evidence folds: the
+  ligature the page printed stays in the text the reader gets, on both sides of a join.
 - When the vocabulary is silent on both, an English document's system lexicon may decide (#186):
   the join goes ahead, still silently, only when each half has at least two letters and the two
   together at least six, the lexicon holds the joined word, and *not* both halves are lexicon
@@ -958,7 +982,8 @@ Evidence: [heading-body-regressions](../measurements/heading-body-regressions/re
   `tion of the operation;` as a paragraph of its own.
 
 Evidence: [spine-continuity](../measurements/spine-continuity/record.md),
-[line-end-hyphen-substitutes](../measurements/line-end-hyphen-substitutes/record.md).
+[line-end-hyphen-substitutes](../measurements/line-end-hyphen-substitutes/record.md),
+[page-leading-and-ligature-vocabulary](../measurements/page-leading-and-ligature-vocabulary/record.md).
 
 ## Region detectors
 

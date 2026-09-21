@@ -805,6 +805,29 @@ library does. The fix is readable with `git show e1cbc0d0e` and, per decision 00
 onto this pipeline rather than cherry-picked; nothing open tracks that port, and
 [#231](https://github.com/vocaro/PDFReflowLib/issues/231) holds the reconciliation.
 
+Where no cut separates a group, it is ordered by **column runs** rather than by lines, but only
+where the page states that its columns are blocks. A magazine column that runs on into a wider
+measure below — around an L-shaped picture frame — bridges the gutter beside it, so no straight
+cut exists; and its columns are leaded so tightly that consecutive rows overlap, so no whitespace
+band exists either. The elements are chained into runs (each joins the run standing directly
+above it, sharing at least half of the narrower measure and separated by at most a body) and the
+runs are placed by the same row-major comparator, read off each run's own rectangle. A
+single-column group chains into one run and is unchanged. Four conditions gate it: some run must
+widen, part way down, by more than a body into a measure another run holds, where the widening is
+a text line of at least twelve bodies, all but a body of it is kept by at least two of that run's
+elements below and by neither of the two above; no run may hold a single element; every run must
+hold a picture or two lines of twelve bodies; and no element of one run may touch an element of
+another. Together they separate a column running on from rows the page means to be read across.
+One row set across a table's columns widens a run in the same way but is not kept, and a
+paragraph's short last line before the next paragraph's full first line widens it without the
+narrower measure ever having been kept. A timeline, an index of names against descriptions or a
+worksheet's exercise numbers strands a run of one; a list of illustrations against their page
+numbers is two stacks of short cells. And a run standing inside another run's rows — an
+annotation beside its own working, a figure's labels inside the paragraph that introduces them, a
+column the chaining split in two — is that row, however the chaining divided it, which a run-on
+measure never is, because it widens across a gutter only where the column beside it has ended
+(#137, #174, [column-run-order](../measurements/column-run-order/record.md)).
+
 The cuts recurse 32 levels. A page whose separating gaps never narrow is cut one block at a
 time, so its depth is its block count: uniform leading wider than 110% of the page body, as a
 double-spaced typescript sets, reaches the limit at 33 blocks. Ordinary pages do not come near

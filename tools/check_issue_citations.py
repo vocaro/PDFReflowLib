@@ -107,7 +107,9 @@ ALLOWED = {
     240: ('historical', 'coverage measured from what a line wrote, on main and named by its issue'),
     241: ('historical', 'the form-XObject tag rule, on main and named by its issue'),
     57: ('historical', 'the figure-seed and row-continuation rules, on main and named by the issue they came from'),
-    137: ('historical', 'the table-row rule, on main and cited beside #210, which is open and tracks what remains'),
+    137: ('historical', 'the rows a page means to be read across — the spanning-picture divider and the '
+          'borderless-table row blocks, on main — cited beside #174 and #210 as the cases the run-on '
+          'rule must refuse'),
     220: ('historical', 'the kept-as-extracted layer outcome, on main and named by its issue'),
     221: ('historical', 'the encoding outcome the damaged-text warning reports, on main and named by its issue'),
     222: ('historical', 'the empty-recognition rule, on main and named by its issue'),

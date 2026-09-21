@@ -126,11 +126,17 @@ Evidence: [pdfkit-concurrency](../measurements/pdfkit-concurrency/record.md),
   marker's size for the whole line: the Fed's page 58 sets a 10-point bullet over 8-point text on
   14 lines, and IRS Publication 596 sets one large enough that five bulleted sentences were read
   as headings. Where a line opens with a marker glyph and a space, and that marker is drawn larger
-  than the text after it, the size comes from the text instead. Nothing else at the start of a
-  line is a marker: a drop cap, an opening quotation mark and a contents line's leaders keep the
-  size they had. A marker *smaller* than its text understates the line the same way, but
-  correcting that promotes the same book's starred footnotes into headings, so it is left to
-  #254. Evidence: [list-marker-size](../measurements/list-marker-size/record.md).
+  than the text after it, or smaller than it, the size comes from the text instead (#254).
+  Nothing else at the start of a line is a marker: a drop cap, an opening quotation mark and a
+  contents line's leaders keep the size they had.
+  Reading the smaller marker as well is what promoted IRS Publication 596's four starred
+  footnotes into headings while the rule read one direction only. What stops that is the reading
+  of the line rather than a bound on its size: **a bulleted line is not a heading**, whatever
+  size its text is set in, because a page that draws a bullet has said the line belongs to a
+  list. Only the glyphs `• * − – — -` followed by a space count; a numbered or lettered marker is
+  not evidence of the same kind, since `1. Introduction` is a heading in many books.
+  Evidence: [list-marker-size](../measurements/list-marker-size/record.md),
+  [smaller-marker](../measurements/list-marker-size/smaller-marker/record.md).
 - **East Asian text (#42).** Chinese, Japanese and Korean set no space between the characters of
   a word, and a justified line stretches the gaps between characters rather than between words.
   Two spacing rules were measured on Latin text and do not hold here. A gap between two

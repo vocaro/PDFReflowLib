@@ -273,7 +273,8 @@ enum NativeTextReader {
     /// A marker is drawn at whatever size the page likes: the Fed's page 58 sets a 10-point bullet
     /// over 8-point text on 14 lines, and IRS Publication 596 sets one large enough that seven of
     /// its bulleted sentences were read as headings. The line's size comes from its first
-    /// character, so the marker states it for the whole line (#183, #180).
+    /// character, so the marker states it for the whole line, in either direction — a marker
+    /// larger than its item overstates the line and a smaller one understates it (#183, #254).
     ///
     /// Only a line opening with a marker glyph and a space is concerned, and only the run holding
     /// that marker is skipped. A contents line's dot leaders, a drop cap and an opening quotation
@@ -291,10 +292,12 @@ enum NativeTextReader {
               markerRange.upperBound < attributed.length else { return nil }
         let size = (attributed.attribute(.font, at: markerRange.upperBound, effectiveRange: nil)
             as? PlatformFont)?.pointSize
-        // Only a marker drawn larger than its text overstates the line. A marker smaller than its
-        // text understates it in the same way, but correcting that here promotes IRS Publication
-        // 596's starred footnotes into headings, so it is left to #180's own survey.
-        guard let size, size.isFinite, size > 0, marker.pointSize > size else { return nil }
+        // Correcting the smaller marker too is what promoted IRS Publication 596's starred
+        // footnotes into headings while this rule read one direction only. What stops that is not
+        // a bound on the size but the reading of the line: a bulleted line is an item of a list,
+        // whatever size its text is set in, and `LayoutReconstructor.role` no longer calls one a
+        // heading (#254).
+        guard let size, size.isFinite, size > 0, marker.pointSize != size else { return nil }
         return size
     }
 

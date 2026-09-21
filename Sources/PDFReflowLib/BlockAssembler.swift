@@ -64,14 +64,25 @@ extension LayoutReconstructor {
     /// `labels` are the page's recurring bold sub-headings, already empty on such pages.
     static func role(of line: TextLine, on page: PageContent, in lines: [TextLine], typography: PageTypography,
                      labels: [TextLine], judgesTitleWords: Bool) -> LineRole {
-        if !page.hasSyntheticTextStyle
-            && (isTitleSized(line, in: lines, typography: typography, judgesTitleWords: judgesTitleWords) || labels.contains(line)) {
+        // A bulleted line is an item of a list, whatever size its text is set in: a page that
+        // draws a bullet has said the line belongs to a list, which a heading does not (#254).
+        // This is what lets the line's size be read from its text in both directions; a numbered
+        // or lettered marker is not evidence of the same kind, because a heading can be numbered.
+        if !page.hasSyntheticTextStyle, !opensWithBullet(line.text),
+           isTitleSized(line, in: lines, typography: typography, judgesTitleWords: judgesTitleWords)
+            || labels.contains(line) {
             return .heading
         }
         if !page.hasSyntheticTextStyle && line.monospaced { return .code }
         if isMarked(line.text) { return .markedLine(markerColumn(of: line, in: lines, body: typography.body)) }
         if isList(line.text) { return .listItem }
         return .prose
+    }
+
+    /// A line a page opens with a bullet glyph and a space. The alphanumeric markers `isList`
+    /// also accepts are deliberately not here: `1. Introduction` is a heading in many books.
+    static func opensWithBullet(_ text: String) -> Bool {
+        text.range(of: "^[•*−–—-]\\s", options: .regularExpression) != nil
     }
 
     static func isList(_ text: String) -> Bool {

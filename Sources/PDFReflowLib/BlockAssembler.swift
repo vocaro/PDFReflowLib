@@ -68,9 +68,12 @@ extension LayoutReconstructor {
         // draws a bullet has said the line belongs to a list, which a heading does not (#254).
         // This is what lets the line's size be read from its text in both directions; a numbered
         // or lettered marker is not evidence of the same kind, because a heading can be numbered.
+        // The rest of such an item carries no marker of its own — the marker is on the line above
+        // it — so the page states the relationship instead, in the indent it hangs under (#256).
         if !page.hasSyntheticTextStyle, !opensWithBullet(line.text),
            isTitleSized(line, in: lines, typography: typography, judgesTitleWords: judgesTitleWords)
-            || labels.contains(line) {
+            || labels.contains(line),
+           !hangsUnderBullet(line, in: lines) {
             return .heading
         }
         if !page.hasSyntheticTextStyle && line.monospaced { return .code }
@@ -83,6 +86,33 @@ extension LayoutReconstructor {
     /// also accepts are deliberately not here: `1. Introduction` is a heading in many books.
     static func opensWithBullet(_ text: String) -> Bool {
         text.range(of: "^[•*−–—-]\\s", options: .regularExpression) != nil
+    }
+
+    /// Whether the page hung this line under a bulleted line: it is the rest of that item, and an
+    /// item is not a heading whatever size its text is set in (#254, #256). The marker that says
+    /// so is on the line above, so the page states the relationship in its indent instead. IRS
+    /// Publication 596 sets the starred footnotes under its EIC table at 8 points over a table
+    /// whose body is 5.69, and the footnote that wraps reaches the page's heading threshold on
+    /// size alone.
+    ///
+    /// The evidence is the hanging indent the marker leaves, and it is the page's own: a line
+    /// carrying no marker itself, at the marked line's size, directly beneath it within the
+    /// leading `continuesBrokenItem` already reads, standing between 0.8 and 3 of its size in
+    /// from that line's left edge — the window `NumberedNoteDetector` reads for the same
+    /// relationship in a numbered note. The marked line must also fill a measure, at least twelve
+    /// of its own sizes wide, because a line that wrapped is a line that ran out of room: a short
+    /// bulleted item above an indented one is two items, not one wrapped over two lines.
+    static func hangsUnderBullet(_ line: TextLine, in lines: [TextLine]) -> Bool {
+        guard !isList(line.text) else { return false }
+        let size = max(line.fontSize, 4)
+        return lines.contains { above in
+            guard opensWithBullet(above.text), above.hasSize(line.fontSize), above.wraps != false,
+                  above.rect.width >= size * 12 else { return false }
+            let indent = line.rect.minX - above.rect.minX
+            guard indent >= size * 0.8, indent <= size * 3 else { return false }
+            let gap = above.rect.minY - line.rect.maxY
+            return gap >= -size * 0.6 && gap <= size * 0.8
+        }
     }
 
     static func isList(_ text: String) -> Bool {

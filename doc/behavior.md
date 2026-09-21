@@ -135,8 +135,21 @@ Evidence: [pdfkit-concurrency](../measurements/pdfkit-concurrency/record.md),
   size its text is set in, because a page that draws a bullet has said the line belongs to a
   list. Only the glyphs `• * − – — -` followed by a space count; a numbered or lettered marker is
   not evidence of the same kind, since `1. Introduction` is a heading in many books.
+  The rest of such an item carries no marker at all, because the marker is on the line above it,
+  so the page states the relationship in the indent instead: **a line hanging under a bulleted
+  line is the rest of that item**, and is no more a heading than the item is (#256). The evidence
+  is the page's own hanging indent — the line opens with no marker of its own, is set at the
+  marked line's size, stands directly beneath it within the leading a broken item is joined on,
+  and sits between 0.8 and 3 of its size in from that line's left edge, the window a numbered
+  note's continuation is read on. The marked line must also fill a measure, at least twelve of
+  its own sizes wide, because a line that wrapped is a line that ran out of room: a short
+  bulleted item above an indented one is two items. IRS Publication 596 sets the starred
+  footnotes under its EIC table at 8 points over a table whose body is 5.69, so on four of its
+  pages the footnote that wrapped reached the page's heading threshold on size alone. The line
+  keeps its own block and its own words; only the heading reading goes.
   Evidence: [list-marker-size](../measurements/list-marker-size/record.md),
-  [smaller-marker](../measurements/list-marker-size/smaller-marker/record.md).
+  [smaller-marker](../measurements/list-marker-size/smaller-marker/record.md),
+  [hanging-continuation](../measurements/list-marker-size/hanging-continuation/record.md).
 - **East Asian text (#42).** Chinese, Japanese and Korean set no space between the characters of
   a word, and a justified line stretches the gaps between characters rather than between words.
   Two spacing rules were measured on Latin text and do not hold here. A gap between two

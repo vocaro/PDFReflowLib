@@ -28,7 +28,7 @@ Fetch sources with `tools/fetch_corpus.py --case <id>` (checksum-verified, cache
 
 What the individual gates check:
 
-- `swift test`: <!-- counts:swift-tests -->548 Swift Testing tests<!-- counts:end --> with no known-issue wrappers, using the real Apple
+- `swift test`: <!-- counts:swift-tests -->555 Swift Testing tests<!-- counts:end --> with no known-issue wrappers, using the real Apple
   PDF/OCR stack. They cover extraction, the document model, layout, raster pixels (crop origins,
   rotations, annotations, resource ceilings), preserved regions (fraction bars, raised exponents
   and all six cells of a ruled table in actual EPUB images at 72/144 DPI, with prose and code
@@ -374,6 +374,11 @@ swiftc $(python3 tools/pdfreflow_tools/swift_sources.py capture-algebra-layout.s
 A layout capture records PDFKit's own reading, which the spacing reader then repairs; capture one
 with the reader in the state whose defect the test pins, and never recapture a fixture to make a
 repaired line agree with itself.
+
+Schema version 2 adds `pictures`, the placed raster image XObjects among the page's painted
+regions, which crop ownership reads (#176, #239, #207). A capture without the key is version 1 and
+carries none, which is the page every test written against those fixtures already assumes; a test
+that needs a real picture's footprint captures its page afresh.
 
 `capture-spacing-source.swift` captures the other half of a spacing test: one page's own content
 stream and the font metadata the reader reads from it (subtype, font matrix, first code, widths,

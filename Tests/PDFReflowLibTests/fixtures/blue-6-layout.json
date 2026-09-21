@@ -1,0 +1,4541 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        598.82000000000005,
+        757.24000000000001,
+        9.8568000000000211,
+        29.600000000000023
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 29.600000000000001,
+          "text" : "I"
+        }
+      ],
+      "text" : "I"
+    },
+    {
+      "rect" : [
+        598.82000000000005,
+        720.77279999999996,
+        9.8568000000000211,
+        29.600000000000023
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 29.600000000000001,
+          "text" : "I"
+        }
+      ],
+      "text" : "I"
+    },
+    {
+      "rect" : [
+        261.56,
+        714.91497500000003,
+        101.18484230000001,
+        6.9000999999999522
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.40245,
+          "text" : "LIST "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.6775000000000002,
+          "text" : "OF "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.3700000000000001,
+          "text" : "ILLUSTRATIONS"
+        }
+      ],
+      "text" : "LIST OF ILLUSTRATIONS"
+    },
+    {
+      "rect" : [
+        290.06999999999999,
+        706.27497500000004,
+        42.181363500000032,
+        6.9000999999999522
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4047999999999998,
+          "text" : "(Continued)"
+        }
+      ],
+      "text" : "(Continued)"
+    },
+    {
+      "rect" : [
+        80.840000000000003,
+        671.48497500000008,
+        306.16567199999997,
+        6.9000999999999522
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.7571000000000003,
+          "text" : "Figure "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.1288,
+          "text" : "14 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.7242500000000005,
+          "text" : "Distribution "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4843999999999999,
+          "text" : "of "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.6027000000000005,
+          "text" : "Object "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4486500000000007,
+          "text" : "Sightings "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.6023500000000004,
+          "text" : "by "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.3839500000000005,
+          "text" : "Months "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.3959500000000009,
+          "text" : "Among "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4572000000000003,
+          "text" : "the "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.6863000000000001,
+          "text" : "Eight "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.6812500000000004,
+          "text" : "Duration"
+        }
+      ],
+      "text" : "Figure 14 Distribution of Object Sightings by Months Among the Eight Duration"
+    },
+    {
+      "rect" : [
+        129.28,
+        662.60497500000008,
+        80.779203599999988,
+        6.9000999999999522
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.5269000000000004,
+          "text" : "Groups "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.6517499999999998,
+          "text" : "for "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.5663,
+          "text" : "All "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.6837,
+          "text" : "Years"
+        }
+      ],
+      "text" : "Groups for All Years"
+    },
+    {
+      "rect" : [
+        80.600000000000009,
+        645.55497500000001,
+        303.44599499999998,
+        6.9000999999999522
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.7993500000000004,
+          "text" : "Figure "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.0061999999999998,
+          "text" : "15 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.7018500000000003,
+          "text" : "Distribution "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.3452500000000001,
+          "text" : "of "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.5611500000000005,
+          "text" : "Object "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4776500000000006,
+          "text" : "Sightings "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4870000000000001,
+          "text" : "by "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4079499999999996,
+          "text" : "Shape "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4843999999999999,
+          "text" : "of "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4942500000000001,
+          "text" : "Object(s) "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.6997499999999999,
+          "text" : "Reported "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.3747000000000007,
+          "text" : "With"
+        }
+      ],
+      "text" : "Figure 15 Distribution of Object Sightings by Shape of Object(s) Reported With"
+    },
+    {
+      "rect" : [
+        129.06999999999999,
+        636.92497500000002,
+        183.10502500000001,
+        6.9000999999999522
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.6313000000000004,
+          "text" : "Evaluation "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.7018500000000003,
+          "text" : "Distribution "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.6517499999999998,
+          "text" : "for "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.7254500000000004,
+          "text" : "Each "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4540000000000006,
+          "text" : "Shape "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.5231500000000002,
+          "text" : "Group "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.9001000000000001,
+          "text" : ","
+        }
+      ],
+      "text" : "Evaluation Distribution for Each Shape Group ,"
+    },
+    {
+      "rect" : [
+        80.840000000000003,
+        619.39497500000004,
+        303.20599500000003,
+        6.9000999999999522
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.7993500000000004,
+          "text" : "Figure "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.9001000000000001,
+          "text" : "16 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.6795,
+          "text" : "Distribution "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.3452500000000001,
+          "text" : "of "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.5611500000000005,
+          "text" : "Object "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.5066000000000006,
+          "text" : "Sightings "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.6023500000000004,
+          "text" : "by "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.6997499999999999,
+          "text" : "Reported "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4540000000000006,
+          "text" : "Speed "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4843999999999999,
+          "text" : "of "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.5529000000000002,
+          "text" : "Object(s) "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.3747000000000007,
+          "text" : "With"
+        }
+      ],
+      "text" : "Figure 16 Distribution of Object Sightings by Reported Speed of Object(s) With"
+    },
+    {
+      "rect" : [
+        129.06999999999999,
+        610.75497500000006,
+        182.83502500000003,
+        6.9000999999999522
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.6313000000000004,
+          "text" : "Evaluation "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.7242500000000005,
+          "text" : "Distribution "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.6517499999999998,
+          "text" : "for "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.7816999999999998,
+          "text" : "Each "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.5,
+          "text" : "Speed "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.5669500000000003,
+          "text" : "Group "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.9001000000000001,
+          "text" : "."
+        }
+      ],
+      "text" : "Evaluation Distribution for Each Speed Group ."
+    },
+    {
+      "rect" : [
+        80.600000000000009,
+        593.23497500000008,
+        349.05857189999995,
+        6.9000999999999522
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.7993500000000004,
+          "text" : "Figure "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.1288,
+          "text" : "17 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.6795,
+          "text" : "Distribution "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4843999999999999,
+          "text" : "of "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4786999999999999,
+          "text" : "All "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4776500000000006,
+          "text" : "Sightings "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.7177000000000007,
+          "text" : "by "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.8402000000000003,
+          "text" : "Observer "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.617,
+          "text" : "Location "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.8385000000000007,
+          "text" : "for "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4786999999999999,
+          "text" : "All "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.7788000000000004,
+          "text" : "Years "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4450000000000003,
+          "text" : "and "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.8379500000000002,
+          "text" : "Each "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.6542000000000003,
+          "text" : "Year"
+        }
+      ],
+      "text" : "Figure 17 Distribution of All Sightings by Observer Location for All Years and Each Year"
+    },
+    {
+      "rect" : [
+        80.359999999999999,
+        575.72497500000009,
+        323.60981330000004,
+        6.9000999999999522
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.8415499999999998,
+          "text" : "Figure "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.1288,
+          "text" : "18 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.7185500000000005,
+          "text" : "Comparison "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.3452500000000001,
+          "text" : "of "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.1931000000000003,
+          "text" : "Known "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.5233500000000006,
+          "text" : "and "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.2435499999999999,
+          "text" : "Unknown "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.6027000000000005,
+          "text" : "Object "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4776500000000006,
+          "text" : "Sightings "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.6023500000000004,
+          "text" : "by "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.67605,
+          "text" : "Color, "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4401000000000002,
+          "text" : "1947-1952"
+        }
+      ],
+      "text" : "Figure 18 Comparison of Known and Unknown Object Sightings by Color, 1947-1952"
+    },
+    {
+      "rect" : [
+        80.359999999999999,
+        558.194975,
+        327.29764700000004,
+        6.9000999999999522
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.8415499999999998,
+          "text" : "Figure "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.1288,
+          "text" : "19 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.7185500000000005,
+          "text" : "Comparison "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4843999999999999,
+          "text" : "of "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.2313000000000001,
+          "text" : "Known "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.6016500000000002,
+          "text" : "and "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.2435499999999999,
+          "text" : "Unknown "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.6027000000000005,
+          "text" : "Object "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4486500000000007,
+          "text" : "Sightings "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.6023500000000004,
+          "text" : "by "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.6032000000000002,
+          "text" : "Number "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.6234999999999999,
+          "text" : "of "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.5957500000000007,
+          "text" : "Objects"
+        }
+      ],
+      "text" : "Figure 19 Comparison of Known and Unknown Object Sightings by Number of Objects"
+    },
+    {
+      "rect" : [
+        128.89000000000001,
+        549.314975,
+        91.71981329999997,
+        6.9000999999999522
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.9270500000000004,
+          "text" : "per "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4076500000000003,
+          "text" : "Sighting, "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4401000000000002,
+          "text" : "1947-1952"
+        }
+      ],
+      "text" : "per Sighting, 1947-1952"
+    },
+    {
+      "rect" : [
+        80.359999999999999,
+        532.27497500000004,
+        323.60981330000004,
+        6.9000999999999522
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.8415499999999998,
+          "text" : "Figure "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.0579000000000001,
+          "text" : "20 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.7411000000000003,
+          "text" : "Comparison "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4843999999999999,
+          "text" : "of "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.2313000000000001,
+          "text" : "Known "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.5233500000000006,
+          "text" : "and "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.2435499999999999,
+          "text" : "Unknown "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.6027000000000005,
+          "text" : "Object "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4776500000000006,
+          "text" : "Sightings "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4870000000000001,
+          "text" : "by "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4536000000000007,
+          "text" : "Speed, "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4401000000000002,
+          "text" : "1947-1952"
+        }
+      ],
+      "text" : "Figure 20 Comparison of Known and Unknown Object Sightings by Speed, 1947-1952"
+    },
+    {
+      "rect" : [
+        80.359999999999999,
+        514.75497500000006,
+        335.13356279999999,
+        6.9000999999999522
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.7993500000000004,
+          "text" : "Figure "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.9001000000000001,
+          "text" : "21 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.7411000000000003,
+          "text" : "Comparison "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4843999999999999,
+          "text" : "of "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.2313000000000001,
+          "text" : "Known "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.6016500000000002,
+          "text" : "and "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.2435499999999999,
+          "text" : "Unknown "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.6027000000000005,
+          "text" : "Object "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4776500000000006,
+          "text" : "Sightings "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.6023500000000004,
+          "text" : "by "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.6073500000000003,
+          "text" : "Duration, "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4658500000000005,
+          "text" : "1947-1952"
+        }
+      ],
+      "text" : "Figure 21 Comparison of Known and Unknown Object Sightings by Duration, 1947-1952"
+    },
+    {
+      "rect" : [
+        80.120000000000005,
+        497.47497500000003,
+        323.60981329999993,
+        6.900100000000009
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.7993500000000004,
+          "text" : "Figure "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.0579000000000001,
+          "text" : "22 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.7411000000000003,
+          "text" : "Comparison "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4843999999999999,
+          "text" : "of "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.2313000000000001,
+          "text" : "Known "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.5233500000000006,
+          "text" : "and "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.2435499999999999,
+          "text" : "Unknown "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.6027000000000005,
+          "text" : "Object "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4486500000000007,
+          "text" : "Sightings "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.6023500000000004,
+          "text" : "by "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4536000000000007,
+          "text" : "Shape, "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4401000000000002,
+          "text" : "1947-1952"
+        }
+      ],
+      "text" : "Figure 22 Comparison of Known and Unknown Object Sightings by Shape, 1947-1952"
+    },
+    {
+      "rect" : [
+        80.359999999999999,
+        480.194975,
+        366.56981329999996,
+        6.900100000000009
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.7993500000000004,
+          "text" : "Figure "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.0579000000000001,
+          "text" : "23 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.7185500000000005,
+          "text" : "Comparison "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.3452500000000001,
+          "text" : "of "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.2313000000000001,
+          "text" : "Known "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.5233500000000006,
+          "text" : "and "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.2152500000000002,
+          "text" : "Unknown "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.6027000000000005,
+          "text" : "Object "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4776500000000006,
+          "text" : "Sightings "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.6023500000000004,
+          "text" : "by "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.5831499999999998,
+          "text" : "Light "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.7440000000000007,
+          "text" : "Brightness, "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4401000000000002,
+          "text" : "1947-1952"
+        }
+      ],
+      "text" : "Figure 23 Comparison of Known and Unknown Object Sightings by Light Brightness, 1947-1952"
+    },
+    {
+      "rect" : [
+        80.120000000000005,
+        462.91497499999997,
+        361.08148699999992,
+        6.900100000000009
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.8415499999999998,
+          "text" : "Figure "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.1742500000000007,
+          "text" : "24 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.7185500000000005,
+          "text" : "Comparison "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.3452500000000001,
+          "text" : "of "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.43675,
+          "text" : "Monthly "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.7242500000000005,
+          "text" : "Distribution "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4843999999999999,
+          "text" : "of "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.6027000000000005,
+          "text" : "Object "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4776500000000006,
+          "text" : "Sightings "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.6965000000000003,
+          "text" : "Evaluated "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.7213000000000003,
+          "text" : "as "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.7427999999999999,
+          "text" : "Astronomical"
+        }
+      ],
+      "text" : "Figure 24 Comparison of Monthly Distribution of Object Sightings Evaluated as Astronomical"
+    },
+    {
+      "rect" : [
+        128.86000000000001,
+        454.03497499999997,
+        194.02411919999997,
+        6.900100000000009
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.7423500000000001,
+          "text" : "Versus "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.5888,
+          "text" : "Total "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.6027000000000005,
+          "text" : "Object "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4776500000000006,
+          "text" : "Sightings "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.8386500000000003,
+          "text" : "Less "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.8434500000000007,
+          "text" : "Astronomical."
+        }
+      ],
+      "text" : "Versus Total Object Sightings Less Astronomical."
+    },
+    {
+      "rect" : [
+        80.120000000000005,
+        436.754975,
+        340.90814399999999,
+        6.900100000000009
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.8415499999999998,
+          "text" : "Figure "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.9415000000000004,
+          "text" : "25 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.7185500000000005,
+          "text" : "Comparison "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.3452500000000001,
+          "text" : "of "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4689000000000005,
+          "text" : "Monthly "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.7018500000000003,
+          "text" : "Distribution "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.3452500000000001,
+          "text" : "of "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.6027000000000005,
+          "text" : "Object "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4486500000000007,
+          "text" : "Sightings "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.6691000000000003,
+          "text" : "Evaluated "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.8591000000000006,
+          "text" : "as "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.93485,
+          "text" : "Aircraft"
+        }
+      ],
+      "text" : "Figure 25 Comparison of Monthly Distribution of Object Sightings Evaluated as Aircraft"
+    },
+    {
+      "rect" : [
+        128.62,
+        428.12497500000001,
+        170.48814400000003,
+        6.900100000000009
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.7821000000000007,
+          "text" : "Versus "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.5888,
+          "text" : "Total "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.6027000000000005,
+          "text" : "Object "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.5066000000000006,
+          "text" : "Sightings "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.8996000000000004,
+          "text" : "Less "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.93485,
+          "text" : "Aircraft"
+        }
+      ],
+      "text" : "Versus Total Object Sightings Less Aircraft"
+    },
+    {
+      "rect" : [
+        80.120000000000005,
+        410.84497499999998,
+        337.88898650000004,
+        6.900100000000009
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.7993500000000004,
+          "text" : "Figure "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.0579000000000001,
+          "text" : "26 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.7411000000000003,
+          "text" : "Comparison "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4843999999999999,
+          "text" : "of "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4046000000000003,
+          "text" : "Monthly "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.7018500000000003,
+          "text" : "Distribution "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4843999999999999,
+          "text" : "of "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.5611500000000005,
+          "text" : "Object "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4776500000000006,
+          "text" : "Sightings "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.6417000000000002,
+          "text" : "Evaluated "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.8591000000000006,
+          "text" : "as "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.5297999999999998,
+          "text" : "Balloon"
+        }
+      ],
+      "text" : "Figure 26 Comparison of Monthly Distribution of Object Sightings Evaluated as Balloon"
+    },
+    {
+      "rect" : [
+        128.62,
+        402.194975,
+        171.31853720000004,
+        6.900100000000009
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.7423500000000001,
+          "text" : "Versus "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.5888,
+          "text" : "Total "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.6027000000000005,
+          "text" : "Object "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.5066000000000006,
+          "text" : "Sightings "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.8386500000000003,
+          "text" : "Less "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.7158500000000005,
+          "text" : "Balloon,"
+        }
+      ],
+      "text" : "Versus Total Object Sightings Less Balloon,"
+    },
+    {
+      "rect" : [
+        79.879999999999995,
+        385.16497499999997,
+        352.46424400000012,
+        6.900100000000009
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.8415499999999998,
+          "text" : "Figure "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.0579000000000001,
+          "text" : "27 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.7411000000000003,
+          "text" : "Comparison "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4843999999999999,
+          "text" : "of "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.43675,
+          "text" : "Monthly "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.7018500000000003,
+          "text" : "Distribution "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.3452500000000001,
+          "text" : "of "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.6027000000000005,
+          "text" : "Object "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4776500000000006,
+          "text" : "Sightings "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.6691000000000003,
+          "text" : "Evaluated "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.7213000000000003,
+          "text" : "as "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.6055000000000001,
+          "text" : "Insufficient"
+        }
+      ],
+      "text" : "Figure 27 Comparison of Monthly Distribution of Object Sightings Evaluated as Insufficient"
+    },
+    {
+      "rect" : [
+        128.34,
+        376.51497499999999,
+        276.63730140000007,
+        6.900100000000009
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.6491500000000006,
+          "text" : "Information "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.7821000000000007,
+          "text" : "Versus "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.6412000000000004,
+          "text" : "Total "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.6027000000000005,
+          "text" : "Object "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.5066000000000006,
+          "text" : "Sightings "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.8386500000000003,
+          "text" : "Less "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.6055000000000001,
+          "text" : "Insufficient "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.6491500000000006,
+          "text" : "Information"
+        }
+      ],
+      "text" : "Information Versus Total Object Sightings Less Insufficient Information"
+    },
+    {
+      "rect" : [
+        79.879999999999995,
+        359.45000000000005,
+        330.39244400000007,
+        7
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.7993500000000004,
+          "text" : "Figure "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.1742500000000007,
+          "text" : "28 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.7411000000000003,
+          "text" : "Comparison "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4843999999999999,
+          "text" : "of "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.43675,
+          "text" : "Monthly "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.7018500000000003,
+          "text" : "Distribution "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.3452500000000001,
+          "text" : "of "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.6027000000000005,
+          "text" : "Object "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4776500000000006,
+          "text" : "Sightings "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.6417000000000002,
+          "text" : "Evaluated "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.7213000000000003,
+          "text" : "as "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 7.3244000000000007,
+          "text" : "Other"
+        }
+      ],
+      "text" : "Figure 28 Comparison of Monthly Distribution of Object Sightings Evaluated as Other"
+    },
+    {
+      "rect" : [
+        128.38,
+        350.84497499999998,
+        159.98420269999997,
+        6.900100000000009
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.7821000000000007,
+          "text" : "Versus "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.6412000000000004,
+          "text" : "Total "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.5611500000000005,
+          "text" : "Object "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.5066000000000006,
+          "text" : "Sightings "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.8386500000000003,
+          "text" : "Less "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.6576000000000004,
+          "text" : "Other"
+        }
+      ],
+      "text" : "Versus Total Object Sightings Less Other"
+    },
+    {
+      "rect" : [
+        79.879999999999995,
+        333.314975,
+        342.06943840000002,
+        6.900100000000009
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.7571000000000003,
+          "text" : "Figure "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.2906500000000003,
+          "text" : "29 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.7185500000000005,
+          "text" : "Comparison "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4843999999999999,
+          "text" : "of "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.43675,
+          "text" : "Monthly "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.7242500000000005,
+          "text" : "Distribution "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4843999999999999,
+          "text" : "of "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.6027000000000005,
+          "text" : "Object "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4486500000000007,
+          "text" : "Sightings "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.6691000000000003,
+          "text" : "Evaluated "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.7213000000000003,
+          "text" : "as "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.2718500000000006,
+          "text" : "Unknown"
+        }
+      ],
+      "text" : "Figure 29 Comparison of Monthly Distribution of Object Sightings Evaluated as Unknown"
+    },
+    {
+      "rect" : [
+        128.38,
+        324.67497500000002,
+        171.64922799999999,
+        6.900100000000009
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.7821000000000007,
+          "text" : "Versus "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.6412000000000004,
+          "text" : "Total "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.6027000000000005,
+          "text" : "Object "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4776500000000006,
+          "text" : "Sightings "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.8386500000000003,
+          "text" : "Less "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.2435499999999999,
+          "text" : "Unknown"
+        }
+      ],
+      "text" : "Versus Total Object Sightings Less Unknown"
+    },
+    {
+      "rect" : [
+        79.640000000000001,
+        307.634975,
+        357.02791480000008,
+        6.900100000000009
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.8415499999999998,
+          "text" : "Figure "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.2404000000000002,
+          "text" : "30 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.9514000000000005,
+          "text" : "Characteristics "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.8420500000000004,
+          "text" : "Profiles "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4843999999999999,
+          "text" : "of "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.6027000000000005,
+          "text" : "Object "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4776500000000006,
+          "text" : "Sightings "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.6023500000000004,
+          "text" : "by "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.5888,
+          "text" : "Total "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.5509500000000003,
+          "text" : "Sample, "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.2695000000000007,
+          "text" : "Known "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.6367500000000001,
+          "text" : "Evaluations,"
+        }
+      ],
+      "text" : "Figure 30 Characteristics Profiles of Object Sightings by Total Sample, Known Evaluations,"
+    },
+    {
+      "rect" : [
+        128.08000000000001,
+        298.754975,
+        297.61502500000006,
+        6.900100000000009
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.5233500000000006,
+          "text" : "and "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4656500000000001,
+          "text" : "Individual "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.2313000000000001,
+          "text" : "Known "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.6367500000000001,
+          "text" : "Evaluations, "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.3186499999999999,
+          "text" : "With "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.2152500000000002,
+          "text" : "Unknown "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.6475499999999998,
+          "text" : "Evaluations "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.7430500000000002,
+          "text" : "Superimposed "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.9001000000000001,
+          "text" : ","
+        }
+      ],
+      "text" : "and Individual Known Evaluations, With Unknown Evaluations Superimposed ,"
+    },
+    {
+      "rect" : [
+        79.400000000000006,
+        281.23497499999996,
+        342.36982999999998,
+        6.900100000000009
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.8415499999999998,
+          "text" : "Figure "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.9001000000000001,
+          "text" : "31 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.7797000000000001,
+          "text" : "Frequency "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.3452500000000001,
+          "text" : "of "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.5131000000000006,
+          "text" : "Object, "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.2324000000000002,
+          "text" : "Unit, "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.5233500000000006,
+          "text" : "and "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.3911499999999997,
+          "text" : "All "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.5066000000000006,
+          "text" : "Sightings "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.34755,
+          "text" : "Within "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.5482500000000003,
+          "text" : "the "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.9904000000000002,
+          "text" : "U. "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.0512499999999996,
+          "text" : "S., "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.3923500000000004,
+          "text" : "1947-1952, "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.6023500000000004,
+          "text" : "by"
+        }
+      ],
+      "text" : "Figure 31 Frequency of Object, Unit, and All Sightings Within the U. S., 1947-1952, by"
+    },
+    {
+      "rect" : [
+        127.77,
+        272.84497499999998,
+        204.72040340000001,
+        6.900100000000009
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.5272000000000006,
+          "text" : "Subdivisions "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4843999999999999,
+          "text" : "of "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.3060499999999999,
+          "text" : "One "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.7998000000000003,
+          "text" : "Degree "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.3452500000000001,
+          "text" : "of "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.6413500000000001,
+          "text" : "Latitude "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.5233500000000006,
+          "text" : "and "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4547500000000007,
+          "text" : "Longitude"
+        }
+      ],
+      "text" : "Subdivisions of One Degree of Latitude and Longitude"
+    },
+    {
+      "rect" : [
+        79.159999999999997,
+        255.32497500000002,
+        348.36466210000015,
+        6.9000999999999806
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.8415499999999998,
+          "text" : "Figure "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.2404000000000002,
+          "text" : "32 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.7018500000000003,
+          "text" : "Distribution "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4843999999999999,
+          "text" : "of "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.6027000000000005,
+          "text" : "Object "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4776500000000006,
+          "text" : "Sightings "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.6023500000000004,
+          "text" : "by "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.6313000000000004,
+          "text" : "Evaluation "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.6517499999999998,
+          "text" : "for "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.3661500000000002,
+          "text" : "the "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4642499999999998,
+          "text" : "Twelve "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.5778500000000006,
+          "text" : "Regional "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.8237500000000004,
+          "text" : "Areas "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4843999999999999,
+          "text" : "of"
+        }
+      ],
+      "text" : "Figure 32 Distribution of Object Sightings by Evaluation for the Twelve Regional Areas of"
+    },
+    {
+      "rect" : [
+        128.14000000000001,
+        246.67497500000002,
+        170.2754813,
+        6.900100000000009
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4572000000000003,
+          "text" : "the "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.9904000000000002,
+          "text" : "U. "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.9442500000000003,
+          "text" : "S., "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.3186499999999999,
+          "text" : "With "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4572000000000003,
+          "text" : "the "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.7418500000000003,
+          "text" : "Strategic "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.8237500000000004,
+          "text" : "Areas "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.6627000000000001,
+          "text" : "Located"
+        }
+      ],
+      "text" : "the U. S., With the Strategic Areas Located"
+    },
+    {
+      "rect" : [
+        79.159999999999997,
+        229.39497500000002,
+        327.17416839999999,
+        6.900100000000009
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.7993500000000004,
+          "text" : "Figure "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.0035500000000006,
+          "text" : "33 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.7411000000000003,
+          "text" : "Comparison "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.3452500000000001,
+          "text" : "of "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.6313000000000004,
+          "text" : "Evaluation "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4843999999999999,
+          "text" : "of "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.6027000000000005,
+          "text" : "Object "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4776500000000006,
+          "text" : "Sightings "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.5938500000000007,
+          "text" : "in "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.2750500000000002,
+          "text" : "the "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.7418500000000003,
+          "text" : "Strategic "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.8237500000000004,
+          "text" : "Areas "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4843999999999999,
+          "text" : "of "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.3661500000000002,
+          "text" : "the"
+        }
+      ],
+      "text" : "Figure 33 Comparison of Evaluation of Object Sightings in the Strategic Areas of the"
+    },
+    {
+      "rect" : [
+        127.59,
+        220.76497500000002,
+        77.372896300000008,
+        6.900100000000009
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.8511500000000005,
+          "text" : "Central "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.0402000000000005,
+          "text" : "East "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4709000000000003,
+          "text" : "Region"
+        }
+      ],
+      "text" : "Central East Region"
+    },
+    {
+      "rect" : [
+        78.920000000000002,
+        203.48497500000002,
+        327.4149046,
+        6.900100000000009
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.7993500000000004,
+          "text" : "Figure "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.2404000000000002,
+          "text" : "34 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.7637,
+          "text" : "Comparison "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4843999999999999,
+          "text" : "of "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.6313000000000004,
+          "text" : "Evaluation "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.6234999999999999,
+          "text" : "of "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.5611500000000005,
+          "text" : "Object "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.5066000000000006,
+          "text" : "Sightings "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.5938500000000007,
+          "text" : "in "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.3661500000000002,
+          "text" : "the "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.7725,
+          "text" : "Strategic "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.8237500000000004,
+          "text" : "Areas "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4843999999999999,
+          "text" : "of "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4572000000000003,
+          "text" : "the"
+        }
+      ],
+      "text" : "Figure 34 Comparison of Evaluation of Object Sightings in the Strategic Areas of the"
+    },
+    {
+      "rect" : [
+        127.59,
+        195.08497500000001,
+        91.533029800000037,
+        6.900100000000009
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.8511500000000005,
+          "text" : "Central "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.5700500000000002,
+          "text" : "Midwest "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.50915,
+          "text" : "Region"
+        }
+      ],
+      "text" : "Central Midwest Region"
+    },
+    {
+      "rect" : [
+        78.920000000000002,
+        177.564975,
+        327.17490459999999,
+        6.900100000000009
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.7993500000000004,
+          "text" : "Figure "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.12195,
+          "text" : "35 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.7411000000000003,
+          "text" : "Comparison "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4843999999999999,
+          "text" : "of "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.6313000000000004,
+          "text" : "Evaluation "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.6234999999999999,
+          "text" : "of "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.5611500000000005,
+          "text" : "Object "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4776500000000006,
+          "text" : "Sightings "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.5938500000000007,
+          "text" : "in "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.2750500000000002,
+          "text" : "the "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.7418500000000003,
+          "text" : "Strategic "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.8237500000000004,
+          "text" : "Areas "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.6234999999999999,
+          "text" : "of "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4572000000000003,
+          "text" : "the"
+        }
+      ],
+      "text" : "Figure 35 Comparison of Evaluation of Object Sightings in the Strategic Areas of the"
+    },
+    {
+      "rect" : [
+        127.59,
+        169.39497500000002,
+        91.533029800000037,
+        6.900100000000009
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.8511500000000005,
+          "text" : "Central "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.94245,
+          "text" : "Farwest "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.50915,
+          "text" : "Region"
+        }
+      ],
+      "text" : "Central Farwest Region"
+    },
+    {
+      "rect" : [
+        78.920000000000002,
+        151.87497500000003,
+        327.4149046,
+        6.900100000000009
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.7993500000000004,
+          "text" : "Figure "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.0035500000000006,
+          "text" : "36 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.7411000000000003,
+          "text" : "Comparison "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4843999999999999,
+          "text" : "of "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.6313000000000004,
+          "text" : "Evaluation "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4843999999999999,
+          "text" : "of "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.5611500000000005,
+          "text" : "Object "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4776500000000006,
+          "text" : "Sightings "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.5938500000000007,
+          "text" : "in "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.3661500000000002,
+          "text" : "the "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.8031500000000005,
+          "text" : "Strategic "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.8713000000000006,
+          "text" : "Areas "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.3452500000000001,
+          "text" : "of "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4572000000000003,
+          "text" : "the"
+        }
+      ],
+      "text" : "Figure 36 Comparison of Evaluation of Object Sightings in the Strategic Areas of the"
+    },
+    {
+      "rect" : [
+        127.30000000000001,
+        143.48497500000002,
+        91.24502499999997,
+        6.900100000000009
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4365500000000004,
+          "text" : "South "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.5383500000000003,
+          "text" : "Midwest "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.50915,
+          "text" : "Region "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.9001000000000001,
+          "text" : "."
+        }
+      ],
+      "text" : "South Midwest Region ."
+    },
+    {
+      "rect" : [
+        78.920000000000002,
+        125.714975,
+        328.13490460000003,
+        6.9000999999999948
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.8415499999999998,
+          "text" : "Figure "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.2404000000000002,
+          "text" : "37 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.7637,
+          "text" : "Comparison "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4843999999999999,
+          "text" : "of "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.6313000000000004,
+          "text" : "Evaluation "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4843999999999999,
+          "text" : "of "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.6027000000000005,
+          "text" : "Object "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.5066000000000006,
+          "text" : "Sightings "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.7418500000000003,
+          "text" : "in "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.3661500000000002,
+          "text" : "the "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.7725,
+          "text" : "Strategic "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.8713000000000006,
+          "text" : "Areas "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.6234999999999999,
+          "text" : "of "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4572000000000003,
+          "text" : "the"
+        }
+      ],
+      "text" : "Figure 37 Comparison of Evaluation of Object Sightings in the Strategic Areas of the"
+    },
+    {
+      "rect" : [
+        127.78,
+        118.034975,
+        70.222896300000002,
+        6.9000999999999948
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4365500000000004,
+          "text" : "South "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.6043500000000002,
+          "text" : "West "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4709000000000003,
+          "text" : "Region"
+        }
+      ],
+      "text" : "South West Region"
+    },
+    {
+      "rect" : [
+        303.73000000000002,
+        41.089999999999996,
+        11.028463199999976,
+        10.399999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 11.8597,
+          "text" : "iv"
+        }
+      ],
+      "text" : "iv"
+    },
+    {
+      "rect" : [
+        598.82000000000005,
+        685.25,
+        9.8568000000000211,
+        29.600000000000023
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 29.600000000000001,
+          "text" : "I"
+        }
+      ],
+      "text" : "I"
+    },
+    {
+      "rect" : [
+        524.12,
+        689.23497500000008,
+        17.908516200000008,
+        6.9000999999999522
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.7262000000000004,
+          "text" : "Page"
+        }
+      ],
+      "text" : "Page"
+    },
+    {
+      "rect" : [
+        531.50999999999999,
+        648.67499999999995,
+        78.162700000000086,
+        31.899999999999977
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.2404000000000002,
+          "text" : "30 "
+        },
+        {
+          "baselineOffset" : -8.1500000000000909,
+          "fontName" : "Times-Roman",
+          "fontSize" : 31.900000000000002,
+          "text" : "I"
+        }
+      ],
+      "text" : "30 I"
+    },
+    {
+      "rect" : [
+        532.72000000000003,
+        613.49000000000001,
+        75.716800000000035,
+        30.335074999999961
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.0035500000000006,
+          "text" : "31 "
+        },
+        {
+          "baselineOffset" : -17.759999999999991,
+          "fontName" : "Times-Roman",
+          "fontSize" : 29.600000000000001,
+          "text" : "I"
+        }
+      ],
+      "text" : "31 I"
+    },
+    {
+      "rect" : [
+        532.47000000000003,
+        610.99497500000007,
+        7.9597349999999096,
+        6.9000999999999522
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.2404000000000002,
+          "text" : "32"
+        }
+      ],
+      "text" : "32"
+    },
+    {
+      "rect" : [
+        532.48000000000002,
+        577.01499999999999,
+        76.579500000000053,
+        31.5
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.12195,
+          "text" : "33 "
+        },
+        {
+          "baselineOffset" : -10.07000000000005,
+          "fontName" : "Times-Roman",
+          "fontSize" : 31.5,
+          "text" : "I"
+        }
+      ],
+      "text" : "33 I"
+    },
+    {
+      "rect" : [
+        532.23000000000002,
+        575.9549750000001,
+        7.9597349999999096,
+        6.9000999999999522
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.2404000000000002,
+          "text" : "34"
+        }
+      ],
+      "text" : "34"
+    },
+    {
+      "rect" : [
+        531.98741760000007,
+        541.96000000000004,
+        76.689382399999886,
+        29.600000000000023
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.2404000000000002,
+          "text" : "35 "
+        },
+        {
+          "baselineOffset" : -2.1617209000000912,
+          "fontName" : "Times-Roman",
+          "fontSize" : 29.600000000000001,
+          "text" : "I"
+        }
+      ],
+      "text" : "35 I"
+    },
+    {
+      "rect" : [
+        532.24000000000001,
+        532.27497500000004,
+        7.710990000000038,
+        6.9000999999999522
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.12195,
+          "text" : "36"
+        }
+      ],
+      "text" : "36"
+    },
+    {
+      "rect" : [
+        518.87334250000004,
+        505.96000000000004,
+        80.426657500000147,
+        29.600000000000023
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -3.3600000000000136,
+          "fontName" : "Times-Roman",
+          "fontSize" : 29.600000000000001,
+          "text" : "I"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.2404000000000002,
+          "text" : "37"
+        }
+      ],
+      "text" : "I37"
+    },
+    {
+      "rect" : [
+        531.98741760000007,
+        497.72402470000003,
+        7.9597349999999096,
+        6.900100000000009
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.2404000000000002,
+          "text" : "38"
+        }
+      ],
+      "text" : "38"
+    },
+    {
+      "rect" : [
+        518.38436750000005,
+        469.875,
+        80.905632499999911,
+        31.899999999999977
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -3.8299999999999841,
+          "fontName" : "Times-Roman",
+          "fontSize" : 31.900000000000002,
+          "text" : "I"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.2404000000000002,
+          "text" : "39"
+        }
+      ],
+      "text" : "I39"
+    },
+    {
+      "rect" : [
+        531.57000000000005,
+        433.97500000000002,
+        78.209499999999935,
+        31.5
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.3932500000000001,
+          "text" : "40 "
+        },
+        {
+          "baselineOffset" : -14.149999999999977,
+          "fontName" : "Times-Roman",
+          "fontSize" : 31.5,
+          "text" : "I"
+        }
+      ],
+      "text" : "40 I"
+    },
+    {
+      "rect" : [
+        531.57000000000005,
+        428.12497500000001,
+        7.5500250000000051,
+        6.900100000000009
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.0453000000000001,
+          "text" : "41"
+        }
+      ],
+      "text" : "41"
+    },
+    {
+      "rect" : [
+        531.33000000000004,
+        398.02997499999998,
+        79.152633299999934,
+        32.20010000000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.3932500000000001,
+          "text" : "42 "
+        },
+        {
+          "baselineOffset" : 2.1599999999999682,
+          "fontName" : "Times-Roman",
+          "fontSize" : 32.200099999999999,
+          "text" : "I"
+        }
+      ],
+      "text" : "42 I"
+    },
+    {
+      "rect" : [
+        531.09000000000003,
+        362.59499999999997,
+        79.302699999999959,
+        31.899999999999977
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.3932500000000001,
+          "text" : "43 "
+        },
+        {
+          "baselineOffset" : -7.6700000000000159,
+          "fontName" : "Times-Roman",
+          "fontSize" : 31.900000000000002,
+          "text" : "I"
+        }
+      ],
+      "text" : "43 I"
+    },
+    {
+      "rect" : [
+        531.09000000000003,
+        327.41500000000002,
+        79.40949999999998,
+        31.5
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.3932500000000001,
+          "text" : "44 "
+        },
+        {
+          "baselineOffset" : -17.039999999999964,
+          "fontName" : "Times-Roman",
+          "fontSize" : 31.5,
+          "text" : "I"
+        }
+      ],
+      "text" : "44 I"
+    },
+    {
+      "rect" : [
+        531.09000000000003,
+        324.444975,
+        8.037119999999959,
+        6.900100000000009
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.2772500000000004,
+          "text" : "45"
+        }
+      ],
+      "text" : "45"
+    },
+    {
+      "rect" : [
+        599.48000000000002,
+        305.72497499999997,
+        11.359881299999984,
+        6.900100000000009
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 12.423100000000002,
+          "text" : ",-"
+        }
+      ],
+      "text" : ",-"
+    },
+    {
+      "rect" : [
+        531.09000000000003,
+        298.51497499999999,
+        8.037119999999959,
+        6.900100000000009
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.2772500000000004,
+          "text" : "46"
+        }
+      ],
+      "text" : "46"
+    },
+    {
+      "rect" : [
+        531.09000000000003,
+        255.65000000000001,
+        78.546799999999962,
+        29.599999999999994
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.2772500000000004,
+          "text" : "47 "
+        },
+        {
+          "baselineOffset" : -10.797117500000013,
+          "fontName" : "Times-Roman",
+          "fontSize" : 29.600000000000001,
+          "text" : "I"
+        }
+      ],
+      "text" : "47 I"
+    },
+    {
+      "rect" : [
+        530.85000000000002,
+        245.95497500000002,
+        8.2807199999998602,
+        6.900100000000009
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.3932500000000001,
+          "text" : "48"
+        }
+      ],
+      "text" : "48"
+    },
+    {
+      "rect" : [
+        599.53999999999996,
+        219.63999999999999,
+        9.8568000000000211,
+        29.599999999999994
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 29.600000000000001,
+          "text" : "I"
+        }
+      ],
+      "text" : "I"
+    },
+    {
+      "rect" : [
+        530.61000000000001,
+        219.564975,
+        8.2807199999998602,
+        6.900100000000009
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.3932500000000001,
+          "text" : "49"
+        }
+      ],
+      "text" : "49"
+    },
+    {
+      "rect" : [
+        530.76999999999998,
+        184.125,
+        80.209500000000048,
+        31.5
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.3484999999999996,
+          "text" : "50 "
+        },
+        {
+          "baselineOffset" : -3.6000000000000227,
+          "fontName" : "Times-Roman",
+          "fontSize" : 31.5,
+          "text" : "I"
+        }
+      ],
+      "text" : "50 I"
+    },
+    {
+      "rect" : [
+        530.77999999999997,
+        148.84,
+        79.576800000000048,
+        29.599999999999994
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.9941000000000004,
+          "text" : "51 "
+        },
+        {
+          "baselineOffset" : -13.439999999999998,
+          "fontName" : "Times-Roman",
+          "fontSize" : 29.600000000000001,
+          "text" : "I"
+        }
+      ],
+      "text" : "51 I"
+    },
+    {
+      "rect" : [
+        530.53999999999996,
+        141.80497500000001,
+        7.9386300000001029,
+        6.900100000000009
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.2303499999999996,
+          "text" : "52"
+        }
+      ],
+      "text" : "52"
+    },
+    {
+      "rect" : [
+        600.74000000000001,
+        112.84,
+        9.8568000000000211,
+        29.599999999999994
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 29.600000000000001,
+          "text" : "I"
+        }
+      ],
+      "text" : "I"
+    },
+    {
+      "rect" : [
+        531.01999999999998,
+        114.674975,
+        7.6905150000000049,
+        6.9000999999999948
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.1121999999999996,
+          "text" : "53"
+        }
+      ],
+      "text" : "53"
+    },
+    {
+      "rect" : [
+        600.5,
+        77.575000000000003,
+        10.156500000000051,
+        30.5
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 30.5,
+          "text" : "I"
+        }
+      ],
+      "text" : "I"
+    },
+    {
+      "rect" : [
+        601.94000000000005,
+        42.289999999999999,
+        9.8568000000000211,
+        29.600000000000001
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 29.600000000000001,
+          "text" : "I"
+        }
+      ],
+      "text" : "I"
+    },
+    {
+      "rect" : [
+        602.17680000000007,
+        7.0067999999999966,
+        9.8568000000000211,
+        29.600000000000001
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 29.600000000000001,
+          "text" : "I"
+        }
+      ],
+      "text" : "I"
+    },
+    {
+      "rect" : [
+        0,
+        0,
+        618.24009999999998,
+        796.32010000000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 29.600000000000001,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    }
+  ],
+  "bounds" : [
+    3.8399999999999999,
+    3.1200000000000001,
+    610.56000000000006,
+    790.32000000000005
+  ],
+  "caseID" : "cia-blue-book-14-1955",
+  "graphics" : [
+    [
+      3.8399999999999999,
+      3.1200000000000001,
+      610.56000000000006,
+      790.32000000000005
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 29.600000000000001,
+      "monospaced" : false,
+      "rect" : [
+        598.82000000000005,
+        757.24000000000001,
+        9.8568000000000211,
+        29.600000000000023
+      ],
+      "text" : "I"
+    },
+    {
+      "fontSize" : 29.600000000000001,
+      "monospaced" : false,
+      "rect" : [
+        598.82000000000005,
+        720.77279999999996,
+        9.8568000000000211,
+        29.600000000000023
+      ],
+      "text" : "I"
+    },
+    {
+      "fontSize" : 7.40245,
+      "monospaced" : false,
+      "rect" : [
+        261.56,
+        714.91497500000003,
+        101.18484230000001,
+        6.9000999999999522
+      ],
+      "text" : "LIST OF ILLUSTRATIONS"
+    },
+    {
+      "fontSize" : 7.4047999999999998,
+      "monospaced" : false,
+      "rect" : [
+        290.06999999999999,
+        706.27497500000004,
+        42.181363500000032,
+        6.9000999999999522
+      ],
+      "text" : "(Continued)"
+    },
+    {
+      "fontSize" : 7.7571000000000003,
+      "monospaced" : false,
+      "rect" : [
+        80.840000000000003,
+        671.48497500000008,
+        306.16567199999997,
+        6.9000999999999522
+      ],
+      "text" : "Figure 14 Distribution of Object Sightings by Months Among the Eight Duration"
+    },
+    {
+      "fontSize" : 7.5269000000000004,
+      "monospaced" : false,
+      "rect" : [
+        129.28,
+        662.60497500000008,
+        80.779203599999988,
+        6.9000999999999522
+      ],
+      "text" : "Groups for All Years"
+    },
+    {
+      "fontSize" : 7.7993500000000004,
+      "monospaced" : false,
+      "rect" : [
+        80.600000000000009,
+        645.55497500000001,
+        303.44599499999998,
+        6.9000999999999522
+      ],
+      "text" : "Figure 15 Distribution of Object Sightings by Shape of Object(s) Reported With"
+    },
+    {
+      "fontSize" : 7.6313000000000004,
+      "monospaced" : false,
+      "rect" : [
+        129.06999999999999,
+        636.92497500000002,
+        183.10502500000001,
+        6.9000999999999522
+      ],
+      "text" : "Evaluation Distribution for Each Shape Group ,"
+    },
+    {
+      "fontSize" : 7.7993500000000004,
+      "monospaced" : false,
+      "rect" : [
+        80.840000000000003,
+        619.39497500000004,
+        303.20599500000003,
+        6.9000999999999522
+      ],
+      "text" : "Figure 16 Distribution of Object Sightings by Reported Speed of Object(s) With"
+    },
+    {
+      "fontSize" : 7.6313000000000004,
+      "monospaced" : false,
+      "rect" : [
+        129.06999999999999,
+        610.75497500000006,
+        182.83502500000003,
+        6.9000999999999522
+      ],
+      "text" : "Evaluation Distribution for Each Speed Group ."
+    },
+    {
+      "fontSize" : 7.7993500000000004,
+      "monospaced" : false,
+      "rect" : [
+        80.600000000000009,
+        593.23497500000008,
+        349.05857189999995,
+        6.9000999999999522
+      ],
+      "text" : "Figure 17 Distribution of All Sightings by Observer Location for All Years and Each Year"
+    },
+    {
+      "fontSize" : 7.8415499999999998,
+      "monospaced" : false,
+      "rect" : [
+        80.359999999999999,
+        575.72497500000009,
+        323.60981330000004,
+        6.9000999999999522
+      ],
+      "text" : "Figure 18 Comparison of Known and Unknown Object Sightings by Color, 1947-1952"
+    },
+    {
+      "fontSize" : 7.8415499999999998,
+      "monospaced" : false,
+      "rect" : [
+        80.359999999999999,
+        558.194975,
+        327.29764700000004,
+        6.9000999999999522
+      ],
+      "text" : "Figure 19 Comparison of Known and Unknown Object Sightings by Number of Objects"
+    },
+    {
+      "fontSize" : 7.9270500000000004,
+      "monospaced" : false,
+      "rect" : [
+        128.89000000000001,
+        549.314975,
+        91.71981329999997,
+        6.9000999999999522
+      ],
+      "text" : "per Sighting, 1947-1952"
+    },
+    {
+      "fontSize" : 7.8415499999999998,
+      "monospaced" : false,
+      "rect" : [
+        80.359999999999999,
+        532.27497500000004,
+        323.60981330000004,
+        6.9000999999999522
+      ],
+      "text" : "Figure 20 Comparison of Known and Unknown Object Sightings by Speed, 1947-1952"
+    },
+    {
+      "fontSize" : 7.7993500000000004,
+      "monospaced" : false,
+      "rect" : [
+        80.359999999999999,
+        514.75497500000006,
+        335.13356279999999,
+        6.9000999999999522
+      ],
+      "text" : "Figure 21 Comparison of Known and Unknown Object Sightings by Duration, 1947-1952"
+    },
+    {
+      "fontSize" : 7.7993500000000004,
+      "monospaced" : false,
+      "rect" : [
+        80.120000000000005,
+        497.47497500000003,
+        323.60981329999993,
+        6.900100000000009
+      ],
+      "text" : "Figure 22 Comparison of Known and Unknown Object Sightings by Shape, 1947-1952"
+    },
+    {
+      "fontSize" : 7.7993500000000004,
+      "monospaced" : false,
+      "rect" : [
+        80.359999999999999,
+        480.194975,
+        366.56981329999996,
+        6.900100000000009
+      ],
+      "text" : "Figure 23 Comparison of Known and Unknown Object Sightings by Light Brightness, 1947-1952"
+    },
+    {
+      "fontSize" : 7.8415499999999998,
+      "monospaced" : false,
+      "rect" : [
+        80.120000000000005,
+        462.91497499999997,
+        361.08148699999992,
+        6.900100000000009
+      ],
+      "text" : "Figure 24 Comparison of Monthly Distribution of Object Sightings Evaluated as Astronomical"
+    },
+    {
+      "fontSize" : 7.7423500000000001,
+      "monospaced" : false,
+      "rect" : [
+        128.86000000000001,
+        454.03497499999997,
+        194.02411919999997,
+        6.900100000000009
+      ],
+      "text" : "Versus Total Object Sightings Less Astronomical."
+    },
+    {
+      "fontSize" : 7.8415499999999998,
+      "monospaced" : false,
+      "rect" : [
+        80.120000000000005,
+        436.754975,
+        340.90814399999999,
+        6.900100000000009
+      ],
+      "text" : "Figure 25 Comparison of Monthly Distribution of Object Sightings Evaluated as Aircraft"
+    },
+    {
+      "fontSize" : 7.7821000000000007,
+      "monospaced" : false,
+      "rect" : [
+        128.62,
+        428.12497500000001,
+        170.48814400000003,
+        6.900100000000009
+      ],
+      "text" : "Versus Total Object Sightings Less Aircraft"
+    },
+    {
+      "fontSize" : 7.7993500000000004,
+      "monospaced" : false,
+      "rect" : [
+        80.120000000000005,
+        410.84497499999998,
+        337.88898650000004,
+        6.900100000000009
+      ],
+      "text" : "Figure 26 Comparison of Monthly Distribution of Object Sightings Evaluated as Balloon"
+    },
+    {
+      "fontSize" : 7.7423500000000001,
+      "monospaced" : false,
+      "rect" : [
+        128.62,
+        402.194975,
+        171.31853720000004,
+        6.900100000000009
+      ],
+      "text" : "Versus Total Object Sightings Less Balloon,"
+    },
+    {
+      "fontSize" : 7.8415499999999998,
+      "monospaced" : false,
+      "rect" : [
+        79.879999999999995,
+        385.16497499999997,
+        352.46424400000012,
+        6.900100000000009
+      ],
+      "text" : "Figure 27 Comparison of Monthly Distribution of Object Sightings Evaluated as Insufficient"
+    },
+    {
+      "fontSize" : 7.6491500000000006,
+      "monospaced" : false,
+      "rect" : [
+        128.34,
+        376.51497499999999,
+        276.63730140000007,
+        6.900100000000009
+      ],
+      "text" : "Information Versus Total Object Sightings Less Insufficient Information"
+    },
+    {
+      "fontSize" : 7.7993500000000004,
+      "monospaced" : false,
+      "rect" : [
+        79.879999999999995,
+        359.45000000000005,
+        330.39244400000007,
+        7
+      ],
+      "text" : "Figure 28 Comparison of Monthly Distribution of Object Sightings Evaluated as Other"
+    },
+    {
+      "fontSize" : 7.7821000000000007,
+      "monospaced" : false,
+      "rect" : [
+        128.38,
+        350.84497499999998,
+        159.98420269999997,
+        6.900100000000009
+      ],
+      "text" : "Versus Total Object Sightings Less Other"
+    },
+    {
+      "fontSize" : 7.7571000000000003,
+      "monospaced" : false,
+      "rect" : [
+        79.879999999999995,
+        333.314975,
+        342.06943840000002,
+        6.900100000000009
+      ],
+      "text" : "Figure 29 Comparison of Monthly Distribution of Object Sightings Evaluated as Unknown"
+    },
+    {
+      "fontSize" : 7.7821000000000007,
+      "monospaced" : false,
+      "rect" : [
+        128.38,
+        324.67497500000002,
+        171.64922799999999,
+        6.900100000000009
+      ],
+      "text" : "Versus Total Object Sightings Less Unknown"
+    },
+    {
+      "fontSize" : 7.8415499999999998,
+      "monospaced" : false,
+      "rect" : [
+        79.640000000000001,
+        307.634975,
+        357.02791480000008,
+        6.900100000000009
+      ],
+      "text" : "Figure 30 Characteristics Profiles of Object Sightings by Total Sample, Known Evaluations,"
+    },
+    {
+      "fontSize" : 7.5233500000000006,
+      "monospaced" : false,
+      "rect" : [
+        128.08000000000001,
+        298.754975,
+        297.61502500000006,
+        6.900100000000009
+      ],
+      "text" : "and Individual Known Evaluations, With Unknown Evaluations Superimposed ,"
+    },
+    {
+      "fontSize" : 7.8415499999999998,
+      "monospaced" : false,
+      "rect" : [
+        79.400000000000006,
+        281.23497499999996,
+        342.36982999999998,
+        6.900100000000009
+      ],
+      "text" : "Figure 31 Frequency of Object, Unit, and All Sightings Within the U. S., 1947-1952, by"
+    },
+    {
+      "fontSize" : 7.5272000000000006,
+      "monospaced" : false,
+      "rect" : [
+        127.77,
+        272.84497499999998,
+        204.72040340000001,
+        6.900100000000009
+      ],
+      "text" : "Subdivisions of One Degree of Latitude and Longitude"
+    },
+    {
+      "fontSize" : 7.8415499999999998,
+      "monospaced" : false,
+      "rect" : [
+        79.159999999999997,
+        255.32497500000002,
+        348.36466210000015,
+        6.9000999999999806
+      ],
+      "text" : "Figure 32 Distribution of Object Sightings by Evaluation for the Twelve Regional Areas of"
+    },
+    {
+      "fontSize" : 7.4572000000000003,
+      "monospaced" : false,
+      "rect" : [
+        128.14000000000001,
+        246.67497500000002,
+        170.2754813,
+        6.900100000000009
+      ],
+      "text" : "the U. S., With the Strategic Areas Located"
+    },
+    {
+      "fontSize" : 7.7993500000000004,
+      "monospaced" : false,
+      "rect" : [
+        79.159999999999997,
+        229.39497500000002,
+        327.17416839999999,
+        6.900100000000009
+      ],
+      "text" : "Figure 33 Comparison of Evaluation of Object Sightings in the Strategic Areas of the"
+    },
+    {
+      "fontSize" : 7.8511500000000005,
+      "monospaced" : false,
+      "rect" : [
+        127.59,
+        220.76497500000002,
+        77.372896300000008,
+        6.900100000000009
+      ],
+      "text" : "Central East Region"
+    },
+    {
+      "fontSize" : 7.7993500000000004,
+      "monospaced" : false,
+      "rect" : [
+        78.920000000000002,
+        203.48497500000002,
+        327.4149046,
+        6.900100000000009
+      ],
+      "text" : "Figure 34 Comparison of Evaluation of Object Sightings in the Strategic Areas of the"
+    },
+    {
+      "fontSize" : 7.8511500000000005,
+      "monospaced" : false,
+      "rect" : [
+        127.59,
+        195.08497500000001,
+        91.533029800000037,
+        6.900100000000009
+      ],
+      "text" : "Central Midwest Region"
+    },
+    {
+      "fontSize" : 7.7993500000000004,
+      "monospaced" : false,
+      "rect" : [
+        78.920000000000002,
+        177.564975,
+        327.17490459999999,
+        6.900100000000009
+      ],
+      "text" : "Figure 35 Comparison of Evaluation of Object Sightings in the Strategic Areas of the"
+    },
+    {
+      "fontSize" : 7.8511500000000005,
+      "monospaced" : false,
+      "rect" : [
+        127.59,
+        169.39497500000002,
+        91.533029800000037,
+        6.900100000000009
+      ],
+      "text" : "Central Farwest Region"
+    },
+    {
+      "fontSize" : 7.7993500000000004,
+      "monospaced" : false,
+      "rect" : [
+        78.920000000000002,
+        151.87497500000003,
+        327.4149046,
+        6.900100000000009
+      ],
+      "text" : "Figure 36 Comparison of Evaluation of Object Sightings in the Strategic Areas of the"
+    },
+    {
+      "fontSize" : 7.4365500000000004,
+      "monospaced" : false,
+      "rect" : [
+        127.30000000000001,
+        143.48497500000002,
+        91.24502499999997,
+        6.900100000000009
+      ],
+      "text" : "South Midwest Region ."
+    },
+    {
+      "fontSize" : 7.8415499999999998,
+      "monospaced" : false,
+      "rect" : [
+        78.920000000000002,
+        125.714975,
+        328.13490460000003,
+        6.9000999999999948
+      ],
+      "text" : "Figure 37 Comparison of Evaluation of Object Sightings in the Strategic Areas of the"
+    },
+    {
+      "fontSize" : 7.4365500000000004,
+      "monospaced" : false,
+      "rect" : [
+        127.78,
+        118.034975,
+        70.222896300000002,
+        6.9000999999999948
+      ],
+      "text" : "South West Region"
+    },
+    {
+      "fontSize" : 11.8597,
+      "monospaced" : false,
+      "rect" : [
+        303.73000000000002,
+        41.089999999999996,
+        11.028463199999976,
+        10.399999999999999
+      ],
+      "text" : "iv"
+    },
+    {
+      "fontSize" : 29.600000000000001,
+      "monospaced" : false,
+      "rect" : [
+        598.82000000000005,
+        685.25,
+        9.8568000000000211,
+        29.600000000000023
+      ],
+      "text" : "I"
+    },
+    {
+      "fontSize" : 7.7262000000000004,
+      "monospaced" : false,
+      "rect" : [
+        524.12,
+        689.23497500000008,
+        17.908516200000008,
+        6.9000999999999522
+      ],
+      "text" : "Page"
+    },
+    {
+      "fontSize" : 7.2404000000000002,
+      "monospaced" : false,
+      "rect" : [
+        531.50999999999999,
+        648.67499999999995,
+        78.162700000000086,
+        31.899999999999977
+      ],
+      "text" : "30 I"
+    },
+    {
+      "fontSize" : 7.0035500000000006,
+      "monospaced" : false,
+      "rect" : [
+        532.72000000000003,
+        613.49000000000001,
+        75.716800000000035,
+        30.335074999999961
+      ],
+      "text" : "31 I"
+    },
+    {
+      "fontSize" : 7.2404000000000002,
+      "monospaced" : false,
+      "rect" : [
+        532.47000000000003,
+        610.99497500000007,
+        7.9597349999999096,
+        6.9000999999999522
+      ],
+      "text" : "32"
+    },
+    {
+      "fontSize" : 7.12195,
+      "monospaced" : false,
+      "rect" : [
+        532.48000000000002,
+        577.01499999999999,
+        76.579500000000053,
+        31.5
+      ],
+      "text" : "33 I"
+    },
+    {
+      "fontSize" : 7.2404000000000002,
+      "monospaced" : false,
+      "rect" : [
+        532.23000000000002,
+        575.9549750000001,
+        7.9597349999999096,
+        6.9000999999999522
+      ],
+      "text" : "34"
+    },
+    {
+      "fontSize" : 7.2404000000000002,
+      "monospaced" : false,
+      "rect" : [
+        531.98741760000007,
+        541.96000000000004,
+        76.689382399999886,
+        29.600000000000023
+      ],
+      "text" : "35 I"
+    },
+    {
+      "fontSize" : 7.12195,
+      "monospaced" : false,
+      "rect" : [
+        532.24000000000001,
+        532.27497500000004,
+        7.710990000000038,
+        6.9000999999999522
+      ],
+      "text" : "36"
+    },
+    {
+      "fontSize" : 29.600000000000001,
+      "monospaced" : false,
+      "rect" : [
+        518.87334250000004,
+        505.96000000000004,
+        80.426657500000147,
+        29.600000000000023
+      ],
+      "text" : "I37"
+    },
+    {
+      "fontSize" : 7.2404000000000002,
+      "monospaced" : false,
+      "rect" : [
+        531.98741760000007,
+        497.72402470000003,
+        7.9597349999999096,
+        6.900100000000009
+      ],
+      "text" : "38"
+    },
+    {
+      "fontSize" : 31.900000000000002,
+      "monospaced" : false,
+      "rect" : [
+        518.38436750000005,
+        469.875,
+        80.905632499999911,
+        31.899999999999977
+      ],
+      "text" : "I39"
+    },
+    {
+      "fontSize" : 7.3932500000000001,
+      "monospaced" : false,
+      "rect" : [
+        531.57000000000005,
+        433.97500000000002,
+        78.209499999999935,
+        31.5
+      ],
+      "text" : "40 I"
+    },
+    {
+      "fontSize" : 7.0453000000000001,
+      "monospaced" : false,
+      "rect" : [
+        531.57000000000005,
+        428.12497500000001,
+        7.5500250000000051,
+        6.900100000000009
+      ],
+      "text" : "41"
+    },
+    {
+      "fontSize" : 7.3932500000000001,
+      "monospaced" : false,
+      "rect" : [
+        531.33000000000004,
+        398.02997499999998,
+        79.152633299999934,
+        32.20010000000002
+      ],
+      "text" : "42 I"
+    },
+    {
+      "fontSize" : 7.3932500000000001,
+      "monospaced" : false,
+      "rect" : [
+        531.09000000000003,
+        362.59499999999997,
+        79.302699999999959,
+        31.899999999999977
+      ],
+      "text" : "43 I"
+    },
+    {
+      "fontSize" : 7.3932500000000001,
+      "monospaced" : false,
+      "rect" : [
+        531.09000000000003,
+        327.41500000000002,
+        79.40949999999998,
+        31.5
+      ],
+      "text" : "44 I"
+    },
+    {
+      "fontSize" : 7.2772500000000004,
+      "monospaced" : false,
+      "rect" : [
+        531.09000000000003,
+        324.444975,
+        8.037119999999959,
+        6.900100000000009
+      ],
+      "text" : "45"
+    },
+    {
+      "fontSize" : 12.423100000000002,
+      "monospaced" : false,
+      "rect" : [
+        599.48000000000002,
+        305.72497499999997,
+        11.359881299999984,
+        6.900100000000009
+      ],
+      "text" : ",-"
+    },
+    {
+      "fontSize" : 7.2772500000000004,
+      "monospaced" : false,
+      "rect" : [
+        531.09000000000003,
+        298.51497499999999,
+        8.037119999999959,
+        6.900100000000009
+      ],
+      "text" : "46"
+    },
+    {
+      "fontSize" : 7.2772500000000004,
+      "monospaced" : false,
+      "rect" : [
+        531.09000000000003,
+        255.65000000000001,
+        78.546799999999962,
+        29.599999999999994
+      ],
+      "text" : "47 I"
+    },
+    {
+      "fontSize" : 7.3932500000000001,
+      "monospaced" : false,
+      "rect" : [
+        530.85000000000002,
+        245.95497500000002,
+        8.2807199999998602,
+        6.900100000000009
+      ],
+      "text" : "48"
+    },
+    {
+      "fontSize" : 29.600000000000001,
+      "monospaced" : false,
+      "rect" : [
+        599.53999999999996,
+        219.63999999999999,
+        9.8568000000000211,
+        29.599999999999994
+      ],
+      "text" : "I"
+    },
+    {
+      "fontSize" : 7.3932500000000001,
+      "monospaced" : false,
+      "rect" : [
+        530.61000000000001,
+        219.564975,
+        8.2807199999998602,
+        6.900100000000009
+      ],
+      "text" : "49"
+    },
+    {
+      "fontSize" : 7.3484999999999996,
+      "monospaced" : false,
+      "rect" : [
+        530.76999999999998,
+        184.125,
+        80.209500000000048,
+        31.5
+      ],
+      "text" : "50 I"
+    },
+    {
+      "fontSize" : 6.9941000000000004,
+      "monospaced" : false,
+      "rect" : [
+        530.77999999999997,
+        148.84,
+        79.576800000000048,
+        29.599999999999994
+      ],
+      "text" : "51 I"
+    },
+    {
+      "fontSize" : 7.2303499999999996,
+      "monospaced" : false,
+      "rect" : [
+        530.53999999999996,
+        141.80497500000001,
+        7.9386300000001029,
+        6.900100000000009
+      ],
+      "text" : "52"
+    },
+    {
+      "fontSize" : 29.600000000000001,
+      "monospaced" : false,
+      "rect" : [
+        600.74000000000001,
+        112.84,
+        9.8568000000000211,
+        29.599999999999994
+      ],
+      "text" : "I"
+    },
+    {
+      "fontSize" : 7.1121999999999996,
+      "monospaced" : false,
+      "rect" : [
+        531.01999999999998,
+        114.674975,
+        7.6905150000000049,
+        6.9000999999999948
+      ],
+      "text" : "53"
+    },
+    {
+      "fontSize" : 30.5,
+      "monospaced" : false,
+      "rect" : [
+        600.5,
+        77.575000000000003,
+        10.156500000000051,
+        30.5
+      ],
+      "text" : "I"
+    },
+    {
+      "fontSize" : 29.600000000000001,
+      "monospaced" : false,
+      "rect" : [
+        601.94000000000005,
+        42.289999999999999,
+        9.8568000000000211,
+        29.600000000000001
+      ],
+      "text" : "I"
+    },
+    {
+      "fontSize" : 29.600000000000001,
+      "monospaced" : false,
+      "rect" : [
+        602.17680000000007,
+        7.0067999999999966,
+        9.8568000000000211,
+        29.600000000000001
+      ],
+      "text" : "I"
+    }
+  ],
+  "page" : 6,
+  "rightsBasis" : "Government report; physical page 4 states no copyright material is contained in the publication. Source unchanged; PDF copy permissions are a separate technical constraint.",
+  "sourceSHA256" : "90e05e77fc088c29758c2ddda514c0c12f317e5686ee213d348db2f9da152ee3",
+  "sourceTitle" : "Project Blue Book Special Report No. 14",
+  "sourceURL" : "https://www.war.gov/medialink/ufo/061226/release_03/documents/CIA-UAP-015-Project_Blue_Book_Special_Report_No_14.pdf"
+}

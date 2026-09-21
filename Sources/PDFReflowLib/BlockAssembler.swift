@@ -24,6 +24,15 @@ enum LineRole: Equatable, Sendable {
     case prose
 }
 
+/// The kind of list marker a line opens with: whether the page numbered or lettered it, and the
+/// point or bracket that closes it. Two items belong to one list when their markers agree on
+/// both, which is what lets an item whose marker stands alone on its line be vouched for by an
+/// item that carries its own text (#172).
+struct MarkerKind: Equatable, Sendable {
+    let numbered: Bool
+    let terminator: Character
+}
+
 /// Where a marker-leading line sits in the column of same-size lines around it: the page-level
 /// evidence that separates the opening of a list item from a wrapped continuation (#39).
 struct MarkerColumn: Equatable, Sendable {
@@ -93,7 +102,85 @@ extension LayoutReconstructor {
         // the extractor cut out of the middle of a row began no line, so what opens it is
         // whatever the page was printing there — an operator, not a list marker (#203).
         if isList(line.text), !continuesPrintedRow(line, in: lines, body: typography.body) { return .listItem }
+        // A marker the extractor left alone on its line is still a marker, where the page says
+        // so (#172).
+        if opensAloneAsMarker(line, in: lines, body: typography.body) {
+            return .markedLine(markerColumn(of: line, in: lines, body: typography.body))
+        }
         return .prose
+    }
+
+    /// Whether `line` is a list marker the extractor left with none of its item's text: the whole
+    /// of the line is a number or a single letter with a point or a bracket.
+    ///
+    /// Both marker tests require whitespace after that point or bracket, because the item's own
+    /// text follows it. PDFKit ends a line wherever the page leaves a gap, so an item whose marker
+    /// the page hangs a little further out comes back as two lines and the first matches neither
+    /// test: Wallace's page 101 returns `17)` and `(− 16,− 14), (11,− 14)` where every other
+    /// exercise on the page is one line, and exercise 17 was read as prose and emitted as a `<p>`
+    /// paragraph in a page of `<pre>` items (#172; the same page's `9)` and `10)` once their line
+    /// is split, [#14](https://github.com/vocaro/PDFReflowLib/issues/14)).
+    ///
+    /// A marker standing alone carries no text of its own to vouch for it, and a number with a
+    /// point is also how a citation ends, so the page must vouch for it twice over:
+    ///
+    /// - **its row is a row of items, not a row of cells.** Everything the page set to its right
+    ///   on that row must be either within the three quarters of a body a column's gutter needs —
+    ///   the item's own text, which `continuesRow` then joins to it — or a marker of the same list
+    ///   again, which is the next column of a grid of items. Wallace sets exercises 17 and 18 on
+    ///   one row, four points and a column apart; NOAA hangs a reference's number a column from
+    ///   its entry, and the Blue Book's tables set a figure beside a number, and those entries and
+    ///   figures are neither. A row of cells belongs to the table readers
+    ///   ([#210](https://github.com/vocaro/PDFReflowLib/issues/210)). A piece to the *left* of it
+    ///   within that gutter means the extractor cut this line out of the middle of a row, so what
+    ///   opens it is whatever the page printed there and not a marker at all (#203);
+    /// - **the page states the list.** Another line of its size, on its own left edge, opens an
+    ///   item of the same list — the same marker kind, numbered or lettered and closed the same
+    ///   way — and carries that item's own text after it. The 9/11 report's notes leave a
+    ///   citation's year on a line of its own (`2001.`) in a column whose note numbers are set in
+    ///   from it, so nothing on that edge vouches for it and it stays the prose it is.
+    static func opensAloneAsMarker(_ line: TextLine, in lines: [TextLine], body: CGFloat) -> Bool {
+        guard let kind = markerKind(of: line.text, whole: true),
+              !continuesPrintedRow(line, in: lines, body: body) else { return false }
+        let gutter = body * 0.75
+        for other in lines where other != line && other.sharesRow(with: line)
+            && other.rect.minX >= line.rect.maxX {
+            guard other.rect.minX - line.rect.maxX < gutter
+                || markerKind(of: other.text, whole: true) == kind
+                || markerKind(of: other.text, whole: false) == kind else { return false }
+        }
+        return lines.contains { other in
+            other != line && other.hasSize(line.fontSize)
+                && abs(other.rect.minX - line.rect.minX) < body * 0.5
+                && markerKind(of: other.text, whole: false) == kind
+        }
+    }
+
+    /// What kind of list marker a text opens with: whether the page numbered or lettered it, and
+    /// the point or bracket that closes it. `whole` demands that the marker be the entire text;
+    /// otherwise the item's own words must follow it after a space, as `isMarked` requires.
+    /// Numbers are ASCII digits and letters single ASCII letters, exactly as those tests read them.
+    static func markerKind(of text: String, whole: Bool) -> MarkerKind? {
+        var index = text.startIndex
+        var digits = 0
+        while index < text.endIndex, text[index].isASCII, text[index].isNumber {
+            digits += 1
+            index = text.index(after: index)
+        }
+        if digits == 0 {
+            guard index < text.endIndex, text[index].isASCII, text[index].isLetter else { return nil }
+            index = text.index(after: index)
+        }
+        guard index < text.endIndex else { return nil }
+        let terminator = text[index]
+        guard terminator == "." || terminator == ")" else { return nil }
+        index = text.index(after: index)
+        if whole {
+            guard index == text.endIndex else { return nil }
+        } else {
+            guard index < text.endIndex, text[index].isWhitespace else { return nil }
+        }
+        return MarkerKind(numbered: digits > 0, terminator: terminator)
     }
 
     /// Whether the extractor cut `line` out of the middle of a printed row: another line stands
@@ -240,20 +327,27 @@ struct BlockAssembler {
     /// The table row the last block holds, while more pieces of that printed row can still join
     /// it (#137, #210). Anything else the page hands over closes the row.
     private var rowInProgress: TextLine?
+    /// The list item the last block holds, while the rest of that item's own printed row can
+    /// still join it (#172). PDFKit ends a line at the gap a page leaves after a hanging marker,
+    /// so an item can arrive as its marker and then its text.
+    private var itemRowInProgress: TextLine?
     /// The left edge of a paragraph a marker-leading line opened because the page set no list at
     /// that edge, while that line is still the whole of it (#171).
     private var initialOpening: CGFloat?
 
     /// Assets the page's own links cover, by asset path (#247).
     private let imageLinks: [String: LinkTarget]
+    /// The wrapped second line of each entry the page hangs, by the entry it carries on (#160).
+    private let hangingEntries: [CGRect: CGRect]
 
     init(page: Int, body: CGFloat, leading: CGFloat? = nil, hyphens: HyphenContext,
-         imageLinks: [String: LinkTarget] = [:]) {
+         imageLinks: [String: LinkTarget] = [:], hangingEntries: [CGRect: CGRect] = [:]) {
         self.page = page
         self.body = body
         self.leading = leading
         self.hyphens = hyphens
         self.imageLinks = imageLinks
+        self.hangingEntries = hangingEntries
     }
 
     private func headingID() -> String { "heading-\(page)-\(blocks.count)" }
@@ -289,6 +383,7 @@ struct BlockAssembler {
         flushParagraph()
         codeOrigin = nil
         rowInProgress = nil
+        itemRowInProgress = nil
         if note?.group != group { flushNote() }
         if let current = note {
             note = (group, join(current.text, line.content))
@@ -303,6 +398,7 @@ struct BlockAssembler {
         flushParagraph()
         codeOrigin = nil
         rowInProgress = nil
+        itemRowInProgress = nil
         blocks.append(LayoutReconstructor.imageBlock(assetID: assetID, page: page,
                                                      link: imageLinks[assetID]))
     }
@@ -315,6 +411,7 @@ struct BlockAssembler {
         flushNote()
         codeOrigin = nil
         rowInProgress = nil
+        itemRowInProgress = nil
         if paragraphTag?.group != tag.group { flushParagraph() }
         if paragraph.elements.isEmpty {
             paragraph = line.content
@@ -366,6 +463,10 @@ struct BlockAssembler {
         if paragraphHeadingLevel > 0 { flushParagraph() }
         if !line.monospaced { codeOrigin = nil }
         if case .tableRow = role {} else { rowInProgress = nil }
+        // The rest of an item's own printed row is the only thing that can still join it, and it
+        // reaches the assembler as prose (#172).
+        let openItemRow = itemRowInProgress
+        itemRowInProgress = nil
         switch role {
         case .heading:
             flushParagraph()
@@ -400,6 +501,7 @@ struct BlockAssembler {
             // Preserve significant breaks and native styles; do not rewrite list markers or code.
             blocks.append(ReflowBlock(content: .preformatted(line.content), page: page))
             itemLine = line
+            itemRowInProgress = line
             return
         case .markedLine(let column):
             // A wrapped line whose first word is an initial, a citation or a year belongs to the
@@ -410,6 +512,7 @@ struct BlockAssembler {
             } else if column.setsAList {
                 flushParagraph()
                 blocks.append(ReflowBlock(content: .preformatted(line.content), page: page))
+                itemRowInProgress = line
             } else {
                 // The page set no list on this edge, so the opening token is an initial, a page
                 // reference or a citation — `T. Graham Giusti`, `P. E. Fansler, a Florida
@@ -444,6 +547,22 @@ struct BlockAssembler {
             }
             rowInProgress = line
         case .prose:
+            // Two pieces of one printed row are one block, whichever kind of block the first
+            // piece opened: the rest of an item's row is that item's own text, not a paragraph
+            // standing beside it. PDFKit ends a line at the gap a page leaves after a hanging
+            // marker, so Wallace's page 101 hands over `17)` and then `(− 16,− 14), (11,− 14)`,
+            // which the page set four points to its right (#172, the `continuesRow` bound of
+            // #57).
+            if let above = openItemRow, let last = blocks.last, last.page == page,
+               case let .preformatted(text) = last.content, paragraph.elements.isEmpty,
+               continuesRow(above, line) {
+                var combined = text
+                combined.append(InlineText(" "))
+                combined.append(line.content)
+                blocks[blocks.count - 1].content = .preformatted(combined)
+                itemRowInProgress = line
+                return
+            }
             // An item the page broke mid-word keeps the rest of its word. The 9/11 report sets
             // its recommendations as items and breaks one over the block boundary, so
             // `• …supervise the planning and direc-` was followed by `tion of the operation;` as
@@ -473,8 +592,9 @@ struct BlockAssembler {
     }
 
     /// Whether `line` continues the paragraph `previous` is part of: the previous line wraps, the
-    /// two are stacked at ordinary leading or are two pieces of one printed row, and the previous
-    /// line is not a short line the page has already closed.
+    /// two are stacked at ordinary leading, are two pieces of one printed row, or are an entry and
+    /// the wrap the page hangs under it, and the previous line is not a short line the page has
+    /// already closed.
     private func continuesParagraph(_ prev: TextLine, _ line: TextLine) -> Bool {
         guard prev.wraps != false else { return false }
         // A short line ending a sentence closes its paragraph however the two lines stand.
@@ -482,8 +602,12 @@ struct BlockAssembler {
         guard !(short && prev.text.last.map { ".!?".contains($0) } == true) else { return false }
         if continuesRow(prev, line) { return true }
         let verticalGap = prev.rect.minY - line.rect.maxY
+        // A list the page hangs sets its wraps further in than one column's lines ever stand
+        // apart; `LayoutReconstructor.hangingEntries` reads which ones the page hung (#160).
+        let hangs = hangingEntries[line.rect] == prev.rect
         guard verticalGap >= -body * 0.4, verticalGap < body * 0.9, onStatedLeading(prev, line),
-              abs(prev.rect.minX - line.rect.minX) < body * 1.5 || centered(prev, line) else { return false }
+              abs(prev.rect.minX - line.rect.minX) < body * 1.5 || centered(prev, line) || hangs
+        else { return false }
         // Prose fills its measure, so a line that used under half of the one beneath it ended
         // something, and a line the page then sets further in begins the next thing. #39 already
         // reads a marker set in past the line above it as the opening of an item rather than a

@@ -558,6 +558,57 @@ enum LayoutReconstructor {
         // its columns row by row. Where the page states the run-on, its columns are ordered as
         // runs instead of as lines (#174).
         if let runs = columnRuns(elements, bodySize: bodySize) { return runs.flatMap { $0 } }
+        // Every straight cut, and the column runs, have failed, and the row-major sort below would
+        // weave this block's columns together. One reading is still left: a picture across the
+        // block's measure with everything else on one side of it. #137's cut above asks for
+        // content on both sides, because a picture at the head or the foot of a block separates
+        // nothing — but it carries the whole measure with it, so while it stands in the group no
+        // gutter can be found past it either. The FAA handbook opens page 391 with exactly that,
+        // a full-measure chart with nothing printed above it, over two columns that then
+        // interleaved row by row (#160).
+        //
+        // A line set across the same measure directly against the picture's edge is that
+        // picture's label, and bridges the columns exactly as the picture does: cutting at the
+        // picture alone leaves the caption joining them, which is what page 341 does with
+        // `Figure 14-6…`, a caption 7.7 points beneath a figure that spans both columns. The band
+        // grows only from the picture's own two edges, so a one-column page, whose every line
+        // spans its block, gives up at most the line above and the line below — never a chain of
+        // them down the page.
+        //
+        // It is tried last because a page the other readings already describe must keep their
+        // description: the handbook's appendix of abbreviations opens under a full-measure banner
+        // and sets two columns of short entries beneath it, which `columnRuns` reads as two runs
+        // and this cut would leave to the row-major sort, one entry of each column at a time.
+        func divides(_ band: CGRect, _ members: [Int]) -> Bool {
+            let rest = elements.indices.filter { !members.contains($0) }.map { elements[$0].rect }
+            return rest.allSatisfy { $0.minY >= band.maxY || $0.maxY <= band.minY }
+        }
+        func band(around index: Int) -> (rect: CGRect, members: [Int])? {
+            let seed = elements[index].rect
+            guard elements[index].image != nil, seed.width >= span.width * 0.9 else { return nil }
+            var rect = seed
+            var members = [index]
+            for other in elements.indices where other != index {
+                let label = elements[other].rect
+                guard elements[other].image == nil, label.width >= span.width * 0.9,
+                      label.minY <= seed.maxY + bodySize, label.maxY >= seed.minY - bodySize
+                else { continue }
+                let grown = rect.union(label)
+                guard divides(grown, members + [other]) else { continue }
+                rect = grown
+                members.append(other)
+            }
+            return divides(rect, members) ? (rect, members) : nil
+        }
+        if let divider = elements.indices.lazy.compactMap(band).first {
+            let rect = divider.rect
+            let members = divider.members.sorted { elements[$0].rect.midY > elements[$1].rect.midY }
+            return ordered(elements.filter { $0.rect.minY >= rect.maxY },
+                           bodySize: bodySize, depth: depth + 1, exhausted: &exhausted)
+                + members.map { elements[$0] }
+                + ordered(elements.filter { $0.rect.maxY <= rect.minY },
+                          bodySize: bodySize, depth: depth + 1, exhausted: &exhausted)
+        }
         return elements.sorted {
             abs($0.rect.midY - $1.rect.midY) > bodySize * 0.4
                 ? $0.rect.midY > $1.rect.midY : $0.rect.minX < $1.rect.minX
@@ -830,6 +881,65 @@ enum LayoutReconstructor {
             }.min()
         }.sorted()
         return gaps.isEmpty ? nil : gaps[gaps.count / 4]
+    }
+
+    /// The wrapped second line of each entry a page hangs, by the entry line it carries on (#160).
+    ///
+    /// Project Blue Book's list of illustrations sets each entry's title from its own left margin
+    /// and hangs the wrap 48.5 points in, at 7.8-point type — six times the size, where
+    /// `BlockAssembler.continuesParagraph` allows two lines of one column one and a half bodies.
+    /// So thirty entries reflowed as sixty paragraphs, each cut where the page wrapped it, with
+    /// the page numbers read afterwards in their own column and nothing between the halves.
+    ///
+    /// The indent alone proves nothing: a book that opens its paragraphs on a first-line indent
+    /// sets the same two edges in the same alternation, and `firstLineIndentRun` reads the Blue
+    /// Book's list as one. What separates them is what the entry line itself does. A paragraph
+    /// ends on a short line that has run out of words; an entry that wrapped ran out of room. So
+    /// the page must state all of this, and the rule speaks only where the column test is silent:
+    ///
+    /// - the wrap stands directly beneath the entry, at its size, on the page's own leading, and
+    ///   set in further than the column window the ordinary test already covers;
+    /// - the entry reads as a sentence, fills its measure — at least twelve of its own sizes —
+    ///   and ends no sentence (past closing quotes and brackets), so it broke for want of room
+    ///   and not because it was finished, which is what the last line of a paragraph above an
+    ///   indented opening is;
+    /// - the wrap carries at least two letters and stops a whole body short of the entry's right
+    ///   edge, as the tail of an entry does and a justified opening line does not. Project Blue
+    ///   Book's inherited layer merges the rule printed down its margin into the line beside it
+    ///   (#216), which leaves both lines ending at the same margin and their boxes a type size
+    ///   too tall; that is how page 22's hanging definitions looked like entries and their wraps;
+    /// - the page hangs at least three entries on one and the same continuation edge, so a single
+    ///   indented line is never read as a wrap.
+    static func hangingEntries(in lines: [TextLine], body: CGFloat) -> [CGRect: CGRect] {
+        let closing: Set<Character> = ["\u{201D}", "\u{2019}", "\"", "'", ")", "]"]
+        var candidates: [(wrap: TextLine, entry: TextLine)] = []
+        for line in lines where !line.monospaced && !isList(line.text) {
+            let size = max(line.fontSize, 4)
+            let above = lines.filter { other in
+                other != line && !other.monospaced && other.hasSize(line.fontSize)
+                    && other.overlapsHorizontally(line) && !other.sharesRow(with: line)
+                    && other.rect.midY > line.rect.midY
+            }.min { $0.rect.minY < $1.rect.minY }
+            guard let entry = above, entry.wraps != false else { continue }
+            let gap = entry.rect.minY - line.rect.maxY
+            guard gap >= -body * 0.4, gap < body * 0.9,
+                  line.rect.minX - entry.rect.minX > body * 1.5,
+                  line.rect.maxX <= entry.rect.maxX - body,
+                  line.text.count(where: \.isLetter) >= 2,
+                  entry.rect.width >= size * 12, readsAsSentence(entry),
+                  let ending = entry.text.reversed().first(where: { !$0.isWhitespace && !closing.contains($0) }),
+                  !".!?:;".contains(ending) else { continue }
+            candidates.append((line, entry))
+        }
+        var edges: [Int: [(wrap: TextLine, entry: TextLine)]] = [:]
+        for candidate in candidates {
+            edges[Int((candidate.wrap.rect.minX / max(body, 4) * 2).rounded()), default: []].append(candidate)
+        }
+        var result: [CGRect: CGRect] = [:]
+        for hung in edges.values where hung.count >= 3 {
+            for candidate in hung { result[candidate.wrap.rect] = candidate.entry.rect }
+        }
+        return result
     }
 
     /// Whether the page opens its paragraphs on a first-line indent of `step`, in `size` (#218,
@@ -1127,8 +1237,11 @@ enum LayoutReconstructor {
         for (rect, path) in images where !page.links.isEmpty {
             if let target = linkCovering(rect, links: page.links) { imageLinks[path] = target }
         }
+        // The wrapped second line of each entry the page hangs, read from the lines that still
+        // reflow, as the table rows below are (#160).
         var assembler = BlockAssembler(page: page.number, body: typography.body, leading: typography.leading,
-                                       hyphens: context.hyphens, imageLinks: imageLinks)
+                                       hyphens: context.hyphens, imageLinks: imageLinks,
+                                       hangingEntries: hangingEntries(in: lines, body: typography.body))
         // A page whose tags never name a heading has not said that its display lines are not
         // headings; it has said only what they contain and in what order. Producers routinely
         // give every heading style a paragraph role — the FAA handbook's RoleMap sends

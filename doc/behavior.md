@@ -835,6 +835,24 @@ it: the deepest of the captured source layouts cuts eleven levels. A group the l
 uncut keeps the order it was extracted in, and the page reports `complexLayout` rather than
 leaving that silent, as the tag phase reports its own give-up (#224).
 
+A **picture across the block's measure** — at least 90% of it — with content on both sides of it
+separates what is printed above it from what is printed below it, and is cut at before any gutter
+is looked for (#137). A picture at the **head or foot** of the block separates nothing, so that cut
+declines it; but it still carries the whole measure with it, and while it stands in the group no
+gutter can be found past it either. The FAA handbook opens pages 341 and 391 with exactly that — a
+figure across both columns with nothing printed above it — and both pages were read row by row
+(#160). So after every straight cut and the column runs have failed, and before the row-major sort,
+such a picture is lifted out and the rest of the block re-read. A **line** set across the same
+measure within a body of the picture's own top or bottom edge goes with it: it is that picture's
+label and bridges the columns exactly as the picture does, and page 341 sets `Figure 14-6…` 7.7
+points beneath such a figure. The band grows only from the picture's two edges, so a one-column
+page, whose every line spans its block, gives up at most the line above and the line below; only a
+picture seeds a band, because cutting at every line of a one-column page would reach the depth
+limit and report the page unread. Trying it last is what keeps a page the other readings already
+describe: the handbook's appendix of abbreviations opens under a full-measure banner over two
+columns of short entries, which the column runs read as two runs and this cut would leave to the
+row-major sort, one entry of each column at a time.
+
 - A **picture between the two halves of a paragraph interrupts it; it does not end it** (#203).
   A cross-page join steps over the image blocks standing between the paragraph the page left open
   and the paragraph the next page opens with, on either side of the boundary, and each image it
@@ -907,6 +925,20 @@ leaving that silent, as the tag phase reports its own give-up (#224).
   beneath it. Half is where the same book's contents stand — page 5 hangs each entry's wrapped
   line six points in under an opening filling three fifths of it, and the entry stays one
   paragraph.
+- A line is also one paragraph with the line above it when the page **hangs** it there as the wrap
+  of an entry (#160). Project Blue Book's page 6 sets its list of illustrations from one margin and
+  hangs each wrap 48.5 points in at 7.8-point type, six times the size — well past the 1.5 bodies
+  the column test allows, unlike its page 5's six points — so twenty-four illustrations reflowed as
+  forty-two paragraphs. The indent alone proves nothing: a book that opens its paragraphs on a
+  first-line indent sets the same two edges in the same alternation, and `firstLineIndentRun` reads
+  the Blue Book's list as one of its own. What separates them is that a paragraph ends on a short
+  line that ran out of words while an entry that wrapped ran out of room, so the page must state
+  all of: the wrap stands directly beneath the entry, at its size, on the page's own leading, set
+  in further than 1.5 bodies, so the rule speaks only where the column test is silent; the entry
+  reads as a sentence, fills its measure (twelve of its own sizes) and ends none (past closing
+  quotes and brackets); the wrap carries at least two letters and stops a whole body short of the
+  entry's right edge, as an entry's tail does and a justified opening line does not; and the page
+  hangs at least three entries on one and the same continuation edge.
 
 ### Type sizes and headings
 
@@ -958,6 +990,38 @@ left, so a genuine marker still opens an item. Both are preformatted blocks that
 inserted newlines and indentation are unstyled. There is no list model: every such line is its own
 preformatted block, and nothing groups items or renders `ol`/`ul`.
 
+A marker the extractor left **alone on its line** is still a marker (#172). Both tests above want a
+space after the point or bracket, because the item's own text follows it there; PDFKit ends a line
+wherever the page leaves a gap, so an item whose marker the page hangs a little further out comes
+back as two lines and the first matches neither test. Wallace's page 101 returns `17)` and
+`(− 16,− 14), (11,− 14)` where every other exercise on the page is one line, so exercise 17 read
+as prose and was emitted as a `<p>` paragraph in a page of `<pre>` items. Such a line carries no
+text of its own to vouch for it, and a number with a point is also how a citation ends, so the
+page must state it twice over:
+
+- **its row is a row of items, not a row of cells.** Everything the page set to its right on that
+  row is either within the gutter — the item's own text — or a marker of the same list again, the
+  next column of a grid of items. Wallace sets exercises 17 and 18 on one row, four points and a
+  column apart. NOAA hangs a reference's number a column from its entry and the Blue Book's tables
+  set a figure beside a number; those are rows of cells, which belong to the table readers (#210).
+  A piece to the *left* within that gutter means the extractor cut this line out of the middle of a
+  row, exactly as above;
+- **the page states the list.** Another line of its size, on its own left edge, opens an item of the
+  same list — numbered or lettered the same way and closed with the same point or bracket — and
+  carries that item's own text after it. The 9/11 report leaves a citation's year on a line of its
+  own (`2001.`) in a column whose note numbers are set in from it; nothing on that edge vouches for
+  it and it stays the prose it is.
+
+The **rest of an item's own printed row joins that item**, as two pieces of one row are one block
+everywhere else (#57, #137): the next piece, standing to its right within that same 0.75 of a body,
+is appended to the item's preformatted block with a space. It is the piece the page set beside the
+marker, so `17)` and its coordinates are one item again. Nothing on another row joins, and only the
+row's own next piece does. An item that *wraps* is still one preformatted block per line: the 9/11
+report's numbered findings on page 365 keep `1. The CTC did not analyze how an aircraft, hijacked
+or explosives-` as the item and `laden, might be used as a weapon…` as the paragraph beneath it,
+which is what "no list model" above means, and item 4 of that list now reads exactly as items 1 to
+3 do instead of as two paragraphs.
+
 A wrapped line of prose can begin with the same token — an initial (`W. Bush`, `U. S. 760`), a
 citation abbreviation (`v. Moore`, `p. 785`, `F. 4th`) or a year or day carried over from the line
 above (`2016.`, `on January` / `13.`). Such a line **continues the open paragraph** instead of
@@ -1003,7 +1067,9 @@ Evidence: [initial-led-lines](../measurements/initial-led-lines/record.md),
 [three-fidelity-fixes](../measurements/three-fidelity-fixes/record.md),
 [preformatted-styles](../measurements/preformatted-styles/record.md),
 [citation-continuations](../measurements/citation-continuations/record.md),
-[dga-layout-qualification](../measurements/dga-layout-qualification/record.md).
+[column-cuts-and-hung-entries](../measurements/column-cuts-and-hung-entries/record.md),
+[dga-layout-qualification](../measurements/dga-layout-qualification/record.md),
+[markers-alone-on-their-line](../measurements/markers-alone-on-their-line/record.md).
 
 ## HyphenRepair
 

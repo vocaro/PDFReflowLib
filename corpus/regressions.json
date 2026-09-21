@@ -245,7 +245,7 @@
     {
       "id": "wallace-algebra-2010",
       "sourceSHA256": "856bd81edc61c50496982ddc849138f4e0e56fd0ddf0edb53fee9bb0830d0678",
-      "basis": "Page 12 source raster reviewed; license and page-347 formula targets come from the existing corpus review. Does not bless flattened inline exponents or validate every equation image. Page 343 preserves the source's squared exponent in its actual introductory context; the source typo \"from\" is intentional. Page 26 visually reviewed: numbered exercise 80 has squared exponents on both 7a and 6a; retaining those scripts does not qualify other exercise layout. Pages 18-19 and 43-44 visually reviewed: each paragraph continues onto the next page and must remain one paragraph across the source-page marker (#27). Source pages 155-156 and 290 visually reviewed for the spine-document boundaries written there: the three-variable summary ends one document and the 4.4 Practice - Three Variables heading with its instruction opens the next, and the page-290 sentence runs on mid-sentence from \"perfect square is more\" into \"than it would take to simplify in several steps\" in the following document, with nothing dropped, repeated or inserted at the join (#27). Does not bless that sentence being split into two paragraphs in the first place (#230).",
+      "basis": "Page 12 source raster reviewed; license and page-347 formula targets come from the existing corpus review. Does not bless flattened inline exponents or validate every equation image. Page 343 preserves the source's squared exponent in its actual introductory context; the source typo \"from\" is intentional. Page 26 visually reviewed: numbered exercise 80 has squared exponents on both 7a and 6a; retaining those scripts does not qualify other exercise layout. Pages 18-19 and 43-44 visually reviewed: each paragraph continues onto the next page and must remain one paragraph across the source-page marker (#27). Source pages 155-156 and 290 visually reviewed for the spine-document boundaries written there: the three-variable summary ends one document and the 4.4 Practice - Three Variables heading with its instruction opens the next, and the page-290 sentence runs on mid-sentence from \"perfect square is more\" into \"than it would take to simplify in several steps\" in the following document, with nothing dropped, repeated or inserted at the join (#27). Does not bless that sentence being split into two paragraphs in the first place (#230). Page 101 rendered and read at 100 DPI: exercises 11-30 are a two-column numbered list, one printed line to an item, and 17 and 28 are set exactly as 16 and 27 are. PDFKit ends those two lines at the marker, so each arrived as `17)` and its coordinates separately and read as prose; all four must be preformatted items, as their neighbours on the page already are (#172).",
       "spineContinuity": [
         {
           "sourcePages": [
@@ -359,6 +359,21 @@
               "end": "We can easily clear the fractions",
               "next": "by finding the LCD and multiplying each term by the LCD."
             }
+          ]
+        },
+        {
+          "page": 101,
+          "orderedText": [
+            "Find the slope of the line through each pair of points.",
+            "17) (\u2212 16,\u2212 14), (11,\u2212 14)",
+            "18) (13, 15), (2, 10)",
+            "28) (\u2212 18,\u2212 5), (14,\u2212 3)"
+          ],
+          "preformatted": [
+            "17) (\u2212 16,\u2212 14), (11,\u2212 14)",
+            "28) (\u2212 18,\u2212 5), (14,\u2212 3)",
+            "16) (\u2212 3, 6), (\u2212 20, 13)",
+            "27) (7,\u2212 14), (\u2212 8,\u2212 9)"
           ]
         }
       ]

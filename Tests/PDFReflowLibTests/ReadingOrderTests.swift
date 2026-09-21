@@ -220,6 +220,182 @@ func aPrintedFolioBelowThePagesProseIsStillItsOwnBlock() throws {
     #expect(headingTexts(blocks).contains("RESPONSES TO AL QAEDA’S"))
 }
 
+// MARK: - A picture across the measure at the head of a page (#160)
+
+/// A figure a page sets across both its columns carries the whole measure with it, so while it
+/// stands in the block no gutter can be found beneath it either. The FAA handbook opens page 391
+/// with exactly that — a world aeronautical chart across both columns, nothing printed above it —
+/// and the picture rule refused to cut there because one of its two sides was empty. The page was
+/// then read row by row: the right column's prose interleaved with the left column's captions, so
+/// `Figure 16-4. Meridians and parallels…` arrived in three pieces with sentences between them
+/// (#160).
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/160"))
+func aFigureAcrossTheMeasureAtTheHeadOfAPageStillSeparatesItsColumns() throws {
+    let fixture = try SourceLayoutFixture.load("faa-391")
+    #expect(fixture.sourceSHA256 == "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7")
+    var page = fixture.content()
+    // Exclude the source footer, which the full-document furniture pass removes.
+    page.lines.removeAll { $0.text == "16-4" }
+    let regions = LayoutReconstructor.graphicsWithLabels(page)
+    let chart = try #require(regions.max { $0.width < $1.width })
+    #expect(chart.width >= page.lines.map(\.rect).reduce(chart) { $0.union($1) }.width * 0.9)
+    #expect(!page.lines.contains { $0.rect.minY >= chart.maxY })
+    var warnings: [ConversionWarning] = []
+    let blocks = LayoutReconstructor.blocks(page: page, images: regions.enumerated().map { ($0.element, "image-\($0.offset)") },
+                                            vocabulary: [], warnings: &warnings)
+    let paragraphs = paragraphTexts(blocks)
+    #expect(paragraphs.contains("Figure 16-3. World aeronautical chart."))
+    #expect(paragraphs.contains(
+        "Figure 16-4. Meridians and parallels—the basis of measuring time, distance, and direction."))
+    // The left column's two captions are read before any of the right column's paragraphs.
+    let text = blocks.map(\.text).joined(separator: "\n")
+    let captions = try #require(text.range(of: "Figure 16-4."))
+    for prose in ["The standard practice is to establish a time zone",
+                  "Figure 16-5 shows the time zones in the conterminous United",
+                  "These time zone differences must be taken into account"] {
+        #expect(try captions.upperBound < #require(text.range(of: prose)).lowerBound)
+    }
+    // The right column's paragraphs are whole: no caption fell into the middle of one.
+    let closing = try #require(paragraphs.last)
+    #expect(closing.hasPrefix("These time zone differences") && closing.hasSuffix("an hour is lost when"))
+}
+
+/// The caption a page sets across the same measure directly beneath such a figure bridges the
+/// columns exactly as the figure does, so cutting at the figure alone leaves them joined. FAA page
+/// 341 sets `Figure 14-6. (A) Displaced runway threshold drawing…` 7.7 points under a figure that
+/// spans both columns, and the caption crosses the cut with the picture it labels (#160).
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/160"))
+func aCaptionAcrossTheMeasureCrossesTheCutWithItsFigure() throws {
+    let fixture = try SourceLayoutFixture.load("faa-341")
+    #expect(fixture.sourceSHA256 == "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7")
+    var page = fixture.content()
+    page.lines.removeAll { $0.text == "14-7" }
+    let regions = LayoutReconstructor.graphicsWithLabels(page)
+    var warnings: [ConversionWarning] = []
+    let blocks = LayoutReconstructor.blocks(page: page, images: regions.enumerated().map { ($0.element, "image-\($0.offset)") },
+                                            vocabulary: [], warnings: &warnings)
+    let text = blocks.map(\.text).joined(separator: "\n")
+    // The spanning caption heads the page, then the left column's prose, then the right column's
+    // two figures with their captions. Each caption is one block.
+    let paragraphs = paragraphTexts(blocks)
+    #expect(paragraphs.contains("Figure 14-7. Runway Safety Area."))
+    #expect(paragraphs.contains(
+        "Figure 14-8. Runway safety area boundary sign and marking located on Taxiway Kilo."))
+    #expect(paragraphs.contains("Figure 14-9. Runway holding position sign at takeoff end of Runway "
+        + "14 with collocated Taxiway Alpha location sign."))
+    let spanning = try #require(text.range(of: "Figure 14-6."))
+    let left = try #require(text.range(of: "If a taxiway intersects a runway somewhere other than at"))
+    let right = try #require(text.range(of: "Figure 14-8."))
+    #expect(spanning.upperBound < left.lowerBound)
+    #expect(left.upperBound < right.lowerBound)
+    // The left column's own paragraph is whole, rather than cut where a right-column caption
+    // shared its row.
+    let column = try #require(paragraphs.first { $0.hasPrefix("If a taxiway intersects") })
+    #expect(column.hasSuffix("the threshold for Runway 18 is to the left and the threshold for"))
+}
+
+/// The control for trying that cut last: the handbook's appendix of abbreviations opens page 461
+/// under a full-measure banner and sets two columns of short entries beneath it. Its intro spans
+/// both columns, so no gutter is found and no whitespace band crosses the page either — but
+/// `columnRuns` reads the two columns as runs, and cutting the banner out first would hand what
+/// is left to the row-major sort, one entry of each column at a time (#160, #174).
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/160"))
+func aBannerOverTwoColumnsOfEntriesLeavesTheColumnRunsAlone() throws {
+    let fixture = try SourceLayoutFixture.load("faa-461")
+    #expect(fixture.sourceSHA256 == "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7")
+    var page = fixture.content()
+    page.lines.removeAll { $0.text == "A-1" }
+    let regions = LayoutReconstructor.graphicsWithLabels(page)
+    let banner = try #require(regions.first)
+    #expect(banner.width >= page.bounds.width * 0.75 && !page.lines.contains { $0.rect.minY >= banner.maxY })
+    var warnings: [ConversionWarning] = []
+    let blocks = LayoutReconstructor.blocks(page: page, images: regions.enumerated().map { ($0.element, "image-\($0.offset)") },
+                                            vocabulary: [], warnings: &warnings)
+    // The left column is read out before the right one, rather than one entry of each in turn.
+    let text = blocks.map(\.text).joined(separator: "\n")
+    try expectInOrder(text, ["A/C—aircraft", "A/FD—airport/facility directory", "AAF—Army Air Field",
+                             "ABV—above", "ADIN—AUTODIN service", "ADJ—adjacent"])
+}
+
+/// The control the picture rule was landed for: the 9/11 report sets two flights' timelines side
+/// by side under one map across both of them, and cutting at the map is what puts each timeline
+/// back in its own column (#137). Nothing here has an empty side, and the order is unchanged.
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/160"))
+func aPictureWithTextAboveAndBelowDividesExactlyAsBefore() {
+    func line(_ text: String, x: Double, y: Double, width: Double) -> LayoutReconstructor.Element {
+        let rect = CGRect(x: x, y: y, width: width, height: 12)
+        return .init(rect: rect, line: TextLine(text: text, rect: rect, fontSize: 12), image: nil)
+    }
+    let heading = line("Heading", x: 40, y: 700, width: 490)
+    let map = LayoutReconstructor.Element(rect: CGRect(x: 40, y: 560, width: 490, height: 100), image: "map")
+    let left = [line("Left 1", x: 40, y: 520, width: 240), line("Left 2", x: 40, y: 500, width: 240)]
+    let right = [line("Right 1", x: 292, y: 520, width: 238), line("Right 2", x: 292, y: 500, width: 238)]
+    let ordered = LayoutReconstructor.ordered([right[0], left[1], map, right[1], heading, left[0]], bodySize: 12)
+    #expect(ordered.map { $0.line?.text ?? $0.image! }
+        == ["Heading", "map", "Left 1", "Left 2", "Right 1", "Right 2"])
+}
+
+// MARK: - The wrapped entries of a hung list (#160)
+
+/// Project Blue Book sets its list of illustrations from one margin and hangs each entry's wrap
+/// 48.5 points in, at 7.8-point type — six times the size, where a column's two lines may stand
+/// one and a half bodies apart. So every wrapped entry of page 6 reflowed as two paragraphs, cut
+/// where the page wrapped it, with the page numbers read afterwards in their own column and
+/// nothing between the halves (#160).
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/160"))
+func eachWrappedEntryOfAHungListIsOneParagraph() throws {
+    let fixture = try SourceLayoutFixture.load("blue-6")
+    #expect(fixture.sourceSHA256 == "90e05e77fc088c29758c2ddda514c0c12f317e5686ee213d348db2f9da152ee3")
+    let page = fixture.content()
+    let body = LayoutReconstructor.bodySize(page.lines)
+    let hung = LayoutReconstructor.hangingEntries(in: page.lines, body: body)
+    #expect(hung.count == 18)
+    var warnings: [ConversionWarning] = []
+    let blocks = LayoutReconstructor.blocks(page: page, images: [], vocabulary: [], warnings: &warnings)
+    // Figures 14 to 37, one paragraph each.
+    let entries = paragraphTexts(blocks).filter { $0.hasPrefix("Figure ") }
+    #expect(entries.count == 24)
+    #expect(entries.first == "Figure 14 Distribution of Object Sightings by Months Among the Eight "
+        + "Duration Groups for All Years")
+    #expect(entries.contains("Figure 27 Comparison of Monthly Distribution of Object Sightings Evaluated "
+        + "as Insufficient Information Versus Total Object Sightings Less Insufficient Information"))
+    #expect(entries.last == "Figure 37 Comparison of Evaluation of Object Sightings in the Strategic "
+        + "Areas of the South West Region")
+    // No entry ends where the page wrapped it: the shortest whole entry still runs ten words.
+    for entry in entries { #expect(entry.split(whereSeparator: \.isWhitespace).count >= 10) }
+}
+
+/// The control from another book: *Agricultural Research* opens each paragraph on a first-line
+/// indent, which sets the same two edges in the same alternation as a hung list — `firstLineIndentRun`
+/// reads the Blue Book's list as one of its own. Joining there would run two paragraphs into one,
+/// so nothing on that page is a hung entry: the line above an indented opening is a paragraph's
+/// short last line, not an entry that ran out of room (#160).
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/160"))
+func aFirstLineIndentIsNotAHungEntry() throws {
+    let fixture = try SourceLayoutFixture.load("usda-9")
+    let page = fixture.content()
+    #expect(LayoutReconstructor.firstLineIndentRun(in: page.lines, step: 10, size: 10.5))
+    #expect(LayoutReconstructor.hangingEntries(in: page.lines,
+                                               body: LayoutReconstructor.bodySize(page.lines)).isEmpty)
+}
+
+/// The second control: Blue Book page 5 sets the same list with its titles in a column of their
+/// own, so the wraps stand 5.5 points in and the ordinary column test already joins them. The
+/// hung-entry rule speaks only where that test is silent, so it reads nothing there (#160).
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/160"))
+func aWrapInsideTheColumnWindowIsNotAHungEntry() throws {
+    let fixture = try SourceLayoutFixture.load("blue-5")
+    let page = fixture.content()
+    #expect(LayoutReconstructor.hangingEntries(in: page.lines,
+                                               body: LayoutReconstructor.bodySize(page.lines)).isEmpty)
+    var warnings: [ConversionWarning] = []
+    let blocks = LayoutReconstructor.blocks(page: page, images: [], vocabulary: [], warnings: &warnings)
+    #expect(paragraphTexts(blocks).contains("Distribution of Object Sightings by Evaluation for All "
+        + "Years With Comparisons of Each Year for Each Evaluation Group •"))
+}
+
+// MARK: - Columns read as runs (#174)
+
 /// The magazine sets three columns above an L-shaped picture frame, and its third column runs on
 /// into a measure twice as wide beside that frame. No straight gutter crosses the page, because
 /// the wide measure bridges the gutter between the second column and the third; and no whitespace

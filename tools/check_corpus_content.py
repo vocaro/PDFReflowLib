@@ -28,6 +28,7 @@ CONTRACT_CHECK_TYPES = {'spineContinuity': 'sequence'}
 PAGE_CHECK_TYPES = {
     'text': 'sequence', 'orderedText': 'sequence', 'absentText': 'sequence',
     'headings': 'sequence', 'paragraphs': 'sequence', 'continuedParagraphs': 'sequence',
+    'preformatted': 'sequence',
     'scripts': 'sequence', 'imageRegions': 'sequence',
     'minimumImages': 'presence', 'warningCodesAnyOf': 'presence', 'absentWarningCodes': 'presence',
 }
@@ -75,6 +76,7 @@ def read_spine(path, *, max_entries=DEFAULT_MAX_ENTRIES,
     current = None
     heading_id = 0
     paragraph_id = 0
+    item_id = 0
     with epub.open_archive(path, max_entries=max_entries, max_uncompressed_bytes=max_uncompressed_bytes) as archive:
         names = set(archive.namelist())
         for name in epub.read_package(archive).spine:
@@ -84,7 +86,7 @@ def read_spine(path, *, max_entries=DEFAULT_MAX_ENTRIES,
             document = {'name': name, 'text': '', 'pages': [] if current is None else [current]}
             documents.append(document)
 
-            def append(text, script=None, heading=None, paragraph=None):
+            def append(text, script=None, heading=None, paragraph=None, item=None):
                 if not text:
                     return
                 document['text'] += text
@@ -96,6 +98,8 @@ def read_spine(path, *, max_entries=DEFAULT_MAX_ENTRIES,
                         page['headings'][heading] = page['headings'].get(heading, '') + text
                     if paragraph is not None:
                         page['paragraphs'][paragraph] = page['paragraphs'].get(paragraph, '') + text
+                    if item is not None:
+                        page['preformatted'][item] = page['preformatted'].get(item, '') + text
                     if script:
                         spans = page['scripts']
                         if spans and spans[-1]['tag'] == script and spans[-1]['end'] == start:
@@ -103,8 +107,8 @@ def read_spine(path, *, max_entries=DEFAULT_MAX_ENTRIES,
                         else:
                             spans.append({'tag': script, 'start': start, 'end': start + len(text)})
 
-            def walk(element, script=None, heading=None, paragraph=None):
-                nonlocal current, heading_id, paragraph_id
+            def walk(element, script=None, heading=None, paragraph=None, item=None):
+                nonlocal current, heading_id, paragraph_id, item_id
                 page = epub.page_boundary(element)
                 if page is not None:
                     if page in pages:
@@ -112,7 +116,8 @@ def read_spine(path, *, max_entries=DEFAULT_MAX_ENTRIES,
                     current = page
                     markers.append(current)
                     document['pages'].append(current)
-                    pages[current] = {'text': '', 'images': [], 'scripts': [], 'headings': {}, 'paragraphs': {}}
+                    pages[current] = {'text': '', 'images': [], 'scripts': [], 'headings': {},
+                                      'paragraphs': {}, 'preformatted': {}}
                 if element.tag == HTML + 'img' and current is not None:
                     asset = str(chapter.parent / element.attrib['src'])
                     if asset not in names:
@@ -129,10 +134,13 @@ def read_spine(path, *, max_entries=DEFAULT_MAX_ENTRIES,
                 if element.tag == HTML + 'p':
                     paragraph_id += 1
                     paragraph = paragraph_id
-                append(element.text, script, heading, paragraph)
+                if element.tag == HTML + 'pre':
+                    item_id += 1
+                    item = item_id
+                append(element.text, script, heading, paragraph, item)
                 for child in element:
-                    walk(child, script, heading, paragraph)
-                    append(child.tail, script, heading, paragraph)
+                    walk(child, script, heading, paragraph, item)
+                    append(child.tail, script, heading, paragraph, item)
                 if element.tag in BLOCKS:
                     append(' ')
 
@@ -145,6 +153,7 @@ def read_spine(path, *, max_entries=DEFAULT_MAX_ENTRIES,
                            for span in page['scripts']]
         page['text'] = normalized(raw)
         page['headings'] = [normalized(text) for text in page['headings'].values()]
+        page['preformatted'] = [normalized(text) for text in page['preformatted'].values()]
         # Paragraph IDs are document-wide, so one <p> crossing a page marker has the same ID on both pages.
         page['paragraphIDs'] = {paragraph: normalized(text) for paragraph, text in page['paragraphs'].items()}
         page['paragraphs'] = [normalized(text) for text in page['paragraphs'].values()]
@@ -286,7 +295,7 @@ def assess(case, contract, result, report, pages, markers, *, documents=(),
     for item in expected:
         number = item['page']
         page = pages.get(number, {'text': '', 'images': []})
-        if not any(key in item for key in ('text', 'orderedText', 'minimumImages', 'warningCodesAnyOf', 'absentWarningCodes', 'scripts', 'absentText', 'headings', 'paragraphs', 'continuedParagraphs', 'imageRegions')):
+        if not any(key in item for key in ('text', 'orderedText', 'minimumImages', 'warningCodesAnyOf', 'absentWarningCodes', 'scripts', 'absentText', 'headings', 'paragraphs', 'preformatted', 'continuedParagraphs', 'imageRegions')):
             raise ValueError('Review page has no expectations')
         for phrase in item.get('text', []):
             if not normalized(phrase):
@@ -312,6 +321,12 @@ def assess(case, contract, result, report, pages, markers, *, documents=(),
             checks += 1
             if not any(normalized(phrase) in paragraph for paragraph in page.get('paragraphs', [])):
                 errors.append(f'Page {number}: missing paragraph {phrase!r}')
+        for phrase in item.get('preformatted', []):
+            if not isinstance(phrase, str) or not normalized(phrase):
+                raise ValueError('Empty or invalid preformatted phrase')
+            checks += 1
+            if not any(normalized(phrase) in block for block in page.get('preformatted', [])):
+                errors.append(f'Page {number}: missing preformatted block {phrase!r}')
         following = pages.get(number + 1, {})
         for continuation in item.get('continuedParagraphs', []):
             if (not isinstance(continuation, dict) or set(continuation) != {'end', 'next'}

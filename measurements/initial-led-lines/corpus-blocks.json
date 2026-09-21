@@ -1,5 +1,5 @@
 {
-  "baselineCommit": "4d5d86d",
+  "baselineCommit": "fbc5e1f",
   "cases": {
     "arxiv-replay-clocks-2023": {
       "blocksAfter": 260,
@@ -20,8 +20,8 @@
       "wordsIdentical": true
     },
     "census-rrs2002-01": {
-      "blocksAfter": 412,
-      "blocksBefore": 412,
+      "blocksAfter": 407,
+      "blocksBefore": 407,
       "preformattedAfter": 138,
       "preformattedBefore": 139,
       "wordsAfter": 6759,
@@ -29,10 +29,10 @@
       "wordsIdentical": true
     },
     "cia-blue-book-14-1955": {
-      "blocksAfter": 25429,
-      "blocksBefore": 25429,
-      "preformattedAfter": 730,
-      "preformattedBefore": 799,
+      "blocksAfter": 25422,
+      "blocksBefore": 25422,
+      "preformattedAfter": 711,
+      "preformattedBefore": 780,
       "wordsAfter": 170394,
       "wordsBefore": 170394,
       "wordsIdentical": true
@@ -56,21 +56,21 @@
       "wordsIdentical": true
     },
     "fed-explained-2021": {
-      "blocksAfter": 1094,
-      "blocksBefore": 1095,
+      "blocksAfter": 1082,
+      "blocksBefore": 1083,
       "preformattedAfter": 116,
       "preformattedBefore": 120,
-      "wordsAfter": 31030,
-      "wordsBefore": 31030,
+      "wordsAfter": 31027,
+      "wordsBefore": 31027,
       "wordsIdentical": true
     },
     "gpo-911-2004": {
-      "blocksAfter": 5125,
-      "blocksBefore": 5146,
+      "blocksAfter": 5118,
+      "blocksBefore": 5139,
       "preformattedAfter": 1397,
       "preformattedBefore": 1427,
-      "wordsAfter": 298728,
-      "wordsBefore": 298730,
+      "wordsAfter": 298722,
+      "wordsBefore": 298724,
       "wordsIdentical": false
     },
     "gpo-our-flag-2003": {
@@ -137,8 +137,8 @@
       "wordsIdentical": true
     },
     "usda-ars-agresearch-2012-11": {
-      "blocksAfter": 1198,
-      "blocksBefore": 1167,
+      "blocksAfter": 1197,
+      "blocksBefore": 1166,
       "preformattedAfter": 7,
       "preformattedBefore": 39,
       "wordsAfter": 9478,
@@ -155,14 +155,14 @@
       "wordsIdentical": true
     },
     "wallace-algebra-2010": {
-      "blocksAfter": 9898,
-      "blocksBefore": 9899,
-      "preformattedAfter": 3007,
-      "preformattedBefore": 3013,
+      "blocksAfter": 9748,
+      "blocksBefore": 9749,
+      "preformattedAfter": 2627,
+      "preformattedBefore": 2633,
       "wordsAfter": 83137,
       "wordsBefore": 83138,
       "wordsIdentical": false
     }
   },
-  "note": "Block and word counts per corpus case, both lanes, library defaults."
+  "note": "Block and word counts per corpus case, both lanes, library defaults, on the tree merged with fbc5e1f."
 }

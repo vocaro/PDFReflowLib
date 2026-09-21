@@ -151,8 +151,22 @@ evidence, and this change does not have it; it is filed afresh as
 The rest of #171 is reported on the issue: items 2, 3, 4, 5, 6 and 7, with the mechanism found
 for each.
 
+## Re-measured over the merge taken since
+
+`main` moved to `fbc5e1f` ("Place a box a cross-page join steps over on its own side of the page
+marker") between the measurement above and the merge, taking #203's printed-row markers with it.
+Both lanes were run again on the merged tree, against a release binary built from `fbc5e1f`.
+Every book moves the same way, book for book, and no book that was untouched is touched now; only
+the absolute counts move, because #203 had already released 380 of Wallace's preformatted blocks
+and 19 of the CIA report's. Preformatted blocks fall from 6,650 to 6,476 on that baseline, the
+same 174, and the total block count again moves by one, 57,369 to 57,370. The 9/11 report gains
+two hyphen repairs rather than three — `command-and-` / `control` was already closed on the new
+baseline — and Wallace's one is unchanged; every other book is still word for word identical.
+All 18 cases pass in each lane. `corpus-blocks.json` holds these numbers, the post-merge ones.
+
 ## Gates
 
-`scripts/check-all.sh --fast`, then the corpus lane on the merged tree against a release binary
-built from `4d5d86d`, both lanes 18 of 18 with the reviewed content contracts and EPUBCheck
-5.3.0.
+`scripts/check-all.sh --fast` on the merged tree: 526 Swift tests, 227 Python tests, eight
+fixture conversions, the documented builds, the measurements policy, the issue citations and the
+PDFKit concurrency smoke gate. Then the corpus lane, 18 of 18 in both lanes, with the reviewed
+content contracts and EPUBCheck 5.3.0, `runPassed` read from every case's own `result.json`.

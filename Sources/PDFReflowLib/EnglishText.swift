@@ -48,6 +48,26 @@ enum EnglishText {
         lexicon.withLock { embedding in embedding.map { $0.contains(word) } }
     }
 
+    /// The longest English word of three letters or more that opens `text`, or nil.
+    ///
+    /// A run the source draws against the number before it is a word the page set tight, not the
+    /// next term of a formula: `8cent stamps` opens with `cent` and Wallace's `30qpr` opens with
+    /// nothing, which is what tells a missing space from algebra (#120, #139). Three letters is
+    /// the floor because a one- or two-letter opening is a variable as often as a word. At most
+    /// twelve are tried, and a lexicon the system does not provide answers nil.
+    static func openingWord(_ text: some StringProtocol, minimum: Int = 3, maximum: Int = 12) -> String? {
+        let letters = text.prefix(while: \.isLetter).lowercased()
+        guard letters.count >= minimum else { return nil }
+        return lexicon.withLock { embedding in
+            guard let embedding else { return nil }
+            for length in stride(from: min(maximum, letters.count), through: minimum, by: -1) {
+                let candidate = String(letters.prefix(length))
+                if embedding.contains(candidate) { return candidate }
+            }
+            return nil
+        }
+    }
+
     /// Word counts against the system lexicon; nil when there is none.
     static func wordCounts(_ text: String) -> WordCounts? {
         lexicon.withLock { embedding in

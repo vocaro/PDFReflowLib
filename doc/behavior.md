@@ -175,7 +175,9 @@ spatial reconstruction rather than partial results.
   A boundary is restored when:
   - **a font change** separates two shows on one baseline (within 0.1 em) by at least 0.15 em,
     with a letter or digit on either side, or a closing `) ] , ; :` that ends a word or formula
-    before a letter;
+    before a letter; 0.10 em is enough where a number is set against a run that opens with an
+    English word of three letters or more, which is how a page sets `8cent stamps` and
+    `Subtract 5from both sides` and not how it sets the same book's `30qpr` (#120);
   - **a note reference**, a show of one to four digits at most 0.8 of the next show's size and
     raised 0.15 to 0.6 of it, precedes a capital or opening quote at a word gap;
   - **`sameFontWordSpace`** reads a `TJ` adjustment between two glyphs of one show, in a producer
@@ -194,10 +196,16 @@ spatial reconstruction rather than partial results.
     capitalized abbreviation ending in a period are not sentence boundaries.
 
   The boundaries are applied only where the shows and PDFKit agree. `NativeSpacingOwnership`
-  splits the line into its maximal agreeing segments — resynchronizing on eight matching
+  splits the line into its maximal agreeing segments — resynchronizing on twelve matching
   characters, skipping at most 64 either way and at most 64 times per line — and applies a
   boundary only where the characters on both sides of it matched inside one segment, so a
-  boundary inside a disagreeing region or against its edge is dropped (#139 item 1). A show whose
+  boundary inside a disagreeing region or against its edge is dropped (#139 item 1). Twelve,
+  because eight recurs inside one printed row: the 9/11 appendix's
+  `Abu Bara al Yemeni (a.k.a.Abu al Bara al Ta’izi` has `Bara al ` in both halves, and the walk
+  resumed in the wrong one (#120). A show whose text the reader cannot decode is a hole in the
+  source's reading rather than a reason to discard the line, and nothing is read across the hole:
+  one radical on Wallace page 120 used to discard every boundary of
+  `5− 2x 11 Subtract 5from both sides`. A show whose
   origin another line's rectangle holds still reaches this line when its baseline lies inside the
   line and its glyph advances cross the line's span, which is how one printed row PDFKit split at
   a wide gap is repaired in the half that holds each boundary. Explicit spaces, genuine word-size

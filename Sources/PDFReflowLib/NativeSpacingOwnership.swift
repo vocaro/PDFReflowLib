@@ -42,7 +42,12 @@ extension NativeSpacingReader {
 
     /// Non-whitespace characters that must agree before a disagreement counts as resolved. Shorter
     /// runs recur by chance inside ordinary prose, and a segment entered on one is not a segment.
-    static let anchorLength = 8
+    ///
+    /// Eight was not enough, and the 9/11 appendix shows why: `Abu Bara al Yemeni (a.k.a.Abu al
+    /// Bara al Ta’izi,…` is one row, and the walk that should skip 19 source characters to reach
+    /// `(a.k.a.A` finds `Bara al ` after 16 instead, in the wrong half of the row, and resumes
+    /// there. The two readings diverge at the ninth character, so twelve tells them apart (#120).
+    static let anchorLength = 12
     /// How far either walk may skip to find that anchor, and how many times one line may resync.
     /// A line needing more than this is left to whatever its earlier segments already yielded.
     static let maximumResynchronization = 64

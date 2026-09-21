@@ -247,11 +247,19 @@ func aBoundaryBesideTextTheShowsCannotAccountForIsDropped() {
     // A space PDFKit already sets at the boundary inserts nothing.
     #expect(NativeSpacingReader.segmentedInsertions(in: Array("the Twin Towers, the signature".utf16),
                                                     source: source, boundaries: boundaries) == nil)
-    // Nothing resynchronizes on fewer than eight matching characters.
-    #expect(NativeSpacingReader.resynchronize(source: Array("abcdefgh".utf16), at: 0,
-                                              extracted: Array("Xabcdefgh".utf16), at: 0) != nil)
-    #expect(NativeSpacingReader.resynchronize(source: Array("abcdefg".utf16), at: 0,
-                                              extracted: Array("Xabcdefg".utf16), at: 0) == nil)
+    // Nothing resynchronizes on fewer matching characters than the anchor asks for.
+    let anchor = String("abcdefghijklmnopqrstuvwxyz".prefix(NativeSpacingReader.anchorLength))
+    #expect(NativeSpacingReader.resynchronize(source: Array(anchor.utf16), at: 0,
+                                              extracted: Array(("X" + anchor).utf16), at: 0) != nil)
+    #expect(NativeSpacingReader.resynchronize(source: Array(anchor.dropLast().utf16), at: 0,
+                                              extracted: Array(("X" + anchor.dropLast()).utf16), at: 0) == nil)
+    // A run that recurs earlier in the line must not take the walk to the wrong half of a row:
+    // the 9/11 appendix sets `Abu Bara al Yemeni (a.k.a.Abu al Bara al Ta’izi` as one row, and
+    // `Bara al ` occurs in both halves. The anchor is long enough to tell them apart (#120).
+    let row = Array("Abu Bara al Yemeni (a.k.a.Abu al Bara al Ta’izi,Suhail".utf16)
+    let half = Array("(a.k.a.Abu al Bara al Ta’izi, Suhail".utf16)
+    #expect(NativeSpacingReader.resynchronize(source: row, at: 0, extracted: half, at: 0)?.0 == 19)
+    #expect(NativeSpacingReader.segmentedInsertions(in: half, source: row, boundaries: [26, 48]) == [7])
 }
 
 // MARK: - The rules (#119, #128)
@@ -307,4 +315,20 @@ func sentenceSpaceReadsTheWordsAroundTheBoundaryNotTheGap() {
     #expect(!sentence("\u{1D452}.", "The "))
     #expect(!sentence("casualties.", "The ", gap: 1.01))
     #expect(!sentence("casualties.", "The ", gap: -0.16))
+}
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/120"))
+func aNumberSetAgainstAWordClosesAtATighterGapThanTheRuleWants() {
+    // Wallace sets `8cent stamps` and `Subtract 5from both sides` with a font change and a gap of
+    // 0.12 to 0.13 em, where the font-change rule wants 0.15, and left them fused.
+    // The longest word that opens the run, which is all the boundary rule needs to know.
+    #expect(EnglishText.openingWord("centstamplesas") == "cents")
+    #expect(EnglishText.openingWord("timesasmany") == "times")
+    #expect(EnglishText.openingWord("frombothsides") == "from")
+    #expect(EnglishText.openingWord("placesthen") == "places")
+    // Algebra opens with no word, so the same page's `30qpr` and `5q` keep the tighter reading.
+    #expect(EnglishText.openingWord("qpr") == nil)
+    #expect(EnglishText.openingWord("q") == nil)
+    #expect(EnglishText.openingWord("xy") == nil)
+    #expect(EnglishText.openingWord("") == nil)
 }

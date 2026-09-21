@@ -131,14 +131,32 @@ size, and it is filed as
 [#263](https://github.com/vocaro/PDFReflowLib/issues/263). The direction each recognized line runs
 in is now carried on the line for whoever takes it.
 
-## Re-measured after the merge
+## Re-measured after two merges
 
-`main` moved to `4074668` (#257, a crop keeping its table's column headers) while this was being
-measured. Both lanes were run again on the merged tree against a release binary built from
-`4074668`: every delta above is the same change, book for book, and all 18 cases pass in both
-lanes. The Blue Book's absolute counts are 41 blocks lower on that baseline, 22,523 → 22,532,
-because #257 takes 41 of its blocks back into the crops; the nine this change moves are the same
-nine.
+`main` moved twice while this was being measured, to `4074668` (#257, a crop keeping its table's
+column headers) and then to `54360b4`, which carries #123's page-leading rule in the same
+`continuesParagraph` this change edits. Both lanes were run again on the merged tree, against a
+release binary built from `54360b4`. Every book moves the same way it does above, the same nine
+are untouched, and all 18 cases pass in both lanes with 558 content checks. No book's text changes
+by a character; CDC's is a permutation of the baseline's, for page 16.
+
+| Book | Blocks at `97df92a` | Blocks at `54360b4` |
+| --- | --- | --- |
+| gpo-911-2004 | 4,574 → 5,045 | 4,579 → 5,050 |
+| cdc-zombie-pandemic-2011 | 516 → 481 | 516 → 481 |
+| irs-p596-zhs-2025 | 951 → 969 | 1,028 → 1,036 |
+| scotus-loper-bright-2024 | 717 → 734 | 717 → 734 |
+| cia-blue-book-14-1955 | 22,564 → 22,573 | 25,000 → 25,008 |
+| usda-ars-agresearch-2012-11 | 1,099 → 1,102 | 1,099 → 1,102 |
+| faa-phak-8083-25c | 8,538 → 8,539 | 8,542 → 8,543 |
+| arxiv-replay-clocks-2023 | 194 → 195 | 194 → 195 |
+| census-rrs2002-01 | 373 → 372 | 377 → 376 |
+
+#123's leading rule had already taken some of what the step would have taken. The IRS publication
+gains 8 blocks rather than 18 and the Blue Book 8 rather than 9, because a paragraph the page
+pushed down is now closed before the step is asked about. Of the 826 blocks new across the nine
+books on this baseline, 812 open with a capital, a digit or a mark; the fourteen that do not are
+the carried-over tails and table cells named above.
 
 ## Reproducing
 

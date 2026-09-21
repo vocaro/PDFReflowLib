@@ -66,7 +66,19 @@ private let prose: [TextLine] = (0..<5).map {
     let title = line("From Insects", y: 556, size: 14)
     #expect(role(lowercase, lines: prose + [title, lowercase]) == .heading)
     #expect(role(line("let x = 1", y: 300, monospaced: true)) == .code)
-    #expect(role(line("1. First item", y: 300)) == .markedLine(MarkerColumn(onMajorityEdge: true, justifiedRight: 340)))
+    // Six lines on one edge state too little about a list either way, so the marker keeps its
+    // reading (#171).
+    #expect(role(line("1. First item", y: 300))
+        == .markedLine(MarkerColumn(onMajorityEdge: true, justifiedRight: 340, setsAList: true)))
+    // A run of ten names on one edge with one initial among them is no list.
+    let names = (0..<9).map { line("Nicole Marie Grandrimo, professional staff member number \($0).", y: 300 - CGFloat($0) * 12) }
+    let initial = line("T. Graham Giusti, security officer of the commission's own staff.", y: 300 - 9 * 12)
+    #expect(role(initial, on: page(names + [initial]), lines: names + [initial])
+        == .markedLine(MarkerColumn(onMajorityEdge: true, justifiedRight: 340, setsAList: false)))
+    // The same run with a marker on every line is the list it looks like.
+    let items = (0..<10).map { line("\($0 + 1). Item \($0 + 1) of the list, set at the column's own left edge.", y: 300 - CGFloat($0) * 12) }
+    #expect(role(items[0], on: page(items), lines: items)
+        == .markedLine(MarkerColumn(onMajorityEdge: true, justifiedRight: 340, setsAList: true)))
     #expect(role(line("• Bullet", y: 300)) == .listItem)
     #expect(role(line("Plain prose", y: 300)) == .prose)
     // A recurring bold label is a heading whatever its size.
@@ -77,7 +89,7 @@ private let prose: [TextLine] = (0..<5).map {
     #expect(role(line("Chapter One", y: 560, size: 13), on: synthetic) == .prose)
     #expect(role(line("let x = 1", y: 300, monospaced: true), on: synthetic) == .prose)
     #expect(role(line("1. First item", y: 300), on: synthetic)
-        == .markedLine(MarkerColumn(onMajorityEdge: true, justifiedRight: 340)))
+        == .markedLine(MarkerColumn(onMajorityEdge: true, justifiedRight: 340, setsAList: true)))
     _ = typography
 }
 
@@ -478,7 +490,7 @@ func anUntaggedLineContinuesATaggedParagraphButNeverATaggedHeading() {
         "A. Smith and B. Jones, who summarized the field work completed at the end of",
         "1998. The final report was accepted without amendment by all of the delegates.",
     ])
-    let marked = LineRole.markedLine(MarkerColumn(onMajorityEdge: true, justifiedRight: 520))
+    let marked = LineRole.markedLine(MarkerColumn(onMajorityEdge: true, justifiedRight: 520, setsAList: true))
     var assembler = BlockAssembler(page: 3, body: 12, hyphens: HyphenContext())
     assembler.appendTagged(TextStructure(group: 4, order: 1, headingLevel: 0, lineCount: 1), lines[0])
     assembler.append(lines[1], as: marked)

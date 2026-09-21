@@ -816,6 +816,14 @@ leaving that silent, as the tag phase reports its own give-up (#224).
   separates them — the width a whitespace cut needs for a column, so a table's cells and the two
   ends of a running header remain separate blocks (#57). A short previous line ending a sentence
   closes its paragraph either way.
+- **Rows of a table the page set without rules** keep their breaks rather than joining into one
+  paragraph (#137, #210): a run of at least three rows on one left edge, in one type size,
+  stepping down at one leading, where the page also states a column boundary — a cell the
+  extractor kept apart on at least two rows that merged rows reach across, or a column of numbers
+  on one right edge. The numeric evidence must hold for most of the run, not for three rows of it:
+  the FAA handbook's acknowledgments name a chapter at the end of every credit and set each credit
+  on its own line, so every row ends in a digit and three of the twenty end within half a body of
+  one another, and nothing about that page is a table (#171).
 - The **leading a page states** is the commonest distance between the tops of two vertically
   adjacent lines, set at one size, in one column, to the nearest half point, over the lines its
   crops leave in the prose. At least four such pairs must agree, so a page too bare to say
@@ -920,7 +928,21 @@ A page's own words are unchanged either way; the join only moves a line from its
 the paragraph above it, where an ordinary hyphen repair may then close a word the split had
 broken.
 
-Evidence: [page-leading-and-ligature-vocabulary](../measurements/page-leading-and-ligature-vocabulary/record.md),
+A line the rule above does not join — the line with nothing running on it — is read against the
+page's own edge before it opens an item at all (#171). **A list marks its items**, so where the
+page stands at least eight lines of the line's own size on its left edge, within half a body, and
+opens fewer than a quarter of them with a marker, it has set no list there: the point belongs to a
+name's initial (`T. Graham Giusti` among twenty-five staff names, `P. E. Fansler,` alone among
+thirty lines of the FAA handbook's page 18), a page reference or a citation (`U. S. 134 (1944),`
+opening Loper Bright's page 64). Such a line opens a paragraph rather than a preformatted item.
+Below eight lines the edge states too little either way — a list of one item and a marker
+introduced by two lines of prose look alike — and the marker keeps its reading. The paragraph a
+line like this opens takes only the wraps the page sets on that line's own edge, within half a
+body, because the 1.5 bodies the ordinary column test allows would swallow the next paragraph's
+first-line indent.
+
+Evidence: [initial-led-lines](../measurements/initial-led-lines/record.md),
+[page-leading-and-ligature-vocabulary](../measurements/page-leading-and-ligature-vocabulary/record.md),
 [heading-body-regressions](../measurements/heading-body-regressions/record.md),
 [three-fidelity-fixes](../measurements/three-fidelity-fixes/record.md),
 [preformatted-styles](../measurements/preformatted-styles/record.md),

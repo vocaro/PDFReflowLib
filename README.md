@@ -113,7 +113,7 @@ Every rule, threshold and warning code is specified in the
 [architecture](doc/architecture.md). PDF structure is ambiguous: untagged borderless tables,
 arbitrary equations, complex magazine layouts, footnote relationships, vertical/RTL reading order
 and damaged font encodings still need broader qualification, and fonts, original colors, full
-tagged-PDF semantics, links and interactive elements are not reproduced. Cropped text is neither
+tagged-PDF semantics and form interactions are not reproduced. Cropped text is neither
 reflowable nor accessible as text. Review warnings and compare the source before distributing a
 derived book.
 
@@ -138,7 +138,7 @@ swift run pdf-reflow scanned.pdf output.epub --no-ocr
 Run from this directory with a full Xcode selected. The CLI prints progress to stderr and the
 conversion report as JSON to stdout. Paths with spaces must be shell-quoted.
 
-Seven original, redistributable-with-the-project PDFs (nine pages) are bundled with the tests:
+Eight original, redistributable-with-the-project PDFs (eleven pages) are bundled with the tests:
 
 | Fixture | Regression coverage |
 | --- | --- |
@@ -149,6 +149,7 @@ Seven original, redistributable-with-the-project PDFs (nine pages) are bundled w
 | `rotated.pdf` | Explicit appearance-preserving whole-page fallback |
 | `scanned.pdf` | Real Vision OCR plus original page containing a figure |
 | `encrypted.pdf` | A locked document (40-bit RC4, password `reflow`) that converts once unlocked |
+| `links.pdf` | External, mailto, refused-scheme, two-line and figure links, and a cross-reference |
 
 Tests use the real Apple PDF/OCR stack, not mocks, and download no external documents; the
 fixture manifest records byte counts and SHA-256 identities. `tools/generate_fixtures.py`

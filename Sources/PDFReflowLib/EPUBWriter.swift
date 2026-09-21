@@ -33,6 +33,8 @@ actor EPUBWriter {
     private var assets: [ReflowDocument.Asset] = []
     private var imagePaths: [String] = []
     private var imagePathByID: [String: String] = [:]
+    /// Spine documents holding an internal link whose page is not yet placed (#247).
+    private var documentsWithPageLinks: [String] = []
     private var consumed: Int64 = 0
     private var started = false
 
@@ -108,6 +110,7 @@ actor EPUBWriter {
         for entry in packer.pages where entry.fragment.hasPrefix("page-") {
             pageFiles[Int(entry.fragment.dropFirst(5)) ?? 0] = entry.file
         }
+        try resolvePageLinks(pageFiles: pageFiles)
         // The author's own contents is the navigation where the document states a usable one;
         // the detected headings are the navigation everywhere else. Headings keep their ids
         // either way, so nothing in the text stops being addressable.
@@ -223,7 +226,41 @@ actor EPUBWriter {
 
     private func write(_ documents: [SpinePacker.Document]) throws {
         for spineDocument in documents {
+            if spineDocument.body.contains(EPUBTextEncoder.pageLinkToken) {
+                documentsWithPageLinks.append(spineDocument.name)
+            }
             try writeText(document(spineDocument.body, name: title), publication.appendingPathComponent(spineDocument.name))
+        }
+    }
+
+    /// Rewrites the page tokens an internal link carries into the file that holds its page (#247).
+    ///
+    /// A link on page 12 can name page 400, whose spine document does not exist when the link is
+    /// serialized; `SpinePacker.pages` knows which document holds which page only once the last
+    /// one has closed. Only the documents that actually hold a token are read back, so a book
+    /// without internal links is written exactly as it was before. A page the map does not name —
+    /// which no conversion has produced, since every page emits a marker — resolves to the
+    /// document the link is in, so a published book never carries an href that resolves to
+    /// nothing.
+    private func resolvePageLinks(pageFiles: [Int: String]) throws {
+        for name in documentsWithPageLinks {
+            try Task.checkCancellation()
+            let url = publication.appendingPathComponent(name)
+            let text = try String(contentsOf: url, encoding: .utf8)
+            var resolved = ""
+            var rest = Substring(text)
+            while let token = rest.range(of: EPUBTextEncoder.pageLinkToken) {
+                resolved += rest[..<token.lowerBound]
+                let digits = rest[token.upperBound...].prefix(while: \.isNumber)
+                let page = Int(digits) ?? 0
+                resolved += pageFiles[page].map { "\($0)#page-\(page)" } ?? name
+                rest = rest[token.upperBound...].dropFirst(digits.count)
+            }
+            resolved += rest
+            guard resolved != text else { continue }
+            consumed += Int64(resolved.utf8.count) - Int64(text.utf8.count)
+            guard consumed <= maximumOutputBytes else { throw ConversionError.resourceLimit("EPUB text size") }
+            try resolved.write(to: url, atomically: true, encoding: .utf8)
         }
     }
 }

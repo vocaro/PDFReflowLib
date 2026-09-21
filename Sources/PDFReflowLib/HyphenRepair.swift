@@ -171,6 +171,8 @@ extension LayoutReconstructor {
         }
         if let sourceBoundary { result.elements.append(.sourcePage(sourceBoundary)) }
         result.append(right)
+        // One link over two printed lines is one anchor, not two (#247).
+        result.mergeAdjacentLinks()
         return result
     }
 

@@ -67,6 +67,12 @@ extension TextLine: Codable {
     }
 }
 
+/// A link the page draws: the rectangle it covers, and where it points (#247).
+struct PageLink: Equatable, Codable, Sendable {
+    var rect: CGRect
+    var target: LinkTarget
+}
+
 struct PageContent: Equatable, Codable {
     var number: Int
     var bounds: CGRect
@@ -78,6 +84,8 @@ struct PageContent: Equatable, Codable {
     var recognized = false
     var hasSyntheticTextStyle = false
     var preservePageReference = false
+    /// The link annotations this page draws, in the order it lists them (#247).
+    var links: [PageLink] = []
 }
 
 func union(_ rects: [CGRect]) -> CGRect {

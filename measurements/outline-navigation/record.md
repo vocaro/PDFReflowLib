@@ -76,7 +76,11 @@ needs the same map for internal links and should use this one.
 ## Validation
 
 EPUBCheck 3.3 reports no errors or warnings on the Fed report (nested, five spine files), the
-arXiv paper and the IRS publication (nested two deep, Chinese titles). 471 Swift tests pass,
+arXiv paper and the IRS publication (nested two deep, Chinese titles). The 9/11 report draws one
+warning, NAV-011: its contents is not in reading order, because its list of illustrations comes
+before the preface and points at pages 33 to 67 while the preface points back at page 11. That is
+the contents the author printed, and reordering it would be a different book's navigation, so the
+warning stands. EPUBCheck exits zero on it and the lane passes. 471 Swift tests pass,
 five new, including the gate's decision on all twelve measured shapes. The corpus lane passes
 16 of 18 with no content-contract failures.
 

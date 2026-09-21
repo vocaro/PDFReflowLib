@@ -40,12 +40,14 @@ enum NativeTextReader {
     /// `rules` are the page's painted thin rules, which supply the underline evidence the text
     /// layer does not carry (#235).
     static func lines(on page: PDFPage, limit: Int, includeStyle: Bool = true,
-                      rules: [CGRect] = []) throws -> [TextLine] {
-        try withExtractionLock { try extractLines(on: page, limit: limit, includeStyle: includeStyle, rules: rules) }
+                      rules: [CGRect] = [], links: [PageLink] = []) throws -> [TextLine] {
+        try withExtractionLock {
+            try extractLines(on: page, limit: limit, includeStyle: includeStyle, rules: rules, links: links)
+        }
     }
 
     private static func extractLines(on page: PDFPage, limit: Int, includeStyle: Bool,
-                                     rules: [CGRect]) throws -> [TextLine] {
+                                     rules: [CGRect], links: [PageLink] = []) throws -> [TextLine] {
         guard page.numberOfCharacters <= limit else {
             throw ConversionError.resourceLimit("too many characters")
         }
@@ -88,6 +90,9 @@ enum NativeTextReader {
             var attributed = includeStyle ? attributedByLine[index] ?? line.attributedString : nil
             if includeStyle, !rules.isEmpty, let text = attributed {
                 attributed = markUnderlines(text, box: bounds, rules: rules, on: page)
+            }
+            if includeStyle, !links.isEmpty, let text = attributed {
+                attributed = markLinks(text, box: bounds, links: links, on: page)
             }
             let spacingFixed = attributed.map {
                 $0.string == raw ? NativeSpacingReader.apply(spacing, to: $0, bounds: bounds, allBounds: boundsByLine) : $0
@@ -215,6 +220,54 @@ enum NativeTextReader {
         return marked
     }
 
+    /// The target of the link covering a run, set by `markLinks` and read by `inlineText`.
+    private static let linkAttribute = NSAttributedString.Key("PDFReflowLinkTarget")
+
+    /// Carries a link target through an attributed string, which stores objects.
+    private final class LinkBox: NSObject {
+        let target: LinkTarget
+        init(_ target: LinkTarget) { self.target = target }
+    }
+
+    /// Marks the runs a link annotation covers, so a link survives reflow as a link (#247).
+    ///
+    /// This is #235's geometry, which the underline rule established: the selection over the
+    /// annotation's horizontal extent within the line's box is the linked text, and the selection
+    /// from the line's left edge to the annotation's start gives the offset. Position is what
+    /// distinguishes one occurrence of a word from another on the same line.
+    ///
+    /// None of the underline rule's guards against decoration apply here. A link is not
+    /// typography a reader might mistake for something else: the page states outright that this
+    /// rectangle points somewhere, so a link over a whole line, over one letter, or over a line
+    /// that reads as no sentence is still that link. The only requirements are that the
+    /// annotation and the line meet over most of the line's height — a link on the line above
+    /// must not claim this one — and that the text PDFKit selects is the text at the computed
+    /// offset, which is what keeps a mismatch from marking the wrong words.
+    private static func markLinks(_ attributed: NSAttributedString, box: CGRect, links: [PageLink],
+                                  on page: PDFPage) -> NSAttributedString {
+        guard attributed.length > 0 else { return attributed }
+        let covering = links.filter { link in
+            let overlap = link.rect.intersection(box)
+            return !overlap.isNull && overlap.width >= 1 && overlap.height >= box.height * 0.5
+        }
+        guard !covering.isEmpty else { return attributed }
+        let marked = NSMutableAttributedString(attributedString: attributed)
+        for link in covering {
+            let overlap = link.rect.intersection(box)
+            let over = CGRect(x: overlap.minX, y: box.minY, width: overlap.width, height: box.height)
+            let before = CGRect(x: box.minX, y: box.minY, width: max(0, overlap.minX - box.minX),
+                                height: box.height)
+            guard let text = page.selection(for: over)?.string,
+                  !text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else { continue }
+            let offset = page.selection(for: before)?.string?.utf16.count ?? 0
+            let range = NSRange(location: offset, length: text.utf16.count)
+            guard range.location >= 0, range.length > 0, range.upperBound <= marked.length,
+                  (marked.string as NSString).substring(with: range) == text else { continue }
+            marked.addAttribute(linkAttribute, value: LinkBox(link.target), range: range)
+        }
+        return marked
+    }
+
     /// The size a line's own text is set in, where a list marker opens it at a size of its own.
     ///
     /// A marker is drawn at whatever size the page likes: the Fed's page 58 sets a 10-point bullet
@@ -316,7 +369,7 @@ enum NativeTextReader {
 
     static func inlineText(from attributed: NSAttributedString) -> InlineText {
         let hasDropCap = dropCapBodySize(in: attributed) != nil
-        var runs: [InlineText.Element] = []
+        var runs: [(text: String, style: TextStyle, link: LinkTarget?)] = []
         var previous: (offset: Double, size: Double, text: String)?
         attributed.enumerateAttributes(in: NSRange(location: 0, length: attributed.length)) { attributes, range, _ in
             let font = attributes[.font] as? PlatformFont
@@ -342,7 +395,7 @@ enum NativeTextReader {
                (abs(offset) > size * 0.75 || abs(previous.offset) > previous.size * 0.75),
                let last = previous.text.last, let first = run.first,
                !last.isWhitespace, !first.isWhitespace, last != "-", last != "\u{00ad}" {
-                runs.append(.text(" ", []))
+                runs.append((" ", [], nil))
             }
             previous = font != nil && size.isFinite && size > 0 && offset.isFinite
                 ? (offset, size, run) : nil
@@ -358,20 +411,32 @@ enum NativeTextReader {
                 if offset > tolerance { style.insert(.superscript) }
                 else if offset < -tolerance { style.insert(.subscript) }
             }
-            runs.append(.text(run, style))
+            runs.append((run, style, (attributes[linkAttribute] as? LinkBox)?.target))
         }
         // `enumerateAttributes` splits at every attribute change, including ones no style reads, so
         // one underlined word can arrive as several runs of one style. Adjacent runs that read the
         // same are one run, which keeps `<u>more</u>` from being written `<u>mor</u><u>e</u>`.
-        var merged: [InlineText.Element] = []
-        for element in runs {
-            if case let .text(value, style) = element, case let .text(previous, previousStyle)? = merged.last,
-               style == previousStyle {
-                merged[merged.count - 1] = .text(previous + value, style)
+        var merged: [(text: String, style: TextStyle, link: LinkTarget?)] = []
+        for run in runs {
+            if let previous = merged.last, previous.style == run.style, previous.link == run.link {
+                merged[merged.count - 1].text += run.text
             } else {
-                merged.append(element)
+                merged.append(run)
             }
         }
-        return InlineText(elements: merged).trimmingCharacters(in: .whitespacesAndNewlines)
+        // Consecutive runs one link covers are one anchor over its styled runs, not one anchor
+        // each: a linked phrase whose middle word is italic stays one link (#247).
+        var elements: [InlineText.Element] = []
+        for run in merged {
+            guard let target = run.link else { elements.append(.text(run.text, run.style)); continue }
+            if case let .link(previous, inner)? = elements.last, previous == target {
+                var inner = inner
+                inner.elements.append(.text(run.text, run.style))
+                elements[elements.count - 1] = .link(target, inner)
+            } else {
+                elements.append(.link(target, InlineText(elements: [.text(run.text, run.style)])))
+            }
+        }
+        return InlineText(elements: elements).trimmingCharacters(in: .whitespacesAndNewlines)
     }
 }

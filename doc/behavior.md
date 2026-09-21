@@ -1066,13 +1066,41 @@ Evidence: [outline-navigation](../measurements/outline-navigation/record.md).
   source-page image recommended for this page. Compare the source PDF for visual content and
   transcription accuracy.") without suppressing the OCR, unverified-layer or annotation warnings.
   Rotated, unsupported or unrecoverable pages keep one required full-page fallback under every
-  policy (`pageImageFallback`; `.always` does not duplicate it). Visible annotations report
-  `annotationsNotConverted`; link and form interactions are not reconstructed.
+  policy (`pageImageFallback`; `.always` does not duplicate it). An annotation that did not
+  convert reports `annotationsNotConverted` and requires a page reference; a page whose every
+  annotation is a converted link requires neither (#247).
 
 Evidence: [raster-dpi](../measurements/raster-dpi/record.md),
 [warren-image-encoding](../measurements/warren-image-encoding/record.md),
 [client-options](../measurements/client-options/record.md),
 [noaa-output-policies](../measurements/noaa-output-policies/record.md).
+
+## Links
+
+- **Converted links (#247).** A link annotation becomes an EPUB anchor. Its rectangle is mapped
+  onto characters with #235's geometry: the selection over the annotation's horizontal extent
+  within the line's box is the linked text, and the selection from the line's left edge to the
+  annotation's start gives the offset, so one occurrence of a word is distinguished from another
+  on the same line. The annotation and the line must meet over at least half the line's height,
+  and the text PDFKit selects must be the text at the computed offset, or the link is dropped
+  rather than placed on guessed words. None of the underline rule's guards against decoration
+  apply: the page states outright that a rectangle points somewhere, so a link over a whole line,
+  over one letter, or over a line that reads as no sentence is still that link.
+- An external target is carried only in the schemes `http`, `https` and `mailto`, at most 2,000
+  characters, with no whitespace and nothing XML cannot carry. `javascript:` and `file:` are
+  dropped and counted, as is any other scheme and any destination outside this document.
+- An internal target names a one-based physical page and is written as a link to that page's
+  marker in whichever spine document ends up holding it
+  ([decision 0010](decisions/0010-deferred-page-destinations.md)).
+- One link the page breaks over two printed lines is one anchor: the elements a line join
+  separates are merged when only whitespace lies between them. A link whose rectangle covers at
+  least half a figure's crop links the figure rather than any text.
+- A page whose appearance is preserved whole, and one whose text is an invisible transcription
+  over a scan, keep no links: there is no run to anchor, so their links count as unconverted.
+- `annotationsNotConverted` states how many links converted and how many annotations did not,
+  and is emitted only when something did not. Only such a page requires a page reference, which
+  is what that warning has always claimed.
+  Evidence: [converted-links](../measurements/converted-links/record.md).
 
 ## EPUBWriter, SpinePacker, EPUBTextEncoder
 

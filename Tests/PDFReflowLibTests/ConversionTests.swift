@@ -251,7 +251,7 @@ private func zipEntryDateFields(_ data: Data) throws -> [(time: UInt16, date: UI
     }
     let directory = Bundle.module.resourceURL!.appendingPathComponent("fixtures")
     let manifest = try JSONDecoder().decode(Manifest.self, from: Data(contentsOf: directory.appendingPathComponent("manifest.json")))
-    #expect(manifest.fixtures.count == 7)
+    #expect(manifest.fixtures.count == 8)
     for item in manifest.fixtures {
         let data = try Data(contentsOf: directory.appendingPathComponent(item.file))
         #expect(data.count == item.bytes)

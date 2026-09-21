@@ -140,10 +140,14 @@ struct BlockAssembler {
     /// it (#137, #210). Anything else the page hands over closes the row.
     private var rowInProgress: TextLine?
 
-    init(page: Int, body: CGFloat, hyphens: HyphenContext) {
+    /// Assets the page's own links cover, by asset path (#247).
+    private let imageLinks: [String: LinkTarget]
+
+    init(page: Int, body: CGFloat, hyphens: HyphenContext, imageLinks: [String: LinkTarget] = [:]) {
         self.page = page
         self.body = body
         self.hyphens = hyphens
+        self.imageLinks = imageLinks
     }
 
     private func headingID() -> String { "heading-\(page)-\(blocks.count)" }
@@ -191,7 +195,8 @@ struct BlockAssembler {
         flushParagraph()
         codeOrigin = nil
         rowInProgress = nil
-        blocks.append(LayoutReconstructor.imageBlock(assetID: assetID, page: page))
+        blocks.append(LayoutReconstructor.imageBlock(assetID: assetID, page: page,
+                                                     link: imageLinks[assetID]))
     }
 
     /// A line the structure tree tagged; consecutive lines of one group join into one block. A

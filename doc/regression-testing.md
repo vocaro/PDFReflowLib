@@ -11,7 +11,7 @@ carry their issue linkage as `.bug()` traits.
 
 | Lane | Command | Runs |
 | --- | --- | --- |
-| Fast | `scripts/check-all.sh --fast` | Swift suite, release build, Python tool tests, measurements policy, documented builds, documentation counts, issue citations, PDFKit concurrency smoke gate, seven fixture conversions with structural checks, conversion-policy cases |
+| Fast | `scripts/check-all.sh --fast` | Swift suite, release build, Python tool tests, measurements policy, documented builds, documentation counts, issue citations, PDFKit concurrency smoke gate, eight fixture conversions with structural checks, conversion-policy cases |
 | Full | `scripts/check-all.sh` | Fast, plus the FAA memory gate when `corpus/cache/faa-h-8083-25c.pdf` (or `PDFREFLOW_REAL_PDF`) exists; absence is printed as a skip |
 | Corpus | `scripts/check-all.sh --corpus` | Fast, plus the structure-memory gate, the repeated-conversions gate and <!-- counts:corpus-documents -->18<!-- counts:end --> complete cached conversions with EPUBCheck. Requires `epubcheck` on `PATH` and every cached source; missing data fails explicitly, and nothing is downloaded |
 
@@ -28,7 +28,7 @@ Fetch sources with `tools/fetch_corpus.py --case <id>` (checksum-verified, cache
 
 What the individual gates check:
 
-- `swift test`: <!-- counts:swift-tests -->471 Swift Testing tests<!-- counts:end --> with no known-issue wrappers, using the real Apple
+- `swift test`: <!-- counts:swift-tests -->478 Swift Testing tests<!-- counts:end --> with no known-issue wrappers, using the real Apple
   PDF/OCR stack. They cover extraction, the document model, layout, raster pixels (crop origins,
   rotations, annotations, resource ceilings), preserved regions (fraction bars, raised exponents
   and all six cells of a ruled table in actual EPUB images at 72/144 DPI, with prose and code
@@ -403,7 +403,7 @@ source checksum.
 
 ## Regenerating the bundled fixtures
 
-Seven original PDFs (nine pages) are bundled with the tests and listed in the README's fixture
+Eight original PDFs (eleven pages) are bundled with the tests and listed in the README's fixture
 table. `tools/generate_fixtures.py` regenerates them and their manifest (byte counts, SHA-256
 identities, and the password of any locked fixture) with ReportLab, Pillow and Poppler's
 `pdftoppm`, using original text and drawings and standard PDF fonts without embedding font

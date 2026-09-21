@@ -24,9 +24,25 @@ enum EPUBTextEncoder {
                 if style.contains(.superscript) { run = "<sup>\(run)</sup>" }
                 else if style.contains(.subscript) { run = "<sub>\(run)</sub>" }
                 return run
+            case let .link(target, text): return "<a href=\"\(href(target))\">\(inline(text, labels: labels))</a>"
             case let .sourcePage(page): return sourcePage(page, labels: labels)
             }
         }.joined()
+    }
+
+    /// What an internal link's `href` holds until the writer knows which spine document holds the
+    /// page it names (#247). A link on page 12 can name page 400, whose document is not written
+    /// when the link is serialized, so the writer patches this token in `finish` and no published
+    /// book contains it. Source text cannot produce the token: `xml` escapes every quotation mark.
+    static let pageLinkToken = "pdfreflow:page-"
+
+    /// One link target as an `href`. An external target passed the scheme allowlist when it was
+    /// read; nothing else reaches here.
+    static func href(_ target: LinkTarget) -> String {
+        switch target {
+        case let .external(url): xml(url)
+        case let .page(page): "\(pageLinkToken)\(page)"
+        }
     }
 
     /// A block's XHTML markup, the source pages it carries for the page list, and its heading
@@ -59,7 +75,10 @@ enum EPUBTextEncoder {
             guard let path = imagePaths[image.assetID] else {
                 throw ReflowDocument.ValidationError.missingAsset(image.assetID)
             }
-            return "<figure><img src=\"\(xml(path))\" alt=\"\(xml(image.alternativeText))\"/><figcaption>\(xml(image.caption))</figcaption></figure>"
+            let picture = "<img src=\"\(xml(path))\" alt=\"\(xml(image.alternativeText))\"/>"
+            // A link whose rect covers the figure rather than text links the figure (#247).
+            let linked = image.link.map { "<a href=\"\(href($0))\">\(picture)</a>" } ?? picture
+            return "<figure>\(linked)<figcaption>\(xml(image.caption))</figcaption></figure>"
         }
     }
 }

@@ -794,7 +794,13 @@ enum LayoutReconstructor {
         let elements = structuredOrder(spatial, page: page.number, warnings: &warnings)
         let noteGroups = NumberedNoteDetector.groups(in: elements, page: page,
                                                      headingEvidence: context.numberedNotePages.contains(page.number))
-        var assembler = BlockAssembler(page: page.number, body: typography.body, hyphens: context.hyphens)
+        // A link whose rectangle covers a figure links the figure (#247).
+        var imageLinks: [String: LinkTarget] = [:]
+        for (rect, path) in images where !page.links.isEmpty {
+            if let target = linkCovering(rect, links: page.links) { imageLinks[path] = target }
+        }
+        var assembler = BlockAssembler(page: page.number, body: typography.body, hyphens: context.hyphens,
+                                       imageLinks: imageLinks)
         // A page whose tags never name a heading has not said that its display lines are not
         // headings; it has said only what they contain and in what order. Producers routinely
         // give every heading style a paragraph role — the FAA handbook's RoleMap sends
@@ -932,9 +938,23 @@ enum LayoutReconstructor {
         return elements
     }
 
-    static func imageBlock(assetID: String, page: Int, reference: Bool = false) -> ReflowBlock {
+    static func imageBlock(assetID: String, page: Int, reference: Bool = false,
+                           link: LinkTarget? = nil) -> ReflowBlock {
         let caption = reference ? "Original page \(page)" : "Preserved region from page \(page)"
-        return ReflowBlock(content: .image(.init(assetID: assetID, alternativeText: caption, caption: caption)), page: page)
+        return ReflowBlock(content: .image(.init(assetID: assetID, alternativeText: caption,
+                                                 caption: caption, link: link)), page: page)
+    }
+
+    /// The target of a link whose rectangle covers most of a crop, which is a link to the figure
+    /// rather than to any text (#247). Half the crop's area is the bound: a link over a caption
+    /// line inside a figure is a link to text and is marked there.
+    static func linkCovering(_ rect: CGRect, links: [PageLink]) -> LinkTarget? {
+        guard rect.isFinite, rect.width > 0, rect.height > 0 else { return nil }
+        let area = rect.width * rect.height
+        return links.first { link in
+            let overlap = link.rect.intersection(rect)
+            return !overlap.isNull && overlap.width * overlap.height >= area * 0.5
+        }?.target
     }
 
     /// Preserve the source boundary inside a continuing paragraph, without a format-specific marker.

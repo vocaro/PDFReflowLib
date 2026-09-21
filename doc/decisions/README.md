@@ -15,6 +15,7 @@ it. Records under `measurements/` are frozen evidence and are linked, not restat
 | [0007 Records cite commits and paths in prose; nothing pins them by machine](0007-records-cite-commits-in-prose.md) | the pointer lines atop moved records |
 | [0008 Reconstruction streams its blocks to the writer](0008-streamed-blocks-to-the-writer.md) | [streamed-blocks](../../measurements/streamed-blocks/record.md) |
 | [0009 An unmeasured memory ceiling is reported as unmeasured, not as a failure](0009-an-unmeasured-ceiling-is-not-a-failure.md) | [memory-pressure-false-failures](../../measurements/memory-pressure-false-failures/record.md) |
+| [0010 A destination that names a page is resolved after the last spine document closes](0010-deferred-page-destinations.md) | [outline-navigation](../../measurements/outline-navigation/record.md), [converted-links](../../measurements/converted-links/record.md) |
 
 Approaches that were tried and rejected without becoming an architectural rule are in
 [research notes](../research-notes.md). Open work belongs in GitHub issues, not here.

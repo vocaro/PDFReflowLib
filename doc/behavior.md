@@ -665,6 +665,16 @@ unrecognized visual content."; with references disabled, "Supplementary referenc
 compare unrecognized visual content with the source PDF."). A recognition with no lines never
 reports `ocrUsed`; see `RecognitionPolicy` above.
 
+A recognized line's **type size is its thickness, measured across its own baseline** (#130). The
+box Vision reports is axis-aligned, so for a line the page sets sideways its height is the line's
+length: the CDC graphic novel letters page 17's caption down the side of the panel, and a
+224.8-point box around an 8.9-point line made the page's body 225 and put the heading threshold
+beyond anything printed on it. The quadrilateral around the same line carries the direction the
+writing runs in, and the distance across it is the height the box would have had upright. A line
+standing upright — anything within half a right angle of vertical, which covers ordinary skew —
+keeps its box height exactly, so no page of upright writing moves by a hair. A banded retry scales
+a thickness that runs up the page with its band and leaves one that runs across it alone.
+
 ### Recognition that left the page's writing unread (#116)
 
 Vision can return success with whole paragraphs or table columns missing, and nothing in the
@@ -813,24 +823,61 @@ line below. Only a picture seeds a band: cutting at every line of a one-column p
 depth limit and report the page unread.
 
 - Two lines are one paragraph when they **share a column** (left edges within 1.5 bodies, the gap
-  between them from −0.4 to 0.9 of a body) or are **two pieces of one printed row**: they overlap
-  vertically by at least half the shorter one's height, the second stands to the right of the
-  first, and less than 0.75 of a body separates them — the width a whitespace cut needs for a
-  column, so a table's cells and the two ends of a running header remain separate blocks (#57).
-  A short previous line ending a sentence closes its paragraph either way.
+  between them from −0.4 to 0.9 of a body, and no further down the page than the leading it
+  states) or are **two pieces of one printed row**: they overlap vertically by at least half the
+  shorter one's height, the second stands to the right of the first, and less than 0.75 of a body
+  separates them — the width a whitespace cut needs for a column, so a table's cells and the two
+  ends of a running header remain separate blocks (#57). A short previous line ending a sentence
+  closes its paragraph either way.
+- The **leading a page states** is the commonest distance between the tops of two vertically
+  adjacent lines, set at one size, in one column, to the nearest half point, over the lines its
+  crops leave in the prose. At least four such pairs must agree, so a page too bare to say
+  anything states none. Tops, not baselines and not the white between the rectangles: PDFKit's
+  line rectangle grows downwards by whatever descenders the line carries, so on Wallace page 64
+  the rectangle of `• More than often represents addition and is usually built backwards,` is
+  20.46 points tall where the line beneath it has 11.98 and the white between the two is
+  negative, although the page set them one line apart (#123).
+- A line the page set **more than 1.4 times that leading** below the previous one is not the same
+  paragraph, whatever the white between the rectangles says. Wallace page 64 sets an item's
+  example 21.72 points below the item's own second line, where the page's leading is 14.40; the
+  white between them is 9.74 points, inside the 10.76 the column test allows, so the example used
+  to be appended to the item's sentence. The bound is the page's own measure because the same ten
+  points of white is nothing under display type and a paragraph break under footnotes. A page
+  that states no leading is judged by the gap alone, and so is a pair of lines set at different
+  sizes, whose tops are not one ascent above their baselines.
+- Two lines at that leading are also one paragraph when they are **centered on one axis** (mid
+  points within 0.6 of a body) **and the reading says the first one wraps** (#130). A shared left
+  edge is a column the page sets and stands on its own; a shared center does not, since a title,
+  its author and its date are centered on one axis and are three separate lines. So the center
+  joins only where the reading states the wrap: Vision states it for every line it recognizes and
+  PDFKit's native reading states nothing, which leaves every natively extracted page as it was.
+  The CDC graphic novel letters each speech balloon centered, so page 34's `I'VE BEEN` /
+  `THINKING... WE` / `SHOULD REALLY` / `MAKE AN` / `EMERGENCY KIT` stand on five left edges spread
+  over eighteen points and on one center within 1.7 points.
+- A **stub of prose is closed by the step the next line takes** (#130): a previous line under half
+  the width of the line beneath it, with that line set at least half a body further in, opens a
+  new block even where no sentence ended. Prose fills its measure, so a line that used under half
+  of it ended something, and the step is where the next thing begins; #39 already reads a marker
+  set in past the line above it as an item's opening rather than a wrap. The Blue Book's observer
+  questionnaire is the case: page 273 sets the spaced answer row `Yes or No` under question 7 and
+  the instruction `IF you answered YES, then complete the following questions:` a body further in
+  beneath it. Half is where the same book's contents stand — page 5 hangs each entry's wrapped
+  line six points in under an opening filling three fifths of it, and the entry stays one
+  paragraph.
 - A line is also one paragraph with the line above it when the page **hangs** it there as the wrap
-  of an entry (#160). Project Blue Book sets its list of illustrations from one margin and hangs
-  each wrap 48.5 points in at 7.8-point type, six times the size, so the column test above was
-  silent and thirty entries reflowed as sixty paragraphs. The indent alone proves nothing — a book
-  that opens its paragraphs on a first-line indent sets the same two edges in the same alternation,
-  and `firstLineIndentRun` reads the Blue Book's list as one of its own — so the page must state
+  of an entry (#160). Project Blue Book's page 6 sets its list of illustrations from one margin and
+  hangs each wrap 48.5 points in at 7.8-point type, six times the size — well past the 1.5 bodies
+  the column test allows, unlike its page 5's six points — so twenty-four illustrations reflowed as
+  forty-two paragraphs. The indent alone proves nothing: a book that opens its paragraphs on a
+  first-line indent sets the same two edges in the same alternation, and `firstLineIndentRun` reads
+  the Blue Book's list as one of its own. What separates them is that a paragraph ends on a short
+  line that ran out of words while an entry that wrapped ran out of room, so the page must state
   all of: the wrap stands directly beneath the entry, at its size, on the page's own leading, set
   in further than 1.5 bodies, so the rule speaks only where the column test is silent; the entry
   reads as a sentence, fills its measure (twelve of its own sizes) and ends none (past closing
-  quotes and brackets), which a paragraph's short last line above an indented opening does not; the
-  wrap carries at least two letters and stops a whole body short of the entry's right edge, as an
-  entry's tail does and a justified opening line does not; and the page hangs at least three
-  entries on one and the same continuation edge.
+  quotes and brackets); the wrap carries at least two letters and stops a whole body short of the
+  entry's right edge, as an entry's tail does and a justified opening line does not; and the page
+  hangs at least three entries on one and the same continuation edge.
 
 ### Type sizes and headings
 
@@ -900,7 +947,8 @@ A page's own words are unchanged either way; the join only moves a line from its
 the paragraph above it, where an ordinary hyphen repair may then close a word the split had
 broken.
 
-Evidence: [heading-body-regressions](../measurements/heading-body-regressions/record.md),
+Evidence: [page-leading-and-ligature-vocabulary](../measurements/page-leading-and-ligature-vocabulary/record.md),
+[heading-body-regressions](../measurements/heading-body-regressions/record.md),
 [three-fidelity-fixes](../measurements/three-fidelity-fixes/record.md),
 [preformatted-styles](../measurements/preformatted-styles/record.md),
 [citation-continuations](../measurements/citation-continuations/record.md),
@@ -913,6 +961,12 @@ Evidence: [heading-body-regressions](../measurements/heading-body-regressions/re
   the next line opens in lowercase; the join is decided on the letters either side.
 - The hyphen is removed silently when the book's own vocabulary holds the joined word and not the
   hyphenated compound. When the vocabulary holds the compound, the hyphen stays silently.
+- The vocabulary holds every word lowercased and with the typographic ligatures and other
+  compatibility glyphs a font draws resolved to the letters they stand for, and the two halves of
+  a break are looked up the same way (#123). Wallace's text font prints `different` with a U+FB00
+  `ﬀ`, so the book's own words held `diﬀerent` — 56 times — and never `different`, and had
+  nothing to say about `dif-` + `ferent` on pages 50 and 218. Only the evidence folds: the
+  ligature the page printed stays in the text the reader gets, on both sides of a join.
 - When the vocabulary is silent on both, an English document's system lexicon may decide (#186):
   the join goes ahead, still silently, only when each half has at least two letters and the two
   together at least six, the lexicon holds the joined word, and *not* both halves are lexicon
@@ -956,7 +1010,8 @@ Evidence: [heading-body-regressions](../measurements/heading-body-regressions/re
   `tion of the operation;` as a paragraph of its own.
 
 Evidence: [spine-continuity](../measurements/spine-continuity/record.md),
-[line-end-hyphen-substitutes](../measurements/line-end-hyphen-substitutes/record.md).
+[line-end-hyphen-substitutes](../measurements/line-end-hyphen-substitutes/record.md),
+[page-leading-and-ligature-vocabulary](../measurements/page-leading-and-ligature-vocabulary/record.md).
 
 ## Region detectors
 

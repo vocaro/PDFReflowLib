@@ -158,6 +158,8 @@ extension LayoutReconstructor {
 struct BlockAssembler {
     let page: Int
     let body: CGFloat
+    /// The leading this page's own text states, or nil where it states none (#123).
+    let leading: CGFloat?
     let hyphens: HyphenContext
     private(set) var blocks: [ReflowBlock] = []
     /// Uncertain-hyphen warnings the joins raised, one per page.
@@ -186,10 +188,11 @@ struct BlockAssembler {
     /// The wrapped second line of each entry the page hangs, by the entry it carries on (#160).
     private let hangingEntries: [CGRect: CGRect]
 
-    init(page: Int, body: CGFloat, hyphens: HyphenContext, imageLinks: [String: LinkTarget] = [:],
-         hangingEntries: [CGRect: CGRect] = [:]) {
+    init(page: Int, body: CGFloat, leading: CGFloat? = nil, hyphens: HyphenContext,
+         imageLinks: [String: LinkTarget] = [:], hangingEntries: [CGRect: CGRect] = [:]) {
         self.page = page
         self.body = body
+        self.leading = leading
         self.hyphens = hyphens
         self.imageLinks = imageLinks
         self.hangingEntries = hangingEntries
@@ -388,21 +391,80 @@ struct BlockAssembler {
         }
     }
 
-    /// Whether `line` continues the paragraph `previous` is part of: the previous line wraps,
-    /// the two share a column at ordinary leading, are two pieces of one printed row, or are an
-    /// entry and the wrap the page hangs under it, and the previous line is not a short line
-    /// ending a sentence.
+    /// Whether `line` continues the paragraph `previous` is part of: the previous line wraps, the
+    /// two are stacked at ordinary leading, are two pieces of one printed row, or are an entry and
+    /// the wrap the page hangs under it, and the previous line is not a short line the page has
+    /// already closed.
     private func continuesParagraph(_ prev: TextLine, _ line: TextLine) -> Bool {
+        guard prev.wraps != false else { return false }
+        // A short line ending a sentence closes its paragraph however the two lines stand.
+        let short = prev.rect.width < line.rect.width * 0.65
+        guard !(short && prev.text.last.map { ".!?".contains($0) } == true) else { return false }
+        if continuesRow(prev, line) { return true }
         let verticalGap = prev.rect.minY - line.rect.maxY
-        let sameColumn = abs(prev.rect.minX - line.rect.minX) < body * 1.5
-            && verticalGap >= -body * 0.4 && verticalGap < body * 0.9
         // A list the page hangs sets its wraps further in than one column's lines ever stand
         // apart; `LayoutReconstructor.hangingEntries` reads which ones the page hung (#160).
         let hangs = hangingEntries[line.rect] == prev.rect
-        let shortEnding = prev.rect.width < line.rect.width * 0.65
-            && prev.text.last.map { ".!?".contains($0) } == true
-        return prev.wraps != false && (sameColumn || hangs || continuesRow(prev, line)) && !shortEnding
+        guard verticalGap >= -body * 0.4, verticalGap < body * 0.9, onStatedLeading(prev, line),
+              abs(prev.rect.minX - line.rect.minX) < body * 1.5 || centered(prev, line) || hangs
+        else { return false }
+        // Prose fills its measure, so a line that used under half of the one beneath it ended
+        // something, and a line the page then sets further in begins the next thing. #39 already
+        // reads a marker set in past the line above it as the opening of an item rather than a
+        // wrap; this is the same step under a stub of prose, and it never contradicts #39, whose
+        // own test refuses exactly the lines this one closes.
+        //
+        // The Blue Book's observer questionnaire is the case it answers (#130). Page 273 sets the
+        // spaced answer row `Yes or No` under question 7 and the instruction `IF you answered
+        // YES, then complete the following questions:` a body further in beneath it. The row ends
+        // no sentence, so its punctuation says nothing about it; the step the page takes does.
+        //
+        // Half is where the same book's contents stand: page 5 hangs each entry's wrapped line
+        // six points in under an opening that fills three fifths of it, and an entry that runs
+        // over is one paragraph. Two thirds — what the sentence-ending rule above asks — would
+        // break those; a stub under half the measure is not a line that ran out of room.
+        return !(prev.rect.width < line.rect.width * 0.5 && line.rect.minX - prev.rect.minX >= body * 0.5)
     }
+
+    /// Whether the two lines are stacked on one center: a balloon, a box or a caption the page
+    /// set centered, whose lines share no left edge to be read as a column (#130). The CDC graphic
+    /// novel letters every speech balloon this way, so page 34's `I'VE BEEN` / `THINKING... WE` /
+    /// `SHOULD REALLY` / `MAKE AN` / `EMERGENCY KIT` stand on five left edges spread over 18
+    /// points and on one center, within 1.7 points of each other on a ten-point page.
+    ///
+    /// A shared left edge is a column the page itself sets, and stands as evidence on its own. A
+    /// shared center does not: a title, its author and its date are centered on one axis and are
+    /// three separate lines. So a centered stack joins only where the reading also states that the
+    /// line wraps to the next one. Vision states it for every line it recognizes; PDFKit's native
+    /// reading states nothing, which leaves every natively extracted page exactly as it was.
+    private func centered(_ prev: TextLine, _ line: TextLine) -> Bool {
+        prev.wraps == true && abs(prev.rect.midX - line.rect.midX) <= body * 0.6
+    }
+
+    /// Whether the page set `line` on the leading its own text states, rather than a further part
+    /// of a line down: a line the page pushed down is a line the page set apart (#123).
+    ///
+    /// Wallace page 64 hangs `writing the second part plus the first` under a bulleted item and
+    /// then sets its example, `Three more than a number becomes x + 3`, 21.72 points below it,
+    /// where the page's own leading — every wrapped line of prose on it — is 14.40. Measured as
+    /// white between the rectangles that is 9.74 points, under the 10.76 this rule already
+    /// allowed, so the example was appended to the item's own sentence and the page's separation
+    /// of the two was lost. The item below it loses its example the same way, and so do the
+    /// paragraph breaks this book sets with a further half-line on 22 of its other pages.
+    ///
+    /// Two fifths of a line is the slack. A page whose leading varies by a point between
+    /// paragraphs still reads as one measure; a page that opens half a line of white has said
+    /// something, and here it said 1.51 times its own leading. A page that states no leading
+    /// (`statedLeading`) is judged by the gap alone, as before, and so is a pair of lines set at
+    /// different sizes, whose tops are not one ascent above their baselines and so cannot be
+    /// compared this way.
+    private func onStatedLeading(_ prev: TextLine, _ line: TextLine) -> Bool {
+        guard let leading, prev.hasSize(line.fontSize) else { return true }
+        return prev.rect.maxY - line.rect.maxY <= leading * BlockAssembler.paragraphLeadingSlack
+    }
+
+    /// How far past the page's own leading two lines may stand and still be one paragraph.
+    static let paragraphLeadingSlack: CGFloat = 1.4
 
     /// Whether a line opening with a number or a single letter and a point is a wrapped
     /// continuation of the open paragraph rather than the opening of a list item (#39, #238).

@@ -158,6 +158,8 @@ extension LayoutReconstructor {
 struct BlockAssembler {
     let page: Int
     let body: CGFloat
+    /// The leading this page's own text states, or nil where it states none (#123).
+    let leading: CGFloat?
     let hyphens: HyphenContext
     private(set) var blocks: [ReflowBlock] = []
     /// Uncertain-hyphen warnings the joins raised, one per page.
@@ -184,9 +186,11 @@ struct BlockAssembler {
     /// Assets the page's own links cover, by asset path (#247).
     private let imageLinks: [String: LinkTarget]
 
-    init(page: Int, body: CGFloat, hyphens: HyphenContext, imageLinks: [String: LinkTarget] = [:]) {
+    init(page: Int, body: CGFloat, leading: CGFloat? = nil, hyphens: HyphenContext,
+         imageLinks: [String: LinkTarget] = [:]) {
         self.page = page
         self.body = body
+        self.leading = leading
         self.hyphens = hyphens
         self.imageLinks = imageLinks
     }
@@ -391,10 +395,36 @@ struct BlockAssembler {
         let verticalGap = prev.rect.minY - line.rect.maxY
         let sameColumn = abs(prev.rect.minX - line.rect.minX) < body * 1.5
             && verticalGap >= -body * 0.4 && verticalGap < body * 0.9
+            && onStatedLeading(prev, line)
         let shortEnding = prev.rect.width < line.rect.width * 0.65
             && prev.text.last.map { ".!?".contains($0) } == true
         return prev.wraps != false && (sameColumn || continuesRow(prev, line)) && !shortEnding
     }
+
+    /// Whether the page set `line` on the leading its own text states, rather than a further part
+    /// of a line down: a line the page pushed down is a line the page set apart (#123).
+    ///
+    /// Wallace page 64 hangs `writing the second part plus the first` under a bulleted item and
+    /// then sets its example, `Three more than a number becomes x + 3`, 21.72 points below it,
+    /// where the page's own leading — every wrapped line of prose on it — is 14.40. Measured as
+    /// white between the rectangles that is 9.74 points, under the 10.76 this rule already
+    /// allowed, so the example was appended to the item's own sentence and the page's separation
+    /// of the two was lost. The item below it loses its example the same way, and so do the
+    /// paragraph breaks this book sets with a further half-line on 22 of its other pages.
+    ///
+    /// Two fifths of a line is the slack. A page whose leading varies by a point between
+    /// paragraphs still reads as one measure; a page that opens half a line of white has said
+    /// something, and here it said 1.51 times its own leading. A page that states no leading
+    /// (`statedLeading`) is judged by the gap alone, as before, and so is a pair of lines set at
+    /// different sizes, whose tops are not one ascent above their baselines and so cannot be
+    /// compared this way.
+    private func onStatedLeading(_ prev: TextLine, _ line: TextLine) -> Bool {
+        guard let leading, prev.hasSize(line.fontSize) else { return true }
+        return prev.rect.maxY - line.rect.maxY <= leading * BlockAssembler.paragraphLeadingSlack
+    }
+
+    /// How far past the page's own leading two lines may stand and still be one paragraph.
+    static let paragraphLeadingSlack: CGFloat = 1.4
 
     /// Whether a line opening with a number or a single letter and a point is a wrapped
     /// continuation of the open paragraph rather than the opening of a list item (#39, #238).

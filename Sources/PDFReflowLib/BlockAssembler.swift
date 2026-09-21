@@ -337,14 +337,17 @@ struct BlockAssembler {
 
     /// Assets the page's own links cover, by asset path (#247).
     private let imageLinks: [String: LinkTarget]
+    /// The wrapped second line of each entry the page hangs, by the entry it carries on (#160).
+    private let hangingEntries: [CGRect: CGRect]
 
     init(page: Int, body: CGFloat, leading: CGFloat? = nil, hyphens: HyphenContext,
-         imageLinks: [String: LinkTarget] = [:]) {
+         imageLinks: [String: LinkTarget] = [:], hangingEntries: [CGRect: CGRect] = [:]) {
         self.page = page
         self.body = body
         self.leading = leading
         self.hyphens = hyphens
         self.imageLinks = imageLinks
+        self.hangingEntries = hangingEntries
     }
 
     private func headingID() -> String { "heading-\(page)-\(blocks.count)" }
@@ -589,8 +592,9 @@ struct BlockAssembler {
     }
 
     /// Whether `line` continues the paragraph `previous` is part of: the previous line wraps, the
-    /// two are stacked at ordinary leading or are two pieces of one printed row, and the previous
-    /// line is not a short line the page has already closed.
+    /// two are stacked at ordinary leading, are two pieces of one printed row, or are an entry and
+    /// the wrap the page hangs under it, and the previous line is not a short line the page has
+    /// already closed.
     private func continuesParagraph(_ prev: TextLine, _ line: TextLine) -> Bool {
         guard prev.wraps != false else { return false }
         // A short line ending a sentence closes its paragraph however the two lines stand.
@@ -598,8 +602,12 @@ struct BlockAssembler {
         guard !(short && prev.text.last.map { ".!?".contains($0) } == true) else { return false }
         if continuesRow(prev, line) { return true }
         let verticalGap = prev.rect.minY - line.rect.maxY
+        // A list the page hangs sets its wraps further in than one column's lines ever stand
+        // apart; `LayoutReconstructor.hangingEntries` reads which ones the page hung (#160).
+        let hangs = hangingEntries[line.rect] == prev.rect
         guard verticalGap >= -body * 0.4, verticalGap < body * 0.9, onStatedLeading(prev, line),
-              abs(prev.rect.minX - line.rect.minX) < body * 1.5 || centered(prev, line) else { return false }
+              abs(prev.rect.minX - line.rect.minX) < body * 1.5 || centered(prev, line) || hangs
+        else { return false }
         // Prose fills its measure, so a line that used under half of the one beneath it ended
         // something, and a line the page then sets further in begins the next thing. #39 already
         // reads a marker set in past the line above it as the opening of an item rather than a

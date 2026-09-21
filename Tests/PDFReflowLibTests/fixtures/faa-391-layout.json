@@ -1,0 +1,740 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        36,
+        33.709700000000005,
+        20.010000000000005,
+        12.310000000000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "16-4"
+        }
+      ],
+      "text" : "16-4"
+    },
+    {
+      "rect" : [
+        36,
+        82.370400000000004,
+        236.86740000000009,
+        10.811999999999998
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 8,
+          "text" : "Figure 16-4."
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : " "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "text" : "Meridians and parallels—the basis of measuring time,"
+        }
+      ],
+      "text" : "Figure 16-4. Meridians and parallels—the basis of measuring time,"
+    },
+    {
+      "rect" : [
+        35.996400000000008,
+        70.475399999999993,
+        84.996000000000009,
+        10.206000000000003
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "text" : "distance, and direction."
+        }
+      ],
+      "text" : "distance, and direction."
+    },
+    {
+      "rect" : [
+        36.360600000000034,
+        102.4221,
+        235.95400000000001,
+        232.55700000000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    },
+    {
+      "rect" : [
+        36,
+        346.61040000000003,
+        141.65030000000002,
+        10.812000000000012
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 8,
+          "text" : "Figure 16-3."
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : " "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "text" : "World aeronautical chart."
+        }
+      ],
+      "text" : "Figure 16-3. World aeronautical chart."
+    },
+    {
+      "rect" : [
+        36,
+        365.2955551,
+        486.00001529999997,
+        362.7044449
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    },
+    {
+      "rect" : [
+        285,
+        328.51640000000003,
+        237.00399999999991,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "The standard practice is to establish a time zone for each"
+        }
+      ],
+      "text" : "The standard practice is to establish a time zone for each"
+    },
+    {
+      "rect" : [
+        285,
+        316.01640000000003,
+        237.01699999999994,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "15° of longitude. This makes a difference of exactly 1 hour"
+        }
+      ],
+      "text" : "15° of longitude. This makes a difference of exactly 1 hour"
+    },
+    {
+      "rect" : [
+        285,
+        303.51640000000003,
+        237.10400000000004,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "between each zone. In the conterminous United States,"
+        }
+      ],
+      "text" : "between each zone. In the conterminous United States,"
+    },
+    {
+      "rect" : [
+        285,
+        291.01640000000003,
+        237.00399999999991,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "there are four time zones. The time zones are Eastern (75°),"
+        }
+      ],
+      "text" : "there are four time zones. The time zones are Eastern (75°),"
+    },
+    {
+      "rect" : [
+        285,
+        278.51640000000003,
+        237.14100000000008,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Central (90°), Mountain (105°), and Pacific (120°). The"
+        }
+      ],
+      "text" : "Central (90°), Mountain (105°), and Pacific (120°). The"
+    },
+    {
+      "rect" : [
+        285,
+        266.01640000000003,
+        237.01999999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "dividing lines are somewhat irregular because communities"
+        }
+      ],
+      "text" : "dividing lines are somewhat irregular because communities"
+    },
+    {
+      "rect" : [
+        285,
+        253.51640000000003,
+        237.02500000000009,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "near the boundaries often find it more convenient to use time"
+        }
+      ],
+      "text" : "near the boundaries often find it more convenient to use time"
+    },
+    {
+      "rect" : [
+        285,
+        241.01640000000003,
+        232.46999999999991,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "designations of neighboring communities or trade centers."
+        }
+      ],
+      "text" : "designations of neighboring communities or trade centers."
+    },
+    {
+      "rect" : [
+        285,
+        216.01640000000003,
+        237.05999999999995,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 10,
+          "text" : "Figure 16-5"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : " shows the time zones in the conterminous United"
+        }
+      ],
+      "text" : "Figure 16-5 shows the time zones in the conterminous United"
+    },
+    {
+      "rect" : [
+        285,
+        203.51640000000003,
+        236.99599999999998,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "States. When the sun is directly above the 90th meridian, it"
+        }
+      ],
+      "text" : "States. When the sun is directly above the 90th meridian, it"
+    },
+    {
+      "rect" : [
+        285,
+        191.01640000000003,
+        237.00999999999999,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "is noon Central Standard Time. At the same time, it is 1 p.m."
+        }
+      ],
+      "text" : "is noon Central Standard Time. At the same time, it is 1 p.m."
+    },
+    {
+      "rect" : [
+        285,
+        178.51640000000003,
+        237.01900000000001,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Eastern Standard Time, 11 a.m. Mountain Standard Time,"
+        }
+      ],
+      "text" : "Eastern Standard Time, 11 a.m. Mountain Standard Time,"
+    },
+    {
+      "rect" : [
+        285,
+        166.01640000000003,
+        237.00999999999999,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "and 10 a.m. Pacific Standard Time. When Daylight Saving"
+        }
+      ],
+      "text" : "and 10 a.m. Pacific Standard Time. When Daylight Saving"
+    },
+    {
+      "rect" : [
+        285,
+        153.51640000000003,
+        237.00800000000004,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Time is in effect, generally between the second Sunday in"
+        }
+      ],
+      "text" : "Time is in effect, generally between the second Sunday in"
+    },
+    {
+      "rect" : [
+        285,
+        141.01640000000003,
+        236.9899999999999,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "March and the first Sunday in November, the sun is directly"
+        }
+      ],
+      "text" : "March and the first Sunday in November, the sun is directly"
+    },
+    {
+      "rect" : [
+        285,
+        128.51640000000003,
+        227.19999999999993,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "above the 75th meridian at noon, Central Daylight Time."
+        }
+      ],
+      "text" : "above the 75th meridian at noon, Central Daylight Time."
+    },
+    {
+      "rect" : [
+        285,
+        103.51640000000003,
+        236.94000000000005,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "These time zone differences must be taken into account"
+        }
+      ],
+      "text" : "These time zone differences must be taken into account"
+    },
+    {
+      "rect" : [
+        285,
+        91.016400000000033,
+        237.01999999999998,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "during long flights eastward—especially if the flight must"
+        }
+      ],
+      "text" : "during long flights eastward—especially if the flight must"
+    },
+    {
+      "rect" : [
+        285,
+        78.516400000000033,
+        237.01099999999997,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "be completed before dark. Remember, an hour is lost when"
+        }
+      ],
+      "text" : "be completed before dark. Remember, an hour is lost when"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    594,
+    774
+  ],
+  "caseID" : "faa-phak-8083-25c",
+  "graphics" : [
+    [
+      34.860600000000034,
+      100.9221,
+      238.95400000000001,
+      235.55700000000002
+    ],
+    [
+      34,
+      363.64999999999998,
+      490.27300000000002,
+      366.35000000000002
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        33.709700000000005,
+        20.010000000000005,
+        12.310000000000002
+      ],
+      "text" : "16-4"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        82.370400000000004,
+        236.86740000000009,
+        10.811999999999998
+      ],
+      "text" : "Figure 16-4. Meridians and parallels—the basis of measuring time,"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        35.996400000000008,
+        70.475399999999993,
+        84.996000000000009,
+        10.206000000000003
+      ],
+      "text" : "distance, and direction."
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        346.61040000000003,
+        141.65030000000002,
+        10.812000000000012
+      ],
+      "text" : "Figure 16-3. World aeronautical chart."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        328.51640000000003,
+        237.00399999999991,
+        11.470000000000027
+      ],
+      "text" : "The standard practice is to establish a time zone for each"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        316.01640000000003,
+        237.01699999999994,
+        11.470000000000027
+      ],
+      "text" : "15° of longitude. This makes a difference of exactly 1 hour"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        303.51640000000003,
+        237.10400000000004,
+        11.470000000000027
+      ],
+      "text" : "between each zone. In the conterminous United States,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        291.01640000000003,
+        237.00399999999991,
+        11.470000000000027
+      ],
+      "text" : "there are four time zones. The time zones are Eastern (75°),"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        278.51640000000003,
+        237.14100000000008,
+        11.470000000000027
+      ],
+      "text" : "Central (90°), Mountain (105°), and Pacific (120°). The"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        266.01640000000003,
+        237.01999999999998,
+        11.470000000000027
+      ],
+      "text" : "dividing lines are somewhat irregular because communities"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        253.51640000000003,
+        237.02500000000009,
+        11.470000000000027
+      ],
+      "text" : "near the boundaries often find it more convenient to use time"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        241.01640000000003,
+        232.46999999999991,
+        11.469999999999999
+      ],
+      "text" : "designations of neighboring communities or trade centers."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        216.01640000000003,
+        237.05999999999995,
+        11.469999999999999
+      ],
+      "text" : "Figure 16-5 shows the time zones in the conterminous United"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        203.51640000000003,
+        236.99599999999998,
+        11.469999999999999
+      ],
+      "text" : "States. When the sun is directly above the 90th meridian, it"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        191.01640000000003,
+        237.00999999999999,
+        11.469999999999999
+      ],
+      "text" : "is noon Central Standard Time. At the same time, it is 1 p.m."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        178.51640000000003,
+        237.01900000000001,
+        11.469999999999999
+      ],
+      "text" : "Eastern Standard Time, 11 a.m. Mountain Standard Time,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        166.01640000000003,
+        237.00999999999999,
+        11.469999999999999
+      ],
+      "text" : "and 10 a.m. Pacific Standard Time. When Daylight Saving"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        153.51640000000003,
+        237.00800000000004,
+        11.469999999999999
+      ],
+      "text" : "Time is in effect, generally between the second Sunday in"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        141.01640000000003,
+        236.9899999999999,
+        11.469999999999999
+      ],
+      "text" : "March and the first Sunday in November, the sun is directly"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        128.51640000000003,
+        227.19999999999993,
+        11.469999999999999
+      ],
+      "text" : "above the 75th meridian at noon, Central Daylight Time."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        103.51640000000003,
+        236.94000000000005,
+        11.469999999999999
+      ],
+      "text" : "These time zone differences must be taken into account"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        91.016400000000033,
+        237.01999999999998,
+        11.469999999999999
+      ],
+      "text" : "during long flights eastward—especially if the flight must"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        78.516400000000033,
+        237.01099999999997,
+        11.469999999999999
+      ],
+      "text" : "be completed before dark. Remember, an hour is lost when"
+    }
+  ],
+  "page" : 391,
+  "rightsBasis" : "U.S. Government publication, retained as an external development corpus source. The PDF is not bundled or relicensed under the library license.",
+  "sourceSHA256" : "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
+  "sourceTitle" : "Pilot's Handbook of Aeronautical Knowledge, FAA-H-8083-25C",
+  "sourceURL" : "https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/faa-h-8083-25c.pdf"
+}

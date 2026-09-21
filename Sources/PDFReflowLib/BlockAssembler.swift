@@ -410,6 +410,20 @@ struct BlockAssembler {
         }
     }
 
+    /// A table the page draws, read as cells (#210). It closes whatever is open, as a figure
+    /// does: nothing joins across a table.
+    mutating func appendTable(_ table: PageTable) {
+        initialOpening = nil
+        flushNote()
+        flushParagraph()
+        codeOrigin = nil
+        rowInProgress = nil
+        itemRowInProgress = nil
+        blocks.append(ReflowBlock(content: .table(.init(
+            rows: table.rows.map { $0.map { .init(text: $0.content, columns: $0.columns) } },
+            headerRows: table.headerRows)), page: page))
+    }
+
     mutating func appendImage(_ assetID: String) {
         initialOpening = nil
         flushNote()

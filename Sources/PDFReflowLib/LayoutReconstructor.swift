@@ -414,8 +414,13 @@ enum LayoutReconstructor {
             return decides(measure, row.map(\.text).joined(separator: " "),
                            row.contains(where: \.monospaced)) == nil ? nil : rect
         }
-        let seeds = graphics + formulas + TableRegionDetector.regions(in: page)
-            + FractionRegionDetector.regions(in: page, body: body) + tables
+        // A table this page reads as cells is not a picture (#210). #36 preserved these tables
+        // because nothing downstream could carry a cell; where `TableReader` divides one, the
+        // seeds that would crop it are dropped and the rows reflow as a table instead.
+        let read = page.tables.map { $0.rect.insetBy(dx: -body, dy: -body) }
+        let seeds = (graphics + formulas + TableRegionDetector.regions(in: page)
+            + FractionRegionDetector.regions(in: page, body: body) + tables)
+            .filter { seed in !read.contains { $0.contains(seed) } }
         // The column headers of the tables this page draws, which a crop never releases to the
         // prose (#257). Read once: it is a property of the page, not of any one region.
         let columnHeaders = TableRegionDetector.columnHeaders(in: page, body: body)
@@ -469,6 +474,9 @@ enum LayoutReconstructor {
         var rect: CGRect
         var line: TextLine?
         var image: String?
+        /// A table the page draws, which takes its place in the reading order as a figure does
+        /// and carries its own rows (#210).
+        var table: PageTable?
     }
 
     /// Convenience for callers that do not report an abandoned cut.
@@ -861,7 +869,7 @@ enum LayoutReconstructor {
     /// A figure or table caption's opening label (#218, ported unchanged from the coordination
     /// branch's `isCaption`, #97): a caption is never the title of the text beneath it, and a
     /// sub-heading is never a caption's own label.
-    private static func isCaption(_ text: String) -> Bool {
+    static func isCaption(_ text: String) -> Bool {
         text.range(of: "^(?:Figure|Table)\\s+[0-9]", options: .regularExpression) != nil
     }
 
@@ -1213,8 +1221,12 @@ enum LayoutReconstructor {
             guard index + 1 < page.lines.count, !taken.contains(index + 1) else { return false }
             return continuesBrokenWord(from: page.lines[index], to: page.lines[index + 1])
         })
-        let reflowable = page.lines.enumerated().filter { index, _ in
-            !taken.contains(index) || released.contains(index)
+        // A table read as cells claims the lines it covers: they are emitted once, inside the
+        // table, and reflowing them again beside it would print the page's numbers twice (#210).
+        let tableRects = page.tables.map { $0.rect.insetBy(dx: -1, dy: -1) }
+        let reflowable = page.lines.enumerated().filter { index, line in
+            (!taken.contains(index) || released.contains(index))
+                && !tableRects.contains { $0.contains(line.rect) }
         }.map(\.element)
         // An inline fraction's denominator joins the line its numerator ends (#53).
         let lines = joinedInlineFractions(reflowable, rules: page.graphics.filter(isThinRule),
@@ -1234,8 +1246,9 @@ enum LayoutReconstructor {
         // (#41).
         let rightToLeft = ArabicText.readsRightToLeft(lines)
         let spatial = ordered(lines.map { Element(rect: $0.readingRect ?? $0.rect, line: $0) }
-            + images.map { Element(rect: $0.0, image: $0.1) }, bodySize: typography.body,
-            rightToLeft: rightToLeft, exhausted: &exhausted)
+            + images.map { Element(rect: $0.0, image: $0.1) }
+            + page.tables.map { Element(rect: $0.rect, table: $0) },
+            bodySize: typography.body, rightToLeft: rightToLeft, exhausted: &exhausted)
         if exhausted {
             warnings.append(.init(code: .complexLayout, page: page.number,
                 message: "Whitespace cuts reached their depth limit before separating this page's content; "
@@ -1293,6 +1306,8 @@ enum LayoutReconstructor {
                 assembler.appendNote(group: group, line)
             } else if let path = element.image {
                 assembler.appendImage(path)
+            } else if let table = element.table {
+                assembler.appendTable(table)
             } else if let line = element.line, let spatial = roles[index] {
                 if var tag = line.structure {
                     if let level = contradicted[tag.group] { tag.headingLevel = level }

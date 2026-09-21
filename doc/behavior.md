@@ -821,13 +821,28 @@ Evidence: [page-retention](../measurements/page-retention/record.md);
   cannot overrule the slot, which is the point: a notes page sets its body at 7 pt under a 9.5 pt
   running head, so that head clears the page's heading threshold and would otherwise reach the
   reader as an `h2` (#10).
+- A **drop folio** — the page number a book prints at the foot of an opening page, where the
+  running head that carries it elsewhere is suppressed — is reached by a third kind of evidence:
+  the document's own numbering. Every margin line records the physical-page offsets its boundary
+  numbers imply, and an offset that the lines the plan already removes state on at least six
+  pages and at least a quarter of the document's — the floor a slot asks of a place — is the
+  book's own. A bare number, alone on its line, standing further out at the foot than any other
+  line, set apart from the body by its own separation and inside the outer tenth, then goes where
+  its value is exactly the folio that offset predicts for its page. The 9/11 report prints
+  `430 APPENDIX` at the head of 546 pages, stating an offset of -18, and drops `429` to the foot
+  of appendix A's opening page, which no run can see because no two opening pages are neighbors
+  (#271). Nothing goes on position alone: the narrow 7% footer band is unchanged, a stacked band
+  is not admitted, a numbered answer or a table cell would have to state its own page's number,
+  and a book whose furniture states no offset — Our Flag removes nothing and sets a folio at the
+  foot of every page — keeps every number it prints.
 - Each affected page reports `furnitureRemoved` ("Repeated header or footer omitted from the
   reflowed text."); `removeRepeatedHeadersAndFooters = false` keeps everything. This is spatial
   evidence, not tag consumption or a universal header classifier.
 
 Evidence: [local-header-regressions](../measurements/local-header-regressions/record.md),
 [report-header-qualification](../measurements/report-header-qualification/record.md),
-[stacked-margin-blocks](../measurements/stacked-margin-blocks/record.md).
+[stacked-margin-blocks](../measurements/stacked-margin-blocks/record.md),
+[drop-folios](../measurements/drop-folios/record.md).
 
 ## LayoutReconstructor, PageTypography, LineRole, BlockAssembler
 

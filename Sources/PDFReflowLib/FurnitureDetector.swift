@@ -20,9 +20,23 @@ enum FurnitureDetector {
         /// a type size the whole document keeps, so slots are compared in one unit.
         var typeSize: CGFloat
         var isFolio: Bool
+        /// Every physical-page offset the line's boundary numbers imply: what it states about
+        /// where its page stands in the source's own numbering. `430 APPENDIX` on physical page
+        /// 448 states -18, and so does a bare `429` on physical page 447.
+        var offsets: Set<Int> = []
         /// The other lines of the stacked band this line belongs to, if any; it is removed
         /// only when all of them are.
         var dependsOn: [Int] = []
+    }
+
+    /// A bare number standing alone in a page's outer foot margin, set apart from the body, and
+    /// the offset it states between its own value and the physical page it stands on. Held apart
+    /// from the run candidates because nothing about where it stands removes it: only an offset
+    /// the document has already established elsewhere does (#271).
+    fileprivate struct DropFolio {
+        var pageIndex: Int
+        var lineIndex: Int
+        var offset: Int
     }
 
     /// One margin place a document keeps: an edge, a position in the page, and a type size.
@@ -42,6 +56,7 @@ enum FurnitureDetector {
     /// Document-wide evidence without the pages themselves.
     struct Ledger {
         fileprivate var groups: [String: [Candidate]] = [:]
+        fileprivate var dropFolios: [DropFolio] = []
         fileprivate var syntheticOccurrences: [String: Int] = [:]
         fileprivate var pageCount = 0
         /// The margin lines each page offered, whether or not they are removed in the end. A
@@ -161,7 +176,8 @@ enum FurnitureDetector {
                                       isTop: top, position: position(line.rect.midY),
                                       fontSize: folio ? line.rect.height : line.fontSize,
                                       typeSize: line.fontSize,
-                                      isFolio: folio, dependsOn: dependsOn)
+                                      isFolio: folio, offsets: offsets(words, pageNumber: page.number),
+                                      dependsOn: dependsOn)
             let edge = top ? "top:" : "bottom:"
             ledger.groups[edge + words.joined(separator: " "), default: []].append(candidate)
             let folioParts = folio ? words[0].split(separator: "-", omittingEmptySubsequences: false) : []
@@ -256,6 +272,28 @@ enum FurnitureDetector {
         }
         recordStack(top: true)
         recordStack(top: false)
+
+        /// A **drop folio**: the page number a book prints at the foot of an opening page, where
+        /// the running head that carries it on every other page is suppressed. It repeats on no
+        /// three neighboring pages — no two opening pages are neighbors — and it stands lower
+        /// than the 7% footer band, so neither the runs nor a slot can reach it, and it arrives
+        /// as a paragraph holding nothing but a number (#271).
+        ///
+        /// What the page states about it is collected here and weighed in `resolve`: a bare
+        /// number, alone on its line, standing further out at the foot than any other line, set
+        /// apart from the body by its own separation, inside the outer tenth — the same depth the
+        /// header band uses, because a folio dropped to the foot may be set lower than a running
+        /// foot. The narrow 7% footer band stays as it is: this path removes nothing on position
+        /// alone, so it disturbs no whitespace cut around an illustrated row.
+        for (lineIndex, line) in page.lines.enumerated()
+        where position(line.rect.midY) <= 0.10 && measurable(line)
+            && outermost(line, top: false) && isFolio(words(line)) {
+            guard let gap = inwardGap(lineIndex, top: false), gap >= separation(line) else { continue }
+            for offset in offsets(words(line), pageNumber: page.number) {
+                ledger.dropFolios.append(DropFolio(pageIndex: pageIndex, lineIndex: lineIndex, offset: offset))
+            }
+            ledger.note(lineIndex, onPageAt: pageIndex)
+        }
     }
 
     static func resolve(_ ledger: Ledger) -> Plan {
@@ -301,6 +339,7 @@ enum FurnitureDetector {
             finish()
         }
         admitSlotEvidence(&plan, unique: unique)
+        admitDropFolios(&plan, dropFolios: ledger.dropFolios, unique: unique)
         return plan
     }
 
@@ -345,6 +384,41 @@ enum FurnitureDetector {
         }
     }
 
+    /// A book states where each page stands in its own numbering, and the furniture it has
+    /// already lost says so page after page: the 9/11 report's running head reads `430 APPENDIX`
+    /// on physical page 448, one of 546 pages stating the same offset of -18. On a chapter- or
+    /// appendix-opening page that head is suppressed and the number is dropped to the foot
+    /// instead, where it repeats on no three neighboring pages — no two opening pages are
+    /// neighbors — and so reaches the reader as a paragraph holding nothing but a number (#271).
+    ///
+    /// The evidence is the document's own numbering, not the shape of the line: a bare number in
+    /// the outer foot margin goes only where its value is exactly the folio its page would carry
+    /// under an offset the removed furniture establishes, on at least six pages and at least a
+    /// quarter of the document's, the same floor the margin slot asks of a place. So a numbered
+    /// answer, a table cell or a figure number at the foot of a page stays — it would have to
+    /// state this book's own page number to be taken for one — and a book whose furniture states
+    /// no offset, or none often enough, keeps every number it prints.
+    ///
+    /// A stacked band is not admitted, for the reason a slot does not admit one: its rows are
+    /// held together by their own separation, and this evidence speaks for one line.
+    private static func admitDropFolios(_ plan: inout Plan, dropFolios: [DropFolio],
+                                        unique: [Int: [Int: Candidate]]) {
+        guard !dropFolios.isEmpty else { return }
+        var pages: [Int: Set<Int>] = [:]
+        for (pageIndex, lines) in unique {
+            for (lineIndex, candidate) in lines where plan.native[pageIndex]?.contains(lineIndex) == true {
+                for offset in candidate.offsets { pages[offset, default: []].insert(pageIndex) }
+            }
+        }
+        let floor = max(6, (plan.pageCount + 3) / 4)
+        let established = Set(pages.filter { $0.value.count >= floor }.keys)
+        guard !established.isEmpty else { return }
+        for folio in dropFolios where established.contains(folio.offset)
+            && unique[folio.pageIndex]?[folio.lineIndex]?.dependsOn.isEmpty != false {
+            plan.native[folio.pageIndex, default: []].insert(folio.lineIndex)
+        }
+    }
+
     static func apply(_ plan: Plan, to page: inout PageContent, pageIndex: Int) -> ConversionWarning? {
         guard plan.pageCount >= 3 else { return nil }
         let kept: [TextLine]
@@ -369,6 +443,30 @@ enum FurnitureDetector {
     /// The whitespace-separated, lowercased words of a line.
     private static func words(_ line: TextLine) -> [String] {
         line.text.lowercased().split(whereSeparator: \.isWhitespace).map(String.init)
+    }
+
+    /// Every physical-page offset a line's boundary numbers imply on the page it stands on.
+    ///
+    /// Only the first and last word can be a page number; internal digits (9/11, a chapter
+    /// number, a date) stay significant, exactly as the group signatures treat them. A
+    /// `chapter-page` word states the offset of its page half. This is the same reading the
+    /// `#(offset=)` signatures take, kept as a value so a candidate carries what it states.
+    private static func offsets(_ words: [String], pageNumber: Int) -> Set<Int> {
+        guard !words.isEmpty else { return [] }
+        var result: Set<Int> = []
+        for index in Set([0, words.count - 1]) {
+            var values: [Int] = []
+            if let value = Int(words[index]), value >= 0 { values.append(value) }
+            let parts = words[index].split(separator: "-", omittingEmptySubsequences: false)
+            if parts.count == 2, !parts[0].isEmpty, let value = Int(parts[1]), value >= 0 {
+                values.append(value)
+            }
+            for value in values {
+                let (offset, overflow) = value.subtractingReportingOverflow(pageNumber)
+                if !overflow { result.insert(offset) }
+            }
+        }
+        return result
     }
 
     /// Whether the words are a bare page number, alone or as `chapter-page`.

@@ -342,4 +342,9 @@ struct ReflowBlock: Sendable, Equatable {
         case .image, .sourcePage: false
         }
     }
+    /// A preserved region, a cropped figure or a page kept as a picture: content that shows
+    /// rather than reads, which a paragraph can be printed around (#203).
+    var isImage: Bool {
+        if case .image = content { true } else { false }
+    }
 }

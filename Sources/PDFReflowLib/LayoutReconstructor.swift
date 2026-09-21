@@ -164,8 +164,10 @@ enum LayoutReconstructor {
     /// Whether a line is running prose rather than a term: four or more words of two letters or
     /// more. A figure's label, an axis title, a formula's terms and a legend are shorter than
     /// that, which is what lets a crop tell the book's own prose from a picture's writing (#255).
-    static func readsAsSentence(_ line: TextLine) -> Bool {
-        line.text.split(whereSeparator: { !$0.isLetter }).filter { $0.count >= 2 }.count >= 4
+    static func readsAsSentence(_ line: TextLine) -> Bool { readsAsSentence(line.text) }
+
+    static func readsAsSentence(_ text: String) -> Bool {
+        text.split(whereSeparator: { !$0.isLetter }).filter { $0.count >= 2 }.count >= 4
     }
 
     /// Whether a seed region captures a text line. Tall PDFKit line rectangles include leading,
@@ -1061,23 +1063,69 @@ enum LayoutReconstructor {
                    hyphens: HyphenContext(vocabulary: vocabulary), warnings: &warnings)
     }
 
+    /// How many blocks at the tail a later page can still amend, which is what reconstruction must
+    /// hold back (#203, [decision 0008](../../doc/decisions/0008-streamed-blocks-to-the-writer.md)).
+    ///
+    /// Ordinarily that is the trailing block alone, which is the paragraph a continued paragraph
+    /// joins. Where images stand at the tail, the join steps over them to the paragraph beneath,
+    /// so that paragraph and every image the join would move are still open.
+    ///
+    /// The count cannot grow without bound: a page that opens no paragraph puts its own marker at
+    /// the tail, and a marker is not a paragraph, so the walk stops there and the tail is one
+    /// block again.
+    static func amendableTail(of blocks: [ReflowBlock]) -> Int {
+        var anchor = blocks.count - 1
+        while anchor >= 0, blocks[anchor].isImage { anchor -= 1 }
+        guard anchor >= 0, anchor < blocks.count - 1,
+              case .paragraph = blocks[anchor].content else { return 1 }
+        return blocks.count - anchor
+    }
+
     static func appendPage(_ pageBlocks: [ReflowBlock], page: PageContent, previousPage: PageContent?,
                            to blocks: inout [ReflowBlock], hyphens: HyphenContext,
                            warnings: inout [ConversionWarning]) {
         var remaining = pageBlocks
-        if let last = blocks.last, let first = remaining.first, let previousPage,
-           case let .paragraph(left) = last.content, case let .paragraph(right) = first.content,
+        // A picture between two halves of a paragraph interrupts it; it does not end it. The Fed
+        // sets Box 3.5 at the foot of page 47, so `…(See box 3.5 for more details…) The vast
+        // major-` was the page's second-to-last block and `ity of the Federal Reserve's assets…`
+        // opened page 48 as a paragraph of its own, with the word broken between them. The join
+        // steps over the images on either side of the boundary, and each keeps the side of that
+        // boundary its own page is on, because the marker the join sets stands inside the
+        // paragraph: page 47's box is placed before the paragraph, where it also reads before the
+        // sentence that refers to it, and page 48's rule after it. Placing page 47's box after the
+        // paragraph would carry it past the page-48 marker (#203).
+        var anchor = blocks.count - 1
+        while anchor >= 0, blocks[anchor].isImage { anchor -= 1 }
+        var opening = 0
+        while opening < remaining.count, remaining[opening].isImage { opening += 1 }
+        if anchor >= 0, opening < remaining.count, let previousPage,
+           case let .paragraph(left) = blocks[anchor].content,
+           case let .paragraph(right) = remaining[opening].content,
+           // Reaching past a picture asks more of the paragraph than standing beside the boundary
+           // did. A block the join steps over pictures to reach is being called a paragraph the
+           // page interrupted, so it must read as the page's prose; a folio, a figure number or a
+           // stray mark is not one. The 9/11 report prints `145` under the column on page 163 and
+           // a crop after it, and that folio would otherwise take page 164's opening words. The
+           // block directly before a boundary is still reached whatever it holds: #45's wider
+           // defect, a join anchored on a folio that is simply the last block, is untouched here.
+           (anchor == blocks.count - 1 && opening == 0) || readsAsSentence(blocks[anchor].text),
            // Two validated paragraph identities that differ are two paragraphs, and never join.
            // One identity and no identity is not that: a page whose tags were not applied says
            // nothing about where its last paragraph ends, so the geometric rule decides, as it
            // did when neither page carried a tag (#67).
-           last.structureGroup == first.structureGroup || last.structureGroup == nil || first.structureGroup == nil,
-           first.text.first?.isLowercase == true, last.text.last.map({ !".!?:".contains($0) }) == true,
+           blocks[anchor].structureGroup == remaining[opening].structureGroup
+               || blocks[anchor].structureGroup == nil || remaining[opening].structureGroup == nil,
+           remaining[opening].text.first?.isLowercase == true,
+           blocks[anchor].text.last.map({ !".!?:".contains($0) }) == true,
            previousPage.lines.last.map({ $0.rect.minY < previousPage.bounds.minY + previousPage.bounds.height * 0.2 }) == true,
            page.lines.first.map({ $0.rect.maxY > page.bounds.minY + page.bounds.height * 0.8 }) == true {
-            blocks[blocks.count - 1].content = .paragraph(join(left, right, hyphens: hyphens,
+            let stepped = Array(blocks[(anchor + 1)...])
+            blocks.removeLast(stepped.count)
+            blocks[anchor].content = .paragraph(join(left, right, hyphens: hyphens,
                 page: page.number, sourceBoundary: page.number, warnings: &warnings))
-            remaining.removeFirst()
+            blocks.insert(contentsOf: stepped, at: anchor)
+            blocks += remaining.prefix(opening)
+            remaining.removeFirst(opening + 1)
         } else {
             blocks.append(ReflowBlock(content: .sourcePage(page.number), page: page.number))
         }

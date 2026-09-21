@@ -110,8 +110,9 @@ enum PDFReflowLibPipeline {
         // Furniture warnings keep their place between extraction and reconstruction warnings.
         let furnitureWarningIndex = warnings.count
         var furnitureWarnings: [ConversionWarning] = []
-        // The blocks a later page can still amend: `appendPage` joins a continued paragraph to
-        // the one block at the tail, so everything before it is final and can be handed on.
+        // The blocks a later page can still amend: `appendPage` joins a continued paragraph to the
+        // paragraph at the tail, stepping over the images that stand between them, so everything
+        // before that paragraph is final and can be handed on (#203).
         var pending: [ReflowBlock] = []
         var collector = ReflowDocument.Collector()
         let send: (ReflowPart) async throws -> Void = { part in
@@ -182,7 +183,9 @@ enum PDFReflowLibPipeline {
                 try await send(.asset(assets.assets[sentAssets]))
                 sentAssets += 1
             }
-            while pending.count > 1 { try await send(.block(pending.removeFirst())) }
+            while pending.count > LayoutReconstructor.amendableTail(of: pending) {
+                try await send(.block(pending.removeFirst()))
+            }
             await progress(.init(stage: .reconstructing, fractionCompleted: ProgressBudget.pipeline(reconstructedPages: i + 1, of: total),
                 page: i + 1, totalPages: total))
         }

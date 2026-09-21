@@ -173,3 +173,9 @@ pins the behaviour so a change in that area cannot take it back silently.
 cases, each `result.json` read individually. The one number that moves is Wallace's text, 454,819
 → 454,823 characters, which is that merge's four word spaces and not this change; the tables above
 are measured against `7d6b0cd` as they say.
+
+`main` moved again to `4074668`, bringing
+[#257](https://github.com/vocaro/PDFReflowLib/issues/257)'s table-header rule, which changes the
+same crop machinery item 3 depends on. Merged at `3eae93f`: the fast lane passes every gate, the
+corpus lane passes the same 18 cases with every `result.json` fully green, and page 64's bullet
+still reflows beside a crop that holds only its formula.

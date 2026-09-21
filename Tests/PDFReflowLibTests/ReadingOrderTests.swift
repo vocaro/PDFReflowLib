@@ -294,6 +294,29 @@ func aCaptionAcrossTheMeasureCrossesTheCutWithItsFigure() throws {
     #expect(column.hasSuffix("the threshold for Runway 18 is to the left and the threshold for"))
 }
 
+/// The control for trying that cut last: the handbook's appendix of abbreviations opens page 461
+/// under a full-measure banner and sets two columns of short entries beneath it. Its intro spans
+/// both columns, so no gutter is found and no whitespace band crosses the page either — but
+/// `columnRuns` reads the two columns as runs, and cutting the banner out first would hand what
+/// is left to the row-major sort, one entry of each column at a time (#160, #174).
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/160"))
+func aBannerOverTwoColumnsOfEntriesLeavesTheColumnRunsAlone() throws {
+    let fixture = try SourceLayoutFixture.load("faa-461")
+    #expect(fixture.sourceSHA256 == "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7")
+    var page = fixture.content()
+    page.lines.removeAll { $0.text == "A-1" }
+    let regions = LayoutReconstructor.graphicsWithLabels(page)
+    let banner = try #require(regions.first)
+    #expect(banner.width >= page.bounds.width * 0.75 && !page.lines.contains { $0.rect.minY >= banner.maxY })
+    var warnings: [ConversionWarning] = []
+    let blocks = LayoutReconstructor.blocks(page: page, images: regions.enumerated().map { ($0.element, "image-\($0.offset)") },
+                                            vocabulary: [], warnings: &warnings)
+    // The left column is read out before the right one, rather than one entry of each in turn.
+    let text = blocks.map(\.text).joined(separator: "\n")
+    try expectInOrder(text, ["A/C—aircraft", "A/FD—airport/facility directory", "AAF—Army Air Field",
+                             "ABV—above", "ADIN—AUTODIN service", "ADJ—adjacent"])
+}
+
 /// The control the picture rule was landed for: the 9/11 report sets two flights' timelines side
 /// by side under one map across both of them, and cutting at the map is what puts each timeline
 /// back in its own column (#137). Nothing here has an empty side, and the order is unchanged.

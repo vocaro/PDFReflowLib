@@ -437,23 +437,62 @@ enum LayoutReconstructor {
         // line of a one-column page spans its block, and cutting at each of them would reach the
         // depth limit and report the page unread.
         let span = union(elements.map(\.rect))
-        // Everything else stands wholly above or wholly below the band: a picture with a line
-        // beside it divides nothing, and its own label is already inside its crop. Either side
-        // may be empty. A picture that opens or closes the block carries the whole measure with
-        // it, so while it is in the group no gutter can be found past it either, and the FAA
-        // handbook opens page 391 with exactly that — a full-measure figure with nothing printed
-        // above it, over two columns that then interleaved row by row (#160).
+        if let divider = elements.indices.first(where: { index in
+            let rect = elements[index].rect
+            guard elements[index].image != nil, rect.width >= span.width * 0.9 else { return false }
+            let above = elements.indices.filter { $0 != index && elements[$0].rect.minY >= rect.maxY }
+            let below = elements.indices.filter { $0 != index && elements[$0].rect.maxY <= rect.minY }
+            // Everything else stands wholly above or wholly below: a picture with a line beside
+            // it divides nothing, and its own label is already inside its crop.
+            return !above.isEmpty && !below.isEmpty && above.count + below.count == elements.count - 1
+        }) {
+            let rect = elements[divider].rect
+            return ordered(elements.filter { $0.rect.minY >= rect.maxY },
+                           bodySize: bodySize, depth: depth + 1, exhausted: &exhausted)
+                + [elements[divider]]
+                + ordered(elements.filter { $0.rect.maxY <= rect.minY },
+                          bodySize: bodySize, depth: depth + 1, exhausted: &exhausted)
+        }
+        if let x = gap(horizontal: true) {
+            return ordered(elements.filter { $0.rect.maxX < x }, bodySize: bodySize, depth: depth + 1, exhausted: &exhausted)
+                + ordered(elements.filter { $0.rect.minX > x }, bodySize: bodySize, depth: depth + 1, exhausted: &exhausted)
+        }
+        if let y = gap(horizontal: false) {
+            return ordered(elements.filter { $0.rect.minY > y }, bodySize: bodySize, depth: depth + 1, exhausted: &exhausted)
+                + ordered(elements.filter { $0.rect.maxY < y }, bodySize: bodySize, depth: depth + 1, exhausted: &exhausted)
+        }
+        // Every straight cut has failed. A magazine page can still state its own blocks: a column
+        // that runs on into a wider measure below, around an L-shaped picture frame, leaves no
+        // straight gutter to cut at, and its columns are leaded so tightly that consecutive rows
+        // overlap, so there is no whitespace band either. Sorting that page's lines interleaves
+        // its columns row by row. Where the page states the run-on, its columns are ordered as
+        // runs instead of as lines (#174).
+        if let runs = columnRuns(elements, bodySize: bodySize) { return runs.flatMap { $0 } }
+        // Every straight cut, and the column runs, have failed, and the row-major sort below would
+        // weave this block's columns together. One reading is still left: a picture across the
+        // block's measure with everything else on one side of it. #137's cut above asks for
+        // content on both sides, because a picture at the head or the foot of a block separates
+        // nothing — but it carries the whole measure with it, so while it stands in the group no
+        // gutter can be found past it either. The FAA handbook opens page 391 with exactly that,
+        // a full-measure chart with nothing printed above it, over two columns that then
+        // interleaved row by row (#160).
+        //
+        // A line set across the same measure directly against the picture's edge is that
+        // picture's label, and bridges the columns exactly as the picture does: cutting at the
+        // picture alone leaves the caption joining them, which is what page 341 does with
+        // `Figure 14-6…`, a caption 7.7 points beneath a figure that spans both columns. The band
+        // grows only from the picture's own two edges, so a one-column page, whose every line
+        // spans its block, gives up at most the line above and the line below — never a chain of
+        // them down the page.
+        //
+        // It is tried last because a page the other readings already describe must keep their
+        // description: the handbook's appendix of abbreviations opens under a full-measure banner
+        // and sets two columns of short entries beneath it, which `columnRuns` reads as two runs
+        // and this cut would leave to the row-major sort, one entry of each column at a time.
         func divides(_ band: CGRect, _ members: [Int]) -> Bool {
             let rest = elements.indices.filter { !members.contains($0) }.map { elements[$0].rect }
             return rest.allSatisfy { $0.minY >= band.maxY || $0.maxY <= band.minY }
         }
-        // A line set across the same measure directly against the picture's edge is that
-        // picture's label, and it bridges the columns exactly as the picture does: cutting at
-        // the picture alone would leave the caption joining them, which is what page 341 does
-        // with `Figure 14-6…`, a caption 7.7 points beneath a figure that spans both columns
-        // (#160). The band grows only from the picture's own two edges, so a one-column page,
-        // whose every line spans its block, gives up at most the line above and the line below
-        // — never a chain of them down the page.
         func band(around index: Int) -> (rect: CGRect, members: [Int])? {
             let seed = elements[index].rect
             guard elements[index].image != nil, seed.width >= span.width * 0.9 else { return nil }
@@ -480,21 +519,6 @@ enum LayoutReconstructor {
                 + ordered(elements.filter { $0.rect.maxY <= rect.minY },
                           bodySize: bodySize, depth: depth + 1, exhausted: &exhausted)
         }
-        if let x = gap(horizontal: true) {
-            return ordered(elements.filter { $0.rect.maxX < x }, bodySize: bodySize, depth: depth + 1, exhausted: &exhausted)
-                + ordered(elements.filter { $0.rect.minX > x }, bodySize: bodySize, depth: depth + 1, exhausted: &exhausted)
-        }
-        if let y = gap(horizontal: false) {
-            return ordered(elements.filter { $0.rect.minY > y }, bodySize: bodySize, depth: depth + 1, exhausted: &exhausted)
-                + ordered(elements.filter { $0.rect.maxY < y }, bodySize: bodySize, depth: depth + 1, exhausted: &exhausted)
-        }
-        // Every straight cut has failed. A magazine page can still state its own blocks: a column
-        // that runs on into a wider measure below, around an L-shaped picture frame, leaves no
-        // straight gutter to cut at, and its columns are leaded so tightly that consecutive rows
-        // overlap, so there is no whitespace band either. Sorting that page's lines interleaves
-        // its columns row by row. Where the page states the run-on, its columns are ordered as
-        // runs instead of as lines (#174).
-        if let runs = columnRuns(elements, bodySize: bodySize) { return runs.flatMap { $0 } }
         return elements.sorted {
             abs($0.rect.midY - $1.rect.midY) > bodySize * 0.4
                 ? $0.rect.midY > $1.rect.midY : $0.rect.minX < $1.rect.minX

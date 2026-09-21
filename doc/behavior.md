@@ -835,18 +835,23 @@ it: the deepest of the captured source layouts cuts eleven levels. A group the l
 uncut keeps the order it was extracted in, and the page reports `complexLayout` rather than
 leaving that silent, as the tag phase reports its own give-up (#224).
 
-A **picture across the block's measure** — at least 90% of it — separates what is printed above it
-from what is printed below it, and is cut at before any gutter is looked for (#137). Everything
-else must stand wholly above it or wholly below it, and either side may be empty: a picture at the
-head of the block carries the whole measure with it, so while it is in the group no gutter can be
-found beneath it either, which is how the FAA handbook's pages 341 and 391 — a figure across both
-columns with nothing printed above it — came to be read row by row (#160). A **line** set across
-the same measure within a body of the picture's own top or bottom edge is that picture's label and
-crosses the cut with it, because it bridges the columns exactly as the picture does: page 341 sets
-`Figure 14-6…` 7.7 points beneath such a figure. The band grows only from the picture's two edges,
-so a one-column page, whose every line spans its block, gives up at most the line above and the
-line below. Only a picture seeds a band: cutting at every line of a one-column page would reach the
-depth limit and report the page unread.
+A **picture across the block's measure** — at least 90% of it — with content on both sides of it
+separates what is printed above it from what is printed below it, and is cut at before any gutter
+is looked for (#137). A picture at the **head or foot** of the block separates nothing, so that cut
+declines it; but it still carries the whole measure with it, and while it stands in the group no
+gutter can be found past it either. The FAA handbook opens pages 341 and 391 with exactly that — a
+figure across both columns with nothing printed above it — and both pages were read row by row
+(#160). So after every straight cut and the column runs have failed, and before the row-major sort,
+such a picture is lifted out and the rest of the block re-read. A **line** set across the same
+measure within a body of the picture's own top or bottom edge goes with it: it is that picture's
+label and bridges the columns exactly as the picture does, and page 341 sets `Figure 14-6…` 7.7
+points beneath such a figure. The band grows only from the picture's two edges, so a one-column
+page, whose every line spans its block, gives up at most the line above and the line below; only a
+picture seeds a band, because cutting at every line of a one-column page would reach the depth
+limit and report the page unread. Trying it last is what keeps a page the other readings already
+describe: the handbook's appendix of abbreviations opens under a full-measure banner over two
+columns of short entries, which the column runs read as two runs and this cut would leave to the
+row-major sort, one entry of each column at a time.
 
 - A **picture between the two halves of a paragraph interrupts it; it does not end it** (#203).
   A cross-page join steps over the image blocks standing between the paragraph the page left open

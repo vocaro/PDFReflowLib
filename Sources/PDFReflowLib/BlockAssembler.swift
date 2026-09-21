@@ -78,8 +78,28 @@ extension LayoutReconstructor {
         }
         if !page.hasSyntheticTextStyle && line.monospaced { return .code }
         if isMarked(line.text) { return .markedLine(markerColumn(of: line, in: lines, body: typography.body)) }
-        if isList(line.text) { return .listItem }
+        // A marker is a marker because the page set it at the start of a printed line. A piece
+        // the extractor cut out of the middle of a row began no line, so what opens it is
+        // whatever the page was printing there — an operator, not a list marker (#203).
+        if isList(line.text), !continuesPrintedRow(line, in: lines, body: typography.body) { return .listItem }
         return .prose
+    }
+
+    /// Whether the extractor cut `line` out of the middle of a printed row: another line stands
+    /// on its row, ends at or before its left edge, and is nearer than the gutter a column needs
+    /// (`LayoutReconstructor.ordered`'s three quarters of a body, the bound `continuesRow` already
+    /// uses to rejoin such pieces). Wallace breaks a row after a raised exponent, so `8x²` is one
+    /// line and `− 2x − 15` the next, and the minus the page printed between two terms read as a
+    /// bullet: the second piece became an item of a list, in a `<pre>` block of its own, in the
+    /// middle of the derivation it belongs to (#203).
+    ///
+    /// A table's cells and a page's columns stand further apart than that and are unaffected, and
+    /// a piece that opens its row has nothing to its left, so a genuine marker still opens an item.
+    static func continuesPrintedRow(_ line: TextLine, in lines: [TextLine], body: CGFloat) -> Bool {
+        lines.contains { other in
+            other.rect.maxX <= line.rect.minX && line.rect.minX - other.rect.maxX < body * 0.75
+                && other.sharesRow(with: line)
+        }
     }
 
     /// A line a page opens with a bullet glyph and a space. The alphanumeric markers `isList`

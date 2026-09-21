@@ -91,7 +91,11 @@ actor EPUBWriter {
                                          markup: EPUBTextEncoder.sourcePage(number, labels: pageLabels),
                                          budgetRemaining: maximumOutputBytes - consumed))
             } else {
-                try write(try packer.add(EPUBTextEncoder.piece(for: block, imagePaths: imagePathByID),
+                // A marker inside a continued paragraph shows the number its page prints, exactly
+                // as a standalone one does: it is the same marker, and a reader jumping to it is
+                // looking for the same printed page (#248, surfaced by #203's cross-page joins).
+                try write(try packer.add(EPUBTextEncoder.piece(for: block, imagePaths: imagePathByID,
+                                                              labels: pageLabels),
                                          budgetRemaining: maximumOutputBytes - consumed))
             }
         }

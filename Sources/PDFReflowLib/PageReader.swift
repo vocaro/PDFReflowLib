@@ -61,10 +61,14 @@ enum PageReader {
             // Invisible text over a scan supplies transcription, not source typography.
             // Fallback pages contribute vocabulary and furniture evidence, but their
             // formatting is never emitted. Avoid decoding attributed image attachments.
+            // The page's own text-showing operations, read once and used twice: the spacing
+            // repair reads the word boundaries it carries, and `TableReader` reads the ink the
+            // page put on each printed row (#210).
+            let shows = styled ? page.pageRef.map(NativeSpacingReader.read) ?? [] : []
+            let rules = graphics.regions.filter(LayoutReconstructor.isThinRule)
             var content = PageContent(number: i + 1, bounds: bounds,
                 lines: try NativeTextReader.lines(on: page, limit: limit, includeStyle: styled,
-                    rules: graphics.regions.filter(LayoutReconstructor.isThinRule),
-                    links: links), graphics: graphics.regions,
+                    rules: rules, links: links, shows: shows), graphics: graphics.regions,
                 pictures: graphics.images)
             content.links = links
             if !requiresPageImage && !syntheticStyle && options.ocr != .always, let structure,
@@ -75,6 +79,13 @@ enum PageReader {
             }
             content.requiresPageImage = requiresPageImage
             content.hasSyntheticTextStyle = syntheticStyle
+            // The tables the page draws, read from the same shows after the lines are final, so a
+            // table's rows are the rows the rest of the pipeline sees (#210). A page whose
+            // appearance is preserved whole states no columns this reader can trust.
+            if styled, !shows.isEmpty {
+                content.tables = try TableReader.tables(on: page, lines: content.lines,
+                                                        shows: shows, rules: rules)
+            }
             if graphics.unsupported {
                 warnings.append(.unsupportedGraphics)
             }

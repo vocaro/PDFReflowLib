@@ -140,6 +140,9 @@ actor EPUBWriter {
         p { margin: 0 0 0.8em; } h1, h2 { break-after: avoid; }
         img { max-width: 100%; height: auto; } figure { margin: 1em 0; }
         figcaption { font-size: 0.85em; } pre { white-space: pre-wrap; overflow-wrap: anywhere; }
+        table { border-collapse: collapse; margin: 1em 0; }
+        th, td { text-align: left; vertical-align: top; padding: 0.15em 0.6em 0.15em 0; }
+        thead th { border-bottom: 1px solid currentColor; }
         """, publication.appendingPathComponent("style.css"))
         // Caller-supplied values make the archive byte-reproducible; defaults vary per run.
         let identifier = xml(packageIdentifier ?? "urn:uuid:" + UUID().uuidString)

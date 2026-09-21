@@ -176,10 +176,35 @@ class CorpusContentTests(unittest.TestCase):
         self.assertFalse(result['passed'])
         self.assertIn('Page 1: unexpected quality warning damagedTextEncoding', result['errors'])
 
+    def test_table_row_must_match_every_cell_of_a_row(self):
+        self.contract['pages'][0] = {'page': 1, 'tableRows': [['Chile', '5,250', '5,300']]}
+        self.pages[1]['tableRows'] = [['Country', '2023', '2024'], ['Chile', '5,250', '5,300']]
+        self.assertTrue(self.check()['passed'])
+        # A cell lost changes the row's length; a value read into the wrong column changes the row.
+        self.pages[1]['tableRows'] = [['Chile', '5,250']]
+        self.assertFalse(self.check()['passed'])
+        self.pages[1]['tableRows'] = [['Chile 5,250', '', '5,300']]
+        self.assertFalse(self.check()['passed'])
+        # A page with no table at all fails the check rather than passing it vacuously.
+        self.pages[1].pop('tableRows')
+        self.assertFalse(self.check()['passed'])
+
+    def test_table_rows_are_read_from_the_cells_of_each_row(self):
+        body = ('<span epub:type="pagebreak" id="page-1"/>'
+                '<table><thead><tr><th colspan="2">Mine production</th><th>Reserves</th></tr></thead>'
+                '<tbody><tr><td>Chile</td><td>5,250</td><td>190,000</td></tr></tbody></table>')
+        pages, _, _ = read_spine(self.spine(body))
+        self.assertEqual(pages[1]['tableRows'],
+                         [['Mine production', 'Reserves'], ['Chile', '5,250', '190,000']])
+        # A cell's text is still part of the page's text, separated from its neighbours.
+        self.assertIn('Chile 5,250 190,000', pages[1]['text'])
+
     def test_invalid_or_empty_contracts_fail(self):
         for pages in [[], [{'page': 1}], [{'page': 3, 'text': ['x']}],
                       [{'page': 1, 'text': ['']}], [{'page': 1, 'text': []}],
                       [{'page': 1, 'absentWarningCodes': []}],
+                      [{'page': 1, 'tableRows': [['one']]}],
+                      [{'page': 1, 'tableRows': ['not a row']}],
                       [{'page': 1, 'minimumImages': 0}]]:
             with self.assertRaises(ValueError):
                 self.check(contract={'sourceSHA256': 'source', 'pages': pages})

@@ -73,6 +73,33 @@ struct PageLink: Equatable, Codable, Sendable {
     var target: LinkTarget
 }
 
+/// A table a page draws, divided into cells by `TableReader` (#210).
+///
+/// The reader works in page space: a cell is a rectangle, and its text is what the page's own
+/// extraction reads inside that rectangle. Reconstruction turns the rows into a `ReflowBlock`
+/// and keeps the crop that used to preserve the table as a picture from being made at all.
+struct PageTable: Equatable, Codable, Sendable {
+    struct Cell: Equatable, Codable, Sendable {
+        /// The cell's reading. Where the cell is exactly one of the page's extracted lines it is
+        /// that line's own content, with the repairs and styles the rest of the pipeline gives it;
+        /// otherwise it is the plain characters the page reads inside the cell's rectangle.
+        var content: InlineText
+        var rect: CGRect
+        /// How many of the table's columns this cell covers. A spanning header covers several.
+        var columns: Int = 1
+
+        var text: String { content.text }
+    }
+    /// The block the table occupies: the union of its rows, which claims those rows' lines.
+    var rect: CGRect
+    /// Printed rows top down, each row's cells left to right. Every row covers every column.
+    var rows: [[Cell]]
+    /// How many of `rows` the page set as its column headers, from the top.
+    var headerRows: Int = 0
+    /// The table's columns, which every row divides into.
+    var columns: Int { rows.first?.reduce(0) { $0 + $1.columns } ?? 0 }
+}
+
 struct PageContent: Equatable, Codable {
     var number: Int
     var bounds: CGRect
@@ -86,9 +113,13 @@ struct PageContent: Equatable, Codable {
     var preservePageReference = false
     /// The link annotations this page draws, in the order it lists them (#247).
     var links: [PageLink] = []
+    /// The tables this page draws, read as cells (#210). Empty on every page whose printed rows
+    /// state no column grid of their own.
+    var tables: [PageTable] = []
     /// The tables a recognition of this page located, and how much of each one it transcribed
     /// (#31). They are among `graphics`, so each is already preserved as a picture; this is what
-    /// that picture holds, and which of those pictures the recognizer could not read.
+    /// that picture holds, and which of those pictures the recognizer could not read. A scanned
+    /// page states no grid of its own, so `tables` above is empty wherever these are not.
     var recognizedTables: [TableCellEvidence.Reading] = []
 }
 

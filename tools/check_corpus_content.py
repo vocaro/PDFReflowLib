@@ -17,7 +17,8 @@ from pdfreflow_tools.epub import DEFAULT_MAX_ENTRIES, DEFAULT_MAX_UNCOMPRESSED_B
 
 HTML = epub.XHTML
 HEADINGS = {HTML + 'h' + str(n) for n in range(1, 7)}
-BLOCKS = HEADINGS | {HTML + tag for tag in ('p', 'pre', 'figure', 'li')}
+BLOCKS = HEADINGS | {HTML + tag for tag in ('p', 'pre', 'figure', 'li', 'th', 'td', 'tr')}
+CELLS = {HTML + 'th', HTML + 'td'}
 
 # Every kind of check `assess` counts, and where its expectations sit in a contract. `sequence`
 # keys hold one expectation per check; `presence` keys are one check when the key is present.
@@ -29,7 +30,7 @@ PAGE_CHECK_TYPES = {
     'text': 'sequence', 'orderedText': 'sequence', 'absentText': 'sequence',
     'headings': 'sequence', 'paragraphs': 'sequence', 'continuedParagraphs': 'sequence',
     'preformatted': 'sequence',
-    'scripts': 'sequence', 'imageRegions': 'sequence',
+    'scripts': 'sequence', 'imageRegions': 'sequence', 'tableRows': 'sequence',
     'minimumImages': 'presence', 'warningCodesAnyOf': 'presence', 'absentWarningCodes': 'presence',
 }
 
@@ -117,7 +118,12 @@ def read_spine(path, *, max_entries=DEFAULT_MAX_ENTRIES,
                     markers.append(current)
                     document['pages'].append(current)
                     pages[current] = {'text': '', 'images': [], 'scripts': [], 'headings': {},
-                                      'paragraphs': {}, 'preformatted': {}}
+                                      'paragraphs': {}, 'preformatted': {}, 'tableRows': []}
+                # A table row, read as the cells it holds. A `tableRows` expectation names a whole
+                # row, so a cell lost from a table changes the row's length and is caught (#210).
+                if element.tag == HTML + 'tr' and current is not None:
+                    pages[current]['tableRows'].append(
+                        [normalized(''.join(cell.itertext())) for cell in element if cell.tag in CELLS])
                 if element.tag == HTML + 'img' and current is not None:
                     asset = str(chapter.parent / element.attrib['src'])
                     if asset not in names:
@@ -295,7 +301,7 @@ def assess(case, contract, result, report, pages, markers, *, documents=(),
     for item in expected:
         number = item['page']
         page = pages.get(number, {'text': '', 'images': []})
-        if not any(key in item for key in ('text', 'orderedText', 'minimumImages', 'warningCodesAnyOf', 'absentWarningCodes', 'scripts', 'absentText', 'headings', 'paragraphs', 'preformatted', 'continuedParagraphs', 'imageRegions')):
+        if not any(key in item for key in ('text', 'orderedText', 'minimumImages', 'warningCodesAnyOf', 'absentWarningCodes', 'scripts', 'absentText', 'headings', 'paragraphs', 'preformatted', 'continuedParagraphs', 'imageRegions', 'tableRows')):
             raise ValueError('Review page has no expectations')
         for phrase in item.get('text', []):
             if not normalized(phrase):
@@ -360,6 +366,17 @@ def assess(case, contract, result, report, pages, markers, *, documents=(),
                        and span['after'].startswith(normalized(script['after']))
                        for span in page.get('scripts', [])):
                 errors.append(f'Page {number}: missing script or incorrect context {script!r}')
+        for expected_row in item.get('tableRows', []):
+            # A whole row of a table, cell by cell. A value read into the wrong column, a cell
+            # lost, or a row lost all change the row and are caught; a row is matched anywhere on
+            # the page, because which table on the page holds it is not what is under review.
+            if (not isinstance(expected_row, list) or len(expected_row) < 2
+                    or any(not isinstance(cell, str) for cell in expected_row)):
+                raise ValueError('Table row check requires a list of at least two cell strings')
+            checks += 1
+            wanted = [normalized(cell) for cell in expected_row]
+            if wanted not in page.get('tableRows', []):
+                errors.append(f'Page {number}: missing table row {expected_row!r}')
         for expectation in item.get('imageRegions', []):
             reference, minimum = reference_image(case, contract, number, expectation, reference_root)
             checks += 1

@@ -76,6 +76,9 @@ enum EPUBTextEncoder {
                                      sourcePages: block.sourcePages, heading: (id, block.text))
         case .preformatted:
             return SpinePacker.Piece(markup: "<pre\(dir)>\(payload)</pre>\n", sourcePages: block.sourcePages, heading: nil)
+        case let .table(table):
+            return SpinePacker.Piece(markup: self.table(table, labels: labels, direction: dir) + "\n",
+                                     sourcePages: block.sourcePages, heading: nil)
         case .image:
             return SpinePacker.Piece(markup: payload + "\n", sourcePages: block.sourcePages, heading: nil)
         case .sourcePage:
@@ -83,11 +86,36 @@ enum EPUBTextEncoder {
         }
     }
 
+    /// One table as EPUB 3 XHTML (#210).
+    ///
+    /// The rows the page set as its column headings become a `<thead>` of `<th scope="col">`, so
+    /// a reading system can announce the heading a value stands under; the rest is a `<tbody>` of
+    /// `<td>`. A cell the page set across several columns carries `colspan`, which is how the
+    /// USGS summaries print `Mine production` over its two year columns. `colspan="1"` is the
+    /// default and is left out, so the markup states only what the page states. A table whose own
+    /// writing reads right to left carries `direction` on the `<table>`, as a paragraph does (#41).
+    static func table(_ table: ReflowBlock.Table, labels: [Int: String], direction: String = "") -> String {
+        func row(_ cells: [ReflowBlock.Table.Cell], header: Bool) -> String {
+            let tag = header ? "th" : "td"
+            let scope = header ? " scope=\"col\"" : ""
+            return "<tr>" + cells.map { cell in
+                let span = cell.columns > 1 ? " colspan=\"\(cell.columns)\"" : ""
+                return "<\(tag)\(scope)\(span)>\(inline(cell.text, labels: labels))</\(tag)>"
+            }.joined() + "</tr>"
+        }
+        let head = table.rows.prefix(table.headerRows)
+        let body = table.rows.dropFirst(table.headerRows)
+        let header = head.isEmpty ? "" : "<thead>" + head.map { row($0, header: true) }.joined() + "</thead>"
+        let rest = body.isEmpty ? "" : "<tbody>" + body.map { row($0, header: false) }.joined() + "</tbody>"
+        return "<table\(direction)>\(header)\(rest)</table>"
+    }
+
     static func payload(_ block: ReflowBlock, imagePaths: [String: String],
                         labels: [Int: String] = [:]) throws -> String {
         switch block.content {
         case let .paragraph(text), let .heading(_, text, _): return inline(text, labels: labels)
         case let .preformatted(text): return inline(text, labels: labels)
+        case let .table(value): return table(value, labels: labels)
         case let .sourcePage(page): return sourcePage(page, labels: labels)
         case let .image(image):
             guard let path = imagePaths[image.assetID] else {

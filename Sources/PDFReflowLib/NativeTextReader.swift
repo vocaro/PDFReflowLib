@@ -38,23 +38,28 @@ enum NativeTextReader {
     }
 
     /// `rules` are the page's painted thin rules, which supply the underline evidence the text
-    /// layer does not carry (#235).
+    /// layer does not carry (#235). `shows` are the page's own text-showing operations, where the
+    /// caller has already read them: `TableReader` needs the same reading to divide a printed row
+    /// into cells, and one walk of the content stream serves both (#210).
     static func lines(on page: PDFPage, limit: Int, includeStyle: Bool = true,
-                      rules: [CGRect] = [], links: [PageLink] = []) throws -> [TextLine] {
+                      rules: [CGRect] = [], links: [PageLink] = [],
+                      shows: [NativeSpacingReader.Evidence]? = nil) throws -> [TextLine] {
         try withExtractionLock {
-            try extractLines(on: page, limit: limit, includeStyle: includeStyle, rules: rules, links: links)
+            try extractLines(on: page, limit: limit, includeStyle: includeStyle, rules: rules,
+                             links: links, shows: shows)
         }
     }
 
     private static func extractLines(on page: PDFPage, limit: Int, includeStyle: Bool,
-                                     rules: [CGRect], links: [PageLink] = []) throws -> [TextLine] {
+                                     rules: [CGRect], links: [PageLink] = [],
+                                     shows: [NativeSpacingReader.Evidence]? = nil) throws -> [TextLine] {
         guard page.numberOfCharacters <= limit else {
             throw ConversionError.resourceLimit("too many characters")
         }
         guard let selection = page.selection(for: page.bounds(for: .cropBox)) else { return [] }
         let selections = selection.selectionsByLine()
         let boundsByLine = selections.map { $0.bounds(for: page) }
-        let spacing = includeStyle ? page.pageRef.map(NativeSpacingReader.read) ?? [] : []
+        let spacing = includeStyle ? (shows ?? page.pageRef.map(NativeSpacingReader.read) ?? []) : []
         let glyphs = includeStyle ? page.pageRef.map(GlyphIdentityReader.read) ?? [] : []
         // PDFKit's text of every line, beside its rectangle: read once so both the styled-line
         // filter below and `attributedTexts`'s alignment check reuse it instead of asking PDFKit

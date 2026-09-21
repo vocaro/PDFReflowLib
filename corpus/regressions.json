@@ -1147,47 +1147,185 @@
     {
       "id": "usgs-mcs2025-copper",
       "sourceSHA256": "348b1e224d830a51e6d35cf81343eead26a0cb2a4e74c474d699b7faed1b10e6",
-      "basis": "Source pages 1 and 2 visually reviewed. Protects the unit note, author line, preserved statistics and world-production tables, the COMEX paragraph and the ordered superscript table-note markers. Does not bless rasterized prose: the Domestic Production, Recycling, Import Sources, Events and Substitutes paragraphs are currently inside preserved-region images (#36). Source page 1 reread cell by cell for two rows and one column of the Salient Statistics table: Mine, recoverable reads 1,200 / 1,230 / 1,230 / 1,130 / 1,100 and London Metal Exchange, grade A, cash reads 279.8 / 422.5 / 399.8 / 384.8 / 420 across the 2020-2024 columns, and the 2022 column runs from its header down to the net-import-reliance 41. A row or column reference catches a row or a cell lost from the preserved table, which the whole-table reference does not; neither catches two cells of similar shape exchanged within a row or column (#27).",
+      "basis": "Source pages 1 and 2 visually reviewed. Protects the unit note, author line, the COMEX paragraph, the ordered superscript table-note markers, and the three tables of the extract read as cells (#210): the salient-statistics table, the tariff table and the world mine-and-refinery table. Twenty of their rows are pinned cell by cell, including the column headings, the two rows the earlier image contract read by eye — Mine, recoverable reads 1,200 / 1,230 / 1,230 / 1,130 / 1,100 and London Metal Exchange, grade A, cash reads 279.8 / 422.5 / 399.8 / 384.8 / 420 across the 2020-2024 columns — and every row carrying a mark the tables use: an estimate e, a note marker in a cell, a bracketed note, a dash for zero, and the label the page wrapped onto two printed rows. A pinned row catches a cell lost, a cell read into the wrong column and a row lost, which the whole-table image reference it replaces could not; it does not catch two cells of similar shape exchanged between two rows (#27). Until #210 these tables were preserved-region crops and the contract pinned their pictures; the prose beside them reflows and no longer needs its own exemption.",
       "pages": [
         {
           "page": 1,
-          "imageRegions": [
-            {
-              "reference": "corpus/references/usgs-mcs2025-copper/page-1-salient-statistics.png"
-            },
-            {
-              "reference": "corpus/references/usgs-mcs2025-copper/page-1-tariff.png"
-            },
-            {
-              "reference": "corpus/references/usgs-mcs2025-copper/page-1-row-mine-recoverable.png"
-            },
-            {
-              "reference": "corpus/references/usgs-mcs2025-copper/page-1-row-london-metal-exchange.png"
-            },
-            {
-              "reference": "corpus/references/usgs-mcs2025-copper/page-1-column-2022.png"
-            }
+          "tableRows": [
+            [
+              "Salient Statistics—United States:",
+              "2020",
+              "2021",
+              "2022",
+              "2023",
+              "2024e"
+            ],
+            [
+              "Production:",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "Mine, recoverable",
+              "1,200",
+              "1,230",
+              "1,230",
+              "1,130",
+              "1,100"
+            ],
+            [
+              "Copper recovered from old (post-consumer) scrap1",
+              "161",
+              "169",
+              "152",
+              "e150",
+              "150"
+            ],
+            [
+              "Ore and concentrates",
+              "2",
+              "11",
+              "12",
+              "3",
+              "(2)"
+            ],
+            [
+              "London Metal Exchange, grade A, cash",
+              "279.8",
+              "422.5",
+              "399.8",
+              "384.8",
+              "420"
+            ],
+            [
+              "Stocks, refined, held by U.S. producers, consumers, and metal exchanges, yearend",
+              "118",
+              "117",
+              "84",
+              "127",
+              "70"
+            ],
+            [
+              "Employment, mine and plant, number",
+              "11,000",
+              "11,400",
+              "12,000",
+              "12,600",
+              "13,000"
+            ],
+            [
+              "Net import reliance4 as a percentage of apparent consumption",
+              "38",
+              "44",
+              "41",
+              "41",
+              "45"
+            ],
+            [
+              "Tariff: Item",
+              "Number",
+              "Normal Trade Relations"
+            ],
+            [
+              "Copper ore and concentrates, copper content",
+              "2603.00.0010",
+              "1.7¢/kg on lead content."
+            ],
+            [
+              "Copper wire rod",
+              "7408.11.0000",
+              "1% or 3% ad valorem."
+            ]
           ],
           "orderedText": [
             "(Data in thousand metric tons, copper content, unless otherwise specified)",
             "Prepared by Daniel M. Flanagan"
-          ],
-          "minimumImages": 1
+          ]
         },
         {
           "page": 2,
-          "imageRegions": [
-            {
-              "reference": "corpus/references/usgs-mcs2025-copper/page-2-world-production.png"
-            }
+          "tableRows": [
+            [
+              "",
+              "Mine production",
+              "Refinery production",
+              "Reserves6"
+            ],
+            [
+              "",
+              "2023",
+              "2024e",
+              "2023",
+              "2024e",
+              ""
+            ],
+            [
+              "United States",
+              "1,130",
+              "1,100",
+              "882",
+              "890",
+              "47,000"
+            ],
+            [
+              "Australia",
+              "778",
+              "800",
+              "442",
+              "460",
+              "7100,000"
+            ],
+            [
+              "Germany",
+              "—",
+              "—",
+              "609",
+              "630",
+              "—"
+            ],
+            [
+              "Kazakhstan",
+              "e740",
+              "740",
+              "458",
+              "470",
+              "20,000"
+            ],
+            [
+              "Korea, Republic of",
+              "—",
+              "—",
+              "604",
+              "620",
+              "—"
+            ],
+            [
+              "Russia",
+              "e890",
+              "930",
+              "e1,000",
+              "960",
+              "80,000"
+            ],
+            [
+              "World total (rounded)",
+              "22,600",
+              "23,000",
+              "27,000",
+              "27,000",
+              "980,000"
+            ]
           ],
           "text": [
             "The COMEX copper price reached a record high in May 2024 and was projected to average $4.20 per pound in full year 2024"
           ],
           "orderedText": [
-            "Estimated. \u2014 Zero.",
+            "Estimated. — Zero.",
             "Copper converted to refined metal, alloys, and other forms",
-            "Less than \u00bd unit.",
+            "Less than ½ unit.",
             "See Appendix C for resource and reserve definitions",
             "For Australia, Joint Ore Reserves Committee-compliant"
           ],
@@ -1198,8 +1336,7 @@
               "before": "information concerning data sources.",
               "after": "For Australia, Joint Ore Reserves"
             }
-          ],
-          "minimumImages": 1
+          ]
         }
       ]
     },

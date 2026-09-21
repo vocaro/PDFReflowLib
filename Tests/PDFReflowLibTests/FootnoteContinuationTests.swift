@@ -45,7 +45,9 @@ func aFootnoteContinuationHangingUnderItsStarIsNotAHeading() {
     let result = blocks(footnotePage(continuation: continuationLine()))
     // The page really does put this band above its heading threshold, which is what the defect
     // was made of: the ★ legend beside the notes is 8-point text over a 5.69-point table, and it
-    // is still read as a heading here. It carries a marker no rule holds, and is filed as #259.
+    // is read as a heading here. This reduction of the page carries none of the table's column
+    // headers, so nothing on it keys anything to that star; the whole page is read in
+    // `KeyedNoteMarkTests`, where the two stars the headers print take the reading away (#259).
     #expect(headingTexts(result).contains { $0.hasPrefix("★") }, "\(headingTexts(result))")
     // What leaves the navigation is the note's own second line.
     #expect(!headingTexts(result).contains { $0.contains("不低于 19,104 美元") },

@@ -849,17 +849,12 @@
         2
       ],
       "downloadVerification": "Fresh download through tools/fetch_corpus.py into an empty temporary cache matched this identity on 2026-09-16; see measurements/corpus-candidates-30/verification.json.",
-      "reviewStatus": "Converted with EPUBCheck, progress and 128 MiB Mac RSS gate. Contract protects unit note, author line, COMEX prose, preserved tables and ordered table-note superscripts. Prose absorbed into table crops (#36) is not qualified.",
+      "reviewStatus": "Converted with EPUBCheck, progress and 128 MiB Mac RSS gate. Contract protects unit note, author line, COMEX prose, twenty table rows read cell by cell and ordered table-note superscripts. Since #210 the extract converts with no preserved-region images.",
       "knownFidelityIssues": [
         {
           "page": 1,
-          "issue": "Domestic Production and Use, Recycling, Import Sources and Tariff prose becomes preserved-region crops beside the statistics table; 81% of source words are absent from EPUB text.",
-          "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/36"
-        },
-        {
-          "page": 2,
-          "issue": "Events, Trends and Issues, World Resources and Substitutes prose becomes preserved-region crops.",
-          "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/36"
+          "issue": "A cell's raised estimate and note marks are characters rather than <sup> markup (Reserves6, e150, 7100,000), because a cell that is not one whole extracted line is read as the plain characters inside its rectangle.",
+          "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/210"
         }
       ],
       "baselineStatus": "Baseline and reviewed contract recorded in measurements/usgs-mcs2025-copper/record.md; included in the corpus gate.",

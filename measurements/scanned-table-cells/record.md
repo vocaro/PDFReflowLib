@@ -172,6 +172,29 @@ therefore transcribe every label of a table correctly, transcribe none of its va
 called a plausible layer. That is a gap in `TextLayerPlausibility`, not in this rule, and it is
 filed separately as [#275](https://github.com/vocaro/PDFReflowLib/issues/275).
 
+## 6. The corpus lane
+
+Both lanes were run on this tree at four jobs, against release binaries built from it and from
+`f939bec` (the `main` this branch is merged onto), `epubcheck` 5.x:
+
+- 18 of 18 covered cases pass in both runs. Every case's `runPassed` was read from its own
+  `result.json` and is true; every case's `content-assessment.json` holds zero errors. Warren and
+  NOAA remain the two documented exclusions.
+- **Nothing moved, in any book.** Converted text characters, image counts, recognized page counts
+  and every warning code's count are identical between the two binaries for all eighteen. The
+  EPUBs differ only in their ZIP bytes, which the lane does not pin (a fresh `urn:uuid` and
+  modification date per run).
+
+That is because the rule reaches no page of the corpus. 47 of the corpus's 1,508 gated pages are
+recognized — CDC 33, Census 10, and one each in Fed, Our Flag, the Warren excerpt and the
+Earthdata slides — and **Vision returns no table on any of them**: `unreadTableCells` is raised
+zero times, and `grep` finds no `Table from page` and 52 unchanged `Preserved region from page`
+captions in the Census book, the one with both recognized pages and printed tables.
+
+So this rule is exercised by the Swift suite — the source-derived capture of pages 74 and 150 and
+the canned readings through the pipeline — and not by the corpus lane. A corpus case that would
+exercise it needs a scanned table page the default policy recognizes, which is what §5 is about.
+
 ## Reproducing
 
 ```sh

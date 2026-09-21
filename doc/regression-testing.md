@@ -28,7 +28,7 @@ Fetch sources with `tools/fetch_corpus.py --case <id>` (checksum-verified, cache
 
 What the individual gates check:
 
-- `swift test`: <!-- counts:swift-tests -->521 Swift Testing tests<!-- counts:end --> with no known-issue wrappers, using the real Apple
+- `swift test`: <!-- counts:swift-tests -->523 Swift Testing tests<!-- counts:end --> with no known-issue wrappers, using the real Apple
   PDF/OCR stack. They cover extraction, the document model, layout, raster pixels (crop origins,
   rotations, annotations, resource ceilings), preserved regions (fraction bars, raised exponents
   and all six cells of a ruled table in actual EPUB images at 72/144 DPI, with prose and code
@@ -37,7 +37,7 @@ What the individual gates check:
   concurrency test overlaps four conversions and one canceled conversion, checking ownership,
   styles, images, monotonic progress and staging cleanup. For iOS:
   `xcodebuild test -scheme PDFReflowLib-Package -destination 'platform=iOS Simulator,name=iPhone 18 Pro' CODE_SIGNING_ALLOWED=NO`.
-- `python3 -m unittest discover -s tools -p 'test_*.py' -v`: <!-- counts:python-tests -->227 Python tests<!-- counts:end --> over the tools,
+- `python3 -m unittest discover -s tools -p 'test_*.py' -v`: <!-- counts:python-tests -->229 Python tests<!-- counts:end --> over the tools,
   including the checker's negative controls, the identity tool, the memory-gate instrumentation
   (real child allocations above and below a ceiling, source verification, isolation from an
   earlier child's high-water mark, and each host-pressure outcome with its settle-and-retry),
@@ -176,7 +176,7 @@ it and a pass; `--memory-attempts` and `--settle-seconds` reach the evaluator's 
 loaded host. Each case verifies the pinned source identity, converts in a fresh release process,
 checks EPUB structure, EPUBCheck, monotonic progress, the manifest memory ceiling and the
 reviewed content contract in [corpus/regressions.json](../corpus/regressions.json):
-<!-- counts:contract-coverage -->558 checks on 126 reviewed pages across 18 documents<!-- counts:end -->.
+<!-- counts:contract-coverage -->566 checks on 127 reviewed pages across 18 documents<!-- counts:end -->.
 All source-page anchors must remain complete and ordered, and semantic text must
 contain no image-attachment placeholders. The manifest consistency test requires every corpus
 document to be covered or explicitly excluded; full Warren and NOAA conversions are excluded for
@@ -189,15 +189,18 @@ closed it on the abandoned coordination branch, whose `ours` merge left `main`'s
 book is in [corpus.md](corpus.md#warren-commission-report).
 
 <!-- counts:contract-breakdown -->
-Those 558 checks are 4 `spineContinuity`, 81 `text`, 209 `orderedText`, 52 `absentText`,
-34 `headings`, 42 `paragraphs`, 6 `continuedParagraphs`, 16 `scripts`, 17 `imageRegions`,
-70 `minimumImages`, 20 `warningCodesAnyOf` and 7 `absentWarningCodes`, counted as
+Those 566 checks are 4 `spineContinuity`, 81 `text`, 213 `orderedText`, 52 `absentText`,
+34 `headings`, 42 `paragraphs`, 6 `continuedParagraphs`, 4 `preformatted`, 16 `scripts`,
+17 `imageRegions`, 70 `minimumImages`, 20 `warningCodesAnyOf` and 7 `absentWarningCodes`, counted as
 `tools/check_corpus_content.py` counts them.
 <!-- counts:end -->
 
 Contract expectations per page: `orderedText` and `text` (selected correct words in order),
 `paragraphs` (a phrase inside one spine paragraph on that source page; a phrase spread over
-separate paragraphs, headings or preformatted text cannot pass), `continuedParagraphs` (one
+separate paragraphs, headings or preformatted text cannot pass), `preformatted` (the mirror of it:
+a phrase inside one `<pre>` block, which a paragraph, two adjacent items or the page's running text
+cannot satisfy — what pins a list item as an item rather than as prose, #172),
+`continuedParagraphs` (one
 paragraph element ends page N with one phrase and continues page N+1 with the other),
 `headings` (phrases that must remain semantic headings on the correct page; the parser keeps
 inline styles and page boundaries, including across spine files), `absentText` (reviewed

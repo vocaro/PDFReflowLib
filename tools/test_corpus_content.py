@@ -132,6 +132,30 @@ class CorpusContentTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 self.check()
 
+    def test_preformatted_contract_separates_items_from_paragraphs(self):
+        """A `<pre>` item cannot be satisfied by a paragraph, by another item, or by both halves."""
+        self.contract['pages'][0]['preformatted'] = ['17) (1, 2)']
+        self.pages[1]['preformatted'] = ['17) (1, 2)']
+        self.assertTrue(self.check()['passed'])
+        for blocks in [[], ['17)', '(1, 2)'], ['18) (1, 2)']]:
+            self.pages[1]['preformatted'] = blocks
+            self.pages[1]['paragraphs'] = ['17) (1, 2)']
+            self.pages[2]['preformatted'] = ['17) (1, 2)']
+            self.assertFalse(self.check()['passed'])
+        for phrase in ['', '  ', 123]:
+            self.contract['pages'][0]['preformatted'] = [phrase]
+            with self.assertRaises(ValueError):
+                self.check()
+
+    def test_preformatted_parser_reads_one_block_at_a_time(self):
+        path = self.epub('<span epub:type="pagebreak" id="page-1"/><pre>17) <em>(1, 2)</em></pre>'
+                         '<pre>18) (3, 4)</pre><p>prose</p>',
+                         '<span epub:type="pagebreak" id="page-2"/><pre>19) (5, 6)</pre>')
+        pages, _ = read_pages(path)
+        self.assertEqual(pages[1]['preformatted'], ['17) (1, 2)', '18) (3, 4)'])
+        self.assertEqual(pages[2]['preformatted'], ['19) (5, 6)'])
+        self.assertEqual(pages[1]['paragraphs'], ['prose'])
+
     def test_paragraph_parser_keeps_inline_styles_and_cross_page_ownership(self):
         path = self.epub('<span epub:type="pagebreak" id="page-1"/><h2>title</h2>'
                          '<p>al<strong>pha</strong> beta<span epub:type="pagebreak" id="page-2"/> gamma</p>',

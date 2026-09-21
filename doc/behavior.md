@@ -927,6 +927,38 @@ left, so a genuine marker still opens an item. Both are preformatted blocks that
 inserted newlines and indentation are unstyled. There is no list model: every such line is its own
 preformatted block, and nothing groups items or renders `ol`/`ul`.
 
+A marker the extractor left **alone on its line** is still a marker (#172). Both tests above want a
+space after the point or bracket, because the item's own text follows it there; PDFKit ends a line
+wherever the page leaves a gap, so an item whose marker the page hangs a little further out comes
+back as two lines and the first matches neither test. Wallace's page 101 returns `17)` and
+`(− 16,− 14), (11,− 14)` where every other exercise on the page is one line, so exercise 17 read
+as prose and was emitted as a `<p>` paragraph in a page of `<pre>` items. Such a line carries no
+text of its own to vouch for it, and a number with a point is also how a citation ends, so the
+page must state it twice over:
+
+- **its row is a row of items, not a row of cells.** Everything the page set to its right on that
+  row is either within the gutter — the item's own text — or a marker of the same list again, the
+  next column of a grid of items. Wallace sets exercises 17 and 18 on one row, four points and a
+  column apart. NOAA hangs a reference's number a column from its entry and the Blue Book's tables
+  set a figure beside a number; those are rows of cells, which belong to the table readers (#210).
+  A piece to the *left* within that gutter means the extractor cut this line out of the middle of a
+  row, exactly as above;
+- **the page states the list.** Another line of its size, on its own left edge, opens an item of the
+  same list — numbered or lettered the same way and closed with the same point or bracket — and
+  carries that item's own text after it. The 9/11 report leaves a citation's year on a line of its
+  own (`2001.`) in a column whose note numbers are set in from it; nothing on that edge vouches for
+  it and it stays the prose it is.
+
+The **rest of an item's own printed row joins that item**, as two pieces of one row are one block
+everywhere else (#57, #137): the next piece, standing to its right within that same 0.75 of a body,
+is appended to the item's preformatted block with a space. It is the piece the page set beside the
+marker, so `17)` and its coordinates are one item again. Nothing on another row joins, and only the
+row's own next piece does. An item that *wraps* is still one preformatted block per line: the 9/11
+report's numbered findings on page 365 keep `1. The CTC did not analyze how an aircraft, hijacked
+or explosives-` as the item and `laden, might be used as a weapon…` as the paragraph beneath it,
+which is what "no list model" above means, and item 4 of that list now reads exactly as items 1 to
+3 do instead of as two paragraphs.
+
 A wrapped line of prose can begin with the same token — an initial (`W. Bush`, `U. S. 760`), a
 citation abbreviation (`v. Moore`, `p. 785`, `F. 4th`) or a year or day carried over from the line
 above (`2016.`, `on January` / `13.`). Such a line **continues the open paragraph** instead of
@@ -958,7 +990,8 @@ Evidence: [page-leading-and-ligature-vocabulary](../measurements/page-leading-an
 [three-fidelity-fixes](../measurements/three-fidelity-fixes/record.md),
 [preformatted-styles](../measurements/preformatted-styles/record.md),
 [citation-continuations](../measurements/citation-continuations/record.md),
-[dga-layout-qualification](../measurements/dga-layout-qualification/record.md).
+[dga-layout-qualification](../measurements/dga-layout-qualification/record.md),
+[markers-alone-on-their-line](../measurements/markers-alone-on-their-line/record.md).
 
 ## HyphenRepair
 

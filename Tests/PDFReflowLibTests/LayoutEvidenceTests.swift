@@ -499,3 +499,77 @@ func anUntaggedLineContinuesATaggedParagraphButNeverATaggedHeading() {
     #expect(split.last?.text == lines[1].text + " " + lines[2].text)
     #expect(split.last?.structureGroup == nil)
 }
+
+/// A list marker the extractor left alone on its line. Both marker tests require whitespace after
+/// the point or bracket, because the item's own text follows it there, so a marker PDFKit returned
+/// as a line of its own was not read as a marker at all. Wallace's page 101 hangs exercise 17 a
+/// hair further out than its neighbours and returns `17)` and `(− 16,− 14), (11,− 14)`, which read
+/// as prose and were emitted as a `<p>` paragraph in a page of `<pre>` items (#172).
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/172"))
+func aMarkerAloneOnItsLineIsAMarkerWhereThePageSaysSo() {
+    let sibling = line("11) (− 2, 10), (− 2,− 15)", x: 40, y: 300, width: 120)
+    let marker = line("17)", x: 40, y: 280, width: 14)
+    let rest = line("(− 16,− 14), (11,− 14)", x: 58, y: 280, width: 110)
+    let neighbor = line("18) (13, 15), (2, 10)", x: 200, y: 280, width: 100)
+    func role(_ line: TextLine, in lines: [TextLine]) -> LineRole {
+        let content = page(prose + lines)
+        return LayoutReconstructor.role(of: line, on: content, in: content.lines,
+                                        typography: PageTypography(page: content),
+                                        labels: [], judgesTitleWords: false)
+    }
+    let column = MarkerColumn(onMajorityEdge: true, justifiedRight: 340)
+    #expect(role(marker, in: [sibling, marker, rest, neighbor]) == .markedLine(column))
+    // The page's own evidence, taken away one piece at a time.
+    // No item of its list stands on its left edge: the 9/11 report leaves a citation's year on a
+    // line of its own in a column whose note numbers are set in from it.
+    #expect(role(marker, in: [marker, rest, neighbor]) == .prose)
+    // A marker of another kind belongs to another list and vouches for nothing.
+    let lettered = line("a. An item of a lettered list", x: 40, y: 300, width: 120)
+    #expect(role(marker, in: [lettered, marker, rest, neighbor]) == .prose)
+    let pointed = line("11. An item numbered with a point", x: 40, y: 300, width: 120)
+    #expect(role(marker, in: [pointed, marker, rest, neighbor]) == .prose)
+    // A piece standing a column away on its row is a cell of a row of cells (#210), which is what
+    // NOAA's references are: the number hangs a column away from the entry.
+    let cell = line("Canadell, J.G., and P.M.S. Monteiro, 2021:", x: 70, y: 280, width: 200)
+    #expect(role(marker, in: [sibling, marker, cell]) == .prose)
+    // A piece to its left within that gutter means the extractor cut this line out of the middle
+    // of a printed row, so what opens it is whatever the page printed there (#203).
+    let before = line("x =", x: 20, y: 280, width: 16)
+    #expect(role(marker, in: [sibling, before, marker, rest]) == .prose)
+    // A line that only looks like a marker is none: a decimal, an abbreviation, an initial.
+    #expect(LayoutReconstructor.markerKind(of: "1.5", whole: false) == nil)
+    #expect(LayoutReconstructor.markerKind(of: "1.5", whole: true) == nil)
+    #expect(LayoutReconstructor.markerKind(of: "A.M. flight", whole: false) == nil)
+    #expect(LayoutReconstructor.markerKind(of: "17)", whole: true) == MarkerKind(numbered: true, terminator: ")"))
+    #expect(LayoutReconstructor.markerKind(of: "17)", whole: false) == nil)
+    #expect(LayoutReconstructor.markerKind(of: "a.", whole: true) == MarkerKind(numbered: false, terminator: "."))
+}
+
+/// The rest of an item's own printed row joins that item, as two pieces of one row are one block
+/// everywhere else (#57, #137). PDFKit ends a line at the gap a page leaves after a hanging
+/// marker, so the item arrives as its marker and then its text (#172).
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/172"))
+func theRestOfAnItemsRowJoinsTheItem() {
+    func blocks(_ pieces: [(TextLine, LineRole)]) -> [ReflowBlock] {
+        var assembler = BlockAssembler(page: 3, body: 10, hyphens: HyphenContext())
+        for piece in pieces { assembler.append(piece.0, as: piece.1) }
+        return assembler.finish()
+    }
+    let column = MarkerColumn(onMajorityEdge: true, justifiedRight: 340)
+    let marker = line("17)", x: 40, y: 280, width: 14)
+    let rest = line("(− 16,− 14), (11,− 14)", x: 58, y: 280, width: 110)
+    let joined = blocks([(marker, .markedLine(column)), (rest, .prose)])
+    #expect(joined.map(\.text) == ["17) (− 16,− 14), (11,− 14)"])
+    if case .preformatted = joined[0].content {} else { Issue.record("the item stays preformatted") }
+    // A bulleted item takes the rest of its row the same way.
+    let bullet = line("•", x: 40, y: 280, width: 6)
+    #expect(blocks([(bullet, .listItem), (line("the item's text", x: 50, y: 280, width: 90), .prose)])
+        .map(\.text) == ["• the item's text"])
+    // A piece a column's gutter away is a block of its own, and so is anything on another row.
+    #expect(blocks([(marker, .markedLine(column)), (line("far", x: 70, y: 280, width: 20), .prose)]).count == 2)
+    #expect(blocks([(marker, .markedLine(column)), (line("below", x: 58, y: 266, width: 40), .prose)]).count == 2)
+    // Only the row's own next piece joins: a second prose line does not reach back into the item.
+    let two = blocks([(marker, .markedLine(column)), (rest, .prose),
+                      (line("Ordinary prose beneath the item.", x: 40, y: 260, width: 200), .prose)])
+    #expect(two.map(\.text) == ["17) (− 16,− 14), (11,− 14)", "Ordinary prose beneath the item."])
+}

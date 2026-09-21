@@ -665,6 +665,16 @@ unrecognized visual content."; with references disabled, "Supplementary referenc
 compare unrecognized visual content with the source PDF."). A recognition with no lines never
 reports `ocrUsed`; see `RecognitionPolicy` above.
 
+A recognized line's **type size is its thickness, measured across its own baseline** (#130). The
+box Vision reports is axis-aligned, so for a line the page sets sideways its height is the line's
+length: the CDC graphic novel letters page 17's caption down the side of the panel, and a
+224.8-point box around an 8.9-point line made the page's body 225 and put the heading threshold
+beyond anything printed on it. The quadrilateral around the same line carries the direction the
+writing runs in, and the distance across it is the height the box would have had upright. A line
+standing upright — anything within half a right angle of vertical, which covers ordinary skew —
+keeps its box height exactly, so no page of upright writing moves by a hair. A banded retry scales
+a thickness that runs up the page with its band and leaves one that runs across it alone.
+
 ### Recognition that left the page's writing unread (#116)
 
 Vision can return success with whole paragraphs or table columns missing, and nothing in the
@@ -805,6 +815,25 @@ leaving that silent, as the tag phase reports its own give-up (#224).
   first, and less than 0.75 of a body separates them — the width a whitespace cut needs for a
   column, so a table's cells and the two ends of a running header remain separate blocks (#57).
   A short previous line ending a sentence closes its paragraph either way.
+- Two lines at that leading are also one paragraph when they are **centred on one axis** (mid
+  points within 0.6 of a body) **and the reading says the first one wraps** (#130). A shared left
+  edge is a column the page sets and stands on its own; a shared centre does not, since a title,
+  its author and its date are centred on one axis and are three separate lines. So the centre
+  joins only where the reading states the wrap: Vision states it for every line it recognizes and
+  PDFKit's native reading states nothing, which leaves every natively extracted page as it was.
+  The CDC graphic novel letters each speech balloon centred, so page 34's `I'VE BEEN` /
+  `THINKING... WE` / `SHOULD REALLY` / `MAKE AN` / `EMERGENCY KIT` stand on five left edges spread
+  over eighteen points and on one centre within 1.7 points.
+- A **stub of prose is closed by the step the next line takes** (#130): a previous line under half
+  the width of the line beneath it, with that line set at least half a body further in, opens a
+  new block even where no sentence ended. Prose fills its measure, so a line that used under half
+  of it ended something, and the step is where the next thing begins; #39 already reads a marker
+  set in past the line above it as an item's opening rather than a wrap. The Blue Book's observer
+  questionnaire is the case: page 273 sets the spaced answer row `Yes or No` under question 7 and
+  the instruction `IF you answered YES, then complete the following questions:` a body further in
+  beneath it. Half is where the same book's contents stand — page 5 hangs each entry's wrapped
+  line six points in under an opening filling three fifths of it, and the entry stays one
+  paragraph.
 
 ### Type sizes and headings
 

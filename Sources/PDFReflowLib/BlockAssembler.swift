@@ -384,16 +384,49 @@ struct BlockAssembler {
         }
     }
 
-    /// Whether `line` continues the paragraph `previous` is part of: the previous line wraps,
-    /// the two share a column at ordinary leading or are two pieces of one printed row, and the
-    /// previous line is not a short line ending a sentence.
+    /// Whether `line` continues the paragraph `previous` is part of: the previous line wraps, the
+    /// two are stacked at ordinary leading or are two pieces of one printed row, and the previous
+    /// line is not a short line the page has already closed.
     private func continuesParagraph(_ prev: TextLine, _ line: TextLine) -> Bool {
+        guard prev.wraps != false else { return false }
+        // A short line ending a sentence closes its paragraph however the two lines stand.
+        let short = prev.rect.width < line.rect.width * 0.65
+        guard !(short && prev.text.last.map { ".!?".contains($0) } == true) else { return false }
+        if continuesRow(prev, line) { return true }
         let verticalGap = prev.rect.minY - line.rect.maxY
-        let sameColumn = abs(prev.rect.minX - line.rect.minX) < body * 1.5
-            && verticalGap >= -body * 0.4 && verticalGap < body * 0.9
-        let shortEnding = prev.rect.width < line.rect.width * 0.65
-            && prev.text.last.map { ".!?".contains($0) } == true
-        return prev.wraps != false && (sameColumn || continuesRow(prev, line)) && !shortEnding
+        guard verticalGap >= -body * 0.4, verticalGap < body * 0.9,
+              abs(prev.rect.minX - line.rect.minX) < body * 1.5 || centred(prev, line) else { return false }
+        // Prose fills its measure, so a line that used under half of the one beneath it ended
+        // something, and a line the page then sets further in begins the next thing. #39 already
+        // reads a marker set in past the line above it as the opening of an item rather than a
+        // wrap; this is the same step under a stub of prose, and it never contradicts #39, whose
+        // own test refuses exactly the lines this one closes.
+        //
+        // The Blue Book's observer questionnaire is the case it answers (#130). Page 273 sets the
+        // spaced answer row `Yes or No` under question 7 and the instruction `IF you answered
+        // YES, then complete the following questions:` a body further in beneath it. The row ends
+        // no sentence, so its punctuation says nothing about it; the step the page takes does.
+        //
+        // Half is where the same book's contents stand: page 5 hangs each entry's wrapped line
+        // six points in under an opening that fills three fifths of it, and an entry that runs
+        // over is one paragraph. Two thirds — what the sentence-ending rule above asks — would
+        // break those; a stub under half the measure is not a line that ran out of room.
+        return !(prev.rect.width < line.rect.width * 0.5 && line.rect.minX - prev.rect.minX >= body * 0.5)
+    }
+
+    /// Whether the two lines are stacked on one centre: a balloon, a box or a caption the page
+    /// set centred, whose lines share no left edge to be read as a column (#130). The CDC graphic
+    /// novel letters every speech balloon this way, so page 34's `I'VE BEEN` / `THINKING... WE` /
+    /// `SHOULD REALLY` / `MAKE AN` / `EMERGENCY KIT` stand on five left edges spread over 18
+    /// points and on one centre, within 1.7 points of each other on a ten-point page.
+    ///
+    /// A shared left edge is a column the page itself sets, and stands as evidence on its own. A
+    /// shared centre does not: a title, its author and its date are centred on one axis and are
+    /// three separate lines. So a centred stack joins only where the reading also states that the
+    /// line wraps to the next one. Vision states it for every line it recognizes; PDFKit's native
+    /// reading states nothing, which leaves every natively extracted page exactly as it was.
+    private func centred(_ prev: TextLine, _ line: TextLine) -> Bool {
+        prev.wraps == true && abs(prev.rect.midX - line.rect.midX) <= body * 0.6
     }
 
     /// Whether a line opening with a number or a single letter and a point is a wrapped

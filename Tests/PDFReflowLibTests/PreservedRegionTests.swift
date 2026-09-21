@@ -407,3 +407,46 @@ func aPhotographStillLeavesItsCaptionAndTheProseBelowItReflowable() throws {
     #expect(texts.contains { $0.contains("mes") && $0.contains("sages/second.") },
             Comment(rawValue: texts.joined(separator: " | ")))
 }
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/255"))
+func aCropNeverAdmitsALineOfTheBooksOwnProse() {
+    let body = "A strong alliance has long existed between the two departments."
+    let label = "Figure 4"
+    let sentence = TextLine(text: body, rect: CGRect(x: 40, y: 300, width: 300, height: 12), fontSize: 10)
+    let caption = TextLine(text: label, rect: CGRect(x: 40, y: 300, width: 60, height: 12), fontSize: 10)
+    #expect(LayoutReconstructor.releasesProse(sentence, language: "en"))
+    #expect(!LayoutReconstructor.releasesProse(caption, language: "en"))
+    // Recognition's reading of the CIA report's handwritten tables is not prose, in a book that
+    // declares English: the word test refuses it where the shape alone would not.
+    let noise = TextLine(text: "0/iLE 1112£ E/(19U/,£r//?/Z/ <?E O,fJE(!r .S/6/(T//I/GS Ec?~ /ILi f'EARS",
+                         rect: CGRect(x: 40, y: 300, width: 300, height: 12), fontSize: 10)
+    #expect(LayoutReconstructor.readsAsSentence(noise))
+    #expect(!LayoutReconstructor.releasesProse(noise, language: "en"))
+    // An English lexicon judges nothing about another script, so shape alone decides there.
+    let chinese = TextLine(text: "如果您要从工作表中查找的金额至少为 19,100 美元, 但低于 19,104 美元，并且您没有",
+                           rect: CGRect(x: 40, y: 300, width: 300, height: 12), fontSize: 10)
+    #expect(LayoutReconstructor.releasesProse(chinese, language: "en") == LayoutReconstructor.readsAsSentence(chinese))
+    #expect(LayoutReconstructor.releasesProse(noise, language: "zh-Hans"))
+}
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/255"))
+func aSentenceACropCannotCutAroundStaysInTheProse() {
+    // A picture with a sentence of the page's own prose running across its lower edge, which no
+    // cut can clear while still holding the picture.
+    var page = PageContent(number: 1, bounds: CGRect(x: 0, y: 0, width: 400, height: 500),
+                           lines: [], graphics: [CGRect(x: 40, y: 260, width: 320, height: 120)])
+    page.pictures = page.graphics
+    page.lines = [
+        TextLine(text: "A strong alliance has long existed between the two departments.",
+                 rect: CGRect(x: 30, y: 250, width: 340, height: 12), fontSize: 10),
+        TextLine(text: "Figure 4", rect: CGRect(x: 40, y: 238, width: 60, height: 12), fontSize: 10),
+    ]
+    let crops = LayoutReconstructor.graphicsWithLabels(page)
+    let sentence = page.lines[0]
+    #expect(!crops.contains { LayoutReconstructor.takes($0, sentence) },
+            "the book's own sentence must reflow, not travel into the picture")
+    var warnings: [ConversionWarning] = []
+    let blocks = LayoutReconstructor.blocks(page: page, images: crops.map { ($0, "image-1") },
+                                            vocabulary: [], warnings: &warnings)
+    #expect(blocks.contains { $0.text.contains("A strong alliance") })
+}

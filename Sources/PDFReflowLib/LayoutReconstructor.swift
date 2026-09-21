@@ -144,7 +144,9 @@ enum LayoutReconstructor {
         return result
     }
 
-    /// Whether a line is running prose rather than a term.
+    /// Whether a line is running prose rather than a term: four or more words of two letters or
+    /// more. A figure's label, an axis title, a formula's terms and a legend are shorter than
+    /// that, which is what lets a crop tell the book's own prose from a picture's writing (#255).
     static func readsAsSentence(_ line: TextLine) -> Bool {
         line.text.split(whereSeparator: { !$0.isLetter }).filter { $0.count >= 2 }.count >= 4
     }
@@ -203,7 +205,7 @@ enum LayoutReconstructor {
     /// away from lines it merely touches, because layout removes every intersecting line from
     /// prose; a line whose rectangle genuinely overlaps admitted text is admitted instead.
     /// Returns nil for a thin rule that lies inside text it does not strike through.
-    private static func expanded(_ region: Region, page: PageContent) -> CGRect? {
+    private static func expanded(_ region: Region, page: PageContent, language: String) -> CGRect? {
         var admitted: [CGRect] = []
         while true {
             var bounds = admitted.reduce(region.seed) { $0.union($1.insetBy(dx: -2, dy: -2)) }
@@ -228,6 +230,12 @@ enum LayoutReconstructor {
                     bounds = cut
                 } else if admitted.isEmpty && isThinRule(region.seed) {
                     return nil
+                } else if releasesProse(line, language: language) {
+                    // A line of the book's own prose is never admitted to a crop it only touches.
+                    // Where no cut clears it, the crop keeps its own extent instead of growing
+                    // into it, exactly as #246's edge band does: `takes` then leaves the line in
+                    // the prose, so the picture loses nothing and the sentence is not buried
+                    // (#255). Three quarters of the magazine's text was inside crops.
                 } else if !isEdgeBand(region.seed, bounds: page.bounds) || takes(bounds, line) {
                     admitted.append(rect)
                     changed = true
@@ -242,8 +250,23 @@ enum LayoutReconstructor {
         }
     }
 
+    /// Whether a line a crop cannot cut around is the book's own prose, which a crop never
+    /// admits (#255).
+    ///
+    /// A line written in the Latin alphabet, in a book that declares English, must also read as
+    /// English words. The CIA report's crops sit over handwritten and typewritten tables whose
+    /// text layer is noise, and admitting `0/iLE 1112£ E/(19U/,£r//?/Z/` to the prose recovers
+    /// nothing a reader wants. A line carrying letters of another script is released on its
+    /// shape alone: an English lexicon judges nothing about a Chinese or Arabic line, and the
+    /// corpus lane converts those books at library defaults, which declares English for them.
+    static func releasesProse(_ line: TextLine, language: String) -> Bool {
+        guard readsAsSentence(line) else { return false }
+        guard EnglishText.isDeclared(language), EnglishText.foreignLetters(line.text) == 0 else { return true }
+        return EnglishText.readsAsWords(line.text)
+    }
+
     /// Expand crops to whole intersecting text lines so a label cannot be cut in half.
-    static func graphicsWithLabels(_ page: PageContent) -> [CGRect] {
+    static func graphicsWithLabels(_ page: PageContent, language: String = "en") -> [CGRect] {
         // Displayed formulas have spatial meaning (superscripts, fractions, aligned terms)
         // that line concatenation cannot reproduce. Preserve recognizable formulas as crops.
         let formulas = page.lines.filter { line in
@@ -280,7 +303,7 @@ enum LayoutReconstructor {
         while regions.map(\.bounds) != previous {
             previous = regions.map(\.bounds)
             regions = regions.compactMap { region in
-                expanded(region, page: page).map { Region(seed: region.seed, bounds: $0) }
+                expanded(region, page: page, language: language).map { Region(seed: region.seed, bounds: $0) }
             }
             // A merged bounding rectangle can newly intersect a label that neither component
             // touched. Expand again before rasterizing, or its text is removed from prose while

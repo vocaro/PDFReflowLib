@@ -148,7 +148,7 @@ enum PDFReflowLibPipeline {
                     warnings.append(ConversionWarnings.warning(.pageImageFallback, page: i + 1, options: options))
                 } else {
                     var images: [(CGRect, String)] = []
-                    for rect in LayoutReconstructor.graphicsWithLabels(content) {
+                    for rect in LayoutReconstructor.graphicsWithLabels(content, language: options.language) {
                         images.append((rect, try assets.save(page: page, rect: rect,
                                                             drawnFromImage: pagesDrawnFromImage.contains(i))))
                     }

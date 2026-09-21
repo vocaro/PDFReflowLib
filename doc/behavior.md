@@ -929,6 +929,21 @@ Evidence: [spine-continuity](../measurements/spine-continuity/record.md),
   into the picture and the second reflowed alone between two figures; the caption now reads whole
   (#59). Evidence: [painted-underlines](../measurements/painted-underlines/record.md) records the
   neighbouring rule; this one is measured in the commit.
+- **The book's own prose (#255).** A crop never admits a line that reads as the book's own prose.
+  Where no cut clears such a line while still holding the region's core, the crop keeps its own
+  extent rather than growing into it, exactly as the page-furniture rule below does; `takes` then
+  leaves the line in the prose, so the picture loses nothing and the sentence is not buried.
+  Prose is `readsAsSentence` — four or more words of two letters or more — and, for a line written
+  in the Latin alphabet in a book that declares English, it must also read as English words: the
+  CIA report's crops sit over handwritten tables whose text layer is
+  `0/iLE 1112£ E/(19U/,£r//?/Z/`, which passes the sentence shape and recovers nothing. The word
+  test runs only on Latin-alphabet lines, because an English lexicon reads a Chinese or Arabic
+  line as no words at all and the corpus lane converts those books as English.
+  This recovers 45,754 characters across eight of the eighteen corpus books, three quarters of the
+  magazine's text among them. Two costs are known and recorded: the magazine's recovered lines
+  read in its columns' interleaved order (#174's defect, on text that used to be hidden inside
+  the pictures), and some of the CIA report's table headers come out with its prose.
+  Evidence: [prose-inside-crops](../measurements/prose-inside-crops/record.md).
 - **Page furniture.** A region spanning at least 90% of the page's measure and flush against its
   top or bottom edge is the page's own furniture — a footer or header background — not a figure
   with a claim on the text near it. It keeps its own extent rather than growing to a line it only

@@ -90,10 +90,11 @@ extension LayoutReconstructor {
         // or lettered marker is not evidence of the same kind, because a heading can be numbered.
         // The rest of such an item carries no marker of its own — the marker is on the line above
         // it — so the page states the relationship instead, in the indent it hangs under (#256).
-        if !page.hasSyntheticTextStyle, !opensWithBullet(line.text),
+        // A glyph the page keys its own material to marks a note in the same way (#259).
+        if !page.hasSyntheticTextStyle, !opensWithMarker(line, keyedIn: page.lines),
            isTitleSized(line, in: lines, typography: typography, judgesTitleWords: judgesTitleWords)
             || labels.contains(line),
-           !hangsUnderBullet(line, in: lines) {
+           !hangsUnderBullet(line, in: lines, keyedIn: page.lines) {
             return .heading
         }
         if !page.hasSyntheticTextStyle && line.monospaced { return .code }
@@ -209,9 +210,66 @@ extension LayoutReconstructor {
         text.range(of: "^[•*−–—-]\\s", options: .regularExpression) != nil
     }
 
-    /// Whether the page hung this line under a bulleted line: it is the rest of that item, and an
-    /// item is not a heading whatever size its text is set in (#254, #256). The marker that says
-    /// so is on the line above, so the page states the relationship in its indent instead. IRS
+    /// A line the page has marked as an item or a note, and so is not a heading of any size
+    /// (#254, #259): either it opens with a bullet, or it opens with a glyph the page itself
+    /// keys material to. `pageLines` is everything the page printed, not the lines that still
+    /// reflow, because the material a note is keyed to may be inside a crop.
+    static func opensWithMarker(_ line: TextLine, keyedIn pageLines: [TextLine]) -> Bool {
+        opensWithBullet(line.text) || opensWithKeyedMark(line, keyedIn: pageLines)
+    }
+
+    /// The glyph a line opens as a mark: one character that is no letter and no digit, a space,
+    /// and text after it. `NativeTextReader.sizeAfterListMarker` already reads exactly this shape
+    /// when it refuses to let an opening glyph state the line's size, so a page that draws such a
+    /// glyph has already been read as drawing a marker; nil where the line opens with prose.
+    static func openingMark(_ text: String) -> Character? {
+        var characters = text[...]
+        guard let mark = characters.popFirst(), !mark.isLetter, !mark.isNumber, !mark.isWhitespace,
+              characters.popFirst()?.isWhitespace == true,
+              characters.contains(where: { !$0.isWhitespace })
+        else { return nil }
+        return mark
+    }
+
+    /// Whether the page keys its own material to the glyph this line opens with — the evidence
+    /// that the line is a note about that material and not a heading that happens to begin with a
+    /// symbol (#259).
+    ///
+    /// IRS Publication 596 sets a legend in the footnote band under ten pages of its EIC table:
+    /// `★ 如果您的报税身份是已婚分别申报，…请使用此栏。`, 8 points over a table whose body is
+    /// 5.69, so it clears the page's heading threshold on size alone. #254's bullet class is
+    /// enumerated and holds no U+2605, and #256 reads the line a marker is *not* on, while this
+    /// legend is the first line of its own note. Enumerating one more glyph would say nothing
+    /// about why it is a marker, so the page is asked instead.
+    ///
+    /// Three things the page states, together:
+    ///
+    /// - **a glyph standing alone before a measure of text.** `openingMark` reads the shape the
+    ///   size correction already reads — one non-alphanumeric character, a space, then text;
+    /// - **the same glyph printed by itself, higher on the page.** Each of those pages sets `★`
+    ///   as a line of its own twice, at 6.5 points, in the two column headers of the table the
+    ///   legend explains. A mark a note is keyed to is a mark the page has already made, so a
+    ///   heading opening `§` or `★` on a page that keys nothing to it stays a heading;
+    /// - **a line that filled its measure**, at least twelve of its own sizes wide, the width
+    ///   `hangsUnderBullet` asks of a line that wrapped. A note keyed to a mark runs on; a
+    ///   decorated heading is short, and `★ Contents` beneath a bare star keeps its reading.
+    ///
+    /// The search is over everything the page printed, not over the lines that still reflow: the
+    /// EIC table is a preserved region on all ten pages, so the two header stars are inside a
+    /// crop, while the legend that explains them is beneath it. What the page keyed its note to
+    /// is what the page drew, whether or not the converter kept it as text.
+    static func opensWithKeyedMark(_ line: TextLine, keyedIn pageLines: [TextLine]) -> Bool {
+        guard let mark = openingMark(line.text) else { return false }
+        guard line.rect.width >= max(line.fontSize, 4) * 12 else { return false }
+        return pageLines.contains { other in
+            other.rect.minY > line.rect.minY && other.text.count == 1 && other.text.first == mark
+        }
+    }
+
+    /// Whether the page hung this line under a marked line: it is the rest of that item or note,
+    /// and neither is a heading whatever size its text is set in (#254, #256, #259). The marker
+    /// that says so is on the line above, so the page states the relationship in its indent
+    /// instead, and a line that opens a mark of its own is an item, not a continuation. IRS
     /// Publication 596 sets the starred footnotes under its EIC table at 8 points over a table
     /// whose body is 5.69, and the footnote that wraps reaches the page's heading threshold on
     /// size alone.
@@ -223,16 +281,20 @@ extension LayoutReconstructor {
     /// relationship in a numbered note. The marked line must also fill a measure, at least twelve
     /// of its own sizes wide, because a line that wrapped is a line that ran out of room: a short
     /// bulleted item above an indented one is two items, not one wrapped over two lines.
-    static func hangsUnderBullet(_ line: TextLine, in lines: [TextLine]) -> Bool {
-        guard !isList(line.text) else { return false }
+    static func hangsUnderBullet(_ line: TextLine, in lines: [TextLine],
+                                 keyedIn pageLines: [TextLine] = []) -> Bool {
+        guard !isList(line.text), !opensWithKeyedMark(line, keyedIn: pageLines) else { return false }
         let size = max(line.fontSize, 4)
+        // The geometry is asked first: it settles all but a handful of the page's lines before
+        // the marker test reads the page again for a keyed mark.
         return lines.contains { above in
-            guard opensWithBullet(above.text), above.hasSize(line.fontSize), above.wraps != false,
-                  above.rect.width >= size * 12 else { return false }
+            guard above.hasSize(line.fontSize), above.wraps != false, above.rect.width >= size * 12
+            else { return false }
             let indent = line.rect.minX - above.rect.minX
             guard indent >= size * 0.8, indent <= size * 3 else { return false }
             let gap = above.rect.minY - line.rect.maxY
-            return gap >= -size * 0.6 && gap <= size * 0.8
+            guard gap >= -size * 0.6, gap <= size * 0.8 else { return false }
+            return opensWithMarker(above, keyedIn: pageLines)
         }
     }
 

@@ -147,9 +147,24 @@ Evidence: [pdfkit-concurrency](../measurements/pdfkit-concurrency/record.md),
   footnotes under its EIC table at 8 points over a table whose body is 5.69, so on four of its
   pages the footnote that wrapped reached the page's heading threshold on size alone. The line
   keeps its own block and its own words; only the heading reading goes.
+  A page also keys notes to marks of its own choosing, and enumerating the glyphs would say
+  nothing about why one is a marker, so the page is asked instead: **a line is a note, not a
+  heading, where it opens with a glyph the page keys its own material to** (#259). Three things
+  the page states together — the line opens with one character that is no letter and no digit,
+  then a space, then text, the shape the size correction above already reads; the same character
+  is printed *by itself*, higher up the page, as the reference the note explains; and the line
+  filled its measure, at least twelve of its own sizes wide. The search covers everything the
+  page printed, not only the lines that still reflow, because the material a note is keyed to may
+  be inside a crop. IRS Publication 596 prints `★` alone in two column headers of each EIC table
+  page and explains it in the band beneath, `★ 如果您的报税身份是已婚分别申报…请使用此栏。`, at
+  8 points; on ten pages that legend read as a heading. A heading opening `§` or `★` on a page
+  that keys nothing to it, and a short decorated heading beneath a star the page does print, keep
+  their readings. The rest of such a note, hanging under it, is read as the rest of a bulleted
+  item is.
   Evidence: [list-marker-size](../measurements/list-marker-size/record.md),
   [smaller-marker](../measurements/list-marker-size/smaller-marker/record.md),
-  [hanging-continuation](../measurements/list-marker-size/hanging-continuation/record.md).
+  [hanging-continuation](../measurements/list-marker-size/hanging-continuation/record.md),
+  [keyed-mark](../measurements/list-marker-size/keyed-mark/record.md).
 - **East Asian text (#42).** Chinese, Japanese and Korean set no space between the characters of
   a word, and a justified line stretches the gaps between characters rather than between words.
   Two spacing rules were measured on Latin text and do not hold here. A gap between two

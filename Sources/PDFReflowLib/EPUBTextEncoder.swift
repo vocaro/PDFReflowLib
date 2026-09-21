@@ -1,11 +1,19 @@
 import Foundation
 
 enum EPUBTextEncoder {
-    static func sourcePage(_ page: Int) -> String {
-        "<span epub:type=\"pagebreak\" role=\"doc-pagebreak\" id=\"page-\(page)\" aria-label=\"\(page)\"/>"
+    /// A source-page marker. The id stays the physical page — it is an XML id, and it is what
+    /// internal links aim at, while two physical pages may print the same number — and the label
+    /// a reader is shown is the one the source prints (#248).
+    static func sourcePage(_ page: Int, labels: [Int: String] = [:]) -> String {
+        "<span epub:type=\"pagebreak\" role=\"doc-pagebreak\" id=\"page-\(page)\" aria-label=\"\(xml(label(page, labels: labels)))\"/>"
     }
 
-    static func inline(_ text: InlineText) -> String {
+    /// What the source prints on that page, or its physical number.
+    static func label(_ page: Int, labels: [Int: String]) -> String {
+        labels[page] ?? "\(page)"
+    }
+
+    static func inline(_ text: InlineText, labels: [Int: String] = [:]) -> String {
         text.elements.map { element in
             switch element {
             case let .text(text, style):
@@ -16,15 +24,16 @@ enum EPUBTextEncoder {
                 if style.contains(.superscript) { run = "<sup>\(run)</sup>" }
                 else if style.contains(.subscript) { run = "<sub>\(run)</sub>" }
                 return run
-            case let .sourcePage(page): return sourcePage(page)
+            case let .sourcePage(page): return sourcePage(page, labels: labels)
             }
         }.joined()
     }
 
     /// A block's XHTML markup, the source pages it carries for the page list, and its heading
     /// entry when it is a heading. Source-page boundaries are separate markers (`sourcePage`).
-    static func piece(for block: ReflowBlock, imagePaths: [String: String]) throws -> SpinePacker.Piece {
-        let payload = try payload(block, imagePaths: imagePaths)
+    static func piece(for block: ReflowBlock, imagePaths: [String: String],
+                      labels: [Int: String] = [:]) throws -> SpinePacker.Piece {
+        let payload = try payload(block, imagePaths: imagePaths, labels: labels)
         switch block.content {
         case .paragraph:
             return SpinePacker.Piece(markup: "<p>\(payload)</p>\n", sourcePages: block.sourcePages, heading: nil)
@@ -40,11 +49,12 @@ enum EPUBTextEncoder {
         }
     }
 
-    static func payload(_ block: ReflowBlock, imagePaths: [String: String]) throws -> String {
+    static func payload(_ block: ReflowBlock, imagePaths: [String: String],
+                        labels: [Int: String] = [:]) throws -> String {
         switch block.content {
-        case let .paragraph(text), let .heading(_, text, _): return inline(text)
-        case let .preformatted(text): return inline(text)
-        case let .sourcePage(page): return sourcePage(page)
+        case let .paragraph(text), let .heading(_, text, _): return inline(text, labels: labels)
+        case let .preformatted(text): return inline(text, labels: labels)
+        case let .sourcePage(page): return sourcePage(page, labels: labels)
         case let .image(image):
             guard let path = imagePaths[image.assetID] else {
                 throw ReflowDocument.ValidationError.missingAsset(image.assetID)

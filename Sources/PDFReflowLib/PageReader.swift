@@ -17,6 +17,9 @@ struct ExtractedPage: Equatable, Sendable {
     /// their line was left as PDFKit read it (`GlyphIndexDecoder.unreadGlyphs`). Zero on every
     /// page without an index-glyph font.
     var unreadGlyphs: Int
+    /// The page number the source prints on this page, where it states one and it differs from
+    /// the physical index (#248). Nil leaves the physical index to speak for the page.
+    var printedLabel: String?
     /// Warnings the readers raised, in emission order.
     var warnings: [PageWarning]
 }
@@ -87,8 +90,14 @@ enum PageReader {
             let unread = unmappedFont
                 ? GlyphIndexDecoder.unreadGlyphs(on: reference, in: content.lines.map(\.text).joined(separator: "\n"))
                 : 0
+            // PDFKit resolves the `/PageLabels` number tree — roman, arabic, prefixed, restarting
+            // — so the reader never parses it. A document that declares none labels its pages
+            // with their own physical numbers, which is what the writer falls back to anyway.
+            let printed = SourceMetadata.pageLabel(page.label)
             return ExtractedPage(content: content, hasUnmappedFont: unmappedFont,
-                                 unreadGlyphs: unread, warnings: warnings)
+                                 unreadGlyphs: unread,
+                                 printedLabel: printed == "\(i + 1)" ? nil : printed,
+                                 warnings: warnings)
         }
     }
 }

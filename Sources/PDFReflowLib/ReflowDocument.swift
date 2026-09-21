@@ -13,6 +13,9 @@ struct ReflowDocument: Sendable, Equatable {
         var keywords: [String] = []
         /// `dcterms:created`: the source's `/CreationDate`.
         var created: Date?
+        /// The page number the source prints, by physical page, where the two differ (#248).
+        /// A page absent here is labeled with its physical number.
+        var pageLabels: [Int: String] = [:]
     }
 
     struct Asset: Sendable, Equatable {

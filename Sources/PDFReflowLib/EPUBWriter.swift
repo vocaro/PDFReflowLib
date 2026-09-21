@@ -25,6 +25,7 @@ actor EPUBWriter {
     private var summary: String?
     private var keywords: [String] = []
     private var created: Date?
+    private var pageLabels: [Int: String] = [:]
     private var packer = SpinePacker(bodyTargetBytes: EPUBWriter.bodyTargetBytes, chapterStartPages: [])
     private var validation = ReflowDocument.Validation()
     /// Assets in arrival order: the archive names them by that order and packages their bytes.
@@ -66,7 +67,9 @@ actor EPUBWriter {
             summary = metadata.summary
             keywords = metadata.keywords
             created = metadata.created
-            packer = SpinePacker(bodyTargetBytes: Self.bodyTargetBytes, chapterStartPages: chapterStartPages)
+            pageLabels = metadata.pageLabels
+            packer = SpinePacker(bodyTargetBytes: Self.bodyTargetBytes, chapterStartPages: chapterStartPages,
+                                 pageLabels: metadata.pageLabels)
             try FileManager.default.createDirectory(at: directory.appendingPathComponent("META-INF"),
                                                     withIntermediateDirectories: true)
             try FileManager.default.createDirectory(at: publication, withIntermediateDirectories: true)
@@ -80,7 +83,8 @@ actor EPUBWriter {
         case let .block(block):
             precondition(started, "blocks follow the document's start")
             if case let .sourcePage(number) = block.content {
-                try write(try packer.add(sourcePage: number, markup: EPUBTextEncoder.sourcePage(number),
+                try write(try packer.add(sourcePage: number,
+                                         markup: EPUBTextEncoder.sourcePage(number, labels: pageLabels),
                                          budgetRemaining: maximumOutputBytes - consumed))
             } else {
                 try write(try packer.add(EPUBTextEncoder.piece(for: block, imagePaths: imagePathByID),

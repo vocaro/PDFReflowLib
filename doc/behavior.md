@@ -1079,6 +1079,21 @@ Evidence: [raster-dpi](../measurements/raster-dpi/record.md),
   an array, deduplicated without regard to case. A terse value is still a statement: the IRS
   publication's `W:CAR:MP:FP` author converts as written. Metadata taken from the source is a
   function of the source, so byte-reproducible packaging is undisturbed.
+- **Printed page numbers (#248).** A page marker and its page-list entry show the page number the
+  source prints, where the document states one: `<span epub:type="pagebreak" id="page-3"
+  aria-label="i"/>` for a front-matter page a reader sees numbered `i`. EPUB's page-list exists so
+  that a reader can jump to a page of the print edition, and a book with front matter used to
+  report numbers that matched nothing on its pages. PDFKit resolves the `/PageLabels` number tree
+  — roman, arabic, prefixed, restarting — so nothing here parses it. Four corpus documents state
+  labels: the Fed report (`a`, `b`, `i`…`vi`, then `1`), the USCIS guide (`front-1`, `cover-i`,
+  then `1`), NCA5 and the dietary guidelines.
+  The fragment stays the physical page, because it is an XML id, because internal links aim at it,
+  and because two physical pages may print the same number — the dietary guidelines print `1`
+  twice, NCA5 prints `i` twice. `ConversionReport` counts and every `ConversionWarning.page` stay
+  physical too: a warning names a page a developer can find in the source file. A label is
+  normalized as any other stated value and must be at most 32 characters (the corpus's longest is
+  `cover-108`); anything else leaves the physical number to speak for the page, as does a document
+  that declares no labels at all.
 - Output is EPUB 3: XHTML spine documents, a stylesheet, metadata, flat heading navigation, a
   source page-list, an OPF 3.0 package and the required first, uncompressed `mimetype` entry.
   `EPUBTextEncoder` escapes source markup (raw text is escaped before inline elements are added

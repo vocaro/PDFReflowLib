@@ -54,6 +54,8 @@ enum PDFReflowLibPipeline {
         /// page-sized graphic. The encoding classifier reads a typeset full-page raster of such a
         /// page as a scan rather than born-digital text (#193).
         var pagesDrawnFromImage: Set<Int> = []
+        /// The page numbers the source prints, where they differ from the physical index (#248).
+        var pageLabels: [Int: String] = [:]
 
         for i in 0..<total {
             try Task.checkCancellation()
@@ -61,6 +63,7 @@ enum PDFReflowLibPipeline {
                                                 limit: options.maximumCharacters - evidence.characters,
                                                 options: options, structure: structure)
             warnings += extracted.warnings.map { ConversionWarnings.warning($0, page: i + 1, options: options) }
+            if let printed = extracted.printedLabel { pageLabels[i + 1] = printed }
             // Both ink tests share one rendering of the page, made only when a judgment needs it.
             let ink = PageInkMeasurer(bounds: extracted.content.bounds, lines: extracted.content.lines) {
                 try autoreleasepool {
@@ -118,7 +121,8 @@ enum PDFReflowLibPipeline {
         let title = options.title ?? stated.title ?? source.deletingPathExtension().lastPathComponent
         try await send(.start(.init(title: title.isEmpty ? "Untitled" : title, language: options.language,
                                     author: options.author ?? stated.author, summary: stated.summary,
-                                    keywords: stated.keywords, created: stated.created),
+                                    keywords: stated.keywords, created: stated.created,
+                                    pageLabels: pageLabels),
                               chapterStartPages: evidence.chapterStartPages))
         let assets = PageAssetWriter(workspace: workspace, options: options)
         var sentAssets = 0

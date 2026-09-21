@@ -66,6 +66,18 @@ struct SourceMetadata: Sendable, Equatable {
         return collapsed
     }
 
+    /// The bound on one page's printed label. A label is what a reader sees printed on the page,
+    /// so it is short: the corpus's longest is `cover-108`, nine characters.
+    static let maximumLabelCharacters = 32
+
+    /// One page's printed label, or nil where the document states none a reader could use (#248).
+    /// The same normalization as any other stated value, under a much tighter bound: a producer
+    /// that writes a sentence into a page label is not stating a page number.
+    static func pageLabel(_ value: String?) -> String? {
+        guard let label = stated(value), label.count <= maximumLabelCharacters else { return nil }
+        return label
+    }
+
     /// The stated keywords, in order, without repeats.
     ///
     /// PDFKit hands back an array where it recognizes the separators and a single string where it

@@ -31,7 +31,9 @@ scripts/compare-pdf-reflow.sh --pdf /path/to/faa-h-8083-25c.pdf \
 
 Select the installed Xcode using `DEVELOPER_DIR` if needed. Paths containing spaces need shell
 quotes. The output directory must be new. `--pages` accepts one-based **physical PDF page
-numbers**, inclusive ranges, or `all` (the default), not printed page labels. The FAA corpus
+numbers**, inclusive ranges, or `all` (the default), not printed page labels — which the
+converted book does show, in its page markers and page-list (#248), but which are not unique and
+so cannot select a page here. The FAA corpus
 manifest supplies useful review pages. Start with a small selection for long books: each page
 requires two Poppler conversions and a source raster, and the retained bundle can be large.
 Poppler may append the book's entire outline even when converting one selected page.

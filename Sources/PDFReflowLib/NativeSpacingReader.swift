@@ -116,6 +116,19 @@ enum NativeSpacingReader {
         return i == source.count && j == extracted.count && !inserted.isEmpty ? inserted : nil
     }
 
+    /// The gap, in ems, a font change must show before it separates two words.
+    ///
+    /// A page sets a number against the word after it more tightly than it spaces words: Wallace's
+    /// `8cent stamps`, `3times as many` and `3places` sit at 0.12 to 0.13 em where this rule wants
+    /// 0.15, and stayed fused. The narrower gap is admitted only where the run after the number
+    /// opens with an English word of three letters or more, which is what keeps it off algebra —
+    /// that book also sets `30qpr` and `5q`, whose runs open with no word at all (#120, #139).
+    static func fontChangeGap(_ previous: Evidence, _ following: String) -> CGFloat {
+        guard previous.unicode?.last?.isNumber == true,
+              EnglishText.openingWord(following) != nil else { return 0.15 }
+        return 0.10
+    }
+
     static func whitespace(_ value: UInt16) -> Bool {
         UnicodeScalar(value).map { CharacterSet.whitespacesAndNewlines.contains($0) } ?? false
     }
@@ -141,7 +154,19 @@ enum NativeSpacingReader {
             return start > 0 && !wordGaps.contains(start)
         }
         for show in shows.sorted(by: { $0.origin.x < $1.origin.x }) {
-            guard let unicode = show.unicode, !unicode.isEmpty, source.count + unicode.utf16.count <= 8192 else { return ([], []) }
+            guard source.count + (show.unicode?.utf16.count ?? 0) <= 8192 else { return ([], []) }
+            // A show whose text the reader cannot decode is a hole in the source's reading of the
+            // line, not a reason to discard the line: the segmented walk resynchronizes across it
+            // (#120, #139). One radical on Wallace page 120 discarded every boundary of
+            // `5− 2x 11 Subtract 5from both sides`, including the font change between `5` and
+            // `from` that the rules had already admitted. Nothing is read across the hole: the
+            // show after it has no predecessor, so no boundary is computed against a character
+            // the reader never saw.
+            guard let unicode = show.unicode, !unicode.isEmpty else {
+                previous = nil
+                previousStart = source.count
+                continue
+            }
             if let previous {
                 let size = max(previous.size, show.size)
                 if abs(previous.origin.y - show.origin.y) > size * 0.1 || previous.end.map({ show.origin.x - $0 >= size * 0.1 }) != false {
@@ -157,7 +182,7 @@ enum NativeSpacingReader {
             candidates += show.sentenceCandidates.map { (source.count + $0.key, $0.value) }
             if let previous, let end = previous.end, previous.font != show.font,
                abs(previous.origin.y - show.origin.y) <= max(previous.size, show.size) * 0.1,
-               show.origin.x - end >= max(previous.size, show.size) * 0.15,
+               show.origin.x - end >= max(previous.size, show.size) * fontChangeGap(previous, unicode),
                word(previous.unicode?.last) || closesWord(previous, start: previousStart) && unicode.first?.isLetter == true,
                word(unicode.first) {
                 boundaries.insert(source.count)
@@ -231,7 +256,11 @@ enum NativeSpacingReader {
         let leftWord = letters.contains(left) || digits.contains(left) || closing
         let overhang = "ATVWY\u{201C}\u{2018}".unicodeScalars.contains(right)
         let rightWord = overhang || letters.contains(right) || digits.contains(right) || right == "("
-        guard leftWord, rightWord, !mathematical(left), !mathematical(right), gap.isFinite, gap <= 1 else { return false }
+        guard leftWord, rightWord, !mathematical(left), !mathematical(right), gap.isFinite, gap <= 1,
+              // East Asian writing sets no space between characters, and justification stretches
+              // the gaps between them, so a wide gap here is the line being set, not a word
+              // boundary the extraction lost (#42).
+              !CJKText.setsNoSpace(between: left, and: right) else { return false }
         if ".:".unicodeScalars.contains(left), let before, digits.contains(before), digits.contains(right) { return false }
         let chained = left == "." && before.map(CharacterSet.uppercaseLetters.contains) == true && after == "."
         let narrow = overhang && (closing || CharacterSet.lowercaseLetters.contains(left)) && !chained
@@ -854,14 +883,14 @@ enum NativeSpacingReader {
     // MARK: - The line
 
     /// Which of the page's shows a PDFKit line's evidence is. `NativeSpacingOwnership` replaces
-    /// this with the spanning rule of #139 item 1.
-    static func owningShows(_ evidence: [Evidence], bounds: CGRect, allBounds: [CGRect]) -> [Evidence]? {
+    /// this with the spanning rule of #139 item 1 over the held shows of #258.
+    static func owningShows(_ evidence: [Evidence], bounds: CGRect, allBounds: [CGRect]) -> [Evidence] {
         spanningShows(evidence, bounds: bounds, allBounds: allBounds)
     }
 
     /// The shows whose origin lies in `bounds`; nil when any of them lies in another line's bounds
     /// too, because every show must belong to one line alone and overlapping rectangles are
-    /// ambiguous.
+    /// ambiguous. `NativeSpacingOwnership.heldShows` keeps the unambiguous ones instead (#258).
     static func anchoredShows(_ evidence: [Evidence], bounds: CGRect, allBounds: [CGRect]) -> [Evidence]? {
         let matches = evidence.filter { AnchorMatcher.contains(bounds, $0.origin) }
         guard matches.allSatisfy({ match in
@@ -874,8 +903,8 @@ enum NativeSpacingReader {
                       allBounds: [CGRect]) -> NSAttributedString {
         guard evidence.count <= AnchorMatcher.maximumAnchors, allBounds.count <= AnchorMatcher.maximumAnchors,
               evidence.count * allBounds.count <= AnchorMatcher.maximumComparisons else { return attributed }
-        guard let matches = owningShows(evidence, bounds: bounds, allBounds: allBounds), !matches.isEmpty
-        else { return attributed }
+        let matches = owningShows(evidence, bounds: bounds, allBounds: allBounds)
+        guard !matches.isEmpty else { return attributed }
         let repaired = NSMutableAttributedString(attributedString: attributed)
         if matches.count == 1, let offsets = matches[0].extraSpaces(in: attributed.string) {
             for offset in offsets.reversed() { repaired.deleteCharacters(in: NSRange(location: offset, length: 1)) }

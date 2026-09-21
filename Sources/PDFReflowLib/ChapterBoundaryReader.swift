@@ -12,10 +12,10 @@ enum ChapterBoundaryReader {
     /// Only a root-level, consecutive Arabic-numbered Chapter 1...N sequence is supported.
     /// PDFKit resolves both named destinations and local GoTo actions. Remote actions,
     /// duplicate/backward destinations, nested outlines and incomplete sequences are ignored.
-    static func read(_ url: URL) throws -> [Candidate] {
+    static func read(_ url: URL, password: ConversionOptions.Password? = nil) throws -> [Candidate] {
         try autoreleasepool {
             try Task.checkCancellation()
-            guard let document = PDFDocument(url: url), !document.isLocked,
+            guard let document = SourceDocument.open(url, password: password), !document.isLocked,
                   let root = document.outlineRoot, root.numberOfChildren <= 10_000 else { return [] }
             var candidates: [Candidate] = []
             for index in 0..<root.numberOfChildren {

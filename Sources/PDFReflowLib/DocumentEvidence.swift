@@ -25,6 +25,8 @@ struct DocumentEvidence {
     /// the vocabulary is the text stream the reader gets, not the one extraction read (#184).
     private var marginWords: [Int: [Int: [String]]] = [:]
     private(set) var numberedNotePages: Set<Int> = []
+    /// Evidence that this book's font draws its line-end hyphen as another character (#233).
+    private var lineEndSubstitutes: [Character: LineEndSubstituteTally] = [:]
     /// Characters per type size over the native pages: the document's body (#186).
     private var bodyWeights: [Int: Int] = [:]
     /// The pages each recurring bold sub-heading style appears on (#218).
@@ -55,6 +57,8 @@ struct DocumentEvidence {
         if suppliesVocabulary {
             let margins = furniture.marginLines[i] ?? []
             LayoutReconstructor.addVocabulary(of: content, skippingLines: margins, to: &hyphens.vocabulary)
+            LayoutReconstructor.tallyLineEndSubstitutes(of: content, skippingLines: margins,
+                                                        into: &lineEndSubstitutes)
             for lineIndex in margins.sorted() {
                 marginWords[i, default: [:]][lineIndex] = LayoutReconstructor.words(of: content.lines[lineIndex])
             }
@@ -84,6 +88,8 @@ struct DocumentEvidence {
             }
         }
         marginWords = [:]
+        hyphens.lineEndSubstitute = LayoutReconstructor.lineEndSubstitute(from: lineEndSubstitutes)
+        lineEndSubstitutes = [:]
         let context = LayoutReconstructor.DocumentContext(
             hyphens: hyphens, language: language,
             documentBody: LayoutReconstructor.bodySize(weights: bodyWeights),

@@ -39,7 +39,9 @@ enum PageWarning: Equatable, Sendable {
     /// Tagged text could not be matched unambiguously to native lines on this page.
     case structureFallback
     case unsupportedGraphics
-    case annotationsNotConverted
+    /// Some of the page's annotations did not convert. `converted` counts the links that did, so
+    /// the message says what happened rather than what used to be true of all of them (#247).
+    case annotationsNotConverted(converted: Int, unconverted: Int)
     case damagedTextEncoding(EncodingOutcome)
     case unverifiedTextLayer
     case implausibleTextLayer(TextLayerPlausibility.Finding, TextLayerPlausibility.Outcome)
@@ -71,10 +73,9 @@ enum ConversionWarnings {
             (.structureFallback, "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.")
         case .unsupportedGraphics:
             (.unsupportedGraphics, "Unsupported or excessive drawing operations require the original page image.")
-        case .annotationsNotConverted:
-            (.annotationsNotConverted, referencesDisabled
-                ? "Visible annotations and link/form interactions are not reconstructed; supplementary references are disabled."
-                : "A page image preserves visible annotations. Link and form interactions are not reconstructed.")
+        case let .annotationsNotConverted(converted, unconverted):
+            (.annotationsNotConverted, annotationOutcome(converted: converted, unconverted: unconverted,
+                                                         referencesDisabled: referencesDisabled))
         case .damagedTextEncoding(let outcome):
             (.damagedTextEncoding, "Native text has no usable Unicode mapping (custom font encoding without ToUnicode) "
                 + "and does not read as the declared language. "
@@ -126,6 +127,18 @@ enum ConversionWarnings {
                 + "Compare the source PDF for visual content and transcription accuracy.")
         }
         return ConversionWarning(code: code, page: page, message: message)
+    }
+
+    /// What became of the page's annotations (#247). Links convert to anchors, so the message no
+    /// longer claims that no link is reconstructed; it says how many did and how many did not.
+    private static func annotationOutcome(converted: Int, unconverted: Int, referencesDisabled: Bool) -> String {
+        let reproduced = converted == 0 ? ""
+            : "\(converted) link\(converted == 1 ? "" : "s") converted to anchors. "
+        let remaining = "\(unconverted) annotation\(unconverted == 1 ? " is" : "s are") not reconstructed "
+            + "(form fields, comments, and links this converter does not reproduce). "
+        return reproduced + remaining + (referencesDisabled
+            ? "Supplementary references are disabled, so the page's own picture does not preserve them."
+            : "A page image preserves their appearance.")
     }
 
     /// The tail of the `damagedTextEncoding` message: what became of the unreadable text, which

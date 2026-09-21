@@ -1,6 +1,7 @@
 import Foundation
 
-/// Partial-line ownership for the spacing reader (#139 item 1, specified in #225).
+/// Partial-line ownership for the spacing reader (#139 item 1, specified in #225; extended by #258
+/// to the shows a line holds beside ones it does not).
 ///
 /// `NativeSpacingReader.wholeLineInsertions` owns a PDFKit line as a whole or not at all: it walks
 /// the shows' text against PDFKit's, stops at the first non-whitespace disagreement, and requires
@@ -17,7 +18,7 @@ import Foundation
 /// relax against #119's hard constraint, because it admits only evidence the thresholds had
 /// already accepted on a line the shows happened to own entirely.
 extension NativeSpacingReader {
-    /// The shows a PDFKit line's evidence is: the ones whose origin it owns (`anchoredShows`), and
+    /// The shows a PDFKit line's evidence is: the ones whose origin it holds (`heldShows`), and
     /// the ones another line's rectangle holds the origin of whose glyphs run on through this one.
     /// PDFKit splits one printed row at a wide gap, so a row drawn as a single show becomes two
     /// lines that each hold part of its text: the 9/11 appendix's `Ali Abdul Aziz Ali` beside
@@ -28,8 +29,7 @@ extension NativeSpacingReader {
     /// A show reaches a line when its baseline sits inside that line's rectangle and its glyph
     /// advances (`end`, which only a fully measured show has) cross the line's own span. Its origin
     /// must still lie in exactly one line's rectangle, so nothing ambiguous is admitted.
-    static func spanningShows(_ evidence: [Evidence], bounds: CGRect, allBounds: [CGRect]) -> [Evidence]? {
-        guard let anchored = anchoredShows(evidence, bounds: bounds, allBounds: allBounds) else { return nil }
+    static func spanningShows(_ evidence: [Evidence], bounds: CGRect, allBounds: [CGRect]) -> [Evidence] {
         let tolerance = AnchorMatcher.tolerance
         let spanning = evidence.filter { show in
             guard !AnchorMatcher.contains(bounds, show.origin), let end = show.end,
@@ -37,12 +37,56 @@ extension NativeSpacingReader {
                   show.origin.x <= bounds.maxX + tolerance, end >= bounds.minX - tolerance else { return false }
             return allBounds.filter { AnchorMatcher.contains($0, show.origin) }.count == 1
         }
-        return anchored + spanning
+        return heldShows(evidence, bounds: bounds, allBounds: allBounds) + spanning
+    }
+
+    /// The shows whose origin this line's rectangle holds, with each one another line's rectangle
+    /// holds too reduced to a hole: its place on the line, and nothing read from it.
+    ///
+    /// `anchoredShows` refuses the whole line instead, and a book that sets raised baselines has
+    /// lines it refuses on every one of them. PDFKit's rectangle for a line carrying a superscript,
+    /// an exponent or a stacked fraction grows to the height of what it carries, so it overlaps the
+    /// rectangles of the rows drawn inside and beside it, and a show on any of those baselines then
+    /// lies in two rectangles at once. Wallace page 281 reads `Convert 8cubic feet to yd3 Write
+    /// 8ft3 as fraction, put it over 1` as one rectangle 69 points tall, holding the origins of
+    /// eight shows that belong to the two fraction rows inside it; the line's own twelve shows,
+    /// which spell its text exactly and place the `8|cubic` font change the rules already admit,
+    /// supplied nothing at all (#258).
+    ///
+    /// A hole is what #120 already makes of a show the reader cannot decode: the segmented walk
+    /// resynchronizes across it, and the show after it has no predecessor, so no boundary is ever
+    /// computed against a character this line may not have drawn. The line therefore applies the
+    /// evidence it unambiguously holds and reads nothing across the rest, which is the same
+    /// direction #139 item 1 relaxed in and admits no gap #119's thresholds had not already
+    /// accepted.
+    static func heldShows(_ evidence: [Evidence], bounds: CGRect, allBounds: [CGRect]) -> [Evidence] {
+        evidence.filter { AnchorMatcher.contains(bounds, $0.origin) }.map { show in
+            allBounds.filter { AnchorMatcher.contains($0, show.origin) }.count == 1 ? show : hole(show)
+        }
+    }
+
+    /// A show reduced to its place on the line: the origin that keeps its neighbors apart in the
+    /// left-to-right walk, with no text, no measured end and no boundary of its own.
+    static func hole(_ show: Evidence) -> Evidence {
+        var hole = show
+        hole.text = nil
+        hole.unicode = nil
+        hole.end = nil
+        hole.smallGaps = []
+        hole.wordSpaces = []
+        hole.sentenceSpaces = []
+        hole.sentenceCandidates = [:]
+        return hole
     }
 
     /// Non-whitespace characters that must agree before a disagreement counts as resolved. Shorter
     /// runs recur by chance inside ordinary prose, and a segment entered on one is not a segment.
-    static let anchorLength = 8
+    ///
+    /// Eight was not enough, and the 9/11 appendix shows why: `Abu Bara al Yemeni (a.k.a.Abu al
+    /// Bara al Ta’izi,…` is one row, and the walk that should skip 19 source characters to reach
+    /// `(a.k.a.A` finds `Bara al ` after 16 instead, in the wrong half of the row, and resumes
+    /// there. The two readings diverge at the ninth character, so twelve tells them apart (#120).
+    static let anchorLength = 12
     /// How far either walk may skip to find that anchor, and how many times one line may resync.
     /// A line needing more than this is left to whatever its earlier segments already yielded.
     static let maximumResynchronization = 64

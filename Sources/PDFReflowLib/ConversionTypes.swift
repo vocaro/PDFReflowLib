@@ -84,6 +84,25 @@ public struct ConversionOptions: Sendable {
         }
     }
 
+    /// A password for a locked document, supplied by a caller who already has it (#252).
+    ///
+    /// It is held in memory for the conversion's lifetime and reaches nothing else: not the
+    /// report, a warning, a progress event, the CLI's JSON, or any staged file. `description` and
+    /// `debugDescription` redact it, so the obvious accident — a client logging the `Sendable`
+    /// `ConversionOptions` it passes around — prints `<redacted>` rather than the secret. Swift
+    /// strings cannot be wiped, so the value does outlive its use somewhere in the process's
+    /// memory; that is a property of the platform, not a promise this type makes.
+    public struct Password: Sendable, CustomStringConvertible, CustomDebugStringConvertible,
+                            CustomReflectable {
+        let value: String
+        public init(_ value: String) { self.value = value }
+        public var description: String { "<redacted>" }
+        public var debugDescription: String { "<redacted>" }
+        /// `dump` and the other reflection-based printers walk stored properties and would reach
+        /// the value past `description`, so the mirror is redacted too.
+        public var customMirror: Mirror { Mirror(self, children: ["value": "<redacted>"]) }
+    }
+
     public var referenceImages: ReferenceImagePolicy = .automatic
     /// Encoding for supplementary references and required full-page fallbacks.
     public var fullPageImageEncoding: ImageEncoding = .automatic(jpegQuality: ImageEncoding.automaticJPEGQuality)
@@ -101,6 +120,9 @@ public struct ConversionOptions: Sendable {
     /// With both values set, the writer adds no per-run variation. Rendering, OCR and image
     /// encoding can still differ across OS builds and device capabilities.
     public var modificationDate: Date?
+    /// Tried once when the document is locked. A document that does not unlock with it still
+    /// throws `ConversionError.encryptedPDF`; a document that is not locked ignores it.
+    public var password: Password?
     public var ocr: OCRPolicy = .automatic
     /// Remove short recurring text at page edges when at least three pages provide evidence.
     public var removeRepeatedHeadersAndFooters = true
@@ -203,7 +225,7 @@ public enum ConversionError: Error, Sendable, LocalizedError {
         switch self {
         case .invalidOptions(let reason): "Invalid conversion options: \(reason)"
         case .unreadablePDF: "The input is not a readable PDF."
-        case .encryptedPDF: "Unlock the PDF before converting it."
+        case .encryptedPDF: "The PDF is password-protected. Supply its password, or unlock the PDF before converting it."
         case .outputExists: "The output already exists. Choose a new destination."
         case .resourceLimit(let reason): "Conversion resource limit: \(reason)"
         case .renderingFailed(let page): "Could not preserve the appearance of page \(page)."

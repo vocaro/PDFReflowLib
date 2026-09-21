@@ -11,7 +11,7 @@ carry their issue linkage as `.bug()` traits.
 
 | Lane | Command | Runs |
 | --- | --- | --- |
-| Fast | `scripts/check-all.sh --fast` | Swift suite, release build, Python tool tests, measurements policy, documented builds, documentation counts, issue citations, PDFKit concurrency smoke gate, six fixture conversions with structural checks, conversion-policy cases |
+| Fast | `scripts/check-all.sh --fast` | Swift suite, release build, Python tool tests, measurements policy, documented builds, documentation counts, issue citations, PDFKit concurrency smoke gate, eight fixture conversions with structural checks, conversion-policy cases |
 | Full | `scripts/check-all.sh` | Fast, plus the FAA memory gate when `corpus/cache/faa-h-8083-25c.pdf` (or `PDFREFLOW_REAL_PDF`) exists; absence is printed as a skip |
 | Corpus | `scripts/check-all.sh --corpus` | Fast, plus the structure-memory gate, the repeated-conversions gate and <!-- counts:corpus-documents -->18<!-- counts:end --> complete cached conversions with EPUBCheck. Requires `epubcheck` on `PATH` and every cached source; missing data fails explicitly, and nothing is downloaded |
 
@@ -28,7 +28,7 @@ Fetch sources with `tools/fetch_corpus.py --case <id>` (checksum-verified, cache
 
 What the individual gates check:
 
-- `swift test`: <!-- counts:swift-tests -->435 Swift Testing tests<!-- counts:end --> with no known-issue wrappers, using the real Apple
+- `swift test`: <!-- counts:swift-tests -->520 Swift Testing tests<!-- counts:end --> with no known-issue wrappers, using the real Apple
   PDF/OCR stack. They cover extraction, the document model, layout, raster pixels (crop origins,
   rotations, annotations, resource ceilings), preserved regions (fraction bars, raised exponents
   and all six cells of a ruled table in actual EPUB images at 72/144 DPI, with prose and code
@@ -37,12 +37,13 @@ What the individual gates check:
   concurrency test overlaps four conversions and one canceled conversion, checking ownership,
   styles, images, monotonic progress and staging cleanup. For iOS:
   `xcodebuild test -scheme PDFReflowLib-Package -destination 'platform=iOS Simulator,name=iPhone 18 Pro' CODE_SIGNING_ALLOWED=NO`.
-- `python3 -m unittest discover -s tools -p 'test_*.py' -v`: <!-- counts:python-tests -->210 Python tests<!-- counts:end --> over the tools,
+- `python3 -m unittest discover -s tools -p 'test_*.py' -v`: <!-- counts:python-tests -->227 Python tests<!-- counts:end --> over the tools,
   including the checker's negative controls, the identity tool, the memory-gate instrumentation
   (real child allocations above and below a ceiling, source verification, isolation from an
-  earlier child's high-water mark), the comparison and reader servers (no Poppler or socket
-  needed; a real-Poppler image-URL check through the safe HTTP handler in simple and positioned
-  modes, with paths containing spaces, skips explicitly when Poppler is absent), and
+  earlier child's high-water mark, and each host-pressure outcome with its settle-and-retry),
+  the comparison and reader servers (no Poppler or socket needed; a real-Poppler image-URL check
+  through the safe HTTP handler in simple and positioned modes, with paths containing spaces,
+  skips explicitly when Poppler is absent), and
   `tools/test_pdfkit_gate.py`, which runs `tools/check_pdfkit_gate.py` over `Sources/` and
   `Tests/` and fails on any font, CoreText or PDFKit call made outside
   `NativeTextReader.withExtractionLock` or `pdfKitGated` (`Tests/PDFReflowLibTests/PDFKitGate.swift`).
@@ -110,7 +111,8 @@ What the individual gates check:
   within 30 per page (`--maximum-leaked-objects-per-page`); leaked bytes are reported, not gated.
   See [memory testing](memory-testing.md#repeated-conversions-in-one-process).
 - `scripts/check-pdf-reflow-memory.sh` (full lane): the FAA conversion under its manifest
-  ceiling; see [memory testing](memory-testing.md).
+  ceiling; see [memory testing](memory-testing.md). Exit 3, reported as `UNMEASURED`, means host
+  memory pressure left the ceiling unmeasured rather than the library exceeding it.
 - `tools/run_corpus_regressions.py` (corpus lane): the [corpus lane](#the-corpus-lane) below.
 
 ### Parallel gates
@@ -131,12 +133,17 @@ The converter is single-threaded (CPU seconds match wall seconds on every corpus
 in separate processes scale with cores. Peak RSS is measured per process, so concurrent cases do
 not share a reading. Under host memory pressure macOS compresses and pages out resident memory,
 and a conversion could come in under a ceiling it would exceed on an unloaded host, so the
-evaluator samples `kern.memorystatus_vm_pressure_level` throughout each conversion, records
-`peakMemoryPressureLevel` and `concurrentEvaluations` in `result.json`, and fails the memory gate
-when pressure rises above normal. Every current ceiling together totals 7.5 GiB. Serial and
-six-job runs on one commit agree on every case under `tools/compare_conversion_runs.py` and in
-their content assessments; in parallel, peak RSS reads 1–13% higher, not lower, and conversion
-times include contention ([record](../measurements/parallel-gates/record.md)).
+evaluator samples `kern.memorystatus_vm_pressure_level` while each converter runs and records
+`peakMemoryPressureLevel` and `concurrentEvaluations` in `result.json`. A peak taken under
+pressure that is inside its ceiling neither fails the gate nor passes it: the gate reports
+`notMeasured`, after waiting for the host to settle and spending a second conversion on it, and
+the case is reported as `UNMEASURED` with exit 3 rather than as a failure
+([decision 0009](decisions/0009-an-unmeasured-ceiling-is-not-a-failure.md),
+[memory testing](memory-testing.md)). A peak above its ceiling fails whatever the host was doing.
+Every current ceiling together totals 7.5 GiB. Serial and six-job runs on one commit agree on
+every case under `tools/compare_conversion_runs.py` and in their content assessments; in
+parallel, peak RSS reads 1–13% higher, not lower, and conversion times include contention
+([record](../measurements/parallel-gates/record.md)).
 
 ### Inspecting large outputs
 
@@ -163,10 +170,12 @@ tools/run_corpus_regressions.py --converter <CLI> --epubcheck <executable> --out
 ```
 
 Repeat `--case <id>` to narrow a debugging run; the summary lists omitted cases explicitly, and a
-failing case does not hide later results. `--jobs N` evaluates N cases at once (default 1).
-Each case verifies the pinned source identity, converts in a fresh release process, checks EPUB
-structure, EPUBCheck, monotonic progress, the manifest memory ceiling and the reviewed content
-contract in [corpus/regressions.json](../corpus/regressions.json):
+failing case does not hide later results. `--jobs N` evaluates N cases at once (default 1). The
+lane exits 1 for a failed case and 3 when unmeasured memory ceilings are all that stand between
+it and a pass; `--memory-attempts` and `--settle-seconds` reach the evaluator's handling of a
+loaded host. Each case verifies the pinned source identity, converts in a fresh release process,
+checks EPUB structure, EPUBCheck, monotonic progress, the manifest memory ceiling and the
+reviewed content contract in [corpus/regressions.json](../corpus/regressions.json):
 <!-- counts:contract-coverage -->573 checks on 127 reviewed pages across 18 documents<!-- counts:end -->.
 All source-page anchors must remain complete and ordered, and semantic text must
 contain no image-attachment placeholders. The manifest consistency test requires every corpus
@@ -394,11 +403,14 @@ source checksum.
 
 ## Regenerating the bundled fixtures
 
-Six original PDFs (eight pages) are bundled with the tests and listed in the README's fixture
-table. `tools/generate_fixtures.py` regenerates them and their manifest (byte counts and
-SHA-256 identities) with ReportLab, Pillow and Poppler's `pdftoppm`, using original text and
-drawings and standard PDF fonts without embedding font programs; pass
-`--renderer /absolute/path/to/pdftoppm` when needed. Regenerate the PDFs and the manifest
+Eight original PDFs (eleven pages) are bundled with the tests and listed in the README's fixture
+table. `tools/generate_fixtures.py` regenerates them and their manifest (byte counts, SHA-256
+identities, and the password of any locked fixture) with ReportLab, Pillow and Poppler's
+`pdftoppm`, using original text and drawings and standard PDF fonts without embedding font
+programs; pass `--renderer /absolute/path/to/pdftoppm` when needed. `encrypted.pdf` is the
+exception: ReportLab writes no encryption as old as the standard security handler at revision 2,
+so `tools/pdfreflow_tools/encryption.py` builds that one byte by byte from the standard library,
+deterministically, and needs no external tool (#252). Regenerate the PDFs and the manifest
 together, inspect every rendered page, and rerun both suites. These tools are development-only.
 
 ## Validating EPUBs

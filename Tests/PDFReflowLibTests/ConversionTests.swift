@@ -246,17 +246,20 @@ private func zipEntryDateFields(_ data: Data) throws -> [(time: UInt16, date: UI
 
 @Test func fixtureIdentitiesMatchTheirManifest() throws {
     struct Manifest: Decodable {
-        struct Item: Decodable { let file: String; let bytes: Int; let sha256: String }
+        struct Item: Decodable { let file: String; let bytes: Int; let sha256: String; let password: String? }
         let fixtures: [Item]
     }
     let directory = Bundle.module.resourceURL!.appendingPathComponent("fixtures")
     let manifest = try JSONDecoder().decode(Manifest.self, from: Data(contentsOf: directory.appendingPathComponent("manifest.json")))
-    #expect(manifest.fixtures.count == 6)
+    #expect(manifest.fixtures.count == 8)
     for item in manifest.fixtures {
         let data = try Data(contentsOf: directory.appendingPathComponent(item.file))
         #expect(data.count == item.bytes)
         #expect(SHA256.hash(data: data).map { String(format: "%02x", $0) }.joined() == item.sha256)
     }
+    // Only the locked fixture states a password, and it is the one PDFKit reports locked (#252).
+    #expect(manifest.fixtures.filter { $0.password != nil }.map(\.file) == ["encrypted.pdf"])
+    #expect(PDFDocument(url: directory.appendingPathComponent("encrypted.pdf"))?.isLocked == true)
 }
 
 @Test func failedWritingAndMalformedInputsLeaveNoPartialOutput() async throws {

@@ -20,7 +20,24 @@ enum LayoutReconstructor {
 
     /// One line's vocabulary words.
     static func words(of line: TextLine) -> [String] {
-        line.text.lowercased().split(whereSeparator: { !$0.isLetter && $0 != "-" }).map(String.init)
+        line.text.split(whereSeparator: { !$0.isLetter && $0 != "-" }).map { vocabularyWord(String($0)) }
+    }
+
+    /// A word as the hyphen vocabulary holds it and is asked about it: lowercased, with the
+    /// typographic ligatures and other compatibility glyphs a font draws resolved to the letters
+    /// they stand for (#123).
+    ///
+    /// Wallace's text font prints `different` with a U+FB00 `ﬀ`, so the book's own words held
+    /// `diﬀerent` — 56 times — and never `different`, and the vocabulary had nothing to say about
+    /// `dif-` + `ferent` on pages 50 and 218. A ligature is one glyph for letters the page means,
+    /// and `precomposedStringWithCompatibilityMapping` is Unicode's own statement of which
+    /// characters are typographic variants of which letters, so the book's words are counted as
+    /// letters and the joins are looked up as letters.
+    ///
+    /// This normalizes the evidence, not the book: the ligature the page prints stays in the text
+    /// the reader gets, exactly as extraction read it.
+    static func vocabularyWord(_ word: String) -> String {
+        word.precomposedStringWithCompatibilityMapping.lowercased()
     }
 
     static func stripFurniture(_ pages: inout [PageContent]) -> [ConversionWarning] {
@@ -59,12 +76,106 @@ enum LayoutReconstructor {
         }.min { $0.rect.width < $1.rect.width }
     }
 
+    /// Whether `below` finishes a word `above` broke at its line end: the next line of the same
+    /// column, close beneath it, opening in lowercase where the line above ended in a hyphen or a
+    /// soft hyphen. It is the evidence `HyphenRepair` joins on, read before reconstruction (#59).
+    static func continuesBrokenWord(from above: TextLine, to below: TextLine) -> Bool {
+        guard above.text.hasSuffix("-") || above.text.hasSuffix("\u{00ad}"),
+              below.text.first?.isLowercase == true,
+              abs(below.rect.minX - above.rect.minX) <= max(above.fontSize, 4) * 0.25 else { return false }
+        let gap = above.rect.minY - below.rect.maxY
+        let size = max(above.fontSize, 4)
+        return gap >= -size * 0.2 && gap <= size * 0.8
+    }
+
+    /// A band across the page's full measure, flush against its top or bottom edge: the page's own
+    /// furniture — a footer or header background — rather than a figure that owns the text near it.
+    ///
+    /// Dietary Guidelines page 2 paints such a band from the foot of the page up to y=80.12 and
+    /// prints its four notes from y=77.49 to y=85.45. A figure would have a claim on text that
+    /// overlaps it; this band has none, and growing to swallow the lines it grazed took two of the
+    /// four notes out of the book (#246). Every other kind of region keeps the whole-line growth
+    /// of #36, including a fraction bar's terms, whose middles lie outside their seed by
+    /// construction.
+    static func isEdgeBand(_ seed: CGRect, bounds: CGRect) -> Bool {
+        seed.width >= bounds.width * 0.9
+            && (seed.minY <= bounds.minY + 1 || seed.maxY >= bounds.maxY - 1)
+    }
+
+    /// Whether a finished crop takes a line out of the reflowed text. A crop's edge grazes the
+    /// rectangle of the line beyond it without covering its glyphs, so a crop takes the lines whose
+    /// middle it holds (#169, #246).
+    static func takes(_ crop: CGRect, _ line: TextLine) -> Bool {
+        crop.intersects(line.rect) && crop.minY <= line.rect.midY && line.rect.midY <= crop.maxY
+    }
+
+    /// Joins an inline fraction's denominator to the line its numerator ends, as `rise/run` (#53).
+    ///
+    /// Wallace page 137 sets `rise` over `run` inside a sentence. PDFKit merges the numerator into
+    /// the prose line, so the bar is a rule at the end of a worded line — decoration by #36's
+    /// reading — and the denominator reflows on its own as a stray line. Neither preserving the
+    /// whole sentence in a crop nor leaving `run` adrift says what the page says.
+    ///
+    /// The evidence is the bar's own geometry: a fraction bar (`isFractionBar`) lying at the end
+    /// of a line that reads as a sentence, with a short line beneath it inside the bar's own
+    /// measure. A display fraction, whose numerator is a line of its own rather than the tail of a
+    /// sentence, is not touched and keeps its crop.
+    static func joinedInlineFractions(_ lines: [TextLine], rules: [CGRect], body: CGFloat) -> [TextLine] {
+        // `isFractionBar` is a display fraction's test: it requires the term above the bar to
+        // carry no word of three letters, so a numerator PDFKit has merged into a sentence never
+        // satisfies it. That is exactly the case here, and the geometry below stands in for it.
+        let bars = rules.map { $0.insetBy(dx: 2, dy: 0) }
+        guard !bars.isEmpty else { return lines }
+        var denominators: [Int: Int] = [:]   // denominator line -> numerator line
+        for bar in bars {
+            let above = lines.indices.filter { index in
+                let rect = lines[index].rect
+                return bar.midY >= rect.minY && bar.midY <= rect.maxY
+                    && abs(rect.maxX - bar.maxX) <= max(body, 4)
+                    && readsAsSentence(lines[index])
+            }
+            let below = lines.indices.filter { index in
+                let rect = lines[index].rect
+                // The denominator's PDFKit box reaches over the bar by a fraction of a point, so
+                // it is its middle that must sit beneath it.
+                return rect.midY < bar.minY && rect.midY >= bar.minY - body * 1.6
+                    && rect.minX >= bar.minX - 2 && rect.maxX <= bar.maxX + 2
+                    && lines[index].text.split(whereSeparator: \.isWhitespace).count <= 2
+            }
+            if let numerator = above.first, let denominator = below.first, above.count == 1, below.count == 1 {
+                denominators[denominator] = numerator
+            }
+        }
+        guard !denominators.isEmpty else { return lines }
+        var result = lines
+        for (denominator, numerator) in denominators.sorted(by: { $0.key > $1.key }) {
+            var joined = result[numerator].content
+            joined.append(InlineText("/"))
+            joined.append(result[denominator].content)
+            result[numerator] = TextLine(content: joined, rect: result[numerator].rect,
+                                         fontSize: result[numerator].fontSize,
+                                         monospaced: result[numerator].monospaced,
+                                         wraps: result[numerator].wraps)
+        }
+        for index in denominators.keys.sorted(by: >) { result.remove(at: index) }
+        return result
+    }
+
+    /// Whether a line is running prose rather than a term: four or more words of two letters or
+    /// more. A figure's label, an axis title, a formula's terms and a legend are shorter than
+    /// that, which is what lets a crop tell the book's own prose from a picture's writing (#255).
+    static func readsAsSentence(_ line: TextLine) -> Bool {
+        line.text.split(whereSeparator: { !$0.isLetter }).filter { $0.count >= 2 }.count >= 4
+    }
+
     /// Whether a seed region captures a text line. Tall PDFKit line rectangles include leading,
     /// so a thin rule touches the rectangles of the lines above and below without crossing
     /// their glyphs; it captures only text it actually strikes through (#36).
     private static func captures(_ seed: CGRect, _ line: TextLine) -> Bool {
         guard seed.intersects(line.rect) else { return false }
-        guard isThinRule(seed) else { return true }
+        guard isThinRule(seed) else {
+            return takes(seed, line)
+        }
         let core = line.rect.insetBy(dx: 0, dy: line.rect.height * 0.25)
         return seed.midY >= core.minY && seed.midY <= core.maxY
     }
@@ -111,7 +222,8 @@ enum LayoutReconstructor {
     /// away from lines it merely touches, because layout removes every intersecting line from
     /// prose; a line whose rectangle genuinely overlaps admitted text is admitted instead.
     /// Returns nil for a thin rule that lies inside text it does not strike through.
-    private static func expanded(_ region: Region, page: PageContent) -> CGRect? {
+    private static func expanded(_ region: Region, page: PageContent, language: String,
+                                 columnHeaders: [CGRect]) -> CGRect? {
         var admitted: [CGRect] = []
         while true {
             var bounds = admitted.reduce(region.seed) { $0.union($1.insetBy(dx: -2, dy: -2)) }
@@ -136,19 +248,51 @@ enum LayoutReconstructor {
                     bounds = cut
                 } else if admitted.isEmpty && isThinRule(region.seed) {
                     return nil
-                } else {
+                } else if releasesProse(line, language: language, columnHeaders: columnHeaders) {
+                    // A line of the book's own prose is never admitted to a crop it only touches.
+                    // Where no cut clears it, the crop keeps its own extent instead of growing
+                    // into it, exactly as #246's edge band does: `takes` then leaves the line in
+                    // the prose, so the picture loses nothing and the sentence is not buried
+                    // (#255). Three quarters of the magazine's text was inside crops.
+                } else if !isEdgeBand(region.seed, bounds: page.bounds) || takes(bounds, line) {
                     admitted.append(rect)
                     changed = true
                     break
                 }
+                // An edge band that cannot be cut around this line keeps its own extent instead of
+                // growing into it. `takes` then leaves the line in the prose, so nothing is lost
+                // either way, where growing would have buried it in the crop (#246).
             }
             if changed { continue }
             return bounds
         }
     }
 
+    /// Whether a line a crop cannot cut around is the book's own prose, which a crop never
+    /// admits (#255).
+    ///
+    /// A line written in the Latin alphabet, in a book that declares English, must also read as
+    /// English words. The CIA report's crops sit over handwritten and typewritten tables whose
+    /// text layer is noise, and admitting `0/iLE 1112£ E/(19U/,£r//?/Z/` to the prose recovers
+    /// nothing a reader wants. A line carrying letters of another script is released on its
+    /// shape alone: an English lexicon judges nothing about a Chinese or Arabic line, and the
+    /// corpus lane converts those books at library defaults, which declares English for them.
+    ///
+    /// A table's column header is that table's, whatever it reads as, and is never released
+    /// (#257). `Number Per Cent Number Per Cent Nuntler Per Cent` and `Certain Doubtful Total
+    /// Certain Doubtful Total` are every one of them an English word, so the word test admits
+    /// them; they label the columns of the tables the crop preserves as pictures, and beside the
+    /// picture of their own table they say nothing a reader can use.
+    /// `TableRegionDetector.columnHeaders` reads which lines those are.
+    static func releasesProse(_ line: TextLine, language: String, columnHeaders: [CGRect] = []) -> Bool {
+        guard readsAsSentence(line) else { return false }
+        guard !columnHeaders.contains(line.rect) else { return false }
+        guard EnglishText.isDeclared(language), EnglishText.foreignLetters(line.text) == 0 else { return true }
+        return EnglishText.readsAsWords(line.text)
+    }
+
     /// Expand crops to whole intersecting text lines so a label cannot be cut in half.
-    static func graphicsWithLabels(_ page: PageContent) -> [CGRect] {
+    static func graphicsWithLabels(_ page: PageContent, language: String = "en") -> [CGRect] {
         // Displayed formulas have spatial meaning (superscripts, fractions, aligned terms)
         // that line concatenation cannot reproduce. Preserve recognizable formulas as crops.
         let formulas = page.lines.filter { line in
@@ -180,12 +324,16 @@ enum LayoutReconstructor {
         }
         let seeds = graphics + formulas + TableRegionDetector.regions(in: page)
             + FractionRegionDetector.regions(in: page, body: body) + tables
+        // The column headers of the tables this page draws, which a crop never releases to the
+        // prose (#257). Read once: it is a property of the page, not of any one region.
+        let columnHeaders = TableRegionDetector.columnHeaders(in: page, body: body)
         var regions = clusters(seeds, distance: 3).map { Region(seed: $0, bounds: $0) }
         var previous: [CGRect] = []
         while regions.map(\.bounds) != previous {
             previous = regions.map(\.bounds)
             regions = regions.compactMap { region in
-                expanded(region, page: page).map { Region(seed: region.seed, bounds: $0) }
+                expanded(region, page: page, language: language, columnHeaders: columnHeaders)
+                    .map { Region(seed: region.seed, bounds: $0) }
             }
             // A merged bounding rectangle can newly intersect a label that neither component
             // touched. Expand again before rasterizing, or its text is removed from prose while
@@ -469,6 +617,49 @@ enum LayoutReconstructor {
         // (#140). A tie goes to the smaller size, which is the body rather than its display type.
         weights.max { ($0.value, -$0.key) < ($1.value, -$1.key) }.map { CGFloat($0.key) }
     }
+
+    /// The leading a page's own text states: the commonest distance between the tops of two
+    /// vertically adjacent lines set at one size in one column, to the nearest half point, or nil
+    /// where the page prints too few such pairs to state one (#123).
+    ///
+    /// Tops, not baselines and not the gap between the rectangles: PDFKit's line rectangle grows
+    /// downwards by the descenders the line happens to carry, so on Wallace's page 64 the item
+    /// `• More than often represents addition and is usually built backwards,` has a rectangle
+    /// 20.46 points tall where the line beneath it has 11.98, and the gap between the two is
+    /// negative although the page set them one line apart. The tops of two lines of one size are
+    /// one ascent above their baselines, so their distance is the leading.
+    ///
+    /// The page's own leading is the measure of extra space, and pages differ: the same ten points
+    /// of white is nothing under 24-point display type and a paragraph break under six-point
+    /// footnotes.
+    static func statedLeading(_ lines: [TextLine]) -> CGFloat? {
+        let candidates = lines.filter { !$0.monospaced && !$0.text.isEmpty }
+        let body = max(4, bodySize(lines))
+        var counts: [Int: Int] = [:]
+        for line in candidates {
+            // The nearest line below this one in its own column, at its own size: the line the
+            // page would have set on its leading. A second column's lines stand elsewhere and
+            // are never this line's neighbour.
+            let below = candidates.filter {
+                $0.rect.maxY < line.rect.maxY && $0.hasSize(line.fontSize)
+                    && abs($0.rect.minX - line.rect.minX) < body * 1.5
+            }.max { $0.rect.maxY < $1.rect.maxY }
+            guard let below else { continue }
+            let step = line.rect.maxY - below.rect.maxY
+            guard step > 0, step <= body * 3 else { continue }
+            counts[Int((step * 2).rounded()), default: 0] += 1
+        }
+        // A tie goes to the closer spacing, so one page cannot reflow two ways from one run to the
+        // next on Swift's per-process dictionary seed (#140), as `bodySize` is careful about too.
+        guard let stated = counts.max(by: { ($0.value, -$0.key) < ($1.value, -$1.key) }),
+              stated.value >= minimumStatedLeadingEvidence else { return nil }
+        return CGFloat(stated.key) / 2
+    }
+
+    /// How many pairs of lines must agree before a page has stated its leading. Four is the
+    /// shortest run of prose that says anything: three wrapped lines of one paragraph and one
+    /// more pair anywhere else on the page.
+    static let minimumStatedLeadingEvidence = 4
 
     /// Small labels inside preserved images must not turn the surrounding prose into headings.
     /// Keep the page estimate when too little reflowable text remains to establish a body size.
@@ -794,9 +985,24 @@ enum LayoutReconstructor {
         let overPicture = PageDiagnosis.proseOverPictures(lines: page.lines, pictures: page.pictures,
                                                           crops: images.map(\.0), bounds: page.bounds,
                                                           language: context.language)
-        let lines = page.lines.enumerated().filter { index, line in
-            overPicture.contains(index) || !images.contains { $0.0.intersects(line.rect) }
+        // A crop must not take one half of a word whose other half falls outside it. Replay Clocks
+        // page 8 breaks a figure caption `…𝛼 = 40 mes-` / `sages/second.` and the crop's edge fell
+        // 0.49 pt above the second line, so the first half went into the picture and the second
+        // reflowed alone between two figures. Releasing the half the crop took lets the two rejoin
+        // as the caption they are (#59).
+        let taken = Set(page.lines.indices.filter { index in
+            !overPicture.contains(index) && images.contains { takes($0.0, page.lines[index]) }
+        })
+        let released = Set(taken.filter { index in
+            guard index + 1 < page.lines.count, !taken.contains(index + 1) else { return false }
+            return continuesBrokenWord(from: page.lines[index], to: page.lines[index + 1])
+        })
+        let reflowable = page.lines.enumerated().filter { index, _ in
+            !taken.contains(index) || released.contains(index)
         }.map(\.element)
+        // An inline fraction's denominator joins the line its numerator ends (#53).
+        let lines = joinedInlineFractions(reflowable, rules: page.graphics.filter(isThinRule),
+                                          body: max(4, bodySize(page.lines)))
         let typography = PageTypography(pageLines: page.lines, reflowableLines: lines, documentBody: context.documentBody)
         // A bold sub-heading set at or near body size, whose paragraph opens beneath it directly or
         // past an intervening picture and caption (#218).
@@ -817,7 +1023,13 @@ enum LayoutReconstructor {
         let elements = structuredOrder(spatial, page: page.number, warnings: &warnings)
         let noteGroups = NumberedNoteDetector.groups(in: elements, page: page,
                                                      headingEvidence: context.numberedNotePages.contains(page.number))
-        var assembler = BlockAssembler(page: page.number, body: typography.body, hyphens: context.hyphens)
+        // A link whose rectangle covers a figure links the figure (#247).
+        var imageLinks: [String: LinkTarget] = [:]
+        for (rect, path) in images where !page.links.isEmpty {
+            if let target = linkCovering(rect, links: page.links) { imageLinks[path] = target }
+        }
+        var assembler = BlockAssembler(page: page.number, body: typography.body, leading: typography.leading,
+                                       hyphens: context.hyphens, imageLinks: imageLinks)
         // A page whose tags never name a heading has not said that its display lines are not
         // headings; it has said only what they contain and in what order. Producers routinely
         // give every heading style a paragraph role — the FAA handbook's RoleMap sends
@@ -955,9 +1167,23 @@ enum LayoutReconstructor {
         return elements
     }
 
-    static func imageBlock(assetID: String, page: Int, reference: Bool = false) -> ReflowBlock {
+    static func imageBlock(assetID: String, page: Int, reference: Bool = false,
+                           link: LinkTarget? = nil) -> ReflowBlock {
         let caption = reference ? "Original page \(page)" : "Preserved region from page \(page)"
-        return ReflowBlock(content: .image(.init(assetID: assetID, alternativeText: caption, caption: caption)), page: page)
+        return ReflowBlock(content: .image(.init(assetID: assetID, alternativeText: caption,
+                                                 caption: caption, link: link)), page: page)
+    }
+
+    /// The target of a link whose rectangle covers most of a crop, which is a link to the figure
+    /// rather than to any text (#247). Half the crop's area is the bound: a link over a caption
+    /// line inside a figure is a link to text and is marked there.
+    static func linkCovering(_ rect: CGRect, links: [PageLink]) -> LinkTarget? {
+        guard rect.isFinite, rect.width > 0, rect.height > 0 else { return nil }
+        let area = rect.width * rect.height
+        return links.first { link in
+            let overlap = link.rect.intersection(rect)
+            return !overlap.isNull && overlap.width * overlap.height >= area * 0.5
+        }?.target
     }
 
     /// Preserve the source boundary inside a continuing paragraph, without a format-specific marker.

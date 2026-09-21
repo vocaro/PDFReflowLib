@@ -15,6 +15,7 @@ from reportlab.pdfgen import canvas
 from reportlab.lib.utils import ImageReader
 
 from pdfreflow_tools.corpus import FIXTURES as DESTINATION, identity
+from pdfreflow_tools.encryption import encrypted_pdf
 
 
 def page(c, lines, x=54, y=690, size=12, step=18, font="Helvetica"):
@@ -22,6 +23,10 @@ def page(c, lines, x=54, y=690, size=12, step=18, font="Helvetica"):
     for line in lines:
         c.drawString(x, y, line)
         y -= step
+
+
+# Fixtures that are locked, and the password each one takes.
+PASSWORDS = {"encrypted.pdf": {"password": "reflow"}}
 
 
 def create(name):
@@ -108,6 +113,43 @@ def generate(renderer):
     c.drawText(text)
     c.showPage(); c.save()
 
+    # Links, which convert to EPUB anchors (#247): an external URL over part of a line, a
+    # mailto, a scheme that must be dropped, a cross-reference to a later page, a link covering
+    # two lines of one sentence, and a link over a picture rather than over text.
+    c = create("links.pdf")
+
+    def word_rect(line, word, x=54, y=0, size=12):
+        """The rectangle around `word` inside `line`, drawn at (x, y) in Helvetica `size`."""
+        start = x + c.stringWidth(line[:line.index(word)], "Helvetica", size)
+        return (start, y - 2, start + c.stringWidth(word, "Helvetica", size), y + size)
+
+    page(c, ["Links and Where They Point"], y=730, size=20)
+    specification = "The EPUB specification is published by the W3C."
+    page(c, [specification], y=690)
+    c.linkURL("https://www.w3.org/TR/epub-33/", word_rect(specification, "published", y=690), relative=0)
+    correspondence = "Write to reader@example.org with corrections."
+    page(c, [correspondence], y=660)
+    c.linkURL("mailto:reader@example.org", word_rect(correspondence, "reader@example.org", y=660), relative=0)
+    script = "A script link must never reach the output."
+    page(c, [script], y=630)
+    c.linkURL("javascript:alert('no')", word_rect(script, "script link", y=630), relative=0)
+    crossing = ["This sentence about the second page runs across",
+                "two lines and the link covers both of them."]
+    page(c, crossing, y=600)
+    c.linkAbsolute("second page", "second-page",
+                   (54, 582 - 2, 54 + max(c.stringWidth(line, "Helvetica", 12) for line in crossing), 600 + 12))
+    picture = Image.new("RGB", (120, 60), (250, 250, 250))
+    draw = ImageDraw.Draw(picture)
+    draw.rectangle([10, 10, 110, 50], fill=(40, 90, 200))
+    c.drawImage(ImageReader(picture), 54, 440, width=240, height=120)
+    c.linkAbsolute("linked figure", "second-page", (54, 440, 294, 560))
+    page(c, ["Figure 1. A picture the source links."], y=420, size=10)
+    c.showPage()
+    c.bookmarkPage("second-page")
+    page(c, ["The Second Page"], y=730, size=20)
+    page(c, ["This is where the cross-reference and the figure both point."], y=690)
+    c.showPage(); c.save()
+
     c = create("rotated.pdf")
     c.setPageRotation(90)
     page(c, ["Rotated source page"], y=500, size=24)
@@ -129,9 +171,15 @@ def generate(renderer):
         c.drawImage(str(prefix) + ".png", 0, 0, width=612, height=792)
         c.showPage(); c.save()
 
+    # A locked document. ReportLab writes no encryption this old, and the standard security
+    # handler at revision 2 is the one a stdlib MD5 and RC4 can produce, so it is built by hand
+    # (#252); its password is `reflow`, recorded beside its identity in the manifest.
+    (DESTINATION / "encrypted.pdf").write_bytes(encrypted_pdf())
+
     manifest = {
         "provenance": "Original synthetic text and drawings; no external documents or embedded font programs.",
-        "fixtures": [{"file": p.name, **identity(p)} for p in sorted(DESTINATION.glob("*.pdf"))],
+        "fixtures": [{"file": p.name, **identity(p), **PASSWORDS.get(p.name, {})}
+                     for p in sorted(DESTINATION.glob("*.pdf"))],
     }
     (DESTINATION / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
 

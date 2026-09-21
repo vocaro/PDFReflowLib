@@ -488,3 +488,73 @@ func citedWebAddressesAreNotDisplayedEquations() throws {
         }
     }
 }
+
+/// A page that underlines one word inside a sentence for emphasis, as the 9/11 report does by
+/// painting a filled path rather than setting an underlined font (#235). The rule spans the word
+/// `gain` only, on a line that also reads `gains`, so nothing but its position can tell them apart.
+private func emphasisUnderlinePDF() -> Data {
+    testPDF(objects: [
+        "<< /Type /Catalog /Pages 2 0 R >>",
+        "<< /Type /Pages /Kids [3 0 R] /Count 1 >>",
+        "<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 5 0 R >> >> /Contents 4 0 R >>",
+        testPDFStream("""
+        0 g BT /F1 10 Tf 12 TL 45 700 Td
+        (Sending officers in was to be considered if the gain clearly outweighs the risk,) Tj T*
+        (but at this time no such gains were thought to be available to the committee here.) Tj
+        ET
+        251.8 698.5 18.9 0.6 re f
+        """),
+        "<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>",
+    ])
+}
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/235")) func anUnderlinedWordKeepsItsEmphasis() async throws {
+    let dir = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString)
+    try FileManager.default.createDirectory(at: dir, withIntermediateDirectories: true)
+    defer { try? FileManager.default.removeItem(at: dir) }
+    let source = dir.appendingPathComponent("source.pdf"), output = dir.appendingPathComponent("book.epub")
+    try emphasisUnderlinePDF().write(to: source)
+    var options = ConversionOptions(); options.ocr = .never; options.rasterDPI = 72
+    _ = try await PDFConverter().convert(from: source, to: output, options: options)
+    let archive = try Archive(url: output, accessMode: .read)
+    let entry = try #require(archive["EPUB/chapter-1.xhtml"]); var data = Data()
+    _ = try archive.extract(entry) { data += $0 }
+    let html = String(decoding: data, as: UTF8.self)
+    // The emphasized word carries its emphasis, and the later `gains` on the same line does not.
+    #expect(html.contains("<u>gain</u>"), "the underlined word lost its emphasis: \(html)")
+    #expect(!html.contains("<u>gains</u>"))
+    // Every word of the sentence still reflows; the rule takes nothing into an image.
+    for word in ["Sending", "outweighs", "committee"] { #expect(html.contains(word)) }
+}
+
+// An inline fraction's denominator belongs to the sentence its numerator ends (#53).
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/53")) func anInlineFractionJoinsTheSentenceItEnds() {
+    // Wallace page 137 to the point: `rise` ends a prose line, the bar sits at that line's right
+    // edge, and `run` is a short line beneath it inside the bar's own measure.
+    let bounds = CGRect(x: 0, y: 0, width: 612, height: 792)
+    let prose = TextLine(text: "the y-intercept and use the slope rise",
+                         rect: CGRect(x: 307.6, y: 421.1, width: 199.6, height: 15), fontSize: 10)
+    let run = TextLine(text: "run", rect: CGRect(x: 494.2, y: 417.6, width: 13.1, height: 7.5), fontSize: 7)
+    let bar = CGRect(x: 491.6, y: 424.8, width: 18, height: 4)
+    let joined = LayoutReconstructor.joinedInlineFractions([prose, run], rules: [bar], body: 10)
+    #expect(joined.count == 1)
+    #expect(joined.first?.text == "the y-intercept and use the slope rise/run")
+}
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/53")) func aDisplayFractionKeepsItsOwnLines() {
+    let bar = CGRect(x: 100, y: 424.8, width: 40, height: 4)
+    // A numerator that is a line of its own rather than the tail of a sentence is a display
+    // fraction and keeps its crop.
+    let numerator = TextLine(text: "x + 2", rect: CGRect(x: 100, y: 428, width: 40, height: 12), fontSize: 10)
+    let denominator = TextLine(text: "y", rect: CGRect(x: 110, y: 412, width: 12, height: 10), fontSize: 10)
+    #expect(LayoutReconstructor.joinedInlineFractions([numerator, denominator], rules: [bar], body: 10).count == 2)
+    // A rule that is not at a sentence's right edge takes nothing either: an underline under a
+    // word in the middle of a line, with the next line of the paragraph beneath it.
+    let sentence = TextLine(text: "a sentence whose middle word is underlined here",
+                            rect: CGRect(x: 100, y: 421, width: 300, height: 15), fontSize: 10)
+    let next = TextLine(text: "and the paragraph carries on below it",
+                        rect: CGRect(x: 100, y: 405, width: 300, height: 12), fontSize: 10)
+    #expect(LayoutReconstructor.joinedInlineFractions([sentence, next], rules: [CGRect(x: 180, y: 424.8, width: 30, height: 4)],
+                                                      body: 10).count == 2)
+}

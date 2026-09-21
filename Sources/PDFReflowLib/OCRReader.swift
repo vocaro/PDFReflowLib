@@ -16,7 +16,17 @@ enum OCRReader {
 
     /// One recognition, in Vision's normalized lower-left coordinates of the image it read.
     struct Recognition: Equatable {
-        struct Line: Equatable { var text: String; var box: CGRect; var wraps: Bool? }
+        struct Line: Equatable {
+            var text: String
+            var box: CGRect
+            var wraps: Bool?
+            /// The offset from the foot of the line's own quadrilateral to its head, in the same
+            /// normalized coordinates as `box`: the direction the line's thickness runs in and
+            /// how far. It is `(0, box.height)` for a line the page sets upright and turns with
+            /// the line when the page sets it sideways (#130). Zero when no quadrilateral came
+            /// with the reading, which is what a hand-made reading in a test supplies.
+            var across: CGVector = .zero
+        }
         var lines: [Line] = []
         var tables: [CGRect] = []
 
@@ -32,6 +42,43 @@ enum OCRReader {
     static let retryBands: [ClosedRange<Double>] = [0.4...1.0, 0.0...0.6]
     /// Where the bands hand over: a line belongs to the band holding its center.
     static let retryBandSplit = 0.5
+
+    /// Cyrillic capitals and lowercase drawn the same as a Latin letter.
+    private static let latinLookAlikes: [Character: Character] = [
+        "А": "A", "В": "B", "Е": "E", "К": "K", "М": "M", "Н": "H", "О": "O", "Р": "P", "С": "C",
+        "Т": "T", "У": "Y", "Х": "X", "І": "I", "Ј": "J", "Ѕ": "S", "а": "a", "е": "e", "о": "o",
+        "р": "p", "с": "c", "у": "y", "х": "x", "і": "i", "ј": "j", "ѕ": "s",
+    ]
+
+    /// Rewrites a reading's Cyrillic look-alikes as the Latin the page draws (#168).
+    ///
+    /// Vision returns Cyrillic from a page this library has told it is English:
+    /// `RecognizeDocumentsRequest` with `recognitionLanguages = [en-US]` reads the CDC graphic
+    /// novel's hand-lettered `MAYBE` as `МАУВЕ`, and neither restricting the language nor enabling
+    /// language correction changes it (`measurements/apple-feedback-vision-script`).
+    ///
+    /// Only a token whose every Cyrillic character is a Latin look-alike is rewritten, and only
+    /// when nothing of another script survives the rewrite. `МАУВЕ` becomes `MAYBE`; `НИН?!` and
+    /// `ОКДУ` keep every character they were read with, because their `И` and `Д` stand where the
+    /// page draws `U` and `A` and no substitution can know that. A guess there would replace a
+    /// reading the page can be checked against with one it cannot.
+    ///
+    /// A document that is not declared English is never touched, so a page of actual Russian
+    /// keeps its script. Real Cyrillic prose reaches this rule as words holding the letters with
+    /// no Latin look-alike, and keeps them.
+    static func repairedScript(_ text: String, language: String) -> String {
+        guard EnglishText.isDeclared(language),
+              text.contains(where: { latinLookAlikes.keys.contains($0) || isCyrillic($0) }) else { return text }
+        return text.split(separator: " ", omittingEmptySubsequences: false).map { token -> Substring in
+            guard token.contains(where: isCyrillic) else { return token }
+            let mapped = String(token.map { latinLookAlikes[$0] ?? $0 })
+            return mapped.contains(where: isCyrillic) ? token : Substring(mapped)
+        }.joined(separator: " ")
+    }
+
+    private static func isCyrillic(_ character: Character) -> Bool {
+        character.unicodeScalars.contains { (0x0400...0x04FF).contains($0.value) }
+    }
 
     static func read(page: PDFPage, options: ConversionOptions) async throws -> Result {
         let bounds = page.bounds(for: .cropBox)
@@ -55,11 +102,39 @@ enum OCRReader {
         }
         let lines: [TextLine] = recognition.lines.map { line in
             let rect = pageRect(line.box)
-            return TextLine(text: line.text, rect: rect, fontSize: rect.height, wraps: line.wraps)
+            return TextLine(text: repairedScript(line.text, language: options.language),
+                            rect: rect, fontSize: thickness(of: line, rect: rect, in: bounds),
+                            wraps: line.wraps)
         }
         return Result(lines: lines,
                       tables: recognition.tables.map { pageRect($0).insetBy(dx: -3, dy: -3).intersection(bounds) },
                       retriedInBands: complete.retried, uncoveredTextFraction: complete.uncoveredTextFraction)
+    }
+
+    /// The type size a recognized line stands at: its thickness, measured across its own
+    /// baseline, in the page's points (#130).
+    ///
+    /// A recognized line's rectangle is axis-aligned, so for a line the page sets sideways its
+    /// height is the line's *length*. The CDC graphic novel turns page 17's caption on its side
+    /// and Vision returns a 224.8-point-tall box for an 8.9-point line, which made the page body
+    /// 225 and put the heading threshold beyond anything printed on the page. The quadrilateral
+    /// Vision draws around the same line carries the direction the writing runs in, and the
+    /// distance across it is the height the box would have had upright.
+    ///
+    /// A line standing upright keeps its rectangle's height exactly, whatever the quadrilateral
+    /// rounds to: the two disagree only where the page turned the line, and `isSideways` is what
+    /// says so. Half a right angle is the boundary, so no reading of ordinary skew moves.
+    static func thickness(of line: Recognition.Line, rect: CGRect, in bounds: CGRect) -> CGFloat {
+        let across = CGVector(dx: line.across.dx * bounds.width, dy: line.across.dy * bounds.height)
+        guard isSideways(across) else { return rect.height }
+        return sqrt(across.dx * across.dx + across.dy * across.dy)
+    }
+
+    /// Whether a line's thickness runs across the page rather than up it: the page set the line
+    /// sideways, and its rectangle's height is the line's length (#130). An upright line's
+    /// thickness runs up the page, and half a right angle of skew still counts as upright.
+    static func isSideways(_ across: CGVector) -> Bool {
+        abs(across.dx) > abs(across.dy)
     }
 
     /// What the reading of a page came to once its coverage of the page's writing was checked.
@@ -129,8 +204,16 @@ enum OCRReader {
         return Recognition(lines: document.text.lines.compactMap { observation in
             // Preserve uncertain transcription rather than dropping low-confidence words silently.
             guard let candidate = observation.topCandidates(1).first else { return nil }
+            // The quadrilateral is the reading's own statement of which way the line runs, and
+            // the offset from its foot to its head is the line's thickness (#130). Both sides
+            // are averaged, so a line whose ends Vision read a little apart takes the middle.
+            let quad = observation.boundingRegion.boundingQuad
+            let left = quad.topLeft.cgPoint, right = quad.topRight.cgPoint
+            let footLeft = quad.bottomLeft.cgPoint, footRight = quad.bottomRight.cgPoint
+            let across = CGVector(dx: ((left.x - footLeft.x) + (right.x - footRight.x)) / 2,
+                                  dy: ((left.y - footLeft.y) + (right.y - footRight.y)) / 2)
             return Recognition.Line(text: candidate.string, box: observation.boundingRegion.boundingBox.cgRect,
-                                    wraps: observation.shouldWrapToNextLine)
+                                    wraps: observation.shouldWrapToNextLine, across: across)
         }, tables: document.tables.map { $0.boundingRegion.boundingBox.cgRect })
     }
 
@@ -168,7 +251,11 @@ enum OCRReader {
             let ownsUpper = bottom + height / 2 >= retryBandSplit
             func owns(_ box: CGRect) -> Bool { ownsUpper ? box.midY >= retryBandSplit : box.midY < retryBandSplit }
             merged.lines += recognition.lines
-                .map { Recognition.Line(text: $0.text, box: place($0.box), wraps: $0.wraps) }
+                .map { Recognition.Line(text: $0.text, box: place($0.box), wraps: $0.wraps,
+                                        // A band is the page's full width and a fraction of its
+                                        // height, so a thickness running up the page shortens
+                                        // with the band and one running across it does not.
+                                        across: CGVector(dx: $0.across.dx, dy: $0.across.dy * height)) }
                 .filter { owns($0.box) }
             tables += recognition.tables.map(place)
                 .filter { owns($0) || ($0.minY < retryBandSplit && $0.maxY > retryBandSplit) }

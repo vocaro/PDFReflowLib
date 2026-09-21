@@ -343,3 +343,228 @@ func aPhotographStillLeavesItsCaptionAndTheProseBelowItReflowable() throws {
     // The page's folio and the picture credit stand apart from the prose, as they did before.
     #expect(paragraphs.contains("49") && paragraphs.contains("©Reuters 2004"))
 }
+
+// A page's own footer band is furniture, not a figure that owns the text beside it (#246).
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/246")) func aFooterBandDoesNotTakeTheNotesItGrazes() {
+    let bounds = CGRect(x: 0, y: 0, width: 612, height: 792)
+    // Dietary Guidelines page 2 to the tenth of a point: a full-measure band up to y=80.12, and
+    // four notes in two columns, the lower pair running from y=77.49 to y=85.45.
+    let band = CGRect(x: 0, y: 0, width: 612, height: 80.12)
+    func note(_ x: Double, _ y: Double, _ text: String) -> TextLine {
+        TextLine(text: text, rect: CGRect(x: x, y: y, width: 180, height: 7.96), fontSize: 7)
+    }
+    let lines = [note(54, 87.99, "1 https://www.cdc.gov/chronic-disease/facts.html"),
+                 note(54, 77.49, "2 https://www.cdc.gov/nchs/fastats/obesity.htm"),
+                 note(315, 87.99, "3 https://gis.cdc.gov/grasp/diabetes/atlas.html"),
+                 note(315, 77.49, "4 https://www.cdc.gov/physical-activity/unfit.html")]
+    let page = PageContent(number: 2, bounds: bounds, lines: lines, graphics: [band])
+    #expect(LayoutReconstructor.isEdgeBand(band, bounds: bounds))
+    var warnings: [ConversionWarning] = []
+    let blocks = LayoutReconstructor.blocks(page: page, images: [(band, "footer")], vocabulary: [], warnings: &warnings)
+    let reflowed = blocks.filter(\.hasReflowedText).map(\.text).joined(separator: " ")
+    for note in ["chronic-disease", "nchs/fastats", "grasp/diabetes", "physical-activity"] {
+        #expect(reflowed.contains(note), "note lost to the footer band: \(note)")
+    }
+}
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/246")) func onlyAFullMeasureBandAtAPageEdgeIsFurniture() {
+    let bounds = CGRect(x: 0, y: 0, width: 612, height: 792)
+    #expect(LayoutReconstructor.isEdgeBand(CGRect(x: 0, y: 0, width: 612, height: 80), bounds: bounds))
+    #expect(LayoutReconstructor.isEdgeBand(CGRect(x: 0, y: 712, width: 612, height: 80), bounds: bounds))
+    // A figure the width of the measure but away from either edge is not furniture, and neither
+    // is a band that leaves a column of the measure free.
+    #expect(!LayoutReconstructor.isEdgeBand(CGRect(x: 0, y: 300, width: 612, height: 80), bounds: bounds))
+    #expect(!LayoutReconstructor.isEdgeBand(CGRect(x: 0, y: 0, width: 300, height: 80), bounds: bounds))
+}
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/59")) func aCropReleasesTheHalfOfAWordItTook() {
+    // Replay Clocks page 8 to the point: a figure caption hyphenated over two lines, with the
+    // crop's lower edge 0.49 pt above the second line, so the first half was taken and the second
+    // reflowed alone between two figures.
+    let bounds = CGRect(x: 0, y: 0, width: 612, height: 792)
+    let first = TextLine(text: "Figure 7: tau vs E when varying delta, alpha = 40 mes-",
+                         rect: CGRect(x: 53.8, y: 469.99, width: 241.9, height: 8.47), fontSize: 8)
+    let second = TextLine(text: "sages/second.",
+                          rect: CGRect(x: 53.8, y: 459.03, width: 54.1, height: 8.47), fontSize: 8)
+    var body: [TextLine] = []
+    for i in 0..<6 {
+        body.append(TextLine(text: "Ordinary prose establishing this page's body size and measure.",
+                             rect: CGRect(x: 53.8, y: 400 - Double(i) * 12, width: 300, height: 9), fontSize: 8))
+    }
+    let page = PageContent(number: 8, bounds: bounds, lines: [first, second] + body, graphics: [])
+    let crop = CGRect(x: 51.8, y: 467.99, width: 245.9, height: 118.4)
+    #expect(LayoutReconstructor.takes(crop, first))
+    #expect(!LayoutReconstructor.takes(crop, second))
+    var warnings: [ConversionWarning] = []
+    let blocks = LayoutReconstructor.blocks(page: page, images: [(crop, "figure")], vocabulary: [], warnings: &warnings)
+    let texts = blocks.filter(\.hasReflowedText).map(\.text)
+    // Both halves reflow, in one block: no fragment of the caption becomes body prose of its own.
+    // Whether the hyphen itself goes is `HyphenRepair`'s decision and needs the book's vocabulary,
+    // which this page does not carry.
+    #expect(!texts.contains { $0.trimmingCharacters(in: .whitespaces) == "sages/second." },
+            Comment(rawValue: texts.joined(separator: " | ")))
+    #expect(texts.contains { $0.contains("mes") && $0.contains("sages/second.") },
+            Comment(rawValue: texts.joined(separator: " | ")))
+}
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/255"))
+func aCropNeverAdmitsALineOfTheBooksOwnProse() {
+    let body = "A strong alliance has long existed between the two departments."
+    let label = "Figure 4"
+    let sentence = TextLine(text: body, rect: CGRect(x: 40, y: 300, width: 300, height: 12), fontSize: 10)
+    let caption = TextLine(text: label, rect: CGRect(x: 40, y: 300, width: 60, height: 12), fontSize: 10)
+    #expect(LayoutReconstructor.releasesProse(sentence, language: "en"))
+    #expect(!LayoutReconstructor.releasesProse(caption, language: "en"))
+    // Recognition's reading of the CIA report's handwritten tables is not prose, in a book that
+    // declares English: the word test refuses it where the shape alone would not.
+    let noise = TextLine(text: "0/iLE 1112£ E/(19U/,£r//?/Z/ <?E O,fJE(!r .S/6/(T//I/GS Ec?~ /ILi f'EARS",
+                         rect: CGRect(x: 40, y: 300, width: 300, height: 12), fontSize: 10)
+    #expect(LayoutReconstructor.readsAsSentence(noise))
+    #expect(!LayoutReconstructor.releasesProse(noise, language: "en"))
+    // An English lexicon judges nothing about another script, so shape alone decides there.
+    let chinese = TextLine(text: "如果您要从工作表中查找的金额至少为 19,100 美元, 但低于 19,104 美元，并且您没有",
+                           rect: CGRect(x: 40, y: 300, width: 300, height: 12), fontSize: 10)
+    #expect(LayoutReconstructor.releasesProse(chinese, language: "en") == LayoutReconstructor.readsAsSentence(chinese))
+    #expect(LayoutReconstructor.releasesProse(noise, language: "zh-Hans"))
+}
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/255"))
+func aSentenceACropCannotCutAroundStaysInTheProse() {
+    // A picture with a sentence of the page's own prose running across its lower edge, which no
+    // cut can clear while still holding the picture.
+    var page = PageContent(number: 1, bounds: CGRect(x: 0, y: 0, width: 400, height: 500),
+                           lines: [], graphics: [CGRect(x: 40, y: 260, width: 320, height: 120)])
+    page.pictures = page.graphics
+    page.lines = [
+        TextLine(text: "A strong alliance has long existed between the two departments.",
+                 rect: CGRect(x: 30, y: 250, width: 340, height: 12), fontSize: 10),
+        TextLine(text: "Figure 4", rect: CGRect(x: 40, y: 238, width: 60, height: 12), fontSize: 10),
+    ]
+    let crops = LayoutReconstructor.graphicsWithLabels(page)
+    let sentence = page.lines[0]
+    #expect(!crops.contains { LayoutReconstructor.takes($0, sentence) },
+            "the book's own sentence must reflow, not travel into the picture")
+    var warnings: [ConversionWarning] = []
+    let blocks = LayoutReconstructor.blocks(page: page, images: crops.map { ($0, "image-1") },
+                                            vocabulary: [], warnings: &warnings)
+    #expect(blocks.contains { $0.text.contains("A strong alliance") })
+}
+
+/// The CIA report's page 203, set as its text layer hands it back: three tables down the page,
+/// each a column-header row beside the rule the page paints in its margin, a second header row
+/// over the stub column of evaluations, and rows of cells in two column groups. Every row begins
+/// a piece on the same edges, and the header rows print one label once per column.
+private func columnHeaderPage() -> PageContent {
+    var page = PageContent(number: 203, bounds: CGRect(x: 0, y: 0, width: 612, height: 792),
+                           lines: [], graphics: [CGRect(x: 200, y: 344, width: 162, height: 22)])
+    page.pictures = page.graphics
+    let stub = ["0-Balloon", "1-Astronomical", "2-Aircraft", "3-Light Phenom.", "4-Birds", "Total"]
+    let cells = ["26 8 34 195 60 255", "13 5 18 95 35 130", "4 1 5 30 10 40",
+                 "1 0 1 5 0 5", "0 2 2 0 15 15", "44 16 60 325 120 445"]
+    var lines: [TextLine] = []
+    for table in 0..<3 {
+        let top = CGFloat(680 - table * 170)
+        lines.append(TextLine(text: "I", rect: CGRect(x: 84, y: top, width: 3, height: 6), fontSize: 6))
+        lines.append(TextLine(text: "Number Per Cent Number Per Cent Nuntler Per Cent Number Per Celt",
+                              rect: CGRect(x: 144, y: top, width: 372, height: 6), fontSize: 6))
+        lines.append(TextLine(text: "Evaluation",
+                              rect: CGRect(x: 94, y: top - 8, width: 19, height: 6), fontSize: 6))
+        lines.append(TextLine(text: "Certain Doubtful Total Certain Doubtful Total",
+                              rect: CGRect(x: 126, y: top - 8, width: 200, height: 6), fontSize: 6))
+        lines.append(TextLine(text: "ertain Ooubtfut Total Certain Doubtful Total",
+                              rect: CGRect(x: 335, y: top - 8, width: 197, height: 6), fontSize: 6))
+        for (index, label) in stub.enumerated() {
+            let y = top - 20 - CGFloat(index * 10)
+            lines.append(TextLine(text: label, rect: CGRect(x: 85, y: y, width: 30, height: 6), fontSize: 6))
+            lines.append(TextLine(text: cells[index], rect: CGRect(x: 126, y: y, width: 200, height: 6), fontSize: 6))
+            lines.append(TextLine(text: cells[(index + 1) % cells.count],
+                                  rect: CGRect(x: 335, y: y, width: 197, height: 6), fontSize: 6))
+        }
+    }
+    page.lines = lines
+    return page
+}
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/257"))
+func aCropNeverReleasesATablesColumnHeaderToTheProse() {
+    let page = columnHeaderPage()
+    let body = max(4, LayoutReconstructor.bodySize(page.lines))
+    let headers = TableRegionDetector.columnHeaders(in: page, body: body)
+    let header = page.lines.first { $0.text.hasPrefix("Number Per Cent") }!
+    // The word test admits it: every token is an English word, and it reads as a sentence.
+    #expect(LayoutReconstructor.readsAsSentence(header))
+    #expect(LayoutReconstructor.releasesProse(header, language: "en"))
+    // Read as what it is — the label of the columns below it — it is never released (#257).
+    #expect(headers.contains(header.rect))
+    #expect(!LayoutReconstructor.releasesProse(header, language: "en", columnHeaders: headers))
+    // The third table's own picture lies across its header, and no cut clears the header while
+    // still holding the picture. Before #255 the crop grew and took it; #255 let it out into the
+    // prose; read as the label of its columns it goes back to the picture of its table.
+    let lowest = page.lines.last { $0.text.hasPrefix("Number Per Cent") }!
+    let crops = LayoutReconstructor.graphicsWithLabels(page)
+    #expect(crops.contains { LayoutReconstructor.takes($0, lowest) },
+            "the table's own column header belongs to the picture of its table")
+    var warnings: [ConversionWarning] = []
+    let blocks = LayoutReconstructor.blocks(page: page, images: crops.map { ($0, "image-1") },
+                                            vocabulary: [], warnings: &warnings)
+    // Two of the three tables have no picture lying across their header, so those two headers
+    // reflow as they did before: this rule refuses a release, it does not hide a line no crop
+    // was reaching for.
+    #expect(blocks.count(where: { $0.text.contains("Nuntler Per Cent") }) == 2,
+            Comment(rawValue: blocks.map(\.text).joined(separator: " | ")))
+}
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/257"))
+func aColumnHeaderPrintsOneLabelUnderEachColumn() {
+    // The report's headers, exactly as its inherited text layer spells them.
+    #expect(TableRegionDetector.printsOneColumnLabel(
+        "Number Per Cent Number Per Cent Nuntler Per Cent Number Per Celt"))
+    #expect(TableRegionDetector.printsOneColumnLabel(
+        "Certain Doubtful Total Certain Doubtful Total ertain Ooubtfut Total Certain Doubtful Total"))
+    #expect(TableRegionDetector.printsOneColumnLabel("-Variable Total Const Variable Total"))
+    // Prose never prints one group over and over, whatever columns the page sets it in.
+    #expect(!TableRegionDetector.printsOneColumnLabel(
+        "A strong alliance has long existed between USDA and DOD"))
+    #expect(!TableRegionDetector.printsOneColumnLabel(
+        "I All of the above calculations were made with IBM equipment. Sines,"))
+    #expect(!TableRegionDetector.printsOneColumnLabel(
+        "travels from person to person. Only the females feed on blood."))
+    // The nearest miss the corpus holds: a worked exercise in Wallace's algebra, three repeated
+    // words in four where a header needs four in five.
+    #expect(!TableRegionDetector.printsOneColumnLabel("10 lbs of nuts and 20 lbs of chocolate"))
+}
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/257"),
+      .bug("https://github.com/vocaro/PDFReflowLib/issues/255"))
+func prosePDFKitHandsBackBesideAnotherColumnIsStillReleased() {
+    // The magazine sets three columns whose lines PDFKit returns on shared baselines, so every
+    // row of its running prose holds pieces the page kept apart on an edge every other row
+    // states. Read on that geometry alone this rule buries 17,340 characters of its articles;
+    // the header's own words are what keep it out of them (#257).
+    var page = PageContent(number: 5, bounds: CGRect(x: 0, y: 0, width: 612, height: 792),
+                           lines: [], graphics: [CGRect(x: 30, y: 400, width: 200, height: 120)])
+    page.pictures = page.graphics
+    let columns = [
+        ["General Douglas MacArthur was quoted", "as saying, it is going to be a very long",
+         "war if for every division I have facing the", "enemy, I have one sick in the hospital and"],
+        ["tween USDA and DOD as far back as", "1932, when an entomological research",
+         "laboratory was established in Orlando,", "Florida, to combat mosquitoes, filth flies,"],
+        ["interrupt malaria transmission in the South", "Pacific to protect soldiers stationed there.",
+         "The Deployed War-Fighter Protection", "research program was implemented in 2004"],
+    ]
+    for (column, texts) in columns.enumerated() {
+        for (row, text) in texts.enumerated() {
+            page.lines.append(TextLine(text: text,
+                                       rect: CGRect(x: CGFloat(36 + column * 184), y: CGFloat(520 - row * 13),
+                                                    width: 172, height: 13), fontSize: 10))
+        }
+    }
+    let body = max(4, LayoutReconstructor.bodySize(page.lines))
+    let headers = TableRegionDetector.columnHeaders(in: page, body: body)
+    for line in page.lines {
+        #expect(!headers.contains(line.rect), Comment(rawValue: line.text))
+        #expect(LayoutReconstructor.releasesProse(line, language: "en", columnHeaders: headers),
+                Comment(rawValue: line.text))
+    }
+}

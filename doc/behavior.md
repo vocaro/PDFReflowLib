@@ -26,6 +26,11 @@ qualified the rule, where one exists. Records are frozen: they describe the buil
   `packageIdentifier` must be non-blank; `modificationDate` must fall in 1980–2099 (ZIP stores
   it in UTC at two-second resolution). These are input and work bounds, not process-memory or
   wall-clock guarantees; MiB means 1,048,576 bytes.
+- A locked document converts when `ConversionOptions.password` unlocks it, and throws
+  `encryptedPDF` when it does not (#252). The password is applied wherever the conversion opens
+  the file — the page window's reopen, the outline read and the structure tree each open it
+  themselves — and reaches no report, warning, progress event or staged file;
+  `ConversionOptions.Password` redacts itself in `description`, `debugDescription` and its mirror.
 - Failures use `ConversionError` (`invalidOptions`, `unreadablePDF`, `encryptedPDF`,
   `outputExists`, `resourceLimit`, `renderingFailed(page:)`), `CancellationError`, or the
   underlying filesystem error. A failed final-size check throws `resourceLimit`, removes staging,
@@ -116,6 +121,46 @@ Evidence: [pdfkit-concurrency](../measurements/pdfkit-concurrency/record.md),
 [native-line-boundaries](../measurements/native-line-boundaries/record.md),
 [drop-cap-order](../measurements/drop-cap-order/record.md).
 
+- **List markers and line size (#183).** A line's size is its first character's, and a list
+  marker is drawn at whatever size the page likes, so a marker larger than its item states the
+  marker's size for the whole line: the Fed's page 58 sets a 10-point bullet over 8-point text on
+  14 lines, and IRS Publication 596 sets one large enough that five bulleted sentences were read
+  as headings. Where a line opens with a marker glyph and a space, and that marker is drawn larger
+  than the text after it, or smaller than it, the size comes from the text instead (#254).
+  Nothing else at the start of a line is a marker: a drop cap, an opening quotation mark and a
+  contents line's leaders keep the size they had.
+  Reading the smaller marker as well is what promoted IRS Publication 596's four starred
+  footnotes into headings while the rule read one direction only. What stops that is the reading
+  of the line rather than a bound on its size: **a bulleted line is not a heading**, whatever
+  size its text is set in, because a page that draws a bullet has said the line belongs to a
+  list. Only the glyphs `• * − – — -` followed by a space count; a numbered or lettered marker is
+  not evidence of the same kind, since `1. Introduction` is a heading in many books.
+  The rest of such an item carries no marker at all, because the marker is on the line above it,
+  so the page states the relationship in the indent instead: **a line hanging under a bulleted
+  line is the rest of that item**, and is no more a heading than the item is (#256). The evidence
+  is the page's own hanging indent — the line opens with no marker of its own, is set at the
+  marked line's size, stands directly beneath it within the leading a broken item is joined on,
+  and sits between 0.8 and 3 of its size in from that line's left edge, the window a numbered
+  note's continuation is read on. The marked line must also fill a measure, at least twelve of
+  its own sizes wide, because a line that wrapped is a line that ran out of room: a short
+  bulleted item above an indented one is two items. IRS Publication 596 sets the starred
+  footnotes under its EIC table at 8 points over a table whose body is 5.69, so on four of its
+  pages the footnote that wrapped reached the page's heading threshold on size alone. The line
+  keeps its own block and its own words; only the heading reading goes.
+  Evidence: [list-marker-size](../measurements/list-marker-size/record.md),
+  [smaller-marker](../measurements/list-marker-size/smaller-marker/record.md),
+  [hanging-continuation](../measurements/list-marker-size/hanging-continuation/record.md).
+- **East Asian text (#42).** Chinese, Japanese and Korean set no space between the characters of
+  a word, and a justified line stretches the gaps between characters rather than between words.
+  Two spacing rules were measured on Latin text and do not hold here. A gap between two
+  characters drawn one em wide is never read as a missing word space, however wide it is, so a
+  justified line is not broken into words. A space the extracted text layer already carries
+  between two Han ideographs (`CJKText.isIdeograph`: the Unified blocks, Extension A and the
+  compatibility ideographs) is removed with the attributes either side of it kept, which restores
+  a heading the page letter-spaces one character at a time. The narrower ideograph test, not the
+  one-em test, decides the removal: a source may legitimately set a space after `。` or `，`
+  where a run-in heading ends, and every boundary with Latin text keeps the source's own spacing.
+
 ## Content-stream readers
 
 `ContentStreamWalk` gives every reader a budget of 100,000 operations and 128 saved graphics
@@ -143,7 +188,9 @@ spatial reconstruction rather than partial results.
   A boundary is restored when:
   - **a font change** separates two shows on one baseline (within 0.1 em) by at least 0.15 em,
     with a letter or digit on either side, or a closing `) ] , ; :` that ends a word or formula
-    before a letter;
+    before a letter; 0.10 em is enough where a number is set against a run that opens with an
+    English word of three letters or more, which is how a page sets `8cent stamps` and
+    `Subtract 5from both sides` and not how it sets the same book's `30qpr` (#120);
   - **a note reference**, a show of one to four digits at most 0.8 of the next show's size and
     raised 0.15 to 0.6 of it, precedes a capital or opening quote at a word gap;
   - **`sameFontWordSpace`** reads a `TJ` adjustment between two glyphs of one show, in a producer
@@ -162,15 +209,26 @@ spatial reconstruction rather than partial results.
     capitalized abbreviation ending in a period are not sentence boundaries.
 
   The boundaries are applied only where the shows and PDFKit agree. `NativeSpacingOwnership`
-  splits the line into its maximal agreeing segments — resynchronizing on eight matching
+  splits the line into its maximal agreeing segments — resynchronizing on twelve matching
   characters, skipping at most 64 either way and at most 64 times per line — and applies a
   boundary only where the characters on both sides of it matched inside one segment, so a
-  boundary inside a disagreeing region or against its edge is dropped (#139 item 1). A show whose
-  origin another line's rectangle holds still reaches this line when its baseline lies inside the
-  line and its glyph advances cross the line's span, which is how one printed row PDFKit split at
-  a wide gap is repaired in the half that holds each boundary. Explicit spaces, genuine word-size
-  gaps and style attributes are kept, a boundary PDFKit already spaces inserts nothing, and a show
-  whose origin lies in more than one line's rectangle rewrites nothing.
+  boundary inside a disagreeing region or against its edge is dropped (#139 item 1). Twelve,
+  because eight recurs inside one printed row: the 9/11 appendix's
+  `Abu Bara al Yemeni (a.k.a.Abu al Bara al Ta’izi` has `Bara al ` in both halves, and the walk
+  resumed in the wrong one (#120). A show whose text the reader cannot decode is a hole in the
+  source's reading rather than a reason to discard the line, and nothing is read across the hole:
+  one radical on Wallace page 120 used to discard every boundary of
+  `5− 2x 11 Subtract 5from both sides`. A show whose origin lies in more than one line's rectangle
+  is a hole of the same kind, in every line that holds it, rather than a reason to discard those
+  lines (#258): a line carrying a superscript, an exponent or a stacked fraction gets a PDFKit
+  rectangle as tall as what it carries, so it overlaps its neighbors' rectangles and holds their
+  origins, and Wallace's `Convert 8cubic feet to yd3` — one rectangle 69 points tall over eight
+  shows of the fraction rows inside it — refused the twelve shows that spell it exactly. A show
+  whose origin another line's rectangle alone holds still reaches this line when its baseline lies
+  inside the line and its glyph advances cross the line's span, which is how one printed row
+  PDFKit split at a wide gap is repaired in the half that holds each boundary. Explicit spaces,
+  genuine word-size gaps and style attributes are kept, a boundary PDFKit already spaces inserts
+  nothing, and a line whose every show is held by another rectangle too rewrites nothing.
 - **`GlyphIdentityReader` (#217, two of #186's five fixes).** PDFKit reads every glyph through
   its font's `ToUnicode` map; two kinds of font disagree with what they draw. A dingbat font
   (Zapf Dingbats and its clones ITC Zapf Dingbats, `Dingbats`, Monotype Sorts, subset tags
@@ -590,12 +648,32 @@ improve some errors and introduce others, lose native formatting or change readi
 
 ## OCRReader
 
+- **Cyrillic look-alikes (#168).** Vision returns Cyrillic from a page this library has told it is
+  English, and neither restricting `recognitionLanguages` to `en-US` nor enabling language
+  correction changes it (`measurements/apple-feedback-vision-script`). A recognized token whose
+  every Cyrillic character is a Latin look-alike is rewritten to the Latin the page draws, and
+  only when nothing of another script survives the rewrite: `МАУВЕ` becomes `MAYBE`, and the CDC
+  graphic novel's `НИН?!` and `ОКДУ` keep every character they were read with, because their `И`
+  and `Д` stand where the page draws `U` and `A` and no substitution can know that. A document not
+  declared English is never touched, and Russian prose reaches the rule as words holding the
+  letters that have no Latin look-alike and keeps them.
+
 Vision recognizes the page image, with the declared language when the recognizer supports it.
 Uncertain words are preserved rather than dropped silently. OCR text is always reported as
 transcription (`ocrUsed`: "Text is OCR transcription. The original page image preserves
 unrecognized visual content."; with references disabled, "Supplementary references are disabled;
 compare unrecognized visual content with the source PDF."). A recognition with no lines never
 reports `ocrUsed`; see `RecognitionPolicy` above.
+
+A recognized line's **type size is its thickness, measured across its own baseline** (#130). The
+box Vision reports is axis-aligned, so for a line the page sets sideways its height is the line's
+length: the CDC graphic novel letters page 17's caption down the side of the panel, and a
+224.8-point box around an 8.9-point line made the page's body 225 and put the heading threshold
+beyond anything printed on it. The quadrilateral around the same line carries the direction the
+writing runs in, and the distance across it is the height the box would have had upright. A line
+standing upright — anything within half a right angle of vertical, which covers ordinary skew —
+keeps its box height exactly, so no page of upright writing moves by a hair. A banded retry scales
+a thickness that runs up the page with its band and leaves one that runs across it alone.
 
 ### Recognition that left the page's writing unread (#116)
 
@@ -755,11 +833,47 @@ uncut keeps the order it was extracted in, and the page reports `complexLayout` 
 leaving that silent, as the tag phase reports its own give-up (#224).
 
 - Two lines are one paragraph when they **share a column** (left edges within 1.5 bodies, the gap
-  between them from −0.4 to 0.9 of a body) or are **two pieces of one printed row**: they overlap
-  vertically by at least half the shorter one's height, the second stands to the right of the
-  first, and less than 0.75 of a body separates them — the width a whitespace cut needs for a
-  column, so a table's cells and the two ends of a running header remain separate blocks (#57).
-  A short previous line ending a sentence closes its paragraph either way.
+  between them from −0.4 to 0.9 of a body, and no further down the page than the leading it
+  states) or are **two pieces of one printed row**: they overlap vertically by at least half the
+  shorter one's height, the second stands to the right of the first, and less than 0.75 of a body
+  separates them — the width a whitespace cut needs for a column, so a table's cells and the two
+  ends of a running header remain separate blocks (#57). A short previous line ending a sentence
+  closes its paragraph either way.
+- The **leading a page states** is the commonest distance between the tops of two vertically
+  adjacent lines, set at one size, in one column, to the nearest half point, over the lines its
+  crops leave in the prose. At least four such pairs must agree, so a page too bare to say
+  anything states none. Tops, not baselines and not the white between the rectangles: PDFKit's
+  line rectangle grows downwards by whatever descenders the line carries, so on Wallace page 64
+  the rectangle of `• More than often represents addition and is usually built backwards,` is
+  20.46 points tall where the line beneath it has 11.98 and the white between the two is
+  negative, although the page set them one line apart (#123).
+- A line the page set **more than 1.4 times that leading** below the previous one is not the same
+  paragraph, whatever the white between the rectangles says. Wallace page 64 sets an item's
+  example 21.72 points below the item's own second line, where the page's leading is 14.40; the
+  white between them is 9.74 points, inside the 10.76 the column test allows, so the example used
+  to be appended to the item's sentence. The bound is the page's own measure because the same ten
+  points of white is nothing under display type and a paragraph break under footnotes. A page
+  that states no leading is judged by the gap alone, and so is a pair of lines set at different
+  sizes, whose tops are not one ascent above their baselines.
+- Two lines at that leading are also one paragraph when they are **centered on one axis** (mid
+  points within 0.6 of a body) **and the reading says the first one wraps** (#130). A shared left
+  edge is a column the page sets and stands on its own; a shared center does not, since a title,
+  its author and its date are centered on one axis and are three separate lines. So the center
+  joins only where the reading states the wrap: Vision states it for every line it recognizes and
+  PDFKit's native reading states nothing, which leaves every natively extracted page as it was.
+  The CDC graphic novel letters each speech balloon centered, so page 34's `I'VE BEEN` /
+  `THINKING... WE` / `SHOULD REALLY` / `MAKE AN` / `EMERGENCY KIT` stand on five left edges spread
+  over eighteen points and on one center within 1.7 points.
+- A **stub of prose is closed by the step the next line takes** (#130): a previous line under half
+  the width of the line beneath it, with that line set at least half a body further in, opens a
+  new block even where no sentence ended. Prose fills its measure, so a line that used under half
+  of it ended something, and the step is where the next thing begins; #39 already reads a marker
+  set in past the line above it as an item's opening rather than a wrap. The Blue Book's observer
+  questionnaire is the case: page 273 sets the spaced answer row `Yes or No` under question 7 and
+  the instruction `IF you answered YES, then complete the following questions:` a body further in
+  beneath it. Half is where the same book's contents stand — page 5 hangs each entry's wrapped
+  line six points in under an opening filling three fifths of it, and the entry stays one
+  paragraph.
 
 ### Type sizes and headings
 
@@ -829,7 +943,8 @@ A page's own words are unchanged either way; the join only moves a line from its
 the paragraph above it, where an ordinary hyphen repair may then close a word the split had
 broken.
 
-Evidence: [heading-body-regressions](../measurements/heading-body-regressions/record.md),
+Evidence: [page-leading-and-ligature-vocabulary](../measurements/page-leading-and-ligature-vocabulary/record.md),
+[heading-body-regressions](../measurements/heading-body-regressions/record.md),
 [three-fidelity-fixes](../measurements/three-fidelity-fixes/record.md),
 [preformatted-styles](../measurements/preformatted-styles/record.md),
 [citation-continuations](../measurements/citation-continuations/record.md),
@@ -841,6 +956,12 @@ Evidence: [heading-body-regressions](../measurements/heading-body-regressions/re
   the next line opens in lowercase; the join is decided on the letters either side.
 - The hyphen is removed silently when the book's own vocabulary holds the joined word and not the
   hyphenated compound. When the vocabulary holds the compound, the hyphen stays silently.
+- The vocabulary holds every word lowercased and with the typographic ligatures and other
+  compatibility glyphs a font draws resolved to the letters they stand for, and the two halves of
+  a break are looked up the same way (#123). Wallace's text font prints `different` with a U+FB00
+  `ﬀ`, so the book's own words held `diﬀerent` — 56 times — and never `different`, and had
+  nothing to say about `dif-` + `ferent` on pages 50 and 218. Only the evidence folds: the
+  ligature the page printed stays in the text the reader gets, on both sides of a join.
 - When the vocabulary is silent on both, an English document's system lexicon may decide (#186):
   the join goes ahead, still silently, only when each half has at least two letters and the two
   together at least six, the lexicon holds the joined word, and *not* both halves are lexicon
@@ -851,8 +972,41 @@ Evidence: [heading-body-regressions](../measurements/heading-body-regressions/re
   if whole, which would otherwise make `com-panies` look like two real words and block the join.
 - Otherwise the hyphen is retained and the page reports `uncertainHyphen` once ("An ambiguous
   line-ending hyphen is retained. Review source word joins.").
+- A book whose text font encodes the hyphen it draws at a line end as some other character has
+  that character read as the hyphen it is (#233). The substitute is decided once for the whole
+  document and only from the text the reader will keep: a candidate qualifies when it occurs at
+  least eight times, at least 95% of those occurrences end a line directly after a letter, and at
+  least 90% of those lines are carried on by a lowercase letter. Sentence punctuation, quotes,
+  brackets and dashes are never candidates, because a book could legitimately end every line with
+  one; two qualifying candidates disqualify each other. A book that means the character spends
+  most of its occurrences inside lines and never qualifies — the 9/11 report's `=` scores 994 of
+  1,004 while its `/` scores 4 of 878. Only a line-final occurrence is ever rewritten, so a
+  genuine one inside a line, such as a URL's `name=value`, is left as read, and the join itself
+  is then decided by the vocabulary and lexicon above, warning where it would warn for a printed
+  hyphen. A join the evidence cannot decide keeps a real hyphen, never the encoded character.
 
-Evidence: [spine-continuity](../measurements/spine-continuity/record.md).
+- A heading East Asian writing breaks between two characters of one word is one heading: a
+  heading line whose break sets no space, at the same size, on the page's own leading, continues
+  the heading above it rather than opening another (#42). A display line's PDFKit box carries
+  enough leading that two stacked lines of a title overlap — IRS Publication 596's cover overlaps
+  by 12.9 points at 31-point type — so the bound is the type size itself. A break between two
+  Latin words is a space and says nothing about whether two lines are one title, so Latin
+  headings are untouched.
+- East Asian writing sets no space between the characters of a word, so a line break between two
+  characters drawn one em wide (`CJKText.isFullWidth`: the Wide and Fullwidth blocks, including
+  the CJK punctuation a line may end on) joins them with none (#42). A boundary with Latin text
+  keeps the source's own spacing in both directions, so `提交表格` + `1040` still takes a space.
+
+- An item the page broke mid-word keeps the rest of its word (#245). Where a preformatted list
+  item ends in a hyphen, a soft hyphen or the book's line-end substitute, and the line beneath it
+  opens in lowercase at the same size on the page's own leading, that line joins the item and the
+  break character goes with the join. The 9/11 report sets its recommendations as items and breaks
+  one over the block boundary, so `• …supervise the planning and direc-` was followed by
+  `tion of the operation;` as a paragraph of its own.
+
+Evidence: [spine-continuity](../measurements/spine-continuity/record.md),
+[line-end-hyphen-substitutes](../measurements/line-end-hyphen-substitutes/record.md),
+[page-leading-and-ligature-vocabulary](../measurements/page-leading-and-ligature-vocabulary/record.md).
 
 ## Region detectors
 
@@ -870,6 +1024,68 @@ Evidence: [spine-continuity](../measurements/spine-continuity/record.md).
   removed before it is measured, because a query string is not a relation: a word holding `://`,
   opening `www.`, or joining a `name=value` pair after a `?` or `&` is an address, and a note that
   cites one no longer seeds a crop (#227).
+- **A word a crop cuts in half.** A crop does not take one half of a word whose other half falls
+  outside it: where a line the crop takes ends in a hyphen or a soft hyphen and the line directly
+  beneath it, in the same column, opens in lowercase outside the crop, the taken line is released
+  and both halves reflow. Replay Clocks page 8 breaks a figure caption `…𝛼 = 40 mes-` /
+  `sages/second.` and the crop's edge fell 0.49 pt above the second line, so the first half went
+  into the picture and the second reflowed alone between two figures; the caption now reads whole
+  (#59). Evidence: [painted-underlines](../measurements/painted-underlines/record.md) records the
+  neighbouring rule; this one is measured in the commit.
+- **The book's own prose (#255).** A crop never admits a line that reads as the book's own prose.
+  Where no cut clears such a line while still holding the region's core, the crop keeps its own
+  extent rather than growing into it, exactly as the page-furniture rule below does; `takes` then
+  leaves the line in the prose, so the picture loses nothing and the sentence is not buried.
+  Prose is `readsAsSentence` — four or more words of two letters or more — and, for a line written
+  in the Latin alphabet in a book that declares English, it must also read as English words: the
+  CIA report's crops sit over handwritten tables whose text layer is
+  `0/iLE 1112£ E/(19U/,£r//?/Z/`, which passes the sentence shape and recovers nothing. The word
+  test runs only on Latin-alphabet lines, because an English lexicon reads a Chinese or Arabic
+  line as no words at all and the corpus lane converts those books as English.
+  This recovers 45,754 characters across eight of the eighteen corpus books, three quarters of the
+  magazine's text among them. One cost is known and recorded: the magazine's recovered lines
+  read in its columns' interleaved order (#174's defect, on text that used to be hidden inside
+  the pictures). Evidence: [prose-inside-crops](../measurements/prose-inside-crops/record.md).
+- **A table's column header (#257).** The rule above never releases a line the page set as the
+  label of a table's columns. The CIA report's crops preserve its statistical tables as pictures,
+  and the lines that rule let out of them included those tables' headers — `Number Per Cent
+  Number Per Cent Nuntler Per Cent`, `Certain Doubtful Total Certain Doubtful Total` — every
+  token of which is an English word, so the word test admits them, and which beside the picture
+  of their own table say nothing a reader can use.
+  A header is read from two things at once, because neither alone is enough.
+  *The page set the line in a table's columns:* its printed row holds pieces the page kept apart
+  as cells, each beginning at or after the one before it ends, and at least two other rows of the
+  page begin a piece on the same column edge. `rowBlocks` cannot read these tables, because this
+  book's inherited text layer gives every printed row a size of its own and the crop has taken
+  the rows beneath.
+  *The line prints one column label once per column:* the same short group of words over and
+  over, read against the first group and the group before it, with words compared within an edit
+  distance of half the shorter one, because the recognizer spoils words a group at a time and
+  letters within a word (`Nuntler` for `Number`, `Ooubtfut` for `Doubtful`). Four repeated words
+  in five must agree.
+  Geometry alone would not do: the magazine's three-column pages hand back their columns on
+  shared baselines, so every row of running prose there has a table's shape, and on geometry
+  alone this rule buries 17,340 characters of its articles. With both halves it moves the CIA
+  report alone, by 1,457 characters, and every other book is unchanged.
+  The report's handwriting is not this rule's to fix: that book's inherited OCR layer is
+  unverified, and #216 catalogues what it produces.
+  Evidence: [table-headers-inside-crops](../measurements/table-headers-inside-crops/record.md).
+- **Page furniture.** A region spanning at least 90% of the page's measure and flush against its
+  top or bottom edge is the page's own furniture — a footer or header background — not a figure
+  with a claim on the text near it. It keeps its own extent rather than growing to a line it only
+  grazes, and a crop takes the lines whose middle it holds. Dietary Guidelines page 2 paints such
+  a band to y=80.12 and prints its notes from y=77.49 to y=85.45; growing into the 2.63 points of
+  overlap took two of the page's four notes out of the book (#246). Every other region keeps the
+  whole-line growth of #36, including a fraction bar, whose terms lie outside its seed by
+  construction. Evidence: [footer-band-notes](../measurements/footer-band-notes/record.md).
+- **Inline fractions.** A bar at the right edge of a line that reads as a sentence, with a line of
+  at most two words beneath it inside the bar's own measure, is an inline fraction whose numerator
+  PDFKit merged into the sentence. The denominator joins that line as `numerator/denominator` and
+  stops being a block of its own: Wallace page 137 reads `use the slope rise/run to get the next
+  point`, where it had set `run` adrift on its own line (#53). `isFractionBar` cannot decide these,
+  because a display fraction's test requires the term above the bar to carry no word of three
+  letters, which a numerator merged into prose never satisfies. A numerator that is a line of its
+  own keeps its crop.
 - **Thin rules.** A painted rule at most 6 pt high and at least 12 pt (and three times its height)
   wide, measured after `GraphicsReader`'s two-point padding, is a typographic separator rather than
   a figure. Such a rule seeds no region when it underlines one text line — it lies within that
@@ -939,12 +1155,61 @@ whitespace and case normalization and permitting a publication-name prefix; fres
 pages and exclusively invisible image-backed text are rejected. Matching candidates become
 chapter boundaries: their source markers stay standalone, cross-boundary paragraph joins are
 prevented, and the writer flushes the preceding spine document before each. Bookmarks do not
-manufacture headings or links.
+manufacture headings: an outline entry is not a heading in the text, and writing one would put
+words on the page the page does not print. They do supply navigation, which EPUB models
+separately — see `OutlineReader`.
 
 Evidence: [chapter-boundaries](../measurements/chapter-boundaries/record.md).
 
+## OutlineReader
+
+The author's own table of contents becomes the EPUB's `nav epub:type="toc"`, nested as the
+author nested it, each entry a link to its destination page's marker (#249). Where a document
+states no usable outline, navigation stays the flat list of detected headings, which is what
+every document had before. Headings keep their ids either way, so nothing in the text stops
+being addressable.
+
+Not every outline is a table of contents, and a document whose outline is a machine artifact
+would navigate worse than its detected headings, so `isNavigation` gates it on shape alone,
+reading nothing: at least two entries; at most 10,000 and at most three for each page of the
+book; at most four levels deep; and more than half the titles distinct. Four of the twelve
+corpus outlines fail it — the FAA handbook's tagged-structure dump (7,689 entries, eleven deep,
+for 522 pages: `Structure Bookmarks`, `Document`, `Article`, `1-1`), the CIA report's 313 entries
+all labeled `Figure`, the Warren report's single entry labeled `Test`, and the copper summary's
+single entry — and each of those keeps the navigation it had.
+
+An entry's title is normalized as any stated value and bounded at 512 characters; the USCIS
+guide's wraps over two lines and is joined. An entry that resolves to no page of this document —
+a remote or non-`GoTo` action, as before — groups its children in a `span`, and is left out
+where it has none, because a navigation item must name something. Resolution of an entry's
+destination is deferred to `EPUBWriter.finish`, where `SpinePacker.pages` holds the finished
+page-to-file map: an entry read on page 12 may name page 400, whose spine document does not
+exist when the outline is read.
+
+Evidence: [outline-navigation](../measurements/outline-navigation/record.md).
+
 ## PageRasterizer and PageAssetWriter: images
 
+- **The source's own picture (#251).** A crop that is exactly one placed JPEG is written as that
+  JPEG rather than redrawn: the original stream is what the page holds, and a render can only
+  resample it. The magazine's eight extractable figures fall from 2,316,672 rendered bytes to
+  316,106, because the render was upsampling a 365 × 322 photograph to 656 × 579. Where a source
+  image is higher resolution than the render the bytes go up instead, so the byte budget is
+  checked against the real size before the asset is committed and the render is the fallback.
+  The conditions are narrow and everything else keeps the render it always had: one placed image
+  covering at least 98% of the crop and covered by it to the same degree, nothing else of the
+  page's pictures touching that crop, no rotation or skew and an unrotated page, `DCTDecode`
+  only, no soft mask, colour-key mask, stencil or `/Decode` array, eight bits a component, a
+  device RGB or gray space or an ICC-based one of one or three components, and a JPEG whose own
+  frame header states the size and component count the image dictionary does. An ICC profile is
+  written into the extracted file as APP2 segments, so its colours stay the page's; nearly every
+  `DCTDecode` image in the corpus is ICC-based, so refusing them would leave the rule doing
+  nothing. A page whose content stream cannot be walked to the end extracts nothing at all.
+  Full-page assets are never extracted: a page image stands for everything on its page, and a
+  page can draw text over a photograph. A client that names `.png` for regions gets the render it
+  asked for, and `.automatic`'s classifier is bypassed rather than consulted, an extracted
+  original having already made that choice.
+  Evidence: [embedded-image-extraction](../measurements/embedded-image-extraction/record.md).
 - Rasters are rendered from the original page at the requested DPI (default 180), each full page
   or crop independently bounded by the pixel ceiling (12 million by default; a 1-million control
   reduces an FAA page to about 106 DPI while a small crop still reaches about 239 DPI).
@@ -968,17 +1233,94 @@ Evidence: [chapter-boundaries](../measurements/chapter-boundaries/record.md).
   source-page image recommended for this page. Compare the source PDF for visual content and
   transcription accuracy.") without suppressing the OCR, unverified-layer or annotation warnings.
   Rotated, unsupported or unrecoverable pages keep one required full-page fallback under every
-  policy (`pageImageFallback`; `.always` does not duplicate it). Visible annotations report
-  `annotationsNotConverted`; link and form interactions are not reconstructed.
+  policy (`pageImageFallback`; `.always` does not duplicate it). An annotation that did not
+  convert reports `annotationsNotConverted` and requires a page reference; a page whose every
+  annotation is a converted link requires neither (#247).
 
 Evidence: [raster-dpi](../measurements/raster-dpi/record.md),
 [warren-image-encoding](../measurements/warren-image-encoding/record.md),
 [client-options](../measurements/client-options/record.md),
 [noaa-output-policies](../measurements/noaa-output-policies/record.md).
 
+## Links
+
+- **Converted links (#247).** A link annotation becomes an EPUB anchor. Its rectangle is mapped
+  onto characters with #235's geometry: the selection over the annotation's horizontal extent
+  within the line's box is the linked text, and the selection from the line's left edge to the
+  annotation's start gives the offset, so one occurrence of a word is distinguished from another
+  on the same line. The annotation and the line must meet over at least half the line's height,
+  and the text PDFKit selects must be the text at the computed offset, or the link is dropped
+  rather than placed on guessed words. None of the underline rule's guards against decoration
+  apply: the page states outright that a rectangle points somewhere, so a link over a whole line,
+  over one letter, or over a line that reads as no sentence is still that link.
+- An external target is carried only in the schemes `http`, `https` and `mailto`, at most 2,000
+  characters, with no whitespace and nothing XML cannot carry. `javascript:` and `file:` are
+  dropped and counted, as is any other scheme and any destination outside this document.
+- An internal target names a one-based physical page and is written as a link to that page's
+  marker in whichever spine document ends up holding it
+  ([decision 0010](decisions/0010-deferred-page-destinations.md)). The token it carries until
+  then is padded to a fixed 48 characters, which no resolved href can reach, so resolving it can
+  only shorten a body `SpinePacker` has already measured against its byte target.
+- One link the page breaks over two printed lines is one anchor: the elements a line join
+  separates are merged when only whitespace lies between them. A link whose rectangle covers at
+  least half a figure's crop links the figure rather than any text.
+- A page whose appearance is preserved whole, and one whose text is an invisible transcription
+  over a scan, keep no links: there is no run to anchor, so their links count as unconverted.
+- `annotationsNotConverted` states how many links converted and how many annotations did not,
+  and is emitted only when something did not. Only such a page requires a page reference, which
+  is what that warning has always claimed.
+  Evidence: [converted-links](../measurements/converted-links/record.md).
+
 ## EPUBWriter, SpinePacker, EPUBTextEncoder
 
-- Output is EPUB 3: XHTML spine documents, a stylesheet, metadata, flat heading navigation, a
+- **Painted underlines (#235).** A page can emphasize a word by painting a rule under it rather
+  than by setting an underlined font, which leaves no trace in the text layer. Such a run is
+  marked and written `<u>`, which states the appearance the page draws without claiming a link.
+  PDFKit's own hit-testing supplies the range — the selection over the rule's horizontal extent
+  is the underlined text and the one before it gives the offset — so the 9/11 report's page 161
+  marks `gain` and not the `gains` later on the same line. Four guards keep it off what is not
+  emphasis: the rule sits inside the line's box rather than above it (a radical's vinculum
+  belongs to the line above), starts inside the measure rather than at its left edge (an
+  underlined section label is the line's own decoration), spans under 90% of the measure (a
+  table's rule), and covers at least two letters on a line that reads as a sentence. Inline
+  mathematics inside a prose line is a known exception: four vincula in Wallace are marked, cost
+  no text, and would need glyph extents to separate.
+  Evidence: [painted-underlines](../measurements/painted-underlines/record.md).
+
+- **Package metadata (#253).** The package document states what the client supplied and, where
+  the client supplied nothing, what the document states about itself in its information
+  dictionary: `/Title` as `dc:title`, `/Author` as `dc:creator`, `/Subject` as `dc:description`,
+  each `/Keywords` entry as its own `dc:subject`, and `/CreationDate` as `dcterms:created`.
+  `options.title` and `options.author` win where they are set, as `options.title` always has.
+  The two mappings that are not the literal reading of the key names follow XMP's, and the
+  corpus shows why: the NBS paper states its whole 433-character abstract in `/Subject`, which
+  is a description and not a subject heading; and a creation date is when the file was made, not
+  when the work was published — the scans of 1955, 1964 and 1977 works state 2026, 2013 and 2010
+  — so it is never written as `dc:date`, which means publication in EPUB 3.
+  Every value is untrusted document text, normalized once in `SourceMetadata`: characters XML 1.0
+  cannot carry are removed, whitespace runs collapse to one space, and a value states nothing
+  when it is blank, has no letter or digit, names its own field, or runs past 1,000 characters
+  (dropped whole rather than truncated, because half a sentence misstates the document). At most
+  64 keywords are carried, split on commas and semicolons whether PDFKit hands back one string or
+  an array, deduplicated without regard to case. A terse value is still a statement: the IRS
+  publication's `W:CAR:MP:FP` author converts as written. Metadata taken from the source is a
+  function of the source, so byte-reproducible packaging is undisturbed.
+- **Printed page numbers (#248).** A page marker and its page-list entry show the page number the
+  source prints, where the document states one: `<span epub:type="pagebreak" id="page-3"
+  aria-label="i"/>` for a front-matter page a reader sees numbered `i`. EPUB's page-list exists so
+  that a reader can jump to a page of the print edition, and a book with front matter used to
+  report numbers that matched nothing on its pages. PDFKit resolves the `/PageLabels` number tree
+  — roman, arabic, prefixed, restarting — so nothing here parses it. Four corpus documents state
+  labels: the Fed report (`a`, `b`, `i`…`vi`, then `1`), the USCIS guide (`front-1`, `cover-i`,
+  then `1`), NCA5 and the dietary guidelines.
+  The fragment stays the physical page, because it is an XML id, because internal links aim at it,
+  and because two physical pages may print the same number — the dietary guidelines print `1`
+  twice, NCA5 prints `i` twice. `ConversionReport` counts and every `ConversionWarning.page` stay
+  physical too: a warning names a page a developer can find in the source file. A label is
+  normalized as any other stated value and must be at most 32 characters (the corpus's longest is
+  `cover-108`); anything else leaves the physical number to speak for the page, as does a document
+  that declares no labels at all.
+- Output is EPUB 3: XHTML spine documents, a stylesheet, metadata, navigation (`OutlineReader`), a
   source page-list, an OPF 3.0 package and the required first, uncompressed `mimetype` entry.
   `EPUBTextEncoder` escapes source markup (raw text is escaped before inline elements are added
   inside `<pre>`), excludes the control characters XML 1.0 forbids, and emits page markers and

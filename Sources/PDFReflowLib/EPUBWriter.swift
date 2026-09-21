@@ -22,12 +22,19 @@ actor EPUBWriter {
     private var title = ""
     private var language = ""
     private var author: String?
+    private var summary: String?
+    private var keywords: [String] = []
+    private var created: Date?
+    private var pageLabels: [Int: String] = [:]
+    private var outline: [OutlineEntry] = []
     private var packer = SpinePacker(bodyTargetBytes: EPUBWriter.bodyTargetBytes, chapterStartPages: [])
     private var validation = ReflowDocument.Validation()
     /// Assets in arrival order: the archive names them by that order and packages their bytes.
     private var assets: [ReflowDocument.Asset] = []
     private var imagePaths: [String] = []
     private var imagePathByID: [String: String] = [:]
+    /// Spine documents holding an internal link whose page is not yet placed (#247).
+    private var documentsWithPageLinks: [String] = []
     private var consumed: Int64 = 0
     private var started = false
 
@@ -60,7 +67,13 @@ actor EPUBWriter {
             title = metadata.title
             language = xml(metadata.language)
             author = metadata.author
-            packer = SpinePacker(bodyTargetBytes: Self.bodyTargetBytes, chapterStartPages: chapterStartPages)
+            summary = metadata.summary
+            keywords = metadata.keywords
+            created = metadata.created
+            pageLabels = metadata.pageLabels
+            outline = metadata.outline
+            packer = SpinePacker(bodyTargetBytes: Self.bodyTargetBytes, chapterStartPages: chapterStartPages,
+                                 pageLabels: metadata.pageLabels)
             try FileManager.default.createDirectory(at: directory.appendingPathComponent("META-INF"),
                                                     withIntermediateDirectories: true)
             try FileManager.default.createDirectory(at: publication, withIntermediateDirectories: true)
@@ -74,7 +87,8 @@ actor EPUBWriter {
         case let .block(block):
             precondition(started, "blocks follow the document's start")
             if case let .sourcePage(number) = block.content {
-                try write(try packer.add(sourcePage: number, markup: EPUBTextEncoder.sourcePage(number),
+                try write(try packer.add(sourcePage: number,
+                                         markup: EPUBTextEncoder.sourcePage(number, labels: pageLabels),
                                          budgetRemaining: maximumOutputBytes - consumed))
             } else {
                 try write(try packer.add(EPUBTextEncoder.piece(for: block, imagePaths: imagePathByID),
@@ -90,7 +104,18 @@ actor EPUBWriter {
         try validation.finish()
         try write(try packer.finish(budgetRemaining: maximumOutputBytes - consumed))
         let chapters = packer.documentNames
-        var toc = packer.toc.map(\.markup)
+        // An outline entry names a page, and which spine document holds a page is only known
+        // once every document has closed — which is now. `packer.pages` is that map (#249).
+        var pageFiles: [Int: String] = [:]
+        for entry in packer.pages where entry.fragment.hasPrefix("page-") {
+            pageFiles[Int(entry.fragment.dropFirst(5)) ?? 0] = entry.file
+        }
+        try resolvePageLinks(pageFiles: pageFiles)
+        // The author's own contents is the navigation where the document states a usable one;
+        // the detected headings are the navigation everywhere else. Headings keep their ids
+        // either way, so nothing in the text stops being addressable.
+        var toc = Self.markup(outline, pageFiles: pageFiles)
+        if toc.isEmpty { toc = packer.toc.map(\.markup) }
         if toc.isEmpty { toc = ["<li><a href=\"\(chapters[0])\">\(xml(title))</a></li>"] }
         let nav = """
         <nav epub:type="toc" id="toc"><h1>Contents</h1><ol>\(toc.joined())</ol></nav>
@@ -108,6 +133,15 @@ actor EPUBWriter {
         let modificationDate = self.modificationDate ?? Date()
         let modified = ISO8601DateFormatter().string(from: modificationDate)
         let author = self.author.map { "<dc:creator>\(xml($0))</dc:creator>" } ?? ""
+        let summary = self.summary.map { "<dc:description>\(xml($0))</dc:description>" } ?? ""
+        let subjects = keywords.map { "<dc:subject>\(xml($0))</dc:subject>" }.joined()
+        // The source's creation date, which is when the file was made and not when the work was
+        // published: the corpus's scans state 2010, 2013 and 2026 for works of 1977, 1964 and
+        // 1955. `dc:date` means publication in EPUB 3, so this is `dcterms:created`, which claims
+        // only what the document claims.
+        let created = self.created.map {
+            "<meta property=\"dcterms:created\">\(ISO8601DateFormatter().string(from: $0))</meta>"
+        } ?? ""
         let manifest = chapters.enumerated().map {
             "<item id=\"c\($0.offset)\" href=\"\($0.element)\" media-type=\"application/xhtml+xml\"/>"
         }.joined() + imagePaths.enumerated().map {
@@ -117,7 +151,7 @@ actor EPUBWriter {
         try writeText("""
         <?xml version="1.0" encoding="UTF-8"?>
         <package xmlns="http://www.idpf.org/2007/opf" version="3.0" unique-identifier="book-id" prefix="rendition: http://www.idpf.org/vocab/rendition/#">
-        <metadata xmlns:dc="http://purl.org/dc/elements/1.1/"><dc:identifier id="book-id">\(identifier)</dc:identifier><dc:title>\(xml(title))</dc:title><dc:language>\(language)</dc:language>\(author)<meta property="dcterms:modified">\(modified)</meta><meta property="rendition:layout">reflowable</meta></metadata>
+        <metadata xmlns:dc="http://purl.org/dc/elements/1.1/"><dc:identifier id="book-id">\(identifier)</dc:identifier><dc:title>\(xml(title))</dc:title><dc:language>\(language)</dc:language>\(author)\(summary)\(subjects)\(created)<meta property="dcterms:modified">\(modified)</meta><meta property="rendition:layout">reflowable</meta></metadata>
         <manifest><item id="nav" href="nav.xhtml" media-type="application/xhtml+xml" properties="nav"/><item id="css" href="style.css" media-type="text/css"/>\(manifest)</manifest><spine>\(spine)</spine></package>
         """, publication.appendingPathComponent("package.opf"))
         try writeText("""
@@ -158,6 +192,23 @@ actor EPUBWriter {
         return archiveURL
     }
 
+    /// Outline entries as EPUB navigation list items, nested as the author nested them. An entry
+    /// whose page did not resolve groups its children in a `span`, and one with neither a
+    /// resolved page nor children is left out, because a list item must name something.
+    private static func markup(_ entries: [OutlineEntry], pageFiles: [Int: String]) -> [String] {
+        var items: [String] = []
+        for entry in entries {
+            let nested = markup(entry.children, pageFiles: pageFiles)
+            let list = nested.isEmpty ? "" : "<ol>\(nested.joined())</ol>"
+            if let page = entry.page, let file = pageFiles[page] {
+                items.append("<li><a href=\"\(file)#page-\(page)\">\(xml(entry.title))</a>\(list)</li>")
+            } else if !list.isEmpty {
+                items.append("<li><span>\(xml(entry.title))</span>\(list)</li>")
+            }
+        }
+        return items
+    }
+
     private func document(_ body: String, name: String) -> String {
         """
         <?xml version="1.0" encoding="UTF-8"?>
@@ -175,7 +226,44 @@ actor EPUBWriter {
 
     private func write(_ documents: [SpinePacker.Document]) throws {
         for spineDocument in documents {
+            if spineDocument.body.contains(EPUBTextEncoder.pageLinkToken) {
+                documentsWithPageLinks.append(spineDocument.name)
+            }
             try writeText(document(spineDocument.body, name: title), publication.appendingPathComponent(spineDocument.name))
+        }
+    }
+
+    /// Rewrites the page tokens an internal link carries into the file that holds its page (#247).
+    ///
+    /// A link on page 12 can name page 400, whose spine document does not exist when the link is
+    /// serialized; `SpinePacker.pages` knows which document holds which page only once the last
+    /// one has closed. Only the documents that actually hold a token are read back, so a book
+    /// without internal links is written exactly as it was before. A page the map does not name —
+    /// which no conversion has produced, since every page emits a marker — resolves to the
+    /// document the link is in, so a published book never carries an href that resolves to
+    /// nothing.
+    private func resolvePageLinks(pageFiles: [Int: String]) throws {
+        for name in documentsWithPageLinks {
+            try Task.checkCancellation()
+            let url = publication.appendingPathComponent(name)
+            let text = try String(contentsOf: url, encoding: .utf8)
+            var resolved = ""
+            var rest = Substring(text)
+            while let token = rest.range(of: EPUBTextEncoder.pageLinkToken) {
+                resolved += rest[..<token.lowerBound]
+                let digits = rest[token.upperBound...].prefix(while: \.isNumber)
+                let page = Int(digits) ?? 0
+                // The token is padded to a fixed width so that resolving it can only shorten the
+                // body the packer already measured; the padding goes with it.
+                let padding = rest[token.upperBound...].dropFirst(digits.count).prefix(while: { $0 == "-" })
+                resolved += pageFiles[page].map { "\($0)#page-\(page)" } ?? name
+                rest = rest[token.upperBound...].dropFirst(digits.count + padding.count)
+            }
+            resolved += rest
+            guard resolved != text else { continue }
+            consumed += Int64(resolved.utf8.count) - Int64(text.utf8.count)
+            guard consumed <= maximumOutputBytes else { throw ConversionError.resourceLimit("EPUB text size") }
+            try resolved.write(to: url, atomically: true, encoding: .utf8)
         }
     }
 }

@@ -17,6 +17,9 @@ struct ExtractedPage: Equatable, Sendable {
     /// their line was left as PDFKit read it (`GlyphIndexDecoder.unreadGlyphs`). Zero on every
     /// page without an index-glyph font.
     var unreadGlyphs: Int
+    /// The page number the source prints on this page, where it states one and it differs from
+    /// the physical index (#248). Nil leaves the physical index to speak for the page.
+    var printedLabel: String?
     /// Warnings the readers raised, in emission order.
     var warnings: [PageWarning]
 }
@@ -44,13 +47,26 @@ enum PageReader {
             let requiresPageImage = graphics.unsupported || page.rotation % 360 != 0
             let syntheticStyle = graphics.hasOnlyInvisibleText
                 && graphics.regions.contains { PageDiagnosis.coversPage($0, bounds: bounds) }
+            // Link annotations convert to anchors (#247), so they are read before the text: the
+            // reader marks the runs they cover as it builds each line. A page whose appearance is
+            // preserved whole, or whose text is an invisible transcription of a scan, keeps
+            // neither styles nor links, so its links are counted as unconverted with the rest.
+            let styled = !requiresPageImage && !syntheticStyle
+            var links: [PageLink] = []
+            var unconvertedAnnotations = 0
+            for annotation in page.annotations {
+                if styled, let link = link(annotation, on: page) { links.append(link) }
+                else { unconvertedAnnotations += 1 }
+            }
             // Invisible text over a scan supplies transcription, not source typography.
             // Fallback pages contribute vocabulary and furniture evidence, but their
             // formatting is never emitted. Avoid decoding attributed image attachments.
             var content = PageContent(number: i + 1, bounds: bounds,
-                lines: try NativeTextReader.lines(on: page, limit: limit,
-                    includeStyle: !requiresPageImage && !syntheticStyle), graphics: graphics.regions,
+                lines: try NativeTextReader.lines(on: page, limit: limit, includeStyle: styled,
+                    rules: graphics.regions.filter(LayoutReconstructor.isThinRule),
+                    links: links), graphics: graphics.regions,
                 pictures: graphics.images)
+            content.links = links
             if !requiresPageImage && !syntheticStyle && options.ocr != .always, let structure,
                let tags = structure.pages[i + 1], !tags.isEmpty,
                !(StructureTreeReader.validates(tags, owners: structure.owners[i + 1] ?? [:], page: reference)
@@ -62,10 +78,13 @@ enum PageReader {
             if graphics.unsupported {
                 warnings.append(.unsupportedGraphics)
             }
-            let annotated = !page.annotations.isEmpty
-            if annotated {
+            // Only an annotation that did not convert still needs the page's own picture, which
+            // is what `annotationsNotConverted` has always claimed and now means (#247).
+            let annotated = !links.isEmpty || unconvertedAnnotations > 0
+            if unconvertedAnnotations > 0 {
                 content.preservePageReference = true
-                warnings.append(.annotationsNotConverted)
+                warnings.append(.annotationsNotConverted(converted: links.count,
+                                                         unconverted: unconvertedAnnotations))
             }
             // A page whose content stream paints nothing: no extracted text, no visible text
             // operator, no painted region (a white ground is not one) and no annotation. The
@@ -86,8 +105,49 @@ enum PageReader {
             let unread = unmappedFont
                 ? GlyphIndexDecoder.unreadGlyphs(on: reference, in: content.lines.map(\.text).joined(separator: "\n"))
                 : 0
+            // PDFKit resolves the `/PageLabels` number tree — roman, arabic, prefixed, restarting
+            // — so the reader never parses it. A document that declares none labels its pages
+            // with their own physical numbers, which is what the writer falls back to anyway.
+            let printed = SourceMetadata.pageLabel(page.label)
             return ExtractedPage(content: content, hasUnmappedFont: unmappedFont,
-                                 unreadGlyphs: unread, warnings: warnings)
+                                 unreadGlyphs: unread,
+                                 printedLabel: printed == "\(i + 1)" ? nil : printed,
+                                 warnings: warnings)
         }
+    }
+
+    /// The schemes an external link may use. Everything else — `javascript:`, `file:`, an
+    /// embedded-file or launch action — is dropped and counted as unconverted (#247).
+    static let linkSchemes: Set<String> = ["http", "https", "mailto"]
+    /// A link's target is written into an attribute of the output document; a URL longer than a
+    /// reader would ever follow is not carried.
+    static let maximumTargetCharacters = 2_000
+
+    /// One annotation as a link, or nil where it is not a link this converter reproduces.
+    static func link(_ annotation: PDFAnnotation, on page: PDFPage) -> PageLink? {
+        guard annotation.type == "Link" else { return nil }
+        let rect = annotation.bounds
+        guard rect.isFinite, rect.width > 0, rect.height > 0 else { return nil }
+        if let url = (annotation.action as? PDFActionURL)?.url ?? annotation.url {
+            return externalTarget(url).map { PageLink(rect: rect, target: $0) }
+        }
+        guard let destination = annotation.destination ?? (annotation.action as? PDFActionGoTo)?.destination,
+              let document = page.document, let target = destination.page, target.document === document else {
+            return nil
+        }
+        let index = document.index(for: target)
+        guard index != NSNotFound, index < document.pageCount else { return nil }
+        return PageLink(rect: rect, target: .page(index + 1))
+    }
+
+    /// An external target, where its scheme is one this converter reproduces and its text can be
+    /// written into an XML attribute as it stands.
+    static func externalTarget(_ url: URL) -> LinkTarget? {
+        let text = url.absoluteString
+        guard let scheme = url.scheme?.lowercased(), linkSchemes.contains(scheme),
+              !text.isEmpty, text.count <= maximumTargetCharacters,
+              text.unicodeScalars.allSatisfy(isXMLCharacter),
+              !text.contains(where: { $0.isWhitespace || $0.isNewline }) else { return nil }
+        return .external(text)
     }
 }

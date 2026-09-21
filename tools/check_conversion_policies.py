@@ -92,6 +92,39 @@ def main():
                           check=True, timeout=120)
         results.append({'name': name, 'command': run.command, 'imageCount': image_count, 'passed': True})
         print('PASS ' + name, flush=True)
+    # A declared language reaches the package document (#108).
+    tagged = args.output / 'language.epub'
+    convert(converter, fixtures / 'prose.pdf', tagged, '--language', 'zh-Hans', timeout=60)
+    with zipfile.ZipFile(tagged) as archive:
+        package = next(n for n in archive.namelist() if n.endswith('.opf'))
+        text = archive.read(package).decode('utf-8')
+    assert '<dc:language>zh-Hans</dc:language>' in text, 'declared language missing from the package'
+    print('PASS language-tag', flush=True)
+    # A locked document converts with its password and with no other (#252). The password is
+    # read from a file, so it never reaches the argument list or the process table.
+    password_file = args.output / 'password.txt'
+    password_file.write_text('reflow')
+    wrong_file = args.output / 'wrong-password.txt'
+    wrong_file.write_text('not the password')
+    unlocked = args.output / 'unlocked.epub'
+    convert(converter, fixtures / 'encrypted.pdf', unlocked, '--password-file', str(password_file), timeout=60)
+    assert 'A locked page reflows once its password unlocks it.' in checks.check(unlocked)
+    # The same password on standard input, which is the form that leaves no file behind.
+    piped = args.output / 'unlocked-stdin.epub'
+    convert(converter, fixtures / 'encrypted.pdf', piped, '--password-file', '-', timeout=60, input='reflow\n')
+    assert 'A locked page reflows once its password unlocks it.' in checks.check(piped)
+    for flags, expected in ((['--password-file', str(wrong_file)], 'The PDF is password-protected.'),
+                            ([], 'The PDF is password-protected.'),
+                            (['--password-file', str(args.output / 'absent.txt')], 'cannot read the password file'),
+                            (['--password-file', str(args.output / 'empty.txt')], 'states no password')):
+        (args.output / 'empty.txt').write_text('')
+        output = args.output / 'must-not-exist.epub'
+        run = convert(converter, fixtures / 'encrypted.pdf', output, *flags, timeout=60, check=False)
+        assert run.returncode == 1 and not output.exists(), flags
+        assert expected in run.stderr, (flags, run.stderr)
+        # Whatever the CLI says about a failure, it does not say the password.
+        assert 'not the password' not in run.stderr, run.stderr
+    print('PASS locked-document', flush=True)
     failures = [
         ['--reference-images', 'invalid'], ['--region-image-encoding', 'jpeg:nan'],
         ['--full-page-image-encoding', 'smallest:1.1'], ['--full-page-image-encoding', 'jpeg:-0.1'],
@@ -102,6 +135,10 @@ def main():
         ['--ocr', 'invalid'], ['--ocr'],
         ['--repeated-headers-and-footers', 'drop'], ['--repeated-headers-and-footers', 'KEEP'],
         ['--repeated-headers-and-footers'],
+        # A language tag decides dc:language and the rules that only hold for a declared
+        # language, so a malformed one fails rather than converting as something else (#108).
+        ['--language', ''], ['--language', 'en_US'], ['--language', 'zh--Hans'],
+        ['--language', 'en-'], ['--language', '1en'], ['--language'],
     ]
     for flags in failures:
         output = args.output / 'must-not-exist.epub'

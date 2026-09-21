@@ -11,9 +11,9 @@ enum StructureTreeReader {
         var rejected = false
     }
 
-    static func read(_ url: URL) throws -> Index {
+    static func read(_ url: URL, password: ConversionOptions.Password? = nil) throws -> Index {
         try autoreleasepool {
-            guard let document = CGPDFDocument(url as CFURL), let catalog = document.catalog,
+            guard let document = SourceDocument.openCore(url, password: password), let catalog = document.catalog,
                   let root = CGPDFObjects.dictionary(catalog, "StructTreeRoot") else { return Index() }
             let reader = Reader(document: document, root: root)
             do { return try reader.read() }

@@ -247,11 +247,90 @@ func aBoundaryBesideTextTheShowsCannotAccountForIsDropped() {
     // A space PDFKit already sets at the boundary inserts nothing.
     #expect(NativeSpacingReader.segmentedInsertions(in: Array("the Twin Towers, the signature".utf16),
                                                     source: source, boundaries: boundaries) == nil)
-    // Nothing resynchronizes on fewer than eight matching characters.
-    #expect(NativeSpacingReader.resynchronize(source: Array("abcdefgh".utf16), at: 0,
-                                              extracted: Array("Xabcdefgh".utf16), at: 0) != nil)
-    #expect(NativeSpacingReader.resynchronize(source: Array("abcdefg".utf16), at: 0,
-                                              extracted: Array("Xabcdefg".utf16), at: 0) == nil)
+    // Nothing resynchronizes on fewer matching characters than the anchor asks for.
+    let anchor = String("abcdefghijklmnopqrstuvwxyz".prefix(NativeSpacingReader.anchorLength))
+    #expect(NativeSpacingReader.resynchronize(source: Array(anchor.utf16), at: 0,
+                                              extracted: Array(("X" + anchor).utf16), at: 0) != nil)
+    #expect(NativeSpacingReader.resynchronize(source: Array(anchor.dropLast().utf16), at: 0,
+                                              extracted: Array(("X" + anchor.dropLast()).utf16), at: 0) == nil)
+    // A run that recurs earlier in the line must not take the walk to the wrong half of a row:
+    // the 9/11 appendix sets `Abu Bara al Yemeni (a.k.a.Abu al Bara al Ta’izi` as one row, and
+    // `Bara al ` occurs in both halves. The anchor is long enough to tell them apart (#120).
+    let row = Array("Abu Bara al Yemeni (a.k.a.Abu al Bara al Ta’izi,Suhail".utf16)
+    let half = Array("(a.k.a.Abu al Bara al Ta’izi, Suhail".utf16)
+    #expect(NativeSpacingReader.resynchronize(source: row, at: 0, extracted: half, at: 0)?.0 == 19)
+    #expect(NativeSpacingReader.segmentedInsertions(in: half, source: row, boundaries: [26, 48]) == [7])
+}
+
+// MARK: - The shows a line holds beside ones it does not (#258)
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/258"))
+func aShowTwoLineRectanglesHoldIsAHoleRatherThanTheEndOfTheLine() throws {
+    // Three shows on one baseline, the middle one also inside a second rectangle. The line keeps
+    // the two it alone holds and reads the third as a hole: nothing of its own, and no boundary
+    // computed against it, because the line may not have drawn it.
+    let line = CGRect(x: 0, y: 100, width: 200, height: 12)
+    let neighbor = CGRect(x: 40, y: 104, width: 40, height: 12)
+    let shows = [CGPoint(x: 10, y: 102), CGPoint(x: 50, y: 106), CGPoint(x: 120, y: 102)].map {
+        NativeSpacingReader.Evidence(origin: $0, text: "x", unicode: "x", end: $0.x + 6, size: 12, font: 1,
+                                     wordSpaces: [1], sentenceSpaces: [1])
+    }
+    let held = NativeSpacingReader.heldShows(shows, bounds: line, allBounds: [line, neighbor])
+    #expect(held.count == 3)
+    #expect(held.map(\.origin) == shows.map(\.origin))
+    #expect(held.map(\.unicode) == ["x", nil, "x"])
+    #expect(held.map(\.end) == [16, nil, 126])
+    #expect(held.map(\.wordSpaces) == [[1], [], [1]])
+    #expect(held.map(\.sentenceSpaces) == [[1], [], [1]])
+    // The predecessor rule refuses the whole line for the same geometry, which is #258's defect.
+    #expect(NativeSpacingReader.anchoredShows(shows, bounds: line, allBounds: [line, neighbor]) == nil)
+    #expect(NativeSpacingReader.anchoredShows(shows, bounds: line, allBounds: [line])?.count == 3)
+    // A rectangle every show is ambiguous in holds only holes, and so supplies no evidence at all.
+    #expect(NativeSpacingReader.heldShows(shows, bounds: line, allBounds: [line, line]).allSatisfy { $0.unicode == nil })
+    #expect(NativeSpacingReader.line(of: NativeSpacingReader.heldShows(shows, bounds: line, allBounds: [line, line])).source.isEmpty)
+}
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/258"))
+func sourceLineWhoseRectangleHoldsAnotherRowsShowsStillAppliesItsOwn() throws {
+    // Wallace page 281's `Convert 8cubic feet to yd3 …` carries an exponent and two stacked
+    // fractions, so PDFKit's rectangle for it is 69 points tall and holds the origins of eight
+    // shows belonging to the fraction rows drawn inside it. The line's own shows spell its text
+    // and place the `8|cubic` font change at 0.16 em, which the rules already admit.
+    let changed = try changedLines(spacing: "algebra-281", layout: "algebra-281")
+    #expect(changed == ["Convert 8cubic feet to yd3 Write 8ft3 as fraction, put it over 1":
+                        "Convert 8 cubic feet to yd3 Write 8ft3 as fraction, put it over 1"])
+}
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/258"))
+func sourceSuperscriptSharedByTwoLineRectanglesLeavesEachLineItsOwnReading() throws {
+    // Wallace page 186 raises `b0`'s exponent into the rectangle of the line above it, so that one
+    // show lies in both rectangles and both lines refused every boundary they held. The line that
+    // holds the `3|and` font change now applies it; the two lines that share the exponent read it
+    // as a hole and keep the text PDFKit gave them, because neither can say it drew it.
+    let changed = try changedLines(spacing: "algebra-186", layout: "algebra-186")
+    #expect(changed == [
+        "2 Move 3and b to denominator because of negative exponents":
+            "2 Move 3 and b to denominator because of negative exponents",
+        // The page's one line whose rectangle holds nothing else, repaired since #120.
+        "Move 2with negative exponent down and z0 =1": "Move 2 with negative exponent down and z0 =1",
+    ])
+}
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/258"))
+func sourceChartRowWhoseRectangleHoldsTheRowBelowSeparatesItsOwnColumns() throws {
+    // A positive control from the other producer: the FAA handbook's page 459 performance chart,
+    // whose rows PDFKit reads as overlapping rectangles. `Spc Range` runs two of its own cells
+    // together at a character-spaced column gap, which #120's rule already measures; the row
+    // refused it because the row beneath reaches into its rectangle.
+    // Every other line of the chart page, numbers and prose alike, comes back as it already did:
+    // the four column gaps #120 already separated, and nothing else.
+    #expect(try changedLines(spacing: "faa-459", layout: "faa-459") == [
+        "Spc Range 0.165 0.1780.199": "Spc Range 0.165 0.178 0.199",
+        "M0.82M0.80 M0.74": "M0.82 M0.80 M0.74",
+        "290Speed": "290 Speed",
+        "390Speed 459 424": "390 Speed 459 424",
+        "FL290 FL310FL330 FL350FL370 FL390": "FL290 FL310 FL330 FL350 FL370 FL390",
+    ])
 }
 
 // MARK: - The rules (#119, #128)
@@ -307,4 +386,20 @@ func sentenceSpaceReadsTheWordsAroundTheBoundaryNotTheGap() {
     #expect(!sentence("\u{1D452}.", "The "))
     #expect(!sentence("casualties.", "The ", gap: 1.01))
     #expect(!sentence("casualties.", "The ", gap: -0.16))
+}
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/120"))
+func aNumberSetAgainstAWordClosesAtATighterGapThanTheRuleWants() {
+    // Wallace sets `8cent stamps` and `Subtract 5from both sides` with a font change and a gap of
+    // 0.12 to 0.13 em, where the font-change rule wants 0.15, and left them fused.
+    // The longest word that opens the run, which is all the boundary rule needs to know.
+    #expect(EnglishText.openingWord("centstamplesas") == "cents")
+    #expect(EnglishText.openingWord("timesasmany") == "times")
+    #expect(EnglishText.openingWord("frombothsides") == "from")
+    #expect(EnglishText.openingWord("placesthen") == "places")
+    // Algebra opens with no word, so the same page's `30qpr` and `5q` keep the tighter reading.
+    #expect(EnglishText.openingWord("qpr") == nil)
+    #expect(EnglishText.openingWord("q") == nil)
+    #expect(EnglishText.openingWord("xy") == nil)
+    #expect(EnglishText.openingWord("") == nil)
 }

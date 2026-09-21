@@ -1,5 +1,16 @@
 import Foundation
 
+/// One entry of the table of contents a document states for itself, which `OutlineReader` reads
+/// and the writer renders as navigation (#249). The model owns the type so that it carries no
+/// dependency on how the outline was read.
+struct OutlineEntry: Sendable, Equatable {
+    var title: String
+    /// One-based physical page. Nil where the entry resolves to no page of this document and
+    /// only groups the entries under it.
+    var page: Int?
+    var children: [OutlineEntry] = []
+}
+
 /// The output-independent logical document. Assets are file-backed for the conversion's lifetime.
 /// This is an internal value model, not a public interchange schema.
 struct ReflowDocument: Sendable, Equatable {
@@ -7,6 +18,18 @@ struct ReflowDocument: Sendable, Equatable {
         var title: String
         var language: String
         var author: String?
+        /// `dc:description`: the source's `/Subject`, or a client's own summary.
+        var summary: String?
+        /// One `dc:subject` each: the source's `/Keywords`.
+        var keywords: [String] = []
+        /// `dcterms:created`: the source's `/CreationDate`.
+        var created: Date?
+        /// The page number the source prints, by physical page, where the two differ (#248).
+        /// A page absent here is labeled with its physical number.
+        var pageLabels: [Int: String] = [:]
+        /// The author's own table of contents, where the document states a usable one (#249).
+        /// Empty leaves navigation to the headings the layout pass detected.
+        var outline: [OutlineEntry] = []
     }
 
     struct Asset: Sendable, Equatable {
@@ -116,11 +139,27 @@ struct TextStyle: OptionSet, Sendable, Equatable, Codable {
     static let italic = TextStyle(rawValue: 1 << 1)
     static let superscript = TextStyle(rawValue: 1 << 2)
     static let `subscript` = TextStyle(rawValue: 1 << 3)
+    /// A rule the page paints under a run of words, which is emphasis the font does not carry
+    /// (#235). Not a link: the writer emits `<u>`, which states appearance without claiming one.
+    static let underline = TextStyle(rawValue: 1 << 4)
+}
+
+/// Where a link the source draws points (#247).
+///
+/// A target is a payload rather than a flag, so it cannot join `TextStyle`. External targets are
+/// already checked against the scheme allowlist when one is made; an internal target is a
+/// one-based physical page of this document, which only the writer can turn into a file name.
+enum LinkTarget: Sendable, Equatable, Codable {
+    case external(String)
+    case page(Int)
 }
 
 struct InlineText: Sendable, Equatable, Codable {
     enum Element: Sendable, Equatable, Codable {
         case text(String, TextStyle)
+        /// A run the source links, with the text it covers (#247). A link never nests another:
+        /// the reader marks a run once, from one annotation.
+        case link(LinkTarget, InlineText)
         /// A source boundary can occur inside a paragraph or even inside a repaired word.
         case sourcePage(Int)
     }
@@ -132,37 +171,130 @@ struct InlineText: Sendable, Equatable, Codable {
     init(elements: [Element]) { self.elements = elements }
 
     var text: String {
-        elements.map { if case let .text(value, _) = $0 { value } else { "" } }.joined()
+        elements.map { element in
+            switch element {
+            case let .text(value, _): value
+            case let .link(_, text): text.text
+            case .sourcePage: ""
+            }
+        }.joined()
     }
     var sourcePages: [Int] {
-        elements.compactMap { if case let .sourcePage(page) = $0 { page } else { nil } }
+        elements.flatMap { element -> [Int] in
+            switch element {
+            case let .sourcePage(page): [page]
+            case let .link(_, text): text.sourcePages
+            case .text: []
+            }
+        }
+    }
+    /// Every link this text carries, in order, with the text each covers.
+    var links: [(target: LinkTarget, text: String)] {
+        elements.compactMap { if case let .link(target, text) = $0 { (target, text.text) } else { nil } }
     }
 
     mutating func append(_ other: InlineText) { elements += other.elements }
 
+    /// Replaces the last character in place, keeping the run's style. The line-end hyphen repair
+    /// uses it to put back the hyphen a book's font drew but encoded as another character (#233).
+    mutating func replaceLastCharacter(with character: Character) {
+        for index in elements.indices.reversed() {
+            switch elements[index] {
+            case let .text(value, style) where !value.isEmpty:
+                elements[index] = .text(String(value.dropLast()) + String(character), style)
+                return
+            // A word a page breaks can end inside a link, so the repair reaches into one (#247).
+            case let .link(target, text) where !text.text.isEmpty:
+                var inner = text
+                inner.replaceLastCharacter(with: character)
+                elements[index] = .link(target, inner)
+                return
+            default: continue
+            }
+        }
+    }
+
     mutating func removeLastCharacter() {
         for index in elements.indices.reversed() {
-            if case let .text(value, style) = elements[index], !value.isEmpty {
+            switch elements[index] {
+            case let .text(value, style) where !value.isEmpty:
                 let shortened = String(value.dropLast())
                 if shortened.isEmpty { elements.remove(at: index) }
                 else { elements[index] = .text(shortened, style) }
                 return
+            case let .link(target, text) where !text.text.isEmpty:
+                var inner = text
+                inner.removeLastCharacter()
+                if inner.elements.isEmpty { elements.remove(at: index) }
+                else { elements[index] = .link(target, inner) }
+                return
+            default: continue
             }
         }
+    }
+
+    /// Joins runs of one link that a line break separated (#247).
+    ///
+    /// A sentence one link covers over two printed lines arrives as two link elements with the
+    /// space the join inserted between them. They are one link in the source and one anchor in
+    /// the output, so they become one element here rather than two anchors a reader's cursor
+    /// falls out of mid-sentence. Only a run of whitespace may lie between them; anything else
+    /// is text the link does not cover.
+    mutating func mergeAdjacentLinks() {
+        var merged: [Element] = []
+        for element in elements {
+            guard case let .link(target, text) = element else { merged.append(element); continue }
+            // The text runs between this link and the last one, which must all be whitespace.
+            var between: [Element] = []
+            var index = merged.count
+            while index > 0, case let .text(value, _) = merged[index - 1],
+                  value.allSatisfy(\.isWhitespace) {
+                index -= 1
+                between.insert(merged[index], at: 0)
+            }
+            guard index > 0, case let .link(previous, before) = merged[index - 1], previous == target else {
+                merged.append(element)
+                continue
+            }
+            var joined = before
+            joined.elements += between + text.elements
+            merged.removeSubrange((index - 1)...)
+            merged.append(.link(target, joined))
+        }
+        elements = merged
     }
 
     func trimmingCharacters(in set: CharacterSet) -> InlineText {
         var result = self
         func matches(_ character: Character) -> Bool { character.unicodeScalars.allSatisfy(set.contains) }
-        while let first = result.elements.first, case let .text(value, style) = first {
-            let trimmed = String(value.drop(while: matches))
-            if trimmed.isEmpty { result.elements.removeFirst() }
-            else { result.elements[0] = .text(trimmed, style); break }
+        while let first = result.elements.first {
+            switch first {
+            case let .text(value, style):
+                let trimmed = String(value.drop(while: matches))
+                if trimmed.isEmpty { result.elements.removeFirst(); continue }
+                result.elements[0] = .text(trimmed, style)
+            case let .link(target, text):
+                let trimmed = text.trimmingCharacters(in: set)
+                if trimmed.elements.isEmpty { result.elements.removeFirst(); continue }
+                result.elements[0] = .link(target, trimmed)
+            case .sourcePage: break
+            }
+            break
         }
-        while let last = result.elements.last, case let .text(value, style) = last {
-            let trimmed = String(value.reversed().drop(while: matches).reversed())
-            if trimmed.isEmpty { result.elements.removeLast() }
-            else { result.elements[result.elements.count - 1] = .text(trimmed, style); break }
+        while let last = result.elements.last {
+            let index = result.elements.count - 1
+            switch last {
+            case let .text(value, style):
+                let trimmed = String(value.reversed().drop(while: matches).reversed())
+                if trimmed.isEmpty { result.elements.removeLast(); continue }
+                result.elements[index] = .text(trimmed, style)
+            case let .link(target, text):
+                let trimmed = text.trimmingCharacters(in: set)
+                if trimmed.elements.isEmpty { result.elements.removeLast(); continue }
+                result.elements[index] = .link(target, trimmed)
+            case .sourcePage: break
+            }
+            break
         }
         return result
     }
@@ -173,6 +305,8 @@ struct ReflowBlock: Sendable, Equatable {
         var assetID: String
         var alternativeText: String
         var caption: String
+        /// Where the source links this figure, if it does (#247).
+        var link: LinkTarget?
     }
     enum Content: Sendable, Equatable {
         case paragraph(InlineText)

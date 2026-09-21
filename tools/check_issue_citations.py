@@ -64,6 +64,13 @@ ALLOWED = {
     # Fixed, and cited for what it established or where the behavior came from.
     7: ('historical', 'the text-layer quality rules #93/#7 introduced, which this library implements'),
     21: ('historical', 'the extraction gate, named by the issue that established it'),
+    233: ('historical', 'the line-end hyphen a book encodes as another character, on main and named by its issue'),
+    42: ('historical', 'the East Asian spacing and heading rules, on main and named by their issue'),
+    235: ('historical', 'the painted-underline rule, on main and named by its issue'),
+    246: ('historical', "the page-furniture rule for a footer band, on main and named by its issue"),
+    59: ('historical', 'the released half of a word a crop cut off, on main and named by its issue'),
+    183: ('historical', 'the list-marker size rule, on main and named by its issue; its mirror is #254'),
+    245: ('historical', 'the crop rule it established, on main and named by its issue'),
     24: ('historical', 'a research note recording that #24 was closed with no production change'),
     26: ('historical', 'the reproducibility finding a pinning client is told to record'),
     30: ('historical', 'the coverage expansion that added seven corpus cases, used as its name'),

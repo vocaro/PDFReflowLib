@@ -1,9 +1,11 @@
 import CoreGraphics
 import Foundation
 
-/// The type-size evidence one page supplies for its heading decisions, computed once per page.
-/// `pageLines` are every line on the page; `reflowableLines` exclude text preserved inside images,
-/// because small labels inside a figure must not turn the surrounding prose into headings.
+/// The type-size evidence one page supplies for its heading decisions and the leading its own
+/// text states, computed once per page. `pageLines` are every line on the page;
+/// `reflowableLines` exclude text preserved inside images, because small labels inside a figure
+/// must not turn the surrounding prose into headings, and a figure's stacked labels say nothing
+/// about the leading the prose is set on.
 struct PageTypography: Equatable {
     /// The page's body: the character-weighted commonest size over every line, at least 4 pt.
     let body: CGFloat
@@ -19,6 +21,8 @@ struct PageTypography: Equatable {
     /// The size at or above which a line reads as a heading: a quarter over the page body, a
     /// tenth over the heading body, and the document floor.
     let headingThreshold: CGFloat
+    /// The leading the page's reflowable text states, or nil where it states none (#123).
+    let leading: CGFloat?
 
     init(pageLines: [TextLine], reflowableLines: [TextLine], documentBody: CGFloat?) {
         let body = max(4, LayoutReconstructor.bodySize(pageLines))
@@ -30,6 +34,7 @@ struct PageTypography: Equatable {
         self.headingBody = headingBody
         self.documentFloor = documentFloor
         headingThreshold = max(body * 1.25, headingBody * 1.1, documentFloor)
+        leading = LayoutReconstructor.statedLeading(reflowableLines)
     }
 
     /// The typography of a whole page's lines, with no document floor: what the label survey and

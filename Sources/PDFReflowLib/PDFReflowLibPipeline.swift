@@ -35,25 +35,29 @@ enum PDFReflowLibPipeline {
                             recognize: Recognizer = { try await OCRReader.read(page: $0, options: $1) },
                             emit: (@Sendable (ReflowPart) async throws -> Void)? = nil,
                             progress: @Sendable (ConversionProgress) async -> Void) async throws -> Result {
-        let document = try PDFPageSource(url: source)
+        let document = try PDFPageSource(url: source, password: options.password)
         let total = document.pageCount
         guard total <= options.maximumPages else { throw ConversionError.resourceLimit("page count") }
         try FileManager.default.createDirectory(at: workspace.appendingPathComponent("assets"),
                                                  withIntermediateDirectories: true)
 
         // Tagged-text association happens once per page; the index is released after extraction.
-        var structure: StructureTreeReader.Index? = try StructureTreeReader.read(source)
+        var structure: StructureTreeReader.Index? = try StructureTreeReader.read(source, password: options.password)
         var warnings: [ConversionWarning] = []
         if structure?.rejected == true {
             warnings.append(ConversionWarnings.structureTreeFallback())
         }
-        var evidence = DocumentEvidence(chapterCandidates: try ChapterBoundaryReader.read(source), language: options.language)
+        var evidence = DocumentEvidence(chapterCandidates: try ChapterBoundaryReader.read(source, password: options.password), language: options.language)
+        // The author's own contents, for navigation only; it manufactures no heading (#249).
+        let outline = try OutlineReader.read(source, password: options.password)
         let store = PageStore(directory: workspace.appendingPathComponent("pages"))
         let judge = RecognitionJudge.english(language: options.language)
         /// Pages whose type, if any, arrives inside an image: no text layer, or text over a
         /// page-sized graphic. The encoding classifier reads a typeset full-page raster of such a
         /// page as a scan rather than born-digital text (#193).
         var pagesDrawnFromImage: Set<Int> = []
+        /// The page numbers the source prints, where they differ from the physical index (#248).
+        var pageLabels: [Int: String] = [:]
 
         for i in 0..<total {
             try Task.checkCancellation()
@@ -61,6 +65,7 @@ enum PDFReflowLibPipeline {
                                                 limit: options.maximumCharacters - evidence.characters,
                                                 options: options, structure: structure)
             warnings += extracted.warnings.map { ConversionWarnings.warning($0, page: i + 1, options: options) }
+            if let printed = extracted.printedLabel { pageLabels[i + 1] = printed }
             // Both ink tests share one rendering of the page, made only when a judgment needs it.
             let ink = PageInkMeasurer(bounds: extracted.content.bounds, lines: extracted.content.lines) {
                 try autoreleasepool {
@@ -112,10 +117,15 @@ enum PDFReflowLibPipeline {
         let send: (ReflowPart) async throws -> Void = { part in
             if let emit { try await emit(part) } else { collector.accept(part) }
         }
-        let title = options.title ?? document.title
-            ?? source.deletingPathExtension().lastPathComponent
+        // Client values win over the document's own, exactly as `options.title` always has; what
+        // the document states fills the rest (#253).
+        let stated = document.metadata
+        let title = options.title ?? stated.title ?? source.deletingPathExtension().lastPathComponent
         try await send(.start(.init(title: title.isEmpty ? "Untitled" : title, language: options.language,
-                                    author: options.author), chapterStartPages: evidence.chapterStartPages))
+                                    author: options.author ?? stated.author, summary: stated.summary,
+                                    keywords: stated.keywords, created: stated.created,
+                                    pageLabels: pageLabels, outline: outline),
+                              chapterStartPages: evidence.chapterStartPages))
         let assets = PageAssetWriter(workspace: workspace, options: options)
         var sentAssets = 0
         var reflowed = 0
@@ -138,7 +148,7 @@ enum PDFReflowLibPipeline {
                     warnings.append(ConversionWarnings.warning(.pageImageFallback, page: i + 1, options: options))
                 } else {
                     var images: [(CGRect, String)] = []
-                    for rect in LayoutReconstructor.graphicsWithLabels(content) {
+                    for rect in LayoutReconstructor.graphicsWithLabels(content, language: options.language) {
                         images.append((rect, try assets.save(page: page, rect: rect,
                                                             drawnFromImage: pagesDrawnFromImage.contains(i))))
                     }

@@ -37,11 +37,17 @@ enum NativeTextReader {
         return try autoreleasepool { try operation() }
     }
 
-    static func lines(on page: PDFPage, limit: Int, includeStyle: Bool = true) throws -> [TextLine] {
-        try withExtractionLock { try extractLines(on: page, limit: limit, includeStyle: includeStyle) }
+    /// `rules` are the page's painted thin rules, which supply the underline evidence the text
+    /// layer does not carry (#235).
+    static func lines(on page: PDFPage, limit: Int, includeStyle: Bool = true,
+                      rules: [CGRect] = [], links: [PageLink] = []) throws -> [TextLine] {
+        try withExtractionLock {
+            try extractLines(on: page, limit: limit, includeStyle: includeStyle, rules: rules, links: links)
+        }
     }
 
-    private static func extractLines(on page: PDFPage, limit: Int, includeStyle: Bool) throws -> [TextLine] {
+    private static func extractLines(on page: PDFPage, limit: Int, includeStyle: Bool,
+                                     rules: [CGRect], links: [PageLink] = []) throws -> [TextLine] {
         guard page.numberOfCharacters <= limit else {
             throw ConversionError.resourceLimit("too many characters")
         }
@@ -81,7 +87,13 @@ enum NativeTextReader {
             guard bounds.isFinite, !bounds.isNull, bounds.width > 0, bounds.height > 0 else { carry = nil; continue }
             // Object-only selections were discarded before requesting attributed text,
             // which can make PDFKit decode large image attachments.
-            let attributed = includeStyle ? attributedByLine[index] ?? line.attributedString : nil
+            var attributed = includeStyle ? attributedByLine[index] ?? line.attributedString : nil
+            if includeStyle, !rules.isEmpty, let text = attributed {
+                attributed = markUnderlines(text, box: bounds, rules: rules, on: page)
+            }
+            if includeStyle, !links.isEmpty, let text = attributed {
+                attributed = markLinks(text, box: bounds, links: links, on: page)
+            }
             let spacingFixed = attributed.map {
                 $0.string == raw ? NativeSpacingReader.apply(spacing, to: $0, bounds: bounds, allBounds: boundsByLine) : $0
             }
@@ -92,6 +104,9 @@ enum NativeTextReader {
                 repaired = GlyphIdentityReader.apply(glyphs, to: spacingFixed, bounds: bounds,
                                                      allBounds: boundsByLine, carry: &carry)
             }
+            // Chinese sets no space between the characters of a word, so a space the text layer
+            // carries between two ideographs was never in the writing (#42).
+            repaired = repaired.map(CJKText.joinIdeographs)
             let corrected = repaired?.string != attributed?.string
                 ? repaired?.string.replacingOccurrences(of: "\u{FFFC}", with: " ") : nil
             result.append(textLine(semantic: corrected ?? semantic,
@@ -153,12 +168,146 @@ enum NativeTextReader {
         return cursor == text.length ? ranges : nil
     }
 
+    /// Marks the runs a page paints a rule under, so emphasis the font does not carry survives
+    /// reflow (#235).
+    ///
+    /// The 9/11 report underlines single words by painting a filled path, not by setting an
+    /// underlined font, so nothing in the text layer records it. PDFKit's own hit-testing supplies
+    /// the range: the selection over the rule's horizontal extent within the line's box is the
+    /// underlined text, and the selection from the line's left edge to the rule's start is what
+    /// precedes it, whose length is the offset. Position is what resolves a word the line holds
+    /// twice — page 161 underlines `gain` on a line that also reads `gains`.
+    ///
+    /// `GraphicsReader` pads a region by two points on each side, which is removed before asking,
+    /// or the selection takes the character beyond the rule's ink. A rule reaching most of the
+    /// line's measure is its decoration or a table's rule rather than emphasis of a word, and a
+    /// run of no letters is not a word, so neither is marked. A computed range whose text is not
+    /// the text PDFKit selected is dropped rather than guessed at.
+    private static func markUnderlines(_ attributed: NSAttributedString, box: CGRect, rules: [CGRect],
+                                       on page: PDFPage) -> NSAttributedString {
+        let underlining = rules.map { $0.insetBy(dx: 2, dy: 0) }.filter { rule in
+            rule.width > 0 && rule.width <= box.width * 0.9
+                // Inside the line's own box, in its lower half: a rule above the box belongs to
+                // the line above it — Wallace's radical vincula sit a point or two over the line
+                // beneath them and would otherwise read as its underline.
+                && rule.midY >= box.minY && rule.midY <= box.minY + box.height * 0.5
+                // A rule under the start of a line is that line's own decoration — an underlined
+                // section label, a heading's rule — and the words it carries are not emphasized
+                // against the rest of the line. Emphasis of a word sits inside the measure.
+                && rule.minX > box.minX + 1 && rule.maxX <= box.maxX + 3
+        }
+        // Emphasis is a thing running prose does. A line of mathematics is full of rules that are
+        // its terms' — vincula, fraction bars — and none of them emphasizes anything, so a line
+        // that does not read as a sentence is left alone.
+        let words = attributed.string.split(whereSeparator: { !$0.isLetter }).filter { $0.count >= 2 }
+        guard !underlining.isEmpty, attributed.length > 0, words.count >= 4 else { return attributed }
+        let marked = NSMutableAttributedString(attributedString: attributed)
+        for rule in underlining {
+            let over = CGRect(x: rule.minX, y: box.minY, width: rule.width, height: box.height)
+            let before = CGRect(x: box.minX, y: box.minY, width: max(0, rule.minX - box.minX),
+                                height: box.height)
+            // Emphasis marks words. A rule over a single letter or a digit is a mathematical
+            // term's — a radical's vinculum, a fraction's bar — and Wallace's `y`, `2` and `− y`
+            // are what marking those produces.
+            guard let text = page.selection(for: over)?.string, text.utf16.count <= 60,
+                  text.filter(\.isLetter).count >= 2 else { continue }
+            let offset = page.selection(for: before)?.string?.utf16.count ?? 0
+            let range = NSRange(location: offset, length: text.utf16.count)
+            guard range.location >= 0, range.upperBound <= marked.length,
+                  (marked.string as NSString).substring(with: range) == text else { continue }
+            marked.addAttribute(.underlineStyle, value: NSUnderlineStyle.single.rawValue, range: range)
+        }
+        return marked
+    }
+
+    /// The target of the link covering a run, set by `markLinks` and read by `inlineText`.
+    private static let linkAttribute = NSAttributedString.Key("PDFReflowLinkTarget")
+
+    /// Carries a link target through an attributed string, which stores objects.
+    private final class LinkBox: NSObject {
+        let target: LinkTarget
+        init(_ target: LinkTarget) { self.target = target }
+    }
+
+    /// Marks the runs a link annotation covers, so a link survives reflow as a link (#247).
+    ///
+    /// This is #235's geometry, which the underline rule established: the selection over the
+    /// annotation's horizontal extent within the line's box is the linked text, and the selection
+    /// from the line's left edge to the annotation's start gives the offset. Position is what
+    /// distinguishes one occurrence of a word from another on the same line.
+    ///
+    /// None of the underline rule's guards against decoration apply here. A link is not
+    /// typography a reader might mistake for something else: the page states outright that this
+    /// rectangle points somewhere, so a link over a whole line, over one letter, or over a line
+    /// that reads as no sentence is still that link. The only requirements are that the
+    /// annotation and the line meet over most of the line's height — a link on the line above
+    /// must not claim this one — and that the text PDFKit selects is the text at the computed
+    /// offset, which is what keeps a mismatch from marking the wrong words.
+    private static func markLinks(_ attributed: NSAttributedString, box: CGRect, links: [PageLink],
+                                  on page: PDFPage) -> NSAttributedString {
+        guard attributed.length > 0 else { return attributed }
+        let covering = links.filter { link in
+            let overlap = link.rect.intersection(box)
+            return !overlap.isNull && overlap.width >= 1 && overlap.height >= box.height * 0.5
+        }
+        guard !covering.isEmpty else { return attributed }
+        let marked = NSMutableAttributedString(attributedString: attributed)
+        for link in covering {
+            let overlap = link.rect.intersection(box)
+            let over = CGRect(x: overlap.minX, y: box.minY, width: overlap.width, height: box.height)
+            let before = CGRect(x: box.minX, y: box.minY, width: max(0, overlap.minX - box.minX),
+                                height: box.height)
+            guard let text = page.selection(for: over)?.string,
+                  !text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else { continue }
+            let offset = page.selection(for: before)?.string?.utf16.count ?? 0
+            let range = NSRange(location: offset, length: text.utf16.count)
+            guard range.location >= 0, range.length > 0, range.upperBound <= marked.length,
+                  (marked.string as NSString).substring(with: range) == text else { continue }
+            marked.addAttribute(linkAttribute, value: LinkBox(link.target), range: range)
+        }
+        return marked
+    }
+
+    /// The size a line's own text is set in, where a list marker opens it at a size of its own.
+    ///
+    /// A marker is drawn at whatever size the page likes: the Fed's page 58 sets a 10-point bullet
+    /// over 8-point text on 14 lines, and IRS Publication 596 sets one large enough that seven of
+    /// its bulleted sentences were read as headings. The line's size comes from its first
+    /// character, so the marker states it for the whole line, in either direction — a marker
+    /// larger than its item overstates the line and a smaller one understates it (#183, #254).
+    ///
+    /// Only a line opening with a marker glyph and a space is concerned, and only the run holding
+    /// that marker is skipped. A contents line's dot leaders, a drop cap and an opening quotation
+    /// mark are not markers and are left exactly as they were: weighting every character instead
+    /// cost the Fed its seven chapter entries and Our Flag its Pledge of Allegiance display lines,
+    /// which is the survey this rule replaced.
+    private static func sizeAfterListMarker(_ attributed: NSAttributedString) -> CGFloat? {
+        let string = attributed.string as NSString
+        guard string.length >= 2, let opening = string.substring(to: 1).first,
+              !opening.isLetter, !opening.isNumber, !opening.isWhitespace,
+              string.substring(with: NSRange(location: 1, length: 1)).first?.isWhitespace == true
+        else { return nil }
+        var markerRange = NSRange()
+        guard let marker = attributed.attribute(.font, at: 0, effectiveRange: &markerRange) as? PlatformFont,
+              markerRange.upperBound < attributed.length else { return nil }
+        let size = (attributed.attribute(.font, at: markerRange.upperBound, effectiveRange: nil)
+            as? PlatformFont)?.pointSize
+        // Correcting the smaller marker too is what promoted IRS Publication 596's starred
+        // footnotes into headings while this rule read one direction only. What stops that is not
+        // a bound on the size but the reading of the line: a bulleted line is an item of a list,
+        // whatever size its text is set in, and `LayoutReconstructor.role` no longer calls one a
+        // heading (#254).
+        guard let size, size.isFinite, size > 0, marker.pointSize != size else { return nil }
+        return size
+    }
+
     static func textLine(semantic: String, bounds: CGRect, attributed: NSAttributedString?) -> TextLine {
         let font = (attributed?.length ?? 0) > 0
             ? attributed?.attribute(.font, at: 0, effectiveRange: nil) as? PlatformFont : nil
         let name = font?.fontName.lowercased() ?? ""
         let mono = name.contains("courier") || name.contains("mono")
-        let proposedSize = font?.pointSize ?? bounds.height
+        // A list marker is drawn at its own size and must not state the line's (#183).
+        let proposedSize = attributed.flatMap(sizeAfterListMarker) ?? font?.pointSize ?? bounds.height
         let size = proposedSize.isFinite && proposedSize > 0 && proposedSize <= 100_000
             ? proposedSize : min(100_000, bounds.height)
         let text = semantic.trimmingCharacters(in: mono ? .newlines : .whitespacesAndNewlines)
@@ -223,7 +372,7 @@ enum NativeTextReader {
 
     static func inlineText(from attributed: NSAttributedString) -> InlineText {
         let hasDropCap = dropCapBodySize(in: attributed) != nil
-        var runs: [InlineText.Element] = []
+        var runs: [(text: String, style: TextStyle, link: LinkTarget?)] = []
         var previous: (offset: Double, size: Double, text: String)?
         attributed.enumerateAttributes(in: NSRange(location: 0, length: attributed.length)) { attributes, range, _ in
             let font = attributes[.font] as? PlatformFont
@@ -233,6 +382,8 @@ enum NativeTextReader {
             var style: TextStyle = []
             if name.contains("italic") || name.contains("oblique") { style.insert(.italic) }
             if name.contains("bold") { style.insert(.bold) }
+            // Set by `markUnderlines` from the page's own painted rules, not by the font (#235).
+            if attributes[.underlineStyle] != nil { style.insert(.underline) }
             // PDFKit supplies Core Text baseline offsets even when font size/name do not
             // change. Preserve that evidence instead of guessing from character offsets.
             let offset = (attributes[NSAttributedString.Key(kCTBaselineOffsetAttributeName as String)] as? NSNumber
@@ -247,7 +398,7 @@ enum NativeTextReader {
                (abs(offset) > size * 0.75 || abs(previous.offset) > previous.size * 0.75),
                let last = previous.text.last, let first = run.first,
                !last.isWhitespace, !first.isWhitespace, last != "-", last != "\u{00ad}" {
-                runs.append(.text(" ", []))
+                runs.append((" ", [], nil))
             }
             previous = font != nil && size.isFinite && size > 0 && offset.isFinite
                 ? (offset, size, run) : nil
@@ -263,8 +414,32 @@ enum NativeTextReader {
                 if offset > tolerance { style.insert(.superscript) }
                 else if offset < -tolerance { style.insert(.subscript) }
             }
-            runs.append(.text(run, style))
+            runs.append((run, style, (attributes[linkAttribute] as? LinkBox)?.target))
         }
-        return InlineText(elements: runs).trimmingCharacters(in: .whitespacesAndNewlines)
+        // `enumerateAttributes` splits at every attribute change, including ones no style reads, so
+        // one underlined word can arrive as several runs of one style. Adjacent runs that read the
+        // same are one run, which keeps `<u>more</u>` from being written `<u>mor</u><u>e</u>`.
+        var merged: [(text: String, style: TextStyle, link: LinkTarget?)] = []
+        for run in runs {
+            if let previous = merged.last, previous.style == run.style, previous.link == run.link {
+                merged[merged.count - 1].text += run.text
+            } else {
+                merged.append(run)
+            }
+        }
+        // Consecutive runs one link covers are one anchor over its styled runs, not one anchor
+        // each: a linked phrase whose middle word is italic stays one link (#247).
+        var elements: [InlineText.Element] = []
+        for run in merged {
+            guard let target = run.link else { elements.append(.text(run.text, run.style)); continue }
+            if case let .link(previous, inner)? = elements.last, previous == target {
+                var inner = inner
+                inner.elements.append(.text(run.text, run.style))
+                elements[elements.count - 1] = .link(target, inner)
+            } else {
+                elements.append(.link(target, InlineText(elements: [.text(run.text, run.style)])))
+            }
+        }
+        return InlineText(elements: elements).trimmingCharacters(in: .whitespacesAndNewlines)
     }
 }

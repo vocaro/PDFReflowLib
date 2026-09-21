@@ -32,6 +32,8 @@ struct SpinePacker {
 
     let bodyTargetBytes: Int
     let chapterStartPages: Set<Int>
+    /// The page numbers the source prints, where they differ from the physical index (#248).
+    let pageLabels: [Int: String]
     private(set) var documentNames: [String] = []
     private(set) var toc: [Entry] = []
     private(set) var pages: [Entry] = []
@@ -42,9 +44,10 @@ struct SpinePacker {
     /// navigation entries they added. A size split carries them into the next document.
     private var trailingHeadings: (bodyBytes: Int, toc: Int, pages: Int)?
 
-    init(bodyTargetBytes: Int, chapterStartPages: Set<Int>) {
+    init(bodyTargetBytes: Int, chapterStartPages: Set<Int>, pageLabels: [Int: String] = [:]) {
         self.bodyTargetBytes = bodyTargetBytes
         self.chapterStartPages = chapterStartPages
+        self.pageLabels = pageLabels
     }
 
     var nextDocumentName: String { "chapter-\(documentNames.count + 1).xhtml" }
@@ -99,7 +102,10 @@ struct SpinePacker {
         }
         let name = nextDocumentName
         for number in sourcePages {
-            pages.append(Entry(file: name, fragment: "page-\(number)", text: "\(number)"))
+            // The fragment is the physical page: it is an XML id, and a document may print the
+            // same number on two pages. The entry's text is what the source prints (#248).
+            pages.append(Entry(file: name, fragment: "page-\(number)",
+                               text: xml(EPUBTextEncoder.label(number, labels: pageLabels))))
         }
         if let heading {
             toc.append(Entry(file: name, fragment: xml(heading.id), text: xml(heading.text)))

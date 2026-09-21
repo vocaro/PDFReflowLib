@@ -265,7 +265,12 @@ def assess(case, contract, result, report, pages, markers, *, documents=(),
     if (contract['sourceSHA256'] != case['sha256'] or any(
             result.get('case', {}).get(k) != case[k] for k in ('id', 'sha256', 'bytes', 'pages'))):
         errors.append('Source identity differs from the reviewed contract')
-    if result.get('runPassed') is not True or result.get('conversionExitCode') != 0:
+    # A ceiling host memory pressure left unmeasured says nothing about this document's content
+    # ([decision 0009](../doc/decisions/0009-an-unmeasured-ceiling-is-not-a-failure.md)), so the
+    # contract is assessed on its own terms; every other gate still has to have passed.
+    unmeasured_memory = (result.get('memoryGate', {}).get('status') == 'notMeasured'
+                         and result.get('gatesPassedApartFromMemory') is True)
+    if result.get('conversionExitCode') != 0 or not (result.get('runPassed') is True or unmeasured_memory):
         errors.append('Conversion/resource/progress evaluation did not pass')
     if report.get('pageCount') != case['pages'] or markers != list(range(1, case['pages'] + 1)):
         errors.append('Missing, duplicated or reordered source pages')

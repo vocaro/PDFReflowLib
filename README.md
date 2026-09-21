@@ -98,21 +98,23 @@ across hard wraps and page breaks; validated PDF paragraph and heading tags supp
 levels where they are trustworthy; hyphens, recurring headers and footers, code, lists and
 headings are decided by bounded, evidence-based rules. Core Graphics scans painted regions so
 figures, ruled tables, labels, displayed formulas and fractions are cropped from the original
-rendering. Vision recognizes pages with missing or damaged text, existing text that does not read
+rendering, and a figure that is exactly one embedded JPEG is written as that JPEG rather than
+redrawn. Vision recognizes pages with missing or damaged text, existing text that does not read
 as a plausible transcription of its page image, born-digital text without a usable Unicode
 mapping, and pages whose only writing is drawn; every such page is warned. Recognition can return
 success while leaving whole paragraphs or table columns unread, so each recognized page is
 measured against its own text-shaped ink, recognized again in overlapping bands when the reading
 does not account for the page, and warned when the writing it left out remains. Output is EPUB 3 with
-XHTML chapters split near 60 KB, styles, metadata, flat heading navigation, a source page-list
-and an OPF 3.0 package.
+XHTML chapters split near 60 KB, styles, metadata, the author's own table of contents as
+navigation where the document states a usable one and detected headings where it does not, a
+source page-list that shows the page numbers the source prints, and an OPF 3.0 package.
 
 Every rule, threshold and warning code is specified in the
 [behavior specification](doc/behavior.md); the modules and seams are described in
 [architecture](doc/architecture.md). PDF structure is ambiguous: untagged borderless tables,
 arbitrary equations, complex magazine layouts, footnote relationships, vertical/RTL reading order
 and damaged font encodings still need broader qualification, and fonts, original colors, full
-tagged-PDF semantics, links and interactive elements are not reproduced. Cropped text is neither
+tagged-PDF semantics and form interactions are not reproduced. Cropped text is neither
 reflowable nor accessible as text. Review warnings and compare the source before distributing a
 derived book.
 
@@ -137,7 +139,7 @@ swift run pdf-reflow scanned.pdf output.epub --no-ocr
 Run from this directory with a full Xcode selected. The CLI prints progress to stderr and the
 conversion report as JSON to stdout. Paths with spaces must be shell-quoted.
 
-Six original, redistributable-with-the-project PDFs (eight pages) are bundled with the tests:
+Eight original, redistributable-with-the-project PDFs (eleven pages) are bundled with the tests:
 
 | Fixture | Regression coverage |
 | --- | --- |
@@ -147,10 +149,13 @@ Six original, redistributable-with-the-project PDFs (eight pages) are bundled wi
 | `lists-code.pdf` | Lists, code indentation, source markup escaping, bold/italic |
 | `rotated.pdf` | Explicit appearance-preserving whole-page fallback |
 | `scanned.pdf` | Real Vision OCR plus original page containing a figure |
+| `encrypted.pdf` | A locked document (40-bit RC4, password `reflow`) that converts once unlocked |
+| `links.pdf` | External, mailto, refused-scheme, two-line and figure links, and a cross-reference |
 
 Tests use the real Apple PDF/OCR stack, not mocks, and download no external documents; the
 fixture manifest records byte counts and SHA-256 identities. `tools/generate_fixtures.py`
-regenerates the fixtures and manifest (ReportLab, Pillow, Poppler; development-only), and
+regenerates the fixtures and manifest (ReportLab, Pillow, Poppler; development-only, with the
+locked one built from the standard library alone), and
 `tools/check_epubs.py` runs independent content/ZIP/XML/link checks and official EPUB 3.3
 validation with EPUBCheck; both are described in the regression-testing guide.
 

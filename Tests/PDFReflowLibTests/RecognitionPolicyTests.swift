@@ -278,7 +278,12 @@ private let noise = RecognitionJudge(finding: { _ in fewEnglish }, readsBetter: 
     #expect(text(.implausibleTextLayer(missing, .keptAsExtracted), references).contains("keeps the text and image crops"))
     #expect(text(.unverifiedTextLayer, references).contains("Check the accompanying source-page image"))
     #expect(text(.unverifiedTextLayer, none).contains("Check the source PDF"))
-    #expect(text(.annotationsNotConverted, none).contains("supplementary references are disabled"))
+    #expect(text(.annotationsNotConverted(converted: 0, unconverted: 2), none)
+        .contains("Supplementary references are disabled"))
+    // What converted and what did not, rather than one claim about all of them (#247).
+    #expect(text(.annotationsNotConverted(converted: 3, unconverted: 1), references)
+        == "3 links converted to anchors. 1 annotation is not reconstructed (form fields, comments, "
+            + "and links this converter does not reproduce). A page image preserves their appearance.")
     #expect(text(.implausibleTextLayer(misread, .keptOverRecognition), none).contains("read the source PDF instead"))
     #expect(text(.implausibleRecognition(fewEnglish), references).contains("does not read as English"))
     #expect(ConversionWarnings.warning(.ocrFailed(.layerRetained), page: 1, options: references).code == .ocrFailed)

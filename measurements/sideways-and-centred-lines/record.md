@@ -29,9 +29,8 @@ nothing but three such lines, at −90°:
 | `DISEASE CONTROL AND PREVENTION IN` | 201.8 | 10.2 |
 | `ATLANTA, GEORGIA...` | 106.0 | 8.9 |
 
-The page's body came out 225, putting its heading threshold at 281 or more, beyond anything
-printed on it.
-`OCRReader.recognize` now keeps the offset from the foot of Vision's quadrilateral to its head,
+The page's body came out 225, putting its heading threshold at 281 or more — beyond anything
+printed on it. `OCRReader.recognize` now keeps the offset from Vision's quadrilateral foot to head,
 and the type size is the length of that offset whenever it runs more across the page than up it —
 half a right angle is the boundary, so a line within that of vertical keeps its rectangle's height
 to the bit. The band retry scales the offset's vertical part with its band and leaves its
@@ -131,6 +130,15 @@ treat a sideways line's rectangle as though the writing ran along it. That is th
 size, and it is filed as
 [#263](https://github.com/vocaro/PDFReflowLib/issues/263). The direction each recognized line runs
 in is now carried on the line for whoever takes it.
+
+## Re-measured after the merge
+
+`main` moved to `4074668` (#257, a crop keeping its table's column headers) while this was being
+measured. Both lanes were run again on the merged tree against a release binary built from
+`4074668`: every delta above is the same change, book for book, and all 18 cases pass in both
+lanes. The Blue Book's absolute counts are 41 blocks lower on that baseline, 22,523 → 22,532,
+because #257 takes 41 of its blocks back into the crops; the nine this change moves are the same
+nine.
 
 ## Reproducing
 

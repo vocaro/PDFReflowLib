@@ -16,6 +16,7 @@ struct PDFReflowLibCommand {
           --maximum-output-bytes BYTES|unlimited  (uncompressed entry budget)
           --maximum-epub-bytes BYTES|unlimited    (final ZIP file cap)
           --language TAG                          (BCP 47; dc:language and OCR; default en)
+          --password-file PATH                    (password for a locked PDF; - reads stdin)
           --package-identifier ID                 (dc:identifier; default random urn:uuid)
           --modification-date ISO8601             (e.g. 2026-01-01T00:00:00Z; default now)
         JPEG QUALITY must be in 0...1. Defaults: automatic references, repeated headers and
@@ -26,6 +27,9 @@ struct PDFReflowLibCommand {
         mixed crops, and colored text pages stay PNG. png, jpeg:QUALITY and smallest:QUALITY
         apply exactly as named.
         Set both --package-identifier and --modification-date for byte-reproducible packaging.
+        A locked PDF needs --password-file: the password is read from a file or standard input,
+        never from an argument, so it stays out of the shell history and the process list. One
+        trailing newline is the file's and is removed; anything else is the password.
         """
         if args == ["--help"] {
             print(usage); return
@@ -99,6 +103,31 @@ struct PDFReflowLibCommand {
                         throw ConversionError.invalidOptions("language must be a BCP 47 tag, e.g. en, zh-Hans or ar")
                     }
                     options.language = tag
+                case "--password-file":
+                    // Read from a file or standard input so that the secret is never an argument
+                    // another user of the machine can read from the process list (#252).
+                    let data: Data
+                    if value == "-" {
+                        data = FileHandle.standardInput.readDataToEndOfFile()
+                    } else if let contents = FileManager.default.contents(atPath: value) {
+                        data = contents
+                    } else {
+                        throw ConversionError.invalidOptions("cannot read the password file")
+                    }
+                    guard data.count <= 4_096 else {
+                        throw ConversionError.invalidOptions("the password file is larger than 4096 bytes")
+                    }
+                    guard var password = String(data: data, encoding: .utf8) else {
+                        throw ConversionError.invalidOptions("the password file is not UTF-8 text")
+                    }
+                    // One trailing newline belongs to the file, not to the password, which may
+                    // itself contain spaces and is otherwise taken exactly as written.
+                    if password.hasSuffix("\r\n") { password.removeLast(2) }
+                    else if password.hasSuffix("\n") { password.removeLast() }
+                    guard !password.isEmpty else {
+                        throw ConversionError.invalidOptions("the password file states no password")
+                    }
+                    options.password = ConversionOptions.Password(password)
                 case "--package-identifier": options.packageIdentifier = value
                 case "--modification-date":
                     guard let date = ISO8601DateFormatter().date(from: value) else {

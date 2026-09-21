@@ -137,7 +137,7 @@ swift run pdf-reflow scanned.pdf output.epub --no-ocr
 Run from this directory with a full Xcode selected. The CLI prints progress to stderr and the
 conversion report as JSON to stdout. Paths with spaces must be shell-quoted.
 
-Six original, redistributable-with-the-project PDFs (eight pages) are bundled with the tests:
+Seven original, redistributable-with-the-project PDFs (nine pages) are bundled with the tests:
 
 | Fixture | Regression coverage |
 | --- | --- |
@@ -147,10 +147,12 @@ Six original, redistributable-with-the-project PDFs (eight pages) are bundled wi
 | `lists-code.pdf` | Lists, code indentation, source markup escaping, bold/italic |
 | `rotated.pdf` | Explicit appearance-preserving whole-page fallback |
 | `scanned.pdf` | Real Vision OCR plus original page containing a figure |
+| `encrypted.pdf` | A locked document (40-bit RC4, password `reflow`) that converts once unlocked |
 
 Tests use the real Apple PDF/OCR stack, not mocks, and download no external documents; the
 fixture manifest records byte counts and SHA-256 identities. `tools/generate_fixtures.py`
-regenerates the fixtures and manifest (ReportLab, Pillow, Poppler; development-only), and
+regenerates the fixtures and manifest (ReportLab, Pillow, Poppler; development-only, with the
+locked one built from the standard library alone), and
 `tools/check_epubs.py` runs independent content/ZIP/XML/link checks and official EPUB 3.3
 validation with EPUBCheck; both are described in the regression-testing guide.
 

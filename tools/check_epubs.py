@@ -23,6 +23,7 @@ NS = epub.NS
 EXPECTED = {
     "prose": (3, 3, ["reliable conversion", "remains well-known", "losing the original sentence"]),
     "columns": (1, 1, ["LEFT FIRST", "LEFT LAST", "RIGHT FIRST", "RIGHT LAST"]),
+    "encrypted": (1, 1, ["A locked page reflows once its password unlocks it."]),
     "graphics": (1, 1, ["Text before the illustrated region", "Text after the table"]),
     "lists-code": (1, 1, ["1. Keep the first item.", "2. Keep the second item.", "print(value)"]),
     "rotated": (1, 0, []),
@@ -147,8 +148,15 @@ def main():
         source = FIXTURES / fixture["file"]
         assert matches_identity(source, fixture)
         output = args.output / (source.stem + ".epub")
+        # A locked fixture converts only with its password, which the CLI takes from a file and
+        # never from an argument (#252).
+        flags = []
+        if "password" in fixture:
+            password_file = args.output / (source.stem + "-password.txt")
+            password_file.write_text(fixture["password"])
+            flags = ["--password-file", str(password_file)]
         start = time.monotonic()
-        report = convert(args.converter.resolve(), source, output).report
+        report = convert(args.converter.resolve(), source, output, *flags).report
         text = check(output)
         pages, reflowed, phrases = EXPECTED[source.stem]
         assert report["pageCount"] == pages

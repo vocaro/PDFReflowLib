@@ -26,6 +26,11 @@ qualified the rule, where one exists. Records are frozen: they describe the buil
   `packageIdentifier` must be non-blank; `modificationDate` must fall in 1980–2099 (ZIP stores
   it in UTC at two-second resolution). These are input and work bounds, not process-memory or
   wall-clock guarantees; MiB means 1,048,576 bytes.
+- A locked document converts when `ConversionOptions.password` unlocks it, and throws
+  `encryptedPDF` when it does not (#252). The password is applied wherever the conversion opens
+  the file — the page window's reopen, the outline read and the structure tree each open it
+  themselves — and reaches no report, warning, progress event or staged file;
+  `ConversionOptions.Password` redacts itself in `description`, `debugDescription` and its mirror.
 - Failures use `ConversionError` (`invalidOptions`, `unreadablePDF`, `encryptedPDF`,
   `outputExists`, `resourceLimit`, `renderingFailed(page:)`), `CancellationError`, or the
   underlying filesystem error. A failed final-size check throws `resourceLimit`, removes staging,

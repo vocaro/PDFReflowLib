@@ -309,3 +309,24 @@ characters. `en_US`, `zh--Hans` and an empty value all fail without writing outp
 Until this option existed every book converted as English, so `uscis-m618-arabic-2015` and
 `irs-p596-zhs-2025` declared `dc:language` `en`. The corpus lane still converts at library
 defaults and does not pass a tag, so nothing in it exercises a non-English recognition language.
+
+## Locked documents
+
+A document that opens with a password converts when the caller supplies that password.
+`ConversionOptions.password` is tried once, at every point the conversion opens the file — the
+page window, the outline read and the structure tree all reopen it — and a document that does not
+unlock still throws `ConversionError.encryptedPDF` (#252). A document that is not locked ignores
+the option. An owner-password-only document, readable but permission-restricted, opens as it
+always has; the option passes along a password the caller already has and defeats nothing.
+
+The password is a secret for the conversion's lifetime. It reaches no report, warning, progress
+event, CLI output or staged file, and `ConversionOptions.Password` redacts itself in
+`description`, `debugDescription` and its mirror, so a client that logs or dumps the options it
+passes around prints `<redacted>`. Swift strings cannot be wiped, so the value does outlive its
+use somewhere in the process's memory; that is a property of the platform.
+
+`pdf-reflow` takes `--password-file PATH`, or `--password-file -` to read standard input. There
+is deliberately no `--password` argument: an argument is visible in the shell history and in the
+process list to every other user of the machine. One trailing newline belongs to the file and is
+removed; everything else, spaces included, is the password. A file over 4,096 bytes, one that is
+not UTF-8, and one that states no password are each rejected before any conversion starts.

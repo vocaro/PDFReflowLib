@@ -15,6 +15,7 @@ from reportlab.pdfgen import canvas
 from reportlab.lib.utils import ImageReader
 
 from pdfreflow_tools.corpus import FIXTURES as DESTINATION, identity
+from pdfreflow_tools.encryption import encrypted_pdf
 
 
 def page(c, lines, x=54, y=690, size=12, step=18, font="Helvetica"):
@@ -22,6 +23,10 @@ def page(c, lines, x=54, y=690, size=12, step=18, font="Helvetica"):
     for line in lines:
         c.drawString(x, y, line)
         y -= step
+
+
+# Fixtures that are locked, and the password each one takes.
+PASSWORDS = {"encrypted.pdf": {"password": "reflow"}}
 
 
 def create(name):
@@ -129,9 +134,15 @@ def generate(renderer):
         c.drawImage(str(prefix) + ".png", 0, 0, width=612, height=792)
         c.showPage(); c.save()
 
+    # A locked document. ReportLab writes no encryption this old, and the standard security
+    # handler at revision 2 is the one a stdlib MD5 and RC4 can produce, so it is built by hand
+    # (#252); its password is `reflow`, recorded beside its identity in the manifest.
+    (DESTINATION / "encrypted.pdf").write_bytes(encrypted_pdf())
+
     manifest = {
         "provenance": "Original synthetic text and drawings; no external documents or embedded font programs.",
-        "fixtures": [{"file": p.name, **identity(p)} for p in sorted(DESTINATION.glob("*.pdf"))],
+        "fixtures": [{"file": p.name, **identity(p), **PASSWORDS.get(p.name, {})}
+                     for p in sorted(DESTINATION.glob("*.pdf"))],
     }
     (DESTINATION / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
 

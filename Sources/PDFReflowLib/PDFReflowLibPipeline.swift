@@ -35,19 +35,19 @@ enum PDFReflowLibPipeline {
                             recognize: Recognizer = { try await OCRReader.read(page: $0, options: $1) },
                             emit: (@Sendable (ReflowPart) async throws -> Void)? = nil,
                             progress: @Sendable (ConversionProgress) async -> Void) async throws -> Result {
-        let document = try PDFPageSource(url: source)
+        let document = try PDFPageSource(url: source, password: options.password)
         let total = document.pageCount
         guard total <= options.maximumPages else { throw ConversionError.resourceLimit("page count") }
         try FileManager.default.createDirectory(at: workspace.appendingPathComponent("assets"),
                                                  withIntermediateDirectories: true)
 
         // Tagged-text association happens once per page; the index is released after extraction.
-        var structure: StructureTreeReader.Index? = try StructureTreeReader.read(source)
+        var structure: StructureTreeReader.Index? = try StructureTreeReader.read(source, password: options.password)
         var warnings: [ConversionWarning] = []
         if structure?.rejected == true {
             warnings.append(ConversionWarnings.structureTreeFallback())
         }
-        var evidence = DocumentEvidence(chapterCandidates: try ChapterBoundaryReader.read(source), language: options.language)
+        var evidence = DocumentEvidence(chapterCandidates: try ChapterBoundaryReader.read(source, password: options.password), language: options.language)
         let store = PageStore(directory: workspace.appendingPathComponent("pages"))
         let judge = RecognitionJudge.english(language: options.language)
         /// Pages whose type, if any, arrives inside an image: no text layer, or text over a

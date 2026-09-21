@@ -11,7 +11,7 @@ carry their issue linkage as `.bug()` traits.
 
 | Lane | Command | Runs |
 | --- | --- | --- |
-| Fast | `scripts/check-all.sh --fast` | Swift suite, release build, Python tool tests, measurements policy, documented builds, documentation counts, issue citations, PDFKit concurrency smoke gate, six fixture conversions with structural checks, conversion-policy cases |
+| Fast | `scripts/check-all.sh --fast` | Swift suite, release build, Python tool tests, measurements policy, documented builds, documentation counts, issue citations, PDFKit concurrency smoke gate, seven fixture conversions with structural checks, conversion-policy cases |
 | Full | `scripts/check-all.sh` | Fast, plus the FAA memory gate when `corpus/cache/faa-h-8083-25c.pdf` (or `PDFREFLOW_REAL_PDF`) exists; absence is printed as a skip |
 | Corpus | `scripts/check-all.sh --corpus` | Fast, plus the structure-memory gate, the repeated-conversions gate and <!-- counts:corpus-documents -->18<!-- counts:end --> complete cached conversions with EPUBCheck. Requires `epubcheck` on `PATH` and every cached source; missing data fails explicitly, and nothing is downloaded |
 
@@ -28,7 +28,7 @@ Fetch sources with `tools/fetch_corpus.py --case <id>` (checksum-verified, cache
 
 What the individual gates check:
 
-- `swift test`: <!-- counts:swift-tests -->456 Swift Testing tests<!-- counts:end --> with no known-issue wrappers, using the real Apple
+- `swift test`: <!-- counts:swift-tests -->461 Swift Testing tests<!-- counts:end --> with no known-issue wrappers, using the real Apple
   PDF/OCR stack. They cover extraction, the document model, layout, raster pixels (crop origins,
   rotations, annotations, resource ceilings), preserved regions (fraction bars, raised exponents
   and all six cells of a ruled table in actual EPUB images at 72/144 DPI, with prose and code
@@ -37,7 +37,7 @@ What the individual gates check:
   concurrency test overlaps four conversions and one canceled conversion, checking ownership,
   styles, images, monotonic progress and staging cleanup. For iOS:
   `xcodebuild test -scheme PDFReflowLib-Package -destination 'platform=iOS Simulator,name=iPhone 18 Pro' CODE_SIGNING_ALLOWED=NO`.
-- `python3 -m unittest discover -s tools -p 'test_*.py' -v`: <!-- counts:python-tests -->219 Python tests<!-- counts:end --> over the tools,
+- `python3 -m unittest discover -s tools -p 'test_*.py' -v`: <!-- counts:python-tests -->227 Python tests<!-- counts:end --> over the tools,
   including the checker's negative controls, the identity tool, the memory-gate instrumentation
   (real child allocations above and below a ceiling, source verification, isolation from an
   earlier child's high-water mark, and each host-pressure outcome with its settle-and-retry),
@@ -403,11 +403,14 @@ source checksum.
 
 ## Regenerating the bundled fixtures
 
-Six original PDFs (eight pages) are bundled with the tests and listed in the README's fixture
-table. `tools/generate_fixtures.py` regenerates them and their manifest (byte counts and
-SHA-256 identities) with ReportLab, Pillow and Poppler's `pdftoppm`, using original text and
-drawings and standard PDF fonts without embedding font programs; pass
-`--renderer /absolute/path/to/pdftoppm` when needed. Regenerate the PDFs and the manifest
+Seven original PDFs (nine pages) are bundled with the tests and listed in the README's fixture
+table. `tools/generate_fixtures.py` regenerates them and their manifest (byte counts, SHA-256
+identities, and the password of any locked fixture) with ReportLab, Pillow and Poppler's
+`pdftoppm`, using original text and drawings and standard PDF fonts without embedding font
+programs; pass `--renderer /absolute/path/to/pdftoppm` when needed. `encrypted.pdf` is the
+exception: ReportLab writes no encryption as old as the standard security handler at revision 2,
+so `tools/pdfreflow_tools/encryption.py` builds that one byte by byte from the standard library,
+deterministically, and needs no external tool (#252). Regenerate the PDFs and the manifest
 together, inspect every rendered page, and rerun both suites. These tools are development-only.
 
 ## Validating EPUBs

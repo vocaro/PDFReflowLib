@@ -162,11 +162,26 @@ and 19 of the CIA report's. Preformatted blocks fall from 6,650 to 6,476 on that
 same 174, and the total block count again moves by one, 57,369 to 57,370. The 9/11 report gains
 two hyphen repairs rather than three — `command-and-` / `control` was already closed on the new
 baseline — and Wallace's one is unchanged; every other book is still word for word identical.
-All 18 cases pass in each lane. `corpus-blocks.json` holds these numbers, the post-merge ones.
+All 18 cases pass in each lane.
+
+`main` then moved again, to `49e4586`, and both lanes were run a third time against a release
+binary built from it. The deltas are again the same book for book and the same `<pre>` count,
+6,650 to 6,476; only the absolute block totals move, 57,079 to 57,080. `corpus-blocks.json` holds
+these last numbers.
+
+NOAA is excluded from the lane for the image-output ceiling, so #171's item 6 was measured
+separately, with `--reference-images never --maximum-output-bytes unlimited
+--maximum-epub-bytes unlimited` on both binaries, all 1,834 pages: preformatted blocks fall from
+1,460 to 877. Every reference line the book wraps on an initial — `R. Singh, M. van Aalst, …`
+under entry 8 of chapter 2's references, `J. Balch, S. Leyk, and W.R. Travis, 2021:` under entry
+16, `4004. https://doi.org/10.1029/2010rg000345` under entry 2 — stops being an item and takes
+the line the page wraps under it. The entry's own first line still does not take that wrap,
+because the reference column is ragged and #39 asks a justified measure of it; that is the
+hanging-indent reading of [#268](https://github.com/vocaro/PDFReflowLib/issues/268).
 
 ## Gates
 
-`scripts/check-all.sh --fast` on the merged tree: 526 Swift tests, 227 Python tests, eight
+`scripts/check-all.sh --fast` on the merged tree: 531 Swift tests, 227 Python tests, eight
 fixture conversions, the documented builds, the measurements policy, the issue citations and the
 PDFKit concurrency smoke gate. Then the corpus lane, 18 of 18 in both lanes, with the reviewed
 content contracts and EPUBCheck 5.3.0, `runPassed` read from every case's own `result.json`.

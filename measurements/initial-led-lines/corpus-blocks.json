@@ -1,5 +1,5 @@
 {
-  "baselineCommit": "fbc5e1f",
+  "baselineCommit": "49e4586",
   "cases": {
     "arxiv-replay-clocks-2023": {
       "blocksAfter": 260,
@@ -47,8 +47,8 @@
       "wordsIdentical": true
     },
     "faa-phak-8083-25c": {
-      "blocksAfter": 9161,
-      "blocksBefore": 9163,
+      "blocksAfter": 9007,
+      "blocksBefore": 9009,
       "preformattedAfter": 1316,
       "preformattedBefore": 1342,
       "wordsAfter": 249940,
@@ -92,12 +92,12 @@
       "wordsIdentical": true
     },
     "irs-p596-zhs-2025": {
-      "blocksAfter": 1176,
-      "blocksBefore": 1176,
+      "blocksAfter": 1094,
+      "blocksBefore": 1094,
       "preformattedAfter": 65,
       "preformattedBefore": 65,
-      "wordsAfter": 4808,
-      "wordsBefore": 4808,
+      "wordsAfter": 4745,
+      "wordsBefore": 4745,
       "wordsIdentical": true
     },
     "nbs-jres-geltman-1977": {
@@ -137,12 +137,12 @@
       "wordsIdentical": true
     },
     "usda-ars-agresearch-2012-11": {
-      "blocksAfter": 1197,
-      "blocksBefore": 1166,
+      "blocksAfter": 1143,
+      "blocksBefore": 1112,
       "preformattedAfter": 7,
       "preformattedBefore": 39,
-      "wordsAfter": 9478,
-      "wordsBefore": 9478,
+      "wordsAfter": 9475,
+      "wordsBefore": 9475,
       "wordsIdentical": true
     },
     "usgs-mcs2025-copper": {
@@ -164,5 +164,5 @@
       "wordsIdentical": false
     }
   },
-  "note": "Block and word counts per corpus case, both lanes, library defaults, on the tree merged with fbc5e1f."
+  "note": "Block and word counts per corpus case, both lanes, library defaults, on the tree merged with 49e4586."
 }

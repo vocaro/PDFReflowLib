@@ -1,10 +1,12 @@
 # A picture across the measure, and the wrapped entries of a hung list
 
-Measured under [#160](https://github.com/vocaro/PDFReflowLib/issues/160), baseline `4074668`,
+Measured under [#160](https://github.com/vocaro/PDFReflowLib/issues/160), baseline `4d5d86d`,
 2026-09-20, macOS 27 (26A428) / Xcode 27 (27A266a), arm64, Swift 6.4, release CLI at library
 defaults with a fixed package identifier and modification date. Block counts are every `<p>`,
 `<pre>` and `<h*>` of the converted book outside its navigation document; character counts are the
-non-whitespace characters inside those blocks.
+non-whitespace characters inside those blocks. The page traces below were taken against `4074668`,
+the commit this work branched from, and re-taken against `4d5d86d` after merging it; the geometry
+and the blocks are the same on both.
 
 The issue names three defects. Two are fixed here and one is not; what follows is what each page
 actually does, measured rather than assumed, because the record the issue cites
@@ -130,47 +132,64 @@ handbook's and Wallace's).
 
 ## What moved
 
-Every covered corpus book was converted with a release binary built from `4074668` and with this
-change, and each book's blocks and characters compared. Three books move on the cut and two on the
-hung entry; they are disjoint, and thirteen of the eighteen do not move at all.
+Every covered corpus book was converted with a release binary built from `4d5d86d` and with this
+change, and each book's blocks and characters compared, then again with the cut alone so the two
+halves can be told apart. Three books move on the cut and two on the hung entry; the two sets are
+disjoint, and thirteen of the eighteen do not move at all.
 
-| case | blocks `4074668` | blocks, cut only | blocks, both | characters `4074668` | characters, both |
+| case | blocks `4d5d86d` | blocks, cut only | blocks, both | characters `4d5d86d` | characters, both |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| `arxiv-replay-clocks-2023` | 194 | — | 194 | 39,855 | 39,855 |
-| `cdc-zombie-pandemic-2011` | 516 | — | 516 | 12,639 | 12,639 |
-| `census-rrs2002-01` | 373 | — | 373 | 33,612 | 33,612 |
-| `cia-blue-book-14-1955` | 22,523 | 22,523 | **22,448** | 608,818 | 608,818 |
+| `arxiv-replay-clocks-2023` | 195 | — | 195 | 39,855 | 39,855 |
+| `cdc-zombie-pandemic-2011` † | 480 | — | 481 | 12,507 | 12,639 |
+| `census-rrs2002-01` † | 342 | — | 376 | 21,878 | 33,612 |
+| `cia-blue-book-14-1955` | 25,008 | 25,008 | **24,933** | 608,818 | 608,818 |
 | `dga-2025-2030` | 133 | — | 133 | 13,485 | 13,485 |
-| `faa-phak-8083-25c` | 8,538 | **8,518** | 8,518 | 1,414,314 | 1,414,314 |
+| `faa-phak-8083-25c` | 8,543 | **8,523** | 8,523 | 1,414,314 | 1,414,314 |
 | `fed-explained-2021` | 858 | — | 858 | 170,293 | 170,293 |
-| `gpo-911-2004` | 4,574 | — | 4,574 | 1,585,155 | 1,585,155 |
+| `gpo-911-2004` | 5,050 | — | 5,050 | 1,585,155 | 1,585,155 |
 | `gpo-our-flag-2003` | 546 | 546 | **540** | 63,281 | 63,281 |
-| `gpo-warren-1964-suspect-text-excerpt` | 18 | — | 18 | 4,331 | 4,331 |
-| `irs-p596-zhs-2025` | 951 | **929** | 929 | 36,346 | 36,346 |
+| `gpo-warren-1964-suspect-text-excerpt` † | 37 | — | 18 | 3,960 | 4,331 |
+| `irs-p596-zhs-2025` | 1,036 | **1,017** | 1,017 | 36,346 | 36,346 |
 | `nbs-jres-geltman-1977` | 38 | — | 38 | 3,017 | 3,017 |
 | `ntrs-20180003024-earthdata-slides-2018` | 170 | — | 170 | 3,510 | 3,510 |
-| `scotus-loper-bright-2024` | 717 | — | 717 | 198,473 | 198,473 |
-| `uscis-m618-arabic-2015` | 1,239 | — | 1,239 | 90,736 | 90,736 |
-| `usda-ars-agresearch-2012-11` | 1,099 | **981** | 981 | 52,158 | **52,149** |
-| `usgs-mcs2025-copper` | 17 | — | 17 | 5,260 | 5,260 |
-| `wallace-algebra-2010` | 7,682 | — | 7,682 | 312,563 | 312,563 |
+| `scotus-loper-bright-2024` | 734 | — | 734 | 198,473 | 198,473 |
+| `uscis-m618-arabic-2015` | 1,257 | — | 1,257 | 90,736 | 90,736 |
+| `usda-ars-agresearch-2012-11` | 1,102 | **985** | 985 | 52,158 | **52,149** |
+| `usgs-mcs2025-copper` | 21 | — | 21 | 5,260 | 5,260 |
+| `wallace-algebra-2010` | 7,712 | — | 7,712 | 312,563 | 312,563 |
 
-**The cut.** *Agricultural Research* gains most: its three-column feature pages opened under a
-full-bleed photograph and were being read row by row, one printed line per paragraph, and 118
+**The cut.** *Agricultural Research* gains most: its three-column feature pages open under a
+full-bleed photograph and were being read row by row, one printed line per paragraph, and 117
 blocks become 7 whole paragraphs. Its nine lost characters are nine line-end hyphens
-`HyphenRepair` could resolve once the halves rejoined — `Ento-`+`mology`, `Pro-`+`tecting`,
+`HyphenRepair` can resolve once the halves rejoin — `Ento-`+`mology`, `Pro-`+`tecting`,
 `Pro-`+`tection”`, `Re-`+`search`, `ap-`+`plication`, `develop-`+`ing`, `indi-`+`viduals`,
 `pres-`+`sure`, `prod-`+`ucts` — while `insect-transmitted`, `nonagri-cultural` and
 `stored-product` keep theirs and the page warns, as the hyphen rule says it should. IRS
-Publication 596's Chinese two-column pages join the same way, 22 blocks fewer. The FAA handbook
-loses 20 blocks over pages 341, 391 and three others; no text is added or lost in any of the
-three books but those nine hyphens.
+Publication 596's Chinese two-column pages join the same way, 19 blocks fewer. The FAA handbook
+loses 20 blocks over pages 341, 391 and three others. No text is added or lost in any of the three
+books but those nine hyphens.
 
-**The hung entry.** The Blue Book loses exactly the 75 blocks the detector offered in that book,
+**The hung entry.** The Blue Book loses exactly the 75 blocks the detector offers in that book,
 and *Our Flag* 6 of its 12, the other 6 being bibliography entries whose opening line the page
 marks, so they open a preformatted block and never reach `continuesParagraph`. That is also why
 the FAA handbook does not move on this rule at all: all 55 pairs it offers are bulleted or
 numbered items. No book's characters change.
+
+**† The three books this change does not touch.** `cdc-zombie-pandemic-2011`,
+`census-rrs2002-01` and `gpo-warren-1964-suspect-text-excerpt` move in the table, and none of it
+is this change's. Converted with `--no-ocr`, a fixed package identifier and a fixed modification
+date, the `4d5d86d` binary and this one produce a **byte-identical** EPUB of each of the three —
+the Warren excerpt's is
+`aca72714f9698d69be192ff013582c723521a4b2b62841612b398a1ba2cbd816` — while *Our Flag* and
+*Agricultural Research* differ, as they should. What moves in the three is what Vision read. With
+`--ocr always`, so the text is the recognition and nothing else, the two binaries disagree on the
+Warren excerpt's *words*: `Omvald` against `Osvald`, `Painels` against `Paind's`, `Houcide`
+against `Hodeide`, and about forty more on page 4 alone; each binary gives the same EPUB SHA-256
+twice in a row, so each is stable, at a different reading. The whole extraction pass, recognition
+decisions included, runs before any block is reconstructed, so nothing in this change can reach
+it. On that host, `4d5d86d` fails this case's content contract five runs of five — four errors,
+all on page 4 — and this build passes it eight of eight, for the same reason and with as little to
+do with either build. Filed as [#269](https://github.com/vocaro/PDFReflowLib/issues/269).
 
 ## 3. Proper nouns — not fixed, and not what the issue describes
 
@@ -203,11 +222,13 @@ No untagged instance was located. The record that would have named one does not 
 
 ## Gates
 
-`scripts/check-all.sh --fast`, exit 0: python-tool-tests, measurements-policy, swift-tests (505,
+`scripts/check-all.sh --fast`, exit 0: python-tool-tests, measurements-policy, swift-tests (521,
 six new), release-build, pdfkit-concurrency, documented-builds, doc-counts, issue-citations,
 fixture-epubs, conversion-policies. The corpus lane
 (`tools/run_corpus_regressions.py --jobs 4`) passes 18 of 18 covered cases, every case's
 `runPassed` read from its own `result.json` and true, with no content-contract and no structural
-failures. Warning counts are unchanged book for book except `uncertainHyphen`, which rises by one
-in the FAA handbook and one in *Agricultural Research* — one page each where a rejoined word's
-hyphen is now visible and undecidable.
+failures. The same lane over `4d5d86d` passes 17 and fails `gpo-warren-1964-suspect-text-excerpt`
+for the reason above, which is Vision's and neither build's ([#269](https://github.com/vocaro/PDFReflowLib/issues/269)).
+Warning counts are unchanged book for book except `uncertainHyphen`, which rises by one in the FAA
+handbook and one in *Agricultural Research* — one page each where a rejoined word's hyphen is now
+visible and undecidable.

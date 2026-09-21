@@ -4,11 +4,13 @@ Tier: deterministic Apple PDF stack, isolated macOS arm64 release CLI.
 Corpus: every gated case, with *Welcome to the United States: A Guide for New Immigrants*
 (M-618-A, Arabic, rev. 09/15) as the subject; 116 pages, 4,156,497 bytes, SHA-256
 `354effbbe38450664959b8832d136cfd158d3c17d1ba777b8b1e4a5b6aa36d54`.
-Build: this branch merged over `main` at `860e9d2`, Xcode 27.0, macOS 27.0
+Build: this branch merged over `main` at `8dcb9c2`, Xcode 27.0, macOS 27.0
 (Darwin 27.0.0, xnu-13432.1.9~1); release executable SHA-256
-`b81d53f0679cc71e516566e9e3ddaa05fe0485e52a3288f731ddc60d7d61c734`.
-Baseline: `860e9d2` alone, executable SHA-256
-`08a6efd019bf68e4fd31cba5e8f615a7fe954e1ceb5d9219215269316c013823`.
+`419da7aeeacb94471bdc81e6007547697381ab51610713dc80b14a434654d001`.
+Baseline: `8dcb9c2` alone, executable SHA-256
+`10365e3348b088c764995798daf95514b5a13fc0f92a0002d0ab53c6510c0679`.
+`main` moved twice while this was measured, to `860e9d2` and then to `8dcb9c2`; every number
+below was taken again over the second merge, and nothing in the table moved between them.
 
 ## What the reading was doing
 
@@ -84,7 +86,7 @@ comparison.
 
 The eighteenth is the Arabic guide:
 
-| | `860e9d2` | this branch |
+| | `8dcb9c2` | this branch |
 | --- | ---: | ---: |
 | blocks | 1,408 | 814 |
 | paragraphs | 1,102 | 504 |
@@ -115,20 +117,23 @@ split, were read title-last and joined to the entry above them before.
 
 ## Gates
 
-`scripts/check-all.sh --fast` passes, exit status read directly. `swift test` passes 548 tests,
+`scripts/check-all.sh --fast` passes, exit status read directly. `swift test` passes 555 tests,
 eight of them new (`Tests/PDFReflowLibTests/BidirectionalTextTests.swift`), each with a Latin or
 Chinese control beside it. The corpus lane passes 18 of 18 covered cases, every case's `runPassed`
-read from its own `result.json` and true, and `860e9d2` passes the same 18.
+read from its own `result.json` and true.
 
-The Arabic case's own gate: EPUBCheck 5 reports 0 fatals, 0 errors and 0 warnings on the 39,561,191-byte
-EPUB; peak converter RSS is 180,289,536 bytes (171.9 MiB) against the case's 256 MiB ceiling,
-where `860e9d2` used 174,735,360 (166.6 MiB); all 399 progress events pass. Its reviewed contract
-now runs 26 checks, up from 9: the added ones name `I-551`, `I-90`, `1-800-870-3676`,
-`(USCIS ELIS)` and `(USCIS).` as paragraph text, the two split contents rows as preformatted
-blocks of their own, the contents entries in order, and `551-I`, `485-I`, `90-I`,
-`3676-870-800-1` and `)USCIS(` as text the reading must not produce. Run against `860e9d2`'s own
-output those 26 checks fail with ten errors, which is what makes them a regression gate rather
-than a description.
+`8dcb9c2` run through the same lane passes 17 of the 18 and fails the Arabic case, which is the
+point of the contract and not a defect of the baseline: its conversion, EPUBCheck, progress and
+memory all pass — `runPassed` is true there too — and what fails is the strengthened content
+contract, with ten errors. The contract now runs 26 checks, up from 9: the added ones name
+`I-551`, `I-90`, `1-800-870-3676`, `(USCIS ELIS)` and `(USCIS).` as paragraph text, the two split
+contents rows as preformatted blocks of their own, the contents entries in order, and `551-I`,
+`485-I`, `90-I`, `3676-870-800-1` and `)USCIS(` as text the reading must not produce. A contract
+that both builds passed would describe nothing.
+
+The Arabic case's own gate on this build: EPUBCheck 5 reports 0 fatals, 0 errors and 0 warnings on
+the 39,561,193-byte EPUB; peak converter RSS is 174,292,992 bytes (166.2 MiB) against the case's
+256 MiB ceiling, where `8dcb9c2` used 170,082,304 (162.2 MiB); all 399 progress events pass.
 
 ## What is not claimed
 

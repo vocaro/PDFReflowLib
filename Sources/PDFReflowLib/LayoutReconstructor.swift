@@ -205,7 +205,8 @@ enum LayoutReconstructor {
     /// away from lines it merely touches, because layout removes every intersecting line from
     /// prose; a line whose rectangle genuinely overlaps admitted text is admitted instead.
     /// Returns nil for a thin rule that lies inside text it does not strike through.
-    private static func expanded(_ region: Region, page: PageContent, language: String) -> CGRect? {
+    private static func expanded(_ region: Region, page: PageContent, language: String,
+                                 columnHeaders: [CGRect]) -> CGRect? {
         var admitted: [CGRect] = []
         while true {
             var bounds = admitted.reduce(region.seed) { $0.union($1.insetBy(dx: -2, dy: -2)) }
@@ -230,7 +231,7 @@ enum LayoutReconstructor {
                     bounds = cut
                 } else if admitted.isEmpty && isThinRule(region.seed) {
                     return nil
-                } else if releasesProse(line, language: language) {
+                } else if releasesProse(line, language: language, columnHeaders: columnHeaders) {
                     // A line of the book's own prose is never admitted to a crop it only touches.
                     // Where no cut clears it, the crop keeps its own extent instead of growing
                     // into it, exactly as #246's edge band does: `takes` then leaves the line in
@@ -259,8 +260,16 @@ enum LayoutReconstructor {
     /// nothing a reader wants. A line carrying letters of another script is released on its
     /// shape alone: an English lexicon judges nothing about a Chinese or Arabic line, and the
     /// corpus lane converts those books at library defaults, which declares English for them.
-    static func releasesProse(_ line: TextLine, language: String) -> Bool {
+    ///
+    /// A table's column header is that table's, whatever it reads as, and is never released
+    /// (#257). `Number Per Cent Number Per Cent Nuntler Per Cent` and `Certain Doubtful Total
+    /// Certain Doubtful Total` are every one of them an English word, so the word test admits
+    /// them; they label the columns of the tables the crop preserves as pictures, and beside the
+    /// picture of their own table they say nothing a reader can use.
+    /// `TableRegionDetector.columnHeaders` reads which lines those are.
+    static func releasesProse(_ line: TextLine, language: String, columnHeaders: [CGRect] = []) -> Bool {
         guard readsAsSentence(line) else { return false }
+        guard !columnHeaders.contains(line.rect) else { return false }
         guard EnglishText.isDeclared(language), EnglishText.foreignLetters(line.text) == 0 else { return true }
         return EnglishText.readsAsWords(line.text)
     }
@@ -298,12 +307,16 @@ enum LayoutReconstructor {
         }
         let seeds = graphics + formulas + TableRegionDetector.regions(in: page)
             + FractionRegionDetector.regions(in: page, body: body) + tables
+        // The column headers of the tables this page draws, which a crop never releases to the
+        // prose (#257). Read once: it is a property of the page, not of any one region.
+        let columnHeaders = TableRegionDetector.columnHeaders(in: page, body: body)
         var regions = clusters(seeds, distance: 3).map { Region(seed: $0, bounds: $0) }
         var previous: [CGRect] = []
         while regions.map(\.bounds) != previous {
             previous = regions.map(\.bounds)
             regions = regions.compactMap { region in
-                expanded(region, page: page, language: language).map { Region(seed: region.seed, bounds: $0) }
+                expanded(region, page: page, language: language, columnHeaders: columnHeaders)
+                    .map { Region(seed: region.seed, bounds: $0) }
             }
             // A merged bounding rectangle can newly intersect a label that neither component
             // touched. Expand again before rasterizing, or its text is removed from prose while

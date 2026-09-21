@@ -1,6 +1,7 @@
 # A picture across the measure, and the wrapped entries of a hung list
 
-Measured under [#160](https://github.com/vocaro/PDFReflowLib/issues/160), baseline `4d5d86d`,
+Measured under [#160](https://github.com/vocaro/PDFReflowLib/issues/160), baselines `4074668`,
+`4d5d86d`, `49e4586` and finally `b474f64`,
 2026-09-20, macOS 27 (26A428) / Xcode 27 (27A266a), arm64, Swift 6.4, release CLI at library
 defaults with a fixed package identifier and modification date. Block counts are every `<p>`,
 `<pre>` and `<h*>` of the converted book outside its navigation document; character counts are the
@@ -155,30 +156,32 @@ handbook's and Wallace's).
 
 Every covered corpus book was converted with a release binary built from `4d5d86d` and with this
 change, and each book's blocks and characters compared, then again with the cut alone so the two
-halves can be told apart; the table below is re-measured over `49e4586`, which merged #174's column
-runs and #203's picture-interrupted paragraphs. Three books move on the cut and two on the hung
-entry; the two sets are disjoint, and thirteen of the eighteen do not move at all.
+halves can be told apart; the table below is the last of those measurements, over `b474f64`, which
+merged #174's column runs, #203's picture-interrupted paragraphs and #171. Three books move on the
+cut and two on the hung entry; the two sets are disjoint, and thirteen of the eighteen do not move
+at all. The same five books, and the same block counts for each of them, came out of the same
+comparison over `49e4586`.
 
-| case | blocks `49e4586` | blocks, this change | characters `49e4586` | characters, this change |
+| case | blocks `b474f64` | blocks, this change | characters `b474f64` | characters, this change |
 | --- | ---: | ---: | ---: | ---: |
-| `arxiv-replay-clocks-2023` | 195 | 195 | 39,855 | 39,855 |
+| `arxiv-replay-clocks-2023` | 194 | 194 | 39,855 | 39,855 |
 | `cdc-zombie-pandemic-2011` | 481 | 481 | 12,639 | 12,639 |
 | `census-rrs2002-01` | 371 | 371 | 33,612 | 33,612 |
 | `cia-blue-book-14-1955` | 25,001 | **24,926** | 608,818 | 608,818 |
 | `dga-2025-2030` | 133 | 133 | 13,485 | 13,485 |
-| `faa-phak-8083-25c` | 8,389 | **8,376** | 1,414,314 | 1,414,314 |
-| `fed-explained-2021` | 846 | 846 | 170,290 | 170,290 |
-| `gpo-911-2004` | 5,043 | 5,043 | 1,585,149 | 1,585,149 |
+| `faa-phak-8083-25c` | 8,387 | **8,374** | 1,414,314 | 1,414,314 |
+| `fed-explained-2021` | 845 | 845 | 170,290 | 170,290 |
+| `gpo-911-2004` | 5,022 | 5,022 | 1,585,147 | 1,585,147 |
 | `gpo-our-flag-2003` | 546 | **540** | 63,281 | 63,281 |
-| `gpo-warren-1964-suspect-text-excerpt` | 18 | 18 | 4,331 | 4,331 |
+| `gpo-warren-1964-suspect-text-excerpt` | 17 | 17 | 4,331 | 4,331 |
 | `irs-p596-zhs-2025` | 954 | **935** | 36,346 | 36,346 |
 | `nbs-jres-geltman-1977` | 38 | 38 | 3,017 | 3,017 |
 | `ntrs-20180003024-earthdata-slides-2018` | 170 | 170 | 3,510 | 3,510 |
-| `scotus-loper-bright-2024` | 734 | 734 | 198,473 | 198,473 |
+| `scotus-loper-bright-2024` | 731 | 731 | 198,473 | 198,473 |
 | `uscis-m618-arabic-2015` | 1,257 | 1,257 | 90,736 | 90,736 |
-| `usda-ars-agresearch-2012-11` | 1,047 | **930** | 52,155 | **52,146** |
+| `usda-ars-agresearch-2012-11` | 1,078 | **961** | 52,155 | **52,146** |
 | `usgs-mcs2025-copper` | 21 | 21 | 5,260 | 5,260 |
-| `wallace-algebra-2010` | 7,562 | 7,562 | 312,563 | 312,563 |
+| `wallace-algebra-2010` | 7,561 | 7,561 | 312,562 | 312,562 |
 
 **The cut** moves the FAA handbook, IRS Publication 596 and *Agricultural Research*. The magazine
 gains most: its three-column feature pages open under a full-bleed photograph and were being read
@@ -243,11 +246,11 @@ No untagged instance was located. The record that would have named one does not 
 
 ## Gates
 
-`scripts/check-all.sh --fast`, exit 0: python-tool-tests, measurements-policy, swift-tests (533,
+`scripts/check-all.sh --fast`, exit 0: python-tool-tests, measurements-policy, swift-tests (538,
 seven new), release-build, pdfkit-concurrency, documented-builds, doc-counts, issue-citations,
 fixture-epubs, conversion-policies. The corpus lane
 (`tools/run_corpus_regressions.py --jobs 4`) passes 18 of 18 covered cases, every case's
 `runPassed` read from its own `result.json` and true, with no content-contract and no structural
-failures, and `49e4586` passes the same 18. Warning counts are unchanged book for book except
+failures, and `b474f64` passes the same 18. Warning counts are unchanged book for book except
 `uncertainHyphen`, which rises by one in the FAA handbook and one in *Agricultural Research* — one
 page each where a rejoined word's hyphen is now visible and undecidable.

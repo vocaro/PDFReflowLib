@@ -1056,6 +1056,24 @@ Evidence: [raster-dpi](../measurements/raster-dpi/record.md),
   no text, and would need glyph extents to separate.
   Evidence: [painted-underlines](../measurements/painted-underlines/record.md).
 
+- **Package metadata (#253).** The package document states what the client supplied and, where
+  the client supplied nothing, what the document states about itself in its information
+  dictionary: `/Title` as `dc:title`, `/Author` as `dc:creator`, `/Subject` as `dc:description`,
+  each `/Keywords` entry as its own `dc:subject`, and `/CreationDate` as `dcterms:created`.
+  `options.title` and `options.author` win where they are set, as `options.title` always has.
+  The two mappings that are not the literal reading of the key names follow XMP's, and the
+  corpus shows why: the NBS paper states its whole 433-character abstract in `/Subject`, which
+  is a description and not a subject heading; and a creation date is when the file was made, not
+  when the work was published — the scans of 1955, 1964 and 1977 works state 2026, 2013 and 2010
+  — so it is never written as `dc:date`, which means publication in EPUB 3.
+  Every value is untrusted document text, normalized once in `SourceMetadata`: characters XML 1.0
+  cannot carry are removed, whitespace runs collapse to one space, and a value states nothing
+  when it is blank, has no letter or digit, names its own field, or runs past 1,000 characters
+  (dropped whole rather than truncated, because half a sentence misstates the document). At most
+  64 keywords are carried, split on commas and semicolons whether PDFKit hands back one string or
+  an array, deduplicated without regard to case. A terse value is still a statement: the IRS
+  publication's `W:CAR:MP:FP` author converts as written. Metadata taken from the source is a
+  function of the source, so byte-reproducible packaging is undisturbed.
 - Output is EPUB 3: XHTML spine documents, a stylesheet, metadata, flat heading navigation, a
   source page-list, an OPF 3.0 package and the required first, uncompressed `mimetype` entry.
   `EPUBTextEncoder` escapes source markup (raw text is escaped before inline elements are added

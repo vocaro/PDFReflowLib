@@ -7,6 +7,12 @@ struct ReflowDocument: Sendable, Equatable {
         var title: String
         var language: String
         var author: String?
+        /// `dc:description`: the source's `/Subject`, or a client's own summary.
+        var summary: String?
+        /// One `dc:subject` each: the source's `/Keywords`.
+        var keywords: [String] = []
+        /// `dcterms:created`: the source's `/CreationDate`.
+        var created: Date?
     }
 
     struct Asset: Sendable, Equatable {

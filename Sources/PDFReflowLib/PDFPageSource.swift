@@ -9,7 +9,8 @@ final class PDFPageSource {
     private var window = 0
     private let windowSize = 8
     let pageCount: Int
-    let title: String?
+    /// What the document states about itself (#253).
+    let metadata: SourceMetadata
 
     init(url: URL) throws {
         self.url = url
@@ -20,7 +21,7 @@ final class PDFPageSource {
         guard document.pageCount > 0 else { throw ConversionError.unreadablePDF }
         self.document = document
         pageCount = document.pageCount
-        title = document.documentAttributes?[PDFDocumentAttribute.titleAttribute] as? String
+        metadata = SourceMetadata(attributes: document.documentAttributes)
     }
 
     func page(at index: Int) throws -> PDFPage {

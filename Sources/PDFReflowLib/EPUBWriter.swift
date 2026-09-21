@@ -22,6 +22,9 @@ actor EPUBWriter {
     private var title = ""
     private var language = ""
     private var author: String?
+    private var summary: String?
+    private var keywords: [String] = []
+    private var created: Date?
     private var packer = SpinePacker(bodyTargetBytes: EPUBWriter.bodyTargetBytes, chapterStartPages: [])
     private var validation = ReflowDocument.Validation()
     /// Assets in arrival order: the archive names them by that order and packages their bytes.
@@ -60,6 +63,9 @@ actor EPUBWriter {
             title = metadata.title
             language = xml(metadata.language)
             author = metadata.author
+            summary = metadata.summary
+            keywords = metadata.keywords
+            created = metadata.created
             packer = SpinePacker(bodyTargetBytes: Self.bodyTargetBytes, chapterStartPages: chapterStartPages)
             try FileManager.default.createDirectory(at: directory.appendingPathComponent("META-INF"),
                                                     withIntermediateDirectories: true)
@@ -108,6 +114,15 @@ actor EPUBWriter {
         let modificationDate = self.modificationDate ?? Date()
         let modified = ISO8601DateFormatter().string(from: modificationDate)
         let author = self.author.map { "<dc:creator>\(xml($0))</dc:creator>" } ?? ""
+        let summary = self.summary.map { "<dc:description>\(xml($0))</dc:description>" } ?? ""
+        let subjects = keywords.map { "<dc:subject>\(xml($0))</dc:subject>" }.joined()
+        // The source's creation date, which is when the file was made and not when the work was
+        // published: the corpus's scans state 2010, 2013 and 2026 for works of 1977, 1964 and
+        // 1955. `dc:date` means publication in EPUB 3, so this is `dcterms:created`, which claims
+        // only what the document claims.
+        let created = self.created.map {
+            "<meta property=\"dcterms:created\">\(ISO8601DateFormatter().string(from: $0))</meta>"
+        } ?? ""
         let manifest = chapters.enumerated().map {
             "<item id=\"c\($0.offset)\" href=\"\($0.element)\" media-type=\"application/xhtml+xml\"/>"
         }.joined() + imagePaths.enumerated().map {
@@ -117,7 +132,7 @@ actor EPUBWriter {
         try writeText("""
         <?xml version="1.0" encoding="UTF-8"?>
         <package xmlns="http://www.idpf.org/2007/opf" version="3.0" unique-identifier="book-id" prefix="rendition: http://www.idpf.org/vocab/rendition/#">
-        <metadata xmlns:dc="http://purl.org/dc/elements/1.1/"><dc:identifier id="book-id">\(identifier)</dc:identifier><dc:title>\(xml(title))</dc:title><dc:language>\(language)</dc:language>\(author)<meta property="dcterms:modified">\(modified)</meta><meta property="rendition:layout">reflowable</meta></metadata>
+        <metadata xmlns:dc="http://purl.org/dc/elements/1.1/"><dc:identifier id="book-id">\(identifier)</dc:identifier><dc:title>\(xml(title))</dc:title><dc:language>\(language)</dc:language>\(author)\(summary)\(subjects)\(created)<meta property="dcterms:modified">\(modified)</meta><meta property="rendition:layout">reflowable</meta></metadata>
         <manifest><item id="nav" href="nav.xhtml" media-type="application/xhtml+xml" properties="nav"/><item id="css" href="style.css" media-type="text/css"/>\(manifest)</manifest><spine>\(spine)</spine></package>
         """, publication.appendingPathComponent("package.opf"))
         try writeText("""

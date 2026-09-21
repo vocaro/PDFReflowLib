@@ -112,10 +112,14 @@ enum PDFReflowLibPipeline {
         let send: (ReflowPart) async throws -> Void = { part in
             if let emit { try await emit(part) } else { collector.accept(part) }
         }
-        let title = options.title ?? document.title
-            ?? source.deletingPathExtension().lastPathComponent
+        // Client values win over the document's own, exactly as `options.title` always has; what
+        // the document states fills the rest (#253).
+        let stated = document.metadata
+        let title = options.title ?? stated.title ?? source.deletingPathExtension().lastPathComponent
         try await send(.start(.init(title: title.isEmpty ? "Untitled" : title, language: options.language,
-                                    author: options.author), chapterStartPages: evidence.chapterStartPages))
+                                    author: options.author ?? stated.author, summary: stated.summary,
+                                    keywords: stated.keywords, created: stated.created),
+                              chapterStartPages: evidence.chapterStartPages))
         let assets = PageAssetWriter(workspace: workspace, options: options)
         var sentAssets = 0
         var reflowed = 0

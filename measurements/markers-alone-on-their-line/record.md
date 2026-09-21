@@ -1,6 +1,7 @@
 # A list marker the extractor left alone on its line
 
-The four items of [#172](https://github.com/vocaro/PDFReflowLib/issues/172), measured on `main`.
+The four items of [#172](https://github.com/vocaro/PDFReflowLib/issues/172), measured on `main` at
+`15a1231`.
 
 The record the issue cites, `measurements/detached-labels/record.md`, was written on the abandoned
 coordination branch and is not in this tree; it is readable as
@@ -13,15 +14,17 @@ no line PDFKit joins across a page is ever taken apart here
 same finding from the other side). Every number below was measured here, on this tree.
 
 Host: macOS 27.0 (26A428), Xcode 27.0 (27A266a), arm64, shared with other agents' conversions.
-Library source at `b474f64` (baseline) and at `b474f64` plus this change (candidate), re-measured
-over that merge; `b474f64` carries #171's `setsAList`, which decides part of what moves. Release CLIs,
+Library source at `15a1231` (baseline) and at `15a1231` plus this change (candidate), re-measured
+over both merges taken while it was written; `b474f64` brought #171's `setsAList`, which decides
+part of what moves, and `15a1231` moved nothing here — the per-book delta is the same over both.
+Release CLIs,
 library defaults, `--package-identifier urn:uuid:00000000-0000-0000-0000-000000000172
 --modification-date 2026-01-01T00:00:00Z` for the standalone conversions.
 
 | Binary | SHA-256 |
 | --- | --- |
-| baseline, `swift build -c release` at `b474f64` | `57cd2743ff8f614add1a4ffa5ca707505b7908ea430c64cb78e9959379dc2d79` |
-| candidate, this change merged onto `b474f64` | `35ff9feddf7f5d02ceb4c4124b9abfa8db31f495e99c36b28e931dab8fd1b7fc` |
+| baseline, `swift build -c release` at `15a1231` | `d6262d6da6b70dc8150aad8541ffdee52fa1a5d830adc956d4efac7e1e10860e` |
+| candidate, this change merged onto `15a1231` | `242a9eadb2b51722f5badceebb084c6cdcc99a641a8775927cb500b3a87d62fa` |
 
 Both binaries converted every case of `tools/run_corpus_regressions.py --jobs 4` with EPUBCheck;
 each case's `result.json` and `content-assessment.json` were opened and read individually, never
@@ -151,7 +154,7 @@ on pages 21, 26, 182, 187, 194, 195, 200 and twenty-seven more, and page 101's `
 items. The Blue Book's 17 fewer blocks are the pieces of its OCR'd statistical rows rejoining the
 row they were cut from.
 
-Two shapes the earlier measurement (against `fbc5e1f`) saw move no longer do, because #171 reached
+Two shapes the first measurement (against `fbc5e1f`, before the merges) saw move no longer do, because #171 reached
 them first: Wallace pages 100, 105 and 122 stand eight or more lines on one edge and mark fewer than
 a quarter of them, so `1)` to `12)` there open paragraphs by `setsAList` and this rule never sees
 them. They head graphs and carry no text of their own; whether that reading is right is #171's

@@ -414,7 +414,11 @@ func theNineElevenReportKeepsAPresidentsInitialInItsParagraph() throws {
     let exercises = preformatted(reconstruct(algebra.content()))
     let numbered = markers(algebra.lines.map(\.text))
     #expect(numbered.count >= 20)
-    #expect(numbered.allSatisfy { exercises.contains($0) })
+    // Each marker-led line opens its own item. It need not be the whole of it: the page breaks a
+    // row after a raised exponent, so `73) (8n2` is one line and `− 3n)− (5+ 4n2)` the next, and
+    // the rest of the row belongs to the item the marker opened (#172, #265).
+    #expect(numbered.allSatisfy { marker in exercises.contains { $0.hasPrefix(marker) } })
+    #expect(exercises.contains("73) (8n2 − 3n)− (5+ 4n2)"))
 
     var warren = try SourceLayoutFixture.load("warren-50").content()
     warren.hasSyntheticTextStyle = true
@@ -529,7 +533,7 @@ func aMarkerAloneOnItsLineIsAMarkerWhereThePageSaysSo() {
                                         typography: PageTypography(page: content),
                                         labels: [], judgesTitleWords: false)
     }
-    let column = MarkerColumn(onMajorityEdge: true, justifiedRight: 340)
+    let column = MarkerColumn(onMajorityEdge: true, justifiedRight: 340, setsAList: true)
     #expect(role(marker, in: [sibling, marker, rest, neighbor]) == .markedLine(column))
     // The page's own evidence, taken away one piece at a time.
     // No item of its list stands on its left edge: the 9/11 report leaves a citation's year on a
@@ -567,7 +571,7 @@ func theRestOfAnItemsRowJoinsTheItem() {
         for piece in pieces { assembler.append(piece.0, as: piece.1) }
         return assembler.finish()
     }
-    let column = MarkerColumn(onMajorityEdge: true, justifiedRight: 340)
+    let column = MarkerColumn(onMajorityEdge: true, justifiedRight: 340, setsAList: true)
     let marker = line("17)", x: 40, y: 280, width: 14)
     let rest = line("(− 16,− 14), (11,− 14)", x: 58, y: 280, width: 110)
     let joined = blocks([(marker, .markedLine(column)), (rest, .prose)])

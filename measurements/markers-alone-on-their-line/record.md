@@ -13,17 +13,21 @@ no line PDFKit joins across a page is ever taken apart here
 same finding from the other side). Every number below was measured here, on this tree.
 
 Host: macOS 27.0 (26A428), Xcode 27.0 (27A266a), arm64, shared with other agents' conversions.
-Library source at `fbc5e1f` (baseline) and at `fbc5e1f` plus this change (candidate). Release CLIs,
+Library source at `b474f64` (baseline) and at `b474f64` plus this change (candidate), re-measured
+over that merge; `b474f64` carries #171's `setsAList`, which decides part of what moves. Release CLIs,
 library defaults, `--package-identifier urn:uuid:00000000-0000-0000-0000-000000000172
 --modification-date 2026-01-01T00:00:00Z` for the standalone conversions.
 
 | Binary | SHA-256 |
 | --- | --- |
-| baseline, `swift build -c release` at `fbc5e1f` | `801f0de432e7546c6a118925bef6b0b66ca0aed4133f8843f927be93232ed374` |
-| candidate, this change | `3cb732c2c570a132202ccd5c7952081fbef4e88f98fe1c973d7229d0e061023f` |
+| baseline, `swift build -c release` at `b474f64` | `57cd2743ff8f614add1a4ffa5ca707505b7908ea430c64cb78e9959379dc2d79` |
+| candidate, this change merged onto `b474f64` | `35ff9feddf7f5d02ceb4c4124b9abfa8db31f495e99c36b28e931dab8fd1b7fc` |
 
 Both binaries converted every case of `tools/run_corpus_regressions.py --jobs 4` with EPUBCheck;
-each case's `result.json` was opened and its `runPassed` read individually, never through a pipe.
+each case's `result.json` and `content-assessment.json` were opened and read individually, never
+through a pipe. `runPassed` alone is not the verdict: the baseline's Wallace case reports
+`runPassed: true` while its content assessment holds the two errors this change fixes, and the lane
+prints `FAIL` for it.
 The per-book comparison reads each EPUB's spine in order, splits it into top-level blocks and
 attributes each to the source page whose marker precedes it, then diffs the two runs.
 `tools/compare_conversion_runs.py` was not used: it refuses a pair without a capability-probe
@@ -129,9 +133,9 @@ Per book, over both complete lanes:
 
 | Book | Changed source pages | Blocks on those pages | `<pre>` blocks on them |
 | --- | --- | --- | --- |
-| *Beginning and Intermediate Algebra* | 35 | 1,755 → 1,508 | 1,017 → 1,047 |
-| *Project Blue Book Special Report No. 14* | 18 | 2,569 → 2,544 | 120 → 120 |
-| *The 9/11 Commission Report* | 3 | 53 → 53 | 25 → 28 |
+| *Beginning and Intermediate Algebra* | 34 | 1,734 → 1,487 | 1,013 → 1,037 |
+| *Project Blue Book Special Report No. 14* | 13 | 1,822 → 1,805 | 80 → 80 |
+| *The 9/11 Commission Report* | 1 | 9 → 9 | 3 → 4 |
 | IRS Publication 596 (Chinese) | 2 | 117 → 112 | 8 → 15 |
 | The other 14 cases | 0 | — | — |
 
@@ -143,10 +147,15 @@ are its exercises coming back together: the book breaks a row after a raised exp
 <pre>73) (8n2 − 3n)− (5+ 4n2)</pre>
 ```
 
-on pages 21, 26, 182, 187, 194, 195, 210 and seventeen more. Page 101's `17)` and `28)` are items,
-and page 122's `7)` to `12)`, which head graphs and carry no text of their own, are items instead of
-paragraphs. The Blue Book's 25 fewer blocks are the pieces of its OCR'd statistical rows rejoining
-the row they were cut from.
+on pages 21, 26, 182, 187, 194, 195, 200 and twenty-seven more, and page 101's `17)` and `28)` are
+items. The Blue Book's 17 fewer blocks are the pieces of its OCR'd statistical rows rejoining the
+row they were cut from.
+
+Two shapes the earlier measurement (against `fbc5e1f`) saw move no longer do, because #171 reached
+them first: Wallace pages 100, 105 and 122 stand eight or more lines on one edge and mark fewer than
+a quarter of them, so `1)` to `12)` there open paragraphs by `setsAList` and this rule never sees
+them. They head graphs and carry no text of their own; whether that reading is right is #171's
+question, not this one.
 
 Three pages break a word where the baseline did not, all of them the same thing and all of them the
 library's documented "no list model": an item that **wraps** is one preformatted block per line.
@@ -160,14 +169,17 @@ library's documented "no list model": an item that **wraps** is one preformatted
   `美元` once on each page at the boundary.
 
 That break is a defect of the library's list handling, not of this rule — it is what every other
-wrapped numbered item in the corpus already does — and it is filed separately.
+wrapped numbered item in the corpus already does — and
+[#266](https://github.com/vocaro/PDFReflowLib/issues/266) already tracks it, in Our Flag's words.
 
 *The Warren Commission Report* and NOAA's Fifth National Climate Assessment are not in the lane
-(`corpus/regressions.json`'s `excludedFullConversions`). Warren was converted standalone with both
-binaries for this record; the result is below. NOAA's full conversion exceeds the 512 MiB entry
-budget at library defaults and was not converted: the survey predicts 686 hanging reference numbers
-on 73 pages moving from a `<p>` to a `<pre>`, which is the same move the lane reviewed on the 9/11
-report and IRS 596, on entries whose markers PDFKit did not split and which are `<pre>` already.
+(`corpus/regressions.json`'s `excludedFullConversions`) and were not converted for this record, so
+what moves in them is **unmeasured**. The survey, which over-predicts everywhere it can be checked
+— it says 12 lines on 10 pages of the 9/11 report where the lane moved 1 page, because it models no
+column cut, no reading order and not `continuesWrapped` — says 28 lines on 14 pages of Warren and
+686 on 73 pages of NOAA. NOAA's are its hanging reference numbers, moving from a `<p>` to a `<pre>`:
+the same move the lane reviewed on the 9/11 report and IRS 596, on entries whose markers PDFKit did
+not split and which are `<pre>` already.
 
 ## Item 1: `Vegetables` and `& Fruits` stay two paragraphs — not reproducible on `main`
 
@@ -190,8 +202,8 @@ label's at 39.36. Splitting that line is `#14`'s `splitDetachedShows`, which is 
 on `main` the left label does not join either — the page reads `Protein, Dairy`, `Vegetables`,
 `& Healthy Fats & Fruits` — and the two-paragraph split the issue describes cannot be reproduced.
 
-A ranged-right paragraph join was written and measured against the survey before being abandoned. A
-rule that joins two stacked same-size lines at ordinary leading whose right edges agree within a
+A ranged-right paragraph join was specified and measured against the survey before being abandoned;
+it was never written into the library. A rule that joins two stacked same-size lines at ordinary leading whose right edges agree within a
 quarter of a body, whose left edges differ by more than the 1.5 bodies the column test allows, and
 neither of which stands on a left edge another line of its size shares, takes **228 pairs** across
 the corpus: 153 in the Arabic USCIS guide, where right-ranged wraps are what the writing system
@@ -200,8 +212,8 @@ and the joins are wrong (`− 6+ 60(− 2) Multiply` with `− 6− 120 Subtract
 OCR'd pages; and the one DGA pair. Unlike #14's own threshold, where every column or cell gap
 reached at most 11.5 ems and content set against opposite sides of a page began at 17.8, this
 population has no empty band to put a threshold in, and 227 of the 228 pairs are not the label the
-issue is about. **Nothing was changed for this item**, and the ranged-right rule is not in the
-candidate binary.
+issue is about. **Nothing was changed for this item.** DGA page 1's blocks are identical in the
+baseline and the candidate.
 
 ## Item 2: the cover reads column-major — not a defect, because it does not happen
 
@@ -267,7 +279,13 @@ on hand-made lines with no page fixture:
   a bulleted item takes its row the same way; a piece a gutter away, a line on another row, and a
   second prose line beneath the item each stay their own block.
 
-Both fail on `fbc5e1f`'s behavior with four recorded issues between them.
+Both fail on the baseline's behavior with four recorded issues between them.
+
+One existing test changed with the rule. `corpusListOpeningsKeepTheirOwnBlocks` asserted that every
+marker-led line of the Wallace page-26 fixture is a preformatted block *equal to that line*; it now
+asserts that each one **opens** such a block, and that `73) (8n2 − 3n)− (5+ 4n2)` is one of them.
+The page breaks that row after a raised exponent, so the marker-led line is no longer the whole of
+its item — which is #265's point.
 
 `corpus/regressions.json` gains Wallace page 101: `17) (− 16,− 14), (11,− 14)` and
 `28) (− 18,− 5), (14,− 3)` must each be one preformatted block, beside `16)` and `27)` as the
@@ -283,3 +301,16 @@ Page 101: missing preformatted block '28) (− 18,− 5), (14,− 3)'
 `preformatted` is a new contract check type, the mirror of `paragraphs`: a phrase inside one `<pre>`
 block, which a paragraph, two adjacent items or the page's running text cannot satisfy. Its negative
 controls are in `tools/test_corpus_content.py`.
+
+## Gates
+
+`scripts/check-all.sh --fast`, in the foreground, exit 0: python-tool-tests, measurements-policy,
+swift-tests, release-build, pdfkit-concurrency, documented-builds, doc-counts, issue-citations,
+fixture-epubs and conversion-policies all PASS.
+
+The corpus lane, `tools/run_corpus_regressions.py --jobs 4` with EPUBCheck, exit 0. Every case's
+`result.json` and `content-assessment.json` were opened individually: 18 of 18 `runPassed: true`,
+every memory gate `passed` at host pressure level 1 with four concurrent evaluations, and no content
+error anywhere. The same lane on the baseline binary exits 1 on `wallace-algebra-2010`, whose
+`runPassed` is `true` while its content assessment holds the two errors above — which is why the
+verdict is read from both files and not from `runPassed` alone.

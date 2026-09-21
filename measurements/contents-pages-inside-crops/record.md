@@ -1,12 +1,15 @@
 # Contents pages inside image crops, and the two items of #207 that were already answered
 
-Measured under [#207](https://github.com/vocaro/PDFReflowLib/issues/207), baseline `b474f64`,
+Measured under [#207](https://github.com/vocaro/PDFReflowLib/issues/207), baseline `96c00a8`,
 2026-09-21, macOS 27 / Xcode 27, arm64, release CLI at library defaults. The baseline binary is
-built from `b474f64` itself; the changed binary is that tree plus this commit and nothing else.
+built from `96c00a8` itself; the changed binary is that tree plus this commit and nothing else.
+The rules were arrived at on `b474f64`, and the table of costs below names that base because that
+is where each condition was measured; everything else here was re-measured on the merged tree
+against `96c00a8` and came out the same to the character.
 Character counts of a page's extraction are the characters of every line PDFKit returns for it;
 character counts of a converted book are `outputTextCharacters` as the corpus lane reads it.
 
-#207 names three items. Two of them are already answered on `b474f64` and are recorded here as
+#207 names three items. Two of them are already answered on `main` and are recorded here as
 measurements rather than changes; the third is real, and this commit is its fix.
 
 ## Item 1: the 9/11 report's abbreviations list (page 448) does not run entries together
@@ -14,7 +17,7 @@ measurements rather than changes; the third is real, and this commit is its fix.
 Physical page 448 prints the second half of Appendix A, `NORAD` through `WTO`. PDFKit merges
 fifteen of its twenty rows into one line each (`NTSB National Transportation Safety Board`) and
 reads five apart (`NORAD` at x=39.66 and `North American Aerospace Defense Command` at x=129.66,
-on one baseline). Converted at `b474f64`, the page's twenty entries are twenty `<pre>` blocks,
+on one baseline). Converted at `96c00a8`, the page's twenty entries are twenty `<pre>` blocks,
 each carrying its abbreviation and its expansion:
 
 ```
@@ -46,7 +49,7 @@ which is the point of it.
 Each page sets two timelines side by side, thirteen and ten entries on page 50, eleven and eleven
 on page 51. PDFKit merges the time with its event on some rows (`7:59 Takeoff`, one line) and
 reads them apart on others (`8:19` at x=39.66 beside `Flight attendant notifies AA of` at
-x=75.66). Converted at `b474f64`, every entry is one block carrying its own time, and the left
+x=75.66). Converted at `96c00a8`, every entry is one block carrying its own time, and the left
 timeline is read whole before the right one opens:
 
 ```
@@ -80,7 +83,7 @@ captures; it too passes on the baseline.
 `noaa-nca5-2023` pages 9–18 are its table of contents. Each sets its entries from the left margin
 to a page number at the right edge, with a painted leader between them, and each places the same
 decorative line drawing over its top right corner — a placed raster XObject at
-[358.5, 409.3, 433.5, 202.7] on a 792 × 612 page. Measured on `b474f64` with a probe that runs
+[358.5, 409.3, 433.5, 202.7] on a 792 × 612 page. Measured on `96c00a8` with a probe that runs
 `graphicsWithLabels` and `LayoutReconstructor.takes` over the page exactly as `blocks` does:
 
 | page | lines | characters | lines in crops | characters in crops | share | crops before | crops after |
@@ -149,7 +152,7 @@ Pages 9–18 cut out with `qpdf --pages … 9-18` and converted with both binari
 reading aid, not a pinned source; the full book is excluded from the lane for the image-output
 ceiling, [noaa-output-policies](../noaa-output-policies/record.md)):
 
-| | baseline `b474f64` | with this commit |
+| | baseline `96c00a8` | with this commit |
 | --- | ---: | ---: |
 | characters inside source-page markers | 5,501 | 14,717 |
 | images | 61 | 24 |
@@ -158,10 +161,16 @@ Page 9 opens `Traceable Accounts 5-19 References 5-27 6-1 Introduction 6-5 …` 
 `Chapter 4. Water 4-1 Introduction 4-4 Key Message 4.1. Climate Change Will Continue to Cause
 Profound Changes in the Water Cycle 4-6 …` with the change.
 
+Both lanes and both page measurements were run twice, once against `b474f64` and once against the
+merged `96c00a8`, and every number in this record is the same on both: 9,281 characters inside
+crops before and none after, 51 crops down to 14, 5,501 characters to 14,717 and 61 images to 24,
+and one book moving in the corpus.
+
 ## The corpus
 
 All eighteen cases pass on the baseline and on the change, read case by case from each case's own
-`result.json`: `runPassed: true` and `memoryGate.status: passed` for every one, on both.
+`result.json`: `runPassed: true` and `memoryGate.status: passed` for every one, on both. The pair
+of lanes was run against `b474f64` and again against `96c00a8`, with the same outcome.
 
 Seventeen of the eighteen books are unchanged to the character. One moves:
 

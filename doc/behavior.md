@@ -1049,6 +1049,26 @@ Evidence: [outline-navigation](../measurements/outline-navigation/record.md).
 
 ## PageRasterizer and PageAssetWriter: images
 
+- **The source's own picture (#251).** A crop that is exactly one placed JPEG is written as that
+  JPEG rather than redrawn: the original stream is what the page holds, and a render can only
+  resample it. The magazine's eight extractable figures fall from 2,316,672 rendered bytes to
+  316,106, because the render was upsampling a 365 × 322 photograph to 656 × 579. Where a source
+  image is higher resolution than the render the bytes go up instead, so the byte budget is
+  checked against the real size before the asset is committed and the render is the fallback.
+  The conditions are narrow and everything else keeps the render it always had: one placed image
+  covering at least 98% of the crop and covered by it to the same degree, nothing else of the
+  page's pictures touching that crop, no rotation or skew and an unrotated page, `DCTDecode`
+  only, no soft mask, colour-key mask, stencil or `/Decode` array, eight bits a component, a
+  device RGB or gray space or an ICC-based one of one or three components, and a JPEG whose own
+  frame header states the size and component count the image dictionary does. An ICC profile is
+  written into the extracted file as APP2 segments, so its colours stay the page's; nearly every
+  `DCTDecode` image in the corpus is ICC-based, so refusing them would leave the rule doing
+  nothing. A page whose content stream cannot be walked to the end extracts nothing at all.
+  Full-page assets are never extracted: a page image stands for everything on its page, and a
+  page can draw text over a photograph. A client that names `.png` for regions gets the render it
+  asked for, and `.automatic`'s classifier is bypassed rather than consulted, an extracted
+  original having already made that choice.
+  Evidence: [embedded-image-extraction](../measurements/embedded-image-extraction/record.md).
 - Rasters are rendered from the original page at the requested DPI (default 180), each full page
   or crop independently bounded by the pixel ceiling (12 million by default; a 1-million control
   reduces an FAA page to about 106 DPI while a small crop still reaches about 239 DPI).

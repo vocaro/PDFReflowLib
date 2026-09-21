@@ -8,6 +8,9 @@ final class PageAssetWriter {
     private var imageBytes: Int64 = 0
     private let workspace: URL
     private let options: ConversionOptions
+    /// The placed images of the page being written, read once for the run of crops it supplies
+    /// (#251). Streams belong to that page and are dropped with it.
+    private var placements: (page: CGPDFPage, images: [EmbeddedImageReader.Placement])?
 
     init(workspace: URL, options: ConversionOptions) {
         self.workspace = workspace
@@ -24,6 +27,13 @@ final class PageAssetWriter {
               drawnFromImage: Bool = false) throws -> String {
         try Task.checkCancellation()
         let assetID = "image-\(assets.count + 1)"
+        // A crop that is exactly one placed JPEG is written as that JPEG. The original stream is
+        // what the page draws, at the resolution the source holds rather than the one the
+        // renderer would pick, and it is usually smaller than a re-encode of a 180 DPI redraw
+        // (#251). A full page is never one image in this sense: it carries the page's text.
+        if !fullPage, let extracted = try extractedJPEG(for: rect, on: page, id: assetID) {
+            return extracted
+        }
         let encoded = try autoreleasepool {
             // `.automatic` is decided here, where the image's role and its page are known, from the
             // raster's own buffer: reading a finished `CGImage`'s pixels would copy them (#193).
@@ -43,6 +53,34 @@ final class PageAssetWriter {
         imageBytes += Int64(try encoded.url.resourceValues(forKeys: [.fileSizeKey]).fileSize ?? 0)
         guard imageBytes <= options.maximumOutputBytes else { throw ConversionError.resourceLimit("image output bytes") }
         assets.append(.init(id: assetID, fileURL: encoded.url, format: encoded.format))
+        return assetID
+    }
+
+    /// Writes the crop's own embedded JPEG and registers it, or returns nil for the render.
+    ///
+    /// The content classifier is bypassed rather than consulted: an extracted original has
+    /// already made the choice it would make. A client that named `.png` for regions asked for
+    /// PNG and gets the render, and a rotated page is drawn rather than extracted, because the
+    /// stream's pixels are not in the order the page shows them.
+    private func extractedJPEG(for rect: CGRect, on page: PDFPage, id assetID: String) throws -> String? {
+        guard options.regionImageEncoding != .png, page.rotation % 360 == 0,
+              let reference = page.pageRef else { return nil }
+        if placements?.page !== reference {
+            placements = (reference, EmbeddedImageReader.placements(reference))
+        }
+        guard let images = placements?.images, !images.isEmpty else { return nil }
+        // The budget sees the real size before the asset is committed: a scan extracted
+        // losslessly can be larger than its render, and then the render is what fits.
+        let remaining = options.maximumOutputBytes - imageBytes
+        guard remaining > 0,
+              let data = EmbeddedImageReader.extractableJPEG(for: rect, among: images,
+                                                             maximumBytes: Int(min(remaining, Int64(Int.max)))) else {
+            return nil
+        }
+        let url = workspace.appendingPathComponent("assets/" + assetID + ".jpg")
+        try data.write(to: url)
+        imageBytes += Int64(data.count)
+        assets.append(.init(id: assetID, fileURL: url, format: .jpeg))
         return assetID
     }
 }

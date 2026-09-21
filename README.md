@@ -98,7 +98,8 @@ across hard wraps and page breaks; validated PDF paragraph and heading tags supp
 levels where they are trustworthy; hyphens, recurring headers and footers, code, lists and
 headings are decided by bounded, evidence-based rules. Core Graphics scans painted regions so
 figures, ruled tables, labels, displayed formulas and fractions are cropped from the original
-rendering. Vision recognizes pages with missing or damaged text, existing text that does not read
+rendering, and a figure that is exactly one embedded JPEG is written as that JPEG rather than
+redrawn. Vision recognizes pages with missing or damaged text, existing text that does not read
 as a plausible transcription of its page image, born-digital text without a usable Unicode
 mapping, and pages whose only writing is drawn; every such page is warned. Recognition can return
 success while leaving whole paragraphs or table columns unread, so each recognized page is

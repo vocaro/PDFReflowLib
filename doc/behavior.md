@@ -1183,6 +1183,62 @@ Evidence: [spine-continuity](../measurements/spine-continuity/record.md),
 [line-end-hyphen-substitutes](../measurements/line-end-hyphen-substitutes/record.md),
 [page-leading-and-ligature-vocabulary](../measurements/page-leading-and-ligature-vocabulary/record.md).
 
+## TableReader: a table read as cells (#210)
+
+A page's tables are read during extraction, where the page itself can still be asked what stands
+inside a rectangle, and carried on `PageContent.tables`. Where a table is read, the crop that used
+to preserve it as a picture is never seeded, its rows do not reflow as text, and the writer emits
+`<table>` markup that carries the association a table exists to state: which value stands under
+which heading.
+
+- **Rows and their ink.** A printed row is a row of the page's extracted lines (a raised note
+  marker shares its row). Its ink is the run of the page's own text-showing operations on that
+  row, merged where they touch — finer than the lines PDFKit hands back, and independent of where
+  PDFKit chose to break a row. One walk of the content stream serves this and the spacing repair.
+- **Blocks.** A block is a run of at least four rows at one type size and one leading, which the
+  first step states and every later step keeps within a third of a body. That is what separates a
+  table from the paragraph above it: the USGS summaries set their tables at the body's 11.0-point
+  leading and leave 21.7 points above the first row.
+- **Columns are the white that runs down every row.** An x range no row of the block puts ink in,
+  at least half a body wide, is a corridor; two corridors make three columns. Every row is then
+  divided at the corridors' midpoints rather than at its own gaps, which is what divides the
+  widest row correctly: `Employment, mine and plant, number 11,000 11,400 12,000 12,600 13,000`
+  leaves 5.6 points between its values where the rows above leave 8.4, and no per-row threshold
+  reads both. A heading the page sets across several columns closes the corridors under it, so up
+  to two such rows are lifted off the top of the block and read against the columns the rows below
+  state, which gives `Mine production` and `Refinery production` their `colspan="2"`.
+- **A cell's reading.** Where the page's extracted lines divide on a cell's edges, the cell is
+  those lines' own content, with the spacing repair, the styles and the links the rest of the
+  pipeline gives them. Where one line spans several cells, the cell is the plain characters
+  `PDFPage.selection(for:)` reads inside the rectangle: the line's string cannot be divided at its
+  spaces, because `1.7¢/kg on lead content.` is one cell with spaces in it and `United States
+  1,130 1,100 882 890 47,000` is six cells with the same spaces between them.
+- **A cell cannot be lost.** Unless the cells account for every non-space character of the lines
+  the block covers, the table is declined and the page keeps the reading it had.
+- **Column headings.** The rows at the top of the block that the page underlines with a thin rule
+  become a `<thead>` of `<th scope="col">`; only the block's first three rows are consulted,
+  because a rule above a total row is not a heading. This is the same evidence #36 reads.
+- **A label the page wrapped.** A row putting ink in no column but the first, whose ink reaches
+  that column's edge, is the first half of the row below and joins its opening cell: `Stocks,
+  refined, held by U.S. producers, consumers, and metal` / `exchanges, yearend 118 117 84 127 70`
+  is one row. A group row holding only a label — `Production:`, `Exports:` — stops a fifth of the
+  way across and stays the row it is.
+- **What is not a table.** Three conditions keep running prose out. *Three columns at least*: two
+  columns of prose facing each other across a gutter are a page's layout, and the gutter is one
+  corridor. *No column of prose*: a column whose cells fill it again and again — three or more of
+  five words or longer, and at least half the column's filled cells — is the page's own text.
+  Page 416 of the FAA handbook prints its NDB table in the right column of a two-column page, and
+  on geometry alone the left column's prose rows and the table's rows form one grid; this is what
+  separates them, and three of the twenty-four rows of the USGS label column reach the column's
+  edge without being prose. *A column of values*: some column other than the first must hold three
+  cells at least and be two-thirds numbers, where a value is a number, a dash standing for zero,
+  or a number an estimate mark or note marker is set against (`e740`, `(2)`, `7100,000`, `—`).
+- **What a cell does not carry.** A cell's marks are characters, not markup, where the cell is not
+  one whole extracted line: `Reserves6` and `e150` read as the page prints them but the raised
+  digit is not a `<sup>`.
+
+Evidence: [tables-read-as-cells](../measurements/tables-read-as-cells/record.md).
+
 ## Region detectors
 
 - **`TableRegionDetector`.** Aligned numeric dot-leader rows with a nearby, similarly aligned
@@ -1312,7 +1368,9 @@ Evidence: [spine-continuity](../measurements/spine-continuity/record.md),
   the width of both beneath them, which was preserved as a 310 × 4 pt picture. And a row of
   at least three header underlines, or one short piece underlined whole away from the left margin,
   over at least three tightly leaded rows carrying numbers, is a borderless table
-  (`TableRegionDetector.underlinedColumnRegions`) preserved as one region (#36).
+  (`TableRegionDetector.underlinedColumnRegions`) preserved as one region (#36) — unless
+  `TableReader` read that table as cells, in which case the seed is dropped and no crop is made
+  (#210).
 - **Region expansion.** A seed's crop admits only the text lines it captures and the other pieces
   of those lines' rows, never a chain from line to line: PDFKit's line rectangles include leading
   and so overlap on tight leading, and chaining absorbed whole columns. A thin rule captures only
@@ -1489,14 +1547,20 @@ Evidence: [raster-dpi](../measurements/raster-dpi/record.md),
 
 ## EPUBWriter, SpinePacker, EPUBTextEncoder
 
-- **Base direction (#41).** A paragraph, heading or preformatted block whose own text reads right
+- **Tables (#210).** A table block is written as an EPUB 3 `<table>`: the rows the page set as its
+  column headings become a `<thead>` of `<th scope="col">` and the rest a `<tbody>` of `<td>`, so
+  a reading system can announce the heading a value stands under. A cell the page set across
+  several columns carries `colspan`; `colspan="1"` is the default and is left out, so the markup
+  states only what the page states. The model refuses a ragged table — every row covers the same
+  number of columns, or the document is invalid — because ragged markup aligns in no reader. The
+  stylesheet collapses the borders, sets cells flush left and top, and rules under the heading row.
+- **Base direction (#41).** A paragraph, heading, table or preformatted block whose own text reads right
   to left (`ArabicText.readsRightToLeft`) is written with `dir="rtl"`, a global attribute of
   XHTML5 and valid on each of those elements; nothing else carries the attribute, so a Latin or
   East Asian book's markup is byte-identical to what it was. A book most of whose text blocks read
   that way also states `page-progression-direction="rtl"` on its spine. Together they let a reader
   lay out the numbers, Latin terms and brackets inside each paragraph the way the source page did,
   and turn the book's pages the way it was bound. EPUBCheck 5 passes the Arabic guide with both.
-
 - **Painted underlines (#235).** A page can emphasize a word by painting a rule under it rather
   than by setting an underlined font, which leaves no trace in the text layer. Such a run is
   marked and written `<u>`, which states the appearance the page draws without claiming a link.

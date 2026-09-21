@@ -50,7 +50,8 @@ struct ReflowDocument: Sendable, Equatable {
     var chapterStartPages: Set<Int> = []
 
     enum ValidationError: Error, Equatable {
-        case emptyDocument, duplicateAsset(String), missingAsset(String), invalidHeadingLevel(Int), invalidChapterBoundary(Int)
+        case emptyDocument, duplicateAsset(String), missingAsset(String), invalidHeadingLevel(Int),
+             invalidChapterBoundary(Int), invalidTable
     }
 
     /// The document as the stream a producer emits, in production order.
@@ -93,6 +94,15 @@ struct ReflowDocument: Sendable, Equatable {
                     guard identifiers.contains(image.assetID) else { throw ValidationError.missingAsset(image.assetID) }
                 case let .sourcePage(number):
                     unmatchedChapterStarts.remove(number)
+                case let .table(table):
+                    // A table is a rectangle of cells or it is not a table: every row covers the
+                    // same number of columns, and the header rows are rows it has (#210). A
+                    // ragged table would serialize as markup no reading system can align.
+                    let widths = table.rows.map { $0.reduce(0) { $0 + max(0, $1.columns) } }
+                    guard let width = widths.first, width >= 2, widths.allSatisfy({ $0 == width }),
+                          table.rows.allSatisfy({ $0.allSatisfy { $0.columns >= 1 } }),
+                          (0...table.rows.count).contains(table.headerRows)
+                    else { throw ValidationError.invalidTable }
                 case .paragraph, .preformatted:
                     break
                 }
@@ -308,11 +318,33 @@ struct ReflowBlock: Sendable, Equatable {
         /// Where the source links this figure, if it does (#247).
         var link: LinkTarget?
     }
+    /// A table the source draws, as rows of cells rather than as a picture or as rows of text
+    /// (#210). The model carries the association a reader needs — which value stands under which
+    /// column heading — which neither a crop nor a line of text can carry.
+    struct Table: Sendable, Equatable {
+        struct Cell: Sendable, Equatable {
+            var text: InlineText
+            /// How many columns the cell covers; a spanning heading covers several.
+            var columns: Int = 1
+        }
+        /// Rows top down, cells left to right. Every row covers the table's whole width.
+        var rows: [[Cell]]
+        /// How many of `rows` the page set as its column headers, from the top. The writer emits
+        /// those as `<th scope="col">` inside a `<thead>`.
+        var headerRows: Int = 0
+
+        /// Every cell's text in reading order, which the block's `text` reports.
+        var text: String {
+            rows.map { $0.map(\.text.text).filter { !$0.isEmpty }.joined(separator: " ") }
+                .filter { !$0.isEmpty }.joined(separator: "\n")
+        }
+    }
     enum Content: Sendable, Equatable {
         case paragraph(InlineText)
         case heading(id: String, text: InlineText, level: Int = 2)
         case preformatted(InlineText)
         case image(Image)
+        case table(Table)
         case sourcePage(Int)
     }
     var content: Content
@@ -325,6 +357,7 @@ struct ReflowBlock: Sendable, Equatable {
         switch content {
         case let .paragraph(text), let .heading(_, text, _): text.text
         case let .preformatted(text): text.text
+        case let .table(table): table.text
         case .image, .sourcePage: ""
         }
     }
@@ -333,12 +366,13 @@ struct ReflowBlock: Sendable, Equatable {
         case let .paragraph(text), let .heading(_, text, _): text.sourcePages
         case let .sourcePage(page): [page]
         case let .preformatted(text): text.sourcePages
+        case let .table(table): table.rows.flatMap { $0.flatMap(\.text.sourcePages) }
         case .image: []
         }
     }
     var hasReflowedText: Bool {
         switch content {
-        case .paragraph, .heading, .preformatted: true
+        case .paragraph, .heading, .preformatted, .table: true
         case .image, .sourcePage: false
         }
     }

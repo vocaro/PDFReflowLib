@@ -6,12 +6,12 @@
     {
       "page": 1,
       "target": "Salient Statistics table and surrounding sections",
-      "acceptance": "Reflow the Domestic Production, Recycling, Import Sources and Tariff prose. Preserve the borderless table with its indentation-only row groups, year columns and estimate markers, as cells or a readable image with a warning."
+      "acceptance": "Reflow the Domestic Production, Recycling, Import Sources and Tariff prose. Read the borderless table as cells, keeping its indentation-only row groups, its year columns and its estimate and note markers."
     },
     {
       "page": 2,
       "target": "World Mine and Refinery Production and table notes",
-      "acceptance": "Reflow the Events, World Resources and Substitutes prose. Keep spanning Mine/Refinery production headers over their year pairs and in-cell superscripts; keep table notes 1-8 in order and associated with their markers."
+      "acceptance": "Reflow the Events, World Resources and Substitutes prose. Read the table as cells with the Mine/Refinery production headers spanning their year pairs; keep table notes 1-8 in order and associated with their markers."
     }
   ],
   "tableReferences": [
@@ -483,6 +483,6 @@
       ]
     }
   ],
-  "tableReferenceScope": "Complete cell transcriptions of the three page tables, read from the rendered source and cross-checked row by row against Poppler 26.04.0 pdftotext -layout (raised e, note markers and wrapped labels split across Poppler lines were reconciled visually). group lists the indentation-only parent rows; e marks an estimate, (n) a note marker, — zero. For future cell-association contracts; current output preserves these tables as images (#36).",
-  "scope": "Manual targets. Current converter rasterizes prose beside both tables (#36)."
+  "tableReferenceScope": "Complete cell transcriptions of the three page tables, read from the rendered source and cross-checked row by row against Poppler 26.04.0 pdftotext -layout (raised e, note markers and wrapped labels split across Poppler lines were reconciled visually). group lists the indentation-only parent rows; e marks an estimate, (n) a note marker, — zero. Since #210 the converter reads all three tables as cells and these transcriptions are the reference the reviewed contract in corpus/regressions.json pins twenty rows against; group is not carried into the output, where a group row is a row holding its label and empty cells, and a cell's raised marks are characters rather than markup.",
+  "scope": "Manual targets. Since #210 the converter emits no images for this extract: the prose reflows and the three tables are cells."
 }

@@ -1,5 +1,16 @@
 import Foundation
 
+/// One entry of the table of contents a document states for itself, which `OutlineReader` reads
+/// and the writer renders as navigation (#249). The model owns the type so that it carries no
+/// dependency on how the outline was read.
+struct OutlineEntry: Sendable, Equatable {
+    var title: String
+    /// One-based physical page. Nil where the entry resolves to no page of this document and
+    /// only groups the entries under it.
+    var page: Int?
+    var children: [OutlineEntry] = []
+}
+
 /// The output-independent logical document. Assets are file-backed for the conversion's lifetime.
 /// This is an internal value model, not a public interchange schema.
 struct ReflowDocument: Sendable, Equatable {
@@ -16,6 +27,9 @@ struct ReflowDocument: Sendable, Equatable {
         /// The page number the source prints, by physical page, where the two differ (#248).
         /// A page absent here is labeled with its physical number.
         var pageLabels: [Int: String] = [:]
+        /// The author's own table of contents, where the document states a usable one (#249).
+        /// Empty leaves navigation to the headings the layout pass detected.
+        var outline: [OutlineEntry] = []
     }
 
     struct Asset: Sendable, Equatable {

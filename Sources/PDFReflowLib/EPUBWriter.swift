@@ -26,6 +26,7 @@ actor EPUBWriter {
     private var keywords: [String] = []
     private var created: Date?
     private var pageLabels: [Int: String] = [:]
+    private var outline: [OutlineEntry] = []
     private var packer = SpinePacker(bodyTargetBytes: EPUBWriter.bodyTargetBytes, chapterStartPages: [])
     private var validation = ReflowDocument.Validation()
     /// Assets in arrival order: the archive names them by that order and packages their bytes.
@@ -68,6 +69,7 @@ actor EPUBWriter {
             keywords = metadata.keywords
             created = metadata.created
             pageLabels = metadata.pageLabels
+            outline = metadata.outline
             packer = SpinePacker(bodyTargetBytes: Self.bodyTargetBytes, chapterStartPages: chapterStartPages,
                                  pageLabels: metadata.pageLabels)
             try FileManager.default.createDirectory(at: directory.appendingPathComponent("META-INF"),
@@ -100,7 +102,17 @@ actor EPUBWriter {
         try validation.finish()
         try write(try packer.finish(budgetRemaining: maximumOutputBytes - consumed))
         let chapters = packer.documentNames
-        var toc = packer.toc.map(\.markup)
+        // An outline entry names a page, and which spine document holds a page is only known
+        // once every document has closed — which is now. `packer.pages` is that map (#249).
+        var pageFiles: [Int: String] = [:]
+        for entry in packer.pages where entry.fragment.hasPrefix("page-") {
+            pageFiles[Int(entry.fragment.dropFirst(5)) ?? 0] = entry.file
+        }
+        // The author's own contents is the navigation where the document states a usable one;
+        // the detected headings are the navigation everywhere else. Headings keep their ids
+        // either way, so nothing in the text stops being addressable.
+        var toc = Self.markup(outline, pageFiles: pageFiles)
+        if toc.isEmpty { toc = packer.toc.map(\.markup) }
         if toc.isEmpty { toc = ["<li><a href=\"\(chapters[0])\">\(xml(title))</a></li>"] }
         let nav = """
         <nav epub:type="toc" id="toc"><h1>Contents</h1><ol>\(toc.joined())</ol></nav>
@@ -175,6 +187,23 @@ actor EPUBWriter {
             await progress(ProgressBudget.writer(archivedEntries: i + 1, of: entries.count))
         }
         return archiveURL
+    }
+
+    /// Outline entries as EPUB navigation list items, nested as the author nested them. An entry
+    /// whose page did not resolve groups its children in a `span`, and one with neither a
+    /// resolved page nor children is left out, because a list item must name something.
+    private static func markup(_ entries: [OutlineEntry], pageFiles: [Int: String]) -> [String] {
+        var items: [String] = []
+        for entry in entries {
+            let nested = markup(entry.children, pageFiles: pageFiles)
+            let list = nested.isEmpty ? "" : "<ol>\(nested.joined())</ol>"
+            if let page = entry.page, let file = pageFiles[page] {
+                items.append("<li><a href=\"\(file)#page-\(page)\">\(xml(entry.title))</a>\(list)</li>")
+            } else if !list.isEmpty {
+                items.append("<li><span>\(xml(entry.title))</span>\(list)</li>")
+            }
+        }
+        return items
     }
 
     private func document(_ body: String, name: String) -> String {

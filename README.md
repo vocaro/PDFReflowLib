@@ -104,8 +104,9 @@ mapping, and pages whose only writing is drawn; every such page is warned. Recog
 success while leaving whole paragraphs or table columns unread, so each recognized page is
 measured against its own text-shaped ink, recognized again in overlapping bands when the reading
 does not account for the page, and warned when the writing it left out remains. Output is EPUB 3 with
-XHTML chapters split near 60 KB, styles, metadata, flat heading navigation, a source page-list
-that shows the page numbers the source prints, and an OPF 3.0 package.
+XHTML chapters split near 60 KB, styles, metadata, the author's own table of contents as
+navigation where the document states a usable one and detected headings where it does not, a
+source page-list that shows the page numbers the source prints, and an OPF 3.0 package.
 
 Every rule, threshold and warning code is specified in the
 [behavior specification](doc/behavior.md); the modules and seams are described in

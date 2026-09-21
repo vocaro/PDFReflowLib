@@ -1,0 +1,28 @@
+{
+  "measuredOn": "2026-09-20",
+  "baseline": "99804a2",
+  "host": "macOS 27 / Xcode 27, arm64",
+  "note": "Outline shape of every corpus document that states one, read with PDFOutline. `entries` counts every entry at every level, `distinctTitles` the distinct labels among them, `depth` the deepest level (root children are 0). `navigation` is what OutlineReader.isNavigation decides from those three numbers and the page count.",
+  "documents": [
+    {"id": "arxiv-replay-clocks-2023", "pages": 12, "entries": 20, "distinctTitles": 20, "depth": 1, "navigation": true},
+    {"id": "cia-blue-book-14-1955", "pages": 312, "entries": 313, "distinctTitles": 2, "depth": 1, "navigation": false,
+     "reason": "313 entries, 311 of them labeled Figure"},
+    {"id": "fed-explained-2021", "pages": 135, "entries": 40, "distinctTitles": 36, "depth": 1, "navigation": true},
+    {"id": "faa-phak-8083-25c", "pages": 522, "entries": 7689, "distinctTitles": 6442, "depth": 11, "navigation": false,
+     "reason": "a tagged-structure dump: Structure Bookmarks, Document, Article, 1-1; 14.7 entries per page, eleven levels"},
+    {"id": "gpo-911-2004", "pages": 585, "entries": 93, "distinctTitles": 93, "depth": 1, "navigation": true},
+    {"id": "gpo-warren-1964", "pages": 920, "entries": 1, "distinctTitles": 1, "depth": 0, "navigation": false,
+     "reason": "one entry, labeled Test"},
+    {"id": "irs-p596-zhs-2025", "pages": 36, "entries": 56, "distinctTitles": 55, "depth": 2, "navigation": true},
+    {"id": "nbs-jres-geltman-1977", "pages": 7, "entries": 8, "distinctTitles": 8, "depth": 0, "navigation": true,
+     "reason": "admitted: entries are named after the scan's page images, which the gate cannot tell from titles"},
+    {"id": "noaa-nca5-2023", "pages": 1834, "entries": 303, "distinctTitles": 211, "depth": 1, "navigation": true},
+    {"id": "usda-ars-agresearch-2012-11", "pages": 24, "entries": 11, "distinctTitles": 11, "depth": 0, "navigation": true},
+    {"id": "uscis-m618-arabic-2015", "pages": 116, "entries": 49, "distinctTitles": 49, "depth": 1, "navigation": true},
+    {"id": "usgs-mcs2025-copper", "pages": 2, "entries": 1, "distinctTitles": 1, "depth": 0, "navigation": false,
+     "reason": "one entry"}
+  ],
+  "withoutOutline": ["census-rrs2002-01", "cdc-zombie-pandemic-2011", "dga-2025-2030", "gpo-our-flag-2003",
+                     "ntrs-20180003024-earthdata-slides-2018", "ntrs-20190030725-nasa-paper-2019",
+                     "ntrs-20200002975-nasa-word-2020", "scotus-loper-bright-2024", "wallace-algebra-2010"]
+}

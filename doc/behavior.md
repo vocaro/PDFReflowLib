@@ -1008,9 +1008,38 @@ whitespace and case normalization and permitting a publication-name prefix; fres
 pages and exclusively invisible image-backed text are rejected. Matching candidates become
 chapter boundaries: their source markers stay standalone, cross-boundary paragraph joins are
 prevented, and the writer flushes the preceding spine document before each. Bookmarks do not
-manufacture headings or links.
+manufacture headings: an outline entry is not a heading in the text, and writing one would put
+words on the page the page does not print. They do supply navigation, which EPUB models
+separately — see `OutlineReader`.
 
 Evidence: [chapter-boundaries](../measurements/chapter-boundaries/record.md).
+
+## OutlineReader
+
+The author's own table of contents becomes the EPUB's `nav epub:type="toc"`, nested as the
+author nested it, each entry a link to its destination page's marker (#249). Where a document
+states no usable outline, navigation stays the flat list of detected headings, which is what
+every document had before. Headings keep their ids either way, so nothing in the text stops
+being addressable.
+
+Not every outline is a table of contents, and a document whose outline is a machine artifact
+would navigate worse than its detected headings, so `isNavigation` gates it on shape alone,
+reading nothing: at least two entries; at most 10,000 and at most three for each page of the
+book; at most four levels deep; and more than half the titles distinct. Four of the twelve
+corpus outlines fail it — the FAA handbook's tagged-structure dump (7,689 entries, eleven deep,
+for 522 pages: `Structure Bookmarks`, `Document`, `Article`, `1-1`), the CIA report's 313 entries
+all labeled `Figure`, the Warren report's single entry labeled `Test`, and the copper summary's
+single entry — and each of those keeps the navigation it had.
+
+An entry's title is normalized as any stated value and bounded at 512 characters; the USCIS
+guide's wraps over two lines and is joined. An entry that resolves to no page of this document —
+a remote or non-`GoTo` action, as before — groups its children in a `span`, and is left out
+where it has none, because a navigation item must name something. Resolution of an entry's
+destination is deferred to `EPUBWriter.finish`, where `SpinePacker.pages` holds the finished
+page-to-file map: an entry read on page 12 may name page 400, whose spine document does not
+exist when the outline is read.
+
+Evidence: [outline-navigation](../measurements/outline-navigation/record.md).
 
 ## PageRasterizer and PageAssetWriter: images
 
@@ -1094,7 +1123,7 @@ Evidence: [raster-dpi](../measurements/raster-dpi/record.md),
   normalized as any other stated value and must be at most 32 characters (the corpus's longest is
   `cover-108`); anything else leaves the physical number to speak for the page, as does a document
   that declares no labels at all.
-- Output is EPUB 3: XHTML spine documents, a stylesheet, metadata, flat heading navigation, a
+- Output is EPUB 3: XHTML spine documents, a stylesheet, metadata, navigation (`OutlineReader`), a
   source page-list, an OPF 3.0 package and the required first, uncompressed `mimetype` entry.
   `EPUBTextEncoder` escapes source markup (raw text is escaped before inline elements are added
   inside `<pre>`), excludes the control characters XML 1.0 forbids, and emits page markers and

@@ -48,6 +48,8 @@ enum PDFReflowLibPipeline {
             warnings.append(ConversionWarnings.structureTreeFallback())
         }
         var evidence = DocumentEvidence(chapterCandidates: try ChapterBoundaryReader.read(source, password: options.password), language: options.language)
+        // The author's own contents, for navigation only; it manufactures no heading (#249).
+        let outline = try OutlineReader.read(source, password: options.password)
         let store = PageStore(directory: workspace.appendingPathComponent("pages"))
         let judge = RecognitionJudge.english(language: options.language)
         /// Pages whose type, if any, arrives inside an image: no text layer, or text over a
@@ -122,7 +124,7 @@ enum PDFReflowLibPipeline {
         try await send(.start(.init(title: title.isEmpty ? "Untitled" : title, language: options.language,
                                     author: options.author ?? stated.author, summary: stated.summary,
                                     keywords: stated.keywords, created: stated.created,
-                                    pageLabels: pageLabels),
+                                    pageLabels: pageLabels, outline: outline),
                               chapterStartPages: evidence.chapterStartPages))
         let assets = PageAssetWriter(workspace: workspace, options: options)
         var sentAssets = 0

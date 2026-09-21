@@ -1,0 +1,1712 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        542.43849999999998,
+        33.709700000000005,
+        15.559999999999945,
+        12.310000000000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "A-7"
+        }
+      ],
+      "text" : "A-7"
+    },
+    {
+      "rect" : [
+        130.04429999999999,
+        455.71550000000002,
+        423.32799999999997,
+        9.8480000000000132
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "420 430 440 450 460 470 480 490"
+        }
+      ],
+      "text" : "420 430 440 450 460 470 480 490"
+    },
+    {
+      "rect" : [
+        103.1181,
+        492.74450000000002,
+        20.016000000000005,
+        9.8480000000000132
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "0.160"
+        }
+      ],
+      "text" : "0.160"
+    },
+    {
+      "rect" : [
+        103.1181,
+        470.74450000000002,
+        20.016000000000005,
+        9.8480000000000132
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "0.150"
+        }
+      ],
+      "text" : "0.150"
+    },
+    {
+      "rect" : [
+        102.5981,
+        535.04849999999999,
+        20.016000000000005,
+        9.8479999999999563
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "0.180"
+        }
+      ],
+      "text" : "0.180"
+    },
+    {
+      "rect" : [
+        102.5981,
+        513.55250000000001,
+        20.016000000000005,
+        9.8479999999999563
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "0.170"
+        }
+      ],
+      "text" : "0.170"
+    },
+    {
+      "rect" : [
+        103.1181,
+        555.72050000000002,
+        20.016000000000005,
+        9.8479999999999563
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "0.190"
+        }
+      ],
+      "text" : "0.190"
+    },
+    {
+      "rect" : [
+        102.5981,
+        598.02449999999999,
+        20.016000000000005,
+        9.8479999999999563
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "0.210"
+        }
+      ],
+      "text" : "0.210"
+    },
+    {
+      "rect" : [
+        102.5981,
+        576.52850000000001,
+        20.016000000000005,
+        9.8479999999999563
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "0.200"
+        }
+      ],
+      "text" : "0.200"
+    },
+    {
+      "rect" : [
+        102.5981,
+        634.18449999999996,
+        20.016000000000005,
+        9.8479999999999563
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "0.230"
+        }
+      ],
+      "text" : "0.230"
+    },
+    {
+      "rect" : [
+        102.5981,
+        654.18449999999996,
+        20.016000000000005,
+        9.8479999999999563
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "0.240"
+        }
+      ],
+      "text" : "0.240"
+    },
+    {
+      "rect" : [
+        102.5981,
+        617.35249999999996,
+        20.016000000000005,
+        9.8479999999999563
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "0.220"
+        }
+      ],
+      "text" : "0.220"
+    },
+    {
+      "rect" : [
+        170.5146,
+        490.01550000000003,
+        195.15200000000002,
+        9.8480000000000132
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "Conditions: 40,000 lb mid-cruise weight, zero wind, ISA"
+        }
+      ],
+      "text" : "Conditions: 40,000 lb mid-cruise weight, zero wind, ISA"
+    },
+    {
+      "rect" : [
+        306.57740000000001,
+        446.5865,
+        50.615999999999985,
+        9.8480000000000132
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "Speed (KTAS)"
+        }
+      ],
+      "text" : "Speed (KTAS)"
+    },
+    {
+      "rect" : [
+        86.630700000000004,
+        523.15250000000003,
+        9.8480000000000132,
+        82.240000000000009
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "Specific Range (NM/lb)"
+        }
+      ],
+      "text" : "Specific Range (NM/lb)"
+    },
+    {
+      "rect" : [
+        253.8554,
+        671.36340000000007,
+        143.96000000000006,
+        10.552000000000021
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 8,
+          "text" : "CHALLENGER 605 SPECIFIC RANGE"
+        }
+      ],
+      "text" : "CHALLENGER 605 SPECIFIC RANGE"
+    },
+    {
+      "rect" : [
+        123.1435,
+        160.81450000000001,
+        397.81599999999992,
+        9.8480000000000132
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "Note: All Challenger 605 performance data are for discussion purposes only. By this document, Bombardier Inc.,"
+        }
+      ],
+      "text" : "Note: All Challenger 605 performance data are for discussion purposes only. By this document, Bombardier Inc.,"
+    },
+    {
+      "rect" : [
+        110.63149999999996,
+        151.21450000000002,
+        420.58399999999995,
+        9.8480000000000132
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "does not intend to make, and is not making, any offer, commitment, representation or warranty of any kind whatsoever."
+        }
+      ],
+      "text" : "does not intend to make, and is not making, any offer, commitment, representation or warranty of any kind whatsoever."
+    },
+    {
+      "rect" : [
+        233.20749999999987,
+        141.61450000000002,
+        177.17600000000004,
+        9.8480000000000132
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "All data are subject to change without prior notice."
+        }
+      ],
+      "text" : "All data are subject to change without prior notice."
+    },
+    {
+      "rect" : [
+        176.12140000000002,
+        580.03650000000005,
+        24.455999999999989,
+        10.552000000000021
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 8,
+          "text" : "M 0.74"
+        }
+      ],
+      "text" : "M 0.74"
+    },
+    {
+      "rect" : [
+        151.67340000000002,
+        572.03650000000005,
+        51.127999999999986,
+        10.552000000000021
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 8,
+          "text" : "Cruise Speed"
+        }
+      ],
+      "text" : "Cruise Speed"
+    },
+    {
+      "rect" : [
+        414.69839999999999,
+        559.06950000000006,
+        77.807999999999993,
+        10.552000000000021
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 8,
+          "text" : "M 0.80 Cruise Speed"
+        }
+      ],
+      "text" : "M 0.80 Cruise Speed"
+    },
+    {
+      "rect" : [
+        463.21839999999997,
+        531.71750000000009,
+        24.456000000000017,
+        10.552000000000021
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 8,
+          "text" : "M 0.82 "
+        }
+      ],
+      "text" : "M 0.82 "
+    },
+    {
+      "rect" : [
+        489.89839999999998,
+        531.71750000000009,
+        51.127999999999986,
+        10.552000000000021
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 8,
+          "text" : "Cruise Speed"
+        }
+      ],
+      "text" : "Cruise Speed"
+    },
+    {
+      "rect" : [
+        268.67952590000004,
+        607.37135480000006,
+        20.159307899999988,
+        11.356033999999909
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 6.0000181208059704,
+          "text" : "FL 390"
+        }
+      ],
+      "text" : "FL 390"
+    },
+    {
+      "rect" : [
+        269.72016020000001,
+        594.65298619999999,
+        20.159307899999988,
+        11.356034000000022
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 6.0000181208059704,
+          "text" : "FL 370"
+        }
+      ],
+      "text" : "FL 370"
+    },
+    {
+      "rect" : [
+        272.77480050000003,
+        583.99178310000002,
+        20.159307899999988,
+        11.356034000000022
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 6.0000181208059704,
+          "text" : "FL 350"
+        }
+      ],
+      "text" : "FL 350"
+    },
+    {
+      "rect" : [
+        273.21060270000009,
+        569.74605520000011,
+        20.159307899999988,
+        11.356033999999909
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 6.0000181208059704,
+          "text" : "FL 330"
+        }
+      ],
+      "text" : "FL 330"
+    },
+    {
+      "rect" : [
+        273.96291030000003,
+        553.52114549999988,
+        20.159307899999988,
+        11.356034000000022
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 6.0000181208059704,
+          "text" : "FL 310"
+        }
+      ],
+      "text" : "FL 310"
+    },
+    {
+      "rect" : [
+        182.2594,
+        416.95359999999999,
+        97.640000000000015,
+        9.8480000000000132
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "Plotting of constant FL lines"
+        }
+      ],
+      "text" : "Plotting of constant FL lines"
+    },
+    {
+      "rect" : [
+        182.25939999999997,
+        406.40159999999997,
+        41.104000000000042,
+        9.8480000000000132
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "Flight Level"
+        }
+      ],
+      "text" : "Flight Level"
+    },
+    {
+      "rect" : [
+        357.34739999999999,
+        415.73759999999999,
+        85.519999999999982,
+        9.8480000000000132
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "M0.82M0.80 M0.74"
+        }
+      ],
+      "text" : "M0.82M0.80 M0.74"
+    },
+    {
+      "rect" : [
+        292.69940000000008,
+        404.84960000000001,
+        41.920000000000016,
+        9.8480000000000132
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "290Speed"
+        }
+      ],
+      "text" : "290Speed"
+    },
+    {
+      "rect" : [
+        294.95540000000005,
+        396.62560000000002,
+        39.663999999999987,
+        9.8480000000000132
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "Spc Range"
+        }
+      ],
+      "text" : "Spc Range"
+    },
+    {
+      "rect" : [
+        292.69940000000003,
+        384.40160000000003,
+        150.16800000000006,
+        9.8480000000000132
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "310Speed 481 469 434"
+        }
+      ],
+      "text" : "310Speed 481 469 434"
+    },
+    {
+      "rect" : [
+        294.95540000000005,
+        377.51360000000005,
+        147.91199999999992,
+        9.8480000000000132
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "Spc Range 0.165 0.1780.199"
+        }
+      ],
+      "text" : "Spc Range 0.165 0.1780.199"
+    },
+    {
+      "rect" : [
+        292.69939999999997,
+        364.62560000000008,
+        150.16800000000001,
+        9.8480000000000132
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "330 Speed 477 465 430"
+        }
+      ],
+      "text" : "330 Speed 477 465 430"
+    },
+    {
+      "rect" : [
+        294.9554,
+        357.07360000000006,
+        147.88000000000005,
+        9.8480000000000132
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "Spc Range 0.174 0.188 0.208"
+        }
+      ],
+      "text" : "Spc Range 0.174 0.188 0.208"
+    },
+    {
+      "rect" : [
+        292.69939999999997,
+        345.51360000000005,
+        150.16800000000001,
+        9.8480000000000132
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "350Speed 473 461 427"
+        }
+      ],
+      "text" : "350Speed 473 461 427"
+    },
+    {
+      "rect" : [
+        294.95539999999994,
+        337.95360000000005,
+        147.91199999999992,
+        9.8480000000000132
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "Spc Range 0.181 0.197 0.216"
+        }
+      ],
+      "text" : "Spc Range 0.181 0.197 0.216"
+    },
+    {
+      "rect" : [
+        292.70739999999989,
+        324.39360000000005,
+        150.16800000000001,
+        9.8480000000000132
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "370Speed 470 459 424"
+        }
+      ],
+      "text" : "370Speed 470 459 424"
+    },
+    {
+      "rect" : [
+        294.96339999999987,
+        317.50560000000007,
+        147.88,
+        9.8480000000000132
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "Spc Range 0.185 0.204 0.222"
+        }
+      ],
+      "text" : "Spc Range 0.185 0.204 0.222"
+    },
+    {
+      "rect" : [
+        292.70739999999984,
+        304.6176000000001,
+        150.16800000000001,
+        9.8480000000000132
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "390Speed 459 424"
+        }
+      ],
+      "text" : "390Speed 459 424"
+    },
+    {
+      "rect" : [
+        294.96339999999987,
+        294.39360000000011,
+        147.87999999999988,
+        9.8480000000000132
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "Spc Range 0.205 0.223"
+        }
+      ],
+      "text" : "Spc Range 0.205 0.223"
+    },
+    {
+      "rect" : [
+        192.28339999999983,
+        274.16160000000013,
+        210.15200000000002,
+        9.8480000000000132
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "Plotting of Long Range Cruise and High Speed Cruise lines"
+        }
+      ],
+      "text" : "Plotting of Long Range Cruise and High Speed Cruise lines"
+    },
+    {
+      "rect" : [
+        258.02739999999983,
+        260.60160000000013,
+        185.32799999999997,
+        9.8480000000000132
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "FL290 FL310FL330 FL350FL370 FL390"
+        }
+      ],
+      "text" : "FL290 FL310FL330 FL350FL370 FL390"
+    },
+    {
+      "rect" : [
+        203.99539999999979,
+        250.15360000000015,
+        35.544000000000011,
+        9.8480000000000132
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "M0.74 \"X\" "
+        }
+      ],
+      "text" : "M0.74 \"X\" "
+    },
+    {
+      "rect" : [
+        299.29139999999978,
+        250.15360000000015,
+        144.07999999999998,
+        9.8480000000000132
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "434 430 427 424 424"
+        }
+      ],
+      "text" : "434 430 427 424 424"
+    },
+    {
+      "rect" : [
+        204.2113999999998,
+        241.92960000000016,
+        35.112000000000023,
+        9.8480000000000132
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "M0.74 \"Y\" "
+        }
+      ],
+      "text" : "M0.74 \"Y\" "
+    },
+    {
+      "rect" : [
+        292.21939999999984,
+        241.92960000000016,
+        151.12800000000004,
+        9.8480000000000132
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "0.199 0.208 0.216 0.222 0.223"
+        }
+      ],
+      "text" : "0.199 0.208 0.216 0.222 0.223"
+    },
+    {
+      "rect" : [
+        204.00339999999986,
+        229.48160000000016,
+        35.544000000000011,
+        9.8480000000000132
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "M0.80 \"X\" "
+        }
+      ],
+      "text" : "M0.80 \"X\" "
+    },
+    {
+      "rect" : [
+        299.29939999999988,
+        229.48160000000016,
+        144.08000000000004,
+        9.8480000000000132
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "469 465 461 459 459"
+        }
+      ],
+      "text" : "469 465 461 459 459"
+    },
+    {
+      "rect" : [
+        204.21939999999989,
+        221.25760000000017,
+        35.112000000000023,
+        9.8480000000000132
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "M0.80 \"Y\" "
+        }
+      ],
+      "text" : "M0.80 \"Y\" "
+    },
+    {
+      "rect" : [
+        292.22739999999993,
+        221.25760000000017,
+        151.12799999999987,
+        9.8480000000000132
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "0.178 0.188 0.197 0.204 0.205"
+        }
+      ],
+      "text" : "0.178 0.188 0.197 0.204 0.205"
+    },
+    {
+      "rect" : [
+        204.01139999999987,
+        208.80960000000016,
+        35.544000000000011,
+        9.8480000000000132
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "M0.82 \"X\" "
+        }
+      ],
+      "text" : "M0.82 \"X\" "
+    },
+    {
+      "rect" : [
+        299.30739999999986,
+        208.80960000000016,
+        110.78400000000005,
+        9.8480000000000132
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "481 477 473 470"
+        }
+      ],
+      "text" : "481 477 473 470"
+    },
+    {
+      "rect" : [
+        204.23539999999986,
+        201.58560000000017,
+        35.112000000000023,
+        9.8480000000000132
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "M0.82 \"Y\" "
+        }
+      ],
+      "text" : "M0.82 \"Y\" "
+    },
+    {
+      "rect" : [
+        292.24339999999989,
+        201.58560000000017,
+        117.85599999999994,
+        9.8480000000000132
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "0.165 0.174 0.181 0.185"
+        }
+      ],
+      "text" : "0.165 0.174 0.181 0.185"
+    },
+    {
+      "rect" : [
+        196.90739999999985,
+        188.58560000000017,
+        249.71199999999996,
+        9.8480000000000132
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "Note: Based on 40,000 lb mid-cruise weight, ISA Conditions, zero wind"
+        }
+      ],
+      "text" : "Note: Based on 40,000 lb mid-cruise weight, ISA Conditions, zero wind"
+    },
+    {
+      "rect" : [
+        72,
+        711.64509999999996,
+        261.19800000000004,
+        21.312000000000012
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 18,
+          "text" : "Challenger 605 Time and Fuel Versus Distance"
+        }
+      ],
+      "text" : "Challenger 605 Time and Fuel Versus Distance"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    594,
+    774
+  ],
+  "caseID" : "faa-phak-8083-25c",
+  "graphics" : [
+    [
+      71.001000000000005,
+      129.61799999999999,
+      488.99900000000002,
+      563.28899999999999
+    ],
+    [
+      72.5,
+      697.65999999999997,
+      274,
+      31.720000000000027
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        542.43849999999998,
+        33.709700000000005,
+        15.559999999999945,
+        12.310000000000002
+      ],
+      "text" : "A-7"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        130.04429999999999,
+        455.71550000000002,
+        423.32799999999997,
+        9.8480000000000132
+      ],
+      "text" : "420 430 440 450 460 470 480 490"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        103.1181,
+        492.74450000000002,
+        20.016000000000005,
+        9.8480000000000132
+      ],
+      "text" : "0.160"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        103.1181,
+        470.74450000000002,
+        20.016000000000005,
+        9.8480000000000132
+      ],
+      "text" : "0.150"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        102.5981,
+        535.04849999999999,
+        20.016000000000005,
+        9.8479999999999563
+      ],
+      "text" : "0.180"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        102.5981,
+        513.55250000000001,
+        20.016000000000005,
+        9.8479999999999563
+      ],
+      "text" : "0.170"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        103.1181,
+        555.72050000000002,
+        20.016000000000005,
+        9.8479999999999563
+      ],
+      "text" : "0.190"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        102.5981,
+        598.02449999999999,
+        20.016000000000005,
+        9.8479999999999563
+      ],
+      "text" : "0.210"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        102.5981,
+        576.52850000000001,
+        20.016000000000005,
+        9.8479999999999563
+      ],
+      "text" : "0.200"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        102.5981,
+        634.18449999999996,
+        20.016000000000005,
+        9.8479999999999563
+      ],
+      "text" : "0.230"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        102.5981,
+        654.18449999999996,
+        20.016000000000005,
+        9.8479999999999563
+      ],
+      "text" : "0.240"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        102.5981,
+        617.35249999999996,
+        20.016000000000005,
+        9.8479999999999563
+      ],
+      "text" : "0.220"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        170.5146,
+        490.01550000000003,
+        195.15200000000002,
+        9.8480000000000132
+      ],
+      "text" : "Conditions: 40,000 lb mid-cruise weight, zero wind, ISA"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        306.57740000000001,
+        446.5865,
+        50.615999999999985,
+        9.8480000000000132
+      ],
+      "text" : "Speed (KTAS)"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        86.630700000000004,
+        523.15250000000003,
+        9.8480000000000132,
+        82.240000000000009
+      ],
+      "text" : "Specific Range (NM/lb)"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        253.8554,
+        671.36340000000007,
+        143.96000000000006,
+        10.552000000000021
+      ],
+      "text" : "CHALLENGER 605 SPECIFIC RANGE"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        123.1435,
+        160.81450000000001,
+        397.81599999999992,
+        9.8480000000000132
+      ],
+      "text" : "Note: All Challenger 605 performance data are for discussion purposes only. By this document, Bombardier Inc.,"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        110.63149999999996,
+        151.21450000000002,
+        420.58399999999995,
+        9.8480000000000132
+      ],
+      "text" : "does not intend to make, and is not making, any offer, commitment, representation or warranty of any kind whatsoever."
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        233.20749999999987,
+        141.61450000000002,
+        177.17600000000004,
+        9.8480000000000132
+      ],
+      "text" : "All data are subject to change without prior notice."
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        176.12140000000002,
+        580.03650000000005,
+        24.455999999999989,
+        10.552000000000021
+      ],
+      "text" : "M 0.74"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        151.67340000000002,
+        572.03650000000005,
+        51.127999999999986,
+        10.552000000000021
+      ],
+      "text" : "Cruise Speed"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        414.69839999999999,
+        559.06950000000006,
+        77.807999999999993,
+        10.552000000000021
+      ],
+      "text" : "M 0.80 Cruise Speed"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        463.21839999999997,
+        531.71750000000009,
+        24.456000000000017,
+        10.552000000000021
+      ],
+      "text" : "M 0.82"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        489.89839999999998,
+        531.71750000000009,
+        51.127999999999986,
+        10.552000000000021
+      ],
+      "text" : "Cruise Speed"
+    },
+    {
+      "fontSize" : 6.0000181208059704,
+      "monospaced" : false,
+      "rect" : [
+        268.67952590000004,
+        607.37135480000006,
+        20.159307899999988,
+        11.356033999999909
+      ],
+      "text" : "FL 390"
+    },
+    {
+      "fontSize" : 6.0000181208059704,
+      "monospaced" : false,
+      "rect" : [
+        269.72016020000001,
+        594.65298619999999,
+        20.159307899999988,
+        11.356034000000022
+      ],
+      "text" : "FL 370"
+    },
+    {
+      "fontSize" : 6.0000181208059704,
+      "monospaced" : false,
+      "rect" : [
+        272.77480050000003,
+        583.99178310000002,
+        20.159307899999988,
+        11.356034000000022
+      ],
+      "text" : "FL 350"
+    },
+    {
+      "fontSize" : 6.0000181208059704,
+      "monospaced" : false,
+      "rect" : [
+        273.21060270000009,
+        569.74605520000011,
+        20.159307899999988,
+        11.356033999999909
+      ],
+      "text" : "FL 330"
+    },
+    {
+      "fontSize" : 6.0000181208059704,
+      "monospaced" : false,
+      "rect" : [
+        273.96291030000003,
+        553.52114549999988,
+        20.159307899999988,
+        11.356034000000022
+      ],
+      "text" : "FL 310"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        182.2594,
+        416.95359999999999,
+        97.640000000000015,
+        9.8480000000000132
+      ],
+      "text" : "Plotting of constant FL lines"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        182.25939999999997,
+        406.40159999999997,
+        41.104000000000042,
+        9.8480000000000132
+      ],
+      "text" : "Flight Level"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        357.34739999999999,
+        415.73759999999999,
+        85.519999999999982,
+        9.8480000000000132
+      ],
+      "text" : "M0.82 M0.80 M0.74"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        292.69940000000008,
+        404.84960000000001,
+        41.920000000000016,
+        9.8480000000000132
+      ],
+      "text" : "290 Speed"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        294.95540000000005,
+        396.62560000000002,
+        39.663999999999987,
+        9.8480000000000132
+      ],
+      "text" : "Spc Range"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        292.69940000000003,
+        384.40160000000003,
+        150.16800000000006,
+        9.8480000000000132
+      ],
+      "text" : "310Speed 481 469 434"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        294.95540000000005,
+        377.51360000000005,
+        147.91199999999992,
+        9.8480000000000132
+      ],
+      "text" : "Spc Range 0.165 0.1780.199"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        292.69939999999997,
+        364.62560000000008,
+        150.16800000000001,
+        9.8480000000000132
+      ],
+      "text" : "330 Speed 477 465 430"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        294.9554,
+        357.07360000000006,
+        147.88000000000005,
+        9.8480000000000132
+      ],
+      "text" : "Spc Range 0.174 0.188 0.208"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        292.69939999999997,
+        345.51360000000005,
+        150.16800000000001,
+        9.8480000000000132
+      ],
+      "text" : "350Speed 473 461 427"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        294.95539999999994,
+        337.95360000000005,
+        147.91199999999992,
+        9.8480000000000132
+      ],
+      "text" : "Spc Range 0.181 0.197 0.216"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        292.70739999999989,
+        324.39360000000005,
+        150.16800000000001,
+        9.8480000000000132
+      ],
+      "text" : "370Speed 470 459 424"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        294.96339999999987,
+        317.50560000000007,
+        147.88,
+        9.8480000000000132
+      ],
+      "text" : "Spc Range 0.185 0.204 0.222"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        292.70739999999984,
+        304.6176000000001,
+        150.16800000000001,
+        9.8480000000000132
+      ],
+      "text" : "390 Speed 459 424"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        294.96339999999987,
+        294.39360000000011,
+        147.87999999999988,
+        9.8480000000000132
+      ],
+      "text" : "Spc Range 0.205 0.223"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        192.28339999999983,
+        274.16160000000013,
+        210.15200000000002,
+        9.8480000000000132
+      ],
+      "text" : "Plotting of Long Range Cruise and High Speed Cruise lines"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        258.02739999999983,
+        260.60160000000013,
+        185.32799999999997,
+        9.8480000000000132
+      ],
+      "text" : "FL290 FL310 FL330 FL350 FL370 FL390"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        203.99539999999979,
+        250.15360000000015,
+        35.544000000000011,
+        9.8480000000000132
+      ],
+      "text" : "M0.74 \"X\""
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        299.29139999999978,
+        250.15360000000015,
+        144.07999999999998,
+        9.8480000000000132
+      ],
+      "text" : "434 430 427 424 424"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        204.2113999999998,
+        241.92960000000016,
+        35.112000000000023,
+        9.8480000000000132
+      ],
+      "text" : "M0.74 \"Y\""
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        292.21939999999984,
+        241.92960000000016,
+        151.12800000000004,
+        9.8480000000000132
+      ],
+      "text" : "0.199 0.208 0.216 0.222 0.223"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        204.00339999999986,
+        229.48160000000016,
+        35.544000000000011,
+        9.8480000000000132
+      ],
+      "text" : "M0.80 \"X\""
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        299.29939999999988,
+        229.48160000000016,
+        144.08000000000004,
+        9.8480000000000132
+      ],
+      "text" : "469 465 461 459 459"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        204.21939999999989,
+        221.25760000000017,
+        35.112000000000023,
+        9.8480000000000132
+      ],
+      "text" : "M0.80 \"Y\""
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        292.22739999999993,
+        221.25760000000017,
+        151.12799999999987,
+        9.8480000000000132
+      ],
+      "text" : "0.178 0.188 0.197 0.204 0.205"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        204.01139999999987,
+        208.80960000000016,
+        35.544000000000011,
+        9.8480000000000132
+      ],
+      "text" : "M0.82 \"X\""
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        299.30739999999986,
+        208.80960000000016,
+        110.78400000000005,
+        9.8480000000000132
+      ],
+      "text" : "481 477 473 470"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        204.23539999999986,
+        201.58560000000017,
+        35.112000000000023,
+        9.8480000000000132
+      ],
+      "text" : "M0.82 \"Y\""
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        292.24339999999989,
+        201.58560000000017,
+        117.85599999999994,
+        9.8480000000000132
+      ],
+      "text" : "0.165 0.174 0.181 0.185"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        196.90739999999985,
+        188.58560000000017,
+        249.71199999999996,
+        9.8480000000000132
+      ],
+      "text" : "Note: Based on 40,000 lb mid-cruise weight, ISA Conditions, zero wind"
+    },
+    {
+      "fontSize" : 18,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        711.64509999999996,
+        261.19800000000004,
+        21.312000000000012
+      ],
+      "text" : "Challenger 605 Time and Fuel Versus Distance"
+    }
+  ],
+  "page" : 459,
+  "rightsBasis" : "U.S. Government publication, retained as an external development corpus source. The PDF is not bundled or relicensed under the library license.",
+  "sourceSHA256" : "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
+  "sourceTitle" : "Pilot's Handbook of Aeronautical Knowledge, FAA-H-8083-25C",
+  "sourceURL" : "https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/faa-h-8083-25c.pdf"
+}

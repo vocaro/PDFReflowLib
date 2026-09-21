@@ -99,6 +99,30 @@ private func convert(_ data: Data, in directory: URL, name: String = "book") asy
     }
 }
 
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/247"))
+func resolvingALinkCanOnlyShortenTheBodyThePackerMeasured() async throws {
+    let dir = try scratch(); defer { try? FileManager.default.removeItem(at: dir) }
+    // The packer measures a body when the block is serialized and the writer resolves the token
+    // afterwards, so a token that grew would push a finished document past the target it had
+    // already been measured against.
+    #expect(EPUBTextEncoder.href(.page(400)).count == EPUBTextEncoder.pageLinkTokenWidth)
+    #expect(EPUBTextEncoder.href(.page(1)).hasPrefix(EPUBTextEncoder.pageLinkToken + "1-"))
+    #expect("chapter-999999.xhtml#page-999999".count < EPUBTextEncoder.pageLinkTokenWidth)
+
+    // A book whose every page links to its last, long enough to fill several spine documents.
+    let links = (1...24).map { _ in linkAnnotation("/A << /S /GoTo /D [%PAGE 24% /XYZ null null null] >>") }
+    let (archive, _) = try await convert(annotatedPDF(pages: 24, lines: 54, annotations: links), in: dir)
+    var documents = 0
+    for number in 1...24 {
+        guard archive["EPUB/chapter-\(number).xhtml"] != nil else { break }
+        documents += 1
+        let body = try archive.chapter(number).split(separator: "<body>")[1].split(separator: "</body>")[0]
+        #expect(body.utf8.count <= 60_000, "spine document \(number) is \(body.utf8.count) bytes")
+        #expect(!body.contains(EPUBTextEncoder.pageLinkToken))
+    }
+    #expect(documents > 1)
+}
+
 @Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/247")) func aPageWhoseAnnotationsAllConvertNeedsNoPictureOfItself() async throws {
     let dir = try scratch(); defer { try? FileManager.default.removeItem(at: dir) }
     let (converted, report) = try await convert(annotatedPDF(pages: 2, lines: 6, annotations: [

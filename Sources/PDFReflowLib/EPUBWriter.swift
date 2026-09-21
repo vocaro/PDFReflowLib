@@ -253,8 +253,11 @@ actor EPUBWriter {
                 resolved += rest[..<token.lowerBound]
                 let digits = rest[token.upperBound...].prefix(while: \.isNumber)
                 let page = Int(digits) ?? 0
+                // The token is padded to a fixed width so that resolving it can only shorten the
+                // body the packer already measured; the padding goes with it.
+                let padding = rest[token.upperBound...].dropFirst(digits.count).prefix(while: { $0 == "-" })
                 resolved += pageFiles[page].map { "\($0)#page-\(page)" } ?? name
-                rest = rest[token.upperBound...].dropFirst(digits.count)
+                rest = rest[token.upperBound...].dropFirst(digits.count + padding.count)
             }
             resolved += rest
             guard resolved != text else { continue }

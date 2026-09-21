@@ -76,5 +76,10 @@ bypassed rather than consulted, because an extracted original has already made t
 
 484 Swift tests pass, five new, including the refusals: a masked image, a decode array, an
 indexed and a CMYK space, a dictionary that misstates the size, and a budget too small for the
-original. EPUBCheck 3.3 reports no errors on the magazine. The corpus lane passes 16 of 18 with
-no content-contract failures.
+original. EPUBCheck 3.3 reports no errors on the magazine.
+
+**Correction.** This record and commit `f332c86` first said the corpus lane passed. It did not,
+for a reason that predates this change and is not about images: an internal link's token grew
+when it resolved, pushing four books' first spine documents past the packer's byte target. See
+the correction in [converted-links](../converted-links/record.md). With that fixed the lane
+passes 16 of 18 covered, and the image counts and byte figures above are unchanged.

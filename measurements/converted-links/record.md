@@ -52,8 +52,18 @@ one warning is the reading-order note its outline already drew (see
 target document's ids, and rejects any external reference that is not an anchor in an allowed
 scheme — the check an unresolved internal-link token would fail.
 
-478 Swift tests pass, seven new. The corpus lane passes 16 of 18 with no content-contract
-failures.
+478 Swift tests pass, seven new.
+
+**Correction.** This record and commit `ff74b33` first said the corpus lane passed. It did not:
+the run's exit code was read through a `tail` pipeline, which reported the exit status of `tail`.
+The lane's own per-case results show four books failing the spine structural check — the arXiv
+paper, the Fed report, the 9/11 report and IRS Publication 596 — because resolving an internal
+link's token in `EPUBWriter.finish` lengthened a body that `SpinePacker` had already measured
+against its 60,000-byte target. The 9/11 report's first spine document ran 12 bytes over and the
+arXiv paper's 275. Padding the token to a fixed width no resolved href can reach means resolution
+can only shorten a body; with that fix the lane passes 16 of 18 covered with no failures of any
+kind. The byte and link counts above are unaffected: the padding lives only in the staged body
+and never in a published book.
 
 ## Not measured
 

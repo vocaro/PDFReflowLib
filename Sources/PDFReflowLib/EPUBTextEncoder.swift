@@ -35,13 +35,27 @@ enum EPUBTextEncoder {
     /// when the link is serialized, so the writer patches this token in `finish` and no published
     /// book contains it. Source text cannot produce the token: `xml` escapes every quotation mark.
     static let pageLinkToken = "pdfreflow:page-"
+    /// The width the token is padded to, which is what keeps `SpinePacker`'s byte target honest.
+    ///
+    /// The packer measures a body when the block is serialized, and the writer resolves the token
+    /// afterwards. A token that grew when it resolved would push a finished document past the
+    /// target it had already been measured against — which it did: the 9/11 report's first spine
+    /// document, with 99 internal links in it, ran 12 bytes over, and the arXiv paper's 275.
+    /// Padding the token to a width no resolved href can reach means resolution can only shorten
+    /// a body. `chapter-` and `.xhtml#page-` are 20 characters, leaving 28 for two numbers, which
+    /// is more than any page count this converter will accept.
+    static let pageLinkTokenWidth = 48
 
     /// One link target as an `href`. An external target passed the scheme allowlist when it was
     /// read; nothing else reaches here.
     static func href(_ target: LinkTarget) -> String {
         switch target {
-        case let .external(url): xml(url)
-        case let .page(page): "\(pageLinkToken)\(page)"
+        case let .external(url): return xml(url)
+        case let .page(page):
+            // Padded with a character an href may carry and the resolver can recognize.
+            let named = "\(pageLinkToken)\(page)"
+            return named.count >= pageLinkTokenWidth ? named
+                : named + String(repeating: "-", count: pageLinkTokenWidth - named.count)
         }
     }
 

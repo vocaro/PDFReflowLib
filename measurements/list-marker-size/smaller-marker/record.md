@@ -21,8 +21,14 @@ books.
 ## What it costs
 
 Nothing, on all eighteen corpus books: every one is identical in heading count and in
-non-whitespace characters against the baseline, and the lane passes 16 of 18 covered with no
-content-contract failures.
+non-whitespace characters against the baseline.
+
+**Correction.** This record and commit `530024a` first said the lane passed. It did not, for a
+reason that predates this change: an internal link's token grew when it resolved, pushing four
+books past the packer's byte target (see the correction in
+[converted-links](../../converted-links/record.md)). The per-book comparison above stands — it
+was made between two runs that both carried that defect — and with the defect fixed the lane
+passes 16 of 18 covered.
 
 That the mechanism fires at all is shown by the variant without the heading rule, built and
 converted for this measurement. IRS Publication 596 then reads four of its starred footnotes as

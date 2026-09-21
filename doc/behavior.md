@@ -1117,7 +1117,9 @@ Evidence: [raster-dpi](../measurements/raster-dpi/record.md),
   dropped and counted, as is any other scheme and any destination outside this document.
 - An internal target names a one-based physical page and is written as a link to that page's
   marker in whichever spine document ends up holding it
-  ([decision 0010](decisions/0010-deferred-page-destinations.md)).
+  ([decision 0010](decisions/0010-deferred-page-destinations.md)). The token it carries until
+  then is padded to a fixed 48 characters, which no resolved href can reach, so resolving it can
+  only shorten a body `SpinePacker` has already measured against its byte target.
 - One link the page breaks over two printed lines is one anchor: the elements a line join
   separates are merged when only whitespace lies between them. A link whose rectangle covers at
   least half a figure's crop links the figure rather than any text.

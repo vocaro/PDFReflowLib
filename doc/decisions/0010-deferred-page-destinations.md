@@ -39,8 +39,12 @@ blocks, needs the block list that the same decision stopped keeping.
   writer still holds one body. What is new is that `finish` may rewrite a file it has written,
   which is why this is recorded rather than slipped in.
 - The rewrite is bounded by the documents that hold internal links, and each is read and written
-  once. The rewritten text is counted against `maximumOutputBytes`, which the patch can only
-  change by the difference between the token and the file name.
+  once. The rewritten text is counted against `maximumOutputBytes`.
+- The token is padded to a fixed width wider than any href it can resolve to, so the rewrite can
+  only shorten a body. Without that, it lengthened them: `SpinePacker` measures a body when the
+  block is serialized, and four corpus books' first spine documents finished 12 to 275 bytes past
+  the 60,000-byte target once their links resolved. A body the packer measured must not grow
+  behind its back, which is the price of writing a document before its destinations are known.
 - A page the map does not name resolves to the document the link is in, so a published book
   never carries an href that resolves to nothing. No conversion produces that case: every source
   page emits a marker, so every page is in the map.

@@ -39,11 +39,14 @@ struct SourceLayoutFixture: Decodable {
     var bounds: [Double]
     var lines: [Line]
     var graphics: [[Double]]
+    /// The placed raster image XObjects among `graphics`, captured from schema version 2 on;
+    /// an older capture carries none, which is the page every test of them was written against.
+    var pictures: [[Double]]
     /// Styled runs, absent from the earliest captures; those fixtures serve geometry tests only.
     var attributedLines: [AttributedLine]
 
     private enum CodingKeys: String, CodingKey {
-        case schemaVersion, sourceSHA256, page, bounds, lines, graphics, attributedLines
+        case schemaVersion, sourceSHA256, page, bounds, lines, graphics, pictures, attributedLines
     }
 
     init(from decoder: Decoder) throws {
@@ -54,6 +57,7 @@ struct SourceLayoutFixture: Decodable {
         bounds = try values.decode([Double].self, forKey: .bounds)
         lines = try values.decode([Line].self, forKey: .lines)
         graphics = try values.decode([[Double]].self, forKey: .graphics)
+        pictures = try values.decodeIfPresent([[Double]].self, forKey: .pictures) ?? []
         attributedLines = try values.decodeIfPresent([AttributedLine].self, forKey: .attributedLines) ?? []
     }
 
@@ -67,6 +71,6 @@ struct SourceLayoutFixture: Decodable {
         }
         return PageContent(number: page, bounds: rect(bounds), lines: lines.map {
             TextLine(text: $0.text, rect: rect($0.rect), fontSize: $0.fontSize, monospaced: $0.monospaced)
-        }, graphics: graphics.map(rect))
+        }, graphics: graphics.map(rect), pictures: pictures.map(rect))
     }
 }

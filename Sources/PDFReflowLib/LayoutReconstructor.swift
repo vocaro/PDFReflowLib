@@ -109,6 +109,46 @@ enum LayoutReconstructor {
         crop.intersects(line.rect) && crop.minY <= line.rect.midY && line.rect.midY <= crop.maxY
     }
 
+    /// Whether a crop reaches into a printed row from the side rather than holding it (#207).
+    ///
+    /// `takes` keeps a line whose middle row a crop holds, which is right for a picture's own
+    /// lettering: a diagram's labels, a chart's axis and a legend's entries stand *inside* the
+    /// artwork. A page can also print its own reading across a picture's footprint. Every
+    /// contents page of `noaa-nca5-2023` sets its entries from the left margin to a page number
+    /// at the right edge and places a decorative line drawing over the top right corner, so the
+    /// ends of the first nine entries and the numbers they run to fall inside that drawing's
+    /// rectangle. No cut frees them — the drawing stands in the middle of the rows — so the crop
+    /// admitted each row whole and grew across the page, and pages 9–18 lost between 57% and 82%
+    /// of their characters into pictures.
+    ///
+    /// A printed row is one thing, so the test is the row's rather than the line's: a crop
+    /// reaches into a line when that line, or another piece of the same printed row standing to
+    /// its left, begins more than a point outside the crop. Reading the row keeps the two halves
+    /// of a released entry together, so `Key Message 4.1. Climate Change Will Continue to Cause
+    /// Profound Change` does not reflow while the `4-6` it runs to stays behind in the picture.
+    /// A table's column header is that table's whatever lies across it, exactly as #257 decided
+    /// for the release a crop cannot cut around: the CIA report paints a rule in the margin of
+    /// page 203's third table, across a header row that begins outside it, and the header labels
+    /// the columns of the picture the crop preserves.
+    static func reachesInto(_ crop: CGRect, _ line: TextLine, among lines: [TextLine],
+                            pictures: [CGRect], bounds: CGRect, columnHeaders: [CGRect] = []) -> Bool {
+        guard pictures.contains(where: {
+            $0.intersects(crop) && !PageDiagnosis.coversPage($0, bounds: bounds)
+        }) else { return false }
+        guard !columnHeaders.contains(line.rect) else { return false }
+        // The piece that straddles the crop's edge: it begins outside the crop and runs into it.
+        func straddles(_ rect: CGRect) -> Bool { rect.minX < crop.minX - 1 && rect.maxX > crop.minX + 1 }
+        if straddles(line.rect) { return true }
+        // Or another piece of the same printed row does, standing to this line's left. A piece
+        // that stands wholly outside the crop is a cell of its own and says nothing about this
+        // one: the Replay Clocks paper sets six figures in three columns on two rows and gives
+        // each its own sub-caption on a shared baseline, and `(a) 𝛼 = 20 messages/s, 𝑛= 32.` is
+        // the left figure's lettering, not the beginning of a row the middle figure reaches into.
+        return lines.contains { other in
+            straddles(other.rect) && other.rect.maxX <= line.rect.minX && sameRow(other.rect, line.rect)
+        }
+    }
+
     /// Joins an inline fraction's denominator to the line its numerator ends, as `rise/run` (#53).
     ///
     /// Wallace page 137 sets `rise` over `run` inside a sentence. PDFKit merges the numerator into
@@ -173,10 +213,12 @@ enum LayoutReconstructor {
     /// Whether a seed region captures a text line. Tall PDFKit line rectangles include leading,
     /// so a thin rule touches the rectangles of the lines above and below without crossing
     /// their glyphs; it captures only text it actually strikes through (#36).
-    private static func captures(_ seed: CGRect, _ line: TextLine) -> Bool {
+    private static func captures(_ seed: CGRect, _ line: TextLine, among lines: [TextLine],
+                                 pictures: [CGRect], bounds: CGRect, columnHeaders: [CGRect]) -> Bool {
         guard seed.intersects(line.rect) else { return false }
         guard isThinRule(seed) else {
-            return takes(seed, line)
+            return takes(seed, line) && !reachesInto(seed, line, among: lines, pictures: pictures, bounds: bounds,
+                                                columnHeaders: columnHeaders)
         }
         let core = line.rect.insetBy(dx: 0, dy: line.rect.height * 0.25)
         return seed.midY >= core.minY && seed.midY <= core.maxY
@@ -232,7 +274,17 @@ enum LayoutReconstructor {
                 .intersection(page.bounds)
             var changed = false
             for line in page.lines where !admitted.contains(line.rect) && bounds.intersects(line.rect) {
-                guard captures(region.seed, line) || admitted.contains(where: { sameRow($0, line.rect) }) else { continue }
+                // The other pieces of an admitted row join it, unless the crop reaches into that
+                // row from the side: a page number a released contents entry runs to is the
+                // entry's, not the drawing's (#207). A thin rule is narrower than the line it
+                // strikes by construction, so the row test is not its.
+                guard captures(region.seed, line, among: page.lines, pictures: page.pictures,
+                                 bounds: page.bounds, columnHeaders: columnHeaders)
+                        || (admitted.contains(where: { sameRow($0, line.rect) })
+                            && (isThinRule(region.seed)
+                                || !reachesInto(region.seed, line, among: page.lines,
+                                                pictures: page.pictures, bounds: page.bounds,
+                                                columnHeaders: columnHeaders))) else { continue }
                 admitted.append(line.rect)
                 changed = true
             }
@@ -256,11 +308,17 @@ enum LayoutReconstructor {
                     // into it, exactly as #246's edge band does: `takes` then leaves the line in
                     // the prose, so the picture loses nothing and the sentence is not buried
                     // (#255). Three quarters of the magazine's text was inside crops.
-                } else if !isEdgeBand(region.seed, bounds: page.bounds) || takes(bounds, line) {
+                } else if isThinRule(region.seed)
+                            || !reachesInto(bounds, line, among: page.lines, pictures: page.pictures,
+                                            bounds: page.bounds, columnHeaders: columnHeaders),
+                          !isEdgeBand(region.seed, bounds: page.bounds) || takes(bounds, line) {
                     admitted.append(rect)
                     changed = true
                     break
                 }
+                // A crop never grows sideways into a row that begins outside it either: growing
+                // is what carried `noaa-nca5-2023`'s corner drawing across its contents pages
+                // (#207).
                 // An edge band that cannot be cut around this line keeps its own extent instead of
                 // growing into it. `takes` then leaves the line in the prose, so nothing is lost
                 // either way, where growing would have buried it in the crop (#246).
@@ -316,13 +374,45 @@ enum LayoutReconstructor {
             // A rule inside one line's box belongs to that line: a radical's vinculum or an
             // exercise bar keeps its short mathematical line; an underline beneath prose is
             // decoration. A rule outside every line stays an isolated graphic.
-            guard let owner = page.lines.first(where: { line in
+            func decides(_ measure: CGRect, _ text: String, _ monospaced: Bool) -> CGRect? {
+                let mathematical = text.count <= 40 && !monospaced
+                    && text.range(of: #"[A-Za-z]{3,}"#, options: .regularExpression) == nil
+                return mathematical ? rect.union(measure) : nil
+            }
+            if let owner = page.lines.first(where: { line in
                 rect.minX >= line.rect.minX - body && rect.maxX <= line.rect.maxX + body
                     && rect.midY >= line.rect.minY - 3 && rect.midY <= line.rect.maxY
-            }) else { return rect }
-            let mathematical = owner.text.count <= 40 && !owner.monospaced
-                && owner.text.range(of: #"[A-Za-z]{3,}"#, options: .regularExpression) == nil
-            return mathematical ? rect.union(owner.rect) : nil
+            }) {
+                return decides(owner.rect, owner.text, owner.monospaced)
+            }
+            // A rule no single line owns can still lie inside the measure of the printed *row*
+            // it strikes through (#207). PDFKit reads a contents entry and the page number it
+            // runs to as one line where the entry is short and as two where it is long, and the
+            // leader between them reaches from the entry's last word to the number. Read against
+            // one line, such a leader ends far beyond that line's right edge and owns nothing,
+            // so every long entry of `noaa-nca5-2023`'s contents pages seeded a figure that
+            // buried the entry and its number; read against its row it is the same decoration as
+            // the leader of a short entry, which the line test already claimed. Two pieces at
+            // least, so this reaches only rows PDFKit read apart.
+            // The row is what the rule stands in: the lines it strikes through that it also
+            // touches or abuts. A page sets its columns further apart than a body, so the line
+            // the other column happens to set on this baseline is not in this rule's row — the
+            // Replay Clocks paper's algorithm rules would otherwise be owned by the prose beside
+            // them, half a page away.
+            let row = page.lines.filter { line in
+                rect.midY >= line.rect.minY - 3 && rect.midY <= line.rect.maxY
+                    && line.rect.maxX >= rect.minX - body && line.rect.minX <= rect.maxX + body
+            }
+            let measure = union(row.map(\.rect))
+            guard row.count >= 2, rect.minX >= measure.minX - body, rect.maxX <= measure.maxX + body else {
+                return rect
+            }
+            // A row can only take a rule *away* as decoration, never widen it: a row's measure
+            // reaches across the page's columns, and unioning a mathematical rule with it carried
+            // Wallace's crops over the exercise standing beside their own. A rule the row does not
+            // claim stays the isolated graphic it already was.
+            return decides(measure, row.map(\.text).joined(separator: " "),
+                           row.contains(where: \.monospaced)) == nil ? nil : rect
         }
         let seeds = graphics + formulas + TableRegionDetector.regions(in: page)
             + FractionRegionDetector.regions(in: page, body: body) + tables
@@ -992,8 +1082,15 @@ enum LayoutReconstructor {
         // 0.49 pt above the second line, so the first half went into the picture and the second
         // reflowed alone between two figures. Releasing the half the crop took lets the two rejoin
         // as the caption they are (#59).
+        // A crop also does not take a printed row that begins outside it and reaches in: the
+        // page prints that row, the picture merely lies across its end (#207).
+        let columnHeaders = TableRegionDetector.columnHeaders(in: page, body: max(4, bodySize(page.lines)))
         let taken = Set(page.lines.indices.filter { index in
-            !overPicture.contains(index) && images.contains { takes($0.0, page.lines[index]) }
+            !overPicture.contains(index) && images.contains {
+                takes($0.0, page.lines[index])
+                    && !reachesInto($0.0, page.lines[index], among: page.lines, pictures: page.pictures,
+                                    bounds: page.bounds, columnHeaders: columnHeaders)
+            }
         })
         let released = Set(taken.filter { index in
             guard index + 1 < page.lines.count, !taken.contains(index + 1) else { return false }

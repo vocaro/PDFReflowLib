@@ -1125,6 +1125,30 @@ Evidence: [spine-continuity](../measurements/spine-continuity/record.md),
   The report's handwriting is not this rule's to fix: that book's inherited OCR layer is
   unverified, and #216 catalogues what it produces.
   Evidence: [table-headers-inside-crops](../measurements/table-headers-inside-crops/record.md).
+- **A row a picture's crop reaches into (#207).** `takes` keeps the lines whose middle row a crop
+  holds, which is right for a picture's own lettering — a diagram's labels, a chart's axis, a
+  legend's entries all stand *inside* the artwork. A page can also print its own reading across a
+  picture's footprint, and then the crop is reaching into that row from the side rather than
+  holding it. A crop neither takes nor grows into a printed row a piece of which straddles its
+  edge — begins more than a point outside the crop and runs into it — nor into the other pieces of
+  that row standing to that piece's right, so a released contents entry keeps the page number it
+  runs to instead of leaving it behind in the picture. Straddling is what a piece must do: a piece
+  standing wholly outside the crop is a cell of its own and says nothing about this one, and the
+  Replay Clocks paper sets six figures in three columns and gives each its own sub-caption on a
+  shared baseline, where `(a) 𝛼 = 20 messages/s, 𝑛= 32.` is the left figure's lettering rather than
+  the beginning of a row the middle figure reaches into.
+  Two exclusions carry over from the rules this one sits beside. Only a crop preserving a placed
+  raster image is read this way, because a region a page merely paints can still be carved —
+  Wallace's fraction crops reach leftwards to the exercise numbers that are part of their
+  expressions, and keep them. And a picture covering the page is the page, exactly as in #239: the
+  CIA report's crops sit on scans whose inherited layer is unverified OCR, and reading their rows
+  this way let 8,340 characters of `~,....,....,....r-T""S....,...,-100` out into the prose. A
+  table's column header is its table's here too and is never released (#257).
+  Every contents page of the climate assessment sets its entries from the
+  left margin to a page number at the right edge and places a decorative line drawing over its top
+  right corner; the drawing covers the right end of the first nine rows, no cut clears them, and
+  pages 9–18 lost 9,281 of their 14,808 characters — 47% to 73% of a page — into that one picture.
+  Evidence: [contents-pages-inside-crops](../measurements/contents-pages-inside-crops/record.md).
 - **Page furniture.** A region spanning at least 90% of the page's measure and flush against its
   top or bottom edge is the page's own furniture — a footer or header background — not a figure
   with a claim on the text near it. It keeps its own extent rather than growing to a line it only
@@ -1148,7 +1172,24 @@ Evidence: [spine-continuity](../measurements/spine-continuity/record.md),
   reflowing; an underlined word inside a paragraph is decoration (#229). A rule that carries a
   fraction (compact, word-free terms directly above and below) keeps the terms it touches; a rule
   inside a short word-free line, such as a vinculum or an exercise bar, keeps that line; a rule
-  clear of every line, such as a running-head rule or a box, stays an isolated graphic; and a row of
+  clear of every line, such as a running-head rule or a box, stays an isolated graphic. A rule no
+  single line owns is read against the measure of the printed *row* it strikes through, which is
+  the leader a contents entry runs to its page number over (#207): PDFKit reads such a row as one
+  line where the entry is short — and the line test already called that leader decoration — and as
+  two where it is long, and read against the long entry alone the leader ends far beyond that
+  line's right edge and owns nothing, so every long entry of the climate assessment's contents
+  pages seeded a figure that buried the entry and its number. Three conditions keep the row the
+  rule's own. It must be a row PDFKit read apart, at least two pieces. Each piece must be one the
+  rule touches or abuts, within a body of an end of it, because a page sets its columns further
+  apart than that and the line the next column happens to set on this baseline is not in this
+  rule's row — the Replay Clocks paper's algorithm rules would otherwise be owned by the prose
+  half a page to their right. And the row may only take a rule *away* as decoration, never widen
+  it to the row's measure: that measure reaches across the page's columns, and unioning a
+  mathematical rule with it carried Wallace's fraction crops over the exercise standing beside
+  their own. A rule the row does not claim stays the isolated graphic it already was. Our Flag's
+  title page is the rule this reads as decoration outside the climate assessment: it sets
+  `108th Congress, 1st Session` and `H.Doc. 108-97` at the two ends of one row and draws a rule
+  the width of both beneath them, which was preserved as a 310 × 4 pt picture. And a row of
   at least three header underlines, or one short piece underlined whole away from the left margin,
   over at least three tightly leaded rows carrying numbers, is a borderless table
   (`TableRegionDetector.underlinedColumnRegions`) preserved as one region (#36).

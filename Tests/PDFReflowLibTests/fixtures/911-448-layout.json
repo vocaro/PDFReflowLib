@@ -1,0 +1,753 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        39.660000000000004,
+        562.53440000000012,
+        180.03070000000005,
+        8.6069999999999709
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.5,
+          "text" : "430 APPENDIX"
+        }
+      ],
+      "text" : "430 APPENDIX"
+    },
+    {
+      "rect" : [
+        39.660000000000004,
+        537.85505000000001,
+        39.726950000000009,
+        9.2865000000000464
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "NORAD "
+        }
+      ],
+      "text" : "NORAD "
+    },
+    {
+      "rect" : [
+        129.658075,
+        537.85505000000001,
+        192.35252499999996,
+        9.2865000000000464
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "North American Aerospace Defense Command"
+        }
+      ],
+      "text" : "North American Aerospace Defense Command"
+    },
+    {
+      "rect" : [
+        39.662050000000001,
+        526.60464999999999,
+        240.23130000000018,
+        9.2865000000000464
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "NTSB National Transportation Safety Board"
+        }
+      ],
+      "text" : "NTSB National Transportation Safety Board"
+    },
+    {
+      "rect" : [
+        39.662050000000001,
+        515.35424999999998,
+        194.455825,
+        9.2865000000000464
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "NSA National Security Agency"
+        }
+      ],
+      "text" : "NSA National Security Agency"
+    },
+    {
+      "rect" : [
+        39.662050000000001,
+        504.10384999999991,
+        197.51852499999995,
+        9.2864999999999895
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "NSC National Security Council"
+        }
+      ],
+      "text" : "NSC National Security Council"
+    },
+    {
+      "rect" : [
+        39.662050000000001,
+        492.8534499999999,
+        221.51070000000007,
+        9.2864999999999895
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "NSPD national security policy directive"
+        }
+      ],
+      "text" : "NSPD national security policy directive"
+    },
+    {
+      "rect" : [
+        39.662050000000001,
+        481.60304999999988,
+        210.10552500000003,
+        9.2864999999999895
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "NYPD New York Police Department"
+        }
+      ],
+      "text" : "NYPD New York Police Department"
+    },
+    {
+      "rect" : [
+        39.662050000000001,
+        470.35264999999987,
+        23.927600000000005,
+        9.2864999999999895
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "OEM "
+        }
+      ],
+      "text" : "OEM "
+    },
+    {
+      "rect" : [
+        129.65705,
+        470.35264999999987,
+        211.7814000000001,
+        9.2864999999999895
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "Office of Emergency Management (New York City)"
+        }
+      ],
+      "text" : "Office of Emergency Management (New York City)"
+    },
+    {
+      "rect" : [
+        39.663074999999999,
+        459.10224999999986,
+        27.470000000000006,
+        9.2864999999999895
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "OFAC "
+        }
+      ],
+      "text" : "OFAC "
+    },
+    {
+      "rect" : [
+        129.66422499999999,
+        459.10224999999986,
+        131.05547499999989,
+        9.2864999999999895
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "Office of Foreign Assets Control"
+        }
+      ],
+      "text" : "Office of Foreign Assets Control"
+    },
+    {
+      "rect" : [
+        39.663074999999999,
+        447.85184999999984,
+        25.84640000000001,
+        9.2864999999999895
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "OIPR "
+        }
+      ],
+      "text" : "OIPR "
+    },
+    {
+      "rect" : [
+        129.66319999999999,
+        447.85184999999984,
+        166.57274999999996,
+        9.2864999999999895
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "Office of Intelligence Policy and Review"
+        }
+      ],
+      "text" : "Office of Intelligence Policy and Review"
+    },
+    {
+      "rect" : [
+        39.663074999999999,
+        436.60144999999983,
+        24.347850000000001,
+        9.2864999999999895
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "OMB "
+        }
+      ],
+      "text" : "OMB "
+    },
+    {
+      "rect" : [
+        129.66012499999999,
+        436.60144999999983,
+        141.97890000000018,
+        9.2864999999999895
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "Office of Management and Budget"
+        }
+      ],
+      "text" : "Office of Management and Budget"
+    },
+    {
+      "rect" : [
+        39.663074999999999,
+        425.35104999999982,
+        228.932725,
+        9.2864999999999895
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "PAPD Port Authority Police Department"
+        }
+      ],
+      "text" : "PAPD Port Authority Police Department"
+    },
+    {
+      "rect" : [
+        39.664099999999998,
+        414.1006499999998,
+        208.80992499999994,
+        9.2864999999999895
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "PDD presidential decision directive"
+        }
+      ],
+      "text" : "PDD presidential decision directive"
+    },
+    {
+      "rect" : [
+        39.664099999999998,
+        402.85024999999979,
+        264.06459999999987,
+        9.2864999999999895
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "PEOC Presidential Emergency Operations Center"
+        }
+      ],
+      "text" : "PEOC Presidential Emergency Operations Center"
+    },
+    {
+      "rect" : [
+        39.664099999999998,
+        391.59984999999978,
+        242.90757500000004,
+        9.2864999999999895
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "SEC Securities and Exchange Commission"
+        }
+      ],
+      "text" : "SEC Securities and Exchange Commission"
+    },
+    {
+      "rect" : [
+        39.664099999999998,
+        380.34944999999976,
+        248.56045000000009,
+        9.2864999999999895
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "TSA Transportation Security Administration"
+        }
+      ],
+      "text" : "TSA Transportation Security Administration"
+    },
+    {
+      "rect" : [
+        39.664099999999998,
+        369.09904999999975,
+        232.45667499999999,
+        9.2864999999999895
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "TTIC Terrorist Threat Integration Center"
+        }
+      ],
+      "text" : "TTIC Terrorist Threat Integration Center"
+    },
+    {
+      "rect" : [
+        39.664099999999998,
+        357.84864999999974,
+        160.53754999999995,
+        9.2864999999999895
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "UBL Usama Bin Ladin"
+        }
+      ],
+      "text" : "UBL Usama Bin Ladin"
+    },
+    {
+      "rect" : [
+        39.664099999999998,
+        346.59824999999972,
+        205.07995000000003,
+        9.2864999999999895
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "WMD weapons of mass destruction"
+        }
+      ],
+      "text" : "WMD weapons of mass destruction"
+    },
+    {
+      "rect" : [
+        39.664099999999998,
+        335.34784999999971,
+        170.92694999999995,
+        9.2864999999999895
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "WTC World Trade Center"
+        }
+      ],
+      "text" : "WTC World Trade Center"
+    },
+    {
+      "rect" : [
+        39.664099999999998,
+        324.0974499999997,
+        196.01894999999999,
+        9.2864999999999895
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "WTO World Trade Organization"
+        }
+      ],
+      "text" : "WTO World Trade Organization"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    396,
+    612
+  ],
+  "caseID" : "gpo-911-2004",
+  "graphics" : [
+
+  ],
+  "lines" : [
+    {
+      "fontSize" : 9.5,
+      "monospaced" : false,
+      "rect" : [
+        39.660000000000004,
+        562.53440000000012,
+        180.03070000000005,
+        8.6069999999999709
+      ],
+      "text" : "430 APPENDIX"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        39.660000000000004,
+        537.85505000000001,
+        39.726950000000009,
+        9.2865000000000464
+      ],
+      "text" : "NORAD"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        129.658075,
+        537.85505000000001,
+        192.35252499999996,
+        9.2865000000000464
+      ],
+      "text" : "North American Aerospace Defense Command"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        39.662050000000001,
+        526.60464999999999,
+        240.23130000000018,
+        9.2865000000000464
+      ],
+      "text" : "NTSB National Transportation Safety Board"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        39.662050000000001,
+        515.35424999999998,
+        194.455825,
+        9.2865000000000464
+      ],
+      "text" : "NSA National Security Agency"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        39.662050000000001,
+        504.10384999999991,
+        197.51852499999995,
+        9.2864999999999895
+      ],
+      "text" : "NSC National Security Council"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        39.662050000000001,
+        492.8534499999999,
+        221.51070000000007,
+        9.2864999999999895
+      ],
+      "text" : "NSPD national security policy directive"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        39.662050000000001,
+        481.60304999999988,
+        210.10552500000003,
+        9.2864999999999895
+      ],
+      "text" : "NYPD New York Police Department"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        39.662050000000001,
+        470.35264999999987,
+        23.927600000000005,
+        9.2864999999999895
+      ],
+      "text" : "OEM"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        129.65705,
+        470.35264999999987,
+        211.7814000000001,
+        9.2864999999999895
+      ],
+      "text" : "Office of Emergency Management (New York City)"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        39.663074999999999,
+        459.10224999999986,
+        27.470000000000006,
+        9.2864999999999895
+      ],
+      "text" : "OFAC"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        129.66422499999999,
+        459.10224999999986,
+        131.05547499999989,
+        9.2864999999999895
+      ],
+      "text" : "Office of Foreign Assets Control"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        39.663074999999999,
+        447.85184999999984,
+        25.84640000000001,
+        9.2864999999999895
+      ],
+      "text" : "OIPR"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        129.66319999999999,
+        447.85184999999984,
+        166.57274999999996,
+        9.2864999999999895
+      ],
+      "text" : "Office of Intelligence Policy and Review"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        39.663074999999999,
+        436.60144999999983,
+        24.347850000000001,
+        9.2864999999999895
+      ],
+      "text" : "OMB"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        129.66012499999999,
+        436.60144999999983,
+        141.97890000000018,
+        9.2864999999999895
+      ],
+      "text" : "Office of Management and Budget"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        39.663074999999999,
+        425.35104999999982,
+        228.932725,
+        9.2864999999999895
+      ],
+      "text" : "PAPD Port Authority Police Department"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        39.664099999999998,
+        414.1006499999998,
+        208.80992499999994,
+        9.2864999999999895
+      ],
+      "text" : "PDD presidential decision directive"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        39.664099999999998,
+        402.85024999999979,
+        264.06459999999987,
+        9.2864999999999895
+      ],
+      "text" : "PEOC Presidential Emergency Operations Center"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        39.664099999999998,
+        391.59984999999978,
+        242.90757500000004,
+        9.2864999999999895
+      ],
+      "text" : "SEC Securities and Exchange Commission"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        39.664099999999998,
+        380.34944999999976,
+        248.56045000000009,
+        9.2864999999999895
+      ],
+      "text" : "TSA Transportation Security Administration"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        39.664099999999998,
+        369.09904999999975,
+        232.45667499999999,
+        9.2864999999999895
+      ],
+      "text" : "TTIC Terrorist Threat Integration Center"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        39.664099999999998,
+        357.84864999999974,
+        160.53754999999995,
+        9.2864999999999895
+      ],
+      "text" : "UBL Usama Bin Ladin"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        39.664099999999998,
+        346.59824999999972,
+        205.07995000000003,
+        9.2864999999999895
+      ],
+      "text" : "WMD weapons of mass destruction"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        39.664099999999998,
+        335.34784999999971,
+        170.92694999999995,
+        9.2864999999999895
+      ],
+      "text" : "WTC World Trade Center"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        39.664099999999998,
+        324.0974499999997,
+        196.01894999999999,
+        9.2864999999999895
+      ],
+      "text" : "WTO World Trade Organization"
+    }
+  ],
+  "page" : 448,
+  "pictures" : [
+
+  ],
+  "rightsBasis" : "Official U.S. Government commission report, retained as external development material. Source PDF is not bundled or relicensed under MIT.",
+  "schemaVersion" : 2,
+  "sourceSHA256" : "657d41475eb3a9a5e3e87a6c7c51ac1dfbe1af7566d1abff7bf7286e7e1c0e1b",
+  "sourceTitle" : "The 9/11 Commission Report",
+  "sourceURL" : "https://www.govinfo.gov/content/pkg/GPO-911REPORT/pdf/GPO-911REPORT.pdf"
+}

@@ -1,5 +1,5 @@
 {
-  "capturedOn": "2026-09-20",
+  "capturedOn": "2026-09-21",
   "repository": "vocaro/PDFReflowLib",
   "source": "gh issue list --repo vocaro/PDFReflowLib --state all --limit 1000 --json number,state",
   "purpose": "What tools/check_issue_citations.py reads instead of the network. Refresh with `python3 tools/check_issue_citations.py --refresh` and commit the result.",
@@ -64,7 +64,19 @@
     256,
     257,
     258,
-    259
+    259,
+    260,
+    261,
+    262,
+    263,
+    264,
+    265,
+    266,
+    267,
+    268,
+    269,
+    270,
+    271
   ],
   "closed": [
     1,

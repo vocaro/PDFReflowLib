@@ -30,6 +30,7 @@ private typealias CaptureFont = UIFont
               let reference = page.pageRef else { throw CocoaError(.fileReadCorruptFile) }
         func rect(_ r: CGRect) -> [Double] { [r.minX, r.minY, r.width, r.height] }
         let lines = try NativeTextReader.lines(on: page, limit: 100_000)
+        let graphics = GraphicsReader.read(reference)
         var attributedLines: [[String: Any]] = []
         for selection in page.selection(for: page.bounds(for: .cropBox))?.selectionsByLine() ?? [] {
             guard let attributed = selection.attributedString else { continue }
@@ -45,10 +46,14 @@ private typealias CaptureFont = UIFont
             attributedLines.append(["text": attributed.string, "rect": rect(selection.bounds(for: page)), "runs": runs])
         }
         let payload: [String: Any] = [
+            "schemaVersion": 2,
             "caseID": item["id"]!, "sourceSHA256": digest, "page": pageNumber,
             "sourceURL": item["downloadURL"] ?? item["url"] ?? "", "sourceTitle": item["title"]!,
             "rightsBasis": item["rightsBasis"] ?? "See corpus manifest and third-party notices.",
-            "bounds": rect(page.bounds(for: .cropBox)), "graphics": GraphicsReader.read(reference).regions.map(rect),
+            "bounds": rect(page.bounds(for: .cropBox)), "graphics": graphics.regions.map(rect),
+            // The placed raster image XObjects among the regions, which crop ownership reads
+            // (#176, #239, #207). Captures before schema version 2 carry none.
+            "pictures": graphics.images.map(rect),
             "lines": lines.map { ["text": $0.text, "rect": rect($0.rect), "fontSize": $0.fontSize,
                 "monospaced": $0.monospaced] as [String: Any] }, "attributedLines": attributedLines,
         ]

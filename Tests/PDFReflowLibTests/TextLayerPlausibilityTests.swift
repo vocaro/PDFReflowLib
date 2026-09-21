@@ -403,6 +403,40 @@ private func raster(width: Int = 400, height: Int = 200, background: UInt8, ink:
     #expect(OCRTextCoverage.measure(blank, boxes: [], excluded: [], pixelsPerPoint: 1).textRows == 0)
 }
 
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/182"))
+func aLightOnDarkPageIsJudgedForWritingAReadingLeftOut() {
+    // The deck's shape, and the pin for #182's third defect. Rendered at 180 DPI, 97.6% of
+    // `ntrs-20180003024-earthdata-slides-2018`'s slide 5 is darker than the page's own ink
+    // threshold, and measured as drawn it yields no text row at all: the loss rule has nothing
+    // to weigh, and the slide cannot be judged. Measured against the page's own background it
+    // yields rows, so a reading that came back with only part of the page is caught on such a
+    // page as on any other.
+    let slide = raster(width: 400, height: 440, background: 40, ink: 255, rows: 10)
+    #expect(slide.inkIsBackground())
+    // The first two rows of writing, as a reading that stopped after them would report them.
+    func box(_ row: Int) -> CGRect {
+        let y0 = 20 + row * 40
+        return CGRect(x: 20 / 400.0, y: (440.0 - Double(y0 + 12)) / 440,
+                      width: 106 / 400.0, height: 12 / 440.0)
+    }
+    let partial = OCRTextCoverage.measure(slide, boxes: [box(0), box(1)], excluded: [], pixelsPerPoint: 1)
+    #expect(partial.textRows == 10)
+    #expect(partial.uncoveredRows == 8)
+    #expect(partial.indicatesLoss)
+    // Control: the same writing printed dark on white is judged identically, so nothing about
+    // the verdict depends on which side of the threshold the page's ink is on.
+    let printed = OCRTextCoverage.measure(raster(width: 400, height: 440, background: 255, ink: 0, rows: 10),
+                                          boxes: [box(0), box(1)], excluded: [], pixelsPerPoint: 1)
+    #expect(printed.textRows == partial.textRows)
+    #expect(printed.uncoveredRows == partial.uncoveredRows)
+    #expect(printed.indicatesLoss)
+    // Control: a reading that covered every row of the light-on-dark page reports no loss.
+    let complete = OCRTextCoverage.measure(slide, boxes: (0..<10).map(box), excluded: [], pixelsPerPoint: 1)
+    #expect(complete.textRows == 10)
+    #expect(complete.uncoveredRows == 0)
+    #expect(!complete.indicatesLoss)
+}
+
 @Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/176")) func aPageWhoseDarkInkAlreadyFormsRowsIsNeverInverted() {
     // A mostly dark page — a full-bleed photograph — whose printed text is dark on a light panel.
     var pixels = [UInt8](repeating: 20, count: 400 * 200)

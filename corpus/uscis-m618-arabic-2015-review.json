@@ -7,13 +7,13 @@
     {
       "page": 5,
       "target": "Right-to-left contents with dot leaders",
-      "acceptance": "Each entry separate with its page number; section titles before their entries."
+      "acceptance": "Each entry a block of its own with its page number, read from its title; section titles before their entries."
     },
     {
       "page": 21,
       "target": "Permanent resident card prose with embedded Latin and numbers",
-      "acceptance": "Logical-order paragraphs; form I-551 and I-90 identifiers, the 1-800-870-3676 number and (USCIS) read correctly; no visual-line fragments or spurious superscripts; card image preserved."
+      "acceptance": "Logical-order paragraphs; form I-551, I-485 and I-90, the 1-800-870-3676 number, (USCIS), (USCIS ELIS) and both web addresses read correctly; no visual-line fragments or spurious superscripts; card image preserved; the Arabic paragraphs carry dir=\"rtl\"."
     }
   ],
-  "scope": "Manual targets. Current converter fragments and reorders bidirectional runs (#41)."
+  "scope": "Manual targets, met as of #41: the converter reads this book's bidirectional runs, its split printed rows and its right-aligned paragraph measure, and states the base direction in the output. What remains unqualified is everything the review did not look at \u2014 the other 114 pages, and the callout box on page 21 that divides one paragraph because the page prints a picture inside it."
 }

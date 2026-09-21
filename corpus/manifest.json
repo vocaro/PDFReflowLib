@@ -1001,7 +1001,8 @@
         "right-to-left Arabic body text",
         "bidirectional runs mixing Arabic, Latin, form numbers and phone numbers",
         "right-to-left table of contents with dot leaders",
-        "extraction reverses I-551 to 551-I and mirrors parentheses",
+        "printed rows the extractor splits at a direction boundary",
+        "a reading that reverses I-551 to 551-I and mirrors parentheses unless it is put back (#41)",
         "photographs and callout boxes beside text",
         "section-divider pages without text"
       ],
@@ -1010,15 +1011,8 @@
         21
       ],
       "downloadVerification": "Fresh download through tools/fetch_corpus.py into an empty temporary cache matched this identity on 2026-09-16; see measurements/corpus-candidates-30/verification.json.",
-      "reviewStatus": "Converted with EPUBCheck, progress and 256 MiB Mac RSS gate. Contract protects the Arabic contents heading and entry order and page-21 Arabic text with embedded English terms. Bidirectional ordering is unqualified (#41).",
-      "knownFidelityIssues": [
-        {
-          "page": 21,
-          "issue": "Right-to-left paragraphs with embedded numbers split into visual-line fragments; I-551 becomes 551-I, parentheses mirror and the phone number reverses.",
-          "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/41"
-        }
-      ],
-      "baselineStatus": "Baseline and reviewed contract recorded in measurements/uscis-m618-arabic-2015/record.md; included in the corpus gate.",
+      "reviewStatus": "Converted with EPUBCheck, progress and 256 MiB Mac RSS gate. Contract protects the Arabic contents heading, its entries' order and their own blocks, and page-21 Arabic text with its embedded English terms, form numbers, telephone number and parentheticals in the order the page sets them. Bidirectional ordering is qualified as of #41 on the two reviewed pages; the other 114 are unreviewed.",
+      "baselineStatus": "Baseline and reviewed contract recorded in measurements/uscis-m618-arabic-2015/record.md, restated over #41 in measurements/right-to-left-runs-and-rows/record.md; included in the corpus gate.",
       "memoryBudget": {
         "maxPeakRSSMiB": 256,
         "scope": "macOS 27 arm64 isolated release CLI, defaults; initial RSS regression ceiling, not a mobile device budget"

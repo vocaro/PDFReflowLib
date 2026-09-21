@@ -382,9 +382,9 @@ enum LayoutReconstructor {
     }
 
     /// Convenience for callers that do not report an abandoned cut.
-    static func ordered(_ elements: [Element], bodySize: CGFloat) -> [Element] {
+    static func ordered(_ elements: [Element], bodySize: CGFloat, rightToLeft: Bool = false) -> [Element] {
         var exhausted = false
-        return ordered(elements, bodySize: bodySize, exhausted: &exhausted)
+        return ordered(elements, bodySize: bodySize, rightToLeft: rightToLeft, exhausted: &exhausted)
     }
 
     // Recursive whitespace cuts: columns first; a spanning heading is separated by a horizontal
@@ -397,7 +397,7 @@ enum LayoutReconstructor {
     // or transcript); the deepest of the captured corpus pages cuts eleven levels. The page
     // reports it as `complexLayout` rather than leaving the fallback silent, as the tag phase
     // reports its own give-up (#224).
-    static func ordered(_ elements: [Element], bodySize: CGFloat, depth: Int = 0,
+    static func ordered(_ elements: [Element], bodySize: CGFloat, rightToLeft: Bool = false, depth: Int = 0,
                         exhausted: inout Bool) -> [Element] {
         guard elements.count > 1 else { return elements }
         guard depth < 32 else { exhausted = true; return elements }
@@ -448,18 +448,22 @@ enum LayoutReconstructor {
         }) {
             let rect = elements[divider].rect
             return ordered(elements.filter { $0.rect.minY >= rect.maxY },
-                           bodySize: bodySize, depth: depth + 1, exhausted: &exhausted)
+                           bodySize: bodySize, rightToLeft: rightToLeft, depth: depth + 1, exhausted: &exhausted)
                 + [elements[divider]]
                 + ordered(elements.filter { $0.rect.maxY <= rect.minY },
-                          bodySize: bodySize, depth: depth + 1, exhausted: &exhausted)
+                          bodySize: bodySize, rightToLeft: rightToLeft, depth: depth + 1, exhausted: &exhausted)
         }
         if let x = gap(horizontal: true) {
-            return ordered(elements.filter { $0.rect.maxX < x }, bodySize: bodySize, depth: depth + 1, exhausted: &exhausted)
-                + ordered(elements.filter { $0.rect.minX > x }, bodySize: bodySize, depth: depth + 1, exhausted: &exhausted)
+            // Writing that runs right to left reads the column on the right of the gutter first
+            // (#41).
+            let near = elements.filter { rightToLeft ? $0.rect.minX > x : $0.rect.maxX < x }
+            let far = elements.filter { rightToLeft ? $0.rect.maxX < x : $0.rect.minX > x }
+            return ordered(near, bodySize: bodySize, rightToLeft: rightToLeft, depth: depth + 1, exhausted: &exhausted)
+                + ordered(far, bodySize: bodySize, rightToLeft: rightToLeft, depth: depth + 1, exhausted: &exhausted)
         }
         if let y = gap(horizontal: false) {
-            return ordered(elements.filter { $0.rect.minY > y }, bodySize: bodySize, depth: depth + 1, exhausted: &exhausted)
-                + ordered(elements.filter { $0.rect.maxY < y }, bodySize: bodySize, depth: depth + 1, exhausted: &exhausted)
+            return ordered(elements.filter { $0.rect.minY > y }, bodySize: bodySize, rightToLeft: rightToLeft, depth: depth + 1, exhausted: &exhausted)
+                + ordered(elements.filter { $0.rect.maxY < y }, bodySize: bodySize, rightToLeft: rightToLeft, depth: depth + 1, exhausted: &exhausted)
         }
         // Every straight cut has failed. A magazine page can still state its own blocks: a column
         // that runs on into a wider measure below, around an L-shaped picture frame, leaves no
@@ -467,7 +471,7 @@ enum LayoutReconstructor {
         // overlap, so there is no whitespace band either. Sorting that page's lines interleaves
         // its columns row by row. Where the page states the run-on, its columns are ordered as
         // runs instead of as lines (#174).
-        if let runs = columnRuns(elements, bodySize: bodySize) { return runs.flatMap { $0 } }
+        if let runs = columnRuns(elements, bodySize: bodySize, rightToLeft: rightToLeft) { return runs.flatMap { $0 } }
         // Every straight cut, and the column runs, have failed, and the row-major sort below would
         // weave this block's columns together. One reading is still left: a picture across the
         // block's measure with everything else on one side of it. #137's cut above asks for
@@ -514,14 +518,15 @@ enum LayoutReconstructor {
             let rect = divider.rect
             let members = divider.members.sorted { elements[$0].rect.midY > elements[$1].rect.midY }
             return ordered(elements.filter { $0.rect.minY >= rect.maxY },
-                           bodySize: bodySize, depth: depth + 1, exhausted: &exhausted)
+                           bodySize: bodySize, rightToLeft: rightToLeft, depth: depth + 1, exhausted: &exhausted)
                 + members.map { elements[$0] }
                 + ordered(elements.filter { $0.rect.maxY <= rect.minY },
-                          bodySize: bodySize, depth: depth + 1, exhausted: &exhausted)
+                          bodySize: bodySize, rightToLeft: rightToLeft, depth: depth + 1, exhausted: &exhausted)
         }
         return elements.sorted {
             abs($0.rect.midY - $1.rect.midY) > bodySize * 0.4
-                ? $0.rect.midY > $1.rect.midY : $0.rect.minX < $1.rect.minX
+                ? $0.rect.midY > $1.rect.midY
+                : (rightToLeft ? $0.rect.maxX > $1.rect.maxX : $0.rect.minX < $1.rect.minX)
         }
     }
 
@@ -537,7 +542,7 @@ enum LayoutReconstructor {
     /// read off each run's own rectangle. That is what "block-level" means here: the run, not the
     /// line, is what carries a position, so a column that reaches the foot of the page is read
     /// out before the column beside it rather than woven into it.
-    static func columnRuns(_ elements: [Element], bodySize: CGFloat) -> [[Element]]? {
+    static func columnRuns(_ elements: [Element], bodySize: CGFloat, rightToLeft: Bool = false) -> [[Element]]? {
         let top = elements.enumerated().sorted {
             $0.element.rect.maxY != $1.element.rect.maxY
                 ? $0.element.rect.maxY > $1.element.rect.maxY
@@ -587,7 +592,9 @@ enum LayoutReconstructor {
         let placed = runs.indices.sorted { first, second in
             let a = union(runs[first].map(\.rect)), b = union(runs[second].map(\.rect))
             if abs(a.midY - b.midY) > bodySize * 0.4 { return a.midY > b.midY }
-            if a.minX != b.minX { return a.minX < b.minX }
+            // The run on the right is read first where the writing runs that way (#41).
+            if rightToLeft { if a.maxX != b.maxX { return a.maxX > b.maxX } }
+            else if a.minX != b.minX { return a.minX < b.minX }
             return arrival[first] < arrival[second]
         }
         return placed.map { runs[$0] }
@@ -1125,8 +1132,13 @@ enum LayoutReconstructor {
         // navigation entry (#7).
         let judgesTitleWords = page.recognized && EnglishText.isDeclared(context.language)
         var exhausted = false
+        // The page's own writing decides which way it is read, never the declared language: the
+        // corpus converts the Arabic guide at library defaults, which declare English for it
+        // (#41).
+        let rightToLeft = ArabicText.readsRightToLeft(lines)
         let spatial = ordered(lines.map { Element(rect: $0.readingRect ?? $0.rect, line: $0) }
-            + images.map { Element(rect: $0.0, image: $0.1) }, bodySize: typography.body, exhausted: &exhausted)
+            + images.map { Element(rect: $0.0, image: $0.1) }, bodySize: typography.body,
+            rightToLeft: rightToLeft, exhausted: &exhausted)
         if exhausted {
             warnings.append(.init(code: .complexLayout, page: page.number,
                 message: "Whitespace cuts reached their depth limit before separating this page's content; "
@@ -1144,7 +1156,8 @@ enum LayoutReconstructor {
         // reflow, as the table rows below are (#160).
         var assembler = BlockAssembler(page: page.number, body: typography.body, leading: typography.leading,
                                        hyphens: context.hyphens, imageLinks: imageLinks,
-                                       hangingEntries: hangingEntries(in: lines, body: typography.body))
+                                       hangingEntries: hangingEntries(in: lines, body: typography.body),
+                                       rightToLeft: rightToLeft)
         // A page whose tags never name a heading has not said that its display lines are not
         // headings; it has said only what they contain and in what order. Producers routinely
         // give every heading style a paragraph role — the FAA handbook's RoleMap sends
@@ -1155,19 +1168,26 @@ enum LayoutReconstructor {
         // Rows of a table the page set without rules keep their breaks rather than joining into
         // one paragraph (#137, #210). The evidence is the page's own stated column boundary, so
         // it is read from the lines that still reflow, after the crops have taken theirs.
-        let rows = TableRegionDetector.rowBlocks(in: lines, body: typography.body)
+        let rows = TableRegionDetector.rowBlocks(in: lines, body: typography.body, rightToLeft: rightToLeft)
         let roles = elements.map { element in
             element.line.map { line -> LineRole in
                 let role = role(of: line, on: page, in: lines, typography: typography,
-                                labels: labels, judgesTitleWords: judgesTitleWords)
+                                labels: labels, judgesTitleWords: judgesTitleWords, rightToLeft: rightToLeft)
                 // A heading standing in the block, and monospaced text that keeps its own
                 // breaks already, are left as they read.
                 guard role != .heading, role != .code,
                       let block = rows.first(where: { $0.insetBy(dx: -1, dy: -1).contains(line.rect) })
                 else { return role }
                 // A line set in from the block's own left edge is a cell that wrapped, not the
-                // next row.
-                return .tableRow(continuation: line.rect.minX > block.minX + typography.body * 0.6)
+                // next row. It is the printed row that is judged, not the piece the extractor
+                // handed over: a row the extractor split at a direction boundary opens at the
+                // block's edge however far in the piece that carries its title begins, which is
+                // 291 points on the Arabic guide's contents (#41). In left-to-right writing the
+                // first piece of a row is its leftmost, so this is the edge it always was.
+                let rowStart = lines.filter {
+                    block.insetBy(dx: -1, dy: -1).contains($0.rect) && $0.sharesRow(with: line)
+                }.map(\.rect.minX).min() ?? line.rect.minX
+                return .tableRow(continuation: rowStart > block.minX + typography.body * 0.6)
             }
         }
         let contradicted = contradictedHeadingGroups(elements, roles: roles)

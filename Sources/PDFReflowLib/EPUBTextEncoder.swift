@@ -64,14 +64,18 @@ enum EPUBTextEncoder {
     static func piece(for block: ReflowBlock, imagePaths: [String: String],
                       labels: [Int: String] = [:]) throws -> SpinePacker.Piece {
         let payload = try payload(block, imagePaths: imagePaths, labels: labels)
+        // A block whose own writing runs right to left states its base direction, so a reader
+        // lays out the numbers, Latin terms and brackets inside it the way the page did (#41).
+        // `dir` is a global attribute of XHTML5 and valid on every element it is written on here.
+        let dir = ArabicText.readsRightToLeft(block.text) ? " dir=\"rtl\"" : ""
         switch block.content {
         case .paragraph:
-            return SpinePacker.Piece(markup: "<p>\(payload)</p>\n", sourcePages: block.sourcePages, heading: nil)
+            return SpinePacker.Piece(markup: "<p\(dir)>\(payload)</p>\n", sourcePages: block.sourcePages, heading: nil)
         case let .heading(id, _, level):
-            return SpinePacker.Piece(markup: "<h\(level) id=\"\(xml(id))\">\(payload)</h\(level)>\n",
+            return SpinePacker.Piece(markup: "<h\(level) id=\"\(xml(id))\"\(dir)>\(payload)</h\(level)>\n",
                                      sourcePages: block.sourcePages, heading: (id, block.text))
         case .preformatted:
-            return SpinePacker.Piece(markup: "<pre>\(payload)</pre>\n", sourcePages: block.sourcePages, heading: nil)
+            return SpinePacker.Piece(markup: "<pre\(dir)>\(payload)</pre>\n", sourcePages: block.sourcePages, heading: nil)
         case .image:
             return SpinePacker.Piece(markup: payload + "\n", sourcePages: block.sourcePages, heading: nil)
         case .sourcePage:

@@ -68,7 +68,10 @@ enum NativeTextReader {
             return bounds.isFinite && !bounds.isNull && bounds.width > 0 && bounds.height > 0
         } : []
         let attributedByLine = attributedTexts(of: styledLines, in: selections, texts: textsByLine, on: page)
-        var result: [TextLine] = []
+        // Each line as it was read, held until the page's own writing is known: a page written
+        // right to left hands back the separators inside its numbers, and any line with no
+        // right-to-left letter of its own, in the order it painted them (#41).
+        var pending: [(semantic: String, bounds: CGRect, attributed: NSAttributedString?)] = []
         // Glyphs a show drew past the end of the line its origin fell in, waiting for the next
         // line of the same printed row (#237). A row TeX sets as one show and PDFKit reports as
         // several lines is read here, in PDFKit's own reading order, because only this loop sees
@@ -109,10 +112,19 @@ enum NativeTextReader {
             repaired = repaired.map(CJKText.joinIdeographs)
             let corrected = repaired?.string != attributed?.string
                 ? repaired?.string.replacingOccurrences(of: "\u{FFFC}", with: " ") : nil
-            result.append(textLine(semantic: corrected ?? semantic,
-                                   bounds: bounds, attributed: repaired))
+            pending.append((corrected ?? semantic, bounds, repaired))
         }
-        return result
+        let rightToLeft = ArabicText.readsRightToLeft(pending.map(\.semantic))
+        return pending.map { item in
+            guard rightToLeft else { return textLine(semantic: item.semantic, bounds: item.bounds, attributed: item.attributed) }
+            let ordered = item.attributed.map { ArabicText.logicalOrder($0, onRightToLeftPage: true) }
+            // The styled text is what the line carries; the plain text follows it where the order
+            // moved, and is reordered on its own where the line has no styled content.
+            let semantic = ordered?.string != item.attributed?.string
+                ? ordered!.string.replacingOccurrences(of: "\u{FFFC}", with: " ")
+                : ArabicText.logicalOrder(item.semantic, onRightToLeftPage: true)
+            return textLine(semantic: semantic, bounds: item.bounds, attributed: ordered)
+        }
     }
 
     /// The attributed text of the lines at `indices`, read with one PDFKit request for the page.
@@ -408,8 +420,11 @@ enum NativeTextReader {
             // A glyph GlyphIdentityReader redrew from a font's own table and found standing
             // alone between word spaces (a dingbat bullet substituted with a mismatched font,
             // #217) is never an inline superscript or subscript, however its metrics place it.
+            // Neither is a run of right-to-left letters, whose shaping shifts single letters off
+            // the baseline inside a word the page never raised (#41).
             if !(hasDropCap && range.location == 0),
                attributes[GlyphIdentityReader.isolatedAttribute] == nil,
+               !ArabicText.isRightToLeftRun(run),
                offset.isFinite, abs(offset) <= (font?.pointSize ?? 12) * 0.75 {
                 if offset > tolerance { style.insert(.superscript) }
                 else if offset < -tolerance { style.insert(.subscript) }

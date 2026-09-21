@@ -160,6 +160,34 @@ Evidence: [pdfkit-concurrency](../measurements/pdfkit-concurrency/record.md),
   a heading the page letter-spaces one character at a time. The narrower ideograph test, not the
   one-em test, decides the removal: a source may legitimately set a space after `。` or `，`
   where a run-in heading ends, and every boundary with Latin text keeps the source's own spacing.
+- **Right-to-left text (#41).** A page written right to left is read as one: `ArabicText` counts
+  the Hebrew, Arabic, Syriac, Thaana, NKo, Samaritan and Mandaic letters of the page's own lines
+  against their Latin letters, and a page carrying at least as many of the first is right to left.
+  Nothing below runs on any other page, and nothing consults the declared language, which is `en`
+  by default for every book the corpus converts. Such a page hands back its Arabic in the order it
+  was written and its numbers in the order it was painted, because PDFKit inverts the page's
+  layout without the two rules of the bidirectional algorithm that fold a separator into the
+  number beside it. Two orders are put back:
+  - **A number or an identifier whose separators were resolved right to left.** Two or more runs
+    of Latin letters and digits joined by single ES or CS separators (`+ , - . / :`, the Arabic
+    comma and the dashes) are one chain, and a chain with a digit directly beside one of its
+    separators is restored to the order the page set it in, each run keeping its own order:
+    `551-I` becomes the form `I-551`, and `3676-870-800-1` the telephone number `1-800-870-3676`.
+    A chain of words alone is resolved the same way by the page and by the reading and is left
+    exactly as it was read, so `www.uscis.gov/uscis-elis` is untouched.
+  - **A line with no right-to-left letter of its own**, which the reading inverts with the wrong
+    base direction and hands back in the order the page painted it. Such a line is restored only
+    where its own brackets close before they open — a closing bracket standing where nothing has
+    opened, which is what a mirrored right-to-left parenthetical looks like read left to right.
+    The line is reversed and each left-to-right island in it is turned back, so `.)USCIS(` becomes
+    `(USCIS).`.
+
+  Both reorderings are permutations of the line's characters and carry every attribute with them.
+  A run of right-to-left letters is never an inline superscript or subscript, however its metrics
+  place it: shaping shifts single letters off the baseline inside a word the page never raised
+  (page 21 raises the `ا` of `إذا` by 2.34 points on a twelve-point body, against the 1.44 an
+  inline script needs). A digit or a Latin letter raised in the same text still is one. Evidence:
+  [right-to-left-runs-and-rows](../measurements/right-to-left-runs-and-rows/record.md).
 
 ## Content-stream readers
 
@@ -1117,6 +1145,17 @@ Evidence: [initial-led-lines](../measurements/initial-led-lines/record.md),
   characters drawn one em wide (`CJKText.isFullWidth`: the Wide and Fullwidth blocks, including
   the CJK punctuation a line may end on) joins them with none (#42). A boundary with Latin text
   keeps the source's own spacing in both directions, so `提交表格` + `1040` still takes a space.
+- A page written right to left is read that way (#41). Its columns are read from the right of the
+  gutter, its rows from their right-hand piece, and a paragraph's lines are joined by the edge the
+  writing starts at — their right edge, which stands within a point of the measure while their
+  left edges are ragged. A printed row the extractor split is one line as far as the next line is
+  concerned, so the paragraph's edge is the row's and not the edge of whichever piece closed it.
+  The left-hand piece of such a row carries the stop that ends the sentence before it, and the
+  page's own space after that stop, so the join adds none of its own. A table's rows are read the
+  same way round, so a contents entry ends at the page number its row actually ends at rather than
+  at the title on the other side of its leaders. Every one of these keys off
+  `ArabicText.readsRightToLeft` over the page's own lines, so a Latin or East Asian page reaches
+  none of them.
 
 - An item the page broke mid-word keeps the rest of its word (#245). Where a preformatted list
   item ends in a hyphen, a soft hyphen or the book's line-end substitute, and the line beneath it
@@ -1393,6 +1432,14 @@ Evidence: [raster-dpi](../measurements/raster-dpi/record.md),
   Evidence: [converted-links](../measurements/converted-links/record.md).
 
 ## EPUBWriter, SpinePacker, EPUBTextEncoder
+
+- **Base direction (#41).** A paragraph, heading or preformatted block whose own text reads right
+  to left (`ArabicText.readsRightToLeft`) is written with `dir="rtl"`, a global attribute of
+  XHTML5 and valid on each of those elements; nothing else carries the attribute, so a Latin or
+  East Asian book's markup is byte-identical to what it was. A book most of whose text blocks read
+  that way also states `page-progression-direction="rtl"` on its spine. Together they let a reader
+  lay out the numbers, Latin terms and brackets inside each paragraph the way the source page did,
+  and turn the book's pages the way it was bound. EPUBCheck 5 passes the Arabic guide with both.
 
 - **Painted underlines (#235).** A page can emphasize a word by painting a rule under it rather
   than by setting an underlined font, which leaves no trace in the text layer. Such a run is

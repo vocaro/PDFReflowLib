@@ -83,7 +83,7 @@ extension LayoutReconstructor {
     /// text over a scan) supplies no typography, so its lines are prose or list items only;
     /// `labels` are the page's recurring bold sub-headings, already empty on such pages.
     static func role(of line: TextLine, on page: PageContent, in lines: [TextLine], typography: PageTypography,
-                     labels: [TextLine], judgesTitleWords: Bool) -> LineRole {
+                     labels: [TextLine], judgesTitleWords: Bool, rightToLeft: Bool = false) -> LineRole {
         // A bulleted line is an item of a list, whatever size its text is set in: a page that
         // draws a bullet has said the line belongs to a list, which a heading does not (#254).
         // This is what lets the line's size be read from its text in both directions; a numbered
@@ -101,7 +101,8 @@ extension LayoutReconstructor {
         // A marker is a marker because the page set it at the start of a printed line. A piece
         // the extractor cut out of the middle of a row began no line, so what opens it is
         // whatever the page was printing there — an operator, not a list marker (#203).
-        if isList(line.text), !continuesPrintedRow(line, in: lines, body: typography.body) { return .listItem }
+        if isList(line.text),
+           !continuesPrintedRow(line, in: lines, body: typography.body, rightToLeft: rightToLeft) { return .listItem }
         // A marker the extractor left alone on its line is still a marker, where the page says
         // so (#172).
         if opensAloneAsMarker(line, in: lines, body: typography.body) {
@@ -193,10 +194,12 @@ extension LayoutReconstructor {
     ///
     /// A table's cells and a page's columns stand further apart than that and are unaffected, and
     /// a piece that opens its row has nothing to its left, so a genuine marker still opens an item.
-    static func continuesPrintedRow(_ line: TextLine, in lines: [TextLine], body: CGFloat) -> Bool {
+    static func continuesPrintedRow(_ line: TextLine, in lines: [TextLine], body: CGFloat,
+                                    rightToLeft: Bool = false) -> Bool {
         lines.contains { other in
-            other.rect.maxX <= line.rect.minX && line.rect.minX - other.rect.maxX < body * 0.75
-                && other.sharesRow(with: line)
+            // The piece that opened the row stands to the right where the writing runs that way.
+            let gap = rightToLeft ? other.rect.minX - line.rect.maxX : line.rect.minX - other.rect.maxX
+            return gap >= 0 && gap < body * 0.75 && other.sharesRow(with: line)
         }
     }
 
@@ -339,15 +342,30 @@ struct BlockAssembler {
     private let imageLinks: [String: LinkTarget]
     /// The wrapped second line of each entry the page hangs, by the entry it carries on (#160).
     private let hangingEntries: [CGRect: CGRect]
+    /// Whether the page is written right to left, read from its own lines
+    /// (`ArabicText.readsRightToLeft`). A line then begins at its right edge and the next piece
+    /// of its printed row stands to its left (#41).
+    private let rightToLeft: Bool
 
     init(page: Int, body: CGFloat, leading: CGFloat? = nil, hyphens: HyphenContext,
-         imageLinks: [String: LinkTarget] = [:], hangingEntries: [CGRect: CGRect] = [:]) {
+         imageLinks: [String: LinkTarget] = [:], hangingEntries: [CGRect: CGRect] = [:],
+         rightToLeft: Bool = false) {
         self.page = page
         self.body = body
         self.leading = leading
         self.hyphens = hyphens
         self.imageLinks = imageLinks
         self.hangingEntries = hangingEntries
+        self.rightToLeft = rightToLeft
+    }
+
+    /// Where a line's own text begins: its right edge in right-to-left writing, its left edge
+    /// otherwise. It is what the column test that joins a paragraph's lines compares, because a
+    /// paragraph's lines stand on the edge the writing starts at and end ragged at the other
+    /// (#41). USCIS M-618-A page 21 sets ten wrapped lines of one paragraph whose right edges
+    /// stand within a point of 543 and whose left edges are spread over 92.
+    private func startEdge(_ line: TextLine) -> CGFloat {
+        rightToLeft ? line.rect.maxX : line.rect.minX
     }
 
     private func headingID() -> String { "heading-\(page)-\(blocks.count)" }
@@ -532,12 +550,20 @@ struct BlockAssembler {
             // table, not two. A cell that wrapped joins its row the way any wrapped line joins
             // its paragraph, so the 9/11 report's `10:03:11 Flight 93 crashes in field in` keeps
             // `Shanksville, PA` and the FAA's conterminous-states row keeps its altitudes.
-            let piece = rowInProgress.map { $0.sharesRow(with: line) && line.rect.minX >= $0.rect.maxX } ?? false
+            // A row's pieces stand the other way round where the writing runs right to left (#41).
+            let piece = rowInProgress.map { row in
+                row.sharesRow(with: line)
+                    && (rightToLeft ? line.rect.maxX <= row.rect.minX : line.rect.minX >= row.rect.maxX)
+            } ?? false
             if rowInProgress != nil, piece || continuation,
                let last = blocks.last, case let .preformatted(text) = last.content {
                 blocks[blocks.count - 1].content = .preformatted(piece ? {
                     var combined = text
-                    combined.append(InlineText(" "))
+                    // The left-hand piece of a right-to-left row carries the stop that ends the
+                    // sentence before it, and the space the page set after that stop (#41).
+                    if !ArabicText.setsNoSpace(between: text.text, and: line.content.text) {
+                        combined.append(InlineText(" "))
+                    }
                     combined.append(line.content)
                     return combined
                 }() : join(text, line.content))
@@ -584,10 +610,26 @@ struct BlockAssembler {
             // two paragraphs the ordinary column test, which allows one and a half bodies, would
             // run together (#171).
             let stepped = openedByInitial.map { abs($0 - line.rect.minX) >= body * 0.5 } ?? false
+            let joinsRow = previous.map { continuesRow($0, line) } ?? false
             if stepped || previous.map({ !continuesParagraph($0, line) }) == true { flushParagraph() }
             if paragraph.elements.isEmpty { paragraph = line.content }
             else { paragraph = join(paragraph, line.content) }
-            previous = line
+            // A printed row the extractor split is one line as far as the next line is concerned:
+            // the paragraph's own edge is the row's, not the edge of whichever piece closed it.
+            // USCIS M-618-A page 21 ends four rows with a left-hand piece 200 points short of the
+            // measure, and the line beneath each of them opened a paragraph of its own (#41, #57).
+            //
+            // Only a right-to-left page reads it this way here. The same reasoning holds for a
+            // left-to-right row — the piece that closes one there carries the wrong left edge —
+            // but that is a change measured on no left-to-right book: the 9/11 report alone gains
+            // a paragraph by it, and the spine re-packs around it. It is #272, not this issue's.
+            if joinsRow, rightToLeft, let prev = previous {
+                var row = line
+                row.rect = prev.rect.union(line.rect)
+                previous = row
+            } else {
+                previous = line
+            }
         }
     }
 
@@ -606,7 +648,7 @@ struct BlockAssembler {
         // apart; `LayoutReconstructor.hangingEntries` reads which ones the page hung (#160).
         let hangs = hangingEntries[line.rect] == prev.rect
         guard verticalGap >= -body * 0.4, verticalGap < body * 0.9, onStatedLeading(prev, line),
-              abs(prev.rect.minX - line.rect.minX) < body * 1.5 || centered(prev, line) || hangs
+              abs(startEdge(prev) - startEdge(line)) < body * 1.5 || centered(prev, line) || hangs
         else { return false }
         // Prose fills its measure, so a line that used under half of the one beneath it ended
         // something, and a line the page then sets further in begins the next thing. #39 already
@@ -699,8 +741,12 @@ struct BlockAssembler {
     /// and a running header and the folio at the other end of its row, stand further apart than
     /// that and stay separate blocks, as does anything on another row.
     private func continuesRow(_ prev: TextLine, _ line: TextLine) -> Bool {
-        prev.sharesRow(with: line) && line.rect.minX >= prev.rect.maxX
-            && line.rect.minX - prev.rect.maxX < body * 0.75
+        guard prev.sharesRow(with: line) else { return false }
+        // The rest of a printed row stands to the left of the piece that opened it where the
+        // writing runs right to left: USCIS M-618-A page 21 hands back `…الولايات المتحدة` at
+        // x 343…543 and `. ويطلق بعض الأشخاص…` at x 184…342 on one baseline (#41).
+        let gap = rightToLeft ? prev.rect.minX - line.rect.maxX : line.rect.minX - prev.rect.maxX
+        return gap >= 0 && gap < body * 0.75
     }
 
     mutating func finish() -> [ReflowBlock] {

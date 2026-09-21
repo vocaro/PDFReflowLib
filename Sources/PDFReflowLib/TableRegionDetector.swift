@@ -123,7 +123,15 @@ enum TableRegionDetector {
     /// cells reach. The facing column of a two-column page begins past the far edge of every line
     /// on this side, so it is never taken for a cell; a wrapped cell, which begins well inside
     /// that width, keeps its place in the run.
-    static func rowBlocks(in lines: [TextLine], body: CGFloat) -> [CGRect] {
+    static func rowBlocks(in lines: [TextLine], body: CGFloat, rightToLeft: Bool = false) -> [CGRect] {
+        // Where a row and a cell begin and end. Writing that runs right to left begins each of
+        // them at its right edge, so the page number an entry ends on is the leftmost piece of
+        // its printed row, not the rightmost (#41). Every comparison below is written through
+        // these, and reads exactly as it did for a left-to-right page.
+        func leading(_ rect: CGRect) -> CGFloat { rightToLeft ? rect.maxX : rect.minX }
+        func trailing(_ rect: CGRect) -> CGFloat { rightToLeft ? rect.minX : rect.maxX }
+        func isBefore(_ first: CGFloat, _ second: CGFloat) -> Bool { rightToLeft ? first > second : first < second }
+        func advanced(_ edge: CGFloat, by distance: CGFloat) -> CGFloat { rightToLeft ? edge - distance : edge + distance }
         let candidates = lines.filter { !$0.monospaced && !$0.text.isEmpty }
         guard candidates.count >= 3 else { return [] }
         // One printed row per baseline, top down, each row's pieces left to right.
@@ -133,7 +141,9 @@ enum TableRegionDetector {
                 printed[last].append(index)
             } else { printed.append([index]) }
         }
-        for row in printed.indices { printed[row].sort { candidates[$0].rect.minX < candidates[$1].rect.minX } }
+        for row in printed.indices {
+            printed[row].sort { isBefore(leading(candidates[$0].rect), leading(candidates[$1].rect)) }
+        }
         var rowOf: [Int: Int] = [:]
         for (row, pieces) in printed.enumerated() { for piece in pieces { rowOf[piece] = row } }
         var regions: [CGRect] = []
@@ -143,29 +153,29 @@ enum TableRegionDetector {
         // opening cell rather than on the row it happens to share.
         let anchors = candidates.indices.sorted {
             candidates[$0].rect.minY == candidates[$1].rect.minY
-                ? candidates[$0].rect.minX < candidates[$1].rect.minX
+                ? isBefore(leading(candidates[$0].rect), leading(candidates[$1].rect))
                 : candidates[$0].rect.minY > candidates[$1].rect.minY
         }
         for index in anchors where !used.contains(index) {
             let anchor = candidates[index]
             let start = rowOf[index]!
             let size = Int(anchor.fontSize.rounded())
-            let edge = anchor.rect.minX
+            let edge = leading(anchor.rect)
             // The opening cell of each row, and the width those cells reach, which grows as the
             // run is followed down the page.
             var leads: [Int] = []
-            var reach = anchor.rect.maxX
+            var reach = trailing(anchor.rect)
             var step: CGFloat?
             for row in printed[start...] {
                 guard let lead = row.first(where: { !used.contains($0)
-                                                    && candidates[$0].rect.minX >= edge - body * 0.6
+                                                    && !isBefore(leading(candidates[$0].rect), advanced(edge, by: -body * 0.6))
                                                     && Int(candidates[$0].fontSize.rounded()) == size }) else { break }
                 let rect = candidates[lead].rect
                 // The row opens on the run's edge, or it is a cell wrapped inside the block —
                 // one that begins inside the width the run has reached so far. The facing column
                 // of a two-column page begins past that width, and ends the run.
-                guard abs(rect.minX - edge) <= body * 0.6
-                        || (rect.minX > edge && rect.minX < reach) else { break }
+                guard abs(leading(rect) - edge) <= body * 0.6
+                        || (isBefore(edge, leading(rect)) && isBefore(leading(rect), reach)) else { break }
                 if let last = leads.last {
                     let drop = candidates[last].rect.minY - rect.minY
                     guard drop > 0, drop <= body * 2 else { break }
@@ -173,18 +183,18 @@ enum TableRegionDetector {
                     step = step ?? drop
                 }
                 leads.append(lead)
-                reach = max(reach, rect.maxX)
+                reach = isBefore(reach, trailing(rect)) ? trailing(rect) : reach
             }
             guard leads.count >= 3 else { continue }
-            let window = leads.map { candidates[$0].rect.maxX }.max()!
+            let window = leads.map { trailing(candidates[$0].rect) }.max(by: isBefore)!
             let rows = leads.map { lead -> [Int] in
                 [lead] + candidates.indices.filter { other in
-                    other != lead && candidates[other].rect.minX >= candidates[lead].rect.maxX
-                        && candidates[other].rect.minX < window
+                    other != lead && !isBefore(leading(candidates[other].rect), trailing(candidates[lead].rect))
+                        && isBefore(leading(candidates[other].rect), window)
                         && candidates[lead].sharesRow(with: candidates[other])
-                }.sorted { candidates[$0].rect.minX < candidates[$1].rect.minX }
+                }.sorted { isBefore(leading(candidates[$0].rect), leading(candidates[$1].rect)) }
             }
-            guard statesAColumn(rows, in: candidates, body: body) else { continue }
+            guard statesAColumn(rows, in: candidates, body: body, rightToLeft: rightToLeft) else { continue }
             used.formUnion(rows.flatMap { $0 })
             regions.append(union(rows.flatMap { $0 }.map { candidates[$0].rect }))
         }
@@ -316,7 +326,11 @@ enum TableRegionDetector {
 
     /// Whether the page states a column boundary inside a run of rows: a cell the extractor kept
     /// apart on two rows that merged rows reach across, or a column of numbers on one right edge.
-    private static func statesAColumn(_ rows: [[Int]], in lines: [TextLine], body: CGFloat) -> Bool {
+    private static func statesAColumn(_ rows: [[Int]], in lines: [TextLine], body: CGFloat,
+                                      rightToLeft: Bool = false) -> Bool {
+        func leading(_ rect: CGRect) -> CGFloat { rightToLeft ? rect.maxX : rect.minX }
+        func trailing(_ rect: CGRect) -> CGFloat { rightToLeft ? rect.minX : rect.maxX }
+        func isBefore(_ first: CGFloat, _ second: CGFloat) -> Bool { rightToLeft ? first > second : first < second }
         // A cell is set in the table's own type. The magazine column that runs beside a
         // photograph's caption also puts two pieces on one baseline, and it is the caption's
         // smaller type that says the second piece is another block of the page, not a cell.
@@ -325,9 +339,10 @@ enum TableRegionDetector {
         }
         let whole = rows.filter { $0.count == 1 }
         if split.count >= 2, whole.count >= 2 {
-            let edges = split.map { lines[$0[1]].rect.minX }.sorted()
-            if let edge = edges.first, edges.last! - edge <= body * 0.6,
-               whole.count(where: { lines[$0[0]].rect.maxX > edge + body }) >= 2 { return true }
+            let edges = split.map { leading(lines[$0[1]].rect) }.sorted(by: isBefore)
+            if let edge = edges.first, abs(edges.last! - edge) <= body * 0.6,
+               whole.count(where: { isBefore(edge, trailing(lines[$0[0]].rect))
+                                    && abs(trailing(lines[$0[0]].rect) - edge) > body }) >= 2 { return true }
         }
         func endsInDigit(_ row: [Int]) -> Bool {
             let text = lines[row.last!].text
@@ -336,7 +351,7 @@ enum TableRegionDetector {
         }
         let numeric = rows.filter(endsInDigit)
         guard numeric.count * 3 >= rows.count * 2 else { return false }
-        let right = numeric.map { lines[$0.last!].rect.maxX }
+        let right = numeric.map { trailing(lines[$0.last!].rect) }
         // A column of numbers is a column: the rows that end on the edge must be most of the run,
         // not three of them out of twenty. The FAA handbook's acknowledgments name a chapter at
         // the end of every credit and set each on its own line, so every row ends in a digit and

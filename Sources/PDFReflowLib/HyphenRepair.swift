@@ -100,6 +100,10 @@ extension LayoutReconstructor {
         // A line break inside East Asian writing is not a word break: the characters run on with
         // no space, and inserting one splits a word the page never split (#42).
         if CJKText.setsNoSpace(between: left, and: right) { return .concatenate }
+        // A printed row the extractor split in right-to-left writing hands the stop that ends a
+        // sentence back at the head of the left-hand piece, with the page's own space after it;
+        // a space of this library's own would put the stop a space from its sentence (#41).
+        if ArabicText.setsNoSpace(between: left, and: right) { return .concatenate }
         guard left.hasSuffix("-"), right.first?.isLowercase == true else { return .space }
         // Both halves are read as the vocabulary holds them, so a ligature the font draws is the
         // letters it stands for on both sides of the lookup (#123).

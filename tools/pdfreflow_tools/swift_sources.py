@@ -17,7 +17,8 @@ PROBES = 'tools/probes'
 # Native text extraction: NativeTextReader, the readers it consults, and the value types it returns.
 EXTRACTION = ['NativeTextReader.swift', 'NativeSpacingReader.swift', 'NativeSpacingOwnership.swift',
               'GlyphIdentityReader.swift', 'GlyphIndexDecoder.swift', 'TextEncodingCheck.swift',
-              'EnglishText.swift', 'CJKText.swift', 'ContentStreamWalk.swift', 'CGPDFObjects.swift',
+              'EnglishText.swift', 'CJKText.swift', 'ArabicText.swift', 'ContentStreamWalk.swift',
+              'CGPDFObjects.swift',
               'AnchorMatcher.swift',
               'DocumentModel.swift', 'ReflowDocument.swift', 'ConversionTypes.swift']
 # Page rasterization with the options and model types it takes.

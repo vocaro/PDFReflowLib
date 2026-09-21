@@ -37,6 +37,11 @@ actor EPUBWriter {
     private var documentsWithPageLinks: [String] = []
     private var consumed: Int64 = 0
     private var started = false
+    /// Text blocks whose own writing runs right to left, and blocks of text in all (#41). A book
+    /// most of whose text is written that way states `page-progression-direction="rtl"`, so a
+    /// reader turns its pages and lays out its spreads the way the source does.
+    private var rightToLeftBlocks = 0
+    private var textBlocks = 0
 
     init(maximumOutputBytes: Int64, directory: URL, packageIdentifier: String? = nil, modificationDate: Date? = nil) {
         self.maximumOutputBytes = maximumOutputBytes
@@ -94,6 +99,10 @@ actor EPUBWriter {
                 // A marker inside a continued paragraph shows the number its page prints, exactly
                 // as a standalone one does: it is the same marker, and a reader jumping to it is
                 // looking for the same printed page (#248, surfaced by #203's cross-page joins).
+                if case .image = block.content {} else {
+                    textBlocks += 1
+                    if ArabicText.readsRightToLeft(block.text) { rightToLeftBlocks += 1 }
+                }
                 try write(try packer.add(EPUBTextEncoder.piece(for: block, imagePaths: imagePathByID,
                                                               labels: pageLabels),
                                          budgetRemaining: maximumOutputBytes - consumed))
@@ -152,11 +161,13 @@ actor EPUBWriter {
             "<item id=\"img\($0.offset)\" href=\"\($0.element)\" media-type=\"\(assets[$0.offset].format.mediaType)\"/>"
         }.joined()
         let spine = chapters.indices.map { "<itemref idref=\"c\($0)\"/>" }.joined()
+        let direction = textBlocks > 0 && rightToLeftBlocks * 2 > textBlocks
+            ? " page-progression-direction=\"rtl\"" : ""
         try writeText("""
         <?xml version="1.0" encoding="UTF-8"?>
         <package xmlns="http://www.idpf.org/2007/opf" version="3.0" unique-identifier="book-id" prefix="rendition: http://www.idpf.org/vocab/rendition/#">
         <metadata xmlns:dc="http://purl.org/dc/elements/1.1/"><dc:identifier id="book-id">\(identifier)</dc:identifier><dc:title>\(xml(title))</dc:title><dc:language>\(language)</dc:language>\(author)\(summary)\(subjects)\(created)<meta property="dcterms:modified">\(modified)</meta><meta property="rendition:layout">reflowable</meta></metadata>
-        <manifest><item id="nav" href="nav.xhtml" media-type="application/xhtml+xml" properties="nav"/><item id="css" href="style.css" media-type="text/css"/>\(manifest)</manifest><spine>\(spine)</spine></package>
+        <manifest><item id="nav" href="nav.xhtml" media-type="application/xhtml+xml" properties="nav"/><item id="css" href="style.css" media-type="text/css"/>\(manifest)</manifest><spine\(direction)>\(spine)</spine></package>
         """, publication.appendingPathComponent("package.opf"))
         try writeText("""
         <?xml version="1.0" encoding="UTF-8"?>

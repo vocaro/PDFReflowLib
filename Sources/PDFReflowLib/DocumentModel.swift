@@ -86,6 +86,10 @@ struct PageContent: Equatable, Codable {
     var preservePageReference = false
     /// The link annotations this page draws, in the order it lists them (#247).
     var links: [PageLink] = []
+    /// The tables a recognition of this page located, and how much of each one it transcribed
+    /// (#31). They are among `graphics`, so each is already preserved as a picture; this is what
+    /// that picture holds, and which of those pictures the recognizer could not read.
+    var recognizedTables: [TableCellEvidence.Reading] = []
 }
 
 func union(_ rects: [CGRect]) -> CGRect {

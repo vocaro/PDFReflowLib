@@ -340,6 +340,9 @@ struct BlockAssembler {
 
     /// Assets the page's own links cover, by asset path (#247).
     private let imageLinks: [String: LinkTarget]
+    /// What an asset holds, by asset path, where the conversion has measured it and the generic
+    /// description would say nothing: a table recognition located and did not transcribe (#31).
+    private let imageDescriptions: [String: String]
     /// The wrapped second line of each entry the page hangs, by the entry it carries on (#160).
     private let hangingEntries: [CGRect: CGRect]
     /// Whether the page is written right to left, read from its own lines
@@ -348,13 +351,14 @@ struct BlockAssembler {
     private let rightToLeft: Bool
 
     init(page: Int, body: CGFloat, leading: CGFloat? = nil, hyphens: HyphenContext,
-         imageLinks: [String: LinkTarget] = [:], hangingEntries: [CGRect: CGRect] = [:],
-         rightToLeft: Bool = false) {
+         imageLinks: [String: LinkTarget] = [:], imageDescriptions: [String: String] = [:],
+         hangingEntries: [CGRect: CGRect] = [:], rightToLeft: Bool = false) {
         self.page = page
         self.body = body
         self.leading = leading
         self.hyphens = hyphens
         self.imageLinks = imageLinks
+        self.imageDescriptions = imageDescriptions
         self.hangingEntries = hangingEntries
         self.rightToLeft = rightToLeft
     }
@@ -418,7 +422,8 @@ struct BlockAssembler {
         rowInProgress = nil
         itemRowInProgress = nil
         blocks.append(LayoutReconstructor.imageBlock(assetID: assetID, page: page,
-                                                     link: imageLinks[assetID]))
+                                                     link: imageLinks[assetID],
+                                                     describing: imageDescriptions[assetID]))
     }
 
     /// A line the structure tree tagged; consecutive lines of one group join into one block. A

@@ -156,6 +156,12 @@ enum PDFReflowLibPipeline {
                     if !images.isEmpty {
                         warnings.append(ConversionWarnings.warning(.imageRegion(.regionCrops), page: i + 1, options: options))
                     }
+                    // One warning per table the page's recognition located and did not
+                    // transcribe, beside the picture that preserves it (#31).
+                    for table in content.recognizedTables where !table.cellsWereRead {
+                        warnings.append(ConversionWarnings.warning(.unreadTableCells(table), page: i + 1,
+                                                                   options: options))
+                    }
                     pageBlocks = LayoutReconstructor.blocks(page: content, images: images, context: resolved.context,
                                                             warnings: &warnings)
                     if pageBlocks.contains(where: \.hasReflowedText) {

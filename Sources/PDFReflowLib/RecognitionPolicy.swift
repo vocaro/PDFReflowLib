@@ -61,6 +61,7 @@ enum PageDisposition: Equatable {
             content.hasSyntheticTextStyle = false
             content.preservePageReference = true
             content.graphics = recognized.tables
+            content.recognizedTables = recognized.tableCells
         case .pageImage:
             content.lines = []
             content.requiresPageImage = true

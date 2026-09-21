@@ -29,6 +29,7 @@ DOCUMENTED = {
     ('doc/memory-testing.md', 'probe-pdfkit-memory.swift'),
     ('doc/regression-testing.md', 'capture-layout-fixture.swift'),
     ('doc/regression-testing.md', 'capture-algebra-layout.swift'),
+    ('doc/regression-testing.md', 'probe-table-cell-evidence.swift'),
     ('doc/regression-testing.md', 'capture-spacing-source.swift'),
 }
 

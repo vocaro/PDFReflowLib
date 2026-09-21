@@ -1253,6 +1253,8 @@ enum LayoutReconstructor {
         // reflow, as the table rows below are (#160).
         var assembler = BlockAssembler(page: page.number, body: typography.body, leading: typography.leading,
                                        hyphens: context.hyphens, imageLinks: imageLinks,
+                                       imageDescriptions: tableAssets(images, tables: page.recognizedTables,
+                                                                      page: page.number),
                                        hangingEntries: hangingEntries(in: lines, body: typography.body),
                                        rightToLeft: rightToLeft)
         // A page whose tags never name a heading has not said that its display lines are not
@@ -1399,11 +1401,50 @@ enum LayoutReconstructor {
         return elements
     }
 
+    /// A picture's block. Its description names the source page rather than inventing a
+    /// description of the picture, except where the conversion has *measured* what the picture
+    /// holds and the generic description would say nothing a reader can use: a table recognition
+    /// located and did not transcribe is named as one, so that the reader is told the cells are
+    /// in the picture and nowhere else rather than being handed `Preserved region from page 150`
+    /// (#31).
     static func imageBlock(assetID: String, page: Int, reference: Bool = false,
-                           link: LinkTarget? = nil) -> ReflowBlock {
-        let caption = reference ? "Original page \(page)" : "Preserved region from page \(page)"
+                           link: LinkTarget? = nil, describing: String? = nil) -> ReflowBlock {
+        let caption = describing
+            ?? (reference ? "Original page \(page)" : "Preserved region from page \(page)")
         return ReflowBlock(content: .image(.init(assetID: assetID, alternativeText: caption,
                                                  caption: caption, link: link)), page: page)
+    }
+
+    /// The description of a crop that preserves a table the page's recognition located (#31).
+    ///
+    /// The library writes no table markup, so no located table's cells reach the reader as text:
+    /// the picture is the table, and `Preserved region from page 150` says nothing a reader can
+    /// act on. The description names it as a table and says where its cells are. It never states
+    /// the table's own shape, because the grid the reading returned is the reading's and not the
+    /// page's — on the CIA report's page 150 the page rules four tables of 25 columns and the
+    /// reading returns two, of 26 and 25.
+    static func tableDescription(page: Int) -> String {
+        "Table from page \(page), preserved as an image. Its cells are not transcribed; "
+            + "read them in this picture."
+    }
+
+    /// Which of a page's crops preserve a table its recognition located, by asset path (#31). A
+    /// crop owns a table when it holds most of the table's area: the crop is grown from the
+    /// table's own rectangle, so it contains it, while a neighbouring figure's crop on the same
+    /// page does not.
+    static func tableAssets(_ images: [(CGRect, String)],
+                            tables: [TableCellEvidence.Reading], page: Int) -> [String: String] {
+        var result: [String: String] = [:]
+        for table in tables {
+            let area = table.rect.width * table.rect.height
+            guard area > 0 else { continue }
+            let owner = images.first { crop in
+                let overlap = crop.0.intersection(table.rect)
+                return !overlap.isNull && overlap.width * overlap.height >= area * 0.5
+            }
+            if let owner { result[owner.1] = tableDescription(page: page) }
+        }
+        return result
     }
 
     /// The target of a link whose rectangle covers most of a crop, which is a link to the figure

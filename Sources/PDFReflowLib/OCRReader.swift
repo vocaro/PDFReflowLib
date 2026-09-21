@@ -5,6 +5,11 @@ enum OCRReader {
     struct Result: Equatable {
         var lines: [TextLine]
         var tables: [CGRect]
+        /// How much of each located table the reading transcribed, in the page's own points and
+        /// in `tables`' order (#31). Every one of them is preserved as a picture, because the
+        /// library writes no table markup; the measurement says which of those pictures the
+        /// recognizer could not even read. A reading assembled by hand in a test carries none.
+        var tableCells: [TableCellEvidence.Reading] = []
         /// The page was recognized a second time in overlapping bands, because the first reading
         /// left the page's writing uncovered, and the bands read more of it (#116).
         var retriedInBands = false
@@ -29,6 +34,10 @@ enum OCRReader {
         }
         var lines: [Line] = []
         var tables: [CGRect] = []
+        /// How much of each located table the reading transcribed, in the same normalized
+        /// coordinates as `tables` and in the same order (#31). A reading assembled by hand in a
+        /// test carries none, and every table it names is believed.
+        var tableCells: [TableCellEvidence.Reading] = []
 
         /// The words the reading came back with, which a band retry may not reduce (#240).
         var words: Int {
@@ -106,8 +115,12 @@ enum OCRReader {
                             rect: rect, fontSize: thickness(of: line, rect: rect, in: bounds),
                             wraps: line.wraps)
         }
-        return Result(lines: lines,
-                      tables: recognition.tables.map { pageRect($0).insetBy(dx: -3, dy: -3).intersection(bounds) },
+        let tables = recognition.tables.map { pageRect($0).insetBy(dx: -3, dy: -3).intersection(bounds) }
+        // Each located table's cells, on the crop that will preserve it (#31). The grids are
+        // paired with their rectangles by position; a reading with no cell counts carries none,
+        // and no table of it is judged.
+        let cells = zip(tables, recognition.tableCells).map { TableCellEvidence.placed($0.1, in: $0.0) }
+        return Result(lines: lines, tables: tables, tableCells: cells,
                       retriedInBands: complete.retried, uncoveredTextFraction: complete.uncoveredTextFraction)
     }
 
@@ -214,7 +227,26 @@ enum OCRReader {
                                   dy: ((left.y - footLeft.y) + (right.y - footRight.y)) / 2)
             return Recognition.Line(text: candidate.string, box: observation.boundingRegion.boundingBox.cgRect,
                                     wraps: observation.shouldWrapToNextLine, across: across)
-        }, tables: document.tables.map { $0.boundingRegion.boundingBox.cgRect })
+        }, tables: document.tables.map { $0.boundingRegion.boundingBox.cgRect },
+           tableCells: document.tables.map(cellEvidence))
+    }
+
+    /// How much of one located table the reading transcribed (#31). The grid is read as the
+    /// recognition states it: each row's cells laid out across the table's columns, a cell
+    /// spanning several columns counted once where it begins.
+    static func cellEvidence(of table: DocumentObservation.Container.Table) -> TableCellEvidence.Reading {
+        let columns = table.columns.count
+        let rows: [[String]] = table.rows.map { row in
+            var line = [String](repeating: "", count: columns)
+            for cell in row {
+                let index = cell.columnRange.lowerBound
+                guard index >= 0, index < columns else { continue }
+                line[index] = cell.content.text.transcript
+            }
+            return line
+        }
+        return TableCellEvidence.reading(rect: table.boundingRegion.boundingBox.cgRect,
+                                         rows: rows, columns: columns)
     }
 
     /// Recognizes the page again in `retryBands`, merged back into page coordinates; nil when a
@@ -243,7 +275,10 @@ enum OCRReader {
     /// table crossing the split is kept from both bands and the parts joined.
     static func mergeBands(_ bands: [(recognition: Recognition, bottom: Double, height: Double)]) -> Recognition {
         var merged = Recognition()
-        var tables: [CGRect] = []
+        // Each band's tables, with the cells each band read where the band counted them (#31).
+        // A reading assembled without cell counts contributes none, and the joined table is then
+        // one no measurement judges, exactly as each part was.
+        var tables: [(rect: CGRect, cells: TableCellEvidence.Reading?)] = []
         for (recognition, bottom, height) in bands {
             func place(_ box: CGRect) -> CGRect {
                 CGRect(x: box.minX, y: bottom + box.minY * height, width: box.width, height: box.height * height)
@@ -257,16 +292,34 @@ enum OCRReader {
                                         // with the band and one running across it does not.
                                         across: CGVector(dx: $0.across.dx, dy: $0.across.dy * height)) }
                 .filter { owns($0.box) }
-            tables += recognition.tables.map(place)
-                .filter { owns($0) || ($0.minY < retryBandSplit && $0.maxY > retryBandSplit) }
+            tables += recognition.tables.indices
+                .map { index -> (rect: CGRect, cells: TableCellEvidence.Reading?) in
+                    let rect = place(recognition.tables[index])
+                    guard index < recognition.tableCells.count else { return (rect, nil) }
+                    return (rect, TableCellEvidence.placed(recognition.tableCells[index], in: rect))
+                }
+                .filter { owns($0.rect) || ($0.rect.minY < retryBandSplit && $0.rect.maxY > retryBandSplit) }
         }
+        var cells: [TableCellEvidence.Reading?] = []
         for table in tables {
-            if let index = merged.tables.firstIndex(where: { $0.intersects(table) }) {
-                merged.tables[index] = merged.tables[index].union(table)
+            if let index = merged.tables.firstIndex(where: { $0.intersects(table.rect) }) {
+                merged.tables[index] = merged.tables[index].union(table.rect)
+                cells[index] = join(cells[index], table.cells, in: merged.tables[index])
             } else {
-                merged.tables.append(table)
+                merged.tables.append(table.rect)
+                cells.append(table.cells)
             }
         }
+        merged.tableCells = cells.contains(where: { $0 == nil })
+            ? [] : cells.map { $0! }
         return merged
+    }
+
+    /// The cells two parts of one table read, joined over the rectangle they cover together
+    /// (#31). A part with no counts leaves the joined table unjudged.
+    private static func join(_ first: TableCellEvidence.Reading?, _ second: TableCellEvidence.Reading?,
+                             in rect: CGRect) -> TableCellEvidence.Reading? {
+        guard let first, let second else { return nil }
+        return TableCellEvidence.placed(TableCellEvidence.joined(first, second), in: rect)
     }
 }

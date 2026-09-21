@@ -28,7 +28,7 @@ Fetch sources with `tools/fetch_corpus.py --case <id>` (checksum-verified, cache
 
 What the individual gates check:
 
-- `swift test`: <!-- counts:swift-tests -->556 Swift Testing tests<!-- counts:end --> with no known-issue wrappers, using the real Apple
+- `swift test`: <!-- counts:swift-tests -->571 Swift Testing tests<!-- counts:end --> with no known-issue wrappers, using the real Apple
   PDF/OCR stack. They cover extraction, the document model, layout, raster pixels (crop origins,
   rotations, annotations, resource ceilings), preserved regions (fraction bars, raised exponents
   and all six cells of a ruled table in actual EPUB images at 72/144 DPI, with prose and code
@@ -76,7 +76,7 @@ What the individual gates check:
 - `tools/check_documented_builds.py`: compiles every probe under `tools/probes/` from the source
   list in `tools/pdfreflow_tools/swift_sources.py`, and then runs each `swiftc` command the
   runbooks print — `doc/corpus.md`'s capability probe, `doc/memory-testing.md`'s PDFKit memory
-  probe and the two capture commands below — exactly as written, with only the `-o` target moved
+  probe and the capture commands below — exactly as written, with only the `-o` target moved
   into a scratch directory. A probe the library has outgrown, and a documented build renamed,
   deleted or repointed, fail here instead of the next time somebody follows the runbook (#204).
   Its reach stops at `doc/`. A record under `measurements/` also prints builds, but it prints the
@@ -379,6 +379,22 @@ Schema version 2 adds `pictures`, the placed raster image XObjects among the pag
 regions, which crop ownership reads (#176, #239, #207). A capture without the key is version 1 and
 carries none, which is the page every test written against those fixtures already assumes; a test
 that needs a real picture's footprint captures its page afresh.
+
+A recognition's *tables* are captured the same way, by
+`tools/probes/probe-table-cell-evidence.swift`, which prints what Vision's document recognition
+located on a checksum-pinned page and how much of each table it transcribed, and with `--fixture`
+writes those grids — each table's rectangle in the page's own points, its columns, and every
+cell's transcription — as a `*-tables.json` fixture beside the layout captures. `SourceTableFixture`
+in the test target replays one, so the scanned-table rule (#31) is tested against a real reading
+without calling Vision, whose reading of a given page is not stable across compiled model sets
+(#173):
+
+```sh
+swiftc $(python3 tools/pdfreflow_tools/swift_sources.py probe-table-cell-evidence.swift) \
+  -o /tmp/probe-table-cell-evidence
+/tmp/probe-table-cell-evidence cia-blue-book-14-1955 74 150 \
+  --fixture Tests/PDFReflowLibTests/fixtures/blue-74-150-tables.json
+```
 
 `capture-spacing-source.swift` captures the other half of a spacing test: one page's own content
 stream and the font metadata the reader reads from it (subtype, font matrix, first code, widths,

@@ -56,6 +56,9 @@ enum PageWarning: Equatable, Sendable {
     /// The page's content stream draws nothing at all (#224).
     case emptyPage
     case imageRegion(ImageRole)
+    /// A table recognition located and did not transcribe, reported at the picture that
+    /// preserves it (#31).
+    case unreadTableCells(TableCellEvidence.Reading)
     case referenceImageOmitted
 }
 
@@ -122,6 +125,14 @@ enum ConversionWarnings {
             (.imageRegion, "Graphical regions retain source appearance as images; their internal text does not reflow.")
         case .imageRegion(.pageReference):
             (.imageRegion, "A source-page reference image accompanies reflowed text to preserve all visual content.")
+        case .unreadTableCells(let reading):
+            (.unreadTableCells, "A table on this page is preserved as an image: OCR found the table but "
+                + "transcribed only \(max(1, Int((reading.transcribedFraction * 100).rounded())))% of the "
+                + "\(reading.rows * reading.columns) cells in the grid it returned, so its rows, columns and "
+                + "cells are not reconstructed and no cell of it reaches the reflowed text. "
+                + (referencesDisabled
+                    ? "Supplementary references are disabled; read the table in the source PDF."
+                    : "Read the table in the accompanying image."))
         case .referenceImageOmitted:
             (.referenceImageOmitted, "Client policy omits a supplementary source-page image recommended for this page. "
                 + "Compare the source PDF for visual content and transcription accuracy.")

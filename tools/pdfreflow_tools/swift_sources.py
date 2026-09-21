@@ -20,10 +20,16 @@ EXTRACTION = ['NativeTextReader.swift', 'NativeSpacingReader.swift', 'NativeSpac
               'EnglishText.swift', 'CJKText.swift', 'ArabicText.swift', 'ContentStreamWalk.swift',
               'CGPDFObjects.swift',
               'AnchorMatcher.swift',
+              # `PageContent` carries each located table's cell counts (#31), so every probe
+              # compiling the model compiles the measurement with it.
+              'TableCellEvidence.swift',
               'DocumentModel.swift', 'ReflowDocument.swift', 'ConversionTypes.swift']
 # Page rasterization with the options and model types it takes.
 RASTER = ['PageRasterizer.swift', 'ImageContentClassifier.swift', 'ConversionTypes.swift',
-          'DocumentModel.swift', 'ReflowDocument.swift']
+          'TableCellEvidence.swift', 'DocumentModel.swift', 'ReflowDocument.swift']
+
+# Vision recognition: `OCRReader` with the two measurements it applies to its own reading.
+RECOGNITION = RASTER + ['OCRReader.swift', 'OCRTextCoverage.swift', 'CJKText.swift', 'EnglishText.swift']
 
 PROBE_SOURCES = {
     'probe-pdfkit-concurrency.swift': EXTRACTION,       # native mode; -D PDFREFLOW_NATIVE
@@ -33,6 +39,7 @@ PROBE_SOURCES = {
     # A password reaches every open through PDFPageSource's SourceDocument, so the two probes
     # that open a document themselves compile it and the options type it takes (#252).
     'inspect-structure.swift': ['StructureTreeReader.swift', 'CGPDFObjects.swift',
+                                'TableCellEvidence.swift',
                                 'DocumentModel.swift', 'ReflowDocument.swift',
                                 'ConversionTypes.swift', 'PDFPageSource.swift', 'SourceMetadata.swift',
                                 'XMLText.swift'],
@@ -41,11 +48,14 @@ PROBE_SOURCES = {
     'capture-layout-fixture.swift': EXTRACTION + ['GraphicsReader.swift'],
     'capture-spacing-source.swift': [],                 # Apple SDKs only
     'capture-algebra-layout.swift': EXTRACTION + ['GraphicsReader.swift'],
-    # `OCRReader` checks its own reading against the page's ink (#116), so it needs the measurement.
-    'capture-ocr-layout-fixture.swift': RASTER + ['OCRReader.swift', 'OCRTextCoverage.swift', 'CJKText.swift', 'EnglishText.swift'],
-    'probe-ocr-text-loss.swift': RASTER + ['OCRReader.swift', 'OCRTextCoverage.swift', 'CJKText.swift', 'EnglishText.swift'],
+    # `OCRReader` checks its own reading against the page's ink (#116) and measures how much of
+    # each table it located it transcribed (#31), so it needs both measurements.
+    'capture-ocr-layout-fixture.swift': RECOGNITION,
+    'probe-ocr-text-loss.swift': RECOGNITION,
     # #240 weighs a second signal against the same measurement, so it needs the same sources.
-    'probe-ocr-coverage-signals.swift': RASTER + ['OCRReader.swift', 'OCRTextCoverage.swift', 'CJKText.swift', 'EnglishText.swift'],
+    'probe-ocr-coverage-signals.swift': RECOGNITION,
+    # #31 measures the cells of the tables a recognition of a scanned page locates.
+    'probe-table-cell-evidence.swift': RECOGNITION,
     'audit-report-margins.swift': EXTRACTION + ['FurnitureDetector.swift'],
 }
 

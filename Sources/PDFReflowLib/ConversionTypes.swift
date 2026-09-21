@@ -175,6 +175,12 @@ public struct ConversionWarning: Sendable, Codable, Equatable {
         /// rather than a reconstructed reading order.
         case complexLayout
         case annotationsNotConverted
+        /// A table recognition located on this page and did not transcribe: most of the grid it
+        /// returned is empty, which is what a grid drawn over writing the recognizer could not
+        /// read looks like (#31). One warning per such table, beside the picture that preserves
+        /// it. It reports a measurement of the reading, never a claim about the page's own rows,
+        /// columns or cells: those are in the picture and nowhere else.
+        case unreadTableCells
         /// A supplementary reference recommended by analysis was omitted by client policy.
         case referenceImageOmitted
         /// Existing text over a page-sized graphic has not been checked against its image.

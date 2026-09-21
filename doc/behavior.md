@@ -671,7 +671,8 @@ page image found no text; the source page is preserved as an image and does not 
 than `ocrUsed`. A compared layer still wins over such a recognition. Failed recognition reports
 `ocrFailed` ("OCR failed; the source page is preserved as an image." or, after a comparison, "OCR
 failed; the existing text layer is retained."). Recognized tables
-become preserved regions; recognition marks the page for a source-page reference. Fresh OCR may
+become preserved regions, each carrying how much of its grid the reading transcribed
+(`TableCellEvidence`, #31); recognition marks the page for a source-page reference. Fresh OCR may
 improve some errors and introduce others, lose native formatting or change reading order.
 
 ## OCRReader
@@ -1331,10 +1332,31 @@ Evidence: [spine-continuity](../measurements/spine-continuity/record.md),
   and consistent dedented continuations must agree before a bounded native endnote paragraph
   repair applies; ambiguous layouts keep spatial reconstruction. This is layout, not
   reference-to-note ownership.
+- **A table a recognition located (#31).** A recognized page's tables become its crops, so every
+  one of them reaches the reader as a picture and none of its cells reaches the text. Such a crop
+  is described as what it is — "Table from page N, preserved as an image. Its cells are not
+  transcribed; read them in this picture." — rather than as `Preserved region from page N`, which
+  tells a reader nothing about where the table's numbers went. The description states no row,
+  column or cell count, because the grid the reading returned is the reading's and not the page's.
+  A crop owns a table when it holds at least half the table's area, so a figure standing beside a
+  table on the same page keeps its own description.
+  A table whose cells the reading did *not* transcribe additionally raises `unreadTableCells`,
+  once per table. The measure is `TableCellEvidence`: a table the recognizer read fills most of
+  its grid, and a grid it drew over writing it could not read is ruled wider than the page and
+  left mostly empty. Measured through this library's own rasterizer and reading, the USGS copper
+  tables fill 94%, 67% and 63% of their grids and the CIA report's typewritten `TABLE IV` fills
+  83%, while that report's handwritten `TABLE A63` fills 27% and 13%; the rule is half, and a
+  grid under nine cells says too little either way and is not judged. The share is read from the
+  grid rather than from the cells' text, so it needs no lexicon and judges a page of any script
+  alike. Signaling is kept separate from repair: a table this measure believes is still only
+  preserved and described, never transcribed into the reader's text, because even the reading of
+  `TABLE IV` drops one value and corrupts two more.
+  Evidence: [scanned-table-cells](../measurements/scanned-table-cells/record.md).
 - Preserved regions, page fallbacks and cropped figures are images: cropped text is neither
   reflowable nor accessible as text, and the generic image description names the source page
-  rather than inventing a description of the picture. The one exception is a wrapped paragraph
-  printed over a picture, which reflows as well as being shown inside the crop (#239).
+  rather than inventing a description of the picture. The two exceptions are a wrapped paragraph
+  printed over a picture, which reflows as well as being shown inside the crop (#239), and a
+  located table, whose crop says that it is one (#31).
 
 Evidence: [rule-and-url-seeds](../measurements/rule-and-url-seeds/record.md),
 [preserved-region-regressions](../measurements/preserved-region-regressions/record.md),
@@ -1574,6 +1596,7 @@ Evidence: [spine-packing](../measurements/spine-packing/record.md),
 | `emptyPage` | The page's content stream draws nothing at all: no extracted text, no visible text-showing operator, no painted region (a white ground is not one) and no annotation. A blank page is still carried as an image, so `pageImageFallback` accompanies it. |
 | `complexLayout` | The recursive whitespace cuts reached their depth limit before they had separated the page's content; what remained keeps the order it was extracted in (`LayoutReconstructor.ordered`). |
 | `annotationsNotConverted` | Visible annotations exist: a page image preserves them (or references are disabled); link and form interactions are not reconstructed. |
+| `unreadTableCells` | Recognition located a table on the page and transcribed under half of the grid it returned, so the table's rows, columns and cells are not reconstructed (#31). One warning per such table, beside the picture that preserves it; the message states the share transcribed and the size of the returned grid, never the page's own shape. |
 | `referenceImageOmitted` | Analysis recommended a supplementary source-page image and client policy omitted it. |
 | `unverifiedTextLayer` | Existing text over a page-sized graphic stands unverified ("Transcription, tables, numbers and reading order may be inaccurate."); a review signal, not an OCR confidence score. |
 | `implausibleTextLayer` | An inherited image-backed layer failed the word, misread or ink test, under every policy (`TextLayerPlausibility.message`). |

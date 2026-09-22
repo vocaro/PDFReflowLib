@@ -1002,6 +1002,22 @@ column the chaining split in two — is that row, however the chaining divided i
 measure never is, because it widens across a gutter only where the column beside it has ended
 (#137, #174, [column-run-order](../measurements/column-run-order/record.md)).
 
+Before any of that, a straight cut is refused where one side of the white is **the page numbers
+of the entries on the other side**, however wide that white is. **A page number a contents entry
+runs its leader out to belongs to that entry**, and cutting there takes every entry away from its
+own number: Project Blue Book sets its contents and its list of illustrations as a label, a title
+and a page number at the right margin, the white the leaders cross is far wider than a gutter, so
+each band read out its entries and then their numbers — `Figure 3`, `Figure 4`, both titles, then
+`17`, `18`, `19`, `20`. The side must hold nothing else: every element a text piece no wider than
+three bodies, standing on the row of a line beside it, and reading as a number — a numeral, a
+roman numeral, or a token of at most six characters that holds a digit and spells no word, which
+is what a scanned layer leaves when it misreads one (the same book hands back `ti6` for 66). A
+page's second column is prose and fails at its first line. The measures are the page's own, so a
+line the page lettered sideways is never one of these numbers: its rectangle is as tall as the
+line is long and as narrow as the line is thick, and such a group is read along its own direction
+(#207, #263, #277,
+[contents-page-numbers](../measurements/contents-page-numbers/record.md)).
+
 A fifth condition is that a marker keeps its item. **A bullet is never a column of its own**, so a
 stack of bullets describes no column of the page, whatever it chains onto: a page that hangs its
 bullets clear of short items sets a column of markers beside a column of item text, and the marker

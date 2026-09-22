@@ -533,6 +533,45 @@ enum LayoutReconstructor {
                            exhausted: &exhausted)
                 .map { elements[slots[$0.rect]!.removeFirst()] }
         }
+        /// Whether one side of a candidate gutter holds nothing but the page numbers of the
+        /// entries on the other side: every element is a text piece no wider than three bodies,
+        /// standing on the row of a line beside it, and reading as a number.
+        ///
+        /// A page number a contents entry runs its leader out to belongs to that entry, however
+        /// wide the white the leader crosses, and cutting there takes every entry away from its
+        /// own number. Project Blue Book sets its contents and its list of illustrations as a
+        /// label, a title and a page number at the right margin, and each band read out its
+        /// entries and then their numbers — `Figure 3`, `Figure 4`, both titles, then `17`, `18`,
+        /// `19`, `20` (#207, #277).
+        ///
+        /// A number a scanned layer misread is still that page's number: the same book hands back
+        /// `ti6` for 66, in a column where every other entry reads as a figure. So a token of at
+        /// most six characters that holds a digit and spells no word — no run of three letters —
+        /// counts as one, and a word does not. This is deliberately narrow: what it refuses is a
+        /// cut between entries and their numbers, and a page's second column is prose, which
+        /// fails at its first line.
+        ///
+        /// Every measure here is the page's own, so a line the page lettered sideways is not one
+        /// of these numbers: its rectangle is as tall as the line is long and as narrow as the
+        /// line is thick, which is short and on every row beside it while being neither (#263).
+        func pageNumbersAlone(_ side: [Element], beside rest: [Element]) -> Bool {
+            func reads(_ text: String) -> Bool {
+                let token = text.trimmingCharacters(in: .whitespaces)
+                if token.range(of: #"^[0-9ivxlcdmIVXLCDM]+[.,]?$"#, options: .regularExpression) != nil {
+                    return true
+                }
+                return token.count <= 6 && token.contains(where: \.isNumber)
+                    && token.range(of: #"\p{L}{3}"#, options: .regularExpression) == nil
+            }
+            guard !side.isEmpty, !rest.isEmpty else { return false }
+            return side.allSatisfy { element in
+                guard element.image == nil, element.table == nil, let line = element.line,
+                      line.turn == .upright, element.rect.width <= bodySize * 3,
+                      reads(line.text) else { return false }
+                return rest.contains { $0.line?.turn == .upright && sameRow($0.rect, element.rect) }
+            }
+        }
+
         func gap(horizontal: Bool) -> CGFloat? {
             let intervals = elements.map { horizontal ? ($0.rect.minX, $0.rect.maxX) : ($0.rect.minY, $0.rect.maxY) }
                 .sorted { $0.0 < $1.0 }
@@ -542,16 +581,24 @@ enum LayoutReconstructor {
                 let width = interval.0 - end
                 if width > bodySize * (horizontal ? 0.75 : 1.1), width > (best?.0 ?? 0) {
                     let middle = (end + interval.0) / 2
-                    // A narrow gutter is evidence for prose columns only when both sides
-                    // contain substantial text lines. Short labels and numeric answer cells
-                    // need row associations; the whitespace alone must not separate them.
-                    if horizontal, width <= bodySize * 1.5 {
+                    if horizontal {
                         let left = elements.filter { $0.rect.maxX < middle }
                         let right = elements.filter { $0.rect.minX > middle }
-                        let proseColumns = [left, right].allSatisfy { column in
-                            column.filter { $0.line != nil && $0.rect.width >= bodySize * 12 }.count >= 2
+                        // A narrow gutter is evidence for prose columns only when both sides
+                        // contain substantial text lines. Short labels and numeric answer cells
+                        // need row associations; the whitespace alone must not separate them.
+                        if width <= bodySize * 1.5 {
+                            let proseColumns = [left, right].allSatisfy { column in
+                                column.filter { $0.line != nil && $0.rect.width >= bodySize * 12 }.count >= 2
+                            }
+                            if !proseColumns { end = max(end, interval.1); continue }
                         }
-                        if !proseColumns { end = max(end, interval.1); continue }
+                        // However wide the white between them, a column of page numbers standing
+                        // on the rows of the entries beside it is not a column of the page: it is
+                        // where each of those entries ran its leader out to (#207, #277).
+                        if pageNumbersAlone(right, beside: left) || pageNumbersAlone(left, beside: right) {
+                            end = max(end, interval.1); continue
+                        }
                     }
                     best = (width, middle)
                 }

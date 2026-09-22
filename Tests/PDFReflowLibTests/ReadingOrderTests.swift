@@ -846,3 +846,77 @@ func aPageStatesItsMarkerColumnOrTheRuleIsSilent() {
     #expect(LayoutReconstructor.hangingMarkerList(in: cells, body: 9) == nil)
 }
 
+/// A page number a contents entry runs its leader out to belongs to that entry (#277, #207).
+///
+/// Project Blue Book sets its contents and its list of illustrations in three columns — the
+/// `Figure N` or `Table N` label, the title, and the page number at the right margin. The white
+/// between the titles and the numbers is far wider than any gutter, so the column cut was made
+/// and each band read out its entries and then their numbers. Until #264 the geometry of these
+/// pages was unusable — the rule the book paints down its margin was merged into the line beside
+/// it — so this is what the corrected geometry exposed underneath.
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/277"))
+func aContentsEntryKeepsThePageNumberItsLeaderRunsOutTo() throws {
+    func reading(_ name: String) throws -> [String] {
+        let fixture = try SourceLayoutFixture.load(name)
+        #expect(fixture.sourceSHA256 == "90e05e77fc088c29758c2ddda514c0c12f317e5686ee213d348db2f9da152ee3")
+        var warnings: [ConversionWarning] = []
+        return LayoutReconstructor.blocks(page: fixture.content(), images: [], vocabulary: [],
+                                          warnings: &warnings).map(\.text)
+    }
+    // Page 5's list of illustrations: label, title, number, then the next entry.
+    let five = try reading("blue-contents-5")
+    try expectInOrder(five.joined(separator: "\n"), [
+        "Figure l", "Frequency of Sightings by Year", "17",
+        "Figure 2", "Distribution of Evaluations of Object", "18",
+        "Figure 3", "With Comparisons", "19",
+        "Figure 4", "for All Years and Each Year", "20",
+        "Figure 5", "Within Months for All Years", "21",
+    ])
+    // Page 7 does the same for its tables, and its own numbers include one the scanned layer
+    // misread: `ti6` for 66, in a column where every other entry reads as a figure.
+    let seven = try reading("blue-contents-7")
+    try expectInOrder(seven.joined(separator: "\n"), [
+        "Table IV", "on the Basis of Shape", "64",
+        "Table V", "on the Basis of Duration of Observation", "65",
+        "Table VI", "on the Basis of Speed", "ti6",
+        "Table VII", "on the Basis of Light Brightness", "67",
+    ])
+    // And no band hands its numbers over in a run of their own, which is the whole defect.
+    for reading in [five, seven] {
+        let numbers = reading.enumerated().filter {
+            $0.element.range(of: "^[0-9]+$", options: .regularExpression) != nil
+        }.map(\.offset)
+        #expect(!numbers.contains { numbers.contains($0 + 1) },
+                Comment(rawValue: numbers.map { reading[$0] }.joined(separator: " ")))
+    }
+}
+
+/// The cut the guard holds back is the one a page of prose columns needs (#277).
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/277"))
+func twoColumnsOfProseAreStillCutAtTheirGutter() {
+    func line(_ text: String, x: Double, y: Double, width: Double) -> LayoutReconstructor.Element {
+        let rect = CGRect(x: x, y: y, width: width, height: 12)
+        return .init(rect: rect, line: TextLine(text: text, rect: rect, fontSize: 10), image: nil)
+    }
+    // Two columns of prose, a wide gutter between them: read down one and then the other.
+    var page: [LayoutReconstructor.Element] = []
+    for row in 0..<4 {
+        let y = 700 - Double(row) * 13
+        page.append(line("A line of the left-hand column of this page, row \(row)", x: 40, y: y, width: 200))
+        page.append(line("A line of the right-hand column of this page, row \(row)", x: 300, y: y, width: 200))
+    }
+    let columns = LayoutReconstructor.ordered(page, bodySize: 10).map { $0.rect.minX }
+    #expect(columns == Array(repeating: 40.0, count: 4) + Array(repeating: 300.0, count: 4))
+    // Replace the right-hand column with the page numbers those lines run their leaders out to,
+    // and the page is read across its rows instead.
+    var contents: [LayoutReconstructor.Element] = []
+    for row in 0..<4 {
+        let y = 700 - Double(row) * 13
+        contents.append(line("An entry of a contents page, row \(row)", x: 40, y: y, width: 200))
+        contents.append(line("\(17 + row)", x: 500, y: y, width: 9))
+    }
+    #expect(LayoutReconstructor.ordered(contents, bodySize: 10).map { $0.rect.minX }
+            == [40, 500, 40, 500, 40, 500, 40, 500])
+}
+
+

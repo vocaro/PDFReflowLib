@@ -589,3 +589,99 @@ func theRestOfAnItemsRowJoinsTheItem() {
                       (line("Ordinary prose beneath the item.", x: 40, y: 260, width: 200), .prose)])
     #expect(two.map(\.text) == ["17) (− 16,− 14), (11,− 14)", "Ordinary prose beneath the item."])
 }
+
+/// A bullet the extractor left alone on its line, whose item the page hung clear of it. The FAA
+/// handbook hangs every bullet 18 points from its item's edge on a ten-point body, so PDFKit
+/// returns page 29's items as a marker and then their text on one baseline — wider than the
+/// gutter two pieces of one row are joined within — and the marker reached the reader as
+/// `<p>•</p>` or glued to the sentence that introduces the list, while the item it marks was read
+/// as prose (#261).
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/261"))
+func aBulletAloneOnItsLineIsTheMarkerItsPageDrew() {
+    // Page 29's own geometry: `•` at [45.00 193.67 3.50 11.47], its item at [63.00 193.67 …].
+    let bullet = line("•", x: 45, y: 193.67, width: 3.5)
+    let item = line("IFR Charts—Enroute High Altitude Conterminous U.S.,", x: 63, y: 193.67, width: 210.01)
+    func role(_ line: TextLine, in lines: [TextLine]) -> LineRole {
+        let content = page(prose + lines)
+        return LayoutReconstructor.role(of: line, on: content, in: content.lines,
+                                        typography: PageTypography(page: content),
+                                        labels: [], judgesTitleWords: false)
+    }
+    #expect(role(bullet, in: [bullet, item]) == .listItem)
+    // The page draws a bullet with the same hand at any level: page 30 hangs its sub-items from
+    // a hyphen, 18 points again, and `Airship—an engine-driven lighter-than-air` is its item.
+    let hyphen = line("-", x: 99, y: 539.07, width: 3.33)
+    let subItem = line("Airship—an engine-driven lighter-than-air", x: 117, y: 539.07, width: 192.01)
+    #expect(role(hyphen, in: [hyphen, subItem]) == .listItem)
+
+    // The page's own evidence, taken away one piece at a time.
+    //
+    // A bullet with nothing beside it on its row marks something the reader cannot reflow — a key
+    // in a legend, an item the page set as a picture — and is left exactly as it was. This is the
+    // control that matters: a lone bullet must never reach for the paragraph beneath it.
+    #expect(role(bullet, in: [bullet]) == .prose)
+    #expect(role(bullet, in: [bullet, line("The paragraph beneath it.", x: 63, y: 176, width: 210)]) == .prose)
+    // A piece a column away is the next column of the page or the next cell of a row, which
+    // belong to the column and table readers (#210). Two bodies is the bound.
+    #expect(role(bullet, in: [bullet, line("Cell", x: 48.5 + 20, y: 193.67, width: 40)]) == .prose)
+    #expect(role(bullet, in: [bullet, line("Item", x: 48.5 + 19, y: 193.67, width: 40)]) == .listItem)
+    // Within the gutter the two pieces are already one block by the row rule, and a glyph a hair
+    // from the piece beside it is as often a fraction's rule as a marker: Wallace stacks `−` over
+    // `3` on page 269 a quarter of a body apart. Nothing there changes.
+    #expect(role(line("−", x: 215.64, y: 92.42, width: 9.3),
+                 in: [line("3", x: 228.12, y: 93.10, width: 5.86)]) == .prose)
+    // A piece to its left within the gutter means the extractor cut this line out of the middle
+    // of a printed row, so what stands there is whatever the page printed (#203).
+    #expect(role(bullet, in: [line("x =", x: 25, y: 193.67, width: 16), bullet, item]) == .prose)
+    // Only the glyphs the page draws as bullets, and only when the line holds nothing else.
+    #expect(LayoutReconstructor.isBulletGlyph("•"))
+    #expect(LayoutReconstructor.isBulletGlyph(" − "))
+    #expect(!LayoutReconstructor.isBulletGlyph("•  the item's own text"))
+    #expect(!LayoutReconstructor.isBulletGlyph("17)"))
+    #expect(!LayoutReconstructor.isBulletGlyph(""))
+    // The two readings of a bullet hold the same glyphs: what opens an item also marks one alone.
+    for glyph in LayoutReconstructor.bulletGlyphs {
+        #expect(LayoutReconstructor.opensWithBullet("\(glyph) text"), Comment(rawValue: String(glyph)))
+        #expect(LayoutReconstructor.isBulletGlyph(String(glyph)), Comment(rawValue: String(glyph)))
+    }
+    for glyph in "+/◦·®" {
+        #expect(!LayoutReconstructor.opensWithBullet("\(glyph) text"), Comment(rawValue: String(glyph)))
+        #expect(!LayoutReconstructor.isBulletGlyph(String(glyph)), Comment(rawValue: String(glyph)))
+    }
+}
+
+/// The item a page hangs beside a bullet is that bullet's item, however wide the indent: a marker
+/// is never a column of its own. What the page sets further along that row is a column, and is
+/// judged as one (#261).
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/261"))
+func theItemHangingBesideABulletJoinsIt() {
+    func blocks(_ pieces: [(TextLine, LineRole)]) -> [ReflowBlock] {
+        var assembler = BlockAssembler(page: 3, body: 10, hyphens: HyphenContext())
+        for piece in pieces { assembler.append(piece.0, as: piece.1) }
+        return assembler.finish()
+    }
+    let bullet = line("•", x: 45, y: 193.67, width: 3.5)
+    let item = line("IFR Charts—Enroute High Altitude Conterminous U.S.,", x: 63, y: 193.67, width: 210.01)
+    let joined = blocks([(bullet, .listItem), (item, .prose)])
+    #expect(joined.map(\.text) == ["• IFR Charts—Enroute High Altitude Conterminous U.S.,"])
+    if case .preformatted = joined[0].content {} else { Issue.record("the item is preformatted") }
+
+    // The sentence that introduces the list keeps its own block, and the marker no longer ends it.
+    let intro = line("Aeronautical charts depicting permanent baseline data:", x: 36, y: 212.67, width: 219.67)
+    #expect(blocks([(intro, .prose), (bullet, .listItem), (item, .prose)]).map(\.text)
+        == [intro.text, "• IFR Charts—Enroute High Altitude Conterminous U.S.,"])
+
+    // Page 29 sets two columns of items. The second column's text stands 1.2 bodies past the
+    // first column's items, and it is a column: it opens its own block, as it always did.
+    let second = line("Ultralight vehicle is another general term the FAA uses.", x: 285, y: 193.67, width: 236.88)
+    #expect(blocks([(bullet, .listItem), (item, .prose), (second, .prose)]).count == 2)
+    // Only the marker's own row reaches it, and only its own next piece: the line beneath the
+    // item is the wrap the page set under it, and an item that wraps is one block per line.
+    #expect(blocks([(bullet, .listItem), (line("below", x: 63, y: 176, width: 40), .prose)]).count == 2)
+    #expect(blocks([(bullet, .listItem), (item, .prose),
+                    (line("Terminal Area Charts, and World Aeronautical Charts.", x: 63, y: 181, width: 210), .prose)])
+        .count == 2)
+    // The indent is the marker's, not the row's: once the item has joined, the block is an item
+    // like any other and what follows on its row is judged by the ordinary gutter (#57).
+    #expect(blocks([(bullet, .listItem), (line("far", x: 48.5 + 20, y: 193.67, width: 20), .prose)]).count == 2)
+}

@@ -41,6 +41,10 @@ enum NativeSpacingReader {
         var sentenceCandidates: [Int: CGFloat] = [:]
         /// Whether the show sets nonzero character or word spacing, the producer condition of #119.
         var spaced = false
+        /// The width the show's font gives the space character, in em, widened by the word
+        /// spacing in force — the space this page draws where it means one (#274). Nil where the
+        /// font states no width for code 32, which is every font that draws no space glyph at all.
+        var spaceWidth: CGFloat?
 
         /// The characters of the show's last word (after its last space character, word space or
         /// sentence space), and whether that word begins the show.
@@ -86,9 +90,21 @@ enum NativeSpacingReader {
     /// TJ adjustment sets between two glyphs of one show (`Evidence.wordSpaces`), and a note
     /// reference, a raised show of digits in a smaller size, followed by a capital at a word gap.
     static func missingSpaces(in native: String, shows: [Evidence]) -> [Int]? {
-        let (source, boundaries) = line(of: shows)
-        guard !source.isEmpty, !boundaries.isEmpty else { return nil }
-        return ownedInsertions(in: Array(native.utf16), source: source, boundaries: boundaries)
+        let line = line(of: shows)
+        guard !line.source.isEmpty, !line.boundaries.isEmpty else { return nil }
+        return ownedInsertions(in: Array(native.utf16), source: line.source, boundaries: line.boundaries)
+    }
+
+    /// The spaces a PDFKit line is missing, and the ones it has that the page does not draw: the
+    /// boundaries of `missingSpaces`, and the closed numbers of `closesNumber` (#274). Both are
+    /// UTF-16 offsets in `native`, and each keeps its own ownership walk — the segmented one for
+    /// an insertion, `closedSpaces`' whole-line one for a removal.
+    static func repairs(in native: String, shows: [Evidence]) -> (insertions: [Int], removals: [Int]) {
+        let line = line(of: shows), extracted = Array(native.utf16)
+        guard !line.source.isEmpty else { return ([], []) }
+        let insertions = line.boundaries.isEmpty ? nil
+            : ownedInsertions(in: extracted, source: line.source, boundaries: line.boundaries)
+        return (insertions ?? [], closedSpaces(in: extracted, source: line.source, closures: line.closures))
     }
 
     /// How much of a PDFKit line the shows must account for before their boundaries are applied.
@@ -137,8 +153,8 @@ enum NativeSpacingReader {
     /// separates two words but draws no space glyph. The shows are the ones whose origins belong
     /// to one PDFKit line; the returned text is the source's own reading of that line, which
     /// `missingSpaces` then walks against PDFKit's.
-    static func line(of shows: [Evidence]) -> (source: [UInt16], boundaries: Set<Int>) {
-        var source: [UInt16] = [], boundaries: Set<Int> = []
+    static func line(of shows: [Evidence]) -> (source: [UInt16], boundaries: Set<Int>, closures: Set<Int>) {
+        var source: [UInt16] = [], boundaries: Set<Int> = [], closures: Set<Int> = []
         var previous: Evidence?
         // The line's characters with their UTF-16 offsets in `source`, the sentence-space candidates
         // at show edges, and the show transitions that separate words (#128).
@@ -154,7 +170,7 @@ enum NativeSpacingReader {
             return start > 0 && !wordGaps.contains(start)
         }
         for show in shows.sorted(by: { $0.origin.x < $1.origin.x }) {
-            guard source.count + (show.unicode?.utf16.count ?? 0) <= 8192 else { return ([], []) }
+            guard source.count + (show.unicode?.utf16.count ?? 0) <= 8192 else { return ([], [], []) }
             // A show whose text the reader cannot decode is a hole in the source's reading of the
             // line, not a reason to discard the line: the segmented walk resynchronizes across it
             // (#120, #139). One radical on Wallace page 120 discarded every boundary of
@@ -190,6 +206,11 @@ enum NativeSpacingReader {
             if let previous, let end = previous.end, noteReference(previous, before: show, end: end) {
                 boundaries.insert(source.count)
             }
+            // One number the page draws in two shows (#274), the mirror of a boundary: PDFKit
+            // reads a space between them and the page draws none.
+            if let previous, let end = previous.end, closesNumber(previous, show, end: end) {
+                closures.insert(source.count)
+            }
             // A sentence boundary split across two shows on one baseline (9/11's semibold speaker
             // labels, `FAA:|Yes.`), in a producer that justifies with character or word spacing (#128).
             if let previous, let end = previous.end, previous.spaced || show.spaced,
@@ -218,7 +239,7 @@ enum NativeSpacingReader {
                 if sentenceSpace(word: before, startsShow: startsLine, following: after, gap: gap) { boundaries.insert(offset) }
             }
         }
-        return (source, boundaries)
+        return (source, boundaries, closures)
     }
 
     // MARK: - The rules
@@ -265,6 +286,40 @@ enum NativeSpacingReader {
         let chained = left == "." && before.map(CharacterSet.uppercaseLetters.contains) == true && after == "."
         let narrow = overhang && (closing || CharacterSet.lowercaseLetters.contains(left)) && !chained
         return gap >= (narrow ? overhangWordSpaceGap : wordSpaceGap)
+    }
+
+    /// Whether two consecutive shows continue one number the page draws in two show instructions,
+    /// so that the space PDFKit reads between them is not the page's (#274).
+    ///
+    /// FAA page 416 sets the NDB service-volume table's `25` as `(       2)Tj … 23.198 0 Td (5)Tj`,
+    /// the second show 1.34 points past the last glyph of the first over a 10-point size — 0.134 em
+    /// — and PDFKit reads a space there, so the row arrives as `MH Under 50 2 5`.
+    ///
+    /// The page states that this is not a word space. Its font has a space character, it draws that
+    /// character wherever it means one — `MH `, `Under 50 `, the seven spaces that carry the cursor
+    /// into the Distance column — and the gap here is narrower than the one that character draws.
+    /// So the boundary is closed when the two shows are one font at one size on one baseline, the
+    /// first ends in a digit and the second opens with one, and the gap between the first show's
+    /// last glyph and the second's origin is positive and narrower than the space the font draws
+    /// (`Evidence.spaceWidth`, the narrower of the two shows').
+    ///
+    /// This is the mirror of #119's constraint and is bounded the same way. A font that states no
+    /// width for the space character, or states zero, states nothing here and closes nothing: that
+    /// is every TeX font of Wallace's algebra, which draws no space glyph at all and positions each
+    /// word instead, so `30qpr`, `5q` and `13000 13000` are out of the rule's reach by mechanism
+    /// rather than by threshold. Measured over every cached source, this closes one boundary in the
+    /// corpus — the one above — where the nearest digit-to-digit boundary it leaves alone stands at
+    /// 3.6 times its own font's space.
+    static func closesNumber(_ previous: Evidence, _ show: Evidence, end: CGFloat) -> Bool {
+        guard previous.font == show.font, previous.size > 0, show.size > 0,
+              min(previous.size, show.size) >= max(previous.size, show.size) * 0.99,
+              abs(previous.origin.y - show.origin.y) <= max(previous.size, show.size) * 0.1,
+              let left = previous.unicode?.unicodeScalars.last, ("0"..."9").contains(left),
+              let right = show.unicode?.unicodeScalars.first, ("0"..."9").contains(right),
+              let space = [previous.spaceWidth, show.spaceWidth].compactMap({ $0 }).min(),
+              previous.spaceWidth != nil, show.spaceWidth != nil, space > 0 else { return false }
+        let gap = (show.origin.x - end) / max(previous.size, show.size)
+        return gap > 0 && gap < space
     }
 
     /// A letter of a mathematical alphabet or a letterlike symbol, which TeX's math mode kerns and
@@ -692,6 +747,13 @@ enum NativeSpacingReader {
             var unicode = "", advance: CGFloat = 0, trailingSpacing: CGFloat = 0, glyphStarts: Set<Int> = []
             var decodable = font?.unicode != nil && size > 0, measurable = font?.widths != nil && size > 0
             let spacing = (characterSpacing, wordSpacing)
+            // The narrowest space this show could draw, in em: the font's own width for code 32,
+            // less any word spacing that narrows it. Word spacing that widens it is ignored, so
+            // the measure is the least a drawn space can be here (#274), the same
+            // min(value, value + spacing) reading #119 takes of a TJ adjustment.
+            if size > 0, let width = font?.widths?[32] {
+                item.spaceWidth = min(width, width + wordSpacing / size)
+            }
             func append(_ string: CGPDFStringRef) {
                 let count = CGPDFStringGetLength(string)
                 guard count <= 4096, value.utf16.count + count <= 4096,
@@ -910,11 +972,21 @@ enum NativeSpacingReader {
             for offset in offsets.reversed() { repaired.deleteCharacters(in: NSRange(location: offset, length: 1)) }
             return repaired
         }
-        // One show can carry word spaces of its own (#119); a font change needs two.
-        guard let offsets = missingSpaces(in: attributed.string, shows: matches) else { return attributed }
-        for offset in offsets.reversed() {
-            let attributes = repaired.attributes(at: offset - 1, effectiveRange: nil)
-            repaired.insert(NSAttributedString(string: " ", attributes: attributes), at: offset)
+        // One show can carry word spaces of its own (#119); a font change or a closed number
+        // needs two (#274).
+        let line = repairs(in: attributed.string, shows: matches)
+        guard !line.insertions.isEmpty || !line.removals.isEmpty else { return attributed }
+        // Both sets are offsets in the string as PDFKit read it, so they are applied together,
+        // from the right, and neither moves the other.
+        let edits = (line.insertions.map { ($0, true) } + line.removals.map { ($0, false) })
+            .sorted { $0.0 > $1.0 }
+        for (offset, inserts) in edits {
+            if inserts {
+                let attributes = repaired.attributes(at: offset - 1, effectiveRange: nil)
+                repaired.insert(NSAttributedString(string: " ", attributes: attributes), at: offset)
+            } else {
+                repaired.deleteCharacters(in: NSRange(location: offset, length: 1))
+            }
         }
         return repaired
     }

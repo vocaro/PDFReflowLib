@@ -84,7 +84,8 @@ func reportMapLabelsRemainInsidePreservedGraphics(number: Int) throws {
     let labels = page.lines.filter { names.contains($0.text) && $0.rect.midY > 350 && $0.rect.midY < 500 }
     #expect(labels.count == (number == 33 ? 5 : 4))
     let regions = LayoutReconstructor.graphicsWithLabels(page)
-    #expect(regions.count == (number == 33 ? 2 : 1))
+    // Page 50 draws one map across both columns; pages 33 and 51 draw two, one per flight.
+    #expect(regions.count == (number == 50 ? 1 : 2))
     for label in labels {
         #expect(regions.contains { $0.contains(label.rect) })
     }

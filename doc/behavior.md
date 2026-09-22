@@ -101,7 +101,11 @@ Evidence: [pdfkit-structure-tree](../measurements/pdfkit-structure-tree/record.m
   follow the OCR policy.
 - Explicit Core Text/Foundation baseline offsets preserve inline superscripts and subscripts;
   tiny positioning noise and full-line OCR offsets do not become scripts, and font size alone
-  never establishes a superscript.
+  never establishes a superscript. A run holding no non-whitespace character takes no script
+  style however its metrics place it (#273): a raised space is a space, `<sup> </sup>` claims an
+  inline script over nothing a reader can see raised, and the space itself is written where the
+  page set it. Whitespace *inside* a run that also holds a glyph is that script's own. Evidence:
+  [whitespace-only-inline-scripts](../measurements/whitespace-only-inline-scripts/record.md).
 - **Drop caps.** A lowered, oversized single initial followed by substantial, consistently sized,
   normal-baseline prose is a drop cap, not a subscript: the following runs' size is its body
   size and its `readingRect` is a top-aligned body-height rectangle used for ordering, while its
@@ -113,6 +117,80 @@ Evidence: [pdfkit-structure-tree](../measurements/pdfkit-structure-tree/record.m
   selections that concatenate visual lines). Existing whitespace and line-ending hyphens are
   unchanged; drop caps of a different size and opposite inline scripts are not evidence. This is
   not arbitrary within-line spacing repair or OCR spelling repair.
+
+- **A margin rule an inherited recognition read as letters (#264).** Project Blue Book paints a
+  rule down the outer margin of its pages, and the layer it inherited read each segment of it as a
+  capital `I` set in 30-point type. PDFKit puts that letter in the same line as the type beside it,
+  so a 7.8-point line came back in a 31.5-point box at a 31.5-point size, overlapping the rows
+  above and below: on page 7 the wrap `I South Farwest Region . 54` (`y[645.9..677.4]`) sorted
+  *above* the entry it continues, `Figure 38 …of the` (`y[656.8..663.8]`), and no join or ordering
+  rule could reach it, because the geometry was wrong before reconstruction began. This is not the
+  thin-rule ownership of #207, which reads a rule the page *paints* against the row it strikes: a
+  recognized rule is painted nowhere, so by the time any ownership rule runs there is no rule left
+  to own.
+  A **mark** is a character that is one of `I`, `l` or `|` — the glyphs a recognition offers for a
+  vertical rule, and no others, however tall they stand — drawn at least two and a half times as
+  tall as the page's own characters and at least twice as tall as it is wide, standing in the outer
+  twentieth of the page on one side. **Four marks sharing one column are a rule**; three are not,
+  because a display initial, a mathematical bar and a stray recognition are each one mark and none
+  of them repeats down a margin. A line a rule reached is measured by the characters that remain
+  after its marks are cut, together with the space a recognition sets between a mark and the type
+  beside it, which carries the mark's size and would otherwise state it for the whole line; a line
+  the rule drew and nothing else carries no text and is dropped. A line holding no mark can still
+  be damaged, because PDFKit gives every piece of a printed row the height of the tallest piece in
+  it — page 7's `56` stands in `y[632.6..637.9]` and was reported at `y[610.4..641.9]` — so a line
+  sharing its row with one the rule reached, whose reported box is at least twice as tall as the
+  characters it holds, is measured by those characters too. **A line genuinely that tall keeps its
+  box**, because its own characters are that tall. A mark read *inside* a line is not a margin
+  rule's, since nothing stands between a margin and the type beside it, and such a line is left
+  exactly as it was read.
+  The character rectangles come from PDFKit itself: `characterBounds(at:)` is indexed over the
+  page's characters without the separators the reading synthesizes between rows, which is the
+  offset the lines' own strings reach laid end to end. A page whose lines run past the characters
+  it declares supplies none. Only a page whose lines already show a rule glyph at one end, in the
+  outer twentieth, on four lines or more is measured character by character at all; of the
+  twenty-four cached sources only Blue Book's pages are, and of those only the 241 that draw the
+  rule are changed. Evidence:
+  [margin-rule-read-as-letters](../measurements/margin-rule-read-as-letters/record.md).
+
+- **A row of two columns PDFKit merged across the gutter (#270).** The 9/11 report sets two flight
+  timelines side by side on physical pages 50 and 51, each under three heading rows. PDFKit reads
+  the first and third of those rows as two lines, one per column, and hands the second back as a
+  single line spanning both — `(AA 11)             (UA 175)` at `x=39.66` over `199.63` points,
+  where the rows above and below are read apart at `x=39.66` and `x=195.67`. A line that bridges
+  the gutter cannot be separated by any whitespace cut downstream, and it stands on the left
+  column's own edge directly above the left column's route, which the column-and-leading test then
+  joins to it: the book read `(AA 11) (UA 175) Boston to Los Angeles` and stranded the right
+  column's route. The page's own shows do not divide such a row — `NativeSpacingReader` returns the
+  whole heading row as one text-showing operation, with the gutter inside its own advance, so the
+  ink `TableReader` reads (#210) is one unbroken range and its corridors find nothing. The division
+  comes from the characters, where the box is formed, for the same reason #264's does.
+  A line is cut where **three rows agree on two column edges**: the line stands alone in its
+  printed row, the printed rows directly above and below it each hold exactly two pieces, those
+  two rows state the same two left edges to within a point, and the line begins on the first edge
+  and reaches past the second. Each step between the three rows is a leading, no more than twice
+  the taller row's height, so three rows of a page at large are not a group.
+  **The three rows are the whole of what the page states there.** Neither the row two above nor the
+  row two below may stand on the same pair of edges: where a page states its columns over four rows
+  or more, the reading already holds divided pieces for them and the ordering rules can see those
+  columns, and dividing one more row changes how the whole page is read. The 9/11 report's own
+  table of names on page 451 sets twenty-three rows on 44.70 and 152.70, of which PDFKit merges
+  one; dividing that one turns a list of names with their offices into a paragraph of names
+  followed by a paragraph of offices, which is [#283](https://github.com/vocaro/PDFReflowLib/issues/283).
+  **What refuses the cut is the white.** A line the page genuinely sets across both columns — a
+  headline, a caption — has the same shape, and keeps its reading, because it runs its words
+  *through* the gutter: the white at the column edge is the space it sets everywhere else. The cut
+  is made only where the second edge falls in white at least twice the line's own characters are
+  tall and at least three times the widest white elsewhere in the line — 118.37 points against
+  4.50 on page 50. A line whose characters PDFKit reports out of the order they stand in states
+  nothing about its columns and is left alone, and so is one with anything printed in the white,
+  so nothing that prints is ever cut away. The white is read from the line's **ink**: its spaces,
+  and any character the page gives no width, are not type.
+  Each piece keeps PDFKit's own outer edge, its own inner edge, the row's baseline and height, and
+  its half of the styled text; a line a repair rewrote between the reading and the cut is not cut.
+  Across the twenty-four cached sources exactly two lines are cut, the two the issue names.
+  Evidence:
+  [flight-label-row-cut-at-the-gutter](../measurements/flight-label-row-cut-at-the-gutter/record.md).
 
 Evidence: [pdfkit-concurrency](../measurements/pdfkit-concurrency/record.md),
 [pdfkit-gate-drain](../measurements/pdfkit-gate-drain/record.md),
@@ -216,7 +294,8 @@ spatial reconstruction rather than partial results.
 
 - **`NativeSpacingReader`.** Repairs a PDFKit word boundary only where a supported text-show
   operation contradicts it. It *removes* a space when a Type3 `TJ` array places a tiny negative
-  adjustment there, with the font's one-byte `ToUnicode` map, text and placement matching. It
+  adjustment there, with the font's one-byte `ToUnicode` map, text and placement matching, and
+  where two shows continue one number (#274, below). It
   *inserts* the space the source draws without a space glyph (#43/#110, #119, #128, #120), on
   pages it can model completely: `Tc`, `Tw` and the text matrix are tracked (a show that draws
   straight after another continues the cursor by the previous show's own advance, spacing and
@@ -244,6 +323,18 @@ spatial reconstruction rather than partial results.
     U+2100–U+214F), never where a chained initial (`C.|A.`) explains the gap, and never on a
     boundary beside a one-glyph string whose other side is also a word gap (letter-spaced type);
   - **a character-spaced column gap** of at least 0.5 em set by `Tc` splits a two-glyph show;
+  - **`closesNumber`** takes a space back where the page draws one number in two shows (#274):
+    two shows of one font at one size on one baseline (within 0.1 em), the first ending in a
+    digit and the second opening with one, at a positive gap narrower than the space character
+    that font itself draws (`Widths[32]`, less any `Tw` that narrows it). FAA page 416 sets the
+    NDB table's `25` as `(       2)Tj … (5)Tj` at 1.34 pt over a 10-point size — 0.134 em against
+    a 0.25 em space — and the row arrived as `MH Under 50 2 5`. This is the only boundary the
+    corpus closes: the nearest digit-to-digit boundary it leaves alone is that book's page 458
+    chart columns, at 3.6 times their own font's space. A font that states no width for the space
+    character, or states zero, states nothing here — that is every TeX font of Wallace's algebra,
+    which draws no space glyph at all — so #119's constraint holds by mechanism and not by
+    threshold. Only two digits close: a number against a word is what the font-change rule
+    weighs, and a period or comma against one is a contents leader or a sentence.
   - **`sentenceSpace`** finds sentence punctuation (`. , ; : ? !`, optionally behind closing
     quotes or brackets) after a letter, digit or closing bracket, before a capital not followed by
     a period or an opening quote before an alphanumeric, at a gap between -0.15 and 1 em: the
@@ -272,6 +363,16 @@ spatial reconstruction rather than partial results.
   PDFKit split at a wide gap is repaired in the half that holds each boundary. Explicit spaces,
   genuine word-size gaps and style attributes are kept, a boundary PDFKit already spaces inserts
   nothing, and a line whose every show is held by another rectangle too rewrites nothing.
+  A *removal* is owned differently, because the defect it answers has the opposite shape: a page
+  sets a table row by carrying the cursor from cell to cell with runs of space glyphs and PDFKit
+  reports one space for a run, so on such a row the source draws the whitespace the extraction
+  does not, and the segmented walk — which skips only the extraction's own spaces — resynchronizes
+  on nothing (between `MH     Under 50         25` and `MH Under 50 2 5` the longest anchor is the
+  nine characters of `Under 50 `). `closedSpaces` therefore owns a removal whole-line and blind to
+  whitespace on both sides: every non-blank character the shows draw must be the next non-blank
+  character PDFKit read, in order, with nothing left over either way, the closure must have no
+  whitespace beside it in the source, and exactly one space at it in the extraction. That is
+  stricter than the segmented walk, not looser, and it reaches no insertion (#274).
 - **`GlyphIdentityReader` (#217, two of #186's five fixes).** PDFKit reads every glyph through
   its font's `ToUnicode` map; two kinds of font disagree with what they draw. A dingbat font
   (Zapf Dingbats and its clones ITC Zapf Dingbats, `Dingbats`, Monotype Sorts, subset tags
@@ -565,9 +666,14 @@ joins up and is not counted.
 
 A layer fails, and reports `implausibleTextLayer` under every policy, when any test holds:
 
-- **Too few English words.** With at least 20 judged (English plus damaged) words, and unless a
-  fifth or more of the tokens hold digits (statistical tables and forms are not judged), fewer
-  than half English fails.
+- **Too few English words.** A bare `a` or `I` standing on a line that holds no other English word
+  is set aside first and counts neither way (#275): alone on its line it is a ruled column, a tick
+  or a tally the reading shaped like a letter, not a word. With at least 20 judged (English plus
+  damaged) words left, and unless a fifth or more of the tokens are numbers (statistical tables and
+  forms are not judged), fewer than half English fails. The exemption counts the numbers a page
+  states, not every token that holds a digit: a misreading of a hand-written figure (`l6`, `0,3`,
+  `A.Di`) holds digits too, and counting those let a table of unread ink buy its own exemption
+  (#275).
 - **Words misread in place (#7).** Under the same conditions, a tenth or more of all words are
   damaged words of three or more letters, or irregular capitals, that no neighboring word
   completes (`tcld t» ftboot` for "told me about" on a carbon typescript).
@@ -718,6 +824,15 @@ writing runs in, and the distance across it is the height the box would have had
 standing upright — anything within half a right angle of vertical, which covers ordinary skew —
 keeps its box height exactly, so no page of upright writing moves by a hair. A banded retry scales
 a thickness that runs up the page with its band and leaves one that runs across it alone.
+
+The same offset states the **quarter turn** the page set the line at, which the line carries into
+reconstruction (#263): it points the way the tops of the letters face, so a line whose offset runs
+right was turned clockwise and its writing runs down the page, and one whose offset runs left was
+turned counterclockwise and its writing runs up. A line inside half a right angle of upright is
+upright, and so is one read upside down, whose writing still runs across the page. The turn is the
+only statement of where a sideways line starts and which line is the next one down, because the
+rectangle around it is axis-aligned either way; `LayoutReconstructor` and `BlockAssembler` read it
+under "Columns and paragraphs" above. A natively extracted line states no direction and is upright.
 
 ### Recognition that left the page's writing unread (#116)
 
@@ -894,6 +1009,26 @@ it: the deepest of the captured source layouts cuts eleven levels. A group the l
 uncut keeps the order it was extracted in, and the page reports `complexLayout` rather than
 leaving that silent, as the tag phase reports its own give-up (#224).
 
+A group the page **lettered sideways** is read along its own direction (#263). Every rectangle a
+reader hands over is axis-aligned, so a line the page turned arrives as a box as tall as the line
+is long, and reading order, `continuesRow` and every paragraph measure read it as though the
+writing ran along it. A recognized line carries the quarter turn the page set it at, read off the
+same quadrilateral its type size is (#130); where a group's every element is a line and they all
+agree on one turn that is not upright, the group's rectangles are taken into the frame that turn
+stands upright in and the same cuts and the same row-major sort are made there. The turn is one
+rotation applied to every member, so it changes no gap, no shared edge and no overlap — only the
+axis each is measured on — and the elements come back in that order, unchanged. A group holding an
+upright line, a picture, a table or two opposite turns is read on the page, as before; so is every
+natively extracted page, whose lines state no direction and are upright. The paragraph measures
+read the same frame: `continuesParagraph`, `continuesRow`, the centered stack, the page's leading
+and the start edge all compare two lines where their own writing runs, which for upright lines is
+the page itself, to the bit. The CDC graphic novel letters page 17's caption down the side of the
+panel — three lines that all reach one top edge, 1.4 and 2.5 points apart across the page — and it
+read as `ATLANTA, GEORGIA...` followed by the other two joined backwards as one printed row; it now
+reads `SEVERAL DAYS LATER AT THE CENTERS FOR` and then `DISEASE CONTROL AND PREVENTION IN ATLANTA,
+GEORGIA...`, which is the caption in its own order, broken where the reading's own
+`shouldWrapToNextLine` says the first line stops.
+
 A **picture across the block's measure** — at least 90% of it — with content on both sides of it
 separates what is printed above it from what is printed below it, and is cut at before any gutter
 is looked for (#137). A picture at the **head or foot** of the block separates nothing, so that cut
@@ -934,6 +1069,30 @@ row-major sort, one entry of each column at a time.
   `amendableTail` is the trailing block, or, where images stand at the tail, the paragraph
   beneath them and those images ([decision 0008](decisions/0008-streamed-blocks-to-the-writer.md),
   [decision 0011](decisions/0011-a-picture-keeps-its-side-of-the-page-marker.md)).
+- A cross-page join reaches **only a block the page's own text begins at** (#267). Where a crop
+  took prose the page printed *before* the first line it reflows, that block is not the other
+  half of the sentence the page before left open, and no join is made: the boundary keeps a
+  standalone marker and the two fragments stay two blocks. Wallace's page 430 opens `b are the
+  other two sides (legs), then we can use the following formula, a² + b² = c²` and the display
+  takes that whole row, leaving `to find a missing side.` to reflow, so joining it to page 429's
+  `…the hypotenuse of the triangle, and a and` read two fragments a crop had already broken as
+  one paragraph. Its page 344 is the same defect along a row rather than down the page: `values
+  into x =` stands at the measure with the formula set beside it, so reading order is what
+  decides — the cropped line is before the first reflowed one when it stands above it, or on the
+  same printed row and earlier along it. Above the line, what the crop took has to be the page's
+  own flow: it must read as the page's prose (`readsAsSentence`, as for the crops themselves and
+  for a block reached past a picture) and it must **begin the measure the first reflowed line
+  begins**, within a quarter of a body. Along the row no such test applies, because a printed row
+  the page began inside a crop is that row wherever its pieces read. So a figure's
+  number or an axis label above the first line refuses nothing, and neither does a box the page
+  sets on a measure of its own — the 9/11 report runs its boxed list of *Operational
+  Opportunities* over the foot of page 373 and the head of page 374, indented from the body, and
+  `…all involved were` / `responsible for making it work.` is the join the page asks for. Only
+  the page a join *opens* with is read this way. The page it leaves is not: the Fed sets a box or
+  a figure over the foot of pages 40, 47, 55, 93, 97, 98, 100 and 103, and that crop's own prose
+  stands below the paragraph, not before it — asking the same of the earlier page would refuse
+  those eight joins and the eleven others like them. A paragraph whose own last line a crop took
+  is still #45's reading-order anchor, which is not ported.
 - Two lines are one paragraph when they **share a column** (left edges within 1.5 bodies, the gap
   between them from −0.4 to 0.9 of a body, and no further down the page than the leading it
   states) or are **two pieces of one printed row**: they overlap vertically by at least half the
@@ -941,6 +1100,25 @@ row-major sort, one entry of each column at a time.
   separates them — the width a whitespace cut needs for a column, so a table's cells and the two
   ends of a running header remain separate blocks (#57). A short previous line ending a sentence
   closes its paragraph either way.
+- **A printed row the extractor split is one line** as far as the next line is concerned, so the
+  paragraph's edge is the row's and not the edge of whichever piece closed it, and the row's whole
+  width is what says whether the line above stopped short of the measure (#41, #272). The row is
+  the two pieces' rectangles together; it ends where the piece that closed it ends, so its text
+  and its wrap are that piece's; and it is set in the size the page set the wider piece in, so a
+  superscript note marker standing at the end of a row is not the row's measure. Such a row has
+  two starts — its own and the piece's — and a line beneath it continues the paragraph if it
+  stands on either, so a reference entry whose marker the extractor split off keeps the wrap the
+  page hangs under it. The row's own start counts only where the line beneath does not begin more
+  than half a body further out than it: a wrap stands on its paragraph's edge or in from it.
+- A row stands for one line **only where the page's own spacing says its pieces are consecutive
+  words of it** (#272). PDFKit ends a line wherever the page leaves a gap, and a gap of at least a
+  quarter of a body is a space the page set between two words. A narrower gap is the seam between
+  two runs the page set beside each other — a note marker, a phrase in another face, a piece of an
+  equation — and such a row lends its start to nothing; its pieces still join into one block. So
+  does a gap the page repeats within a quarter of a body of the same place on three or more of its
+  rows, which is a column it set rather than a space, whichever way the writing runs. Writing the
+  reading reorders is the one place a seam is a line's own: PDFKit splits those rows at the
+  boundary between two bidirectional runs rather than at a gap, which leaves the pieces touching.
 - **Rows of a table the page set without rules** keep their breaks rather than joining into one
   paragraph (#137, #210): a run of at least three rows on one left edge, in one type size,
   stepping down at one leading, where the page also states a column boundary — a cell the
@@ -949,6 +1127,20 @@ row-major sort, one entry of each column at a time.
   the FAA handbook's acknowledgments name a chapter at the end of every credit and set each credit
   on its own line, so every row ends in a digit and three of the twenty end within half a body of
   one another, and nothing about that page is a table (#171).
+- A run the page **filled to one measure** states no cell boundary, however far apart the
+  extractor kept its opening pieces: a cell is set to its content and a paragraph is set to a
+  measure, so a table's rows end raggedly and a paragraph's lines end again and again on the same
+  edge (#268). Replay Clocks sets its references with the citation number outdented and the entry
+  hanging at an indent — `[8]` arriving as a cell of its own, `[9] David L Mills. …` merged whole
+  and reaching across it — which is the shape of a two-column table and read as one; seven of the
+  eleven rows end within a fifth of a body of 558.2 and the four that fall short are each entry's
+  closing line. Three rows at least, and most of the run, must reach that edge, and the edge must
+  be carried by words: an edge carried by numbers is the column the rule above already reads, and
+  the NOAA chapter contents right-align `4-16`, `5-9` and `7-20` against theirs. Neither the share
+  of rows the extractor split nor the share opening on the run's own left edge separates the two —
+  both were measured under #171 and both released the 9/11 report's flight timelines, the Blue
+  Book's contents, the FAA handbook's cruise table and the USGS statistics along with the
+  references.
 - The **leading a page states** is the commonest distance between the tops of two vertically
   adjacent lines, set at one size, in one column, to the nearest half point, over the lines its
   crops leave in the prose. At least four such pairs must agree, so a page too bare to say
@@ -1081,6 +1273,35 @@ or explosives-` as the item and `laden, might be used as a weapon…` as the par
 which is what "no list model" above means, and item 4 of that list now reads exactly as items 1 to
 3 do instead of as two paragraphs.
 
+A **bullet** left alone on its line is read the same way, and asks less, because a bullet is a
+marker and nothing else: no list has to vouch for it (#261). What the page must state is that the
+item is beside it — another line on the marker's own printed row, the nearest one to its right, or
+to its left where the writing runs that way. The FAA handbook hangs every bullet of its 499 items
+18 points from the item's own edge on a ten-point body, so page 29 comes back as
+
+```
+[ 45.00 193.67   3.50 11.47] | •
+[ 63.00 193.67 210.01 11.47] | IFR Charts—Enroute High Altitude Conterminous U.S.,
+```
+
+Two pieces of one row are one block within the 0.75 of a body a column's gutter needs, which is
+the right bound for two pieces of *prose* because a wider gap there could be two columns. **A
+bullet is never a column of its own**, so a piece the page set beyond that gutter is still the item
+it marks, out to **two bodies** — an indent, not a column. Beyond that the page has set a column or
+a row of cells, which belong to the column and table readers (#210). The marker and its item become
+one preformatted item, and the bound is the marker's alone: once the item has joined, what stands
+further along that row is judged by the ordinary gutter again, so the second of page 29's two
+columns of items opens its own block as it always did.
+
+A bullet with **nothing beside it on its row** marks something the reader cannot reflow — a key in
+a legend, an item the page set as a picture — and is left exactly as it was; nothing beneath it is
+ever taken, because only a piece of the marker's own printed row can join it. A piece to its left
+within the gutter means the extractor cut the line out of the middle of a row, so it is no marker
+at all, exactly as above (#203). Within the gutter nothing changes either: the two pieces are
+already one block by the row rule, and a glyph a hair from the piece beside it is as often a
+fraction's rule or a mark in a scan as a marker — Wallace stacks `−` over `3` a quarter of a body
+apart on page 269.
+
 A wrapped line of prose can begin with the same token — an initial (`W. Bush`, `U. S. 760`), a
 citation abbreviation (`v. Moore`, `p. 785`, `F. 4th`) or a year or day carried over from the line
 above (`2016.`, `on January` / `13.`). Such a line **continues the open paragraph** instead of
@@ -1128,7 +1349,8 @@ Evidence: [initial-led-lines](../measurements/initial-led-lines/record.md),
 [citation-continuations](../measurements/citation-continuations/record.md),
 [column-cuts-and-hung-entries](../measurements/column-cuts-and-hung-entries/record.md),
 [dga-layout-qualification](../measurements/dga-layout-qualification/record.md),
-[markers-alone-on-their-line](../measurements/markers-alone-on-their-line/record.md).
+[markers-alone-on-their-line](../measurements/markers-alone-on-their-line/record.md),
+[bullets-alone-on-their-line](../measurements/bullets-alone-on-their-line/record.md).
 
 ## HyphenRepair
 
@@ -1180,7 +1402,8 @@ Evidence: [initial-led-lines](../measurements/initial-led-lines/record.md),
   gutter, its rows from their right-hand piece, and a paragraph's lines are joined by the edge the
   writing starts at — their right edge, which stands within a point of the measure while their
   left edges are ragged. A printed row the extractor split is one line as far as the next line is
-  concerned, so the paragraph's edge is the row's and not the edge of whichever piece closed it.
+  concerned, in both directions (above, #272); what is this page's own is that the pieces of such
+  a row touch, because the reading reordered them rather than the page spacing them apart.
   The left-hand piece of such a row carries the stop that ends the sentence before it, and the
   page's own space after that stop, so the join adds none of its own. A table's rows are read the
   same way round, so a contents entry ends at the page number its row actually ends at rather than
@@ -1190,12 +1413,25 @@ Evidence: [initial-led-lines](../measurements/initial-led-lines/record.md),
 
 - An item the page broke mid-word keeps the rest of its word (#245). Where a preformatted list
   item ends in a hyphen, a soft hyphen or the book's line-end substitute, and the line beneath it
-  opens in lowercase at the same size on the page's own leading, that line joins the item and the
-  break character goes with the join. The 9/11 report sets its recommendations as items and breaks
-  one over the block boundary, so `• …supervise the planning and direc-` was followed by
-  `tion of the operation;` as a paragraph of its own.
+  opens in lowercase at the same size on the page's own leading, that line joins the item. The
+  9/11 report sets its recommendations as items and breaks one over the block boundary, so
+  `• …supervise the planning and direc-` was followed by `tion of the operation;` as a paragraph
+  of its own. The marker the page opened the item with makes no difference: a bullet, a minus or a
+  hyphen is read as an item outright, and a number or a letter with a point is read as one where
+  the page sets a list on that edge, and either way the block it opened is the one the rest of the
+  word belongs to (#266). Our Flag numbers its flag-folding instructions and breaks the first at a
+  printed hyphen, so `1. …hold the flag waist high and horizon-` stood above `tally between them.`
+  A new sentence is not the rest of a word, and neither is the item beneath: the lowercase opening
+  and the page's own leading are what decide, so a list whose items each end in a hyphen does not
+  fuse.
+- What becomes of that hyphen is decided the way a hyphen inside a paragraph is decided, on the
+  book's own words and, in an English document, the system lexicon (#266). The page's break says
+  the line belongs to the item; it does not say the character was a break rather than a printed
+  compound, and the 9/11 report's endnotes stand both on one edge: `Febru-` carries on `ary` and
+  loses its hyphen, `explosives-` carries on `laden` and keeps it, with no space added either way.
 
 Evidence: [spine-continuity](../measurements/spine-continuity/record.md),
+[broken-numbered-items](../measurements/broken-numbered-items/record.md),
 [line-end-hyphen-substitutes](../measurements/line-end-hyphen-substitutes/record.md),
 [page-leading-and-ligature-vocabulary](../measurements/page-leading-and-ligature-vocabulary/record.md).
 
@@ -1310,13 +1546,25 @@ Evidence: [tables-read-as-cells](../measurements/tables-read-as-cells/record.md)
   distance of half the shorter one, because the recognizer spoils words a group at a time and
   letters within a word (`Nuntler` for `Number`, `Ooubtfut` for `Doubtful`). Four repeated words
   in five must agree.
+  The recognizer also moves the printed spaces, and then no word has a counterpart to be near:
+  page 151's `! lt>mber Per Cent Number Percent` broke `Number` into `lt` and `mber` and closed
+  `Per Cent` up into `Percent`. The same repetition is therefore read a second way, on the line's
+  letters in order with the spaces taken out: for each number of columns the letters are cut into
+  that many pieces of equal length, each cut moved to the nearest word boundary, and the pieces
+  are compared against the first and against the one before (#262). A piece is several words
+  long, so it agrees within a fifth of the shorter rather than a half — over a label of three
+  words that is tighter than the word reading allows one spoiled word inside it — and every word
+  of the line must hold a letter, because a label is written in words and a repeating group of
+  bare figures is the table's own data or an equation (`0 0 0 200`, `3r + 6+ 3r =30`).
   Geometry alone would not do: the magazine's three-column pages hand back their columns on
   shared baselines, so every row of running prose there has a table's shape, and on geometry
   alone this rule buries 17,340 characters of its articles. With both halves it moves the CIA
-  report alone, by 1,457 characters, and every other book is unchanged.
+  report alone — by 1,457 characters when #257 landed, and by a further 681 when the letters
+  reading was added — and every other book is unchanged to the character.
   The report's handwriting is not this rule's to fix: that book's inherited OCR layer is
   unverified, and #216 catalogues what it produces.
-  Evidence: [table-headers-inside-crops](../measurements/table-headers-inside-crops/record.md).
+  Evidence: [table-headers-inside-crops](../measurements/table-headers-inside-crops/record.md),
+  [spoiled-column-labels](../measurements/spoiled-column-labels/record.md).
 - **A row a picture's crop reaches into (#207).** `takes` keeps the lines whose middle row a crop
   holds, which is right for a picture's own lettering — a diagram's labels, a chart's axis, a
   legend's entries all stand *inside* the artwork. A page can also print its own reading across a

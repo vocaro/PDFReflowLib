@@ -40,7 +40,7 @@ budget). The case column links to the narrative section below; the seven #30 cas
 | [`noaa-nca5-2023`](#fifth-national-climate-assessment) | Fifth National Climate Assessment | 1,834 | Large tagged report, mixed orientations, 32 chapter starts, uneven graphics | [review](../corpus/noaa-nca5-2023-review.json), [chapters](../corpus/noaa-nca5-2023-chapters.json) | Unset: default conversion fails |
 | [`gpo-our-flag-2003`](#our-flag) | Our Flag | 56 | Structure-tree inconsistencies, flag illustrations, drop capitals, one visible table | [review](../corpus/gpo-our-flag-2003-review.json) | 192 MiB |
 | [`cdc-zombie-pandemic-2011`](#preparedness-101-zombie-pandemic) | Preparedness 101: Zombie Pandemic | 42 | Comic artwork, noisy inherited text, image-only dialogue, panel order | [review](../corpus/cdc-zombie-pandemic-2011-review.json) | 512 MiB |
-| [`cia-blue-book-14-1955`](#project-blue-book-special-report-no-14) | Project Blue Book Special Report No. 14 | 312 | Scanned statistical tables, inherited OCR, negative warning/refusal contract | [review](../corpus/cia-blue-book-14-1955-review.json) | 512 MiB |
+| [`cia-blue-book-14-1955`](#project-blue-book-special-report-no-14) | Project Blue Book Special Report No. 14 | 312 | Scanned statistical tables, inherited OCR, negative warning/refusal contract | [review](../corpus/cia-blue-book-14-1955-review.json) | 768 MiB |
 | [`nbs-jres-geltman-1977`](#issue-30-coverage-expansion) | Stimulated Multiphoton Bremsstrahlung in Electron-Ion Collisions | 7 | Scanned two-column academic paper, footnotes, OCR-damaged equations | [review](../corpus/nbs-jres-geltman-1977-review.json) | 512 MiB |
 | [`arxiv-replay-clocks-2023`](#issue-30-coverage-expansion) | Replay Clocks | 12 | Born-digital ACM two-column paper, pseudocode, figures, math | [review](../corpus/arxiv-replay-clocks-2023-review.json) | 256 MiB |
 | [`usgs-mcs2025-copper`](#issue-30-coverage-expansion) | Mineral Commodity Summaries 2025: Copper | 2 | Borderless tables, indentation-only row groups, spanning headers | [review](../corpus/usgs-mcs2025-copper-review.json) | 128 MiB |
@@ -498,6 +498,12 @@ python3 tools/check_corpus_quality.py --case cia-blue-book-14-1955 \
 The converter now emits `unverifiedTextLayer` on pages with existing text over a page-sized
 image. The [current measurement](../measurements/quality-and-raster-fixes/record.md) checks pages
 74 and 150 separately from the [historical failing baseline](../measurements/cia-blue-book-14-1955/record.md).
+Since [#275](https://github.com/vocaro/PDFReflowLib/issues/275) the book's hand-written table
+pages say more than that: 57 of its 312 layers fail the word test, 56 of those pages are
+recognized, and 41 of them preserve a located table as a picture under `unreadTableCells`. That
+recognition is why the book's memory ceiling rose from 512 to 768 MiB
+([record](../measurements/unread-table-cells-plausibility/record.md)); page 74, whose table's
+values are typewritten, keeps its layer and its `unverifiedTextLayer` notice.
 Crashes, timeouts, resource failures and generic image-preservation warnings do not satisfy it. No production quality-refusal
 error exists yet; the manifest's approved diagnostic list is empty. Future dedicated quality
 warnings/refusals need explicit semantics and matching contract entries. The present warning

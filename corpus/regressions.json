@@ -1108,7 +1108,7 @@
     {
       "id": "cia-blue-book-14-1955",
       "sourceSHA256": "90e05e77fc088c29758c2ddda514c0c12f317e5686ee213d348db2f9da152ee3",
-      "basis": "Reviewed negative quality case: require a source image and explicit review/fallback signal. No correct table-transcription claim. Page 12 preserves the existing margin-artifact suppression, body transcription and source reference; source-derived margin fixtures distinguish that cleanup from speculative OCR correction.",
+      "basis": "Reviewed negative quality case: require a source image and explicit review/fallback signal. No correct table-transcription claim. Page 12 preserves the existing margin-artifact suppression, body transcription and source reference; source-derived margin fixtures distinguish that cleanup from speculative OCR correction. Page 150's hand-written sheet has signaled more than an unverified layer since #275: its layer fails the word test, so the page reports implausibleTextLayer and its located grids are preserved as pictures under unreadTableCells. Page 74's typewritten table still keeps its layer and its unverifiedTextLayer notice, which is why the two pages' accepted codes differ.",
       "pages": [
         {
           "page": 12,
@@ -1139,7 +1139,9 @@
           "warningCodesAnyOf": [
             "unverifiedTextLayer",
             "complexLayout",
-            "pageImageFallback"
+            "pageImageFallback",
+            "implausibleTextLayer",
+            "unreadTableCells"
           ]
         }
       ]

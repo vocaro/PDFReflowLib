@@ -499,6 +499,40 @@ enum LayoutReconstructor {
                         exhausted: inout Bool) -> [Element] {
         guard elements.count > 1 else { return elements }
         guard depth < 32 else { exhausted = true; return elements }
+        // A group the page lettered sideways is read along its own direction (#263). Every cut
+        // above has already separated it from the rest of the page, so inside it the page can be
+        // turned: each rectangle is taken into the frame the group's own writing runs in, where
+        // the same cuts and the same row-major sort put the caption's first line above its
+        // second. The turn is one rotation applied to every member, so it changes no gap, no
+        // shared edge and no overlap — only which axis each of them is measured on.
+        //
+        // The CDC graphic novel letters page 17's caption down the side of the panel at a quarter
+        // clockwise, three lines whose rectangles all reach the same top edge and stand 1.4 and
+        // 2.5 points apart across the page. Read as though the writing ran along them, the
+        // shortest is the topmost and comes first and the other two overlap enough to be two
+        // pieces of one printed row: `ATLANTA, GEORGIA...` was emitted before
+        // `DISEASE CONTROL AND PREVENTION IN SEVERAL DAYS LATER AT THE CENTERS FOR`.
+        if let turn = QuarterTurn.shared(by: elements, turn: { $0.line?.turn }) {
+            // The turned copies say they stand upright, so a nested group of them cannot be
+            // turned a second time; only the order they come back in is kept, and every element
+            // this returns is the one the caller handed over.
+            var slots: [CGRect: [Int]] = [:]
+            let upright = elements.indices.map { index -> Element in
+                var element = elements[index]
+                element.rect = turn.upright(element.rect)
+                if var line = element.line {
+                    line.rect = turn.upright(line.rect)
+                    line.readingRect = line.readingRect.map(turn.upright)
+                    line.turn = .upright
+                    element.line = line
+                }
+                slots[element.rect, default: []].append(index)
+                return element
+            }
+            return ordered(upright, bodySize: bodySize, rightToLeft: rightToLeft, depth: depth + 1,
+                           exhausted: &exhausted)
+                .map { elements[slots[$0.rect]!.removeFirst()] }
+        }
         func gap(horizontal: Bool) -> CGFloat? {
             let intervals = elements.map { horizontal ? ($0.rect.minX, $0.rect.maxX) : ($0.rect.minY, $0.rect.maxY) }
                 .sorted { $0.0 < $1.0 }
@@ -957,6 +991,37 @@ enum LayoutReconstructor {
         return result
     }
 
+    /// Where on a page the extractor left the same seam on row after row: the x positions at
+    /// which three or more printed rows were split, within a quarter of a body of one another.
+    ///
+    /// PDFKit ends a line wherever the page leaves a gap, and a page that leaves one in the same
+    /// place on row after row has set a column there. The pieces beside such a seam are cells,
+    /// and the start of the row they stand in says nothing about the row beneath it: Project Blue
+    /// Book's statistical appendix hands back eight-column tables whose rows all break at the
+    /// same places, and reading each row as one line ran thirty of them together. A page that
+    /// breaks one row at a place no other row breaks at has set a space, not a column — the 9/11
+    /// report's page 259, the replay-clocks paper and USCIS M-618-A each split a row where
+    /// nothing else on the page splits (#272).
+    ///
+    /// Three rows are what it takes to say so. Two rows that happen to break near one place are
+    /// two printed lines — USCIS M-618-A's page 47 breaks two of its sentences within a fifth of
+    /// a point of x 319.7 and a third 4.5 points away, and all three are prose.
+    static func columnSeams(in lines: [TextLine], body: CGFloat, rightToLeft: Bool) -> [CGFloat] {
+        var seams: [CGFloat] = []
+        for line in lines {
+            let opens = lines.contains { other in
+                other != line && TextLine.sameRow(other.uprightRect, line.uprightRect) && {
+                    let gap = rightToLeft
+                        ? other.uprightRect.minX - line.uprightRect.maxX
+                        : line.uprightRect.minX - other.uprightRect.maxX
+                    return gap >= 0 && gap < body * 0.75
+                }()
+            }
+            if opens { seams.append(rightToLeft ? line.uprightRect.maxX : line.uprightRect.minX) }
+        }
+        return seams.filter { seam in seams.count { abs($0 - seam) <= body * 0.25 } >= 3 }
+    }
+
     /// Whether the page opens its paragraphs on a first-line indent of `step`, in `size` (#218,
     /// ported unchanged from the coordination branch's `firstLineIndentRun`, #159). *Agricultural
     /// Research* indents each paragraph's first line ten points in a ten-and-a-half-point column and
@@ -1269,6 +1334,8 @@ enum LayoutReconstructor {
                                        imageDescriptions: tableAssets(images, tables: page.recognizedTables,
                                                                       page: page.number),
                                        hangingEntries: hangingEntries(in: lines, body: typography.body),
+                                       columnSeams: columnSeams(in: lines, body: typography.body,
+                                                                rightToLeft: rightToLeft),
                                        rightToLeft: rightToLeft)
         // A page whose tags never name a heading has not said that its display lines are not
         // headings; it has said only what they contain and in what order. Producers routinely
@@ -1330,9 +1397,50 @@ enum LayoutReconstructor {
                 }
             }
         }
-        let result = assembler.finish()
+        var result = assembler.finish()
         warnings += assembler.warnings
+        // Where a crop took prose the page printed before the first line it reflows, the page's
+        // text does not begin at that block, and a cross-page join must not treat it as the
+        // sentence the page before left open (#267).
+        if let opening = result.firstIndex(where: \.hasReflowedText),
+           cropTookThePageOpening(elements, taken: taken.subtracting(released), page: page,
+                                  body: typography.body, rightToLeft: rightToLeft) {
+            result[opening].followsCroppedText = true
+        }
         return result
+    }
+
+    /// Whether a crop took what the page printed before the first line it reflows, so the page's
+    /// own text does not begin at that line.
+    ///
+    /// Two shapes, both Wallace's. **Down the page:** page 430 prints `b are the other two sides
+    /// (legs), then we can use the following formula, a² + b² = c²`, a display takes the whole
+    /// row, and `to find a missing side.` is what is left to reflow. **Along a row:** page 344
+    /// prints `values into x =` at the measure and sets the quadratic formula beside it, so the
+    /// crop took the opening of the very row the page's first reflowed line stands in.
+    ///
+    /// What the crop took has to be the page's own flow, not a picture's writing. Above the
+    /// line, that is `readsAsSentence` — the test the crop rules (#255) and a block reached past
+    /// a picture (#203) already use — together with the measure: the 9/11 report runs its boxed
+    /// list of *Operational Opportunities* over the head of page 374 and that prose is indented
+    /// onto a measure of its own, while `…all involved were` / `responsible for making it work.`
+    /// is the join the page asks for. Along the row no such test is needed, because a printed row
+    /// the page began inside a crop is that row wherever its pieces read.
+    static func cropTookThePageOpening(_ elements: [Element], taken: Set<Int>, page: PageContent,
+                                       body: CGFloat, rightToLeft: Bool) -> Bool {
+        guard !taken.isEmpty, let first = elements.first(where: { $0.line != nil })?.line else { return false }
+        func earlierAlongTheRow(_ line: TextLine) -> Bool {
+            rightToLeft ? line.rect.minX > first.rect.minX : line.rect.minX < first.rect.minX
+        }
+        func atTheSameMeasure(_ line: TextLine) -> Bool {
+            rightToLeft ? line.rect.maxX >= first.rect.maxX - body * 0.25
+                        : line.rect.minX <= first.rect.minX + body * 0.25
+        }
+        return taken.contains { index in
+            let line = page.lines[index]
+            guard !line.sharesRow(with: first) else { return earlierAlongTheRow(line) }
+            return line.rect.minY > first.rect.minY && readsAsSentence(line) && atTheSameMeasure(line)
+        }
     }
 
     /// Convenience for tests that supply the document context piecemeal.
@@ -1528,6 +1636,13 @@ enum LayoutReconstructor {
            // block directly before a boundary is still reached whatever it holds: #45's wider
            // defect, a join anchored on a folio that is simply the last block, is untouched here.
            (anchor == blocks.count - 1 && opening == 0) || readsAsSentence(blocks[anchor].text),
+           // The block a page opens with is the sentence's other half only where it is where the
+           // page's text begins. Wallace's page 430 prints `b are the other two sides (legs),
+           // then we can use the following formula, a² + b² = c²` and a display crop takes all of
+           // it, so `to find a missing side.` is the first line the page reflows; joining that to
+           // `…the hypotenuse of the triangle, and a and` reads two fragments the crop had
+           // already broken as one paragraph. Those two halves were never consecutive (#267).
+           !remaining[opening].followsCroppedText,
            // Two validated paragraph identities that differ are two paragraphs, and never join.
            // One identity and no identity is not that: a page whose tags were not applied says
            // nothing about where its last paragraph ends, so the geometric rule decides, as it

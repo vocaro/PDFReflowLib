@@ -27,8 +27,12 @@ import Testing
         == .fewEnglishWords(english: 9, judged: 20))
     #expect(TextLayerPlausibility.wordFinding(Counts(english: 10, damaged: 10, tokens: 20)) == nil)  // half English
     #expect(TextLayerPlausibility.wordFinding(Counts(english: 5, damaged: 14, tokens: 19)) == nil)   // 19 judged
-    #expect(TextLayerPlausibility.wordFinding(Counts(english: 5, damaged: 15, numericTokens: 5, tokens: 25)) == nil)
-    #expect(TextLayerPlausibility.wordFinding(Counts(english: 5, damaged: 15, numericTokens: 4, tokens: 25)) != nil)
+    // A fifth of the tokens being numbers exempts the layer; a fifth merely holding a digit does
+    // not, because a misreading of a hand-written figure holds digits too (#275).
+    #expect(TextLayerPlausibility.wordFinding(Counts(english: 5, damaged: 15, numberTokens: 5, tokens: 25)) == nil)
+    #expect(TextLayerPlausibility.wordFinding(Counts(english: 5, damaged: 15, numberTokens: 4, tokens: 25)) != nil)
+    #expect(TextLayerPlausibility.wordFinding(Counts(english: 5, damaged: 15, numericTokens: 25,
+                                                     numberTokens: 4, tokens: 25)) != nil)
 }
 
 @Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/93")) func inkTestNeedsMostTextInkUncoveredInSevenRowsAndFewerWordsThanRows() {
@@ -106,6 +110,93 @@ import Testing
     #expect(Double(typescript.english) >= Double(typescript.judged) * TextLayerPlausibility.minimumEnglishShare)
     // So is the comic's page 4 (#168), 0.6 English.
     if case .misreadWords? = TextLayerPlausibility.wordFinding(try counts("cdc-4")) {} else { Issue.record("cdc-4 passed") }
+}
+
+// #275: a lone letter is a word only in the company of words, and the numeric exemption counts
+// the numbers a page states rather than every token that holds a digit.
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/275")) func aLoneLetterIsEvidenceOnlyInTheCompanyOfWords() {
+    let lexicon: Set<String> = ["total", "certain", "evaluation"]
+    // Three ruled columns read as `I`, a row of hand-written cells read as `I` and stray figures,
+    // then the printed label row, where the same letter stands among words.
+    let ruled = EnglishText.wordCounts("I I I\nI 0.3 I 1.2 I\nCertain I Total I Evaluation") { lexicon.contains($0) }
+    #expect(ruled.english == 11 && ruled.judged == 11)
+    #expect(ruled.lonelyLetters == 6)
+    // The same words on one line keep their company, so the count is a judgment about lines, not
+    // about how many bare letters a page holds.
+    let together = EnglishText.wordCounts("I I I I 0.3 I 1.2 I Certain I Total I Evaluation") { lexicon.contains($0) }
+    #expect(together.english == 11 && together.lonelyLetters == 0)
+    // A bare letter is set aside, never counted against the layer: the share is taken over what
+    // is left, so `judged` loses it too.
+    typealias Counts = TextLayerPlausibility.WordCounts
+    #expect(TextLayerPlausibility.wordFinding(Counts(english: 21, damaged: 20, tokens: 41, lonelyLetters: 0)) == nil)
+    #expect(TextLayerPlausibility.wordFinding(Counts(english: 21, damaged: 20, tokens: 41, lonelyLetters: 2))
+        == .fewEnglishWords(english: 19, judged: 39))
+    // Nothing is judged once too few words are left standing.
+    #expect(TextLayerPlausibility.wordFinding(Counts(english: 21, damaged: 20, tokens: 41, lonelyLetters: 22)) == nil)
+}
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/275")) func theNumericExemptionCountsNumbersNotTokensHoldingDigits() {
+    let counts = EnglishText.wordCounts("0.3 l6 A.Di 1,234 x2 -") { _ in false }
+    #expect(counts.tokens == 6)
+    // Holding a digit: 0.3, l6, 1,234, x2. Being a number: 0.3 and 1,234.
+    #expect(counts.numericTokens == 4)
+    #expect(counts.numberTokens == 2)
+}
+
+// The page #275 was filed on: `cia-blue-book-14-1955` page 150, `TABLE A63 EVALUATION OF ALL
+// SIGHTINGS FOR ALL YEARS BY COLORS REPORTED`, four ruled grids of 25 columns whose every value
+// is written in ink. Its printed labels are transcribed correctly and its hand-written body comes
+// back as `II 'i "J.7 "·' r,_3 ,_q 5 I I, ~..l Al 1·3 s 7`.
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/275")) func aTableReadForItsLabelsAloneIsNoTranscription() throws {
+    try #require(EnglishText.wordCounts("the") != nil, "no system English lexicon")
+    func counts(_ name: String) throws -> TextLayerPlausibility.WordCounts {
+        let fixture = try SourceLayoutFixture.load(name)
+        return try #require(EnglishText.wordCounts(fixture.lines.map(\.text).joined(separator: "\n")))
+    }
+    typealias Rule = TextLayerPlausibility
+    let handwritten = try counts("blue-150")
+    // Every test the layer used to meet, in the order the issue tabulates them: a fifth of its
+    // tokens held a digit, so it was exempt; it read over half English if judged anyway; and it
+    // misread well under a tenth of its words. None of that was a reading of the page.
+    #expect(Double(handwritten.numericTokens) >= Double(handwritten.tokens) * Rule.maximumNumericShare)
+    #expect(Double(handwritten.english) >= Double(handwritten.judged) * Rule.minimumEnglishShare)
+    #expect(Double(handwritten.misread) < Double(handwritten.words) * Rule.minimumMisreadShare)
+    // What the two narrowings see: the noise in the cells holds digits without being numbers, and
+    // most of the page's English is the letter `I`, one per ruled column, alone on its line.
+    #expect(Double(handwritten.numberTokens) < Double(handwritten.tokens) * Rule.maximumNumericShare)
+    #expect(handwritten.lonelyLetters * 2 > handwritten.english)
+    guard case .fewEnglishWords(let english, let judged)? = Rule.wordFinding(handwritten) else {
+        Issue.record("blue-150: \(handwritten)"); return
+    }
+    #expect(Double(english) < Double(judged) * Rule.minimumEnglishShare)
+    // Page 33 of the same book is the other shape the rule sees: `FIGURE 7`'s chart, whose layer
+    // is the twelve month initials of six year-long axes and the ticks between them. Its caption
+    // is read correctly and its plot is not read at all.
+    let chart = try counts("blue-33")
+    #expect(chart.lonelyLetters > 0)
+    if case .fewEnglishWords? = Rule.wordFinding(chart) {} else { Issue.record("blue-33: \(chart)") }
+    // Page 74 of the same book and the same scan, whose table's values are typewritten, keeps its
+    // text on the narrowed exemption itself: the figures it states really are numbers, so a fifth
+    // of its tokens are numbers and the word tests do not judge it. Page 150 reaches a fifth only
+    // by counting the digits in its misread ink.
+    let typewritten = try counts("blue-74")
+    #expect(Double(typewritten.numberTokens) >= Double(typewritten.tokens) * Rule.maximumNumericShare)
+    #expect(Rule.wordFinding(typewritten) == nil, "blue-74: \(typewritten)")
+    // Positive controls: a born-digital statistical table, two printed tables of flag sizes, the
+    // Warren report's prose and its index of numbers all keep their text. Three of them hold
+    // lonely letters of their own, which decide nothing because the pages read as English anyway.
+    for name in ["census-1", "flag-27", "flag-30", "warren-50", "warren-910", "blue-5", "blue-12"] {
+        let value = try counts(name)
+        #expect(Rule.wordFinding(value) == nil, "\(name): \(value)")
+    }
+    #expect(try counts("warren-910").lonelyLetters > 0)
+    #expect(try counts("blue-5").lonelyLetters > 0)
+    // And the carbon typescript #7 is built on keeps the finding that has it compared with a
+    // fresh reading rather than replaced by one: its bare letters stand in sentences.
+    let typescript = try counts("warren-636")
+    #expect(typescript.lonelyLetters == 0)
+    if case .misreadWords? = Rule.wordFinding(typescript) {} else { Issue.record("warren-636: \(typescript)") }
 }
 
 @Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/93")) func misreadWordsAreDamagedWordsNoNeighbourCompletes() {

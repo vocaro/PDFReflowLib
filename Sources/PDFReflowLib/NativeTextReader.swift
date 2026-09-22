@@ -73,6 +73,26 @@ enum NativeTextReader {
             return bounds.isFinite && !bounds.isNull && bounds.width > 0 && bounds.height > 0
         } : []
         let attributedByLine = attributedTexts(of: styledLines, in: selections, texts: textsByLine, on: page)
+        // A rule the page draws down its margin, which an inherited recognition read as a column of
+        // letters and PDFKit hands back inside the lines beside it (#264). A page that draws no
+        // such rule pays one pass over its lines and nothing else.
+        let crop = page.bounds(for: .cropBox)
+        let suspectsRule = MarginRuleMarks.suspected(texts: textsByLine, rects: boundsByLine, bounds: crop)
+        // A row of two columns PDFKit handed back as one line spanning the gutter (#270). It is
+        // read from the same character boxes as the margin rule, so a page that shows neither
+        // shape asks PDFKit for nothing.
+        let suspectsGutter = ColumnGutterCut.suspected(texts: textsByLine, rects: boundsByLine)
+        let boxesByLine = suspectsRule || suspectsGutter ? characterBoxes(of: textsByLine, on: page) : []
+        let marginRule = suspectsRule
+            ? MarginRuleMarks.read(texts: textsByLine.map { $0 ?? "" }, boxes: boxesByLine,
+                                   rects: boundsByLine, bounds: crop)
+            : [:]
+        // A line the margin rule also reached keeps that reading: its box is already being
+        // re-measured, and no page states both shapes for one line.
+        let gutterCuts = suspectsGutter
+            ? ColumnGutterCut.read(texts: textsByLine.map { $0 ?? "" }, boxes: boxesByLine,
+                                   rects: boundsByLine).filter { marginRule[$0.key] == nil }
+            : [:]
         // Each line as it was read, held until the page's own writing is known: a page written
         // right to left hands back the separators inside its numbers, and any line with no
         // right-to-left letter of its own, in the order it painted them (#41).
@@ -117,7 +137,26 @@ enum NativeTextReader {
             repaired = repaired.map(CJKText.joinIdeographs)
             let corrected = repaired?.string != attributed?.string
                 ? repaired?.string.replacingOccurrences(of: "\u{FFFC}", with: " ") : nil
-            pending.append((corrected ?? semantic, bounds, repaired))
+            guard let rule = marginRule[index] else {
+                // A row of two columns PDFKit merged into one line is cut at the edge the rows
+                // above and below it state, and each piece keeps its own half of the styled text
+                // (#270). They are appended left then right, which is the order PDFKit reports the
+                // pieces of a row it did divide.
+                if let cut = gutterCuts[index],
+                   let pieces = ColumnGutterCut.split(cut, from: repaired, text: corrected ?? semantic) {
+                    pending.append((pieces.left.text, cut.left, pieces.left.styled))
+                    pending.append((pieces.right.text, cut.right, pieces.right.styled))
+                    continue
+                }
+                pending.append((corrected ?? semantic, bounds, repaired))
+                continue
+            }
+            // The rule is page furniture, so it is kept out of the line: the marks go, and the
+            // line is measured by the characters that remain. A line the rule drew and nothing
+            // else carries no text at all (#264).
+            guard !rule.rect.isNull else { carry = nil; continue }
+            let (cutText, cutStyled) = MarginRuleMarks.cut(rule, from: repaired, text: corrected ?? semantic)
+            pending.append((cutText, rule.rect, cutStyled))
         }
         let rightToLeft = ArabicText.readsRightToLeft(pending.map(\.semantic))
         return pending.map { item in
@@ -130,6 +169,30 @@ enum NativeTextReader {
                 : ArabicText.logicalOrder(item.semantic, onRightToLeftPage: true)
             return textLine(semantic: semantic, bounds: item.bounds, attributed: ordered)
         }
+    }
+
+    /// PDFKit's own rectangle for every character of every line, in the order `selectionsByLine`
+    /// reports them (#264).
+    ///
+    /// `characterBounds(at:)` is indexed over the page's characters *without* the separators the
+    /// reading synthesizes between rows, which is the offset the lines' own strings reach when
+    /// they are laid end to end — the same relation `lineRanges` reads in the other direction.
+    /// A page whose lines run past the characters it declares supplies no boxes at all rather
+    /// than boxes read at the wrong offset.
+    ///
+    /// `private`: every PDFKit call here must stay inside the extraction gate (#21), which only
+    /// this function's caller, `extractLines`, is verified to run inside.
+    private static func characterBoxes(of texts: [String?], on page: PDFPage) -> [[CGRect]] {
+        let lengths = texts.map { ($0 as NSString?)?.length ?? 0 }
+        guard lengths.reduce(0, +) <= page.numberOfCharacters else { return texts.map { _ in [] } }
+        var boxes: [[CGRect]] = []
+        boxes.reserveCapacity(texts.count)
+        var cursor = 0
+        for length in lengths {
+            boxes.append((cursor..<(cursor + length)).map { page.characterBounds(at: $0) })
+            cursor += length
+        }
+        return boxes
     }
 
     /// The attributed text of the lines at `indices`, read with one PDFKit request for the page.
@@ -427,8 +490,14 @@ enum NativeTextReader {
             // #217) is never an inline superscript or subscript, however its metrics place it.
             // Neither is a run of right-to-left letters, whose shaping shifts single letters off
             // the baseline inside a word the page never raised (#41).
+            // And a run holding no glyph at all takes no script style, however its metrics place
+            // it: a raised space is a space, and `<sup> </sup>` claims an inline script over
+            // nothing a reader can see raised (#273). The run itself is kept — the page set that
+            // space and the words on either side of it need it — it simply keeps the body's
+            // baseline, which is the only thing about it a reader could have observed.
             if !(hasDropCap && range.location == 0),
                attributes[GlyphIdentityReader.isolatedAttribute] == nil,
+               run.contains(where: { !$0.isWhitespace }),
                !ArabicText.isRightToLeftRun(run),
                offset.isFinite, abs(offset) <= (font?.pointSize ?? 12) * 0.75 {
                 if offset > tolerance { style.insert(.superscript) }

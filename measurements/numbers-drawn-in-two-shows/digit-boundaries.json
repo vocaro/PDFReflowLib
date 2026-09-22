@@ -1,0 +1,3904 @@
+{
+ "baseline": "86193ac",
+ "boundaries": [
+  {
+   "book": "faa-phak-8083-25c",
+   "closes": true,
+   "gapEm": 0.134,
+   "gapOverSpace": 0.536,
+   "line": "MH Under 50 2 5",
+   "page": 416,
+   "pair": "2|5",
+   "spaceWidthEm": 0.25
+  },
+  {
+   "book": "faa-phak-8083-25c",
+   "closes": false,
+   "gapEm": 0.787,
+   "gapOverSpace": 3.61,
+   "line": "03,550 7,570 11,98016,820 18,105",
+   "page": 458,
+   "pair": "0|1",
+   "spaceWidthEm": 0.218
+  },
+  {
+   "book": "faa-phak-8083-25c",
+   "closes": false,
+   "gapEm": 0.787,
+   "gapOverSpace": 3.61,
+   "line": "03,550 7,570 11,98016,820 18,105",
+   "page": 458,
+   "pair": "0|1",
+   "spaceWidthEm": 0.218
+  },
+  {
+   "book": "faa-phak-8083-25c",
+   "closes": false,
+   "gapEm": 0.787,
+   "gapOverSpace": 3.61,
+   "line": "03,190 6,570 10,230 14,200 18,105",
+   "page": 458,
+   "pair": "0|1",
+   "spaceWidthEm": 0.218
+  },
+  {
+   "book": "faa-phak-8083-25c",
+   "closes": false,
+   "gapEm": 0.849,
+   "gapOverSpace": 3.894,
+   "line": "03,190 6,570 10,230 14,200 18,105",
+   "page": 458,
+   "pair": "0|1",
+   "spaceWidthEm": 0.218
+  },
+  {
+   "book": "faa-phak-8083-25c",
+   "closes": false,
+   "gapEm": 0.85,
+   "gapOverSpace": 3.899,
+   "line": "03,190 6,570 10,230 14,200 18,105",
+   "page": 458,
+   "pair": "0|1",
+   "spaceWidthEm": 0.218
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 1.738,
+   "gapOverSpace": 6.98,
+   "line": "Total 80 283 237 114 62 39 43 30 24 17 6 12 947 $119,526,571",
+   "page": 756,
+   "pair": "3|2",
+   "spaceWidthEm": 0.249
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 1.738,
+   "gapOverSpace": 6.98,
+   "line": "Total 80 283 237 114 62 39 43 30 24 17 6 12 947 $119,526,571",
+   "page": 756,
+   "pair": "7|1",
+   "spaceWidthEm": 0.249
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 1.7383,
+   "gapOverSpace": 6.981,
+   "line": "Total 80 283 237 114 62 39 43 30 24 17 6 12 947 $119,526,571",
+   "page": 756,
+   "pair": "0|2",
+   "spaceWidthEm": 0.249
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 1.892,
+   "gapOverSpace": 7.598,
+   "line": "Total 314 45 31 19 41 9 247 133 18 29 27 34 947 $119,526,571",
+   "page": 757,
+   "pair": "5|3",
+   "spaceWidthEm": 0.249
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 1.892,
+   "gapOverSpace": 7.598,
+   "line": "Total 314 45 31 19 41 9 247 133 18 29 27 34 947 $119,526,571",
+   "page": 757,
+   "pair": "1|1",
+   "spaceWidthEm": 0.249
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 1.892,
+   "gapOverSpace": 7.598,
+   "line": "Total 314 45 31 19 41 9 247 133 18 29 27 34 947 $119,526,571",
+   "page": 757,
+   "pair": "9|4",
+   "spaceWidthEm": 0.249
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 1.892,
+   "gapOverSpace": 7.598,
+   "line": "Total 314 45 31 19 41 9 247 133 18 29 27 34 947 $119,526,571",
+   "page": 757,
+   "pair": "1|9",
+   "spaceWidthEm": 0.249
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 1.892,
+   "gapOverSpace": 7.598,
+   "line": "Total 314 45 31 19 41 9 247 133 18 29 27 34 947 $119,526,571",
+   "page": 757,
+   "pair": "8|2",
+   "spaceWidthEm": 0.249
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 1.892,
+   "gapOverSpace": 7.598,
+   "line": "Total 314 45 31 19 41 9 247 133 18 29 27 34 947 $119,526,571",
+   "page": 757,
+   "pair": "9|2",
+   "spaceWidthEm": 0.249
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 1.892,
+   "gapOverSpace": 7.598,
+   "line": "Total 314 45 31 19 41 9 247 133 18 29 27 34 947 $119,526,571",
+   "page": 757,
+   "pair": "7|3",
+   "spaceWidthEm": 0.249
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 1.892,
+   "gapOverSpace": 7.598,
+   "line": "Total 314 45 31 19 41 9 247 133 18 29 27 34 947 $119,526,571",
+   "page": 757,
+   "pair": "4|9",
+   "spaceWidthEm": 0.249
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 1.9465,
+   "gapOverSpace": 7.849,
+   "line": "2020 62 11 5 4 6 0 29 24 2 7 4 5 159 $14,462,186",
+   "page": 757,
+   "pair": "2|1",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.0817,
+   "gapOverSpace": 8.36,
+   "line": "Total 80 283 237 114 62 39 43 30 24 17 6 12 947 $119,526,571",
+   "page": 756,
+   "pair": "4|6",
+   "spaceWidthEm": 0.249
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.082,
+   "gapOverSpace": 8.361,
+   "line": "Total 80 283 237 114 62 39 43 30 24 17 6 12 947 $119,526,571",
+   "page": 756,
+   "pair": "2|3",
+   "spaceWidthEm": 0.249
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.082,
+   "gapOverSpace": 8.361,
+   "line": "Total 80 283 237 114 62 39 43 30 24 17 6 12 947 $119,526,571",
+   "page": 756,
+   "pair": "9|4",
+   "spaceWidthEm": 0.249
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.082,
+   "gapOverSpace": 8.361,
+   "line": "Total 80 283 237 114 62 39 43 30 24 17 6 12 947 $119,526,571",
+   "page": 756,
+   "pair": "3|3",
+   "spaceWidthEm": 0.249
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.082,
+   "gapOverSpace": 8.361,
+   "line": "Total 80 283 237 114 62 39 43 30 24 17 6 12 947 $119,526,571",
+   "page": 756,
+   "pair": "0|2",
+   "spaceWidthEm": 0.249
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.082,
+   "gapOverSpace": 8.361,
+   "line": "Total 80 283 237 114 62 39 43 30 24 17 6 12 947 $119,526,571",
+   "page": 756,
+   "pair": "4|1",
+   "spaceWidthEm": 0.249
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.0823,
+   "gapOverSpace": 8.363,
+   "line": "Total 80 283 237 114 62 39 43 30 24 17 6 12 947 $119,526,571",
+   "page": 756,
+   "pair": "6|1",
+   "spaceWidthEm": 0.249
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.1065,
+   "gapOverSpace": 8.494,
+   "line": "2019 13 33 36 16 16 5 n/a 0 0 n/a n/a n/a 119 $8,731,454",
+   "page": 756,
+   "pair": "6|1",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.1065,
+   "gapOverSpace": 8.494,
+   "line": "2020 15 49 41 14 12 13 15 0 0 n/a n/a n/a 159 $14,462,186",
+   "page": 756,
+   "pair": "4|1",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.1065,
+   "gapOverSpace": 8.494,
+   "line": "2020 15 49 41 14 12 13 15 0 0 n/a n/a n/a 159 $14,462,186",
+   "page": 756,
+   "pair": "2|1",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.1065,
+   "gapOverSpace": 8.494,
+   "line": "2020 15 49 41 14 12 13 15 0 0 n/a n/a n/a 159 $14,462,186",
+   "page": 756,
+   "pair": "3|1",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.1065,
+   "gapOverSpace": 8.494,
+   "line": "2021 10 47 15 14 3 8 17 8 9 n/a n/a n/a 131 $13,870,444",
+   "page": 756,
+   "pair": "8|1",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.1065,
+   "gapOverSpace": 8.494,
+   "line": "2022 8 26 10 10 4 3 11 5 6 17 6 12 118 $44,628,511",
+   "page": 756,
+   "pair": "3|1",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.1065,
+   "gapOverSpace": 8.494,
+   "line": "2022 8 26 10 10 4 3 11 5 6 17 6 12 118 $44,628,511",
+   "page": 756,
+   "pair": "6|1",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.1065,
+   "gapOverSpace": 8.494,
+   "line": "2022 8 26 10 10 4 3 11 5 6 17 6 12 118 $44,628,511",
+   "page": 756,
+   "pair": "6|1",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.198,
+   "gapOverSpace": 8.827,
+   "line": "Total 314 45 31 19 41 9 247 133 18 29 27 34 947 $119,526,571",
+   "page": 757,
+   "pair": "4|4",
+   "spaceWidthEm": 0.249
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.198,
+   "gapOverSpace": 8.827,
+   "line": "Total 314 45 31 19 41 9 247 133 18 29 27 34 947 $119,526,571",
+   "page": 757,
+   "pair": "7|1",
+   "spaceWidthEm": 0.249
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.198,
+   "gapOverSpace": 8.827,
+   "line": "Total 314 45 31 19 41 9 247 133 18 29 27 34 947 $119,526,571",
+   "page": 757,
+   "pair": "3|1",
+   "spaceWidthEm": 0.249
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.2583,
+   "gapOverSpace": 9.069,
+   "line": "Total 80 283 237 114 62 39 43 30 24 17 6 12 947 $119,526,571",
+   "page": 756,
+   "pair": "2|9",
+   "spaceWidthEm": 0.249
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.295,
+   "gapOverSpace": 9.254,
+   "line": "2022 8 26 10 10 4 3 11 5 6 17 6 12 118 $44,628,511",
+   "page": 756,
+   "pair": "2|1",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.2949,
+   "gapOverSpace": 9.254,
+   "line": "2015 19 7 4 2 7 2 47 18 3 3 6 3 121 $13,322,972",
+   "page": 757,
+   "pair": "3|1",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.295,
+   "gapOverSpace": 9.254,
+   "line": "44 6 5 2 5 1 45 9 5 4 6 6 138 $12,410,810",
+   "page": 757,
+   "pair": "6|1",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.295,
+   "gapOverSpace": 9.254,
+   "line": "2019 62 7 1 2 2 1 25 14 0 0 4 1 119 $8,731,454",
+   "page": 757,
+   "pair": "1|1",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.295,
+   "gapOverSpace": 9.254,
+   "line": "2020 62 11 5 4 6 0 29 24 2 7 4 5 159 $14,462,186",
+   "page": 757,
+   "pair": "5|1",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.295,
+   "gapOverSpace": 9.254,
+   "line": "2021 59 7 3 2 1 1 23 25 1 2 3 4 131 $13,870,444",
+   "page": 757,
+   "pair": "4|1",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.295,
+   "gapOverSpace": 9.254,
+   "line": "2022 43 2 4 2 4 1 30 16 5 3 1 7 118 $44,628,511",
+   "page": 757,
+   "pair": "7|1",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.3065,
+   "gapOverSpace": 9.3,
+   "line": "2013 n/a 6 13 n/a n/a n/a n/a n/a n/a n/a n/a n/a 19 $694,731",
+   "page": 756,
+   "pair": "6|1",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.3065,
+   "gapOverSpace": 9.3,
+   "line": "2014 3 16 19 n/a 6 n/a n/a n/a n/a n/a n/a n/a 44 $2,286,316",
+   "page": 756,
+   "pair": "3|1",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.3065,
+   "gapOverSpace": 9.3,
+   "line": "2014 3 16 19 n/a 6 n/a n/a n/a n/a n/a n/a n/a 44 $2,286,316",
+   "page": 756,
+   "pair": "6|1",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.3065,
+   "gapOverSpace": 9.3,
+   "line": "2015 8 38 30 19 7 n/a n/a 12 7 n/a n/a n/a 121 $13,322,972",
+   "page": 756,
+   "pair": "8|3",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.3065,
+   "gapOverSpace": 9.3,
+   "line": "2015 8 38 30 19 7 n/a n/a 12 7 n/a n/a n/a 121 $13,322,972",
+   "page": 756,
+   "pair": "8|3",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.3065,
+   "gapOverSpace": 9.3,
+   "line": "2015 8 38 30 19 7 n/a n/a 12 7 n/a n/a n/a 121 $13,322,972",
+   "page": 756,
+   "pair": "0|1",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.3065,
+   "gapOverSpace": 9.3,
+   "line": "2016 5 20 32 11 1 7 n/a 5 2 n/a n/a n/a 83 $8,791,510",
+   "page": 756,
+   "pair": "5|2",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.3065,
+   "gapOverSpace": 9.3,
+   "line": "2016 5 20 32 11 1 7 n/a 5 2 n/a n/a n/a 83 $8,791,510",
+   "page": 756,
+   "pair": "0|3",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.3065,
+   "gapOverSpace": 9.3,
+   "line": "2016 5 20 32 11 1 7 n/a 5 2 n/a n/a n/a 83 $8,791,510",
+   "page": 756,
+   "pair": "2|1",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.3065,
+   "gapOverSpace": 9.3,
+   "line": "2019 13 33 36 16 16 5 n/a 0 0 n/a n/a n/a 119 $8,731,454",
+   "page": 756,
+   "pair": "3|3",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.3065,
+   "gapOverSpace": 9.3,
+   "line": "2019 13 33 36 16 16 5 n/a 0 0 n/a n/a n/a 119 $8,731,454",
+   "page": 756,
+   "pair": "3|3",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.3065,
+   "gapOverSpace": 9.3,
+   "line": "2019 13 33 36 16 16 5 n/a 0 0 n/a n/a n/a 119 $8,731,454",
+   "page": 756,
+   "pair": "6|1",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.3065,
+   "gapOverSpace": 9.3,
+   "line": "2020 15 49 41 14 12 13 15 0 0 n/a n/a n/a 159 $14,462,186",
+   "page": 756,
+   "pair": "5|4",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.3065,
+   "gapOverSpace": 9.3,
+   "line": "2020 15 49 41 14 12 13 15 0 0 n/a n/a n/a 159 $14,462,186",
+   "page": 756,
+   "pair": "9|4",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.3065,
+   "gapOverSpace": 9.3,
+   "line": "2020 15 49 41 14 12 13 15 0 0 n/a n/a n/a 159 $14,462,186",
+   "page": 756,
+   "pair": "1|1",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.3065,
+   "gapOverSpace": 9.3,
+   "line": "2021 10 47 15 14 3 8 17 8 9 n/a n/a n/a 131 $13,870,444",
+   "page": 756,
+   "pair": "0|4",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.3065,
+   "gapOverSpace": 9.3,
+   "line": "2021 10 47 15 14 3 8 17 8 9 n/a n/a n/a 131 $13,870,444",
+   "page": 756,
+   "pair": "7|1",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.3065,
+   "gapOverSpace": 9.3,
+   "line": "2021 10 47 15 14 3 8 17 8 9 n/a n/a n/a 131 $13,870,444",
+   "page": 756,
+   "pair": "5|1",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.3065,
+   "gapOverSpace": 9.3,
+   "line": "2022 8 26 10 10 4 3 11 5 6 17 6 12 118 $44,628,511",
+   "page": 756,
+   "pair": "8|2",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.3065,
+   "gapOverSpace": 9.3,
+   "line": "2022 8 26 10 10 4 3 11 5 6 17 6 12 118 $44,628,511",
+   "page": 756,
+   "pair": "6|1",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.3065,
+   "gapOverSpace": 9.3,
+   "line": "2022 8 26 10 10 4 3 11 5 6 17 6 12 118 $44,628,511",
+   "page": 756,
+   "pair": "0|1",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.466,
+   "gapOverSpace": 9.904,
+   "line": "Total 314 45 31 19 41 9 247 133 18 29 27 34 947 $119,526,571",
+   "page": 757,
+   "pair": "9|2",
+   "spaceWidthEm": 0.249
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2011 2 1 1 0 2 1 3 1 0 1 1 2 15 $327,637",
+   "page": 757,
+   "pair": "2|1",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2011 2 1 1 0 2 1 3 1 0 1 1 2 15 $327,637",
+   "page": 757,
+   "pair": "1|1",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2011 2 1 1 0 2 1 3 1 0 1 1 2 15 $327,637",
+   "page": 757,
+   "pair": "1|0",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2011 2 1 1 0 2 1 3 1 0 1 1 2 15 $327,637",
+   "page": 757,
+   "pair": "0|2",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2011 2 1 1 0 2 1 3 1 0 1 1 2 15 $327,637",
+   "page": 757,
+   "pair": "2|1",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2011 2 1 1 0 2 1 3 1 0 1 1 2 15 $327,637",
+   "page": 757,
+   "pair": "1|0",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2011 2 1 1 0 2 1 3 1 0 1 1 2 15 $327,637",
+   "page": 757,
+   "pair": "0|1",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2011 2 1 1 0 2 1 3 1 0 1 1 2 15 $327,637",
+   "page": 757,
+   "pair": "1|1",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2011 2 1 1 0 2 1 3 1 0 1 1 2 15 $327,637",
+   "page": 757,
+   "pair": "1|2",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2012 0 0 0 0 0 0 0 0 0 0 0 0 0 $0",
+   "page": 757,
+   "pair": "0|0",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2012 0 0 0 0 0 0 0 0 0 0 0 0 0 $0",
+   "page": 757,
+   "pair": "0|0",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2012 0 0 0 0 0 0 0 0 0 0 0 0 0 $0",
+   "page": 757,
+   "pair": "0|0",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2012 0 0 0 0 0 0 0 0 0 0 0 0 0 $0",
+   "page": 757,
+   "pair": "0|0",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2012 0 0 0 0 0 0 0 0 0 0 0 0 0 $0",
+   "page": 757,
+   "pair": "0|0",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2012 0 0 0 0 0 0 0 0 0 0 0 0 0 $0",
+   "page": 757,
+   "pair": "0|0",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2012 0 0 0 0 0 0 0 0 0 0 0 0 0 $0",
+   "page": 757,
+   "pair": "0|0",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2012 0 0 0 0 0 0 0 0 0 0 0 0 0 $0",
+   "page": 757,
+   "pair": "0|0",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2012 0 0 0 0 0 0 0 0 0 0 0 0 0 $0",
+   "page": 757,
+   "pair": "0|0",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2013 1 0 1 0 5 0 4 3 0 1 1 3 19 $694,731",
+   "page": 757,
+   "pair": "1|0",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2013 1 0 1 0 5 0 4 3 0 1 1 3 19 $694,731",
+   "page": 757,
+   "pair": "0|1",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2013 1 0 1 0 5 0 4 3 0 1 1 3 19 $694,731",
+   "page": 757,
+   "pair": "1|0",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2013 1 0 1 0 5 0 4 3 0 1 1 3 19 $694,731",
+   "page": 757,
+   "pair": "0|5",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2013 1 0 1 0 5 0 4 3 0 1 1 3 19 $694,731",
+   "page": 757,
+   "pair": "5|0",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2013 1 0 1 0 5 0 4 3 0 1 1 3 19 $694,731",
+   "page": 757,
+   "pair": "3|0",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2013 1 0 1 0 5 0 4 3 0 1 1 3 19 $694,731",
+   "page": 757,
+   "pair": "0|1",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2013 1 0 1 0 5 0 4 3 0 1 1 3 19 $694,731",
+   "page": 757,
+   "pair": "1|1",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2013 1 0 1 0 5 0 4 3 0 1 1 3 19 $694,731",
+   "page": 757,
+   "pair": "1|3",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2014 7 2 4 3 6 0 8 9 1 3 0 1 44 $2,286,316",
+   "page": 757,
+   "pair": "7|2",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2014 7 2 4 3 6 0 8 9 1 3 0 1 44 $2,286,316",
+   "page": 757,
+   "pair": "2|4",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2014 7 2 4 3 6 0 8 9 1 3 0 1 44 $2,286,316",
+   "page": 757,
+   "pair": "4|3",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2014 7 2 4 3 6 0 8 9 1 3 0 1 44 $2,286,316",
+   "page": 757,
+   "pair": "3|6",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2014 7 2 4 3 6 0 8 9 1 3 0 1 44 $2,286,316",
+   "page": 757,
+   "pair": "6|0",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2014 7 2 4 3 6 0 8 9 1 3 0 1 44 $2,286,316",
+   "page": 757,
+   "pair": "9|1",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2014 7 2 4 3 6 0 8 9 1 3 0 1 44 $2,286,316",
+   "page": 757,
+   "pair": "1|3",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2014 7 2 4 3 6 0 8 9 1 3 0 1 44 $2,286,316",
+   "page": 757,
+   "pair": "3|0",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2014 7 2 4 3 6 0 8 9 1 3 0 1 44 $2,286,316",
+   "page": 757,
+   "pair": "0|1",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2015 19 7 4 2 7 2 47 18 3 3 6 3 121 $13,322,972",
+   "page": 757,
+   "pair": "9|7",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2015 19 7 4 2 7 2 47 18 3 3 6 3 121 $13,322,972",
+   "page": 757,
+   "pair": "7|4",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2015 19 7 4 2 7 2 47 18 3 3 6 3 121 $13,322,972",
+   "page": 757,
+   "pair": "4|2",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2015 19 7 4 2 7 2 47 18 3 3 6 3 121 $13,322,972",
+   "page": 757,
+   "pair": "2|7",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2015 19 7 4 2 7 2 47 18 3 3 6 3 121 $13,322,972",
+   "page": 757,
+   "pair": "7|2",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2015 19 7 4 2 7 2 47 18 3 3 6 3 121 $13,322,972",
+   "page": 757,
+   "pair": "8|3",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2015 19 7 4 2 7 2 47 18 3 3 6 3 121 $13,322,972",
+   "page": 757,
+   "pair": "3|3",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2015 19 7 4 2 7 2 47 18 3 3 6 3 121 $13,322,972",
+   "page": 757,
+   "pair": "3|6",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2015 19 7 4 2 7 2 47 18 3 3 6 3 121 $13,322,972",
+   "page": 757,
+   "pair": "6|3",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2016 15 2 3 2 3 2 33 14 1 5 1 2 83 $8,791,510",
+   "page": 757,
+   "pair": "5|2",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2016 15 2 3 2 3 2 33 14 1 5 1 2 83 $8,791,510",
+   "page": 757,
+   "pair": "2|3",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2016 15 2 3 2 3 2 33 14 1 5 1 2 83 $8,791,510",
+   "page": 757,
+   "pair": "3|2",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2016 15 2 3 2 3 2 33 14 1 5 1 2 83 $8,791,510",
+   "page": 757,
+   "pair": "2|3",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2016 15 2 3 2 3 2 33 14 1 5 1 2 83 $8,791,510",
+   "page": 757,
+   "pair": "3|2",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2016 15 2 3 2 3 2 33 14 1 5 1 2 83 $8,791,510",
+   "page": 757,
+   "pair": "4|1",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2016 15 2 3 2 3 2 33 14 1 5 1 2 83 $8,791,510",
+   "page": 757,
+   "pair": "1|5",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2016 15 2 3 2 3 2 33 14 1 5 1 2 83 $8,791,510",
+   "page": 757,
+   "pair": "5|1",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2016 15 2 3 2 3 2 33 14 1 5 1 2 83 $8,791,510",
+   "page": 757,
+   "pair": "1|2",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "44 6 5 2 5 1 45 9 5 4 6 6 138 $12,410,810",
+   "page": 757,
+   "pair": "4|6",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "44 6 5 2 5 1 45 9 5 4 6 6 138 $12,410,810",
+   "page": 757,
+   "pair": "6|5",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "44 6 5 2 5 1 45 9 5 4 6 6 138 $12,410,810",
+   "page": 757,
+   "pair": "5|2",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "44 6 5 2 5 1 45 9 5 4 6 6 138 $12,410,810",
+   "page": 757,
+   "pair": "2|5",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "44 6 5 2 5 1 45 9 5 4 6 6 138 $12,410,810",
+   "page": 757,
+   "pair": "5|1",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "44 6 5 2 5 1 45 9 5 4 6 6 138 $12,410,810",
+   "page": 757,
+   "pair": "9|5",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "44 6 5 2 5 1 45 9 5 4 6 6 138 $12,410,810",
+   "page": 757,
+   "pair": "5|4",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "44 6 5 2 5 1 45 9 5 4 6 6 138 $12,410,810",
+   "page": 757,
+   "pair": "4|6",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "44 6 5 2 5 1 45 9 5 4 6 6 138 $12,410,810",
+   "page": 757,
+   "pair": "6|6",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2019 62 7 1 2 2 1 25 14 0 0 4 1 119 $8,731,454",
+   "page": 757,
+   "pair": "2|7",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2019 62 7 1 2 2 1 25 14 0 0 4 1 119 $8,731,454",
+   "page": 757,
+   "pair": "7|1",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2019 62 7 1 2 2 1 25 14 0 0 4 1 119 $8,731,454",
+   "page": 757,
+   "pair": "1|2",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2019 62 7 1 2 2 1 25 14 0 0 4 1 119 $8,731,454",
+   "page": 757,
+   "pair": "2|2",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2019 62 7 1 2 2 1 25 14 0 0 4 1 119 $8,731,454",
+   "page": 757,
+   "pair": "2|1",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2019 62 7 1 2 2 1 25 14 0 0 4 1 119 $8,731,454",
+   "page": 757,
+   "pair": "4|0",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2019 62 7 1 2 2 1 25 14 0 0 4 1 119 $8,731,454",
+   "page": 757,
+   "pair": "0|0",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2019 62 7 1 2 2 1 25 14 0 0 4 1 119 $8,731,454",
+   "page": 757,
+   "pair": "0|4",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2019 62 7 1 2 2 1 25 14 0 0 4 1 119 $8,731,454",
+   "page": 757,
+   "pair": "4|1",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2020 62 11 5 4 6 0 29 24 2 7 4 5 159 $14,462,186",
+   "page": 757,
+   "pair": "1|5",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2020 62 11 5 4 6 0 29 24 2 7 4 5 159 $14,462,186",
+   "page": 757,
+   "pair": "5|4",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2020 62 11 5 4 6 0 29 24 2 7 4 5 159 $14,462,186",
+   "page": 757,
+   "pair": "4|6",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2020 62 11 5 4 6 0 29 24 2 7 4 5 159 $14,462,186",
+   "page": 757,
+   "pair": "6|0",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2020 62 11 5 4 6 0 29 24 2 7 4 5 159 $14,462,186",
+   "page": 757,
+   "pair": "4|2",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2020 62 11 5 4 6 0 29 24 2 7 4 5 159 $14,462,186",
+   "page": 757,
+   "pair": "2|7",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2020 62 11 5 4 6 0 29 24 2 7 4 5 159 $14,462,186",
+   "page": 757,
+   "pair": "7|4",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2020 62 11 5 4 6 0 29 24 2 7 4 5 159 $14,462,186",
+   "page": 757,
+   "pair": "4|5",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2021 59 7 3 2 1 1 23 25 1 2 3 4 131 $13,870,444",
+   "page": 757,
+   "pair": "9|7",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2021 59 7 3 2 1 1 23 25 1 2 3 4 131 $13,870,444",
+   "page": 757,
+   "pair": "7|3",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2021 59 7 3 2 1 1 23 25 1 2 3 4 131 $13,870,444",
+   "page": 757,
+   "pair": "3|2",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2021 59 7 3 2 1 1 23 25 1 2 3 4 131 $13,870,444",
+   "page": 757,
+   "pair": "2|1",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2021 59 7 3 2 1 1 23 25 1 2 3 4 131 $13,870,444",
+   "page": 757,
+   "pair": "1|1",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2021 59 7 3 2 1 1 23 25 1 2 3 4 131 $13,870,444",
+   "page": 757,
+   "pair": "5|1",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2021 59 7 3 2 1 1 23 25 1 2 3 4 131 $13,870,444",
+   "page": 757,
+   "pair": "1|2",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2021 59 7 3 2 1 1 23 25 1 2 3 4 131 $13,870,444",
+   "page": 757,
+   "pair": "2|3",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2021 59 7 3 2 1 1 23 25 1 2 3 4 131 $13,870,444",
+   "page": 757,
+   "pair": "3|4",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2022 43 2 4 2 4 1 30 16 5 3 1 7 118 $44,628,511",
+   "page": 757,
+   "pair": "3|2",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2022 43 2 4 2 4 1 30 16 5 3 1 7 118 $44,628,511",
+   "page": 757,
+   "pair": "2|4",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2022 43 2 4 2 4 1 30 16 5 3 1 7 118 $44,628,511",
+   "page": 757,
+   "pair": "4|2",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2022 43 2 4 2 4 1 30 16 5 3 1 7 118 $44,628,511",
+   "page": 757,
+   "pair": "2|4",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2022 43 2 4 2 4 1 30 16 5 3 1 7 118 $44,628,511",
+   "page": 757,
+   "pair": "4|1",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2022 43 2 4 2 4 1 30 16 5 3 1 7 118 $44,628,511",
+   "page": 757,
+   "pair": "6|5",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2022 43 2 4 2 4 1 30 16 5 3 1 7 118 $44,628,511",
+   "page": 757,
+   "pair": "5|3",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2022 43 2 4 2 4 1 30 16 5 3 1 7 118 $44,628,511",
+   "page": 757,
+   "pair": "3|1",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.478,
+   "gapOverSpace": 9.992,
+   "line": "2022 43 2 4 2 4 1 30 16 5 3 1 7 118 $44,628,511",
+   "page": 757,
+   "pair": "1|7",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.6257,
+   "gapOverSpace": 10.545,
+   "line": "Total 80 283 237 114 62 39 43 30 24 17 6 12 947 $119,526,571",
+   "page": 756,
+   "pair": "7|6",
+   "spaceWidthEm": 0.249
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.638,
+   "gapOverSpace": 10.637,
+   "line": "2015 8 38 30 19 7 n/a n/a 12 7 n/a n/a n/a 121 $13,322,972",
+   "page": 756,
+   "pair": "9|7",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.638,
+   "gapOverSpace": 10.637,
+   "line": "2015 8 38 30 19 7 n/a n/a 12 7 n/a n/a n/a 121 $13,322,972",
+   "page": 756,
+   "pair": "2|7",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.638,
+   "gapOverSpace": 10.637,
+   "line": "2016 5 20 32 11 1 7 n/a 5 2 n/a n/a n/a 83 $8,791,510",
+   "page": 756,
+   "pair": "1|1",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.638,
+   "gapOverSpace": 10.637,
+   "line": "2016 5 20 32 11 1 7 n/a 5 2 n/a n/a n/a 83 $8,791,510",
+   "page": 756,
+   "pair": "1|7",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.638,
+   "gapOverSpace": 10.637,
+   "line": "2016 5 20 32 11 1 7 n/a 5 2 n/a n/a n/a 83 $8,791,510",
+   "page": 756,
+   "pair": "5|2",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.638,
+   "gapOverSpace": 10.637,
+   "line": "2019 13 33 36 16 16 5 n/a 0 0 n/a n/a n/a 119 $8,731,454",
+   "page": 756,
+   "pair": "6|5",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.638,
+   "gapOverSpace": 10.637,
+   "line": "2019 13 33 36 16 16 5 n/a 0 0 n/a n/a n/a 119 $8,731,454",
+   "page": 756,
+   "pair": "0|0",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.638,
+   "gapOverSpace": 10.637,
+   "line": "2020 15 49 41 14 12 13 15 0 0 n/a n/a n/a 159 $14,462,186",
+   "page": 756,
+   "pair": "5|0",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.638,
+   "gapOverSpace": 10.637,
+   "line": "2020 15 49 41 14 12 13 15 0 0 n/a n/a n/a 159 $14,462,186",
+   "page": 756,
+   "pair": "0|0",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.638,
+   "gapOverSpace": 10.637,
+   "line": "2021 10 47 15 14 3 8 17 8 9 n/a n/a n/a 131 $13,870,444",
+   "page": 756,
+   "pair": "4|3",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.638,
+   "gapOverSpace": 10.637,
+   "line": "2021 10 47 15 14 3 8 17 8 9 n/a n/a n/a 131 $13,870,444",
+   "page": 756,
+   "pair": "3|8",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.638,
+   "gapOverSpace": 10.637,
+   "line": "2021 10 47 15 14 3 8 17 8 9 n/a n/a n/a 131 $13,870,444",
+   "page": 756,
+   "pair": "7|8",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.638,
+   "gapOverSpace": 10.637,
+   "line": "2021 10 47 15 14 3 8 17 8 9 n/a n/a n/a 131 $13,870,444",
+   "page": 756,
+   "pair": "8|9",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.638,
+   "gapOverSpace": 10.637,
+   "line": "2022 8 26 10 10 4 3 11 5 6 17 6 12 118 $44,628,511",
+   "page": 756,
+   "pair": "0|4",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.638,
+   "gapOverSpace": 10.637,
+   "line": "2022 8 26 10 10 4 3 11 5 6 17 6 12 118 $44,628,511",
+   "page": 756,
+   "pair": "4|3",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.638,
+   "gapOverSpace": 10.637,
+   "line": "2022 8 26 10 10 4 3 11 5 6 17 6 12 118 $44,628,511",
+   "page": 756,
+   "pair": "1|5",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.638,
+   "gapOverSpace": 10.637,
+   "line": "2022 8 26 10 10 4 3 11 5 6 17 6 12 118 $44,628,511",
+   "page": 756,
+   "pair": "5|6",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.638,
+   "gapOverSpace": 10.637,
+   "line": "2022 8 26 10 10 4 3 11 5 6 17 6 12 118 $44,628,511",
+   "page": 756,
+   "pair": "7|6",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.8265,
+   "gapOverSpace": 11.397,
+   "line": "2011 2 1 1 0 2 1 3 1 0 1 1 2 15 $327,637",
+   "page": 757,
+   "pair": "2|1",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.8265,
+   "gapOverSpace": 11.397,
+   "line": "2013 1 0 1 0 5 0 4 3 0 1 1 3 19 $694,731",
+   "page": 757,
+   "pair": "3|1",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.8265,
+   "gapOverSpace": 11.397,
+   "line": "2014 7 2 4 3 6 0 8 9 1 3 0 1 44 $2,286,316",
+   "page": 757,
+   "pair": "1|4",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.8265,
+   "gapOverSpace": 11.397,
+   "line": "2015 19 7 4 2 7 2 47 18 3 3 6 3 121 $13,322,972",
+   "page": 757,
+   "pair": "2|4",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.8265,
+   "gapOverSpace": 11.397,
+   "line": "2015 19 7 4 2 7 2 47 18 3 3 6 3 121 $13,322,972",
+   "page": 757,
+   "pair": "7|1",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.8265,
+   "gapOverSpace": 11.397,
+   "line": "2016 15 2 3 2 3 2 33 14 1 5 1 2 83 $8,791,510",
+   "page": 757,
+   "pair": "2|3",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.8265,
+   "gapOverSpace": 11.397,
+   "line": "2016 15 2 3 2 3 2 33 14 1 5 1 2 83 $8,791,510",
+   "page": 757,
+   "pair": "3|1",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.8265,
+   "gapOverSpace": 11.397,
+   "line": "2016 15 2 3 2 3 2 33 14 1 5 1 2 83 $8,791,510",
+   "page": 757,
+   "pair": "2|8",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.8265,
+   "gapOverSpace": 11.397,
+   "line": "44 6 5 2 5 1 45 9 5 4 6 6 138 $12,410,810",
+   "page": 757,
+   "pair": "1|4",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.8265,
+   "gapOverSpace": 11.397,
+   "line": "2019 62 7 1 2 2 1 25 14 0 0 4 1 119 $8,731,454",
+   "page": 757,
+   "pair": "1|2",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.8265,
+   "gapOverSpace": 11.397,
+   "line": "2019 62 7 1 2 2 1 25 14 0 0 4 1 119 $8,731,454",
+   "page": 757,
+   "pair": "5|1",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.8265,
+   "gapOverSpace": 11.397,
+   "line": "2020 62 11 5 4 6 0 29 24 2 7 4 5 159 $14,462,186",
+   "page": 757,
+   "pair": "0|2",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.8265,
+   "gapOverSpace": 11.397,
+   "line": "2020 62 11 5 4 6 0 29 24 2 7 4 5 159 $14,462,186",
+   "page": 757,
+   "pair": "9|2",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.8265,
+   "gapOverSpace": 11.397,
+   "line": "2021 59 7 3 2 1 1 23 25 1 2 3 4 131 $13,870,444",
+   "page": 757,
+   "pair": "1|2",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.8265,
+   "gapOverSpace": 11.397,
+   "line": "2021 59 7 3 2 1 1 23 25 1 2 3 4 131 $13,870,444",
+   "page": 757,
+   "pair": "3|2",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.8265,
+   "gapOverSpace": 11.397,
+   "line": "2022 43 2 4 2 4 1 30 16 5 3 1 7 118 $44,628,511",
+   "page": 757,
+   "pair": "1|3",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.8265,
+   "gapOverSpace": 11.397,
+   "line": "2022 43 2 4 2 4 1 30 16 5 3 1 7 118 $44,628,511",
+   "page": 757,
+   "pair": "0|1",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.838,
+   "gapOverSpace": 11.444,
+   "line": "2011 n/a 6 9 n/a n/a n/a n/a n/a n/a n/a n/a n/a 15 $327,637",
+   "page": 756,
+   "pair": "6|9",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 2.838,
+   "gapOverSpace": 11.444,
+   "line": "2012 n/a 0 0 n/a n/a n/a n/a n/a n/a n/a n/a n/a 0 $0",
+   "page": 756,
+   "pair": "0|0",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 3.144,
+   "gapOverSpace": 12.627,
+   "line": "Risk 2021 2030 2040",
+   "page": 787,
+   "pair": "0|2",
+   "spaceWidthEm": 0.249
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 3.224,
+   "gapOverSpace": 12.948,
+   "line": "Risk 2021 2030 2040",
+   "page": 787,
+   "pair": "1|2",
+   "spaceWidthEm": 0.249
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 3.358,
+   "gapOverSpace": 13.54,
+   "line": "2011 2 1 1 0 2 1 3 1 0 1 1 2 15 $327,637",
+   "page": 757,
+   "pair": "1|3",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 3.358,
+   "gapOverSpace": 13.54,
+   "line": "2011 2 1 1 0 2 1 3 1 0 1 1 2 15 $327,637",
+   "page": 757,
+   "pair": "3|1",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 3.358,
+   "gapOverSpace": 13.54,
+   "line": "2012 0 0 0 0 0 0 0 0 0 0 0 0 0 $0",
+   "page": 757,
+   "pair": "0|0",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 3.358,
+   "gapOverSpace": 13.54,
+   "line": "2012 0 0 0 0 0 0 0 0 0 0 0 0 0 $0",
+   "page": 757,
+   "pair": "0|0",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 3.358,
+   "gapOverSpace": 13.54,
+   "line": "2012 0 0 0 0 0 0 0 0 0 0 0 0 0 $0",
+   "page": 757,
+   "pair": "0|0",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 3.358,
+   "gapOverSpace": 13.54,
+   "line": "2013 1 0 1 0 5 0 4 3 0 1 1 3 19 $694,731",
+   "page": 757,
+   "pair": "0|4",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 3.358,
+   "gapOverSpace": 13.54,
+   "line": "2013 1 0 1 0 5 0 4 3 0 1 1 3 19 $694,731",
+   "page": 757,
+   "pair": "4|3",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 3.358,
+   "gapOverSpace": 13.54,
+   "line": "2014 7 2 4 3 6 0 8 9 1 3 0 1 44 $2,286,316",
+   "page": 757,
+   "pair": "0|8",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 3.358,
+   "gapOverSpace": 13.54,
+   "line": "2014 7 2 4 3 6 0 8 9 1 3 0 1 44 $2,286,316",
+   "page": 757,
+   "pair": "8|9",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 3.358,
+   "gapOverSpace": 13.54,
+   "line": "44 6 5 2 5 1 45 9 5 4 6 6 138 $12,410,810",
+   "page": 757,
+   "pair": "5|9",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 4.8872,
+   "gapOverSpace": 19.707,
+   "line": "Year 2050 2100 2150 2050 2100 2150",
+   "page": 28,
+   "pair": "0|2",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 4.8872,
+   "gapOverSpace": 19.707,
+   "line": "Year 2050 2100 2150 2050 2100 2150",
+   "page": 28,
+   "pair": "0|2",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 4.8872,
+   "gapOverSpace": 19.707,
+   "line": "Year 2050 2100 2150 2050 2100 2150",
+   "page": 28,
+   "pair": "0|2",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 4.8872,
+   "gapOverSpace": 19.707,
+   "line": "Year 2050 2100 2150 2050 2100 2150",
+   "page": 28,
+   "pair": "0|2",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 4.8872,
+   "gapOverSpace": 19.707,
+   "line": "Year 2050 2100 2150 2050 2100 2150",
+   "page": 28,
+   "pair": "0|2",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 9.446,
+   "gapOverSpace": 38.089,
+   "line": "Northwest Region 0.60–1.03 2.64–5.98 5.40–10.86",
+   "page": 1291,
+   "pair": "3|2",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 9.446,
+   "gapOverSpace": 38.089,
+   "line": "Northwest Region 0.60–1.03 2.64–5.98 5.40–10.86",
+   "page": 1291,
+   "pair": "8|5",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 10.57,
+   "gapOverSpace": 42.621,
+   "line": "Tacoma, WA 0.9–1.6 2.5–5.3 4.2–10.7",
+   "page": 1291,
+   "pair": "6|2",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 10.57,
+   "gapOverSpace": 42.621,
+   "line": "Neah Bay, WA 0.1–0.8 1.0–3.8 1.8–8.4",
+   "page": 1291,
+   "pair": "8|1",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 10.57,
+   "gapOverSpace": 42.621,
+   "line": "Neah Bay, WA 0.1–0.8 1.0–3.8 1.8–8.4",
+   "page": 1291,
+   "pair": "8|1",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 10.57,
+   "gapOverSpace": 42.621,
+   "line": "Tahola, WA 0.5–1.2 1.7–4.5 3.0–9.5",
+   "page": 1291,
+   "pair": "2|1",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 10.57,
+   "gapOverSpace": 42.621,
+   "line": "Tahola, WA 0.5–1.2 1.7–4.5 3.0–9.5",
+   "page": 1291,
+   "pair": "5|3",
+   "spaceWidthEm": 0.248
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 11.704,
+   "gapOverSpace": 47.004,
+   "line": "Location 2050 2100 2150",
+   "page": 1291,
+   "pair": "0|2",
+   "spaceWidthEm": 0.249
+  },
+  {
+   "book": "noaa-nca5-2023",
+   "closes": false,
+   "gapEm": 11.704,
+   "gapOverSpace": 47.004,
+   "line": "Location 2050 2100 2150",
+   "page": 1291,
+   "pair": "0|2",
+   "spaceWidthEm": 0.249
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.6051,
+   "gapOverSpace": null,
+   "line": "4 4 Divide both sides by 4",
+   "page": 30,
+   "pair": "4|4",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 2.1572,
+   "gapOverSpace": null,
+   "line": "8 8",
+   "page": 31,
+   "pair": "8|8",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.8861,
+   "gapOverSpace": null,
+   "line": "7 7",
+   "page": 31,
+   "pair": "7|7",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 3.6728,
+   "gapOverSpace": null,
+   "line": "4 4 Divide both sides by 4",
+   "page": 33,
+   "pair": "4|4",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 2.5386,
+   "gapOverSpace": null,
+   "line": "5 5 Divide both sides by 5",
+   "page": 34,
+   "pair": "5|5",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.5147,
+   "gapOverSpace": null,
+   "line": "9 9",
+   "page": 35,
+   "pair": "9|9",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.8861,
+   "gapOverSpace": null,
+   "line": "2 2",
+   "page": 35,
+   "pair": "2|2",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.4144,
+   "gapOverSpace": null,
+   "line": "8 8 Divide both sides by 8",
+   "page": 37,
+   "pair": "8|8",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.5576,
+   "gapOverSpace": null,
+   "line": "6 6 Divide both sides by 6",
+   "page": 38,
+   "pair": "6|6",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.2236,
+   "gapOverSpace": null,
+   "line": "2 2 Divide both sides by 2",
+   "page": 38,
+   "pair": "2|2",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.4144,
+   "gapOverSpace": null,
+   "line": "9 9 Divide both sides by 9",
+   "page": 39,
+   "pair": "9|9",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.5047,
+   "gapOverSpace": null,
+   "line": "4 4 Divide both sides by 4",
+   "page": 39,
+   "pair": "4|4",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.4144,
+   "gapOverSpace": null,
+   "line": "4 4 Divide both sides by 4",
+   "page": 40,
+   "pair": "4|4",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.4144,
+   "gapOverSpace": null,
+   "line": "3 3 Divide both sides by 3",
+   "page": 40,
+   "pair": "3|3",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.5047,
+   "gapOverSpace": null,
+   "line": "9 9 Divide both sides by 9",
+   "page": 44,
+   "pair": "9|9",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.5951,
+   "gapOverSpace": null,
+   "line": "5 5 Divide both sides by 5",
+   "page": 44,
+   "pair": "5|5",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.1343,
+   "gapOverSpace": null,
+   "line": ". 15 15 Divide both sides by 15. Reduce on right side.",
+   "page": 45,
+   "pair": "5|1",
+   "spaceWidthEm": 0
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.9765,
+   "gapOverSpace": null,
+   "line": "2 2 Divide both sides by 2",
+   "page": 45,
+   "pair": "2|2",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.4143,
+   "gapOverSpace": null,
+   "line": "3 3 w w To isolate the x we divide by 3 or w.",
+   "page": 47,
+   "pair": "3|3",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.8761,
+   "gapOverSpace": null,
+   "line": "2 2 Divide both sides by 2",
+   "page": 49,
+   "pair": "2|2",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.7858,
+   "gapOverSpace": null,
+   "line": "5 5 Divide both sides by 5",
+   "page": 53,
+   "pair": "5|5",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.5047,
+   "gapOverSpace": null,
+   "line": "2 2",
+   "page": 53,
+   "pair": "2|2",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.9692,
+   "gapOverSpace": null,
+   "line": "2 2",
+   "page": 53,
+   "pair": "2|2",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.2337,
+   "gapOverSpace": null,
+   "line": "2 2",
+   "page": 54,
+   "pair": "2|2",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.7958,
+   "gapOverSpace": null,
+   "line": "2 2",
+   "page": 54,
+   "pair": "2|2",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.6854,
+   "gapOverSpace": null,
+   "line": "2 2",
+   "page": 55,
+   "pair": "2|2",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.7858,
+   "gapOverSpace": null,
+   "line": "6 6",
+   "page": 55,
+   "pair": "6|6",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 0.7529,
+   "gapOverSpace": null,
+   "line": "12.5 12.5 Divide by 12.5",
+   "page": 59,
+   "pair": "5|1",
+   "spaceWidthEm": 0
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.4054,
+   "gapOverSpace": null,
+   "line": "55 55 Divide both sides by 55",
+   "page": 59,
+   "pair": "5|5",
+   "spaceWidthEm": 0
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.7858,
+   "gapOverSpace": null,
+   "line": "5 5 Divide both sides by 5",
+   "page": 64,
+   "pair": "5|5",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.5047,
+   "gapOverSpace": null,
+   "line": "3 3 Divide both sides by 3",
+   "page": 65,
+   "pair": "3|3",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.314,
+   "gapOverSpace": null,
+   "line": "3 3 Divide both sides by 3",
+   "page": 65,
+   "pair": "3|3",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.6854,
+   "gapOverSpace": null,
+   "line": "3 3 Divide both sides by 3",
+   "page": 66,
+   "pair": "3|3",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.8761,
+   "gapOverSpace": null,
+   "line": "6 6 Divide both sides by 6",
+   "page": 66,
+   "pair": "6|6",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.5047,
+   "gapOverSpace": null,
+   "line": "4 4 Divide both sides by 4",
+   "page": 67,
+   "pair": "4|4",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.314,
+   "gapOverSpace": null,
+   "line": "6 6 Divide both sides by 6",
+   "page": 68,
+   "pair": "6|6",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.5951,
+   "gapOverSpace": null,
+   "line": "3 3 Divide both sides by 3",
+   "page": 68,
+   "pair": "3|3",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.4043,
+   "gapOverSpace": null,
+   "line": "2 2 Divide both sides by 2",
+   "page": 74,
+   "pair": "2|2",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.6954,
+   "gapOverSpace": null,
+   "line": "4 4 Divide both sides by 4",
+   "page": 75,
+   "pair": "4|4",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 2.5714,
+   "gapOverSpace": null,
+   "line": "4 4+ t",
+   "page": 75,
+   "pair": "4|4",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 0.7529,
+   "gapOverSpace": null,
+   "line": "10 10 Divide both sides by 10",
+   "page": 80,
+   "pair": "0|1",
+   "spaceWidthEm": 0
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.2237,
+   "gapOverSpace": null,
+   "line": "6 6 Divide both sides by 6",
+   "page": 81,
+   "pair": "6|6",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.6279,
+   "gapOverSpace": null,
+   "line": "Up 4 1− t 4− 4t",
+   "page": 82,
+   "pair": "4|1",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 0.6626,
+   "gapOverSpace": null,
+   "line": "16 16 Divide both sides by 16",
+   "page": 82,
+   "pair": "6|1",
+   "spaceWidthEm": 0
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.1333,
+   "gapOverSpace": null,
+   "line": "6 6 Divide both sides by 6",
+   "page": 82,
+   "pair": "6|6",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.2374,
+   "gapOverSpace": null,
+   "line": "Slow 40 2.5− t 100− 40t",
+   "page": 83,
+   "pair": "0|2",
+   "spaceWidthEm": 0
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 0.7529,
+   "gapOverSpace": null,
+   "line": "15 15 Divide both sides by 15",
+   "page": 83,
+   "pair": "5|1",
+   "spaceWidthEm": 0
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.658,
+   "gapOverSpace": null,
+   "line": "3 0",
+   "page": 93,
+   "pair": "3|0",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.3971,
+   "gapOverSpace": null,
+   "line": "2 2",
+   "page": 99,
+   "pair": "2|2",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 2.5413,
+   "gapOverSpace": null,
+   "line": "4 4 4 Divide each term by 4",
+   "page": 104,
+   "pair": "4|4",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.5576,
+   "gapOverSpace": null,
+   "line": "4 4 4 Divide each term by 4",
+   "page": 104,
+   "pair": "4|4",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.4774,
+   "gapOverSpace": null,
+   "line": "5 5 5 Divide each term by 5",
+   "page": 112,
+   "pair": "5|5",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.0658,
+   "gapOverSpace": null,
+   "line": "5 5 5 Divide each term by 5",
+   "page": 112,
+   "pair": "5|5",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.1461,
+   "gapOverSpace": null,
+   "line": "2 2",
+   "page": 121,
+   "pair": "2|2",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.638,
+   "gapOverSpace": null,
+   "line": "3 3 2 2",
+   "page": 125,
+   "pair": "3|3",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 3.9365,
+   "gapOverSpace": null,
+   "line": "3 3 2 2",
+   "page": 125,
+   "pair": "3|2",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 0.9755,
+   "gapOverSpace": null,
+   "line": "3 3 2 2",
+   "page": 125,
+   "pair": "2|2",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.5476,
+   "gapOverSpace": null,
+   "line": "4 4 4 4",
+   "page": 129,
+   "pair": "4|4",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 3.2038,
+   "gapOverSpace": null,
+   "line": "4 4 4 4",
+   "page": 129,
+   "pair": "4|4",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.7985,
+   "gapOverSpace": null,
+   "line": "4 4 4 4",
+   "page": 129,
+   "pair": "4|4",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.397,
+   "gapOverSpace": null,
+   "line": "4 4 4",
+   "page": 130,
+   "pair": "4|4",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.0558,
+   "gapOverSpace": null,
+   "line": "4 4 4",
+   "page": 130,
+   "pair": "4|4",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 3.4447,
+   "gapOverSpace": null,
+   "line": "4 4",
+   "page": 131,
+   "pair": "4|4",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.9692,
+   "gapOverSpace": null,
+   "line": "− 3− 3− 3 2 2 2 Divide by coeﬃcient of y",
+   "page": 135,
+   "pair": "3|2",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 2.3707,
+   "gapOverSpace": null,
+   "line": "− 3− 3− 3 2 2 2 Divide by coeﬃcient of y",
+   "page": 135,
+   "pair": "2|2",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.0658,
+   "gapOverSpace": null,
+   "line": "− 3− 3− 3 2 2 2 Divide by coeﬃcient of y",
+   "page": 135,
+   "pair": "2|2",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.7868,
+   "gapOverSpace": null,
+   "line": "17 17",
+   "page": 140,
+   "pair": "7|1",
+   "spaceWidthEm": 0
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 2.0495,
+   "gapOverSpace": null,
+   "line": "8 8",
+   "page": 141,
+   "pair": "8|8",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 2.0769,
+   "gapOverSpace": null,
+   "line": "5 5 5",
+   "page": 143,
+   "pair": "5|5",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.5951,
+   "gapOverSpace": null,
+   "line": "5 5 5",
+   "page": 143,
+   "pair": "5|5",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.4043,
+   "gapOverSpace": null,
+   "line": "8 8",
+   "page": 143,
+   "pair": "8|8",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 4.0971,
+   "gapOverSpace": null,
+   "line": "8 8",
+   "page": 146,
+   "pair": "8|8",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 2.1298,
+   "gapOverSpace": null,
+   "line": "4 4",
+   "page": 146,
+   "pair": "4|4",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.1471,
+   "gapOverSpace": null,
+   "line": "14 14",
+   "page": 147,
+   "pair": "4|1",
+   "spaceWidthEm": 0
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.7986,
+   "gapOverSpace": null,
+   "line": "2 2",
+   "page": 147,
+   "pair": "2|2",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 4.2577,
+   "gapOverSpace": null,
+   "line": "5 5",
+   "page": 147,
+   "pair": "5|5",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 2.3707,
+   "gapOverSpace": null,
+   "line": "6 6",
+   "page": 148,
+   "pair": "6|6",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.2374,
+   "gapOverSpace": null,
+   "line": "19 19",
+   "page": 148,
+   "pair": "9|1",
+   "spaceWidthEm": 0
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 3.2841,
+   "gapOverSpace": null,
+   "line": "2 2",
+   "page": 148,
+   "pair": "2|2",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.1461,
+   "gapOverSpace": null,
+   "line": "2 2",
+   "page": 152,
+   "pair": "2|2",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.0658,
+   "gapOverSpace": null,
+   "line": "2 2",
+   "page": 152,
+   "pair": "2|2",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.7986,
+   "gapOverSpace": null,
+   "line": "2 2",
+   "page": 152,
+   "pair": "2|2",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.387,
+   "gapOverSpace": null,
+   "line": "5 5 5",
+   "page": 154,
+   "pair": "5|5",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.2264,
+   "gapOverSpace": null,
+   "line": "5 5 5",
+   "page": 154,
+   "pair": "5|5",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 2.3707,
+   "gapOverSpace": null,
+   "line": "4 4",
+   "page": 154,
+   "pair": "4|4",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 4.0078,
+   "gapOverSpace": null,
+   "line": "15 15",
+   "page": 159,
+   "pair": "5|1",
+   "spaceWidthEm": 0
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.5587,
+   "gapOverSpace": null,
+   "line": "29 29 Divide both sides by 39",
+   "page": 161,
+   "pair": "9|2",
+   "spaceWidthEm": 0
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 0.6653,
+   "gapOverSpace": null,
+   "line": "0.03 0.03",
+   "page": 163,
+   "pair": "3|0",
+   "spaceWidthEm": 0
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 0.4143,
+   "gapOverSpace": null,
+   "line": "13000 13000",
+   "page": 163,
+   "pair": "0|1",
+   "spaceWidthEm": 0
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 0.6553,
+   "gapOverSpace": null,
+   "line": "0.2 0.2",
+   "page": 168,
+   "pair": "2|0",
+   "spaceWidthEm": 0
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 3.6063,
+   "gapOverSpace": null,
+   "line": "0.06 0.06",
+   "page": 170,
+   "pair": "6|0",
+   "spaceWidthEm": 0
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 2.2703,
+   "gapOverSpace": null,
+   "line": "w 0 0",
+   "page": 171,
+   "pair": "0|0",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.0658,
+   "gapOverSpace": null,
+   "line": "2 2 5 5",
+   "page": 237,
+   "pair": "2|2",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 2.3707,
+   "gapOverSpace": null,
+   "line": "2 2 5 5",
+   "page": 237,
+   "pair": "2|5",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.8889,
+   "gapOverSpace": null,
+   "line": "2 2 5 5",
+   "page": 237,
+   "pair": "5|5",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.0658,
+   "gapOverSpace": null,
+   "line": "4 4",
+   "page": 238,
+   "pair": "4|4",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 2.0495,
+   "gapOverSpace": null,
+   "line": "2 2 2 2",
+   "page": 239,
+   "pair": "2|2",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 2.3807,
+   "gapOverSpace": null,
+   "line": "2 2 2 2",
+   "page": 239,
+   "pair": "2|2",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.0658,
+   "gapOverSpace": null,
+   "line": "2 2 2 2",
+   "page": 239,
+   "pair": "2|2",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.0658,
+   "gapOverSpace": null,
+   "line": "2 2",
+   "page": 239,
+   "pair": "2|2",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.397,
+   "gapOverSpace": null,
+   "line": "4 4 + 2+ 2 Solve each equation",
+   "page": 239,
+   "pair": "4|4",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.2364,
+   "gapOverSpace": null,
+   "line": "2 2 + 3+ 3 +4 +4 Solve each equation",
+   "page": 240,
+   "pair": "2|2",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.0959,
+   "gapOverSpace": null,
+   "line": "3 0− 9− 9 +1 +1 Solve each equation",
+   "page": 240,
+   "pair": "3|0",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.8086,
+   "gapOverSpace": null,
+   "line": "2 2",
+   "page": 240,
+   "pair": "2|2",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.0955,
+   "gapOverSpace": null,
+   "line": "x 0 or 3x +5 0 Subtract 5from second equation",
+   "page": 243,
+   "pair": "5|0",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.7182,
+   "gapOverSpace": null,
+   "line": "3 3",
+   "page": 243,
+   "pair": "3|3",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.8086,
+   "gapOverSpace": null,
+   "line": "6 6",
+   "page": 269,
+   "pair": "6|6",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.8889,
+   "gapOverSpace": null,
+   "line": "5 5",
+   "page": 269,
+   "pair": "5|5",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.7283,
+   "gapOverSpace": null,
+   "line": "4 4",
+   "page": 270,
+   "pair": "4|4",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.0668,
+   "gapOverSpace": null,
+   "line": "3.5 3.5",
+   "page": 271,
+   "pair": "5|3",
+   "spaceWidthEm": 0
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.387,
+   "gapOverSpace": null,
+   "line": "8 8",
+   "page": 274,
+   "pair": "8|8",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.6379,
+   "gapOverSpace": null,
+   "line": "2 2",
+   "page": 275,
+   "pair": "2|2",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.5576,
+   "gapOverSpace": null,
+   "line": "5 5",
+   "page": 277,
+   "pair": "5|5",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.4774,
+   "gapOverSpace": null,
+   "line": "7 7",
+   "page": 326,
+   "pair": "7|7",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.3971,
+   "gapOverSpace": null,
+   "line": "3 3",
+   "page": 327,
+   "pair": "3|3",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.3067,
+   "gapOverSpace": null,
+   "line": "4 4− 3− 3",
+   "page": 330,
+   "pair": "4|4",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.387,
+   "gapOverSpace": null,
+   "line": "2 2 2 2",
+   "page": 333,
+   "pair": "2|2",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 2.2101,
+   "gapOverSpace": null,
+   "line": "2 2 2 2",
+   "page": 333,
+   "pair": "2|2",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 2.461,
+   "gapOverSpace": null,
+   "line": "2 2 2 2",
+   "page": 333,
+   "pair": "2|2",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.387,
+   "gapOverSpace": null,
+   "line": "6 6 6 6",
+   "page": 334,
+   "pair": "6|6",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 2.2201,
+   "gapOverSpace": null,
+   "line": "6 6 6 6",
+   "page": 334,
+   "pair": "6|6",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 2.0394,
+   "gapOverSpace": null,
+   "line": "6 6 6 6",
+   "page": 334,
+   "pair": "6|6",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.8789,
+   "gapOverSpace": null,
+   "line": "4 4 4 4",
+   "page": 335,
+   "pair": "4|4",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 2.3807,
+   "gapOverSpace": null,
+   "line": "4 4 4 4",
+   "page": 335,
+   "pair": "4|4",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 2.7019,
+   "gapOverSpace": null,
+   "line": "4 4 4 4",
+   "page": 335,
+   "pair": "4|4",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.8086,
+   "gapOverSpace": null,
+   "line": "3 3",
+   "page": 335,
+   "pair": "3|3",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 2.2101,
+   "gapOverSpace": null,
+   "line": "2 2 2",
+   "page": 340,
+   "pair": "2|2",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 3.1135,
+   "gapOverSpace": null,
+   "line": "2 2 2",
+   "page": 340,
+   "pair": "2|2",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.7986,
+   "gapOverSpace": null,
+   "line": "3 3 3",
+   "page": 341,
+   "pair": "3|3",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.9692,
+   "gapOverSpace": null,
+   "line": "3 3 3",
+   "page": 341,
+   "pair": "3|3",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.2365,
+   "gapOverSpace": null,
+   "line": "2 2",
+   "page": 353,
+   "pair": "2|2",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.2364,
+   "gapOverSpace": null,
+   "line": "3 3",
+   "page": 354,
+   "pair": "3|3",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.397,
+   "gapOverSpace": null,
+   "line": "6 6",
+   "page": 359,
+   "pair": "6|6",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 2.3707,
+   "gapOverSpace": null,
+   "line": "2 2 2",
+   "page": 360,
+   "pair": "2|2",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.7283,
+   "gapOverSpace": null,
+   "line": "2 2 2",
+   "page": 360,
+   "pair": "2|2",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.2264,
+   "gapOverSpace": null,
+   "line": "5 5",
+   "page": 367,
+   "pair": "5|5",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.6379,
+   "gapOverSpace": null,
+   "line": "2 2 Divide each term by 2",
+   "page": 367,
+   "pair": "2|2",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.2264,
+   "gapOverSpace": null,
+   "line": "6 6− 12− 12",
+   "page": 370,
+   "pair": "6|6",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 2.0495,
+   "gapOverSpace": null,
+   "line": "4 4 4",
+   "page": 375,
+   "pair": "4|4",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.7985,
+   "gapOverSpace": null,
+   "line": "4 4 4",
+   "page": 375,
+   "pair": "4|4",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 0.7045,
+   "gapOverSpace": null,
+   "line": "up r− 2 8− t 30",
+   "page": 377,
+   "pair": "2|8",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.9692,
+   "gapOverSpace": null,
+   "line": "2 2",
+   "page": 377,
+   "pair": "2|2",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 0.7747,
+   "gapOverSpace": null,
+   "line": "0 3",
+   "page": 380,
+   "pair": "0|3",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 0.7747,
+   "gapOverSpace": null,
+   "line": "1 0",
+   "page": 380,
+   "pair": "1|0",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 0.7747,
+   "gapOverSpace": null,
+   "line": "3 0",
+   "page": 380,
+   "pair": "3|0",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 0.7747,
+   "gapOverSpace": null,
+   "line": "4 3",
+   "page": 380,
+   "pair": "4|3",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.0959,
+   "gapOverSpace": null,
+   "line": "x2 +x− 6 0 Solve by factoring",
+   "page": 388,
+   "pair": "6|0",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.0955,
+   "gapOverSpace": null,
+   "line": "x + 3 0 and x− 2 0 Solve each equation",
+   "page": 388,
+   "pair": "3|0",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.0959,
+   "gapOverSpace": null,
+   "line": "x + 3 0 and x− 2 0 Solve each equation",
+   "page": 388,
+   "pair": "2|0",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.1461,
+   "gapOverSpace": null,
+   "line": "2 2",
+   "page": 389,
+   "pair": "2|2",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 0.9855,
+   "gapOverSpace": null,
+   "line": "2 2",
+   "page": 406,
+   "pair": "2|2",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.0658,
+   "gapOverSpace": null,
+   "line": "9 9 Divide both sides by 9",
+   "page": 407,
+   "pair": "9|9",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.5576,
+   "gapOverSpace": null,
+   "line": "7 7",
+   "page": 407,
+   "pair": "7|7",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.4774,
+   "gapOverSpace": null,
+   "line": "3 3",
+   "page": 408,
+   "pair": "3|3",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.4773,
+   "gapOverSpace": null,
+   "line": "3 3",
+   "page": 408,
+   "pair": "3|3",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 0.9855,
+   "gapOverSpace": null,
+   "line": "3 3 Divide both sides by 3",
+   "page": 411,
+   "pair": "3|3",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 1.4774,
+   "gapOverSpace": null,
+   "line": "3 3",
+   "page": 412,
+   "pair": "3|3",
+   "spaceWidthEm": null
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 2.0303,
+   "gapOverSpace": null,
+   "line": "1.296719528 1.296719528",
+   "page": 415,
+   "pair": "8|1",
+   "spaceWidthEm": 0
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 0.4846,
+   "gapOverSpace": null,
+   "line": "0.466 0.466 Divide both sides by 0.466",
+   "page": 422,
+   "pair": "6|0",
+   "spaceWidthEm": 0
+  },
+  {
+   "book": "wallace-algebra-2010",
+   "closes": false,
+   "gapEm": 0.575,
+   "gapOverSpace": null,
+   "line": "0.700 0.700 Divide both sides by 0.700",
+   "page": 430,
+   "pair": "0|0",
+   "spaceWidthEm": 0
+  }
+ ],
+ "digitToDigitByBook": {
+  "faa-phak-8083-25c": 6,
+  "noaa-nca5-2023": 222,
+  "wallace-algebra-2010": 160
+ },
+ "fontStatesNoSpaceWidth": {
+  "wallace-algebra-2010": 140
+ },
+ "fontStatesZeroSpaceWidth": {
+  "wallace-algebra-2010": 20
+ },
+ "measured": "2026-09-22",
+ "sites": {
+  "allSpacesPdfkitReportsThatTheShowsDoNotDraw": 87486,
+  "betweenTwoShowsWithAMeasuredGap": 20457,
+  "closedByTheRule": 1,
+  "digitToDigitOneFontOneSize": 388
+ },
+ "what": "Every boundary in the cached corpus where PDFKit reports a space between two shows of one font at one size on one baseline, the page draws no space glyph there, and a digit stands on each side. gapOverSpace is the gap in em over the space that same font draws; closes is the rule of #274."
+}

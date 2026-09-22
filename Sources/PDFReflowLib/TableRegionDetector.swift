@@ -114,7 +114,8 @@ enum TableRegionDetector {
     ///   agreeing on where the second cell starts state the boundary (`CAPPS` and `FDNY` on page
     ///   429 of the 9/11 report; five rows on page 430). Merged rows reaching across that
     ///   boundary are the proof that the two sides are one line of text and not two columns of a
-    ///   two-column page, which never share a line.
+    ///   two-column page, which never share a line. A run the page filled to one measure states
+    ///   no boundary this way, however: see `isSetToAMeasure` (#268).
     /// - **A column of numbers on a common right edge.** At least three rows ending on one right
     ///   edge with a digit, and two rows in three ending with a digit across the whole run: a
     ///   justified paragraph shares that right edge but does not end line after line in a number.
@@ -264,9 +265,20 @@ enum TableRegionDetector {
     /// words in five must agree, which no line of prose in the corpus manages — `10 lbs of nuts
     /// and 20 lbs of chocolate`, a worked exercise in Wallace's algebra, comes closest at three
     /// in four.
+    ///
+    /// The recognizer also moves the spaces themselves, and then no word has a counterpart to be
+    /// near: page 151's `! lt>mber Per Cent Number Percent` broke `Number` into `lt` and `mber`
+    /// and closed `Per Cent` up into `Percent`, and page 241's `I Number Per Cent Number PerCeat`
+    /// did the second of those (#262). `repeatsItsLetters` reads the same repetition with the
+    /// spaces taken out.
     static func printsOneColumnLabel(_ text: String) -> Bool {
         let words = text.lowercased().split { !$0.isLetter && !$0.isNumber }.map(String.init)
         guard words.count >= 4 else { return false }
+        return repeatsAWord(words) || repeatsItsLetters(words)
+    }
+
+    /// The word-for-word reading of the repetition (#257).
+    private static func repeatsAWord(_ words: [String]) -> Bool {
         for period in 1...(words.count - 2) {
             let repeated = words.count - period
             guard repeated >= 2 else { break }
@@ -279,14 +291,62 @@ enum TableRegionDetector {
         return false
     }
 
+    /// Whether the line's letters, with the spaces the recognizer moved taken out, are one label
+    /// printed once per column (#262).
+    ///
+    /// The line is read as its letters in order. For each number of columns it is cut into that
+    /// many pieces of equal length, each cut moved to the nearest word boundary, and the pieces
+    /// are compared as the words were — against the first and against the one before. A piece the
+    /// recognizer broke in two or ran together still stands where the label stands, so
+    /// `ltmberpercent` answers `numberpercent` and `inumberpercent` answers `numberperceat`,
+    /// which word for word they cannot.
+    ///
+    /// Two things keep this as narrow as the word reading. A piece is a stretch of several words,
+    /// so half of it is far more room than half of a word: the pieces agree within a fifth of the
+    /// shorter, which over a label of three words is tighter than the word reading allows a
+    /// single spoiled word inside it. And every word of the line must hold a letter, because a
+    /// label is written in words — the IRS publication's `0 0 0 200` and Wallace's `3r + 6+ 3r
+    /// =30` repeat their letters too, and they are a table's figures and an equation, not a
+    /// heading.
+    private static func repeatsItsLetters(_ words: [String]) -> Bool {
+        guard words.allSatisfy({ $0.contains(where: \.isLetter) }) else { return false }
+        let letters = Array(words.joined())
+        var starts: [Int] = []
+        var offset = 0
+        for word in words { starts.append(offset); offset += word.count }
+        for columns in 2...words.count {
+            let width = Double(letters.count) / Double(columns)
+            var cuts = [0]
+            for column in 1..<columns {
+                let target = Double(column) * width
+                guard let cut = starts.dropFirst().filter({ $0 > cuts[cuts.count - 1] })
+                    .min(by: { abs(Double($0) - target) < abs(Double($1) - target) }) else { break }
+                cuts.append(cut)
+            }
+            guard cuts.count == columns else { continue }
+            cuts.append(letters.count)
+            let pieces = (0..<columns).map { Array(letters[cuts[$0]..<cuts[$0 + 1]]) }
+            if (1..<columns).allSatisfy({ nearly(pieces[$0], pieces[0], oneLetterIn: 5)
+                                          || nearly(pieces[$0], pieces[$0 - 1], oneLetterIn: 5) }) {
+                return true
+            }
+        }
+        return false
+    }
+
     /// Whether two words are the same word, allowing for what a recognizer does to letters: an
     /// edit distance of at most half the shorter word, and a length difference no larger (#257).
     private static func nearlyEqual(_ a: String, _ b: String) -> Bool {
+        nearly(Array(a), Array(b), oneLetterIn: 2)
+    }
+
+    /// Whether two runs of letters are the same run, within one spoiled letter in `divisor` of
+    /// the shorter, in length as well as in content.
+    private static func nearly(_ a: [Character], _ b: [Character], oneLetterIn divisor: Int) -> Bool {
         if a == b { return true }
-        let shortest = min(a.count, b.count)
-        let allowed = max(1, shortest / 2)
+        let allowed = max(1, min(a.count, b.count) / divisor)
         guard abs(a.count - b.count) <= allowed else { return false }
-        return editDistance(Array(a), Array(b)) <= allowed
+        return editDistance(a, b) <= allowed
     }
 
     private static func editDistance(_ a: [Character], _ b: [Character]) -> Int {
@@ -338,17 +398,14 @@ enum TableRegionDetector {
             row.count > 1 && Int(lines[row[1]].fontSize.rounded()) == Int(lines[row[0]].fontSize.rounded())
         }
         let whole = rows.filter { $0.count == 1 }
-        if split.count >= 2, whole.count >= 2 {
+        if split.count >= 2, whole.count >= 2,
+           !isSetToAMeasure(rows, in: lines, body: body, rightToLeft: rightToLeft) {
             let edges = split.map { leading(lines[$0[1]].rect) }.sorted(by: isBefore)
             if let edge = edges.first, abs(edges.last! - edge) <= body * 0.6,
                whole.count(where: { isBefore(edge, trailing(lines[$0[0]].rect))
                                     && abs(trailing(lines[$0[0]].rect) - edge) > body }) >= 2 { return true }
         }
-        func endsInDigit(_ row: [Int]) -> Bool {
-            let text = lines[row.last!].text
-            return text.reversed().drop(while: { "%*).\u{2019}'\"".contains($0) || $0.isWhitespace })
-                .first?.isNumber == true
-        }
+        func endsInDigit(_ row: [Int]) -> Bool { TableRegionDetector.endsInDigit(row, in: lines) }
         let numeric = rows.filter(endsInDigit)
         guard numeric.count * 3 >= rows.count * 2 else { return false }
         let right = numeric.map { trailing(lines[$0.last!].rect) }
@@ -361,5 +418,50 @@ enum TableRegionDetector {
             let onEdge = right.count { abs($0 - edge) <= body * 0.5 }
             return onEdge >= 3 && onEdge * 2 >= rows.count
         }
+    }
+
+    /// Whether the page filled a run to one measure: the shape of a paragraph hung at an indent,
+    /// which is not the shape of a table (#268).
+    ///
+    /// Replay Clocks sets its references with the citation number outdented and the entry hanging
+    /// at an indent, and on geometry alone that is a two-column table: three of the eleven rows of
+    /// page 10's last block hand back `[8]`, `[10]` and `[12]` as a cell of their own on one edge,
+    /// and the rows the extractor merged — `[9] David L Mills. …` — reach across it. The 9/11
+    /// report's flight timelines are set the same way, the time outdented and the entry hung, and
+    /// they *are* a table; so are the report's list of illustrations, the Blue Book's contents,
+    /// the FAA handbook's cruise table and the USGS statistics. Neither the share of rows the
+    /// extractor split nor the share opening on the run's own left edge tells the two apart: both
+    /// were measured under #171 and both released the references and the real tables together.
+    ///
+    /// What separates them is the other edge. A cell is set to its content, so a table's rows end
+    /// where their words end and the run is ragged: one row in twenty-six reaches the far edge of
+    /// the 9/11 timeline on page 50, one in twenty-four of page 51's, four in fifteen of the list
+    /// of illustrations. A paragraph is set to a measure, so its lines end on that measure again
+    /// and again and only the last line of each entry falls short: seven of the eleven reference
+    /// rows end within a fifth of a body of 558.2, and the four that do not are the closing line
+    /// of an entry. Most of a run's rows ending on one edge is therefore the page saying it filled
+    /// them, and a filled run is prose.
+    ///
+    /// Unless that edge is a column of numbers, which is the reading `statesAColumn` already makes
+    /// of a right edge and must keep: the NOAA chapter contents right-align `4-16`, `5-9`, `7-20`
+    /// against the measure, so every row reaches it. An edge carried by numbers is a column; an
+    /// edge carried by words is a measure.
+    private static func isSetToAMeasure(_ rows: [[Int]], in lines: [TextLine], body: CGFloat,
+                                        rightToLeft: Bool) -> Bool {
+        func trailing(_ rect: CGRect) -> CGFloat { rightToLeft ? rect.minX : rect.maxX }
+        func isBefore(_ first: CGFloat, _ second: CGFloat) -> Bool { rightToLeft ? first > second : first < second }
+        let ends = rows.map { trailing(lines[$0.last!].rect) }
+        guard let measure = ends.max(by: isBefore) else { return false }
+        let filled = rows.indices.filter { abs(ends[$0] - measure) <= body * 0.2 }
+        guard filled.count >= 3, filled.count * 2 > rows.count else { return false }
+        return filled.count(where: { endsInDigit(rows[$0], in: lines) }) * 2 < filled.count
+    }
+
+    /// Whether a row ends in a number, reading past the punctuation a sentence or a note marker
+    /// closes on.
+    private static func endsInDigit(_ row: [Int], in lines: [TextLine]) -> Bool {
+        let text = lines[row.last!].text
+        return text.reversed().drop(while: { "%*).\u{2019}'\"".contains($0) || $0.isWhitespace })
+            .first?.isNumber == true
     }
 }

@@ -604,10 +604,10 @@
         150,
         250
       ],
-      "reviewStatus": "Full conversion, EPUBCheck, progress and 512 MiB Mac RSS gate pass. The separate warning/refusal quality gate fails on pages 74 and 150. No table-transcription fidelity qualification.",
+      "reviewStatus": "Full conversion, EPUBCheck, progress and 768 MiB Mac RSS gate pass. The separate warning/refusal quality gate fails on pages 74 and 150. No table-transcription fidelity qualification.",
       "memoryBudget": {
-        "maxPeakRSSMiB": 512,
-        "scope": "macOS 27 arm64 isolated release CLI, defaults; resource regression ceiling, not quality approval or a mobile device budget"
+        "maxPeakRSSMiB": 768,
+        "scope": "macOS 27 arm64 isolated release CLI, defaults; resource regression ceiling, not quality approval or a mobile device budget. Raised from 512 under #275, which made 57 of the book's 312 layers fail the word test and 56 of those pages be recognized where three were before: five measured conversions read 538, 531, 455, 512 and 499 MiB against 368 MiB at the main this branch was merged onto (measurements/unread-table-cells-plausibility/record.md)"
       },
       "qualityExpectation": {
         "warningPages": [
@@ -617,10 +617,12 @@
         "warningCodes": [
           "unverifiedTextLayer",
           "complexLayout",
-          "pageImageFallback"
+          "pageImageFallback",
+          "implausibleTextLayer",
+          "unreadTableCells"
         ],
         "qualityRejectionDiagnostics": [],
-        "basis": "Inspected typewritten and handwritten table pages need explicit quality/fallback signaling, not merely imageRegion or furnitureRemoved. unverifiedTextLayer flags existing text over a page-sized graphic for human review without asserting measured OCR confidence. No quality-refusal error exists; approved diagnostics remain empty."
+        "basis": "Inspected typewritten and handwritten table pages need explicit quality/fallback signaling, not merely imageRegion or furnitureRemoved. unverifiedTextLayer flags existing text over a page-sized graphic for human review without asserting measured OCR confidence. Page 150's hand-written sheet states more than that since #275: its layer fails the word test, so the page reports implausibleTextLayer and its grids are preserved as pictures under unreadTableCells. No quality-refusal error exists; approved diagnostics remain empty."
       },
       "downloadVerification": "Owner-supplied identity verified by corpus fetcher; fresh publisher download returns HTTP 403. Seed the ignored cache with exact original bytes; see measurements/cia-blue-book-14-1955/download-status.json.",
       "knownFidelityIssues": [
@@ -631,7 +633,7 @@
         },
         {
           "page": 150,
-          "issue": "Damaged handwriting/numeric OCR becomes prose and headings. An unverifiedTextLayer warning and source image signal the need for review; cells are not reconstructed reliably.",
+          "issue": "Damaged handwriting/numeric OCR no longer becomes prose and headings: since #275 the layer fails the word test, the page is recognized, and its grids are preserved as pictures under unreadTableCells. The recognition's own reading of the hand-written cells is still not published, and cells are not reconstructed.",
           "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/7"
         }
       ],

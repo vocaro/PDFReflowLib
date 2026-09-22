@@ -10,8 +10,9 @@ import Synchronization
 ///
 /// The rules differ by design:
 /// - `TextLayerPlausibility.wordFinding` judges an inherited text layer (#93, #7): at least
-///   `minimumJudgedWords` judged words, fewer than a fifth of tokens numeric, at least half
-///   English, and under a tenth misread in place.
+///   `minimumJudgedWords` judged words, fewer than a fifth of tokens numbers, at least half
+///   English, and under a tenth misread in place. It sets a lone `a`/`I` with no word for company
+///   aside first (`lonelyLetters`, #275).
 /// - `readsAsWords` judges one recognized line before it may become a heading (#7): no letter of
 ///   another script, at least one known word, English at least half of all words (neutral words
 ///   count against it), and digits in no more than half of the tokens; a capitalized lexicon entry
@@ -30,7 +31,15 @@ enum EnglishText {
         var neutral = 0
         /// Whitespace-separated tokens holding a digit, and all non-empty tokens.
         var numericTokens = 0
+        /// Tokens holding a digit and no letter: the numbers the text actually states, as against
+        /// `numericTokens`, which a misreading of a figure (`l6`, `0,3`, `A.Di`) joins as readily
+        /// as a figure does (#275).
+        var numberTokens = 0
         var tokens = 0
+        /// English words among `english` that are a bare `a` or `I` standing on a line that holds
+        /// no other English word (#275). A lone letter is a word only in the company of words;
+        /// alone on its line it is a rule, a tick or a tally the reading shaped like a letter.
+        var lonelyLetters = 0
         /// Damaged words misread in place (`misreadShare`), and the first three of them.
         var misread = 0
         var misreadExamples: [String] = []
@@ -84,21 +93,31 @@ enum EnglishText {
     static func wordCounts(_ text: String, isWord: (String) -> Bool) -> WordCounts {
         var counts = WordCounts()
         var words: [String] = []
-        for token in text.split(whereSeparator: \.isWhitespace) {
-            counts.tokens += 1
-            if token.contains(where: \.isNumber) { counts.numericTokens += 1 }
-            var piece = Substring(token)
-            while let first = piece.first, !first.isLetter { piece = piece.dropFirst() }
-            while let last = piece.last, !last.isLetter { piece = piece.dropLast() }
-            guard !piece.isEmpty else { continue }
-            for part in piece.split(separator: "-") {
-                var word = part.replacingOccurrences(of: "\u{2019}", with: "'")
-                for clitic in ["'s", "n't", "'ll", "'re", "'ve", "'m", "'d"]
-                where word.count > clitic.count && word.lowercased().hasSuffix(clitic) {
-                    word.removeLast(clitic.count)
-                    break
+        // The line each word was read on, so a lone letter can be asked what company it keeps
+        // (#275). Splitting on newlines and then on whitespace yields the same tokens, in the
+        // same order, as splitting on whitespace alone.
+        var linesOfWords: [Int] = []
+        for (line, row) in text.split(whereSeparator: \.isNewline).enumerated() {
+            for token in row.split(whereSeparator: \.isWhitespace) {
+                counts.tokens += 1
+                if token.contains(where: \.isNumber) {
+                    counts.numericTokens += 1
+                    if !token.contains(where: \.isLetter) { counts.numberTokens += 1 }
                 }
-                words.append(word)
+                var piece = Substring(token)
+                while let first = piece.first, !first.isLetter { piece = piece.dropFirst() }
+                while let last = piece.last, !last.isLetter { piece = piece.dropLast() }
+                guard !piece.isEmpty else { continue }
+                for part in piece.split(separator: "-") {
+                    var word = part.replacingOccurrences(of: "\u{2019}", with: "'")
+                    for clitic in ["'s", "n't", "'ll", "'re", "'ve", "'m", "'d"]
+                    where word.count > clitic.count && word.lowercased().hasSuffix(clitic) {
+                        word.removeLast(clitic.count)
+                        break
+                    }
+                    words.append(word)
+                    linesOfWords.append(line)
+                }
             }
         }
         // A damaged piece a neighbor joins into a word was split, not misread (`fi e ld stre ngth`).
@@ -109,6 +128,9 @@ enum EnglishText {
                 return joined.allSatisfy(\.isLetter) && isWord(joined.lowercased())
             }
         }
+        // Bare `a`/`I` per line, and the lines on which some other word reads as English (#275).
+        var bareLetters: [Int: Int] = [:]
+        var linesWithAWord: Set<Int> = []
         for (index, word) in words.enumerated() {
             // A word holding letters of another script is a misreading in an English text (#7).
             if word.unicodeScalars.contains(where: { $0.properties.isAlphabetic && !isLatinLetter($0) }) {
@@ -118,13 +140,20 @@ enum EnglishText {
             guard word.allSatisfy(\.isLetter) else { counts.neutral += 1; continue }
             let lower = word.allSatisfy(\.isLowercase)
             if word.count == 1 {
-                if word == "a" || word == "A" || word == "i" || word == "I" { counts.english += 1 }
+                if word == "a" || word == "A" || word == "i" || word == "I" {
+                    counts.english += 1
+                    bareLetters[linesOfWords[index], default: 0] += 1
+                }
                 else if lower { counts.damaged += 1 } else { counts.neutral += 1 }
                 continue
             }
             let upper = word.allSatisfy(\.isUppercase)
             let capitalized = word.first!.isUppercase && word.dropFirst().allSatisfy(\.isLowercase)
-            if lower || upper || capitalized, isWord(word.lowercased()) { counts.english += 1; continue }
+            if lower || upper || capitalized, isWord(word.lowercased()) {
+                counts.english += 1
+                linesWithAWord.insert(linesOfWords[index])
+                continue
+            }
             // Names and abbreviations the lexicon lacks are neutral, a compound name's capitals too
             // (`McDonald`).
             if !lower && (upper || capitalized || isCompoundName(word)) { counts.neutral += 1; continue }
@@ -135,6 +164,7 @@ enum EnglishText {
             counts.misread += 1
             if counts.misreadExamples.count < misreadExampleLimit { counts.misreadExamples.append(word) }
         }
+        counts.lonelyLetters = bareLetters.filter { !linesWithAWord.contains($0.key) }.values.reduce(0, +)
         return counts
     }
 

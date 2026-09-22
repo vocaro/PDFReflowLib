@@ -16,6 +16,12 @@ PROBES = 'tools/probes'
 
 # Native text extraction: NativeTextReader, the readers it consults, and the value types it returns.
 EXTRACTION = ['NativeTextReader.swift', 'NativeSpacingReader.swift', 'NativeSpacingOwnership.swift',
+              # A margin rule an inherited recognition read as letters is cut where the box is
+              # formed (#264), so every probe that extracts text compiles the reading with it.
+              'MarginRuleMarks.swift',
+              # A row of two columns PDFKit merged into one line is cut where the box is formed
+              # (#270), for the same reason and from the same character boxes.
+              'ColumnGutterCut.swift', 'TextLineGeometry.swift',
               'GlyphIdentityReader.swift', 'GlyphIndexDecoder.swift', 'TextEncodingCheck.swift',
               'EnglishText.swift', 'CJKText.swift', 'ArabicText.swift', 'ContentStreamWalk.swift',
               'CGPDFObjects.swift',

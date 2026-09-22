@@ -113,7 +113,7 @@ enum OCRReader {
             let rect = pageRect(line.box)
             return TextLine(text: repairedScript(line.text, language: options.language),
                             rect: rect, fontSize: thickness(of: line, rect: rect, in: bounds),
-                            wraps: line.wraps)
+                            wraps: line.wraps, turn: turn(of: line, in: bounds))
         }
         let tables = recognition.tables.map { pageRect($0).insetBy(dx: -3, dy: -3).intersection(bounds) }
         // Each located table's cells, on the crop that will preserve it (#31). The grids are
@@ -138,9 +138,31 @@ enum OCRReader {
     /// rounds to: the two disagree only where the page turned the line, and `isSideways` is what
     /// says so. Half a right angle is the boundary, so no reading of ordinary skew moves.
     static func thickness(of line: Recognition.Line, rect: CGRect, in bounds: CGRect) -> CGFloat {
-        let across = CGVector(dx: line.across.dx * bounds.width, dy: line.across.dy * bounds.height)
+        let across = pageAcross(line, in: bounds)
         guard isSideways(across) else { return rect.height }
         return sqrt(across.dx * across.dx + across.dy * across.dy)
+    }
+
+    /// The quarter turn the page set a recognized line at, read off the same offset its type size
+    /// is (#263). The offset runs from the foot of the line's quadrilateral to its head, so it
+    /// points the way the tops of the letters face: to the right on a line the page turned
+    /// clockwise, whose writing then runs down the page, and to the left on one it turned
+    /// counterclockwise, whose writing runs up it.
+    ///
+    /// A line within half a right angle of upright is upright, exactly as its size is measured,
+    /// so ordinary skew turns nothing. So does a line read upside down: its writing still runs
+    /// left to right across the page, and #130 already leaves its box height alone.
+    static func turn(of line: Recognition.Line, in bounds: CGRect) -> QuarterTurn {
+        let across = pageAcross(line, in: bounds)
+        guard isSideways(across) else { return .upright }
+        return across.dx > 0 ? .clockwise : .counterclockwise
+    }
+
+    /// The line's foot-to-head offset in the page's own points, from the normalized one Vision
+    /// states. The page is not square, so the two axes scale differently and the offset must be
+    /// placed on the page before its direction is read.
+    private static func pageAcross(_ line: Recognition.Line, in bounds: CGRect) -> CGVector {
+        CGVector(dx: line.across.dx * bounds.width, dy: line.across.dy * bounds.height)
     }
 
     /// Whether a line's thickness runs across the page rather than up it: the page set the line

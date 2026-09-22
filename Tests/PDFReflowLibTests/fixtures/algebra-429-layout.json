@@ -1,0 +1,1674 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        307.56,
+        745.4192448,
+        200.56175777443838,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "From angle θ the given sides are the"
+        }
+      ],
+      "text" : "From angle θ the given sides are the"
+    },
+    {
+      "rect" : [
+        307.55999999999995,
+        730.89934479999999,
+        200.65354171179524,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "opposite (12) and the hypotenuse (17)."
+        }
+      ],
+      "text" : "opposite (12) and the hypotenuse (17)."
+    },
+    {
+      "rect" : [
+        146.63999999999999,
+        720.78113919999998,
+        5.4515711999999894,
+        10.974873600000024
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "θ"
+        }
+      ],
+      "text" : "θ"
+    },
+    {
+      "rect" : [
+        183.23999999999998,
+        716.61924480000005,
+        11.726182363136019,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "17"
+        }
+      ],
+      "text" : "17"
+    },
+    {
+      "rect" : [
+        307.55999999999995,
+        690.69934479999995,
+        200.56158519459842,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "The trig function that uses opposite"
+        }
+      ],
+      "text" : "The trig function that uses opposite"
+    },
+    {
+      "rect" : [
+        307.55999999999995,
+        676.05954479999991,
+        135.88022325588486,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "and hypotenuse is the sine"
+        }
+      ],
+      "text" : "and hypotenuse is the sine"
+    },
+    {
+      "rect" : [
+        167.03999999999999,
+        653.61924480000005,
+        11.726182363136019,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "12"
+        }
+      ],
+      "text" : "12"
+    },
+    {
+      "rect" : [
+        307.55999999999995,
+        650.61934479999991,
+        200.56156817039363,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Because we are looking for an angle"
+        }
+      ],
+      "text" : "Because we are looking for an angle"
+    },
+    {
+      "rect" : [
+        307.55999999999995,
+        635.97954479999987,
+        116.32081905576968,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "we use the inverse sine"
+        }
+      ],
+      "text" : "we use the inverse sine"
+    },
+    {
+      "rect" : [
+        116.87999999999994,
+        587.75272799999982,
+        47.606182363135986,
+        35.985151999999971
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -4.3199200000000246,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "sin"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "−1 "
+        },
+        {
+          "baselineOffset" : 2.8801099999999451,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "12"
+        }
+      ],
+      "text" : "sin−1 12"
+    },
+    {
+      "rect" : [
+        152.75999999999993,
+        587.75260800000001,
+        12.883091181568034,
+        35.985151999999971
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -7.7998700000001691,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "17"
+        }
+      ],
+      "text" : "17"
+    },
+    {
+      "rect" : [
+        112.68017999999998,
+        579.64885494999987,
+        61.674861199999981,
+        13.589037550000057
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "sin"
+        },
+        {
+          "baselineOffset" : 4.3203099999999495,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "−1"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "(0.706) "
+        }
+      ],
+      "text" : "sin−1(0.706) "
+    },
+    {
+      "rect" : [
+        175.59902720000002,
+        587.75260800000001,
+        30.813191789311986,
+        35.985151999999971
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -7.7998700000001691,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : " "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Sine"
+        }
+      ],
+      "text" : " Sine"
+    },
+    {
+      "rect" : [
+        211.60096336640004,
+        587.75260800000001,
+        5.2453559551999831,
+        35.985151999999971
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : " is"
+        }
+      ],
+      "text" : " is"
+    },
+    {
+      "rect" : [
+        221.45504892160002,
+        587.75260800000001,
+        39.542891706956794,
+        35.985151999999971
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : " opposite"
+        }
+      ],
+      "text" : " opposite"
+    },
+    {
+      "rect" : [
+        266.20107714165761,
+        587.75260800000001,
+        18.639839434624037,
+        35.985151999999971
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : " over"
+        }
+      ],
+      "text" : " over"
+    },
+    {
+      "rect" : [
+        289.43567945410564,
+        587.75260800000001,
+        69.571991838054373,
+        35.985151999999971
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : " hyptenuse, use"
+        }
+      ],
+      "text" : " hyptenuse, use"
+    },
+    {
+      "rect" : [
+        364.24087383014398,
+        587.75260800000001,
+        31.726710118656001,
+        35.985151999999971
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : " inverse"
+        }
+      ],
+      "text" : " inverse"
+    },
+    {
+      "rect" : [
+        401.20078648678395,
+        587.75260800000001,
+        6.5570748683008446,
+        35.985151999999971
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : " to"
+        }
+      ],
+      "text" : " to"
+    },
+    {
+      "rect" : [
+        413.60657866818559,
+        587.75260800000001,
+        14.985825924736048,
+        35.985151999999971
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : " find"
+        }
+      ],
+      "text" : " find"
+    },
+    {
+      "rect" : [
+        435.14422689628168,
+        587.75260800000001,
+        28.696935105279977,
+        35.985151999999971
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : " angle"
+        }
+      ],
+      "text" : " angle"
+    },
+    {
+      "rect" : [
+        190.08020999999997,
+        579.64885494999987,
+        292.4370903996417,
+        13.589037550000057
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Evaluate fraction, take sine inverse using table or calculator"
+        }
+      ],
+      "text" : "Evaluate fraction, take sine inverse using table or calculator"
+    },
+    {
+      "rect" : [
+        158.51999999999998,
+        562.2488549499999,
+        96.143928954342414,
+        13.589037550000057
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "45"
+        },
+        {
+          "baselineOffset" : 4.3203099999999495,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "◦ "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Our Solution"
+        }
+      ],
+      "text" : "45◦ Our Solution"
+    },
+    {
+      "rect" : [
+        84.960099999999983,
+        530.15120000000002,
+        79.690012200478748,
+        11.955199999999991
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Example 556."
+        }
+      ],
+      "text" : "Example 556."
+    },
+    {
+      "rect" : [
+        84.960099999999983,
+        509.73924479999999,
+        125.80082040145928,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Find the indicated angle"
+        }
+      ],
+      "text" : "Find the indicated angle"
+    },
+    {
+      "rect" : [
+        150.59999999999999,
+        458.13924479999997,
+        5.8460928000000081,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "5"
+        }
+      ],
+      "text" : "5"
+    },
+    {
+      "rect" : [
+        245.40000000000001,
+        458.73924479999999,
+        5.8460928000000081,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "3"
+        }
+      ],
+      "text" : "3"
+    },
+    {
+      "rect" : [
+        231.59999999999999,
+        435.90113919999999,
+        7.448089600000003,
+        10.974873600000024
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "α"
+        }
+      ],
+      "text" : "α"
+    },
+    {
+      "rect" : [
+        307.56,
+        490.65924480000001,
+        200.5613148767489,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "From the angle α, the given sides are"
+        }
+      ],
+      "text" : "From the angle α, the given sides are"
+    },
+    {
+      "rect" : [
+        307.55997000000002,
+        475.89904480000001,
+        190.91637013411849,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "the opposite (5) and the adjacent (3)"
+        }
+      ],
+      "text" : "the opposite (5) and the adjacent (3)"
+    },
+    {
+      "rect" : [
+        307.55997000000002,
+        449.25924480000003,
+        200.56158519459842,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "The trig function that uses opposite"
+        }
+      ],
+      "text" : "The trig function that uses opposite"
+    },
+    {
+      "rect" : [
+        307.55997000000002,
+        434.49904480000004,
+        140.75572415357442,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "and adjacent is the tangent"
+        }
+      ],
+      "text" : "and adjacent is the tangent"
+    },
+    {
+      "rect" : [
+        307.55997000000002,
+        407.85924480000006,
+        200.65240751001602,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "As we are looking for an angle we will"
+        }
+      ],
+      "text" : "As we are looking for an angle we will"
+    },
+    {
+      "rect" : [
+        307.55997000000002,
+        393.09904480000006,
+        121.57250072248326,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "use the inverse tangent."
+        }
+      ],
+      "text" : "use the inverse tangent."
+    },
+    {
+      "rect" : [
+        119.15997000000002,
+        332.75230800000008,
+        44.13772800000001,
+        35.985152000000028
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -4.1999999999999886,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "tan"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "−1 "
+        },
+        {
+          "baselineOffset" : 3.0000299999999811,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "5"
+        }
+      ],
+      "text" : "tan−1 5"
+    },
+    {
+      "rect" : [
+        157.43965000000003,
+        332.75260800000001,
+        16.959377200000006,
+        35.985152000000028
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -7.800269999999955,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "3 "
+        }
+      ],
+      "text" : "3 "
+    },
+    {
+      "rect" : [
+        109.08008000000004,
+        324.64886495000002,
+        64.194851199999988,
+        13.58903755
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "tan"
+        },
+        {
+          "baselineOffset" : 4.3199200000000246,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "−1"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "(1.667) "
+        }
+      ],
+      "text" : "tan−1(1.667) "
+    },
+    {
+      "rect" : [
+        189.00000000000003,
+        332.75260800000001,
+        288.04189261975046,
+        35.985152000000028
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Tangent is opposite over adjacent. Use inverse to find angle"
+        }
+      ],
+      "text" : "Tangent is opposite over adjacent. Use inverse to find angle"
+    },
+    {
+      "rect" : [
+        189.00010000000003,
+        324.64886495000002,
+        297.11646373570574,
+        13.58903755
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Evaluate fraction, take tangent inverse on table or calculator"
+        }
+      ],
+      "text" : "Evaluate fraction, take tangent inverse on table or calculator"
+    },
+    {
+      "rect" : [
+        157.43997000000002,
+        307.24886495000004,
+        96.143917357798443,
+        13.58903755
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "59"
+        },
+        {
+          "baselineOffset" : 4.3199200000000246,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "◦ "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Our Solution"
+        }
+      ],
+      "text" : "59◦ Our Solution"
+    },
+    {
+      "rect" : [
+        84.960070000000016,
+        275.25954480000001,
+        425.18603405027847,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Using a combination of trig functions and inverse trig functions, if we are given"
+        }
+      ],
+      "text" : "Using a combination of trig functions and inverse trig functions, if we are given"
+    },
+    {
+      "rect" : [
+        84.96007000000003,
+        260.85954480000004,
+        425.20329727462405,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "two parts of a right triangle (two sides or a side and an angle), we can find all the"
+        }
+      ],
+      "text" : "two parts of a right triangle (two sides or a side and an angle), we can find all the"
+    },
+    {
+      "rect" : [
+        84.96007000000003,
+        246.45954480000006,
+        361.93244472435202,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "other sides and angles of the triangle. This is called solving a triangle."
+        }
+      ],
+      "text" : "other sides and angles of the triangle. This is called solving a triangle."
+    },
+    {
+      "rect" : [
+        84.96007000000003,
+        226.05954480000003,
+        425.12765876451846,
+        11.979110399999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "When we are solving a triangle, we can use trig ratios to solve for all the missing"
+        }
+      ],
+      "text" : "When we are solving a triangle, we can use trig ratios to solve for all the missing"
+    },
+    {
+      "rect" : [
+        84.96007000000003,
+        211.65954480000005,
+        425.17516091852804,
+        11.979110399999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "parts of it, but there are some properties from geometry that may be helpful"
+        }
+      ],
+      "text" : "parts of it, but there are some properties from geometry that may be helpful"
+    },
+    {
+      "rect" : [
+        84.96007000000003,
+        197.25954480000001,
+        74.771926311321607,
+        11.979110399999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "along the way."
+        }
+      ],
+      "text" : "along the way."
+    },
+    {
+      "rect" : [
+        84.96007000000003,
+        176.56876495000003,
+        425.17255486021128,
+        13.58903755
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "The angles of a triangle always add up to 180"
+        },
+        {
+          "baselineOffset" : 4.3199199999999962,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "◦"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : ", because we have a right triangle,"
+        }
+      ],
+      "text" : "The angles of a triangle always add up to 180◦, because we have a right triangle,"
+    },
+    {
+      "rect" : [
+        84.959990000000033,
+        162.16876495000002,
+        425.20058278451199,
+        13.58903755
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "90"
+        },
+        {
+          "baselineOffset" : 4.3199199999999962,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "◦ "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "are used up in the right angle, that means there are another 90"
+        },
+        {
+          "baselineOffset" : 4.3199199999999962,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "◦ "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "left in the"
+        }
+      ],
+      "text" : "90◦ are used up in the right angle, that means there are another 90◦ left in the"
+    },
+    {
+      "rect" : [
+        84.959950000000049,
+        148.05954480000003,
+        425.2553100341504,
+        11.979110399999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "two acute angles. In other words, the smaller two angles will always add to 90, if"
+        }
+      ],
+      "text" : "two acute angles. In other words, the smaller two angles will always add to 90, if"
+    },
+    {
+      "rect" : [
+        84.959950000000049,
+        133.65954479999999,
+        378.25330364515844,
+        11.979110399999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "we know one angle, we can quickly find the other by subtracting from 90."
+        }
+      ],
+      "text" : "we know one angle, we can quickly find the other by subtracting from 90."
+    },
+    {
+      "rect" : [
+        84.959950000000049,
+        113.2595448,
+        425.21946586485763,
+        11.979110399999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Another trick is on the sides of the angles. If we know two sides of the right tri-"
+        }
+      ],
+      "text" : "Another trick is on the sides of the angles. If we know two sides of the right tri-"
+    },
+    {
+      "rect" : [
+        84.959950000000049,
+        98.859544799999995,
+        425.201792324096,
+        11.979110399999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "angle, we can use the Pythagorean Theorem to find the third side. The"
+        }
+      ],
+      "text" : "angle, we can use the Pythagorean Theorem to find the third side. The"
+    },
+    {
+      "rect" : [
+        84.959950000000049,
+        84.459544799999989,
+        425.18371960345598,
+        11.979110399999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Pythagorean Theorem states that if c is the hypotenuse of the triangle, and a and"
+        }
+      ],
+      "text" : "Pythagorean Theorem states that if c is the hypotenuse of the triangle, and a and"
+    },
+    {
+      "rect" : [
+        297.11986999999999,
+        52.379253199999987,
+        15.061001094719984,
+        9.8729762399999998
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626400000000004,
+          "text" : "429"
+        }
+      ],
+      "text" : "429"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    595,
+    842
+  ],
+  "caseID" : "wallace-algebra-2010",
+  "graphics" : [
+    [
+      138.64000000000001,
+      666.0200000000001,
+      83.200000000000017,
+      82.600000000000023
+    ],
+    [
+      150.16000000000003,
+      607.22000000000014,
+      16.95999999999998,
+      4
+    ],
+    [
+      100.60000000000001,
+      418.94000000000005,
+      157,
+      67.600000000000023
+    ],
+    [
+      154.84000000000003,
+      352.22000000000003,
+      11.079999999999984,
+      4
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        307.56,
+        745.4192448,
+        200.56175777443838,
+        11.979110399999968
+      ],
+      "text" : "From angle θ the given sides are the"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        307.55999999999995,
+        730.89934479999999,
+        200.65354171179524,
+        11.979110399999968
+      ],
+      "text" : "opposite (12) and the hypotenuse (17)."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        146.63999999999999,
+        720.78113919999998,
+        5.4515711999999894,
+        10.974873600000024
+      ],
+      "text" : "θ"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        183.23999999999998,
+        716.61924480000005,
+        11.726182363136019,
+        11.979110399999968
+      ],
+      "text" : "17"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        307.55999999999995,
+        690.69934479999995,
+        200.56158519459842,
+        11.979110399999968
+      ],
+      "text" : "The trig function that uses opposite"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        307.55999999999995,
+        676.05954479999991,
+        135.88022325588486,
+        11.979110399999968
+      ],
+      "text" : "and hypotenuse is the sine"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        167.03999999999999,
+        653.61924480000005,
+        11.726182363136019,
+        11.979110399999968
+      ],
+      "text" : "12"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        307.55999999999995,
+        650.61934479999991,
+        200.56156817039363,
+        11.979110399999968
+      ],
+      "text" : "Because we are looking for an angle"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        307.55999999999995,
+        635.97954479999987,
+        116.32081905576968,
+        11.979110399999968
+      ],
+      "text" : "we use the inverse sine"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        116.87999999999994,
+        587.75272799999982,
+        47.606182363135986,
+        35.985151999999971
+      ],
+      "text" : "sin−1 12"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        152.75999999999993,
+        587.75260800000001,
+        12.883091181568034,
+        35.985151999999971
+      ],
+      "text" : "17"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        112.68017999999998,
+        579.64885494999987,
+        61.674861199999981,
+        13.589037550000057
+      ],
+      "text" : "sin−1(0.706)"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        175.59902720000002,
+        587.75260800000001,
+        30.813191789311986,
+        35.985151999999971
+      ],
+      "text" : "Sine"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        211.60096336640004,
+        587.75260800000001,
+        5.2453559551999831,
+        35.985151999999971
+      ],
+      "text" : "is"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        221.45504892160002,
+        587.75260800000001,
+        39.542891706956794,
+        35.985151999999971
+      ],
+      "text" : "opposite"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        266.20107714165761,
+        587.75260800000001,
+        18.639839434624037,
+        35.985151999999971
+      ],
+      "text" : "over"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        289.43567945410564,
+        587.75260800000001,
+        69.571991838054373,
+        35.985151999999971
+      ],
+      "text" : "hyptenuse, use"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        364.24087383014398,
+        587.75260800000001,
+        31.726710118656001,
+        35.985151999999971
+      ],
+      "text" : "inverse"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        401.20078648678395,
+        587.75260800000001,
+        6.5570748683008446,
+        35.985151999999971
+      ],
+      "text" : "to"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        413.60657866818559,
+        587.75260800000001,
+        14.985825924736048,
+        35.985151999999971
+      ],
+      "text" : "find"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        435.14422689628168,
+        587.75260800000001,
+        28.696935105279977,
+        35.985151999999971
+      ],
+      "text" : "angle"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        190.08020999999997,
+        579.64885494999987,
+        292.4370903996417,
+        13.589037550000057
+      ],
+      "text" : "Evaluate fraction, take sine inverse using table or calculator"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        158.51999999999998,
+        562.2488549499999,
+        96.143928954342414,
+        13.589037550000057
+      ],
+      "text" : "45◦ Our Solution"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960099999999983,
+        530.15120000000002,
+        79.690012200478748,
+        11.955199999999991
+      ],
+      "text" : "Example 556."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960099999999983,
+        509.73924479999999,
+        125.80082040145928,
+        11.979110400000025
+      ],
+      "text" : "Find the indicated angle"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        150.59999999999999,
+        458.13924479999997,
+        5.8460928000000081,
+        11.979110400000025
+      ],
+      "text" : "5"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        245.40000000000001,
+        458.73924479999999,
+        5.8460928000000081,
+        11.979110400000025
+      ],
+      "text" : "3"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        231.59999999999999,
+        435.90113919999999,
+        7.448089600000003,
+        10.974873600000024
+      ],
+      "text" : "α"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        307.56,
+        490.65924480000001,
+        200.5613148767489,
+        11.979110400000025
+      ],
+      "text" : "From the angle α, the given sides are"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        307.55997000000002,
+        475.89904480000001,
+        190.91637013411849,
+        11.979110400000025
+      ],
+      "text" : "the opposite (5) and the adjacent (3)"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        307.55997000000002,
+        449.25924480000003,
+        200.56158519459842,
+        11.979110400000025
+      ],
+      "text" : "The trig function that uses opposite"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        307.55997000000002,
+        434.49904480000004,
+        140.75572415357442,
+        11.979110400000025
+      ],
+      "text" : "and adjacent is the tangent"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        307.55997000000002,
+        407.85924480000006,
+        200.65240751001602,
+        11.979110400000025
+      ],
+      "text" : "As we are looking for an angle we will"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        307.55997000000002,
+        393.09904480000006,
+        121.57250072248326,
+        11.979110400000025
+      ],
+      "text" : "use the inverse tangent."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        119.15997000000002,
+        332.75230800000008,
+        44.13772800000001,
+        35.985152000000028
+      ],
+      "text" : "tan−1 5"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        157.43965000000003,
+        332.75260800000001,
+        16.959377200000006,
+        35.985152000000028
+      ],
+      "text" : "3"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        109.08008000000004,
+        324.64886495000002,
+        64.194851199999988,
+        13.58903755
+      ],
+      "text" : "tan−1(1.667)"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        189.00000000000003,
+        332.75260800000001,
+        288.04189261975046,
+        35.985152000000028
+      ],
+      "text" : "Tangent is opposite over adjacent. Use inverse to find angle"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        189.00010000000003,
+        324.64886495000002,
+        297.11646373570574,
+        13.58903755
+      ],
+      "text" : "Evaluate fraction, take tangent inverse on table or calculator"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        157.43997000000002,
+        307.24886495000004,
+        96.143917357798443,
+        13.58903755
+      ],
+      "text" : "59◦ Our Solution"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960070000000016,
+        275.25954480000001,
+        425.18603405027847,
+        11.979110400000025
+      ],
+      "text" : "Using a combination of trig functions and inverse trig functions, if we are given"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.96007000000003,
+        260.85954480000004,
+        425.20329727462405,
+        11.979110400000025
+      ],
+      "text" : "two parts of a right triangle (two sides or a side and an angle), we can find all the"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.96007000000003,
+        246.45954480000006,
+        361.93244472435202,
+        11.979110400000025
+      ],
+      "text" : "other sides and angles of the triangle. This is called solving a triangle."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.96007000000003,
+        226.05954480000003,
+        425.12765876451846,
+        11.979110399999996
+      ],
+      "text" : "When we are solving a triangle, we can use trig ratios to solve for all the missing"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.96007000000003,
+        211.65954480000005,
+        425.17516091852804,
+        11.979110399999996
+      ],
+      "text" : "parts of it, but there are some properties from geometry that may be helpful"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.96007000000003,
+        197.25954480000001,
+        74.771926311321607,
+        11.979110399999996
+      ],
+      "text" : "along the way."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.96007000000003,
+        176.56876495000003,
+        425.17255486021128,
+        13.58903755
+      ],
+      "text" : "The angles of a triangle always add up to 180◦, because we have a right triangle,"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959990000000033,
+        162.16876495000002,
+        425.20058278451199,
+        13.58903755
+      ],
+      "text" : "90◦ are used up in the right angle, that means there are another 90◦ left in the"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959950000000049,
+        148.05954480000003,
+        425.2553100341504,
+        11.979110399999996
+      ],
+      "text" : "two acute angles. In other words, the smaller two angles will always add to 90, if"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959950000000049,
+        133.65954479999999,
+        378.25330364515844,
+        11.979110399999996
+      ],
+      "text" : "we know one angle, we can quickly find the other by subtracting from 90."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959950000000049,
+        113.2595448,
+        425.21946586485763,
+        11.979110399999996
+      ],
+      "text" : "Another trick is on the sides of the angles. If we know two sides of the right tri-"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959950000000049,
+        98.859544799999995,
+        425.201792324096,
+        11.979110399999996
+      ],
+      "text" : "angle, we can use the Pythagorean Theorem to find the third side. The"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959950000000049,
+        84.459544799999989,
+        425.18371960345598,
+        11.979110399999996
+      ],
+      "text" : "Pythagorean Theorem states that if c is the hypotenuse of the triangle, and a and"
+    },
+    {
+      "fontSize" : 9.9626400000000004,
+      "monospaced" : false,
+      "rect" : [
+        297.11986999999999,
+        52.379253199999987,
+        15.061001094719984,
+        9.8729762399999998
+      ],
+      "text" : "429"
+    }
+  ],
+  "page" : 429,
+  "pictures" : [
+
+  ],
+  "rightsBasis" : "Page 2 states Copyright 2010 Tyler Wallace and Creative Commons Attribution 3.0 Unported. The PDF remains an external local corpus source; it is not bundled or relicensed under MIT.",
+  "schemaVersion" : 2,
+  "sourceSHA256" : "856bd81edc61c50496982ddc849138f4e0e56fd0ddf0edb53fee9bb0830d0678",
+  "sourceTitle" : "Beginning and Intermediate Algebra",
+  "sourceURL" : "https://s3.amazonaws.com/myopenmath/cfiles/19515/Beginning_and_Intermediate_Algebra.pdf"
+}

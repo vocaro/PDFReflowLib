@@ -459,9 +459,16 @@ enum NativeTextReader {
             let name = font?.fontName.lowercased() ?? ""
             let run = (attributed.string as NSString).substring(with: range)
                 .replacingOccurrences(of: "\u{FFFC}", with: " ")
+            // A run holding no glyph at all draws nothing a reader could see emphasized, so it
+            // takes no emphasis from its font: `<strong> </strong>` and `<em> </em>` claim italic
+            // or bold over a space (#278). The run itself is kept, exactly as #273 keeps it — the
+            // page set that space and the words on either side need it. An underline is judged
+            // differently: a rule the page painted under a space is ink the page really put
+            // there (#235), so it is not a font's claim to drop.
+            let hasGlyph = run.contains(where: { !$0.isWhitespace })
             var style: TextStyle = []
-            if name.contains("italic") || name.contains("oblique") { style.insert(.italic) }
-            if name.contains("bold") { style.insert(.bold) }
+            if hasGlyph, name.contains("italic") || name.contains("oblique") { style.insert(.italic) }
+            if hasGlyph, name.contains("bold") { style.insert(.bold) }
             // Set by `markUnderlines` from the page's own painted rules, not by the font (#235).
             if attributes[.underlineStyle] != nil { style.insert(.underline) }
             // PDFKit supplies Core Text baseline offsets even when font size/name do not
@@ -497,7 +504,7 @@ enum NativeTextReader {
             // baseline, which is the only thing about it a reader could have observed.
             if !(hasDropCap && range.location == 0),
                attributes[GlyphIdentityReader.isolatedAttribute] == nil,
-               run.contains(where: { !$0.isWhitespace }),
+               hasGlyph,
                !ArabicText.isRightToLeftRun(run),
                offset.isFinite, abs(offset) <= (font?.pointSize ?? 12) * 0.75 {
                 if offset > tolerance { style.insert(.superscript) }

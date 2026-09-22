@@ -286,3 +286,92 @@ func aPageThatRaisesOnlyASpaceReachesTheEPUBWithThatSpaceAndNoScript() async thr
     #expect(!html.contains("<sup>"))
     #expect(!html.contains("<sub>"))
 }
+
+// A run of whitespace alone takes no emphasis from its font (#278). Weaker than #273 and
+// deliberately separate from it: a bold space renders as a space, so the case here is markup that
+// does not claim what the page never set. See measurements/whitespace-only-emphasis/record.md.
+/// Each tuple is one run as PDFKit hands it over: its text, the font it names, and whether
+/// `markUnderlines` painted a rule under it. A whitespace run only ever reaches the writer as an
+/// element of its own where its neighbours read differently, which is the shape the books produce
+/// — the space between two links, or between a bold term and the prose after it.
+private func emphasisRuns(_ values: [(String, String, Bool)]) -> String {
+    let input = NSMutableAttributedString(string: "")
+    for (index, value) in values.enumerated() {
+        let (text, font, underlined) = value
+        var attributes: [NSAttributedString.Key: Any] = [
+            .font: pdfKitGated { PlatformFont(name: font, size: 12) }!,
+            NSAttributedString.Key("test.run"): index,
+        ]
+        if underlined { attributes[.underlineStyle] = 1 }
+        input.append(NSAttributedString(string: text, attributes: attributes))
+    }
+    return EPUBTextEncoder.inline(NativeTextReader.inlineText(from: input))
+}
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/278"))
+func aRunHoldingOnlyWhitespaceTakesNoEmphasisFromItsFont() {
+    // The USCIS Arabic guide's page 1, between two links: the word space between them is reported
+    // in the bold font the linked terms are set in, and no neighbour can absorb it.
+    #expect(emphasisRuns([("أو", "Helvetica", false), (" ", "Helvetica-Bold", false),
+                          ("www.socialsecurity.gov", "Helvetica", false)])
+            == "أو www.socialsecurity.gov")
+    // The FAA handbook and *Agricultural Research*: an italic space between two upright runs.
+    #expect(emphasisRuns([("see", "Helvetica", false), (" ", "Helvetica-Oblique", false),
+                          ("the table", "Helvetica", false)])
+            == "see the table")
+    // Every kind of whitespace a page can set between two words draws no more than a space does,
+    // including the placeholder an image attachment leaves behind.
+    for blank in [" ", "\t", "\u{00a0}", "\u{2007}", "\u{FFFC}"] {
+        let html = emphasisRuns([("before", "Helvetica", false), (blank, "Helvetica-Bold", false),
+                                 ("after", "Helvetica", false)])
+        #expect(!html.contains("<strong>"), "blank U+\(String(format: "%04X", blank.unicodeScalars.first!.value))")
+        #expect(!html.contains("<em>"))
+    }
+    // Dropping the inner run's style collapses the shape whole: the FAA handbook's nine
+    // `<sub><strong> </strong></sub>` elements are a space and nothing else once it is gone.
+    #expect(!emphasisRuns([("VLO.", "Helvetica", false), (" ", "Helvetica-BoldOblique", false),
+                           ("Landing gear operating speed.", "Helvetica", false)]).contains("<"))
+}
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/278"))
+func emphasisOverAGlyphAndARulePaintedUnderASpaceBothSurvive() {
+    // Positive controls. Whitespace beside a glyph in the same run is that run's own, and a run
+    // of glyphs keeps every style its font names.
+    #expect(emphasisRuns([("x", "Helvetica", false), (" bold phrase ", "Helvetica-Bold", false),
+                          ("y", "Helvetica", false)])
+            == "x<strong> bold phrase </strong>y")
+    #expect(emphasisRuns([("Read ", "Helvetica", false), ("Moby-Dick", "Helvetica-Oblique", false),
+                          (" today.", "Helvetica", false)])
+            == "Read <em>Moby-Dick</em> today.")
+    // A rule the page painted under a space is ink the page really put there (#235), and is not
+    // the font's claim this guard drops. No corpus case produces one, so this is the whole record
+    // of what the library does with it.
+    #expect(emphasisRuns([("signed", "Helvetica", false), (" ", "Helvetica", true),
+                          ("here", "Helvetica", false)])
+            == "signed<u> </u>here")
+    // The rule survives with the font's emphasis dropped from underneath it.
+    #expect(emphasisRuns([("signed", "Helvetica", false), (" ", "Helvetica-Bold", true),
+                          ("here", "Helvetica", false)])
+            == "signed<u> </u>here")
+}
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/278"))
+func aPageThatSetsOnlyASpaceInBoldReachesTheEPUBWithThatSpaceAndNoEmphasis() async throws {
+    let dir = try testPDFDirectory(); defer { try? FileManager.default.removeItem(at: dir) }
+    let pdf = dir.appendingPathComponent("source.pdf"), epub = dir.appendingPathComponent("book.epub")
+    try testPDF(objects: [
+        "<< /Type /Catalog /Pages 2 0 R >>", "<< /Type /Pages /Kids [3 0 R] /Count 1 >>",
+        "<< /Type /Page /Parent 2 0 R /MediaBox [0 0 400 300] /Resources << /Font << /F1 5 0 R /F2 6 0 R >> >> /Contents 4 0 R >>",
+        testPDFStream("BT /F1 12 Tf 40 240 Td (One clause closes) Tj /F2 12 Tf ( ) Tj"
+                      + " /F1 12 Tf (and the next one opens after a bold space.) Tj ET"),
+        "<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>",
+        "<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>",
+    ]).write(to: pdf)
+    let report = try await PDFConverter().convert(from: pdf, to: epub)
+    #expect(report.imageCount == 0 && report.reflowedPageCount == 1)
+    let html = try Archive(url: epub, accessMode: .read).chapter()
+    #expect(!html.contains("<strong> </strong>"))
+    #expect(!html.contains("<em> </em>"))
+    // The page's own space between the two clauses is kept.
+    #expect(html.contains("One clause closes and the next one opens after a bold space."))
+}

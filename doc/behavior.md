@@ -1171,6 +1171,13 @@ row-major sort, one entry of each column at a time.
   rows, which is a column it set rather than a space, whichever way the writing runs. Writing the
   reading reorders is the one place a seam is a line's own: PDFKit splits those rows at the
   boundary between two bidirectional runs rather than at a gap, which leaves the pieces touching.
+  And the piece that closed the row must **read as writing** — at least half of its marks are
+  letters, in any script — because the reading takes the row's text and its wrap from that piece.
+  A piece of fewer than three marks is asked nothing, since one character says nothing either way.
+  A page whose own sizes are unreliable states its columns by neither a recurring seam nor a
+  gutter: Project Blue Book's statistical appendix reads every printed row differently, so its
+  cells break in a different place on each of them, and five rows of it took the row beneath them
+  until a cell of figures stopped standing for a line of prose (#285).
 - **Rows of a table the page set without rules** keep their breaks rather than joining into one
   paragraph (#137, #210): a run of at least three rows on one left edge, in one type size,
   stepping down at one leading, where the page also states a column boundary — a cell the

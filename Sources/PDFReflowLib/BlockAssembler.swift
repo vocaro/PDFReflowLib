@@ -868,11 +868,47 @@ struct BlockAssembler {
     /// A space the page repeats in the same place on row after row is a column it set rather than
     /// a space inside a line, whichever way the writing runs, and `LayoutReconstructor.columnSeams`
     /// reads where a page did that.
+    ///
+    /// And the piece that closes the row must read as writing. A page whose own sizes say nothing
+    /// states its columns neither by a recurring seam nor by a gutter: Project Blue Book's
+    /// statistical appendix is handwriting-quality OCR that reads every printed row differently,
+    /// so its eight-column rows break in a different place on every one of them and each break is
+    /// a space's width. Five of those rows took the row beneath them, because the row's own start
+    /// is the first cell's and the next row begins on that same column (#285).
+    ///
+    /// What separates those rows from the lines this rule exists for is not where they stand but
+    /// what they say. The reading takes a split row's text and its wrap from the piece that closed
+    /// it, so that piece is what has to read as a line of writing for the row to stand for one:
+    /// `the 9/11 attack. At the time of their travel through`, `occurred far later than`,
+    /// `Than One Hundred Miles per Hour .` — against `~ 2(./ /.l,O .2/.I` and `✓.:-`, which are
+    /// cells of figures. Nothing under three marks is asked: the Blue Book's own speed legend
+    /// closes `Meteor-Ii ke` with the rule `-` the page draws for "not stated", and one character
+    /// says nothing either way.
     private func readsAsOneLine(_ prev: TextLine, _ line: TextLine) -> Bool {
         let seam = rightToLeft ? line.uprightRect.maxX : line.uprightRect.minX
         guard !columnSeams.contains(where: { abs($0 - seam) <= body * 0.25 }) else { return false }
         guard !rightToLeft else { return true }
-        return line.uprightRect.minX - prev.uprightRect.maxX >= body * 0.25
+        guard line.uprightRect.minX - prev.uprightRect.maxX >= body * 0.25 else { return false }
+        return BlockAssembler.readsAsWriting(line.text)
+    }
+
+    /// Whether a piece of a printed row reads as writing rather than as a cell of figures: half
+    /// its marks are letters, in any script, or it holds fewer than three marks and says nothing.
+    ///
+    /// Half is well clear of both populations this has to separate. Every piece that closes a row
+    /// the rule exists for is prose carrying at most a date or a figure — the 9/11 report's
+    /// `the 9/11 attack. At the time of their travel through` is 89% letters, the replay-clocks
+    /// paper's `occurred far later than` and the census's `Lambert, D.: … Journal of Official
+    /// Statistics,` are higher — and every cell the Blue Book's appendix closes a row with is
+    /// under a third: `~ 2(./ /.l,O .2/.I` is three letters in fourteen marks and
+    /// `26 JJ' S'I- ff.I /9.!i 5i.t. If j'_,` twelve in twenty-eight (#285).
+    ///
+    /// Any script, not Latin: this asks whether the page wrote something there, and the Chinese
+    /// and Arabic books in the corpus write it in their own.
+    static func readsAsWriting(_ text: String) -> Bool {
+        let marks = text.unicodeScalars.filter { !$0.properties.isWhitespace }
+        guard marks.count >= 3 else { return true }
+        return marks.count { $0.properties.isAlphabetic } * 2 >= marks.count
     }
 
     /// The one printed row the extractor split into `prev` and `line`, as the line the page set.

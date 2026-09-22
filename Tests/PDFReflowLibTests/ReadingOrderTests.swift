@@ -347,6 +347,71 @@ func aSeamThePageRepeatsOnRowAfterRowIsAColumnAndNotASpace() throws {
     #expect(paragraphTexts(joined).count == 1)
 }
 
+// MARK: - A row of cells the page states no column for (#285)
+
+/// Project Blue Book's statistical appendix is handwriting-quality OCR, so its eight-column rows
+/// break in a different place on every one of them: no seam recurs on three rows, and each break
+/// is a space's width, so neither the repeated-seam test nor the gutter reaches them. Five of
+/// those rows took the row beneath them, because a row's own start is its first cell's and the
+/// next row begins on that same column.
+///
+/// The piece that closed the row is what the reading takes the row's text and its wrap from, so
+/// it is what has to read as a line of writing. `~ 2(./ /.l,O .2/.I` is a cell of figures, and a
+/// row it closes stands for no line (#285).
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/285"))
+func aRowClosedByACellOfFiguresLendsNoStart() throws {
+    let bounds = CGRect(x: 0, y: 0, width: 612, height: 792)
+    func page(closing: String) -> PageContent {
+        PageContent(number: 242, bounds: bounds, lines: [
+            TextLine(text: "6-lnsuffic.lnfo. 7 0 7 11.3 0.0 11.8 10 0 10 11.1 0.0 11.1",
+                     rect: CGRect(x: 60, y: 600, width: 280, height: 10), fontSize: 10),
+            TextLine(text: closing, rect: CGRect(x: 345, y: 600, width: 60, height: 10), fontSize: 10),
+            TextLine(text: "7-Psychological 1 1 2 0.0 1.6 1.6 0 0 0 0.0 0.0 0.0",
+                     rect: CGRect(x: 60, y: 588, width: 270, height: 10), fontSize: 10),
+        ], graphics: [])
+    }
+    var warnings: [ConversionWarning] = []
+    // The page repeats no seam: the rule this one guards stood aside for nothing here.
+    #expect(LayoutReconstructor.columnSeams(in: page(closing: "~ 2(./ /.l,O .2/.I").lines,
+                                            body: 10, rightToLeft: false).isEmpty)
+    let cells = paragraphTexts(LayoutReconstructor.blocks(
+        page: page(closing: "~ 2(./ /.l,O .2/.I"), images: [], vocabulary: [], warnings: &warnings))
+    // The row's own pieces still join — only its start is withheld — and the row beneath it opens
+    // its own block.
+    #expect(cells.count == 2)
+    #expect(cells[0].hasPrefix("6-lnsuffic.lnfo.") && cells[0].hasSuffix("~ 2(./ /.l,O .2/.I"))
+    #expect(cells[1].hasPrefix("7-Psychological"))
+    // The control, which is what #272 is for: the same geometry, closed by writing, is one
+    // printed line and the line beneath it is its wrap.
+    let prose = paragraphTexts(LayoutReconstructor.blocks(
+        page: page(closing: "and the rest of it"), images: [], vocabulary: [], warnings: &warnings))
+    #expect(prose.count == 1)
+    #expect(prose[0].contains("and the rest of it 7-Psychological"))
+}
+
+/// A piece of one or two marks says nothing either way, and is asked nothing. The Blue Book's own
+/// speed legend closes `Meteor-Ii ke` with the rule the page draws for "not stated", and the line
+/// beneath it is that answer (#285, the join #272 makes here).
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/285"))
+func aPieceTooShortToSaySoLendsTheRowsStartAsBefore() throws {
+    #expect(BlockAssembler.readsAsWriting("-"))
+    #expect(BlockAssembler.readsAsWriting("8"))
+    #expect(BlockAssembler.readsAsWriting("12"))
+    // Three marks is where the page is asked, and half its marks must be letters.
+    #expect(BlockAssembler.readsAsWriting("Ii ke"))
+    #expect(BlockAssembler.readsAsWriting("and the rest of that line"))
+    #expect(BlockAssembler.readsAsWriting("the 9/11 attack. At the time of their travel through"))
+    #expect(BlockAssembler.readsAsWriting("occurred far later than"))
+    #expect(BlockAssembler.readsAsWriting("Lambert, D.: Measures of Disclosure Risk and Harm,"))
+    #expect(!BlockAssembler.readsAsWriting("~ 2(./ /.l,O .2/.I"))
+    #expect(!BlockAssembler.readsAsWriting("\u{2713}.:-"))
+    #expect(!BlockAssembler.readsAsWriting("26 JJ' S'I- ff.I /9.!i 5i.t. If j'_,"))
+    #expect(!BlockAssembler.readsAsWriting("1.5 0.0 11.8"))
+    // Any script counts as writing, not Latin alone.
+    #expect(BlockAssembler.readsAsWriting("\u{7B2C}\u{4E8C}\u{7AE0}"))
+    #expect(BlockAssembler.readsAsWriting("\u{0627}\u{0644}\u{0648}\u{0644}\u{0627}\u{064A}\u{0627}\u{062A}"))
+}
+
 // MARK: - A picture across the measure at the head of a page (#160)
 
 /// A figure a page sets across both its columns carries the whole measure with it, so while it

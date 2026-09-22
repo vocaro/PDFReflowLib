@@ -198,3 +198,11 @@ recognition, and the extraction pass that decides it runs before any block is re
 observation is added to #269.
 
 The per-book table above is measured against `94a24ad` as it says, on the two binaries named there.
+
+`main` moved once more, to `2511584`, bringing #245's rule for a numbered item the page breaks
+mid-word — a change in the same `.prose` branch of `BlockAssembler.append` this one adds to. Merged
+again: the fast lane passes every gate, the corpus lane passes all 18 cases with both files read
+for each, and the handbook still holds 10 bare markers, one block ending in a marker and 1,391
+preformatted blocks, exactly as the table above records. The two books that differ from the
+previous merge differ by that merge's own work and not by this one — one character in the handbook
+and two blocks in the Fed book, neither of them a marker.

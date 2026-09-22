@@ -919,4 +919,88 @@ func twoColumnsOfProseAreStillCutAtTheirGutter() {
             == [40, 500, 40, 500, 40, 500, 40, 500])
 }
 
+/// A two-column list whose right column is prose is read row by row, whatever divides its rows
+/// (#283, #270).
+///
+/// The 9/11 report's appendix B is a table of names: twenty-three printed rows, a name at
+/// x=44.70 and an office at x=152.70, with 29 points of white between them — four times what a
+/// column cut needs. PDFKit merges exactly one of those rows, the `Janet Reno` row, and that
+/// undivided line bridging the gutter is the only thing that keeps the page from being cut there.
+/// Divide it, which is the correct reading of what the page prints and what #270's rule does on
+/// its own geometry, and every name loses its office.
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/283"))
+func aTableOfNamesIsReadRowByRowOnceItsMergedRowIsDivided() throws {
+    let fixture = try SourceLayoutFixture.load("911-451")
+    let page = fixture.content()
+    let merged = try #require(page.lines.first { $0.text.hasPrefix("Janet Reno Attorney General") })
+    // The row as #270's cut divides it: the name on the left column's edge and the office on the
+    // right column's, on the one baseline the page printed them on.
+    func piece(_ text: String, x: Double, width: Double) -> TextLine {
+        TextLine(text: text, rect: CGRect(x: x, y: merged.rect.minY, width: width,
+                                          height: merged.rect.height), fontSize: merged.fontSize)
+    }
+    var lines = page.lines.filter { $0 != merged }
+    lines.append(piece("Janet Reno", x: 44.70, width: 45.86))
+    lines.append(piece("Attorney General, 1993–2001", x: 152.70, width: 110.33))
+    let divided = PageContent(number: page.number, bounds: page.bounds, lines: lines,
+                              graphics: page.graphics, pictures: page.pictures)
+    var warnings: [ConversionWarning] = []
+    let text = LayoutReconstructor.blocks(page: divided, images: [], vocabulary: [],
+                                          warnings: &warnings).map(\.text).joined(separator: "\n")
+    try expectInOrder(text, [
+        "Thomas Pickering", "Under Secretary of State, 1997–2000",
+        "Colin Powell", "Secretary of State, 2001–",
+        "Ronald Reagan", "40th President of the United States, 1981–1989",
+        "Janet Reno", "Attorney General, 1993–2001",
+        "Condoleezza Rice", "National Security Advisor, 2001–",
+        "Bill Richardson", "Ambassador to the United Nations, 1997–1998",
+    ])
+    // And no name runs into the next: read as columns, seven of them ran together in one block.
+    #expect(!text.contains("Thomas Pickering Colin Powell"))
+    #expect(!text.contains("Condoleezza Rice Bill Richardson"))
+    // The page as PDFKit actually hands it over is unchanged: its one merged row bridges the
+    // gutter, so no cut was ever made there and none is made now.
+    var asRead: [ConversionWarning] = []
+    #expect(LayoutReconstructor.blocks(page: page, images: [], vocabulary: [], warnings: &asRead)
+        .contains { $0.text == "Janet Reno Attorney General, 1993–2001" })
+}
 
+/// Three rows at least, each on its own row, none of them numbered, and a column of prose on the
+/// other side of the white (#283).
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/283"))
+func aStackOfCellsIsThreeUnnumberedRowsBesideAColumnOfProse() {
+    func line(_ text: String, x: Double, y: Double, width: Double) -> LayoutReconstructor.Element {
+        let rect = CGRect(x: x, y: y, width: width, height: 12)
+        return .init(rect: rect, line: TextLine(text: text, rect: rect, fontSize: 10), image: nil)
+    }
+    func page(rows: Int, name: Double = 100, office: Double = 130,
+              marker: String = "") -> [LayoutReconstructor.Element] {
+        (0..<rows).flatMap { row -> [LayoutReconstructor.Element] in
+            let y = 700 - Double(row) * 13
+            return [line("\(marker)A name the page sets in its left column, row \(row)", x: 40, y: y, width: name),
+                    line("\(marker)The office that name held, set in the column beside it", x: 300, y: y, width: office)]
+        }
+    }
+    // Three rows of a name against an office: cells beside a column of prose, read across.
+    #expect(LayoutReconstructor.ordered(page(rows: 3), bodySize: 10).map { $0.rect.minX }
+            == [40, 300, 40, 300, 40, 300])
+    // Two rows state no stack, and the page is cut at its gutter as it always was.
+    #expect(LayoutReconstructor.ordered(page(rows: 2), bodySize: 10).map { $0.rect.minX }
+            == [40, 40, 300, 300])
+    // A column of prose is a column however its rows line up: neither side is a stack of cells
+    // once each holds two lines of a column's own measure.
+    #expect(LayoutReconstructor.ordered(page(rows: 3, name: 130), bodySize: 10).map { $0.rect.minX }
+            == [40, 40, 40, 300, 300, 300])
+    // Two stacks of cells beside each other are two columns, and reading them across would take
+    // each apart. The 9/11 report's own staff pages set a name over the post they held down both
+    // sides of the page, and every one of those names is short, on its own row, and beside a line
+    // of the other column.
+    #expect(LayoutReconstructor.ordered(page(rows: 3, office: 100), bodySize: 10).map { $0.rect.minX }
+            == [40, 40, 40, 300, 300, 300])
+    // And a grid the page numbered states its own order. What to do with Wallace's two-per-row
+    // exercise grids is an owner decision taken in #195 and scoped in #219 item 4, which names
+    // the contract and the test it has to move with; until it lands, a numbered cell keeps the
+    // reading it has.
+    #expect(LayoutReconstructor.ordered(page(rows: 3, marker: "1) "), bodySize: 10).map { $0.rect.minX }
+            == [40, 40, 40, 300, 300, 300])
+}

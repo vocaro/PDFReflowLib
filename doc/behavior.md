@@ -1018,6 +1018,18 @@ line is long and as narrow as the line is thick, and such a group is read along 
 (#207, #263, #277,
 [contents-page-numbers](../measurements/contents-page-numbers/record.md)).
 
+A cut is refused the same way where one side is **a stack of cells standing on the rows of the
+lines beside them**: three or more elements, no two of them on one row, each on the row of a line
+on the other side, none of them a text line of a column's measure, and none of them opening a list
+marker. The 9/11 report's appendix of names sets a name against an office on twenty-three rows,
+and reads column by column — `Thomas Pickering Colin Powell Ronald Reagan …` and then every office
+— as soon as the one row the extractor hands back whole is divided at its gutter, which is the
+correct reading of what that page prints. Three rows at least, because two cells beside two lines
+are a label and a heading; and none of them numbered, because a numbered grid states its own
+order, and what to do with a two-per-row exercise grid is an owner decision taken in #195 and
+scoped in #219 (#270, #283,
+[two-column-lists-read-by-rows](../measurements/two-column-lists-read-by-rows/record.md)).
+
 A fifth condition is that a marker keeps its item. **A bullet is never a column of its own**, so a
 stack of bullets describes no column of the page, whatever it chains onto: a page that hangs its
 bullets clear of short items sets a column of markers beside a column of item text, and the marker

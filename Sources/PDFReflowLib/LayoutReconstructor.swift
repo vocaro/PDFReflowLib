@@ -572,6 +572,53 @@ enum LayoutReconstructor {
             }
         }
 
+        /// Whether one side of a candidate gutter is a stack of cells standing on the rows of
+        /// the lines beside them: three or more elements, no two of them on one row, each on the
+        /// row of a line on the other side, not one of them a text line of the measure a column
+        /// is set to, and not one of them opening a list marker of its own.
+        ///
+        /// Cutting there takes every cell out of its row. The 9/11 report's appendix of names
+        /// sets a name against an office on twenty-three rows, and the white between the two is
+        /// 29 points, four times what a cut needs; the page reads row by row today only because
+        /// PDFKit hands one of those rows back whole and that undivided line bridges the gutter.
+        /// Divide it — which is the correct reading of what the page prints, and what #270's rule
+        /// does on its own geometry — and every name loses its office (#283).
+        ///
+        /// Three rows at least, and each on its own row: two cells beside two lines are a label
+        /// and a heading, which the page-number rule above already reads where they are numbers,
+        /// and one element is no stack at all.
+        ///
+        /// And the other side must be a column: two lines of the measure a column is set to, the
+        /// same substance the narrow gutter asks of both sides. Cells beside prose are that
+        /// prose's rows; **two stacks of cells beside each other are two columns**, and reading
+        /// them across would take each apart. The 9/11 report's own staff pages set two columns
+        /// of a name over the post they held — `Joanne M. Accolla` / `Staff Assistant` down one
+        /// side and `Samuel M. W. Caspersen` / `Counsel` down the other — and every one of those
+        /// names is short, on its own row, and beside a line of the other column. Without this the
+        /// page reads `Joanne M. Accolla`, `Samuel M. W. Caspersen`, `Staff Assistant`, `Counsel`,
+        /// which is neither column.
+        ///
+        /// A cell the page numbered is not read here at all. **A numbered grid states its own
+        /// order**, and what to do with Wallace's two-per-row exercise grids — which are cells
+        /// beside cells on this test and would be reordered by it — is an owner decision taken in
+        /// #195 and scoped in #219 item 4, which names the contract and the test it has to move
+        /// with. Until that lands, a side any of whose cells opens a marker keeps the reading it
+        /// has.
+        func cellStackBesideItsRows(_ side: [Element], beside rest: [Element]) -> Bool {
+            guard side.count >= 3,
+                  rest.count(where: { $0.line != nil && $0.rect.width >= bodySize * 12 }) >= 2,
+                  !side.contains(where: { $0.line != nil && $0.rect.width >= bodySize * 12 })
+            else { return false }
+            for (index, element) in side.enumerated() {
+                guard element.image == nil, element.table == nil, let line = element.line,
+                      line.turn == .upright, !isList(line.text),
+                      !side[(index + 1)...].contains(where: { sameRow($0.rect, element.rect) }),
+                      rest.contains(where: { $0.line?.turn == .upright && sameRow($0.rect, element.rect) })
+                else { return false }
+            }
+            return true
+        }
+
         func gap(horizontal: Bool) -> CGFloat? {
             let intervals = elements.map { horizontal ? ($0.rect.minX, $0.rect.maxX) : ($0.rect.minY, $0.rect.maxY) }
                 .sorted { $0.0 < $1.0 }
@@ -596,7 +643,9 @@ enum LayoutReconstructor {
                         // However wide the white between them, a column of page numbers standing
                         // on the rows of the entries beside it is not a column of the page: it is
                         // where each of those entries ran its leader out to (#207, #277).
-                        if pageNumbersAlone(right, beside: left) || pageNumbersAlone(left, beside: right) {
+                        if pageNumbersAlone(right, beside: left) || pageNumbersAlone(left, beside: right)
+                            || cellStackBesideItsRows(right, beside: left)
+                            || cellStackBesideItsRows(left, beside: right) {
                             end = max(end, interval.1); continue
                         }
                     }

@@ -1017,6 +1017,20 @@ row-major sort, one entry of each column at a time.
   the FAA handbook's acknowledgments name a chapter at the end of every credit and set each credit
   on its own line, so every row ends in a digit and three of the twenty end within half a body of
   one another, and nothing about that page is a table (#171).
+- A run the page **filled to one measure** states no cell boundary, however far apart the
+  extractor kept its opening pieces: a cell is set to its content and a paragraph is set to a
+  measure, so a table's rows end raggedly and a paragraph's lines end again and again on the same
+  edge (#268). Replay Clocks sets its references with the citation number outdented and the entry
+  hanging at an indent — `[8]` arriving as a cell of its own, `[9] David L Mills. …` merged whole
+  and reaching across it — which is the shape of a two-column table and read as one; seven of the
+  eleven rows end within a fifth of a body of 558.2 and the four that fall short are each entry's
+  closing line. Three rows at least, and most of the run, must reach that edge, and the edge must
+  be carried by words: an edge carried by numbers is the column the rule above already reads, and
+  the NOAA chapter contents right-align `4-16`, `5-9` and `7-20` against theirs. Neither the share
+  of rows the extractor split nor the share opening on the run's own left edge separates the two —
+  both were measured under #171 and both released the 9/11 report's flight timelines, the Blue
+  Book's contents, the FAA handbook's cruise table and the USGS statistics along with the
+  references.
 - The **leading a page states** is the commonest distance between the tops of two vertically
   adjacent lines, set at one size, in one column, to the nearest half point, over the lines its
   crops leave in the prose. At least four such pairs must agree, so a page too bare to say

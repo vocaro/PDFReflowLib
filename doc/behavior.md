@@ -153,6 +153,45 @@ Evidence: [pdfkit-structure-tree](../measurements/pdfkit-structure-tree/record.m
   rule are changed. Evidence:
   [margin-rule-read-as-letters](../measurements/margin-rule-read-as-letters/record.md).
 
+- **A row of two columns PDFKit merged across the gutter (#270).** The 9/11 report sets two flight
+  timelines side by side on physical pages 50 and 51, each under three heading rows. PDFKit reads
+  the first and third of those rows as two lines, one per column, and hands the second back as a
+  single line spanning both — `(AA 11)             (UA 175)` at `x=39.66` over `199.63` points,
+  where the rows above and below are read apart at `x=39.66` and `x=195.67`. A line that bridges
+  the gutter cannot be separated by any whitespace cut downstream, and it stands on the left
+  column's own edge directly above the left column's route, which the column-and-leading test then
+  joins to it: the book read `(AA 11) (UA 175) Boston to Los Angeles` and stranded the right
+  column's route. The page's own shows do not divide such a row — `NativeSpacingReader` returns the
+  whole heading row as one text-showing operation, with the gutter inside its own advance, so the
+  ink `TableReader` reads (#210) is one unbroken range and its corridors find nothing. The division
+  comes from the characters, where the box is formed, for the same reason #264's does.
+  A line is cut where **three rows agree on two column edges**: the line stands alone in its
+  printed row, the printed rows directly above and below it each hold exactly two pieces, those
+  two rows state the same two left edges to within a point, and the line begins on the first edge
+  and reaches past the second. Each step between the three rows is a leading, no more than twice
+  the taller row's height, so three rows of a page at large are not a group.
+  **The three rows are the whole of what the page states there.** Neither the row two above nor the
+  row two below may stand on the same pair of edges: where a page states its columns over four rows
+  or more, the reading already holds divided pieces for them and the ordering rules can see those
+  columns, and dividing one more row changes how the whole page is read. The 9/11 report's own
+  table of names on page 451 sets twenty-three rows on 44.70 and 152.70, of which PDFKit merges
+  one; dividing that one turns a list of names with their offices into a paragraph of names
+  followed by a paragraph of offices, which is [#283](https://github.com/vocaro/PDFReflowLib/issues/283).
+  **What refuses the cut is the white.** A line the page genuinely sets across both columns — a
+  headline, a caption — has the same shape, and keeps its reading, because it runs its words
+  *through* the gutter: the white at the column edge is the space it sets everywhere else. The cut
+  is made only where the second edge falls in white at least twice the line's own characters are
+  tall and at least three times the widest white elsewhere in the line — 118.37 points against
+  4.50 on page 50. A line whose characters PDFKit reports out of the order they stand in states
+  nothing about its columns and is left alone, and so is one with anything printed in the white,
+  so nothing that prints is ever cut away. The white is read from the line's **ink**: its spaces,
+  and any character the page gives no width, are not type.
+  Each piece keeps PDFKit's own outer edge, its own inner edge, the row's baseline and height, and
+  its half of the styled text; a line a repair rewrote between the reading and the cut is not cut.
+  Across the twenty-four cached sources exactly two lines are cut, the two the issue names.
+  Evidence:
+  [flight-label-row-cut-at-the-gutter](../measurements/flight-label-row-cut-at-the-gutter/record.md).
+
 Evidence: [pdfkit-concurrency](../measurements/pdfkit-concurrency/record.md),
 [pdfkit-gate-drain](../measurements/pdfkit-gate-drain/record.md),
 [extraction-cancellation](../measurements/extraction-cancellation/record.md),
@@ -255,7 +294,8 @@ spatial reconstruction rather than partial results.
 
 - **`NativeSpacingReader`.** Repairs a PDFKit word boundary only where a supported text-show
   operation contradicts it. It *removes* a space when a Type3 `TJ` array places a tiny negative
-  adjustment there, with the font's one-byte `ToUnicode` map, text and placement matching. It
+  adjustment there, with the font's one-byte `ToUnicode` map, text and placement matching, and
+  where two shows continue one number (#274, below). It
   *inserts* the space the source draws without a space glyph (#43/#110, #119, #128, #120), on
   pages it can model completely: `Tc`, `Tw` and the text matrix are tracked (a show that draws
   straight after another continues the cursor by the previous show's own advance, spacing and
@@ -283,6 +323,18 @@ spatial reconstruction rather than partial results.
     U+2100–U+214F), never where a chained initial (`C.|A.`) explains the gap, and never on a
     boundary beside a one-glyph string whose other side is also a word gap (letter-spaced type);
   - **a character-spaced column gap** of at least 0.5 em set by `Tc` splits a two-glyph show;
+  - **`closesNumber`** takes a space back where the page draws one number in two shows (#274):
+    two shows of one font at one size on one baseline (within 0.1 em), the first ending in a
+    digit and the second opening with one, at a positive gap narrower than the space character
+    that font itself draws (`Widths[32]`, less any `Tw` that narrows it). FAA page 416 sets the
+    NDB table's `25` as `(       2)Tj … (5)Tj` at 1.34 pt over a 10-point size — 0.134 em against
+    a 0.25 em space — and the row arrived as `MH Under 50 2 5`. This is the only boundary the
+    corpus closes: the nearest digit-to-digit boundary it leaves alone is that book's page 458
+    chart columns, at 3.6 times their own font's space. A font that states no width for the space
+    character, or states zero, states nothing here — that is every TeX font of Wallace's algebra,
+    which draws no space glyph at all — so #119's constraint holds by mechanism and not by
+    threshold. Only two digits close: a number against a word is what the font-change rule
+    weighs, and a period or comma against one is a contents leader or a sentence.
   - **`sentenceSpace`** finds sentence punctuation (`. , ; : ? !`, optionally behind closing
     quotes or brackets) after a letter, digit or closing bracket, before a capital not followed by
     a period or an opening quote before an alphanumeric, at a gap between -0.15 and 1 em: the
@@ -311,6 +363,16 @@ spatial reconstruction rather than partial results.
   PDFKit split at a wide gap is repaired in the half that holds each boundary. Explicit spaces,
   genuine word-size gaps and style attributes are kept, a boundary PDFKit already spaces inserts
   nothing, and a line whose every show is held by another rectangle too rewrites nothing.
+  A *removal* is owned differently, because the defect it answers has the opposite shape: a page
+  sets a table row by carrying the cursor from cell to cell with runs of space glyphs and PDFKit
+  reports one space for a run, so on such a row the source draws the whitespace the extraction
+  does not, and the segmented walk — which skips only the extraction's own spaces — resynchronizes
+  on nothing (between `MH     Under 50         25` and `MH Under 50 2 5` the longest anchor is the
+  nine characters of `Under 50 `). `closedSpaces` therefore owns a removal whole-line and blind to
+  whitespace on both sides: every non-blank character the shows draw must be the next non-blank
+  character PDFKit read, in order, with nothing left over either way, the closure must have no
+  whitespace beside it in the source, and exactly one space at it in the extraction. That is
+  stricter than the segmented walk, not looser, and it reaches no insertion (#274).
 - **`GlyphIdentityReader` (#217, two of #186's five fixes).** PDFKit reads every glyph through
   its font's `ToUnicode` map; two kinds of font disagree with what they draw. A dingbat font
   (Zapf Dingbats and its clones ITC Zapf Dingbats, `Dingbats`, Monotype Sorts, subset tags

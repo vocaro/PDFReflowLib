@@ -72,6 +72,7 @@ extension NativeSpacingReader {
         hole.text = nil
         hole.unicode = nil
         hole.end = nil
+        hole.spaceWidth = nil
         hole.smallGaps = []
         hole.wordSpaces = []
         hole.sentenceSpaces = []
@@ -113,6 +114,41 @@ extension NativeSpacingReader {
             i = next; j = nextExtracted; matched = 0
         }
         return inserted.isEmpty ? nil : inserted
+    }
+
+    /// The offsets in `extracted` where PDFKit spells a space across a boundary the page closes
+    /// (#274), each the one space between the two characters the closure separates.
+    ///
+    /// The segmented walk cannot own these lines, and the reason is the shape of the defect. A
+    /// page sets a table row by carrying the text cursor from cell to cell with runs of space
+    /// glyphs, and PDFKit reports one space for a run, so on such a row the *source* draws the
+    /// whitespace the extraction does not. That walk skips only the extraction's own spaces, so it
+    /// reads each run as a disagreement, and FAA page 416's row resynchronizes on nothing: the
+    /// longest anchor left between `MH     Under 50         25` and `MH Under 50 2 5` is the nine
+    /// characters of `Under 50 `, against an anchor length of twelve.
+    ///
+    /// So a removal is owned whole-line and blind to whitespace on both sides: every non-blank
+    /// character the shows draw must be the next non-blank character PDFKit read, in order, with
+    /// nothing left over on either side, and the closure itself must have no whitespace beside it
+    /// in the source and exactly one space at it in the extraction. That is stricter than the
+    /// segmented walk, not looser — one character of the line the shows cannot account for
+    /// supplies no removal at all, where the segmented walk would still apply what its other
+    /// segments yielded. It also reaches no insertion: insertions keep the walk they already had.
+    static func closedSpaces(in extracted: [UInt16], source: [UInt16], closures: Set<Int>) -> [Int] {
+        guard !closures.isEmpty else { return [] }
+        let sourceMarks = source.indices.filter { !whitespace(source[$0]) }
+        let extractedMarks = extracted.indices.filter { !whitespace(extracted[$0]) }
+        guard sourceMarks.count == extractedMarks.count, !sourceMarks.isEmpty,
+              zip(sourceMarks, extractedMarks).allSatisfy({ source[$0] == extracted[$1] }) else { return [] }
+        var removals: [Int] = []
+        for (rank, offset) in sourceMarks.enumerated() where closures.contains(offset) {
+            // The closure separates two characters the page draws with nothing between them.
+            guard rank > 0, sourceMarks[rank - 1] == offset - 1 else { continue }
+            let before = extractedMarks[rank - 1], after = extractedMarks[rank]
+            guard after == before + 2, extracted[before + 1] == 32 else { continue }
+            removals.append(before + 1)
+        }
+        return removals
     }
 
     /// Where the two walks agree again after a disagreement at `i` and `j`: the positions reached

@@ -1,0 +1,2613 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        532.42380000000003,
+        33.709700000000005,
+        25.57000000000005,
+        12.310000000000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "16-29"
+        }
+      ],
+      "text" : "16-29"
+    },
+    {
+      "rect" : [
+        72.003800000000012,
+        719.5696999999999,
+        237.07200000000006,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "difficult to measure to that level of accuracy, and in practical"
+        }
+      ],
+      "text" : "difficult to measure to that level of accuracy, and in practical"
+    },
+    {
+      "rect" : [
+        72.003800000000012,
+        707.0696999999999,
+        237.10999999999996,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "application, it is rarely necessary. A number of flight planning"
+        }
+      ],
+      "text" : "application, it is rarely necessary. A number of flight planning"
+    },
+    {
+      "rect" : [
+        72.003800000000012,
+        694.5696999999999,
+        237.0080000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "publications publish airport coordinates and waypoints with"
+        }
+      ],
+      "text" : "publications publish airport coordinates and waypoints with"
+    },
+    {
+      "rect" : [
+        72.003800000000012,
+        682.0696999999999,
+        237.005,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "this precision and the unit accepts those figures. There is a"
+        }
+      ],
+      "text" : "this precision and the unit accepts those figures. There is a"
+    },
+    {
+      "rect" : [
+        72.003800000000012,
+        669.5696999999999,
+        237.09499999999997,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "subtle but important difference in CDI operation and display"
+        }
+      ],
+      "text" : "subtle but important difference in CDI operation and display"
+    },
+    {
+      "rect" : [
+        72.003800000000012,
+        657.0696999999999,
+        84.439999999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "in the RNAV modes."
+        }
+      ],
+      "text" : "in the RNAV modes."
+    },
+    {
+      "rect" : [
+        72.003800000000012,
+        632.0696999999999,
+        237.01499999999993,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "In the RNAV modes, course deviation is displayed in terms"
+        }
+      ],
+      "text" : "In the RNAV modes, course deviation is displayed in terms"
+    },
+    {
+      "rect" : [
+        72.003800000000012,
+        619.5696999999999,
+        237.0139999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "of linear deviation. In the RNAV en route mode, maximum"
+        }
+      ],
+      "text" : "of linear deviation. In the RNAV en route mode, maximum"
+    },
+    {
+      "rect" : [
+        72.003800000000012,
+        607.0696999999999,
+        237.02700000000004,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "deflection of the CDI typically represents 5 NM on either"
+        }
+      ],
+      "text" : "deflection of the CDI typically represents 5 NM on either"
+    },
+    {
+      "rect" : [
+        72.003800000000012,
+        594.5696999999999,
+        237.0200000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "side of the selected course without regard to distance from the"
+        }
+      ],
+      "text" : "side of the selected course without regard to distance from the"
+    },
+    {
+      "rect" : [
+        72.003800000000012,
+        582.0696999999999,
+        237.10499999999996,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "waypoint. In the RNAV approach mode, maximum deflection"
+        }
+      ],
+      "text" : "waypoint. In the RNAV approach mode, maximum deflection"
+    },
+    {
+      "rect" : [
+        72.003800000000012,
+        569.5696999999999,
+        236.98099999999994,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "of the CDI typically represents 1¼ NM on either side of the"
+        }
+      ],
+      "text" : "of the CDI typically represents 1¼ NM on either side of the"
+    },
+    {
+      "rect" : [
+        72.003800000000012,
+        557.0696999999999,
+        237.06999999999977,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "selected course. There is no increase in CDI sensitivity as the"
+        }
+      ],
+      "text" : "selected course. There is no increase in CDI sensitivity as the"
+    },
+    {
+      "rect" : [
+        72.003800000000012,
+        544.5696999999999,
+        191.33999999999997,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "aircraft approaches a waypoint in RNAV mode."
+        }
+      ],
+      "text" : "aircraft approaches a waypoint in RNAV mode."
+    },
+    {
+      "rect" : [
+        72.003800000000012,
+        519.5696999999999,
+        237.10999999999996,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "The RNAV approach mode is used for instrument approaches."
+        }
+      ],
+      "text" : "The RNAV approach mode is used for instrument approaches."
+    },
+    {
+      "rect" : [
+        72.003800000000012,
+        507.0696999999999,
+        237.00999999999993,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Its narrow scale width (¼ of the en route mode) permits very"
+        }
+      ],
+      "text" : "Its narrow scale width (¼ of the en route mode) permits very"
+    },
+    {
+      "rect" : [
+        72.003800000000012,
+        494.5696999999999,
+        237.00200000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "precise tracking to or from the selected waypoint. In VFR"
+        }
+      ],
+      "text" : "precise tracking to or from the selected waypoint. In VFR"
+    },
+    {
+      "rect" : [
+        72.003800000000012,
+        482.0696999999999,
+        237.01699999999994,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "cross-country navigation, tracking a course in the approach"
+        }
+      ],
+      "text" : "cross-country navigation, tracking a course in the approach"
+    },
+    {
+      "rect" : [
+        72.003800000000012,
+        469.5696999999999,
+        236.91000000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "mode is not desirable because it requires a great deal of"
+        }
+      ],
+      "text" : "mode is not desirable because it requires a great deal of"
+    },
+    {
+      "rect" : [
+        72.003800000000012,
+        457.0696999999999,
+        144.71000000000004,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "attention and soon becomes tedious."
+        }
+      ],
+      "text" : "attention and soon becomes tedious."
+    },
+    {
+      "rect" : [
+        72.003800000000012,
+        432.0696999999999,
+        237.12000000000012,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "A fourth, lesser-used mode on some units is the VOR"
+        }
+      ],
+      "text" : "A fourth, lesser-used mode on some units is the VOR"
+    },
+    {
+      "rect" : [
+        72.003800000000012,
+        419.5696999999999,
+        237.00999999999993,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Parallel mode. This permits the CDI to display linear"
+        }
+      ],
+      "text" : "Parallel mode. This permits the CDI to display linear"
+    },
+    {
+      "rect" : [
+        72.003800000000012,
+        407.0696999999999,
+        237.01000000000005,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "(not angular) deviation as the aircraft tracks to and from"
+        }
+      ],
+      "text" : "(not angular) deviation as the aircraft tracks to and from"
+    },
+    {
+      "rect" : [
+        72.003800000000012,
+        394.5696999999999,
+        237.05000000000013,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "VORTACs. It derives its name from permitting the pilot"
+        }
+      ],
+      "text" : "VORTACs. It derives its name from permitting the pilot"
+    },
+    {
+      "rect" : [
+        72.003800000000012,
+        382.0696999999999,
+        236.99000000000018,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "to offset (or parallel) a selected course or airway at a fixed"
+        }
+      ],
+      "text" : "to offset (or parallel) a selected course or airway at a fixed"
+    },
+    {
+      "rect" : [
+        72.003800000000012,
+        369.5696999999999,
+        237.08100000000007,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "distance of the pilot’s choosing, if desired. The VOR parallel"
+        }
+      ],
+      "text" : "distance of the pilot’s choosing, if desired. The VOR parallel"
+    },
+    {
+      "rect" : [
+        72.003800000000012,
+        357.0696999999999,
+        237.06000000000012,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "mode has the same effect as placing a waypoint directly"
+        }
+      ],
+      "text" : "mode has the same effect as placing a waypoint directly"
+    },
+    {
+      "rect" : [
+        72.003800000000012,
+        344.5696999999999,
+        237.00000000000017,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "over an existing VORTAC. Some pilots select the VOR"
+        }
+      ],
+      "text" : "over an existing VORTAC. Some pilots select the VOR"
+    },
+    {
+      "rect" : [
+        72.003800000000012,
+        332.0696999999999,
+        237.03499999999991,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "parallel mode when utilizing the navigation (NAV) tracking"
+        }
+      ],
+      "text" : "parallel mode when utilizing the navigation (NAV) tracking"
+    },
+    {
+      "rect" : [
+        72.003800000000012,
+        319.5696999999999,
+        237.00000000000006,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "function of their autopilot for smoother course following"
+        }
+      ],
+      "text" : "function of their autopilot for smoother course following"
+    },
+    {
+      "rect" : [
+        72.003800000000012,
+        307.0696999999999,
+        79.54000000000002,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "near the VORTAC."
+        }
+      ],
+      "text" : "near the VORTAC."
+    },
+    {
+      "rect" : [
+        72.003800000000012,
+        282.0696999999999,
+        236.99000000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Navigating an aircraft with VOR/DME-based RNAV can be"
+        }
+      ],
+      "text" : "Navigating an aircraft with VOR/DME-based RNAV can be"
+    },
+    {
+      "rect" : [
+        72.003800000000012,
+        269.5696999999999,
+        237.01999999999992,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "confusing, and it is essential that the pilot become familiar"
+        }
+      ],
+      "text" : "confusing, and it is essential that the pilot become familiar"
+    },
+    {
+      "rect" : [
+        72.003800000000012,
+        257.0696999999999,
+        237.00799999999992,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "with the equipment installed. It is not unknown for pilots to"
+        }
+      ],
+      "text" : "with the equipment installed. It is not unknown for pilots to"
+    },
+    {
+      "rect" : [
+        72.003800000000012,
+        244.5696999999999,
+        237.01099999999991,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "operate inadvertently in one of the RNAV modes when the"
+        }
+      ],
+      "text" : "operate inadvertently in one of the RNAV modes when the"
+    },
+    {
+      "rect" : [
+        72.003800000000012,
+        232.0696999999999,
+        237.01299999999998,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "operation was not intended, by overlooking switch positions"
+        }
+      ],
+      "text" : "operation was not intended, by overlooking switch positions"
+    },
+    {
+      "rect" : [
+        72.003800000000012,
+        219.5696999999999,
+        237.00599999999991,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "or annunciators. The reverse has also occurred with a pilot"
+        }
+      ],
+      "text" : "or annunciators. The reverse has also occurred with a pilot"
+    },
+    {
+      "rect" : [
+        72.003800000000012,
+        207.0696999999999,
+        237.0030000000001,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "neglecting to place the unit into one of the RNAV modes by"
+        }
+      ],
+      "text" : "neglecting to place the unit into one of the RNAV modes by"
+    },
+    {
+      "rect" : [
+        72.003800000000012,
+        194.5696999999999,
+        236.89000000000004,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "overlooking switch positions or annunciators. As always, the"
+        }
+      ],
+      "text" : "overlooking switch positions or annunciators. As always, the"
+    },
+    {
+      "rect" : [
+        72.003800000000012,
+        182.0696999999999,
+        237.00600000000003,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "prudent pilot is not only familiar with the equipment used,"
+        }
+      ],
+      "text" : "prudent pilot is not only familiar with the equipment used,"
+    },
+    {
+      "rect" : [
+        72.003800000000012,
+        169.5696999999999,
+        237.01100000000002,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "but never places complete reliance in just one method of"
+        }
+      ],
+      "text" : "but never places complete reliance in just one method of"
+    },
+    {
+      "rect" : [
+        72.003800000000012,
+        157.0696999999999,
+        212.98999999999995,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "navigation when others are available for cross-check."
+        }
+      ],
+      "text" : "navigation when others are available for cross-check."
+    },
+    {
+      "rect" : [
+        72.003800000000012,
+        131.4996999999999,
+        158.34000000000006,
+        13.189999999999998
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 10,
+          "text" : "Automatic Direction Finder (ADF)"
+        }
+      ],
+      "text" : "Automatic Direction Finder (ADF)"
+    },
+    {
+      "rect" : [
+        72.003800000000012,
+        119.0696999999999,
+        237.0030000000001,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Many general aviation-type aircraft are equipped with ADF"
+        }
+      ],
+      "text" : "Many general aviation-type aircraft are equipped with ADF"
+    },
+    {
+      "rect" : [
+        72.003800000000012,
+        106.5696999999999,
+        236.87000000000018,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "radio receiving equipment. To navigate using the ADF,"
+        }
+      ],
+      "text" : "radio receiving equipment. To navigate using the ADF,"
+    },
+    {
+      "rect" : [
+        72.003800000000012,
+        94.069699999999898,
+        237,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the pilot tunes the receiving equipment to a ground station"
+        }
+      ],
+      "text" : "the pilot tunes the receiving equipment to a ground station"
+    },
+    {
+      "rect" : [
+        72.003800000000012,
+        81.569699999999898,
+        236.9910000000001,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "known as a nondirectional radio beacon (NDB). The NDB"
+        }
+      ],
+      "text" : "known as a nondirectional radio beacon (NDB). The NDB"
+    },
+    {
+      "rect" : [
+        72.003800000000012,
+        69.069699999999898,
+        237.07400000000001,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "stations normally operate in a low or medium frequency band"
+        }
+      ],
+      "text" : "stations normally operate in a low or medium frequency band"
+    },
+    {
+      "rect" : [
+        321.00380000000007,
+        719.5696999999999,
+        236.98299999999995,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "of 200 to 415 kHz. The frequencies are readily available on"
+        }
+      ],
+      "text" : "of 200 to 415 kHz. The frequencies are readily available on"
+    },
+    {
+      "rect" : [
+        321.00380000000007,
+        707.0696999999999,
+        206.36000000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "aeronautical charts or in the Chart Supplement U.S."
+        }
+      ],
+      "text" : "aeronautical charts or in the Chart Supplement U.S."
+    },
+    {
+      "rect" : [
+        321.00380000000007,
+        682.0696999999999,
+        236.8900000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "All radio beacons, except compass locators, transmit"
+        }
+      ],
+      "text" : "All radio beacons, except compass locators, transmit"
+    },
+    {
+      "rect" : [
+        321.00380000000007,
+        669.5696999999999,
+        237.04000000000008,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "a continuous three-letter identification in code, except"
+        }
+      ],
+      "text" : "a continuous three-letter identification in code, except"
+    },
+    {
+      "rect" : [
+        321.00380000000007,
+        657.0696999999999,
+        237.0920000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "during voice transmissions. A compass locator, which is"
+        }
+      ],
+      "text" : "during voice transmissions. A compass locator, which is"
+    },
+    {
+      "rect" : [
+        321.00380000000007,
+        644.5696999999999,
+        237.00199999999984,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "associated with an instrument landing system, transmits a"
+        }
+      ],
+      "text" : "associated with an instrument landing system, transmits a"
+    },
+    {
+      "rect" : [
+        321.00380000000007,
+        632.0696999999999,
+        97.210000000000036,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "two-letter identification."
+        }
+      ],
+      "text" : "two-letter identification."
+    },
+    {
+      "rect" : [
+        321.00380000000007,
+        607.0696999999999,
+        237.02999999999997,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Standard broadcast stations can also be used in conjunction"
+        }
+      ],
+      "text" : "Standard broadcast stations can also be used in conjunction"
+    },
+    {
+      "rect" : [
+        321.00380000000007,
+        594.5696999999999,
+        237.08000000000004,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "with ADF. Positive identification of all radio stations is"
+        }
+      ],
+      "text" : "with ADF. Positive identification of all radio stations is"
+    },
+    {
+      "rect" : [
+        321.00380000000007,
+        582.0696999999999,
+        236.99699999999996,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "extremely important and this is particularly true when using"
+        }
+      ],
+      "text" : "extremely important and this is particularly true when using"
+    },
+    {
+      "rect" : [
+        321.00380000000007,
+        569.5696999999999,
+        169.14000000000004,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "standard broadcast stations for navigation."
+        }
+      ],
+      "text" : "standard broadcast stations for navigation."
+    },
+    {
+      "rect" : [
+        321.00380000000007,
+        544.5696999999999,
+        237.07000000000005,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "NDBs have one advantage over the VOR in that low or"
+        }
+      ],
+      "text" : "NDBs have one advantage over the VOR in that low or"
+    },
+    {
+      "rect" : [
+        321.00380000000007,
+        532.0696999999999,
+        237.005,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "medium frequencies are not affected by line-of-sight. The"
+        }
+      ],
+      "text" : "medium frequencies are not affected by line-of-sight. The"
+    },
+    {
+      "rect" : [
+        321.00380000000007,
+        519.5696999999999,
+        237.00999999999988,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "signals follow the curvature of the Earth; therefore, if the"
+        }
+      ],
+      "text" : "signals follow the curvature of the Earth; therefore, if the"
+    },
+    {
+      "rect" : [
+        321.00380000000007,
+        507.0696999999999,
+        237.0150000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "aircraft is within the range of the station, the signals can be"
+        }
+      ],
+      "text" : "aircraft is within the range of the station, the signals can be"
+    },
+    {
+      "rect" : [
+        321.00380000000007,
+        494.5696999999999,
+        122.74000000000007,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "received regardless of altitude."
+        }
+      ],
+      "text" : "received regardless of altitude."
+    },
+    {
+      "rect" : [
+        321.00380000000007,
+        469.5696999999999,
+        237.00599999999997,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "The following table gives the class of NDB stations, their"
+        }
+      ],
+      "text" : "The following table gives the class of NDB stations, their"
+    },
+    {
+      "rect" : [
+        321.00380000000007,
+        457.0696999999999,
+        120.80000000000007,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "power, and their usable range:"
+        }
+      ],
+      "text" : "power, and their usable range:"
+    },
+    {
+      "rect" : [
+        336.85380000000009,
+        431.77969999999988,
+        205.26999999999998,
+        12.019999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "NONDIRECTIONAL RADIO BEACON (NDB)"
+        }
+      ],
+      "text" : "NONDIRECTIONAL RADIO BEACON (NDB)"
+    },
+    {
+      "rect" : [
+        357.7238000000001,
+        419.5696999999999,
+        163.58000000000004,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "(Usable radius distances for all altitudes)"
+        }
+      ],
+      "text" : "(Usable radius distances for all altitudes)"
+    },
+    {
+      "rect" : [
+        434,
+        394.27640000000002,
+        105.83000000000004,
+        12.019999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "Power Distance"
+        }
+      ],
+      "text" : "Power Distance"
+    },
+    {
+      "rect" : [
+        321,
+        381.77640000000002,
+        216.75,
+        12.019999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "Class (Watts) (Miles)"
+        }
+      ],
+      "text" : "Class (Watts) (Miles)"
+    },
+    {
+      "rect" : [
+        321,
+        369.56640000000004,
+        236.99899999999991,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Compass Locator Under 25 15"
+        }
+      ],
+      "text" : "Compass Locator Under 25 15"
+    },
+    {
+      "rect" : [
+        321,
+        357.06640000000004,
+        236.98000000000002,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "MH Under 50 2 5"
+        }
+      ],
+      "text" : "MH Under 50 2 5"
+    },
+    {
+      "rect" : [
+        321,
+        344.56640000000004,
+        145.5,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "H 50–1999"
+        }
+      ],
+      "text" : "H 50–1999"
+    },
+    {
+      "rect" : [
+        542.55290000000002,
+        344.56640000000004,
+        15.446699999999964,
+        12.10899999999998
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 3.3299999999999841,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7,
+          "text" : "*"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "50"
+        }
+      ],
+      "text" : "*50"
+    },
+    {
+      "rect" : [
+        321,
+        332.06640000000004,
+        236.98000000000002,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "HH 2000 or more 75"
+        }
+      ],
+      "text" : "HH 2000 or more 75"
+    },
+    {
+      "rect" : [
+        321,
+        307.06639999999999,
+        237.10680000000002,
+        12.109000000000037
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 3.3300000000000409,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7,
+          "text" : "*"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Service range of individual facilities may be less than"
+        }
+      ],
+      "text" : "*Service range of individual facilities may be less than"
+    },
+    {
+      "rect" : [
+        320.99680000000001,
+        294.56639999999999,
+        36.670000000000016,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "50 miles."
+        }
+      ],
+      "text" : "50 miles."
+    },
+    {
+      "rect" : [
+        320.99680000000001,
+        269.56639999999999,
+        236.99999999999989,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "One of the disadvantages that should be considered when"
+        }
+      ],
+      "text" : "One of the disadvantages that should be considered when"
+    },
+    {
+      "rect" : [
+        320.99680000000001,
+        257.06639999999999,
+        237.10000000000002,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "using low frequency (LF) for navigation is that LF signals are"
+        }
+      ],
+      "text" : "using low frequency (LF) for navigation is that LF signals are"
+    },
+    {
+      "rect" : [
+        320.99680000000001,
+        244.56639999999999,
+        236.94999999999993,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "very susceptible to electrical disturbances, such as lightning."
+        }
+      ],
+      "text" : "very susceptible to electrical disturbances, such as lightning."
+    },
+    {
+      "rect" : [
+        320.99680000000001,
+        232.06639999999999,
+        236.99999999999989,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "These disturbances create excessive static, needle deviations,"
+        }
+      ],
+      "text" : "These disturbances create excessive static, needle deviations,"
+    },
+    {
+      "rect" : [
+        320.99680000000001,
+        219.56639999999999,
+        236.87,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "and signal fades. There may be interference from distant"
+        }
+      ],
+      "text" : "and signal fades. There may be interference from distant"
+    },
+    {
+      "rect" : [
+        320.99680000000001,
+        207.06639999999999,
+        237.11500000000001,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "stations. Pilots should know the conditions under which these"
+        }
+      ],
+      "text" : "stations. Pilots should know the conditions under which these"
+    },
+    {
+      "rect" : [
+        320.99680000000001,
+        194.56639999999999,
+        236.99599999999987,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "disturbances can occur so they can be more alert to possible"
+        }
+      ],
+      "text" : "disturbances can occur so they can be more alert to possible"
+    },
+    {
+      "rect" : [
+        320.99680000000001,
+        182.06639999999999,
+        135.80000000000001,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "interference when using the ADF."
+        }
+      ],
+      "text" : "interference when using the ADF."
+    },
+    {
+      "rect" : [
+        320.99680000000001,
+        157.06639999999999,
+        236.99799999999993,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Basically, the ADF aircraft equipment consists of a tuner,"
+        }
+      ],
+      "text" : "Basically, the ADF aircraft equipment consists of a tuner,"
+    },
+    {
+      "rect" : [
+        320.99680000000001,
+        144.56639999999999,
+        237.02300000000002,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "which is used to set the desired station frequency, and the"
+        }
+      ],
+      "text" : "which is used to set the desired station frequency, and the"
+    },
+    {
+      "rect" : [
+        320.99680000000001,
+        132.06639999999999,
+        83.329999999999984,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "navigational display."
+        }
+      ],
+      "text" : "navigational display."
+    },
+    {
+      "rect" : [
+        320.99680000000001,
+        107.06639999999999,
+        237.01699999999994,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "The navigational display consists of a dial upon which the"
+        }
+      ],
+      "text" : "The navigational display consists of a dial upon which the"
+    },
+    {
+      "rect" : [
+        320.99680000000001,
+        94.566399999999987,
+        237.01300000000003,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "azimuth is printed and a needle which rotates around the"
+        }
+      ],
+      "text" : "azimuth is printed and a needle which rotates around the"
+    },
+    {
+      "rect" : [
+        320.99680000000001,
+        82.066399999999987,
+        236.08999999999992,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "dial and points to the station to which the receiver is tuned."
+        }
+      ],
+      "text" : "dial and points to the station to which the receiver is tuned."
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    594,
+    774
+  ],
+  "caseID" : "faa-phak-8083-25c",
+  "graphics" : [
+
+  ],
+  "lines" : [
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        532.42380000000003,
+        33.709700000000005,
+        25.57000000000005,
+        12.310000000000002
+      ],
+      "text" : "16-29"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72.003800000000012,
+        719.5696999999999,
+        237.07200000000006,
+        11.470000000000027
+      ],
+      "text" : "difficult to measure to that level of accuracy, and in practical"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72.003800000000012,
+        707.0696999999999,
+        237.10999999999996,
+        11.470000000000027
+      ],
+      "text" : "application, it is rarely necessary. A number of flight planning"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72.003800000000012,
+        694.5696999999999,
+        237.0080000000001,
+        11.470000000000027
+      ],
+      "text" : "publications publish airport coordinates and waypoints with"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72.003800000000012,
+        682.0696999999999,
+        237.005,
+        11.470000000000027
+      ],
+      "text" : "this precision and the unit accepts those figures. There is a"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72.003800000000012,
+        669.5696999999999,
+        237.09499999999997,
+        11.470000000000027
+      ],
+      "text" : "subtle but important difference in CDI operation and display"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72.003800000000012,
+        657.0696999999999,
+        84.439999999999998,
+        11.470000000000027
+      ],
+      "text" : "in the RNAV modes."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72.003800000000012,
+        632.0696999999999,
+        237.01499999999993,
+        11.470000000000027
+      ],
+      "text" : "In the RNAV modes, course deviation is displayed in terms"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72.003800000000012,
+        619.5696999999999,
+        237.0139999999999,
+        11.470000000000027
+      ],
+      "text" : "of linear deviation. In the RNAV en route mode, maximum"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72.003800000000012,
+        607.0696999999999,
+        237.02700000000004,
+        11.470000000000027
+      ],
+      "text" : "deflection of the CDI typically represents 5 NM on either"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72.003800000000012,
+        594.5696999999999,
+        237.0200000000001,
+        11.470000000000027
+      ],
+      "text" : "side of the selected course without regard to distance from the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72.003800000000012,
+        582.0696999999999,
+        237.10499999999996,
+        11.470000000000027
+      ],
+      "text" : "waypoint. In the RNAV approach mode, maximum deflection"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72.003800000000012,
+        569.5696999999999,
+        236.98099999999994,
+        11.470000000000027
+      ],
+      "text" : "of the CDI typically represents 1¼ NM on either side of the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72.003800000000012,
+        557.0696999999999,
+        237.06999999999977,
+        11.470000000000027
+      ],
+      "text" : "selected course. There is no increase in CDI sensitivity as the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72.003800000000012,
+        544.5696999999999,
+        191.33999999999997,
+        11.470000000000027
+      ],
+      "text" : "aircraft approaches a waypoint in RNAV mode."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72.003800000000012,
+        519.5696999999999,
+        237.10999999999996,
+        11.470000000000027
+      ],
+      "text" : "The RNAV approach mode is used for instrument approaches."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72.003800000000012,
+        507.0696999999999,
+        237.00999999999993,
+        11.470000000000027
+      ],
+      "text" : "Its narrow scale width (¼ of the en route mode) permits very"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72.003800000000012,
+        494.5696999999999,
+        237.00200000000001,
+        11.470000000000027
+      ],
+      "text" : "precise tracking to or from the selected waypoint. In VFR"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72.003800000000012,
+        482.0696999999999,
+        237.01699999999994,
+        11.470000000000027
+      ],
+      "text" : "cross-country navigation, tracking a course in the approach"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72.003800000000012,
+        469.5696999999999,
+        236.91000000000003,
+        11.470000000000027
+      ],
+      "text" : "mode is not desirable because it requires a great deal of"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72.003800000000012,
+        457.0696999999999,
+        144.71000000000004,
+        11.470000000000027
+      ],
+      "text" : "attention and soon becomes tedious."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72.003800000000012,
+        432.0696999999999,
+        237.12000000000012,
+        11.470000000000027
+      ],
+      "text" : "A fourth, lesser-used mode on some units is the VOR"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72.003800000000012,
+        419.5696999999999,
+        237.00999999999993,
+        11.470000000000027
+      ],
+      "text" : "Parallel mode. This permits the CDI to display linear"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72.003800000000012,
+        407.0696999999999,
+        237.01000000000005,
+        11.470000000000027
+      ],
+      "text" : "(not angular) deviation as the aircraft tracks to and from"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72.003800000000012,
+        394.5696999999999,
+        237.05000000000013,
+        11.470000000000027
+      ],
+      "text" : "VORTACs. It derives its name from permitting the pilot"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72.003800000000012,
+        382.0696999999999,
+        236.99000000000018,
+        11.470000000000027
+      ],
+      "text" : "to offset (or parallel) a selected course or airway at a fixed"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72.003800000000012,
+        369.5696999999999,
+        237.08100000000007,
+        11.470000000000027
+      ],
+      "text" : "distance of the pilot’s choosing, if desired. The VOR parallel"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72.003800000000012,
+        357.0696999999999,
+        237.06000000000012,
+        11.470000000000027
+      ],
+      "text" : "mode has the same effect as placing a waypoint directly"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72.003800000000012,
+        344.5696999999999,
+        237.00000000000017,
+        11.470000000000027
+      ],
+      "text" : "over an existing VORTAC. Some pilots select the VOR"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72.003800000000012,
+        332.0696999999999,
+        237.03499999999991,
+        11.470000000000027
+      ],
+      "text" : "parallel mode when utilizing the navigation (NAV) tracking"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72.003800000000012,
+        319.5696999999999,
+        237.00000000000006,
+        11.470000000000027
+      ],
+      "text" : "function of their autopilot for smoother course following"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72.003800000000012,
+        307.0696999999999,
+        79.54000000000002,
+        11.470000000000027
+      ],
+      "text" : "near the VORTAC."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72.003800000000012,
+        282.0696999999999,
+        236.99000000000001,
+        11.470000000000027
+      ],
+      "text" : "Navigating an aircraft with VOR/DME-based RNAV can be"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72.003800000000012,
+        269.5696999999999,
+        237.01999999999992,
+        11.470000000000027
+      ],
+      "text" : "confusing, and it is essential that the pilot become familiar"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72.003800000000012,
+        257.0696999999999,
+        237.00799999999992,
+        11.470000000000027
+      ],
+      "text" : "with the equipment installed. It is not unknown for pilots to"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72.003800000000012,
+        244.5696999999999,
+        237.01099999999991,
+        11.470000000000027
+      ],
+      "text" : "operate inadvertently in one of the RNAV modes when the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72.003800000000012,
+        232.0696999999999,
+        237.01299999999998,
+        11.469999999999999
+      ],
+      "text" : "operation was not intended, by overlooking switch positions"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72.003800000000012,
+        219.5696999999999,
+        237.00599999999991,
+        11.469999999999999
+      ],
+      "text" : "or annunciators. The reverse has also occurred with a pilot"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72.003800000000012,
+        207.0696999999999,
+        237.0030000000001,
+        11.469999999999999
+      ],
+      "text" : "neglecting to place the unit into one of the RNAV modes by"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72.003800000000012,
+        194.5696999999999,
+        236.89000000000004,
+        11.469999999999999
+      ],
+      "text" : "overlooking switch positions or annunciators. As always, the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72.003800000000012,
+        182.0696999999999,
+        237.00600000000003,
+        11.469999999999999
+      ],
+      "text" : "prudent pilot is not only familiar with the equipment used,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72.003800000000012,
+        169.5696999999999,
+        237.01100000000002,
+        11.469999999999999
+      ],
+      "text" : "but never places complete reliance in just one method of"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72.003800000000012,
+        157.0696999999999,
+        212.98999999999995,
+        11.469999999999999
+      ],
+      "text" : "navigation when others are available for cross-check."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72.003800000000012,
+        131.4996999999999,
+        158.34000000000006,
+        13.189999999999998
+      ],
+      "text" : "Automatic Direction Finder (ADF)"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72.003800000000012,
+        119.0696999999999,
+        237.0030000000001,
+        11.469999999999999
+      ],
+      "text" : "Many general aviation-type aircraft are equipped with ADF"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72.003800000000012,
+        106.5696999999999,
+        236.87000000000018,
+        11.469999999999999
+      ],
+      "text" : "radio receiving equipment. To navigate using the ADF,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72.003800000000012,
+        94.069699999999898,
+        237,
+        11.469999999999999
+      ],
+      "text" : "the pilot tunes the receiving equipment to a ground station"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72.003800000000012,
+        81.569699999999898,
+        236.9910000000001,
+        11.469999999999999
+      ],
+      "text" : "known as a nondirectional radio beacon (NDB). The NDB"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72.003800000000012,
+        69.069699999999898,
+        237.07400000000001,
+        11.469999999999999
+      ],
+      "text" : "stations normally operate in a low or medium frequency band"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321.00380000000007,
+        719.5696999999999,
+        236.98299999999995,
+        11.470000000000027
+      ],
+      "text" : "of 200 to 415 kHz. The frequencies are readily available on"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321.00380000000007,
+        707.0696999999999,
+        206.36000000000001,
+        11.470000000000027
+      ],
+      "text" : "aeronautical charts or in the Chart Supplement U.S."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321.00380000000007,
+        682.0696999999999,
+        236.8900000000001,
+        11.470000000000027
+      ],
+      "text" : "All radio beacons, except compass locators, transmit"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321.00380000000007,
+        669.5696999999999,
+        237.04000000000008,
+        11.470000000000027
+      ],
+      "text" : "a continuous three-letter identification in code, except"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321.00380000000007,
+        657.0696999999999,
+        237.0920000000001,
+        11.470000000000027
+      ],
+      "text" : "during voice transmissions. A compass locator, which is"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321.00380000000007,
+        644.5696999999999,
+        237.00199999999984,
+        11.470000000000027
+      ],
+      "text" : "associated with an instrument landing system, transmits a"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321.00380000000007,
+        632.0696999999999,
+        97.210000000000036,
+        11.470000000000027
+      ],
+      "text" : "two-letter identification."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321.00380000000007,
+        607.0696999999999,
+        237.02999999999997,
+        11.470000000000027
+      ],
+      "text" : "Standard broadcast stations can also be used in conjunction"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321.00380000000007,
+        594.5696999999999,
+        237.08000000000004,
+        11.470000000000027
+      ],
+      "text" : "with ADF. Positive identification of all radio stations is"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321.00380000000007,
+        582.0696999999999,
+        236.99699999999996,
+        11.470000000000027
+      ],
+      "text" : "extremely important and this is particularly true when using"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321.00380000000007,
+        569.5696999999999,
+        169.14000000000004,
+        11.470000000000027
+      ],
+      "text" : "standard broadcast stations for navigation."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321.00380000000007,
+        544.5696999999999,
+        237.07000000000005,
+        11.470000000000027
+      ],
+      "text" : "NDBs have one advantage over the VOR in that low or"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321.00380000000007,
+        532.0696999999999,
+        237.005,
+        11.470000000000027
+      ],
+      "text" : "medium frequencies are not affected by line-of-sight. The"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321.00380000000007,
+        519.5696999999999,
+        237.00999999999988,
+        11.470000000000027
+      ],
+      "text" : "signals follow the curvature of the Earth; therefore, if the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321.00380000000007,
+        507.0696999999999,
+        237.0150000000001,
+        11.470000000000027
+      ],
+      "text" : "aircraft is within the range of the station, the signals can be"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321.00380000000007,
+        494.5696999999999,
+        122.74000000000007,
+        11.470000000000027
+      ],
+      "text" : "received regardless of altitude."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321.00380000000007,
+        469.5696999999999,
+        237.00599999999997,
+        11.470000000000027
+      ],
+      "text" : "The following table gives the class of NDB stations, their"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321.00380000000007,
+        457.0696999999999,
+        120.80000000000007,
+        11.470000000000027
+      ],
+      "text" : "power, and their usable range:"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        336.85380000000009,
+        431.77969999999988,
+        205.26999999999998,
+        12.019999999999982
+      ],
+      "text" : "NONDIRECTIONAL RADIO BEACON (NDB)"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        357.7238000000001,
+        419.5696999999999,
+        163.58000000000004,
+        11.470000000000027
+      ],
+      "text" : "(Usable radius distances for all altitudes)"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        434,
+        394.27640000000002,
+        105.83000000000004,
+        12.019999999999982
+      ],
+      "text" : "Power Distance"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        381.77640000000002,
+        216.75,
+        12.019999999999982
+      ],
+      "text" : "Class (Watts) (Miles)"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        369.56640000000004,
+        236.99899999999991,
+        11.470000000000027
+      ],
+      "text" : "Compass Locator Under 25 15"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        357.06640000000004,
+        236.98000000000002,
+        11.470000000000027
+      ],
+      "text" : "MH Under 50 2 5"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        344.56640000000004,
+        145.5,
+        11.470000000000027
+      ],
+      "text" : "H 50–1999"
+    },
+    {
+      "fontSize" : 7,
+      "monospaced" : false,
+      "rect" : [
+        542.55290000000002,
+        344.56640000000004,
+        15.446699999999964,
+        12.10899999999998
+      ],
+      "text" : "*50"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        332.06640000000004,
+        236.98000000000002,
+        11.470000000000027
+      ],
+      "text" : "HH 2000 or more 75"
+    },
+    {
+      "fontSize" : 7,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        307.06639999999999,
+        237.10680000000002,
+        12.109000000000037
+      ],
+      "text" : "*Service range of individual facilities may be less than"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        320.99680000000001,
+        294.56639999999999,
+        36.670000000000016,
+        11.470000000000027
+      ],
+      "text" : "50 miles."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        320.99680000000001,
+        269.56639999999999,
+        236.99999999999989,
+        11.470000000000027
+      ],
+      "text" : "One of the disadvantages that should be considered when"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        320.99680000000001,
+        257.06639999999999,
+        237.10000000000002,
+        11.470000000000027
+      ],
+      "text" : "using low frequency (LF) for navigation is that LF signals are"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        320.99680000000001,
+        244.56639999999999,
+        236.94999999999993,
+        11.470000000000027
+      ],
+      "text" : "very susceptible to electrical disturbances, such as lightning."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        320.99680000000001,
+        232.06639999999999,
+        236.99999999999989,
+        11.469999999999999
+      ],
+      "text" : "These disturbances create excessive static, needle deviations,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        320.99680000000001,
+        219.56639999999999,
+        236.87,
+        11.469999999999999
+      ],
+      "text" : "and signal fades. There may be interference from distant"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        320.99680000000001,
+        207.06639999999999,
+        237.11500000000001,
+        11.469999999999999
+      ],
+      "text" : "stations. Pilots should know the conditions under which these"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        320.99680000000001,
+        194.56639999999999,
+        236.99599999999987,
+        11.469999999999999
+      ],
+      "text" : "disturbances can occur so they can be more alert to possible"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        320.99680000000001,
+        182.06639999999999,
+        135.80000000000001,
+        11.469999999999999
+      ],
+      "text" : "interference when using the ADF."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        320.99680000000001,
+        157.06639999999999,
+        236.99799999999993,
+        11.469999999999999
+      ],
+      "text" : "Basically, the ADF aircraft equipment consists of a tuner,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        320.99680000000001,
+        144.56639999999999,
+        237.02300000000002,
+        11.469999999999999
+      ],
+      "text" : "which is used to set the desired station frequency, and the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        320.99680000000001,
+        132.06639999999999,
+        83.329999999999984,
+        11.469999999999999
+      ],
+      "text" : "navigational display."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        320.99680000000001,
+        107.06639999999999,
+        237.01699999999994,
+        11.469999999999999
+      ],
+      "text" : "The navigational display consists of a dial upon which the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        320.99680000000001,
+        94.566399999999987,
+        237.01300000000003,
+        11.469999999999999
+      ],
+      "text" : "azimuth is printed and a needle which rotates around the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        320.99680000000001,
+        82.066399999999987,
+        236.08999999999992,
+        11.469999999999999
+      ],
+      "text" : "dial and points to the station to which the receiver is tuned."
+    }
+  ],
+  "page" : 416,
+  "pictures" : [
+
+  ],
+  "rightsBasis" : "U.S. Government publication, retained as an external development corpus source. The PDF is not bundled or relicensed under the library license.",
+  "schemaVersion" : 2,
+  "sourceSHA256" : "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
+  "sourceTitle" : "Pilot's Handbook of Aeronautical Knowledge, FAA-H-8083-25C",
+  "sourceURL" : "https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/faa-h-8083-25c.pdf"
+}

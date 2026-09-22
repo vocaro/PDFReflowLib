@@ -86,7 +86,7 @@ under MIT and are not resources of the shipped library target.
 
 ## Government-document development fixtures
 
-The `faa-{81,91,363…365,437…439,459,511}`, `fed-{13,21,32,45,46,47,48,54,75,77,103,104,109,123}`, `flag-{7,9,27,30,31}`, `911-{19…26,33,50,51,65…71,117,126,161,254,255,306,373,374,451,471…476,526,571,579…585}`, `cdc-5`, `dga-1`, `warren-50`, `warren-910`, `blue-5`, `blue-12`, `usda-9`, `usgs-{1,2}`, `nbs-7`, `p596-{24…27}`, `loper-{2,7,13,60}`, `earthdata-{16…18}` and `noaa-{33,80,139,1050…1056,1619}` layout JSONs under the test fixtures
+The `faa-{81,91,363…365,416,437…439,459,511}`, `fed-{13,21,32,45,46,47,48,54,75,77,103,104,109,123}`, `flag-{7,9,27,30,31}`, `911-{19…26,33,50,51,65…71,117,126,161,254,255,306,373,374,451,471…476,526,571,579…585}`, `cdc-5`, `dga-1`, `warren-50`, `warren-910`, `blue-5`, `blue-12`, `usda-9`, `usgs-{1,2}`, `nbs-7`, `p596-{24…27}`, `loper-{2,7,13,60}`, `earthdata-{16…18}` and `noaa-{33,80,139,1050…1056,1619}` layout JSONs under the test fixtures
 contain extracted text and geometry from the corresponding U.S. government corpus documents.
 The `loper` captures are text derivatives of a Supreme Court slip opinion, a U.S. government work.
 The `earthdata` captures are text derivatives of agency-authored slide text, within the owner's
@@ -95,7 +95,7 @@ Each records its publisher URL, title and pinned source checksum. The `faa-{81,9
 `fed-{21,109}`, `loper-1` and `our-flag-page-29` tag JSONs beside them hold the same documents' own
 content streams, font `ToUnicode` maps and structure-tree roles, captured by
 `tools/capture_tag_fixture.py`; they carry no font program, raster or insignia. The
-`911-{19,452}` and `faa-459` spacing JSONs hold the same documents' content streams and font
+`911-{19,452}` and `faa-{416,459}` spacing JSONs hold the same documents' content streams and font
 metadata for the same reason, captured by `tools/probes/capture-spacing-source.swift`. The source and output renders
 in `measurements/three-fidelity-fixes/`, `measurements/fractions-and-invisible-text/`,
 `measurements/warren-image-encoding/`, `measurements/poppler-relative-images/` and

@@ -255,7 +255,8 @@ spatial reconstruction rather than partial results.
 
 - **`NativeSpacingReader`.** Repairs a PDFKit word boundary only where a supported text-show
   operation contradicts it. It *removes* a space when a Type3 `TJ` array places a tiny negative
-  adjustment there, with the font's one-byte `ToUnicode` map, text and placement matching. It
+  adjustment there, with the font's one-byte `ToUnicode` map, text and placement matching, and
+  where two shows continue one number (#274, below). It
   *inserts* the space the source draws without a space glyph (#43/#110, #119, #128, #120), on
   pages it can model completely: `Tc`, `Tw` and the text matrix are tracked (a show that draws
   straight after another continues the cursor by the previous show's own advance, spacing and
@@ -283,6 +284,18 @@ spatial reconstruction rather than partial results.
     U+2100–U+214F), never where a chained initial (`C.|A.`) explains the gap, and never on a
     boundary beside a one-glyph string whose other side is also a word gap (letter-spaced type);
   - **a character-spaced column gap** of at least 0.5 em set by `Tc` splits a two-glyph show;
+  - **`closesNumber`** takes a space back where the page draws one number in two shows (#274):
+    two shows of one font at one size on one baseline (within 0.1 em), the first ending in a
+    digit and the second opening with one, at a positive gap narrower than the space character
+    that font itself draws (`Widths[32]`, less any `Tw` that narrows it). FAA page 416 sets the
+    NDB table's `25` as `(       2)Tj … (5)Tj` at 1.34 pt over a 10-point size — 0.134 em against
+    a 0.25 em space — and the row arrived as `MH Under 50 2 5`. This is the only boundary the
+    corpus closes: the nearest digit-to-digit boundary it leaves alone is that book's page 458
+    chart columns, at 3.6 times their own font's space. A font that states no width for the space
+    character, or states zero, states nothing here — that is every TeX font of Wallace's algebra,
+    which draws no space glyph at all — so #119's constraint holds by mechanism and not by
+    threshold. Only two digits close: a number against a word is what the font-change rule
+    weighs, and a period or comma against one is a contents leader or a sentence.
   - **`sentenceSpace`** finds sentence punctuation (`. , ; : ? !`, optionally behind closing
     quotes or brackets) after a letter, digit or closing bracket, before a capital not followed by
     a period or an opening quote before an alphanumeric, at a gap between -0.15 and 1 em: the
@@ -311,6 +324,16 @@ spatial reconstruction rather than partial results.
   PDFKit split at a wide gap is repaired in the half that holds each boundary. Explicit spaces,
   genuine word-size gaps and style attributes are kept, a boundary PDFKit already spaces inserts
   nothing, and a line whose every show is held by another rectangle too rewrites nothing.
+  A *removal* is owned differently, because the defect it answers has the opposite shape: a page
+  sets a table row by carrying the cursor from cell to cell with runs of space glyphs and PDFKit
+  reports one space for a run, so on such a row the source draws the whitespace the extraction
+  does not, and the segmented walk — which skips only the extraction's own spaces — resynchronizes
+  on nothing (between `MH     Under 50         25` and `MH Under 50 2 5` the longest anchor is the
+  nine characters of `Under 50 `). `closedSpaces` therefore owns a removal whole-line and blind to
+  whitespace on both sides: every non-blank character the shows draw must be the next non-blank
+  character PDFKit read, in order, with nothing left over either way, the closure must have no
+  whitespace beside it in the source, and exactly one space at it in the extraction. That is
+  stricter than the segmented walk, not looser, and it reaches no insertion (#274).
 - **`GlyphIdentityReader` (#217, two of #186's five fixes).** PDFKit reads every glyph through
   its font's `ToUnicode` map; two kinds of font disagree with what they draw. A dingbat font
   (Zapf Dingbats and its clones ITC Zapf Dingbats, `Dingbats`, Monotype Sorts, subset tags

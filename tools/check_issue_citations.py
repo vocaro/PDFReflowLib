@@ -132,6 +132,69 @@ ALLOWED = {
     12: ('historical', "the Fed report's prose-as-headings defect, fixed on main by `294d0cd` and "
          'named by the research note that keeps its failing case'),
 
+    # Closed on 2026-09-22 by work that is on `main`, and cited for the rule each established.
+    # These were invisible to the gate while `doc/issue-states.json` was a day behind the
+    # repository it describes: the snapshot said 85 open where GitHub said 51, so 34 citations
+    # passed unchecked. Refreshing it is what surfaced them.
+    41: ('historical', 'right-to-left reading and the rules written through it, on main and named by its '
+       'issue'),
+    120: ('historical', 'the twelve-character anchor the segmented walk resynchronizes on, on main and named by its '
+        'issue'),
+    123: ('historical', "the hyphen vocabulary and the leading a page's own text states, on main and named by their "
+        "issue"),
+    130: ('historical', "a recognized line's type size and the wrap tests written on it, on main and named by their "
+        "issue"),
+    139: ('historical', "the boundary dropped against a disagreeing region's edge, on main and named by its "
+        "issue"),
+    203: ('historical', 'the cross-page join that steps over a picture, on main and named by its issue'),
+    207: ('historical', 'the thin rule a printed row owns, on main and named by its issue'),
+    210: ('historical', '`TableReader`, which reads a table as its cells, on main and named by its issue'),
+    231: ('historical', 'the reconciliation of the abandoned coordination branch, which is done and is where its '
+        'results are recorded; the prose sends a reader there for that list, not for work in progress'),
+    247: ('historical', 'converted links and the anchor a linked phrase keeps, on main and named by their '
+        'issue'),
+    248: ('historical', 'the printed page numbers a marker and the page list carry, on main and named by its '
+        'issue'),
+    249: ('historical', "the navigation document built from the source's outline, on main and named by its "
+        "issue"),
+    251: ('historical', "the source's own picture written as the page placed it, on main and named by its "
+        "issue"),
+    252: ('historical', 'the locked-document password rule and its `encryptedPDF` error, on main and named by its '
+        'issue'),
+    253: ('historical', 'the package metadata rule, on main and named by its issue'),
+    254: ('historical', "the list-marker size rule's mirror, on main and named by its issue; its other half is "
+        "#183"),
+    255: ('historical', "the crop rule that never admits a line reading as the book's own prose, on main and named by "
+        "its issue"),
+    256: ('historical', 'the rest of a marked item is no heading, on main and named by its issue'),
+    257: ('historical', "a table's column header released from a crop, on main and named by its issue"),
+    258: ('historical', 'the line heights a script or a stacked fraction gives PDFKit, on main and named by its '
+        'issue'),
+    259: ('historical', 'a line the page keys its own material to is no heading, on main and named by its '
+        'issue'),
+    261: ('historical', 'a bullet alone on its line is the marker its page drew, on main and named by its '
+        'issue'),
+    262: ('historical', 'the pieces a split row is compared against, on main and named by its issue'),
+    263: ('historical', 'the sideways reading order and the turn a line carries, on main and named by its '
+        'issue'),
+    264: ('historical', 'the margin rule kept out of the line beside it, on main and named by its issue'),
+    266: ('historical', 'the numbered item that keeps the rest of a word its page broke, on main and named by its '
+        'issue'),
+    267: ('historical', "the cross-page join's anchor — only a block the page's own text begins at — on main and named "
+        "by its issue"),
+    268: ('historical', 'a reference list the page hung at an indent is not a table, on main and named by its '
+        'issue'),
+    270: ('historical', 'the row of two columns cut at the gutter PDFKit merged across, on main and named by its '
+        'issue'),
+    271: ('historical', 'the page-furniture band rule, on main and named by its issue'),
+    272: ('historical', 'the split row that lends its start to the line beneath it, on main and named by its '
+        'issue'),
+    273: ('historical', 'a run of whitespace takes no inline script, on main and named by its issue'),
+    274: ('historical', 'the space taken back where a page draws one number in two shows, on main and named by its '
+        'issue'),
+    275: ('historical', 'a lone letter is a word only in the company of words, on main and named by its '
+        'issue'),
+
     # Closed, but the defect is still in `main`; the prose says so and names the commit. #5 and
     # #11 join this group from #236's audit: both were read against `main` — Warren and NOAA
     # measured at 2.32 and 2.16 times the default output budget, and no note linker exists — and

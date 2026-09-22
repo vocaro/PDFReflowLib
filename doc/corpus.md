@@ -111,9 +111,10 @@ it on its own, and converting twice with one binary is not a no-op. Vision's rea
 differs between two runs on one host, from one unchanged binary: `census-rrs2002-01` reads page 4
 as joined prose in one run and as the recognition's own line fragments in the next, and
 `cdc-zombie-pandemic-2011` loses page 7's recognition entirely to the page image, taking the
-nineteen navigation entries built from its headings with it. This is not #173's variance across
-binaries — the binary, its path, the source and the options are identical between these two runs —
-and #269 and #281 record what it does to one gated case. So `--control` takes a third evaluation —
+nineteen navigation entries built from its headings with it (#284). This is not #173's variance
+across binaries — the binary, its path, the source and the options are identical between these two
+runs — and #269 and #281 record what it does to one gated case. So `--control` takes a third
+evaluation —
 a second run of the **baseline's own** converter, captured the same way — and every page, image
 and report field that run also moves is reported as `unstablePages`, `unstableImages` and
 `unstableReportFields` instead of as the candidate's. What is left is `attributedPages`,
@@ -268,9 +269,7 @@ It pinned the verdict until #269 and #281: two phrases read off the raster, "and
 the things at" and "At 6:00 PM I instructed the officers to bring", and the absence of the
 discarded layer's `ftboot`. The comparison turns on about five points between the reading's misread
 share and the layer's 23.8%, and the reading is Vision's, which differs between two runs of one
-binary on one host (#173, and the same variance within one binary that
-[comparing conversion runs](#comparing-conversion-runs) controls for), so the lane reported FAIL
-for a condition of the host on a tree
+binary on one host (#173, #284), so the lane reported FAIL for a condition of the host on a tree
 that had not changed. The evidence moved rather than went:
 `aMisreadCarbonTypescriptIsReplacedByARecognitionThatReadsBetter` replays this page's captured
 layer and a captured recognition of it through `RecognitionPolicy` and holds both phrases, the

@@ -149,7 +149,7 @@ most recent directories left behind by earlier runs, naming each one it removes 
 `PDFREFLOW_KEPT_RUNS` to keep more or fewer, and `PDFREFLOW_KEPT_RUNS=0` to keep none. Only
 `pdfreflow-checks.*` directories in the script's own scratch directory (`TMPDIR`, else `/tmp`) are
 ever touched. A `--fast` run leaves about 350 MiB and a `--corpus` run about 1 GiB, and keeping
-every one of them filled a 1.8 TiB volume in three days and failed a build with `ENOSPC`.
+every one of them filled a 1.8 TiB volume in three days and failed a build with `ENOSPC` (#287).
 
 The converter is single-threaded (CPU seconds match wall seconds on every corpus case), so cases
 in separate processes scale with cores. Peak RSS is measured per process, so concurrent cases do

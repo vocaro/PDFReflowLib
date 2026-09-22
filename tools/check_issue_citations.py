@@ -195,6 +195,30 @@ ALLOWED = {
     275: ('historical', 'a lone letter is a word only in the company of words, on main and named by its '
         'issue'),
 
+    # Closed by the nine commits that reached `origin/main` together on 2026-09-22, each cited for
+    # the rule it established or the finding it records. They needed a second refresh within a day
+    # of #286's, which is that snapshot's blind spot working exactly as #286 describes: an issue
+    # closed after the capture date is invisible to this gate until somebody asks GitHub again.
+    # #286 itself takes no entry, because no gated document cites it.
+    269: ('historical', "Vision's reading differing between two runs of one binary on one host, "
+        'recorded beside #281 and #284 and no longer pinned by the suspect-text contract'),
+    277: ('historical', 'the page number a contents entry runs its leader out to, on main and named '
+        'by its issue'),
+    278: ('historical', 'a run of whitespace takes no emphasis from its font, on main and named by '
+        'its issue; its sibling is #273'),
+    279: ('historical', 'the hanging bullet column that is no column of the page, on main and named '
+        'by its issue'),
+    281: ('historical', 'the same run-to-run variance as #269, cited beside it for the lane it was '
+        'measured in'),
+    282: ('historical', 'the reference list hung under an outdented marker column, on main and named '
+        'by its issue'),
+    283: ('historical', 'a stack of cells standing on the rows of a column is no column of the page, '
+        'on main and named by its issue'),
+    284: ('historical', "`compare_conversion_runs.py --control`, on main and named by the issue that "
+        'asked for it'),
+    287: ('historical', 'the gate results directory kept only while it is worth reading, on main and '
+        'named by its issue'),
+
     # Closed, but the defect is still in `main`; the prose says so and names the commit. #5 and
     # #11 join this group from #236's audit: both were read against `main` — Warren and NOAA
     # measured at 2.32 and 2.16 times the default output budget, and no note linker exists — and

@@ -1,6 +1,6 @@
 # A rule down the margin, read as a column of letters
 
-Measured under [#264](https://github.com/vocaro/PDFReflowLib/issues/264), baseline `a1bbea8`,
+Measured under [#264](https://github.com/vocaro/PDFReflowLib/issues/264), baselines `a1bbea8` and, after merging, `94a24ad`,
 2026-09-22, macOS 27 (Darwin 27.0.0) / Swift 6.2 toolchain, arm64, release CLI at library
 defaults. The source is `corpus/cache/CIA-UAP-015-Project_Blue_Book_Special_Report_No_14.pdf`
 (SHA-256 `90e05e77fc088c29758c2ddda514c0c12f317e5686ee213d348db2f9da152ee3`, 312 pages), and the
@@ -121,12 +121,12 @@ tall, whose own characters are that tall, which keeps its box**.
 
 ## 4. What it changes
 
-`scripts/check-all.sh --fast` passes at `a1bbea8` + this change (exit 0, ten gates). The corpus lane
+`scripts/check-all.sh --fast` passes at both baselines with this change (exit 0, ten gates). The corpus lane
 (`tools/run_corpus_regressions.py --jobs 4`, EPUBCheck 5.x) reports `runPassed: true` and
 `content-assessment.json` `passed: true` for all eighteen covered cases, both before and after;
 `cia-blue-book-14-1955` keeps its nine content checks, zero spine boundaries crossed and no errors.
 
-Compared entry by entry with `tools/epub_identity.py` against a release binary built from `a1bbea8`,
+Compared entry by entry with `tools/epub_identity.py` against a release binary built from each baseline,
 **seventeen of the eighteen books are byte-identical**. Only Blue Book moves:
 
 | | baseline | with the fix |
@@ -138,6 +138,8 @@ Compared entry by entry with `tools/epub_identity.py` against a release binary b
 | `implausibleTextLayer` / `ocrUsed` | 0 / 0 | 3 / 3 |
 | Recognized pages | 0 | 3 |
 | Images | 421 | 423 |
+
+Every number in this table is the same against `a1bbea8` and against `94a24ad`.
 
 Two thousand fewer blocks with two thousand *more* characters: about 4,700 `I`s leave the book and
 the text that remains joins into paragraphs instead of fragments. Page 22 reflows as 13 paragraphs

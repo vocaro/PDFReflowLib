@@ -113,5 +113,5 @@ private let unlimited = Int64.max
     // `PageStoreTests` together with this list.
     let line = TextLine(text: "x", rect: .zero, fontSize: 1)
     let stored = Mirror(reflecting: line).children.compactMap(\.label)
-    #expect(stored == ["content", "text", "rect", "fontSize", "monospaced", "wraps", "readingRect", "structure"])
+    #expect(stored == ["content", "text", "rect", "fontSize", "monospaced", "wraps", "turn", "readingRect", "structure"])
 }

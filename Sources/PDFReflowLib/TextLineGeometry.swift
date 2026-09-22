@@ -28,4 +28,8 @@ extension TextLine {
     static func sameRow(_ a: CGRect, _ b: CGRect) -> Bool {
         min(a.maxY, b.maxY) - max(a.minY, b.minY) >= min(a.height, b.height) * 0.5
     }
+
+    /// This line's rectangle in the frame its own writing runs in (#263). A line the page set
+    /// upright carries its own rectangle, to the bit.
+    var uprightRect: CGRect { turn.upright(rect) }
 }

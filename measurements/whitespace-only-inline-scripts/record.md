@@ -12,6 +12,12 @@ Build: this branch merged over `main` at `a1bbea8`, Xcode 27.0 (27A266a), Swift 
 `7f66a0ad49d5d99d2890894ac455f28d7e00c4b00a596f1efd87c72f9361a4de`.
 Baseline: `a1bbea8` alone, executable SHA-256
 `b4bb9c73f8f9f66edf0e0d4b294b189d30f5b208ed02af303ab7767d7b5f5b15`.
+`main` moved to `94a24ad` while this was measured. Every per-book number below was taken again
+over that merge — branch executable SHA-256
+`583abdf5f6ebea0852c215f798597b133456f215eb0b7ff3e929504774c8b255` against baseline
+`c7ed605dbe039203681d5de52837cef9059619c8c523b1826ba99344810fd5a0` — and nothing moved between
+the two bases: the same 40 elements in the same four books, the same thirteen books byte-identical,
+and the same spine boundary shift in the FAA handbook.
 
 ## What the markup was saying
 

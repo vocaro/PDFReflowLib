@@ -430,8 +430,11 @@ struct BlockAssembler {
     /// paragraph's lines stand on the edge the writing starts at and end ragged at the other
     /// (#41). USCIS M-618-A page 21 sets ten wrapped lines of one paragraph whose right edges
     /// stand within a point of 543 and whose left edges are spread over 92.
+    /// It is read in the frame the line's own writing runs in, so that a line the page lettered
+    /// sideways starts where its writing starts rather than at the left of the box around it
+    /// (#263).
     private func startEdge(_ line: TextLine) -> CGFloat {
-        rightToLeft ? line.rect.maxX : line.rect.minX
+        rightToLeft ? line.uprightRect.maxX : line.uprightRect.minX
     }
 
     private func headingID() -> String { "heading-\(page)-\(blocks.count)" }
@@ -622,7 +625,7 @@ struct BlockAssembler {
                 flushParagraph()
                 paragraph = line.content
                 previous = line
-                initialOpening = line.rect.minX
+                initialOpening = line.uprightRect.minX
             }
         case let .tableRow(continuation):
             // One block per printed row. A row the extractor split at its column gap arrives as
@@ -690,7 +693,7 @@ struct BlockAssembler {
             // returned to its time-worn path.` on the measure and then indents `Echoing themes`,
             // two paragraphs the ordinary column test, which allows one and a half bodies, would
             // run together (#171).
-            let stepped = openedByInitial.map { abs($0 - line.rect.minX) >= body * 0.5 } ?? false
+            let stepped = openedByInitial.map { abs($0 - line.uprightRect.minX) >= body * 0.5 } ?? false
             let joinsRow = previous.map { continuesRow($0, line) } ?? false
             if stepped || previous.map({ !continuesParagraph($0, line) }) == true { flushParagraph() }
             if paragraph.elements.isEmpty { paragraph = line.content }
@@ -718,13 +721,19 @@ struct BlockAssembler {
     /// two are stacked at ordinary leading, are two pieces of one printed row, or are an entry and
     /// the wrap the page hangs under it, and the previous line is not a short line the page has
     /// already closed.
+    ///
+    /// Every measure below is taken in the frame the two lines' own writing runs in (#263): for
+    /// upright lines that is the page, to the bit, and for a caption the page lettered sideways
+    /// it is the page turned, where the line beneath is the next line of the caption rather than
+    /// the one beside it.
     private func continuesParagraph(_ prev: TextLine, _ line: TextLine) -> Bool {
         guard prev.wraps != false else { return false }
+        let (prevRect, lineRect) = (prev.uprightRect, line.uprightRect)
         // A short line ending a sentence closes its paragraph however the two lines stand.
-        let short = prev.rect.width < line.rect.width * 0.65
+        let short = prevRect.width < lineRect.width * 0.65
         guard !(short && prev.text.last.map { ".!?".contains($0) } == true) else { return false }
         if continuesRow(prev, line) { return true }
-        let verticalGap = prev.rect.minY - line.rect.maxY
+        let verticalGap = prevRect.minY - lineRect.maxY
         // A list the page hangs sets its wraps further in than one column's lines ever stand
         // apart; `LayoutReconstructor.hangingEntries` reads which ones the page hung (#160).
         let hangs = hangingEntries[line.rect] == prev.rect
@@ -746,7 +755,7 @@ struct BlockAssembler {
         // six points in under an opening that fills three fifths of it, and an entry that runs
         // over is one paragraph. Two thirds — what the sentence-ending rule above asks — would
         // break those; a stub under half the measure is not a line that ran out of room.
-        return !(prev.rect.width < line.rect.width * 0.5 && line.rect.minX - prev.rect.minX >= body * 0.5)
+        return !(prevRect.width < lineRect.width * 0.5 && lineRect.minX - prevRect.minX >= body * 0.5)
     }
 
     /// Whether the two lines are stacked on one center: a balloon, a box or a caption the page
@@ -761,7 +770,7 @@ struct BlockAssembler {
     /// line wraps to the next one. Vision states it for every line it recognizes; PDFKit's native
     /// reading states nothing, which leaves every natively extracted page exactly as it was.
     private func centered(_ prev: TextLine, _ line: TextLine) -> Bool {
-        prev.wraps == true && abs(prev.rect.midX - line.rect.midX) <= body * 0.6
+        prev.wraps == true && abs(prev.uprightRect.midX - line.uprightRect.midX) <= body * 0.6
     }
 
     /// Whether the page set `line` on the leading its own text states, rather than a further part
@@ -783,7 +792,7 @@ struct BlockAssembler {
     /// compared this way.
     private func onStatedLeading(_ prev: TextLine, _ line: TextLine) -> Bool {
         guard let leading, prev.hasSize(line.fontSize) else { return true }
-        return prev.rect.maxY - line.rect.maxY <= leading * BlockAssembler.paragraphLeadingSlack
+        return prev.uprightRect.maxY - line.uprightRect.maxY <= leading * BlockAssembler.paragraphLeadingSlack
     }
 
     /// How far past the page's own leading two lines may stand and still be one paragraph.
@@ -803,8 +812,10 @@ struct BlockAssembler {
     /// - follow a line that reads as prose rather than symbols, which an exercise or a formula
     ///   above a numbered answer does not.
     private func continuesWrapped(_ prev: TextLine, _ line: TextLine, _ column: MarkerColumn) -> Bool {
-        guard continuesParagraph(prev, line), prev.rect.minX - line.rect.minX > -body * 0.5,
+        guard continuesParagraph(prev, line), prev.uprightRect.minX - line.uprightRect.minX > -body * 0.5,
               column.onMajorityEdge, let right = column.justifiedRight,
+              // The column's own right edge is read off the page, so the line is measured against
+              // it on the page, while the two lines are compared in their own frame above (#263).
               prev.rect.maxX >= right - body * 0.25 else { return false }
         let closing: Set<Character> = ["\u{201D}", "\u{2019}", "\"", "'", ")", "]"]
         guard let ending = prev.text.reversed().first(where: { !$0.isWhitespace && !closing.contains($0) }),
@@ -821,12 +832,18 @@ struct BlockAssembler {
     /// a column needs (`LayoutReconstructor.ordered`'s three quarters of a body). A table's cells,
     /// and a running header and the folio at the other end of its row, stand further apart than
     /// that and stay separate blocks, as does anything on another row.
+    ///
+    /// The row is the one the page printed, so it is read in the frame the two lines' own writing
+    /// runs in: two lines of a caption the page lettered down the side of a panel overlap across
+    /// the page without standing on one row of it, and are two lines rather than two pieces of
+    /// one (#263).
     private func continuesRow(_ prev: TextLine, _ line: TextLine) -> Bool {
-        guard prev.sharesRow(with: line) else { return false }
+        let (prevRect, lineRect) = (prev.uprightRect, line.uprightRect)
+        guard TextLine.sameRow(prevRect, lineRect) else { return false }
         // The rest of a printed row stands to the left of the piece that opened it where the
         // writing runs right to left: USCIS M-618-A page 21 hands back `…الولايات المتحدة` at
         // x 343…543 and `. ويطلق بعض الأشخاص…` at x 184…342 on one baseline (#41).
-        let gap = rightToLeft ? prev.rect.minX - line.rect.maxX : line.rect.minX - prev.rect.maxX
+        let gap = rightToLeft ? prevRect.minX - lineRect.maxX : lineRect.minX - prevRect.maxX
         return gap >= 0 && gap < body * 0.75
     }
 

@@ -723,6 +723,15 @@ standing upright — anything within half a right angle of vertical, which cover
 keeps its box height exactly, so no page of upright writing moves by a hair. A banded retry scales
 a thickness that runs up the page with its band and leaves one that runs across it alone.
 
+The same offset states the **quarter turn** the page set the line at, which the line carries into
+reconstruction (#263): it points the way the tops of the letters face, so a line whose offset runs
+right was turned clockwise and its writing runs down the page, and one whose offset runs left was
+turned counterclockwise and its writing runs up. A line inside half a right angle of upright is
+upright, and so is one read upside down, whose writing still runs across the page. The turn is the
+only statement of where a sideways line starts and which line is the next one down, because the
+rectangle around it is axis-aligned either way; `LayoutReconstructor` and `BlockAssembler` read it
+under "Columns and paragraphs" above. A natively extracted line states no direction and is upright.
+
 ### Recognition that left the page's writing unread (#116)
 
 Vision can return success with whole paragraphs or table columns missing, and nothing in the
@@ -897,6 +906,26 @@ double-spaced typescript sets, reaches the limit at 33 blocks. Ordinary pages do
 it: the deepest of the captured source layouts cuts eleven levels. A group the limit leaves
 uncut keeps the order it was extracted in, and the page reports `complexLayout` rather than
 leaving that silent, as the tag phase reports its own give-up (#224).
+
+A group the page **lettered sideways** is read along its own direction (#263). Every rectangle a
+reader hands over is axis-aligned, so a line the page turned arrives as a box as tall as the line
+is long, and reading order, `continuesRow` and every paragraph measure read it as though the
+writing ran along it. A recognized line carries the quarter turn the page set it at, read off the
+same quadrilateral its type size is (#130); where a group's every element is a line and they all
+agree on one turn that is not upright, the group's rectangles are taken into the frame that turn
+stands upright in and the same cuts and the same row-major sort are made there. The turn is one
+rotation applied to every member, so it changes no gap, no shared edge and no overlap — only the
+axis each is measured on — and the elements come back in that order, unchanged. A group holding an
+upright line, a picture, a table or two opposite turns is read on the page, as before; so is every
+natively extracted page, whose lines state no direction and are upright. The paragraph measures
+read the same frame: `continuesParagraph`, `continuesRow`, the centered stack, the page's leading
+and the start edge all compare two lines where their own writing runs, which for upright lines is
+the page itself, to the bit. The CDC graphic novel letters page 17's caption down the side of the
+panel — three lines that all reach one top edge, 1.4 and 2.5 points apart across the page — and it
+read as `ATLANTA, GEORGIA...` followed by the other two joined backwards as one printed row; it now
+reads `SEVERAL DAYS LATER AT THE CENTERS FOR` and then `DISEASE CONTROL AND PREVENTION IN ATLANTA,
+GEORGIA...`, which is the caption in its own order, broken where the reading's own
+`shouldWrapToNextLine` says the first line stops.
 
 A **picture across the block's measure** — at least 90% of it — with content on both sides of it
 separates what is printed above it from what is printed below it, and is cut at before any gutter

@@ -66,6 +66,7 @@ private func trickyPage() -> PageContent {
     first.readingRect = CGRect(x: -0.0, y: 2.25, width: 12, height: 12)
     first.structure = TextStructure(group: 3, order: 1, headingLevel: 2, lineCount: 4)
     first.wraps = true
+    first.turn = .counterclockwise
     var second = TextLine(text: "code", rect: CGRect(x: 10, y: 20, width: 30, height: 9.75), fontSize: 9.75, monospaced: true, wraps: false)
     second.readingRect = CGRect.null
     var page = PageContent(number: 42, bounds: CGRect(x: 0, y: 0, width: 612, height: 792), lines: [first, second],
@@ -92,6 +93,10 @@ private func trickyPage() -> PageContent {
     #expect(reloaded.lines.map(\.text) == original.lines.map(\.text))
     #expect(reloaded.graphics[1].isNull)
     #expect(reloaded.lines[1].readingRect?.isNull == true)
+    // The turn the page set a line at survives the spill, and an upright line reloads upright
+    // although nothing was written for it (#263).
+    #expect(reloaded.lines[0].turn == .counterclockwise)
+    #expect(reloaded.lines[1].turn == .upright)
     // Binary property lists merge equal values, so a negative zero may reload as positive zero;
     // reconstruction never reads the sign of zero, and value equality is the contract.
     #expect(reloaded.lines[0].readingRect == original.lines[0].readingRect)

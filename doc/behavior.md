@@ -114,6 +114,41 @@ Evidence: [pdfkit-structure-tree](../measurements/pdfkit-structure-tree/record.m
   unchanged; drop caps of a different size and opposite inline scripts are not evidence. This is
   not arbitrary within-line spacing repair or OCR spelling repair.
 
+- **A margin rule an inherited recognition read as letters (#264).** Project Blue Book paints a
+  rule down the outer margin of its pages, and the layer it inherited read each segment of it as a
+  capital `I` set in 30-point type. PDFKit puts that letter in the same line as the type beside it,
+  so a 7.8-point line came back in a 31.5-point box at a 31.5-point size, overlapping the rows
+  above and below: on page 7 the wrap `I South Farwest Region . 54` (`y[645.9..677.4]`) sorted
+  *above* the entry it continues, `Figure 38 …of the` (`y[656.8..663.8]`), and no join or ordering
+  rule could reach it, because the geometry was wrong before reconstruction began. This is not the
+  thin-rule ownership of #207, which reads a rule the page *paints* against the row it strikes: a
+  recognized rule is painted nowhere, so by the time any ownership rule runs there is no rule left
+  to own.
+  A **mark** is a character that is one of `I`, `l` or `|` — the glyphs a recognition offers for a
+  vertical rule, and no others, however tall they stand — drawn at least two and a half times as
+  tall as the page's own characters and at least twice as tall as it is wide, standing in the outer
+  twentieth of the page on one side. **Four marks sharing one column are a rule**; three are not,
+  because a display initial, a mathematical bar and a stray recognition are each one mark and none
+  of them repeats down a margin. A line a rule reached is measured by the characters that remain
+  after its marks are cut, together with the space a recognition sets between a mark and the type
+  beside it, which carries the mark's size and would otherwise state it for the whole line; a line
+  the rule drew and nothing else carries no text and is dropped. A line holding no mark can still
+  be damaged, because PDFKit gives every piece of a printed row the height of the tallest piece in
+  it — page 7's `56` stands in `y[632.6..637.9]` and was reported at `y[610.4..641.9]` — so a line
+  sharing its row with one the rule reached, whose reported box is at least twice as tall as the
+  characters it holds, is measured by those characters too. **A line genuinely that tall keeps its
+  box**, because its own characters are that tall. A mark read *inside* a line is not a margin
+  rule's, since nothing stands between a margin and the type beside it, and such a line is left
+  exactly as it was read.
+  The character rectangles come from PDFKit itself: `characterBounds(at:)` is indexed over the
+  page's characters without the separators the reading synthesizes between rows, which is the
+  offset the lines' own strings reach laid end to end. A page whose lines run past the characters
+  it declares supplies none. Only a page whose lines already show a rule glyph at one end, in the
+  outer twentieth, on four lines or more is measured character by character at all; of the
+  twenty-four cached sources only Blue Book's pages are, and of those only the 241 that draw the
+  rule are changed. Evidence:
+  [margin-rule-read-as-letters](../measurements/margin-rule-read-as-letters/record.md).
+
 Evidence: [pdfkit-concurrency](../measurements/pdfkit-concurrency/record.md),
 [pdfkit-gate-drain](../measurements/pdfkit-gate-drain/record.md),
 [extraction-cancellation](../measurements/extraction-cancellation/record.md),

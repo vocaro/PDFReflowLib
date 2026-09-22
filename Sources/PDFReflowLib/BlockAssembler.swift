@@ -386,7 +386,9 @@ struct BlockAssembler {
     /// with no space at the break (#42).
     private var headingLine: TextLine?
     /// The line of the last preformatted block appended, for an item whose last word the page
-    /// broke over the block boundary (#245).
+    /// broke over the block boundary (#245). A bullet opens that block through `.listItem` and a
+    /// number or a letter through `.markedLine` on an edge the page sets a list on; an item is an
+    /// item either way, so both branches record it (#266).
     private var itemLine: TextLine?
     private var codeOrigin: CGFloat?
     /// The table row the last block holds, while more pieces of that printed row can still join
@@ -614,6 +616,12 @@ struct BlockAssembler {
             } else if column.setsAList {
                 flushParagraph()
                 blocks.append(ReflowBlock(content: .preformatted(line.content), page: page))
+                // The page numbered or lettered this item rather than bulleting it, and it is an
+                // item either way: the block it opened is the one the rest of a word broken over
+                // its end belongs to. Our Flag's folding instructions are numbered, and the page
+                // breaks the first of them at a printed hyphen — `1. …hold the flag waist high
+                // and horizon-` above `tally between them.` (#245, #266).
+                itemLine = line
                 itemRowInProgress = line
             } else {
                 // The page set no list on this edge, so the opening token is an initial, a page
@@ -677,13 +685,17 @@ struct BlockAssembler {
             // its recommendations as items and breaks one over the block boundary, so
             // `• …supervise the planning and direc-` was followed by `tion of the operation;` as
             // a paragraph of its own, with the word split between them (#245).
+            //
+            // What becomes of the hyphen is `HyphenRepair`'s to say, on the same evidence it
+            // reads inside a paragraph: the book's own words, and the English lexicon where the
+            // document is English. The page's break says the line belongs to the item; it does
+            // not say the character was a break rather than a printed compound, and the 9/11
+            // report's endnotes put both on one edge — `Febru-` carries on `ary` and loses its
+            // hyphen, `explosives-` carries on `laden` and keeps it (#245, #266).
             if let above = itemLine, let last = blocks.last, last.page == page,
                case let .preformatted(text) = last.content, paragraph.elements.isEmpty,
                continuesBrokenItem(above, line, text: text) {
-                var combined = text
-                combined.removeLastCharacter()
-                combined.append(line.content)
-                blocks[blocks.count - 1].content = .preformatted(combined)
+                blocks[blocks.count - 1].content = .preformatted(join(text, line.content))
                 itemLine = line
                 return
             }

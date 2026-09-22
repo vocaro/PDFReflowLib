@@ -1258,12 +1258,25 @@ Evidence: [initial-led-lines](../measurements/initial-led-lines/record.md),
 
 - An item the page broke mid-word keeps the rest of its word (#245). Where a preformatted list
   item ends in a hyphen, a soft hyphen or the book's line-end substitute, and the line beneath it
-  opens in lowercase at the same size on the page's own leading, that line joins the item and the
-  break character goes with the join. The 9/11 report sets its recommendations as items and breaks
-  one over the block boundary, so `• …supervise the planning and direc-` was followed by
-  `tion of the operation;` as a paragraph of its own.
+  opens in lowercase at the same size on the page's own leading, that line joins the item. The
+  9/11 report sets its recommendations as items and breaks one over the block boundary, so
+  `• …supervise the planning and direc-` was followed by `tion of the operation;` as a paragraph
+  of its own. The marker the page opened the item with makes no difference: a bullet, a minus or a
+  hyphen is read as an item outright, and a number or a letter with a point is read as one where
+  the page sets a list on that edge, and either way the block it opened is the one the rest of the
+  word belongs to (#266). Our Flag numbers its flag-folding instructions and breaks the first at a
+  printed hyphen, so `1. …hold the flag waist high and horizon-` stood above `tally between them.`
+  A new sentence is not the rest of a word, and neither is the item beneath: the lowercase opening
+  and the page's own leading are what decide, so a list whose items each end in a hyphen does not
+  fuse.
+- What becomes of that hyphen is decided the way a hyphen inside a paragraph is decided, on the
+  book's own words and, in an English document, the system lexicon (#266). The page's break says
+  the line belongs to the item; it does not say the character was a break rather than a printed
+  compound, and the 9/11 report's endnotes stand both on one edge: `Febru-` carries on `ary` and
+  loses its hyphen, `explosives-` carries on `laden` and keeps it, with no space added either way.
 
 Evidence: [spine-continuity](../measurements/spine-continuity/record.md),
+[broken-numbered-items](../measurements/broken-numbered-items/record.md),
 [line-end-hyphen-substitutes](../measurements/line-end-hyphen-substitutes/record.md),
 [page-leading-and-ligature-vocabulary](../measurements/page-leading-and-ligature-vocabulary/record.md).
 

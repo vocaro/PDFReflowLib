@@ -427,8 +427,14 @@ enum NativeTextReader {
             // #217) is never an inline superscript or subscript, however its metrics place it.
             // Neither is a run of right-to-left letters, whose shaping shifts single letters off
             // the baseline inside a word the page never raised (#41).
+            // And a run holding no glyph at all takes no script style, however its metrics place
+            // it: a raised space is a space, and `<sup> </sup>` claims an inline script over
+            // nothing a reader can see raised (#273). The run itself is kept — the page set that
+            // space and the words on either side of it need it — it simply keeps the body's
+            // baseline, which is the only thing about it a reader could have observed.
             if !(hasDropCap && range.location == 0),
                attributes[GlyphIdentityReader.isolatedAttribute] == nil,
+               run.contains(where: { !$0.isWhitespace }),
                !ArabicText.isRightToLeftRun(run),
                offset.isFinite, abs(offset) <= (font?.pointSize ?? 12) * 0.75 {
                 if offset > tolerance { style.insert(.superscript) }

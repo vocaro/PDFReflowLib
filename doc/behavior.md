@@ -101,7 +101,11 @@ Evidence: [pdfkit-structure-tree](../measurements/pdfkit-structure-tree/record.m
   follow the OCR policy.
 - Explicit Core Text/Foundation baseline offsets preserve inline superscripts and subscripts;
   tiny positioning noise and full-line OCR offsets do not become scripts, and font size alone
-  never establishes a superscript.
+  never establishes a superscript. A run holding no non-whitespace character takes no script
+  style however its metrics place it (#273): a raised space is a space, `<sup> </sup>` claims an
+  inline script over nothing a reader can see raised, and the space itself is written where the
+  page set it. Whitespace *inside* a run that also holds a glyph is that script's own. Evidence:
+  [whitespace-only-inline-scripts](../measurements/whitespace-only-inline-scripts/record.md).
 - **Drop caps.** A lowered, oversized single initial followed by substantial, consistently sized,
   normal-baseline prose is a drop cap, not a subscript: the following runs' size is its body
   size and its `readingRect` is a top-aligned body-height rectangle used for ordering, while its

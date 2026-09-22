@@ -1002,6 +1002,19 @@ column the chaining split in two — is that row, however the chaining divided i
 measure never is, because it widens across a gutter only where the column beside it has ended
 (#137, #174, [column-run-order](../measurements/column-run-order/record.md)).
 
+A fifth condition is that a marker keeps its item. **A bullet is never a column of its own**, so a
+stack of bullets describes no column of the page, whatever it chains onto: a page that hangs its
+bullets clear of short items sets a column of markers beside a column of item text, and the marker
+run only forms at all by chaining onto the paragraph that introduces the list, from which it
+borrows the substance the third condition asks for. Read out as columns, every marker arrives
+before any of its items and nothing downstream can put them back, because the rule that joins a
+marker to the piece on its own printed row reads rows. So where a run holds a marker the page hung
+clear of its item and another run holds that item, the group is left to the row-major order, which
+reads each marker with its item. The marker and its item must be a marker and its item: the piece
+beside it stands within the hanging indent a page hangs a bullet across, never a column's gutter
+away, which is the measured gap the hanging-indent bound already draws
+(#279, [hung-bullet-columns](../measurements/hung-bullet-columns/record.md)).
+
 The cuts recurse 32 levels. A page whose separating gaps never narrow is cut one block at a
 time, so its depth is its block count: uniform leading wider than 110% of the page body, as a
 double-spaced typescript sets, reaches the limit at 33 blocks. Ordinary pages do not come near

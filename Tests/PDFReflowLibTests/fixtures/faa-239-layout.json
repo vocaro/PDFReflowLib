@@ -1,0 +1,2713 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        543.54690000000005,
+        33.709700000000005,
+        14.450000000000045,
+        12.310000000000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "9-9"
+        }
+      ],
+      "text" : "9-9"
+    },
+    {
+      "rect" : [
+        320.9969000000001,
+        719.5696999999999,
+        237.00599999999997,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "An expiration date for replacing (or recharging) the battery"
+        }
+      ],
+      "text" : "An expiration date for replacing (or recharging) the battery"
+    },
+    {
+      "rect" : [
+        320.9969000000001,
+        707.0696999999999,
+        237.04999999999995,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "must be legibly marked on the outside of the transmitter"
+        }
+      ],
+      "text" : "must be legibly marked on the outside of the transmitter"
+    },
+    {
+      "rect" : [
+        320.9969000000001,
+        694.5696999999999,
+        237.00700000000006,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "and entered in the aircraft maintenance record. This does"
+        }
+      ],
+      "text" : "and entered in the aircraft maintenance record. This does"
+    },
+    {
+      "rect" : [
+        320.9969000000001,
+        682.0696999999999,
+        237.01099999999997,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "not apply to batteries that are essentially unaffected during"
+        }
+      ],
+      "text" : "not apply to batteries that are essentially unaffected during"
+    },
+    {
+      "rect" : [
+        320.9969000000001,
+        669.5696999999999,
+        203,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "storage intervals, such as water-activated batteries."
+        }
+      ],
+      "text" : "storage intervals, such as water-activated batteries."
+    },
+    {
+      "rect" : [
+        321,
+        643.34340000000009,
+        95.04000000000002,
+        13.309999999999945
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-BoldItalic",
+          "fontSize" : 11,
+          "text" : "Preflight Inspections"
+        }
+      ],
+      "text" : "Preflight Inspections"
+    },
+    {
+      "rect" : [
+        321,
+        629.56640000000004,
+        237.00499999999988,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "The preflight inspection is a thorough and systematic means"
+        }
+      ],
+      "text" : "The preflight inspection is a thorough and systematic means"
+    },
+    {
+      "rect" : [
+        321,
+        617.06640000000004,
+        237.01499999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "by which a pilot determines if an aircraft is airworthy and in"
+        }
+      ],
+      "text" : "by which a pilot determines if an aircraft is airworthy and in"
+    },
+    {
+      "rect" : [
+        321,
+        604.56640000000004,
+        237.00799999999992,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "condition for safe operation. POHs and owner/information"
+        }
+      ],
+      "text" : "condition for safe operation. POHs and owner/information"
+    },
+    {
+      "rect" : [
+        321,
+        592.06640000000004,
+        237.00499999999988,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "manuals contain a section devoted to a systematic method"
+        }
+      ],
+      "text" : "manuals contain a section devoted to a systematic method"
+    },
+    {
+      "rect" : [
+        321,
+        579.56640000000004,
+        145.81000000000006,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "of performing a preflight inspection."
+        }
+      ],
+      "text" : "of performing a preflight inspection."
+    },
+    {
+      "rect" : [
+        321,
+        551.28240000000005,
+        209.53200000000004,
+        15.827999999999975
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 12,
+          "text" : "Minimum Equipment Lists (MEL) and"
+        }
+      ],
+      "text" : "Minimum Equipment Lists (MEL) and"
+    },
+    {
+      "rect" : [
+        321,
+        537.27840000000003,
+        224.07600000000002,
+        15.827999999999975
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 12,
+          "text" : "Operations With Inoperative Equipment"
+        }
+      ],
+      "text" : "Operations With Inoperative Equipment"
+    },
+    {
+      "rect" : [
+        321,
+        522.51639999999998,
+        237.11500000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Under 14 CFR, all aircraft instruments and installed equipment"
+        }
+      ],
+      "text" : "Under 14 CFR, all aircraft instruments and installed equipment"
+    },
+    {
+      "rect" : [
+        321,
+        510.01639999999998,
+        236.99999999999989,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "are required to be operative prior to each departure. When the"
+        }
+      ],
+      "text" : "are required to be operative prior to each departure. When the"
+    },
+    {
+      "rect" : [
+        321,
+        497.51639999999998,
+        237.05700000000002,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "FAA adopted the minimum equipment list (MEL) concept for"
+        }
+      ],
+      "text" : "FAA adopted the minimum equipment list (MEL) concept for"
+    },
+    {
+      "rect" : [
+        321,
+        485.01639999999998,
+        237.01699999999994,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "14 CFR part 91 operations, it allowed aircraft to be operated"
+        }
+      ],
+      "text" : "14 CFR part 91 operations, it allowed aircraft to be operated"
+    },
+    {
+      "rect" : [
+        321,
+        472.51639999999998,
+        237.08000000000015,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "with inoperative equipment determined to be nonessential for"
+        }
+      ],
+      "text" : "with inoperative equipment determined to be nonessential for"
+    },
+    {
+      "rect" : [
+        321,
+        460.01639999999998,
+        237,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "safe flight. At the same time, it allowed part 91 operators,"
+        }
+      ],
+      "text" : "safe flight. At the same time, it allowed part 91 operators,"
+    },
+    {
+      "rect" : [
+        321,
+        447.51639999999998,
+        237.02199999999993,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "without an MEL, to defer repairs on nonessential equipment"
+        }
+      ],
+      "text" : "without an MEL, to defer repairs on nonessential equipment"
+    },
+    {
+      "rect" : [
+        321,
+        435.01639999999998,
+        127.77000000000004,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "within the guidelines of part 91."
+        }
+      ],
+      "text" : "within the guidelines of part 91."
+    },
+    {
+      "rect" : [
+        321,
+        410.01639999999998,
+        236.96000000000004,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "The FAA has two acceptable methods of deferring"
+        }
+      ],
+      "text" : "The FAA has two acceptable methods of deferring"
+    },
+    {
+      "rect" : [
+        321,
+        397.51639999999998,
+        237.09999999999991,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "maintenance on small rotorcraft, non-turbine powered"
+        }
+      ],
+      "text" : "maintenance on small rotorcraft, non-turbine powered"
+    },
+    {
+      "rect" : [
+        321,
+        385.01639999999998,
+        237.00799999999992,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "airplanes, gliders, or lighter-than-air aircraft operated under"
+        }
+      ],
+      "text" : "airplanes, gliders, or lighter-than-air aircraft operated under"
+    },
+    {
+      "rect" : [
+        321,
+        372.51639999999998,
+        237.0150000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "part 91. They are the deferral provision of 14 CFR, part 91,"
+        }
+      ],
+      "text" : "part 91. They are the deferral provision of 14 CFR, part 91,"
+    },
+    {
+      "rect" : [
+        321,
+        360.01639999999998,
+        188.02000000000004,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "section 91.213(d) and an FAA-approved MEL."
+        }
+      ],
+      "text" : "section 91.213(d) and an FAA-approved MEL."
+    },
+    {
+      "rect" : [
+        321,
+        335.01639999999998,
+        237.00699999999995,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "The deferral provision of 14 CFR, part 91, section 91.213(d)"
+        }
+      ],
+      "text" : "The deferral provision of 14 CFR, part 91, section 91.213(d)"
+    },
+    {
+      "rect" : [
+        321,
+        322.51639999999998,
+        237.01299999999992,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "is widely used by most pilot/operators. Its popularity is due"
+        }
+      ],
+      "text" : "is widely used by most pilot/operators. Its popularity is due"
+    },
+    {
+      "rect" : [
+        321,
+        310.01639999999998,
+        236.88,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "to simplicity and minimal paperwork. When inoperative"
+        }
+      ],
+      "text" : "to simplicity and minimal paperwork. When inoperative"
+    },
+    {
+      "rect" : [
+        321,
+        297.51639999999998,
+        236.99499999999989,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "equipment is found during a preflight inspection or prior to"
+        }
+      ],
+      "text" : "equipment is found during a preflight inspection or prior to"
+    },
+    {
+      "rect" : [
+        321,
+        285.01639999999998,
+        237.0139999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "departure, the decision should be to cancel the flight, obtain"
+        }
+      ],
+      "text" : "departure, the decision should be to cancel the flight, obtain"
+    },
+    {
+      "rect" : [
+        321,
+        272.51639999999998,
+        237.08500000000004,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "maintenance prior to flight, or to defer the item or equipment."
+        }
+      ],
+      "text" : "maintenance prior to flight, or to defer the item or equipment."
+    },
+    {
+      "rect" : [
+        321,
+        247.51639999999998,
+        236.92999999999984,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Maintenance deferrals are not used for inflight discrepancies."
+        }
+      ],
+      "text" : "Maintenance deferrals are not used for inflight discrepancies."
+    },
+    {
+      "rect" : [
+        321,
+        235.01639999999998,
+        236.99199999999996,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "The manufacturer’s AFM/POH procedures are to be used in"
+        }
+      ],
+      "text" : "The manufacturer’s AFM/POH procedures are to be used in"
+    },
+    {
+      "rect" : [
+        321,
+        222.51639999999998,
+        236.99999999999989,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "those situations. The discussion that follows assumes that"
+        }
+      ],
+      "text" : "those situations. The discussion that follows assumes that"
+    },
+    {
+      "rect" : [
+        321,
+        210.01639999999998,
+        237.01700000000005,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the pilot wishes to defer maintenance that would ordinarily"
+        }
+      ],
+      "text" : "the pilot wishes to defer maintenance that would ordinarily"
+    },
+    {
+      "rect" : [
+        321,
+        197.51639999999998,
+        104.15000000000003,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "be required prior to flight."
+        }
+      ],
+      "text" : "be required prior to flight."
+    },
+    {
+      "rect" : [
+        321,
+        173.01639999999998,
+        237.03999999999996,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Using the deferral provision of 14 CFR, part 91, section"
+        }
+      ],
+      "text" : "Using the deferral provision of 14 CFR, part 91, section"
+    },
+    {
+      "rect" : [
+        321,
+        161.01639999999998,
+        237.125,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "91.213(d), the pilot determines whether the inoperative"
+        }
+      ],
+      "text" : "91.213(d), the pilot determines whether the inoperative"
+    },
+    {
+      "rect" : [
+        321,
+        149.01639999999998,
+        237.00800000000004,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "equipment is required by type design, 14 CFR, or ADs. If"
+        }
+      ],
+      "text" : "equipment is required by type design, 14 CFR, or ADs. If"
+    },
+    {
+      "rect" : [
+        321,
+        137.01639999999998,
+        237.00999999999988,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the inoperative item is not required, and the aircraft can be"
+        }
+      ],
+      "text" : "the inoperative item is not required, and the aircraft can be"
+    },
+    {
+      "rect" : [
+        321,
+        125.01639999999998,
+        237.01999999999998,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "safely operated without it, the deferral may be made. The"
+        }
+      ],
+      "text" : "safely operated without it, the deferral may be made. The"
+    },
+    {
+      "rect" : [
+        321,
+        113.01639999999998,
+        237.07999999999993,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "inoperative item shall be deactivated or removed and an"
+        }
+      ],
+      "text" : "inoperative item shall be deactivated or removed and an"
+    },
+    {
+      "rect" : [
+        321,
+        101.01639999999998,
+        237.00700000000006,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "INOPERATIVE placard placed near the appropriate switch,"
+        }
+      ],
+      "text" : "INOPERATIVE placard placed near the appropriate switch,"
+    },
+    {
+      "rect" : [
+        321,
+        89.016399999999976,
+        236.84000000000003,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "control, or indicator. If deactivation or removal involves"
+        }
+      ],
+      "text" : "control, or indicator. If deactivation or removal involves"
+    },
+    {
+      "rect" : [
+        71.999999999999972,
+        719.56639999999993,
+        237.00399999999993,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "hours for the purpose of traveling to a location at which the"
+        }
+      ],
+      "text" : "hours for the purpose of traveling to a location at which the"
+    },
+    {
+      "rect" : [
+        71.999999999999972,
+        707.06639999999993,
+        237.00500000000002,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "required inspection can be performed. Any excess time used"
+        }
+      ],
+      "text" : "required inspection can be performed. Any excess time used"
+    },
+    {
+      "rect" : [
+        71.999999999999972,
+        694.56639999999993,
+        236.99999999999991,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "for this purpose must be included in computing the next 100"
+        }
+      ],
+      "text" : "for this purpose must be included in computing the next 100"
+    },
+    {
+      "rect" : [
+        71.999999999999972,
+        682.06639999999993,
+        96.930000000000035,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "hours of time in service."
+        }
+      ],
+      "text" : "hours of time in service."
+    },
+    {
+      "rect" : [
+        71.999999999999972,
+        656.49639999999988,
+        128.91999999999999,
+        13.190000000000055
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 10,
+          "text" : "Other Inspection Programs"
+        }
+      ],
+      "text" : "Other Inspection Programs"
+    },
+    {
+      "rect" : [
+        71.999999999999972,
+        644.06639999999993,
+        237.10399999999996,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "The annual and 100-hour inspection requirements do not"
+        }
+      ],
+      "text" : "The annual and 100-hour inspection requirements do not"
+    },
+    {
+      "rect" : [
+        71.999999999999972,
+        631.56639999999993,
+        236.99999999999986,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "apply to large (over 12,500 pounds) airplanes, turbojets, or"
+        }
+      ],
+      "text" : "apply to large (over 12,500 pounds) airplanes, turbojets, or"
+    },
+    {
+      "rect" : [
+        71.999999999999972,
+        619.06639999999993,
+        237.00799999999995,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "turbopropeller-powered multi-engine airplanes or to aircraft"
+        }
+      ],
+      "text" : "turbopropeller-powered multi-engine airplanes or to aircraft"
+    },
+    {
+      "rect" : [
+        71.999999999999972,
+        606.56639999999993,
+        237.00499999999991,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "for which the owner complies with a progressive inspection"
+        }
+      ],
+      "text" : "for which the owner complies with a progressive inspection"
+    },
+    {
+      "rect" : [
+        71.999999999999972,
+        594.06639999999993,
+        237.02299999999994,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "program. Details of these requirements may be determined"
+        }
+      ],
+      "text" : "program. Details of these requirements may be determined"
+    },
+    {
+      "rect" : [
+        71.999999999999972,
+        581.56639999999993,
+        237.01800000000006,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "by referencing 14 CFR, part 43, section 43.11 and 14 CFR"
+        }
+      ],
+      "text" : "by referencing 14 CFR, part 43, section 43.11 and 14 CFR"
+    },
+    {
+      "rect" : [
+        71.999999999999972,
+        569.06639999999993,
+        205.26000000000002,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "part 91, subpart E, or by inquiring at a local FSDO."
+        }
+      ],
+      "text" : "part 91, subpart E, or by inquiring at a local FSDO."
+    },
+    {
+      "rect" : [
+        72,
+        542.84340000000009,
+        127.12700000000001,
+        13.309999999999945
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-BoldItalic",
+          "fontSize" : 11,
+          "text" : "Altimeter System Inspection"
+        }
+      ],
+      "text" : "Altimeter System Inspection"
+    },
+    {
+      "rect" : [
+        72,
+        529.06640000000004,
+        237.05000000000007,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Under 14 CFR, part 91, section 91.411, requires that the"
+        }
+      ],
+      "text" : "Under 14 CFR, part 91, section 91.411, requires that the"
+    },
+    {
+      "rect" : [
+        72,
+        516.56640000000004,
+        237.01299999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "altimeter, encoding altimeter, and related system must be"
+        }
+      ],
+      "text" : "altimeter, encoding altimeter, and related system must be"
+    },
+    {
+      "rect" : [
+        72,
+        504.06640000000004,
+        236.89999999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "tested and inspected within the 24 months prior to operating in"
+        }
+      ],
+      "text" : "tested and inspected within the 24 months prior to operating in"
+    },
+    {
+      "rect" : [
+        72,
+        491.56640000000004,
+        237.00999999999993,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "controlled airspace under instrument flight rules (IFR). This"
+        }
+      ],
+      "text" : "controlled airspace under instrument flight rules (IFR). This"
+    },
+    {
+      "rect" : [
+        72,
+        479.06640000000004,
+        235.21999999999991,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "applies to all aircraft being operated in controlled airspace."
+        }
+      ],
+      "text" : "applies to all aircraft being operated in controlled airspace."
+    },
+    {
+      "rect" : [
+        72,
+        452.84340000000003,
+        109.09800000000001,
+        13.310000000000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-BoldItalic",
+          "fontSize" : 11,
+          "text" : "Transponder Inspection"
+        }
+      ],
+      "text" : "Transponder Inspection"
+    },
+    {
+      "rect" : [
+        72,
+        439.06640000000004,
+        237.01099999999985,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Title 14 CFR, part 91, section 91.413, requires that before"
+        }
+      ],
+      "text" : "Title 14 CFR, part 91, section 91.413, requires that before"
+    },
+    {
+      "rect" : [
+        72,
+        426.56640000000004,
+        237.02299999999997,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "a transponder can be used under 14 CFR, part 91, section"
+        }
+      ],
+      "text" : "a transponder can be used under 14 CFR, part 91, section"
+    },
+    {
+      "rect" : [
+        72,
+        414.06640000000004,
+        237.10000000000002,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "91.215(a), it shall be tested and inspected within the 24"
+        }
+      ],
+      "text" : "91.215(a), it shall be tested and inspected within the 24"
+    },
+    {
+      "rect" : [
+        72,
+        401.56640000000004,
+        237.04100000000005,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "months prior to operation of the aircraft regardless of airspace"
+        }
+      ],
+      "text" : "months prior to operation of the aircraft regardless of airspace"
+    },
+    {
+      "rect" : [
+        72,
+        389.06640000000004,
+        46.939999999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "restrictions."
+        }
+      ],
+      "text" : "restrictions."
+    },
+    {
+      "rect" : [
+        72,
+        362.84340000000003,
+        146.05799999999999,
+        13.310000000000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-BoldItalic",
+          "fontSize" : 11,
+          "text" : "Emergency Locator Transmitter"
+        }
+      ],
+      "text" : "Emergency Locator Transmitter"
+    },
+    {
+      "rect" : [
+        72,
+        349.06640000000004,
+        237.005,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "An emergency locator transmitter (ELT) is required by 14"
+        }
+      ],
+      "text" : "An emergency locator transmitter (ELT) is required by 14"
+    },
+    {
+      "rect" : [
+        72,
+        336.56640000000004,
+        237.01699999999994,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "CFR, part 91, section 91.207, and must be inspected within"
+        }
+      ],
+      "text" : "CFR, part 91, section 91.207, and must be inspected within"
+    },
+    {
+      "rect" : [
+        72,
+        324.06640000000004,
+        236.9899999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "12 calendar months after the last inspection for the following:"
+        }
+      ],
+      "text" : "12 calendar months after the last inspection for the following:"
+    },
+    {
+      "rect" : [
+        81,
+        307.06639999999999,
+        3.5,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "•"
+        }
+      ],
+      "text" : "•"
+    },
+    {
+      "rect" : [
+        99,
+        307.06639999999999,
+        73.610000000000014,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Proper installation"
+        }
+      ],
+      "text" : "Proper installation"
+    },
+    {
+      "rect" : [
+        81,
+        290.06639999999999,
+        3.5,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "•"
+        }
+      ],
+      "text" : "•"
+    },
+    {
+      "rect" : [
+        99,
+        290.06639999999999,
+        69.710000000000008,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Battery corrosion"
+        }
+      ],
+      "text" : "Battery corrosion"
+    },
+    {
+      "rect" : [
+        81,
+        273.06639999999999,
+        3.5,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "•"
+        }
+      ],
+      "text" : "•"
+    },
+    {
+      "rect" : [
+        99,
+        273.06639999999999,
+        168.85000000000002,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Operation of the controls and crash sensor"
+        }
+      ],
+      "text" : "Operation of the controls and crash sensor"
+    },
+    {
+      "rect" : [
+        81,
+        256.06639999999999,
+        3.5,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "•"
+        }
+      ],
+      "text" : "•"
+    },
+    {
+      "rect" : [
+        99,
+        256.06639999999999,
+        210.00599999999991,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "The presence of a sufficient signal radiated from its"
+        }
+      ],
+      "text" : "The presence of a sufficient signal radiated from its"
+    },
+    {
+      "rect" : [
+        99,
+        243.56640000000002,
+        31.099999999999994,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "antenna"
+        }
+      ],
+      "text" : "antenna"
+    },
+    {
+      "rect" : [
+        72,
+        218.56640000000002,
+        236.99399999999997,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "The ELT must be attached to the airplane in such a manner"
+        }
+      ],
+      "text" : "The ELT must be attached to the airplane in such a manner"
+    },
+    {
+      "rect" : [
+        72,
+        206.06640000000002,
+        237.01099999999991,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "that the probability of damage to the transmitter in the event"
+        }
+      ],
+      "text" : "that the probability of damage to the transmitter in the event"
+    },
+    {
+      "rect" : [
+        72,
+        193.56640000000002,
+        237.05799999999988,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "of crash impact is minimized. Fixed and deployable automatic"
+        }
+      ],
+      "text" : "of crash impact is minimized. Fixed and deployable automatic"
+    },
+    {
+      "rect" : [
+        72,
+        181.06640000000002,
+        237.01499999999993,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "type transmitters must be attached to the airplane as far aft"
+        }
+      ],
+      "text" : "type transmitters must be attached to the airplane as far aft"
+    },
+    {
+      "rect" : [
+        72,
+        168.56640000000002,
+        237.02199999999993,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "as practicable. Batteries used in the ELTs must be replaced"
+        }
+      ],
+      "text" : "as practicable. Batteries used in the ELTs must be replaced"
+    },
+    {
+      "rect" : [
+        72,
+        156.06640000000002,
+        190.19000000000005,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "(or recharged, if the batteries are rechargeable):"
+        }
+      ],
+      "text" : "(or recharged, if the batteries are rechargeable):"
+    },
+    {
+      "rect" : [
+        81,
+        139.06640000000002,
+        3.5,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "•"
+        }
+      ],
+      "text" : "•"
+    },
+    {
+      "rect" : [
+        99,
+        139.06640000000002,
+        209.99999999999989,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "When the transmitter has been in use for more than 1"
+        }
+      ],
+      "text" : "When the transmitter has been in use for more than 1"
+    },
+    {
+      "rect" : [
+        99,
+        126.56640000000002,
+        65.269999999999982,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "cumulative hour"
+        }
+      ],
+      "text" : "cumulative hour"
+    },
+    {
+      "rect" : [
+        81,
+        109.5664,
+        3.5,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "•"
+        }
+      ],
+      "text" : "•"
+    },
+    {
+      "rect" : [
+        99,
+        109.5664,
+        210.04999999999995,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "When 50 percent of the battery useful life or, for"
+        }
+      ],
+      "text" : "When 50 percent of the battery useful life or, for"
+    },
+    {
+      "rect" : [
+        99,
+        97.066400000000002,
+        210.00499999999988,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "rechargeable batteries, 50 percent of useful life of the"
+        }
+      ],
+      "text" : "rechargeable batteries, 50 percent of useful life of the"
+    },
+    {
+      "rect" : [
+        99,
+        84.566400000000002,
+        74.970000000000027,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "charge has expired"
+        }
+      ],
+      "text" : "charge has expired"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    594,
+    774
+  ],
+  "caseID" : "faa-phak-8083-25c",
+  "graphics" : [
+
+  ],
+  "lines" : [
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        543.54690000000005,
+        33.709700000000005,
+        14.450000000000045,
+        12.310000000000002
+      ],
+      "text" : "9-9"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        320.9969000000001,
+        719.5696999999999,
+        237.00599999999997,
+        11.470000000000027
+      ],
+      "text" : "An expiration date for replacing (or recharging) the battery"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        320.9969000000001,
+        707.0696999999999,
+        237.04999999999995,
+        11.470000000000027
+      ],
+      "text" : "must be legibly marked on the outside of the transmitter"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        320.9969000000001,
+        694.5696999999999,
+        237.00700000000006,
+        11.470000000000027
+      ],
+      "text" : "and entered in the aircraft maintenance record. This does"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        320.9969000000001,
+        682.0696999999999,
+        237.01099999999997,
+        11.470000000000027
+      ],
+      "text" : "not apply to batteries that are essentially unaffected during"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        320.9969000000001,
+        669.5696999999999,
+        203,
+        11.470000000000027
+      ],
+      "text" : "storage intervals, such as water-activated batteries."
+    },
+    {
+      "fontSize" : 11,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        643.34340000000009,
+        95.04000000000002,
+        13.309999999999945
+      ],
+      "text" : "Preflight Inspections"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        629.56640000000004,
+        237.00499999999988,
+        11.470000000000027
+      ],
+      "text" : "The preflight inspection is a thorough and systematic means"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        617.06640000000004,
+        237.01499999999999,
+        11.470000000000027
+      ],
+      "text" : "by which a pilot determines if an aircraft is airworthy and in"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        604.56640000000004,
+        237.00799999999992,
+        11.470000000000027
+      ],
+      "text" : "condition for safe operation. POHs and owner/information"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        592.06640000000004,
+        237.00499999999988,
+        11.470000000000027
+      ],
+      "text" : "manuals contain a section devoted to a systematic method"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        579.56640000000004,
+        145.81000000000006,
+        11.470000000000027
+      ],
+      "text" : "of performing a preflight inspection."
+    },
+    {
+      "fontSize" : 12,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        551.28240000000005,
+        209.53200000000004,
+        15.827999999999975
+      ],
+      "text" : "Minimum Equipment Lists (MEL) and"
+    },
+    {
+      "fontSize" : 12,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        537.27840000000003,
+        224.07600000000002,
+        15.827999999999975
+      ],
+      "text" : "Operations With Inoperative Equipment"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        522.51639999999998,
+        237.11500000000001,
+        11.470000000000027
+      ],
+      "text" : "Under 14 CFR, all aircraft instruments and installed equipment"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        510.01639999999998,
+        236.99999999999989,
+        11.470000000000027
+      ],
+      "text" : "are required to be operative prior to each departure. When the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        497.51639999999998,
+        237.05700000000002,
+        11.470000000000027
+      ],
+      "text" : "FAA adopted the minimum equipment list (MEL) concept for"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        485.01639999999998,
+        237.01699999999994,
+        11.470000000000027
+      ],
+      "text" : "14 CFR part 91 operations, it allowed aircraft to be operated"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        472.51639999999998,
+        237.08000000000015,
+        11.470000000000027
+      ],
+      "text" : "with inoperative equipment determined to be nonessential for"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        460.01639999999998,
+        237,
+        11.470000000000027
+      ],
+      "text" : "safe flight. At the same time, it allowed part 91 operators,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        447.51639999999998,
+        237.02199999999993,
+        11.470000000000027
+      ],
+      "text" : "without an MEL, to defer repairs on nonessential equipment"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        435.01639999999998,
+        127.77000000000004,
+        11.470000000000027
+      ],
+      "text" : "within the guidelines of part 91."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        410.01639999999998,
+        236.96000000000004,
+        11.470000000000027
+      ],
+      "text" : "The FAA has two acceptable methods of deferring"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        397.51639999999998,
+        237.09999999999991,
+        11.470000000000027
+      ],
+      "text" : "maintenance on small rotorcraft, non-turbine powered"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        385.01639999999998,
+        237.00799999999992,
+        11.470000000000027
+      ],
+      "text" : "airplanes, gliders, or lighter-than-air aircraft operated under"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        372.51639999999998,
+        237.0150000000001,
+        11.470000000000027
+      ],
+      "text" : "part 91. They are the deferral provision of 14 CFR, part 91,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        360.01639999999998,
+        188.02000000000004,
+        11.470000000000027
+      ],
+      "text" : "section 91.213(d) and an FAA-approved MEL."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        335.01639999999998,
+        237.00699999999995,
+        11.470000000000027
+      ],
+      "text" : "The deferral provision of 14 CFR, part 91, section 91.213(d)"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        322.51639999999998,
+        237.01299999999992,
+        11.470000000000027
+      ],
+      "text" : "is widely used by most pilot/operators. Its popularity is due"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        310.01639999999998,
+        236.88,
+        11.470000000000027
+      ],
+      "text" : "to simplicity and minimal paperwork. When inoperative"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        297.51639999999998,
+        236.99499999999989,
+        11.470000000000027
+      ],
+      "text" : "equipment is found during a preflight inspection or prior to"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        285.01639999999998,
+        237.0139999999999,
+        11.470000000000027
+      ],
+      "text" : "departure, the decision should be to cancel the flight, obtain"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        272.51639999999998,
+        237.08500000000004,
+        11.470000000000027
+      ],
+      "text" : "maintenance prior to flight, or to defer the item or equipment."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        247.51639999999998,
+        236.92999999999984,
+        11.470000000000027
+      ],
+      "text" : "Maintenance deferrals are not used for inflight discrepancies."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        235.01639999999998,
+        236.99199999999996,
+        11.469999999999999
+      ],
+      "text" : "The manufacturer’s AFM/POH procedures are to be used in"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        222.51639999999998,
+        236.99999999999989,
+        11.469999999999999
+      ],
+      "text" : "those situations. The discussion that follows assumes that"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        210.01639999999998,
+        237.01700000000005,
+        11.469999999999999
+      ],
+      "text" : "the pilot wishes to defer maintenance that would ordinarily"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        197.51639999999998,
+        104.15000000000003,
+        11.469999999999999
+      ],
+      "text" : "be required prior to flight."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        173.01639999999998,
+        237.03999999999996,
+        11.469999999999999
+      ],
+      "text" : "Using the deferral provision of 14 CFR, part 91, section"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        161.01639999999998,
+        237.125,
+        11.469999999999999
+      ],
+      "text" : "91.213(d), the pilot determines whether the inoperative"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        149.01639999999998,
+        237.00800000000004,
+        11.469999999999999
+      ],
+      "text" : "equipment is required by type design, 14 CFR, or ADs. If"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        137.01639999999998,
+        237.00999999999988,
+        11.469999999999999
+      ],
+      "text" : "the inoperative item is not required, and the aircraft can be"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        125.01639999999998,
+        237.01999999999998,
+        11.469999999999999
+      ],
+      "text" : "safely operated without it, the deferral may be made. The"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        113.01639999999998,
+        237.07999999999993,
+        11.469999999999999
+      ],
+      "text" : "inoperative item shall be deactivated or removed and an"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        101.01639999999998,
+        237.00700000000006,
+        11.469999999999999
+      ],
+      "text" : "INOPERATIVE placard placed near the appropriate switch,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        89.016399999999976,
+        236.84000000000003,
+        11.469999999999999
+      ],
+      "text" : "control, or indicator. If deactivation or removal involves"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.999999999999972,
+        719.56639999999993,
+        237.00399999999993,
+        11.470000000000027
+      ],
+      "text" : "hours for the purpose of traveling to a location at which the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.999999999999972,
+        707.06639999999993,
+        237.00500000000002,
+        11.470000000000027
+      ],
+      "text" : "required inspection can be performed. Any excess time used"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.999999999999972,
+        694.56639999999993,
+        236.99999999999991,
+        11.470000000000027
+      ],
+      "text" : "for this purpose must be included in computing the next 100"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.999999999999972,
+        682.06639999999993,
+        96.930000000000035,
+        11.470000000000027
+      ],
+      "text" : "hours of time in service."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.999999999999972,
+        656.49639999999988,
+        128.91999999999999,
+        13.190000000000055
+      ],
+      "text" : "Other Inspection Programs"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.999999999999972,
+        644.06639999999993,
+        237.10399999999996,
+        11.470000000000027
+      ],
+      "text" : "The annual and 100-hour inspection requirements do not"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.999999999999972,
+        631.56639999999993,
+        236.99999999999986,
+        11.470000000000027
+      ],
+      "text" : "apply to large (over 12,500 pounds) airplanes, turbojets, or"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.999999999999972,
+        619.06639999999993,
+        237.00799999999995,
+        11.470000000000027
+      ],
+      "text" : "turbopropeller-powered multi-engine airplanes or to aircraft"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.999999999999972,
+        606.56639999999993,
+        237.00499999999991,
+        11.470000000000027
+      ],
+      "text" : "for which the owner complies with a progressive inspection"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.999999999999972,
+        594.06639999999993,
+        237.02299999999994,
+        11.470000000000027
+      ],
+      "text" : "program. Details of these requirements may be determined"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.999999999999972,
+        581.56639999999993,
+        237.01800000000006,
+        11.470000000000027
+      ],
+      "text" : "by referencing 14 CFR, part 43, section 43.11 and 14 CFR"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.999999999999972,
+        569.06639999999993,
+        205.26000000000002,
+        11.470000000000027
+      ],
+      "text" : "part 91, subpart E, or by inquiring at a local FSDO."
+    },
+    {
+      "fontSize" : 11,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        542.84340000000009,
+        127.12700000000001,
+        13.309999999999945
+      ],
+      "text" : "Altimeter System Inspection"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        529.06640000000004,
+        237.05000000000007,
+        11.470000000000027
+      ],
+      "text" : "Under 14 CFR, part 91, section 91.411, requires that the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        516.56640000000004,
+        237.01299999999998,
+        11.470000000000027
+      ],
+      "text" : "altimeter, encoding altimeter, and related system must be"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        504.06640000000004,
+        236.89999999999998,
+        11.470000000000027
+      ],
+      "text" : "tested and inspected within the 24 months prior to operating in"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        491.56640000000004,
+        237.00999999999993,
+        11.470000000000027
+      ],
+      "text" : "controlled airspace under instrument flight rules (IFR). This"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        479.06640000000004,
+        235.21999999999991,
+        11.470000000000027
+      ],
+      "text" : "applies to all aircraft being operated in controlled airspace."
+    },
+    {
+      "fontSize" : 11,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        452.84340000000003,
+        109.09800000000001,
+        13.310000000000002
+      ],
+      "text" : "Transponder Inspection"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        439.06640000000004,
+        237.01099999999985,
+        11.470000000000027
+      ],
+      "text" : "Title 14 CFR, part 91, section 91.413, requires that before"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        426.56640000000004,
+        237.02299999999997,
+        11.470000000000027
+      ],
+      "text" : "a transponder can be used under 14 CFR, part 91, section"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        414.06640000000004,
+        237.10000000000002,
+        11.470000000000027
+      ],
+      "text" : "91.215(a), it shall be tested and inspected within the 24"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        401.56640000000004,
+        237.04100000000005,
+        11.470000000000027
+      ],
+      "text" : "months prior to operation of the aircraft regardless of airspace"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        389.06640000000004,
+        46.939999999999998,
+        11.470000000000027
+      ],
+      "text" : "restrictions."
+    },
+    {
+      "fontSize" : 11,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        362.84340000000003,
+        146.05799999999999,
+        13.310000000000002
+      ],
+      "text" : "Emergency Locator Transmitter"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        349.06640000000004,
+        237.005,
+        11.470000000000027
+      ],
+      "text" : "An emergency locator transmitter (ELT) is required by 14"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        336.56640000000004,
+        237.01699999999994,
+        11.470000000000027
+      ],
+      "text" : "CFR, part 91, section 91.207, and must be inspected within"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        324.06640000000004,
+        236.9899999999999,
+        11.470000000000027
+      ],
+      "text" : "12 calendar months after the last inspection for the following:"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        81,
+        307.06639999999999,
+        3.5,
+        11.470000000000027
+      ],
+      "text" : "•"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        307.06639999999999,
+        73.610000000000014,
+        11.470000000000027
+      ],
+      "text" : "Proper installation"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        81,
+        290.06639999999999,
+        3.5,
+        11.470000000000027
+      ],
+      "text" : "•"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        290.06639999999999,
+        69.710000000000008,
+        11.470000000000027
+      ],
+      "text" : "Battery corrosion"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        81,
+        273.06639999999999,
+        3.5,
+        11.470000000000027
+      ],
+      "text" : "•"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        273.06639999999999,
+        168.85000000000002,
+        11.470000000000027
+      ],
+      "text" : "Operation of the controls and crash sensor"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        81,
+        256.06639999999999,
+        3.5,
+        11.470000000000027
+      ],
+      "text" : "•"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        256.06639999999999,
+        210.00599999999991,
+        11.470000000000027
+      ],
+      "text" : "The presence of a sufficient signal radiated from its"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        243.56640000000002,
+        31.099999999999994,
+        11.469999999999999
+      ],
+      "text" : "antenna"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        218.56640000000002,
+        236.99399999999997,
+        11.469999999999999
+      ],
+      "text" : "The ELT must be attached to the airplane in such a manner"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        206.06640000000002,
+        237.01099999999991,
+        11.469999999999999
+      ],
+      "text" : "that the probability of damage to the transmitter in the event"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        193.56640000000002,
+        237.05799999999988,
+        11.469999999999999
+      ],
+      "text" : "of crash impact is minimized. Fixed and deployable automatic"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        181.06640000000002,
+        237.01499999999993,
+        11.469999999999999
+      ],
+      "text" : "type transmitters must be attached to the airplane as far aft"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        168.56640000000002,
+        237.02199999999993,
+        11.469999999999999
+      ],
+      "text" : "as practicable. Batteries used in the ELTs must be replaced"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        156.06640000000002,
+        190.19000000000005,
+        11.469999999999999
+      ],
+      "text" : "(or recharged, if the batteries are rechargeable):"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        81,
+        139.06640000000002,
+        3.5,
+        11.469999999999999
+      ],
+      "text" : "•"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        139.06640000000002,
+        209.99999999999989,
+        11.469999999999999
+      ],
+      "text" : "When the transmitter has been in use for more than 1"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        126.56640000000002,
+        65.269999999999982,
+        11.469999999999999
+      ],
+      "text" : "cumulative hour"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        81,
+        109.5664,
+        3.5,
+        11.469999999999999
+      ],
+      "text" : "•"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        109.5664,
+        210.04999999999995,
+        11.469999999999999
+      ],
+      "text" : "When 50 percent of the battery useful life or, for"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        97.066400000000002,
+        210.00499999999988,
+        11.469999999999999
+      ],
+      "text" : "rechargeable batteries, 50 percent of useful life of the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        84.566400000000002,
+        74.970000000000027,
+        11.469999999999999
+      ],
+      "text" : "charge has expired"
+    }
+  ],
+  "page" : 239,
+  "pictures" : [
+
+  ],
+  "rightsBasis" : "U.S. Government publication, retained as an external development corpus source. The PDF is not bundled or relicensed under the library license.",
+  "schemaVersion" : 2,
+  "sourceSHA256" : "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
+  "sourceTitle" : "Pilot's Handbook of Aeronautical Knowledge, FAA-H-8083-25C",
+  "sourceURL" : "https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/faa-h-8083-25c.pdf"
+}

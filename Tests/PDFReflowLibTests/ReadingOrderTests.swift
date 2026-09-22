@@ -678,3 +678,85 @@ private func expectInOrder(_ text: String, _ phrases: [String]) throws {
         previous = range.upperBound
     }
 }
+
+/// A hanging bullet column is not a column (#279).
+///
+/// A page that hangs its bullets clear of their items sets a column of markers beside a column of
+/// item text. Where the items are short, `columnRuns` (#174) read that as two columns and handed
+/// the whole run of markers over before any of their items — and nothing downstream could put an
+/// item back with its marker, because #261's rule joins a marker to the piece the page set on its
+/// own printed row, and by the time the markers arrived their rows were gone.
+///
+/// The marker run only forms at all by chaining onto the paragraph that introduces the list: each
+/// marker stands within a body beneath that paragraph's last line and overlaps its measure, and
+/// the run is then substantial because the *introduction's* lines are wide. It holds no
+/// substantial line of its own, which is the thing `columnRuns` already refuses, one step removed.
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/279"))
+func aHangingBulletColumnIsNotAColumn() throws {
+    // The FAA handbook's page 31 prints the sport-pilot hours as six one-line items, the marker at
+    // x=294.00 and the item at x=312.00 on one baseline; page 239 does the same with the four
+    // items of its ELT inspection list. Those two pages are the whole of it in this book: after
+    // #261 the handbook held 10 blocks that were a bare bullet, six here and four there.
+    for (name, items) in [("faa-31", ["Airplane: 20 hours", "Powered Parachute: 12 hours",
+                                      "Weight-Shift Control (Trikes): 20 hours", "Glider: 10 hours",
+                                      "Rotorcraft (gyroplane only): 20 hours",
+                                      "Lighter-Than-Air: 20 hours (airship) or 7 hours"]),
+                          ("faa-239", ["Proper installation", "Battery corrosion",
+                                       "Operation of the controls and crash sensor",
+                                       "The presence of a sufficient signal radiated from its"])] {
+        let fixture = try SourceLayoutFixture.load(name)
+        #expect(fixture.sourceSHA256 == "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7")
+        var warnings: [ConversionWarning] = []
+        let blocks = LayoutReconstructor.blocks(page: fixture.content(), images: [], vocabulary: [],
+                                                warnings: &warnings)
+        // Each marker reaches the reader with the item it marks, and no block is a bare bullet.
+        for item in items {
+            #expect(blocks.contains { $0.text == "• \(item)" }, Comment(rawValue: "\(name): \(item)"))
+        }
+        #expect(!blocks.contains { $0.text.trimmingCharacters(in: .whitespaces) == "•" },
+                Comment(rawValue: name))
+        // And the items are not run together into one paragraph, which is what reading the two
+        // runs out as columns did to them.
+        #expect(!blocks.contains { $0.text.contains(items[0]) && $0.text.contains(items[1]) },
+                Comment(rawValue: name))
+    }
+}
+
+/// The bound is the one #261 measured: a marker is never a column of its own, but what the page
+/// sets a *column* away on that row is a column and is read as one (#279).
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/279"))
+func aBulletSetAColumnAwayFromWhatFollowsItStillReadsAsAColumn() {
+    func line(_ text: String, x: Double, y: Double, width: Double) -> LayoutReconstructor.Element {
+        let rect = CGRect(x: x, y: y, width: width, height: 12)
+        return .init(rect: rect, line: TextLine(text: text, rect: rect, fontSize: 10), image: nil)
+    }
+    // The FAA handbook's page 31 in miniature: an introduction that wraps and closes short, four
+    // bullets hung clear of the pieces beside them, and two lines running on beneath. The markers
+    // chain onto the introduction and borrow its substance; the pieces beside them form a run of
+    // their own, because the introduction's own last line is too short to take the first of them.
+    func page(pieceX: Double, pieceWidth: Double) -> [LayoutReconstructor.Element] {
+        var elements = [line("An introduction to the list that follows, set across the whole measure",
+                             x: 40, y: 736, width: 260),
+                        line("of this page and wrapping once beneath itself before it closes on",
+                             x: 40, y: 724, width: 260),
+                        line("this page:", x: 40, y: 712, width: 30)]
+        for row in 0..<4 {
+            let y = 700 - Double(row) * 12
+            elements.append(line("\u{2022}", x: 40, y: y, width: 3.5))
+            elements.append(line("A piece of this page standing on that row, row \(row)",
+                                 x: pieceX, y: y, width: pieceWidth))
+        }
+        for row in 0..<2 {
+            elements.append(line("A line set across the whole measure of this page, running on",
+                                 x: 40, y: 652 - Double(row) * 12, width: 260))
+        }
+        return elements
+    }
+    // A piece 1.45 bodies past the marker is the item that marker marks, and these are rows.
+    #expect(LayoutReconstructor.columnRuns(page(pieceX: 58, pieceWidth: 130), bodySize: 10) == nil)
+    // A piece twelve bodies along that row is the second column of the page — the Blue Book sets
+    // one at 12.2 bodies and the Warren Commission at 5.2 and 8.1 — and the page is read as the
+    // columns it sets. Both readings were available before this guard; only the first has moved.
+    #expect(LayoutReconstructor.columnRuns(page(pieceX: 163.5, pieceWidth: 136), bodySize: 10) != nil)
+}
+

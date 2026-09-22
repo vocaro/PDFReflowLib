@@ -720,6 +720,7 @@ enum LayoutReconstructor {
                 || run.filter { $0.line != nil && $0.rect.width >= bodySize * 12 }.count >= 2
         }
         guard runs.count > 1, runs.allSatisfy({ $0.count > 1 }), substantial,
+              markersKeepTheirItems(runs, bodySize: bodySize, rightToLeft: rightToLeft),
               statesRunOnMeasure(runs, bodySize: bodySize), standApart(runs) else { return nil }
         let placed = runs.indices.sorted { first, second in
             let a = union(runs[first].map(\.rect)), b = union(runs[second].map(\.rect))
@@ -730,6 +731,46 @@ enum LayoutReconstructor {
             return arrival[first] < arrival[second]
         }
         return placed.map { runs[$0] }
+    }
+
+    /// Whether every marker the page hung clear of its item keeps that item in its own run.
+    ///
+    /// **A bullet is never a column of its own** (#261), so a stack of them describes no column
+    /// of the page, whatever it chains onto. A page that hangs its bullets clear of short items
+    /// sets a column of markers beside a column of item text, and the marker run only forms at
+    /// all by chaining onto the paragraph that introduces the list — each marker stands within a
+    /// body beneath the run's last line and overlaps its measure — from which it borrows the
+    /// substance `columnRuns` demands. That is the same thing the substance test refuses, one
+    /// step removed: the run holds no substantial line of its own.
+    ///
+    /// Read out as columns, every marker arrives before any of its items, and nothing downstream
+    /// can put them back together: #261's rule joins a marker to the piece the page set beside it
+    /// on its own printed row, and by the time the markers arrive their rows are gone. The FAA
+    /// handbook's page 31 reached the reader as six `<pre>` blocks holding a bullet and nothing
+    /// else, followed by one paragraph holding all six items run together, and page 239 did the
+    /// same with the four items of its ELT inspection list (#279).
+    ///
+    /// The marker and its item must be a marker and its item, not two columns: this asks
+    /// `opensAloneAsBullet`, whose `hangingIndentBound` is the measured gap between the indents a
+    /// page hangs a bullet across and the gutters it sets a column at. The Blue Book's bullet
+    /// 12.2 bodies from the piece beside it, and the Warren Commission's at 5.2 and 8.1, are
+    /// columns and are left to be read as columns.
+    private static func markersKeepTheirItems(_ runs: [[Element]], bodySize: CGFloat,
+                                              rightToLeft: Bool) -> Bool {
+        let lines = runs.flatMap { $0 }.compactMap(\.line)
+        for (index, run) in runs.enumerated() {
+            for element in run {
+                guard let line = element.line,
+                      opensAloneAsBullet(line, in: lines, body: bodySize, rightToLeft: rightToLeft),
+                      let item = pieceBeside(line, in: lines, rightToLeft: rightToLeft)
+                else { continue }
+                // The item is in another run: reading the runs out would separate the two.
+                if runs.indices.contains(where: { $0 != index && runs[$0].contains { $0.line == item } }) {
+                    return false
+                }
+            }
+        }
+        return true
     }
 
     /// Whether the runs stand apart: no element of one may touch an element of another. Runs that

@@ -237,10 +237,21 @@ raster read directly (`tools/compare_pdf.py --serve`). Pages 1–3 (549, 553, 55
 Parkland Memorial Hospital admission notes and a death-declaration statement, confirmed illegible
 from the rasters: both the inherited layer and fresh recognition fail the English test and the
 pages fall back to page images, which is the correct outcome, not a defect. Page 4 (636) is a
-faint carbon typescript whose misread layer (`tcld`/`ftboot`-style damage) is replaced by
-recognition that reads better; two phrases read off its raster, "and he told me about the things
-at" and "At 6:00 PM I instructed the officers to bring", are pinned verbatim, and the discarded
-layer's `ftboot` is confirmed absent from the replacement. Page 5 (664) is a clean typewritten
+faint carbon typescript whose misread layer (`tcld`/`ftboot`-style damage) is compared against a
+fresh reading and replaced where that reading misreads less of its own words. The case pins the
+finding and the page image — what every run agrees on — and not which side of that comparison won.
+It pinned the verdict until #269 and #281: two phrases read off the raster, "and he told me about
+the things at" and "At 6:00 PM I instructed the officers to bring", and the absence of the
+discarded layer's `ftboot`. The comparison turns on about five points between the reading's misread
+share and the layer's 23.8%, and the reading is Vision's, which differs between two runs of one
+binary on one host (#173, and the same variance within one binary that
+[comparing conversion runs](#comparing-conversion-runs) controls for), so the lane reported FAIL
+for a condition of the host on a tree
+that had not changed. The evidence moved rather than went:
+`aMisreadCarbonTypescriptIsReplacedByARecognitionThatReadsBetter` replays this page's captured
+layer and a captured recognition of it through `RecognitionPolicy` and holds both phrases, the
+absent token and the `ocrUsed` warning, the way #173's recognized tables are replayed from
+captures rather than re-measured. Page 5 (664) is a clean typewritten
 exhibit whose misread layer is nonetheless kept, because recognition read no better; its kept,
 still garbled text was confirmed to be a corrupted rendering of the same clearly legible source
 content, not something else. Peak converter RSS measured about 724 MiB against a 1,024 MiB

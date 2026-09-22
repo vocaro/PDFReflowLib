@@ -74,3 +74,42 @@ struct SourceLayoutFixture: Decodable {
         }, graphics: graphics.map(rect), pictures: pictures.map(rect))
     }
 }
+
+/// One page's *recognition* as Vision returned it, captured by
+/// `tools/probes/capture-ocr-layout-fixture.swift` from a checksum-pinned source.
+///
+/// A recognition is not a property of the library. Vision returns a different reading of the same
+/// page image from one run to the next on one host, from one unchanged binary (#173, #284), so a
+/// rule that weighs a reading cannot be gated by re-measuring one: the gate would report the host.
+/// It is gated by replaying a capture instead, which is what `#173` already does for the tables a
+/// recognition locates. What a test built on this fixture says is what the library does with *this
+/// reading*, and nothing about which reading Vision will return next.
+struct SourceRecognitionFixture: Decodable {
+    struct Line: Decodable {
+        var text: String
+        var rect: [Double]
+        var fontSize: Double
+        var monospaced: Bool
+        var wraps: Bool?
+    }
+    var sourceSHA256: String
+    var page: Int
+    var bounds: [Double]
+    var lines: [Line]
+    var graphics: [[Double]]
+
+    static func load(_ name: String) throws -> Self {
+        try JSONDecoder().decode(Self.self, from: Data(contentsOf: fixtureURL("\(name)-recognition.json")))
+    }
+
+    func reading() -> OCRReader.Result {
+        func rect(_ values: [Double]) -> CGRect {
+            precondition(values.count == 4)
+            return CGRect(x: values[0], y: values[1], width: values[2], height: values[3])
+        }
+        return OCRReader.Result(lines: lines.map {
+            TextLine(text: $0.text, rect: rect($0.rect), fontSize: $0.fontSize,
+                     monospaced: $0.monospaced, wraps: $0.wraps)
+        }, tables: graphics.map(rect))
+    }
+}

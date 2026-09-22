@@ -994,3 +994,72 @@ func aRetryThatCostsThePageWordsIsNotKept() {
     // Equal words and more cover is still a gain: the same words over more of the page.
     #expect(OCRReader.bandsAreKept(uncoveredInk: 100, words: 300, overUncoveredInk: 400, words: 300))
 }
+
+// #7's own page, replayed rather than re-measured (#269, #281).
+//
+// Warren report page 636 is the faint carbon typescript this library's inherited-layer rules were
+// built on: `tcld t» ftboot` for "told me about". Its layer fails the misread test, so the page is
+// planned `.compare` — recognized again, and the layer kept unless the fresh reading misreads a
+// smaller share of its own words.
+//
+// The corpus case `gpo-warren-1964-suspect-text-excerpt` used to pin which side of that comparison
+// won: two phrases read off the source raster, the absence of the discarded layer's `ftboot`, and
+// the `ocrUsed` warning. It cannot. The comparison turns on a margin of about five points between
+// the reading's misread share and the layer's 23.8%, and the reading is Vision's, which differs
+// between two runs of one binary on one host: three captures of this page taken minutes apart in
+// one session returned 28 lines each and 1,653, — and 1,647 characters, and the first held both
+// phrases where the third held neither. The lane therefore reported FAIL for a condition of the
+// host, on a tree that had not changed (#269, #281, #284).
+//
+// So the contract pins the finding and the page image, which every run agrees on, and the
+// comparison is replayed here from two captures: the layer as PDFKit hands it over, and one
+// recognition of the same page as Vision returned it. What this says is what the library does with
+// that reading. It says nothing about which reading Vision will return next, and it is not
+// supposed to.
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/269"))
+func aMisreadCarbonTypescriptIsReplacedByARecognitionThatReadsBetter() throws {
+    try #require(EnglishText.wordCounts("the") != nil, "no system English lexicon")
+    let excerptSHA256 = "bfe984ba3327be017dd38bc4a100251292489efa6faa643b80682dae49b53348"
+    let layer = try SourceLayoutFixture.load("warren-636")
+    let capture = try SourceRecognitionFixture.load("warren-636")
+    #expect(capture.sourceSHA256 == excerptSHA256)
+    #expect(capture.page == 4)
+
+    // The layer's own evidence, which is fixed and is what the corpus contract still pins.
+    let counts = try #require(EnglishText.wordCounts(layer.lines.map(\.text).joined(separator: "\n")))
+    guard case .misreadWords(let misread, let words, _)? = TextLayerPlausibility.wordFinding(counts) else {
+        Issue.record("warren-636 no longer reads as a misread layer: \(counts)"); return
+    }
+    let finding = TextLayerPlausibility.Finding.misreadWords(misread: misread, words: words,
+                                                             examples: counts.misreadExamples)
+    let evidence = PageEvidence(requiresPageImage: false, hasText: true,
+                                characters: layer.lines.map(\.text.count).reduce(0, +),
+                                replacementCharacters: 0, imageBackedText: false,
+                                damagedEncoding: false, implausibleLayer: finding, drawnText: false)
+    // A layer this damaged is compared, not replaced outright and not kept (#7).
+    let plan = RecognitionPolicy.plan(evidence, policy: .automatic)
+    #expect(plan == .recognize(.compare(misread: misread, words: words), keepCropsIfUnread: false))
+
+    // Given this reading, the comparison goes to the recognition.
+    let reading = capture.reading()
+    let resolution = RecognitionPolicy.resolve(plan, evidence: evidence, outcome: .read(reading),
+                                               judge: .english(language: "en"))
+    guard case .replaced(let replacement) = resolution.disposition else {
+        Issue.record("the layer was kept over this reading: \(resolution.disposition)"); return
+    }
+    #expect(resolution.warnings.contains(.ocrUsed))
+    // Both phrases were read directly off the source raster when the case was reviewed, and the
+    // discarded layer's own misread token is gone.
+    let text = replacement.lines.map(\.text).joined(separator: " ")
+    #expect(text.contains("and he told me about the things at"))
+    #expect(text.contains("At 6:00 PM I instructed the officers to bring"))
+    #expect(!text.contains("ftboot"))
+    #expect(layer.lines.contains { $0.text.contains("ftboot") })
+    // And the layer's finding is reported whichever side wins, which is why the contract can pin
+    // it: the page says its layer was damaged either way.
+    #expect(resolution.warnings.contains { if case .implausibleTextLayer = $0 { true } else { false } })
+    let kept = RecognitionPolicy.resolve(plan, evidence: evidence, outcome: .failed,
+                                         judge: .english(language: "en"))
+    #expect(kept.disposition == .keptLayer)
+    #expect(kept.warnings.contains { if case .implausibleTextLayer = $0 { true } else { false } })
+}

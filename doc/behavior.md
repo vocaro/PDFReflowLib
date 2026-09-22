@@ -106,6 +106,13 @@ Evidence: [pdfkit-structure-tree](../measurements/pdfkit-structure-tree/record.m
   inline script over nothing a reader can see raised, and the space itself is written where the
   page set it. Whitespace *inside* a run that also holds a glyph is that script's own. Evidence:
   [whitespace-only-inline-scripts](../measurements/whitespace-only-inline-scripts/record.md).
+- Emphasis is read the same way. A run holding no non-whitespace character takes neither italic
+  nor bold from its font, so `<em> </em>` and `<strong> </strong>` are never written over a space
+  (#278). The run itself is kept — the page set that space and the words on either side need it —
+  and where such a run stands beside prose of the same style it merges into it. An underline is
+  judged the other way and survives: a rule the page paints under a space is ink the page really
+  put there, not a font's claim (#235). Evidence:
+  [whitespace-only-emphasis](../measurements/whitespace-only-emphasis/record.md).
 - **Drop caps.** A lowered, oversized single initial followed by substantial, consistently sized,
   normal-baseline prose is a drop cap, not a subscript: the following runs' size is its body
   size and its `readingRect` is a top-aligned body-height rectangle used for ordering, while its
@@ -175,8 +182,12 @@ Evidence: [pdfkit-structure-tree](../measurements/pdfkit-structure-tree/record.m
   or more, the reading already holds divided pieces for them and the ordering rules can see those
   columns, and dividing one more row changes how the whole page is read. The 9/11 report's own
   table of names on page 451 sets twenty-three rows on 44.70 and 152.70, of which PDFKit merges
-  one; dividing that one turns a list of names with their offices into a paragraph of names
-  followed by a paragraph of offices, which is [#283](https://github.com/vocaro/PDFReflowLib/issues/283).
+  one, and dividing that one used to turn a list of names with their offices into a paragraph of
+  names followed by a paragraph of offices: the undivided line bridging the gutter was the only
+  thing keeping the page from being cut there. That cut is now refused on its own geometry — a
+  stack of cells standing on the rows of the lines beside them is not a column of the page — so
+  the page reads row by row whether or not its merged row is divided, and this condition no longer
+  carries it (#283).
   **What refuses the cut is the white.** A line the page genuinely sets across both columns — a
   headline, a caption — has the same shape, and keeps its reading, because it runs its words
   *through* the gutter: the white at the column edge is the space it sets everywhere else. The cut

@@ -252,7 +252,7 @@ extension LayoutReconstructor {
     /// [ 63.00 193.67 210.01 11.47] | IFR Charts—Enroute High Altitude Conterminous U.S.,
     /// ```
     ///
-    /// and the marker reached the reader as a block of its own — `<p>•</p>`, 52 times — or glued
+    /// and the marker reached the reader as a block of its own — `<p>•</p>`, 54 times — or glued
     /// to the sentence that introduces the list, while the item it marks was read as prose (#261).
     ///
     /// Two pieces of one printed row are one block within the three quarters of a body a column's
@@ -922,6 +922,16 @@ struct BlockAssembler {
     /// runs in: two lines of a caption the page lettered down the side of a panel overlap across
     /// the page without standing on one row of it, and are two lines rather than two pieces of
     /// one (#263).
+    private func continuesRow(_ prev: TextLine, _ line: TextLine) -> Bool {
+        let (prevRect, lineRect) = (prev.uprightRect, line.uprightRect)
+        guard TextLine.sameRow(prevRect, lineRect) else { return false }
+        // The rest of a printed row stands to the left of the piece that opened it where the
+        // writing runs right to left: USCIS M-618-A page 21 hands back `…الولايات المتحدة` at
+        // x 343…543 and `. ويطلق بعض الأشخاص…` at x 184…342 on one baseline (#41).
+        let gap = rightToLeft ? prevRect.minX - lineRect.maxX : lineRect.minX - prevRect.maxX
+        return gap >= 0 && gap < body * 0.75
+    }
+
     /// Whether `line` is the item a bullet standing alone marks: the open item is that bullet and
     /// nothing else, the two are one printed row, and the page hung the item within the indent a
     /// bullet reaches (#261).
@@ -938,16 +948,6 @@ struct BlockAssembler {
         guard TextLine.sameRow(aboveRect, lineRect) else { return false }
         let indent = rightToLeft ? aboveRect.minX - lineRect.maxX : lineRect.minX - aboveRect.maxX
         return indent >= 0 && indent < body * LayoutReconstructor.hangingIndentBound
-    }
-
-    private func continuesRow(_ prev: TextLine, _ line: TextLine) -> Bool {
-        let (prevRect, lineRect) = (prev.uprightRect, line.uprightRect)
-        guard TextLine.sameRow(prevRect, lineRect) else { return false }
-        // The rest of a printed row stands to the left of the piece that opened it where the
-        // writing runs right to left: USCIS M-618-A page 21 hands back `…الولايات المتحدة` at
-        // x 343…543 and `. ويطلق بعض الأشخاص…` at x 184…342 on one baseline (#41).
-        let gap = rightToLeft ? prevRect.minX - lineRect.maxX : lineRect.minX - prevRect.maxX
-        return gap >= 0 && gap < body * 0.75
     }
 
     mutating func finish() -> [ReflowBlock] {

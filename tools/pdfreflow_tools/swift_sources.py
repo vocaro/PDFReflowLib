@@ -16,6 +16,9 @@ PROBES = 'tools/probes'
 
 # Native text extraction: NativeTextReader, the readers it consults, and the value types it returns.
 EXTRACTION = ['NativeTextReader.swift', 'NativeSpacingReader.swift', 'NativeSpacingOwnership.swift',
+              # A margin rule an inherited recognition read as letters is cut where the box is
+              # formed (#264), so every probe that extracts text compiles the reading with it.
+              'MarginRuleMarks.swift', 'TextLineGeometry.swift',
               'GlyphIdentityReader.swift', 'GlyphIndexDecoder.swift', 'TextEncodingCheck.swift',
               'EnglishText.swift', 'CJKText.swift', 'ArabicText.swift', 'ContentStreamWalk.swift',
               'CGPDFObjects.swift',

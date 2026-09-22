@@ -169,3 +169,32 @@ assembler leaves the marker and its item two blocks.
   memory gate `passed`, and an empty `errors` list in every content assessment, on both sides.
   Warren and NOAA remain the two documented exclusions, so what moves in them — the survey says 47
   of NOAA's bullets and none of Warren's — is unmeasured.
+
+## After the merge
+
+`main` moved to `ecee3eb` while this was measured, bringing
+[#264](https://github.com/vocaro/PDFReflowLib/issues/264)'s margin-rule reading and
+[#273](https://github.com/vocaro/PDFReflowLib/issues/273)'s whitespace-only inline scripts. Merged
+at this branch's merge commit, the fast lane passes every gate again and the corpus lane passes
+all 18 of its cases, with every `result.json` and `content-assessment.json` read individually:
+`runPassed` true, `structuralCheck` passed, EPUBCheck 0, the memory gate passed and an empty
+`errors` list throughout.
+
+`gpo-warren-1964-suspect-text-excerpt` is the one case whose verdict moved about while this was
+checked, and it is [#269](https://github.com/vocaro/PDFReflowLib/issues/269) rather than anything
+here. Two consecutive runs of the merged binary failed it with #269's four page-4 errors — `missing
+text 'and he told me about the things at'`, `missing text 'At 6:00 PM I instructed the officers to
+bring'`, `unwanted text 'ftboot'` and `missing quality warning` — and a release binary built from
+`ecee3eb` itself, with none of this change in it, failed the same case with the same four errors in
+the same conditions. Three later runs of that same merged binary, byte for byte the one that had
+failed (`5fd26d2675ae268771a056ce3cfe06cea10f6c3bbdbc907a0900e5070e7bfc6e`), pass it: the whole
+lane green, then the case twice on its own. The case also passes on the baseline `94a24ad` and on
+this change measured against it.
+
+So that page's verdict is not stable **within** one binary either, which is one step past what #269
+records — it measured two binaries each stable at a different Vision reading. Nothing here reaches
+it: page 4 is a carbon typescript whose inherited layer `RecognitionPolicy` weighs against the
+recognition, and the extraction pass that decides it runs before any block is reconstructed. The
+observation is added to #269.
+
+The per-book table above is measured against `94a24ad` as it says, on the two binaries named there.

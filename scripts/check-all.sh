@@ -24,7 +24,30 @@ SERIAL="${PDFREFLOW_CHECKS_SERIAL:-0}"
 CORPUS_JOBS="${PDFREFLOW_CORPUS_JOBS:-6}"
 if [[ ! $CORPUS_JOBS =~ ^[1-9][0-9]*$ ]]; then echo "PDFREFLOW_CORPUS_JOBS must be a positive integer." >&2; exit 2; fi
 if [[ $SERIAL == 1 ]]; then CORPUS_JOBS=1; fi
-WORK="$(mktemp -d "${TMPDIR:-/tmp}/pdfreflow-checks.XXXXXX")"
+SCRATCH="${TMPDIR:-/tmp}"
+# Each run's output is kept only while it is worth reading: a failed gate's log and the books it
+# wrote are what the printed path is for, and a run where every gate passed has nothing in it a
+# reader wants. It was kept unconditionally, and three days of runs on one machine left 283
+# directories holding 23.5 GiB, which filled the volume and failed a build with ENOSPC (#287).
+# So a passing run removes its own directory at the end, and every run first prunes all but the
+# most recent KEPT_RUNS of the ones left behind, naming each one it removes. Only this script's
+# own `pdfreflow-checks.` directories in its own scratch directory are ever touched.
+KEPT_RUNS="${PDFREFLOW_KEPT_RUNS:-5}"
+if [[ ! $KEPT_RUNS =~ ^[0-9]+$ ]]; then echo "PDFREFLOW_KEPT_RUNS must be a non-negative integer." >&2; exit 2; fi
+prune_old_runs() {
+    local kept=0 directory
+    # Newest first, by modification time, so the ones kept are the ones just run.
+    while IFS= read -r directory; do
+        [[ -d $directory ]] || continue
+        kept=$((kept + 1))
+        if [[ $kept -gt $KEPT_RUNS ]]; then
+            echo "Removing an earlier run's results: $directory"
+            rm -rf "$directory"
+        fi
+    done < <(ls -dt "$SCRATCH"/pdfreflow-checks.* 2>/dev/null)
+}
+prune_old_runs
+WORK="$(mktemp -d "$SCRATCH/pdfreflow-checks.XXXXXX")"
 LOGS="$WORK/logs"
 mkdir "$LOGS"
 echo "Validation results: $WORK"
@@ -150,4 +173,11 @@ else
 fi
 finish_gates || record_step $?
 report_timings
+# Nothing failed and nothing was left unmeasured, so there is nothing in here to read (#287).
+if [[ $FAILED == 0 ]]; then
+    rm -rf "$WORK"
+    echo "Every gate passed; removed $WORK."
+else
+    echo "Results kept for reading: $WORK"
+fi
 exit $FAILED

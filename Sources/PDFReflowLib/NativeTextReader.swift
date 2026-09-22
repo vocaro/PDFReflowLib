@@ -77,10 +77,21 @@ enum NativeTextReader {
         // letters and PDFKit hands back inside the lines beside it (#264). A page that draws no
         // such rule pays one pass over its lines and nothing else.
         let crop = page.bounds(for: .cropBox)
-        let marginRule = MarginRuleMarks.suspected(texts: textsByLine, rects: boundsByLine, bounds: crop)
-            ? MarginRuleMarks.read(texts: textsByLine.map { $0 ?? "" },
-                                   boxes: characterBoxes(of: textsByLine, on: page),
+        let suspectsRule = MarginRuleMarks.suspected(texts: textsByLine, rects: boundsByLine, bounds: crop)
+        // A row of two columns PDFKit handed back as one line spanning the gutter (#270). It is
+        // read from the same character boxes as the margin rule, so a page that shows neither
+        // shape asks PDFKit for nothing.
+        let suspectsGutter = ColumnGutterCut.suspected(texts: textsByLine, rects: boundsByLine)
+        let boxesByLine = suspectsRule || suspectsGutter ? characterBoxes(of: textsByLine, on: page) : []
+        let marginRule = suspectsRule
+            ? MarginRuleMarks.read(texts: textsByLine.map { $0 ?? "" }, boxes: boxesByLine,
                                    rects: boundsByLine, bounds: crop)
+            : [:]
+        // A line the margin rule also reached keeps that reading: its box is already being
+        // re-measured, and no page states both shapes for one line.
+        let gutterCuts = suspectsGutter
+            ? ColumnGutterCut.read(texts: textsByLine.map { $0 ?? "" }, boxes: boxesByLine,
+                                   rects: boundsByLine).filter { marginRule[$0.key] == nil }
             : [:]
         // Each line as it was read, held until the page's own writing is known: a page written
         // right to left hands back the separators inside its numbers, and any line with no
@@ -127,6 +138,16 @@ enum NativeTextReader {
             let corrected = repaired?.string != attributed?.string
                 ? repaired?.string.replacingOccurrences(of: "\u{FFFC}", with: " ") : nil
             guard let rule = marginRule[index] else {
+                // A row of two columns PDFKit merged into one line is cut at the edge the rows
+                // above and below it state, and each piece keeps its own half of the styled text
+                // (#270). They are appended left then right, which is the order PDFKit reports the
+                // pieces of a row it did divide.
+                if let cut = gutterCuts[index],
+                   let pieces = ColumnGutterCut.split(cut, from: repaired, text: corrected ?? semantic) {
+                    pending.append((pieces.left.text, cut.left, pieces.left.styled))
+                    pending.append((pieces.right.text, cut.right, pieces.right.styled))
+                    continue
+                }
                 pending.append((corrected ?? semantic, bounds, repaired))
                 continue
             }

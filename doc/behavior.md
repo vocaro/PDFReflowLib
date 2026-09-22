@@ -153,6 +153,45 @@ Evidence: [pdfkit-structure-tree](../measurements/pdfkit-structure-tree/record.m
   rule are changed. Evidence:
   [margin-rule-read-as-letters](../measurements/margin-rule-read-as-letters/record.md).
 
+- **A row of two columns PDFKit merged across the gutter (#270).** The 9/11 report sets two flight
+  timelines side by side on physical pages 50 and 51, each under three heading rows. PDFKit reads
+  the first and third of those rows as two lines, one per column, and hands the second back as a
+  single line spanning both — `(AA 11)             (UA 175)` at `x=39.66` over `199.63` points,
+  where the rows above and below are read apart at `x=39.66` and `x=195.67`. A line that bridges
+  the gutter cannot be separated by any whitespace cut downstream, and it stands on the left
+  column's own edge directly above the left column's route, which the column-and-leading test then
+  joins to it: the book read `(AA 11) (UA 175) Boston to Los Angeles` and stranded the right
+  column's route. The page's own shows do not divide such a row — `NativeSpacingReader` returns the
+  whole heading row as one text-showing operation, with the gutter inside its own advance, so the
+  ink `TableReader` reads (#210) is one unbroken range and its corridors find nothing. The division
+  comes from the characters, where the box is formed, for the same reason #264's does.
+  A line is cut where **three rows agree on two column edges**: the line stands alone in its
+  printed row, the printed rows directly above and below it each hold exactly two pieces, those
+  two rows state the same two left edges to within a point, and the line begins on the first edge
+  and reaches past the second. Each step between the three rows is a leading, no more than twice
+  the taller row's height, so three rows of a page at large are not a group.
+  **The three rows are the whole of what the page states there.** Neither the row two above nor the
+  row two below may stand on the same pair of edges: where a page states its columns over four rows
+  or more, the reading already holds divided pieces for them and the ordering rules can see those
+  columns, and dividing one more row changes how the whole page is read. The 9/11 report's own
+  table of names on page 451 sets twenty-three rows on 44.70 and 152.70, of which PDFKit merges
+  one; dividing that one turns a list of names with their offices into a paragraph of names
+  followed by a paragraph of offices, which is [#283](https://github.com/vocaro/PDFReflowLib/issues/283).
+  **What refuses the cut is the white.** A line the page genuinely sets across both columns — a
+  headline, a caption — has the same shape, and keeps its reading, because it runs its words
+  *through* the gutter: the white at the column edge is the space it sets everywhere else. The cut
+  is made only where the second edge falls in white at least twice the line's own characters are
+  tall and at least three times the widest white elsewhere in the line — 118.37 points against
+  4.50 on page 50. A line whose characters PDFKit reports out of the order they stand in states
+  nothing about its columns and is left alone, and so is one with anything printed in the white,
+  so nothing that prints is ever cut away. The white is read from the line's **ink**: its spaces,
+  and any character the page gives no width, are not type.
+  Each piece keeps PDFKit's own outer edge, its own inner edge, the row's baseline and height, and
+  its half of the styled text; a line a repair rewrote between the reading and the cut is not cut.
+  Across the twenty-four cached sources exactly two lines are cut, the two the issue names.
+  Evidence:
+  [flight-label-row-cut-at-the-gutter](../measurements/flight-label-row-cut-at-the-gutter/record.md).
+
 Evidence: [pdfkit-concurrency](../measurements/pdfkit-concurrency/record.md),
 [pdfkit-gate-drain](../measurements/pdfkit-gate-drain/record.md),
 [extraction-cancellation](../measurements/extraction-cancellation/record.md),

@@ -1378,13 +1378,25 @@ Evidence: [tables-read-as-cells](../measurements/tables-read-as-cells/record.md)
   distance of half the shorter one, because the recognizer spoils words a group at a time and
   letters within a word (`Nuntler` for `Number`, `Ooubtfut` for `Doubtful`). Four repeated words
   in five must agree.
+  The recognizer also moves the printed spaces, and then no word has a counterpart to be near:
+  page 151's `! lt>mber Per Cent Number Percent` broke `Number` into `lt` and `mber` and closed
+  `Per Cent` up into `Percent`. The same repetition is therefore read a second way, on the line's
+  letters in order with the spaces taken out: for each number of columns the letters are cut into
+  that many pieces of equal length, each cut moved to the nearest word boundary, and the pieces
+  are compared against the first and against the one before (#262). A piece is several words
+  long, so it agrees within a fifth of the shorter rather than a half — over a label of three
+  words that is tighter than the word reading allows one spoiled word inside it — and every word
+  of the line must hold a letter, because a label is written in words and a repeating group of
+  bare figures is the table's own data or an equation (`0 0 0 200`, `3r + 6+ 3r =30`).
   Geometry alone would not do: the magazine's three-column pages hand back their columns on
   shared baselines, so every row of running prose there has a table's shape, and on geometry
   alone this rule buries 17,340 characters of its articles. With both halves it moves the CIA
-  report alone, by 1,457 characters, and every other book is unchanged.
+  report alone — by 1,457 characters when #257 landed, and by a further 681 when the letters
+  reading was added — and every other book is unchanged to the character.
   The report's handwriting is not this rule's to fix: that book's inherited OCR layer is
   unverified, and #216 catalogues what it produces.
-  Evidence: [table-headers-inside-crops](../measurements/table-headers-inside-crops/record.md).
+  Evidence: [table-headers-inside-crops](../measurements/table-headers-inside-crops/record.md),
+  [spoiled-column-labels](../measurements/spoiled-column-labels/record.md).
 - **A row a picture's crop reaches into (#207).** `takes` keeps the lines whose middle row a crop
   holds, which is right for a picture's own lettering — a diagram's labels, a chart's axis, a
   legend's entries all stand *inside* the artwork. A page can also print its own reading across a

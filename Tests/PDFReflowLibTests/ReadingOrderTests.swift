@@ -220,6 +220,133 @@ func aPrintedFolioBelowThePagesProseIsStillItsOwnBlock() throws {
     #expect(headingTexts(blocks).contains("RESPONSES TO AL QAEDA’S"))
 }
 
+// MARK: - A printed row the extractor split, left to right (#272)
+
+/// The 9/11 report's page 259 prints one paragraph and the reading broke it in the middle of its
+/// own sentence. PDFKit hands the row `ning for what later became the 9/11 attack. At the time of
+/// their travel through` back in two pieces, at x 44.70…151.77 and x 156.89…356.71, and the
+/// column test that joins a paragraph's wraps measured the second piece's 156.89 against the
+/// 44.70 of `Iran, the al Qaeda operatives themselves were probably not aware…`. The row's own
+/// start is 44.70. #41 carried it for a right-to-left page and left this side alone (#272).
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/272"))
+func aSplitRowLendsItsOwnStartToTheLineBeneathIt() throws {
+    let fixture = try SourceLayoutFixture.load("911-259")
+    #expect(fixture.sourceSHA256 == "657d41475eb3a9a5e3e87a6c7c51ac1dfbe1af7566d1abff7bf7286e7e1c0e1b")
+    var page = fixture.content()
+    // Exclude the running header, which the full-document furniture pass removes.
+    page.lines.removeAll { $0.text.contains("THE ATTACK LOOMS") }
+    // The page's own evidence: one printed row, in two pieces, on one baseline.
+    let pieces = page.lines.filter {
+        $0.text.hasPrefix("ning for what later became") || $0.text.hasPrefix("the 9/11 attack.")
+    }
+    #expect(pieces.count == 2 && pieces[0].sharesRow(with: pieces[1]))
+    #expect(abs(pieces[0].rect.minX - 44.70) < 0.01 && abs(pieces[1].rect.minX - 156.89) < 0.01)
+    var warnings: [ConversionWarning] = []
+    let blocks = LayoutReconstructor.blocks(page: page, images: [], vocabulary: [], warnings: &warnings)
+    let paragraphs = paragraphTexts(blocks)
+    let joined = try #require(paragraphs.first { $0.contains("We have found no evidence") })
+    #expect(joined.contains("travel through Iran, the al Qaeda operatives themselves were probably not aware"))
+    #expect(joined.hasSuffix("cific details of their future operation."))
+    #expect(!paragraphs.contains { $0.hasPrefix("Iran, the al Qaeda operatives") })
+    // The paragraph the page prints beneath it still opens on its own: the row lends its start to
+    // the line under it, not to everything that follows.
+    #expect(paragraphs.contains { $0.hasPrefix("After 9/11, Iran and Hezbollah") })
+    #expect(paragraphs.contains { $0.hasPrefix("7.4 FINAL STRATEGIES AND TACTICS") })
+    #expect(paragraphs.first?.hasPrefix("Moqed, flew into Iran from Bahrain.") == true)
+}
+
+/// A row the extractor cut where the page left no space lends nothing. PDFKit ends a line at a
+/// gap; where the pieces touch it cut between two runs the page set beside each other, and what
+/// the page began that row with says nothing about the line beneath.
+///
+/// USGS MCS 2025 page 2 closes `…undiscovered resources contained an estimated 3.5 billion` at
+/// x 522.42 with the 6.5-point note marker `8` at x 522.48, six hundredths of a point past it,
+/// and sets `Substitutes: Aluminum substitutes…` on the same left edge 22.36 points of baseline
+/// below, where its own leading is 10.53 (#272).
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/272"))
+func aRowCutWhereThePageLeftNoSpaceKeepsItsStartToItself() throws {
+    let lines = [
+        TextLine(text: "World Resources:6 The most recent U.S. Geological Survey assessment of global copper resources",
+                 rect: CGRect(x: 45.36, y: 259.25, width: 512.36, height: 14.43), fontSize: 10.08),
+        TextLine(text: "as of 2015, identified resources contained 1.5 billion tons of unextracted copper (2.1 billion",
+                 rect: CGRect(x: 45.36, y: 248.72, width: 519.09, height: 13.76), fontSize: 10.08),
+        TextLine(text: "of 0.6 billion tons is included) and undiscovered resources contained an estimated 3.5 billion",
+                 rect: CGRect(x: 45.36, y: 237.69, width: 477.06, height: 13.76), fontSize: 10.08),
+        TextLine(text: "8", rect: CGRect(x: 522.48, y: 242.45, width: 3.60, height: 8.85), fontSize: 6.48),
+        TextLine(text: "Substitutes: Aluminum substitutes for copper in automobile radiators, cooling and refrigeration",
+                 rect: CGRect(x: 45.36, y: 215.33, width: 487.67, height: 14.43), fontSize: 10.08),
+        TextLine(text: "equipment, and power cable. Optical fiber substitutes for copper in telecommunications uses,",
+                 rect: CGRect(x: 45.36, y: 204.80, width: 498.89, height: 13.76), fontSize: 10.08),
+    ]
+    var warnings: [ConversionWarning] = []
+    let blocks = LayoutReconstructor.blocks(
+        page: PageContent(number: 2, bounds: CGRect(x: 0, y: 0, width: 612, height: 792),
+                          lines: lines, graphics: []),
+        images: [], vocabulary: [], warnings: &warnings)
+    let paragraphs = paragraphTexts(blocks)
+    // The marker still belongs to the row it closes, and that row is still one block.
+    #expect(paragraphs.contains { $0.hasPrefix("World Resources:") && $0.hasSuffix("3.5 billion 8") })
+    #expect(paragraphs.contains { $0.hasPrefix("Substitutes: Aluminum") })
+    #expect(!paragraphs.contains { $0.contains("3.5 billion 8 Substitutes:") })
+}
+
+/// A hanging entry whose marker the extractor split off keeps the wrap the page hangs under it.
+/// The census's RRS-2002-01 page 17 hands back `[ 12]` at x 134.81 and
+/// `Lambert, D.: … Journal of Official Statistics,` at x 157.25 as one row, and hangs
+/// `9, (1993) 313–331.` at x 156.17. The row's own start is the marker's, two and a half bodies
+/// out from the edge the entry's wrap stands on, so the piece's start stays admissible too (#272).
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/272"))
+func aRowSplitAtItsHangingMarkerKeepsTheWrapBeneathIt() throws {
+    let lines = [
+        TextLine(text: "[ 12]", rect: CGRect(x: 134.81, y: 203.48, width: 17.35, height: 10.43), fontSize: 9),
+        TextLine(text: "Lambert, D.: Measures of Disclosure Risk and Harm, Journal of Official Statistics,",
+                 rect: CGRect(x: 157.25, y: 203.48, width: 323.34, height: 10.43), fontSize: 9),
+        TextLine(text: "9, (1993) 313–331.",
+                 rect: CGRect(x: 156.17, y: 192.02, width: 74.35, height: 10.92), fontSize: 9),
+    ]
+    var warnings: [ConversionWarning] = []
+    let blocks = LayoutReconstructor.blocks(
+        page: PageContent(number: 17, bounds: CGRect(x: 0, y: 0, width: 612, height: 792),
+                          lines: lines, graphics: []),
+        images: [], vocabulary: [], warnings: &warnings)
+    #expect(blocks.count == 1)
+    #expect(blocks[0].text.contains("Journal of Official Statistics, 9, (1993) 313–331."))
+}
+
+/// A space the page repeats in the same place on row after row is a column it set, not a space
+/// inside a printed line, and successive rows of it stay separate blocks. Project Blue Book's
+/// statistical appendix is rows of cells standing closer than a gutter; reading each row as one
+/// line ran thirty of them together (#272).
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/272"))
+func aSeamThePageRepeatsOnRowAfterRowIsAColumnAndNotASpace() throws {
+    func row(_ left: String, _ right: String, y: Double) -> [TextLine] {
+        [TextLine(text: left, rect: CGRect(x: 60, y: y, width: 90, height: 10), fontSize: 10),
+         TextLine(text: right, rect: CGRect(x: 155, y: y, width: 90, height: 10), fontSize: 10)]
+    }
+    let bounds = CGRect(x: 0, y: 0, width: 612, height: 792)
+    let lines = row("0-Balloon", "certain doubtful", y: 600) + row("1-Astronomical", "certain doubtful", y: 588)
+        + row("2-Aircraft", "certain doubtful", y: 576) + row("3-Light Phenomena", "certain doubtful", y: 564)
+    var warnings: [ConversionWarning] = []
+    let blocks = LayoutReconstructor.blocks(
+        page: PageContent(number: 120, bounds: bounds, lines: lines, graphics: []),
+        images: [], vocabulary: [], warnings: &warnings)
+    // Each row is still one block — its pieces join as they always have — and no row takes the
+    // one beneath it.
+    #expect(LayoutReconstructor.columnSeams(in: lines, body: 10, rightToLeft: false) == [155, 155, 155, 155])
+    #expect(paragraphTexts(blocks).count == 4)
+    #expect(paragraphTexts(blocks).first == "0-Balloon certain doubtful")
+    // The control: one row of the same shape, on a page that repeats the seam nowhere, is a line
+    // the page broke at a space, and the line beneath it joins.
+    let single = row("A sentence the page broke at a wide space", "and the rest of that line", y: 600)
+        + [TextLine(text: "carries on beneath it at the same edge.",
+                    rect: CGRect(x: 60, y: 588, width: 180, height: 10), fontSize: 10)]
+    #expect(LayoutReconstructor.columnSeams(in: single, body: 10, rightToLeft: false).isEmpty)
+    let joined = LayoutReconstructor.blocks(
+        page: PageContent(number: 120, bounds: bounds, lines: single, graphics: []),
+        images: [], vocabulary: [], warnings: &warnings)
+    #expect(paragraphTexts(joined).count == 1)
+}
+
 // MARK: - A picture across the measure at the head of a page (#160)
 
 /// A figure a page sets across both its columns carries the whole measure with it, so while it

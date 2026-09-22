@@ -1009,6 +1009,25 @@ row-major sort, one entry of each column at a time.
   separates them — the width a whitespace cut needs for a column, so a table's cells and the two
   ends of a running header remain separate blocks (#57). A short previous line ending a sentence
   closes its paragraph either way.
+- **A printed row the extractor split is one line** as far as the next line is concerned, so the
+  paragraph's edge is the row's and not the edge of whichever piece closed it, and the row's whole
+  width is what says whether the line above stopped short of the measure (#41, #272). The row is
+  the two pieces' rectangles together; it ends where the piece that closed it ends, so its text
+  and its wrap are that piece's; and it is set in the size the page set the wider piece in, so a
+  superscript note marker standing at the end of a row is not the row's measure. Such a row has
+  two starts — its own and the piece's — and a line beneath it continues the paragraph if it
+  stands on either, so a reference entry whose marker the extractor split off keeps the wrap the
+  page hangs under it. The row's own start counts only where the line beneath does not begin more
+  than half a body further out than it: a wrap stands on its paragraph's edge or in from it.
+- A row stands for one line **only where the page's own spacing says its pieces are consecutive
+  words of it** (#272). PDFKit ends a line wherever the page leaves a gap, and a gap of at least a
+  quarter of a body is a space the page set between two words. A narrower gap is the seam between
+  two runs the page set beside each other — a note marker, a phrase in another face, a piece of an
+  equation — and such a row lends its start to nothing; its pieces still join into one block. So
+  does a gap the page repeats within a quarter of a body of the same place on three or more of its
+  rows, which is a column it set rather than a space, whichever way the writing runs. Writing the
+  reading reorders is the one place a seam is a line's own: PDFKit splits those rows at the
+  boundary between two bidirectional runs rather than at a gap, which leaves the pieces touching.
 - **Rows of a table the page set without rules** keep their breaks rather than joining into one
   paragraph (#137, #210): a run of at least three rows on one left edge, in one type size,
   stepping down at one leading, where the page also states a column boundary — a cell the
@@ -1292,7 +1311,8 @@ Evidence: [initial-led-lines](../measurements/initial-led-lines/record.md),
   gutter, its rows from their right-hand piece, and a paragraph's lines are joined by the edge the
   writing starts at — their right edge, which stands within a point of the measure while their
   left edges are ragged. A printed row the extractor split is one line as far as the next line is
-  concerned, so the paragraph's edge is the row's and not the edge of whichever piece closed it.
+  concerned, in both directions (above, #272); what is this page's own is that the pieces of such
+  a row touch, because the reading reordered them rather than the page spacing them apart.
   The left-hand piece of such a row carries the stop that ends the sentence before it, and the
   page's own space after that stop, so the join adds none of its own. A table's rows are read the
   same way round, so a contents entry ends at the page number its row actually ends at rather than

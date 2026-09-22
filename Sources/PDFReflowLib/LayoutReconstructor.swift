@@ -991,6 +991,37 @@ enum LayoutReconstructor {
         return result
     }
 
+    /// Where on a page the extractor left the same seam on row after row: the x positions at
+    /// which three or more printed rows were split, within a quarter of a body of one another.
+    ///
+    /// PDFKit ends a line wherever the page leaves a gap, and a page that leaves one in the same
+    /// place on row after row has set a column there. The pieces beside such a seam are cells,
+    /// and the start of the row they stand in says nothing about the row beneath it: Project Blue
+    /// Book's statistical appendix hands back eight-column tables whose rows all break at the
+    /// same places, and reading each row as one line ran thirty of them together. A page that
+    /// breaks one row at a place no other row breaks at has set a space, not a column — the 9/11
+    /// report's page 259, the replay-clocks paper and USCIS M-618-A each split a row where
+    /// nothing else on the page splits (#272).
+    ///
+    /// Three rows are what it takes to say so. Two rows that happen to break near one place are
+    /// two printed lines — USCIS M-618-A's page 47 breaks two of its sentences within a fifth of
+    /// a point of x 319.7 and a third 4.5 points away, and all three are prose.
+    static func columnSeams(in lines: [TextLine], body: CGFloat, rightToLeft: Bool) -> [CGFloat] {
+        var seams: [CGFloat] = []
+        for line in lines {
+            let opens = lines.contains { other in
+                other != line && TextLine.sameRow(other.uprightRect, line.uprightRect) && {
+                    let gap = rightToLeft
+                        ? other.uprightRect.minX - line.uprightRect.maxX
+                        : line.uprightRect.minX - other.uprightRect.maxX
+                    return gap >= 0 && gap < body * 0.75
+                }()
+            }
+            if opens { seams.append(rightToLeft ? line.uprightRect.maxX : line.uprightRect.minX) }
+        }
+        return seams.filter { seam in seams.count { abs($0 - seam) <= body * 0.25 } >= 3 }
+    }
+
     /// Whether the page opens its paragraphs on a first-line indent of `step`, in `size` (#218,
     /// ported unchanged from the coordination branch's `firstLineIndentRun`, #159). *Agricultural
     /// Research* indents each paragraph's first line ten points in a ten-and-a-half-point column and
@@ -1303,6 +1334,8 @@ enum LayoutReconstructor {
                                        imageDescriptions: tableAssets(images, tables: page.recognizedTables,
                                                                       page: page.number),
                                        hangingEntries: hangingEntries(in: lines, body: typography.body),
+                                       columnSeams: columnSeams(in: lines, body: typography.body,
+                                                                rightToLeft: rightToLeft),
                                        rightToLeft: rightToLeft)
         // A page whose tags never name a heading has not said that its display lines are not
         // headings; it has said only what they contain and in what order. Producers routinely

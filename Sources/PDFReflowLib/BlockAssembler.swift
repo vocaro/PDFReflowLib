@@ -467,6 +467,11 @@ struct BlockAssembler {
     /// travels with it rather than holding a second, parallel one (#238).
     private var paragraphTag: TextStructure?
     private var previous: TextLine?
+    /// The printed row `previous` closes, where the extractor split that row into pieces standing
+    /// side by side: the line the page set, of which `previous` is only the last piece (#41,
+    /// #272). It is nil wherever `previous` is a whole row, and it is cleared beside every
+    /// assignment to `previous` that is not one.
+    private var previousRow: TextLine?
     /// The line of the heading block last appended, for a heading the page breaks over two lines
     /// with no space at the break (#42).
     private var headingLine: TextLine?
@@ -494,6 +499,10 @@ struct BlockAssembler {
     private let imageDescriptions: [String: String]
     /// The wrapped second line of each entry the page hangs, by the entry it carries on (#160).
     private let hangingEntries: [CGRect: CGRect]
+    /// Where this page left the same seam between two pieces of a row on three or more rows: a
+    /// column it set, rather than a space inside a printed line (`LayoutReconstructor.columnSeams`,
+    /// #272).
+    private let columnSeams: [CGFloat]
     /// Whether the page is written right to left, read from its own lines
     /// (`ArabicText.readsRightToLeft`). A line then begins at its right edge and the next piece
     /// of its printed row stands to its left (#41).
@@ -501,7 +510,8 @@ struct BlockAssembler {
 
     init(page: Int, body: CGFloat, leading: CGFloat? = nil, hyphens: HyphenContext,
          imageLinks: [String: LinkTarget] = [:], imageDescriptions: [String: String] = [:],
-         hangingEntries: [CGRect: CGRect] = [:], rightToLeft: Bool = false) {
+         hangingEntries: [CGRect: CGRect] = [:], columnSeams: [CGFloat] = [],
+         rightToLeft: Bool = false) {
         self.page = page
         self.body = body
         self.leading = leading
@@ -509,6 +519,7 @@ struct BlockAssembler {
         self.imageLinks = imageLinks
         self.imageDescriptions = imageDescriptions
         self.hangingEntries = hangingEntries
+        self.columnSeams = columnSeams
         self.rightToLeft = rightToLeft
     }
 
@@ -549,6 +560,7 @@ struct BlockAssembler {
         paragraph = InlineText()
         paragraphTag = nil
         previous = nil
+        previousRow = nil
     }
 
     /// A line of a numbered note; consecutive lines of one `group` join into one paragraph.
@@ -609,6 +621,7 @@ struct BlockAssembler {
             paragraph = join(paragraph, line.content)
         }
         previous = line
+        previousRow = nil
     }
 
     /// Whether a heading line carries on from the one above it: East Asian writing that sets no
@@ -698,6 +711,7 @@ struct BlockAssembler {
             if let prev = previous, !paragraph.elements.isEmpty, continuesWrapped(prev, line, column) {
                 paragraph = join(paragraph, line.content)
                 previous = line
+                previousRow = nil
             } else if column.setsAList {
                 flushParagraph()
                 blocks.append(ReflowBlock(content: .preformatted(line.content), page: page))
@@ -718,6 +732,7 @@ struct BlockAssembler {
                 flushParagraph()
                 paragraph = line.content
                 previous = line
+                previousRow = nil
                 initialOpening = line.uprightRect.minX
             }
         case let .tableRow(continuation):
@@ -791,7 +806,10 @@ struct BlockAssembler {
             // two paragraphs the ordinary column test, which allows one and a half bodies, would
             // run together (#171).
             let stepped = openedByInitial.map { abs($0 - line.uprightRect.minX) >= body * 0.5 } ?? false
-            let joinsRow = previous.map { continuesRow($0, line) } ?? false
+            // A row the extractor cut into three pieces is still one row: the piece arriving now
+            // is measured against what has been read of it so far, not against the last piece
+            // alone (#41).
+            let joinsRow = (previousRow ?? previous).map { continuesRow($0, line) } ?? false
             if stepped || previous.map({ !continuesParagraph($0, line) }) == true { flushParagraph() }
             if paragraph.elements.isEmpty { paragraph = line.content }
             else { paragraph = join(paragraph, line.content) }
@@ -800,18 +818,70 @@ struct BlockAssembler {
             // USCIS M-618-A page 21 ends four rows with a left-hand piece 200 points short of the
             // measure, and the line beneath each of them opened a paragraph of its own (#41, #57).
             //
-            // Only a right-to-left page reads it this way here. The same reasoning holds for a
-            // left-to-right row — the piece that closes one there carries the wrong left edge —
-            // but that is a change measured on no left-to-right book: the 9/11 report alone gains
-            // a paragraph by it, and the spine re-packs around it. It is #272, not this issue's.
-            if joinsRow, rightToLeft, let prev = previous {
-                var row = line
-                row.rect = prev.rect.union(line.rect)
-                previous = row
+            // A left-to-right row reads the same way, and #41 held the rule to right-to-left
+            // writing only because it had measured nothing on this side. The 9/11 report's page
+            // 259 prints `ning for what later became the 9/11 attack. At the time of their travel
+            // through` as one row and hands it back in two pieces at x 44.70…151.77 and
+            // x 156.89…356.71; the column test measured 156.89 against the 44.70 of `Iran, the
+            // al Qaeda operatives themselves were probably not aware…` and broke the paragraph
+            // the page prints in the middle of its own sentence (#272).
+            if joinsRow, let prev = previousRow ?? previous, readsAsOneLine(prev, line) {
+                previousRow = printedRow(prev, line)
             } else {
-                previous = line
+                previousRow = nil
             }
+            previous = line
         }
+    }
+
+    /// Whether the two pieces the extractor split one printed row into stand for that line when
+    /// the next line's own edge is measured against it.
+    ///
+    /// PDFKit ends a line wherever the page leaves a gap, and a gap of at least a quarter of a
+    /// body is a space the page set between two words: the pieces on either side of it are
+    /// consecutive words of one printed line. The 9/11 report's page 259 leaves 5.11 points on a
+    /// ten-point body between `ning for what later became` and `the 9/11 attack. At the time of
+    /// their travel through`, and the replay-clocks paper leaves 3.60 on nine.
+    ///
+    /// A narrower gap is no space at all. It is the seam between two runs the page set beside
+    /// each other on one row, and what the page began that row with says nothing about the line
+    /// beneath it: USGS MCS 2025 page 2 closes a line of prose with a 6.5-point superscript note
+    /// marker six hundredths of a point past it, the FAA handbook sets `ATC Instructions—` and
+    /// `“Hold Short”` touching at x 374.17, and *Beginning and Intermediate Algebra* cuts each of
+    /// its equations at the two points between `72x2` and `− 2 GCF is 2`. Each of those rows is
+    /// still one row, and its pieces still join into one block; only its start is withheld.
+    ///
+    /// Writing the reading reorders is the one place a seam is a line's own. PDFKit splits those
+    /// rows at the boundary between two bidirectional runs rather than at a gap, which leaves the
+    /// pieces touching: USCIS M-618-A page 21 hands back `…الولايات المتحدة` and
+    /// `. ويطلق بعض الأشخاص` with x 343.03 as the end of one and the start of the other (#41, #272).
+    ///
+    /// A space the page repeats in the same place on row after row is a column it set rather than
+    /// a space inside a line, whichever way the writing runs, and `LayoutReconstructor.columnSeams`
+    /// reads where a page did that.
+    private func readsAsOneLine(_ prev: TextLine, _ line: TextLine) -> Bool {
+        let seam = rightToLeft ? line.uprightRect.maxX : line.uprightRect.minX
+        guard !columnSeams.contains(where: { abs($0 - seam) <= body * 0.25 }) else { return false }
+        guard !rightToLeft else { return true }
+        return line.uprightRect.minX - prev.uprightRect.maxX >= body * 0.25
+    }
+
+    /// The one printed row the extractor split into `prev` and `line`, as the line the page set.
+    ///
+    /// The row covers both rectangles, so a row split near its end no longer reads as a line that
+    /// stopped short of the measure. It ends where the piece that closed it ends, so its text and
+    /// its wrap are that piece's: that is what the writing actually did. And it is set in the
+    /// size the page set most of it in, which is the wider piece's — USGS MCS 2025 page 2 closes
+    /// `…an estimated 3.5 billion tons of copper.` with a 6.5-point superscript `8` a twentieth
+    /// of a point past the prose, and a row that took its measure from that marker would not be
+    /// compared with the 10.1-point line beneath it at all, because `onStatedLeading` only
+    /// compares lines of one size, so the 22.36 points of baseline the page opens between
+    /// `World Resources:` and `Substitutes:` would say nothing (#272).
+    private func printedRow(_ prev: TextLine, _ line: TextLine) -> TextLine {
+        var row = line
+        row.rect = prev.rect.union(line.rect)
+        if prev.rect.width > line.rect.width { row.fontSize = prev.fontSize }
+        return row
     }
 
     /// Whether `line` continues the paragraph `previous` is part of: the previous line wraps, the
@@ -825,17 +895,40 @@ struct BlockAssembler {
     /// the one beside it.
     private func continuesParagraph(_ prev: TextLine, _ line: TextLine) -> Bool {
         guard prev.wraps != false else { return false }
-        let (prevRect, lineRect) = (prev.uprightRect, line.uprightRect)
-        // A short line ending a sentence closes its paragraph however the two lines stand.
+        // What the line above measures — how far it ran, where it started, how far down the page
+        // it reached, what size it is set in — is the printed row's, which is `prev`'s own unless
+        // the extractor split that row and `prev` is the piece that closed it (#41, #272).
+        let row = previousRow ?? prev
+        let (prevRect, lineRect) = (row.uprightRect, line.uprightRect)
+        // A short line ending a sentence closes its paragraph however the two lines stand. Where
+        // the writing stopped, and the text it stopped on, stay the closing piece's.
         let short = prevRect.width < lineRect.width * 0.65
         guard !(short && prev.text.last.map { ".!?".contains($0) } == true) else { return false }
-        if continuesRow(prev, line) { return true }
+        if continuesRow(row, line) { return true }
         let verticalGap = prevRect.minY - lineRect.maxY
         // A list the page hangs sets its wraps further in than one column's lines ever stand
-        // apart; `LayoutReconstructor.hangingEntries` reads which ones the page hung (#160).
+        // apart; `LayoutReconstructor.hangingEntries` reads which ones the page hung (#160). It
+        // keys on the line the page hung the wrap under, which is the piece and not the row.
         let hangs = hangingEntries[line.rect] == prev.rect
-        guard verticalGap >= -body * 0.4, verticalGap < body * 0.9, onStatedLeading(prev, line),
-              abs(startEdge(prev) - startEdge(line)) < body * 1.5 || centered(prev, line) || hangs
+        // A split row has two starts — the row's and the piece's — and which of them the
+        // paragraph stands on is what the split took away. So either will do, and the reading
+        // gains a paragraph's lines rather than losing them. The census's 2002-01 page 17 hands
+        // back `[ 12]` at x 134.81 and `Lambert, D.: …` at x 157.25 as one row and hangs
+        // `9, (1993) 313–331.` under the entry at x 156.17, two and a half bodies in from the
+        // row's own start: the row is the line the page printed, and the edge its wrap stands on
+        // is the marker's item, not the marker (#272).
+        //
+        // The row's own start stands for the paragraph only where the line beneath does not
+        // begin further out than it. A wrap stands on its paragraph's edge or in from it; a line
+        // the page sets further out began something the row above it did not. Wallace's page 232
+        // hands back `72x2` and `− 2 GCF is 2` as one row from x 176.28 and sets the next step of
+        // the same worked example, `2(36x2`, at x 161.28 — fifteen points, a body and a quarter,
+        // further out (#272).
+        let outdent = rightToLeft ? startEdge(line) - startEdge(row) : startEdge(row) - startEdge(line)
+        let starts = previousRow == nil || outdent > body * 0.5
+            ? [startEdge(prev)] : [startEdge(row), startEdge(prev)]
+        guard verticalGap >= -body * 0.4, verticalGap < body * 0.9, onStatedLeading(row, line),
+              starts.contains { abs($0 - startEdge(line)) < body * 1.5 } || centered(row, line) || hangs
         else { return false }
         // Prose fills its measure, so a line that used under half of the one beneath it ended
         // something, and a line the page then sets further in begins the next thing. #39 already

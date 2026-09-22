@@ -175,3 +175,39 @@ swift-tests, release-build, pdfkit-concurrency, documented-builds, doc-counts, i
 fixture-epubs, conversion-policies), exit status 0, read directly. 625 Swift tests and 231 Python
 tests pass. Then both corpus lanes, 18 of 18 each, with EPUBCheck 5.3.0 reporting 0 errors on
 every book.
+
+## Re-measured over the merge taken since
+
+`main` moved to `86193ac` ("Merge main 18c8cc3 into the #261 branch") between the measurement
+above and the merge, taking #261's bullets-alone-on-their-line reading and #262's spoiled column
+labels with it. Both lanes were run again on the merged tree, against a release binary built from
+`86193ac` itself (SHA-256 `54c6b2760557e2103c9f9403f233f621a033493e74dd6e8471937453c3eb0ea3`;
+this change's converter `88b522eb852e3caae3e40acfcb831ca1f0a3c402563d11f6b18c780a124c44be`), and
+18 of 18 pass in each, every `runPassed`, `memoryGate.status`, `epubcheckExitCode`,
+`structuralCheck` and `content-assessment.json` read case by case.
+
+The same three books move, the same way. Table counts are again identical book for book: the USGS
+summaries 3 tables, 51 rows, 283 cells; Wallace 30 tables, 134 rows, 510 cells; the other sixteen
+none. Only the absolute `<pre>` totals move with main, 6,542 to 6,516 over the eighteen books.
+
+| Book | `<pre>` | `<p>` | Words |
+| --- | ---: | ---: | --- |
+| `arxiv-replay-clocks-2023` | 5 → 0 | 186 → 192 | identical |
+| `census-rrs2002-01` | 138 → 124 | 208 → 235 | `Microdata`, as above |
+| `faa-phak-8083-25c` | 1,391 → 1,384 | 6,364 → 6,377 | identical |
+| the other fifteen | unchanged | unchanged | identical |
+
+The pages that move are the same, except that the FAA handbook's page 28 no longer does: #261
+had already released its bullets on the new baseline, so only the pages labeled 48 and 446 move
+here. `scripts/check-all.sh --fast` passes all ten gates on the merged tree, exit status 0 read
+directly, with 629 Swift tests and 231 Python tests.
+
+**One flaky finding, and what it was.** The first run of the `86193ac` baseline lane failed
+`gpo-warren-1964-suspect-text-excerpt` on its content assessment — page 4 read from the suspect
+text layer (`BS3d v^.ere his things ci^ht be kept`) at 5,067 characters instead of recognized at
+5,496 — and a second run of that case alone reproduced it. Three further runs of the same case
+against the same binary all passed at 5,496, and the re-run of the whole baseline lane passed 18
+of 18. It is the Vision non-determinism `measurements/apple-feedback-vision-determinism/record.md`
+records, not a difference between the two binaries: the recognition decision is made in
+`PageDiagnosis.assess` during extraction, and `rowBlocks` is read afterwards, in reconstruction.
+The numbers above are from the passing baseline lane.

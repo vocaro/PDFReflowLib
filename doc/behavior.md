@@ -1163,6 +1163,35 @@ or explosives-` as the item and `laden, might be used as a weapon…` as the par
 which is what "no list model" above means, and item 4 of that list now reads exactly as items 1 to
 3 do instead of as two paragraphs.
 
+A **bullet** left alone on its line is read the same way, and asks less, because a bullet is a
+marker and nothing else: no list has to vouch for it (#261). What the page must state is that the
+item is beside it — another line on the marker's own printed row, the nearest one to its right, or
+to its left where the writing runs that way. The FAA handbook hangs every bullet of its 499 items
+18 points from the item's own edge on a ten-point body, so page 29 comes back as
+
+```
+[ 45.00 193.67   3.50 11.47] | •
+[ 63.00 193.67 210.01 11.47] | IFR Charts—Enroute High Altitude Conterminous U.S.,
+```
+
+Two pieces of one row are one block within the 0.75 of a body a column's gutter needs, which is
+the right bound for two pieces of *prose* because a wider gap there could be two columns. **A
+bullet is never a column of its own**, so a piece the page set beyond that gutter is still the item
+it marks, out to **two bodies** — an indent, not a column. Beyond that the page has set a column or
+a row of cells, which belong to the column and table readers (#210). The marker and its item become
+one preformatted item, and the bound is the marker's alone: once the item has joined, what stands
+further along that row is judged by the ordinary gutter again, so the second of page 29's two
+columns of items opens its own block as it always did.
+
+A bullet with **nothing beside it on its row** marks something the reader cannot reflow — a key in
+a legend, an item the page set as a picture — and is left exactly as it was; nothing beneath it is
+ever taken, because only a piece of the marker's own printed row can join it. A piece to its left
+within the gutter means the extractor cut the line out of the middle of a row, so it is no marker
+at all, exactly as above (#203). Within the gutter nothing changes either: the two pieces are
+already one block by the row rule, and a glyph a hair from the piece beside it is as often a
+fraction's rule or a mark in a scan as a marker — Wallace stacks `−` over `3` a quarter of a body
+apart on page 269.
+
 A wrapped line of prose can begin with the same token — an initial (`W. Bush`, `U. S. 760`), a
 citation abbreviation (`v. Moore`, `p. 785`, `F. 4th`) or a year or day carried over from the line
 above (`2016.`, `on January` / `13.`). Such a line **continues the open paragraph** instead of
@@ -1210,7 +1239,8 @@ Evidence: [initial-led-lines](../measurements/initial-led-lines/record.md),
 [citation-continuations](../measurements/citation-continuations/record.md),
 [column-cuts-and-hung-entries](../measurements/column-cuts-and-hung-entries/record.md),
 [dga-layout-qualification](../measurements/dga-layout-qualification/record.md),
-[markers-alone-on-their-line](../measurements/markers-alone-on-their-line/record.md).
+[markers-alone-on-their-line](../measurements/markers-alone-on-their-line/record.md),
+[bullets-alone-on-their-line](../measurements/bullets-alone-on-their-line/record.md).
 
 ## HyphenRepair
 
@@ -1405,13 +1435,25 @@ Evidence: [tables-read-as-cells](../measurements/tables-read-as-cells/record.md)
   distance of half the shorter one, because the recognizer spoils words a group at a time and
   letters within a word (`Nuntler` for `Number`, `Ooubtfut` for `Doubtful`). Four repeated words
   in five must agree.
+  The recognizer also moves the printed spaces, and then no word has a counterpart to be near:
+  page 151's `! lt>mber Per Cent Number Percent` broke `Number` into `lt` and `mber` and closed
+  `Per Cent` up into `Percent`. The same repetition is therefore read a second way, on the line's
+  letters in order with the spaces taken out: for each number of columns the letters are cut into
+  that many pieces of equal length, each cut moved to the nearest word boundary, and the pieces
+  are compared against the first and against the one before (#262). A piece is several words
+  long, so it agrees within a fifth of the shorter rather than a half — over a label of three
+  words that is tighter than the word reading allows one spoiled word inside it — and every word
+  of the line must hold a letter, because a label is written in words and a repeating group of
+  bare figures is the table's own data or an equation (`0 0 0 200`, `3r + 6+ 3r =30`).
   Geometry alone would not do: the magazine's three-column pages hand back their columns on
   shared baselines, so every row of running prose there has a table's shape, and on geometry
   alone this rule buries 17,340 characters of its articles. With both halves it moves the CIA
-  report alone, by 1,457 characters, and every other book is unchanged.
+  report alone — by 1,457 characters when #257 landed, and by a further 681 when the letters
+  reading was added — and every other book is unchanged to the character.
   The report's handwriting is not this rule's to fix: that book's inherited OCR layer is
   unverified, and #216 catalogues what it produces.
-  Evidence: [table-headers-inside-crops](../measurements/table-headers-inside-crops/record.md).
+  Evidence: [table-headers-inside-crops](../measurements/table-headers-inside-crops/record.md),
+  [spoiled-column-labels](../measurements/spoiled-column-labels/record.md).
 - **A row a picture's crop reaches into (#207).** `takes` keeps the lines whose middle row a crop
   holds, which is right for a picture's own lettering — a diagram's labels, a chart's axis, a
   legend's entries all stand *inside* the artwork. A page can also print its own reading across a

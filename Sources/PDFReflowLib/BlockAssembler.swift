@@ -109,6 +109,11 @@ extension LayoutReconstructor {
         if opensAloneAsMarker(line, in: lines, body: typography.body) {
             return .markedLine(markerColumn(of: line, in: lines, body: typography.body))
         }
+        // So is a bullet the extractor left alone on its line, where the page set the item it
+        // marks beside it (#261).
+        if opensAloneAsBullet(line, in: lines, body: typography.body, rightToLeft: rightToLeft) {
+            return .listItem
+        }
         return .prose
     }
 
@@ -208,6 +213,86 @@ extension LayoutReconstructor {
     /// also accepts are deliberately not here: `1. Introduction` is a heading in many books.
     static func opensWithBullet(_ text: String) -> Bool {
         text.range(of: "^[•*−–—-]\\s", options: .regularExpression) != nil
+    }
+
+    /// The glyphs a page draws as a bullet — the set `opensWithBullet` reads at the start of a
+    /// line, written out so that a line holding one of them and nothing else can be recognized
+    /// as the marker it is (#261). `aBulletAloneOnItsLineIsTheMarkerItsPageDrew` holds the two
+    /// readings to the same glyphs.
+    static let bulletGlyphs: Set<Character> = ["•", "*", "−", "–", "—", "-"]
+
+    /// Whether the whole of a line is one bullet glyph: the marker, with none of its item.
+    static func isBulletGlyph(_ text: String) -> Bool {
+        let trimmed = text.trimmingCharacters(in: .whitespaces)
+        return trimmed.count == 1 && bulletGlyphs.contains(trimmed[trimmed.startIndex])
+    }
+
+    /// How far past a column's gutter the page may hang a bullet from the item it marks and the
+    /// two still be one item: two bodies, an indent rather than a column.
+    ///
+    /// The bound is where the corpus leaves a gap. Over the twenty pinned sources 897 lines hold
+    /// a bullet glyph and nothing else. Forty have nothing beside them on their row and 57 have a
+    /// piece within the gutter to their left; of the 800 that remain, 204 stand within the gutter
+    /// — already one block by the row rule — and 556 within two bodies, the widest at 1.89. The
+    /// next widest is 2.09 bodies, and every one of the 40 beyond it is a column of the page or a
+    /// cell of a row: the Blue Book sets one 12.2 bodies from its marker and one 50.4, the Warren
+    /// Commission 5.2 and 8.1. Nothing the corpus prints falls between.
+    static let hangingIndentBound: CGFloat = 2
+
+    /// Whether `line` is a bullet the extractor left with none of its item's text, standing on
+    /// the row of the item it marks.
+    ///
+    /// PDFKit ends a line wherever the page leaves a gap, so a page that hangs its bullets well
+    /// clear of their items returns the marker and the item as two lines on one baseline. The FAA
+    /// handbook hangs every bullet of its 499 items 18 points from the item's own edge on a ten
+    /// point body, so page 29 comes back as
+    ///
+    /// ```
+    /// [ 45.00 193.67   3.50 11.47] | •
+    /// [ 63.00 193.67 210.01 11.47] | IFR Charts—Enroute High Altitude Conterminous U.S.,
+    /// ```
+    ///
+    /// and the marker reached the reader as a block of its own — `<p>•</p>`, 54 times — or glued
+    /// to the sentence that introduces the list, while the item it marks was read as prose (#261).
+    ///
+    /// Two pieces of one printed row are one block within the three quarters of a body a column's
+    /// gutter needs (#57), which is the right bound for two pieces of *prose*, because a wider gap
+    /// there could be two columns. **A bullet is never a column of its own**, so a piece the page
+    /// set beyond that gutter on its row is still the item it marks, up to the `hangingIndentBound`
+    /// an indent reaches. Beyond that the page has set a column or a row of cells, which belong to
+    /// the column and table readers (#210).
+    ///
+    /// Two things the page must still state, both of them rules this library already keeps:
+    ///
+    /// - **the page set the item on the marker's row.** A bullet with nothing beside it marks
+    ///   something the reader cannot reflow — a key in a legend, an item that is a picture — and
+    ///   stays the block it was; nothing beneath it is ever swallowed, because only a piece of the
+    ///   marker's own printed row can join it;
+    /// - **the marker opens that row.** A piece to its left within the gutter means the extractor
+    ///   cut this line out of the middle of a row, so what stands there is whatever the page was
+    ///   printing — the minus between two terms of Wallace's derivations, not a marker (#203).
+    ///
+    /// Within the gutter nothing changes: the two pieces are already one block by the row rule
+    /// above, and a glyph a hair from the piece beside it is as often a fraction bar or a mark in
+    /// a scan as a marker. Wallace stacks `−` over `3` a quarter of a body apart on page 269, the
+    /// rule of a fraction and not a bullet at all; it stays the prose the library already reads.
+    static func opensAloneAsBullet(_ line: TextLine, in lines: [TextLine], body: CGFloat,
+                                   rightToLeft: Bool = false) -> Bool {
+        guard isBulletGlyph(line.text),
+              !continuesPrintedRow(line, in: lines, body: body, rightToLeft: rightToLeft),
+              let item = pieceBeside(line, in: lines, rightToLeft: rightToLeft) else { return false }
+        let indent = rightToLeft ? line.rect.minX - item.rect.maxX : item.rect.minX - line.rect.maxX
+        return indent >= body * 0.75 && indent < body * hangingIndentBound
+    }
+
+    /// The piece the page set next to `line` on its own printed row: the nearest line to its
+    /// right, or to its left where the writing runs that way (#41). Nil where the page set
+    /// nothing beside it.
+    static func pieceBeside(_ line: TextLine, in lines: [TextLine], rightToLeft: Bool = false) -> TextLine? {
+        lines.filter { other in
+            other != line && other.sharesRow(with: line)
+                && (rightToLeft ? other.rect.maxX <= line.rect.minX : other.rect.minX >= line.rect.maxX)
+        }.min { rightToLeft ? $0.rect.maxX > $1.rect.maxX : $0.rect.minX < $1.rect.minX }
     }
 
     /// A line the page has marked as an item or a note, and so is not a heading of any size
@@ -673,7 +758,7 @@ struct BlockAssembler {
             // #57).
             if let above = openItemRow, let last = blocks.last, last.page == page,
                case let .preformatted(text) = last.content, paragraph.elements.isEmpty,
-               continuesRow(above, line) {
+               continuesRow(above, line) || marksItem(above, line, text: text) {
                 var combined = text
                 combined.append(InlineText(" "))
                 combined.append(line.content)
@@ -857,6 +942,24 @@ struct BlockAssembler {
         // x 343…543 and `. ويطلق بعض الأشخاص…` at x 184…342 on one baseline (#41).
         let gap = rightToLeft ? prevRect.minX - lineRect.maxX : lineRect.minX - prevRect.maxX
         return gap >= 0 && gap < body * 0.75
+    }
+
+    /// Whether `line` is the item a bullet standing alone marks: the open item is that bullet and
+    /// nothing else, the two are one printed row, and the page hung the item within the indent a
+    /// bullet reaches (#261).
+    ///
+    /// The bound is the marker's, not the row's. A marker is never a column of its own, so the
+    /// piece the page set beside it is its item however wide the indent; the block it opens is an
+    /// item like any other, and whatever the page set further along that row stands a column away
+    /// from it and is judged by `continuesRow` as before. The FAA handbook's page 29 sets two
+    /// columns of items, and the second column's text stands 1.2 bodies past the first column's
+    /// items: it is a column, and it stays one.
+    private func marksItem(_ above: TextLine, _ line: TextLine, text: InlineText) -> Bool {
+        guard LayoutReconstructor.isBulletGlyph(text.text) else { return false }
+        let (aboveRect, lineRect) = (above.uprightRect, line.uprightRect)
+        guard TextLine.sameRow(aboveRect, lineRect) else { return false }
+        let indent = rightToLeft ? aboveRect.minX - lineRect.maxX : lineRect.minX - aboveRect.maxX
+        return indent >= 0 && indent < body * LayoutReconstructor.hangingIndentBound
     }
 
     mutating func finish() -> [ReflowBlock] {

@@ -265,9 +265,20 @@ enum TableRegionDetector {
     /// words in five must agree, which no line of prose in the corpus manages — `10 lbs of nuts
     /// and 20 lbs of chocolate`, a worked exercise in Wallace's algebra, comes closest at three
     /// in four.
+    ///
+    /// The recognizer also moves the spaces themselves, and then no word has a counterpart to be
+    /// near: page 151's `! lt>mber Per Cent Number Percent` broke `Number` into `lt` and `mber`
+    /// and closed `Per Cent` up into `Percent`, and page 241's `I Number Per Cent Number PerCeat`
+    /// did the second of those (#262). `repeatsItsLetters` reads the same repetition with the
+    /// spaces taken out.
     static func printsOneColumnLabel(_ text: String) -> Bool {
         let words = text.lowercased().split { !$0.isLetter && !$0.isNumber }.map(String.init)
         guard words.count >= 4 else { return false }
+        return repeatsAWord(words) || repeatsItsLetters(words)
+    }
+
+    /// The word-for-word reading of the repetition (#257).
+    private static func repeatsAWord(_ words: [String]) -> Bool {
         for period in 1...(words.count - 2) {
             let repeated = words.count - period
             guard repeated >= 2 else { break }
@@ -280,14 +291,62 @@ enum TableRegionDetector {
         return false
     }
 
+    /// Whether the line's letters, with the spaces the recognizer moved taken out, are one label
+    /// printed once per column (#262).
+    ///
+    /// The line is read as its letters in order. For each number of columns it is cut into that
+    /// many pieces of equal length, each cut moved to the nearest word boundary, and the pieces
+    /// are compared as the words were — against the first and against the one before. A piece the
+    /// recognizer broke in two or ran together still stands where the label stands, so
+    /// `ltmberpercent` answers `numberpercent` and `inumberpercent` answers `numberperceat`,
+    /// which word for word they cannot.
+    ///
+    /// Two things keep this as narrow as the word reading. A piece is a stretch of several words,
+    /// so half of it is far more room than half of a word: the pieces agree within a fifth of the
+    /// shorter, which over a label of three words is tighter than the word reading allows a
+    /// single spoiled word inside it. And every word of the line must hold a letter, because a
+    /// label is written in words — the IRS publication's `0 0 0 200` and Wallace's `3r + 6+ 3r
+    /// =30` repeat their letters too, and they are a table's figures and an equation, not a
+    /// heading.
+    private static func repeatsItsLetters(_ words: [String]) -> Bool {
+        guard words.allSatisfy({ $0.contains(where: \.isLetter) }) else { return false }
+        let letters = Array(words.joined())
+        var starts: [Int] = []
+        var offset = 0
+        for word in words { starts.append(offset); offset += word.count }
+        for columns in 2...words.count {
+            let width = Double(letters.count) / Double(columns)
+            var cuts = [0]
+            for column in 1..<columns {
+                let target = Double(column) * width
+                guard let cut = starts.dropFirst().filter({ $0 > cuts[cuts.count - 1] })
+                    .min(by: { abs(Double($0) - target) < abs(Double($1) - target) }) else { break }
+                cuts.append(cut)
+            }
+            guard cuts.count == columns else { continue }
+            cuts.append(letters.count)
+            let pieces = (0..<columns).map { Array(letters[cuts[$0]..<cuts[$0 + 1]]) }
+            if (1..<columns).allSatisfy({ nearly(pieces[$0], pieces[0], oneLetterIn: 5)
+                                          || nearly(pieces[$0], pieces[$0 - 1], oneLetterIn: 5) }) {
+                return true
+            }
+        }
+        return false
+    }
+
     /// Whether two words are the same word, allowing for what a recognizer does to letters: an
     /// edit distance of at most half the shorter word, and a length difference no larger (#257).
     private static func nearlyEqual(_ a: String, _ b: String) -> Bool {
+        nearly(Array(a), Array(b), oneLetterIn: 2)
+    }
+
+    /// Whether two runs of letters are the same run, within one spoiled letter in `divisor` of
+    /// the shorter, in length as well as in content.
+    private static func nearly(_ a: [Character], _ b: [Character], oneLetterIn divisor: Int) -> Bool {
         if a == b { return true }
-        let shortest = min(a.count, b.count)
-        let allowed = max(1, shortest / 2)
+        let allowed = max(1, min(a.count, b.count) / divisor)
         guard abs(a.count - b.count) <= allowed else { return false }
-        return editDistance(Array(a), Array(b)) <= allowed
+        return editDistance(a, b) <= allowed
     }
 
     private static func editDistance(_ a: [Character], _ b: [Character]) -> Int {

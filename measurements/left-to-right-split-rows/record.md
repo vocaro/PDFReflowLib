@@ -8,11 +8,16 @@ Build: this branch merged over `main` at `f2a10fd`, Xcode 27.0, macOS 27.0
 `5a037f4ef599182f1ffd2aea231e80d9f5a69241914e6450d8b6d0b0bb834f26`.
 Baseline: `f2a10fd` alone, executable SHA-256
 `ff26f25fc5645ddc78117f010c67d4dda63d149348282fe1943ea00da6d3544a`.
-`main` moved to `f37d1ab` while this was measured, bringing #270's gutter cut, and every number
-below was taken again over that merge — this branch's executable
-`9e53a40281a32a0a98eb73798dec67b17ddfeb197a0fba010b3cf9457e0c3b36` against `f37d1ab`'s
-`21ba851ba9436e6f4e988643511454ddb48dedd7ce40e98d10d248ad165f0509`. Nothing in the table moved
+`main` moved twice while this was measured, to `f37d1ab` (#270's gutter cut) and then to
+`6a91e1a` (#267's cross-page crop anchors), and every number below was taken again over each
+merge: this branch's executables
+`9e53a40281a32a0a98eb73798dec67b17ddfeb197a0fba010b3cf9457e0c3b36` and
+`c169df600a749ff9c801a7a1f49090c1032d67923a17f00e06d49a8185a3fe93` against those two `main`
+commits' `21ba851ba9436e6f4e988643511454ddb48dedd7ce40e98d10d248ad165f0509` and
+`549cd06e19ca5c4a33bfc349abacca2c81ae8310dc59096bbc7e4cf329cbdd29`. Nothing in the table moved
 between them: the same twelve books are byte-identical and the same six move by the same counts.
+Wallace's own totals rose to 9,788 blocks under `6a91e1a`, and this branch still takes one of
+them.
 
 ## The question, and the answer
 

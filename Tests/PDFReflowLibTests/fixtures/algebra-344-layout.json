@@ -1,0 +1,1840 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        84.9602,
+        739.0592448000001,
+        126.17224138000005,
+        16.0415992799999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "values into x ="
+        },
+        {
+          "baselineOffset" : 6.2398399999999583,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "− b ± b"
+        },
+        {
+          "baselineOffset" : 9,
+          "fontName" : "Helvetica",
+          "fontSize" : 5.9775800000000006,
+          "text" : "2"
+        }
+      ],
+      "text" : "values into x =− b ± b2"
+    },
+    {
+      "rect" : [
+        203.21002000000001,
+        732.50831440000002,
+        25.977651061396472,
+        23.99003110000001
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "− 4ac"
+        }
+      ],
+      "text" : "− 4ac"
+    },
+    {
+      "rect" : [
+        199.20000000000002,
+        735.26747249999994,
+        8.8150620399999866,
+        15.770882700000129
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -4.8000000000000682,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2a "
+        }
+      ],
+      "text" : "2a "
+    },
+    {
+      "rect" : [
+        84.95999999999998,
+        723.45924480000008,
+        163.52658804782089,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "known as the quadratic fromula"
+        }
+      ],
+      "text" : "known as the quadratic fromula"
+    },
+    {
+      "rect" : [
+        239.88,
+        735.26747249999994,
+        270.29622246471678,
+        15.770882700000129
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "and we will get our two solutions. This formula is"
+        }
+      ],
+      "text" : "and we will get our two solutions. This formula is"
+    },
+    {
+      "rect" : [
+        110.99979999999998,
+        680.66193200000009,
+        309.00792880000006,
+        20.922060380000062
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Quadratic Formula: if ax"
+        },
+        {
+          "baselineOffset" : 4.4398400000000038,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "+ bx + c = 0 then x ="
+        },
+        {
+          "baselineOffset" : 7.3199200000000246,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− b ± "
+        }
+      ],
+      "text" : "Quadratic Formula: if ax2 + bx + c = 0 then x =− b ± "
+    },
+    {
+      "rect" : [
+        434.23523999999998,
+        667.79252800000006,
+        41.329438086400046,
+        35.985151999999971
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− 4ac"
+        }
+      ],
+      "text" : "− 4ac"
+    },
+    {
+      "rect" : [
+        434.27998000000002,
+        680.66193200000009,
+        11.125517430000002,
+        20.922060380000062
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 7.3199200000000246,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "b"
+        },
+        {
+          "baselineOffset" : 11.759760000000028,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2"
+        }
+      ],
+      "text" : "b2"
+    },
+    {
+      "rect" : [
+        428.04000000000002,
+        673.65924480000001,
+        14.287951599999985,
+        11.967155199999979
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "2a"
+        }
+      ],
+      "text" : "2a"
+    },
+    {
+      "rect" : [
+        84.9602,
+        643.29924480000011,
+        425.15816224286721,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "World View Note: Indian mathematician Brahmagupta gave the first explicit"
+        }
+      ],
+      "text" : "World View Note: Indian mathematician Brahmagupta gave the first explicit"
+    },
+    {
+      "rect" : [
+        84.9602,
+        628.7793448000001,
+        425.15659842813443,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "formula for solving quadratics in 628. However, at that time mathematics was not"
+        }
+      ],
+      "text" : "formula for solving quadratics in 628. However, at that time mathematics was not"
+    },
+    {
+      "rect" : [
+        84.960199999999986,
+        614.2594448000001,
+        425.20319227822085,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "done with variables and symbols, so the formula he gave was, “To the absolute"
+        }
+      ],
+      "text" : "done with variables and symbols, so the formula he gave was, “To the absolute"
+    },
+    {
+      "rect" : [
+        84.960199999999986,
+        599.73914480000008,
+        425.17387229790722,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "number multiplied by four times the square, add the square of the middle term;"
+        }
+      ],
+      "text" : "number multiplied by four times the square, add the square of the middle term;"
+    },
+    {
+      "rect" : [
+        84.960199999999986,
+        585.21924480000007,
+        425.20289834726407,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "the square root of the same, less the middle term, being divided by twice the"
+        }
+      ],
+      "text" : "the square root of the same, less the middle term, being divided by twice the"
+    },
+    {
+      "rect" : [
+        84.960199999999986,
+        570.57944480000003,
+        425.24735964771844,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "square is the value.” This would translate to"
+        }
+      ],
+      "text" : "square is the value.” This would translate to"
+    },
+    {
+      "rect" : [
+        94.130349999999993,
+        544.46877440000003,
+        25.882890024999995,
+        23.99003110000001
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "4ac + b"
+        },
+        {
+          "baselineOffset" : 2.8796899999999823,
+          "fontName" : "Helvetica",
+          "fontSize" : 5.9775800000000006,
+          "text" : "2"
+        }
+      ],
+      "text" : "4ac + b2"
+    },
+    {
+      "rect" : [
+        107.28012999999999,
+        547.22727249999991,
+        8.8150620400000008,
+        17.09023000000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -4.800200000000018,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2a "
+        }
+      ],
+      "text" : "2a "
+    },
+    {
+      "rect" : [
+        125.52,
+        552.64854494999997,
+        11.666630049999995,
+        13.589037550000057
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "− b"
+        }
+      ],
+      "text" : "− b"
+    },
+    {
+      "rect" : [
+        140.28,
+        547.22727249999991,
+        215.05168440000003,
+        17.09023000000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "as the solution to the equation ax"
+        },
+        {
+          "baselineOffset" : 4.3199200000000246,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "+bx=c."
+        }
+      ],
+      "text" : "as the solution to the equation ax2 +bx=c."
+    },
+    {
+      "rect" : [
+        84.959870000000024,
+        525.69934480000006,
+        425.21953299814402,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "We can use the quadratic formula to solve any quadratic, this is shown in the fol-"
+        }
+      ],
+      "text" : "We can use the quadratic formula to solve any quadratic, this is shown in the fol-"
+    },
+    {
+      "rect" : [
+        84.959870000000024,
+        511.1794448,
+        86.89149778227204,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "lowing examples."
+        }
+      ],
+      "text" : "lowing examples."
+    },
+    {
+      "rect" : [
+        84.959870000000024,
+        472.31130000000002,
+        79.690012226780198,
+        11.955199999999991
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Example 466."
+        }
+      ],
+      "text" : "Example 466."
+    },
+    {
+      "rect" : [
+        179.15987000000001,
+        437.73914480000002,
+        74.39354780480005,
+        13.298647700000004
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "x"
+        },
+        {
+          "baselineOffset" : 4.3203100000000063,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "+3x + 2=0 "
+        }
+      ],
+      "text" : "x2 +3x + 2=0 "
+    },
+    {
+      "rect" : [
+        269.27976000000007,
+        437.73914480000002,
+        196.64658099924486,
+        13.298647700000004
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "a = 1, b = 3, c =2, use quadratic formula"
+        }
+      ],
+      "text" : "a = 1, b = 3, c =2, use quadratic formula"
+    },
+    {
+      "rect" : [
+        129.1196800000001,
+        412.10316800000004,
+        73.472438410000024,
+        21.774494500000003
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -8.160160000000019,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "x ="
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− 3± 3"
+        },
+        {
+          "baselineOffset" : 4.3199200000000246,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2"
+        }
+      ],
+      "text" : "x =− 3± 32"
+    },
+    {
+      "rect" : [
+        192.43513000000013,
+        398.752568,
+        54.775278422937589,
+        35.985152000000028
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− 4(1)(2)"
+        }
+      ],
+      "text" : "− 4(1)(2)"
+    },
+    {
+      "rect" : [
+        190.80000000000001,
+        404.61924479999999,
+        266.18490562204175,
+        19.779110400000036
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -7.8000000000000114,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "2(1) "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Evaluate exponent and multiplication"
+        }
+      ],
+      "text" : "2(1) Evaluate exponent and multiplication"
+    },
+    {
+      "rect" : [
+        216.83984000000001,
+        389.54298799999998,
+        9.9586816000000056,
+        20.443392000000017
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "√"
+        }
+      ],
+      "text" : "√"
+    },
+    {
+      "rect" : [
+        165.48000000000002,
+        380.06290799999999,
+        86.258087999999987,
+        20.443392000000017
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -7.1999999999999886,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "x ="
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− 3± 9− 8"
+        }
+      ],
+      "text" : "x =− 3± 9− 8"
+    },
+    {
+      "rect" : [
+        216.48000000000002,
+        373.53924480000001,
+        212.15660492689926,
+        19.779110400000036
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -7.8000000000000114,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "2 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Evaluate subtraction under root"
+        }
+      ],
+      "text" : "2 Evaluate subtraction under root"
+    },
+    {
+      "rect" : [
+        235.91978000000003,
+        361.46297800000002,
+        9.9586816000000056,
+        20.443392000000017
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "√"
+        }
+      ],
+      "text" : "√"
+    },
+    {
+      "rect" : [
+        184.56010000000003,
+        351.50320800000003,
+        67.177887999999996,
+        20.443392000000017
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -7.1999999999999886,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "x ="
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− 3± 1"
+        }
+      ],
+      "text" : "x =− 3± 1"
+    },
+    {
+      "rect" : [
+        225.96000000000001,
+        344.9792448,
+        111.35519729320961,
+        19.779110400000036
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -7.8000000000000114,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "2 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Evaluate root"
+        }
+      ],
+      "text" : "2 Evaluate root"
+    },
+    {
+      "rect" : [
+        195.11980000000003,
+        326.30302800000004,
+        57.218278000000026,
+        20.443392000000017
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -7.3199200000000246,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "x ="
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− 3± 1"
+        }
+      ],
+      "text" : "x =− 3± 1"
+    },
+    {
+      "rect" : [
+        231.36013000000005,
+        318.98300799999998,
+        185.81538625433606,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -7.6799799999999436,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "2 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Evaluate ± to get two answers"
+        }
+      ],
+      "text" : "2 Evaluate ± to get two answers"
+    },
+    {
+      "rect" : [
+        170.64010000000005,
+        300.98300799999998,
+        38.018258000000003,
+        20.443392000000017
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -7.1999999999999886,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "x ="
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− 2"
+        }
+      ],
+      "text" : "x =− 2"
+    },
+    {
+      "rect" : [
+        197.16047000000006,
+        294.45924479999996,
+        55.177777999999932,
+        26.967155200000036
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -11.400000000000034,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "2 "
+        },
+        {
+          "baselineOffset" : -3.6000000000000227,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "or"
+        },
+        {
+          "baselineOffset" : 3.5999999999999659,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− 4"
+        }
+      ],
+      "text" : "2 or− 4"
+    },
+    {
+      "rect" : [
+        240.83996999999999,
+        294.45924479999996,
+        116.93552167452162,
+        19.779110400000036
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -7.8000000000000114,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "2 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Simplify fractions"
+        }
+      ],
+      "text" : "2 Simplify fractions"
+    },
+    {
+      "rect" : [
+        176.39990000000003,
+        274.46310799999998,
+        157.46396955210244,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "x =− 1 or− 2 Our Solution"
+        }
+      ],
+      "text" : "x =− 1 or− 2 Our Solution"
+    },
+    {
+      "rect" : [
+        84.960040000000049,
+        241.05924479999999,
+        425.20032516654078,
+        11.979110399999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "As we are solving using the quadratic formula, it is important to remember the"
+        }
+      ],
+      "text" : "As we are solving using the quadratic formula, it is important to remember the"
+    },
+    {
+      "rect" : [
+        84.960040000000049,
+        226.53934479999998,
+        182.17296837560332,
+        11.979110399999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "equation must fist be equal to zero."
+        }
+      ],
+      "text" : "equation must fist be equal to zero."
+    },
+    {
+      "rect" : [
+        84.960040000000049,
+        187.79109999999997,
+        79.690012178959392,
+        11.955199999999991
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Example 467."
+        }
+      ],
+      "text" : "Example 467."
+    },
+    {
+      "rect" : [
+        178.43974000000006,
+        153.21894479999997,
+        22.712248410000001,
+        13.298647700000004
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "25x"
+        },
+        {
+          "baselineOffset" : 4.3203100000000063,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2"
+        }
+      ],
+      "text" : "25x2"
+    },
+    {
+      "rect" : [
+        203.03978000000006,
+        153.21894479999997,
+        54.326234557439989,
+        11.979110399999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "= 30x +11 "
+        }
+      ],
+      "text" : "= 30x +11 "
+    },
+    {
+      "rect" : [
+        138.71982000000008,
+        127.22280799999996,
+        118.64626455744002,
+        20.455547200000069
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -0.00020000000006348273,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− 30x− 11− 30x− 11 "
+        }
+      ],
+      "text" : "− 30x− 11− 30x− 11 "
+    },
+    {
+      "rect" : [
+        85.200240000000008,
+        92.739544800000004,
+        17.749702400000004,
+        11.967155200000008
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "x ="
+        }
+      ],
+      "text" : "x ="
+    },
+    {
+      "rect" : [
+        273.11997935744006,
+        153.21894479999997,
+        105.32811726376968,
+        11.979110399999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "First set equal to zero"
+        }
+      ],
+      "text" : "First set equal to zero"
+    },
+    {
+      "rect" : [
+        273.12,
+        127.22280799999996,
+        177.05487748549115,
+        20.455547200000069
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Subtract 30x and 11 from both sides"
+        }
+      ],
+      "text" : "Subtract 30x and 11 from both sides"
+    },
+    {
+      "rect" : [
+        158.87994,
+        118.17934480000001,
+        22.712238410000026,
+        13.1783377
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "25x"
+        },
+        {
+          "baselineOffset" : 4.2000000000000028,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2"
+        }
+      ],
+      "text" : "25x2"
+    },
+    {
+      "rect" : [
+        183.47997000000004,
+        109.70310800000001,
+        73.903226444800055,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− 30x− 11 =0 "
+        }
+      ],
+      "text" : "− 30x− 11 =0 "
+    },
+    {
+      "rect" : [
+        273.11985000000004,
+        109.70310800000001,
+        236.84692431915522,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "a = 25, b=− 30, c=− 11, use quadratic formula"
+        }
+      ],
+      "text" : "a = 25, b=− 30, c=− 11, use quadratic formula"
+    },
+    {
+      "rect" : [
+        106.08028000000002,
+        92.542998000000011,
+        75.391998410000014,
+        21.65457450000001
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "30 ± (− 30)"
+        },
+        {
+          "baselineOffset" : 4.2000000000000028,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2"
+        }
+      ],
+      "text" : "30 ± (− 30)2"
+    },
+    {
+      "rect" : [
+        142.99538000000007,
+        79.072798000000006,
+        108.02799727871997,
+        35.985151999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− 4(25)(− 11)"
+        }
+      ],
+      "text" : "− 4(25)(− 11)"
+    },
+    {
+      "rect" : [
+        167.75999999999999,
+        84.939444800000004,
+        293.06488086282252,
+        19.779110399999993
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -7.7999999999999972,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "2(25) "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Evaluate exponent and multiplication"
+        }
+      ],
+      "text" : "2(25) Evaluate exponent and multiplication"
+    },
+    {
+      "rect" : [
+        297.12,
+        52.379053199999994,
+        15.061000995093593,
+        9.8729762399999998
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626400000000004,
+          "text" : "344"
+        }
+      ],
+      "text" : "344"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    595,
+    842
+  ],
+  "caseID" : "wallace-algebra-2010",
+  "graphics" : [
+    [
+      201.52000000000001,
+      754.22000000000014,
+      33.280000000000001,
+      4
+    ],
+    [
+      171.40000000000001,
+      742.70000000000005,
+      64.359999999999985,
+      4
+    ],
+    [
+      431.92000000000002,
+      701.42000000000007,
+      52.360000000000014,
+      4
+    ],
+    [
+      384.88000000000005,
+      685.22000000000014,
+      100.59999999999997,
+      4
+    ],
+    [
+      92.439800000000005,
+      566.18000000000006,
+      33.280200000000008,
+      4
+    ],
+    [
+      83.560200000000009,
+      554.78000000000009,
+      56.19980000000001,
+      4
+    ],
+    [
+      190.12,
+      432.38000000000005,
+      63.640000000000043,
+      4
+    ],
+    [
+      147.52000000000001,
+      416.18000000000006,
+      107.44000000000003,
+      4
+    ],
+    [
+      224.44000000000003,
+      399.26000000000005,
+      29.320000000000022,
+      4
+    ],
+    [
+      183.76000000000002,
+      385.10000000000002,
+      71.200000000000017,
+      4
+    ],
+    [
+      243.52000000000004,
+      371.06000000000006,
+      10.240000000000009,
+      4
+    ],
+    [
+      202.84000000000003,
+      356.54000000000002,
+      52.120000000000005,
+      4
+    ],
+    [
+      213.52000000000004,
+      331.22000000000003,
+      41.439999999999998,
+      4
+    ],
+    [
+      188.92000000000002,
+      306.02000000000004,
+      22.360000000000014,
+      4
+    ],
+    [
+      232.60000000000002,
+      306.02000000000004,
+      22.360000000000014,
+      4
+    ],
+    [
+      136.72,
+      134.42000000000002,
+      122.68000000000004,
+      4
+    ],
+    [
+      140.80000000000001,
+      112.7,
+      116.80000000000001,
+      4
+    ],
+    [
+      103.48,
+      96.5,
+      155.31999999999999,
+      4
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.9602,
+        739.0592448000001,
+        126.17224138000005,
+        16.0415992799999
+      ],
+      "text" : "values into x =− b ± b2"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        203.21002000000001,
+        732.50831440000002,
+        25.977651061396472,
+        23.99003110000001
+      ],
+      "text" : "− 4ac"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        199.20000000000002,
+        735.26747249999994,
+        8.8150620399999866,
+        15.770882700000129
+      ],
+      "text" : "2a"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.95999999999998,
+        723.45924480000008,
+        163.52658804782089,
+        11.979110399999968
+      ],
+      "text" : "known as the quadratic fromula"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        239.88,
+        735.26747249999994,
+        270.29622246471678,
+        15.770882700000129
+      ],
+      "text" : "and we will get our two solutions. This formula is"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        110.99979999999998,
+        680.66193200000009,
+        309.00792880000006,
+        20.922060380000062
+      ],
+      "text" : "Quadratic Formula: if ax2 + bx + c = 0 then x =− b ±"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        434.23523999999998,
+        667.79252800000006,
+        41.329438086400046,
+        35.985151999999971
+      ],
+      "text" : "− 4ac"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        434.27998000000002,
+        680.66193200000009,
+        11.125517430000002,
+        20.922060380000062
+      ],
+      "text" : "b2"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        428.04000000000002,
+        673.65924480000001,
+        14.287951599999985,
+        11.967155199999979
+      ],
+      "text" : "2a"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.9602,
+        643.29924480000011,
+        425.15816224286721,
+        11.979110399999968
+      ],
+      "text" : "World View Note: Indian mathematician Brahmagupta gave the first explicit"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.9602,
+        628.7793448000001,
+        425.15659842813443,
+        11.979110399999968
+      ],
+      "text" : "formula for solving quadratics in 628. However, at that time mathematics was not"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960199999999986,
+        614.2594448000001,
+        425.20319227822085,
+        11.979110399999968
+      ],
+      "text" : "done with variables and symbols, so the formula he gave was, “To the absolute"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960199999999986,
+        599.73914480000008,
+        425.17387229790722,
+        11.979110399999968
+      ],
+      "text" : "number multiplied by four times the square, add the square of the middle term;"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960199999999986,
+        585.21924480000007,
+        425.20289834726407,
+        11.979110399999968
+      ],
+      "text" : "the square root of the same, less the middle term, being divided by twice the"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960199999999986,
+        570.57944480000003,
+        425.24735964771844,
+        11.979110399999968
+      ],
+      "text" : "square is the value.” This would translate to"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        94.130349999999993,
+        544.46877440000003,
+        25.882890024999995,
+        23.99003110000001
+      ],
+      "text" : "4ac + b2"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        107.28012999999999,
+        547.22727249999991,
+        8.8150620400000008,
+        17.09023000000002
+      ],
+      "text" : "2a"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        125.52,
+        552.64854494999997,
+        11.666630049999995,
+        13.589037550000057
+      ],
+      "text" : "− b"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        140.28,
+        547.22727249999991,
+        215.05168440000003,
+        17.09023000000002
+      ],
+      "text" : "as the solution to the equation ax2 +bx=c."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959870000000024,
+        525.69934480000006,
+        425.21953299814402,
+        11.979110399999968
+      ],
+      "text" : "We can use the quadratic formula to solve any quadratic, this is shown in the fol-"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959870000000024,
+        511.1794448,
+        86.89149778227204,
+        11.979110400000025
+      ],
+      "text" : "lowing examples."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959870000000024,
+        472.31130000000002,
+        79.690012226780198,
+        11.955199999999991
+      ],
+      "text" : "Example 466."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        179.15987000000001,
+        437.73914480000002,
+        74.39354780480005,
+        13.298647700000004
+      ],
+      "text" : "x2 +3x + 2=0"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        269.27976000000007,
+        437.73914480000002,
+        196.64658099924486,
+        13.298647700000004
+      ],
+      "text" : "a = 1, b = 3, c =2, use quadratic formula"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        129.1196800000001,
+        412.10316800000004,
+        73.472438410000024,
+        21.774494500000003
+      ],
+      "text" : "x =− 3± 32"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        192.43513000000013,
+        398.752568,
+        54.775278422937589,
+        35.985152000000028
+      ],
+      "text" : "− 4(1)(2)"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        190.80000000000001,
+        404.61924479999999,
+        266.18490562204175,
+        19.779110400000036
+      ],
+      "text" : "2(1) Evaluate exponent and multiplication"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        216.83984000000001,
+        389.54298799999998,
+        9.9586816000000056,
+        20.443392000000017
+      ],
+      "text" : "√"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        165.48000000000002,
+        380.06290799999999,
+        86.258087999999987,
+        20.443392000000017
+      ],
+      "text" : "x =− 3± 9− 8"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        216.48000000000002,
+        373.53924480000001,
+        212.15660492689926,
+        19.779110400000036
+      ],
+      "text" : "2 Evaluate subtraction under root"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        235.91978000000003,
+        361.46297800000002,
+        9.9586816000000056,
+        20.443392000000017
+      ],
+      "text" : "√"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        184.56010000000003,
+        351.50320800000003,
+        67.177887999999996,
+        20.443392000000017
+      ],
+      "text" : "x =− 3± 1"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        225.96000000000001,
+        344.9792448,
+        111.35519729320961,
+        19.779110400000036
+      ],
+      "text" : "2 Evaluate root"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        195.11980000000003,
+        326.30302800000004,
+        57.218278000000026,
+        20.443392000000017
+      ],
+      "text" : "x =− 3± 1"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        231.36013000000005,
+        318.98300799999998,
+        185.81538625433606,
+        20.455347200000006
+      ],
+      "text" : "2 Evaluate ± to get two answers"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        170.64010000000005,
+        300.98300799999998,
+        38.018258000000003,
+        20.443392000000017
+      ],
+      "text" : "x =− 2"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        197.16047000000006,
+        294.45924479999996,
+        55.177777999999932,
+        26.967155200000036
+      ],
+      "text" : "2 or− 4"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        240.83996999999999,
+        294.45924479999996,
+        116.93552167452162,
+        19.779110400000036
+      ],
+      "text" : "2 Simplify fractions"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        176.39990000000003,
+        274.46310799999998,
+        157.46396955210244,
+        20.455347200000006
+      ],
+      "text" : "x =− 1 or− 2 Our Solution"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960040000000049,
+        241.05924479999999,
+        425.20032516654078,
+        11.979110399999996
+      ],
+      "text" : "As we are solving using the quadratic formula, it is important to remember the"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960040000000049,
+        226.53934479999998,
+        182.17296837560332,
+        11.979110399999996
+      ],
+      "text" : "equation must fist be equal to zero."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960040000000049,
+        187.79109999999997,
+        79.690012178959392,
+        11.955199999999991
+      ],
+      "text" : "Example 467."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        178.43974000000006,
+        153.21894479999997,
+        22.712248410000001,
+        13.298647700000004
+      ],
+      "text" : "25x2"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        203.03978000000006,
+        153.21894479999997,
+        54.326234557439989,
+        11.979110399999996
+      ],
+      "text" : "= 30x +11"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        138.71982000000008,
+        127.22280799999996,
+        118.64626455744002,
+        20.455547200000069
+      ],
+      "text" : "− 30x− 11− 30x− 11"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        85.200240000000008,
+        92.739544800000004,
+        17.749702400000004,
+        11.967155200000008
+      ],
+      "text" : "x ="
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        273.11997935744006,
+        153.21894479999997,
+        105.32811726376968,
+        11.979110399999996
+      ],
+      "text" : "First set equal to zero"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        273.12,
+        127.22280799999996,
+        177.05487748549115,
+        20.455547200000069
+      ],
+      "text" : "Subtract 30x and 11 from both sides"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        158.87994,
+        118.17934480000001,
+        22.712238410000026,
+        13.1783377
+      ],
+      "text" : "25x2"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        183.47997000000004,
+        109.70310800000001,
+        73.903226444800055,
+        20.455347200000006
+      ],
+      "text" : "− 30x− 11 =0"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        273.11985000000004,
+        109.70310800000001,
+        236.84692431915522,
+        20.455347200000006
+      ],
+      "text" : "a = 25, b=− 30, c=− 11, use quadratic formula"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        106.08028000000002,
+        92.542998000000011,
+        75.391998410000014,
+        21.65457450000001
+      ],
+      "text" : "30 ± (− 30)2"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        142.99538000000007,
+        79.072798000000006,
+        108.02799727871997,
+        35.985151999999999
+      ],
+      "text" : "− 4(25)(− 11)"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        167.75999999999999,
+        84.939444800000004,
+        293.06488086282252,
+        19.779110399999993
+      ],
+      "text" : "2(25) Evaluate exponent and multiplication"
+    },
+    {
+      "fontSize" : 9.9626400000000004,
+      "monospaced" : false,
+      "rect" : [
+        297.12,
+        52.379053199999994,
+        15.061000995093593,
+        9.8729762399999998
+      ],
+      "text" : "344"
+    }
+  ],
+  "page" : 344,
+  "pictures" : [
+
+  ],
+  "rightsBasis" : "Page 2 states Copyright 2010 Tyler Wallace and Creative Commons Attribution 3.0 Unported. The PDF remains an external local corpus source; it is not bundled or relicensed under MIT.",
+  "schemaVersion" : 2,
+  "sourceSHA256" : "856bd81edc61c50496982ddc849138f4e0e56fd0ddf0edb53fee9bb0830d0678",
+  "sourceTitle" : "Beginning and Intermediate Algebra",
+  "sourceURL" : "https://s3.amazonaws.com/myopenmath/cfiles/19515/Beginning_and_Intermediate_Algebra.pdf"
+}

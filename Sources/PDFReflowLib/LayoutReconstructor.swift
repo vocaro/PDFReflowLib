@@ -1397,9 +1397,50 @@ enum LayoutReconstructor {
                 }
             }
         }
-        let result = assembler.finish()
+        var result = assembler.finish()
         warnings += assembler.warnings
+        // Where a crop took prose the page printed before the first line it reflows, the page's
+        // text does not begin at that block, and a cross-page join must not treat it as the
+        // sentence the page before left open (#267).
+        if let opening = result.firstIndex(where: \.hasReflowedText),
+           cropTookThePageOpening(elements, taken: taken.subtracting(released), page: page,
+                                  body: typography.body, rightToLeft: rightToLeft) {
+            result[opening].followsCroppedText = true
+        }
         return result
+    }
+
+    /// Whether a crop took what the page printed before the first line it reflows, so the page's
+    /// own text does not begin at that line.
+    ///
+    /// Two shapes, both Wallace's. **Down the page:** page 430 prints `b are the other two sides
+    /// (legs), then we can use the following formula, a² + b² = c²`, a display takes the whole
+    /// row, and `to find a missing side.` is what is left to reflow. **Along a row:** page 344
+    /// prints `values into x =` at the measure and sets the quadratic formula beside it, so the
+    /// crop took the opening of the very row the page's first reflowed line stands in.
+    ///
+    /// What the crop took has to be the page's own flow, not a picture's writing. Above the
+    /// line, that is `readsAsSentence` — the test the crop rules (#255) and a block reached past
+    /// a picture (#203) already use — together with the measure: the 9/11 report runs its boxed
+    /// list of *Operational Opportunities* over the head of page 374 and that prose is indented
+    /// onto a measure of its own, while `…all involved were` / `responsible for making it work.`
+    /// is the join the page asks for. Along the row no such test is needed, because a printed row
+    /// the page began inside a crop is that row wherever its pieces read.
+    static func cropTookThePageOpening(_ elements: [Element], taken: Set<Int>, page: PageContent,
+                                       body: CGFloat, rightToLeft: Bool) -> Bool {
+        guard !taken.isEmpty, let first = elements.first(where: { $0.line != nil })?.line else { return false }
+        func earlierAlongTheRow(_ line: TextLine) -> Bool {
+            rightToLeft ? line.rect.minX > first.rect.minX : line.rect.minX < first.rect.minX
+        }
+        func atTheSameMeasure(_ line: TextLine) -> Bool {
+            rightToLeft ? line.rect.maxX >= first.rect.maxX - body * 0.25
+                        : line.rect.minX <= first.rect.minX + body * 0.25
+        }
+        return taken.contains { index in
+            let line = page.lines[index]
+            guard !line.sharesRow(with: first) else { return earlierAlongTheRow(line) }
+            return line.rect.minY > first.rect.minY && readsAsSentence(line) && atTheSameMeasure(line)
+        }
     }
 
     /// Convenience for tests that supply the document context piecemeal.
@@ -1595,6 +1636,13 @@ enum LayoutReconstructor {
            // block directly before a boundary is still reached whatever it holds: #45's wider
            // defect, a join anchored on a folio that is simply the last block, is untouched here.
            (anchor == blocks.count - 1 && opening == 0) || readsAsSentence(blocks[anchor].text),
+           // The block a page opens with is the sentence's other half only where it is where the
+           // page's text begins. Wallace's page 430 prints `b are the other two sides (legs),
+           // then we can use the following formula, a² + b² = c²` and a display crop takes all of
+           // it, so `to find a missing side.` is the first line the page reflows; joining that to
+           // `…the hypotenuse of the triangle, and a and` reads two fragments the crop had
+           // already broken as one paragraph. Those two halves were never consecutive (#267).
+           !remaining[opening].followsCroppedText,
            // Two validated paragraph identities that differ are two paragraphs, and never join.
            // One identity and no identity is not that: a page whose tags were not applied says
            // nothing about where its last paragraph ends, so the geometric rule decides, as it

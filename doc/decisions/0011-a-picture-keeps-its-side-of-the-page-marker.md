@@ -69,6 +69,13 @@ so the walk stops there and the tail is one block again.
   two halves the join now brings together were never consecutive. No word moves and none is lost:
   what changes is that two already-garbled fragments read as one paragraph rather than two blocks.
   The reading-order anchor #45 describes is what would fix those, and it is not this decision.
+  **Closed since, without that anchor.** All four are boundaries where the crop took what the
+  *later* page printed before its first reflowed line, and a join now reaches only a block the
+  page's own text begins at, so none of the four is made
+  ([#267](https://github.com/vocaro/PDFReflowLib/issues/267),
+  [cross-page-crop-anchors](../../measurements/cross-page-crop-anchors/record.md)). The earlier
+  page is read no differently — asking the same of it is the variant this record rejected — so a
+  paragraph whose own last line a crop took is still #45's defect.
 - A figure that stood at the foot of a page now stands before that page's last paragraph. That is
   a change in reading order within one page, taken only when the paragraph demonstrably continues
   overleaf, and it is the cost of the join.

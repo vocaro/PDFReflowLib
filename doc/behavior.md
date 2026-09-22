@@ -1069,6 +1069,30 @@ row-major sort, one entry of each column at a time.
   `amendableTail` is the trailing block, or, where images stand at the tail, the paragraph
   beneath them and those images ([decision 0008](decisions/0008-streamed-blocks-to-the-writer.md),
   [decision 0011](decisions/0011-a-picture-keeps-its-side-of-the-page-marker.md)).
+- A cross-page join reaches **only a block the page's own text begins at** (#267). Where a crop
+  took prose the page printed *before* the first line it reflows, that block is not the other
+  half of the sentence the page before left open, and no join is made: the boundary keeps a
+  standalone marker and the two fragments stay two blocks. Wallace's page 430 opens `b are the
+  other two sides (legs), then we can use the following formula, a² + b² = c²` and the display
+  takes that whole row, leaving `to find a missing side.` to reflow, so joining it to page 429's
+  `…the hypotenuse of the triangle, and a and` read two fragments a crop had already broken as
+  one paragraph. Its page 344 is the same defect along a row rather than down the page: `values
+  into x =` stands at the measure with the formula set beside it, so reading order is what
+  decides — the cropped line is before the first reflowed one when it stands above it, or on the
+  same printed row and earlier along it. Above the line, what the crop took has to be the page's
+  own flow: it must read as the page's prose (`readsAsSentence`, as for the crops themselves and
+  for a block reached past a picture) and it must **begin the measure the first reflowed line
+  begins**, within a quarter of a body. Along the row no such test applies, because a printed row
+  the page began inside a crop is that row wherever its pieces read. So a figure's
+  number or an axis label above the first line refuses nothing, and neither does a box the page
+  sets on a measure of its own — the 9/11 report runs its boxed list of *Operational
+  Opportunities* over the foot of page 373 and the head of page 374, indented from the body, and
+  `…all involved were` / `responsible for making it work.` is the join the page asks for. Only
+  the page a join *opens* with is read this way. The page it leaves is not: the Fed sets a box or
+  a figure over the foot of pages 40, 47, 55, 93, 97, 98, 100 and 103, and that crop's own prose
+  stands below the paragraph, not before it — asking the same of the earlier page would refuse
+  those eight joins and the eleven others like them. A paragraph whose own last line a crop took
+  is still #45's reading-order anchor, which is not ported.
 - Two lines are one paragraph when they **share a column** (left edges within 1.5 bodies, the gap
   between them from −0.4 to 0.9 of a body, and no further down the page than the leading it
   states) or are **two pieces of one printed row**: they overlap vertically by at least half the

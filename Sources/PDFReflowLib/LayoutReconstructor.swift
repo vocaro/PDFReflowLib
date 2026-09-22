@@ -499,6 +499,40 @@ enum LayoutReconstructor {
                         exhausted: inout Bool) -> [Element] {
         guard elements.count > 1 else { return elements }
         guard depth < 32 else { exhausted = true; return elements }
+        // A group the page lettered sideways is read along its own direction (#263). Every cut
+        // above has already separated it from the rest of the page, so inside it the page can be
+        // turned: each rectangle is taken into the frame the group's own writing runs in, where
+        // the same cuts and the same row-major sort put the caption's first line above its
+        // second. The turn is one rotation applied to every member, so it changes no gap, no
+        // shared edge and no overlap — only which axis each of them is measured on.
+        //
+        // The CDC graphic novel letters page 17's caption down the side of the panel at a quarter
+        // clockwise, three lines whose rectangles all reach the same top edge and stand 1.4 and
+        // 2.5 points apart across the page. Read as though the writing ran along them, the
+        // shortest is the topmost and comes first and the other two overlap enough to be two
+        // pieces of one printed row: `ATLANTA, GEORGIA...` was emitted before
+        // `DISEASE CONTROL AND PREVENTION IN SEVERAL DAYS LATER AT THE CENTERS FOR`.
+        if let turn = QuarterTurn.shared(by: elements, turn: { $0.line?.turn }) {
+            // The turned copies say they stand upright, so a nested group of them cannot be
+            // turned a second time; only the order they come back in is kept, and every element
+            // this returns is the one the caller handed over.
+            var slots: [CGRect: [Int]] = [:]
+            let upright = elements.indices.map { index -> Element in
+                var element = elements[index]
+                element.rect = turn.upright(element.rect)
+                if var line = element.line {
+                    line.rect = turn.upright(line.rect)
+                    line.readingRect = line.readingRect.map(turn.upright)
+                    line.turn = .upright
+                    element.line = line
+                }
+                slots[element.rect, default: []].append(index)
+                return element
+            }
+            return ordered(upright, bodySize: bodySize, rightToLeft: rightToLeft, depth: depth + 1,
+                           exhausted: &exhausted)
+                .map { elements[slots[$0.rect]!.removeFirst()] }
+        }
         func gap(horizontal: Bool) -> CGFloat? {
             let intervals = elements.map { horizontal ? ($0.rect.minX, $0.rect.maxX) : ($0.rect.minY, $0.rect.maxY) }
                 .sorted { $0.0 < $1.0 }

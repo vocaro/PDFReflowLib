@@ -266,3 +266,41 @@ func theTwoFlightTimelinesAreReadColumnByColumn() throws {
         #expect(lastLeft < firstRight)
     }
 }
+
+// MARK: - The flight-label row PDFKit fused across the gutter (#270)
+
+/// The heading group above each timeline: the airline and flight number, the flight's short name
+/// in brackets, and its route. PDFKit reads the first and third of those rows as two lines, one per
+/// column, and hands the second back as one line spanning the gutter, which then took the left
+/// column's route into itself and stranded the right column's:
+///
+/// ```
+/// American Airlines Flight 11
+/// United Airlines Flight 175
+/// (AA 11) (UA 175) Boston to Los Angeles
+/// Boston to Los Angeles
+/// ```
+///
+/// Cut at the edge the rows above and below it state, no block holds two columns' cells and no
+/// route is stranded. Page 50 goes further and reads each flight's three heading rows as one block,
+/// because its map is one picture across both columns while page 51 draws two, one per column,
+/// which the column reading divides the page at. The captures this replays were taken with the cut
+/// in place, so what it pins is the reading those lines reflow to rather than the cut itself;
+/// `ColumnGutterCutTests` measures the cut, against the same page's geometry.
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/270"))
+func eachFlightHeadingIsReadWithItsOwnColumn() throws {
+    for (name, headings) in [("911-50", ["American Airlines Flight 11 (AA 11) Boston to Los Angeles",
+                                         "United Airlines Flight 175 (UA 175) Boston to Los Angeles"]),
+                             ("911-51", ["American Airlines Flight 77", "United Airlines Flight 93",
+                                         "(AA 77)", "(UA 93)",
+                                         "Washington, D.C., to Los Angeles", "Newark to San Francisco"])] {
+        let texts = reflowedTexts(try SourceLayoutFixture.load(name).content())
+        for heading in headings {
+            #expect(texts.contains(heading), Comment(rawValue: "\(name): \(texts.joined(separator: " | "))"))
+        }
+        // No block holds both flights' labels, which is what the merged line did, and no block
+        // holds one flight's label with the other flight's route.
+        #expect(!texts.contains { $0.contains("(AA") && $0.contains("(UA") })
+        #expect(runInOrder(headings, through: texts))
+    }
+}

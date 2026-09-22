@@ -604,9 +604,14 @@ joins up and is not counted.
 
 A layer fails, and reports `implausibleTextLayer` under every policy, when any test holds:
 
-- **Too few English words.** With at least 20 judged (English plus damaged) words, and unless a
-  fifth or more of the tokens hold digits (statistical tables and forms are not judged), fewer
-  than half English fails.
+- **Too few English words.** A bare `a` or `I` standing on a line that holds no other English word
+  is set aside first and counts neither way (#275): alone on its line it is a ruled column, a tick
+  or a tally the reading shaped like a letter, not a word. With at least 20 judged (English plus
+  damaged) words left, and unless a fifth or more of the tokens are numbers (statistical tables and
+  forms are not judged), fewer than half English fails. The exemption counts the numbers a page
+  states, not every token that holds a digit: a misreading of a hand-written figure (`l6`, `0,3`,
+  `A.Di`) holds digits too, and counting those let a table of unread ink buy its own exemption
+  (#275).
 - **Words misread in place (#7).** Under the same conditions, a tenth or more of all words are
   damaged words of three or more letters, or irregular capitals, that no neighboring word
   completes (`tcld t» ftboot` for "told me about" on a carbon typescript).

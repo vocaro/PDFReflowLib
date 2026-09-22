@@ -12,10 +12,15 @@ import PDFKit
 ///   know, irregular capitalization such as `sreANee`, a stray lower-case letter from letter-spaced
 ///   text such as `n e x t`, or letters of another script) and neutral (capitalized or upper-case
 ///   words the lexicon does not know, which are names and abbreviations, compound names such as
-///   `McDonald`, and words broken by symbols). With at least `minimumJudgedWords` English and
-///   damaged words, fewer than half English fails. A layer in which a fifth or more of the words
-///   carry digits is a table or form and is not judged: statistical tables read below half English,
-///   and a fresh recognition of their handwritten cells reads no better.
+///   `McDonald`, and words broken by symbols). A bare `a` or `I` standing on a line that holds no
+///   other English word is set aside before the count: alone on its line it is a ruled column, a
+///   tick or a tally the reading shaped like a letter, not a word (#275). With at least
+///   `minimumJudgedWords` English and damaged words left, fewer than half English fails. A layer
+///   in which a fifth or more of the tokens are numbers is a table or form and is not judged:
+///   statistical tables read below half English, and a fresh recognition of their handwritten
+///   cells reads no better. The exemption counts the numbers the page states, not every token
+///   holding a digit, because a misreading of a hand-written figure (`l6`, `0,3`, `A.Di`) holds
+///   digits too and would otherwise buy the page its own exemption (#275).
 /// - **Words misread in place (#7).** Under the same conditions, a layer fails when a tenth or more
 ///   of all its words are damaged words of three or more letters (or irregular capitals) that no
 ///   neighbor joins into an English word: `tcld t» ftboot` for "told me about" on a carbon
@@ -100,12 +105,14 @@ enum TextLayerPlausibility {
         return carriesDrawnText(measurement)
     }
 
-    /// The word test alone.
+    /// The word test alone. A lone letter with no word for company is set aside first (#275).
     static func wordFinding(_ counts: WordCounts) -> Finding? {
-        guard counts.judged >= minimumJudgedWords,
-              Double(counts.numericTokens) < Double(counts.tokens) * maximumNumericShare else { return nil }
-        if Double(counts.english) < Double(counts.judged) * minimumEnglishShare {
-            return .fewEnglishWords(english: counts.english, judged: counts.judged)
+        let english = counts.english - counts.lonelyLetters
+        let judged = counts.judged - counts.lonelyLetters
+        guard judged >= minimumJudgedWords,
+              Double(counts.numberTokens) < Double(counts.tokens) * maximumNumericShare else { return nil }
+        if Double(english) < Double(judged) * minimumEnglishShare {
+            return .fewEnglishWords(english: english, judged: judged)
         }
         if Double(counts.misread) >= Double(counts.words) * minimumMisreadShare {
             return .misreadWords(misread: counts.misread, words: counts.words, examples: counts.misreadExamples)
@@ -129,6 +136,8 @@ enum TextLayerPlausibility {
         guard !lines.isEmpty, EnglishText.isDeclared(language) else { return nil }
         let counts = EnglishText.wordCounts(lines.map(\.text).joined(separator: "\n"))
         if let counts, let finding = wordFinding(counts) { return finding }
+        // The ink test's gate is a cost ceiling surveyed over raw English word counts, so it is
+        // read raw: #275 narrowed what the word tests count, not what a page costs to render.
         let english = counts?.english ?? 0
         guard english < maximumWordsForInkTest, let measurement = try measureInk() else { return nil }
         return inkFinding(measurement, englishWords: english)

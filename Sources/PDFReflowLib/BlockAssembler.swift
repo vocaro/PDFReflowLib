@@ -499,6 +499,11 @@ struct BlockAssembler {
     private let imageDescriptions: [String: String]
     /// The wrapped second line of each entry the page hangs, by the entry it carries on (#160).
     private let hangingEntries: [CGRect: CGRect]
+    /// The lines that open an entry of a list the page hangs under an outdented marker column,
+    /// and the edge it sets those entries' text on (`LayoutReconstructor.hangingMarkerList`,
+    /// #282). Empty where the page sets no such list.
+    private let markerEntries: Set<CGRect>
+    private let markerEntryEdge: CGFloat?
     /// Where this page left the same seam between two pieces of a row on three or more rows: a
     /// column it set, rather than a space inside a printed line (`LayoutReconstructor.columnSeams`,
     /// #272).
@@ -511,6 +516,7 @@ struct BlockAssembler {
     init(page: Int, body: CGFloat, leading: CGFloat? = nil, hyphens: HyphenContext,
          imageLinks: [String: LinkTarget] = [:], imageDescriptions: [String: String] = [:],
          hangingEntries: [CGRect: CGRect] = [:], columnSeams: [CGFloat] = [],
+         markerEntries: Set<CGRect> = [], markerEntryEdge: CGFloat? = nil,
          rightToLeft: Bool = false) {
         self.page = page
         self.body = body
@@ -519,6 +525,8 @@ struct BlockAssembler {
         self.imageLinks = imageLinks
         self.imageDescriptions = imageDescriptions
         self.hangingEntries = hangingEntries
+        self.markerEntries = markerEntries
+        self.markerEntryEdge = markerEntryEdge
         self.columnSeams = columnSeams
         self.rightToLeft = rightToLeft
     }
@@ -708,7 +716,8 @@ struct BlockAssembler {
         case .markedLine(let column):
             // A wrapped line whose first word is an initial, a citation or a year belongs to the
             // paragraph above it; anything else opens an item and keeps its own block (#39).
-            if let prev = previous, !paragraph.elements.isEmpty, continuesWrapped(prev, line, column) {
+            if let prev = previous, !paragraph.elements.isEmpty,
+               continuesWrapped(prev, line, column) || marksEntry(prev, line) {
                 paragraph = join(paragraph, line.content)
                 previous = line
                 previousRow = nil
@@ -884,6 +893,28 @@ struct BlockAssembler {
         return row
     }
 
+    /// Whether `line` is the entry the page set beside the marker `prev`, on the marker's own
+    /// printed row (#282).
+    private func marksEntry(_ prev: TextLine, _ line: TextLine) -> Bool {
+        guard let edge = markerEntryEdge, markerEntries.contains(prev.rect),
+              !markerEntries.contains(line.rect), prev.sharesRow(with: line) else { return false }
+        return abs(line.uprightRect.minX - edge) <= body * 0.25
+    }
+
+    /// Whether `line` is a line the page hung under an entry of its marker column: it stands on
+    /// that column's text edge, it opens no entry of its own, and what it carries on is either
+    /// the entry's opening line or another line already hung on that edge (#282).
+    ///
+    /// The ordinary column test does not reach these. A justified reference list wraps to the
+    /// same right margin its entry line reaches, so #160's hung-entry rule refuses them too; what
+    /// vouches for them here is the marker column, which says where every entry begins and so
+    /// says that these lines begin none.
+    private func hangsUnderMarkerEntry(_ prev: TextLine, _ line: TextLine) -> Bool {
+        guard let edge = markerEntryEdge, !markerEntries.contains(line.rect),
+              abs(line.uprightRect.minX - edge) <= body * 0.25 else { return false }
+        return markerEntries.contains(prev.rect) || abs(prev.uprightRect.minX - edge) <= body * 0.25
+    }
+
     /// Whether `line` continues the paragraph `previous` is part of: the previous line wraps, the
     /// two are stacked at ordinary leading, are two pieces of one printed row, or are an entry and
     /// the wrap the page hangs under it, and the previous line is not a short line the page has
@@ -895,6 +926,14 @@ struct BlockAssembler {
     /// the one beside it.
     private func continuesParagraph(_ prev: TextLine, _ line: TextLine) -> Bool {
         guard prev.wraps != false else { return false }
+        // A line the page outdented a marker onto opens an entry of its own, whatever stands
+        // above it: that is what the page set the marker column to say (#282).
+        guard !markerEntries.contains(line.rect) else { return false }
+        // And the entry beside such a marker is that marker's own text. The page hangs it
+        // further from the marker than the gutter two pieces of one row are joined within — 12
+        // points in the Replay Clocks paper, 21 in the Census paper — for the same reason a
+        // bullet hangs clear of its item (#261): a marker is never a column of its own.
+        if marksEntry(prev, line) { return true }
         // What the line above measures — how far it ran, where it started, how far down the page
         // it reached, what size it is set in — is the printed row's, which is `prev`'s own unless
         // the extractor split that row and `prev` is the piece that closed it (#41, #272).
@@ -902,6 +941,19 @@ struct BlockAssembler {
         let (prevRect, lineRect) = (row.uprightRect, line.uprightRect)
         // A short line ending a sentence closes its paragraph however the two lines stand. Where
         // the writing stopped, and the text it stopped on, stay the closing piece's.
+        // On a page that hangs a marker column, two pieces of one printed row are one line, and
+        // the row is read before anything is decided from how far the piece before it ran. The
+        // Replay Clocks paper breaks a reference after `…with physical clocks.` and sets `In
+        // Proceedings of the 23rd International Conference on` 5.4 points further along that same
+        // row: a sentence that ends where the extractor cut the row has not ended the page's
+        // line, let alone the entry the page's own markers say it is inside (#57, #272, #282).
+        //
+        // Only on such a page. Asked of every page, the same reading moves seven of the
+        // twenty-two cached books and takes characters out of two of them, because a short line
+        // ending a sentence beside a piece of its own row is an ordinary shape the paragraph rule
+        // has been measured around; what makes it safe here is that the page has said where its
+        // entries begin and end.
+        if markerEntryEdge != nil, continuesRow(row, line) { return true }
         let short = prevRect.width < lineRect.width * 0.65
         guard !(short && prev.text.last.map { ".!?".contains($0) } == true) else { return false }
         if continuesRow(row, line) { return true }
@@ -909,7 +961,7 @@ struct BlockAssembler {
         // A list the page hangs sets its wraps further in than one column's lines ever stand
         // apart; `LayoutReconstructor.hangingEntries` reads which ones the page hung (#160). It
         // keys on the line the page hung the wrap under, which is the piece and not the row.
-        let hangs = hangingEntries[line.rect] == prev.rect
+        let hangs = hangingEntries[line.rect] == prev.rect || hangsUnderMarkerEntry(prev, line)
         // A split row has two starts — the row's and the piece's — and which of them the
         // paragraph stands on is what the split took away. So either will do, and the reading
         // gains a paragraph's lines rather than losing them. The census's 2002-01 page 17 hands

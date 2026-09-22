@@ -1154,6 +1154,24 @@ row-major sort, one entry of each column at a time.
   both were measured under #171 and both released the 9/11 report's flight timelines, the Blue
   Book's contents, the FAA handbook's cruise table and the USGS statistics along with the
   references.
+- A **list the page hangs under an outdented marker column** is one paragraph per entry (#282).
+  Not being a table leaves a reference list read as prose, and prose alone does not say where an
+  entry begins: the ordinary column test allows two lines of one column one and a half bodies and
+  these entries hang further — 1.35 bodies in the Replay Clocks paper, 2.37 in the Census paper —
+  so each wrap opened a paragraph; the hung-entry rule above asks the wrap to stop a body short of
+  the entry's right edge, which a justified reference list never does; and a marker the extractor
+  kept apart stood past the gutter two pieces of one row are joined within, and joined the
+  paragraph *above* it, so page 10 read `… Department of Computer Science, 1988. [8]`. The marker
+  column itself is the evidence, and it is stronger than any measure of one wrap: three or more
+  markers outdented between half a body and three bodies from one edge, each with an entry of at
+  least twelve bodies beside it on its own row, and at least one further line hung on that edge. A
+  page that has set that column has told the reader where every entry begins, so a line standing
+  on the entry edge that opens no entry carries on the one above it, whatever its measure, and the
+  entry beside a marker is that marker's own text. Only a bracketed number is read — `[8]`,
+  `[ 12]` — because the markers `isList` also reads open the numbered items, headings and worked
+  steps this library reads other ways
+  ([column-cuts-and-hung-entries](../measurements/column-cuts-and-hung-entries/record.md),
+  [hung-marker-entries](../measurements/hung-marker-entries/record.md)).
 - The **leading a page states** is the commonest distance between the tops of two vertically
   adjacent lines, set at one size, in one column, to the nearest half point, over the lines its
   crops leave in the prose. At least four such pairs must agree, so a page too bare to say

@@ -760,3 +760,89 @@ func aBulletSetAColumnAwayFromWhatFollowsItStillReadsAsAColumn() {
     #expect(LayoutReconstructor.columnRuns(page(pieceX: 163.5, pieceWidth: 136), bodySize: 10) != nil)
 }
 
+
+/// A reference list the page hangs under an outdented marker column is one paragraph per entry
+/// (#282).
+///
+/// Nothing in the geometry alone says so. The ordinary column test allows one and a half bodies
+/// and these entries hang further — 1.35 bodies in the Replay Clocks paper, 2.37 in the Census
+/// paper — so each wrap opened a paragraph of its own; #160's hung-entry rule asks the wrap to
+/// stop a body short of the entry's right edge, which a justified reference list never does; and
+/// where the extractor kept the marker apart it stood past the gutter two pieces of one row are
+/// joined within, and joined the paragraph *above* it. What states the list is the marker column.
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/282"))
+func aReferenceListHungUnderItsMarkerColumnIsOneParagraphPerEntry() throws {
+    for (name, sha, count) in [("replay-10", "1e8172e4a347bdf6722dacc38755f6fb3299866336b8153f51b2c13f3ac6109a", 12),
+                               ("census-17", "0f97380ae4308581bd70013b7317faafd7c217654236bd31d1448f26eae56905", 14)] {
+        let fixture = try SourceLayoutFixture.load(name)
+        #expect(fixture.sourceSHA256 == sha)
+        var warnings: [ConversionWarning] = []
+        let blocks = LayoutReconstructor.blocks(page: fixture.content(), images: [], vocabulary: [],
+                                                warnings: &warnings)
+        // One block per citation, opening on its own number.
+        let entries = blocks.filter { $0.text.hasPrefix("[") }
+        #expect(entries.count == count, Comment(rawValue: "\(name): \(entries.map { $0.text.prefix(12) })"))
+        for number in 1...count {
+            #expect(entries.contains { $0.text.range(of: "^\\[ ?\(number)\\] ", options: .regularExpression) != nil },
+                    Comment(rawValue: "\(name): [\(number)]"))
+        }
+        // No block is a bare citation number, and none of the entry text stands on its own.
+        #expect(!blocks.contains { $0.text.range(of: "^\\[ ?[0-9]+\\]$", options: .regularExpression) != nil },
+                Comment(rawValue: name))
+    }
+    // Each paper's own worked case. Replay Clocks' entry 11 hangs its wrap 1.70 bodies, which the
+    // column test refuses and which only one entry of the twelve does, so #160's three-on-one-edge
+    // rule never believed it; its entry 4 is broken after `…with physical clocks.` at a row the
+    // extractor split, 5.4 points along that same row.
+    var warnings: [ConversionWarning] = []
+    let replay = LayoutReconstructor.blocks(page: try SourceLayoutFixture.load("replay-10").content(),
+                                            images: [], vocabulary: [], warnings: &warnings)
+    #expect(replay.contains { $0.text.contains("efficient implementation of vector clocks. Inf. Process. Lett., 43(1):47–52, 1992.") })
+    #expect(replay.contains { $0.text.contains("with physical clocks. In Proceedings of the 23rd") })
+    // The Census paper's entry 8 kept its number apart at x 134.81 with the entry at x 156.17,
+    // 2.37 bodies away: the number used to close the paragraph above it.
+    let census = LayoutReconstructor.blocks(page: try SourceLayoutFixture.load("census-17").content(),
+                                            images: [], vocabulary: [], warnings: &warnings)
+    #expect(census.contains { $0.text.hasPrefix("[ 8] Kim, J. J.: A Method for Limiting Disclosure") })
+    #expect(!census.contains { $0.text.hasSuffix("(1969) 1183–1210. [ 7]") })
+}
+
+/// The marker column is what the rule reads, and a page has to set one (#282).
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/282"))
+func aPageStatesItsMarkerColumnOrTheRuleIsSilent() {
+    func line(_ text: String, x: Double, y: Double, width: Double) -> TextLine {
+        TextLine(text: text, rect: CGRect(x: x, y: y, width: width, height: 10), fontSize: 9)
+    }
+    /// A reference list: three outdented numbers, their entries at one edge, one hung wrap.
+    func list(markers: Int, wraps: Bool, indent: Double = 20) -> [TextLine] {
+        var lines: [TextLine] = []
+        var y = 700.0
+        for index in 1...max(markers, 1) {
+            lines.append(line("[\(index)]", x: 100, y: y, width: 9))
+            lines.append(line("An author, a title long enough to fill this column's whole measure,",
+                              x: 100 + indent, y: y, width: 240))
+            y -= 11
+            if wraps {
+                lines.append(line("and the rest of that entry, hung beneath it on the entry's edge.",
+                                  x: 100 + indent, y: y, width: 230))
+                y -= 11
+            }
+        }
+        return lines
+    }
+    #expect(LayoutReconstructor.hangingMarkerList(in: list(markers: 3, wraps: true), body: 9) != nil)
+    // Fewer than three entries state no column: two lines agreeing on an edge agree on nothing.
+    #expect(LayoutReconstructor.hangingMarkerList(in: list(markers: 2, wraps: true), body: 9) == nil)
+    // A column of numbers beside one-line cells hangs nothing, and is a table's business (#210).
+    #expect(LayoutReconstructor.hangingMarkerList(in: list(markers: 4, wraps: false), body: 9) == nil)
+    // And the marker must be outdented by an indent, not by a column's gutter: beyond three
+    // bodies the page has set two columns, which the column and table readers read.
+    #expect(LayoutReconstructor.hangingMarkerList(in: list(markers: 3, wraps: true, indent: 28), body: 9) == nil)
+    // A short cell beside each number is no entry either.
+    let cells = (1...4).flatMap { index in
+        [line("[\(index)]", x: 100, y: 700 - Double(index) * 11, width: 9),
+         line("12.5", x: 120, y: 700 - Double(index) * 11, width: 20)]
+    }
+    #expect(LayoutReconstructor.hangingMarkerList(in: cells, body: 9) == nil)
+}
+

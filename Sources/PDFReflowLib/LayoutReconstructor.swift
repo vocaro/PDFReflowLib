@@ -1032,6 +1032,76 @@ enum LayoutReconstructor {
         return result
     }
 
+    /// The list a page hangs under an outdented marker column, as the lines that open its
+    /// entries and the edge it sets their text on — or nil where the page sets no such list
+    /// (#282).
+    ///
+    /// A reference list is one entry per citation: the number outdented into the margin, the
+    /// entry's own text on the marker's row, and every line the page wraps beneath it standing on
+    /// that text's edge. Nothing in the page's geometry alone says so. The ordinary column test
+    /// allows two lines of one column one and a half bodies, and these entries hang further —
+    /// 1.35 bodies in the Replay Clocks paper, 2.37 in the Census paper — so each wrap opened a
+    /// paragraph of its own. `hangingEntries` (#160) reads a hung wrap from the entry above it,
+    /// but asks that the wrap stop a body short of the entry's right edge, which a *justified*
+    /// reference list never does: both lines reach the margin. And where the extractor kept the
+    /// marker apart, as it does for six of Replay Clocks' twelve entries and eight of the
+    /// Census's fourteen, the number stood 12 to 21 points from its own text, past the gutter two
+    /// pieces of one row are joined within, and joined the paragraph *above* it instead — so page
+    /// 10 read `… Department of Computer Science, 1988. [8]` and opened the next paragraph on
+    /// `D. L. Mills. …`.
+    ///
+    /// What states the list is the marker column itself, which is stronger evidence than any
+    /// measure of one wrap: the page sets three or more markers outdented from one edge, each
+    /// with its entry beside it on its own row, and hangs at least one unmarked line on that
+    /// edge. A page that does that has told the reader where every entry begins, and the lines
+    /// between two markers are one entry whatever their measure.
+    ///
+    /// Only a bracketed number is read here — `[8]`, `[ 12]` — which is what both pages of #282
+    /// print. The marker shapes `isList` already reads (`8.`, `a)`) are deliberately left out:
+    /// they open the numbered items, headings and worked steps this library reads other ways, and
+    /// what they would settle is #171's own reference lists, measured there.
+    static func hangingMarkerList(in lines: [TextLine], body: CGFloat)
+        -> (openings: Set<CGRect>, edge: CGFloat)? {
+        /// The whole of a line, or the token it opens, is `[` a number `]`.
+        func marks(_ text: String, whole: Bool) -> Bool {
+            text.range(of: whole ? #"^\[\s*[0-9]+\s*\]$"# : #"^\[\s*[0-9]+\s*\]\s"#,
+                       options: .regularExpression) != nil
+        }
+        // The markers the extractor kept apart, with the entry each stands beside. The entry has
+        // to be an entry: a line of text, not a cell of a row the page set in two columns.
+        var separated: [(marker: TextLine, entry: TextLine)] = []
+        for line in lines where !line.monospaced && marks(line.text, whole: true) {
+            guard let entry = pieceBeside(line, in: lines),
+                  !entry.monospaced, entry.rect.width >= body * 12 else { continue }
+            let indent = entry.rect.minX - line.rect.minX
+            guard indent >= body * 0.5, indent <= body * 3 else { continue }
+            separated.append((line, entry))
+        }
+        // The edge those entries agree on, and the marker column's own reach from it.
+        var edges: [Int: [(marker: TextLine, entry: TextLine)]] = [:]
+        for pair in separated {
+            edges[Int((pair.entry.rect.minX / max(body, 4) * 4).rounded()), default: []].append(pair)
+        }
+        guard let hung = edges.values.max(by: { $0.count < $1.count }), hung.count >= 2 else { return nil }
+        let edge = hung.map(\.entry.rect.minX).reduce(0, +) / CGFloat(hung.count)
+        // Every marker of that column, including the ones the extractor handed back with their
+        // entry's first words already attached.
+        var openings = Set(hung.map(\.marker.rect))
+        for line in lines where !line.monospaced && marks(line.text, whole: false) {
+            let indent = edge - line.rect.minX
+            if indent >= body * 0.5, indent <= body * 3 { openings.insert(line.rect) }
+        }
+        guard openings.count >= 3 else { return nil }
+        // And the page hangs something on that edge: a line standing there that opens no entry of
+        // its own is a wrap, which is the whole reason this rule exists. A column of one-line
+        // cells beside a column of numbers states no hang and is left to the table readers.
+        let hangs = lines.contains { line in
+            abs(line.rect.minX - edge) <= body * 0.25 && !openings.contains(line.rect)
+                && !hung.contains { $0.entry.rect == line.rect }
+        }
+        return hangs ? (openings, edge) : nil
+    }
+
     /// Where on a page the extractor left the same seam on row after row: the x positions at
     /// which three or more printed rows were split, within a quarter of a body of one another.
     ///
@@ -1368,8 +1438,10 @@ enum LayoutReconstructor {
         for (rect, path) in images where !page.links.isEmpty {
             if let target = linkCovering(rect, links: page.links) { imageLinks[path] = target }
         }
-        // The wrapped second line of each entry the page hangs, read from the lines that still
-        // reflow, as the table rows below are (#160).
+        // The list the page hangs under an outdented marker column, if it sets one (#282), and
+        // the wrapped second line of each entry the page hangs, both read from the lines that
+        // still reflow, as the table rows below are (#160).
+        let markerList = hangingMarkerList(in: lines, body: typography.body)
         var assembler = BlockAssembler(page: page.number, body: typography.body, leading: typography.leading,
                                        hyphens: context.hyphens, imageLinks: imageLinks,
                                        imageDescriptions: tableAssets(images, tables: page.recognizedTables,
@@ -1377,6 +1449,8 @@ enum LayoutReconstructor {
                                        hangingEntries: hangingEntries(in: lines, body: typography.body),
                                        columnSeams: columnSeams(in: lines, body: typography.body,
                                                                 rightToLeft: rightToLeft),
+                                       markerEntries: markerList?.openings ?? [],
+                                       markerEntryEdge: markerList?.edge,
                                        rightToLeft: rightToLeft)
         // A page whose tags never name a heading has not said that its display lines are not
         // headings; it has said only what they contain and in what order. Producers routinely

@@ -352,6 +352,11 @@ struct ReflowBlock: Sendable, Equatable {
     var structureGroup: Int?
     /// Physical PDF page where this block begins; inline markers record later page boundaries.
     var page: Int
+    /// Whether a crop took text the page printed *before* this block, so the page's own text
+    /// does not begin here. Set only on the first block a page reflows, and read by the
+    /// cross-page join, which must not call such a block the continuation of the page before
+    /// ([#267](https://github.com/vocaro/PDFReflowLib/issues/267)).
+    var followsCroppedText = false
 
     var text: String {
         switch content {

@@ -62,7 +62,7 @@ SOFTWARE.
 [author's site](http://wallace.ccfaculty.org/book/book.html),
 [Creative Commons Attribution 3.0 Unported](https://creativecommons.org/licenses/by/3.0/).
 
-`Tests/PDFReflowLibTests/fixtures/algebra-{16,17,23,26,186,281,343,479}-layout.json` contains extracted
+`Tests/PDFReflowLibTests/fixtures/algebra-{16,17,23,26,186,281,343,344,429,430,479}-layout.json` contains extracted
 text, bounding geometry and attributed runs from those physical pages, transformed into test-only
 JSON representations. The `algebra-{186,281,343}-spacing.json` captures beside them hold those
 pages' own content streams and the font metadata the spacing reader consults (subtype, matrix,
@@ -86,7 +86,7 @@ under MIT and are not resources of the shipped library target.
 
 ## Government-document development fixtures
 
-The `faa-{81,91,363…365,437…439,459,511}`, `fed-{13,21,32,45,46,47,48,54,75,77,103,109,123}`, `flag-{7,9,27,30,31}`, `911-{19…26,33,50,51,65…71,117,126,161,254,255,306,451,471…476,526,571,579…585}`, `cdc-5`, `dga-1`, `warren-50`, `warren-910`, `blue-5`, `blue-12`, `usda-9`, `usgs-{1,2}`, `nbs-7`, `p596-{24…27}`, `loper-{2,7,13,60}`, `earthdata-{16…18}` and `noaa-{33,80,139,1050…1056,1619}` layout JSONs under the test fixtures
+The `faa-{81,91,363…365,437…439,459,511}`, `fed-{13,21,32,45,46,47,48,54,75,77,103,104,109,123}`, `flag-{7,9,27,30,31}`, `911-{19…26,33,50,51,65…71,117,126,161,254,255,306,373,374,451,471…476,526,571,579…585}`, `cdc-5`, `dga-1`, `warren-50`, `warren-910`, `blue-5`, `blue-12`, `usda-9`, `usgs-{1,2}`, `nbs-7`, `p596-{24…27}`, `loper-{2,7,13,60}`, `earthdata-{16…18}` and `noaa-{33,80,139,1050…1056,1619}` layout JSONs under the test fixtures
 contain extracted text and geometry from the corresponding U.S. government corpus documents.
 The `loper` captures are text derivatives of a Supreme Court slip opinion, a U.S. government work.
 The `earthdata` captures are text derivatives of agency-authored slide text, within the owner's

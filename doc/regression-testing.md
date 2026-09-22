@@ -37,7 +37,7 @@ What the individual gates check:
   concurrency test overlaps four conversions and one canceled conversion, checking ownership,
   styles, images, monotonic progress and staging cleanup. For iOS:
   `xcodebuild test -scheme PDFReflowLib-Package -destination 'platform=iOS Simulator,name=iPhone 18 Pro' CODE_SIGNING_ALLOWED=NO`.
-- `python3 -m unittest discover -s tools -p 'test_*.py' -v`: <!-- counts:python-tests -->231 Python tests<!-- counts:end --> over the tools,
+- `python3 -m unittest discover -s tools -p 'test_*.py' -v`: <!-- counts:python-tests -->240 Python tests<!-- counts:end --> over the tools,
   including the checker's negative controls, the identity tool, the memory-gate instrumentation
   (real child allocations above and below a ceiling, source verification, isolation from an
   earlier child's high-water mark, and each host-pressure outcome with its settle-and-retry),
@@ -71,6 +71,19 @@ What the individual gates check:
   blind spot — an issue closed after its capture date — is printed on every run with the
   snapshot's age, and the first citation of an issue newer than the snapshot fails until it is
   refreshed.
+- `tools/check_closing_commits.py`: no merge may close an issue without bringing the fix
+  ([decision 0012](decisions/0012-an-issue-is-closed-by-what-main-holds.md)). A merge whose tree
+  equals its first parent's tree contributes nothing, whatever its parents say; every commit it
+  introduces is recorded as merged and is absent from the tree, and an issue whose every `Closes`
+  sits in that set is closed by nothing. That is how 124 issues came to report fixes this library
+  has never had, and how two sessions were lost building on one (#231). Such a merge fails here
+  unless the gate's `RECORDED` table names it and says where its orphaned closures are reconciled;
+  a merge that brings no content but strands no closure — closing out a branch already landed — is
+  a note, not a failure, and an entry no such merge answers for fails so the table cannot outlive
+  the history. It reads git and nothing else, so it needs no network and no list that grows with
+  the defect; `--list` prints the stranded issues with the commit that closes each and its state in
+  `doc/issue-states.json`. What it cannot see is an issue closed by hand on GitHub against a branch
+  commit, which is prose, not a gate.
 - `tools/check_measurements.py`: no raw capture and at most two megabytes added under
   `measurements/` relative to the base branch ([decision 0006](decisions/0006-measurements-are-records.md)).
 - `tools/check_documented_builds.py`: compiles every probe under `tools/probes/` from the source

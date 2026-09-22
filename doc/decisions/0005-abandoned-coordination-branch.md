@@ -69,6 +69,12 @@ branch's general bold/italic font machinery, replaced by the narrow glyph reader
 Test files that carried the porting narrative were rewritten to a sentence each when the suite
 was reorganized by unit; issue linkage is a `.bug()` trait on the tests.
 
+The closing convention this session set — close the issue, cite the branch commit — is replaced by
+[0012](0012-an-issue-is-closed-by-what-main-holds.md). Reading all 124 of those issues against
+`main` for #231 found 113 closed with the defect intact; each now carries a comment naming the
+branch commit that holds its fix. What is written above is what was decided on 2026-09-19 and is
+left as it was.
+
 ## Evidence
 
 Commits `1b0308b`, `dd160b4` and the porting commits above; the corpus contract's `basis` for

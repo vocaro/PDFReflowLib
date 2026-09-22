@@ -130,6 +130,8 @@ background documented-builds python3 tools/check_documented_builds.py
 background doc-counts python3 tools/update_doc_counts.py --check --swift-list
 # No network: the issue states are the checked-in snapshot doc/issue-states.json (#234).
 background issue-citations python3 tools/check_issue_citations.py
+# Reads git alone: no merge may close an issue without bringing the fix (#231, decision 0012).
+background closing-commits python3 tools/check_closing_commits.py
 background fixture-epubs python3 tools/check_epubs.py --converter "$BINARY_DIR/pdf-reflow" \
     --output "$WORK/epubs" ${EPUBCHECK[@]+"${EPUBCHECK[@]}"}
 background conversion-policies python3 tools/check_conversion_policies.py --converter "$BINARY_DIR/pdf-reflow" \

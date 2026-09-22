@@ -998,8 +998,14 @@
     [
       47.130004999999997,
       395.29638699999998,
-      313.71511800000002,
+      155.12599499999999,
       111.84359699999999
+    ],
+    [
+      206.96101400000001,
+      396.57067899999998,
+      153.884109,
+      110.56929000000002
     ]
   ],
   "lines" : [
@@ -1042,10 +1048,21 @@
       "rect" : [
         44.700000000000003,
         526.00270000000012,
-        194.1379,
+        38.368549999999985,
         9.88900000000001
       ],
-      "text" : "(AA 77) (UA 93)"
+      "text" : "(AA 77)"
+    },
+    {
+      "fontSize" : 11,
+      "monospaced" : false,
+      "rect" : [
+        201.43790000000001,
+        526.00270000000012,
+        37.399999999999977,
+        9.88900000000001
+      ],
+      "text" : "(UA 93)"
     },
     {
       "fontSize" : 10.25,
@@ -1643,7 +1660,22 @@
     }
   ],
   "page" : 51,
+  "pictures" : [
+    [
+      47.130004999999997,
+      395.29638699999998,
+      155.12599499999999,
+      111.84359699999999
+    ],
+    [
+      206.96101400000001,
+      396.57067899999998,
+      153.884109,
+      110.56929000000002
+    ]
+  ],
   "rightsBasis" : "Official U.S. Government commission report, retained as external development material. Source PDF is not bundled or relicensed under MIT.",
+  "schemaVersion" : 2,
   "sourceSHA256" : "657d41475eb3a9a5e3e87a6c7c51ac1dfbe1af7566d1abff7bf7286e7e1c0e1b",
   "sourceTitle" : "The 9/11 Commission Report",
   "sourceURL" : "https://www.govinfo.gov/content/pkg/GPO-911REPORT/pdf/GPO-911REPORT.pdf"

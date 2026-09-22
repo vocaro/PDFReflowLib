@@ -403,3 +403,106 @@ func aNumberSetAgainstAWordClosesAtATighterGapThanTheRuleWants() {
     #expect(EnglishText.openingWord("xy") == nil)
     #expect(EnglishText.openingWord("") == nil)
 }
+
+// MARK: - One number the page draws in two shows (#274)
+
+/// Two shows of one font on one baseline, the first ending in a digit and the second opening with
+/// one, at the gap and the font's own space width, in em, of the 10-point type FAA page 416 sets.
+private func closesNumber(gap: CGFloat, space: CGFloat? = 0.25, left: String = "2", right: String = "5",
+                          size: CGFloat = 10, rightSize: CGFloat = 10, rightFont: Int = 1,
+                          raise: CGFloat = 0) -> Bool {
+    let end: CGFloat = 551.64, x = end + gap * max(size, rightSize)
+    let previous = NativeSpacingReader.Evidence(origin: CGPoint(x: 501, y: 359.57), unicode: left, end: end,
+                                                size: size, font: 1, spaceWidth: space)
+    let show = NativeSpacingReader.Evidence(origin: CGPoint(x: x, y: 359.57 + raise), unicode: right,
+                                            end: x + 5, size: rightSize, font: rightFont, spaceWidth: space)
+    return NativeSpacingReader.closesNumber(previous, show, end: end)
+}
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/274"))
+func aNumberDrawnInTwoShowsClosesOnlyBelowTheSpaceItsOwnFontDraws() {
+    // FAA page 416's own measurement: 1.34 pt over a 10-point size against a 0.25 em space.
+    #expect(closesNumber(gap: 0.134))
+    // The space the page draws is the threshold, read from either side of it.
+    #expect(closesNumber(gap: 0.249))
+    #expect(!closesNumber(gap: 0.25))
+    #expect(!closesNumber(gap: 0.3))
+    // The next digit-to-digit boundary the corpus draws, FAA page 458's chart columns at 0.787 em
+    // over a 0.218 em space, is a column gap and stays one.
+    #expect(!closesNumber(gap: 0.787, space: 0.218))
+    // Shows that touch or overlap state no gap to measure and are not this defect.
+    #expect(!closesNumber(gap: 0))
+    #expect(!closesNumber(gap: -0.05))
+    // A font that states no space, or states none wider than nothing, states nothing here: that is
+    // every TeX font of Wallace's algebra, which draws no space glyph at all.
+    #expect(!closesNumber(gap: 0.134, space: nil))
+    #expect(!closesNumber(gap: 0.134, space: 0))
+    // Only two digits close. A number against a word, or a word against a number, is what #120's
+    // font-change rule weighs, and the mirror rule must never reach it.
+    #expect(!closesNumber(gap: 0.134, left: "5", right: "q"))
+    #expect(!closesNumber(gap: 0.134, left: "q", right: "5"))
+    #expect(!closesNumber(gap: 0.134, left: "r", right: "e"))
+    #expect(!closesNumber(gap: 0.134, left: ".", right: "2"))
+    #expect(!closesNumber(gap: 0.134, left: "2", right: "."))
+    #expect(!closesNumber(gap: 0.134, left: ",", right: "M"))
+    // A font change, a size change or another baseline is another kind of boundary, not this one.
+    #expect(!closesNumber(gap: 0.134, rightFont: 2))
+    #expect(!closesNumber(gap: 0.134, rightSize: 8))
+    #expect(!closesNumber(gap: 0.134, raise: 2))
+    // Within a tenth of the size is one baseline still, and a rounding of the size is one size.
+    #expect(closesNumber(gap: 0.134, raise: 0.9))
+    #expect(closesNumber(gap: 0.134, rightSize: 9.95))
+}
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/274"))
+func aClosedSpaceIsRemovedOnlyWhereTheShowsSpellTheWholeLine() {
+    // The page carries the cursor from cell to cell with runs of space glyphs and PDFKit reports
+    // one space for a run, so on such a row the source draws whitespace the extraction does not.
+    // Ownership for a removal is therefore whole-line and blind to whitespace on both sides.
+    let source = Array("MH     Under 50         25".utf16)
+    let extracted = Array("MH Under 50 2 5".utf16)
+    #expect(NativeSpacingReader.closedSpaces(in: extracted, source: source, closures: [25]) == [13])
+    // The segmented walk cannot own this line at all: the longest anchor between the two readings
+    // is the nine characters of `Under 50 `, against an anchor length of twelve.
+    #expect(NativeSpacingReader.resynchronize(source: source, at: 3, extracted: extracted, at: 3) == nil)
+    // A closure the shows do not place, or a line they do not spell, removes nothing.
+    #expect(NativeSpacingReader.closedSpaces(in: extracted, source: source, closures: []).isEmpty)
+    #expect(NativeSpacingReader.closedSpaces(in: extracted, source: source, closures: [24]).isEmpty)
+    #expect(NativeSpacingReader.closedSpaces(in: Array("MH Under 50 2 51".utf16), source: source, closures: [25]).isEmpty)
+    #expect(NativeSpacingReader.closedSpaces(in: Array("MH Under 5O 2 5".utf16), source: source, closures: [25]).isEmpty)
+    #expect(NativeSpacingReader.closedSpaces(in: Array("MH Under 50 25".utf16), source: source, closures: [25]).isEmpty)
+    // Two spaces where the page draws none is not one space PDFKit inserted, and is left alone.
+    #expect(NativeSpacingReader.closedSpaces(in: Array("MH Under 50 2  5".utf16), source: source, closures: [25]).isEmpty)
+    // The source must draw the two characters against each other: whitespace of its own beside the
+    // closure means the space PDFKit read is the page's.
+    #expect(NativeSpacingReader.closedSpaces(in: extracted, source: Array("MH     Under 50         2 5".utf16),
+                                             closures: [26]).isEmpty)
+}
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/274"))
+func sourceTableRowWhoseNumberIsDrawnInTwoShowsReadsItAsOneNumber() throws {
+    // FAA page 416's NDB service-volume table sets the `MH` row's `25` as `(       2)Tj` and
+    // `(5)Tj`, the second 1.34 points past the first's last glyph over a 10-point size, and PDFKit
+    // reads a space there. Every other row of the same table is one show per cell and already
+    // reads correctly; the page's other 91 lines come back exactly as PDFKit read them.
+    #expect(try changedLines(spacing: "faa-416", layout: "faa-416") == [
+        "MH Under 50 2 5": "MH Under 50 25",
+    ])
+}
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/274"))
+func sourceAlgebraPagesKeepEveryNumberTheySetSideBySide() throws {
+    // #119's standing control, held against the mirror rule. Wallace's TeX fonts state no width for
+    // the space character, or state zero, so no boundary of this book can close: the quadratic
+    // formula's own kerns, the worked examples that set one number against another, and the
+    // `8cubic` and `3and` font changes the rules already admit all read exactly as they did.
+    #expect(try changedLines(spacing: "algebra-343", layout: "algebra-343").isEmpty)
+    #expect(try changedLines(spacing: "algebra-281", layout: "algebra-281") == [
+        "Convert 8cubic feet to yd3 Write 8ft3 as fraction, put it over 1":
+            "Convert 8 cubic feet to yd3 Write 8ft3 as fraction, put it over 1"])
+    #expect(try changedLines(spacing: "algebra-186", layout: "algebra-186") == [
+        "2 Move 3and b to denominator because of negative exponents":
+            "2 Move 3 and b to denominator because of negative exponents",
+        "Move 2with negative exponent down and z0 =1": "Move 2 with negative exponent down and z0 =1",
+    ])
+}

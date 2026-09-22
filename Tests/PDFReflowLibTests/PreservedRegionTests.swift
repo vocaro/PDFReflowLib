@@ -455,7 +455,9 @@ func aSentenceACropCannotCutAroundStaysInTheProse() {
 /// each a column-header row beside the rule the page paints in its margin, a second header row
 /// over the stub column of evaluations, and rows of cells in two column groups. Every row begins
 /// a piece on the same edges, and the header rows print one label once per column.
-private func columnHeaderPage() -> PageContent {
+private func columnHeaderPage(
+    header: String = "Number Per Cent Number Per Cent Nuntler Per Cent Number Per Celt"
+) -> PageContent {
     var page = PageContent(number: 203, bounds: CGRect(x: 0, y: 0, width: 612, height: 792),
                            lines: [], graphics: [CGRect(x: 200, y: 344, width: 162, height: 22)])
     page.pictures = page.graphics
@@ -466,7 +468,7 @@ private func columnHeaderPage() -> PageContent {
     for table in 0..<3 {
         let top = CGFloat(680 - table * 170)
         lines.append(TextLine(text: "I", rect: CGRect(x: 84, y: top, width: 3, height: 6), fontSize: 6))
-        lines.append(TextLine(text: "Number Per Cent Number Per Cent Nuntler Per Cent Number Per Celt",
+        lines.append(TextLine(text: header,
                               rect: CGRect(x: 144, y: top, width: 372, height: 6), fontSize: 6))
         lines.append(TextLine(text: "Evaluation",
                               rect: CGRect(x: 94, y: top - 8, width: 19, height: 6), fontSize: 6))
@@ -533,6 +535,81 @@ func aColumnHeaderPrintsOneLabelUnderEachColumn() {
     // The nearest miss the corpus holds: a worked exercise in Wallace's algebra, three repeated
     // words in four where a header needs four in five.
     #expect(!TableRegionDetector.printsOneColumnLabel("10 lbs of nuts and 20 lbs of chocolate"))
+}
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/262"),
+      .bug("https://github.com/vocaro/PDFReflowLib/issues/257"))
+func aColumnLabelTheRecognizerSplitOrJoinedIsOneLabelStill() {
+    // The two headers #257 could not read, as the report's inherited layer spells them: page 151
+    // broke `Number` into `lt` and `mber` and closed `Per Cent` up into `Percent`, and page 241
+    // closed it up into `PerCeat`. Word for word neither has a counterpart to be near; read as
+    // the label's letters in order, with the spaces the recognizer moved taken out, both are
+    // `Number Per Cent` twice (#262).
+    #expect(TableRegionDetector.printsOneColumnLabel("! lt>mber Per Cent Number Percent"))
+    #expect(TableRegionDetector.printsOneColumnLabel("I Number Per Cent Number PerCeat"))
+    // The same spoiling elsewhere in the book, which the word reading also missed.
+    #expect(TableRegionDetector.printsOneColumnLabel("! r.imber Per Cent Number Per Cent"))
+    #expect(TableRegionDetector.printsOneColumnLabel("Number Percent Nuoi>er Percent"))
+    #expect(TableRegionDetector.printsOneColumnLabel("Co\"\"t Variable Total Const Variable Total"))
+    // Everything #257 read is read still.
+    #expect(TableRegionDetector.printsOneColumnLabel(
+        "Number Per Cent Number Per Cent Nuntler Per Cent Number Per Celt"))
+    #expect(TableRegionDetector.printsOneColumnLabel(
+        "Certain Doubtful Total Certain Doubtful Total ertain Ooubtfut Total Certain Doubtful Total"))
+    #expect(TableRegionDetector.printsOneColumnLabel("-Variable Total Const Variable Total"))
+    // The five lines #255 was landed for — two sentences of the report's own prose and three
+    // figure titles — are none of them a repeated label, letters or words.
+    for released in ["I All of the above calculations were made with IBM equipment. Sines,",
+                     "I Having found the angle ZS, the bearing of the sun ( angle B} was ob",
+                     "FIGURE 2 DISTRIBUTION OF EVALUATIONS OF OBJECT,",
+                     "UNIT, AND ALL SIGHTINGS FOR ALL YEARS I",
+                     "FIGURE 8 DISTRIBUTION OF OBJECT SIGHTINGS BY SIGHTING"] {
+        #expect(!TableRegionDetector.printsOneColumnLabel(released), Comment(rawValue: released))
+    }
+    // Nor is the magazine's prose, whose columns give every row of it a table's shape, nor the
+    // nearest miss in Wallace's algebra.
+    for prose in ["A strong alliance has long existed between USDA and DOD",
+                  "tween USDA and DOD as far back as",
+                  "interrupt malaria transmission in the South",
+                  "Human factors science, or human factors technologies,",
+                  "the miniature aircraft up or down to align the miniature aircraft with",
+                  "10 lbs of nuts and 20 lbs of chocolate"] {
+        #expect(!TableRegionDetector.printsOneColumnLabel(prose), Comment(rawValue: prose))
+    }
+    // Dropping the printed spaces is what reads the spoiled label, and it is also what would let
+    // arithmetic in. A label is written in words: a line holding a group that is only figures is
+    // the table's own data or an equation, whatever its letters repeat. The IRS publication's
+    // earned-income tables and Wallace's exercises are full of both.
+    for figures in ["0 0 0 200", "0 1,192 3,019 3,913", "1,050 1,100", "3r + 6+ 3r =30",
+                    "13)r2 + 3r + 2", "5) (1− 7n)(1+ 7n)"] {
+        #expect(!TableRegionDetector.printsOneColumnLabel(figures), Comment(rawValue: figures))
+    }
+}
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/262"))
+func aCropKeepsAColumnHeaderTheRecognizerSpoiledTheRepetitionOf() {
+    // Page 151's table, set as page 203's is, with page 151's own header over it.
+    let page = columnHeaderPage(header: "! lt>mber Per Cent Number Percent")
+    let body = max(4, LayoutReconstructor.bodySize(page.lines))
+    let headers = TableRegionDetector.columnHeaders(in: page, body: body)
+    let header = page.lines.first { $0.text.hasPrefix("! lt>mber") }!
+    // Every token reads as a word, so #255's test releases it into the prose beside the picture
+    // of its own table.
+    #expect(LayoutReconstructor.readsAsSentence(header))
+    #expect(LayoutReconstructor.releasesProse(header, language: "en"))
+    // Read as the label of its columns it is never released, and the crop over the lowest table
+    // takes its header back.
+    #expect(headers.contains(header.rect))
+    #expect(!LayoutReconstructor.releasesProse(header, language: "en", columnHeaders: headers))
+    let lowest = page.lines.last { $0.text.hasPrefix("! lt>mber") }!
+    let crops = LayoutReconstructor.graphicsWithLabels(page)
+    #expect(crops.contains { LayoutReconstructor.takes($0, lowest) },
+            "the table's own column header belongs to the picture of its table")
+    var warnings: [ConversionWarning] = []
+    let blocks = LayoutReconstructor.blocks(page: page, images: crops.map { ($0, "image-1") },
+                                            vocabulary: [], warnings: &warnings)
+    #expect(blocks.count(where: { $0.text.contains("lt>mber Per Cent") }) == 2,
+            Comment(rawValue: blocks.map(\.text).joined(separator: " | ")))
 }
 
 @Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/257"),

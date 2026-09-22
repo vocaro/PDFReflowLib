@@ -106,6 +106,30 @@ differ in raw identifiers are summarized in `idOnlyShifts`. Neither summary fail
 before-and-after numbers are in
 [measurements/comparison-generated-ids](../measurements/comparison-generated-ids/record.md).
 
+A difference between two binaries is the change's doing only where one binary does not produce
+it on its own, and converting twice with one binary is not a no-op. Vision's reading of a page
+differs between two runs on one host, from one unchanged binary: `census-rrs2002-01` reads page 4
+as joined prose in one run and as the recognition's own line fragments in the next, and
+`cdc-zombie-pandemic-2011` loses page 7's recognition entirely to the page image, taking the
+nineteen navigation entries built from its headings with it. This is not #173's variance across
+binaries — the binary, its path, the source and the options are identical between these two runs —
+and #269 and #281 record what it does to one gated case. So `--control` takes a third evaluation —
+a second run of the **baseline's own** converter, captured the same way — and every page, image
+and report field that run also moves is reported as `unstablePages`, `unstableImages` and
+`unstableReportFields` instead of as the candidate's. What is left is `attributedPages`,
+`attributedImages` and `attributedReportFields`, and those alone decide the run:
+
+```sh
+python3 tools/compare_conversion_runs.py --baseline /tmp/dga-baseline \
+  --candidate /tmp/dga-candidate --control /tmp/dga-baseline-again --output /tmp/dga-drift.json
+```
+
+A control whose `converterSHA256` is not the baseline's is refused, because a control built from
+another tree measures that tree's difference and would charge it to the host. An unstable page may
+still hold a real change; the comparison says it cannot tell rather than guessing, and a book whose
+pages are unstable needs the reading pinned another way. Without `--control` nothing is attributed
+and the verdict is what it always was.
+
 The evaluator records a fresh run ID, converter and probe executable SHA-256, source identity,
 system/build/architecture, probe result SHA-256, and EPUB SHA-256. The probe reports its own
 executable/source/run identities, packed raster pixels without alignment padding, dimensions,

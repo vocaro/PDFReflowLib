@@ -19,6 +19,17 @@ bytes: unmatched bytes are `changedImages`, and byte-identical assets that only 
 are summarized in `imageRenames`. Pages that agree once normalized but differ in raw
 identifiers are summarized in `idOnlyShifts`; both summaries are informational and neither
 fails a run. `--detail` lists them.
+
+A difference between two binaries is only the change's doing where one binary does not produce
+it on its own. Converting twice with one binary is not a no-op: Vision's reading of a page
+differs from run to run on the same host, and `census-rrs2002-01` and `cdc-zombie-pandemic-2011`
+lose whole paragraphs of body prose to it, one of them falling back to the page image and taking
+nineteen navigation entries with it (#284, #173). So `--control` takes a second evaluation of the
+*baseline's own* converter, and every page, image and report field the control also moves is
+reported as `unstable` rather than as the candidate's. What remains is `attributedPages`,
+`attributedImages` and `attributedReportFields`, and those alone decide the run. Without a
+control the tool behaves exactly as it did: every difference is reported, and none of it is
+attributed to anything.
 """
 import argparse
 import hashlib
@@ -172,14 +183,32 @@ def compare_pages(left, right):
     return changed, fields, shifts
 
 
-def compare(baseline, candidate, detail=False):
+def report_fields(left, right):
+    """Conversion-report keys the two receipts disagree on, `outputURL` excepted."""
+    reports = [{k: v for k, v in receipt['conversionReport'].items() if k != 'outputURL'}
+               for receipt in (left, right)]
+    return sorted(k for k in reports[0].keys() | reports[1].keys()
+                  if k not in reports[0] or k not in reports[1] or reports[0][k] != reports[1][k])
+
+
+def compare(baseline, candidate, detail=False, control=None):
     left = json.loads((baseline / 'result.json').read_text())
     right = json.loads((candidate / 'result.json').read_text())
     errors = compatible_receipts(left, right)
     result = {'passed': False, 'provenanceErrors': errors}
+    inspected = [('baseline', baseline, left), ('candidate', candidate, right)]
+    if control is not None:
+        middle = json.loads((control / 'result.json').read_text())
+        errors.extend(f'control {error}' for error in compatible_receipts(left, middle))
+        # A control is a second run of the binary it controls. One built from another tree
+        # measures that tree's difference as well, and would attribute it to the host.
+        if middle.get('converterSHA256') != left.get('converterSHA256'):
+            errors.append('control converterSHA256 differs from baseline; '
+                          'a control run must use the baseline converter')
+        inspected.append(('control', control, middle))
     if errors:
         return result
-    for label, directory, receipt in [('baseline', baseline, left), ('candidate', candidate, right)]:
+    for label, directory, receipt in inspected:
         try:
             errors.extend(f'{label} {error}' for error in artifact_errors(directory, receipt))
         except (OSError, ValueError, TypeError, KeyError) as error:
@@ -191,10 +220,7 @@ def compare(baseline, candidate, detail=False):
     changed_pages, changed_fields, shifts = compare_pages(*runs)
     changed_images, renames = compare_images(*runs)
     markers_equal = runs[0].markers == runs[1].markers
-    reports = [{k: v for k, v in receipt['conversionReport'].items() if k != 'outputURL'}
-               for receipt in (left, right)]
-    report_fields = sorted(k for k in reports[0].keys() | reports[1].keys()
-                           if k not in reports[0] or k not in reports[1] or reports[0][k] != reports[1][k])
+    changed_report_fields = report_fields(left, right)
     field_counts = {}
     for shifted in shifts.values():
         for field in shifted:
@@ -211,13 +237,39 @@ def compare(baseline, candidate, detail=False):
         'candidateConverterSHA256': right['converterSHA256'],
         'changedPages': changed_pages, 'changedPageFields': changed_fields,
         'changedImages': changed_images,
-        'pageMarkersEqual': markers_equal, 'changedReportFields': report_fields,
+        'pageMarkersEqual': markers_equal, 'changedReportFields': changed_report_fields,
         'idOnlyShifts': id_shifts, 'imageRenames': image_renames,
         'scope': ('Per page: text, paragraphs and their page-break continuity, headings, scripted spans and '
                   'image bytes, with generated identifiers (paragraph ordinals, image asset names) normalized; '
                   'page markers; image assets by bytes; conversion report. Not CSS, package metadata, decoded '
                   'image equivalence or a fidelity qualification.'),
-        'passed': not (changed_pages or changed_images or report_fields) and markers_equal,
+    })
+    if control is None:
+        result['passed'] = not (changed_pages or changed_images or changed_report_fields) and markers_equal
+        return result
+    # What the baseline's own binary does to the same book on a second run. Whatever it moves,
+    # this comparison cannot say the candidate moved (#284).
+    middle = json.loads((control / 'result.json').read_text())
+    spare = Evaluation(control / (left['case']['id'] + '.epub'))
+    unstable_pages, _, _ = compare_pages(runs[0], spare)
+    unstable_images, _ = compare_images(runs[0], spare)
+    unstable_report = report_fields(left, middle)
+    unstable_markers = runs[0].markers != spare.markers
+    attributed_pages = [page for page in changed_pages if page not in set(unstable_pages)]
+    attributed_images = [name for name in changed_images if name not in set(unstable_images)]
+    attributed_report = [name for name in changed_report_fields if name not in set(unstable_report)]
+    result.update({
+        'controlConverterSHA256': middle['converterSHA256'],
+        'unstablePages': unstable_pages, 'unstableImages': unstable_images,
+        'unstableReportFields': unstable_report, 'unstablePageMarkers': unstable_markers,
+        'attributedPages': attributed_pages, 'attributedImages': attributed_images,
+        'attributedReportFields': attributed_report,
+        'controlScope': ('A second evaluation of the baseline converter. Every page, image and report field it '
+                         'moves on its own is unstable between runs and is not attributed to the candidate; the '
+                         'run is decided by what remains. A page listed as unstable may still hold a real '
+                         'change: this run cannot tell, and says so rather than guessing.'),
+        'passed': not (attributed_pages or attributed_images or attributed_report)
+                  and (markers_equal or unstable_markers),
     })
     return result
 
@@ -227,11 +279,14 @@ def main():
     parser.add_argument('--baseline', required=True, type=Path)
     parser.add_argument('--candidate', required=True, type=Path)
     parser.add_argument('--output', required=True, type=Path)
+    parser.add_argument('--control', type=Path,
+                        help='a second evaluation of the BASELINE converter; differences it also produces are '
+                             'reported as unstable between runs and are not attributed to the candidate (#284)')
     parser.add_argument('--detail', action='store_true',
                         help='list each page that shifted only in generated ids, and each image rename')
     args = parser.parse_args()
     try:
-        result = compare(args.baseline, args.candidate, args.detail)
+        result = compare(args.baseline, args.candidate, args.detail, args.control)
     except Exception as error:
         result = {'passed': False, 'inspectionError': str(error)}
     args.output.write_text(json.dumps(result, indent=2) + '\n')

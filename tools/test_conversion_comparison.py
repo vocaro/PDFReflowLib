@@ -178,6 +178,77 @@ class ConversionComparisonTests(unittest.TestCase):
         self.assertFalse(result['passed'])
         self.assertEqual(result['changedReportFields'], ['newField'])
 
+    # A difference between two binaries is the change's doing only where one binary does not
+    # produce it on its own. Converting twice with one binary is not a no-op: Vision's reading
+    # of a page differs from run to run on the same host, and two corpus books lose whole
+    # paragraphs of body prose to it (#284). `--control` is a second evaluation of the
+    # baseline's own converter, and what it moves is not the candidate's.
+
+    def test_a_difference_the_baselines_own_binary_also_makes_is_not_the_candidates(self):
+        left = self.evaluation('left')
+        control = self.evaluation('control-run', body='<p>Recognized differently</p>')
+        candidate = copy.deepcopy(self.receipt)
+        candidate['converterSHA256'] = '1' * 64
+        right = self.evaluation('right', body='<p>Recognized differently</p>', receipt=candidate)
+        result = compare(left, right, control=control)
+        # The page differs between the two binaries, and it differs between two runs of one.
+        self.assertEqual(result['changedPages'], [1])
+        self.assertEqual(result['unstablePages'], [1])
+        self.assertEqual(result['attributedPages'], [])
+        self.assertTrue(result['passed'])
+        self.assertEqual(result['controlConverterSHA256'], 'c' * 64)
+
+    def test_a_difference_only_the_candidate_makes_is_still_attributed_to_it(self):
+        left = self.evaluation('left')
+        control = self.evaluation('control-run')
+        candidate = copy.deepcopy(self.receipt)
+        candidate['converterSHA256'] = '1' * 64
+        right = self.evaluation('right', body='<p>Changed text</p>', receipt=candidate)
+        result = compare(left, right, control=control)
+        self.assertEqual(result['attributedPages'], [1])
+        self.assertEqual(result['unstablePages'], [])
+        self.assertFalse(result['passed'])
+
+    def test_unstable_images_and_report_fields_are_separated_the_same_way(self):
+        left = self.evaluation('left')
+        unstable = copy.deepcopy(self.receipt)
+        unstable['conversionReport']['recognizedPageCount'] = 0
+        control = self.evaluation('control-run', image=b'other pixels', receipt=unstable)
+        candidate = copy.deepcopy(unstable)
+        candidate['converterSHA256'] = '1' * 64
+        right = self.evaluation('right', image=b'other pixels', receipt=candidate)
+        result = compare(left, right, control=control)
+        self.assertEqual(result['unstableImages'], ['EPUB/images/image-1.png'])
+        self.assertEqual(result['attributedImages'], [])
+        self.assertEqual(result['unstableReportFields'], ['recognizedPageCount'])
+        self.assertEqual(result['attributedReportFields'], [])
+        self.assertTrue(result['passed'])
+
+    def test_a_control_built_from_another_binary_is_refused(self):
+        other = copy.deepcopy(self.receipt)
+        other['converterSHA256'] = '2' * 64
+        result = compare(self.evaluation('left'), self.evaluation('right'),
+                         control=self.evaluation('control-run', receipt=other))
+        self.assertFalse(result['passed'])
+        self.assertIn('control converterSHA256 differs from baseline; '
+                      'a control run must use the baseline converter', result['provenanceErrors'])
+        self.assertNotIn('changedPages', result)
+
+    def test_an_incomparable_control_refuses_the_comparison(self):
+        other = copy.deepcopy(self.receipt)
+        other['machine'] = 'x86_64'
+        result = compare(self.evaluation('left'), self.evaluation('right'),
+                         control=self.evaluation('control-run', receipt=other))
+        self.assertFalse(result['passed'])
+        self.assertIn('control machine differs', result['provenanceErrors'])
+
+    def test_without_a_control_nothing_is_attributed_and_the_verdict_is_unchanged(self):
+        left = self.evaluation('left')
+        result = compare(left, self.evaluation('right', body='<p>Changed text</p>'))
+        self.assertFalse(result['passed'])
+        for key in ('unstablePages', 'attributedPages', 'controlConverterSHA256'):
+            self.assertNotIn(key, result)
+        self.assertTrue(compare(left, self.evaluation('same'))['passed'])
 
 def page_bounds(chapter, number):
     """Where one source page's markup starts and the next page's marker begins."""

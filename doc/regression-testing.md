@@ -162,6 +162,9 @@ pressure that is inside its ceiling neither fails the gate nor passes it: the ga
 the case is reported as `UNMEASURED` with exit 3 rather than as a failure
 ([decision 0009](decisions/0009-an-unmeasured-ceiling-is-not-a-failure.md),
 [memory testing](memory-testing.md)). A peak above its ceiling fails whatever the host was doing.
+A regression smaller than a heavy-OCR book's run-to-run spread, 50–135 MiB, is invisible to the
+gate whatever it measures; that is its stated limit ([memory testing](memory-testing.md)), not a
+defect it carries.
 Every current ceiling together totals 7.5 GiB. Serial and six-job runs on one commit agree on
 every case under `tools/compare_conversion_runs.py` and in their content assessments; in
 parallel, peak RSS reads 1–13% higher, not lower, and conversion times include contention

@@ -27,6 +27,14 @@ machine that stays loaded costs one conversion, not several. Every attempt is ke
 `conversionAttempts` and in `memory-samples-N.json`. None of this makes a busy machine a fit
 place to measure memory: build other projects elsewhere, or afterwards.
 
+What the gate cannot see is stated here rather than carried as a defect. A heavy-OCR book's peak
+RSS moves 50–135 MiB between two runs of one binary on one host, because which pages the
+recognizer retries, and what Vision holds for them, differs from run to run (#173). A regression
+smaller than that spread is invisible to this gate whatever it measures — peak RSS today, or the
+footprint high-water mark should the ceilings move onto it (#244) — and the ceilings are set with
+that in mind: they catch a return to the measured multi-gigabyte behaviour, not a creep of a few
+per cent. The owner accepted this as the gate's limit on 2026-09-23 (#244).
+
 `corpus/manifest.json` supplies each document's default ceiling. The FAA handbook's initial
 macOS arm64 ceiling is **1,280 MiB peak RSS**. This prevents a return to the measured multi-GB
 behavior; it is not a mobile shipping budget. OS/framework versions, hardware and release/debug

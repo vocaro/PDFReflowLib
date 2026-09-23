@@ -73,6 +73,7 @@ ALLOWED = {
     245: ('historical', 'the crop rule it established, on main and named by its issue'),
     24: ('historical', 'a research note recording that #24 was closed with no production change'),
     26: ('historical', 'the reproducibility finding a pinning client is told to record'),
+    291: ('historical', "a sentence's own stop joining the block above it, on main and named by its issue"),
     30: ('historical', 'the coverage expansion that added seven corpus cases, used as its name'),
     38: ('historical', '`TextEncodingCheck`, which is in `main`, named by its issue'),
     93: ('historical', 'the recognition policy #93 introduced and `1b0308b` ported'),

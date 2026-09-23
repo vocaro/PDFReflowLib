@@ -75,6 +75,7 @@ private func trickyPage() -> PageContent {
     page.recognized = true
     page.hasSyntheticTextStyle = true
     page.preservePageReference = true
+    page.recognizedArtwork = [CGRect(x: 10, y: 20, width: 30, height: 40)]
     return page
 }
 

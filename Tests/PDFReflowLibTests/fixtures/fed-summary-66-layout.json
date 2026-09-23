@@ -1,0 +1,422 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        58.800000000000004,
+        748.51210000000003,
+        9.6000000000000014,
+        9.3120000000000118
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "62 "
+        }
+      ],
+      "text" : "62 "
+    },
+    {
+      "rect" : [
+        88.800000000000011,
+        748.51210000000003,
+        167.19999999999999,
+        9.3120000000000118
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "The Fed Explained: What the Central Bank Does"
+        }
+      ],
+      "text" : "The Fed Explained: What the Central Bank Does"
+    },
+    {
+      "rect" : [
+        89,
+        636.48070000000007,
+        372.47760000000005,
+        81.480000000000018
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -31.555599999999913,
+          "fontName" : "Helvetica",
+          "fontSize" : 70,
+          "text" : "5 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 24,
+          "text" : "Supervising and Regulating"
+        }
+      ],
+      "text" : "5 Supervising and Regulating"
+    },
+    {
+      "rect" : [
+        167,
+        653.54430000000002,
+        273.23999999999995,
+        28.416000000000054
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 24,
+          "text" : "Financial Institutions and"
+        }
+      ],
+      "text" : "Financial Institutions and"
+    },
+    {
+      "rect" : [
+        167,
+        627.55230000000006,
+        101.75999999999999,
+        28.416000000000054
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 24,
+          "text" : "Activities"
+        }
+      ],
+      "text" : "Activities"
+    },
+    {
+      "rect" : [
+        167,
+        586.03629999999998,
+        273.15259999999995,
+        15.903999999999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 14,
+          "text" : "The Federal Reserve promotes the safety and"
+        }
+      ],
+      "text" : "The Federal Reserve promotes the safety and"
+    },
+    {
+      "rect" : [
+        167,
+        568.03229999999996,
+        292.31999999999988,
+        15.903999999999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 14,
+          "text" : "soundness of individual financial institutions and"
+        }
+      ],
+      "text" : "soundness of individual financial institutions and"
+    },
+    {
+      "rect" : [
+        167,
+        550.02829999999994,
+        301.22259999999994,
+        15.903999999999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 14,
+          "text" : "monitors their impact on the financial system as a"
+        }
+      ],
+      "text" : "monitors their impact on the financial system as a"
+    },
+    {
+      "rect" : [
+        167,
+        532.02429999999993,
+        38.346000000000004,
+        15.903999999999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 14,
+          "text" : "whole."
+        }
+      ],
+      "text" : "whole."
+    },
+    {
+      "rect" : [
+        166.80000000000001,
+        333.82010000000002,
+        303.99999999999994,
+        11.639999999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Overview of the Federal Reserve’s Financial Institution Oversight ..63"
+        }
+      ],
+      "text" : "Overview of the Federal Reserve’s Financial Institution Oversight ..63"
+    },
+    {
+      "rect" : [
+        166.80000000000001,
+        309.02010000000001,
+        303.99999999999994,
+        11.639999999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "How the Federal Reserve Supervises Financial Institutions ......69"
+        }
+      ],
+      "text" : "How the Federal Reserve Supervises Financial Institutions ......69"
+    },
+    {
+      "rect" : [
+        166.79999999999995,
+        284.2201,
+        304,
+        11.639999999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "How the Federal Reserve Regulates Financial Institutions .......75"
+        }
+      ],
+      "text" : "How the Federal Reserve Regulates Financial Institutions .......75"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    612,
+    792
+  ],
+  "caseID" : "fed-explained-2021",
+  "graphics" : [
+    [
+      0,
+      0,
+      611.99996920000001,
+      792
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        58.800000000000004,
+        748.51210000000003,
+        9.6000000000000014,
+        9.3120000000000118
+      ],
+      "text" : "62"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        88.800000000000011,
+        748.51210000000003,
+        167.19999999999999,
+        9.3120000000000118
+      ],
+      "text" : "The Fed Explained: What the Central Bank Does"
+    },
+    {
+      "fontSize" : 70,
+      "monospaced" : false,
+      "rect" : [
+        89,
+        636.48070000000007,
+        372.47760000000005,
+        81.480000000000018
+      ],
+      "text" : "5 Supervising and Regulating"
+    },
+    {
+      "fontSize" : 24,
+      "monospaced" : false,
+      "rect" : [
+        167,
+        653.54430000000002,
+        273.23999999999995,
+        28.416000000000054
+      ],
+      "text" : "Financial Institutions and"
+    },
+    {
+      "fontSize" : 24,
+      "monospaced" : false,
+      "rect" : [
+        167,
+        627.55230000000006,
+        101.75999999999999,
+        28.416000000000054
+      ],
+      "text" : "Activities"
+    },
+    {
+      "fontSize" : 14,
+      "monospaced" : false,
+      "rect" : [
+        167,
+        586.03629999999998,
+        273.15259999999995,
+        15.903999999999996
+      ],
+      "text" : "The Federal Reserve promotes the safety and"
+    },
+    {
+      "fontSize" : 14,
+      "monospaced" : false,
+      "rect" : [
+        167,
+        568.03229999999996,
+        292.31999999999988,
+        15.903999999999996
+      ],
+      "text" : "soundness of individual financial institutions and"
+    },
+    {
+      "fontSize" : 14,
+      "monospaced" : false,
+      "rect" : [
+        167,
+        550.02829999999994,
+        301.22259999999994,
+        15.903999999999996
+      ],
+      "text" : "monitors their impact on the financial system as a"
+    },
+    {
+      "fontSize" : 14,
+      "monospaced" : false,
+      "rect" : [
+        167,
+        532.02429999999993,
+        38.346000000000004,
+        15.903999999999996
+      ],
+      "text" : "whole."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        166.80000000000001,
+        333.82010000000002,
+        303.99999999999994,
+        11.639999999999986
+      ],
+      "text" : "Overview of the Federal Reserve’s Financial Institution Oversight ..63"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        166.80000000000001,
+        309.02010000000001,
+        303.99999999999994,
+        11.639999999999986
+      ],
+      "text" : "How the Federal Reserve Supervises Financial Institutions ......69"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        166.79999999999995,
+        284.2201,
+        304,
+        11.639999999999986
+      ],
+      "text" : "How the Federal Reserve Regulates Financial Institutions .......75"
+    }
+  ],
+  "page" : 66,
+  "paints" : [
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          56.800000000000004,
+          742.01210000000003
+        ],
+        [
+          498.40000000000003,
+          4
+        ]
+      ],
+      "rectangular" : false,
+      "vertices" : [
+        [
+          58.800000000000004,
+          744.01210000000003
+        ],
+        [
+          553.20000000000005,
+          744.01210000000003
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : true,
+      "rect" : [
+        [
+          0,
+          0
+        ],
+        [
+          611.99996920000001,
+          792
+        ]
+      ],
+      "rectangular" : false,
+      "vertices" : [
+
+      ]
+    }
+  ],
+  "pictures" : [
+    [
+      0,
+      0,
+      611.99996920000001,
+      792
+    ]
+  ],
+  "rightsBasis" : "Federal Reserve Board educational publication, retained as external development material. PDF is not bundled or relicensed under MIT.",
+  "schemaVersion" : 3,
+  "sourceSHA256" : "8db8fd9e1de63ac25a6f9585d78ded12f45ab56f0c14c52c199b36b368f84d60",
+  "sourceTitle" : "The Fed Explained: What the Central Bank Does",
+  "sourceURL" : "https://www.federalreserve.gov/aboutthefed/files/the-fed-explained.pdf"
+}

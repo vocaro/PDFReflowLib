@@ -477,6 +477,7 @@ enum LayoutReconstructor {
         /// A table the page draws, which takes its place in the reading order as a figure does
         /// and carries its own rows (#210).
         var table: PageTable?
+        var aside: [TextLine]?
     }
 
     /// Convenience for callers that do not report an abandoned cut.
@@ -1619,7 +1620,12 @@ enum LayoutReconstructor {
         // corpus converts the Arabic guide at library defaults, which declare English for it
         // (#41).
         let rightToLeft = ArabicText.readsRightToLeft(lines)
-        let spatial = ordered(lines.map { Element(rect: $0.readingRect ?? $0.rect, line: $0) }
+        let summaries = page.recognized || page.hasSyntheticTextStyle ? [] : DisplaySummary.groups(in: lines,
+            body: typography.body, threshold: typography.headingThreshold)
+        let summarized = summaries.reduce(into: Set<Int>()) { $0.formUnion($1.indices) }
+        let spatial = ordered(lines.enumerated().filter { !summarized.contains($0.offset) }.map {
+            Element(rect: $0.element.readingRect ?? $0.element.rect, line: $0.element)
+        } + summaries.map { Element(rect: $0.rect, aside: $0.lines) }
             + images.map { Element(rect: $0.0, image: $0.1) }
             + page.tables.map { Element(rect: $0.rect, table: $0) },
             bodySize: typography.body, rightToLeft: rightToLeft, exhausted: &exhausted)
@@ -1697,6 +1703,8 @@ enum LayoutReconstructor {
                 assembler.appendNote(group: group, line)
             } else if let path = element.image {
                 assembler.appendImage(path)
+            } else if let summary = element.aside {
+                assembler.appendAside(summary)
             } else if let table = element.table {
                 assembler.appendTable(table)
             } else if let line = element.line, let spatial = roles[index] {

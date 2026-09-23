@@ -1,0 +1,495 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        58.800000000000004,
+        748.51210000000003,
+        197.19999999999999,
+        9.3120000000000118
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "6"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : " "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "The Fed Explained: What the Central Bank Does"
+        }
+      ],
+      "text" : "6 The Fed Explained: What the Central Bank Does"
+    },
+    {
+      "rect" : [
+        88.875,
+        636.73070000000007,
+        317.1626,
+        81.480000000000018
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -31.555599999999913,
+          "fontName" : "Helvetica",
+          "fontSize" : 70,
+          "text" : "2 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 24,
+          "text" : "The Three Key System"
+        }
+      ],
+      "text" : "2 The Three Key System"
+    },
+    {
+      "rect" : [
+        167,
+        653.79430000000002,
+        82.560000000000002,
+        28.416000000000054
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 24,
+          "text" : "Entities"
+        }
+      ],
+      "text" : "Entities"
+    },
+    {
+      "rect" : [
+        167,
+        623.88620000000003,
+        268.92179999999985,
+        15.903999999999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 14,
+          "text" : "The Board of Governors, the Federal Reserve"
+        }
+      ],
+      "text" : "The Board of Governors, the Federal Reserve"
+    },
+    {
+      "rect" : [
+        167,
+        605.88220000000001,
+        288.5105999999999,
+        15.903999999999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 14,
+          "text" : "Banks, and the Federal Open Market Committee"
+        }
+      ],
+      "text" : "Banks, and the Federal Open Market Committee"
+    },
+    {
+      "rect" : [
+        167,
+        587.87819999999999,
+        282.42059999999992,
+        15.903999999999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 14,
+          "text" : "work together to promote the health of the U.S."
+        }
+      ],
+      "text" : "work together to promote the health of the U.S."
+    },
+    {
+      "rect" : [
+        167,
+        569.87419999999997,
+        273.69720000000001,
+        15.903999999999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 14,
+          "text" : "economy and the stability of the U.S. financial"
+        }
+      ],
+      "text" : "economy and the stability of the U.S. financial"
+    },
+    {
+      "rect" : [
+        167,
+        551.87019999999995,
+        45.373999999999995,
+        15.903999999999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 14,
+          "text" : "system."
+        }
+      ],
+      "text" : "system."
+    },
+    {
+      "rect" : [
+        166.67500000000001,
+        334.07010000000002,
+        303.99999999999994,
+        11.639999999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "The Federal Reserve Board: Selection and Function ............7"
+        }
+      ],
+      "text" : "The Federal Reserve Board: Selection and Function ............7"
+    },
+    {
+      "rect" : [
+        166.67499999999995,
+        309.27010000000001,
+        304,
+        11.639999999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "The Federal Reserve Banks: Structure and Function ............8"
+        }
+      ],
+      "text" : "The Federal Reserve Banks: Structure and Function ............8"
+    },
+    {
+      "rect" : [
+        166.67499999999995,
+        284.4701,
+        304,
+        11.639999999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "The Federal Open Market Committee: Selection and Function ....12"
+        }
+      ],
+      "text" : "The Federal Open Market Committee: Selection and Function ....12"
+    },
+    {
+      "rect" : [
+        166.67499999999995,
+        259.67009999999999,
+        205.99900000000002,
+        11.639999999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Other Significant Entities Contributing to Federal"
+        }
+      ],
+      "text" : "Other Significant Entities Contributing to Federal"
+    },
+    {
+      "rect" : [
+        175.67499999999995,
+        245.67009999999999,
+        295,
+        11.639999999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Reserve Functions ..................................13"
+        }
+      ],
+      "text" : "Reserve Functions ..................................13"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    612,
+    792
+  ],
+  "caseID" : "fed-explained-2021",
+  "graphics" : [
+    [
+      0,
+      0,
+      612,
+      792
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        58.800000000000004,
+        748.51210000000003,
+        197.19999999999999,
+        9.3120000000000118
+      ],
+      "text" : "6 The Fed Explained: What the Central Bank Does"
+    },
+    {
+      "fontSize" : 70,
+      "monospaced" : false,
+      "rect" : [
+        88.875,
+        636.73070000000007,
+        317.1626,
+        81.480000000000018
+      ],
+      "text" : "2 The Three Key System"
+    },
+    {
+      "fontSize" : 24,
+      "monospaced" : false,
+      "rect" : [
+        167,
+        653.79430000000002,
+        82.560000000000002,
+        28.416000000000054
+      ],
+      "text" : "Entities"
+    },
+    {
+      "fontSize" : 14,
+      "monospaced" : false,
+      "rect" : [
+        167,
+        623.88620000000003,
+        268.92179999999985,
+        15.903999999999996
+      ],
+      "text" : "The Board of Governors, the Federal Reserve"
+    },
+    {
+      "fontSize" : 14,
+      "monospaced" : false,
+      "rect" : [
+        167,
+        605.88220000000001,
+        288.5105999999999,
+        15.903999999999996
+      ],
+      "text" : "Banks, and the Federal Open Market Committee"
+    },
+    {
+      "fontSize" : 14,
+      "monospaced" : false,
+      "rect" : [
+        167,
+        587.87819999999999,
+        282.42059999999992,
+        15.903999999999996
+      ],
+      "text" : "work together to promote the health of the U.S."
+    },
+    {
+      "fontSize" : 14,
+      "monospaced" : false,
+      "rect" : [
+        167,
+        569.87419999999997,
+        273.69720000000001,
+        15.903999999999996
+      ],
+      "text" : "economy and the stability of the U.S. financial"
+    },
+    {
+      "fontSize" : 14,
+      "monospaced" : false,
+      "rect" : [
+        167,
+        551.87019999999995,
+        45.373999999999995,
+        15.903999999999996
+      ],
+      "text" : "system."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        166.67500000000001,
+        334.07010000000002,
+        303.99999999999994,
+        11.639999999999986
+      ],
+      "text" : "The Federal Reserve Board: Selection and Function ............7"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        166.67499999999995,
+        309.27010000000001,
+        304,
+        11.639999999999986
+      ],
+      "text" : "The Federal Reserve Banks: Structure and Function ............8"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        166.67499999999995,
+        284.4701,
+        304,
+        11.639999999999986
+      ],
+      "text" : "The Federal Open Market Committee: Selection and Function ....12"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        166.67499999999995,
+        259.67009999999999,
+        205.99900000000002,
+        11.639999999999986
+      ],
+      "text" : "Other Significant Entities Contributing to Federal"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        175.67499999999995,
+        245.67009999999999,
+        295,
+        11.639999999999986
+      ],
+      "text" : "Reserve Functions ..................................13"
+    }
+  ],
+  "page" : 14,
+  "paints" : [
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          56.800000000000004,
+          742.01210000000003
+        ],
+        [
+          498.40000000000003,
+          4
+        ]
+      ],
+      "rectangular" : false,
+      "vertices" : [
+        [
+          58.800000000000004,
+          744.01210000000003
+        ],
+        [
+          553.20000000000005,
+          744.01210000000003
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          0,
+          0
+        ],
+        [
+          612,
+          792
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          0,
+          0.5
+        ],
+        [
+          611.5,
+          0.5
+        ],
+        [
+          611.5,
+          792
+        ],
+        [
+          0,
+          792
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : true,
+      "rect" : [
+        [
+          0,
+          0.5
+        ],
+        [
+          611.5,
+          791.5
+        ]
+      ],
+      "rectangular" : false,
+      "vertices" : [
+
+      ]
+    }
+  ],
+  "pictures" : [
+    [
+      0,
+      0.5,
+      611.5,
+      791.5
+    ]
+  ],
+  "rightsBasis" : "Federal Reserve Board educational publication, retained as external development material. PDF is not bundled or relicensed under MIT.",
+  "schemaVersion" : 3,
+  "sourceSHA256" : "8db8fd9e1de63ac25a6f9585d78ded12f45ab56f0c14c52c199b36b368f84d60",
+  "sourceTitle" : "The Fed Explained: What the Central Bank Does",
+  "sourceURL" : "https://www.federalreserve.gov/aboutthefed/files/the-fed-explained.pdf"
+}

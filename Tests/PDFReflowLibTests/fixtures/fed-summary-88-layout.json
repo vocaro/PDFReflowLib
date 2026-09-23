@@ -1,0 +1,517 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        58.800000000000004,
+        748.51210000000003,
+        9.6000000000000014,
+        9.3120000000000118
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "84"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : " "
+        }
+      ],
+      "text" : "84 "
+    },
+    {
+      "rect" : [
+        88.800000000000011,
+        748.51210000000003,
+        167.19999999999999,
+        9.3120000000000118
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "The Fed Explained: What the Central Bank Does"
+        }
+      ],
+      "text" : "The Fed Explained: What the Central Bank Does"
+    },
+    {
+      "rect" : [
+        88.75,
+        636.73070000000007,
+        324.6026,
+        81.480000000000018
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -31.555599999999913,
+          "fontName" : "Helvetica",
+          "fontSize" : 70,
+          "text" : "6 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 24,
+          "text" : "Fostering Payment and"
+        }
+      ],
+      "text" : "6 Fostering Payment and"
+    },
+    {
+      "rect" : [
+        166.875,
+        653.79430000000002,
+        281.75999999999999,
+        28.416000000000054
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 24,
+          "text" : "Settlement System Safety"
+        }
+      ],
+      "text" : "Settlement System Safety"
+    },
+    {
+      "rect" : [
+        166.875,
+        627.80230000000006,
+        150.24000000000001,
+        28.416000000000054
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 24,
+          "text" : "and Efficiency"
+        }
+      ],
+      "text" : "and Efficiency"
+    },
+    {
+      "rect" : [
+        166.875,
+        597.88620000000003,
+        275.98059999999998,
+        15.903999999999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 14,
+          "text" : "The Federal Reserve works to promote a safe,"
+        }
+      ],
+      "text" : "The Federal Reserve works to promote a safe,"
+    },
+    {
+      "rect" : [
+        166.875,
+        579.88220000000001,
+        274.54979999999995,
+        15.903999999999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 14,
+          "text" : "efficient, and accessible system for U.S. dollar"
+        }
+      ],
+      "text" : "efficient, and accessible system for U.S. dollar"
+    },
+    {
+      "rect" : [
+        166.875,
+        561.87819999999999,
+        77.224000000000018,
+        15.903999999999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 14,
+          "text" : "transactions."
+        }
+      ],
+      "text" : "transactions."
+    },
+    {
+      "rect" : [
+        166.55000000000001,
+        334.07010000000002,
+        304.00000000000006,
+        11.639999999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Overview of Key Federal Reserve Payment System Functions .....86"
+        }
+      ],
+      "text" : "Overview of Key Federal Reserve Payment System Functions .....86"
+    },
+    {
+      "rect" : [
+        166.55000000000001,
+        309.27010000000001,
+        304,
+        11.639999999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Providing Services to Banks and the Federal Government .......86"
+        }
+      ],
+      "text" : "Providing Services to Banks and the Federal Government .......86"
+    },
+    {
+      "rect" : [
+        166.55000000000001,
+        284.4701,
+        304,
+        11.639999999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "The U.S. Payment System Today and Reserve Bank Services .....88"
+        }
+      ],
+      "text" : "The U.S. Payment System Today and Reserve Bank Services .....88"
+    },
+    {
+      "rect" : [
+        166.55000000000001,
+        259.67009999999999,
+        304,
+        11.639999999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Regulating and Supervising the Payment System ............104"
+        }
+      ],
+      "text" : "Regulating and Supervising the Payment System ............104"
+    },
+    {
+      "rect" : [
+        166.55000000000001,
+        234.87009999999998,
+        303.99999999999994,
+        11.639999999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Providing Banking System Liquidity ......................108"
+        }
+      ],
+      "text" : "Providing Banking System Liquidity ......................108"
+    },
+    {
+      "rect" : [
+        166.55000000000001,
+        210.07009999999997,
+        304,
+        11.639999999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Exploring and Implementing Payment System Improvements ....109"
+        }
+      ],
+      "text" : "Exploring and Implementing Payment System Improvements ....109"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    612,
+    792
+  ],
+  "caseID" : "fed-explained-2021",
+  "graphics" : [
+    [
+      0,
+      0,
+      612,
+      792
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        58.800000000000004,
+        748.51210000000003,
+        9.6000000000000014,
+        9.3120000000000118
+      ],
+      "text" : "84"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        88.800000000000011,
+        748.51210000000003,
+        167.19999999999999,
+        9.3120000000000118
+      ],
+      "text" : "The Fed Explained: What the Central Bank Does"
+    },
+    {
+      "fontSize" : 70,
+      "monospaced" : false,
+      "rect" : [
+        88.75,
+        636.73070000000007,
+        324.6026,
+        81.480000000000018
+      ],
+      "text" : "6 Fostering Payment and"
+    },
+    {
+      "fontSize" : 24,
+      "monospaced" : false,
+      "rect" : [
+        166.875,
+        653.79430000000002,
+        281.75999999999999,
+        28.416000000000054
+      ],
+      "text" : "Settlement System Safety"
+    },
+    {
+      "fontSize" : 24,
+      "monospaced" : false,
+      "rect" : [
+        166.875,
+        627.80230000000006,
+        150.24000000000001,
+        28.416000000000054
+      ],
+      "text" : "and Efficiency"
+    },
+    {
+      "fontSize" : 14,
+      "monospaced" : false,
+      "rect" : [
+        166.875,
+        597.88620000000003,
+        275.98059999999998,
+        15.903999999999996
+      ],
+      "text" : "The Federal Reserve works to promote a safe,"
+    },
+    {
+      "fontSize" : 14,
+      "monospaced" : false,
+      "rect" : [
+        166.875,
+        579.88220000000001,
+        274.54979999999995,
+        15.903999999999996
+      ],
+      "text" : "efficient, and accessible system for U.S. dollar"
+    },
+    {
+      "fontSize" : 14,
+      "monospaced" : false,
+      "rect" : [
+        166.875,
+        561.87819999999999,
+        77.224000000000018,
+        15.903999999999996
+      ],
+      "text" : "transactions."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        166.55000000000001,
+        334.07010000000002,
+        304.00000000000006,
+        11.639999999999986
+      ],
+      "text" : "Overview of Key Federal Reserve Payment System Functions .....86"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        166.55000000000001,
+        309.27010000000001,
+        304,
+        11.639999999999986
+      ],
+      "text" : "Providing Services to Banks and the Federal Government .......86"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        166.55000000000001,
+        284.4701,
+        304,
+        11.639999999999986
+      ],
+      "text" : "The U.S. Payment System Today and Reserve Bank Services .....88"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        166.55000000000001,
+        259.67009999999999,
+        304,
+        11.639999999999986
+      ],
+      "text" : "Regulating and Supervising the Payment System ............104"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        166.55000000000001,
+        234.87009999999998,
+        303.99999999999994,
+        11.639999999999986
+      ],
+      "text" : "Providing Banking System Liquidity ......................108"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        166.55000000000001,
+        210.07009999999997,
+        304,
+        11.639999999999986
+      ],
+      "text" : "Exploring and Implementing Payment System Improvements ....109"
+    }
+  ],
+  "page" : 88,
+  "paints" : [
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          56.800000000000004,
+          742.01210000000003
+        ],
+        [
+          498.40000000000003,
+          4
+        ]
+      ],
+      "rectangular" : false,
+      "vertices" : [
+        [
+          58.800000000000004,
+          744.01210000000003
+        ],
+        [
+          553.20000000000005,
+          744.01210000000003
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          0,
+          0
+        ],
+        [
+          612,
+          792
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          0,
+          0.5
+        ],
+        [
+          611.5,
+          0.5
+        ],
+        [
+          611.5,
+          792
+        ],
+        [
+          0,
+          792
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : true,
+      "rect" : [
+        [
+          0,
+          0.5
+        ],
+        [
+          611.5,
+          791.5
+        ]
+      ],
+      "rectangular" : false,
+      "vertices" : [
+
+      ]
+    }
+  ],
+  "pictures" : [
+    [
+      0,
+      0.5,
+      611.5,
+      791.5
+    ]
+  ],
+  "rightsBasis" : "Federal Reserve Board educational publication, retained as external development material. PDF is not bundled or relicensed under MIT.",
+  "schemaVersion" : 3,
+  "sourceSHA256" : "8db8fd9e1de63ac25a6f9585d78ded12f45ab56f0c14c52c199b36b368f84d60",
+  "sourceTitle" : "The Fed Explained: What the Central Bank Does",
+  "sourceURL" : "https://www.federalreserve.gov/aboutthefed/files/the-fed-explained.pdf"
+}

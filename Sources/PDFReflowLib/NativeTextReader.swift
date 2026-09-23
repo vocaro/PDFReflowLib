@@ -174,7 +174,10 @@ enum NativeTextReader {
                 else { return [item] }
                 return pieces.map { piece in
                     let styled = item.attributed.flatMap { original -> NSAttributedString? in
-                        guard original.string == item.semantic else { return nil }
+                        // Attachment normalization replaces one UTF-16 unit with one space;
+                        // ranges still align, as in textLine's existing style check.
+                        guard original.string.replacingOccurrences(of: "\u{FFFC}", with: " ") == item.semantic
+                        else { return nil }
                         return original.attributedSubstring(from: piece.range)
                     }
                     return (semantic: piece.text, bounds: piece.rect, attributed: styled)

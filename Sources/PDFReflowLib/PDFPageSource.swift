@@ -64,6 +64,19 @@ final class PDFPageSource {
         }
     }
 
+    /// Decode only one mask in a short-lived Core Graphics document (#182). Returning only
+    /// its value rectangle releases the decoder's retained samples before the next image.
+    func imageAlphaBounds(page index: Int, image imageIndex: Int) -> CGRect? {
+        autoreleasepool {
+            guard let document = SourceDocument.openCore(url, password: password),
+                  let page = document.page(at: index + 1) else { return nil }
+            let images = EmbeddedImageReader.placements(page)
+            guard images.indices.contains(imageIndex),
+                  let dictionary = CGPDFStreamGetDictionary(images[imageIndex].stream) else { return nil }
+            return ImageAlphaBounds.read(dictionary)
+        }
+    }
+
     func releaseCachedPages() {
         document = nil
         window = -1

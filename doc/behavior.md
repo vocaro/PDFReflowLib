@@ -926,6 +926,14 @@ Evidence: [page-retention](../measurements/page-retention/record.md);
   physical pages support the decision with stable vertical position and typography (a run of at
   least three, in a ledger of at least three pages). Evidence is local to a chapter; document
   length does not set the frequency threshold.
+- A **bare number in the outer tenth of the page** is that page's own folio, and a folio is never
+  a title: at most four marks, holding a digit and no letter, at either edge. *Our Flag* prints
+  its page number in 8.93-point type on picture pages whose body is 7.00, so it cleared the
+  heading threshold, and because that book states no table of contents of its own its navigation
+  is built from its headings — fifteen of its fifty-four entries were page numbers among the
+  chapter titles (#290). Refusing the title reading moves nothing in the reading order, so the
+  line still reflows as text. Inside the type area a bare number is a title of a kind: the 9/11
+  report sets its chapter numbers above their titles on a chapter-opening page.
 - The header candidate band is the top 10% of the page (extended for the 9/11 report's
   headers) — **of the page image where the sheet carries one** (#289). A book typeset on a page of
   its own and printed centred on a larger sheet states its margin there, not on the paper: a

@@ -685,3 +685,31 @@ func theItemHangingBesideABulletJoinsIt() {
     // like any other and what follows on its row is judged by the ordinary gutter (#57).
     #expect(blocks([(bullet, .listItem), (line("far", x: 48.5 + 20, y: 193.67, width: 20), .prose)]).count == 2)
 }
+
+/// A bare number standing in the page's outer margin is the page's own folio, and a folio is not
+/// a title. *Our Flag* prints its page number in 8.93-point type on picture pages whose body is
+/// 7.00, so it cleared the heading threshold; its navigation is built from its headings, and
+/// fifteen of that book's fifty-four entries were page numbers among the chapter titles (#290).
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/290"))
+func aFolioInTheMarginIsNotATitle() {
+    let content = page(prose)
+    func role(_ line: TextLine) -> LineRole {
+        LayoutReconstructor.role(of: line, on: content, in: content.lines + [line],
+                                 typography: PageTypography(page: content), labels: [],
+                                 judgesTitleWords: false)
+    }
+    // The page is 600 points tall, so its outer tenth is below 60 and above 540.
+    #expect(role(line("27", y: 40, width: 12, size: 13)) == .prose)
+    #expect(role(line("27", y: 560, width: 12, size: 13)) == .prose)
+    #expect(LayoutReconstructor.isFolioInTheMargin(line("27", y: 40, width: 12, size: 13), on: content))
+    // Inside the type area it is a title of a kind: the 9/11 report sets its chapter numbers
+    // above their titles, at the head of a chapter-opening page.
+    #expect(role(line("1", y: 300, width: 10, size: 13)) == .heading)
+    #expect(!LayoutReconstructor.isFolioInTheMargin(line("1", y: 300, width: 10, size: 13), on: content))
+    // Only a bare number. A numbered section heading in the margin keeps its reading, and so does
+    // a running head that carries words beside its folio.
+    #expect(role(line("1. Integers", y: 40, size: 13)) == .heading)
+    #expect(role(line("“WE HAVE SOME PLANES” 15", y: 560, size: 13)) == .heading)
+    // And only a short one: a year or a figure in a caption is not a page number.
+    #expect(!LayoutReconstructor.isFolioInTheMargin(line("1,234.56", y: 40, width: 40, size: 13), on: content))
+}

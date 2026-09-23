@@ -79,6 +79,35 @@ extension LayoutReconstructor {
         }
     }
 
+    /// Whether a line is the page's own number standing in its outer margin, which is furniture
+    /// a title cannot be.
+    ///
+    /// *Our Flag* prints its folio in 8.93-point type on picture pages whose body is 7.00, so the
+    /// number clears the heading threshold; the page's navigation is built from its headings,
+    /// because the document states no table of contents of its own, and fifteen of that book's
+    /// fifty-four navigation entries were page numbers — `9`, `26`, `27`, `28` — among its
+    /// chapter titles (#290).
+    ///
+    /// The folio is furniture that survives: it stands at 0.081 of the sheet where the footer
+    /// candidate band reaches 0.07, and that band is narrow on purpose, because widening it
+    /// disturbs the reading order of this same book's illustrated rows. Refusing to call the
+    /// number a *title* moves nothing in the reading order, so it does not touch what that
+    /// narrowness protects; the line still reflows, as text.
+    ///
+    /// The outer tenth, and a bare number only. The 9/11 report sets its chapter numbers above
+    /// their titles — `1` over `“WE HAVE`, `2` over `THE FOUNDATION OF` — at the head of a
+    /// chapter-opening page and well inside the type area, and those are titles of a kind; so are
+    /// IRS Publication 596's numbered sections. A number in the margin is the page's own.
+    static func isFolioInTheMargin(_ line: TextLine, on page: PageContent) -> Bool {
+        let height = page.bounds.height
+        guard height > 0, page.bounds.isFinite,
+              line.text.count(where: { !$0.isWhitespace }) <= 4,
+              line.text.contains(where: \.isNumber),
+              !line.text.contains(where: { $0.isLetter }) else { return false }
+        let position = (line.rect.midY - page.bounds.minY) / height
+        return position <= 0.10 || position >= 0.90
+    }
+
     /// The role of an untagged line outside any note group. A synthetic-style page (invisible
     /// text over a scan) supplies no typography, so its lines are prose or list items only;
     /// `labels` are the page's recurring bold sub-headings, already empty on such pages.
@@ -94,7 +123,8 @@ extension LayoutReconstructor {
         if !page.hasSyntheticTextStyle, !opensWithMarker(line, keyedIn: page.lines),
            isTitleSized(line, in: lines, typography: typography, judgesTitleWords: judgesTitleWords)
             || labels.contains(line),
-           !hangsUnderBullet(line, in: lines, keyedIn: page.lines) {
+           !hangsUnderBullet(line, in: lines, keyedIn: page.lines),
+           !isFolioInTheMargin(line, on: page) {
             return .heading
         }
         if !page.hasSyntheticTextStyle && line.monospaced { return .code }

@@ -274,13 +274,13 @@ enum LayoutReconstructor {
             var bounds = admitted.reduce(region.seed) { $0.union($1.insetBy(dx: -2, dy: -2)) }
                 .intersection(page.bounds)
             var changed = false
-            for line in page.lines where !PageBackdrop.reflows(line, on: page)
-                && !admitted.contains(line.rect) && bounds.intersects(line.rect) {
+            for line in page.lines where !admitted.contains(line.rect) && bounds.intersects(line.rect) {
                 // The other pieces of an admitted row join it, unless the crop reaches into that
                 // row from the side: a page number a released contents entry runs to is the
                 // entry's, not the drawing's (#207). A thin rule is narrower than the line it
                 // strikes by construction, so the row test is not its.
-                guard captures(region.seed, line, among: page.lines, pictures: page.pictures,
+                guard PageBackdrop.reflows(line, on: page)
+                        || captures(region.seed, line, among: page.lines, pictures: page.pictures,
                                  bounds: page.bounds, columnHeaders: columnHeaders)
                         || (admitted.contains(where: { sameRow($0, line.rect) })
                             && (isThinRule(region.seed)
@@ -292,8 +292,7 @@ enum LayoutReconstructor {
             }
             if changed { continue }
             let kept = admitted.reduce(region.core) { $0.union($1) }
-            for line in page.lines where !PageBackdrop.reflows(line, on: page)
-                && !admitted.contains(line.rect) && bounds.intersects(line.rect) {
+            for line in page.lines where !admitted.contains(line.rect) && bounds.intersects(line.rect) {
                 let rect = line.rect
                 let cuts = [
                     CGRect(x: bounds.minX, y: rect.maxY, width: bounds.width, height: bounds.maxY - rect.maxY),

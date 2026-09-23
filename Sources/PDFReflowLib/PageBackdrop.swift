@@ -82,7 +82,7 @@ enum PageBackdrop {
         let art = paints.filter { paint in
             if paint.image { return true }
             if PageDiagnosis.coversPage(paint.rect, bounds: original.bounds) { return false }
-            if panels.contains(paint) { return false }
+            if panels.contains(paint), paint.roundedRectangle != true { return false }
             if shafts.contains(paint) || isArrowPolygon(paint.vertices) { return false }
             if heads.contains(paint), shafts.contains(where: { meets($0, paint) }) { return false }
             return true
@@ -106,8 +106,9 @@ enum PageBackdrop {
             }
         }
         page.backdropTextPanels?.append(contentsOf: continuations.map(\.rect))
-        let crops = LayoutReconstructor.graphicsWithLabels(page)
-        guard !crops.contains(where: { PageDiagnosis.coversPage($0, bounds: original.bounds) }) else { return nil }
+        // Whole-label expansion can enlarge a legitimate local diagram; it does not turn
+        // its native text into an inherited scan layer. Judge the actual painted seeds.
+        guard !page.graphics.contains(where: { PageDiagnosis.coversPage($0, bounds: original.bounds) }) else { return nil }
         return page
     }
 }

@@ -1051,6 +1051,25 @@ enum LayoutReconstructor {
         return heights.isEmpty ? nil : heights[heights.count / 2]
     }
 
+    /// The height of an ordinary line of each type size the page sets: the lower quartile of the
+    /// heights of its lines at that size, by rounded size.
+    ///
+    /// PDFKit gives a line the height of the tallest glyph on it rather than the line's own
+    /// extent, so a line of running prose carrying one inline radical is reported 20.46 points
+    /// high where its neighbours are 11.98 and its rectangle reaches six points into the line
+    /// beneath it (#230, #213; drafted for Apple as
+    /// `measurements/apple-feedback-line-heights/report.md`). The page's own lines say what an
+    /// ordinary one of that size measures, and the lower quartile rather than the median because
+    /// a page of mathematics sets more tall lines than short ones.
+    static func ordinaryLineHeights(in lines: [TextLine]) -> [Int: CGFloat] {
+        var heights: [Int: [CGFloat]] = [:]
+        for line in lines { heights[Int(line.fontSize.rounded()), default: []].append(line.rect.height) }
+        return heights.compactMapValues { sizes in
+            let sorted = sizes.sorted()
+            return sorted.isEmpty ? nil : sorted[sorted.count / 4]
+        }
+    }
+
     /// The page's ordinary gap between wrapped lines at a size: the lower quartile, over lines of
     /// that size and ordinary height, of the gap to the nearest such line directly beneath on the
     /// same left edge (within half a body) inside the prose window (#218, ported unchanged from the
@@ -1545,6 +1564,7 @@ enum LayoutReconstructor {
                                        hangingEntries: hangingEntries(in: lines, body: typography.body),
                                        columnSeams: columnSeams(in: lines, body: typography.body,
                                                                 rightToLeft: rightToLeft),
+                                       ordinaryHeights: ordinaryLineHeights(in: lines),
                                        markerEntries: markerList?.openings ?? [],
                                        markerEntryEdge: markerList?.edge,
                                        rightToLeft: rightToLeft)

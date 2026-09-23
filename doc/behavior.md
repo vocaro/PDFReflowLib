@@ -1164,7 +1164,16 @@ row-major sort, one entry of each column at a time.
   shorter one's height, the second stands to the right of the first, and less than 0.75 of a body
   separates them — the width a whitespace cut needs for a column, so a table's cells and the two
   ends of a running header remain separate blocks (#57). A short previous line ending a sentence
-  closes its paragraph either way.
+  closes its paragraph either way. That gap is measured from the line's own depth where PDFKit
+  **grew the rectangle to fit what the line carries**: the page's own lines state what an ordinary
+  line of each type size measures (the lower quartile of their heights at that size), and where
+  two rectangles overlap and the upper one is taller than an ordinary line by more than a quarter
+  of a body, the overlap is the rectangle's rather than the page's. Wallace's page 290 reports one
+  line of running prose carrying an inline radical 20.46 points high where the rest of its
+  paragraph is 11.98, so it reached 5.82 points into the line beneath and broke the paragraph in
+  the middle of its own sentence (#230, the same measurement #213 records from the cropping side).
+  The adjustment only ever brings a negative gap back towards nothing, so no two lines the reading
+  already joins are separated by it.
 - **A printed row the extractor split is one line** as far as the next line is concerned, so the
   paragraph's edge is the row's and not the edge of whichever piece closed it, and the row's whole
   width is what says whether the line above stopped short of the measure (#41, #272). The row is

@@ -508,6 +508,9 @@ struct BlockAssembler {
     /// column it set, rather than a space inside a printed line (`LayoutReconstructor.columnSeams`,
     /// #272).
     private let columnSeams: [CGFloat]
+    /// The height of an ordinary line of each type size the page sets, by rounded size
+    /// (`LayoutReconstructor.ordinaryLineHeights`, #230).
+    private let ordinaryHeights: [Int: CGFloat]
     /// Whether the page is written right to left, read from its own lines
     /// (`ArabicText.readsRightToLeft`). A line then begins at its right edge and the next piece
     /// of its printed row stands to its left (#41).
@@ -516,6 +519,7 @@ struct BlockAssembler {
     init(page: Int, body: CGFloat, leading: CGFloat? = nil, hyphens: HyphenContext,
          imageLinks: [String: LinkTarget] = [:], imageDescriptions: [String: String] = [:],
          hangingEntries: [CGRect: CGRect] = [:], columnSeams: [CGFloat] = [],
+         ordinaryHeights: [Int: CGFloat] = [:],
          markerEntries: Set<CGRect> = [], markerEntryEdge: CGFloat? = nil,
          rightToLeft: Bool = false) {
         self.page = page
@@ -528,6 +532,7 @@ struct BlockAssembler {
         self.markerEntries = markerEntries
         self.markerEntryEdge = markerEntryEdge
         self.columnSeams = columnSeams
+        self.ordinaryHeights = ordinaryHeights
         self.rightToLeft = rightToLeft
     }
 
@@ -993,7 +998,7 @@ struct BlockAssembler {
         let short = prevRect.width < lineRect.width * 0.65
         guard !(short && prev.text.last.map { ".!?".contains($0) } == true) else { return false }
         if continuesRow(row, line) { return true }
-        let verticalGap = prevRect.minY - lineRect.maxY
+        let verticalGap = gapBeneath(row, lineRect)
         // A list the page hangs sets its wraps further in than one column's lines ever stand
         // apart; `LayoutReconstructor.hangingEntries` reads which ones the page hung (#160). It
         // keys on the line the page hung the wrap under, which is the piece and not the row.
@@ -1049,6 +1054,31 @@ struct BlockAssembler {
     /// reading states nothing, which leaves every natively extracted page exactly as it was.
     private func centered(_ prev: TextLine, _ line: TextLine) -> Bool {
         prev.wraps == true && abs(prev.uprightRect.midX - line.uprightRect.midX) <= body * 0.6
+    }
+
+    /// The white the page left under a line, measured from the line's own depth rather than from
+    /// the rectangle PDFKit reported for it.
+    ///
+    /// PDFKit gives a line the height of the tallest glyph on it, so a line of running prose
+    /// carrying one inline radical reaches into the line beneath it and the two rectangles
+    /// overlap although the page printed them one leading apart. Wallace's page 290 sets
+    /// `72 = 36 · 2, but often the time it takes to discover the larger perfect square is more`
+    /// 20.46 points high where every other line of its paragraph is 11.98, so it overlaps
+    /// `than it would take to simplify in several steps.` by 5.82 points and the paragraph broke
+    /// in the middle of its own sentence (#230, the same measurement #213 records from the
+    /// cropping side).
+    ///
+    /// Only where the two rectangles overlap, and only as far as the page's own ordinary line at
+    /// that size reaches: the adjustment can bring a negative gap back towards nothing and can
+    /// never open one, so no pair of lines the page already reads as one paragraph is separated
+    /// by it. Where the page states no ordinary height for the size, or the rectangle is not
+    /// taller than one, the rectangle is the line.
+    private func gapBeneath(_ prev: TextLine, _ line: CGRect) -> CGFloat {
+        let rect = prev.uprightRect
+        let gap = rect.minY - line.maxY
+        guard gap < 0, let ordinary = ordinaryHeights[Int(prev.fontSize.rounded())],
+              rect.height > ordinary + body * 0.25 else { return gap }
+        return max(gap, rect.maxY - ordinary - line.maxY)
     }
 
     /// Whether the page set `line` on the leading its own text states, rather than a further part

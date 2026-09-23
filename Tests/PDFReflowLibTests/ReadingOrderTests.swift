@@ -347,6 +347,66 @@ func aSeamThePageRepeatsOnRowAfterRowIsAColumnAndNotASpace() throws {
     #expect(paragraphTexts(joined).count == 1)
 }
 
+// MARK: - A line rectangle PDFKit grew to fit what the line carries (#230)
+
+/// PDFKit gives a line the height of the tallest glyph on it rather than the line's own extent,
+/// so a line of running prose carrying one inline radical reaches into the line beneath it.
+/// Wallace's page 290 prints one paragraph and the reading broke it mid-sentence: the line
+/// `72 = 36 · 2, but often the time it takes to discover the larger perfect square is more` is
+/// reported 20.46 points high where every other line of that paragraph is 11.98, so it overlaps
+/// `than it would take to simplify in several steps.` by 5.82 points (#230; the same measurement
+/// #213 records from the cropping side, drafted for Apple as
+/// `measurements/apple-feedback-line-heights/report.md`).
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/230"))
+func aLineRectangleGrownByWhatItCarriesDoesNotBreakItsParagraph() throws {
+    let fixture = try SourceLayoutFixture.load("algebra-290")
+    #expect(fixture.sourceSHA256 == "856bd81edc61c50496982ddc849138f4e0e56fd0ddf0edb53fee9bb0830d0678")
+    let page = fixture.content()
+    // The page's own evidence: three consecutive lines of one paragraph, the middle one grown.
+    let paragraph = page.lines.filter {
+        $0.text.hasPrefix("The previous example could have been done in fewer")
+            || $0.text.hasPrefix("72=") || $0.text.hasPrefix("than it would take to simplify")
+    }.sorted { $0.rect.maxY > $1.rect.maxY }
+    #expect(paragraph.count == 3)
+    #expect(abs(paragraph[0].rect.height - 11.98) < 0.01)
+    #expect(abs(paragraph[1].rect.height - 20.46) < 0.01)
+    #expect(abs(paragraph[2].rect.height - 11.98) < 0.01)
+    // The grown rectangle reaches 5.82 points into the line beneath it.
+    #expect(abs((paragraph[1].rect.minY - paragraph[2].rect.maxY) + 5.82) < 0.01)
+    // And the page states what an ordinary line of that size measures.
+    #expect(LayoutReconstructor.ordinaryLineHeights(in: page.lines)[12].map { abs($0 - 11.98) < 0.01 } == true)
+    var warnings: [ConversionWarning] = []
+    let blocks = LayoutReconstructor.blocks(page: page, images: [], vocabulary: [], warnings: &warnings)
+    let joined = try #require(paragraphTexts(blocks).first { $0.hasPrefix("The previous example could have been done in fewer") })
+    #expect(joined.hasSuffix("is more than it would take to simplify in several steps."))
+    #expect(!paragraphTexts(blocks).contains { $0.hasPrefix("than it would take to simplify") })
+}
+
+/// The adjustment is asked only where the two rectangles overlap, and reaches only as far as the
+/// page's own ordinary line at that size: it can bring a negative gap back towards nothing and
+/// can never open one, so no pair of lines the page already reads as one paragraph is separated
+/// by it (#230).
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/230"))
+func anOrdinaryRectangleIsStillTheLine() throws {
+    let bounds = CGRect(x: 0, y: 0, width: 612, height: 792)
+    // Eight ordinary lines state the page's ordinary height, and a ninth the page pushed a
+    // paragraph's space below still opens its own block: the gap there is positive, so nothing
+    // is adjusted.
+    var lines = (0..<8).map { index in
+        TextLine(text: "an ordinary line of this page's prose, number \(index), filling its measure",
+                 rect: CGRect(x: 60, y: 700 - CGFloat(index) * 14, width: 300, height: 12), fontSize: 12)
+    }
+    lines.append(TextLine(text: "A line the page set a paragraph's space below the last of them.",
+                          rect: CGRect(x: 60, y: 700 - 8 * 14 - 12, width: 300, height: 12), fontSize: 12))
+    var warnings: [ConversionWarning] = []
+    let blocks = LayoutReconstructor.blocks(
+        page: PageContent(number: 1, bounds: bounds, lines: lines, graphics: []),
+        images: [], vocabulary: [], warnings: &warnings)
+    #expect(LayoutReconstructor.ordinaryLineHeights(in: lines)[12] == 12)
+    #expect(paragraphTexts(blocks).count == 2)
+    #expect(paragraphTexts(blocks)[1].hasPrefix("A line the page set a paragraph"))
+}
+
 // MARK: - A row of cells the page states no column for (#285)
 
 /// Project Blue Book's statistical appendix is handwriting-quality OCR, so its eight-column rows

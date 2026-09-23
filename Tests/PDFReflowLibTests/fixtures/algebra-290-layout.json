@@ -1,0 +1,1712 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        186.12,
+        742.77924480000001,
+        105.85191439999994,
+        21.926925200000028
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "6 2"
+        },
+        {
+          "baselineOffset" : 9.9597700000000486,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "√ "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Our Solution."
+        }
+      ],
+      "text" : "6 2√ Our Solution."
+    },
+    {
+      "rect" : [
+        84.960100000000011,
+        695.97924480000006,
+        425.15533077647353,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "The previous example could have been done in fewer steps if we had noticed that"
+        }
+      ],
+      "text" : "The previous example could have been done in fewer steps if we had noticed that"
+    },
+    {
+      "rect" : [
+        84.960100000000011,
+        672.74280799999997,
+        425.2010503260928,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "72= 36· 2, but often the time it takes to discover the larger perfect square is more"
+        }
+      ],
+      "text" : "72= 36· 2, but often the time it takes to discover the larger perfect square is more"
+    },
+    {
+      "rect" : [
+        84.961000000000013,
+        666.57924479999997,
+        238.81345459159041,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "than it would take to simplify in several steps."
+        }
+      ],
+      "text" : "than it would take to simplify in several steps."
+    },
+    {
+      "rect" : [
+        84.961000000000013,
+        640.29914480000002,
+        425.25582291159037,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Variables often are part of the radicand as well. When taking the square roots of"
+        }
+      ],
+      "text" : "Variables often are part of the radicand as well. When taking the square roots of"
+    },
+    {
+      "rect" : [
+        84.961000000000013,
+        623.37924480000004,
+        303.85313171146242,
+        13.178337699999929
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "variables, we can divide the exponent by 2. For example, "
+        }
+      ],
+      "text" : "variables, we can divide the exponent by 2. For example, "
+    },
+    {
+      "rect" : [
+        393.84082000000006,
+        623.37924480000004,
+        116.32040986470389,
+        22.767155200000047
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 10.800000000000068,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "√"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "= x"
+        },
+        {
+          "baselineOffset" : 4.2000000000000455,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "4"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : ", because we"
+        }
+      ],
+      "text" : "√= x4, because we"
+    },
+    {
+      "rect" : [
+        403.80100000000004,
+        623.37924480000004,
+        10.952048409999975,
+        13.178337699999929
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "x"
+        },
+        {
+          "baselineOffset" : 4.2000000000000455,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "8"
+        }
+      ],
+      "text" : "x8"
+    },
+    {
+      "rect" : [
+        84.960219999999936,
+        608.61904479999998,
+        425.25372882122235,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "divide the exponent of 8 by 2. This follows from the power of a power rule of"
+        }
+      ],
+      "text" : "divide the exponent of 8 by 2. This follows from the power of a power rule of"
+    },
+    {
+      "rect" : [
+        84.960219999999936,
+        593.97924479999995,
+        83.552068409999976,
+        13.298257699999908
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "expoennts, (x"
+        },
+        {
+          "baselineOffset" : 4.3199200000000246,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "4"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : ")"
+        },
+        {
+          "baselineOffset" : 4.3199200000000246,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2"
+        }
+      ],
+      "text" : "expoennts, (x4)2"
+    },
+    {
+      "rect" : [
+        171.36023999999992,
+        593.97924479999995,
+        338.78602209515526,
+        13.298257699999908
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "= x"
+        },
+        {
+          "baselineOffset" : 4.3199200000000246,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "8"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : ". When squaring, we multiply the exponent by two, so when"
+        }
+      ],
+      "text" : "= x8. When squaring, we multiply the exponent by two, so when"
+    },
+    {
+      "rect" : [
+        84.960159999999902,
+        579.3390447999999,
+        425.12487317248002,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "taking a square root we divide the exponent by 2. This is shown in the following"
+        }
+      ],
+      "text" : "taking a square root we divide the exponent by 2. This is shown in the following"
+    },
+    {
+      "rect" : [
+        84.960159999999917,
+        564.57924479999986,
+        45.371846978815995,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "example."
+        }
+      ],
+      "text" : "example."
+    },
+    {
+      "rect" : [
+        84.960159999999917,
+        520.79119999999989,
+        79.690012213629473,
+        11.955199999999991
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Example 381."
+        }
+      ],
+      "text" : "Example 381."
+    },
+    {
+      "rect" : [
+        161.99995999999993,
+        461.27271799999983,
+        265.00154224176657,
+        35.985152000000028
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -0.00020000000017716957,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− 5 18x"
+        },
+        {
+          "baselineOffset" : 4.3201099999998291,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "4"
+        },
+        {
+          "baselineOffset" : -0.00020000000017716957,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "y"
+        },
+        {
+          "baselineOffset" : 4.3201099999998291,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "6"
+        },
+        {
+          "baselineOffset" : -0.00020000000017716957,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "z"
+        },
+        {
+          "baselineOffset" : 4.3201099999998291,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "10 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "18 is divisible by 9, a perfect square"
+        }
+      ],
+      "text" : "− 5 18x4y6z10 18 is divisible by 9, a perfect square"
+    },
+    {
+      "rect" : [
+        154.80008000000007,
+        443.03272800000002,
+        183.05477647247361,
+        35.985152000000028
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0.00020000000000663931,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− 5 9· 2x"
+        },
+        {
+          "baselineOffset" : 4.3201200000000313,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "4"
+        },
+        {
+          "baselineOffset" : 0.00020000000000663931,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "y"
+        },
+        {
+          "baselineOffset" : 4.3201200000000313,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "6"
+        },
+        {
+          "baselineOffset" : 0.00020000000000663931,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "z"
+        },
+        {
+          "baselineOffset" : 4.3201200000000313,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "10 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Split into factors"
+        }
+      ],
+      "text" : "− 5 9· 2x4y6z10 Split into factors"
+    },
+    {
+      "rect" : [
+        91.200000000000017,
+        437.783008,
+        56.73824799999997,
+        30.403362000000016
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− 5 9"
+        },
+        {
+          "baselineOffset" : 9.9597699999999918,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "√ "
+        },
+        {
+          "baselineOffset" : -0.00020000000000663931,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "· 2"
+        }
+      ],
+      "text" : "− 5 9√ · 2"
+    },
+    {
+      "rect" : [
+        132.12003999999999,
+        437.783008,
+        44.551888410000004,
+        30.403162000000009
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 5.7597700000000032,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "√ "
+        },
+        {
+          "baselineOffset" : -4.1999999999999886,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "· x"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "4"
+        }
+      ],
+      "text" : "√ · x4"
+    },
+    {
+      "rect" : [
+        155.88,
+        424.67260799999997,
+        46.651335200000005,
+        44.353792000000055
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 6.6000000000000227,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "√ "
+        },
+        {
+          "baselineOffset" : -4.1999999999999886,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "· y"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "6"
+        }
+      ],
+      "text" : "√ · y6"
+    },
+    {
+      "rect" : [
+        209.52000000000001,
+        437.783008,
+        30.095199862678015,
+        21.447351639999965
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -2.1000000000000227,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "· z"
+        },
+        {
+          "baselineOffset" : 2.0999999999999659,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "10"
+        }
+      ],
+      "text" : "· z10"
+    },
+    {
+      "rect" : [
+        214.80009999999999,
+        446.25924479999998,
+        289.17810800000007,
+        22.767155200000047
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 10.800000000000011,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "√ "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Product rule, simplify roots, divide exponents by 2"
+        }
+      ],
+      "text" : "√ Product rule, simplify roots, divide exponents by 2"
+    },
+    {
+      "rect" : [
+        161.04016000000007,
+        420.022808,
+        78.338168000000024,
+        21.774494500000003
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− 5· 3x"
+        },
+        {
+          "baselineOffset" : 4.3199200000000246,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "y"
+        },
+        {
+          "baselineOffset" : 4.3199200000000246,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "3"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "z"
+        },
+        {
+          "baselineOffset" : 4.3199200000000246,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "5 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "2"
+        }
+      ],
+      "text" : "− 5· 3x2y3z5 2"
+    },
+    {
+      "rect" : [
+        223.44018000000011,
+        428.49924479999999,
+        133.97527639582705,
+        22.047055200000045
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 10.079900000000009,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "√ "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Multiply coeﬃcients"
+        }
+      ],
+      "text" : "√ Multiply coeﬃcients"
+    },
+    {
+      "rect" : [
+        168.2398,
+        402.38320800000002,
+        71.13820800000002,
+        21.774494500000003
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− 15x"
+        },
+        {
+          "baselineOffset" : 4.3199200000000246,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "y"
+        },
+        {
+          "baselineOffset" : 4.3199200000000246,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "3"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "z"
+        },
+        {
+          "baselineOffset" : 4.3199200000000246,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "5 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "2"
+        }
+      ],
+      "text" : "− 15x2y3z5 2"
+    },
+    {
+      "rect" : [
+        223.43986000000004,
+        410.8592448,
+        96.743981148646441,
+        21.927125200000035
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 9.9599699999999984,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "√ "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Our Solution"
+        }
+      ],
+      "text" : "√ Our Solution"
+    },
+    {
+      "rect" : [
+        84.960000000000008,
+        364.05924479999999,
+        425.20069903024648,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "We can’t always evenly divide the exponent on a variable by 2. Sometimes we"
+        }
+      ],
+      "text" : "We can’t always evenly divide the exponent on a variable by 2. Sometimes we"
+    },
+    {
+      "rect" : [
+        84.960000000000036,
+        349.41904479999999,
+        425.20141839692803,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "have a remainder. If there is a remainder, this means the remainder is left inside"
+        }
+      ],
+      "text" : "have a remainder. If there is a remainder, this means the remainder is left inside"
+    },
+    {
+      "rect" : [
+        84.960000000000036,
+        334.65924480000001,
+        425.21829729812475,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "the radical, and the whole number part is how many are outside the radical. This"
+        }
+      ],
+      "text" : "the radical, and the whole number part is how many are outside the radical. This"
+    },
+    {
+      "rect" : [
+        84.960000000000036,
+        320.01904480000002,
+        176.29174893847045,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "is shown in the following example."
+        }
+      ],
+      "text" : "is shown in the following example."
+    },
+    {
+      "rect" : [
+        84.960000000000036,
+        276.23099999999999,
+        79.690012106032668,
+        11.955199999999991
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Example 382."
+        }
+      ],
+      "text" : "Example 382."
+    },
+    {
+      "rect" : [
+        165.46465289750006,
+        216.71252799999999,
+        239.69692210461193,
+        35.985151999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "20x"
+        },
+        {
+          "baselineOffset" : 4.3199199999999962,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "5"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "y"
+        },
+        {
+          "baselineOffset" : 4.3199199999999962,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "9"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "z"
+        },
+        {
+          "baselineOffset" : 4.3199199999999962,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "6 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "20 is divisible by 4, a perfect square"
+        }
+      ],
+      "text" : "20x5y9z6 20 is divisible by 4, a perfect square"
+    },
+    {
+      "rect" : [
+        156.46459289749998,
+        198.35280800000001,
+        159.55065797702161,
+        35.985151999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0.00020000000000663931,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "4· 5x"
+        },
+        {
+          "baselineOffset" : 4.3201200000000028,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "5"
+        },
+        {
+          "baselineOffset" : 0.00020000000000663931,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "y"
+        },
+        {
+          "baselineOffset" : 4.3201200000000028,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "9"
+        },
+        {
+          "baselineOffset" : 0.00020000000000663931,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "z"
+        },
+        {
+          "baselineOffset" : 4.3201200000000028,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "6 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Split into factors"
+        }
+      ],
+      "text" : "4· 5x5y9z6 Split into factors"
+    },
+    {
+      "rect" : [
+        90.719839999999976,
+        193.10300800000002,
+        39.57800800000004,
+        30.523291999999998
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 10.079899999999981,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "√ "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "· 5"
+        }
+      ],
+      "text" : "√ · 5"
+    },
+    {
+      "rect" : [
+        100.67999999999998,
+        201.57904480000002,
+        5.8580479999999966,
+        11.967155200000008
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "4"
+        }
+      ],
+      "text" : "4"
+    },
+    {
+      "rect" : [
+        114.48003,
+        193.10300800000002,
+        44.672218409999971,
+        30.523492000000005
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 5.7601799999999912,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "√ "
+        },
+        {
+          "baselineOffset" : -4.3199199999999962,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "· x"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "5"
+        }
+      ],
+      "text" : "√ · x5"
+    },
+    {
+      "rect" : [
+        138.24001999999999,
+        180.112528,
+        46.651510200000047,
+        44.353791999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 6.5999999999999943,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "√ "
+        },
+        {
+          "baselineOffset" : -4.3199199999999962,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "· y"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "9"
+        }
+      ],
+      "text" : "√ · y9"
+    },
+    {
+      "rect" : [
+        191.88,
+        193.10300800000002,
+        25.591928410000008,
+        21.774494500000003
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "· z"
+        },
+        {
+          "baselineOffset" : 4.3199199999999962,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "6"
+        }
+      ],
+      "text" : "· z6"
+    },
+    {
+      "rect" : [
+        197.1601,
+        201.57924480000003,
+        307.24079784358406,
+        22.88707519999997
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 10.919919999999991,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "√ "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Simplify, divide exponents by 2, remainder is left inside"
+        }
+      ],
+      "text" : "√ Simplify, divide exponents by 2, remainder is left inside"
+    },
+    {
+      "rect" : [
+        149.75972999999999,
+        183.93944479999999,
+        67.25748554944002,
+        13.298257700000022
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "2x"
+        },
+        {
+          "baselineOffset" : 4.3199199999999962,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "y"
+        },
+        {
+          "baselineOffset" : 4.3199199999999962,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "4"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "z"
+        },
+        {
+          "baselineOffset" : 4.3199199999999962,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "3 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "5xy"
+        }
+      ],
+      "text" : "2x2y4z3 5xy"
+    },
+    {
+      "rect" : [
+        187.79964000000001,
+        183.93924479999998,
+        110.5441892173568,
+        20.847045200000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 8.8798900000000174,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "√ "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Our Solution"
+        }
+      ],
+      "text" : "√ Our Solution"
+    },
+    {
+      "rect" : [
+        297.1198,
+        52.37915319999999,
+        15.061000995093593,
+        9.8729762399999998
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626400000000004,
+          "text" : "290"
+        }
+      ],
+      "text" : "290"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    595,
+    842
+  ],
+  "caseID" : "wallace-algebra-2010",
+  "graphics" : [
+    [
+      199.60000000000002,
+      753.86000000000013,
+      10.240000000000009,
+      4
+    ],
+    [
+      401.44000000000005,
+      635.30000000000007,
+      15.279999999999973,
+      4
+    ],
+    [
+      188.80000000000001,
+      494.78000000000003,
+      52.599999999999994,
+      4
+    ],
+    [
+      181.60000000000002,
+      476.54000000000008,
+      59.799999999999983,
+      4
+    ],
+    [
+      116.08,
+      457.34000000000009,
+      10.120000000000005,
+      4
+    ],
+    [
+      139.72,
+      457.34000000000009,
+      10.240000000000009,
+      4
+    ],
+    [
+      163.48000000000002,
+      458.18000000000006,
+      15.280000000000001,
+      4
+    ],
+    [
+      194.32000000000002,
+      458.30000000000001,
+      14.679999999999978,
+      4
+    ],
+    [
+      222.52000000000004,
+      458.18000000000006,
+      18.879999999999967,
+      4
+    ],
+    [
+      231.16,
+      439.70000000000005,
+      10.240000000000009,
+      4
+    ],
+    [
+      231.16,
+      421.94000000000005,
+      10.240000000000009,
+      4
+    ],
+    [
+      171.16000000000003,
+      250.22000000000003,
+      48.280000000000001,
+      4
+    ],
+    [
+      163.96000000000004,
+      231.98000000000002,
+      55.47999999999999,
+      4
+    ],
+    [
+      98.440000000000012,
+      212.78000000000003,
+      10.120000000000005,
+      4
+    ],
+    [
+      122.08000000000003,
+      212.78000000000003,
+      10.239999999999995,
+      4
+    ],
+    [
+      145.84,
+      213.62000000000003,
+      15.280000000000001,
+      4
+    ],
+    [
+      176.68000000000004,
+      213.62000000000003,
+      14.679999999999978,
+      4
+    ],
+    [
+      204.88000000000002,
+      213.62000000000003,
+      14.560000000000002,
+      4
+    ],
+    [
+      195.40000000000001,
+      193.94000000000003,
+      24.04000000000002,
+      4
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        186.12,
+        742.77924480000001,
+        105.85191439999994,
+        21.926925200000028
+      ],
+      "text" : "6 2 √ Our Solution."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960100000000011,
+        695.97924480000006,
+        425.15533077647353,
+        11.979110399999968
+      ],
+      "text" : "The previous example could have been done in fewer steps if we had noticed that"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960100000000011,
+        672.74280799999997,
+        425.2010503260928,
+        20.455347200000006
+      ],
+      "text" : "72= 36· 2, but often the time it takes to discover the larger perfect square is more"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.961000000000013,
+        666.57924479999997,
+        238.81345459159041,
+        11.979110399999968
+      ],
+      "text" : "than it would take to simplify in several steps."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.961000000000013,
+        640.29914480000002,
+        425.25582291159037,
+        11.979110399999968
+      ],
+      "text" : "Variables often are part of the radicand as well. When taking the square roots of"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.961000000000013,
+        623.37924480000004,
+        303.85313171146242,
+        13.178337699999929
+      ],
+      "text" : "variables, we can divide the exponent by 2. For example,"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        393.84082000000006,
+        623.37924480000004,
+        116.32040986470389,
+        22.767155200000047
+      ],
+      "text" : "√ = x4, because we"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        403.80100000000004,
+        623.37924480000004,
+        10.952048409999975,
+        13.178337699999929
+      ],
+      "text" : "x8"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960219999999936,
+        608.61904479999998,
+        425.25372882122235,
+        11.979110399999968
+      ],
+      "text" : "divide the exponent of 8 by 2. This follows from the power of a power rule of"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960219999999936,
+        593.97924479999995,
+        83.552068409999976,
+        13.298257699999908
+      ],
+      "text" : "expoennts, (x4)2"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        171.36023999999992,
+        593.97924479999995,
+        338.78602209515526,
+        13.298257699999908
+      ],
+      "text" : "= x8. When squaring, we multiply the exponent by two, so when"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960159999999902,
+        579.3390447999999,
+        425.12487317248002,
+        11.979110399999968
+      ],
+      "text" : "taking a square root we divide the exponent by 2. This is shown in the following"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960159999999917,
+        564.57924479999986,
+        45.371846978815995,
+        11.979110399999968
+      ],
+      "text" : "example."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960159999999917,
+        520.79119999999989,
+        79.690012213629473,
+        11.955199999999991
+      ],
+      "text" : "Example 381."
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        161.99995999999993,
+        461.27271799999983,
+        265.00154224176657,
+        35.985152000000028
+      ],
+      "text" : "− 5 18x4y6z10 18 is divisible by 9, a perfect square"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        154.80008000000007,
+        443.03272800000002,
+        183.05477647247361,
+        35.985152000000028
+      ],
+      "text" : "− 5 9· 2x4y6z10 Split into factors"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        91.200000000000017,
+        437.783008,
+        56.73824799999997,
+        30.403362000000016
+      ],
+      "text" : "− 5 9 √ · 2"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        132.12003999999999,
+        437.783008,
+        44.551888410000004,
+        30.403162000000009
+      ],
+      "text" : "√ · x4"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        155.88,
+        424.67260799999997,
+        46.651335200000005,
+        44.353792000000055
+      ],
+      "text" : "√ · y6"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        209.52000000000001,
+        437.783008,
+        30.095199862678015,
+        21.447351639999965
+      ],
+      "text" : "· z10"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        214.80009999999999,
+        446.25924479999998,
+        289.17810800000007,
+        22.767155200000047
+      ],
+      "text" : "√ Product rule, simplify roots, divide exponents by 2"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        161.04016000000007,
+        420.022808,
+        78.338168000000024,
+        21.774494500000003
+      ],
+      "text" : "− 5· 3x2y3z5 2"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        223.44018000000011,
+        428.49924479999999,
+        133.97527639582705,
+        22.047055200000045
+      ],
+      "text" : "√ Multiply coeﬃcients"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        168.2398,
+        402.38320800000002,
+        71.13820800000002,
+        21.774494500000003
+      ],
+      "text" : "− 15x2y3z5 2"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        223.43986000000004,
+        410.8592448,
+        96.743981148646441,
+        21.927125200000035
+      ],
+      "text" : "√ Our Solution"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960000000000008,
+        364.05924479999999,
+        425.20069903024648,
+        11.979110400000025
+      ],
+      "text" : "We can’t always evenly divide the exponent on a variable by 2. Sometimes we"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960000000000036,
+        349.41904479999999,
+        425.20141839692803,
+        11.979110400000025
+      ],
+      "text" : "have a remainder. If there is a remainder, this means the remainder is left inside"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960000000000036,
+        334.65924480000001,
+        425.21829729812475,
+        11.979110400000025
+      ],
+      "text" : "the radical, and the whole number part is how many are outside the radical. This"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960000000000036,
+        320.01904480000002,
+        176.29174893847045,
+        11.979110400000025
+      ],
+      "text" : "is shown in the following example."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960000000000036,
+        276.23099999999999,
+        79.690012106032668,
+        11.955199999999991
+      ],
+      "text" : "Example 382."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        165.46465289750006,
+        216.71252799999999,
+        239.69692210461193,
+        35.985151999999999
+      ],
+      "text" : "20x5y9z6 20 is divisible by 4, a perfect square"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        156.46459289749998,
+        198.35280800000001,
+        159.55065797702161,
+        35.985151999999999
+      ],
+      "text" : "4· 5x5y9z6 Split into factors"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        90.719839999999976,
+        193.10300800000002,
+        39.57800800000004,
+        30.523291999999998
+      ],
+      "text" : "√ · 5"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        100.67999999999998,
+        201.57904480000002,
+        5.8580479999999966,
+        11.967155200000008
+      ],
+      "text" : "4"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        114.48003,
+        193.10300800000002,
+        44.672218409999971,
+        30.523492000000005
+      ],
+      "text" : "√ · x5"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        138.24001999999999,
+        180.112528,
+        46.651510200000047,
+        44.353791999999999
+      ],
+      "text" : "√ · y9"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        191.88,
+        193.10300800000002,
+        25.591928410000008,
+        21.774494500000003
+      ],
+      "text" : "· z6"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        197.1601,
+        201.57924480000003,
+        307.24079784358406,
+        22.88707519999997
+      ],
+      "text" : "√ Simplify, divide exponents by 2, remainder is left inside"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        149.75972999999999,
+        183.93944479999999,
+        67.25748554944002,
+        13.298257700000022
+      ],
+      "text" : "2x2y4z3 5xy"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        187.79964000000001,
+        183.93924479999998,
+        110.5441892173568,
+        20.847045200000025
+      ],
+      "text" : "√ Our Solution"
+    },
+    {
+      "fontSize" : 9.9626400000000004,
+      "monospaced" : false,
+      "rect" : [
+        297.1198,
+        52.37915319999999,
+        15.061000995093593,
+        9.8729762399999998
+      ],
+      "text" : "290"
+    }
+  ],
+  "page" : 290,
+  "pictures" : [
+
+  ],
+  "rightsBasis" : "Page 2 states Copyright 2010 Tyler Wallace and Creative Commons Attribution 3.0 Unported. The PDF remains an external local corpus source; it is not bundled or relicensed under MIT.",
+  "schemaVersion" : 2,
+  "sourceSHA256" : "856bd81edc61c50496982ddc849138f4e0e56fd0ddf0edb53fee9bb0830d0678",
+  "sourceTitle" : "Beginning and Intermediate Algebra",
+  "sourceURL" : "https://s3.amazonaws.com/myopenmath/cfiles/19515/Beginning_and_Intermediate_Algebra.pdf"
+}

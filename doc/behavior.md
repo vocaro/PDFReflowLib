@@ -561,6 +561,26 @@ Evidence: [structure-tags](../measurements/structure-tags/record.md),
 Evidence: [shading-support](../measurements/shading-support/record.md),
 [fractions-and-invisible-text](../measurements/fractions-and-invisible-text/record.md).
 
+### Flat page grounds and native text panels
+
+The reader also retains individual paints before clustering. A flat rectangular page ground,
+supported drawing operations and no invisible text admit `PageBackdrop`; a photograph, frame,
+pattern or complex page-sized silhouette does not. Native text in proven rectangular or
+short-corner rounded panels can reflow independently of preserved artwork. A connector between
+two distinct panels preserves their node outlines and the connecting strokes. Complex labeled
+figures, unmatched chart strokes and rounded panel outlines remain in complete source crops.
+Whole-label expansion keeps a crop from cutting its own text, while panel ownership permits the
+same native writing in the reflowed reading. Actual lettering inside a raster picture stays
+with that picture.
+
+On these eligible pages, a plain 8-bit DeviceGray soft mask can narrow an image's placement to
+its nontransparent samples before transforms and clipping. Unknown masks retain full bounds.
+`ImageAlphaBounds` caps supported masks at 64 million samples and reads each through a fresh,
+short-lived Core Graphics document, so decoded mask data is not retained across images. Initial
+paint seeds determine whether the page resembles a scan; later complete-crop expansion cannot
+turn the admitted native panel text into a scan layer. See
+[backdrop-separation](../measurements/backdrop-separation/record.md).
+
 ## PageDiagnosis: page evidence
 
 `PageDiagnosis.assess` computes one `PageEvidence` per page, calling the ink measurement at most
@@ -1424,6 +1444,13 @@ right-aligned cover label stays whole without joining mathematical derivation st
 - Heading levels from tags serialize as `h1`–`h6`; visible typography otherwise supplies flat
   heading navigation. Synthetic invisible-text pages supply no code or heading typography.
 
+An opener can set a complete display summary between a larger title and isolated, smaller dotted
+contents. `DisplaySummary` requires at least three aligned display rows, a complete unquoted
+sentence of at least twelve words, and that title/contents geometry. It groups the native text
+as one aside, preserving its styles and excluding it from heading navigation. Recognized and
+synthetic text cannot establish this role. See
+[fed-display-summaries](../measurements/fed-display-summaries/record.md).
+
 ### Code and lists
 
 Monospaced text is code and keeps line breaks and indentation; a line opening with a list marker
@@ -1790,6 +1817,16 @@ which heading.
   digit is not a `<sup>`.
 
 Evidence: [tables-read-as-cells](../measurements/tables-read-as-cells/record.md).
+
+`PaintedCellTableReader` additionally admits complete grids of individually filled rectangles,
+including white fills, after existing numeric tables have claimed their regions. A grid needs
+at least three adjacent rows and two to twelve columns, complete nonempty cell readings and
+exact non-space character conservation. A compact first row or textual labels above numeric
+values must establish a header. Partial grids, crossing text and overlapping existing tables
+are declined. This permits the source's two-column text tables without treating ordinary prose
+columns as cells. Nearby aligned table titles can be headings, while repeated short role/name
+pairs retain separate paragraphs. See
+[noaa-painted-tables](../measurements/noaa-painted-tables/record.md).
 
 ## Region detectors
 

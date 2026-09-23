@@ -104,13 +104,37 @@ extension LayoutReconstructor {
         // sentence back at the head of the left-hand piece, with the page's own space after it;
         // a space of this library's own would put the stop a space from its sentence (#41).
         if ArabicText.setsNoSpace(between: left, and: right) { return .concatenate }
-        guard left.hasSuffix("-"), right.first?.isLowercase == true else { return .space }
+        guard left.hasSuffix("-") else { return .space }
         // Both halves are read as the vocabulary holds them, so a ligature the font draws is the
         // letters it stands for on both sides of the lookup (#123).
         let prefix = vocabularyWord(String(left.dropLast().reversed().prefix(while: { $0.isLetter }).reversed()))
         let suffix = vocabularyWord(String(right.prefix(while: { $0.isLetter })))
         let joined = prefix + suffix
         let compound = prefix + "-" + suffix
+        // A line the page broke at a hyphen carries on with no space, whichever way the rest of
+        // it opens. Reading the break only before a lowercase letter set the two halves of a
+        // printed compound a space apart on every line a page wrapped at one: the 9/11 report
+        // came out with `C- 130H`, `non- Muslims`, `mid- 1980s` and `Israeli- Palestinian`, and
+        // that book writes 34 of its 45 broken compounds closed somewhere else in its own pages
+        // (#288).
+        //
+        // The hyphen itself is still the book's own words to decide, and here they answer the
+        // one case where it should come out: *The Fed Explained* breaks `…operating the Fed-`
+        // over `Wire and automated clearinghouse…` and writes `Fedwire` whole twenty times, so
+        // the vocabulary holds the joined word and not the compound. Where it holds neither —
+        // `CENT-` and `COM`, a report serial — the page's own hyphen stands, which is what it
+        // drew. The `uncertainHyphen` warning stays with the lowercase continuations it was
+        // measured on: a compound broken at the hyphen the page prints is not the ambiguous case
+        // that warning is about.
+        if right.first?.isLowercase != true {
+            // Two letters either side, as `lexiconVouches` asks for the same reason: a half of one
+            // letter makes an ordinary word out of a break that is not one. The 9/11 report sets
+            // `…citing 265A-` over `NY-280350-302`, and `a` + `ny` is `any`, which that book
+            // writes on nearly every page — so the file number came out `265ANY`.
+            guard prefix.count >= 2, suffix.count >= 2, hyphens.vocabulary.contains(joined),
+                  !hyphens.vocabulary.contains(compound) else { return .concatenate }
+            return .removeHyphen
+        }
         if hyphens.vocabulary.contains(joined), !hyphens.vocabulary.contains(compound) { return .removeHyphen }
         if !hyphens.vocabulary.contains(compound) {
             if lexiconVouches(prefix: prefix, suffix: suffix,

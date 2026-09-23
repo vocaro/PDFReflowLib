@@ -1453,8 +1453,16 @@ Evidence: [initial-led-lines](../measurements/initial-led-lines/record.md),
 
 ## HyphenRepair
 
-- A soft hyphen (U+00AD) at a wrap is removed. A hard line-end hyphen is considered only when
-  the next line opens in lowercase; the join is decided on the letters either side.
+- A soft hyphen (U+00AD) at a wrap is removed. A hard line-end hyphen is a break whatever opens
+  beneath it, and the halves close up on it: the page drew no space there. Where the next line
+  opens **in lowercase**, the join is decided on the letters either side, as below. Where it opens
+  with a capital or a digit, the page has broken a printed compound at its own hyphen, and that
+  hyphen stands unless the book writes the word whole and never the compound — the 9/11 report
+  prints `C-130H`, `non-Muslims`, `mid-1980s` and `Israeli-Palestinian` and writes 34 of its 45
+  broken compounds closed elsewhere in its own pages, while *The Fed Explained* breaks
+  `…operating the Fed-` over `Wire and automated clearinghouse…` and writes `Fedwire` whole twenty
+  times (#288). No warning is raised on that side: a compound broken at the hyphen the page prints
+  is not the ambiguous case `uncertainHyphen` is about.
 - The hyphen is removed silently when the book's own vocabulary holds the joined word and not the
   hyphenated compound. When the vocabulary holds the compound, the hyphen stays silently.
 - The vocabulary holds every word lowercased and with the typographic ligatures and other

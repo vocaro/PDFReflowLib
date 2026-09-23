@@ -218,6 +218,16 @@ ALLOWED = {
         'asked for it'),
     287: ('historical', 'the gate results directory kept only while it is worth reading, on main and '
         'named by its issue'),
+    # Closed the same day these citations were written, which is the blind spot #286 records: the
+    # snapshot agreed with GitHub until the push, and the refresh that followed it exposed them.
+    174: ('historical', 'the block-level reading order `columnRuns` gives a page with no straight '
+        'gutter, on main and named by its issue'),
+    230: ('historical', "a line's own depth, read where PDFKit grew its rectangle to fit what the "
+        'line carries, on main and named by its issue'),
+    260: ('historical', 'a show the line can hold in only one place placing its own boundaries, on '
+        'main and named by its issue'),
+    285: ('historical', 'the cell that closes a printed row and so lends it no start, on main and '
+        'named by its issue'),
 
     # Closed, but the defect is still in `main`; the prose says so and names the commit. #5 and
     # #11 join this group from #236's audit: both were read against `main` — Warren and NOAA

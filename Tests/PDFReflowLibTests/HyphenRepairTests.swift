@@ -155,10 +155,13 @@ private let brokenBook = (1...9).map { _ in ["a word that broke as hijack=", "er
     #expect(LayoutReconstructor.join("a zorbu=", "latinex sample", hyphens: undecided, page: 3, warnings: &uncertain)
             == "a zorbu-latinex sample")
     #expect(uncertain.map(\.code) == [.uncertainHyphen])
-    // Not a word break at all: the mark still reads as the hyphen the page drew.
+    // A capital beneath it: the mark still reads as the hyphen the page drew, and the page drew
+    // no space after it, so the halves close up on that hyphen. The book's words vouch for
+    // neither the joined word nor the compound, so the hyphen stays (#233, #288).
     var spaced: [ConversionWarning] = []
     #expect(LayoutReconstructor.join("the total=", "Next Section", hyphens: book, page: 3, warnings: &spaced)
-            == "the total- Next Section")
+            == "the total-Next Section")
+    #expect(spaced.isEmpty)
     // A book with no substitute is untouched.
     var plain: [ConversionWarning] = []
     #expect(LayoutReconstructor.join("the hijack=", "ers boarded", vocabulary: ["hijackers"], page: 3, warnings: &plain)
@@ -231,4 +234,50 @@ func normalizingTheVocabularyLeavesAGenuineCompoundAndTheBooksOwnText() {
     #expect(LayoutReconstructor.vocabularyWord("plain") == "plain")
     #expect(LayoutReconstructor.join("a staﬀ-", "room notice", hyphens: HyphenContext(vocabulary: ["staffroom"]),
                                      page: 1, warnings: &warnings) == "a staﬀroom notice")
+}
+
+/// A line the page broke at a hyphen carries on with no space, whichever way the rest of it opens.
+/// Reading the break only before a lowercase letter set the two halves of a printed compound a
+/// space apart on every line a page wrapped at one: the 9/11 report came out with `C- 130H`,
+/// `non- Muslims` and `mid- 1980s`, and that book writes 34 of its 45 broken compounds closed
+/// somewhere else in its own pages (#288).
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/288"))
+func aCompoundBrokenAtItsOwnHyphenCloseUpWhateverFollows() {
+    var warnings: [ConversionWarning] = []
+    func join(_ left: String, _ right: String, _ vocabulary: Set<String> = []) -> String {
+        LayoutReconstructor.join(left, right, hyphens: HyphenContext(vocabulary: vocabulary),
+                                 page: 3, warnings: &warnings)
+    }
+    // A digit beneath it, with no vocabulary at all: the page's own hyphen stands and nothing is
+    // put between the halves.
+    #expect(join("an unarmed National Guard C-", "130H cargo aircraft") == "an unarmed National Guard C-130H cargo aircraft")
+    #expect(join("set up in the mid-", "1980s, it had been") == "set up in the mid-1980s, it had been")
+    // A capital beneath it, where the book writes the compound: the hyphen is the book's own.
+    #expect(join("refused to meet with non-", "Muslims. The United States", ["non-muslims"])
+            == "refused to meet with non-Muslims. The United States")
+    // A capital beneath it, where the book writes the word whole and never the compound: the
+    // hyphen comes out, on the same evidence a lowercase continuation is decided by.
+    #expect(join("clearing checks, operating the Fed-", "Wire and automated clearinghouse", ["fedwire"])
+            == "clearing checks, operating the FedWire and automated clearinghouse")
+    // Two letters either side, as the lexicon asks for the same reason: the 9/11 report sets
+    // `…citing 265A-` over `NY-280350-302`, and `a` + `ny` is `any`, a word that book writes on
+    // nearly every page. The file number keeps the hyphen the page drew.
+    #expect(join("Dec. 5, 2003 (citing 265A-", "NY-280350-302, serial 16379", ["any"])
+            == "Dec. 5, 2003 (citing 265A-NY-280350-302, serial 16379")
+    // Where both halves are words of their own length, the book's own word still decides:
+    // that report writes `CENTCOM` whole.
+    #expect(join("reported to CENT-", "COM in Tampa", ["centcom"]) == "reported to CENTCOM in Tampa")
+    // None of this raises the ambiguous-hyphen warning, which stays with the lowercase
+    // continuations it was measured on.
+    #expect(warnings.isEmpty)
+    // The controls. A lowercase continuation is decided exactly as before, warning and all.
+    #expect(join("a multipli-", "cation problem", ["multiplication"]) == "a multiplication problem")
+    #expect(join("an explosives-", "laden truck", ["explosives-laden"]) == "an explosives-laden truck")
+    #expect(warnings.isEmpty)
+    #expect(join("a zorbu-", "latinex sample") == "a zorbu-latinex sample")
+    #expect(warnings.map(\.code) == [.uncertainHyphen])
+    // A line that does not end in a hyphen still takes a space, whatever opens beneath it.
+    var plain: [ConversionWarning] = []
+    #expect(LayoutReconstructor.join("the whole line", "Next Section", vocabulary: [], page: 3,
+                                     warnings: &plain) == "the whole line Next Section")
 }

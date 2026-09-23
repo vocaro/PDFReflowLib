@@ -1536,9 +1536,24 @@ Evidence: [initial-led-lines](../measurements/initial-led-lines/record.md),
   the line belongs to the item; it does not say the character was a break rather than a printed
   compound, and the 9/11 report's endnotes stand both on one edge: `Febru-` carries on `ary` and
   loses its hyphen, `explosives-` carries on `laden` and keeps it, with no space added either way.
+- That takes one printed line and only one opening in lowercase, so the rest is read over the
+  page's **blocks** after everything else has decided what they are, which is how the cross-page
+  join has always worked (#280). A block ending where the page broke a word takes **the whole of**
+  the block beneath it when that block opens the rest of that word, and keeps its own kind. What
+  opens the rest of a word is a lowercase letter; **no letter at all**, because a serial, a
+  citation or a measure crosses a break the way a word does — the 9/11 report breaks
+  `…serial 1928; 265A-NY-` over `280350-302, serial 16379`, and a line that opens with a marker of
+  its own is excluded, since that marker opens an item; or **a capital where the two halves make a
+  word the book itself writes**, which is why *The Fed Explained* may carry `…operating the Fed-`
+  over `Wire and automated clearinghouse…` and writes `Fedwire` whole twenty times. A word is what
+  is broken, so a letter or a digit must stand in front of the break: Project Blue Book's
+  inherited OCR ends whole blocks on the runs of dashes it reads its ruled pages as, and none of
+  those is a word carrying on. Across a page the same reading admits a preformatted anchor that
+  ends broken, which `appendPage` alone reaches.
 
 Evidence: [spine-continuity](../measurements/spine-continuity/record.md),
 [broken-numbered-items](../measurements/broken-numbered-items/record.md),
+[items-that-carry-their-word](../measurements/items-that-carry-their-word/record.md),
 [line-end-hyphen-substitutes](../measurements/line-end-hyphen-substitutes/record.md),
 [page-leading-and-ligature-vocabulary](../measurements/page-leading-and-ligature-vocabulary/record.md).
 

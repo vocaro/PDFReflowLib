@@ -1176,6 +1176,73 @@ struct BlockAssembler {
     mutating func finish() -> [ReflowBlock] {
         flushNote()
         flushParagraph()
+        carryBrokenItems()
         return blocks
+    }
+
+    /// An item the page broke mid-word keeps the rest of its word, wherever the break falls.
+    ///
+    /// #266 gives it the line beneath, and takes one printed line, and only where that line opens
+    /// in lowercase. Three shapes are left over, and #280 names them: the 9/11 report's note 81
+    /// breaks a case-file number, `…serial 1928; 265A-NY-` over `280350-302, serial 16379;`, so
+    /// the line opens on a digit; *The Fed Explained* breaks `…operating the Fed-` over `Wire and
+    /// automated clearinghouse (ACH) systems,`, so it opens on a capital; and where the rest of
+    /// the word is a wrapped paragraph of more than one printed line, taking one line leaves the
+    /// others standing alone.
+    ///
+    /// So the repair is made over the page's blocks rather than its lines, after everything else
+    /// has decided what they are. A block that ends where the page broke a word takes the whole of
+    /// the block beneath it when that block opens the rest of that word — the whole of it, so
+    /// nothing is orphaned — and keeps its own kind, because an item that was holding half a word
+    /// is still an item. What becomes of the hyphen is `HyphenRepair`'s to say, on the book's own
+    /// words, exactly as inside a paragraph (#245, #266, #288).
+    private mutating func carryBrokenItems() {
+        var index = 0
+        while index + 1 < blocks.count {
+            guard case let .preformatted(text) = blocks[index].content, endsBroken(text.text),
+                  case let .paragraph(next) = blocks[index + 1].content,
+                  blocks[index].page == blocks[index + 1].page,
+                  opensRestOfWord(text.text, next.text) else { index += 1; continue }
+            blocks[index].content = .preformatted(join(text, next))
+            blocks.remove(at: index + 1)
+        }
+    }
+
+    /// Whether a block ends where the page broke a word: a hyphen, a soft hyphen, or the character
+    /// this book's text font draws a line-end hyphen as (#233), standing after a letter or a digit.
+    ///
+    /// A word is what is broken, so something has to be in front of the break. Project Blue Book's
+    /// inherited OCR reads the rules its pages are ruled with as runs of dashes, and blocks whose
+    /// whole text is `-`, `- -` or `f. Other ------` end in one without a word anywhere near it
+    /// (#280).
+    private func endsBroken(_ text: String) -> Bool {
+        let broken = text.hasSuffix("-") || text.hasSuffix("\u{00ad}")
+            || hyphens.lineEndSubstitute.map { text.last == $0 } == true
+        return broken && text.dropLast().last.map { $0.isLetter || $0.isNumber } == true
+    }
+
+    /// Whether what follows a break opens the rest of the word the page broke, rather than
+    /// something of its own.
+    ///
+    /// A lowercase letter is what a broken word carries on with, which is all #266 asked for.
+    /// **A line that opens with no letter at all opens no sentence**, so a serial, a citation or a
+    /// measure crosses a break the way a word does; one that opens with a marker of its own is
+    /// excluded whatever it holds, because that marker opens an item. **A capital opens a sentence
+    /// unless the two halves make a word the book itself writes** — the same evidence
+    /// `HyphenRepair` reads to decide the hyphen, and the reason *The Fed Explained* may carry
+    /// `Fed-` over `Wire`: it writes `Fedwire` whole twenty times. `…and square-` followed by
+    /// `Two persons hold the folded flag` makes no word anywhere, so a new sentence stays one
+    /// (#266's contract, #280).
+    private func opensRestOfWord(_ text: String, _ line: String) -> Bool {
+        guard let first = line.first(where: { !$0.isWhitespace }) else { return false }
+        if first.isLowercase { return true }
+        guard !LayoutReconstructor.isList(line) else { return false }
+        if !first.isLetter { return true }
+        let prefix = LayoutReconstructor.vocabularyWord(
+            String(text.dropLast().reversed().prefix(while: \.isLetter).reversed()))
+        let suffix = LayoutReconstructor.vocabularyWord(String(line.prefix(while: \.isLetter)))
+        guard prefix.count >= 2, suffix.count >= 2 else { return false }
+        return hyphens.vocabulary.contains(prefix + suffix)
+            && !hyphens.vocabulary.contains(prefix + "-" + suffix)
     }
 }

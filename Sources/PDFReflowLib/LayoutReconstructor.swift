@@ -1821,6 +1821,35 @@ enum LayoutReconstructor {
                    hyphens: HyphenContext(vocabulary: vocabulary), warnings: &warnings)
     }
 
+    /// Whether a block ends where the page broke a word. `lineEndSubstitute` is a book-wide
+    /// reading the streaming bound below does not carry, so only the two characters every book
+    /// draws a break with are asked there; the join itself reads the book's own substitute.
+    /// A word is what is broken, so a letter or a digit has to stand in front of the break:
+    /// Project Blue Book's inherited OCR ends whole blocks on the runs of dashes it reads its
+    /// ruled pages as, and none of those is a word carrying on (#280).
+    static func endsBroken(_ text: String, substitute: Character? = nil) -> Bool {
+        let broken = text.hasSuffix("-") || text.hasSuffix("\u{00ad}")
+            || substitute.map { text.last == $0 } == true
+        return broken && text.dropLast().last.map { $0.isLetter || $0.isNumber } == true
+    }
+
+    /// The text of a block a cross-page join may carry on.
+    ///
+    /// A paragraph carries on as a paragraph does. A preformatted item carries on only where the
+    /// page broke a word over the block boundary, which is the one thing such a block can still be
+    /// missing: the 9/11 report's note 22 ends page 490 on `…For the 1998–2001 num-` and page 491
+    /// opens `bers, see DOJ Inspector General report,…`. `BlockAssembler.carryBrokenItems` gives
+    /// an item the rest of its word everywhere else; across a page only this reaches it (#280).
+    /// Nothing else joins to an item: a paragraph the next page opens is that page's, not the
+    /// item's, unless the item is holding half a word.
+    static func carriedOn(_ content: ReflowBlock.Content, substitute: Character?) -> InlineText? {
+        switch content {
+        case let .paragraph(text): return text
+        case let .preformatted(text): return endsBroken(text.text, substitute: substitute) ? text : nil
+        default: return nil
+        }
+    }
+
     /// How many blocks at the tail a later page can still amend, which is what reconstruction must
     /// hold back (#203, [decision 0008](../../doc/decisions/0008-streamed-blocks-to-the-writer.md)).
     ///
@@ -1835,7 +1864,7 @@ enum LayoutReconstructor {
         var anchor = blocks.count - 1
         while anchor >= 0, blocks[anchor].isImage { anchor -= 1 }
         guard anchor >= 0, anchor < blocks.count - 1,
-              case .paragraph = blocks[anchor].content else { return 1 }
+              carriedOn(blocks[anchor].content, substitute: nil) != nil else { return 1 }
         return blocks.count - anchor
     }
 
@@ -1857,7 +1886,7 @@ enum LayoutReconstructor {
         var opening = 0
         while opening < remaining.count, remaining[opening].isImage { opening += 1 }
         if anchor >= 0, opening < remaining.count, let previousPage,
-           case let .paragraph(left) = blocks[anchor].content,
+           let left = carriedOn(blocks[anchor].content, substitute: hyphens.lineEndSubstitute),
            case let .paragraph(right) = remaining[opening].content,
            // Reaching past a picture asks more of the paragraph than standing beside the boundary
            // did. A block the join steps over pictures to reach is being called a paragraph the
@@ -1886,8 +1915,14 @@ enum LayoutReconstructor {
            page.lines.first.map({ $0.rect.maxY > page.bounds.minY + page.bounds.height * 0.8 }) == true {
             let stepped = Array(blocks[(anchor + 1)...])
             blocks.removeLast(stepped.count)
-            blocks[anchor].content = .paragraph(join(left, right, hyphens: hyphens,
-                page: page.number, sourceBoundary: page.number, warnings: &warnings))
+            let carried = join(left, right, hyphens: hyphens,
+                               page: page.number, sourceBoundary: page.number, warnings: &warnings)
+            // The block keeps its own kind: an item that was holding half a word is still an item.
+            if case .preformatted = blocks[anchor].content {
+                blocks[anchor].content = .preformatted(carried)
+            } else {
+                blocks[anchor].content = .paragraph(carried)
+            }
             blocks.insert(contentsOf: stepped, at: anchor)
             blocks += remaining.prefix(opening)
             remaining.removeFirst(opening + 1)

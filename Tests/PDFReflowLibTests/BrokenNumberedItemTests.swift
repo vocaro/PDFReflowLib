@@ -86,6 +86,59 @@ func aNumberedItemBrokenAtAHyphenKeepsTheRestOfItsWord() throws {
     }
 }
 
+/// #266 gives an item the line beneath it, takes one printed line, and only where that line
+/// opens in lowercase. Three shapes are left over, and this is where they are answered: the
+/// repair is made over the page's blocks rather than its lines, so it takes the whole of what
+/// carries the word on and leaves nothing standing alone (#280).
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/280"))
+func anItemCarriesTheWholeBlockThatHoldsTheRestOfItsWord() {
+    // A capital, where the book writes the word whole: *The Fed Explained* breaks
+    // `…operating the Fed-` over `Wire and automated clearinghouse…` and writes `Fedwire` twenty
+    // times. The whole of the block beneath comes over, both its printed lines.
+    let fed = reconstruct(stack([
+        "3. providing key financial services, including clearing checks, operating the Fed-",
+        "Wire and automated clearinghouse (ACH) systems, and serving as a bank for the",
+        "U.S. Treasury; and",
+    ]), vocabulary: ["fedwire"])
+    #expect(preformatted(fed) == [
+        "3. providing key financial services, including clearing checks, operating the FedWire and "
+            + "automated clearinghouse (ACH) systems, and serving as a bank for the U.S. Treasury; and",
+    ])
+    #expect(paragraphs(fed).isEmpty)
+    // A digit: the 9/11 report breaks a case-file number over the boundary, and a serial crosses
+    // a break the way a word does. The page's own hyphen stays.
+    let serial = reconstruct(stack([
+        "81. For Shehhi's ticket purchase, see FBI report, citing 265A-NY-280350-CG; 265A-NY-",
+        "280350-302, serial 16379; Apr. 19, 2001, entry citing CIA report.",
+    ]))
+    #expect(preformatted(serial) == [
+        "81. For Shehhi's ticket purchase, see FBI report, citing 265A-NY-280350-CG; "
+            + "265A-NY-280350-302, serial 16379; Apr. 19, 2001, entry citing CIA report.",
+    ])
+    // #266's contract is untouched: a new sentence is not the rest of a broken word, because
+    // `square` and `Two` make no word the book writes.
+    let sentence = reconstruct(stack([
+        "1. Fold the flag lengthwise, keeping the blue field uppermost and square-",
+        "Two persons hold the folded flag while a third inspects the seams.",
+    ]))
+    #expect(preformatted(sentence).contains { $0.hasSuffix("square-") })
+    #expect(paragraphs(sentence) == ["Two persons hold the folded flag while a third inspects the seams."])
+    // A line the page opens with a marker of its own opens an item, whatever it holds.
+    let nextItem = reconstruct(stack([
+        "81. See FBI report, citing 265A-NY-280350-CG, serial 1928; 265A-NY-",
+        "82. Ibid.",
+    ]))
+    #expect(preformatted(nextItem).count == 2)
+    // A word is what is broken, so something has to be in front of the break. Project Blue Book
+    // reads the rules its pages are ruled with as runs of dashes, and a block whose whole text is
+    // one takes nothing.
+    let rule = reconstruct(stack([
+        "f. Other ------",
+        "3,1 Were you:",
+    ]))
+    #expect(rule.count == 2)
+}
+
 /// A numbered item that genuinely ends at a hyphenated word does not swallow the paragraph
 /// beneath it. The page sets that paragraph a paragraph's space below the list rather than on the
 /// column's own leading, which is the evidence #245 reads, so the two stay apart.

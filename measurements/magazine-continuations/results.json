@@ -1,0 +1,102 @@
+{
+  "sourceSHA256": "2673d1fded74ad89c8b5c59dc325c7884601e1aca5b5755b15a105c1f5b0d761",
+  "pages": 24,
+  "markersIdentical": true,
+  "images": 84,
+  "imagesByteIdentical": true,
+  "textOrderChangedPages": [
+    12,
+    17
+  ],
+  "semanticBlockChangedPages": [
+    6,
+    7,
+    12,
+    17
+  ],
+  "allPagesCharacterMultisetsIdentical": true,
+  "headingChanges": {
+    "6": {
+      "before": [],
+      "after": [
+        "Unlocking the Chemistries of Folk Remedies"
+      ]
+    },
+    "7": {
+      "before": [
+        "Outmaneuvering Mosquitoes"
+      ],
+      "after": [
+        "Learning How Repellents Hinder Mosquito Attacks",
+        "Outmaneuvering Mosquitoes"
+      ]
+    },
+    "17": {
+      "before": [
+        "Sensing Trees\u2019 Water Needs"
+      ],
+      "after": [
+        "Sensing Trees\u2019 Water Needs",
+        "How Much Pressure Can a Leaf Take?"
+      ]
+    }
+  },
+  "newSemanticChecks": [
+    {
+      "page": 6,
+      "kind": "headings",
+      "phrase": "Unlocking the Chemistries of Folk Remedies",
+      "parent": false,
+      "candidate": true
+    },
+    {
+      "page": 7,
+      "kind": "headings",
+      "phrase": "Learning How Repellents Hinder Mosquito Attacks",
+      "parent": false,
+      "candidate": true
+    },
+    {
+      "page": 12,
+      "kind": "paragraphs",
+      "phrase": "Areawide Pest Management Research Unit\u2019s Aerial Application Technology",
+      "parent": false,
+      "candidate": true
+    },
+    {
+      "page": 12,
+      "kind": "paragraphs",
+      "phrase": "truck-mounted, and thermal foggers with water",
+      "parent": false,
+      "candidate": true
+    },
+    {
+      "page": 17,
+      "kind": "headings",
+      "phrase": "How Much Pressure Can a Leaf Take?",
+      "parent": false,
+      "candidate": true
+    },
+    {
+      "page": 17,
+      "kind": "paragraphs",
+      "phrase": "postharvest were in the 10\u02da to 15\u02daF range, consistently higher than the 3\u02da to 4\u02daF range found in the trees that were not water stressed.",
+      "parent": false,
+      "candidate": true
+    },
+    {
+      "page": 17,
+      "kind": "orderedText",
+      "parent": false,
+      "candidate": true
+    }
+  ],
+  "binarySHA256": {
+    "parent": "4fbcca7a81093636b6ae4c0ab53b2e5b5b536fcb8c1df91dec8c9d6b7dc4eced",
+    "candidate": "3902ed23a42098c6a400b69a4a00813445a071446757bb0a9b1abef2b7d10b25"
+  },
+  "epubSHA256": {
+    "parent": "6b541d170ac1b88345f907038ef4ddcc2af951662d7aecd7ced30f83b272616c",
+    "candidate": "35409b0fd23143d4da3ce77fe52828b7b9175ba5770307db53eb407b8e125513"
+  }
+}

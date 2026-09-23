@@ -1,0 +1,360 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        172.11143425756575,
+        255.15999978512011,
+        375.54402646140863,
+        48.776003436832042
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 52.000003664000069,
+          "text" : "Earthdata Cloud"
+        }
+      ],
+      "text" : "Earthdata Cloud"
+    },
+    {
+      "rect" : [
+        167.83344912067022,
+        192.90999779312014,
+        384.07202706230453,
+        48.77600343683207
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 52.000003664000069,
+          "text" : "Analytics Project"
+        }
+      ],
+      "text" : "Analytics Project"
+    },
+    {
+      "rect" : [
+        100.10649770340784,
+        142.33054730457781,
+        519.65199806986345,
+        26.263999902447978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 27.999999895999967,
+          "text" : "Chris Lynnes* and Rahul Ramachandran*"
+        }
+      ],
+      "text" : "Chris Lynnes* and Rahul Ramachandran*"
+    },
+    {
+      "rect" : [
+        321.88130530020146,
+        108.5805432245777,
+        76.159999717119888,
+        26.263999902447978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 27.999999895999967,
+          "text" : "NASA"
+        }
+      ],
+      "text" : "NASA"
+    },
+    {
+      "rect" : [
+        305.12325976394402,
+        15.027476625879672,
+        115.03799957271588,
+        13.131999951223982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 13.999999947999983,
+          "text" : "*U.S. Civil Servant"
+        }
+      ],
+      "text" : "*U.S. Civil Servant"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    720,
+    405
+  ],
+  "caseID" : "ntrs-20180003024-earthdata-slides-2018",
+  "graphics" : [
+    [
+      0,
+      0,
+      720,
+      405
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 52.000003664000069,
+      "monospaced" : false,
+      "rect" : [
+        172.11143425756575,
+        255.15999978512011,
+        375.54402646140863,
+        48.776003436832042
+      ],
+      "text" : "Earthdata Cloud"
+    },
+    {
+      "fontSize" : 52.000003664000069,
+      "monospaced" : false,
+      "rect" : [
+        167.83344912067022,
+        192.90999779312014,
+        384.07202706230453,
+        48.77600343683207
+      ],
+      "text" : "Analytics Project"
+    },
+    {
+      "fontSize" : 27.999999895999967,
+      "monospaced" : false,
+      "rect" : [
+        100.10649770340784,
+        142.33054730457781,
+        519.65199806986345,
+        26.263999902447978
+      ],
+      "text" : "Chris Lynnes* and Rahul Ramachandran*"
+    },
+    {
+      "fontSize" : 27.999999895999967,
+      "monospaced" : false,
+      "rect" : [
+        321.88130530020146,
+        108.5805432245777,
+        76.159999717119888,
+        26.263999902447978
+      ],
+      "text" : "NASA"
+    },
+    {
+      "fontSize" : 13.999999947999983,
+      "monospaced" : false,
+      "rect" : [
+        305.12325976394402,
+        15.027476625879672,
+        115.03799957271588,
+        13.131999951223982
+      ],
+      "text" : "*U.S. Civil Servant"
+    }
+  ],
+  "page" : 1,
+  "paints" : [
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          0,
+          0
+        ],
+        [
+          720,
+          405
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          0,
+          405
+        ],
+        [
+          720.00002303999997,
+          405
+        ],
+        [
+          720.00002303999997,
+          -1.295999999229025e-05
+        ],
+        [
+          0,
+          -1.295999999229025e-05
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          10.037401959999999,
+          340.48720666100803
+        ],
+        [
+          63.271655440000004,
+          53.07676633423597
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          12.037401959999999,
+          391.563972995244
+        ],
+        [
+          71.3090574,
+          391.563972995244
+        ],
+        [
+          71.3090574,
+          342.48720666100803
+        ],
+        [
+          12.037401959999999,
+          342.48720666100803
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : true,
+      "rect" : [
+        [
+          12.037401959999999,
+          342.48720666100803
+        ],
+        [
+          59.271655440000004,
+          49.07676633423597
+        ]
+      ],
+      "rectangular" : false,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          22.543965352335999,
+          182.74999295200001
+        ],
+        [
+          674.91341910702397,
+          165.62205241599997
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          24.543965352335999,
+          346.37204536799999
+        ],
+        [
+          695.45738445936001,
+          346.37204536799999
+        ],
+        [
+          695.45738445936001,
+          184.74999295200001
+        ],
+        [
+          24.543965352335999,
+          184.74999295200001
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          22.543307871999996,
+          117.43109322400005
+        ],
+        [
+          674.91340729599995,
+          66.409450815999975
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          24.543307871999996,
+          181.84054404000003
+        ],
+        [
+          695.45671516799996,
+          181.84054404000003
+        ],
+        [
+          695.45671516799996,
+          119.43109322400005
+        ],
+        [
+          24.543307871999996,
+          119.43109322400005
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          275.954733304,
+          5.7558928000000265
+        ],
+        [
+          173.41732825599996,
+          34.401575776000016
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          277.954733304,
+          38.157468576000042
+        ],
+        [
+          447.37206155999996,
+          38.157468576000042
+        ],
+        [
+          447.37206155999996,
+          7.7558928000000265
+        ],
+        [
+          277.954733304,
+          7.7558928000000265
+        ]
+      ]
+    }
+  ],
+  "pictures" : [
+    [
+      12.037401959999999,
+      342.48720666100803,
+      59.271655440000004,
+      49.07676633423597
+    ]
+  ],
+  "rightsBasis" : "Slide 1 marks both presenters with *U.S. Civil Servant, and the NTRS record places Chris Lynnes at NASA Goddard Space Flight Center and Rahul Ramachandran at NASA Marshall Space Flight Center (17 U.S.C. 105). The NTRS API copyright record (checked 2026-09-17) gives determinationType GOV_PUBLIC_USE_PERMITTED, containsThirdPartyMaterial false, belongsToPublisher false and thirdPartyContentCondition NOT_SET; distribution PUBLIC, no export control. Every slide was checked: no AWS, Google, partner or vendor logo and no screenshot of a commercial product appears. Every slide shows the NASA insignia, whose use is restricted by 14 CFR 1221. Slide 2 carries uncredited satellite renders and a ground-station photo, slides 3-4 uncredited EOSDIS metrics chart rasters, and slides 12-21 uncredited pictogram icons. Owner approved on 2026-09-17. Not relicensed under MIT.",
+  "schemaVersion" : 3,
+  "sourceSHA256" : "f0a1ea3f5711228a9de2544fd1a94b05cfb8d9323fe3a4c253542f5a6ead5c94",
+  "sourceTitle" : "Earthdata Cloud Analytics Project",
+  "sourceURL" : "https://ntrs.nasa.gov/api/citations/20180003024/downloads/20180003024.pdf"
+}

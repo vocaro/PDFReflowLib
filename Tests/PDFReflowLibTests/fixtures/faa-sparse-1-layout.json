@@ -1,0 +1,177 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        396.73000000000002,
+        740.08199999999999,
+        173.79679999999985,
+        32.327999999999975
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 24,
+          "text" : "F"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 24,
+          "text" : "AA"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 24,
+          "text" : "-"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 24,
+          "text" : "H"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 24,
+          "text" : "-"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 24,
+          "text" : "8083"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 24,
+          "text" : "-"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 24,
+          "text" : "2"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 24,
+          "text" : "5C"
+        }
+      ],
+      "text" : "FAA-H-8083-25C"
+    },
+    {
+      "rect" : [
+        40.809999999999945,
+        40.362000000000052,
+        46.804998999999995,
+        12.635000000000005
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.5,
+          "text" : "Left rudder"
+        }
+      ],
+      "text" : "Left rudder"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    612,
+    792
+  ],
+  "caseID" : "faa-phak-8083-25c",
+  "graphics" : [
+    [
+      0,
+      0,
+      612,
+      792
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 24,
+      "monospaced" : false,
+      "rect" : [
+        396.73000000000002,
+        740.08199999999999,
+        173.79679999999985,
+        32.327999999999975
+      ],
+      "text" : "FAA-H-8083-25C"
+    },
+    {
+      "fontSize" : 9.5,
+      "monospaced" : false,
+      "rect" : [
+        40.809999999999945,
+        40.362000000000052,
+        46.804998999999995,
+        12.635000000000005
+      ],
+      "text" : "Left rudder"
+    }
+  ],
+  "page" : 1,
+  "paints" : [
+    {
+      "filled" : false,
+      "image" : true,
+      "rect" : [
+        [
+          0,
+          0
+        ],
+        [
+          612,
+          792
+        ]
+      ],
+      "rectangular" : false,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : true,
+      "rect" : [
+        [
+          3.8500000000000001,
+          0.95999999999999996
+        ],
+        [
+          606.71000000000004,
+          678.72000000000003
+        ]
+      ],
+      "rectangular" : false,
+      "vertices" : [
+
+      ]
+    }
+  ],
+  "pictures" : [
+    [
+      0,
+      0,
+      612,
+      792
+    ]
+  ],
+  "rightsBasis" : "U.S. Government publication, retained as an external development corpus source. The PDF is not bundled or relicensed under the library license.",
+  "schemaVersion" : 3,
+  "sourceSHA256" : "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
+  "sourceTitle" : "Pilot's Handbook of Aeronautical Knowledge, FAA-H-8083-25C",
+  "sourceURL" : "https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/faa-h-8083-25c.pdf"
+}

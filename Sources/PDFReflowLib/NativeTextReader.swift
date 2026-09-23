@@ -42,16 +42,16 @@ enum NativeTextReader {
     /// caller has already read them: `TableReader` needs the same reading to divide a printed row
     /// into cells, and one walk of the content stream serves both (#210).
     static func lines(on page: PDFPage, limit: Int, includeStyle: Bool = true,
-                      rules: [CGRect] = [], links: [PageLink] = [],
+                      rules: [CGRect] = [], links: [PageLink] = [], preserveInvisibleWordGaps: Bool = false,
                       shows: [NativeSpacingReader.Evidence]? = nil) throws -> [TextLine] {
         try withExtractionLock {
             try extractLines(on: page, limit: limit, includeStyle: includeStyle, rules: rules,
-                             links: links, shows: shows)
+                             links: links, preserveInvisibleWordGaps: preserveInvisibleWordGaps, shows: shows)
         }
     }
 
     private static func extractLines(on page: PDFPage, limit: Int, includeStyle: Bool,
-                                     rules: [CGRect], links: [PageLink] = [],
+                                     rules: [CGRect], links: [PageLink] = [], preserveInvisibleWordGaps: Bool = false,
                                      shows: [NativeSpacingReader.Evidence]? = nil) throws -> [TextLine] {
         guard page.numberOfCharacters <= limit else {
             throw ConversionError.resourceLimit("too many characters")
@@ -60,11 +60,18 @@ enum NativeTextReader {
         let selections = selection.selectionsByLine()
         let boundsByLine = selections.map { $0.bounds(for: page) }
         let spacing = includeStyle ? (shows ?? page.pageRef.map(NativeSpacingReader.read) ?? []) : []
+        let invisibleSpacing = preserveInvisibleWordGaps ? page.pageRef.map(NativeSpacingReader.readInvisible) ?? [] : []
         let glyphs = includeStyle ? page.pageRef.map(GlyphIdentityReader.read) ?? [] : []
         // PDFKit's text of every line, beside its rectangle: read once so both the styled-line
         // filter below and `attributedTexts`'s alignment check reuse it instead of asking PDFKit
         // for each line's plain text twice.
         let textsByLine = selections.map(\.string)
+        // A scan also contributes a page-sized attachment selection. It owns no words, and
+        // must not make every word-box anchor look shared by two text lines (#295).
+        let invisibleBounds = preserveInvisibleWordGaps ? selections.indices.compactMap { index -> CGRect? in
+            guard let text = textsByLine[index], text.contains(where: { !$0.isWhitespace && $0 != "\u{FFFC}" }) else { return nil }
+            return boundsByLine[index]
+        } : []
         // Every line the loop below reads with style: one with visible text over a real rectangle.
         let styledLines = includeStyle ? selections.indices.filter { index in
             guard let raw = textsByLine[index], !raw.replacingOccurrences(of: "\u{FFFC}", with: " ")
@@ -109,7 +116,9 @@ enum NativeTextReader {
             guard let raw = line.string else { carry = nil; continue }
             // U+FFFC names an attachment, not a word. Retain a boundary between adjacent
             // words; the graphics reader preserves the object's visible content separately.
-            let semantic = raw.replacingOccurrences(of: "\u{FFFC}", with: " ")
+            let transcription = invisibleSpacing.isEmpty ? raw : NativeSpacingReader.restoringInvisibleSpaces(
+                raw, evidence: invisibleSpacing, bounds: boundsByLine[index], allBounds: invisibleBounds)
+            let semantic = transcription.replacingOccurrences(of: "\u{FFFC}", with: " ")
             guard !semantic.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else { carry = nil; continue }
             let bounds = line.bounds(for: page)
             guard bounds.isFinite, !bounds.isNull, bounds.width > 0, bounds.height > 0 else { carry = nil; continue }

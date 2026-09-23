@@ -646,7 +646,7 @@ enum NativeSpacingReader {
 
     private static let simpleFontKinds: Set<String> = ["Type1", "TrueType", "MMType1"]
 
-    private static func font(_ dict: CGPDFDictionaryRef) -> Font? {
+    private static func font(_ dict: CGPDFDictionaryRef, invisible: Bool = false) -> Font? {
         guard let kind = CGPDFObjects.name(dict, "Subtype") else { return nil }
         var result = Font(id: unsafeBitCast(dict, to: Int.self))
         let data = CGPDFObjects.rawData(dict, "ToUnicode")
@@ -669,6 +669,11 @@ enum NativeSpacingReader {
                 table[UInt8(first + index)] = width / 1000
             }
             if !table.isEmpty { result.widths = table }
+        } else if invisible, kind == "Type1", CGPDFObjects.name(dict, "BaseFont") == "Courier",
+                  CGPDFObjects.dictionary(dict, "FontDescriptor") == nil {
+            // The standard, unembedded Courier font has a 600-unit advance. OCR producers
+            // scale it separately for every word to fit the recognized word's rectangle.
+            result.widths = Dictionary(uniqueKeysWithValues: (0...255).map { (UInt8($0), CGFloat(0.6)) })
         }
         return result
     }
@@ -708,7 +713,10 @@ enum NativeSpacingReader {
         /// Character and word spacing (`Tc`, `Tw`) in unscaled text space units (#119).
         var characterSpacing: CGFloat = 0
         var wordSpacing: CGFloat = 0
-        var saved: [(Font?, CGFloat, CGFloat, CGFloat)] = []
+        let invisible: Bool
+        var renderingMode: CGFloat = 0
+        init(invisible: Bool = false) { self.invisible = invisible }
+        var saved: [(Font?, CGFloat, CGFloat, CGFloat, CGFloat)] = []
         /// The text matrix (Tm), which a show advances, as against the walk's line matrix (Tlm),
         /// which only `Td`, `TD`, `T*` and `Tm` move (#120: Replay Clocks' reference list draws
         /// `[([8])]TJ 0 g 0 G [-571(D)…]TJ`, where the second show continues the first's cursor).
@@ -719,10 +727,10 @@ enum NativeSpacingReader {
         var fonts: [Int: Font?] = [:]
         var evidence: [Evidence] = []
 
-        func saveState() { saved.append((font, size, characterSpacing, wordSpacing)) }
+        func saveState() { saved.append((font, size, characterSpacing, wordSpacing, renderingMode)) }
         func restoreState() {
             guard let state = saved.popLast() else { return }
-            (font, size, characterSpacing, wordSpacing) = state
+            (font, size, characterSpacing, wordSpacing, renderingMode) = state
         }
         func beginText(_ walk: ContentStreamWalk) { text = .identity; continuing = false }
         func endText(_ walk: ContentStreamWalk) { continuing = false }
@@ -738,13 +746,13 @@ enum NativeSpacingReader {
             let id = unsafeBitCast(dict, to: Int.self)
             if let cached = fonts[id] { font = cached } else {
                 guard fonts.count < 256 else { walk.invalid = true; return }
-                font = NativeSpacingReader.font(dict)
+                font = NativeSpacingReader.font(dict, invisible: invisible)
                 fonts[id] = font
             }
         }
 
         func show(_ arguments: [ContentStreamWalk.ShowArgument], walk: ContentStreamWalk) {
-            guard walk.inText, evidence.count < 10_000 else { walk.invalid = true; return }
+            guard walk.inText, evidence.count < 10_000, !invisible || renderingMode == 3 else { walk.invalid = true; return }
             // A show that continues the text cursor needs the previous show's complete advance.
             if walk.positioned { text = walk.lineMatrix } else if !continuing { walk.invalid = true; return }
             continuing = false
@@ -919,8 +927,12 @@ enum NativeSpacingReader {
             case "Tw":
                 guard let n = ContentStreamWalk.numbers(scanner, 1), abs(n[0]) <= 1000 else { walk.invalid = true; return }
                 wordSpacing = n[0]
-            case "Ts", "Tr":
+            case "Ts":
                 if ContentStreamWalk.numbers(scanner, 1) != [0] { walk.invalid = true }
+            case "Tr":
+                guard let n = ContentStreamWalk.numbers(scanner, 1),
+                      n[0] == 0 || invisible && n[0] == 3 else { walk.invalid = true; return }
+                renderingMode = n[0]
             case "Tz":
                 if ContentStreamWalk.numbers(scanner, 1) != [100] { walk.invalid = true }
             case "gs":
@@ -952,6 +964,44 @@ enum NativeSpacingReader {
         let visitor = Visitor()
         guard ContentStreamWalk.scan(page, options: scanOptions, visitor: visitor) else { return [] }
         return visitor.evidence
+    }
+
+    /// Invisible word boxes over a scan state transcription, not visible-font typography.
+    /// PDFKit can fuse neighboring boxes despite a positive interword gap (#295). This reader
+    /// models the standard Courier advances these layers use, and keeps all visible-text
+    /// repair rules out of the transcription. Unknown state or any visible show refuses it.
+    static func readInvisible(_ page: CGPDFPage) -> [Evidence] {
+        guard page.rotationAngle == 0 else { return [] }
+        let visitor = Visitor(invisible: true)
+        guard ContentStreamWalk.scan(page, options: scanOptions, visitor: visitor) else { return [] }
+        return visitor.evidence
+    }
+
+    static func restoringInvisibleSpaces(_ native: String, evidence: [Evidence],
+                                          bounds: CGRect, allBounds: [CGRect]) -> String {
+        guard let shows = anchoredShows(evidence, bounds: bounds, allBounds: allBounds),
+              shows.count > 1 else { return native }
+        var source: [UInt16] = [], boundaries: Set<Int> = []
+        var previous: Evidence?
+        for show in shows.sorted(by: { $0.origin.x < $1.origin.x }) {
+            guard let text = show.unicode, !text.isEmpty, source.count + text.utf16.count <= 8192 else { return native }
+            if let previous, let end = previous.end,
+               let left = previous.unicode?.last, let right = text.first,
+               (left.isLetter || left.isNumber), (right.isLetter || right.isNumber),
+               !CJKText.setsNoSpace(between: left.unicodeScalars.last, and: right.unicodeScalars.first),
+               abs(previous.origin.y - show.origin.y) <= max(previous.size, show.size) * 0.1,
+               show.origin.x - end >= max(previous.size, show.size) * 0.15 {
+                boundaries.insert(source.count)
+            }
+            source += text.utf16
+            previous = show
+        }
+        // The complete line must agree, apart from spaces PDFKit synthesized. A partly
+        // decoded transcription cannot authorize a word boundary in a different reading.
+        guard let insertions = wholeLineInsertions(in: Array(native.utf16), source: source, boundaries: boundaries) else { return native }
+        let result = NSMutableString(string: native)
+        for offset in insertions.reversed() { result.insert(" ", at: offset) }
+        return result as String
     }
 
     // MARK: - The line

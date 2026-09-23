@@ -1094,6 +1094,22 @@ reads `SEVERAL DAYS LATER AT THE CENTERS FOR` and then `DISEASE CONTROL AND PREV
 GEORGIA...`, which is the caption in its own order, broken where the reading's own
 `shouldWrapToNextLine` says the first line stops.
 
+**Every other measure the page takes of such a line reads the same frame** (#276). A page's
+**stated leading**, the **ordinary height** of a line at each of its sizes and the **ordinary gap**
+beneath one, the **entries it hangs** its wraps under, whether two display lines **stack**, a
+**marker's column** and the margin it justifies to, and the **printed rows and column boundary**
+the table readers read are all group measures, so each is taken in the writing's own frame only
+where every line of the group was set at one turn that is not upright — a group holding an upright
+line, or two turns, reads on the page. A measure of one **pair** of lines asks the narrower
+question that pair allows, that the two carry the same turn: `continuesHeading`, the broken item's
+gap, and the test that the rest of a printed row stands beyond the piece that opened it. The two
+predicates all of these are written through, whether two lines **overlap across the writing** and
+whether they are **pieces of one row**, move with them, because a sideways line's box is as tall as
+the line is long and on the page every line of a sideways caption shares a row with every other.
+The table readers hand back the page's own rectangles, which is what a crop is tested against.
+Nothing in the corpus exercises any of this: its only sideways writing is the CDC novel's pages 16
+and 17, whose caption is three lines, carries no marker and stands in no table.
+
 A **picture across the block's measure** — at least 90% of it — with content on both sides of it
 separates what is printed above it from what is printed below it, and is cut at before any gutter
 is looked for (#137). A picture at the **head or foot** of the block separates nothing, so that cut

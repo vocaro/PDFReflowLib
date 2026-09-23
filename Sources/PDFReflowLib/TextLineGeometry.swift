@@ -10,8 +10,15 @@ extension TextLine {
     }
 
     /// The two lines share some horizontal extent: they stand in the same column, or one spans it.
+    ///
+    /// Across the writing, where both lines were set at one quarter turn: a sideways line's
+    /// column runs down the page, and its own rectangle is as tall as the line is long, so on the
+    /// page every sideways line of a caption overlaps every other (#276, #263). Two lines the page
+    /// set at different turns have no common frame and are compared on the page, as before; for
+    /// two upright lines this is the page.
     func overlapsHorizontally(_ other: TextLine) -> Bool {
-        other.rect.minX < rect.maxX && other.rect.maxX > rect.minX
+        let (a, b) = turn == other.turn ? (uprightRect, other.uprightRect) : (rect, other.rect)
+        return b.minX < a.maxX && b.maxX > a.minX
     }
 
     /// Another line of the same column: not this line, and overlapping it horizontally.
@@ -22,7 +29,8 @@ extension TextLine {
     /// Pieces of one visual row: PDFKit splits rows at wide gaps, and superscripts are separate
     /// lines. The rectangles overlap vertically by at least half the shorter one's height.
     func sharesRow(with other: TextLine) -> Bool {
-        TextLine.sameRow(rect, other.rect)
+        turn == other.turn ? TextLine.sameRow(uprightRect, other.uprightRect)
+                           : TextLine.sameRow(rect, other.rect)
     }
 
     static func sameRow(_ a: CGRect, _ b: CGRect) -> Bool {

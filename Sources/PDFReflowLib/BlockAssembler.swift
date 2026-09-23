@@ -414,10 +414,15 @@ extension LayoutReconstructor {
     /// establish none at all.
     static func markerColumn(of line: TextLine, in lines: [TextLine], body: CGFloat) -> MarkerColumn {
         let size = Int(line.fontSize.rounded())
+        // A marker's column is a column of the writing: where the page set every line of this
+        // group at one quarter turn, the edge its markers stand on and the margin its column
+        // justifies to run along that writing and not down the page (#276, #263).
+        let frame = LayoutReconstructor.ownFrame(of: lines)
         let column = lines.filter {
-            !$0.monospaced && Int($0.fontSize.rounded()) == size && abs($0.rect.minX - line.rect.minX) < body * 1.5
+            !$0.monospaced && Int($0.fontSize.rounded()) == size
+                && abs(frame($0).minX - frame(line).minX) < body * 1.5
         }
-        let edge = column.filter { abs($0.rect.minX - line.rect.minX) < body * 0.5 }
+        let edge = column.filter { abs(frame($0).minX - frame(line).minX) < body * 0.5 }
         // A list marks its items and its markers advance, so a run of lines on one edge with
         // fewer than a quarter of them marked, whose markers do not run on down the page, is no
         // list. Eight is the shortest run that says anything: the 9/11 report's staff pages stand
@@ -426,15 +431,15 @@ extension LayoutReconstructor {
         // among twenty lines of prose on one edge and numbers them 1, 2, 3, 4 (#171).
         let marked = edge.count { isList($0.text) }
         let digits = markerValue(line.text)?.digits
-        let sequence = edge.sorted { $0.rect.minY > $1.rect.minY }
+        let sequence = edge.sorted { frame($0).minY > frame($1).minY }
             .compactMap(\.text).compactMap(markerValue).filter { $0.digits == digits }.map(\.value)
         let advancing = zip(sequence, sequence.dropFirst()).count { $1 > $0 }
         let setsAList = edge.count < MarkerColumn.shortestUnmarkedRun || marked * 4 > edge.count
             || (sequence.count >= 2 && advancing * 2 > sequence.count - 1)
-        guard let right = column.map(\.rect.maxX).max() else {
+        guard let right = column.map({ frame($0).maxX }).max() else {
             return MarkerColumn(onMajorityEdge: false, justifiedRight: nil, setsAList: setsAList)
         }
-        let justified = column.count { $0.rect.maxX >= right - body * 0.25 }
+        let justified = column.count { frame($0).maxX >= right - body * 0.25 }
         return MarkerColumn(onMajorityEdge: edge.count * 2 > column.count,
                             justifiedRight: justified >= 3 ? right : nil, setsAList: setsAList)
     }
@@ -642,12 +647,16 @@ struct BlockAssembler {
     /// untouched, because a break between two Latin words is a space and says nothing about
     /// whether the lines are one title or two.
     private func continuesHeading(_ above: TextLine, _ line: TextLine) -> Bool {
+        // In the frame the two lines' own writing runs in, where the page set them at one turn:
+        // the next line of a sideways title stands beside it on the page (#276, #263).
+        let (top, next) = above.turn == line.turn
+            ? (above.uprightRect, line.uprightRect) : (above.rect, line.rect)
         guard CJKText.setsNoSpace(between: above.text, and: line.text),
-              above.hasSize(line.fontSize), line.rect.maxY < above.rect.maxY else { return false }
+              above.hasSize(line.fontSize), next.maxY < top.maxY else { return false }
         // A display line's PDFKit box carries enough leading that two stacked lines of a title
         // overlap: the cover's two 31-point lines overlap by 12.9 points. The bound is the size
         // itself, which still separates a stack from a heading a measure further down the page.
-        let gap = above.rect.minY - line.rect.maxY
+        let gap = top.minY - next.maxY
         return gap >= -line.fontSize && gap <= line.fontSize * 0.8
     }
 
@@ -661,7 +670,10 @@ struct BlockAssembler {
             || hyphens.lineEndSubstitute.map { text.text.last == $0 } == true
         guard broken,
               line.text.first?.isLowercase == true, above.hasSize(line.fontSize) else { return false }
-        let gap = above.rect.minY - line.rect.maxY
+        // Along the writing, where the page set both lines at one turn (#276, #263).
+        let (top, next) = above.turn == line.turn
+            ? (above.uprightRect, line.uprightRect) : (above.rect, line.rect)
+        let gap = top.minY - next.maxY
         let size = max(line.fontSize, 4)
         return gap >= -size * 0.6 && gap <= size * 0.8
     }
@@ -757,9 +769,13 @@ struct BlockAssembler {
             // its paragraph, so the 9/11 report's `10:03:11 Flight 93 crashes in field in` keeps
             // `Shanksville, PA` and the FAA's conterminous-states row keeps its altitudes.
             // A row's pieces stand the other way round where the writing runs right to left (#41).
+            // The rest of a printed row stands along the writing, which on a page set at one
+            // quarter turn is not along the page (#276, #263).
             let piece = rowInProgress.map { row in
-                row.sharesRow(with: line)
-                    && (rightToLeft ? line.rect.maxX <= row.rect.minX : line.rect.minX >= row.rect.maxX)
+                let (open, next) = row.turn == line.turn
+                    ? (row.uprightRect, line.uprightRect) : (row.rect, line.rect)
+                return row.sharesRow(with: line)
+                    && (rightToLeft ? next.maxX <= open.minX : next.minX >= open.maxX)
             } ?? false
             if rowInProgress != nil, piece || continuation,
                let last = blocks.last, case let .preformatted(text) = last.content {

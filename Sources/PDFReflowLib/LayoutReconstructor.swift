@@ -927,6 +927,21 @@ enum LayoutReconstructor {
         return false
     }
 
+    /// A group's rectangles in the frame its own writing runs in, where every line of it was set
+    /// at one quarter turn, and on the page otherwise (#276).
+    ///
+    /// `#263` reads a sideways line's order and its paragraph joins this way, and every other
+    /// measure the page takes of such a line read its axis-aligned rectangle as though the writing
+    /// ran along it — which makes a sideways line's length a height and its thickness a width, so
+    /// the step between two lines is a column position and the page's leading is nothing. A group
+    /// measure is turned only where the whole group agrees on one turn, because a rotation about
+    /// the page's origin is sound only where every rectangle a rule compares carries the same one;
+    /// a group holding an upright line reads on the page, as before.
+    static func ownFrame(of lines: [TextLine]) -> (TextLine) -> CGRect {
+        guard QuarterTurn.shared(by: lines, turn: { $0.turn }) != nil else { return { $0.rect } }
+        return { $0.uprightRect }
+    }
+
     static func bodySize(_ lines: [TextLine]) -> CGFloat {
         var weights: [Int: Int] = [:]
         addBodyWeights(of: lines, to: &weights)
@@ -964,17 +979,21 @@ enum LayoutReconstructor {
     static func statedLeading(_ lines: [TextLine]) -> CGFloat? {
         let candidates = lines.filter { !$0.monospaced && !$0.text.isEmpty }
         let body = max(4, bodySize(lines))
+        // In the frame the page's own writing runs in: on a page whose lines all stand at one
+        // quarter turn, the step from one line to the next runs down the writing and not down the
+        // page, and measured on the page it is a column position (#276, #263).
+        let frame = ownFrame(of: candidates)
         var counts: [Int: Int] = [:]
         for line in candidates {
             // The nearest line below this one in its own column, at its own size: the line the
             // page would have set on its leading. A second column's lines stand elsewhere and
             // are never this line's neighbour.
             let below = candidates.filter {
-                $0.rect.maxY < line.rect.maxY && $0.hasSize(line.fontSize)
-                    && abs($0.rect.minX - line.rect.minX) < body * 1.5
-            }.max { $0.rect.maxY < $1.rect.maxY }
+                frame($0).maxY < frame(line).maxY && $0.hasSize(line.fontSize)
+                    && abs(frame($0).minX - frame(line).minX) < body * 1.5
+            }.max { frame($0).maxY < frame($1).maxY }
             guard let below else { continue }
-            let step = line.rect.maxY - below.rect.maxY
+            let step = frame(line).maxY - frame(below).maxY
             guard step > 0, step <= body * 3 else { continue }
             counts[Int((step * 2).rounded()), default: 0] += 1
         }
@@ -1023,12 +1042,16 @@ enum LayoutReconstructor {
     /// so they touch or overlap), sharing the left edge, the center or the right edge (#186).
     static func stacksUnderHeading(_ line: TextLine, after previous: TextLine) -> Bool {
         let size = max(previous.fontSize, line.fontSize)
+        // Two lines the page set at one quarter turn stack along their own writing, not down the
+        // page: what stands under a sideways heading is the line beside it (#276, #263).
+        let (above, below) = previous.turn == line.turn
+            ? (previous.uprightRect, line.uprightRect) : (previous.rect, line.rect)
         guard abs(previous.fontSize - line.fontSize) <= size * 0.1, !previous.sharesRow(with: line),
-              line.rect.minY < previous.rect.minY, line.rect.maxY >= previous.rect.minY - size,
-              previous.rect.minY - line.rect.minY <= size * 2.2 else { return false }
-        return abs(previous.rect.minX - line.rect.minX) <= size * 0.6
-            || abs(previous.rect.midX - line.rect.midX) <= size * 0.6
-            || abs(previous.rect.maxX - line.rect.maxX) <= size * 0.6
+              below.minY < above.minY, below.maxY >= above.minY - size,
+              above.minY - below.minY <= size * 2.2 else { return false }
+        return abs(above.minX - below.minX) <= size * 0.6
+            || abs(above.midX - below.midX) <= size * 0.6
+            || abs(above.maxX - below.maxX) <= size * 0.6
     }
 
     /// A painted 1-pt rule after graphics padding: an underline or a separator, never a figure on
@@ -1047,7 +1070,8 @@ enum LayoutReconstructor {
     /// The page's ordinary line height at a size: the median height of its lines of that size
     /// (#218, ported unchanged from the coordination branch).
     private static func ordinaryLineHeight(_ size: CGFloat, in lines: [TextLine]) -> CGFloat? {
-        let heights = lines.filter { $0.hasSize(size) }.map(\.rect.height).sorted()
+        let frame = ownFrame(of: lines)
+        let heights = lines.filter { $0.hasSize(size) }.map { frame($0).height }.sorted()
         return heights.isEmpty ? nil : heights[heights.count / 2]
     }
 
@@ -1062,8 +1086,9 @@ enum LayoutReconstructor {
     /// ordinary one of that size measures, and the lower quartile rather than the median because
     /// a page of mathematics sets more tall lines than short ones.
     static func ordinaryLineHeights(in lines: [TextLine]) -> [Int: CGFloat] {
+        let frame = ownFrame(of: lines)
         var heights: [Int: [CGFloat]] = [:]
-        for line in lines { heights[Int(line.fontSize.rounded()), default: []].append(line.rect.height) }
+        for line in lines { heights[Int(line.fontSize.rounded()), default: []].append(frame(line).height) }
         return heights.compactMapValues { sizes in
             let sorted = sizes.sorted()
             return sorted.isEmpty ? nil : sorted[sorted.count / 4]
@@ -1076,12 +1101,14 @@ enum LayoutReconstructor {
     /// coordination branch's `ordinaryLineGap`, #159).
     private static func ordinaryLineGap(_ size: CGFloat, in lines: [TextLine], body: CGFloat) -> CGFloat? {
         guard let height = ordinaryLineHeight(size, in: lines) else { return nil }
-        let ordinary = lines.filter { $0.hasSize(size) && $0.rect.height <= height + body * 0.25 }
+        let frame = ownFrame(of: lines)
+        let ordinary = lines.filter { $0.hasSize(size) && frame($0).height <= height + body * 0.25 }
         let gaps = ordinary.compactMap { upper -> CGFloat? in
             ordinary.compactMap { lower -> CGFloat? in
-                let gap = upper.rect.minY - lower.rect.maxY
-                guard lower != upper, abs(upper.rect.minX - lower.rect.minX) <= body * 0.5,
-                      gap >= -body * 0.4, gap < body * 0.9, lower.rect.midY < upper.rect.midY else { return nil }
+                let gap = frame(upper).minY - frame(lower).maxY
+                guard lower != upper, abs(frame(upper).minX - frame(lower).minX) <= body * 0.5,
+                      gap >= -body * 0.4, gap < body * 0.9,
+                      frame(lower).midY < frame(upper).midY else { return nil }
                 return gap
             }.min()
         }.sorted()
@@ -1117,28 +1144,32 @@ enum LayoutReconstructor {
     ///   indented line is never read as a wrap.
     static func hangingEntries(in lines: [TextLine], body: CGFloat) -> [CGRect: CGRect] {
         let closing: Set<Character> = ["\u{201D}", "\u{2019}", "\"", "'", ")", "]"]
+        // Every measure below — the step to the wrap, the indent it hangs at, the measure the
+        // entry fills, the edge the page hangs them all on — runs along the writing, so on a page
+        // whose lines all stand at one quarter turn it is read in that frame (#276, #263).
+        let frame = ownFrame(of: lines)
         var candidates: [(wrap: TextLine, entry: TextLine)] = []
         for line in lines where !line.monospaced && !isList(line.text) {
             let size = max(line.fontSize, 4)
             let above = lines.filter { other in
                 other != line && !other.monospaced && other.hasSize(line.fontSize)
                     && other.overlapsHorizontally(line) && !other.sharesRow(with: line)
-                    && other.rect.midY > line.rect.midY
-            }.min { $0.rect.minY < $1.rect.minY }
+                    && frame(other).midY > frame(line).midY
+            }.min { frame($0).minY < frame($1).minY }
             guard let entry = above, entry.wraps != false else { continue }
-            let gap = entry.rect.minY - line.rect.maxY
+            let gap = frame(entry).minY - frame(line).maxY
             guard gap >= -body * 0.4, gap < body * 0.9,
-                  line.rect.minX - entry.rect.minX > body * 1.5,
-                  line.rect.maxX <= entry.rect.maxX - body,
+                  frame(line).minX - frame(entry).minX > body * 1.5,
+                  frame(line).maxX <= frame(entry).maxX - body,
                   line.text.count(where: \.isLetter) >= 2,
-                  entry.rect.width >= size * 12, readsAsSentence(entry),
+                  frame(entry).width >= size * 12, readsAsSentence(entry),
                   let ending = entry.text.reversed().first(where: { !$0.isWhitespace && !closing.contains($0) }),
                   !".!?:;".contains(ending) else { continue }
             candidates.append((line, entry))
         }
         var edges: [Int: [(wrap: TextLine, entry: TextLine)]] = [:]
         for candidate in candidates {
-            edges[Int((candidate.wrap.rect.minX / max(body, 4) * 2).rounded()), default: []].append(candidate)
+            edges[Int((frame(candidate.wrap).minX / max(body, 4) * 2).rounded()), default: []].append(candidate)
         }
         var result: [CGRect: CGRect] = [:]
         for hung in edges.values where hung.count >= 3 {

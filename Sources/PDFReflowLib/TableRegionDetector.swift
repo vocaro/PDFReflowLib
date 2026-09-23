@@ -133,7 +133,19 @@ enum TableRegionDetector {
         func trailing(_ rect: CGRect) -> CGFloat { rightToLeft ? rect.minX : rect.maxX }
         func isBefore(_ first: CGFloat, _ second: CGFloat) -> Bool { rightToLeft ? first > second : first < second }
         func advanced(_ edge: CGFloat, by distance: CGFloat) -> CGFloat { rightToLeft ? edge - distance : edge + distance }
-        let candidates = lines.filter { !$0.monospaced && !$0.text.isEmpty }
+        // A page's printed rows run along its writing. Where every line of the group was set at
+        // one quarter turn, the run is read in that frame — a sideways table's rows step across
+        // the page, not down it — by giving each line its own upright rectangle and reading it as
+        // upright from there. The regions handed back are the page's own, because that is what a
+        // crop is tested against (#276, #263).
+        let original = lines.filter { !$0.monospaced && !$0.text.isEmpty }
+        let frame = LayoutReconstructor.ownFrame(of: lines)
+        let candidates = original.map { line -> TextLine in
+            var upright = line
+            upright.rect = frame(line)
+            upright.turn = .upright
+            return upright
+        }
         guard candidates.count >= 3 else { return [] }
         // One printed row per baseline, top down, each row's pieces left to right.
         var printed: [[Int]] = []
@@ -197,7 +209,7 @@ enum TableRegionDetector {
             }
             guard statesAColumn(rows, in: candidates, body: body, rightToLeft: rightToLeft) else { continue }
             used.formUnion(rows.flatMap { $0 })
-            regions.append(union(rows.flatMap { $0 }.map { candidates[$0].rect }))
+            regions.append(union(rows.flatMap { $0 }.map { original[$0].rect }))
         }
         return regions
     }
@@ -235,7 +247,20 @@ enum TableRegionDetector {
     /// has and a row of prose has not is its own words: the table repeats one short label across
     /// its columns, which `printsOneColumnLabel` reads.
     static func columnHeaders(in page: PageContent, body: CGFloat) -> [CGRect] {
-        let rows = printedRows(page.lines)
+        // Read in the frame the page's own writing runs in, where every line of it stands at one
+        // quarter turn: a column edge of a sideways table is an edge across the page. The
+        // rectangles handed back are the page's own, because that is what the crop rule tests
+        // (#276, #263).
+        let frame = LayoutReconstructor.ownFrame(of: page.lines)
+        let turned = page.lines.map { line -> TextLine in
+            var upright = line
+            upright.rect = frame(line)
+            upright.turn = .upright
+            return upright
+        }
+        let onPage = Dictionary(zip(turned.map(\.rect), page.lines.map(\.rect)),
+                                uniquingKeysWith: { first, _ in first })
+        let rows = printedRows(turned)
         guard rows.count >= 3 else { return [] }
         let starts = rows.map { $0.map(\.rect.minX) }
         var result: [CGRect] = []
@@ -248,7 +273,8 @@ enum TableRegionDetector {
                 }) >= 2
             }
             guard statesAnEdge else { continue }
-            result.append(contentsOf: row.filter { printsOneColumnLabel($0.text) }.map(\.rect))
+            result.append(contentsOf: row.filter { printsOneColumnLabel($0.text) }
+                .compactMap { onPage[$0.rect] })
         }
         return result
     }

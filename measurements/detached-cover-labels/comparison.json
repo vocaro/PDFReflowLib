@@ -1,0 +1,55 @@
+{
+  "baselineCommit": "a1bd1c8",
+  "candidateCommit": "d22b485",
+  "sourceSHA256": "c34f1bec5c9416265670b7fcb24556bb8616ba95e8de2f2890460b6bbca1a472",
+  "pagesChanged": [
+    1
+  ],
+  "pageMarkersIdentical": true,
+  "imageCount": 28,
+  "imagesByteIdentical": true,
+  "coverBefore": [
+    "Protein, Dairy",
+    "Vegetables",
+    "& Healthy Fats & Fruits",
+    "Whole Grains",
+    "realfood.gov 2025–2030"
+  ],
+  "coverAfter": [
+    "Protein, Dairy & Healthy Fats",
+    "realfood.gov",
+    "Whole Grains",
+    "Vegetables & Fruits",
+    "2025–2030"
+  ],
+  "runs": [
+    {
+      "converterSHA256": "9c67cdec91f1098b0fe15d8a7a70736906601df3cb7f15ec3d7e2b06366c2f34",
+      "outputSHA256": "ebe2bb9b112c93094078c93ee6d87c26fb7804bfa2a007c884f15770fd66b92e",
+      "conversionSeconds": 1.3576783750322647,
+      "converterPeakRSSBytes": 117407744,
+      "runPassed": true,
+      "memoryGate": {
+        "limitBytes": 201326592,
+        "metric": "converter process peak RSS from wait/rusage",
+        "attempts": 1,
+        "status": "passed",
+        "passed": true
+      }
+    },
+    {
+      "converterSHA256": "e1c9b43e7dfcd33b4262386d51061c46a9ad3b3425a227071cce39efc32d8cab",
+      "outputSHA256": "6b947cc6964f2a2165134c3ba5a3a1088e29edc10b75f8b8717b392d877ae945",
+      "conversionSeconds": 1.1539460409549065,
+      "converterPeakRSSBytes": 114458624,
+      "runPassed": true,
+      "memoryGate": {
+        "limitBytes": 201326592,
+        "metric": "converter process peak RSS from wait/rusage",
+        "attempts": 1,
+        "status": "passed",
+        "passed": true
+      }
+    }
+  ]
+}

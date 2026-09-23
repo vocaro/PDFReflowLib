@@ -47,13 +47,15 @@ PROBE_SOURCES = {
     'inspect-structure.swift': ['StructureTreeReader.swift', 'CGPDFObjects.swift',
                                 'TableCellEvidence.swift',
                                 'DocumentModel.swift', 'ReflowDocument.swift',
-                                'ConversionTypes.swift', 'PDFPageSource.swift', 'SourceMetadata.swift',
+                                'ConversionTypes.swift', 'PDFPageSource.swift', 'EmbeddedImageReader.swift',
+                                'ImageAlphaBounds.swift', 'SourceMetadata.swift',
                                 'XMLText.swift'],
     'inspect-chapter-boundaries.swift': EXTRACTION + ['ChapterBoundaryReader.swift', 'PDFPageSource.swift',
+                                                      'EmbeddedImageReader.swift', 'ImageAlphaBounds.swift',
                                                       'SourceMetadata.swift', 'XMLText.swift'],
-    'capture-layout-fixture.swift': EXTRACTION + ['GraphicsReader.swift'],
+    'capture-layout-fixture.swift': EXTRACTION + ['GraphicsReader.swift', 'PanelOutline.swift'],
     'capture-spacing-source.swift': [],                 # Apple SDKs only
-    'capture-algebra-layout.swift': EXTRACTION + ['GraphicsReader.swift'],
+    'capture-algebra-layout.swift': EXTRACTION + ['GraphicsReader.swift', 'PanelOutline.swift'],
     # `OCRReader` checks its own reading against the page's ink (#116) and measures how much of
     # each table it located it transcribed (#31), so it needs both measurements.
     'capture-ocr-layout-fixture.swift': RECOGNITION,
@@ -63,7 +65,7 @@ PROBE_SOURCES = {
     # #31 measures the cells of the tables a recognition of a scanned page locates.
     'probe-table-cell-evidence.swift': RECOGNITION,
     'audit-report-margins.swift': EXTRACTION + ['FurnitureDetector.swift'],
-    'audit-invisible-spacing.swift': EXTRACTION + ['GraphicsReader.swift'],
+    'audit-invisible-spacing.swift': EXTRACTION + ['GraphicsReader.swift', 'PanelOutline.swift'],
 }
 
 

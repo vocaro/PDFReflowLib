@@ -25,7 +25,8 @@ struct PageTypography: Equatable {
     /// The leading the page's reflowable text states, or nil where it states none (#123).
     let leading: CGFloat?
 
-    init(pageLines: [TextLine], reflowableLines: [TextLine], documentBody: CGFloat?) {
+    init(pageLines: [TextLine], reflowableLines: [TextLine], documentBody: CGFloat?,
+         nativeSizeEvidence: Bool = true) {
         let body = max(4, LayoutReconstructor.bodySize(pageLines))
         let established = LayoutReconstructor.establishedBodySize(reflowableLines)
         // A lone long title can outweigh its running head and become the page's commonest
@@ -37,8 +38,18 @@ struct PageTypography: Equatable {
         let sparseBody = documentBody.map { max($0, smallestSize, 4) } ?? body
         // Several short lines at one size can be a set of labels, not a title. The lack of
         // 200 prose characters does not make DGA's six food-label lines sparse display type.
-        let dominantLines = reflowableLines.count { Int($0.fontSize.rounded()) == Int(body) }
-        let headingPageBody = established == nil && dominantLines <= 2 ? min(body, sparseBody) : body
+        let dominantLines = reflowableLines.filter { Int($0.fontSize.rounded()) == Int(body) }
+        let largestSize = reflowableLines.map(\.fontSize).max() ?? body
+        // The fallback rescues a dominant title, not smaller bylines below an already larger
+        // title. OCR box heights and synthetic font sizes are not native type-size evidence.
+        // A lone mixed letter/digit token may be a publication identifier; it cannot
+        // establish this additional title evidence on its own.
+        let identifier = dominantLines.count == 1 && dominantLines[0].text.contains(where: \.isLetter)
+            && dominantLines[0].text.contains(where: \.isNumber)
+            && !dominantLines[0].text.contains(where: \.isWhitespace)
+        let sparseTitle = nativeSizeEvidence && established == nil && dominantLines.count <= 2
+            && Int(largestSize.rounded()) <= Int(body) && !identifier
+        let headingPageBody = sparseTitle ? min(body, sparseBody) : body
         let headingBody = established.map { max(body, $0) } ?? headingPageBody
         let documentFloor = documentBody.map { established == nil ? $0 * 1.1 : 0 } ?? 0
         self.body = body
@@ -52,6 +63,7 @@ struct PageTypography: Equatable {
     /// The typography of a whole page's lines, with no document floor: what the label survey and
     /// the region detectors read.
     init(page: PageContent) {
-        self.init(pageLines: page.lines, reflowableLines: page.lines, documentBody: nil)
+        self.init(pageLines: page.lines, reflowableLines: page.lines, documentBody: nil,
+                  nativeSizeEvidence: !page.recognized && !page.hasSyntheticTextStyle)
     }
 }

@@ -592,3 +592,58 @@ func repeatedCoverLabelsDoNotBecomeSparseDisplayTitles() throws {
     #expect(headings == ["Dietary", "Guidelines For Americans"])
     #expect(!headings.contains { $0.contains("Protein") || $0.contains("Vegetables") || $0.contains("Grains") })
 }
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/296"))
+func sparseFallbackDoesNotPromoteBylinesOrPublicationIdentifiers() throws {
+    for name in ["earthdata-sparse-1", "faa-sparse-1"] {
+        let page = try SourceLayoutFixture.load(name).content()
+        let typography = PageTypography(pageLines: page.lines, reflowableLines: page.lines, documentBody: 10)
+        let headings = page.lines.filter {
+            LayoutReconstructor.isTitleSized($0, in: page.lines, typography: typography, judgesTitleWords: false)
+        }.map(\.text)
+        if name.hasPrefix("earthdata") {
+            #expect(headings == ["Earthdata Cloud", "Analytics Project"])
+        } else { #expect(headings.isEmpty) }
+    }
+    for name in ["earthdata-sparse-2", "earthdata-sparse-3", "earthdata-sparse-6", "arabic-sparse-1"] {
+        let page = try SourceLayoutFixture.load(name).content()
+        let typography = PageTypography(pageLines: page.lines, reflowableLines: page.lines, documentBody: 10)
+        let headings = page.lines.filter {
+            LayoutReconstructor.isTitleSized($0, in: page.lines, typography: typography, judgesTitleWords: false)
+        }.map(\.text)
+        #expect(!headings.isEmpty)
+        for title in page.lines.filter({ $0.fontSize >= 30 }).map(\.text) {
+            #expect(headings.contains(title))
+        }
+    }
+}
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/296"))
+func sparseRecognizedProseDoesNotBorrowNativeTitleEvidence() throws {
+    let capture = try SourceRecognitionFixture.load("census-sparse-7")
+    let reading = capture.reading()
+    // Fresh OCR is host-variable: this capture finds a different subset than the full-book
+    // regression. Replay two actual source lines to pin its sparse, mixed-height condition.
+    // The tall line is ordinary explanatory prose below an equation, not a printed heading.
+    let tall = try #require(reading.lines.first { $0.text.hasPrefix("where wi,") })
+    let small = try #require(reading.lines.first { $0.text == "1o = min" })
+    // Pin the observed continuation's text with a minimal synthetic OCR-height contrast as
+    // well. These are test geometry, not a claim that Vision repeats one full-book reading.
+    let continuation = TextLine(text: "[16]) in that it uses Dijkstra's shortest augmenting path for many computations",
+        rect: CGRect(x: 50, y: 500, width: 450, height: 18), fontSize: 14)
+    let tiny = TextLine(text: "x = 1", rect: CGRect(x: 50, y: 540, width: 40, height: 10), fontSize: 9)
+    for lines in [[tall, small], [continuation, tiny]] {
+        let native = PageTypography(pageLines: lines, reflowableLines: lines, documentBody: 8)
+        #expect(native.headingThreshold < lines[0].fontSize)
+        for synthetic in [false, true] {
+            var page = PageContent(number: 7, bounds: CGRect(x: 0, y: 0, width: 612, height: 792),
+                                   lines: lines, graphics: [])
+            page.recognized = !synthetic
+            page.hasSyntheticTextStyle = synthetic
+            let typography = PageTypography(pageLines: lines, reflowableLines: lines, documentBody: 8,
+                                           nativeSizeEvidence: !page.recognized && !page.hasSyntheticTextStyle)
+            #expect(typography.headingThreshold > lines[0].fontSize)
+            #expect(headingTexts(floorBlocks(page, documentBody: 8)).isEmpty)
+        }
+    }
+}

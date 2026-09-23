@@ -1,0 +1,1417 @@
+{
+  "attributedLines" : [
+
+  ],
+  "bounds" : [
+    0,
+    0,
+    612,
+    792
+  ],
+  "caseID" : "census-rrs2002-01",
+  "extraction" : "Vision RecognizeDocumentsRequest, default ConversionOptions",
+  "graphics" : [
+
+  ],
+  "lines" : [
+    {
+      "fontSize" : 9.8999999999999648,
+      "monospaced" : false,
+      "rect" : [
+        133.61725059176749,
+        663.30000000235714,
+        348.06469002695422,
+        9.8999999999999648
+      ],
+      "text" : "large outlier values, and the I method tends to downweight less than the d method",
+      "wraps" : true
+    },
+    {
+      "fontSize" : 9.8999999999999648,
+      "monospaced" : false,
+      "rect" : [
+        133.6172505971831,
+        651.75000000697185,
+        164.95956873315362,
+        9.8999999999999648
+      ],
+      "text" : "when both the input values are large.",
+      "wraps" : false
+    },
+    {
+      "fontSize" : 11.550000000000047,
+      "monospaced" : false,
+      "rect" : [
+        148.46361164814016,
+        636.90000000962493,
+        333.21832884097034,
+        11.550000000000047
+      ],
+      "text" : "To force 1-1 matching as an efficient global approach to matching the entire",
+      "wraps" : true
+    },
+    {
+      "fontSize" : 9.8999999999999648,
+      "monospaced" : false,
+      "rect" : [
+        133.61725059296847,
+        625.35000000239131,
+        348.06469002695411,
+        9.8999999999999648
+      ],
+      "text" : "original data sets with the entire masked data sets, we apply an assignment",
+      "wraps" : true
+    },
+    {
+      "fontSize" : 11.550000000000047,
+      "monospaced" : false,
+      "rect" : [
+        133.61725059015578,
+        612.15000000284476,
+        346.41509433962273,
+        11.550000000000047
+      ],
+      "text" : "algorithm due to [ 16]. Specifically, we use pairs (i,j) € Io where Io is given by",
+      "wraps" : false
+    },
+    {
+      "fontSize" : 9.8999999999999648,
+      "monospaced" : false,
+      "rect" : [
+        235.89218320200231,
+        572.55000002357144,
+        46.188679245283012,
+        9.8999999999999648
+      ],
+      "text" : "1o = min",
+      "wraps" : false
+    },
+    {
+      "fontSize" : 9.9000000000000519,
+      "monospaced" : false,
+      "rect" : [
+        333.21832919838272,
+        574.20000016500001,
+        31.342318059299195,
+        9.9000000000000519
+      ],
+      "text" : "ICJ",
+      "wraps" : false
+    },
+    {
+      "fontSize" : 15.123074483871472,
+      "monospaced" : false,
+      "rect" : [
+        133.57836993944829,
+        533.0673866430285,
+        349.81831676555129,
+        15.123074483871472
+      ],
+      "text" : "where wi, is the comparison weight for record pair (i,j), and J is the set of",
+      "wraps" : true
+    },
+    {
+      "fontSize" : 9.8999999999999648,
+      "monospaced" : false,
+      "rect" : [
+        133.61725054710246,
+        524.70000000363962,
+        348.06469002695422,
+        9.8999999999999648
+      ],
+      "text" : "index sets I in which at most one column and at most one row are present.",
+      "wraps" : false
+    },
+    {
+      "fontSize" : 11.549999999999958,
+      "monospaced" : false,
+      "rect" : [
+        135.26684626277259,
+        511.50000000328129,
+        346.41509433962261,
+        11.549999999999958
+      ],
+      "text" : "That is, if (i,j) E I and (k,l) € I, then either i * k or j · l. The algorithm",
+      "wraps" : true
+    },
+    {
+      "fontSize" : 11.549999999999958,
+      "monospaced" : false,
+      "rect" : [
+        133.6172505470106,
+        499.950000004375,
+        348.06469002695411,
+        11.549999999999958
+      ],
+      "text" : "of Winkler is similar to the classic algorithm of Burkard and Derigs (see e.g.,",
+      "wraps" : true
+    },
+    {
+      "fontSize" : 9.9000000000000519,
+      "monospaced" : false,
+      "rect" : [
+        135.26684627543972,
+        488.40000000245044,
+        346.41509433962261,
+        9.9000000000000519
+      ],
+      "text" : "[ 16]) in that it uses Dijkstra's shortest augmenting path for many computations",
+      "wraps" : true
+    },
+    {
+      "fontSize" : 9.8999999999999648,
+      "monospaced" : false,
+      "rect" : [
+        133.61725056888017,
+        476.85000000321435,
+        346.41509433962261,
+        9.8999999999999648
+      ],
+      "text" : "and has equivalent computational speed. It differs because it contains compres-",
+      "wraps" : true
+    },
+    {
+      "fontSize" : 9.8999999999999648,
+      "monospaced" : false,
+      "rect" : [
+        133.61725058312672,
+        465.30000000260526,
+        348.06469002695422,
+        9.8999999999999648
+      ],
+      "text" : "sion/decompression routines that can reduce storage requirements for the array",
+      "wraps" : true
+    },
+    {
+      "fontSize" : 11.550000000000047,
+      "monospaced" : false,
+      "rect" : [
+        133.61725059014975,
+        452.10000000285891,
+        348.06469002695422,
+        11.550000000000047
+      ],
+      "text" : "of weights wy by a factor of 500 in some matching situations. When a few",
+      "wraps" : true
+    },
+    {
+      "fontSize" : 11.549999999999958,
+      "monospaced" : false,
+      "rect" : [
+        133.61725119622642,
+        440.55000019250002,
+        348.06469002695422,
+        11.549999999999958
+      ],
+      "text" : "matching pairs in a set can be reasonably identified, many other pairs can be",
+      "wraps" : true
+    },
+    {
+      "fontSize" : 9.8999999999999648,
+      "monospaced" : false,
+      "rect" : [
+        133.61725059301611,
+        429.00000000246268,
+        348.06469002695411,
+        9.8999999999999648
+      ],
+      "text" : "easily identified via the assignment algorithm. The assignment algorithm has the",
+      "wraps" : true
+    },
+    {
+      "fontSize" : 11.550000000000047,
+      "monospaced" : false,
+      "rect" : [
+        133.61725058573131,
+        415.80000000303949,
+        348.06469002695411,
+        11.550000000000047
+      ],
+      "text" : "effect of drastically improving matching efficacy, particularly in re-identification",
+      "wraps" : true
+    },
+    {
+      "fontSize" : 11.549999999999958,
+      "monospaced" : false,
+      "rect" : [
+        133.61725058198667,
+        404.25000000469515,
+        348.06469002695422,
+        11.549999999999958
+      ],
+      "text" : "experiments of the type given in this paper. For instance, if a moderate number",
+      "wraps" : true
+    },
+    {
+      "fontSize" : 9.8999999999999648,
+      "monospaced" : false,
+      "rect" : [
+        133.61725059176749,
+        392.70000000235711,
+        348.06469002695422,
+        9.8999999999999648
+      ],
+      "text" : "of pairs associated with true re-identifications have probability greater than 0.5",
+      "wraps" : true
+    },
+    {
+      "fontSize" : 9.8999999999999648,
+      "monospaced" : false,
+      "rect" : [
+        133.61725059729628,
+        381.15000000253849,
+        348.06469002695411,
+        9.8999999999999648
+      ],
+      "text" : "when looked at in isolation, the assignment algorithm effectively sets their match",
+      "wraps" : true
+    },
+    {
+      "fontSize" : 14.273327064514259,
+      "monospaced" : false,
+      "rect" : [
+        133.53952099820859,
+        367.89772600499163,
+        349.8358608358954,
+        14.273327064514259
+      ],
+      "text" : "probabilities to 1.0 because there are no other suitable records with which the",
+      "wraps" : true
+    },
+    {
+      "fontSize" : 14.487938189506554,
+      "monospaced" : false,
+      "rect" : [
+        133.49786340850031,
+        355.2014874945462,
+        188.34283175815469,
+        14.487938189506554
+      ],
+      "text" : "truly matching record should be combined.",
+      "wraps" : false
+    },
+    {
+      "fontSize" : 9.8999999999999648,
+      "monospaced" : false,
+      "rect" : [
+        150.11320746427768,
+        343.20000000247495,
+        331.56873315363885,
+        9.8999999999999648
+      ],
+      "text" : "The proportion re-identified is the re-identification risk (PLD),computed us-",
+      "wraps" : true
+    },
+    {
+      "fontSize" : 14.506154537200928,
+      "monospaced" : false,
+      "rect" : [
+        133.54191624063614,
+        329.85330848547505,
+        348.20534463969841,
+        14.506154537200928
+      ],
+      "text" : "ing an updated version of the probabilistic re-identification software that has",
+      "wraps" : true
+    },
+    {
+      "fontSize" : 11.549999999999958,
+      "monospaced" : false,
+      "rect" : [
+        133.6172505836017,
+        318.45000000302355,
+        344.76549865229111,
+        11.549999999999958
+      ],
+      "text" : "been used in [ 10], [ 14], and [ 5]. Domingo-Ferrer et al [ 5] also used distance-",
+      "wraps" : true
+    },
+    {
+      "fontSize" : 11.550000000000047,
+      "monospaced" : false,
+      "rect" : [
+        133.61725027978434,
+        306.90000003208331,
+        346.41509433962273,
+        11.550000000000047
+      ],
+      "text" : "based record linkage (DLD) for situations in which Euclidean distance is used.",
+      "wraps" : false
+    },
+    {
+      "fontSize" : 9.9000000000000519,
+      "monospaced" : false,
+      "rect" : [
+        135.26684627831156,
+        295.3500000023684,
+        346.41509433962261,
+        9.9000000000000519
+      ],
+      "text" : "DLD can be considered a variant of nearest-neighbor matching. Because this",
+      "wraps" : true
+    },
+    {
+      "fontSize" : 11.550000000000047,
+      "monospaced" : false,
+      "rect" : [
+        135.26684627456146,
+        282.150000002902,
+        344.76549865229111,
+        11.550000000000047
+      ],
+      "text" : "DLD is highly correlated with record linkage [ 5], we only use PLD. Domingo-",
+      "wraps" : true
+    },
+    {
+      "fontSize" : 9.8999999999999648,
+      "monospaced" : false,
+      "rect" : [
+        133.61725057234088,
+        272.25000000292891,
+        346.41509433962261,
+        9.8999999999999648
+      ],
+      "text" : "Ferrer et al also used interval disclosure (ID) that we do not believe is appro-",
+      "wraps" : true
+    },
+    {
+      "fontSize" : 11.550000000000047,
+      "monospaced" : false,
+      "rect" : [
+        133.61725061078167,
+        259.05000000339703,
+        349.71428571428578,
+        11.550000000000047
+      ],
+      "text" : "priate because it is far too weak a disclosure-risk. See [ 5] for a definition of",
+      "wraps" : false
+    },
+    {
+      "fontSize" : 9.8999999999999648,
+      "monospaced" : false,
+      "rect" : [
+        148.46361177694814,
+        234.3000000024627,
+        333.21832884097034,
+        9.8999999999999648
+      ],
+      "text" : "For the two data sets examined below, we counted the number of re-identified",
+      "wraps" : true
+    },
+    {
+      "fontSize" : 11.549999999999958,
+      "monospaced" : false,
+      "rect" : [
+        133.61725349878702,
+        221.10000014437497,
+        348.06469002695411,
+        11.549999999999958
+      ],
+      "text" : "matches used to compute the re-identification risk somewhat differently. For",
+      "wraps" : true
+    },
+    {
+      "fontSize" : 11.549999999999958,
+      "monospaced" : false,
+      "rect" : [
+        133.61724696226432,
+        209.55000019250005,
+        348.06469002695422,
+        11.549999999999958
+      ],
+      "text" : "the Domingo-Ferrer data, since the data set is small, we counted all of the",
+      "wraps" : true
+    },
+    {
+      "fontSize" : 9.8999999999999648,
+      "monospaced" : false,
+      "rect" : [
+        133.61725059932454,
+        198.00000000298195,
+        346.41509433962256,
+        9.8999999999999648
+      ],
+      "text" : "correct matches in the set of linked pairs reported by the record linkage software.",
+      "wraps" : false
+    },
+    {
+      "fontSize" : 11.549999999999958,
+      "monospaced" : false,
+      "rect" : [
+        133.61725057478392,
+        184.80000000331896,
+        348.06469002695422,
+        11.549999999999958
+      ],
+      "text" : "For the larger Kim-Winkler data set, a more realistic count of correctly re-",
+      "wraps" : true
+    },
+    {
+      "fontSize" : 9.9000000000000519,
+      "monospaced" : false,
+      "rect" : [
+        133.61725058809193,
+        173.25000000246266,
+        348.06469002695422,
+        9.9000000000000519
+      ],
+      "text" : "identified matches is given by counting matches with agreement weights above",
+      "wraps" : true
+    },
+    {
+      "fontSize" : 9.8999999999999648,
+      "monospaced" : false,
+      "rect" : [
+        133.61725059591106,
+        161.70000000247501,
+        348.06469002695422,
+        9.8999999999999648
+      ],
+      "text" : "a cutoff value Tp, where the rest of the correct matches in the file are scattered",
+      "wraps" : true
+    },
+    {
+      "fontSize" : 9.8999999999999648,
+      "monospaced" : false,
+      "rect" : [
+        133.61725059402102,
+        150.15000000264712,
+        348.06469002695411,
+        9.8999999999999648
+      ],
+      "text" : "sparsely among a large number of incorrect match pairs. In practice, these",
+      "wraps" : true
+    },
+    {
+      "fontSize" : 13.191670346260059,
+      "monospaced" : false,
+      "rect" : [
+        135.21844771858218,
+        136.90919981981247,
+        348.1455890830315,
+        13.191670346260059
+      ],
+      "text" : "sporadic matches would not be detectable and their inclusion would produce an",
+      "wraps" : true
+    },
+    {
+      "fontSize" : 9.9000000000000519,
+      "monospaced" : false,
+      "rect" : [
+        133.6172507013477,
+        127.05000016499991,
+        146.81401617250674,
+        9.9000000000000519
+      ],
+      "text" : "intolerably high false match rate.",
+      "wraps" : false
+    }
+  ],
+  "page" : 7,
+  "quadrilaterals" : [
+    {
+      "isTitle" : true,
+      "points" : [
+        [
+          0.21832884083622139,
+          0.85000000000297615
+        ],
+        [
+          0.78706199447503544,
+          0.85000000000297615
+        ],
+        [
+          0.78706199447503544,
+          0.8375000000029762
+        ],
+        [
+          0.21832884083622139,
+          0.8375000000029762
+        ]
+      ],
+      "text" : "large outlier values, and the I method tends to downweight less than the d method"
+    },
+    {
+      "isTitle" : false,
+      "points" : [
+        [
+          0.21832884084507043,
+          0.83541666667546943
+        ],
+        [
+          0.48787061982081165,
+          0.83541666667546943
+        ],
+        [
+          0.48787061982081165,
+          0.82291666667546948
+        ],
+        [
+          0.21832884084507043,
+          0.82291666667546948
+        ]
+      ],
+      "text" : "when both the input values are large."
+    },
+    {
+      "isTitle" : false,
+      "points" : [
+        [
+          0.24258760073225516,
+          0.81875000001215281
+        ],
+        [
+          0.78706199426325241,
+          0.81875000001215281
+        ],
+        [
+          0.78706199426325241,
+          0.80416666667881942
+        ],
+        [
+          0.24258760073225516,
+          0.80416666667881942
+        ]
+      ],
+      "text" : "To force 1-1 matching as an efficient global approach to matching the entire"
+    },
+    {
+      "isTitle" : false,
+      "points" : [
+        [
+          0.2183288408381838,
+          0.80208333333635262
+        ],
+        [
+          0.78706199447699776,
+          0.80208333333635262
+        ],
+        [
+          0.78706199447699776,
+          0.78958333333635267
+        ],
+        [
+          0.2183288408381838,
+          0.78958333333635267
+        ]
+      ],
+      "text" : "original data sets with the entire masked data sets, we apply an assignment"
+    },
+    {
+      "isTitle" : false,
+      "points" : [
+        [
+          0.21832884083358789,
+          0.78750000000359199
+        ],
+        [
+          0.78436657668264453,
+          0.78750000000359199
+        ],
+        [
+          0.78436657668264453,
+          0.7729166666702586
+        ],
+        [
+          0.21832884083358789,
+          0.7729166666702586
+        ]
+      ],
+      "text" : "algorithm due to [ 16]. Specifically, we use pairs (i,j) € Io where Io is given by"
+    },
+    {
+      "isTitle" : false,
+      "points" : [
+        [
+          0.38544474379412141,
+          0.73541666669642858
+        ],
+        [
+          0.46091644190732894,
+          0.73541666669642858
+        ],
+        [
+          0.46091644190732894,
+          0.72291666669642862
+        ],
+        [
+          0.38544474379412141,
+          0.72291666669642862
+        ]
+      ],
+      "text" : "1o = min"
+    },
+    {
+      "isTitle" : false,
+      "points" : [
+        [
+          0.54447439411500442,
+          0.73750000020833339
+        ],
+        [
+          0.59568733212039526,
+          0.73750000020833339
+        ],
+        [
+          0.59568733212039526,
+          0.72500000020833333
+        ],
+        [
+          0.54447439411500442,
+          0.72500000020833333
+        ]
+      ],
+      "text" : "ICJ"
+    },
+    {
+      "isTitle" : false,
+      "points" : [
+        [
+          0.21826531035857563,
+          0.68954606062727775
+        ],
+        [
+          0.78973768397138311,
+          0.69215967314002524
+        ],
+        [
+          0.78986386716503199,
+          0.6756784946377834
+        ],
+        [
+          0.21839149355222456,
+          0.67306488212503601
+        ]
+      ],
+      "text" : "where wi, is the comparison weight for record pair (i,j), and J is the set of"
+    },
+    {
+      "isTitle" : false,
+      "points" : [
+        [
+          0.21832884076323933,
+          0.67500000000459548
+        ],
+        [
+          0.78706199440205338,
+          0.67500000000459548
+        ],
+        [
+          0.78706199440205338,
+          0.66250000000459552
+        ],
+        [
+          0.21832884076323933,
+          0.66250000000459552
+        ]
+      ],
+      "text" : "index sets I in which at most one column and at most one row are present."
+    },
+    {
+      "isTitle" : false,
+      "points" : [
+        [
+          0.22102425859930161,
+          0.66041666667080967
+        ],
+        [
+          0.78706199444835823,
+          0.66041666667080967
+        ],
+        [
+          0.78706199444835823,
+          0.64583333333747639
+        ],
+        [
+          0.22102425859930161,
+          0.64583333333747639
+        ]
+      ],
+      "text" : "That is, if (i,j) E I and (k,l) € I, then either i * k or j · l. The algorithm"
+    },
+    {
+      "isTitle" : false,
+      "points" : [
+        [
+          0.2183288407630892,
+          0.64583333333885728
+        ],
+        [
+          0.78706199440190316,
+          0.64583333333885728
+        ],
+        [
+          0.78706199440190316,
+          0.631250000005524
+        ],
+        [
+          0.2183288407630892,
+          0.631250000005524
+        ]
+      ],
+      "text" : "of Winkler is similar to the classic algorithm of Burkard and Derigs (see e.g.,"
+    },
+    {
+      "isTitle" : false,
+      "points" : [
+        [
+          0.22102425861999953,
+          0.62916666666976073
+        ],
+        [
+          0.78706199446905611,
+          0.62916666666976073
+        ],
+        [
+          0.78706199446905611,
+          0.61666666666976067
+        ],
+        [
+          0.22102425861999953,
+          0.61666666666976067
+        ]
+      ],
+      "text" : "[ 16]) in that it uses Dijkstra's shortest augmenting path for many computations"
+    },
+    {
+      "isTitle" : false,
+      "points" : [
+        [
+          0.21832884079882378,
+          0.61458333333739179
+        ],
+        [
+          0.78436657664788034,
+          0.61458333333739179
+        ],
+        [
+          0.78436657664788034,
+          0.60208333333739184
+        ],
+        [
+          0.21832884079882378,
+          0.60208333333739184
+        ]
+      ],
+      "text" : "and has equivalent computational speed. It differs because it contains compres-"
+    },
+    {
+      "isTitle" : false,
+      "points" : [
+        [
+          0.21832884082210247,
+          0.60000000000328946
+        ],
+        [
+          0.78706199446091651,
+          0.60000000000328946
+        ],
+        [
+          0.78706199446091651,
+          0.5875000000032895
+        ],
+        [
+          0.21832884082210247,
+          0.5875000000032895
+        ]
+      ],
+      "text" : "sion/decompression routines that can reduce storage requirements for the array"
+    },
+    {
+      "isTitle" : false,
+      "points" : [
+        [
+          0.21832884083357801,
+          0.58541666667027648
+        ],
+        [
+          0.78706199447239211,
+          0.58541666667027648
+        ],
+        [
+          0.78706199447239211,
+          0.57083333333694308
+        ],
+        [
+          0.21832884083357801,
+          0.57083333333694308
+        ]
+      ],
+      "text" : "of weights wy by a factor of 500 in some matching situations. When a few"
+    },
+    {
+      "isTitle" : false,
+      "points" : [
+        [
+          0.21832884182389939,
+          0.57083333357638888
+        ],
+        [
+          0.78706199546271338,
+          0.57083333357638888
+        ],
+        [
+          0.78706199546271338,
+          0.5562500002430556
+        ],
+        [
+          0.21832884182389939,
+          0.5562500002430556
+        ]
+      ],
+      "text" : "matching pairs in a set can be reasonably identified, many other pairs can be"
+    },
+    {
+      "isTitle" : false,
+      "points" : [
+        [
+          0.21832884083826162,
+          0.5541666666697761
+        ],
+        [
+          0.78706199447707559,
+          0.5541666666697761
+        ],
+        [
+          0.78706199447707559,
+          0.54166666666977614
+        ],
+        [
+          0.21832884083826162,
+          0.54166666666977614
+        ]
+      ],
+      "text" : "easily identified via the assignment algorithm. The assignment algorithm has the"
+    },
+    {
+      "isTitle" : false,
+      "points" : [
+        [
+          0.21832884082635837,
+          0.53958333333717112
+        ],
+        [
+          0.78706199446517233,
+          0.53958333333717112
+        ],
+        [
+          0.78706199446517233,
+          0.52500000000383773
+        ],
+        [
+          0.21832884082635837,
+          0.52500000000383773
+        ]
+      ],
+      "text" : "effect of drastically improving matching efficacy, particularly in re-identification"
+    },
+    {
+      "isTitle" : false,
+      "points" : [
+        [
+          0.21832884082023965,
+          0.52500000000592817
+        ],
+        [
+          0.78706199445905367,
+          0.52500000000592817
+        ],
+        [
+          0.78706199445905367,
+          0.51041666667259489
+        ],
+        [
+          0.21832884082023965,
+          0.51041666667259489
+        ]
+      ],
+      "text" : "experiments of the type given in this paper. For instance, if a moderate number"
+    },
+    {
+      "isTitle" : false,
+      "points" : [
+        [
+          0.21832884083622139,
+          0.50833333333630948
+        ],
+        [
+          0.78706199447503544,
+          0.50833333333630948
+        ],
+        [
+          0.78706199447503544,
+          0.49583333333630952
+        ],
+        [
+          0.21832884083622139,
+          0.49583333333630952
+        ]
+      ],
+      "text" : "of pairs associated with true re-identifications have probability greater than 0.5"
+    },
+    {
+      "isTitle" : false,
+      "points" : [
+        [
+          0.21832884084525536,
+          0.49375000000320513
+        ],
+        [
+          0.78706199448406933,
+          0.49375000000320513
+        ],
+        [
+          0.78706199448406933,
+          0.48125000000320517
+        ],
+        [
+          0.21832884084525536,
+          0.48125000000320517
+        ]
+      ],
+      "text" : "when looked at in isolation, the assignment algorithm effectively sets their match"
+    },
+    {
+      "isTitle" : false,
+      "points" : [
+        [
+          0.21820183169641927,
+          0.4790336133926929
+        ],
+        [
+          0.78967998390724103,
+          0.48253920842109332
+        ],
+        [
+          0.78982905528448366,
+          0.46802292633948928
+        ],
+        [
+          0.21835090307366195,
+          0.4645173308143834
+        ]
+      ],
+      "text" : "probabilities to 1.0 because there are no other suitable records with which the"
+    },
+    {
+      "isTitle" : false,
+      "points" : [
+        [
+          0.21813376373937959,
+          0.46245938057981517
+        ],
+        [
+          0.52555479765518465,
+          0.46677957788390501
+        ],
+        [
+          0.52588348883440361,
+          0.45280692344191253
+        ],
+        [
+          0.21846245491859853,
+          0.44848672663452804
+        ]
+      ],
+      "text" : "truly matching record should be combined."
+    },
+    {
+      "isTitle" : false,
+      "points" : [
+        [
+          0.24528301873247985,
+          0.44583333333645825
+        ],
+        [
+          0.78706199447371972,
+          0.44583333333645825
+        ],
+        [
+          0.78706199447371972,
+          0.43333333333645829
+        ],
+        [
+          0.24528301873247985,
+          0.43333333333645829
+        ]
+      ],
+      "text" : "The proportion re-identified is the re-identification risk (PLD),computed us-"
+    },
+    {
+      "isTitle" : false,
+      "points" : [
+        [
+          0.21820574549123553,
+          0.4304446015827168
+        ],
+        [
+          0.78698985772748464,
+          0.43479730179630804
+        ],
+        [
+          0.78716872692865125,
+          0.42083415032151428
+        ],
+        [
+          0.21838461469240214,
+          0.41648145010792303
+        ]
+      ],
+      "text" : "ing an updated version of the probabilistic re-identification software that has"
+    },
+    {
+      "isTitle" : false,
+      "points" : [
+        [
+          0.21832884082287859,
+          0.41666666667048424
+        ],
+        [
+          0.78167115888217786,
+          0.41666666667048424
+        ],
+        [
+          0.78167115888217786,
+          0.40208333333715096
+        ],
+        [
+          0.21832884082287859,
+          0.40208333333715096
+        ]
+      ],
+      "text" : "been used in [ 10], [ 14], and [ 5]. Domingo-Ferrer et al [ 5] also used distance-"
+    },
+    {
+      "isTitle" : false,
+      "points" : [
+        [
+          0.21832884032644501,
+          0.40208333337384261
+        ],
+        [
+          0.78436657617550165,
+          0.40208333337384261
+        ],
+        [
+          0.78436657617550165,
+          0.38750000004050922
+        ],
+        [
+          0.21832884032644501,
+          0.38750000004050922
+        ]
+      ],
+      "text" : "based record linkage (DLD) for situations in which Euclidean distance is used."
+    },
+    {
+      "isTitle" : false,
+      "points" : [
+        [
+          0.22102425862469208,
+          0.38541666666965713
+        ],
+        [
+          0.78706199447374869,
+          0.38541666666965713
+        ],
+        [
+          0.78706199447374869,
+          0.37291666666965706
+        ],
+        [
+          0.22102425862469208,
+          0.37291666666965706
+        ]
+      ],
+      "text" : "DLD can be considered a variant of nearest-neighbor matching. Because this"
+    },
+    {
+      "isTitle" : false,
+      "points" : [
+        [
+          0.22102425861856448,
+          0.37083333333699753
+        ],
+        [
+          0.78436657667786369,
+          0.37083333333699753
+        ],
+        [
+          0.78436657667786369,
+          0.35625000000366414
+        ],
+        [
+          0.22102425861856448,
+          0.35625000000366414
+        ]
+      ],
+      "text" : "DLD is highly correlated with record linkage [ 5], we only use PLD. Domingo-"
+    },
+    {
+      "isTitle" : false,
+      "points" : [
+        [
+          0.21832884080447856,
+          0.35625000000369811
+        ],
+        [
+          0.78436657665353515,
+          0.35625000000369811
+        ],
+        [
+          0.78436657665353515,
+          0.34375000000369815
+        ],
+        [
+          0.21832884080447856,
+          0.34375000000369815
+        ]
+      ],
+      "text" : "Ferrer et al also used interval disclosure (ID) that we do not believe is appro-"
+    },
+    {
+      "isTitle" : false,
+      "points" : [
+        [
+          0.21832884086729029,
+          0.34166666667095591
+        ],
+        [
+          0.78975741229586183,
+          0.34166666667095591
+        ],
+        [
+          0.78975741229586183,
+          0.32708333333762252
+        ],
+        [
+          0.21832884086729029,
+          0.32708333333762252
+        ]
+      ],
+      "text" : "priate because it is far too weak a disclosure-risk. See [ 5] for a definition of"
+    },
+    {
+      "isTitle" : false,
+      "points" : [
+        [
+          0.24258760094272572,
+          0.30833333333644275
+        ],
+        [
+          0.78706199447372294,
+          0.30833333333644275
+        ],
+        [
+          0.78706199447372294,
+          0.29583333333644279
+        ],
+        [
+          0.24258760094272572,
+          0.29583333333644279
+        ]
+      ],
+      "text" : "For the two data sets examined below, we counted the number of re-identified"
+    },
+    {
+      "isTitle" : false,
+      "points" : [
+        [
+          0.21832884558625329,
+          0.29375000018229158
+        ],
+        [
+          0.78706199922506725,
+          0.29375000018229158
+        ],
+        [
+          0.78706199922506725,
+          0.2791666668489583
+        ],
+        [
+          0.21832884558625329,
+          0.2791666668489583
+        ]
+      ],
+      "text" : "matches used to compute the re-identification risk somewhat differently. For"
+    },
+    {
+      "isTitle" : false,
+      "points" : [
+        [
+          0.21832883490566063,
+          0.27916666690972225
+        ],
+        [
+          0.78706198854447462,
+          0.27916666690972225
+        ],
+        [
+          0.78706198854447462,
+          0.26458333357638897
+        ],
+        [
+          0.21832883490566063,
+          0.26458333357638897
+        ]
+      ],
+      "text" : "the Domingo-Ferrer data, since the data set is small, we counted all of the"
+    },
+    {
+      "isTitle" : false,
+      "points" : [
+        [
+          0.21832884084856952,
+          0.26250000000376505
+        ],
+        [
+          0.78436657669762599,
+          0.26250000000376505
+        ],
+        [
+          0.78436657669762599,
+          0.2500000000037651
+        ],
+        [
+          0.21832884084856952,
+          0.2500000000037651
+        ]
+      ],
+      "text" : "correct matches in the set of linked pairs reported by the record linkage software."
+    },
+    {
+      "isTitle" : false,
+      "points" : [
+        [
+          0.21832884080847045,
+          0.24791666667085721
+        ],
+        [
+          0.78706199444728453,
+          0.24791666667085721
+        ],
+        [
+          0.78706199444728453,
+          0.23333333333752393
+        ],
+        [
+          0.21832884080847045,
+          0.23333333333752393
+        ]
+      ],
+      "text" : "For the larger Kim-Winkler data set, a more realistic count of correctly re-"
+    },
+    {
+      "isTitle" : false,
+      "points" : [
+        [
+          0.21832884083021559,
+          0.23125000000310947
+        ],
+        [
+          0.78706199446902958,
+          0.23125000000310947
+        ],
+        [
+          0.78706199446902958,
+          0.2187500000031094
+        ],
+        [
+          0.21832884083021559,
+          0.2187500000031094
+        ]
+      ],
+      "text" : "identified matches is given by counting matches with agreement weights above"
+    },
+    {
+      "isTitle" : false,
+      "points" : [
+        [
+          0.21832884084299195,
+          0.21666666666979162
+        ],
+        [
+          0.78706199448180603,
+          0.21666666666979162
+        ],
+        [
+          0.78706199448180603,
+          0.20416666666979166
+        ],
+        [
+          0.21832884084299195,
+          0.20416666666979166
+        ]
+      ],
+      "text" : "a cutoff value Tp, where the rest of the correct matches in the file are scattered"
+    },
+    {
+      "isTitle" : false,
+      "points" : [
+        [
+          0.21832884083990364,
+          0.20208333333667561
+        ],
+        [
+          0.78706199447871761,
+          0.20208333333667561
+        ],
+        [
+          0.78706199447871761,
+          0.18958333333667565
+        ],
+        [
+          0.21832884083990364,
+          0.18958333333667565
+        ]
+      ],
+      "text" : "sparsely among a large number of incorrect match pairs. In practice, these"
+    },
+    {
+      "isTitle" : false,
+      "points" : [
+        [
+          0.22094517601075522,
+          0.18734499456636799
+        ],
+        [
+          0.78971779274419318,
+          0.18952130071473805
+        ],
+        [
+          0.78981051764969556,
+          0.17504145743601218
+        ],
+        [
+          0.22103790091625766,
+          0.17286515128764202
+        ]
+      ],
+      "text" : "sporadic matches would not be detectable and their inclusion would produce an"
+    },
+    {
+      "isTitle" : false,
+      "points" : [
+        [
+          0.21832884101527403,
+          0.17291666687499996
+        ],
+        [
+          0.45822102430368372,
+          0.17291666687499996
+        ],
+        [
+          0.45822102430368372,
+          0.16041666687499989
+        ],
+        [
+          0.21832884101527403,
+          0.16041666687499989
+        ]
+      ],
+      "text" : "intolerably high false match rate."
+    }
+  ],
+  "sourceSHA256" : "0f97380ae4308581bd70013b7317faafd7c217654236bd31d1448f26eae56905",
+  "sourceTitle" : "Disclosure Risk Assessment in Perturbative Microdata Protection (Research Report Series, Statistics #2002-01)"
+}

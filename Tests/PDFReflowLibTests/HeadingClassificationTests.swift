@@ -576,3 +576,19 @@ func establishedLargePrintProseKeepsItsOwnHeadingThreshold() {
     #expect(headingTexts(blocks) == ["Large Print Heading"])
     #expect(paragraphTexts(blocks).joined(separator: " ") == Array(repeating: prose, count: 4).joined(separator: " "))
 }
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/296"))
+func repeatedCoverLabelsDoNotBecomeSparseDisplayTitles() throws {
+    let fixture = try SourceLayoutFixture.load("dga-detached-cover")
+    #expect(fixture.sourceSHA256 == "c34f1bec5c9416265670b7fcb24556bb8616ba95e8de2f2890460b6bbca1a472")
+    let page = fixture.content()
+    let typography = PageTypography(pageLines: page.lines, reflowableLines: page.lines, documentBody: 10)
+    #expect(typography.establishedBody == nil)
+    #expect(typography.body == 18)
+    #expect(typography.headingThreshold == 22.5)
+    let headings = page.lines.filter {
+        LayoutReconstructor.isTitleSized($0, in: page.lines, typography: typography, judgesTitleWords: false)
+    }.map(\.text)
+    #expect(headings == ["Dietary", "Guidelines For Americans"])
+    #expect(!headings.contains { $0.contains("Protein") || $0.contains("Vegetables") || $0.contains("Grains") })
+}

@@ -1,0 +1,299 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        40.278700000000001,
+        698.63908271484377,
+        170.30400954000004,
+        56.356599999999958
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 56.3566,
+          "text" : "Dietary"
+        }
+      ],
+      "text" : "Dietary"
+    },
+    {
+      "rect" : [
+        24.636023059999985,
+        593.44008271484381,
+        360.88320854000006,
+        107.07749999999987
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 50.720899999999915,
+          "fontName" : "Helvetica",
+          "fontSize" : 56.3566,
+          "text" : "Guidelines"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 56.3566,
+          "text" : "For Americans"
+        }
+      ],
+      "text" : "GuidelinesFor Americans"
+    },
+    {
+      "rect" : [
+        38.448399999999999,
+        35.750625000000007,
+        535.148504,
+        11.520000000000003
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.52,
+          "text" : "realfood.gov 2025–2030"
+        }
+      ],
+      "text" : "realfood.gov 2025–2030"
+    },
+    {
+      "rect" : [
+        39.359999999999999,
+        464.39761914062501,
+        110.39996087999999,
+        17.978400000000022
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 17.978400000000001,
+          "text" : "Protein, Dair y"
+        }
+      ],
+      "text" : "Protein, Dair y"
+    },
+    {
+      "rect" : [
+        39.359999999999999,
+        446.40124074062498,
+        532.21521888000007,
+        17.996378400000026
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 17.978400000000001,
+          "text" : "& Healthy Fats "
+        },
+        {
+          "baselineOffset" : 0.017978400000004058,
+          "fontName" : "Helvetica",
+          "fontSize" : 17.978400000000001,
+          "text" : "& Fruits"
+        }
+      ],
+      "text" : "& Healthy Fats & Fruits"
+    },
+    {
+      "rect" : [
+        479.19080000000002,
+        464.39761914062501,
+        92.426954399999943,
+        17.978400000000022
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 17.978400000000001,
+          "text" : "Ve getables"
+        }
+      ],
+      "text" : "Ve getables"
+    },
+    {
+      "rect" : [
+        222.90470000000002,
+        174.02641914062499,
+        52.119381600000025,
+        17.978399999999993
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 17.978400000000001,
+          "text" : "Whole"
+        }
+      ],
+      "text" : "Whole"
+    },
+    {
+      "rect" : [
+        223.44890000000001,
+        156.59271914062501,
+        53.705076479999974,
+        17.978399999999993
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 17.978400000000001,
+          "text" : "Grains"
+        }
+      ],
+      "text" : "Grains"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    612,
+    792
+  ],
+  "caseID" : "dga-2025-2030",
+  "graphics" : [
+    [
+      0,
+      0,
+      612,
+      792
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 56.3566,
+      "monospaced" : false,
+      "rect" : [
+        40.278700000000001,
+        698.63908271484377,
+        170.30400954000004,
+        56.356599999999958
+      ],
+      "text" : "Dietary"
+    },
+    {
+      "fontSize" : 56.3566,
+      "monospaced" : false,
+      "rect" : [
+        24.636023059999985,
+        593.44008271484381,
+        360.88320854000006,
+        107.07749999999987
+      ],
+      "text" : "Guidelines For Americans"
+    },
+    {
+      "fontSize" : 11.52,
+      "monospaced" : false,
+      "rect" : [
+        38.448399999999999,
+        35.750625000000007,
+        60.914304000000008,
+        11.520000000000003
+      ],
+      "text" : "realfood.gov"
+    },
+    {
+      "fontSize" : 11.52,
+      "monospaced" : false,
+      "rect" : [
+        513.54660000000001,
+        35.750625000000007,
+        60.050303999999983,
+        11.520000000000003
+      ],
+      "text" : "2025–2030"
+    },
+    {
+      "fontSize" : 17.978400000000001,
+      "monospaced" : false,
+      "rect" : [
+        39.359999999999999,
+        464.39761914062501,
+        110.39996087999999,
+        17.978400000000022
+      ],
+      "text" : "Protein, Dairy"
+    },
+    {
+      "fontSize" : 17.978400000000001,
+      "monospaced" : false,
+      "rect" : [
+        39.359999999999999,
+        446.40124074062498,
+        118.94329655999998,
+        17.996378400000026
+      ],
+      "text" : "& Healthy Fats"
+    },
+    {
+      "fontSize" : 17.978400000000001,
+      "monospaced" : false,
+      "rect" : [
+        507.33480000000003,
+        446.40124074062498,
+        64.24041888000005,
+        17.996378400000026
+      ],
+      "text" : "& Fruits"
+    },
+    {
+      "fontSize" : 17.978400000000001,
+      "monospaced" : false,
+      "rect" : [
+        479.19080000000002,
+        464.39761914062501,
+        92.426954399999943,
+        17.978400000000022
+      ],
+      "text" : "Vegetables"
+    },
+    {
+      "fontSize" : 17.978400000000001,
+      "monospaced" : false,
+      "rect" : [
+        222.90470000000002,
+        174.02641914062499,
+        52.119381600000025,
+        17.978399999999993
+      ],
+      "text" : "Whole"
+    },
+    {
+      "fontSize" : 17.978400000000001,
+      "monospaced" : false,
+      "rect" : [
+        223.44890000000001,
+        156.59271914062501,
+        53.705076479999974,
+        17.978399999999993
+      ],
+      "text" : "Grains"
+    }
+  ],
+  "page" : 1,
+  "pictures" : [
+    [
+      295.96220601119995,
+      59.075963617599996,
+      15.504336396000042,
+      10.067480156000002
+    ],
+    [
+      60.079687399999997,
+      74.228788999999992,
+      511.50510162099999,
+      442.60326408000003
+    ]
+  ],
+  "rightsBasis" : "U.S. Government HHS/USDA publication; development corpus only, not relicensed under MIT.",
+  "schemaVersion" : 2,
+  "sourceSHA256" : "c34f1bec5c9416265670b7fcb24556bb8616ba95e8de2f2890460b6bbca1a472",
+  "sourceTitle" : "Dietary Guidelines for Americans, 2025–2030",
+  "sourceURL" : "https://cdn.realfood.gov/DGA.pdf"
+}

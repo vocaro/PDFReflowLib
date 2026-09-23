@@ -35,7 +35,10 @@ struct PageTypography: Equatable {
         // not a title merely because it is larger than the document's ordinary prose.
         let smallestSize = reflowableLines.map(\.fontSize).min() ?? body
         let sparseBody = documentBody.map { max($0, smallestSize, 4) } ?? body
-        let headingPageBody = established == nil ? min(body, sparseBody) : body
+        // Several short lines at one size can be a set of labels, not a title. The lack of
+        // 200 prose characters does not make DGA's six food-label lines sparse display type.
+        let dominantLines = reflowableLines.count { Int($0.fontSize.rounded()) == Int(body) }
+        let headingPageBody = established == nil && dominantLines <= 2 ? min(body, sparseBody) : body
         let headingBody = established.map { max(body, $0) } ?? headingPageBody
         let documentFloor = documentBody.map { established == nil ? $0 * 1.1 : 0 } ?? 0
         self.body = body

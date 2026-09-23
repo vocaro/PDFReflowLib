@@ -71,6 +71,13 @@ enum PageReader {
                     rules: rules, links: links, preserveInvisibleWordGaps: syntheticStyle, shows: shows), graphics: graphics.regions,
                 pictures: graphics.images)
             content.links = links
+            if !requiresPageImage, PageBackdrop.eligible(graphics, bounds: bounds) {
+                let trimmed = GraphicsReader.read(reference) { imageIndex, dictionary in
+                    guard ImageAlphaBounds.mask(in: dictionary) != nil else { return nil }
+                    return document.imageAlphaBounds(page: i, image: imageIndex)
+                }
+                if let composed = PageBackdrop.compose(content, graphics: trimmed) { content = composed }
+            }
             if !requiresPageImage && !syntheticStyle && options.ocr != .always, let structure,
                let tags = structure.pages[i + 1], !tags.isEmpty,
                !(StructureTreeReader.validates(tags, owners: structure.owners[i + 1] ?? [:], page: reference)

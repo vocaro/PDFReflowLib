@@ -539,6 +539,8 @@ struct BlockAssembler {
     /// #282). Empty where the page sets no such list.
     private let markerEntries: Set<CGRect>
     private let markerEntryEdge: CGFloat?
+    /// Value lines following the page's recurring short labels (#215).
+    private let labelValueStarts: Set<CGRect>
     /// Where this page left the same seam between two pieces of a row on three or more rows: a
     /// column it set, rather than a space inside a printed line (`LayoutReconstructor.columnSeams`,
     /// #272).
@@ -563,6 +565,7 @@ struct BlockAssembler {
          hangingEntries: [CGRect: CGRect] = [:], columnSeams: [CGFloat] = [],
          ordinaryHeights: [Int: CGFloat] = [:],
          markerEntries: Set<CGRect> = [], markerEntryEdge: CGFloat? = nil,
+         labelValueStarts: Set<CGRect> = [],
          rightToLeft: Bool = false, recognized: Bool = false, notesPage: Bool = false) {
         self.page = page
         self.body = body
@@ -573,6 +576,7 @@ struct BlockAssembler {
         self.hangingEntries = hangingEntries
         self.markerEntries = markerEntries
         self.markerEntryEdge = markerEntryEdge
+        self.labelValueStarts = labelValueStarts
         self.columnSeams = columnSeams
         self.ordinaryHeights = ordinaryHeights
         self.rightToLeft = rightToLeft
@@ -890,7 +894,8 @@ struct BlockAssembler {
             // is measured against what has been read of it so far, not against the last piece
             // alone (#41).
             let joinsRow = (previousRow ?? previous).map { continuesRow($0, line) } ?? false
-            if stepped || previous.map({ !continuesParagraph($0, line) }) == true { flushParagraph() }
+            if stepped || labelValueStarts.contains(line.rect)
+                || previous.map({ !continuesParagraph($0, line) }) == true { flushParagraph() }
             if paragraph.elements.isEmpty { paragraph = line.content }
             else { paragraph = join(paragraph, line.content) }
             // A printed row the extractor split is one line as far as the next line is concerned:

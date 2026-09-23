@@ -13,7 +13,9 @@ enum GraphicsReader {
                     /// painted region and no annotation draws nothing at all (#224); extracted
                     /// text alone cannot say so, since glyphs PDFKit cannot map extract as
                     /// nothing.
-                    var visibleText = false }
+                    var visibleText = false
+                    /// Exact rectangles filled by the page, before region clustering (#215).
+                    var filledCells: [CGRect] = [] }
     private final class State {
         var matrix = CGAffineTransform.identity
         var saved: [(CGAffineTransform, Bool, CGRect?, Int)] = []
@@ -30,6 +32,9 @@ enum GraphicsReader {
         var path = CGRect.null
         var regions: [CGRect] = []
         var images: [CGRect] = []
+        var filledCells: [CGRect] = []
+        var pathRectangles: [CGRect] = []
+        var onlyRectangles = true
         var unsupported = false
         var depth = 0
         var operations = 0
@@ -58,6 +63,15 @@ enum GraphicsReader {
             }
             pendingClip = false
             path = .null
+            pathRectangles = []
+            onlyRectangles = true
+        }
+        func recordFilledRectangles() {
+            guard onlyRectangles, !Task.isCancelled else { return }
+            for rect in pathRectangles {
+                guard filledCells.count < 10_000 else { return }
+                if let shown = visible(rect), !shown.isEmpty { filledCells.append(shown) }
+            }
         }
         /// The part of a footprint the clip in force lets show, or nil when none of it can.
         ///
@@ -141,6 +155,7 @@ enum GraphicsReader {
             CGPDFOperatorTableSetCallback(table, op) { scanner, info in
                 let s = Self.state(info)
                 guard s.accept(), let n = ContentStreamWalk.numbers(scanner, 2) else { s.unsupported = true; return }
+                s.onlyRectangles = false
                 let point = CGPoint(x: n[0], y: n[1]).applying(s.matrix)
                 s.path = s.path.union(CGRect(origin: point, size: .zero))
             }
@@ -148,6 +163,7 @@ enum GraphicsReader {
         CGPDFOperatorTableSetCallback(table, "c") { scanner, info in
             let s = Self.state(info)
             guard s.accept(), let n = ContentStreamWalk.numbers(scanner, 6) else { s.unsupported = true; return }
+            s.onlyRectangles = false
             for i in stride(from: 0, to: 6, by: 2) {
                 s.path = s.path.union(CGRect(origin: CGPoint(x: n[i], y: n[i + 1])
                     .applying(s.matrix), size: .zero))
@@ -157,6 +173,7 @@ enum GraphicsReader {
             CGPDFOperatorTableSetCallback(table, op) { scanner, info in
                 let s = Self.state(info)
                 guard s.accept(), let n = ContentStreamWalk.numbers(scanner, 4) else { s.unsupported = true; return }
+                s.onlyRectangles = false
                 for i in stride(from: 0, to: 4, by: 2) {
                     s.path = s.path.union(CGRect(origin: CGPoint(x: n[i], y: n[i + 1])
                         .applying(s.matrix), size: .zero))
@@ -166,15 +183,26 @@ enum GraphicsReader {
         CGPDFOperatorTableSetCallback(table, "re") { scanner, info in
             let s = Self.state(info)
             guard s.accept(), let n = ContentStreamWalk.numbers(scanner, 4) else { s.unsupported = true; return }
-            s.path = s.path.union(CGRect(x: n[0], y: n[1], width: n[2], height: n[3])
-                .applying(s.matrix))
+            let rect = CGRect(x: n[0], y: n[1], width: n[2], height: n[3]).standardized.applying(s.matrix)
+            s.path = s.path.union(rect)
+            if abs(s.matrix.b) < 0.0001, abs(s.matrix.c) < 0.0001,
+               s.pathRectangles.count < 10_000 { s.pathRectangles.append(rect) }
+            else { s.onlyRectangles = false }
         }
-        for op in ["S", "s", "B", "B*", "b", "b*"] {
+        for op in ["S", "s"] {
             CGPDFOperatorTableSetCallback(table, op) { _, info in Self.state(info).paint() }
+        }
+        for op in ["B", "B*", "b", "b*"] {
+            CGPDFOperatorTableSetCallback(table, op) { _, info in
+                let s = Self.state(info)
+                s.recordFilledRectangles()
+                s.paint()
+            }
         }
         for op in ["f", "F", "f*"] {
             CGPDFOperatorTableSetCallback(table, op) { _, info in
                 let s = Self.state(info)
+                s.recordFilledRectangles()
                 if s.white { s.finishPath() } else { s.paint() }
             }
         }
@@ -268,7 +296,7 @@ enum GraphicsReader {
         return Result(regions: clusters(s.regions.map { $0.intersection(bounds) }, distance: 4),
                       unsupported: s.unsupported, hasOnlyInvisibleText: !s.unsupported && s.invisibleText && !s.visibleText,
                       images: clusters(s.images.map { $0.intersection(bounds) }, distance: 4),
-                      visibleText: s.visibleText)
+                      visibleText: s.visibleText, filledCells: s.filledCells)
     }
 
     // The sh operator paints within the active clip and optional shading BBox. Do not infer
@@ -318,17 +346,20 @@ enum GraphicsReader {
                                 parent: CGPDFContentStreamRef, state s: State) {
         guard s.depth < 12 else { s.unsupported = true; return }
         let oldMatrix = s.matrix, oldPath = s.path, oldSaved = s.saved, oldWhite = s.white
+        let oldRectangles = s.pathRectangles, oldOnlyRectangles = s.onlyRectangles
         let oldResources = s.resources
         let oldTextRenderingMode = s.textRenderingMode
         let oldClip = s.clip, oldPendingClip = s.pendingClip
         defer {
             s.matrix = oldMatrix; s.path = oldPath; s.saved = oldSaved; s.white = oldWhite
+            s.pathRectangles = oldRectangles; s.onlyRectangles = oldOnlyRectangles
             s.textRenderingMode = oldTextRenderingMode
             s.resources = oldResources; s.clip = oldClip; s.pendingClip = oldPendingClip; s.depth -= 1
         }
         s.depth += 1
         s.saved = []
         s.path = .null
+        s.pathRectangles = []; s.onlyRectangles = true
         s.pendingClip = false
         if CGPDFObjects.array(dictionary, "Matrix") != nil {
             guard let matrix = CGPDFObjects.matrix(dictionary, "Matrix") else { s.unsupported = true; return }

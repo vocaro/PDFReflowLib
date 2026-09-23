@@ -55,7 +55,7 @@ enum TableReader {
     /// Asking the page for a cell's text is a PDFKit text read, so the whole reading is taken
     /// inside the extraction gate (#21). The gate is not recursive: a caller never wraps this.
     static func tables(on page: PDFPage, lines: [TextLine], shows: [NativeSpacingReader.Evidence],
-                       rules: [CGRect]) throws -> [PageTable] {
+                       rules: [CGRect], filledCells: [CGRect] = []) throws -> [PageTable] {
         let rows = printedRows(lines)
         guard rows.count >= 4 else { return [] }
         let inks = rows.map { ink(of: $0, shows: shows) }
@@ -69,7 +69,13 @@ enum TableReader {
                 }
                 index = block.upperBound
             }
-            return result
+            // Existing table ownership is retained: replacing a larger admitted table with a
+            // painted subgrid can return its remaining lines to a crop and lose readable text.
+            let painted = PaintedCellTableReader.tables(lines: lines, cells: filledCells) {
+                page.selection(for: $0)?.string ?? ""
+            }
+            result += painted.filter { table in !result.contains { $0.rect.intersects(table.rect) } }
+            return result.sorted { ($0.rect.maxY, -$0.rect.minX) > ($1.rect.maxY, -$1.rect.minX) }
         }
     }
 

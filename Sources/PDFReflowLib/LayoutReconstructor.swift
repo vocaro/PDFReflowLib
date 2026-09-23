@@ -1567,6 +1567,50 @@ enum LayoutReconstructor {
         return sizeKey(beneath.fontSize) > sizeKey(line.fontSize)
     }
 
+    /// A table's own numbered title, sharing its left edge above its explanatory lines. The
+    /// semantic grid supplies the relationship; a body-sized "Table N." elsewhere does not.
+    static func tableTitles(in lines: [TextLine], tables: [PageTable], body: CGFloat) -> [TextLine] {
+        tables.compactMap { table in
+            lines.filter { line in
+                line.text.range(of: #"^Table\s+\d+[.:]"#, options: .regularExpression) != nil
+                    && abs(line.rect.minX - table.rect.minX) <= body
+                    && line.rect.minY >= table.rect.maxY
+                    && line.rect.minY - table.rect.maxY <= body * 10
+                    && line.rect.width <= table.rect.width + body
+            }.min { $0.rect.minY < $1.rect.minY }
+        }
+    }
+
+    /// Repeated label/value pairs state a break even when both lines use the same type (#215).
+    /// At least three short labels must stand over wider values at one gap and one left edge;
+    /// a larger gap above each label marks the pair's start. Ordinary prose fills its measure
+    /// instead, and a single short line is not evidence for changing any paragraph.
+    static func labelValueStarts(in lines: [TextLine]) -> Set<CGRect> {
+        guard lines.count <= 2_000 else { return [] }
+        let candidates = lines.filter { !$0.monospaced && $0.turn == .upright && $0.fontSize >= 4 }
+        var pairs: [(label: TextLine, value: TextLine, gap: CGFloat)] = []
+        for label in candidates where label.text.split(whereSeparator: \.isWhitespace).count <= 6
+            && label.text.last.map({ !".!?;,:".contains($0) }) == true {
+            let size = label.fontSize
+            let edge = candidates.filter { abs($0.rect.minX - label.rect.minX) <= size * 0.2
+                && $0.hasSize(size) }
+            guard let value = edge.filter({ $0.rect.maxY < label.rect.maxY }).max(by: { $0.rect.maxY < $1.rect.maxY }),
+                  label.rect.width <= value.rect.width * 0.8 else { continue }
+            let gap = label.rect.minY - value.rect.maxY
+            guard gap >= size * 0.2, gap <= size * 0.6 else { continue }
+            if let above = edge.filter({ $0.rect.minY > label.rect.minY }).min(by: { $0.rect.minY < $1.rect.minY }),
+               above.rect.minY - label.rect.maxY < gap + size * 0.5 { continue }
+            pairs.append((label, value, gap))
+        }
+        return Set(pairs.filter { pair in
+            pairs.count { other in
+                abs(other.label.rect.minX - pair.label.rect.minX) <= pair.label.fontSize * 0.2
+                    && other.label.hasSize(pair.label.fontSize)
+                    && abs(other.gap - pair.gap) <= pair.label.fontSize * 0.1
+            } >= 3
+        }.map { $0.value.rect })
+    }
+
     /// One page's logical blocks: its typography is read once, every line outside a tagged or
     /// numbered-note group is classified by `role(of:)`, and `BlockAssembler` builds the blocks.
     static func blocks(page: PageContent, images: [(CGRect, String)], context: DocumentContext,
@@ -1610,6 +1654,7 @@ enum LayoutReconstructor {
         // past an intervening picture and caption (#218).
         let labels = sectionLabels(in: lines, body: typography.body, headingThreshold: typography.headingThreshold,
                                    page: page, styles: context.labelStyles)
+            + tableTitles(in: lines, tables: page.tables, body: typography.body)
         // A recognized line in an English book is a heading only if it reads as words: a table
         // cell or a reading of handwriting set large is not a title, and every heading is a
         // navigation entry (#7).
@@ -1650,6 +1695,8 @@ enum LayoutReconstructor {
                                        ordinaryHeights: ordinaryLineHeights(in: lines),
                                        markerEntries: markerList?.openings ?? [],
                                        markerEntryEdge: markerList?.edge,
+                                       labelValueStarts: page.recognized || page.hasSyntheticTextStyle
+                                        ? [] : labelValueStarts(in: lines),
                                        rightToLeft: rightToLeft,
                                        recognized: page.recognized || page.hasSyntheticTextStyle,
                                        notesPage: context.numberedNotePages.contains(page.number))

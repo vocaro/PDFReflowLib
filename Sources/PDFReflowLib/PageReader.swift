@@ -84,7 +84,7 @@ enum PageReader {
             // appearance is preserved whole states no columns this reader can trust.
             if styled, !shows.isEmpty {
                 content.tables = try TableReader.tables(on: page, lines: content.lines,
-                                                        shows: shows, rules: rules)
+                                                        shows: shows, rules: rules, filledCells: graphics.filledCells)
             }
             if graphics.unsupported {
                 warnings.append(.unsupportedGraphics)

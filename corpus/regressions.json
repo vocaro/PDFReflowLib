@@ -2116,7 +2116,7 @@
     {
       "id": "noaa-nca5-2023",
       "sourceSHA256": "1942cbf346dc2c711fea413d6d6543edb8bc1e3a88d4c3a85e733c6b6d3577bf",
-      "basis": "Admitted to the corpus lane on the owner's 2026-09-23 ruling on #242, measured on 8faeaab at library defaults: 1,834 pages, 1,609 images, 286,429,009 entry bytes, 0.53 of the 512 MiB budget, no recognized page (measurements/corpus-lane-admissions/record.md). Source pages 1, 8, 33, 48, 80, 84, 139, 1700 and 1834 rendered with Poppler and read against the converted output. Page 1 protects the cover title as a heading and the cover photograph. Page 8 protects the front-matter and chapter entries of the contents in the order the page prints them, the key-message entries under chapters 2 and 3, the painting and its credit; how each entry is set (some preformatted, the chapter 3 entries a table) is not pinned. Pages 33, 80 and 139 are chapter openers: each protects its running head, its title and its photograph; on all three the title is a heading (#296), and page 33 keeps its running head as prose. Page 48 protects its section heading, the first line of its sub-heading and its first two paragraphs; the sub-heading's second line, the rest of the column and both captions sit inside the figure crop, the state #181 recorded and #231 reconciled as closed with its fix only on the abandoned branch, so nothing there is pinned. Page 84 protects the prose before and after the Key Message 2.1 box in order, the paragraph's closing sentence inside one paragraph, and the absence of the running foot; the box itself is a crop and its heading is not pinned. Page 1700 protects the focus-section title as a heading, the contributor roles and names in source order and the absence of the running foot; the Authors and Contributors band is a crop. Page 1834 is the back cover of agency seals and keeps a page image.",
+      "basis": "Admitted to the corpus lane on the owner's 2026-09-23 ruling on #242, measured on 8faeaab at library defaults: 1,834 pages, 1,609 images, 286,429,009 entry bytes, 0.53 of the 512 MiB budget, no recognized page (measurements/corpus-lane-admissions/record.md). Source pages 1, 8, 33, 48, 80, 84, 139, 1700 and 1834 rendered with Poppler and read against the converted output. Page 1 protects the cover title as a heading and the cover photograph. Page 8 protects the front-matter and chapter entries of the contents in the order the page prints them, the key-message entries under chapters 2 and 3, the painting and its credit; how each entry is set (some preformatted, the chapter 3 entries a table) is not pinned. Pages 33, 80 and 139 are chapter openers: each protects its running head, its title and its photograph; on all three the title is a heading (#296), and page 33 keeps its running head as prose. Page 48 protects its section heading, the first line of its sub-heading and its first two paragraphs; the sub-heading's second line, the rest of the column and both captions sit inside the figure crop, the state #181 recorded and #231 reconciled as closed with its fix only on the abandoned branch, so nothing there is pinned. Page 84 protects the prose before and after the Key Message 2.1 box in order, the paragraph's closing sentence inside one paragraph, and the absence of the running foot; the box itself is a crop and its heading is not pinned. Page 1700 protects the focus-section title as a heading, the contributor roles and names in source order and the absence of the running foot; the Authors and Contributors band is a crop. Page 1834 is the back cover of agency seals and keeps a page image. Issue #215 adds physical pages 6, 25 and 1738: page 6 keeps both J. Michael Kuperberg entries as paragraphs, page 25 pins both painted two-column tables cell by cell plus their titles and the adjacent prose, and page 1738 protects the credit roles and names. Exact separation of Cover Art and Diane Burko is additionally checked by the source-layout regression and the whole-conversion comparison record.",
       "pages": [
         {
           "page": 1,
@@ -2124,6 +2124,13 @@
             "Fifth National Climate Assessment"
           ],
           "minimumImages": 1
+        },
+        {
+          "page": 6,
+          "paragraphs": [
+            "J. Michael Kuperberg, Acting NCA Director (through June 2021)",
+            "J. Michael Kuperberg, Executive Director, US Global Change Research"
+          ]
         },
         {
           "page": 8,
@@ -2147,6 +2154,71 @@
           ],
           "text": [
             "Ellen Anderson"
+          ],
+          "minimumImages": 1
+        },
+        {
+          "page": 25,
+          "headings": [
+            "Table 1. Calibrated Language for Confidence Assessment",
+            "Table 2. Calibrated Language for Likelihood Assessment"
+          ],
+          "paragraphs": [
+            "The text supporting each Key Message provides evidence, discusses implications, identifies intersections between systems or hazards, and presents examples of paths to greater resilience."
+          ],
+          "tableRows": [
+            [
+              "Confidence Level",
+              "Definition"
+            ],
+            [
+              "Very high",
+              "• Strong evidence (established theory, multiple sources, well-docu- mented and accepted methods, etc.) • High consensus"
+            ],
+            [
+              "High",
+              "• Moderate evidence (several sources, some consistency, methods vary and/or documentation limited, etc.) • Medium consensus"
+            ],
+            [
+              "Medium",
+              "• Suggestive evidence (a few sources, limited consistency, methods emerging, etc.) • Competing schools of thought"
+            ],
+            [
+              "Low",
+              "• Inconclusive evidence (limited sources, extrapolations, inconsistent findings, poor documentation and/or methods not tested, etc.) • Disagreement or lack of opinions among experts"
+            ],
+            [
+              "Likelihood Assessment",
+              "Numeric Probability of Outcome"
+            ],
+            [
+              "Virtually certain",
+              "99%–100%"
+            ],
+            [
+              "Very likely",
+              "90%–100%"
+            ],
+            [
+              "Likely",
+              "66%–100%"
+            ],
+            [
+              "As likely as not",
+              "33%–66%"
+            ],
+            [
+              "Unlikely",
+              "0%–33%"
+            ],
+            [
+              "Very unlikely",
+              "0%–10%"
+            ],
+            [
+              "Exceptionally unlikely",
+              "0%–1%"
+            ]
           ],
           "minimumImages": 1
         },
@@ -2234,6 +2306,27 @@
           ],
           "absentText": [
             "F2-2 | Focus on Western Wildfires"
+          ]
+        },
+        {
+          "page": 1738,
+          "orderedText": [
+            "Federal Coordinating Lead Author",
+            "Allison R. Crimmins, US Global Change Research Program",
+            "Chapter Lead Author",
+            "Christopher W. Avery, US Global Change Research Program / ICF",
+            "Authors",
+            "Samantha Basile, US Global Change Research Program / ICF",
+            "Allyza Lustig, US Global Change Research Program / ICF",
+            "Review Editor",
+            "Therese S. Carter, George Washington University",
+            "Cover Art",
+            "Diane Burko",
+            "Recommended Citation"
+          ],
+          "paragraphs": [
+            "Cover Art",
+            "Diane Burko"
           ]
         },
         {

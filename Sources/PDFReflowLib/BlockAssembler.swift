@@ -490,6 +490,7 @@ struct BlockAssembler {
     let body: CGFloat
     /// The leading this page's own text states, or nil where it states none (#123).
     let leading: CGFloat?
+    private let additionalLeading: [Int: CGFloat]
     let hyphens: HyphenContext
     private(set) var blocks: [ReflowBlock] = []
     /// Uncertain-hyphen warnings the joins raised, one per page.
@@ -562,7 +563,7 @@ struct BlockAssembler {
     /// a marker line on such a page records no list evidence at all.
     private let notesPage: Bool
 
-    init(page: Int, body: CGFloat, leading: CGFloat? = nil, hyphens: HyphenContext,
+    init(page: Int, body: CGFloat, leading: CGFloat? = nil, additionalLeading: [Int: CGFloat] = [:], hyphens: HyphenContext,
          imageLinks: [String: LinkTarget] = [:], imageDescriptions: [String: String] = [:],
          hangingEntries: [CGRect: CGRect] = [:], columnSeams: [CGFloat] = [],
          ordinaryHeights: [Int: CGFloat] = [:],
@@ -572,6 +573,7 @@ struct BlockAssembler {
         self.page = page
         self.body = body
         self.leading = leading
+        self.additionalLeading = additionalLeading
         self.hyphens = hyphens
         self.imageLinks = imageLinks
         self.imageDescriptions = imageDescriptions
@@ -1230,7 +1232,8 @@ struct BlockAssembler {
     /// different sizes, whose tops are not one ascent above their baselines and so cannot be
     /// compared this way.
     private func onStatedLeading(_ prev: TextLine, _ line: TextLine) -> Bool {
-        guard let leading, prev.hasSize(line.fontSize) else { return true }
+        let ownLeading = additionalLeading[Int(prev.fontSize.rounded())] ?? leading
+        guard let leading = ownLeading, prev.hasSize(line.fontSize) else { return true }
         return prev.uprightRect.maxY - line.uprightRect.maxY <= leading * BlockAssembler.paragraphLeadingSlack
     }
 

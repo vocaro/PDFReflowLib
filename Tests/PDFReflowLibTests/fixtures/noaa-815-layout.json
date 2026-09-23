@@ -1,0 +1,136 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        76.319999694000003,
+        736.99812207000002,
+        253.34399999999994,
+        15.923999999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 12,
+          "text" : "Fifth National Climate Assessment: Chapter 18"
+        }
+      ],
+      "text" : "Fifth National Climate Assessment: Chapter 18"
+    },
+    {
+      "rect" : [
+        76.319999694000003,
+        691.70708544900003,
+        419.90190000630309,
+        43.79099999999994
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 33,
+          "text" : "Sector Interactions, Multiple"
+        }
+      ],
+      "text" : "Sector Interactions, Multiple"
+    },
+    {
+      "rect" : [
+        76.319999694000003,
+        652.10698779200004,
+        489.19530001260603,
+        43.791000000000054
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 33,
+          "text" : "Stressors, and Complex Systems"
+        }
+      ],
+      "text" : "Stressors, and Complex Systems"
+    },
+    {
+      "rect" : [
+        -17.027278899999999,
+        -8.5258827200000002,
+        646.83490000000006,
+        614.04602460000001
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 33,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    612,
+    792
+  ],
+  "caseID" : "noaa-nca5-2023",
+  "graphics" : [
+    [
+      0,
+      0.0009765620000052877,
+      612,
+      630.96004296900003
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 12,
+      "monospaced" : false,
+      "rect" : [
+        76.319999694000003,
+        736.99812207000002,
+        253.34399999999994,
+        15.923999999999978
+      ],
+      "text" : "Fifth National Climate Assessment: Chapter 18"
+    },
+    {
+      "fontSize" : 33,
+      "monospaced" : false,
+      "rect" : [
+        76.319999694000003,
+        691.70708544900003,
+        419.90190000630309,
+        43.79099999999994
+      ],
+      "text" : "Sector Interactions, Multiple"
+    },
+    {
+      "fontSize" : 33,
+      "monospaced" : false,
+      "rect" : [
+        76.319999694000003,
+        652.10698779200004,
+        489.19530001260603,
+        43.791000000000054
+      ],
+      "text" : "Stressors, and Complex Systems"
+    }
+  ],
+  "page" : 815,
+  "pictures" : [
+    [
+      0,
+      0.0009765620000052877,
+      612,
+      605.51916531799998
+    ]
+  ],
+  "rightsBasis" : "NOAA repository explicitly identifies CC0 Public Domain. This records the publisher declaration, not a new owner-confirmed rights determination or shipped-catalog admission.",
+  "schemaVersion" : 2,
+  "sourceSHA256" : "1942cbf346dc2c711fea413d6d6543edb8bc1e3a88d4c3a85e733c6b6d3577bf",
+  "sourceTitle" : "Fifth National Climate Assessment",
+  "sourceURL" : "https://repository.library.noaa.gov/view/noaa/61592/noaa_61592_DS1.pdf"
+}

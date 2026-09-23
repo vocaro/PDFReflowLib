@@ -525,3 +525,54 @@ func notesRunningHeadsReadAsHeadingsOnTheirOwnPage(number: Int) throws {
     #expect(!stripped.lines.contains { $0.text == head.text })
     #expect(!headingTexts(headingBlocks(stripped)).contains { $0.contains("NOTES TO CHAPTER") })
 }
+
+// A chapter opener supplies too little prose to establish a body. A long display title must
+// not become its own body merely by carrying more characters than the running head (#296).
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/296"), arguments: [33, 80, 139, 384, 526, 815, 1710])
+func sparseNoaaChapterTitlesUseTheDocumentBody(number: Int) throws {
+    let fixture = try SourceLayoutFixture.load("noaa-\(number)")
+    #expect(fixture.sourceSHA256 == "1942cbf346dc2c711fea413d6d6543edb8bc1e3a88d4c3a85e733c6b6d3577bf")
+    let page = fixture.content()
+    let runningHead = try #require(page.lines.first { $0.fontSize == 12 })
+    let titles = page.lines.filter { $0.fontSize > runningHead.fontSize }.map(\.text)
+    #expect(!titles.isEmpty)
+    let blocks = floorBlocks(page, documentBody: 9)
+    #expect(headingTexts(blocks) == titles)
+    #expect(paragraphTexts(blocks) == [runningHead.text])
+}
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/296"))
+func sparseTitleClassificationDoesNotDependOnRelativeTextLength() {
+    for title in ["Title", "A Much Longer Title About the Changing World and Its Inhabitants"] {
+        let lines = [
+            TextLine(text: "Chapter Seven", rect: CGRect(x: 40, y: 700, width: 140, height: 16), fontSize: 12),
+            TextLine(text: title, rect: CGRect(x: 40, y: 668, width: 550, height: 32), fontSize: 24),
+        ]
+        let page = PageContent(number: 1, bounds: CGRect(x: 0, y: 0, width: 700, height: 800), lines: lines, graphics: [])
+        for documentBody: CGFloat in [8, 9, 10, 11] {
+            let blocks = floorBlocks(page, documentBody: documentBody)
+            #expect(headingTexts(blocks) == [title])
+            #expect(paragraphTexts(blocks) == ["Chapter Seven"])
+        }
+        // With no document evidence, retain the page-local decision rather than assuming that
+        // every sparse page is a title page.
+        if title.count > "Chapter Seven".count {
+            #expect(headingTexts(floorBlocks(page)).isEmpty)
+        }
+    }
+}
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/296"))
+func establishedLargePrintProseKeepsItsOwnHeadingThreshold() {
+    let prose = "Large print prose establishes its own body on this page even in a book with smaller ordinary text."
+    let lines = (0..<4).map { row in
+        TextLine(text: prose, rect: CGRect(x: 40, y: 640 - row * 32, width: 600, height: 30), fontSize: 24)
+    } + [TextLine(text: "Large Print Heading", rect: CGRect(x: 40, y: 690, width: 350, height: 40), fontSize: 32)]
+    let page = PageContent(number: 1, bounds: CGRect(x: 0, y: 0, width: 700, height: 800), lines: lines, graphics: [])
+    let typography = PageTypography(pageLines: lines, reflowableLines: lines, documentBody: 11)
+    #expect(typography.establishedBody == 24)
+    #expect(typography.headingThreshold == 30)
+    let blocks = floorBlocks(page, documentBody: 11)
+    #expect(headingTexts(blocks) == ["Large Print Heading"])
+    #expect(paragraphTexts(blocks).joined(separator: " ") == Array(repeating: prose, count: 4).joined(separator: " "))
+}

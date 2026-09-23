@@ -1,0 +1,136 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        54,
+        735.508009765,
+        253.34399999999994,
+        15.923999999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 12,
+          "text" : "Fifth National Climate Assessment: Chapter 11"
+        }
+      ],
+      "text" : "Fifth National Climate Assessment: Chapter 11"
+    },
+    {
+      "rect" : [
+        54,
+        685.80399755799999,
+        436.31639999999999,
+        47.772000000000048
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 36,
+          "text" : "Agriculture, Food Systems,"
+        }
+      ],
+      "text" : "Agriculture, Food Systems,"
+    },
+    {
+      "rect" : [
+        54,
+        642.60398535100001,
+        378.01800000000003,
+        47.772000000000048
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 36,
+          "text" : "and Rural Communities"
+        }
+      ],
+      "text" : "and Rural Communities"
+    },
+    {
+      "rect" : [
+        -152.2400055,
+        -12.959991499999999,
+        781.78653080000004,
+        618.48001099999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 36,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    612,
+    792
+  ],
+  "caseID" : "noaa-nca5-2023",
+  "graphics" : [
+    [
+      0,
+      0,
+      612,
+      630.96101953100003
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 12,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        735.508009765,
+        253.34399999999994,
+        15.923999999999978
+      ],
+      "text" : "Fifth National Climate Assessment: Chapter 11"
+    },
+    {
+      "fontSize" : 36,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        685.80399755799999,
+        436.31639999999999,
+        47.772000000000048
+      ],
+      "text" : "Agriculture, Food Systems,"
+    },
+    {
+      "fontSize" : 36,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        642.60398535100001,
+        378.01800000000003,
+        47.772000000000048
+      ],
+      "text" : "and Rural Communities"
+    }
+  ],
+  "page" : 526,
+  "pictures" : [
+    [
+      0,
+      0,
+      612,
+      605.52001949999999
+    ]
+  ],
+  "rightsBasis" : "NOAA repository explicitly identifies CC0 Public Domain. This records the publisher declaration, not a new owner-confirmed rights determination or shipped-catalog admission.",
+  "schemaVersion" : 2,
+  "sourceSHA256" : "1942cbf346dc2c711fea413d6d6543edb8bc1e3a88d4c3a85e733c6b6d3577bf",
+  "sourceTitle" : "Fifth National Climate Assessment",
+  "sourceURL" : "https://repository.library.noaa.gov/view/noaa/61592/noaa_61592_DS1.pdf"
+}

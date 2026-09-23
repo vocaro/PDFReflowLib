@@ -13,13 +13,14 @@ struct PageTypography: Equatable {
     /// their commonest size), or nil when the page is too sparse to state one.
     let establishedBody: CGFloat?
     /// The body heading candidates are measured against: the page body, unless the reflowable
-    /// text establishes a larger one.
+    /// text establishes a larger one. On a sparse page, the document body and the page's
+    /// smallest reflowable type cap an estimate dominated by display text (#296).
     let headingBody: CGFloat
     /// On a page too sparse to establish a body of its own, a heading must also clear 110% of
     /// the document's body (#186); zero otherwise.
     let documentFloor: CGFloat
-    /// The size at or above which a line reads as a heading: a quarter over the page body, a
-    /// tenth over the heading body, and the document floor.
+    /// The size at or above which a line reads as a heading: a quarter over the page's heading
+    /// estimate, a tenth over the established heading body, and the document floor.
     let headingThreshold: CGFloat
     /// The leading the page's reflowable text states, or nil where it states none (#123).
     let leading: CGFloat?
@@ -27,13 +28,21 @@ struct PageTypography: Equatable {
     init(pageLines: [TextLine], reflowableLines: [TextLine], documentBody: CGFloat?) {
         let body = max(4, LayoutReconstructor.bodySize(pageLines))
         let established = LayoutReconstructor.establishedBodySize(reflowableLines)
-        let headingBody = established.map { max(body, $0) } ?? body
+        // A lone long title can outweigh its running head and become the page's commonest
+        // size. With no established prose, that size cannot disqualify the title itself.
+        // Keep the page body for geometry; only heading classification takes this fallback.
+        // Preserve the page's own size contrast as well: a chapter's small running head is
+        // not a title merely because it is larger than the document's ordinary prose.
+        let smallestSize = reflowableLines.map(\.fontSize).min() ?? body
+        let sparseBody = documentBody.map { max($0, smallestSize, 4) } ?? body
+        let headingPageBody = established == nil ? min(body, sparseBody) : body
+        let headingBody = established.map { max(body, $0) } ?? headingPageBody
         let documentFloor = documentBody.map { established == nil ? $0 * 1.1 : 0 } ?? 0
         self.body = body
         establishedBody = established
         self.headingBody = headingBody
         self.documentFloor = documentFloor
-        headingThreshold = max(body * 1.25, headingBody * 1.1, documentFloor)
+        headingThreshold = max(headingPageBody * 1.25, headingBody * 1.1, documentFloor)
         leading = LayoutReconstructor.statedLeading(reflowableLines)
     }
 

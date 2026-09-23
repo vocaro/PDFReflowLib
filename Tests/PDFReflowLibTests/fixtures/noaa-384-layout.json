@@ -1,0 +1,136 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        54,
+        735.508009765,
+        246.4559999999999,
+        15.923999999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 12,
+          "text" : "Fifth National Climate Assessment: Chapter 8"
+        }
+      ],
+      "text" : "Fifth National Climate Assessment: Chapter 8"
+    },
+    {
+      "rect" : [
+        54,
+        685.80399755799999,
+        390.09959999999995,
+        47.772000000000048
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 36,
+          "text" : "Ecosystems, Ecosystem"
+        }
+      ],
+      "text" : "Ecosystems, Ecosystem"
+    },
+    {
+      "rect" : [
+        54,
+        642.60398535100001,
+        417.55320000000012,
+        47.772000000000048
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 36,
+          "text" : "Services, and Biodiversity"
+        }
+      ],
+      "text" : "Services, and Biodiversity"
+    },
+    {
+      "rect" : [
+        -21.903440400000001,
+        -4.9911918640000001,
+        663.18743896399997,
+        611.54390890000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 36,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    612,
+    792
+  ],
+  "caseID" : "noaa-nca5-2023",
+  "graphics" : [
+    [
+      0,
+      0,
+      612,
+      630.96101953100003
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 12,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        735.508009765,
+        246.4559999999999,
+        15.923999999999978
+      ],
+      "text" : "Fifth National Climate Assessment: Chapter 8"
+    },
+    {
+      "fontSize" : 36,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        685.80399755799999,
+        390.09959999999995,
+        47.772000000000048
+      ],
+      "text" : "Ecosystems, Ecosystem"
+    },
+    {
+      "fontSize" : 36,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        642.60398535100001,
+        417.55320000000012,
+        47.772000000000048
+      ],
+      "text" : "Services, and Biodiversity"
+    }
+  ],
+  "page" : 384,
+  "pictures" : [
+    [
+      0,
+      0,
+      612,
+      605.44201660099998
+    ]
+  ],
+  "rightsBasis" : "NOAA repository explicitly identifies CC0 Public Domain. This records the publisher declaration, not a new owner-confirmed rights determination or shipped-catalog admission.",
+  "schemaVersion" : 2,
+  "sourceSHA256" : "1942cbf346dc2c711fea413d6d6543edb8bc1e3a88d4c3a85e733c6b6d3577bf",
+  "sourceTitle" : "Fifth National Climate Assessment",
+  "sourceURL" : "https://repository.library.noaa.gov/view/noaa/61592/noaa_61592_DS1.pdf"
+}

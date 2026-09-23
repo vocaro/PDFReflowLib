@@ -1,0 +1,49 @@
+{
+  "date": "2026-09-23",
+  "sourceSHA256": "0f97380ae4308581bd70013b7317faafd7c217654236bd31d1448f26eae56905",
+  "runs": {
+    "normal_name": {
+      "converterSHA256": "9406f40c131d51466082fbb39979ebc43187ef46b3f2775f458a716f7a05c268",
+      "parsedPageSHA256": "9c24a24b6c6cd534d79bfc5fa4949c5a8f3c75ed69f8a6e02fd19d8bd21fec27",
+      "runPassed": true,
+      "epubcheckExitCode": 0
+    },
+    "renamed_same_directory": {
+      "converterSHA256": "9406f40c131d51466082fbb39979ebc43187ef46b3f2775f458a716f7a05c268",
+      "parsedPageSHA256": "67dd5ee17c4de6e1836ad1916dbf914e3b027a6e8faa521e14790249fd0de980",
+      "runPassed": true,
+      "epubcheckExitCode": 0
+    },
+    "renamed_repeat": {
+      "converterSHA256": "9406f40c131d51466082fbb39979ebc43187ef46b3f2775f458a716f7a05c268",
+      "parsedPageSHA256": "67dd5ee17c4de6e1836ad1916dbf914e3b027a6e8faa521e14790249fd0de980",
+      "runPassed": true,
+      "epubcheckExitCode": 0
+    },
+    "build_location": {
+      "converterSHA256": "9406f40c131d51466082fbb39979ebc43187ef46b3f2775f458a716f7a05c268",
+      "parsedPageSHA256": "9c24a24b6c6cd534d79bfc5fa4949c5a8f3c75ed69f8a6e02fd19d8bd21fec27",
+      "runPassed": true,
+      "epubcheckExitCode": 0
+    }
+  },
+  "changedPages": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20
+  ]
+}

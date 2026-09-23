@@ -1653,7 +1653,8 @@ enum LayoutReconstructor {
         // An inline fraction's denominator joins the line its numerator ends (#53).
         let lines = joinedInlineFractions(reflowable, rules: page.graphics.filter(isThinRule),
                                           body: max(4, bodySize(page.lines)))
-        let typography = PageTypography(pageLines: page.lines, reflowableLines: lines, documentBody: context.documentBody)
+        let typography = PageTypography(pageLines: page.lines, reflowableLines: lines, documentBody: context.documentBody,
+                                        nativeSizeEvidence: !page.recognized && !page.hasSyntheticTextStyle)
         // A bold sub-heading set at or near body size, whose paragraph opens beneath it directly or
         // past an intervening picture and caption (#218).
         let labels = sectionLabels(in: lines, body: typography.body, headingThreshold: typography.headingThreshold,

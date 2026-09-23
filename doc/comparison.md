@@ -98,7 +98,10 @@ than asserting that either converter's output is correct by definition.
 
 `comparison.json` records source SHA-256/bytes, converter SHA-256, harness source identities,
 platform, Poppler version, exact commands, exit status, durations, selected pages and the
-conversion report. Each command retains stdout/stderr; the bundle also retains the input PDF,
+conversion report. When freezing comparison binaries, copy each into a separate directory while
+keeping the `pdf-reflow` basename. Identical executable bytes under different names have produced
+different recognized text on the same host ([control record](../measurements/cli-name-recognition-control/record.md)).
+Each command retains stdout/stderr; the bundle also retains the input PDF,
 EPUB, extracted originals, browser previews, Poppler output and source rasters. Recorded
 durations have different scopes and include polling overhead; use the dedicated memory harness
 for converter performance qualification.

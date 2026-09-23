@@ -24,6 +24,9 @@ struct PageTypography: Equatable {
     let headingThreshold: CGFloat
     /// The leading the page's reflowable text states, or nil where it states none (#123).
     let leading: CGFloat?
+    /// A corroborated secondary body's own leading. Smaller table text must not set the
+    /// paragraph spacing of the larger prose, nor borrow that prose's looser spacing itself.
+    let additionalLeading: [Int: CGFloat]
 
     init(pageLines: [TextLine], reflowableLines: [TextLine], documentBody: CGFloat?,
          nativeSizeEvidence: Bool = true) {
@@ -67,6 +70,11 @@ struct PageTypography: Equatable {
         self.documentFloor = documentFloor
         headingThreshold = max(headingPageBody * 1.25, headingBody * 1.1, documentFloor)
         leading = LayoutReconstructor.statedLeading(reflowableLines)
+        if let proseBody, let ownLeading = LayoutReconstructor.statedLeading(reflowableLines.filter {
+            Int($0.fontSize.rounded()) == Int(proseBody.rounded())
+        }) {
+            additionalLeading = [Int(proseBody.rounded()): ownLeading]
+        } else { additionalLeading = [:] }
     }
 
     /// A second body size needs stronger evidence than the modal estimate: four wrapped rows,

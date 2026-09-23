@@ -15,6 +15,8 @@ func wrappedProseKeepsItsBodySizeBesideRecoveredSmallText(number: Int) throws {
     let typography = PageTypography(pageLines: page.lines, reflowableLines: page.lines, documentBody: 10)
     #expect(typography.body == (number == 13 ? 7 : 8))
     #expect(typography.headingBody == 10)
+    #expect(typography.additionalLeading[10] == 16)
+    #expect(typography.additionalLeading.count == 1)
     for line in page.lines where line.fontSize == 10 {
         #expect(LayoutReconstructor.role(of: line, on: page, in: page.lines, typography: typography,
                                          labels: [], judgesTitleWords: false) != .heading)
@@ -22,7 +24,8 @@ func wrappedProseKeepsItsBodySizeBesideRecoveredSmallText(number: Int) throws {
     var warnings: [ConversionWarning] = []
     let blocks = LayoutReconstructor.blocks(page: page, images: [],
         vocabulary: LayoutReconstructor.vocabulary(in: [page]), warnings: &warnings, documentBody: 10)
-    let opening = number == 13 ? "Despite the need for coordination" : "funds rate and other short-term"
+    let opening = number == 13 ? "Despite the need for coordination and consistency throughout the Federal Reserve System, geographic distinctions"
+        : "funds rate and other short-term interest rates is exercised primarily through the setting of"
     #expect(blocks.contains { block in
         if case .paragraph = block.content { return block.text.hasPrefix(opening) }
         return false
@@ -95,4 +98,19 @@ func wrappedDisplaySummaryDoesNotRaiseOrdinaryHeadingSize(number: Int) throws {
                                              labels: [], judgesTitleWords: false) == .heading)
         }
     }
+}
+
+@Test func secondaryBodyLeadingDoesNotLoosenSmallerText() {
+    func line(_ text: String, y: CGFloat, size: CGFloat) -> TextLine {
+        TextLine(text: text, rect: CGRect(x: 30, y: y, width: 240, height: size * 1.2), fontSize: size)
+    }
+    var assembler = BlockAssembler(page: 1, body: 8, leading: 10, additionalLeading: [10: 16],
+                                   hyphens: HyphenContext())
+    assembler.append(line("The larger body continues", y: 100, size: 10), as: .prose)
+    assembler.append(line("on its own wider leading.", y: 84, size: 10), as: .prose)
+    assembler.append(line("A smaller note stands here", y: 50, size: 8), as: .prose)
+    assembler.append(line("another note starts further below.", y: 34, size: 8), as: .prose)
+    #expect(assembler.finish().map(\.text) == [
+        "The larger body continues on its own wider leading.",
+        "A smaller note stands here", "another note starts further below."])
 }

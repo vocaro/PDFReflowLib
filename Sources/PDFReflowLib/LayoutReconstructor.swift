@@ -239,7 +239,7 @@ enum LayoutReconstructor {
     }
 
     /// `clusters` for regions: merged bounds carry the union of their seeds.
-    private static func merged(_ regions: [Region]) -> [Region] {
+    private static func merged(_ regions: [Region], backdrop: Bool = false) -> [Region] {
         var result: [Region] = []
         for region in regions {
             var merged = region
@@ -247,7 +247,8 @@ enum LayoutReconstructor {
             while previousCount != result.count {
                 previousCount = result.count
                 result.removeAll { existing in
-                    if existing.bounds.insetBy(dx: -3, dy: -3).intersects(merged.bounds) {
+                    if backdrop ? PageBackdrop.joins(existing.bounds, merged.bounds)
+                        : existing.bounds.insetBy(dx: -3, dy: -3).intersects(merged.bounds) {
                         merged.seed = merged.seed.union(existing.seed)
                         merged.bounds = merged.bounds.union(existing.bounds)
                         return true
@@ -273,7 +274,8 @@ enum LayoutReconstructor {
             var bounds = admitted.reduce(region.seed) { $0.union($1.insetBy(dx: -2, dy: -2)) }
                 .intersection(page.bounds)
             var changed = false
-            for line in page.lines where !admitted.contains(line.rect) && bounds.intersects(line.rect) {
+            for line in page.lines where !PageBackdrop.reflows(line, on: page)
+                && !admitted.contains(line.rect) && bounds.intersects(line.rect) {
                 // The other pieces of an admitted row join it, unless the crop reaches into that
                 // row from the side: a page number a released contents entry runs to is the
                 // entry's, not the drawing's (#207). A thin rule is narrower than the line it
@@ -290,7 +292,8 @@ enum LayoutReconstructor {
             }
             if changed { continue }
             let kept = admitted.reduce(region.core) { $0.union($1) }
-            for line in page.lines where !admitted.contains(line.rect) && bounds.intersects(line.rect) {
+            for line in page.lines where !PageBackdrop.reflows(line, on: page)
+                && !admitted.contains(line.rect) && bounds.intersects(line.rect) {
                 let rect = line.rect
                 let cuts = [
                     CGRect(x: bounds.minX, y: rect.maxY, width: bounds.width, height: bounds.maxY - rect.maxY),
@@ -424,7 +427,9 @@ enum LayoutReconstructor {
         // The column headers of the tables this page draws, which a crop never releases to the
         // prose (#257). Read once: it is a property of the page, not of any one region.
         let columnHeaders = TableRegionDetector.columnHeaders(in: page, body: body)
-        var regions = clusters(seeds, distance: 3).map { Region(seed: $0, bounds: $0) }
+        let backdrop = page.backdropTextPanels != nil
+        var regions = (backdrop ? PageBackdrop.clustered(seeds) : clusters(seeds, distance: 3))
+            .map { Region(seed: $0, bounds: $0) }
         var previous: [CGRect] = []
         while regions.map(\.bounds) != previous {
             previous = regions.map(\.bounds)
@@ -435,7 +440,7 @@ enum LayoutReconstructor {
             // A merged bounding rectangle can newly intersect a label that neither component
             // touched. Expand again before rasterizing, or its text is removed from prose while
             // the image clips part of it (for example, a raised exponent beside a fraction).
-            regions = merged(regions)
+            regions = merged(regions, backdrop: backdrop)
         }
         return regions.map(\.bounds)
     }

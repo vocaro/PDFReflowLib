@@ -5,6 +5,14 @@ import Testing
 
 private let backdrop = "0.2 0.3 0.4 rg 0 0 612 792 re f "
 
+private struct BackdropCapture: Decodable {
+    var sourceSHA256: String
+    var original: PageContent
+    var rawPaints: [GraphicsReader.Paint]
+    var trimmedPaints: [GraphicsReader.Paint]
+    var trimmedPictures: [CGRect]
+}
+
 @Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/182")) func onlyAFlatRectangularGroundCanBeSeparatedFromItsArtwork() throws {
     let bounds = CGRect(x: 0, y: 0, width: 612, height: 792)
     for ground in [backdrop, "0 0 m 612 0 l 612 792 l 0 792 l 0 0 l f"] {
@@ -95,14 +103,7 @@ private func paddedIconPDF(opaque: Bool = false, maskExtra: String = "", clip: B
 }
 
 @Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/182")) func earthdataCloudPaddingReleasesCumulusOnARealBackdropPage() throws {
-    struct Capture: Decodable {
-        var sourceSHA256: String
-        var original: PageContent
-        var rawPaints: [GraphicsReader.Paint]
-        var trimmedPaints: [GraphicsReader.Paint]
-        var trimmedPictures: [CGRect]
-    }
-    let fixture = try JSONDecoder().decode(Capture.self,
+    let fixture = try JSONDecoder().decode(BackdropCapture.self,
         from: Data(contentsOf: fixtureURL("earthdata-12-backdrop.json")))
     #expect(fixture.sourceSHA256 == "f0a1ea3f5711228a9de2544fd1a94b05cfb8d9323fe3a4c253542f5a6ead5c94")
     let label = try #require(fixture.original.lines.first { $0.text == "Cumulus" })
@@ -159,4 +160,28 @@ private func paddedIconPDF(opaque: Bool = false, maskExtra: String = "", clip: B
         + "60 440 m 60 462 82 480 110 480 c 138 480 160 462 160 440 c "
         + "160 418 138 400 110 400 c 82 400 60 418 60 440 c h S"))
     #expect(ellipse.paints.last?.roundedRectangle != true)
+}
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/182"), arguments: [11, 18])
+func aBackdropRetainsLocalDiagramCropsWithoutJoiningTheCornerEmblem(number: Int) throws {
+    let fixture = try JSONDecoder().decode(BackdropCapture.self,
+        from: Data(contentsOf: fixtureURL("earthdata-\(number)-backdrop.json")))
+    #expect(fixture.sourceSHA256 == "f0a1ea3f5711228a9de2544fd1a94b05cfb8d9323fe3a4c253542f5a6ead5c94")
+    let graphics = GraphicsReader.Result(regions: fixture.original.graphics, unsupported: false,
+        images: fixture.trimmedPictures, visibleText: true, paints: fixture.trimmedPaints)
+    let page = try #require(PageBackdrop.compose(fixture.original, graphics: graphics))
+    let crops = LayoutReconstructor.graphicsWithLabels(page)
+    #expect(!crops.contains { PageDiagnosis.coversPage($0, bounds: page.bounds) })
+    #expect(crops.contains { $0.maxX < 80 && $0.minY > 330 })
+    #expect(crops.contains { $0.contains(CGPoint(x: 360, y: 230)) })
+    if number == 18 {
+        let secondTitleRow = try #require(page.lines.first { $0.text == "Stages Appropriate for a Diverse User Base" })
+        #expect(PageBackdrop.reflows(secondTitleRow, on: page))
+        var warnings: [ConversionWarning] = []
+        let blocks = LayoutReconstructor.blocks(page: page, images: crops.map { ($0, "figure.png") },
+                                                vocabulary: [], warnings: &warnings)
+        let text = blocks.filter(\.hasReflowedText).map(\.text).joined(separator: " ")
+        #expect(text.contains(secondTitleRow.text))
+        #expect(text.contains("Cumulus"))
+    }
 }

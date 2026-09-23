@@ -1922,18 +1922,273 @@
           ]
         }
       ]
-    }
-  ],
-  "excludedFullConversions": [
-    {
-      "id": "gpo-warren-1964",
-      "reason": "Converts at library defaults since the automatic image-encoding default (#242): 931 images, 536,242,227 entry bytes, 628,685 bytes (0.117%) inside the 512 MiB budget. Excluded because that margin is worth about 0.002 of JPEG quality and comes from ImageIO on this OS build, so gating on it would fail the lane on an encoder revision rather than on a change in this repository; admitting it is an owner decision (measurements/image-encoding-default/record.md). The five-page suspect-text-layer excerpt (gpo-warren-1964-suspect-text-excerpt) is gated separately, and the nine-page general excerpt (measurements/gpo-warren-1964/prepare-excerpt.py) remains a manual review aid, not a regression case.",
-      "issue": 242
     },
     {
       "id": "noaa-nca5-2023",
-      "reason": "Default image-output ceiling failure that no encoding choice fixes: at the automatic default (#242) the full book writes 817,716,220 entry bytes over 2,410 images (1.52x the 512 MiB budget), and forced to smallest:0.9 everywhere it still writes 694,592,660 (1.29x), because its crops are charts and line art rather than photographs. Full conversions with explicit larger storage caps are measured separately in measurements/noaa-output-policies/record.md; this gate retains library defaults.",
-      "issue": 242
+      "sourceSHA256": "1942cbf346dc2c711fea413d6d6543edb8bc1e3a88d4c3a85e733c6b6d3577bf",
+      "basis": "Admitted to the corpus lane on the owner's 2026-09-23 ruling on #242, measured on 8faeaab at library defaults: 1,834 pages, 1,609 images, 286,429,009 entry bytes, 0.53 of the 512 MiB budget, no recognized page (measurements/corpus-lane-admissions/record.md). Source pages 1, 8, 33, 48, 80, 84, 139, 1700 and 1834 rendered with Poppler and read against the converted output. Page 1 protects the cover title as a heading and the cover photograph. Page 8 protects the front-matter and chapter entries of the contents in the order the page prints them, the key-message entries under chapters 2 and 3, the painting and its credit; how each entry is set (some preformatted, the chapter 3 entries a table) is not pinned. Pages 33, 80 and 139 are chapter openers: each protects its running head, its title and its photograph; on 80 and 139 the title is a heading, on 33 it reflows as a paragraph joined to the running head, which is pinned neither way. Page 48 protects its section heading, the first line of its sub-heading and its first two paragraphs; the sub-heading's second line, the rest of the column and both captions sit inside the figure crop, the state #181 recorded and #231 reconciled as closed with its fix only on the abandoned branch, so nothing there is pinned. Page 84 protects the prose before and after the Key Message 2.1 box in order, the paragraph's closing sentence inside one paragraph, and the absence of the running foot; the box itself is a crop and its heading is not pinned. Page 1700 protects the focus-section title as a heading, the contributor roles and names in source order and the absence of the running foot; the Authors and Contributors band is a crop. Page 1834 is the back cover of agency seals and keeps a page image.",
+      "pages": [
+        {
+          "page": 1,
+          "headings": [
+            "Fifth National Climate Assessment"
+          ],
+          "minimumImages": 1
+        },
+        {
+          "page": 8,
+          "orderedText": [
+            "About This Report",
+            "Guide to the Report",
+            "Key Advances Since the Fourth National Climate Assessment",
+            "Chapter 1. Overview: Understanding Risks, Impacts, and Responses",
+            "How the United States Is Addressing Climate Change",
+            "How the United States Is Experiencing Climate Change",
+            "Current and Future Climate Risks to the United States",
+            "The Choices That Will Determine the Future",
+            "How Climate Action Can Create a More Resilient and Just Nation",
+            "Chapter 2. Climate Trends",
+            "Key Message 2.1. Climate Is Changing, and Scientists Understand Why",
+            "Key Message 2.2. Extreme Events Are Becoming More Frequent and Severe",
+            "Key Message 2.3. How Much the Climate Changes Depends on the Choices Made Now",
+            "Chapter 3. Earth Systems Processes",
+            "Key Message 3.1. Human Activities Have Caused the Observed Global Warming",
+            "Key Message 3.5. Humans Are Changing Weather and Climate Extremes"
+          ],
+          "text": [
+            "Ellen Anderson"
+          ],
+          "minimumImages": 1
+        },
+        {
+          "page": 33,
+          "orderedText": [
+            "Fifth National Climate Assessment: Chapter 1",
+            "Overview: Understanding Risks, Impacts, and Responses"
+          ],
+          "minimumImages": 1
+        },
+        {
+          "page": 48,
+          "headings": [
+            "How the United States Is Experiencing Climate Change"
+          ],
+          "orderedText": [
+            "Current climate changes are unprecedented",
+            "Global greenhouse gas emissions from human activities continue to increase, resulting in rapid warming (Figure 1.5)",
+            "unprecedented for thousands of years (Figure 1.6)",
+            "As the world’s climate has shifted toward warmer conditions"
+          ],
+          "minimumImages": 1
+        },
+        {
+          "page": 80,
+          "headings": [
+            "Climate Trends"
+          ],
+          "text": [
+            "Fifth National Climate Assessment: Chapter 2"
+          ],
+          "minimumImages": 1
+        },
+        {
+          "page": 84,
+          "orderedText": [
+            "air pollution across the US West",
+            "Put simply, communities across the country are built for a climate that no longer exists.",
+            "It is unequivocal that human activities have increased atmospheric levels of carbon dioxide and other greenhouse gases.",
+            "Humans are increasing atmospheric concentrations of planet-warming gases"
+          ],
+          "paragraphs": [
+            "Put simply, communities across the country are built for a climate that no longer exists."
+          ],
+          "absentText": [
+            "2-5 | Climate Trends"
+          ]
+        },
+        {
+          "page": 139,
+          "headings": [
+            "Earth Systems Processes"
+          ],
+          "text": [
+            "Fifth National Climate Assessment: Chapter 3"
+          ],
+          "minimumImages": 1
+        },
+        {
+          "page": 1700,
+          "headings": [
+            "Focus on Western Wildfires"
+          ],
+          "orderedText": [
+            "Federal Coordinating Lead Author",
+            "Allison R. Crimmins, US Global Change Research Program",
+            "Chapter Lead Author",
+            "Steven M. Ostoja, USDA Agricultural Research Service, California Climate Hub",
+            "Technical Contributors",
+            "Robert G. Byron, Montana Health Professionals for a Healthy Climate",
+            "Ambarish Vaidyanathan, Centers for Disease Control and Prevention",
+            "Review Editor",
+            "Ellen M. Considine, Harvard T.H. Chan School of Public Health, Department of Biostatistics",
+            "Cover Art",
+            "David Zeiset",
+            "Recommended Citation",
+            "https://doi.org/10.7930/NCA5.2023.F2"
+          ],
+          "absentText": [
+            "F2-2 | Focus on Western Wildfires"
+          ]
+        },
+        {
+          "page": 1834,
+          "minimumImages": 1
+        }
+      ]
+    },
+    {
+      "id": "gpo-warren-1964",
+      "sourceSHA256": "341cc3471750c9c3be68b95a34b52f6cbdc86c4392427a8483ee1c6bc53cfc19",
+      "basis": "Admitted to the corpus lane on the owner's 2026-09-23 ruling on #242 at the margin that ruling accepts, measured on 8faeaab at library defaults: 920 pages, 934 images all written as JPEG, 536,305,614 entry bytes, 565,298 bytes (0.105%) inside the 512 MiB budget, 14 pages recognized (measurements/corpus-lane-admissions/record.md). Source pages 1, 7, 21, 30, 50, 100, 890, 910 and 920 rendered with Poppler and read against the converted output and against the inherited text layer (pdftotext). Every pinned line is one the inherited layer already holds and the source prints unambiguously, on a page whose layer the plausibility rules keep, so no check depends on what Vision reads: Vision's reading of a page differs between compiled model sets and between runs (#173, #284), the lesson of #269 and #281 on the suspect-text excerpt. Pages 1 and 920 are the textless cloth covers: each keeps a page image, and whether recognition reads nothing or noise on them is not pinned. Page 7 protects the title page's seven printed lines in order; the misread call-number scrawl beneath them is not pinned. Page 21 protects the contents entries in the order the page prints them, skipping the entries the layer misreads (Luncheon, Return) and the one the output sets without its word space (Chapter I.). Page 30 protects the five paragraphs the page prints, each inside its own paragraph, and their order. Page 50 pins the unverifiedTextLayer notice the review asked for and two sentences the layer holds correctly; the layer's h/b confusions ('bis known contacts witb tbe') are inherited and pinned neither way. Page 100 protects three sentences of the running prose. Page 890 protects that the left column of notes completes through 476 before 477 opens the right column, and page 910 that the index's left column completes through Fair Play for Cuba Committee before Federal Bureau of Investigation opens the right; the review found both interleaved and both read in column order now. Not pinned: the layer's own OCR errors, the word spaces the output drops from this layer on pages 21, 30, 50 and 100 (reported separately), the preformatted setting of the notes and of the numbered paragraphs, and any claim about pages not listed.",
+      "pages": [
+        {
+          "page": 1,
+          "minimumImages": 1
+        },
+        {
+          "page": 7,
+          "orderedText": [
+            "REPORT OF",
+            "THE PRESIDENT'S COMMISSION ON THE",
+            "ASSASSINATION OF",
+            "President John F. Kennedy",
+            "UNITED STATES",
+            "GOVERNMENT PRINTING OFFICE",
+            "WASHINGTON, D.C."
+          ],
+          "minimumImages": 1,
+          "warningCodesAnyOf": [
+            "unverifiedTextLayer"
+          ]
+        },
+        {
+          "page": 21,
+          "orderedText": [
+            "Contents",
+            "LETTER OF TRANSMITTAL",
+            "FOREWORD",
+            "SUMMARY AND CONCLUSIONS",
+            "Narrative of Events",
+            "Conclusions",
+            "Recommendations",
+            "Chapter II. THE ASSASSINATION",
+            "Planning the Texas Trip",
+            "Advance Preparations for the Dallas Trip",
+            "Preventive Intelligence Activities",
+            "The Motorcade Route",
+            "Dallas Before the Visit",
+            "Visits to Other Texas Cities",
+            "Arrival at Love Field",
+            "Organization of the Motorcade",
+            "The Drive Through Dallas",
+            "The Assassination",
+            "Speed of the Limousine",
+            "In the Presidential Limousine",
+            "Reaction by Secret Service Agents",
+            "Parkland Memorial Hospital",
+            "The Race to the Hospital",
+            "Treatment of President Kennedy",
+            "Treatment of Governor Connally",
+            "Vice President Johnson at Parkland",
+            "Removal of the President's Body",
+            "The End of the Trip",
+            "Swearing in of the New President",
+            "The Autopsy",
+            "Chapter III. THE SHOTS FROM THE TEXAS SCHOOL BOOK DEPOSITORY",
+            "The Witnesses",
+            "Near the Depository",
+            "On the Fifth Floor",
+            "At the Triple Underpass",
+            "The Presidential Automobile"
+          ],
+          "minimumImages": 1,
+          "warningCodesAnyOf": [
+            "unverifiedTextLayer"
+          ]
+        },
+        {
+          "page": 30,
+          "orderedText": [
+            "varied roles which an American President performs",
+            "The Dallas motorcade, it was hoped, would evoke a demonstration",
+            "By midmorning of November 22, clearing skies in Dallas dispelled",
+            "Directly behind the Presidential limousine was an open",
+            "The motorcade left Love Field shortly after"
+          ],
+          "paragraphs": [
+            "varied roles which an American President performs",
+            "The Dallas motorcade, it was hoped, would evoke a demonstration",
+            "By midmorning of November 22, clearing skies in Dallas dispelled",
+            "Directly behind the Presidential limousine was an open",
+            "The motorcade left Love Field shortly after"
+          ],
+          "minimumImages": 1
+        },
+        {
+          "page": 50,
+          "text": [
+            "The Commission has explored all attempts of Oswald to identify himself",
+            "All of the evidence before the Commission established that there was nothing to support the speculation that Oswald was an agent, employee, or informant of the FBI, the CIA, or any other governmental agency."
+          ],
+          "minimumImages": 1,
+          "warningCodesAnyOf": [
+            "unverifiedTextLayer"
+          ]
+        },
+        {
+          "page": 100,
+          "orderedText": [
+            "Patrolman Foster estimated that there were 10 or 11 people on the railroad bridge where he was assigned",
+            "S. M. Holland, signal supervisor for Union Terminal Co., came to the railroad bridge",
+            "Another employee of the Union Terminal Co., Lee E. Bowers, Jr., was at work in a railroad tower about 14 feet above the tracks"
+          ],
+          "minimumImages": 1
+        },
+        {
+          "page": 890,
+          "orderedText": [
+            "NOTES TO PAGES 687-694",
+            "415. 8 H 232 (Delgado).",
+            "416. Id. at 233, 241, 246-248.",
+            "476. CE 2675, p. 2.",
+            "477. Id. at 2-3",
+            "536. CE 912."
+          ],
+          "minimumImages": 1
+        },
+        {
+          "page": 910,
+          "orderedText": [
+            "De Mohrenschildt, Jeanne, 282-283",
+            "Dziemian, Dr. Arthur J., 109, 580, 584.",
+            "Eberhardt, Augustus M., 342.",
+            "Executive Order No. 11130, 501-502.",
+            "Fain, John W., 326, 434.",
+            "Fair Play for Cuba Committee, 19, 21-22",
+            "Federal Bureau of Investigation, 13-14, 16, 22, 24, 26, 30, 60, 76, 81, 84-85",
+            "Felde, Allan R., 682.",
+            "Fritz, Capt. J. Will, 8, 9, 16, 79, 122",
+            "Gadash, Clyde, 344-345.",
+            "Granovsky, Frank, 786."
+          ],
+          "minimumImages": 1
+        },
+        {
+          "page": 920,
+          "minimumImages": 1
+        }
+      ]
     }
-  ]
+  ],
+  "excludedFullConversions": []
 }

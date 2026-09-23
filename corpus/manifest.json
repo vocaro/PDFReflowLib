@@ -135,8 +135,8 @@
     },
     {
       "id": "gpo-warren-1964",
-      "title": "Report of the President\u2019s Commission on the Assassination of President John F. Kennedy",
-      "author": "President\u2019s Commission on the Assassination of President Kennedy",
+      "title": "Report of the President’s Commission on the Assassination of President John F. Kennedy",
+      "author": "President’s Commission on the Assassination of President Kennedy",
       "publicationYear": 1964,
       "url": "https://www.govinfo.gov/content/pkg/GPO-WARRENCOMMISSIONREPORT/pdf/GPO-WARRENCOMMISSIONREPORT.pdf",
       "publisherPageURL": "https://www.govinfo.gov/features/warren-commission-report-and-hearings",
@@ -174,7 +174,7 @@
         910,
         920
       ],
-      "reviewStatus": "Full default conversion completes since the automatic image-encoding default (#242), with 0.117% of the 512 MiB entry budget to spare, so the case is held out of the corpus lane on that margin rather than on a failure; nine-page excerpt spot checks expose text-layer, reflow and column-order defects. Full-book fidelity is unqualified.",
+      "reviewStatus": "Converts at library defaults since the automatic image-encoding default, 565,298 bytes (0.105%) inside the 512 MiB entry budget on 8faeaab (934 images, all JPEG, 536,305,614 entry bytes, 14 pages recognized), and is gated in the corpus lane with EPUBCheck, progress and a 1,536 MiB Mac RSS ceiling on the owner's 2026-09-23 ruling on #242, which accepts that margin. Contract reviewed on pages 1, 7, 21, 30, 50, 100, 890, 910 and 920 against rendered source pages and the inherited text layer, pinning nothing a Vision reading decides. Full-book fidelity is unqualified.",
       "knownFidelityIssues": [
         {
           "page": 50,
@@ -210,14 +210,17 @@
           "resolution": "Source pages 1 and 920 retain image-only fallback; the pinned nine-page excerpt has seven reflowed pages. See measurements/quality-and-raster-fixes/record.md."
         }
       ],
-      "baselineStatus": "Converts at library defaults: 920 pages, 931 images all written as JPEG, 536,242,227 entry bytes, 628,685 bytes (0.117%) inside the 512 MiB budget. The historical baseline failed maximumOutputBytes after the last completed reconstruction page 390/920 (measurements/gpo-warren-1964/record.md); the current numbers and why the margin does not admit the case to the lane are in measurements/image-encoding-default/record.md.",
-      "baselineTrackingURL": "https://github.com/vocaro/PDFReflowLib/issues/242",
+      "baselineStatus": "Admission baseline and reviewed contract recorded in measurements/corpus-lane-admissions/record.md; included in the corpus gate. The historical baseline failed maximumOutputBytes after reconstruction page 390/920 (measurements/gpo-warren-1964/record.md); the encoding change that brought the book inside the budget is measured in measurements/image-encoding-default/record.md.",
       "rightsClearance": {
         "status": "owner-confirmed",
         "scope": "Commercial use and redistribution of the development corpus; retain applicable license attribution."
       },
       "downloadURL": "https://www.govinfo.gov/content/pkg/GPO-WARRENCOMMISSIONREPORT/pdf/GPO-WARRENCOMMISSIONREPORT.pdf",
-      "downloadVerification": "A fresh download through tools/fetch_corpus.py matches the owner-supplied identity; see measurements/corpus-downloads/verification.json."
+      "downloadVerification": "A fresh download through tools/fetch_corpus.py matches the owner-supplied identity; see measurements/corpus-downloads/verification.json.",
+      "memoryBudget": {
+        "maxPeakRSSMiB": 1536,
+        "scope": "macOS 27 arm64 isolated release CLI, defaults; initial RSS regression ceiling measured on 8faeaab, not a mobile device budget; peak RSS 1,174.5 MiB measured"
+      }
     },
     {
       "id": "gpo-911-2004",
@@ -382,7 +385,7 @@
     },
     {
       "id": "dga-2025-2030",
-      "title": "Dietary Guidelines for Americans, 2025\u20132030",
+      "title": "Dietary Guidelines for Americans, 2025–2030",
       "author": "U.S. Department of Health and Human Services; U.S. Department of Agriculture",
       "publicationYear": 2026,
       "url": "https://realfood.gov/",
@@ -493,13 +496,16 @@
         1700,
         1834
       ],
-      "reviewStatus": "Default image-output budget still fails. At the automatic image-encoding default (#242) the whole book writes 817,716,220 entry bytes over 2,410 images with the budget lifted, 1.52x the 512 MiB default, and forced to smallest:0.9 everywhere it is still 1.29x over: its crops are charts and line art, not photographs. Explicit 4 GiB entry/final caps complete all 1834 pages with PNG or JPEG full pages; full-book structure, exact policy comparison, selected source images and Mac resource measurements are retained in measurements/noaa-output-policies/record.md. Broad fidelity and physical-device budgets remain unqualified.",
+      "reviewStatus": "Converts at library defaults inside the 512 MiB entry budget since #247 and #251 (0.53 of it on 8faeaab: 1,609 images, 286,429,009 entry bytes, no recognized page) and is gated in the corpus lane with EPUBCheck, progress and a 1,280 MiB Mac RSS ceiling on the owner's 2026-09-23 ruling on #242. Contract reviewed on pages 1, 8, 33, 48, 80, 84, 139, 1700 and 1834 against rendered source pages. The earlier explicit-cap full conversions, exact policy comparison, selected source images and Mac resource measurements remain in measurements/noaa-output-policies/record.md. Broad fidelity and physical-device budgets remain unqualified.",
       "knownFidelityIssues": [],
       "downloadStatus": "Automated fetch returns HTTP 403; supplied cache matches pinned identity and publisher SHA-512. See measurements/noaa-nca5-2023/download-status.json.",
       "chapterReference": "corpus/noaa-nca5-2023-chapters.json",
-      "baselineStatus": "Default-budget failure remains excluded from the passing corpus gate, and no encoding choice closes it (measurements/image-encoding-default/record.md). Explicit-policy full conversions measured on Mac; no configured case RSS ceiling or physical-device budget.",
-      "baselineTrackingURL": "https://github.com/vocaro/PDFReflowLib/issues/242",
-      "chapterTrackingURL": "https://github.com/vocaro/PDFReflowLib/issues/15"
+      "baselineStatus": "Admission baseline and reviewed contract recorded in measurements/corpus-lane-admissions/record.md; included in the corpus gate. The historical default-budget failure is in measurements/noaa-nca5-2023/record.md and the encoding measurements that preceded admission in measurements/image-encoding-default/record.md.",
+      "chapterTrackingURL": "https://github.com/vocaro/PDFReflowLib/issues/15",
+      "memoryBudget": {
+        "maxPeakRSSMiB": 1280,
+        "scope": "macOS 27 arm64 isolated release CLI, defaults; initial RSS regression ceiling measured on 8faeaab, not a mobile device budget; peak RSS 886.9 MiB measured"
+      }
     },
     {
       "id": "gpo-our-flag-2003",
@@ -1155,8 +1161,8 @@
         "suppliedBy": "derived"
       },
       "id": "gpo-warren-1964-suspect-text-excerpt",
-      "title": "Report of the President\u2019s Commission on the Assassination of President John F. Kennedy \u2014 suspect-text-layer excerpt (pages 549, 553, 556, 636, 664)",
-      "author": "President\u2019s Commission on the Assassination of President Kennedy",
+      "title": "Report of the President’s Commission on the Assassination of President John F. Kennedy — suspect-text-layer excerpt (pages 549, 553, 556, 636, 664)",
+      "author": "President’s Commission on the Assassination of President Kennedy",
       "publicationYear": 1964,
       "url": "https://www.govinfo.gov/features/warren-commission-report-and-hearings",
       "publisherPageURL": "https://www.govinfo.gov/features/warren-commission-report-and-hearings",

@@ -32,12 +32,12 @@ budget). The case column links to the narrative section below; the seven #30 cas
 | --- | --- | ---: | --- | --- | ---: |
 | `faa-phak-8083-25c` | Pilot's Handbook of Aeronautical Knowledge, FAA-H-8083-25C | 522 | Columns, illustrations, diagrams, tables, glossary, tagged PDF | manifest `reviewPages` | 1,280 MiB |
 | [`wallace-algebra-2010`](#wallace-algebra) | Beginning and Intermediate Algebra | 489 | Fractions, radicals, powers, examples, exercises, answer keys | [review](../corpus/wallace-algebra-2010-review.json) | 256 MiB |
-| [`gpo-warren-1964`](#warren-commission-report) | Warren Commission report | 920 | Scans, noisy existing OCR, notes, index, large image output | [review](../corpus/gpo-warren-1964-review.json) | Unset: default conversion fails |
+| [`gpo-warren-1964`](#warren-commission-report) | Warren Commission report | 920 | Scans, noisy existing OCR, notes, index, large image output | [review](../corpus/gpo-warren-1964-review.json) | 1,536 MiB |
 | [`gpo-warren-1964-suspect-text-excerpt`](#suspect-text-layer-excerpt) | Warren pages 549, 553, 556, 636, 664 (derived) | 5 | Handwritten notes whose inherited layer is noise; typewritten pages misread in place | manifest `reviewPages` | 1,024 MiB |
 | [`gpo-911-2004`](#911-commission-report) | The 9/11 Commission Report | 585 | Untagged digital text, alternating headers, tracked lettering, endnotes | [review](../corpus/gpo-911-2004-review.json) | 256 MiB |
 | [`fed-explained-2021`](#the-fed-explained) | The Fed Explained | 135 | Tagged text, recurring tables, organization charts and flow diagrams | [review](../corpus/fed-explained-2021-review.json) | 768 MiB |
 | [`dga-2025-2030`](#dietary-guidelines-for-americans-20252030) | Dietary Guidelines for Americans, 2025–2030 | 10 | Illustrated section bands, gradients, bullet columns and callouts | [review](../corpus/dga-2025-2030-review.json) | 192 MiB |
-| [`noaa-nca5-2023`](#fifth-national-climate-assessment) | Fifth National Climate Assessment | 1,834 | Large tagged report, mixed orientations, 32 chapter starts, uneven graphics | [review](../corpus/noaa-nca5-2023-review.json), [chapters](../corpus/noaa-nca5-2023-chapters.json) | Unset: default conversion fails |
+| [`noaa-nca5-2023`](#fifth-national-climate-assessment) | Fifth National Climate Assessment | 1,834 | Large tagged report, mixed orientations, 32 chapter starts, uneven graphics | [review](../corpus/noaa-nca5-2023-review.json), [chapters](../corpus/noaa-nca5-2023-chapters.json) | 1,280 MiB |
 | [`gpo-our-flag-2003`](#our-flag) | Our Flag | 56 | Structure-tree inconsistencies, flag illustrations, drop capitals, one visible table | [review](../corpus/gpo-our-flag-2003-review.json) | 192 MiB |
 | [`cdc-zombie-pandemic-2011`](#preparedness-101-zombie-pandemic) | Preparedness 101: Zombie Pandemic | 42 | Comic artwork, noisy inherited text, image-only dialogue, panel order | [review](../corpus/cdc-zombie-pandemic-2011-review.json) | 512 MiB |
 | [`cia-blue-book-14-1955`](#project-blue-book-special-report-no-14) | Project Blue Book Special Report No. 14 | 312 | Scanned statistical tables, inherited OCR, negative warning/refusal contract | [review](../corpus/cia-blue-book-14-1955-review.json) | 768 MiB |
@@ -210,20 +210,25 @@ python3 tools/evaluate_real_document.py --case gpo-warren-1964 \
 
 The recorded default-budget baseline exited unsuccessfully after reconstruction page 390 when
 page-image output exceeded 512 MiB. **Since the automatic encoding default the whole book
-converts at library defaults**: 920 pages, 931 images, every one written as JPEG because its scans
-are tonal and its line art is neutral, 536,242,227 entry bytes — 628,685 bytes, 0.117%, inside the
-512 MiB budget. That margin is worth about 0.002 of JPEG quality, far below what an ImageIO
-revision could move, so the case stays out of the corpus lane rather than gating on it; the
-exclusion now records the measured position
-([record](../measurements/image-encoding-default/record.md)). The measurement runner retains the
-older failure and memory/progress evidence. A [full-book encoding experiment](../measurements/warren-image-encoding/record.md)
-completes with an explicit 2 GiB experimental override; the default-budget gate remains unresolved.
-The [production client-policy runs](../measurements/client-options/record.md) also complete all
+converts at library defaults, and since 2026-09-23 it is gated in the corpus lane**: on `8faeaab`,
+920 pages, 934 images, every one written as JPEG because its scans are tonal and its line art is
+neutral, 536,305,614 entry bytes — 565,298 bytes, 0.105%, inside the 512 MiB budget — in 523
+seconds at a peak RSS of 1,174.5 MiB against a 1,536 MiB ceiling, with 14 pages recognized. That
+margin is worth about 0.002 of JPEG quality and comes from ImageIO on this OS build, which is why
+the case was held out of the lane while the encoding default was being measured
+([record](../measurements/image-encoding-default/record.md)); the owner ruled on
+[#242](https://github.com/vocaro/PDFReflowLib/issues/242) that the margin is a pass, and that an
+OS revision pushing the book over it is a lane failure to look at then, not a reason to keep the
+book out. The admission, both books' numbers and the basis of every pinned check are in
+[corpus-lane-admissions](../measurements/corpus-lane-admissions/record.md). The measurement
+runner retains the older failure and memory/progress evidence. A
+[full-book encoding experiment](../measurements/warren-image-encoding/record.md) completes with an
+explicit 2 GiB experimental override. The
+[production client-policy runs](../measurements/client-options/record.md) also complete all
 920 pages, with JPEG references or with supplementary references omitted, under explicit final
-EPUB caps. Both validate; source-layer fidelity and physical-device memory remain unqualified. There is no case memory ceiling yet;
-do not treat a failed run as successful resource qualification or raise limits just to pass.
+EPUB caps. Both validate; source-layer fidelity and physical-device memory remain unqualified.
 
-A bounded nine-page excerpt permits visual diagnosis while full conversion is blocked:
+A bounded nine-page excerpt permits visual diagnosis without converting the whole book:
 
 ```sh
 python3 measurements/gpo-warren-1964/prepare-excerpt.py \
@@ -246,7 +251,9 @@ ordinary invisible Courier prose no longer becomes code, and OCR font geometry d
 headings. True heading recovery and index grouping remain unqualified. The [excerpt check](../measurements/quality-and-raster-fixes/record.md)
 excludes placeholders and counts seven reflowed pages, preserving the two textless pages as
 images. The excerpt passes EPUBCheck but is not fidelity-qualified. This case exercises trust in an existing OCR layer as well as
-new recognition: the default full run attempts fresh OCR on only one page.
+new recognition: the default full run recognizes 14 of its 920 pages, and the lane's contract pins
+nothing that reading decides — every pinned line is one the inherited layer holds on a page whose
+layer is kept, and the two textless cloth covers pin only their page images.
 
 ### Suspect-text-layer excerpt
 
@@ -289,19 +296,17 @@ text-layer quality rules ([#7](https://github.com/vocaro/PDFReflowLib/issues/7),
 `1b0308b`) and the comparison harness's absolute Poppler image URLs
 ([#9](https://github.com/vocaro/PDFReflowLib/issues/9), `b5f1937`).
 
-The full-book image-output ceiling is not fixed, and nothing open tracks it.
-[#5](https://github.com/vocaro/PDFReflowLib/issues/5) was closed by `fbe3464`, which made the
-default image encoding a per-image choice, on the abandoned coordination branch, and `dd160b4`
-merged that branch with the `ours` strategy, so the commit is an ancestor of `main` and none of
-its content is ([decision 0005](decisions/0005-abandoned-coordination-branch.md)). `main`'s default
-encoding is still PNG for both full pages and region crops, and a default run measured on
-`da544ad` still exits after reconstruction page 390 of 920. With the budget lifted the same
-build writes 1,246,503,758 entry bytes over 931 images — 1,188.76 MiB, 2.32 times the 512 MiB
-default. Asking for the branch's encoding explicitly,
-`--full-page-image-encoding smallest:0.9 --region-image-encoding smallest:0.9`, brings the book
-to 536,242,252 bytes, 628,660 bytes (0.12%) inside the default, which is what the closure
-measured; the gap is that `main` does not choose that encoding by itself. Additional
-source-derived examples are linked from the existing reading-order and memory investigations.
+The full-book image-output ceiling that
+[#5](https://github.com/vocaro/PDFReflowLib/issues/5) described was closed twice over. `fbe3464`
+closed the issue by making the default image encoding a per-image choice on the abandoned
+coordination branch, which `dd160b4` merged with the `ours` strategy, so that commit is an
+ancestor of `main` and none of its content is
+([decision 0005](decisions/0005-abandoned-coordination-branch.md)); `56d9ec1` then ported the
+per-image classifier onto `main` itself, and that port is what brings the book inside the budget
+today. Before it, a default run measured on `da544ad` still exited after reconstruction page 390
+of 920, and with the budget lifted the same build wrote 1,246,503,758 entry bytes over 931 images —
+1,188.76 MiB, 2.32 times the 512 MiB default. Additional source-derived examples are linked from
+the existing reading-order and memory investigations.
 
 
 ## 9/11 Commission report
@@ -425,28 +430,33 @@ supplied/downloaded original in the indicated cache; the same fetch command veri
 A failed fresh fetch returns nonzero and does not create a substitute. The original matches
 NOAA's published SHA-512 as well as the manifest's SHA-256. NOAA declares CC0/Public Domain.
 
-The [full-run baseline](../measurements/noaa-nca5-2023/record.md) fails the image-output ceiling
-after reconstruction page 598; the latest default run fails after page 599. The
-[explicit-policy comparison](../measurements/noaa-output-policies/record.md) completes all
-1,834 pages with automatic references, PNG crops and either PNG or JPEG 0.90 full pages under
-4 GiB experimental entry/final caps. Both pass EPUBCheck and preserve identical chapter text,
-source anchors and crop bytes, with selected source-image review and late cancellation checks.
-Peak converter RSS is about 1.04 billion bytes in these single Mac runs; no case RSS ceiling
-or physical-device budget is established. Default-budget failure remains outside the passing
-corpus lane, and the output budget and chapter-aware splitting are separate gaps.
+The [full-run baseline](../measurements/noaa-nca5-2023/record.md) failed the image-output ceiling
+after reconstruction page 598, and the
+[explicit-policy comparison](../measurements/noaa-output-policies/record.md) completed all
+1,834 pages only under 4 GiB experimental entry/final caps, with automatic references, PNG crops
+and either PNG or JPEG 0.90 full pages; both passed EPUBCheck and preserved identical chapter
+text, source anchors and crop bytes, with selected source-image review and late cancellation
+checks. **The book now converts at library defaults inside the default budget, and since
+2026-09-23 it is gated in the corpus lane**: on `8faeaab`, 1,834 pages, 1,609 images, 286,429,009
+entry bytes — 0.53 of the 512 MiB budget — in 119 seconds at a peak RSS of 886.9 MiB against a
+1,280 MiB ceiling, with no page recognized. It is the slowest case in the lane, which the owner's
+ruling on [#242](https://github.com/vocaro/PDFReflowLib/issues/242) accepts. The encoding default
+alone had not brought it in: with the budget lifted it wrote 817,716,220 bytes (1.52×), because
+only 126 of its then 2,410 images were ones the classifier permits and JPEG encodes smaller, and
+forced to `smallest:0.9` everywhere it was still 1.29× over
+([record](../measurements/image-encoding-default/record.md)). What moved it was the number of
+images, not their encoding: a page image was mandatory for any page carrying an annotation, which
+is every page holding one of the report's own cross-references, and is now required only for an
+annotation that did not convert, which took 781 images out; and an embedded original is written
+as itself rather than re-rendered. The admission, both books' numbers and the basis of every
+pinned check are in [corpus-lane-admissions](../measurements/corpus-lane-admissions/record.md).
 [#5](https://github.com/vocaro/PDFReflowLib/issues/5), the output budget, is closed and nothing
 open tracks it: `fbe3464` closed it on the abandoned coordination branch and `dd160b4` merged
 that branch with the `ours` strategy, so none of its content is on `main`
-([decision 0005](decisions/0005-abandoned-coordination-branch.md)). A default run measured on
-`da544ad` exits after reconstruction page 784 of 1,834, and with the budget lifted writes
-1,158,808,212 entry bytes over 2,410 images — 1,105.13 MiB, 2.16 times the 512 MiB default.
-Unlike the Warren report this book does not come inside the default under the automatic image
-encoding: with the budget lifted it writes 817,716,220 bytes (1.52×), because only 126 of its 2,410
-images are ones the classifier permits and JPEG encodes smaller — the rest are chart and line-art
-crops it is right to keep lossless. Nor does any encoding this library offers rescue it: forced to
-`smallest:0.9` everywhere, which chooses by bytes alone, it writes 694,592,660 bytes and is still
-1.29× over ([record](../measurements/image-encoding-default/record.md)). What remains for this
-book is how many crops it emits and at what resolution, not how they are encoded.
+([decision 0005](decisions/0005-abandoned-coordination-branch.md)); `56d9ec1` ported the
+encoding default onto `main` separately. A default run measured on `da544ad`, before that port,
+exited after reconstruction page 784 of 1,834, and with the budget lifted wrote 1,158,808,212
+entry bytes over 2,410 images — 1,105.13 MiB, 2.16 times the 512 MiB default.
 [Chapter-aware splitting #15](https://github.com/vocaro/PDFReflowLib/issues/15) is open. The
 current writer's approximate 60,000-byte file splitting does not follow PDF chapters or bound
 the memory of whole-document reconstruction.

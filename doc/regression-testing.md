@@ -13,7 +13,7 @@ carry their issue linkage as `.bug()` traits.
 | --- | --- | --- |
 | Fast | `scripts/check-all.sh --fast` | Swift suite, release build, Python tool tests, measurements policy, documented builds, documentation counts, issue citations, PDFKit concurrency smoke gate, eight fixture conversions with structural checks, conversion-policy cases |
 | Full | `scripts/check-all.sh` | Fast, plus the FAA memory gate when `corpus/cache/faa-h-8083-25c.pdf` (or `PDFREFLOW_REAL_PDF`) exists; absence is printed as a skip |
-| Corpus | `scripts/check-all.sh --corpus` | Fast, plus the structure-memory gate, the repeated-conversions gate and <!-- counts:corpus-documents -->18<!-- counts:end --> complete cached conversions with EPUBCheck. Requires `epubcheck` on `PATH` and every cached source; missing data fails explicitly, and nothing is downloaded |
+| Corpus | `scripts/check-all.sh --corpus` | Fast, plus the structure-memory gate, the repeated-conversions gate and <!-- counts:corpus-documents -->20<!-- counts:end --> complete cached conversions with EPUBCheck. Requires `epubcheck` on `PATH` and every cached source; missing data fails explicitly, and nothing is downloaded |
 
 The gate scripts share their plumbing through the `tools/pdfreflow_tools/` package: `corpus.py`
 (the repository root, manifest and contract loading, byte-count and SHA-256 identities),
@@ -165,7 +165,7 @@ the case is reported as `UNMEASURED` with exit 3 rather than as a failure
 A regression smaller than a heavy-OCR book's run-to-run spread, 50–135 MiB, is invisible to the
 gate whatever it measures; that is its stated limit ([memory testing](memory-testing.md)), not a
 defect it carries.
-Every current ceiling together totals 7.5 GiB. Serial and six-job runs on one commit agree on
+Every current ceiling together totals 10.5 GiB. Serial and six-job runs on one commit agree on
 every case under `tools/compare_conversion_runs.py` and in their content assessments; in
 parallel, peak RSS reads 1–13% higher, not lower, and conversion times include contention
 ([record](../measurements/parallel-gates/record.md)).
@@ -185,8 +185,10 @@ image-presence and contract checks still apply. ZIP metadata is read when the ar
 chapters are parsed individually and page content accumulates in memory. These are admission
 ceilings, not process budgets or EPUB security validation. The
 [large-inspection evidence](../measurements/large-epub-inspection/record.md) exercises NOAA-scale
-synthetic data and both retained full NOAA EPUBs; NOAA still has no passing default-budget
-contract, and larger ceilings change no conversion policy or exclusion.
+synthetic data and both retained full NOAA EPUBs from the explicit-cap runs; larger ceilings
+change no conversion policy. The two books the lane now converts at defaults fit the default
+inspection ceilings — NOAA at 1,746 entries and 286,429,009 bytes, Warren at 986 entries and
+536,305,614 bytes, the same 565,298-byte margin it has under the writer's budget.
 
 ## The corpus lane
 
@@ -201,22 +203,21 @@ it and a pass; `--memory-attempts` and `--settle-seconds` reach the evaluator's 
 loaded host. Each case verifies the pinned source identity, converts in a fresh release process,
 checks EPUB structure, EPUBCheck, monotonic progress, the manifest memory ceiling and the
 reviewed content contract in [corpus/regressions.json](../corpus/regressions.json):
-<!-- counts:contract-coverage -->608 checks on 128 reviewed pages across 18 documents<!-- counts:end -->.
+<!-- counts:contract-coverage -->752 checks on 146 reviewed pages across 20 documents<!-- counts:end -->.
 All source-page anchors must remain complete and ordered, and semantic text must
 contain no image-attachment placeholders. The manifest consistency test requires every corpus
-document to be covered or explicitly excluded; full Warren and NOAA conversions are excluded for
-the known image-output ceiling failure, listed in output and never counted as passes. That
-failure is real on `main` — measured on `da544ad`, Warren exits after reconstruction page 390 of
-920 and NOAA after page 784 of 1,834 — but the issue named in the exclusions,
-[#5](https://github.com/vocaro/PDFReflowLib/issues/5), is closed and tracks nothing: `fbe3464`
-closed it on the abandoned coordination branch, whose `ours` merge left `main`'s tree unchanged
-([decision 0005](decisions/0005-abandoned-coordination-branch.md)). The measured cost of each
-book is in [corpus.md](corpus.md#warren-commission-report).
+document to be covered or explicitly excluded (`excludedFullConversions`, whose entries the
+runner lists in its output and never counts as passes). The list is empty since 2026-09-23: the
+full Warren and NOAA conversions were its last two entries, excluded while each failed the
+default image-output budget and admitted on the owner's ruling on
+[#242](https://github.com/vocaro/PDFReflowLib/issues/242) once both fit it. The measured cost of
+each book is in [corpus.md](corpus.md#warren-commission-report) and the admission in
+[corpus-lane-admissions](../measurements/corpus-lane-admissions/record.md).
 
 <!-- counts:contract-breakdown -->
-Those 608 checks are 4 `spineContinuity`, 79 `text`, 233 `orderedText`, 56 `absentText`,
-34 `headings`, 47 `paragraphs`, 6 `continuedParagraphs`, 6 `preformatted`, 16 `scripts`,
-11 `imageRegions`, 21 `tableRows`, 68 `minimumImages`, 20 `warningCodesAnyOf` and
+Those 752 checks are 4 `spineContinuity`, 84 `text`, 340 `orderedText`, 58 `absentText`,
+39 `headings`, 53 `paragraphs`, 6 `continuedParagraphs`, 6 `preformatted`, 16 `scripts`,
+11 `imageRegions`, 21 `tableRows`, 84 `minimumImages`, 23 `warningCodesAnyOf` and
 7 `absentWarningCodes`, counted as `tools/check_corpus_content.py` counts them.
 <!-- counts:end -->
 

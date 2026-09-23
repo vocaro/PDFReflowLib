@@ -1,0 +1,70 @@
+{
+  "sourceSHA256": "341cc3471750c9c3be68b95a34b52f6cbdc86c4392427a8483ee1c6bc53cfc19",
+  "changedLines": 2208,
+  "changedPages": 655,
+  "insertedSpaces": 4084,
+  "nonWhitespaceCharactersUnchanged": true,
+  "issuePages": [
+    {
+      "after": "Chapter I. SUMMARY AND CONCLUSIONS 1",
+      "before": "ChapterI. SUMMARY AND CONCLUSIONS 1",
+      "page": 21
+    },
+    {
+      "after": "was approved by the local host committee and \\Yhite House representa-",
+      "before": "wasapproved by the local host committee and \\Yhite Houserepresenta-",
+      "page": 30
+    },
+    {
+      "after": "jump seats were Governor Connally, who was in front of the President,",
+      "before": "jumpseats were GovernorConnally, whowasin front of the President,",
+      "page": 30
+    },
+    {
+      "after": "rear, and two on each running board. These agents, in accordance with",
+      "before": "rear, and twoon each runningboard. These agents, in accordance with",
+      "page": 30
+    },
+    {
+      "after": "the roofs, and windows of buildings, overpasses, and crossings for signs",
+      "before": "the roofs, and windowsof buildings, overpasses, and crossings for signs",
+      "page": 30
+    },
+    {
+      "after": "identify himself with various political groups, including the Com-",
+      "before": "identify himself withvarious political groups, including the Com-",
+      "page": 50
+    },
+    {
+      "after": "dence that the contacts which he initiated were related to Oswald's",
+      "before": "dence that the contacts whichhe initiated were related to Oswald's",
+      "page": 50
+    },
+    {
+      "after": "assassination of President Kennedy, one must look to the assassin him-",
+      "before": "assassination of President Kennedy, one mustlook to the assassin him-",
+      "page": 50
+    },
+    {
+      "after": "the bridge were railroad employees.^^ Persons who were not railroad",
+      "before": "the bridge were railroad employees.^^ Persons whowere not railroad",
+      "page": 100
+    },
+    {
+      "after": "moving around could adtually be observed.\"^^ During the 20 minutes",
+      "before": "moving around could adtually be observed.\"^^ Duringthe 20minutes",
+      "page": 100
+    },
+    {
+      "after": "group on the railroad bridge within view.^^ When he heard the shots,",
+      "before": "group on the railroad bridge within view.^^ Whenheheard the shots,",
+      "page": 100
+    }
+  ],
+  "popplerCrossCheck": {
+    "supportedInsertedSpaces": 3962,
+    "unalignableInsertedSpaces": 116,
+    "contradictedInsertedSpaces": 6,
+    "scope": "A changed line must have one unique non-whitespace match in the page text. Five differing boundaries are A followed by a word (Poppler also fuses them); one is the clipped, spaced newspaper fragment m a l on page 367, whose OCR last character is 1."
+  }
+}

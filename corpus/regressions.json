@@ -2239,7 +2239,7 @@
     {
       "id": "gpo-warren-1964",
       "sourceSHA256": "341cc3471750c9c3be68b95a34b52f6cbdc86c4392427a8483ee1c6bc53cfc19",
-      "basis": "Admitted to the corpus lane on the owner's 2026-09-23 ruling on #242 at the margin that ruling accepts, measured on 8faeaab at library defaults: 920 pages, 934 images all written as JPEG, 536,305,614 entry bytes, 565,298 bytes (0.105%) inside the 512 MiB budget, 14 pages recognized (measurements/corpus-lane-admissions/record.md). Source pages 1, 7, 21, 30, 50, 100, 890, 910 and 920 rendered with Poppler and read against the converted output and against the inherited text layer (pdftotext). Every pinned line is one the inherited layer already holds and the source prints unambiguously, on a page whose layer the plausibility rules keep, so no check depends on what Vision reads: Vision's reading of a page differs between compiled model sets and between runs (#173, #284), the lesson of #269 and #281 on the suspect-text excerpt. Pages 1 and 920 are the textless cloth covers: each keeps a page image, and whether recognition reads nothing or noise on them is not pinned. Page 7 protects the title page's seven printed lines in order; the misread call-number scrawl beneath them is not pinned. Page 21 protects the contents entries in the order the page prints them, skipping the entries the layer misreads (Luncheon, Return) and the one the output sets without its word space (Chapter I.). Page 30 protects the five paragraphs the page prints, each inside its own paragraph, and their order. Page 50 pins the unverifiedTextLayer notice the review asked for and two sentences the layer holds correctly; the layer's h/b confusions ('bis known contacts witb tbe') are inherited and pinned neither way. Page 100 protects three sentences of the running prose. Page 890 protects that the left column of notes completes through 476 before 477 opens the right column, and page 910 that the index's left column completes through Fair Play for Cuba Committee before Federal Bureau of Investigation opens the right; the review found both interleaved and both read in column order now. Not pinned: the layer's own OCR errors, the word spaces the output drops from this layer on pages 21, 30, 50 and 100 (reported separately), the preformatted setting of the notes and of the numbered paragraphs, and any claim about pages not listed.",
+      "basis": "Admitted to the corpus lane on the owner's 2026-09-23 ruling on #242 at the margin that ruling accepts, measured on 8faeaab at library defaults: 920 pages, 934 images all written as JPEG, 536,305,614 entry bytes, 565,298 bytes (0.105%) inside the 512 MiB budget, 14 pages recognized (measurements/corpus-lane-admissions/record.md). Source pages 1, 7, 21, 30, 50, 100, 890, 910 and 920 rendered with Poppler and read against the converted output and against the inherited text layer (pdftotext). Every pinned line is one the inherited layer already holds and the source prints unambiguously, on a page whose layer the plausibility rules keep, so no check depends on what Vision reads: Vision's reading of a page differs between compiled model sets and between runs (#173, #284), the lesson of #269 and #281 on the suspect-text excerpt. Pages 1 and 920 are the textless cloth covers: each keeps a page image, and whether recognition reads nothing or noise on them is not pinned. Page 7 protects the title page's seven printed lines in order; the misread call-number scrawl beneath them is not pinned. Page 21 protects the contents entries in the order the page prints them, skipping the entries the layer misreads (Luncheon, Return). Page 30 protects the five paragraphs the page prints, each inside its own paragraph, and their order. Page 50 pins the unverifiedTextLayer notice the review asked for and two sentences the layer holds correctly; the layer's h/b confusions ('bis known contacts witb tbe') are inherited and pinned neither way. Page 100 protects three sentences of the running prose. Page 890 protects that the left column of notes completes through 476 before 477 opens the right column, and page 910 that the index's left column completes through Fair Play for Cuba Committee before Federal Bureau of Investigation opens the right; the review found both interleaved and both read in column order now. Not pinned: the layer's own OCR errors, the preformatted setting of the notes and of the numbered paragraphs, and any claim about pages not listed. Issue #295 adds the nine source word boundaries on pages 21, 30, 50 and 100: the invisible Courier layer positions words separately, but PDFKit fuses some neighboring boxes. The invisible-layer reader restores those measured gaps, with complete-line ownership, while preserving the layer's own misread characters. Source shows and PDFKit geometry are pinned in the Warren spacing/layout fixtures; measurements/invisible-word-spaces/record.md records the full conversion.",
       "pages": [
         {
           "page": 1,
@@ -2267,7 +2267,7 @@
             "Contents",
             "LETTER OF TRANSMITTAL",
             "FOREWORD",
-            "SUMMARY AND CONCLUSIONS",
+            "Chapter I. SUMMARY AND CONCLUSIONS",
             "Narrative of Events",
             "Conclusions",
             "Recommendations",
@@ -2322,13 +2322,21 @@
             "Directly behind the Presidential limousine was an open",
             "The motorcade left Love Field shortly after"
           ],
-          "minimumImages": 1
+          "minimumImages": 1,
+          "text": [
+            "two on each running board",
+            "was approved by the local host committee",
+            "\\Yhite House representa"
+          ]
         },
         {
           "page": 50,
           "text": [
             "The Commission has explored all attempts of Oswald to identify himself",
-            "All of the evidence before the Commission established that there was nothing to support the speculation that Oswald was an agent, employee, or informant of the FBI, the CIA, or any other governmental agency."
+            "All of the evidence before the Commission established that there was nothing to support the speculation that Oswald was an agent, employee, or informant of the FBI, the CIA, or any other governmental agency.",
+            "identify himself with various political groups",
+            "the contacts which he initiated",
+            "one must look to the assassin"
           ],
           "minimumImages": 1,
           "warningCodesAnyOf": [
@@ -2342,7 +2350,10 @@
             "S. M. Holland, signal supervisor for Union Terminal Co., came to the railroad bridge",
             "Another employee of the Union Terminal Co., Lee E. Bowers, Jr., was at work in a railroad tower about 14 feet above the tracks"
           ],
-          "minimumImages": 1
+          "minimumImages": 1,
+          "text": [
+            "Persons who were not railroad employees"
+          ]
         },
         {
           "page": 890,

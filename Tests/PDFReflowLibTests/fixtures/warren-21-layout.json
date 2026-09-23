@@ -1,0 +1,2225 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        149.30429999999998,
+        536.51769131250001,
+        62.795750400000003,
+        13.082447999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 13.082448000000001,
+          "text" : "Contents"
+        }
+      ],
+      "text" : "Contents"
+    },
+    {
+      "rect" : [
+        322.89389999999997,
+        516.9041737382812,
+        16.668050400000027,
+        6.945020999999997
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 6.9450209999999997,
+          "text" : "Page"
+        }
+      ],
+      "text" : "Page"
+    },
+    {
+      "rect" : [
+        21.698699999999999,
+        504.63703238671872,
+        318.0083874,
+        12.554692910156291
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -0.14370000000002392,
+          "fontName" : "Courier",
+          "fontSize" : 12.414242999999999,
+          "text" : "LETTER "
+        },
+        {
+          "baselineOffset" : -0.14370000000002392,
+          "fontName" : "Courier",
+          "fontSize" : 11.735979,
+          "text" : "OF "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 12.409932,
+          "text" : "TRANSMITTAL "
+        },
+        {
+          "baselineOffset" : 0.14369999999996708,
+          "fontName" : "Courier",
+          "fontSize" : 6.3069929999999994,
+          "text" : "vii"
+        }
+      ],
+      "text" : "LETTER OF TRANSMITTAL vii"
+    },
+    {
+      "rect" : [
+        21.698699999999999,
+        489.32503398046873,
+        318.2955,
+        13.322427000000005
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 13.322427000000001,
+          "text" : "FOREWORD "
+        },
+        {
+          "baselineOffset" : 0.43110000000001492,
+          "fontName" : "Courier",
+          "fontSize" : 6.8257499999999993,
+          "text" : "ix"
+        }
+      ],
+      "text" : "FOREWORD ix"
+    },
+    {
+      "rect" : [
+        22.273499999999999,
+        474.25716840234372,
+        317.00219999999996,
+        13.822502999999983
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -0.21555000000000746,
+          "fontName" : "Courier",
+          "fontSize" : 9.8535090000000007,
+          "text" : "Chapter"
+        },
+        {
+          "baselineOffset" : -0.21555000000000746,
+          "fontName" : "Courier",
+          "fontSize" : 5.5080209999999994,
+          "text" : "I. "
+        },
+        {
+          "baselineOffset" : -0.071849999999983538,
+          "fontName" : "Courier",
+          "fontSize" : 13.822502999999999,
+          "text" : "SUMMARY "
+        },
+        {
+          "baselineOffset" : 0.071850000000040382,
+          "fontName" : "Courier",
+          "fontSize" : 13.491992999999999,
+          "text" : "AND "
+        },
+        {
+          "baselineOffset" : 0.071850000000040382,
+          "fontName" : "Courier",
+          "fontSize" : 11.888301,
+          "text" : "CONCLUSIONS "
+        },
+        {
+          "baselineOffset" : 0.21555000000000746,
+          "fontName" : "Courier",
+          "fontSize" : 5.7479999999999993,
+          "text" : "1"
+        }
+      ],
+      "text" : "ChapterI. SUMMARY AND CONCLUSIONS 1"
+    },
+    {
+      "rect" : [
+        42.822600000000001,
+        462.42102601171871,
+        296.59679999999997,
+        8.7815069999999764
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 8.1966479999999997,
+          "text" : "Narrative "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 7.1849999999999996,
+          "text" : "of "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 8.7815069999999995,
+          "text" : "Events "
+        },
+        {
+          "baselineOffset" : 0.43110000000001492,
+          "fontName" : "Courier",
+          "fontSize" : 5.7479999999999993,
+          "text" : "1"
+        }
+      ],
+      "text" : "Narrative of Events 1"
+    },
+    {
+      "rect" : [
+        42.966299999999997,
+        451.53471255468753,
+        297.02847480000003,
+        8.1384663398437169
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 8.0558219999999992,
+          "text" : "Conclusions "
+        },
+        {
+          "baselineOffset" : 0.287399999999991,
+          "fontName" : "Courier",
+          "fontSize" : 7.7842289999999998,
+          "text" : "18"
+        }
+      ],
+      "text" : "Conclusions 18"
+    },
+    {
+      "rect" : [
+        42.822600000000001,
+        440.32883499609375,
+        297.17159999999996,
+        9.2126069999999913
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 9.2126070000000002,
+          "text" : "Recommendations "
+        },
+        {
+          "baselineOffset" : 0.287399999999991,
+          "fontName" : "Courier",
+          "fontSize" : 8.2627500000000005,
+          "text" : "25"
+        }
+      ],
+      "text" : "Recommendations 25"
+    },
+    {
+      "rect" : [
+        21.9861,
+        424.50772320703123,
+        318.00752519999998,
+        12.773492999999974
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -0.14369999999996708,
+          "fontName" : "Courier",
+          "fontSize" : 9.8879970000000004,
+          "text" : "Chapter "
+        },
+        {
+          "baselineOffset" : -0.14369999999996708,
+          "fontName" : "Courier",
+          "fontSize" : 6.4664999999999999,
+          "text" : "II. "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 12.773493,
+          "text" : "THE "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 11.164052999999999,
+          "text" : "ASSASSINATION "
+        },
+        {
+          "baselineOffset" : 0.14370000000002392,
+          "fontName" : "Courier",
+          "fontSize" : 8.3820209999999999,
+          "text" : "28"
+        }
+      ],
+      "text" : "Chapter II. THE ASSASSINATION 28"
+    },
+    {
+      "rect" : [
+        42.822600000000001,
+        412.44100967578123,
+        297.02847479999997,
+        8.6694209999999998
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 8.3518439999999998,
+          "text" : "Planning "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 7.823027999999999,
+          "text" : "the "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 8.6694209999999998,
+          "text" : "Texas "
+        },
+        {
+          "baselineOffset" : 0.14369999999996708,
+          "fontName" : "Courier",
+          "fontSize" : 8.2627500000000005,
+          "text" : "Trip"
+        },
+        {
+          "baselineOffset" : 3.7361999999999966,
+          "fontName" : "Courier",
+          "fontSize" : 2.6340210000000002,
+          "text" : "' "
+        },
+        {
+          "baselineOffset" : 0.14369999999996708,
+          "fontName" : "Courier",
+          "fontSize" : 8.1434789999999992,
+          "text" : "28"
+        }
+      ],
+      "text" : "Planning the Texas Trip' 28"
+    },
+    {
+      "rect" : [
+        42.966299999999997,
+        400.923561328125,
+        296.8847748,
+        9.34050000000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 9.3405000000000005,
+          "text" : "Advance "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 7.9839719999999996,
+          "text" : "Preparations "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 6.9450209999999997,
+          "text" : "for "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 7.823027999999999,
+          "text" : "the "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 7.9839719999999996,
+          "text" : "Dallas "
+        },
+        {
+          "baselineOffset" : 0.14370000000002392,
+          "fontName" : "Courier",
+          "fontSize" : 8.2627500000000005,
+          "text" : "Trip "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 8.1434789999999992,
+          "text" : "29"
+        }
+      ],
+      "text" : "Advance Preparations for the Dallas Trip 29"
+    },
+    {
+      "rect" : [
+        64.377600000000001,
+        390.15324071484372,
+        275.61717480000004,
+        8.1434790000000135
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 8.0946210000000001,
+          "text" : "Preventive "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 7.284152999999999,
+          "text" : "Intelligence "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 7.2094290000000001,
+          "text" : "Activities "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 8.1434789999999992,
+          "text" : "29"
+        }
+      ],
+      "text" : "Preventive Intelligence Activities 29"
+    },
+    {
+      "rect" : [
+        64.090199999999996,
+        378.69545032031249,
+        276.04770000000002,
+        9.7399859999999876
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 9.739986,
+          "text" : "The "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 9.2514059999999994,
+          "text" : "Lmicheon "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 7.0657290000000001,
+          "text" : "Site "
+        },
+        {
+          "baselineOffset" : 0.14369999999996708,
+          "fontName" : "Courier",
+          "fontSize" : 8.2627500000000005,
+          "text" : "30"
+        }
+      ],
+      "text" : "The Lmicheon Site 30"
+    },
+    {
+      "rect" : [
+        63.9465,
+        367.61110030078123,
+        275.61602519999997,
+        9.8190210000000206
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 9.8190209999999993,
+          "text" : "The "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 9.0473520000000001,
+          "text" : "Motorcade "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 9.1967999999999996,
+          "text" : "Route "
+        },
+        {
+          "baselineOffset" : 0.287399999999991,
+          "fontName" : "Courier",
+          "fontSize" : 7.6635209999999994,
+          "text" : "31"
+        }
+      ],
+      "text" : "The Motorcade Route 31"
+    },
+    {
+      "rect" : [
+        43.109999999999999,
+        357.05685172265623,
+        297.17160000000001,
+        8.6933279648437747
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 7.9034999999999993,
+          "text" : "Dallas "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 8.1434789999999992,
+          "text" : "Before "
+        },
+        {
+          "baselineOffset" : -0.14369999999996708,
+          "fontName" : "Courier",
+          "fontSize" : 7.7439929999999997,
+          "text" : "the "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 7.1375789999999997,
+          "text" : "Visit "
+        },
+        {
+          "baselineOffset" : 0.14370000000002392,
+          "fontName" : "Courier",
+          "fontSize" : 8.6219999999999999,
+          "text" : "40"
+        }
+      ],
+      "text" : "Dallas Before the Visit 40"
+    },
+    {
+      "rect" : [
+        42.822600000000001,
+        345.9195796875,
+        297.31472519999994,
+        8.8721783320312397
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 7.0657290000000001,
+          "text" : "Visits "
+        },
+        {
+          "baselineOffset" : -0.14369999999996708,
+          "fontName" : "Courier",
+          "fontSize" : 7.1849999999999996,
+          "text" : "to "
+        },
+        {
+          "baselineOffset" : -0.14369999999996708,
+          "fontName" : "Courier",
+          "fontSize" : 8.6219999999999999,
+          "text" : "Other "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 8.7182790000000008,
+          "text" : "Texas "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 7.0657290000000001,
+          "text" : "Cities "
+        },
+        {
+          "baselineOffset" : 0.287399999999991,
+          "fontName" : "Courier",
+          "fontSize" : 8.3820209999999999,
+          "text" : "42"
+        }
+      ],
+      "text" : "Visits to Other Texas Cities 42"
+    },
+    {
+      "rect" : [
+        42.966299999999997,
+        334.677861328125,
+        297.17217479999999,
+        9.34050000000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 7.6980089999999999,
+          "text" : "Arrival "
+        },
+        {
+          "baselineOffset" : -0.14370000000002392,
+          "fontName" : "Courier",
+          "fontSize" : 7.4249789999999996,
+          "text" : "at "
+        },
+        {
+          "baselineOffset" : -0.14370000000002392,
+          "fontName" : "Courier",
+          "fontSize" : 9.3405000000000005,
+          "text" : "Love "
+        },
+        {
+          "baselineOffset" : 0.14369999999996708,
+          "fontName" : "Courier",
+          "fontSize" : 7.6635209999999994,
+          "text" : "Field "
+        },
+        {
+          "baselineOffset" : 0.287399999999991,
+          "fontName" : "Courier",
+          "fontSize" : 8.5027290000000004,
+          "text" : "42"
+        }
+      ],
+      "text" : "Arrival at Love Field 42"
+    },
+    {
+      "rect" : [
+        43.253699999999995,
+        323.96578412109375,
+        296.59737480000001,
+        9.074655000000007
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 8.0630069999999989,
+          "text" : "Organization "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 7.0657290000000001,
+          "text" : "of "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 7.7439929999999997,
+          "text" : "the "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 9.0746549999999999,
+          "text" : "Motorcade "
+        },
+        {
+          "baselineOffset" : 0.14369999999996708,
+          "fontName" : "Courier",
+          "fontSize" : 8.1434789999999992,
+          "text" : "43"
+        }
+      ],
+      "text" : "Organization of the Motorcade 43"
+    },
+    {
+      "rect" : [
+        0,
+        0,
+        392,
+        637
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 4.7895209999999997,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    },
+    {
+      "rect" : [
+        0,
+        0,
+        392,
+        637
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 4.7895209999999997,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    },
+    {
+      "rect" : [
+        43.5411,
+        312.90065397656252,
+        296.59737480000001,
+        9.6595140000000015
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 9.6595139999999997,
+          "text" : "The "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 8.6219999999999999,
+          "text" : "Drive "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 9.3060120000000008,
+          "text" : "Through "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 7.9034999999999993,
+          "text" : "Dallas "
+        },
+        {
+          "baselineOffset" : 2.2991999999999848,
+          "fontName" : "Courier",
+          "fontSize" : 5.0294999999999996,
+          "text" : "...\" "
+        },
+        {
+          "baselineOffset" : 0.287399999999991,
+          "fontName" : "Courier",
+          "fontSize" : 8.5027290000000004,
+          "text" : "46"
+        }
+      ],
+      "text" : "The Drive Through Dallas ...\" 46"
+    },
+    {
+      "rect" : [
+        43.5411,
+        301.95965032031251,
+        296.74107479999998,
+        9.7399859999999876
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 9.739986,
+          "text" : "The "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 7.738245,
+          "text" : "Assassination "
+        },
+        {
+          "baselineOffset" : 0.14369999999996708,
+          "fontName" : "Courier",
+          "fontSize" : 8.5027290000000004,
+          "text" : "48"
+        }
+      ],
+      "text" : "The Assassination 48"
+    },
+    {
+      "rect" : [
+        64.521299999999997,
+        291.03349940625003,
+        275.90457479999998,
+        9.7601040000000125
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 9.739986,
+          "text" : "The "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 9.7601040000000001,
+          "text" : "Time "
+        },
+        {
+          "baselineOffset" : 0.14369999999996708,
+          "fontName" : "Courier",
+          "fontSize" : 8.5027290000000004,
+          "text" : "48"
+        }
+      ],
+      "text" : "The Time 48"
+    },
+    {
+      "rect" : [
+        64.664999999999992,
+        280.22498602734373,
+        275.76087480000001,
+        8.7182789999999954
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 8.7182790000000008,
+          "text" : "Speed "
+        },
+        {
+          "baselineOffset" : -0.14370000000002392,
+          "fontName" : "Courier",
+          "fontSize" : 6.9450209999999997,
+          "text" : "of "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 7.7439929999999997,
+          "text" : "the "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 8.6493029999999997,
+          "text" : "Limousine "
+        },
+        {
+          "baselineOffset" : 0.14370000000002392,
+          "fontName" : "Courier",
+          "fontSize" : 8.5027290000000004,
+          "text" : "49"
+        }
+      ],
+      "text" : "Speed of the Limousine 49"
+    },
+    {
+      "rect" : [
+        64.664999999999992,
+        269.31439512890626,
+        275.61602519999997,
+        8.6751689999999826
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 8.2627500000000005,
+          "text" : "In "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 7.823027999999999,
+          "text" : "the "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 7.4048609999999995,
+          "text" : "Presidential "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 8.6751690000000004,
+          "text" : "Limousine "
+        },
+        {
+          "baselineOffset" : 0.14370000000002392,
+          "fontName" : "Courier",
+          "fontSize" : 8.3820209999999999,
+          "text" : "49"
+        }
+      ],
+      "text" : "In the Presidential Limousine 49"
+    },
+    {
+      "rect" : [
+        64.521299999999997,
+        258.05640948046874,
+        276.0482748,
+        9.4597709999999893
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 8.3518439999999998,
+          "text" : "Reaction "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 9.4597709999999999,
+          "text" : "by "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 7.6247220000000002,
+          "text" : "Secret "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 7.6304699999999999,
+          "text" : "Service "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 8.5817639999999997,
+          "text" : "Agents "
+        },
+        {
+          "baselineOffset" : 0.14370000000002392,
+          "fontName" : "Courier",
+          "fontSize" : 8.1434789999999992,
+          "text" : "50"
+        }
+      ],
+      "text" : "Reaction by Secret Service Agents 50"
+    },
+    {
+      "rect" : [
+        43.828499999999998,
+        246.79994503124999,
+        296.59622519999994,
+        9.0703440000000057
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 8.5616459999999996,
+          "text" : "Parkland "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 9.0703440000000004,
+          "text" : "Memorial "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 8.0529479999999989,
+          "text" : "Hospital "
+        },
+        {
+          "baselineOffset" : 0.1436999999999955,
+          "fontName" : "Courier",
+          "fontSize" : 8.0227709999999988,
+          "text" : "52"
+        }
+      ],
+      "text" : "Parkland Memorial Hospital 52"
+    },
+    {
+      "rect" : [
+        64.808700000000002,
+        235.5900539765625,
+        275.75972519999999,
+        9.6595140000000015
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 9.6595139999999997,
+          "text" : "The "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 9.2801460000000002,
+          "text" : "Race "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 7.0657290000000001,
+          "text" : "to "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 7.7439929999999997,
+          "text" : "the "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 8.0529479999999989,
+          "text" : "Hospital "
+        },
+        {
+          "baselineOffset" : 0.287399999999991,
+          "fontName" : "Courier",
+          "fontSize" : 8.0227709999999988,
+          "text" : "52"
+        }
+      ],
+      "text" : "The Race to the Hospital 52"
+    },
+    {
+      "rect" : [
+        64.808700000000002,
+        224.64622122656249,
+        275.32862520000003,
+        9.75148200000001
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0.1436999999999955,
+          "fontName" : "Courier",
+          "fontSize" : 8.9410139999999991,
+          "text" : "Treatment "
+        },
+        {
+          "baselineOffset" : -0.1436999999999955,
+          "fontName" : "Courier",
+          "fontSize" : 6.9450209999999997,
+          "text" : "of "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 7.8503309999999997,
+          "text" : "President "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 9.7514819999999993,
+          "text" : "Kennedy "
+        },
+        {
+          "baselineOffset" : 0.1436999999999955,
+          "fontName" : "Courier",
+          "fontSize" : 7.6635209999999994,
+          "text" : "53"
+        }
+      ],
+      "text" : "Treatment of President Kennedy 53"
+    },
+    {
+      "rect" : [
+        64.808700000000002,
+        213.81507509765623,
+        275.75972519999999,
+        9.0504112382812423
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0.1436999999999955,
+          "fontName" : "Courier",
+          "fontSize" : 8.9410139999999991,
+          "text" : "Treatment "
+        },
+        {
+          "baselineOffset" : 0.1436999999999955,
+          "fontName" : "Courier",
+          "fontSize" : 7.0657290000000001,
+          "text" : "of "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 8.8016249999999996,
+          "text" : "Governor "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 8.5027290000000004,
+          "text" : "Connally "
+        },
+        {
+          "baselineOffset" : 0.287399999999991,
+          "fontName" : "Courier",
+          "fontSize" : 8.0227709999999988,
+          "text" : "56"
+        }
+      ],
+      "text" : "Treatment of Governor Connally 56"
+    },
+    {
+      "rect" : [
+        64.521299999999997,
+        202.89599691796874,
+        276.04769999999996,
+        8.7930029999999988
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0.1436999999999955,
+          "fontName" : "Courier",
+          "fontSize" : 8.2023960000000002,
+          "text" : "Vice "
+        },
+        {
+          "baselineOffset" : 0.1436999999999955,
+          "fontName" : "Courier",
+          "fontSize" : 7.8503309999999997,
+          "text" : "President "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 8.7930029999999988,
+          "text" : "Johnson "
+        },
+        {
+          "baselineOffset" : -0.1436999999999955,
+          "fontName" : "Courier",
+          "fontSize" : 7.4249789999999996,
+          "text" : "at "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 8.6219999999999999,
+          "text" : "Parkland "
+        },
+        {
+          "baselineOffset" : 0.1436999999999955,
+          "fontName" : "Courier",
+          "fontSize" : 7.9034999999999993,
+          "text" : "56"
+        }
+      ],
+      "text" : "Vice President Johnson at Parkland 56"
+    },
+    {
+      "rect" : [
+        64.233899999999991,
+        191.82697676953126,
+        276.33452519999997,
+        9.3936689999999885
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 7.6247220000000002,
+          "text" : "Secret "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 7.5959819999999993,
+          "text" : "Service "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 9.3936690000000009,
+          "text" : "Emergency "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 7.7842289999999998,
+          "text" : "Security "
+        },
+        {
+          "baselineOffset" : 0.1436999999999955,
+          "fontName" : "Courier",
+          "fontSize" : 8.920895999999999,
+          "text" : "Arrangements"
+        },
+        {
+          "baselineOffset" : 0.1436999999999955,
+          "fontName" : "Courier",
+          "fontSize" : 7.4249789999999996,
+          "text" : "... "
+        },
+        {
+          "baselineOffset" : 0.1436999999999955,
+          "fontName" : "Courier",
+          "fontSize" : 8.0227709999999988,
+          "text" : "57"
+        }
+      ],
+      "text" : "Secret Service Emergency Security Arrangements... 57"
+    },
+    {
+      "rect" : [
+        64.233899999999991,
+        180.59834296875002,
+        276.62192519999996,
+        10.058999999999997
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 9.5804790000000004,
+          "text" : "Removal "
+        },
+        {
+          "baselineOffset" : -0.1436999999999955,
+          "fontName" : "Courier",
+          "fontSize" : 7.0657290000000001,
+          "text" : "of "
+        },
+        {
+          "baselineOffset" : -0.1436999999999955,
+          "fontName" : "Courier",
+          "fontSize" : 7.7439929999999997,
+          "text" : "the "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 7.468089,
+          "text" : "President's "
+        },
+        {
+          "baselineOffset" : -0.1436999999999955,
+          "fontName" : "Courier",
+          "fontSize" : 10.058999999999999,
+          "text" : "Body "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 8.0227709999999988,
+          "text" : "58"
+        }
+      ],
+      "text" : "Removal of the President's Body 58"
+    },
+    {
+      "rect" : [
+        43.684799999999996,
+        169.29143196093747,
+        297.02789999999999,
+        10.458485999999994
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 9.6595139999999997,
+          "text" : "The "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 10.458486000000001,
+          "text" : "End "
+        },
+        {
+          "baselineOffset" : -0.1436999999999955,
+          "fontName" : "Courier",
+          "fontSize" : 6.9450209999999997,
+          "text" : "of "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 7.6635209999999994,
+          "text" : "the "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 8.2023960000000002,
+          "text" : "Trip "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 7.9034999999999993,
+          "text" : "59"
+        }
+      ],
+      "text" : "The End of the Trip 59"
+    },
+    {
+      "rect" : [
+        64.664999999999992,
+        157.84730990624999,
+        276.19139999999993,
+        11.415527999999995
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0.1436999999999955,
+          "fontName" : "Courier",
+          "fontSize" : 8.4423750000000002,
+          "text" : "Swearing "
+        },
+        {
+          "baselineOffset" : 0.1436999999999955,
+          "fontName" : "Courier",
+          "fontSize" : 7.0657290000000001,
+          "text" : "in "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 7.0657290000000001,
+          "text" : "of "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 7.7439929999999997,
+          "text" : "the "
+        },
+        {
+          "baselineOffset" : -0.1436999999999955,
+          "fontName" : "Courier",
+          "fontSize" : 11.415527999999998,
+          "text" : "New "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 7.8761970000000003,
+          "text" : "President "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 7.9034999999999993,
+          "text" : "59"
+        }
+      ],
+      "text" : "Swearing in of the New President 59"
+    },
+    {
+      "rect" : [
+        64.377600000000001,
+        147.36438929296875,
+        276.19139999999993,
+        10.218506999999988
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 7.6304699999999999,
+          "text" : "Retiu-n "
+        },
+        {
+          "baselineOffset" : -0.1436999999999955,
+          "fontName" : "Courier",
+          "fontSize" : 7.0657290000000001,
+          "text" : "to "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 8.5573350000000001,
+          "text" : "Washington, "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 10.218506999999999,
+          "text" : "D.C "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 7.9034999999999993,
+          "text" : "59"
+        }
+      ],
+      "text" : "Retiu-n to Washington, D.C 59"
+    },
+    {
+      "rect" : [
+        64.521299999999997,
+        136.70465032031248,
+        276.19139999999999,
+        9.7399859999999876
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0.1436999999999955,
+          "fontName" : "Courier",
+          "fontSize" : 9.739986,
+          "text" : "The "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 8.9984940000000009,
+          "text" : "Autopsy "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 7.9034999999999993,
+          "text" : "59"
+        }
+      ],
+      "text" : "The Autopsy 59"
+    },
+    {
+      "rect" : [
+        23.566800000000001,
+        120.583407609375,
+        286.24810079999997,
+        13.352603999999985
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0.28740000000000521,
+          "fontName" : "Courier",
+          "fontSize" : 9.8190209999999993,
+          "text" : "Chapter "
+        },
+        {
+          "baselineOffset" : 0.28740000000000521,
+          "fontName" : "Courier",
+          "fontSize" : 6.5857709999999994,
+          "text" : "III. "
+        },
+        {
+          "baselineOffset" : 0.28740000000000521,
+          "fontName" : "Courier",
+          "fontSize" : 12.693021,
+          "text" : "THE "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 11.543420999999999,
+          "text" : "SHOTS "
+        },
+        {
+          "baselineOffset" : -0.1436999999999955,
+          "fontName" : "Courier",
+          "fontSize" : 13.352603999999999,
+          "text" : "FROM "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 12.773493,
+          "text" : "THE "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 12.214499999999999,
+          "text" : "TEXAS "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 12.134027999999999,
+          "text" : "SCHOOL"
+        }
+      ],
+      "text" : "Chapter III. THE SHOTS FROM THE TEXAS SCHOOL"
+    },
+    {
+      "rect" : [
+        33.482099999999996,
+        110.08222137890624,
+        306.08099999999996,
+        12.813728999999995
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0.1436999999999955,
+          "fontName" : "Courier",
+          "fontSize" : 12.813729,
+          "text" : "BOOK "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 11.927099999999999,
+          "text" : "DEPOSITORY "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 7.5442499999999999,
+          "text" : "61"
+        }
+      ],
+      "text" : "BOOK DEPOSITORY 61"
+    },
+    {
+      "rect" : [
+        43.972200000000001,
+        97.761950320312508,
+        296.02199999999999,
+        9.7399860000000018
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 9.739986,
+          "text" : "The "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 8.1966479999999997,
+          "text" : "Witnesses "
+        },
+        {
+          "baselineOffset" : 0.1436999999999955,
+          "fontName" : "Courier",
+          "fontSize" : 7.5442499999999999,
+          "text" : "61"
+        }
+      ],
+      "text" : "The Witnesses 61"
+    },
+    {
+      "rect" : [
+        65.096099999999993,
+        86.953914070312493,
+        274.75382520000005,
+        9.280146000000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0.1436999999999955,
+          "fontName" : "Courier",
+          "fontSize" : 9.2801460000000002,
+          "text" : "Near "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 7.7439929999999997,
+          "text" : "the "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 8.3101709999999986,
+          "text" : "Depository "
+        },
+        {
+          "baselineOffset" : 0.1436999999999955,
+          "fontName" : "Courier",
+          "fontSize" : 7.6635209999999994,
+          "text" : "63"
+        }
+      ],
+      "text" : "Near the Depository 63"
+    },
+    {
+      "rect" : [
+        64.952399999999997,
+        75.634872761718739,
+        275.18607479999997,
+        10.896771000000001
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 10.896770999999999,
+          "text" : "On "
+        },
+        {
+          "baselineOffset" : -0.1436999999999955,
+          "fontName" : "Courier",
+          "fontSize" : 7.7439929999999997,
+          "text" : "the "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 7.6160999999999994,
+          "text" : "Fifth "
+        },
+        {
+          "baselineOffset" : -0.287399999999991,
+          "fontName" : "Courier",
+          "fontSize" : 7.9997790000000002,
+          "text" : "Floor "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 8.1434789999999992,
+          "text" : "68"
+        }
+      ],
+      "text" : "On the Fifth Floor 68"
+    },
+    {
+      "rect" : [
+        65.096099999999993,
+        65.10997603125,
+        274.18017479999997,
+        9.5608044492187503
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 9.4597709999999999,
+          "text" : "At "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 7.7439929999999997,
+          "text" : "the "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 7.5844860000000001,
+          "text" : "Triple "
+        },
+        {
+          "baselineOffset" : -0.28740000000000521,
+          "fontName" : "Courier",
+          "fontSize" : 8.7024720000000002,
+          "text" : "Underpass "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 7.4249789999999996,
+          "text" : "71"
+        }
+      ],
+      "text" : "At the Triple Underpass 71"
+    },
+    {
+      "rect" : [
+        44.546999999999997,
+        53.759797851562496,
+        295.3029252,
+        9.8529701250000059
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0.1437000000000026,
+          "fontName" : "Courier",
+          "fontSize" : 9.6595139999999997,
+          "text" : "The "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 7.3847429999999994,
+          "text" : "Presidential "
+        },
+        {
+          "baselineOffset" : -0.2873999999999981,
+          "fontName" : "Courier",
+          "fontSize" : 8.6938499999999994,
+          "text" : "Automobile "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 8.0227709999999988,
+          "text" : "76"
+        }
+      ],
+      "text" : "The Presidential Automobile 76"
+    },
+    {
+      "rect" : [
+        322.60649999999998,
+        35.578963664062499,
+        17.388849600000015,
+        7.245353999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 7.2453539999999998,
+          "text" : "xvii"
+        }
+      ],
+      "text" : "xvii"
+    },
+    {
+      "rect" : [
+        26.009699999999999,
+        22.483998046874998,
+        51.731999999999999,
+        7.9034999999999975
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 5.8500269999999999,
+          "text" : "730-900 "
+        },
+        {
+          "baselineOffset" : 0.2873999999999981,
+          "fontName" : "Courier",
+          "fontSize" : 7.9034999999999993,
+          "text" : "0-6"
+        },
+        {
+          "baselineOffset" : 0.2873999999999981,
+          "fontName" : "Courier",
+          "fontSize" : 7.9034999999999993,
+          "text" : "4"
+        },
+        {
+          "baselineOffset" : 0.2873999999999981,
+          "fontName" : "Courier",
+          "fontSize" : 7.9034999999999993,
+          "text" : "—"
+        }
+      ],
+      "text" : "730-900 0-64—"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    392,
+    637
+  ],
+  "caseID" : "gpo-warren-1964",
+  "graphics" : [
+    [
+      0,
+      0,
+      392,
+      637
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 13.082448000000001,
+      "monospaced" : true,
+      "rect" : [
+        149.30429999999998,
+        536.51769131250001,
+        62.795750400000003,
+        13.082447999999999
+      ],
+      "text" : "Contents"
+    },
+    {
+      "fontSize" : 6.9450209999999997,
+      "monospaced" : true,
+      "rect" : [
+        322.89389999999997,
+        516.9041737382812,
+        16.668050400000027,
+        6.945020999999997
+      ],
+      "text" : "Page"
+    },
+    {
+      "fontSize" : 12.414242999999999,
+      "monospaced" : true,
+      "rect" : [
+        21.698699999999999,
+        504.63703238671872,
+        318.0083874,
+        12.554692910156291
+      ],
+      "text" : "LETTER OF TRANSMITTAL vii"
+    },
+    {
+      "fontSize" : 13.322427000000001,
+      "monospaced" : true,
+      "rect" : [
+        21.698699999999999,
+        489.32503398046873,
+        318.2955,
+        13.322427000000005
+      ],
+      "text" : "FOREWORD ix"
+    },
+    {
+      "fontSize" : 9.8535090000000007,
+      "monospaced" : true,
+      "rect" : [
+        22.273499999999999,
+        474.25716840234372,
+        317.00219999999996,
+        13.822502999999983
+      ],
+      "text" : "ChapterI. SUMMARY AND CONCLUSIONS 1"
+    },
+    {
+      "fontSize" : 8.1966479999999997,
+      "monospaced" : true,
+      "rect" : [
+        42.822600000000001,
+        462.42102601171871,
+        296.59679999999997,
+        8.7815069999999764
+      ],
+      "text" : "Narrative of Events 1"
+    },
+    {
+      "fontSize" : 8.0558219999999992,
+      "monospaced" : true,
+      "rect" : [
+        42.966299999999997,
+        451.53471255468753,
+        297.02847480000003,
+        8.1384663398437169
+      ],
+      "text" : "Conclusions 18"
+    },
+    {
+      "fontSize" : 9.2126070000000002,
+      "monospaced" : true,
+      "rect" : [
+        42.822600000000001,
+        440.32883499609375,
+        297.17159999999996,
+        9.2126069999999913
+      ],
+      "text" : "Recommendations 25"
+    },
+    {
+      "fontSize" : 9.8879970000000004,
+      "monospaced" : true,
+      "rect" : [
+        21.9861,
+        424.50772320703123,
+        318.00752519999998,
+        12.773492999999974
+      ],
+      "text" : "Chapter II. THE ASSASSINATION 28"
+    },
+    {
+      "fontSize" : 8.3518439999999998,
+      "monospaced" : true,
+      "rect" : [
+        42.822600000000001,
+        412.44100967578123,
+        297.02847479999997,
+        8.6694209999999998
+      ],
+      "text" : "Planning the Texas Trip' 28"
+    },
+    {
+      "fontSize" : 9.3405000000000005,
+      "monospaced" : true,
+      "rect" : [
+        42.966299999999997,
+        400.923561328125,
+        296.8847748,
+        9.34050000000002
+      ],
+      "text" : "Advance Preparations for the Dallas Trip 29"
+    },
+    {
+      "fontSize" : 8.0946210000000001,
+      "monospaced" : true,
+      "rect" : [
+        64.377600000000001,
+        390.15324071484372,
+        275.61717480000004,
+        8.1434790000000135
+      ],
+      "text" : "Preventive Intelligence Activities 29"
+    },
+    {
+      "fontSize" : 9.739986,
+      "monospaced" : true,
+      "rect" : [
+        64.090199999999996,
+        378.69545032031249,
+        276.04770000000002,
+        9.7399859999999876
+      ],
+      "text" : "The Lmicheon Site 30"
+    },
+    {
+      "fontSize" : 9.8190209999999993,
+      "monospaced" : true,
+      "rect" : [
+        63.9465,
+        367.61110030078123,
+        275.61602519999997,
+        9.8190210000000206
+      ],
+      "text" : "The Motorcade Route 31"
+    },
+    {
+      "fontSize" : 7.9034999999999993,
+      "monospaced" : true,
+      "rect" : [
+        43.109999999999999,
+        357.05685172265623,
+        297.17160000000001,
+        8.6933279648437747
+      ],
+      "text" : "Dallas Before the Visit 40"
+    },
+    {
+      "fontSize" : 7.0657290000000001,
+      "monospaced" : true,
+      "rect" : [
+        42.822600000000001,
+        345.9195796875,
+        297.31472519999994,
+        8.8721783320312397
+      ],
+      "text" : "Visits to Other Texas Cities 42"
+    },
+    {
+      "fontSize" : 7.6980089999999999,
+      "monospaced" : true,
+      "rect" : [
+        42.966299999999997,
+        334.677861328125,
+        297.17217479999999,
+        9.34050000000002
+      ],
+      "text" : "Arrival at Love Field 42"
+    },
+    {
+      "fontSize" : 8.0630069999999989,
+      "monospaced" : true,
+      "rect" : [
+        43.253699999999995,
+        323.96578412109375,
+        296.59737480000001,
+        9.074655000000007
+      ],
+      "text" : "Organization of the Motorcade 43"
+    },
+    {
+      "fontSize" : 9.6595139999999997,
+      "monospaced" : true,
+      "rect" : [
+        43.5411,
+        312.90065397656252,
+        296.59737480000001,
+        9.6595140000000015
+      ],
+      "text" : "The Drive Through Dallas ...\" 46"
+    },
+    {
+      "fontSize" : 9.739986,
+      "monospaced" : true,
+      "rect" : [
+        43.5411,
+        301.95965032031251,
+        296.74107479999998,
+        9.7399859999999876
+      ],
+      "text" : "The Assassination 48"
+    },
+    {
+      "fontSize" : 9.739986,
+      "monospaced" : true,
+      "rect" : [
+        64.521299999999997,
+        291.03349940625003,
+        275.90457479999998,
+        9.7601040000000125
+      ],
+      "text" : "The Time 48"
+    },
+    {
+      "fontSize" : 8.7182790000000008,
+      "monospaced" : true,
+      "rect" : [
+        64.664999999999992,
+        280.22498602734373,
+        275.76087480000001,
+        8.7182789999999954
+      ],
+      "text" : "Speed of the Limousine 49"
+    },
+    {
+      "fontSize" : 8.2627500000000005,
+      "monospaced" : true,
+      "rect" : [
+        64.664999999999992,
+        269.31439512890626,
+        275.61602519999997,
+        8.6751689999999826
+      ],
+      "text" : "In the Presidential Limousine 49"
+    },
+    {
+      "fontSize" : 8.3518439999999998,
+      "monospaced" : true,
+      "rect" : [
+        64.521299999999997,
+        258.05640948046874,
+        276.0482748,
+        9.4597709999999893
+      ],
+      "text" : "Reaction by Secret Service Agents 50"
+    },
+    {
+      "fontSize" : 8.5616459999999996,
+      "monospaced" : true,
+      "rect" : [
+        43.828499999999998,
+        246.79994503124999,
+        296.59622519999994,
+        9.0703440000000057
+      ],
+      "text" : "Parkland Memorial Hospital 52"
+    },
+    {
+      "fontSize" : 9.6595139999999997,
+      "monospaced" : true,
+      "rect" : [
+        64.808700000000002,
+        235.5900539765625,
+        275.75972519999999,
+        9.6595140000000015
+      ],
+      "text" : "The Race to the Hospital 52"
+    },
+    {
+      "fontSize" : 8.9410139999999991,
+      "monospaced" : true,
+      "rect" : [
+        64.808700000000002,
+        224.64622122656249,
+        275.32862520000003,
+        9.75148200000001
+      ],
+      "text" : "Treatment of President Kennedy 53"
+    },
+    {
+      "fontSize" : 8.9410139999999991,
+      "monospaced" : true,
+      "rect" : [
+        64.808700000000002,
+        213.81507509765623,
+        275.75972519999999,
+        9.0504112382812423
+      ],
+      "text" : "Treatment of Governor Connally 56"
+    },
+    {
+      "fontSize" : 8.2023960000000002,
+      "monospaced" : true,
+      "rect" : [
+        64.521299999999997,
+        202.89599691796874,
+        276.04769999999996,
+        8.7930029999999988
+      ],
+      "text" : "Vice President Johnson at Parkland 56"
+    },
+    {
+      "fontSize" : 7.6247220000000002,
+      "monospaced" : true,
+      "rect" : [
+        64.233899999999991,
+        191.82697676953126,
+        276.33452519999997,
+        9.3936689999999885
+      ],
+      "text" : "Secret Service Emergency Security Arrangements... 57"
+    },
+    {
+      "fontSize" : 9.5804790000000004,
+      "monospaced" : true,
+      "rect" : [
+        64.233899999999991,
+        180.59834296875002,
+        276.62192519999996,
+        10.058999999999997
+      ],
+      "text" : "Removal of the President's Body 58"
+    },
+    {
+      "fontSize" : 9.6595139999999997,
+      "monospaced" : true,
+      "rect" : [
+        43.684799999999996,
+        169.29143196093747,
+        297.02789999999999,
+        10.458485999999994
+      ],
+      "text" : "The End of the Trip 59"
+    },
+    {
+      "fontSize" : 8.4423750000000002,
+      "monospaced" : true,
+      "rect" : [
+        64.664999999999992,
+        157.84730990624999,
+        276.19139999999993,
+        11.415527999999995
+      ],
+      "text" : "Swearing in of the New President 59"
+    },
+    {
+      "fontSize" : 7.6304699999999999,
+      "monospaced" : true,
+      "rect" : [
+        64.377600000000001,
+        147.36438929296875,
+        276.19139999999993,
+        10.218506999999988
+      ],
+      "text" : "Retiu-n to Washington, D.C 59"
+    },
+    {
+      "fontSize" : 9.739986,
+      "monospaced" : true,
+      "rect" : [
+        64.521299999999997,
+        136.70465032031248,
+        276.19139999999999,
+        9.7399859999999876
+      ],
+      "text" : "The Autopsy 59"
+    },
+    {
+      "fontSize" : 9.8190209999999993,
+      "monospaced" : true,
+      "rect" : [
+        23.566800000000001,
+        120.583407609375,
+        286.24810079999997,
+        13.352603999999985
+      ],
+      "text" : "Chapter III. THE SHOTS FROM THE TEXAS SCHOOL"
+    },
+    {
+      "fontSize" : 12.813729,
+      "monospaced" : true,
+      "rect" : [
+        33.482099999999996,
+        110.08222137890624,
+        306.08099999999996,
+        12.813728999999995
+      ],
+      "text" : "BOOK DEPOSITORY 61"
+    },
+    {
+      "fontSize" : 9.739986,
+      "monospaced" : true,
+      "rect" : [
+        43.972200000000001,
+        97.761950320312508,
+        296.02199999999999,
+        9.7399860000000018
+      ],
+      "text" : "The Witnesses 61"
+    },
+    {
+      "fontSize" : 9.2801460000000002,
+      "monospaced" : true,
+      "rect" : [
+        65.096099999999993,
+        86.953914070312493,
+        274.75382520000005,
+        9.280146000000002
+      ],
+      "text" : "Near the Depository 63"
+    },
+    {
+      "fontSize" : 10.896770999999999,
+      "monospaced" : true,
+      "rect" : [
+        64.952399999999997,
+        75.634872761718739,
+        275.18607479999997,
+        10.896771000000001
+      ],
+      "text" : "On the Fifth Floor 68"
+    },
+    {
+      "fontSize" : 9.4597709999999999,
+      "monospaced" : true,
+      "rect" : [
+        65.096099999999993,
+        65.10997603125,
+        274.18017479999997,
+        9.5608044492187503
+      ],
+      "text" : "At the Triple Underpass 71"
+    },
+    {
+      "fontSize" : 9.6595139999999997,
+      "monospaced" : true,
+      "rect" : [
+        44.546999999999997,
+        53.759797851562496,
+        295.3029252,
+        9.8529701250000059
+      ],
+      "text" : "The Presidential Automobile 76"
+    },
+    {
+      "fontSize" : 7.2453539999999998,
+      "monospaced" : true,
+      "rect" : [
+        322.60649999999998,
+        35.578963664062499,
+        17.388849600000015,
+        7.245353999999999
+      ],
+      "text" : "xvii"
+    },
+    {
+      "fontSize" : 5.8500269999999999,
+      "monospaced" : true,
+      "rect" : [
+        26.009699999999999,
+        22.483998046874998,
+        51.731999999999999,
+        7.9034999999999975
+      ],
+      "text" : "730-900 0-64—"
+    }
+  ],
+  "page" : 21,
+  "pictures" : [
+    [
+      0,
+      0,
+      392,
+      637
+    ]
+  ],
+  "rightsBasis" : "U.S. Government commission report published by GPO in 1964, retained as an external development corpus source. The PDF is not bundled or relicensed under MIT.",
+  "schemaVersion" : 2,
+  "sourceSHA256" : "341cc3471750c9c3be68b95a34b52f6cbdc86c4392427a8483ee1c6bc53cfc19",
+  "sourceTitle" : "Report of the President’s Commission on the Assassination of President John F. Kennedy",
+  "sourceURL" : "https://www.govinfo.gov/content/pkg/GPO-WARRENCOMMISSIONREPORT/pdf/GPO-WARRENCOMMISSIONREPORT.pdf"
+}

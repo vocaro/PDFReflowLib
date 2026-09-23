@@ -63,6 +63,7 @@ PROBE_SOURCES = {
     # #31 measures the cells of the tables a recognition of a scanned page locates.
     'probe-table-cell-evidence.swift': RECOGNITION,
     'audit-report-margins.swift': EXTRACTION + ['FurnitureDetector.swift'],
+    'audit-invisible-spacing.swift': EXTRACTION + ['GraphicsReader.swift'],
 }
 
 

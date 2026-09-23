@@ -68,7 +68,7 @@ enum PageReader {
             let rules = graphics.regions.filter(LayoutReconstructor.isThinRule)
             var content = PageContent(number: i + 1, bounds: bounds,
                 lines: try NativeTextReader.lines(on: page, limit: limit, includeStyle: styled,
-                    rules: rules, links: links, shows: shows), graphics: graphics.regions,
+                    rules: rules, links: links, preserveInvisibleWordGaps: syntheticStyle, shows: shows), graphics: graphics.regions,
                 pictures: graphics.images)
             content.links = links
             if !requiresPageImage && !syntheticStyle && options.ocr != .always, let structure,

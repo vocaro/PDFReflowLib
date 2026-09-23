@@ -936,8 +936,12 @@ Evidence: [page-retention](../measurements/page-retention/record.md);
   which that book meets at 156.24 and 156.13 on 612 and no other book in the corpus comes near.
   It is read per page, because the evidence arrives one page at a time, and one page's symmetry
   removes nothing on its own: what goes must still repeat in the same place at the same size on
-  neighbouring pages. The head's second row, where a page sets one, is not reached: it is not the
-  outermost row, and two rows set two leadings apart are not one stacked band.
+  neighbouring pages. **The row behind a head** — where a book sets its head in two rows too far
+  apart to be one stacked band — is admitted where everything further out than it is already a
+  candidate, it stands in the same band, and it is set apart from the body by half the white an
+  outermost row must keep: a row behind a head is bounded by the head above it as well as the body
+  below. One row deep, and the head only, because at the foot it would reach a line standing over
+  a folio whose words the folio-offset signature then groups across pages.
   The footer band is the bottom 7% of the sheet either way, kept narrower to retain whitespace-cut behavior
   around illustrated rows: wider footer removal would disturb the alphabetical row order of the
   illustrated entries on Our Flag pages 34/42/43 without independent layout work. Synthetic invisible-text

@@ -70,23 +70,73 @@ block is added, split or reworded. What goes:
 The two `1`s and two `3`s that stay are the opinions' own section numbers in the body, which is
 what they are.
 
-## What is not fixed
+## The row behind the head
 
-**The head's second row.** Each page sets `Cite as: …` or the case name on one row and the
-opinion's name — `Opinion of the Court`, `GORSUCH, J., concurring`, `KAGAN, J., dissenting`,
-`Syllabus` — on another, and 111 of those remain. They are not reached, and not by a threshold
-that could be nudged:
+Each page sets `Cite as: …` or the case name on one row and the opinion's name — `Opinion of the
+Court`, `GORSUCH, J., concurring`, `KAGAN, J., dissenting`, `Syllabus`, `THOMAS, J., concurring` —
+on another. 111 of those stayed when only the outer row went, and no threshold reaches them:
 
-- `outermost` is false for them, because the first row stands above; every candidate rule asks
-  that, and `admitSlotEvidence` asks it too.
-- `recordStack` would take them as a stacked band, but it grows the band only while the gap to the
-  next row is under one line height. On page 3 the gap is 10.86 points against a line height of
-  10.81 — the two rows are set **two leadings apart**, not solid, so they are genuinely two rows
-  and not one band. Reaching them means a rule for a second margin row that repeats in its own
-  slot, which is a different rule from this one and is measured by nobody yet.
+- `outermost` is false for every one, because the first row stands above. Every candidate rule
+  asks that, and `admitSlotEvidence` asks it too, so the slot this book keeps page after page is
+  never consulted for them.
+- `recordStack` grows a band only while the gap to the next row is under one line height. On page
+  3 that gap is 10.86 points against a 10.81-point row: the two are set **two leadings apart**,
+  not solid, so they are genuinely two rows and calling them one band would be wrong.
 
-`recordStack`'s own inward-edge test is moved onto the page image for consistency with the band,
-since it is the same reading; it changes nothing here, because the band never forms.
+So `recordSecondRow` admits a line where **everything further out than it is already a candidate**,
+it stands in the same band, and it is set apart from the body. One row deep and no more: the
+outward set is read against the candidates the outermost-row loop found, so a third row sees the
+second and is refused.
+
+It is asked **half** the white an outermost row must keep. A row behind a head is bounded by the
+head above it as well as by the body below, and this page gives it 9.53 points of a 10.81-point
+line — where its own body lines touch, leaving nothing at all between them. What settles that it
+is furniture is not its margin but its recurrence: `resolve` still removes it only where its words
+and its place repeat on neighbouring pages, which is the whole of the evidence a head behind a
+head has.
+
+**The head only.** At the foot this reaches a line standing over a folio, and the folio-offset
+signature then groups it across pages although its words differ page by page: `Caption 1` over
+`4-1` and `Caption 2` over `4-2` normalize to one `Caption #(offset=0)`. That is what
+`chapterPageFoliosSurviveNearbyFigureTextWithoutEnteringProse` pins, and #289 is a head in any
+case.
+
+## What moved, with both rows
+
+| | baseline | with this change |
+| --- | ---: | ---: |
+| blocks | 731 | 409 |
+| marks | 198,473 | 193,092 |
+
+Forty-six distinct texts lose count, 324 blocks in all, and **forty-two of them are furniture**:
+
+| text | before | after |
+| --- | ---: | ---: |
+| `Cite as: 603 U. S. ____ (2024)` | 57 | 0 |
+| `LOPER BRIGHT ENTERPRISES v. RAIMONDO` | 38 | 0 |
+| `Opinion of the Court` | 35 | 0 |
+| `GORSUCH, J., concurring` | 34 | 1 |
+| `KAGAN, J., dissenting` | 33 | 1 |
+| `Syllabus` | 9 | 2 |
+| `THOMAS, J., concurring` | 4 | 0 |
+| `2 LOPER BRIGHT ENTERPRISES v. RAIMONDO` and its siblings | 5, 5, 4, 4 | 0 |
+| the bare folios `1` to `35` | 7, 7, 4, 4, 3 × 25, 2, 1 | 2, 2, 0 … |
+
+The handful that stay are leftovers on pages where the run did not reach, not errors; the two `1`s
+and two `3`s are the opinions' own section numbers.
+
+The other four are **two footnotes, each now continued across the page the head used to stand in
+the middle of**. Removing the head let `appendPage` reach the other half:
+
+```
+6 It should be recalled that, when Justice Scalia launched the Chevron revolution, …   781 → 1,044 chars
+—————— the early 20th century, the Court stated that it would afford “great weight” …  861 → 1,120 chars
+```
+
+Their two continuations — `criticisms of Chevron. Buffington, 598 U. S., at ___–___ …` and
+`law.” Id., at 131. 6 Recall here that even the majority accepts …` — are the blocks that go with
+them. Nothing else in the book is added, split or reworded, and no block's count rises apart from
+those two joins.
 
 ## Gates
 

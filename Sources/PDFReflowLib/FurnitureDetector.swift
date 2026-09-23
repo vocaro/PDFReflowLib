@@ -280,6 +280,51 @@ enum FurnitureDetector {
             }
         }
 
+        /// The row behind a running head, where a book sets its head in two.
+        ///
+        /// A Supreme Court slip opinion prints `Cite as: 603 U. S. ____ (2024)` over
+        /// `Opinion of the Court` two leadings apart, so neither row is stacked on the other and
+        /// only the outer one is an outermost row: `recordStack` will not take them as a band,
+        /// and every other rule asks `outermost`. 111 of *Loper Bright*'s heads stayed for that
+        /// reason after the outer row went (#289).
+        ///
+        /// So a line is admitted where **everything further out than it is already a candidate**,
+        /// it stands in the same band, and it is set apart from the body. One row deep and no
+        /// more: the outward set is read against the candidates the outermost-row loop found, so
+        /// a third row sees the second and is refused, and nothing in this corpus prints one.
+        ///
+        /// It is asked half the white an outermost row must keep, because a row behind a head is
+        /// bounded by the head above it as well as by the body below, and this page gives it
+        /// 9.53 points of a 10.81-point line where its own body lines touch. What settles that it
+        /// is furniture is not its margin but its recurrence: `resolve` still removes it only
+        /// where its words and its place repeat on neighbouring pages, which is the whole of the
+        /// evidence a head behind a head has.
+        ///
+        /// The **head only**. At the foot this would reach a line standing over a folio, and the
+        /// folio-offset signature would then group it across pages although its words differ
+        /// page by page: `Caption 1` over `4-1` and `Caption 2` over `4-2` normalize to one
+        /// `Caption #(offset=0)`. That is what
+        /// `chapterPageFoliosSurviveNearbyFigureTextWithoutEnteringProse` pins, and #289 is a
+        /// head in any case.
+        func recordSecondRow() {
+            let top = true
+            let outermostCandidates = recorded
+            guard !outermostCandidates.isEmpty else { return }
+            for (lineIndex, line) in page.lines.enumerated() where !recorded.contains(lineIndex) {
+                guard inBand(line, top: top), measurable(line) else { continue }
+                let outward = page.lines.indices.filter { index in
+                    let other = page.lines[index]
+                    return top ? other.rect.midY > line.rect.midY + line.rect.height * 0.4
+                               : other.rect.midY < line.rect.midY - line.rect.height * 0.4
+                }
+                guard !outward.isEmpty, outward.allSatisfy(outermostCandidates.contains),
+                      let gap = inwardGap(lineIndex, top: top),
+                      isFolio(words(line)) || gap >= separation(line) * 0.5 else { continue }
+                record(lineIndex, top: top)
+            }
+        }
+        recordSecondRow()
+
         /// A running head or foot of several stacked rows. The IRS table's foot sets its
         /// continuation marker over the running foot, and a data sheet's head sets a division over
         /// a project title, closer together than a line height: no row of such a band is set apart

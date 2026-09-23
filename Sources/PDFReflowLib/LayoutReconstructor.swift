@@ -239,7 +239,7 @@ enum LayoutReconstructor {
     }
 
     /// `clusters` for regions: merged bounds carry the union of their seeds.
-    private static func merged(_ regions: [Region], backdrop: Bool = false) -> [Region] {
+    private static func merged(_ regions: [Region]) -> [Region] {
         var result: [Region] = []
         for region in regions {
             var merged = region
@@ -247,8 +247,7 @@ enum LayoutReconstructor {
             while previousCount != result.count {
                 previousCount = result.count
                 result.removeAll { existing in
-                    if backdrop ? PageBackdrop.joins(existing.bounds, merged.bounds)
-                        : existing.bounds.insetBy(dx: -3, dy: -3).intersects(merged.bounds) {
+                    if existing.bounds.insetBy(dx: -3, dy: -3).intersects(merged.bounds) {
                         merged.seed = merged.seed.union(existing.seed)
                         merged.bounds = merged.bounds.union(existing.bounds)
                         return true
@@ -439,7 +438,7 @@ enum LayoutReconstructor {
             // A merged bounding rectangle can newly intersect a label that neither component
             // touched. Expand again before rasterizing, or its text is removed from prose while
             // the image clips part of it (for example, a raised exponent beside a fraction).
-            regions = merged(regions, backdrop: backdrop)
+            regions = merged(regions)
         }
         return regions.map(\.bounds)
     }

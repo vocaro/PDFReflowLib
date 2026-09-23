@@ -1940,7 +1940,7 @@
     {
       "id": "ntrs-20180003024-earthdata-slides-2018",
       "sourceSHA256": "f0a1ea3f5711228a9de2544fd1a94b05cfb8d9323fe3a4c253542f5a6ead5c94",
-      "basis": "21 slides converted and reviewed against Poppler rasters of the source pages (tools/compare_pdf.py, source page = slide). Slide 1's two-line title reflows as two separate headings, in source order, followed by the byline, NASA and civil-servant lines in order; every slide except 5 reports unverifiedTextLayer, since its full-bleed background paints as one page-sized graphic on this pipeline (main has no equivalent of the branch's layoutComesApart/#117, which there also left this exact defect open per the branch's own manifest). Slide 5's question has no text layer at all (only the drawn glyph outlines); it is recognized by #176 and its recognized text, read from the converted EPUB and checked word-for-word against the rendered source raster, matches exactly: reports ocrUsed, not unverifiedTextLayer. Slide 9's title and five guiding principles are reviewed in source order. Not pinned because reviewed and found wrong: numbered/lettered list items split their marker from their text inconsistently across slides 7 and 9 (items keep their words but not always their marker in the same block) and slide 7's lettered sub-items lose nesting onto the prior item's line; slide 2's Research/Applications/Education diagram boxes have no text layer at all (confirmed absent from the reflowed text, matching the manifest's provenance note) and diagram box order elsewhere is not independently verified. No committed rasters: every slide shows the NASA insignia (14 CFR 1221); see the manifest's rights note.",
+      "basis": "All 21 slides converted from the checksum-pinned source. Backdrop handling and alpha bounds were verified on 2026-09-23: the flat slide ground, text panels and connectors are separated before clustering; image masks are decoded one at a time in isolated Core Graphics documents. All native slides now omit unverifiedTextLayer, and only recognized slide 5 keeps a source-page reference. The actual raw/trimmed paint geometry of slide 12 is replayed in earthdata-12-backdrop.json: the untrimmed image crop takes Cumulus and the trimmed crop does not. Slides 12-21 retain every Cumulus Data Archive label in reflowed text. Existing title, question and guiding-principle contracts remain. Slide 5 keeps the insignia and a complete local crop of both question lines; NASA inside the insignia is absent from reflowed text. Full record: measurements/backdrop-separation/record.md. List nesting, diagram reading order and duplicate native labels remain outside this contract (#175); no closure of those defects is claimed. No committed rasters or image references: the NASA insignia and the source rights limits remain as stated in the manifest.",
       "pages": [
         {
           "page": 1,
@@ -1955,13 +1955,37 @@
             "NASA",
             "*U.S. Civil Servant"
           ],
-          "warningCodesAnyOf": [
+          "minimumImages": 1,
+          "absentWarningCodes": [
             "unverifiedTextLayer"
-          ],
-          "minimumImages": 1
+          ]
+        },
+        {
+          "page": 2,
+          "minimumImages": 1,
+          "absentWarningCodes": [
+            "unverifiedTextLayer"
+          ]
+        },
+        {
+          "page": 3,
+          "minimumImages": 1,
+          "absentWarningCodes": [
+            "unverifiedTextLayer"
+          ]
+        },
+        {
+          "page": 4,
+          "minimumImages": 1,
+          "absentWarningCodes": [
+            "unverifiedTextLayer"
+          ]
         },
         {
           "page": 5,
+          "absentText": [
+            "NASA"
+          ],
           "text": [
             "How do we support user analysis of very large data volumes?"
           ],
@@ -1969,6 +1993,27 @@
             "ocrUsed"
           ],
           "minimumImages": 1
+        },
+        {
+          "page": 6,
+          "minimumImages": 1,
+          "absentWarningCodes": [
+            "unverifiedTextLayer"
+          ]
+        },
+        {
+          "page": 7,
+          "minimumImages": 1,
+          "absentWarningCodes": [
+            "unverifiedTextLayer"
+          ]
+        },
+        {
+          "page": 8,
+          "minimumImages": 1,
+          "absentWarningCodes": [
+            "unverifiedTextLayer"
+          ]
         },
         {
           "page": 9,
@@ -1983,10 +2028,124 @@
             "Interoperability and reuse",
             "No unnecessary duplication"
           ],
-          "warningCodesAnyOf": [
+          "minimumImages": 1,
+          "absentWarningCodes": [
+            "unverifiedTextLayer"
+          ]
+        },
+        {
+          "page": 10,
+          "minimumImages": 1,
+          "absentWarningCodes": [
+            "unverifiedTextLayer"
+          ]
+        },
+        {
+          "page": 11,
+          "minimumImages": 1,
+          "absentWarningCodes": [
+            "unverifiedTextLayer"
+          ]
+        },
+        {
+          "page": 12,
+          "minimumImages": 1,
+          "absentWarningCodes": [
             "unverifiedTextLayer"
           ],
-          "minimumImages": 1
+          "text": [
+            "Cumulus Data Archive"
+          ]
+        },
+        {
+          "page": 13,
+          "minimumImages": 1,
+          "absentWarningCodes": [
+            "unverifiedTextLayer"
+          ],
+          "text": [
+            "Cumulus Data Archive"
+          ]
+        },
+        {
+          "page": 14,
+          "minimumImages": 1,
+          "absentWarningCodes": [
+            "unverifiedTextLayer"
+          ],
+          "text": [
+            "Cumulus Data Archive"
+          ]
+        },
+        {
+          "page": 15,
+          "minimumImages": 1,
+          "absentWarningCodes": [
+            "unverifiedTextLayer"
+          ],
+          "text": [
+            "Cumulus Data Archive"
+          ]
+        },
+        {
+          "page": 16,
+          "minimumImages": 1,
+          "absentWarningCodes": [
+            "unverifiedTextLayer"
+          ],
+          "text": [
+            "Cumulus Data Archive"
+          ]
+        },
+        {
+          "page": 17,
+          "minimumImages": 1,
+          "absentWarningCodes": [
+            "unverifiedTextLayer"
+          ],
+          "text": [
+            "Cumulus Data Archive"
+          ]
+        },
+        {
+          "page": 18,
+          "minimumImages": 1,
+          "absentWarningCodes": [
+            "unverifiedTextLayer"
+          ],
+          "text": [
+            "Cumulus Data Archive"
+          ]
+        },
+        {
+          "page": 19,
+          "minimumImages": 1,
+          "absentWarningCodes": [
+            "unverifiedTextLayer"
+          ],
+          "text": [
+            "Cumulus Data Archive"
+          ]
+        },
+        {
+          "page": 20,
+          "minimumImages": 1,
+          "absentWarningCodes": [
+            "unverifiedTextLayer"
+          ],
+          "text": [
+            "Cumulus Data Archive"
+          ]
+        },
+        {
+          "page": 21,
+          "minimumImages": 1,
+          "absentWarningCodes": [
+            "unverifiedTextLayer"
+          ],
+          "text": [
+            "Cumulus Data Archive"
+          ]
         }
       ]
     },

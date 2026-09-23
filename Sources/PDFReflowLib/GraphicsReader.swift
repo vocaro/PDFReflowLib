@@ -4,6 +4,14 @@ import Foundation
 /// Finds painted regions, not just raw image resources. Cropping the original rendering preserves
 /// masks, clipping, vector paths and labels without reimplementing their PDF compositing semantics.
 enum GraphicsReader {
+    /// Unclustered paint, so a flat ground can be separated from the art it surrounds (#182).
+    struct Paint: Equatable, Codable {
+        var rect: CGRect
+        var image = false
+        var filled = false
+        var rectangular = false
+        var vertices: [CGPoint] = []
+    }
     struct Result { var regions: [CGRect]; var unsupported: Bool; var hasOnlyInvisibleText = false
                     /// Placed raster image XObjects specifically, a subset of `regions` (#176):
                     /// a photograph's internal texture is not writing the page drew, even where it
@@ -13,10 +21,12 @@ enum GraphicsReader {
                     /// painted region and no annotation draws nothing at all (#224); extracted
                     /// text alone cannot say so, since glyphs PDFKit cannot map extract as
                     /// nothing.
-                    var visibleText = false }
+                    var visibleText = false
+                    var hasInvisibleText = false
+                    var paints: [Paint] = [] }
     private final class State {
         var matrix = CGAffineTransform.identity
-        var saved: [(CGAffineTransform, Bool, CGRect?, Int)] = []
+        var saved: [(CGAffineTransform, Bool, CGRect?, Int, Bool)] = []
         var textRenderingMode = 0
         var invisibleText = false
         var visibleText = false
@@ -27,7 +37,13 @@ enum GraphicsReader {
         var clip: CGRect?
         var pendingClip = false
         var white = false
+        var flatFill = true
         var path = CGRect.null
+        var vertices: [CGPoint]? = []
+        var subpaths = 0
+        var paints: [Paint] = []
+        var imageIndex = 0
+        var imageBounds: ((Int, CGPDFDictionaryRef) -> CGRect?)?
         var regions: [CGRect] = []
         var images: [CGRect] = []
         var unsupported = false
@@ -58,6 +74,8 @@ enum GraphicsReader {
             }
             pendingClip = false
             path = .null
+            vertices = []
+            subpaths = 0
         }
         /// The part of a footprint the clip in force lets show, or nil when none of it can.
         ///
@@ -75,14 +93,22 @@ enum GraphicsReader {
             let shown = rect.intersection(clip.insetBy(dx: -tolerance, dy: -tolerance))
             return shown.isNull || shown.isEmpty ? nil : shown
         }
-        func paint() {
+        func paint(filled: Bool = false) {
             defer { finishPath() }
             // The footprint is padded before it is clipped: a horizontal rule is a path of no
             // height, and an unpadded rectangle of no area intersects nothing at all.
             guard accept(), !path.isNull,
                   let shown = visible(path.insetBy(dx: -2, dy: -2), tolerance: 2) else { return }
-            if regions.count < 10_000 { regions.append(shown) }
-            else { unsupported = true }
+            if regions.count < 10_000 {
+                regions.append(shown)
+                var points = vertices ?? []
+                if points.count > 2, points.first == points.last { points.removeLast() }
+                let rectangular = points.count == 4 && Set(points.map(\.x)).count == 2
+                    && Set(points.map(\.y)).count == 2
+                    && points.allSatisfy { ($0.x == path.minX || $0.x == path.maxX)
+                        && ($0.y == path.minY || $0.y == path.maxY) }
+                paints.append(Paint(rect: shown, filled: filled, rectangular: rectangular, vertices: points))
+            } else { unsupported = true }
         }
     }
 
@@ -90,7 +116,8 @@ enum GraphicsReader {
         Unmanaged<State>.fromOpaque(info!).takeUnretainedValue()
     }
 
-    static func read(_ page: CGPDFPage) -> Result {
+    static func read(_ page: CGPDFPage,
+                     imageBounds: ((Int, CGPDFDictionaryRef) -> CGRect?)? = nil) -> Result {
         guard let table = CGPDFOperatorTableCreate() else {
             return Result(regions: [], unsupported: true)
         }
@@ -98,11 +125,11 @@ enum GraphicsReader {
         CGPDFOperatorTableSetCallback(table, "q") { _, info in
             let s = Self.state(info)
             guard s.accept(), s.saved.count < 128 else { s.unsupported = true; return }
-            s.saved.append((s.matrix, s.white, s.clip, s.textRenderingMode))
+            s.saved.append((s.matrix, s.white, s.clip, s.textRenderingMode, s.flatFill))
         }
         CGPDFOperatorTableSetCallback(table, "Q") { _, info in
             let s = Self.state(info)
-            if let saved = s.saved.popLast() { (s.matrix, s.white, s.clip, s.textRenderingMode) = saved }
+            if let saved = s.saved.popLast() { (s.matrix, s.white, s.clip, s.textRenderingMode, s.flatFill) = saved }
             else { s.unsupported = true }
         }
         CGPDFOperatorTableSetCallback(table, "Tr") { scanner, info in
@@ -130,24 +157,42 @@ enum GraphicsReader {
         CGPDFOperatorTableSetCallback(table, "rg") { scanner, info in
             let s = Self.state(info)
             s.white = ContentStreamWalk.numbers(scanner, 3)?.allSatisfy { $0 >= 0.999 } ?? false
+            s.flatFill = true
         }
         CGPDFOperatorTableSetCallback(table, "g") { scanner, info in
-            Self.state(info).white = (ContentStreamWalk.numbers(scanner, 1)?.first ?? 0) >= 0.999
+            let s = Self.state(info)
+            s.white = (ContentStreamWalk.numbers(scanner, 1)?.first ?? 0) >= 0.999
+            s.flatFill = true
         }
-        for op in ["k", "sc", "scn"] {
-            CGPDFOperatorTableSetCallback(table, op) { _, info in Self.state(info).white = false }
-        }
-        for op in ["m", "l"] {
-            CGPDFOperatorTableSetCallback(table, op) { scanner, info in
-                let s = Self.state(info)
-                guard s.accept(), let n = ContentStreamWalk.numbers(scanner, 2) else { s.unsupported = true; return }
-                let point = CGPoint(x: n[0], y: n[1]).applying(s.matrix)
-                s.path = s.path.union(CGRect(origin: point, size: .zero))
+        for op in ["k", "sc"] {
+            CGPDFOperatorTableSetCallback(table, op) { _, info in
+                let s = Self.state(info); s.white = false; s.flatFill = true
             }
+        }
+        CGPDFOperatorTableSetCallback(table, "scn") { _, info in
+            let s = Self.state(info); s.white = false; s.flatFill = false
+        }
+        CGPDFOperatorTableSetCallback(table, "m") { scanner, info in
+            let s = Self.state(info)
+            guard s.accept(), let n = ContentStreamWalk.numbers(scanner, 2) else { s.unsupported = true; return }
+            let point = CGPoint(x: n[0], y: n[1]).applying(s.matrix)
+            s.path = s.path.union(CGRect(origin: point, size: .zero))
+            s.subpaths += 1
+            if s.subpaths > 1 { s.vertices = nil }
+            else { s.vertices?.append(point) }
+        }
+        CGPDFOperatorTableSetCallback(table, "l") { scanner, info in
+            let s = Self.state(info)
+            guard s.accept(), let n = ContentStreamWalk.numbers(scanner, 2) else { s.unsupported = true; return }
+            let point = CGPoint(x: n[0], y: n[1]).applying(s.matrix)
+            s.path = s.path.union(CGRect(origin: point, size: .zero))
+            if (s.vertices?.count ?? 0) >= 8 { s.vertices = nil }
+            else { s.vertices?.append(point) }
         }
         CGPDFOperatorTableSetCallback(table, "c") { scanner, info in
             let s = Self.state(info)
             guard s.accept(), let n = ContentStreamWalk.numbers(scanner, 6) else { s.unsupported = true; return }
+            s.vertices = nil
             for i in stride(from: 0, to: 6, by: 2) {
                 s.path = s.path.union(CGRect(origin: CGPoint(x: n[i], y: n[i + 1])
                     .applying(s.matrix), size: .zero))
@@ -157,6 +202,7 @@ enum GraphicsReader {
             CGPDFOperatorTableSetCallback(table, op) { scanner, info in
                 let s = Self.state(info)
                 guard s.accept(), let n = ContentStreamWalk.numbers(scanner, 4) else { s.unsupported = true; return }
+                s.vertices = nil
                 for i in stride(from: 0, to: 4, by: 2) {
                     s.path = s.path.union(CGRect(origin: CGPoint(x: n[i], y: n[i + 1])
                         .applying(s.matrix), size: .zero))
@@ -166,8 +212,14 @@ enum GraphicsReader {
         CGPDFOperatorTableSetCallback(table, "re") { scanner, info in
             let s = Self.state(info)
             guard s.accept(), let n = ContentStreamWalk.numbers(scanner, 4) else { s.unsupported = true; return }
-            s.path = s.path.union(CGRect(x: n[0], y: n[1], width: n[2], height: n[3])
-                .applying(s.matrix))
+            let rect = CGRect(x: n[0], y: n[1], width: n[2], height: n[3])
+            if s.path.isNull {
+                s.vertices = [CGPoint(x: rect.minX, y: rect.minY), CGPoint(x: rect.maxX, y: rect.minY),
+                              CGPoint(x: rect.maxX, y: rect.maxY), CGPoint(x: rect.minX, y: rect.maxY)]
+                    .map { $0.applying(s.matrix) }
+                s.subpaths = 1
+            } else { s.vertices = nil }
+            s.path = s.path.union(rect.applying(s.matrix))
         }
         for op in ["S", "s", "B", "B*", "b", "b*"] {
             CGPDFOperatorTableSetCallback(table, op) { _, info in Self.state(info).paint() }
@@ -175,7 +227,7 @@ enum GraphicsReader {
         for op in ["f", "F", "f*"] {
             CGPDFOperatorTableSetCallback(table, op) { _, info in
                 let s = Self.state(info)
-                if s.white { s.finishPath() } else { s.paint() }
+                if s.white { s.finishPath() } else { s.paint(filled: s.flatFill) }
             }
         }
         CGPDFOperatorTableSetCallback(table, "n") { _, info in Self.state(info).finishPath() }
@@ -209,13 +261,17 @@ enum GraphicsReader {
             }
             switch String(cString: subtype) {
             case "Image":
+                let index = s.imageIndex
+                s.imageIndex += 1
                 if s.regions.count < 10_000 {
                     // Only the part the clip lets show: FAA page 19 places a 338 by 400 pt map
                     // under a 207 by 129 pt clip, and the rest of it reached into the left
                     // column (#52).
-                    if let rect = s.visible(CGRect(x: 0, y: 0, width: 1, height: 1).applying(s.matrix)) {
+                    let unit = s.imageBounds?(index, dictionary) ?? CGRect(x: 0, y: 0, width: 1, height: 1)
+                    if !unit.isEmpty, let rect = s.visible(unit.applying(s.matrix)) {
                         s.regions.append(rect)
                         s.images.append(rect)
+                        s.paints.append(Paint(rect: rect, image: true))
                     }
                 } else { s.unsupported = true }
             case "Form":
@@ -246,6 +302,7 @@ enum GraphicsReader {
                         if box.isFinite, let rect = s.visible(box),
                            rect.width * rect.height < s.pageBounds.width * s.pageBounds.height * 0.7 {
                             s.regions.append(rect)
+                            s.paints.append(Paint(rect: rect))
                         }
                     }
                 }
@@ -254,6 +311,7 @@ enum GraphicsReader {
         }
         let s = State()
         s.table = table
+        s.imageBounds = imageBounds
         s.pageBounds = page.getBoxRect(.cropBox)
         // Nothing paints outside the crop box, so it is the opening clip — unless the page
         // reports no usable box, where an unclipped start keeps every mark.
@@ -268,7 +326,10 @@ enum GraphicsReader {
         return Result(regions: clusters(s.regions.map { $0.intersection(bounds) }, distance: 4),
                       unsupported: s.unsupported, hasOnlyInvisibleText: !s.unsupported && s.invisibleText && !s.visibleText,
                       images: clusters(s.images.map { $0.intersection(bounds) }, distance: 4),
-                      visibleText: s.visibleText)
+                      visibleText: s.visibleText, hasInvisibleText: s.invisibleText,
+                      paints: s.paints.map { paint in
+                          var result = paint; result.rect = paint.rect.intersection(bounds); return result
+                      })
     }
 
     // The sh operator paints within the active clip and optional shading BBox. Do not infer
@@ -305,7 +366,9 @@ enum GraphicsReader {
         guard region.width * region.height < s.pageBounds.width * s.pageBounds.height * 0.75 else {
             s.unsupported = true; return
         }
-        s.regions.append(region.insetBy(dx: -2, dy: -2).intersection(s.pageBounds))
+        let rect = region.insetBy(dx: -2, dy: -2).intersection(s.pageBounds)
+        s.regions.append(rect)
+        s.paints.append(Paint(rect: rect))
     }
 
     private static func scan(_ stream: CGPDFContentStreamRef, state s: State) {
@@ -318,17 +381,20 @@ enum GraphicsReader {
                                 parent: CGPDFContentStreamRef, state s: State) {
         guard s.depth < 12 else { s.unsupported = true; return }
         let oldMatrix = s.matrix, oldPath = s.path, oldSaved = s.saved, oldWhite = s.white
+        let oldVertices = s.vertices, oldSubpaths = s.subpaths, oldFlatFill = s.flatFill
         let oldResources = s.resources
         let oldTextRenderingMode = s.textRenderingMode
         let oldClip = s.clip, oldPendingClip = s.pendingClip
         defer {
             s.matrix = oldMatrix; s.path = oldPath; s.saved = oldSaved; s.white = oldWhite
+            s.vertices = oldVertices; s.subpaths = oldSubpaths; s.flatFill = oldFlatFill
             s.textRenderingMode = oldTextRenderingMode
             s.resources = oldResources; s.clip = oldClip; s.pendingClip = oldPendingClip; s.depth -= 1
         }
         s.depth += 1
         s.saved = []
         s.path = .null
+        s.vertices = []; s.subpaths = 0
         s.pendingClip = false
         if CGPDFObjects.array(dictionary, "Matrix") != nil {
             guard let matrix = CGPDFObjects.matrix(dictionary, "Matrix") else { s.unsupported = true; return }

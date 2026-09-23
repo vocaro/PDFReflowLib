@@ -54,6 +54,21 @@ budget). The case column links to the narrative section below; the seven #30 cas
 These are regression limits for release CLI processes on macOS arm64, not physical-device
 budgets or guarantees about Apple service memory. Each evaluation verifies exact input identity
 before conversion and records progress, timing, memory, output structure and optional EPUBCheck.
+
+A manifest entry may carry `language`, the BCP 47 tag the document is written in. The lane
+converts such a case with `--language TAG` — every conversion of it, including a memory attempt
+spent after host pressure spoiled the first — and the evaluation receipt's `options` says so
+(`library defaults with --language ar`). Two entries carry it: `ar` for
+`uscis-m618-arabic-2015` and `zh-Hans` for `irs-p596-zhs-2025`, so each declares its own
+`dc:language` and stands down the rules that hold only for a declared English
+([#293](https://github.com/vocaro/PDFReflowLib/issues/293)). Only `zh-Hans` also reaches
+Vision's recognizer: the library sets the recognition language only where Vision lists the tag
+as given, and this host lists `zh-Hans` but `ar-SA`, not `ar`, so the Arabic guide's tag stops
+short of recognition. An entry without the field converts at library defaults, which declare
+`en`, exactly as the rest of the lane does. What the tag changes in each book, measured with and
+without it on one binary, is in the two books' baseline records
+([Arabic](../measurements/uscis-m618-arabic-2015-language-tag/record.md),
+[Chinese](../measurements/irs-p596-zhs-2025-language-tag/record.md)).
 The seven [#30 cases](#issue-30-coverage-expansion) are gated with reviewed contracts; their
 selection and download identities are in [their record](../measurements/corpus-candidates-30/record.md).
 

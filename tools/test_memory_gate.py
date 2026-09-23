@@ -40,9 +40,12 @@ class MemoryGateTests(unittest.TestCase):
             archive.writestr("EPUB/nav.xhtml", '<html xmlns="http://www.w3.org/1999/xhtml"><body><a href="chapter.xhtml">Control</a></body></html>')
         self.converter = self.root / "converter"
         self.converter.write_text(f'''#!{sys.executable}
-import json, shutil, sys, time
+import json, pathlib, shutil, sys, time
 allocation = b"x" * (80 * 1024 * 1024)
 shutil.copyfile({str(self.book)!r}, sys.argv[2])
+# Every launch records the flags it was given, so a test can read what each attempt carried.
+with pathlib.Path(sys.argv[2]).with_name("flags.log").open("a") as flags:
+    flags.write(json.dumps(sys.argv[3:]) + "\\n")
 time.sleep(0.2)
 print("0% opening", file=sys.stderr)
 print("100% completed", file=sys.stderr)
@@ -122,6 +125,41 @@ print(json.dumps({{"pageCount": 1, "reflowedPageCount": 1, "recognizedPageCount"
         self.assertEqual([a["peakMemoryPressureLevel"] for a in result["conversionAttempts"]], [2, 1])
         self.assertTrue((self.root / "result/memory-samples-1.json").is_file())
         self.assertTrue((self.root / "result/memory-samples.json").is_file())
+
+    def launched_flags(self):
+        """The flags each converter launch of the run received, in launch order."""
+        return [json.loads(line) for line in (self.root / "result/flags.log").read_text().splitlines()]
+
+    def test_a_case_without_a_language_converts_at_library_defaults(self):
+        self.assertEqual(runner.conversion_flags({"id": "control"}), [])
+        code, result = self.invoke(512)
+        self.assertEqual(code, 0)
+        self.assertEqual(self.launched_flags(), [[]])
+        self.assertEqual(result["options"], "library defaults")
+
+    def test_a_declared_language_reaches_every_conversion_of_the_case(self):
+        self.assertEqual(runner.conversion_flags({"id": "x", "language": "zh-Hans"}), ["--language", "zh-Hans"])
+        manifest = json.loads((self.root / "corpus/manifest.json").read_text())
+        manifest["documents"][0]["language"] = "ar"
+        (self.root / "corpus/manifest.json").write_text(json.dumps(manifest))
+        level = [2]
+        waits = []
+
+        def quieting_settle(read_pressure, seconds):
+            waits.append(seconds)
+            if len(waits) > 1:  # the host settles, so a second attempt is spent (#293)
+                level[0] = 1
+            return 0.0
+
+        with patch.object(runner, "pressure_reader", return_value=lambda: level[0]), \
+                patch.object(runner, "settle", quieting_settle):
+            code, result = self.invoke(512)
+        self.assertEqual(code, 0)
+        self.assertEqual(result["memoryGate"]["attempts"], 2)
+        # The retry is a fresh launch of the same command: the tag is on both.
+        self.assertEqual(self.launched_flags(), [["--language", "ar"], ["--language", "ar"]])
+        self.assertEqual(result["options"], "library defaults with --language ar")
+        self.assertEqual(result["case"]["language"], "ar")
 
     def test_a_host_that_never_settles_is_not_given_another_conversion(self):
         with patch.object(runner, "pressure_reader", return_value=lambda: 2):

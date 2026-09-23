@@ -1544,7 +1544,7 @@
     {
       "id": "uscis-m618-arabic-2015",
       "sourceSHA256": "354effbbe38450664959b8832d136cfd158d3c17d1ba777b8b1e4a5b6aa36d54",
-      "basis": "Source pages 5 and 21 visually reviewed. Protects the Arabic contents heading, the order of its entries and their own blocks, and page-21 Arabic prose with its embedded English terms, web addresses, form numbers and telephone number in the order the page sets them, plus the preserved card image. The reversed identifiers, mirrored parentheses and visual-line fragments #41 named are named here as text the reading must not produce.",
+      "basis": "Source pages 5 and 21 visually reviewed. Protects the Arabic contents heading, the order of its entries and their own blocks, and page-21 Arabic prose with its embedded English terms, web addresses, form numbers and telephone number in the order the page sets them, plus the preserved card image. The reversed identifiers, mirrored parentheses and visual-line fragments #41 named are named here as text the reading must not produce. Re-reviewed on the tagged run of 8faeaab, where the lane declares this book `ar` from its manifest language field (#293): the same 26 checks hold against the rendered pages, and the tag changes nothing in the pages themselves, only dc:language and the XHTML language attributes, because no rule the declared language gates fires on this book and Vision never receives the tag (#106, whose fix is only on the abandoned branch: Vision lists ar-SA, not ar). Measured with and without the tag on one binary in measurements/uscis-m618-arabic-2015-language-tag/record.md.",
       "pages": [
         {
           "page": 5,
@@ -1595,7 +1595,7 @@
     {
       "id": "irs-p596-zhs-2025",
       "sourceSHA256": "7d1cff45bc567f1257ea1aa1e2ce67945aafb12708b2e22901ce6392436590c2",
-      "basis": "Source pages 1 and 16 visually reviewed. Protects the English catalog footer and cover image on page 1, and page-16 left-column examples before the right-column military and chapter-4 prose, the four earned-income limits in source order, and CJK text with embedded Latin identifiers and amounts. Does not bless page 1/3 prose and contents captured inside preserved-region images, the split cover title, or spaces inserted inside justified CJK lines (#36, #42). Source page 5 visually reviewed: the running foot in the slot the publication keeps must be absent while the rule prose and its heading remain (#10).",
+      "basis": "Source pages 1 and 16 visually reviewed. Protects the English catalog footer and cover image on page 1, and page-16 left-column examples before the right-column military and chapter-4 prose, the four earned-income limits in source order, and CJK text with embedded Latin identifiers and amounts. Does not bless page 1/3 prose and contents captured inside preserved-region images, the split cover title, or spaces inserted inside justified CJK lines (#36, #42). Source page 5 visually reviewed: the running foot in the slot the publication keeps must be absent while the rule prose and its heading remain (#10). Re-reviewed on the tagged run of 8faeaab, where the lane declares this book `zh-Hans` from its manifest language field (#293): the same checks hold against the rendered pages. The tag moves one page, and source page 4 was visually reviewed to pin it: the comments paragraph at the head of its left column, whose Latin-only line `Ave.NW, IR-6526, Washington, DC 20224\uff09\u3002` a book declared English keeps inside the link's crop because the line fails the English word test, taking the five Chinese lines beneath it into the picture; declared zh-Hans the sentence shape alone releases it, the crop ends at its third line, and the paragraph reflows, which page 4 pins by two of its lines. The book emits 85 heading elements on 8faeaab, tagged or not, against the 99 #243 counted on 7a4a5b3; the cover's \u76ee\u5f55 is not among them (#243, the ranking that would restore it is #294), and no count is pinned so that its return fails nothing here. Measured with and without the tag on one binary in measurements/irs-p596-zhs-2025-language-tag/record.md.",
       "pages": [
         {
           "page": 1,
@@ -1628,6 +1628,13 @@
           ],
           "text": [
             "\u5982\u679c\u60a8\u5df2\u5a5a\uff0c\u60a8\u901a\u5e38\u5fc5\u987b\u63d0\u4ea4\u8054\u5408\u62a5\u7a0e\u8868\u624d\u80fd\u7533\u62a5 EIC"
+          ]
+        },
+        {
+          "page": 4,
+          "text": [
+            "Ave.NW, IR-6526, Washington, DC 20224",
+            "\u5c3d\u7ba1\u6211\u4eec\u65e0\u6cd5\u5bf9\u6536\u5230\u7684\u6bcf\u6761\u610f\u89c1\u8fdb\u884c\u5355\u72ec\u56de\u590d"
           ]
         }
       ]

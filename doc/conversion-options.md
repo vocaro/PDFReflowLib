@@ -298,17 +298,25 @@ accepts PNG/JPEG publications; its independent admission budget can be set with
 
 `--language TAG` sets the BCP 47 tag the conversion declares. It becomes the package's
 `dc:language`, the recognizer's language where Vision supports it, and the gate on every rule
-that only holds for a declared language: English line-end word breaks and the lexicon vote, the
-Cyrillic look-alike repair on recognized text, and East Asian spacing and heading joins. The
-default is `en`.
+that only holds for a declared English: the line-end lexicon vote, the Cyrillic look-alike
+repair on recognized text, the inherited-layer, drawn-text and recognition judgments, the
+damaged-encoding check, the recognized-line heading test, and the word tests that keep a book's
+own prose out of its crops. The East Asian spacing and heading joins read the text's own script
+and run whatever the tag says. The default is `en`.
 
 A malformed tag is rejected rather than converted as something else: the value must be ASCII
 letters, digits and single hyphens, start with a letter, not end with one and be at most 35
 characters. `en_US`, `zh--Hans` and an empty value all fail without writing output (#108).
 
 Until this option existed every book converted as English, so `uscis-m618-arabic-2015` and
-`irs-p596-zhs-2025` declared `dc:language` `en`. The corpus lane still converts at library
-defaults and does not pass a tag, so nothing in it exercises a non-English recognition language.
+`irs-p596-zhs-2025` declared `dc:language` `en`. Since 2026-09-23 the corpus lane passes each
+case's manifest `language` — `ar` for the Arabic guide and `zh-Hans` for the Chinese
+publication — so both declare their own language, and the Chinese publication's tag reaches the
+recognizer, while the Arabic guide's does not on this host, which lists `ar-SA` and not `ar`;
+what the tag changes in each book is measured in their baseline records
+([Arabic](../measurements/uscis-m618-arabic-2015-language-tag/record.md),
+[Chinese](../measurements/irs-p596-zhs-2025-language-tag/record.md)). Every other case has no
+field and converts at library defaults.
 
 ## Locked documents
 

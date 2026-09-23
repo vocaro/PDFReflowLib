@@ -80,6 +80,19 @@ def pressure_reader():
     return read
 
 
+def conversion_flags(case):
+    """Converter flags the case's manifest entry asks for beyond the library defaults.
+
+    A document that declares a `language` converts with `--language TAG`, so the lane exercises
+    the tag it declares: the package's dc:language, the recognizer's language where Vision
+    supports it, and the rules that hold only for a declared English (#293). Every conversion of
+    the case carries the flags, including a memory attempt spent after host pressure spoiled the
+    first; a case without the field converts at library defaults, exactly as before.
+    """
+    language = case.get("language")
+    return ["--language", language] if language else []
+
+
 def settle(read_pressure, seconds):
     """Wait for host memory pressure to fall back to normal before a measured conversion.
 
@@ -135,6 +148,7 @@ def main():
         parser.error("PDF identity differs from the pinned corpus case")
     converter = args.converter.resolve(strict=True)
     probe = args.environment_probe.resolve(strict=True) if args.environment_probe else None
+    flags = conversion_flags(case)
     args.output.mkdir(parents=True, exist_ok=False)
     output = args.output / (case["id"] + ".epub")
     receipt = {
@@ -147,7 +161,7 @@ def main():
         "machine": platform.machine(),
         "executionContext": args.execution_context,
         "concurrentEvaluations": args.concurrent_evaluations,
-        "options": "library defaults",
+        "options": "library defaults" + (" with " + " ".join(flags) if flags else ""),
         "qualifiedForFidelity": False,
     }
     if probe:
@@ -187,7 +201,7 @@ def main():
         samples = []
         pressures = []
         with report_path.open("w") as report, progress_path.open("w") as log:
-            process = subprocess.Popen([str(converter), str(args.pdf.resolve()), str(output.resolve())],
+            process = subprocess.Popen([str(converter), str(args.pdf.resolve()), str(output.resolve()), *flags],
                                        stdout=report, stderr=log)
             stage = "starting"
             pending = ""

@@ -37,7 +37,7 @@ What the individual gates check:
   concurrency test overlaps four conversions and one canceled conversion, checking ownership,
   styles, images, monotonic progress and staging cleanup. For iOS:
   `xcodebuild test -scheme PDFReflowLib-Package -destination 'platform=iOS Simulator,name=iPhone 18 Pro' CODE_SIGNING_ALLOWED=NO`.
-- `python3 -m unittest discover -s tools -p 'test_*.py' -v`: <!-- counts:python-tests -->246 Python tests<!-- counts:end --> over the tools,
+- `python3 -m unittest discover -s tools -p 'test_*.py' -v`: <!-- counts:python-tests -->248 Python tests<!-- counts:end --> over the tools,
   including the checker's negative controls, the identity tool, the memory-gate instrumentation
   (real child allocations above and below a ceiling, source verification, isolation from an
   earlier child's high-water mark, and each host-pressure outcome with its settle-and-retry),
@@ -200,10 +200,12 @@ Repeat `--case <id>` to narrow a debugging run; the summary lists omitted cases 
 failing case does not hide later results. `--jobs N` evaluates N cases at once (default 1). The
 lane exits 1 for a failed case and 3 when unmeasured memory ceilings are all that stand between
 it and a pass; `--memory-attempts` and `--settle-seconds` reach the evaluator's handling of a
-loaded host. Each case verifies the pinned source identity, converts in a fresh release process,
+loaded host. Each case verifies the pinned source identity, converts in a fresh release process
+(with `--language TAG` where its manifest entry declares a `language`, and at library defaults
+otherwise; see [corpus.md](corpus.md#index)),
 checks EPUB structure, EPUBCheck, monotonic progress, the manifest memory ceiling and the
 reviewed content contract in [corpus/regressions.json](../corpus/regressions.json):
-<!-- counts:contract-coverage -->752 checks on 146 reviewed pages across 20 documents<!-- counts:end -->.
+<!-- counts:contract-coverage -->754 checks on 147 reviewed pages across 20 documents<!-- counts:end -->.
 All source-page anchors must remain complete and ordered, and semantic text must
 contain no image-attachment placeholders. The manifest consistency test requires every corpus
 document to be covered or explicitly excluded (`excludedFullConversions`, whose entries the
@@ -215,7 +217,7 @@ each book is in [corpus.md](corpus.md#warren-commission-report) and the admissio
 [corpus-lane-admissions](../measurements/corpus-lane-admissions/record.md).
 
 <!-- counts:contract-breakdown -->
-Those 752 checks are 4 `spineContinuity`, 84 `text`, 340 `orderedText`, 58 `absentText`,
+Those 754 checks are 4 `spineContinuity`, 86 `text`, 340 `orderedText`, 58 `absentText`,
 39 `headings`, 53 `paragraphs`, 6 `continuedParagraphs`, 6 `preformatted`, 16 `scripts`,
 11 `imageRegions`, 21 `tableRows`, 84 `minimumImages`, 23 `warningCodesAnyOf` and
 7 `absentWarningCodes`, counted as `tools/check_corpus_content.py` counts them.
@@ -350,7 +352,8 @@ image legibility and color stay unqualified.
    ([decision 0007](decisions/0007-records-cite-commits-in-prose.md)).
 
 A new corpus document gets a manifest entry (identity, rights, coverage, review pages, memory
-ceiling), a `corpus/<id>-review.json` of review points, a contract in `regressions.json` whose
+ceiling, and `language` when the document is not written in English), a `corpus/<id>-review.json`
+of review points, a contract in `regressions.json` whose
 `basis` says what was reviewed against the source and how, and a baseline record under
 `measurements/<id>/`. A rights constraint on committed rasters (USCIS, the USDA magazine's page
 24, the NASA insignia on every Earthdata slide) means no `imageRegions` or `minimumImages` for

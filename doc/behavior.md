@@ -267,8 +267,9 @@ Evidence: [pdfkit-concurrency](../measurements/pdfkit-concurrency/record.md),
 - **Right-to-left text (#41).** A page written right to left is read as one: `ArabicText` counts
   the Hebrew, Arabic, Syriac, Thaana, NKo, Samaritan and Mandaic letters of the page's own lines
   against their Latin letters, and a page carrying at least as many of the first is right to left.
-  Nothing below runs on any other page, and nothing consults the declared language, which is `en`
-  by default for every book the corpus converts. Such a page hands back its Arabic in the order it
+  Nothing below runs on any other page, and nothing consults the declared language: the page's
+  own script decides, whether the book converts at the default `en` or, as the corpus lane
+  converts the Arabic guide since #293, declared `ar`. Such a page hands back its Arabic in the order it
   was written and its numbers in the order it was painted, because PDFKit inverts the page's
   layout without the two rules of the bidirectional algorithm that fold a separator into the
   number beside it. Two orders are put back:
@@ -1695,8 +1696,10 @@ Evidence: [tables-read-as-cells](../measurements/tables-read-as-cells/record.md)
   in the Latin alphabet in a book that declares English, it must also read as English words: the
   CIA report's crops sit over handwritten tables whose text layer is
   `0/iLE 1112£ E/(19U/,£r//?/Z/`, which passes the sentence shape and recovers nothing. The word
-  test runs only on Latin-alphabet lines, because an English lexicon reads a Chinese or Arabic
-  line as no words at all and the corpus lane converts those books as English.
+  test runs only on Latin-alphabet lines of a book that declares English, because an English
+  lexicon reads a Chinese or Arabic line as no words at all; in a book declared otherwise — the
+  corpus lane declares the Arabic guide `ar` and the Chinese publication `zh-Hans` since #293 —
+  the sentence shape alone decides.
   This recovers 45,754 characters across eight of the eighteen corpus books, three quarters of the
   magazine's text among them. One cost is known and recorded: the magazine's recovered lines
   read in its columns' interleaved order (#174's defect, on text that used to be hidden inside

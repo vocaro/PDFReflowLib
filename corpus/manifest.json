@@ -994,6 +994,7 @@
       "bytes": 4156497,
       "sha256": "354effbbe38450664959b8832d136cfd158d3c17d1ba777b8b1e4a5b6aa36d54",
       "pages": 116,
+      "language": "ar",
       "provenance": "Arabic edition linked from the USCIS Settling in the U.S. page. InDesign CS6 export with embedded Arial CID fonts and ToUnicode maps.",
       "rightsBasis": "U.S. Government work (17 U.S.C. 105). USCIS website policies call site information public, but state some images are licensed to USCIS and are not in the public domain; the guide contains photographs and a card specimen. Not relicensed under MIT.",
       "rightsClearance": {
@@ -1014,8 +1015,8 @@
         21
       ],
       "downloadVerification": "Fresh download through tools/fetch_corpus.py into an empty temporary cache matched this identity on 2026-09-16; see measurements/corpus-candidates-30/verification.json.",
-      "reviewStatus": "Converted with EPUBCheck, progress and 256 MiB Mac RSS gate. Contract protects the Arabic contents heading, its entries' order and their own blocks, and page-21 Arabic text with its embedded English terms, form numbers, telephone number and parentheticals in the order the page sets them. Bidirectional ordering is qualified as of #41 on the two reviewed pages; the other 114 are unreviewed.",
-      "baselineStatus": "Baseline and reviewed contract recorded in measurements/uscis-m618-arabic-2015/record.md, restated over #41 in measurements/right-to-left-runs-and-rows/record.md; included in the corpus gate.",
+      "reviewStatus": "Converted with EPUBCheck, progress and 256 MiB Mac RSS gate, declared `ar` by the corpus lane since #293 (the manifest language field). Contract protects the Arabic contents heading, its entries' order and their own blocks, and page-21 Arabic text with its embedded English terms, form numbers, telephone number and parentheticals in the order the page sets them; re-reviewed against rendered source pages on the tagged run of 8faeaab. Bidirectional ordering is qualified as of #41 on the two reviewed pages; the other 114 are unreviewed.",
+      "baselineStatus": "Baseline and reviewed contract recorded in measurements/uscis-m618-arabic-2015/record.md, restated over #41 in measurements/right-to-left-runs-and-rows/record.md, and re-baselined on the tagged lane in measurements/uscis-m618-arabic-2015-language-tag/record.md; included in the corpus gate.",
       "memoryBudget": {
         "maxPeakRSSMiB": 256,
         "scope": "macOS 27 arm64 isolated release CLI, defaults; initial RSS regression ceiling, not a mobile device budget"
@@ -1037,6 +1038,7 @@
       "bytes": 2674617,
       "sha256": "7d1cff45bc567f1257ea1aa1e2ce67945aafb12708b2e22901ce6392436590c2",
       "pages": 36,
+      "language": "zh-Hans",
       "provenance": "IRS prior-year archive copy, byte-identical to irs-pdf/p596zhs.pdf when captured. Antenna House output with Noto Sans CJK Identity-H fonts and ToUnicode maps.",
       "rightsBasis": "IRS.gov use-of-content page: content created or maintained by federal employees in the course of their duties is not subject to copyright; copyrighted material must be cleared with its holder. Not relicensed under MIT.",
       "rightsClearance": {
@@ -1056,7 +1058,7 @@
         16
       ],
       "downloadVerification": "Fresh download through tools/fetch_corpus.py into an empty temporary cache matched this identity on 2026-09-16; see measurements/corpus-candidates-30/verification.json.",
-      "reviewStatus": "Converted with EPUBCheck, progress and 256 MiB Mac RSS gate. Contract protects page-16 CJK prose order and embedded Latin amounts. Rasterized prose (#36) and CJK spacing and heading splits (#42) are unqualified.",
+      "reviewStatus": "Converted with EPUBCheck, progress and 256 MiB Mac RSS gate, declared `zh-Hans` by the corpus lane since #293 (the manifest language field). Contract protects page-16 CJK prose order and embedded Latin amounts, the page-1 catalog footer and cover image, and the absence of the page-5 running foot; re-reviewed against rendered source pages on the tagged run of 8faeaab. Rasterized prose (#36) and CJK spacing and heading splits (#42) are unqualified; the cover's 目录 heading is lost (#243, #294).",
       "knownFidelityIssues": [
         {
           "page": 3,
@@ -1069,7 +1071,7 @@
           "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/42"
         }
       ],
-      "baselineStatus": "Baseline and reviewed contract recorded in measurements/irs-p596-zhs-2025/record.md; included in the corpus gate.",
+      "baselineStatus": "Baseline and reviewed contract recorded in measurements/irs-p596-zhs-2025/record.md and re-baselined on the tagged lane in measurements/irs-p596-zhs-2025-language-tag/record.md; included in the corpus gate.",
       "memoryBudget": {
         "maxPeakRSSMiB": 256,
         "scope": "macOS 27 arm64 isolated release CLI, defaults; initial RSS regression ceiling, not a mobile device budget"

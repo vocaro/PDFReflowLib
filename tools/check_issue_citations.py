@@ -62,6 +62,8 @@ HASH = re.compile(r'(?<![\w/#-])#(\d+)\b')
 # the issue, so the citation cannot quietly revert to reading like a live tracker (#234).
 ALLOWED = {
     # Fixed, and cited for what it established or where the behavior came from.
+    160: ('historical', 'the column-cut, hanging-entry and cross-figure continuation rules now in the tree'),
+    172: ('historical', 'the isolated-marker and detached-cover-label rules now in the tree'),
     7: ('historical', 'the text-layer quality rules #93/#7 introduced, which this library implements'),
     21: ('historical', 'the extraction gate, named by the issue that established it'),
     233: ('historical', 'the line-end hyphen a book encodes as another character, on main and named by its issue'),

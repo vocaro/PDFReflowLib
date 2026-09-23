@@ -530,7 +530,11 @@ Evidence: [structure-tags](../measurements/structure-tags/record.md),
   skipped and the page's typography is marked synthetic: layout treats it as ordinary prose, with
   no code or font-size heading inference (numbered lists keep their representation). Mixed
   visible/invisible text, text clipping and unsupported streams do not enter this path. This does
-  not recover headings from a scan or correct inherited transcription.
+  not recover headings from a scan. A separate invisible-word reader restores a missing space
+  only when complete word-show text matches the native line and a positive source gap separates
+  two alphanumeric words; visible typography rules remain separate. Unembedded standard Courier
+  has its stated 600-unit advance. Unknown state, shared line ownership and CJK word boundaries
+  decline the repair. See [invisible-word-spaces](../measurements/invisible-word-spaces/record.md).
 - The reader's own budget is 250,000 charged operations per page, counted across nested Form
   XObjects, alongside 10,000 painted regions, 128 saved graphics states and 12 nested forms
   (#13). It is not `ContentStreamWalk`'s budget above. Over about 5,300 cached corpus pages only
@@ -774,22 +778,20 @@ handwriting read at heading size stay out of the navigation.
 
 ### Pages whose writing is drawn (#176)
 
-A page whose text layer holds no letter at all (nothing, or only a folio: `reflowsNoWords`)
-reflows nothing of its own. In an English book, under an automatic policy, it is rendered at
-180 DPI and its text-shaped ink measured, ignoring everything inside placed raster images; when
-at least two rows (`minimumImageOnlyRows`) stand outside the layer's lines the page carries
-drawn text and is recognized like a page with no text layer at all. A page whose art forms no such
-row (a chart, an answer key of bare surds) keeps its crops, and so does a page whose only rows
-lie inside a photograph: writing the page draws is content its producer typeset; writing a
-photograph shows belongs to the picture, which the crop preserves. Recognition attaches the
-source-page reference in place of the crops. When recognition reads nothing, the page is left
-exactly as extracted, with its crops, and reports `ocrFailed` ("This page reflows no text of its
-own and its artwork holds writing, but recognition of the page failed or found no text; the
-artwork is preserved as images and its writing does not reflow."). A layer finding the page also
-carries is reported beside it, with the kept-as-extracted outcome, so the page can still be
-reviewed (#220). This check coexists with the
-inherited-layer check: a letterless page never has enough judged words to fail the word test,
-and its two or three rows do not reach the ink test's seven.
+A sparse text layer containing no words, or one short native word beside drawn writing, can
+leave typeset content unread. Under automatic policies, text-shaped ink is measured outside
+placed pictures and the existing text layer. At least two uncovered rows trigger recognition;
+this geometry check is independent of the declared language. Multiword native titles, long
+unsegmented script runs and URLs are not treated as a lone word.
+
+Recognized writing inside placed pictures is excluded. Exact native words and their styles
+survive; when recognition groups native and drawn words into one row, measured word boxes
+replace the corresponding OCR span with the native text, avoiding duplication. If ownership
+cannot be reconciled or recognition reads nothing outside pictures, the extracted page and its
+crops remain with the existing unread-writing warning. Successful recognition retains complete
+local writing crops, and the full-page reference when requested, beside the transcription.
+See [drawn-text-recovery](../measurements/drawn-text-recovery/record.md) and its
+[same-row verification](../measurements/drawn-text-recovery/same-row.md).
 
 ### OCRTextCoverage: ink measurement
 
@@ -1372,17 +1374,33 @@ row-major sort, one entry of each column at a time.
   entry's right edge, as an entry's tail does and a justified opening line does not; and the page
   hangs at least three entries on one and the same continuation edge.
 
+A full prose column can resume across its bottom figure and caption at the top of a matching
+next column. The unfinished sentence keeps its original paragraph position; the figure and
+caption stay separate. Matching prose on both sides must support the geometry, and headings,
+completed sentences, spanning figures or intervening prose prevent the join. See
+[column-figure-continuation](../measurements/column-figure-continuation/record.md).
+
+Opposite-side graphic labels can be split when content-stream show positions and measured
+selection rectangles establish unique ownership across a large gap. Original styled substrings
+are retained. An ampersand-led alphabetic label may continue along its shared right edge, so a
+right-aligned cover label stays whole without joining mathematical derivation steps. See
+[detached-cover-labels](../measurements/detached-cover-labels/record.md).
+
 ### Type sizes and headings
 
 - The page **body** is the character-weighted commonest size over every line, at least 4 pt. The
   **established body** is the commonest size among reflowable lines (text preserved inside
   images excluded, so a figure's small labels cannot promote surrounding prose) when at least
   three lines and 200 characters support it; a sparser page establishes none. The **heading body**
-  is the larger of the two.
+  is the larger of the two. If no body is established and at most two reflowable lines occupy
+  the page's dominant size, the heading estimate is capped by the larger of the document body
+  and the smallest reflowable size. This lets a long chapter title exceed its own estimate while
+  keeping repeated cover labels as prose; page geometry still uses the original body. See
+  [noaa-chapter-heading](../measurements/noaa-chapter-heading/record.md).
 - On a page that establishes no body of its own (a back cover, a cover with one short
   cross-reference line), the **document floor** is 110% of the document's body size (#186);
   otherwise zero.
-- The **heading threshold** is the largest of 125% of the page body, 110% of the heading body and
+- The **heading threshold** is the largest of 125% of the heading estimate, 110% of the heading body and
   the document floor. A line is heading-sized when it reaches the threshold, is under 200
   characters, opens with a capital, a digit or a mark unless it **stacks** with another
   display-size line (same size, directly beneath or above at ordinary leading, sharing the left

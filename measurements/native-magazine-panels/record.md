@@ -40,14 +40,14 @@ crop from any of its five pages is committed here.
 
 ## Safety and validation
 
-752 Swift tests passed. The focused source checks include all numbered issue cases, complete
+755 Swift tests passed after the NOAA source controls and upright quotation guard. The focused source checks include all numbered issue cases, complete
 caption and quotation assertions, native styles/metadata, merged cells, graphical chart lines,
 shared backgrounds spanning separate grids, and single-page furniture negatives. Independent
 review found and fixed three unsafe paint assumptions: pattern fills are not frames, a thin
 raster strip is not a vector divider, and a clip-sized radial figure is not a page backdrop.
 The full pipeline radial control retains its required image with `referenceImages: .never`.
 
-58 corpus Python tests passed. Both full affected sources pass their updated content contracts,
+58 corpus Python tests passed for the initial implementation; the final targeted corpus-content, runner and manifest checks passed all 46 tests. Both full affected sources pass their updated content contracts,
 resource gates, structural checks and EPUBCheck with the same final release executable. The
 machine-readable summary records one run, not a timing distribution: USDA 24 pages all reflow,
 with one recognized initial; TechPort five pages reflow with zero OCR. Native-text comparison
@@ -59,3 +59,16 @@ table and gallery text. The first 21-case broader run completed every conversion
 Remaining #214 work is separate: paragraph continuations across display/figure interruptions,
 Fed display-summary asides, and three line-end spellings that the current lexical policy cannot
 decide. Ordinary URL wrapping and unrelated list semantics are not changed here.
+
+
+The broader branch run completed all 21 cases with 17 content passes. The four content
+failures were: NOAA pages 8/48, Fed pages 13/46 and the newly recovered page-123 sidebar,
+Earthdata page 5's NASA label (the separate #192/#296 guard is absent from this branch), and
+TechPort's invalid single-cell contract (corrected and rerun successfully). NOAA's captured
+source controls now pass: dotted leaders remain separate until decoration classification,
+and a patterned panel retains its artwork while its independently proved paragraph reflows.
+The Fed page-123 source was rendered again: Box 7.1 actually precedes Interagency Initiatives.
+Its recovered text therefore belongs in the continuity assertion, which now pins the box's
+opening, introduction and closing paragraph as well as the following section. Reassessment
+leaves only Fed 13/46's body sizing failures; a separate follow-up owns that guard. Root's
+integrated corpus run remains required before closing #191.

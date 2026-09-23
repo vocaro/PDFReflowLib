@@ -74,6 +74,10 @@ enum EPUBTextEncoder {
         case let .heading(id, _, level):
             return SpinePacker.Piece(markup: "<h\(level) id=\"\(xml(id))\"\(dir)>\(payload)</h\(level)>\n",
                                      sourcePages: block.sourcePages, heading: (id, block.text))
+        case .aside:
+            return SpinePacker.Piece(markup: "<aside\(dir)><p>\(payload)</p></aside>\n", sourcePages: block.sourcePages, heading: nil)
+        case .quotation:
+            return SpinePacker.Piece(markup: "<blockquote\(dir)><p>\(payload)</p></blockquote>\n", sourcePages: block.sourcePages, heading: nil)
         case .preformatted:
             return SpinePacker.Piece(markup: "<pre\(dir)>\(payload)</pre>\n", sourcePages: block.sourcePages, heading: nil)
         case .listItem:
@@ -154,7 +158,7 @@ enum EPUBTextEncoder {
     static func payload(_ block: ReflowBlock, imagePaths: [String: String],
                         labels: [Int: String] = [:]) throws -> String {
         switch block.content {
-        case let .paragraph(text), let .heading(_, text, _): return inline(text, labels: labels)
+        case let .paragraph(text), let .quotation(text), let .aside(text), let .heading(_, text, _): return inline(text, labels: labels)
         case let .preformatted(text): return inline(text, labels: labels)
         case let .listItem(item): return inline(item.text, labels: labels)
         case let .table(value): return table(value, labels: labels)

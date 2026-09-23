@@ -103,7 +103,7 @@ struct ReflowDocument: Sendable, Equatable {
                           table.rows.allSatisfy({ $0.allSatisfy { $0.columns >= 1 } }),
                           (0...table.rows.count).contains(table.headerRows)
                     else { throw ValidationError.invalidTable }
-                case .paragraph, .preformatted, .listItem:
+                case .paragraph, .quotation, .aside, .preformatted, .listItem:
                     break
                 }
             }
@@ -363,6 +363,8 @@ struct ReflowBlock: Sendable, Equatable {
     }
     enum Content: Sendable, Equatable {
         case paragraph(InlineText)
+        case quotation(InlineText)
+        case aside(InlineText)
         case heading(id: String, text: InlineText, level: Int = 2)
         /// Text whose line breaks are significant: monospaced code, a row of a table the page
         /// set without rules, and a list-shaped line `ListBuilder` did not verify as an item.
@@ -396,7 +398,7 @@ struct ReflowBlock: Sendable, Equatable {
 
     var text: String {
         switch content {
-        case let .paragraph(text), let .heading(_, text, _): text.text
+        case let .paragraph(text), let .quotation(text), let .aside(text), let .heading(_, text, _): text.text
         case let .preformatted(text): text.text
         case let .listItem(item): item.text.text
         case let .table(table): table.text
@@ -405,7 +407,7 @@ struct ReflowBlock: Sendable, Equatable {
     }
     var sourcePages: [Int] {
         switch content {
-        case let .paragraph(text), let .heading(_, text, _): text.sourcePages
+        case let .paragraph(text), let .quotation(text), let .aside(text), let .heading(_, text, _): text.sourcePages
         case let .sourcePage(page): [page]
         case let .preformatted(text): text.sourcePages
         case let .listItem(item): item.text.sourcePages
@@ -415,7 +417,7 @@ struct ReflowBlock: Sendable, Equatable {
     }
     var hasReflowedText: Bool {
         switch content {
-        case .paragraph, .heading, .preformatted, .listItem, .table: true
+        case .paragraph, .quotation, .aside, .heading, .preformatted, .listItem, .table: true
         case .image, .sourcePage: false
         }
     }

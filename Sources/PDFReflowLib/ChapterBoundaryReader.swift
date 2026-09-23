@@ -64,7 +64,7 @@ enum ChapterBoundaryReader {
     private static func parse(_ label: String) -> (number: Int, title: String, marker: String?)? {
         guard label.count <= 512 else { return nil }
         let collapsed = label.split(whereSeparator: \.isWhitespace).joined(separator: " ")
-        guard let match = collapsed.firstMatch(of: /^([Cc][Hh][Aa][Pp][Tt][Ee][Rr])\s+([1-9][0-9]*|[IVXLCDMivxlcdm]+)(?:[.:]\s*|\s+[-–—]\s+|\s+)(.+)$/) else { return nil }
+        guard let match = collapsed.firstMatch(of: #/^([Cc][Hh][Aa][Pp][Tt][Ee][Rr])\s+([1-9][0-9]*|[IVXLCDMivxlcdm]+)(?:[.:]\s*|\s+[-–—]\s+|\s+)(.+)$/#) else { return nil }
         let numeral = String(match.2)
         let number = Int(numeral) ?? roman(numeral)
         let title = String(match.3).trimmingCharacters(in: .whitespacesAndNewlines)

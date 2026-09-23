@@ -373,8 +373,9 @@ def assess(case, contract, result, report, pages, markers, *, documents=(),
             checks += 1
             if not any(normalized(phrase) in paragraph for paragraph in page.get('paragraphs', [])):
                 errors.append(f'Page {number}: missing paragraph {phrase!r}')
-        for kind in ('asides', 'quotations'):
-            for phrase in item.get(kind, []):
+        for kind, phrases in (('asides', item.get('asides', [])),
+                              ('quotations', item.get('quotations', []))):
+            for phrase in phrases:
                 if not isinstance(phrase, str) or not normalized(phrase):
                     raise ValueError('Empty or invalid ' + kind + ' phrase')
                 checks += 1

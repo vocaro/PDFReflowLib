@@ -79,9 +79,26 @@ enum PageBackdrop {
         }
         let shafts = paints.filter { shaft in !shaft.image && shaft.vertices.count == 2
             && heads.contains { head in meets(shaft, head) } }
+        // A connector between two separate text panels states a diagram relationship.
+        // Preserve that connected graph, including rectangular node outlines; a lone text
+        // box or an arrow outside every box supplies no such evidence.
+        var connected: [GraphicsReader.Paint] = []
+        func retainGraph(_ connector: [GraphicsReader.Paint]) {
+            let endpoints = connector.flatMap(\.vertices)
+            let touched = panels.filter { panel in
+                endpoints.contains { panel.rect.insetBy(dx: -3, dy: -3).contains($0) }
+            }
+            guard touched.contains(where: { a in touched.contains { b in !a.rect.intersects(b.rect) } }) else { return }
+            connected += connector + touched
+        }
+        for shaft in paints where !shaft.image && shaft.vertices.count == 2 {
+            retainGraph([shaft] + heads.filter { meets(shaft, $0) })
+        }
+        for arrow in paints where isArrowPolygon(arrow.vertices) { retainGraph([arrow]) }
         let art = paints.filter { paint in
             if paint.image { return true }
             if PageDiagnosis.coversPage(paint.rect, bounds: original.bounds) { return false }
+            if connected.contains(paint) { return true }
             if panels.contains(paint), paint.roundedRectangle != true { return false }
             if shafts.contains(paint) || isArrowPolygon(paint.vertices) { return false }
             if heads.contains(paint), shafts.contains(where: { meets($0, paint) }) { return false }

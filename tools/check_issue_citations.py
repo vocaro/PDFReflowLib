@@ -236,6 +236,8 @@ ALLOWED = {
         'on main and named by its issue'),
     289: ('historical', "the candidate band read against a book's own page image where the sheet "
         'carries one, on main and named by its issue'),
+    290: ('historical', 'a bare number in the outer margin refused the title reading, on main and '
+        'named by its issue'),
 
     # Closed, but the defect is still in `main`; the prose says so and names the commit. #5 and
     # #11 join this group from #236's audit: both were read against `main` — Warren and NOAA

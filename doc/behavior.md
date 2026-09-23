@@ -1590,7 +1590,18 @@ Evidence: [initial-led-lines](../measurements/initial-led-lines/record.md),
   those is a word carrying on. Across a page the same reading admits a preformatted anchor that
   ends broken, which `appendPage` alone reaches.
 
+- A block whose whole text is **one sentence-ending mark** — `.`, `?`, `!`, or the full stop
+  Arabic and Urdu draw — is that sentence's own stop and joins the block above it, where that
+  block is text on the same page which does not already end in one (#291). Writing set right to
+  left puts the mark at the far left of the last line, and the extractor hands it back as a line
+  of its own: the USCIS guide reflowed four as blocks and one of those as a heading. #41 reaches
+  such a stop only where the extractor split one printed row. One mark and one only — an ellipsis
+  is an elision the book prints, a rule of dashes is a footnote's rule, `* * *` is a section
+  break, and `=`, `·` and `−` are a worked example's operators — and a picture between the stop
+  and its sentence is reason to leave it where it stands.
+
 Evidence: [spine-continuity](../measurements/spine-continuity/record.md),
+[a-sentences-own-stop](../measurements/a-sentences-own-stop/record.md),
 [broken-numbered-items](../measurements/broken-numbered-items/record.md),
 [items-that-carry-their-word](../measurements/items-that-carry-their-word/record.md),
 [line-end-hyphen-substitutes](../measurements/line-end-hyphen-substitutes/record.md),

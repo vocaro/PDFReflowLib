@@ -1223,7 +1223,62 @@ struct BlockAssembler {
         flushNote()
         flushParagraph()
         carryBrokenItems()
+        carryStrandedStops()
         return blocks
+    }
+
+    /// A sentence's own full stop is not a block.
+    ///
+    /// The USCIS Arabic guide sets its writing right to left, so the mark that ends a sentence
+    /// sits at the far left of the last line and PDFKit hands it back as a line of its own,
+    /// standing clear of the rest. #41 puts such a stop back against its sentence where the
+    /// extractor split one printed row, with the page's own space; a stop that is a whole line is
+    /// no piece of a row, so nothing reached it and it became a block — four of them in that
+    /// book, and one of those a heading, where the same page sets the same kind of heading with
+    /// its stop attached (#291).
+    ///
+    /// One mark and one only: `.`, `?` or `!`, or the full stop Arabic and Urdu draw. An ellipsis
+    /// is an elision the book prints — the 9/11 report sets three inside quotations — a rule of
+    /// dashes is a footnote's rule, `* * *` is a section break, and `=`, `·` and `−` are the
+    /// operators of a worked example. Each of those is a block the page meant, and none is one
+    /// mark.
+    ///
+    /// It joins the block directly above it, and only where that block is text the sentence could
+    /// have come from and does not already end in a stop of its own. A picture between them is
+    /// reason to leave it: the guide's page 86 sets its stop between two preserved regions, and
+    /// which sentence it closes is not something this rule can see.
+    private mutating func carryStrandedStops() {
+        let stops: Set<Character> = [".", "?", "!", "\u{06D4}"]
+        var index = blocks.count - 1
+        while index > 0 {
+            defer { index -= 1 }
+            let text = blocks[index].text.trimmingCharacters(in: .whitespacesAndNewlines)
+            guard text.count == 1, let stop = text.first, stops.contains(stop) else { continue }
+            guard blocks[index].page == blocks[index - 1].page else { continue }
+            let above = blocks[index - 1].text.trimmingCharacters(in: .whitespacesAndNewlines)
+            guard let last = above.last, !stops.contains(last), above.contains(where: \.isLetter)
+            else { continue }
+            // The stop keeps the run style the page drew it in, as the rest of its sentence does.
+            let mark: InlineText
+            switch blocks[index].content {
+            case let .paragraph(text): mark = text
+            case let .heading(_, text, _): mark = text
+            default: continue
+            }
+            switch blocks[index - 1].content {
+            case let .paragraph(carried):
+                var joined = carried
+                joined.append(mark)
+                blocks[index - 1].content = .paragraph(joined)
+            case let .heading(id, carried, level):
+                var joined = carried
+                joined.append(mark)
+                blocks[index - 1].content = .heading(id: id, text: joined, level: level)
+            default:
+                continue
+            }
+            blocks.remove(at: index)
+        }
     }
 
     /// An item the page broke mid-word keeps the rest of its word, wherever the break falls.

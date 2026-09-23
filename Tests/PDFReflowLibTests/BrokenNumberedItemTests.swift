@@ -208,3 +208,44 @@ func alistWhoseItemsEachEndInAHyphenKeepsThemApart() {
     #expect(preformatted(blocks) == texts)
     #expect(paragraphs(blocks).isEmpty)
 }
+
+/// A sentence's own full stop is not a block. The USCIS Arabic guide sets its writing right to
+/// left, so the mark that ends a sentence sits at the far left of the last line and PDFKit hands
+/// it back as a line of its own; four of them reflowed as blocks, and one as a heading (#291).
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/291"))
+func aSentencesOwnStopIsNotABlock() {
+    let bounds = CGRect(x: 0, y: 0, width: 612, height: 792)
+    func page(_ lines: [TextLine]) -> PageContent {
+        PageContent(number: 1, bounds: bounds, lines: lines, graphics: [])
+    }
+    func texts(_ lines: [TextLine]) -> [String] {
+        var warnings: [ConversionWarning] = []
+        return LayoutReconstructor.blocks(page: page(lines), images: [], vocabulary: [],
+                                          warnings: &warnings).map(\.text)
+    }
+    func line(_ text: String, y: CGFloat, x: CGFloat = 60, width: CGFloat = 300,
+              size: CGFloat = 10) -> TextLine {
+        TextLine(text: text, rect: CGRect(x: x, y: y, width: width, height: size * 1.2), fontSize: size)
+    }
+    // The stop stands clear of the sentence it closes, as its own line.
+    var lines = (0..<4).map { line("A sentence of the page's own prose, number \($0), filling its measure",
+                                   y: 700 - CGFloat($0) * 14) }
+    lines.append(line("and the last line of it stops here", y: 644))
+    lines.append(line(".", y: 620, x: 400, width: 4))
+    // It joins the sentence it closes, with nothing between them, and is no longer a block.
+    let joined = texts(lines)
+    #expect(joined.last?.hasSuffix("and the last line of it stops here.") == true)
+    #expect(!joined.contains("."))
+    // A mark that is not a stop stays a block of its own: an elision the book prints, a footnote's
+    // rule, a section break, the operator of a worked example.
+    for mark in ["...", "——————", "* * *", "=", "\u{2212}"] {
+        var other = lines.dropLast()
+        other.append(line(mark, y: 620, x: 400, width: 20))
+        #expect(texts(Array(other)).last == mark, Comment(rawValue: mark))
+    }
+    // And a stop under a block that already ends in one is that block's own business.
+    var closed = (0..<4).map { line("A sentence of the page's own prose, number \($0), which ends here.",
+                                    y: 700 - CGFloat($0) * 14) }
+    closed.append(line(".", y: 632, x: 400, width: 4))
+    #expect(texts(closed).last == ".")
+}

@@ -1,0 +1,98 @@
+{
+  "earthdata": {
+    "case": "ntrs-20180003024-earthdata-slides-2018",
+    "sourceSHA256": "f0a1ea3f5711228a9de2544fd1a94b05cfb8d9323fe3a4c253542f5a6ead5c94",
+    "pages": 21,
+    "baselineConverterSHA256": "9c67cdec91f1098b0fe15d8a7a70736906601df3cb7f15ec3d7e2b06366c2f34",
+    "candidateConverterSHA256": "9f98d78b3dcd50568e04788923d275a2f1d32aab5a80e698b1fc2be0f73cdf9b",
+    "options": "library defaults",
+    "recognizedPages": 1,
+    "candidatePeakRSSBytes": 108593152,
+    "baselinePassed": true,
+    "candidatePassed": true,
+    "epubcheckExitCode": 0,
+    "contentAssessment": {
+      "case": "ntrs-20180003024-earthdata-slides-2018",
+      "passed": true,
+      "reviewPages": [
+        1,
+        5,
+        9
+      ],
+      "contentChecks": 22,
+      "spineBoundariesCrossed": 0,
+      "errors": [],
+      "scope": "Reviewed text/order/script-context/image-presence, spine-boundary continuity and source-region image checks; not full-book fidelity or image legibility qualification."
+    },
+    "failedControl": {
+      "case": "ntrs-20180003024-earthdata-slides-2018",
+      "passed": false,
+      "reviewPages": [
+        1,
+        5,
+        9
+      ],
+      "contentChecks": 22,
+      "spineBoundariesCrossed": 0,
+      "errors": [
+        "Page 5: unwanted text 'NASA'"
+      ],
+      "scope": "Reviewed text/order/script-context/image-presence, spine-boundary continuity and source-region image checks; not full-book fidelity or image legibility qualification."
+    }
+  },
+  "arabic": {
+    "case": "uscis-m618-arabic-2015",
+    "sourceSHA256": "354effbbe38450664959b8832d136cfd158d3c17d1ba777b8b1e4a5b6aa36d54",
+    "pages": 116,
+    "baselineConverterSHA256": "9c67cdec91f1098b0fe15d8a7a70736906601df3cb7f15ec3d7e2b06366c2f34",
+    "candidateConverterSHA256": "9f98d78b3dcd50568e04788923d275a2f1d32aab5a80e698b1fc2be0f73cdf9b",
+    "options": "library defaults with --language ar",
+    "recognizedPages": 0,
+    "candidatePeakRSSBytes": 175341568,
+    "baselinePassed": true,
+    "candidatePassed": true,
+    "epubcheckExitCode": 0,
+    "contentAssessment": {
+      "case": "uscis-m618-arabic-2015",
+      "passed": true,
+      "reviewPages": [
+        5,
+        21
+      ],
+      "contentChecks": 26,
+      "spineBoundariesCrossed": 0,
+      "errors": [],
+      "scope": "Reviewed text/order/script-context/image-presence, spine-boundary continuity and source-region image checks; not full-book fidelity or image legibility qualification."
+    },
+    "normalizedArchiveAndReportIdentity": "identical (tools/epub_identity.py)"
+  },
+  "chinese": {
+    "case": "irs-p596-zhs-2025",
+    "sourceSHA256": "7d1cff45bc567f1257ea1aa1e2ce67945aafb12708b2e22901ce6392436590c2",
+    "pages": 36,
+    "baselineConverterSHA256": "9c67cdec91f1098b0fe15d8a7a70736906601df3cb7f15ec3d7e2b06366c2f34",
+    "candidateConverterSHA256": "9f98d78b3dcd50568e04788923d275a2f1d32aab5a80e698b1fc2be0f73cdf9b",
+    "options": "library defaults with --language zh-Hans",
+    "recognizedPages": 0,
+    "candidatePeakRSSBytes": 182288384,
+    "baselinePassed": true,
+    "candidatePassed": true,
+    "epubcheckExitCode": 0,
+    "contentAssessment": {
+      "case": "irs-p596-zhs-2025",
+      "passed": true,
+      "reviewPages": [
+        1,
+        16,
+        5,
+        4,
+        17
+      ],
+      "contentChecks": 17,
+      "spineBoundariesCrossed": 0,
+      "errors": [],
+      "scope": "Reviewed text/order/script-context/image-presence, spine-boundary continuity and source-region image checks; not full-book fidelity or image legibility qualification."
+    },
+    "normalizedArchiveAndReportIdentity": "identical (tools/epub_identity.py)"
+  }
+}

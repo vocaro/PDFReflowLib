@@ -181,6 +181,7 @@ func aBackdropRetainsNativePanelsAndCompleteDiagramCrops(number: Int) throws {
         // A crop that meets a visible rounded panel must preserve its entire shape.
         for panel in fixture.trimmedPaints where panel.roundedRectangle == true {
             #expect(crops.contains { $0.contains(panel.rect) })
+            #expect(!crops.contains { $0.intersects(panel.rect) && !$0.contains(panel.rect) })
         }
         var warnings: [ConversionWarning] = []
         let blocks = LayoutReconstructor.blocks(page: page, images: crops.map { ($0, "figure.png") },

@@ -19,7 +19,7 @@ struct PageEvidence: Equatable, Sendable {
     /// The image-backed layer failed the plausibility test (#93, #7); nil when it passed or was
     /// not judged.
     var implausibleLayer: TextLayerPlausibility.Finding?
-    /// The page reflows no word of its own and its artwork carries rows of writing (#176).
+    /// The sparse layer leaves rows of drawn writing unaccounted for (#176, #192).
     var drawnText: Bool
 
     /// The page has no text worth keeping under an automatic policy: nothing, mostly
@@ -69,7 +69,7 @@ enum PageDiagnosis {
     ///   figure's lettering does not: `faa-phak-8083-25c` page 475's sign legend runs two lines an
     ///   entry, an axis or a key sets each item on its own short line at its own width, and the
     ///   scanned tables of `cia-blue-book-14-1955` read far below half English. Only books
-    ///   declared English are judged, as #93's and #176's readings of the same pages are.
+    ///   declared English are judged, as #93's reading of the same pages is.
     ///
     /// The picture is still cropped and shown; what changes is only that its prose also reflows.
     static func proseOverPictures(lines: [TextLine], pictures: [CGRect], crops: [CGRect],
@@ -198,14 +198,11 @@ enum PageDiagnosis {
             ? try TextLayerPlausibility.judge(lines: content.lines, language: options.language) { try measureInk([]) }
             : nil
         let noText = raw.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
-        // A page that reflows no word of its own, but draws writing over its ground, has no
-        // text layer to judge: its sentence is artwork (#176). `judgeImageOnly` gates on
-        // `reflowsNoWords`, which only a page with no letters at all passes, so it never fires
-        // on #93's or #38's territory; candidacy does not exclude `imageBackedText`, since a
-        // born-digital page with a full-bleed background paint reads as image-backed on that
-        // signal exactly like a scan does. Only automatic policies ask: `.always` recognizes
-        // the page anyway and `.never` keeps it.
-        let drawsTextCandidate = !noText && !damagedEncoding && !content.requiresPageImage && options.ocr.isAutomatic
+        // A sparse layer may omit writing drawn as outlines, whatever its language (#192).
+        // A layer already diagnosed as damaged belongs to the existing replacement/comparison
+        // policy, not to the supplemental drawn-writing path. Pictures remain excluded.
+        let drawsTextCandidate = !noText && !damagedEncoding && implausibleLayer == nil
+            && !content.requiresPageImage && options.ocr.isAutomatic
         let drawnText = try drawsTextCandidate
             && TextLayerPlausibility.judgeImageOnly(lines: content.lines, language: options.language) {
                 try measureInk(extracted.placedImages)

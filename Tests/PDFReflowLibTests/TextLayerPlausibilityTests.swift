@@ -46,13 +46,9 @@ import Testing
     #expect(TextLayerPlausibility.inkFinding(measurement(rows: 7, uncovered: 90), englishWords: 7) == nil)
 }
 
-// #7's `RecognitionPlan.Mode.compare` (misread-in-place) and #176's `drawnText` candidacy (`reflowsNoWords`) are
-// gated on opposite ends of the same word count, so a page can never trigger both at once: a
-// `.misreadWords` finding needs `judged >= minimumJudgedWords` (20), while `reflowsNoWords` holds
-// only when literally no line has a single letter, which leaves the layer's `words`/`judged`
-// counts at zero (`wordCounts` drops any token with no letter before it ever reaches a word
-// bucket). This is a structural proof, not a sampled negative control: the two thresholds cannot
-// both be satisfied by the same `lines`.
+// A layer with no letters cannot trigger the lexicon's misread-word judgment. Drawn-text
+// recovery also admits sparse worded layers now; PageDiagnosis explicitly excludes layers
+// that have already received an implausibility finding (#192).
 @Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/93")) func misreadInPlaceAndReflowsNoWordsCannotBothHoldForTheSameLines() {
     let noLetters = [TextLine(text: "5", rect: .zero, fontSize: 10), TextLine(text: "10-12", rect: .zero, fontSize: 10),
                      TextLine(text: "37) 5 2 3", rect: .zero, fontSize: 10)]
@@ -562,14 +558,20 @@ func aLightOnDarkPageIsJudgedForWritingAReadingLeftOut() {
     #expect(TextLayerPlausibility.carriesDrawnText(measurement(3)))
     #expect(!TextLayerPlausibility.carriesDrawnText(measurement(1)))  // one row is a figure's label
     #expect(!TextLayerPlausibility.carriesDrawnText(measurement(0)))  // an answer key the layer covers
-    // Only English books are judged, and a layer holding a word is never rendered.
+    // Sparse layers are judged in every language, including a layer holding a real word.
     var renders = 0
     let writing = measurement(3)
     #expect(TextLayerPlausibility.judgeImageOnly(lines: [], language: "en") { renders += 1; return writing })
-    #expect(!TextLayerPlausibility.judgeImageOnly(lines: [], language: "ar") { renders += 1; return writing })
+    #expect(TextLayerPlausibility.judgeImageOnly(lines: [], language: "ar") { renders += 1; return writing })
     let worded = [TextLine(text: "Goals", rect: CGRect(x: 0, y: 0, width: 10, height: 10), fontSize: 10)]
-    #expect(!TextLayerPlausibility.judgeImageOnly(lines: worded, language: "en") { renders += 1; return writing })
-    #expect(renders == 1)
+    #expect(TextLayerPlausibility.judgeImageOnly(lines: worded, language: "en") { renders += 1; return writing })
+    for text in ["www.uscis.gov", "A complete native title", String(repeating: "字", count: 33)] {
+        let lines = [TextLine(text: text, rect: .zero, fontSize: 10)]
+        #expect(!TextLayerPlausibility.judgeImageOnly(lines: lines, language: "zh-Hans") {
+            renders += 1; return writing
+        })
+    }
+    #expect(renders == 3)
 }
 
 // MARK: - End to end
@@ -631,12 +633,12 @@ private func drawnTextPDF(sentence: [String], folio: String?, background: CGFloa
 
 private let question = ["How do we support user analysis", "of very large data volumes?"]
 
-private func reflow(_ data: Data, policy: ConversionOptions.OCRPolicy = .automatic) async throws
+private func reflow(_ data: Data, policy: ConversionOptions.OCRPolicy = .automatic, language: String = "en") async throws
     -> (result: PDFReflowLibPipeline.Result, text: String) {
     let dir = try testPDFDirectory(); defer { try? FileManager.default.removeItem(at: dir) }
     let source = dir.appendingPathComponent("source.pdf")
     try data.write(to: source)
-    var options = ConversionOptions(); options.ocr = policy
+    var options = ConversionOptions(); options.ocr = policy; options.language = language
     let result = try await PDFReflowLibPipeline.reconstruct(from: source, options: options,
         workspace: dir.appendingPathComponent("work"), progress: { _ in })
     return (result, result.book.blocks.map(\.text).joined(separator: " "))
@@ -1062,4 +1064,15 @@ func aMisreadCarbonTypescriptIsReplacedByARecognitionThatReadsBetter() throws {
                                          judge: .english(language: "en"))
     #expect(kept.disposition == .keptLayer)
     #expect(kept.warnings.contains { if case .implausibleTextLayer = $0 { true } else { false } })
+}
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/192")) func drawnWritingIsRecoveredBesideARealWordInAnyDeclaredLanguage() async throws {
+    let slide = try drawnTextPDF(sentence: question, folio: "Goals", background: 0.25, ink: 1)
+    for language in ["en", "ar", "zh-Hans"] {
+        let (result, text) = try await reflow(slide, language: language)
+        #expect(result.recognizedPageCount == 1)
+        #expect(text.contains("Goals"))
+        #expect(text.lowercased().contains("large data volumes"), "\(language): \(text)")
+        #expect(result.imageCount >= 2)
+    }
 }

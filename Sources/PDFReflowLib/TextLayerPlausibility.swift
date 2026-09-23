@@ -30,12 +30,11 @@ import PDFKit
 ///   `OCRTextCoverage`; the layer fails when its lines leave at least three quarters of that ink
 ///   and at least seven text rows uncovered, and it holds fewer English words than those rows.
 ///
-/// Only English (`en`, `en-*`) is judged; the lexicon and the word classification are
+/// Only English (`en`, `en-*`) inherited layers are judged; the lexicon and word classification are
 /// `EnglishText`'s (no network or download), and without a lexicon only the ink test runs.
 ///
-/// The same ink evidence answers the opposite question (#176): a page with no text layer worth
-/// reflowing, whose art is writing, is an image-only page and is recognized like a page with no
-/// text layer at all. See `judgeImageOnly`.
+/// The same ink evidence also finds drawn writing beside a folio or a lone word (#176, #192).
+/// That separate geometry-only test is language-independent. See `judgeImageOnly`.
 enum TextLayerPlausibility {
     enum Finding: Equatable, Sendable {
         /// `english` of `judged` words are English words.
@@ -94,13 +93,15 @@ enum TextLayerPlausibility {
         measurement.uncoveredRows >= minimumImageOnlyRows
     }
 
-    /// Whether a page that reflows no words is an image-only page whose writing should be
-    /// recognized. `measureInk` renders the page, measures its lines' coverage and is the caller's
-    /// place to set the page's pictures aside. Only books declared English are judged: the rule and
-    /// its thresholds were reviewed on English pages alone (#176).
+    /// A lone word is no more proof of a complete layer than a folio (#192). The
+    /// gate counts letter runs, independent of the declared language or a lexicon. A URL
+    /// and a multiword title are not lone words: recognizing those pages on this weak ink
+    /// evidence would pull map labels and vector-seal lettering into prose. A single run's
+    /// length is bounded as well, since CJK sentences need not have spaces between words.
     static func judgeImageOnly(lines: [TextLine], language: String,
                                measureInk: () throws -> OCRTextCoverage.Measurement?) rethrows -> Bool {
-        guard EnglishText.isDeclared(language), reflowsNoWords(lines),
+        let words = lines.flatMap { $0.text.split(whereSeparator: { !$0.isLetter }) }
+        guard words.count <= 1, (words.first?.count ?? 0) <= 32,
               let measurement = try measureInk() else { return false }
         return carriesDrawnText(measurement)
     }

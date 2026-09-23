@@ -87,7 +87,9 @@ enum PDFReflowLibPipeline {
                 await progress(.init(stage: .recognizing, fractionCompleted: ProgressBudget.pipeline(extractedPages: i, of: total),
                     page: i + 1, totalPages: total))
                 do {
-                    outcome = .read(try await recognize(try document.page(at: i), options))
+                    let reading = try await recognize(try document.page(at: i), options)
+                    outcome = .read(pageEvidence.drawnText
+                        ? DrawnTextRecovery.reading(reading, on: extracted.content) : reading)
                 } catch is CancellationError { throw CancellationError() }
                 catch {
                     try Task.checkCancellation()
@@ -96,6 +98,9 @@ enum PDFReflowLibPipeline {
             }
             let resolution = RecognitionPolicy.resolve(plan, evidence: pageEvidence, outcome: outcome, judge: judge)
             resolution.disposition.apply(to: &content)
+            if pageEvidence.drawnText, case .replaced = resolution.disposition {
+                DrawnTextRecovery.preserveArtwork(in: &content, extracted: extracted.content)
+            }
             warnings += resolution.warnings.map { ConversionWarnings.warning($0, page: i + 1, options: options) }
             // Retained unreadable text supplies no hyphen-repair vocabulary (#38).
             try evidence.collect(content, pageIndex: i, suppliesVocabulary: !pageEvidence.damagedEncoding || content.recognized,
@@ -177,6 +182,12 @@ enum PDFReflowLibPipeline {
                     let includeReference = options.referenceImages == .always
                         || (options.referenceImages == .automatic && content.preservePageReference)
                     if includeReference {
+                        for rect in content.recognizedArtwork {
+                            pageBlocks.append(LayoutReconstructor.imageBlock(
+                                assetID: try assets.save(page: page, rect: rect,
+                                    drawnFromImage: pagesDrawnFromImage.contains(i)),
+                                page: i + 1, describing: "Drawn writing from page \(i + 1)"))
+                        }
                         pageBlocks.append(LayoutReconstructor.imageBlock(
                             assetID: try assets.save(page: page, rect: content.bounds, fullPage: true,
                                                      drawnFromImage: pagesDrawnFromImage.contains(i)),

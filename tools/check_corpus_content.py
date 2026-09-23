@@ -30,7 +30,7 @@ CONTRACT_CHECK_TYPES = {'spineContinuity': 'sequence'}
 PAGE_CHECK_TYPES = {
     'text': 'sequence', 'orderedText': 'sequence', 'absentText': 'sequence',
     'headings': 'sequence', 'paragraphs': 'sequence', 'continuedParagraphs': 'sequence',
-    'preformatted': 'sequence', 'lists': 'sequence',
+    'preformatted': 'sequence', 'lists': 'sequence', 'asides': 'sequence', 'quotations': 'sequence',
     'scripts': 'sequence', 'imageRegions': 'sequence', 'tableRows': 'sequence',
     'minimumImages': 'presence', 'warningCodesAnyOf': 'presence', 'absentWarningCodes': 'presence',
 }
@@ -80,6 +80,7 @@ def read_spine(path, *, max_entries=DEFAULT_MAX_ENTRIES,
     heading_id = 0
     paragraph_id = 0
     item_id = 0
+    display_id = 0
     # Every list element in document order: its kind, its start, its items' whole text and the
     # page each item opens on (#292). A list is reported on every page one of its items opens on.
     lists = []
@@ -92,7 +93,7 @@ def read_spine(path, *, max_entries=DEFAULT_MAX_ENTRIES,
             document = {'name': name, 'text': '', 'pages': [] if current is None else [current]}
             documents.append(document)
 
-            def append(text, script=None, heading=None, paragraph=None, item=None):
+            def append(text, script=None, heading=None, paragraph=None, item=None, display=None):
                 if not text:
                     return
                 document['text'] += text
@@ -106,6 +107,9 @@ def read_spine(path, *, max_entries=DEFAULT_MAX_ENTRIES,
                         page['paragraphs'][paragraph] = page['paragraphs'].get(paragraph, '') + text
                     if item is not None:
                         page['preformatted'][item] = page['preformatted'].get(item, '') + text
+                    if display is not None:
+                        kind, key = display
+                        page[kind][key] = page[kind].get(key, '') + text
                     if script:
                         spans = page['scripts']
                         if spans and spans[-1]['tag'] == script and spans[-1]['end'] == start:
@@ -113,8 +117,8 @@ def read_spine(path, *, max_entries=DEFAULT_MAX_ENTRIES,
                         else:
                             spans.append({'tag': script, 'start': start, 'end': start + len(text)})
 
-            def walk(element, script=None, heading=None, paragraph=None, item=None):
-                nonlocal current, heading_id, paragraph_id, item_id
+            def walk(element, script=None, heading=None, paragraph=None, item=None, display=None):
+                nonlocal current, heading_id, paragraph_id, item_id, display_id
                 page = epub.page_boundary(element)
                 if page is not None:
                     if page in pages:
@@ -123,7 +127,8 @@ def read_spine(path, *, max_entries=DEFAULT_MAX_ENTRIES,
                     markers.append(current)
                     document['pages'].append(current)
                     pages[current] = {'text': '', 'images': [], 'scripts': [], 'headings': {},
-                                      'paragraphs': {}, 'preformatted': {}, 'tableRows': [], 'lists': []}
+                                      'paragraphs': {}, 'preformatted': {}, 'tableRows': [], 'lists': [],
+                                      'asides': {}, 'quotations': {}}
                 # A table row, read as the cells it holds. A `tableRows` expectation names a whole
                 # row, so a cell lost from a table changes the row's length and is caught (#210).
                 if element.tag == HTML + 'tr' and current is not None:
@@ -148,6 +153,9 @@ def read_spine(path, *, max_entries=DEFAULT_MAX_ENTRIES,
                 if element.tag == HTML + 'pre':
                     item_id += 1
                     item = item_id
+                if element.tag in (HTML + 'aside', HTML + 'blockquote'):
+                    display_id += 1
+                    display = ('asides' if element.tag == HTML + 'aside' else 'quotations', display_id)
                 if element.tag in LISTS:
                     # A list holds only items (#292): a page marker or a block directly inside one
                     # is a conformance error, and the text of a list is read item by item. An
@@ -172,15 +180,15 @@ def read_spine(path, *, max_entries=DEFAULT_MAX_ENTRIES,
                                     break
                         shape['items'].append(normalized(''.join(child.itertext())))
                         shape['pages'].append(page)
-                        walk(child, script, heading, paragraph, item)
-                        append(child.tail, script, heading, paragraph, item)
+                        walk(child, script, heading, paragraph, item, display)
+                        append(child.tail, script, heading, paragraph, item, display)
                     return
-                append(element.text, script, heading, paragraph, item)
+                append(element.text, script, heading, paragraph, item, display)
                 for child in element:
-                    walk(child, script, heading, paragraph, item)
-                    append(child.tail, script, heading, paragraph, item)
+                    walk(child, script, heading, paragraph, item, display)
+                    append(child.tail, script, heading, paragraph, item, display)
                 if element.tag in BLOCKS:
-                    append(' ')
+                    append(' ', display=display)
 
             walk(tree.find(HTML + 'body'))
     for page in pages.values():
@@ -190,6 +198,8 @@ def read_spine(path, *, max_entries=DEFAULT_MAX_ENTRIES,
                             'after': normalized(raw[span['end']:span['end'] + 128])}
                            for span in page['scripts']]
         page['text'] = normalized(raw)
+        for kind in ('asides', 'quotations'):
+            page[kind] = [normalized(text) for text in page[kind].values()]
         page['headings'] = [normalized(text) for text in page['headings'].values()]
         page['preformatted'] = [normalized(text) for text in page['preformatted'].values()]
         # Paragraph IDs are document-wide, so one <p> crossing a page marker has the same ID on both pages.
@@ -337,7 +347,7 @@ def assess(case, contract, result, report, pages, markers, *, documents=(),
     for item in expected:
         number = item['page']
         page = pages.get(number, {'text': '', 'images': []})
-        if not any(key in item for key in ('text', 'orderedText', 'minimumImages', 'warningCodesAnyOf', 'absentWarningCodes', 'scripts', 'absentText', 'headings', 'paragraphs', 'preformatted', 'lists', 'continuedParagraphs', 'imageRegions', 'tableRows')):
+        if not any(key in item for key in ('text', 'orderedText', 'minimumImages', 'warningCodesAnyOf', 'absentWarningCodes', 'scripts', 'absentText', 'headings', 'paragraphs', 'preformatted', 'lists', 'continuedParagraphs', 'imageRegions', 'tableRows', 'asides', 'quotations')):
             raise ValueError('Review page has no expectations')
         for phrase in item.get('text', []):
             if not normalized(phrase):
@@ -363,6 +373,13 @@ def assess(case, contract, result, report, pages, markers, *, documents=(),
             checks += 1
             if not any(normalized(phrase) in paragraph for paragraph in page.get('paragraphs', [])):
                 errors.append(f'Page {number}: missing paragraph {phrase!r}')
+        for kind in ('asides', 'quotations'):
+            for phrase in item.get(kind, []):
+                if not isinstance(phrase, str) or not normalized(phrase):
+                    raise ValueError('Empty or invalid ' + kind + ' phrase')
+                checks += 1
+                if not any(normalized(phrase) in block for block in page.get(kind, [])):
+                    errors.append(f'Page {number}: missing {kind} block {phrase!r}')
         for phrase in item.get('preformatted', []):
             if not isinstance(phrase, str) or not normalized(phrase):
                 raise ValueError('Empty or invalid preformatted phrase')

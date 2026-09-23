@@ -2248,6 +2248,48 @@ Evidence: [spine-packing](../measurements/spine-packing/record.md),
 Messages whose tail depends on `referenceImages == .never` say "read the source PDF instead" in
 place of the accompanying page image.
 
+## Native magazine panels and reading units
+
+`TextBackdrop` examines individual paints before they form crop bounds. A flat rectangular
+fill or an explicitly stroke-only frame behind a wrapped native paragraph is decoration;
+pattern fills, complex silhouettes and raster pictures remain graphics. A page-sized axial
+shading is treated as a backdrop only when both ends extend and its transformed axis spans
+at least three quarters of the page's width or height. Radial and mesh shadings keep their
+required source crop, including when supplementary reference images are disabled. Backdrop
+removal recommends a source-page reference. A tall sidebar needs substantial native fields
+and body prose alongside it; three aligned numeric label/value rows within that proved panel
+may reflow while their neighboring chart remains graphical.
+
+Photo prose uses complete native paragraph runs, with at least eighteen lexical words,
+three consistent rows and three-quarter-width measures. One row must overlap the picture's
+crop; the run can continue beyond the crop. Small-type captions adjacent to photographs form
+one paragraph reading unit, preventing their rows from alternating with a neighboring body
+column. A gallery requires two to four similarly sized, top-aligned pictures with separate
+caption measures; proved gutters survive crop clustering, and each picture precedes its own
+complete caption. Display quotations require opening/closing quote marks and several rows
+of larger native type; they become one `blockquote`, with an adjacent dash attribution, and
+never supply navigation headings.
+
+`PrintedColumns` supplements whitespace cuts with sustained body-text margins when a
+crossing title or decorative rule hides the gutter. It requires at least six substantial
+rows per column and declines floating content across the middle of their writing. Furniture
+aliases within half a point are removed only after repetition proves the canonical running
+head or foot; native body overprint removal is unchanged. A painted header band requires
+repetition of every native row before the band and its contents leave the page.
+
+`OutlinedInitial` recognizes only a bounded opening-paragraph crop beside an outlined
+three-row initial. In declared English it may prepend one high-confidence uppercase letter,
+with a lexicon check distinguishing an initial word from a standalone `A` or `I`; native
+words never come from recognition. Under `ocr: .never` the initial remains graphical. A
+successful recovery reports `ocrUsed` and recommends the source page. Recognition failure
+keeps the source initial and native paragraph. This is subject to the host Vision service's
+recognition variability.
+
+`RuledTableReader` reads native cells from painted horizontal and vertical borders, including
+flat-filled headers and merged cells. Unlike a whitespace table, a ruled grid does not need
+numeric values. Cell selections must account for every native non-whitespace character
+inside the grid, exactly once; incomplete selections leave the table as a source crop.
+
 ## Limits
 
 PDF structure is ambiguous. The synthetic suite and the corpus do not establish general

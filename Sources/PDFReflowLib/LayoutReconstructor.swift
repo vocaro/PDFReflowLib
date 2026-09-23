@@ -239,7 +239,7 @@ enum LayoutReconstructor {
     }
 
     /// `clusters` for regions: merged bounds carry the union of their seeds.
-    private static func merged(_ regions: [Region]) -> [Region] {
+    private static func merged(_ regions: [Region], protecting prose: [TextLine]) -> [Region] {
         var result: [Region] = []
         for region in regions {
             var merged = region
@@ -247,7 +247,8 @@ enum LayoutReconstructor {
             while previousCount != result.count {
                 previousCount = result.count
                 result.removeAll { existing in
-                    if existing.bounds.insetBy(dx: -3, dy: -3).intersects(merged.bounds) {
+                    if existing.bounds.insetBy(dx: -3, dy: -3).intersects(merged.bounds),
+                       !TextBackdrop.bridgesText(existing.bounds, merged.bounds, lines: prose) {
                         merged.seed = merged.seed.union(existing.seed)
                         merged.bounds = merged.bounds.union(existing.bounds)
                         return true
@@ -273,7 +274,8 @@ enum LayoutReconstructor {
             var bounds = admitted.reduce(region.seed) { $0.union($1.insetBy(dx: -2, dy: -2)) }
                 .intersection(page.bounds)
             var changed = false
-            for line in page.lines where !admitted.contains(line.rect) && bounds.intersects(line.rect) {
+            for line in page.lines where !admitted.contains(line.rect) && bounds.intersects(line.rect)
+                && !OutlinedInitial.reflows(line, on: page) {
                 // The other pieces of an admitted row join it, unless the crop reaches into that
                 // row from the side: a page number a released contents entry runs to is the
                 // entry's, not the drawing's (#207). A thin rule is narrower than the line it
@@ -291,7 +293,8 @@ enum LayoutReconstructor {
             }
             if changed { continue }
             let kept = admitted.reduce(region.core) { $0.union($1) }
-            for line in page.lines where !admitted.contains(line.rect) && bounds.intersects(line.rect) {
+            for line in page.lines where !admitted.contains(line.rect) && bounds.intersects(line.rect)
+                && !OutlinedInitial.reflows(line, on: page) {
                 let rect = line.rect
                 let cuts = [
                     CGRect(x: bounds.minX, y: rect.maxY, width: bounds.width, height: bounds.maxY - rect.maxY),
@@ -425,9 +428,11 @@ enum LayoutReconstructor {
         // The column headers of the tables this page draws, which a crop never releases to the
         // prose (#257). Read once: it is a property of the page, not of any one region.
         let columnHeaders = TableRegionDetector.columnHeaders(in: page, body: body)
-        let backdrop = page.backdropTextPanels != nil
-        var regions = (backdrop ? PageBackdrop.clustered(seeds) : clusters(seeds, distance: 3))
-            .map { Region(seed: $0, bounds: $0) }
+        let protectedProse = TextBackdrop.paragraphs(page.lines).filter { !PageBackdrop.reflows($0, on: page) }
+            + TextBackdrop.galleryGutters(page.lines, pictures: page.pictures)
+        let seedsGrouped = page.backdropTextPanels != nil ? PageBackdrop.clustered(seeds)
+            : TextBackdrop.clustersKeepingText(seeds, lines: protectedProse, distance: 3)
+        var regions = seedsGrouped.map { Region(seed: $0, bounds: $0) }
         var previous: [CGRect] = []
         while regions.map(\.bounds) != previous {
             previous = regions.map(\.bounds)
@@ -438,7 +443,7 @@ enum LayoutReconstructor {
             // A merged bounding rectangle can newly intersect a label that neither component
             // touched. Expand again before rasterizing, or its text is removed from prose while
             // the image clips part of it (for example, a raised exponent beside a fraction).
-            regions = merged(regions)
+            regions = merged(regions, protecting: protectedProse)
         }
         return regions.map(\.bounds)
     }
@@ -480,6 +485,9 @@ enum LayoutReconstructor {
         /// A table the page draws, which takes its place in the reading order as a figure does
         /// and carries its own rows (#210).
         var table: PageTable?
+        var quotation: [TextLine]?
+        var pictureCaption: [TextLine]?
+        var caption: [TextLine]?
     }
 
     /// Convenience for callers that do not report an abandoned cut.
@@ -702,6 +710,17 @@ enum LayoutReconstructor {
         // overlap, so there is no whitespace band either. Sorting that page's lines interleaves
         // its columns row by row. Where the page states the run-on, its columns are ordered as
         // runs instead of as lines (#174).
+        if let plan = PrintedColumns.plan(elements, body: bodySize) {
+            let indices = rightToLeft ? Array(plan.columns.indices.reversed()) : Array(plan.columns.indices)
+            return indices.flatMap { index in
+                ordered(plan.before[index] ?? [], bodySize: bodySize, rightToLeft: rightToLeft,
+                        depth: depth + 1, exhausted: &exhausted)
+                    + ordered(plan.columns[index], bodySize: bodySize, rightToLeft: rightToLeft,
+                              depth: depth + 1, exhausted: &exhausted)
+                    + ordered(plan.after[index] ?? [], bodySize: bodySize, rightToLeft: rightToLeft,
+                              depth: depth + 1, exhausted: &exhausted)
+            }
+        }
         if let runs = columnRuns(elements, bodySize: bodySize, rightToLeft: rightToLeft) { return runs.flatMap { $0 } }
         // Every straight cut, and the column runs, have failed, and the row-major sort below would
         // weave this block's columns together. One reading is still left: a picture across the
@@ -1576,9 +1595,16 @@ enum LayoutReconstructor {
                        warnings: inout [ConversionWarning]) -> [ReflowBlock] {
         // A crop takes every line it intersects, except a wrapped paragraph the page prints over
         // one of its own pictures, which is the book's prose and no cut can free (#239).
-        let overPicture = PageDiagnosis.proseOverPictures(lines: page.lines, pictures: page.pictures,
+        let displayTypography = PageTypography(page: page)
+        let displayed = page.hasSyntheticTextStyle ? [] : DisplayQuotation.groups(in: page.lines,
+            body: displayTypography.body, threshold: displayTypography.headingThreshold)
+        let nativeCaptions = page.hasSyntheticTextStyle ? [] : CaptionParagraphs.groups(lines: page.lines,
+            pictures: page.pictures, body: displayTypography.body)
+        let captionIndices = nativeCaptions.reduce(into: Set<Int>()) { $0.formUnion($1.indices) }
+        let displayedIndices = displayed.reduce(into: Set<Int>()) { $0.formUnion($1.indices) }
+        let overPicture = displayedIndices.union(captionIndices).union(PageDiagnosis.proseOverPictures(lines: page.lines, pictures: page.pictures + (page.nativeTextPanels ?? []),
                                                           crops: images.map(\.0), bounds: page.bounds,
-                                                          language: context.language)
+                                                          language: context.language))
         // A crop must not take one half of a word whose other half falls outside it. Replay Clocks
         // page 8 breaks a figure caption `…𝛼 = 40 mes-` / `sages/second.` and the crop's edge fell
         // 0.49 pt above the second line, so the first half went into the picture and the second
@@ -1588,7 +1614,9 @@ enum LayoutReconstructor {
         // page prints that row, the picture merely lies across its end (#207).
         let columnHeaders = TableRegionDetector.columnHeaders(in: page, body: max(4, bodySize(page.lines)))
         let taken = Set(page.lines.indices.filter { index in
-            !overPicture.contains(index) && !PageBackdrop.reflows(page.lines[index], on: page) && images.contains {
+            !overPicture.contains(index) && page.sidebarValueRows?.contains(page.lines[index].rect) != true
+                && !PageBackdrop.reflows(page.lines[index], on: page)
+                && !OutlinedInitial.reflows(page.lines[index], on: page) && images.contains {
                 takes($0.0, page.lines[index])
                     && !reachesInto($0.0, page.lines[index], among: page.lines, pictures: page.pictures,
                                     bounds: page.bounds, columnHeaders: columnHeaders)
@@ -1622,8 +1650,54 @@ enum LayoutReconstructor {
         // corpus converts the Arabic guide at library defaults, which declare English for it
         // (#41).
         let rightToLeft = ArabicText.readsRightToLeft(lines)
-        let spatial = ordered(lines.map { Element(rect: $0.readingRect ?? $0.rect, line: $0) }
-            + images.map { Element(rect: $0.0, image: $0.1) }
+        let quotations = page.hasSyntheticTextStyle ? [] : DisplayQuotation.groups(in: lines,
+            body: typography.body, threshold: typography.headingThreshold)
+        let quoted = quotations.reduce(into: Set<Int>()) { $0.formUnion($1.indices) }
+        // Prose printed over a photograph has its own reading footprint. A transparent
+        // flame or faded background may extend into several body columns, but its caption and
+        // image form one unit after those columns, not a barrier across their reading order.
+        let gallery = GalleryCaptions.groups(lines: lines, images: page.pictures, body: typography.body).compactMap { card -> GalleryCaptions.Group? in
+            let picture = page.pictures[card.image]
+            guard let image = images.indices.first(where: { images[$0].0.contains(picture) }),
+                  !page.pictures.indices.contains(where: { $0 != card.image && images[image].0.contains(page.pictures[$0]) })
+            else { return nil }
+            let crop = images[image].0
+            let rect = CGRect(x: min(crop.minX,card.rect.minX), y: card.rect.minY,
+                              width: max(crop.maxX,card.rect.maxX) - min(crop.minX,card.rect.minX),
+                              height: max(crop.maxY,card.rect.maxY) - card.rect.minY)
+            return GalleryCaptions.Group(image: image, lines: card.lines, rect: rect)
+        }
+        let photoCaptions = CaptionParagraphs.groups(lines: lines, pictures: page.pictures, body: typography.body)
+        var captioned = Set(gallery.flatMap(\.lines))
+        let pictureElements = images.enumerated().map { imageIndex, image -> Element in
+            if let card = gallery.first(where: { $0.image == imageIndex }) {
+                return Element(rect: card.rect, image: image.1, pictureCaption: card.lines.map { lines[$0] })
+            }
+            let caption = photoCaptions.filter { group in
+                group.indices.isDisjoint(with: captioned) && group.lines.contains { image.0.contains($0.rect) }
+            }.flatMap { $0.indices }.sorted { lines[$0].rect.minY > lines[$1].rect.minY }
+            captioned.formUnion(caption)
+            let bodyOver = page.lines.indices.filter {
+                overPicture.contains($0) && page.lines[$0].fontSize >= typography.body * 0.9
+                    && page.lines[$0].fontSize <= typography.body * 1.1
+                    && image.0.intersects(page.lines[$0].rect)
+            }
+            var reading = image.0
+            if bodyOver.count >= 6, let low = bodyOver.map({ page.lines[$0].rect.minY }).min(),
+               low - image.0.minY >= typography.body * 3 {
+                reading.size.height = low - image.0.minY - typography.body * 0.2
+            }
+            return Element(rect: reading, image: image.1,
+                           pictureCaption: caption.sorted { lines[$0].rect.minY > lines[$1].rect.minY }.map { lines[$0] })
+        }
+        let standaloneCaptions = photoCaptions
+            .filter { $0.indices.isDisjoint(with: captioned) }
+        let standalone = standaloneCaptions.reduce(into: Set<Int>()) { $0.formUnion($1.indices) }
+        let spatial = ordered(lines.enumerated().filter { !quoted.contains($0.offset) && !captioned.contains($0.offset)
+            && !standalone.contains($0.offset) }.map {
+            Element(rect: $0.element.readingRect ?? $0.element.rect, line: $0.element)
+        } + quotations.map { Element(rect: $0.rect, quotation: $0.lines) }
+            + pictureElements + standaloneCaptions.map { Element(rect: $0.rect, caption: $0.lines) }
             + page.tables.map { Element(rect: $0.rect, table: $0) },
             bodySize: typography.body, rightToLeft: rightToLeft, exhausted: &exhausted)
         if exhausted {
@@ -1700,6 +1774,11 @@ enum LayoutReconstructor {
                 assembler.appendNote(group: group, line)
             } else if let path = element.image {
                 assembler.appendImage(path)
+                if let caption = element.pictureCaption { assembler.appendCaption(caption) }
+            } else if let caption = element.caption {
+                assembler.appendCaption(caption)
+            } else if let quote = element.quotation {
+                assembler.appendQuotation(quote)
             } else if let table = element.table {
                 assembler.appendTable(table)
             } else if let line = element.line, let spatial = roles[index] {

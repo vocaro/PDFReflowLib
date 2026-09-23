@@ -46,7 +46,7 @@ private typealias CaptureFont = UIFont
             attributedLines.append(["text": attributed.string, "rect": rect(selection.bounds(for: page)), "runs": runs])
         }
         let payload: [String: Any] = [
-            "schemaVersion": 2,
+            "schemaVersion": 3,
             "caseID": item["id"]!, "sourceSHA256": digest, "page": pageNumber,
             "sourceURL": item["downloadURL"] ?? item["url"] ?? "", "sourceTitle": item["title"]!,
             "rightsBasis": item["rightsBasis"] ?? "See corpus manifest and third-party notices.",
@@ -54,6 +54,7 @@ private typealias CaptureFont = UIFont
             // The placed raster image XObjects among the regions, which crop ownership reads
             // (#176, #239, #207). Captures before schema version 2 carry none.
             "pictures": graphics.images.map(rect),
+            "paintOperations": try JSONSerialization.jsonObject(with: JSONEncoder().encode(graphics.paints)),
             "lines": lines.map { ["text": $0.text, "rect": rect($0.rect), "fontSize": $0.fontSize,
                 "monospaced": $0.monospaced] as [String: Any] }, "attributedLines": attributedLines,
         ]

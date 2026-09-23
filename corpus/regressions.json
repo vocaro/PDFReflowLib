@@ -152,13 +152,13 @@
               "tag": "sub",
               "text": "S0",
               "before": "Lower limit of white arc (V",
-              "after": ")\u2014the stalling speed"
+              "after": ")—the stalling speed"
             },
             {
               "tag": "sub",
               "text": "FE",
               "before": "Upper limit of the white arc (V",
-              "after": ")\u2014the maximum"
+              "after": ")—the maximum"
             }
           ],
           "minimumImages": 1
@@ -170,13 +170,13 @@
               "tag": "sub",
               "text": "YSE",
               "before": "Single-engine best rate-of-climb (V",
-              "after": ")\u2014the best"
+              "after": ")—the best"
             },
             {
               "tag": "sub",
               "text": "MC",
               "before": "Minimum control speed (V",
-              "after": ")\u2014the minimum flight"
+              "after": ")—the minimum flight"
             }
           ],
           "minimumImages": 1,
@@ -238,10 +238,10 @@
             "An ammeter is used to monitor"
           ],
           "paragraphs": [
-            "\u2022 Electric fuel pump",
-            "\u2022 Stall warning system",
-            "\u2022 Pitot heat",
-            "\u2022 Starting motor",
+            "• Electric fuel pump",
+            "• Stall warning system",
+            "• Pitot heat",
+            "• Starting motor",
             "The ammeter shows if the alternator/ generator is producing an adequate supply of electrical power."
           ],
           "minimumImages": 1
@@ -251,7 +251,7 @@
           "continuedParagraphs": [
             {
               "end": "To find an AME near",
-              "next": "go to the FAA\u2019s AME locator"
+              "next": "go to the FAA’s AME locator"
             }
           ]
         },
@@ -382,19 +382,19 @@
         {
           "page": 26,
           "text": [
-            "80) (7a2 +7a)\u2212 (6a2 + 4a)"
+            "80) (7a2 +7a)− (6a2 + 4a)"
           ],
           "scripts": [
             {
               "tag": "sup",
               "text": "2",
               "before": "80) (7a",
-              "after": "+7a)\u2212 (6a"
+              "after": "+7a)− (6a"
             },
             {
               "tag": "sup",
               "text": "2",
-              "before": "+7a)\u2212 (6a",
+              "before": "+7a)− (6a",
               "after": "+ 4a)"
             }
           ]
@@ -421,15 +421,15 @@
           "page": 101,
           "orderedText": [
             "Find the slope of the line through each pair of points.",
-            "17) (\u2212 16,\u2212 14), (11,\u2212 14)",
+            "17) (− 16,− 14), (11,− 14)",
             "18) (13, 15), (2, 10)",
-            "28) (\u2212 18,\u2212 5), (14,\u2212 3)"
+            "28) (− 18,− 5), (14,− 3)"
           ],
           "preformatted": [
-            "17) (\u2212 16,\u2212 14), (11,\u2212 14)",
-            "28) (\u2212 18,\u2212 5), (14,\u2212 3)",
-            "16) (\u2212 3, 6), (\u2212 20, 13)",
-            "27) (7,\u2212 14), (\u2212 8,\u2212 9)"
+            "17) (− 16,− 14), (11,− 14)",
+            "28) (− 18,− 5), (14,− 3)",
+            "16) (− 3, 6), (− 20, 13)",
+            "27) (7,− 14), (− 8,− 9)"
           ]
         }
       ]
@@ -521,7 +521,7 @@
             "Sayf al Adl",
             "Egyptian; high-ranking member",
             "Mahmud Ahmed",
-            "Director General of Pakistan\u2019s Inter-Services"
+            "Director General of Pakistan’s Inter-Services"
           ]
         },
         {
@@ -536,8 +536,8 @@
           ],
           "paragraphs": [
             "38. Ibid.; Michael Woodward interview (Jan. 25, 2004).",
-            "39. NTSB report, \u201cFlight Path Study\u2014American Airlines Flight 11,\u201d Feb. 19, 2002.",
-            "40. The 56 passengers represented a load factor of 33.33 percent of the airplane\u2019s seating capacity of 168, below the 49.22 percent"
+            "39. NTSB report, “Flight Path Study—American Airlines Flight 11,” Feb. 19, 2002.",
+            "40. The 56 passengers represented a load factor of 33.33 percent of the airplane’s seating capacity of 168, below the 49.22 percent"
           ]
         },
         {
@@ -555,7 +555,7 @@
           "page": 532,
           "paragraphs": [
             "5. Notably, as discussed in chapter 5",
-            "9. For the FBI source\u2019s claims",
+            "9. For the FBI source’s claims",
             "in chapter 5. This speculation was based on reporting that Khallad was in the United States"
           ]
         },
@@ -578,7 +578,7 @@
           ],
           "text": [
             "Intelligence report",
-            "Wali Khan\u2019s relationship with Bin Ladin"
+            "Wali Khan’s relationship with Bin Ladin"
           ]
         },
         {
@@ -769,7 +769,7 @@
             33
           ],
           "beforeBoundary": [
-            "These press conferences allow the Chair to explain the rationale behind the policy decision and how it relates to the Committee\u2019s dual mandate."
+            "These press conferences allow the Chair to explain the rationale behind the policy decision and how it relates to the Committee’s dual mandate."
           ],
           "afterBoundary": [
             "Communicating Policy Regularly and Clearly",
@@ -812,7 +812,7 @@
           "page": 9,
           "orderedText": [
             "The Federal Reserve System is the central bank of the United States.",
-            "conducts the nation\u2019s monetary policy",
+            "conducts the nation’s monetary policy",
             "promotes the stability of the financial system",
             "promotes the safety and soundness",
             "fosters payment and settlement system safety",
@@ -1019,7 +1019,7 @@
     {
       "id": "gpo-our-flag-2003",
       "sourceSHA256": "a47a3153b649022a52b53e7b0c40b55bfea24e7980bbe32fe6fee0cf1936bbd8",
-      "basis": "Page 27 source raster reviewed; page-33 four-flag target retained from existing review. Does not accept the broken drop-cap, table, or state-description order. Page 27 includes a third region for its table, alongside the two source heading rules. Whole-table containment and ten row associations have source-derived Swift regressions. Source pages 34/42/43 visually reviewed: four illustrated entries follow alphabetical row order, with all four images retained. Protects ordering from changes to margin removal; not general tag/figure ownership qualification. Page 31 visually reviewed: preserve the heading boundary between Flag and for, plus the source photograph. Drop-cap ordering remains unqualified. Physical pages 7/31 visually reviewed: a decorative drop cap must not promote the opening body line to a heading or put its continuation first. Paragraph checks use intact source phrases and do not accept the separate initial-word spacing defect. Page 9 source review confirms the line-ending some-/times join after corrected order; page 30 retains genuine fraction superscripts beside its drop cap. Page 29 source title and logical tree (H3 /K 0) reviewed: both printed lines form one heading, with the Capitol image retained. Page 30 source flag-/pole line break is a joined word. Source page 27 flag-size table reread cell by cell: a 125-foot pole takes a 20 x 30 flag and a 250-foot pole a 40 x 50 flag, and the left column lists 20, 25, 40, 50, 60, 70, 90, 125, 200 and 250 feet in that order. The column reference catches a height moved to another row and the row references catch a cell lost from their row, neither of which the whole-table reference catches; a size cell exchanged with another row\u2019s remains undetected (#27). Page 26 read against the source for the list conversion (#292): the seven flag-folding steps are one numbered list on the page, and the conversion lists the pieces whose items touch \u2014 steps 1 and 2 (step 1 with the word the page breaks at `horizon-` made whole), and steps 6 and 7 as a list starting at 6 \u2014 while step 5, set apart by the wrapped lines around it, is a paragraph keeping its number; the split is the wrapped-continuation gap, not a numbering error.",
+      "basis": "Page 27 source raster reviewed; page-33 four-flag target retained from existing review. Does not accept the broken drop-cap, table, or state-description order. Page 27 includes a third region for its table, alongside the two source heading rules. Whole-table containment and ten row associations have source-derived Swift regressions. Source pages 34/42/43 visually reviewed: four illustrated entries follow alphabetical row order, with all four images retained. Protects ordering from changes to margin removal; not general tag/figure ownership qualification. Page 31 visually reviewed: preserve the heading boundary between Flag and for, plus the source photograph. Drop-cap ordering remains unqualified. Physical pages 7/31 visually reviewed: a decorative drop cap must not promote the opening body line to a heading or put its continuation first. Paragraph checks use intact source phrases and do not accept the separate initial-word spacing defect. Page 9 source review confirms the line-ending some-/times join after corrected order; page 30 retains genuine fraction superscripts beside its drop cap. Page 29 source title and logical tree (H3 /K 0) reviewed: both printed lines form one heading, with the Capitol image retained. Page 30 source flag-/pole line break is a joined word. Source page 27 flag-size table reread cell by cell: a 125-foot pole takes a 20 x 30 flag and a 250-foot pole a 40 x 50 flag, and the left column lists 20, 25, 40, 50, 60, 70, 90, 125, 200 and 250 feet in that order. The column reference catches a height moved to another row and the row references catch a cell lost from their row, neither of which the whole-table reference catches; a size cell exchanged with another row’s remains undetected (#27). Page 26 read against the source for the list conversion (#292): the seven flag-folding steps are one numbered list on the page, and the conversion lists the pieces whose items touch — steps 1 and 2 (step 1 with the word the page breaks at `horizon-` made whole), and steps 6 and 7 as a list starting at 6 — while step 5, set apart by the wrapped lines around it, is a paragraph keeping its number; the split is the wrapped-continuation gap, not a numbering error.",
       "pages": [
         {
           "page": 27,
@@ -1161,13 +1161,13 @@
               "tag": "sup",
               "text": "1",
               "before": "These figures are 2",
-              "after": "\u20442 inches in blue."
+              "after": "⁄2 inches in blue."
             },
             {
               "tag": "sup",
               "text": "1",
               "before": "These figures are 2",
-              "after": "\u20442 inches high in gold."
+              "after": "⁄2 inches high in gold."
             }
           ]
         },
@@ -1507,8 +1507,8 @@
           "page": 60,
           "orderedText": [
             "Brand X Internet Services, 545",
-            "U. S. 967, 982\u2013983 (2005). And those officials may even dis",
-            "The hard fact is Chevron \u201cdid not even bother to cite\u201d the APA",
+            "U. S. 967, 982–983 (2005). And those officials may even dis",
+            "The hard fact is Chevron “did not even bother to cite” the APA",
             "that controls.",
             "See also A. Scalia, Judicial Deference to Administrative Interpretations of Law"
           ],
@@ -1516,36 +1516,36 @@
             {
               "tag": "sup",
               "text": "2",
-              "before": "make[s] for good government.\u201d Ibid.",
+              "before": "make[s] for good government.” Ibid.",
               "after": "But in our democracy unelected judges"
             }
           ],
           "paragraphs": [
-            "Brand X Internet Services, 545 U. S. 967, 982\u2013983 (2005). And those officials may even disagree with and effectively overrule not only their own past interpretations of a law"
+            "Brand X Internet Services, 545 U. S. 967, 982–983 (2005). And those officials may even disagree with and effectively overrule not only their own past interpretations of a law"
           ]
         },
         {
           "page": 97,
           "orderedText": [
-            "That text, contra the majority, \u201cdoes not resolve the Chevron question.\u201d",
-            "we respect it\u201d).",
-            "The majority tries to buttress its argument with a stray sentence or two from the APA\u2019s legislative history"
+            "That text, contra the majority, “does not resolve the Chevron question.”",
+            "we respect it”).",
+            "The majority tries to buttress its argument with a stray sentence or two from the APA’s legislative history"
           ],
           "scripts": [
             {
               "tag": "sup",
               "text": "2",
-              "before": "we respect it\u201d).",
-              "after": "\u2014\u2014\u2014\u2014\u2014\u2014"
+              "before": "we respect it”).",
+              "after": "——————"
             }
           ]
         },
         {
           "page": 98,
           "orderedText": [
-            "Section 706\u2019s references to standards of review in other contexts only further undercut the majority\u2019s argument.",
+            "Section 706’s references to standards of review in other contexts only further undercut the majority’s argument.",
             "Vermeule 207.",
-            "rather than agencies to decide in the last analysis.\u201d",
+            "rather than agencies to decide in the last analysis.”",
             "using a deferential standard.",
             "In a footnote responding to the last two paragraphs, the majority raises the white flag"
           ]
@@ -1558,7 +1558,7 @@
             "United States v. Dickson,"
           ],
           "paragraphs": [
-            "who may well have drafted the laws at issue. United States v. Moore, 95 U. S. 760, 763. \u201cRespect,\u201d though, was just that.",
+            "who may well have drafted the laws at issue. United States v. Moore, 95 U. S. 760, 763. “Respect,” though, was just that.",
             "United States v. Morton Salt Co., 338 U. S. 632, 644, the Court often treated agency determinations of fact"
           ]
         },
@@ -1628,11 +1628,11 @@
           "page": 3,
           "orderedText": [
             "2 Data Files",
-            "Two data \ufb01les were used.",
+            "Two data ﬁles were used.",
             "Total income",
-            "Aged exemption \ufb02ag",
-            "Schedule F \ufb02ag",
-            "public-use CPS \ufb01le."
+            "Aged exemption ﬂag",
+            "Schedule F ﬂag",
+            "public-use CPS ﬁle."
           ],
           "absentText": [
             "Wzr gdwd",
@@ -1688,14 +1688,14 @@
         {
           "page": 17,
           "orderedText": [
-            "need to be better connected to additional analyses and speci\ufb01c characteristics of data.",
+            "need to be better connected to additional analyses and speciﬁc characteristics of data.",
             "7 References",
-            "Incomplete Data via the EM Algorithm, Journal of the Royal Statistical Society, B, 39 (1977) 1\u201338.",
-            "Dalenius, T. and Reiss, S. P. Data-swapping: A Technique for Disclosure Control of Microdata, Journal of Statistical Planning and Inference, 6 (1982) 73\u201385.",
-            "Fellegi, I. P., and Sunter, A. B.: A Theory for Record Linkage, Journal of the American Statistical Association, 64, (1969) 1183\u20131210.",
-            "Fuller, W. A.: Masking Procedures for Microdata Disclosure Limitation, Journal of O\ufb03cial Statistics, 9, (1993) 383\u2013406.",
-            "Lambert, D.: Measures of Disclosure Risk and Harm, Journal of O\ufb03cial Statistics, 9, (1993) 313\u2013331.",
-            "University of California\u2013Riverside (2000)."
+            "Incomplete Data via the EM Algorithm, Journal of the Royal Statistical Society, B, 39 (1977) 1–38.",
+            "Dalenius, T. and Reiss, S. P. Data-swapping: A Technique for Disclosure Control of Microdata, Journal of Statistical Planning and Inference, 6 (1982) 73–85.",
+            "Fellegi, I. P., and Sunter, A. B.: A Theory for Record Linkage, Journal of the American Statistical Association, 64, (1969) 1183–1210.",
+            "Fuller, W. A.: Masking Procedures for Microdata Disclosure Limitation, Journal of Oﬃcial Statistics, 9, (1993) 383–406.",
+            "Lambert, D.: Measures of Disclosure Risk and Harm, Journal of Oﬃcial Statistics, 9, (1993) 313–331.",
+            "University of California–Riverside (2000)."
           ],
           "absentText": [
             "^9`",
@@ -1726,21 +1726,21 @@
         {
           "page": 5,
           "headings": [
-            "\u062c\u062f\u0648\u0644 \u0627\u0644\u0645\u062d\u062a\u0648\u064a\u0627\u062a"
+            "جدول المحتويات"
           ],
           "orderedText": [
-            "\u0645\u0631\u062d\u0628\u0627 \u0628\u0643\u0645 \u0641\u064a \u0627\u0644\u0648\u0644\u0627\u064a\u0627\u062a \u0627\u0644\u0645\u062a\u062d\u062f\u0629 \u062f\u0644\u064a\u0644 \u0627\u0644\u0645\u0647\u0627\u062c\u0631\u064a\u0646 \u0627\u0644\u062c\u062f\u062f",
-            "\u0627\u0644\u0623\u0642\u0633\u0627\u0645 \u0648\u0627\u0644\u0648\u0643\u0627\u0644\u0627\u062a \u0627\u0644\u0641\u062f\u0631\u0627\u0644\u064a\u0629",
-            "\u062d\u0648\u0644 \u0647\u0630\u0627 \u0627\u0644\u062f\u0644\u064a\u0644",
-            "\u0623\u064a\u0646 \u062a\u062a\u0644\u0642\u0649 \u0627\u0644\u0645\u0633\u0627\u0639\u062f\u0629",
-            "\u0645\u0635\u0627\u062f\u0631 \u062f\u0627\u0626\u0631\u0629 \u062e\u062f\u0645\u0627\u062a \u0627\u0644\u062c\u0646\u0633\u064a\u0629 \u0648\u0627\u0644\u0647\u062c\u0631\u0629 \u0627\u0644\u0623\u0645\u064a\u0631\u0643\u064a\u0629",
-            "\u062d\u0642\u0648\u0642\u0643 \u0648\u0645\u0633\u0624\u0648\u0644\u064a\u0627\u062a\u0643 \u0643\u0645\u0642\u064a\u0645 \u062f\u0627\u0626\u0645",
-            "\u0641\u0647\u0645 \u0627\u0644\u062a\u0639\u0644\u064a\u0645 \u0648\u0627\u0644\u0631\u0639\u0627\u064a\u0629 \u0627\u0644\u0635\u062d\u064a\u0629",
-            "\u0627\u0644\u062a\u0639\u0644\u064a\u0645 \u0641\u064a \u0627\u0644\u0648\u0644\u0627\u064a\u0627\u062a \u0627\u0644\u0645\u062a\u062d\u062f\u0629"
+            "مرحبا بكم في الولايات المتحدة دليل المهاجرين الجدد",
+            "الأقسام والوكالات الفدرالية",
+            "حول هذا الدليل",
+            "أين تتلقى المساعدة",
+            "مصادر دائرة خدمات الجنسية والهجرة الأميركية",
+            "حقوقك ومسؤولياتك كمقيم دائم",
+            "فهم التعليم والرعاية الصحية",
+            "التعليم في الولايات المتحدة"
           ],
           "preformatted": [
-            "\u0623\u064a\u0646 \u062a\u062a\u0644\u0642\u0649 \u0627\u0644\u0645\u0633\u0627\u0639\u062f\u0629",
-            "\u0627\u0644\u062a\u0639\u0644\u064a\u0645 \u0641\u064a \u0627\u0644\u0648\u0644\u0627\u064a\u0627\u062a \u0627\u0644\u0645\u062a\u062d\u062f\u0629"
+            "أين تتلقى المساعدة",
+            "التعليم في الولايات المتحدة"
           ]
         },
         {
@@ -1749,15 +1749,15 @@
             "[Permanent Resident Card]",
             "www.uscis.gov/uscis-elis",
             "[USCIS Forms Line]",
-            "\u0628\u0637\u0627\u0642\u0629 \u0627\u0644\u0625\u0642\u0627\u0645\u0629 \u0627\u0644\u062f\u0627\u0626\u0645\u0629"
+            "بطاقة الإقامة الدائمة"
           ],
           "minimumImages": 1,
           "paragraphs": [
-            "\u0644\u0644\u0645\u0642\u064a\u0645\u064a\u0646 \u0627\u0644\u062f\u0627\u0626\u0645\u064a\u0646 (\u0627\u0633\u062a\u0645\u0627\u0631\u0629 I-551) \u0643\u0625\u062b\u0628\u0627\u062a \u0644\u0648\u0636\u0639\u0647\u0645 \u0627\u0644\u0642\u0627\u0646\u0648\u0646\u064a \u0641\u064a \u0627\u0644\u0648\u0644\u0627\u064a\u0627\u062a \u0627\u0644\u0645\u062a\u062d\u062f\u0629. \u0648\u064a\u0637\u0644\u0642",
-            "\u0627\u0644\u0623\u0645\u064a\u0631\u0643\u064a\u0629 (USCIS ELIS) \u0639\u0644\u0649 \u0627\u0644\u0631\u0627\u0628\u0637 \u0627\u0644\u062a\u0627\u0644\u064a: www.uscis.gov/uscis-elis.",
-            "\u062a\u0639\u0628\u0626\u0629 \u0627\u0644\u0627\u0633\u062a\u0645\u0627\u0631\u0629 I-90 \u0648\u062a\u0642\u062f\u064a\u0645 \u0637\u0644\u0628",
-            "[USCIS Forms Line] \u0639\u0644\u0649 \u0631\u0642\u0645 1-800-870-3676. \u0625\u0630\u0627",
-            "\u062f\u0627\u0626\u0631\u0629 \u062e\u062f\u0645\u0627\u062a \u0627\u0644\u062c\u0646\u0633\u064a\u0629 \u0648\u0627\u0644\u0647\u062c\u0631\u0629 \u0627\u0644\u0623\u0645\u064a\u0631\u0643\u064a\u0629 (USCIS)."
+            "للمقيمين الدائمين (استمارة I-551) كإثبات لوضعهم القانوني في الولايات المتحدة. ويطلق",
+            "الأميركية (USCIS ELIS) على الرابط التالي: www.uscis.gov/uscis-elis.",
+            "تعبئة الاستمارة I-90 وتقديم طلب",
+            "[USCIS Forms Line] على رقم 1-800-870-3676. إذا",
+            "دائرة خدمات الجنسية والهجرة الأميركية (USCIS)."
           ],
           "absentText": [
             "551-I",
@@ -1772,7 +1772,7 @@
     {
       "id": "irs-p596-zhs-2025",
       "sourceSHA256": "7d1cff45bc567f1257ea1aa1e2ce67945aafb12708b2e22901ce6392436590c2",
-      "basis": "Source pages 1 and 16 visually reviewed. Protects the English catalog footer and cover image on page 1, and page-16 left-column examples before the right-column military and chapter-4 prose, the four earned-income limits in source order, and CJK text with embedded Latin identifiers and amounts. Does not bless page 1/3 prose and contents captured inside preserved-region images, the split cover title, or spaces inserted inside justified CJK lines (#36, #42). Source page 5 visually reviewed: the running foot in the slot the publication keeps must be absent while the rule prose and its heading remain (#10). Re-reviewed on the tagged run of 8faeaab, where the lane declares this book `zh-Hans` from its manifest language field (#293): the same checks hold against the rendered pages. The tag moves one page, and source page 4 was visually reviewed to pin it: the comments paragraph at the head of its left column, whose Latin-only line `Ave.NW, IR-6526, Washington, DC 20224\uff09\u3002` a book declared English keeps inside the link's crop because the line fails the English word test, taking the five Chinese lines beneath it into the picture; declared zh-Hans the sentence shape alone releases it, the crop ends at its third line, and the paragraph reflows, which page 4 pins by two of its lines. The book emits 85 heading elements on 8faeaab, tagged or not, against the 99 #243 counted on 7a4a5b3; the cover's \u76ee\u5f55 is not among them (#243, the ranking that would restore it is #294), and no count is pinned so that its return fails nothing here. Measured with and without the tag on one binary in measurements/irs-p596-zhs-2025-language-tag/record.md. Page 17 read against the source for the list conversion (#292): the three numbered conditions under which both spouses have self-employment income are one ordered list from 1, the third item's wrapped line standing after the list.",
+      "basis": "Source pages 1 and 16 visually reviewed. Protects the English catalog footer and cover image on page 1, and page-16 left-column examples before the right-column military and chapter-4 prose, the four earned-income limits in source order, and CJK text with embedded Latin identifiers and amounts. Does not bless page 1/3 prose and contents captured inside preserved-region images, the split cover title, or spaces inserted inside justified CJK lines (#36, #42). Source page 5 visually reviewed: the running foot in the slot the publication keeps must be absent while the rule prose and its heading remain (#10). Re-reviewed on the tagged run of 8faeaab, where the lane declares this book `zh-Hans` from its manifest language field (#293): the same checks hold against the rendered pages. The tag moves one page, and source page 4 was visually reviewed to pin it: the comments paragraph at the head of its left column, whose Latin-only line `Ave.NW, IR-6526, Washington, DC 20224）。` a book declared English keeps inside the link's crop because the line fails the English word test, taking the five Chinese lines beneath it into the picture; declared zh-Hans the sentence shape alone releases it, the crop ends at its third line, and the paragraph reflows, which page 4 pins by two of its lines. The book emits 85 heading elements on 8faeaab, tagged or not, against the 99 #243 counted on 7a4a5b3; the cover's 目录 is not among them (#243, the ranking that would restore it is #294), and no count is pinned so that its return fails nothing here. Measured with and without the tag on one binary in measurements/irs-p596-zhs-2025-language-tag/record.md. Page 17 read against the source for the list conversion (#292): the three numbered conditions under which both spouses have self-employment income are one ordered list from 1, the third item's wrapped line standing after the list.",
       "pages": [
         {
           "page": 1,
@@ -1784,34 +1784,34 @@
         {
           "page": 16,
           "orderedText": [
-            "\u5373\u4f7f\u60a8\u7236\u6bcd\u4e0d\u80fd\u7533\u8bf7\u6216\u4e0d\u7533\u62a5 EIC",
-            "\u793a\u4f8b 1\u2014\u2014\u4e0d\u9700\u8981\u63d0\u4ea4\u62a5\u7a0e\u8868\u3002",
-            "\u793a\u4f8b 3\u2014\u2014\u63d0\u4ea4\u62a5\u7a0e\u8868\u662f\u4e3a\u4e86\u4eab\u53d7 EIC\u3002",
-            "\u9a7b\u624e\u5728\u7f8e\u56fd\u5883\u5916\u7684\u519b\u4eba\u3002",
-            "\u60a8\u5fc5\u987b\u518d\u6ee1\u8db3\u4e00\u6761\u89c4\u5219\u624d\u80fd\u7533\u62a5 EIC\u3002",
-            "61,555 \u7f8e\u5143\uff08\u5df2\u5a5a\u8054\u5408\u62a5\u7a0e\u4e3a 68,675 \u7f8e\u5143\uff09",
-            "57,310 \u7f8e\u5143\uff08\u5df2\u5a5a\u8054\u5408\u62a5\u7a0e\u4e3a 64,430 \u7f8e\u5143\uff09",
-            "50,434 \u7f8e\u5143\uff08\u5df2\u5a5a\u8054\u5408\u62a5\u7a0e\u4e3a 57,554 \u7f8e\u5143\uff09",
-            "19,104 \u7f8e\u5143\uff08\u5df2\u5a5a\u8054\u5408\u62a5\u7a0e\u4e3a 26,214 \u7f8e\u5143\uff09"
+            "即使您父母不能申请或不申报 EIC",
+            "示例 1——不需要提交报税表。",
+            "示例 3——提交报税表是为了享受 EIC。",
+            "驻扎在美国境外的军人。",
+            "您必须再满足一条规则才能申报 EIC。",
+            "61,555 美元（已婚联合报税为 68,675 美元）",
+            "57,310 美元（已婚联合报税为 64,430 美元）",
+            "50,434 美元（已婚联合报税为 57,554 美元）",
+            "19,104 美元（已婚联合报税为 26,214 美元）"
           ],
           "text": [
-            "\u8bf7\u5728 \uff08\u8868\u683c 1040 \u6216 1040-SR\uff09\u7b2c 27b \u884c\u52fe\u9009\u201cClergy filing Schedule SE\u201d"
+            "请在 （表格 1040 或 1040-SR）第 27b 行勾选“Clergy filing Schedule SE”"
           ]
         },
         {
           "page": 5,
           "absentText": [
-            "596 \u53f7\u520a\u7269 (2025) \u7b2c 1 \u7ae0 \u9002\u7528\u4e8e\u6240\u6709\u4eba\u7684\u89c4\u5219 5"
+            "596 号刊物 (2025) 第 1 章 适用于所有人的规则 5"
           ],
           "text": [
-            "\u5982\u679c\u60a8\u5df2\u5a5a\uff0c\u60a8\u901a\u5e38\u5fc5\u987b\u63d0\u4ea4\u8054\u5408\u62a5\u7a0e\u8868\u624d\u80fd\u7533\u62a5 EIC"
+            "如果您已婚，您通常必须提交联合报税表才能申报 EIC"
           ]
         },
         {
           "page": 4,
           "text": [
             "Ave.NW, IR-6526, Washington, DC 20224",
-            "\u5c3d\u7ba1\u6211\u4eec\u65e0\u6cd5\u5bf9\u6536\u5230\u7684\u6bcf\u6761\u610f\u89c1\u8fdb\u884c\u5355\u72ec\u56de\u590d"
+            "尽管我们无法对收到的每条意见进行单独回复"
           ]
         },
         {
@@ -1821,9 +1821,9 @@
               "kind": "ol",
               "start": 1,
               "items": [
-                "\u60a8\u5df2\u5a5a\u5e76\u63d0\u4ea4\u4e86\u8054\u5408\u62a5\u7a0e\u8868\u3002",
-                "\u60a8\u548c\u60a8\u914d\u5076\u90fd\u6709\u81ea\u96c7\u6536\u5165\u3002",
-                "\u60a8\u548c\u60a8\u914d\u5076\u6709\u4e00\u65b9\u63d0\u4ea4\u4e86\u9644\u8868 SE\uff0c\u53e6\u4e00\u65b9\u672a\u63d0\u4ea4\u9644\u8868"
+                "您已婚并提交了联合报税表。",
+                "您和您配偶都有自雇收入。",
+                "您和您配偶有一方提交了附表 SE，另一方未提交附表"
               ]
             }
           ]
@@ -1869,7 +1869,7 @@
     {
       "id": "arxiv-replay-clocks-2023",
       "sourceSHA256": "1e8172e4a347bdf6722dacc38755f6fb3299866336b8153f51b2c13f3ac6109a",
-      "basis": "Source pages 1, 3 and 4 visually reviewed. Protects abstract, ACM reference and introduction order in the left column before the right-column drone illustration; section 3.1-3.2 order around Figure 1; and algorithm captions with surrounding prose in two-column order. Does not bless the rotated arXiv stamp or author names as headings, merged section labels, Unicode mathematical-italic variables or pseudocode split between text and crops (#36, #43). Source pages 3 and 6 reread for notation: the two clock-skew bounds in \"we have chosen \u21121 and \u21122 instead of \u2112 itself\" keep separate subscripts on their own bases and in source order, and the offset bound on page 6 keeps its raised exponent on 10 with the sentence period left outside the script. Displayed equations remain preserved images, so this pins script level, base and order in running prose, not the structure of a display (#206, #213). Neither expectation blesses the missing space in \"Eitself\" or \"E= 1ms\", nor the script capital read as a plain E (#120).",
+      "basis": "Source pages 1, 3 and 4 visually reviewed. Protects abstract, ACM reference and introduction order in the left column before the right-column drone illustration; section 3.1-3.2 order around Figure 1; and algorithm captions with surrounding prose in two-column order. Does not bless the rotated arXiv stamp or author names as headings, merged section labels, Unicode mathematical-italic variables or pseudocode split between text and crops (#36, #43). Source pages 3 and 6 reread for notation: the two clock-skew bounds in \"we have chosen ℒ1 and ℒ2 instead of ℒ itself\" keep separate subscripts on their own bases and in source order, and the offset bound on page 6 keeps its raised exponent on 10 with the sentence period left outside the script. Displayed equations remain preserved images, so this pins script level, base and order in running prose, not the structure of a display (#206, #213). Neither expectation blesses the missing space in \"Eitself\" or \"E= 1ms\", nor the script capital read as a plain E (#120).",
       "pages": [
         {
           "page": 1,
@@ -2194,7 +2194,7 @@
     {
       "id": "usda-ars-agresearch-2012-11",
       "sourceSHA256": "2673d1fded74ad89c8b5c59dc325c7884601e1aca5b5755b15a105c1f5b0d761",
-      "basis": "Pages 1, 6, 9, 15, 19 and 24 converted and read against the actual output (source rasters for pages 1 and 24 via tools/compare_pdf.py; pages 6, 9, 15 and 19 are prose already reviewed by reading the converted text itself, which is unambiguous). This corpus case, and the ports it gates, now cover all five of #186's upstream fixes: the heading-size threshold on thin-text pages (documentBody floor and the lowercase-standalone-heading exclusion), lexicon-decided line-end hyphens, a bold sub-heading whose paragraph opens past an intervening picture and caption (#218), dingbat font reading and letter-case glyph disagreement (#217, closed by GlyphIdentityReader.swift, a narrowly-scoped content-stream evidence reader in the mold of NativeSpacingReader). Page 1's cover title ('Keeping Our'/'Troops Safe'/'From Insects', three headings) is confirmed unaffected by the new document-body floor; the lowercase cross-reference line 'pages 2, 4-14' beneath it, previously a fourth heading, is confirmed now a paragraph. Page 24's mailing panel (five short lines, previously headings on a page with almost no running text) is confirmed now paragraphs; its 'Visit us at ars.usda.gov/ar' line now reads the dingbat bullet immediately after it as a black circle (U+25CF) rather than a lowercase 'l', confirmed against the source render (a Monotype Sorts glyph, code 79, embedded as WVUHWN+MonotypeSorts). Page 15's photo credit, previously 'BRAD FRITz' (a WVUHWN+Helvetica-Condensed glyph whose ToUnicode map reports code 0x5A as lower-case 'z' while the font's own WinAnsiEncoding, its Nonsymbolic descriptor flags and its CharSet (listing 'Z', not 'z') all agree the glyph drawn is a capital), now reads 'BRAD FRITZ'. Page 9's 'Fighting Filth Flies' sidebar title (nine-point Helvetica-Bold over a ten-and-a-half-point body, with a photograph and its caption between the title and the paragraph it opens) is confirmed now a heading, and its own paragraph ('Nonbiting flies that shuttle between filth...') is confirmed still present as a paragraph in the output; the two are not adjacent in the converted reading order because this page's three columns interleave (#153, pre-existing and out of #218's scope), so this contract checks the heading and the paragraph's presence separately rather than their adjacency (Swift fixture tests cover the direct adjacency on a single-column synthetic page, and against this exact real page in isolation). Pages 6 and 19 each print an ordinary English compound broken across a line end that the book itself never prints whole ('com-panies', 'infec-tions'); both are confirmed joined without a hyphen. A third instance on page 15 ('compli-ance') is not fixed and not pinned: its two halves land in separate paragraph blocks (unrelated column-interleaving behavior, not a hyphen-join question at all) before the hyphen logic ever sees them. Porting the hyphen fix required one adaptation beyond the upstream design: main's simpler addVocabulary (unlike the reference design's opensBrokenWord-aware version) counts a line-initial hyphen-broken fragment (bare 'panies') as if it were an independent vocabulary word, which would otherwise block the lexicon vouch by making both halves look like real standalone words; the ported lexiconVouches consults only the system lexicon for that half-word check, never the book's own vocabulary, avoiding the false positive while still protecting a genuine compound like camera-man (both halves are common lexicon words either way). Porting the glyph-identity and sub-heading fixes needed no such adaptation: both are new, self-contained infrastructure with no prior design to diverge from. Not pinned: anything on pages 2-5, 7-8, 10-14, 16-18, 20-23 (most page text is held in preserved-region crops per #158, and column interleaving per #153, both pre-existing and outside this port's scope), and page 24's images (owner rights clearance requires no committed raster or crop from that page; this contract adds no imageRegions or minimumImages check anywhere, matching that constraint).",
+      "basis": "Pages 1, 6, 9, 15, 19 and 24 converted and read against the actual output (source rasters for pages 1 and 24 via tools/compare_pdf.py; pages 6, 9, 15 and 19 are prose already reviewed by reading the converted text itself, which is unambiguous). This corpus case, and the ports it gates, now cover all five of #186's upstream fixes: the heading-size threshold on thin-text pages (documentBody floor and the lowercase-standalone-heading exclusion), lexicon-decided line-end hyphens, a bold sub-heading whose paragraph opens past an intervening picture and caption (#218), dingbat font reading and letter-case glyph disagreement (#217, closed by GlyphIdentityReader.swift, a narrowly-scoped content-stream evidence reader in the mold of NativeSpacingReader). Page 1's cover title ('Keeping Our'/'Troops Safe'/'From Insects', three headings) is confirmed unaffected by the new document-body floor; the lowercase cross-reference line 'pages 2, 4-14' beneath it, previously a fourth heading, is confirmed now a paragraph. Page 24's mailing panel (five short lines, previously headings on a page with almost no running text) is confirmed now paragraphs; its 'Visit us at ars.usda.gov/ar' line now reads the dingbat bullet immediately after it as a black circle (U+25CF) rather than a lowercase 'l', confirmed against the source render (a Monotype Sorts glyph, code 79, embedded as WVUHWN+MonotypeSorts). Page 15's photo credit, previously 'BRAD FRITz' (a WVUHWN+Helvetica-Condensed glyph whose ToUnicode map reports code 0x5A as lower-case 'z' while the font's own WinAnsiEncoding, its Nonsymbolic descriptor flags and its CharSet (listing 'Z', not 'z') all agree the glyph drawn is a capital), now reads 'BRAD FRITZ'. Page 9's 'Fighting Filth Flies' sidebar title (nine-point Helvetica-Bold over a ten-and-a-half-point body, with a photograph and its caption between the title and the paragraph it opens) is confirmed now a heading, and its own paragraph ('Nonbiting flies that shuttle between filth...') is confirmed still present as a paragraph in the output; the two are not adjacent in the converted reading order because this page's three columns interleave (#153, pre-existing and out of #218's scope), so this contract checks the heading and the paragraph's presence separately rather than their adjacency (Swift fixture tests cover the direct adjacency on a single-column synthetic page, and against this exact real page in isolation). Pages 6 and 19 each print an ordinary English compound broken across a line end that the book itself never prints whole ('com-panies', 'infec-tions'); both are confirmed joined without a hyphen. A third instance on page 15 ('compli-ance') is not fixed and not pinned: its two halves land in separate paragraph blocks (unrelated column-interleaving behavior, not a hyphen-join question at all) before the hyphen logic ever sees them. Porting the hyphen fix required one adaptation beyond the upstream design: main's simpler addVocabulary (unlike the reference design's opensBrokenWord-aware version) counts a line-initial hyphen-broken fragment (bare 'panies') as if it were an independent vocabulary word, which would otherwise block the lexicon vouch by making both halves look like real standalone words; the ported lexiconVouches consults only the system lexicon for that half-word check, never the book's own vocabulary, avoiding the false positive while still protecting a genuine compound like camera-man (both halves are common lexicon words either way). Porting the glyph-identity and sub-heading fixes needed no such adaptation: both are new, self-contained infrastructure with no prior design to diverge from. Not pinned: anything on pages 2-5, 7-8, 10-14, 16-18, 20-23 (most page text is held in preserved-region crops per #158, and column interleaving per #153, both pre-existing and outside this port's scope), and page 24's images (owner rights clearance requires no committed raster or crop from that page; this contract adds no imageRegions or minimumImages check anywhere, matching that constraint). Issue191 adds fresh checksum-pinned native geometry, paint-operation and complete release-output review for photograph captions, semantic pull quotations, the outlined initial on16, column order20–23 and the doubled running foot. Pattern/radial/raster-strip controls keep required art; these assertions add no committed raster references.",
       "pages": [
         {
           "page": 1,
@@ -2205,6 +2205,12 @@
           ],
           "paragraphs": [
             "pages 2, 4-14"
+          ]
+        },
+        {
+          "page": 5,
+          "paragraphs": [
+            "The mosquito Aedes aegypti can spread several diseases as it travels from person to person. Only the females feed on blood."
           ]
         },
         {
@@ -2226,12 +2232,33 @@
           ]
         },
         {
+          "page": 8,
+          "paragraphs": [
+            "A sand fly, Phlebotomus papatasi, can transmit parasites that cause leishmaniasis, a disease that can cause permanent skin damage and severe organ damage."
+          ]
+        },
+        {
           "page": 9,
           "headings": [
             "Fighting Filth Flies"
           ],
           "text": [
             "Nonbiting flies that shuttle between filth"
+          ],
+          "paragraphs": [
+            "The adult stable fly, Stomoxys calcitrans, is one of many biting, blood-feeding insects."
+          ]
+        },
+        {
+          "page": 11,
+          "quotations": [
+            "“I was one of those guys deployed to Iraq in 2003."
+          ]
+        },
+        {
+          "page": 12,
+          "quotations": [
+            "“Whenever you get a new compound that works well in the laboratory, you have to take it to the field"
           ]
         },
         {
@@ -2241,6 +2268,12 @@
           ],
           "absentText": [
             "BRAD FRITz"
+          ]
+        },
+        {
+          "page": 16,
+          "text": [
+            "A team of Agricultural Research Service scientists in Parlier, California"
           ]
         },
         {
@@ -2263,6 +2296,45 @@
           ],
           "absentText": [
             "infec-tions"
+          ],
+          "paragraphs": [
+            "Technician Damon Baptista (left) and microbiologist Mark Ibekwe collect a water sample from a creek that drains into the middle Santa Ana River Watershed."
+          ]
+        },
+        {
+          "page": 20,
+          "orderedText": [
+            "running a farm",
+            "blood. Using these materials",
+            "The scientists want to scale up"
+          ]
+        },
+        {
+          "page": 21,
+          "orderedText": [
+            "Mowing front and backyard lawns",
+            "Adding a small amount",
+            "Though the Albany team"
+          ]
+        },
+        {
+          "page": 22,
+          "orderedText": [
+            "Air quality",
+            "Cattle",
+            "copper footbaths"
+          ]
+        },
+        {
+          "page": 23,
+          "orderedText": [
+            "Imidacloprid",
+            "Papaya",
+            "manure compost"
+          ],
+          "absentText": [
+            "Agricultural Research l November/December 2012",
+            "Agricultural Research ● November/December 2012"
           ]
         },
         {
@@ -2271,7 +2343,7 @@
             "U.S. Department of Agriculture",
             "5601 Sunnyside Ave.",
             "Official Business",
-            "Visit us at ars.usda.gov/ar \u25cf Follow us at twitter.com/USDA_ARS"
+            "Visit us at ars.usda.gov/ar ● Follow us at twitter.com/USDA_ARS"
           ],
           "absentText": [
             "ar l Follow",
@@ -2554,6 +2626,86 @@
         {
           "page": 920,
           "minimumImages": 1
+        }
+      ]
+    },
+    {
+      "id": "ntrs-20210020887-techport-thm-2021",
+      "sourceSHA256": "0fce4b68983ad8a216c8228ec44697c61ab41977ad41733c465ebebec3976ff0",
+      "basis": "Fresh pinned native text/paint captures and full release comparison for issue191. Source geometry states sidebar fields, three ruled tables (including merged cells), three independent gallery cards, and a repeated painted header. Text-only fixtures and contracts; no committed rasters or image references, per owner clearance. Chart appearance remains an image while Start/Current/Estimated End values reflow.",
+      "pages": [
+        {
+          "page": 1,
+          "absentText": [
+            "Completed Technology Project"
+          ]
+        },
+        {
+          "page": 2,
+          "absentText": [
+            "Completed Technology Project"
+          ],
+          "text": [
+            "Responsible Mission Directorate:",
+            "Christopher L Moore",
+            "Start: 4",
+            "Current: 6",
+            "Estimated End: 7"
+          ]
+        },
+        {
+          "page": 3,
+          "absentText": [
+            "Completed Technology Project"
+          ],
+          "text": [
+            "TX12 Materials, Structures, Mechanical Systems, and Manufacturing",
+            "The Moon, Outside the Solar System",
+            "Planned Mission (Pull)"
+          ]
+        },
+        {
+          "page": 4,
+          "absentText": [
+            "Completed Technology Project"
+          ],
+          "tableRows": [
+            [
+              "Organizations Performing Work",
+              "Role",
+              "Type",
+              "Location"
+            ],
+            [
+              "Carthage College",
+              "Lead Organization",
+              "Academia",
+              "Kenosha, Wisconsin"
+            ],
+            [
+              "Alabama",
+              "California"
+            ]
+          ],
+          "text": [
+            "Primary U.S. Work Locations",
+            "Texas"
+          ]
+        },
+        {
+          "page": 5,
+          "absentText": [
+            "Completed Technology Project"
+          ],
+          "orderedText": [
+            "Space Propellant Gauging",
+            "Existing propellant gauging methods comparison",
+            "The Basic Formula"
+          ],
+          "paragraphs": [
+            "Tank Health Monitoring - In-Space Propellant Gauging",
+            "The Basic Formula"
+          ]
         }
       ]
     }

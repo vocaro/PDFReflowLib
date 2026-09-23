@@ -9,9 +9,12 @@ enum GraphicsReader {
         var rect: CGRect
         var image = false
         var filled = false
+        var strokeOnly: Bool? = nil
         var rectangular = false
         var vertices: [CGPoint] = []
         var roundedRectangle: Bool? = nil
+        var shaded: Bool?
+        var backgroundShading: Bool?
     }
     struct Result { var regions: [CGRect]; var unsupported: Bool; var hasOnlyInvisibleText = false
                     /// Placed raster image XObjects specifically, a subset of `regions` (#176):
@@ -96,7 +99,7 @@ enum GraphicsReader {
             let shown = rect.intersection(clip.insetBy(dx: -tolerance, dy: -tolerance))
             return shown.isNull || shown.isEmpty ? nil : shown
         }
-        func paint(filled: Bool = false) {
+        func paint(filled: Bool = false, strokeOnly: Bool = false) {
             defer { finishPath() }
             // The footprint is padded before it is clipped: a horizontal rule is a path of no
             // height, and an unpadded rectangle of no area intersects nothing at all.
@@ -110,7 +113,7 @@ enum GraphicsReader {
                     && Set(points.map(\.y)).count == 2
                     && points.allSatisfy { ($0.x == path.minX || $0.x == path.maxX)
                         && ($0.y == path.minY || $0.y == path.maxY) }
-                paints.append(Paint(rect: shown, filled: filled, rectangular: rectangular, vertices: points,
+                paints.append(Paint(rect: shown, filled: filled, strokeOnly: strokeOnly ? true : nil, rectangular: rectangular, vertices: points,
                                     roundedRectangle: panelOutline.isRoundedRectangle ? true : nil))
             } else { unsupported = true }
         }
@@ -232,8 +235,13 @@ enum GraphicsReader {
             } else { s.vertices = nil }
             s.path = s.path.union(rect.applying(s.matrix))
         }
-        for op in ["S", "s", "B", "B*", "b", "b*"] {
-            CGPDFOperatorTableSetCallback(table, op) { _, info in Self.state(info).paint() }
+        for op in ["S", "s"] {
+            CGPDFOperatorTableSetCallback(table, op) { _, info in Self.state(info).paint(strokeOnly: true) }
+        }
+        for op in ["B", "B*", "b", "b*"] {
+            CGPDFOperatorTableSetCallback(table, op) { _, info in
+                let s = Self.state(info); s.paint(filled: s.flatFill)
+            }
         }
         for op in ["f", "F", "f*"] {
             CGPDFOperatorTableSetCallback(table, op) { _, info in
@@ -311,7 +319,8 @@ enum GraphicsReader {
                         // The form paints nothing the clip in force hides, so its declared box
                         // is not its footprint either (#52).
                         if box.isFinite, let rect = s.visible(box),
-                           rect.width * rect.height < s.pageBounds.width * s.pageBounds.height * 0.7 {
+                           rect.width * rect.height < s.pageBounds.width * s.pageBounds.height * 0.7,
+                           !s.regions[startCount...].contains(where: { $0.insetBy(dx: -2, dy: -2).contains(rect) }) {
                             s.regions.append(rect)
                             s.paints.append(Paint(rect: rect))
                         }
@@ -373,13 +382,27 @@ enum GraphicsReader {
         }
         if region.isNull || region.isEmpty { return }
         guard region.isFinite, s.regions.count < 10_000 else { s.unsupported = true; return }
-        // Without a tighter bound, preserve the page rather than inventing a small crop.
-        guard region.width * region.height < s.pageBounds.width * s.pageBounds.height * 0.75 else {
-            s.unsupported = true; return
-        }
         let rect = region.insetBy(dx: -2, dy: -2).intersection(s.pageBounds)
         s.regions.append(rect)
-        s.paints.append(Paint(rect: rect))
+        var backdrop = false
+        if type == 2, let coordinates = CGPDFObjects.array(dictionary, "Coords"),
+           CGPDFArrayGetCount(coordinates) == 4,
+           let extensions = CGPDFObjects.array(dictionary, "Extend"), CGPDFArrayGetCount(extensions) == 2 {
+            var start: CGPDFBoolean = 0, end: CGPDFBoolean = 0
+            var values = [CGPDFReal](repeating: 0, count: 4)
+            if CGPDFArrayGetBoolean(extensions, 0, &start), CGPDFArrayGetBoolean(extensions, 1, &end),
+               start != 0, end != 0,
+               (0..<4).allSatisfy({ CGPDFArrayGetNumber(coordinates, $0, &values[$0]) && values[$0].isFinite }) {
+                let a = CGPoint(x: values[0], y: values[1]).applying(s.matrix)
+                let b = CGPoint(x: values[2], y: values[3]).applying(s.matrix)
+                backdrop = abs(a.x - b.x) >= s.pageBounds.width * 0.75
+                    || abs(a.y - b.y) >= s.pageBounds.height * 0.75
+            }
+        }
+        if !backdrop, rect.width * rect.height >= s.pageBounds.width * s.pageBounds.height * 0.75 {
+            s.unsupported = true
+        }
+        s.paints.append(Paint(rect: rect, shaded: true, backgroundShading: backdrop ? true : nil))
     }
 
     private static func scan(_ stream: CGPDFContentStreamRef, state s: State) {

@@ -71,6 +71,7 @@ enum PageReader {
                     rules: rules, links: links, preserveInvisibleWordGaps: syntheticStyle, shows: shows), graphics: graphics.regions,
                 pictures: graphics.images)
             content.links = links
+            content = TextBackdrop.compose(content, graphics: graphics)
             if !requiresPageImage, PageBackdrop.eligible(graphics, bounds: bounds) {
                 let trimmed = GraphicsReader.read(reference) { imageIndex, dictionary in
                     guard ImageAlphaBounds.mask(in: dictionary) != nil else { return nil }
@@ -86,12 +87,19 @@ enum PageReader {
             }
             content.requiresPageImage = requiresPageImage
             content.hasSyntheticTextStyle = syntheticStyle
+            if !requiresPageImage, !syntheticStyle,
+               try OutlinedInitial.recover(on: page, content: &content, paints: graphics.paints, options: options) {
+                warnings.append(.outlinedInitialUsed)
+            }
             // The tables the page draws, read from the same shows after the lines are final, so a
             // table's rows are the rows the rest of the pipeline sees (#210). A page whose
             // appearance is preserved whole states no columns this reader can trust.
-            if styled, !shows.isEmpty {
-                content.tables = try TableReader.tables(on: page, lines: content.lines,
-                                                        shows: shows, rules: rules)
+            if styled {
+                let ruled = try RuledTableReader.tables(on: page, lines: content.lines, paints: graphics.paints)
+                content.tables = ruled + (try TableReader.tables(on: page, lines: content.lines,
+                                                        shows: shows, rules: rules)).filter { table in
+                    !ruled.contains { $0.rect.intersects(table.rect) }
+                }
             }
             if graphics.unsupported {
                 warnings.append(.unsupportedGraphics)

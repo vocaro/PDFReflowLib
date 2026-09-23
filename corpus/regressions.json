@@ -2120,7 +2120,7 @@
     {
       "id": "noaa-nca5-2023",
       "sourceSHA256": "1942cbf346dc2c711fea413d6d6543edb8bc1e3a88d4c3a85e733c6b6d3577bf",
-      "basis": "Admitted to the corpus lane on the owner's 2026-09-23 ruling on #242, measured on 8faeaab at library defaults: 1,834 pages, 1,609 images, 286,429,009 entry bytes, 0.53 of the 512 MiB budget, no recognized page (measurements/corpus-lane-admissions/record.md). Source pages 1, 8, 33, 48, 80, 84, 139, 1700 and 1834 rendered with Poppler and read against the converted output. Page 1 protects the cover title as a heading and the cover photograph. Page 8 protects the front-matter and chapter entries of the contents in the order the page prints them, the key-message entries under chapters 2 and 3, the painting and its credit; how each entry is set (some preformatted, the chapter 3 entries a table) is not pinned. Pages 33, 80 and 139 are chapter openers: each protects its running head, its title and its photograph; on 80 and 139 the title is a heading, on 33 it reflows as a paragraph joined to the running head, which is pinned neither way. Page 48 protects its section heading, the first line of its sub-heading and its first two paragraphs; the sub-heading's second line, the rest of the column and both captions sit inside the figure crop, the state #181 recorded and #231 reconciled as closed with its fix only on the abandoned branch, so nothing there is pinned. Page 84 protects the prose before and after the Key Message 2.1 box in order, the paragraph's closing sentence inside one paragraph, and the absence of the running foot; the box itself is a crop and its heading is not pinned. Page 1700 protects the focus-section title as a heading, the contributor roles and names in source order and the absence of the running foot; the Authors and Contributors band is a crop. Page 1834 is the back cover of agency seals and keeps a page image.",
+      "basis": "Admitted to the corpus lane on the owner's 2026-09-23 ruling on #242, measured on 8faeaab at library defaults: 1,834 pages, 1,609 images, 286,429,009 entry bytes, 0.53 of the 512 MiB budget, no recognized page (measurements/corpus-lane-admissions/record.md). Source pages 1, 8, 33, 48, 80, 84, 139, 1700 and 1834 rendered with Poppler and read against the converted output. Page 1 protects the cover title as a heading and the cover photograph. Page 8 protects the front-matter and chapter entries of the contents in the order the page prints them, the key-message entries under chapters 2 and 3, the painting and its credit; how each entry is set (some preformatted, the chapter 3 entries a table) is not pinned. Pages 33, 80 and 139 are chapter openers: each protects its running head, its title and its photograph; on all three the title is a heading (#296), and page 33 keeps its running head as prose. Page 48 protects its section heading, the first line of its sub-heading and its first two paragraphs; the sub-heading's second line, the rest of the column and both captions sit inside the figure crop, the state #181 recorded and #231 reconciled as closed with its fix only on the abandoned branch, so nothing there is pinned. Page 84 protects the prose before and after the Key Message 2.1 box in order, the paragraph's closing sentence inside one paragraph, and the absence of the running foot; the box itself is a crop and its heading is not pinned. Page 1700 protects the focus-section title as a heading, the contributor roles and names in source order and the absence of the running foot; the Authors and Contributors band is a crop. Page 1834 is the back cover of agency seals and keeps a page image.",
       "pages": [
         {
           "page": 1,
@@ -2156,6 +2156,12 @@
         },
         {
           "page": 33,
+          "headings": [
+            "Overview: Understanding Risks, Impacts, and Responses"
+          ],
+          "paragraphs": [
+            "Fifth National Climate Assessment: Chapter 1"
+          ],
           "orderedText": [
             "Fifth National Climate Assessment: Chapter 1",
             "Overview: Understanding Risks, Impacts, and Responses"

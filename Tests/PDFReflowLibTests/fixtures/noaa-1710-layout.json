@@ -1,0 +1,136 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        54,
+        735.508009765,
+        187.52399999999994,
+        15.923999999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 12,
+          "text" : "Fifth National Climate Assessment"
+        }
+      ],
+      "text" : "Fifth National Climate Assessment"
+    },
+    {
+      "rect" : [
+        54,
+        685.80399755799999,
+        316.36080001375205,
+        47.772000000000048
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 36,
+          "text" : "Focus on COVID-19"
+        }
+      ],
+      "text" : "Focus on COVID-19"
+    },
+    {
+      "rect" : [
+        54,
+        642.60398535100001,
+        325.584,
+        47.772000000000048
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 36,
+          "text" : "and Climate Change"
+        }
+      ],
+      "text" : "and Climate Change"
+    },
+    {
+      "rect" : [
+        -23.600006100000002,
+        -28.184616299999998,
+        653.75997559999996,
+        634.7881175
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 36,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    612,
+    792
+  ],
+  "caseID" : "noaa-nca5-2023",
+  "graphics" : [
+    [
+      0,
+      0,
+      612,
+      630.96101953100003
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 12,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        735.508009765,
+        187.52399999999994,
+        15.923999999999978
+      ],
+      "text" : "Fifth National Climate Assessment"
+    },
+    {
+      "fontSize" : 36,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        685.80399755799999,
+        316.36080001375205,
+        47.772000000000048
+      ],
+      "text" : "Focus on COVID-19"
+    },
+    {
+      "fontSize" : 36,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        642.60398535100001,
+        325.584,
+        47.772000000000048
+      ],
+      "text" : "and Climate Change"
+    }
+  ],
+  "page" : 1710,
+  "pictures" : [
+    [
+      0,
+      0,
+      612,
+      605.520019531
+    ]
+  ],
+  "rightsBasis" : "NOAA repository explicitly identifies CC0 Public Domain. This records the publisher declaration, not a new owner-confirmed rights determination or shipped-catalog admission.",
+  "schemaVersion" : 2,
+  "sourceSHA256" : "1942cbf346dc2c711fea413d6d6543edb8bc1e3a88d4c3a85e733c6b6d3577bf",
+  "sourceTitle" : "Fifth National Climate Assessment",
+  "sourceURL" : "https://repository.library.noaa.gov/view/noaa/61592/noaa_61592_DS1.pdf"
+}

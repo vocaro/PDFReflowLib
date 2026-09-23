@@ -416,13 +416,12 @@ open. The source has tags, but custom heading and bullet roles map to paragraphs
 [Graphics fallback #13](https://github.com/vocaro/PDFReflowLib/issues/13)'s budget is now on
 `main`, raised to 250,000 operations on its own measurement, and no DGA page falls back on it
 today — every one is under 10,000 operations, so #13's own claim about this book is stale.
-The second gap stands: [native text/label defects #14](https://github.com/vocaro/PDFReflowLib/issues/14)
-was closed by `2e18b3149` on the abandoned coordination branch, and `dd160b4` merged that branch
-with the `ours` strategy, so the commit is an ancestor of `main` and none of its content is
-([decision 0005](decisions/0005-abandoned-coordination-branch.md)). Nothing splits a line PDFKit
-joined across a page. The reconciliation in
-[#231](https://github.com/vocaro/PDFReflowLib/issues/231) holds the list of issues in this position; the fixes are readable with `git show`, but per decision 0005
-they are hand-ported onto `main`'s pipeline rather than cherry-picked.
+The native cover-label split from [#14](https://github.com/vocaro/PDFReflowLib/issues/14)
+was originally only on the abandoned coordination branch (`2e18b3149`). A fresh implementation
+now splits the opposite-side selections using their measured ink ownership and joins each
+ampersand-led label on its own side. The source contract requires intact food-label paragraphs;
+see [the cover comparison](../measurements/detached-cover-labels/record.md). The retained source
+image and review warning still apply, and the page-3 protein-column defect remains separate.
 
 
 ## Fifth National Climate Assessment

@@ -927,7 +927,18 @@ Evidence: [page-retention](../measurements/page-retention/record.md);
   least three, in a ledger of at least three pages). Evidence is local to a chapter; document
   length does not set the frequency threshold.
 - The header candidate band is the top 10% of the page (extended for the 9/11 report's
-  headers); the footer band is the bottom 7%, kept narrower to retain whitespace-cut behavior
+  headers) — **of the page image where the sheet carries one** (#289). A book typeset on a page of
+  its own and printed centred on a larger sheet states its margin there, not on the paper: a
+  Supreme Court slip opinion sets six-by-nine on US Letter, so *Loper Bright*'s text runs from
+  0.21 to 0.85 of the sheet and all 210 of its running heads survived, none of them ever a
+  candidate. A page is read as an image on a sheet from the **symmetry and depth of its side
+  insets** — both at least a seventh of the sheet, the two agreeing within a fiftieth of it —
+  which that book meets at 156.24 and 156.13 on 612 and no other book in the corpus comes near.
+  It is read per page, because the evidence arrives one page at a time, and one page's symmetry
+  removes nothing on its own: what goes must still repeat in the same place at the same size on
+  neighbouring pages. The head's second row, where a page sets one, is not reached: it is not the
+  outermost row, and two rows set two leadings apart are not one stacked band.
+  The footer band is the bottom 7% of the sheet either way, kept narrower to retain whitespace-cut behavior
   around illustrated rows: wider footer removal would disturb the alphabetical row order of the
   illustrated entries on Our Flag pages 34/42/43 without independent layout work. Synthetic invisible-text
   layers use the outer 7% on both edges, because their typography supplies no native font

@@ -110,6 +110,37 @@ enum FurnitureDetector {
         return warnings.sorted { $0.page < $1.page }
     }
 
+    /// The page image this page is printed on, where its sheet is larger than the page.
+    ///
+    /// Some books are typeset on a page of their own and printed centred on a larger sheet: a
+    /// Supreme Court slip opinion sets a six-by-nine page on US Letter, inset 156.24 points on
+    /// the left and 156.13 on the right of a 612-point sheet, page after page. The margin its
+    /// running head stands in is that page's margin, not the paper's, and read against the paper
+    /// the head is nowhere near a margin at all — so all 210 of *Loper Bright*'s heads survived,
+    /// none of them ever a candidate for `resolve` to weigh (#289).
+    ///
+    /// What says a page is printed this way is **the symmetry and the depth of its side insets**.
+    /// Both must reach a seventh of the sheet and the two must agree within a fiftieth of it,
+    /// which separates a page image from an ordinary margin by a wide gap on this corpus:
+    /// *Loper Bright* is inset 156.24 and 156.13 on 612 — a quarter of the sheet, agreeing to a
+    /// tenth of a point — while the 9/11 report is 39.7 and 44.2 on 396, the FAA handbook 72.0
+    /// and 35.9 on 594, and *The Fed Explained* 58.8 and 92.7 on 612. None of those is both deep
+    /// enough and even enough to be a page rather than a margin, and each keeps the band it had.
+    ///
+    /// Read per page, because the evidence arrives one page at a time
+    /// ([decision 0008](../../doc/decisions/0008-streamed-blocks-to-the-writer.md)). One page's
+    /// own symmetry cannot remove anything by itself: what `resolve` removes still has to repeat,
+    /// in the same place and at the same size, on neighbouring pages.
+    static func typePage(of page: PageContent) -> CGRect? {
+        guard !page.lines.isEmpty, page.bounds.width > 0, page.bounds.isFinite else { return nil }
+        let printed = page.lines.dropFirst().reduce(page.lines[0].rect) { $0.union($1.rect) }
+        guard printed.isFinite, printed.height > 0 else { return nil }
+        let width = page.bounds.width
+        let left = printed.minX - page.bounds.minX, right = page.bounds.maxX - printed.maxX
+        guard left >= width / 7, right >= width / 7, abs(left - right) <= width / 50 else { return nil }
+        return printed
+    }
+
     static func collect(_ page: PageContent, pageIndex: Int, into ledger: inout Ledger) {
         ledger.pageCount += 1
         if page.hasSyntheticTextStyle {
@@ -126,11 +157,27 @@ enum FurnitureDetector {
 
         /// The clear space a margin row keeps from the content it is set apart from.
         func separation(_ line: TextLine) -> CGFloat { max(line.rect.height, height * 0.012) }
-        /// Whether the line stands in this edge's candidate band. The footer band is narrower:
-        /// lower-margin numbers can participate in whitespace cuts around illustrated rows, and
-        /// widening that band changes reading order in Our Flag even when the number is furniture.
+        /// Where the top of the candidate band stands, as a share of the sheet. Ordinarily the
+        /// top tenth of the paper, which is where a book prints its running head.
+        ///
+        /// A book printed on a **page image smaller than its sheet** states its own margin
+        /// somewhere else, and `typePage` reads where. A Supreme Court slip opinion is typeset on
+        /// a page centred on US Letter and inset 156 points on each side, so *Loper Bright*'s text
+        /// runs from 0.21 to 0.85 of the sheet and its running head — the outermost row of every
+        /// page, set apart from the body by twenty-one points, repeating on page after page —
+        /// never reached the top tenth of the paper. All 210 of that book's heads survived,
+        /// because none of them was ever a candidate for `resolve` to weigh (#289).
+        ///
+        /// The foot is left exactly as it was. Its band is already narrower on purpose — a
+        /// lower-margin number takes part in the whitespace cuts around an illustrated row, and
+        /// widening it changes reading order in *Our Flag* even where the number is furniture —
+        /// and this rule has no evidence about that.
         func inBand(_ line: TextLine, top: Bool) -> Bool {
-            top ? position(line.rect.midY) >= 0.90 : position(line.rect.midY) <= 0.07
+            guard top else { return position(line.rect.midY) <= 0.07 }
+            guard let type = typePage(of: page), type.height > 0 else {
+                return position(line.rect.midY) >= 0.90
+            }
+            return (line.rect.midY - type.minY) / type.height >= 0.90
         }
         /// Whether the line can be weighed as margin text at all: measurable geometry and type,
         /// with words, and short enough that a repeated paragraph is not taken for furniture.
@@ -262,8 +309,13 @@ enum FurnitureDetector {
             guard stack.count > outer.count, stack.count < all.count,
                   stack.allSatisfy({ measurable(page.lines[$0]) }) else { return }
             // The block may reach further inward than a single row, but not past the outer eighth:
-            // a slide's two-line title stands lower, and the body must not be read as a head.
-            let edge = position(blockEdge(stack, top: top))
+            // a slide's two-line title stands lower, and the body must not be read as a head. Read
+            // against the page image where the sheet carries one, for the reason `inBand` is
+            // (#289).
+            let inward = blockEdge(stack, top: top)
+            let type = typePage(of: page)
+            let edge = type.map { $0.height > 0 ? (inward - $0.minY) / $0.height : position(inward) }
+                ?? position(inward)
             guard top ? edge >= 0.875 : edge <= 0.125 else { return }
             let ordered = stack.sorted()
             for lineIndex in ordered where !recorded.contains(lineIndex) {

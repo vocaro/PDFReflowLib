@@ -228,6 +228,12 @@ ALLOWED = {
         'main and named by its issue'),
     285: ('historical', 'the cell that closes a printed row and so lends it no start, on main and '
         'named by its issue'),
+    276: ('historical', "every measure a page takes of a sideways line reading the writing's own "
+        'frame, on main and named by its issue'),
+    280: ('historical', 'an item carrying the whole block that holds the rest of its word, on main '
+        'and named by its issue'),
+    288: ('historical', 'a line the page broke at a hyphen closing up whatever opens beneath it, '
+        'on main and named by its issue'),
 
     # Closed, but the defect is still in `main`; the prose says so and names the commit. #5 and
     # #11 join this group from #236's audit: both were read against `main` — Warren and NOAA

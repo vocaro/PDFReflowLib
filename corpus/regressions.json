@@ -956,19 +956,23 @@
     {
       "id": "dga-2025-2030",
       "sourceSHA256": "c34f1bec5c9416265670b7fcb24556bb8616ba95e8de2f2890460b6bbca1a472",
-      "basis": "Page 2 source raster reviewed; protects letter paragraph order and imagery, not the known page-3 protein-column defect. Page 1 source title and labels visually reviewed: the distinct Guidelines / For Americans lines retain their word boundary, and source Type3 character maps/TJ adjustments support intact Dairy and Vegetables. Graphic-label ownership remains unqualified; retain the source image and review warning. Page 3 read against the source for the list conversion (#292): the guidelines set their items with `+`, which reconstruction reads whole as paragraphs, and runs of them are unordered lists without the plus — the three under Eat the Right Amount for You and the two under Consume Dairy; the protein items, whose columns interleave (a defect this contract does not bless), are outside the pin.",
+      "basis": "Page 2 source raster reviewed; protects letter paragraph order and imagery, not the known page-3 protein-column defect. Page 1 source title and labels visually reviewed: the distinct Guidelines / For Americans lines retain their word boundary, and source Type3 character maps/TJ adjustments support intact Dairy and Vegetables. Graphic-label ownership remains unqualified; retain the source image and review warning. Page 3 read against the source for the list conversion (#292): the guidelines set their items with `+`, which reconstruction reads whole as paragraphs, and runs of them are unordered lists without the plus — the three under Eat the Right Amount for You and the two under Consume Dairy; the protein items, whose columns interleave (a defect this contract does not bless), are outside the pin. Page 1 reviewed again for #172: the left and right labels each form one paragraph, including their ampersand-led second line; opposite-side footer labels remain complete. Cover column order is accepted as recorded on the issue.",
       "pages": [
         {
           "page": 1,
           "text": [
             "Dietary Guidelines For Americans",
-            "Protein, Dairy",
-            "Vegetables"
+            "Protein, Dairy & Healthy Fats",
+            "Vegetables & Fruits",
+            "Whole Grains",
+            "realfood.gov",
+            "2025–2030"
           ],
           "absentText": [
             "GuidelinesFor Americans",
             "Dair y",
-            "Ve getables"
+            "Ve getables",
+            "& Healthy Fats & Fruits"
           ],
           "minimumImages": 1,
           "warningCodesAnyOf": [

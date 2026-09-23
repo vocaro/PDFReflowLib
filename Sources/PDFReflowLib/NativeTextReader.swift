@@ -158,6 +158,29 @@ enum NativeTextReader {
             let (cutText, cutStyled) = MarginRuleMarks.cut(rule, from: repaired, text: corrected ?? semantic)
             pending.append((cutText, rule.rect, cutStyled))
         }
+        // Opposite-side labels can share a PDFKit selection although the page leaves most of
+        // its width blank between them (#172). Slice the already repaired attributed text, so
+        // links and styles survive without issuing another attributed-text request.
+        if !spacing.isEmpty, pending.count <= 10_000, spacing.count * pending.count <= 2_000_000 {
+            let allBounds = pending.map(\.bounds)
+            pending = try pending.flatMap { item in
+                try Task.checkCancellation()
+                let line = textLine(semantic: item.semantic, bounds: item.bounds, attributed: item.attributed)
+                guard !line.monospaced,
+                      let pieces = DetachedTextReader.pieces(text: item.semantic, rect: item.bounds,
+                          size: line.fontSize, shows: spacing, allBounds: allBounds,
+                          pageWidth: page.bounds(for: .cropBox).width,
+                          measure: { rect, start, end in detachedPiece(rect, from: start, to: end, on: page) })
+                else { return [item] }
+                return pieces.map { piece in
+                    let styled = item.attributed.flatMap { original -> NSAttributedString? in
+                        guard original.string == item.semantic else { return nil }
+                        return original.attributedSubstring(from: piece.range)
+                    }
+                    return (semantic: piece.text, bounds: piece.rect, attributed: styled)
+                }
+            }
+        }
         let rightToLeft = ArabicText.readsRightToLeft(pending.map(\.semantic))
         return pending.map { item in
             guard rightToLeft else { return textLine(semantic: item.semantic, bounds: item.bounds, attributed: item.attributed) }
@@ -169,6 +192,36 @@ enum NativeTextReader {
                 : ArabicText.logicalOrder(item.semantic, onRightToLeftPage: true)
             return textLine(semantic: semantic, bounds: item.bounds, attributed: ordered)
         }
+    }
+
+    private static func detachedPiece(_ rect: CGRect, from minX: CGFloat, to maxX: CGFloat,
+                                on page: PDFPage) -> (String, CGRect)? {
+        func selection(_ left: CGFloat, _ right: CGFloat) -> PDFSelection? {
+            guard right > left else { return nil }
+            return page.selection(for: CGRect(x: left, y: rect.minY, width: right - left, height: rect.height))
+        }
+        func visible(_ selection: PDFSelection?) -> String {
+            (selection?.string ?? "").trimmingCharacters(in: .whitespacesAndNewlines)
+        }
+        let target = visible(selection(minX, maxX))
+        guard !target.isEmpty else { return nil }
+        // Trim the synthesized space spanning the page, without trusting character offsets.
+        var low = minX, high = maxX
+        for _ in 0..<14 {
+            let middle = (low + high) / 2
+            if visible(selection(minX, middle)) == target { high = middle } else { low = middle }
+        }
+        var left = minX
+        low = minX
+        var top = high
+        for _ in 0..<14 {
+            let middle = (low + top) / 2
+            if visible(selection(middle, high)) == target { left = middle; low = middle } else { top = middle }
+        }
+        guard let chosen = selection(left, high), visible(chosen) == target else { return nil }
+        let bounds = chosen.bounds(for: page)
+        guard bounds.isFinite, !bounds.isNull, bounds.width > 0, bounds.height > 0 else { return nil }
+        return (target, bounds)
     }
 
     /// PDFKit's own rectangle for every character of every line, in the order `selectionsByLine`

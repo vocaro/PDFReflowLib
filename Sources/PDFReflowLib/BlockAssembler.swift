@@ -1086,8 +1086,18 @@ struct BlockAssembler {
         let outdent = rightToLeft ? startEdge(line) - startEdge(row) : startEdge(row) - startEdge(line)
         let starts = previousRow == nil || outdent > body * 0.5
             ? [startEdge(prev)] : [startEdge(row), startEdge(prev)]
+        // A right-aligned label may wrap further in than prose's left-edge tolerance (#172).
+        // Its conjunction states a continuation; alignment alone also describes separate steps
+        // of a worked equation and must not join those. Require words, no numbers or operators.
+        let rightLabel = line.text.hasPrefix("& ") && row.hasSize(line.fontSize)
+            && abs(prevRect.maxX - lineRect.maxX) <= body * 0.25
+            && [row.text, line.text].allSatisfy { text in
+                text.contains(where: \.isLetter) && text.allSatisfy {
+                    $0.isLetter || $0.isWhitespace || ",&'-".contains($0)
+                }
+            }
         guard verticalGap >= -body * 0.4, verticalGap < body * 0.9, onStatedLeading(row, line),
-              starts.contains { abs($0 - startEdge(line)) < body * 1.5 } || centered(row, line) || hangs
+              starts.contains(where: { abs($0 - startEdge(line)) < body * 1.5 }) || centered(row, line) || hangs || rightLabel
         else { return false }
         // Prose fills its measure, so a line that used under half of the one beneath it ended
         // something, and a line the page then sets further in begins the next thing. #39 already

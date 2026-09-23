@@ -23,6 +23,14 @@ enum PageBackdrop {
             || (diagonal[1] + 1) % 7 == diagonal[0])
     }
 
+    /// Panel ownership never frees the lettering actually inside a raster picture.
+    static func reflows(_ line: TextLine, on page: PageContent) -> Bool {
+        guard let panels = page.backdropTextPanels, !page.pictures.contains(where: { LayoutReconstructor.takes($0, line) }) else {
+            return false
+        }
+        return panels.contains { $0.contains(line.rect) }
+    }
+
     static func compose(_ original: PageContent, graphics: GraphicsReader.Result) -> PageContent? {
         guard eligible(graphics, bounds: original.bounds) else { return nil }
         let paints = graphics.paints
@@ -32,27 +40,34 @@ enum PageBackdrop {
                 return !overlap.isNull && overlap.width * overlap.height >= line.rect.width * line.rect.height * 0.5
             }
         }
-        let shafts = paints.filter { !$0.image && $0.vertices.count == 2 }
+        let panels = paints.filter { !$0.image && ($0.rectangular || $0.roundedRectangle == true)
+            && !PageDiagnosis.coversPage($0.rect, bounds: original.bounds) && holdsText($0.rect) }
+        // A lone straight stroke may be a chart axis. Only a shaft with an attached small
+        // arrowhead is a connector; the matching head is then removed along with its shaft.
+        let heads = paints.filter { !$0.image && (3...4).contains($0.vertices.count)
+            && !$0.rectangular && $0.rect.width <= 24 && $0.rect.height <= 24 }
+        func meets(_ shaft: GraphicsReader.Paint, _ head: GraphicsReader.Paint) -> Bool {
+            shaft.vertices.count == 2 && shaft.vertices.contains {
+                head.rect.insetBy(dx: -3, dy: -3).contains($0)
+            }
+        }
+        let shafts = paints.filter { shaft in !shaft.image && shaft.vertices.count == 2
+            && heads.contains { head in meets(shaft, head) } }
         let art = paints.filter { paint in
             if paint.image { return true }
             if PageDiagnosis.coversPage(paint.rect, bounds: original.bounds) { return false }
-            if holdsText(paint.rect) { return false }
-            // A shaft is a simple open segment; a small filled triangle touching its endpoint
-            // is its arrowhead. Their position relative to text boxes does not change this.
-            if paint.vertices.count == 2 || isArrowPolygon(paint.vertices) { return false }
-            if (3...4).contains(paint.vertices.count), !paint.rectangular,
-               paint.rect.width <= 24, paint.rect.height <= 24,
-               shafts.contains(where: { shaft in
-                   shaft.vertices.contains { paint.rect.insetBy(dx: -3, dy: -3).contains($0) }
-               }) { return false }
+            if panels.contains(paint) { return false }
+            if shafts.contains(paint) || isArrowPolygon(paint.vertices) { return false }
+            if heads.contains(paint), shafts.contains(where: { meets($0, paint) }) { return false }
             return true
         }
         var page = original
         page.graphics = clusters(art.map(\.rect), distance: 4)
         page.pictures = graphics.images
+        page.backdropTextPanels = panels.map(\.rect)
         let crops = LayoutReconstructor.graphicsWithLabels(page)
         let total = original.lines.reduce(0) { $0 + $1.text.split(whereSeparator: \.isWhitespace).count }
-        let taken = original.lines.filter { line in crops.contains { LayoutReconstructor.takes($0, line) } }
+        let taken = original.lines.filter { line in !reflows(line, on: page) && crops.contains { LayoutReconstructor.takes($0, line) } }
             .reduce(0) { $0 + $1.text.split(whereSeparator: \.isWhitespace).count }
         guard !crops.contains(where: { PageDiagnosis.coversPage($0, bounds: original.bounds) }),
               taken * 2 <= total else { return nil }

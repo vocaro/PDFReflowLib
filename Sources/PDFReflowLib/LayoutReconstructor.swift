@@ -1629,7 +1629,7 @@ enum LayoutReconstructor {
         // page prints that row, the picture merely lies across its end (#207).
         let columnHeaders = TableRegionDetector.columnHeaders(in: page, body: max(4, bodySize(page.lines)))
         let taken = Set(page.lines.indices.filter { index in
-            !overPicture.contains(index) && images.contains {
+            !overPicture.contains(index) && !PageBackdrop.reflows(page.lines[index], on: page) && images.contains {
                 takes($0.0, page.lines[index])
                     && !reachesInto($0.0, page.lines[index], among: page.lines, pictures: page.pictures,
                                     bounds: page.bounds, columnHeaders: columnHeaders)

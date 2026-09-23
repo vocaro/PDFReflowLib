@@ -50,6 +50,7 @@ budget). The case column links to the narrative section below; the seven #30 cas
 | [`irs-p596-zhs-2025`](#issue-30-coverage-expansion) | Publication 596 (ZH-S), Earned Income Credit | 36 | Simplified Chinese mixed with Latin identifiers and amounts | [review](../corpus/irs-p596-zhs-2025-review.json) | 256 MiB |
 | [`ntrs-20180003024-earthdata-slides-2018`](#earthdata-cloud-analytics-project) | Earthdata Cloud Analytics Project | 21 | Google Slides export with a full-bleed fill under real text; one slide whose only writing is drawn | manifest `reviewPages` | 128 MiB |
 | [`usda-ars-agresearch-2012-11`](#agricultural-research-magazine) | Agricultural Research, Vol. 60 No. 10 | 24 | Magazine layout, dingbat/case glyph misreads, thin-page headings, lexicon-decided hyphens | manifest `reviewPages` | 512 MiB |
+| [`ntrs-20210020887-techport-thm-2021`](#nasa-techport-tank-health-monitoring) | Tank Health Monitoring, NASA TechPort project 97058 | 5 | Repeated header bands, sidebar fields, ruled tables and gallery captions | manifest `reviewPages` | 128 MiB |
 
 These are regression limits for release CLI processes on macOS arm64, not physical-device
 budgets or guarantees about Apple service memory. Each evaluation verifies exact input identity
@@ -734,11 +735,33 @@ case, both needing content-stream font reading main did not have. `GlyphIdentity
 fixes both, and the contract pins them: the bullet (a Monotype Sorts glyph at code 79, embedded
 as `WVUHWN+MonotypeSorts`) reads as U+25CF, not raised and not `l`, and the credit reads
 "BRAD FRITZ" (its Helvetica-Condensed glyph's `WinAnsiEncoding`, Nonsymbolic flags and CharSet,
-which lists `Z` but not `z`, agree the glyph drawn is a capital). Most page text on this document
-sits in preserved-region crops (#158) or interleaves across columns (#153), both pre-existing and
-outside these ports' scope; those pages are not reviewed here. Neither issue tracks its defect any
-more: #158 was closed by `bff0a046c` and #153 by `58a2ddda6`, both on the abandoned coordination
-branch, whose `ours` merge left `main`'s tree unchanged
-([decision 0005](decisions/0005-abandoned-coordination-branch.md)); the crops and the interleaving
-are still what this document gets. [#231](https://github.com/vocaro/PDFReflowLib/issues/231) holds the reconciliation. Peak converter RSS measured about
-279 MiB against a 512 MiB ceiling.
+which lists `Z` but not `z`, agree the glyph drawn is a capital). Those early ports did not
+qualify the remaining crops (#158) or column interleaving (#153). Their original branch fixes,
+`bff0a046c` and `58a2ddda6`, were absent after the abandoned branch's `ours` merge
+([decision 0005](decisions/0005-abandoned-coordination-branch.md)); #231 records that history.
+
+The later [native magazine qualification](../measurements/native-magazine-panels/record.md)
+adds complete captions on pages 5, 8, 9 and 19, the outlined initial on 16, semantic quotations
+on 11–12, native column order on 20–23, and removal of both impressions of page 23's running
+foot. These source cases supersede the earlier broad statement that their text remains cropped
+or interleaved. The [continuation qualification](../measurements/magazine-continuations/record.md)
+keeps the page-12 paragraph together around its quotation and the page-17 paragraph together
+around its picture and credit; the displays retain their own blocks. Stacked subheadings on
+6, 7 and 17 become complete headings. Other unreviewed layout cases are not covered by those
+claims. The Mac RSS ceiling remains 512 MiB.
+
+## NASA TechPort Tank Health Monitoring
+
+The five-page NASA TechPort project 97058 data sheet is pinned as
+`ntrs-20210020887-techport-thm-2021`, SHA-256
+`0fce4b68983ad8a216c8228ec44697c61ab41977ad41733c465ebebec3976ff0`.
+Its source identity and owner-approved text-derivative scope are in the manifest. No page
+raster or crop is committed. The source is attributed to Rudy Werlink, NASA Kennedy Space
+Center; the document was printed on 2021-08-24.
+
+The [source record](../measurements/native-magazine-panels/record.md) qualifies the repeated
+header band, native sidebar fields, three ruled tables on page 4, and three picture/caption
+cards on page 5. The three TRL values remain native text while the chart retains its source
+appearance. Tables preserve merged cells and original inline styles; gallery captions follow
+their own pictures from left to right. All five pages have source contracts. The registered
+Mac RSS ceiling is 128 MiB; it is not a physical-device budget.

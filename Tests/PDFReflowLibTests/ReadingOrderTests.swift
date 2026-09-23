@@ -692,8 +692,8 @@ func aColumnThatWidensAndNarrowsAgainKeepsThePicturesBesideItOutOfItsProse() thr
     try expectInOrder(text, [
         "as possible and keeping crops viable",                   // the first column, complete
         "postharvest were in the 10",
-        "Infrared thermometer mounted on a pole",                 // the upper picture's caption
-        "consistently higher than the 3",                         // the second column, complete
+        "consistently higher than the 3",                         // #214 resumes the same paragraph
+        "Infrared thermometer mounted on a pole",                 // its separately retained caption
         "potential were consistent with",
         "data collected by the infrared sensors",                 // its run-on measure
         "use year after year.",

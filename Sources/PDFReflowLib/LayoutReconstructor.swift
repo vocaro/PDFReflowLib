@@ -1783,6 +1783,7 @@ enum LayoutReconstructor {
         // still reflow, as the table rows below are (#160).
         let markerList = hangingMarkerList(in: lines, body: typography.body)
         var assembler = BlockAssembler(page: page.number, body: typography.body, leading: typography.leading,
+                                       additionalLeading: typography.additionalLeading,
                                        hyphens: context.hyphens, imageLinks: imageLinks,
                                        imageDescriptions: tableAssets(images, tables: page.recognizedTables,
                                                                       page: page.number),

@@ -2366,3 +2366,27 @@ still need broader qualification. The detectors cannot identify every difficult 
 original colors, full tagged-PDF semantics, links and interactive elements are not reproduced.
 Smaller graphics and undetected scans can still carry transcription errors. Review warnings and
 compare the source before distributing a derived book.
+
+## Paragraphs interrupted by a displayed block
+
+`InterruptedColumnContinuation` extends the existing figure-continuation plan when a
+full-measure native paragraph ends one column and resumes at the top of its neighbor.
+Matching size and structure, a supported column bottom, a flush opening with two body
+rows, and ownership of every intervening image, quotation and smaller caption are required.
+A completed sentence, indented opening, intervening body text or unrelated/spanning picture
+prevents the join. Without a display interruption, this additional path requires an explicit
+line-end hyphen. The assembler resumes the existing paragraph handle, preserving styles;
+the display and caption keep their separate blocks. Recognized or synthetic pages decline.
+
+`StackedSectionLabels` combines two or three closely aligned bold native rows near body
+size only when the existing recurring-style, clearance and indented-paragraph evidence
+proves the combined heading. The rows then produce one heading and navigation entry.
+Source evidence and rejected boundaries are in
+[magazine-continuations](../measurements/magazine-continuations/record.md).
+
+A page with many small table or footnote lines may also state a larger ordinary body size.
+`PageTypography` accepts a native wrapped run with at least four rows and 200 characters,
+a stable margin and leading, three lowercase continuations, and a substantial measure.
+Bold/tagged headings, caption openings and displayed quotations do not supply that floor.
+Only the heading-size comparison changes; small text and the page's modal geometry remain.
+Fed pages 13 and 46 provide source controls for this distinction.

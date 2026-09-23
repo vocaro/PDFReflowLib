@@ -59,6 +59,9 @@ func onlyAnOpenProseColumnCanResumeAcrossItsFigure() {
     var headings = roles
     headings[5] = .heading
     #expect(ColumnContinuation.pairs(original, roles: headings, body: 10).isEmpty)
+    var labelSupport = roles
+    for index in [0, 1, 6, 7] { labelSupport[index] = .heading }
+    #expect(ColumnContinuation.pairs(original, roles: labelSupport, body: 10).isEmpty)
     var spanning = original
     spanning[3].rect.size.width = 380
     #expect(ColumnContinuation.pairs(spanning, roles: roles, body: 10).isEmpty)

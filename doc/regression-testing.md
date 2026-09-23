@@ -28,7 +28,7 @@ Fetch sources with `tools/fetch_corpus.py --case <id>` (checksum-verified, cache
 
 What the individual gates check:
 
-- `swift test`: <!-- counts:swift-tests -->722 Swift Testing tests<!-- counts:end --> with no known-issue wrappers, using the real Apple
+- `swift test`: <!-- counts:swift-tests -->739 Swift Testing tests<!-- counts:end --> with no known-issue wrappers, using the real Apple
   PDF/OCR stack. They cover extraction, the document model, layout, raster pixels (crop origins,
   rotations, annotations, resource ceilings), preserved regions (fraction bars, raised exponents
   and all six cells of a ruled table in actual EPUB images at 72/144 DPI, with prose and code
@@ -207,7 +207,7 @@ loaded host. Each case verifies the pinned source identity, converts in a fresh 
 otherwise; see [corpus.md](corpus.md#index)),
 checks EPUB structure, EPUBCheck, monotonic progress, the manifest memory ceiling and the
 reviewed content contract in [corpus/regressions.json](../corpus/regressions.json):
-<!-- counts:contract-coverage -->784 checks on 151 reviewed pages across 20 documents<!-- counts:end -->.
+<!-- counts:contract-coverage -->797 checks on 152 reviewed pages across 20 documents<!-- counts:end -->.
 All source-page anchors must remain complete and ordered, and semantic text must
 contain no image-attachment placeholders. The manifest consistency test requires every corpus
 document to be covered or explicitly excluded (`excludedFullConversions`, whose entries the
@@ -219,9 +219,9 @@ each book is in [corpus.md](corpus.md#warren-commission-report) and the admissio
 [corpus-lane-admissions](../measurements/corpus-lane-admissions/record.md).
 
 <!-- counts:contract-breakdown -->
-Those 784 checks are 4 `spineContinuity`, 89 `text`, 343 `orderedText`, 59 `absentText`,
-39 `headings`, 57 `paragraphs`, 6 `continuedParagraphs`, 10 `preformatted`, 15 `lists`,
-16 `scripts`, 11 `imageRegions`, 21 `tableRows`, 84 `minimumImages`, 23 `warningCodesAnyOf` and
+Those 797 checks are 4 `spineContinuity`, 91 `text`, 343 `orderedText`, 60 `absentText`,
+40 `headings`, 65 `paragraphs`, 6 `continuedParagraphs`, 10 `preformatted`, 15 `lists`,
+16 `scripts`, 11 `imageRegions`, 21 `tableRows`, 85 `minimumImages`, 23 `warningCodesAnyOf` and
 7 `absentWarningCodes`, counted as `tools/check_corpus_content.py` counts them.
 <!-- counts:end -->
 

@@ -66,6 +66,9 @@ enum NativeTextReader {
         // filter below and `attributedTexts`'s alignment check reuse it instead of asking PDFKit
         // for each line's plain text twice.
         let textsByLine = selections.map(\.string)
+        let discretionary = includeStyle ? DiscretionaryHyphenReader.lines(
+            shows: page.pageRef.map(DiscretionaryHyphenReader.read) ?? [],
+            texts: textsByLine.map { $0 ?? "" }, bounds: boundsByLine) : [:]
         // A scan also contributes a page-sized attachment selection. It owns no words, and
         // must not make every word-box anchor look shared by two text lines (#295).
         let invisibleBounds = preserveInvisibleWordGaps ? selections.indices.compactMap { index -> CGRect? in
@@ -140,6 +143,11 @@ enum NativeTextReader {
             if let spacingFixed {
                 repaired = GlyphIdentityReader.apply(glyphs, to: spacingFixed, bounds: bounds,
                                                      allBounds: boundsByLine, carry: &carry)
+            }
+            // Preserve the literal source glyph; the exact continuation and compound guards
+            // decide whether this font evidence applies when two lines are actually joined.
+            if let word = discretionary[index] {
+                repaired = repaired.map { DiscretionaryHyphenReader.apply(to: $0, word: word) }
             }
             // Chinese sets no space between the characters of a word, so a space the text layer
             // carries between two ideographs was never in the writing (#42).
@@ -601,6 +609,14 @@ enum NativeTextReader {
                 elements.append(.link(target, InlineText(elements: [.text(run.text, run.style)])))
             }
         }
-        return InlineText(elements: elements).trimmingCharacters(in: .whitespacesAndNewlines)
+        var result = InlineText(elements: elements).trimmingCharacters(in: .whitespacesAndNewlines)
+        let original = attributed.string as NSString
+        let trimmed = original.trimmingCharacters(in: .whitespacesAndNewlines)
+        if trimmed.hasSuffix("-"), let range = attributed.string.range(of: trimmed, options: .backwards) {
+            let end = NSRange(range, in: attributed.string).upperBound - 1
+            result.sourceDiscretionaryWord = attributed.attribute(DiscretionaryHyphenReader.attribute,
+                at: end, effectiveRange: nil) as? String
+        }
+        return result
     }
 }

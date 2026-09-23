@@ -154,7 +154,7 @@ private func paddedIconPDF(opaque: Bool = false, maskExtra: String = "", clip: B
         lines: [TextLine(text: "A panel label", rect: CGRect(x: 70, y: 430, width: 80, height: 12), fontSize: 12)],
         graphics: graphics.regions)
     let composed = try #require(PageBackdrop.compose(page, graphics: graphics))
-    #expect(composed.graphics.isEmpty)
+    #expect(composed.graphics.count == 1)
     #expect(PageBackdrop.reflows(page.lines[0], on: composed))
     let ellipse = GraphicsReader.read(try operatorPage(backdrop
         + "60 440 m 60 462 82 480 110 480 c 138 480 160 462 160 440 c "
@@ -163,7 +163,7 @@ private func paddedIconPDF(opaque: Bool = false, maskExtra: String = "", clip: B
 }
 
 @Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/182"), arguments: [11, 18])
-func aBackdropRetainsLocalDiagramCropsWithoutJoiningTheCornerEmblem(number: Int) throws {
+func aBackdropRetainsNativePanelsAndCompleteDiagramCrops(number: Int) throws {
     let fixture = try JSONDecoder().decode(BackdropCapture.self,
         from: Data(contentsOf: fixtureURL("earthdata-\(number)-backdrop.json")))
     #expect(fixture.sourceSHA256 == "f0a1ea3f5711228a9de2544fd1a94b05cfb8d9323fe3a4c253542f5a6ead5c94")
@@ -171,12 +171,17 @@ func aBackdropRetainsLocalDiagramCropsWithoutJoiningTheCornerEmblem(number: Int)
         images: fixture.trimmedPictures, visibleText: true, paints: fixture.trimmedPaints)
     let page = try #require(PageBackdrop.compose(fixture.original, graphics: graphics))
     let crops = LayoutReconstructor.graphicsWithLabels(page)
-    #expect(!crops.contains { PageDiagnosis.coversPage($0, bounds: page.bounds) })
-    #expect(crops.contains { $0.maxX < 80 && $0.minY > 330 })
+    #expect(!page.graphics.contains { PageDiagnosis.coversPage($0, bounds: page.bounds) })
+    #expect(page.graphics.contains { $0.maxX < 80 && $0.minY > 330 })
     #expect(crops.contains { $0.contains(CGPoint(x: 360, y: 230)) })
     if number == 18 {
         let secondTitleRow = try #require(page.lines.first { $0.text == "Stages Appropriate for a Diverse User Base" })
         #expect(PageBackdrop.reflows(secondTitleRow, on: page))
+        #expect(crops.contains { $0.contains(secondTitleRow.rect) })
+        // A crop that meets a visible rounded panel must preserve its entire shape.
+        for panel in fixture.trimmedPaints where panel.roundedRectangle == true {
+            #expect(crops.contains { $0.contains(panel.rect) })
+        }
         var warnings: [ConversionWarning] = []
         let blocks = LayoutReconstructor.blocks(page: page, images: crops.map { ($0, "figure.png") },
                                                 vocabulary: [], warnings: &warnings)

@@ -501,6 +501,8 @@ struct BlockAssembler {
     /// tags partly apply interleaves them (#67) — so the open paragraph is one slot, and the tag
     /// travels with it rather than holding a second, parallel one (#238).
     private var paragraphTag: TextStructure?
+    /// A resumed paragraph keeps its original position before the intervening figure (#160).
+    private var paragraphTarget: Int?
     private var previous: TextLine?
     /// The printed row `previous` closes, where the extractor split that row into pieces standing
     /// side by side: the line the page set, of which `previous` is only the last piece (#41,
@@ -622,12 +624,44 @@ struct BlockAssembler {
             let level = paragraphHeadingLevel
             let content: ReflowBlock.Content = level == 0 ? .paragraph(paragraph)
                 : .heading(id: headingID(), text: paragraph, level: level)
-            blocks.append(ReflowBlock(content: content, structureGroup: paragraphTag?.group, page: page))
+            if let target = paragraphTarget {
+                blocks[target].content = content
+            } else {
+                blocks.append(ReflowBlock(content: content, structureGroup: paragraphTag?.group, page: page))
+            }
         }
+        paragraphTarget = nil
         paragraph = InlineText()
         paragraphTag = nil
         previous = nil
         previousRow = nil
+    }
+
+    /// Retain the paragraph handle while its figure and caption are emitted in their own
+    /// blocks. Only a source-geometry continuation plan can ask to resume this handle.
+    mutating func suspendProse() -> Int? {
+        guard !paragraph.elements.isEmpty, paragraphHeadingLevel == 0 else { return nil }
+        let target = paragraphTarget ?? blocks.count
+        flushParagraph()
+        return target
+    }
+
+    mutating func resumeProse(_ target: Int, with line: TextLine) -> Bool {
+        flushNote()
+        flushParagraph()
+        guard blocks.indices.contains(target), case let .paragraph(text) = blocks[target].content else { return false }
+        paragraph = join(text, line.content)
+        paragraphTarget = target
+        paragraphTag = line.structure
+        previous = line
+        previousRow = nil
+        initialOpening = nil
+        headingLine = nil
+        itemLine = nil
+        codeOrigin = nil
+        rowInProgress = nil
+        itemRowInProgress = nil
+        return true
     }
 
     /// A line of a numbered note; consecutive lines of one `group` join into one paragraph.

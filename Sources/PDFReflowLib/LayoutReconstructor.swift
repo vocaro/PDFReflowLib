@@ -1686,8 +1686,14 @@ enum LayoutReconstructor {
             }
         }
         let contradicted = contradictedHeadingGroups(elements, roles: roles, rank: context.headingRank)
+        let continuations = ColumnContinuation.pairs(elements, roles: roles, body: typography.body)
+        let suspendedAt = Set(continuations.values)
+        var paragraphHandles: [Int: Int] = [:]
         for (index, element) in elements.enumerated() {
-            if let group = noteGroups[index], let line = element.line {
+            if let start = continuations[index], let handle = paragraphHandles[start], let line = element.line,
+               assembler.resumeProse(handle, with: line) {
+                // The sentence continues in its original paragraph; its figure remains after it.
+            } else if let group = noteGroups[index], let line = element.line {
                 assembler.appendNote(group: group, line)
             } else if let path = element.image {
                 assembler.appendImage(path)
@@ -1711,6 +1717,9 @@ enum LayoutReconstructor {
                 } else {
                     assembler.append(line, as: spatial)
                 }
+            }
+            if suspendedAt.contains(index), let handle = assembler.suspendProse() {
+                paragraphHandles[index] = handle
             }
         }
         var result = assembler.finish()

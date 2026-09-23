@@ -74,6 +74,8 @@ ALLOWED = {
     24: ('historical', 'a research note recording that #24 was closed with no production change'),
     26: ('historical', 'the reproducibility finding a pinning client is told to record'),
     291: ('historical', "a sentence's own stop joining the block above it, on main and named by its issue"),
+    31: ('historical', 'the scanned-table fallback rule, on main and named by its issue'),
+    173: ('historical', "the Vision variance across compiled model sets it recorded, measured as not reproducing on main and answered per run by #284's control run"),
     30: ('historical', 'the coverage expansion that added seven corpus cases, used as its name'),
     38: ('historical', '`TextEncodingCheck`, which is in `main`, named by its issue'),
     93: ('historical', 'the recognition policy #93 introduced and `1b0308b` ported'),

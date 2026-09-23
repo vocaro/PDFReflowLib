@@ -538,6 +538,10 @@ recognized, and 41 of them preserve a located table as a picture under `unreadTa
 recognition is why the book's memory ceiling rose from 512 to 768 MiB
 ([record](../measurements/unread-table-cells-plausibility/record.md)); page 74, whose table's
 values are typewritten, keeps its layer and its `unverifiedTextLayer` notice.
+That is the warned per-table fallback [#31](https://github.com/vocaro/PDFReflowLib/issues/31)
+asked for, demonstrated on the book itself rather than on a captured reading
+([record](../measurements/scanned-table-fallback-reached/record.md)); reconstructing the cells
+stays refused on the evidence in [scanned-table-cells](../measurements/scanned-table-cells/record.md).
 Crashes, timeouts, resource failures and generic image-preservation warnings do not satisfy it. No production quality-refusal
 error exists yet; the manifest's approved diagnostic list is empty. Future dedicated quality
 warnings/refusals need explicit semantics and matching contract entries. The present warning

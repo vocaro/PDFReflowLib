@@ -42,11 +42,14 @@ struct SourceLayoutFixture: Decodable {
     /// The placed raster image XObjects among `graphics`, captured from schema version 2 on;
     /// an older capture carries none, which is the page every test of them was written against.
     var pictures: [[Double]]
+    /// Exact filled rectangles and the source text inside them, captured from version 3 (#215).
+    var filledCells: [[Double]]
+    var filledCellText: [String]
     /// Styled runs, absent from the earliest captures; those fixtures serve geometry tests only.
     var attributedLines: [AttributedLine]
 
     private enum CodingKeys: String, CodingKey {
-        case schemaVersion, sourceSHA256, page, bounds, lines, graphics, pictures, attributedLines
+        case schemaVersion, sourceSHA256, page, bounds, lines, graphics, pictures, attributedLines, filledCells, filledCellText
     }
 
     init(from decoder: Decoder) throws {
@@ -58,6 +61,8 @@ struct SourceLayoutFixture: Decodable {
         lines = try values.decode([Line].self, forKey: .lines)
         graphics = try values.decode([[Double]].self, forKey: .graphics)
         pictures = try values.decodeIfPresent([[Double]].self, forKey: .pictures) ?? []
+        filledCells = try values.decodeIfPresent([[Double]].self, forKey: .filledCells) ?? []
+        filledCellText = try values.decodeIfPresent([String].self, forKey: .filledCellText) ?? []
         attributedLines = try values.decodeIfPresent([AttributedLine].self, forKey: .attributedLines) ?? []
     }
 

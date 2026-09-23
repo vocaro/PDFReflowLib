@@ -46,11 +46,15 @@ private typealias CaptureFont = UIFont
             attributedLines.append(["text": attributed.string, "rect": rect(selection.bounds(for: page)), "runs": runs])
         }
         let payload: [String: Any] = [
-            "schemaVersion": 2,
+            "schemaVersion": 3,
             "caseID": item["id"]!, "sourceSHA256": digest, "page": pageNumber,
             "sourceURL": item["downloadURL"] ?? item["url"] ?? "", "sourceTitle": item["title"]!,
             "rightsBasis": item["rightsBasis"] ?? "See corpus manifest and third-party notices.",
             "bounds": rect(page.bounds(for: .cropBox)), "graphics": graphics.regions.map(rect),
+            "filledCells": graphics.filledCells.map(rect),
+            "filledCellText": graphics.filledCells.map {
+                page.selection(for: $0.insetBy(dx: 0.1, dy: 0.1))?.string ?? ""
+            },
             // The placed raster image XObjects among the regions, which crop ownership reads
             // (#176, #239, #207). Captures before schema version 2 carry none.
             "pictures": graphics.images.map(rect),

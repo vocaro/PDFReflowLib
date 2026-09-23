@@ -1992,7 +1992,7 @@ Evidence: [rule-and-url-seeds](../measurements/rule-and-url-seeds/record.md),
 
 At least two English `Chapter 1 …` through `Chapter N …` entries must state consecutive
 numbers and strictly increasing local destination pages. Arabic or canonical Roman numerals
-can appear at the root or under part containers, with a colon, period or dash between number
+can appear at the root or under explicit Part containers, with a colon, period or dash between number
 and title. Traversal is bounded to four levels and 10,000 entries; descendants of a chapter
 remain section navigation. Missing, remote, duplicate or backward chapter destinations reject
 the sequence. Unnumbered and other-language schemes keep ordinary packing. Each candidate must also show its chapter number and full title
@@ -2007,7 +2007,8 @@ manufacture headings: an outline entry is not a heading in the text, and writing
 words on the page the page does not print. They do supply navigation, which EPUB models
 separately — see `OutlineReader`.
 
-Evidence: [chapter-boundaries](../measurements/chapter-boundaries/record.md).
+Evidence: [chapter-boundaries](../measurements/chapter-boundaries/record.md) and
+[chapter-outline-qualification](../measurements/chapter-outline-qualification/record.md).
 
 ## OutlineReader
 

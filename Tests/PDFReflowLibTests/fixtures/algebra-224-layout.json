@@ -1,0 +1,1145 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        84.9602,
+        745.55119999999999,
+        79.690012262645794,
+        11.955199999999991
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Example 291."
+        }
+      ],
+      "text" : "Example 291."
+    },
+    {
+      "rect" : [
+        116.40000000000001,
+        708.4214391999999,
+        14.552028409999991,
+        12.616443300000014
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -4.2000000000000455,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "m"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2"
+        }
+      ],
+      "text" : "m2"
+    },
+    {
+      "rect" : [
+        132.83982,
+        699.38330799999994,
+        66.032198410000007,
+        21.654574499999967
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− mn− 30n"
+        },
+        {
+          "baselineOffset" : 4.2000000000000455,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2 "
+        }
+      ],
+      "text" : "− mn− 30n2 "
+    },
+    {
+      "rect" : [
+        107.76011000000005,
+        663.98330799999985,
+        91.19474120000001,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "(m + 5n)(m− 6n) "
+        }
+      ],
+      "text" : "(m + 5n)(m− 6n) "
+    },
+    {
+      "rect" : [
+        214.56019000000001,
+        699.38330799999994,
+        178.29800800000001,
+        21.654574499999967
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Want to multiply to− 30, add to− 1"
+        }
+      ],
+      "text" : "Want to multiply to− 30, add to− 1"
+    },
+    {
+      "rect" : [
+        214.56015000000002,
+        681.62310799999989,
+        272.80125599418886,
+        21.77449450000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "5 and− 6, write the factors, don"
+        },
+        {
+          "baselineOffset" : 4.3199200000000246,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "′"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "t forget second variable"
+        }
+      ],
+      "text" : "5 and− 6, write the factors, don′t forget second variable"
+    },
+    {
+      "rect" : [
+        214.56012000000004,
+        663.98330799999985,
+        64.583840789990404,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Our Solution"
+        }
+      ],
+      "text" : "Our Solution"
+    },
+    {
+      "rect" : [
+        84.960120000000046,
+        626.25954479999984,
+        425.25547423920636,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "It is possible to have a problem that does not factor. If there is no combination of"
+        }
+      ],
+      "text" : "It is possible to have a problem that does not factor. If there is no combination of"
+    },
+    {
+      "rect" : [
+        84.960120000000018,
+        611.49934479999979,
+        425.156569344768,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "numbers that multiplies and adds to the correct numbers, then we say we cannot"
+        }
+      ],
+      "text" : "numbers that multiplies and adds to the correct numbers, then we say we cannot"
+    },
+    {
+      "rect" : [
+        84.960120000000018,
+        596.85954479999975,
+        425.215763154944,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "factor the polynomial, or we say the polynomial is prime. This is shown in the fol-"
+        }
+      ],
+      "text" : "factor the polynomial, or we say the polynomial is prime. This is shown in the fol-"
+    },
+    {
+      "rect" : [
+        84.960120000000018,
+        582.2193447999997,
+        82.211409506303994,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "lowing example."
+        }
+      ],
+      "text" : "lowing example."
+    },
+    {
+      "rect" : [
+        84.960120000000018,
+        538.91139999999973,
+        79.690012155048976,
+        11.955199999999991
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Example 292."
+        }
+      ],
+      "text" : "Example 292."
+    },
+    {
+      "rect" : [
+        159.11992000000004,
+        501.2193447999997,
+        55.543353577600016,
+        13.298257700000022
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "x"
+        },
+        {
+          "baselineOffset" : 4.3199200000000246,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "+2x + 6 "
+        }
+      ],
+      "text" : "x2 +2x + 6 "
+    },
+    {
+      "rect" : [
+        230.28001000000003,
+        501.2193447999997,
+        149.73811800000001,
+        13.298257700000022
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Want to multiply to 6, add to 2"
+        }
+      ],
+      "text" : "Want to multiply to 6, add to 2"
+    },
+    {
+      "rect" : [
+        153.84008000000006,
+        475.10330799999974,
+        60.818228000000005,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "1· 6and 2· 3 "
+        }
+      ],
+      "text" : "1· 6and 2· 3 "
+    },
+    {
+      "rect" : [
+        230.28036000000006,
+        475.10330799999974,
+        242.73812800000005,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Only possibilities to multiply to six, none add to 2"
+        }
+      ],
+      "text" : "Only possibilities to multiply to six, none add to 2"
+    },
+    {
+      "rect" : [
+        122.16044000000011,
+        465.64895494999973,
+        172.70383875973124,
+        13.58903755
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Prime, can"
+        },
+        {
+          "baselineOffset" : 4.3203100000000063,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "′"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "t factor Our Solution"
+        }
+      ],
+      "text" : "Prime, can′t factor Our Solution"
+    },
+    {
+      "rect" : [
+        84.96032000000011,
+        419.61944479999971,
+        425.24721046673915,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "When factoring it is important not to forget about the GCF. If all the terms in a"
+        }
+      ],
+      "text" : "When factoring it is important not to forget about the GCF. If all the terms in a"
+    },
+    {
+      "rect" : [
+        84.960320000000081,
+        404.97964479999973,
+        425.20148466903038,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "problem have a common factor we will want to first factor out the GCF before we"
+        }
+      ],
+      "text" : "problem have a common factor we will want to first factor out the GCF before we"
+    },
+    {
+      "rect" : [
+        84.960320000000081,
+        390.33944479999974,
+        159.25261614648332,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "factor using any other method."
+        }
+      ],
+      "text" : "factor using any other method."
+    },
+    {
+      "rect" : [
+        84.960320000000081,
+        347.03149999999971,
+        79.690012178959392,
+        11.955199999999991
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Example 293."
+        }
+      ],
+      "text" : "Example 293."
+    },
+    {
+      "rect" : [
+        167.52012000000008,
+        309.3398447999997,
+        16.832128409999996,
+        13.178337699999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -2.0999999999999659,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "3x"
+        },
+        {
+          "baselineOffset" : 2.1000000000000227,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2"
+        }
+      ],
+      "text" : "3x2"
+    },
+    {
+      "rect" : [
+        164.28006000000002,
+        291.5796447999997,
+        21.391848409999994,
+        13.298257700000022
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "3(x"
+        },
+        {
+          "baselineOffset" : 4.3199200000000246,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2"
+        }
+      ],
+      "text" : "3(x2"
+    },
+    {
+      "rect" : [
+        186.36035000000007,
+        300.86360799999972,
+        54.446134437887991,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− 24x +45 "
+        }
+      ],
+      "text" : "− 24x +45 "
+    },
+    {
+      "rect" : [
+        187.68001000000001,
+        283.10340799999972,
+        53.154951200000056,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− 8x +15) "
+        }
+      ],
+      "text" : "− 8x +15) "
+    },
+    {
+      "rect" : [
+        256.56044923788806,
+        300.86360799999972,
+        174.23547466769912,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "GCF of all terms is 3, factor this out"
+        }
+      ],
+      "text" : "GCF of all terms is 3, factor this out"
+    },
+    {
+      "rect" : [
+        256.56013000000002,
+        283.10340799999972,
+        166.89810800000004,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Want to multiply to 15, add to− 8"
+        }
+      ],
+      "text" : "Want to multiply to 15, add to− 8"
+    },
+    {
+      "rect" : [
+        256.56019000000003,
+        265.46360799999974,
+        142.97526173739527,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− 5and− 3, write the factors"
+        }
+      ],
+      "text" : "− 5and− 3, write the factors"
+    },
+    {
+      "rect" : [
+        164.63994000000005,
+        247.82340799999974,
+        156.50451833205759,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "3(x− 5)(x− 3) Our Solution"
+        }
+      ],
+      "text" : "3(x− 5)(x− 3) Our Solution"
+    },
+    {
+      "rect" : [
+        84.960300000000018,
+        209.97974479999971,
+        425.17486882767361,
+        11.979110399999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Again it is important to comment on the shortcut of jumping right to the factors,"
+        }
+      ],
+      "text" : "Again it is important to comment on the shortcut of jumping right to the factors,"
+    },
+    {
+      "rect" : [
+        84.960300000000018,
+        195.33994479999973,
+        425.15490007874575,
+        13.298257699999994
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "this only works if there is no coeﬃcient on x"
+        },
+        {
+          "baselineOffset" : 4.3199199999999962,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : ". In the next lesson we will look at"
+        }
+      ],
+      "text" : "this only works if there is no coeﬃcient on x2. In the next lesson we will look at"
+    },
+    {
+      "rect" : [
+        84.960220000000049,
+        180.69974479999973,
+        425.19972559705593,
+        13.298257699999994
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "how this process changes slightly when we have a number in front of x"
+        },
+        {
+          "baselineOffset" : 4.3199199999999962,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : ". Be"
+        }
+      ],
+      "text" : "how this process changes slightly when we have a number in front of x2. Be"
+    },
+    {
+      "rect" : [
+        84.959440000000029,
+        166.0599447999997,
+        294.61367836264952,
+        11.979110399999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "careful not to use this shortcut on all factoring problems!"
+        }
+      ],
+      "text" : "careful not to use this shortcut on all factoring problems!"
+    },
+    {
+      "rect" : [
+        84.959440000000029,
+        139.89974479999972,
+        425.2207865102593,
+        11.979110399999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "World View Note: The first person to use letters for unknown values was Fran-"
+        }
+      ],
+      "text" : "World View Note: The first person to use letters for unknown values was Fran-"
+    },
+    {
+      "rect" : [
+        84.959440000000029,
+        125.2599447999997,
+        425.12872010060801,
+        11.97911040000001
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "cois Vieta in 1591 in France. He used vowels to represent variables we are solving"
+        }
+      ],
+      "text" : "cois Vieta in 1591 in France. He used vowels to represent variables we are solving"
+    },
+    {
+      "rect" : [
+        84.959440000000029,
+        110.61974479999971,
+        329.41309585561601,
+        11.979110399999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "for, just as codes used letters to represent an unknown message."
+        }
+      ],
+      "text" : "for, just as codes used letters to represent an unknown message."
+    },
+    {
+      "rect" : [
+        297.11844000000002,
+        52.379653199999701,
+        15.061001094719984,
+        9.8729762399999998
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626400000000004,
+          "text" : "224"
+        }
+      ],
+      "text" : "224"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    595,
+    842
+  ],
+  "caseID" : "wallace-algebra-2010",
+  "graphics" : [
+
+  ],
+  "lines" : [
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.9602,
+        745.55119999999999,
+        79.690012262645794,
+        11.955199999999991
+      ],
+      "text" : "Example 291."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        116.40000000000001,
+        708.4214391999999,
+        14.552028409999991,
+        12.616443300000014
+      ],
+      "text" : "m2"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        132.83982,
+        699.38330799999994,
+        66.032198410000007,
+        21.654574499999967
+      ],
+      "text" : "− mn− 30n2"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        107.76011000000005,
+        663.98330799999985,
+        91.19474120000001,
+        20.455347200000006
+      ],
+      "text" : "(m + 5n)(m− 6n)"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        214.56019000000001,
+        699.38330799999994,
+        178.29800800000001,
+        21.654574499999967
+      ],
+      "text" : "Want to multiply to− 30, add to− 1"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        214.56015000000002,
+        681.62310799999989,
+        272.80125599418886,
+        21.77449450000006
+      ],
+      "text" : "5 and− 6, write the factors, don′t forget second variable"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        214.56012000000004,
+        663.98330799999985,
+        64.583840789990404,
+        20.455347200000006
+      ],
+      "text" : "Our Solution"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960120000000046,
+        626.25954479999984,
+        425.25547423920636,
+        11.979110399999968
+      ],
+      "text" : "It is possible to have a problem that does not factor. If there is no combination of"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960120000000018,
+        611.49934479999979,
+        425.156569344768,
+        11.979110399999968
+      ],
+      "text" : "numbers that multiplies and adds to the correct numbers, then we say we cannot"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960120000000018,
+        596.85954479999975,
+        425.215763154944,
+        11.979110399999968
+      ],
+      "text" : "factor the polynomial, or we say the polynomial is prime. This is shown in the fol-"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960120000000018,
+        582.2193447999997,
+        82.211409506303994,
+        11.979110399999968
+      ],
+      "text" : "lowing example."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960120000000018,
+        538.91139999999973,
+        79.690012155048976,
+        11.955199999999991
+      ],
+      "text" : "Example 292."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        159.11992000000004,
+        501.2193447999997,
+        55.543353577600016,
+        13.298257700000022
+      ],
+      "text" : "x2 +2x + 6"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        230.28001000000003,
+        501.2193447999997,
+        149.73811800000001,
+        13.298257700000022
+      ],
+      "text" : "Want to multiply to 6, add to 2"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        153.84008000000006,
+        475.10330799999974,
+        60.818228000000005,
+        20.455347200000006
+      ],
+      "text" : "1· 6and 2· 3"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        230.28036000000006,
+        475.10330799999974,
+        242.73812800000005,
+        20.455347200000006
+      ],
+      "text" : "Only possibilities to multiply to six, none add to 2"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        122.16044000000011,
+        465.64895494999973,
+        172.70383875973124,
+        13.58903755
+      ],
+      "text" : "Prime, can′t factor Our Solution"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.96032000000011,
+        419.61944479999971,
+        425.24721046673915,
+        11.979110400000025
+      ],
+      "text" : "When factoring it is important not to forget about the GCF. If all the terms in a"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960320000000081,
+        404.97964479999973,
+        425.20148466903038,
+        11.979110400000025
+      ],
+      "text" : "problem have a common factor we will want to first factor out the GCF before we"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960320000000081,
+        390.33944479999974,
+        159.25261614648332,
+        11.979110400000025
+      ],
+      "text" : "factor using any other method."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960320000000081,
+        347.03149999999971,
+        79.690012178959392,
+        11.955199999999991
+      ],
+      "text" : "Example 293."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        167.52012000000008,
+        309.3398447999997,
+        16.832128409999996,
+        13.178337699999986
+      ],
+      "text" : "3x2"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        164.28006000000002,
+        291.5796447999997,
+        21.391848409999994,
+        13.298257700000022
+      ],
+      "text" : "3(x2"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        186.36035000000007,
+        300.86360799999972,
+        54.446134437887991,
+        20.455347200000006
+      ],
+      "text" : "− 24x +45"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        187.68001000000001,
+        283.10340799999972,
+        53.154951200000056,
+        20.455347200000006
+      ],
+      "text" : "− 8x +15)"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        256.56044923788806,
+        300.86360799999972,
+        174.23547466769912,
+        20.455347200000006
+      ],
+      "text" : "GCF of all terms is 3, factor this out"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        256.56013000000002,
+        283.10340799999972,
+        166.89810800000004,
+        20.455347200000006
+      ],
+      "text" : "Want to multiply to 15, add to− 8"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        256.56019000000003,
+        265.46360799999974,
+        142.97526173739527,
+        20.455347200000006
+      ],
+      "text" : "− 5 and− 3, write the factors"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        164.63994000000005,
+        247.82340799999974,
+        156.50451833205759,
+        20.455347200000006
+      ],
+      "text" : "3(x− 5)(x− 3) Our Solution"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960300000000018,
+        209.97974479999971,
+        425.17486882767361,
+        11.979110399999996
+      ],
+      "text" : "Again it is important to comment on the shortcut of jumping right to the factors,"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960300000000018,
+        195.33994479999973,
+        425.15490007874575,
+        13.298257699999994
+      ],
+      "text" : "this only works if there is no coeﬃcient on x2. In the next lesson we will look at"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960220000000049,
+        180.69974479999973,
+        425.19972559705593,
+        13.298257699999994
+      ],
+      "text" : "how this process changes slightly when we have a number in front of x2. Be"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959440000000029,
+        166.0599447999997,
+        294.61367836264952,
+        11.979110399999996
+      ],
+      "text" : "careful not to use this shortcut on all factoring problems!"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959440000000029,
+        139.89974479999972,
+        425.2207865102593,
+        11.979110399999996
+      ],
+      "text" : "World View Note: The first person to use letters for unknown values was Fran-"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959440000000029,
+        125.2599447999997,
+        425.12872010060801,
+        11.97911040000001
+      ],
+      "text" : "cois Vieta in 1591 in France. He used vowels to represent variables we are solving"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959440000000029,
+        110.61974479999971,
+        329.41309585561601,
+        11.979110399999996
+      ],
+      "text" : "for, just as codes used letters to represent an unknown message."
+    },
+    {
+      "fontSize" : 9.9626400000000004,
+      "monospaced" : false,
+      "rect" : [
+        297.11844000000002,
+        52.379653199999701,
+        15.061001094719984,
+        9.8729762399999998
+      ],
+      "text" : "224"
+    }
+  ],
+  "page" : 224,
+  "pictures" : [
+
+  ],
+  "rightsBasis" : "Page 2 states Copyright 2010 Tyler Wallace and Creative Commons Attribution 3.0 Unported. The PDF remains an external local corpus source; it is not bundled or relicensed under MIT.",
+  "schemaVersion" : 2,
+  "sourceSHA256" : "856bd81edc61c50496982ddc849138f4e0e56fd0ddf0edb53fee9bb0830d0678",
+  "sourceTitle" : "Beginning and Intermediate Algebra",
+  "sourceURL" : "https://s3.amazonaws.com/myopenmath/cfiles/19515/Beginning_and_Intermediate_Algebra.pdf"
+}

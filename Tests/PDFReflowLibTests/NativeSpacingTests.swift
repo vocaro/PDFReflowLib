@@ -262,6 +262,53 @@ func aBoundaryBesideTextTheShowsCannotAccountForIsDropped() {
     #expect(NativeSpacingReader.segmentedInsertions(in: half, source: row, boundaries: [26, 48]) == [7])
 }
 
+// MARK: - A show the line can hold in only one place (#260)
+
+/// Two lines of *Beginning and Intermediate Algebra* that the segmented walk reaches from neither
+/// end. Each fails for its own reason, and neither is answered by weakening the anchor (#260).
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/260"))
+func sourceAlgebraLinesTheWalkCannotAlignArePlacedByTheirOwnShows() throws {
+    // Page 223: PDFKit splits the printed row at a wide gap, so the show `66` drawn at x 251.04
+    // has its first digit on the row above and this line holds the second. The walk opens on that
+    // coincidence, resynchronizes onto the boundary itself and drops it.
+    let page223 = try changedLines(spacing: "algebra-223", layout: "algebra-223")
+    #expect(page223["6and\u{2212} 1, split the middle term"] == "6 and\u{2212} 1, split the middle term")
+    // Page 224: seven source characters against an anchor of twelve, so `resynchronize` runs out
+    // of source at the first show the reader could not decode.
+    let page224 = try changedLines(spacing: "algebra-224", layout: "algebra-224")
+    #expect(page224["1\u{b7} 6and 2\u{b7} 3 "] == "1\u{b7} 6 and 2\u{b7} 3 ")
+    // Neither page gains anything else, and the walk's own repairs on them are untouched.
+    for (pdfkit, repaired) in page223.merging(page224, uniquingKeysWith: { first, _ in first }) {
+        #expect(pdfkit.replacingOccurrences(of: " ", with: "")
+            == repaired.replacingOccurrences(of: " ", with: ""), Comment(rawValue: pdfkit))
+    }
+}
+
+/// The rule itself. A show placed in exactly one place in PDFKit's reading of the line needs no
+/// anchor, because there is nothing to align; a show the line holds twice is not placed at all.
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/260"))
+func aShowTheLineHoldsTwiceIsNotPlaced() {
+    func placed(_ extracted: String, _ spans: [(Int, String)], _ boundaries: Set<Int>) -> [Int] {
+        NativeSpacingReader.uniquelyPlacedInsertions(
+            in: Array(extracted.utf16),
+            spans: spans.map { ($0.0, Array($0.1.utf16)) }, boundaries: boundaries)
+    }
+    // Page 223's shows, as the source draws them: `66`, `and`, `\u{2212}`, `1`, `,`, then the rest.
+    let shows223: [(Int, String)] = [(0, "66"), (2, "and"), (5, "\u{2212}"), (6, "1"), (7, ","),
+                                     (8, "splitthemiddleterm")]
+    #expect(placed("6and\u{2212} 1, split the middle term", shows223, [2, 8]) == [1])
+    // Page 224's, with the two shows the reader could not decode contributing nothing.
+    let shows224: [(Int, String)] = [(0, "1"), (1, "6"), (2, "and"), (5, "2"), (6, "3")]
+    #expect(placed("1\u{b7} 6and 2\u{b7} 3", shows224, [2, 5]) == [4])
+    // A show the line holds twice places nothing: `and` stands in two places here.
+    #expect(placed("6and\u{2212} 1, and the middle term", shows223, [2, 8]).isEmpty)
+    // A show of one mark is never placed, however few times the line holds it.
+    #expect(placed("6x", [(0, "6"), (1, "x")], [1]).isEmpty)
+    // A space PDFKit already sets at the boundary inserts nothing: page 224's other boundary, at
+    // the show `2`, stands where PDFKit read a space.
+    #expect(placed("1\u{b7} 6and 2\u{b7} 3", [(2, "and2")], [5]).isEmpty)
+}
+
 // MARK: - The shows a line holds beside ones it does not (#258)
 
 @Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/258"))

@@ -1,0 +1,1189 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        84.9602,
+        745.53924480000001,
+        425.21499457121286,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "As the past few examples illustrate, it is very important to be aware of negatives"
+        }
+      ],
+      "text" : "As the past few examples illustrate, it is very important to be aware of negatives"
+    },
+    {
+      "rect" : [
+        84.960199999999986,
+        730.89944479999997,
+        425.20215142016002,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "as we find the pair of numbers we will use to split the middle term. Consier the"
+        }
+      ],
+      "text" : "as we find the pair of numbers we will use to split the middle term. Consier the"
+    },
+    {
+      "rect" : [
+        84.960199999999986,
+        716.13924479999991,
+        305.57482464460804,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "following example, done incorrectly, ignoring negative signs"
+        }
+      ],
+      "text" : "following example, done incorrectly, ignoring negative signs"
+    },
+    {
+      "rect" : [
+        84.960199999999986,
+        671.87149999999986,
+        78.850154476131877,
+        11.955199999999991
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Warning 288."
+        }
+      ],
+      "text" : "Warning 288."
+    },
+    {
+      "rect" : [
+        210.12019999999998,
+        624.98330799999985,
+        55.89825799999997,
+        21.774494499999946
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "x"
+        },
+        {
+          "baselineOffset" : 4.3199200000000246,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "+ 5x− 6 "
+        }
+      ],
+      "text" : "x2 + 5x− 6 "
+    },
+    {
+      "rect" : [
+        184.56045,
+        607.2231079999998,
+        81.457997999999975,
+        21.774494499999946
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "x"
+        },
+        {
+          "baselineOffset" : 4.3199200000000246,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "+2x + 3x− 6 "
+        }
+      ],
+      "text" : "x2 +2x + 3x− 6 "
+    },
+    {
+      "rect" : [
+        170.52034,
+        589.58330799999976,
+        95.520183277311986,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "x(x + 2)+ 3(x− 2) "
+        }
+      ],
+      "text" : "x(x + 2)+ 3(x− 2) "
+    },
+    {
+      "rect" : [
+        281.64010999999994,
+        624.98330799999985,
+        137.37838800000009,
+        21.774494499999946
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Want to multiply to 6, add 5"
+        }
+      ],
+      "text" : "Want to multiply to 6, add 5"
+    },
+    {
+      "rect" : [
+        281.64556812799998,
+        607.2231079999998,
+        142.95108023887366,
+        21.774494499999946
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "2 and 3, split the middle term"
+        }
+      ],
+      "text" : "2 and 3, split the middle term"
+    },
+    {
+      "rect" : [
+        281.64022,
+        589.58330799999976,
+        94.167429489561528,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Factor by grouping"
+        }
+      ],
+      "text" : "Factor by grouping"
+    },
+    {
+      "rect" : [
+        249.36052000000001,
+        580.41934479999975,
+        153.25151440000002,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "??? Binomials do not match!"
+        }
+      ],
+      "text" : "??? Binomials do not match!"
+    },
+    {
+      "rect" : [
+        84.960219999999993,
+        533.01934479999977,
+        425.17512708528642,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Because we did not use the negative sign with the six to find our pair of numbers,"
+        }
+      ],
+      "text" : "Because we did not use the negative sign with the six to find our pair of numbers,"
+    },
+    {
+      "rect" : [
+        84.960219999999993,
+        518.37954479999974,
+        425.21278882583039,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "the binomials did not match and grouping was not able to work at the end. Now"
+        }
+      ],
+      "text" : "the binomials did not match and grouping was not able to work at the end. Now"
+    },
+    {
+      "rect" : [
+        84.960219999999993,
+        503.73934479999969,
+        180.13282174469128,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "the problem will be done correctly."
+        }
+      ],
+      "text" : "the problem will be done correctly."
+    },
+    {
+      "rect" : [
+        84.960219999999993,
+        459.35129999999964,
+        79.690012177763833,
+        11.955199999999991
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Example 289."
+        }
+      ],
+      "text" : "Example 289."
+    },
+    {
+      "rect" : [
+        201.00022000000001,
+        412.46310799999969,
+        55.897877999999992,
+        21.774884499999985
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "x"
+        },
+        {
+          "baselineOffset" : 4.3203100000000063,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "+5x− 6 "
+        }
+      ],
+      "text" : "x2 +5x− 6 "
+    },
+    {
+      "rect" : [
+        272.52015,
+        412.46310799999969,
+        161.01821800000005,
+        21.774884499999985
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Want to multiply to− 6, add to 5"
+        }
+      ],
+      "text" : "Want to multiply to− 6, add to 5"
+    },
+    {
+      "rect" : [
+        180.84032000000005,
+        394.82330799999971,
+        76.058048000000014,
+        21.774494500000003
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "x"
+        },
+        {
+          "baselineOffset" : 4.3199200000000246,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "+6x− x− 6 "
+        }
+      ],
+      "text" : "x2 +6x− x− 6 "
+    },
+    {
+      "rect" : [
+        272.52548812800006,
+        394.82330799999971,
+        154.23158087398411,
+        21.774494500000003
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "6and− 1, split the middle term"
+        }
+      ],
+      "text" : "6and− 1, split the middle term"
+    },
+    {
+      "rect" : [
+        161.52039000000013,
+        377.06310799999972,
+        95.28516172211198,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "x(x + 6)− 1(x +6) "
+        }
+      ],
+      "text" : "x(x + 6)− 1(x +6) "
+    },
+    {
+      "rect" : [
+        272.52035000000012,
+        377.06310799999972,
+        94.167121164953642,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Factor by grouping"
+        }
+      ],
+      "text" : "Factor by grouping"
+    },
+    {
+      "rect" : [
+        186.96055000000013,
+        359.42330799999974,
+        150.14362114864639,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "(x +6)(x− 1) Our Solution"
+        }
+      ],
+      "text" : "(x +6)(x− 1) Our Solution"
+    },
+    {
+      "rect" : [
+        84.960330000000113,
+        320.61944479999971,
+        425.22217525783043,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "You may have noticed a shortcut for factoring these problems. Once we identify"
+        }
+      ],
+      "text" : "You may have noticed a shortcut for factoring these problems. Once we identify"
+    },
+    {
+      "rect" : [
+        84.960330000000113,
+        305.85964479999973,
+        425.22056849402884,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "the two numbers that are used to split the middle term, these are the two num-"
+        }
+      ],
+      "text" : "the two numbers that are used to split the middle term, these are the two num-"
+    },
+    {
+      "rect" : [
+        84.960330000000113,
+        291.21944479999974,
+        425.20151300710404,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "bers in our factors! In the previous example, the numbers used to split the middle"
+        }
+      ],
+      "text" : "bers in our factors! In the previous example, the numbers used to split the middle"
+    },
+    {
+      "rect" : [
+        84.960330000000113,
+        268.10340799999977,
+        425.18387902661129,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "term were 6 and− 1, our factors turned out to be (x + 6)(x− 1). This pattern"
+        }
+      ],
+      "text" : "term were 6 and− 1, our factors turned out to be (x + 6)(x− 1). This pattern"
+    },
+    {
+      "rect" : [
+        84.9598900000002,
+        261.81944479999976,
+        425.1571065126144,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "does not always work, so be careful getting in the habit of using it. We can use it"
+        }
+      ],
+      "text" : "does not always work, so be careful getting in the habit of using it. We can use it"
+    },
+    {
+      "rect" : [
+        84.9598900000002,
+        247.17964479999978,
+        389.79174840999997,
+        13.298257699999965
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "however, when we have no number (technically we have a 1) in front of x"
+        },
+        {
+          "baselineOffset" : 4.3199199999999962,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2"
+        }
+      ],
+      "text" : "however, when we have no number (technically we have a 1) in front of x2"
+    },
+    {
+      "rect" : [
+        474.71951000000018,
+        247.17964479999978,
+        35.411644440320003,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : ". In all"
+        }
+      ],
+      "text" : ". In all"
+    },
+    {
+      "rect" : [
+        84.959510000000193,
+        232.41944479999978,
+        425.25468452403203,
+        13.298647700000004
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "the problems we have factored in this lesson there is no number in front of x"
+        },
+        {
+          "baselineOffset" : 4.3203100000000063,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : ". If"
+        }
+      ],
+      "text" : "the problems we have factored in this lesson there is no number in front of x2. If"
+    },
+    {
+      "rect" : [
+        84.959630000000232,
+        217.77964479999974,
+        425.21502609917439,
+        11.979110399999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "this is the case then we can use this shortcut. This is shown in the next few"
+        }
+      ],
+      "text" : "this is the case then we can use this shortcut. This is shown in the next few"
+    },
+    {
+      "rect" : [
+        84.959630000000232,
+        203.13984479999976,
+        50.051935254784013,
+        11.979110399999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "examples."
+        }
+      ],
+      "text" : "examples."
+    },
+    {
+      "rect" : [
+        84.959630000000232,
+        158.75179999999975,
+        79.690012226780198,
+        11.955199999999991
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Example 290."
+        }
+      ],
+      "text" : "Example 290."
+    },
+    {
+      "rect" : [
+        173.63933000000026,
+        120.90173919999974,
+        10.952438410000013,
+        12.736363300000008
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -4.3199199999999962,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "x"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2"
+        }
+      ],
+      "text" : "x2"
+    },
+    {
+      "rect" : [
+        186.47956000000028,
+        111.86360799999974,
+        49.046164557440022,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− 7x− 18 "
+        }
+      ],
+      "text" : "− 7x− 18 "
+    },
+    {
+      "rect" : [
+        251.2796893574403,
+        111.86360799999974,
+        178.17776864255995,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Want to multiply to− 18, add to− 7"
+        }
+      ],
+      "text" : "Want to multiply to− 18, add to− 7"
+    },
+    {
+      "rect" : [
+        251.27941000000027,
+        94.22340799999975,
+        131.6959322903553,
+        20.455347199999991
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− 9and 2, write the factors"
+        }
+      ],
+      "text" : "− 9and 2, write the factors"
+    },
+    {
+      "rect" : [
+        165.71937000000031,
+        76.463607999999752,
+        150.1439995521024,
+        20.455347199999991
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "(x− 9)(x +2) Our Solution"
+        }
+      ],
+      "text" : "(x− 9)(x +2) Our Solution"
+    },
+    {
+      "rect" : [
+        297.11934000000031,
+        52.379453199999745,
+        15.061001094719984,
+        9.8729762399999998
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626400000000004,
+          "text" : "223"
+        }
+      ],
+      "text" : "223"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    595,
+    842
+  ],
+  "caseID" : "wallace-algebra-2010",
+  "graphics" : [
+
+  ],
+  "lines" : [
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.9602,
+        745.53924480000001,
+        425.21499457121286,
+        11.979110399999968
+      ],
+      "text" : "As the past few examples illustrate, it is very important to be aware of negatives"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960199999999986,
+        730.89944479999997,
+        425.20215142016002,
+        11.979110399999968
+      ],
+      "text" : "as we find the pair of numbers we will use to split the middle term. Consier the"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960199999999986,
+        716.13924479999991,
+        305.57482464460804,
+        11.979110399999968
+      ],
+      "text" : "following example, done incorrectly, ignoring negative signs"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960199999999986,
+        671.87149999999986,
+        78.850154476131877,
+        11.955199999999991
+      ],
+      "text" : "Warning 288."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        210.12019999999998,
+        624.98330799999985,
+        55.89825799999997,
+        21.774494499999946
+      ],
+      "text" : "x2 + 5x− 6"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        184.56045,
+        607.2231079999998,
+        81.457997999999975,
+        21.774494499999946
+      ],
+      "text" : "x2 +2x + 3x− 6"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        170.52034,
+        589.58330799999976,
+        95.520183277311986,
+        20.455347200000006
+      ],
+      "text" : "x(x + 2)+ 3(x− 2)"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        281.64010999999994,
+        624.98330799999985,
+        137.37838800000009,
+        21.774494499999946
+      ],
+      "text" : "Want to multiply to 6, add 5"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        281.64556812799998,
+        607.2231079999998,
+        142.95108023887366,
+        21.774494499999946
+      ],
+      "text" : "2 and 3, split the middle term"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        281.64022,
+        589.58330799999976,
+        94.167429489561528,
+        20.455347200000006
+      ],
+      "text" : "Factor by grouping"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        249.36052000000001,
+        580.41934479999975,
+        153.25151440000002,
+        11.979110399999968
+      ],
+      "text" : "??? Binomials do not match!"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960219999999993,
+        533.01934479999977,
+        425.17512708528642,
+        11.979110399999968
+      ],
+      "text" : "Because we did not use the negative sign with the six to find our pair of numbers,"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960219999999993,
+        518.37954479999974,
+        425.21278882583039,
+        11.979110399999968
+      ],
+      "text" : "the binomials did not match and grouping was not able to work at the end. Now"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960219999999993,
+        503.73934479999969,
+        180.13282174469128,
+        11.979110399999968
+      ],
+      "text" : "the problem will be done correctly."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960219999999993,
+        459.35129999999964,
+        79.690012177763833,
+        11.955199999999991
+      ],
+      "text" : "Example 289."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        201.00022000000001,
+        412.46310799999969,
+        55.897877999999992,
+        21.774884499999985
+      ],
+      "text" : "x2 +5x− 6"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        272.52015,
+        412.46310799999969,
+        161.01821800000005,
+        21.774884499999985
+      ],
+      "text" : "Want to multiply to− 6, add to 5"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        180.84032000000005,
+        394.82330799999971,
+        76.058048000000014,
+        21.774494500000003
+      ],
+      "text" : "x2 +6x− x− 6"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        272.52548812800006,
+        394.82330799999971,
+        154.23158087398411,
+        21.774494500000003
+      ],
+      "text" : "6and− 1, split the middle term"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        161.52039000000013,
+        377.06310799999972,
+        95.28516172211198,
+        20.455347200000006
+      ],
+      "text" : "x(x + 6)− 1(x +6)"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        272.52035000000012,
+        377.06310799999972,
+        94.167121164953642,
+        20.455347200000006
+      ],
+      "text" : "Factor by grouping"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        186.96055000000013,
+        359.42330799999974,
+        150.14362114864639,
+        20.455347200000006
+      ],
+      "text" : "(x +6)(x− 1) Our Solution"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960330000000113,
+        320.61944479999971,
+        425.22217525783043,
+        11.979110400000025
+      ],
+      "text" : "You may have noticed a shortcut for factoring these problems. Once we identify"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960330000000113,
+        305.85964479999973,
+        425.22056849402884,
+        11.979110400000025
+      ],
+      "text" : "the two numbers that are used to split the middle term, these are the two num-"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960330000000113,
+        291.21944479999974,
+        425.20151300710404,
+        11.979110400000025
+      ],
+      "text" : "bers in our factors! In the previous example, the numbers used to split the middle"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960330000000113,
+        268.10340799999977,
+        425.18387902661129,
+        20.455347200000006
+      ],
+      "text" : "term were 6 and− 1, our factors turned out to be (x + 6)(x− 1). This pattern"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.9598900000002,
+        261.81944479999976,
+        425.1571065126144,
+        11.979110400000025
+      ],
+      "text" : "does not always work, so be careful getting in the habit of using it. We can use it"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.9598900000002,
+        247.17964479999978,
+        389.79174840999997,
+        13.298257699999965
+      ],
+      "text" : "however, when we have no number (technically we have a 1) in front of x2"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        474.71951000000018,
+        247.17964479999978,
+        35.411644440320003,
+        11.979110400000025
+      ],
+      "text" : ". In all"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959510000000193,
+        232.41944479999978,
+        425.25468452403203,
+        13.298647700000004
+      ],
+      "text" : "the problems we have factored in this lesson there is no number in front of x2. If"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959630000000232,
+        217.77964479999974,
+        425.21502609917439,
+        11.979110399999996
+      ],
+      "text" : "this is the case then we can use this shortcut. This is shown in the next few"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959630000000232,
+        203.13984479999976,
+        50.051935254784013,
+        11.979110399999996
+      ],
+      "text" : "examples."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959630000000232,
+        158.75179999999975,
+        79.690012226780198,
+        11.955199999999991
+      ],
+      "text" : "Example 290."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        173.63933000000026,
+        120.90173919999974,
+        10.952438410000013,
+        12.736363300000008
+      ],
+      "text" : "x2"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        186.47956000000028,
+        111.86360799999974,
+        49.046164557440022,
+        20.455347200000006
+      ],
+      "text" : "− 7x− 18"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        251.2796893574403,
+        111.86360799999974,
+        178.17776864255995,
+        20.455347200000006
+      ],
+      "text" : "Want to multiply to− 18, add to− 7"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        251.27941000000027,
+        94.22340799999975,
+        131.6959322903553,
+        20.455347199999991
+      ],
+      "text" : "− 9 and 2, write the factors"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        165.71937000000031,
+        76.463607999999752,
+        150.1439995521024,
+        20.455347199999991
+      ],
+      "text" : "(x− 9)(x +2) Our Solution"
+    },
+    {
+      "fontSize" : 9.9626400000000004,
+      "monospaced" : false,
+      "rect" : [
+        297.11934000000031,
+        52.379453199999745,
+        15.061001094719984,
+        9.8729762399999998
+      ],
+      "text" : "223"
+    }
+  ],
+  "page" : 223,
+  "pictures" : [
+
+  ],
+  "rightsBasis" : "Page 2 states Copyright 2010 Tyler Wallace and Creative Commons Attribution 3.0 Unported. The PDF remains an external local corpus source; it is not bundled or relicensed under MIT.",
+  "schemaVersion" : 2,
+  "sourceSHA256" : "856bd81edc61c50496982ddc849138f4e0e56fd0ddf0edb53fee9bb0830d0678",
+  "sourceTitle" : "Beginning and Intermediate Algebra",
+  "sourceURL" : "https://s3.amazonaws.com/myopenmath/cfiles/19515/Beginning_and_Intermediate_Algebra.pdf"
+}

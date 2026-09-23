@@ -374,6 +374,19 @@ spatial reconstruction rather than partial results.
   PDFKit split at a wide gap is repaired in the half that holds each boundary. Explicit spaces,
   genuine word-size gaps and style attributes are kept, a boundary PDFKit already spaces inserts
   nothing, and a line whose every show is held by another rectangle too rewrites nothing.
+
+  A boundary the walk cannot reach is still applied where **the line can hold its show in only one
+  place**: the show's own marks stand at exactly one position in PDFKit's reading of the line,
+  stepping over PDFKit's own spaces, so there is nothing to align and no anchor is needed (#260).
+  This is read per show, so a line the walk owns keeps everything the walk gave it. A show of one
+  mark is never placed, because one character standing once in a line is a coincidence the line is
+  too short to rule out, and neither is a show carrying whitespace of its own, which would not
+  line up mark for mark. Two lines of *Beginning and Intermediate Algebra* need it and no other
+  book in the corpus moves: page 224 reads seven source characters against an anchor of twelve, so
+  `resynchronize` runs out of source at the first hole, and page 223's line holds the second digit
+  of a `66` the page split across two rows, so the walk opens on that coincidence and
+  resynchronizes onto the boundary itself.
+
   A *removal* is owned differently, because the defect it answers has the opposite shape: a page
   sets a table row by carrying the cursor from cell to cell with runs of space glyphs and PDFKit
   reports one space for a run, so on such a row the source draws the whitespace the extraction

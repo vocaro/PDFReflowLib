@@ -116,6 +116,64 @@ extension NativeSpacingReader {
         return inserted.isEmpty ? nil : inserted
     }
 
+    /// The offsets in `extracted` where a show the line can hold in only one place draws a
+    /// boundary PDFKit spells closed.
+    ///
+    /// The segmented walk reaches these two lines of *Beginning and Intermediate Algebra* from
+    /// neither end, and each fails for its own reason (#260).
+    ///
+    /// Page 224 prints `1· 6and 2· 3` and its source reads `16and23`: seven characters against an
+    /// `anchorLength` of twelve. `resynchronize` runs out of source before it can match twelve, so
+    /// it returns nil at the first show the reader could not decode and the walk ends having
+    /// applied nothing, although the boundary sits between two characters PDFKit also read.
+    ///
+    /// Page 223 is the walk's own opening, which is the one alignment taken on faith. PDFKit
+    /// splits the printed row at a wide gap, so the show `66` drawn at x 251.04 has its first
+    /// digit on the row above and this line holds `6and− 1, split the middle term`. The walk opens
+    /// at source 0 against extracted 0, where the two `6`s match by coincidence, disagrees at the
+    /// next character, resynchronizes to source 2 — which is the boundary — and drops it, because
+    /// a boundary at a segment's opening stands against a disagreeing region's edge (#139 item 1).
+    /// The alignment that is right, source 1 against extracted 0, is the one no test is applied
+    /// to.
+    ///
+    /// Neither is answered by weakening the anchor, which is what #119 and #120 raised it for.
+    /// Both are answered by not needing one: where a show's own text stands in exactly one place
+    /// in PDFKit's reading of the line, there is nothing to align, because the characters are only
+    /// there. Uniqueness is stronger evidence than any run of matching characters, and it is read
+    /// per show rather than per line, so a line the walk owns keeps everything the walk gave it
+    /// and gains only what it could not reach.
+    ///
+    /// PDFKit's own spaces are stepped over, as everywhere else here, so a show is placed against
+    /// the marks of the line and not its spacing. A show of one mark is not placed: one character
+    /// standing once in a line is a coincidence the line is too short to rule out.
+    static func uniquelyPlacedInsertions(in extracted: [UInt16], spans: [(start: Int, text: [UInt16])],
+                                         boundaries: Set<Int>) -> [Int] {
+        let marks = extracted.indices.filter { !whitespace(extracted[$0]) }
+        guard !marks.isEmpty else { return [] }
+        var inserted: [Int] = []
+        for span in spans {
+            // A show carrying whitespace of its own would not line up mark for mark; the reading
+            // of such a show is PDFKit's own spacing, which this rule has nothing to add to.
+            guard span.text.count >= 2, span.text.count <= marks.count,
+                  !span.text.contains(where: whitespace),
+                  boundaries.contains(where: { $0 >= span.start && $0 < span.start + span.text.count })
+            else { continue }
+            var place: Int?
+            for k in 0...(marks.count - span.text.count) {
+                guard span.text.indices.allSatisfy({ extracted[marks[k + $0]] == span.text[$0] }) else { continue }
+                if place != nil { place = nil; break }
+                place = k
+            }
+            guard let k = place else { continue }
+            for boundary in boundaries where boundary >= span.start && boundary < span.start + span.text.count {
+                let offset = marks[k + boundary - span.start]
+                guard offset > 0, !whitespace(extracted[offset - 1]) else { continue }
+                inserted.append(offset)
+            }
+        }
+        return inserted
+    }
+
     /// The offsets in `extracted` where PDFKit spells a space across a boundary the page closes
     /// (#274), each the one space between the two characters the closure separates.
     ///

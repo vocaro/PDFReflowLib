@@ -92,7 +92,11 @@ enum NativeSpacingReader {
     static func missingSpaces(in native: String, shows: [Evidence]) -> [Int]? {
         let line = line(of: shows)
         guard !line.source.isEmpty, !line.boundaries.isEmpty else { return nil }
-        return ownedInsertions(in: Array(native.utf16), source: line.source, boundaries: line.boundaries)
+        let extracted = Array(native.utf16)
+        let owned = ownedInsertions(in: extracted, source: line.source, boundaries: line.boundaries)
+        let placed = uniquelyPlacedInsertions(in: extracted, spans: line.spans, boundaries: line.boundaries)
+        guard owned != nil || !placed.isEmpty else { return nil }
+        return Set(owned ?? []).union(placed).sorted()
     }
 
     /// The spaces a PDFKit line is missing, and the ones it has that the page does not draw: the
@@ -104,7 +108,10 @@ enum NativeSpacingReader {
         guard !line.source.isEmpty else { return ([], []) }
         let insertions = line.boundaries.isEmpty ? nil
             : ownedInsertions(in: extracted, source: line.source, boundaries: line.boundaries)
-        return (insertions ?? [], closedSpaces(in: extracted, source: line.source, closures: line.closures))
+        let placed = line.boundaries.isEmpty ? []
+            : uniquelyPlacedInsertions(in: extracted, spans: line.spans, boundaries: line.boundaries)
+        return (Set(insertions ?? []).union(placed).sorted(),
+                closedSpaces(in: extracted, source: line.source, closures: line.closures))
     }
 
     /// How much of a PDFKit line the shows must account for before their boundaries are applied.
@@ -153,8 +160,12 @@ enum NativeSpacingReader {
     /// separates two words but draws no space glyph. The shows are the ones whose origins belong
     /// to one PDFKit line; the returned text is the source's own reading of that line, which
     /// `missingSpaces` then walks against PDFKit's.
-    static func line(of shows: [Evidence]) -> (source: [UInt16], boundaries: Set<Int>, closures: Set<Int>) {
+    static func line(of shows: [Evidence])
+        -> (source: [UInt16], boundaries: Set<Int>, closures: Set<Int>, spans: [(start: Int, text: [UInt16])]) {
         var source: [UInt16] = [], boundaries: Set<Int> = [], closures: Set<Int> = []
+        // Where each show's own text stands in `source`, which `uniquelyPlacedInsertions` reads
+        // to place a boundary PDFKit's reading can only hold in one place (#260).
+        var spans: [(start: Int, text: [UInt16])] = []
         var previous: Evidence?
         // The line's characters with their UTF-16 offsets in `source`, the sentence-space candidates
         // at show edges, and the show transitions that separate words (#128).
@@ -170,7 +181,7 @@ enum NativeSpacingReader {
             return start > 0 && !wordGaps.contains(start)
         }
         for show in shows.sorted(by: { $0.origin.x < $1.origin.x }) {
-            guard source.count + (show.unicode?.utf16.count ?? 0) <= 8192 else { return ([], [], []) }
+            guard source.count + (show.unicode?.utf16.count ?? 0) <= 8192 else { return ([], [], [], []) }
             // A show whose text the reader cannot decode is a hole in the source's reading of the
             // line, not a reason to discard the line: the segmented walk resynchronizes across it
             // (#120, #139). One radical on Wallace page 120 discarded every boundary of
@@ -225,6 +236,7 @@ enum NativeSpacingReader {
                 boundaries.insert(source.count + offset)
             }
             previousStart = source.count
+            spans.append((source.count, Array(unicode.utf16)))
             source += unicode.utf16
             previous = show
         }
@@ -239,7 +251,7 @@ enum NativeSpacingReader {
                 if sentenceSpace(word: before, startsShow: startsLine, following: after, gap: gap) { boundaries.insert(offset) }
             }
         }
-        return (source, boundaries, closures)
+        return (source, boundaries, closures, spans)
     }
 
     // MARK: - The rules

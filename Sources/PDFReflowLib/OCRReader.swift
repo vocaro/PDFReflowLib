@@ -2,9 +2,16 @@ import PDFKit
 import Vision
 
 enum OCRReader {
+    /// A word's character range and measured box, used only while merging a sparse native
+    /// layer with recognition (#192). Ranges count Characters, as script repair preserves them.
+    struct Word: Equatable {
+        var range: Range<Int>
+        var box: CGRect
+    }
     struct Result: Equatable {
         var lines: [TextLine]
         var tables: [CGRect]
+        var wordBoxes: [[Word]] = []
         /// How much of each located table the reading transcribed, in the page's own points and
         /// in `tables`' order (#31). Every one of them is preserved as a picture, because the
         /// library writes no table markup; the measurement says which of those pictures the
@@ -31,6 +38,7 @@ enum OCRReader {
             /// the line when the page sets it sideways (#130). Zero when no quadrilateral came
             /// with the reading, which is what a hand-made reading in a test supplies.
             var across: CGVector = .zero
+            var words: [Word] = []
         }
         var lines: [Line] = []
         var tables: [CGRect] = []
@@ -165,14 +173,14 @@ enum OCRReader {
         return request
     }
 
-    static func read(page: PDFPage, options: ConversionOptions) async throws -> Result {
+    static func read(page: PDFPage, options: ConversionOptions, wordPositions: Bool = false) async throws -> Result {
         let bounds = page.bounds(for: .cropBox)
         let image = try PageRasterizer.image(page: page, rect: bounds, options: options)
         let request = recognitionRequest(options: options)
-        let first = try await recognize(image, request: request)
+        let first = try await recognize(image, request: request, wordPositions: wordPositions)
         try Task.checkCancellation()
         let complete = try await completeReading(first, image: image, request: request,
-                                                 pixelsPerPoint: Double(image.width) / bounds.width)
+                                                 pixelsPerPoint: Double(image.width) / bounds.width, wordPositions: wordPositions)
         let recognition = complete.recognition
 
         func pageRect(_ normalized: CGRect) -> CGRect {
@@ -191,7 +199,10 @@ enum OCRReader {
         // paired with their rectangles by position; a reading with no cell counts carries none,
         // and no table of it is judged.
         let cells = zip(tables, recognition.tableCells).map { TableCellEvidence.placed($0.1, in: $0.0) }
-        return Result(lines: lines, tables: tables, tableCells: cells,
+        let words = recognition.lines.map { line in
+            line.words.map { Word(range: $0.range, box: pageRect($0.box)) }
+        }
+        return Result(lines: lines, tables: tables, wordBoxes: words, tableCells: cells,
                       retriedInBands: complete.retried, uncoveredTextFraction: complete.uncoveredTextFraction)
     }
 
@@ -263,7 +274,7 @@ enum OCRReader {
     /// The page's luminance copy is built once, here, and released when this returns, so a page
     /// that reads cleanly carries none of it into the rest of the conversion.
     static func completeReading(_ first: Recognition, image: CGImage, request: RecognizeDocumentsRequest,
-                                pixelsPerPoint: Double) async throws -> CompletedReading {
+                                pixelsPerPoint: Double, wordPositions: Bool = false) async throws -> CompletedReading {
         guard let raster = OCRTextCoverage.GrayRaster(image) else {
             return CompletedReading(recognition: first, retried: false)
         }
@@ -278,7 +289,7 @@ enum OCRReader {
         var recognition = first
         var measurement = coverage(first)
         var retried = false
-        if measurement.indicatesLoss, let banded = try await readInBands(image, request: request),
+        if measurement.indicatesLoss, let banded = try await readInBands(image, request: request, wordPositions: wordPositions),
            // The comparison ignores both readings' tables: a retry that merely found a larger
            // table region would move ink out of the measurement, and text into an image, without
            // reading a word more.
@@ -304,7 +315,8 @@ enum OCRReader {
     }
 
     /// One recognition of an image, in that image's normalized coordinates.
-    static func recognize(_ image: CGImage, request: RecognizeDocumentsRequest) async throws -> Recognition {
+    static func recognize(_ image: CGImage, request: RecognizeDocumentsRequest,
+                          wordPositions: Bool = false) async throws -> Recognition {
         let observations = try await request.perform(on: image, orientation: nil)
         guard let document = observations.first?.document else { return Recognition() }
         return Recognition(lines: document.text.lines.compactMap { observation in
@@ -318,8 +330,14 @@ enum OCRReader {
             let footLeft = quad.bottomLeft.cgPoint, footRight = quad.bottomRight.cgPoint
             let across = CGVector(dx: ((left.x - footLeft.x) + (right.x - footRight.x)) / 2,
                                   dy: ((left.y - footLeft.y) + (right.y - footRight.y)) / 2)
-            return Recognition.Line(text: candidate.string, box: observation.boundingRegion.boundingBox.cgRect,
-                                    wraps: observation.shouldWrapToNextLine, across: across)
+            let text = candidate.string
+            let words: [Word] = wordPositions ? text.split(whereSeparator: \.isWhitespace).compactMap { word -> Word? in
+                guard let rect = candidate.boundingBox(for: word.startIndex..<word.endIndex) else { return nil }
+                let start = text.distance(from: text.startIndex, to: word.startIndex)
+                return Word(range: start..<(start + word.count), box: rect.boundingBox.cgRect)
+            } : []
+            return Recognition.Line(text: text, box: observation.boundingRegion.boundingBox.cgRect,
+                                    wraps: observation.shouldWrapToNextLine, across: across, words: words)
         }, tables: document.tables.map { $0.boundingRegion.boundingBox.cgRect },
            tableCells: document.tables.map(cellEvidence))
     }
@@ -346,7 +364,7 @@ enum OCRReader {
     /// band could not be cropped. A band is a smaller image with fewer lines in it, which is what
     /// the dropped-paragraph failure responds to; there is exactly one such retry per page.
     private static func readInBands(_ image: CGImage,
-                                    request: RecognizeDocumentsRequest) async throws -> Recognition? {
+                                    request: RecognizeDocumentsRequest, wordPositions: Bool) async throws -> Recognition? {
         var bands: [(recognition: Recognition, bottom: Double, height: Double)] = []
         for band in retryBands {
             let top = Int((1 - band.upperBound) * Double(image.height))
@@ -354,7 +372,7 @@ enum OCRReader {
             guard bottom > top,
                   let tile = image.cropping(to: CGRect(x: 0, y: top, width: image.width, height: bottom - top))
             else { return nil }
-            bands.append((try await recognize(tile, request: request),
+            bands.append((try await recognize(tile, request: request, wordPositions: wordPositions),
                           1 - Double(bottom) / Double(image.height),
                           Double(bottom - top) / Double(image.height)))
             try Task.checkCancellation()
@@ -383,7 +401,8 @@ enum OCRReader {
                                         // A band is the page's full width and a fraction of its
                                         // height, so a thickness running up the page shortens
                                         // with the band and one running across it does not.
-                                        across: CGVector(dx: $0.across.dx, dy: $0.across.dy * height)) }
+                                        across: CGVector(dx: $0.across.dx, dy: $0.across.dy * height),
+                                        words: $0.words.map { Word(range: $0.range, box: place($0.box)) }) }
                 .filter { owns($0.box) }
             tables += recognition.tables.indices
                 .map { index -> (rect: CGRect, cells: TableCellEvidence.Reading?) in

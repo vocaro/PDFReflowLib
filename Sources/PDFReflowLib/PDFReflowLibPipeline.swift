@@ -32,7 +32,7 @@ enum PDFReflowLibPipeline {
     /// the whole document in `Result.document` instead, collected from the same stream, so the
     /// streamed and collected forms cannot diverge.
     static func reconstruct(from source: URL, options: ConversionOptions, workspace: URL,
-                            recognize: Recognizer = { try await OCRReader.read(page: $0, options: $1) },
+                            recognize: Recognizer? = nil,
                             emit: (@Sendable (ReflowPart) async throws -> Void)? = nil,
                             progress: @Sendable (ConversionProgress) async -> Void) async throws -> Result {
         let document = try PDFPageSource(url: source, password: options.password)
@@ -87,7 +87,12 @@ enum PDFReflowLibPipeline {
                 await progress(.init(stage: .recognizing, fractionCompleted: ProgressBudget.pipeline(extractedPages: i, of: total),
                     page: i + 1, totalPages: total))
                 do {
-                    let reading = try await recognize(try document.page(at: i), options)
+                    let reading: OCRReader.Result
+                    if let recognize { reading = try await recognize(try document.page(at: i), options) }
+                    else {
+                        reading = try await OCRReader.read(page: try document.page(at: i), options: options,
+                                                           wordPositions: pageEvidence.drawnText)
+                    }
                     outcome = .read(pageEvidence.drawnText
                         ? DrawnTextRecovery.reading(reading, on: extracted.content) : reading)
                 } catch is CancellationError { throw CancellationError() }

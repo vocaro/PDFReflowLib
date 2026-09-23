@@ -699,8 +699,38 @@ struct BlockAssembler {
         previousRow = nil
     }
 
-    /// A table the page draws, read as cells (#210). It closes whatever is open, as a figure
-    /// does: nothing joins across a table.
+    /// Source display rows carry one semantic block and cannot join nearby body text.
+    mutating func appendQuotation(_ lines: [TextLine]) {
+        initialOpening = nil
+        flushNote()
+        flushParagraph()
+        codeOrigin = nil
+        rowInProgress = nil
+        itemRowInProgress = nil
+        guard let first = lines.first else { return }
+        var text = first.content
+        for line in lines.dropFirst() { text = join(text, line.content) }
+        blocks.append(ReflowBlock(content: .quotation(text), page: page))
+        previous = nil
+        previousRow = nil
+    }
+
+    mutating func appendCaption(_ lines: [TextLine]) {
+        initialOpening = nil
+        flushNote()
+        flushParagraph()
+        codeOrigin = nil
+        rowInProgress = nil
+        itemRowInProgress = nil
+        guard let first = lines.first else { return }
+        var text = first.content
+        for line in lines.dropFirst() { text = join(text, line.content) }
+        blocks.append(ReflowBlock(content: .paragraph(text), page: page))
+        previous = nil
+        previousRow = nil
+    }
+
+    /// A table the page draws, read as cells (#210), closes any open paragraph.
     mutating func appendTable(_ table: PageTable) {
         initialOpening = nil
         flushNote()

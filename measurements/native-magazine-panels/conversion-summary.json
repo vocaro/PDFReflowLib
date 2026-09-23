@@ -1,0 +1,205 @@
+[
+  {
+    "case": "usda-ars-agresearch-2012-11",
+    "before": {
+      "converterSHA256": "9c67cdec91f1098b0fe15d8a7a70736906601df3cb7f15ec3d7e2b06366c2f34",
+      "conversionSeconds": 4.772081958013587,
+      "converterPeakRSSBytes": 297287680,
+      "outputTextCharacters": 63252,
+      "outputBytes": 14326361,
+      "runPassed": true,
+      "pageCount": 24,
+      "reflowedPageCount": 22,
+      "recognizedPageCount": 0,
+      "imageCount": 65
+    },
+    "after": {
+      "converterSHA256": "702514285bb27c5baac9fe9a02055c0ca0d528fcbff4c2166d1840bb2a69032d",
+      "conversionSeconds": 5.4007376250228845,
+      "converterPeakRSSBytes": 325517312,
+      "outputTextCharacters": 81811,
+      "outputBytes": 14524337,
+      "runPassed": true,
+      "pageCount": 24,
+      "reflowedPageCount": 24,
+      "recognizedPageCount": 1,
+      "imageCount": 84
+    },
+    "pageTextCharacters": [
+      {
+        "page": 1,
+        "before": 205,
+        "after": 205
+      },
+      {
+        "page": 2,
+        "before": 4255,
+        "after": 5014
+      },
+      {
+        "page": 3,
+        "before": 53,
+        "after": 1201
+      },
+      {
+        "page": 4,
+        "before": 441,
+        "after": 441
+      },
+      {
+        "page": 5,
+        "before": 1693,
+        "after": 4343
+      },
+      {
+        "page": 6,
+        "before": 3125,
+        "after": 3125
+      },
+      {
+        "page": 7,
+        "before": 3332,
+        "after": 3512
+      },
+      {
+        "page": 8,
+        "before": 2871,
+        "after": 3385
+      },
+      {
+        "page": 9,
+        "before": 1877,
+        "after": 1875
+      },
+      {
+        "page": 10,
+        "before": 915,
+        "after": 3124
+      },
+      {
+        "page": 11,
+        "before": 2788,
+        "after": 2777
+      },
+      {
+        "page": 12,
+        "before": 2157,
+        "after": 2166
+      },
+      {
+        "page": 13,
+        "before": 2520,
+        "after": 2512
+      },
+      {
+        "page": 14,
+        "before": 3125,
+        "after": 3814
+      },
+      {
+        "page": 15,
+        "before": 4246,
+        "after": 4507
+      },
+      {
+        "page": 16,
+        "before": 2767,
+        "after": 4298
+      },
+      {
+        "page": 17,
+        "before": 4323,
+        "after": 4323
+      },
+      {
+        "page": 18,
+        "before": 3525,
+        "after": 3816
+      },
+      {
+        "page": 19,
+        "before": 3422,
+        "after": 3416
+      },
+      {
+        "page": 20,
+        "before": 0,
+        "after": 3823
+      },
+      {
+        "page": 21,
+        "before": 0,
+        "after": 3498
+      },
+      {
+        "page": 22,
+        "before": 6819,
+        "after": 6884
+      },
+      {
+        "page": 23,
+        "before": 6566,
+        "after": 6991
+      },
+      {
+        "page": 24,
+        "before": 241,
+        "after": 241
+      }
+    ]
+  },
+  {
+    "case": "ntrs-20210020887-techport-thm-2021",
+    "before": {
+      "converterSHA256": "9c67cdec91f1098b0fe15d8a7a70736906601df3cb7f15ec3d7e2b06366c2f34",
+      "conversionSeconds": 0.419209707994014,
+      "converterPeakRSSBytes": 47120384,
+      "outputTextCharacters": 5808,
+      "outputBytes": 959263,
+      "runPassed": true,
+      "pageCount": 5,
+      "reflowedPageCount": 5,
+      "recognizedPageCount": 0,
+      "imageCount": 37
+    },
+    "after": {
+      "converterSHA256": "702514285bb27c5baac9fe9a02055c0ca0d528fcbff4c2166d1840bb2a69032d",
+      "conversionSeconds": 0.31099700002232566,
+      "converterPeakRSSBytes": 45875200,
+      "outputTextCharacters": 7356,
+      "outputBytes": 355900,
+      "runPassed": true,
+      "pageCount": 5,
+      "reflowedPageCount": 5,
+      "recognizedPageCount": 0,
+      "imageCount": 31
+    },
+    "pageTextCharacters": [
+      {
+        "page": 1,
+        "before": 2121,
+        "after": 2497
+      },
+      {
+        "page": 2,
+        "before": 1218,
+        "after": 1587
+      },
+      {
+        "page": 3,
+        "before": 898,
+        "after": 1091
+      },
+      {
+        "page": 4,
+        "before": 275,
+        "after": 815
+      },
+      {
+        "page": 5,
+        "before": 213,
+        "after": 456
+      }
+    ]
+  }
+]

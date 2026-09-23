@@ -47,6 +47,7 @@ enum PageWarning: Equatable, Sendable {
     case implausibleTextLayer(TextLayerPlausibility.Finding, TextLayerPlausibility.Outcome)
     case implausibleRecognition(TextLayerPlausibility.Finding)
     case ocrUsed
+    case outlinedInitialUsed
     /// Recognition replaced the page's text and still left `uncoveredFraction` of the page's
     /// text-shaped ink outside every recognized line, after a band retry when `retriedInBands`
     /// (#116).
@@ -93,6 +94,9 @@ enum ConversionWarnings {
             (.implausibleTextLayer, TextLayerPlausibility.message(finding, outcome: outcome, referencesDisabled: referencesDisabled))
         case .implausibleRecognition(let finding):
             (.implausibleRecognition, TextLayerPlausibility.recognitionMessage(finding))
+        case .outlinedInitialUsed:
+            (.ocrUsed, "An outlined paragraph initial is OCR transcription; the remaining words retain their native text. "
+                + (referencesDisabled ? "Compare the source PDF." : "The original page image is retained for comparison."))
         case .ocrUsed:
             // A conversion that let the recognizer correct words says so on every page it
             // recognized, because a corrected misreading is a real word a reader cannot tell from

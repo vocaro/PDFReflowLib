@@ -58,6 +58,7 @@ private typealias CaptureFont = UIFont
             // The placed raster image XObjects among the regions, which crop ownership reads
             // (#176, #239, #207). Captures before schema version 2 carry none.
             "pictures": graphics.images.map(rect),
+            "paintOperations": try JSONSerialization.jsonObject(with: JSONEncoder().encode(graphics.paints)),
             "lines": lines.map { ["text": $0.text, "rect": rect($0.rect), "fontSize": $0.fontSize,
                 "monospaced": $0.monospaced] as [String: Any] }, "attributedLines": attributedLines,
         ]

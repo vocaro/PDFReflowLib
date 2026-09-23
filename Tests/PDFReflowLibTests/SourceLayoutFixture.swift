@@ -45,11 +45,12 @@ struct SourceLayoutFixture: Decodable {
     /// Exact filled rectangles and the source text inside them, captured from version 3 (#215).
     var filledCells: [[Double]]
     var filledCellText: [String]
+    var paints: [GraphicsReader.Paint]
     /// Styled runs, absent from the earliest captures; those fixtures serve geometry tests only.
     var attributedLines: [AttributedLine]
 
     private enum CodingKeys: String, CodingKey {
-        case schemaVersion, sourceSHA256, page, bounds, lines, graphics, pictures, attributedLines, filledCells, filledCellText
+        case schemaVersion, sourceSHA256, page, bounds, lines, graphics, pictures, attributedLines, filledCells, filledCellText, paintOperations
     }
 
     init(from decoder: Decoder) throws {
@@ -63,6 +64,7 @@ struct SourceLayoutFixture: Decodable {
         pictures = try values.decodeIfPresent([[Double]].self, forKey: .pictures) ?? []
         filledCells = try values.decodeIfPresent([[Double]].self, forKey: .filledCells) ?? []
         filledCellText = try values.decodeIfPresent([String].self, forKey: .filledCellText) ?? []
+        paints = try values.decodeIfPresent([GraphicsReader.Paint].self, forKey: .paintOperations) ?? []
         attributedLines = try values.decodeIfPresent([AttributedLine].self, forKey: .attributedLines) ?? []
     }
 

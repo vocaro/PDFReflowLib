@@ -286,6 +286,12 @@ enum TableReader {
             .trimmingCharacters(in: .whitespacesAndNewlines)
         let inside = row.filter { $0.rect.minX >= query.minX && $0.rect.maxX <= query.maxX }
             .sorted { $0.rect.minX < $1.rect.minX }
+        return nativeContent(inside, plain: plain)
+    }
+
+    /// Shared by ruled grids: preserve complete native line content whenever its characters
+    /// account for the independently read cell selection.
+    static func nativeContent(_ inside: [TextLine], plain: String) -> InlineText {
         guard !inside.isEmpty,
               compact(inside.map(\.text).joined(separator: " ")) == compact(plain) else {
             return InlineText(plain)

@@ -58,6 +58,7 @@ enum FurnitureDetector {
         fileprivate var groups: [String: [Candidate]] = [:]
         fileprivate var dropFolios: [DropFolio] = []
         fileprivate var syntheticOccurrences: [String: Int] = [:]
+        fileprivate var overprints: [Int: [Int: Set<Int>]] = [:]
         fileprivate var pageCount = 0
         /// The margin lines each page offered, whether or not they are removed in the end. A
         /// caller that must set the margins apart from the body before the plan exists — the
@@ -77,6 +78,7 @@ enum FurnitureDetector {
         fileprivate var dependencies: [Int: [Int: [Int]]] = [:]
         fileprivate var syntheticOccurrences: [String: Int] = [:]
         fileprivate var syntheticThreshold = Int.max
+        fileprivate var overprints: [Int: [Int: Set<Int>]] = [:]
         fileprivate var pageCount = 0
 
         /// The native lines this plan takes off one page, needing only the page's index. What
@@ -94,6 +96,9 @@ enum FurnitureDetector {
                     removed.remove(lineIndex)
                     settled = false
                 }
+            }
+            for (original, copies) in overprints[pageIndex] ?? [:] where removed.contains(original) {
+                removed.formUnion(copies)
             }
             return removed
         }
@@ -152,6 +157,18 @@ enum FurnitureDetector {
             return
         }
         guard page.bounds.height > 0, page.bounds.isFinite else { return }
+        // A shadow/knockout copy is not content inward of a running foot. Keep every
+        // extracted line, but let a proved furniture removal own its coincident copies.
+        // This tolerance never removes body text or changes the general overprint reader.
+        var originals: [Int: Int] = [:]
+        for index in page.lines.indices {
+            if let original = page.lines.indices.first(where: {
+                $0 < index && sameFurnitureImpression(page.lines[$0], page.lines[index])
+            }) {
+                originals[index] = originals[original] ?? original
+                ledger.overprints[pageIndex, default: [:]][originals[index]!, default: []].insert(index)
+            }
+        }
         let height = page.bounds.height
         func position(_ value: CGFloat) -> CGFloat { (value - page.bounds.minY) / height }
 
@@ -200,7 +217,7 @@ enum FurnitureDetector {
         func inwardGap(_ lineIndex: Int, top: Bool) -> CGFloat? {
             let line = page.lines[lineIndex]
             return page.lines.enumerated().filter { index, other in
-                index != lineIndex && (top ? other.rect.midY < line.rect.midY : other.rect.midY > line.rect.midY)
+                index != lineIndex && !sameFurnitureImpression(other, line) && (top ? other.rect.midY < line.rect.midY : other.rect.midY > line.rect.midY)
             }.map { top ? line.rect.minY - $0.element.rect.maxY : $0.element.rect.minY - line.rect.maxY }.min()
         }
         /// A block's inward boundary: the last edge its lines reach towards the body.
@@ -212,10 +229,12 @@ enum FurnitureDetector {
         var recorded: Set<Int> = []
         /// Files one line under every signature its words support, so `resolve` can find the runs.
         func record(_ lineIndex: Int, top: Bool, dependsOn: [Int] = []) {
+            guard originals[lineIndex] == nil, !recorded.contains(lineIndex) else { return }
             let line = page.lines[lineIndex]
             let words = words(line)
             recorded.insert(lineIndex)
             ledger.note(lineIndex, onPageAt: pageIndex)
+            for copy in ledger.overprints[pageIndex]?[lineIndex] ?? [] { ledger.note(copy, onPageAt: pageIndex) }
             // Bare folios use measured glyph height: fallback extraction estimates
             // fontSize from that height, whereas native extraction reads font attributes.
             let folio = isFolio(words)
@@ -265,6 +284,23 @@ enum FurnitureDetector {
                         title.remove(at: index)
                         ledger.groups[edge + "folio(\(offset)):" + title.joined(separator: " "), default: []].append(candidate)
                     }
+                }
+            }
+        }
+
+        // A source-painted header band can be taller than the ordinary margin window.
+        // Its entire text is one candidate, not an invitation to consume rows below it.
+        // Recurrence still proves every row, so a changing project-status row keeps the band.
+        if let band = page.headerBackdrop {
+            let members = page.lines.indices.filter { band.contains(page.lines[$0].rect) }
+            let rest = page.lines.indices.filter { !members.contains($0) }
+            if (2...8).contains(members.count), members.allSatisfy({ measurable(page.lines[$0]) }),
+               !rest.isEmpty, rest.allSatisfy({ page.lines[$0].rect.maxY < band.minY }),
+               let inward = members.map({ page.lines[$0].rect.minY }).min(),
+               let bodyTop = rest.map({ page.lines[$0].rect.maxY }).max(),
+               inward - bodyTop >= members.map({ separation(page.lines[$0]) }).min()! {
+                for index in members {
+                    record(index, top: true, dependsOn: members.filter { $0 != index })
                 }
             }
         }
@@ -395,6 +431,7 @@ enum FurnitureDetector {
 
     static func resolve(_ ledger: Ledger) -> Plan {
         var plan = Plan()
+        plan.overprints = ledger.overprints
         plan.pageCount = ledger.pageCount
         guard ledger.pageCount >= 3 else { return plan }
         plan.syntheticOccurrences = ledger.syntheticOccurrences
@@ -532,9 +569,20 @@ enum FurnitureDetector {
             kept = page.lines.enumerated().filter { !removed.contains($0.offset) }.map(\.element)
             guard !kept.isEmpty else { return nil }
         }
+        if let band = page.headerBackdrop,
+           !kept.contains(where: { band.contains($0.rect) }) {
+            page.graphics.removeAll { band.insetBy(dx: -2, dy: -2).contains($0) }
+            page.pictures.removeAll { band.insetBy(dx: -2, dy: -2).contains($0) }
+        }
         page.lines = kept
         return ConversionWarning(code: .furnitureRemoved, page: page.number,
                                  message: "Repeated header or footer omitted from the reflowed text.")
+    }
+
+    private static func sameFurnitureImpression(_ a: TextLine, _ b: TextLine) -> Bool {
+        a.text == b.text && abs(a.fontSize - b.fontSize) <= 0.1
+            && abs(a.rect.minX - b.rect.minX) <= 0.5 && abs(a.rect.maxX - b.rect.maxX) <= 0.5
+            && abs(a.rect.minY - b.rect.minY) <= 0.5 && abs(a.rect.maxY - b.rect.maxY) <= 0.5
     }
 
     /// The whitespace-separated, lowercased words of a line.

@@ -71,7 +71,7 @@ private func inspectShading(_ data: Data) throws -> GraphicsReader.Result {
     #expect(result.regions == [CGRect(x: 48, y: 348, width: 154, height: 104)])
 }
 
-@Test func shadingRejectsMissingResourcesAndUnboundedRegions() throws {
+@Test func shadingRejectsMissingResourcesAndKeepsPageBoundedRegions() throws {
     #expect(try inspectShading(shadingPDF("/Missing sh")).unsupported)
     #expect(try inspectShading(shadingPDF("/S sh")).unsupported)
     #expect(try inspectShading(shadingPDF("50 400 100 50 re W n /S sh", shading: "<< /ShadingType 99 >>")).unsupported)
@@ -112,4 +112,23 @@ private func inspectShading(_ data: Data) throws -> GraphicsReader.Result {
     let red = stride(from: 0, to: pixels.count, by: 4).filter { Int(pixels[$0]) > Int(pixels[$0 + 2]) + 60 }.count
     let blue = stride(from: 0, to: pixels.count, by: 4).filter { Int(pixels[$0 + 2]) > Int(pixels[$0]) + 60 }.count
     #expect(red > 100 && blue > 100) // A blank or solid-color crop cannot pass.
+}
+
+@Test func aClipSizedRadialFigureRemainsRequiredWhenReferencesAreDisabled() async throws {
+    let dir = FileManager.default.temporaryDirectory.appendingPathComponent("radial-figure-" + UUID().uuidString)
+    try FileManager.default.createDirectory(at: dir, withIntermediateDirectories: true)
+    defer { try? FileManager.default.removeItem(at: dir) }
+    let pdf = dir.appendingPathComponent("source.pdf")
+    let radial = "<< /ShadingType 3 /ColorSpace /DeviceRGB /Coords [300 280 0 300 280 80] /Extend [false false] /Function << /FunctionType 2 /Domain [0 1] /C0 [1 0 0] /C1 [0 0 1] /N 1 >> >>"
+    try shadingPDF("""
+    /S sh
+    BT /F1 12 Tf 50 700 Td (This ordinary paragraph has enough words) Tj
+    0 -15 Td (to establish three full native lines while) Tj
+    0 -15 Td (a separate radial figure stays below it.) Tj ET
+    """, shading: radial).write(to: pdf)
+    var options = ConversionOptions(); options.referenceImages = .never; options.ocr = .never
+    let result = try await PDFReflowLibPipeline.reconstruct(from: pdf, options: options,
+        workspace: dir.appendingPathComponent("work"), progress: { _ in })
+    #expect(!result.book.assets.isEmpty)
+    #expect(result.book.blocks.contains { if case .image = $0.content { true } else { false } })
 }

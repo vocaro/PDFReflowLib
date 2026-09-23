@@ -40,8 +40,8 @@ enum PageDiagnosis {
     /// A wrapped paragraph printed over a picture needs this many lines, this many words, and
     /// this share of its widest line on every line but its last (#239).
     static let minimumProseLines = 3
-    static let minimumProseWords = 20
-    static let minimumProseMeasure: CGFloat = 0.8
+    static let minimumProseWords = 18
+    static let minimumProseMeasure: CGFloat = 0.75
 
     /// The indices of `lines` that a figure crop takes only because the page prints them over one
     /// of its own pictures (#239).
@@ -59,11 +59,11 @@ enum PageDiagnosis {
     ///
     /// Two conditions, both read off the page:
     ///
-    /// - **The crop is a picture's own footprint.** Only a run lying wholly inside a placed raster
-    ///   image is considered, because that is the crop no cut can free it from. A vector figure's
+    /// - **The crop is a picture's own footprint.** A run must intersect the crop of a placed raster
+    ///   image; the complete run stays together when only its opening rows overlap. A vector figure's
     ///   region is seeded from what it paints and can still be carved; artwork is not.
     /// - **The run is a wrapped paragraph of the book's prose.** Three or more rows on one left
-    ///   edge, at one size and one leading, each but the last filling four fifths of the run's
+    ///   edge, at one size and one leading, each but the last filling three quarters of the run's
     ///   widest line, at least `minimumProseWords` words, and at least half of them English
     ///   words. A caption or a column of body text satisfies all of it by construction. A
     ///   figure's lettering does not: `faa-phak-8083-25c` page 475's sign legend runs two lines an
@@ -85,13 +85,22 @@ enum PageDiagnosis {
         // whole. `cia-blue-book-14-1955`'s sighting tables are pages of that kind whose crop is
         // seeded by `TableRegionDetector` after the scan itself was dropped.
         for picture in pictures where !coversPage(picture, bounds: bounds) {
-            let inside = taken.filter { picture.insetBy(dx: -1, dy: -1).contains(lines[$0].rect) }
-            for run in paragraphRuns(inside, in: lines) where readsAsProse(run, in: lines) {
+            let owners = crops.filter { crop in
+                let overlap = crop.intersection(picture)
+                return !overlap.isNull && overlap.width * overlap.height >= picture.width * picture.height * 0.9
+            }
+            let inside = taken.filter { index in
+                owners.contains { $0.insetBy(dx: -2, dy: -2).contains(lines[index].rect) }
+            }
+            guard !inside.isEmpty else { continue }
+            let eligible = Set(inside)
+            for run in paragraphRuns(Array(lines.indices), in: lines) where readsAsProse(run, in: lines) {
                 // One row of the paragraph reflows once. A page that paints a row twice, one copy
                 // over the other, so that it reads over the picture beneath it — the USDA
                 // magazine's knockout captions — sets one line, and the second copy stays where
                 // it was, inside the crop. Only an exact repetition is dropped; two different
                 // texts at one rectangle are both the page's.
+                guard run.contains(where: { $0.contains(where: eligible.contains) }) else { continue }
                 for row in run {
                     freed.formUnion(row.enumerated().filter { $0.offset == 0 || lines[$0.element].text != lines[row[0]].text }
                         .map(\.element))
@@ -118,27 +127,28 @@ enum PageDiagnosis {
                 rows.append((line.rect, line.fontSize, [index]))
             }
         }
-        var runs: [[[Int]]] = []
-        var run: [(rect: CGRect, size: CGFloat, indices: [Int])] = []
-        func flush() {
-            if run.count >= minimumProseLines { runs.append(run.map(\.indices)) }
-            run = []
-        }
+        // Several prose columns can lie over one picture. Keep each run open on its own
+        // measure rather than letting the other column's next baseline break it.
+        var runs: [[(rect: CGRect, size: CGFloat, indices: [Int])]] = []
         for row in rows {
-            if let last = run.last {
+            let next = runs.indices.last { index in
+                let run = runs[index], last = run.last!
                 let size = max(last.size, row.size)
                 let leading = last.rect.minY - row.rect.minY
                 let established = run.count >= 2 ? run[0].rect.minY - run[1].rect.minY : leading
-                let continues = abs(last.size - row.size) <= size * 0.1
-                    && abs(last.rect.minX - row.rect.minX) <= size * 0.25
+                let openingIndent = run.count == 1 && last.rect.minX >= row.rect.minX
+                    && last.rect.minX - row.rect.minX <= size * 1.2
+                let ended = run.count >= 3 && last.rect.width < (run.map(\.rect.width).max() ?? 0) * minimumProseMeasure
+                    && lines[last.indices[0]].text.last.map { ".!?”.".contains($0) } == true
+                return !ended && abs(last.size - row.size) <= size * 0.1
+                    && (abs(last.rect.minX - row.rect.minX) <= size * 0.25 || openingIndent)
                     && leading >= size * 0.8 && leading <= size * 2.2
                     && abs(leading - established) <= max(1, established * 0.25)
-                if !continues { flush() }
             }
-            run.append(row)
+            if let next { runs[next].append(row) }
+            else { runs.append([row]) }
         }
-        flush()
-        return runs
+        return runs.filter { $0.count >= minimumProseLines }.map { $0.map(\.indices) }
     }
 
     /// Whether a run's rows read as the book's prose rather than a picture's lettering: every row
@@ -158,7 +168,7 @@ enum PageDiagnosis {
         guard measure > 0, rows.dropLast().allSatisfy({ $0.rect.width >= measure * minimumProseMeasure }),
               rows.allSatisfy({ !$0.monospaced }) else { return false }
         let text = rows.map(\.text).joined(separator: " ")
-        guard text.split(whereSeparator: \.isWhitespace).count >= minimumProseWords,
+        guard text.split(whereSeparator: { $0.isWhitespace || $0 == "-" }).count >= minimumProseWords,
               let counts = EnglishText.wordCounts(text), counts.judged > 0,
               Double(counts.numericTokens) < Double(counts.tokens) * TextLayerPlausibility.maximumNumericShare
         else { return false }

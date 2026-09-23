@@ -57,3 +57,25 @@ then the normal `tools/evaluate_real_document.py` and `tools/check_corpus_conten
 for `census-rrs2002-01` and `ntrs-20180003024-earthdata-slides-2018`, using the built converter
 under its ordinary `pdf-reflow` basename. Keep raw source captures distinct from reconstructed
 output, and compare OCR readings before attributing differences to code.
+
+
+## Same-executable rule control
+
+The integrated final release at `89ea015` again transcribes some Census OCR pages differently
+from the earlier executable, even with the normal basename. To isolate the heading rule, a
+separate worktree at that commit adds one temporary environment switch: value `1` selects the
+old `established == nil && dominantLines.count <= 2` fallback condition; value `0` selects the
+final native-size/maximum-size/identifier guard. Both full source runs use the same executable
+bytes, recorded in `same-executable-control.json`. This instrumentation is not production code.
+
+The Census controls have identical parsed pages, markers and image bytes with either rule.
+This particular OCR reading establishes enough ordinary body text that the sparse fallback
+does not change its classification. The deterministic sparse-OCR regression and the earlier
+frozen-output failure remain the evidence for the reported Dijkstra promotion; this control
+does not substitute a different OCR transcription for that reproducer. It shows that toggling
+the guard does not reproduce the broad cross-build transcription difference in this run.
+
+The native Earthdata controls preserve all text, source markers and image bytes. Only page 1's
+byline/affiliation changes from headings to paragraphs; the actual title and the other slides
+retain their readings. These paired controls support the bounded classifier change, without
+claiming general Vision determinism or identifying a framework cause for cross-build readings.

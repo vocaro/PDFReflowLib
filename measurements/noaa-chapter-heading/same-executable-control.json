@@ -1,0 +1,40 @@
+[
+  {
+    "case": "census-rrs2002-01",
+    "sourceSHA256": "0f97380ae4308581bd70013b7317faafd7c217654236bd31d1448f26eae56905",
+    "converterSHA256": "c949038fbd88a08816cdb1946b52a0ebde9af88ed84fce576746fd1f354ba5da",
+    "bothEvaluationsPass": true,
+    "changedPages": {
+      "text": [],
+      "headings": [],
+      "paragraphs": [],
+      "images": [],
+      "tableRows": [],
+      "lists": []
+    },
+    "imageCount": 36,
+    "allImagesByteIdentical": true,
+    "markersEqual": true
+  },
+  {
+    "case": "ntrs-20180003024-earthdata-slides-2018",
+    "sourceSHA256": "f0a1ea3f5711228a9de2544fd1a94b05cfb8d9323fe3a4c253542f5a6ead5c94",
+    "converterSHA256": "c949038fbd88a08816cdb1946b52a0ebde9af88ed84fce576746fd1f354ba5da",
+    "bothEvaluationsPass": true,
+    "changedPages": {
+      "text": [],
+      "headings": [
+        1
+      ],
+      "paragraphs": [
+        1
+      ],
+      "images": [],
+      "tableRows": [],
+      "lists": []
+    },
+    "imageCount": 23,
+    "allImagesByteIdentical": true,
+    "markersEqual": true
+  }
+]

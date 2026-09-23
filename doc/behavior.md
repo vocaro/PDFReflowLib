@@ -1413,9 +1413,13 @@ right-aligned cover label stays whole without joining mathematical derivation st
   images excluded, so a figure's small labels cannot promote surrounding prose) when at least
   three lines and 200 characters support it; a sparser page establishes none. The **heading body**
   is the larger of the two. If no body is established and at most two reflowable lines occupy
-  the page's dominant size, the heading estimate is capped by the larger of the document body
-  and the smallest reflowable size. This lets a long chapter title exceed its own estimate while
-  keeping repeated cover labels as prose; page geometry still uses the original body. See
+  the page's dominant size, the heading estimate can be capped by the larger of the document
+  body and the smallest reflowable size. This requires native font-size evidence and the dominant
+  size to be the largest reflowable size; smaller bylines beneath a title do not qualify. A lone
+  unspaced letter-and-digit token cannot establish this extra evidence for a publication code.
+  Fresh OCR and synthetic font sizes keep their ordinary thresholds. This lets a long chapter
+  title exceed its own estimate while keeping repeated cover labels as prose; page geometry
+  still uses the original body. See
   [noaa-chapter-heading](../measurements/noaa-chapter-heading/record.md).
 - On a page that establishes no body of its own (a back cover, a cover with one short
   cross-reference line), the **document floor** is 110% of the document's body size (#186);

@@ -1,0 +1,815 @@
+{
+  "measuredCommit": "89ea015",
+  "documentationCommit": "9070942",
+  "date": "2026-09-23",
+  "issues": [
+    172,
+    296,
+    192,
+    295,
+    160
+  ],
+  "converterSHA256": "d4fd8ad635537baffd569bc0d40f70ef412d342ed46c3f8506befbef916a7051",
+  "executableBasename": "pdf-reflow",
+  "corpusPassed": true,
+  "caseCount": 20,
+  "contentChecks": 798,
+  "reviewedPageCount": 153,
+  "sourcePageCount": 5262,
+  "fastGate": {
+    "passed": true,
+    "gates": 11,
+    "swiftTests": 741,
+    "pythonTests": 250
+  },
+  "structureIndex": {
+    "references": 39198,
+    "pages": 510,
+    "peakRSSBytes": 121143296,
+    "ceilingBytes": 201326592,
+    "passed": true
+  },
+  "repeatedConversion": {
+    "passed": true,
+    "conversions": 3,
+    "pages": 135,
+    "leakedObjectsPerConversion": 1750.5,
+    "leakedBytesPerConversion": 1162064,
+    "ceilingObjectsPerConversion": 4050
+  },
+  "cases": [
+    {
+      "case": "faa-phak-8083-25c",
+      "passed": true,
+      "reviewPages": [
+        24,
+        19,
+        226,
+        302,
+        448,
+        96,
+        16,
+        121,
+        91,
+        511,
+        211,
+        212,
+        50,
+        325,
+        81,
+        191,
+        35,
+        116,
+        461
+      ],
+      "contentChecks": 94,
+      "spineBoundariesCrossed": 0,
+      "errors": [],
+      "scope": "Reviewed text/order/script-context/image-presence, spine-boundary continuity and source-region image checks; not full-book fidelity or image legibility qualification.",
+      "converterSHA256": "d4fd8ad635537baffd569bc0d40f70ef412d342ed46c3f8506befbef916a7051",
+      "conversionSeconds": 60.490675707987975,
+      "converterPeakRSSBytes": 903266304,
+      "sampledPeakPhysicalFootprintBytes": 552928600,
+      "peakMemoryPressureLevel": 1,
+      "progressCheck": {
+        "passed": true,
+        "events": 1705,
+        "scope": "CLI work fraction, page bounds and completion; not elapsed-time prediction"
+      },
+      "structuralCheck": "passed",
+      "epubcheckExitCode": 0,
+      "memoryGate": {
+        "limitBytes": 1342177280,
+        "metric": "converter process peak RSS from wait/rusage",
+        "attempts": 1,
+        "status": "passed",
+        "passed": true
+      },
+      "runPassed": true,
+      "sourcePages": 522
+    },
+    {
+      "case": "wallace-algebra-2010",
+      "passed": true,
+      "reviewPages": [
+        2,
+        12,
+        347,
+        343,
+        26,
+        18,
+        43,
+        101
+      ],
+      "contentChecks": 35,
+      "spineBoundariesCrossed": 0,
+      "errors": [],
+      "scope": "Reviewed text/order/script-context/image-presence, spine-boundary continuity and source-region image checks; not full-book fidelity or image legibility qualification.",
+      "converterSHA256": "d4fd8ad635537baffd569bc0d40f70ef412d342ed46c3f8506befbef916a7051",
+      "conversionSeconds": 31.2509300839738,
+      "converterPeakRSSBytes": 92766208,
+      "sampledPeakPhysicalFootprintBytes": 65930104,
+      "peakMemoryPressureLevel": 1,
+      "progressCheck": {
+        "passed": true,
+        "events": 3174,
+        "scope": "CLI work fraction, page bounds and completion; not elapsed-time prediction"
+      },
+      "structuralCheck": "passed",
+      "epubcheckExitCode": 0,
+      "memoryGate": {
+        "limitBytes": 268435456,
+        "metric": "converter process peak RSS from wait/rusage",
+        "attempts": 1,
+        "status": "passed",
+        "passed": true
+      },
+      "runPassed": true,
+      "sourcePages": 489
+    },
+    {
+      "case": "gpo-911-2004",
+      "passed": true,
+      "reviewPages": [
+        15,
+        19,
+        20,
+        21,
+        65,
+        67,
+        451,
+        472,
+        473,
+        532,
+        581,
+        486,
+        488,
+        574,
+        576,
+        582,
+        583,
+        161,
+        526,
+        24,
+        117,
+        572,
+        579,
+        580,
+        584,
+        585,
+        257,
+        381
+      ],
+      "contentChecks": 99,
+      "spineBoundariesCrossed": 0,
+      "errors": [],
+      "scope": "Reviewed text/order/script-context/image-presence, spine-boundary continuity and source-region image checks; not full-book fidelity or image legibility qualification.",
+      "converterSHA256": "d4fd8ad635537baffd569bc0d40f70ef412d342ed46c3f8506befbef916a7051",
+      "conversionSeconds": 15.211180459009483,
+      "converterPeakRSSBytes": 115228672,
+      "sampledPeakPhysicalFootprintBytes": 172311488,
+      "peakMemoryPressureLevel": 1,
+      "progressCheck": {
+        "passed": true,
+        "events": 1317,
+        "scope": "CLI work fraction, page bounds and completion; not elapsed-time prediction"
+      },
+      "structuralCheck": "passed",
+      "epubcheckExitCode": 0,
+      "memoryGate": {
+        "limitBytes": 268435456,
+        "metric": "converter process peak RSS from wait/rusage",
+        "attempts": 1,
+        "status": "passed",
+        "passed": true
+      },
+      "runPassed": true,
+      "sourcePages": 585
+    },
+    {
+      "case": "fed-explained-2021",
+      "passed": true,
+      "reviewPages": [
+        50,
+        9,
+        13,
+        32,
+        45,
+        46,
+        54,
+        75,
+        77,
+        103,
+        109,
+        123,
+        1,
+        19,
+        21
+      ],
+      "contentChecks": 54,
+      "spineBoundariesCrossed": 1,
+      "errors": [],
+      "scope": "Reviewed text/order/script-context/image-presence, spine-boundary continuity and source-region image checks; not full-book fidelity or image legibility qualification.",
+      "converterSHA256": "d4fd8ad635537baffd569bc0d40f70ef412d342ed46c3f8506befbef916a7051",
+      "conversionSeconds": 9.065173999988474,
+      "converterPeakRSSBytes": 300498944,
+      "sampledPeakPhysicalFootprintBytes": 202458120,
+      "peakMemoryPressureLevel": 1,
+      "progressCheck": {
+        "passed": true,
+        "events": 527,
+        "scope": "CLI work fraction, page bounds and completion; not elapsed-time prediction"
+      },
+      "structuralCheck": "passed",
+      "epubcheckExitCode": 0,
+      "memoryGate": {
+        "limitBytes": 805306368,
+        "metric": "converter process peak RSS from wait/rusage",
+        "attempts": 1,
+        "status": "passed",
+        "passed": true
+      },
+      "runPassed": true,
+      "sourcePages": 135
+    },
+    {
+      "case": "dga-2025-2030",
+      "passed": true,
+      "reviewPages": [
+        1,
+        2,
+        3
+      ],
+      "contentChecks": 20,
+      "spineBoundariesCrossed": 0,
+      "errors": [],
+      "scope": "Reviewed text/order/script-context/image-presence, spine-boundary continuity and source-region image checks; not full-book fidelity or image legibility qualification.",
+      "converterSHA256": "d4fd8ad635537baffd569bc0d40f70ef412d342ed46c3f8506befbef916a7051",
+      "conversionSeconds": 1.3581682920339517,
+      "converterPeakRSSBytes": 118259712,
+      "sampledPeakPhysicalFootprintBytes": 82150288,
+      "peakMemoryPressureLevel": 1,
+      "progressCheck": {
+        "passed": true,
+        "events": 57,
+        "scope": "CLI work fraction, page bounds and completion; not elapsed-time prediction"
+      },
+      "structuralCheck": "passed",
+      "epubcheckExitCode": 0,
+      "memoryGate": {
+        "limitBytes": 201326592,
+        "metric": "converter process peak RSS from wait/rusage",
+        "attempts": 1,
+        "status": "passed",
+        "passed": true
+      },
+      "runPassed": true,
+      "sourcePages": 10
+    },
+    {
+      "case": "gpo-our-flag-2003",
+      "passed": true,
+      "reviewPages": [
+        27,
+        31,
+        33,
+        34,
+        42,
+        43,
+        7,
+        9,
+        30,
+        29,
+        26
+      ],
+      "contentChecks": 64,
+      "spineBoundariesCrossed": 0,
+      "errors": [],
+      "scope": "Reviewed text/order/script-context/image-presence, spine-boundary continuity and source-region image checks; not full-book fidelity or image legibility qualification.",
+      "converterSHA256": "d4fd8ad635537baffd569bc0d40f70ef412d342ed46c3f8506befbef916a7051",
+      "conversionSeconds": 2.3067159169586375,
+      "converterPeakRSSBytes": 114769920,
+      "sampledPeakPhysicalFootprintBytes": 177751000,
+      "peakMemoryPressureLevel": 1,
+      "progressCheck": {
+        "passed": true,
+        "events": 270,
+        "scope": "CLI work fraction, page bounds and completion; not elapsed-time prediction"
+      },
+      "structuralCheck": "passed",
+      "epubcheckExitCode": 0,
+      "memoryGate": {
+        "limitBytes": 201326592,
+        "metric": "converter process peak RSS from wait/rusage",
+        "attempts": 1,
+        "status": "passed",
+        "passed": true
+      },
+      "runPassed": true,
+      "sourcePages": 56
+    },
+    {
+      "case": "cdc-zombie-pandemic-2011",
+      "passed": true,
+      "reviewPages": [
+        5,
+        13,
+        39
+      ],
+      "contentChecks": 11,
+      "spineBoundariesCrossed": 0,
+      "errors": [],
+      "scope": "Reviewed text/order/script-context/image-presence, spine-boundary continuity and source-region image checks; not full-book fidelity or image legibility qualification.",
+      "converterSHA256": "d4fd8ad635537baffd569bc0d40f70ef412d342ed46c3f8506befbef916a7051",
+      "conversionSeconds": 15.957894207967911,
+      "converterPeakRSSBytes": 457850880,
+      "sampledPeakPhysicalFootprintBytes": 269354352,
+      "peakMemoryPressureLevel": 1,
+      "progressCheck": {
+        "passed": true,
+        "events": 172,
+        "scope": "CLI work fraction, page bounds and completion; not elapsed-time prediction"
+      },
+      "structuralCheck": "passed",
+      "epubcheckExitCode": 0,
+      "memoryGate": {
+        "limitBytes": 536870912,
+        "metric": "converter process peak RSS from wait/rusage",
+        "attempts": 1,
+        "status": "passed",
+        "passed": true
+      },
+      "runPassed": true,
+      "sourcePages": 42
+    },
+    {
+      "case": "cia-blue-book-14-1955",
+      "passed": true,
+      "reviewPages": [
+        12,
+        74,
+        150,
+        270
+      ],
+      "contentChecks": 11,
+      "spineBoundariesCrossed": 0,
+      "errors": [],
+      "scope": "Reviewed text/order/script-context/image-presence, spine-boundary continuity and source-region image checks; not full-book fidelity or image legibility qualification.",
+      "converterSHA256": "d4fd8ad635537baffd569bc0d40f70ef412d342ed46c3f8506befbef916a7051",
+      "conversionSeconds": 182.0849031250109,
+      "converterPeakRSSBytes": 516063232,
+      "sampledPeakPhysicalFootprintBytes": 595264976,
+      "peakMemoryPressureLevel": 1,
+      "progressCheck": {
+        "passed": true,
+        "events": 1155,
+        "scope": "CLI work fraction, page bounds and completion; not elapsed-time prediction"
+      },
+      "structuralCheck": "passed",
+      "epubcheckExitCode": 0,
+      "memoryGate": {
+        "limitBytes": 805306368,
+        "metric": "converter process peak RSS from wait/rusage",
+        "attempts": 1,
+        "status": "passed",
+        "passed": true
+      },
+      "runPassed": true,
+      "sourcePages": 312
+    },
+    {
+      "case": "usgs-mcs2025-copper",
+      "passed": true,
+      "reviewPages": [
+        1,
+        2
+      ],
+      "contentChecks": 30,
+      "spineBoundariesCrossed": 0,
+      "errors": [],
+      "scope": "Reviewed text/order/script-context/image-presence, spine-boundary continuity and source-region image checks; not full-book fidelity or image legibility qualification.",
+      "converterSHA256": "d4fd8ad635537baffd569bc0d40f70ef412d342ed46c3f8506befbef916a7051",
+      "conversionSeconds": 0.2120836250251159,
+      "converterPeakRSSBytes": 31850496,
+      "sampledPeakPhysicalFootprintBytes": 14762776,
+      "peakMemoryPressureLevel": 1,
+      "progressCheck": {
+        "passed": true,
+        "events": 13,
+        "scope": "CLI work fraction, page bounds and completion; not elapsed-time prediction"
+      },
+      "structuralCheck": "passed",
+      "epubcheckExitCode": 0,
+      "memoryGate": {
+        "limitBytes": 134217728,
+        "metric": "converter process peak RSS from wait/rusage",
+        "attempts": 1,
+        "status": "passed",
+        "passed": true
+      },
+      "runPassed": true,
+      "sourcePages": 2
+    },
+    {
+      "case": "scotus-loper-bright-2024",
+      "passed": true,
+      "reviewPages": [
+        60,
+        97,
+        98,
+        2,
+        7,
+        13
+      ],
+      "contentChecks": 27,
+      "spineBoundariesCrossed": 0,
+      "errors": [],
+      "scope": "Reviewed text/order/script-context/image-presence, spine-boundary continuity and source-region image checks; not full-book fidelity or image legibility qualification.",
+      "converterSHA256": "d4fd8ad635537baffd569bc0d40f70ef412d342ed46c3f8506befbef916a7051",
+      "conversionSeconds": 1.661408499989193,
+      "converterPeakRSSBytes": 45056000,
+      "sampledPeakPhysicalFootprintBytes": 23774000,
+      "peakMemoryPressureLevel": 1,
+      "progressCheck": {
+        "passed": true,
+        "events": 241,
+        "scope": "CLI work fraction, page bounds and completion; not elapsed-time prediction"
+      },
+      "structuralCheck": "passed",
+      "epubcheckExitCode": 0,
+      "memoryGate": {
+        "limitBytes": 134217728,
+        "metric": "converter process peak RSS from wait/rusage",
+        "attempts": 1,
+        "status": "passed",
+        "passed": true
+      },
+      "runPassed": true,
+      "sourcePages": 114
+    },
+    {
+      "case": "census-rrs2002-01",
+      "passed": true,
+      "reviewPages": [
+        1,
+        2,
+        3,
+        11,
+        17,
+        20,
+        7
+      ],
+      "contentChecks": 61,
+      "spineBoundariesCrossed": 0,
+      "errors": [],
+      "scope": "Reviewed text/order/script-context/image-presence, spine-boundary continuity and source-region image checks; not full-book fidelity or image legibility qualification.",
+      "converterSHA256": "d4fd8ad635537baffd569bc0d40f70ef412d342ed46c3f8506befbef916a7051",
+      "conversionSeconds": 4.879562625021208,
+      "converterPeakRSSBytes": 217677824,
+      "sampledPeakPhysicalFootprintBytes": 372016160,
+      "peakMemoryPressureLevel": 1,
+      "progressCheck": {
+        "passed": true,
+        "events": 95,
+        "scope": "CLI work fraction, page bounds and completion; not elapsed-time prediction"
+      },
+      "structuralCheck": "passed",
+      "epubcheckExitCode": 0,
+      "memoryGate": {
+        "limitBytes": 536870912,
+        "metric": "converter process peak RSS from wait/rusage",
+        "attempts": 1,
+        "status": "passed",
+        "passed": true
+      },
+      "runPassed": true,
+      "sourcePages": 20
+    },
+    {
+      "case": "uscis-m618-arabic-2015",
+      "passed": true,
+      "reviewPages": [
+        5,
+        21
+      ],
+      "contentChecks": 26,
+      "spineBoundariesCrossed": 0,
+      "errors": [],
+      "scope": "Reviewed text/order/script-context/image-presence, spine-boundary continuity and source-region image checks; not full-book fidelity or image legibility qualification.",
+      "converterSHA256": "d4fd8ad635537baffd569bc0d40f70ef412d342ed46c3f8506befbef916a7051",
+      "conversionSeconds": 9.20705333299702,
+      "converterPeakRSSBytes": 172130304,
+      "sampledPeakPhysicalFootprintBytes": 194036768,
+      "peakMemoryPressureLevel": 1,
+      "progressCheck": {
+        "passed": true,
+        "events": 399,
+        "scope": "CLI work fraction, page bounds and completion; not elapsed-time prediction"
+      },
+      "structuralCheck": "passed",
+      "epubcheckExitCode": 0,
+      "memoryGate": {
+        "limitBytes": 268435456,
+        "metric": "converter process peak RSS from wait/rusage",
+        "attempts": 1,
+        "status": "passed",
+        "passed": true
+      },
+      "runPassed": true,
+      "sourcePages": 116
+    },
+    {
+      "case": "irs-p596-zhs-2025",
+      "passed": true,
+      "reviewPages": [
+        1,
+        16,
+        5,
+        4,
+        17
+      ],
+      "contentChecks": 17,
+      "spineBoundariesCrossed": 0,
+      "errors": [],
+      "scope": "Reviewed text/order/script-context/image-presence, spine-boundary continuity and source-region image checks; not full-book fidelity or image legibility qualification.",
+      "converterSHA256": "d4fd8ad635537baffd569bc0d40f70ef412d342ed46c3f8506befbef916a7051",
+      "conversionSeconds": 7.500694334041327,
+      "converterPeakRSSBytes": 182386688,
+      "sampledPeakPhysicalFootprintBytes": 87491472,
+      "peakMemoryPressureLevel": 1,
+      "progressCheck": {
+        "passed": true,
+        "events": 223,
+        "scope": "CLI work fraction, page bounds and completion; not elapsed-time prediction"
+      },
+      "structuralCheck": "passed",
+      "epubcheckExitCode": 0,
+      "memoryGate": {
+        "limitBytes": 268435456,
+        "metric": "converter process peak RSS from wait/rusage",
+        "attempts": 1,
+        "status": "passed",
+        "passed": true
+      },
+      "runPassed": true,
+      "sourcePages": 36
+    },
+    {
+      "case": "nbs-jres-geltman-1977",
+      "passed": true,
+      "reviewPages": [
+        1,
+        2,
+        7
+      ],
+      "contentChecks": 8,
+      "spineBoundariesCrossed": 0,
+      "errors": [],
+      "scope": "Reviewed text/order/script-context/image-presence, spine-boundary continuity and source-region image checks; not full-book fidelity or image legibility qualification.",
+      "converterSHA256": "d4fd8ad635537baffd569bc0d40f70ef412d342ed46c3f8506befbef916a7051",
+      "conversionSeconds": 1.1454616250121035,
+      "converterPeakRSSBytes": 275873792,
+      "sampledPeakPhysicalFootprintBytes": 66667384,
+      "peakMemoryPressureLevel": 1,
+      "progressCheck": {
+        "passed": true,
+        "events": 31,
+        "scope": "CLI work fraction, page bounds and completion; not elapsed-time prediction"
+      },
+      "structuralCheck": "passed",
+      "epubcheckExitCode": 0,
+      "memoryGate": {
+        "limitBytes": 536870912,
+        "metric": "converter process peak RSS from wait/rusage",
+        "attempts": 1,
+        "status": "passed",
+        "passed": true
+      },
+      "runPassed": true,
+      "sourcePages": 7
+    },
+    {
+      "case": "arxiv-replay-clocks-2023",
+      "passed": true,
+      "reviewPages": [
+        1,
+        3,
+        4,
+        6
+      ],
+      "contentChecks": 23,
+      "spineBoundariesCrossed": 0,
+      "errors": [],
+      "scope": "Reviewed text/order/script-context/image-presence, spine-boundary continuity and source-region image checks; not full-book fidelity or image legibility qualification.",
+      "converterSHA256": "d4fd8ad635537baffd569bc0d40f70ef412d342ed46c3f8506befbef916a7051",
+      "conversionSeconds": 1.3576784589677118,
+      "converterPeakRSSBytes": 178634752,
+      "sampledPeakPhysicalFootprintBytes": 36619200,
+      "peakMemoryPressureLevel": 1,
+      "progressCheck": {
+        "passed": true,
+        "events": 100,
+        "scope": "CLI work fraction, page bounds and completion; not elapsed-time prediction"
+      },
+      "structuralCheck": "passed",
+      "epubcheckExitCode": 0,
+      "memoryGate": {
+        "limitBytes": 268435456,
+        "metric": "converter process peak RSS from wait/rusage",
+        "attempts": 1,
+        "status": "passed",
+        "passed": true
+      },
+      "runPassed": true,
+      "sourcePages": 12
+    },
+    {
+      "case": "ntrs-20180003024-earthdata-slides-2018",
+      "passed": true,
+      "reviewPages": [
+        1,
+        5,
+        9
+      ],
+      "contentChecks": 22,
+      "spineBoundariesCrossed": 0,
+      "errors": [],
+      "scope": "Reviewed text/order/script-context/image-presence, spine-boundary continuity and source-region image checks; not full-book fidelity or image legibility qualification.",
+      "converterSHA256": "d4fd8ad635537baffd569bc0d40f70ef412d342ed46c3f8506befbef916a7051",
+      "conversionSeconds": 1.9827124580042437,
+      "converterPeakRSSBytes": 105119744,
+      "sampledPeakPhysicalFootprintBytes": 168641472,
+      "peakMemoryPressureLevel": 1,
+      "progressCheck": {
+        "passed": true,
+        "events": 75,
+        "scope": "CLI work fraction, page bounds and completion; not elapsed-time prediction"
+      },
+      "structuralCheck": "passed",
+      "epubcheckExitCode": 0,
+      "memoryGate": {
+        "limitBytes": 134217728,
+        "metric": "converter process peak RSS from wait/rusage",
+        "attempts": 1,
+        "status": "passed",
+        "passed": true
+      },
+      "runPassed": true,
+      "sourcePages": 21
+    },
+    {
+      "case": "gpo-warren-1964-suspect-text-excerpt",
+      "passed": true,
+      "reviewPages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "contentChecks": 10,
+      "spineBoundariesCrossed": 0,
+      "errors": [],
+      "scope": "Reviewed text/order/script-context/image-presence, spine-boundary continuity and source-region image checks; not full-book fidelity or image legibility qualification.",
+      "converterSHA256": "d4fd8ad635537baffd569bc0d40f70ef412d342ed46c3f8506befbef916a7051",
+      "conversionSeconds": 7.727620374993421,
+      "converterPeakRSSBytes": 796606464,
+      "sampledPeakPhysicalFootprintBytes": 393561384,
+      "peakMemoryPressureLevel": 1,
+      "progressCheck": {
+        "passed": true,
+        "events": 29,
+        "scope": "CLI work fraction, page bounds and completion; not elapsed-time prediction"
+      },
+      "structuralCheck": "passed",
+      "epubcheckExitCode": 0,
+      "memoryGate": {
+        "limitBytes": 1073741824,
+        "metric": "converter process peak RSS from wait/rusage",
+        "attempts": 1,
+        "status": "passed",
+        "passed": true
+      },
+      "runPassed": true,
+      "sourcePages": 5
+    },
+    {
+      "case": "usda-ars-agresearch-2012-11",
+      "passed": true,
+      "reviewPages": [
+        1,
+        6,
+        9,
+        15,
+        17,
+        19,
+        24
+      ],
+      "contentChecks": 33,
+      "spineBoundariesCrossed": 0,
+      "errors": [],
+      "scope": "Reviewed text/order/script-context/image-presence, spine-boundary continuity and source-region image checks; not full-book fidelity or image legibility qualification.",
+      "converterSHA256": "d4fd8ad635537baffd569bc0d40f70ef412d342ed46c3f8506befbef916a7051",
+      "conversionSeconds": 5.41619520803215,
+      "converterPeakRSSBytes": 297451520,
+      "sampledPeakPhysicalFootprintBytes": 107283488,
+      "peakMemoryPressureLevel": 1,
+      "progressCheck": {
+        "passed": true,
+        "events": 123,
+        "scope": "CLI work fraction, page bounds and completion; not elapsed-time prediction"
+      },
+      "structuralCheck": "passed",
+      "epubcheckExitCode": 0,
+      "memoryGate": {
+        "limitBytes": 536870912,
+        "metric": "converter process peak RSS from wait/rusage",
+        "attempts": 1,
+        "status": "passed",
+        "passed": true
+      },
+      "runPassed": true,
+      "sourcePages": 24
+    },
+    {
+      "case": "noaa-nca5-2023",
+      "passed": true,
+      "reviewPages": [
+        1,
+        8,
+        33,
+        48,
+        80,
+        84,
+        139,
+        1700,
+        1834
+      ],
+      "contentChecks": 59,
+      "spineBoundariesCrossed": 0,
+      "errors": [],
+      "scope": "Reviewed text/order/script-context/image-presence, spine-boundary continuity and source-region image checks; not full-book fidelity or image legibility qualification.",
+      "converterSHA256": "d4fd8ad635537baffd569bc0d40f70ef412d342ed46c3f8506befbef916a7051",
+      "conversionSeconds": 122.10085883404827,
+      "converterPeakRSSBytes": 1015431168,
+      "sampledPeakPhysicalFootprintBytes": 475907848,
+      "peakMemoryPressureLevel": 1,
+      "progressCheck": {
+        "passed": true,
+        "events": 5417,
+        "scope": "CLI work fraction, page bounds and completion; not elapsed-time prediction"
+      },
+      "structuralCheck": "passed",
+      "epubcheckExitCode": 0,
+      "memoryGate": {
+        "limitBytes": 1342177280,
+        "metric": "converter process peak RSS from wait/rusage",
+        "attempts": 1,
+        "status": "passed",
+        "passed": true
+      },
+      "runPassed": true,
+      "sourcePages": 1834
+    },
+    {
+      "case": "gpo-warren-1964",
+      "passed": true,
+      "reviewPages": [
+        1,
+        7,
+        21,
+        30,
+        50,
+        100,
+        890,
+        910,
+        920
+      ],
+      "contentChecks": 94,
+      "spineBoundariesCrossed": 0,
+      "errors": [],
+      "scope": "Reviewed text/order/script-context/image-presence, spine-boundary continuity and source-region image checks; not full-book fidelity or image legibility qualification.",
+      "converterSHA256": "d4fd8ad635537baffd569bc0d40f70ef412d342ed46c3f8506befbef916a7051",
+      "conversionSeconds": 477.1508262910065,
+      "converterPeakRSSBytes": 1178632192,
+      "sampledPeakPhysicalFootprintBytes": 557877120,
+      "peakMemoryPressureLevel": 1,
+      "progressCheck": {
+        "passed": true,
+        "events": 2868,
+        "scope": "CLI work fraction, page bounds and completion; not elapsed-time prediction"
+      },
+      "structuralCheck": "passed",
+      "epubcheckExitCode": 0,
+      "memoryGate": {
+        "limitBytes": 1610612736,
+        "metric": "converter process peak RSS from wait/rusage",
+        "attempts": 2,
+        "status": "passed",
+        "passed": true
+      },
+      "runPassed": true,
+      "sourcePages": 920
+    }
+  ]
+}

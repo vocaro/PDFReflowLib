@@ -191,3 +191,25 @@ func aBackdropRetainsNativePanelsAndCompleteDiagramCrops(number: Int) throws {
         #expect(text.contains("Cumulus"))
     }
 }
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/182"), arguments: [false, true])
+func connectedRectangularTextPanelsKeepTheirDiagramAndNativeLabels(arrowhead: Bool) throws {
+    let stream = backdrop + "60 400 100 60 re S 280 400 100 60 re S "
+        + "160 430 m 280 430 l S "
+        + (arrowhead ? "280 430 m 270 425 l 270 435 l h f" : "")
+    let graphics = GraphicsReader.read(try operatorPage(stream))
+    let original = PageContent(number: 1, bounds: CGRect(x: 0, y: 0, width: 612, height: 792),
+        lines: [TextLine(text: "Input node", rect: CGRect(x: 75, y: 422, width: 70, height: 12), fontSize: 12),
+                TextLine(text: "Output node", rect: CGRect(x: 290, y: 422, width: 80, height: 12), fontSize: 12)],
+        graphics: graphics.regions)
+    let page = try #require(PageBackdrop.compose(original, graphics: graphics))
+    let crops = LayoutReconstructor.graphicsWithLabels(page)
+    #expect(crops.contains { $0.contains(CGPoint(x: 60, y: 400)) && $0.contains(CGPoint(x: 380, y: 460)) })
+    #expect(crops.contains { $0.contains(CGPoint(x: 220, y: 430)) })
+    var warnings: [ConversionWarning] = []
+    let blocks = LayoutReconstructor.blocks(page: page, images: crops.map { ($0, "diagram.png") },
+                                            vocabulary: [], warnings: &warnings)
+    let text = blocks.filter(\.hasReflowedText).map(\.text).joined(separator: " ")
+    #expect(text.contains("Input node"))
+    #expect(text.contains("Output node"))
+}

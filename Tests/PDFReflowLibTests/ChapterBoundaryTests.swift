@@ -164,7 +164,37 @@ func chapterNumeralAndPunctuationRequireExactSourceEvidence() throws {
     }
     #expect(ChapterBoundaryReader.matches(candidate, page: page("Chapter II: Beta")))
     #expect(ChapterBoundaryReader.matches(candidate, page: page("Chapter II — Beta")))
+    #expect(ChapterBoundaryReader.matches(candidate, page: page("Chapter II:Beta")))
+    #expect(ChapterBoundaryReader.matches(candidate, page: page("Chapter II.Beta")))
+    #expect(!ChapterBoundaryReader.matches(candidate, page: page("See Chapter II: Beta")))
+    #expect(!ChapterBoundaryReader.matches(.init(number: 2, title: "Beta", page: 2), page: page("See Chapter 2 Beta")))
     #expect(!ChapterBoundaryReader.matches(candidate, page: page("Chapter III: Beta")))
     #expect(!ChapterBoundaryReader.matches(candidate, page: page("Chapter II: Beta is discussed here.")))
     #expect(!ChapterBoundaryReader.matches(candidate, page: page("Chapter 2: Beta")))
+}
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/15"))
+func unrelatedOutlineSubtreesDoNotInvalidateVerifiedRootChapters() throws {
+    let dir = try testPDFDirectory(); defer { try? FileManager.default.removeItem(at: dir) }
+    let source = dir.appendingPathComponent("source.pdf")
+    // Rebuild the same dictionaries through the fixture writer, adding a remote outline
+    // container with a deep child tree; it is navigation, never chapter evidence.
+    let objects = [
+        "<< /Type /Catalog /Pages 2 0 R /Outlines 7 0 R >>",
+        "<< /Type /Pages /Kids [3 0 R 4 0 R] /Count 2 >>",
+        "<< /Type /Page /Parent 2 0 R /MediaBox [0 0 600 800] /Contents 5 0 R >>",
+        "<< /Type /Page /Parent 2 0 R /MediaBox [0 0 600 800] /Contents 6 0 R >>",
+        testPDFStream(""), testPDFStream(""),
+        "<< /Type /Outlines /First 8 0 R /Last 10 0 R /Count 3 >>",
+        "<< /Title (Chapter 1 Alpha) /Parent 7 0 R /Next 9 0 R /Dest [3 0 R /Fit] >>",
+        "<< /Title (Chapter 2 Beta) /Parent 7 0 R /Prev 8 0 R /Next 10 0 R /Dest [4 0 R /Fit] >>",
+        "<< /Title (Supplementary material) /Parent 7 0 R /Prev 9 0 R /First 11 0 R /Last 11 0 R /Count 1 /A << /S /GoToR /F (external.pdf) /D [0 /Fit] >> >>",
+        "<< /Title (External section) /Parent 10 0 R /First 12 0 R /Last 12 0 R /Count 1 >>",
+        "<< /Title (Level two) /Parent 11 0 R /First 13 0 R /Last 13 0 R /Count 1 >>",
+        "<< /Title (Level three) /Parent 12 0 R /First 14 0 R /Last 14 0 R /Count 1 >>",
+        "<< /Title (Level four) /Parent 13 0 R /First 15 0 R /Last 15 0 R /Count 1 >>",
+        "<< /Title (Level five) /Parent 14 0 R >>",
+    ]
+    try testPDF(objects: objects).write(to: source)
+    #expect(try ChapterBoundaryReader.read(source).map(\.number) == [1, 2])
 }

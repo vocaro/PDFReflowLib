@@ -28,9 +28,13 @@ enum ChapterBoundaryReader {
                     visits += 1
                     guard visits <= 10_000, let item = parent.child(at: index) else { return false }
                     guard let label = item.label, let parsed = parse(label) else {
-                        if item.numberOfChildren > 0 {
-                            guard item.action == nil || item.action is PDFActionGoTo,
-                                  try children(item, depth: depth + 1) else { return false }
+                        // Only an explicit part groups chapter candidates. Unrelated outline
+                        // trees (including remote/deep ones) cannot invalidate a root sequence.
+                        if let label = item.label, label.count <= 512,
+                           label.range(of: #"^Part\s+\S"#, options: [.regularExpression, .caseInsensitive]) != nil,
+                           item.numberOfChildren > 0,
+                           item.action == nil || item.action is PDFActionGoTo {
+                            guard try children(item, depth: depth + 1) else { return false }
                         }
                         continue
                     }
@@ -95,8 +99,13 @@ enum ChapterBoundaryReader {
         let marker = candidate.marker ?? "chapter \(candidate.number)"
         let title = normalize(candidate.title)
         guard !title.isEmpty else { return false }
-        let openings = [" ", ": ", ". ", " – ", " — ", " - "].map { marker + $0 + title }
+        let separators = [" ", ": ", ":", ". ", ".", " – ", " — ", " - "]
+        let openings = separators.map { marker + $0 + title }
         for start in lines.indices {
+            // A publication prefix is allowed only on a standalone marker line. A prose
+            // mention such as "See Chapter II: Beta" is not a printed chapter opening.
+            guard lines[start] == marker || lines[start].hasSuffix(" " + marker)
+                || separators.contains(where: { lines[start].hasPrefix(marker + $0) }) else { continue }
             for end in start..<min(lines.count, start + 5) {
                 let joined = lines[start...end].joined(separator: " ")
                 // A source can prefix the chapter marker with its publication title.

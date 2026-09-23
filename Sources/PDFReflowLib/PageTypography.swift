@@ -50,7 +50,11 @@ struct PageTypography: Equatable {
         let sparseTitle = nativeSizeEvidence && established == nil && dominantLines.count <= 2
             && Int(largestSize.rounded()) <= Int(body) && !identifier
         let headingPageBody = sparseTitle ? min(body, sparseBody) : body
-        let headingBody = established.map { max(body, $0) } ?? headingPageBody
+        // Small footnotes or table cells can outnumber the ordinary prose. A sustained
+        // paragraph still states its own body size; recovering those smaller lines must
+        // not turn each row of the paragraph into a heading.
+        let proseBody = nativeSizeEvidence ? Self.wrappedProseBody(reflowableLines) : nil
+        let headingBody = max(established.map { max(body, $0) } ?? headingPageBody, proseBody ?? 0)
         let documentFloor = documentBody.map { established == nil ? $0 * 1.1 : 0 } ?? 0
         self.body = body
         establishedBody = established
@@ -58,6 +62,42 @@ struct PageTypography: Equatable {
         self.documentFloor = documentFloor
         headingThreshold = max(headingPageBody * 1.25, headingBody * 1.1, documentFloor)
         leading = LayoutReconstructor.statedLeading(reflowableLines)
+    }
+
+    /// A second body size needs stronger evidence than the modal estimate: four wrapped rows,
+    /// 200 characters, a stable left edge and leading, and lowercase continuations. Display
+    /// quotations, captions, bold headings and tagged headings cannot supply this evidence.
+    private static func wrappedProseBody(_ lines: [TextLine]) -> CGFloat? {
+        guard lines.count <= 2_000 else { return nil }
+        var runs: [[TextLine]] = []
+        for line in lines.sorted(by: { $0.rect.maxY > $1.rect.maxY }) {
+            guard !line.monospaced, line.turn == .upright else { continue }
+            if let index = runs.indices.last(where: { index in
+                let run = runs[index], last = run.last!, size = max(last.fontSize, line.fontSize)
+                let drop = last.rect.maxY - line.rect.maxY
+                let leading = run.count > 1 ? run[0].rect.maxY - run[1].rect.maxY : drop
+                return abs(last.fontSize - line.fontSize) <= size * 0.05
+                    && abs(last.rect.minX - line.rect.minX) <= size * 0.25
+                    && drop >= size * 0.8 && drop <= size * 2.2
+                    && abs(drop - leading) <= max(1, leading * 0.2)
+            }) { runs[index].append(line) }
+            else { runs.append([line]) }
+        }
+        return runs.compactMap { run -> CGFloat? in
+            guard run.count >= 4, run.reduce(0, { $0 + $1.text.count }) >= 200,
+                  let first = run.first, let opening = first.text.first,
+                  !"\"“‘«".contains(opening), !LayoutReconstructor.isCaption(first.text),
+                  run.allSatisfy({ ($0.structure?.headingLevel ?? 0) == 0
+                      && !LayoutReconstructor.readsWhollyBold($0) }),
+                  run.dropFirst().filter({ $0.text.first?.isLowercase == true }).count >= 3
+            else { return nil }
+            let measure = run.map(\.rect.width).max() ?? 0
+            guard measure >= first.fontSize * 16,
+                  run.dropLast().allSatisfy({ $0.rect.width >= measure * 0.75 }),
+                  run.filter({ LayoutReconstructor.readsAsSentence($0) }).count >= 3
+            else { return nil }
+            return first.fontSize
+        }.max()
     }
 
     /// The typography of a whole page's lines, with no document floor: what the label survey and

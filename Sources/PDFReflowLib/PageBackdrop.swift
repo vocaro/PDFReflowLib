@@ -23,6 +23,32 @@ enum PageBackdrop {
             || (diagonal[1] + 1) % 7 == diagonal[0])
     }
 
+    /// Barely touching bounds do not join a large backdrop diagram to a corner emblem.
+    /// Neither figure loses any painted area when these marginal overlaps stay separate.
+    static func joins(_ a: CGRect, _ b: CGRect) -> Bool {
+        let overlap = a.intersection(b)
+        guard !overlap.isNull else { return false }
+        return overlap.width * overlap.height >= min(a.width * a.height, b.width * b.height) * 0.1
+    }
+
+    static func clustered(_ rectangles: [CGRect]) -> [CGRect] {
+        var result: [CGRect] = []
+        for rect in rectangles {
+            var combined = rect
+            var previous = -1
+            while previous != result.count {
+                previous = result.count
+                result.removeAll { existing in
+                    guard joins(existing, combined) else { return false }
+                    combined = combined.union(existing)
+                    return true
+                }
+            }
+            result.append(combined)
+        }
+        return result
+    }
+
     /// Panel ownership never frees the lettering actually inside a raster picture.
     static func reflows(_ line: TextLine, on page: PageContent) -> Bool {
         guard let panels = page.backdropTextPanels, !page.pictures.contains(where: { LayoutReconstructor.takes($0, line) }) else {
@@ -62,15 +88,26 @@ enum PageBackdrop {
             return true
         }
         var page = original
-        page.graphics = clusters(art.map(\.rect), distance: 4)
+        page.graphics = clustered(art.map(\.rect))
         page.pictures = graphics.images
         page.backdropTextPanels = panels.map(\.rect)
+        // A source text box may be shorter than its wrapped title. Admit the immediate
+        // aligned continuation at the same size, not the nearby figure's smaller labels.
+        let inside = original.lines.filter { reflows($0, on: page) }
+        let continuations = original.lines.filter { line in
+            inside.contains { first in
+                let gap = first.rect.minY - line.rect.maxY
+                let overlap = min(first.rect.maxX, line.rect.maxX) - max(first.rect.minX, line.rect.minX)
+                return abs(first.fontSize - line.fontSize) < 0.5 && gap >= -1
+                    && gap <= first.fontSize * 0.6
+                    && overlap >= max(first.rect.width, line.rect.width) * 0.8
+                    && (abs(first.rect.minX - line.rect.minX) <= first.fontSize * 0.3
+                        || abs(first.rect.midX - line.rect.midX) <= first.fontSize * 0.3)
+            }
+        }
+        page.backdropTextPanels?.append(contentsOf: continuations.map(\.rect))
         let crops = LayoutReconstructor.graphicsWithLabels(page)
-        let total = original.lines.reduce(0) { $0 + $1.text.split(whereSeparator: \.isWhitespace).count }
-        let taken = original.lines.filter { line in !reflows(line, on: page) && crops.contains { LayoutReconstructor.takes($0, line) } }
-            .reduce(0) { $0 + $1.text.split(whereSeparator: \.isWhitespace).count }
-        guard !crops.contains(where: { PageDiagnosis.coversPage($0, bounds: original.bounds) }),
-              taken * 2 <= total else { return nil }
+        guard !crops.contains(where: { PageDiagnosis.coversPage($0, bounds: original.bounds) }) else { return nil }
         return page
     }
 }

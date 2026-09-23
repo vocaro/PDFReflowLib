@@ -1,7 +1,7 @@
 # PDFKit returns one printed line as four overlapping lines with duplicated characters
 
 Suggested area: macOS / PDFKit. Type: Incorrect/Unexpected Behavior.
-Drafted 2026-09-20; not yet filed.
+Drafted 2026-09-20; filed as FB24908790 on 2026-09-23.
 
 ## Summary
 

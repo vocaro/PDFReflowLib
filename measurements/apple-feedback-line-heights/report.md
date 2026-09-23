@@ -1,7 +1,7 @@
 # PDFKit line rectangles for lines containing radicals are two to four times the line's height
 
 Suggested area: macOS / PDFKit. Type: Incorrect/Unexpected Behavior.
-Drafted 2026-09-20; not yet filed.
+Drafted 2026-09-20; filed as FB24908824 on 2026-09-23.
 
 ## Summary
 

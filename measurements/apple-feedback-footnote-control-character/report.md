@@ -1,7 +1,7 @@
 # PDFKit returns U+0007 (BEL) for a drawn footnote marker glyph
 
 Suggested area: macOS / PDFKit. Type: Incorrect/Unexpected Behavior.
-Drafted 2026-09-20; not yet filed.
+Drafted 2026-09-20; filed as FB24908772 on 2026-09-23.
 
 ## Summary
 

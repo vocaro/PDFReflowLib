@@ -1,11 +1,13 @@
 {
-  "feedbackID": null,
-  "submissionConfirmation": "Not yet filed. Drafted 2026-09-20; the owner files it and records the ID here.",
+  "feedbackID": "FB24908772",
+  "submissionConfirmation": "Owner reported submission in this task on 2026-09-23.",
   "trackingIssue": "https://github.com/vocaro/PDFReflowLib/issues/169",
   "relatedIssues": [],
   "attachment": {
-    "filename": "probe.swift",
-    "note": "Standalone, Apple SDKs only; see report.md for the build and run commands."
+    "filename": "footnote-control-character.zip",
+    "bytes": 2690,
+    "sha256": "91ac200a4eb4558381e15c505ec20376e7e56aacd7c1e030b80178656affaf8b",
+    "note": "probe.swift and report.md; standalone, Apple SDKs only."
   },
-  "resolution": "Not filed."
+  "resolution": "Unresolved; no Apple diagnosis or fix recorded."
 }

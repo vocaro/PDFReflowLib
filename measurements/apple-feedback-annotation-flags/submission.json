@@ -1,11 +1,13 @@
 {
-  "feedbackID": null,
-  "submissionConfirmation": "Not yet filed. Drafted 2026-09-20; the owner files it and records the ID here.",
+  "feedbackID": "FB24908760",
+  "submissionConfirmation": "Owner reported submission in this task on 2026-09-23.",
   "trackingIssue": "https://github.com/vocaro/PDFReflowLib/issues/170",
   "relatedIssues": [],
   "attachment": {
-    "filename": "probe.swift",
-    "note": "Standalone, Apple SDKs only; see report.md for the build and run commands."
+    "filename": "annotation-flags.zip",
+    "bytes": 2776,
+    "sha256": "5d2faddcf577fa3e6c7daed3f64119d77a6feb1c0dbbbdedc0f6a45c2f63b5e5",
+    "note": "probe.swift and report.md; standalone, Apple SDKs only."
   },
-  "resolution": "Not filed."
+  "resolution": "Unresolved; no Apple diagnosis or fix recorded."
 }

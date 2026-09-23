@@ -1,7 +1,7 @@
 # PDFKit omits soft hyphens (U+00AD) from extracted text
 
 Suggested area: macOS / PDFKit. Type: Incorrect/Unexpected Behavior.
-Drafted 2026-09-20; not yet filed.
+Drafted 2026-09-20; filed as FB24908781 on 2026-09-23.
 
 ## Summary
 

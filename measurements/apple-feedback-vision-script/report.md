@@ -1,7 +1,7 @@
 # Vision returns Cyrillic characters when recognition is restricted to English
 
 Suggested area: macOS / Vision. Type: Incorrect/Unexpected Behavior.
-Drafted 2026-09-20; not yet filed.
+Drafted 2026-09-20; filed as FB24908846 on 2026-09-23.
 
 ## Summary
 

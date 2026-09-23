@@ -16,10 +16,12 @@ enum ColumnContinuation {
                   last.rect.width >= body * 12,
                   last.text.last.map({ $0.isLetter || $0 == "-" }) == true else { continue }
             // A filled column, not an isolated label: two preceding lines state its measure.
-            let above = elements[..<start].compactMap(\.line).filter {
-                $0.hasSize(last.fontSize) && abs($0.rect.minX - last.rect.minX) < body * 0.5
-                    && abs($0.rect.maxX - last.rect.maxX) < body * 0.5
-                    && $0.rect.minY > last.rect.minY && $0.rect.minY - last.rect.minY < body * 4
+            let above = elements.indices[..<start].filter { index in
+                guard roles[index] == .prose, let line = elements[index].line,
+                      !LayoutReconstructor.isCaption(line.text) else { return false }
+                return line.hasSize(last.fontSize) && abs(line.rect.minX - last.rect.minX) < body * 0.5
+                    && abs(line.rect.maxX - last.rect.maxX) < body * 0.5
+                    && line.rect.minY > last.rect.minY && line.rect.minY - last.rect.minY < body * 4
             }
             guard above.count >= 2 else { continue }
             var index = start + 1
@@ -59,9 +61,11 @@ enum ColumnContinuation {
                   (last.structure?.headingLevel ?? 0) == 0,
                   (next.structure?.headingLevel ?? 0) == 0 else { continue }
             // The continuation opens the next column's prose, rather than a lone graphic label.
-            let below = elements.dropFirst(index + 1).compactMap(\.line).filter {
-                $0.hasSize(next.fontSize) && abs($0.rect.minX - next.rect.minX) < body * 0.5
-                    && $0.rect.maxY < next.rect.maxY && next.rect.maxY - $0.rect.maxY < body * 5
+            let below = elements.indices.dropFirst(index + 1).filter { offset in
+                guard roles[offset] == .prose, let line = elements[offset].line,
+                      !LayoutReconstructor.isCaption(line.text) else { return false }
+                return line.hasSize(next.fontSize) && abs(line.rect.minX - next.rect.minX) < body * 0.5
+                    && line.rect.maxY < next.rect.maxY && next.rect.maxY - line.rect.maxY < body * 5
             }
             guard below.count >= 2 else { continue }
             result[index] = start

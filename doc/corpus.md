@@ -471,9 +471,16 @@ that branch with the `ours` strategy, so none of its content is on `main`
 encoding default onto `main` separately. A default run measured on `da544ad`, before that port,
 exited after reconstruction page 784 of 1,834, and with the budget lifted wrote 1,158,808,212
 entry bytes over 2,410 images — 1,105.13 MiB, 2.16 times the 512 MiB default.
-[Chapter-aware splitting #15](https://github.com/vocaro/PDFReflowLib/issues/15) is open. The
-current writer's approximate 60,000-byte file splitting does not follow PDF chapters or bound
-the memory of whole-document reconstruction.
+[Chapter-aware splitting #15](https://github.com/vocaro/PDFReflowLib/issues/15) now validates
+chapter destinations against complete native opening titles, including consecutive Arabic or
+Roman sequences under explicit Part containers. All 32 NOAA chapter starts begin spine
+documents. The 60,000-byte body target subdivides large chapters and isolates oversized atomic
+blocks without splitting their content; it remains a soft packing target. Page spilling and
+streamed logical blocks separately bound retained reconstruction data. The
+[full-report qualification](../measurements/chapter-outline-qualification/record.md) records
+default-budget completion, source-page/navigation/link preservation, memory, progress and
+cancellation. It does not claim arbitrary within-block subdivision, inferred footnote links or
+a new physical-device budget.
 
 
 ## Our Flag

@@ -1369,11 +1369,10 @@ enum LayoutReconstructor {
     /// coordination branch's `sectionLabels` and its `opens(beneath:)`/`pastFigure(_:)`, themselves
     /// built up across #43, #63, #73, #76, #90, #97, #100, #102, #159 and #186). Main has no heading
     /// tiers and no tinted-box detection (`page.tints`, #100's `boxTitles`), so only the bold,
-    /// body-adjacent path is ported: *Agricultural Research*'s "Fighting Filth Flies" (#186's fifth
-    /// and last #218 leftover) needs no italic label (#97), no two-line stacked title (#102), no
-    /// hanging-entry title (#134) and no tinted box, and porting any of those without a corpus
-    /// document to validate them against would only add untested false-positive surface to a
-    /// function that runs on every page of every conversion.
+    /// body-adjacent path is ported. *Agricultural Research*'s "Fighting Filth Flies" supplies
+    /// the single-line source case (#218); its pages 6, 7 and 17 also qualify compact stacked
+    /// labels under the same evidence (#214). Italic labels, hanging-entry titles and tinted
+    /// boxes remain outside this rule's qualified source coverage.
     ///
     /// A candidate line stands under the heading threshold, at least 80% of the body's size, opens
     /// with a capital, a digit or a mark, ends no sentence, holds at least two letters and reads no
@@ -1387,8 +1386,20 @@ enum LayoutReconstructor {
     /// promote itself.
     static func sectionLabels(in lines: [TextLine], body: CGFloat, headingThreshold: CGFloat,
                               page: PageContent, styles: Set<LabelStyle> = [],
-                              recordingSubheadings: Bool = false) -> [TextLine] {
+                              recordingSubheadings: Bool = false, joiningStackedLabels: Bool = true) -> [TextLine] {
         guard !page.hasSyntheticTextStyle, !page.recognized else { return [] }
+        let stacked = joiningStackedLabels ? StackedSectionLabels.groups(in: lines, body: body) : []
+        if !stacked.isEmpty {
+            let claimed = Set(stacked.flatMap(\.indices))
+            let merged = lines.enumerated().filter { !claimed.contains($0.offset) }.map(\.element)
+                + stacked.map(\.line)
+            let labels = sectionLabels(in: merged, body: body, headingThreshold: headingThreshold,
+                                       page: page, styles: styles, recordingSubheadings: recordingSubheadings,
+                                       joiningStackedLabels: false)
+            return labels.flatMap { label in
+                stacked.first(where: { $0.line == label }).map { $0.indices.map { lines[$0] } } ?? [label]
+            }
+        }
         var labels: [TextLine] = []
         let bodyGap = ordinaryLineGap(body, in: lines, body: body)
         for line in lines.sorted(by: { $0.rect.maxY > $1.rect.maxY }) {
@@ -1679,15 +1690,16 @@ enum LayoutReconstructor {
                 && !tableRects.contains { $0.contains(line.rect) }
         }.map(\.element)
         // An inline fraction's denominator joins the line its numerator ends (#53).
-        let lines = joinedInlineFractions(reflowable, rules: page.graphics.filter(isThinRule),
+        var lines = joinedInlineFractions(reflowable, rules: page.graphics.filter(isThinRule),
                                           body: max(4, bodySize(page.lines)))
         let typography = PageTypography(pageLines: page.lines, reflowableLines: lines, documentBody: context.documentBody,
                                         nativeSizeEvidence: !page.recognized && !page.hasSyntheticTextStyle)
         // A bold sub-heading set at or near body size, whose paragraph opens beneath it directly or
         // past an intervening picture and caption (#218).
-        let labels = sectionLabels(in: lines, body: typography.body, headingThreshold: typography.headingThreshold,
+        var labels = sectionLabels(in: lines, body: typography.body, headingThreshold: typography.headingThreshold,
                                    page: page, styles: context.labelStyles)
             + tableTitles(in: lines, tables: page.tables, body: typography.body)
+        (lines, labels) = StackedSectionLabels.coalescing(lines, labels: labels, body: typography.body)
         // A recognized line in an English book is a heading only if it reads as words: a table
         // cell or a reading of handwriting set large is not a title, and every heading is a
         // navigation entry (#7).
@@ -1817,6 +1829,7 @@ enum LayoutReconstructor {
         }
         let contradicted = contradictedHeadingGroups(elements, roles: roles, rank: context.headingRank)
         let continuations = ColumnContinuation.pairs(elements, roles: roles, body: typography.body)
+            .merging(page.recognized || page.hasSyntheticTextStyle ? [:] : InterruptedColumnContinuation.pairs(elements, roles: roles, body: typography.body)) { existing, _ in existing }
         let suspendedAt = Set(continuations.values)
         var paragraphHandles: [Int: Int] = [:]
         for (index, element) in elements.enumerated() {

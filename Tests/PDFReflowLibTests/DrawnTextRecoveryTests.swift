@@ -34,7 +34,19 @@ private func earthdataSlide() -> (PageContent, OCRReader.Result) {
 
 @Test func incidentalPictureTextAloneDoesNotTurnAFailedDrawnReadingIntoSuccess() {
     let (page, reading) = earthdataSlide()
-    #expect(DrawnTextRecovery.reading(OCRReader.Result(lines: [reading.lines[0]], tables: []), on: page).lines.isEmpty)
+    let filtered = DrawnTextRecovery.reading(OCRReader.Result(lines: [reading.lines[0]], tables: []), on: page)
+    #expect(filtered.lines.isEmpty)
+    let evidence = PageEvidence(requiresPageImage: false, hasText: true, characters: 1,
+        replacementCharacters: 0, imageBackedText: true, damagedEncoding: false,
+        implausibleLayer: nil, drawnText: true)
+    let resolution = RecognitionPolicy.resolve(.recognize(.replace, keepCropsIfUnread: true),
+        evidence: evidence, outcome: .read(filtered), judge: .english(language: "en"))
+    #expect(resolution.disposition == .keptAsExtracted)
+    #expect(resolution.warnings.contains(.ocrFailed(.unreadDrawnText)))
+    var kept = page
+    resolution.disposition.apply(to: &kept)
+    #expect(kept == page)
+    #expect(kept.recognizedArtwork.isEmpty)
 }
 
 @Test func drawnRecoveryRetainsNativeSpellingAndTheWholeOverlappingArtwork() {
@@ -51,4 +63,35 @@ private func earthdataSlide() -> (PageContent, OCRReader.Result) {
     DrawnTextRecovery.preserveArtwork(in: &result, extracted: page)
     #expect(result.recognizedArtwork.contains { $0.contains(artwork) })
     #expect(!result.graphics.contains(artwork)) // the crop must not swallow the reflowed sentence
+}
+
+@Test func aMergedRecognizedRowUsesTheNativeWordsSpellingAndStyleExactlyOnce() {
+    let native = TextLine(content: InlineText("Goals", style: .bold),
+        rect: CGRect(x: 90, y: 240, width: 100, height: 40), fontSize: 40)
+    let page = PageContent(number: 1, bounds: CGRect(x: 0, y: 0, width: 720, height: 405),
+        lines: [native], graphics: [])
+    let line = TextLine(text: "Goa1s support user analysis", rect: CGRect(x: 90, y: 240, width: 500, height: 40), fontSize: 40)
+    let reading = OCRReader.Result(lines: [line], tables: [], wordBoxes: [[
+        .init(range: 0..<5, box: native.rect),
+        .init(range: 6..<13, box: CGRect(x: 220, y: 240, width: 120, height: 40))]])
+    let recovered = DrawnTextRecovery.reading(reading, on: page)
+    #expect(recovered.lines.count == 1)
+    #expect(recovered.lines[0].text == "Goals support user analysis")
+    #expect(recovered.lines[0].content.elements.contains(.text("Goals", .bold)))
+    #expect(recovered.wordBoxes.isEmpty)
+    // Missing word positions are not permission to guess: recognition is unresolved and the
+    // existing drawn-text failure branch retains the native word and the original artwork.
+    let unread = DrawnTextRecovery.reading(OCRReader.Result(lines: [line], tables: []), on: page)
+    #expect(unread.lines.isEmpty)
+    let evidence = PageEvidence(requiresPageImage: false, hasText: true, characters: 5,
+        replacementCharacters: 0, imageBackedText: false, damagedEncoding: false,
+        implausibleLayer: nil, drawnText: true)
+    let resolution = RecognitionPolicy.resolve(.recognize(.replace, keepCropsIfUnread: true),
+        evidence: evidence, outcome: .read(unread), judge: .english(language: "en"))
+    #expect(resolution.disposition == .keptAsExtracted)
+    #expect(resolution.warnings.contains(.ocrFailed(.unreadDrawnText)))
+    var kept = page
+    resolution.disposition.apply(to: &kept)
+    #expect(kept == page)
+    #expect(kept.recognizedArtwork.isEmpty)
 }

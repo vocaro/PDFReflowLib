@@ -580,7 +580,7 @@ func aLightOnDarkPageIsJudgedForWritingAReadingLeftOut() {
 /// `ink` (no text layer at all), an optional real-text `folio`, and optional decoration instead of
 /// the sentence. This is how Google Slides exported slide 5 of the Earthdata deck.
 private func drawnTextPDF(sentence: [String], folio: String?, background: CGFloat,
-                          ink: CGFloat, decoration: Bool = false) throws -> Data {
+                          ink: CGFloat, decoration: Bool = false, nativeWord: String? = nil) throws -> Data {
     let page = CGRect(x: 0, y: 0, width: 720, height: 405)
     let font = pdfKitGated { CTFontCreateWithName("Helvetica" as CFString, 40, nil) }
     let data = NSMutableData()
@@ -601,7 +601,7 @@ private func drawnTextPDF(sentence: [String], folio: String?, background: CGFloa
             for (index, text) in sentence.enumerated() {
                 let line = CTLineCreateWithAttributedString(NSAttributedString(string: text, attributes: [
                     NSAttributedString.Key(kCTFontAttributeName as String): font]))
-                let origin = CGPoint(x: 90, y: 240 - CGFloat(index) * 60)
+                let origin = CGPoint(x: index == 0 && nativeWord != nil ? 220 : 90, y: 240 - CGFloat(index) * 60)
                 for run in CTLineGetGlyphRuns(line) as? [CTRun] ?? [] {
                     let count = CTRunGetGlyphCount(run)
                     var glyphs = [CGGlyph](repeating: 0, count: count)
@@ -618,6 +618,13 @@ private func drawnTextPDF(sentence: [String], folio: String?, background: CGFloa
                 pdf.fillPath()
             }
         }
+        if let nativeWord {
+            let nativeFont = CTFontCreateWithName("Helvetica-Bold" as CFString, 40, nil)
+            pdf.textPosition = CGPoint(x: 90, y: 240)
+            CTLineDraw(CTLineCreateWithAttributedString(NSAttributedString(string: nativeWord, attributes: [
+                NSAttributedString.Key(kCTFontAttributeName as String): nativeFont,
+                NSAttributedString.Key(kCTForegroundColorFromContextAttributeName as String): true])), pdf)
+        }
         if let folio {
             let small = CTFontCreateWithName("Helvetica" as CFString, 12, nil)
             pdf.textPosition = CGPoint(x: 680, y: 24)
@@ -633,14 +640,15 @@ private func drawnTextPDF(sentence: [String], folio: String?, background: CGFloa
 
 private let question = ["How do we support user analysis", "of very large data volumes?"]
 
-private func reflow(_ data: Data, policy: ConversionOptions.OCRPolicy = .automatic, language: String = "en") async throws
+private func reflow(_ data: Data, policy: ConversionOptions.OCRPolicy = .automatic, language: String = "en",
+                    recognize: PDFReflowLibPipeline.Recognizer? = nil) async throws
     -> (result: PDFReflowLibPipeline.Result, text: String) {
     let dir = try testPDFDirectory(); defer { try? FileManager.default.removeItem(at: dir) }
     let source = dir.appendingPathComponent("source.pdf")
     try data.write(to: source)
     var options = ConversionOptions(); options.ocr = policy; options.language = language
     let result = try await PDFReflowLibPipeline.reconstruct(from: source, options: options,
-        workspace: dir.appendingPathComponent("work"), progress: { _ in })
+        workspace: dir.appendingPathComponent("work"), recognize: recognize, progress: { _ in })
     return (result, result.book.blocks.map(\.text).joined(separator: " "))
 }
 
@@ -1075,4 +1083,27 @@ func aMisreadCarbonTypescriptIsReplacedByARecognitionThatReadsBetter() throws {
         #expect(text.lowercased().contains("large data volumes"), "\(language): \(text)")
         #expect(result.imageCount >= 2)
     }
+}
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/192")) func aNativeWordAndDrawnWordsOnOneRowAreNotDuplicated() async throws {
+    let slide = try drawnTextPDF(sentence: ["support user analysis", "of very large data volumes?"],
+                                 folio: nil, background: 0.25, ink: 1, nativeWord: "Goals")
+    let (result, text) = try await reflow(slide, recognize: { page, options in
+        let reading = try await OCRReader.read(page: page, options: options, wordPositions: true)
+        #expect(reading.lines.contains { $0.text.contains("Goals support user analysis") })
+        return reading
+    })
+    #expect(result.recognizedPageCount == 1)
+    #expect(text.components(separatedBy: "Goals").count == 2, "\(text)")
+    #expect(text.contains("Goals support user analysis of very large data volumes?"), "\(text)")
+    #expect(result.book.blocks.contains { block in
+        let inline: InlineText
+        switch block.content {
+        case .paragraph(let text), .heading(_, let text, _): inline = text
+        default: return false
+        }
+        return inline.elements.contains { if case .text(let text, let style) = $0 {
+            return text.contains("Goals") && style.contains(.bold)
+        }; return false }
+    })
 }

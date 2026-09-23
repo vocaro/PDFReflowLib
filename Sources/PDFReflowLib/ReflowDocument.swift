@@ -174,6 +174,10 @@ struct InlineText: Sendable, Equatable, Codable {
         case sourcePage(Int)
     }
     var elements: [Element] = []
+    /// A source-font census identifies this trailing literal hyphen as a discretionary break
+    /// for exactly this joined word. Kept separate from text and style; known compounds still
+    /// take priority when the actual next line arrives. Optional for older encoded inline text.
+    var sourceDiscretionaryWord: String?
 
     init(_ text: String = "", style: TextStyle = []) {
         if !text.isEmpty { elements = [.text(text, style)] }
@@ -203,11 +207,15 @@ struct InlineText: Sendable, Equatable, Codable {
         elements.compactMap { if case let .link(target, text) = $0 { (target, text.text) } else { nil } }
     }
 
-    mutating func append(_ other: InlineText) { elements += other.elements }
+    mutating func append(_ other: InlineText) {
+        elements += other.elements
+        if !other.text.isEmpty { sourceDiscretionaryWord = other.sourceDiscretionaryWord }
+    }
 
     /// Replaces the last character in place, keeping the run's style. The line-end hyphen repair
     /// uses it to put back the hyphen a book's font drew but encoded as another character (#233).
     mutating func replaceLastCharacter(with character: Character) {
+        sourceDiscretionaryWord = nil
         for index in elements.indices.reversed() {
             switch elements[index] {
             case let .text(value, style) where !value.isEmpty:
@@ -225,6 +233,7 @@ struct InlineText: Sendable, Equatable, Codable {
     }
 
     mutating func removeLastCharacter() {
+        sourceDiscretionaryWord = nil
         for index in elements.indices.reversed() {
             switch elements[index] {
             case let .text(value, style) where !value.isEmpty:
@@ -306,6 +315,7 @@ struct InlineText: Sendable, Equatable, Codable {
             }
             break
         }
+        if !result.text.hasSuffix("-") { result.sourceDiscretionaryWord = nil }
         return result
     }
 }

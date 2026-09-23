@@ -147,12 +147,16 @@ enum GlyphIdentityReader {
     /// cannot fully read supplies no evidence. Unlike `NativeSpacingReader.characterMap`, any
     /// declared codespace is accepted: the Agricultural Research magazine's own Helvetica-Condensed
     /// credit font declares a two-byte codespace but still writes one-byte `bfchar` codes.
-    private static func bfCharMap(_ data: Data, codeDigits: Int) -> [UInt32: String]? {
+    /// `allowSequences` is only for the discretionary-break census, whose body text includes
+    /// ligatures mapped to several UTF-16 units. The glyph-identity reader keeps its original
+    /// single-scalar restriction. Both paths reject malformed UTF-16 and incomplete maps.
+    static func bfCharMap(_ data: Data, codeDigits: Int, allowSequences: Bool = false) -> [UInt32: String]? {
         guard data.count <= 65_536, let input = String(data: data, encoding: .ascii) else { return nil }
         let text = input.replacingOccurrences(of: "%[^\\r\\n]*", with: "", options: .regularExpression)
         guard !text.contains("beginbfrange"), !text.contains("usecmap") else { return nil }
         let blocks = try! NSRegularExpression(pattern: #"(\d+)\s+beginbfchar\s*([\s\S]*?)\s*endbfchar"#)
-        let pairs = try! NSRegularExpression(pattern: "<([0-9a-fA-F]{\(codeDigits)})>\\s*<([0-9a-fA-F]{4})>")
+        let digits = allowSequences ? "4,32" : "4"
+        let pairs = try! NSRegularExpression(pattern: "<([0-9a-fA-F]{\(codeDigits)})>\\s*<([0-9a-fA-F]{\(digits)})>")
         let ns = text as NSString
         let matches = blocks.matches(in: text, range: NSRange(location: 0, length: ns.length))
         guard !matches.isEmpty, matches.count <= 256,
@@ -166,9 +170,12 @@ enum GlyphIdentityReader {
                     .trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else { return nil }
             for entry in entries {
                 guard let code = UInt32(bodyNS.substring(with: entry.range(at: 1)), radix: 16), result[code] == nil else { return nil }
-                guard let value = UInt32(bodyNS.substring(with: entry.range(at: 2)), radix: 16),
-                      let scalar = UnicodeScalar(value) else { return nil }
-                result[code] = String(scalar)
+                let hex = Array(bodyNS.substring(with: entry.range(at: 2)))
+                guard hex.count % 4 == 0 else { return nil }
+                let units = stride(from: 0, to: hex.count, by: 4).compactMap { UInt16(String(hex[$0..<($0 + 4)]), radix: 16) }
+                let value = String(decoding: units, as: UTF16.self)
+                guard Array(value.utf16) == units else { return nil }
+                result[code] = value
             }
         }
         return result.isEmpty ? nil : result

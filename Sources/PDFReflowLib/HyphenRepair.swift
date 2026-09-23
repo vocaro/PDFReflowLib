@@ -95,7 +95,7 @@ extension LayoutReconstructor {
     }
 
     private static func joinOperation(_ left: String, _ right: String, hyphens: HyphenContext, page: Int,
-                                      warnings: inout [ConversionWarning]) -> JoinOperation {
+                                      warnings: inout [ConversionWarning], sourceDiscretionaryWord: String? = nil) -> JoinOperation {
         if left.hasSuffix("\u{00ad}") { return .removeHyphen }
         // A line break inside East Asian writing is not a word break: the characters run on with
         // no space, and inserting one splits a word the page never split (#42).
@@ -133,6 +133,14 @@ extension LayoutReconstructor {
             // writes on nearly every page — so the file number came out `265ANY`.
             guard prefix.count >= 2, suffix.count >= 2, hyphens.vocabulary.contains(joined),
                   !hyphens.vocabulary.contains(compound) else { return .concatenate }
+            return .removeHyphen
+        }
+        // A separately drawn source break corroborates unknown technical words, but does not
+        // settle a split between two independently valid words (camera-/man, by-/law).
+        // Source-attested compounds retain their hyphens regardless of this font evidence.
+        if sourceDiscretionaryWord == joined, hyphens.usesEnglishLexicon,
+           !hyphens.vocabulary.contains(compound),
+           !(EnglishText.lexiconContains(prefix) == true && EnglishText.lexiconContains(suffix) == true) {
             return .removeHyphen
         }
         if hyphens.vocabulary.contains(joined), !hyphens.vocabulary.contains(compound) { return .removeHyphen }
@@ -198,7 +206,8 @@ extension LayoutReconstructor {
         let substituted = endsWithSubstitute(left.text, hyphens)
         let repaired = substituted ? String(left.text.dropLast()) + "-" : left.text
         if substituted { result.replaceLastCharacter(with: "-") }
-        switch joinOperation(repaired, right.text, hyphens: hyphens, page: page, warnings: &warnings) {
+        switch joinOperation(repaired, right.text, hyphens: hyphens, page: page, warnings: &warnings,
+                             sourceDiscretionaryWord: left.sourceDiscretionaryWord) {
         case .space: result.append(InlineText(" "))
         case .concatenate: break
         case .removeHyphen: result.removeLastCharacter()

@@ -63,6 +63,20 @@ enum TextBackdrop {
         }
     }
 
+    /// Split operators can paint adjacent parts of one underline. Rejoin only collinear
+    /// fragments before table-header evidence counts rules; never join a rule into artwork.
+    static func joinedRules(_ rectangles: [CGRect]) -> [CGRect] {
+        var result: [CGRect] = []
+        for rect in rectangles.sorted(by: { $0.minX < $1.minX }) {
+            if let index = result.indices.first(where: {
+                abs(result[$0].midY - rect.midY) <= 0.5
+                    && rect.minX <= result[$0].maxX + 4 && rect.maxX >= result[$0].minX
+            }) { result[index] = result[index].union(rect) }
+            else { result.append(rect) }
+        }
+        return result
+    }
+
     static func compose(_ original: PageContent, graphics: GraphicsReader.Result) -> PageContent {
         guard !graphics.unsupported, !graphics.hasInvisibleText, !graphics.paints.isEmpty else { return original }
         let prose = paragraphs(original.lines)
@@ -134,7 +148,7 @@ enum TextBackdrop {
         }
         // Classify a leader or underline while it is still a thin rule. Merging it into
         // a photograph first would make that decoration own the table-of-contents row.
-        let rules = paints.map(\.rect).filter(LayoutReconstructor.isThinRule)
+        let rules = joinedRules(paints.map(\.rect).filter(LayoutReconstructor.isThinRule))
         let art = paints.map(\.rect).filter { !LayoutReconstructor.isThinRule($0) }
         page.graphics = rules + clustersKeepingText(art, lines: prose + gutters, distance: 4)
         return page

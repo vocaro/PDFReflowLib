@@ -72,3 +72,16 @@ Its recovered text therefore belongs in the continuity assertion, which now pins
 opening, introduction and closing paragraph as well as the following section. Reassessment
 leaves only Fed 13/46's body sizing failures; a separate follow-up owns that guard. Root's
 integrated corpus run remains required before closing #191.
+
+
+The independent final integration audit covered every NOAA and Fed page. It found additional
+NOAA losses not covered by the initial content contract. Named ICCBased numeric colors had
+been mistaken for pattern colors: `/CS0 cs 1 1 1 scn` was the report's white knockout fill.
+The reader now resolves bounded device/ICCBased color resources, preserves color state across
+`q`/`Q` and Forms, and keeps Pattern/unknown colors and nonstandard-white evidence conservative.
+Source paint fixtures were recaptured with the corrected reader. Separately, adjacent collinear
+underline fragments are joined before table-header analysis: NOAA 962's two-part link underline
+had become fictitious table columns and cropped a complete paragraph. Its source control now
+retains the paragraph without a figure. Further integration work remains for decorative-picture
+ownership and independent Fed sidebar reading units; the audit does not treat a conserved letter
+bag as proof that paragraph order is correct.

@@ -28,9 +28,63 @@ enum GraphicsReader {
                     var visibleText = false
                     var hasInvisibleText = false
                     var paints: [Paint] = [] }
+    /// Numeric colors in a named ICC space are flat paint, just like device colors. Pattern
+    /// names and unknown resources never provide that evidence. Nonstandard ICC ranges keep
+    /// their flat-paint evidence but cannot prove that a component tuple is white.
+    private enum FillColorSpace {
+        case gray, rgb, cmyk, numeric(Int), unknown
+        var components: Int? {
+            switch self { case .gray: 1; case .rgb: 3; case .cmyk: 4
+            case let .numeric(count): count; case .unknown: nil }
+        }
+        func isWhite(_ values: [CGFloat]) -> Bool {
+            switch self {
+            case .gray, .rgb: values.allSatisfy { $0 >= 0.999 }
+            case .cmyk: values.allSatisfy { abs($0) <= 0.001 }
+            case .numeric, .unknown: false
+            }
+        }
+        static func named(_ name: String, resources: CGPDFDictionaryRef?, depth: Int = 0) -> Self {
+            switch name { case "DeviceGray", "G": return .gray
+            case "DeviceRGB", "RGB": return .rgb
+            case "DeviceCMYK", "CMYK": return .cmyk
+            case "Pattern": return .unknown
+            default: break }
+            guard depth < 4, let resources,
+                  let spaces = CGPDFObjects.dictionary(resources, "ColorSpace"),
+                  let object = CGPDFObjects.object(spaces, name) else { return .unknown }
+            var alias: UnsafePointer<CChar>?
+            if CGPDFObjectGetValue(object, .name, &alias), let alias {
+                return named(String(cString: alias), resources: resources, depth: depth + 1)
+            }
+            var array: CGPDFArrayRef?
+            guard CGPDFObjectGetValue(object, .array, &array), let array,
+                  CGPDFArrayGetCount(array) == 2 else { return .unknown }
+            var family: UnsafePointer<CChar>?, profile: CGPDFStreamRef?
+            guard CGPDFArrayGetName(array, 0, &family), let family,
+                  String(cString: family) == "ICCBased",
+                  CGPDFArrayGetStream(array, 1, &profile), let profile else { return .unknown }
+            guard let dictionary = CGPDFStreamGetDictionary(profile) else { return .unknown }
+            guard let count = CGPDFObjects.integer(dictionary, "N"), [1,3,4].contains(count) else { return .unknown }
+            if CGPDFObjects.object(dictionary, "Range") != nil {
+                guard let range = CGPDFObjects.array(dictionary, "Range"), let values = CGPDFObjects.numbers(range, count: count * 2),
+                      values.enumerated().allSatisfy({ $0.element == CGFloat($0.offset % 2) })
+                else { return .numeric(count) }
+            }
+            // ICCBased's default alternate is the corresponding device space. A custom
+            // alternate is not enough evidence to discard even nominally white paint.
+            if let alternate = CGPDFObjects.object(dictionary, "Alternate") {
+                var name: UnsafePointer<CChar>?
+                guard CGPDFObjectGetValue(alternate, .name, &name), let name,
+                      String(cString: name) == (count == 1 ? "DeviceGray" : count == 3 ? "DeviceRGB" : "DeviceCMYK")
+                else { return .numeric(count) }
+            }
+            return count == 1 ? .gray : count == 3 ? .rgb : .cmyk
+        }
+    }
     private final class State {
         var matrix = CGAffineTransform.identity
-        var saved: [(CGAffineTransform, Bool, CGRect?, Int, Bool)] = []
+        var saved: [(CGAffineTransform, Bool, CGRect?, Int, Bool, FillColorSpace)] = []
         var textRenderingMode = 0
         var invisibleText = false
         var visibleText = false
@@ -42,6 +96,12 @@ enum GraphicsReader {
         var pendingClip = false
         var white = false
         var flatFill = true
+        var fillColorSpace: FillColorSpace = .gray
+        func readColor(_ scanner: CGPDFScannerRef) {
+            let values = fillColorSpace.components.flatMap { ContentStreamWalk.numbers(scanner, $0) }
+            white = values.map { fillColorSpace.isWhite($0) } ?? false
+            flatFill = values != nil
+        }
         var path = CGRect.null
         var vertices: [CGPoint]? = []
         var subpaths = 0
@@ -132,11 +192,11 @@ enum GraphicsReader {
         CGPDFOperatorTableSetCallback(table, "q") { _, info in
             let s = Self.state(info)
             guard s.accept(), s.saved.count < 128 else { s.unsupported = true; return }
-            s.saved.append((s.matrix, s.white, s.clip, s.textRenderingMode, s.flatFill))
+            s.saved.append((s.matrix, s.white, s.clip, s.textRenderingMode, s.flatFill, s.fillColorSpace))
         }
         CGPDFOperatorTableSetCallback(table, "Q") { _, info in
             let s = Self.state(info)
-            if let saved = s.saved.popLast() { (s.matrix, s.white, s.clip, s.textRenderingMode, s.flatFill) = saved }
+            if let saved = s.saved.popLast() { (s.matrix, s.white, s.clip, s.textRenderingMode, s.flatFill, s.fillColorSpace) = saved }
             else { s.unsupported = true }
         }
         CGPDFOperatorTableSetCallback(table, "Tr") { scanner, info in
@@ -161,23 +221,25 @@ enum GraphicsReader {
             s.matrix = CGAffineTransform(a: n[0], b: n[1], c: n[2], d: n[3], tx: n[4], ty: n[5])
                 .concatenating(s.matrix)
         }
-        CGPDFOperatorTableSetCallback(table, "rg") { scanner, info in
+        CGPDFOperatorTableSetCallback(table, "cs") { scanner, info in
             let s = Self.state(info)
-            s.white = ContentStreamWalk.numbers(scanner, 3)?.allSatisfy { $0 >= 0.999 } ?? false
-            s.flatFill = true
+            var name: UnsafePointer<CChar>?
+            s.fillColorSpace = CGPDFScannerPopName(scanner, &name) && name != nil
+                ? FillColorSpace.named(String(cString: name!), resources: s.resources) : .unknown
+            s.white = false
+            s.flatFill = s.fillColorSpace.components != nil
+        }
+        CGPDFOperatorTableSetCallback(table, "rg") { scanner, info in
+            let s = Self.state(info); s.fillColorSpace = .rgb; s.readColor(scanner)
         }
         CGPDFOperatorTableSetCallback(table, "g") { scanner, info in
-            let s = Self.state(info)
-            s.white = (ContentStreamWalk.numbers(scanner, 1)?.first ?? 0) >= 0.999
-            s.flatFill = true
+            let s = Self.state(info); s.fillColorSpace = .gray; s.readColor(scanner)
         }
-        for op in ["k", "sc"] {
-            CGPDFOperatorTableSetCallback(table, op) { _, info in
-                let s = Self.state(info); s.white = false; s.flatFill = true
-            }
+        CGPDFOperatorTableSetCallback(table, "k") { scanner, info in
+            let s = Self.state(info); s.fillColorSpace = .cmyk; s.readColor(scanner)
         }
-        CGPDFOperatorTableSetCallback(table, "scn") { _, info in
-            let s = Self.state(info); s.white = false; s.flatFill = false
+        for op in ["sc", "scn"] {
+            CGPDFOperatorTableSetCallback(table, op) { scanner, info in Self.state(info).readColor(scanner) }
         }
         CGPDFOperatorTableSetCallback(table, "m") { scanner, info in
             let s = Self.state(info)
@@ -416,6 +478,7 @@ enum GraphicsReader {
         guard s.depth < 12 else { s.unsupported = true; return }
         let oldMatrix = s.matrix, oldPath = s.path, oldSaved = s.saved, oldWhite = s.white
         let oldVertices = s.vertices, oldSubpaths = s.subpaths, oldFlatFill = s.flatFill
+        let oldFillColorSpace = s.fillColorSpace
         let oldPanelOutline = s.panelOutline
         let oldResources = s.resources
         let oldTextRenderingMode = s.textRenderingMode
@@ -423,6 +486,7 @@ enum GraphicsReader {
         defer {
             s.matrix = oldMatrix; s.path = oldPath; s.saved = oldSaved; s.white = oldWhite
             s.vertices = oldVertices; s.subpaths = oldSubpaths; s.flatFill = oldFlatFill
+            s.fillColorSpace = oldFillColorSpace
             s.panelOutline = oldPanelOutline
             s.textRenderingMode = oldTextRenderingMode
             s.resources = oldResources; s.clip = oldClip; s.pendingClip = oldPendingClip; s.depth -= 1

@@ -220,18 +220,23 @@ func magazinePullQuotationIsOneSemanticBlock(number: Int) throws {
     #expect(magazineBlocks(page).contains { if case .image = $0.content { true } else { false } })
 }
 
-@Test func noaaPatternedPanelKeepsBothNativeProseAndArtwork() throws {
-    let fixture = try SourceLayoutFixture.load("noaa-magazine-48")
+@Test func noaaTextPanelsKeepBothNativeProseAndArtwork() throws {
     let page = try magazinePage("noaa", 48)
-    let panel = try #require(fixture.paints.first { paint in
-        paint.rectangular && !paint.image && !paint.filled && paint.strokeOnly != true
-            && page.lines.filter { paint.rect.contains($0.rect) }.count >= 6
-    })
-    #expect(page.graphics.contains { $0.contains(panel.rect) })
     let text = magazineBlocks(page).map(\.text).joined(separator: " ")
     #expect(text.contains("Global greenhouse gas emissions from human activities continue to increase, resulting in rapid warming (Figure 1.5)"))
     #expect(text.contains("unprecedented for thousands of years (Figure 1.6)"))
     #expect(magazineBlocks(page).contains { if case .image = $0.content { true } else { false } })
+}
+
+@Test func noaaNamedWhiteFillsDoNotOwnShortNotes() throws {
+    let page = try magazinePage("noaa", 26)
+    let blocks = magazineBlocks(page)
+    let text = blocks.map(\.text).joined(separator: " ")
+    for phrase in ["Additional information on Key Messages and Traceable Accounts",
+                   "can be found in the Front Matter for NCA4.2"] {
+        #expect(text.contains(phrase))
+    }
+
 }
 
 @Test func displayQuotationRequiresNativeUprightTypography() throws {
@@ -242,4 +247,15 @@ func magazinePullQuotationIsOneSemanticBlock(number: Int) throws {
     #expect(DisplayQuotation.groups(in: sideways, body: type.body, threshold: type.headingThreshold).isEmpty)
     page.hasSyntheticTextStyle = true
     #expect(!magazineBlocks(page).contains { if case .quotation = $0.content { true } else { false } })
+}
+
+@Test func collinearLinkUnderlinesDoNotInventTableColumns() throws {
+    let page = try magazinePage("noaa", 962)
+    #expect(page.graphics.count == 3)
+    let blocks = magazineBlocks(page)
+    #expect(!blocks.contains { if case .image = $0.content { true } else { false } })
+    #expect(blocks.contains { $0.text.hasPrefix("As Northeast states plan investment priorities")
+        && $0.text.contains("link these priorities with other financing programs.") })
+    let separate = [CGRect(x: 10,y:10,width:20,height:4), CGRect(x:31,y:18,width:20,height:4)]
+    #expect(TextBackdrop.joinedRules(separate) == separate)
 }

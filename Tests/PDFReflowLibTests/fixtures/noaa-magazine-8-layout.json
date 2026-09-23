@@ -1,1549 +1,1537 @@
 {
-  "attributedLines" : [
+  "attributedLines": [
     {
-      "rect" : [
+      "rect": [
         36,
         13.9001,
-        720.00030000000004,
+        720.0003,
         14.19
       ],
-      "runs" : [
+      "runs": [
         {
-          "baselineOffset" : 0,
-          "fontName" : "Helvetica",
-          "fontSize" : 10,
-          "text" : "Fifth National Climate Assessment vii"
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 10,
+          "text": "Fifth National Climate Assessment vii"
         }
       ],
-      "text" : "Fifth National Climate Assessment vii"
+      "text": "Fifth National Climate Assessment vii"
     },
     {
-      "rect" : [
-        699.58441162099996,
+      "rect": [
+        699.584411621,
         127.21099389600002,
         59.922000000000025,
         11.943000000000012
       ],
-      "runs" : [
+      "runs": [
         {
-          "baselineOffset" : 0,
-          "fontName" : "Helvetica",
-          "fontSize" : 9,
-          "text" : "Ellen Anderson"
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 9,
+          "text": "Ellen Anderson"
         }
       ],
-      "text" : "Ellen Anderson"
+      "text": "Ellen Anderson"
     },
     {
-      "rect" : [
+      "rect": [
         573.295410156,
         143.680023194,
         184.69999694800003,
-        366.01998901299999
+        366.019989013
       ],
-      "runs" : [
+      "runs": [
         {
-          "baselineOffset" : 0,
-          "fontName" : "Helvetica",
-          "fontSize" : 9,
-          "text" : "￼"
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 9,
+          "text": "￼"
         }
       ],
-      "text" : "￼"
+      "text": "￼"
     },
     {
-      "rect" : [
-        219.51570129300001,
-        551.49599999999998,
+      "rect": [
+        219.515701293,
+        551.496,
         189.52560000458402,
         31.847999999999956
       ],
-      "runs" : [
+      "runs": [
         {
-          "baselineOffset" : 0,
-          "fontName" : "Helvetica",
-          "fontSize" : 24,
-          "text" : "Table of Contents"
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 24,
+          "text": "Table of Contents"
         }
       ],
-      "text" : "Table of Contents"
+      "text": "Table of Contents"
     },
     {
-      "rect" : [
+      "rect": [
         72,
-        506.44801220699998,
-        484.56477880799991,
+        506.448012207,
+        484.5647788079999,
         15.924000000000035
       ],
-      "runs" : [
+      "runs": [
         {
-          "baselineOffset" : 0,
-          "fontName" : "Helvetica",
-          "fontSize" : 12,
-          "text" : "About This Report \b xx"
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 12,
+          "text": "About This Report \b xx"
         }
       ],
-      "text" : "About This Report \b xx"
+      "text": "About This Report \b xx"
     },
     {
-      "rect" : [
+      "rect": [
         72,
         488.147993896,
         110.589593017,
         15.923999999999978
       ],
-      "runs" : [
+      "runs": [
         {
-          "baselineOffset" : 0,
-          "fontName" : "Helvetica",
-          "fontSize" : 12,
-          "text" : "Guide to the Report \b "
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 12,
+          "text": "Guide to the Report \b "
         }
       ],
-      "text" : "Guide to the Report \b "
+      "text": "Guide to the Report \b "
     },
     {
-      "rect" : [
-        541.16707714800009,
+      "rect": [
+        541.1670771480001,
         488.147993896,
         15.395999999999958,
         15.923999999999978
       ],
-      "runs" : [
+      "runs": [
         {
-          "baselineOffset" : 0,
-          "fontName" : "Helvetica",
-          "fontSize" : 12,
-          "text" : "xxi"
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 12,
+          "text": "xxi"
         }
       ],
-      "text" : "xxi"
+      "text": "xxi"
     },
     {
-      "rect" : [
+      "rect": [
         72,
-        469.84800610299999,
+        469.848006103,
         336.075890625,
         15.923999999999978
       ],
-      "runs" : [
+      "runs": [
         {
-          "baselineOffset" : 0,
-          "fontName" : "Helvetica",
-          "fontSize" : 12,
-          "text" : "Key Advances Since the Fourth National Climate Assessment \b "
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 12,
+          "text": "Key Advances Since the Fourth National Climate Assessment \b "
         }
       ],
-      "text" : "Key Advances Since the Fourth National Climate Assessment \b "
+      "text": "Key Advances Since the Fourth National Climate Assessment \b "
     },
     {
-      "rect" : [
-        528.73940380800002,
-        469.84800610299999,
+      "rect": [
+        528.739403808,
+        469.848006103,
         27.815999999999917,
         15.923999999999978
       ],
-      "runs" : [
+      "runs": [
         {
-          "baselineOffset" : 0,
-          "fontName" : "Helvetica",
-          "fontSize" : 12,
-          "text" : "xxviii"
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 12,
+          "text": "xxviii"
         }
       ],
-      "text" : "xxviii"
+      "text": "xxviii"
     },
     {
-      "rect" : [
+      "rect": [
         72,
-        451.54798779200001,
-        370.58168896400002,
+        451.547987792,
+        370.581688964,
         15.923999999999978
       ],
-      "runs" : [
+      "runs": [
         {
-          "baselineOffset" : 0,
-          "fontName" : "Helvetica",
-          "fontSize" : 12,
-          "text" : "Chapter 1. Overview: Understanding Risks, Impacts, and Responses \b "
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 12,
+          "text": "Chapter 1. Overview: Understanding Risks, Impacts, and Responses \b "
         }
       ],
-      "text" : "Chapter 1. Overview: Understanding Risks, Impacts, and Responses \b "
+      "text": "Chapter 1. Overview: Understanding Risks, Impacts, and Responses \b "
     },
     {
-      "rect" : [
-        538.13778027300009,
-        451.54798779200001,
+      "rect": [
+        538.1377802730001,
+        451.547987792,
         18.431999999999903,
         15.923999999999978
       ],
-      "runs" : [
+      "runs": [
         {
-          "baselineOffset" : 0,
-          "fontName" : "Helvetica",
-          "fontSize" : 12,
-          "text" : "1-1"
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 12,
+          "text": "1-1"
         }
       ],
-      "text" : "1-1"
+      "text": "1-1"
     },
     {
-      "rect" : [
+      "rect": [
         90,
         435.08998779200004,
         239.84331176700005,
         13.269999999999982
       ],
-      "runs" : [
+      "runs": [
         {
-          "baselineOffset" : 0,
-          "fontName" : "Helvetica",
-          "fontSize" : 10,
-          "text" : "How the United States Is Addressing Climate Change \b "
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 10,
+          "text": "How the United States Is Addressing Climate Change \b "
         }
       ],
-      "text" : "How the United States Is Addressing Climate Change \b "
+      "text": "How the United States Is Addressing Climate Change \b "
     },
     {
-      "rect" : [
-        542.57521484300003,
+      "rect": [
+        542.575214843,
         435.08998779200004,
         14,
         13.269999999999982
       ],
-      "runs" : [
+      "runs": [
         {
-          "baselineOffset" : 0,
-          "fontName" : "Helvetica",
-          "fontSize" : 10,
-          "text" : "1-5"
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 10,
+          "text": "1-5"
         }
       ],
-      "text" : "1-5"
+      "text": "1-5"
     },
     {
-      "rect" : [
+      "rect": [
         90,
         419.58998779200004,
         246.54741333000004,
         13.269999999999982
       ],
-      "runs" : [
+      "runs": [
         {
-          "baselineOffset" : 0,
-          "fontName" : "Helvetica",
-          "fontSize" : 10,
-          "text" : "How the United States Is Experiencing Climate Change \b "
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 10,
+          "text": "How the United States Is Experiencing Climate Change \b "
         }
       ],
-      "text" : "How the United States Is Experiencing Climate Change \b "
+      "text": "How the United States Is Experiencing Climate Change \b "
     },
     {
-      "rect" : [
-        536.95991943299998,
+      "rect": [
+        536.959919433,
         419.58998779200004,
         19.620000000000005,
         13.269999999999982
       ],
-      "runs" : [
+      "runs": [
         {
-          "baselineOffset" : 0,
-          "fontName" : "Helvetica",
-          "fontSize" : 10,
-          "text" : "1-16"
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 10,
+          "text": "1-16"
         }
       ],
-      "text" : "1-16"
+      "text": "1-16"
     },
     {
-      "rect" : [
+      "rect": [
         90,
         404.08998779200004,
         240.46831176700005,
         13.269999999999982
       ],
-      "runs" : [
+      "runs": [
         {
-          "baselineOffset" : 0,
-          "fontName" : "Helvetica",
-          "fontSize" : 10,
-          "text" : "Current and Future Climate Risks to the United States \b "
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 10,
+          "text": "Current and Future Climate Risks to the United States \b "
         }
       ],
-      "text" : "Current and Future Climate Risks to the United States \b "
+      "text": "Current and Future Climate Risks to the United States \b "
     },
     {
-      "rect" : [
-        536.95991943299998,
+      "rect": [
+        536.959919433,
         404.08998779200004,
         19.620000000000005,
         13.269999999999982
       ],
-      "runs" : [
+      "runs": [
         {
-          "baselineOffset" : 0,
-          "fontName" : "Helvetica",
-          "fontSize" : 10,
-          "text" : "1-23"
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 10,
+          "text": "1-23"
         }
       ],
-      "text" : "1-23"
+      "text": "1-23"
     },
     {
-      "rect" : [
+      "rect": [
         90,
         388.58998779200004,
         196.73781250000002,
         13.269999999999982
       ],
-      "runs" : [
+      "runs": [
         {
-          "baselineOffset" : 0,
-          "fontName" : "Helvetica",
-          "fontSize" : 10,
-          "text" : "The Choices That Will Determine the Future \b "
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 10,
+          "text": "The Choices That Will Determine the Future \b "
         }
       ],
-      "text" : "The Choices That Will Determine the Future \b "
+      "text": "The Choices That Will Determine the Future \b "
     },
     {
-      "rect" : [
-        536.95991943299998,
+      "rect": [
+        536.959919433,
         388.58998779200004,
         19.620000000000005,
         13.269999999999982
       ],
-      "runs" : [
+      "runs": [
         {
-          "baselineOffset" : 0,
-          "fontName" : "Helvetica",
-          "fontSize" : 10,
-          "text" : "1-37"
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 10,
+          "text": "1-37"
         }
       ],
-      "text" : "1-37"
+      "text": "1-37"
     },
     {
-      "rect" : [
+      "rect": [
         90,
         373.08998779200004,
         291.395985107,
         13.269999999999982
       ],
-      "runs" : [
+      "runs": [
         {
-          "baselineOffset" : 0,
-          "fontName" : "Helvetica",
-          "fontSize" : 10,
-          "text" : "How Climate Action Can Create a More Resilient and Just Nation \b "
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 10,
+          "text": "How Climate Action Can Create a More Resilient and Just Nation \b "
         }
       ],
-      "text" : "How Climate Action Can Create a More Resilient and Just Nation \b "
+      "text": "How Climate Action Can Create a More Resilient and Just Nation \b "
     },
     {
-      "rect" : [
-        536.95991943299998,
+      "rect": [
+        536.959919433,
         373.08998779200004,
         19.620000000000005,
         13.269999999999982
       ],
-      "runs" : [
+      "runs": [
         {
-          "baselineOffset" : 0,
-          "fontName" : "Helvetica",
-          "fontSize" : 10,
-          "text" : "1-42"
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 10,
+          "text": "1-42"
         }
       ],
-      "text" : "1-42"
+      "text": "1-42"
     },
     {
-      "rect" : [
+      "rect": [
         72,
-        342.24799999999999,
+        342.248,
         146.659905517,
         15.923999999999978
       ],
-      "runs" : [
+      "runs": [
         {
-          "baselineOffset" : 0,
-          "fontName" : "Helvetica",
-          "fontSize" : 12,
-          "text" : "Chapter 2. Climate Trends \b "
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 12,
+          "text": "Chapter 2. Climate Trends \b "
         }
       ],
-      "text" : "Chapter 2. Climate Trends \b "
+      "text": "Chapter 2. Climate Trends \b "
     },
     {
-      "rect" : [
-        538.13778027300009,
-        342.24799999999999,
+      "rect": [
+        538.1377802730001,
+        342.248,
         18.431999999999903,
         15.923999999999978
       ],
-      "runs" : [
+      "runs": [
         {
-          "baselineOffset" : 0,
-          "fontName" : "Helvetica",
-          "fontSize" : 12,
-          "text" : "2-1"
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 12,
+          "text": "2-1"
         }
       ],
-      "text" : "2-1"
+      "text": "2-1"
     },
     {
-      "rect" : [
+      "rect": [
         90,
-        325.79000000000002,
-        466.57521484300003,
+        325.79,
+        466.575214843,
         13.269999999999982
       ],
-      "runs" : [
+      "runs": [
         {
-          "baselineOffset" : 0,
-          "fontName" : "Helvetica",
-          "fontSize" : 10,
-          "text" : "Introduction \b 2-4"
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 10,
+          "text": "Introduction \b 2-4"
         }
       ],
-      "text" : "Introduction \b 2-4"
+      "text": "Introduction \b 2-4"
     },
     {
-      "rect" : [
+      "rect": [
         90,
-        310.29000000000002,
-        317.36769531200002,
+        310.29,
+        317.367695312,
         13.269999999999982
       ],
-      "runs" : [
+      "runs": [
         {
-          "baselineOffset" : 0,
-          "fontName" : "Helvetica",
-          "fontSize" : 10,
-          "text" : "Key Message 2.1. Climate Is Changing, and Scientists Understand Why \b "
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 10,
+          "text": "Key Message 2.1. Climate Is Changing, and Scientists Understand Why \b "
         }
       ],
-      "text" : "Key Message 2.1. Climate Is Changing, and Scientists Understand Why \b "
+      "text": "Key Message 2.1. Climate Is Changing, and Scientists Understand Why \b "
     },
     {
-      "rect" : [
-        542.57521484300003,
-        310.29000000000002,
+      "rect": [
+        542.575214843,
+        310.29,
         14,
         13.269999999999982
       ],
-      "runs" : [
+      "runs": [
         {
-          "baselineOffset" : 0,
-          "fontName" : "Helvetica",
-          "fontSize" : 10,
-          "text" : "2-5"
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 10,
+          "text": "2-5"
         }
       ],
-      "text" : "2-5"
+      "text": "2-5"
     },
     {
-      "rect" : [
+      "rect": [
         90,
-        294.79000000000002,
+        294.79,
         337.74858520500004,
         13.269999999999982
       ],
-      "runs" : [
+      "runs": [
         {
-          "baselineOffset" : 0,
-          "fontName" : "Helvetica",
-          "fontSize" : 10,
-          "text" : "Key Message 2.2. Extreme Events Are Becoming More Frequent and Severe \b "
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 10,
+          "text": "Key Message 2.2. Extreme Events Are Becoming More Frequent and Severe \b "
         }
       ],
-      "text" : "Key Message 2.2. Extreme Events Are Becoming More Frequent and Severe \b "
+      "text": "Key Message 2.2. Extreme Events Are Becoming More Frequent and Severe \b "
     },
     {
-      "rect" : [
-        536.95991943299998,
-        294.79000000000002,
+      "rect": [
+        536.959919433,
+        294.79,
         19.620000000000005,
         13.269999999999982
       ],
-      "runs" : [
+      "runs": [
         {
-          "baselineOffset" : 0,
-          "fontName" : "Helvetica",
-          "fontSize" : 10,
-          "text" : "2-16"
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 10,
+          "text": "2-16"
         }
       ],
-      "text" : "2-16"
+      "text": "2-16"
     },
     {
-      "rect" : [
+      "rect": [
         90,
-        279.29000000000002,
+        279.29,
         388.661610107,
         13.269999999999982
       ],
-      "runs" : [
+      "runs": [
         {
-          "baselineOffset" : 0,
-          "fontName" : "Helvetica",
-          "fontSize" : 10,
-          "text" : "Key Message 2.3. How Much the Climate Changes Depends on the Choices Made Now \b "
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 10,
+          "text": "Key Message 2.3. How Much the Climate Changes Depends on the Choices Made Now \b "
         }
       ],
-      "text" : "Key Message 2.3. How Much the Climate Changes Depends on the Choices Made Now \b "
+      "text": "Key Message 2.3. How Much the Climate Changes Depends on the Choices Made Now \b "
     },
     {
-      "rect" : [
-        536.95991943299998,
-        279.29000000000002,
+      "rect": [
+        536.959919433,
+        279.29,
         19.620000000000005,
         13.269999999999982
       ],
-      "runs" : [
+      "runs": [
         {
-          "baselineOffset" : 0,
-          "fontName" : "Helvetica",
-          "fontSize" : 10,
-          "text" : "2-21"
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 10,
+          "text": "2-21"
         }
       ],
-      "text" : "2-21"
+      "text": "2-21"
     },
     {
-      "rect" : [
+      "rect": [
         90,
-        263.79000000000002,
-        466.57991943299999,
+        263.79,
+        466.579919433,
         13.269999999999982
       ],
-      "runs" : [
+      "runs": [
         {
-          "baselineOffset" : 0,
-          "fontName" : "Helvetica",
-          "fontSize" : 10,
-          "text" : "Traceable Accounts \b 2-34"
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 10,
+          "text": "Traceable Accounts \b 2-34"
         }
       ],
-      "text" : "Traceable Accounts \b 2-34"
+      "text": "Traceable Accounts \b 2-34"
     },
     {
-      "rect" : [
+      "rect": [
         90,
-        248.28999999999999,
-        466.57991943299999,
+        248.29,
+        466.579919433,
         13.27000000000001
       ],
-      "runs" : [
+      "runs": [
         {
-          "baselineOffset" : 0,
-          "fontName" : "Helvetica",
-          "fontSize" : 10,
-          "text" : "References \b 2-41"
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 10,
+          "text": "References \b 2-41"
         }
       ],
-      "text" : "References \b 2-41"
+      "text": "References \b 2-41"
     },
     {
-      "rect" : [
+      "rect": [
         72,
         217.447996948,
         202.69890698199998,
         15.924000000000007
       ],
-      "runs" : [
+      "runs": [
         {
-          "baselineOffset" : 0,
-          "fontName" : "Helvetica",
-          "fontSize" : 12,
-          "text" : "Chapter 3. Earth Systems Processes \b "
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 12,
+          "text": "Chapter 3. Earth Systems Processes \b "
         }
       ],
-      "text" : "Chapter 3. Earth Systems Processes \b "
+      "text": "Chapter 3. Earth Systems Processes \b "
     },
     {
-      "rect" : [
-        538.13778027300009,
+      "rect": [
+        538.1377802730001,
         217.447996948,
         18.431999999999903,
         15.924000000000007
       ],
-      "runs" : [
+      "runs": [
         {
-          "baselineOffset" : 0,
-          "fontName" : "Helvetica",
-          "fontSize" : 12,
-          "text" : "3-1"
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 12,
+          "text": "3-1"
         }
       ],
-      "text" : "3-1"
+      "text": "3-1"
     },
     {
-      "rect" : [
+      "rect": [
         90,
         200.989996948,
-        466.57521484300003,
+        466.575214843,
         13.27000000000001
       ],
-      "runs" : [
+      "runs": [
         {
-          "baselineOffset" : 0,
-          "fontName" : "Helvetica",
-          "fontSize" : 10,
-          "text" : "Introduction \b 3-5"
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 10,
+          "text": "Introduction \b 3-5"
         }
       ],
-      "text" : "Introduction \b 3-5"
+      "text": "Introduction \b 3-5"
     },
     {
-      "rect" : [
+      "rect": [
         90,
         185.489996948,
         356.83549926700005,
         13.27000000000001
       ],
-      "runs" : [
+      "runs": [
         {
-          "baselineOffset" : 0,
-          "fontName" : "Helvetica",
-          "fontSize" : 10,
-          "text" : "Key Message 3.1. Human Activities Have Caused the Observed Global Warming \b "
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 10,
+          "text": "Key Message 3.1. Human Activities Have Caused the Observed Global Warming \b "
         }
       ],
-      "text" : "Key Message 3.1. Human Activities Have Caused the Observed Global Warming \b "
+      "text": "Key Message 3.1. Human Activities Have Caused the Observed Global Warming \b "
     },
     {
-      "rect" : [
-        542.57521484300003,
+      "rect": [
+        542.575214843,
         185.489996948,
         14,
         13.27000000000001
       ],
-      "runs" : [
+      "runs": [
         {
-          "baselineOffset" : 0,
-          "fontName" : "Helvetica",
-          "fontSize" : 10,
-          "text" : "3-5"
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 10,
+          "text": "3-5"
         }
       ],
-      "text" : "3-5"
+      "text": "3-5"
     },
     {
-      "rect" : [
+      "rect": [
         90,
         169.989996948,
         376.054188232,
         13.27000000000001
       ],
-      "runs" : [
+      "runs": [
         {
-          "baselineOffset" : 0,
-          "fontName" : "Helvetica",
-          "fontSize" : 10,
-          "text" : "Key Message 3.2. The Estimated Range of Climate Sensitivity Has Narrowed by 50% \b "
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 10,
+          "text": "Key Message 3.2. The Estimated Range of Climate Sensitivity Has Narrowed by 50% \b "
         }
       ],
-      "text" : "Key Message 3.2. The Estimated Range of Climate Sensitivity Has Narrowed by 50% \b "
+      "text": "Key Message 3.2. The Estimated Range of Climate Sensitivity Has Narrowed by 50% \b "
     },
     {
-      "rect" : [
-        536.95991943299998,
+      "rect": [
+        536.959919433,
         169.989996948,
         19.620000000000005,
         13.27000000000001
       ],
-      "runs" : [
+      "runs": [
         {
-          "baselineOffset" : 0,
-          "fontName" : "Helvetica",
-          "fontSize" : 10,
-          "text" : "3-10"
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 10,
+          "text": "3-10"
         }
       ],
-      "text" : "3-10"
+      "text": "3-10"
     },
     {
-      "rect" : [
+      "rect": [
         90,
         154.489996948,
-        375.10701416000001,
+        375.10701416,
         13.27000000000001
       ],
-      "runs" : [
+      "runs": [
         {
-          "baselineOffset" : 0,
-          "fontName" : "Helvetica",
-          "fontSize" : 10,
-          "text" : "Key Message 3.3. New Data and Analysis Methods Have Advanced Climate Science \b "
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 10,
+          "text": "Key Message 3.3. New Data and Analysis Methods Have Advanced Climate Science \b "
         }
       ],
-      "text" : "Key Message 3.3. New Data and Analysis Methods Have Advanced Climate Science \b "
+      "text": "Key Message 3.3. New Data and Analysis Methods Have Advanced Climate Science \b "
     },
     {
-      "rect" : [
-        536.95991943299998,
+      "rect": [
+        536.959919433,
         154.489996948,
         19.620000000000005,
         13.27000000000001
       ],
-      "runs" : [
+      "runs": [
         {
-          "baselineOffset" : 0,
-          "fontName" : "Helvetica",
-          "fontSize" : 10,
-          "text" : "3-13"
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 10,
+          "text": "3-13"
         }
       ],
-      "text" : "3-13"
+      "text": "3-13"
     },
     {
-      "rect" : [
+      "rect": [
         90,
         138.989996948,
         296.09331176700005,
         13.27000000000001
       ],
-      "runs" : [
+      "runs": [
         {
-          "baselineOffset" : 0,
-          "fontName" : "Helvetica",
-          "fontSize" : 10,
-          "text" : "Key Message 3.4. Humans Are Changing Earth System Processes \b "
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 10,
+          "text": "Key Message 3.4. Humans Are Changing Earth System Processes \b "
         }
       ],
-      "text" : "Key Message 3.4. Humans Are Changing Earth System Processes \b "
+      "text": "Key Message 3.4. Humans Are Changing Earth System Processes \b "
     },
     {
-      "rect" : [
-        536.95991943299998,
+      "rect": [
+        536.959919433,
         138.989996948,
         19.620000000000005,
         13.27000000000001
       ],
-      "runs" : [
+      "runs": [
         {
-          "baselineOffset" : 0,
-          "fontName" : "Helvetica",
-          "fontSize" : 10,
-          "text" : "3-18"
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 10,
+          "text": "3-18"
         }
       ],
-      "text" : "3-18"
+      "text": "3-18"
     },
     {
-      "rect" : [
+      "rect": [
         90,
         123.48999694800001,
-        324.65291259700001,
+        324.652912597,
         13.269999999999996
       ],
-      "runs" : [
+      "runs": [
         {
-          "baselineOffset" : 0,
-          "fontName" : "Helvetica",
-          "fontSize" : 10,
-          "text" : "Key Message 3.5. Humans Are Changing Weather and Climate Extremes \b "
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 10,
+          "text": "Key Message 3.5. Humans Are Changing Weather and Climate Extremes \b "
         }
       ],
-      "text" : "Key Message 3.5. Humans Are Changing Weather and Climate Extremes \b "
+      "text": "Key Message 3.5. Humans Are Changing Weather and Climate Extremes \b "
     },
     {
-      "rect" : [
-        536.95991943299998,
+      "rect": [
+        536.959919433,
         123.48999694800001,
         19.620000000000005,
         13.269999999999996
       ],
-      "runs" : [
+      "runs": [
         {
-          "baselineOffset" : 0,
-          "fontName" : "Helvetica",
-          "fontSize" : 10,
-          "text" : "3-30"
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 10,
+          "text": "3-30"
         }
       ],
-      "text" : "3-30"
+      "text": "3-30"
     },
     {
-      "rect" : [
+      "rect": [
         90,
         107.98999694800001,
-        466.57991943299999,
+        466.579919433,
         13.269999999999996
       ],
-      "runs" : [
+      "runs": [
         {
-          "baselineOffset" : 0,
-          "fontName" : "Helvetica",
-          "fontSize" : 10,
-          "text" : "Traceable Accounts \b 3-34"
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 10,
+          "text": "Traceable Accounts \b 3-34"
         }
       ],
-      "text" : "Traceable Accounts \b 3-34"
+      "text": "Traceable Accounts \b 3-34"
     },
     {
-      "rect" : [
+      "rect": [
         90,
-        92.489996948000012,
-        466.57991943299999,
+        92.48999694800001,
+        466.579919433,
         13.269999999999996
       ],
-      "runs" : [
+      "runs": [
         {
-          "baselineOffset" : 0,
-          "fontName" : "Helvetica",
-          "fontSize" : 10,
-          "text" : "References \b 3-48"
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 10,
+          "text": "References \b 3-48"
         }
       ],
-      "text" : "References \b 3-48"
+      "text": "References \b 3-48"
     }
   ],
-  "bounds" : [
+  "bounds": [
     0,
     0,
     792,
     612
   ],
-  "caseID" : "noaa-nca5-2023",
-  "graphics" : [
+  "caseID": "noaa-nca5-2023",
+  "graphics": [
     [
-      697.58441162099996,
-      125.65000152499999,
-      63.910999297999979,
+      697.584411621,
+      125.650001525,
+      63.91099929799998,
       4
     ],
     [
-      140.87789917000001,
-      140.44999694800001,
-      651.12210083000002,
+      140.87789917,
+      140.449996948,
+      651.12210083,
       471.55000305199997
     ],
     [
-      410.67291259699999,
-      124.94999694800001,
+      410.672912597,
+      124.949996948,
       125.30699920600006,
       4
     ],
     [
       179.134796142,
-      109.44999694800001,
-      356.84500121999997,
+      109.449996948,
+      356.84500122,
       4
     ],
     [
-      140.87789917000001,
-      93.949996948000006,
-      395.10198974600007,
+      140.87789917,
+      93.949996948,
+      395.1019897460001,
       4
     ]
   ],
-  "lines" : [
+  "lines": [
     {
-      "fontSize" : 10,
-      "monospaced" : false,
-      "rect" : [
+      "fontSize": 10,
+      "monospaced": false,
+      "rect": [
         36,
         13.9001,
-        720.00030000000004,
+        720.0003,
         14.19
       ],
-      "text" : "Fifth National Climate Assessment vii"
+      "text": "Fifth National Climate Assessment vii"
     },
     {
-      "fontSize" : 9,
-      "monospaced" : false,
-      "rect" : [
-        699.58441162099996,
+      "fontSize": 9,
+      "monospaced": false,
+      "rect": [
+        699.584411621,
         127.21099389600002,
         59.922000000000025,
         11.943000000000012
       ],
-      "text" : "Ellen Anderson"
+      "text": "Ellen Anderson"
     },
     {
-      "fontSize" : 24,
-      "monospaced" : false,
-      "rect" : [
-        219.51570129300001,
-        551.49599999999998,
+      "fontSize": 24,
+      "monospaced": false,
+      "rect": [
+        219.515701293,
+        551.496,
         189.52560000458402,
         31.847999999999956
       ],
-      "text" : "Table of Contents"
+      "text": "Table of Contents"
     },
     {
-      "fontSize" : 12,
-      "monospaced" : false,
-      "rect" : [
+      "fontSize": 12,
+      "monospaced": false,
+      "rect": [
         72,
-        506.44801220699998,
-        484.56477880799991,
+        506.448012207,
+        484.5647788079999,
         15.924000000000035
       ],
-      "text" : "About This Report \b xx"
+      "text": "About This Report \b xx"
     },
     {
-      "fontSize" : 12,
-      "monospaced" : false,
-      "rect" : [
+      "fontSize": 12,
+      "monospaced": false,
+      "rect": [
         72,
         488.147993896,
         110.589593017,
         15.923999999999978
       ],
-      "text" : "Guide to the Report \b"
+      "text": "Guide to the Report \b"
     },
     {
-      "fontSize" : 12,
-      "monospaced" : false,
-      "rect" : [
-        541.16707714800009,
+      "fontSize": 12,
+      "monospaced": false,
+      "rect": [
+        541.1670771480001,
         488.147993896,
         15.395999999999958,
         15.923999999999978
       ],
-      "text" : "xxi"
+      "text": "xxi"
     },
     {
-      "fontSize" : 12,
-      "monospaced" : false,
-      "rect" : [
+      "fontSize": 12,
+      "monospaced": false,
+      "rect": [
         72,
-        469.84800610299999,
+        469.848006103,
         336.075890625,
         15.923999999999978
       ],
-      "text" : "Key Advances Since the Fourth National Climate Assessment \b"
+      "text": "Key Advances Since the Fourth National Climate Assessment \b"
     },
     {
-      "fontSize" : 12,
-      "monospaced" : false,
-      "rect" : [
-        528.73940380800002,
-        469.84800610299999,
+      "fontSize": 12,
+      "monospaced": false,
+      "rect": [
+        528.739403808,
+        469.848006103,
         27.815999999999917,
         15.923999999999978
       ],
-      "text" : "xxviii"
+      "text": "xxviii"
     },
     {
-      "fontSize" : 12,
-      "monospaced" : false,
-      "rect" : [
+      "fontSize": 12,
+      "monospaced": false,
+      "rect": [
         72,
-        451.54798779200001,
-        370.58168896400002,
+        451.547987792,
+        370.581688964,
         15.923999999999978
       ],
-      "text" : "Chapter 1. Overview: Understanding Risks, Impacts, and Responses \b"
+      "text": "Chapter 1. Overview: Understanding Risks, Impacts, and Responses \b"
     },
     {
-      "fontSize" : 12,
-      "monospaced" : false,
-      "rect" : [
-        538.13778027300009,
-        451.54798779200001,
+      "fontSize": 12,
+      "monospaced": false,
+      "rect": [
+        538.1377802730001,
+        451.547987792,
         18.431999999999903,
         15.923999999999978
       ],
-      "text" : "1-1"
+      "text": "1-1"
     },
     {
-      "fontSize" : 10,
-      "monospaced" : false,
-      "rect" : [
+      "fontSize": 10,
+      "monospaced": false,
+      "rect": [
         90,
         435.08998779200004,
         239.84331176700005,
         13.269999999999982
       ],
-      "text" : "How the United States Is Addressing Climate Change \b"
+      "text": "How the United States Is Addressing Climate Change \b"
     },
     {
-      "fontSize" : 10,
-      "monospaced" : false,
-      "rect" : [
-        542.57521484300003,
+      "fontSize": 10,
+      "monospaced": false,
+      "rect": [
+        542.575214843,
         435.08998779200004,
         14,
         13.269999999999982
       ],
-      "text" : "1-5"
+      "text": "1-5"
     },
     {
-      "fontSize" : 10,
-      "monospaced" : false,
-      "rect" : [
+      "fontSize": 10,
+      "monospaced": false,
+      "rect": [
         90,
         419.58998779200004,
         246.54741333000004,
         13.269999999999982
       ],
-      "text" : "How the United States Is Experiencing Climate Change \b"
+      "text": "How the United States Is Experiencing Climate Change \b"
     },
     {
-      "fontSize" : 10,
-      "monospaced" : false,
-      "rect" : [
-        536.95991943299998,
+      "fontSize": 10,
+      "monospaced": false,
+      "rect": [
+        536.959919433,
         419.58998779200004,
         19.620000000000005,
         13.269999999999982
       ],
-      "text" : "1-16"
+      "text": "1-16"
     },
     {
-      "fontSize" : 10,
-      "monospaced" : false,
-      "rect" : [
+      "fontSize": 10,
+      "monospaced": false,
+      "rect": [
         90,
         404.08998779200004,
         240.46831176700005,
         13.269999999999982
       ],
-      "text" : "Current and Future Climate Risks to the United States \b"
+      "text": "Current and Future Climate Risks to the United States \b"
     },
     {
-      "fontSize" : 10,
-      "monospaced" : false,
-      "rect" : [
-        536.95991943299998,
+      "fontSize": 10,
+      "monospaced": false,
+      "rect": [
+        536.959919433,
         404.08998779200004,
         19.620000000000005,
         13.269999999999982
       ],
-      "text" : "1-23"
+      "text": "1-23"
     },
     {
-      "fontSize" : 10,
-      "monospaced" : false,
-      "rect" : [
+      "fontSize": 10,
+      "monospaced": false,
+      "rect": [
         90,
         388.58998779200004,
         196.73781250000002,
         13.269999999999982
       ],
-      "text" : "The Choices That Will Determine the Future \b"
+      "text": "The Choices That Will Determine the Future \b"
     },
     {
-      "fontSize" : 10,
-      "monospaced" : false,
-      "rect" : [
-        536.95991943299998,
+      "fontSize": 10,
+      "monospaced": false,
+      "rect": [
+        536.959919433,
         388.58998779200004,
         19.620000000000005,
         13.269999999999982
       ],
-      "text" : "1-37"
+      "text": "1-37"
     },
     {
-      "fontSize" : 10,
-      "monospaced" : false,
-      "rect" : [
+      "fontSize": 10,
+      "monospaced": false,
+      "rect": [
         90,
         373.08998779200004,
         291.395985107,
         13.269999999999982
       ],
-      "text" : "How Climate Action Can Create a More Resilient and Just Nation \b"
+      "text": "How Climate Action Can Create a More Resilient and Just Nation \b"
     },
     {
-      "fontSize" : 10,
-      "monospaced" : false,
-      "rect" : [
-        536.95991943299998,
+      "fontSize": 10,
+      "monospaced": false,
+      "rect": [
+        536.959919433,
         373.08998779200004,
         19.620000000000005,
         13.269999999999982
       ],
-      "text" : "1-42"
+      "text": "1-42"
     },
     {
-      "fontSize" : 12,
-      "monospaced" : false,
-      "rect" : [
+      "fontSize": 12,
+      "monospaced": false,
+      "rect": [
         72,
-        342.24799999999999,
+        342.248,
         146.659905517,
         15.923999999999978
       ],
-      "text" : "Chapter 2. Climate Trends \b"
+      "text": "Chapter 2. Climate Trends \b"
     },
     {
-      "fontSize" : 12,
-      "monospaced" : false,
-      "rect" : [
-        538.13778027300009,
-        342.24799999999999,
+      "fontSize": 12,
+      "monospaced": false,
+      "rect": [
+        538.1377802730001,
+        342.248,
         18.431999999999903,
         15.923999999999978
       ],
-      "text" : "2-1"
+      "text": "2-1"
     },
     {
-      "fontSize" : 10,
-      "monospaced" : false,
-      "rect" : [
+      "fontSize": 10,
+      "monospaced": false,
+      "rect": [
         90,
-        325.79000000000002,
-        466.57521484300003,
+        325.79,
+        466.575214843,
         13.269999999999982
       ],
-      "text" : "Introduction \b 2-4"
+      "text": "Introduction \b 2-4"
     },
     {
-      "fontSize" : 10,
-      "monospaced" : false,
-      "rect" : [
+      "fontSize": 10,
+      "monospaced": false,
+      "rect": [
         90,
-        310.29000000000002,
-        317.36769531200002,
+        310.29,
+        317.367695312,
         13.269999999999982
       ],
-      "text" : "Key Message 2.1. Climate Is Changing, and Scientists Understand Why \b"
+      "text": "Key Message 2.1. Climate Is Changing, and Scientists Understand Why \b"
     },
     {
-      "fontSize" : 10,
-      "monospaced" : false,
-      "rect" : [
-        542.57521484300003,
-        310.29000000000002,
+      "fontSize": 10,
+      "monospaced": false,
+      "rect": [
+        542.575214843,
+        310.29,
         14,
         13.269999999999982
       ],
-      "text" : "2-5"
+      "text": "2-5"
     },
     {
-      "fontSize" : 10,
-      "monospaced" : false,
-      "rect" : [
+      "fontSize": 10,
+      "monospaced": false,
+      "rect": [
         90,
-        294.79000000000002,
+        294.79,
         337.74858520500004,
         13.269999999999982
       ],
-      "text" : "Key Message 2.2. Extreme Events Are Becoming More Frequent and Severe \b"
+      "text": "Key Message 2.2. Extreme Events Are Becoming More Frequent and Severe \b"
     },
     {
-      "fontSize" : 10,
-      "monospaced" : false,
-      "rect" : [
-        536.95991943299998,
-        294.79000000000002,
+      "fontSize": 10,
+      "monospaced": false,
+      "rect": [
+        536.959919433,
+        294.79,
         19.620000000000005,
         13.269999999999982
       ],
-      "text" : "2-16"
+      "text": "2-16"
     },
     {
-      "fontSize" : 10,
-      "monospaced" : false,
-      "rect" : [
+      "fontSize": 10,
+      "monospaced": false,
+      "rect": [
         90,
-        279.29000000000002,
+        279.29,
         388.661610107,
         13.269999999999982
       ],
-      "text" : "Key Message 2.3. How Much the Climate Changes Depends on the Choices Made Now \b"
+      "text": "Key Message 2.3. How Much the Climate Changes Depends on the Choices Made Now \b"
     },
     {
-      "fontSize" : 10,
-      "monospaced" : false,
-      "rect" : [
-        536.95991943299998,
-        279.29000000000002,
+      "fontSize": 10,
+      "monospaced": false,
+      "rect": [
+        536.959919433,
+        279.29,
         19.620000000000005,
         13.269999999999982
       ],
-      "text" : "2-21"
+      "text": "2-21"
     },
     {
-      "fontSize" : 10,
-      "monospaced" : false,
-      "rect" : [
+      "fontSize": 10,
+      "monospaced": false,
+      "rect": [
         90,
-        263.79000000000002,
-        466.57991943299999,
+        263.79,
+        466.579919433,
         13.269999999999982
       ],
-      "text" : "Traceable Accounts \b 2-34"
+      "text": "Traceable Accounts \b 2-34"
     },
     {
-      "fontSize" : 10,
-      "monospaced" : false,
-      "rect" : [
+      "fontSize": 10,
+      "monospaced": false,
+      "rect": [
         90,
-        248.28999999999999,
-        466.57991943299999,
+        248.29,
+        466.579919433,
         13.27000000000001
       ],
-      "text" : "References \b 2-41"
+      "text": "References \b 2-41"
     },
     {
-      "fontSize" : 12,
-      "monospaced" : false,
-      "rect" : [
+      "fontSize": 12,
+      "monospaced": false,
+      "rect": [
         72,
         217.447996948,
         202.69890698199998,
         15.924000000000007
       ],
-      "text" : "Chapter 3. Earth Systems Processes \b"
+      "text": "Chapter 3. Earth Systems Processes \b"
     },
     {
-      "fontSize" : 12,
-      "monospaced" : false,
-      "rect" : [
-        538.13778027300009,
+      "fontSize": 12,
+      "monospaced": false,
+      "rect": [
+        538.1377802730001,
         217.447996948,
         18.431999999999903,
         15.924000000000007
       ],
-      "text" : "3-1"
+      "text": "3-1"
     },
     {
-      "fontSize" : 10,
-      "monospaced" : false,
-      "rect" : [
+      "fontSize": 10,
+      "monospaced": false,
+      "rect": [
         90,
         200.989996948,
-        466.57521484300003,
+        466.575214843,
         13.27000000000001
       ],
-      "text" : "Introduction \b 3-5"
+      "text": "Introduction \b 3-5"
     },
     {
-      "fontSize" : 10,
-      "monospaced" : false,
-      "rect" : [
+      "fontSize": 10,
+      "monospaced": false,
+      "rect": [
         90,
         185.489996948,
         356.83549926700005,
         13.27000000000001
       ],
-      "text" : "Key Message 3.1. Human Activities Have Caused the Observed Global Warming \b"
+      "text": "Key Message 3.1. Human Activities Have Caused the Observed Global Warming \b"
     },
     {
-      "fontSize" : 10,
-      "monospaced" : false,
-      "rect" : [
-        542.57521484300003,
+      "fontSize": 10,
+      "monospaced": false,
+      "rect": [
+        542.575214843,
         185.489996948,
         14,
         13.27000000000001
       ],
-      "text" : "3-5"
+      "text": "3-5"
     },
     {
-      "fontSize" : 10,
-      "monospaced" : false,
-      "rect" : [
+      "fontSize": 10,
+      "monospaced": false,
+      "rect": [
         90,
         169.989996948,
         376.054188232,
         13.27000000000001
       ],
-      "text" : "Key Message 3.2. The Estimated Range of Climate Sensitivity Has Narrowed by 50% \b"
+      "text": "Key Message 3.2. The Estimated Range of Climate Sensitivity Has Narrowed by 50% \b"
     },
     {
-      "fontSize" : 10,
-      "monospaced" : false,
-      "rect" : [
-        536.95991943299998,
+      "fontSize": 10,
+      "monospaced": false,
+      "rect": [
+        536.959919433,
         169.989996948,
         19.620000000000005,
         13.27000000000001
       ],
-      "text" : "3-10"
+      "text": "3-10"
     },
     {
-      "fontSize" : 10,
-      "monospaced" : false,
-      "rect" : [
+      "fontSize": 10,
+      "monospaced": false,
+      "rect": [
         90,
         154.489996948,
-        375.10701416000001,
+        375.10701416,
         13.27000000000001
       ],
-      "text" : "Key Message 3.3. New Data and Analysis Methods Have Advanced Climate Science \b"
+      "text": "Key Message 3.3. New Data and Analysis Methods Have Advanced Climate Science \b"
     },
     {
-      "fontSize" : 10,
-      "monospaced" : false,
-      "rect" : [
-        536.95991943299998,
+      "fontSize": 10,
+      "monospaced": false,
+      "rect": [
+        536.959919433,
         154.489996948,
         19.620000000000005,
         13.27000000000001
       ],
-      "text" : "3-13"
+      "text": "3-13"
     },
     {
-      "fontSize" : 10,
-      "monospaced" : false,
-      "rect" : [
+      "fontSize": 10,
+      "monospaced": false,
+      "rect": [
         90,
         138.989996948,
         296.09331176700005,
         13.27000000000001
       ],
-      "text" : "Key Message 3.4. Humans Are Changing Earth System Processes \b"
+      "text": "Key Message 3.4. Humans Are Changing Earth System Processes \b"
     },
     {
-      "fontSize" : 10,
-      "monospaced" : false,
-      "rect" : [
-        536.95991943299998,
+      "fontSize": 10,
+      "monospaced": false,
+      "rect": [
+        536.959919433,
         138.989996948,
         19.620000000000005,
         13.27000000000001
       ],
-      "text" : "3-18"
+      "text": "3-18"
     },
     {
-      "fontSize" : 10,
-      "monospaced" : false,
-      "rect" : [
+      "fontSize": 10,
+      "monospaced": false,
+      "rect": [
         90,
         123.48999694800001,
-        324.65291259700001,
+        324.652912597,
         13.269999999999996
       ],
-      "text" : "Key Message 3.5. Humans Are Changing Weather and Climate Extremes \b"
+      "text": "Key Message 3.5. Humans Are Changing Weather and Climate Extremes \b"
     },
     {
-      "fontSize" : 10,
-      "monospaced" : false,
-      "rect" : [
-        536.95991943299998,
+      "fontSize": 10,
+      "monospaced": false,
+      "rect": [
+        536.959919433,
         123.48999694800001,
         19.620000000000005,
         13.269999999999996
       ],
-      "text" : "3-30"
+      "text": "3-30"
     },
     {
-      "fontSize" : 10,
-      "monospaced" : false,
-      "rect" : [
+      "fontSize": 10,
+      "monospaced": false,
+      "rect": [
         90,
         107.98999694800001,
-        466.57991943299999,
+        466.579919433,
         13.269999999999996
       ],
-      "text" : "Traceable Accounts \b 3-34"
+      "text": "Traceable Accounts \b 3-34"
     },
     {
-      "fontSize" : 10,
-      "monospaced" : false,
-      "rect" : [
+      "fontSize": 10,
+      "monospaced": false,
+      "rect": [
         90,
-        92.489996948000012,
-        466.57991943299999,
+        92.48999694800001,
+        466.579919433,
         13.269999999999996
       ],
-      "text" : "References \b 3-48"
+      "text": "References \b 3-48"
     }
   ],
-  "page" : 8,
-  "paintOperations" : [
+  "page": 8,
+  "paintOperations": [
     {
-      "filled" : false,
-      "image" : true,
-      "rect" : [
+      "filled": false,
+      "image": true,
+      "rect": [
         [
           358.5,
-          409.28002529999998
+          409.2800253
         ],
         [
           433.5,
           202.71997470000002
         ]
       ],
-      "rectangular" : false,
-      "vertices" : [
-
-      ]
+      "rectangular": false,
+      "vertices": []
     },
     {
-      "filled" : false,
-      "image" : false,
-      "rect" : [
+      "filled": false,
+      "image": false,
+      "rect": [
         [
           349.5,
-          408.27999999999997
+          408.28
         ],
         [
           442.5,
           203.72000000000003
         ]
       ],
-      "rectangular" : false,
-      "vertices" : [
-
-      ]
+      "rectangular": false,
+      "vertices": []
     },
     {
-      "filled" : false,
-      "image" : false,
-      "rect" : [
+      "filled": false,
+      "image": false,
+      "rect": [
         [
-          697.58441162099996,
-          125.65000152499999
+          697.584411621,
+          125.650001525
         ],
         [
-          63.910999297999979,
+          63.91099929799998,
           4
         ]
       ],
-      "rectangular" : false,
-      "strokeOnly" : true,
-      "vertices" : [
+      "rectangular": false,
+      "strokeOnly": true,
+      "vertices": [
         [
-          699.58441162099996,
-          127.65000152499999
+          699.584411621,
+          127.650001525
         ],
         [
-          759.49541091899994,
-          127.65000152499999
+          759.4954109189999,
+          127.650001525
         ]
       ]
     },
     {
-      "filled" : false,
-      "image" : true,
-      "rect" : [
+      "filled": false,
+      "image": true,
+      "rect": [
         [
-          575.79602050699998,
+          575.796020507,
           146.1800039
         ],
         [
-          179.69897919300001,
-          361.02000829999997
+          179.698979193,
+          361.0200083
         ]
       ],
-      "rectangular" : false,
-      "vertices" : [
-
-      ]
+      "rectangular": false,
+      "vertices": []
     },
     {
-      "filled" : false,
-      "image" : false,
-      "rect" : [
+      "filled": false,
+      "image": false,
+      "rect": [
         [
           571.795410156,
           142.180023194
         ],
         [
           187.69999694800003,
-          369.01998901299999
+          369.019989013
         ]
       ],
-      "rectangular" : false,
-      "strokeOnly" : true,
-      "vertices" : [
-
-      ]
+      "rectangular": false,
+      "strokeOnly": true,
+      "vertices": []
     },
     {
-      "filled" : false,
-      "image" : false,
-      "rect" : [
+      "filled": false,
+      "image": false,
+      "rect": [
         [
-          174.41040000000001,
-          508.45001220699999
+          174.4104,
+          508.450012207
         ],
         [
-          366.94400000000007,
+          366.9440000000001,
           4
         ]
       ],
-      "rectangular" : false,
-      "strokeOnly" : true,
-      "vertices" : [
+      "rectangular": false,
+      "strokeOnly": true,
+      "vertices": [
         [
-          176.41040000000001,
-          510.45001220699999
+          176.4104,
+          510.450012207
         ],
         [
-          539.35440000000006,
-          510.45001220699999
+          539.3544,
+          510.450012207
         ]
       ]
     },
     {
-      "filled" : false,
-      "image" : false,
-      "rect" : [
+      "filled": false,
+      "image": false,
+      "rect": [
         [
-          171.39840698200001,
-          508.45001220699999
+          171.398406982,
+          508.450012207
         ],
         [
           371.46200561500007,
           4
         ]
       ],
-      "rectangular" : false,
-      "strokeOnly" : true,
-      "vertices" : [
-
-      ]
+      "rectangular": false,
+      "strokeOnly": true,
+      "vertices": []
     },
     {
-      "filled" : false,
-      "image" : false,
-      "rect" : [
+      "filled": false,
+      "image": false,
+      "rect": [
         [
           181.106399536,
-          490.14999389600001
+          490.149993896
         ],
         [
-          357.07000732400002,
+          357.070007324,
           4
         ]
       ],
-      "rectangular" : false,
-      "strokeOnly" : true,
-      "vertices" : [
+      "rectangular": false,
+      "strokeOnly": true,
+      "vertices": [
         [
           183.106399536,
-          492.14999389600001
+          492.149993896
         ],
         [
-          536.17640686000004,
-          492.14999389600001
+          536.17640686,
+          492.149993896
         ]
       ]
     },
     {
-      "filled" : false,
-      "image" : false,
-      "rect" : [
+      "filled": false,
+      "image": false,
+      "rect": [
         [
           178.101593017,
-          490.14999389600001
+          490.149993896
         ],
         [
-          361.57800292899992,
+          361.5780029289999,
           4
         ]
       ],
-      "rectangular" : false,
-      "strokeOnly" : true,
-      "vertices" : [
-
-      ]
+      "rectangular": false,
+      "strokeOnly": true,
+      "vertices": []
     },
     {
-      "filled" : false,
-      "image" : false,
-      "rect" : [
+      "filled": false,
+      "image": false,
+      "rect": [
         [
-          406.57949829099999,
+          406.579498291,
           471.850006103
         ],
         [
@@ -1551,23 +1539,23 @@
           4
         ]
       ],
-      "rectangular" : false,
-      "strokeOnly" : true,
-      "vertices" : [
+      "rectangular": false,
+      "strokeOnly": true,
+      "vertices": [
         [
-          408.57949829099999,
+          408.579498291,
           473.850006103
         ],
         [
-          523.75550079300001,
+          523.755500793,
           473.850006103
         ]
       ]
     },
     {
-      "filled" : false,
-      "image" : false,
-      "rect" : [
+      "filled": false,
+      "image": false,
+      "rect": [
         [
           403.587890625,
           471.850006103
@@ -1577,288 +1565,274 @@
           4
         ]
       ],
-      "rectangular" : false,
-      "strokeOnly" : true,
-      "vertices" : [
-
-      ]
+      "rectangular": false,
+      "strokeOnly": true,
+      "vertices": []
     },
     {
-      "filled" : false,
-      "image" : false,
-      "rect" : [
+      "filled": false,
+      "image": false,
+      "rect": [
         [
-          441.04861450099997,
-          453.54998779200002
+          441.048614501,
+          453.549987792
         ],
         [
-          94.124000000000024,
+          94.12400000000002,
           4
         ]
       ],
-      "rectangular" : false,
-      "strokeOnly" : true,
-      "vertices" : [
+      "rectangular": false,
+      "strokeOnly": true,
+      "vertices": [
         [
-          443.04861450099997,
-          455.54998779200002
+          443.048614501,
+          455.549987792
         ],
         [
           533.172614501,
-          455.54998779200002
+          455.549987792
         ]
       ]
     },
     {
-      "filled" : false,
-      "image" : false,
-      "rect" : [
+      "filled": false,
+      "image": false,
+      "rect": [
         [
-          438.09368896400002,
-          453.54998779200002
+          438.093688964,
+          453.549987792
         ],
         [
-          98.555999754999959,
+          98.55599975499996,
           4
         ]
       ],
-      "rectangular" : false,
-      "strokeOnly" : true,
-      "vertices" : [
-
-      ]
+      "rectangular": false,
+      "strokeOnly": true,
+      "vertices": []
     },
     {
-      "filled" : false,
-      "image" : false,
-      "rect" : [
+      "filled": false,
+      "image": false,
+      "rect": [
         [
-          328.84539794900002,
-          436.54998779200002
+          328.845397949,
+          436.549987792
         ],
         [
           211.25900268500004,
           4
         ]
       ],
-      "rectangular" : false,
-      "strokeOnly" : true,
-      "vertices" : [
+      "rectangular": false,
+      "strokeOnly": true,
+      "vertices": [
         [
-          330.84539794900002,
-          438.54998779200002
+          330.845397949,
+          438.549987792
         ],
         [
-          538.10440063400006,
-          438.54998779200002
+          538.1044006340001,
+          438.549987792
         ]
       ]
     },
     {
-      "filled" : false,
-      "image" : false,
-      "rect" : [
+      "filled": false,
+      "image": false,
+      "rect": [
         [
-          325.86331176700003,
-          436.54998779200002
+          325.863311767,
+          436.549987792
         ],
         [
           215.73199462800005,
           4
         ]
       ],
-      "rectangular" : false,
-      "strokeOnly" : true,
-      "vertices" : [
-
-      ]
+      "rectangular": false,
+      "strokeOnly": true,
+      "vertices": []
     },
     {
-      "filled" : false,
-      "image" : false,
-      "rect" : [
+      "filled": false,
+      "image": false,
+      "rect": [
         [
-          335.58880615200002,
-          421.04998779200002
+          335.588806152,
+          421.049987792
         ],
         [
           198.88000488200004,
           4
         ]
       ],
-      "rectangular" : false,
-      "strokeOnly" : true,
-      "vertices" : [
+      "rectangular": false,
+      "strokeOnly": true,
+      "vertices": [
         [
-          337.58880615200002,
-          423.04998779200002
+          337.588806152,
+          423.049987792
         ],
         [
-          532.46881103400005,
-          423.04998779200002
+          532.468811034,
+          423.049987792
         ]
       ]
     },
     {
-      "filled" : false,
-      "image" : false,
-      "rect" : [
+      "filled": false,
+      "image": false,
+      "rect": [
         [
-          332.56741333000002,
-          421.04998779200002
+          332.56741333,
+          421.049987792
         ],
         [
           203.41299438399994,
           4
         ]
       ],
-      "rectangular" : false,
-      "strokeOnly" : true,
-      "vertices" : [
-
-      ]
+      "rectangular": false,
+      "strokeOnly": true,
+      "vertices": []
     },
     {
-      "filled" : false,
-      "image" : false,
-      "rect" : [
+      "filled": false,
+      "image": false,
+      "rect": [
         [
-          329.51019287100002,
-          405.54998779200002
+          329.510192871,
+          405.549987792
         ],
         [
           204.95899963300002,
           4
         ]
       ],
-      "rectangular" : false,
-      "strokeOnly" : true,
-      "vertices" : [
+      "rectangular": false,
+      "strokeOnly": true,
+      "vertices": [
         [
-          331.51019287100002,
-          407.54998779200002
+          331.510192871,
+          407.549987792
         ],
         [
-          532.46919250400003,
-          407.54998779200002
+          532.469192504,
+          407.549987792
         ]
       ]
     },
     {
-      "filled" : false,
-      "image" : false,
-      "rect" : [
+      "filled": false,
+      "image": false,
+      "rect": [
         [
-          326.48831176700003,
-          405.54998779200002
+          326.488311767,
+          405.549987792
         ],
         [
-          209.49200439399999,
+          209.492004394,
           4
         ]
       ],
-      "rectangular" : false,
-      "strokeOnly" : true,
-      "vertices" : [
-
-      ]
+      "rectangular": false,
+      "strokeOnly": true,
+      "vertices": []
     },
     {
-      "filled" : false,
-      "image" : false,
-      "rect" : [
+      "filled": false,
+      "image": false,
+      "rect": [
         [
-          285.76049804600001,
-          390.04998779200002
+          285.760498046,
+          390.049987792
         ],
         [
           248.71800231899994,
           4
         ]
       ],
-      "rectangular" : false,
-      "strokeOnly" : true,
-      "vertices" : [
+      "rectangular": false,
+      "strokeOnly": true,
+      "vertices": [
         [
-          287.76049804600001,
-          392.04998779200002
+          287.760498046,
+          392.049987792
         ],
         [
-          532.47850036499995,
-          392.04998779200002
+          532.478500365,
+          392.049987792
         ]
       ]
     },
     {
-      "filled" : false,
-      "image" : false,
-      "rect" : [
+      "filled": false,
+      "image": false,
+      "rect": [
         [
           282.7578125,
-          390.04998779200002
+          390.049987792
         ],
         [
           253.22199999999998,
           4
         ]
       ],
-      "rectangular" : false,
-      "strokeOnly" : true,
-      "vertices" : [
-
-      ]
+      "rectangular": false,
+      "strokeOnly": true,
+      "vertices": []
     },
     {
-      "filled" : false,
-      "image" : false,
-      "rect" : [
+      "filled": false,
+      "image": false,
+      "rect": [
         [
-          380.38839721599999,
-          374.54998779200002
+          380.388397216,
+          374.549987792
         ],
         [
           154.10499572700002,
           4
         ]
       ],
-      "rectangular" : false,
-      "strokeOnly" : true,
-      "vertices" : [
+      "rectangular": false,
+      "strokeOnly": true,
+      "vertices": [
         [
-          382.38839721599999,
-          376.54998779200002
+          382.388397216,
+          376.549987792
         ],
         [
           532.493392943,
-          376.54998779200002
+          376.549987792
         ]
       ]
     },
     {
-      "filled" : false,
-      "image" : false,
-      "rect" : [
+      "filled": false,
+      "image": false,
+      "rect": [
         [
-          377.41598510699998,
-          374.54998779200002
+          377.415985107,
+          374.549987792
         ],
         [
           158.56399536100002,
           4
         ]
       ],
-      "rectangular" : false,
-      "strokeOnly" : true,
-      "vertices" : [
-
-      ]
+      "rectangular": false,
+      "strokeOnly": true,
+      "vertices": []
     },
     {
-      "filled" : false,
-      "image" : false,
-      "rect" : [
+      "filled": false,
+      "image": false,
+      "rect": [
         [
-          217.17640685999999,
+          217.17640686,
           344.25
         ],
         [
@@ -1866,89 +1840,85 @@
           4
         ]
       ],
-      "rectangular" : false,
-      "strokeOnly" : true,
-      "vertices" : [
+      "rectangular": false,
+      "strokeOnly": true,
+      "vertices": [
         [
-          219.17640685999999,
+          219.17640686,
           346.25
         ],
         [
-          533.14741516000004,
+          533.14741516,
           346.25
         ]
       ]
     },
     {
-      "filled" : false,
-      "image" : false,
-      "rect" : [
+      "filled": false,
+      "image": false,
+      "rect": [
         [
           214.171905517,
           344.25
         ],
         [
-          322.47799682599998,
+          322.477996826,
           4
         ]
       ],
-      "rectangular" : false,
-      "strokeOnly" : true,
-      "vertices" : [
-
-      ]
+      "rectangular": false,
+      "strokeOnly": true,
+      "vertices": []
     },
     {
-      "filled" : false,
-      "image" : false,
-      "rect" : [
+      "filled": false,
+      "image": false,
+      "rect": [
         [
-          147.76820373499999,
+          147.768203735,
           327.25
         ],
         [
-          392.32800292899998,
+          392.328002929,
           4
         ]
       ],
-      "rectangular" : false,
-      "strokeOnly" : true,
-      "vertices" : [
+      "rectangular": false,
+      "strokeOnly": true,
+      "vertices": [
         [
-          149.76820373499999,
+          149.768203735,
           329.25
         ],
         [
-          538.09620666399996,
+          538.096206664,
           329.25
         ]
       ]
     },
     {
-      "filled" : false,
-      "image" : false,
-      "rect" : [
+      "filled": false,
+      "image": false,
+      "rect": [
         [
-          144.76949999999999,
+          144.7695,
           327.25
         ],
         [
-          396.82598876899999,
+          396.825988769,
           4
         ]
       ],
-      "rectangular" : false,
-      "strokeOnly" : true,
-      "vertices" : [
-
-      ]
+      "rectangular": false,
+      "strokeOnly": true,
+      "vertices": []
     },
     {
-      "filled" : false,
-      "image" : false,
-      "rect" : [
+      "filled": false,
+      "image": false,
+      "rect": [
         [
-          406.37008666999998,
+          406.37008667,
           311.75
         ],
         [
@@ -1956,11 +1926,11 @@
           4
         ]
       ],
-      "rectangular" : false,
-      "strokeOnly" : true,
-      "vertices" : [
+      "rectangular": false,
+      "strokeOnly": true,
+      "vertices": [
         [
-          408.37008666999998,
+          408.37008667,
           313.75
         ],
         [
@@ -1970,30 +1940,28 @@
       ]
     },
     {
-      "filled" : false,
-      "image" : false,
-      "rect" : [
+      "filled": false,
+      "image": false,
+      "rect": [
         [
-          403.38769531200001,
+          403.387695312,
           311.75
         ],
         [
-          138.20699999999999,
+          138.207,
           4
         ]
       ],
-      "rectangular" : false,
-      "strokeOnly" : true,
-      "vertices" : [
-
-      ]
+      "rectangular": false,
+      "strokeOnly": true,
+      "vertices": []
     },
     {
-      "filled" : false,
-      "image" : false,
-      "rect" : [
+      "filled": false,
+      "image": false,
+      "rect": [
         [
-          426.77441406200001,
+          426.774414062,
           296.25
         ],
         [
@@ -2001,25 +1969,25 @@
           4
         ]
       ],
-      "rectangular" : false,
-      "strokeOnly" : true,
-      "vertices" : [
+      "rectangular": false,
+      "strokeOnly": true,
+      "vertices": [
         [
-          428.77441406200001,
+          428.774414062,
           298.25
         ],
         [
-          532.47741699100004,
+          532.477416991,
           298.25
         ]
       ]
     },
     {
-      "filled" : false,
-      "image" : false,
-      "rect" : [
+      "filled": false,
+      "image": false,
+      "rect": [
         [
-          423.76858520500002,
+          423.768585205,
           296.25
         ],
         [
@@ -2027,108 +1995,102 @@
           4
         ]
       ],
-      "rectangular" : false,
-      "strokeOnly" : true,
-      "vertices" : [
-
-      ]
+      "rectangular": false,
+      "strokeOnly": true,
+      "vertices": []
     },
     {
-      "filled" : false,
-      "image" : false,
-      "rect" : [
+      "filled": false,
+      "image": false,
+      "rect": [
         [
-          477.69729614200003,
+          477.697296142,
           280.75
         ],
         [
-          56.775001524999993,
+          56.77500152499999,
           4
         ]
       ],
-      "rectangular" : false,
-      "strokeOnly" : true,
-      "vertices" : [
+      "rectangular": false,
+      "strokeOnly": true,
+      "vertices": [
         [
-          479.69729614200003,
+          479.697296142,
           282.75
         ],
         [
-          532.47229766700002,
+          532.472297667,
           282.75
         ]
       ]
     },
     {
-      "filled" : false,
-      "image" : false,
-      "rect" : [
+      "filled": false,
+      "image": false,
+      "rect": [
         [
-          474.68161010699998,
+          474.681610107,
           280.75
         ],
         [
-          61.298000000000002,
+          61.298,
           4
         ]
       ],
-      "rectangular" : false,
-      "strokeOnly" : true,
-      "vertices" : [
-
-      ]
+      "rectangular": false,
+      "strokeOnly": true,
+      "vertices": []
     },
     {
-      "filled" : false,
-      "image" : false,
-      "rect" : [
+      "filled": false,
+      "image": false,
+      "rect": [
         [
           182.125,
           265.25
         ],
         [
-          352.35998535099998,
+          352.359985351,
           4
         ]
       ],
-      "rectangular" : false,
-      "strokeOnly" : true,
-      "vertices" : [
+      "rectangular": false,
+      "strokeOnly": true,
+      "vertices": [
         [
           184.125,
           267.25
         ],
         [
-          532.48498535099998,
+          532.484985351,
           267.25
         ]
       ]
     },
     {
-      "filled" : false,
-      "image" : false,
-      "rect" : [
+      "filled": false,
+      "image": false,
+      "rect": [
         [
           179.134796142,
           265.25
         ],
         [
-          356.84500121999997,
+          356.84500122,
           4
         ]
       ],
-      "rectangular" : false,
-      "strokeOnly" : true,
-      "vertices" : [
-
-      ]
+      "rectangular": false,
+      "strokeOnly": true,
+      "vertices": []
     },
     {
-      "filled" : false,
-      "image" : false,
-      "rect" : [
+      "filled": false,
+      "image": false,
+      "rect": [
         [
-          143.88639831500001,
+          143.886398315,
           249.75
         ],
         [
@@ -2136,455 +2098,435 @@
           4
         ]
       ],
-      "rectangular" : false,
-      "strokeOnly" : true,
-      "vertices" : [
+      "rectangular": false,
+      "strokeOnly": true,
+      "vertices": [
         [
-          145.88639831500001,
+          145.886398315,
           251.75
         ],
         [
-          532.47538757200005,
+          532.475387572,
           251.75
         ]
       ]
     },
     {
-      "filled" : false,
-      "image" : false,
-      "rect" : [
+      "filled": false,
+      "image": false,
+      "rect": [
         [
-          140.87789917000001,
+          140.87789917,
           249.75
         ],
         [
-          395.10198974600007,
+          395.1019897460001,
           4
         ]
       ],
-      "rectangular" : false,
-      "strokeOnly" : true,
-      "vertices" : [
-
-      ]
+      "rectangular": false,
+      "strokeOnly": true,
+      "vertices": []
     },
     {
-      "filled" : false,
-      "image" : false,
-      "rect" : [
+      "filled": false,
+      "image": false,
+      "rect": [
         [
-          273.22750854399999,
-          219.44999694800001
+          273.227508544,
+          219.449996948
         ],
         [
-          261.91400146400008,
+          261.9140014640001,
           4
         ]
       ],
-      "rectangular" : false,
-      "strokeOnly" : true,
-      "vertices" : [
+      "rectangular": false,
+      "strokeOnly": true,
+      "vertices": [
         [
-          275.22750854399999,
-          221.44999694800001
+          275.227508544,
+          221.449996948
         ],
         [
-          533.14151000800007,
-          221.44999694800001
-        ]
-      ]
-    },
-    {
-      "filled" : false,
-      "image" : false,
-      "rect" : [
-        [
-          270.21090698199998,
-          219.44999694800001
-        ],
-        [
-          266.43899536100002,
-          4
-        ]
-      ],
-      "rectangular" : false,
-      "strokeOnly" : true,
-      "vertices" : [
-
-      ]
-    },
-    {
-      "filled" : false,
-      "image" : false,
-      "rect" : [
-        [
-          147.76820373499999,
-          202.44999694800001
-        ],
-        [
-          392.32800292899998,
-          4
-        ]
-      ],
-      "rectangular" : false,
-      "strokeOnly" : true,
-      "vertices" : [
-        [
-          149.76820373499999,
-          204.44999694800001
-        ],
-        [
-          538.09620666399996,
-          204.44999694800001
+          533.1415100080001,
+          221.449996948
         ]
       ]
     },
     {
-      "filled" : false,
-      "image" : false,
-      "rect" : [
+      "filled": false,
+      "image": false,
+      "rect": [
         [
-          144.76949999999999,
-          202.44999694800001
+          270.210906982,
+          219.449996948
         ],
         [
-          396.82598876899999,
+          266.438995361,
           4
         ]
       ],
-      "rectangular" : false,
-      "strokeOnly" : true,
-      "vertices" : [
-
+      "rectangular": false,
+      "strokeOnly": true,
+      "vertices": []
+    },
+    {
+      "filled": false,
+      "image": false,
+      "rect": [
+        [
+          147.768203735,
+          202.449996948
+        ],
+        [
+          392.328002929,
+          4
+        ]
+      ],
+      "rectangular": false,
+      "strokeOnly": true,
+      "vertices": [
+        [
+          149.768203735,
+          204.449996948
+        ],
+        [
+          538.096206664,
+          204.449996948
+        ]
       ]
     },
     {
-      "filled" : false,
-      "image" : false,
-      "rect" : [
+      "filled": false,
+      "image": false,
+      "rect": [
         [
-          445.81610107400002,
-          186.94999694800001
+          144.7695,
+          202.449996948
         ],
         [
-          94.299003600999981,
+          396.825988769,
           4
         ]
       ],
-      "rectangular" : false,
-      "strokeOnly" : true,
-      "vertices" : [
+      "rectangular": false,
+      "strokeOnly": true,
+      "vertices": []
+    },
+    {
+      "filled": false,
+      "image": false,
+      "rect": [
         [
-          447.81610107400002,
-          188.94999694800001
+          445.816101074,
+          186.949996948
+        ],
+        [
+          94.29900360099998,
+          4
+        ]
+      ],
+      "rectangular": false,
+      "strokeOnly": true,
+      "vertices": [
+        [
+          447.816101074,
+          188.949996948
         ],
         [
           538.115104675,
-          188.94999694800001
+          188.949996948
         ]
       ]
     },
     {
-      "filled" : false,
-      "image" : false,
-      "rect" : [
+      "filled": false,
+      "image": false,
+      "rect": [
         [
-          442.85549926700003,
-          186.94999694800001
+          442.855499267,
+          186.949996948
         ],
         [
-          98.739997862999985,
+          98.73999786299999,
           4
         ]
       ],
-      "rectangular" : false,
-      "strokeOnly" : true,
-      "vertices" : [
-
-      ]
+      "rectangular": false,
+      "strokeOnly": true,
+      "vertices": []
     },
     {
-      "filled" : false,
-      "image" : false,
-      "rect" : [
+      "filled": false,
+      "image": false,
+      "rect": [
         [
-          465.11358642499999,
-          171.44999694800001
+          465.113586425,
+          171.449996948
         ],
         [
           69.34699999999998,
           4
         ]
       ],
-      "rectangular" : false,
-      "strokeOnly" : true,
-      "vertices" : [
+      "rectangular": false,
+      "strokeOnly": true,
+      "vertices": [
         [
-          467.11358642499999,
-          173.44999694800001
+          467.113586425,
+          173.449996948
         ],
         [
-          532.46058642499997,
-          173.44999694800001
+          532.460586425,
+          173.449996948
         ]
       ]
     },
     {
-      "filled" : false,
-      "image" : false,
-      "rect" : [
+      "filled": false,
+      "image": false,
+      "rect": [
         [
-          462.07418823199998,
-          171.44999694800001
+          462.074188232,
+          171.449996948
         ],
         [
-          73.905998230000023,
+          73.90599823000002,
           4
         ]
       ],
-      "rectangular" : false,
-      "strokeOnly" : true,
-      "vertices" : [
-
-      ]
+      "rectangular": false,
+      "strokeOnly": true,
+      "vertices": []
     },
     {
-      "filled" : false,
-      "image" : false,
-      "rect" : [
+      "filled": false,
+      "image": false,
+      "rect": [
         [
-          464.07919311500001,
-          155.94999694800001
+          464.079193115,
+          155.949996948
         ],
         [
-          70.425003051000033,
+          70.42500305100003,
           4
         ]
       ],
-      "rectangular" : false,
-      "strokeOnly" : true,
-      "vertices" : [
+      "rectangular": false,
+      "strokeOnly": true,
+      "vertices": [
         [
-          466.07919311500001,
-          157.94999694800001
+          466.079193115,
+          157.949996948
         ],
         [
-          532.50419616600004,
-          157.94999694800001
+          532.504196166,
+          157.949996948
         ]
       ]
     },
     {
-      "filled" : false,
-      "image" : false,
-      "rect" : [
+      "filled": false,
+      "image": false,
+      "rect": [
         [
-          461.12701415999999,
-          155.94999694800001
+          461.12701416,
+          155.949996948
         ],
         [
-          74.852996826000037,
+          74.85299682600004,
           4
         ]
       ],
-      "rectangular" : false,
-      "strokeOnly" : true,
-      "vertices" : [
-
-      ]
+      "rectangular": false,
+      "strokeOnly": true,
+      "vertices": []
     },
     {
-      "filled" : false,
-      "image" : false,
-      "rect" : [
+      "filled": false,
+      "image": false,
+      "rect": [
         [
           385.110595703,
-          140.44999694800001
+          140.449996948
         ],
         [
           149.371002197,
           4
         ]
       ],
-      "rectangular" : false,
-      "strokeOnly" : true,
-      "vertices" : [
+      "rectangular": false,
+      "strokeOnly": true,
+      "vertices": [
         [
           387.110595703,
-          142.44999694800001
+          142.449996948
         ],
         [
           532.4815979,
-          142.44999694800001
+          142.449996948
         ]
       ]
     },
     {
-      "filled" : false,
-      "image" : false,
-      "rect" : [
+      "filled": false,
+      "image": false,
+      "rect": [
         [
-          382.11331176700003,
-          140.44999694800001
+          382.113311767,
+          140.449996948
         ],
         [
-          153.86700439399999,
+          153.867004394,
           4
         ]
       ],
-      "rectangular" : false,
-      "strokeOnly" : true,
-      "vertices" : [
-
-      ]
+      "rectangular": false,
+      "strokeOnly": true,
+      "vertices": []
     },
     {
-      "filled" : false,
-      "image" : false,
-      "rect" : [
+      "filled": false,
+      "image": false,
+      "rect": [
         [
-          413.70550537100002,
-          124.94999694800001
+          413.705505371,
+          124.949996948
         ],
         [
           120.758003234,
           4
         ]
       ],
-      "rectangular" : false,
-      "strokeOnly" : true,
-      "vertices" : [
+      "rectangular": false,
+      "strokeOnly": true,
+      "vertices": [
         [
-          415.70550537100002,
-          126.94999694800001
+          415.705505371,
+          126.949996948
         ],
         [
-          532.46350860500002,
-          126.94999694800001
+          532.463508605,
+          126.949996948
         ]
       ]
     },
     {
-      "filled" : false,
-      "image" : false,
-      "rect" : [
+      "filled": false,
+      "image": false,
+      "rect": [
         [
-          410.67291259699999,
-          124.94999694800001
+          410.672912597,
+          124.949996948
         ],
         [
           125.30699920600006,
           4
         ]
       ],
-      "rectangular" : false,
-      "strokeOnly" : true,
-      "vertices" : [
-
-      ]
+      "rectangular": false,
+      "strokeOnly": true,
+      "vertices": []
     },
     {
-      "filled" : false,
-      "image" : false,
-      "rect" : [
+      "filled": false,
+      "image": false,
+      "rect": [
         [
           182.125,
-          109.44999694800001
+          109.449996948
         ],
         [
-          352.35998535099998,
+          352.359985351,
           4
         ]
       ],
-      "rectangular" : false,
-      "strokeOnly" : true,
-      "vertices" : [
+      "rectangular": false,
+      "strokeOnly": true,
+      "vertices": [
         [
           184.125,
-          111.44999694800001
+          111.449996948
         ],
         [
-          532.48498535099998,
-          111.44999694800001
+          532.484985351,
+          111.449996948
         ]
       ]
     },
     {
-      "filled" : false,
-      "image" : false,
-      "rect" : [
+      "filled": false,
+      "image": false,
+      "rect": [
         [
           179.134796142,
-          109.44999694800001
+          109.449996948
         ],
         [
-          356.84500121999997,
+          356.84500122,
           4
         ]
       ],
-      "rectangular" : false,
-      "strokeOnly" : true,
-      "vertices" : [
-
-      ]
+      "rectangular": false,
+      "strokeOnly": true,
+      "vertices": []
     },
     {
-      "filled" : false,
-      "image" : false,
-      "rect" : [
+      "filled": false,
+      "image": false,
+      "rect": [
         [
-          143.88639831500001,
-          93.949996948000006
+          143.886398315,
+          93.949996948
         ],
         [
           390.58898925700004,
           4
         ]
       ],
-      "rectangular" : false,
-      "strokeOnly" : true,
-      "vertices" : [
+      "rectangular": false,
+      "strokeOnly": true,
+      "vertices": [
         [
-          145.88639831500001,
-          95.949996948000006
+          145.886398315,
+          95.949996948
         ],
         [
-          532.47538757200005,
-          95.949996948000006
+          532.475387572,
+          95.949996948
         ]
       ]
     },
     {
-      "filled" : false,
-      "image" : false,
-      "rect" : [
+      "filled": false,
+      "image": false,
+      "rect": [
         [
-          140.87789917000001,
-          93.949996948000006
+          140.87789917,
+          93.949996948
         ],
         [
-          395.10198974600007,
+          395.1019897460001,
           4
         ]
       ],
-      "rectangular" : false,
-      "strokeOnly" : true,
-      "vertices" : [
-
-      ]
+      "rectangular": false,
+      "strokeOnly": true,
+      "vertices": []
     }
   ],
-  "pictures" : [
+  "pictures": [
     [
       358.5,
       146.1800039,
       433.5,
-      465.81999610000003
+      465.8199961
     ]
   ],
-  "rightsBasis" : "NOAA repository explicitly identifies CC0 Public Domain. This records the publisher declaration, not a new owner-confirmed rights determination or shipped-catalog admission.",
-  "schemaVersion" : 3,
-  "sourceSHA256" : "1942cbf346dc2c711fea413d6d6543edb8bc1e3a88d4c3a85e733c6b6d3577bf",
-  "sourceTitle" : "Fifth National Climate Assessment",
-  "sourceURL" : "https://repository.library.noaa.gov/view/noaa/61592/noaa_61592_DS1.pdf"
+  "rightsBasis": "NOAA repository explicitly identifies CC0 Public Domain. This records the publisher declaration, not a new owner-confirmed rights determination or shipped-catalog admission.",
+  "schemaVersion": 3,
+  "sourceSHA256": "1942cbf346dc2c711fea413d6d6543edb8bc1e3a88d4c3a85e733c6b6d3577bf",
+  "sourceTitle": "Fifth National Climate Assessment",
+  "sourceURL": "https://repository.library.noaa.gov/view/noaa/61592/noaa_61592_DS1.pdf"
 }

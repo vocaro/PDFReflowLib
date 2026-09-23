@@ -1,0 +1,3313 @@
+{
+  "attributedLines": [
+    {
+      "rect": [
+        36,
+        13.9001,
+        720.000187988,
+        14.19
+      ],
+      "runs": [
+        {
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 10,
+          "text": "Fifth National Climate Assessment xxiv"
+        }
+      ],
+      "text": "Fifth National Climate Assessment xxiv"
+    },
+    {
+      "rect": [
+        36,
+        559.788124511,
+        260.624,
+        20.258000000000038
+      ],
+      "runs": [
+        {
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 14,
+          "text": "Structure and Format of Chapter Content"
+        }
+      ],
+      "text": "Structure and Format of Chapter Content"
+    },
+    {
+      "rect": [
+        36,
+        535.024124511,
+        77.41199999999999,
+        17.364000000000033
+      ],
+      "runs": [
+        {
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 12,
+          "text": "Key Messages"
+        }
+      ],
+      "text": "Key Messages"
+    },
+    {
+      "rect": [
+        36,
+        519.1300878899999,
+        257.76800000000003,
+        13.850000000000023
+      ],
+      "runs": [
+        {
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 10,
+          "text": "Chapters are centered around Key Messages, which are"
+        }
+      ],
+      "text": "Chapters are centered around Key Messages, which are"
+    },
+    {
+      "rect": [
+        36,
+        505.13008789,
+        296.41600000000005,
+        13.850000000000023
+      ],
+      "runs": [
+        {
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 10,
+          "text": "conclusions based on authors’ expert judgment and synthesis of"
+        }
+      ],
+      "text": "conclusions based on authors’ expert judgment and synthesis of"
+    },
+    {
+      "rect": [
+        36,
+        491.13008789,
+        290.6270000000002,
+        13.850000000000023
+      ],
+      "runs": [
+        {
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 10,
+          "text": "the assessed information sources. Many Key Messages present"
+        }
+      ],
+      "text": "the assessed information sources. Many Key Messages present"
+    },
+    {
+      "rect": [
+        36,
+        477.13008789,
+        302.94700000000006,
+        13.850000000000023
+      ],
+      "runs": [
+        {
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 10,
+          "text": "findings in the context of risks to natural and/or human systems."
+        }
+      ],
+      "text": "findings in the context of risks to natural and/or human systems."
+    },
+    {
+      "rect": [
+        36,
+        463.13008789,
+        268.58700000000005,
+        13.850000000000023
+      ],
+      "runs": [
+        {
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 10,
+          "text": "The text supporting each Key Message provides evidence,"
+        }
+      ],
+      "text": "The text supporting each Key Message provides evidence,"
+    },
+    {
+      "rect": [
+        36,
+        449.13008789,
+        298.2570000000002,
+        13.850000000000023
+      ],
+      "runs": [
+        {
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 10,
+          "text": "discusses implications, identifies intersections between systems"
+        }
+      ],
+      "text": "discusses implications, identifies intersections between systems"
+    },
+    {
+      "rect": [
+        36,
+        435.13008789,
+        299.20600000000013,
+        13.850000000000023
+      ],
+      "runs": [
+        {
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 10,
+          "text": "or hazards, and presents examples of paths to greater resilience."
+        }
+      ],
+      "text": "or hazards, and presents examples of paths to greater resilience."
+    },
+    {
+      "rect": [
+        36,
+        403.42408789,
+        144.8748,
+        17.363999999999976
+      ],
+      "runs": [
+        {
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 12,
+          "text": "Confidence and Likelihood"
+        }
+      ],
+      "text": "Confidence and Likelihood"
+    },
+    {
+      "rect": [
+        36,
+        387.530112304,
+        258.8860000000002,
+        13.850000000000023
+      ],
+      "runs": [
+        {
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 10,
+          "text": "Evaluating confidence and likelihood is a key part of the"
+        }
+      ],
+      "text": "Evaluating confidence and likelihood is a key part of the"
+    },
+    {
+      "rect": [
+        36,
+        373.530112304,
+        278.26700000000017,
+        13.850000000000023
+      ],
+      "runs": [
+        {
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 10,
+          "text": "assessment process. As in previous Assessments, NCA5 uses"
+        }
+      ],
+      "text": "assessment process. As in previous Assessments, NCA5 uses"
+    },
+    {
+      "rect": [
+        36,
+        359.530112304,
+        300.1259999961801,
+        13.850000000000023
+      ],
+      "runs": [
+        {
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 10,
+          "text": "specific terms to convey information about scientific confidence"
+        }
+      ],
+      "text": "specific terms to convey information about scientific confidence"
+    },
+    {
+      "rect": [
+        36,
+        345.530112304,
+        272.70588745099997,
+        13.850000000000023
+      ],
+      "runs": [
+        {
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 10,
+          "text": "and certainty associated with important findings, observa-"
+        }
+      ],
+      "text": "and certainty associated with important findings, observa-"
+    },
+    {
+      "rect": [
+        36,
+        331.530112304,
+        297.9860000000002,
+        13.850000000000023
+      ],
+      "runs": [
+        {
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 10,
+          "text": "tions, and projections. Chapter authors use a range of calibrated"
+        }
+      ],
+      "text": "tions, and projections. Chapter authors use a range of calibrated"
+    },
+    {
+      "rect": [
+        36,
+        317.530112304,
+        281.61700000381995,
+        13.850000000000023
+      ],
+      "runs": [
+        {
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 10,
+          "text": "terms adopted from the Intergovernmental Panel on Climate"
+        }
+      ],
+      "text": "terms adopted from the Intergovernmental Panel on Climate"
+    },
+    {
+      "rect": [
+        36,
+        303.530112304,
+        299.08620214418,
+        13.850000000000023
+      ],
+      "runs": [
+        {
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 10,
+          "text": "Change (IPCC) Fifth Assessment Report"
+        },
+        {
+          "baselineOffset": 3.3299865719999957,
+          "fontName": "Helvetica",
+          "fontSize": 5.83,
+          "text": "4"
+        },
+        {
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 10,
+          "text": " to describe the levels of"
+        }
+      ],
+      "text": "Change (IPCC) Fifth Assessment Report4 to describe the levels of"
+    },
+    {
+      "rect": [
+        36,
+        289.400112304,
+        302.56628784099996,
+        14.899999999999977
+      ],
+      "runs": [
+        {
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 10,
+          "text": "confidence and, where appropriate, the assessment of likelihood"
+        }
+      ],
+      "text": "confidence and, where appropriate, the assessment of likelihood"
+    },
+    {
+      "rect": [
+        36,
+        275.530112304,
+        305.96699999618016,
+        13.850000000000023
+      ],
+      "runs": [
+        {
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 10,
+          "text": "associated with the statements in their Key Messages (Tables 1, 2)."
+        }
+      ],
+      "text": "associated with the statements in their Key Messages (Tables 1, 2)."
+    },
+    {
+      "rect": [
+        45,
+        252.530097045,
+        4.009999999999998,
+        13.850000000000023
+      ],
+      "runs": [
+        {
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 10,
+          "text": "•"
+        }
+      ],
+      "text": "•"
+    },
+    {
+      "rect": [
+        58.5,
+        252.400097045,
+        248.33609999618,
+        14.899999999999977
+      ],
+      "runs": [
+        {
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 10,
+          "text": "Confidence in a finding is based on the type, amount,"
+        }
+      ],
+      "text": "Confidence in a finding is based on the type, amount,"
+    },
+    {
+      "rect": [
+        58.5,
+        238.530097045,
+        255.94699999618,
+        13.849999999999994
+      ],
+      "runs": [
+        {
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 10,
+          "text": "quality, strength, and consistency of evidence; the skill,"
+        }
+      ],
+      "text": "quality, strength, and consistency of evidence; the skill,"
+    },
+    {
+      "rect": [
+        58.5,
+        224.530097045,
+        252.5370000000001,
+        13.849999999999994
+      ],
+      "runs": [
+        {
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 10,
+          "text": "range, and consistency of methods to detect, evaluate,"
+        }
+      ],
+      "text": "range, and consistency of methods to detect, evaluate,"
+    },
+    {
+      "rect": [
+        58.5,
+        210.530097045,
+        264.62600000191014,
+        13.849999999999994
+      ],
+      "runs": [
+        {
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 10,
+          "text": "attribute, and interpret climate trends; and the degree of"
+        }
+      ],
+      "text": "attribute, and interpret climate trends; and the degree of"
+    },
+    {
+      "rect": [
+        58.5,
+        196.530097045,
+        226.48799999999994,
+        13.849999999999994
+      ],
+      "runs": [
+        {
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 10,
+          "text": "agreement across scientific information sources."
+        }
+      ],
+      "text": "agreement across scientific information sources."
+    },
+    {
+      "rect": [
+        45,
+        178.030097045,
+        4.009999999999998,
+        13.849999999999994
+      ],
+      "runs": [
+        {
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 10,
+          "text": "•"
+        }
+      ],
+      "text": "•"
+    },
+    {
+      "rect": [
+        58.5,
+        177.900097045,
+        263.21629748118005,
+        14.900000000000006
+      ],
+      "runs": [
+        {
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 10,
+          "text": "Likelihood of a finding is based on measures of certainty"
+        }
+      ],
+      "text": "Likelihood of a finding is based on measures of certainty"
+    },
+    {
+      "rect": [
+        58.5,
+        164.030097045,
+        243.35700000000008,
+        13.849999999999994
+      ],
+      "runs": [
+        {
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 10,
+          "text": "expressed probabilistically; in other words, based on"
+        }
+      ],
+      "text": "expressed probabilistically; in other words, based on"
+    },
+    {
+      "rect": [
+        58.5,
+        150.030097045,
+        279.66700000000014,
+        13.849999999999994
+      ],
+      "runs": [
+        {
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 10,
+          "text": "statistical analysis of observed or projected results or on the"
+        }
+      ],
+      "text": "statistical analysis of observed or projected results or on the"
+    },
+    {
+      "rect": [
+        58.5,
+        136.030097045,
+        274.54700000000014,
+        13.849999999999994
+      ],
+      "runs": [
+        {
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 10,
+          "text": "authors’ expert judgment based on their assessment across"
+        }
+      ],
+      "text": "authors’ expert judgment based on their assessment across"
+    },
+    {
+      "rect": [
+        58.5,
+        122.030097045,
+        141.429,
+        13.850000000000009
+      ],
+      "runs": [
+        {
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 10,
+          "text": "scientific information sources."
+        }
+      ],
+      "text": "scientific information sources."
+    },
+    {
+      "rect": [
+        36,
+        103.530097045,
+        292.5669999961801,
+        13.850000000000009
+      ],
+      "runs": [
+        {
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 10,
+          "text": "These calibrated terms are presented in parentheses and set in"
+        }
+      ],
+      "text": "These calibrated terms are presented in parentheses and set in"
+    },
+    {
+      "rect": [
+        36,
+        89.400097045,
+        292.49639971900007,
+        13.980000000000018
+      ],
+      "runs": [
+        {
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 10,
+          "text": "italics after relevant phrases or sentences in the Key Messages."
+        }
+      ],
+      "text": "italics after relevant phrases or sentences in the Key Messages."
+    },
+    {
+      "rect": [
+        36,
+        75.530097045,
+        301.25600000000003,
+        13.850000000000009
+      ],
+      "runs": [
+        {
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 10,
+          "text": "Statements in Key Messages that do not include either likelihood"
+        }
+      ],
+      "text": "Statements in Key Messages that do not include either likelihood"
+    },
+    {
+      "rect": [
+        36,
+        61.530097045,
+        296.8470000000002,
+        13.850000000000001
+      ],
+      "runs": [
+        {
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 10,
+          "text": "or confidence terms are intended as statements of fact. In some"
+        }
+      ],
+      "text": "or confidence terms are intended as statements of fact. In some"
+    },
+    {
+      "rect": [
+        36,
+        47.530100000000004,
+        278.30599999618005,
+        13.850000000000001
+      ],
+      "runs": [
+        {
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 10,
+          "text": "cases, calibrated likelihood assessments are also included in"
+        }
+      ],
+      "text": "cases, calibrated likelihood assessments are also included in"
+    },
+    {
+      "rect": [
+        36,
+        33.5301,
+        245.80700000000002,
+        13.850000000000001
+      ],
+      "runs": [
+        {
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 10,
+          "text": "italics in the narrative text supporting Key Messages."
+        }
+      ],
+      "text": "italics in the narrative text supporting Key Messages."
+    },
+    {
+      "rect": [
+        373.5,
+        554.3609877920001,
+        229.03920000000005,
+        11.942999999999984
+      ],
+      "runs": [
+        {
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 9,
+          "text": "Table 1. Calibrated Language for Confidence Assessment"
+        }
+      ],
+      "text": "Table 1. Calibrated Language for Confidence Assessment"
+    },
+    {
+      "rect": [
+        373.5,
+        537.3749877920001,
+        384.9713999862753,
+        12.635999999999967
+      ],
+      "runs": [
+        {
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 9,
+          "text": "The NCA5 calibrated uncertainty language listed here and in Table 2 follows standards developed"
+        }
+      ],
+      "text": "The NCA5 calibrated uncertainty language listed here and in Table 2 follows standards developed"
+    },
+    {
+      "rect": [
+        373.5,
+        525.3749877920001,
+        366.07320000000004,
+        12.635999999999967
+      ],
+      "runs": [
+        {
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 9,
+          "text": "for the Intergovernmental Panel on Climate Change Fifth Assessment Report. The confidence"
+        }
+      ],
+      "text": "for the Intergovernmental Panel on Climate Change Fifth Assessment Report. The confidence"
+    },
+    {
+      "rect": [
+        373.5,
+        513.3749877920001,
+        373.225500000009,
+        12.635999999999967
+      ],
+      "runs": [
+        {
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 9,
+          "text": "levels listed below are used to reflect the quantity, quality, and degree of agreement across the"
+        }
+      ],
+      "text": "levels listed below are used to reflect the quantity, quality, and degree of agreement across the"
+    },
+    {
+      "rect": [
+        373.5,
+        501.374987792,
+        331.935821605,
+        12.636000000000024
+      ],
+      "runs": [
+        {
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 9,
+          "text": "evidence base underpinning an assessment finding. Source: Mastrandrea et al. 2011"
+        },
+        {
+          "baselineOffset": 2.9970092779999504,
+          "fontName": "Helvetica",
+          "fontSize": 5.247,
+          "text": "4"
+        }
+      ],
+      "text": "evidence base underpinning an assessment finding. Source: Mastrandrea et al. 20114"
+    },
+    {
+      "rect": [
+        382.5,
+        480.35100854399997,
+        126.46798779200003,
+        11.942999999999984
+      ],
+      "runs": [
+        {
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 9,
+          "text": "Confidence Level Definition"
+        }
+      ],
+      "text": "Confidence Level Definition"
+    },
+    {
+      "rect": [
+        382.5,
+        447.050990234,
+        37.06829999656202,
+        11.942999999999984
+      ],
+      "runs": [
+        {
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 9,
+          "text": "Very high"
+        }
+      ],
+      "text": "Very high"
+    },
+    {
+      "rect": [
+        469.799987792,
+        459.85100854399997,
+        3.0330000000000155,
+        11.942999999999984
+      ],
+      "runs": [
+        {
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 9,
+          "text": "•"
+        }
+      ],
+      "text": "•"
+    },
+    {
+      "rect": [
+        478.799987792,
+        459.85100854399997,
+        257.44151953200014,
+        11.942999999999984
+      ],
+      "runs": [
+        {
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 9,
+          "text": "Strong evidence (established theory, multiple sources, well-docu-"
+        }
+      ],
+      "text": "Strong evidence (established theory, multiple sources, well-docu-"
+    },
+    {
+      "rect": [
+        478.799987792,
+        448.85100854399997,
+        146.28599999999994,
+        11.942999999999984
+      ],
+      "runs": [
+        {
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 9,
+          "text": "mented and accepted methods, etc.)"
+        }
+      ],
+      "text": "mented and accepted methods, etc.)"
+    },
+    {
+      "rect": [
+        469.799987792,
+        434.25100244099997,
+        3.0330000000000155,
+        11.942999999999984
+      ],
+      "runs": [
+        {
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 9,
+          "text": "•"
+        }
+      ],
+      "text": "•"
+    },
+    {
+      "rect": [
+        478.799987792,
+        434.25100244099997,
+        64.27800000000002,
+        11.942999999999984
+      ],
+      "runs": [
+        {
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 9,
+          "text": "High consensus"
+        }
+      ],
+      "text": "High consensus"
+    },
+    {
+      "rect": [
+        382.5,
+        403.00100244099997,
+        18.612000000000023,
+        11.942999999999984
+      ],
+      "runs": [
+        {
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 9,
+          "text": "High"
+        }
+      ],
+      "text": "High"
+    },
+    {
+      "rect": [
+        469.799987792,
+        415.800990234,
+        3.0330000000000155,
+        11.942999999999984
+      ],
+      "runs": [
+        {
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 9,
+          "text": "•"
+        }
+      ],
+      "text": "•"
+    },
+    {
+      "rect": [
+        478.799987792,
+        415.800990234,
+        259.2999000188911,
+        11.942999999999984
+      ],
+      "runs": [
+        {
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 9,
+          "text": "Moderate evidence (several sources, some consistency, methods"
+        }
+      ],
+      "text": "Moderate evidence (several sources, some consistency, methods"
+    },
+    {
+      "rect": [
+        478.799987792,
+        404.800990234,
+        159.79679999828102,
+        11.942999999999984
+      ],
+      "runs": [
+        {
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 9,
+          "text": "vary and/or documentation limited, etc.)"
+        }
+      ],
+      "text": "vary and/or documentation limited, etc.)"
+    },
+    {
+      "rect": [
+        469.799987792,
+        390.20101464799995,
+        3.0330000000000155,
+        11.942999999999984
+      ],
+      "runs": [
+        {
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 9,
+          "text": "•"
+        }
+      ],
+      "text": "•"
+    },
+    {
+      "rect": [
+        478.799987792,
+        390.20101464799995,
+        78.399,
+        11.942999999999984
+      ],
+      "runs": [
+        {
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 9,
+          "text": "Medium consensus"
+        }
+      ],
+      "text": "Medium consensus"
+    },
+    {
+      "rect": [
+        382.5,
+        358.95101464799995,
+        32.733000000000004,
+        11.942999999999984
+      ],
+      "runs": [
+        {
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 9,
+          "text": "Medium"
+        }
+      ],
+      "text": "Medium"
+    },
+    {
+      "rect": [
+        469.799987792,
+        371.75100244099997,
+        3.0330000000000155,
+        11.942999999999984
+      ],
+      "runs": [
+        {
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 9,
+          "text": "•"
+        }
+      ],
+      "text": "•"
+    },
+    {
+      "rect": [
+        478.799987792,
+        371.75100244099997,
+        263.0924999879941,
+        11.942999999999984
+      ],
+      "runs": [
+        {
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 9,
+          "text": "Suggestive evidence (a few sources, limited consistency, methods"
+        }
+      ],
+      "text": "Suggestive evidence (a few sources, limited consistency, methods"
+    },
+    {
+      "rect": [
+        478.799987792,
+        360.75100244099997,
+        59.553900003438,
+        11.942999999999984
+      ],
+      "runs": [
+        {
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 9,
+          "text": "emerging, etc.)"
+        }
+      ],
+      "text": "emerging, etc.)"
+    },
+    {
+      "rect": [
+        469.799987792,
+        346.150996337,
+        3.0330000000000155,
+        11.942999999999984
+      ],
+      "runs": [
+        {
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 9,
+          "text": "•"
+        }
+      ],
+      "text": "•"
+    },
+    {
+      "rect": [
+        478.799987792,
+        346.150996337,
+        121.13099999999997,
+        11.942999999999984
+      ],
+      "runs": [
+        {
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 9,
+          "text": "Competing schools of thought"
+        }
+      ],
+      "text": "Competing schools of thought"
+    },
+    {
+      "rect": [
+        382.5,
+        314.900996337,
+        16.730999999999995,
+        11.942999999999984
+      ],
+      "runs": [
+        {
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 9,
+          "text": "Low"
+        }
+      ],
+      "text": "Low"
+    },
+    {
+      "rect": [
+        469.799987792,
+        327.70101464799995,
+        3.0330000000000155,
+        11.942999999999984
+      ],
+      "runs": [
+        {
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 9,
+          "text": "•"
+        }
+      ],
+      "text": "•"
+    },
+    {
+      "rect": [
+        478.799987792,
+        327.70101464799995,
+        268.43580000515715,
+        11.942999999999984
+      ],
+      "runs": [
+        {
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 9,
+          "text": "Inconclusive evidence (limited sources, extrapolations, inconsistent"
+        }
+      ],
+      "text": "Inconclusive evidence (limited sources, extrapolations, inconsistent"
+    },
+    {
+      "rect": [
+        478.799987792,
+        316.70101464799995,
+        248.59800000000018,
+        11.942999999999984
+      ],
+      "runs": [
+        {
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 9,
+          "text": "findings, poor documentation and/or methods not tested, etc.)"
+        }
+      ],
+      "text": "findings, poor documentation and/or methods not tested, etc.)"
+    },
+    {
+      "rect": [
+        469.799987792,
+        302.10100854399997,
+        3.0330000000000155,
+        11.942999999999984
+      ],
+      "runs": [
+        {
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 9,
+          "text": "•"
+        }
+      ],
+      "text": "•"
+    },
+    {
+      "rect": [
+        478.799987792,
+        302.10100854399997,
+        193.97250000000008,
+        11.942999999999984
+      ],
+      "runs": [
+        {
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 9,
+          "text": "Disagreement or lack of opinions among experts"
+        }
+      ],
+      "text": "Disagreement or lack of opinions among experts"
+    },
+    {
+      "rect": [
+        373.5,
+        258.150996337,
+        228.11129998627507,
+        11.942999999999984
+      ],
+      "runs": [
+        {
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 9,
+          "text": "Table 2. Calibrated Language for Likelihood Assessment"
+        }
+      ],
+      "text": "Table 2. Calibrated Language for Likelihood Assessment"
+    },
+    {
+      "rect": [
+        373.5,
+        241.164996337,
+        382.42439998627515,
+        12.635999999999996
+      ],
+      "runs": [
+        {
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 9,
+          "text": "The calibrated uncertainty terms below are used to express a probabilistic assessment across the"
+        }
+      ],
+      "text": "The calibrated uncertainty terms below are used to express a probabilistic assessment across the"
+    },
+    {
+      "rect": [
+        373.5,
+        229.164996337,
+        383.00900275699996,
+        12.635999999999996
+      ],
+      "runs": [
+        {
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 9,
+          "text": "evidence base of the likelihood of observed or projected results. Source: Mastrandrea et al. 2011."
+        },
+        {
+          "baselineOffset": 2.9970092780000073,
+          "fontName": "Helvetica",
+          "fontSize": 5.247,
+          "text": "4"
+        }
+      ],
+      "text": "evidence base of the likelihood of observed or projected results. Source: Mastrandrea et al. 2011.4"
+    },
+    {
+      "rect": [
+        382.5,
+        208.141001831,
+        94.31190000343804,
+        11.943000000000012
+      ],
+      "runs": [
+        {
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 9,
+          "text": "Likelihood Assessment "
+        }
+      ],
+      "text": "Likelihood Assessment "
+    },
+    {
+      "rect": [
+        544.679992675,
+        208.141001831,
+        129.85559999999998,
+        11.943000000000012
+      ],
+      "runs": [
+        {
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 9,
+          "text": "Numeric Probability of Outcome"
+        }
+      ],
+      "text": "Numeric Probability of Outcome"
+    },
+    {
+      "rect": [
+        382.5,
+        187.891001831,
+        206.549992675,
+        11.943000000000012
+      ],
+      "runs": [
+        {
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 9,
+          "text": "Virtually certain 99%–100%"
+        }
+      ],
+      "text": "Virtually certain 99%–100%"
+    },
+    {
+      "rect": [
+        382.5,
+        169.44100488200002,
+        206.549992675,
+        11.943000000000012
+      ],
+      "runs": [
+        {
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 9,
+          "text": "Very likely 90%–100%"
+        }
+      ],
+      "text": "Very likely 90%–100%"
+    },
+    {
+      "rect": [
+        382.5,
+        150.990992675,
+        206.549992675,
+        11.943000000000012
+      ],
+      "runs": [
+        {
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 9,
+          "text": "Likely 66%–100%"
+        }
+      ],
+      "text": "Likely 66%–100%"
+    },
+    {
+      "rect": [
+        382.5,
+        132.540995727,
+        201.491992675,
+        11.943000000000012
+      ],
+      "runs": [
+        {
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 9,
+          "text": "As likely as not 33%–66%"
+        }
+      ],
+      "text": "As likely as not 33%–66%"
+    },
+    {
+      "rect": [
+        382.5,
+        114.09099877899999,
+        196.433992675,
+        11.942999999999998
+      ],
+      "runs": [
+        {
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 9,
+          "text": "Unlikely 0%–33%"
+        }
+      ],
+      "text": "Unlikely 0%–33%"
+    },
+    {
+      "rect": [
+        382.5,
+        95.64100183100001,
+        196.433992675,
+        11.942999999999998
+      ],
+      "runs": [
+        {
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 9,
+          "text": "Very unlikely 0%–10%"
+        }
+      ],
+      "text": "Very unlikely 0%–10%"
+    },
+    {
+      "rect": [
+        382.5,
+        77.190997253,
+        191.37599267500002,
+        11.942999999999998
+      ],
+      "runs": [
+        {
+          "baselineOffset": 0,
+          "fontName": "Helvetica",
+          "fontSize": 9,
+          "text": "Exceptionally unlikely 0%–1%"
+        }
+      ],
+      "text": "Exceptionally unlikely 0%–1%"
+    }
+  ],
+  "bounds": [
+    0,
+    0,
+    792,
+    612
+  ],
+  "caseID": "noaa-nca5-2023",
+  "graphics": [
+    [
+      362.5,
+      548.049987792,
+      398.380004882,
+      26.5
+    ],
+    [
+      371.5,
+      295.339996337,
+      389.37997436399996,
+      136.149993897
+    ],
+    [
+      371.5,
+      471.78998779200003,
+      389.37997436399996,
+      25.50999999999999
+    ],
+    [
+      0,
+      0,
+      792,
+      278.339996337
+    ]
+  ],
+  "lines": [
+    {
+      "fontSize": 10,
+      "monospaced": false,
+      "rect": [
+        36,
+        13.9001,
+        720.000187988,
+        14.19
+      ],
+      "text": "Fifth National Climate Assessment xxiv"
+    },
+    {
+      "fontSize": 14,
+      "monospaced": false,
+      "rect": [
+        36,
+        559.788124511,
+        260.624,
+        20.258000000000038
+      ],
+      "text": "Structure and Format of Chapter Content"
+    },
+    {
+      "fontSize": 12,
+      "monospaced": false,
+      "rect": [
+        36,
+        535.024124511,
+        77.41199999999999,
+        17.364000000000033
+      ],
+      "text": "Key Messages"
+    },
+    {
+      "fontSize": 10,
+      "monospaced": false,
+      "rect": [
+        36,
+        519.1300878899999,
+        257.76800000000003,
+        13.850000000000023
+      ],
+      "text": "Chapters are centered around Key Messages, which are"
+    },
+    {
+      "fontSize": 10,
+      "monospaced": false,
+      "rect": [
+        36,
+        505.13008789,
+        296.41600000000005,
+        13.850000000000023
+      ],
+      "text": "conclusions based on authors’ expert judgment and synthesis of"
+    },
+    {
+      "fontSize": 10,
+      "monospaced": false,
+      "rect": [
+        36,
+        491.13008789,
+        290.6270000000002,
+        13.850000000000023
+      ],
+      "text": "the assessed information sources. Many Key Messages present"
+    },
+    {
+      "fontSize": 10,
+      "monospaced": false,
+      "rect": [
+        36,
+        477.13008789,
+        302.94700000000006,
+        13.850000000000023
+      ],
+      "text": "findings in the context of risks to natural and/or human systems."
+    },
+    {
+      "fontSize": 10,
+      "monospaced": false,
+      "rect": [
+        36,
+        463.13008789,
+        268.58700000000005,
+        13.850000000000023
+      ],
+      "text": "The text supporting each Key Message provides evidence,"
+    },
+    {
+      "fontSize": 10,
+      "monospaced": false,
+      "rect": [
+        36,
+        449.13008789,
+        298.2570000000002,
+        13.850000000000023
+      ],
+      "text": "discusses implications, identifies intersections between systems"
+    },
+    {
+      "fontSize": 10,
+      "monospaced": false,
+      "rect": [
+        36,
+        435.13008789,
+        299.20600000000013,
+        13.850000000000023
+      ],
+      "text": "or hazards, and presents examples of paths to greater resilience."
+    },
+    {
+      "fontSize": 12,
+      "monospaced": false,
+      "rect": [
+        36,
+        403.42408789,
+        144.8748,
+        17.363999999999976
+      ],
+      "text": "Confidence and Likelihood"
+    },
+    {
+      "fontSize": 10,
+      "monospaced": false,
+      "rect": [
+        36,
+        387.530112304,
+        258.8860000000002,
+        13.850000000000023
+      ],
+      "text": "Evaluating confidence and likelihood is a key part of the"
+    },
+    {
+      "fontSize": 10,
+      "monospaced": false,
+      "rect": [
+        36,
+        373.530112304,
+        278.26700000000017,
+        13.850000000000023
+      ],
+      "text": "assessment process. As in previous Assessments, NCA5 uses"
+    },
+    {
+      "fontSize": 10,
+      "monospaced": false,
+      "rect": [
+        36,
+        359.530112304,
+        300.1259999961801,
+        13.850000000000023
+      ],
+      "text": "specific terms to convey information about scientific confidence"
+    },
+    {
+      "fontSize": 10,
+      "monospaced": false,
+      "rect": [
+        36,
+        345.530112304,
+        272.70588745099997,
+        13.850000000000023
+      ],
+      "text": "and certainty associated with important findings, observa-"
+    },
+    {
+      "fontSize": 10,
+      "monospaced": false,
+      "rect": [
+        36,
+        331.530112304,
+        297.9860000000002,
+        13.850000000000023
+      ],
+      "text": "tions, and projections. Chapter authors use a range of calibrated"
+    },
+    {
+      "fontSize": 10,
+      "monospaced": false,
+      "rect": [
+        36,
+        317.530112304,
+        281.61700000381995,
+        13.850000000000023
+      ],
+      "text": "terms adopted from the Intergovernmental Panel on Climate"
+    },
+    {
+      "fontSize": 10,
+      "monospaced": false,
+      "rect": [
+        36,
+        303.530112304,
+        299.08620214418,
+        13.850000000000023
+      ],
+      "text": "Change (IPCC) Fifth Assessment Report4 to describe the levels of"
+    },
+    {
+      "fontSize": 10,
+      "monospaced": false,
+      "rect": [
+        36,
+        289.400112304,
+        302.56628784099996,
+        14.899999999999977
+      ],
+      "text": "confidence and, where appropriate, the assessment of likelihood"
+    },
+    {
+      "fontSize": 10,
+      "monospaced": false,
+      "rect": [
+        36,
+        275.530112304,
+        305.96699999618016,
+        13.850000000000023
+      ],
+      "text": "associated with the statements in their Key Messages (Tables 1, 2)."
+    },
+    {
+      "fontSize": 10,
+      "monospaced": false,
+      "rect": [
+        45,
+        252.530097045,
+        4.009999999999998,
+        13.850000000000023
+      ],
+      "text": "•"
+    },
+    {
+      "fontSize": 10,
+      "monospaced": false,
+      "rect": [
+        58.5,
+        252.400097045,
+        248.33609999618,
+        14.899999999999977
+      ],
+      "text": "Confidence in a finding is based on the type, amount,"
+    },
+    {
+      "fontSize": 10,
+      "monospaced": false,
+      "rect": [
+        58.5,
+        238.530097045,
+        255.94699999618,
+        13.849999999999994
+      ],
+      "text": "quality, strength, and consistency of evidence; the skill,"
+    },
+    {
+      "fontSize": 10,
+      "monospaced": false,
+      "rect": [
+        58.5,
+        224.530097045,
+        252.5370000000001,
+        13.849999999999994
+      ],
+      "text": "range, and consistency of methods to detect, evaluate,"
+    },
+    {
+      "fontSize": 10,
+      "monospaced": false,
+      "rect": [
+        58.5,
+        210.530097045,
+        264.62600000191014,
+        13.849999999999994
+      ],
+      "text": "attribute, and interpret climate trends; and the degree of"
+    },
+    {
+      "fontSize": 10,
+      "monospaced": false,
+      "rect": [
+        58.5,
+        196.530097045,
+        226.48799999999994,
+        13.849999999999994
+      ],
+      "text": "agreement across scientific information sources."
+    },
+    {
+      "fontSize": 10,
+      "monospaced": false,
+      "rect": [
+        45,
+        178.030097045,
+        4.009999999999998,
+        13.849999999999994
+      ],
+      "text": "•"
+    },
+    {
+      "fontSize": 10,
+      "monospaced": false,
+      "rect": [
+        58.5,
+        177.900097045,
+        263.21629748118005,
+        14.900000000000006
+      ],
+      "text": "Likelihood of a finding is based on measures of certainty"
+    },
+    {
+      "fontSize": 10,
+      "monospaced": false,
+      "rect": [
+        58.5,
+        164.030097045,
+        243.35700000000008,
+        13.849999999999994
+      ],
+      "text": "expressed probabilistically; in other words, based on"
+    },
+    {
+      "fontSize": 10,
+      "monospaced": false,
+      "rect": [
+        58.5,
+        150.030097045,
+        279.66700000000014,
+        13.849999999999994
+      ],
+      "text": "statistical analysis of observed or projected results or on the"
+    },
+    {
+      "fontSize": 10,
+      "monospaced": false,
+      "rect": [
+        58.5,
+        136.030097045,
+        274.54700000000014,
+        13.849999999999994
+      ],
+      "text": "authors’ expert judgment based on their assessment across"
+    },
+    {
+      "fontSize": 10,
+      "monospaced": false,
+      "rect": [
+        58.5,
+        122.030097045,
+        141.429,
+        13.850000000000009
+      ],
+      "text": "scientific information sources."
+    },
+    {
+      "fontSize": 10,
+      "monospaced": false,
+      "rect": [
+        36,
+        103.530097045,
+        292.5669999961801,
+        13.850000000000009
+      ],
+      "text": "These calibrated terms are presented in parentheses and set in"
+    },
+    {
+      "fontSize": 10,
+      "monospaced": false,
+      "rect": [
+        36,
+        89.400097045,
+        292.49639971900007,
+        13.980000000000018
+      ],
+      "text": "italics after relevant phrases or sentences in the Key Messages."
+    },
+    {
+      "fontSize": 10,
+      "monospaced": false,
+      "rect": [
+        36,
+        75.530097045,
+        301.25600000000003,
+        13.850000000000009
+      ],
+      "text": "Statements in Key Messages that do not include either likelihood"
+    },
+    {
+      "fontSize": 10,
+      "monospaced": false,
+      "rect": [
+        36,
+        61.530097045,
+        296.8470000000002,
+        13.850000000000001
+      ],
+      "text": "or confidence terms are intended as statements of fact. In some"
+    },
+    {
+      "fontSize": 10,
+      "monospaced": false,
+      "rect": [
+        36,
+        47.530100000000004,
+        278.30599999618005,
+        13.850000000000001
+      ],
+      "text": "cases, calibrated likelihood assessments are also included in"
+    },
+    {
+      "fontSize": 10,
+      "monospaced": false,
+      "rect": [
+        36,
+        33.5301,
+        245.80700000000002,
+        13.850000000000001
+      ],
+      "text": "italics in the narrative text supporting Key Messages."
+    },
+    {
+      "fontSize": 9,
+      "monospaced": false,
+      "rect": [
+        373.5,
+        554.3609877920001,
+        229.03920000000005,
+        11.942999999999984
+      ],
+      "text": "Table 1. Calibrated Language for Confidence Assessment"
+    },
+    {
+      "fontSize": 9,
+      "monospaced": false,
+      "rect": [
+        373.5,
+        537.3749877920001,
+        384.9713999862753,
+        12.635999999999967
+      ],
+      "text": "The NCA5 calibrated uncertainty language listed here and in Table 2 follows standards developed"
+    },
+    {
+      "fontSize": 9,
+      "monospaced": false,
+      "rect": [
+        373.5,
+        525.3749877920001,
+        366.07320000000004,
+        12.635999999999967
+      ],
+      "text": "for the Intergovernmental Panel on Climate Change Fifth Assessment Report. The confidence"
+    },
+    {
+      "fontSize": 9,
+      "monospaced": false,
+      "rect": [
+        373.5,
+        513.3749877920001,
+        373.225500000009,
+        12.635999999999967
+      ],
+      "text": "levels listed below are used to reflect the quantity, quality, and degree of agreement across the"
+    },
+    {
+      "fontSize": 9,
+      "monospaced": false,
+      "rect": [
+        373.5,
+        501.374987792,
+        331.935821605,
+        12.636000000000024
+      ],
+      "text": "evidence base underpinning an assessment finding. Source: Mastrandrea et al. 20114"
+    },
+    {
+      "fontSize": 9,
+      "monospaced": false,
+      "rect": [
+        382.5,
+        480.35100854399997,
+        126.46798779200003,
+        11.942999999999984
+      ],
+      "text": "Confidence Level Definition"
+    },
+    {
+      "fontSize": 9,
+      "monospaced": false,
+      "rect": [
+        382.5,
+        447.050990234,
+        37.06829999656202,
+        11.942999999999984
+      ],
+      "text": "Very high"
+    },
+    {
+      "fontSize": 9,
+      "monospaced": false,
+      "rect": [
+        469.799987792,
+        459.85100854399997,
+        3.0330000000000155,
+        11.942999999999984
+      ],
+      "text": "•"
+    },
+    {
+      "fontSize": 9,
+      "monospaced": false,
+      "rect": [
+        478.799987792,
+        459.85100854399997,
+        257.44151953200014,
+        11.942999999999984
+      ],
+      "text": "Strong evidence (established theory, multiple sources, well-docu-"
+    },
+    {
+      "fontSize": 9,
+      "monospaced": false,
+      "rect": [
+        478.799987792,
+        448.85100854399997,
+        146.28599999999994,
+        11.942999999999984
+      ],
+      "text": "mented and accepted methods, etc.)"
+    },
+    {
+      "fontSize": 9,
+      "monospaced": false,
+      "rect": [
+        469.799987792,
+        434.25100244099997,
+        3.0330000000000155,
+        11.942999999999984
+      ],
+      "text": "•"
+    },
+    {
+      "fontSize": 9,
+      "monospaced": false,
+      "rect": [
+        478.799987792,
+        434.25100244099997,
+        64.27800000000002,
+        11.942999999999984
+      ],
+      "text": "High consensus"
+    },
+    {
+      "fontSize": 9,
+      "monospaced": false,
+      "rect": [
+        382.5,
+        403.00100244099997,
+        18.612000000000023,
+        11.942999999999984
+      ],
+      "text": "High"
+    },
+    {
+      "fontSize": 9,
+      "monospaced": false,
+      "rect": [
+        469.799987792,
+        415.800990234,
+        3.0330000000000155,
+        11.942999999999984
+      ],
+      "text": "•"
+    },
+    {
+      "fontSize": 9,
+      "monospaced": false,
+      "rect": [
+        478.799987792,
+        415.800990234,
+        259.2999000188911,
+        11.942999999999984
+      ],
+      "text": "Moderate evidence (several sources, some consistency, methods"
+    },
+    {
+      "fontSize": 9,
+      "monospaced": false,
+      "rect": [
+        478.799987792,
+        404.800990234,
+        159.79679999828102,
+        11.942999999999984
+      ],
+      "text": "vary and/or documentation limited, etc.)"
+    },
+    {
+      "fontSize": 9,
+      "monospaced": false,
+      "rect": [
+        469.799987792,
+        390.20101464799995,
+        3.0330000000000155,
+        11.942999999999984
+      ],
+      "text": "•"
+    },
+    {
+      "fontSize": 9,
+      "monospaced": false,
+      "rect": [
+        478.799987792,
+        390.20101464799995,
+        78.399,
+        11.942999999999984
+      ],
+      "text": "Medium consensus"
+    },
+    {
+      "fontSize": 9,
+      "monospaced": false,
+      "rect": [
+        382.5,
+        358.95101464799995,
+        32.733000000000004,
+        11.942999999999984
+      ],
+      "text": "Medium"
+    },
+    {
+      "fontSize": 9,
+      "monospaced": false,
+      "rect": [
+        469.799987792,
+        371.75100244099997,
+        3.0330000000000155,
+        11.942999999999984
+      ],
+      "text": "•"
+    },
+    {
+      "fontSize": 9,
+      "monospaced": false,
+      "rect": [
+        478.799987792,
+        371.75100244099997,
+        263.0924999879941,
+        11.942999999999984
+      ],
+      "text": "Suggestive evidence (a few sources, limited consistency, methods"
+    },
+    {
+      "fontSize": 9,
+      "monospaced": false,
+      "rect": [
+        478.799987792,
+        360.75100244099997,
+        59.553900003438,
+        11.942999999999984
+      ],
+      "text": "emerging, etc.)"
+    },
+    {
+      "fontSize": 9,
+      "monospaced": false,
+      "rect": [
+        469.799987792,
+        346.150996337,
+        3.0330000000000155,
+        11.942999999999984
+      ],
+      "text": "•"
+    },
+    {
+      "fontSize": 9,
+      "monospaced": false,
+      "rect": [
+        478.799987792,
+        346.150996337,
+        121.13099999999997,
+        11.942999999999984
+      ],
+      "text": "Competing schools of thought"
+    },
+    {
+      "fontSize": 9,
+      "monospaced": false,
+      "rect": [
+        382.5,
+        314.900996337,
+        16.730999999999995,
+        11.942999999999984
+      ],
+      "text": "Low"
+    },
+    {
+      "fontSize": 9,
+      "monospaced": false,
+      "rect": [
+        469.799987792,
+        327.70101464799995,
+        3.0330000000000155,
+        11.942999999999984
+      ],
+      "text": "•"
+    },
+    {
+      "fontSize": 9,
+      "monospaced": false,
+      "rect": [
+        478.799987792,
+        327.70101464799995,
+        268.43580000515715,
+        11.942999999999984
+      ],
+      "text": "Inconclusive evidence (limited sources, extrapolations, inconsistent"
+    },
+    {
+      "fontSize": 9,
+      "monospaced": false,
+      "rect": [
+        478.799987792,
+        316.70101464799995,
+        248.59800000000018,
+        11.942999999999984
+      ],
+      "text": "findings, poor documentation and/or methods not tested, etc.)"
+    },
+    {
+      "fontSize": 9,
+      "monospaced": false,
+      "rect": [
+        469.799987792,
+        302.10100854399997,
+        3.0330000000000155,
+        11.942999999999984
+      ],
+      "text": "•"
+    },
+    {
+      "fontSize": 9,
+      "monospaced": false,
+      "rect": [
+        478.799987792,
+        302.10100854399997,
+        193.97250000000008,
+        11.942999999999984
+      ],
+      "text": "Disagreement or lack of opinions among experts"
+    },
+    {
+      "fontSize": 9,
+      "monospaced": false,
+      "rect": [
+        373.5,
+        258.150996337,
+        228.11129998627507,
+        11.942999999999984
+      ],
+      "text": "Table 2. Calibrated Language for Likelihood Assessment"
+    },
+    {
+      "fontSize": 9,
+      "monospaced": false,
+      "rect": [
+        373.5,
+        241.164996337,
+        382.42439998627515,
+        12.635999999999996
+      ],
+      "text": "The calibrated uncertainty terms below are used to express a probabilistic assessment across the"
+    },
+    {
+      "fontSize": 9,
+      "monospaced": false,
+      "rect": [
+        373.5,
+        229.164996337,
+        383.00900275699996,
+        12.635999999999996
+      ],
+      "text": "evidence base of the likelihood of observed or projected results. Source: Mastrandrea et al. 2011.4"
+    },
+    {
+      "fontSize": 9,
+      "monospaced": false,
+      "rect": [
+        382.5,
+        208.141001831,
+        94.31190000343804,
+        11.943000000000012
+      ],
+      "text": "Likelihood Assessment"
+    },
+    {
+      "fontSize": 9,
+      "monospaced": false,
+      "rect": [
+        544.679992675,
+        208.141001831,
+        129.85559999999998,
+        11.943000000000012
+      ],
+      "text": "Numeric Probability of Outcome"
+    },
+    {
+      "fontSize": 9,
+      "monospaced": false,
+      "rect": [
+        382.5,
+        187.891001831,
+        206.549992675,
+        11.943000000000012
+      ],
+      "text": "Virtually certain 99%–100%"
+    },
+    {
+      "fontSize": 9,
+      "monospaced": false,
+      "rect": [
+        382.5,
+        169.44100488200002,
+        206.549992675,
+        11.943000000000012
+      ],
+      "text": "Very likely 90%–100%"
+    },
+    {
+      "fontSize": 9,
+      "monospaced": false,
+      "rect": [
+        382.5,
+        150.990992675,
+        206.549992675,
+        11.943000000000012
+      ],
+      "text": "Likely 66%–100%"
+    },
+    {
+      "fontSize": 9,
+      "monospaced": false,
+      "rect": [
+        382.5,
+        132.540995727,
+        201.491992675,
+        11.943000000000012
+      ],
+      "text": "As likely as not 33%–66%"
+    },
+    {
+      "fontSize": 9,
+      "monospaced": false,
+      "rect": [
+        382.5,
+        114.09099877899999,
+        196.433992675,
+        11.942999999999998
+      ],
+      "text": "Unlikely 0%–33%"
+    },
+    {
+      "fontSize": 9,
+      "monospaced": false,
+      "rect": [
+        382.5,
+        95.64100183100001,
+        196.433992675,
+        11.942999999999998
+      ],
+      "text": "Very unlikely 0%–10%"
+    },
+    {
+      "fontSize": 9,
+      "monospaced": false,
+      "rect": [
+        382.5,
+        77.190997253,
+        191.37599267500002,
+        11.942999999999998
+      ],
+      "text": "Exceptionally unlikely 0%–1%"
+    }
+  ],
+  "page": 25,
+  "paintOperations": [
+    {
+      "filled": false,
+      "image": true,
+      "rect": [
+        [
+          0,
+          0
+        ],
+        [
+          792,
+          248.7166138
+        ]
+      ],
+      "rectangular": false,
+      "vertices": []
+    },
+    {
+      "filled": false,
+      "image": false,
+      "rect": [
+        [
+          0,
+          0
+        ],
+        [
+          792,
+          256.717
+        ]
+      ],
+      "rectangular": false,
+      "vertices": []
+    },
+    {
+      "filled": true,
+      "image": false,
+      "rect": [
+        [
+          362.5,
+          548.049987792
+        ],
+        [
+          398.380004882,
+          22
+        ]
+      ],
+      "rectangular": true,
+      "vertices": [
+        [
+          364.5,
+          550.049987792
+        ],
+        [
+          758.880004882,
+          550.049987792
+        ],
+        [
+          758.880004882,
+          568.049987792
+        ],
+        [
+          364.5,
+          568.049987792
+        ]
+      ]
+    },
+    {
+      "filled": false,
+      "image": false,
+      "rect": [
+        [
+          362.5,
+          570.549987792
+        ],
+        [
+          173.38000488199998,
+          4
+        ]
+      ],
+      "rectangular": false,
+      "strokeOnly": true,
+      "vertices": [
+        [
+          364.5,
+          572.549987792
+        ],
+        [
+          533.880004882,
+          572.549987792
+        ]
+      ]
+    },
+    {
+      "filled": true,
+      "image": false,
+      "rect": [
+        [
+          362.5,
+          251.839996337
+        ],
+        [
+          398.380004882,
+          22
+        ]
+      ],
+      "rectangular": true,
+      "vertices": [
+        [
+          364.5,
+          253.839996337
+        ],
+        [
+          758.880004882,
+          253.839996337
+        ],
+        [
+          758.880004882,
+          271.839996337
+        ],
+        [
+          364.5,
+          271.839996337
+        ]
+      ]
+    },
+    {
+      "filled": false,
+      "image": false,
+      "rect": [
+        [
+          362.5,
+          274.339996337
+        ],
+        [
+          173.38000488199998,
+          4
+        ]
+      ],
+      "rectangular": false,
+      "strokeOnly": true,
+      "vertices": [
+        [
+          364.5,
+          276.339996337
+        ],
+        [
+          533.880004882,
+          276.339996337
+        ]
+      ]
+    },
+    {
+      "filled": true,
+      "image": false,
+      "rect": [
+        [
+          371.5,
+          471.78998779200003
+        ],
+        [
+          389.37997436399996,
+          25.50999999999999
+        ]
+      ],
+      "rectangular": false,
+      "vertices": []
+    },
+    {
+      "filled": true,
+      "image": false,
+      "rect": [
+        [
+          371.5,
+          295.34001541099997
+        ],
+        [
+          389.37997436399996,
+          136.14997482300004
+        ]
+      ],
+      "rectangular": false,
+      "vertices": []
+    },
+    {
+      "filled": false,
+      "image": false,
+      "rect": [
+        [
+          458.799987792,
+          493.299987792
+        ],
+        [
+          302.07998657199994,
+          4
+        ]
+      ],
+      "rectangular": false,
+      "strokeOnly": true,
+      "vertices": [
+        [
+          460.799987792,
+          495.299987792
+        ],
+        [
+          758.879974364,
+          495.299987792
+        ]
+      ]
+    },
+    {
+      "filled": false,
+      "image": false,
+      "rect": [
+        [
+          458.799987792,
+          471.790008544
+        ],
+        [
+          302.07998657199994,
+          4
+        ]
+      ],
+      "rectangular": false,
+      "strokeOnly": true,
+      "vertices": [
+        [
+          460.799987792,
+          473.790008544
+        ],
+        [
+          758.879974364,
+          473.790008544
+        ]
+      ]
+    },
+    {
+      "filled": false,
+      "image": false,
+      "rect": [
+        [
+          371.5,
+          427.489990234
+        ],
+        [
+          91.30000305099998,
+          4
+        ]
+      ],
+      "rectangular": false,
+      "strokeOnly": true,
+      "vertices": [
+        [
+          373.5,
+          429.489990234
+        ],
+        [
+          460.800003051,
+          429.489990234
+        ]
+      ]
+    },
+    {
+      "filled": false,
+      "image": false,
+      "rect": [
+        [
+          458.799987792,
+          427.489990234
+        ],
+        [
+          302.07998657199994,
+          4
+        ]
+      ],
+      "rectangular": false,
+      "strokeOnly": true,
+      "vertices": [
+        [
+          460.799987792,
+          429.489990234
+        ],
+        [
+          758.879974364,
+          429.489990234
+        ]
+      ]
+    },
+    {
+      "filled": false,
+      "image": false,
+      "rect": [
+        [
+          371.5,
+          383.440002441
+        ],
+        [
+          91.30000305099998,
+          4
+        ]
+      ],
+      "rectangular": false,
+      "strokeOnly": true,
+      "vertices": [
+        [
+          373.5,
+          385.440002441
+        ],
+        [
+          460.800003051,
+          385.440002441
+        ]
+      ]
+    },
+    {
+      "filled": false,
+      "image": false,
+      "rect": [
+        [
+          458.799987792,
+          383.440002441
+        ],
+        [
+          302.07998657199994,
+          4
+        ]
+      ],
+      "rectangular": false,
+      "strokeOnly": true,
+      "vertices": [
+        [
+          460.799987792,
+          385.440002441
+        ],
+        [
+          758.879974364,
+          385.440002441
+        ]
+      ]
+    },
+    {
+      "filled": false,
+      "image": false,
+      "rect": [
+        [
+          371.5,
+          339.390014648
+        ],
+        [
+          91.30000305099998,
+          4
+        ]
+      ],
+      "rectangular": false,
+      "strokeOnly": true,
+      "vertices": [
+        [
+          373.5,
+          341.390014648
+        ],
+        [
+          460.800003051,
+          341.390014648
+        ]
+      ]
+    },
+    {
+      "filled": false,
+      "image": false,
+      "rect": [
+        [
+          458.799987792,
+          339.390014648
+        ],
+        [
+          302.07998657199994,
+          4
+        ]
+      ],
+      "rectangular": false,
+      "strokeOnly": true,
+      "vertices": [
+        [
+          460.799987792,
+          341.390014648
+        ],
+        [
+          758.879974364,
+          341.390014648
+        ]
+      ]
+    },
+    {
+      "filled": false,
+      "image": false,
+      "rect": [
+        [
+          371.5,
+          295.339996337
+        ],
+        [
+          91.30000305099998,
+          4
+        ]
+      ],
+      "rectangular": false,
+      "strokeOnly": true,
+      "vertices": [
+        [
+          373.5,
+          297.339996337
+        ],
+        [
+          460.800003051,
+          297.339996337
+        ]
+      ]
+    },
+    {
+      "filled": false,
+      "image": false,
+      "rect": [
+        [
+          458.799987792,
+          295.339996337
+        ],
+        [
+          302.07998657199994,
+          4
+        ]
+      ],
+      "rectangular": false,
+      "strokeOnly": true,
+      "vertices": [
+        [
+          460.799987792,
+          297.339996337
+        ],
+        [
+          758.879974364,
+          297.339996337
+        ]
+      ]
+    },
+    {
+      "filled": false,
+      "image": false,
+      "rect": [
+        [
+          371.5,
+          493.299987792
+        ],
+        [
+          91.30000305099998,
+          4
+        ]
+      ],
+      "rectangular": false,
+      "strokeOnly": true,
+      "vertices": [
+        [
+          373.5,
+          495.299987792
+        ],
+        [
+          460.800003051,
+          495.299987792
+        ]
+      ]
+    },
+    {
+      "filled": false,
+      "image": false,
+      "rect": [
+        [
+          371.5,
+          471.790008544
+        ],
+        [
+          91.30000305099998,
+          4
+        ]
+      ],
+      "rectangular": false,
+      "strokeOnly": true,
+      "vertices": [
+        [
+          373.5,
+          473.790008544
+        ],
+        [
+          460.800003051,
+          473.790008544
+        ]
+      ]
+    },
+    {
+      "filled": true,
+      "image": false,
+      "rect": [
+        [
+          371.5,
+          199.579996337
+        ],
+        [
+          389.37998962300003,
+          25.50999999999999
+        ]
+      ],
+      "rectangular": false,
+      "vertices": []
+    },
+    {
+      "filled": true,
+      "image": false,
+      "rect": [
+        [
+          371.5,
+          88.880001831
+        ],
+        [
+          389.37998962300003,
+          96.25000305100001
+        ]
+      ],
+      "rectangular": false,
+      "vertices": []
+    },
+    {
+      "filled": false,
+      "image": false,
+      "rect": [
+        [
+          371.5,
+          70.43
+        ],
+        [
+          166.179992675,
+          4
+        ]
+      ],
+      "rectangular": false,
+      "strokeOnly": true,
+      "vertices": [
+        [
+          373.5,
+          72.43
+        ],
+        [
+          535.679992675,
+          72.43
+        ]
+      ]
+    },
+    {
+      "filled": false,
+      "image": false,
+      "rect": [
+        [
+          533.679992675,
+          70.43
+        ],
+        [
+          227.19999694800003,
+          4
+        ]
+      ],
+      "rectangular": false,
+      "strokeOnly": true,
+      "vertices": [
+        [
+          535.679992675,
+          72.43
+        ],
+        [
+          758.879989623,
+          72.43
+        ]
+      ]
+    },
+    {
+      "filled": false,
+      "image": false,
+      "rect": [
+        [
+          371.5,
+          221.089996337
+        ],
+        [
+          166.179992675,
+          4
+        ]
+      ],
+      "rectangular": false,
+      "strokeOnly": true,
+      "vertices": [
+        [
+          373.5,
+          223.089996337
+        ],
+        [
+          535.679992675,
+          223.089996337
+        ]
+      ]
+    },
+    {
+      "filled": false,
+      "image": false,
+      "rect": [
+        [
+          533.679992675,
+          221.089996337
+        ],
+        [
+          227.19999694800003,
+          4
+        ]
+      ],
+      "rectangular": false,
+      "strokeOnly": true,
+      "vertices": [
+        [
+          535.679992675,
+          223.089996337
+        ],
+        [
+          758.879989623,
+          223.089996337
+        ]
+      ]
+    },
+    {
+      "filled": false,
+      "image": false,
+      "rect": [
+        [
+          371.5,
+          199.580001831
+        ],
+        [
+          166.179992675,
+          4
+        ]
+      ],
+      "rectangular": false,
+      "strokeOnly": true,
+      "vertices": [
+        [
+          373.5,
+          201.580001831
+        ],
+        [
+          535.679992675,
+          201.580001831
+        ]
+      ]
+    },
+    {
+      "filled": false,
+      "image": false,
+      "rect": [
+        [
+          533.679992675,
+          199.580001831
+        ],
+        [
+          227.19999694800003,
+          4
+        ]
+      ],
+      "rectangular": false,
+      "strokeOnly": true,
+      "vertices": [
+        [
+          535.679992675,
+          201.580001831
+        ],
+        [
+          758.879989623,
+          201.580001831
+        ]
+      ]
+    },
+    {
+      "filled": false,
+      "image": false,
+      "rect": [
+        [
+          533.679992675,
+          181.130004882
+        ],
+        [
+          227.19999694800003,
+          4
+        ]
+      ],
+      "rectangular": false,
+      "strokeOnly": true,
+      "vertices": [
+        [
+          535.679992675,
+          183.130004882
+        ],
+        [
+          758.879989623,
+          183.130004882
+        ]
+      ]
+    },
+    {
+      "filled": false,
+      "image": false,
+      "rect": [
+        [
+          371.5,
+          162.679992675
+        ],
+        [
+          166.179992675,
+          4
+        ]
+      ],
+      "rectangular": false,
+      "strokeOnly": true,
+      "vertices": [
+        [
+          373.5,
+          164.679992675
+        ],
+        [
+          535.679992675,
+          164.679992675
+        ]
+      ]
+    },
+    {
+      "filled": false,
+      "image": false,
+      "rect": [
+        [
+          533.679992675,
+          162.679992675
+        ],
+        [
+          227.19999694800003,
+          4
+        ]
+      ],
+      "rectangular": false,
+      "strokeOnly": true,
+      "vertices": [
+        [
+          535.679992675,
+          164.679992675
+        ],
+        [
+          758.879989623,
+          164.679992675
+        ]
+      ]
+    },
+    {
+      "filled": false,
+      "image": false,
+      "rect": [
+        [
+          371.5,
+          144.229995727
+        ],
+        [
+          166.179992675,
+          4
+        ]
+      ],
+      "rectangular": false,
+      "strokeOnly": true,
+      "vertices": [
+        [
+          373.5,
+          146.229995727
+        ],
+        [
+          535.679992675,
+          146.229995727
+        ]
+      ]
+    },
+    {
+      "filled": false,
+      "image": false,
+      "rect": [
+        [
+          533.679992675,
+          144.229995727
+        ],
+        [
+          227.19999694800003,
+          4
+        ]
+      ],
+      "rectangular": false,
+      "strokeOnly": true,
+      "vertices": [
+        [
+          535.679992675,
+          146.229995727
+        ],
+        [
+          758.879989623,
+          146.229995727
+        ]
+      ]
+    },
+    {
+      "filled": false,
+      "image": false,
+      "rect": [
+        [
+          371.5,
+          125.779998779
+        ],
+        [
+          166.179992675,
+          3.999999999999986
+        ]
+      ],
+      "rectangular": false,
+      "strokeOnly": true,
+      "vertices": [
+        [
+          373.5,
+          127.779998779
+        ],
+        [
+          535.679992675,
+          127.779998779
+        ]
+      ]
+    },
+    {
+      "filled": false,
+      "image": false,
+      "rect": [
+        [
+          533.679992675,
+          125.779998779
+        ],
+        [
+          227.19999694800003,
+          3.999999999999986
+        ]
+      ],
+      "rectangular": false,
+      "strokeOnly": true,
+      "vertices": [
+        [
+          535.679992675,
+          127.779998779
+        ],
+        [
+          758.879989623,
+          127.779998779
+        ]
+      ]
+    },
+    {
+      "filled": false,
+      "image": false,
+      "rect": [
+        [
+          371.5,
+          107.330001831
+        ],
+        [
+          166.179992675,
+          4
+        ]
+      ],
+      "rectangular": false,
+      "strokeOnly": true,
+      "vertices": [
+        [
+          373.5,
+          109.330001831
+        ],
+        [
+          535.679992675,
+          109.330001831
+        ]
+      ]
+    },
+    {
+      "filled": false,
+      "image": false,
+      "rect": [
+        [
+          533.679992675,
+          107.330001831
+        ],
+        [
+          227.19999694800003,
+          4
+        ]
+      ],
+      "rectangular": false,
+      "strokeOnly": true,
+      "vertices": [
+        [
+          535.679992675,
+          109.330001831
+        ],
+        [
+          758.879989623,
+          109.330001831
+        ]
+      ]
+    },
+    {
+      "filled": false,
+      "image": false,
+      "rect": [
+        [
+          371.5,
+          88.879997253
+        ],
+        [
+          166.179992675,
+          4
+        ]
+      ],
+      "rectangular": false,
+      "strokeOnly": true,
+      "vertices": [
+        [
+          373.5,
+          90.879997253
+        ],
+        [
+          535.679992675,
+          90.879997253
+        ]
+      ]
+    },
+    {
+      "filled": false,
+      "image": false,
+      "rect": [
+        [
+          533.679992675,
+          88.879997253
+        ],
+        [
+          227.19999694800003,
+          4
+        ]
+      ],
+      "rectangular": false,
+      "strokeOnly": true,
+      "vertices": [
+        [
+          535.679992675,
+          90.879997253
+        ],
+        [
+          758.879989623,
+          90.879997253
+        ]
+      ]
+    },
+    {
+      "filled": false,
+      "image": false,
+      "rect": [
+        [
+          371.5,
+          181.130004882
+        ],
+        [
+          166.179992675,
+          4
+        ]
+      ],
+      "rectangular": false,
+      "strokeOnly": true,
+      "vertices": [
+        [
+          373.5,
+          183.130004882
+        ],
+        [
+          535.679992675,
+          183.130004882
+        ]
+      ]
+    }
+  ],
+  "pictures": [
+    [
+      0,
+      0,
+      792,
+      248.7166138
+    ]
+  ],
+  "rightsBasis": "NOAA repository explicitly identifies CC0 Public Domain. This records the publisher declaration, not a new owner-confirmed rights determination or shipped-catalog admission.",
+  "schemaVersion": 3,
+  "sourceSHA256": "1942cbf346dc2c711fea413d6d6543edb8bc1e3a88d4c3a85e733c6b6d3577bf",
+  "sourceTitle": "Fifth National Climate Assessment",
+  "sourceURL": "https://repository.library.noaa.gov/view/noaa/61592/noaa_61592_DS1.pdf"
+}

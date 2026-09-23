@@ -2652,40 +2652,7 @@
       "vertices": []
     },
     {
-      "filled": false,
-      "image": false,
-      "rect": [
-        [
-          52.125,
-          66.4
-        ],
-        [
-          274,
-          53.31999999999999
-        ]
-      ],
-      "rectangular": true,
-      "vertices": [
-        [
-          54.125,
-          68.4
-        ],
-        [
-          324.125,
-          68.4
-        ],
-        [
-          324.125,
-          117.72
-        ],
-        [
-          54.125,
-          117.72
-        ]
-      ]
-    },
-    {
-      "filled": false,
+      "filled": true,
       "image": false,
       "rect": [
         [
@@ -2718,7 +2685,7 @@
       ]
     },
     {
-      "filled": false,
+      "filled": true,
       "image": false,
       "rect": [
         [
@@ -2751,7 +2718,7 @@
       ]
     },
     {
-      "filled": false,
+      "filled": true,
       "image": false,
       "rect": [
         [

@@ -114,10 +114,49 @@ private func paddedIconPDF(opaque: Bool = false, maskExtra: String = "", clip: B
     let before = try compose(fixture.rawPaints, pictures: fixture.original.pictures)
     let after = try compose(fixture.trimmedPaints, pictures: fixture.trimmedPictures)
     #expect(LayoutReconstructor.graphicsWithLabels(before).contains { LayoutReconstructor.takes($0, label) })
-    #expect(!LayoutReconstructor.graphicsWithLabels(after).contains { LayoutReconstructor.takes($0, label) })
-    #expect(after.graphics.count == 6)
+    #expect(!PageBackdrop.reflows(label, on: before))
+    #expect(PageBackdrop.reflows(label, on: after))
+    #expect(after.graphics.count == 2)
+    // The complex cloud remains a source crop; proven text panels alone free its labels.
+    #expect(after.graphics.contains { $0.contains(CGPoint(x: 300, y: 150)) })
+    var warnings: [ConversionWarning] = []
+    let blocks = LayoutReconstructor.blocks(page: after,
+        images: LayoutReconstructor.graphicsWithLabels(after).map { ($0, "figure.png") },
+        vocabulary: [], warnings: &warnings)
+    #expect(blocks.filter(\.hasReflowedText).map(\.text).joined(separator: " ").contains("Cumulus"))
     #expect(!after.graphics.contains { PageDiagnosis.coversPage($0, bounds: after.bounds) })
     // The unclustered before/after capture exposes the actual padding; the old full-page
     // cluster would hide it and make this comparison vacuous.
     #expect(fixture.original.graphics == [fixture.original.bounds])
+}
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/182")) func aBackdropDoesNotEraseALabeledVectorFigureOrAnIsolatedChartStroke() throws {
+    let stream = backdrop + "70 400 m 170 390 90 490 180 500 c 190 450 150 410 70 400 c f "
+        + "350 400 m 460 400 l S"
+    let graphics = GraphicsReader.read(try operatorPage(stream))
+    let label = TextLine(text: "Figure label", rect: CGRect(x: 95, y: 440, width: 50, height: 12), fontSize: 12)
+    let prose = TextLine(text: "The text outside the diagram explains its meaning in detail.",
+                         rect: CGRect(x: 60, y: 600, width: 450, height: 12), fontSize: 12)
+    let page = PageContent(number: 1, bounds: CGRect(x: 0, y: 0, width: 612, height: 792),
+                           lines: [prose, label], graphics: graphics.regions)
+    let composed = try #require(PageBackdrop.compose(page, graphics: graphics))
+    #expect(composed.graphics.contains { $0.contains(CGPoint(x: 120, y: 446)) })
+    #expect(composed.graphics.contains { $0.contains(CGPoint(x: 400, y: 400)) })
+}
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/182")) func onlyARoundedPanelOutlineReleasesItsText() throws {
+    let rounded = "60 405 m 60 402 62 400 65 400 c 155 400 l 158 400 160 402 160 405 c "
+        + "160 475 l 160 478 158 480 155 480 c 65 480 l 62 480 60 478 60 475 c h S"
+    let graphics = GraphicsReader.read(try operatorPage(backdrop + rounded))
+    #expect(graphics.paints.last?.roundedRectangle == true)
+    let page = PageContent(number: 1, bounds: CGRect(x: 0, y: 0, width: 612, height: 792),
+        lines: [TextLine(text: "A panel label", rect: CGRect(x: 70, y: 430, width: 80, height: 12), fontSize: 12)],
+        graphics: graphics.regions)
+    let composed = try #require(PageBackdrop.compose(page, graphics: graphics))
+    #expect(composed.graphics.isEmpty)
+    #expect(PageBackdrop.reflows(page.lines[0], on: composed))
+    let ellipse = GraphicsReader.read(try operatorPage(backdrop
+        + "60 440 m 60 462 82 480 110 480 c 138 480 160 462 160 440 c "
+        + "160 418 138 400 110 400 c 82 400 60 418 60 440 c h S"))
+    #expect(ellipse.paints.last?.roundedRectangle != true)
 }

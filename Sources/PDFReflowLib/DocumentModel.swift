@@ -175,6 +175,12 @@ struct PageContent: Equatable, Codable {
     var recognized = false
     var hasSyntheticTextStyle = false
     var preservePageReference = false
+    /// Local source crops of recognized outline writing, kept outside semantic figure regions
+    /// so their transcription still reflows (#192).
+    var recognizedArtwork: [CGRect] = []
+    /// Proven text panels over a flat page ground. Their native writing may reflow while
+    /// the surrounding vector diagram is retained as a source crop (#182).
+    var backdropTextPanels: [CGRect]? = nil
     /// The link annotations this page draws, in the order it lists them (#247).
     var links: [PageLink] = []
     /// The tables this page draws, read as cells (#210). Empty on every page whose printed rows

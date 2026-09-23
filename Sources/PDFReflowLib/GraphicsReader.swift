@@ -11,6 +11,7 @@ enum GraphicsReader {
         var filled = false
         var rectangular = false
         var vertices: [CGPoint] = []
+        var roundedRectangle: Bool? = nil
     }
     struct Result { var regions: [CGRect]; var unsupported: Bool; var hasOnlyInvisibleText = false
                     /// Placed raster image XObjects specifically, a subset of `regions` (#176):
@@ -41,6 +42,7 @@ enum GraphicsReader {
         var path = CGRect.null
         var vertices: [CGPoint]? = []
         var subpaths = 0
+        var panelOutline = PanelOutline()
         var paints: [Paint] = []
         var imageIndex = 0
         var imageBounds: ((Int, CGPDFDictionaryRef) -> CGRect?)?
@@ -76,6 +78,7 @@ enum GraphicsReader {
             path = .null
             vertices = []
             subpaths = 0
+            panelOutline = PanelOutline()
         }
         /// The part of a footprint the clip in force lets show, or nil when none of it can.
         ///
@@ -107,7 +110,8 @@ enum GraphicsReader {
                     && Set(points.map(\.y)).count == 2
                     && points.allSatisfy { ($0.x == path.minX || $0.x == path.maxX)
                         && ($0.y == path.minY || $0.y == path.maxY) }
-                paints.append(Paint(rect: shown, filled: filled, rectangular: rectangular, vertices: points))
+                paints.append(Paint(rect: shown, filled: filled, rectangular: rectangular, vertices: points,
+                                    roundedRectangle: panelOutline.isRoundedRectangle ? true : nil))
             } else { unsupported = true }
         }
     }
@@ -177,6 +181,7 @@ enum GraphicsReader {
             guard s.accept(), let n = ContentStreamWalk.numbers(scanner, 2) else { s.unsupported = true; return }
             let point = CGPoint(x: n[0], y: n[1]).applying(s.matrix)
             s.path = s.path.union(CGRect(origin: point, size: .zero))
+            s.panelOutline.move(point)
             s.subpaths += 1
             if s.subpaths > 1 { s.vertices = nil }
             else { s.vertices?.append(point) }
@@ -186,6 +191,7 @@ enum GraphicsReader {
             guard s.accept(), let n = ContentStreamWalk.numbers(scanner, 2) else { s.unsupported = true; return }
             let point = CGPoint(x: n[0], y: n[1]).applying(s.matrix)
             s.path = s.path.union(CGRect(origin: point, size: .zero))
+            s.panelOutline.append([point])
             if (s.vertices?.count ?? 0) >= 8 { s.vertices = nil }
             else { s.vertices?.append(point) }
         }
@@ -193,6 +199,9 @@ enum GraphicsReader {
             let s = Self.state(info)
             guard s.accept(), let n = ContentStreamWalk.numbers(scanner, 6) else { s.unsupported = true; return }
             s.vertices = nil
+            s.panelOutline.append(stride(from: 0, to: 6, by: 2).map {
+                CGPoint(x: n[$0], y: n[$0 + 1]).applying(s.matrix)
+            })
             for i in stride(from: 0, to: 6, by: 2) {
                 s.path = s.path.union(CGRect(origin: CGPoint(x: n[i], y: n[i + 1])
                     .applying(s.matrix), size: .zero))
@@ -203,6 +212,7 @@ enum GraphicsReader {
                 let s = Self.state(info)
                 guard s.accept(), let n = ContentStreamWalk.numbers(scanner, 4) else { s.unsupported = true; return }
                 s.vertices = nil
+                s.panelOutline.invalidate()
                 for i in stride(from: 0, to: 4, by: 2) {
                     s.path = s.path.union(CGRect(origin: CGPoint(x: n[i], y: n[i + 1])
                         .applying(s.matrix), size: .zero))
@@ -213,6 +223,7 @@ enum GraphicsReader {
             let s = Self.state(info)
             guard s.accept(), let n = ContentStreamWalk.numbers(scanner, 4) else { s.unsupported = true; return }
             let rect = CGRect(x: n[0], y: n[1], width: n[2], height: n[3])
+            s.panelOutline.invalidate()
             if s.path.isNull {
                 s.vertices = [CGPoint(x: rect.minX, y: rect.minY), CGPoint(x: rect.maxX, y: rect.minY),
                               CGPoint(x: rect.maxX, y: rect.maxY), CGPoint(x: rect.minX, y: rect.maxY)]
@@ -382,19 +393,21 @@ enum GraphicsReader {
         guard s.depth < 12 else { s.unsupported = true; return }
         let oldMatrix = s.matrix, oldPath = s.path, oldSaved = s.saved, oldWhite = s.white
         let oldVertices = s.vertices, oldSubpaths = s.subpaths, oldFlatFill = s.flatFill
+        let oldPanelOutline = s.panelOutline
         let oldResources = s.resources
         let oldTextRenderingMode = s.textRenderingMode
         let oldClip = s.clip, oldPendingClip = s.pendingClip
         defer {
             s.matrix = oldMatrix; s.path = oldPath; s.saved = oldSaved; s.white = oldWhite
             s.vertices = oldVertices; s.subpaths = oldSubpaths; s.flatFill = oldFlatFill
+            s.panelOutline = oldPanelOutline
             s.textRenderingMode = oldTextRenderingMode
             s.resources = oldResources; s.clip = oldClip; s.pendingClip = oldPendingClip; s.depth -= 1
         }
         s.depth += 1
         s.saved = []
         s.path = .null
-        s.vertices = []; s.subpaths = 0
+        s.vertices = []; s.subpaths = 0; s.panelOutline = PanelOutline()
         s.pendingClip = false
         if CGPDFObjects.array(dictionary, "Matrix") != nil {
             guard let matrix = CGPDFObjects.matrix(dictionary, "Matrix") else { s.unsupported = true; return }

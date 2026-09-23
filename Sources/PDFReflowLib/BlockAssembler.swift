@@ -683,6 +683,22 @@ struct BlockAssembler {
         }
     }
 
+    /// A displayed opener summary reads as one aside and cannot merge with adjacent prose.
+    mutating func appendAside(_ lines: [TextLine]) {
+        initialOpening = nil
+        flushNote()
+        flushParagraph()
+        codeOrigin = nil
+        rowInProgress = nil
+        itemRowInProgress = nil
+        guard let first = lines.first else { return }
+        var text = first.content
+        for line in lines.dropFirst() { text = join(text, line.content) }
+        blocks.append(ReflowBlock(content: .aside(text), page: page))
+        previous = nil
+        previousRow = nil
+    }
+
     /// A table the page draws, read as cells (#210). It closes whatever is open, as a figure
     /// does: nothing joins across a table.
     mutating func appendTable(_ table: PageTable) {

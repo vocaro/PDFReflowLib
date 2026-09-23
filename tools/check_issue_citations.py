@@ -76,6 +76,10 @@ ALLOWED = {
     291: ('historical', "a sentence's own stop joining the block above it, on main and named by its issue"),
     31: ('historical', 'the scanned-table fallback rule, on main and named by its issue'),
     173: ('historical', "the Vision variance across compiled model sets it recorded, measured as not reproducing on main and answered per run by #284's control run"),
+    294: ('historical', 'the document-wide heading rank, on main and named by its issue'),
+    243: ('historical', "the IRS cover's contents heading that the rank restores, on main and named by its issue"),
+    292: ('historical', 'the list conversion — the list-item block, ListBuilder and real list output — on main and named by its issue'),
+    293: ('historical', "the corpus lane passing each book's declared language, on main and named by its issue"),
     30: ('historical', 'the coverage expansion that added seven corpus cases, used as its name'),
     38: ('historical', '`TextEncodingCheck`, which is in `main`, named by its issue'),
     93: ('historical', 'the recognition policy #93 introduced and `1b0308b` ported'),
@@ -111,7 +115,6 @@ ALLOWED = {
     241: ('historical', 'the form-XObject tag rule, on main and named by its issue'),
     242: ('historical', 'the admission of the Warren and NOAA full conversions to the corpus lane, ruled on the '
           'issue and named by it'),
-    291: ('historical', "a sentence's own stop joined to the block above it, on main and named by its issue"),
     57: ('historical', 'the figure-seed and row-continuation rules, on main and named by the issue they came from'),
     137: ('historical', 'the rows a page means to be read across — the spanning-picture divider and the '
           'borderless-table row blocks, on main — cited beside #174 and #210 as the cases the run-on '
@@ -204,9 +207,6 @@ ALLOWED = {
     # is refreshed: every citation of it names a rule that commit put on main.
     108: ('historical', 'the language tag, the language-correction opt-in and its measured cost, and the '
         'Latin-to-Cyrillic look-alike repair, on main and named by their issue'),
-    # Closed by `235240e` on main; the refresh that came with #108 surfaced it.
-    291: ('historical', "a sentence's own full stop, stranded as a line of its own, joined back to its "
-        'sentence, on main and named by its issue'),
 
     # Closed by the nine commits that reached `origin/main` together on 2026-09-22, each cited for
     # the rule it established or the finding it records. They needed a second refresh within a day
@@ -249,12 +249,8 @@ ALLOWED = {
         'on main and named by its issue'),
     289: ('historical', "the candidate band read against a book's own page image where the sheet "
         'carries one, on main and named by its issue'),
-    291: ('historical', "a sentence's own stop, handed back as a line of its own, carried back to its "
-         'sentence, on main and named by its issue'),
     290: ('historical', 'a bare number in the outer margin refused the title reading, on main and '
         'named by its issue'),
-    291: ('historical', "a block that is one sentence-ending mark joined to the block above it, on "
-        'main and named by its issue'),
 
     # Closed, but the defect is still in `main`; the prose says so and names the commit. #5 and
     # #11 join this group from #236's audit: both were read against `main` — Warren and NOAA

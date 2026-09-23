@@ -1133,13 +1133,8 @@
       ],
       "attribution": "Chris Lynnes (NASA Goddard Space Flight Center) and Rahul Ramachandran (NASA Marshall Space Flight Center), Earthdata Cloud Analytics Project, CEOS WGISS meeting, April 2018. Source: https://ntrs.nasa.gov/citations/20180003024. The PDF is unmodified.",
       "downloadVerification": "Fresh download through tools/fetch_corpus.py matched this identity on 2026-09-19, as did an independent curl download.",
-      "reviewStatus": "Converted with EPUBCheck and progress passing; peak converter RSS 95,158,272 bytes (about 91 MiB) against a 128 MiB ceiling. 21 slides reviewed against Poppler rasters of the source pages. Contract protects slide 1's two-line title and byline order, slide 5's recognized question (#176, checked against the rendered source raster) and slide 9's title and five guiding principles in order. Every slide except 5 reports unverifiedTextLayer: main has no equivalent of the branch's layoutComesApart (#117, not ported), so a full-bleed slide background reads as a page-sized graphic here, the same open defect the branch's own record left unresolved for this deck. Numbered/lettered list item grouping on slides 7 and 9, lettered sub-item nesting on slide 7, and diagram box order beyond what is listed above are reviewed and found imperfect or not independently verified, and are not pinned.",
+      "reviewStatus": "Rechecked 2026-09-23 for #182 with 68 corpus assertions across all 21 slides, EPUBCheck, progress and the unchanged 128 MiB memory ceiling passing; see measurements/backdrop-separation/record.md. Flat page grounds are separated from artwork, plain soft-mask padding no longer takes the native Cumulus labels on slides 12–21, and complete source diagram crops preserve the cloud, panels, arrows and labels. Only the recognized question on slide 5 retains a full-page reference; native backdrop slides no longer report unverifiedTextLayer. Source-derived controls pin slides 11, 12 and 18. List grouping/nesting, diagram reading order and duplicate source-layer labels remain separate reviewed limitations, not a claim that every item in #175 is fixed.",
       "knownFidelityIssues": [
-        {
-          "page": 1,
-          "issue": "The full-bleed slide background counts as a page-sized graphic: unverifiedTextLayer and a source-page reference image on every slide but 5.",
-          "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/164"
-        },
         {
           "page": 2,
           "issue": "The Research, Applications and Education diagram boxes have no text layer at all and are lost from the reflowed text; only their crop carries them.",

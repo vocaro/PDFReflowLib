@@ -53,7 +53,12 @@ struct PageTypography: Equatable {
         // Small footnotes or table cells can outnumber the ordinary prose. A sustained
         // paragraph still states its own body size; recovering those smaller lines must
         // not turn each row of the paragraph into a heading.
-        let proseBody = nativeSizeEvidence ? Self.wrappedProseBody(reflowableLines) : nil
+        // The document must corroborate that larger size. A page can also contain a larger
+        // display summary above its ordinary body and headings; that summary must not raise
+        // the threshold for everything beneath it (NOAA's focus pages).
+        let proseBody = nativeSizeEvidence ? documentBody.flatMap { documentBody in
+            documentBody > body ? Self.wrappedProseBody(reflowableLines, ceiling: documentBody * 1.05) : nil
+        } : nil
         let headingBody = max(established.map { max(body, $0) } ?? headingPageBody, proseBody ?? 0)
         let documentFloor = documentBody.map { established == nil ? $0 * 1.1 : 0 } ?? 0
         self.body = body
@@ -67,7 +72,7 @@ struct PageTypography: Equatable {
     /// A second body size needs stronger evidence than the modal estimate: four wrapped rows,
     /// 200 characters, a stable left edge and leading, and lowercase continuations. Display
     /// quotations, captions, bold headings and tagged headings cannot supply this evidence.
-    private static func wrappedProseBody(_ lines: [TextLine]) -> CGFloat? {
+    private static func wrappedProseBody(_ lines: [TextLine], ceiling: CGFloat) -> CGFloat? {
         guard lines.count <= 2_000 else { return nil }
         var runs: [[TextLine]] = []
         for line in lines.sorted(by: { $0.rect.maxY > $1.rect.maxY }) {
@@ -85,7 +90,7 @@ struct PageTypography: Equatable {
         }
         return runs.compactMap { run -> CGFloat? in
             guard run.count >= 4, run.reduce(0, { $0 + $1.text.count }) >= 200,
-                  let first = run.first, let opening = first.text.first,
+                  let first = run.first, first.fontSize <= ceiling, let opening = first.text.first,
                   !"\"“‘«".contains(opening), !LayoutReconstructor.isCaption(first.text),
                   run.allSatisfy({ ($0.structure?.headingLevel ?? 0) == 0
                       && !LayoutReconstructor.readsWhollyBold($0) }),

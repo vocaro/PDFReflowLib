@@ -12,7 +12,7 @@ func wrappedProseKeepsItsBodySizeBesideRecoveredSmallText(number: Int) throws {
     // crops. Neither the table cells nor footnotes are discarded to repair the estimate.
     var page = fixture.content()
     page.graphics = []; page.pictures = []
-    let typography = PageTypography(page: page)
+    let typography = PageTypography(pageLines: page.lines, reflowableLines: page.lines, documentBody: 10)
     #expect(typography.body == (number == 13 ? 7 : 8))
     #expect(typography.headingBody == 10)
     for line in page.lines where line.fontSize == 10 {
@@ -21,7 +21,7 @@ func wrappedProseKeepsItsBodySizeBesideRecoveredSmallText(number: Int) throws {
     }
     var warnings: [ConversionWarning] = []
     let blocks = LayoutReconstructor.blocks(page: page, images: [],
-        vocabulary: LayoutReconstructor.vocabulary(in: [page]), warnings: &warnings)
+        vocabulary: LayoutReconstructor.vocabulary(in: [page]), warnings: &warnings, documentBody: 10)
     let opening = number == 13 ? "Despite the need for coordination" : "funds rate and other short-term"
     #expect(blocks.contains { block in
         if case .paragraph = block.content { return block.text.hasPrefix(opening) }
@@ -49,10 +49,12 @@ func wrappedProseKeepsItsBodySizeBesideRecoveredSmallText(number: Int) throws {
         TextLine(text: text, rect: CGRect(x: 30, y: 600 - index * 16, width: 260, height: 12), fontSize: 10)
     }
     func threshold(_ lines: [TextLine], native: Bool = true) -> CGFloat {
-        PageTypography(pageLines: small + lines, reflowableLines: small + lines, documentBody: nil,
+        PageTypography(pageLines: small + lines, reflowableLines: small + lines, documentBody: 10,
                        nativeSizeEvidence: native).headingThreshold
     }
     #expect(threshold(larger) == 11)
+    #expect(PageTypography(pageLines: small + larger, reflowableLines: small + larger,
+                           documentBody: nil).headingThreshold == 10)
     #expect(threshold(larger, native: false) == 10)
     #expect(threshold(Array(larger.prefix(3))) == 10)
     let bold = larger.map { TextLine(content: InlineText($0.text, style: .bold), rect: $0.rect, fontSize: $0.fontSize) }
@@ -69,4 +71,28 @@ func wrappedProseKeepsItsBodySizeBesideRecoveredSmallText(number: Int) throws {
     var rotated = larger
     for index in rotated.indices { rotated[index].turn = .clockwise }
     #expect(threshold(rotated) == 10)
+}
+
+@Test(arguments: [1691, 1712, 1730])
+func wrappedDisplaySummaryDoesNotRaiseOrdinaryHeadingSize(number: Int) throws {
+    let fixture = try SourceLayoutFixture.load("noaa-body-\(number)")
+    #expect(fixture.sourceSHA256 == "1942cbf346dc2c711fea413d6d6543edb8bc1e3a88d4c3a85e733c6b6d3577bf")
+    #expect(fixture.page == number)
+    let page = fixture.content()
+    // These pages have 14 pt summaries above 10 pt prose and genuine 14 pt headings.
+    // A long, lowercase-continuing summary is not corroborated by the document's body.
+    for documentBody: CGFloat? in [nil, 10] {
+        let typography = PageTypography(pageLines: page.lines, reflowableLines: page.lines,
+                                        documentBody: documentBody)
+        #expect(typography.body == 10)
+        #expect(typography.headingBody == 10)
+        let expected = number == 1691 ? ["What Are Compound Events?"]
+            : number == 1712 ? ["The Impact of Climate on Infectious Diseases", "Interactions Between COVID-19"]
+            : ["Why So Blue, Carbon?", "The Carbon Benefits"]
+        for phrase in expected {
+            let line = try #require(page.lines.first { $0.text.hasPrefix(phrase) })
+            #expect(LayoutReconstructor.role(of: line, on: page, in: page.lines, typography: typography,
+                                             labels: [], judgesTitleWords: false) == .heading)
+        }
+    }
 }

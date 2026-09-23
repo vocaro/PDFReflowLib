@@ -81,7 +81,9 @@ settings, provisional recommended ranges, and each control's tradeoffs.
 
 Other options select automatic/disabled/always OCR, opt-in retries of image-backed existing
 text (`.automaticIncludingImageBackedText`), or an opt-out that keeps image-backed existing text
-even when it fails the plausibility test (`.automaticKeepingImageBackedText`), plus
+even when it fails the plausibility test (`.automaticKeepingImageBackedText`), an opt-in for
+the recognizer's language correction (`ocrLanguageCorrection`, off because it damages codes,
+dates and names), plus
 language, title, author, recurring header/footer removal, raster resolution, and ceilings for
 input bytes, pages, characters, raster pixels and uncompressed output bytes. Default ceilings are 256 MiB input, 2,000 pages, 20 million characters,
 12 million pixels per raster, 180 DPI and 512 MiB output content. These are input/work bounds,

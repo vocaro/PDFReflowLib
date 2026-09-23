@@ -59,7 +59,10 @@ enum OCRReader {
         "р": "p", "с": "c", "у": "y", "х": "x", "і": "i", "ј": "j", "ѕ": "s",
     ]
 
-    /// Rewrites a reading's Cyrillic look-alikes as the Latin the page draws (#168).
+    /// Rewrites the look-alikes a reading holds from another script as the letters the page
+    /// draws, in the direction the declared language decides: Cyrillic to Latin for an English
+    /// document (#168), Latin to Cyrillic for one in a Cyrillic-script language (#108). Any
+    /// other declared language is returned as read.
     ///
     /// Vision returns Cyrillic from a page this library has told it is English:
     /// `RecognizeDocumentsRequest` with `recognitionLanguages = [en-US]` reads the CDC graphic
@@ -72,12 +75,18 @@ enum OCRReader {
     /// page draws `U` and `A` and no substitution can know that. A guess there would replace a
     /// reading the page can be checked against with one it cannot.
     ///
-    /// A document that is not declared English is never touched, so a page of actual Russian
-    /// keeps its script. Real Cyrillic prose reaches this rule as words holding the letters with
-    /// no Latin look-alike, and keeps them.
+    /// A document that is not declared English is never touched by this rule, so a page of
+    /// actual Russian keeps its script; a document declared in a Cyrillic-script language has
+    /// the mirror rule, `cyrillicRepaired` (#108). Real Cyrillic prose reaches this rule as
+    /// words holding the letters with no Latin look-alike, and keeps them.
     static func repairedScript(_ text: String, language: String) -> String {
-        guard EnglishText.isDeclared(language),
-              text.contains(where: { latinLookAlikes.keys.contains($0) || isCyrillic($0) }) else { return text }
+        if EnglishText.isDeclared(language) { return latinRepaired(text) }
+        if declaresCyrillicScript(language) { return cyrillicRepaired(text) }
+        return text
+    }
+
+    private static func latinRepaired(_ text: String) -> String {
+        guard text.contains(where: { latinLookAlikes.keys.contains($0) || isCyrillic($0) }) else { return text }
         return text.split(separator: " ", omittingEmptySubsequences: false).map { token -> Substring in
             guard token.contains(where: isCyrillic) else { return token }
             let mapped = String(token.map { latinLookAlikes[$0] ?? $0 })
@@ -85,19 +94,81 @@ enum OCRReader {
         }.joined(separator: " ")
     }
 
+    /// Latin capitals and lowercase drawn the same as a Cyrillic letter: `latinLookAlikes` read
+    /// the other way, without `І`, `Ј` and `Ѕ`, which belong to Ukrainian, Serbian and
+    /// Macedonian and not to Russian, so a Latin `I`, `J` or `S` is never made into a letter the
+    /// declared language may not have.
+    private static let cyrillicLookAlikes: [Character: Character] = [
+        "A": "А", "B": "В", "E": "Е", "K": "К", "M": "М", "H": "Н", "O": "О", "P": "Р", "C": "С",
+        "T": "Т", "Y": "У", "X": "Х", "a": "а", "e": "е", "o": "о", "p": "р", "c": "с", "y": "у",
+        "x": "х",
+    ]
+
+    /// Whether the declared language is written in Cyrillic: `ru`, `uk`, `bg`, `sr`, `mk`,
+    /// `be`, `kk` and the rest, by the script the tag names or the one it implies (`ru` implies
+    /// `Cyrl`, `sr-Latn` names Latin), rather than a list of codes.
+    static func declaresCyrillicScript(_ language: String) -> Bool {
+        Locale.Language(identifier: language).script == .cyrillic
+    }
+
+    /// Rewrites a reading's Latin look-alikes as the Cyrillic the page draws, for a document
+    /// declared in a Cyrillic-script language (#108).
+    ///
+    /// Given `ru-RU` as its recognition language, `RecognizeDocumentsRequest` returns an
+    /// all-capital line whose every letter is drawn the same as a Latin one — `КОМАР ТАРА` —
+    /// as Latin, `KOMAP TAPA`, and under every language it returns some capitals and some
+    /// lower-case letters of such words as Latin inside otherwise Cyrillic tokens, `MOСKВА`
+    /// and `моpe` (`measurements/ocr-language-options`). Lower-case words and words holding a
+    /// letter with no look-alike, `ЖУРНАЛ`, are read correctly.
+    ///
+    /// A token that mixes Cyrillic with Latin look-alikes is a word of neither script and is
+    /// rewritten whatever its case. A token that is Latin throughout is rewritten only when it
+    /// is all capitals, which is the reading Vision gets wrong, and not when its letters spell a
+    /// Roman numeral of `X`, `C` and `M` alone, which Vision returns as the Latin the page draws
+    /// beside its Cyrillic (`XX ВЕК`); a lower-case Latin word in a Russian text, `tax`, is read
+    /// as what it is and kept. A token holding a Latin letter with no Cyrillic look-alike is
+    /// kept whole, so `NASA`, `USA`, `ISO` and `XIX` are what the page draws.
+    ///
+    /// The risk this accepts: a genuine Latin word set in capitals from those twelve letters
+    /// alone — `TAX`, `COMPACT`, `MOCK` — in a Russian document is returned by Vision exactly as
+    /// the misreading is and is rewritten with it. Either way it renders the same.
+    private static func cyrillicRepaired(_ text: String) -> String {
+        guard text.contains(where: isLatinLetter) else { return text }
+        return text.split(separator: " ", omittingEmptySubsequences: false).map { token -> Substring in
+            let latin = token.filter(isLatinLetter)
+            guard !latin.isEmpty, latin.allSatisfy({ cyrillicLookAlikes[$0] != nil }) else { return token }
+            guard token.contains(where: isCyrillic)
+                    || (latin.allSatisfy(\.isUppercase) && !latin.allSatisfy({ "XCM".contains($0) })) else { return token }
+            return Substring(String(token.map { cyrillicLookAlikes[$0] ?? $0 }))
+        }.joined(separator: " ")
+    }
+
     private static func isCyrillic(_ character: Character) -> Bool {
         character.unicodeScalars.contains { (0x0400...0x04FF).contains($0.value) }
+    }
+
+    private static func isLatinLetter(_ character: Character) -> Bool {
+        character.isASCII && character.isLetter
+    }
+
+    /// The request every page is read with: the declared language where the recognizer lists
+    /// it, and language correction only when the caller asked for it (#108). Nothing else about
+    /// the request moves with that option, so a conversion with it on reads the same pages at the
+    /// same language.
+    static func recognitionRequest(options: ConversionOptions) -> RecognizeDocumentsRequest {
+        var request = RecognizeDocumentsRequest()
+        request.textRecognitionOptions.useLanguageCorrection = options.ocrLanguageCorrection
+        let language = Locale.Language(identifier: options.language)
+        if request.supportedRecognitionLanguages.contains(language) {
+            request.textRecognitionOptions.recognitionLanguages = [language]
+        }
+        return request
     }
 
     static func read(page: PDFPage, options: ConversionOptions) async throws -> Result {
         let bounds = page.bounds(for: .cropBox)
         let image = try PageRasterizer.image(page: page, rect: bounds, options: options)
-        var request = RecognizeDocumentsRequest()
-        request.textRecognitionOptions.useLanguageCorrection = false
-        let language = Locale.Language(identifier: options.language)
-        if request.supportedRecognitionLanguages.contains(language) {
-            request.textRecognitionOptions.recognitionLanguages = [language]
-        }
+        let request = recognitionRequest(options: options)
         let first = try await recognize(image, request: request)
         try Task.checkCancellation()
         let complete = try await completeReading(first, image: image, request: request,

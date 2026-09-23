@@ -9,6 +9,7 @@ struct PDFReflowLibCommand {
         Usage: pdf-reflow input.pdf output.epub [options]
           --ocr automatic|image-backed|keep-image-backed|always|never
           --no-ocr  (alias for --ocr never)
+          --ocr-language-correction on|off       (recognizer corrects words to its language model; default off)
           --reference-images automatic|always|never
           --repeated-headers-and-footers remove|keep
           --full-page-image-encoding automatic[:QUALITY]|png|jpeg:QUALITY|smallest:QUALITY
@@ -27,6 +28,9 @@ struct PDFReflowLibCommand {
         mixed crops, and colored text pages stay PNG. png, jpeg:QUALITY and smallest:QUALITY
         apply exactly as named.
         Set both --package-identifier and --modification-date for byte-reproducible packaging.
+        Language correction is for scans of plain prose only: it reads prose a little better
+        and codes, dates and names worse, and a corrected mistake reads as a real word; every
+        ocrUsed warning of a conversion that used it says so.
         A locked PDF needs --password-file: the password is read from a file or standard input,
         never from an argument, so it stays out of the shell history and the process list. One
         trailing newline is the file's and is removed; anything else is the password.
@@ -73,6 +77,15 @@ struct PDFReflowLibCommand {
                     case "always": options.ocr = .always
                     case "never": options.ocr = .never
                     default: throw ConversionError.invalidOptions("unknown OCR policy: \(value)")
+                    }
+                case "--ocr-language-correction":
+                    // An opt-in with a measured cost to codes, dates and names (#108), so it
+                    // takes an explicit value rather than standing as a bare switch.
+                    switch value {
+                    case "on": options.ocrLanguageCorrection = true
+                    case "off": options.ocrLanguageCorrection = false
+                    default: throw ConversionError.invalidOptions(
+                        "unknown OCR language-correction setting: \(value) (expected on or off)")
                     }
                 case "--reference-images":
                     switch value {

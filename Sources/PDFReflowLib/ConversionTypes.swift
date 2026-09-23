@@ -124,6 +124,14 @@ public struct ConversionOptions: Sendable {
     /// throws `ConversionError.encryptedPDF`; a document that is not locked ignores it.
     public var password: Password?
     public var ocr: OCRPolicy = .automatic
+    /// Let the recognizer correct each recognized word against its language model (#108). Off
+    /// by default, and meant for scans of plain prose only: on the corpus's English scans it
+    /// reads prose a little better and codes, dates and names worse — Census variable names fell
+    /// from 72.5% to 65.0% read correctly, `11/21/54` became `11121/54`, the witness `Euins`
+    /// became `Buins` — and a corrected mistake reads as a real word, which is harder to catch
+    /// than recognition noise. Census mixes prose with codes on one page, so no per-page rule
+    /// applies it. Every `ocrUsed` warning of a conversion that used it says so.
+    public var ocrLanguageCorrection = false
     /// Remove short recurring text at page edges when at least three pages provide evidence.
     public var removeRepeatedHeadersAndFooters = true
     public var maximumInputBytes: Int64 = 256 * 1_024 * 1_024

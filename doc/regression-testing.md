@@ -28,7 +28,7 @@ Fetch sources with `tools/fetch_corpus.py --case <id>` (checksum-verified, cache
 
 What the individual gates check:
 
-- `swift test`: <!-- counts:swift-tests -->686 Swift Testing tests<!-- counts:end --> with no known-issue wrappers, using the real Apple
+- `swift test`: <!-- counts:swift-tests -->692 Swift Testing tests<!-- counts:end --> with no known-issue wrappers, using the real Apple
   PDF/OCR stack. They cover extraction, the document model, layout, raster pixels (crop origins,
   rotations, annotations, resource ceilings), preserved regions (fraction bars, raised exponents
   and all six cells of a ruled table in actual EPUB images at 72/144 DPI, with prose and code
@@ -114,7 +114,9 @@ What the individual gates check:
   `--repeated-headers-and-footers remove`, present on all three pages with `keep`, and
   byte-identical across two `keep` runs with a pinned identifier and date; invalid values must
   name `remove` and `keep`. `--ocr keep-image-backed` must still recognize the scanned fixture's
-  absent text. Reader tests check JPEG MIME admission and both ZIP/expanded byte limits.
+  absent text. `--ocr-language-correction on` must recognize it too and say so in every
+  `ocrUsed` warning, `off` and the default must not, and any other value must be rejected
+  naming `on` and `off`. Reader tests check JPEG MIME admission and both ZIP/expanded byte limits.
 - `tools/check_structure_memory.py` (corpus lane): a fresh process against the
   checksum-verified FAA source under a 192 MiB Mac RSS ceiling, protecting the structure index
   from eager loading of sparse ParentTree arrays; `--maximum-rss-mib` overrides it.

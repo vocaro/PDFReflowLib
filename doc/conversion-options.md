@@ -7,6 +7,7 @@ No policy changes dynamically to squeeze a book under a limit, and no network se
 | Control | Default | Choices / meaning |
 | --- | --- | --- |
 | `ocr` | `.automatic` | `.automatic`, `.automaticIncludingImageBackedText`, `.automaticKeepingImageBackedText`, `.always`, `.never` |
+| `ocrLanguageCorrection` | `false` | `true` lets the recognizer correct words against its language model ([below](#language-correction)); for scans of plain prose only |
 | `referenceImages` | `.automatic` | `.automatic`, `.always`, `.never` |
 | `removeRepeatedHeadersAndFooters` | `true` | `true` omits detected running headers, footers and folios (`furnitureRemoved`); `false` keeps them in the text |
 | `fullPageImageEncoding` | `.automatic(jpegQuality: 0.90)` | `.automatic(jpegQuality:)` (per-image choice, [below](#automatic-encoding)), `.png`, `.jpeg(quality:)`, `.smallest(jpegQuality:)` |
@@ -98,6 +99,28 @@ which `referenceImages` controls like any other supplementary image. Only Englis
 other declared languages, short pages, composite fonts and incorrect-but-present `ToUnicode` maps
 are outside this signal, and a page this check explains is excluded from the two checks above.
 The font and statistics rules are in [behavior](behavior.md#textencodingcheck-damaged-born-digital-encodings-38).
+
+### Language correction
+
+Vision can correct each recognized word against its language model. The library asks for that
+only when `ocrLanguageCorrection` is `true`; the default is off, and it stays off because of what
+it was measured to cost on the corpus's own English scans (#108). Across three independently
+compiled model sets on Census, CDC, all 312 Blue Book pages and the Warren excerpt, correction
+reads prose slightly better and damages what is not prose: codes and variable names (Census code
+accuracy 72.5% → 65.0%, Blue Book 48.4% → 35.5%; `IL1` → `ILL`, `add10` → `add 10`), dates and
+numbers (`11/21/54` → `11121/54`, `1950` → `11950`, `15.4` → `15. 4`) and names (the witness
+`Euins` → `Buins`; `ruller`, the page's `Fuller`, → `ruler`). In the owner's review of the
+changed tokens, fixes and damage came out about equal outside running prose, and a corrected
+mistake reads as a real word, which is harder to catch than recognition noise. Because Census
+sets prose beside codes on one page,
+enabling it by book or by page is not supported either; the option is for a caller who knows the
+scan is prose throughout.
+
+With it on, every `ocrUsed` warning of the conversion says so ("Text is OCR transcription read
+with language correction on: a misread code, number or name may have been changed to a plausible
+word."), so a reader of the report can tell how the text was read. Nothing else about the
+recognition moves with it: the same pages are recognized, at the same language. The developer
+client takes `--ocr-language-correction on|off`; any other value is rejected without output.
 
 The developer client exposes these policies as `--ocr automatic|image-backed|keep-image-backed|always|never`.
 `--no-ocr` remains an alias for `--ocr never`; when repeated, the last OCR option takes effect.
@@ -289,6 +312,7 @@ swift run pdf-reflow input.pdf output.epub \
 Byte limits accept a positive integer or `unlimited`. Image encodings accept `automatic`,
 `automatic:QUALITY`, `png`, `jpeg:QUALITY` or `smallest:QUALITY`. `--repeated-headers-and-footers remove|keep` sets
 `removeRepeatedHeadersAndFooters`; without it, repeated headers and footers are removed.
+`--ocr-language-correction on|off` sets `ocrLanguageCorrection`; without it, correction is off.
 `--package-identifier ID` and `--modification-date ISO8601`
 (for example `2026-01-01T00:00:00Z`) set the reproducible-package options. The internal reader
 accepts PNG/JPEG publications; its independent admission budget can be set with
@@ -302,7 +326,16 @@ that only holds for a declared English: the line-end lexicon vote, the Cyrillic 
 repair on recognized text, the inherited-layer, drawn-text and recognition judgments, the
 damaged-encoding check, the recognized-line heading test, and the word tests that keep a book's
 own prose out of its crops. The East Asian spacing and heading joins read the text's own script
-and run whatever the tag says. The default is `en`.
+and run whatever the tag says. The default is `en`. Vision lists only region- or script-qualified
+languages (`ru-RU`, `zh-Hans`), so a bare code such as `ru` declares the language without reaching
+the recognizer, which then reads at its own default.
+
+A tag whose script is Cyrillic — `ru`, `ru-RU`, `uk`, `bg`, `sr`, `mk`, `be`, `kk`, decided by
+the script the tag names or implies, so `sr-Latn` is not one — switches on the mirror of that
+look-alike repair: an all-capital word Vision returned as Latin because every letter of it is
+drawn the same as a Latin one (`KOMAP TAPA` for `КОМАР ТАРА`) is returned to Cyrillic, and so is
+a token that mixes the two scripts (`MOСKВА`). The rule, what it leaves alone and the Latin word
+it can mistake are in [behavior](behavior.md#ocrreader) (#108).
 
 A malformed tag is rejected rather than converted as something else: the value must be ASCII
 letters, digits and single hyphens, start with a letter, not end with one and be at most 35

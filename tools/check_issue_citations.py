@@ -200,6 +200,13 @@ ALLOWED = {
         'issue'),
     275: ('historical', 'a lone letter is a word only in the company of words, on main and named by its '
         'issue'),
+    # Entered with the commit that closes it, so the gate does not fail the next time the snapshot
+    # is refreshed: every citation of it names a rule that commit put on main.
+    108: ('historical', 'the language tag, the language-correction opt-in and its measured cost, and the '
+        'Latin-to-Cyrillic look-alike repair, on main and named by their issue'),
+    # Closed by `235240e` on main; the refresh that came with #108 surfaced it.
+    291: ('historical', "a sentence's own full stop, stranded as a line of its own, joined back to its "
+        'sentence, on main and named by its issue'),
 
     # Closed by the nine commits that reached `origin/main` together on 2026-09-22, each cited for
     # the rule it established or the finding it records. They needed a second refresh within a day

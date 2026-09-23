@@ -94,7 +94,12 @@ enum ConversionWarnings {
         case .implausibleRecognition(let finding):
             (.implausibleRecognition, TextLayerPlausibility.recognitionMessage(finding))
         case .ocrUsed:
-            (.ocrUsed, "Text is OCR transcription. " + (referencesDisabled
+            // A conversion that let the recognizer correct words says so on every page it
+            // recognized, because a corrected misreading is a real word a reader cannot tell from
+            // the page's own (#108); the report has no other place that records the option.
+            (.ocrUsed, (options.ocrLanguageCorrection
+                ? "Text is OCR transcription read with language correction on: a misread code, number or name may have been changed to a plausible word. "
+                : "Text is OCR transcription. ") + (referencesDisabled
                 ? "Supplementary references are disabled; compare unrecognized visual content with the source PDF."
                 : "The original page image preserves unrecognized visual content."))
         case .incompleteRecognition(let fraction, let retried):

@@ -45,6 +45,10 @@ def main():
         ('ocr-keep-image-backed', 'scanned', ['--ocr', 'keep-image-backed'], 1),
         ('ocr-always', 'columns', ['--ocr', 'always'], 1),
         ('ocr-automatic', 'scanned', ['--ocr', 'automatic'], 1),
+        # Language correction is an opt-in whose report must say it was used (#108); off,
+        # explicitly or by default, the report says what it always has.
+        ('ocr-language-correction', 'scanned', ['--ocr-language-correction', 'on'], 1),
+        ('ocr-language-correction-off', 'scanned', ['--ocr-language-correction', 'off'], 1),
         ('headers-default', 'prose', [], 0),
         ('headers-remove', 'prose', ['--repeated-headers-and-footers', 'remove'], 0),
         ('headers-keep', 'prose', ['--repeated-headers-and-footers', 'keep'], 0),
@@ -62,8 +66,16 @@ def main():
         assert report['imageCount'] == image_count
         if name == 'ocr-selective-native' or name == 'ocr-never':
             assert report['recognizedPageCount'] == 0
-        if name in ('ocr-always', 'ocr-automatic', 'ocr-keep-image-backed'):
+        if name in ('ocr-always', 'ocr-automatic', 'ocr-keep-image-backed',
+                    'ocr-language-correction', 'ocr-language-correction-off'):
             assert report['recognizedPageCount'] == 1
+        if name.startswith('ocr-'):
+            recognized = [w['message'] for w in report['warnings'] if w['code'] == 'ocrUsed']
+            corrected = [m for m in recognized if 'language correction on' in m]
+            if name == 'ocr-language-correction':
+                assert recognized and corrected == recognized, (name, recognized)
+            else:
+                assert corrected == [], (name, corrected)
         assert run.stderr.splitlines()[-1] == '100% completed'
         text = checks.check(output)
         if fixture == 'graphics': assert 'Text after the table' in text
@@ -133,6 +145,9 @@ def main():
         ['--maximum-output-bytes', '0'], ['--maximum-epub-bytes', '-1'], ['--maximum-epub-bytes'],
         ['--unknown', 'x'], ['--maximum-epub-bytes', '1'], ['--maximum-output-bytes', '1'],
         ['--ocr', 'invalid'], ['--ocr'],
+        # The correction opt-in takes on or off and nothing else (#108).
+        ['--ocr-language-correction', 'yes'], ['--ocr-language-correction', 'ON'],
+        ['--ocr-language-correction', ''], ['--ocr-language-correction'],
         ['--repeated-headers-and-footers', 'drop'], ['--repeated-headers-and-footers', 'KEEP'],
         ['--repeated-headers-and-footers'],
         # A language tag decides dc:language and the rules that only hold for a declared
@@ -149,6 +164,10 @@ def main():
             assert run.returncode == 1, flags
             assert run.stderr.strip() == ('Invalid conversion options: unknown repeated header/footer policy: '
                                           f'{flags[1]} (expected remove or keep)'), run.stderr
+        if flags[0] == '--ocr-language-correction' and len(flags) == 2:
+            assert run.returncode == 1, flags
+            assert run.stderr.strip() == ('Invalid conversion options: unknown OCR language-correction setting: '
+                                          f'{flags[1]} (expected on or off)'), run.stderr
         assert not list(args.output.glob('.pdfreflow-*')), flags
         results.append({'flags': flags, 'exitCode': run.returncode, 'diagnostic': run.stderr, 'passed': True})
     digests = [digest(args.output / f'headers-keep-pinned-{run}.epub') for run in 'ab']

@@ -830,10 +830,32 @@ improve some errors and introduce others, lose native formatting or change readi
   only when nothing of another script survives the rewrite: `МАУВЕ` becomes `MAYBE`, and the CDC
   graphic novel's `НИН?!` and `ОКДУ` keep every character they were read with, because their `И`
   and `Д` stand where the page draws `U` and `A` and no substitution can know that. A document not
-  declared English is never touched, and Russian prose reaches the rule as words holding the
-  letters that have no Latin look-alike and keeps them.
+  declared English is never touched by this rule, and Russian prose reaches it as words holding
+  the letters that have no Latin look-alike and keeps them.
+- **Latin look-alikes in a Cyrillic document (#108).** Given `ru-RU` as its recognition
+  language, Vision returns an all-capital line whose every letter is drawn the same as a Latin
+  one — `КОМАР ТАРА` — as Latin, `KOMAP TAPA`, and under every language it leaves single
+  capitals and lower-case letters of such words Latin inside otherwise Cyrillic tokens
+  (`MOСKВА`, `моpe`); words with a letter that has no look-alike, `ЖУРНАЛ`, and lower-case
+  words are read correctly ([record](../measurements/ocr-language-options/record.md)). For a
+  document whose declared language is written in Cyrillic (`ru`, `uk`, `bg`, `sr`, `mk`, `be`,
+  `kk` and the rest, by the script the tag names or implies; `sr-Latn` is outside it), a token
+  that mixes Cyrillic with Latin look-alikes is rewritten to Cyrillic whatever its case, and a
+  token that is Latin throughout is rewritten only when it is all capitals and its letters do not
+  spell a Roman numeral of `X`, `C` and `M` alone, which Vision returns as the Latin it is beside
+  the Cyrillic it misread (`XX BEK` becomes `XX ВЕК`). A token holding a Latin letter with no
+  Cyrillic look-alike is kept whole (`NASA`, `USA`), and so is one holding `I`, `J` or `S`, whose
+  look-alikes belong to Ukrainian, Serbian and Macedonian and not to Russian (`XIX`, `ISO`); a
+  lower-case Latin word (`tax`) is read as what it is and kept. The risk accepted: a genuine
+  Latin word set in capitals from those twelve letters alone (`TAX`, `COMPACT`) in a Russian
+  document is returned by Vision exactly as the misreading is, and is rewritten with it; either
+  way it renders the same. Measured on synthetic type only; no corpus book is Russian.
 
-Vision recognizes the page image, with the declared language when the recognizer supports it.
+Vision recognizes the page image, with the declared language when the recognizer supports it,
+and with language correction only when `ocrLanguageCorrection` asks for it (#108); a conversion
+that used it says so in every `ocrUsed` warning, because a corrected misreading is a real word a
+reader cannot tell from the page's own, and the cost that keeps it off by default is in
+[conversion options](conversion-options.md#language-correction).
 Uncertain words are preserved rather than dropped silently. OCR text is always reported as
 transcription (`ocrUsed`: "Text is OCR transcription. The original page image preserves
 unrecognized visual content."; with references disabled, "Supplementary references are disabled;
@@ -2102,7 +2124,7 @@ Evidence: [spine-packing](../measurements/spine-packing/record.md),
 | Code | Emitted when |
 | --- | --- |
 | `structureFallback` | Tagged text on the page could not be matched unambiguously to native lines; or, attached to page 1, the document's structure tree was rejected (invalid, over budget or outside supported roles). |
-| `ocrUsed` | Recognition replaced the page's text with at least one recognized line. |
+| `ocrUsed` | Recognition replaced the page's text with at least one recognized line. With `ocrLanguageCorrection` on, the message says the text was read with language correction on and that a misread code, number or name may have been changed to a plausible word (#108). |
 | `ocrFailed` | Recognition threw, or succeeded and read nothing: the page became an image, the compared layer was retained, or a drawn-text page kept its crops. |
 | `incompleteRecognition` | Recognition replaced the page's text and its final reading still leaves at least 8 rows holding at least 20% of the page's text-shaped ink outside every recognized line (#116). The message gives the share and says whether the band retry had already run. Not emitted for a reading the conversion discarded. |
 | `uncertainHyphen` | A line-end hyphen neither the vocabulary nor the lexicon could decide is retained; once per page (`HyphenRepair`). |

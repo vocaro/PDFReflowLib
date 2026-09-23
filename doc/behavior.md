@@ -2333,6 +2333,10 @@ complete caption. Display quotations require opening/closing quote marks and sev
 of larger native type; they become one `blockquote`, with an adjacent dash attribution, and
 never supply navigation headings.
 
+Thin leaders remain separate until their decoration role is classified, so a nearby painting
+cannot acquire table-of-contents text through an early bounding-box union. A patterned rectangular
+panel remains source artwork; independently proved wrapped prose over it can also reflow.
+
 `PrintedColumns` supplements whitespace cuts with sustained body-text margins when a
 crossing title or decorative rule hides the gutter. It requires at least six substantial
 rows per column and declines floating content across the middle of their writing. Furniture

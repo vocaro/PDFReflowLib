@@ -209,3 +209,37 @@ func magazinePullQuotationIsOneSemanticBlock(number: Int) throws {
     #expect(!separate[0].rect.intersects(separate[1].rect))
     #expect(separate.flatMap(\.rows).flatMap { $0 }.map(\.text).count == 8)
 }
+
+@Test func noaaContentsLeadersRemainSeparateFromThePainting() throws {
+    let page = try magazinePage("noaa", 8)
+    let text = magazineBlocks(page).map(\.text).joined(separator: " ")
+    let phrases = ["About This Report", "Guide to the Report", "Key Advances Since the Fourth National Climate Assessment",
+                   "Chapter 1. Overview", "Chapter 2. Climate Trends", "Chapter 3. Earth Systems Processes"]
+    let indices = try phrases.map { try #require(text.range(of: $0)?.lowerBound) }
+    #expect(indices == indices.sorted())
+    #expect(magazineBlocks(page).contains { if case .image = $0.content { true } else { false } })
+}
+
+@Test func noaaPatternedPanelKeepsBothNativeProseAndArtwork() throws {
+    let fixture = try SourceLayoutFixture.load("noaa-magazine-48")
+    let page = try magazinePage("noaa", 48)
+    let panel = try #require(fixture.paints.first { paint in
+        paint.rectangular && !paint.image && !paint.filled && paint.strokeOnly != true
+            && page.lines.filter { paint.rect.contains($0.rect) }.count >= 6
+    })
+    #expect(page.graphics.contains { $0.contains(panel.rect) })
+    let text = magazineBlocks(page).map(\.text).joined(separator: " ")
+    #expect(text.contains("Global greenhouse gas emissions from human activities continue to increase, resulting in rapid warming (Figure 1.5)"))
+    #expect(text.contains("unprecedented for thousands of years (Figure 1.6)"))
+    #expect(magazineBlocks(page).contains { if case .image = $0.content { true } else { false } })
+}
+
+@Test func displayQuotationRequiresNativeUprightTypography() throws {
+    var page = try magazinePage("usda", 12)
+    let type = PageTypography(page: page)
+    #expect(DisplayQuotation.groups(in: page.lines, body: type.body, threshold: type.headingThreshold).count == 1)
+    let sideways = page.lines.map { original in var line = original; line.turn = .clockwise; return line }
+    #expect(DisplayQuotation.groups(in: sideways, body: type.body, threshold: type.headingThreshold).isEmpty)
+    page.hasSyntheticTextStyle = true
+    #expect(!magazineBlocks(page).contains { if case .quotation = $0.content { true } else { false } })
+}

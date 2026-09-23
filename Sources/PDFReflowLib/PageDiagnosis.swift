@@ -44,7 +44,7 @@ enum PageDiagnosis {
     static let minimumProseMeasure: CGFloat = 0.75
 
     /// The indices of `lines` that a figure crop takes only because the page prints them over one
-    /// of its own pictures (#239).
+    /// of its own pictures or proved rectangular text panels (#239, #191).
     ///
     /// A crop removes from the reflowed text every line it intersects, and for a picture's own
     /// lettering that is right: a diagram's labels, a chart's axis and a legend's entries are
@@ -59,9 +59,10 @@ enum PageDiagnosis {
     ///
     /// Two conditions, both read off the page:
     ///
-    /// - **The crop is a picture's own footprint.** A run must intersect the crop of a placed raster
-    ///   image; the complete run stays together when only its opening rows overlap. A vector figure's
-    ///   region is seeded from what it paints and can still be carved; artwork is not.
+    /// - **The crop contains a picture or proved text panel.** A run must intersect the crop of a placed
+    ///   raster image or a rectangle independently shown to hold native wrapped prose. The complete
+    ///   run stays together when only its opening rows overlap. Patterned panel artwork remains
+    ///   in its required source crop; a vector figure alone supplies no text-panel evidence.
     /// - **The run is a wrapped paragraph of the book's prose.** Three or more rows on one left
     ///   edge, at one size and one leading, each but the last filling three quarters of the run's
     ///   widest line, at least `minimumProseWords` words, and at least half of them English

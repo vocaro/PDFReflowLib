@@ -761,7 +761,7 @@
     {
       "id": "fed-explained-2021",
       "sourceSHA256": "8db8fd9e1de63ac25a6f9585d78ded12f45ab56f0c14c52c199b36b368f84d60",
-      "basis": "Page 9 source raster reviewed: five functions in source order alongside Figure 1.1. Page 45 retains a graphic, without claiming its labels or arrows are semantically reconstructed. Physical page 46 source raster and native typography reviewed: prose beside the sidebar and above Table 3.1 must remain paragraphs, with both graphic regions retained. Source pages 13, 32, 54, 75, 77, 103, 109 and 123 visually reviewed; preserve ordinary prose and six genuine modest-size section headings beside graphics. Cover source and structure element 4417 reviewed: the title/subtitle spans form one H1, while Public Education & Outreach remains paragraph text. Source pages 33 and 122-123 visually reviewed for the two spine-document boundaries the packer writes there: the press-conference paragraph ends one document and the Communicating Policy Regularly and Clearly section opens the next with nothing between, and the consumer-compliance paragraph ends page 122 before Interagency Initiatives opens page 123 in the following document (#27). Does not bless the 12-point sub-headings this book sets in blue italic, which stay ordinary paragraphs on pages 33, 94 and 122 while the same style becomes a heading on page 123; on page 94 that leaves Electronic Check Processing at the end of a spine document with its paragraph opening the next (#228). Source pages 19 and 21 visually reviewed: the 8 pt running head standing where the book keeps it on 119 of its 135 pages must be absent, while the 14 pt section headings lower on the page remain headings (#10). Pages 19 and 75 read against the source for the list conversion (#292): page 19 opens on items 2 to 4 of a numbered list whose first item is on page 18, so the list starts at 2; page 75's five examination objectives list 1 to 4, and item 5, whose wrapped line sets it apart, is a paragraph that keeps its printed number. Physical opener pages 8, 14, 24, 50, 66, 88 and 116: the complete unquoted display summary is one aside below its title and above the chapter contents, following the owner decision on #214; it is not a quotation or navigation heading.",
+      "basis": "Page 9 source raster reviewed: five functions in source order alongside Figure 1.1. Page 45 retains a graphic, without claiming its labels or arrows are semantically reconstructed. Physical page 46 source raster and native typography reviewed: prose beside the sidebar and above Table 3.1 must remain paragraphs, with both graphic regions retained. Source pages 13, 32, 54, 75, 77, 103, 109 and 123 visually reviewed; preserve ordinary prose and six genuine modest-size section headings beside graphics. Cover source and structure element 4417 reviewed: the title/subtitle spans form one H1, while Public Education & Outreach remains paragraph text. Source pages 33 and 122-123 visually reviewed for the two spine-document boundaries the packer writes there: the press-conference paragraph ends one document and the Communicating Policy Regularly and Clearly section opens the next with nothing between, and the consumer-compliance paragraph ends page 122 before Interagency Initiatives opens page 123 in the following document (#27). Does not bless the 12-point sub-headings this book sets in blue italic, which stay ordinary paragraphs on pages 33, 94 and 122 while the same style becomes a heading on page 123; on page 94 that leaves Electronic Check Processing at the end of a spine document with its paragraph opening the next (#228). Source pages 19 and 21 visually reviewed: the 8 pt running head standing where the book keeps it on 119 of its 135 pages must be absent, while the 14 pt section headings lower on the page remain headings (#10). Pages 19 and 75 read against the source for the list conversion (#292): page 19 opens on items 2 to 4 of a numbered list whose first item is on page 18, so the list starts at 2; page 75's five examination objectives list 1 to 4, and item 5, whose wrapped line sets it apart, is a paragraph that keeps its printed number. Physical opener pages 8, 14, 24, 50, 66, 88 and 116: the complete unquoted display summary is one aside below its title and above the chapter contents, following the owner decision on #214; it is not a quotation or navigation heading. Source page 123 re-rendered for #191: the complete Box 7.1 native sidebar now reflows before Interagency Initiatives. The cross-page continuity check includes its actual opening heading immediately after page 122, and ordered text pins its introduction and closing outreach paragraph before the section below it.",
       "spineContinuity": [
         {
           "sourcePages": [
@@ -786,6 +786,7 @@
             "examination procedures for various consumer protection laws and regulations and the CRA."
           ],
           "afterBoundary": [
+            "Box 7.1. Supporting Compliance with Consumer Laws and Regulations",
             "Interagency Initiatives",
             "Through its participation on the Federal Financial Institutions Examination Council (FFIEC), the Federal Reserve collaborates with other federal and state banking agencies"
           ],
@@ -918,6 +919,12 @@
           "page": 123,
           "minimumImages": 1,
           "headings": [
+            "Interagency Initiatives"
+          ],
+          "orderedText": [
+            "Box 7.1. Supporting Compliance with Consumer Laws and Regulations",
+            "The Federal Reserve’s consumer compliance supervision program is founded on the principle",
+            "The Federal Reserve conducts outreach and training to financial institutions",
             "Interagency Initiatives"
           ]
         },

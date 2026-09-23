@@ -15,7 +15,7 @@ enum DisplayQuotation {
         guard lines.count <= 2_000 else { return [] }
         let displayed = lines.indices.filter {
             lines[$0].fontSize >= max(threshold, body * 1.2) && !lines[$0].monospaced
-                && lines[$0].structure == nil
+                && lines[$0].structure == nil && lines[$0].turn == .upright
         }.sorted { lines[$0].rect.minY > lines[$1].rect.minY }
         var claimed: Set<Int> = []
         var groups: [Group] = []

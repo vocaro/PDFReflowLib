@@ -108,6 +108,35 @@ class CorpusContentTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 self.check()
 
+    def test_display_blocks_require_their_semantics_whole_text_and_page(self):
+        for kind in ('asides', 'quotations'):
+            self.contract['pages'][0][kind] = ['alpha beta']
+            self.pages[1][kind] = ['alpha beta']
+            self.assertTrue(self.check()['passed'])
+            for fragments in ([], ['alpha', 'beta']):
+                self.pages[1][kind] = fragments
+                self.pages[1]['paragraphs'] = ['alpha beta']
+                self.pages[2][kind] = ['alpha beta']
+                self.assertFalse(self.check()['passed'])
+            for phrase in ('', '  ', 123):
+                self.contract['pages'][0][kind] = [phrase]
+                with self.assertRaises(ValueError):
+                    self.check()
+            del self.contract['pages'][0][kind]
+
+    def test_display_parser_keeps_inline_styling_block_boundaries_and_page_ownership(self):
+        path = self.epub('<span epub:type="pagebreak" id="page-1"/>'
+                         '<aside><p>al<strong>pha</strong> beta</p><p>next</p></aside>'
+                         '<blockquote><p>quoted <em>words</em>'
+                         '<span epub:type="pagebreak" id="page-2"/> continued</p></blockquote>',
+                         '<p>ordinary</p><aside><p>another summary</p></aside>')
+        pages, _ = read_pages(path)
+        self.assertEqual(pages[1]['asides'], ['alpha beta next'])
+        self.assertEqual(pages[2]['asides'], ['another summary'])
+        self.assertEqual(pages[1]['quotations'], ['quoted words'])
+        self.assertEqual(pages[2]['quotations'], ['continued'])
+        self.assertEqual(pages[1]['headings'], [])
+
     def test_paragraph_continuation_requires_one_element_across_the_page_marker(self):
         self.contract['pages'] = [{'page': 1, 'continuedParagraphs': [{'end': 'the sentence', 'next': 'continues here'}]}]
         # Separate chapter files cannot hold one paragraph, so these are also cross-file controls.

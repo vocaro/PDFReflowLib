@@ -1990,13 +1990,16 @@ Evidence: [rule-and-url-seeds](../measurements/rule-and-url-seeds/record.md),
 
 ## ChapterBoundaryReader
 
-A conservative bookmark scheme is admitted: at least two root-level English `Chapter 1 …`
-through `Chapter N …` entries with consecutive Arabic numbers and strictly increasing local
-destination pages (direct or named destinations and GoTo actions; missing, remote, duplicate or
-backward destinations reject the sequence). Nested, Roman-numbered, unnumbered and other-language
-schemes keep ordinary packing. Each candidate must also show its chapter number and full title
+At least two English `Chapter 1 …` through `Chapter N …` entries must state consecutive
+numbers and strictly increasing local destination pages. Arabic or canonical Roman numerals
+can appear at the root or under part containers, with a colon, period or dash between number
+and title. Traversal is bounded to four levels and 10,000 entries; descendants of a chapter
+remain section navigation. Missing, remote, duplicate or backward chapter destinations reject
+the sequence. Unnumbered and other-language schemes keep ordinary packing. Each candidate must also show its chapter number and full title
 on adjacent native lines among the first six lines in the upper half of its page, matching after
-whitespace and case normalization and permitting a publication-name prefix; freshly recognized
+whitespace and case normalization and permitting a publication-name prefix. Roman numerals
+must match the actual source spelling, rather than treating an unrelated Arabic numeral as a
+match; freshly recognized
 pages and exclusively invisible image-backed text are rejected. Matching candidates become
 chapter boundaries: their source markers stay standalone, cross-boundary paragraph joins are
 prevented, and the writer flushes the preceding spine document before each. Bookmarks do not

@@ -100,8 +100,11 @@ a number or a letter and a point is either a list item or a wrapped line whose f
 initial, a citation or a year, and telling them apart takes both the column the whole page
 establishes and what the line before this one did. The page measures the column when it
 classifies; the assembler supplies the rest. Everything the pages share arrives as one `DocumentContext`
-(the `HyphenContext`, language, document body size, recurring label styles, numbered-note pages),
-so a new document-wide signal is a field, not a parameter. `HyphenRepair` edits text runs only;
+(the `HyphenContext`, language, document body size, recurring label styles, the `HeadingRank`
+the book's own tags establish, numbered-note pages), so a new document-wide signal is a field,
+not a parameter. `HeadingRank` is the one such signal with a file of its own: its tally is
+folded in page by page during extraction, resolved once with the rest of `DocumentEvidence`,
+and consulted by the reconstructor where a page's tags contradict it. `HyphenRepair` edits text runs only;
 the geometric predicates the rules share (`hasSize`, `overlapsHorizontally`, `sharesColumn`,
 `sharesRow`) live on `TextLine` in `TextLineGeometry`. `TableRegionDetector`,
 `FractionRegionDetector` and `NumberedNoteDetector` are bounded detectors that hand regions or

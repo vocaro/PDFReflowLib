@@ -1328,10 +1328,16 @@ enum LayoutReconstructor {
         init(_ line: TextLine, body: CGFloat) {
             size = Int((line.fontSize * 2).rounded())
             self.body = Int((body * 2).rounded())
-            bold = line.content.elements.allSatisfy { element in
-                guard case let .text(value, style) = element else { return true }
-                return style.contains(.bold) || value.allSatisfy(\.isWhitespace)
-            }
+            bold = readsWhollyBold(line)
+        }
+    }
+
+    /// Whether every run of the line that holds a mark is bold: the weight PDFKit reports for a
+    /// line, where it reports one.
+    static func readsWhollyBold(_ line: TextLine) -> Bool {
+        line.content.elements.allSatisfy { element in
+            guard case let .text(value, style) = element else { return true }
+            return style.contains(.bold) || value.allSatisfy(\.isWhitespace)
         }
     }
 
@@ -1450,19 +1456,22 @@ enum LayoutReconstructor {
     }
 
     /// What every page's reconstruction shares: how line-end hyphens are decided, the declared
-    /// language, the document's body size and recurring sub-heading styles (#186, #218), and the
-    /// pages whose numbered-note heading extraction recognized.
+    /// language, the document's body size and recurring sub-heading styles (#186, #218), the
+    /// heading sizes the book's own tags rank (#294), and the pages whose numbered-note heading
+    /// extraction recognized.
     struct DocumentContext: Sendable {
         var hyphens = HyphenContext()
         var language = "en"
         var documentBody: CGFloat?
         var labelStyles: Set<LabelStyle> = []
+        var headingRank = HeadingRank()
         var numberedNotePages: Set<Int> = []
     }
 
     /// One type size, to the half point: the grain at which two lines of a page are set in the
-    /// same display type. `LabelStyle` already reads a page's typography at this grain.
-    private static func sizeKey(_ size: CGFloat) -> Int { Int((size * 2).rounded()) }
+    /// same display type. `LabelStyle` already reads a page's typography at this grain, and
+    /// `HeadingRank` ranks the book's at it.
+    static func sizeKey(_ size: CGFloat) -> Int { Int((size * 2).rounded()) }
 
     /// The paragraph-tagged groups a page's own tags contradict, each with the heading level to
     /// read it at.
@@ -1484,13 +1493,26 @@ enum LayoutReconstructor {
     /// shallowest the page's own tags give that size, so the promoted heading nests as the
     /// sibling of the headings it is set like rather than at the spatial path's fixed level 2.
     ///
-    /// Size alone, without the page's own tagged heading at that size, is not enough: it would
-    /// promote Our Flag page 3's imprint ("JOINT COMMITTEE ON PRINTING", "WASHINGTON : 2003")
-    /// and the Fed cover's "PUBLIC EDUCATION & OUTREACH", which no page tags as a heading and
-    /// which head nothing. Across the corpus's seven documents with tagged pages this rule
-    /// promotes exactly one group, and the FAA handbook — whose 171 headings the rule above
-    /// protects — cannot reach it at all, because no FAA page's tags name a heading (#67, #91).
-    static func contradictedHeadingGroups(_ elements: [Element], roles: [LineRole?]) -> [Int: Int] {
+    /// Size alone, without a tagged heading at that size, is not enough: it would promote Our
+    /// Flag page 3's imprint ("JOINT COMMITTEE ON PRINTING", "WASHINGTON : 2003") and the Fed
+    /// cover's "PUBLIC EDUCATION & OUTREACH", whose sizes no tag on their own pages calls a
+    /// heading and which head nothing. The FAA handbook — whose 171 headings the rule above
+    /// protects — cannot reach this rule at all, because no FAA page's tags name a heading
+    /// (#67, #91).
+    ///
+    /// Where the page's own tags state nothing about a size, the book's do (`rank`, #294): IRS
+    /// Publication 596's cover tags `目录` a paragraph in fifteen-point type beside a seventeen-point
+    /// `H1`, and the book's other pages tag seventeen and eighteen points `H1` and fourteen `H2`,
+    /// so a fifteen-point line is a heading by the book's own ranking and takes the level of the
+    /// largest tagged size not above it. The rank speaks only at or above its floor — *Our
+    /// Flag*'s imprint stays under that book's — and only to a line that heads something: a
+    /// display line whose nearest line beneath, in its own column, is set larger is a label
+    /// standing over a title (`standsOverLargerDisplay`), and its paragraph role is believed.
+    /// The same cover prints `596 号刊物` in the same fifteen points over its thirty-one-point
+    /// title, and the Fed cover its fourteen-point series name over a forty-point one; the book
+    /// ranks the size, the page says what the line stands over, and both are read.
+    static func contradictedHeadingGroups(_ elements: [Element], roles: [LineRole?],
+                                          rank: HeadingRank = HeadingRank()) -> [Int: Int] {
         var tagged: [Int: Int] = [:]
         for element in elements {
             guard let line = element.line, let tag = line.structure, tag.headingLevel > 0 else { continue }
@@ -1498,12 +1520,14 @@ enum LayoutReconstructor {
             tagged[key] = min(tagged[key] ?? tag.headingLevel, tag.headingLevel)
         }
         guard !tagged.isEmpty else { return [:] }
+        let lines = elements.compactMap(\.line)
         var promoted: [Int: Int] = [:]
         var lengths: [Int: Int] = [:]
         var refused: Set<Int> = []
         for (index, element) in elements.enumerated() {
             guard let line = element.line, let tag = line.structure, tag.headingLevel == 0 else { continue }
-            guard roles[index] == .heading, let level = tagged[sizeKey(line.fontSize)] else {
+            guard roles[index] == .heading,
+                  let level = tagged[sizeKey(line.fontSize)] ?? rankedLevel(of: line, among: lines, rank: rank) else {
                 refused.insert(tag.group)
                 continue
             }
@@ -1513,6 +1537,34 @@ enum LayoutReconstructor {
         // `structuredOrder` already refuses a tagged heading of 200 characters or more as too
         // long to be one; a promotion must not reach past that ceiling either.
         return promoted.filter { !refused.contains($0.key) && lengths[$0.key, default: 0] < 200 }
+    }
+
+    /// The level the book's rank gives a line whose size the page's own tags never call a
+    /// heading, unless the line stands over a larger display line (#294).
+    private static func rankedLevel(of line: TextLine, among lines: [TextLine], rank: HeadingRank) -> Int? {
+        guard let level = rank.level(of: line), !standsOverLargerDisplay(line, among: lines) else { return nil }
+        return level
+    }
+
+    /// Whether the nearest line beneath this one in its own column is set larger than it: a
+    /// label standing over a title, which heads nothing because what stands beneath it outranks
+    /// it. IRS Publication 596's cover prints `596 号刊物` in fifteen-point type over its
+    /// thirty-one-point title, and *The Fed Explained*'s prints `PUBLIC EDUCATION & OUTREACH` in
+    /// fourteen over its forty-point one: a publication's number and a series name, each set in
+    /// a heading's size and tagged a paragraph. `目录` and `Advisory Councils` on the same two
+    /// books stand over their own ten-point text (#294).
+    ///
+    /// The line beneath is the one whose top is highest among those whose middle lies below this
+    /// line's bottom and that share some of its horizontal extent; a line the page set at a
+    /// quarter turn is measured in its own frame, as `stacksUnderHeading` measures it (#263).
+    static func standsOverLargerDisplay(_ line: TextLine, among lines: [TextLine]) -> Bool {
+        func frame(_ other: TextLine) -> CGRect { other.turn == line.turn ? other.uprightRect : other.rect }
+        let own = frame(line)
+        let beneath = lines.filter { other in
+            other != line && other.overlapsHorizontally(line) && frame(other).midY < own.minY
+        }.max { frame($0).maxY < frame($1).maxY }
+        guard let beneath else { return false }
+        return sizeKey(beneath.fontSize) > sizeKey(line.fontSize)
     }
 
     /// One page's logical blocks: its typography is read once, every line outside a tagged or
@@ -1631,7 +1683,7 @@ enum LayoutReconstructor {
                 return .tableRow(continuation: rowStart > block.minX + typography.body * 0.6)
             }
         }
-        let contradicted = contradictedHeadingGroups(elements, roles: roles)
+        let contradicted = contradictedHeadingGroups(elements, roles: roles, rank: context.headingRank)
         for (index, element) in elements.enumerated() {
             if let group = noteGroups[index], let line = element.line {
                 assembler.appendNote(group: group, line)
@@ -1709,9 +1761,9 @@ enum LayoutReconstructor {
     static func blocks(page: PageContent, images: [(CGRect, String)], vocabulary: Set<String>,
                        warnings: inout [ConversionWarning], numberedNotePage: Bool = false,
                        language: String = "en", documentBody: CGFloat? = nil,
-                       labelStyles: Set<LabelStyle> = []) -> [ReflowBlock] {
+                       labelStyles: Set<LabelStyle> = [], headingRank: HeadingRank = HeadingRank()) -> [ReflowBlock] {
         let context = DocumentContext(hyphens: HyphenContext(vocabulary: vocabulary), language: language,
-                                      documentBody: documentBody, labelStyles: labelStyles,
+                                      documentBody: documentBody, labelStyles: labelStyles, headingRank: headingRank,
                                       numberedNotePages: numberedNotePage ? [page.number] : [])
         return blocks(page: page, images: images, context: context, warnings: &warnings)
     }

@@ -477,12 +477,31 @@ Evidence: [native-label-spacing](../measurements/native-label-spacing/record.md)
   so it nests as the sibling of the headings it is set like. One line of the group set as prose
   refuses the whole group, and a display size no tag on the page calls a heading stays a
   paragraph: size alone is not the evidence (#67).
+- Where the page's own tags state nothing about a size, the **book's tags rank it** (#294,
+  `HeadingRank`). The extraction pass gathers, over every native page, each display size the
+  tags call a heading — a tagged heading counts only where its own page's typography reads it
+  as heading-sized, so a body-size `H` on a sparse page states no display size — and a size
+  ranks once at least three pages tag it, at the level the tags give it most often (equally
+  often, the shallower). A style is a size to the half point and, where PDFKit reports one, a
+  weight; the rank speaks only to a line of the weight it ranked. On a page whose tags name a
+  heading, a paragraph-tagged group whose every line reads as a heading by the page's typography
+  and whose size the page's own tags never call a heading takes the level of the largest ranked
+  size not above it; below the rank's smallest size the rank has no opinion and the tag is
+  believed. IRS Publication 596's cover tags `目录` a paragraph in fifteen-point type beside a
+  seventeen-point `H1`; the book tags seventeen and eighteen points `H1` on six pages each and
+  fourteen `H2` on five, so `目录` is an `H2`. One refusal: a display line whose nearest line
+  beneath, in its own column, is set larger is a label standing over a title and keeps its
+  paragraph role — the same cover's `596 号刊物` over its thirty-one-point title, and the Fed
+  cover's `PUBLIC EDUCATION & OUTREACH` over its forty-point one. The rank never demotes, and a
+  page whose tags name no heading is never asked it: the FAA handbook, whose tags name none, is
+  byte-identical (#67, #243).
 - A page whose tagged text cannot be matched unambiguously reports `structureFallback`; a
   rejected tree adds one document-wide `structureFallback` warning attached to page 1.
 
 Evidence: [structure-tags](../measurements/structure-tags/record.md),
 [pdfkit-structure-tree](../measurements/pdfkit-structure-tree/record.md),
-[contradicted-heading-tags](../measurements/contradicted-heading-tags/record.md).
+[contradicted-heading-tags](../measurements/contradicted-heading-tags/record.md),
+[document-wide-heading-rank](../measurements/document-wide-heading-rank/record.md).
 
 ## GraphicsReader: painted regions
 
@@ -925,8 +944,9 @@ encoding contribute none; a page's margin-furniture candidates contribute their 
 furniture plan says the reader keeps the line, so a running head set at the body size cannot enter
 the reference vocabulary a broken word's carry is judged against, #184), margin-furniture candidates, numbered-note heading pages, chapter
 matches, the running character budget, the document's body size (the character-weighted
-commonest size over every native page, #186) and the bold label styles that recur on at least
-three pages (#218). Each extracted page is encoded as a binary property list in the workspace
+commonest size over every native page, #186), the bold label styles that recur on at least
+three pages (#218) and the display sizes the book's tags call headings on at least three pages,
+ranked with their levels (`HeadingRank`, #294). Each extracted page is encoded as a binary property list in the workspace
 (finite, infinite and NaN doubles round-trip; equal values share a slot, so a negative zero can
 reload as positive zero, and no reconstruction step reads the sign of zero), reloaded once in
 order, and deleted on reload; the page directory goes when reconstruction finishes, leaving only

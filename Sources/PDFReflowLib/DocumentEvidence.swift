@@ -3,13 +3,15 @@ import Foundation
 
 /// The document-wide evidence extraction keeps while pages are spilled to the workspace: the
 /// hyphen-repair vocabulary, margin-furniture candidates, note-heading pages, chapter matches,
-/// the document's body size and recurring sub-heading styles, and the running character budget.
+/// the document's body size, recurring sub-heading styles, the heading sizes its tags rank, and
+/// the running character budget.
 /// `collect` folds one extracted page in; `resolved` decides what reconstruction needs.
 struct DocumentEvidence {
     struct Resolved {
         /// What every page's reconstruction shares: the hyphen context, the size most of the
         /// document's native text is set in (#186), the bold sub-heading styles the book repeats
-        /// often enough to trust (#218), and the numbered-note pages.
+        /// often enough to trust (#218), the heading sizes its tags rank (#294), and the
+        /// numbered-note pages.
         var context: LayoutReconstructor.DocumentContext
         var furniturePlan: FurnitureDetector.Plan?
     }
@@ -31,6 +33,8 @@ struct DocumentEvidence {
     private var bodyWeights: [Int: Int] = [:]
     /// The pages each recurring bold sub-heading style appears on (#218).
     private var labelStylePages: [LayoutReconstructor.LabelStyle: Int] = [:]
+    /// The display sizes the book's own tags call headings, page by page (#294).
+    private var headingTally = HeadingRank.Tally()
     private(set) var recognizedPages = 0
     private(set) var characters = 0
 
@@ -70,6 +74,8 @@ struct DocumentEvidence {
             for style in LayoutReconstructor.labelEvidence(on: content) {
                 labelStylePages[style, default: 0] += 1
             }
+            // The sizes this page's tags call a heading, ranked once the book is read (#294).
+            headingTally.record(content, pageIndex: i)
         }
         if NumberedNoteDetector.hasHeading(on: content) { numberedNotePages.insert(content.number) }
         if content.recognized { recognizedPages += 1 }
@@ -94,6 +100,7 @@ struct DocumentEvidence {
             hyphens: hyphens, language: language,
             documentBody: LayoutReconstructor.bodySize(weights: bodyWeights),
             labelStyles: LayoutReconstructor.labelStyles(from: labelStylePages),
+            headingRank: HeadingRank(headingTally),
             numberedNotePages: numberedNotePages)
         return Resolved(context: context, furniturePlan: plan)
     }

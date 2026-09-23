@@ -76,6 +76,10 @@ enum EPUBTextEncoder {
                                      sourcePages: block.sourcePages, heading: (id, block.text))
         case .preformatted:
             return SpinePacker.Piece(markup: "<pre\(dir)>\(payload)</pre>\n", sourcePages: block.sourcePages, heading: nil)
+        case .listItem:
+            // One item on its own, for a caller that reads a block at a time; the writer packs
+            // every list whole through `list`.
+            return SpinePacker.Piece(markup: "<li\(dir)>\(payload)</li>\n", sourcePages: block.sourcePages, heading: nil)
         case let .table(table):
             return SpinePacker.Piece(markup: self.table(table, labels: labels, direction: dir) + "\n",
                                      sourcePages: block.sourcePages, heading: nil)
@@ -84,6 +88,43 @@ enum EPUBTextEncoder {
         case .sourcePage:
             preconditionFailure("Source boundaries are separate markers")
         }
+    }
+
+    /// One item of a list the writer is packing, with the page boundaries that fell against it.
+    struct ListEntry {
+        var block: ReflowBlock
+        var item: ReflowBlock.ListItem
+        /// Standalone page boundaries that arrived before the item, inside the list: they open
+        /// the item, because a list may hold nothing but items.
+        var pagesBefore: [Int] = []
+        /// Boundaries of empty pages that arrived after the item and before the next: they end it.
+        var pagesAfter: [Int] = []
+    }
+
+    /// One whole list as EPUB 3 XHTML (#292): `<ul>`, or `<ol>` with `start` where the first
+    /// printed number is not 1, holding nothing but `<li>` elements. A source-page marker that
+    /// fell between two items is written inside the item it precedes, as its first child, and a
+    /// marker of an empty page inside the item before it, because a list element may contain only
+    /// items and the marker must keep its place in reading order. An item whose own writing runs
+    /// right to left carries `dir`, as a paragraph does (#41).
+    static func list(_ kind: ReflowBlock.ListItem.Kind, start: Int?, entries: [ListEntry],
+                     imagePaths: [String: String], labels: [Int: String] = [:]) throws -> SpinePacker.Piece {
+        let tag: String
+        switch kind {
+        case .unordered: tag = "ul"
+        case .ordered: tag = "ol"
+        }
+        let opening = kind == .ordered && (start ?? 1) != 1 ? "<ol start=\"\(start ?? 1)\">" : "<\(tag)>"
+        var markup = opening
+        var pages: [Int] = []
+        for entry in entries {
+            let dir = ArabicText.readsRightToLeft(entry.block.text) ? " dir=\"rtl\"" : ""
+            let before = entry.pagesBefore.map { sourcePage($0, labels: labels) }.joined()
+            let after = entry.pagesAfter.map { sourcePage($0, labels: labels) }.joined()
+            markup += "<li\(dir)>\(before)\(try payload(entry.block, imagePaths: imagePaths, labels: labels))\(after)</li>"
+            pages += entry.pagesBefore + entry.block.sourcePages + entry.pagesAfter
+        }
+        return SpinePacker.Piece(markup: markup + "</\(tag)>\n", sourcePages: pages, heading: nil)
     }
 
     /// One table as EPUB 3 XHTML (#210).
@@ -115,6 +156,7 @@ enum EPUBTextEncoder {
         switch block.content {
         case let .paragraph(text), let .heading(_, text, _): return inline(text, labels: labels)
         case let .preformatted(text): return inline(text, labels: labels)
+        case let .listItem(item): return inline(item.text, labels: labels)
         case let .table(value): return table(value, labels: labels)
         case let .sourcePage(page): return sourcePage(page, labels: labels)
         case let .image(image):

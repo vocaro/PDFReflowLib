@@ -550,13 +550,20 @@ struct BlockAssembler {
     /// (`ArabicText.readsRightToLeft`). A line then begins at its right edge and the next piece
     /// of its printed row stands to its left (#41).
     private let rightToLeft: Bool
+    /// Whether the page's text transcribes a scan — recognized, or an inherited invisible text
+    /// layer — which a list-marker line records for `ListBuilder` (#292).
+    private let recognized: Bool
+    /// Whether the document heads this page as a chapter's notes (`NumberedNoteDetector`). Its
+    /// numbered lines are the entries of that apparatus, which `ListBuilder` never lists (#292):
+    /// a marker line on such a page records no list evidence at all.
+    private let notesPage: Bool
 
     init(page: Int, body: CGFloat, leading: CGFloat? = nil, hyphens: HyphenContext,
          imageLinks: [String: LinkTarget] = [:], imageDescriptions: [String: String] = [:],
          hangingEntries: [CGRect: CGRect] = [:], columnSeams: [CGFloat] = [],
          ordinaryHeights: [Int: CGFloat] = [:],
          markerEntries: Set<CGRect> = [], markerEntryEdge: CGFloat? = nil,
-         rightToLeft: Bool = false) {
+         rightToLeft: Bool = false, recognized: Bool = false, notesPage: Bool = false) {
         self.page = page
         self.body = body
         self.leading = leading
@@ -569,6 +576,8 @@ struct BlockAssembler {
         self.columnSeams = columnSeams
         self.ordinaryHeights = ordinaryHeights
         self.rightToLeft = rightToLeft
+        self.recognized = recognized
+        self.notesPage = notesPage
     }
 
     /// Where a line's own text begins: its right edge in right-to-left writing, its left edge
@@ -584,6 +593,16 @@ struct BlockAssembler {
     }
 
     private func headingID() -> String { "heading-\(page)-\(blocks.count)" }
+
+    /// The preformatted block a list-marker line opens, carrying the evidence `ListBuilder`
+    /// reads (#292): that a marker opened it, and whether its text transcribes a scan. On a page
+    /// the document heads as a chapter's notes it carries none, because the numbered entries
+    /// there are the notes apparatus, which is not a list whatever its numbering (#219).
+    private func markerOpenedBlock(_ line: TextLine) -> ReflowBlock {
+        var block = ReflowBlock(content: .preformatted(line.content), page: page)
+        if !notesPage { block.listEvidence = .init(recognized: recognized) }
+        return block
+    }
 
     private mutating func join(_ left: InlineText, _ right: InlineText) -> InlineText {
         LayoutReconstructor.join(left, right, hyphens: hyphens, page: page, warnings: &warnings)
@@ -756,7 +775,8 @@ struct BlockAssembler {
         case .listItem:
             flushParagraph()
             // Preserve significant breaks and native styles; do not rewrite list markers or code.
-            blocks.append(ReflowBlock(content: .preformatted(line.content), page: page))
+            // `ListBuilder` reads the marker line's evidence once the run it belongs to is whole.
+            blocks.append(markerOpenedBlock(line))
             itemLine = line
             itemRowInProgress = line
             return
@@ -770,7 +790,7 @@ struct BlockAssembler {
                 previousRow = nil
             } else if column.setsAList {
                 flushParagraph()
-                blocks.append(ReflowBlock(content: .preformatted(line.content), page: page))
+                blocks.append(markerOpenedBlock(line))
                 // The page numbered or lettered this item rather than bulleting it, and it is an
                 // item either way: the block it opened is the one the rest of a word broken over
                 // its end belongs to. Our Flag's folding instructions are numbered, and the page

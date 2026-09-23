@@ -118,6 +118,13 @@ enum PDFReflowLibPipeline {
         let send: (ReflowPart) async throws -> Void = { part in
             if let emit { try await emit(part) } else { collector.accept(part) }
         }
+        // Verified bulleted and numbered runs become real list items on their way out, once
+        // every join that can grow a block has been made; the pass holds a block only while a
+        // run it may belong to can still change (#292).
+        var lists = ListBuilder()
+        let sendBlock: (ReflowBlock) async throws -> Void = { block in
+            for final in lists.accept(block) { try await send(.block(final)) }
+        }
         // Client values win over the document's own, exactly as `options.title` always has; what
         // the document states fills the rest (#253).
         let stated = document.metadata
@@ -190,12 +197,13 @@ enum PDFReflowLibPipeline {
                 sentAssets += 1
             }
             while pending.count > LayoutReconstructor.amendableTail(of: pending) {
-                try await send(.block(pending.removeFirst()))
+                try await sendBlock(pending.removeFirst())
             }
             await progress(.init(stage: .reconstructing, fractionCompleted: ProgressBudget.pipeline(reconstructedPages: i + 1, of: total),
                 page: i + 1, totalPages: total))
         }
-        for block in pending { try await send(.block(block)) }
+        for block in pending { try await sendBlock(block) }
+        for block in lists.finish() { try await send(.block(block)) }
         document.releaseCachedPages()
         store.finish()
         warnings.insert(contentsOf: furnitureWarnings.sorted { $0.page < $1.page }, at: furnitureWarningIndex)

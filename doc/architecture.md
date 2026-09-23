@@ -25,14 +25,19 @@ order, paragraphs, image crops and word joins are inferred from.
 
 `ReflowDocument` (`ReflowDocument.swift`) is the logical representation: metadata (title,
 language, optional author); ordered `ReflowBlock` values (paragraph, heading with a logical
-identifier and level, preformatted text, image, source-page boundary); inline runs with style
-flags, interspersed with source-page boundaries; image blocks with an asset identifier,
-alternative text and caption; an asset registry (identifier, local file URL, format); and each
-block's source page. Source-page boundaries can fall inside a paragraph or a repaired word and add
-no visible text, so provenance stays separate from typography. There is no XHTML, CSS, EPUB
-namespace, ZIP path or chapter-file boundary; raw `<` and `&` stay raw until a writer escapes
-them. Headings form flat navigation; lists and code are preformatted blocks over the same runs as
-paragraphs; tables and equations preserved as images are image references, not semantic trees.
+identifier and level, preformatted text, list item, table, image, source-page boundary); inline
+runs with style flags, interspersed with source-page boundaries; image blocks with an asset
+identifier, alternative text and caption; an asset registry (identifier, local file URL, format);
+and each block's source page. Source-page boundaries can fall inside a paragraph or a repaired
+word and add no visible text, so provenance stays separate from typography. There is no XHTML,
+CSS, EPUB namespace, ZIP path or chapter-file boundary; raw `<` and `&` stay raw until a writer
+escapes them. Headings form flat navigation. A list item is flat too — its text without the
+printed marker, the marker, the printed number of a numbered item, its kind and whether it opens
+a list element — because the writer streams blocks and packs spine documents freely, so the
+list's tree is the writer's to open and close; nesting is not in the model. Code, table rows set
+without rules and list-shaped lines the list pass did not verify are preformatted blocks over the
+same runs as paragraphs; tables and equations preserved as images are image references, not
+semantic trees.
 
 ## The pipeline
 
@@ -109,6 +114,12 @@ the geometric predicates the rules share (`hasSize`, `overlapsHorizontally`, `sh
 `sharesRow`) live on `TextLine` in `TextLineGeometry`. `TableRegionDetector`,
 `FractionRegionDetector` and `NumberedNoteDetector` are bounded detectors that hand regions or
 groups to the assembler; `ChapterBoundaryReader` supplies validated chapter-start pages.
+`ListBuilder` is the one pass that reads blocks rather than lines: it sits between reconstruction
+and the writer, on the stream of finished blocks, and turns a verified run of marker-opened
+blocks into list items. A run crosses pages and is verified whole, so the pass holds a block only
+while a run it may belong to can still change — at most three pages past the run's end — and
+what a decision reads from further back travels as a count or a marker, never as blocks
+([decision 0008](decisions/0008-streamed-blocks-to-the-writer.md)).
 What seeds a crop is separate from how far the crop grows. A thin painted rule that underlines
 prose is that text's decoration and seeds nothing, while a rule carrying a fraction, a rule
 inside a short word-free mathematical line, a rule clear of every line and a row of header
@@ -158,12 +169,15 @@ their constant alpha plane, relabeled opaque over their own pixel buffer at writ
 records three channels; the raster recognition sees keeps the format Vision is measured against.
 See [conversion options](conversion-options.md#automatic-encoding).
 
-`EPUBTextEncoder` owns XML escaping, block and inline tags, page markers and figure markup; it
-is the only place that knows XHTML. `SpinePacker` owns spine splitting and navigation entries as
-structured values, tested without files or ZIP. `EPUBWriter` owns OPF metadata, CSS, resource
-naming and ZIPFoundation packaging, assigns archive paths from counters (asset identifiers are
-opaque and cannot choose paths), streams asset files straight into ZIP entries, and writes each
-spine document as the packer closes it, keeping one current body string plus navigation lists.
+`EPUBTextEncoder` owns XML escaping, block and inline tags, list and page markers and figure
+markup; it is the only place that knows XHTML. `SpinePacker` owns spine splitting and navigation
+entries as structured values, tested without files or ZIP. `EPUBWriter` owns OPF metadata, CSS,
+resource naming and ZIPFoundation packaging, assigns archive paths from counters (asset
+identifiers are opaque and cannot choose paths), streams asset files straight into ZIP entries,
+and writes each spine document as the packer closes it, keeping one current body string plus
+navigation lists. It gathers the items of a list, and any page boundary that arrives among them,
+until the list closes, and packs the list as one piece, because a list element may hold only items
+and a spine document may not end inside one.
 It consumes the document part by part as reconstruction produces it, and finishes navigation,
 package metadata and the archive when the stream ends, so neither side holds the block list.
 `ProgressBudget` holds every stage's share of the progress fraction; serializing a block counts

@@ -1419,8 +1419,10 @@ breaks a row after a raised exponent, so `8x²` is one line and `− 3x + 7− 2
 list in a `<pre>` block of its own, in the middle of the derivation (#203). A page's columns and a
 table's cells stand further apart than that, and a piece that opens its row has nothing to its
 left, so a genuine marker still opens an item. Both are preformatted blocks that retain native emphasis and scripts;
-inserted newlines and indentation are unstyled. There is no list model: every such line is its own
-preformatted block, and nothing groups items or renders `ol`/`ul`.
+inserted newlines and indentation are unstyled. Reconstruction has no list model: every such line
+is its own preformatted block, and nothing here groups items. A block a marker opened records that
+it did (`ReflowBlock.listEvidence`), and `ListBuilder` decides afterwards, from the blocks in the
+order they leave reconstruction, which of them are the items of a real list ([Lists](#lists)).
 
 A marker the extractor left **alone on its line** is still a marker (#172). Both tests above want a
 space after the point or bracket, because the item's own text follows it there; PDFKit ends a line
@@ -1452,7 +1454,8 @@ row's own next piece does. An item that *wraps* is still one preformatted block 
 report's numbered findings on page 365 keep `1. The CTC did not analyze how an aircraft, hijacked
 or explosives-` as the item and `laden, might be used as a weapon…` as the paragraph beneath it,
 which is what "no list model" above means, and item 4 of that list now reads exactly as items 1 to
-3 do instead of as two paragraphs.
+3 do instead of as two paragraphs. That wrapped line is also what most often keeps a verified run
+from becoming a list ([Lists](#lists)): the paragraph it opens stands between two items.
 
 A **bullet** left alone on its line is read the same way, and asks less, because a bullet is a
 marker and nothing else: no list has to vouch for it (#261). What the page must state is that the
@@ -1532,6 +1535,70 @@ Evidence: [initial-led-lines](../measurements/initial-led-lines/record.md),
 [dga-layout-qualification](../measurements/dga-layout-qualification/record.md),
 [markers-alone-on-their-line](../measurements/markers-alone-on-their-line/record.md),
 [bullets-alone-on-their-line](../measurements/bullets-alone-on-their-line/record.md).
+
+### Lists
+
+`ListBuilder` turns verified list-shaped blocks into real list items (#292), on the stream of
+blocks reconstruction hands the writer. Its evidence is the block: a preformatted block a marker
+opened (`ReflowBlock.listEvidence`, set by `BlockAssembler` on a bulleted line and on a numbered or
+lettered line standing on an edge the page sets a list on, and never on code, a table row, or any
+line of a page the document heads as a chapter's notes), or a paragraph opening with the `+`
+bullet. Nothing on a page without such a block is touched, and a book that gains no list is
+byte-identical to what it was.
+
+- **Bulleted items** open with `•`, `-`, `+` or `*` and a space. A run of at least two with one
+  glyph becomes `<ul>`, each item's text without its glyph. `−` is not a bullet: Wallace's
+  derivation rows open with it, and some read as words (`− 7+6x Our Solution`). `* * *` is an
+  elision. A `+` is read from the text alone — a plus, a space, a word of two letters or a
+  percentage, and the rest reading as words — because reconstruction reads `+` as the operator it
+  is everywhere else; the dietary guidelines set their top-level items so, as whole paragraphs.
+- **Numbered items** open with one to three digits, `.` or `)`, and a space. A run becomes `<ol>`
+  only where its printed numbers ascend by exactly one; a run whose first number is not 1 keeps it
+  as the list's `start`. A `1` always opens a new run. A gap, a step back or a repeat leaves the
+  whole run preformatted, because an `<ol>` would print numbers the source does not have.
+- **A candidate reads as words**: letters in words of three letters or more make up at least 35%
+  of the text past its marker. An answer key's `1) 42`, a derivation row and recognition debris do
+  not. A **transcription of a scan** (recognized, or an inherited invisible layer) offers numbered
+  items only, held to the same rules wherever they occur — the Blue Book questionnaire's
+  `22.`–`27.`, the Warren report's conclusions where their numbers run on by one — and its bullets
+  stay as they are, being recognition of table rules and headers (`- Per Cent`).
+- **A run** chains each candidate to the latest candidate of its family (one glyph; one
+  punctuation) on the same page or the page before, whatever blocks stand between; a number
+  chains where it is one or two from the last, so a gap of two is verified against and refused
+  rather than started afresh. Any list-shaped block that is no candidate ends every run. A run is
+  decided once every block of the page after its last member has arrived and one page more, so
+  the pass holds a run for at most three pages past its end and nothing else; what a decision
+  reads from further back travels as a count or a marker.
+- **A numbered run stays preformatted** when its items each stand alone between other blocks
+  (numbered section titles; items of another family between them are the list the page set
+  inside this one, and do not count); when at least half its entries end on a folio or carry a
+  section number (a contents list); when more than half give quantities and ask for one (an
+  exercise set's word problems); when at least half open on an author or cite `Author, 2021:`,
+  a DOI or an address (a reference list); when its pages hold more numbered entries that read as
+  no item, with its punctuation, than it has items (an answer key); when the list-shaped entry
+  before or after it, reading as no item, continues its numbering (a transcription's garbled
+  notes, an exercise set that opens on conversions of figures); or when the heading in force —
+  the last heading before its first item — names an exercise set, with a word *practice* or
+  *exercise(s)*, since those problems key the book's answers and wait for their reading order
+  (#219 item 4). The book's heading is the evidence, as `NOTES TO CHAPTER` is for a notes page.
+- **No one-item lists.** A list element is a piece of an accepted run whose items touch: only
+  page boundaries stand between them. A piece of one item is a paragraph that keeps its printed
+  marker. A run of one — a marked line with no other list-shaped block on its page or the pages
+  beside it — is a paragraph that keeps its marker too (the CDC comic's `1) Get a Kit`), except a
+  number whose nearest numbered line of its family, however far back or as far ahead as the pass
+  holds, is one or two from it (a section title in a sequence spread over the paper) and a
+  note's asterisk (`* Estimated`), which stay as printed; a run of one with a list-shaped
+  neighbour within a page stays preformatted, as it was.
+- **Items are flat** (#219 item 3). A candidate of another family between two items of a run —
+  the 9/11 brief's bullets under its numbered paragraphs, the guidelines' `-` items under a `+` —
+  leaves the run intact but ends its list element, so the item before and the item after are
+  pieces judged as any piece is, and the inner items are a list of their own. Lettered items
+  (`a.`, `b)`) are never candidates and keep their preformatted form.
+
+What stays preformatted, recorded so nobody re-opens it: display maths rows, the FAA's coded
+weather reports, OCR debris, the Warren report's elisions and testimony turns, note asterisks,
+contents and section titles, lettered sub-items, exercise sets, answer keys, reference lists and
+the entries of a notes apparatus. Evidence: [list-conversion](../measurements/list-conversion/record.md).
 
 ## HyphenRepair
 
@@ -1881,10 +1948,12 @@ Evidence: [tables-read-as-cells](../measurements/tables-read-as-cells/record.md)
   Long rules, prose, code and connected table grids are left to existing handling; whole-line
   expansion supplies the crop margin once, and detection does not enlarge complete regions again.
   Arbitrary mathematical structure is outside this detector.
-- **`NumberedNoteDetector`.** A top-margin chapter-note heading, consecutive indented note starts
-  and consistent dedented continuations must agree before a bounded native endnote paragraph
-  repair applies; ambiguous layouts keep spatial reconstruction. This is layout, not
-  reference-to-note ownership.
+- **`NumberedNoteDetector`.** A top-margin chapter-note heading (`NOTES TO CHAPTER 3`, or
+  `NOTES TO CHAPTERS 9-10` where one chapter's notes end and the next chapter's begin, either
+  beside a folio), consecutive indented note starts and consistent dedented continuations must
+  agree before a bounded native endnote paragraph repair applies; ambiguous layouts keep spatial
+  reconstruction. This is layout, not reference-to-note ownership. The pages the heading names
+  are also the pages whose numbered lines are never list items ([Lists](#lists)).
 - **A table a recognition located (#31).** A recognized page's tables become its crops, so every
   one of them reaches the reader as a picture and none of its cells reaches the text. Such a crop
   is described as what it is — "Table from page N, preserved as an image. Its cells are not
@@ -2049,6 +2118,20 @@ Evidence: [raster-dpi](../measurements/raster-dpi/record.md),
 
 ## EPUBWriter, SpinePacker, EPUBTextEncoder
 
+- **Lists (#292).** A run of list items is written as one `<ul>` or `<ol>` — `<ol start="6">`
+  where the first item's printed number is not 1 — holding nothing but `<li>` elements, each an
+  item's text without its printed marker. A list is packed as one unit, like a table: the writer
+  gathers its items until a block that is not an item, a validated chapter start or the end of the
+  document arrives, and only then hands the packer the whole list, so a spine document never
+  ends inside one; a list larger than the body target is its own document, unsplit. A list may
+  contain only items, so a standalone source-page marker that arrives between two items is
+  written inside the item it precedes, as its first child, and the marker of an empty page inside
+  the item before it; a marker before the first item stands before the list as any marker does,
+  and one after the last item travels with what follows the list. A chapter start closes the
+  list in one document and the next item opens a new one in the next. The page list names every
+  page once, in reading order, wherever its marker was written, and EPUBCheck passes on every
+  corpus book that gains a list. An item whose own writing reads right to left carries
+  `dir="rtl"`, as a paragraph does.
 - **Tables (#210).** A table block is written as an EPUB 3 `<table>`: the rows the page set as its
   column headings become a `<thead>` of `<th scope="col">` and the rest a `<tbody>` of `<td>`, so
   a reading system can announce the heading a value stands under. A cell the page set across

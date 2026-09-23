@@ -28,7 +28,7 @@ Fetch sources with `tools/fetch_corpus.py --case <id>` (checksum-verified, cache
 
 What the individual gates check:
 
-- `swift test`: <!-- counts:swift-tests -->694 Swift Testing tests<!-- counts:end --> with no known-issue wrappers, using the real Apple
+- `swift test`: <!-- counts:swift-tests -->718 Swift Testing tests<!-- counts:end --> with no known-issue wrappers, using the real Apple
   PDF/OCR stack. They cover extraction, the document model, layout, raster pixels (crop origins,
   rotations, annotations, resource ceilings), preserved regions (fraction bars, raised exponents
   and all six cells of a ruled table in actual EPUB images at 72/144 DPI, with prose and code
@@ -37,7 +37,7 @@ What the individual gates check:
   concurrency test overlaps four conversions and one canceled conversion, checking ownership,
   styles, images, monotonic progress and staging cleanup. For iOS:
   `xcodebuild test -scheme PDFReflowLib-Package -destination 'platform=iOS Simulator,name=iPhone 18 Pro' CODE_SIGNING_ALLOWED=NO`.
-- `python3 -m unittest discover -s tools -p 'test_*.py' -v`: <!-- counts:python-tests -->248 Python tests<!-- counts:end --> over the tools,
+- `python3 -m unittest discover -s tools -p 'test_*.py' -v`: <!-- counts:python-tests -->250 Python tests<!-- counts:end --> over the tools,
   including the checker's negative controls, the identity tool, the memory-gate instrumentation
   (real child allocations above and below a ceiling, source verification, isolation from an
   earlier child's high-water mark, and each host-pressure outcome with its settle-and-retry),
@@ -207,7 +207,7 @@ loaded host. Each case verifies the pinned source identity, converts in a fresh 
 otherwise; see [corpus.md](corpus.md#index)),
 checks EPUB structure, EPUBCheck, monotonic progress, the manifest memory ceiling and the
 reviewed content contract in [corpus/regressions.json](../corpus/regressions.json):
-<!-- counts:contract-coverage -->754 checks on 147 reviewed pages across 20 documents<!-- counts:end -->.
+<!-- counts:contract-coverage -->780 checks on 151 reviewed pages across 20 documents<!-- counts:end -->.
 All source-page anchors must remain complete and ordered, and semantic text must
 contain no image-attachment placeholders. The manifest consistency test requires every corpus
 document to be covered or explicitly excluded (`excludedFullConversions`, whose entries the
@@ -219,9 +219,9 @@ each book is in [corpus.md](corpus.md#warren-commission-report) and the admissio
 [corpus-lane-admissions](../measurements/corpus-lane-admissions/record.md).
 
 <!-- counts:contract-breakdown -->
-Those 754 checks are 4 `spineContinuity`, 86 `text`, 340 `orderedText`, 58 `absentText`,
-39 `headings`, 53 `paragraphs`, 6 `continuedParagraphs`, 6 `preformatted`, 16 `scripts`,
-11 `imageRegions`, 21 `tableRows`, 84 `minimumImages`, 23 `warningCodesAnyOf` and
+Those 780 checks are 4 `spineContinuity`, 86 `text`, 343 `orderedText`, 58 `absentText`,
+39 `headings`, 57 `paragraphs`, 6 `continuedParagraphs`, 10 `preformatted`, 15 `lists`,
+16 `scripts`, 11 `imageRegions`, 21 `tableRows`, 84 `minimumImages`, 23 `warningCodesAnyOf` and
 7 `absentWarningCodes`, counted as `tools/check_corpus_content.py` counts them.
 <!-- counts:end -->
 
@@ -229,7 +229,12 @@ Contract expectations per page: `orderedText` and `text` (selected correct words
 `paragraphs` (a phrase inside one spine paragraph on that source page; a phrase spread over
 separate paragraphs, headings or preformatted text cannot pass), `preformatted` (the mirror of it:
 a phrase inside one `<pre>` block, which a paragraph, two adjacent items or the page's running text
-cannot satisfy — what pins a list item as an item rather than as prose, #172),
+cannot satisfy — what pins a list-shaped line that is not a list item, #172), `lists` (one list
+element on the page — `{"kind": "ul" | "ol", "items": [...]}`, with `start` where an `<ol>`'s first
+printed number is pinned — must hold the phrases in consecutive items, in order, so items that
+split into separate lists, lose their numbering, change order or fall back to paragraphs or
+preformatted blocks fail; a list is on every page one of its items opens on, and reading an EPUB
+refuses a list element holding anything but items, #292),
 `continuedParagraphs` (one
 paragraph element ends page N with one phrase and continues page N+1 with the other),
 `headings` (phrases that must remain semantic headings on the correct page; the parser keeps

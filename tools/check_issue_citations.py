@@ -249,6 +249,8 @@ ALLOWED = {
         'on main and named by its issue'),
     289: ('historical', "the candidate band read against a book's own page image where the sheet "
         'carries one, on main and named by its issue'),
+    291: ('historical', "a sentence's own stop, handed back as a line of its own, carried back to its "
+         'sentence, on main and named by its issue'),
     290: ('historical', 'a bare number in the outer margin refused the title reading, on main and '
         'named by its issue'),
     291: ('historical', "a block that is one sentence-ending mark joined to the block above it, on "

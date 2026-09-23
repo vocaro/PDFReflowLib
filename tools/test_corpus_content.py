@@ -156,6 +156,59 @@ class CorpusContentTests(unittest.TestCase):
         self.assertEqual(pages[2]['preformatted'], ['19) (5, 6)'])
         self.assertEqual(pages[1]['paragraphs'], ['prose'])
 
+    def test_list_contract_pins_kind_start_and_consecutive_items(self):
+        """A list check names one element's kind, start and items in order (#292)."""
+        self.contract['pages'][0]['lists'] = [{'kind': 'ol', 'start': 3, 'items': ['third step', 'fourth step']}]
+        whole = {'kind': 'ol', 'start': 3, 'items': ['third step of the procedure', 'fourth step of the procedure']}
+        self.pages[1]['lists'] = [whole]
+        self.assertTrue(self.check()['passed'])
+        # A longer list holding the phrases in consecutive items passes; one held apart does not.
+        self.pages[1]['lists'] = [dict(whole, items=['second'] + whole['items'] + ['fifth'])]
+        self.assertTrue(self.check()['passed'])
+        for shapes in [[], [dict(whole, kind='ul', start=None)], [dict(whole, start=1)],
+                       [dict(whole, items=list(reversed(whole['items'])))],
+                       [dict(whole, items=whole['items'][:1]), dict(whole, start=4, items=whole['items'][1:])],
+                       [dict(whole, items=[whole['items'][0], 'a stranger', whole['items'][1]])]]:
+            self.pages[1]['lists'] = shapes
+            self.pages[1]['paragraphs'] = whole['items']
+            self.pages[2]['lists'] = [whole]
+            self.assertFalse(self.check()['passed'], shapes)
+        # A bulleted list names no start, and a check without one accepts any start.
+        self.contract['pages'][0]['lists'] = [{'kind': 'ul', 'items': ['first', 'second']}]
+        self.pages[1]['lists'] = [{'kind': 'ul', 'start': None, 'items': ['first item', 'second item']}]
+        self.assertTrue(self.check()['passed'])
+        self.contract['pages'][0]['lists'] = [{'kind': 'ol', 'items': ['first', 'second']}]
+        self.pages[1]['lists'] = [{'kind': 'ol', 'start': 7, 'items': ['first item', 'second item']}]
+        self.assertTrue(self.check()['passed'])
+        for invalid in [{'kind': 'ol'}, {'items': ['a']}, {'kind': 'dl', 'items': ['a']}, {'kind': 'ul', 'items': []},
+                        {'kind': 'ul', 'items': ['a', '']}, {'kind': 'ul', 'items': 'a'}, {'kind': 'ul', 'items': ['a'], 'start': 1},
+                        {'kind': 'ol', 'items': ['a'], 'start': 0}, {'kind': 'ol', 'items': ['a'], 'start': '2'},
+                        {'kind': 'ol', 'items': ['a'], 'level': 0}, ['ul', 'a']]:
+            self.contract['pages'][0]['lists'] = [invalid]
+            with self.assertRaises(ValueError):
+                self.check()
+
+    def test_list_parser_reads_lists_on_the_pages_their_items_open_and_refuses_non_items(self):
+        path = self.epub('<span epub:type="pagebreak" id="page-1"/><ol start="3"><li>third <em>step</em></li>'
+                         '<li><span epub:type="pagebreak" id="page-2"/>fourth step</li></ol><p>prose</p>',
+                         '<ul><li>alpha</li><li>beta<span epub:type="pagebreak" id="page-3"/></li></ul><pre>1) 5</pre>')
+        pages, markers = read_pages(path)
+        self.assertEqual(markers, [1, 2, 3])
+        ordered = {'kind': 'ol', 'start': 3, 'items': ['third step', 'fourth step']}
+        unordered = {'kind': 'ul', 'start': None, 'items': ['alpha', 'beta']}
+        self.assertEqual(pages[1]['lists'], [ordered])
+        self.assertEqual(pages[2]['lists'], [ordered, unordered])
+        self.assertEqual(pages[3]['lists'], [])
+        self.assertIn('fourth step', pages[2]['text'])
+        self.assertNotIn('fourth step', pages[1]['text'])
+        self.assertEqual(pages[3]['preformatted'], ['1) 5'])
+        for body in ['<span epub:type="pagebreak" id="page-1"/><ul><li>a</li><span epub:type="pagebreak" id="page-2"/><li>b</li></ul>',
+                     '<span epub:type="pagebreak" id="page-1"/><ul><li>a</li><p>b</p></ul>',
+                     '<span epub:type="pagebreak" id="page-1"/><ul>stray<li>a</li></ul>',
+                     '<span epub:type="pagebreak" id="page-1"/><ol start="0"><li>a</li><li>b</li></ol>']:
+            with self.assertRaises(ValueError):
+                read_pages(self.epub(body, '<p>x</p>'))
+
     def test_paragraph_parser_keeps_inline_styles_and_cross_page_ownership(self):
         path = self.epub('<span epub:type="pagebreak" id="page-1"/><h2>title</h2>'
                          '<p>al<strong>pha</strong> beta<span epub:type="pagebreak" id="page-2"/> gamma</p>',

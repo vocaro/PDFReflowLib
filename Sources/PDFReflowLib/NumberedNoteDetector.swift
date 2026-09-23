@@ -11,8 +11,15 @@ enum NumberedNoteDetector {
                 !text.isEmpty && text.utf8.allSatisfy { (48...57).contains($0) }
             }
             if words.first.map(number) == true { words.removeFirst() }
+            // A page where one chapter's notes end and the next chapter's begin is headed for
+            // both: the 9/11 report's `NOTES TO CHAPTERS 9-10` (#292).
+            func chapters(_ text: Substring) -> Bool {
+                let ends = text.split(whereSeparator: { $0 == "-" || $0 == "\u{2013}" })
+                return ends.count == 2 && ends.allSatisfy { number($0) && Int($0).map({ $0 > 0 }) == true }
+            }
             guard (4...5).contains(words.count), words[0] == "NOTES", words[1] == "TO",
-                  words[2] == "CHAPTER", number(words[3]), Int(words[3]).map({ $0 > 0 }) == true else { return false }
+                  (words[2] == "CHAPTER" && number(words[3]) && Int(words[3]).map({ $0 > 0 }) == true)
+                    || (words[2] == "CHAPTERS" && chapters(words[3])) else { return false }
             return words.count == 4 || number(words[4])
         }
     }

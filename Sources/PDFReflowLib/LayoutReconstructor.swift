@@ -1650,7 +1650,9 @@ enum LayoutReconstructor {
                                        ordinaryHeights: ordinaryLineHeights(in: lines),
                                        markerEntries: markerList?.openings ?? [],
                                        markerEntryEdge: markerList?.edge,
-                                       rightToLeft: rightToLeft)
+                                       rightToLeft: rightToLeft,
+                                       recognized: page.recognized || page.hasSyntheticTextStyle,
+                                       notesPage: context.numberedNotePages.contains(page.number))
         // A page whose tags never name a heading has not said that its display lines are not
         // headings; it has said only what they contain and in what order. Producers routinely
         // give every heading style a paragraph role — the FAA handbook's RoleMap sends

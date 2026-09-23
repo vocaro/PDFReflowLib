@@ -63,6 +63,24 @@ private func notePage() -> PageContent {
     }
 }
 
+/// A page where one chapter's notes end and the next chapter's begin is headed for both
+/// chapters, and is a notes page like any other (#292).
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/292"))
+func aPageHeadedForTwoChaptersNotesIsANotesPage() {
+    func headed(_ text: String) -> PageContent {
+        var page = notePage()
+        page.lines[0] = TextLine(text: text, rect: page.lines[0].rect, fontSize: 10)
+        return page
+    }
+    for text in ["NOTES TO CHAPTERS 9-10", "554 NOTES TO CHAPTERS 9-10", "NOTES TO CHAPTERS 10–11 560"] {
+        #expect(NumberedNoteDetector.hasHeading(on: headed(text)), Comment(rawValue: text))
+    }
+    for text in ["NOTES TO CHAPTERS 9", "NOTES TO CHAPTERS 9-", "NOTES TO CHAPTERS 0-1", "NOTES TO CHAPTER 9-10",
+                 "NOTES TO CHAPTERS 9-10-11", "NOTES TO CHAPTERS 9-10 AND MORE"] {
+        #expect(!NumberedNoteDetector.hasHeading(on: headed(text)), Comment(rawValue: text))
+    }
+}
+
 @Test func numberedNotesRefuseImagesAndPreserveOtherDocumentLayouts() throws {
     let page = notePage()
     let elements = page.lines.map { LayoutReconstructor.Element(rect: $0.rect, line: $0) }

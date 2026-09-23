@@ -103,7 +103,7 @@ struct ReflowDocument: Sendable, Equatable {
                           table.rows.allSatisfy({ $0.allSatisfy { $0.columns >= 1 } }),
                           (0...table.rows.count).contains(table.headerRows)
                     else { throw ValidationError.invalidTable }
-                case .paragraph, .preformatted:
+                case .paragraph, .preformatted, .listItem:
                     break
                 }
             }
@@ -339,10 +339,35 @@ struct ReflowBlock: Sendable, Equatable {
                 .filter { !$0.isEmpty }.joined(separator: "\n")
         }
     }
+    /// One item of a real list (#292). Items are a flat sequence rather than a tree: the writer
+    /// streams blocks and packs spine documents freely, so each item says whether it opens a list
+    /// element, and the writer opens and closes `<ul>`/`<ol>` as that and the kind change.
+    struct ListItem: Sendable, Equatable {
+        enum Kind: Sendable, Equatable {
+            /// A bulleted item: `<ul>`, whose own marker replaces the printed glyph.
+            case unordered
+            /// A numbered item in a run whose printed numbers ascend by one: `<ol>`, numbered
+            /// from the opening item's `ordinal`.
+            case ordered
+        }
+        /// The item's text with its printed marker removed; the list renders its own.
+        var text: InlineText
+        /// The printed marker (`•`, `3.`), kept for provenance.
+        var marker: String
+        /// The printed number of an ordered item.
+        var ordinal: Int?
+        var kind: Kind
+        /// The first item of its list element. A following item that does not open a list
+        /// continues the one open before it.
+        var opensList = true
+    }
     enum Content: Sendable, Equatable {
         case paragraph(InlineText)
         case heading(id: String, text: InlineText, level: Int = 2)
+        /// Text whose line breaks are significant: monospaced code, a row of a table the page
+        /// set without rules, and a list-shaped line `ListBuilder` did not verify as an item.
         case preformatted(InlineText)
+        case listItem(ListItem)
         case image(Image)
         case table(Table)
         case sourcePage(Int)
@@ -352,6 +377,17 @@ struct ReflowBlock: Sendable, Equatable {
     var structureGroup: Int?
     /// Physical PDF page where this block begins; inline markers record later page boundaries.
     var page: Int
+    /// Whether reconstruction opened this preformatted block on a list marker (#292): a bullet
+    /// through `LineRole.listItem`, or a number or a letter through `LineRole.markedLine` on an
+    /// edge the page sets a list on. `ListBuilder` decides from it and the text whether the block
+    /// is a list item; the joins that grow the block keep it. Nil on code, on a table row and on
+    /// every other block.
+    var listEvidence: ListEvidence?
+    struct ListEvidence: Sendable, Equatable {
+        /// Whether the line's text is a transcription of a scan: recognized by OCR, or an
+        /// inherited invisible text layer over the page image.
+        var recognized = false
+    }
     /// Whether a crop took text the page printed *before* this block, so the page's own text
     /// does not begin here. Set only on the first block a page reflows, and read by the
     /// cross-page join, which must not call such a block the continuation of the page before
@@ -362,6 +398,7 @@ struct ReflowBlock: Sendable, Equatable {
         switch content {
         case let .paragraph(text), let .heading(_, text, _): text.text
         case let .preformatted(text): text.text
+        case let .listItem(item): item.text.text
         case let .table(table): table.text
         case .image, .sourcePage: ""
         }
@@ -371,13 +408,14 @@ struct ReflowBlock: Sendable, Equatable {
         case let .paragraph(text), let .heading(_, text, _): text.sourcePages
         case let .sourcePage(page): [page]
         case let .preformatted(text): text.sourcePages
+        case let .listItem(item): item.text.sourcePages
         case let .table(table): table.rows.flatMap { $0.flatMap(\.text.sourcePages) }
         case .image: []
         }
     }
     var hasReflowedText: Bool {
         switch content {
-        case .paragraph, .heading, .preformatted, .table: true
+        case .paragraph, .heading, .preformatted, .listItem, .table: true
         case .image, .sourcePage: false
         }
     }

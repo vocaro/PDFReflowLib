@@ -42,6 +42,20 @@ actor EPUBWriter {
     /// reader turns its pages and lays out its spreads the way the source does.
     private var rightToLeftBlocks = 0
     private var textBlocks = 0
+    /// The list being packed (#292). A list is packed as one unit, like a table: its items are
+    /// gathered until a block that is not an item, a chapter start or the end of the document
+    /// arrives, so a spine document never ends inside a list. A list may hold nothing but items,
+    /// so a page boundary that arrives while one is open is held here too, and written inside
+    /// the item it precedes, or inside the item before it when the page is empty, rather than
+    /// handed to the packer, which would set it between two items.
+    private var openList: OpenList?
+    private var heldPage: Int?
+    private var chapterStartPages: Set<Int> = []
+    private struct OpenList {
+        var kind: ReflowBlock.ListItem.Kind
+        var start: Int?
+        var entries: [EPUBTextEncoder.ListEntry]
+    }
 
     init(maximumOutputBytes: Int64, directory: URL, packageIdentifier: String? = nil, modificationDate: Date? = nil) {
         self.maximumOutputBytes = maximumOutputBytes
@@ -79,6 +93,7 @@ actor EPUBWriter {
             outline = metadata.outline
             packer = SpinePacker(bodyTargetBytes: Self.bodyTargetBytes, chapterStartPages: chapterStartPages,
                                  pageLabels: metadata.pageLabels)
+            self.chapterStartPages = chapterStartPages
             try FileManager.default.createDirectory(at: directory.appendingPathComponent("META-INF"),
                                                     withIntermediateDirectories: true)
             try FileManager.default.createDirectory(at: publication, withIntermediateDirectories: true)
@@ -91,11 +106,31 @@ actor EPUBWriter {
             imagePathByID[asset.id] = path
         case let .block(block):
             precondition(started, "blocks follow the document's start")
-            if case let .sourcePage(number) = block.content {
-                try write(try packer.add(sourcePage: number,
-                                         markup: EPUBTextEncoder.sourcePage(number, labels: pageLabels),
-                                         budgetRemaining: maximumOutputBytes - consumed))
-            } else {
+            switch block.content {
+            case let .sourcePage(number):
+                // Inside a list the boundary is held with the list, unless it opens a chapter,
+                // which closes the list first: a validated chapter start always begins a new
+                // spine document, and the list is written whole into the one before it.
+                if openList != nil, !chapterStartPages.contains(number) {
+                    if let held = heldPage { openList!.entries[openList!.entries.count - 1].pagesAfter.append(held) }
+                    heldPage = number
+                } else {
+                    try flushList()
+                    try add(sourcePage: number)
+                }
+            case let .listItem(item):
+                textBlocks += 1
+                if ArabicText.readsRightToLeft(block.text) { rightToLeftBlocks += 1 }
+                if var open = openList, !item.opensList, open.kind == item.kind {
+                    open.entries.append(.init(block: block, item: item, pagesBefore: heldPage.map { [$0] } ?? []))
+                    openList = open
+                    heldPage = nil
+                } else {
+                    try flushList()
+                    openList = OpenList(kind: item.kind, start: item.ordinal, entries: [.init(block: block, item: item)])
+                }
+            default:
+                try flushList()
                 // A marker inside a continued paragraph shows the number its page prints, exactly
                 // as a standalone one does: it is the same marker, and a reader jumping to it is
                 // looking for the same printed page (#248, surfaced by #203's cross-page joins).
@@ -110,11 +145,33 @@ actor EPUBWriter {
         }
     }
 
+    private func add(sourcePage number: Int) throws {
+        try write(try packer.add(sourcePage: number,
+                                 markup: EPUBTextEncoder.sourcePage(number, labels: pageLabels),
+                                 budgetRemaining: maximumOutputBytes - consumed))
+    }
+
+    /// Writes the open list, if any, as one piece, and hands the packer a boundary that arrived
+    /// inside it and precedes no item, so that it travels with whatever follows the list.
+    private func flushList() throws {
+        if let open = openList {
+            openList = nil
+            try write(try packer.add(EPUBTextEncoder.list(open.kind, start: open.start, entries: open.entries,
+                                                          imagePaths: imagePathByID, labels: pageLabels),
+                                     budgetRemaining: maximumOutputBytes - consumed))
+        }
+        if let held = heldPage {
+            heldPage = nil
+            try add(sourcePage: held)
+        }
+    }
+
     /// Finishes navigation, package metadata and the archive, and returns the archive's URL.
     /// The reported fraction covers the archive entries; serializing the blocks is the
     /// producer's own work and is reported there.
     func finish(progress: @Sendable (Double) async -> Void) async throws -> URL {
         try validation.finish()
+        try flushList()
         try write(try packer.finish(budgetRemaining: maximumOutputBytes - consumed))
         let chapters = packer.documentNames
         // An outline entry names a page, and which spine document holds a page is only known

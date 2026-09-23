@@ -79,8 +79,10 @@ private func chapter(_ url: URL) throws -> String {
     #expect(html.contains("&lt;script&gt;"))
     #expect(!html.contains("<script>"))
     #expect(html.contains("<pre>if value &lt; 3:\n    print(value)\nreturn value</pre>"))
-    #expect(html.contains("1. Keep the first item."))
-    #expect(html.contains("2. Keep the second item."))
+    // A verified numbered run is a real list whose printed numbers the list renders (#292); the
+    // code block beside it stays preformatted.
+    #expect(html.contains("<ol><li>Keep the first item.</li><li>Keep the second item.</li></ol>"))
+    #expect(!html.contains("1. Keep the first item."))
     #expect(html.contains("<strong>bold</strong>"))
     #expect(html.contains("<em>italic</em>"))
 }

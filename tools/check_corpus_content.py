@@ -8,6 +8,7 @@ the written spine; whitespace and inline styling do not affect matching.
 import argparse
 import json
 from pathlib import Path, PurePosixPath
+import re
 import xml.etree.ElementTree as ET
 import zipfile
 
@@ -29,10 +30,11 @@ CONTRACT_CHECK_TYPES = {'spineContinuity': 'sequence'}
 PAGE_CHECK_TYPES = {
     'text': 'sequence', 'orderedText': 'sequence', 'absentText': 'sequence',
     'headings': 'sequence', 'paragraphs': 'sequence', 'continuedParagraphs': 'sequence',
-    'preformatted': 'sequence',
+    'preformatted': 'sequence', 'lists': 'sequence',
     'scripts': 'sequence', 'imageRegions': 'sequence', 'tableRows': 'sequence',
     'minimumImages': 'presence', 'warningCodesAnyOf': 'presence', 'absentWarningCodes': 'presence',
 }
+LISTS = {HTML + 'ul', HTML + 'ol'}
 
 
 def count_checks(contracts):
@@ -78,6 +80,9 @@ def read_spine(path, *, max_entries=DEFAULT_MAX_ENTRIES,
     heading_id = 0
     paragraph_id = 0
     item_id = 0
+    # Every list element in document order: its kind, its start, its items' whole text and the
+    # page each item opens on (#292). A list is reported on every page one of its items opens on.
+    lists = []
     with epub.open_archive(path, max_entries=max_entries, max_uncompressed_bytes=max_uncompressed_bytes) as archive:
         names = set(archive.namelist())
         for name in epub.read_package(archive).spine:
@@ -118,7 +123,7 @@ def read_spine(path, *, max_entries=DEFAULT_MAX_ENTRIES,
                     markers.append(current)
                     document['pages'].append(current)
                     pages[current] = {'text': '', 'images': [], 'scripts': [], 'headings': {},
-                                      'paragraphs': {}, 'preformatted': {}, 'tableRows': []}
+                                      'paragraphs': {}, 'preformatted': {}, 'tableRows': [], 'lists': []}
                 # A table row, read as the cells it holds. A `tableRows` expectation names a whole
                 # row, so a cell lost from a table changes the row's length and is caught (#210).
                 if element.tag == HTML + 'tr' and current is not None:
@@ -143,6 +148,33 @@ def read_spine(path, *, max_entries=DEFAULT_MAX_ENTRIES,
                 if element.tag == HTML + 'pre':
                     item_id += 1
                     item = item_id
+                if element.tag in LISTS:
+                    # A list holds only items (#292): a page marker or a block directly inside one
+                    # is a conformance error, and the text of a list is read item by item. An
+                    # item's page is the one it opens on, after any marker that opens it.
+                    if any(child.tag != HTML + 'li' for child in element) or (element.text or '').strip():
+                        raise ValueError('List element holds something other than items')
+                    start = element.get('start', '1')
+                    if element.tag == HTML + 'ol' and not re.fullmatch(r'[1-9][0-9]*', start):
+                        raise ValueError('Invalid list start')
+                    shape = {'kind': element.tag[len(HTML):], 'start': int(start) if element.tag == HTML + 'ol' else None,
+                             'items': [], 'pages': []}
+                    lists.append(shape)
+                    for child in element:
+                        page = current
+                        if not (child.text or '').strip():
+                            for opening in child:
+                                boundary = epub.page_boundary(opening)
+                                if boundary is None:
+                                    break
+                                page = boundary
+                                if (opening.tail or '').strip():
+                                    break
+                        shape['items'].append(normalized(''.join(child.itertext())))
+                        shape['pages'].append(page)
+                        walk(child, script, heading, paragraph, item)
+                        append(child.tail, script, heading, paragraph, item)
+                    return
                 append(element.text, script, heading, paragraph, item)
                 for child in element:
                     walk(child, script, heading, paragraph, item)
@@ -163,6 +195,10 @@ def read_spine(path, *, max_entries=DEFAULT_MAX_ENTRIES,
         # Paragraph IDs are document-wide, so one <p> crossing a page marker has the same ID on both pages.
         page['paragraphIDs'] = {paragraph: normalized(text) for paragraph, text in page['paragraphs'].items()}
         page['paragraphs'] = [normalized(text) for text in page['paragraphs'].values()]
+    for shape in lists:
+        record = {'kind': shape['kind'], 'start': shape['start'], 'items': shape['items']}
+        for number in sorted({page for page in shape['pages'] if page in pages}):
+            pages[number]['lists'].append(record)
     for document in documents:
         document['text'] = normalized(document['text'])
     return pages, markers, documents
@@ -301,7 +337,7 @@ def assess(case, contract, result, report, pages, markers, *, documents=(),
     for item in expected:
         number = item['page']
         page = pages.get(number, {'text': '', 'images': []})
-        if not any(key in item for key in ('text', 'orderedText', 'minimumImages', 'warningCodesAnyOf', 'absentWarningCodes', 'scripts', 'absentText', 'headings', 'paragraphs', 'preformatted', 'continuedParagraphs', 'imageRegions', 'tableRows')):
+        if not any(key in item for key in ('text', 'orderedText', 'minimumImages', 'warningCodesAnyOf', 'absentWarningCodes', 'scripts', 'absentText', 'headings', 'paragraphs', 'preformatted', 'lists', 'continuedParagraphs', 'imageRegions', 'tableRows')):
             raise ValueError('Review page has no expectations')
         for phrase in item.get('text', []):
             if not normalized(phrase):
@@ -333,6 +369,31 @@ def assess(case, contract, result, report, pages, markers, *, documents=(),
             checks += 1
             if not any(normalized(phrase) in block for block in page.get('preformatted', [])):
                 errors.append(f'Page {number}: missing preformatted block {phrase!r}')
+        for expected_list in item.get('lists', []):
+            # One list element of the named kind (and start, where named) with an item opening on
+            # the page must hold the phrases in consecutive items, in order (#292): items that
+            # split into separate lists, lose their numbering, change order or fall back to
+            # paragraphs or preformatted blocks fail.
+            if (not isinstance(expected_list, dict) or not {'kind', 'items'} <= set(expected_list)
+                    or set(expected_list) - {'kind', 'items', 'start'}
+                    or expected_list['kind'] not in ('ul', 'ol')
+                    or not isinstance(expected_list['items'], list) or not expected_list['items']
+                    or any(not isinstance(phrase, str) or not normalized(phrase) for phrase in expected_list['items'])
+                    or ('start' in expected_list and (type(expected_list['start']) is not int or expected_list['start'] < 1))
+                    or ('start' in expected_list and expected_list['kind'] != 'ol')):
+                raise ValueError('List expectation requires a kind, nonempty item phrases and a positive start on an ol')
+            checks += 1
+            wanted = [normalized(phrase) for phrase in expected_list['items']]
+
+            def matches(shape):
+                if shape['kind'] != expected_list['kind']:
+                    return False
+                if 'start' in expected_list and shape['start'] != expected_list['start']:
+                    return False
+                return any(all(wanted[offset] in shape['items'][position + offset] for offset in range(len(wanted)))
+                           for position in range(len(shape['items']) - len(wanted) + 1))
+            if not any(matches(shape) for shape in page.get('lists', [])):
+                errors.append(f'Page {number}: no {expected_list["kind"]} list with the items {expected_list["items"]!r}')
         following = pages.get(number + 1, {})
         for continuation in item.get('continuedParagraphs', []):
             if (not isinstance(continuation, dict) or set(continuation) != {'end', 'next'}

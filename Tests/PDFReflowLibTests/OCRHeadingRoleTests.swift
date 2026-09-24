@@ -32,6 +32,7 @@ func recognizedProseFragmentsAndWordColumnsDoNotBecomeHeadings() throws {
     let blueBook150 = try recognizedPage("blue-150")
     #expect(try recognizedRole("Certain Doubtful | Total", on: blueBook150) == .prose)
     #expect(try recognizedRole("TABLE A63", on: blueBook150) == .heading)
+    #expect(try recognizedRole("METALLIC", on: blueBook150) == .prose)
 
     // The current Vision reading of page 50 gives this chart-axis month a tall box, but the
     // caption establishes a still larger type size. It remains a negative control for #216.
@@ -59,4 +60,36 @@ func distantSecondColumnDoesNotVetoARecognizedHeading() {
     }
     #expect(role(with: far) == .heading)
     #expect(role(with: near) == .prose)
+}
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/216"))
+func recognizedContinuationAndFormValuesDoNotBecomeHeadings() {
+    // Fresh Vision output from Warren 501/566 produced these false h2 elements even though
+    // the pinned captures above used different readings. Keep their printed text shapes as
+    // controls against OCR's run-to-run segmentation changes.
+    let rejected = [
+        "appointed by the President by Executive Order 11130, dated November sassination of",
+        "Prevkdent John P. Keunedy to compel the uttendance and testimony of wit-",
+        "(c) in case of rontumacy or refusal to obey a subpena issued to ans",
+        "It. - 170 pounds",
+        "Rair - Reddish brown",
+    ]
+    func role(_ reading: String) -> LineRole {
+        let body = (0..<5).map { row in
+            TextLine(text: "The report records testimony and supporting evidence from the commission.",
+                     rect: CGRect(x: 40, y: 440 - CGFloat(row) * 15, width: 450, height: 10), fontSize: 10)
+        }
+        let candidate = TextLine(text: reading,
+                                 rect: CGRect(x: 40, y: 500, width: 450, height: 17), fontSize: 17)
+        let page = PageContent(number: 1, bounds: CGRect(x: 0, y: 0, width: 600, height: 700),
+                               lines: body + [candidate], graphics: [], recognized: true)
+        return LayoutReconstructor.role(of: candidate, on: page, in: page.lines,
+                                        typography: PageTypography(page: page), labels: [], judgesTitleWords: true)
+    }
+    for reading in rejected { #expect(role(reading) == .prose, "\(reading)") }
+    #expect(role("APPENDIX III") == .heading)
+    #expect(role("Autopsy Report and Supplemental Report") == .heading)
+    #expect(role("TABLE A63") == .heading)
+    #expect(role("Methods - Overview") == .heading)
+    #expect(role("Part - Overview") == .heading)
 }

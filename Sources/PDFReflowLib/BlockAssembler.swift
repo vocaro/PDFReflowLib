@@ -66,6 +66,26 @@ extension LayoutReconstructor {
               line.text.first?.isLowercase != true || stacksWithDisplay(line, in: lines, typography: typography),
               !judgesTitleWords || EnglishText.readsAsWords(line.text) else { return false }
         if judgesTitleWords {
+            // A recognized box has only estimated size. A lower-case continuation, an open
+            // hyphenation, a lettered clause or a form's short label/value row does not become
+            // a title because Vision drew it taller than the page body (Warren 501/566, #216).
+            let reading = line.text.trimmingCharacters(in: .whitespacesAndNewlines)
+            let words = reading.split(whereSeparator: { !$0.isLetter && !$0.isNumber })
+            if (reading.first?.isLowercase == true && words.count >= 5)
+                || (reading.hasSuffix("-") && words.count >= 8)
+                || (words.count >= 8 && reading.range(of: #"^\([a-z]\)\s"#, options: .regularExpression) != nil)
+                || reading.range(of: #"^\p{L}{1,4}\.?\s+[-–]\s+\S+\s+\S+"#, options: .regularExpression) != nil {
+                return false
+            }
+            // A recognized table may space its one-word column heads too far apart for the
+            // nearby-piece veto below. Three other short readings on the same baseline make
+            // this a printed row, not a heading (Blue Book 150: METALLIC, #216).
+            let peers = lines.filter { other in
+                other != line && line.sharesRow(with: other)
+                    && other.text.count <= 40 && other.rect.width <= typography.body * 20
+            }
+            if peers.count >= 3, words.count <= 2,
+               !line.text.contains(where: { $0.isNumber }) { return false }
             // Vision's box height is an estimate of type size. On Warren 501 a body sentence's
             // tall box overlaps three pieces of its own printed row; on Warren 566 a form value
             // stands beside its labels; Blue Book 150 repeats word column heads across a row.

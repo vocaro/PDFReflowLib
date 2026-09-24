@@ -2371,7 +2371,9 @@ panel remains source artwork; independently proved wrapped prose over it can als
 `PrintedColumns` supplements whitespace cuts with sustained body-text margins when a
 crossing title or decorative rule hides the gutter. It requires at least six substantial
 rows per column and declines floating content across the middle of their writing. Proved
-caption rows can also state a column; a wider caption margin joins the body margin only
+caption rows can also state a column when body/quotation evidence alone cannot form a valid
+plan. An already complete body-column plan takes precedence, so a spanning caption cannot
+invalidate its own above/below placement by extending those margins. A wider caption margin joins the body margin only
 when their vertical ranges are disjoint and their measures substantially overlap. Furniture
 aliases within half a point are removed only after repetition proves the canonical running
 head or foot; native body overprint removal is unchanged. A painted header band requires

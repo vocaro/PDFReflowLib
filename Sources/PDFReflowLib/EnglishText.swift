@@ -11,7 +11,7 @@ import Synchronization
 /// The rules differ by design:
 /// - `TextLayerPlausibility.wordFinding` judges an inherited text layer (#93, #7): at least
 ///   `minimumJudgedWords` judged words, fewer than a fifth of tokens numbers, at least half
-///   English, and under a tenth misread in place. It sets a lone `a`/`I` with no word for company
+///   English, and under 8.5% misread in place. It sets a lone `a`/`I` with no word for company
 ///   aside first (`lonelyLetters`, #275).
 /// - `readsAsWords` judges one recognized line before it may become a heading (#7): no letter of
 ///   another script, at least one known word, English at least half of all words (neutral words

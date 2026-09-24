@@ -207,7 +207,21 @@ import Testing
     #expect(TextLayerPlausibility.wordFinding(Counts(english: 18, damaged: 2, neutral: 0, tokens: 20, misread: 2,
                                                      misreadExamples: ["tbe"]))
         == .misreadWords(misread: 2, words: 20, examples: ["tbe"]))
-    #expect(TextLayerPlausibility.wordFinding(Counts(english: 18, damaged: 2, neutral: 1, tokens: 21, misread: 2)) == nil)
+    #expect(TextLayerPlausibility.wordFinding(Counts(english: 18, damaged: 2, neutral: 4, tokens: 24, misread: 2)) == nil)
+}
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/216")) func damagedTypescriptsCrossTheMeasuredMisreadBoundary() {
+    typealias Counts = TextLayerPlausibility.WordCounts
+    // Source survey: Warren 649, 655, 657, 659 and 661 fall between 8.7% and 9.7%; the
+    // highest unaffected Blue Book page is 8.0%. Preserve that separation at the boundary.
+    #expect(TextLayerPlausibility.wordFinding(Counts(english: 182, damaged: 18, tokens: 200,
+                                                     misread: 17))
+        == .misreadWords(misread: 17, words: 200, examples: []))
+    #expect(TextLayerPlausibility.wordFinding(Counts(english: 184, damaged: 16, tokens: 200,
+                                                     misread: 16)) == nil)
+    // The numeric-table exemption still wins even when a page contains damaged words.
+    #expect(TextLayerPlausibility.wordFinding(Counts(english: 182, damaged: 18, numberTokens: 40,
+                                                     tokens: 200, misread: 17)) == nil)
 }
 
 @Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/93")) func otherScriptsAreDamageAndRecognizedTitlesMustReadAsWords() throws {

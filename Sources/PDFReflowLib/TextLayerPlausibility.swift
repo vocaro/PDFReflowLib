@@ -21,7 +21,7 @@ import PDFKit
 ///   cells reads no better. The exemption counts the numbers the page states, not every token
 ///   holding a digit, because a misreading of a hand-written figure (`l6`, `0,3`, `A.Di`) holds
 ///   digits too and would otherwise buy the page its own exemption (#275).
-/// - **Words misread in place (#7).** Under the same conditions, a layer fails when a tenth or more
+/// - **Words misread in place (#7, #216).** Under the same conditions, a layer fails when 8.5% or more
 ///   of all its words are damaged words of three or more letters (or irregular capitals) that no
 ///   neighbor joins into an English word: `tcld t» ftboot` for "told me about" on a carbon
 ///   typescript, which reads half to three quarters English. Text split inside words
@@ -51,7 +51,10 @@ enum TextLayerPlausibility {
     static let minimumJudgedWords = 20
     static let minimumEnglishShare = 0.5
     static let maximumNumericShare = 0.2
-    static let minimumMisreadShare = 0.1
+    // The Warren carbon typescripts on pages 649, 655, 657, 659 and 661 score 8.7–9.7%.
+    // In the source survey, the highest unaffected Blue Book page scored 8.0% and NBS 6.0%.
+    // Leave a margin above those controls while admitting the damaged typescripts (#216).
+    static let minimumMisreadShare = 0.085
     static let minimumUncoveredFraction = 0.75
     static let minimumUncoveredRows = 7
     /// The ink test renders the page, which dominates its cost. A layer fails it only with fewer

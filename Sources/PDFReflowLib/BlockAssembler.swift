@@ -1249,11 +1249,19 @@ struct BlockAssembler {
     ///
     /// A shared left edge is a column the page itself sets, and stands as evidence on its own. A
     /// shared center does not: a title, its author and its date are centered on one axis and are
-    /// three separate lines. So a centered stack joins only where the reading also states that the
-    /// line wraps to the next one. Vision states it for every line it recognizes; PDFKit's native
-    /// reading states nothing, which leaves every natively extracted page exactly as it was.
+    /// three separate lines. Vision's wrap evidence admits ordinary centered stacks. Native text
+    /// has no such flag, but a large display sentence can state its continuation with two long,
+    /// same-size lines at one center and an unfinished first line. Earthdata slide 10 sets its
+    /// 28-point statement that way, 50 points from one line top to the next (#175). The size and
+    /// length bounds keep ordinary titles, bylines and centered captions out of this reading.
     private func centered(_ prev: TextLine, _ line: TextLine) -> Bool {
-        prev.wraps == true && abs(prev.uprightRect.midX - line.uprightRect.midX) <= body * 0.6
+        guard abs(prev.uprightRect.midX - line.uprightRect.midX) <= body * 0.6 else { return false }
+        if prev.wraps == true { return true }
+        guard prev.wraps == nil, line.wraps == nil, body >= 24,
+              prev.fontSize >= 24, prev.hasSize(line.fontSize),
+              prev.uprightRect.width >= body * 10, line.uprightRect.width >= body * 7,
+              let last = prev.text.last, !".!?".contains(last) else { return false }
+        return true
     }
 
     /// The white the page left under a line, measured from the line's own depth rather than from

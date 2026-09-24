@@ -114,6 +114,42 @@ private func placed(_ text: String, x: CGFloat, width: CGFloat, y: CGFloat, heig
              fontSize: height, wraps: wraps)
 }
 
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/175"))
+func longNativeDisplaySentenceKeepsItsCenteredSecondLine() {
+    // Earthdata slide 10, source SHA-256 f0a1ea3f5711228a9de2544fd1a94b05cfb8d9323fe3a4c253542f5a6ead5c94.
+    // PDFKit returns both lines at 28 pt with their centers less than 0.01 pt apart. Their
+    // tops differ by 50.25 pt; ordinary prose has no shared left edge and breaks here.
+    func slideLine(_ text: String, x: CGFloat, y: CGFloat, width: CGFloat) -> TextLine {
+        TextLine(text: text, rect: CGRect(x: x, y: y, width: width, height: 26.18), fontSize: 28)
+    }
+    let first = slideLine("This approach produces key important benefits for",
+                          x: 48.7689, y: 132.9401, width: 622.16)
+    let second = slideLine("the user community and EOSDIS",
+                           x: 153.8295, y: 82.6901, width: 412.076)
+    #expect(assembled([first, second], body: 28) ==
+            ["This approach produces key important benefits for the user community and EOSDIS"])
+
+    let title = TextLine(text: "Architectural Concept",
+                         rect: CGRect(x: 275.357, y: 350.413, width: 248.404, height: 24.388),
+                         fontSize: 26)
+    let slogan = slideLine("Earth Science Data Analytics the Cloud-Native Way:",
+                            x: 35.5706, y: 279.1061, width: 648.452)
+    let sloganEnd = slideLine("Everything is a Service",
+                               x: 206.7186, y: 230.3561, width: 306.292)
+    let page = PageContent(number: 10, bounds: CGRect(x: 0, y: 0, width: 720, height: 405),
+                           lines: [title, slogan, sloganEnd, first, second], graphics: [])
+    var warnings: [ConversionWarning] = []
+    let blocks = LayoutReconstructor.blocks(page: page, images: [], vocabulary: [], warnings: &warnings)
+    #expect(blocks.contains { $0.text ==
+        "This approach produces key important benefits for the user community and EOSDIS" })
+    #expect(!blocks.contains { $0.text == first.text || $0.text == second.text })
+
+    // A complete centered sentence at the same size, place and spacing closes its own paragraph.
+    let complete = slideLine("This approach produces key important benefits.",
+                             x: 48.7689, y: 132.9401, width: 622.16)
+    #expect(assembled([complete, second], body: 28) == [complete.text, second.text])
+}
+
 @Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/130"))
 func aStubOfProseIsClosedByTheStepTheNextLineTakes() {
     // Project Blue Book Special Report No. 14, physical page 273, the observer questionnaire.

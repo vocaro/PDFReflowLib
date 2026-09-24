@@ -33,7 +33,8 @@ PAGE_CHECK_TYPES = {
     'headings': 'sequence', 'paragraphs': 'sequence', 'continuedParagraphs': 'sequence',
     'preformatted': 'sequence', 'lists': 'sequence', 'asides': 'sequence', 'quotations': 'sequence',
     'scripts': 'sequence', 'math': 'sequence', 'imageRegions': 'sequence', 'tableRows': 'sequence',
-    'minimumImages': 'presence', 'warningCodesAnyOf': 'presence', 'absentWarningCodes': 'presence',
+    'minimumImages': 'presence', 'originalPageImage': 'presence',
+    'warningCodesAnyOf': 'presence', 'absentWarningCodes': 'presence',
 }
 LISTS = {HTML + 'ul', HTML + 'ol'}
 
@@ -137,7 +138,8 @@ def read_spine(path, *, max_entries=DEFAULT_MAX_ENTRIES,
                     current = page
                     markers.append(current)
                     document['pages'].append(current)
-                    pages[current] = {'text': '', 'images': [], 'scripts': [], 'math': [], 'headings': {},
+                    pages[current] = {'text': '', 'images': [], 'originalPageImage': False,
+                                      'scripts': [], 'math': [], 'headings': {},
                                       'paragraphs': {}, 'preformatted': {}, 'tableRows': [], 'lists': [],
                                       'asides': {}, 'quotations': {}}
                 # A table row, read as the cells it holds. A `tableRows` expectation names a whole
@@ -150,6 +152,8 @@ def read_spine(path, *, max_entries=DEFAULT_MAX_ENTRIES,
                     if asset not in names:
                         raise ValueError('Missing image asset: ' + asset)
                     pages[current]['images'].append(asset)
+                    if element.get('alt') == f'Original page {current}':
+                        pages[current]['originalPageImage'] = True
                 if element.tag == MATH + 'math' and current is not None:
                     fallback = element.get('altimg', '')
                     asset = str(chapter.parent / fallback) if fallback else ''
@@ -366,7 +370,7 @@ def assess(case, contract, result, report, pages, markers, *, documents=(),
     for item in expected:
         number = item['page']
         page = pages.get(number, {'text': '', 'images': []})
-        if not any(key in item for key in ('text', 'orderedText', 'minimumImages', 'warningCodesAnyOf', 'absentWarningCodes', 'scripts', 'math', 'absentText', 'headings', 'paragraphs', 'preformatted', 'lists', 'continuedParagraphs', 'imageRegions', 'tableRows', 'asides', 'quotations')):
+        if not any(key in item for key in ('text', 'orderedText', 'minimumImages', 'originalPageImage', 'warningCodesAnyOf', 'absentWarningCodes', 'scripts', 'math', 'absentText', 'headings', 'paragraphs', 'preformatted', 'lists', 'continuedParagraphs', 'imageRegions', 'tableRows', 'asides', 'quotations')):
             raise ValueError('Review page has no expectations')
         for phrase in item.get('text', []):
             if not normalized(phrase):
@@ -504,6 +508,12 @@ def assess(case, contract, result, report, pages, markers, *, documents=(),
             checks += 1
             if len(page['images']) < minimum:
                 errors.append(f'Page {number}: missing preserved images')
+        if 'originalPageImage' in item:
+            if item['originalPageImage'] is not True:
+                raise ValueError('Original-page image expectation must be true')
+            checks += 1
+            if not page.get('originalPageImage'):
+                errors.append(f'Page {number}: missing original-page reference image')
         if 'warningCodesAnyOf' in item:
             codes = item['warningCodesAnyOf']
             if not codes:

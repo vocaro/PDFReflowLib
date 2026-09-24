@@ -123,7 +123,7 @@ derived book.
 ## Development and regression tests
 
 For changes to extraction, layout or rendering, run `scripts/check-all.sh --corpus` before
-pushing. This opt-in lane converts <!-- counts:corpus-documents -->22<!-- counts:end --> complete cached documents and checks reviewed content,
+pushing. This opt-in lane converts <!-- counts:corpus-documents -->24<!-- counts:end --> complete cached documents and checks reviewed content,
 EPUB conformance, progress and resource budgets. Missing sources fail with acquisition instructions;
 there are no automatic downloads. `scripts/check-all.sh --fast` remains the offline synthetic lane.
 Python tool tests and source-region image checks require numpy and Pillow. Poppler is needed only
@@ -168,7 +168,7 @@ navigation and ZIP layout. The model is internal, not a public interchange forma
 
 ## Real-document corpus and memory gates
 
-`corpus/manifest.json` registers <!-- counts:registered-documents -->22 real documents<!-- counts:end --> by exact byte identity, from the 522-page
+`corpus/manifest.json` registers <!-- counts:registered-documents -->24 real documents<!-- counts:end --> by exact byte identity, from the 522-page
 FAA Pilot's Handbook and the 1,834-page Fifth National Climate Assessment to two-page borderless
 tables, scanned and born-digital academic papers, Arabic and Simplified Chinese layouts, a comic,
 a slide deck and a magazine. Fetch originals with `python3 tools/fetch_corpus.py --all`; verified

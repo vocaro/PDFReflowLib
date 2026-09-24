@@ -49,6 +49,22 @@ class CorpusContentTests(unittest.TestCase):
         self.report['warnings'][0] = {'page': 1, 'code': 'unverifiedTextLayer'}
         self.assertFalse(self.check()['passed'])
 
+    def test_original_page_reference_is_distinct_from_a_region_image(self):
+        self.contract['pages'][0]['originalPageImage'] = True
+        self.assertFalse(self.check()['passed'])
+        self.pages[1]['originalPageImage'] = True
+        self.assertTrue(self.check()['passed'])
+        self.contract['pages'][0]['originalPageImage'] = False
+        with self.assertRaises(ValueError):
+            self.check()
+        path = self.epub('<span epub:type="pagebreak" id="page-1"/>'
+                         '<img src="picture.png" alt="Preserved region from page 1"/>'
+                         '<img src="picture.png" alt="Original page 1"/>',
+                         '<span epub:type="pagebreak" id="page-2"/>')
+        pages, _ = read_pages(path)
+        self.assertTrue(pages[1]['originalPageImage'])
+        self.assertFalse(pages[2]['originalPageImage'])
+
     def test_source_identity_failed_conversion_and_missing_pages_fail(self):
         for field, value in [('sha256', 'other'), ('bytes', 99), ('pages', 3), ('id', 'other')]:
             result = dict(self.result, case=dict(self.case, **{field: value}))

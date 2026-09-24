@@ -137,6 +137,12 @@ print(json.dumps({{"pageCount": 1, "reflowedPageCount": 1, "recognizedPageCount"
         self.assertEqual(self.launched_flags(), [[]])
         self.assertEqual(result["options"], "library defaults")
 
+    def test_a_reviewed_damaged_script_uses_recognition_and_original_pages(self):
+        flags = runner.conversion_flags({"language": "hi-IN", "ocrMode": "always",
+                                         "referenceImages": "always"})
+        self.assertEqual(flags, ["--language", "hi-IN", "--ocr", "always",
+                                 "--reference-images", "always"])
+
     def test_a_declared_language_reaches_every_conversion_of_the_case(self):
         self.assertEqual(runner.conversion_flags({"id": "x", "language": "zh-Hans"}), ["--language", "zh-Hans"])
         manifest = json.loads((self.root / "corpus/manifest.json").read_text())

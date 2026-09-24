@@ -88,12 +88,17 @@ def conversion_flags(case):
     supports it, and the rules that hold only for a declared English (#293). A `noOCR` case
     exercises a source-reviewed text layer without recognition. Every conversion carries the
     flags, including a memory attempt spent after host pressure spoiled the first; a case
-    without either field converts at library defaults, exactly as before.
+    without these fields converts at library defaults, exactly as before. A source-reviewed
+    damaged text layer can ask for recognition and an original-page reference image (#44).
     """
     language = case.get("language")
     flags = ["--language", language] if language else []
     if case.get("noOCR"):
         flags.append("--no-ocr")
+    if case.get("ocrMode"):
+        flags.extend(["--ocr", case["ocrMode"]])
+    if case.get("referenceImages"):
+        flags.extend(["--reference-images", case["referenceImages"]])
     return flags
 
 

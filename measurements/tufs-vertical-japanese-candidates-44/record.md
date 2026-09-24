@@ -3,8 +3,8 @@
 Two articles from Tokyo University of Foreign Studies' *Trans-Cultural Studies* have
 substantial, rendered vertical Japanese body text and explicit CC BY 4.0 statements in
 their page footers. Both PDFs are direct publisher downloads, small enough for a fast
-source comparison, and were tested with the release converter on 2026-09-24. Neither is
-admitted to the corpus gate: the current output silently reverses the order of body
+source comparison, and were tested with the release converter on 2026-09-24. At this initial
+baseline, neither was admitted to the corpus gate: the output silently reversed the order of body
 columns and joins text from different columns.
 
 | Article | Direct PDF | Identity | Source review and baseline |
@@ -55,3 +55,6 @@ and EPUBCheck 5.3.0 clean. The output is
 The Overleaf candidate remains unqualified: PDFKit divides its vertical prose into
 mostly single-glyph selections, which the intact-column gate intentionally rejects.
 This increment does not claim an automatic image fallback for that fragmentation.
+
+The Hoshino source was subsequently admitted with the narrow three-page contract and full
+targeted gate receipt in [script corpus admissions](../script-corpus-admissions-44/record.md).

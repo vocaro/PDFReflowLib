@@ -3697,6 +3697,38 @@
       ]
     },
     {
+      "id": "tufs-hoshino-tategaki-2017",
+      "sourceSHA256": "d918a16d011d4da245a3dcf3b344cd0debd6f9a3f9fc1d2f6d07300fed6b75ad",
+      "basis": "Rendered TUFS Hoshino physical page 1 checked against the selectable EPUB: horizontal journal head, title and author precede the rightmost vertical body column, whose prose then reads top-to-bottom and toward the left. Physical pages 2 and 3 have conflicting content in the vertical band and must remain explicitly warned whole-page images. This does not qualify other fragmented vertical Japanese sources or selectable text on the fallback pages.",
+      "pages": [
+        {"page": 1, "orderedText": [
+          "東京外国語大学総合文化研究所総合文化研究第 21 号",
+          "二十一世紀に日本語作家として生きる",
+          "報告星野智幸",
+          "新聞記者を辞めてメキシコに行ったのは",
+          "伝えようとしても、伝わりません",
+          "日本文学は日本人のもの"
+        ], "absentWarningCodes": ["pageImageFallback"]},
+        {"page": 2, "warningCodesAnyOf": ["verticalJapaneseFallback"], "minimumImages": 1},
+        {"page": 3, "warningCodesAnyOf": ["verticalJapaneseFallback"], "minimumImages": 1}
+      ]
+    },
+    {
+      "id": "openlogic-hindi-reader-2026",
+      "sourceSHA256": "bc7d4f6280d2e3da427715b7ca2df5335e8057ad0c0dcbcadef8c18e27360468",
+      "basis": "Rendered Open Logic Hindi physical page 5 compared with the 180-DPI hi-IN OCR output. Six snippets were read correctly from source and output, including the pre-base vowel in दिखाइए. The original-page reference image must accompany reflowed OCR text. Known errors such as रिभाषा for परिभाषा, समुख्वय for समुच्चय, and noisy set notation are explicitly unqualified; the contract is visual/extraction fidelity only, not translation validation or full-page OCR accuracy.",
+      "pages": [
+        {"page": 5, "text": [
+          "दिखाइए",
+          "प्राकृत संख्याओं का समुच्चय",
+          "पूर्णांकों का समुच्चय",
+          "परिमेय संख्याओं का समुच्चय",
+          "वास्तविक संख्याओं का समुच्चय (सातत्य)",
+          "ये सभी अनंत समुच्चय हैं"
+        ], "originalPageImage": true, "absentWarningCodes": ["ocrFailed", "pageImageFallback"]}
+      ]
+    },
+    {
       "id": "ucl-hebrew-shakespeare-2017",
       "sourceSHA256": "8c28b79157cdbf57f4a3e9b65b2ecc1bb02e9e1597a7574e9a9cf2fb53ed6393",
       "basis": "Rendered source pages 5, 13, 81, 150, 250 and 550 were compared with the --language he --no-ocr EPUB. Positive checks protect the title and cover art, introduction opening, selectable Hebrew prose on the dense bilingual page, vocalized Hebrew beside English translation, a stage direction and the order of three reference authors. They do not bless parallel alignment, verse heading levels, notes, speaker pairing or the remaining 547 unreviewed pages.",

@@ -635,10 +635,16 @@ Hebrew is covered by the [UCL Shakespeare source review](../measurements/ucl-heb
 and its page-specific content contract. The 553-page CC BY 4.0 book converts with
 `--language he --no-ocr`; six reviewed pages protect selected text, cover art and reference
 order. Parallel bilingual alignment, verse hierarchy, speaker pairing and note links remain
-unqualified. Vertical Japanese and Devanagari candidates have [documented source
-blockers](../measurements/japanese-tategaki-overleaf/record.md) and [Hindi source
-blockers](../measurements/hindi-candidates-44/record.md), respectively, so [#44](https://github.com/vocaro/PDFReflowLib/issues/44)
-remains open.
+unqualified. Vertical Japanese is now covered by the three-page CC BY 4.0 [TUFS Hoshino
+article](../measurements/script-corpus-admissions-44/record.md): its first page's intact columns
+reflow in source order, while pages 2–3 retain warned whole-page images. The 17-page CC BY 4.0
+[Open Logic Hindi reader](../measurements/script-corpus-admissions-44/record.md) uses Hindi OCR
+at 180 DPI with original-page images. Its reviewed page-5 contract pins only six correctly read
+Devanagari snippets; known word and math errors remain unqualified. These admissions cover the
+three script classes requested by [#44](https://github.com/vocaro/PDFReflowLib/issues/44),
+without qualifying the [fragmented Overleaf tategaki](../measurements/japanese-tategaki-overleaf/record.md)
+or treating the [damaged native Hindi layer](../measurements/hindi-candidates-44/record.md)
+as correct.
 
 ## Earthdata Cloud Analytics Project
 

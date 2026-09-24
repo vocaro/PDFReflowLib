@@ -13,7 +13,7 @@ carry their issue linkage as `.bug()` traits.
 | --- | --- | --- |
 | Fast | `scripts/check-all.sh --fast` | Swift suite, release build, Python tool tests, measurements policy, documented builds, documentation counts, issue citations, PDFKit concurrency smoke gate, eight fixture conversions with structural checks, conversion-policy cases |
 | Full | `scripts/check-all.sh` | Fast, plus the FAA memory gate when `corpus/cache/faa-h-8083-25c.pdf` (or `PDFREFLOW_REAL_PDF`) exists; absence is printed as a skip |
-| Corpus | `scripts/check-all.sh --corpus` | Fast, plus the structure-memory gate, the repeated-conversions gate and <!-- counts:corpus-documents -->22<!-- counts:end --> complete cached conversions with EPUBCheck. Requires `epubcheck` on `PATH` and every cached source; missing data fails explicitly, and nothing is downloaded |
+| Corpus | `scripts/check-all.sh --corpus` | Fast, plus the structure-memory gate, the repeated-conversions gate and <!-- counts:corpus-documents -->24<!-- counts:end --> complete cached conversions with EPUBCheck. Requires `epubcheck` on `PATH` and every cached source; missing data fails explicitly, and nothing is downloaded |
 
 The gate scripts share their plumbing through the `tools/pdfreflow_tools/` package: `corpus.py`
 (the repository root, manifest and contract loading, byte-count and SHA-256 identities),
@@ -28,7 +28,7 @@ Fetch sources with `tools/fetch_corpus.py --case <id>` (checksum-verified, cache
 
 What the individual gates check:
 
-- `swift test`: <!-- counts:swift-tests -->944 Swift Testing tests<!-- counts:end --> with no known-issue wrappers, using the real Apple
+- `swift test`: <!-- counts:swift-tests -->952 Swift Testing tests<!-- counts:end --> with no known-issue wrappers, using the real Apple
   PDF/OCR stack. They cover extraction, the document model, layout, raster pixels (crop origins,
   rotations, annotations, resource ceilings), preserved regions (fraction bars, raised exponents
   and all six cells of a ruled table in actual EPUB images at 72/144 DPI, with prose and code
@@ -37,7 +37,7 @@ What the individual gates check:
   concurrency test overlaps four conversions and one canceled conversion, checking ownership,
   styles, images, monotonic progress and staging cleanup. For iOS:
   `xcodebuild test -scheme PDFReflowLib-Package -destination 'platform=iOS Simulator,name=iPhone 18 Pro' CODE_SIGNING_ALLOWED=NO`.
-- `python3 -m unittest discover -s tools -p 'test_*.py' -v`: <!-- counts:python-tests -->255 Python tests<!-- counts:end --> over the tools,
+- `python3 -m unittest discover -s tools -p 'test_*.py' -v`: <!-- counts:python-tests -->257 Python tests<!-- counts:end --> over the tools,
   including the checker's negative controls, the identity tool, the memory-gate instrumentation
   (real child allocations above and below a ceiling, source verification, isolation from an
   earlier child's high-water mark, and each host-pressure outcome with its settle-and-retry),
@@ -207,7 +207,7 @@ loaded host. Each case verifies the pinned source identity, converts in a fresh 
 otherwise; see [corpus.md](corpus.md#index)),
 checks EPUB structure, EPUBCheck, monotonic progress, the manifest memory ceiling and the
 reviewed content contract in [corpus/regressions.json](../corpus/regressions.json):
-<!-- counts:contract-coverage -->1380 checks on 261 reviewed pages across 22 documents<!-- counts:end -->.
+<!-- counts:contract-coverage -->1399 checks on 265 reviewed pages across 24 documents<!-- counts:end -->.
 All source-page anchors must remain complete and ordered, and semantic text must
 contain no image-attachment placeholders. The manifest consistency test requires every corpus
 document to be covered or explicitly excluded (`excludedFullConversions`, whose entries the
@@ -219,11 +219,11 @@ each book is in [corpus.md](corpus.md#warren-commission-report) and the admissio
 [corpus-lane-admissions](../measurements/corpus-lane-admissions/record.md).
 
 <!-- counts:contract-breakdown -->
-Those 1380 checks are 4 `spineContinuity`, 121 `text`, 696 `orderedText`, 71 `absentText`,
+Those 1399 checks are 4 `spineContinuity`, 127 `text`, 702 `orderedText`, 71 `absentText`,
 52 `headings`, 154 `paragraphs`, 16 `continuedParagraphs`, 10 `preformatted`, 15 `lists`,
 7 `asides`, 2 `quotations`, 16 `scripts`, 4 `math`, 10 `imageRegions`, 37 `tableRows`,
-117 `minimumImages`, 21 `warningCodesAnyOf` and 27 `absentWarningCodes`, counted as
-`tools/check_corpus_content.py` counts them.
+119 `minimumImages`, 1 `originalPageImage`, 23 `warningCodesAnyOf` and 29 `absentWarningCodes`,
+counted as `tools/check_corpus_content.py` counts them.
 <!-- counts:end -->
 
 Contract expectations per page: `orderedText` and `text` (selected correct words in order),
@@ -244,7 +244,9 @@ unwanted text such as running headers), `scripts` (superscripts and subscripts, 
 inside `<pre>` and nested emphasis), `math` (the exact ordered MathML content tree and
 accessible `alttext`, with an existing `altimg` source-image fallback),
 `warningCodesAnyOf` and `absentWarningCodes`,
-`minimumImages` (presence only), and `imageRegions` (below). The checks read the actual spine,
+`minimumImages` (presence only), `originalPageImage` (an `Original page N` reference image on
+that exact source page, distinct from a formula or figure crop), and `imageRegions` (below).
+The checks read the actual spine,
 track page boundaries inside styled text, preserve ownership across chapter-file continuations
 and exclude navigation and captions from source-text matching; they do not freeze serialization
 or bless broken output such as interleaved columns. The checker has negative controls for

@@ -15,13 +15,15 @@ retains 47 image regions. EPUBCheck reports zero errors or warnings. The XHTML c
 Devanagari code points and no replacement characters. It retains `प्रश्न set.2` and
 `प्रश्न set.3` from physical page 5 and the set notation beside them.
 
-**Not qualified for the active corpus gate.** Mac PDFKit's inherited text differs from the
+**Not qualified at this native-layer baseline.** Mac PDFKit's inherited text differs from the
 source even where Poppler and the rendered page agree. On page 5, source `परिभाषा` becomes
 `पिरभाषा` (39 occurrences in the complete EPUB) and source `दिखाइए` becomes `िदखाइए`.
 The pre-base vowel sign is emitted before its consonant. A passing contract on just the
 surviving identifiers and set symbols would miss the script failure this case was selected to
 detect. The repository record also says the translation has no human language review; this
 source can check visual/extraction fidelity, not translation accuracy.
+The later 180-DPI Hindi OCR admission with original-page reference images and a narrow reviewed
+contract is recorded in [script corpus admissions](../script-corpus-admissions-44/record.md).
 
 The newer [211-page working edition](https://zenodo.org/records/21940471) is also CC BY 4.0;
 the exact PDF downloaded here is 3,250,779 bytes, SHA-256

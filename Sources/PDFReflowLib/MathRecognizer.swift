@@ -179,12 +179,15 @@ enum MathRecognizer {
     // MARK: - Evidence
 
     /// Whether the crop's glyphs are exactly the characters of the text lines it holds, so text the
-    /// content stream does not show (a form's, an image's) cannot be dropped.
+    /// content stream does not show (a form's, an image's) cannot be dropped. Normalize
+    /// both sides equally: Wallace's notes contain the ﬃ ligature as one printed glyph.
     static func explains(_ glyphs: [Glyph], lines: [TextLine], crop: CGRect) -> Bool {
         var expected: [Character: Int] = [:]
         for line in lines where line.rect.intersects(crop.insetBy(dx: 1, dy: 1)) {
             guard crop.contains(CGPoint(x: line.rect.midX, y: line.rect.midY)) else { return false }
-            for character in line.text where !character.isWhitespace { expected[normalized(character), default: 0] += 1 }
+            for character in line.text.precomposedStringWithCompatibilityMapping where !character.isWhitespace {
+                expected[normalized(character), default: 0] += 1
+            }
         }
         var found: [Character: Int] = [:]
         for glyph in glyphs {

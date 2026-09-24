@@ -36,10 +36,25 @@ func wallaceWorkedRootsKeepTheSourceNotesBesideEachMathRow() throws {
     #expect(later.count == 7)
     #expect(later.last?.note == "Multiply")
 
-    // Example 379's text line does not reconcile with the complete source glyph crop.
-    // Its equation and notes stay together in the original image until that can be proven.
+    // Example 379's fourth note prints the ﬃ ligature. The text line and its source
+    // glyph must agree after the same compatibility normalization on both sides.
     let middle = try #require(crops.first { 330 < $0.minY && $0.minY < 345 })
-    #expect(MathRecognizer.workedRows(in: middle, page: glyphs,
+    let intermediate = try #require(MathRecognizer.workedRows(in: middle, page: glyphs,
+                                      graphics: content.graphics, lines: content.lines, body: body))
+    #expect(intermediate.map(\.node) == [
+        .row([.number("5"), .squareRoot(.number("63"))]),
+        .row([.number("5"), .squareRoot(.row([.number("9"), .operator("⋅"), .number("7")]))]),
+        .row([.number("5"), .squareRoot(.number("9")), .operator("⋅"), .squareRoot(.number("7"))]),
+        .row([.number("5"), .operator("⋅"), .number("3"), .squareRoot(.number("7"))]),
+        .row([.number("15"), .squareRoot(.number("7"))]),
+    ])
+    #expect(intermediate.map(\.note) == [
+        "63 is divisible by 9, a perfect square", "Split into factors",
+        "Product rule, take the square root of 9", "Multiply coeﬃcients", "Our Solution",
+    ])
+    var missingLigature = glyphs
+    missingLigature.glyphs.removeAll { middle.contains($0.center) && $0.text == "ﬃ" }
+    #expect(MathRecognizer.workedRows(in: middle, page: missingLigature,
                                       graphics: content.graphics, lines: content.lines, body: body) == nil)
     var missingNote = glyphs
     missingNote.glyphs.removeAll { first.contains($0.center) && $0.minX > 232 && $0.text == "O" }

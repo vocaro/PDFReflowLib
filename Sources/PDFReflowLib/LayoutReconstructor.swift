@@ -556,6 +556,26 @@ enum LayoutReconstructor {
                }) {
                 crop = crop.union(label.rect)
             }
+            // The cropped drawing also owns vertex letters just beyond its edge. Wallace 423
+            // sets `B` 5.8 pt below triangle 11 and `C` 1.6 pt left of triangle 12; leaving
+            // either in prose duplicates the letter already visible beside its triangle.
+            let drawingLines = page.lines.filter { takes(crop, $0) }
+            if drawingLines.count <= 8,
+               drawingLines.allSatisfy({ line in
+                   line.text.count <= 12
+                       && (line.text.range(of: #"^[0-9]{1,3}\)"#, options: .regularExpression) != nil
+                           || line.text.range(of: #"\p{L}{3,}"#, options: .regularExpression) == nil)
+               }),
+               page.graphics.contains(where: { crop.intersects($0) && $0.width >= body && $0.height >= body }) {
+                for line in page.lines where !crop.intersects(line.rect)
+                    && line.text.trimmingCharacters(in: .whitespaces)
+                        .range(of: #"^[A-Za-z0-9]{1,2}$"#, options: .regularExpression) != nil {
+                    let dx = max(crop.minX - line.rect.maxX, line.rect.minX - crop.maxX, 0)
+                    let dy = max(crop.minY - line.rect.maxY, line.rect.minY - crop.maxY, 0)
+                    guard (dx == 0) != (dy == 0), max(dx, dy) <= body else { continue }
+                    crop = crop.union(line.rect)
+                }
+            }
             return separatedAnswerColumns(crop, on: page, body: body)
         }
     }

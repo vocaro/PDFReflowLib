@@ -60,3 +60,26 @@ import Testing
     })
     #expect(figures.allSatisfy { $0.caption == "Preserved region from page 427" })
 }
+
+@Test func wallaceFinalTrianglesOwnTheirDetachedVertices() throws {
+    let fixture = try SourceLayoutFixture.load("algebra-423")
+    #expect(fixture.sourceSHA256 == "856bd81edc61c50496982ddc849138f4e0e56fd0ddf0edb53fee9bb0830d0678")
+    let page = fixture.content()
+    let images = LayoutReconstructor.graphicsWithLabels(page).enumerated().map { ($0.element, "image-\($0.offset)") }
+    let lowerB = try #require(page.lines.first { $0.text == "B" && $0.rect.minX < 200 })
+    let lowerC = try #require(page.lines.first { $0.text == "C" && $0.rect.minX > 300 })
+    let left = try #require(images.first { $0.0.contains(lowerB.rect) })
+    let right = try #require(images.first { $0.0.contains(lowerC.rect) })
+    #expect(left.1 != right.1)
+    var warnings: [ConversionWarning] = []
+    let blocks = LayoutReconstructor.blocks(page: page, images: images, vocabulary: [], warnings: &warnings)
+    #expect(!blocks.contains { $0.text == "B" || $0.text == "C" })
+    #expect(blocks.contains { $0.text.hasPrefix("11)") })
+    #expect(blocks.contains { $0.text.hasPrefix("12)") })
+    let figures = blocks.compactMap { block -> ReflowBlock.Image? in
+        if case let .image(image) = block.content { return image }
+        return nil
+    }
+    #expect(figures.contains { $0.assetID == left.1 && $0.selectableLabels.contains { $0.text == "B" } })
+    #expect(figures.contains { $0.assetID == right.1 && $0.selectableLabels.contains { $0.text == "C" } })
+}

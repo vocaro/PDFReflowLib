@@ -28,4 +28,10 @@ func wallaceComplexFractionPracticeReadsPairedRows() throws {
     #expect(title < instruction)
     #expect(markers == Array(1...22))
     #expect(crops.count >= 18) // Complex stacked structures retain their source fallbacks.
+    for number in 1...22 where number != 11 {
+        let start = try #require(blocks.firstIndex { $0.text == "\(number))" })
+        let end = number == 22 ? blocks.endIndex : try #require(blocks.firstIndex { $0.text == "\(number + 1))" })
+        #expect(blocks[(start + 1)..<end].contains { if case .image = $0.content { true } else { false } },
+                "Exercise \(number) must retain its own formula crop after its marker")
+    }
 }

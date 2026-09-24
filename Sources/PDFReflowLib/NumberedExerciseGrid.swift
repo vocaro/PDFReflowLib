@@ -86,6 +86,17 @@ extension LayoutReconstructor {
             ordered(group, bodySize: body, rightToLeft: rightToLeft,
                     depth: depth + 1, exhausted: &exhausted)
         }
+        func readCell(_ group: [Element]) -> [Element] {
+            let numbered = group.filter { $0.line.flatMap { number($0.text) } != nil }
+            // A tall fraction's numerator rises above its printed marker. The marker
+            // still introduces that formula, and must precede its crop in reading order.
+            if numbered.count == 1, group.contains(where: { $0.image != nil }),
+               let marker = numbered.first,
+               group.filter({ $0.image != nil }).allSatisfy({ $0.rect.minX >= marker.rect.minX }) {
+                return [marker] + read(group.filter { $0.rect != marker.rect })
+            }
+            return read(group)
+        }
         // A short heading/instruction stack above the grid is read top to bottom.
         // Its centred heading can otherwise look like a second column and follow
         // the left-aligned instruction (Wallace page 266).
@@ -93,7 +104,7 @@ extension LayoutReconstructor {
             ? before.sorted { $0.rect.midY > $1.rect.midY }
             : read(before)
         for index in pairs.indices {
-            result += read(left[index]) + read(right[index]) + read(between[index])
+            result += readCell(left[index]) + readCell(right[index]) + read(between[index])
         }
         result += read(after)
         return result

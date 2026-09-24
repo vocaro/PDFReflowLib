@@ -62,9 +62,25 @@ extension LayoutReconstructor {
     /// (#7).
     static func isTitleSized(_ line: TextLine, in lines: [TextLine], typography: PageTypography,
                              judgesTitleWords: Bool) -> Bool {
-        line.fontSize >= typography.headingThreshold && line.text.count < 200
-            && (line.text.first?.isLowercase != true || stacksWithDisplay(line, in: lines, typography: typography))
-            && (!judgesTitleWords || EnglishText.readsAsWords(line.text))
+        guard line.fontSize >= typography.headingThreshold, line.text.count < 200,
+              line.text.first?.isLowercase != true || stacksWithDisplay(line, in: lines, typography: typography),
+              !judgesTitleWords || EnglishText.readsAsWords(line.text) else { return false }
+        if judgesTitleWords {
+            // Vision's box height is an estimate of type size. On Warren 501 a body sentence's
+            // tall box overlaps three pieces of its own printed row; on Warren 566 a form value
+            // stands beside its labels; Blue Book 150 repeats word column heads across a row.
+            // None heads the row next to it. A genuine title may share a height with text in a
+            // distant second column, so only a nearby piece vetoes it (#216).
+            let own = line.uprightRect
+            let near = max(typography.body * 3, line.fontSize * 1.5)
+            if lines.contains(where: { other in
+                guard other != line, line.sharesRow(with: other) else { return false }
+                let next = other.uprightRect
+                let gap = max(0, max(own.minX - next.maxX, next.minX - own.maxX))
+                return gap <= near
+            }) { return false }
+        }
+        return true
     }
 
     /// A heading-size line standing alone that opens in lowercase is display text that heads

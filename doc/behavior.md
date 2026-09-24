@@ -2345,7 +2345,10 @@ Photo prose uses complete native paragraph runs, with at least eighteen lexical 
 three consistent rows and three-quarter-width measures. One row must overlap the picture's
 crop; the run can continue beyond the crop. Small-type captions adjacent to photographs form
 one paragraph reading unit, preventing their rows from alternating with a neighboring body
-column. A gallery requires two to four similarly sized, top-aligned pictures with separate
+column. Numbered captions and photograph captions with explicit credits can instead prove
+ownership through their label, adjacent picture and complete wrapped rows, including a
+slightly smaller opening font. Tagged captions require the complete, ordered source group.
+A gallery requires two to four similarly sized, top-aligned pictures with separate
 caption measures; proved gutters survive crop clustering, and each picture precedes its own
 complete caption. Display quotations require opening/closing quote marks and several rows
 of larger native type; they become one `blockquote`, with an adjacent dash attribution, and
@@ -2367,7 +2370,9 @@ panel remains source artwork; independently proved wrapped prose over it can als
 
 `PrintedColumns` supplements whitespace cuts with sustained body-text margins when a
 crossing title or decorative rule hides the gutter. It requires at least six substantial
-rows per column and declines floating content across the middle of their writing. Furniture
+rows per column and declines floating content across the middle of their writing. Proved
+caption rows can also state a column; a wider caption margin joins the body margin only
+when their vertical ranges are disjoint and their measures substantially overlap. Furniture
 aliases within half a point are removed only after repetition proves the canonical running
 head or foot; native body overprint removal is unchanged. A painted header band requires
 repetition of every native row before the band and its contents leave the page.
@@ -2400,7 +2405,9 @@ parent page's assembler so navigation anchors remain unique.
 `InterruptedColumnContinuation` extends the existing figure-continuation plan when a
 full-measure native paragraph ends one column and resumes at the top of its neighbor.
 Matching size and structure, a supported column bottom, a flush opening with two body
-rows, and ownership of every intervening image, quotation and smaller caption are required.
+rows (or one short, sentence-ending row), and ownership of every intervening image, quotation
+and smaller caption are required. A complete grouped caption establishes figure adjacency
+through its opening row.
 A completed sentence, indented opening, intervening body text or unrelated/spanning picture
 prevents the join. Without a display interruption, this additional path requires an explicit
 line-end hyphen. The assembler resumes the existing paragraph handle, preserving styles;

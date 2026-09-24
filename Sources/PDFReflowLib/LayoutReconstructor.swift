@@ -1294,6 +1294,44 @@ enum LayoutReconstructor {
         return result
     }
 
+    /// Repeated numbered answers whose second values hang on one shared indent. A short answer
+    /// need not fill its column or read as a sentence, so the prose-only `hangingEntries` rule
+    /// cannot recognize it. Wallace page 456 sets twenty such pairs, including `33) $3500 @ 6%;`
+    /// over `$5000 @ 3.5%`; three pairs on the same two edges establish the wrap instead of an
+    /// isolated indented expression.
+    static func numberedAnswerWraps(in lines: [TextLine], body: CGFloat) -> [CGRect: CGRect] {
+        let marker = #"^[0-9]{1,3}\)\s"#
+        let openings = lines.filter { $0.text.range(of: marker, options: .regularExpression) != nil }
+        var candidates: [(wrap: TextLine, entry: TextLine)] = []
+        for line in lines where !line.monospaced && !isList(line.text) {
+            let possible = openings.filter { entry in
+                let indent = line.rect.minX - entry.rect.minX
+                let gap = entry.rect.minY - line.rect.maxY
+                return entry.hasSize(line.fontSize) && line.rect.midY < entry.rect.midY
+                    && indent >= body * 0.75 && indent <= body * 4
+                    && line.rect.minX < entry.rect.maxX + body * 0.5
+                    && gap >= -body * 0.6 && gap <= body * 0.9
+            }
+            if let entry = possible.min(by: { abs($0.rect.midY - line.rect.midY) < abs($1.rect.midY - line.rect.midY) }) {
+                candidates.append((line, entry))
+            }
+        }
+        var aligned: [[(wrap: TextLine, entry: TextLine)]] = []
+        for candidate in candidates.sorted(by: { $0.entry.rect.minX < $1.entry.rect.minX }) {
+            if let index = aligned.firstIndex(where: { group in
+                abs(group[0].entry.rect.minX - candidate.entry.rect.minX) <= body * 0.25
+                    && abs(group[0].wrap.rect.minX - candidate.wrap.rect.minX) <= body * 0.25
+            }) {
+                aligned[index].append(candidate)
+            } else { aligned.append([candidate]) }
+        }
+        var result: [CGRect: CGRect] = [:]
+        for group in aligned where group.count >= 3 {
+            for candidate in group { result[candidate.wrap.rect] = candidate.entry.rect }
+        }
+        return result
+    }
+
     /// The list a page hangs under an outdented marker column, as the lines that open its
     /// entries and the edge it sets their text on — or nil where the page sets no such list
     /// (#282).
@@ -1912,6 +1950,7 @@ enum LayoutReconstructor {
                                        imageDescriptions: tableAssets(images, tables: page.recognizedTables,
                                                                       page: page.number),
                                        hangingEntries: hangingEntries(in: lines, body: typography.body),
+                                       numberedAnswerWraps: numberedAnswerWraps(in: lines, body: typography.body),
                                        columnSeams: columnSeams(in: lines, body: typography.body,
                                                                 rightToLeft: rightToLeft),
                                        ordinaryHeights: ordinaryLineHeights(in: lines),

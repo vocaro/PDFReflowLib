@@ -150,6 +150,28 @@ func faaSourceColumnsCompleteBeforeTheNextColumn(name: String) throws {
     #expect(section < title && title < firstAnswerBlock)
 }
 
+@Test(arguments: [447, 456])
+func wallaceWrappedAnswersKeepTheirNumberedBlocks(pageNumber: Int) throws {
+    let fixture = try SourceLayoutFixture.load("algebra-\(pageNumber)")
+    #expect(fixture.sourceSHA256 == "856bd81edc61c50496982ddc849138f4e0e56fd0ddf0edb53fee9bb0830d0678")
+    let page = fixture.content()
+    let images = LayoutReconstructor.graphicsWithLabels(page).enumerated().map { ($0.element, "image-\($0.offset)") }
+    var warnings: [ConversionWarning] = []
+    let blocks = LayoutReconstructor.blocks(page: page, images: images, vocabulary: [], warnings: &warnings)
+    if pageNumber == 447 {
+        let first = try #require(blocks.first { $0.text.hasPrefix("1) B(") })
+        #expect(first.text.contains("K(− 4, 3)"))
+    } else {
+        for (number, second) in [("33) S3500 @ 6%;", "S5000 @ 3.5%"),
+                                 ("34) S7000 @ 9%", "S5000 @ 7.5%"),
+                                 ("41) S5000 @ 12%", "S11000 @ 8%") ] {
+            let answer = try #require(blocks.first { $0.text.hasPrefix(number) })
+            #expect(answer.text.contains(second))
+            #expect(!blocks.contains { $0.text == second })
+        }
+    }
+}
+
 @Test func leaderTableControlsSeparateLookupRowsFromContentsAndEllipses() {
     func page(_ strings: [String], gap: Double = 14, mono: Bool = false, header: Bool = true) -> PageContent {
         var lines = strings.enumerated().map { index, text in

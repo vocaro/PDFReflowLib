@@ -537,6 +537,8 @@ struct BlockAssembler {
     private let imageDescriptions: [String: String]
     /// The wrapped second line of each entry the page hangs, by the entry it carries on (#160).
     private let hangingEntries: [CGRect: CGRect]
+    /// Numbered short answers whose wrapped values repeatedly share one hanging edge (#212).
+    private let numberedAnswerWraps: [CGRect: CGRect]
     /// The lines that open an entry of a list the page hangs under an outdented marker column,
     /// and the edge it sets those entries' text on (`LayoutReconstructor.hangingMarkerList`,
     /// #282). Empty where the page sets no such list.
@@ -565,7 +567,8 @@ struct BlockAssembler {
 
     init(page: Int, body: CGFloat, leading: CGFloat? = nil, additionalLeading: [Int: CGFloat] = [:], hyphens: HyphenContext,
          imageLinks: [String: LinkTarget] = [:], imageDescriptions: [String: String] = [:],
-         hangingEntries: [CGRect: CGRect] = [:], columnSeams: [CGFloat] = [],
+         hangingEntries: [CGRect: CGRect] = [:], numberedAnswerWraps: [CGRect: CGRect] = [:],
+         columnSeams: [CGFloat] = [],
          ordinaryHeights: [Int: CGFloat] = [:],
          markerEntries: Set<CGRect> = [], markerEntryEdge: CGFloat? = nil,
          labelValueStarts: Set<CGRect> = [],
@@ -578,6 +581,7 @@ struct BlockAssembler {
         self.imageLinks = imageLinks
         self.imageDescriptions = imageDescriptions
         self.hangingEntries = hangingEntries
+        self.numberedAnswerWraps = numberedAnswerWraps
         self.markerEntries = markerEntries
         self.markerEntryEdge = markerEntryEdge
         self.labelValueStarts = labelValueStarts
@@ -1002,6 +1006,15 @@ struct BlockAssembler {
                 itemLine = line
                 return
             }
+            // A numbered answer can set its second value on an indented line. Repeated pairs
+            // prove the hanging edge (Wallace page 456).
+            if let above = itemLine, let last = blocks.last, last.page == page,
+               case let .preformatted(text) = last.content, paragraph.elements.isEmpty,
+               continuesNumberedAnswer(above, line) {
+                blocks[blocks.count - 1].content = .preformatted(join(text, line.content))
+                itemLine = line
+                return
+            }
             // Such a paragraph takes only the wraps the page sets on its opening line's own
             // edge: a line the page steps in from it opens the next paragraph, which a first-line
             // indent of one body is. Loper Bright's page 64 opens `U. S. 134 (1944), the Court
@@ -1036,6 +1049,18 @@ struct BlockAssembler {
             }
             previous = line
         }
+    }
+
+    private func continuesNumberedAnswer(_ above: TextLine, _ line: TextLine) -> Bool {
+        guard above.text.range(of: #"^[0-9]{1,3}\)"#, options: .regularExpression) != nil,
+              !LayoutReconstructor.isList(line.text), above.hasSize(line.fontSize),
+              line.rect.midY < above.rect.midY else { return false }
+        let indent = line.rect.minX - above.rect.minX
+        guard indent >= body * 0.75 && indent <= body * 4,
+              line.rect.minX < above.rect.maxX + body * 0.5 else { return false }
+        let gap = gapBeneath(above, line.rect)
+        guard gap >= -body * 0.6 && gap <= body * 0.9 else { return false }
+        return numberedAnswerWraps[line.rect] == above.rect
     }
 
     /// Whether the two pieces the extractor split one printed row into stand for that line when

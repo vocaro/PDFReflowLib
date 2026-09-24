@@ -556,6 +556,30 @@ enum LayoutReconstructor {
                 let bottom = label.rect.maxY + body * 0.15
                 crop = CGRect(x: crop.minX, y: bottom, width: crop.width, height: crop.maxY - bottom)
             }
+            // A centred answer-key title can be swallowed by the first formula crop in
+            // the right column. On Wallace 479 the title is printed in a separate band
+            // above answers 15–18, while 1–14 start in the left column. Release the title
+            // before ordering the two columns; the formula crop retains its lower rows.
+            if let title = page.lines.first(where: { line in
+                line.text.hasPrefix("Answers -") && crop.intersects(line.rect)
+                    && line.rect.midX < crop.minX + crop.width * 0.6
+            }) {
+                let numberedBelow = page.lines.filter { line in
+                    crop.intersects(line.rect) && line.rect.midY < title.rect.minY
+                        && line.text.range(of: #"^\d{1,3}\)"#, options: .regularExpression) != nil
+                }
+                let cut = title.rect.minY - body * 0.1
+                if numberedBelow.count >= 3,
+                   numberedBelow.allSatisfy({ $0.rect.midY < cut - body * 0.25 }),
+                   page.lines.contains(where: { line in
+                       line.text.range(of: #"^\d{1,2}\.\d{1,2}$"#, options: .regularExpression) != nil
+                           && line.rect.minY > title.rect.maxY
+                           && line.rect.minY - title.rect.maxY < body * 3
+                   }),
+                   cut > crop.minY + body * 2 {
+                    crop = CGRect(x: crop.minX, y: crop.minY, width: crop.width, height: cut - crop.minY)
+                }
+            }
             // A side length can sit just outside the painted triangle. Wallace 423's `16`
             // stands 0.42 pt below the drawing; its exercise marker `7) sin θ` is already in
             // the crop, so a word-free-label rule alone cannot recognize the drawing.
@@ -879,7 +903,16 @@ enum LayoutReconstructor {
                 && (nearby.map(\.rect.minX).max()! - nearby.map(\.rect.minX).min()!) >= bodySize * 6
                 && !elements.contains { $0.line?.text.range(of: marker, options: .regularExpression) != nil
                     && $0.rect.midY > line.rect.midY }
+            let numberedSection = elements.contains { element in
+                element.line?.text.range(of: #"^\d{1,2}\.\d{1,2}$"#, options: .regularExpression) != nil
+                    && element.rect.midY > line.rect.midY
+                    && element.rect.midY - line.rect.midY < bodySize * 4
+            }
+            let twoCropRuns = elements.filter { $0.image != nil && $0.rect.midY < line.rect.midY }.count >= 4
+            let precedingCropRun = elements.filter { $0.image != nil
+                && $0.rect.minY > line.rect.maxY }.count >= 2
             return (risenCrop && numberedBelow) || croppedKey
+                || (numberedSection && twoCropRuns && precedingCropRun)
         }) {
             let title = elements[titleIndex]
             let above = elements.indices.filter { $0 != titleIndex && elements[$0].rect.midY > title.rect.midY }
@@ -887,8 +920,42 @@ enum LayoutReconstructor {
             let below = elements.indices.filter { $0 != titleIndex && elements[$0].rect.midY <= title.rect.midY }
                 .map { elements[$0] }
             if !below.isEmpty {
-                return ordered(above, bodySize: bodySize, rightToLeft: rightToLeft, depth: depth + 1,
-                               exhausted: &exhausted) + [title]
+                let earlier: [Element]
+                if let section = above.first(where: { element in
+                    element.line?.text.range(of: #"^\d{1,2}\.\d{1,2}$"#, options: .regularExpression) != nil
+                        && element.rect.midY - title.rect.midY < bodySize * 4
+                }), above.allSatisfy({ $0.rect == section.rect || $0.rect.minY >= section.rect.maxY }) {
+                    earlier = ordered(above.filter { $0.rect != section.rect }, bodySize: bodySize,
+                                      rightToLeft: rightToLeft, depth: depth + 1, exhausted: &exhausted)
+                        + [section]
+                } else {
+                    earlier = ordered(above, bodySize: bodySize, rightToLeft: rightToLeft,
+                                      depth: depth + 1, exhausted: &exhausted)
+                }
+                // Once a centred answer title has been released from a right-column
+                // formula crop, its two numbered runs must read down the left column
+                // before the right. Their pictures can overlap vertically, so the
+                // ordinary whitespace recursion may interleave them (Wallace 479).
+                let pictures = below.filter { $0.image != nil }.sorted { $0.rect.minX < $1.rect.minX }
+                if pictures.count >= 4 {
+                    let xGaps = zip(pictures, pictures.dropFirst()).map {
+                        ($1.rect.minX - $0.rect.minX, ($0.rect.maxX + $1.rect.minX) / 2)
+                    }
+                    if let widest = xGaps.max(by: { $0.0 < $1.0 }), widest.0 >= bodySize * 6 {
+                        let left = below.filter { $0.rect.maxX < widest.1 }
+                        let right = below.filter { $0.rect.minX > widest.1 }
+                        if left.count + right.count == below.count,
+                           left.filter({ $0.image != nil }).count >= 2,
+                           right.filter({ $0.image != nil }).count >= 2 {
+                            return earlier + [title]
+                                + ordered(left, bodySize: bodySize, rightToLeft: rightToLeft,
+                                          depth: depth + 1, exhausted: &exhausted)
+                                + ordered(right, bodySize: bodySize, rightToLeft: rightToLeft,
+                                          depth: depth + 1, exhausted: &exhausted)
+                        }
+                    }
+                }
+                return earlier + [title]
                     + ordered(below, bodySize: bodySize, rightToLeft: rightToLeft, depth: depth + 1,
                               exhausted: &exhausted)
             }

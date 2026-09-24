@@ -175,9 +175,7 @@ extension LayoutReconstructor {
     /// that route, which would wrongly read the compound as two real words and keep the hyphen.
     /// The lexicon has no such fragment, so it alone decides whether a half stands on its own.
     static func lexiconVouches(prefix: String, suffix: String, usesEnglishLexicon: Bool) -> Bool {
-        guard usesEnglishLexicon, prefix.count >= 2, suffix.count >= 2, prefix.count + suffix.count >= 6,
-              EnglishText.lexiconContains(prefix + suffix) == true else { return false }
-        return !(EnglishText.lexiconContains(prefix) == true && EnglishText.lexiconContains(suffix) == true)
+        usesEnglishLexicon && EnglishText.vouchesForHyphenJoin(prefix: prefix, suffix: suffix)
     }
 
     /// True when this line ends with the character the book draws its line-end hyphen as (#233).

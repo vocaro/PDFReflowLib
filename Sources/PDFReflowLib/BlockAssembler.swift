@@ -1498,8 +1498,28 @@ struct BlockAssembler {
         flushNote()
         flushParagraph()
         carryBrokenItems()
+        carrySourceSoftHyphenParagraphs()
         carryStrandedStops()
         return blocks
+    }
+
+    /// A drop cap can make PDFKit's first selection cover two printed rows. The next row then
+    /// becomes a separate paragraph even though the font's ToUnicode map explicitly ended the
+    /// first one in a discretionary break. Carry only adjacent prose on the same page.
+    private mutating func carrySourceSoftHyphenParagraphs() {
+        var index = 0
+        while index + 1 < blocks.count {
+            guard case let .paragraph(left) = blocks[index].content,
+                  left.text.hasSuffix("\u{00AD}"),
+                  case let .paragraph(right) = blocks[index + 1].content,
+                  right.text.first?.isLowercase == true,
+                  blocks[index].page == blocks[index + 1].page,
+                  blocks[index].closedUnit == nil, blocks[index + 1].closedUnit == nil,
+                  blocks[index].structureGroup == nil, blocks[index + 1].structureGroup == nil
+            else { index += 1; continue }
+            blocks[index].content = .paragraph(join(left, right))
+            blocks.remove(at: index + 1)
+        }
     }
 
     /// A sentence's own full stop is not a block.

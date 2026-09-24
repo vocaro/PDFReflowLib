@@ -66,9 +66,12 @@ enum NativeTextReader {
         // filter below and `attributedTexts`'s alignment check reuse it instead of asking PDFKit
         // for each line's plain text twice.
         let textsByLine = selections.map(\.string)
+        let discretionaryShows = includeStyle ? page.pageRef.map(DiscretionaryHyphenReader.read) ?? [] : []
         let discretionary = includeStyle ? DiscretionaryHyphenReader.lines(
-            shows: page.pageRef.map(DiscretionaryHyphenReader.read) ?? [],
+            shows: discretionaryShows,
             texts: textsByLine.map { $0 ?? "" }, bounds: boundsByLine) : [:]
+        let explicitSoftHyphens = includeStyle ? DiscretionaryHyphenReader.explicitSoftHyphenLines(
+            shows: discretionaryShows, texts: textsByLine.map { $0 ?? "" }, bounds: boundsByLine) : []
         // A scan also contributes a page-sized attachment selection. It owns no words, and
         // must not make every word-box anchor look shared by two text lines (#295).
         let invisibleBounds = preserveInvisibleWordGaps ? selections.indices.compactMap { index -> CGRect? in
@@ -148,6 +151,9 @@ enum NativeTextReader {
             // decide whether this font evidence applies when two lines are actually joined.
             if let word = discretionary[index] {
                 repaired = repaired.map { DiscretionaryHyphenReader.apply(to: $0, word: word) }
+            }
+            if explicitSoftHyphens.contains(index) {
+                repaired = repaired.map(DiscretionaryHyphenReader.restoreSoftHyphen)
             }
             // Chinese sets no space between the characters of a word, so a space the text layer
             // carries between two ideographs was never in the writing (#42).

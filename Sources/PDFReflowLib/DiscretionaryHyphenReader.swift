@@ -22,6 +22,45 @@ enum DiscretionaryHyphenReader {
         var map: [UInt32: String]?
     }
 
+    /// A one-byte ToUnicode map written as scalar ranges. Keep this separate from the glyph
+    /// identity reader, whose case correction deliberately refuses ranged maps. An explicit
+    /// U+00AD in this map is source evidence even when PDFKit omits that character from a line.
+    static func scalarRangeMap(_ data: Data) -> [UInt32: String]? {
+        guard data.count <= 65_536, let input = String(data: data, encoding: .ascii),
+              !input.contains("usecmap"),
+              input.range(of: #"1\s+begincodespacerange\s*<00>\s*<ff>\s*endcodespacerange"#,
+                          options: .regularExpression) != nil else { return nil }
+        let text = input.replacingOccurrences(of: "%[^\\r\\n]*", with: "", options: .regularExpression)
+        let blocks = try! NSRegularExpression(pattern: #"(\d+)\s+beginbfrange\s*([\s\S]*?)\s*endbfrange"#)
+        let entries = try! NSRegularExpression(pattern: #"<([0-9a-fA-F]{2})>\s*<([0-9a-fA-F]{2})>\s*<([0-9a-fA-F]{4})>"#)
+        let ns = text as NSString
+        let matches = blocks.matches(in: text, range: NSRange(location: 0, length: ns.length))
+        guard !matches.isEmpty, matches.count <= 256,
+              matches.count == text.components(separatedBy: "beginbfrange").count - 1,
+              !text.contains("beginbfchar") else { return nil }
+        var map: [UInt32: String] = [:]
+        for block in matches {
+            let body = ns.substring(with: block.range(at: 2)), bodyNS = body as NSString
+            let pairs = entries.matches(in: body, range: NSRange(location: 0, length: bodyNS.length))
+            guard Int(ns.substring(with: block.range(at: 1))) == pairs.count,
+                  entries.stringByReplacingMatches(in: body, range: NSRange(location: 0, length: bodyNS.length),
+                                                   withTemplate: "").trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+            else { return nil }
+            for pair in pairs {
+                guard let first = UInt32(bodyNS.substring(with: pair.range(at: 1)), radix: 16),
+                      let last = UInt32(bodyNS.substring(with: pair.range(at: 2)), radix: 16),
+                      let base = UInt32(bodyNS.substring(with: pair.range(at: 3)), radix: 16),
+                      first <= last, last <= 255, base + last - first <= 0xFFFF else { return nil }
+                for code in first...last {
+                    let scalar = base + code - first
+                    guard !(0xD800...0xDFFF).contains(scalar), let value = UnicodeScalar(scalar),
+                          map.updateValue(String(value), forKey: code) == nil else { return nil }
+                }
+            }
+        }
+        return map.isEmpty ? nil : map
+    }
+
     private static func font(_ dict: CGPDFDictionaryRef) -> Font {
         let name = CGPDFObjects.name(dict, "BaseFont")
         let family = name.map { value -> String in
@@ -36,6 +75,7 @@ enum DiscretionaryHyphenReader {
               let data = CGPDFObjects.rawData(dict, "ToUnicode") else { return font }
         font.bytes = subtype == "Type0" ? 2 : 1
         font.map = GlyphIdentityReader.bfCharMap(data, codeDigits: font.bytes * 2, allowSequences: true)
+            ?? (font.bytes == 1 ? scalarRangeMap(data) : nil)
         return font
     }
 
@@ -218,6 +258,69 @@ enum DiscretionaryHyphenReader {
             }
             if valid, vouched.count >= 3, selected.count == indices.count { result.merge(selected) { first, _ in first } }
         }
+        return result
+    }
+
+    /// Source shows whose font maps a final byte to U+00AD, but whose PDFKit line omits it.
+    /// The next source show and the two unique native line owners must state the same split.
+    static func explicitSoftHyphenLines(shows: [Show], texts: [String], bounds: [CGRect]) -> Set<Int> {
+        guard texts.count == bounds.count, shows.count * bounds.count <= AnchorMatcher.maximumComparisons
+        else { return [] }
+        func lastWord(_ text: String) -> String {
+            String(text.reversed().drop(while: { $0 == "\u{FFFD}" || $0.isWhitespace })
+                .prefix(while: \.isLetter).reversed())
+        }
+        var result = Set<Int>()
+        for index in shows.indices.dropLast() {
+            if Task.isCancelled { return [] }
+            let mark = shows[index], next = shows[index + 1]
+            guard mark.text?.last == "\u{00AD}", mark.font == next.font,
+                  mark.object == next.object, let start = mark.origin, let end = next.origin,
+                  mark.size > 0, abs(mark.size - next.size) < 0.1,
+                  start.y - end.y >= mark.size * 0.8,
+                  start.y - end.y <= mark.size * 1.8
+            else { continue }
+            let before = lastWord(String(mark.text!.dropLast()))
+            let prefix: String
+            if !before.isEmpty { prefix = before }
+            else if index > 0, shows[index - 1].font == mark.font,
+                    shows[index - 1].object == mark.object,
+                    let previous = shows[index - 1].origin,
+                    abs(previous.y - start.y) < 0.5 {
+                prefix = lastWord(shows[index - 1].text ?? "")
+            } else { continue }
+            let suffix = String((next.text ?? "").prefix(while: \.isLetter))
+            guard prefix.count >= 2, suffix.count >= 2 else { continue }
+            // A drop cap can enlarge a preceding line's rectangle across this baseline. The
+            // exact source word halves must identify one adjacent pair of native selections.
+            let candidates = bounds.indices.dropLast().filter { line in
+                AnchorMatcher.contains(bounds[line], start)
+                    && AnchorMatcher.contains(bounds[line + 1], end)
+                    && texts[line].trimmingCharacters(in: .whitespacesAndNewlines).hasSuffix(prefix)
+                    && texts[line + 1].trimmingCharacters(in: .whitespacesAndNewlines).hasPrefix(suffix)
+                    && !texts[line].hasSuffix("-") && !texts[line].hasSuffix("\u{00AD}")
+                    && abs(bounds[line].minX - bounds[line + 1].minX) <= mark.size * 6
+                    && (before.isEmpty ? index > 0 && shows[index - 1].origin.map {
+                        AnchorMatcher.contains(bounds[line], $0)
+                    } == true : true)
+            }
+            if candidates.count == 1 { result.insert(candidates[0]) }
+        }
+        return result
+    }
+
+    static func restoreSoftHyphen(to attributed: NSAttributedString) -> NSAttributedString {
+        let value = attributed.string as NSString
+        var end = value.length
+        while end > 0, let scalar = UnicodeScalar(UInt32(value.character(at: end - 1))),
+              CharacterSet.whitespacesAndNewlines.contains(scalar) { end -= 1 }
+        guard end > 0, value.character(at: end - 1) != 45,
+              value.character(at: end - 1) != 0xAD else {
+            return attributed
+        }
+        let result = NSMutableAttributedString(attributedString: attributed)
+        let attributes = attributed.attributes(at: end - 1, effectiveRange: nil)
+        result.insert(NSAttributedString(string: "\u{00AD}", attributes: attributes), at: end)
         return result
     }
 

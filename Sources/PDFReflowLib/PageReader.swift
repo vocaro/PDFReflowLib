@@ -114,6 +114,18 @@ enum PageReader {
                     }
                 }
                 let body = max(4, LayoutReconstructor.bodySize(content.lines))
+                // A printed form can keep its running head as text, yet the thin double rule
+                // touching that small head is still decoration, not a figure crop (#211).
+                // Require several widget-backed blanks to scope this to an actual form.
+                if fieldBlanks.count >= 3,
+                   let header = content.lines.filter({ line in
+                       line.rect.minY >= bounds.minY + bounds.height * 0.9
+                           && line.fontSize <= body * 0.9 && line.text.count < 100
+                   }).max(by: { $0.rect.midY < $1.rect.midY }) {
+                    let dividers = FurnitureDetector.rulesSettingOff(header,
+                        kept: content.lines.filter { $0 != header }, on: content)
+                    content.graphics.removeAll { dividers.contains($0) }
+                }
                 for blank in content.blanks where blank.field.height > body * 2.5 {
                     let area = blank.field.union(blank.rule).insetBy(dx: 2, dy: 2)
                     guard !content.lines.contains(where: { $0.rect.insetBy(dx: 1, dy: 1).intersects(area) }),

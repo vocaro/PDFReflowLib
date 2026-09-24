@@ -271,7 +271,11 @@ enum FurnitureDetector {
             }
             // Normalize only a boundary page number, with a consistent physical-page
             // offset. Keep internal digits (9/11, chapter numbers, dates) meaningful.
-            for index in Set([0, words.count - 1]) {
+            // A counted folio ends in the fixed total: `Page 3 of 5` changes at the word
+            // before `of`, while the final number stays the same across pages (#197, #211).
+            let counted = words.count >= 3 && words[words.count - 2] == "of"
+                && Int(words[words.count - 1]) != nil
+            for index in Set([0, words.count - 1] + (counted ? [words.count - 3] : [])) {
                 if let value = Int(words[index]), value >= 0 {
                     var normalized = words
                     let (offset, overflow) = value.subtractingReportingOverflow(page.number)
@@ -571,6 +575,22 @@ enum FurnitureDetector {
         }
     }
 
+    /// A thin, page-wide rule touching a removed running head belongs to that head. A distant
+    /// table or magazine foot rule remains content (#197, #211).
+    static func rulesSettingOff(_ line: TextLine, kept: [TextLine], on page: PageContent) -> [CGRect] {
+        let top = line.rect.midY >= page.bounds.midY
+        let inward = kept.filter { top ? $0.rect.midY < line.rect.midY : $0.rect.midY > line.rect.midY }
+        guard let edge = top ? inward.map(\.rect.maxY).max() : inward.map(\.rect.minY).min() else { return [] }
+        return page.graphics.filter { rule in
+            guard rule.isFinite, rule.width >= page.bounds.width * 0.6,
+                  rule.height <= line.rect.height else { return false }
+            let drawn = rule.insetBy(dx: 0, dy: min(2, rule.height * 0.49))
+            let (toLine, toBody) = top ? (line.rect.minY - drawn.maxY, drawn.minY - edge)
+                                       : (drawn.minY - line.rect.maxY, edge - drawn.maxY)
+            return toLine >= 0 && toBody >= 0 && toLine <= line.rect.height * 0.25 && toLine < toBody
+        }
+    }
+
     static func apply(_ plan: Plan, to page: inout PageContent, pageIndex: Int) -> ConversionWarning? {
         guard plan.pageCount >= 3 else { return nil }
         let kept: [TextLine]
@@ -586,6 +606,8 @@ enum FurnitureDetector {
             guard !removed.isEmpty else { return nil }
             kept = page.lines.enumerated().filter { !removed.contains($0.offset) }.map(\.element)
             guard !kept.isEmpty else { return nil }
+            let rules = removed.flatMap { rulesSettingOff(page.lines[$0], kept: kept, on: page) }
+            page.graphics.removeAll { rules.contains($0) }
         }
         if let band = page.headerBackdrop,
            !kept.contains(where: { band.contains($0.rect) }) {
@@ -617,7 +639,9 @@ enum FurnitureDetector {
     private static func offsets(_ words: [String], pageNumber: Int) -> Set<Int> {
         guard !words.isEmpty else { return [] }
         var result: Set<Int> = []
-        for index in Set([0, words.count - 1]) {
+        let counted = words.count >= 3 && words[words.count - 2] == "of"
+            && Int(words[words.count - 1]) != nil
+        for index in Set([0, words.count - 1] + (counted ? [words.count - 3] : [])) {
             var values: [Int] = []
             if let value = Int(words[index]), value >= 0 { values.append(value) }
             let parts = words[index].split(separator: "-", omittingEmptySubsequences: false)

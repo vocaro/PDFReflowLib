@@ -212,13 +212,31 @@ import Testing
 
 @Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/216")) func damagedTypescriptsCrossTheMeasuredMisreadBoundary() {
     typealias Counts = TextLayerPlausibility.WordCounts
-    // Source survey: Warren 649, 655, 657, 659 and 661 fall between 8.7% and 9.7%; the
-    // highest unaffected Blue Book page is 8.0%. Preserve that separation at the boundary.
-    #expect(TextLayerPlausibility.wordFinding(Counts(english: 182, damaged: 18, tokens: 200,
-                                                     misread: 17))
-        == .misreadWords(misread: 17, words: 200, examples: []))
-    #expect(TextLayerPlausibility.wordFinding(Counts(english: 184, damaged: 16, tokens: 200,
-                                                     misread: 16)) == nil)
+    // Source survey from 4afe5c39:measurements/suspect-text-layers/scores-inherited.tsv.
+    // These counts came from the pinned PDFs, not invented threshold examples. The five
+    // typescripts fell below the old 10% cut; Blue Book 53 and NBS 5 were unaffected controls.
+    let damaged: [(Int, Counts)] = [
+        (649, Counts(english: 243, damaged: 70, neutral: 112, numericTokens: 26, tokens: 429, misread: 40)),
+        (655, Counts(english: 445, damaged: 62, neutral: 75, numericTokens: 16, tokens: 575, misread: 53)),
+        (657, Counts(english: 442, damaged: 59, neutral: 99, numericTokens: 12, tokens: 589, misread: 52)),
+        (659, Counts(english: 461, damaged: 87, neutral: 104, numericTokens: 14, tokens: 626, misread: 63)),
+        (661, Counts(english: 402, damaged: 62, neutral: 61, numericTokens: 15, tokens: 536, misread: 49)),
+    ]
+    for (page, counts) in damaged {
+        guard case .misreadWords(let misread, let words, _)? = TextLayerPlausibility.wordFinding(counts) else {
+            Issue.record("Warren \(page) passed: \(counts)")
+            continue
+        }
+        #expect(misread == counts.misread && words == counts.words)
+    }
+    for (name, counts) in [
+        ("Blue Book 53", Counts(english: 32, damaged: 6, neutral: 12, numericTokens: 12, tokens: 66, misread: 4)),
+        ("Blue Book 246", Counts(english: 150, damaged: 127, neutral: 185, numericTokens: 173,
+                                  tokens: 659, misread: 40)),
+        ("NBS 5", Counts(english: 444, damaged: 182, neutral: 43, numericTokens: 51, tokens: 717, misread: 40)),
+    ] {
+        #expect(TextLayerPlausibility.wordFinding(counts) == nil, "\(name): \(counts)")
+    }
     // The numeric-table exemption still wins even when a page contains damaged words.
     #expect(TextLayerPlausibility.wordFinding(Counts(english: 182, damaged: 18, numberTokens: 40,
                                                      tokens: 200, misread: 17)) == nil)

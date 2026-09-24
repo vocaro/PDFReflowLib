@@ -21,11 +21,11 @@ import PDFKit
 ///   cells reads no better. The exemption counts the numbers the page states, not every token
 ///   holding a digit, because a misreading of a hand-written figure (`l6`, `0,3`, `A.Di`) holds
 ///   digits too and would otherwise buy the page its own exemption (#275).
-/// - **Words misread in place (#7, #216).** Under the same conditions, a layer fails when 8.5% or more
-///   of all its words are damaged words of three or more letters (or irregular capitals) that no
+/// - **Words misread in place (#7, #216).** Under the same conditions, a prose layer fails when
+///   8.5% or more of all its words are damaged words of three or more letters (or irregular capitals) that no
 ///   neighbor joins into an English word: `tcld t» ftboot` for "told me about" on a carbon
 ///   typescript, which reads half to three quarters English. Text split inside words
-///   (`fi e ld stre ngth`) joins up and is not counted.
+///   (`fi e ld stre ngth`) joins up and is not counted. A digit-heavy page keeps the 10% cut.
 /// - **Too little text for the ink.** The page is rendered and its text-shaped ink found as in
 ///   `OCRTextCoverage`; the layer fails when its lines leave at least three quarters of that ink
 ///   and at least seven text rows uncovered, and it holds fewer English words than those rows.
@@ -55,6 +55,11 @@ enum TextLayerPlausibility {
     // In the source survey, the highest unaffected Blue Book page scored 8.0% and NBS 6.0%.
     // Leave a margin above those controls while admitting the damaged typescripts (#216).
     static let minimumMisreadShare = 0.085
+    // Numeric table text can hold misread words among correctly copied column labels. Keep its
+    // older, more conservative misread cut: the historical Blue Book survey has 18 table pages
+    // between 8.5% and 10%, all with at least a fifth of tokens holding digits. The separate
+    // #275 word-share test still judges their handwriting where the numbers themselves are noise.
+    static let minimumMisreadShareForNumericPages = 0.1
     static let minimumUncoveredFraction = 0.75
     static let minimumUncoveredRows = 7
     /// The ink test renders the page, which dominates its cost. A layer fails it only with fewer
@@ -118,7 +123,9 @@ enum TextLayerPlausibility {
         if Double(english) < Double(judged) * minimumEnglishShare {
             return .fewEnglishWords(english: english, judged: judged)
         }
-        if Double(counts.misread) >= Double(counts.words) * minimumMisreadShare {
+        let numeric = Double(counts.numericTokens) >= Double(counts.tokens) * maximumNumericShare
+        let misreadCut = numeric ? minimumMisreadShareForNumericPages : minimumMisreadShare
+        if Double(counts.misread) >= Double(counts.words) * misreadCut {
             return .misreadWords(misread: counts.misread, words: counts.words, examples: counts.misreadExamples)
         }
         return nil

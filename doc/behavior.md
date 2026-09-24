@@ -2357,6 +2357,12 @@ flat-filled headers and merged cells. Unlike a whitespace table, a ruled grid do
 numeric values. Cell selections must account for every native non-whitespace character
 inside the grid, exactly once; incomplete selections leave the table as a source crop.
 
+`NativeTextPanels` keeps recovered sidebar prose together. A proved text panel follows the
+complete adjacent paragraph, including rows whose measure widens above or below the panel.
+Its native text is reconstructed with its own type size and leading, then appended as a closed
+reading unit. Intersecting figures, tables, quotations, asides, and tagged groups that cross the
+panel boundary prevent this grouping; styles, links and individual heading roles remain native.
+
 ## Limits
 
 PDF structure is ambiguous. The synthetic suite and the corpus do not establish general

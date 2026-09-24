@@ -700,6 +700,14 @@ struct BlockAssembler {
     }
 
     /// Source display rows carry one semantic block and cannot join nearby body text.
+    mutating func appendTextPanel(_ content: [ReflowBlock]) {
+        initialOpening = nil
+        flushNote(); flushParagraph()
+        codeOrigin = nil; rowInProgress = nil; itemRowInProgress = nil
+        blocks += content
+        previous = nil; previousRow = nil
+    }
+
     mutating func appendQuotation(_ lines: [TextLine]) {
         initialOpening = nil
         flushNote()

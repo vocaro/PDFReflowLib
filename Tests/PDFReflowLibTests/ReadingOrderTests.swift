@@ -205,6 +205,24 @@ func wallaceWrappedAnswersKeepTheirNumberedBlocks(pageNumber: Int) throws {
     #expect(cropIndex < labelIndex && labelIndex < titleIndex && titleIndex < firstAnswerIndex)
 }
 
+@Test func wallaceTriangleKeepsItsLastSideLength() throws {
+    let fixture = try SourceLayoutFixture.load("algebra-423")
+    #expect(fixture.sourceSHA256 == "856bd81edc61c50496982ddc849138f4e0e56fd0ddf0edb53fee9bb0830d0678")
+    let page = fixture.content()
+    let images = LayoutReconstructor.graphicsWithLabels(page).enumerated().map { ($0.element, "image-\($0.offset)") }
+    let side = try #require(page.lines.first { $0.text == "16" })
+    let marker = try #require(page.lines.first { $0.text.hasPrefix("7) sin") })
+    let triangle = try #require(images.first { $0.0.contains(marker.rect) })
+    #expect(triangle.0.contains(side.rect))
+    var warnings: [ConversionWarning] = []
+    let blocks = LayoutReconstructor.blocks(page: page, images: images, vocabulary: [], warnings: &warnings)
+    #expect(!blocks.contains { $0.text == "16" })
+    #expect(blocks.contains { block in
+        if case let .image(image) = block.content { return image.assetID == triangle.1 }
+        return false
+    })
+}
+
 @Test func leaderTableControlsSeparateLookupRowsFromContentsAndEllipses() {
     func page(_ strings: [String], gap: Double = 14, mono: Bool = false, header: Bool = true) -> PageContent {
         var lines = strings.enumerated().map { index, text in

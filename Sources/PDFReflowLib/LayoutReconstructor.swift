@@ -532,6 +532,30 @@ enum LayoutReconstructor {
                 let bottom = label.rect.maxY + body * 0.15
                 crop = CGRect(x: crop.minX, y: bottom, width: crop.width, height: crop.maxY - bottom)
             }
+            // A side length can sit just outside the painted triangle. Wallace 423's `16`
+            // stands 0.42 pt below the drawing; its exercise marker `7) sin θ` is already in
+            // the crop, so a word-free-label rule alone cannot recognize the drawing.
+            let held = page.lines.filter { crop.intersects($0.rect) }
+            if held.count <= 8,
+               held.filter({ $0.text.range(of: #"^[0-9]{1,3}\)"#, options: .regularExpression) != nil }).count == 1,
+               held.allSatisfy({ line in
+                   line.text.range(of: #"^[0-9]{1,3}\)"#, options: .regularExpression) != nil
+                       || (line.text.count <= 8
+                           && line.text.range(of: #"\p{L}{3,}"#, options: .regularExpression) == nil)
+               }),
+               page.graphics.contains(where: { crop.intersects($0) && $0.width >= body && $0.height >= body }),
+               let label = page.lines.first(where: { line in
+                   line.text.range(of: #"^[0-9]{1,2}$"#, options: .regularExpression) != nil
+                       && !crop.intersects(line.rect)
+                       && line.rect.minX >= crop.minX && line.rect.maxX <= crop.maxX
+                       && crop.minY - line.rect.maxY >= 0 && crop.minY - line.rect.maxY <= body * 0.1
+                       && !page.lines.contains { other in
+                           other.rect != line.rect && !crop.intersects(other.rect)
+                               && crop.union(line.rect).intersects(other.rect)
+                       }
+               }) {
+                crop = crop.union(label.rect)
+            }
             return separatedAnswerColumns(crop, on: page, body: body)
         }
     }

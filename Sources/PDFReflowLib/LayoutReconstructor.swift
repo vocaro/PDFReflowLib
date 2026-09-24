@@ -1700,6 +1700,7 @@ enum LayoutReconstructor {
         var labelStyles: Set<LabelStyle> = []
         var headingRank = HeadingRank()
         var numberedNotePages: Set<Int> = []
+        var slideDeck = false
     }
 
     /// One type size, to the half point: the grain at which two lines of a page are set in the
@@ -2043,10 +2044,18 @@ enum LayoutReconstructor {
         // one paragraph (#137, #210). The evidence is the page's own stated column boundary, so
         // it is read from the lines that still reflow, after the crops have taken theirs.
         let rows = TableRegionDetector.rowBlocks(in: lines, body: typography.body, rightToLeft: rightToLeft)
+        // A deck establishes its heading from each slide's top band. Its sparse body can
+        // outweigh the title in character-weighted size, and diagram labels can clear the
+        // ordinary heading threshold even though they sit below that title (#165).
+        let slideTitle = context.slideDeck ? SlideDeck.title(in: page) : []
         let roles = elements.map { element in
             element.line.map { line -> LineRole in
-                let role = role(of: line, on: page, in: lines, typography: typography,
+                var role = role(of: line, on: page, in: lines, typography: typography,
                                 labels: labels, judgesTitleWords: judgesTitleWords, rightToLeft: rightToLeft)
+                if let title = slideTitle.first {
+                    if slideTitle.contains(line) { role = .heading }
+                    else if role == .heading && line.fontSize < title.fontSize * 0.95 { role = .prose }
+                }
                 // A numbered answer whose final line hangs under its expression is still an
                 // item when its opening row happens to be too wide for the usual list detector.
                 if role == .prose && wrappedAnswerOpenings.contains(line.rect) { return .listItem }
@@ -2134,6 +2143,23 @@ enum LayoutReconstructor {
             }
         }
         var result = assembler.finish()
+        if slideTitle.count > 1,
+           let start = result.firstIndex(where: { block in
+               if case let .heading(_, text, _) = block.content { return text.text == slideTitle[0].text }
+               return false
+           }) {
+            for continuation in slideTitle.dropFirst() {
+                guard result.indices.contains(start + 1),
+                      case let .heading(_, next, _) = result[start + 1].content,
+                      next.text == continuation.text,
+                      case let .heading(id, first, level) = result[start].content else { break }
+                var combined = first
+                combined.append(InlineText(" "))
+                combined.append(next)
+                result[start].content = .heading(id: id, text: combined, level: level)
+                result.remove(at: start + 1)
+            }
+        }
         warnings += assembler.warnings
         // Where a crop took prose the page printed before the first line it reflows, the page's
         // text does not begin at that block, and a cross-page join must not treat it as the

@@ -175,6 +175,15 @@ enum NativeTextReader {
             let (cutText, cutStyled) = MarginRuleMarks.cut(rule, from: repaired, text: corrected ?? semantic)
             pending.append((cutText, rule.rect, cutStyled))
         }
+        // A slide build can paint the same text box twice. Remove the second impression before
+        // detached-show splitting, where coincident bounds make show ownership ambiguous (#165).
+        if pending.count > 1 {
+            let impressions = pending.map { textLine(semantic: $0.semantic, bounds: $0.bounds, attributed: $0.attributed) }
+            let retained = Set(withoutOverprints(impressions))
+            if retained.count != pending.count {
+                pending = pending.enumerated().compactMap { retained.contains($0.offset) ? $0.element : nil }
+            }
+        }
         // Opposite-side labels can share a PDFKit selection although the page leaves most of
         // its width blank between them (#172). Slice the already repaired attributed text, so
         // links and styles survive without issuing another attributed-text request.
@@ -212,6 +221,27 @@ enum NativeTextReader {
                 : ArabicText.logicalOrder(item.semantic, onRightToLeftPage: true)
             return textLine(semantic: semantic, bounds: item.bounds, attributed: ordered)
         }
+    }
+
+    /// Indices of text impressions with distinct ink; offset shadows remain distinct (#165).
+    static func withoutOverprints(_ lines: [TextLine]) -> [Int] {
+        var byText: [String: [Int]] = [:]
+        var kept: [Int] = []
+        for (index, line) in lines.enumerated() {
+            let duplicate = (byText[line.text] ?? []).contains { candidate in
+                let other = lines[candidate]
+                return abs(other.fontSize - line.fontSize) <= 0.01
+                    && abs(other.rect.minX - line.rect.minX) <= 0.05
+                    && abs(other.rect.minY - line.rect.minY) <= 0.05
+                    && abs(other.rect.width - line.rect.width) <= 0.05
+                    && abs(other.rect.height - line.rect.height) <= 0.05
+            }
+            if !duplicate {
+                kept.append(index)
+                byText[line.text, default: []].append(index)
+            }
+        }
+        return kept
     }
 
     private static func detachedPiece(_ rect: CGRect, from minX: CGFloat, to maxX: CGFloat,

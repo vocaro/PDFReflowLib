@@ -35,6 +35,11 @@ struct DocumentEvidence {
     private var labelStylePages: [LayoutReconstructor.LabelStyle: Int] = [:]
     /// The display sizes the book's own tags call headings, page by page (#294).
     private var headingTally = HeadingRank.Tally()
+    private var slideTextPages = 0
+    private var slidePages = 0
+    private var slideCount = 0
+    private var slideBounds: CGRect?
+    private var uniformLandscape = true
     private(set) var recognizedPages = 0
     private(set) var characters = 0
 
@@ -52,6 +57,14 @@ struct DocumentEvidence {
                           options: ConversionOptions) throws {
         characters += content.lines.reduce(0) { $0 + $1.text.count }
         guard characters <= options.maximumCharacters else { throw ConversionError.resourceLimit("document text") }
+        slideCount += 1
+        if let slideBounds, slideBounds != content.bounds { uniformLandscape = false }
+        slideBounds = content.bounds
+        if content.bounds.width <= content.bounds.height { uniformLandscape = false }
+        if !content.lines.isEmpty {
+            slideTextPages += 1
+            if !SlideDeck.title(in: content).isEmpty { slidePages += 1 }
+        }
         if let chapter = chapterCandidates.first(where: { $0.page == content.number }),
            ChapterBoundaryReader.matches(chapter, page: content) {
             chapterStartPages.insert(content.number)
@@ -101,7 +114,9 @@ struct DocumentEvidence {
             documentBody: LayoutReconstructor.bodySize(weights: bodyWeights),
             labelStyles: LayoutReconstructor.labelStyles(from: labelStylePages),
             headingRank: HeadingRank(headingTally),
-            numberedNotePages: numberedNotePages)
+            numberedNotePages: numberedNotePages,
+            slideDeck: slideCount >= 3 && uniformLandscape && slideTextPages > 0
+                && slidePages * 3 >= slideTextPages * 2)
         return Resolved(context: context, furniturePlan: plan)
     }
 }

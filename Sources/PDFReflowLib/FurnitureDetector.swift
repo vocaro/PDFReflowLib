@@ -201,6 +201,7 @@ enum FurnitureDetector {
         func measurable(_ line: TextLine) -> Bool {
             line.rect.isFinite && line.fontSize > 0 && line.fontSize.isFinite
                 && line.text.count < 100 && !words(line).isEmpty
+                && !explainsMarker(line, on: page)
         }
         /// Whether no line of the page stands further out than this one. Only the outermost row
         /// is eligible on its own; a caption or paragraph above a footer must not be removed
@@ -426,6 +427,22 @@ enum FurnitureDetector {
                 ledger.dropFolios.append(DropFolio(pageIndex: pageIndex, lineIndex: lineIndex, offset: offset))
             }
             ledger.note(lineIndex, onPageAt: pageIndex)
+        }
+    }
+
+    /// A raised number opening a margin note matches a raised reference on this same page.
+    /// Repetition across slides does not make that explanation running furniture (#165).
+    private static func explainsMarker(_ line: TextLine, on page: PageContent) -> Bool {
+        guard let first = line.content.elements.first,
+              case let .text(value, style) = first, style.contains(.superscript),
+              line.content.elements.count > 1 else { return false }
+        let printed = value.trimmingCharacters(in: .whitespaces.union(.controlCharacters))
+        guard (1...3).contains(printed.count), let number = Int(printed), number > 0 else { return false }
+        return page.lines.contains { other in
+            other != line && other.content.elements.contains { element in
+                guard case let .text(value, style) = element, style.contains(.superscript) else { return false }
+                return Int(value.trimmingCharacters(in: .whitespaces.union(.controlCharacters))) == number
+            }
         }
     }
 

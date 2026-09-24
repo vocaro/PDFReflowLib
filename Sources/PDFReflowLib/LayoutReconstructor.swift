@@ -2170,12 +2170,15 @@ enum LayoutReconstructor {
         // outweigh the title in character-weighted size, and diagram labels can clear the
         // ordinary heading threshold even though they sit below that title (#165).
         let slideTitle = context.slideDeck ? SlideDeck.title(in: page) : []
+        let slideSecondary = context.slideDeck
+            ? SlideDeck.secondaryHeadings(in: page, title: slideTitle, body: typography.body) : []
         let roles = elements.map { element in
             element.line.map { line -> LineRole in
                 var role = role(of: line, on: page, in: lines, typography: typography,
                                 labels: labels, judgesTitleWords: judgesTitleWords, rightToLeft: rightToLeft)
                 if let title = slideTitle.first {
                     if slideTitle.contains(line) { role = .heading }
+                    else if slideSecondary.contains(line) { role = .heading }
                     else if role == .heading && line.fontSize < title.fontSize * 0.95 { role = .prose }
                 }
                 if formHeadings.listItems.contains(line) { return .listItem }
@@ -2276,7 +2279,7 @@ enum LayoutReconstructor {
                 paragraphHandles[index] = handle
             }
         }
-        var result = assembler.finish()
+        var result = SlideDeck.levelSecondary(assembler.finish(), candidates: slideSecondary)
         if !formOutline.isEmpty {
             for index in result.indices {
                 guard case let .heading(id, text, _) = result[index].content,

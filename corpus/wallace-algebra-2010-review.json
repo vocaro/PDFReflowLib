@@ -23,7 +23,8 @@
     },
     {
       "page": 266,
-      "focus": "Nested complex fractions; keep inner and outer fraction structure together."
+      "focus": "Nested complex fractions; keep inner and outer fraction structure together.",
+      "observed": "The source prints paired exercises 1–22 in row order. Current EPUB reads those markers 1–22, retains each unsupported stacked fraction as a source crop, and emits the imageRegion warning. The crop fallback preserves the visual inner and outer bars while native MathML remains unproved for this page."
     },
     {
       "page": 293,
@@ -32,8 +33,8 @@
     {
       "page": 343,
       "focus": "Quadratic-formula derivation with aligned explanations, radicals and inline powers.",
-      "observed": "Displayed derivation is rasterized. Introductory ax-squared is flattened to ax2 in selectable XHTML; confirmed defect.",
-      "acceptance": "Keep the introductory squared exponent as superscript (or preserve the entire inline expression as an image), while retaining the surrounding prose and the displayed derivation."
+      "observed": "Current bounded EPUB keeps the introductory ax squared as `ax<sup>2 </sup>` in selectable XHTML. The displayed derivation remains a warned preserved image region; its source alignment, radicals and stacked terms stay visible.",
+      "acceptance": "Keep the source's introductory squared exponent as a superscript and preserve the displayed derivation while a full structural transcription remains unsupported."
     },
     {
       "page": 347,

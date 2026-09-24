@@ -34,7 +34,12 @@ extension LayoutReconstructor {
               pairs.allSatisfy({ pair in
                   let left = pair.0, right = pair.1
                   return left.rect.minX < right.rect.minX
-                      && abs(left.rect.midY - right.rect.midY) <= body * 0.4
+                      // Stacked complex fractions can make one printed marker sit
+                      // nearly a body-height above its partner despite sharing a row.
+                      // The full consecutive odd/even run and fixed column starts
+                      // still prove the pairing (Wallace page 266).
+                      && abs(left.rect.midY - right.rect.midY)
+                          <= max(body * 0.8, max(left.rect.height, right.rect.height) * 0.75)
                       && abs(left.rect.minX - leftX) <= body * 0.4
                       && abs(right.rect.minX - rightX) <= body * 0.4
               }),
@@ -81,7 +86,12 @@ extension LayoutReconstructor {
             ordered(group, bodySize: body, rightToLeft: rightToLeft,
                     depth: depth + 1, exhausted: &exhausted)
         }
-        var result = read(before)
+        // A short heading/instruction stack above the grid is read top to bottom.
+        // Its centred heading can otherwise look like a second column and follow
+        // the left-aligned instruction (Wallace page 266).
+        var result = before.count <= 3 && before.allSatisfy({ $0.line != nil })
+            ? before.sorted { $0.rect.midY > $1.rect.midY }
+            : read(before)
         for index in pairs.indices {
             result += read(left[index]) + read(right[index]) + read(between[index])
         }

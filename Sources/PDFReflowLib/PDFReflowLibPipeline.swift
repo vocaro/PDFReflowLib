@@ -186,7 +186,10 @@ enum PDFReflowLibPipeline {
                     var images: [(CGRect, String)] = []
                     var imageMath: [String: [MathExpression]] = [:]
                     var pageGlyphs: MathRecognizer.PageGlyphs?
-                    for region in LayoutReconstructor.graphicsWithLabels(content, language: options.language) {
+                    let regions = MathExerciseRegionJoin.joined(
+                        LayoutReconstructor.graphicsWithLabels(content, language: options.language),
+                        lines: content.lines, body: LayoutReconstructor.bodySize(content.lines))
+                    for region in regions {
                         var glyphs: MathRecognizer.PageGlyphs?
                         if !content.recognized, !content.hasSyntheticTextStyle,
                            !content.links.contains(where: { $0.rect.intersects(region) }),

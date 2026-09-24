@@ -17,6 +17,7 @@ from pdfreflow_tools.corpus import ROOT, find_case, manifest_cases, regression_c
 from pdfreflow_tools.epub import DEFAULT_MAX_ENTRIES, DEFAULT_MAX_UNCOMPRESSED_BYTES, inspection_limit
 
 HTML = epub.XHTML
+MATH = '{http://www.w3.org/1998/Math/MathML}'
 HEADINGS = {HTML + 'h' + str(n) for n in range(1, 7)}
 BLOCKS = HEADINGS | {HTML + tag for tag in ('p', 'pre', 'figure', 'li', 'th', 'td', 'tr')}
 CELLS = {HTML + 'th', HTML + 'td'}
@@ -31,7 +32,7 @@ PAGE_CHECK_TYPES = {
     'text': 'sequence', 'orderedText': 'sequence', 'absentText': 'sequence',
     'headings': 'sequence', 'paragraphs': 'sequence', 'continuedParagraphs': 'sequence',
     'preformatted': 'sequence', 'lists': 'sequence', 'asides': 'sequence', 'quotations': 'sequence',
-    'scripts': 'sequence', 'imageRegions': 'sequence', 'tableRows': 'sequence',
+    'scripts': 'sequence', 'math': 'sequence', 'imageRegions': 'sequence', 'tableRows': 'sequence',
     'minimumImages': 'presence', 'warningCodesAnyOf': 'presence', 'absentWarningCodes': 'presence',
 }
 LISTS = {HTML + 'ul', HTML + 'ol'}
@@ -62,6 +63,16 @@ def cli_inspection_limit(value):
 
 def normalized(text):
     return ' '.join(text.split())
+
+
+def math_signature(element):
+    """Keep MathML's ordered content tree while ignoring presentation-only outer wrappers."""
+    name = element.tag.removeprefix(MATH)
+    children = [math_signature(child) for child in element]
+    content = normalized(element.text or '')
+    if name in ('math', 'mstyle') and len(children) == 1 and not content:
+        return children[0]
+    return name + '(' + (','.join(children) if children else content) + ')'
 
 
 def read_spine(path, *, max_entries=DEFAULT_MAX_ENTRIES,
@@ -126,7 +137,7 @@ def read_spine(path, *, max_entries=DEFAULT_MAX_ENTRIES,
                     current = page
                     markers.append(current)
                     document['pages'].append(current)
-                    pages[current] = {'text': '', 'images': [], 'scripts': [], 'headings': {},
+                    pages[current] = {'text': '', 'images': [], 'scripts': [], 'math': [], 'headings': {},
                                       'paragraphs': {}, 'preformatted': {}, 'tableRows': [], 'lists': [],
                                       'asides': {}, 'quotations': {}}
                 # A table row, read as the cells it holds. A `tableRows` expectation names a whole
@@ -139,6 +150,14 @@ def read_spine(path, *, max_entries=DEFAULT_MAX_ENTRIES,
                     if asset not in names:
                         raise ValueError('Missing image asset: ' + asset)
                     pages[current]['images'].append(asset)
+                if element.tag == MATH + 'math' and current is not None:
+                    fallback = element.get('altimg', '')
+                    asset = str(chapter.parent / fallback) if fallback else ''
+                    pages[current]['math'].append({
+                        'alttext': normalized(element.get('alttext', '')),
+                        'structure': math_signature(element),
+                        'fallback': bool(fallback and asset in names),
+                    })
                 # Generic converter captions must not satisfy source-text expectations.
                 if element.tag == HTML + 'figcaption':
                     return
@@ -347,7 +366,7 @@ def assess(case, contract, result, report, pages, markers, *, documents=(),
     for item in expected:
         number = item['page']
         page = pages.get(number, {'text': '', 'images': []})
-        if not any(key in item for key in ('text', 'orderedText', 'minimumImages', 'warningCodesAnyOf', 'absentWarningCodes', 'scripts', 'absentText', 'headings', 'paragraphs', 'preformatted', 'lists', 'continuedParagraphs', 'imageRegions', 'tableRows', 'asides', 'quotations')):
+        if not any(key in item for key in ('text', 'orderedText', 'minimumImages', 'warningCodesAnyOf', 'absentWarningCodes', 'scripts', 'math', 'absentText', 'headings', 'paragraphs', 'preformatted', 'lists', 'continuedParagraphs', 'imageRegions', 'tableRows', 'asides', 'quotations')):
             raise ValueError('Review page has no expectations')
         for phrase in item.get('text', []):
             if not normalized(phrase):
@@ -445,6 +464,17 @@ def assess(case, contract, result, report, pages, markers, *, documents=(),
                        and span['after'].startswith(normalized(script['after']))
                        for span in page.get('scripts', [])):
                 errors.append(f'Page {number}: missing script or incorrect context {script!r}')
+        for expression in item.get('math', []):
+            if (not isinstance(expression, dict) or set(expression) != {'alttext', 'structure'}
+                    or not isinstance(expression['alttext'], str) or not normalized(expression['alttext'])
+                    or not isinstance(expression['structure'], str) or not expression['structure']
+                    or len(expression['alttext']) > 512 or len(expression['structure']) > 1024):
+                raise ValueError('Math check requires bounded alttext and exact structure')
+            checks += 1
+            if not any(math['alttext'] == normalized(expression['alttext'])
+                       and math['structure'] == expression['structure'] and math['fallback']
+                       for math in page.get('math', [])):
+                errors.append(f'Page {number}: missing MathML or fallback {expression!r}')
         for expected_row in item.get('tableRows', []):
             # A whole row of a table, cell by cell. A value read into the wrong column, a cell
             # lost, or a row lost all change the row and are caught; a row is matched anywhere on
@@ -497,7 +527,7 @@ def assess(case, contract, result, report, pages, markers, *, documents=(),
                          'a kind of check was added without recording it (#156)')
     return {'case': case['id'], 'passed': not errors, 'reviewPages': numbers,
             'contentChecks': checks, 'spineBoundariesCrossed': crossedBoundaries, 'errors': errors,
-            'scope': 'Reviewed text/order/script-context/image-presence, spine-boundary continuity and source-region image checks; not full-book fidelity or image legibility qualification.'}
+            'scope': 'Reviewed text/order/script-context/MathML/image-presence, spine-boundary continuity and source-region image checks; not full-book fidelity or image legibility qualification.'}
 
 
 def check_evaluation(case, contract, directory, *, max_entries=DEFAULT_MAX_ENTRIES,

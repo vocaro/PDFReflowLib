@@ -445,6 +445,33 @@ class CorpusContentTests(unittest.TestCase):
         self.pages[1]['scripts'] = []
         self.assertFalse(self.check()['passed'])
 
+    def test_mathml_requires_source_structure_and_an_existing_fallback(self):
+        self.contract['pages'][0].pop('minimumImages')
+        expectation = {'alttext': 'n^2', 'structure': 'msup(mi(n),mn(2))'}
+        self.contract['pages'][0]['math'] = [expectation]
+        opening = '<span epub:type="pagebreak" id="page-1"/><p>alpha beta</p>'
+        math = ('<math xmlns="http://www.w3.org/1998/Math/MathML" alttext="n^2" altimg="picture.png">'
+                '<msup><mi>n</mi><mn>2</mn></msup></math>')
+        second = '<span epub:type="pagebreak" id="page-2"/><p>omega</p>'
+        self.pages, _ = read_pages(self.epub(opening + math, second))
+        self.assertEqual(self.pages[1]['math'], [{**expectation, 'fallback': True}])
+        self.assertTrue(self.check()['passed'])
+        for changed in [math.replace('msup', 'msub'),
+                        math.replace('<mi>n</mi><mn>2</mn>', '<mn>2</mn><mi>n</mi>'),
+                        math.replace('alttext="n^2"', 'alttext="n2"'),
+                        math.replace('altimg="picture.png"', '')]:
+            pages, _ = read_pages(self.epub(opening + changed, second))
+            self.assertFalse(self.check(pages=pages)['passed'])
+        pages, _ = read_pages(self.epub(opening + math, second, missing_image=True))
+        self.assertFalse(self.check(pages=pages)['passed'])
+        pages, _ = read_pages(self.epub(opening, second + math))
+        self.assertFalse(self.check(pages=pages)['passed'])
+        for malformed in [{}, {'alttext': '', 'structure': 'msup(mi(n),mn(2))'},
+                          {'alttext': 'n^2', 'structure': 'msup(mi(n),mn(2))', 'fallback': True}]:
+            self.contract['pages'][0]['math'] = [malformed]
+            with self.assertRaises(ValueError):
+                self.check()
+
     def test_preformatted_scripts_are_checked_with_context_and_cannot_be_flattened(self):
         self.contract['pages'][0]['scripts'] = [
             {'tag': 'sup', 'text': '2', 'before': '80) (7a', 'after': '+7a)'},

@@ -102,6 +102,8 @@ enum PageReader {
                 if let composed = PageBackdrop.compose(content, graphics: trimmed) { content = composed }
             }
             if styled {
+                let printedBox = PrintedFormAreas.emptyBox(regions: graphics.regions,
+                    paints: graphics.paints.map(\.rect), lines: content.lines, bounds: bounds)
                 // A pair of boxes printed at the ends of form labels is page content, not a
                 // little illustration. Emit selectable marks and remove only the region made
                 // wholly of their outlines and connecting rules (#211).
@@ -156,6 +158,12 @@ enum PageReader {
                     content.lines.append(TextLine(text: FormBlank.text,
                         rect: CGRect(x: rule.minX, y: rule.midY, width: rule.width, height: body),
                         fontSize: body, wraps: false))
+                }
+                content.lines = PrintedFormAreas.normalizedWritingLines(content.lines)
+                if let printedBox {
+                    content.graphics.removeAll { $0.intersects(printedBox.region) }
+                    content.lines.removeAll { printedBox.labels.contains($0) }
+                    content.lines += printedBox.rows
                 }
             }
             if !requiresPageImage && !syntheticStyle && options.ocr != .always, let structure,

@@ -64,7 +64,8 @@ enum TableReader {
             var index = 0
             while index < rows.count {
                 guard let block = block(from: index, rows: rows, inks: inks) else { index += 1; continue }
-                if let table = read(block, rows: rows, inks: inks, rules: rules, on: page) {
+                if let table = read(block, rows: rows, inks: inks, rules: rules, on: page),
+                   !numberedAnswerKey(table, on: lines) {
                     result.append(table)
                 }
                 index = block.upperBound
@@ -77,6 +78,38 @@ enum TableReader {
             result += painted.filter { table in !result.contains { $0.rect.intersects(table.rect) } }
             return result.sorted { ($0.rect.maxY, -$0.rect.minX) > ($1.rect.maxY, -$1.rect.minX) }
         }
+    }
+
+    /// A chapter key prints numbered answers down columns. Its aligned short entries can look
+    /// like a grid to the table reader, but a table would make EPUB read 1, 22, 43, 2, 23, 44
+    /// across rows (#29, #178). Refuse only a source-headed answer block with at least
+    /// two increasing markers per column and disjoint ascending number ranges between columns.
+    static func numberedAnswerKey(_ table: PageTable, on lines: [TextLine]) -> Bool {
+        guard table.headerRows == 0, (2...4).contains(table.columns),
+              lines.contains(where: { $0.text.hasPrefix("Answers -") }) else { return false }
+        var columns = Array(repeating: [Int](), count: table.columns)
+        var completeRows = 0
+        for row in table.rows {
+            guard row.count == table.columns, row.allSatisfy({ $0.columns == 1 }) else { continue }
+            let values = row.map { cell -> Int? in
+                guard let range = cell.text.range(of: #"^\s*[0-9]{1,3}(?=\))"#, options: .regularExpression) else {
+                    return nil
+                }
+                return Int(cell.text[range].trimmingCharacters(in: .whitespaces))
+            }
+            if values.allSatisfy({ $0 != nil }) { completeRows += 1 }
+            for index in columns.indices {
+                if let number = values[index] { columns[index].append(number) }
+            }
+        }
+        guard completeRows >= 2, columns.allSatisfy({ $0.count >= 2 }) else { return false }
+        var previousLast = 0
+        for column in columns {
+            guard column[0] > previousLast,
+                  zip(column, column.dropFirst()).allSatisfy({ $1 > $0 }) else { return false }
+            previousLast = column[column.count - 1]
+        }
+        return true
     }
 
     // MARK: - Rows and their ink

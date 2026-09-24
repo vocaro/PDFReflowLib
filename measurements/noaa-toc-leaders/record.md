@@ -48,3 +48,15 @@ The corpus contract now requires all 68 complete entry/locator phrases in source
 order, while retaining prior image and credit checks. Full integrated NOAA and
 21-document qualification is pending the root task's final conversion; this
 bounded change does not claim a new whole-book run.
+
+Independent review added two adversarial controls. A leader cannot jump over a
+third native text rectangle in its row corridor; moving that obstruction outside
+the corridor restores the otherwise identical positive case. All multiplicative
+table, candidate, rule, obstruction and aligned-row comparisons share a 2,000,000
+comparison budget. Exhaustion returns the exact original line array, including
+when some valid pairs have already been found. A 200-line/8,000-rule input that
+previously required 80 million rule checks is covered at the default limit;
+the focused test completed in 0.232 seconds on the review host. Low injected
+budgets additionally verify unchanged fallback rather than partial association.
+All four focused tests (including the three source pages and all 68 pairs) pass.
+The root task owns the final integrated suite and whole-conversion gates.

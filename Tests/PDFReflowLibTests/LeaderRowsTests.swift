@@ -84,3 +84,43 @@ func noaaContentsKeepPaintedLeaderEntriesWithTheirLocators(number: Int) throws {
     page.hasSyntheticTextStyle = true
     #expect(LeaderRows.joined(page,paints:paints) == rows)
 }
+
+@Test func paintedLeadersDoNotJumpAcrossInterveningNativeText() {
+    var rows: [TextLine] = [], paints: [GraphicsReader.Paint] = []
+    for index in 0..<3 {
+        let y = CGFloat(200 - index * 20)
+        rows += [TextLine(text:"Chapter heading",rect:CGRect(x:20,y:y,width:70,height:12),fontSize:10),
+                 TextLine(text:"intervening native words",rect:CGRect(x:110,y:y,width:65,height:12),fontSize:10),
+                 TextLine(text:"A1-\(index+1)",rect:CGRect(x:190,y:y,width:25,height:12),fontSize:10)]
+        paints.append(.init(rect:CGRect(x:92,y:y+2,width:96,height:4),strokeOnly:true,
+            vertices:[CGPoint(x:94,y:y+4),CGPoint(x:186,y:y+4)]))
+    }
+    var page = PageContent(number:1,bounds:CGRect(x:0,y:0,width:300,height:300),lines:rows,graphics:[])
+    #expect(LeaderRows.joined(page,paints:paints) == rows)
+    // The same leader rows are valid once the unrelated text is outside their corridor.
+    for index in [1,4,7] { page.lines[index].rect.origin.x = 230 }
+    #expect(LeaderRows.joined(page,paints:paints).count == 6)
+}
+
+@Test func paintedLeaderComparisonExhaustionLeavesTheWholePageUnchanged() throws {
+    let (page, paints) = try tocSource(19)
+    #expect(LeaderRows.joined(page,paints:paints).count < page.lines.count)
+    // Even after some pairs have been found, exhaustion cannot return a partial page.
+    for limit in [0,100,1_000] {
+        #expect(LeaderRows.joined(page,paints:paints,comparisonLimit:limit) == page.lines)
+    }
+    // These individually admitted input counts previously needed 80 million rule comparisons.
+    let labels = (0..<100).map { _ in
+        TextLine(text:"A long native row label",rect:CGRect(x:20,y:200,width:70,height:12),fontSize:10)
+    }
+    let numbers = (0..<100).map { _ in
+        TextLine(text:"A1-1",rect:CGRect(x:190,y:200,width:25,height:12),fontSize:10)
+    }
+    let marks = (0..<8_000).map { _ in
+        GraphicsReader.Paint(rect:CGRect(x:92,y:202,width:40,height:4),strokeOnly:true,
+            vertices:[CGPoint(x:94,y:204),CGPoint(x:130,y:204)])
+    }
+    let dense = PageContent(number:1,bounds:page.bounds,lines:labels+numbers,graphics:[])
+    #expect(LeaderRows.maximumComparisons == 2_000_000)
+    #expect(LeaderRows.joined(dense,paints:marks) == dense.lines)
+}

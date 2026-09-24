@@ -4,7 +4,7 @@ import Testing
 import ZIPFoundation
 @testable import PDFReflowLib
 
-private func fedPanelBlocks(_ number: Int) throws -> [ReflowBlock] {
+private func fedPanelBlocks(_ number: Int, sourceTags: Bool = true) throws -> [ReflowBlock] {
     let fixture = try SourceLayoutFixture.load("fed-panel-\(number)")
     var page = fixture.content()
     page.lines = page.lines.map { line in
@@ -14,6 +14,21 @@ private func fedPanelBlocks(_ number: Int) throws -> [ReflowBlock] {
     }
     page = TextBackdrop.compose(page, graphics: .init(regions: page.graphics, unsupported: false,
         images: page.pictures, paints: fixture.paints))
+    if sourceTags {
+        struct CapturedTags: Decodable {
+            struct Row: Decodable { var text: String; var rect: [Double]; var structure: TextStructure }
+            var retainedStructures: [Row]?
+        }
+        let capture = try JSONDecoder().decode(CapturedTags.self,
+            from: Data(contentsOf: fixtureURL("fed-panel-\(number)-layout.json")))
+        for row in capture.retainedStructures ?? [] {
+            let index = try #require(page.lines.firstIndex { line in
+                line.text == row.text && abs(line.rect.minX - row.rect[0]) < 0.001
+                    && abs(line.rect.minY - row.rect[1]) < 0.001
+            }, "Missing captured tagged line: \(row.text)")
+            page.lines[index].structure = row.structure
+        }
+    }
     let crops = LayoutReconstructor.graphicsWithLabels(page)
     var warnings: [ConversionWarning] = []
     return LayoutReconstructor.blocks(page: page, images: crops.enumerated().map { ($0.element,"image-\($0.offset)") },
@@ -33,7 +48,7 @@ private func fedPanelBlocks(_ number: Int) throws -> [ReflowBlock] {
     #expect(blocks.contains { $0.text.lowercased().filter(\.isLetter).contains("theboardsubmitsthemonetarypolicyreporttocongresssemiannually") })
 }
 
-@Test(arguments: [19,34,35,36,37,54,56,60,63,71,73,74,78,79,80,94,95])
+@Test(arguments: [19,34,35,36,37,54,56,60,63,71,73,74,78,79,80,84,94,95])
 func recoveredFedPanelsKeepPreviouslyCompleteParagraphs(number: Int) throws {
     struct Expected: Decodable { var baselineParagraphs: [String] }
     let expected = try JSONDecoder().decode(Expected.self,
@@ -108,8 +123,8 @@ func nativePanelsDoNotOverrideTaggedOrder(tagPanel: Bool) {
     let structured = LayoutReconstructor.structuredOrder(elements, page: 1, warnings: &warnings)
     if tagPanel { #expect(structured.compactMap { $0.line?.structure?.group } == [1, 1, 1, 2, 2, 2]) }
     let actual = NativeTextPanels.ordered(structured, panels: [panel], body: 10, rightToLeft: false)
-    #expect(actual.allSatisfy { $0.nativePanel == nil })
-    #expect(actual.compactMap(\.line) == structured.compactMap(\.line))
+    if tagPanel { #expect(actual.allSatisfy { $0.nativePanel == nil }) }
+    #expect(actual.flatMap { $0.nativePanel ?? [$0.line].compactMap { $0 } } == structured.compactMap(\.line))
     #expect(warnings.isEmpty)
 }
 
@@ -157,4 +172,75 @@ func nativePanelsDoNotOverrideTaggedOrder(tagPanel: Bool) {
         #expect(chapter.contains("<h\(level) id=\"\(id)\">" + EPUBTextEncoder.inline(text) + "</h\(level)>"))
         #expect(nav.components(separatedBy: "chapter-1.xhtml#\(id)").count - 1 == 1)
     }
+}
+
+
+@Test func leftFedPanelFollowsTheWiderContinuationOfItsAdjacentParagraph() throws {
+    let blocks = try fedPanelBlocks(84, sourceTags: false)
+    let paragraph = try #require(blocks.firstIndex { $0.text.hasPrefix("The Federal Reserve has established") })
+    #expect(blocks[paragraph].text.contains("maintain a minimum liquidity buffer"))
+    #expect(blocks[paragraph].text.hasSuffix("a firm to monitor its liquidity risk."))
+    let panel = try #require(blocks.firstIndex { $0.text.contains("How do capital and liquidity differ?") })
+    let following = try #require(blocks.firstIndex { $0.text.hasPrefix("The federal banking agencies established") })
+    #expect(paragraph < panel && panel < following)
+}
+
+@Test(arguments: ["continued", "uppercase", "sentence", "detached", "remoteEdge", "imageBarrier", "textBarrier"])
+func nativePanelWidensOnlyAcrossAnUninterruptedBrokenWord(variant: String) throws {
+    let panel = CGRect(x: 10, y: 140, width: 90, height: 60)
+    func row(_ text: String, x: CGFloat, y: CGFloat, width: CGFloat, size: CGFloat = 10) -> LayoutReconstructor.Element {
+        let line = TextLine(text: text, rect: CGRect(x: x, y: y, width: width, height: size), fontSize: size)
+        return .init(rect: line.rect, line: line)
+    }
+    var elements = [
+        row("The adjacent paragraph contains several complete words.", x: 120, y: 170, width: 100),
+        row("It continues at the same type size and leading.", x: 120, y: 154, width: 100),
+    ]
+    for n in 0..<3 {
+        elements.append(row("This sidebar has its own complete explanation and separate reading order.",
+            x: 15, y: 182 - CGFloat(n) * 12, width: 80, size: 8))
+    }
+    elements.append(row(variant == "sentence" ? "The paragraph ends here." : "This sentence ends in mini-",
+        x: 120, y: 138, width: 100))
+    if variant == "imageBarrier" {
+        elements.append(.init(rect: CGRect(x: 230, y: 128, width: 20, height: 10), image: "separate-figure"))
+    }
+    if variant == "textBarrier" {
+        elements.append(row("Unrelated text retains its position.", x: 250, y: 300, width: 180))
+    }
+    for n in 0..<3 {
+        elements.append(row(n == 0 ? (variant == "uppercase" ? "Another paragraph starts here." : "mum and continues below the sidebar.")
+            : "The wider paragraph continues to its own final row.",
+            x: variant == "remoteEdge" ? 30 : 10,
+            y: 122 - CGFloat(n) * 16 - (variant == "detached" ? 16 : 0), width: 210))
+    }
+    let actual = NativeTextPanels.ordered(elements, panels: [panel], body: 10, rightToLeft: false)
+    let sidebar = try #require(actual.firstIndex { $0.nativePanel != nil })
+    let wider = try #require(actual.firstIndex { $0.line?.text == "The wider paragraph continues to its own final row." })
+    #expect((sidebar > wider) == (variant == "continued"))
+    #expect(actual.compactMap(\.panelContinuationFrom).count == (variant == "continued" ? 1 : 0))
+    #expect(actual.compactMap(\.line).count + actual.compactMap(\.nativePanel).flatMap { $0 }.count == (variant == "textBarrier" ? 10 : 9))
+    #expect(actual.compactMap(\.image).count == (variant == "imageBarrier" ? 1 : 0))
+}
+
+
+@Test func unrelatedTaggedTextDoesNotDisableNativePanelParagraphs() throws {
+    let withoutTag = try fedPanelBlocks(35, sourceTags: false)
+    let withTag = try fedPanelBlocks(35)
+    for phrase in ["Committee policy statements.", "Regular congressional testimony", "Collecting information from the public."] {
+        let expected = try #require(withoutTag.first { $0.text.hasPrefix(phrase) })
+        #expect(withTag.contains { $0.text == expected.text })
+    }
+}
+
+
+@Test func retainedSourceTagsKeepFedPanelOutsideItsCompleteParagraph() throws {
+    let blocks = try fedPanelBlocks(84)
+    let paragraph = try #require(blocks.first { $0.text.hasPrefix("The Federal Reserve has established") })
+    #expect(paragraph.text.contains("maintain a minimum liquidity buffer"))
+    #expect(paragraph.text.hasSuffix("a firm to monitor its liquidity risk."))
+    #expect(!paragraph.text.contains("How do capital"))
+    let panel = try #require(blocks.firstIndex { $0.text.contains("How do capital and liquidity differ?") })
+    let following = try #require(blocks.firstIndex { $0.text.hasPrefix("The federal banking agencies established") })
+    #expect(panel < following)
 }

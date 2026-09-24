@@ -7,6 +7,11 @@ enum ColumnContinuation {
                       body: CGFloat) -> [Int: Int] {
         guard elements.count == roles.count else { return [:] }
         var result: [Int: Int] = [:]
+        func continuesAsProse(_ role: LineRole?) -> Bool {
+            if role == .prose { return true }
+            if case .markedLine(let column) = role { return !column.setsAList }
+            return false
+        }
         for start in elements.indices {
             // No continuation plan can cross prose before its first figure. Reject this
             // common case before searching column geometry on a text-heavy page.
@@ -14,10 +19,11 @@ enum ColumnContinuation {
                   roles[start] == .prose, let last = elements[start].line,
                   !LayoutReconstructor.isCaption(last.text), last.turn == .upright,
                   last.rect.width >= body * 12,
-                  last.text.last.map({ $0.isLetter || $0 == "-" }) == true else { continue }
+                  (last.text.last.map({ $0.isLetter || $0 == "-" }) == true
+                   || last.text.hasSuffix(" St.")) else { continue }
             // A filled column, not an isolated label: two preceding lines state its measure.
             let above = elements.indices[..<start].filter { index in
-                guard roles[index] == .prose, let line = elements[index].line,
+                guard continuesAsProse(roles[index]), let line = elements[index].line,
                       !LayoutReconstructor.isCaption(line.text) else { return false }
                 return line.hasSize(last.fontSize) && abs(line.rect.minX - last.rect.minX) < body * 0.5
                     && abs(line.rect.maxX - last.rect.maxX) < body * 0.5
@@ -54,6 +60,7 @@ enum ColumnContinuation {
                   let next = elements[index].line, next.turn == .upright,
                   next.hasSize(last.fontSize), !LayoutReconstructor.isCaption(next.text),
                   next.text.first?.isLetter == true,
+                  (!last.text.hasSuffix(" St.") || next.text.first?.isUppercase == true),
                   next.rect.minX > last.rect.maxX + body * 0.5,
                   next.rect.minY > last.rect.maxY + body,
                   abs(next.rect.width - last.rect.width) < body,

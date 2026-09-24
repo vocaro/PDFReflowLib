@@ -18,6 +18,20 @@ func faaSafetyTeamParagraphContinuesPastItsFigure() throws {
     #expect(blocks.contains { $0.text.contains("Figure 1-13. Atlanta Flight Standards District Office") })
 }
 
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/171"))
+func faaSaintPetersburgParagraphContinuesPastItsFigure() throws {
+    let fixture = try SourceLayoutFixture.load("faa-18")
+    #expect(fixture.sourceSHA256 == "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7")
+    let page = fixture.content()
+    var warnings: [ConversionWarning] = []
+    let images = LayoutReconstructor.graphicsWithLabels(page).enumerated().map { ($0.element, "figure-\($0.offset)") }
+    let blocks = LayoutReconstructor.blocks(page: page, images: images,
+        vocabulary: LayoutReconstructor.vocabulary(in: [page]), warnings: &warnings)
+    #expect(blocks.contains { $0.text.contains("from St. Petersburg across the waterway to Tampa") },
+            Comment(rawValue: blocks.map(\.text).joined(separator: "\n")))
+    #expect(blocks.contains { $0.text.contains("Figure 1-3. First flight by the Wright brothers.") })
+}
+
 @Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/160"))
 func resumingAParagraphPreservesTheFigureCaptionAndStyles() throws {
     var assembler = BlockAssembler(page: 1, body: 10, hyphens: HyphenContext())
@@ -56,6 +70,12 @@ func onlyAnOpenProseColumnCanResumeAcrossItsFigure() {
     var ended = original
     ended[2] = line("This sentence ended.", y: 262)
     #expect(ColumnContinuation.pairs(ended, roles: roles, body: 10).isEmpty)
+    var saint = original
+    saint[2] = line("The flight route goes from St.", y: 262)
+    saint[5] = line("Petersburg across the waterway", x: 240, y: 700)
+    #expect(ColumnContinuation.pairs(saint, roles: roles, body: 10) == [5: 2])
+    saint[5] = line("another sentence begins here", x: 240, y: 700)
+    #expect(ColumnContinuation.pairs(saint, roles: roles, body: 10).isEmpty)
     var headings = roles
     headings[5] = .heading
     #expect(ColumnContinuation.pairs(original, roles: headings, body: 10).isEmpty)

@@ -7,12 +7,13 @@ import Foundation
 /// The evidence is the content stream, not PDFKit's lines: PDFKit joins an exercise's label, a
 /// fraction's numerator and the operator beside it into one line (`59) 3`, `5 + 5`), while every
 /// glyph has a show with a baseline, a size and an advance (`NativeSpacingReader`), and every
-/// fraction bar is a painted rule (`GraphicsReader`, padded two points). Three structures are
+/// fraction bar is a painted rule (`GraphicsReader`, padded two points). These structures are
 /// proven and nothing else:
 ///
 /// - a **bar fraction**: a thin rule with one row of glyphs just above it and one just below,
 ///   each centred on the bar, the wider spanning it, the bar on the maths axis of its row, and
-///   no other glyph or rule touching the stack (so a stacked or nested fraction is refused);
+///   no other glyph or rule touching that single stack;
+/// - a **nested fraction**: one wider bar separating two inner bar fractions on each side;
 /// - a **square root**: a radical glyph joined to a painted vinculum over one proven expression;
 /// - a **superscript**: a glyph smaller than the row's type, raised by a fifth to three quarters
 ///   of it, set straight after its base (a number, a variable, a bracketed group);
@@ -106,6 +107,9 @@ enum MathRecognizer {
         // rule, as padded by GraphicsReader.
         let bars = graphics.filter { $0.intersects(crop) }
         guard bars.allSatisfy({ crop.insetBy(dx: -1, dy: -1).contains($0) && $0.height <= 5 && $0.width >= 6 }) else { return nil }
+        if let nested = nestedFraction(in: crop, glyphs: glyphs, bars: bars, body: body) {
+            return [nested]
+        }
         var claimed = Set<Int>()
         var items: [Item] = []
         for bar in bars {

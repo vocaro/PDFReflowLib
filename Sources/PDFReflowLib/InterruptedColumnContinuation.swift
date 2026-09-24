@@ -43,7 +43,7 @@ enum InterruptedColumnContinuation {
                 if prose(next) != nil { break }
                 if item.image != nil || item.quotation != nil { next += 1; continue }
                 if let caption = item.caption, !caption.isEmpty,
-                   caption.allSatisfy({ $0.turn == .upright && $0.fontSize < body * 0.85 }) {
+                   caption.allSatisfy({ $0.turn == .upright && $0.fontSize < body }) {
                     next += 1; continue
                 }
                 // Smaller credit/caption lines are considered only provisionally; below they
@@ -77,7 +77,9 @@ enum InterruptedColumnContinuation {
                         && item.rect.width <= opening.rect.width * 2
                         && item.rect.maxY >= opening.rect.maxY - body
                 }
-                let caption = item.caption ?? item.line.map { [$0] } ?? []
+                // A grouped caption already proves its wrapped rows; its opening, rather
+                // than the final row of a long caption, establishes adjacency to the figure.
+                let caption = item.caption.map { Array($0.prefix(1)) } ?? item.line.map { [$0] } ?? []
                 return !caption.isEmpty && caption.allSatisfy { line in
                     pictures.contains { picture in
                         line.rect.minX >= picture.minX - body
@@ -87,7 +89,8 @@ enum InterruptedColumnContinuation {
                     }
                 }
             }) else { continue }
-            // The opening is flush with two body rows below it, at the top of that measure.
+            // The opening is flush with two body rows below it, or one short terminal
+            // row completing this paragraph, at the top of that measure.
             // An indented new paragraph, an isolated graphic label or intervening prose fails.
             let followers = elements.indices.dropFirst(next + 1).compactMap { index -> TextLine? in
                 guard let line = prose(index), line.hasSize(opening.fontSize),
@@ -97,7 +100,9 @@ enum InterruptedColumnContinuation {
                       opening.rect.minY - line.rect.minY <= body * 3 else { return nil }
                 return line
             }
-            guard followers.count >= 2,
+            let shortEnding = followers.count == 1 && followers[0].rect.width < opening.rect.width * 0.75
+                && followers[0].text.last.map({ ".!?".contains($0) }) == true
+            guard followers.count >= 2 || shortEnding,
                   !elements.indices.contains(where: { index in
                       guard let line = prose(index) else { return false }
                       return abs(line.rect.minX - opening.rect.minX) < body * 0.25

@@ -32,4 +32,29 @@ enum SlideDeck {
            bottom - highest < first.rect.height * 0.5 { return [] }
         return title
     }
+
+    /// A note keyed by a raised marker belongs after the slide's diagram, even when it is
+    /// printed at the lower left and the spatial sort reaches it before boxes to its right
+    /// (Earthdata slides 19–20, #175). Only a standalone block that reproduces that source line
+    /// moves; a paragraph merely containing the same words stays in its source order.
+    static func notesLast(_ blocks: [ReflowBlock], on page: PageContent) -> [ReflowBlock] {
+        guard !title(in: page).isEmpty else { return blocks }
+        let notes = Set(page.lines.compactMap { line -> String? in
+            guard case let .text(value, style)? = line.content.elements.first,
+                  style.contains(.superscript), line.content.elements.count > 1 else { return nil }
+            let printed = value.trimmingCharacters(in: .whitespaces.union(.controlCharacters))
+            guard (1...3).contains(printed.count), let number = Int(printed), number > 0,
+                  page.lines.contains(where: { other in
+                      other != line && other.content.elements.contains { element in
+                          guard case let .text(mark, markStyle) = element,
+                                markStyle.contains(.superscript) else { return false }
+                          return Int(mark.trimmingCharacters(in: .whitespaces.union(.controlCharacters))) == number
+                      }
+                  }) else { return nil }
+            return line.text
+        })
+        guard !notes.isEmpty else { return blocks }
+        let moved = blocks.filter { notes.contains($0.text) }
+        return moved.isEmpty ? blocks : blocks.filter { !notes.contains($0.text) } + moved
+    }
 }

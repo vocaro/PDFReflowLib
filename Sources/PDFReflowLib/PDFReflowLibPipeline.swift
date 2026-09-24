@@ -204,6 +204,9 @@ enum PDFReflowLibPipeline {
                     }
                     pageBlocks = LayoutReconstructor.blocks(page: content, images: images, context: resolved.context,
                                                             warnings: &warnings)
+                    if resolved.context.slideDeck {
+                        pageBlocks = SlideDeck.notesLast(pageBlocks, on: content)
+                    }
                     for index in pageBlocks.indices {
                         guard case var .image(image) = pageBlocks[index].content,
                               let expressions = imageMath[image.assetID] else { continue }

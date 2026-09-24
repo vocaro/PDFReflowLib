@@ -2,6 +2,20 @@ import Foundation
 import Testing
 @testable import PDFReflowLib
 
+private func styledSlide(_ name: String) throws -> PageContent {
+    let fixture = try SourceLayoutFixture.load(name)
+    var page = fixture.content()
+    for index in page.lines.indices {
+        guard let source = fixture.attributedLines.first(where: { $0.text == page.lines[index].text }),
+              source.text.contains("Analytics Optimized Data Store") || source.text == "AODS1"
+        else { continue }
+        let line = page.lines[index]
+        page.lines[index] = TextLine(content: NativeTextReader.inlineText(from: source.attributedString()),
+                                     rect: line.rect, fontSize: line.fontSize, monospaced: line.monospaced)
+    }
+    return page
+}
+
 @Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/165"))
 func sourceSlideTitlesFollowTheTopBand() throws {
     for (fixture, title) in [
@@ -58,7 +72,7 @@ func exactSlideOverprintsLoseOnlyTheirSecondImpression() throws {
 
 @Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/165"))
 func repeatedSlideNotesStayOnEachSourcePage() throws {
-    var pages = try (16...18).map { try SourceLayoutFixture.load("earthdata-\($0)").content() }
+    var pages = try (16...18).map { try styledSlide("earthdata-\($0)") }
     _ = FurnitureDetector.strip(&pages)
     for page in pages {
         #expect(page.lines.contains { $0.text == "1 Analytics Optimized Data Store" })
@@ -94,4 +108,27 @@ func diagramLabelsStayBelowTheirSlideTitle() throws {
         return nil
     }
     #expect(headings == ["Open Pipeline Provides Outputs at Different Stages Appropriate for a Diverse User Base"])
+}
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/175"))
+func lowerLeftSlideNotesReadAfterTheirDiagrams() throws {
+    for number in [19, 20] {
+        let page = try styledSlide("earthdata-\(number)")
+        var warnings: [ConversionWarning] = []
+        let blocks = LayoutReconstructor.blocks(page: page, images: [],
+            context: .init(slideDeck: true), warnings: &warnings)
+        let baselineNote = try #require(blocks.firstIndex { $0.text.contains("Analytics Optimized Data Store") })
+        let baselineDiagram = try #require(blocks.lastIndex {
+            $0.text.contains("Interpretation") || $0.text.contains("Exploration")
+        })
+        #expect(baselineNote < baselineDiagram)
+        let ordered = SlideDeck.notesLast(blocks, on: page)
+        let note = try #require(ordered.firstIndex { $0.text.contains("Analytics Optimized Data Store") })
+        let diagram = try #require(ordered.lastIndex {
+            $0.text.contains("Interpretation") || $0.text.contains("Exploration")
+        })
+        #expect(note > diagram)
+        #expect(ordered.filter { !$0.text.contains("Analytics Optimized Data Store") }.map(\.text)
+            == blocks.filter { !$0.text.contains("Analytics Optimized Data Store") }.map(\.text))
+    }
 }

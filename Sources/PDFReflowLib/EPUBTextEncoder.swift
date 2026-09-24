@@ -216,8 +216,9 @@ enum EPUBTextEncoder {
             throw ReflowDocument.ValidationError.missingAsset(expression.fallbackAssetID)
         }
         let label = expression.label.map { xml($0) + " " } ?? ""
+        let note = expression.note.map { " <span class=\"math-note\">\(xml($0))</span>" } ?? ""
         return "<p class=\"math\">\(label)<math xmlns=\"\(mathNamespace)\" alttext=\"\(xml(expression.linearText))\" "
-            + "altimg=\"\(xml(path))\">\(mathML(expression.node))</math></p>"
+            + "altimg=\"\(xml(path))\">\(mathML(expression.node))</math>\(note)</p>"
     }
 
     static func mathML(_ node: MathExpression.Node) -> String {

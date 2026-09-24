@@ -17,6 +17,7 @@ struct MathExpression: Sendable, Equatable {
     var label: String?
     var node: Node
     var fallbackAssetID: String
+    var note: String? = nil
 
     var linearText: String { Self.linear(node) }
 

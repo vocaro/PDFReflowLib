@@ -10,7 +10,8 @@ func mathExpressionPackagesWithADeclaredFallback() async throws {
     let crop = directory.appendingPathComponent("row.png")
     try Data(base64Encoded: "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAusB9Wl8Vx8AAAAASUVORK5CYII=")!.write(to: crop)
     let expression = MathExpression(label: "1)", node: .squareRoot(.fraction(
-        .number("1"), .subscript(.identifier("x"), .number("2")))), fallbackAssetID: "row")
+        .number("1"), .subscript(.identifier("x"), .number("2")))), fallbackAssetID: "row",
+        note: "Our Solution")
     let image = ReflowBlock.Image(assetID: "row", alternativeText: "formula", caption: "", link: nil,
                                   math: [expression])
     let book = ReflowDocument(metadata: .init(title: "Math", language: "en"),
@@ -24,6 +25,7 @@ func mathExpressionPackagesWithADeclaredFallback() async throws {
     #expect(chapter.contains("<msqrt><mfrac><mn>1</mn><msub><mi>x</mi><mn>2</mn></msub></mfrac></msqrt>"))
     #expect(chapter.contains("altimg=\"images/image-1.png\""))
     #expect(chapter.contains("alttext=\"√(1/(x_2))\""))
+    #expect(chapter.contains("</math> <span class=\"math-note\">Our Solution</span></p>"))
     #expect(package.contains("href=\"chapter-1.xhtml\" media-type=\"application/xhtml+xml\" properties=\"mathml\""))
 }
 

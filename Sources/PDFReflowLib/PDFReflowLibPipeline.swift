@@ -179,8 +179,12 @@ enum PDFReflowLibPipeline {
                             pageGlyphs = glyphs
                         }
                         let body = LayoutReconstructor.bodySize(content.lines)
-                        let wholeRows = glyphs.flatMap { MathRecognizer.rows(in: region, page: $0,
-                            graphics: content.graphics, lines: content.lines, body: body) }
+                        let wholeRows = glyphs.flatMap { glyphs in
+                            MathRecognizer.rows(in: region, page: glyphs, graphics: content.graphics,
+                                                lines: content.lines, body: body)
+                                ?? MathRecognizer.workedRows(in: region, page: glyphs,
+                                    graphics: content.graphics, lines: content.lines, body: body)
+                        }
                         let slices = wholeRows == nil ? glyphs.flatMap {
                             MathRecognizer.radicalExerciseSlices(in: region, page: $0,
                                 graphics: content.graphics, lines: content.lines, body: body)
@@ -193,7 +197,8 @@ enum PDFReflowLibPipeline {
                                     let expressions = try rows.map { row in
                                         MathExpression(label: row.label, node: row.node,
                                                        fallbackAssetID: try assets.save(page: page, rect: row.rect,
-                                                           drawnFromImage: pagesDrawnFromImage.contains(i)))
+                                                           drawnFromImage: pagesDrawnFromImage.contains(i)),
+                                                       note: row.note)
                                     }
                                     let id = expressions[0].fallbackAssetID
                                     images.append((rect, id))

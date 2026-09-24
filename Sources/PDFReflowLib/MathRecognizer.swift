@@ -53,6 +53,7 @@ enum MathRecognizer {
         var label: String?
         var node: MathExpression.Node
         var rect: CGRect
+        var note: String? = nil
     }
 
     /// The page's glyphs from its content stream. Only the TeX font families qualified by the

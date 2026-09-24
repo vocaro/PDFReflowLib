@@ -73,8 +73,17 @@ extension MathRecognizer {
             let row = sourceRows[index]
             guard !row.math.isEmpty, row.note.count >= 5,
                   let note = sourceNote(row.note, in: lines, crop: crop) else { return nil }
-            let bounds = (row.math.map(\.box) + grouped[index]).reduce(CGRect.null) { $0.union($1) }
+            var bounds = (row.math.map(\.box) + grouped[index]).reduce(CGRect.null) { $0.union($1) }
                 .insetBy(dx: -2, dy: -2)
+            if index > 0 {
+                // A radical's type box rises into the preceding printed row even though its
+                // ink does not. Keep the fallback crop just above this row's painted vinculum;
+                // otherwise altimg shows the previous equation along its top edge (p289).
+                let barTop = grouped[index].map(\.maxY).max()!
+                let cropTop = min(bounds.maxY, barTop + body * 0.15)
+                guard cropTop > bounds.minY else { return nil }
+                bounds.size.height = cropTop - bounds.minY
+            }
             let mathGlyphs = row.math.sorted { $0.minX < $1.minX }
             let synthetic = TextLine(text: mathGlyphs.map(\.text).joined(), rect: bounds, fontSize: body)
             guard let parsed = rows(in: bounds, page: .init(glyphs: mathGlyphs),

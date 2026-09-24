@@ -10,7 +10,8 @@ func wallaceWorkedRootsKeepTheSourceNotesBesideEachMathRow() throws {
     #expect(fixture.page == 289)
     let source = URL(fileURLWithPath: "corpus/cache/Beginning_and_Intermediate_Algebra.pdf")
     let document = try #require(PDFDocument(url: source))
-    let reference = try #require(document.page(at: 288)?.pageRef)
+    let page = try #require(document.page(at: 288))
+    let reference = try #require(page.pageRef)
     let glyphs = try NativeTextReader.withExtractionLock { MathRecognizer.glyphs(on: reference) }
     let content = fixture.content()
     let body = LayoutReconstructor.bodySize(content.lines)
@@ -41,6 +42,21 @@ func wallaceWorkedRootsKeepTheSourceNotesBesideEachMathRow() throws {
     let middle = try #require(crops.first { 330 < $0.minY && $0.minY < 345 })
     let intermediate = try #require(MathRecognizer.workedRows(in: middle, page: glyphs,
                                       graphics: content.graphics, lines: content.lines, body: body))
+    var rasterOptions = ConversionOptions()
+    rasterOptions.rasterDPI = 144
+    for row in intermediate.dropFirst() {
+        var inkRows: [Int] = []
+        _ = try PageRasterizer.image(page: page, rect: row.rect, options: rasterOptions) {
+            bytes, width, height, stride in
+            for y in 0..<height where (0..<width).contains(where: { x in
+                let offset = y * stride + x * 4
+                return bytes[offset] < 120 && bytes[offset + 1] < 120 && bytes[offset + 2] < 120
+            }) { inkRows.append(y) }
+        }
+        // Source ink leaves a blank band above each equation. A taller fallback crop
+        // used to bring the preceding row's ink into its first pixels.
+        #expect(inkRows.first.map { $0 >= 5 } == true)
+    }
     #expect(intermediate.map(\.node) == [
         .row([.number("5"), .squareRoot(.number("63"))]),
         .row([.number("5"), .squareRoot(.row([.number("9"), .operator("⋅"), .number("7")]))]),

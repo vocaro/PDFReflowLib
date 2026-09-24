@@ -74,14 +74,21 @@ leaves only Fed 13/46's body sizing failures; a separate follow-up owns that gua
 integrated corpus run remains required before closing #191.
 
 
-The independent final integration audit covered every NOAA and Fed page. It found additional
-NOAA losses not covered by the initial content contract. Named ICCBased numeric colors had
-been mistaken for pattern colors: `/CS0 cs 1 1 1 scn` was the report's white knockout fill.
-The reader now resolves bounded device/ICCBased color resources, preserves color state across
-`q`/`Q` and Forms, and keeps Pattern/unknown colors and nonstandard-white evidence conservative.
-Source paint fixtures were recaptured with the corrected reader. Separately, adjacent collinear
-underline fragments are joined before table-header analysis: NOAA 962's two-part link underline
-had become fictitious table columns and cropped a complete paragraph. Its source control now
-retains the paragraph without a figure. Further integration work remains for decorative-picture
-ownership and independent Fed sidebar reading units; the audit does not treat a conserved letter
-bag as proof that paragraph order is correct.
+The independent integration audit covered every NOAA and Fed page and found native text
+losses outside the initial contract. Named ICCBased numeric colors are now recognized as flat
+paint, with bounded resource lookup and color state restored across `q`/`Q` and Forms. Their
+component count and Alternate space do not prove actual white without evaluating the embedded
+profile, so ICC paint remains visible even for nominally white tuples. Pattern and unknown
+spaces remain conservative. The intermediate attempt to omit nominal ICC white was rejected:
+it shrank the report's aggregate artwork bounds and newly assigned native text to local crops.
+
+An aggregate page-sized graphic retains the established page-reference/native-text behavior
+unless every independently page-sized paint is a proved flat ground or background shading.
+Audited NOAA pages 5, 25, 26, 34, 40, 41, 49, 52, 57, 62 and 76 had aggregate coverage above
+75% but no individually page-sized paint. USDA 20–21 have independently proved background
+shading and remain eligible; the other magazine/TechPort source controls have smaller bounds.
+
+Adjacent collinear underline fragments are joined before table-header analysis: NOAA 962's
+two-part link underline had become fictitious table columns and cropped a complete paragraph.
+The same correction preserves IRS Chinese pages 4 and 16. Source controls retain the prose
+without inventing figures. Final integrated corpus results are recorded separately.

@@ -74,7 +74,7 @@ enum PageDiagnosis {
     ///
     /// The picture is still cropped and shown; what changes is only that its prose also reflows.
     static func proseOverPictures(lines: [TextLine], pictures: [CGRect], crops: [CGRect],
-                                  bounds: CGRect, language: String) -> Set<Int> {
+                                  bounds: CGRect, language: String, nativeTypography: Bool = false) -> Set<Int> {
         guard EnglishText.isDeclared(language), !pictures.isEmpty, !crops.isEmpty else { return [] }
         // The lines a crop takes are read once; a page of many pictures then costs one pass over
         // that much smaller set each.
@@ -103,8 +103,26 @@ enum PageDiagnosis {
                 // texts at one rectangle are both the page's.
                 guard run.contains(where: { $0.contains(where: eligible.contains) }) else { continue }
                 for row in run {
-                    freed.formUnion(row.enumerated().filter { $0.offset == 0 || lines[$0.element].text != lines[row[0]].text }
-                        .map(\.element))
+                    freed.formUnion(distinctRow(row, in: lines))
+                }
+                // A native paragraph's immediately preceding, aligned larger headings
+                // belong to that paragraph even when the same decorative picture backs them.
+                // Keep this separate from OCR or synthetic sizes, which cannot prove a heading.
+                if nativeTypography, let firstRow = run.first, let first = firstRow.first {
+                    var next = lines[first]
+                    for _ in 0..<2 {
+                        let candidates = inside.filter { index in
+                            let line = lines[index], gap = line.rect.minY - next.rect.maxY
+                            return line.fontSize >= next.fontSize * 1.15
+                                && line.fontSize <= next.fontSize * 2
+                                && abs(line.rect.minX - next.rect.minX) <= next.fontSize * 0.25
+                                && gap >= -1 && gap <= next.fontSize * 1.6
+                                && line.text.split(whereSeparator: \.isWhitespace).count >= 2
+                                && line.text.count <= 120 && !line.monospaced
+                        }
+                        guard let heading = candidates.min(by: { lines[$0].rect.minY < lines[$1].rect.minY }) else { break }
+                        freed.insert(heading); next = lines[heading]
+                    }
                 }
             }
         }
@@ -123,6 +141,19 @@ enum PageDiagnosis {
                 abs($0.rect.minY - line.rect.minY) <= 0.5 && abs($0.rect.minX - line.rect.minX) <= 0.5
                     && abs($0.rect.width - line.rect.width) <= 0.5
             }) {
+                rows[row].indices.append(index)
+            } else if let row = rows.firstIndex(where: {
+                // PDFKit may start a second selection at a raised reference number and
+                // report that number's size for the normal prose following it. Adjacent
+                // pieces with the same row bounds still form one measured prose row.
+                let overlap = min($0.rect.maxY, line.rect.maxY) - max($0.rect.minY, line.rect.minY)
+                let gap = max($0.rect.minX, line.rect.minX) - min($0.rect.maxX, line.rect.maxX)
+                return min($0.size, line.fontSize) <= max($0.size, line.fontSize) * 0.75
+                    && overlap >= max($0.rect.height, line.rect.height) * 0.8
+                    && gap >= -0.5 && gap <= max($0.size, line.fontSize) * 0.5
+            }) {
+                rows[row].rect = rows[row].rect.union(line.rect)
+                rows[row].size = max(rows[row].size, line.fontSize)
                 rows[row].indices.append(index)
             } else {
                 rows.append((line.rect, line.fontSize, [index]))
@@ -152,6 +183,21 @@ enum PageDiagnosis {
         return runs.filter { $0.count >= minimumProseLines }.map { $0.map(\.indices) }
     }
 
+    /// Duplicate knockout paint is one text run; equal words at adjacent positions are not.
+    private static func distinctRow(_ row: [Int], in lines: [TextLine]) -> [Int] {
+        var result: [Int] = []
+        for index in row.sorted(by: { lines[$0].rect.minX < lines[$1].rect.minX }) {
+            let line = lines[index]
+            if !result.contains(where: {
+                let other = lines[$0]
+                return other.text == line.text && abs(other.rect.minX - line.rect.minX) <= 0.5
+                    && abs(other.rect.minY - line.rect.minY) <= 0.5
+                    && abs(other.rect.width - line.rect.width) <= 0.5
+            }) { result.append(index) }
+        }
+        return result
+    }
+
     /// Whether a run's rows read as the book's prose rather than a picture's lettering: every row
     /// but the last fills the measure, the run holds enough words, and its words read as English.
     ///
@@ -164,11 +210,12 @@ enum PageDiagnosis {
     /// 18 judged words as English — a majority, on the strength of stray `I`s and `a`s — but 46%
     /// of their tokens carry digits.
     private static func readsAsProse(_ run: [[Int]], in lines: [TextLine]) -> Bool {
-        let rows = run.map { lines[$0[0]] }
-        let measure = rows.map(\.rect.width).max() ?? 0
-        guard measure > 0, rows.dropLast().allSatisfy({ $0.rect.width >= measure * minimumProseMeasure }),
-              rows.allSatisfy({ !$0.monospaced }) else { return false }
-        let text = rows.map(\.text).joined(separator: " ")
+        let rows = run.map { distinctRow($0, in: lines).map { lines[$0] } }
+        let bounds = rows.map { $0.reduce(CGRect.null) { $0.union($1.rect) } }
+        let measure = bounds.map(\.width).max() ?? 0
+        guard measure > 0, bounds.dropLast().allSatisfy({ $0.width >= measure * minimumProseMeasure }),
+              rows.joined().allSatisfy({ !$0.monospaced }) else { return false }
+        let text = rows.map { $0.map(\.text).joined(separator: " ") }.joined(separator: " ")
         guard text.split(whereSeparator: { $0.isWhitespace || $0 == "-" }).count >= minimumProseWords,
               let counts = EnglishText.wordCounts(text), counts.judged > 0,
               Double(counts.numericTokens) < Double(counts.tokens) * TextLayerPlausibility.maximumNumericShare

@@ -79,6 +79,14 @@ enum TextBackdrop {
 
     static func compose(_ original: PageContent, graphics: GraphicsReader.Result) -> PageContent {
         guard !graphics.unsupported, !graphics.hasInvisibleText, !graphics.paints.isEmpty else { return original }
+        // Aggregate artwork spanning a page already has conservative reference/native-text
+        // handling. Splitting that hull must not newly hand its text to local image crops.
+        // Only independently proved whole-page backgrounds justify replacing that handling.
+        if original.graphics.contains(where: { PageDiagnosis.coversPage($0, bounds: original.bounds) }) {
+            let large = graphics.paints.filter { PageDiagnosis.coversPage($0.rect, bounds: original.bounds) }
+            guard !large.isEmpty && large.allSatisfy({ !$0.image
+                && (($0.rectangular && $0.filled) || $0.backgroundShading == true) }) else { return original }
+        }
         let prose = paragraphs(original.lines)
         let gutters = galleryGutters(original.lines, pictures: graphics.paints.filter(\.image).map(\.rect))
         var page = original

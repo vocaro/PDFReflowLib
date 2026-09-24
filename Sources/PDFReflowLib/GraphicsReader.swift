@@ -31,8 +31,8 @@ enum GraphicsReader {
                     /// Exact rectangles filled by the page, before region clustering (#215).
                     var filledCells: [CGRect] = [] }
     /// Numeric colors in a named ICC space are flat paint, just like device colors. Pattern
-    /// names and unknown resources never provide that evidence. Nonstandard ICC ranges keep
-    /// their flat-paint evidence but cannot prove that a component tuple is white.
+    /// names and unknown resources never provide that evidence. ICC component tuples alone
+    /// cannot prove white without evaluating the embedded profile.
     private enum FillColorSpace {
         case gray, rgb, cmyk, numeric(Int), unknown
         var components: Int? {
@@ -68,20 +68,10 @@ enum GraphicsReader {
                   CGPDFArrayGetStream(array, 1, &profile), let profile else { return .unknown }
             guard let dictionary = CGPDFStreamGetDictionary(profile) else { return .unknown }
             guard let count = CGPDFObjects.integer(dictionary, "N"), [1,3,4].contains(count) else { return .unknown }
-            if CGPDFObjects.object(dictionary, "Range") != nil {
-                guard let range = CGPDFObjects.array(dictionary, "Range"), let values = CGPDFObjects.numbers(range, count: count * 2),
-                      values.enumerated().allSatisfy({ $0.element == CGFloat($0.offset % 2) })
-                else { return .numeric(count) }
-            }
-            // ICCBased's default alternate is the corresponding device space. A custom
-            // alternate is not enough evidence to discard even nominally white paint.
-            if let alternate = CGPDFObjects.object(dictionary, "Alternate") {
-                var name: UnsafePointer<CChar>?
-                guard CGPDFObjectGetValue(alternate, .name, &name), let name,
-                      String(cString: name) == (count == 1 ? "DeviceGray" : count == 3 ? "DeviceRGB" : "DeviceCMYK")
-                else { return .numeric(count) }
-            }
-            return count == 1 ? .gray : count == 3 ? .rgb : .cmyk
+            // Component count and Alternate describe the input/fallback space, not the
+            // embedded profile's color transform. Numeric ICC paint is flat, but its
+            // actual white cannot be proved without evaluating that profile.
+            return .numeric(count)
         }
     }
     private final class State {

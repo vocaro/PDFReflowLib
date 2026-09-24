@@ -1615,6 +1615,24 @@ enum LayoutReconstructor {
         }
     }
 
+    /// A semantic table owns its numbered title and aligned introduction above the cell grid.
+    /// Decorative paint can overlap this text without turning it into figure lettering.
+    static func tableIntroductions(in lines: [TextLine], tables: [PageTable], body: CGFloat) -> Set<CGRect> {
+        var result: Set<CGRect> = []
+        for table in tables {
+            guard let title = tableTitles(in: lines, tables: [table], body: body).first else { continue }
+            result.insert(title.rect)
+            for line in lines where line.rect.maxY <= title.rect.minY + 1
+                && line.rect.minY >= table.rect.maxY
+                && abs(line.rect.minX - title.rect.minX) <= body * 0.5
+                && line.rect.maxX <= table.rect.maxX + body
+                && line.fontSize <= title.fontSize * 1.1 {
+                result.insert(line.rect)
+            }
+        }
+        return result
+    }
+
     /// Repeated label/value pairs state a break even when both lines use the same type (#215).
     /// At least three short labels must stand over wider values at one gap and one left edge;
     /// a larger gap above each label marks the pair's start. Ordinary prose fills its measure
@@ -1660,7 +1678,8 @@ enum LayoutReconstructor {
         let displayedIndices = displayed.reduce(into: Set<Int>()) { $0.formUnion($1.indices) }
         let overPicture = displayedIndices.union(captionIndices).union(PageDiagnosis.proseOverPictures(lines: page.lines, pictures: page.pictures + (page.nativeTextPanels ?? []),
                                                           crops: images.map(\.0), bounds: page.bounds,
-                                                          language: context.language))
+                                                          language: context.language,
+                                                          nativeTypography: !page.recognized && !page.hasSyntheticTextStyle))
         // A crop must not take one half of a word whose other half falls outside it. Replay Clocks
         // page 8 breaks a figure caption `…𝛼 = 40 mes-` / `sages/second.` and the crop's edge fell
         // 0.49 pt above the second line, so the first half went into the picture and the second
@@ -1669,8 +1688,10 @@ enum LayoutReconstructor {
         // A crop also does not take a printed row that begins outside it and reaches in: the
         // page prints that row, the picture merely lies across its end (#207).
         let columnHeaders = TableRegionDetector.columnHeaders(in: page, body: max(4, bodySize(page.lines)))
+        let tableIntroductions = tableIntroductions(in: page.lines, tables: page.tables,
+                                                    body: max(4, bodySize(page.lines)))
         let taken = Set(page.lines.indices.filter { index in
-            !overPicture.contains(index) && page.sidebarValueRows?.contains(page.lines[index].rect) != true
+            !tableIntroductions.contains(page.lines[index].rect) && !overPicture.contains(index) && page.sidebarValueRows?.contains(page.lines[index].rect) != true
                 && !PageBackdrop.reflows(page.lines[index], on: page)
                 && !OutlinedInitial.reflows(page.lines[index], on: page) && images.contains {
                 takes($0.0, page.lines[index])

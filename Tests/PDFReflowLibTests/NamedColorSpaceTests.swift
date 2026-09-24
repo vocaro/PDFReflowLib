@@ -23,14 +23,15 @@ private func namedColorPage(_ content: String, profile: String = "/N 3", form: S
     return try #require(CGPDFDocument(provider)?.page(at: 1))
 }
 
-@Test func namedICCWhiteAndFlatColorSurviveGraphicsStateScopes() throws {
+@Test func namedICCFlatColorSurvivesScopesWithoutGuessingProfileWhite() throws {
     let source = "/G cs q /CS0 cs 1 0 0 scn 20 20 20 20 re f Q 1 scn 60 20 20 20 re f "
         + "/CS0 cs 1 1 1 scn 100 20 20 20 re f /Fm Do 0 0 1 scn 140 20 20 20 re f"
     let result = GraphicsReader.read(try namedColorPage(source))
     #expect(!result.unsupported)
     #expect(result.paints.filter { $0.rect.contains(CGPoint(x: 30,y:30)) }.allSatisfy { $0.filled })
     #expect(result.paints.contains { $0.rect.contains(CGPoint(x:30,y:30)) })
-    #expect(!result.paints.contains { $0.rect.contains(CGPoint(x:70,y:30)) || $0.rect.contains(CGPoint(x:110,y:30)) })
+    #expect(!result.paints.contains { $0.rect.contains(CGPoint(x:70,y:30)) })
+    #expect(result.paints.contains { $0.filled && $0.rect.contains(CGPoint(x:110,y:30)) })
     #expect(result.paints.contains { $0.filled && $0.rect.contains(CGPoint(x:150,y:30)) })
 }
 

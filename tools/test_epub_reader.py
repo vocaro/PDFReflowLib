@@ -89,6 +89,39 @@ class EPUBReaderTests(unittest.TestCase):
             with self.assertRaises(FileExistsError):
                 view_epub.prepare(source, root / "reader")
 
+    def test_mathml_preview_preserves_browser_math_and_rejects_unsafe_fallbacks(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            source = root / "source.epub"
+            chapter = ('<html xmlns="http://www.w3.org/1999/xhtml" '
+                       'xmlns:epub="http://www.idpf.org/2007/ops"><head><title>Math</title></head>'
+                       '<body><span id="page-1" epub:type="pagebreak"/>'
+                       '<p><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="sqrt 4" '
+                       'altimg="images/image-1.png"><msqrt><mn>4</mn></msqrt></math></p></body></html>')
+
+            def write_book(markup):
+                with zipfile.ZipFile(source, "w") as book:
+                    book.writestr("mimetype", "application/epub+zip")
+                    book.writestr("EPUB/chapter-1.xhtml", markup)
+                    book.writestr("EPUB/images/image-1.png", b"\x89PNG\r\n\x1a\n")
+
+            write_book(chapter)
+            view_epub.prepare(source, root / "reader")
+            original = (root / "reader/epub/EPUB/chapter-1.xhtml").read_text()
+            preview = (root / "reader/epub/EPUB/chapter-1.html").read_text()
+            self.assertEqual(original, chapter)
+            self.assertIn('<math alttext="sqrt 4" altimg="images/image-1.png"><msqrt><mn>4</mn></msqrt></math>', preview)
+            self.assertNotIn("ns0:", preview)
+            for payload in [
+                chapter.replace('images/image-1.png', 'https://example.com/image.png'),
+                chapter.replace('images/image-1.png', '../image-1.png'),
+                chapter.replace('<msqrt>', '<annotation-xml>').replace('</msqrt>', '</annotation-xml>'),
+            ]:
+                with self.subTest(payload=payload):
+                    write_book(payload)
+                    with self.assertRaises(ValueError):
+                        view_epub.prepare(source, root / f"rejected-{len(list(root.glob('rejected-*')))}")
+
 
 if __name__ == "__main__":
     unittest.main()

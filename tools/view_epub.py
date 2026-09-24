@@ -11,12 +11,14 @@ import tempfile
 from urllib.parse import unquote, urlsplit
 import xml.etree.ElementTree as ET
 
-from compare_pdf import unpack_epub
+from compare_pdf import html_preview, unpack_epub
 from pdfreflow_tools.corpus import identity
 from serve_comparison import ReviewHandler
 
 ASSETS = Path(__file__).resolve().parent / "epub-reader"
 MARKUP = {".xml", ".xhtml", ".opf"}
+MATHML_NS = "http://www.w3.org/1998/Math/MathML"
+MATHML_TAGS = {"math", "mn", "mi", "mo", "mrow", "mfrac", "mstyle", "msup", "msub", "msqrt"}
 
 
 def verify_assets():
@@ -30,7 +32,7 @@ def verify_assets():
 
 
 def validate_resources(directory):
-    """Restrict the test viewer to PDFReflowLib's inert XHTML/CSS/PNG/JPEG EPUB profile.
+    """Restrict the test viewer to PDFReflowLib's inert XHTML/MathML/CSS/image profile.
 
     Reject active content before the engine sees it, rather than accepting arbitrary EPUBs
     or modifying publisher content. The chapter iframe additionally disables scripts.
@@ -51,7 +53,28 @@ def validate_resources(directory):
             tree = ET.fromstring(text)
             for node in tree.iter():
                 tag = node.tag.split("}")[-1].lower()
-                if tag in {"script", "iframe", "object", "embed", "form", "base", "svg", "math"}:
+                namespace = node.tag[1:].split("}", 1)[0] if node.tag.startswith("{") else ""
+                if namespace == MATHML_NS:
+                    if tag not in MATHML_TAGS:
+                        raise ValueError(f"Unsupported MathML in {name}: {tag}")
+                    allowed = {"alttext", "altimg"} if tag == "math" else {"displaystyle"} if tag == "mstyle" else set()
+                    if any(key not in allowed for key in node.attrib):
+                        raise ValueError(f"Unsupported MathML attributes in {name}: {tag}")
+                    if tag == "mstyle" and node.attrib.get("displaystyle") != "true":
+                        raise ValueError(f"Unsupported MathML display style in {name}")
+                    if tag == "math" and "altimg" in node.attrib:
+                        value = unquote(node.attrib["altimg"])
+                        url = urlsplit(value)
+                        fallback = (path.parent / value).resolve()
+                        if (not value or url.scheme or url.netloc or url.query or url.fragment
+                                or "\\" in value or "%" in value or value.startswith("/")
+                                or ".." in Path(value).parts
+                                or fallback.suffix.lower() not in {".png", ".jpg", ".jpeg"}
+                                or not fallback.is_relative_to(directory.resolve()) or not fallback.is_file()):
+                            raise ValueError(f"Unsupported MathML fallback image in {name}")
+                elif tag in MATHML_TAGS:
+                    raise ValueError(f"MathML must use its namespace in {name}: {tag}")
+                if tag in {"script", "iframe", "object", "embed", "form", "base", "svg"}:
                     raise ValueError(f"Active/unsupported markup in {name}: {tag}")
                 attrs = {key.split("}")[-1].lower(): value for key, value in node.attrib.items()}
                 if any(key.startswith("on") for key in attrs) or "http-equiv" in attrs:
@@ -80,6 +103,18 @@ def validate_resources(directory):
     return resources
 
 
+def preserve_mathml_previews(directory):
+    """Render admitted MathML as HTML parser MathML in the viewer's chapter previews."""
+    for chapter in directory.rglob("*.xhtml"):
+        root = ET.parse(chapter).getroot()
+        math_nodes = [node for node in root.iter() if node.tag.startswith("{" + MATHML_NS + "}")]
+        if not math_nodes:
+            continue
+        for node in math_nodes:
+            node.tag = node.tag.removeprefix("{" + MATHML_NS + "}")
+        chapter.with_suffix(".html").write_text(html_preview(root))
+
+
 def prepare(book, output, maximum_bytes=512 * 1024 * 1024):
     verify_assets()
     if maximum_bytes <= 0:
@@ -90,6 +125,7 @@ def prepare(book, output, maximum_bytes=512 * 1024 * 1024):
     shutil.copyfile(book, output / "book.epub")
     pages = unpack_epub(output / "book.epub", output / "epub", maximum_bytes=maximum_bytes)
     resources = validate_resources(output / "epub")
+    preserve_mathml_previews(output / "epub")
     for file in ASSETS.iterdir():
         if file.is_dir():
             shutil.copytree(file, output / file.name)

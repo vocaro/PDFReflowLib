@@ -1,6 +1,7 @@
 import Foundation
 import PDFKit
 import Testing
+import ZIPFoundation
 @testable import PDFReflowLib
 
 /// The value printed under a widget is the only evidence that its appearance duplicates text.
@@ -40,7 +41,7 @@ func prefilledFieldNeedsItsPageImageUnlessTheSameValueIsPrintedBeneathIt() throw
 }
 
 @Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/170"))
-func checkboxWithNoPrintedGlyphSuppliesAReadableBox() throws {
+func checkboxWithNoPrintedGlyphSuppliesAReadableBox() async throws {
     let data = testPDF(objects: [
         "<< /Type /Catalog /Pages 2 0 R >>",
         "<< /Type /Pages /Kids [3 0 R] /Count 1 >>",
@@ -59,4 +60,17 @@ func checkboxWithNoPrintedGlyphSuppliesAReadableBox() throws {
     var lines = [TextLine(text: "Jury Trial", rect: CGRect(x: 110, y: 598, width: 75, height: 12), fontSize: 12)]
     AnnotationEvidence.markBoxes(judgment.boxes, in: &lines)
     #expect(lines.map(\.text).contains("☐"))
+
+    // The mark must survive extraction, reconstruction and EPUB packaging beside its label.
+    let directory = try testPDFDirectory()
+    defer { try? FileManager.default.removeItem(at: directory) }
+    let source = directory.appendingPathComponent("checkbox.pdf")
+    let output = directory.appendingPathComponent("checkbox.epub")
+    try data.write(to: source)
+    let report = try await PDFConverter().convert(from: source, to: output)
+    let chapter = String(decoding: try Archive(url: output, accessMode: .read)
+        .entryData("EPUB/chapter-1.xhtml"), as: UTF8.self)
+    #expect(chapter.contains("☐"))
+    #expect(chapter.contains("Jury Trial"))
+    #expect(report.warnings.contains { $0.code == .annotationsNotConverted })
 }

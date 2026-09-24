@@ -17,6 +17,7 @@ import Foundation
 /// - a **square root**: a radical glyph joined to a painted vinculum over one proven expression;
 /// - a **superscript**: a glyph smaller than the row's type, raised by a fifth to three quarters
 ///   of it, set straight after its base (a number, a variable, a bracketed group);
+/// - a **subscript**: a smaller glyph lowered immediately after a maths italic variable;
 /// - a **row** of numbers, maths italic variables, operators and brackets on one baseline, with no
 ///   gap wider than three quarters of an em, balanced brackets, and operators that each stand
 ///   between operands (a sign may open an operand).
@@ -24,7 +25,7 @@ import Foundation
 /// A crop may hold several rows (a column of exercises) and a row several exercises; a printed
 /// label (`52)`) opens each. Every row of the crop must read, every glyph and rule in the crop
 /// must be used, and the characters must be exactly those of the page's text lines in the crop;
-/// anything else (a word, an upright letter, a subscript, an undecodable glyph, an unclaimed rule,
+/// anything else (a word, an upright letter, an undecodable glyph, an unclaimed rule,
 /// a gap that aligns rather than spaces) leaves the crop a picture.
 enum MathRecognizer {
     /// One glyph as the page draws it: its character, its advance along the baseline, its
@@ -430,9 +431,14 @@ enum MathRecognizer {
             }
             guard let glyph = item.glyph, let character = glyph.text.first, glyph.text.count == 1 else { return nil }
             if let baseline, glyph.size < size * 0.9 {
-                // A superscript: smaller type, raised, straight after its base.
-                let raise = (glyph.baseline - baseline) / size
-                guard glyph.size <= size * 0.85, (0.2...0.75).contains(raise), let baseEnd = previousMaxX,
+                // Scripts must use smaller type and follow their base tightly. A subscript's
+                // lowered baseline is independently visible in the Wallace slope formula;
+                // a same-baseline small run is still a separate (unread) glyph.
+                let offset = (glyph.baseline - baseline) / size
+                let superscript = (0.2...0.75).contains(offset)
+                let subscripted = (-0.3 ... -0.06).contains(offset)
+                guard glyph.size <= size * 0.85, superscript || subscripted,
+                      let baseEnd = previousMaxX,
                       glyph.minX - baseEnd <= size * 0.3, glyph.minX - baseEnd >= -size * 0.1 else { return nil }
                 var script = [glyph]
                 while index + 1 < items.count, let next = items[index + 1].glyph, next.size < size * 0.9,
@@ -441,15 +447,20 @@ enum MathRecognizer {
                     script.append(next)
                     index += 1
                 }
-                guard let exponent = flat(script) else { return nil }
+                guard let scriptNode = flat(script) else { return nil }
                 flushNumber()
                 guard let base = stack[stack.count - 1].popLast() else { return nil }
-                switch base {
-                case .number, .identifier, .fraction: break
-                case let .row(nodes) where nodes.first == .operator("("): break
-                default: return nil
+                if subscripted {
+                    guard case .identifier = base else { return nil }
+                    stack[stack.count - 1].append(.subscript(base, scriptNode))
+                } else {
+                    switch base {
+                    case .number, .identifier, .fraction: break
+                    case let .row(nodes) where nodes.first == .operator("("): break
+                    default: return nil
+                    }
+                    stack[stack.count - 1].append(.superscript(base, scriptNode))
                 }
-                stack[stack.count - 1].append(.superscript(base, exponent))
                 endsOperand = true
                 previousMaxX = script.last!.maxX
                 index += 1

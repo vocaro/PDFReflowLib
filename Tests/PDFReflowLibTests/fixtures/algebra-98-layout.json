@@ -1,0 +1,1800 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        465.72014000000001,
+        723.38331799999992,
+        35.072368409999967,
+        20.443392000000017
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "x"
+        },
+        {
+          "baselineOffset" : -1.7999999999999545,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− x"
+        },
+        {
+          "baselineOffset" : -1.7999999999999545,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "1"
+        }
+      ],
+      "text" : "x2− x1"
+    },
+    {
+      "rect" : [
+        220.44,
+        738.86778249999986,
+        242.03016239999999,
+        12.650572700000112
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "(x"
+        },
+        {
+          "baselineOffset" : -1.6796900000000505,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "1 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : ", y"
+        },
+        {
+          "baselineOffset" : -1.6796900000000505,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "1"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : ") and (x"
+        },
+        {
+          "baselineOffset" : -1.6796900000000505,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : ", y"
+        },
+        {
+          "baselineOffset" : -1.6796900000000505,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : ") Use slope formula, m="
+        }
+      ],
+      "text" : "(x1 , y1) and (x2, y2) Use slope formula, m="
+    },
+    {
+      "rect" : [
+        466.32010000000002,
+        738.38331799999992,
+        33.752068409999993,
+        20.443392000000017
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "y"
+        },
+        {
+          "baselineOffset" : -1.2000000000000455,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− y"
+        },
+        {
+          "baselineOffset" : -1.2000000000000455,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "1"
+        }
+      ],
+      "text" : "y2− y1"
+    },
+    {
+      "rect" : [
+        248.28,
+        709.94300800000008,
+        83.160061144319997,
+        20.443392000000017
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -7.2000000000000455,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "m ="
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− 5− (− 1)"
+        }
+      ],
+      "text" : "m =− 5− (− 1)"
+    },
+    {
+      "rect" : [
+        272.88007999999996,
+        694.94300800000008,
+        117.90071540326409,
+        28.25534719999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− 4− (− 4) "
+        },
+        {
+          "baselineOffset" : 7.7999999999999545,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Simplify"
+        }
+      ],
+      "text" : "− 4− (− 4) Simplify"
+    },
+    {
+      "rect" : [
+        289.7998,
+        681.50320800000009,
+        41.738148000000024,
+        20.443392000000017
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -7.2000000000000455,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "m ="
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− 4"
+        }
+      ],
+      "text" : "m =− 4"
+    },
+    {
+      "rect" : [
+        320.03967000000006,
+        674.97944480000012,
+        181.34444296396788,
+        21.098057699999913
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -7.799799999999891,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "0 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Can"
+        },
+        {
+          "baselineOffset" : 4.3199200000000246,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "′"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "t divide by zero, undefined"
+        }
+      ],
+      "text" : "0 Can′t divide by zero, undefined"
+    },
+    {
+      "rect" : [
+        269.15989000000002,
+        663.33904480000001,
+        63.520541637887959,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "m = no slope "
+        }
+      ],
+      "text" : "m = no slope "
+    },
+    {
+      "rect" : [
+        348.36003509388803,
+        663.33904480000001,
+        64.5838411486464,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Our Solution"
+        }
+      ],
+      "text" : "Our Solution"
+    },
+    {
+      "rect" : [
+        84.959889999999973,
+        615.95100000000002,
+        79.690012157440037,
+        11.955199999999991
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Example 129."
+        }
+      ],
+      "text" : "Example 129."
+    },
+    {
+      "rect" : [
+        111.11968999999998,
+        569.06280800000002,
+        203.64023339686412,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Find the slope between (3, 1)and (− 2, 1) "
+        }
+      ],
+      "text" : "Find the slope between (3, 1)and (− 2, 1) "
+    },
+    {
+      "rect" : [
+        220.19986000000009,
+        556.94730249999998,
+        94.554911200000078,
+        12.650962700000036
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "(x"
+        },
+        {
+          "baselineOffset" : -1.6800799999999754,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "1"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : ", y"
+        },
+        {
+          "baselineOffset" : -1.6800799999999754,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "1"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : ") and (x"
+        },
+        {
+          "baselineOffset" : -1.6800799999999754,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : ", y"
+        },
+        {
+          "baselineOffset" : -1.6800799999999754,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : ") "
+        }
+      ],
+      "text" : "(x1, y1) and (x2, y2) "
+    },
+    {
+      "rect" : [
+        330.48002000000008,
+        569.06280800000002,
+        100.47196840999999,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Identify x"
+        },
+        {
+          "baselineOffset" : -1.6796900000000505,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "1"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : ", y"
+        },
+        {
+          "baselineOffset" : -1.6796900000000505,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "1"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : ", x"
+        },
+        {
+          "baselineOffset" : -1.6796900000000505,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : ", y"
+        },
+        {
+          "baselineOffset" : -1.6796900000000505,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2"
+        }
+      ],
+      "text" : "Identify x1, y1, x2, y2"
+    },
+    {
+      "rect" : [
+        330.47994000000017,
+        556.94730249999998,
+        114.1098624,
+        12.650962700000036
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Use slope formula, m="
+        }
+      ],
+      "text" : "Use slope formula, m="
+    },
+    {
+      "rect" : [
+        282.96019999999999,
+        529.22300800000005,
+        24.937747999999999,
+        20.443392000000017
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "1− 1"
+        }
+      ],
+      "text" : "1− 1"
+    },
+    {
+      "rect" : [
+        252.72,
+        530.49924480000004,
+        21.350062399999985,
+        11.967155199999979
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "m ="
+        }
+      ],
+      "text" : "m ="
+    },
+    {
+      "rect" : [
+        277.31999999999999,
+        514.22300800000005,
+        95.580795283712007,
+        28.25534719999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -7.7999999999999545,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− 2− 3 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Simplify"
+        }
+      ],
+      "text" : "− 2− 3 Simplify"
+    },
+    {
+      "rect" : [
+        302.03970000000004,
+        511.29924480000005,
+        5.8580479999999966,
+        11.967155200000036
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "0"
+        }
+      ],
+      "text" : "0"
+    },
+    {
+      "rect" : [
+        296.39986000000005,
+        487.82300800000007,
+        71.440916251136002,
+        28.25534719999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -7.7999999999999545,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− 5 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Reduce"
+        }
+      ],
+      "text" : "− 5 Reduce"
+    },
+    {
+      "rect" : [
+        285.59990000000005,
+        483.5793448,
+        109.46382955210242,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "m =0 Our Solution"
+        }
+      ],
+      "text" : "m =0 Our Solution"
+    },
+    {
+      "rect" : [
+        448.43974000000014,
+        556.34291800000005,
+        33.752468409999892,
+        20.443392000000017
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "y"
+        },
+        {
+          "baselineOffset" : -1.0800799999999526,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− y"
+        },
+        {
+          "baselineOffset" : -1.0800799999999526,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "1"
+        }
+      ],
+      "text" : "y2− y1"
+    },
+    {
+      "rect" : [
+        447.7198800000001,
+        541.34293800000012,
+        35.192298409999978,
+        20.443392000000017
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "x"
+        },
+        {
+          "baselineOffset" : -1.6800799999999754,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− x"
+        },
+        {
+          "baselineOffset" : -1.6800799999999754,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "1"
+        }
+      ],
+      "text" : "x2− x1"
+    },
+    {
+      "rect" : [
+        271.91980000000001,
+        504.09924480000001,
+        21.350062400000013,
+        11.967155200000036
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "m ="
+        }
+      ],
+      "text" : "m ="
+    },
+    {
+      "rect" : [
+        84.959900000000033,
+        436.2992448,
+        425.18761983895047,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Again, there is a big diﬀerence between no slope and a zero slope. Zero is an"
+        }
+      ],
+      "text" : "Again, there is a big diﬀerence between no slope and a zero slope. Zero is an"
+    },
+    {
+      "rect" : [
+        84.959900000000061,
+        421.65944480000002,
+        425.12542178022397,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "integer and it has a value, the slope of a flat horizontal line. No slope has no"
+        }
+      ],
+      "text" : "integer and it has a value, the slope of a flat horizontal line. No slope has no"
+    },
+    {
+      "rect" : [
+        84.959900000000061,
+        406.89924480000002,
+        250.45338621214722,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "value, it is undefined, the slope of a vertical line."
+        }
+      ],
+      "text" : "value, it is undefined, the slope of a vertical line."
+    },
+    {
+      "rect" : [
+        84.959900000000061,
+        380.37934480000001,
+        425.20036380032002,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Using the slope formula we can also find missing points if we know what the slope"
+        }
+      ],
+      "text" : "Using the slope formula we can also find missing points if we know what the slope"
+    },
+    {
+      "rect" : [
+        84.959900000000061,
+        365.73914480000002,
+        246.37171966845438,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "is. This is shown in the following two examples."
+        }
+      ],
+      "text" : "is. This is shown in the following two examples."
+    },
+    {
+      "rect" : [
+        84.959900000000061,
+        321.35149999999999,
+        79.690012177763833,
+        11.955199999999991
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Example 130."
+        }
+      ],
+      "text" : "Example 130."
+    },
+    {
+      "rect" : [
+        84.959900000000061,
+        286.343008,
+        371.01780799999995,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Find the value of y between the points (2, y)and (5,− 1) with slope− 3"
+        }
+      ],
+      "text" : "Find the value of y between the points (2, y)and (5,− 1) with slope− 3"
+    },
+    {
+      "rect" : [
+        211.55966000000001,
+        252.983228,
+        33.752078410000024,
+        20.443392000000017
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "y"
+        },
+        {
+          "baselineOffset" : -1.1999999999999886,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− y"
+        },
+        {
+          "baselineOffset" : -1.1999999999999886,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "1"
+        }
+      ],
+      "text" : "y2− y1"
+    },
+    {
+      "rect" : [
+        186.35966000000002,
+        254.13954479999995,
+        21.3496624,
+        11.967155199999979
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "m ="
+        }
+      ],
+      "text" : "m ="
+    },
+    {
+      "rect" : [
+        262.80000000000001,
+        254.13924479999997,
+        184.52670772121604,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "We will plug values into slope formula"
+        }
+      ],
+      "text" : "We will plug values into slope formula"
+    },
+    {
+      "rect" : [
+        147.84000000000003,
+        166.70320800000002,
+        43.205915127807998,
+        20.443392000000017
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− 3(3)="
+        }
+      ],
+      "text" : "− 3(3)="
+    },
+    {
+      "rect" : [
+        210.83941000000004,
+        237.983228,
+        35.192298409999978,
+        20.443392000000017
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "x"
+        },
+        {
+          "baselineOffset" : -1.8000000000000114,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− x"
+        },
+        {
+          "baselineOffset" : -1.8000000000000114,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "1"
+        }
+      ],
+      "text" : "x2− x1"
+    },
+    {
+      "rect" : [
+        177.83980000000003,
+        218.542708,
+        68.102730400000013,
+        27.643392000000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -7.1999999999999886,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− 3="
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− 1− y"
+        }
+      ],
+      "text" : "− 3=− 1− y"
+    },
+    {
+      "rect" : [
+        215.16020000000003,
+        210.74270799999999,
+        90.060212358655974,
+        28.255647200000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -7.8003000000000213,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "5− 2 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Simplify"
+        }
+      ],
+      "text" : "5− 2 Simplify"
+    },
+    {
+      "rect" : [
+        177.83980000000003,
+        192.14300800000001,
+        68.102730400000013,
+        27.643392000000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -7.1999999999999886,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− 3="
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− 1− y"
+        }
+      ],
+      "text" : "− 3=− 1− y"
+    },
+    {
+      "rect" : [
+        224.63990000000004,
+        192.81924479999998,
+        156.81814799999998,
+        19.779110400000008
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -7.8000000000000114,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "3 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Multiply both sides by 3"
+        }
+      ],
+      "text" : "3 Multiply both sides by 3"
+    },
+    {
+      "rect" : [
+        194.28030000000004,
+        173.90320800000001,
+        36.662430400000005,
+        20.443392000000017
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− 1− y"
+        }
+      ],
+      "text" : "− 1− y"
+    },
+    {
+      "rect" : [
+        209.64010000000005,
+        167.37944479999999,
+        95.580312358655959,
+        19.778910400000001
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -7.7998000000000047,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "3 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "(3) Simplify"
+        }
+      ],
+      "text" : "3 (3) Simplify"
+    },
+    {
+      "rect" : [
+        180.2398,
+        147.26320800000002,
+        66.902730400000024,
+        20.455347199999977
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− 9=− 1− y "
+        }
+      ],
+      "text" : "− 9=− 1− y "
+    },
+    {
+      "rect" : [
+        262.80010000000004,
+        147.26320800000002,
+        93.774653735603238,
+        20.455347199999977
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Add 1to both sides"
+        }
+      ],
+      "text" : "Add 1to both sides"
+    },
+    {
+      "rect" : [
+        180.96000000000006,
+        138.09924480000001,
+        45.713552537600009,
+        11.967155200000008
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "+1 + 1"
+        }
+      ],
+      "text" : "+1 + 1"
+    },
+    {
+      "rect" : [
+        199.31999999999999,
+        111.86300800000001,
+        47.822630400000008,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− 8 =− y "
+        }
+      ],
+      "text" : "− 8 =− y "
+    },
+    {
+      "rect" : [
+        262.80020000000002,
+        111.86300800000001,
+        119.018148,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Divide both sides by− 1"
+        }
+      ],
+      "text" : "Divide both sides by− 1"
+    },
+    {
+      "rect" : [
+        202.08030000000002,
+        94.222808000000015,
+        45.097847999999971,
+        20.443591999999995
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -0.00019999999999242846,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− 1"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− 1"
+        }
+      ],
+      "text" : "− 1− 1"
+    },
+    {
+      "rect" : [
+        222,
+        84.939444800000004,
+        105.38384078999042,
+        11.979110399999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "8= y Our Solution"
+        }
+      ],
+      "text" : "8= y Our Solution"
+    },
+    {
+      "rect" : [
+        299.63980000000004,
+        52.379053200000001,
+        10.021160447733621,
+        9.8729762399999998
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626400000000004,
+          "text" : "98"
+        }
+      ],
+      "text" : "98"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    595,
+    842
+  ],
+  "caseID" : "wallace-algebra-2010",
+  "graphics" : [
+    [
+      463.12,
+      743.30000000000007,
+      40.240000000000066,
+      4
+    ],
+    [
+      270.28000000000003,
+      714.86000000000013,
+      63.880000000000052,
+      4
+    ],
+    [
+      311.80000000000001,
+      686.42000000000007,
+      22.36000000000007,
+      4
+    ],
+    [
+      445.12,
+      561.38,
+      40.360000000000014,
+      4
+    ],
+    [
+      274.72000000000003,
+      534.2600000000001,
+      41.440000000000055,
+      4
+    ],
+    [
+      293.80000000000001,
+      507.74000000000007,
+      22.36000000000007,
+      4
+    ],
+    [
+      208.24000000000001,
+      257.90000000000003,
+      40.360000000000014,
+      4
+    ],
+    [
+      206.68000000000004,
+      230.78000000000003,
+      41.919999999999987,
+      4
+    ],
+    [
+      206.68000000000004,
+      204.38000000000002,
+      41.919999999999987,
+      4
+    ],
+    [
+      191.68000000000004,
+      178.94000000000003,
+      41.919999999999987,
+      4
+    ],
+    [
+      178.96000000000004,
+      136.94000000000003,
+      49.719999999999999,
+      4
+    ],
+    [
+      200.08000000000004,
+      112.58,
+      21.159999999999968,
+      4
+    ],
+    [
+      228.04000000000002,
+      112.58,
+      21.159999999999997,
+      4
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        465.72014000000001,
+        723.38331799999992,
+        35.072368409999967,
+        20.443392000000017
+      ],
+      "text" : "x2− x1"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        220.44,
+        738.86778249999986,
+        242.03016239999999,
+        12.650572700000112
+      ],
+      "text" : "(x1 , y1) and (x2, y2) Use slope formula, m="
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        466.32010000000002,
+        738.38331799999992,
+        33.752068409999993,
+        20.443392000000017
+      ],
+      "text" : "y2− y1"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        248.28,
+        709.94300800000008,
+        83.160061144319997,
+        20.443392000000017
+      ],
+      "text" : "m =− 5− (− 1)"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        272.88007999999996,
+        694.94300800000008,
+        117.90071540326409,
+        28.25534719999996
+      ],
+      "text" : "− 4− (− 4) Simplify"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        289.7998,
+        681.50320800000009,
+        41.738148000000024,
+        20.443392000000017
+      ],
+      "text" : "m =− 4"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        320.03967000000006,
+        674.97944480000012,
+        181.34444296396788,
+        21.098057699999913
+      ],
+      "text" : "0 Can′t divide by zero, undefined"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        269.15989000000002,
+        663.33904480000001,
+        63.520541637887959,
+        11.979110399999968
+      ],
+      "text" : "m = no slope"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        348.36003509388803,
+        663.33904480000001,
+        64.5838411486464,
+        11.979110399999968
+      ],
+      "text" : "Our Solution"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959889999999973,
+        615.95100000000002,
+        79.690012157440037,
+        11.955199999999991
+      ],
+      "text" : "Example 129."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        111.11968999999998,
+        569.06280800000002,
+        203.64023339686412,
+        20.455347200000006
+      ],
+      "text" : "Find the slope between (3, 1)and (− 2, 1)"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        220.19986000000009,
+        556.94730249999998,
+        94.554911200000078,
+        12.650962700000036
+      ],
+      "text" : "(x1, y1) and (x2, y2)"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        330.48002000000008,
+        569.06280800000002,
+        100.47196840999999,
+        20.455347200000006
+      ],
+      "text" : "Identify x1, y1, x2, y2"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        330.47994000000017,
+        556.94730249999998,
+        114.1098624,
+        12.650962700000036
+      ],
+      "text" : "Use slope formula, m="
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        282.96019999999999,
+        529.22300800000005,
+        24.937747999999999,
+        20.443392000000017
+      ],
+      "text" : "1− 1"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        252.72,
+        530.49924480000004,
+        21.350062399999985,
+        11.967155199999979
+      ],
+      "text" : "m ="
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        277.31999999999999,
+        514.22300800000005,
+        95.580795283712007,
+        28.25534719999996
+      ],
+      "text" : "− 2− 3 Simplify"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        302.03970000000004,
+        511.29924480000005,
+        5.8580479999999966,
+        11.967155200000036
+      ],
+      "text" : "0"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        296.39986000000005,
+        487.82300800000007,
+        71.440916251136002,
+        28.25534719999996
+      ],
+      "text" : "− 5 Reduce"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        285.59990000000005,
+        483.5793448,
+        109.46382955210242,
+        11.979110400000025
+      ],
+      "text" : "m =0 Our Solution"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        448.43974000000014,
+        556.34291800000005,
+        33.752468409999892,
+        20.443392000000017
+      ],
+      "text" : "y2− y1"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        447.7198800000001,
+        541.34293800000012,
+        35.192298409999978,
+        20.443392000000017
+      ],
+      "text" : "x2− x1"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        271.91980000000001,
+        504.09924480000001,
+        21.350062400000013,
+        11.967155200000036
+      ],
+      "text" : "m ="
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959900000000033,
+        436.2992448,
+        425.18761983895047,
+        11.979110400000025
+      ],
+      "text" : "Again, there is a big diﬀerence between no slope and a zero slope. Zero is an"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959900000000061,
+        421.65944480000002,
+        425.12542178022397,
+        11.979110400000025
+      ],
+      "text" : "integer and it has a value, the slope of a flat horizontal line. No slope has no"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959900000000061,
+        406.89924480000002,
+        250.45338621214722,
+        11.979110400000025
+      ],
+      "text" : "value, it is undefined, the slope of a vertical line."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959900000000061,
+        380.37934480000001,
+        425.20036380032002,
+        11.979110400000025
+      ],
+      "text" : "Using the slope formula we can also find missing points if we know what the slope"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959900000000061,
+        365.73914480000002,
+        246.37171966845438,
+        11.979110400000025
+      ],
+      "text" : "is. This is shown in the following two examples."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959900000000061,
+        321.35149999999999,
+        79.690012177763833,
+        11.955199999999991
+      ],
+      "text" : "Example 130."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959900000000061,
+        286.343008,
+        371.01780799999995,
+        20.455347200000006
+      ],
+      "text" : "Find the value of y between the points (2, y)and (5,− 1) with slope− 3"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        211.55966000000001,
+        252.983228,
+        33.752078410000024,
+        20.443392000000017
+      ],
+      "text" : "y2− y1"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        186.35966000000002,
+        254.13954479999995,
+        21.3496624,
+        11.967155199999979
+      ],
+      "text" : "m ="
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        262.80000000000001,
+        254.13924479999997,
+        184.52670772121604,
+        11.979110400000025
+      ],
+      "text" : "We will plug values into slope formula"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        147.84000000000003,
+        166.70320800000002,
+        43.205915127807998,
+        20.443392000000017
+      ],
+      "text" : "− 3(3)="
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        210.83941000000004,
+        237.983228,
+        35.192298409999978,
+        20.443392000000017
+      ],
+      "text" : "x2− x1"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        177.83980000000003,
+        218.542708,
+        68.102730400000013,
+        27.643392000000006
+      ],
+      "text" : "− 3=− 1− y"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        215.16020000000003,
+        210.74270799999999,
+        90.060212358655974,
+        28.255647200000027
+      ],
+      "text" : "5− 2 Simplify"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        177.83980000000003,
+        192.14300800000001,
+        68.102730400000013,
+        27.643392000000006
+      ],
+      "text" : "− 3=− 1− y"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        224.63990000000004,
+        192.81924479999998,
+        156.81814799999998,
+        19.779110400000008
+      ],
+      "text" : "3 Multiply both sides by 3"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        194.28030000000004,
+        173.90320800000001,
+        36.662430400000005,
+        20.443392000000017
+      ],
+      "text" : "− 1− y"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        209.64010000000005,
+        167.37944479999999,
+        95.580312358655959,
+        19.778910400000001
+      ],
+      "text" : "3 (3) Simplify"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        180.2398,
+        147.26320800000002,
+        66.902730400000024,
+        20.455347199999977
+      ],
+      "text" : "− 9=− 1− y"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        262.80010000000004,
+        147.26320800000002,
+        93.774653735603238,
+        20.455347199999977
+      ],
+      "text" : "Add 1to both sides"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        180.96000000000006,
+        138.09924480000001,
+        45.713552537600009,
+        11.967155200000008
+      ],
+      "text" : "+1 + 1"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        199.31999999999999,
+        111.86300800000001,
+        47.822630400000008,
+        20.455347200000006
+      ],
+      "text" : "− 8 =− y"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        262.80020000000002,
+        111.86300800000001,
+        119.018148,
+        20.455347200000006
+      ],
+      "text" : "Divide both sides by− 1"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        202.08030000000002,
+        94.222808000000015,
+        45.097847999999971,
+        20.443591999999995
+      ],
+      "text" : "− 1− 1"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        222,
+        84.939444800000004,
+        105.38384078999042,
+        11.979110399999996
+      ],
+      "text" : "8= y Our Solution"
+    },
+    {
+      "fontSize" : 9.9626400000000004,
+      "monospaced" : false,
+      "rect" : [
+        299.63980000000004,
+        52.379053200000001,
+        10.021160447733621,
+        9.8729762399999998
+      ],
+      "text" : "98"
+    }
+  ],
+  "page" : 98,
+  "rightsBasis" : "Page 2 states Copyright 2010 Tyler Wallace and Creative Commons Attribution 3.0 Unported. The PDF remains an external local corpus source; it is not bundled or relicensed under MIT.",
+  "sourceSHA256" : "856bd81edc61c50496982ddc849138f4e0e56fd0ddf0edb53fee9bb0830d0678",
+  "sourceTitle" : "Beginning and Intermediate Algebra",
+  "sourceURL" : "https://s3.amazonaws.com/myopenmath/cfiles/19515/Beginning_and_Intermediate_Algebra.pdf"
+}

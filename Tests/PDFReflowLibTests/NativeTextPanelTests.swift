@@ -42,10 +42,7 @@ func recoveredFedPanelsKeepPreviouslyCompleteParagraphs(number: Int) throws {
     let blocks = actual.map { canonical($0.text) }
     for paragraph in expected.baselineParagraphs {
         let words = canonical(paragraph)
-        // Page 95 also needs the independent body-leading guard.
-        // This control pins ordering; the typography control pins its paragraph continuity.
-        if number == 95 { #expect(blocks.joined().contains(words), "Page 95: \(paragraph)") }
-        else { #expect(blocks.contains { $0.contains(words) }, "Page \(number): \(paragraph)") }
+        #expect(blocks.contains { $0.contains(words) }, "Page \(number): \(paragraph)")
     }
 }
 

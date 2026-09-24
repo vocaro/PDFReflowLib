@@ -15,7 +15,7 @@ whose order the independent comparison found disturbed. No rendered assets are c
 
 `NativeTextPanels` groups only native text inside rectangles independently proved to hold
 wrapped prose. It declines panels intersecting images, semantic tables, quotations or asides,
-and cannot split a tagged text group across its border. A panel beside a paragraph follows
+and defers to retained tagged reading order on pages carrying validated text groups. A panel beside a paragraph follows
 that complete paragraph, including wider continuation rows above or below the panel.
 Small final words do not have to extend to the panel's edge. Unrelated paragraph columns
 cannot supply adjacency merely because their baselines coincide.
@@ -33,3 +33,19 @@ one resulting block after combining the independent body-leading corrections (`b
 the combined source control pins that result. Synthetic controls preserve tagged/styled/linked lines, keep every line once,
 cover mirrored geometry, and reject a figure, a semantic table, or a tag spanning the boundary.
 All 793 Swift tests pass on this isolated candidate. Final full-source conversion comparison and the corpus gate belong to the integrated root run.
+
+
+Independent review follow-up (2026-09-23): two generated controls reproduced valid tagged
+order being reversed by geometric panel placement and duplicate heading IDs after panel
+reconstruction started a fresh assembler. Panel grouping now defers to retained tags, and
+imported headings receive IDs from the surrounding page assembler. The packaged-EPUB test
+contains a main heading and two styled, linked panel headings; every heading has one unique
+XHTML anchor and one matching navigation target. Text, link targets and heading levels remain
+unchanged. Mixed tagged/untagged and fully tagged controls retain their accepted order.
+
+The focused panel, tag/order and spine/navigation selection passes 41 Swift tests, including
+all 17 Fed source pages. Live extraction of pinned NOAA physical pages 1691, 1712 and 1730,
+with `StructureTreeReader.read` supplied to `PageReader` exactly as in the conversion pipeline,
+finds respectively 42, 26 and 36 native lines, zero retained tagged lines and one recovered
+panel each. Their summary grouping and genuine headings therefore remain active under the
+conservative tag guard. The three committed NOAA heading-size source controls also pass.

@@ -1,0 +1,2428 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        54,
+        767.47000000000003,
+        155.60000000000005,
+        13.269999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Fifth National Climate Assessment"
+        }
+      ],
+      "text" : "Fifth National Climate Assessment"
+    },
+    {
+      "rect" : [
+        53.769998779000005,
+        16.990000000000002,
+        95.363000009540016,
+        13.27
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "2-43 | Climate Trends"
+        }
+      ],
+      "text" : "2-43 | Climate Trends"
+    },
+    {
+      "rect" : [
+        54,
+        726.50698388600006,
+        12.671999999999997,
+        12.465000000000032
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "30. "
+        }
+      ],
+      "text" : "30. "
+    },
+    {
+      "rect" : [
+        76.5,
+        726.50698388600006,
+        457.95960001545291,
+        12.465000000000032
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "Saunois, M., A.R. Stavert, B. Poulter, P. Bousquet, J.G. Canadell, R.B. Jackson, P.A. Raymond, E.J. Dlugokencky, S."
+        }
+      ],
+      "text" : "Saunois, M., A.R. Stavert, B. Poulter, P. Bousquet, J.G. Canadell, R.B. Jackson, P.A. Raymond, E.J. Dlugokencky, S."
+    },
+    {
+      "rect" : [
+        76.5,
+        715.70711816400001,
+        473.33250003776391,
+        12.465000000000032
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "Houweling, P.K. Patra, P. Ciais, V.K. Arora, D. Bastviken, P. Bergamaschi, D.R. Blake, G. Brailsford, L. Bruhwiler, K.M."
+        }
+      ],
+      "text" : "Houweling, P.K. Patra, P. Ciais, V.K. Arora, D. Bastviken, P. Bergamaschi, D.R. Blake, G. Brailsford, L. Bruhwiler, K.M."
+    },
+    {
+      "rect" : [
+        76.5,
+        704.90700830000003,
+        476.37360001545301,
+        12.465000000000032
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "Carlson, M. Carrol, S. Castaldi, N. Chandra, C. Crevoisier, P.M. Crill, K. Covey, C.L. Curry, G. Etiope, C. Frankenberg,"
+        }
+      ],
+      "text" : "Carlson, M. Carrol, S. Castaldi, N. Chandra, C. Crevoisier, P.M. Crill, K. Covey, C.L. Curry, G. Etiope, C. Frankenberg,"
+    },
+    {
+      "rect" : [
+        76.5,
+        694.10702050700002,
+        476.0154,
+        12.465000000000032
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "N. Gedney, M.I. Hegglin, L. Höglund-Isaksson, G. Hugelius, M. Ishizawa, A. Ito, G. Janssens-Maenhout, K.M. Jensen,"
+        }
+      ],
+      "text" : "N. Gedney, M.I. Hegglin, L. Höglund-Isaksson, G. Hugelius, M. Ishizawa, A. Ito, G. Janssens-Maenhout, K.M. Jensen,"
+    },
+    {
+      "rect" : [
+        76.5,
+        683.30697167900007,
+        471.29040002403872,
+        12.465000000000032
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "F. Joos, T. Kleinen, P.B. Krummel, R.L. Langenfelds, G.G. Laruelle, L. Liu, T. Machida, S. Maksyutov, K.C. McDonald,"
+        }
+      ],
+      "text" : "F. Joos, T. Kleinen, P.B. Krummel, R.L. Langenfelds, G.G. Laruelle, L. Liu, T. Machida, S. Maksyutov, K.C. McDonald,"
+    },
+    {
+      "rect" : [
+        76.5,
+        672.50698388600006,
+        471.36240003091496,
+        12.465000000000032
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "J. McNorton, P.A. Miller, J.R. Melton, I. Morino, J. Müller, F. Murguia-Flores, V. Naik, Y. Niwa, S. Noce, S. O’Doherty,"
+        }
+      ],
+      "text" : "J. McNorton, P.A. Miller, J.R. Melton, I. Morino, J. Müller, F. Murguia-Flores, V. Naik, Y. Niwa, S. Noce, S. O’Doherty,"
+    },
+    {
+      "rect" : [
+        76.5,
+        661.70699609300004,
+        462.51539998627516,
+        12.465000000000032
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "R.J. Parker, C. Peng, S. Peng, G.P. Peters, C. Prigent, R. Prinn, M. Ramonet, P. Regnier, W.J. Riley, J.A. Rosentreter,"
+        }
+      ],
+      "text" : "R.J. Parker, C. Peng, S. Peng, G.P. Peters, C. Prigent, R. Prinn, M. Ramonet, P. Regnier, W.J. Riley, J.A. Rosentreter,"
+    },
+    {
+      "rect" : [
+        76.5,
+        650.90700830000003,
+        461.63160002746793,
+        12.465000000000032
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "A. Segers, I.J. Simpson, H. Shi, S.J. Smith, L.P. Steele, B.F. Thornton, H. Tian, Y. Tohjima, F.N. Tubiello, A. Tsuruta,"
+        }
+      ],
+      "text" : "A. Segers, I.J. Simpson, H. Shi, S.J. Smith, L.P. Steele, B.F. Thornton, H. Tian, Y. Tohjima, F.N. Tubiello, A. Tsuruta,"
+    },
+    {
+      "rect" : [
+        76.5,
+        640.10702050700002,
+        461.4723000309059,
+        12.465000000000032
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "N. Viovy, A. Voulgarakis, T.S. Weber, M. van Weele, G.R. van der Werf, R.F. Weiss, D. Worthy, D. Wunch, Y. Yin, Y."
+        }
+      ],
+      "text" : "N. Viovy, A. Voulgarakis, T.S. Weber, M. van Weele, G.R. van der Werf, R.F. Weiss, D. Worthy, D. Wunch, Y. Yin, Y."
+    },
+    {
+      "rect" : [
+        76.5,
+        629.30697167900007,
+        467.57250002746787,
+        12.465000000000032
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "Yoshida, W. Zhang, Z. Zhang, Y. Zhao, B. Zheng, Q. Zhu, Q. Zhu, and Q. Zhuang, 2020: The global methane budget"
+        }
+      ],
+      "text" : "Yoshida, W. Zhang, Z. Zhang, Y. Zhao, B. Zheng, Q. Zhu, Q. Zhu, and Q. Zhuang, 2020: The global methane budget"
+    },
+    {
+      "rect" : [
+        76.5,
+        618.38998388599998,
+        412.797396972,
+        13.409999999999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "2000–2017. Earth System Science Data, 12 (3), 1561–1623. https://doi.org/10.5194/essd-12-1561-2020"
+        }
+      ],
+      "text" : "2000–2017. Earth System Science Data, 12 (3), 1561–1623. https://doi.org/10.5194/essd-12-1561-2020"
+    },
+    {
+      "rect" : [
+        54,
+        598.70699609300004,
+        10.503,
+        12.465000000000032
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "31. "
+        }
+      ],
+      "text" : "31. "
+    },
+    {
+      "rect" : [
+        76.5,
+        598.70699609300004,
+        455.93401074200005,
+        12.465000000000032
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "Lan, X., K.W. Thoning, and E.J. Dlugokencky, 2022: Trends in Globally-Averaged CH"
+        },
+        {
+          "baselineOffset" : -0.997009276999961,
+          "fontName" : "Helvetica",
+          "fontSize" : 5.2469999999999999,
+          "text" : "4"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : ", N"
+        },
+        {
+          "baselineOffset" : -0.997009276999961,
+          "fontName" : "Helvetica",
+          "fontSize" : 5.2469999999999999,
+          "text" : "2"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "O, and SF"
+        },
+        {
+          "baselineOffset" : -0.997009276999961,
+          "fontName" : "Helvetica",
+          "fontSize" : 5.2469999999999999,
+          "text" : "6"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : " Determined"
+        }
+      ],
+      "text" : "Lan, X., K.W. Thoning, and E.J. Dlugokencky, 2022: Trends in Globally-Averaged CH4, N2O, and SF6 Determined"
+    },
+    {
+      "rect" : [
+        76.5,
+        587.90700830000003,
+        463.59629999312381,
+        12.465000000000032
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "from NOAA Global Monitoring Laboratory Measurements. Version 2023-04. National Oceanic and Atmospheric"
+        }
+      ],
+      "text" : "from NOAA Global Monitoring Laboratory Measurements. Version 2023-04. National Oceanic and Atmospheric"
+    },
+    {
+      "rect" : [
+        76.5,
+        577.10702050700002,
+        346.38781225500003,
+        12.465000000000032
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "Administration, Global Monitoring Laboratory. https://doi.org/10.15138/p8xg-aa10"
+        }
+      ],
+      "text" : "Administration, Global Monitoring Laboratory. https://doi.org/10.15138/p8xg-aa10"
+    },
+    {
+      "rect" : [
+        54,
+        557.30697167900007,
+        12.060000000000002,
+        12.465000000000032
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "32. "
+        }
+      ],
+      "text" : "32. "
+    },
+    {
+      "rect" : [
+        76.5,
+        557.30697167900007,
+        481.53059999999994,
+        12.465000000000032
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "Prather, M.J., J. Hsu, N.M. DeLuca, C.H. Jackman, L.D. Oman, A.R. Douglass, E.L. Fleming, S.E. Strahan, S.D. Steenrod,"
+        }
+      ],
+      "text" : "Prather, M.J., J. Hsu, N.M. DeLuca, C.H. Jackman, L.D. Oman, A.R. Douglass, E.L. Fleming, S.E. Strahan, S.D. Steenrod,"
+    },
+    {
+      "rect" : [
+        76.5,
+        546.50698388600006,
+        446.37749999656194,
+        12.465000000000032
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "O.A. Søvde, I.S.A. Isaksen, L. Froidevaux, and B. Funke, 2015: Measuring and modeling the lifetime of nitrous"
+        }
+      ],
+      "text" : "O.A. Søvde, I.S.A. Isaksen, L. Froidevaux, and B. Funke, 2015: Measuring and modeling the lifetime of nitrous"
+    },
+    {
+      "rect" : [
+        76.5,
+        535.58999609299997,
+        448.14729418900004,
+        13.409999999999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "oxide including its variability. Journal of Geophysical Research: Atmospheres, 120 (11), 5693–5705. https://doi."
+        }
+      ],
+      "text" : "oxide including its variability. Journal of Geophysical Research: Atmospheres, 120 (11), 5693–5705. https://doi."
+    },
+    {
+      "rect" : [
+        76.5,
+        524.90700830000003,
+        111.7602,
+        12.465000000000032
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "org/10.1002/2015jd023267"
+        }
+      ],
+      "text" : "org/10.1002/2015jd023267"
+    },
+    {
+      "rect" : [
+        54,
+        504.98999000000003,
+        12.239999999999995,
+        12.581999999999994
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "33. "
+        }
+      ],
+      "text" : "33. "
+    },
+    {
+      "rect" : [
+        76.5,
+        504.98999000000003,
+        473.07668750000005,
+        12.581999999999994
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "Friedlingstein, P., M. O’Sullivan, M.W. Jones, R.M. Andrew, L. Gregor, et al., 2022: Global carbon budget 2022. Earth"
+        }
+      ],
+      "text" : "Friedlingstein, P., M. O’Sullivan, M.W. Jones, R.M. Andrew, L. Gregor, et al., 2022: Global carbon budget 2022. Earth"
+    },
+    {
+      "rect" : [
+        76.5,
+        494.19000219700001,
+        343.19280370999996,
+        13.410000000000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "System Science Data, 14 (11), 4811–4900. https://doi.org/10.5194/essd-14-4811-2022"
+        }
+      ],
+      "text" : "System Science Data, 14 (11), 4811–4900. https://doi.org/10.5194/essd-14-4811-2022"
+    },
+    {
+      "rect" : [
+        54,
+        474.50701440399996,
+        12.105000000000004,
+        12.464999999999975
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "34. "
+        }
+      ],
+      "text" : "34. "
+    },
+    {
+      "rect" : [
+        76.5,
+        474.50701440399996,
+        474.95249999657085,
+        12.464999999999975
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "Le Quéré, C., R.B. Jackson, M.W. Jones, A.J.P. Smith, S. Abernethy, R.M. Andrew, A.J. De-Gol, D.R. Willis, Y. Shan, J.G."
+        }
+      ],
+      "text" : "Le Quéré, C., R.B. Jackson, M.W. Jones, A.J.P. Smith, S. Abernethy, R.M. Andrew, A.J. De-Gol, D.R. Willis, Y. Shan, J.G."
+    },
+    {
+      "rect" : [
+        76.5,
+        463.70699609299999,
+        466.21108715800005,
+        12.464999999999975
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "Canadell, P. Friedlingstein, F. Creutzig, and G.P. Peters, 2020: Temporary reduction in daily global CO"
+        },
+        {
+          "baselineOffset" : -0.99700927700001785,
+          "fontName" : "Helvetica",
+          "fontSize" : 5.2469999999999999,
+          "text" : "2"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : " emissions"
+        }
+      ],
+      "text" : "Canadell, P. Friedlingstein, F. Creutzig, and G.P. Peters, 2020: Temporary reduction in daily global CO2 emissions"
+    },
+    {
+      "rect" : [
+        76.5,
+        452.79000830000001,
+        447.67280224600006,
+        13.410000000000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "during the COVID-19 forced confinement. Nature Climate Change, 10 (7), 647–653. https://doi.org/10.1038/"
+        }
+      ],
+      "text" : "during the COVID-19 forced confinement. Nature Climate Change, 10 (7), 647–653. https://doi.org/10.1038/"
+    },
+    {
+      "rect" : [
+        76.5,
+        442.10699,
+        79.595701049000013,
+        12.464999999999975
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "s41558-020-0797-x"
+        }
+      ],
+      "text" : "s41558-020-0797-x"
+    },
+    {
+      "rect" : [
+        54,
+        422.30700219699997,
+        12.123000000000005,
+        12.464999999999975
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "35. "
+        }
+      ],
+      "text" : "35. "
+    },
+    {
+      "rect" : [
+        76.5,
+        422.30700219699997,
+        476.35470002060106,
+        12.464999999999975
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "Liu, Z., P. Ciais, Z. Deng, R. Lei, S.J. Davis, S. Feng, B. Zheng, D. Cui, X. Dou, B. Zhu, R. Guo, P. Ke, T. Sun, C. Lu, P. He,"
+        }
+      ],
+      "text" : "Liu, Z., P. Ciais, Z. Deng, R. Lei, S.J. Davis, S. Feng, B. Zheng, D. Cui, X. Dou, B. Zhu, R. Guo, P. Ke, T. Sun, C. Lu, P. He,"
+    },
+    {
+      "rect" : [
+        76.5,
+        411.50701440399996,
+        474.07050003433505,
+        12.464999999999975
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "Y. Wang, X. Yue, Y. Wang, Y. Lei, H. Zhou, Z. Cai, Y. Wu, R. Guo, T. Han, J. Xue, O. Boucher, E. Boucher, F. Chevallier,"
+        }
+      ],
+      "text" : "Y. Wang, X. Yue, Y. Wang, Y. Lei, H. Zhou, Z. Cai, Y. Wu, R. Guo, T. Han, J. Xue, O. Boucher, E. Boucher, F. Chevallier,"
+    },
+    {
+      "rect" : [
+        76.5,
+        400.70699609299999,
+        479.14650001545294,
+        12.464999999999975
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "K. Tanaka, Y. Wei, H. Zhong, C. Kang, N. Zhang, B. Chen, F. Xi, M. Liu, F.-M. Bréon, Y. Lu, Q. Zhang, D. Guan, P. Gong,"
+        }
+      ],
+      "text" : "K. Tanaka, Y. Wei, H. Zhong, C. Kang, N. Zhang, B. Chen, F. Xi, M. Liu, F.-M. Bréon, Y. Lu, Q. Zhang, D. Guan, P. Gong,"
+    },
+    {
+      "rect" : [
+        76.5,
+        389.90700829999997,
+        455.412488037,
+        12.464999999999975
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "D.M. Kammen, K. He, and H.J. Schellnhuber, 2020: Near-real-time monitoring of global CO"
+        },
+        {
+          "baselineOffset" : -0.99700927700001785,
+          "fontName" : "Helvetica",
+          "fontSize" : 5.2469999999999999,
+          "text" : "2"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : " emissions reveals"
+        }
+      ],
+      "text" : "D.M. Kammen, K. He, and H.J. Schellnhuber, 2020: Near-real-time monitoring of global CO2 emissions reveals"
+    },
+    {
+      "rect" : [
+        76.5,
+        378.98999000000003,
+        448.33819790000007,
+        13.410000000000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "the effects of the COVID-19 pandemic. Nature Communications, 11 (1), 5172. https://doi.org/10.1038/s41467-"
+        }
+      ],
+      "text" : "the effects of the COVID-19 pandemic. Nature Communications, 11 (1), 5172. https://doi.org/10.1038/s41467-"
+    },
+    {
+      "rect" : [
+        76.5,
+        368.30700219699997,
+        51.092999999999989,
+        12.464999999999975
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "020-18922-7"
+        }
+      ],
+      "text" : "020-18922-7"
+    },
+    {
+      "rect" : [
+        54,
+        348.50701440399996,
+        12.429000000000002,
+        12.464999999999975
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "36. "
+        }
+      ],
+      "text" : "36. "
+    },
+    {
+      "rect" : [
+        76.5,
+        348.50701440399996,
+        447.42239999657113,
+        12.464999999999975
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "Laughner, J.L., J.L. Neu, D. Schimel, P.O. Wennberg, K. Barsanti, K.W. Bowman, A. Chatterjee, B.E. Croes, H.L."
+        }
+      ],
+      "text" : "Laughner, J.L., J.L. Neu, D. Schimel, P.O. Wennberg, K. Barsanti, K.W. Bowman, A. Chatterjee, B.E. Croes, H.L."
+    },
+    {
+      "rect" : [
+        76.5,
+        337.70699609299999,
+        461.3733000017188,
+        12.464999999999975
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "Fitzmaurice, D.K. Henze, J. Kim, E.A. Kort, Z. Liu, K. Miyazaki, A.J. Turner, S. Anenberg, J. Avise, H. Cao, D. Crisp,"
+        }
+      ],
+      "text" : "Fitzmaurice, D.K. Henze, J. Kim, E.A. Kort, Z. Liu, K. Miyazaki, A.J. Turner, S. Anenberg, J. Avise, H. Cao, D. Crisp,"
+    },
+    {
+      "rect" : [
+        76.5,
+        326.90700829999997,
+        475.61850000343804,
+        12.464999999999975
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "J.d. Gouw, A. Eldering, J.C. Fyfe, D.L. Goldberg, K.R. Gurney, S. Hasheminassab, F. Hopkins, C.E. Ivey, D.B.A. Jones, J."
+        }
+      ],
+      "text" : "J.d. Gouw, A. Eldering, J.C. Fyfe, D.L. Goldberg, K.R. Gurney, S. Hasheminassab, F. Hopkins, C.E. Ivey, D.B.A. Jones, J."
+    },
+    {
+      "rect" : [
+        76.5,
+        316.10699,
+        475.07850000000894,
+        12.464999999999975
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "Liu, N.S. Lovenduski, R.V. Martin, G.A. McKinley, L. Ott, B. Poulter, M. Ru, S.P. Sander, N. Swart, Y.L. Yung, and Z.-C."
+        }
+      ],
+      "text" : "Liu, N.S. Lovenduski, R.V. Martin, G.A. McKinley, L. Ott, B. Poulter, M. Ru, S.P. Sander, N. Swart, Y.L. Yung, and Z.-C."
+    },
+    {
+      "rect" : [
+        76.5,
+        305.30700219699997,
+        466.43939999656209,
+        12.464999999999975
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "Zeng, 2021: Societal shifts due to COVID-19 reveal large-scale complexities and feedbacks between atmospheric"
+        }
+      ],
+      "text" : "Zeng, 2021: Societal shifts due to COVID-19 reveal large-scale complexities and feedbacks between atmospheric"
+    },
+    {
+      "rect" : [
+        76.5,
+        294.390014404,
+        473.32923000000005,
+        13.410000000000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "chemistry and climate change. Proceedings of the National Academy of Sciences of the United States of America, 118"
+        }
+      ],
+      "text" : "chemistry and climate change. Proceedings of the National Academy of Sciences of the United States of America, 118"
+    },
+    {
+      "rect" : [
+        76.500099182,
+        283.70699609299999,
+        241.94419081800004,
+        12.464999999999975
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "(46), e2109481118. https://doi.org/10.1073/pnas.2109481118"
+        }
+      ],
+      "text" : "(46), e2109481118. https://doi.org/10.1073/pnas.2109481118"
+    },
+    {
+      "rect" : [
+        54.000099182,
+        263.90700829999997,
+        10.763999999999996,
+        12.464999999999975
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "37. "
+        }
+      ],
+      "text" : "37. "
+    },
+    {
+      "rect" : [
+        76.500099182,
+        263.90700829999997,
+        478.39050001373369,
+        12.464999999999975
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "Lovenduski, N.S., A. Chatterjee, N.C. Swart, J.C. Fyfe, R.F. Keeling, and D. Schimel, 2021: On the detection of COVID-"
+        }
+      ],
+      "text" : "Lovenduski, N.S., A. Chatterjee, N.C. Swart, J.C. Fyfe, R.F. Keeling, and D. Schimel, 2021: On the detection of COVID-"
+    },
+    {
+      "rect" : [
+        76.500099182,
+        252.99000524899998,
+        472.77170672600005,
+        13.410000000000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "driven changes in atmospheric carbon dioxide. Geophysical Research Letters, 48 (22), e2021GL095396. https://doi."
+        }
+      ],
+      "text" : "driven changes in atmospheric carbon dioxide. Geophysical Research Letters, 48 (22), e2021GL095396. https://doi."
+    },
+    {
+      "rect" : [
+        76.500099182,
+        242.307002197,
+        113.04820623800002,
+        12.465000000000003
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "org/10.1029/2021gl095396"
+        }
+      ],
+      "text" : "org/10.1029/2021gl095396"
+    },
+    {
+      "rect" : [
+        54.000099182,
+        222.50699914500001,
+        12.284999999999997,
+        12.465000000000003
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "38. "
+        }
+      ],
+      "text" : "38. "
+    },
+    {
+      "rect" : [
+        76.500099182,
+        222.50699914500001,
+        468.14940001374305,
+        12.465000000000003
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "Jones, M.W., G.P. Peters, T. Gasser, R.M. Andrew, C. Schwingshackl, J. Gütschow, R.A. Houghton, P. Friedlingstein,"
+        }
+      ],
+      "text" : "Jones, M.W., G.P. Peters, T. Gasser, R.M. Andrew, C. Schwingshackl, J. Gütschow, R.A. Houghton, P. Friedlingstein,"
+    },
+    {
+      "rect" : [
+        76.500099182,
+        211.707102905,
+        442.65239999999983,
+        12.465000000000003
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "J. Pongratz, and C. Le Quéré, 2023: National contributions to climate change due to historical emissions of"
+        }
+      ],
+      "text" : "J. Pongratz, and C. Le Quéré, 2023: National contributions to climate change due to historical emissions of"
+    },
+    {
+      "rect" : [
+        76.500099182,
+        200.78999304199999,
+        474.0601083370002,
+        13.409999999999997
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "carbon dioxide, methane, and nitrous oxide since 1850. Scientific Data, 10 (1), 155. https://doi.org/10.1038/s41597-"
+        }
+      ],
+      "text" : "carbon dioxide, methane, and nitrous oxide since 1850. Scientific Data, 10 (1), 155. https://doi.org/10.1038/s41597-"
+    },
+    {
+      "rect" : [
+        76.500099182,
+        190.107005249,
+        51.074900821437993,
+        12.465000000000003
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "023-02041-1"
+        }
+      ],
+      "text" : "023-02041-1"
+    },
+    {
+      "rect" : [
+        54.000099182,
+        170.307002197,
+        12.284999999999997,
+        12.465000000000003
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "39. "
+        }
+      ],
+      "text" : "39. "
+    },
+    {
+      "rect" : [
+        76.500099182,
+        170.307002197,
+        462.36060002232011,
+        12.465000000000003
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "Thakrar, S.K., S. Balasubramanian, P.J. Adams, I.M.L. Azevedo, N.Z. Muller, S.N. Pandis, S. Polasky, C.A. Pope, A.L."
+        }
+      ],
+      "text" : "Thakrar, S.K., S. Balasubramanian, P.J. Adams, I.M.L. Azevedo, N.Z. Muller, S.N. Pandis, S. Polasky, C.A. Pope, A.L."
+    },
+    {
+      "rect" : [
+        76.500099182,
+        159.50699914500001,
+        458.44560001373372,
+        12.465000000000003
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "Robinson, J.S. Apte, C.W. Tessum, J.D. Marshall, and J.D. Hill, 2020: Reducing mortality from air pollution in the"
+        }
+      ],
+      "text" : "Robinson, J.S. Apte, C.W. Tessum, J.D. Marshall, and J.D. Hill, 2020: Reducing mortality from air pollution in the"
+    },
+    {
+      "rect" : [
+        76.500099182,
+        148.59010290499998,
+        468.83949432300005,
+        13.409999999999997
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "United States by targeting specific emission sources. Environmental Science & Technology Letters, 7 (9), 639–645."
+        }
+      ],
+      "text" : "United States by targeting specific emission sources. Environmental Science & Technology Letters, 7 (9), 639–645."
+    },
+    {
+      "rect" : [
+        76.500099182,
+        137.90699304200001,
+        183.11149495800004,
+        12.465000000000003
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "https://doi.org/10.1021/acs.estlett.0c00424"
+        }
+      ],
+      "text" : "https://doi.org/10.1021/acs.estlett.0c00424"
+    },
+    {
+      "rect" : [
+        54.000099182,
+        118.106997619,
+        12.537000000000006,
+        12.465000000000003
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "40. "
+        }
+      ],
+      "text" : "40. "
+    },
+    {
+      "rect" : [
+        76.500099182,
+        118.106997619,
+        418.30560000686705,
+        12.465000000000003
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "Gettelman, A., R. Lamboll, C.G. Bardeen, P.M. Forster, and D. Watson-Parris, 2021: Climate impacts of"
+        }
+      ],
+      "text" : "Gettelman, A., R. Lamboll, C.G. Bardeen, P.M. Forster, and D. Watson-Parris, 2021: Climate impacts of"
+    },
+    {
+      "rect" : [
+        76.500099182,
+        107.190002197,
+        429.267007019,
+        13.409999999999997
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "COVID-19 induced emission changes. Geophysical Research Letters, 48 (3), e2020GL091805. https://doi."
+        }
+      ],
+      "text" : "COVID-19 induced emission changes. Geophysical Research Letters, 48 (3), e2020GL091805. https://doi."
+    },
+    {
+      "rect" : [
+        76.500099182,
+        96.506999145000009,
+        113.866306234562,
+        12.465000000000003
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "org/10.1029/2020gl091805"
+        }
+      ],
+      "text" : "org/10.1029/2020gl091805"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    612,
+    792
+  ],
+  "caseID" : "noaa-nca5-2023",
+  "filledCells" : [
+
+  ],
+  "filledCellText" : [
+
+  ],
+  "graphics" : [
+    [
+      307.32571411100002,
+      616.94598388600002,
+      183.97099304200003,
+      4
+    ],
+    [
+      271.12899780200001,
+      575.54602050699998,
+      153.75799560499996,
+      4
+    ],
+    [
+      474.02029418900003,
+      534.14599609300001,
+      52.625999450000052,
+      4
+    ],
+    [
+      74.5,
+      523.34600829999999,
+      115.760002136,
+      4
+    ],
+    [
+      238.19810485799999,
+      492.746002197,
+      183.494003295,
+      4
+    ],
+    [
+      417.48480224600002,
+      451.34600829999999,
+      108.68699645999999,
+      4
+    ],
+    [
+      74.5,
+      440.54599000000002,
+      83.59500122,
+      4
+    ],
+    [
+      387.7940979,
+      377.54599000000002,
+      139.04400634700005,
+      4
+    ],
+    [
+      74.5,
+      366.746002197,
+      55.092998504000008,
+      4
+    ],
+    [
+      147.560699462,
+      282.14599609300001,
+      172.88299560500002,
+      4
+    ],
+    [
+      498.64480590800002,
+      251.54600524899999,
+      52.625999450000052,
+      4
+    ],
+    [
+      74.5,
+      240.746002197,
+      117.04699707,
+      4
+    ],
+    [
+      413.65008544900002,
+      199.345993042,
+      138.90899658199999,
+      4
+    ],
+    [
+      74.5,
+      188.54600524899999,
+      55.074999999999989,
+      4
+    ],
+    [
+      74.5,
+      136.345993042,
+      187.11199951100002,
+      4
+    ],
+    [
+      455.14001464799998,
+      105.746002197,
+      52.625999449999995,
+      4
+    ],
+    [
+      74.5,
+      94.945999145000002,
+      117.865997314,
+      4
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        767.47000000000003,
+        155.60000000000005,
+        13.269999999999982
+      ],
+      "text" : "Fifth National Climate Assessment"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        53.769998779000005,
+        16.990000000000002,
+        95.363000009540016,
+        13.27
+      ],
+      "text" : "2-43 | Climate Trends"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        726.50698388600006,
+        12.671999999999997,
+        12.465000000000032
+      ],
+      "text" : "30."
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        76.5,
+        726.50698388600006,
+        457.95960001545291,
+        12.465000000000032
+      ],
+      "text" : "Saunois, M., A.R. Stavert, B. Poulter, P. Bousquet, J.G. Canadell, R.B. Jackson, P.A. Raymond, E.J. Dlugokencky, S."
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        76.5,
+        715.70711816400001,
+        473.33250003776391,
+        12.465000000000032
+      ],
+      "text" : "Houweling, P.K. Patra, P. Ciais, V.K. Arora, D. Bastviken, P. Bergamaschi, D.R. Blake, G. Brailsford, L. Bruhwiler, K.M."
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        76.5,
+        704.90700830000003,
+        476.37360001545301,
+        12.465000000000032
+      ],
+      "text" : "Carlson, M. Carrol, S. Castaldi, N. Chandra, C. Crevoisier, P.M. Crill, K. Covey, C.L. Curry, G. Etiope, C. Frankenberg,"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        76.5,
+        694.10702050700002,
+        476.0154,
+        12.465000000000032
+      ],
+      "text" : "N. Gedney, M.I. Hegglin, L. Höglund-Isaksson, G. Hugelius, M. Ishizawa, A. Ito, G. Janssens-Maenhout, K.M. Jensen,"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        76.5,
+        683.30697167900007,
+        471.29040002403872,
+        12.465000000000032
+      ],
+      "text" : "F. Joos, T. Kleinen, P.B. Krummel, R.L. Langenfelds, G.G. Laruelle, L. Liu, T. Machida, S. Maksyutov, K.C. McDonald,"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        76.5,
+        672.50698388600006,
+        471.36240003091496,
+        12.465000000000032
+      ],
+      "text" : "J. McNorton, P.A. Miller, J.R. Melton, I. Morino, J. Müller, F. Murguia-Flores, V. Naik, Y. Niwa, S. Noce, S. O’Doherty,"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        76.5,
+        661.70699609300004,
+        462.51539998627516,
+        12.465000000000032
+      ],
+      "text" : "R.J. Parker, C. Peng, S. Peng, G.P. Peters, C. Prigent, R. Prinn, M. Ramonet, P. Regnier, W.J. Riley, J.A. Rosentreter,"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        76.5,
+        650.90700830000003,
+        461.63160002746793,
+        12.465000000000032
+      ],
+      "text" : "A. Segers, I.J. Simpson, H. Shi, S.J. Smith, L.P. Steele, B.F. Thornton, H. Tian, Y. Tohjima, F.N. Tubiello, A. Tsuruta,"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        76.5,
+        640.10702050700002,
+        461.4723000309059,
+        12.465000000000032
+      ],
+      "text" : "N. Viovy, A. Voulgarakis, T.S. Weber, M. van Weele, G.R. van der Werf, R.F. Weiss, D. Worthy, D. Wunch, Y. Yin, Y."
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        76.5,
+        629.30697167900007,
+        467.57250002746787,
+        12.465000000000032
+      ],
+      "text" : "Yoshida, W. Zhang, Z. Zhang, Y. Zhao, B. Zheng, Q. Zhu, Q. Zhu, and Q. Zhuang, 2020: The global methane budget"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        76.5,
+        618.38998388599998,
+        412.797396972,
+        13.409999999999968
+      ],
+      "text" : "2000–2017. Earth System Science Data, 12 (3), 1561–1623. https://doi.org/10.5194/essd-12-1561-2020"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        598.70699609300004,
+        10.503,
+        12.465000000000032
+      ],
+      "text" : "31."
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        76.5,
+        598.70699609300004,
+        455.93401074200005,
+        12.465000000000032
+      ],
+      "text" : "Lan, X., K.W. Thoning, and E.J. Dlugokencky, 2022: Trends in Globally-Averaged CH4, N2O, and SF6 Determined"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        76.5,
+        587.90700830000003,
+        463.59629999312381,
+        12.465000000000032
+      ],
+      "text" : "from NOAA Global Monitoring Laboratory Measurements. Version 2023-04. National Oceanic and Atmospheric"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        76.5,
+        577.10702050700002,
+        346.38781225500003,
+        12.465000000000032
+      ],
+      "text" : "Administration, Global Monitoring Laboratory. https://doi.org/10.15138/p8xg-aa10"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        557.30697167900007,
+        12.060000000000002,
+        12.465000000000032
+      ],
+      "text" : "32."
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        76.5,
+        557.30697167900007,
+        481.53059999999994,
+        12.465000000000032
+      ],
+      "text" : "Prather, M.J., J. Hsu, N.M. DeLuca, C.H. Jackman, L.D. Oman, A.R. Douglass, E.L. Fleming, S.E. Strahan, S.D. Steenrod,"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        76.5,
+        546.50698388600006,
+        446.37749999656194,
+        12.465000000000032
+      ],
+      "text" : "O.A. Søvde, I.S.A. Isaksen, L. Froidevaux, and B. Funke, 2015: Measuring and modeling the lifetime of nitrous"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        76.5,
+        535.58999609299997,
+        448.14729418900004,
+        13.409999999999968
+      ],
+      "text" : "oxide including its variability. Journal of Geophysical Research: Atmospheres, 120 (11), 5693–5705. https://doi."
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        76.5,
+        524.90700830000003,
+        111.7602,
+        12.465000000000032
+      ],
+      "text" : "org/10.1002/2015jd023267"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        504.98999000000003,
+        12.239999999999995,
+        12.581999999999994
+      ],
+      "text" : "33."
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        76.5,
+        504.98999000000003,
+        473.07668750000005,
+        12.581999999999994
+      ],
+      "text" : "Friedlingstein, P., M. O’Sullivan, M.W. Jones, R.M. Andrew, L. Gregor, et al., 2022: Global carbon budget 2022. Earth"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        76.5,
+        494.19000219700001,
+        343.19280370999996,
+        13.410000000000025
+      ],
+      "text" : "System Science Data, 14 (11), 4811–4900. https://doi.org/10.5194/essd-14-4811-2022"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        474.50701440399996,
+        12.105000000000004,
+        12.464999999999975
+      ],
+      "text" : "34."
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        76.5,
+        474.50701440399996,
+        474.95249999657085,
+        12.464999999999975
+      ],
+      "text" : "Le Quéré, C., R.B. Jackson, M.W. Jones, A.J.P. Smith, S. Abernethy, R.M. Andrew, A.J. De-Gol, D.R. Willis, Y. Shan, J.G."
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        76.5,
+        463.70699609299999,
+        466.21108715800005,
+        12.464999999999975
+      ],
+      "text" : "Canadell, P. Friedlingstein, F. Creutzig, and G.P. Peters, 2020: Temporary reduction in daily global CO2 emissions"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        76.5,
+        452.79000830000001,
+        447.67280224600006,
+        13.410000000000025
+      ],
+      "text" : "during the COVID-19 forced confinement. Nature Climate Change, 10 (7), 647–653. https://doi.org/10.1038/"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        76.5,
+        442.10699,
+        79.595701049000013,
+        12.464999999999975
+      ],
+      "text" : "s41558-020-0797-x"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        422.30700219699997,
+        12.123000000000005,
+        12.464999999999975
+      ],
+      "text" : "35."
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        76.5,
+        422.30700219699997,
+        476.35470002060106,
+        12.464999999999975
+      ],
+      "text" : "Liu, Z., P. Ciais, Z. Deng, R. Lei, S.J. Davis, S. Feng, B. Zheng, D. Cui, X. Dou, B. Zhu, R. Guo, P. Ke, T. Sun, C. Lu, P. He,"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        76.5,
+        411.50701440399996,
+        474.07050003433505,
+        12.464999999999975
+      ],
+      "text" : "Y. Wang, X. Yue, Y. Wang, Y. Lei, H. Zhou, Z. Cai, Y. Wu, R. Guo, T. Han, J. Xue, O. Boucher, E. Boucher, F. Chevallier,"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        76.5,
+        400.70699609299999,
+        479.14650001545294,
+        12.464999999999975
+      ],
+      "text" : "K. Tanaka, Y. Wei, H. Zhong, C. Kang, N. Zhang, B. Chen, F. Xi, M. Liu, F.-M. Bréon, Y. Lu, Q. Zhang, D. Guan, P. Gong,"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        76.5,
+        389.90700829999997,
+        455.412488037,
+        12.464999999999975
+      ],
+      "text" : "D.M. Kammen, K. He, and H.J. Schellnhuber, 2020: Near-real-time monitoring of global CO2 emissions reveals"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        76.5,
+        378.98999000000003,
+        448.33819790000007,
+        13.410000000000025
+      ],
+      "text" : "the effects of the COVID-19 pandemic. Nature Communications, 11 (1), 5172. https://doi.org/10.1038/s41467-"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        76.5,
+        368.30700219699997,
+        51.092999999999989,
+        12.464999999999975
+      ],
+      "text" : "020-18922-7"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        348.50701440399996,
+        12.429000000000002,
+        12.464999999999975
+      ],
+      "text" : "36."
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        76.5,
+        348.50701440399996,
+        447.42239999657113,
+        12.464999999999975
+      ],
+      "text" : "Laughner, J.L., J.L. Neu, D. Schimel, P.O. Wennberg, K. Barsanti, K.W. Bowman, A. Chatterjee, B.E. Croes, H.L."
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        76.5,
+        337.70699609299999,
+        461.3733000017188,
+        12.464999999999975
+      ],
+      "text" : "Fitzmaurice, D.K. Henze, J. Kim, E.A. Kort, Z. Liu, K. Miyazaki, A.J. Turner, S. Anenberg, J. Avise, H. Cao, D. Crisp,"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        76.5,
+        326.90700829999997,
+        475.61850000343804,
+        12.464999999999975
+      ],
+      "text" : "J.d. Gouw, A. Eldering, J.C. Fyfe, D.L. Goldberg, K.R. Gurney, S. Hasheminassab, F. Hopkins, C.E. Ivey, D.B.A. Jones, J."
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        76.5,
+        316.10699,
+        475.07850000000894,
+        12.464999999999975
+      ],
+      "text" : "Liu, N.S. Lovenduski, R.V. Martin, G.A. McKinley, L. Ott, B. Poulter, M. Ru, S.P. Sander, N. Swart, Y.L. Yung, and Z.-C."
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        76.5,
+        305.30700219699997,
+        466.43939999656209,
+        12.464999999999975
+      ],
+      "text" : "Zeng, 2021: Societal shifts due to COVID-19 reveal large-scale complexities and feedbacks between atmospheric"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        76.5,
+        294.390014404,
+        473.32923000000005,
+        13.410000000000025
+      ],
+      "text" : "chemistry and climate change. Proceedings of the National Academy of Sciences of the United States of America, 118"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        76.500099182,
+        283.70699609299999,
+        241.94419081800004,
+        12.464999999999975
+      ],
+      "text" : "(46), e2109481118. https://doi.org/10.1073/pnas.2109481118"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        54.000099182,
+        263.90700829999997,
+        10.763999999999996,
+        12.464999999999975
+      ],
+      "text" : "37."
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        76.500099182,
+        263.90700829999997,
+        478.39050001373369,
+        12.464999999999975
+      ],
+      "text" : "Lovenduski, N.S., A. Chatterjee, N.C. Swart, J.C. Fyfe, R.F. Keeling, and D. Schimel, 2021: On the detection of COVID-"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        76.500099182,
+        252.99000524899998,
+        472.77170672600005,
+        13.410000000000025
+      ],
+      "text" : "driven changes in atmospheric carbon dioxide. Geophysical Research Letters, 48 (22), e2021GL095396. https://doi."
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        76.500099182,
+        242.307002197,
+        113.04820623800002,
+        12.465000000000003
+      ],
+      "text" : "org/10.1029/2021gl095396"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        54.000099182,
+        222.50699914500001,
+        12.284999999999997,
+        12.465000000000003
+      ],
+      "text" : "38."
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        76.500099182,
+        222.50699914500001,
+        468.14940001374305,
+        12.465000000000003
+      ],
+      "text" : "Jones, M.W., G.P. Peters, T. Gasser, R.M. Andrew, C. Schwingshackl, J. Gütschow, R.A. Houghton, P. Friedlingstein,"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        76.500099182,
+        211.707102905,
+        442.65239999999983,
+        12.465000000000003
+      ],
+      "text" : "J. Pongratz, and C. Le Quéré, 2023: National contributions to climate change due to historical emissions of"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        76.500099182,
+        200.78999304199999,
+        474.0601083370002,
+        13.409999999999997
+      ],
+      "text" : "carbon dioxide, methane, and nitrous oxide since 1850. Scientific Data, 10 (1), 155. https://doi.org/10.1038/s41597-"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        76.500099182,
+        190.107005249,
+        51.074900821437993,
+        12.465000000000003
+      ],
+      "text" : "023-02041-1"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        54.000099182,
+        170.307002197,
+        12.284999999999997,
+        12.465000000000003
+      ],
+      "text" : "39."
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        76.500099182,
+        170.307002197,
+        462.36060002232011,
+        12.465000000000003
+      ],
+      "text" : "Thakrar, S.K., S. Balasubramanian, P.J. Adams, I.M.L. Azevedo, N.Z. Muller, S.N. Pandis, S. Polasky, C.A. Pope, A.L."
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        76.500099182,
+        159.50699914500001,
+        458.44560001373372,
+        12.465000000000003
+      ],
+      "text" : "Robinson, J.S. Apte, C.W. Tessum, J.D. Marshall, and J.D. Hill, 2020: Reducing mortality from air pollution in the"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        76.500099182,
+        148.59010290499998,
+        468.83949432300005,
+        13.409999999999997
+      ],
+      "text" : "United States by targeting specific emission sources. Environmental Science & Technology Letters, 7 (9), 639–645."
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        76.500099182,
+        137.90699304200001,
+        183.11149495800004,
+        12.465000000000003
+      ],
+      "text" : "https://doi.org/10.1021/acs.estlett.0c00424"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        54.000099182,
+        118.106997619,
+        12.537000000000006,
+        12.465000000000003
+      ],
+      "text" : "40."
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        76.500099182,
+        118.106997619,
+        418.30560000686705,
+        12.465000000000003
+      ],
+      "text" : "Gettelman, A., R. Lamboll, C.G. Bardeen, P.M. Forster, and D. Watson-Parris, 2021: Climate impacts of"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        76.500099182,
+        107.190002197,
+        429.267007019,
+        13.409999999999997
+      ],
+      "text" : "COVID-19 induced emission changes. Geophysical Research Letters, 48 (3), e2020GL091805. https://doi."
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        76.500099182,
+        96.506999145000009,
+        113.866306234562,
+        12.465000000000003
+      ],
+      "text" : "org/10.1029/2020gl091805"
+    }
+  ],
+  "page" : 122,
+  "paintOperations" : [
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          307.32571411100002,
+          616.94598388600002
+        ],
+        [
+          183.97099304200003,
+          4
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          309.32571411100002,
+          618.94598388600002
+        ],
+        [
+          489.29670715300006,
+          618.94598388600002
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          271.12899780200001,
+          575.54602050699998
+        ],
+        [
+          153.75799560499996,
+          4
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          273.12899780200001,
+          577.54602050699998
+        ],
+        [
+          422.88699340699998,
+          577.54602050699998
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          474.02029418900003,
+          534.14599609300001
+        ],
+        [
+          52.625999450000052,
+          4
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          476.02029418900003,
+          536.14599609300001
+        ],
+        [
+          524.64629363900008,
+          536.14599609300001
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          74.5,
+          523.34600829999999
+        ],
+        [
+          115.760002136,
+          4
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          76.5,
+          525.34600829999999
+        ],
+        [
+          188.260002136,
+          525.34600829999999
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          238.19810485799999,
+          492.746002197
+        ],
+        [
+          183.494003295,
+          4
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          240.19810485799999,
+          494.746002197
+        ],
+        [
+          419.69210815299999,
+          494.746002197
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          417.48480224600002,
+          451.34600829999999
+        ],
+        [
+          108.68699645999999,
+          4
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          419.48480224600002,
+          453.34600829999999
+        ],
+        [
+          524.171798706,
+          453.34600829999999
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          74.5,
+          440.54599000000002
+        ],
+        [
+          83.59500122,
+          4
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          76.5,
+          442.54599000000002
+        ],
+        [
+          156.09500122,
+          442.54599000000002
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          387.7940979,
+          377.54599000000002
+        ],
+        [
+          139.04400634700005,
+          4
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          389.7940979,
+          379.54599000000002
+        ],
+        [
+          524.83810424700005,
+          379.54599000000002
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          74.5,
+          366.746002197
+        ],
+        [
+          55.092998504000008,
+          4
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          76.5,
+          368.746002197
+        ],
+        [
+          127.59299850400001,
+          368.746002197
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          147.560699462,
+          282.14599609300001
+        ],
+        [
+          172.88299560500002,
+          4
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          149.560699462,
+          284.14599609300001
+        ],
+        [
+          318.44369506700002,
+          284.14599609300001
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          498.64480590800002,
+          251.54600524899999
+        ],
+        [
+          52.625999450000052,
+          4
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          500.64480590800002,
+          253.54600524899999
+        ],
+        [
+          549.27080535800008,
+          253.54600524899999
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          74.5,
+          240.746002197
+        ],
+        [
+          117.04699707,
+          4
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          76.5,
+          242.746002197
+        ],
+        [
+          189.54699707,
+          242.746002197
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          413.65008544900002,
+          199.345993042
+        ],
+        [
+          138.90899658199999,
+          4
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          415.65008544900002,
+          201.345993042
+        ],
+        [
+          550.559082031,
+          201.345993042
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          74.5,
+          188.54600524899999
+        ],
+        [
+          55.074999999999989,
+          4
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          76.5,
+          190.54600524899999
+        ],
+        [
+          127.575,
+          190.54600524899999
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          74.5,
+          136.345993042
+        ],
+        [
+          187.11199951100002,
+          4
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          76.5,
+          138.345993042
+        ],
+        [
+          259.61199951100002,
+          138.345993042
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          455.14001464799998,
+          105.746002197
+        ],
+        [
+          52.625999449999995,
+          4
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          457.14001464799998,
+          107.746002197
+        ],
+        [
+          505.76601409799997,
+          107.746002197
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          74.5,
+          94.945999145000002
+        ],
+        [
+          117.865997314,
+          4
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          76.5,
+          96.945999145000002
+        ],
+        [
+          190.365997314,
+          96.945999145000002
+        ]
+      ]
+    }
+  ],
+  "pictures" : [
+
+  ],
+  "rightsBasis" : "NOAA repository explicitly identifies CC0 Public Domain. This records the publisher declaration, not a new owner-confirmed rights determination or shipped-catalog admission.",
+  "schemaVersion" : 3,
+  "sourceSHA256" : "1942cbf346dc2c711fea413d6d6543edb8bc1e3a88d4c3a85e733c6b6d3577bf",
+  "sourceTitle" : "Fifth National Climate Assessment",
+  "sourceURL" : "https://repository.library.noaa.gov/view/noaa/61592/noaa_61592_DS1.pdf"
+}

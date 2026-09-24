@@ -582,6 +582,8 @@ struct BlockAssembler {
     /// #282). Empty where the page sets no such list.
     private let markerEntries: Set<CGRect>
     private let markerEntryEdge: CGFloat?
+    /// Dotted citation numbers and their text edge, established by a repeated bibliography.
+    private let numberedBibliography: Bool
     /// Entry starts and hanging continuations established by a repeated author column (#157).
     private let bibliographyOpenings: Set<CGRect>
     private let bibliographyWraps: Set<CGRect>
@@ -612,6 +614,7 @@ struct BlockAssembler {
          columnSeams: [CGFloat] = [],
          ordinaryHeights: [Int: CGFloat] = [:],
          markerEntries: Set<CGRect> = [], markerEntryEdge: CGFloat? = nil,
+         numberedBibliography: Bool = false,
          bibliographyOpenings: Set<CGRect> = [], bibliographyWraps: Set<CGRect> = [],
          labelValueStarts: Set<CGRect> = [],
          rightToLeft: Bool = false, recognized: Bool = false, notesPage: Bool = false) {
@@ -626,6 +629,7 @@ struct BlockAssembler {
         self.numberedAnswerWraps = numberedAnswerWraps
         self.markerEntries = markerEntries
         self.markerEntryEdge = markerEntryEdge
+        self.numberedBibliography = numberedBibliography
         self.bibliographyOpenings = bibliographyOpenings
         self.bibliographyWraps = bibliographyWraps
         self.labelValueStarts = labelValueStarts
@@ -901,6 +905,27 @@ struct BlockAssembler {
     }
 
     mutating func append(_ line: TextLine, as role: LineRole) {
+        // A numbered bibliography sets its marker in a separate column and every line of the
+        // citation on one text edge. Keep that whole entry together even when an author's
+        // initial would otherwise read as a fresh lettered item (#219 item 1).
+        if numberedBibliography, let edge = markerEntryEdge,
+           !markerEntries.contains(line.rect), abs(line.rect.minX - edge) <= body * 0.25,
+           let above = itemLine ?? previous, above.hasSize(line.fontSize),
+           (above.sharesRow(with: line)
+               || (above.rect.minY > line.rect.minY && above.rect.minY - line.rect.minY <= body * 1.5)) {
+            if !paragraph.elements.isEmpty {
+                paragraph = join(paragraph, line.content)
+                previous = line
+                previousRow = nil
+                return
+            }
+            if let last = blocks.last, last.page == page, case let .preformatted(text) = last.content {
+                blocks[blocks.count - 1].content = .preformatted(join(text, line.content))
+                itemLine = line
+                itemRowInProgress = line
+                return
+            }
+        }
         let openedByInitial = initialOpening
         initialOpening = nil
         flushNote()

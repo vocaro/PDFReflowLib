@@ -2121,6 +2121,8 @@ enum LayoutReconstructor {
         // the wrapped second line of each entry the page hangs, both read from the lines that
         // still reflow, as the table rows below are (#160).
         let markerList = hangingMarkerList(in: lines, body: typography.body)
+        let numberedReferences = markerList == nil
+            ? NumberedBibliography.evidence(in: lines, body: typography.body) : nil
         let bibliography = bibliographyLines(in: lines, body: typography.body)
         let quoteGroups = quotationGroups(in: lines, body: typography.body)
         let answerWraps = numberedAnswerWraps(in: lines, body: typography.body)
@@ -2136,8 +2138,9 @@ enum LayoutReconstructor {
                                        columnSeams: columnSeams(in: lines, body: typography.body,
                                                                 rightToLeft: rightToLeft),
                                        ordinaryHeights: ordinaryLineHeights(in: lines),
-                                       markerEntries: markerList?.openings ?? [],
-                                       markerEntryEdge: markerList?.edge,
+                                       markerEntries: markerList?.openings ?? numberedReferences?.openings ?? [],
+                                       markerEntryEdge: markerList?.edge ?? numberedReferences?.edge,
+                                       numberedBibliography: numberedReferences != nil,
                                        bibliographyOpenings: bibliography.openings,
                                        bibliographyWraps: bibliography.wraps,
                                        labelValueStarts: page.recognized || page.hasSyntheticTextStyle

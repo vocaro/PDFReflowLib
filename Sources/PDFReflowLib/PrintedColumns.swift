@@ -66,6 +66,10 @@ enum PrintedColumns {
             let bottom = touched.flatMap { groups[$0] }.map(\.rect.minY).min()!
             if element.rect.minY >= top - 1 { before[first, default: []].append(element) }
             else if element.rect.maxY <= bottom + 1 { after[last, default: []].append(element) }
+            // A preserved background can cross the gutter and overlap several columns.
+            // Native paragraph ownership was proved before ordering; retain the crop after
+            // those columns instead of allowing its bounds to interleave their rows.
+            else if element.image != nil && element.proseBackdrop { after[last, default: []].append(element) }
             else { return nil }
         }
         return Plan(before: before, columns: columns, after: after)

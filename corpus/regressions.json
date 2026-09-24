@@ -2465,7 +2465,7 @@
     {
       "id": "noaa-nca5-2023",
       "sourceSHA256": "1942cbf346dc2c711fea413d6d6543edb8bc1e3a88d4c3a85e733c6b6d3577bf",
-      "basis": "Admitted to the corpus lane on the owner's 2026-09-23 ruling on #242, measured on 8faeaab at library defaults: 1,834 pages, 1,609 images, 286,429,009 entry bytes, 0.53 of the 512 MiB budget, no recognized page (measurements/corpus-lane-admissions/record.md). Source pages 1, 8, 33, 48, 80, 84, 139, 1700 and 1834 rendered with Poppler and read against the converted output. Page 1 protects the cover title as a heading and the cover photograph. Page 8 protects the front-matter and chapter entries of the contents in the order the page prints them, the key-message entries under chapters 2 and 3, the painting and its credit; how each entry is set (some preformatted, the chapter 3 entries a table) is not pinned. Pages 33, 80 and 139 are chapter openers: each protects its running head, its title and its photograph; on all three the title is a heading (#296), and page 33 keeps its running head as prose. Page 48 protects its section heading, the first line of its sub-heading and its first two paragraphs; the sub-heading's second line, the rest of the column and both captions sit inside the figure crop, the state #181 recorded and #231 reconciled as closed with its fix only on the abandoned branch, so nothing there is pinned. Page 84 protects the prose before and after the Key Message 2.1 box in order, the paragraph's closing sentence inside one paragraph, and the absence of the running foot; the box itself is a crop and its heading is not pinned. Page 1700 protects the focus-section title as a heading, the contributor roles and names in source order and the absence of the running foot; the Authors and Contributors band is a crop. Page 1834 is the back cover of agency seals and keeps a page image. Issue #215 adds physical pages 6, 25 and 1738: page 6 keeps both J. Michael Kuperberg entries as paragraphs, page 25 pins both painted two-column tables cell by cell plus their titles and the adjacent prose, and page 1738 protects the credit roles and names. Exact separation of Cover Art and Diane Burko is additionally checked by the source-layout regression and the whole-conversion comparison record.",
+      "basis": "Admitted to the corpus lane on the owner's 2026-09-23 ruling on #242, measured on 8faeaab at library defaults: 1,834 pages, 1,609 images, 286,429,009 entry bytes, 0.53 of the 512 MiB budget, no recognized page (measurements/corpus-lane-admissions/record.md). Source pages 1, 8, 33, 48, 80, 84, 139, 1700 and 1834 rendered with Poppler and read against the converted output. Page 1 protects the cover title as a heading and the cover photograph. Page 8 protects the front-matter and chapter entries of the contents in the order the page prints them, the key-message entries under chapters 2 and 3, the painting and its credit; how each entry is set (some preformatted, the chapter 3 entries a table) is not pinned. Pages 33, 80 and 139 are chapter openers: each protects its running head, its title and its photograph; on all three the title is a heading (#296), and page 33 keeps its running head as prose. Page 48 protects its section heading, the first line of its sub-heading and its first two paragraphs; the sub-heading's second line, the rest of the column and both captions sit inside the figure crop, the state #181 recorded and #231 reconciled as closed with its fix only on the abandoned branch, so nothing there is pinned. Page 84 protects the prose before and after the Key Message 2.1 box in order, the paragraph's closing sentence inside one paragraph, and the absence of the running foot; the box itself is a crop and its heading is not pinned. Page 1700 protects the focus-section title as a heading, the contributor roles and names in source order and the absence of the running foot; the Authors and Contributors band is a crop. Page 1834 is the back cover of agency seals and keeps a page image. Issue #215 adds physical pages 6, 25 and 1738: page 6 keeps both J. Michael Kuperberg entries as paragraphs, page 25 pins both painted two-column tables cell by cell plus their titles and the adjacent prose, and page 1738 protects the credit roles and names. Exact separation of Cover Art and Diane Burko is additionally checked by the source-layout regression and the whole-conversion comparison record. Physical pages 50, 60, 63, 64 and 78 were rendered with MuPDF and visually reviewed for complete left-column-before-right-column order. Their pinned JSON fixtures separately capture native text, geometry, attributed runs and raw paint operations from the SHA-identified source; capture alone is not the visual review. The page-50 map caption must finish before right-column prose; page 60 keeps both infrastructure and health paragraphs whole; page 63 completes the left ecosystem paragraph before the right marine-ecosystem column; pages 64 and 78 keep economic and mitigation prose in complete columns. These checks protect paragraph continuity and source order while preserving each page’s artwork; they do not qualify omitted heading lines or other existing fidelity gaps.",
       "pages": [
         {
           "page": 1,
@@ -2595,6 +2595,92 @@
             "Global greenhouse gas emissions from human activities continue to increase, resulting in rapid warming (Figure 1.5)",
             "unprecedented for thousands of years (Figure 1.6)",
             "As the world’s climate has shifted toward warmer conditions"
+          ],
+          "minimumImages": 1
+        },
+        {
+          "page": 50,
+          "orderedText": [
+            "Figure 1.7. Billion-dollar weather",
+            "Adapted from NCEI 2023.",
+            "The impacts and risks of climate change unfold",
+            "The risk of two or more extreme events",
+            "Compound events often have cascading impacts"
+          ],
+          "paragraphs": [
+            "Figure 1.7. Billion-dollar weather and climate disasters are events where damages/costs reach or exceed $1 billion, including adjustments for inflation.",
+            "These interactions and interdependencies can lead to cascading impacts and sudden failures."
+          ],
+          "minimumImages": 1
+        },
+        {
+          "page": 60,
+          "orderedText": [
+            "hurricanes will strain wastewater",
+            "Forward-looking designs of infrastructure",
+            "Figure 22.17",
+            "Climate change is already harming human health",
+            "Mental and spiritual health stressors",
+            "The Hooskanaden Landslide"
+          ],
+          "paragraphs": [
+            "Climate change is already harming human health across the US, and impacts are expected to worsen with continued warming. Climate change harms individuals and communities by exposing them to a range of compounding health hazards, including the following:",
+            "Forward-looking designs of infrastructure and services can help build resilience to climate change, offset costs from future damage to transportation and electrical systems"
+          ],
+          "minimumImages": 1
+        },
+        {
+          "page": 63,
+          "orderedText": [
+            "Together with other stressors",
+            "Figure A4.12",
+            "Changes in ocean conditions",
+            "Increased risks to ecosystems",
+            "While adaptation options",
+            "Coastal ghost forests result"
+          ],
+          "paragraphs": [
+            "Changes in ocean conditions and extreme events are already transforming coastal, aquatic, and marine ecosystems. Coral reefs are being lost due to warming and ocean acidification, harming important fisheries;",
+            "Together with other stressors, climate change is harming the health and resilience of ecosystems, leading to reductions in biodiversity and ecosystem services."
+          ],
+          "minimumImages": 1
+        },
+        {
+          "page": 64,
+          "orderedText": [
+            "Climate change slows economic growth",
+            "Mitigation and adaptation actions present economic",
+            "Many regional economies and livelihoods",
+            "Climate change is projected to reduce US economic output",
+            "As fish stocks in the Northeast",
+            "While the Southeast and US Caribbean",
+            "Agricultural losses in the Midwest",
+            "In the Northern Great Plains"
+          ],
+          "paragraphs": [
+            "Climate change is projected to reduce US economic output and labor productivity across many sectors, with effects differing based on local climate and the industries unique to each region.",
+            "With every additional increment of global warming, costly damages are expected to accelerate. For example, 2°F of warming is projected to cause more than twice the economic harm induced by 1°F of warming."
+          ],
+          "minimumImages": 1
+        },
+        {
+          "page": 78,
+          "orderedText": [
+            "Actions taken now to accelerate",
+            "Accelerating the deployment",
+            "Transitioning to a carbon-free",
+            "Reducing emissions of short-lived",
+            "Green infrastructure and nature-based solutions",
+            "Strategic planning and investment",
+            "Improving cropland management",
+            "Climate actions that incorporate inclusive",
+            "Transformative climate actions",
+            "Fossil fuel–based energy systems",
+            "A “just transition”"
+          ],
+          "paragraphs": [
+            "expanding renewable energy, and improving building efficiency can have significant near-term social and economic benefits like reducing energy costs and creating jobs.",
+            "the economic impacts of climate change, including costs to households and businesses, risks to markets and supply chains, and potential negative impacts on employment and income, while also providing opportunities for economic gain."
           ],
           "minimumImages": 1
         },

@@ -46,6 +46,11 @@ enum NativeTextPanels {
         for group in groups.sorted(by: { $0.first < $1.first }) {
             let adjacent = runs.filter { run in
                 guard run.count >= 3, run.filter({ LayoutReconstructor.readsAsSentence(elements[$0].line!) }).count >= 2 else { return false }
+                // A paragraph in a neighboring, already ordered column is not interrupted
+                // by this panel. Move only a group whose current range overlaps that run;
+                // otherwise retain the column order already established above.
+                guard let first = run.min(), let last = run.max(), let panelLast = group.indices.max(),
+                      first < panelLast && last > group.first else { return false }
                 let bounds = union(run.map { elements[$0].rect })
                 let overlap = min(bounds.maxY,group.rect.maxY) - max(bounds.minY,group.rect.minY)
                 guard overlap >= min(bounds.height,group.rect.height) * 0.5 else { return false }

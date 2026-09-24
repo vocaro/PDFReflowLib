@@ -1,0 +1,334 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "sha256": "387b3e178eb50b4990df9396728623781950dfc589f956250efc509bb1c417fa",
+    "bytes": 239493,
+    "pages": 2,
+    "url": "https://www.overleaf.com/latex/examples/ri-ben-yu-zong-shu-kitenpureto-slash-japanese-tategaki-templete/wgpxjxbbbhyh",
+    "licenseListedByHost": "Creative Commons CC BY 4.0"
+  },
+  "baselineEPUB": {
+    "sha256": "57fca5f09763751fa1c86797fa6f1ec8f1688a1953e45172c0868bfe78b92fa8",
+    "bytes": 3980,
+    "pages": [
+      {
+        "page": 1,
+        "blockCount": 107,
+        "firstBlocks": [
+          {
+            "tag": "p",
+            "text": "こ上て何のか泣"
+          },
+          {
+            "tag": "h2",
+            "text": "1"
+          },
+          {
+            "tag": "p",
+            "text": "のでスと書もいど吾"
+          },
+          {
+            "tag": "p",
+            "text": "時少ーい生あてこ輩"
+          },
+          {
+            "tag": "p",
+            "text": "妙しとうとといでは"
+          },
+          {
+            "tag": "p",
+            "text": "な落持考いでた生猫"
+          }
+        ],
+        "headings": [
+          {
+            "index": 1,
+            "text": "1"
+          },
+          {
+            "index": 106,
+            "text": "吾輩は猫である"
+          }
+        ]
+      },
+      {
+        "page": 2,
+        "blockCount": 95,
+        "firstBlocks": [
+          {
+            "tag": "p",
+            "text": "てをの"
+          },
+          {
+            "tag": "p",
+            "text": "しか眼常"
+          },
+          {
+            "tag": "p",
+            "text": "こそ輪き"
+          },
+          {
+            "tag": "p",
+            "text": "続見明母ふてらがなこれうには"
+          },
+          {
+            "tag": "p",
+            "text": "きるい親とも火廻速のがしはず"
+          },
+          {
+            "tag": "p",
+            "text": "はとてさ気分がる力書人て一の"
+          }
+        ],
+        "headings": []
+      }
+    ],
+    "imageCount": 0
+  },
+  "sourcePages": [
+    {
+      "page": 1,
+      "bodyColumnCount": 9,
+      "bodyColumnsRightToLeft": [
+        {
+          "xMin": 184.691,
+          "yMin": 111.809,
+          "xMax": 222.188,
+          "yMax": 296.347,
+          "characters": 17,
+          "opening": "1吾輩は猫である︒名前はまだ無い",
+          "closing": "である︒名前はまだ無い︒",
+          "textSHA256": "7b66f1ad9e775a3f7d0ef88d68d64e0f500241f34acb63371718cd804a1760f1"
+        },
+        {
+          "xMin": 166.759,
+          "yMin": 121.066,
+          "xMax": 178.264,
+          "yMax": 524.102,
+          "characters": 37,
+          "opening": "どこで生れたかとんと見当がつかぬ",
+          "closing": "じめした所でニャーニャー",
+          "textSHA256": "e4c12a36aa69cdcc17b036c0d53f8fe9b627ed319dbe81bfdfe8bcc8af48508b"
+        },
+        {
+          "xMin": 148.826,
+          "yMin": 109.749,
+          "xMax": 160.331,
+          "yMax": 524.102,
+          "characters": 37,
+          "opening": "泣いていた事だけは記憶している︒",
+          "closing": "人間というものを見た︒し",
+          "textSHA256": "3eabc4f307b80a47f743cb59283faf15bf5301177c494074d70a2e677c81f101"
+        },
+        {
+          "xMin": 130.893,
+          "yMin": 110.08,
+          "xMax": 142.398,
+          "yMax": 523.518,
+          "characters": 36,
+          "opening": "かもあとで聞くとそれは書生という",
+          "closing": "な種族であったそうだ︒こ",
+          "textSHA256": "6a6c760266d499fe1369420ce927d1da73bbaafd161c76fbc5346ec25f310b1b"
+        },
+        {
+          "xMin": 112.96,
+          "yMin": 110.983,
+          "xMax": 124.465,
+          "yMax": 524.174,
+          "characters": 36,
+          "opening": "の書生というのは時々我々を捕えて",
+          "closing": "である︒しかしその当時は",
+          "textSHA256": "e55b6316a5cc02aa8b2052a7d57eeb5fb9d491e8df1be17faa7eb82a2000c1be"
+        },
+        {
+          "xMin": 95.028,
+          "yMin": 109.552,
+          "xMax": 106.533,
+          "yMax": 524.333,
+          "characters": 36,
+          "opening": "何という考もなかったから別段恐し",
+          "closing": "た︒ただ彼の掌に載せられ",
+          "textSHA256": "d607f3c91522fecf3676281357e4d136377ad2b71a1e4d006df2837df857bbe6"
+        },
+        {
+          "xMin": 77.095,
+          "yMin": 110.855,
+          "xMax": 88.6,
+          "yMax": 523.816,
+          "characters": 36,
+          "opening": "てスーと持ち上げられた時何だかフ",
+          "closing": "あったばかりである︒掌の",
+          "textSHA256": "38bddf7350dc758777e95579ec0e71cf06412deeedffb93d8d2a5f04fc8f7577"
+        },
+        {
+          "xMin": 59.162,
+          "yMin": 110.108,
+          "xMax": 70.667,
+          "yMax": 522.979,
+          "characters": 37,
+          "opening": "上で少し落ちついて書生の顔を見た",
+          "closing": "いうものの見始であろう︒",
+          "textSHA256": "f520f06465c7096e251a590e1d819ae9258dcf7a40d0780fe704ea1f08446048"
+        },
+        {
+          "xMin": 41.229,
+          "yMin": 110.865,
+          "xMax": 52.734,
+          "yMax": 522.562,
+          "characters": 36,
+          "opening": "この時妙なものだと思った感じが今",
+          "closing": "第一毛をもって装飾されべ",
+          "textSHA256": "60eda3816da71c03904c730a86a3d421372e4bdab83b3e2f731eab22bfe12473"
+        }
+      ],
+      "bodyOpening": "1吾輩は猫である︒名前はまだ無い︒どこで生れたかとんと見当がつかぬ︒何でも薄暗いじめじめした所で"
+    },
+    {
+      "page": 2,
+      "bodyColumnCount": 13,
+      "bodyColumnsRightToLeft": [
+        {
+          "xMin": 365.354,
+          "yMin": 109.844,
+          "xMax": 376.859,
+          "yMax": 524.749,
+          "characters": 36,
+          "opening": "きはずの顔がつるつるしてまるで薬",
+          "closing": "もだいぶ逢ったがこんな片",
+          "textSHA256": "45dfb5cec9cea2e41301383db452e2ecb50a05906dc3fa2734835ac2cd13c091"
+        },
+        {
+          "xMin": 347.421,
+          "yMin": 109.462,
+          "xMax": 358.925,
+          "yMax": 522.979,
+          "characters": 37,
+          "opening": "輪には一度も出会わした事がない︒",
+          "closing": "があまりに突起している︒",
+          "textSHA256": "1a8dc710b69c46014859936c099427744aaeb1084fa39bf0ea5ac15deda673bc"
+        },
+        {
+          "xMin": 329.488,
+          "yMin": 110.259,
+          "xMax": 340.993,
+          "yMax": 522.978,
+          "characters": 37,
+          "opening": "そうしてその穴の中から時々ぷうぷ",
+          "closing": "も咽せぽくて実に弱った︒",
+          "textSHA256": "d9159ea564ae08cf4aed9a2ea52faec3e13378e0537cef9a46b16cc5aaa43908"
+        },
+        {
+          "xMin": 311.556,
+          "yMin": 110.866,
+          "xMax": 323.06,
+          "yMax": 457.397,
+          "characters": 31,
+          "opening": "これが人間の飲む煙草というもので",
+          "closing": "はようやくこの頃知った︒",
+          "textSHA256": "d8f70751da7991b7bde7a6142ea18d70f4360e98b1385b152fafbd7bdef4fe5c"
+        },
+        {
+          "xMin": 293.623,
+          "yMin": 122.369,
+          "xMax": 305.127,
+          "yMax": 524.827,
+          "characters": 35,
+          "opening": "この書生の掌の裏でしばらくはよい",
+          "closing": "ったが︑しばらくすると非",
+          "textSHA256": "56ec1641577a41b80b88cab78f7a4256234fdfd706348251ace17f6c9d671191"
+        },
+        {
+          "xMin": 275.69,
+          "yMin": 109.462,
+          "xMax": 287.194,
+          "yMax": 523.967,
+          "characters": 36,
+          "opening": "常な速力で運転し始めた︒書生が動",
+          "closing": "動くのか分らないが無暗に",
+          "textSHA256": "ab51fe9a4e477b289ca70bcfaa57ea237e202bdd4bf7a8b729901f2076ade072"
+        },
+        {
+          "xMin": 257.757,
+          "yMin": 109.703,
+          "xMax": 269.261,
+          "yMax": 524.848,
+          "characters": 36,
+          "opening": "眼が廻る︒胸が悪くなる︒到底助か",
+          "closing": "ると︑どさりと音がして眼",
+          "textSHA256": "656c3ac7ee5d0c0d032a0e371937fe7358c32ac21318333faafa18150e235d11"
+        },
+        {
+          "xMin": 239.825,
+          "yMin": 110.08,
+          "xMax": 251.329,
+          "yMax": 523.878,
+          "characters": 36,
+          "opening": "から火が出た︒それまでは記憶して",
+          "closing": "事やらいくら考え出そうと",
+          "textSHA256": "c69c9bb85d7e7ba51506ebd958a8d55a2bcb66d6508558a8eea4bad860bd442e"
+        },
+        {
+          "xMin": 221.892,
+          "yMin": 110.108,
+          "xMax": 233.395,
+          "yMax": 192.817,
+          "characters": 8,
+          "opening": "しても分らない︒",
+          "closing": "しても分らない︒",
+          "textSHA256": "e9f0edba00fe17edc3e7f1d861e404bc5e1da444138eb95515fadc35efe6e896"
+        },
+        {
+          "xMin": 203.959,
+          "yMin": 121.757,
+          "xMax": 215.463,
+          "yMax": 524.287,
+          "characters": 36,
+          "opening": "ふと気が付いて見ると書生はいない",
+          "closing": "兄弟が一疋も見えぬ︒肝心",
+          "textSHA256": "b97a37b50b8662041d56fc8c8003df6b1fd09fb3d6e55c0e22f11694cd11d897"
+        },
+        {
+          "xMin": 186.026,
+          "yMin": 110.983,
+          "xMax": 197.53,
+          "yMax": 524.848,
+          "characters": 36,
+          "opening": "の母親さえ姿を隠してしまった︒そ",
+          "closing": "は違って無暗に明るい︒眼",
+          "textSHA256": "44f624903bae2fc696d3d28916c6fcd51b22330734d6f75860349deea3583a09"
+        },
+        {
+          "xMin": 168.094,
+          "yMin": 110.024,
+          "xMax": 179.598,
+          "yMax": 524.102,
+          "characters": 36,
+          "opening": "を明いていられぬくらいだ︒はてな",
+          "closing": "しいと︑のそのそ這い出し",
+          "textSHA256": "d93f1fa1ea71903b4f6a45d0a9e4879207244c0a2f711e9e3a346333b93a5c77"
+        },
+        {
+          "xMin": 150.161,
+          "yMin": 110.855,
+          "xMax": 161.665,
+          "yMax": 503.411,
+          "characters": 35,
+          "opening": "て見ると非常に痛い︒吾輩は藁の上",
+          "closing": "中へ棄てられたのである︒",
+          "textSHA256": "c5706be826e45a3df037d5b46ff9f702dec5adb79e3ff566575ecd1430e6be98"
+        }
+      ],
+      "bodyOpening": "きはずの顔がつるつるしてまるで薬缶だ︒その後猫にもだいぶ逢ったがこんな片輪には一度も出会わした事"
+    }
+  ],
+  "orderDiagnostic": {
+    "sourceBodyJapaneseCharacters": 707,
+    "epubJapaneseCharacters": 721,
+    "allSourceJapaneseCharacters": 721,
+    "sameJapaneseCharacterMultiset": true,
+    "sourceBodyTrigrams": 705,
+    "trigramsAlsoInEPUB": 5,
+    "sourceBodyOpening": "吾輩は猫である名前はまだ無いどこで生れたかとんと見当がつかぬ何でも薄暗いじめじめした所でニャーニ",
+    "epubOpening": "こ上て何のか泣のでスと書もいど吾時少ーい生あてこ輩妙しとうとといではな落持考いでた生猫もちちもう"
+  }
+}

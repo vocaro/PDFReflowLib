@@ -1,0 +1,20 @@
+{
+  "case": "japanese-tategaki-overleaf",
+  "source": "https://www.overleaf.com/latex/examples/ri-ben-yu-zong-shu-kitenpureto-slash-japanese-tategaki-templete/wgpxjxbbbhyh",
+  "sourceSHA256": "387b3e178eb50b4990df9396728623781950dfc589f956250efc509bb1c417fa",
+  "pageNumbering": "Physical PDF pages, one-based",
+  "qualifiedForFidelity": false,
+  "reviewPoints": [
+    {
+      "page": 1,
+      "target": "Vertical title, author, and right-to-left body columns",
+      "acceptance": "吾輩は猫である precedes the body; the first body column reads 吾輩は猫である︒名前はまだ無い︒ and columns continue top to bottom from right to left. The page ends with 装飾されべ."
+    },
+    {
+      "page": 2,
+      "target": "Continuation of the vertical prose and separate page furniture",
+      "acceptance": "The rightmost body column begins きはずの顔が, continuing page 1's 装飾されべ; subsequent body columns read top to bottom from right to left, with the URL strip and folio kept out of the prose."
+    }
+  ],
+  "scope": "Source-reviewed candidate only; not ready for an active corpus gate. The reviewed --language ja --no-ocr EPUB is valid and contains all 721 Japanese-script source characters, but it emits horizontal rows rather than vertical columns. Its page 1 title follows scrambled body text, and only 5 of 705 source-body Japanese three-character sequences occur in EPUB reading order. See measurements/japanese-tategaki-overleaf/record.md and review.json. Issue #44 remains open."
+}

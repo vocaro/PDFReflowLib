@@ -20,6 +20,8 @@ struct PDFReflowLibCommand {
           --password-file PATH                    (password for a locked PDF; - reads stdin)
           --package-identifier ID                 (dc:identifier; default random urn:uuid)
           --modification-date ISO8601             (e.g. 2026-01-01T00:00:00Z; default now)
+          --raster-dpi DPI                        (72...600; default 180)
+          --maximum-raster-pixels PIXELS          (1...48000000 per raster; default 12000000)
         JPEG QUALITY must be in 0...1. Defaults: automatic references, repeated headers and
         footers removed, automatic:0.9 image encoding, 512 MiB entry budget, no separate final
         ZIP cap. Required image-only fallback pages are retained. automatic classifies each
@@ -105,6 +107,16 @@ struct PDFReflowLibCommand {
                 case "--region-image-encoding": options.regionImageEncoding = try encoding(value)
                 case "--maximum-output-bytes": options.maximumOutputBytes = try byteLimit(value) ?? .max
                 case "--maximum-epub-bytes": options.maximumEPUBBytes = try byteLimit(value)
+                case "--raster-dpi":
+                    guard let dpi = Double(value), dpi.isFinite, (72...600).contains(dpi) else {
+                        throw ConversionError.invalidOptions("raster DPI must be a number in 72...600")
+                    }
+                    options.rasterDPI = dpi
+                case "--maximum-raster-pixels":
+                    guard let pixels = Int(value), (1...48_000_000).contains(pixels) else {
+                        throw ConversionError.invalidOptions("maximum raster pixels must be an integer in 1...48000000")
+                    }
+                    options.maximumRasterPixels = pixels
                 case "--language":
                     // The tag decides dc:language, the recognizer's language where it supports
                     // one, and the rules that only hold for a declared language — English word

@@ -314,7 +314,10 @@ Byte limits accept a positive integer or `unlimited`. Image encodings accept `au
 `removeRepeatedHeadersAndFooters`; without it, repeated headers and footers are removed.
 `--ocr-language-correction on|off` sets `ocrLanguageCorrection`; without it, correction is off.
 `--package-identifier ID` and `--modification-date ISO8601`
-(for example `2026-01-01T00:00:00Z`) set the reproducible-package options. The internal reader
+(for example `2026-01-01T00:00:00Z`) set the reproducible-package options. `--raster-dpi DPI`
+(72–600) and `--maximum-raster-pixels PIXELS` (1–48,000,000) set `rasterDPI` and
+`maximumRasterPixels`; the library defaults of 180 DPI and 12 million pixels apply when omitted.
+The internal reader
 accepts PNG/JPEG publications; its independent admission budget can be set with
 `tools/view_epub.py --maximum-bytes BYTES`.
 

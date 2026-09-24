@@ -32,6 +32,8 @@ def main():
         ('page-jpeg', 'graphics', ['--reference-images', 'always', '--full-page-image-encoding', 'jpeg:0.9',
                                   '--region-image-encoding', 'png',
                                   '--maximum-output-bytes', 'unlimited', '--maximum-epub-bytes', '1048576'], 4),
+        ('raster-controls', 'graphics', ['--reference-images', 'always', '--raster-dpi', '240',
+                                         '--maximum-raster-pixels', '12000000'], 4),
         # The automatic default (#193), named explicitly and left implicit, must write the same images.
         ('automatic-default', 'graphics', ['--reference-images', 'always'], 4),
         ('automatic-named', 'graphics', ['--reference-images', 'always', '--full-page-image-encoding', 'automatic',
@@ -150,6 +152,9 @@ def main():
         ['--ocr-language-correction', ''], ['--ocr-language-correction'],
         ['--repeated-headers-and-footers', 'drop'], ['--repeated-headers-and-footers', 'KEEP'],
         ['--repeated-headers-and-footers'],
+        ['--raster-dpi', '71'], ['--raster-dpi', '601'], ['--raster-dpi', 'nan'], ['--raster-dpi'],
+        ['--maximum-raster-pixels', '0'], ['--maximum-raster-pixels', '48000001'],
+        ['--maximum-raster-pixels', '1.5'],
         # A language tag decides dc:language and the rules that only hold for a declared
         # language, so a malformed one fails rather than converting as something else (#108).
         ['--language', ''], ['--language', 'en_US'], ['--language', 'zh--Hans'],

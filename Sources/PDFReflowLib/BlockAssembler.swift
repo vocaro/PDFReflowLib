@@ -560,6 +560,9 @@ struct BlockAssembler {
     /// #282). Empty where the page sets no such list.
     private let markerEntries: Set<CGRect>
     private let markerEntryEdge: CGFloat?
+    /// Entry starts and hanging continuations established by a repeated author column (#157).
+    private let bibliographyOpenings: Set<CGRect>
+    private let bibliographyWraps: Set<CGRect>
     /// Value lines following the page's recurring short labels (#215).
     private let labelValueStarts: Set<CGRect>
     /// Where this page left the same seam between two pieces of a row on three or more rows: a
@@ -587,6 +590,7 @@ struct BlockAssembler {
          columnSeams: [CGFloat] = [],
          ordinaryHeights: [Int: CGFloat] = [:],
          markerEntries: Set<CGRect> = [], markerEntryEdge: CGFloat? = nil,
+         bibliographyOpenings: Set<CGRect> = [], bibliographyWraps: Set<CGRect> = [],
          labelValueStarts: Set<CGRect> = [],
          rightToLeft: Bool = false, recognized: Bool = false, notesPage: Bool = false) {
         self.page = page
@@ -600,6 +604,8 @@ struct BlockAssembler {
         self.numberedAnswerWraps = numberedAnswerWraps
         self.markerEntries = markerEntries
         self.markerEntryEdge = markerEntryEdge
+        self.bibliographyOpenings = bibliographyOpenings
+        self.bibliographyWraps = bibliographyWraps
         self.labelValueStarts = labelValueStarts
         self.columnSeams = columnSeams
         self.ordinaryHeights = ordinaryHeights
@@ -1198,6 +1204,10 @@ struct BlockAssembler {
     /// the one beside it.
     private func continuesParagraph(_ prev: TextLine, _ line: TextLine) -> Bool {
         guard prev.wraps != false else { return false }
+        if bibliographyOpenings.contains(line.rect) { return false }
+        if bibliographyWraps.contains(line.rect), prev.hasSize(line.fontSize),
+           prev.rect.minY > line.rect.minY,
+           prev.rect.minY - line.rect.minY <= body * 1.5 { return true }
         // A scanned book can place a footnote call at the end of one paragraph and indent
         // the next paragraph's opening line by one body. Warren 100 and 122 have inherited
         // OCR that reads those raised calls as `^^` or `^^^`; the preceding line often fills

@@ -1516,6 +1516,65 @@ enum LayoutReconstructor {
         return hangs ? (openings, edge) : nil
     }
 
+    /// A bibliography whose entries start on one edge and hang their later lines on another.
+    /// Our Flag pages 53–54 put many author names at x 64/55 and continuations 18 points in;
+    /// entries ending in a year can stand only four points above the next entry (#157).
+    static func bibliographyLines(in lines: [TextLine], body: CGFloat)
+        -> (openings: Set<CGRect>, wraps: Set<CGRect>) {
+        let author = #"^[A-Z][\p{L}’'\-]+,\s+[A-Z]"#
+        var edges: [Int: [TextLine]] = [:]
+        for line in lines where line.text.range(of: author, options: .regularExpression) != nil {
+            edges[Int((line.rect.minX / max(body * 0.25, 1)).rounded()), default: []].append(line)
+        }
+        var openings: Set<CGRect> = [], wraps: Set<CGRect> = []
+        for entries in edges.values where entries.count >= 5 {
+            let edge = entries.map(\.rect.minX).reduce(0, +) / CGFloat(entries.count)
+            let highest = entries.map(\.rect.minY).max()!
+            let lowest = entries.map(\.rect.minY).min()! - body * 3
+            let run = lines.filter { $0.rect.minY <= highest + body * 0.25
+                && $0.rect.minY >= lowest && !$0.monospaced }
+            let hanging = run.count { $0.rect.minX - edge >= body * 0.6
+                && $0.rect.minX - edge <= body * 3 }
+            let dated = run.count {
+                $0.text.range(of: #"\b(?:18|19|20)\d{2}\.$"#, options: .regularExpression) != nil
+            }
+            guard hanging >= 3, dated >= 3 else { continue }
+            for line in run {
+                let indent = line.rect.minX - edge
+                if abs(indent) <= body * 0.3 { openings.insert(line.rect) }
+                else if indent >= body * 0.6 && indent <= body * 3 { wraps.insert(line.rect) }
+            }
+        }
+        return (openings, wraps)
+    }
+
+    /// Some tagged PDFs assign a new `P` to each printed line of a quotation. Our Flag page 12
+    /// does that, then assigns the quote's closing line and the Wilson introduction the *same*
+    /// group. A run opening with a quotation mark and continuing on the page's body leading
+    /// states its own paragraph boundary more clearly than those contradictory groups (#157).
+    static func quotationGroups(in lines: [TextLine], body: CGFloat) -> [CGRect: Int] {
+        let ordered = lines.sorted { $0.rect.maxY > $1.rect.maxY }
+        var result: [CGRect: Int] = [:]
+        for start in ordered.indices where ordered[start].text.hasPrefix("“") {
+            let opening = ordered[start]
+            guard (opening.structure?.headingLevel ?? 0) == 0 else { continue }
+            var members = [opening]
+            for line in ordered.dropFirst(start + 1) {
+                let previous = members.last!
+                if previous.text.hasSuffix("”") || line.text.hasPrefix("“") { break }
+                guard (line.structure?.headingLevel ?? 0) == 0, opening.hasSize(line.fontSize),
+                      previous.rect.minY > line.rect.minY,
+                      previous.rect.minY - line.rect.minY <= body * 1.6,
+                      abs(line.rect.minX - opening.rect.minX) <= body * 2.5 else { break }
+                members.append(line)
+            }
+            guard members.count >= 3,
+                  Set(members.compactMap { $0.structure?.group }).count >= 2 else { continue }
+            for line in members { result[line.rect] = -10_000 - start }
+        }
+        return result
+    }
+
     /// Where on a page the extractor left the same seam on row after row: the x positions at
     /// which three or more printed rows were split, within a quarter of a body of one another.
     ///
@@ -2059,6 +2118,8 @@ enum LayoutReconstructor {
         // the wrapped second line of each entry the page hangs, both read from the lines that
         // still reflow, as the table rows below are (#160).
         let markerList = hangingMarkerList(in: lines, body: typography.body)
+        let bibliography = bibliographyLines(in: lines, body: typography.body)
+        let quoteGroups = quotationGroups(in: lines, body: typography.body)
         let answerWraps = numberedAnswerWraps(in: lines, body: typography.body)
         let wrappedAnswerOpenings = Set(answerWraps.values)
         let diagramLabels = DiagramLabelTranscript.labels(page: page, images: images, body: typography.body)
@@ -2074,6 +2135,8 @@ enum LayoutReconstructor {
                                        ordinaryHeights: ordinaryLineHeights(in: lines),
                                        markerEntries: markerList?.openings ?? [],
                                        markerEntryEdge: markerList?.edge,
+                                       bibliographyOpenings: bibliography.openings,
+                                       bibliographyWraps: bibliography.wraps,
                                        labelValueStarts: page.recognized || page.hasSyntheticTextStyle
                                         ? [] : labelValueStarts(in: lines),
                                        rightToLeft: rightToLeft,
@@ -2164,6 +2227,7 @@ enum LayoutReconstructor {
                 assembler.appendTable(table)
             } else if let line = element.line, let spatial = roles[index] {
                 if var tag = line.structure {
+                    if let group = quoteGroups[line.rect], tag.headingLevel == 0 { tag.group = group }
                     if let level = contradicted[tag.group] { tag.headingLevel = level }
                     // A row of a table the page's own geometry states keeps its break even where
                     // the tags name the cell a paragraph: the FAA handbook tags one wrapped cell
@@ -2177,6 +2241,10 @@ enum LayoutReconstructor {
                     } else {
                         assembler.append(line, as: spatial)
                     }
+                } else if let group = quoteGroups[line.rect], spatial == .prose {
+                    // A missing tag in the middle of this source-stated quotation does not
+                    // turn that printed line into a paragraph boundary.
+                    assembler.appendTagged(.init(group: group, order: index, headingLevel: 0), line)
                 } else {
                     assembler.append(line, as: spatial)
                 }

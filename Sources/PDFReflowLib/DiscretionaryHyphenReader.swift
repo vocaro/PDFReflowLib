@@ -139,8 +139,8 @@ enum DiscretionaryHyphenReader {
     }
 
     /// Native line indices and exact joined words corroborated by the font census. This is
-    /// evidence for join-time evaluation, not an unconditional rewrite: independently valid
-    /// halves and source-attested compounds still keep their literal hyphens.
+    /// evidence for join-time evaluation, not an unconditional rewrite: the exact continuation
+    /// and source-attested compound spellings still decide whether it applies.
     /// This never searches for a particular word, font name or publication.
     static func lines(shows: [Show], texts: [String], bounds: [CGRect]) -> [Int: String] {
         guard texts.count == bounds.count, shows.count <= 10_000,

@@ -1,0 +1,106 @@
+{
+  "sourceSHA256": "2673d1fded74ad89c8b5c59dc325c7884601e1aca5b5755b15a105c1f5b0d761",
+  "parentCodeCommit": "41b77bf",
+  "sourcePages": 24,
+  "markersIdentical": true,
+  "images": 85,
+  "imagesByteIdentical": true,
+  "xhtmlDocuments": 3,
+  "allXHTMLIdenticalApartFromOneHyphen": true,
+  "changedPages": [
+    11
+  ],
+  "exactTextReplacements": {
+    "11": [
+      [
+        "as-say",
+        "assay"
+      ]
+    ]
+  },
+  "runs": {
+    "parent": {
+      "binarySHA256": "3e9635c89107e78539426503652992fbec74787252354467458888a4de34a2cc",
+      "epubSHA256": "c9614767592cc808bd9fa2ee3090c8340241b8ee7508c5f08863484f9d0bed77",
+      "runPassed": true,
+      "epubcheckExitCode": 0,
+      "memoryGate": {
+        "limitBytes": 536870912,
+        "metric": "converter process peak RSS from wait/rusage",
+        "attempts": 1,
+        "status": "passed",
+        "passed": true
+      },
+      "contentContract": {
+        "case": "usda-ars-agresearch-2012-11",
+        "passed": false,
+        "reviewPages": [
+          1,
+          5,
+          6,
+          7,
+          8,
+          9,
+          11,
+          12,
+          15,
+          16,
+          17,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24
+        ],
+        "contentChecks": 67,
+        "spineBoundariesCrossed": 0,
+        "errors": [
+          "Page 11: missing text 'bite-protection assay to test'",
+          "Page 11: unwanted text 'as-say'"
+        ],
+        "scope": "Reviewed text/order/script-context/image-presence, spine-boundary continuity and source-region image checks; not full-book fidelity or image legibility qualification."
+      }
+    },
+    "candidate": {
+      "binarySHA256": "d2b881e404b5f47bc2a7d2a07259aed686910406415dc4d63a096c95e7350a4d",
+      "epubSHA256": "d5aa8e8f43e4a9ebbc12c10f8c6ebebd5e66d8bc380f96086fc248741d9fe260",
+      "runPassed": true,
+      "epubcheckExitCode": 0,
+      "memoryGate": {
+        "limitBytes": 536870912,
+        "metric": "converter process peak RSS from wait/rusage",
+        "attempts": 1,
+        "status": "passed",
+        "passed": true
+      },
+      "contentContract": {
+        "case": "usda-ars-agresearch-2012-11",
+        "passed": true,
+        "reviewPages": [
+          1,
+          5,
+          6,
+          7,
+          8,
+          9,
+          11,
+          12,
+          15,
+          16,
+          17,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24
+        ],
+        "contentChecks": 67,
+        "spineBoundariesCrossed": 0,
+        "errors": [],
+        "scope": "Reviewed text/order/script-context/image-presence, spine-boundary continuity and source-region image checks; not full-book fidelity or image legibility qualification."
+      }
+    }
+  }
+}

@@ -1,6 +1,8 @@
 # Source-font evidence for technical line-break hyphens
 
-Refs #214. This is a bounded repair; the magazine's `as-` / `say` remains unresolved.
+Refs #214. This records the initial conservative repair. The later owner-approved
+strong font policy and `as-` / `say` qualification are recorded in
+[the follow-up measurement](../source-hyphen-font-policy/record.md).
 
 Source: *Agricultural Research*, November/December 2012, USDA Agricultural Research
 Service, physical pages 8 and 11 of the checksum-pinned 24-page PDF. SHA-256:

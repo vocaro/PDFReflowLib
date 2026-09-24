@@ -28,6 +28,19 @@ import Testing
             #expect(NSDictionary(dictionary: before).isEqual(to: after))
         }
     }
+    if page == 11 {
+        let index = try #require(selected.first(where: { $0.value == "assay" })?.key)
+        let next = try #require(lines.first(where: { $0.text.hasPrefix("say to test") }))
+        let original = lines[index].attributedString()
+        let left = NativeTextReader.inlineText(from: DiscretionaryHyphenReader.apply(to: original, word: "assay"))
+        let right = NativeTextReader.inlineText(from: next.attributedString())
+        var warnings: [ConversionWarning] = []
+        let joined = LayoutReconstructor.join(left, right, hyphens: HyphenContext(usesEnglishLexicon: true),
+            page: 11, warnings: &warnings)
+        #expect(joined.text.contains("bite-protection assay to test"))
+        #expect(!joined.text.contains("as-say"))
+        #expect(!warnings.contains { $0.code == .uncertainHyphen })
+    }
     #expect(!selected.keys.contains { lines[$0].text.hasSuffix("sugar-") || lines[$0].text.hasSuffix("fire-") })
 }
 
@@ -103,8 +116,17 @@ private struct BreakPage {
     let compoundContext = HyphenContext(vocabulary: ["pyre-throids"], usesEnglishLexicon: true)
     #expect(LayoutReconstructor.join(left, InlineText("throids"), hyphens: compoundContext, page: 8, warnings: &warnings).text == "pyre-throids")
     for (a, b) in [("camera", "man"), ("by", "law"), ("as", "say")] {
+        // Plain dictionary evidence retains two independently valid halves.
+        #expect(LayoutReconstructor.join(InlineText(a + "-"), InlineText(b), hyphens: context,
+            page: 8, warnings: &warnings).text == a + "-" + b)
+        // The strict source census is stronger evidence, authorized by the owner policy.
         let candidate = marked(a + "-", word: a + b)
-        #expect(LayoutReconstructor.join(candidate, InlineText(b), hyphens: context, page: 8, warnings: &warnings).text == a + "-" + b)
+        #expect(LayoutReconstructor.join(candidate, InlineText(b), hyphens: context,
+            page: 8, warnings: &warnings).text == a + b)
+        // A printed compound wins even when its separate halves and its closed form are known.
+        let attested = HyphenContext(vocabulary: [a + "-" + b, a + b], usesEnglishLexicon: true)
+        #expect(LayoutReconstructor.join(candidate, InlineText(b), hyphens: attested,
+            page: 8, warnings: &warnings).text == a + "-" + b)
     }
     // The source evidence survives ordinary inline serialization and leaves older payloads readable.
     let encoded = try JSONEncoder().encode(left)

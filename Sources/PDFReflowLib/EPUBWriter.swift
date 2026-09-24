@@ -35,6 +35,8 @@ actor EPUBWriter {
     private var imagePathByID: [String: String] = [:]
     /// Spine documents holding an internal link whose page is not yet placed (#247).
     private var documentsWithPageLinks: [String] = []
+    /// EPUB's manifest must identify every spine document containing MathML (#206).
+    private var mathDocuments: Set<String> = []
     private var consumed: Int64 = 0
     private var started = false
     /// Text blocks whose own writing runs right to left, and blocks of text in all (#41). A book
@@ -216,7 +218,8 @@ actor EPUBWriter {
             "<meta property=\"dcterms:created\">\(ISO8601DateFormatter().string(from: $0))</meta>"
         } ?? ""
         let manifest = chapters.enumerated().map {
-            "<item id=\"c\($0.offset)\" href=\"\($0.element)\" media-type=\"application/xhtml+xml\"/>"
+            "<item id=\"c\($0.offset)\" href=\"\($0.element)\" media-type=\"application/xhtml+xml\""
+                + (mathDocuments.contains($0.element) ? " properties=\"mathml\"/>" : "/>")
         }.joined() + imagePaths.enumerated().map {
             "<item id=\"img\($0.offset)\" href=\"\($0.element)\" media-type=\"\(assets[$0.offset].format.mediaType)\"/>"
         }.joined()
@@ -304,6 +307,7 @@ actor EPUBWriter {
             if spineDocument.body.contains(EPUBTextEncoder.pageLinkToken) {
                 documentsWithPageLinks.append(spineDocument.name)
             }
+            if spineDocument.body.contains("<math ") { mathDocuments.insert(spineDocument.name) }
             try writeText(document(spineDocument.body, name: title), publication.appendingPathComponent(spineDocument.name))
         }
     }

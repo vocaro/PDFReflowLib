@@ -92,6 +92,9 @@ struct ReflowDocument: Sendable, Equatable {
                     guard (1...6).contains(level) else { throw ValidationError.invalidHeadingLevel(level) }
                 case let .image(image):
                     guard identifiers.contains(image.assetID) else { throw ValidationError.missingAsset(image.assetID) }
+                    for expression in image.math where !identifiers.contains(expression.fallbackAssetID) {
+                        throw ValidationError.missingAsset(expression.fallbackAssetID)
+                    }
                 case let .sourcePage(number):
                     unmatchedChapterStarts.remove(number)
                 case let .table(table):
@@ -327,6 +330,8 @@ struct ReflowBlock: Sendable, Equatable {
         var caption: String
         /// Where the source links this figure, if it does (#247).
         var link: LinkTarget?
+        /// Source-proven expressions rendered as MathML, each with a row crop as fallback (#206).
+        var math: [MathExpression] = []
     }
     /// A table the source draws, as rows of cells rather than as a picture or as rows of text
     /// (#210). The model carries the association a reader needs — which value stands under which

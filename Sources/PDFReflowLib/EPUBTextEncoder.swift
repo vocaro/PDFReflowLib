@@ -163,6 +163,8 @@ enum EPUBTextEncoder {
         case let .listItem(item): return inline(item.text, labels: labels)
         case let .table(value): return table(value, labels: labels)
         case let .sourcePage(page): return sourcePage(page, labels: labels)
+        case let .image(image) where !image.math.isEmpty:
+            return try image.math.map { try math($0, imagePaths: imagePaths) }.joined(separator: "\n")
         case let .image(image):
             guard let path = imagePaths[image.assetID] else {
                 throw ReflowDocument.ValidationError.missingAsset(image.assetID)
@@ -171,6 +173,33 @@ enum EPUBTextEncoder {
             // A link whose rect covers the figure rather than text links the figure (#247).
             let linked = image.link.map { "<a href=\"\(href($0))\">\(picture)</a>" } ?? picture
             return "<figure>\(linked)<figcaption>\(xml(image.caption))</figcaption></figure>"
+        }
+    }
+
+    private static let mathNamespace = "http://www.w3.org/1998/Math/MathML"
+
+    /// MathML's `altimg` uses the source row crop without displaying the expression twice.
+    static func math(_ expression: MathExpression, imagePaths: [String: String]) throws -> String {
+        guard let path = imagePaths[expression.fallbackAssetID] else {
+            throw ReflowDocument.ValidationError.missingAsset(expression.fallbackAssetID)
+        }
+        let label = expression.label.map { xml($0) + " " } ?? ""
+        return "<p class=\"math\">\(label)<math xmlns=\"\(mathNamespace)\" alttext=\"\(xml(expression.linearText))\" "
+            + "altimg=\"\(xml(path))\">\(mathML(expression.node))</math></p>"
+    }
+
+    static func mathML(_ node: MathExpression.Node) -> String {
+        switch node {
+        case let .number(value): return "<mn>\(xml(value))</mn>"
+        case let .identifier(value): return "<mi>\(xml(value))</mi>"
+        case let .operator(value): return "<mo>\(xml(value))</mo>"
+        case let .row(nodes): return "<mrow>" + nodes.map(mathML).joined() + "</mrow>"
+        case let .fraction(numerator, denominator, display):
+            let fraction = "<mfrac>" + mathML(numerator) + mathML(denominator) + "</mfrac>"
+            return display ? "<mstyle displaystyle=\"true\">" + fraction + "</mstyle>" : fraction
+        case let .superscript(base, script): return "<msup>" + mathML(base) + mathML(script) + "</msup>"
+        case let .subscript(base, script): return "<msub>" + mathML(base) + mathML(script) + "</msub>"
+        case let .squareRoot(radicand): return "<msqrt>" + mathML(radicand) + "</msqrt>"
         }
     }
 }

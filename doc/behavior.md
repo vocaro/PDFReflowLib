@@ -2380,7 +2380,9 @@ inside the grid, exactly once; incomplete selections leave the table as a source
 complete adjacent paragraph, including rows whose measure widens above or below the panel.
 Its native text is reconstructed with its own type size and leading, then appended as a closed
 reading unit. Intersecting figures, tables, quotations and asides prevent this grouping.
-Pages carrying tagged text retain the accepted structured reading order. Styles, links and
+Grouping stays within untagged spans bounded by retained tagged elements, preserving their
+accepted structured reading order. A broken-word continuation may extend past a panel only
+when its font, leading, column edges and immediate successor prove the wider run. Styles, links and
 individual heading roles remain native, and panel headings receive identifiers from the
 parent page's assembler so navigation anchors remain unique.
 

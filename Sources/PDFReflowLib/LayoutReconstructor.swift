@@ -862,20 +862,31 @@ enum LayoutReconstructor {
         // begins below the title. Earlier material remains above the title.
         if let titleIndex = elements.indices.first(where: { index in
             guard let line = elements[index].line,
-                  line.text.hasPrefix("Answers -"),
-                  elements.contains(where: { $0.image != nil && $0.rect.maxY > line.rect.minY
-                      && $0.rect.minY < line.rect.midY && $0.rect.midY < line.rect.midY })
-            else { return false }
+                  line.text.hasPrefix("Answers -") else { return false }
             let marker = #"^\s*\d+\)"#
-            return elements.filter { $0.line?.text.range(of: marker, options: .regularExpression) != nil
+            let risenCrop = elements.contains { $0.image != nil && $0.rect.maxY > line.rect.minY
+                && $0.rect.minY < line.rect.midY && $0.rect.midY < line.rect.midY }
+            let numberedBelow = elements.filter { $0.line?.text.range(of: marker, options: .regularExpression) != nil
                 && $0.rect.midY < line.rect.midY }.count >= 2
+            // Wallace 438's fraction answers are crops directly below a centred title.
+            // Their own numbers are inside the crops, so no numbered text line survives
+            // for the earlier test. Two separated image columns beneath the title say it
+            // heads both, even though its rectangle lies in the right column (#29).
+            let nearby = elements.filter { $0.image != nil && $0.rect.midY < line.rect.midY
+                && line.rect.minY - $0.rect.maxY <= bodySize * 3
+                && line.rect.minY - $0.rect.maxY >= -bodySize * 0.5 }
+            let croppedKey = nearby.count >= 2
+                && (nearby.map(\.rect.minX).max()! - nearby.map(\.rect.minX).min()!) >= bodySize * 6
+                && !elements.contains { $0.line?.text.range(of: marker, options: .regularExpression) != nil
+                    && $0.rect.midY > line.rect.midY }
+            return (risenCrop && numberedBelow) || croppedKey
         }) {
             let title = elements[titleIndex]
             let above = elements.indices.filter { $0 != titleIndex && elements[$0].rect.midY > title.rect.midY }
                 .map { elements[$0] }
             let below = elements.indices.filter { $0 != titleIndex && elements[$0].rect.midY <= title.rect.midY }
                 .map { elements[$0] }
-            if !above.isEmpty && !below.isEmpty {
+            if !below.isEmpty {
                 return ordered(above, bodySize: bodySize, rightToLeft: rightToLeft, depth: depth + 1,
                                exhausted: &exhausted) + [title]
                     + ordered(below, bodySize: bodySize, rightToLeft: rightToLeft, depth: depth + 1,
@@ -909,6 +920,12 @@ enum LayoutReconstructor {
                           bodySize: bodySize, rightToLeft: rightToLeft, depth: depth + 1, exhausted: &exhausted)
         }
         if let x = gap(horizontal: true) {
+            if let y = headingBand(elements, gutter: x, bodySize: bodySize) {
+                return ordered(elements.filter { $0.rect.minY > y }, bodySize: bodySize,
+                               rightToLeft: rightToLeft, depth: depth + 1, exhausted: &exhausted)
+                    + ordered(elements.filter { $0.rect.maxY < y }, bodySize: bodySize,
+                              rightToLeft: rightToLeft, depth: depth + 1, exhausted: &exhausted)
+            }
             // Writing that runs right to left reads the column on the right of the gutter first
             // (#41).
             let near = elements.filter { rightToLeft ? $0.rect.minX > x : $0.rect.maxX < x }
@@ -994,6 +1011,34 @@ enum LayoutReconstructor {
                 ? $0.rect.midY > $1.rect.midY
                 : (rightToLeft ? $0.rect.maxX > $1.rect.maxX : $0.rect.minX < $1.rect.minX)
         }
+    }
+
+    /// A centred answer-key title or section label can sit entirely on one side of a
+    /// column gutter even though it heads every column below it. Read an isolated one-line
+    /// band before making that gutter cut (#29, #47). Require both columns to overlap below
+    /// the band, and never lift a multi-line prose or speech-balloon band this way.
+    static func headingBand(_ elements: [Element], gutter: CGFloat, bodySize: CGFloat) -> CGFloat? {
+        let intervals = elements.map { ($0.rect.minY, $0.rect.maxY) }.sorted { $0.0 < $1.0 }
+        guard let first = intervals.first else { return nil }
+        var end = first.1
+        var cuts: [CGFloat] = []
+        for interval in intervals.dropFirst() {
+            if interval.0 - end > bodySize * 0.8 { cuts.append((end + interval.0) / 2) }
+            end = max(end, interval.1)
+        }
+        let boundaries = Array(cuts.reversed())
+        for (index, lower) in boundaries.enumerated() {
+            let below = elements.filter { $0.rect.maxY < lower }
+            let left = below.filter { $0.rect.maxX < gutter }
+            let right = below.filter { $0.rect.minX > gutter }
+            guard !left.isEmpty, !right.isEmpty else { return nil }
+            let leftRange = union(left.map(\.rect)), rightRange = union(right.map(\.rect))
+            guard min(leftRange.maxY, rightRange.maxY) > max(leftRange.minY, rightRange.minY) else { return nil }
+            let upper = index == 0 ? CGFloat.greatestFiniteMagnitude : boundaries[index - 1]
+            let band = elements.filter { $0.rect.minY > lower && $0.rect.maxY < upper }
+            if band.count == 1, band[0].line != nil { return index == 0 ? lower : upper }
+        }
+        return nil
     }
 
     /// The column runs a group's elements form, in reading order, or nil when the group states no

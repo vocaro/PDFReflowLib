@@ -218,6 +218,16 @@ enum PDFReflowLibPipeline {
                                                            drawnFromImage: pagesDrawnFromImage.contains(i)),
                                                        note: row.note)
                                     }
+                                    if MathRecognizer.pairedExerciseColumn(rows, body: body) {
+                                        // Each source-numbered row owns its own fallback crop.
+                                        // Keep those rows as layout elements so the neighbouring
+                                        // column can be read between them (Wallace p347, #29).
+                                        for (row, expression) in zip(rows, expressions) {
+                                            images.append((row.rect, expression.fallbackAssetID))
+                                            imageMath[expression.fallbackAssetID] = [expression]
+                                        }
+                                        continue
+                                    }
                                     let id = expressions[0].fallbackAssetID
                                     images.append((rect, id))
                                     imageMath[id] = expressions

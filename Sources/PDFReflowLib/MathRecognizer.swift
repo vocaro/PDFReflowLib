@@ -58,6 +58,27 @@ enum MathRecognizer {
         var note: String? = nil
     }
 
+    /// A column of individually printed, odd-only or even-only exercises. Keep its rows as
+    /// separate layout elements so the neighbouring column can be read between them (#29).
+    /// A worked derivation or a sequential answer key is one unit and must remain together.
+    static func pairedExerciseColumn(_ rows: [Row], body: CGFloat) -> Bool {
+        guard rows.count >= 6, rows.allSatisfy({ $0.note == nil }) else { return false }
+        let numbers = rows.compactMap { row -> Int? in
+            guard let label = row.label, label.hasSuffix(")"),
+                  let number = Int(label.dropLast()), number > 0 else { return nil }
+            return number
+        }
+        guard numbers.count == rows.count,
+              zip(numbers, numbers.dropFirst()).allSatisfy({ $1 == $0 + 2 }),
+              let first = rows.first else { return false }
+        // Numbering grows from one to two digits, shifting the expression's left edge.
+        return rows.allSatisfy { abs($0.rect.minX - first.rect.minX) <= body * 0.9 }
+            && zip(rows, rows.dropFirst()).allSatisfy { upper, lower in
+                upper.rect.midY - lower.rect.midY >= body * 0.5
+                    && lower.rect.maxY <= upper.rect.maxY + body * 0.2
+            }
+    }
+
     /// The page's glyphs from its content stream. Only the TeX font families qualified by the
     /// Wallace source checks are read; an unknown face remains opaque. A show in a bold font is opaque: Wallace page 15 sets the
     /// factor it multiplies in bold (`3·5 / 3·6`, the `2` of `4·2 / 9·2`), emphasis MathML written

@@ -3,6 +3,34 @@ import Foundation
 
 /// Evidence for a sparse landscape page whose title occupies the top band (#165).
 enum SlideDeck {
+    /// A sparse title slide can center its two large title lines well below the top band used
+    /// by ordinary slide titles. This evidence admits a rotated cover's native text; it does
+    /// not turn those lines into a heading without the document-level deck context (#175).
+    static func cover(in page: PageContent) -> Bool {
+        let bounds = page.bounds
+        guard bounds.isFinite, bounds.width / max(bounds.height, 1) >= 1.5,
+              bounds.width / max(bounds.height, 1) <= 2.2,
+              !page.hasSyntheticTextStyle,
+              page.lines.reduce(0, { $0 + $1.text.count }) <= 600 else { return false }
+        let lines = page.lines.filter { $0.turn == .upright && !$0.monospaced &&
+            !$0.text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty }
+        guard (3...10).contains(lines.count), let largest = lines.map(\.fontSize).max(), largest >= 24 else {
+            return false
+        }
+        let title = lines.filter { $0.fontSize >= largest * 0.95 }
+            .sorted { $0.rect.midY > $1.rect.midY }
+        guard title.count == 2, title.allSatisfy({ line in
+            line.text.filter(\.isLetter).count >= 4
+                && abs(line.rect.midX - bounds.midX) <= bounds.width * 0.18
+        }), title[0].rect.midY - title[1].rect.midY >= largest * 0.8,
+           title[0].rect.midY - title[1].rect.midY <= largest * 1.5,
+           title[0].rect.maxY <= bounds.maxY - bounds.height * 0.15,
+           title[1].rect.minY >= bounds.minY + bounds.height * 0.3,
+           lines.filter({ !title.contains($0) }).allSatisfy({ $0.fontSize <= largest * 0.65 })
+        else { return false }
+        return true
+    }
+
     static func title(in page: PageContent) -> [TextLine] {
         let bounds = page.bounds
         guard bounds.isFinite, bounds.width > bounds.height, bounds.height > 0,

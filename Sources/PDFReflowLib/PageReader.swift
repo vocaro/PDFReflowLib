@@ -44,7 +44,22 @@ enum PageReader {
             }
             var warnings: [PageWarning] = []
             let graphics = GraphicsReader.read(reference)
-            let requiresPageImage = graphics.unsupported || page.rotation % 360 != 0
+            // A sparse landscape slide can be stored with /Rotate 90 while PDFKit still hands
+            // back its title and body lines in the page's ordinary landscape coordinates. Admit
+            // that narrow case when it has no annotations: the source lines establish the deck
+            // before any formatting or crop reconstruction (#175).
+            let rotated = page.rotation % 360 != 0
+            let rotatedSlide: Bool
+            if rotated, !graphics.unsupported, page.annotations.isEmpty {
+                let probe = PageContent(number: i + 1, bounds: bounds,
+                    lines: try NativeTextReader.lines(on: page, limit: limit, includeStyle: false),
+                    graphics: graphics.regions, pictures: [])
+                rotatedSlide = probe.lines.allSatisfy { $0.turn == .upright }
+                    && (!SlideDeck.title(in: probe).isEmpty || SlideDeck.cover(in: probe))
+            } else {
+                rotatedSlide = false
+            }
+            let requiresPageImage = graphics.unsupported || (rotated && !rotatedSlide)
             let syntheticStyle = graphics.hasOnlyInvisibleText
                 && graphics.regions.contains { PageDiagnosis.coversPage($0, bounds: bounds) }
             // Link annotations convert to anchors (#247), so they are read before the text: the

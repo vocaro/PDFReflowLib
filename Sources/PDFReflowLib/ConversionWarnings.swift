@@ -54,6 +54,7 @@ enum PageWarning: Equatable, Sendable {
     case incompleteRecognition(uncoveredFraction: Double, retriedInBands: Bool)
     case ocrFailed(RecognitionFailure)
     case pageImageFallback
+    case verticalJapaneseFallback
     /// The page's content stream draws nothing at all (#224).
     case emptyPage
     case imageRegion(ImageRole)
@@ -129,6 +130,9 @@ enum ConversionWarnings {
                 + "and does not reflow.")
         case .pageImageFallback:
             (.pageImageFallback, "This page is preserved as an image and does not reflow.")
+        case .verticalJapaneseFallback:
+            (.verticalJapaneseFallback, "Japanese vertical columns overlap horizontal content or artwork; "
+                + "their reading order cannot be reconstructed safely, so the source page is preserved as an image.")
         case .emptyPage:
             (.emptyPage, "This page draws no text and no graphics; nothing is extracted from it.")
         case .imageRegion(.regionCrops):

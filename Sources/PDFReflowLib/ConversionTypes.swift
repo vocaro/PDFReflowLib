@@ -174,6 +174,9 @@ public struct ConversionWarning: Sendable, Codable, Equatable {
         /// actually given, not what the conversion attempted.
         case incompleteRecognition
         case imageRegion, pageImageFallback, unsupportedGraphics
+        /// Native Japanese vertical columns share a band with horizontal content or artwork;
+        /// their interleaving cannot be reconstructed safely from these selections (#44).
+        case verticalJapaneseFallback
         /// The page's content stream draws nothing: no extracted text, no visible text
         /// operator, no painted region and no annotation. Judged on the extracted page, before
         /// any recognition, which cannot read writing the page never drew.

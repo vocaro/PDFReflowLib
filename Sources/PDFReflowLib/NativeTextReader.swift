@@ -43,16 +43,18 @@ enum NativeTextReader {
     /// into cells, and one walk of the content stream serves both (#210).
     static func lines(on page: PDFPage, limit: Int, includeStyle: Bool = true,
                       rules: [CGRect] = [], links: [PageLink] = [], preserveInvisibleWordGaps: Bool = false,
-                      shows: [NativeSpacingReader.Evidence]? = nil) throws -> [TextLine] {
+                      shows: [NativeSpacingReader.Evidence]? = nil, language: String = "en") throws -> [TextLine] {
         try withExtractionLock {
             try extractLines(on: page, limit: limit, includeStyle: includeStyle, rules: rules,
-                             links: links, preserveInvisibleWordGaps: preserveInvisibleWordGaps, shows: shows)
+                             links: links, preserveInvisibleWordGaps: preserveInvisibleWordGaps, shows: shows,
+                             language: language)
         }
     }
 
     private static func extractLines(on page: PDFPage, limit: Int, includeStyle: Bool,
                                      rules: [CGRect], links: [PageLink] = [], preserveInvisibleWordGaps: Bool = false,
-                                     shows: [NativeSpacingReader.Evidence]? = nil) throws -> [TextLine] {
+                                     shows: [NativeSpacingReader.Evidence]? = nil,
+                                     language: String) throws -> [TextLine] {
         guard page.numberOfCharacters <= limit else {
             throw ConversionError.resourceLimit("too many characters")
         }
@@ -217,7 +219,7 @@ enum NativeTextReader {
             }
         }
         let rightToLeft = ArabicText.readsRightToLeft(pending.map(\.semantic))
-        return pending.map { item in
+        let lines = pending.map { item in
             guard rightToLeft else { return textLine(semantic: item.semantic, bounds: item.bounds, attributed: item.attributed) }
             let ordered = item.attributed.map { ArabicText.logicalOrder($0, onRightToLeftPage: true) }
             // The styled text is what the line carries; the plain text follows it where the order
@@ -227,6 +229,8 @@ enum NativeTextReader {
                 : ArabicText.logicalOrder(item.semantic, onRightToLeftPage: true)
             return textLine(semantic: semantic, bounds: item.bounds, attributed: ordered)
         }
+        return VerticalJapaneseColumns.oriented(lines, language: language,
+                                                pageWidth: page.bounds(for: .cropBox).width)
     }
 
     /// Indices of text impressions with distinct ink; offset shadows remain distinct (#165).

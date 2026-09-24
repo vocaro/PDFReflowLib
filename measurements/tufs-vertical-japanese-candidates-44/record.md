@@ -23,3 +23,35 @@ the [earlier Overleaf candidate](../japanese-tategaki-overleaf/record.md) also f
 source-order check. A future candidate should enter the lane only with a source-reviewed
 contract that catches column order and either a corrected reflow or an explicit readable
 image fallback and warning.
+
+## Bounded native-column recovery (2026-09-24)
+
+PDFKit returns Hoshino page 1 as intact vertical selections: its title is a 30-by-527
+point box, and the first body column begins `新聞記者を辞めてメキシコに行ったのは` in a 12-by-323
+point box at x=430. The body columns proceed toward the left and occupy two vertically
+separate bands. The horizontal journal head stands above them; the licence text,
+image and folio stand below. `VerticalJapaneseColumns` now labels this source-proven
+shape as downward writing, and `LayoutReconstructor` reads the isolated vertical
+group in that direction between the two horizontal bands. The gate requires at least
+four long, narrow Japanese columns holding most of the page's Japanese characters;
+short table heads, one margin label and horizontal Japanese prose do not pass.
+
+The revised three-page Hoshino EPUB was generated with `--language ja --no-ocr` from
+the pinned PDF above. Page 1 now emits the journal head, title, author and opening
+body column in that source order; the two body bands follow right-to-left. Pages 2
+and 3 have other content inside the vertical writing band, so the conservative
+rule preserves each as a full-page image with `verticalJapaneseFallback` and
+`pageImageFallback` warnings. The EPUB has one reflowed page, two page-image
+fallbacks and three image assets; EPUBCheck 5.3.0 reported zero errors and warnings.
+The output is `/private/tmp/tufs-hoshino-44-oriented-fallback-v2.epub`, SHA-256
+`861c303bf3edfaf6dfc257ea0c279b5d9abea146eeeeeba0b490a22ef07bf4fe`.
+
+Miyokawa page 1 has a horizontal item inside its vertical prose band. Its one-page
+EPUB now explicitly preserves the page image, with the same two fallback warnings
+and EPUBCheck 5.3.0 clean. The output is
+`/private/tmp/tufs-miyokawa-44-p1-fallback-v2.epub`, SHA-256
+`79e9da55a43bb69bd74e88fadae977dc2366bf1c33623f6de5a7396f977ad1c5`.
+
+The Overleaf candidate remains unqualified: PDFKit divides its vertical prose into
+mostly single-glyph selections, which the intact-column gate intentionally rejects.
+This increment does not claim an automatic image fallback for that fragmentation.

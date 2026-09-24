@@ -674,6 +674,28 @@ enum LayoutReconstructor {
                         exhausted: inout Bool) -> [Element] {
         guard elements.count > 1 else { return elements }
         guard depth < 32 else { exhausted = true; return elements }
+        // A page of intact Japanese tategaki columns may also set a horizontal journal head
+        // above them and a horizontal licence/folio below them (#44). Those rows prevent the
+        // shared-turn path below from seeing one direction. Only when *every* other element is
+        // wholly outside the vertical writing band can the turned columns be read together in
+        // their own frame; a figure, table or horizontal text inside the band leaves the usual
+        // spatial reconstruction in charge. NativeTextReader admits this turn only for a proved
+        // multi-column Japanese page, so a lone rotated caption cannot enter this path.
+        let vertical = elements.filter { $0.line?.turn == .clockwise }
+        let other = elements.filter { $0.line?.turn != .clockwise }
+        if !other.isEmpty, VerticalJapaneseColumns.hasProvenTurnedColumns(vertical.compactMap(\.line)) {
+            let lower = vertical.map(\.rect.minY).min()!, upper = vertical.map(\.rect.maxY).max()!
+            let above = other.filter { $0.rect.minY >= upper + 1 }
+            let below = other.filter { $0.rect.maxY <= lower - 1 }
+            if above.count + below.count == other.count {
+                return ordered(above, bodySize: bodySize, rightToLeft: rightToLeft,
+                               depth: depth + 1, exhausted: &exhausted)
+                    + ordered(vertical, bodySize: bodySize, rightToLeft: rightToLeft,
+                              depth: depth + 1, exhausted: &exhausted)
+                    + ordered(below, bodySize: bodySize, rightToLeft: rightToLeft,
+                              depth: depth + 1, exhausted: &exhausted)
+            }
+        }
         // A group the page lettered sideways is read along its own direction (#263). Every cut
         // above has already separated it from the rest of the page, so inside it the page can be
         // turned: each rectangle is taken into the frame the group's own writing runs in, where

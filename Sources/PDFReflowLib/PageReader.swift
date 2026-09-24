@@ -84,7 +84,8 @@ enum PageReader {
             let fieldBlanks = styled ? AnnotationEvidence.blanks(on: page, paints: graphics.paints.map(\.rect)) : []
             var content = PageContent(number: i + 1, bounds: bounds,
                 lines: try NativeTextReader.lines(on: page, limit: limit, includeStyle: styled,
-                    rules: rules, links: links, preserveInvisibleWordGaps: syntheticStyle, shows: shows), graphics: graphics.regions,
+                    rules: rules, links: links, preserveInvisibleWordGaps: syntheticStyle, shows: shows,
+                    language: options.language), graphics: graphics.regions,
                 pictures: graphics.images)
             content.blanks = fieldBlanks
             if styled, !SlideDeck.title(in: content).isEmpty {
@@ -234,6 +235,13 @@ enum PageReader {
                 warnings.append(.annotationsNotConverted(converted: links.count,
                                                          unconverted: unconvertedCount,
                                                          imagePreserved: annotationEvidence.visible > 0))
+            }
+            if !content.requiresPageImage, options.ocr != .always,
+               VerticalJapaneseColumns.needsImageFallback(content.lines,
+                   regions: content.graphics + content.pictures + content.tables.map(\.rect),
+                   language: options.language) {
+                content.requiresPageImage = true
+                warnings.append(.verticalJapaneseFallback)
             }
             // A page whose content stream paints nothing: no extracted text, no visible text
             // operator, no painted region (a white ground is not one) and no annotation. The

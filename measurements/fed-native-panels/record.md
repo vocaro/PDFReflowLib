@@ -27,9 +27,9 @@ remain available to the existing readers. The panel's blocks are appended as one
 reading unit, with no new EPUB model or styling policy.
 
 Source tests pin page 35's complete adjacent paragraph, sidebar and following paragraph in
-order. Sixteen affected pages preserve every previously complete paragraph fragment inside
-one resulting block. Page 95's ordering is pinned separately while the independent typography
-follow-up restores its 10-point body's leading; the sidebar fix does not claim to solve that
-second defect. Synthetic controls preserve tagged/styled/linked lines, keep every line once,
+order. All seventeen affected pages preserve every previously complete paragraph fragment inside
+one resulting block after combining the independent body-leading corrections (`b4b2adf` and
+`e1e281d`). Page 95 needs both grouping and its document-corroborated 16-point body leading;
+the combined source control pins that result. Synthetic controls preserve tagged/styled/linked lines, keep every line once,
 cover mirrored geometry, and reject a figure, a semantic table, or a tag spanning the boundary.
 All 793 Swift tests pass on this isolated candidate. Final full-source conversion comparison and the corpus gate belong to the integrated root run.

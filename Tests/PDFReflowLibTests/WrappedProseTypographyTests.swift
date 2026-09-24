@@ -152,3 +152,73 @@ func wrappedDisplaySummaryDoesNotRaiseOrdinaryHeadingSize(number: Int) throws {
                                    documentBody: 10, nativeSizeEvidence: false)
     #expect(synthetic.additionalLeading.isEmpty)
 }
+
+private func fedShortBodyPage() throws -> PageContent {
+    let fixture = try SourceLayoutFixture.load("fed-short-body-47")
+    #expect(fixture.sourceSHA256 == "8db8fd9e1de63ac25a6f9585d78ded12f45ab56f0c14c52c199b36b368f84d60")
+    struct Capture: Decodable { var nativePage: PageContent }
+    return try JSONDecoder().decode(Capture.self,
+        from: Data(contentsOf: fixtureURL("fed-short-body-47-layout.json"))).nativePage
+}
+
+@Test func twoShortBodyParagraphsKeepTheirOwnLeadingBesideARecoveredBox() throws {
+    let page = try fedShortBodyPage()
+    let typography = PageTypography(pageLines: page.lines, reflowableLines: page.lines, documentBody: 10)
+    #expect(typography.body == 9)
+    #expect(typography.leading == 11)
+    #expect(typography.headingBody == 9)
+    #expect(typography.additionalLeading == [9: 11, 10: 16])
+    let body = page.lines.filter { $0.fontSize == 10 && $0.rect.minY > 600 }
+        .sorted { $0.rect.maxY > $1.rect.maxY }
+    #expect(body.count == 5)
+    let expected = [body.prefix(2).map(\.text).joined(separator: " "), body.suffix(3).map(\.text).joined(separator: " ")]
+    let crops = LayoutReconstructor.graphicsWithLabels(page)
+    var warnings: [ConversionWarning] = []
+    let blocks = LayoutReconstructor.blocks(page: page,
+        images: crops.enumerated().map { ($0.element, "image-\($0.offset)") },
+        vocabulary: LayoutReconstructor.vocabulary(in: [page]), warnings: &warnings, documentBody: 10)
+    let paragraphs = blocks.filter { if case .paragraph = $0.content { true } else { false } }
+    for text in expected { #expect(paragraphs.contains { $0.text == text }) }
+    let first = try #require(paragraphs.first { $0.text == expected[0] })
+    let encoded = try EPUBTextEncoder.payload(first, imagePaths: [:])
+    #expect(encoded.contains("href="))
+    #expect(encoded.contains("Global Pandemic"))
+    #expect(blocks.contains { if case .heading = $0.content {
+        $0.text == "Box 3.5. Gauging Monetary Policy through the Fed’s Balance Sheet"
+    } else { false } })
+    #expect(blocks.contains { $0.text.contains("The table below shows the major asset and liability categories") })
+}
+
+@Test func shortParagraphLeadingNeedsIndependentAlignedNativeProse() throws {
+    let page = try fedShortBodyPage()
+    let body = page.lines.filter { $0.fontSize == 10 && $0.rect.minY > 600 }
+        .sorted { $0.rect.maxY > $1.rect.maxY }
+    let small = page.lines.filter { $0.fontSize < 10 }
+    func leading(_ rows: [TextLine], document: CGFloat? = 10, native: Bool = true) -> CGFloat? {
+        PageTypography(pageLines: small + rows, reflowableLines: small + rows,
+                       documentBody: document, nativeSizeEvidence: native).additionalLeading[10]
+    }
+    #expect(leading(body) == 16)
+    #expect(leading(Array(body.suffix(3))) == nil)
+    #expect(leading(body, document: nil) == nil)
+    #expect(leading(body, document: 9) == nil)
+    #expect(leading(body, native: false) == nil)
+    for mode in 0..<5 {
+        var changed = body
+        switch mode {
+        case 0:
+            changed = body.map { TextLine(content: InlineText($0.text, style: .bold), rect: $0.rect, fontSize: $0.fontSize) }
+        case 1:
+            for index in changed.indices {
+                changed[index].structure = TextStructure(group: 1, order: 0, headingLevel: 2, lineCount: 5)
+            }
+        case 2:
+            for index in 2..<5 { changed[index].rect.origin.x += 100 }
+        case 3:
+            changed[3].rect.origin.y += 3
+        default:
+            for index in changed.indices { changed[index].rect.size.width = 80 }
+        }
+        #expect(leading(changed) == nil, "negative control \(mode)")
+    }
+}

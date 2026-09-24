@@ -1783,11 +1783,19 @@ enum LayoutReconstructor {
         let standaloneCaptions = photoCaptions
             .filter { $0.indices.isDisjoint(with: captioned) }
         let standalone = standaloneCaptions.reduce(into: Set<Int>()) { $0.formUnion($1.indices) }
+        let claimed = summarized.union(quoted).union(captioned).union(standalone)
+        let displayProse = page.recognized || page.hasSyntheticTextStyle ? [] : WrappedDisplayProse.groups(in: lines,
+            threshold: typography.headingThreshold).filter { group in
+                group.indices.isDisjoint(with: claimed)
+                    && !page.tables.contains { $0.rect.intersects(group.rect) }
+            }
+        let displayedProse = displayProse.reduce(into: Set<Int>()) { $0.formUnion($1.indices) }
         let spatial = ordered(lines.enumerated().filter { !quoted.contains($0.offset) && !captioned.contains($0.offset)
-            && !standalone.contains($0.offset) && !summarized.contains($0.offset) }.map {
+            && !standalone.contains($0.offset) && !summarized.contains($0.offset) && !displayedProse.contains($0.offset) }.map {
             Element(rect: $0.element.readingRect ?? $0.element.rect, line: $0.element)
         } + summaries.map { Element(rect: $0.rect, aside: $0.lines) }
             + quotations.map { Element(rect: $0.rect, quotation: $0.lines) }
+            + displayProse.map { Element(rect: $0.rect, nativePanel: $0.lines) }
             + pictureElements + standaloneCaptions.map { Element(rect: $0.rect, caption: $0.lines) }
             + page.tables.map { Element(rect: $0.rect, table: $0) },
             bodySize: typography.body, rightToLeft: rightToLeft, exhausted: &exhausted)

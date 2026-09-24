@@ -1,0 +1,39 @@
+{
+  "case": "ucl-hebrew-shakespeare-2017",
+  "pageNumbering": "Physical PDF pages, one-based; page 81 is printed 69",
+  "qualifiedForFidelity": false,
+  "rightsBasis": "UCL Press copyright page (physical page 6) and the UCL Discovery record state CC BY 4.0 for this book, including its images. Required attribution: Lily Kahn, The First Hebrew Shakespeare Translations. London, UCL Press, 2017. DOI 10.14324/111.9781911307976.",
+  "reviewPoints": [
+    {
+      "page": 5,
+      "target": "Title page",
+      "acceptance": "The title, bilingual-edition subtitle and Lily Kahn byline remain readable; the UCL Press logo remains visible. The present conversion splits the large title into two headings."
+    },
+    {
+      "page": 13,
+      "target": "English introduction opening",
+      "acceptance": "Introduction precedes the historical-background section and its opening Haskalah prose. The section line currently becomes a paragraph rather than a nested heading."
+    },
+    {
+      "page": 81,
+      "target": "Dense parallel English and Hebrew prose",
+      "acceptance": "The English left column and Hebrew right column both remain selectable; the Hebrew paragraph has right-to-left direction and its opening phrase appears. The reflow serializes the English column before the Hebrew column and does not retain side-by-side alignment."
+    },
+    {
+      "page": 150,
+      "target": "Vocalized Hebrew verse, English translation and numbered notes",
+      "acceptance": "Both scripts and Hebrew vowel points survive in selectable text; the English opening, a Hebrew vocalized word and numbered note 46 appear in source reading order. Line pairing, exact note attachment and the many Hebrew lines incorrectly promoted to headings remain unqualified."
+    },
+    {
+      "page": 250,
+      "target": "Bilingual dramatic dialogue with speaker labels and stage directions",
+      "acceptance": "The trumpet stage direction and its English dialogue remain text. Speaker, line and parallel-column order are not qualified; the baseline separates some role labels from the lines they introduce."
+    },
+    {
+      "page": 550,
+      "target": "References with embedded Hebrew titles",
+      "acceptance": "The Markel, Needler and later Salkinson entries remain selectable in source order; punctuation and typography of individual references remain unqualified."
+    }
+  ],
+  "scope": "Physical source pages 5, 13, 81, 150, 250 and 550 were rendered and compared with the no-OCR Hebrew-language EPUB on macOS 27. This is an admission review, not a full-book fidelity claim. The reviewed content contract protects only the explicit phrases and image presence it lists."
+}

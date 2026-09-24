@@ -45,6 +45,14 @@ enum NativeSpacingReader {
         /// spacing in force — the space this page draws where it means one (#274). Nil where the
         /// font states no width for code 32, which is every font that draws no space glyph at all.
         var spaceWidth: CGFloat?
+        /// Individual decoded glyphs and advances, requested only for MathML recognition (#206).
+        var glyphs: [Glyph]?
+
+        struct Glyph: Equatable {
+            var text: String
+            var minX: CGFloat
+            var maxX: CGFloat
+        }
 
         /// The characters of the show's last word (after its last space character, word space or
         /// sentence space), and whether that word begins the show.
@@ -632,6 +640,32 @@ enum NativeSpacingReader {
         return winAnsiUnicodeMap(differences: differences)
     }
 
+    private static let mathGlyphNames: [String: String] = [
+        "minus": "\u{2212}", "periodcentered": "\u{22C5}", "multiply": "\u{00D7}",
+        "divide": "\u{00F7}", "plusminus": "\u{00B1}", "lessequal": "\u{2264}",
+        "greaterequal": "\u{2265}", "notequal": "\u{2260}", "radical": "√",
+    ]
+
+    private static func mathSymbols(_ dict: CGPDFDictionaryRef) -> [UInt8: String] {
+        guard let encoding = CGPDFObjects.dictionary(dict, "Encoding"),
+              let differences = CGPDFObjects.array(encoding, "Differences"),
+              CGPDFArrayGetCount(differences) <= 256 else { return [:] }
+        var result: [UInt8: String] = [:]
+        var next: Int?
+        for index in 0..<CGPDFArrayGetCount(differences) {
+            var code: CGPDFInteger = 0, glyph: UnsafePointer<CChar>?
+            if CGPDFArrayGetInteger(differences, index, &code) {
+                guard (0...255).contains(code) else { return [:] }
+                next = code
+            } else if CGPDFArrayGetName(differences, index, &glyph), let glyph, let code = next {
+                guard code <= 255 else { return [:] }
+                if let symbol = mathGlyphNames[String(cString: glyph)] { result[UInt8(code)] = symbol }
+                next = code + 1
+            } else { return [:] }
+        }
+        return result
+    }
+
     private struct Font {
         /// The font dictionary's identity, which distinguishes fonts; never dereferenced.
         var id: Int
@@ -642,6 +676,7 @@ enum NativeSpacingReader {
         var unicode: [UInt8: String]?
         /// Simple-font glyph advances in text space per unit of font size.
         var widths: [UInt8: CGFloat]?
+        var mathNames: [UInt8: String] = [:]
     }
 
     private static let simpleFontKinds: Set<String> = ["Type1", "TrueType", "MMType1"]
@@ -660,6 +695,7 @@ enum NativeSpacingReader {
         } else if kind != "TrueType" {
             result.unicode = encodingUnicodeMap(dict)
         }
+        if kind != "TrueType" { result.mathNames = mathSymbols(dict) }
         if let first = CGPDFObjects.integer(dict, "FirstChar"), first >= 0, first <= 255,
            let widths = CGPDFObjects.array(dict, "Widths"), CGPDFArrayGetCount(widths) <= 256 {
             var table: [UInt8: CGFloat] = [:]
@@ -714,8 +750,12 @@ enum NativeSpacingReader {
         var characterSpacing: CGFloat = 0
         var wordSpacing: CGFloat = 0
         let invisible: Bool
+        let recordsGlyphs: Bool
         var renderingMode: CGFloat = 0
-        init(invisible: Bool = false) { self.invisible = invisible }
+        init(invisible: Bool = false, recordingGlyphs: Bool = false) {
+            self.invisible = invisible
+            self.recordsGlyphs = recordingGlyphs
+        }
         var saved: [(Font?, CGFloat, CGFloat, CGFloat, CGFloat)] = []
         /// The text matrix (Tm), which a show advances, as against the walk's line matrix (Tlm),
         /// which only `Td`, `TD`, `T*` and `Tm` move (#120: Replay Clocks' reference list draws
@@ -766,6 +806,7 @@ enum NativeSpacingReader {
             var value = "", gaps: Set<Int> = [], valid = font?.map != nil && size > 0 && characterSpacing == 0 && wordSpacing == 0
             var unicode = "", advance: CGFloat = 0, trailingSpacing: CGFloat = 0, glyphStarts: Set<Int> = []
             var decodable = font?.unicode != nil && size > 0, measurable = font?.widths != nil && size > 0
+            var glyphs: [Evidence.Glyph]? = recordsGlyphs && size > 0 && font?.widths != nil ? [] : nil
             let spacing = (characterSpacing, wordSpacing)
             // The narrowest space this show could draw, in em: the font's own width for code 32,
             // less any word spacing that narrows it. Word spacing that widens it is ignored, so
@@ -778,10 +819,17 @@ enum NativeSpacingReader {
                 let count = CGPDFStringGetLength(string)
                 guard count <= 4096, value.utf16.count + count <= 4096,
                       let bytes = CGPDFStringGetBytePtr(string), let font else {
-                    valid = false; decodable = false; measurable = false; return
+                    valid = false; decodable = false; measurable = false; glyphs = nil; return
                 }
                 for index in 0..<count {
                     let code = bytes[index]
+                    if glyphs != nil {
+                        if let character = font.unicode?[code] ?? font.mathNames[code], let width = font.widths?[code] {
+                            let start = transform.tx + advance * transform.a
+                            glyphs?.append(.init(text: character, minX: start,
+                                                 maxX: start + width * size * transform.a))
+                        } else { glyphs = nil }
+                    }
                     if valid, let decoded = font.map?[code] { value += decoded } else { valid = false }
                     if decodable, let decoded = font.unicode?[code], unicode.utf16.count + decoded.utf16.count <= 4096 {
                         glyphStarts.insert(unicode.utf16.count)
@@ -824,7 +872,7 @@ enum NativeSpacingReader {
                     previousWasString = false
                     pending += number / 1000 * size
                 case .other:
-                    valid = false; decodable = false; measurable = false
+                    valid = false; decodable = false; measurable = false; glyphs = nil
                 }
             }
             let trailingAdjustment = pending
@@ -907,6 +955,8 @@ enum NativeSpacingReader {
             }
             // A glyph's ink ends at its width; the spacing after the last one moves no glyph.
             if measurable, advance.isFinite, advance >= 0 { item.end = transform.tx + (advance - trailingSpacing) * transform.a }
+            if let glyphs, !glyphs.isEmpty,
+               glyphs.allSatisfy({ $0.minX.isFinite && $0.maxX.isFinite }) { item.glyphs = glyphs }
             evidence.append(item)
             // The next show may continue from this one's full advance, spacing and adjustments
             // included (Replay Clocks page 10's reference list, #120).
@@ -959,9 +1009,11 @@ enum NativeSpacingReader {
         }
     }
 
-    static func read(_ page: CGPDFPage) -> [Evidence] {
+    static func read(_ page: CGPDFPage) -> [Evidence] { read(page, recordingGlyphs: false) }
+
+    static func read(_ page: CGPDFPage, recordingGlyphs: Bool) -> [Evidence] {
         guard page.rotationAngle == 0, hasSupportedFont(page) else { return [] }
-        let visitor = Visitor()
+        let visitor = Visitor(recordingGlyphs: recordingGlyphs)
         guard ContentStreamWalk.scan(page, options: scanOptions, visitor: visitor) else { return [] }
         return visitor.evidence
     }

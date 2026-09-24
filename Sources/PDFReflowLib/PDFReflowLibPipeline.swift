@@ -166,11 +166,34 @@ enum PDFReflowLibPipeline {
                     warnings.append(ConversionWarnings.warning(.pageImageFallback, page: i + 1, options: options))
                 } else {
                     var images: [(CGRect, String)] = []
+                    var imageMath: [String: [MathExpression]] = [:]
+                    var pageGlyphs: MathRecognizer.PageGlyphs?
                     for rect in LayoutReconstructor.graphicsWithLabels(content, language: options.language) {
+                        if !content.recognized, !content.hasSyntheticTextStyle,
+                           !content.links.contains(where: { $0.rect.intersects(rect) }),
+                           let reference = page.pageRef {
+                            let glyphs = try pageGlyphs ?? NativeTextReader.withExtractionLock {
+                                MathRecognizer.glyphs(on: reference)
+                            }
+                            pageGlyphs = glyphs
+                            if let rows = MathRecognizer.rows(in: rect, page: glyphs, graphics: content.graphics,
+                                                              lines: content.lines,
+                                                              body: LayoutReconstructor.bodySize(content.lines)) {
+                                let expressions = try rows.map { row in
+                                    MathExpression(label: row.label, node: row.node,
+                                                   fallbackAssetID: try assets.save(page: page, rect: row.rect,
+                                                       drawnFromImage: pagesDrawnFromImage.contains(i)))
+                                }
+                                let id = expressions[0].fallbackAssetID
+                                images.append((rect, id))
+                                imageMath[id] = expressions
+                                continue
+                            }
+                        }
                         images.append((rect, try assets.save(page: page, rect: rect,
                                                             drawnFromImage: pagesDrawnFromImage.contains(i))))
                     }
-                    if !images.isEmpty {
+                    if images.contains(where: { imageMath[$0.1] == nil }) {
                         warnings.append(ConversionWarnings.warning(.imageRegion(.regionCrops), page: i + 1, options: options))
                     }
                     // One warning per table the page's recognition located and did not
@@ -181,6 +204,12 @@ enum PDFReflowLibPipeline {
                     }
                     pageBlocks = LayoutReconstructor.blocks(page: content, images: images, context: resolved.context,
                                                             warnings: &warnings)
+                    for index in pageBlocks.indices {
+                        guard case var .image(image) = pageBlocks[index].content,
+                              let expressions = imageMath[image.assetID] else { continue }
+                        image.math = expressions
+                        pageBlocks[index].content = .image(image)
+                    }
                     if pageBlocks.contains(where: \.hasReflowedText) {
                         reflowed += 1
                     }

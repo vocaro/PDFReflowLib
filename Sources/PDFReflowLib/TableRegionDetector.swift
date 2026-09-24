@@ -193,6 +193,13 @@ enum TableRegionDetector {
                     let drop = candidates[last].rect.minY - rect.minY
                     guard drop > 0, drop <= body * 2 else { break }
                     if let step, abs(drop - step) > body * 0.35 { break }
+                    // A table can share its font and margin with the paragraph below it.
+                    // A larger baseline gap followed by four full-measure, wrapped prose
+                    // rows ends the table; its numeric cells cannot confer row semantics on
+                    // that paragraph. An indented wrapped cell does not supply this evidence.
+                    if let step, leads.count >= 3, drop > step * 1.2,
+                       abs(leading(rect) - edge) <= body * 0.3,
+                       followsAsProse(lead, edge: edge, reach: reach, step: step) { break }
                     step = step ?? drop
                 }
                 leads.append(lead)
@@ -212,6 +219,31 @@ enum TableRegionDetector {
             regions.append(union(rows.flatMap { $0 }.map { original[$0].rect }))
         }
         return regions
+
+        func followsAsProse(_ first: Int, edge: CGFloat, reach: CGFloat, step: CGFloat) -> Bool {
+            let start = rowOf[first]!
+            guard start + 3 < printed.count else { return false }
+            let size = candidates[first].fontSize
+            var prose: [TextLine] = []
+            for row in printed[start...start + 3] {
+                let aligned = row.map { candidates[$0] }.filter {
+                    abs(leading($0.rect) - edge) <= body * 0.3
+                        && abs($0.fontSize - size) <= size * 0.05
+                }
+                guard aligned.count == 1, let line = aligned.first,
+                      line.rect.width >= abs(reach - edge) * 0.75,
+                      line.text.split(whereSeparator: { $0.isWhitespace }).count >= 5,
+                      line.text.last?.isNumber != true,
+                      !LayoutReconstructor.isList(line.text) else { return false }
+                if let previous = prose.last {
+                    guard line.text.first?.isLowercase == true,
+                          abs(previous.rect.minY - line.rect.minY - step) <= max(1, step * 0.15)
+                    else { return false }
+                }
+                prose.append(line)
+            }
+            return prose.last?.text.hasSuffix(".") == true
+        }
     }
 
     /// The column headers of the tables a page draws: the lines the crop release rule leaves to

@@ -215,6 +215,9 @@ enum PDFReflowLibPipeline {
                                                                    options: options))
                     }
                     pageBlocks = LayoutReconstructor.blocks(page: content, images: images, context: resolved.context,
+                                                            formOutline: resolved.formOutline[i + 1] ?? [],
+                                                            formOutlineBaseLevel: resolved.formOutlineBaseLevel,
+                                                            formOutlineOuterTier: resolved.formOutlineOuterTier,
                                                             warnings: &warnings)
                     if resolved.context.slideDeck {
                         pageBlocks = SlideDeck.notesLast(pageBlocks, on: content)

@@ -14,6 +14,10 @@ struct DocumentEvidence {
         /// numbered-note pages.
         var context: LayoutReconstructor.DocumentContext
         var furniturePlan: FurnitureDetector.Plan?
+        /// Source-backed outline headings established across pages (#211).
+        var formOutline: [Int: [FormOutlineEvidence.Candidate]]
+        var formOutlineBaseLevel: Int
+        var formOutlineOuterTier: Int
     }
 
     let chapterCandidates: [ChapterBoundaryReader.Candidate]
@@ -35,6 +39,7 @@ struct DocumentEvidence {
     private var labelStylePages: [LayoutReconstructor.LabelStyle: Int] = [:]
     /// The display sizes the book's own tags call headings, page by page (#294).
     private var headingTally = HeadingRank.Tally()
+    private var formOutlineCandidates: [FormOutlineEvidence.Candidate] = []
     private var slideTextPages = 0
     private var slidePages = 0
     private var slideCount = 0
@@ -82,6 +87,9 @@ struct DocumentEvidence {
         }
         if !content.recognized, !content.hasSyntheticTextStyle, !content.requiresPageImage {
             LayoutReconstructor.addBodyWeights(of: content.lines, to: &bodyWeights)
+            if formOutlineCandidates.count < 10_000 {
+                formOutlineCandidates += FormOutlineEvidence.candidates(on: content)
+            }
             // A bold sub-heading style counts once per page it appears on; `labelStyles(from:)`
             // keeps only the styles the book repeats (#218).
             for style in LayoutReconstructor.labelEvidence(on: content) {
@@ -109,14 +117,24 @@ struct DocumentEvidence {
         marginWords = [:]
         hyphens.lineEndSubstitute = LayoutReconstructor.lineEndSubstitute(from: lineEndSubstitutes)
         lineEndSubstitutes = [:]
+        let documentBody = LayoutReconstructor.bodySize(weights: bodyWeights)
         let context = LayoutReconstructor.DocumentContext(
             hyphens: hyphens, language: language,
-            documentBody: LayoutReconstructor.bodySize(weights: bodyWeights),
+            documentBody: documentBody,
             labelStyles: LayoutReconstructor.labelStyles(from: labelStylePages),
             headingRank: HeadingRank(headingTally),
             numberedNotePages: numberedNotePages,
             slideDeck: slideCount >= 3 && uniformLandscape && slideTextPages > 0
                 && slidePages * 3 >= slideTextPages * 2)
-        return Resolved(context: context, furniturePlan: plan)
+        let establishedOutline = FormOutlineEvidence.established(formOutlineCandidates)
+        let outline = Dictionary(grouping: establishedOutline, by: \.page)
+        formOutlineCandidates = []
+        // A form's large title lines sit above its outline. Source Pro Se 1 has two distinct
+        // display sizes above its 11-point body, so its Roman, capital and numeric tiers rank
+        // at h4, h5 and h6. An outline with no display title starts at h2.
+        let displays = Set(bodyWeights.keys.filter { CGFloat($0) > (documentBody ?? 12) * 1.1 })
+        return Resolved(context: context, furniturePlan: plan, formOutline: outline,
+                        formOutlineBaseLevel: min(4, 2 + displays.count),
+                        formOutlineOuterTier: establishedOutline.compactMap(\.tier).min() ?? 0)
     }
 }

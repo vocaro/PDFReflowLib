@@ -1973,6 +1973,8 @@ enum LayoutReconstructor {
     /// One page's logical blocks: its typography is read once, every line outside a tagged or
     /// numbered-note group is classified by `role(of:)`, and `BlockAssembler` builds the blocks.
     static func blocks(page: PageContent, images: [(CGRect, String)], context: DocumentContext,
+                       formOutline: [FormOutlineEvidence.Candidate] = [], formOutlineBaseLevel: Int = 2,
+                       formOutlineOuterTier: Int = 0,
                        warnings: inout [ConversionWarning]) -> [ReflowBlock] {
         // A crop takes every line it intersects, except a wrapped paragraph the page prints over
         // one of its own pictures, which is the book's prose and no cut can free (#239).
@@ -2021,6 +2023,8 @@ enum LayoutReconstructor {
         var lines = joinedInlineFractions(FormBlankRows.joined(reflowable, blanks: page.blanks),
                                           rules: page.graphics.filter(isThinRule),
                                           body: max(4, bodySize(page.lines)))
+        let formHeadings = FormOutlineEvidence.joined(lines, candidates: formOutline)
+        lines = formHeadings.lines
         let typography = PageTypography(pageLines: page.lines, reflowableLines: lines, documentBody: context.documentBody,
                                         nativeSizeEvidence: !page.recognized && !page.hasSyntheticTextStyle)
         // A bold sub-heading set at or near body size, whose paragraph opens beneath it directly or
@@ -2029,6 +2033,9 @@ enum LayoutReconstructor {
                                    page: page, styles: context.labelStyles)
             + tableTitles(in: lines, tables: page.tables, body: typography.body)
         (lines, labels) = StackedSectionLabels.coalescing(lines, labels: labels, body: typography.body)
+        labels += lines.filter { line in
+            formHeadings.headings.contains { $0.text == line.text && abs($0.rect.minY - line.rect.minY) <= 1 }
+        }
         // A recognized line in an English book is a heading only if it reads as words: a table
         // cell or a reading of handwriting set large is not a title, and every heading is a
         // navigation entry (#7).
@@ -2171,6 +2178,7 @@ enum LayoutReconstructor {
                     if slideTitle.contains(line) { role = .heading }
                     else if role == .heading && line.fontSize < title.fontSize * 0.95 { role = .prose }
                 }
+                if formHeadings.listItems.contains(line) { return .listItem }
                 // A numbered answer whose final line hangs under its expression is still an
                 // item when its opening row happens to be too wide for the usual list detector.
                 if role == .prose && wrappedAnswerOpenings.contains(line.rect) { return .listItem }
@@ -2269,6 +2277,26 @@ enum LayoutReconstructor {
             }
         }
         var result = assembler.finish()
+        if !formOutline.isEmpty {
+            for index in result.indices {
+                guard case let .heading(id, text, _) = result[index].content,
+                      let candidate = formOutline.first(where: { $0.text == text.text }),
+                      let tier = candidate.tier else { continue }
+                result[index].content = .heading(id: id, text: text,
+                    level: min(6, formOutlineBaseLevel + tier - formOutlineOuterTier))
+            }
+            for index in result.indices {
+                guard case let .preformatted(text) = result[index].content,
+                      formHeadings.listItems.contains(where: { $0.text == text.text }),
+                      let letter = text.text.first, letter.isASCII, letter.isLowercase,
+                      text.text.dropFirst().hasPrefix(". ") else { continue }
+                result[index].content = .listItem(.init(
+                    text: ListBuilder.dropping(3, from: text), marker: "\(letter).",
+                    ordinal: Int(letter.asciiValue! - Character("a").asciiValue!) + 1,
+                    kind: .lettered(uppercase: false)))
+                result[index].listEvidence = nil
+            }
+        }
         for index in result.indices {
             guard case var .image(image) = result[index].content,
                   let labels = diagramLabels[image.assetID] else { continue }

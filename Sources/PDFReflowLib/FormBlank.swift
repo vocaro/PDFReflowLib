@@ -90,13 +90,44 @@ struct FormBlank: Equatable, Codable {
                   !text.contains(where: { $0 != spanning && $0.rect.intersects(over) }) else { return nil }
             return FormBlank(rule: rule, field: field)
         }
+        // A form caption can name a blank underneath its rule, rather than beside it. The
+        // two party-name spaces at the head of Pro Se 1 have this shape when their widgets
+        // are removed: matching rules, centered captions below, and empty writing bands above.
+        // Require a pair and several ordinary labeled blanks on the same page so a caption
+        // under an illustration's rule cannot state a form by itself (#211).
+        guard let pageBounds, labeled.count >= 3 else { return labeled }
+        let body = max(4, text.map(\.fontSize).sorted()[text.count / 2])
+        let captionCandidates = rules.compactMap { rule -> (FormBlank, TextLine)? in
+            guard !labeled.contains(where: { $0.rule == rule }),
+                  rule.width >= pageBounds.width * 0.25,
+                  rule.width <= pageBounds.width * 0.65,
+                  rule.minX <= pageBounds.midX - body * 2 else { return nil }
+            let captions = text.filter { line in
+                line.rect.maxY < rule.minY && rule.minY - line.rect.maxY <= body
+                    && abs(line.rect.midX - rule.midX) <= body
+                    && line.text.count <= 40
+            }
+            guard captions.count == 1, let caption = captions.first else { return nil }
+            let field = CGRect(x: rule.minX + 2, y: rule.maxY,
+                               width: rule.width - 4, height: body * 4)
+            guard !text.contains(where: { $0.rect.intersects(field) }),
+                  !paints.contains(where: { $0 != rule && $0.intersects(field) }) else { return nil }
+            return (FormBlank(rule: rule, field: field), caption)
+        }
+        let captioned = captionCandidates.filter { candidate in
+            captionCandidates.contains { other in
+                other.0.rule != candidate.0.rule
+                    && abs(other.0.rule.minX - candidate.0.rule.minX) <= body
+                    && abs(other.0.rule.width - candidate.0.rule.width) <= body
+                    && other.1.text != candidate.1.text
+            }
+        }.map(\.0)
         // A long closing rule below a form prompt is the bottom of a writing area even when
         // the PDF has no widget. Require several independently labeled rows on this same page
         // before interpreting unlabelled rules this way (#211).
-        guard let pageBounds, labeled.count >= 3 else { return labeled }
-        let body = max(4, text.map(\.fontSize).sorted()[text.count / 2])
         let areas = rules.compactMap { rule -> FormBlank? in
             guard !labeled.contains(where: { $0.rule == rule }),
+                  !captioned.contains(where: { $0.rule == rule }),
                   rule.width >= pageBounds.width * 0.6,
                   rule.minX <= pageBounds.minX + pageBounds.width * 0.25,
                   rule.height <= 6 else { return nil }
@@ -124,6 +155,7 @@ struct FormBlank: Equatable, Codable {
         // Admit it only on a page already established as a form by labeled blanks.
         let openingAreas = rules.compactMap { rule -> FormBlank? in
             guard !labeled.contains(where: { $0.rule == rule }),
+                  !captioned.contains(where: { $0.rule == rule }),
                   !areas.contains(where: { $0.rule == rule }),
                   rule.width >= pageBounds.width * 0.6,
                   rule.minX <= pageBounds.minX + pageBounds.width * 0.25,
@@ -146,7 +178,7 @@ struct FormBlank: Equatable, Codable {
             else { return nil }
             return FormBlank(rule: rule, field: field)
         }
-        return labeled + areas + openingAreas
+        return labeled + captioned + areas + openingAreas
     }
 
     func sharesRow(with row: CGRect) -> Bool {

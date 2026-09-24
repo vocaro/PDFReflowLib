@@ -21,6 +21,12 @@ private func noWidgetFormEvidence(_ page: Int) throws -> (PageContent, [CGRect])
 
 @Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/211"))
 func noWidgetPrintedFormKeepsCrossedTextAndLongWritingAreas() throws {
+    let (first, firstPaints) = try noWidgetFormEvidence(1)
+    let firstBlanks = FormBlank.printed(paints: firstPaints, lines: first.lines, pageBounds: first.bounds)
+    for y in [452.26, 572.68] {
+        #expect(firstBlanks.contains { abs($0.rule.minY - y) < 0.1 && $0.field.height > 35 })
+    }
+
     let (third, thirdPaints) = try noWidgetFormEvidence(3)
     let thirdBlanks = FormBlank.printed(paints: thirdPaints, lines: third.lines, pageBounds: third.bounds)
     #expect(thirdBlanks.contains { abs($0.rule.minY - 412.48) < 0.1 && $0.field.height > 60 })

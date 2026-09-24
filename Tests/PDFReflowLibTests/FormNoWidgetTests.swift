@@ -37,6 +37,12 @@ func noWidgetPrintedFormKeepsCrossedTextAndLongWritingAreas() throws {
     #expect(fourthRows.contains("principal place of business in the State of (name) ____."))
     #expect(fourthRows.contains("Or is incorporated under the laws of (foreign nation) ____,"))
     #expect(fourthRows.contains("and has its principal place of business in (name) ____."))
+
+    // The relief area started on page 4 and its closing rule is the first content on page 5.
+    // No widget or prompt appears above the rule on page 5 itself.
+    let (fifth, fifthPaints) = try noWidgetFormEvidence(5)
+    let fifthBlanks = FormBlank.printed(paints: fifthPaints, lines: fifth.lines, pageBounds: fifth.bounds)
+    #expect(fifthBlanks.contains { abs($0.rule.minY - 643.72) < 0.1 && $0.field.height > 50 })
 }
 
 @Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/211"))

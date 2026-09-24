@@ -118,7 +118,35 @@ struct FormBlank: Equatable, Codable {
             else { return nil }
             return FormBlank(rule: rule, field: field)
         }
-        return labeled + areas
+        // A writing area may continue onto the next page and close before that page's first
+        // section (Pro Se 1, page 5). Its only text above is the small running head; the large
+        // empty band above the closing rule has no same-page prompt to serve as an anchor.
+        // Admit it only on a page already established as a form by labeled blanks.
+        let openingAreas = rules.compactMap { rule -> FormBlank? in
+            guard !labeled.contains(where: { $0.rule == rule }),
+                  !areas.contains(where: { $0.rule == rule }),
+                  rule.width >= pageBounds.width * 0.6,
+                  rule.minX <= pageBounds.minX + pageBounds.width * 0.25,
+                  rule.minY >= pageBounds.minY + pageBounds.height * 0.8 else { return nil }
+            let above = text.filter { $0.rect.minY > rule.maxY }
+                .min { $0.rect.minY < $1.rect.minY }
+            let below = text.filter { $0.rect.maxY < rule.minY }
+                .max { $0.rect.maxY < $1.rect.maxY }
+            guard let above, let below,
+                  above.rect.minY >= pageBounds.minY + pageBounds.height * 0.9,
+                  above.fontSize <= body * 0.9,
+                  above.rect.minY - rule.maxY >= body * 6,
+                  rule.minY - below.rect.maxY <= body * 3 else { return nil }
+            let height = min(body * 6, above.rect.minY - rule.maxY - body * 2)
+            let field = CGRect(x: rule.minX + 2, y: rule.minY,
+                               width: rule.width - 4, height: height)
+            guard field.height >= body * 3,
+                  !text.contains(where: { $0.rect.intersects(field.insetBy(dx: 1, dy: 2)) }),
+                  !paints.contains(where: { $0 != rule && $0.intersects(field.insetBy(dx: 0, dy: 2)) })
+            else { return nil }
+            return FormBlank(rule: rule, field: field)
+        }
+        return labeled + areas + openingAreas
     }
 
     func sharesRow(with row: CGRect) -> Bool {

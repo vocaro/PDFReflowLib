@@ -207,7 +207,7 @@ loaded host. Each case verifies the pinned source identity, converts in a fresh 
 otherwise; see [corpus.md](corpus.md#index)),
 checks EPUB structure, EPUBCheck, monotonic progress, the manifest memory ceiling and the
 reviewed content contract in [corpus/regressions.json](../corpus/regressions.json):
-<!-- counts:contract-coverage -->1111 checks on 218 reviewed pages across 21 documents<!-- counts:end -->.
+<!-- counts:contract-coverage -->1095 checks on 218 reviewed pages across 21 documents<!-- counts:end -->.
 All source-page anchors must remain complete and ordered, and semantic text must
 contain no image-attachment placeholders. The manifest consistency test requires every corpus
 document to be covered or explicitly excluded (`excludedFullConversions`, whose entries the
@@ -219,7 +219,7 @@ each book is in [corpus.md](corpus.md#warren-commission-report) and the admissio
 [corpus-lane-admissions](../measurements/corpus-lane-admissions/record.md).
 
 <!-- counts:contract-breakdown -->
-Those 1111 checks are 4 `spineContinuity`, 115 `text`, 482 `orderedText`, 71 `absentText`,
+Those 1095 checks are 4 `spineContinuity`, 115 `text`, 466 `orderedText`, 71 `absentText`,
 51 `headings`, 125 `paragraphs`, 6 `continuedParagraphs`, 10 `preformatted`, 15 `lists`, 7 `asides`,
 2 `quotations`, 16 `scripts`, 11 `imageRegions`, 37 `tableRows`, 111 `minimumImages`,
 21 `warningCodesAnyOf` and 27 `absentWarningCodes`, counted as `tools/check_corpus_content.py`
